@@ -224,6 +224,9 @@
       "Feedback & Help": [
         "უკუკავშირი და დახმარება"
       ],
+      "Fill in": [
+        "შეავსეთ"
+      ],
       "Fill password": [
         "შეავსეთ პაროლი"
       ],
@@ -569,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "მოგვწერეთ ტვიტერზე"
-      ],
-      "Your password manager not here? Request it.": [
-        "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
       ]
     },
     "bf2023: Info": {
@@ -1037,9 +1037,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " ერთზე მეტი საცავის შესაქმნელად ფასიან ტარიფზე უნდა გადახვიდეთ."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" ელემენტი წაიშალა"
       ],
@@ -1327,12 +1324,6 @@
       "Expires in ${ remainingTime }": [
         "ვადა ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "დამატებითი პაროლი წარმატებით შეიქმნა"
-      ],
-      "Extra password successfuly removed": [
-        "დამატებითი პაროლი წარმატებით წაიშალა"
-      ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
       ],
@@ -1455,9 +1446,6 @@
       ],
       "Monitoring settings successfully updated": [
         "მონიტორინგის პარამეტრები წარმატებით განახლდა"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "წარმოადგენს რა მეტს, ვიდრე პაროლების მმართველი, ${ PASS_APP_NAME } თქვენს პაროლებს და პირადი ელფოსტის მისამართებს ფსევდონიებით იცავს. დაფუძნებული იგივე ტექნოლოგიაზე, რაზეც ${ MAIL_APP_NAME }, თქვენი მონაცემები გამჭოლადაა დაშიფრული და წვდომადი, მხოლოდ, თქვენთვსაა."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
@@ -1658,9 +1646,6 @@
       "Select destination vault": [
         "აირჩიეთ სამიზნე საცავი"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "აირჩიეთ, სად გნებავთ თქვენი შემოტანილი საცავების შენახვა."
-      ],
       "Selected items permanently deleted": [
         "მონიშნული ელემენტები სამუდამოდ წაიშალა"
       ],
@@ -1681,9 +1666,6 @@
       ],
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "გაუზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები 10 პიროვნებამდე"
       ],
       "Sign in or create an account to continue.": [
         "გასაგრძელებლად შედით ან შექმენით ანგარიში."
@@ -1752,9 +1734,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "სხვა პაროლების მმართველიდან მონაცემების შემოსატანად, გადადით პაროლების მმართველში, გამოიტანეთ თქვენი მონაცემები და ატვირთეთ ის ${ PASS_APP_NAME }-ზე. როცა მონაცემების შემოტანა დასრულდება, გამოტანილი ფაილი წაშალეთ."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ Pass-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "სცადეთ, თავიდან ჩატვირთოთ ან თავიდან დააყენოთ გააფართოება, რომ დარწმუნდეთ, რომ თქვენი ბრაუზერი და ${ PASS_SHORT_APP_NAME } უკანასკნელი ვერსიითაა."
       ],
@@ -1802,9 +1781,6 @@
       ],
       "User's access removed": [
         "მომხმარებლის წვდომა წაიშალა"
-      ],
-      "User's access sucessfuly updated": [
-        "მომხმარებლის წვდომები წარმატებით განახლდა"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "საცავი \"${ payload.content.name }\" წარმატებით წაიშალა"
@@ -2042,9 +2018,6 @@
       "Capital letters (A-Z)": [
         "მაღალი რეგისტრის სიმბოლოები (A-Z)"
       ],
-      "Capitalise": [
-        "ზედა რეგისტრში გადაყვანა"
-      ],
       "Card": [
         "ბარათი"
       ],
@@ -2231,9 +2204,6 @@
       "Import passwords": [
         "პაროლების შემოტანა"
       ],
-      "Imported from : ": [
-        "შემოტანილია :  "
-      ],
       "Imported on : ": [
         "შემოტანის დრო : "
       ],
@@ -2333,8 +2303,8 @@
       "Name on card": [
         "სახელი ბარათზე"
       ],
-      "Need help ?": [
-        "დახმარება გჭირდებათ ?"
+      "Need help?": [
+        "დახმარება გჭირდებათ?"
       ],
       "New vault": [
         "ახალი საცავი"
@@ -2531,12 +2501,6 @@
       ],
       "Today": [
         "დღეს"
-      ],
-      "Total imported items : ": [
-        "შემოტანილი ელემენტები სულ : "
-      ],
-      "Total items : ": [
-        "სულ ელემენტები : "
       ],
       "TOTP": [
         "TOTP"
@@ -2792,9 +2756,6 @@
       "Current version": [
         "მიმდინარე ვერსია"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "წავშალო საცავი \"${ vaultName }\" ?"
-      ],
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
       ],
@@ -2852,9 +2813,6 @@
       "Last modified": [
         "ბოლო ცვლილება"
       ],
-      "Leave vault ?": [
-        "გავიდე საცავიდან?"
-      ],
       "Log in as...": [
         "შესვლა, როგორც..."
       ],
@@ -2896,9 +2854,6 @@
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
-      ],
-      "Permanently remove all items ?": [
-        "წავშალო სამუდამოდ ყველა ელემენტი?"
       ],
       "Pin the extension": [
         "გაფართოების მიმაგრება"
@@ -3010,14 +2965,8 @@
       "Section name cannot be empty": [
         "განყოფლების სახელი ცარიელი ვერ იქნება"
       ],
-      "Url already exists": [
-        "Url უკვე არსებობს"
-      ],
       "URL cannot be empty": [
         "URL ცარიელი ვერ იქნება"
-      ],
-      "Url is invalid": [
-        "Url არასწორია"
       ],
       "URL is invalid": [
         "URL არასწორია"
@@ -3050,9 +2999,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "საცავის '${ vaultName }' შექმნა შეუძლებელია"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "მოსაწვევი ვერ გავაგზავნე შემდეგ მისამართებზე :"
       ],
       "Duplicate email addresses.": [
         "დუბლირებული ელფოსტის მისამართები."
@@ -3124,9 +3070,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-ით დაშიფრული გატანის ფაილისთვის საკვანძო ფრაზა აუცილებელია"
       ],
-      "Please contact us for investigating the issue": [
-        "დაგვიკავშირდით ამ პრობლემის გამოსაკვლევად"
-      ],
       "Please verify your email address in order to use email aliases": [
         "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
       ],
@@ -3165,9 +3108,6 @@
       ],
       "Vault name is required": [
         "საცავის სახელი აუცილებელია"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "ტარიფის მიერ დაშვებული საცავეების რაოდენობას ვერ გადააჭარბებთ."
       ],
       "You have reached the limit of members who can access this vault.": [
         "მიაღწიეთ მომხმარებლების რაოდენობის ზღვარს, რომლებსაც ამ საცავთან წვდომა შეიძლება, ჰქონდეთ."

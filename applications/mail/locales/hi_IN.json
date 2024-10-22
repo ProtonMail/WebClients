@@ -744,9 +744,6 @@
       "OK": [
         "ठीक है"
       ],
-      "Ok": [
-        "ठीक है"
-      ],
       "Open": [
         "अनिर्णित"
       ],
@@ -1088,9 +1085,6 @@
       ],
       "Toggle Calendar app": [
         "कैलेंडर ऐप बदलें"
-      ],
-      "Toggle Contact app": [
-        "संपर्क ऐप बदलें"
       ],
       "Tomorrow": [
         "आने वाला कल"
@@ -3098,9 +3092,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "CSV और VCF फ़ाइल के माध्यम से आयात के लिए, सुनिश्चित करें कि फ़ाइल ${ MAX_IMPORT_FILE_SIZE_STRING } या ${ MAX_IMPORT_CONTACTS_STRING } संपर्कों से अधिक न हो। यदि आपकी फ़ाइल बड़ी है, तो कृपया उसे छोटी फ़ाइलों में विभाजित करें। ${ learnMoreLink }।"
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
       ],
@@ -3567,12 +3558,6 @@
       ],
       "Request timed out": [
         "अनुरोध का समय समाप्त हुआ"
-      ],
-      "Require at least one action": [
-        "कम से कम एक कार्रवाई की आवश्यकता है"
-      ],
-      "Require at least one condition": [
-        "कम से कम एक शर्त की आवश्यकता है"
       ],
       "Signature not verified": [
         "संपर्क हस्ताक्षर सत्यापित नहीं"
@@ -4051,9 +4036,6 @@
       "Invited by: ${ inviteEmail }": [
         "इन्होने न्योता भेजा: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "पते संभालें"
-      ],
       "Sorry, you can't switch plans at this time.": [
         "माफ करें, आप अभी प्लान नहीं बदल सकते।"
       ],
@@ -4249,11 +4231,6 @@
       ],
       "Unread": [
         "नहीं पढ़ा हुआ"
-      ]
-    },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "फाइल है"
       ]
     },
     "Filter preview": {
@@ -4878,9 +4855,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } सदस्य)",
         "(${ memberCount } सदस्य)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /महीना)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(फ़िल्टर करें यदि सभी निम्नलिखित शर्तों को पूरा करते हैं)"
@@ -5948,9 +5922,6 @@
       "Total VPN connections": [
         "कुल VPN कनेक्शन"
       ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "केवल दिनांक, नाम, ईमेल पता या विषय के आधार पर खोजने के लिए इसे बंद करें। संदेश सामग्री में खोज को अक्षम करने और डाउनलोड किए गए संदेशों को हटाने के लिए सेटिंग्स पर जाएं।"
-      ],
       "Turn on to search the content of your messages": [
         "अपने संदेशों की सामग्री खोजने के लिए चालू करें"
       ],
@@ -5971,9 +5942,6 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "अपने खाते में अधिक पते जोड़ने के लिए अपग्रेड करें।"
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "30 दिनों से ज़्यादा समय से ट्रैश और स्पैम में मौजूद संदेशों को स्वचालित रूप से हटाने के लिए अपग्रेड करें।"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "अधिक फ़ोल्डर, फ़िल्टर और पते बनाने के लिए अपग्रेड करें।"
@@ -6082,9 +6050,6 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "आप कब अपने संदेश को अपने भेजे गए ईमेल के फोल्डर और प्राप्तकर्ता के इनबॉक्स से अपनेआप मिटाना चाहते है?"
-      ],
-      "When do you want your message to be sent?": [
-        "आप अपने संदेश को कब भेजना चाहते हैं?"
       ],
       "When do you want your message to self-destruct?": [
         "आप कब अपने संदेश को अपनेआप खत्म करना चाहते हैं?"
@@ -6998,9 +6963,6 @@
       "Sync with system": [
         "सिस्टम के साथ तालमेल बिठाएं"
       ],
-      "Synchronize with system": [
-        "सिस्टम के साथ तालमेल बिठाएं"
-      ],
       "System information": [
         "प्रणाली की जानकारी"
       ],
@@ -7413,9 +7375,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "आपकी गोपनीयता की सुरक्षा के लिए छवि लोड नहीं की गई है।"
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "आपका ब्राउज़र रिमोट सर्वर की पहचान सत्यापित नहीं कर सका। तस्वीर एचटीटीपी प्रोटोकॉल पे होस्ट करी गई होने चाहिए।"
       ]
     },
     "Message notification": {
@@ -7899,9 +7858,6 @@
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
       ],
-      "Tor over VPN": [
-        "वीपीएन के ऊपर Tor"
-      ],
       "Two-factor authentication": [
         "दो तरीकों से प्रमाणीकरण"
       ],
@@ -8152,9 +8108,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "यूज़र पासवर्ड और यूज़र का दो-फैक्टर सत्यापन रीसेट करें"
       ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "एक क्लिक के साथ Tor नेटवर्क से अपने इंटरनेट ट्रैफिक को गुज़ार के ले जाएं"
-      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "अपने संपर्क डाटा, जैसे फोन नंबर, पता, जन्मदिन, और निजी नोट, को सुरक्षित रखे। ज़ीरो-एक्सेस एन्क्रिप्शन ये पक्का करता है की ${ BRAND_NAME } भी इन को एक्सेस ना कर पाए।"
       ],
@@ -8253,11 +8206,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "आयात करने के लिए आपको GIF में दिखाई गई सारी चीज़े चुननी होगी।"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "चुने की ${ BRAND_NAME } क्या एक्सेस कर सकता है: आपके ईमेल संदेश और सेटिंग देखना, आपके संपर्क देखना और डाउनलोड करना, सारे एजेंडा जो आपने Google Agenda से एक्सेस किए है को देखना और डाउनलोड करना।"
       ]
     },
     "Onboarding modal": {
@@ -9284,9 +9232,6 @@
     "Subscription change warning": {
       "Got it": [
         "समझ गए"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "बस अपने एप्पल App Store खाते पे साइनइन करके ${ subscriptions } पे जाएं।"
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "बस अपने Play Store खाते पे साइन इन करें, फिर ${ subscriptions } दबाएं।"
@@ -10504,9 +10449,6 @@
     "Tor out of date": {
       "stable release": [
         "स्थिर निस्तार"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Tor ब्राउज़र का यह संस्करण समर्थित नहीं है। कृपया नवीनतम ${ stableRelease } में अपडेट करें"
       ]
     },
     "Update font modal": {

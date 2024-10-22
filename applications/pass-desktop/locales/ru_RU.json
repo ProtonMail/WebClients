@@ -40,6 +40,9 @@
       "Add new item": [
         "Добавить новый элемент"
       ],
+      "Add section": [
+        "Добавить раздел"
+      ],
       "Add username field": [
         "Добавить поле имени пользователя"
       ],
@@ -135,6 +138,9 @@
       ],
       "Create card": [
         "Создать карту"
+      ],
+      "Create identity": [
+        "Создать личные данные"
       ],
       "Create login": [
         "Создать логин"
@@ -265,6 +271,12 @@
       "Import": [
         "Импортировать"
       ],
+      "Import alias": [
+        "Импортировать псевдоним",
+        "Импортировать псевдонимы",
+        "Импортировать псевдонимы",
+        "Импортировать псевдонимы"
+      ],
       "Importing": [
         "Идёт импорт"
       ],
@@ -373,6 +385,9 @@
       "Pin item": [
         "Закрепить элемент"
       ],
+      "Please retry": [
+        "Повторите попытку"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
@@ -438,6 +453,9 @@
       ],
       "Saving": [
         "Сохранение"
+      ],
+      "Section name": [
+        "Название раздела"
       ],
       "Secure links": [
         "Защищенные ссылки"
@@ -555,9 +573,6 @@
       ],
       "Write us on Twitter": [
         "Написать нам в Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Вашего менеджера паролей здесь нет? Запросите его."
       ]
     },
     "App menu": {
@@ -573,8 +588,14 @@
       "Speech": [
         "Речь"
       ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "Запуск ${ PASS_APP_NAME } при входе в систему"
+      ],
       "Toggle developers tools": [
         "Переключиться на инструменты разработчика"
+      ],
+      "Uninstall ${ PASS_APP_NAME }": [
+        "Удалить ${ PASS_APP_NAME }"
       ]
     },
     "bf2023: Info": {
@@ -693,6 +714,9 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Аутентификация не удалась. Подтвердите ваш пароль ${ BRAND_NAME } для продолжения экспорта"
+      ],
+      "Biometric authentication failed": [
+        "Биометрическая аутентификация не удалась"
       ],
       "Cannot send invitation at the moment": [
         "Невозможно отправить приглашение в данный момент",
@@ -1115,9 +1139,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Перейдите на платный план, чтобы создать несколько хранилищ."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Элемент \"${ payload.item.data.metadata.name }\" был отклонен"
       ],
@@ -1139,6 +1160,9 @@
         "${ count } просмотров",
         "${ count } просмотров"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } просмотров"
+      ],
       "${ memberCount } member": [
         "${ memberCount } член",
         "${ memberCount } члена",
@@ -1156,6 +1180,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } отобразит фавикон элемента через ${ BRAND_NAME } анонимизированный прокси-сервер изображений."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } будет импортировать только имена пользователей, заметки, кредитные карты и личные данные."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } потребует ваш пароль ${ BRAND_NAME } чтобы получить доступ к офлайновым данным"
@@ -1184,8 +1211,8 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступа к ${ PASS_APP_NAME } всегда потребуется ваш пароль ${ BRAND_NAME }."
       ],
-      "Add your custom email address to monitor :": [
-        "Добавьте свой пользовательский адрес электронной почты для мониторинга:"
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Для доступа к ${ PASS_APP_NAME } потребуется ваш отпечаток пальца или PIN-код устройства."
       ],
       "Admin": [
         "Админ"
@@ -1246,6 +1273,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Прежде чем экспортировать данные в этом формате, откройте настройки Safari -> вкладку \"Общие\" -> отключите опцию \"Открывать безопасные файлы после загрузки\". Это предотвратит неправильное извлечение Safari экспортированного файла."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Блокировка биометрических данных успешно зарегистрирована. Используйте ее для разблокировки ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Биометрические данные будут отключены и должны быть снова активированы."
       ],
       "Breaches detected": [
         "Обнаружены утечки"
@@ -1343,6 +1376,12 @@
       "Enable auto-locking to secure your data": [
         "Включите автоматическую блокировку для защиты ваших данных"
       ],
+      "Enabling biometrics auto-lock": [
+        "Включение автоматической блокировки биометрических данных"
+      ],
+      "Enabling biometrics lock failed": [
+        "Включение блокировки биометрических данных не удалось"
+      ],
       "Enabling offline mode...": [
         "Включение режима офлайн..."
       ],
@@ -1369,12 +1408,6 @@
       ],
       "Expires in ${ remainingTime }": [
         "Истекает через ${ remainingTime }"
-      ],
-      "Extra password successfuly created": [
-        "Дополнительный пароль успешно создан"
-      ],
-      "Extra password successfuly removed": [
-        "Дополнительный пароль успешно удален"
       ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
@@ -1532,17 +1565,20 @@
       "Monitoring settings successfully updated": [
         "Настройки мониторинга успешно обновлены"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Перемещение элемента в другое хранилище приведет к стиранию его истории и всех защищенных ссылок."
       ],
       "Moving an item to another vault will erase its history.": [
         "Перемещение элемента в другое хранилище удалит его историю."
       ],
       "Moving items": [
         "Перемещение элементов"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "При перемещении предметов в другое хранилище история их создания и все защищенные ссылки будут удалены."
       ],
       "Moving items to another vault will erase their history.": [
         "Перемещение элементов в другое хранилище удалит их историю."
@@ -1577,8 +1613,8 @@
       "Offline support successfully disabled": [
         "Поддержка офлайновой поддержки успешно отключена"
       ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Мы отправляем уведомления, проявляя избыточную осторожность. Если вы не узнаёте какие-либо из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Для онлайн-доступа к ${ PASS_APP_NAME } потребуется PIN-код. Вы выйдете из системы после 3 неудачных попыток."
       ],
       "Owner": [
         "Владелец"
@@ -1622,11 +1658,29 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
       ],
+      "Please confirm your extra password": [
+        "Подтвердите дополнительный пароль"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Подтвердите дополнительный пароль для автоматической блокировки с помощью биометрических данных."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Подтвердите свой дополнительный пароль, чтобы автоматическая блокировка осуществлялась с помощью вашего дополнительного пароля."
+      ],
       "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите свой дополнительный пароль, чтобы экспортировать данные ${ PASS_APP_NAME }."
       ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Подтвердите дополнительный пароль, чтобы разблокировать текущую блокировку."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Подтвердите свой дополнительный пароль, чтобы обновить время автоматической блокировки."
+      ],
       "Please confirm your password": [
         "Подтвердите ваш пароль"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Подтвердите свой пароль для автоматической блокировки с помощью биометрических данных"
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Подтвердите свой пароль для автоматической блокировки с помощью пароля."
@@ -1700,9 +1754,6 @@
       "Select vault to share": [
         "Выберите хранилище, чтобы им поделиться"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Выберите куда вы хотите сохранить импортированное(ые) хранилище(я)."
-      ],
       "Selected items permanently deleted": [
         "Выбранные элементы удалены безвозвратно"
       ],
@@ -1718,11 +1769,11 @@
       "Session timed out": [
         "Время сеанса истекло"
       ],
+      "Set by your organization": [
+        "Установлено вашей организацией"
+      ],
       "Settings successfully updated": [
         "Настройки успешно обновлены"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Делитесь своими логинами и защищенными заметками с максимум 10 людьми."
       ],
       "Sign in to your account": [
         "Войдите в свой аккаунт"
@@ -1784,6 +1835,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Экспорт не будет зашифрован, и кто угодно, кто получит доступ к вашему экспортированному файлу, сможет увидеть ваши пароли. Для безопасности, пожалуйста, удалите его после использования."
       ],
+      "This option is currently not available on your device.": [
+        "В настоящее время эта опция недоступна на вашем устройстве."
+      ],
       "This setting is disabled on the organization level": [
         "Этот параметр отключен на уровне организации"
       ],
@@ -1796,9 +1850,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Чтобы перенести данные из другого менеджера паролей, перейдите в менеджер паролей, экспортируйте свои данные, а затем загрузите их в ${ PASS_APP_NAME }. После того как данные будут импортированы, удалите экспортированный файл."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "To review your imported data, click on the Pass icon in your browser toolbar."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
       ],
@@ -1808,11 +1859,17 @@
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Разблокировать ${ PASS_SHORT_APP_NAME } с помощью биометрических данных"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Разблокируйте ${ PASS_SHORT_APP_NAME } с вашим паролем ${ BRAND_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Разблокируйте ${ PASS_SHORT_APP_NAME } с помощью дополнительного пароля"
+      ],
+      "Unlock with biometrics": [
+        "Разблокировать с помощью биометрических данных"
       ],
       "Unpinning item...": [
         "Открепление элемента..."
@@ -1828,9 +1885,6 @@
       ],
       "User's access removed": [
         "Доступ пользователя удален"
-      ],
-      "User's access sucessfuly updated": [
-        "Доступ пользователя обновлен"
       ],
       "username": [
         "имя пользователя"
@@ -1876,6 +1930,12 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Вы не можете изменить почтовые ящики для этого псевдонима."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "У вас есть ${ aliasCount } псевдоним, который присутствует в SimpleLogin, но отсутствует в ${ PASS_APP_NAME }. Не хотите ли вы его импортировать?",
+        "У вас есть ${ aliasCount } псевдонима, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
+        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
+        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "У вас остался ${ daysRemaining } день, чтобы опробовать эти и другие платные функции.",
@@ -1930,6 +1990,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Ваша информация была найдена ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -2026,6 +2089,12 @@
       "Account": [
         "Аккаунт"
       ],
+      "Add section": [
+        "Добавить раздел"
+      ],
+      "Additional details": [
+        "Дополнительная информация"
+      ],
       "Address details": [
         "Информация о адресе"
       ],
@@ -2062,14 +2131,14 @@
       "Beta Access": [
         "Бета доступ"
       ],
+      "Biometrics": [
+        "Биометрия"
+      ],
       "Birthdate": [
         "Дата рождения"
       ],
       "Capital letters (A-Z)": [
         "Заглавные буквы (A-Z)"
-      ],
-      "Capitalise": [
-        "Заглавными"
       ],
       "Card": [
         "Карта"
@@ -2116,6 +2185,9 @@
       "Create an encrypted note": [
         "Создать зашифрованную заметку"
       ],
+      "Create an Identity": [
+        "Создать личные данные"
+      ],
       "Create lock": [
         "Создать блокировку"
       ],
@@ -2127,6 +2199,12 @@
       ],
       "Created at": [
         "Создано"
+      ],
+      "Custom hidden field": [
+        "Настраиваемое скрытое поле"
+      ],
+      "Custom text field": [
+        "Пользовательское текстовое поле"
       ],
       "Date": [
         "Дата"
@@ -2185,6 +2263,9 @@
       "Extra password": [
         "Дополнительный пароль"
       ],
+      "Facebook account": [
+        "Аккаунт Facebook"
+      ],
       "Field name": [
         "Название поля"
       ],
@@ -2193,6 +2274,9 @@
       ],
       "First name": [
         "Имя"
+      ],
+      "Floor, apartment, building": [
+        "Этаж, квартира, здание"
       ],
       "Forwards to": [
         "Переслать"
@@ -2224,6 +2308,9 @@
       "Hide password": [
         "Скрыть пароль"
       ],
+      "https://example.com": [
+        "https://primer.com"
+      ],
       "ID Card": [
         "ID-карта"
       ],
@@ -2241,9 +2328,6 @@
       ],
       "Import passwords": [
         "Импортировать пароли"
-      ],
-      "Imported from : ": [
-        "Импортировано из : "
       ],
       "Imported on : ": [
         "Дата импорта : "
@@ -2302,6 +2386,9 @@
       "License number": [
         "Номер лицензии"
       ],
+      "LinkedIn account": [
+        "Аккаунт LinkedIn"
+      ],
       "Login": [
         "Имя пользователя"
       ],
@@ -2341,8 +2428,8 @@
       "Name on card": [
         "Имя на карте"
       ],
-      "Need help ?": [
-        "Нужна помощь ?"
+      "Need help?": [
+        "Нужна помощь?"
       ],
       "New vault": [
         "Новое хранилище"
@@ -2427,6 +2514,9 @@
       ],
       "Recent": [
         "Недавние"
+      ],
+      "Reddit handle": [
+        "Имя на Reddit"
       ],
       "Remove link": [
         "Удалить ссылку"
@@ -2533,12 +2623,6 @@
       "Today": [
         "Сегодня"
       ],
-      "Total imported items : ": [
-        "Всего импортировано элементов : "
-      ],
-      "Total items : ": [
-        "Всего элементов : "
-      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2551,8 +2635,14 @@
       "Unknown": [
         "Неизвестно"
       ],
+      "Unlock with": [
+        "Разблокировать с помощью"
+      ],
       "Unnamed Credit Card": [
         "Безымянная кредитная карта"
+      ],
+      "Unnamed identity": [
+        "Личные данные без имени"
       ],
       "Unnamed item": [
         "Элемент без имени"
@@ -2607,6 +2697,9 @@
       ],
       "X handle": [
         "Дескриптор Х"
+      ],
+      "Yahoo account": [
+        "Аккаунт Yahoo"
       ],
       "You are about to create": [
         "Вы собираетесь создать"
@@ -2864,9 +2957,6 @@
       "Dark Web Monitoring": [
         "Мониторинг Темной паутины"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Удалить хранилище \"${ vaultName }\"?"
-      ],
       "Details": [
         "Информация"
       ],
@@ -2906,6 +2996,9 @@
       "Import to vault(s)": [
         "Импорт в хранилище"
       ],
+      "Import your aliases from SimpleLogin": [
+        "Импортируйте псевдонимы из SimpleLogin"
+      ],
       "Import your data": [
         "Импортируйте свои данные"
       ],
@@ -2920,9 +3013,6 @@
       ],
       "Last modified": [
         "Дата последнего изменения"
-      ],
-      "Leave vault ?": [
-        "Оставить хранилище?"
       ],
       "Loading breaches...": [
         "Загрузка утечек..."
@@ -2941,6 +3031,15 @@
       ],
       "Modified": [
         "Изменено"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Переместить все элементы в \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "Переместить элемент в \"${ vaultName }\"?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "Переместить элементы в \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Нет исключенных элементов"
@@ -2974,9 +3073,6 @@
       ],
       "Pending access to the shared data": [
         "Pending access to the shared data"
-      ],
-      "Permanently remove all items ?": [
-        "Безвозвратно удалить все элементы?"
       ],
       "Pinned (${ items.length })": [
         "Закреплено (${ items.length })"
@@ -3115,20 +3211,20 @@
       "OTP secret or URI required": [
         "Требуется секрет OTP или URI"
       ],
-      "Url already exists": [
-        "Url уже существует"
+      "Section name cannot be empty": [
+        "Название раздела не может быть пустым"
       ],
       "URL cannot be empty": [
         "URL не может быть пустым"
-      ],
-      "Url is invalid": [
-        "Url недействителен"
       ],
       "URL is invalid": [
         "URL недействителен"
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Необходим пароль ${ BRAND_NAME }"
+      ],
       "A description of the problem is required": [
         "Требуется описание проблемы"
       ],
@@ -3150,9 +3246,6 @@
       "Could not create vault \"${ vaultName }\"": [
         "Не могу создать хранилище \"${ vaultName }\""
       ],
-      "Could not send invitations to the following addresses :": [
-        "Не удалось отправить приглашения на следующие адреса:"
-      ],
       "Duplicate email addresses.": [
         "Дублирование адресов электронной почты."
       ],
@@ -3167,6 +3260,9 @@
       ],
       "Extra password cannot be empty": [
         "Дополнительный пароль не может быть пустым"
+      ],
+      "Extra password is required": [
+        "Необходим дополнительный пароль"
       ],
       "Extra password should have at least 8 characters": [
         "Дополнительный пароль должен содержать не менее 8 символов"
@@ -3240,9 +3336,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Убедитесь, что расширение правильно установлено и включено."
       ],
-      "Please contact us for investigating the issue": [
-        "Пожалуйста, свяжитесь с нами для исследования этой проблемы"
-      ],
       "Please update the extension to its latest version": [
         "Обновите расширение до последней версии"
       ],
@@ -3290,9 +3383,6 @@
       ],
       "Verification code is required": [
         "Требуется код подтверждения"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Вы не можете создавать больше хранилищ, чем разрешает ваша подписка."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Вы достигли предела количества пользователей, которые могут получить доступ к этому хранилищу."

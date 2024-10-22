@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -198,9 +198,6 @@
       ],
       "Change keys": [
         "Skift nøgler"
-      ],
-      "Change other email subscriptions": [
-        "Skift andre e-mail-abonnementer"
       ],
       "Change password": [
         "Skift adgangskode"
@@ -739,9 +736,6 @@
       "OK": [
         "Ok"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "Open": [
         "Åbn"
       ],
@@ -829,9 +823,6 @@
       "Remove gift code": [
         "Fjern gavekode"
       ],
-      "Remove single sign-on": [
-        "Fjern single sign-on"
-      ],
       "Remove this label": [
         "Fjern denne etiket"
       ],
@@ -879,9 +870,6 @@
       ],
       "Restore": [
         "Gendan"
-      ],
-      "Resubscribe": [
-        "Forny abonnement"
       ],
       "Resume": [
         "Genoptag"
@@ -1944,9 +1932,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Rediger (visning, oprettelse og redigering af begivenhedsoplysninger)"
-      ],
       "View (see all event details)": [
         "Vis (se alle detaljer om begivenheden)"
       ]
@@ -3365,6 +3350,11 @@
         "NB: Hvis du sletter dette domæne ${ domainName }, vil alle tilknyttede adresser blive deaktiveret."
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Er du sikker på, at du vil slette denne gruppe?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalden faktura"
@@ -3397,9 +3387,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
-      ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Få op til ${ credits } i kreditter ved at invitere venner til ${ BRAND_NAME }."
@@ -3857,17 +3844,26 @@
       ]
     },
     "Email Unsubscribe": {
+      "Change other email subscriptions": [
+        "Skift andre e-mail-abonnementer"
+      ],
       "Email subscriptions": [
         "E-mail-abonnementer"
+      ],
+      "Resubscribe": [
+        "Abonner igen"
+      ],
+      "Unsubscribe": [
+        "Afmeld abonnement"
+      ],
+      "Unsubscribe?": [
+        "Afmeld?"
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Hvilke e-mails ønsker du at modtage fra ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Du gentegnede abonnement på ${ categoriesJsx } e-mails."
-      ],
-      "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Du afmeldte dig fra ${ categoriesJsx } e-mails."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -4492,9 +4488,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
-      "Please upload a square file": [
-        "Overfør en kvadratisk fil"
-      ],
       "Please upload an xml file": [
         "Upload en xml-fil"
       ],
@@ -4525,12 +4518,6 @@
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
-      ],
-      "Require at least one action": [
-        "Kræver mindst en handling"
-      ],
-      "Require at least one condition": [
-        "Kræver mindst en betingelse"
       ],
       "Session expired. Please refresh the page.": [
         "Sessionen er udløbet. Opdater venligst siden."
@@ -4681,9 +4668,6 @@
       ],
       "You already added this holidays calendar": [
         "Du har allerede tilføjet denne helligdagskalender"
-      ],
-      "You have reached the contacts limit for your account": [
-        "Du har nået det maksimale antal kontakter for din konto"
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nået det maksimale antal kalendere."
@@ -5115,9 +5099,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "Inviter en eksisterende ${ BRAND_NAME } bruger"
       ],
-      "Invite member to your family": [
-        "Inviter medlemmer til din familie"
-      ],
       "Set up family group": [
         "Konfigurer familiegruppe"
       ],
@@ -5180,9 +5161,6 @@
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonti kan ikke indgå i et familieabonnement."
-      ],
-      "Manage addresses.": [
-        "Administrer adresser."
       ],
       "Manage user accounts": [
         "Administrer brugerkonti"
@@ -5252,9 +5230,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Din konto bruger ${ usedSpace } lagerplads, hvilket overstiger de ${ inviteSpace } du har fået tildelt. Slet nogle data eller bed abonnementsadministratoren om at øge din lagerplads."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Du kan ikke acceptere denne invitation med dit nuværende abonnement."
       ]
     },
     "familyOffer_2023:Info": {
@@ -5380,15 +5355,25 @@
       "Add": [
         "Tilføj"
       ],
+      "Add (${ totalAddedCount })": [
+        "Tilføj (${ totalAddedCount })",
+        "Tilføj (${ totalAddedCount })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Forbindelse for op til ${ plusVpnConnections } enhed",
         "Forbindelse for op til ${ plusVpnConnections } enheder"
+      ],
+      "Continue": [
+        "Fortsæt"
       ],
       "Dark Web Monitoring": [
         "Monitorering af det mørke net"
       ],
       "Fastest VPN servers": [
         "Hurtigste VPN-servere"
+      ],
+      "Remove": [
+        "Fjern"
       ],
       "Secure Core servers": [
         "Secure Core servere"
@@ -5698,9 +5683,6 @@
       ],
       "Back to sign in": [
         "Tilbage til login siden"
-      ],
-      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
-        "Fortsæt med at nyde en hurtig, fokuseret og sikker desktop oplevelse. Opgrader til at låse ubegrænset adgang og andre premiere funktioner. "
       ],
       "Keep using the desktop app": [
         "Fortsæt med at bruge desktop appen"
@@ -6390,9 +6372,6 @@
       "${ boldName } will be set as default calendar.": [
         "${ boldName } vil blive indstillet som standardkalender."
       ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation }, og du bliver nødt til at oprette dem manuelt for at føje dem tilbage til din organisation"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
       ],
@@ -6538,9 +6517,6 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } måned)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrer hvis ALLE af følgende betingelser er opfyldt)"
       ],
@@ -6592,9 +6568,6 @@
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
-      ],
-      "A recovery file lets you unlock and view your data after an account reset": [
-        "Med en gendannelsesfil kan du låse op for og se dine data efter en kontonulstilling"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Med en gendannelsessætning kan du få adgang til din konto igen og gendanne dine krypterede beskeder, hvis du glemmer din adgangskode"
@@ -6746,9 +6719,6 @@
       ],
       "and": [
         "og"
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Eventuelle undermapper vil også blive slettet. E-mails, der er gemt i denne mappe ${ nameDeleted }, vil dog ikke blive slettet og kan findes i mappen Alle e-mails."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Enhver med dette link kan se alle begivenhedsdetaljer i denne kalender såsom titel, placering eller deltagere."
@@ -7026,9 +6996,6 @@
       "Dedicated servers": [
         "Dedikerede servere"
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
-      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
       ],
@@ -7145,9 +7112,6 @@
       "Emailing preference saved": [
         "E-mail-afsendelsespræference gemt"
       ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "E-mails mærket med denne etiket ${ nameDeleted } slettes ikke og kan stadig findes i den respektive mappe."
-      ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivér single sign-on for at holde din organisation sikker"
       ],
@@ -7213,9 +7177,6 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Indtast din gendannelsessætning for at ændre din adgangskode nu."
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Invitationer til begivenheder og tilmeldingsbekræftelser vil blive afsendt på dette sprog."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Begivenheder omfatter godkendelsesforsøg for alle ${ BRAND_NAME }-tjenester, der bruger dine ${ BRAND_NAME_TWO }-legitimationsoplysninger."
@@ -7348,12 +7309,6 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Hvis du aldrig tidligere har benyttet to-faktor-godkendelse, anbefaler vi dig stærkt at ${ guideButton }."
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Hvis du mister din adgangskode og har brug for at nulstille din konto, ${ boldImperative } at du har en ${ boldAccountRecovery } indstillet."
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Hvis du mister din adgangskode og har brug for at nulstille din konto, ${ boldImperative } at du har både en ${ boldAccountAndRecovery } indstillet. Ellers kan du måske ikke få adgang til dine e-mails, kontakter eller filer."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Mister du din to-faktor-aktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede to-faktor-godkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
@@ -7570,12 +7525,6 @@
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
-      "Lean more about gateways": [
-        "Lær mere om gateways"
-      ],
-      "Lean more about single sign-on": [
-        "Lær mere om single sign-on"
-      ],
       "Learn how to ${ staySaferOnlineLink }": [
         "Lær, hvordan du ${ staySaferOnlineLink }"
       ],
@@ -7744,9 +7693,6 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
-        "Ikke-SSO brugere (oprettet manuelt, ikke leveret af din identitetsudbyder) kan stadig logge ind på din organisation"
-      ],
       "Not a valid URL": [
         "Ugyldig URL"
       ],
@@ -7758,9 +7704,6 @@
       ],
       "of": [
         "af"
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "Når single sing-on er deaktiveret for din organisation:"
       ],
       "Once you reset your password:": [
         "Når du nulstiller din adgangskode:"
@@ -7794,9 +7737,6 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andre brugere i din organisation vil se dine optagede tidsrum. Ingen detaljer om begivenheden deles."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Vores advarsler er baseret på forsigtighed. Hvis du ikke genkender nogen af de lækkede oplysninger, kan du trygt ignorere denne rapport."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Forældet gendannelsesfil; opdater for at sikre adgang til dine data"
@@ -7888,9 +7828,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Sørg for at gemme den sikkert. Du skal bruge den til at få adgang til din konto og dekryptere dine data i tilfælde af en nulstilling af adgangskoden."
       ],
-      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "Bemærk, at hvis du sletter dette filter ${ nameDeleted } stopper vi med at behandle alle de automatiserede handlinger, det udløser."
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
         "Bemærk, i det øjeblik du klikker på knappen 'Bekræft' , vil din konto have ${ remainingCreditsFormatted } kreditter tilbage."
       ],
@@ -7968,6 +7905,9 @@
       ],
       "read our two-factor authentication guide first": [
         "læser vores to-faktor-godkendelsesguide først"
+      ],
+      "Recently used servers:": [
+        "Nyligt anvendte servere:"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefales på alle betroede enheder. ${ keepMeSignedInLearnMoreLink }"
@@ -8131,8 +8071,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
-      "Single sign-on removed": [
-        "Single sign-on fjernet"
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP-indsendelse tillader tredjepartstjenester eller -enheder at sende e-mail via ${ MAIL_APP_NAME } til dine tilpassede domæneadresser. Denne funktion er kun tilgængelig for ${ BRAND_NAME } for erhvervsbrugere med tilpassede domæner."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at anmode om adgang, skal du ${ createTicket } der beskriver dine brugsscenarier, hvilke brugerdomæner, du gerne vil bruge, og forventede timemæssige og daglige e-mailmængder."
@@ -8148,9 +8088,6 @@
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF angiver, hvem der har lov til at sende e-mails for dit domæne. Sørg for at tilføje følgende TXT-post i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne)."
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "SSO-brugere (leveret af din identitetsudbyder) slettes"
       ],
       "Stay tuned for future promotions.": [
         "Hold øje med fremtidige kampagner."
@@ -8231,9 +8168,6 @@
       "The calendar will be removed from your account.": [
         "Kalenderen vil blive fjernet fra din konto."
       ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "Legitimationsoplysningerne fra din identitetsudbyder vil blive slettet."
-      ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "Det mørke net er en skjult del af internettet, hvor stjålne personlige oplysninger, f.eks. identiteter, kan købes og sælges."
       ],
@@ -8269,9 +8203,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formatet af din CSV-fil er forkert."
-      ],
-      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "Linket til at rapportere, at du ikke har oprettet en ${ BRAND_NAME }-konto er udløbet. Kontakt venligst vores supportteam for at løse dette problem."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synligt for dine brugere, mens de er logget ind."
@@ -8849,9 +8780,6 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
-      ],
-      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Du kan aktivere godkendelseslogin for at se, hvornår din konto tilgås, og fra hvilken IP-adresse. Vi registrerer den IP-adresse, der tilgår kontoen, og tidspunktet, samt mislykkede forsøg."
       ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
@@ -9957,6 +9885,9 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Angiv adgangskoden til nøgle med fingeraftryk: ${ fingerprintCode }"
       ],
+      "Event": [
+        "Begivenhed"
+      ],
       "Event duration": [
         "Begivenhedsvarighed"
       ],
@@ -10305,6 +10236,9 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
+      "Search": [
+        "Søg"
+      ],
       "Second password": [
         "Anden adgangskode"
       ],
@@ -10392,8 +10326,8 @@
       "Swipe right action": [
         "Stryg til højre-handling"
       ],
-      "Synchronize with system": [
-        "Synkroniser med system"
+      "Sync with system": [
+        "Synkronisér med system"
       ],
       "System information": [
         "Systemoplysninger"
@@ -10776,9 +10710,6 @@
       "Pay invoice": [
         "Betal faktura"
       ],
-      "Paypal without credit card": [
-        "Paypal uden betalingskort"
-      ],
       "perform a password reset from your active session": [
         "udføre en nulstilling af adgangskoden fra din aktive session"
       ],
@@ -10931,11 +10862,11 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tilføj ${ BRAND_NAME } Scribe-skriveassistent"
-      ],
-      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
-        "Alle ${ BRAND_NAME } erhvervsapps og premiumfunktioner til at beskytte hele din virksomhed"
       ],
       "An encrypted email service that puts your privacy first": [
         "En krypteret e-mailtjeneste, der sætter dit privatliv først"
@@ -11117,9 +11048,6 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt dit brugernavn til ${ BRAND_NAME }-konto? Find den ved hjælp af din gendannelses-e-mail eller dit telefonnummer, og få adgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
-      ],
-      "Private and secure email, no credit card required": [
-        "Privat og sikker e-mail, intet betalingskort påkrævet"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Nulstil adgangskoden til din ${ BRAND_NAME }-konto"
@@ -11835,9 +11763,6 @@
       "Tailored to your needs": [
         "Skræddersyet til dine behov"
       ],
-      "Tor over VPN": [
-        "Tor over VPN"
-      ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
       ],
@@ -12190,9 +12115,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
       ],
@@ -12288,9 +12210,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Nulstil brugeradgangskoder og nulstil to-faktor-godkendelse på brugere"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Send din internettrafik gennem Tor-netværket med ét enkelt tryk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -12467,6 +12386,9 @@
       "Reminder has been sent": [
         "En påmindelse er blevet sendt."
       ],
+      "Too many recent API requests": [
+        "For mange nylige API-anmodninger"
+      ],
       "Trial started": [
         "Prøveperiode startet"
       ],
@@ -12569,11 +12491,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Kalender."
       ]
     },
     "Onboarding": {
@@ -12912,6 +12829,26 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brugere vil se dit logo i stedet for ${ BRAND_NAME }-ikonet, når de er logget ind på vores webapps."
+      ]
+    },
+    "orgidentity": {
+      "Current organization identity": [
+        "Nuværende organisationsidentitet"
+      ],
+      "Edit organization identity": [
+        "Rediger organisationsidentitet"
+      ],
+      "New organization identity": [
+        "Ny organisationsidentitet"
+      ],
+      "Organization identity": [
+        "Organisationsidentitet"
+      ],
+      "Organization identity updated": [
+        "Organisationens identitet opdateret"
+      ],
+      "Verify": [
+        "Bekræft"
       ]
     },
     "OS compatibility": {
@@ -13377,9 +13314,6 @@
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Brug en datagendannelsesmetode, kontakt en anden administrator, eller nulstil organisationsnøglen for at gendanne administratorrettigheder."
-      ],
-      "We couldn't verify authenticity of this identity.": [
-        "Vi kunne ikke bekræfte ægtheden af denne identitet."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kunne ikke bekræfte sikkerheden af denne afsenderes adressenøgle. Nogle gange er der en forsinkelse i opdateringen af afsenderens oplysninger. Prøv igen senere. Hvis du ikke har tillid til gyldigheden af denne invitation eller afsender, skal du kontakte ${ BRAND_NAME } kundesupport."
@@ -13852,9 +13786,6 @@
       "Changing organization password": [
         "Opretning af organisationsadgangskode"
       ],
-      "Creating or accessing non-private users": [
-        "Oprettelse af eller adgang til ikke-private brugere"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Grundet en adgangskodeændring er dine organisations administratorprivilegier blevet begrænset. De følgende handlinger er ikke længere tilladt:"
       ]
@@ -14060,20 +13991,11 @@
       "You have recommended actions.": [
         "Du har anbefalede handlinger."
       ],
-      "You recovery email address is:": [
-        "Din gendannelsesmail er:"
-      ],
-      "You recovery phone number is:": [
-        "Dit telefonnummer til gendannelse er:"
-      ],
       "Your account and data can be recovered": [
         "Din konto og dine data kan gendannes"
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Din konto og dine data kan gendannes. Tjek, om du stadig kan tilgå dine gendannelsesmetoder."
-      ],
-      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
-        "Din konto og dine data kan gendannes. Du har anbefalede handlinger for at beskytte din konto yderligere."
       ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Din konto og dine data kan gendannes. Du har anbefalede handlinger."
@@ -14127,9 +14049,6 @@
       ]
     },
     "saml: Error": {
-      "Sign-in wasn't successfully completed.": [
-        "Indlogningen var ikke gennemført."
-      ],
       "Something went wrong": [
         "Et eller andet gik galt"
       ]
@@ -14190,12 +14109,6 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Forudsætning:** SAML-godkendelse skal være konfigureret for at aktivere SCIM-provisionering."
-      ],
-      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Forudsætning:** For at aktivere SCIM-levering skal du bekræfte dit ejerskab af domænet **${ domainName }**. Denne bekræftelse kan tage op til en time."
-      ],
-      "Enter token into your identity provider": [
-        "Indtast token hos din identitetsudbyder"
       ],
       "Enter URL and token into your identity provider": [
         "Indtast URL og token hos din identitetsudbyder"
@@ -14546,14 +14459,6 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Vi kontakter dig igen, når nulstillingen af adgangskoden er tilgængelig."
-      ],
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Du kan til enhver tid tjekke status for din anmodning i ${ accountAndPasswordSectionLink } i indstillingerne."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "sektionen for konto og adgangskode"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15087,19 +14992,19 @@
         "Dit ${ appStorage } er fuldt"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Dit ${ storage } er ${ percentage }% fyldt. ${ cta }."
+        "Din ${ storage } er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "Dit ${ storage } er fyldt. ${ cta }."
+        "Din ${ storage } er fyldt. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Dit drev er ${ percentage }% fyldt. ${ cta }."
+        "Din lagerplads er ${ percentage }% fyldt. ${ cta }."
       ],
       "Your storage is full": [
         "Dit lager er fuldt"
       ],
       "Your storage is full. ${ cta }.": [
-        "Dit drev er fyldt. ${ cta }."
+        "Din lagerplads er fyldt. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister adgang til ${ gb } lagerplads og prioriteret support."
@@ -15232,9 +15137,6 @@
       "Got it": [
         "Forstået"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Log ind på din Apple App Store-konto, og tryk på ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log ind på din Play Store-konto, og tryk på ${ subscriptions }."
       ],
@@ -15364,6 +15266,9 @@
       ],
       "Extra storage and users": [
         "Ekstra lagerplads og brugere"
+      ],
+      "Got it": [
+        "Forstået"
       ],
       "Have a question?": [
         "Har du et spørgsmål?"
@@ -15636,12 +15541,6 @@
       "Gift code applied": [
         "Gavekode anvendt"
       ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Har du angivet en gyldig e-mail, vil du få tilsendt dine brugernavne inden for det næste minut."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Har du angivet en gyldig gendannelses-telefon, vil vi sende dig en sms med dine brugernavne inden for det næste minut."
-      ],
       "Import record deleted": [
         "Importpost slettet"
       ],
@@ -15911,6 +15810,9 @@
       ],
       "Email addresses": [
         "E-mailadresser"
+      ],
+      "Event": [
+        "Begivenhed"
       ],
       "Import": [
         "Importér"
@@ -16377,6 +16279,9 @@
       "Device connected!": [
         "Enhed tilsluttet!"
       ],
+      "Device name": [
+        "Enhedsnavn"
+      ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
       ],
@@ -16766,6 +16671,9 @@
       "PayPal verification failed": [
         "PayPal-bekræftelse fejlede"
       ],
+      "Personalise your e-mail footer": [
+        "Personliggør din e-mail-sidefod"
+      ],
       "Personalize your email footer": [
         "Personliggør din e-mail-sidefod"
       ],
@@ -16792,9 +16700,6 @@
       ],
       "Profile": [
         "Profil"
-      ],
-      "QRCode": [
-        "QR-kode"
       ],
       "Ready, set, forward": [
         "Klar, parat, videresend"
@@ -16831,9 +16736,6 @@
       ],
       "Remove single sign-on": [
         "Fjern single sign-on"
-      ],
-      "Remove single sign-on for your organization?": [
-        "Fjern single sign-on for din organisation?"
       ],
       "Remove user?": [
         "Fjern bruger?"
@@ -17343,9 +17245,6 @@
       "Set the default layout for your Inbox.": [
         "Indstil standardlayout for din indbakke."
       ],
-      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Indstiller følgende sidefod i de e-mails, du sender: ${ signature } Linket peger på dit henvisningslink. Sidefoden vises under din signatur. Du kan til enhver tid tilpasse din signatur i indstillingerne."
-      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Viser hver afsenders billede i meddelelseslisten. Afsenderens initialer vises, hvis der ikke er et billede til rådighed."
       ],
@@ -17461,9 +17360,6 @@
       ],
       "User declined invitation": [
         "Bruger afviste invitation"
-      ],
-      "Waiting user to accept the invitation": [
-        "Venter på, at brugeren accepterer invitationen"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17505,9 +17401,6 @@
     "Tor out of date": {
       "stable release": [
         "stabil udgave"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Denne version af Tor Browseren er ikke understøttet. Opdatér venligst til den nyeste ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -17869,11 +17762,6 @@
         "Dit ${ selected }-abonnement"
       ]
     },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
-      ]
-    },
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "${ n } konto pr. wallet",
@@ -17944,9 +17832,6 @@
       ]
     },
     "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.": [
-        "${ WALLET_APP_NAME } er i Tidlig Adgang. Du kan hente iOS-appen via Apple TestFlight og Android-appen via Google open testing."
-      ],
       "Coming soon": [
         "Kommer snart"
       ]
@@ -18051,12 +17936,6 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"
-      ],
-      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "Din gendannelsesfil er forældet. Den kan ikke gendanne nye data, hvis du nulstiller din konto igen."
-      ],
-      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "Din gendannelsessætning er forældet. Den kan ikke gendanne nye data, hvis du nulstiller din konto igen."
       ]
     },
     "Warning for domain modal": {

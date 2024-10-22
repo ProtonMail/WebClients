@@ -388,9 +388,6 @@
       "Next month": [
         "შემდეგი თვე"
       ],
-      "Ok": [
-        "დიახ"
-      ],
       "OK": [
         "დიახ"
       ],
@@ -456,9 +453,6 @@
       ],
       "Remove gift code": [
         "სასაჩუქრე კოდის წაშლა"
-      ],
-      "Remove single sign-on": [
-        "SSO-ის წაშლა"
       ],
       "Rename": [
         "სახელის გადარქმევა"
@@ -1133,6 +1127,47 @@
       ],
       "Continue your subscription": [
         "გააგრძელეთ თქვენი გამოწერა"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } საცავი"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } ელფოსტის საცავი"
+      ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვა"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "${ BRAND_NAME }-ის ყველა აპი და ფასიანი ფუნქციები"
+      ],
+      "Cancel and downgrade": [
+        "გაუქმება და ტარიფის ჩამოწევა"
+      ],
+      "Cloud storage and sharing for large files": [
+        "ღრუბლოვანი საცავი და გაზიარება დიდი ფაილებისთვის"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "დაშიფრული ღრუბლოვანი საცავი სურათებისა და დოკუმენტებისთვის"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
+      "Save ${ upsellSavings }": [
+        "დაზოგეთ ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "დაზოგეთ თანხა ${ upsellPlanName }-ით"
+      ],
+      "Secure personal and shared calendar": [
+        "უსაფრთხო საკუთარი და გაზიარებული კალენდარი"
+      ],
+      "Try ${ planName }": [
+        "სცადეთ ${ planName }"
+      ],
+      "Ultra fast and private VPN": [
+        "ზეჩქარი და კონფიდენციალური VPN"
       ]
     },
     "Checkout row": {
@@ -2545,9 +2580,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
       ],
-      "Please upload a square file": [
-        "ატვირთეთ ოთხკუთხედი გამოსახულება"
-      ],
       "Please upload an xml file": [
         "ატვირთეთ XML ფაილი"
       ],
@@ -2726,9 +2758,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "არსებული ${ BRAND_NAME }-ის მომხმარებლის მოწვევა"
       ],
-      "Invite member to your family": [
-        "წევრის ოჯახში მოწვევა"
-      ],
       "Set up family group": [
         "საოჯახო ჯგუფის მორგება"
       ],
@@ -2782,9 +2811,6 @@
       ],
       "Lifetime accounts cannot join a family plan.": [
         "სამუდამო ანგარიშები ოჯახის გეგმაში ვერ შევლენ."
-      ],
-      "Manage addresses.": [
-        "მისამართების მართვა."
       ],
       "Manage user accounts": [
         "მომხმარებლის ანგარიშების მართვა"
@@ -2851,14 +2877,14 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "თქვენი ანგარიში ${ usedSpace } ადგილს იკავებს, რაც თქვენთვის გამოყოფილ ${ inviteSpace }-ზე მეტია. წაშალეთ ზოგი რამ ან ტარიფის ადმინისტრატორს თქვენი საცავის გაზრდა სთხოვეთ."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "მიმდინარე სატარიფო გეგმით მოსაწვევს ვერ დაეთანხმებით."
       ]
     },
     "familyOffer_2023:Info": {
       "*Only one free trial per user. Regular pricing applies thereafter.": [
         "*მხოლოდ, ერთი უფასო სატესტო დრო ერთი მომხმარებლისთვის. შემდეგ კი ჩვეულებრივი ფასებით გადაიხდით."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "სატარიფო გეგმიდან გასვლის შემდეგ მომხმარებელი ${ BRAND_NAME }-ის უფასო სატარიფო გეგმაე გადავა"
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "თქვენი სატარიფო გეგმის მიტოვების შემდეგ ეს მომხმრებელი გადატანილი იქნება სატარიფო გეგმაზე ${ BRAND_NAME } Unlimited 30-დღიანი გამოსაცდელი პერიოდით. *"
@@ -2871,9 +2897,6 @@
       ],
       "Create and manage family members.": [
         "შექმენით და მართეთ ოჯახის წევრები."
-      ],
-      "If the user already has a ${ BRAND_NAME } account (${ domain } or other, e.g. @gmail.com), enter it here. Otherwise they need to create an account first.": [
-        "თუ მომხმარებელს ${ BRAND_NAME }-ის ანგარიში (${ domain }, ან ხვა, მაგ: @gmail.com) უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "თუ მომხმარებელს ${ MAIL_APP_NAME }-ის მისამართი უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
@@ -3389,9 +3412,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } და თქვენ მოგიწევთ, ისინი ხელით დაამატოთ ორგანიაციაში"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } თუ გააგრძელებთ, თქვენს დაშიფრულ მონაცემებთან წვდომას სრულად დაკარგავთ."
       ],
@@ -3474,9 +3494,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /თვეში)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**მიიღეთ ${ BRAND_NAME }-ის მისამართი** ${ BRAND_NAME_TWO }-ის ყველა სერვისის, ${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ჩათვლით, გამოსაყენებლად."
@@ -3733,9 +3750,6 @@
       ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "წაშალეთ ყველა სხვა MX ჩანაწერი ან დარწმუნდით, რომ ${ MAIL_APP_NAME }-ის პრიორიტეტი ყველაზე ნაკლებია."
@@ -4099,12 +4113,6 @@
       "Labels:": [
         "ჭდეები:"
       ],
-      "Lean more about gateways": [
-        "შეიტყვეთ მეტი რაუტერების შესახებ"
-      ],
-      "Lean more about single sign-on": [
-        "გაიგეთ მეტი SSO-ის შესახებ"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "ნახეთ, მესამე პირების მიერ შექმნილი VPN აპლიკაციებით ${ VPN_APP_NAME }-ში როგორ უნდა შეხვიდეთ."
       ],
@@ -4204,17 +4212,11 @@
       "No results found": [
         "შედეგების გარეშე"
       ],
-      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
-        "არა-SSO მომხმარებლებს (შექმნილი ხელით, არა მოწოდებული იდენტიფიკატორის მომწოდებლის მიერ) ორგანიზაციაში შესვლა ჯერ კიდევ შეუძლიათ"
-      ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
       ],
       "of": [
         "-დან"
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "როცა თქვენი ორგანიზაციისთვის SSO გაითიშება:"
       ],
       "Once you reset your password:": [
         "როცა პაროლს შეცვლით:"
@@ -4460,17 +4462,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
       ],
-      "Single sign-on removed": [
-        "SSO წაიშალა"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "მიუთითეთ დომენი, რომელსაც SAML SSO-ით ავთენტიკაციის უფლება აქვს."
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF განსაზღვრავს, ვის აქვს უფლება, თქვენს დომენზე ელფოსტა გამოაგზავნოს. დარწმუნდით, რომ დაამატეთ შედეგი TXT ჩანაწერ თქვენს DNS კონსოლში (პლატფორმაზე, სადაც დომენი შეიძინეთ)."
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "SSO მომხმარებლები (მოწოდებული თქვენი იდენტიფიკატორის მომწოდებლის მიერ) წაიშლება"
       ],
       "Step ${ step }": [
         "ნაბიჯი ${ step }",
@@ -4514,9 +4510,6 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "მადლობა, რომ მხარი დაგვიჭირეთ ჩვენს მისიაში, ავაგოთ უკეთესი ინტერნეტ, სადაც კონფიდენციალობა და თავისუფლება რიგში პირველია."
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "წაიშლება ავტორიზაციის დეტალები თქვენი იდენტიფიკატორის მომწოდებლიდან."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "გადმოწერების რიცხვი მოიცავს როგორც მიმდინარე გადმოწერებს, ასევე ფაილების წინასწარ გადახედვის შემთხვევებს."
@@ -5587,7 +5580,7 @@
       "Subscription options": [
         "გამოწერის პარამეტრები"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "სისტემასთან სინქრონიზაცია"
       ],
       "System information": [
@@ -5788,9 +5781,6 @@
       ],
       "Pay invoice": [
         "ინვოისის გადახდა"
-      ],
-      "Paypal without credit card": [
-        "PayPal-ი საკრედიტო ბარათის გარეშე"
       ],
       "perform a password reset from your active session": [
         "პაროლი ჩამოყრა აქტიური სესიიდან"
@@ -6159,6 +6149,10 @@
         "${ n } VPN კავშირი",
         "${ n } VPN კავშირი"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხამრებელი"
+      ],
       "${ options }-day file version history": [
         "${ options }-დღიანი ფაილის ვერსიის ისტორია",
         "${ options }-დღიანი ფაილის ვერსიის ისტორია"
@@ -6488,9 +6482,6 @@
       "Sync and backup all your files across devices": [
         "დაასინქრონეთ და დაამარქაფეთ ყველა თქვენი ფაილი ყველა თქვენს მოწყობილობაზე"
       ],
-      "Tor over VPN": [
-        "Tor VPN-ის ზემოდან"
-      ],
       "Two-factor authentication": [
         "2FA"
       ],
@@ -6792,9 +6783,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "შექმენით ${ n }-მდე ელფოსტის მისამართი/ფსევდონიმი, რომლებიც შეგიძლიათ, ოჯახის წევრებს მიანიჭოთ. გამოიყენეთ ისინი, მაგალითად, შოინგისთვის. JemalShpper@${ domain }."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "დაიცავით თავი VPN-ის გამოვლენისგან თქვენი ტრაფიკის ბევრ სერვერზე გატარებით"
       ],
@@ -6890,9 +6878,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -7457,9 +7442,6 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "გამოიყენეთ მონაცემების აღდგენის მეთოდი, დაუკავშირდით სხვა ადმინისტრატორს ან ჩამოყარეთ ორგანიზაციის გასაღები, რომ ადმინისტრატორის უფლებები აღიდგინოთ."
       ],
-      "We couldn't verify authenticity of this identity.": [
-        "ამ იდენტიფიკატორის სინამდვილის გადამოწმება შეუძლებელია."
-      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "გამომგზავნის მისამართის გასაღების უსაფრთხოების გადამოწმება ვერ შევძელით. ხანდახან გამომგზავნის ინფორმაციის განახლება ოდნავი დაყოვნებით ხდება. მოგვიანებით სცადეთ. თუ არ ენდობით ამ მოსაწვევის ან გამომგზავნის სისწორეს, დაუკავშირდით ${ BRAND_NAME }-ის მხარდაჭერის გუნს."
       ],
@@ -7809,9 +7791,6 @@
       "Changing organization password": [
         "ორგანიზაციის პაროლის შეცვლა"
       ],
-      "Creating or accessing non-private users": [
-        "არაკონფიდენციალური მომხმარებლების შექმნა ან მათთან წვდომა"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "პაროლის შეცვლის გამო თქვენი ორგანიზაციის ადმინისტრირების პრივილეგიები შეზღუდულია. აიკრძალა შემდეგი ქმედებები:"
       ]
@@ -7838,9 +7817,6 @@
       ]
     },
     "saml: Error": {
-      "Sign-in wasn't successfully completed.": [
-        "შესვლა წარმატებით არ დასრულდა."
-      ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
       ]
@@ -7901,12 +7877,6 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**წინასწარი მოთხოვნები:** SCIM გაშლისთვის SAML ავთენტიკაცია აუცილებლად ჩართული უნდა იყოს."
-      ],
-      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**წინასწარი მოთხოვნა:** SCIM გაშლის ჩასართავად, უნდა გადაამოწმოთ, გეკუთვნით თუ არა თქვენ დომენი **${ domainName }**. ამ გადამოწმებას, შეიძლება, ერთ საათამდე დასჭირდეს."
-      ],
-      "Enter token into your identity provider": [
-        "შეიყვანეთ კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
       "Enter URL and token into your identity provider": [
         "შეიყვანეთ URL და კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
@@ -8225,14 +8195,6 @@
       ],
       "We will contact you again when the password reset is available.": [
         "დაგიკავშირდებით, როცა პაროლის ჩამოყრა ხელმისაწვდომი იქნება."
-      ],
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "თქვენი მოთხოვნის სტატუსის შემოწმება ნებისმიერ დროს შეგიძლიათ, მორგების ფანჯარაში, ${ accountAndPasswordSectionLink }."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "მომხმარებლისა და პაროლის სექცია"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8728,9 +8690,6 @@
       "Got it": [
         "გავიგე"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "შედით თქვენს Apple App Store-ის ანგარიშზე და ${ subscriptions }-ს დააწექით."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "შედით თქვენს Play Store-ის ანგარიშზე და ${ subscriptions }-ს დააწექით."
       ],
@@ -8758,6 +8717,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
+      ],
       "${ dayDiff } day left": [
         "დარჩენილია ${ dayDiff } დღე",
         "დარჩენილია ${ dayDiff } დღე"
@@ -8804,6 +8766,29 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } გთავაზობთ ${ planMaxSpace } საცავს თითოეული მომხმრებლისთვის ელფოსტების, მიმაგრებული ფაილების, მოვლენებისა და პაროლებისთვის. ასევე შეგიძლიათ წლიური საცავის ბონუსების მიღებაც."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ planNumberOfCalendars } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ელფოსტის მისამართი",
+        "${ planNumberOfEmails } ელფოსტის მისამართი"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "ელფოსტის ${ planNumberOfEmails } მისამართი თითოეული მომხმარებლისთვის",
+        "ელფოსტის ${ planNumberOfEmails } მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } მომხმარებელი",
+        "${ planNumberOfUsers } მომხმარებელი"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } - ანგარიშის დამატებითი დაცვა"
+      ],
       "2 users": [
         "2 მომხმარებელი"
       ],
@@ -8843,6 +8828,9 @@
       "Comprehensive privacy and security": [
         "კომპლექსური კონფიდენციალობა და უსაფრთხოება"
       ],
+      "Dark web monitoring": [
+        "Dark Web-ის მონიტორინგი"
+      ],
       "Desktop app and email client support (via IMAP)": [
         "კომპიუტერის აპი და ელფოსტის კლიენტის მხარდაჭერა (IMAP-ით)"
       ],
@@ -8861,6 +8849,15 @@
       "Extra storage and users": [
         "დამატებითი საცავი და მომხმარებლები"
       ],
+      "Folders, labels and filters": [
+        "საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Folders, labels, and custom filters": [
+        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
       "Have a question?": [
         "კითხვები გაქვთ?"
       ],
@@ -8870,11 +8867,23 @@
       "How our customer support team got our VPN app directly into people's hands.": [
         "როგორ მოათავსა ჩვენმა მხარდაჭერის გუნდმა ჩვენი VPN-ის აპი პირდაპირ ხალხის გამოშვერილ ხელში."
       ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "როგორ შევუბრუნეთ ხელი, როცა ${ BRAND_NAME } დაიბლოკა აგრესულ კამპანიაში."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "როგორ ვუჭერდით მხარს ლოკალურ აქტივისტებს, როცა კონფიდენციალობა და თავისუფალი სიტყვა საფრთხის ქვეშ იყო."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "თუ გადააცილებთ უფასო სატარიფო გეგმის შეზღუდვებს, თქვენ არ შეგეძლებათ:"
+      ],
       "Invited members will be removed from your organization": [
         "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
       ],
       "Keep ${ config.planName }": [
         "${ config.planName }-ის დატოვება"
+      ],
+      "Keep subscription": [
+        "დატოვეთ გამოწერა"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "შეინარჩუნეთ თქვენი გუნდი უსაფრთხოდ პირდაპირ მუშაობისას ჩვენი აპებით ვებისთვის, iOS-სთვის, Android-სთვის, Windows-სთვის, Mac-სთვის და Linux-სთვის."
@@ -8884,6 +8893,9 @@
       ],
       "Learn more about our impact": [
         "გაიგეთ მეტი ჩვენი გავლენის შესახებ"
+      ],
+      "Limitations of the free plan:": [
+        "უფასო სატარიფო გეგმის შეზღუდვები:"
       ],
       "Make your business stand out": [
         "გახადეთ თქვენი ბიზნესი გამორჩეული"
@@ -8942,11 +8954,17 @@
       "Unlimited privacy for two": [
         "შეუზღუდავი კონფიდენციალობა ორისთვის"
       ],
+      "Upload any new files": [
+        "ატვირთეთ ნებისმიერი ახალი ფაილი"
+      ],
       "Users won’t be able to manage their calendars": [
         "მომხმარებლები თავიანთი კალენდრების მართვას ვერ შეძლებენ"
       ],
       "Users won’t be able to send emails": [
         "მომმხარებლები ელფოსტას ვერ გააგზავნიან"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "მომხმარებლებს თავიანთ მოწყობილობებზე ფაილების ატვირთვის საშუალება არ ექნებათ"
       ],
       "Version history": [
         "ვერსიის ისტორია"
@@ -9103,12 +9121,6 @@
       ],
       "Gift code applied": [
         "სასაჩუქრე ბარათის კოდი გადატარებულია"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "თუ ელფოსტის მისამართი სწორია, რამდენიმე წუთში თქვენ მიიღებთ ელ-ფოსტას თქვენი მომხმარებლის სახელებით."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "თუ ტელეფონის მისამართი სწორია, რამდენიმე წუთში თქვენ მიიღებთ ტექსტურ შეტყობინებას თქვენი მომხმარებლის სახელებით."
       ],
       "Invitation rejected": [
         "მოსაწვევი უარყოფილია"
@@ -9806,9 +9818,6 @@
       "Processing...": [
         "დამუშავება..."
       ],
-      "QRCode": [
-        "QR კოდი"
-      ],
       "Recommended": [
         "რეკომენდებულია"
       ],
@@ -9826,9 +9835,6 @@
       ],
       "Remove single sign-on": [
         "SSO-ის წაშლა"
-      ],
-      "Remove single sign-on for your organization?": [
-        "წავშალო SSO თქვენი ორგანიზაციისთვის?"
       ],
       "Remove user?": [
         "წავშალო მომხმარებელი?"
@@ -10149,9 +10155,6 @@
       ],
       "User declined invitation": [
         "მომხმარებელმა უარჰყო მოსაწვევი"
-      ],
-      "Waiting user to accept the invitation": [
-        "მომხმარებლის დასტურის მოლოდინი"
       ]
     },
     "Tooltip for news": {
@@ -10165,9 +10168,6 @@
     "Tor out of date": {
       "stable release": [
         "სტაბილური რელიზი"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10470,11 +10470,6 @@
       ],
       "Your ${ selected } plan": [
         "თქვენი ტარიფი ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "წვდომა Secure core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
       ]
     },
     "wallet_signup_2024: Info": {

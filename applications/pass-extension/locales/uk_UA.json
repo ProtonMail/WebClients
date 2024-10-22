@@ -550,9 +550,6 @@
       ],
       "Write us on Twitter": [
         "Напишіть нам у Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Вашого менеджера паролів немає? Запитайте його."
       ]
     },
     "bf2023: Info": {
@@ -992,9 +989,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Перейдіть на платний тарифний план, щоб створити кілька сховищ."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" елемент було відхилено"
       ],
@@ -1373,9 +1367,6 @@
       "Monitoring settings successfully updated": [
         "Налаштування відстеження успішно оновлено"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Більше, ніж менеджер паролів, ${ PASS_APP_NAME } захищає ваш пароль та вашу особисту адресу електронної пошти за допомогою псевдонімів електронної пошти. Працюючи за тією ж технологією, що й ${ MAIL_APP_NAME }, ваші дані наскрізно зашифровані та доступні лише вам."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
       ],
@@ -1520,9 +1511,6 @@
       "Select destination vault": [
         "Виберіть місце призначення"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Виберіть, де ви хочете зберегти імпортоване сховище (сховища)."
-      ],
       "Selected items permanently deleted": [
         "Вибрані елементи видалено назавжди"
       ],
@@ -1540,9 +1528,6 @@
       ],
       "Settings successfully updated": [
         "Налаштування успішно оновлені!"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Діліться своїми входами, захищеними нотатками з 10 людьми"
       ],
       "Sign in or create an account to continue.": [
         "Увійдіть або створіть обліковий запис, щоб продовжити."
@@ -1604,9 +1589,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Щоб перенести дані з іншого менеджера паролів, перейдіть до нього, експортуйте дані, а потім завантажте їх до ${ PASS_APP_NAME }. Після імпорту даних видаліть експортований файл."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Щоб переглянути імпортовані дані, натисніть на іконку \"Pass\" на панелі інструментів вашого браузера."
-      ],
       "Unable to copy to clipboard": [
         "Неможливо скопіювати в буфер обміну"
       ],
@@ -1645,9 +1627,6 @@
       ],
       "User's access removed": [
         "Доступ користувача вилучено"
-      ],
-      "User's access sucessfuly updated": [
-        "Доступ користувача успішно оновлено"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховище \"${ payload.content.name }\" успішно видалено"
@@ -1855,9 +1834,6 @@
       "Capital letters (A-Z)": [
         "Великі літери (А-Я)"
       ],
-      "Capitalise": [
-        "Великі літери"
-      ],
       "Card": [
         "Картка"
       ],
@@ -2011,9 +1987,6 @@
       "Import passwords": [
         "Імпорт паролів"
       ],
-      "Imported from : ": [
-        "Імпортовано з : "
-      ],
       "Imported on : ": [
         "Імпортовано : "
       ],
@@ -2104,7 +2077,7 @@
       "Name on card": [
         "Ім'я на картці"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Потрібна допомога?"
       ],
       "New vault": [
@@ -2277,12 +2250,6 @@
       ],
       "Today": [
         "Сьогодні"
-      ],
-      "Total imported items : ": [
-        "Всього імпортованих елементів : "
-      ],
-      "Total items : ": [
-        "Всього елементів : "
       ],
       "TOTP": [
         "TOTP"
@@ -2515,9 +2482,6 @@
       "Current version": [
         "Поточна версія"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Видалити сховище \"${ vaultName }\" ?"
-      ],
       "Discard changes?": [
         "Відхилити зміни?"
       ],
@@ -2569,9 +2533,6 @@
       "Last modified": [
         "Востаннє змінено"
       ],
-      "Leave vault ?": [
-        "Покинути сховище?"
-      ],
       "Log in as...": [
         "Увійти як..."
       ],
@@ -2607,9 +2568,6 @@
       ],
       "Pending access to the shared data": [
         "Очікування доступу до спільних даних"
-      ],
-      "Permanently remove all items ?": [
-        "Остаточно видалити всі елементи ?"
       ],
       "Pin the extension": [
         "Закріпити розширення"
@@ -2718,14 +2676,8 @@
       "Section name cannot be empty": [
         "Назва розділу не може бути пустою"
       ],
-      "Url already exists": [
-        "Url вже існує"
-      ],
       "URL cannot be empty": [
         "URL не може бути порожнім"
-      ],
-      "Url is invalid": [
-        "Неправильний Url"
       ],
       "URL is invalid": [
         "Невірне посилання"
@@ -2749,9 +2701,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Не вдалося створити сховище \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Не вдалося надіслати запрошення на наступні адреси :"
       ],
       "Duplicate email addresses.": [
         "Дублювати адресу електронної пошти."
@@ -2819,9 +2768,6 @@
       "PGP encrypted export file requires passphrase": [
         "Зашифрований файл експорту PGP вимагає парольної фрази"
       ],
-      "Please contact us for investigating the issue": [
-        "Будь ласка, зв'яжіться з нами для розслідування проблеми"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Будь ласка, перевірте свою електронну адресу, щоб використовувати псевдоніми"
       ],
@@ -2857,9 +2803,6 @@
       ],
       "Vault name is required": [
         "Потрібно вказати назву сховища"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Не можна створити більше сховищ, ніж передбачено у вашому тарифному плані."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Ви досягли ліміту учасників, які можуть отримати доступ до цього сховища."

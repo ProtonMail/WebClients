@@ -849,9 +849,6 @@
       "OK": [
         "OK"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "Open": [
         "Otvoriť"
       ],
@@ -1238,9 +1235,6 @@
       ],
       "Toggle Calendar app": [
         "Prepnúť na Kalendár"
-      ],
-      "Toggle Contact app": [
-        "Prepnúť na Kontakty"
       ],
       "Toggle security center app": [
         "Prepnúť aplikáciu centrum zabezpečenia"
@@ -3484,9 +3478,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
       ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pri importovaní prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
-      ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
         "Pre neobmedzený prístup k asistentovi písnania a ďalším možnostiami prejtide na ${ BRAND_NAME } Duo."
       ],
@@ -4266,17 +4257,8 @@
       "Request timed out": [
         "Požiadavka časovo omeškaná"
       ],
-      "Require at least one action": [
-        "Vyžaduje sa aspoň jedna akcia"
-      ],
-      "Require at least one condition": [
-        "Vyžaduje sa aspoň jedna podmienka"
-      ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Odosielanie príloh je obmedzené, kým nedosiahnete limity svojho plánu alebo neprejdete na vyššiu verziu."
-      ],
-      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
-        "Odosielanie príloh je obmedzené, kým prekračujete limity svojho plánu alebo kým si plán neupgradujete."
       ],
       "Signature not verified": [
         "Podpis nebol overený"
@@ -4442,9 +4424,6 @@
       ],
       "You did not provide a file.": [
         "Neposkytli ste súbor."
-      ],
-      "You have reached the contacts limit for your account": [
-        "Dosiahli ste limit kontaktov pre svoj účet"
       ],
       "You have reached the maximum number of calendars.": [
         "Dosiahli ste maximálny počet kalendárov."
@@ -4818,9 +4797,6 @@
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Spravovať adresy."
-      ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
       ],
@@ -4847,9 +4823,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "S vaším aktuálnym plánom nemôžete prijať túto pozvánku."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4869,9 +4842,6 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
-      "Configure your family account and invite users ": [
-        "Nakonfigurujte svoj rodinný účet a pozvite používateľov "
-      ],
       "Invite members and get everything up and running.": [
         "Pozvite členov a všetko rozbehnite."
       ],
@@ -5066,11 +5036,6 @@
         "Neprečítané"
       ]
     },
-    "Filter option to only show message with attachments": {
-      "Has file": [
-        "S prílohou"
-      ]
-    },
     "Filter preview": {
       "read": [
         "prečítané"
@@ -5162,9 +5127,6 @@
       ],
       "Start free trial": [
         "Začať bezplatnú skúšobnú verziu"
-      ],
-      "Try the app-new desktop app": [
-        "Vyskúšajte novú desktopovú aplikáciu"
       ],
       "Upgrade now": [
         "Upgradovať teraz"
@@ -5980,9 +5942,6 @@
         "(${ memberCount } členov)",
         "(${ memberCount } členov)"
       ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } mesačne)"
-      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrovanie, ak sú splnené VŠETKY nasledujúce podmienky)"
       ],
@@ -6096,9 +6055,6 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Všetky naplánované alebo odložené správy budú zrušené."
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Budú odstránené aj všetky podpriečinky. Emaily uložené v priečinku ${ nameDeleted } sa však neodstránia a nájdete ich v priečinku Všetka pošta."
       ],
       "Applying actions to conversations": [
         "Použitie akcií na konverzácie"
@@ -6432,9 +6388,6 @@
       ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Emaily označené štítkom ${ nameDeleted } nebudú vymazané a je možné ich stále nájsť v príslušnom priečinku."
       ],
       "embedded image": [
         "pripojený obrázok",
@@ -6847,9 +6800,6 @@
       "Organization size": [
         "Veľkosť organizácie"
       ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Naše upozornenia sú skôr opatrné. Ak nepoznáte žiadnu z narušených informácií, môžete túto správu pokojne ignorovať."
-      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil túto správu ako pokus o phishing. Potvrďte prosím, že ide o legitímnu správu."
       ],
@@ -7107,9 +7057,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
-      ],
-      "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Odložené do ${ dateString }, ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Odložené do dnešného dňa, ${ formattedTime }"
@@ -7387,9 +7334,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
-      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Vypnite, aby ste vyhľadávali len podľa dátumu, mena, emailovej adresy alebo predmetu. Pre zakázanie vyhľadávania správ a vymazanie stiahnutých správ, prejdite do nastavení."
-      ],
       "Turn on to search the content of your messages": [
         "Zapnite, ak chcete vyhľadávať v obsahu vašich správ"
       ],
@@ -7418,10 +7362,7 @@
         "Na odomknutie upgradujte na ${ MAIL_APP_NAME } Plus"
       ],
       "Upgrade to add more addresses to your account.": [
-        "Ak chcete do svojho konta pridať viac adries, upgradujte váš plán."
-      ],
-      "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Navýšte svoj plán a automaticky mažte správy, ktoré boli v koši a spame viac ako 30 dní."
+        "Ak chcete pridať do svojho účtu viac adries, prejdite na vyšší plán."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Upgradujte, aby ste mohli vytvárať viac priečinkov, filtrov a adries."
@@ -7539,9 +7480,6 @@
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Kedy chcete, aby sa vaša správa automaticky vymazala z doručenej pošty príjemcu a vašej odoslanej pošty?"
-      ],
-      "When do you want your message to be sent?": [
-        "Kedy chcete, aby bola Vaša správa odoslaná?"
       ],
       "When do you want your message to self-destruct?": [
         "Kedy chcete, aby sa vaša správa sama zničila?"
@@ -8589,9 +8527,6 @@
       "Sync with system": [
         "Podľa systému"
       ],
-      "Synchronize with system": [
-        "Synchronizovať so systémom"
-      ],
       "System information": [
         "Systémové informácie"
       ],
@@ -9100,9 +9035,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Obrázok nebol nahraný kvôli ochrane vášho súkromia."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "Váš prehliadač nemohol overiť identitu vzdialeného servera. Obrázok môže byť umiestnený pomocou protokolu http."
       ]
     },
     "Message notification": {
@@ -9749,9 +9681,6 @@
       "Sync and backup all your files across devices": [
         "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
       ],
-      "Tor over VPN": [
-        "TOR cez VPN"
-      ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
       ],
@@ -10007,9 +9936,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú jemne vyladené riadenie prístupu"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chráni pred hrozbou VPN súkromia tým, že internetovú prevádzku prenáša cez viacero serverov"
       ],
@@ -10105,9 +10031,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -10280,11 +10203,6 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Aby import fungoval, musíte vybrať všetky požadované položky, ako je znázornené na obrázku GIF."
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: prezerajte si emailové správy a nastavenia, prezerajte a sťahujte svoje kontakty, zobrazujte a sťahujte všetky agendy, ku ktorým máte prístup z Agendy Google."
       ]
     },
     "Onboarding List Placeholder": {
@@ -11049,9 +10967,6 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Vyskúšať ${ PASS_APP_NAME }"
-      ],
-      "Used on amazon for shopping, etc.": [
-        "Používa sa v službe Amazon na nakupovanie atď."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Keď budete požiadaní o uvedenie vašej emailovej adresy, uveďte namiesto nej tento alias. Aliasy sú poskytované pomocou ${ passLink }."
@@ -11909,9 +11824,6 @@
     "Subscription change warning": {
       "Got it": [
         "Rozumiem"
-      ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Prihláste sa do Apple Store a potom stlačte ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Prihláste sa do Obchodu Play a potom stlačte ${ subscriptions }."
@@ -13657,9 +13569,6 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na poslednú ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13738,11 +13647,6 @@
       ],
       "No ads": [
         "Žiadne reklamy"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, Tor cez VPN a ďalšie."
       ]
     },
     "wallet_signup_2024: Info": {

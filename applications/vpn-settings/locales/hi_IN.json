@@ -187,6 +187,9 @@
       "Discard": [
         "रद्द करें"
       ],
+      "Discard changes": [
+        "परिवर्तन छोड़ें"
+      ],
       "Done": [
         "पूरा हुआ"
       ],
@@ -355,9 +358,6 @@
       "Next month": [
         "अगले महीने"
       ],
-      "Ok": [
-        "ठीक है"
-      ],
       "OK": [
         "ठीक है"
       ],
@@ -420,9 +420,6 @@
       ],
       "Remove gift code": [
         "उपहार कोड हटाएं"
-      ],
-      "Remove single sign-on": [
-        "एकल साइन-ऑन हटाएं"
       ],
       "Rename": [
         "नाम बदलें"
@@ -751,6 +748,9 @@
       ],
       "External": [
         "बाहरी"
+      ],
+      "Inactive": [
+        "सक्रिय नहीं"
       ],
       "No E2EE mail": [
         "कोई E2EE मेल नहीं"
@@ -1948,6 +1948,11 @@
         "मिटा दें"
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "इस ग्रुप को पक्का मिटाएं?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "अतिदेय चालान"
@@ -2372,9 +2377,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "मौजूदा ${ BRAND_NAME } यूज़र को न्योता भेजें"
       ],
-      "Invite member to your family": [
-        "अपने परिवार में किसी को बुलाएं"
-      ],
       "Set up family group": [
         "परिवार ग्रुप सेट करें"
       ],
@@ -2416,9 +2418,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "इन्होने न्योता भेजा: ${ inviteEmail }"
-      ],
-      "Manage addresses.": [
-        "पते संभालें"
       ],
       "Manage user accounts": [
         "यूज़र खाते संभालें"
@@ -2539,15 +2538,25 @@
       "Add": [
         "जोड़ें"
       ],
+      "Add (${ totalAddedCount })": [
+        "(${ totalAddedCount }) जोड़ें",
+        "(${ totalAddedCount }) जोड़ें"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "${ plusVpnConnections } डिवाइस तक के लिए कनेक्शन",
         "अधिकतम ${ plusVpnConnections } उपकरणों के लिए कनेक्शन"
+      ],
+      "Continue": [
+        "जारी रखें"
       ],
       "Dark Web Monitoring": [
         "डार्क वेब मॉनिटरिंग"
       ],
       "Fastest VPN servers": [
         "सबसे तेज़ वीपीएन सर्वर"
+      ],
+      "Remove": [
+        "हटाएं"
       ],
       "Secure Core servers": [
         "सुरक्षित कोर सर्वर"
@@ -2915,9 +2924,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
       ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } और आपको उन्हें संगठन में वापस जोड़ने के लिए मैन्युअल रूप से बनाना होगा"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } अगर आप जारी रखते हैं तो आप अपने खाते के सभी मौजूदा एन्क्रिप्टेड डेटा तक पहुंच खो देंगे।"
       ],
@@ -2988,9 +2994,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } सदस्य)",
         "(${ memberCount } सदस्य)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /महीना)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } सहित सभी ${ BRAND_NAME_TWO } सेवाओं का उपयोग करने के लिए **${ BRAND_NAME } पता प्राप्त करें**।"
@@ -3219,9 +3222,6 @@
       ],
       "Dedicated servers": [
         "विशेष सर्वर"
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "कोई भी अन्य MX रिकॉर्ड को हटा दें या सुनिश्चित करें कि ${ MAIL_APP_NAME } की प्राथमिकता सबसे कम नंबर पे है।"
@@ -3516,12 +3516,6 @@
       "Labels:": [
         "लेबल:"
       ],
-      "Lean more about gateways": [
-        "गेटवे के बारे में और जानें"
-      ],
-      "Lean more about single sign-on": [
-        "सिंगल साइन-ऑन के बारे में और जानें"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "दूसरे वीपीएन ऐप से ${ VPN_APP_NAME } पे साइनइन करना सीखें।"
       ],
@@ -3609,17 +3603,11 @@
       "No results found": [
         "कोई परिणाम नहीं मिला"
       ],
-      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
-        "गैर-SSO यूजर (मैन्युअल रूप से बनाए गए, पहचान प्रदाता द्वारा प्रदान नहीं किए गए) अभी भी संगठन में लॉग इन कर सकते हैं"
-      ],
       "Number of dedicated servers in the organization": [
         "संगठन में विशेष सर्वरों की संख्या"
       ],
       "of": [
         "का"
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "एक बार संगठन के लिए एकल साइन-ऑन अक्षम हो जाने पर:"
       ],
       "Once you reset your password:": [
         "आप एक बार अपना पासवर्ड बदलते है तो:"
@@ -3803,17 +3791,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
       ],
-      "Single sign-on removed": [
-        "एकल साइन-ऑन हटाया गया है।"
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "वह डोमेन निर्दिष्ट करें जिसे SAML SSO के साथ प्रमाणित करने की अनुमति है।"
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF स्पष्ट करता है कि आपके डोमेन के लिए किसे ईमेल भेजने की अनुमति है। सुनिश्चित करें कि आप निम्नलिखित TXT रेकॉर्ड को अपने DNS कंसोल में जोड़ें (जो प्लेटफ़ॉर्म पर स्थित है जहां आपने कस्टम डोमेन खरीदा है)।"
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "पहचान प्रदाता द्वारा प्रदान किए गए SSO यूजर हटा दिए जाएंगे"
       ],
       "Step ${ step }": [
         "कदम ${ step }",
@@ -3851,9 +3833,6 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "एक बेहतर इंटरनेट बनाने के हमारे मिशन का समर्थन करने के लिए धन्यवाद, जहां गोपनीयता और स्वतंत्रता को प्रथमिकता दी जाती है।"
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "पहचान प्रदाता के क्रेडेंशियल मिटा दिए जाएंगे।"
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "डाउनलोड गणना में डाउनलोड और उन समय को शामिल करते है जब फ़ाइलों की झलक देखी जाती है।"
@@ -4322,6 +4301,17 @@
         "सिर्फ देखे"
       ]
     },
+    "invitation status": {
+      "Declined": [
+        "मना किए गए"
+      ],
+      "Paused": [
+        "रुका हुआ"
+      ],
+      "Pending": [
+        "अपूर्ण"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "तोहफा दिया"
@@ -4582,6 +4572,9 @@
       "Enter the code displayed on your TV": [
         "अपने टीवी पे दिखनेवाला कोड डालें"
       ],
+      "Event": [
+        "इवेंट"
+      ],
       "Expiration (${ patternExpiration })": [
         "समाप्ति (${ patternExpiration })"
       ],
@@ -4750,6 +4743,9 @@
       "Reveal password": [
         "पासवर्ड प्रकट"
       ],
+      "Search": [
+        "खोजें"
+      ],
       "Second password": [
         "दूसरा पासवर्ड"
       ],
@@ -4771,7 +4767,7 @@
       "Subscription options": [
         "सदस्यता विकल्प"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "सिस्टम के साथ तालमेल बिठाएं"
       ],
       "System information": [
@@ -4954,9 +4950,6 @@
       ],
       "Pay invoice": [
         "चालान भुगतान करें"
-      ],
-      "Paypal without credit card": [
-        "पेपैल बिना क्रेडिट कार्ड के"
       ],
       "Privacy policy": [
         "गोपनीयता नीति"
@@ -5447,9 +5440,6 @@
       "Strict no-logs policy": [
         "सख्त लॉग-नहीं नीति"
       ],
-      "Tor over VPN": [
-        "वीपीएन के ऊपर Tor"
-      ],
       "Two-factor authentication": [
         "दो तरीकों से प्रमाणीकरण"
       ],
@@ -5737,9 +5727,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "यूज़र पासवर्ड और यूज़र का दो-फैक्टर सत्यापन रीसेट करें"
       ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "एक क्लिक के साथ Tor नेटवर्क से अपने इंटरनेट ट्रैफिक को गुज़ार के ले जाएं"
-      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "अपने संपर्क डाटा, जैसे फोन नंबर, पता, जन्मदिन, और निजी नोट, को सुरक्षित रखे। ज़ीरो-एक्सेस एन्क्रिप्शन ये पक्का करता है की ${ BRAND_NAME } भी इन को एक्सेस ना कर पाए।"
       ],
@@ -5833,6 +5820,9 @@
       ],
       "Reminder has been sent": [
         "अनुस्मारक भेज दिया गया है"
+      ],
+      "Too many recent API requests": [
+        "हाल ही में बहुत से एप्रोअं अनुरोध"
       ],
       "Two-factor authentication has been enforced for administrators": [
         "प्रशासकों के लिए टू फैक्टर ऑथेंटिकेशन लागू किया गया है"
@@ -5966,6 +5956,20 @@
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "हमारे वेब ऐप पर साइन इन करने पर उपयोगकर्ताओं को ${ BRAND_NAME } आइकन के बजाय आपका चिन्ह दिखाई देगा।"
+      ]
+    },
+    "orgidentity": {
+      "Current organization identity": [
+        "वर्तमान संगठन पहचान"
+      ],
+      "Edit organization identity": [
+        "संगठन पहचान बदलें"
+      ],
+      "New organization identity": [
+        "नये संगठन की पहचान"
+      ],
+      "Organization identity": [
+        "संगठन पहचान"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6341,9 +6345,6 @@
       "Changing organization password": [
         "संगठन का पासवर्ड बदलना"
       ],
-      "Creating or accessing non-private users": [
-        "गैर-निजी उपयोगकर्ताओं को बनाना या उन तक पहुँचना"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "पासवर्ड परिवर्तन के कारण, आपके संगठन व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिए गए हैं। निम्नलिखित क्रियाओं की अब अनुमति नहीं है:"
       ]
@@ -6357,6 +6358,26 @@
       ],
       "User": [
         "यूज़र"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "कैंसिल करें"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "कोई गड़बड़ हो गई"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "जानकारी"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "ईमेल"
       ]
     },
     "scim: Action": {
@@ -6955,9 +6976,6 @@
       "Got it": [
         "समझ गए"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "बस अपने एप्पल App Store खाते पे साइनइन करके ${ subscriptions } पे जाएं।"
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "बस अपने Play Store खाते पे साइन इन करें, फिर ${ subscriptions } दबाएं।"
       ],
@@ -6990,6 +7008,9 @@
       ],
       "Cancel subscription?": [
         "सदस्यता रद्द करें?"
+      ],
+      "Got it": [
+        "ठीक है"
       ],
       "Helping activists in Hong Kong": [
         "हांगकांग में क्रांतिकारियों की सहायता करना"
@@ -7114,12 +7135,6 @@
       ],
       "Gift code applied": [
         "उपहार कोड लागू"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "यदि आप एक मान्य पुनर्प्राप्ति ईमेल दर्ज करते हैं तो हम आपको अगले मिनट में आपके उपयोगकर्ता नाम के साथ एक ईमेल भेजेंगे।"
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "यदि आप एक मान्य पुनर्प्राप्ति ईमेल दर्ज करते हैं तो हम आपको अगले मिनट में आपके उपयोगकर्ता नाम के साथ एक ईमेल भेजेंगे।"
       ],
       "Invitation sent": [
         "न्योता भेजा गया"
@@ -7289,6 +7304,9 @@
       ],
       "Email addresses": [
         "ईमेल पता"
+      ],
+      "Event": [
+        "इवेंट"
       ],
       "Invitation email": [
         "न्योता ईमेल"
@@ -7542,6 +7560,9 @@
       "Device connected!": [
         "डिवाइस जुड़ गया।"
       ],
+      "Device name": [
+        "डिवाइस नाम"
+      ],
       "Disable two-factor authentication": [
         "दो-कारक प्रमाणीकरण अक्षम करें"
       ],
@@ -7753,9 +7774,6 @@
       "Remove single sign-on": [
         "एकल साइन-ऑन हटाएं"
       ],
-      "Remove single sign-on for your organization?": [
-        "अपने संगठन के लिए एकल साइन-ऑन हटाएं?"
-      ],
       "Remove user?": [
         "यूज़र हटाएं?"
       ],
@@ -7849,6 +7867,9 @@
       ],
       "Switch to two-password mode": [
         "दो-पासवर्ड मोड पर स्विच करें"
+      ],
+      "Text": [
+        "पाठ"
       ],
       "TV sign in": [
         "टीवी पे साइनइन करें"
@@ -8033,9 +8054,6 @@
     "Tor out of date": {
       "stable release": [
         "स्थिर निस्तार"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Tor ब्राउज़र का यह संस्करण समर्थित नहीं है। कृपया नवीनतम ${ stableRelease } में अपडेट करें"
       ]
     },
     "upsell panel": {

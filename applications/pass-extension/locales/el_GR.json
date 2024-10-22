@@ -572,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "Γράψτε μας στο Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε το."
       ]
     },
     "bf2023: Info": {
@@ -1040,9 +1037,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Κάντε αναβάθμιση σε πλάνο επί πληρωμή για να δημιουργήσετε πολλαπλές κρύπτες."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Το στοιχείο \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
       ],
@@ -1330,12 +1324,6 @@
       "Expires in ${ remainingTime }": [
         "Λήγει σε ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Ο επιπλέον κωδικός πρόσβασης δημιουργήθηκε με επιτυχία"
-      ],
-      "Extra password successfuly removed": [
-        "Ο επιπλέον κωδικός πρόσβασης καταργήθηκε με επιτυχία"
-      ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
       ],
@@ -1458,9 +1446,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Οι ρυθμίσεις παρακολούθησης ενημερώθηκαν με επιτυχία"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Περισσότερο από έναν διαχειριστή κωδικών πρόσβασης, το ${ PASS_APP_NAME } προστατεύει τον κωδικό πρόσβασής σας και την προσωπική σας διεύθυνση email μέσω ψευδωνύμων email. Με την ίδια τεχνολογία πίσω από το ${ MAIL_APP_NAME }, τα δεδομένα σας είναι κρυπτογραφημένα από άκρο σε άκρο και είναι προσβάσιμα μόνο από εσάς."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
@@ -1661,9 +1646,6 @@
       "Select destination vault": [
         "Επιλογή κρύπτης προορισμού"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Επιλέξτε πού θέλετε να αποθηκεύονται η/οι κρύπτη(ες) που έχετε εισαγάγει."
-      ],
       "Selected items permanently deleted": [
         "Τα επιλεγμένα στοιχεία διαγράφηκαν οριστικά"
       ],
@@ -1684,9 +1666,6 @@
       ],
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Μοιραστείτε τα στοιχεία σύνδεσής σας, ασφαλείς σημειώσεις, με έως και 10 άτομα"
       ],
       "Sign in or create an account to continue.": [
         "Για να συνεχίσετε, εισέλθετε ή δημιουργήστε λογαριασμό."
@@ -1755,9 +1734,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Για να μεταφέρετε δεδομένα από έναν άλλο διαχειριστή κωδικών πρόσβασης, μεταβείτε στον διαχειριστή κωδικών πρόσβασης, εξαγάγετε τα δεδομένα σας και, στη συνέχεια, ανεβάστε τα στο ${ PASS_APP_NAME }. Μόλις εισαχθούν τα δεδομένα σας, διαγράψτε το εξαγόμενο αρχείο."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Για να ελέγξετε τα εισαγόμενα δεδομένα σας, κάντε κλικ στο εικονίδιο Pass στη γραμμή εργαλείων του προγράμματος περιήγησής σας."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Δοκιμάστε να φορτώσετε ξανά ή να εγκαταστήσετε ξανά την επέκταση και βεβαιωθείτε ότι το πρόγραμμα περιήγησής σας και το ${ PASS_SHORT_APP_NAME } είναι ενημερωμένα."
       ],
@@ -1805,9 +1781,6 @@
       ],
       "User's access removed": [
         "Η πρόσβαση του χρήστη καταργήθηκε"
-      ],
-      "User's access sucessfuly updated": [
-        "Η πρόσβαση του χρήστη ενημερώθηκε με επιτυχία"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Η κρύπτη \"${ payload.content.name }\" διαγράφηκε με επιτυχία"
@@ -2045,9 +2018,6 @@
       "Capital letters (A-Z)": [
         "Κεφαλαία γράμματα (A-Z)"
       ],
-      "Capitalise": [
-        "Κεφαλαιοποίηση"
-      ],
       "Card": [
         "Κάρτα"
       ],
@@ -2234,9 +2204,6 @@
       "Import passwords": [
         "Εισαγωγή κωδικών πρόσβασης"
       ],
-      "Imported from : ": [
-        "Εισαγωγή από : "
-      ],
       "Imported on : ": [
         "Εισαγωγή στο : "
       ],
@@ -2336,7 +2303,7 @@
       "Name on card": [
         "Όνομα πάνω στην κάρτα"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Χρειάζεστε βοήθεια;"
       ],
       "New vault": [
@@ -2534,12 +2501,6 @@
       ],
       "Today": [
         "Σήμερα"
-      ],
-      "Total imported items : ": [
-        "Σύνολο εισαγόμενων ειδών : "
-      ],
-      "Total items : ": [
-        "Συνολικά αντικείμενα : "
       ],
       "TOTP": [
         "TOTP"
@@ -2795,9 +2756,6 @@
       "Current version": [
         "Τρέχουσα έκδοση"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Διαγραφή'η κρύπτης \"${ vaultName }\" ;"
-      ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
@@ -2855,9 +2813,6 @@
       "Last modified": [
         "Τελευταία τροποποίηση"
       ],
-      "Leave vault ?": [
-        "Αποχώρηση από την κρύπτη;"
-      ],
       "Log in as...": [
         "Συνδεθείτε ως..."
       ],
@@ -2899,9 +2854,6 @@
       ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
-      ],
-      "Permanently remove all items ?": [
-        "Οριστική αφαίρεση όλων των στοιχείων;"
       ],
       "Pin the extension": [
         "Καρφίτσωμα της προέκτασης"
@@ -3013,14 +2965,8 @@
       "Section name cannot be empty": [
         "Το όνομα ενότητας δεν μπορεί να είναι κενό"
       ],
-      "Url already exists": [
-        "Η διεύθυνση URL υπάρχει ήδη"
-      ],
       "URL cannot be empty": [
         "Η διεύθυνση URL δεν μπορεί να είναι κενή"
-      ],
-      "Url is invalid": [
-        "Η διεύθυνση URL δεν είναι έγκυρη"
       ],
       "URL is invalid": [
         "Η διεύθυνση URL δεν είναι έγκυρη"
@@ -3053,9 +2999,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Δεν ήταν δυνατή η δημιουργία κρύπτης \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Δεν ήταν δυνατή η αποστολή προσκλήσεων στις ακόλουθες διευθύνσεις:"
       ],
       "Duplicate email addresses.": [
         "Διπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
@@ -3127,9 +3070,6 @@
       "PGP encrypted export file requires passphrase": [
         "Το κρυπτογραφημένο αρχείο εξαγωγής PGP απαιτεί φράση πρόσβασης"
       ],
-      "Please contact us for investigating the issue": [
-        "Επικοινωνήστε μαζί μας για τη διερεύνηση του ζητήματος"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Παρακαλούμε επαληθεύστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για να χρησιμοποιήσετε ψευδώνυμα διευθύνσεων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -3168,9 +3108,6 @@
       ],
       "Vault name is required": [
         "Απαιτείται όνομα κρύπτης"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Δεν μπορείτε να δημιουργήσετε περισσότερες κρύπτες από όσες επιτρέπει η συνδρομή σας."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Έχετε φτάσει το όριο των μελών που μπορούν να έχουν πρόσβαση σε αυτή την κρύπτη."

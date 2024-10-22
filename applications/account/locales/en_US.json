@@ -4,193 +4,28 @@
     "language": "en_US"
   },
   "contexts": {
-    "Action": {
-      "Ok": [
-        "OK"
-      ]
-    },
     "bf2023: Tooltip": {
       "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Includes support for ${ domains } custom email domain, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.",
         "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more."
       ]
     },
-    "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Edit (view, create or edit event details)"
-      ]
-    },
-    "Description": {
-      "Available with ${ BRAND_NAME } Mail plus": [
-        "Available with ${ BRAND_NAME } Mail Plus"
-      ],
-      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }."
-      ]
-    },
-    "Error": {
-      "Please upload a square file": [
-        "Please upload a square logo"
-      ],
-      "Require at least one action": [
-        "Add at least one action"
-      ],
-      "Require at least one condition": [
-        "Add at least one condition"
-      ],
-      "You have reached the contacts limit for your account": [
-        "You have reached the number of contacts limit for your account"
-      ]
-    },
-    "familyOffer_2023:Action": {
-      "Invite member to your family": [
-        "Invite a user"
-      ]
-    },
-    "familyOffer_2023:Family plan": {
-      "Manage addresses.": [
-        "Manage addresses"
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "You cannot accept this invitation with your current plan."
-      ]
-    },
-    "Free trial desktop": {
-      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features. ": [
-        "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features."
-      ]
-    },
     "Info": {
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization."
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/month)"
-      ],
-      "A recovery file lets you unlock and view your data after an account reset": [
-        "A recovery file lets you unlock and view your data after account recovery"
-      ],
-      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder."
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control."
-      ],
-      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder."
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Event invitations and responses will be sent in this language."
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
-      ],
-      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
-      ],
       "Invite successfully sent": [
         "Invite sent",
         "Invites sent"
       ],
-      "Lean more about gateways": [
-        "Learn more about Gateways"
-      ],
-      "Lean more about single sign-on": [
-        "Learn more about single sign-on"
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report."
-      ],
-      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers."
-      ],
-      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue."
-      ],
       "Tor": [
         "Tor"
-      ],
-      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
         "You have ${ unassignedAvailableCount } recently used server available. To allocate this server to another country, you'll have to wait until deactivation is complete.",
         "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete."
       ]
     },
-    "Label": {
-      "Synchronize with system": [
-        "Sync with system"
-      ]
-    },
-    "Link": {
-      "Paypal without credit card": [
-        "PayPal without credit card"
-      ]
-    },
-    "mail_signup_2024: Info": {
-      "All ${ BRAND_NAME } business apps and premium features to protect your entire business": [
-        "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business"
-      ]
-    },
-    "Metadata title": {
-      "Private and secure email, no credit card required": [
-        "Private and secure email, no bank card required"
-      ]
-    },
-    "new_plans: feature": {
-      "Tor over VPN": [
-        "TOR over VPN"
-      ]
-    },
     "new_plans: tooltip": {
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control"
-      ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Route your internet traffic through the TOR network with a single click"
-      ]
-    },
-    "Oauth instructions video alternative": {
-      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar."
-      ]
-    },
-    "passwordless": {
-      "We couldn't verify authenticity of this identity.": [
-        "We couldn't verify the authenticity of this identity."
-      ]
-    },
-    "Restore administrator panel": {
-      "Creating or accessing non-private users": [
-        "Creating or accessing non-private user accounts"
-      ]
-    },
-    "Safety review": {
-      "You recovery email address is:": [
-        "Your recovery email address is:"
-      ],
-      "You recovery phone number is:": [
-        "Your recovery phone number is:"
-      ],
-      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
-        "Your account and data can be recovered. You have recommended actions to safeguard your account further."
-      ]
-    },
-    "saml: Error": {
-      "Sign-in wasn't successfully completed.": [
-        "Sign in wasn't successfully completed."
-      ]
-    },
-    "scim: Info": {
-      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour."
-      ],
-      "Enter token into your identity provider": [
-        "Enter the token into your identity provider"
       ]
     },
     "session_recovery:available:info": {
@@ -205,67 +40,6 @@
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "You have ${ timeRemaining.inSeconds } second to reset your password.",
         "You have ${ timeRemaining.inSeconds } seconds to reset your password."
-      ]
-    },
-    "session_recovery:initiation:info": {
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "in the Account and password section"
-      ]
-    },
-    "Subscription change warning": {
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Just sign in to your Apple App Store account, then select ${ subscriptions }."
-      ]
-    },
-    "Success": {
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "You will receive your username via email within a minute if you entered a valid recovery email address."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "You will receive your username via SMS within a minute if you entered a valid recovery phone number."
-      ]
-    },
-    "Title": {
-      "QRCode": [
-        "QR Code"
-      ]
-    },
-    "Tooltip": {
-      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings."
-      ]
-    },
-    "tooltip": {
-      "Waiting user to accept the invitation": [
-        "Waiting for user to accept the invitation"
-      ]
-    },
-    "Tor out of date": {
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
-      ]
-    },
-    "wallet_signup_2024:Info": {
-      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google open testing.": [
-        "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing."
-      ]
-    },
-    "Warning": {
-      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "Your recovery file is outdated. It can't recover new data if you reset your password again."
-      ],
-      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "Your recovery phrase is outdated. It can't recover new data if you reset your password again."
       ]
     }
   }

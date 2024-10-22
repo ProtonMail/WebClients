@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -85,6 +85,9 @@
       ],
       "Add domain": [
         "Rnu taɣult"
+      ],
+      "Add email address": [
+        "Rnu tansa n yimayl"
       ],
       "Add filter": [
         "Rnu imsizdeg"
@@ -160,9 +163,6 @@
       ],
       "Change keys": [
         "Beddel isura"
-      ],
-      "Change other email subscriptions": [
-        "Beddel ijerriden-nniḍen s yimayl"
       ],
       "Change password": [
         "Snifel awal uffir"
@@ -329,6 +329,9 @@
       "Discard": [
         "Sefsex"
       ],
+      "Domain name": [
+        "Isem n Taɣult"
+      ],
       "Don't show again": [
         "Ur skanay ara tikkelt-nniḍen"
       ],
@@ -364,6 +367,9 @@
       ],
       "Edit Gateway": [
         "Ẓreg tanezgert"
+      ],
+      "Edit group": [
+        "Beddel agraw"
       ],
       "Edit label": [
         "Ẓreg tabzimt"
@@ -611,9 +617,6 @@
       "OK": [
         "Ih"
       ],
-      "Ok": [
-        "Ih"
-      ],
       "Open": [
         "Ldi"
       ],
@@ -739,9 +742,6 @@
       ],
       "Restore": [
         "Err-d"
-      ],
-      "Resubscribe": [
-        "Ales ajerred"
       ],
       "Resume": [
         "Kemmel"
@@ -1162,6 +1162,9 @@
       "External": [
         "Azɣaray"
       ],
+      "Inactive": [
+        "Ur iteddu yara"
+      ],
       "No E2EE mail": [
         "Ulac imayl E2EE"
       ],
@@ -1493,9 +1496,6 @@
       ]
     },
     "Calendar sharing access option label": {
-      "Edit (view, create and edit event details)": [
-        "Ẓreg (sken, rnu, ẓreg talqayt n tedyant)"
-      ],
       "View (see all event details)": [
         "Taskant (wali meṛṛa talqayt n tedyant)"
       ]
@@ -2918,17 +2918,20 @@
       ]
     },
     "Email Unsubscribe": {
+      "Change other email subscriptions": [
+        "Beddel ijerriden-nniḍen s yimayl"
+      ],
       "Email subscriptions": [
         "Ijerriden s yimayl"
+      ],
+      "Resubscribe": [
+        "Ales ajerred"
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Anwi imaylen i tebɣiḍ ad tenremseḍ sɣur ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Tulseḍ ajerred ɣer yimaylen ${ categoriesJsx }."
-      ],
-      "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Teffɣeḍ seg ujerred ɣer yimaylen ${ categoriesJsx }."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -3312,12 +3315,6 @@
       ],
       "Request timed out": [
         "Akud n usuter yemmut"
-      ],
-      "Require at least one action": [
-        "Yesra ma ulac yiwet n tigawt"
-      ],
-      "Require at least one condition": [
-        "Yesra ma ulac yiwet n tewtilt"
       ],
       "Signature not verified": [
         "Azmul ur yettwasenqed ara"
@@ -3841,9 +3838,6 @@
       "Invited by: ${ inviteEmail }": [
         "Isnubget-it: ${ inviteEmail }"
       ],
-      "Manage addresses.": [
-        "Sefrek tansiwin."
-      ],
       "Manage user accounts": [
         "Sefrek imiḍanen n useqdac"
       ],
@@ -3939,8 +3933,14 @@
         "Tuqqna alamma d ${ plusVpnConnections } n yibenk",
         "Tuqqna alamma d ${ plusVpnConnections } n yibenkan"
       ],
+      "Continue": [
+        "Kemmel"
+      ],
       "Fastest VPN servers": [
         "Iqeddacen VPN irurad"
+      ],
+      "Remove": [
+        "Kkes"
       ],
       "Secure Core servers": [
         "Iqeddacen Secure Core"
@@ -4243,6 +4243,16 @@
       "${ memberCount } member": [
         "${ memberCount } n uεeggal",
         "${ memberCount } n yiεeggalen"
+      ]
+    },
+    "Group state": {
+      "Active": [
+        "Urmid"
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "Tzemreḍ ad tmedleḍ iccer-agi s tɣellist."
       ]
     },
     "Header": {
@@ -4779,9 +4789,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } n uɛeggal)",
         "(${ memberCount } n yiɛeggalen)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /wayyur)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Sizdeg ma AKK tiwtilin-agi llant)"
@@ -5334,9 +5341,6 @@
       "Large imports can take several days.": [
         "Tektert tameqrant tezmer ad teṭṭef aṭas n wussan."
       ],
-      "Lean more about gateways": [
-        "Issin ugar ɣef tqenṭyar"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Issin amek ara tkecmeḍ ɣer ${ VPN_APP_NAME } s yisnasen VPN n wis kraḍ."
       ],
@@ -5555,6 +5559,9 @@
       ],
       "read our two-factor authentication guide first": [
         "taɣuri n umnir amezwaru n usesteb s snat n tarrayin"
+      ],
+      "Recently used servers:": [
+        "Iqeddacen yettusqedcen melmi kan:"
       ],
       "Recovery file downloaded": [
         "Afae n tririt tettwasader-d"
@@ -5953,9 +5960,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Tzemreḍ ad tesneqdeḍ asesfer n ${ importProgressLink }."
       ],
-      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Tzemreḍ ad tremdeḍ asniɣmes n tuqqniwin ar umiḍan-ik akken ad twaliḍ inekcumen ɣur-s akked tansiwin IP yellan deffir tuqqna. Ad nessekles i yal aɛraḍ n tuqqna, tansa IP taɣbalut, azemz d wakud, akked tuqqniwin yeccḍen."
-      ],
       "You can import one data type at a time.": [
         "Tzemreḍ ad tketreḍ yiwen wanaw n yiqefka ɣef tikkelt."
       ],
@@ -6111,6 +6115,17 @@
     "Input placeholder": {
       "Add label": [
         "Rnu tabzimt"
+      ]
+    },
+    "invitation status": {
+      "Declined": [
+        "Yettwagi"
+      ],
+      "Paused": [
+        "Tarist"
+      ],
+      "Pending": [
+        "Asenteḍ"
       ]
     },
     "Invoice state display as badge": {
@@ -6734,6 +6749,9 @@
       "Digits": [
         "Izwilen"
       ],
+      "Disabled": [
+        "Yensa"
+      ],
       "Display name": [
         "Isem ara d-yettwaskanen"
       ],
@@ -7061,6 +7079,9 @@
       "Recovery phrase": [
         "Tafyirt n tririt"
       ],
+      "Remove image metadata": [
+        "Kkes idefrisefka n tugna"
+      ],
       "Repeat password": [
         "Ales awal uffir"
       ],
@@ -7072,6 +7093,9 @@
       ],
       "Reveal password": [
         "Sken awal uffir"
+      ],
+      "Search": [
+        "Nadi"
       ],
       "Security code (${ codeName })": [
         "Tangalt n tɣellist (${ codeName })"
@@ -7142,7 +7166,7 @@
       "Subscription options": [
         "Tixtiṛiyin n umulteɣ"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "Mtawi akked unagraw"
       ],
       "System information": [
@@ -7440,9 +7464,6 @@
       "Pay invoice": [
         "Xelleṣ tafaturt"
       ],
-      "Paypal without credit card": [
-        "PayPal war takarḍa n usmad"
-      ],
       "Privacy policy": [
         "Tasertit n tbaḍnit"
       ],
@@ -7622,9 +7643,6 @@
       ],
       "Create a new ${ appName } account": [
         "Rnu amiḍan amaynut ${ appName }"
-      ],
-      "Private and secure email, no credit card required": [
-        "Imayl uslug, aɣellsan. Ur tettwasra ara tkarḍa n usmad"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Wennez awal-ik uffir n umiḍan ${ BRAND_NAME }"
@@ -8086,9 +8104,6 @@
       "Strict no-logs policy": [
         "Tasertit tuḥrist war aɣmis"
       ],
-      "Tor over VPN": [
-        "Tor ɣef VPN"
-      ],
       "Two-factor authentication": [
         "Asesteb s snat n tarrayin"
       ],
@@ -8201,9 +8216,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Aḥezzeb mgal agezzu ɣer tbaḍnit VPN s usεeddi n isefka-inek·inem internet ɣef iqeddacen imgaraden."
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Azen timahilin-ik•im n internet s useqdec n uzeṭṭa Tor s yiwen n usiti"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield yettufeṣṣel s wudem uslig i ummesten n yibenk-inek·inem yerna ad yerr iminig-ik·im ad iteddu s zzerb s usewḥel n udellel, imakaren d yir yiseɣẓanen"
@@ -8590,6 +8602,11 @@
       ],
       "Merge with calendar": [
         "Smezdi akked uwitay"
+      ]
+    },
+    "orgidentity": {
+      "Verify": [
+        "Senqed"
       ]
     },
     "OS compatibility": {
@@ -9087,6 +9104,40 @@
         "Aseqdac"
       ]
     },
+    "Safety review": {
+      "Download ${ size }": [
+        "Sader ${ size }"
+      ],
+      "Invalid code": [
+        "Yir tangalt"
+      ],
+      "Show more": [
+        "Sken-d ugar"
+      ],
+      "Verify": [
+        "Senqed"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "Sefsex"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Yella wayen yeḍran"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "Ifatusen"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "Imayl"
+      ]
+    },
     "scim: Action": {
       "Generate token": [
         "Sirew ajutun"
@@ -9574,6 +9625,9 @@
       "Cancel subscription?": [
         "Sefsex ajerred?"
       ],
+      "Got it": [
+        "Gziɣ-t"
+      ],
       "Learn more": [
         "Issin ugar"
       ],
@@ -9694,12 +9748,6 @@
       ],
       "Gift code applied": [
         "Tangalt n usefk tedda"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Ma teskecmeḍ imayl n tririt ameɣtu ad ak·am-d-nazen imayl deg-s ismawen-ik·im n useqdac deg tesdat i d-itteddun."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Ma teskecmeḍ tiliɣri n tririt ameɣtu ad ak·am-d-nazen sms deg-s ismawen-ik·im n useqdac deg tesdat i d-itteddun."
       ],
       "Import record deleted": [
         "Kter asekles yettwakksen"
@@ -10058,6 +10106,9 @@
       "Add users": [
         "Rnu iseqdacen"
       ],
+      "Address": [
+        "Tansa"
+      ],
       "Allocate storage": [
         "Ḥerr tallunt n usekles"
       ],
@@ -10290,6 +10341,9 @@
       "Device connected!": [
         "Ibenk yeqqnen!"
       ],
+      "Device name": [
+        "Isem n yibenk"
+      ],
       "Disable two-factor authentication": [
         "Sens asesteb s snat n tarrayin"
       ],
@@ -10434,6 +10488,9 @@
       ],
       "Gift code": [
         "Tangalt n usefk"
+      ],
+      "Group": [
+        "Agraw"
       ],
       "Groups": [
         "Igrawen"
@@ -10582,6 +10639,9 @@
       ],
       "PayPal verification failed": [
         "Asenqed n PayPal yecceḍ"
+      ],
+      "Personalise your e-mail footer": [
+        "Sagen aḍar n usebter n yimayl-ik"
       ],
       "Phone": [
         "Tiliɣri"
@@ -10765,6 +10825,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Ḥader akken ur tessruḥuyeḍ ara isefka!"
+      ],
+      "Text": [
+        "Aḍris"
       ],
       "Theme": [
         "Asentel"
@@ -11075,9 +11138,11 @@
     "Tor out of date": {
       "stable release": [
         "lqem urkid"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Lqem-agi n yiminig Tor ur yettwadhel ara. Ma ulac uɣilif leqqem ɣer ${ stableRelease } aneggaru"
+      ]
+    },
+    "unprivatization": {
+      "Cancel": [
+        "Sefsex"
       ]
     },
     "Update font modal": {
@@ -11333,12 +11398,6 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Aneɛruḍ-ik n baṭel ad ifakk deg ${ textDate }. ${ action }"
-      ],
-      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "Afaylu-inek•inem n tririt ifut-it lḥal. Ur yettizmir ad d-yerr isefka ma tulseḍ awennez n umiḍan-inek•inem tikkelt-nniḍen."
-      ],
-      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "Tafyirt-inek•inem n tririt ifut-it lḥal. Ur yettizmir ad d-yerr isefka ma tulseḍ awennez n umiḍan-inek•inem tikkelt-nniḍen."
       ]
     },
     "Warning for domain modal": {

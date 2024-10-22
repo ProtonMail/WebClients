@@ -568,9 +568,6 @@
       ],
       "Write us on Twitter": [
         "Skriv til os på Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Er din adgangskodeadministrator her ikke? Anmod om den."
       ]
     },
     "bf2023: Info": {
@@ -898,7 +895,7 @@
         "Sikkert link kunne ikke åbnes."
       ],
       "Settings update failed": [
-        "Ændring af indstillinger mislykkedes"
+        "Opdatering af indstillinger mislykkedes"
       ],
       "Signature verification failed": [
         "Bekræftelse af signatur mislykkedes"
@@ -1068,9 +1065,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Opgrader til et betalt abonnement for at oprette flere bokse."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" element blev afvist"
       ],
@@ -1135,9 +1129,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Brug af ${ PASS_APP_NAME } kræver dit fingeraftryk eller enhedens pinkode."
-      ],
-      "Add your custom email address to monitor :": [
-        "Tilføj din brugerdefinerede e-mailadresse, som skal monitoreres:"
       ],
       "Admin": [
         "Admin"
@@ -1334,12 +1325,6 @@
       "Expires in ${ remainingTime }": [
         "Udløber om ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Ekstra adgangskode oprettet med succes"
-      ],
-      "Extra password successfuly removed": [
-        "Ekstra adgangskode fjernet med succes"
-      ],
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
       ],
@@ -1487,9 +1472,6 @@
       "Monitoring settings successfully updated": [
         "Indstillinger for monitorering opdateret"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mail-aliasser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
@@ -1538,9 +1520,6 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineadgang til ${ PASS_APP_NAME } kræver en PIN-kode. Du bliver logget ud efter 3 mislykkede forsøg."
       ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Vores advarsler er baseret på forsigtighed. Hvis du ikke genkender nogen af de lækkede oplysninger, kan du trygt ignorere denne rapport."
-      ],
       "Owner": [
         "Ejer"
       ],
@@ -1564,7 +1543,7 @@
         "Sat på pause"
       ],
       "Permanently deleting selected items": [
-        "De valgte elementer slettes permanent"
+        "Sletter valgte elementer permanent"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Pinkode registreret. Brug den til at låse ${ PASS_APP_NAME } op."
@@ -1677,9 +1656,6 @@
       "Select vault to share": [
         "Vælg boks til deling"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Vælg, hvor du vil gemme din(e) importerede boks(e)."
-      ],
       "Selected items permanently deleted": [
         "De valgte elementer blev slettet permanent"
       ],
@@ -1700,9 +1676,6 @@
       ],
       "Settings successfully updated": [
         "Indstillingerne blev opdateret"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Del dine logins og sikre noter med op til 10 personer"
       ],
       "Sign in to your account": [
         "Log ind på din konto"
@@ -1774,9 +1747,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For at migrere data fra en anden adgangskodeadministrator skal du gå til adgangskodeadministratoren, eksportere dine data og derefter uploade dem til ${ PASS_APP_NAME }. Når dine data er blevet importeret, skal du slette den eksporterede fil."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "For at gennemgå dine importerede data skal du klikke på Pass-ikonet i din browsers værktøjslinje."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
       ],
@@ -1812,9 +1782,6 @@
       ],
       "User's access removed": [
         "Brugers adgang fjernet"
-      ],
-      "User's access sucessfuly updated": [
-        "Brugers adgang opdateret"
       ],
       "username": [
         "brugernavn"
@@ -2050,9 +2017,6 @@
       "Capital letters (A-Z)": [
         "Store bogstaver (A-Z)"
       ],
-      "Capitalise": [
-        "Brug store bogstaver"
-      ],
       "Card": [
         "Kort"
       ],
@@ -2242,9 +2206,6 @@
       "Import passwords": [
         "Importér adgangskoder"
       ],
-      "Imported from : ": [
-        "Importeret fra : "
-      ],
       "Imported on : ": [
         "Importeret : "
       ],
@@ -2344,8 +2305,8 @@
       "Name on card": [
         "Navn på kort"
       ],
-      "Need help ?": [
-        "Brug for hjælp?"
+      "Need help?": [
+        "Behov for hjælp?"
       ],
       "New vault": [
         "Ny boks"
@@ -2536,12 +2497,6 @@
       ],
       "Today": [
         "I dag"
-      ],
-      "Total imported items : ": [
-        "Samlet antal importerede elementer : "
-      ],
-      "Total items : ": [
-        "Elementer i alt : "
       ],
       "TOTP": [
         "TOTP"
@@ -2859,9 +2814,6 @@
       "Dark Web Monitoring": [
         "Monitorering af det mørke net"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Slet boksen \"${ vaultName }\"?"
-      ],
       "Details": [
         "Detaljer"
       ],
@@ -2918,9 +2870,6 @@
       ],
       "Last modified": [
         "Sidst ændret"
-      ],
-      "Leave vault ?": [
-        "Forlad boks?"
       ],
       "Loading breaches...": [
         "Indlæser databrud..."
@@ -2981,9 +2930,6 @@
       ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
-      ],
-      "Permanently remove all items ?": [
-        "Fjern alle elementer permanent?"
       ],
       "Pinned (${ items.length })": [
         "Fastgjorte (${ items.length })"
@@ -3123,14 +3069,8 @@
       "Section name cannot be empty": [
         "Sektionsnavn kan ikke være tomt"
       ],
-      "Url already exists": [
-        "URL eksisterer allerede"
-      ],
       "URL cannot be empty": [
         "URL må ikke være tom"
-      ],
-      "Url is invalid": [
-        "URL er ugyldig"
       ],
       "URL is invalid": [
         "URL er ugyldig"
@@ -3160,9 +3100,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke oprette boksen \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Kunne ikke sende invitationer til følgende adresser :"
       ],
       "Duplicate email addresses.": [
         "Dubletter af e-mailadresser."
@@ -3252,9 +3189,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Tjek venligst, om udvidelsen er korrekt installeret og aktiveret"
       ],
-      "Please contact us for investigating the issue": [
-        "Kontakt os, så vi kan undersøge problemet"
-      ],
       "Please update the extension to its latest version": [
         "Opdater venligst udvidelsen til den nyeste version"
       ],
@@ -3302,9 +3236,6 @@
       ],
       "Verification code is required": [
         "Bekræftelseskode er påkrævet."
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Du kan ikke oprette flere bokse, end dit abonnement tillader."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nået grænsen for medlemmer, der kan få adgang til denne boks."
