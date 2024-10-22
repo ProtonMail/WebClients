@@ -385,9 +385,6 @@
       "Next month": [
         "Mês seguinte"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
       ],
@@ -450,9 +447,6 @@
       ],
       "Remove gift code": [
         "Remover código de oferta"
-      ],
-      "Remove single sign-on": [
-        "Remover o início de sessão único"
       ],
       "Rename": [
         "Renomear"
@@ -531,6 +525,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Selecionar ciclo de faturação ${ billingText }"
       ],
       "Select country": [
         "Selecionar país"
@@ -795,6 +792,9 @@
       ],
       "External": [
         "Externo"
+      ],
+      "Inactive": [
+        "Inativa"
       ],
       "No E2EE mail": [
         "E-mail sem E2EE"
@@ -1976,6 +1976,11 @@
         "Eliminar o domínio?"
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "Tem a certeza de que deseja eliminar este grupo?"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Fatura em dívida"
@@ -2446,9 +2451,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "Convidar um utilizador do ${ BRAND_NAME } existente"
       ],
-      "Invite member to your family": [
-        "Convidar um membro para a sua família"
-      ],
       "Set up family group": [
         "Definir o grupo familiar"
       ],
@@ -2493,9 +2495,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
-      ],
-      "Manage addresses.": [
-        "Gerir endereços."
       ],
       "Manage user accounts": [
         "Gerir as contas dos utilizadores"
@@ -2542,9 +2541,6 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "A sua conta está a utilizar ${ usedSpace } de armazenamento, o que excede o ${ inviteSpace } que lhe foi atribuído. Elimine alguns dados ou peça ao administrador do plano para aumentar o seu armazenamento."
-      ],
-      "Your cannot accept this invitation with your current plan.": [
-        "Não pode aceitar este convite com o seu plano atual."
       ]
     },
     "familyOffer_2023:Info": {
@@ -2658,15 +2654,25 @@
       "Add": [
         "Adicionar"
       ],
+      "Add (${ totalAddedCount })": [
+        "Adicionar (${ totalAddedCount })",
+        "Adicionar (${ totalAddedCount })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Ligação para ${ plusVpnConnections } dispositivo",
         "Ligação para até ${ plusVpnConnections } dispositivos"
+      ],
+      "Continue": [
+        "Continuar"
       ],
       "Dark Web Monitoring": [
         "Monitoramento da Dark Web"
       ],
       "Fastest VPN servers": [
         "Servidores VPN mais rápidos"
+      ],
+      "Remove": [
+        "Remover"
       ],
       "Secure Core servers": [
         "Servidores Secure Core"
@@ -3040,6 +3046,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continuar, perderá o acesso a todos os dados encriptados existentes na sua conta."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
       ],
@@ -3098,9 +3107,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice } /mês)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obtenha um endereço ${ BRAND_NAME } ** para usar todos os serviços ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
@@ -3300,9 +3306,6 @@
       ],
       "Dedicated servers": [
         "Servidores dedicados"
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
@@ -3588,9 +3591,6 @@
       "Labels:": [
         "Etiquetas:"
       ],
-      "Lean more about gateways": [
-        "Saiba mais sobre gateways"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Saiba como iniciar sessão no ${ VPN_APP_NAME } com aplicações de VPN de terceiros."
       ],
@@ -3814,6 +3814,9 @@
       ],
       "read our two-factor authentication guide first": [
         "leia primeiro o nosso guia de autenticação de dois fatores"
+      ],
+      "Recently used servers:": [
+        "Servidores recentemente utilizados:"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado em dispositivos confiáveis. ${ keepMeSignedInLearnMoreLink }"
@@ -4411,6 +4414,17 @@
         "Ver apenas"
       ]
     },
+    "invitation status": {
+      "Declined": [
+        "Recusado"
+      ],
+      "Paused": [
+        "Em pausa"
+      ],
+      "Pending": [
+        "Pendente"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "Oferecido"
@@ -4668,6 +4682,9 @@
       "Enter the code displayed on your TV": [
         "Introduza o código mostrado na sua TV"
       ],
+      "Event": [
+        "Evento"
+      ],
       "Expiration (${ patternExpiration })": [
         "Expiração (${ patternExpiration })"
       ],
@@ -4821,6 +4838,9 @@
       "Reveal password": [
         "Mostrar a palavra-passe"
       ],
+      "Search": [
+        "Pesquisar"
+      ],
       "Second password": [
         "Segunda palavra-passe"
       ],
@@ -4839,7 +4859,7 @@
       "Subscription options": [
         "Opções da subscrição"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "Sincronizar com o sistema"
       ],
       "System information": [
@@ -5026,9 +5046,6 @@
       ],
       "Pay invoice": [
         "Pagar fatura"
-      ],
-      "Paypal without credit card": [
-        "Paypal sem cartão de crédito"
       ],
       "Privacy policy": [
         "Política de privacidade"
@@ -5597,9 +5614,6 @@
       "Support for up to 2 users": [
         "Suporte para até 2 usuários"
       ],
-      "Tor over VPN": [
-        "Tor sobre VPN"
-      ],
       "Two-factor authentication": [
         "Autenticação em dois fatores"
       ],
@@ -5655,6 +5669,16 @@
       "Vault sharing (up to ${ n } person)": [
         "Partilha de cofre (até ${ n } pessoa)",
         "Partilha de cofre (até ${ n } pessoas)"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
       ]
     },
     "new_plans: feature info": {
@@ -5818,9 +5842,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crie até ${ n } endereços de e-mail ou aliases que pode atribuir aos membros da sua família. Utilize-os como identidades digitais como, por exemplo, JoaoCompras@${ domain } para contas de comércio eletrónico."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso ajustado"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
       ],
@@ -5895,9 +5916,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Reponha as palavras-passe dos utilizadores e a autenticação de dois fatores."
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Envie todo o seu tráfego na internet através da rede Tor com um único clique."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
@@ -6035,6 +6053,9 @@
       "Reminder has been sent": [
         "O lembrete foi enviado."
       ],
+      "Too many recent API requests": [
+        "Demasiados pedidos API recentes"
+      ],
       "Two-factor authentication has been enforced for administrators": [
         "A autenticação de dois fatores foi imposta aos administradores."
       ],
@@ -6144,6 +6165,20 @@
     "Organization logo upload modal": {
       "File in PNG or JPEG format": [
         "Ficheiro em formato PNG ou JPEG"
+      ]
+    },
+    "orgidentity": {
+      "Edit organization identity": [
+        "Editar a identidade da organização"
+      ],
+      "New organization identity": [
+        "Nova identidade da organização"
+      ],
+      "Organization identity": [
+        "Identidade da organização"
+      ],
+      "Verify": [
+        "Verificar"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -6269,9 +6304,6 @@
       ],
       "The organization key must be activated first.": [
         "Tem de ativar a chave da organização primeiro."
-      ],
-      "We couldn't verify authenticity of this identity.": [
-        "Não foi possível verificar a autenticidade desta identidade."
       ],
       "We have verified the authenticity of this identity.": [
         "Nós verificamos a autenticidade desta identidade."
@@ -6551,6 +6583,16 @@
         "Utilizador"
       ]
     },
+    "saml: Action": {
+      "Cancel": [
+        "Cancelar"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "Ocorreu um erro"
+      ]
+    },
     "saml: Info": {
       "Details": [
         "Detalhes"
@@ -6559,6 +6601,11 @@
     "saml: Label": {
       "Email": [
         "E-mail"
+      ]
+    },
+    "saml: Title": {
+      "Test SAML configuration": [
+        "Testar a configuração SAML"
       ]
     },
     "scim: Action": {
@@ -6837,14 +6884,6 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Iremos contactá-lo novamente quando a redefinição de palavra-passe estiver disponível."
-      ],
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Pode verificar o estado do seu pedido a qualquer momento nas ${ accountAndPasswordSectionLink } das definições."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "secção de conta e palavra-passe"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -7291,9 +7330,6 @@
       "Got it": [
         "Entendido"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Basta iniciar sessão na sua conta da Apple App Store e, em seguida, premir ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Basta iniciar sessão na sua conta da Play Store e, em seguida, premir ${ subscriptions }."
       ],
@@ -7346,6 +7382,9 @@
       ],
       "Extra storage and bonuses": [
         "Armazenamento adicional e bónus"
+      ],
+      "Got it": [
+        "Entendido"
       ],
       "Have a question?": [
         "Tem uma pergunta?"
@@ -7506,12 +7545,6 @@
       ],
       "Gift code applied": [
         "Código de oferta aplicado"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Se inseriu um e-mail de recuperação válido, enviar-lhe-emos um e-mail com o seu nome de utilizador no próximo minuto."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Se inseriu um telefone de recuperação válido, enviar-lhe-emos uma mensagem com o seu nome de utilizador no próximo minuto."
       ],
       "Invitation rejected": [
         "O convite foi rejeitado."
@@ -7693,6 +7726,9 @@
       ],
       "Email addresses": [
         "Endereços de e-mail"
+      ],
+      "Event": [
+        "Evento"
       ],
       "Invitation email": [
         "E-mail de convite"
@@ -7961,6 +7997,9 @@
       "Device connected!": [
         "Dispositivo ligado!"
       ],
+      "Device name": [
+        "Nome do dispositivo"
+      ],
       "Disable two-factor authentication": [
         "Desativar a autenticação de dois fatores"
       ],
@@ -8165,9 +8204,6 @@
       ],
       "Processing...": [
         "A processar..."
-      ],
-      "QRCode": [
-        "QRCode"
       ],
       "Recommended": [
         "Recomendado"
@@ -8472,9 +8508,11 @@
     "Tor out of date": {
       "stable release": [
         "lançamento estável"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Esta versão do Tor Browser não é suportada. Por favor, actualize para a última versão ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Revoke access": [
+        "Revogar o acesso"
       ]
     },
     "upsell panel": {
@@ -8666,11 +8704,6 @@
       ],
       "Your ${ selected } plan": [
         "O seu plano ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Acesso a servidores Secure Core, transferências P2P/BitTorrent rápidas, Tor sobre VPN e mais."
       ]
     },
     "VPNClient": {

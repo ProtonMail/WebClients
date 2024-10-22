@@ -125,6 +125,12 @@
       "Discard": [
         "کنارگذاری"
       ],
+      "Discard changes": [
+        "لغو تغییرات"
+      ],
+      "Domain name": [
+        "نام دامنه"
+      ],
       "Done": [
         "انجام شد"
       ],
@@ -145,6 +151,9 @@
       ],
       "Edit email address": [
         "ویرایش رایانشانی"
+      ],
+      "Edit group": [
+        "ویرایش گروه"
       ],
       "Edit phone number": [
         "ویرایش شماره تلفن"
@@ -229,9 +238,6 @@
       ],
       "Next month": [
         "ماه بعد"
-      ],
-      "Ok": [
-        "تایید"
       ],
       "OK": [
         "تایید"
@@ -392,6 +398,9 @@
       "Sign in": [
         "ورود"
       ],
+      "Sign in with password": [
+        "ورود با گذرواژه"
+      ],
       "Sign in with SSO": [
         "ورود با احراز هویت یکپارچه"
       ],
@@ -539,6 +548,9 @@
         "پیش‌فرض"
       ],
       "Disabled": [
+        "غیرفعال"
+      ],
+      "Inactive": [
         "غیرفعال"
       ],
       "Orphan": [
@@ -1614,6 +1626,11 @@
         "حذف"
       ]
     },
+    "Delete group prompt": {
+      "Are you sure you want to delete this group?": [
+        "آیا مطمئن هستید که می‌خواهید این گروه را حذف کنید؟"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "صورت‌حساب‌ واگذاشته"
@@ -1919,9 +1936,6 @@
       "customer support": [
         "پشتیبانی مشتری"
       ],
-      "Manage addresses.": [
-        "مدیریت نشانی‌ها."
-      ],
       "Pending": [
         "در انتظار"
       ]
@@ -1956,8 +1970,14 @@
         "اتصال حداکثر تا ${ plusVpnConnections } دستگاه",
         "اتصال حداکثر تا ${ plusVpnConnections } دستگاه"
       ],
+      "Continue": [
+        "ادامه"
+      ],
       "Fastest VPN servers": [
         "سریع‌ترین سرورهای وی‌پی‌ان"
+      ],
+      "Remove": [
+        "حذف کردن"
       ],
       "Secure Core servers": [
         "سرورهای هسته امن"
@@ -2562,6 +2582,9 @@
       "read our two-factor authentication guide first": [
         "ابتدا راهنمای تایید هویت دو مرحله‌ای ما را مطالعه کنید"
       ],
+      "Recently used servers:": [
+        "سرورهای تازه استفاده شده:"
+      ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "بر روی دستگاه های قابل اعتماد توصیه می شود. ${ keepMeSignedInLearnMoreLink }"
       ],
@@ -2871,6 +2894,14 @@
         "به منظور جلوگیری از هر گونه وقفه در خدمات به دلیل صورت‌حساب‌های پرداخت‌ نشده، لطفا مطمئن شوید که حداقل ۱ شیوه پرداخت معتبر در هر مقطع از زمان ذخیره دارید."
       ]
     },
+    "invitation status": {
+      "Paused": [
+        "متوقف شد"
+      ],
+      "Pending": [
+        "در انتظار"
+      ]
+    },
     "Invoice state display as badge": {
       "Gifted": [
         "هدیه داده شده"
@@ -3092,6 +3123,9 @@
       "Enter the code displayed on your TV": [
         "کد نشان داده شده بر روی تلویزیون خود را وارد کنید"
       ],
+      "Event": [
+        "رویداد"
+      ],
       "Expires": [
         "تاریخ انقضا"
       ],
@@ -3142,6 +3176,9 @@
       ],
       "New password": [
         "گذرواژه‌ جدید"
+      ],
+      "New second password": [
+        "گذرواژه دوم جدید"
       ],
       "No filter": [
         "بدون فیلتر"
@@ -3208,6 +3245,12 @@
       ],
       "Reveal password": [
         "افشای گذرواژه"
+      ],
+      "Search": [
+        "جستجو"
+      ],
+      "Second password": [
+        "گذرواژه دوم"
       ],
       "Spam": [
         "هرزنامه"
@@ -3580,6 +3623,9 @@
       "${ size } storage": [
         "${ size } ذخیره سازی"
       ],
+      "1 user": [
+        "۱ کاربر"
+      ],
       "Admin console": [
         "کنسول مدیریت"
       ],
@@ -3686,9 +3732,6 @@
       ],
       "Strict no-logs policy": [
         "سیاست سخت‌گیرانه عدم ثبت رویدادها"
-      ],
-      "Tor over VPN": [
-        "Tor بر روی VPN"
       ],
       "Two-factor authentication": [
         "احراز هویت دو مرحله‌ای"
@@ -3906,9 +3949,6 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "برای کاربران رمزعبور کاربری و تایید دو مرحله ای را بازیابی کنید"
       ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "با تنها یک کلیک ترافیک اینترنت خود را از طریق شبکه Tor عبور دهید"
-      ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "جزئیات مخاطبین خود را مانند شماره تلفن، آدرس، روز تولد و یادداشت های شخصی را بطور امن ذخیره کنید. رمزگذاری دسترسی صفر تضمین میکند که ${ BRAND_NAME } هیچوقت به آنها دسترسی نداشته باشد."
       ],
@@ -3980,6 +4020,9 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "اعتبارنامه‌های OpenVPN / IKEv2 دوباره تولید شد"
+      ],
+      "Too many recent API requests": [
+        "تعداد درخواست‌های API اخیر بیش از حد زیاد است"
       ]
     },
     "Onboarding": {
@@ -4014,6 +4057,11 @@
       ],
       "Standard server configs": [
         "پیکربندی‌های سرور استاندارد"
+      ]
+    },
+    "orgidentity": {
+      "Verify": [
+        "تایید"
       ]
     },
     "Pass B2B onboarding spotlight": {
@@ -4249,6 +4297,26 @@
         "کاربر"
       ]
     },
+    "saml: Action": {
+      "Cancel": [
+        "لغو"
+      ]
+    },
+    "saml: Error": {
+      "Something went wrong": [
+        "مشکلی پیش آمد"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "جزئیات"
+      ]
+    },
+    "saml: Label": {
+      "Email": [
+        "ایمیل"
+      ]
+    },
     "Select search results": {
       "No results found": [
         "نتیجه‌ای یافت نشد"
@@ -4350,6 +4418,9 @@
       ]
     },
     "session_recovery:status:info": {
+      "Available": [
+        "در دسترس"
+      ],
       "Pending": [
         "در انتظار"
       ]
@@ -4540,6 +4611,9 @@
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } فضای ذخیره‌سازی کلی"
       ],
+      "Got it": [
+        "متوجه شدم"
+      ],
       "Keep ${ config.planName }": [
         "${ config.planName } را نگه دار"
       ],
@@ -4606,12 +4680,6 @@
       ],
       "Gift code applied": [
         "کد هدیه اعمال شد"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "اگر یک رایانامه بازیابی معتبر وارد کرده‌اید، تا دقایقی دیگر نام کاربری‌های شما را با رایانامه‌ای برای شما ارسال می‌کنیم."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "اگر یک شماره تلفن بازیابی معتبر وارد کرده‌اید، تا دقایقی دیگر نام کاربری های شما را با پیامکی برای شما ارسال می‌کنیم."
       ],
       "Invoice customized": [
         "صورت‌حساب سفارشی شد"
@@ -4755,6 +4823,9 @@
       ],
       "Email addresses": [
         "رایانشانی‌ها"
+      ],
+      "Event": [
+        "رویداد"
       ],
       "Marked as": [
         "علامت زده شده به عنوان"
@@ -4934,8 +5005,14 @@
       "Device connected!": [
         "دستگاه متصل شد!"
       ],
+      "Device name": [
+        "نام دستگاه"
+      ],
       "Disable two-factor authentication": [
         "غیرفعال کردن احراز هویت دو مرحله‌ای"
+      ],
+      "Disable two-factor authentication?": [
+        "غیرفعال کردن احراز هویت دو مرحله‌ای?"
       ],
       "Discard changes?": [
         "تغییرات نادیده گرفته شود؟"
@@ -5014,6 +5091,9 @@
       ],
       "Invoices": [
         "صورت‌حساب‌ها"
+      ],
+      "Main password": [
+        "گذرواژه اصلی"
       ],
       "Minicalendar": [
         "تقویم کوچک"
@@ -5141,6 +5221,9 @@
       "Switch to two-password mode": [
         "گذر به حالت دوگذرواژه"
       ],
+      "Text": [
+        "متن"
+      ],
       "TV sign in": [
         "ورود به حساب در تلویزیون"
       ],
@@ -5246,9 +5329,6 @@
     "Tor out of date": {
       "stable release": [
         "نسخه پایدار"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "این نسخه از مرورگر Tor پشتیبانی نمیشود. لطفا به آخرین نسخه ${ stableRelease } بروزرسانی کنید"
       ]
     },
     "upsell panel": {

@@ -385,9 +385,6 @@
       "Next month": [
         "Mes següent"
       ],
-      "Ok": [
-        "D'acord"
-      ],
       "OK": [
         "D'acord"
       ],
@@ -453,9 +450,6 @@
       ],
       "Remove gift code": [
         "Esborra el codi de regal"
-      ],
-      "Remove single sign-on": [
-        "Esborra l'inici de sessió únic"
       ],
       "Rename": [
         "Canvia el nom"
@@ -1130,6 +1124,26 @@
       ],
       "Continue your subscription": [
         "Continueu amb la vostra subscripció"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "Emmagatzematge de ${ maxSpaceTB }"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
+      ],
+      "Cancel and downgrade": [
+        "Cancel·la i passa a un pla inferior"
+      ],
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ],
+      "Save ${ upsellSavings }": [
+        "Estalvieu el ${ upsellSavings }"
+      ],
+      "Try ${ planName }": [
+        "Proveu ${ planName }"
       ]
     },
     "Checkout row": {
@@ -2517,9 +2531,6 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Milloreu a un pla per a empreses amb més d'un usuari per a gestionar múltiples usuaris."
       ],
-      "Please upload a square file": [
-        "Carregeu una imatge quadrada."
-      ],
       "Please upload an xml file": [
         "Carregueu un arxiu XML"
       ],
@@ -2695,9 +2706,6 @@
       "Invite an existing ${ BRAND_NAME } user": [
         "Convida un usuari de ${ BRAND_NAME } existent"
       ],
-      "Invite member to your family": [
-        "Convideu un membre a la vostra família"
-      ],
       "Set up family group": [
         "Configura el grup familiar"
       ],
@@ -2742,9 +2750,6 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
-      ],
-      "Manage addresses.": [
-        "Gestiona les adreces."
       ],
       "Manage user accounts": [
         "Gestiona comptes d'usuari"
@@ -3318,9 +3323,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
-      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
-        "${ boldSSOUserInformation } i haureu de crear-los manualment per tornar-los a afegir a l'organització"
-      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continueu, perdreu l'accés a totes les dades xifrades actuals del vostre compte."
       ],
@@ -3403,9 +3405,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
-      ],
-      "(${ serverPrice } /month)": [
-        "(${ serverPrice }/mes)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obteniu una adreça de ${ BRAND_NAME }** per a utilitzar tots els serveis de ${ BRAND_NAME_TWO }, inclosos ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
@@ -3649,9 +3648,6 @@
       ],
       "Dedicated servers": [
         "Servidors dedicats"
-      ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
@@ -4006,12 +4002,6 @@
       "Labels:": [
         "Etiquetes:"
       ],
-      "Lean more about gateways": [
-        "Obteniu més informació sobre les passarel·les"
-      ],
-      "Lean more about single sign-on": [
-        "Obteniu més informació sobre l'inici de sessió únic"
-      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apreneu a iniciar la sessió a ${ VPN_APP_NAME } amb aplicacions VPN de tercers."
       ],
@@ -4107,9 +4097,6 @@
       ],
       "of": [
         "de"
-      ],
-      "Once single sign-on is disabled for your organization:": [
-        "Un cop desactivat l'inici de sessió únic per a la vostra organització:"
       ],
       "Once you reset your password:": [
         "Un cop restabliu la contrasenya:"
@@ -4332,14 +4319,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
-      "Single sign-on removed": [
-        "S'ha esborrat l'inici de sessió únic."
-      ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF aclareix qui està autoritzat a enviar correus electrònics per al vostre domini. Assegureu-vos d'afegir el registre TXT següent a la consola DNS (ubicada a la plataforma on heu comprat el domini personalitzat)."
-      ],
-      "SSO users (provided by your Identity Provider) will be deleted": [
-        "Els usuaris SSO (proporcionats pel vostre proveïdor d'identitat) seran eliminats."
       ],
       "Step ${ step }": [
         "Pas ${ step }",
@@ -4383,9 +4364,6 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gràcies per donar suport a la nostra missió de construir una Internet millor amb la privacitat i la llibertat en primer lloc."
-      ],
-      "The credentials from your Identity Provider will be deleted.": [
-        "S'eliminaran les credencials del vostre proveïdor d'identitat."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
@@ -5425,7 +5403,7 @@
       "Subscription options": [
         "Opcions de subscripció"
       ],
-      "Synchronize with system": [
+      "Sync with system": [
         "Sincronitza amb el sistema"
       ],
       "System information": [
@@ -5623,9 +5601,6 @@
       ],
       "Pay invoice": [
         "Paga la factura"
-      ],
-      "Paypal without credit card": [
-        "Paypal sense targeta de crèdit"
       ],
       "perform a password reset from your active session": [
         "realitzar un restabliment de contrasenya des de la vostra sessió activa"
@@ -5984,6 +5959,10 @@
         "${ n } connexió VPN",
         "${ n } connexions VPN"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
@@ -6291,9 +6270,6 @@
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
       ],
-      "Tor over VPN": [
-        "Tor sobre VPN"
-      ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
       ],
@@ -6583,9 +6559,6 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
       ],
-      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
-      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
       ],
@@ -6675,9 +6648,6 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Restableix les contrasenyes i l'autenticació de dos factors dels usuaris."
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        "Dirigiu el vostre trànsit d'internet a través de la xarxa Tor amb un sol clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
@@ -7227,9 +7197,6 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Utilitzeu un mètode de recuperació de dades, contacteu amb un altre administrador o restabliu la clau de l'organització per restaurar els privilegis d'administrador."
       ],
-      "We couldn't verify authenticity of this identity.": [
-        "No hem pogut verificar l'autenticitat d'aquesta identitat."
-      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "No s'ha pogut verificar la seguretat de la clau d'adreça d'aquest remitent. De vegades hi ha un retard en l'actualització de la informació del remitent. Torneu-ho a provar més tard. Si no confieu en la validesa d'aquesta invitació o remitent, contacteu amb el servei d'atenció al client de ${ BRAND_NAME }."
       ],
@@ -7555,9 +7522,6 @@
       "Changing organization password": [
         "Canviant la contrasenya de l'organització"
       ],
-      "Creating or accessing non-private users": [
-        "S'estan creant o s'està accedint a usuaris no privats"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "A causa d'un canvi de contrasenya, els privilegis d'administrador de la seva organització han estat restringits. Les següents accions ja no estan permeses:"
       ]
@@ -7632,12 +7596,6 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Prerequisit:** Cal configurar l'autenticació SAML per a activar el subministrament SCIM."
-      ],
-      "**Prerequisite:** to enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Prerequisit:** per a activar el subministrament SCIM, heu de verificar la propietat del domini **${ domainName }**. Aquesta verificació pot trigar fins a una hora."
-      ],
-      "Enter token into your identity provider": [
-        "Introduïu el token al vostre proveïdor d'identitat"
       ],
       "Enter URL and token into your identity provider": [
         "Introduïu l'URL i el token al vostre proveïdor d'identitat"
@@ -7956,14 +7914,6 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Ens posarem en contacte de nou quan hi hagi disponible el restabliment de contrasenya."
-      ],
-      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Podeu comprovar l'estat de la vostra sol·licitud en qualsevol moment ${ accountAndPasswordSectionLink } de les preferències."
-      ]
-    },
-    "session_recovery:initiation:link": {
-      "account and password section": [
-        "secció de compte i contrasenya"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8459,9 +8409,6 @@
       "Got it": [
         "Entesos"
       ],
-      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
-        "Inicieu la sessió al vostre compte de Apple App Store i després premeu ${ subscriptions }."
-      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Inicieu la sessió al vostre compte de la Play Store i, després, premeu ${ subscriptions }."
       ],
@@ -8527,6 +8474,10 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per usuari per a correus electrònics, adjunts, esdeveniments, fitxers i contrasenyes. També podeu optar a bonificacions anuals d'emmagatzematge."
       ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } usuari",
+        "${ planNumberOfUsers } usuaris"
+      ],
       "2 users": [
         "2 usuaris"
       ],
@@ -8584,6 +8535,12 @@
       "Extra storage and users": [
         "Emmagatzematge i bonificacions addicionals"
       ],
+      "Folders, labels and filters": [
+        "Carpetes, etiquetes i filtres"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
       "Have a question?": [
         "Teniu una pregunta?"
       ],
@@ -8598,6 +8555,9 @@
       ],
       "Keep ${ config.planName }": [
         "Segueix amb ${ config.planName }"
+      ],
+      "Keep subscription": [
+        "Mantén la subscripció"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Mantingueu el vostre equip segur en qualsevol lloc amb les nostres aplicacions per a web, iOS, Android, Windows, Mac i Linux."
@@ -8821,12 +8781,6 @@
       ],
       "Gift code applied": [
         "Codi regal aplicat"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Si heu introduït un correu electrònic de recuperació vàlid, en breu us enviarem un correu amb els vostres noms d'usuari."
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Si heu introduït un telèfon de recuperació vàlid, en breu us enviarem un sms amb els vostres noms d'usuari."
       ],
       "Invitation rejected": [
         "S'ha rebutjat la invitació."
@@ -9517,9 +9471,6 @@
       "Processing...": [
         "Processant..."
       ],
-      "QRCode": [
-        "Codi QR"
-      ],
       "Recommended": [
         "Recomanat"
       ],
@@ -9537,9 +9488,6 @@
       ],
       "Remove single sign-on": [
         "Esborra l'inici de sessió únic"
-      ],
-      "Remove single sign-on for your organization?": [
-        "Voleu esborrar l'inici de sessió únic de la vostra organització?"
       ],
       "Remove user?": [
         "Voleu esborrar l'usuari?"
@@ -9864,9 +9812,6 @@
     "Tor out of date": {
       "stable release": [
         "versió estable"
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10129,11 +10074,6 @@
       ],
       "Your ${ selected } plan": [
         "El vostre pla ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
       ]
     },
     "wallet_signup_2024: Info": {
