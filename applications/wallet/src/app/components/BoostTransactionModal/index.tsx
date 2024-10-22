@@ -147,6 +147,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                 blockchainClient,
                 network,
                 userKeys,
+
                 walletsChainData,
                 apiWalletData,
                 apiAccount,
