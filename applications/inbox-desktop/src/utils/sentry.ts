@@ -10,6 +10,7 @@ import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
 import { getWindowBounds } from "../store/boundsStore";
 import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
+import { mainLogger } from "./log";
 
 const MAX_TAG_LENGTH = 32;
 
@@ -23,6 +24,11 @@ const LOG_LEVEL_TO_SEVERITY: Record<LogMessage["level"], SeverityLevel> = {
 };
 
 export async function initializeSentry() {
+    if (!process.env.DESKTOP_SENTRY_DSN) {
+        mainLogger.error("Sentry DSN is not set");
+        return;
+    }
+
     const appID = await getAppID();
     const environment = new URL(getAppURL().mail).hostname.replace(/^mail./i, "");
     const release = `${pkg.name}@${pkg.version}+${app.isPackaged ? "packaged" : "unpackaged"}`;
@@ -30,7 +36,7 @@ export async function initializeSentry() {
     init({
         debug: !app.isPackaged,
         enabled: true,
-        dsn: "https://8c45c7615ac54aed9a6747430e0a5d8e@mail.proton.me/api/core/v4/reports/sentry/54",
+        dsn: process.env.DESKTOP_SENTRY_DSN,
         getSessions: () => [appSession(), updateSession()],
         maxBreadcrumbs: 100,
         attachStacktrace: true,
