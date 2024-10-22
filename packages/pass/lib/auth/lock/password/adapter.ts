@@ -140,7 +140,9 @@ export const passwordLockAdapterFactory = (auth: AuthService): LockAdapter => {
                 /** this will throw if the derived offlineKD is incorrect */
                 await decryptData(offlineKey, stringToUint8Array(offlineVerifier), PassEncryptionTag.Offline);
                 const hash = uint8ArrayToString(offlineKD);
+
                 authStore.setOfflineKD(hash);
+                authStore.setLocked(false);
 
                 await setRetryCount(0).catch(noop);
 
