@@ -2,9 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { CachedOrganizationKey, Organization, OrganizationKey, UserModel } from '@proton/shared/lib/interfaces';
+import type { CachedOrganizationKey, Organization, OrganizationKey, UserModel } from '@proton/shared/lib/interfaces';
 import { getCachedOrganizationKey } from '@proton/shared/lib/keys';
 
 import type { AddressKeysState } from '../addressKeys';
@@ -40,18 +41,30 @@ const canFetch = (user: UserModel, organization: Organization) => {
 const modelThunk = createAsyncModelThunk<Model, OrganizationKeyState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ getState, dispatch, extraArgument }) => {
         const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
+        const defaultValue = { Key: {}, placeholder: true };
         if (!canFetch(user, organization)) {
-            return { Key: {}, placeholder: true };
+            return defaultValue;
         }
-        const Key = await extraArgument.api<OrganizationKey>(getOrganizationKeys());
-        const userKeys = await dispatch(userKeysThunk());
-        const state = selectOrganizationKey(getState());
-        if (state.value && state.value.privateKey && isDeepEqual(state.value.Key, Key)) {
-            // The organization key is spammed pretty often, so if the key is exactly the same, just return the old value.
-            // This is to avoid the crypto proxy destroying the old key in memory while it may still be used in some async processes.
-            return state.value;
+        try {
+            const Key = await extraArgument.api<OrganizationKey>(getOrganizationKeys());
+            const userKeys = await dispatch(userKeysThunk());
+            const state = selectOrganizationKey(getState());
+            if (state.value && state.value.privateKey && isDeepEqual(state.value.Key, Key)) {
+                // The organization key is spammed pretty often, so if the key is exactly the same, just return the old value.
+                // This is to avoid the crypto proxy destroying the old key in memory while it may still be used in some async processes.
+                return state.value;
+            }
+            return await getCachedOrganizationKey({
+                userKeys,
+                keyPassword: extraArgument.authentication.getPassword(),
+                Key,
+            });
+        } catch (e: any) {
+            if (getIsMissingScopeError(e)) {
+                return defaultValue;
+            }
+            throw e;
         }
-        return getCachedOrganizationKey({ userKeys, keyPassword: extraArgument.authentication.getPassword(), Key });
     },
     previous: previousSelector(selectOrganizationKey),
 });
