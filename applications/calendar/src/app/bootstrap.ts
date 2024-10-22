@@ -20,7 +20,6 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
-import { initializeTelemetry } from '@proton/shared/lib/desktop/telemetry';
 import { createDrawerApi } from '@proton/shared/lib/drawer/createDrawerApi';
 import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -59,7 +58,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const appName = config.APP_NAME;
 
     if (isElectronMail) {
-        initializeTelemetry();
         listenFreeTrialSessionExpiration(appName, authentication, api);
     }
 
