@@ -2,11 +2,13 @@ import type { MaybeNull } from '@proton/pass/types/utils';
 
 export enum PassFeature {
     PassAccountSwitchV1 = 'PassAccountSwitchV1',
+    PassBlackFriday2024Family = 'PassBlackFriday2024Family',
+    PassBlackFriday2024Lifetime = 'PassBlackFriday2024Lifetime',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
+    PassFamilyPlanPromo2024 = 'PassFamilyPlanPromo2024',
     PassSimpleLoginAliasesSync = 'PassSimpleLoginAliasesSync',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebOfflineMode = 'PassWebOfflineMode',
-    PassFamilyPlanPromo2024 = 'PassFamilyPlanPromo2024',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
