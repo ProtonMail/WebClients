@@ -573,9 +573,6 @@
       ],
       "Write us on Twitter": [
         "Напішыце нам у Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Адсутнічае ваш менеджар пароля? Запытайце яго."
       ]
     },
     "App menu": {
@@ -1142,9 +1139,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Перайдзіце на платны тарыфны план, каб стварыць некалькі сховішчаў."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Элемент \"${ payload.item.data.metadata.name }\" быў праігнараваны"
       ],
@@ -1219,9 +1213,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступу да ${ PASS_APP_NAME } спатрэбіцца ваш адбітак пальца або PIN-код прылады."
-      ],
-      "Add your custom email address to monitor :": [
-        "Дадайце карыстальніцкі адрас электроннай пошты для назірання:"
       ],
       "Admin": [
         "Адміністратар"
@@ -1418,12 +1409,6 @@
       "Expires in ${ remainingTime }": [
         "Тэрмін дзеяння завершыцца ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Дадатковы пароль паспяхова створаны"
-      ],
-      "Extra password successfuly removed": [
-        "Дадатковы пароль паспяхова выдалены"
-      ],
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
       ],
@@ -1580,9 +1565,6 @@
       "Monitoring settings successfully updated": [
         "Налады назірання паспяхова абноўлены"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
@@ -1633,9 +1615,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Папярэджанні з нашага боку носяць дадатковую перасцярогу. Калі вы не выявілі ў сябе ніякіх парушэнняў бяспекі, то можаце смела праігнараваць гэту справаздачу."
       ],
       "Owner": [
         "Уладальнік"
@@ -1775,9 +1754,6 @@
       "Select vault to share": [
         "Выберыце сховішча для абагулення"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Выберыце куды вы хочаце, каб было захавана ваша імпартаванае сховішча(-ы)."
-      ],
       "Selected items permanently deleted": [
         "Выбраныя элементы незваротна выдалены"
       ],
@@ -1798,9 +1774,6 @@
       ],
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Дзяліцеся сваімі запісамі ўваходу і бяспечнымі нататкамі (да 10 карыстальнікаў)"
       ],
       "Sign in to your account": [
         "Увайдзіце ў свой уліковы запіс"
@@ -1877,9 +1850,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Для пераносу даных з іншага менеджара пароляў вам неабходна перайсці ў яго і экспартаваць свае даныя, а потым запампаваць іх у ${ PASS_APP_NAME }. Пасля завяршэння працэсу імпартавання, выдаліце экспартаваны файл."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Для прагляду імпартаваных даных, націсніце на значок Pass на панэлі інструментаў свайго браўзера."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
@@ -1915,9 +1885,6 @@
       ],
       "User's access removed": [
         "Доступ карыстальніка выдалены"
-      ],
-      "User's access sucessfuly updated": [
-        "Доступ карыстальніка абноўлены"
       ],
       "username": [
         "імя карыстальніка"
@@ -2173,9 +2140,6 @@
       "Capital letters (A-Z)": [
         "Вялікія літары (A-Z)"
       ],
-      "Capitalise": [
-        "Вялікімі літарамі"
-      ],
       "Card": [
         "Картка"
       ],
@@ -2365,9 +2329,6 @@
       "Import passwords": [
         "Імпартаваць паролі"
       ],
-      "Imported from : ": [
-        "Імпартавана з:"
-      ],
       "Imported on : ": [
         "Імпартавана:"
       ],
@@ -2467,8 +2428,8 @@
       "Name on card": [
         "Імя на картцы"
       ],
-      "Need help ?": [
-        "Патрэбна дапамога?"
+      "Need help?": [
+        "Неабходна дапамога?"
       ],
       "New vault": [
         "Новае сховішча"
@@ -2661,12 +2622,6 @@
       ],
       "Today": [
         "Сёння"
-      ],
-      "Total imported items : ": [
-        "Усяго імпартаваных элементаў: "
-      ],
-      "Total items : ": [
-        "Усяго элементаў: "
       ],
       "TOTP": [
         "TOTP"
@@ -3002,9 +2957,6 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Выдаліць сховішча \"${ vaultName }\"?"
-      ],
       "Details": [
         "Падрабязнасці"
       ],
@@ -3061,9 +3013,6 @@
       ],
       "Last modified": [
         "Апошняе змяненне"
-      ],
-      "Leave vault ?": [
-        "Выйсці са сховішча?"
       ],
       "Loading breaches...": [
         "Загрузка парушэнняў..."
@@ -3124,9 +3073,6 @@
       ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
-      ],
-      "Permanently remove all items ?": [
-        "Незваротна выдаліць элементы?"
       ],
       "Pinned (${ items.length })": [
         "Замацавана (${ items.length })"
@@ -3268,14 +3214,8 @@
       "Section name cannot be empty": [
         "Назва раздзела не можа быць пустой"
       ],
-      "Url already exists": [
-        "URL-адрас ужо існуе"
-      ],
       "URL cannot be empty": [
         "URL-адрас не можа быць пустым"
-      ],
-      "Url is invalid": [
-        "Памылковы URL-адрас."
       ],
       "URL is invalid": [
         "Памылковы URL-адрас."
@@ -3305,9 +3245,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Немагчыма стварыць сховішча \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Немагчыма адправіць запрашэнні на наступныя адрасы:"
       ],
       "Duplicate email addresses.": [
         "Дубліраваныя адрасы электроннай пошты."
@@ -3399,9 +3336,6 @@
       "Please check that the extension is properly installed and enabled": [
         "Пераканайцеся, што пашырэнне правільна ўсталявана і ўключана"
       ],
-      "Please contact us for investigating the issue": [
-        "Звяжыцеся з намі для даследавання праблемы"
-      ],
       "Please update the extension to its latest version": [
         "Абнавіце пашырэнне да апошняй версіі"
       ],
@@ -3449,9 +3383,6 @@
       ],
       "Verification code is required": [
         "Патрабуецца праверачны код"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Ваша падпіска не дазваляе ствараць яшчэ больш сховішчаў."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Вы дасягнулі абмежавання па колькасці ўдзельнікаў, якія могуць атрымаць доступ да гэтага сховішча."

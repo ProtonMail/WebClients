@@ -571,9 +571,6 @@
       ],
       "Write us on Twitter": [
         "მოგვწერეთ ტვიტერზე"
-      ],
-      "Your password manager not here? Request it.": [
-        "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
       ]
     },
     "App menu": {
@@ -1122,9 +1119,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " ერთზე მეტი საცავის შესაქმნელად ფასიან ტარიფზე უნდა გადახვიდეთ."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" ელემენტი წაიშალა"
       ],
@@ -1189,9 +1183,6 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }-სთან წვდომისთვის თქვენი თითის ანაბეჭდი, ან მოწყობილობის PIN-კოდი დაგჭირდებათ."
-      ],
-      "Add your custom email address to monitor :": [
-        "დაამატეთ თქვენი ელფოსტის მისამართი მონიტორინგისთვის :"
       ],
       "Admin": [
         "ადმინისტრატორი"
@@ -1388,12 +1379,6 @@
       "Expires in ${ remainingTime }": [
         "ვადა ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "დამატებითი პაროლი წარმატებით შეიქმნა"
-      ],
-      "Extra password successfuly removed": [
-        "დამატებითი პაროლი წარმატებით წაიშალა"
-      ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
       ],
@@ -1544,9 +1529,6 @@
       "Monitoring settings successfully updated": [
         "მონიტორინგის პარამეტრები წარმატებით განახლდა"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "წარმოადგენს რა მეტს, ვიდრე პაროლების მმართველი, ${ PASS_APP_NAME } თქვენს პაროლებს და პირადი ელფოსტის მისამართებს ფსევდონიებით იცავს. დაფუძნებული იგივე ტექნოლოგიაზე, რაზეც ${ MAIL_APP_NAME }, თქვენი მონაცემები გამჭოლადაა დაშიფრული და წვდომადი, მხოლოდ, თქვენთვსაა."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
@@ -1597,9 +1579,6 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }-სთან ინტერნეტით წვდომისთვის PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
-      ],
-      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "ყურადღება მიაქციეთ ჩვენს გაფრთხილებებს. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
       ],
       "Owner": [
         "მფლობელი"
@@ -1737,9 +1716,6 @@
       "Select vault to share": [
         "აირჩიეთ გასაზიარებელი საცავი"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "აირჩიეთ, სად გნებავთ თქვენი შემოტანილი საცავების შენახვა."
-      ],
       "Selected items permanently deleted": [
         "მონიშნული ელემენტები სამუდამოდ წაიშალა"
       ],
@@ -1760,9 +1736,6 @@
       ],
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "გაუზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები 10 პიროვნებამდე"
       ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
@@ -1837,9 +1810,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "სხვა პაროლების მმართველიდან მონაცემების შემოსატანად, გადადით პაროლების მმართველში, გამოიტანეთ თქვენი მონაცემები და ატვირთეთ ის ${ PASS_APP_NAME }-ზე. როცა მონაცემების შემოტანა დასრულდება, გამოტანილი ფაილი წაშალეთ."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ Pass-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
@@ -1875,9 +1845,6 @@
       ],
       "User's access removed": [
         "მომხმარებლის წვდომა წაიშალა"
-      ],
-      "User's access sucessfuly updated": [
-        "მომხმარებლის წვდომები წარმატებით განახლდა"
       ],
       "username": [
         "მომხმარებლის სახელი"
@@ -2113,9 +2080,6 @@
       "Capital letters (A-Z)": [
         "მაღალი რეგისტრის სიმბოლოები (A-Z)"
       ],
-      "Capitalise": [
-        "ზედა რეგისტრში გადაყვანა"
-      ],
       "Card": [
         "ბარათი"
       ],
@@ -2305,9 +2269,6 @@
       "Import passwords": [
         "პაროლების შემოტანა"
       ],
-      "Imported from : ": [
-        "შემოტანილია :  "
-      ],
       "Imported on : ": [
         "შემოტანის დრო : "
       ],
@@ -2407,8 +2368,8 @@
       "Name on card": [
         "სახელი ბარათზე"
       ],
-      "Need help ?": [
-        "დახმარება გჭირდებათ ?"
+      "Need help?": [
+        "დახმარება გჭირდებათ?"
       ],
       "New vault": [
         "ახალი საცავი"
@@ -2599,12 +2560,6 @@
       ],
       "Today": [
         "დღეს"
-      ],
-      "Total imported items : ": [
-        "შემოტანილი ელემენტები სულ : "
-      ],
-      "Total items : ": [
-        "სულ ელემენტები : "
       ],
       "TOTP": [
         "TOTP"
@@ -2936,9 +2891,6 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "წავშალო საცავი \"${ vaultName }\" ?"
-      ],
       "Details": [
         "დეტალები"
       ],
@@ -2995,9 +2947,6 @@
       ],
       "Last modified": [
         "ბოლო ცვლილება"
-      ],
-      "Leave vault ?": [
-        "გავიდე საცავიდან?"
       ],
       "Loading breaches...": [
         "გაჟონვების ჩატვირთვა..."
@@ -3058,9 +3007,6 @@
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
-      ],
-      "Permanently remove all items ?": [
-        "წავშალო სამუდამოდ ყველა ელემენტი?"
       ],
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
@@ -3200,14 +3146,8 @@
       "Section name cannot be empty": [
         "განყოფლების სახელი ცარიელი ვერ იქნება"
       ],
-      "Url already exists": [
-        "Url უკვე არსებობს"
-      ],
       "URL cannot be empty": [
         "URL ცარიელი ვერ იქნება"
-      ],
-      "Url is invalid": [
-        "Url არასწორია"
       ],
       "URL is invalid": [
         "URL არასწორია"
@@ -3237,9 +3177,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "საცავის '${ vaultName }' შექმნა შეუძლებელია"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "მოსაწვევი ვერ გავაგზავნე შემდეგ მისამართებზე :"
       ],
       "Duplicate email addresses.": [
         "დუბლირებული ელფოსტის მისამართები."
@@ -3329,9 +3266,6 @@
       "Please check that the extension is properly installed and enabled": [
         "შეამოწმეთ, არის თუ არა გაფართოება სწორად დაყენებული დ ჩართული"
       ],
-      "Please contact us for investigating the issue": [
-        "დაგვიკავშირდით ამ პრობლემის გამოსაკვლევად"
-      ],
       "Please update the extension to its latest version": [
         "განაახლეთ ეს გაფართოება უახლეს ვერსიამდე"
       ],
@@ -3379,9 +3313,6 @@
       ],
       "Verification code is required": [
         "აუცილებელია გადამოწმების კოდი"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "ტარიფის მიერ დაშვებული საცავეების რაოდენობას ვერ გადააჭარბებთ."
       ],
       "You have reached the limit of members who can access this vault.": [
         "მიაღწიეთ მომხმარებლების რაოდენობის ზღვარს, რომლებსაც ამ საცავთან წვდომა შეიძლება, ჰქონდეთ."
