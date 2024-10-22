@@ -514,9 +514,6 @@
       ],
       "Write us on Twitter": [
         "Viết cho chúng tôi trên Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Trình quản lý mật khẩu của bạn không có ở đây sao? Hãy yêu cầu nó."
       ]
     },
     "bf2023: Info": {
@@ -885,9 +882,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Nâng cấp lên một gói trả tiền để tạo nhiều kho lưu trữ."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
       ],
@@ -1236,9 +1230,6 @@
       "me": [
         "tôi"
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Hơn cả một trình quản lý mật khẩu, ${ PASS_APP_NAME } còn bảo vệ mật khẩu của bạn và cả địa chỉ email cá nhân qua các email bí danh. Sử dụng công nghệ đằng sau ${ MAIL_APP_NAME }, dữ liệu của bạn được mã hóa đầu cuối và chỉ có thể truy cập bởi bạn."
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả nội dung từ \"${ payload.content.name }\""
       ],
@@ -1401,9 +1392,6 @@
       "Select destination vault": [
         "Chọn kho lưu trữ đến"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Chọn nơi bạn muốn (các) kho lưu trữ đã nhập vào được lưu."
-      ],
       "Selected items permanently deleted": [
         "Các nội dung được chọn đã được xóa vĩnh viễn"
       ],
@@ -1418,9 +1406,6 @@
       ],
       "Settings successfully updated": [
         "Đã cập nhật cài đặt"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Chia sẻ phiên đăng nhập và ghi chú an toàn với lên tới 10 người"
       ],
       "Sign in or create an account to continue.": [
         "Đăng nhập hoặc tạo tài khoản để tiếp tục."
@@ -1482,9 +1467,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Để chuyển dữ liệu từ trình quản lý mật khẩu khác, vào trình quản lý mật khẩu đó, xuất dữ liệu của bạn và tải nó lên ${ PASS_APP_NAME }. Khi dữ liệu của bạn đã được nhập vào, xóa tệp đã xuất ban đầu."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Để xem lại dữ liệu đã nhập của bạn, nhấn vào biểu trượng Pass trên thanh công cụ trình duyệt của bạn."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Hãy thử tải lại hoặc cài đặt lại trình mở rộng và đảm bảo trình duyệt của bạn và ${ PASS_SHORT_APP_NAME } ở phiên bản mới nhất."
       ],
@@ -1529,9 +1511,6 @@
       ],
       "User's access removed": [
         "Đã gỡ quyền truy cập của người dùng"
-      ],
-      "User's access sucessfuly updated": [
-        "Đã cập nhật quyền truy cập của người dùng"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Kho lưu trữ \"${ payload.content.name }\" đã được xóa"
@@ -1736,9 +1715,6 @@
       "Capital letters (A-Z)": [
         "Chữ cái in hoa (A–Z)"
       ],
-      "Capitalise": [
-        "In hoa"
-      ],
       "Card": [
         "Thẻ"
       ],
@@ -1895,9 +1871,6 @@
       "Import passwords": [
         "Nhập mật khẩu"
       ],
-      "Imported from : ": [
-        "Nhập từ: "
-      ],
       "Imported on : ": [
         "Đã nhập vào: "
       ],
@@ -1973,8 +1946,8 @@
       "Name on card": [
         "Danh thiếp"
       ],
-      "Need help ?": [
-        "Cần sự trợ giúp ?"
+      "Need help?": [
+        "Cần giúp?"
       ],
       "New vault": [
         "Kho lưu trữ mới"
@@ -2143,12 +2116,6 @@
       ],
       "Today": [
         "Hôm nay"
-      ],
-      "Total imported items : ": [
-        "Tổng số nội dung đã nhập : "
-      ],
-      "Total items : ": [
-        "Tổng số nội dung: "
       ],
       "TOTP": [
         "Mã TOTP"
@@ -2384,9 +2351,6 @@
       "Current version": [
         "Phiên bản hiện tại"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Xóa kho lưu trữ \"${ vaultName }\" ?"
-      ],
       "Discard changes?": [
         "Hủy các thay đổi?"
       ],
@@ -2438,9 +2402,6 @@
       "Last modified": [
         "Sửa đổi lần cuối"
       ],
-      "Leave vault ?": [
-        "Rời kho lưu trữ ?"
-      ],
       "Log in as...": [
         "Đăng nhập như..."
       ],
@@ -2470,9 +2431,6 @@
       ],
       "Pending access to the shared data": [
         "Đang chờ truy cập vào dữ liệu được chia sẻ"
-      ],
-      "Permanently remove all items ?": [
-        "Xóa vĩnh viễn tất cả nội dung?"
       ],
       "Pin the extension": [
         "Ghim phần mở rộng"
@@ -2572,14 +2530,8 @@
       "OTP secret or URI required": [
         "Mã bí mật OTP hay URI là bắt buộc"
       ],
-      "Url already exists": [
-        "URL đã tồn tại"
-      ],
       "URL cannot be empty": [
         "URL không thể để trống"
-      ],
-      "Url is invalid": [
-        "URL không hợp lệ"
       ],
       "URL is invalid": [
         "URL không hợp lệ"
@@ -2652,9 +2604,6 @@
       "PGP encrypted export file requires passphrase": [
         "Xuất file mã hóa bằng PGP yêu cầu mật khẩu"
       ],
-      "Please contact us for investigating the issue": [
-        "Vui lòng liên hệ chúng tôi để điều tra vấn đề này"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Vui lòng xác nhận địa chỉ email của bạn để sử dụng tính năng bí danh email"
       ],
@@ -2687,9 +2636,6 @@
       ],
       "Vault name is required": [
         "Tên kho lưu trữ là bắt buộc"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Bạn không thể tạo nhiều kho lưu trữ hơn gói đăng ký của mình cho phép."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Bạn đã đạt đến số lượng thành viên có thể truy cập tối đa trong kho lưu trữ này."

@@ -224,6 +224,9 @@
       "Feedback & Help": [
         "Зваротная сувязь і дапамога"
       ],
+      "Fill in": [
+        "Запоўніць"
+      ],
       "Fill password": [
         "Запоўніць пароль"
       ],
@@ -571,9 +574,6 @@
       ],
       "Write us on Twitter": [
         "Напішыце нам у Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Адсутнічае ваш менеджар пароля? Запытайце яго."
       ]
     },
     "bf2023: Info": {
@@ -1057,9 +1057,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Перайдзіце на платны тарыфны план, каб стварыць некалькі сховішчаў."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Элемент \"${ payload.item.data.metadata.name }\" быў праігнараваны"
       ],
@@ -1357,12 +1354,6 @@
       "Expires in ${ remainingTime }": [
         "Тэрмін дзеяння завершыцца ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Дадатковы пароль паспяхова створаны"
-      ],
-      "Extra password successfuly removed": [
-        "Дадатковы пароль паспяхова выдалены"
-      ],
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
       ],
@@ -1491,9 +1482,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Налады назірання паспяхова абноўлены"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
@@ -1696,9 +1684,6 @@
       "Select destination vault": [
         "Выберыце мэтавае сховішча"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Выберыце куды вы хочаце, каб было захавана ваша імпартаванае сховішча(-ы)."
-      ],
       "Selected items permanently deleted": [
         "Выбраныя элементы незваротна выдалены"
       ],
@@ -1719,9 +1704,6 @@
       ],
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Дзяліцеся сваімі запісамі ўваходу і бяспечнымі нататкамі (да 10 карыстальнікаў)"
       ],
       "Sign in or create an account to continue.": [
         "Увайдзіце або стварыце ўліковы запіс, каб працягнуць."
@@ -1792,9 +1774,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Для пераносу даных з іншага менеджара пароляў вам неабходна перайсці ў яго і экспартаваць свае даныя, а потым запампаваць іх у ${ PASS_APP_NAME }. Пасля завяршэння працэсу імпартавання, выдаліце экспартаваны файл."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Для прагляду імпартаваных даных, націсніце на значок Pass на панэлі інструментаў свайго браўзера."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Паспрабуйце перазагрузіць або паўторна ўсталяваць пашырэнне і пераканайцеся, што версія вашага браўзера і ${ PASS_SHORT_APP_NAME } знаходзяцца ў актуальным стане."
       ],
@@ -1842,9 +1821,6 @@
       ],
       "User's access removed": [
         "Доступ карыстальніка выдалены"
-      ],
-      "User's access sucessfuly updated": [
-        "Доступ карыстальніка абноўлены"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховішча \"${ payload.content.name }\" паспяхова выдалена"
@@ -2100,9 +2076,6 @@
       "Capital letters (A-Z)": [
         "Вялікія літары (A-Z)"
       ],
-      "Capitalise": [
-        "Вялікімі літарамі"
-      ],
       "Card": [
         "Картка"
       ],
@@ -2289,9 +2262,6 @@
       "Import passwords": [
         "Імпартаваць паролі"
       ],
-      "Imported from : ": [
-        "Імпартавана з:"
-      ],
       "Imported on : ": [
         "Імпартавана:"
       ],
@@ -2391,8 +2361,8 @@
       "Name on card": [
         "Імя на картцы"
       ],
-      "Need help ?": [
-        "Патрэбна дапамога?"
+      "Need help?": [
+        "Неабходна дапамога?"
       ],
       "New vault": [
         "Новае сховішча"
@@ -2591,12 +2561,6 @@
       ],
       "Today": [
         "Сёння"
-      ],
-      "Total imported items : ": [
-        "Усяго імпартаваных элементаў: "
-      ],
-      "Total items : ": [
-        "Усяго элементаў: "
       ],
       "TOTP": [
         "TOTP"
@@ -2856,9 +2820,6 @@
       "Current version": [
         "Бягучая версія"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Выдаліць сховішча \"${ vaultName }\"?"
-      ],
       "Discard changes?": [
         "Адхіліць змены?"
       ],
@@ -2916,9 +2877,6 @@
       "Last modified": [
         "Апошняе змяненне"
       ],
-      "Leave vault ?": [
-        "Выйсці са сховішча?"
-      ],
       "Log in as...": [
         "Выконваецца ўваход ад імя..."
       ],
@@ -2960,9 +2918,6 @@
       ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
-      ],
-      "Permanently remove all items ?": [
-        "Незваротна выдаліць элементы?"
       ],
       "Pin the extension": [
         "Замацаваць пашырэнне"
@@ -3074,14 +3029,8 @@
       "Section name cannot be empty": [
         "Назва раздзела не можа быць пустой"
       ],
-      "Url already exists": [
-        "URL-адрас ужо існуе"
-      ],
       "URL cannot be empty": [
         "URL-адрас не можа быць пустым"
-      ],
-      "Url is invalid": [
-        "Памылковы URL-адрас."
       ],
       "URL is invalid": [
         "Памылковы URL-адрас."
@@ -3114,9 +3063,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Немагчыма стварыць сховішча \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Немагчыма адправіць запрашэнні на наступныя адрасы:"
       ],
       "Duplicate email addresses.": [
         "Дубліраваныя адрасы электроннай пошты."
@@ -3190,9 +3136,6 @@
       "PGP encrypted export file requires passphrase": [
         "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
       ],
-      "Please contact us for investigating the issue": [
-        "Звяжыцеся з намі для даследавання праблемы"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі."
       ],
@@ -3231,9 +3174,6 @@
       ],
       "Vault name is required": [
         "Неабходна ўвесці назву сховішча"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Ваша падпіска не дазваляе ствараць яшчэ больш сховішчаў."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Вы дасягнулі абмежавання па колькасці ўдзельнікаў, якія могуць атрымаць доступ да гэтага сховішча."

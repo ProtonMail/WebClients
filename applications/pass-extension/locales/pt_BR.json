@@ -572,9 +572,6 @@
       ],
       "Write us on Twitter": [
         "Escreva-nos no Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Seu gerenciador de senhas não está aqui? Solicite."
       ]
     },
     "bf2023: Info": {
@@ -1040,9 +1037,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Faça upgrade para um plano pago para criar múltiplos cofres."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "O item \"${ payload.item.data.metadata.name }\" foi descartado"
       ],
@@ -1330,12 +1324,6 @@
       "Expires in ${ remainingTime }": [
         "Expira em ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Senha adicional criada com sucesso"
-      ],
-      "Extra password successfuly removed": [
-        "Senha adicional removida com sucesso"
-      ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
       ],
@@ -1458,9 +1446,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Configurações de monitoramento atualizadas com sucesso"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
@@ -1661,9 +1646,6 @@
       "Select destination vault": [
         "Selecione o cofre de destino"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Selecione onde quer salvar seus cofres importados."
-      ],
       "Selected items permanently deleted": [
         "Itens selecionados excluídos permanentemente"
       ],
@@ -1684,9 +1666,6 @@
       ],
       "Settings successfully updated": [
         "Configurações atualizadas"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Compartilhe seus logins, notas seguras, com até 10 pessoas"
       ],
       "Sign in or create an account to continue.": [
         "Inicie sessão ou crie uma conta para continuar."
@@ -1755,9 +1734,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar dados de outro gerenciador de senhas, acesse o gerenciador de senhas, exporte seus dados e faça o envio deles para ${ PASS_APP_NAME }. Depois que seus dados forem importados, exclua o arquivo exportado."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Para revisar seus dados importados, clique no ícone do Proton Pass na barra de ferramentas de seu navegador."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Tente recarregar ou reinstalar a extensão e verifique se o navegador e o ${ PASS_SHORT_APP_NAME } estão atualizados."
       ],
@@ -1805,9 +1781,6 @@
       ],
       "User's access removed": [
         "Acesso do usuário removido"
-      ],
-      "User's access sucessfuly updated": [
-        "Acesso do usuário atualizado com sucesso"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Cofre \"${ payload.content.name }\" excluído"
@@ -2045,9 +2018,6 @@
       "Capital letters (A-Z)": [
         "Letras maiúsculas (A-Z)"
       ],
-      "Capitalise": [
-        "Inicie com Maiúscula"
-      ],
       "Card": [
         "Cartão"
       ],
@@ -2234,9 +2204,6 @@
       "Import passwords": [
         "Importar senhas"
       ],
-      "Imported from : ": [
-        "Importado de: "
-      ],
       "Imported on : ": [
         "Importado em: "
       ],
@@ -2339,8 +2306,8 @@
       "Name on card": [
         "Nome no cartão"
       ],
-      "Need help ?": [
-        "Precisa de ajuda ?"
+      "Need help?": [
+        "Precisa de ajuda?"
       ],
       "New vault": [
         "Novo cofre"
@@ -2537,12 +2504,6 @@
       ],
       "Today": [
         "Hoje"
-      ],
-      "Total imported items : ": [
-        "Total de itens importados: "
-      ],
-      "Total items : ": [
-        "Total de itens: "
       ],
       "TOTP": [
         "TOTP"
@@ -2798,9 +2759,6 @@
       "Current version": [
         "Versão atual"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Excluir cofre \"${ vaultName }\""
-      ],
       "Discard changes?": [
         "Descartar alterações?"
       ],
@@ -2858,9 +2816,6 @@
       "Last modified": [
         "Última modificação"
       ],
-      "Leave vault ?": [
-        "Deixar cofre ?"
-      ],
       "Log in as...": [
         "Iniciar sessão como..."
       ],
@@ -2902,9 +2857,6 @@
       ],
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
-      ],
-      "Permanently remove all items ?": [
-        "Remover permanentemente todos os itens ?"
       ],
       "Pin the extension": [
         "Fixe a extensão"
@@ -3016,14 +2968,8 @@
       "Section name cannot be empty": [
         "O nome da seção não pode estar vazio"
       ],
-      "Url already exists": [
-        "URL já existe"
-      ],
       "URL cannot be empty": [
         "O URL não pode estar vazio"
-      ],
-      "Url is invalid": [
-        "O URL não é valido."
       ],
       "URL is invalid": [
         "O URL não é válido"
@@ -3056,9 +3002,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Não foi possível criar o cofre \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Não foi possível enviar convites para os seguintes endereços:"
       ],
       "Duplicate email addresses.": [
         "Endereços de e-mail duplicados."
@@ -3130,9 +3073,6 @@
       "PGP encrypted export file requires passphrase": [
         "O arquivo de exportação criptografado com PGP requer uma frase secreta"
       ],
-      "Please contact us for investigating the issue": [
-        "Entre em contato conosco para investigar o problema"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Verifique seu endereço de e-mail para usar os aliases de e-mail"
       ],
@@ -3171,9 +3111,6 @@
       ],
       "Vault name is required": [
         "O nome do cofre é obrigatório"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Sua assinatura não permite a criação de múltiplos cofres."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Você atingiu o limite de membros que podem acessar este cofre."

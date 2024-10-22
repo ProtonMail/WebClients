@@ -529,9 +529,6 @@
       ],
       "Write us on Twitter": [
         "Pišite nam na X (Twitter)"
-      ],
-      "Your password manager not here? Request it.": [
-        "Vašega upravitelj gesel ni tukaj? Zahtevajte ga."
       ]
     },
     "bf2023: Info": {
@@ -962,9 +959,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Nadgradite na plačljivi paket, da ustvarite več trezorjev."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Predmet »${ payload.item.data.metadata.name }« je bil opuščen"
       ],
@@ -1175,12 +1169,6 @@
       "Expires in ${ remainingTime }": [
         "Poteče ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Dodatno geslo je bilo uspešno ustvarjeno."
-      ],
-      "Extra password successfuly removed": [
-        "Dodatno geslo je bilo uspešno odstranjeno."
-      ],
       "Fill in the CSV with your data": [
         "Izpolnite CSV s svojimi podatki"
       ],
@@ -1309,9 +1297,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Nastavitve nadzora so bile posodobljene."
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Več kot upravitelj gesel, ${ PASS_APP_NAME } ščiti vaše geslo in vaš osebni e-poštni naslov prek e-poštnih vzdevkov. Vaši podatki, ki jih poganja ista tehnologija za ${ MAIL_APP_NAME }, so šifrirani od konca do konca in dostopni samo vam."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Premikanje vseh predmetov iz »${ payload.content.name }«"
@@ -1451,9 +1436,6 @@
       "Select destination vault": [
         "Izberite ciljni trezor"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Izberite, kam želite shraniti uvožene trezorje."
-      ],
       "Selected items permanently deleted": [
         "Izbrani predmeti so trajno izbrisani"
       ],
@@ -1471,9 +1453,6 @@
       ],
       "Settings successfully updated": [
         "Nastavitve so bile posodobljene"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Delite svoje prijave, varne zapiske z do 10 osebami"
       ],
       "Sign in or create an account to continue.": [
         "Za nadaljevanje se vpišite ali ustvarite račun."
@@ -1538,9 +1517,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Če želite preseliti podatke iz drugega upravitelja gesel, pojdite v upravitelja gesel, izvozite svoje podatke in jih nato naložite v ${ PASS_APP_NAME }. Ko so vaši podatki uvoženi, izbrišite izvoženo datoteko."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Za pregled uvoženih podatkov kliknite ikono Pass v orodni vrstici brskalnika."
-      ],
       "Unable to copy to clipboard": [
         "Kopiranje v odložišče ni mogoče"
       ],
@@ -1579,9 +1555,6 @@
       ],
       "User's access removed": [
         "Uporabnikov dostop odstranjen"
-      ],
-      "User's access sucessfuly updated": [
-        "Uporabnikov dostop je bil uspešno posodobljen"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" je izbrisan"
@@ -1795,9 +1768,6 @@
       "Capital letters (A-Z)": [
         "Velike črke (A-Z)"
       ],
-      "Capitalise": [
-        "Napiši veliko začetnico"
-      ],
       "Card": [
         "Kartica"
       ],
@@ -1963,9 +1933,6 @@
       "Import passwords": [
         "Uvozi gesla"
       ],
-      "Imported from : ": [
-        "Uvoženo iz : "
-      ],
       "Imported on : ": [
         "Uvoženo dne : "
       ],
@@ -2059,7 +2026,7 @@
       "Name on card": [
         "Ime na kartici"
       ],
-      "Need help ?": [
+      "Need help?": [
         "Potrebujete pomoč?"
       ],
       "New vault": [
@@ -2229,12 +2196,6 @@
       ],
       "Today": [
         "Danes"
-      ],
-      "Total imported items : ": [
-        "Skupaj uvoženih predmetov : "
-      ],
-      "Total items : ": [
-        "Skupaj predmetov : "
       ],
       "TOTP": [
         "TOTP"
@@ -2476,9 +2437,6 @@
       "Current version": [
         "Trenutna različica"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Želite izbrisati trezor \"${ vaultName }\"?"
-      ],
       "Discard changes?": [
         "Zavrzi spremembe?"
       ],
@@ -2530,9 +2488,6 @@
       "Last modified": [
         "Zadnjič spremenjeno"
       ],
-      "Leave vault ?": [
-        "Zapuščate trezor ?"
-      ],
       "Log in as...": [
         "Prijavite se kot ..."
       ],
@@ -2562,9 +2517,6 @@
       ],
       "Pending access to the shared data": [
         "Čakanje na dostop do podatkov v skupni rabi"
-      ],
-      "Permanently remove all items ?": [
-        "Ali želite trajno odstraniti vse predmete?"
       ],
       "Pin the extension": [
         "Pripnite razširitev"
@@ -2670,14 +2622,8 @@
       "Section name cannot be empty": [
         "Ime razdelka ne sme biti prazno"
       ],
-      "Url already exists": [
-        "URL že obstaja"
-      ],
       "URL cannot be empty": [
         "URL vnos ne sme biti prazen."
-      ],
-      "Url is invalid": [
-        "Naslov URL ni veljaven"
       ],
       "URL is invalid": [
         "Naslov URL ni veljaven."
@@ -2701,9 +2647,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Ni bilo mogoče ustvariti trezorja »${ vaultName }«"
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Povabil ni bilo mogoče poslati na naslednje naslove:"
       ],
       "Duplicate email addresses.": [
         "Podvojeni e-poštni naslovi."
@@ -2774,9 +2717,6 @@
       "PGP encrypted export file requires passphrase": [
         "PGP šifrirana izvozna datoteka zahteva geslo"
       ],
-      "Please contact us for investigating the issue": [
-        "Prosimo kontaktirajte nas, da raziščemo težavo"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Prosimo, potrdite svoj e-poštni naslov, če želite uporabljati e-poštne vzdevke"
       ],
@@ -2812,9 +2752,6 @@
       ],
       "Vault name is required": [
         "Zahtevano je ime trezorja"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Ne morete ustvariti več trezorjev, kot dovoljuje vaša naročnina."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Dosegli ste omejitev članov, ki lahko dostopajo do tega trezorja."

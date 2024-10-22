@@ -574,9 +574,6 @@
       ],
       "Write us on Twitter": [
         "Napište nám na Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "Váš správce hesel zde není? Požádejte o něj."
       ]
     },
     "bf2023: Info": {
@@ -1060,9 +1057,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        " Chcete-li vytvořit více trezorů, přejděte na placený tarif."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Položka \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
@@ -1360,12 +1354,6 @@
       "Expires in ${ remainingTime }": [
         "Vyprší za ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
-        "Dodatečné heslo úspěšně vytvořeno"
-      ],
-      "Extra password successfuly removed": [
-        "Dodatečné heslo úspěšně odebráno"
-      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
       ],
@@ -1494,9 +1482,6 @@
       ],
       "Monitoring settings successfully updated": [
         "Nastavení sledování úspěšně aktualizováno"
-      ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } není obyčejný správce hesel. Chrání vaše heslo a osobní e-mailovou adresu pomocí e-mailových aliasů. Funguje na stejné technologii jako ${ MAIL_APP_NAME }, vaše data jsou koncově šifrována a dostupná jen vám."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
@@ -1699,9 +1684,6 @@
       "Select destination vault": [
         "Vyberte cílový trezor"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Vyberte, kam chcete importované trezory uložit."
-      ],
       "Selected items permanently deleted": [
         "Vybrané položky byly trvale smazány"
       ],
@@ -1722,9 +1704,6 @@
       ],
       "Settings successfully updated": [
         "Nastavení bylo úspěšně aktualizováno"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Sdílení přihlašovacích údajů, zabezpečených poznámek, až s 10 lidmi"
       ],
       "Sign in or create an account to continue.": [
         "Pro pokračování se přihlaste nebo si vytvořte účet."
@@ -1795,9 +1774,6 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Chcete-li přenést data z jiného správce hesel, přejděte do správce hesel, exportujte data a poté je nahrajte do ${ PASS_APP_NAME }. Po importu dat exportovaný soubor smažte."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Chcete-li si prohlédnout importovaná data, klikněte na ikonu Pass v panelu nástrojů svého prohlížeče."
-      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Zkuste znovu načíst nebo přeinstalovat rozšíření a zkontrolujte, zda jsou váš prohlížeč a ${ PASS_SHORT_APP_NAME } aktuální."
       ],
@@ -1845,9 +1821,6 @@
       ],
       "User's access removed": [
         "Přístup uživatele odebrán"
-      ],
-      "User's access sucessfuly updated": [
-        "Přístup uživatele byl úspěšně aktualizován"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Trezor \"${ payload.content.name }\" úspěšně smazán"
@@ -2103,9 +2076,6 @@
       "Capital letters (A-Z)": [
         "Velká písmena (A-Z)"
       ],
-      "Capitalise": [
-        "Velká písmena"
-      ],
       "Card": [
         "Karta"
       ],
@@ -2292,9 +2262,6 @@
       "Import passwords": [
         "Importovat hesla"
       ],
-      "Imported from : ": [
-        "Importováno z : "
-      ],
       "Imported on : ": [
         "Importováno: "
       ],
@@ -2394,8 +2361,8 @@
       "Name on card": [
         "Jméno na kartě"
       ],
-      "Need help ?": [
-        "Potřebujete poradit ?"
+      "Need help?": [
+        "Potřebujete poradit?"
       ],
       "New vault": [
         "Nový trezor"
@@ -2594,12 +2561,6 @@
       ],
       "Today": [
         "Dnes"
-      ],
-      "Total imported items : ": [
-        "Celkem importovaných položek: "
-      ],
-      "Total items : ": [
-        "Celkem položek: "
       ],
       "TOTP": [
         "TOTP"
@@ -2859,9 +2820,6 @@
       "Current version": [
         "Aktuální verze"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Smazat trezor \"${ vaultName }\"?"
-      ],
       "Discard changes?": [
         "Zahodit změny?"
       ],
@@ -2919,9 +2877,6 @@
       "Last modified": [
         "Naposledy změněno"
       ],
-      "Leave vault ?": [
-        "Opustit trezor ?"
-      ],
       "Log in as...": [
         "Přihlaste se jako..."
       ],
@@ -2963,9 +2918,6 @@
       ],
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
-      ],
-      "Permanently remove all items ?": [
-        "Trvale smazat všechny položky?"
       ],
       "Pin the extension": [
         "Připněte rozšíření"
@@ -3077,14 +3029,8 @@
       "Section name cannot be empty": [
         "Název sekce nemůže být prázdný"
       ],
-      "Url already exists": [
-        "URL již existuje"
-      ],
       "URL cannot be empty": [
         "URL adresa nemůže být prázdná"
-      ],
-      "Url is invalid": [
-        "Adresa URL je neplatná"
       ],
       "URL is invalid": [
         "URL adresa je neplatná"
@@ -3117,9 +3063,6 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nelze vytvořit trezor \"${ vaultName }\""
-      ],
-      "Could not send invitations to the following addresses :": [
-        "Nepodařilo se odeslat pozvánky těmto adresám:"
       ],
       "Duplicate email addresses.": [
         "Duplicitní e-mailové adresy."
@@ -3193,9 +3136,6 @@
       "PGP encrypted export file requires passphrase": [
         "Exportní soubor zašifrovaný pomocí PGP vyžaduje heslo"
       ],
-      "Please contact us for investigating the issue": [
-        "Kontaktujte nás prosím pro vyšetření problému"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Ověřte prosím svou e-mailovou adresu, abyste mohli používat e-mailové aliasy"
       ],
@@ -3234,9 +3174,6 @@
       ],
       "Vault name is required": [
         "Název trezoru je povinný"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Nemůžete vytvořit více trezorů, než umožňuje vaše předplatné."
       ],
       "You have reached the limit of members who can access this vault.": [
         "Dosáhli jste limitu členů, kteří mají přístup k tomuto trezoru."

@@ -573,7 +573,7 @@
       "Write us on Twitter": [
         "Écrivez-nous sur Twitter"
       ],
-      "Your password manager not here? Request it.": [
+      "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
       ]
     },
@@ -1040,9 +1040,6 @@
       ]
     },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Passez à un abonnement payant pour créer plusieurs coffres-forts."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "L'élément « ${ payload.item.data.metadata.name } » a été rejeté."
       ],
@@ -1330,10 +1327,10 @@
       "Expires in ${ remainingTime }": [
         "Expire dans ${ remainingTime }"
       ],
-      "Extra password successfuly created": [
+      "Extra password successfully created": [
         "Le mot de passe supplémentaire est créé."
       ],
-      "Extra password successfuly removed": [
+      "Extra password successfully removed": [
         "Le mot de passe supplémentaire a été retiré."
       ],
       "Fill in the CSV with your data": [
@@ -1459,7 +1456,7 @@
       "Monitoring settings successfully updated": [
         "Les paramètres de surveillance ont été mis à jour."
       ],
-      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } est plus qu'un gestionnaire de mots de passe : il protège vos mots de passe ainsi que votre adresse e-mail personnelle grâce à des alias d'adresses e-mail. Bénéficiant de la même technologie que ${ MAIL_APP_NAME }, vos données sont chiffrées de bout en bout et personne d'autre que vous ne peut y accéder."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
@@ -1620,7 +1617,7 @@
         "Remplissez automatiquement et rapidement vos identités."
       ],
       "Quickly autofill your saved credentials.": [
-        "Remplis automatiquement et rapidement vos identifiants enregistrés."
+        "Remplit automatiquement et rapidement vos identifiants enregistrés."
       ],
       "Registering extra password...": [
         "Enregistrement du mot de passe supplémentaire..."
@@ -1661,7 +1658,7 @@
       "Select destination vault": [
         "Sélectionner le coffre-fort de destination"
       ],
-      "Select where you want your imported vault(s) to be saved.": [
+      "Select where you want your imported vaults to be saved.": [
         "Sélectionnez l'endroit où vous voulez que vos coffres-forts importés soient enregistrés."
       ],
       "Selected items permanently deleted": [
@@ -1685,7 +1682,7 @@
       "Settings successfully updated": [
         "Les paramètres ont été mis à jour."
       ],
-      "Share your logins, secure notes, with up to 10 people": [
+      "Share your logins and secure notes, with up to 10 people": [
         "Partagez vos identifiants et notes sécurisées avec jusqu'à 10 personnes"
       ],
       "Sign in or create an account to continue.": [
@@ -1755,8 +1752,8 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Pour transférer des données depuis un autre gestionnaire de mots de passe, rendez-vous dans ce gestionnaire, exportez vos données, puis importez-les dans ${ PASS_APP_NAME }. Une fois vos données importées, supprimez le fichier qui a servi au transfert."
       ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Pour consulter les données importées, cliquez sur l'icône Proton Pass dans la barre d'outils de votre navigateur."
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Pour consulter les données importées, cliquez sur l'icône ${ PASS_APP_NAME } dans la barre d'outils de votre navigateur."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Essayez de recharger ou de réinstaller l'extension et assurez-vous que votre navigateur et ${ PASS_SHORT_APP_NAME } sont à jour."
@@ -1800,13 +1797,16 @@
       "Upgrade Now to Unlock Premium Features": [
         "Passez à la version supérieure dès maintenant pour profiter des fonctionnalités premium."
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Passez à un abonnement payant pour créer plusieurs coffres-forts."
+      ],
       "Use vaults to share this item with others.": [
         "Utilisez les coffres-forts pour partager cet élément avec d'autres personnes."
       ],
       "User's access removed": [
         "L'accès de l'utilisateur a été retiré."
       ],
-      "User's access sucessfuly updated": [
+      "User's access successfully updated": [
         "L'accès de l'utilisateur a été mis à jour."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
@@ -2045,8 +2045,8 @@
       "Capital letters (A-Z)": [
         "Majuscules (A-Z)"
       ],
-      "Capitalise": [
-        "Majuscules"
+      "Capitalize": [
+        "Avec des majuscules"
       ],
       "Card": [
         "Carte"
@@ -2234,8 +2234,8 @@
       "Import passwords": [
         "Importer vos mots de passe"
       ],
-      "Imported from : ": [
-        "Importation à partir de : "
+      "Imported from: ": [
+        "Importé depuis : "
       ],
       "Imported on : ": [
         "Importé le : "
@@ -2336,8 +2336,8 @@
       "Name on card": [
         "Nom sur la carte"
       ],
-      "Need help ?": [
-        "Besoin d'aide  ?"
+      "Need help?": [
+        "Besoin d'aide ?"
       ],
       "New vault": [
         "Nouveau coffre-fort"
@@ -2535,10 +2535,10 @@
       "Today": [
         "Aujourd'hui"
       ],
-      "Total imported items : ": [
+      "Total imported items: ": [
         "Nombre total d’éléments importés : "
       ],
-      "Total items : ": [
+      "Total items: ": [
         "Nombre total d’éléments : "
       ],
       "TOTP": [
@@ -2795,8 +2795,8 @@
       "Current version": [
         "Version actuelle"
       ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "Supprimer le coffre-fort « ${ vaultName } » ?"
+      "Delete vault \"${ vaultName }\"?": [
+        "Voulez-vous supprimer le coffre-fort « ${ vaultName } » ?"
       ],
       "Discard changes?": [
         "Abandonner les modifications ?"
@@ -2855,8 +2855,8 @@
       "Last modified": [
         "Dernière modification"
       ],
-      "Leave vault ?": [
-        "Quitter le coffre-fort ?"
+      "Leave vault?": [
+        "Quitter le coffre-fort ?"
       ],
       "Log in as...": [
         "Connexion en tant que…"
@@ -2900,8 +2900,8 @@
       "Pending access to the shared data": [
         "En attente d'accès aux données partagées"
       ],
-      "Permanently remove all items ?": [
-        "Voulez-vous définitivement retirer tous les éléments ?"
+      "Permanently remove all items?": [
+        "Voulez-vous retirer définitivement tous les éléments ?"
       ],
       "Pin the extension": [
         "Épinglez l'extension"
@@ -3013,14 +3013,11 @@
       "Section name cannot be empty": [
         "Le nom de la section ne peut pas être vide."
       ],
-      "Url already exists": [
+      "URL already exists": [
         "L'URL existe déjà."
       ],
       "URL cannot be empty": [
         "L’URL ne peut pas être vide."
-      ],
-      "Url is invalid": [
-        "L'URL n'est pas valide."
       ],
       "URL is invalid": [
         "L'URL n'est pas valide."
@@ -3054,7 +3051,7 @@
       "Could not create vault \"${ vaultName }\"": [
         "Impossible de créer le coffre-fort « ${ vaultName } »"
       ],
-      "Could not send invitations to the following addresses :": [
+      "Could not send invitations to the following addresses:": [
         "Les invitations n'ont pu être envoyées aux adresses suivantes :"
       ],
       "Duplicate email addresses.": [
@@ -3127,8 +3124,8 @@
       "PGP encrypted export file requires passphrase": [
         "Les fichiers d'exportation chiffrés en PGP nécessitent une phrase secrète."
       ],
-      "Please contact us for investigating the issue": [
-        "Veuillez nous contacter afin que nous puissions examiner le problème."
+      "Please contact us to investigate the issue": [
+        "Veuillez nous contacter pour que nous examinions le problème."
       ],
       "Please verify your email address in order to use email aliases": [
         "Vérifiez votre adresse e-mail pour utiliser les alias d'adresse e-mail."
@@ -3169,9 +3166,6 @@
       "Vault name is required": [
         "Le nom du coffre-fort est nécessaire."
       ],
-      "You cannot create more vaults than your subscription allows.": [
-        "Vous ne pouvez pas créer plus de coffres-forts que votre abonnement ne le permet."
-      ],
       "You have reached the limit of members who can access this vault.": [
         "Vous avez atteint le nombre limite de membres qui peuvent accéder à ce coffre-fort."
       ],
@@ -3207,6 +3201,9 @@
       ],
       "Your session was locked.": [
         "Votre session a été verrouillée."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Vous ne pouvez pas créer plus de coffres-forts que votre abonnement ne le permet."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
