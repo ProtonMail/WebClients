@@ -1,6 +1,7 @@
 import { app, dialog } from "electron";
 import { c } from "ttag";
 import { mainLogger } from "./index";
+import { captureMessage } from "@sentry/electron/main";
 
 export function captureUncaughtErrors() {
     process.on("unhandledRejection", (reason) => {
@@ -13,6 +14,9 @@ export function captureUncaughtErrors() {
 }
 
 export function captureTopLevelRejection(reason: unknown, origin?: NodeJS.UncaughtExceptionOrigin) {
+    // TODO: This should not be needed when we enable sentry transport for logger
+    captureMessage("uncaughtException", { extra: { reason, origin } });
+
     mainLogger.error("uncaughtException", reason, origin);
     dialog.showErrorBox(
         c("Error dialog").t`Unexpected error`,
