@@ -42,7 +42,7 @@ import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { getShortcutFromKeyboardEvent } from '../KeyboardShortcuts/Utils'
 import { LINK_CHANGE_COMMAND } from '../Link/LinkPlugin'
 import { $handleLinkChangeSuggestion } from './handleLinkChangeSuggestion'
-import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../FormattingPlugin'
+import { CLEAR_FORMATTING_COMMAND, SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../FormattingPlugin'
 import { $patchStyleAsSuggestion } from './patchStyleAsSuggestion'
 import { generateSuggestionSummary } from './generateSuggestionSummary'
 import { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from '../Image/ImagePlugin'
@@ -81,6 +81,7 @@ import { SET_BLOCK_TYPE_COMMAND } from '../BlockTypePlugin'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
 import { INSERT_HORIZONTAL_RULE_COMMAND } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $insertDividerAsSuggestion } from './insertDividerAsSuggestion'
+import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -682,6 +683,13 @@ export function SuggestionModePlugin({
         INSERT_HORIZONTAL_RULE_COMMAND,
         () => {
           return $insertDividerAsSuggestion(addCreatedIDtoSet)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        CLEAR_FORMATTING_COMMAND,
+        () => {
+          return $clearFormattingAsSuggestion(addCreatedIDtoSet)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),

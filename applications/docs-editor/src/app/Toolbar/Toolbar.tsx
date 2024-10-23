@@ -10,26 +10,16 @@ import {
   ListNode,
 } from '@lexical/list'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { $isDecoratorBlockNode } from '@lexical/react/LexicalDecoratorBlockNode'
 import type { HeadingTagType } from '@lexical/rich-text'
 import { $isHeadingNode, $isQuoteNode } from '@lexical/rich-text'
 import { $getSelectionStyleValueForProperty } from '@lexical/selection'
-import {
-  $findMatchingParent,
-  $getNearestBlockElementAncestorOrThrow,
-  $getNearestNodeOfType,
-  IS_ANDROID,
-  IS_IOS,
-  mergeRegister,
-} from '@lexical/utils'
+import { $findMatchingParent, $getNearestNodeOfType, IS_ANDROID, IS_IOS, mergeRegister } from '@lexical/utils'
 import type { ElementFormatType } from 'lexical'
 import {
-  $createParagraphNode,
   $getSelection,
   $isElementNode,
   $isRangeSelection,
   $isRootOrShadowRoot,
-  $isTextNode,
   CAN_REDO_COMMAND,
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
@@ -88,7 +78,7 @@ import ToolbarTooltip from './ToolbarTooltip'
 import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
 import { useApplication } from '../ApplicationProvider'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
-import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../Plugins/FormattingPlugin'
+import { CLEAR_FORMATTING_COMMAND, SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../Plugins/FormattingPlugin'
 import { INSERT_FILE_COMMAND } from '../Commands/Events'
 import { EditorUserMode } from '../EditorUserMode'
 import type { BlockType } from '../Plugins/BlockTypePlugin'
@@ -528,46 +518,7 @@ export default function DocumentEditorToolbar({
   ])
 
   const clearFormatting = useCallback(() => {
-    activeEditor.update(() => {
-      const selection = $getSelection()
-      if ($isRangeSelection(selection)) {
-        const anchor = selection.anchor
-        const focus = selection.focus
-        const nodes = selection.getNodes()
-
-        if (anchor.key === focus.key && anchor.offset === focus.offset) {
-          return
-        }
-
-        nodes.forEach((node, idx) => {
-          // We split the first and last node by the selection
-          // So that we don't format unselected text inside those nodes
-          if ($isTextNode(node)) {
-            // Use a separate variable to ensure TS does not lose the refinement
-            let textNode = node
-            if (idx === 0 && anchor.offset !== 0) {
-              textNode = textNode.splitText(anchor.offset)[1] || textNode
-            }
-            if (idx === nodes.length - 1) {
-              textNode = textNode.splitText(focus.offset)[0] || textNode
-            }
-
-            if (textNode.__style !== '') {
-              textNode.setStyle('')
-            }
-            if (textNode.__format !== 0) {
-              textNode.setFormat(0)
-              $getNearestBlockElementAncestorOrThrow(textNode).setFormat('')
-            }
-            node = textNode
-          } else if ($isHeadingNode(node) || $isQuoteNode(node)) {
-            node.replace($createParagraphNode(), true)
-          } else if ($isDecoratorBlockNode(node)) {
-            node.setFormat('')
-          }
-        })
-      }
-    })
+    activeEditor.dispatchCommand(CLEAR_FORMATTING_COMMAND, undefined)
   }, [activeEditor])
 
   const blockTypes: {
