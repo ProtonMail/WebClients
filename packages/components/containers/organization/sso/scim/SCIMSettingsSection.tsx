@@ -19,7 +19,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 
@@ -52,6 +52,11 @@ const PreReq = ({ data, action }: { data: ReactNode; action: ReactNode }) => {
     );
 };
 
+const getDescriptionString = (appName: string) => {
+    return c('scim: Info')
+        .t`Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${appName} organization.`;
+};
+
 const SCIMSettingsSection = ({ domain, onConfigureSaml, onShowVerifyDomain, hasSsoConfig, scimInfo }: Props) => {
     const api = useApi();
     const dispatch = baseUseDispatch<ThunkDispatch<SamlState, ProtonThunkArguments, Action>>();
@@ -72,10 +77,7 @@ const SCIMSettingsSection = ({ domain, onConfigureSaml, onShowVerifyDomain, hasS
                 beta
             >
                 <SettingsSectionWide>
-                    <SettingsParagraph learnMoreUrl="">
-                        {c('scim: Info')
-                            .t`Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${VPN_APP_NAME} organization.`}
-                    </SettingsParagraph>
+                    <SettingsParagraph learnMoreUrl="">{getDescriptionString(BRAND_NAME)}</SettingsParagraph>
 
                     {(() => {
                         if (!hasSsoConfig) {
