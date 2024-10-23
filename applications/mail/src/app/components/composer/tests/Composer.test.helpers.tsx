@@ -5,6 +5,7 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
+import { addComposerAction } from 'proton-mail/store/composers/composerActions';
 import type { MailStore } from 'proton-mail/store/store';
 
 import { mergeMessages } from '../../../helpers/message/messages';
@@ -17,8 +18,6 @@ import {
     waitForNoNotification,
     waitForNotification,
 } from '../../../helpers/test/helper';
-import { EditorTypes } from '../../../hooks/composer/useComposerContent';
-import { composerActions } from '../../../store/composers/composersSlice';
 import type { MessageStateWithData, PartialMessageState } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import Composer from '../Composer';
@@ -80,10 +79,9 @@ export const prepareMessage = (store: MailStore, messageProp: PartialMessageStat
     store.dispatch(initialize(message));
 
     store.dispatch(
-        composerActions.addComposer({
+        addComposerAction({
             ID: composerID,
             messageID: message.localID,
-            type: EditorTypes.composer,
             senderEmailAddress: message.data?.Sender?.Address || '',
             recipients: message.data
                 ? pick(message.data, ['ToList', 'CCList', 'BCCList'])
