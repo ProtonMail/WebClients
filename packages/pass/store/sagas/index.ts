@@ -9,6 +9,7 @@ import lockCreate from './auth/lock-create.saga';
 import lock from './auth/lock.saga';
 import passwordConfirm from './auth/password-confirm.saga';
 import passwordExtra from './auth/password-extra.saga';
+import ssoSagas from './auth/sso.sagas';
 import unlock from './auth/unlock.saga';
 import boot from './client/boot.saga';
 import cache from './client/cache.saga';
@@ -61,6 +62,7 @@ import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
 const COMMON_SAGAS = [
     ...aliasSyncSagas,
     ...secureLinkSagas,
+    ...ssoSagas,
     aliasDetailsRequest,
     aliasOptionsRequest,
     boot,

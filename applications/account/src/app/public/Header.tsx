@@ -15,7 +15,10 @@ interface Props extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
 
 const Header = ({ center, className, right, title, subTitle, onBack, headingLevel, ...rest }: Props) => {
     return (
-        <div className={clsx('sign-layout-header mb-6', center && 'text-center', className)} {...rest}>
+        <div
+            className={clsx('sign-layout-header', title ? 'mb-6' : undefined, center && 'text-center', className)}
+            {...rest}
+        >
             {onBack ? (
                 <span className="absolute sign-layout-backbutton hidden md:flex">
                     <BackButton onClick={onBack} />

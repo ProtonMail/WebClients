@@ -5,6 +5,7 @@ import { useExtensionContext } from 'proton-pass-extension/lib/components/Extens
 import { useOnboardingListener } from 'proton-pass-extension/lib/hooks/useOnboardingListener';
 
 import { Header as CoreHeader } from '@proton/components';
+import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
@@ -28,6 +29,7 @@ export const Header: FC = () => {
 
     return (
         <VaultActionsProvider>
+            <AuthDeviceTopBanner />
             <CoreHeader className="border-bottom h-auto p-2">
                 <div className="flex items-center gap-x-2 w-full">
                     <MenuDropdown />

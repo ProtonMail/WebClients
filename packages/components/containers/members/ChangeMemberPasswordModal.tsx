@@ -185,13 +185,13 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         const { passphrase: newKeyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(inputs.newPassword);
 
         const addressesWithKeys = await getAddressesWithKeysList(memberAddresses);
-        const updateKeysPayload = await getUpdateKeysPayload(
-            addressesWithKeys,
-            userKeysList,
-            getIsPasswordless(organizationKey.Key) ? undefined : organizationKey.privateKey,
-            newKeyPassword,
-            keySalt
-        );
+        const updateKeysPayload = await getUpdateKeysPayload({
+            addressesKeys: addressesWithKeys,
+            userKeys: userKeysList,
+            organizationKey: getIsPasswordless(organizationKey.Key) ? undefined : organizationKey.privateKey,
+            keyPassword: newKeyPassword,
+            keySalt,
+        });
 
         if (member['2faStatus']) {
             await srpVerify({

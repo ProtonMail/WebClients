@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -14,18 +15,40 @@ import noop from '@proton/utils/noop';
 
 interface Props {
     onSubmit: (newPassword: string) => Promise<void>;
+    children?: ReactNode;
+    type?: 'backup';
 }
 
-const SetPasswordForm = ({ onSubmit }: Props) => {
+const getPasswordData = () => {
+    return {
+        formName: 'setPasswordForm',
+        passwordLabel: c('Label').t`New password`,
+        confirmPasswordLabel: c('Label').t`Confirm password`,
+        cta: c('Action').t`Confirm`,
+    };
+};
+
+const getBackupPasswordData = () => {
+    return {
+        formName: 'setBackupPasswordForm',
+        passwordLabel: c('Label').t`Backup password`,
+        confirmPasswordLabel: c('Label').t`Repeat backup password`,
+        cta: c('Action').t`Continue`,
+    };
+};
+
+const SetPasswordForm = ({ onSubmit, children, type }: Props) => {
     const [loading, withLoading] = useLoading();
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
 
+    const data = type === 'backup' ? getBackupPasswordData() : getPasswordData();
+
     return (
         <form
-            name="setPasswordForm"
+            name={data.formName}
             onSubmit={(event) => {
                 event.preventDefault();
                 if (loading || !onFormSubmit()) {
@@ -35,11 +58,12 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
             }}
             method="post"
         >
+            {children}
             <InputFieldTwo
                 as={PasswordInputTwo}
                 id="password"
                 bigger
-                label={c('Label').t`New password`}
+                label={data.passwordLabel}
                 assistiveText={getMinPasswordLengthMessage()}
                 error={validator([passwordLengthValidator(newPassword)])}
                 disableChange={loading}
@@ -47,12 +71,13 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
                 autoComplete="new-password"
                 value={newPassword}
                 onValue={setNewPassword}
+                rootClassName="mb-2"
             />
             <InputFieldTwo
                 as={PasswordInputTwo}
                 id="password-repeat"
                 bigger
-                label={c('Label').t`Confirm password`}
+                label={data.confirmPasswordLabel}
                 error={validator([
                     passwordLengthValidator(confirmNewPassword),
                     confirmPasswordValidator(confirmNewPassword, newPassword),
@@ -61,10 +86,9 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
                 autoComplete="new-password"
                 value={confirmNewPassword}
                 onValue={setConfirmNewPassword}
-                rootClassName="mt-2"
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
-                {c('Action').t`Confirm`}
+                {data.cta}
             </Button>
         </form>
     );

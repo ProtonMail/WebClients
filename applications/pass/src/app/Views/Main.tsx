@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Hamburger, useToggle } from '@proton/components';
+import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
@@ -22,6 +23,7 @@ import { OrganizationProvider } from '@proton/pass/components/Organization/Organ
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
@@ -70,8 +72,12 @@ const MainSwitch: FC = () => {
 
     return (
         <div className="content-container flex flex-1 shrink-0 flex-column">
-            {BUILD_TARGET === 'linux' && <LinuxUpdateBar />}
-            {BUILD_TARGET === 'web' && <ExtensionInstallBar />}
+            <FirstChild>
+                <AuthDeviceTopBanner />
+                {BUILD_TARGET === 'linux' && <LinuxUpdateBar />}
+                {BUILD_TARGET === 'web' && <ExtensionInstallBar />}
+            </FirstChild>
+
             <div className="flex flex-row flex-nowrap overflow-hidden flex-1 relative w-full h-full anime-fade-in">
                 <Sidebar expanded={expanded} onToggle={toggle}>
                     <Menu onToggle={toggle} />

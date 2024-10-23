@@ -11,6 +11,11 @@ import {
     sentinelToggle,
     userEvent,
 } from '@proton/pass/store/actions';
+import {
+    confirmPendingAuthDevice,
+    getAuthDevices,
+    rejectPendingAuthDevice,
+} from '@proton/pass/store/actions/creators/sso';
 import type {
     BitField,
     MaybeNull,
@@ -20,11 +25,14 @@ import type {
 } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, SETTINGS_PASSWORD_MODE, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
+import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
@@ -65,6 +73,7 @@ export type UserState = {
     features: MaybeNull<FeatureFlagState>;
     user: MaybeNull<User>;
     userSettings: MaybeNull<UserSettingsState>;
+    devices: AuthDeviceOutput[];
 } & UserAccessState;
 
 export type HydratedUserState = RequiredNonNull<UserState, Exclude<keyof UserState, 'organization' | 'monitor'>>;
@@ -72,14 +81,15 @@ export type HydratedAccessState = RequiredNonNull<UserAccessState, Exclude<keyof
 
 const getInitialState = (): UserState => ({
     addresses: {},
+    devices: [],
     eventId: null,
     features: null,
+    monitor: { ProtonAddress: true, Aliases: true },
     plan: null,
     user: null,
+    userData: { defaultShareId: null, aliasSyncEnabled: false, pendingAliasToSync: 0 },
     userSettings: null,
     waitingNewUserInvites: 0,
-    monitor: { ProtonAddress: true, Aliases: true },
-    userData: { defaultShareId: null, aliasSyncEnabled: false, pendingAliasToSync: 0 },
 });
 
 export const INITIAL_HIGHSECURITY_SETTINGS = {
@@ -91,7 +101,7 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
 
-        const { Addresses = [], User, EventID, UserSettings } = action.payload;
+        const { Addresses = [], User, EventID, UserSettings, AuthDevices } = action.payload;
         const user = User ?? state.user;
         const eventId = EventID ?? null;
 
@@ -111,8 +121,13 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
             state.addresses
         );
 
+        const devices = AuthDevices
+            ? updateCollection({ model: state.devices, events: AuthDevices, itemKey: 'AuthDevice' })
+            : state.devices;
+
         return {
             ...state,
+            devices,
             user,
             eventId,
             addresses,
@@ -184,6 +199,14 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
         /** optimistically update the pending alias count on sync success */
         const pendingAliasToSync = Math.max(0, state.userData.pendingAliasToSync - action.payload.items.length);
         return partialMerge(state, { userData: { pendingAliasToSync } });
+    }
+
+    if (getAuthDevices.success.match(action)) {
+        return partialMerge(state, { devices: action.payload });
+    }
+
+    if (or(confirmPendingAuthDevice.success.match, rejectPendingAuthDevice.success.match)(action)) {
+        return partialMerge(state, { devices: state.devices.filter(({ ID }) => ID !== action.payload) });
     }
 
     return state;

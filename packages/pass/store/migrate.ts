@@ -65,5 +65,8 @@ export const migrate = (state: State) => {
         };
     }
 
+    /** SSO migration */
+    if (!state.user.devices) state.user.devices = [];
+
     return state;
 };

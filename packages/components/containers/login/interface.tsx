@@ -12,7 +12,9 @@ import type {
     KeySalt as tsKeySalt,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
-import type { AddressGenerationSetup, ClaimableAddress } from '@proton/shared/lib/keys';
+import type { AddressGenerationSetup, ClaimableAddress, ParsedUnprivatizationData } from '@proton/shared/lib/keys';
+import type { AuthDeviceOutput, DeviceData, DeviceSecretData, DeviceSecretUser } from '@proton/shared/lib/keys/device';
+import type { UnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 export interface AddressGeneration {
     externalEmailAddress: Address | undefined;
@@ -26,7 +28,7 @@ export enum AuthStep {
     TWO_FA,
     UNLOCK,
     NEW_PASSWORD,
-    SETUP,
+    SSO,
     DONE,
 }
 
@@ -34,6 +36,71 @@ export interface AuthTypes {
     totp: boolean;
     fido2: boolean;
     unlock: boolean;
+}
+
+export enum SSOLoginCapabilites {
+    SETUP_BACKUP_PASSWORD,
+    ASK_ADMIN,
+    ENTER_BACKUP_PASSWORD,
+    NEW_BACKUP_PASSWORD,
+    OTHER_DEVICES,
+}
+
+export interface SSOSetupData {
+    type: 'setup';
+    deviceData: DeviceData;
+    unprivatizationContextData: UnprivatizationContextData;
+    parsedUnprivatizationData: ParsedUnprivatizationData;
+    organizationData: UnprivatizationContextData['organizationData'];
+    authDevices: AuthDeviceOutput[];
+    intent: {
+        capabilities: Set<SSOLoginCapabilites>;
+        step: SSOLoginCapabilites;
+    };
+}
+
+export interface SSOSetPasswordData {
+    type: 'set-password';
+    keyPassword: string;
+    authDevices: AuthDeviceOutput[];
+    deviceSecretData: DeviceSecretData;
+    intent: {
+        capabilities: Set<SSOLoginCapabilites>;
+        step: SSOLoginCapabilites;
+    };
+}
+
+export type SSOPollingSuccessCb = (deviceSecretUser: DeviceSecretUser) => void;
+export type SSOPollingErrorCb = (error: any) => void;
+export type SSOPolling = {
+    start: () => () => void;
+    addListener: (success: SSOPollingSuccessCb, error: SSOPollingErrorCb) => () => void;
+};
+
+export interface SSOUnlockData {
+    type: 'unlock';
+    deviceData: DeviceData;
+    authDevices: AuthDeviceOutput[];
+    address: Address;
+    organizationData: UnprivatizationContextData['organizationData'];
+    poll: SSOPolling;
+    intent: {
+        capabilities: Set<SSOLoginCapabilites>;
+        step: SSOLoginCapabilites;
+    };
+}
+
+export interface SSOInactiveData {
+    type: 'inactive';
+    deviceData: DeviceData;
+    authDevices: AuthDeviceOutput[];
+    address: Address;
+    organizationData: UnprivatizationContextData['organizationData'];
+    poll: SSOPolling;
+    intent: {
+        capabilities: Set<SSOLoginCapabilites>;
+        step: SSOLoginCapabilites;
+    };
 }
 
 export interface AuthCacheResult {
@@ -46,7 +113,12 @@ export interface AuthCacheResult {
     authResponse: AuthResponse;
     api: Api;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
-    data: { user?: tsUser; salts?: tsKeySalt[]; addresses?: Address[] };
+    data: {
+        user?: tsUser;
+        salts?: tsKeySalt[];
+        addresses?: Address[];
+        ssoData?: SSOSetupData | SSOUnlockData | SSOInactiveData | SSOSetPasswordData;
+    };
     authTypes: AuthTypes;
     username: string;
     persistent: boolean;

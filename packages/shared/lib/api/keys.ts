@@ -124,6 +124,7 @@ interface BaseSetupKeysPayload {
     PrimaryKey: string;
     KeySalt: string;
     AddressKeys: (AddressKeyPayload | AddressKeyPayloadV2)[];
+    EncryptedSecret?: string;
 }
 
 interface UnprivatizationSetupKeysPayload extends BaseSetupKeysPayload {
@@ -258,6 +259,7 @@ export interface UpdatePrivateKeyPayloadV2 {
     UserKeys: { ID: string; PrivateKey: string }[];
     OrganizationKey?: string;
     PersistPasswordScope?: boolean;
+    EncryptedSecret?: string;
 }
 
 export const updatePrivateKeyRoute = (data: UpdatePrivateKeyPayload | UpdatePrivateKeyPayloadV2) => ({

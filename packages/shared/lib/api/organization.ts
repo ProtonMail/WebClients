@@ -3,6 +3,11 @@ export const getOrganization = () => ({
     method: 'get',
 });
 
+export const getOrganizationIdentity = () => ({
+    url: 'core/v4/organizations/keys/signature',
+    method: 'get',
+});
+
 export const getOrganizationKeys = () => ({
     url: 'core/v4/organizations/keys',
     method: 'get',

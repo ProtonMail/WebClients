@@ -49,6 +49,12 @@ export interface Organization {
     State: ORGANIZATION_STATE;
 }
 
+export interface OrganizationIdentityOutput {
+    PublicKey: string | null;
+    FingerprintSignature: string | null;
+    FingerprintSignatureAddress: string | null;
+}
+
 export interface OrganizationSettings {
     ShowName: boolean;
     LogoID: string | null;

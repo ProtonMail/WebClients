@@ -1,6 +1,6 @@
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
-import isTruthy from '@proton/utils/isTruthy';
+import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import noop from '@proton/utils/noop';
 
 import { queryScopes } from '../api/auth';
@@ -25,9 +25,9 @@ import type {
     User,
 } from '../interfaces';
 import { generateAddressKeyTokens } from './addressKeys';
-import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
+import { getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
 import { getDecryptedOrganizationKeyHelper } from './getDecryptedOrganizationKey';
-import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
+import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getPrimaryKey } from './getPrimaryKey';
 import type { OnSKLPublishSuccess } from './signedKeyList';
 import { createSignedKeyListForMigration } from './signedKeyList';
@@ -338,32 +338,11 @@ export async function migrateMemberAddressKeys({
             continue;
         }
         const memberAddresses = await getAllMemberAddresses(api, member.ID);
-        const memberUserKeys = await getDecryptedUserKeys(member.Keys, '', decryptedOrganizationKeyResult);
-        const primaryMemberUserKey = getPrimaryKey(memberUserKeys)?.privateKey;
-        if (!primaryMemberUserKey) {
-            throw new Error('Not able to decrypt the primary member user key');
-        }
-
-        const memberAddressesKeys = (
-            await Promise.all(
-                memberAddresses.map(async (address) => {
-                    const result = {
-                        address,
-                        keys: await getDecryptedAddressKeys(
-                            address.Keys,
-                            memberUserKeys,
-                            '',
-                            decryptedOrganizationKeyResult
-                        ),
-                    };
-                    // Some non-private members don't have keys generated
-                    if (!result.keys.length) {
-                        return;
-                    }
-                    return result;
-                })
-            )
-        ).filter(isTruthy);
+        const { memberUserKeyPrimary, memberAddressesKeys } = await getMemberKeys({
+            member,
+            memberAddresses,
+            organizationKey: decryptedOrganizationKeyResult,
+        });
 
         // Some members might not have keys setup for the address.
         if (!memberAddressesKeys.length) {
@@ -373,7 +352,7 @@ export async function migrateMemberAddressKeys({
         const migratedKeys = await getAddressKeysMigration({
             api,
             addressesKeys: memberAddressesKeys,
-            userKey: primaryMemberUserKey,
+            userKey: memberUserKeyPrimary,
             keyTransparencyVerify,
             keyMigrationKTVerifier,
             organizationKey: decryptedOrganizationKeyResult.privateKey,

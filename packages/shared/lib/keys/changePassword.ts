@@ -90,14 +90,21 @@ export const getArmoredPrivateAddressesKeys = async (addressesWithKeysList: Addr
     return result.flat().filter(isTruthy);
 };
 
-export const getUpdateKeysPayload = async (
-    addressesKeys: AddressesKeys[],
-    userKeys: DecryptedKey[],
-    organizationKey: PrivateKeyReference | undefined,
-    keyPassword: string,
-    keySalt: string,
-    forceMigratedAddressKeys?: boolean
-) => {
+export const getUpdateKeysPayload = async ({
+    addressesKeys,
+    userKeys,
+    keyPassword,
+    organizationKey,
+    keySalt,
+    forceMigratedAddressKeys,
+}: {
+    addressesKeys: AddressesKeys[];
+    userKeys: DecryptedKey[];
+    organizationKey: PrivateKeyReference | undefined;
+    keyPassword: string;
+    keySalt: string;
+    forceMigratedAddressKeys?: boolean;
+}) => {
     const hasMigratedAddressKeys = forceMigratedAddressKeys
         ? true
         : getHasMigratedAddressKeys(addressesKeys.map(({ address }) => address));
