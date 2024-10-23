@@ -42,7 +42,7 @@ describe('useWalletAutoCreate', () => {
     const mockedCreateWallet = vi.fn(async () => apiWalletsData[0]);
     const mockedCreateWalletAccount = vi.fn(async () => ({ Data: apiWalletAccountOneA }));
     const mockedAddEmailAddress = vi.fn();
-    const mockedAddBitcoinAddress = vi.fn();
+    const mockedAddBitcoinAddresses = vi.fn();
     const mockedUpdateWalletAccountFiatCurrency = vi.fn();
     const mockedGetUserWalletSettings = vi.fn(async () => [{ ...userWalletSettings, WalletCreated: 0 }]);
 
@@ -55,7 +55,7 @@ describe('useWalletAutoCreate', () => {
         mockedCreateWallet.mockClear();
         mockedCreateWalletAccount.mockClear();
         mockedAddEmailAddress.mockClear();
-        mockedAddBitcoinAddress.mockClear();
+        mockedAddBitcoinAddresses.mockClear();
         mockedUpdateWalletAccountFiatCurrency.mockClear();
         mockedGetUserWalletSettings.mockClear();
 
@@ -72,7 +72,7 @@ describe('useWalletAutoCreate', () => {
                         updateWalletAccountFiatCurrency: mockedUpdateWalletAccountFiatCurrency,
                     },
                     bitcoin_address: {
-                        addBitcoinAddress: mockedAddBitcoinAddress,
+                        addBitcoinAddresses: mockedAddBitcoinAddresses,
                     },
                     settings: {
                         getUserSettings: mockedGetUserWalletSettings,
@@ -174,15 +174,15 @@ describe('useWalletAutoCreate', () => {
             expect(mockedAddEmailAddress).toHaveBeenCalledWith('0', '8', '0000001');
 
             // Check if bitcoin address pool was filled
-            await waitFor(() => expect(mockedAddBitcoinAddress).toHaveBeenCalled());
-            expect(mockedAddBitcoinAddress).toHaveBeenCalledTimes(1);
-            expect(mockedAddBitcoinAddress).toHaveBeenCalledWith(
+            await waitFor(() => expect(mockedAddBitcoinAddresses).toHaveBeenCalled());
+            expect(mockedAddBitcoinAddresses).toHaveBeenCalledTimes(1);
+            expect(mockedAddBitcoinAddresses).toHaveBeenCalledWith(
                 '0',
                 '8',
                 expect.any(andromedaModule.WasmApiBitcoinAddressesCreationPayload)
             );
 
-            const bitcoinAddressesPayload = mockedAddBitcoinAddress.mock.calls[0][2];
+            const bitcoinAddressesPayload = mockedAddBitcoinAddresses.mock.calls[0][2];
             const bitcoinAddressesPayloadInner = bitcoinAddressesPayload[0];
 
             expect(bitcoinAddressesPayloadInner[0].Data).toStrictEqual({

@@ -2,28 +2,19 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useAddresses } from '@proton/account/addresses/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import type { WasmApiEmailAddress, WasmApiWalletAccount } from '@proton/andromeda';
 import { Info, Prompt, Toggle, useModalState } from '@proton/components';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
-import { useOrganization } from '@proton/components/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { type IWasmApiWalletData } from '@proton/wallet';
 
 import { Button } from '../../../atoms';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../../contexts/WalletSetupModalContext';
-import { EmailAddressCreationModal } from '../../EmailAddressCreationModal';
-import { WalletUpgradeModal } from '../../WalletUpgradeModal';
-import { EmailIntegrationModal } from '../EmailIntegrationModal';
+import { EmailIntegrationModal } from '../../EmailIntegrationModal';
 
 interface Props {
     wallet: IWasmApiWalletData;
     walletAccount: WasmApiWalletAccount;
-    /**
-     * Expected to have only one element
-     */
-    value: WasmApiEmailAddress[];
     options: (readonly [WasmApiEmailAddress, boolean])[];
     loading: boolean;
     shouldShowBvEWarning: boolean;
@@ -36,7 +27,6 @@ interface Props {
 export const EmailIntegrationInput = ({
     wallet,
     walletAccount,
-    value,
     options,
     loading,
     shouldShowBvEWarning,
@@ -44,18 +34,12 @@ export const EmailIntegrationInput = ({
     onAddAddress,
     onReplaceAddress,
 }: Props) => {
-    const [organization] = useOrganization();
     const [emailIntegrationModal, setEmailIntegrationModal] = useModalState();
-    const [emailCreationModal, setEmailCreationModal] = useModalState();
-    const [walletUpgradeModal, setWalletUpgradeModal] = useModalState();
     const [bveWarningPrompt, setBveWarningPrompt] = useModalState();
 
     const { open } = useWalletSetupModalContext();
 
-    const [user] = useUser();
-    const [addresses] = useAddresses();
-
-    const linkedEmail: WasmApiEmailAddress | undefined = value?.[0];
+    const linkedEmail: WasmApiEmailAddress | undefined = walletAccount.Addresses.at(0);
 
     const handleAddressSelection = useCallback(
         (addressID: string) => {
@@ -69,8 +53,6 @@ export const EmailIntegrationInput = ({
         },
         [emailIntegrationModal, linkedEmail, onAddAddress, onReplaceAddress]
     );
-
-    const canCreateAddress = user.isAdmin;
 
     const walletAccountCreation = (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
@@ -124,14 +106,14 @@ export const EmailIntegrationInput = ({
                             <span className="shrink-0">
                                 <Toggle
                                     id={walletAccount.ID}
-                                    checked={value.length > 0}
+                                    checked={!!linkedEmail}
                                     loading={loading}
                                     className="ml-auto"
                                     onChange={() => {
-                                        if (value.length < 1) {
+                                        if (!linkedEmail) {
                                             setEmailIntegrationModal(true);
-                                        } else {
-                                            onRemoveAddress(linkedEmail?.ID);
+                                        } else if (linkedEmail) {
+                                            onRemoveAddress(linkedEmail.ID);
                                         }
                                     }}
                                 />
@@ -151,37 +133,12 @@ export const EmailIntegrationInput = ({
 
             <EmailIntegrationModal
                 loading={loading}
+                linkedEmail={linkedEmail}
+                addresses={options}
                 onAddressSelect={(address) => {
                     handleAddressSelection(address.ID);
                 }}
-                canCreateAddress={canCreateAddress}
-                onAddressCreation={() => {
-                    if ((addresses?.length ?? 0) < (organization?.MaxAddresses ?? 0)) {
-                        setEmailCreationModal(true);
-                    } else {
-                        setWalletUpgradeModal(true);
-                    }
-                }}
-                addresses={options}
-                linkedEmail={linkedEmail}
                 {...emailIntegrationModal}
-            />
-
-            {canCreateAddress && (
-                <EmailAddressCreationModal
-                    onAddressCreated={(address) => {
-                        emailCreationModal.onClose();
-                        handleAddressSelection(address.ID);
-                    }}
-                    {...emailCreationModal}
-                />
-            )}
-
-            <WalletUpgradeModal
-                title={c('Wallet upgrade').t`Unlock more email addresses`}
-                content={c('Wallet upgrade')
-                    .t`An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.`}
-                {...walletUpgradeModal}
             />
 
             <Prompt

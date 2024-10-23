@@ -45,9 +45,9 @@ export const Balance = ({ apiWalletData, apiAccount, disabled }: Props) => {
 
     const balanceRef = useRef<HTMLDivElement>(null);
 
-    const { totalBalance } = useBalance(apiWalletData, apiAccount);
+    const { balance } = useBalance(apiWalletData, apiAccount);
 
-    const loadingBalance = Boolean((syncingData?.syncing || syncingData?.error) && !totalBalance);
+    const loadingBalance = Boolean((syncingData?.syncing || syncingData?.error) && !balance);
 
     return (
         <div className="wallet-balance flex flex-row flex-nowrap py-2 px-0 m-4 items-center">
@@ -64,7 +64,7 @@ export const Balance = ({ apiWalletData, apiAccount, disabled }: Props) => {
                             className="h1 text-semibold"
                             wrapperClassName="contrast"
                             unit={exchangeRate ?? settings.BitcoinUnit}
-                            amount={disabled ? '--' : totalBalance}
+                            amount={disabled ? '--' : balance}
                         />
                     </Skeleton>
 
@@ -88,7 +88,7 @@ export const Balance = ({ apiWalletData, apiAccount, disabled }: Props) => {
                     >
                         <div className="text-lg color-hint">
                             <MaybeHiddenAmount>
-                                {convertAmountStr(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}
+                                {convertAmountStr(balance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}
                             </MaybeHiddenAmount>{' '}
                             {getLabelByUnit(settings.BitcoinUnit)}
                         </div>

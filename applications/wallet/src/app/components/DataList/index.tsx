@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from 'react';
+import { type CSSProperties, type ReactNode, useMemo } from 'react';
 
 import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
@@ -9,7 +9,7 @@ import { useResponsiveContainerContext } from '../../contexts/ResponsiveContaine
 import './Datalist.scss';
 
 interface DataListItemProps {
-    label: ReactNode;
+    label?: ReactNode;
     bottomNode: ReactNode;
     leftIcon?: IconName | ReactNode;
     align?: 'start' | 'end';
@@ -18,14 +18,21 @@ interface DataListItemProps {
 
 export const DataListItem = ({ leftIcon, label, bottomNode, className, align = 'start' }: DataListItemProps) => {
     const { isNarrow } = useResponsiveContainerContext();
+
     return (
         <div className="datagrid-cell h-full">
             <div className="flex flex-row items-center flex-nowrap w-full">
                 {leftIcon && typeof leftIcon === 'string' ? <Icon name={leftIcon as IconName} /> : leftIcon}
                 <div className="grow px-1">
                     <div className={clsx('flex flex-column w-full', `items-${align}`)}>
-                        <div className={clsx('w-full flex', className, isNarrow && 'text-sm')}>{label}</div>
-                        <div className={clsx('w-full flex mt-1', isNarrow && 'text-sm')}>{bottomNode}</div>
+                        {label ? (
+                            <>
+                                <div className={clsx('w-full flex', className, isNarrow && 'text-sm')}>{label}</div>
+                                <div className={clsx('w-full flex mt-1', isNarrow && 'text-sm')}>{bottomNode}</div>
+                            </>
+                        ) : (
+                            <div className={clsx('w-full flex mt-1')}>{bottomNode}</div>
+                        )}
                     </div>
                 </div>
             </div>
@@ -34,6 +41,7 @@ export const DataListItem = ({ leftIcon, label, bottomNode, className, align = '
 };
 
 export type DataColumn<I> = {
+    header?: ReactNode;
     colSpan: string;
     className?: string;
     style?: CSSProperties;
@@ -51,6 +59,24 @@ interface DataListProps<I> {
 export const DataList = <I extends { key: string }>({ columns, rows, canClickRow, onClickRow }: DataListProps<I>) => {
     const { isNarrow } = useResponsiveContainerContext();
 
+    const header = useMemo(() => {
+        if (!columns.some(({ header }) => header)) {
+            return null;
+        }
+
+        return columns.map(({ id, className, style, header }, colIndex) => {
+            return (
+                <div
+                    key={`col-${id}-row-header`}
+                    className={clsx(className, 'overflow-hidden h-full')}
+                    style={{ ...style, gridColumn: colIndex + 1 }}
+                >
+                    {header}
+                </div>
+            );
+        });
+    }, [columns]);
+
     return (
         <div
             className="datagrid-container w-full"
@@ -58,6 +84,12 @@ export const DataList = <I extends { key: string }>({ columns, rows, canClickRow
                 gridTemplateColumns: columns.map(({ colSpan }) => colSpan).join(' '),
             }}
         >
+            {header && (
+                <div className={clsx('datagrid-row relative text-bold mt-4', isNarrow ? 'px-3 py-2' : 'px-6 py-3')}>
+                    {header}
+                </div>
+            )}
+
             {rows.map((row) => {
                 return (
                     <button
@@ -65,7 +97,9 @@ export const DataList = <I extends { key: string }>({ columns, rows, canClickRow
                         className={clsx(
                             'datagrid-row relative',
                             isNarrow ? 'px-3 py-2' : 'px-6 py-3',
-                            onClickRow && (!canClickRow || canClickRow(row)) && 'hoverable-row interactive-pseudo-inset'
+                            onClickRow && (!canClickRow || canClickRow(row))
+                                ? 'interactive-pseudo-inset'
+                                : 'not-interactive-row'
                         )}
                         onClick={() => onClickRow?.(row)}
                     >
