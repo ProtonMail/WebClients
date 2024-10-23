@@ -2,7 +2,8 @@ import { $generateNodesFromSerializedNodes, $insertGeneratedNodes } from '@lexic
 import { $isCodeNode } from '@lexical/code'
 import { $findMatchingParent } from '@lexical/utils'
 import { GenerateUUID } from '@proton/docs-core'
-import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode } from 'lexical'
+import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode, DecoratorNode} from 'lexical';
+import { $isDecoratorNode } from 'lexical'
 import {
   UNDO_COMMAND,
   REDO_COMMAND,
@@ -104,11 +105,29 @@ function $handleDeleteInput(
     `isSelectionCollapsed: ${isSelectionCollapsed}`,
   )
 
-  if (isSelectionCollapsed && boundary !== null) {
+  let focusNode = selection.focus.getNode()
+
+  const currentBlock = focusNode.getTopLevelElement()
+  const isAtStartOfBlock =
+    isSelectionCollapsed && focusNode.is(currentBlock?.getFirstDescendant()) && selection.focus.offset === 0
+
+  let didModifySelection = false
+
+  if (isAtStartOfBlock) {
+    const previousBlock = currentBlock?.getPreviousSibling<ElementNode | DecoratorNode<unknown>>()
+    if ($isDecoratorNode(previousBlock)) {
+      const key = previousBlock.getKey()
+      selection.anchor.set(key, 0, 'element')
+      selection.focus.set(key, 0, 'element')
+      didModifySelection = true
+    }
+  }
+
+  if (!didModifySelection && isSelectionCollapsed && boundary !== null) {
     selection.modify('extend', isBackward, boundary)
   }
 
-  const focusNode = selection.focus.getNode()
+  focusNode = selection.focus.getNode()
   const existingParentSuggestion = $findMatchingParent(focusNode, $isSuggestionNode)
 
   const isWholeSelectionInsideExistingSuggestion = $isWholeSelectionInsideSuggestion(selection)

@@ -36,6 +36,8 @@ const SuggestionTypeToMetricSuggestionType: Record<SuggestionSummaryType, Metric
   'delete-table-column': 'deletion',
   'duplicate-table-column': 'insertion',
   'block-type-change': 'other',
+  'insert-divider': 'insertion',
+  'delete-divider': 'deletion',
 }
 
 type SuggestionResolution = 'accepted' | 'rejected'

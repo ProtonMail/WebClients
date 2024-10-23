@@ -25,3 +25,5 @@ export type SuggestionSummaryType =
   | 'delete-link'
   | 'insert-image'
   | 'delete-image'
+  | 'insert-divider'
+  | 'delete-divider'
