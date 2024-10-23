@@ -3,18 +3,14 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { EasySwitchProvider } from '@proton/activation';
-import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms';
 import {
     CheckListAccountLogin,
     CheckListGmailForward,
     CheckListMobileStores,
     CheckListProtectInbox,
-    GmailSyncModal,
     useActiveBreakpoint,
     useLocalState,
-    useModalState,
 } from '@proton/components';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
@@ -25,11 +21,8 @@ import { deleteCheckedItemsForUser } from 'proton-mail/helpers/checklist/checked
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
+import OnboardingChecklistProvider, { useOnboardingChecklistContext } from './OnboardingChecklistProvider';
 import UsersOnboardingChecklistHeader from './UsersOnboardingChecklistHeader';
-import AccountsLoginModal from './modals/AccountsLoginModal';
-import MobileAppModal from './modals/MobileAppModal';
-import ProtectInboxModal from './modals/ProtectInboxModal';
-import StorageRewardModal from './modals/StorageRewardModal';
 
 import './UsersOnboardingChecklist.scss';
 
@@ -49,36 +42,33 @@ const UsersOnboardingChecklist = ({
     const [user] = useUser();
 
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
+    const { isModalOpened, displayModal } = useOnboardingChecklistContext();
 
     const [rewardShowed, setRewardShowed] = useLocalState(false, 'checklist-reward-showed');
-
-    const [gmailForwardProps, setGmailForwardOpen, renderGmailForward] = useModalState();
-    const [protectLoginProps, setProtectModalOpen, renderProtectInbox] = useModalState();
-    const [loginModalProps, setLoginModalOpen, renderLogin] = useModalState();
-    const [mobileAppsProps, setMobileAppsOpen, renderMobileApps] = useModalState();
-    const [storageRewardProps, setStorageRewardOpen, renderStorageReward] = useModalState();
 
     const { items, changeChecklistDisplay, isChecklistFinished, userWasRewarded, canDisplayChecklist } =
         useGetStartedChecklist();
 
-    // This is used to display the reward modal, can only be opened when user is finished and all modals are closed
     const areAllModalsClosed =
-        !gmailForwardProps.open && !protectLoginProps.open && !loginModalProps.open && !mobileAppsProps.open;
-    const canUserSeeRewardModal = isChecklistFinished && !userWasRewarded && !rewardShowed;
-    const canOpenStorageReward = canUserSeeRewardModal && areAllModalsClosed;
+        !isModalOpened('gmailForward') &&
+        !isModalOpened('protectLogin') &&
+        !isModalOpened('login') &&
+        !isModalOpened('mobileApps');
+
+    const canOpenStorageReward =
+        // Can see storage reward modal
+        isChecklistFinished &&
+        !userWasRewarded &&
+        !rewardShowed &&
+        // All modals are closed
+        areAllModalsClosed;
 
     useEffect(() => {
         if (canOpenStorageReward) {
-            setStorageRewardOpen(true);
+            displayModal('storageReward', true);
             setRewardShowed(true);
         }
-    }, [isChecklistFinished, gmailForwardProps.open, protectLoginProps.open, loginModalProps.open]);
-
-    const handleGmailClose = (hasError?: boolean) => {
-        if (!hasError) {
-            setGmailForwardOpen(false);
-        }
-    };
+    }, [isChecklistFinished, areAllModalsClosed]);
 
     const handleDismiss = () => {
         // Clean the session storage state
@@ -95,88 +85,79 @@ const UsersOnboardingChecklist = ({
     }
 
     return (
-        <EasySwitchProvider>
-            <>
-                <div
-                    data-testid="onboarding-checklist"
-                    className={clsx(
-                        'w-full flex flex-column shrink-0',
-                        // The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
-                        displayOnMobile && 'free-checklist--container',
-                        isColumnMode(mailSettings) &&
-                            !smallVariant &&
-                            !viewportWidth['<=small'] &&
-                            'justify-center h-full',
-                        !viewportWidth['<=small'] && !smallVariant && 'm-auto',
-                        smallVariant
-                            ? 'px-2 self-end'
-                            : 'max-w-full md:max-w-custom p-3 md:p-6 px-4 md:px-0 my-3 md:my-auto gap-6'
-                    )}
-                    style={smallVariant ? undefined : { '--md-max-w-custom': '30em' }}
-                >
-                    <UsersOnboardingChecklistHeader smallVariant={smallVariant} />
-                    <ul className={clsx('flex flex-column unstyled my-0', !smallVariant && 'gap-2 md:px-3')}>
-                        <li>
-                            <CheckListProtectInbox
-                                smallVariant={smallVariant}
-                                data-testid="testing-flavien-checklist-protect-inbox"
-                                onClick={() => setProtectModalOpen(true)}
-                                style={{ borderRadius: smallVariant ? '0.5rem 0.5rem 0 0' : null }}
-                                done={items.has(ChecklistKey.ProtectInbox)}
-                            />
-                        </li>
-                        <li>
-                            <CheckListGmailForward
-                                isInMaintenance={isImporterInMaintenance}
-                                data-testid="testing-flavien-checklist-gmail-forward"
-                                smallVariant={smallVariant}
-                                onClick={() => setGmailForwardOpen(true)}
-                                done={items.has(ChecklistKey.Import)}
-                            />
-                        </li>
-                        <li>
-                            <CheckListAccountLogin
-                                smallVariant={smallVariant}
-                                data-testid="testing-flavien-checklist-account-login"
-                                onClick={() => setLoginModalOpen(true)}
-                                done={items.has(ChecklistKey.AccountLogin)}
-                            />
-                        </li>
-                        <li>
-                            <CheckListMobileStores
-                                smallVariant={smallVariant}
-                                data-testid="testing-flavien-checklist-mobile-apps"
-                                style={{ borderRadius: smallVariant ? '0 0 0.5rem 0.5rem' : null }}
-                                onClick={() => setMobileAppsOpen(true)}
-                                done={items.has(ChecklistKey.MobileApp)}
-                            />
-                        </li>
-                    </ul>
-                    {!smallVariant && !hideDismissButton && (
-                        <div className="text-center">
-                            <Button shape="outline" onClick={handleDismiss}>
-                                {isChecklistFinished
-                                    ? c('Get started checklist instructions').t`Close`
-                                    : c('Get started checklist instructions').t`Maybe later`}
-                            </Button>
-                        </div>
-                    )}
-                </div>
-                {renderProtectInbox && <ProtectInboxModal {...protectLoginProps} />}
-                {renderLogin && <AccountsLoginModal {...loginModalProps} />}
-                {renderMobileApps && <MobileAppModal {...mobileAppsProps} />}
-                {renderStorageReward && <StorageRewardModal {...storageRewardProps} />}
-                {renderGmailForward && (
-                    <GmailSyncModal
-                        source={EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST}
-                        noSkip
-                        onSyncCallback={handleGmailClose}
-                        {...gmailForwardProps}
-                    />
+        <>
+            <div
+                data-testid="onboarding-checklist"
+                className={clsx(
+                    'w-full flex flex-column shrink-0',
+                    // The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
+                    displayOnMobile && 'free-checklist--container',
+                    isColumnMode(mailSettings) && !smallVariant && !viewportWidth['<=small'] && 'justify-center h-full',
+                    !viewportWidth['<=small'] && !smallVariant && 'm-auto',
+                    smallVariant
+                        ? 'px-2 self-end'
+                        : 'max-w-full md:max-w-custom p-3 md:p-6 px-4 md:px-0 my-3 md:my-auto gap-6'
                 )}
-            </>
-        </EasySwitchProvider>
+                style={smallVariant ? undefined : { '--md-max-w-custom': '30em' }}
+            >
+                <UsersOnboardingChecklistHeader smallVariant={smallVariant} />
+                <ul className={clsx('flex flex-column unstyled my-0', !smallVariant && 'gap-2 md:px-3')}>
+                    <li>
+                        <CheckListProtectInbox
+                            smallVariant={smallVariant}
+                            data-testid="testing-flavien-checklist-protect-inbox"
+                            onClick={() => displayModal('protectLogin', true)}
+                            style={{ borderRadius: smallVariant ? '0.5rem 0.5rem 0 0' : null }}
+                            done={items.has(ChecklistKey.ProtectInbox)}
+                        />
+                    </li>
+                    <li>
+                        <CheckListGmailForward
+                            isInMaintenance={isImporterInMaintenance}
+                            data-testid="testing-flavien-checklist-gmail-forward"
+                            smallVariant={smallVariant}
+                            onClick={() => displayModal('gmailForward', true)}
+                            done={items.has(ChecklistKey.Import)}
+                        />
+                    </li>
+                    <li>
+                        <CheckListAccountLogin
+                            smallVariant={smallVariant}
+                            data-testid="testing-flavien-checklist-account-login"
+                            onClick={() => displayModal('login', true)}
+                            done={items.has(ChecklistKey.AccountLogin)}
+                        />
+                    </li>
+                    <li>
+                        <CheckListMobileStores
+                            smallVariant={smallVariant}
+                            data-testid="testing-flavien-checklist-mobile-apps"
+                            style={{ borderRadius: smallVariant ? '0 0 0.5rem 0.5rem' : null }}
+                            onClick={() => displayModal('mobileApps', true)}
+                            done={items.has(ChecklistKey.MobileApp)}
+                        />
+                    </li>
+                </ul>
+                {!smallVariant && !hideDismissButton && (
+                    <div className="text-center">
+                        <Button shape="outline" onClick={handleDismiss}>
+                            {isChecklistFinished
+                                ? c('Get started checklist instructions').t`Close`
+                                : c('Get started checklist instructions').t`Maybe later`}
+                        </Button>
+                    </div>
+                )}
+            </div>
+        </>
     );
 };
 
-export default UsersOnboardingChecklist;
+const UsersOnboardingChecklistWrapper = (props: Props) => {
+    return (
+        <OnboardingChecklistProvider>
+            <UsersOnboardingChecklist {...props} />
+        </OnboardingChecklistProvider>
+    );
+};
+
+export default UsersOnboardingChecklistWrapper;
