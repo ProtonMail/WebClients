@@ -17,6 +17,7 @@ export type SuggestionType =
   | 'delete-table-column'
   | 'duplicate-table-column'
   | 'block-type-change'
+  | 'clear-formatting'
 
 export type SuggestionSummaryType =
   | SuggestionType
