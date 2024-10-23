@@ -9,10 +9,11 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { addComposerAction } from 'proton-mail/store/composers/composerActions';
+
 import { mergeMessages } from '../../../helpers/message/messages';
 import { addApiMock, clearAll, minimalCache, render } from '../../../helpers/test/helper';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { composerActions } from '../../../store/composers/composersSlice';
 import type { MessageState } from '../../../store/messages/messagesTypes';
 import Addresses from './Addresses';
 
@@ -116,7 +117,7 @@ const setup = async ({
     const result = await render(<Addresses {...DEFAULT_PROPS} message={nextMessage} composerID={composerID} />, {
         onStore: (store) => {
             store.dispatch(
-                composerActions.addComposer({
+                addComposerAction({
                     ID: composerID,
                     messageID: nextMessage.localID || '',
                     // @ts-expect-error

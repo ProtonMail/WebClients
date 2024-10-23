@@ -1,4 +1,4 @@
-import type { ReactNode, Ref, RefObject } from 'react';
+import type { MouseEventHandler, ReactNode, Ref, RefObject } from 'react';
 import { forwardRef } from 'react';
 
 import { c } from 'ttag';
@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface ButtonProps {
-    onClick: () => void;
+    onClick: MouseEventHandler<HTMLButtonElement>;
     className?: string;
     title?: ReactNode;
     children?: ReactNode;
@@ -44,6 +44,8 @@ const TitleBarButton = forwardRef<HTMLButtonElement, ButtonProps>(
     }
 );
 
+TitleBarButton.displayName = 'TitleBarButton';
+
 interface Props {
     title: string;
     minimized: boolean;
@@ -72,9 +74,9 @@ const ComposerTitleBar = ({
     const handleDoubleClick = () => {
         if (minimized) {
             toggleMinimized();
-            return;
+        } else {
+            toggleMaximized();
         }
-        toggleMaximized();
     };
 
     const titleMinimize =
@@ -131,7 +133,10 @@ const ComposerTitleBar = ({
             <TitleBarButton
                 className={clsx(['hidden md:flex', minimized && 'rotateX-180'])}
                 title={titleMinimize}
-                onClick={toggleMinimized}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMinimized();
+                }}
                 dataTestId="composer:minimize-button"
                 ref={minimizeButtonRef}
             >
@@ -140,7 +145,10 @@ const ComposerTitleBar = ({
             <TitleBarButton
                 title={titleMaximize}
                 className="hidden md:flex"
-                onClick={toggleMaximized}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMaximized();
+                }}
                 dataTestId="composer:maximize-button"
             >
                 <Icon name={maximized ? 'arrows-to-center' : 'arrows-from-center'} alt={title} className="m-auto" />

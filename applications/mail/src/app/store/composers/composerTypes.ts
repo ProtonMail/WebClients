@@ -1,6 +1,5 @@
 import type { Optional, Recipient } from '@proton/shared/lib/interfaces';
 
-import type { EditorTypes } from '../../hooks/composer/useComposerContent';
 import type { RecipientType } from '../../models/address';
 
 type ComposerFields = {
@@ -10,8 +9,9 @@ type ComposerFields = {
     recipients: Record<RecipientType, Recipient[]>;
     /** TODO: Remove later. Used to trigger changes from a hook while moving to Redux */
     changesCount: number;
-    type: EditorTypes;
     forceOpenScheduleSend?: boolean;
+    isMinimized: boolean;
+    isMaximized: boolean;
 };
 
 /**
