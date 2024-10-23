@@ -1,5 +1,4 @@
-import type { MaybeNull } from '@proton/pass/types/utils';
-import type { ClipboardStoreProperties } from '@proton/pass/lib/desktop-settings/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types/utils';
 
 export type ContextBridgeApi = {
     writeToClipboard: (text: string) => Promise<void>;
@@ -13,5 +12,8 @@ export type ContextBridgeApi = {
     getInstallInfo: () => Promise<{ installSource: MaybeNull<string> }>;
     setInstallSourceReported: () => Promise<void>;
     setClipboardConfig: (config: ClipboardStoreProperties) => Promise<void>;
-    getClipboardConfig: () => Promise<ClipboardStoreProperties>;
+    getClipboardConfig: () => Promise<Maybe<ClipboardStoreProperties>>;
 };
+
+export type ClipboardStoreProperties = { timeoutMs: number };
+export type DesktopSettingsDTO = { clipboard?: ClipboardStoreProperties };
