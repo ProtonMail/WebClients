@@ -21,9 +21,11 @@ import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mail
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
 import { appSession } from "./utils/session";
+import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
 
 (async function () {
     initializeLog();
+    captureUncaughtErrors();
     await initializeSentry();
 
     mainLogger.info(
@@ -187,4 +189,4 @@ import { appSession } from "./utils/session";
             callback(false);
         }
     });
-})();
+})().catch(captureTopLevelRejection);
