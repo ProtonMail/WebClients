@@ -6,7 +6,12 @@ import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testin
 import { type SimpleMap } from '@proton/shared/lib/interfaces';
 import { mockUseGetAddressKeys } from '@proton/testing/lib/vitest';
 import { type WalletWithChainData } from '@proton/wallet';
-import { apiWalletsData, getAddressKey, mockUseWalletApiClients } from '@proton/wallet/tests';
+import {
+    apiWalletsData,
+    getAddressKey,
+    mockUseGetBitcoinAddressPool,
+    mockUseWalletApiClients,
+} from '@proton/wallet/tests';
 
 import { useBitcoinAddresses } from './useBitcoinAddresses';
 import { formatToSubset, getWalletsChainDataInit } from './useWalletsChainData';
@@ -57,11 +62,8 @@ describe('useBitcoinAddresses', () => {
             network: WasmNetwork.Testnet,
         });
 
-        mockUseWalletApiClients({
-            bitcoin_address: {
-                getBitcoinAddresses: vi.fn().mockResolvedValue([bitcoinAddresses.map((Data) => ({ Data }))]),
-            },
-        });
+        mockUseGetBitcoinAddressPool(vi.fn().mockResolvedValue(bitcoinAddresses));
+        mockUseWalletApiClients();
 
         const address = await getAddressKey();
 
@@ -82,6 +84,7 @@ describe('useBitcoinAddresses', () => {
         const addressHelper =
             result.current.bitcoinAddressHelperByWalletAccountId[apiWalletsData[0].WalletAccounts[0].ID];
 
+        // address at index 0
         expect(addressHelper?.receiveBitcoinAddress.address).toBe('tb1qdcmf2j6d8fvvlw0nyp76q2jrgvxd94e8nvt5sv');
     });
 
@@ -116,14 +119,13 @@ describe('useBitcoinAddresses', () => {
     });
 
     describe('when pool is empty', () => {
-        const mockAddBitcoinAddress = vi.fn();
-        const emptyPool: WasmApiWalletBitcoinAddress[] = [];
+        const mockAddBitcoinAddresses = vi.fn();
 
         beforeEach(() => {
+            mockUseGetBitcoinAddressPool(vi.fn().mockResolvedValue([]));
             mockUseWalletApiClients({
                 bitcoin_address: {
-                    addBitcoinAddress: mockAddBitcoinAddress,
-                    getBitcoinAddresses: vi.fn().mockResolvedValue([emptyPool]),
+                    addBitcoinAddresses: mockAddBitcoinAddresses,
                 },
             });
         });
@@ -153,8 +155,8 @@ describe('useBitcoinAddresses', () => {
                 ).toBeTruthy()
             );
 
-            expect(mockAddBitcoinAddress).toHaveBeenCalledTimes(1);
-            const addressPayload = mockAddBitcoinAddress.mock.lastCall[2][0];
+            expect(mockAddBitcoinAddresses).toHaveBeenCalledTimes(1);
+            const addressPayload = mockAddBitcoinAddresses.mock.lastCall[2][0];
             expect(addressPayload[0].Data.BitcoinAddressIndex).toBe(1);
             expect(addressPayload[0].Data.BitcoinAddress).toBe('tb1qm3qzhvwfj3lycdxjyrd9ll8u5v0m8yd20xfmld');
 

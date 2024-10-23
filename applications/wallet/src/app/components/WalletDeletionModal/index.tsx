@@ -30,7 +30,7 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
         },
     });
 
-    const { totalBalance } = useBalance(wallet);
+    const { balance } = useBalance(wallet);
 
     const headerWithWalletName = c('Wallet deletion').t`Are you sure you want to delete "${wallet.Wallet.Name}"`;
     const headerWithoutWalletName = c('Wallet deletion').t`Are you sure you want to delete this wallet`;
@@ -94,7 +94,7 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                     {wallet.IsNotDecryptable ? headerWithoutWalletName : headerWithWalletName}
                 </h1>
 
-                {totalBalance > 0 ? (
+                {balance > 0 ? (
                     <ModalParagraph>
                         <p className="color-danger mb-0">{c('Wallet setup')
                             .t`This wallet seems to still have assets.`}</p>
