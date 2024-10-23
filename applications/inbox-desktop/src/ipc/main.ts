@@ -143,6 +143,8 @@ export const handleIPCCalls = () => {
                 setESUserChoice(payload.userID, payload.userChoice);
                 break;
             }
+            case "triggerCrash":
+                throw new Error("Crash bandicoot");
             default:
                 ipcLogger.error(`unknown message type: ${type}`);
                 break;
