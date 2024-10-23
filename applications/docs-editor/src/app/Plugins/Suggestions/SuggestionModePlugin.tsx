@@ -79,6 +79,8 @@ import { INSERT_CHECK_LIST_COMMAND, INSERT_ORDERED_LIST_COMMAND, INSERT_UNORDERE
 import { INSERT_CUSTOM_ORDERED_LIST_COMMAND } from '../CustomList/CustomListCommands'
 import { SET_BLOCK_TYPE_COMMAND } from '../BlockTypePlugin'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
+import { INSERT_HORIZONTAL_RULE_COMMAND } from '@lexical/react/LexicalHorizontalRuleNode'
+import { $insertDividerAsSuggestion } from './insertDividerAsSuggestion'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -673,6 +675,13 @@ export function SuggestionModePlugin({
         SET_BLOCK_TYPE_COMMAND,
         (blockType) => {
           return $setBlocksTypeAsSuggestion(blockType, addCreatedIDtoSet, suggestionModeLogger)
+        },
+        COMMAND_PRIORITY_CRITICAL,
+      ),
+      editor.registerCommand(
+        INSERT_HORIZONTAL_RULE_COMMAND,
+        () => {
+          return $insertDividerAsSuggestion(addCreatedIDtoSet)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),

@@ -9,6 +9,7 @@ import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import type { Logger } from '@proton/utils/logs'
 import type { TableCellNode, TableRowNode } from '@lexical/table'
 import { $isTableNode } from '@lexical/table'
+import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 
 /**
  * Wraps a given selection with suggestion node(s), splitting
@@ -133,6 +134,8 @@ export function $wrapSelectionInSuggestionNode(
       for (const cell of tableCells) {
         $insertFirst(cell, $createSuggestionNode(id, tableSuggestionType))
       }
+    } else if ($isHorizontalRuleNode(node)) {
+      targetNode = node
     }
 
     if (targetNode !== null) {
