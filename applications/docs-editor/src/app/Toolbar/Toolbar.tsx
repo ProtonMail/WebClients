@@ -110,7 +110,7 @@ export default function DocumentEditorToolbar({
 
   const { isSuggestionsFeatureEnabled } = useApplication()
 
-  const canShowSuggestionsButton = isSuggestionsFeatureEnabled && !isMobile()
+  const canShowSuggestionsButton = isSuggestionsFeatureEnabled
 
   const isEditable = useLexicalEditable()
 
@@ -1358,6 +1358,7 @@ export default function DocumentEditorToolbar({
                       onUserModeChange(EditorUserMode.Suggest)
                     }}
                     data-testid="suggest-dropdown-button"
+                    disabled={isMobile()}
                   />
                 )}
               </>
