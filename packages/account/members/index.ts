@@ -2,8 +2,8 @@ import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit
 import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import type { CacheType } from '@proton/redux-utilities';
 import {
+    CacheType,
     cacheHelper,
     createPromiseStore,
     getFetchedAt,
@@ -277,9 +277,11 @@ const getTemporaryPromiseMap = (() => {
 export const getMemberAddresses = ({
     member: targetMember,
     retry,
+    cache,
 }: {
     member: Member;
     retry?: boolean;
+    cache?: CacheType;
 }): ThunkAction<Promise<Address[]>, MembersState, ProtonThunkArguments, UnknownAction> => {
     const fetch = (api: Api, ID: string) => getAllMemberAddresses(api, ID).then(sortAddresses);
 
@@ -291,13 +293,15 @@ export const getMemberAddresses = ({
             return [];
         }
         if (Boolean(member.Self)) {
-            return dispatch(addressesThunk());
+            return dispatch(addressesThunk({ cache }));
         }
-        if (member.addressState === 'full' && member.Addresses) {
-            return member.Addresses;
-        }
-        if (member.addressState === 'rejected' && !retry) {
-            return [];
+        if (cache !== CacheType.None) {
+            if (member.addressState === 'full' && member.Addresses) {
+                return member.Addresses;
+            }
+            if (member.addressState === 'rejected' && !retry) {
+                return [];
+            }
         }
         const oldPromise = map.get(member.ID);
         if (oldPromise) {
