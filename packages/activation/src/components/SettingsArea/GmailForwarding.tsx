@@ -1,12 +1,9 @@
 import { useUser } from '@proton/account/user/hooks';
 import { CheckListGmailForward, GmailSyncModal, useModalState } from '@proton/components';
-import { useFlag } from '@proton/unleash';
 
 import { EASY_SWITCH_SOURCES } from '../../interface';
 
 const GmailForwarding = () => {
-    const isInMaintenance = useFlag('MaintenanceImporter');
-
     const [syncModalProps, setSyncModalProps, renderSyncModal] = useModalState();
 
     const [user, loadingUser] = useUser();
@@ -25,7 +22,6 @@ const GmailForwarding = () => {
                     onClick={() => setSyncModalProps(true)}
                     disabled={disabled}
                     data-testid="ProviderCard:googleCardForward"
-                    isInMaintenance={isInMaintenance}
                 />
             </div>
             {renderSyncModal && (
