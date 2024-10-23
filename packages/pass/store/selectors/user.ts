@@ -59,7 +59,7 @@ export const selectAddress =
         addresses[addressId];
 
 export const selectAddresses = ({ user }: State) => user.addresses;
-export const selectAllAddresses = ({ user: { addresses } }: State): Address[] => Object.values(addresses);
+export const selectAllAddresses = createSelector(selectAddresses, (addresses): Address[] => Object.values(addresses));
 
 export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
 
