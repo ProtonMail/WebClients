@@ -6,13 +6,12 @@ import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { initializeUpdateChecks, updateDownloaded } from "./update";
-import { isLinux, isMac, isWindows } from "./utils/helpers";
+import { isMac } from "./utils/helpers";
 import { isHostAllowed } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
 import { getMainWindow, getWebContentsViewName, viewCreationAppStartup } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
-import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, observeNativeTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
@@ -22,32 +21,13 @@ import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
 import { appSession } from "./utils/session";
 import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
+import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 
 (async function () {
     initializeLog();
     captureUncaughtErrors();
     await initializeSentry();
-
-    mainLogger.info(
-        "App start is mac:",
-        isMac,
-        "is windows:",
-        isWindows,
-        "isLinux:",
-        isLinux,
-        "version:",
-        app.getVersion(),
-        "params",
-        process.argv,
-    );
-
-    mainLogger.info(
-        "Desktop features:",
-        Object.entries(DESKTOP_FEATURES)
-            .map(([key, value]) => `${key}:${value}`)
-            .join(", "),
-    );
-
+    logInitialAppInfo();
     handleStartupMailto();
 
     // Handle squirrel events at the very top of the application
