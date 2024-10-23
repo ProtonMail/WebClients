@@ -131,7 +131,13 @@ export { SavedPaymentProcessor } from './core/payment-processors/savedPayment';
 export { extractIBAN } from './core/sepa';
 export { getScribeAddonNameByPlan } from './core/subscription/helpers';
 export type { FullPlansMap } from './core/subscription/interface';
-export { getPlanByName, getPlansMap, planToPlanIDs } from './core/subscription/plans-map-wrapper';
+export {
+    getPlanByName,
+    getPlansMap,
+    planToPlanIDs,
+    getAvailableCycles,
+    hasCycle,
+} from './core/subscription/plans-map-wrapper';
 export { SelectedPlan } from './core/subscription/selected-plan';
 export {
     isCardPayment,

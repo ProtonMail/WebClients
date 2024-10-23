@@ -1,3 +1,4 @@
+import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import type { Currency, Cycle, Plan, StrictPlan } from '@proton/shared/lib/interfaces';
 
 import { PLANS, PLAN_TYPES } from '../constants';
@@ -7,12 +8,17 @@ import type { FullPlansMap } from './interface';
 
 export function getPlanByName(
     plans: Plan[],
-    planName: string,
+    plan: string | PlanIDs,
     currency: Currency,
     cycle?: Cycle,
     currencyFallback = true,
     ignoreAddons = false
 ): Plan | undefined {
+    const planName = typeof plan === 'string' ? plan : getPlanFromIds(plan);
+    if (!planName) {
+        return undefined;
+    }
+
     const matchingPlans = plans.filter(
         (plan) =>
             plan.Name === planName &&
@@ -69,4 +75,12 @@ export function planToPlanIDs(plan: Plan): PlanIDs {
     }
 
     return { [plan.Name]: 1 };
+}
+
+export function getAvailableCycles(plan: Plan): Cycle[] {
+    return Object.keys(plan.Pricing ?? {}).map((cycle) => +cycle) as Cycle[];
+}
+
+export function hasCycle(plan: Plan, cycle: Cycle): boolean {
+    return getAvailableCycles(plan).includes(cycle);
 }
