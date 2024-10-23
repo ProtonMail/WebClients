@@ -34,7 +34,7 @@ export const getConsole = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Admin console`,
         tooltip: c('new_plans: tooltip')
-            .t`Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks`,
+            .t`Organization management tool that lets admins add and remove users, manage their access to ${BRAND_NAME} services, and perform other tasks.`,
         included: true,
     };
 };
