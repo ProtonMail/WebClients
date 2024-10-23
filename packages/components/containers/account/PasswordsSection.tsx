@@ -8,8 +8,10 @@ import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import ChangeBackupPasswordModal from '@proton/components/containers/account/ChangeBackupPasswordModal';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
+import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
 
 import {
     useAvailableRecoveryMethods,
@@ -37,6 +39,8 @@ const PasswordsSection = () => {
 
     const [tmpPasswordMode, setTmpPasswordMode] = useState<MODES>();
     const [changePasswordModal, setChangePasswordModalOpen, renderChangePasswordModal] = useModalState();
+    const [changeBackupPasswordModal, setChangeBackupPasswordModalOpen, renderChangeBackupPasswordModal] =
+        useModalState();
     const [
         changePasswordAfterReauthModal,
         setChangePasswordAfterReauthModalOpen,
@@ -131,6 +135,7 @@ const PasswordsSection = () => {
                     {...changePasswordModal}
                 />
             )}
+            {renderChangeBackupPasswordModal && <ChangeBackupPasswordModal {...changeBackupPasswordModal} />}
             {renderSessionRecoveryModal && (
                 <InitiateSessionRecoveryModal
                     onUseRecoveryMethodClick={() => {
@@ -168,63 +173,96 @@ const PasswordsSection = () => {
                     {...sessionRecoveryPasswordResetModal}
                 />
             )}
-            <SettingsSection>
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="passwordChange" className="text-semibold">
-                            {passwordLabel}
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight>
-                        <Button onClick={() => handleChangePassword(changePasswordMode)}>{passwordButtonLabel}</Button>
-                    </SettingsLayoutRight>
-                </SettingsLayout>
-                {hasTwoPasswordOption && (
-                    <>
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label htmlFor="passwordModeToggle" className="text-semibold">
-                                    <span className="mr-2">{c('Label').t`Two-password mode`}</span>
-                                    <Info
-                                        url={getKnowledgeBaseUrl('/single-password')}
-                                        title={c('Info')
-                                            .t`Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)`}
-                                    />
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight isToggleContainer>
-                                <Toggle
-                                    loading={loadingUserSettings}
-                                    checked={!isOnePasswordMode}
-                                    id="passwordModeToggle"
-                                    onChange={() =>
-                                        handleChangePassword(
-                                            isOnePasswordMode ? MODES.SWITCH_TWO_PASSWORD : MODES.SWITCH_ONE_PASSWORD
-                                        )
-                                    }
-                                />
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
-                        {!isOnePasswordMode && (
+            {(() => {
+                if (getIsGlobalSSOAccount(user)) {
+                    const supportsReauth = false;
+                    if (!supportsReauth) {
+                        return null;
+                    }
+                    return (
+                        <SettingsSection>
                             <SettingsLayout>
                                 <SettingsLayoutLeft>
-                                    <label htmlFor="passwordModeToggle" className="text-semibold">
-                                        <span className="mr-2">{c('Label').t`Second password`}</span>
-                                        <Info url={getKnowledgeBaseUrl('/single-password')} />
+                                    <label htmlFor="passwordChange" className="text-semibold">
+                                        {c('sso').t`Backup password`}
                                     </label>
                                 </SettingsLayoutLeft>
                                 <SettingsLayoutRight>
-                                    <Button
-                                        onClick={() => handleChangePassword(MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE)}
-                                    >
-                                        {c('Action').t`Change second password`}
+                                    <Button id="passwordChange" onClick={() => setChangeBackupPasswordModalOpen(true)}>
+                                        {c('sso').t`Change backup password`}
                                     </Button>
                                 </SettingsLayoutRight>
                             </SettingsLayout>
+                        </SettingsSection>
+                    );
+                }
+
+                return (
+                    <SettingsSection>
+                        <SettingsLayout>
+                            <SettingsLayoutLeft>
+                                <label htmlFor="passwordChange" className="text-semibold">
+                                    {passwordLabel}
+                                </label>
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight>
+                                <Button onClick={() => handleChangePassword(changePasswordMode)}>
+                                    {passwordButtonLabel}
+                                </Button>
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
+                        {hasTwoPasswordOption && (
+                            <>
+                                <SettingsLayout>
+                                    <SettingsLayoutLeft>
+                                        <label htmlFor="passwordModeToggle" className="text-semibold">
+                                            <span className="mr-2">{c('Label').t`Two-password mode`}</span>
+                                            <Info
+                                                url={getKnowledgeBaseUrl('/single-password')}
+                                                title={c('Info')
+                                                    .t`Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)`}
+                                            />
+                                        </label>
+                                    </SettingsLayoutLeft>
+                                    <SettingsLayoutRight isToggleContainer>
+                                        <Toggle
+                                            loading={loadingUserSettings}
+                                            checked={!isOnePasswordMode}
+                                            id="passwordModeToggle"
+                                            onChange={() =>
+                                                handleChangePassword(
+                                                    isOnePasswordMode
+                                                        ? MODES.SWITCH_TWO_PASSWORD
+                                                        : MODES.SWITCH_ONE_PASSWORD
+                                                )
+                                            }
+                                        />
+                                    </SettingsLayoutRight>
+                                </SettingsLayout>
+                                {!isOnePasswordMode && (
+                                    <SettingsLayout>
+                                        <SettingsLayoutLeft>
+                                            <label htmlFor="passwordModeToggle" className="text-semibold">
+                                                <span className="mr-2">{c('Label').t`Second password`}</span>
+                                                <Info url={getKnowledgeBaseUrl('/single-password')} />
+                                            </label>
+                                        </SettingsLayoutLeft>
+                                        <SettingsLayoutRight>
+                                            <Button
+                                                onClick={() =>
+                                                    handleChangePassword(MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE)
+                                                }
+                                            >
+                                                {c('Action').t`Change second password`}
+                                            </Button>
+                                        </SettingsLayoutRight>
+                                    </SettingsLayout>
+                                )}
+                            </>
                         )}
-                    </>
-                )}
-            </SettingsSection>
+                    </SettingsSection>
+                );
+            })()}
         </>
     );
 };

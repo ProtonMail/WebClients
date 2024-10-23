@@ -29,7 +29,7 @@ import type {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 import { Renew, UserType } from '@proton/shared/lib/interfaces';
-import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import { getIsExternalAccount, getIsGlobalSSOAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 
@@ -225,6 +225,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Two-factor authentication`,
                         id: 'two-fa',
+                        available: !user.Flags.sso,
                     },
                     {
                         text: isFamilyOrg
@@ -300,6 +301,11 @@ export const getAccountAppRoutes = ({
                         text: DARK_WEB_MONITORING_NAME,
                         id: 'breaches',
                         available: isBreachesAccountDashboardEnabled && !isSSOUser,
+                    },
+                    {
+                        text: c('sso').t`Devices management`,
+                        id: 'devices',
+                        available: getIsGlobalSSOAccount(user),
                     },
                     {
                         text: c('Title').t`Session management`,

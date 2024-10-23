@@ -9,6 +9,16 @@ import type { OnSKLPublishSuccess } from './signedKeyList';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 import { generateUserKey } from './userKeys';
 
+export interface ResetAddressKeysPayload {
+    privateKeys: {
+        userKey: PrivateKeyReference;
+        addressKeys: { privateKey: PrivateKeyReference; addressID: string }[];
+    };
+    userKeyPayload: string;
+    addressKeysPayload: AddressKeyPayloadV2[];
+    onSKLPublishSuccess: OnSKLPublishSuccess;
+}
+
 export const getResetAddressesKeysV2 = async ({
     addresses = [],
     passphrase = '',
@@ -19,23 +29,7 @@ export const getResetAddressesKeysV2 = async ({
     passphrase: string;
     keyGenConfig?: KeyGenConfig;
     preAuthKTVerify: PreAuthKTVerify;
-}): Promise<
-    | {
-          privateKeys: {
-              userKey: PrivateKeyReference;
-              addressKeys: { privateKey: PrivateKeyReference; addressID: string }[];
-          };
-          userKeyPayload: string;
-          addressKeysPayload: AddressKeyPayloadV2[];
-          onSKLPublishSuccess: OnSKLPublishSuccess;
-      }
-    | {
-          privateKeys: undefined;
-          userKeyPayload: undefined;
-          addressKeysPayload: undefined;
-          onSKLPublishSuccess: undefined;
-      }
-> => {
+}): Promise<ResetAddressKeysPayload | { [P in keyof ResetAddressKeysPayload]: undefined }> => {
     if (!addresses.length) {
         return {
             privateKeys: undefined,

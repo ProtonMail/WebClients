@@ -88,3 +88,7 @@ export const toggleAddressMonitorRequest = withKey(`monitor::toggle::address`);
 export const resolveAddressMonitorRequest = withKey(`monitor::resolve::address`);
 
 export const websiteRulesRequest = () => `rules::get`;
+
+export const getAuthDevicesRequest = () => `auth::sso::auth_devices`;
+export const confirmPendingAuthDeviceRequest = withKey(`auth::sso::confirm`);
+export const rejectPendingAuthDeviceRequest = withKey(`auth::sso::reject`);

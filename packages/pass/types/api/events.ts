@@ -3,7 +3,9 @@
  * specifies the keys we're consuming
  * in the extension sagas for now */
 import type { Invoice } from '@proton/payments';
+import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type { Address, Organization, Subscription, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 export enum ChannelType {
     USER = 'user',
@@ -23,15 +25,16 @@ export enum EventActions {
 }
 
 export type UserEvent = {
-    More: 0 | 1;
+    Addresses?: AddressEvent[];
+    AuthDevices?: EventItemUpdate<AuthDeviceOutput, 'AuthDevice'>[];
     EventID: string;
+    Invoices?: Invoice;
+    More: 0 | 1;
+    Organization?: Organization;
     Refresh?: number;
+    Subscription?: Subscription;
     User?: User;
     UserSettings?: UserSettings;
-    Addresses?: AddressEvent[];
-    Subscription?: Subscription;
-    Invoices?: Invoice;
-    Organization?: Organization;
 };
 
 export type AddressEvent = {

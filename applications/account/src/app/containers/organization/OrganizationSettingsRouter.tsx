@@ -121,7 +121,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(sso) && (
                 <Route path={getSectionPath(path, sso)}>
                     <PrivateMainSettingsAreaBase title={sso.title || sso.text} description={sso.description}>
-                        <SsoPage />
+                        <SsoPage app={app} />
                     </PrivateMainSettingsAreaBase>
                 </Route>
             )}
