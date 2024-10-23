@@ -46,6 +46,9 @@ export const AuthDeviceTopBanner: FC = () => {
                     pendingAuthDevice={tmpAuthDevice}
                     onConfirm={async (data) => confirm.dispatch(data)}
                     onReject={async (data) => reject.dispatch(data)}
+                    onClose={() => {
+                        setOpen(false);
+                    }}
                     onExit={() => {
                         setTmpAuthDevice(null);
                     }}
