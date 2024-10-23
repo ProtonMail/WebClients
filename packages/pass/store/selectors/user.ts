@@ -53,11 +53,13 @@ export const selectTrialDaysRemaining = ({ user: { plan } }: State): MaybeNull<n
 export const selectUserTier = ({ user: { user, plan } }: State): string | undefined =>
     user?.Type === UserType.MANAGED ? 'subuser' : plan?.InternalName;
 
-export const selectAllAddresses = ({ user: { addresses } }: State): Address[] => Object.values(addresses);
 export const selectAddress =
     (addressId: string) =>
     ({ user: { addresses } }: State): Maybe<Address> =>
         addresses[addressId];
+
+export const selectAddresses = ({ user }: State) => user.addresses;
+export const selectAllAddresses = createSelector(selectAddresses, (addresses): Address[] => Object.values(addresses));
 
 export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
 
@@ -77,12 +79,13 @@ export const selectUserDefaultShareID = createSelector(
 
 export const selectAuthDevices = (state: State) => state.user.devices;
 
-export const selectPendingAuthDevices = createSelector(selectAuthDevices, (authDevices) =>
+export const selectPendingAuthDevices = createSelector([selectAuthDevices, selectAddresses], (authDevices, addresses) =>
     authDevices
-        .filter((device) =>
+        .filter(({ State, ActivationAddressID }) =>
             Boolean(
-                oneOf(AuthDeviceState.PendingActivation, AuthDeviceState.PendingAdminActivation)(device.State) &&
-                    selectAddress(device.ActivationAddressID || '')
+                oneOf(AuthDeviceState.PendingActivation, AuthDeviceState.PendingAdminActivation)(State) &&
+                    ActivationAddressID &&
+                    addresses[ActivationAddressID]
             )
         )
         .sort(sortOn('CreateTime'))
