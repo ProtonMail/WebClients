@@ -49,7 +49,11 @@ export const BlackFriday2024Offer: FC<BaseSpotlightMessage> = ({ onClose = noop 
         switch (offer) {
             case PassFeature.PassBlackFriday2024Family: {
                 const relativePrice = getSimplePriceString(currency, PASS_FAMILY_BF_2024_MONTHLY_PRICE);
-                const discountJSX = <strong className="pass-bf2024-banner--offer px-0.5">50%</strong>;
+                const discountJSX = (
+                    <strong key="discount" className="pass-bf2024-banner--offer px-0.5">
+                        50%
+                    </strong>
+                );
                 return {
                     title: c('bf2024: Title')
                         .jt`Save up to ${discountJSX} on Pass Family. Only ${relativePrice}/month.`,
@@ -60,7 +64,9 @@ export const BlackFriday2024Offer: FC<BaseSpotlightMessage> = ({ onClose = noop 
             case PassFeature.PassBlackFriday2024Lifetime: {
                 const relativePrice = getSimplePriceString(currency, PASS_LIFETIME_BF_2024_YEARLY_PRICE);
                 const lifetimeAccessJSX = (
-                    <strong className="pass-bf2024-banner--offer px-0.5">{c('bf2024: Deal').t`lifetime access`}</strong>
+                    <strong key="deal" className="pass-bf2024-banner--offer px-0.5">
+                        {c('bf2024: Deal').t`lifetime access`}
+                    </strong>
                 );
 
                 return {
