@@ -25,6 +25,7 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
+import { addComposerAction } from 'proton-mail/store/composers/composerActions';
 import { composerActions } from 'proton-mail/store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
@@ -35,7 +36,6 @@ import { openDraft } from '../../store/messages/draft/messagesDraftActions';
 import type { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
-import { EditorTypes } from './useComposerContent';
 
 export enum ComposeTypes {
     existingDraft,
@@ -119,8 +119,7 @@ export const useCompose = ({
 
             if (type === ComposeTypes.existingDraft) {
                 dispatch(
-                    composerActions.addComposer({
-                        type: EditorTypes.composer,
+                    addComposerAction({
                         messageID,
                         senderEmailAddress: undefined,
                         status: 'loading',
@@ -133,8 +132,7 @@ export const useCompose = ({
                 }
 
                 dispatch(
-                    composerActions.addComposer({
-                        type: EditorTypes.composer,
+                    addComposerAction({
                         messageID,
                         senderEmailAddress: message.data.Sender.Address,
                         recipients: pick(message.data, ['ToList', 'CCList', 'BCCList']),
@@ -185,7 +183,20 @@ export const useCompose = ({
     const handleCompose = useHandler(async (composeArgs: ComposeArgs) => {
         const addresses = await getAddresses();
 
+        const createMaxActiveComposerNotification = () => {
+            createNotification({
+                type: 'error',
+                // translator: maxActiveComposer should never be 1, is fixed to 3 today but can potentially vary from 2 to 5(?) in the future.
+                text: c('Error').ngettext(
+                    msgid`You cannot open more than ${maxActiveComposer} composer window at a time`,
+                    `You cannot open more than ${maxActiveComposer} composer windows at a time`,
+                    maxActiveComposer
+                ),
+            });
+        };
+
         const activeAddresses = addresses.filter((address) => !isDirtyAddress(address));
+        const compose = getComposeArgs(composeArgs);
 
         if (activeAddresses.length === 0) {
             createNotification({
@@ -201,20 +212,12 @@ export const useCompose = ({
             return;
         }
 
-        if (openedComposerIDs.length >= maxActiveComposer) {
-            createNotification({
-                type: 'error',
-                // translator: maxActiveComposer should never be 1, is fixed to 3 today but can potentially vary from 2 to 5(?) in the future.
-                text: c('Error').ngettext(
-                    msgid`You cannot open more than ${maxActiveComposer} composer window at a time`,
-                    `You cannot open more than ${maxActiveComposer} composer windows at a time`,
-                    maxActiveComposer
-                ),
-            });
+        // Opened composer length is checked also in ComposeType.existingDraft condition
+        // If draft is already has a composer, we don't want to show the error message on click
+        if (openedComposerIDs.length >= maxActiveComposer && compose.type !== ComposeTypes.existingDraft) {
+            createMaxActiveComposerNotification();
             return;
         }
-
-        const compose = getComposeArgs(composeArgs);
 
         if (compose.type === ComposeTypes.existingDraft) {
             const { existingDraft, fromUndo, returnFocusTo } = compose;
@@ -225,7 +228,15 @@ export const useCompose = ({
             );
 
             if (composer) {
+                if (composer.isMinimized) {
+                    dispatch(composerActions.toggleMinimizeComposer(composer.ID));
+                }
                 focusComposer(composer.ID);
+                return;
+            }
+
+            if (openedComposerIDs.length >= maxActiveComposer) {
+                createMaxActiveComposerNotification();
                 return;
             }
 
