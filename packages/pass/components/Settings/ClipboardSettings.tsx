@@ -1,10 +1,10 @@
-import { type FC } from 'react';
+import { type FC, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components/index';
-import { setDesktopSettings } from '@proton/pass/store/actions/creators/desktop-settings';
+import { setDesktopSettings } from '@proton/pass/store/actions/creators/desktop';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
 
 import { SettingsPanel } from './SettingsPanel';
@@ -20,7 +20,8 @@ export const ClipboardSettings: FC = () => {
         [120_000, c('Label').t`2 minutes`],
     ];
 
-    const value = options.find((o) => o[0] === storedValue)?.[0] ?? options[0][0];
+    const value = useMemo(() => options.find(([value]) => value === storedValue)?.[0] ?? options[0][0], [storedValue]);
+
     const onValue = (timeoutMs: number) => dispatch(setDesktopSettings.intent({ clipboard: { timeoutMs } }));
 
     return (

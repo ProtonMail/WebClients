@@ -1,6 +1,5 @@
 import type { PassSaga } from '@proton/pass/store/types';
 
-import setDesktopSettings from './client/desktop-settings.set.saga';
-import syncDesktopSettings from './client/desktop-settings.sync.saga';
+import desktopSettingsSagas from './client/desktop-settings.sagas';
 
-export const DESKTOP_SAGAS: PassSaga[] = [setDesktopSettings, syncDesktopSettings];
+export const DESKTOP_SAGAS: PassSaga[] = [...desktopSettingsSagas];
