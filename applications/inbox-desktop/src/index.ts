@@ -72,7 +72,6 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
         }
     });
 
-    // Security addition
     app.on("web-contents-created", (_ev, contents) => {
         handleWebContents(contents);
     });
@@ -97,12 +96,21 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
         return;
     }
 
-    checkDefaultProtocols();
-
+    // After this point we should be able to use all electron APIs safely.
     await app.whenReady();
 
+    checkDefaultProtocols();
     registerLogIPCForwardTransport();
     observeNativeTheme();
+    connectNetLogger(getWebContentsViewName);
+    initializeUpdateChecks();
+    new Notification();
+    handleIPCCalls();
+    handleAppReadyMailto();
+
+    // After this point the main window and views have been created
+    viewCreationAppStartup();
+
     const settings = getSettings();
 
     if (settings.overrideError) {
@@ -112,8 +120,6 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
     if (settings.theme) {
         updateNativeTheme(getTheme());
     }
-
-    connectNetLogger(getWebContentsViewName);
 
     app.on("activate", () => {
         if (isMac) {
@@ -126,17 +132,6 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
         }
     });
 
-    viewCreationAppStartup();
-
-    // Check updates
-    initializeUpdateChecks();
-
-    // Trigger blank notification to force presence in settings
-    new Notification();
-
-    // Handle IPC calls coming from the destkop application
-    handleIPCCalls();
-
     app.on("open-url", (_e: Event, url: string) => {
         mainLogger.info("Open URL event", url);
 
@@ -147,8 +142,6 @@ import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
         }
         mainWindow.show();
     });
-
-    handleAppReadyMailto();
 
     // Security addition, reject all permissions except notifications
     appSession().setPermissionRequestHandler((webContents, permission, callback) => {
