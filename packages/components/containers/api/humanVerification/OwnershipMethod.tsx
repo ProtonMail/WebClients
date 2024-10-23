@@ -212,7 +212,7 @@ const OwnershipMethod = ({
                         <div className="mt-2">
                             <hr />
                             <div className="text-center mt-5 mb-5">
-                                <SettingsLink key="link" path="/account-password?action=edit-email">
+                                <SettingsLink path="/account-password?action=edit-email" reloadDocument={true}>
                                     {c('Info').t`Edit email address`}
                                 </SettingsLink>
                             </div>
