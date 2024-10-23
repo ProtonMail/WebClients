@@ -1,5 +1,5 @@
 import Logger, { LevelOption, LogMessage, TransformFn } from "electron-log";
-import { getCurrentView } from "./view/viewManagement";
+import { getCurrentView } from "../view/viewManagement";
 
 export function registerLogIPCForwardTransport() {
     const ipcForwardTransport = (message: LogMessage) => {

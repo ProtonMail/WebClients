@@ -16,7 +16,7 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, observeNativeTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
-import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
+import { registerLogIPCForwardTransport } from "./utils/log/logIPCForwardTransport";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
