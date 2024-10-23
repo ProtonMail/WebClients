@@ -44,17 +44,19 @@ export function generateSuggestionSummary(
 
       const childrenSize = node.getChildrenSize()
       const firstChild = node.getFirstChild()
-      if (childrenSize === 1) {
+      const isFirstChildImage = $isImageNode(firstChild)
+      const isFirstChildDivider = $isHorizontalRuleNode(firstChild)
+      if (childrenSize === 1 && (isFirstChildImage || isFirstChildDivider)) {
         if (currentType === 'insert') {
-          if ($isImageNode(firstChild)) {
+          if (isFirstChildImage) {
             type = 'insert-image'
-          } else if ($isHorizontalRuleNode(firstChild)) {
+          } else if (isFirstChildDivider) {
             type = 'insert-divider'
           }
         } else if (currentType === 'delete') {
-          if ($isImageNode(firstChild)) {
+          if (isFirstChildImage) {
             type = 'delete-image'
-          } else if ($isHorizontalRuleNode(firstChild)) {
+          } else if (isFirstChildDivider) {
             type = 'delete-divider'
           }
         }
