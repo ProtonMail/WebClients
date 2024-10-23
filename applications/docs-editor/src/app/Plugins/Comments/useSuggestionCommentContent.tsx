@@ -125,6 +125,11 @@ export function useSuggestionCommentContent(
       color = 'weak'
     } else if (type === 'block-type-change') {
       title = c('Label').t`Format`
+    } else if (type === 'insert-divider') {
+      title = c('Label').t`Insert divider`
+    } else if (type === 'delete-divider') {
+      title = c('Label').t`Delete divider`
+      color = 'weak'
     }
     if (!!replaceWith || type === 'delete' || type === 'insert') {
       content = `"${content}"`

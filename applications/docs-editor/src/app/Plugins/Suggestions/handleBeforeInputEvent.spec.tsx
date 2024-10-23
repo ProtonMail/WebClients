@@ -28,6 +28,7 @@ import type { ListItemNode } from '@lexical/list'
 import { $createListItemNode, $createListNode } from '@lexical/list'
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
 import type { Logger } from '@proton/utils/logs'
+import { $createHorizontalRuleNode, $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 
 polyfillSelectionRelatedThingsForTests()
 
@@ -1048,6 +1049,47 @@ describe('$handleBeforeInputEvent', () => {
         expect($isSuggestionNode(suggestion)).toBe(true)
         expect(suggestion?.getChildrenSize()).toBe(1)
         expect(suggestion?.getTextContent()).toBe('s')
+      })
+    })
+
+    test('should wrap prev divider when backspacing at start of block', async () => {
+      await update(() => {
+        const paragraph1 = $createParagraphNode().append($createTextNode('Hello'))
+        const divider = $createHorizontalRuleNode()
+        const paragraph2 = $createParagraphNode()
+        const text = $createTextNode('World')
+        paragraph2.append(text)
+        $getRoot().append(paragraph1, divider, paragraph2)
+        text.select(0, 0)
+      })
+      await update(() => {
+        $handleBeforeInputEvent(
+          editor!,
+          {
+            inputType: 'deleteContentBackward',
+            data: null,
+            dataTransfer: null,
+          } as InputEvent,
+          onSuggestionCreation,
+        )
+      })
+      editor!.read(() => {
+        const root = $getRoot()
+        const suggestion = root.getChildAtIndex<ProtonNode>(1)!
+        expect($isSuggestionNode(suggestion)).toBe(true)
+        expect(suggestion.getSuggestionTypeOrThrow()).toBe('delete')
+
+        expect(suggestion.getChildrenSize()).toBe(1)
+        expect($isHorizontalRuleNode(suggestion.getFirstChild())).toBe(true)
+
+        const selection = $getSelection()
+        expect(selection?.isCollapsed()).toBe(true)
+
+        const anchor = selection?.getStartEndPoints()![0]
+        const anchorNode = anchor!.getNode()
+        const firstParagraph = root.getFirstChildOrThrow<ParagraphNode>()
+        expect(anchorNode.is(firstParagraph)).toBe(true)
+        expect(anchor!.offset).toBe(firstParagraph.getChildrenSize())
       })
     })
   })
