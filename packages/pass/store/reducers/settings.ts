@@ -10,12 +10,14 @@ import {
     lockCreateSuccess,
     lockSync,
     offlineToggle,
+    setDesktopSettings,
     settingsEditSuccess,
+    syncDesktopSettings,
     updatePauseListItem,
     userEvent,
 } from '@proton/pass/store/actions';
 import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
-import type { MaybeNull, Unpack } from '@proton/pass/types';
+import type { ClipboardStoreProperties, MaybeNull, Unpack } from '@proton/pass/types';
 import type {
     AutoFillSettings,
     AutoSaveSettings,
@@ -31,6 +33,7 @@ export type SettingsState = {
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
     beta?: boolean;
+    clipboard?: ClipboardStoreProperties;
     createdItemsCount: number /* explicitly created, not including import */;
     disallowedDomains: DomainCriterias;
     extraPassword?: boolean;
@@ -116,6 +119,10 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
 
     if (extraPasswordToggle.success.match(action)) {
         return partialMerge<SettingsState>(state, { extraPassword: action.payload });
+    }
+
+    if (DESKTOP_BUILD && or(setDesktopSettings.success.match, syncDesktopSettings.success.match)(action)) {
+        return partialMerge<SettingsState>(state, action.payload);
     }
 
     return state;

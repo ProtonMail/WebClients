@@ -7,7 +7,6 @@ import type { State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 
 import alias from './alias';
-import desktopSettings from './desktop-settings';
 import importReducer from './import';
 import invites from './invites';
 import items from './items';
@@ -42,7 +41,6 @@ export const reducerMap = {
     settings,
     shares,
     user,
-    desktopSettings,
 };
 export const rootReducer = combineReducers(reducerMap);
 

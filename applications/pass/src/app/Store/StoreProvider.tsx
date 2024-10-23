@@ -40,6 +40,8 @@ import noop from '@proton/utils/noop';
 
 import { sagaMiddleware, store } from './store';
 
+const SAGAS = DESKTOP_BUILD ? [...WEB_SAGAS, ...DESKTOP_SAGAS] : WEB_SAGAS;
+
 export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const core = usePassCore();
     const config = usePassConfig();
@@ -54,9 +56,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const enhance = useNotificationEnhancer();
 
     useEffect(() => {
-        const sagas = DESKTOP_BUILD ? [...WEB_SAGAS, ...DESKTOP_SAGAS] : WEB_SAGAS;
         const runner = sagaMiddleware.run(
-            rootSagaFactory(sagas).bind(null, {
+            rootSagaFactory(SAGAS).bind(null, {
                 endpoint: 'web',
 
                 getAppState: () => app.state,
