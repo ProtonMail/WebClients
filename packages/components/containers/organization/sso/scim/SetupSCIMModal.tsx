@@ -7,7 +7,7 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
 
@@ -16,6 +16,14 @@ export interface SCIMConfiguration {
     token: string;
     type: 'setup' | 'generated' | 'static';
 }
+
+const getDescriptionString = (type: SCIMConfiguration['type'], appName: string) => {
+    return type === 'setup'
+        ? c('scim: Info')
+              .t`Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${appName}.`
+        : c('scim: Info')
+              .t`Go to your identity provider, copy and paste the token below and re-enable SCIM for ${appName}.`;
+};
 
 type SetupSCIMModalProps = ModalProps & SCIMConfiguration;
 
@@ -31,11 +39,7 @@ const SetupSCIMModal = ({ onClose, token, type, baseUrl, ...rest }: SetupSCIMMod
             />
             <ModalContent>
                 <div className="mb-6">
-                    {type === 'setup'
-                        ? c('scim: Info')
-                              .t`Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${VPN_APP_NAME}.`
-                        : c('scim: Info')
-                              .t`Go to your identity provider, copy and paste the token below and re-enable SCIM for ${VPN_APP_NAME}.`}
+                    {getDescriptionString(type, BRAND_NAME)}
                     <br />
                     <Href href="https://protonvpn.com/support/sso">{c('Info').t`Learn more`}</Href>
                 </div>
