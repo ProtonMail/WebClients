@@ -2,11 +2,12 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode } from './ProtonNode'
-import type { ParagraphNode, TextNode } from 'lexical'
+import type { ParagraphNode, TextNode, ElementNode } from 'lexical'
 import { $isParagraphNode, $isTextNode } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot } from 'lexical'
 import { $rejectSuggestion } from './rejectSuggestion'
-import { $createHeadingNode } from '@lexical/rich-text'
+import type { HeadingNode } from '@lexical/rich-text'
+import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
 import type { ListNode, ListItemNode } from '@lexical/list'
 import { $isListItemNode } from '@lexical/list'
 import { $createListItemNode, $createListNode, $isListNode } from '@lexical/list'
@@ -749,6 +750,66 @@ describe('$rejectSuggestion', () => {
         for (const row of rows) {
           expect(row.getChildrenSize()).toBe(1)
         }
+      })
+    })
+  })
+
+  describe('block-type-change', () => {
+    beforeEach(() => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          $getRoot().append(
+            $createHeadingNode('h2').append(
+              $createSuggestionNode(suggestionID, 'block-type-change', {
+                initialBlockType: 'paragraph',
+              }),
+            ),
+            $createHeadingNode('h2')
+              .setFormat('right')
+              .setIndent(1)
+              .append(
+                $createSuggestionNode(suggestionID, 'block-type-change', {
+                  initialBlockType: 'h1',
+                }),
+              ),
+          )
+          $rejectSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+    })
+
+    it('should revert block types to original', () => {
+      editor.read(() => {
+        const root = $getRoot()
+        const first = root.getFirstChildOrThrow<ElementNode>()
+        expect($isParagraphNode(first)).toBe(true)
+        const last = root.getLastChildOrThrow<HeadingNode>()
+        expect($isHeadingNode(last)).toBe(true)
+        expect(last.getTag()).toBe('h1')
+      })
+    })
+
+    it('should remove suggestion nodes', () => {
+      editor.read(() => {
+        const root = $getRoot()
+        const first = root.getFirstChildOrThrow<ElementNode>()
+        expect(first.getChildrenSize()).toBe(0)
+        const last = root.getLastChildOrThrow<HeadingNode>()
+        expect(last.getChildrenSize()).toBe(0)
+      })
+    })
+
+    it('should keep element format and indent', () => {
+      editor.read(() => {
+        const root = $getRoot()
+        const last = root.getLastChildOrThrow<HeadingNode>()
+        expect(last.getFormatType()).toBe('right')
+        expect(last.getIndent()).toBe(1)
       })
     })
   })

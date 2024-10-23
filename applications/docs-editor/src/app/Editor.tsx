@@ -50,6 +50,7 @@ import { ProtonLinkPlugin } from './Plugins/Link/LinkPlugin'
 import { FormattingPlugin } from './Plugins/FormattingPlugin'
 import { EditorUserMode } from './EditorUserMode'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
+import { BlockTypePlugin } from './Plugins/BlockTypePlugin'
 
 const TypingBotEnabled = false
 
@@ -171,6 +172,7 @@ export function Editor({
           ErrorBoundary={LexicalErrorBoundary}
         />
         <FormattingPlugin />
+        <BlockTypePlugin />
         <MarkdownShortcutPlugin transformers={MarkdownTransformers} />
         <HorizontalRulePlugin />
         <ListPlugin />

@@ -123,6 +123,8 @@ export function useSuggestionCommentContent(
     } else if (type === 'delete-table-column') {
       title = c('Label').t`Delete table column`
       color = 'weak'
+    } else if (type === 'block-type-change') {
+      title = c('Label').t`Format`
     }
     if (!!replaceWith || type === 'delete' || type === 'insert') {
       content = `"${content}"`
