@@ -5,6 +5,7 @@ import { $isSuggestionNode } from './ProtonNode'
 import { getFormatsForFlag } from '../../Utils/TextFormatUtils'
 import { $isLinkNode } from '@lexical/link'
 import { $isImageNode } from '../Image/ImageNode'
+import { $getElementBlockType, blockTypeToBlockName } from '../BlockTypePlugin'
 
 export type SuggestionSummaryContent = { type: SuggestionSummaryType; content: string; replaceWith?: string }[]
 
@@ -75,6 +76,13 @@ export function generateSuggestionSummary(
       if (currentType === 'style-change') {
         const changedProperties = node.__properties.nodePropertiesChanged
         content = Object.keys(changedProperties || {}).join(',')
+      }
+
+      if (currentType === 'block-type-change') {
+        const currentBlockType = $getElementBlockType(node.getTopLevelElementOrThrow())
+        if (currentBlockType) {
+          content = blockTypeToBlockName[currentBlockType]
+        }
       }
 
       const lastItem = summary[summary.length - 1]
