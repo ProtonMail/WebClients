@@ -178,6 +178,21 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       initialBlockTypeNode.setFormat(block.getFormatType())
       initialBlockTypeNode.setIndent(block.getIndent())
       block.replace(initialBlockTypeNode, true)
+    } else if (suggestionType === 'clear-formatting') {
+      const children = node.getChildren()
+      const changedProperties = node.__properties.nodePropertiesChanged
+      if (!changedProperties) {
+        $unwrapSuggestionNode(node)
+        continue
+      }
+      for (const node of children) {
+        if (!$isTextNode(node)) {
+          continue
+        }
+        node.setStyle(changedProperties.initialStyle)
+        node.setFormat(changedProperties.initialFormat)
+      }
+      $unwrapSuggestionNode(node)
     } else {
       node.remove()
     }
