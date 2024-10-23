@@ -12,6 +12,7 @@ import gmailForwardSmall from '@proton/styles/assets/img/illustrations/checklist
 import gmailForward from '@proton/styles/assets/img/illustrations/checklist-gmail-forward.svg';
 import protectInboxSmall from '@proton/styles/assets/img/illustrations/checklist-protect-inbox-small.svg';
 import protectInbox from '@proton/styles/assets/img/illustrations/checklist-protect-inbox.svg';
+import useFlag from '@proton/unleash/useFlag';
 
 import CheckListItem from './CheckListItem';
 
@@ -60,8 +61,8 @@ export const CheckListGmailForward = ({
     style,
     disabled = false,
     'data-testid': dataTestId,
-    isInMaintenance,
-}: CheckListItemProps & { isInMaintenance: boolean }) => {
+}: CheckListItemProps) => {
+    const isInMaintenance = useFlag('MaintenanceImporter');
     // translator: This text is in bold inside the sentence "Set up auto-forwarding from Gmail"
     const strongText = <strong key="get-started">{c('Get started checklist instructions').t`auto-forwarding`}</strong>;
     // translator: The whole sentence is "Set up auto-forwarding from Gmail" with "auto-forwarding" in bold
