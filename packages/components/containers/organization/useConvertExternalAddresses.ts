@@ -1,7 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
-import { convertExternalAddresses } from '@proton/account/organizationKey/convertAddresses';
+import {
+    convertExternalAddresses,
+    convertMemberExternalAddresses,
+} from '@proton/account/organizationKey/convertAddresses';
 import { useGetUser } from '@proton/account/user/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useApi from '@proton/components/hooks/useApi';
@@ -16,20 +19,35 @@ const useConvertExternalAddresses = () => {
     const [domains] = useCustomDomains();
     const getUser = useGetUser();
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, getUser);
+    const runningRef = useRef(false);
 
     useEffect(() => {
-        if (!domains?.length || oncePerPageLoad) {
+        if (!domains?.length || oncePerPageLoad || runningRef.current) {
             return;
         }
-        dispatch(
-            convertExternalAddresses({
-                domains,
-                keyTransparencyVerify,
-                keyTransparencyCommit,
+        runningRef.current = true;
+        Promise.all([
+            dispatch(
+                convertExternalAddresses({
+                    domains,
+                    keyTransparencyVerify,
+                    keyTransparencyCommit,
+                })
+            ),
+            dispatch(
+                convertMemberExternalAddresses({
+                    domains,
+                    keyTransparencyVerify,
+                    keyTransparencyCommit,
+                })
+            ),
+        ])
+            .catch(() => {
+                oncePerPageLoad = true;
             })
-        ).catch(() => {
-            oncePerPageLoad = true;
-        });
+            .finally(() => {
+                runningRef.current = false;
+            });
     }, [domains]);
 };
 
