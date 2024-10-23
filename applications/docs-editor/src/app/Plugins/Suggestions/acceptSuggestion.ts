@@ -80,6 +80,8 @@ export function $acceptSuggestion(suggestionID: string): boolean {
       }
     } else if (suggestionType === 'block-type-change') {
       node.remove()
+    } else if (suggestionType === 'clear-formatting') {
+      $unwrapSuggestionNode(node)
     } else {
       $unwrapSuggestionNode(node)
     }

@@ -94,6 +94,10 @@ export function generateSuggestionSummary(
         }
       }
 
+      if (currentType === 'clear-formatting') {
+        content = ''
+      }
+
       const lastItem = summary[summary.length - 1]
       if (!lastItem) {
         summary.push({ type, content, replaceWith })
