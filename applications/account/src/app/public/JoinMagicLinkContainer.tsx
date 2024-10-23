@@ -6,7 +6,6 @@ import { Button, CircleLoader } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
 import {
     GenericError,
-    Icon,
     InputFieldTwo,
     PasswordInputTwo,
     useApi,
@@ -35,17 +34,19 @@ import {
 } from '@proton/shared/lib/helpers/formValidators';
 import type { Address, Api, Organization, User } from '@proton/shared/lib/interfaces';
 import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
+import { generateKeySaltAndPassphrase, getResetAddressesKeysV2 } from '@proton/shared/lib/keys';
 import type { ParsedUnprivatizationData } from '@proton/shared/lib/keys/unprivatization';
 import {
     parseUnprivatizationData,
     setupKeysWithUnprivatization,
     validateUnprivatizationData,
 } from '@proton/shared/lib/keys/unprivatization';
+import type { OrganizationData } from '@proton/shared/lib/keys/unprivatization/helper';
 import { getUnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 import { getTerms } from '../signup/terms';
 import ExpiredError from './ExpiredError';
-import Header from './Header';
+import JoinOrganizationAdminItem from './JoinOrganizationAdminItem';
 import Layout from './Layout';
 import Main from './Main';
 import { stripQueryParams } from './jwt';
@@ -76,7 +77,7 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
     const dataRef = useRef<{
         user: User;
         organization: Organization;
-        organizationLogoUrl: string | null;
+        organizationLogo: OrganizationData['organizationLogo'];
         authApi: Api;
         addresses: Address[];
         parsedUnprivatizationData: ParsedUnprivatizationData;
@@ -105,11 +106,17 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
             const authApi = getAuthAPI(UID, AccessToken, silentApi);
 
             const prepareData = async () => {
-                const [user, { organization, organizationLogoUrl, addresses, data: unprivatizationData }] =
-                    await Promise.all([
-                        authApi<{ User: User }>(getUser()).then(({ User }) => User),
-                        getUnprivatizationContextData({ api: authApi }),
-                    ]);
+                const [
+                    user,
+                    {
+                        organizationData: { organization, organizationLogo },
+                        addresses,
+                        data: unprivatizationData,
+                    },
+                ] = await Promise.all([
+                    authApi<{ User: User }>(getUser()).then(({ User }) => User),
+                    getUnprivatizationContextData({ api: authApi }),
+                ]);
                 const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData, addresses });
                 await validateUnprivatizationData({
                     userContext: {
@@ -129,7 +136,7 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
                 dataRef.current = {
                     user,
                     organization,
-                    organizationLogoUrl,
+                    organizationLogo,
                     addresses,
                     parsedUnprivatizationData,
                     authApi,
@@ -162,10 +169,7 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
 
     useEffect(() => {
         return () => {
-            const organizationLogoUrl = dataRef.current?.organizationLogoUrl;
-            if (organizationLogoUrl) {
-                URL.revokeObjectURL(organizationLogoUrl);
-            }
+            dataRef.current?.organizationLogo?.cleanup();
         };
     }, []);
 
@@ -175,14 +179,28 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
         }
         const { user, authApi, addresses, parsedUnprivatizationData } = dataRef.current;
         const preAuthKTVerifier = createPreAuthKTVerifier(ktActivation);
-        await setupKeysWithUnprivatization({
-            user,
-            api: authApi,
+
+        const { passphrase, salt } = await generateKeySaltAndPassphrase(newPassword);
+        const { onSKLPublishSuccess, ...resetPayload } = await getResetAddressesKeysV2({
             addresses,
+            passphrase,
+            preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
+        });
+        if (!resetPayload.privateKeys || !onSKLPublishSuccess) {
+            throw new Error('Missing keys payload');
+        }
+
+        await setupKeysWithUnprivatization({
+            api: authApi,
             password: newPassword,
             parsedUnprivatizationData,
-            preAuthKTVerifier,
+            payload: {
+                ...resetPayload,
+                salt,
+            },
         });
+
+        await onSKLPublishSuccess();
 
         const username = addresses?.[0]?.Email;
         const data = {
@@ -272,41 +290,15 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
         };
     })();
 
-    const organizationLogoUrl = data?.organizationLogoUrl;
-    const user = (
-        <div className="flex items-center w-full text-left rounded relative">
-            <div
-                className="flex rounded ratio-square overflow-hidden w-custom shrink-0 grow-0 relative  w-custom h-custom bg-weak"
-                style={{
-                    '--w-custom': '2.25rem',
-                    '--h-custom': '2.25rem',
-                }}
-            >
-                {organizationLogoUrl ? (
-                    <img src={organizationLogoUrl} alt="" className="object-cover w-full h-full" />
-                ) : (
-                    <span className="m-auto text-semibold" aria-hidden="true">
-                        <Icon name="user" />
-                    </span>
-                )}
-            </div>
-            <div className="mx-3 flex-1 mt-custom" style={{ '--mt-custom': `-0.25em` }}>
-                <div className="text-left text-break text-semibold">{adminEmail}</div>
-            </div>
-        </div>
-    );
-
     return (
         <Layout hasDecoration={true} toApp={toApp}>
             <Main>
-                <div>
-                    {organizationName && <Header title={organizationName} className="text-break-all" />}
-                    <div className="color-weak mb-2">{c('Info').t`This is an invitation from:`}</div>
-                    {user}
-                    <div className="mt-6 mb-6">
-                        <hr />
-                    </div>
-                </div>
+                <JoinOrganizationAdminItem
+                    organizationLogoUrl={data?.organizationLogo?.url}
+                    organizationName={organizationName}
+                    adminEmail={adminEmail}
+                />
+                <hr className="my-6 border-bottom border-weak" />
                 <form
                     name="loginForm"
                     onSubmit={(event) => {

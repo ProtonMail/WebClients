@@ -200,7 +200,14 @@ export const handleSetPassword = async ({
 
     const userKeys = await getDecryptedUserKeysHelper(user, setupData.keyPassword || '');
     const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(newPassword);
-    const updateKeysPayload = await getUpdateKeysPayload([], userKeys, undefined, keyPassword, keySalt, true);
+    const updateKeysPayload = await getUpdateKeysPayload({
+        addressesKeys: [],
+        userKeys,
+        organizationKey: undefined,
+        keyPassword,
+        keySalt,
+        forceMigratedAddressKeys: true,
+    });
 
     await srpAuth({
         api,

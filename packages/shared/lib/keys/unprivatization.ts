@@ -20,18 +20,15 @@ import type {
     MemberUnprivatizationOutput,
     MemberUnprivatizationReadyForUnprivatization,
     MemberUnprivatizationReadyForUnprivatizationApproval,
-    PreAuthKTVerifier,
     PrivateMemberUnprivatizationOutput,
     PublicMemberUnprivatizationOutput,
     Unwrap,
-    User,
     VerifyOutboundPublicKeys,
 } from '../interfaces';
 import { MemberUnprivatizationState } from '../interfaces';
 import { srpVerify } from '../srp';
-import { generateKeySaltAndPassphrase } from './keys';
 import { getVerifiedPublicKeys, validateOrganizationKeySignature } from './organizationKeys';
-import { getResetAddressesKeysV2 } from './resetKeys';
+import type { ResetAddressKeysPayload } from './resetKeys';
 
 export const MEMBER_SIGNATURE_CONTEXT = {
     INVITATION_DATA_SIGNATURE_CONTEXT: 'account.unprivatization-invitation-data',
@@ -339,38 +336,26 @@ export const acceptUnprivatization = async ({
 };
 
 export const setupKeysWithUnprivatization = async ({
-    addresses,
+    payload,
     api,
     password,
     parsedUnprivatizationData,
-    preAuthKTVerifier,
 }: {
-    user: User;
-    addresses: Address[];
+    payload: Omit<ResetAddressKeysPayload, 'onSKLPublishSuccess'> & {
+        salt: string;
+        encryptedDeviceSecret?: string;
+    };
     api: Api;
     password: string;
     parsedUnprivatizationData: ParsedUnprivatizationData;
-    preAuthKTVerifier: PreAuthKTVerifier;
 }) => {
-    const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
-
-    const { privateKeys, userKeyPayload, addressKeysPayload, onSKLPublishSuccess } = await getResetAddressesKeysV2({
-        addresses,
-        passphrase,
-        preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
-    });
-
-    if (!privateKeys || !userKeyPayload || !addressKeysPayload) {
-        throw new Error('Missing keys payload');
-    }
-
     const product = 'generic';
 
     if (parsedUnprivatizationData.type === 'public' || parsedUnprivatizationData.type === 'gsso') {
         const { orgPublicKey } = parsedUnprivatizationData.payload;
         const token = generateActivationToken();
-        const primaryUserKey = privateKeys.userKey;
-        const addressKeys = privateKeys.addressKeys.map(({ privateKey }) => privateKey);
+        const primaryUserKey = payload.privateKeys.userKey;
+        const addressKeys = payload.privateKeys.addressKeys.map(({ privateKey }) => privateKey);
         const orgActivationToken = await getEncryptedOrganizationActivationToken({
             token,
             encryptionKeys: [orgPublicKey],
@@ -381,19 +366,19 @@ export const setupKeysWithUnprivatization = async ({
             passphrase: token,
         });
 
+        const input = {
+            KeySalt: payload.salt,
+            PrimaryKey: payload.userKeyPayload,
+            AddressKeys: payload.addressKeysPayload,
+            OrgActivationToken: orgActivationToken,
+            OrgPrimaryUserKey: orgPrimaryUserKeyArmored,
+            ...(payload.encryptedDeviceSecret ? { EncryptedSecret: payload.encryptedDeviceSecret } : {}),
+        } as const;
+
         await srpVerify({
             api,
             credentials: { password },
-            config: setupKeys(
-                {
-                    KeySalt: salt,
-                    PrimaryKey: userKeyPayload,
-                    AddressKeys: addressKeysPayload,
-                    OrgActivationToken: orgActivationToken,
-                    OrgPrimaryUserKey: orgPrimaryUserKeyArmored,
-                },
-                product
-            ),
+            config: setupKeys(input, product),
         });
     } else if (parsedUnprivatizationData.type === 'private') {
         await srpVerify({
@@ -401,9 +386,10 @@ export const setupKeysWithUnprivatization = async ({
             credentials: { password },
             config: setupKeys(
                 {
-                    KeySalt: salt,
-                    PrimaryKey: userKeyPayload,
-                    AddressKeys: addressKeysPayload,
+                    KeySalt: payload.salt,
+                    PrimaryKey: payload.userKeyPayload,
+                    AddressKeys: payload.addressKeysPayload,
+                    ...(payload.encryptedDeviceSecret ? { EncryptedSecret: payload.encryptedDeviceSecret } : {}),
                 },
                 product
             ),
@@ -411,12 +397,6 @@ export const setupKeysWithUnprivatization = async ({
     } else {
         throw new Error('Unknown type');
     }
-
-    await onSKLPublishSuccess();
-
-    return {
-        passphrase,
-    };
 };
 
 export const reencryptAddressKeyToken = async ({
