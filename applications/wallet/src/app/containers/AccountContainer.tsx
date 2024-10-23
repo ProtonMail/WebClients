@@ -16,7 +16,7 @@ import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
 import { InvitesButton } from '../components/InvitesButton';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
-import { TransactionList } from '../components/TransactionList';
+import { WalletMainContent } from '../components/WalletMainContent';
 import { WalletPreferencesModal } from '../components/WalletPreferencesModal';
 import { useBitcoinBlockchainContext } from '../contexts';
 import { useResponsiveContainerContext } from '../contexts/ResponsiveContainerContext';
@@ -150,7 +150,7 @@ export const AccountContainer = () => {
                     />
 
                     {canUseWallet && (
-                        <TransactionList
+                        <WalletMainContent
                             apiWalletData={wallet}
                             apiAccount={walletAccount}
                             onClickReceive={() => {
