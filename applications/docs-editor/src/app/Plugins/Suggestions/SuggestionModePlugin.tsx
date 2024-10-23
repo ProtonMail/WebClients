@@ -77,7 +77,8 @@ import {
 } from './handleTables'
 import { INSERT_CHECK_LIST_COMMAND, INSERT_ORDERED_LIST_COMMAND, INSERT_UNORDERED_LIST_COMMAND } from '@lexical/list'
 import { INSERT_CUSTOM_ORDERED_LIST_COMMAND } from '../CustomList/CustomListCommands'
-import { SET_BLOCK_TYPE_COMMAND } from '../../Commands/Blocks'
+import { SET_BLOCK_TYPE_COMMAND } from '../BlockTypePlugin'
+import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -147,6 +148,18 @@ export function SuggestionModePlugin({
               // as no more nodes existing for that suggestion.
               if (suggestionNodeKeys.size === 0) {
                 markNodeMap.delete(id)
+                suggestionModeLogger.info(
+                  `Resolving thread for suggestion ${id} as all nodes for it have been deleted.`,
+                )
+                controller
+                  .getAllThreads()
+                  .then((threads) => {
+                    const thread = threads.find((t) => t.markID === id)
+                    if (thread) {
+                      controller.rejectSuggestion(thread.id).catch(sendErrorMessage)
+                    }
+                  })
+                  .catch(sendErrorMessage)
               }
             } else {
               // No suggestion node for the given ID existed before.
@@ -658,8 +671,8 @@ export function SuggestionModePlugin({
       ),
       editor.registerCommand(
         SET_BLOCK_TYPE_COMMAND,
-        () => {
-          return true
+        (blockType) => {
+          return $setBlocksTypeAsSuggestion(blockType, addCreatedIDtoSet, suggestionModeLogger)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),

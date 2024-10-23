@@ -16,6 +16,7 @@ export type SuggestionType =
   | 'insert-table-column'
   | 'delete-table-column'
   | 'duplicate-table-column'
+  | 'block-type-change'
 
 export type SuggestionSummaryType =
   | SuggestionType

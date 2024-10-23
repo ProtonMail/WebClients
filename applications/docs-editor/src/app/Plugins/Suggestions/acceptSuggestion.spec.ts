@@ -1,10 +1,10 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import { $createSuggestionNode } from './ProtonNode'
-import type { ParagraphNode } from 'lexical'
+import type { ParagraphNode, ElementNode } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot, $isParagraphNode, $isTextNode } from 'lexical'
 import { $acceptSuggestion } from './acceptSuggestion'
-import { $createHeadingNode } from '@lexical/rich-text'
+import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
 import { $createListItemNode, $createListNode } from '@lexical/list'
 import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { $createTableNodeWithDimensions } from '@lexical/table'
@@ -421,6 +421,34 @@ describe('$acceptSuggestion', () => {
         for (const row of rows) {
           expect(row.getChildrenSize()).toBe(1)
         }
+      })
+    })
+  })
+
+  describe('block-type-change', () => {
+    it('should remove suggestion node', () => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          $getRoot().append(
+            $createHeadingNode('h2').append(
+              $createSuggestionNode(suggestionID, 'block-type-change', {
+                initialBlockType: 'paragraph',
+              }),
+            ),
+          )
+          $acceptSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+
+      editor.read(() => {
+        const heading = $getRoot().getFirstChild<ElementNode>()
+        expect($isHeadingNode(heading)).toBe(true)
+        expect(heading?.getChildrenSize()).toBe(0)
       })
     })
   })
