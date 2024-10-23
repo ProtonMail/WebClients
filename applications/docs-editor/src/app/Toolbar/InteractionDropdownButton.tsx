@@ -8,6 +8,7 @@ export function InteractionDropdownButton({
   icon,
   label,
   description,
+  disabled,
   ...other
 }: {
   isActive: boolean
@@ -16,6 +17,7 @@ export function InteractionDropdownButton({
   label: string
   description: string
   'data-testid': string
+  disabled?: boolean
 }) {
   return (
     <DropdownMenuButton
@@ -25,6 +27,7 @@ export function InteractionDropdownButton({
       )}
       onClick={onClick}
       data-testid={other['data-testid']}
+      disabled={disabled}
     >
       {icon}
       <div className={clsx('[grid-column:2] [grid-row:1]', isActive && 'font-bold')}>{label}</div>
