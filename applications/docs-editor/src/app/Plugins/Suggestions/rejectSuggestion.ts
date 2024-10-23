@@ -8,6 +8,8 @@ import { $patchStyleText } from '@lexical/selection'
 import { $isImageNode } from '../Image/ImageNode'
 import { $findMatchingParent } from '@lexical/utils'
 import { $deleteTableColumn, $isTableCellNode, $isTableNode, $isTableRowNode } from '@lexical/table'
+import type { BlockType } from '../BlockTypePlugin'
+import { blockTypeToCreateElementFn } from '../BlockTypePlugin'
 
 export function $rejectSuggestion(suggestionID: string): boolean {
   const nodes = $nodesOfType(ProtonNode)
@@ -163,6 +165,19 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       }
     } else if (suggestionType === 'delete-table-column') {
       node.remove()
+    } else if (suggestionType === 'block-type-change') {
+      const block = node.getTopLevelElementOrThrow()
+      node.remove()
+      const changedProperties = node.__properties.nodePropertiesChanged
+      if (!changedProperties) {
+        continue
+      }
+      const initialBlockType = changedProperties.initialBlockType as BlockType
+      const createInitialBlockTypeElement = blockTypeToCreateElementFn[initialBlockType]
+      const initialBlockTypeNode = createInitialBlockTypeElement()
+      initialBlockTypeNode.setFormat(block.getFormatType())
+      initialBlockTypeNode.setIndent(block.getIndent())
+      block.replace(initialBlockTypeNode, true)
     } else {
       node.remove()
     }

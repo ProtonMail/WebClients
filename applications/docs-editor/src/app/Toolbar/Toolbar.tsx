@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
-import { $createCodeNode, $isCodeNode } from '@lexical/code'
+import { $isCodeNode } from '@lexical/code'
 import type { ListType } from '@lexical/list'
 import {
   $isListNode,
@@ -12,8 +12,8 @@ import {
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $isDecoratorBlockNode } from '@lexical/react/LexicalDecoratorBlockNode'
 import type { HeadingTagType } from '@lexical/rich-text'
-import { $createHeadingNode, $createQuoteNode, $isHeadingNode, $isQuoteNode } from '@lexical/rich-text'
-import { $getSelectionStyleValueForProperty, $setBlocksType } from '@lexical/selection'
+import { $isHeadingNode, $isQuoteNode } from '@lexical/rich-text'
+import { $getSelectionStyleValueForProperty } from '@lexical/selection'
 import {
   $findMatchingParent,
   $getNearestBlockElementAncestorOrThrow,
@@ -67,7 +67,6 @@ import { sendErrorMessage } from '../Utils/errorMessage'
 import { getHTMLElementFontSize } from '../Utils/getHTMLElementFontSize'
 import { getSelectedNode } from '../Utils/getSelectedNode'
 import AlignmentMenuOptions, { AlignmentOptions } from './AlignmentMenuOptions'
-import { blockTypeToBlockName } from './BlockTypeToBlockName'
 import { ToolbarButton } from './ToolbarButton'
 import { ToolbarSeparator } from './ToolbarSeparator'
 
@@ -92,9 +91,8 @@ import { InteractionDropdownButton } from './InteractionDropdownButton'
 import { SET_SELECTION_STYLE_PROPERTY_COMMAND } from '../Plugins/FormattingPlugin'
 import { INSERT_FILE_COMMAND } from '../Commands/Events'
 import { EditorUserMode } from '../EditorUserMode'
-import { SET_BLOCK_TYPE_COMMAND } from '../Commands/Blocks'
-
-type BlockType = keyof typeof blockTypeToBlockName
+import type { BlockType } from '../Plugins/BlockTypePlugin'
+import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTypePlugin'
 
 const stepFontSize = (currentFontSize: string, step: number): string => {
   const currentFontIndex = FontSizes.indexOf(parseFloat(currentFontSize))
@@ -187,19 +185,37 @@ export default function DocumentEditorToolbar({
   }
 
   const formatParagraph = useCallback(() => {
-    editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, () => $createParagraphNode())
+    editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, 'paragraph')
     focusEditor()
   }, [editor, focusEditor])
 
   const formatHeading = useCallback(
     (headingSize: HeadingTagType) => {
       if (blockType !== headingSize) {
-        editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, () => $createHeadingNode(headingSize))
+        editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, headingSize)
         focusEditor()
       }
     },
     [editor, blockType, focusEditor],
   )
+
+  const formatQuote = useCallback(() => {
+    if (!isQuote) {
+      editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, 'quote')
+      focusEditor()
+    } else {
+      formatParagraph()
+    }
+  }, [editor, focusEditor, formatParagraph, isQuote])
+
+  const formatCode = useCallback(() => {
+    if (!isCodeBlock) {
+      editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, 'code')
+      focusEditor()
+    } else {
+      formatParagraph()
+    }
+  }, [editor, focusEditor, isCodeBlock, formatParagraph])
 
   const formatBulletList = useCallback(() => {
     if (listType !== 'bullet') {
@@ -234,24 +250,6 @@ export default function DocumentEditorToolbar({
       formatParagraph()
     }
   }, [editor, focusEditor, formatParagraph, listStyleType, listType])
-
-  const formatQuote = useCallback(() => {
-    if (!isQuote) {
-      editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, () => $createQuoteNode())
-      focusEditor()
-    } else {
-      formatParagraph()
-    }
-  }, [editor, focusEditor, formatParagraph, isQuote])
-
-  const formatCode = useCallback(() => {
-    if (!isCodeBlock) {
-      editor.dispatchCommand(SET_BLOCK_TYPE_COMMAND, () => $createCodeNode())
-      focusEditor()
-    } else {
-      formatParagraph()
-    }
-  }, [editor, focusEditor, isCodeBlock, formatParagraph])
 
   const editLink = () => {
     activeEditor.dispatchCommand(EDIT_LINK_COMMAND, undefined)
@@ -513,15 +511,6 @@ export default function DocumentEditorToolbar({
         },
         COMMAND_PRIORITY_NORMAL,
       ),
-      activeEditor.registerCommand(
-        SET_BLOCK_TYPE_COMMAND,
-        (createElement) => {
-          const selection = $getSelection()
-          $setBlocksType(selection, createElement)
-          return true
-        },
-        COMMAND_PRIORITY_NORMAL,
-      ),
     )
   }, [
     $updateToolbar,
@@ -742,7 +731,7 @@ export default function DocumentEditorToolbar({
               {blockTypeToBlockName[blockType]}
             </span>
           }
-          disabled={!isEditable || isSuggestionMode}
+          disabled={!isEditable}
           contentProps={DropdownContentProps}
           data-testid="headings-options"
         >
@@ -928,7 +917,7 @@ export default function DocumentEditorToolbar({
             </ToolbarButton>
             <ToolbarButton
               label={<ShortcutLabel shortcut="INSERT_COMMENT_SHORTCUT" label={c('Action').t`Insert comment`} />}
-              disabled={!isEditable || isSuggestionMode}
+              disabled={!isEditable}
               onClick={insertComment}
               data-testid="comment-button"
             >
@@ -1124,7 +1113,7 @@ export default function DocumentEditorToolbar({
             <ToolbarButton
               label={<ShortcutLabel shortcut="QUOTE_TOGGLE_SHORTCUT" label={c('Action').t`Quote`} />}
               active={isQuote}
-              disabled={!isEditable || isSuggestionMode}
+              disabled={!isEditable}
               onClick={formatQuote}
               data-testid="quote-button"
             >
@@ -1342,7 +1331,7 @@ export default function DocumentEditorToolbar({
                   <DropdownMenuButton
                     className="flex items-center gap-2 text-left text-sm"
                     onClick={formatCode}
-                    disabled={!isEditable}
+                    disabled={!isEditable || isSuggestionMode}
                   >
                     <Icon name="code" />
                     {c('Action').t`Code block`}
