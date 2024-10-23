@@ -1,13 +1,14 @@
 import Store from 'electron-store';
 
-import type { StoreClipboardProperties } from './lib/clipboard';
+import type { ClipboardStoreProperties } from '@proton/pass/types';
+
 import type { StoreInstallProperties } from './lib/install-info';
 import type { StoreUpdateProperties } from './update';
 
-export type RootStore = {
+type RootStore = {
     installInfo?: StoreInstallProperties;
     update?: StoreUpdateProperties;
-    clipboard?: StoreClipboardProperties;
+    clipboard?: ClipboardStoreProperties;
 };
 
 export const store = new Store<RootStore>({
