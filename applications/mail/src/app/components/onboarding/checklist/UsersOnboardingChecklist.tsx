@@ -13,7 +13,6 @@ import {
     useLocalState,
 } from '@proton/components';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -41,7 +40,6 @@ const UsersOnboardingChecklist = ({
     const { viewportWidth } = useActiveBreakpoint();
     const [user] = useUser();
 
-    const isImporterInMaintenance = useFlag('MaintenanceImporter');
     const { isModalOpened, displayModal } = useOnboardingChecklistContext();
 
     const [rewardShowed, setRewardShowed] = useLocalState(false, 'checklist-reward-showed');
@@ -113,7 +111,6 @@ const UsersOnboardingChecklist = ({
                     </li>
                     <li>
                         <CheckListGmailForward
-                            isInMaintenance={isImporterInMaintenance}
                             data-testid="testing-flavien-checklist-gmail-forward"
                             smallVariant={smallVariant}
                             onClick={() => displayModal('gmailForward', true)}
