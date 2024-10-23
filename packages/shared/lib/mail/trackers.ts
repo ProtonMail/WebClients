@@ -26,7 +26,7 @@ export const getUTMTrackersFromURL = (originalURL: string) => {
          * - https://something-else.amazonaws.com/randomID
          * Which was not working as expected when being opened.
          */
-        TidyURL.allow_amp = true;
+        TidyURL.config.allowAMP = true;
 
         const { url, info } = TidyURL.clean(originalURL);
         /*
