@@ -74,99 +74,6 @@ import { appSession } from "./utils/session";
 
     app.setAppUserModelId(pkg.config.appUserModelId);
 
-    const gotTheLock = app.requestSingleInstanceLock();
-    if (!gotTheLock) {
-        mainLogger.info("App is already running");
-        app.quit();
-    } else {
-        checkDefaultProtocols();
-
-        app.on("second-instance", (_ev, argv) => {
-            mainLogger.info("Second instance called", argv);
-
-            // Bring window to focus
-            const mainWindow = getMainWindow();
-            if (mainWindow) {
-                if (mainWindow.isMinimized()) {
-                    mainWindow.restore();
-                }
-
-                mainWindow.show();
-            }
-        });
-
-        app.whenReady().then(() => {
-            registerLogIPCForwardTransport();
-            observeNativeTheme();
-            const settings = getSettings();
-
-            if (settings.overrideError) {
-                urlOverrideError();
-            }
-
-            if (settings.theme) {
-                updateNativeTheme(getTheme());
-            }
-
-            connectNetLogger(getWebContentsViewName);
-
-            app.on("activate", () => {
-                if (isMac) {
-                    getMainWindow()?.show();
-                    return;
-                }
-
-                if (!getMainWindow()) {
-                    return viewCreationAppStartup();
-                }
-            });
-
-            viewCreationAppStartup();
-
-            // Check updates
-            initializeUpdateChecks();
-
-            // Trigger blank notification to force presence in settings
-            new Notification();
-
-            // Handle IPC calls coming from the destkop application
-            handleIPCCalls();
-
-            app.on("open-url", (_e: Event, url: string) => {
-                mainLogger.info("Open URL event", url);
-
-                // Bring window to focus
-                const mainWindow = getMainWindow();
-                if (mainWindow.isMinimized()) {
-                    mainWindow.restore();
-                }
-                mainWindow.show();
-            });
-
-            handleAppReadyMailto();
-
-            // Security addition, reject all permissions except notifications
-            appSession().setPermissionRequestHandler((webContents, permission, callback) => {
-                try {
-                    const { host, protocol } = new URL(webContents.getURL());
-                    if (!isHostAllowed(host) || protocol !== "https:") {
-                        return callback(false);
-                    }
-
-                    if (ALLOWED_PERMISSIONS.includes(permission)) {
-                        return callback(true);
-                    }
-
-                    mainLogger.info("Permission request rejected", permission);
-                    callback(false);
-                } catch (error) {
-                    mainLogger.error("Permission request error", error);
-                    callback(false);
-                }
-            });
-        });
-    }
-
     app.on("before-quit", () => {
         const mainWindow = getMainWindow();
 
@@ -186,5 +93,98 @@ import { appSession } from "./utils/session";
     // Security addition
     app.on("web-contents-created", (_ev, contents) => {
         handleWebContents(contents);
+    });
+
+    app.on("second-instance", (_ev, argv) => {
+        mainLogger.info("Second instance called", argv);
+
+        // Bring window to focus
+        const mainWindow = getMainWindow();
+        if (mainWindow) {
+            if (mainWindow.isMinimized()) {
+                mainWindow.restore();
+            }
+
+            mainWindow.show();
+        }
+    });
+
+    if (!app.requestSingleInstanceLock()) {
+        mainLogger.info("App is already running");
+        app.quit();
+        return;
+    }
+
+    checkDefaultProtocols();
+
+    await app.whenReady();
+
+    registerLogIPCForwardTransport();
+    observeNativeTheme();
+    const settings = getSettings();
+
+    if (settings.overrideError) {
+        urlOverrideError();
+    }
+
+    if (settings.theme) {
+        updateNativeTheme(getTheme());
+    }
+
+    connectNetLogger(getWebContentsViewName);
+
+    app.on("activate", () => {
+        if (isMac) {
+            getMainWindow()?.show();
+            return;
+        }
+
+        if (!getMainWindow()) {
+            return viewCreationAppStartup();
+        }
+    });
+
+    viewCreationAppStartup();
+
+    // Check updates
+    initializeUpdateChecks();
+
+    // Trigger blank notification to force presence in settings
+    new Notification();
+
+    // Handle IPC calls coming from the destkop application
+    handleIPCCalls();
+
+    app.on("open-url", (_e: Event, url: string) => {
+        mainLogger.info("Open URL event", url);
+
+        // Bring window to focus
+        const mainWindow = getMainWindow();
+        if (mainWindow.isMinimized()) {
+            mainWindow.restore();
+        }
+        mainWindow.show();
+    });
+
+    handleAppReadyMailto();
+
+    // Security addition, reject all permissions except notifications
+    appSession().setPermissionRequestHandler((webContents, permission, callback) => {
+        try {
+            const { host, protocol } = new URL(webContents.getURL());
+            if (!isHostAllowed(host) || protocol !== "https:") {
+                return callback(false);
+            }
+
+            if (ALLOWED_PERMISSIONS.includes(permission)) {
+                return callback(true);
+            }
+
+            mainLogger.info("Permission request rejected", permission);
+            callback(false);
+        } catch (error) {
+            mainLogger.error("Permission request error", error);
+            callback(false);
+        }
     });
 })();
