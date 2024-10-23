@@ -4,29 +4,34 @@ import type { Currency } from '@proton/shared/lib/interfaces';
 
 import type { DealWithPrices, OfferConfig } from '../interface';
 
-export const fetchDealPrices = async (paymentsApi: PaymentsApi, offerConfig: OfferConfig, currency: Currency) =>
-    Promise.all(
+export const fetchDealPrices = async (paymentsApi: PaymentsApi, offerConfig: OfferConfig, currency: Currency) => {
+    return Promise.all(
         offerConfig.deals.map(({ planIDs, cycle, couponCode }) => {
-            return Promise.all([
-                paymentsApi.checkWithAutomaticVersion({
-                    Plans: planIDs,
-                    CouponCode: couponCode,
-                    Currency: currency,
-                    Cycle: cycle,
-                }),
-                paymentsApi.checkWithAutomaticVersion({
-                    Plans: planIDs,
-                    Currency: currency,
-                    Cycle: cycle,
-                }),
-                paymentsApi.checkWithAutomaticVersion({
-                    Plans: planIDs,
-                    Currency: currency,
-                    Cycle: CYCLE.MONTHLY,
-                }),
-            ]);
+            const cyclePromise = paymentsApi.checkWithAutomaticVersion({
+                Plans: planIDs,
+                Currency: currency,
+                Cycle: cycle,
+            });
+
+            const cycleWithCouponPromise = couponCode
+                ? paymentsApi.checkWithAutomaticVersion({
+                      Plans: planIDs,
+                      CouponCode: couponCode,
+                      Currency: currency,
+                      Cycle: cycle,
+                  })
+                : cyclePromise;
+
+            const monthlyPromise = paymentsApi.checkWithAutomaticVersion({
+                Plans: planIDs,
+                Currency: currency,
+                Cycle: CYCLE.MONTHLY,
+            });
+
+            return Promise.all([cycleWithCouponPromise, cyclePromise, monthlyPromise]);
         })
     );
+};
 
 export const getDiscountWithCoupon = (deal: DealWithPrices) => {
     const { withCoupon = 0, withoutCouponMonthly = 0 } = deal.prices || {};
