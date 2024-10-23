@@ -6,6 +6,7 @@ import { getFormatsForFlag } from '../../Utils/TextFormatUtils'
 import { $isLinkNode } from '@lexical/link'
 import { $isImageNode } from '../Image/ImageNode'
 import { $getElementBlockType, blockTypeToBlockName } from '../BlockTypePlugin'
+import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 
 export type SuggestionSummaryContent = { type: SuggestionSummaryType; content: string; replaceWith?: string }[]
 
@@ -43,11 +44,19 @@ export function generateSuggestionSummary(
 
       const childrenSize = node.getChildrenSize()
       const firstChild = node.getFirstChild()
-      if (childrenSize === 1 && $isImageNode(firstChild)) {
+      if (childrenSize === 1) {
         if (currentType === 'insert') {
-          type = 'insert-image'
+          if ($isImageNode(firstChild)) {
+            type = 'insert-image'
+          } else if ($isHorizontalRuleNode(firstChild)) {
+            type = 'insert-divider'
+          }
         } else if (currentType === 'delete') {
-          type = 'delete-image'
+          if ($isImageNode(firstChild)) {
+            type = 'delete-image'
+          } else if ($isHorizontalRuleNode(firstChild)) {
+            type = 'delete-divider'
+          }
         }
         content = ''
       }
