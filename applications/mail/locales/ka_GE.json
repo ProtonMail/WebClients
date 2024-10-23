@@ -3529,6 +3529,27 @@
       ],
       "Your account and data recovery methods are set.": [
         "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია."
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "ნაგვის ყუთში და სპამში 30 დღეზე მეტი დროით გადატანილი ელფოსტების ავტომატური გასუფთავება."
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "შექმენით იმდენი ჭდე და საქაღალდე, რამდენიც საჭიროა და იქონიეთ თქვენი საფოსტო ყუთი სუფთად."
+      ],
+      "Don’t want to send your email right now? Schedule it for exactly the right time.": [
+        "არ გნებავთ, თქვენი ელფოსტიდან ახლავე გააგზავნოთ? დაგეგმეთ ის სწორ დროს."
+      ],
+      "Unlock ${ activatePmUser } for a catchy and easy-to-type email address.": [
+        "განბლოკეთ ${ activatePmUser } ადვილი და ლამაზი ელფოსტის მისამართისთვის."
+      ],
+      "With contact groups, you can send emails to everyone in the group with one click.": [
+        "კონტაქტის ჯგუფებთან ერთად ელფოსტების გაგზავნა ამ ჯგუფის წევრებისთვის ერთი წკაპით შეგიძლიათ."
+      ],
+      "With custom snooze, you can hide emails and set them to reappear at a better time.": [
+        "მორგებულ დადუმებასთან ერთად შეგიძლიათ, დამალოთ ელფოსტები და დააყენოთ, რომ ისინი უკეთეს დროს გამოჩნდნენ."
       ]
     },
     "description": {
@@ -4754,6 +4775,24 @@
       ],
       "Your cannot accept this invitation with your current plan.": [
         "მიმდინარე სატარიფო გეგმით მოსაწვევს ვერ დაეთანხმებით."
+      ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "მომხმარებლის დომენის მქონე ანგარიშები ოჯახის ტარიფს ვერ მიიღებენ."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "ოჯახის გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "სამუდამო ანგარიშები ოჯახის გეგმაში ვერ შევლენ."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "წევრების მქონე ტარიფების მფლობელებს სხვა ოჯახურ ტარიფში გაერთიანება არ შეუძლიათ."
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "გაქვთ გადაუხდელი ინვოისები. გადაიხადეთ, სანამ საოჯახო გეგმას მიუერთდებით."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "გიწვევენ, თქვენი ${ BRAND_NAME }-ის ანგარიში ამ ოჯახის ტარიფს მიაბათ და ერთად ისიამოვნოთ ყველა ${ brandOrAppName }-ის ფასიანი ფუნქციით."
       ]
     },
     "familyOffer_2023:Label": {
@@ -5275,6 +5314,10 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "გამოიყენეთ ზევით და ქვევით კლავიშები შემოთავაზებების შეყვანის შემდეგ წვდომისთვის და დასათვალიერებლად. დააჭირეთ Enter თქვენი არჩევანის დასადასტურებლად, ან Escape შემოთავაზებების ველის დასახურავად."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით.",
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით."
       ]
     },
     "Human verification method": {
@@ -7533,6 +7576,9 @@
       ],
       "Your private writing assistant": [
         "თქვენი პირადი წერის დამხმარე"
+      ],
+      "You are about to open your default browser and visit:": [
+        "თქვენ ახლა თქვენი ნაგულისხმევი ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
       ]
     },
     "info": {
@@ -8354,6 +8400,12 @@
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
+      ],
+      "First name": [
+        "სახელი"
+      ],
+      "Last name": [
+        "გვარი"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9474,6 +9526,17 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხამრებელი"
+      ],
+      "Secure link sharing": [
+        "დაცული ბმულის გაზიარება"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "${ n }-მდე მომხამრებელი (${ adminsText }, ${ usersText })",
+        "${ n }-მდე მომხამრებელი (${ adminsText }, ${ usersText })"
       ]
     },
     "new_plans: feature info": {
@@ -11816,6 +11879,62 @@
       ],
       "Your own short @pm.me email alias": [
         "თქვენი საკუთარი @pm.me ელფოსტის ფსევდონიმი"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME } ფასიანი ფუნქციებით"
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } დაგეხმარებათ დარწმუნდეთ, რომ თქვენი ოჯახის წევრები - და მათი მონაცემები - დაცულია, როცა ისინი ინტერნეტში მუშაობენ."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ planNumberOfCalendars } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ელფოსტის მისამართი",
+        "${ planNumberOfEmails } ელფოსტის მისამართი"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "ელფოსტის ${ planNumberOfEmails } მისამართი თითოეული მომხმარებლისთვის",
+        "ელფოსტის ${ planNumberOfEmails } მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } მომხმარებელი",
+        "${ planNumberOfUsers } მომხმარებელი"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } - ანგარიშის დამატებითი დაცვა"
+      ],
+      "Dark web monitoring": [
+        "Dark Web-ის მონიტორინგი"
+      ],
+      "Folders, labels and filters": [
+        "საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Folders, labels, and custom filters": [
+        "საქაღალდეები, ჭდეები და მომხმარებლის ფილტრები"
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "როგორ შევუბრუნეთ ხელი, როცა ${ BRAND_NAME } დაიბლოკა აგრესულ კამპანიაში."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "როგორ ვუჭერდით მხარს ლოკალურ აქტივისტებს, როცა კონფიდენციალობა და თავისუფალი სიტყვა საფრთხის ქვეშ იყო."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "თუ გადააცილებთ უფასო სატარიფო გეგმის შეზღუდვებს, თქვენ არ შეგეძლებათ:"
+      ],
+      "Limitations of the free plan:": [
+        "უფასო სატარიფო გეგმის შეზღუდვები:"
+      ],
+      "Upload any new files": [
+        "ატვირთეთ ნებისმიერი ახალი ფაილი"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "მომხმარებლებს თავიანთ მოწყობილობებზე ფაილების ატვირთვის საშუალება არ ექნებათ"
       ]
     },
     "subscription reminder": {
@@ -13737,6 +13856,96 @@
       ],
       "Passcode: ${ password }": [
         "წვდომის კოდი: ${ password }"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } საცავი"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } ელფოსტის საცავი"
+      ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვა"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "${ BRAND_NAME }-ის ყველა აპი და ფასიანი ფუნქციები"
+      ],
+      "Cancel and downgrade": [
+        "გაუქმება და ტარიფის ჩამოწევა"
+      ],
+      "Cloud storage and sharing for large files": [
+        "ღრუბლოვანი საცავი და გაზიარება დიდი ფაილებისთვის"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "დაშიფრული ღრუბლოვანი საცავი სურათებისა და დოკუმენტებისთვის"
+      ],
+      "Encrypted password manager": [
+        "დაშიფრული პაროლების მმართველი"
+      ],
+      "Save ${ upsellSavings }": [
+        "დაზოგეთ ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "დაზოგეთ თანხა ${ upsellPlanName }-ით"
+      ],
+      "Secure personal and shared calendar": [
+        "უსაფრთხო საკუთარი და გაზიარებული კალენდარი"
+      ],
+      "Try ${ planName }": [
+        "სცადეთ ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "სცადეთ ${ upsellPlanName } და შეინარჩუნეთ წვდომა ყველა ფასიან ელფოსტის და კალენდრის ფუნქციებთან."
+      ],
+      "Ultra fast and private VPN": [
+        "ზეჩქარი და კონფიდენციალური VPN"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } ადმინისტრატორი",
+        "${ admins } ადმინისტრატორი"
+      ],
+      "${ users } user": [
+        "${ users } მომხმარებელი",
+        "${ users } მომხმარებელი"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } მომხმარებლის ანგარიში",
+        "${ n } მომხმარებლის ანგარიში"
+      ],
+      "Admin panel to manage users and subscription": [
+        "ადმინის პანელ მომხმარებლებისა და გამოწერების სამართავად"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "ყველა ფასიანი სერვისი. 6 მომხმარებელი. ერთი იოლი გამოწერა."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "ექსკლუზიური შემოთავზება ხელმისაწვდომია, მხოლოდ, ${ PASS_APP_NAME }-ის ადრეული მხარდამჭერებისთვის."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "მიიღეთ ფასით ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "წარმოგიდგენთ ${ passFamilyPlanName }-ს"
+      ],
+      "Limited-time deal.": [
+        "დროში შეზღუდული შეთავაზება."
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "მოვლენების ნახვა"
       ]
     }
   }

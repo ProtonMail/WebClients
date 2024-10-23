@@ -1406,6 +1406,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "追蹤保護避免部分圖片載入。若您信任寄件者載入它們。"
       ]
     },
     "action": {
@@ -3504,6 +3507,15 @@
       ],
       "Your account and data recovery methods are set.": [
         "您的帳戶資料復原方法已就緒。"
+      ],
+      "Automatically sort your incoming messages before they reach your inbox.": [
+        "在您的來信訊息到達收件匣前會自動排列"
+      ],
+      "Create as many labels or folders as you need to keep your inbox tidy.": [
+        "根據您的需要來創建多個標籤或資料夾以便您的收件匣整齊"
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
       ]
     },
     "description": {
@@ -4704,6 +4716,15 @@
       ],
       "Your cannot accept this invitation with your current plan.": [
         "您無法使用目前方案接受此邀請函。"
+      ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "有自訂網域的帳號無法加入家庭方案。"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "終身帳號無法加入群組方案。"
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "有成員的方案的擁有者無法加入其他家庭方案。"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5198,6 +5219,9 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "找到${ itemsCount }個推薦，使用鍵盤移動"
       ]
     },
     "Human verification method": {
@@ -7368,6 +7392,9 @@
       ],
       "Your private writing assistant": [
         "您私人的撰寫幫手"
+      ],
+      "You are about to open your default browser and visit:": [
+        "您將要開啟預設瀏覽器並造訪："
       ]
     },
     "info": {
@@ -8183,6 +8210,12 @@
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
+      ],
+      "First name": [
+        "名"
+      ],
+      "Last name": [
+        "姓"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8826,6 +8859,12 @@
       ],
       "Upgrade now": [
         "立即升級"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "從${ priceMailPlus }起"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -9268,6 +9307,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers }個用戶"
+      ],
+      "Secure link sharing": [
+        "安全連結分享"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "至多${ n }位使用者(${ adminsText }, ${ usersText })"
       ]
     },
     "new_plans: feature info": {
@@ -9363,6 +9411,9 @@
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
         "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
       ]
     },
     "new_plans: title": {
@@ -9779,6 +9830,12 @@
       ],
       "Where privacy is default.": [
         "隱私是預設的。"
+      ],
+      "Download the desktop app and continue": [
+        "下載桌面應用程式及繼續"
+      ],
+      "Industry-leading spam protection": [
+        "業界領導的垃圾郵件防護"
       ]
     },
     "Onboarding Proton": {
@@ -10882,6 +10939,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "30 個月的原價 ${ amount }"
+      ],
+      "/month": [
+        "/月"
       ]
     },
     "specialoffer: Title": {
@@ -11340,6 +11400,42 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "擁有頂級質子版功能的${ CALENDAR_APP_NAME }，${ DRIVE_SHORT_APP_NAME }，${ PASS_SHORT_APP_NAME }和${ VPN_SHORT_APP_NAME }"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "每位用戶${ planNumberOfCalendars }個行事曆"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains }個電郵網域名稱"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails }個電郵位址"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "每位用戶${ planNumberOfEmails }個電郵位址"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers }位用戶"
+      ],
+      "Dark web monitoring": [
+        "黑暗網路監測"
+      ],
+      "Folders, labels and filters": [
+        "資料夾，標籤和過濾"
+      ],
+      "Folders, labels, and custom filters": [
+        "資料夾，標籤和自訂過濾規則"
+      ],
+      "Limitations of the free plan:": [
+        "免費方案的限制："
+      ],
+      "Upload any new files": [
+        "上載任何新文件"
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "用戶不能上載文件至他們的裝置"
       ]
     },
     "subscription reminder": {
@@ -12601,6 +12697,21 @@
       ],
       "Your free trial has ended": [
         "您的免費試用已結束"
+      ],
+      "Filter for more focus": [
+        "要專注的檔案"
+      ],
+      "No need to empty the trash": [
+        "不用清空垃圾桶"
+      ],
+      "One email, many recipients": [
+        "一個電子郵件，多位收件者"
+      ],
+      "Same inbox, shorter email address": [
+        "一樣的收件匣，較短的電郵位址"
+      ],
+      "Schedule now, send later": [
+        "現在排定，稍後寄送"
       ]
     },
     "Title subscription": {
@@ -13128,6 +13239,111 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB }儲存"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace }電子郵件儲存"
+      ],
+      "Advanced account protection": [
+        "高端的帳號保護"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "所有${ BRAND_NAME }應用程式和頂級質子版功能"
+      ],
+      "Cancel and downgrade": [
+        "取消並且降級"
+      ],
+      "Cloud storage and sharing for large files": [
+        "大型文件雲端儲存與共享"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "加密雲端儲存給予照片和文件"
+      ],
+      "Encrypted password manager": [
+        "加密密碼管理"
+      ],
+      "Save ${ upsellSavings }": [
+        "省下${ upsellSavings }"
+      ],
+      "Try ${ planName }": [
+        "嘗試${ planName }"
+      ],
+      "Ultra fast and private VPN": [
+        "超快與私有的VPN"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "暗網監控"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "加入Google Meet"
+      ],
+      "Joining instructions": [
+        "加入說明"
+      ],
+      "Less details": [
+        "較少詳細資料"
+      ],
+      "Meeting link:": [
+        "會議連結:"
+      ],
+      "More details": [
+        "更多詳細資料"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins }位管理員"
+      ],
+      "${ users } user": [
+        "${ users }位使用者"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n }使用者帳號"
+      ],
+      "Admin panel to manage users and subscription": [
+        "管理員面板以管理使用者及訂閱"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "全部頂級質子版功能。6位用戶。一個簡單的訂購。"
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "只需${ monthlyPrice }"
+      ],
+      "Limited-time deal.": [
+        "限時優惠。"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "檢視活動"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "一個更安全/容易持有&傳送Bitcoin的方法"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "參與 Zoom 會議"
+      ],
+      "Meeting ID:": [
+        "會議識別碼:"
+      ],
+      "Passcode: ${ password }": [
+        "密碼數字：${ password }"
       ]
     }
   }

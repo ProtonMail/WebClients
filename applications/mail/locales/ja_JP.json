@@ -1346,6 +1346,15 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Replace": [
+        "置き換える"
+      ],
+      "Replaces the selected text in your message": [
+        "メッセージ内の選択したテキストを置き換えます"
+      ],
+      "Scroll to bottom": [
+        "一番下までスクロール"
       ]
     },
     "action": {
@@ -1406,6 +1415,9 @@
       ],
       "${ users } user": [
         "${ users } のユーザー"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } 追加カスタムドメイン"
       ]
     },
     "Alert": {
@@ -1586,6 +1598,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "${ domains } 個のカスタムメールドメイン、 ${ addresses } 個のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などのサポートが含まれています。"
       ]
     },
     "Billing cycle": {
@@ -4017,6 +4032,39 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "An error occurred while loading alias options": [
+        "エイリアス設定の読み込み中にエラーが発生しました"
+      ],
+      "An error occurred while saving your alias": [
+        "エイリアスの保存中にエラーが発生しました"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "${ n } 日以内に日付を選択してください。"
+      ],
+      "Due to an error, text generation couldn't be canceled": [
+        "エラーのため、テキストの生成をキャンセルできませんでした。"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "送信に有効なキーが取得されませんでした。"
+      ],
+      "Please select a category and what went wrong with the generated text": [
+        "カテゴリと生成されたテキストの間違いを選択してください"
+      ],
+      "Please try generating the text again": [
+        "もう一度テキストを生成してみてください"
+      ],
+      "Thanks for the feedback!": [
+        "ご意見ありがとうございます!"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "現在システムが混雑しています。数分後にもう一度お試しください。"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "予期しないエラーにより、連絡先をインポートできません"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "文字数が上限に達しました。メッセージを短くしてください。"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4377,6 +4425,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Lifetime アカウントはファミリープランに参加できません。"
       ]
     },
     "familyOffer_2023:Label": {
@@ -6891,6 +6942,9 @@
       ],
       "Your private writing assistant": [
         "あなたのプライベートな執筆アシスタント"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "${ n } 名のメンバーのために安全なクラウドを作成します"
       ]
     },
     "info": {
@@ -7698,6 +7752,12 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "First name": [
+        "名"
+      ],
+      "Last name": [
+        "姓"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8687,6 +8747,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Phone support (20+ users)": [
+        "電話サポート (20 ユーザー以上)"
       ]
     },
     "new_plans: feature info": {
@@ -9266,6 +9329,12 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全な保管庫共有"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "安全な保管庫の共有 (${ n } 個の保管庫)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "安全な保管庫共有 (${ n } 個の保管庫) とリンクの共有"
       ]
     },
     "passwordless": {
@@ -10823,6 +10892,9 @@
       ],
       "You have successfully unsubscribed": [
         "サブスクリプションをキャンセルしました"
+      ],
+      "Invitation rejected": [
+        "招待が拒否されました"
       ]
     },
     "Success notification": {
@@ -10974,6 +11046,9 @@
       ],
       "Show me how": [
         "どうするか教えて"
+      ],
+      "Download Desktop app": [
+        "デスクトップアプリをダウンロード"
       ]
     },
     "Title": {
@@ -11863,6 +11938,15 @@
       ],
       "Bitcoin via email": [
         "メールで Bitcoin"
+      ],
+      "${ n } account per wallet": [
+        "一つのウォレットに${ n } 個のアカウント"
+      ],
+      "${ n } wallet": [
+        "${ n } 個のウォレット"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Bitcoin を保持する安全な方法"
       ]
     },
     "wallet_signup_2024:Action": {
@@ -12183,6 +12267,29 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "ダークウェブモニタリング"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } 名の管理者"
+      ],
+      "${ users } user": [
+        "${ users }名のユーザー"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } 個のユーザーアカウント"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bitcoin を保持・送信する安全で簡単な方法"
       ]
     }
   }

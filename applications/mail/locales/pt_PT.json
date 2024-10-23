@@ -1369,6 +1369,30 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ],
+      "Collapse navigation bar": [
+        "Recolher a barra de navegação"
+      ],
+      "Display navigation bar": [
+        "Mostrar a barra de navegação"
+      ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Ocultar assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Atualização importante disponível. Para continuar a utilizar a aplicação, atualize para a versão mais recente. ${ downloadUpdate }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Selecionar ciclo de faturação ${ billingText }"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Mostrar o assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "A proteção contra rastreador impediu o carregamento de algumas imagens. Carregue-as se confiar no remetente."
+      ],
+      "Your email writing assistant": [
+        "O seu assistente de escrita de e-mail"
       ]
     },
     "action": {
@@ -3503,6 +3527,9 @@
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Este evento foi atualizado. Veja o que mudou:\n\n${ updateEventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -7251,6 +7278,26 @@
       ],
       "Your private writing assistant": [
         "Seu assistente de escrita privado"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } conversação não será rotulada a partir de:",
+        "${ elementsCount } conversações não serão rotuladas a partir de:"
+      ],
+      "Removes all data associated with this app (including downloaded messages, …)": [
+        "Remove todos os dados associados a esta aplicação (incluindo mensagens descarregadas, ...)"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Selecionar todo o ${ elementsCount } em ${ location }",
+        "Selecionar todos os ${ elementsCount } em ${ location }"
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Isto remove todos os dados associados a esta aplicação, incluindo as mensagens descarregadas. A aplicação será reiniciada e terá de iniciar sessão novamente para a utilizar."
+      ],
+      "writing assistant iframe": [
+        "iframe do assistente de escrita"
       ]
     },
     "info": {
@@ -8067,6 +8114,12 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "First name": [
+        "Nome próprio"
+      ],
+      "Last name": [
+        "Apelido"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12072,6 +12125,12 @@
       ],
       "Your free trial has ended": [
         "Sua avaliação gratuita terminou"
+      ],
+      "High security for your account": [
+        "Alta segurança para sua conta"
+      ],
+      "Need more labels or folders?": [
+        "Precisa de mais rótulos ou pastas?"
       ]
     },
     "Title subscription": {
@@ -12612,6 +12671,21 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
       ]
     }
   }
