@@ -38,6 +38,7 @@ const SuggestionTypeToMetricSuggestionType: Record<SuggestionSummaryType, Metric
   'block-type-change': 'other',
   'insert-divider': 'insertion',
   'delete-divider': 'deletion',
+  'clear-formatting': 'style',
 }
 
 type SuggestionResolution = 'accepted' | 'rejected'

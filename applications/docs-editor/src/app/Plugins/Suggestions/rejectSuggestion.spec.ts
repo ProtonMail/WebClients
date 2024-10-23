@@ -2,8 +2,8 @@ import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode } from './ProtonNode'
-import type { ParagraphNode, TextNode, ElementNode } from 'lexical'
-import { $isParagraphNode, $isTextNode } from 'lexical'
+import type { ElementNode, ParagraphNode, TextNode } from 'lexical'
+import { $createRangeSelection, $isParagraphNode, $isTextNode, $setSelection } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot } from 'lexical'
 import { $rejectSuggestion } from './rejectSuggestion'
 import type { HeadingNode } from '@lexical/rich-text'
@@ -13,9 +13,10 @@ import { $isListItemNode } from '@lexical/list'
 import { $createListItemNode, $createListNode, $isListNode } from '@lexical/list'
 import type { LinkNode } from '@lexical/link'
 import { $createLinkNode, $isLinkNode } from '@lexical/link'
-import { getStyleObjectFromCSS } from '@lexical/selection'
+import { $patchStyleText, getStyleObjectFromCSS } from '@lexical/selection'
 import type { TableRowNode, TableCellNode, TableNode } from '@lexical/table'
 import { $createTableNodeWithDimensions } from '@lexical/table'
+import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
 
 describe('$rejectSuggestion', () => {
   const editor = createHeadlessEditor({
@@ -810,6 +811,91 @@ describe('$rejectSuggestion', () => {
         const last = root.getLastChildOrThrow<HeadingNode>()
         expect(last.getFormatType()).toBe('right')
         expect(last.getIndent()).toBe(1)
+      })
+    })
+  })
+
+  describe('clear-formatting', () => {
+    beforeEach(() => {
+      editor.update(
+        () => {
+          const root = $getRoot()
+          root.clear()
+
+          const text = $createTextNode('Hello world').setFormat('bold')
+          const paragraph = $createParagraphNode().append(text)
+          root.append(paragraph)
+
+          const firstSelection = text.select(2, 5) // select 'llo'
+          firstSelection.formatText('italic')
+          expect(paragraph.getChildrenSize()).toBe(3)
+
+          const lastTextNode = paragraph.getLastChildOrThrow<TextNode>()
+          const secondSelection = lastTextNode.select(0, 3) // select ' wo'
+          $patchStyleText(secondSelection, {
+            color: '#fff',
+          })
+          expect(paragraph.getChildrenSize()).toBe(4)
+
+          const firstNodeToSelect = paragraph.getChildAtIndex<TextNode>(1)!
+          const lastNodeToSelect = paragraph.getChildAtIndex<TextNode>(2)!
+
+          const selectionToSuggest = $createRangeSelection() // select 'llo wo'
+          selectionToSuggest.anchor.set(firstNodeToSelect.__key, 0, 'text')
+          selectionToSuggest.focus.set(lastNodeToSelect.__key, lastNodeToSelect.getTextContentSize(), 'text')
+          $setSelection(selectionToSuggest)
+
+          let suggestionID: string | undefined
+          $clearFormattingAsSuggestion((id) => (suggestionID = id))
+
+          if (!suggestionID) {
+            throw new Error('Did not suggest')
+          }
+
+          $rejectSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+    })
+
+    test('paragraph should have 4 children', () => {
+      editor.read(() => {
+        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+        expect(paragraph.getChildrenSize()).toBe(4)
+
+        const first = paragraph.getChildAtIndex(0)!
+        expect($isTextNode(first)).toBe(true)
+
+        const second = paragraph.getChildAtIndex(1)!
+        expect($isTextNode(second)).toBe(true)
+
+        const third = paragraph.getChildAtIndex(2)!
+        expect($isTextNode(third)).toBe(true)
+
+        const fourth = paragraph.getChildAtIndex(3)!
+        expect($isTextNode(fourth)).toBe(true)
+      })
+    })
+
+    test('second node should have format and style set to original', () => {
+      editor.read(() => {
+        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+
+        const second = paragraph.getChildAtIndex<TextNode>(1)!
+        expect(second.getFormat()).toBe(3)
+        expect(second.getStyle()).toBe('')
+      })
+    })
+
+    test('third node should have format and style set to original', () => {
+      editor.read(() => {
+        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+
+        const third = paragraph.getChildAtIndex<TextNode>(2)!
+        expect(third.getFormat()).toBe(1)
+        expect(third.getStyle()).toBe('color: #fff;')
       })
     })
   })
