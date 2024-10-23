@@ -96,6 +96,7 @@ const MainContainer: FunctionComponent = () => {
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
+    const isGlobalSSOEnabled = useFlag('GlobalSSO');
     const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
     const [groups, loadingGroups] = useGroups();
 
@@ -113,6 +114,7 @@ const MainContainer: FunctionComponent = () => {
         canDisplayB2BLogsVPN,
         isB2BAuthLogsEnabled,
         showGatewaysForBundlePlan,
+        isGlobalSSOEnabled,
         groups,
     });
     useConvertExternalAddresses();
