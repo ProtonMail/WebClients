@@ -442,8 +442,10 @@ export function SuggestionModePlugin({
           const isUnderline = key.toLowerCase() === 'u' && !altKey && controlOrMeta
 
           if (isUndo) {
+            event.preventDefault()
             return editor.dispatchCommand(UNDO_COMMAND, undefined)
           } else if (isRedo) {
+            event.preventDefault()
             return editor.dispatchCommand(REDO_COMMAND, undefined)
           } else if (isTab) {
             return editor.dispatchCommand(KEY_TAB_COMMAND, event)
