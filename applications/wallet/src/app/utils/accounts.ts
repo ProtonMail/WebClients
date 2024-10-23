@@ -1,6 +1,12 @@
 import pick from 'lodash/pick';
 
-import type { WasmApiWallet, WasmApiWalletAccount, WasmPagination, WasmSortOrder } from '@proton/andromeda';
+import type {
+    WasmApiWallet,
+    WasmApiWalletAccount,
+    WasmBalanceWrapper,
+    WasmPagination,
+    WasmSortOrder,
+} from '@proton/andromeda';
 import isTruthy from '@proton/utils/isTruthy';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
@@ -10,8 +16,8 @@ export const removeMasterPrefix = (derivationPath: string) => {
     return derivationPath.replace(/m\//, '');
 };
 
-export const getAccountBalance = async (account?: AccountWithChainData) => {
-    const balance = await account?.account.getBalance();
+export const computeTrustedBalance = async (_balance?: WasmBalanceWrapper) => {
+    const balance = _balance?.data;
 
     const confirmed = Number(balance?.confirmed ?? 0);
     const trustedPending = Number(balance?.trusted_pending ?? 0);
@@ -19,13 +25,25 @@ export const getAccountBalance = async (account?: AccountWithChainData) => {
     return confirmed + trustedPending;
 };
 
-export const getAccountUntrustedBalance = async (account?: AccountWithChainData) => {
-    const balance = await account?.account.getBalance();
+const computeUntrustedBalance = async (_balance?: WasmBalanceWrapper) => {
+    const balance = _balance?.data;
 
     const untrusted = Number(balance?.untrusted_pending ?? 0);
     const immature = Number(balance?.immature ?? 0);
 
     return untrusted + immature;
+};
+
+export const getAccountBalance = async (account?: AccountWithChainData) => {
+    const balance = await account?.account.getBalance();
+
+    return computeTrustedBalance(balance);
+};
+
+export const getAccountUntrustedBalance = async (account?: AccountWithChainData) => {
+    const balance = await account?.account.getBalance();
+
+    return computeUntrustedBalance(balance);
 };
 
 export const getDefaultAccount = (apiWallet?: IWasmApiWalletData): WasmApiWalletAccount | undefined => {
@@ -64,7 +82,7 @@ export const getAccountTransactions = async (
     walletsChainData: WalletChainDataByWalletId,
     walletId: string,
     accountId: string,
-    pagination?: WasmPagination,
+    pagination: WasmPagination,
     sort?: WasmSortOrder
 ) => {
     const account = walletsChainData[walletId]?.accounts?.[accountId]?.account;
@@ -89,19 +107,13 @@ export const getAccountsWithChainDataFromSingleWallet = (
 export const getWalletBalance = async (walletsChainData: WalletChainDataByWalletId, walletId: string) => {
     const balance = await walletsChainData[walletId]?.wallet.getBalance();
 
-    const confirmed = Number(balance?.confirmed ?? 0);
-    const trustedPending = Number(balance?.trusted_pending ?? 0);
-
-    return confirmed + trustedPending;
+    return computeTrustedBalance(balance);
 };
 
 export const getWalletUntrustedBalance = async (walletsChainData: WalletChainDataByWalletId, walletId: string) => {
     const balance = await walletsChainData[walletId]?.wallet.getBalance();
 
-    const untrusted = Number(balance?.untrusted_pending ?? 0);
-    const immature = Number(balance?.immature ?? 0);
-
-    return untrusted + immature;
+    return computeUntrustedBalance(balance);
 };
 
 export const getWalletTransactions = async (

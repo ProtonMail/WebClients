@@ -61,7 +61,7 @@ export const MetricsAndCtas = ({
     const localDisabled = !account || disabled;
     const { isNarrow } = useResponsiveContainerContext();
 
-    const { totalBalance } = useBalance(apiWalletData, apiAccount);
+    const { balance } = useBalance(apiWalletData, apiAccount);
 
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(account);
     const [priceGraphData = { GraphData: [] }, loadingGraphData] = usePriceGraphData(
@@ -71,7 +71,7 @@ export const MetricsAndCtas = ({
 
     const percentChange = getPercentChange(priceGraphData.GraphData);
 
-    const canSend = totalBalance > 0;
+    const canSend = balance > 0;
     const commonProps = {
         className: 'text-lg w-custom mx-1 rounded-full grow',
         style: { '--w-custom': isNarrow ? '5rem' : '7.5rem' },

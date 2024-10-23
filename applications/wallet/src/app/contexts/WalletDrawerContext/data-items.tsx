@@ -16,7 +16,7 @@ import { Button, ButtonLike, CoreButton } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
 import { Price } from '../../atoms/Price';
 import { BoostTransactionModal } from '../../components/BoostTransactionModal';
-import type { TxDataListItemProps } from '../../components/TransactionList/data-list-items';
+import type { TxDataListItemProps } from '../../components/WalletMainContent/TransactionTable/data-list-items';
 import { BLOCKCHAIN_EXPLORER_BASE_URL_BY_NETWORK } from '../../constants';
 import {
     convertAmountStr,
@@ -334,7 +334,7 @@ export const LinkToBlockchainDataItem = ({ tx, network }: TxDataListItemProps & 
                 <span className="block color-hint text-rg"></span>
                 <ButtonLike
                     as={Href}
-                    href={`${url}/${tx?.networkData.txid}`}
+                    href={`${url}/tx/${tx?.networkData.txid}`}
                     target="_blank"
                     fullWidth
                     shape="solid"

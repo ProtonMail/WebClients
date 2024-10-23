@@ -8,7 +8,7 @@ interface Props {
     onNext: () => void;
     canGoPrev: boolean;
     onPrev: () => void;
-    disabled: boolean;
+    disabled?: boolean;
 }
 
 export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev, disabled = false }: Props) => {
