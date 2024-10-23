@@ -130,6 +130,8 @@ export function useSuggestionCommentContent(
     } else if (type === 'delete-divider') {
       title = c('Label').t`Delete divider`
       color = 'weak'
+    } else if (type === 'clear-formatting') {
+      title = c('Label').t`Clear formatting`
     }
     if (!!replaceWith || type === 'delete' || type === 'insert') {
       content = `"${content}"`
