@@ -50,6 +50,7 @@
 	}
 
 	*:not(.Lexical__listItem):has(> &.indent-change),
+	*:has(> &.block-type-change),
 	.Lexical__listItem:not(.Lexical__listItem--nested):has(> &.indent-change) {
 		background: var(--suggestion-normal-bg-non-selected);
 		border-block-end: 1px dotted rgb(var(--suggestion-normal-fg));

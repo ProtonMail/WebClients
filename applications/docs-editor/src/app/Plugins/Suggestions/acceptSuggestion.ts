@@ -78,6 +78,8 @@ export function $acceptSuggestion(suggestionID: string): boolean {
         }
         $deleteTableColumn(table, index)
       }
+    } else if (suggestionType === 'block-type-change') {
+      node.remove()
     } else {
       $unwrapSuggestionNode(node)
     }
