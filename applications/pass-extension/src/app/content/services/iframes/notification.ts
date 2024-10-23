@@ -2,6 +2,7 @@ import { NOTIFICATION_IFRAME_SRC } from 'proton-pass-extension/app/content/const
 import {
     NOTIFICATION_HEIGHT,
     NOTIFICATION_HEIGHT_SM,
+    NOTIFICATION_HEIGHT_XS,
     NOTIFICATION_WIDTH,
 } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
@@ -62,7 +63,11 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
         position: () => ({ top: 15, right: 15 }),
         dimensions: ({ action }) => ({
             width: NOTIFICATION_WIDTH,
-            height: action === NotificationAction.OTP ? NOTIFICATION_HEIGHT_SM : NOTIFICATION_HEIGHT,
+            height: (() => {
+                if (action === NotificationAction.OTP) return NOTIFICATION_HEIGHT_SM;
+                if (action === NotificationAction.AUTOSAVE) return NOTIFICATION_HEIGHT_XS;
+                return NOTIFICATION_HEIGHT;
+            })(),
         }),
     });
 

@@ -2,6 +2,11 @@ import { type FC, useEffect } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
+import {
+    MIN_DROPDOWN_HEIGHT,
+    NOTIFICATION_HEIGHT_XS,
+    NOTIFICATION_WIDTH,
+} from 'proton-pass-extension/app/content/constants.static';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
@@ -37,7 +42,7 @@ const getInitialValues = ({ userIdentifier, password, type }: AutosavePayload, d
         : { name: domain, password, shareId: '', step: 'edit', type, userIdentifier };
 
 export const Autosave: FC<Props> = ({ data }) => {
-    const { settings, visible, close, domain } = useIFrameContext();
+    const { settings, visible, close, domain, resize } = useIFrameContext();
     const { onTelemetry } = usePassCore();
     const { createNotification } = useNotifications();
 
@@ -111,6 +116,18 @@ export const Autosave: FC<Props> = ({ data }) => {
         }
     }, [shouldUpdate, data]);
 
+    useEffect(() => {
+        if (form.values.step === 'edit') return resize(NOTIFICATION_WIDTH);
+
+        // Max we accept is 3
+        if (form.values.type === AutosaveMode.UPDATE) {
+            const candidates = data.type === AutosaveMode.UPDATE ? data.candidates.length : 0;
+            candidates > 3
+                ? resize(NOTIFICATION_WIDTH)
+                : resize(NOTIFICATION_HEIGHT_XS + MIN_DROPDOWN_HEIGHT * candidates);
+        }
+    }, [data, form]);
+
     const isUpdateStep = form.values.step === 'select' && data.type === AutosaveMode.UPDATE;
 
     return (
@@ -142,7 +159,7 @@ export const Autosave: FC<Props> = ({ data }) => {
                 />
 
                 {isUpdateStep && (
-                    <Scroll>
+                    <Scroll className="overflow-hidden" scrollContained>
                         {data.candidates.map(({ itemId, shareId, url, userIdentifier, name }) => (
                             <ListItem
                                 key={`${shareId}-${itemId}`}
