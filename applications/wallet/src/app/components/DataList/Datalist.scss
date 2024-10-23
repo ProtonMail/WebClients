@@ -1,9 +1,5 @@
-.hoverable-row {
-	cursor: pointer;
-
-	&:hover {
-		background-color: var(--interaction-weak);
-	}
+.not-interactive-row {
+	cursor: auto;
 }
 
 .datagrid-container {

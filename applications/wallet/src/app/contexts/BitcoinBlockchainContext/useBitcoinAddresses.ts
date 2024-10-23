@@ -10,7 +10,7 @@ import {
     type WasmAddressInfo,
     type WasmApiWallet,
     type WasmApiWalletAccount,
-    type WasmApiWalletBitcoinAddressData,
+    type WasmApiWalletBitcoinAddress,
 } from '@proton/andromeda';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { type DecryptedAddressKey, type SimpleMap } from '@proton/shared/lib/interfaces';
@@ -23,6 +23,7 @@ import {
     useWalletApiClients,
     verifySignedData,
 } from '@proton/wallet';
+import { useGetBitcoinAddressPool } from '@proton/wallet/store';
 
 import { useItemEffect } from '../../hooks/useItemEffect';
 import { getAccountWithChainDataFromManyWallets } from '../../utils';
@@ -46,6 +47,7 @@ export const useBitcoinAddresses = ({
     const { subscribe } = useEventManager();
 
     const getAddressKeys = useGetAddressKeys();
+    const getBitcoinAddressPool = useGetBitcoinAddressPool();
 
     const [bitcoinAddressHelperByWalletAccountId, setBitcoinAddressHelperByWalletAccountId] = useState<
         SimpleMap<BitcoinAddressHelper>
@@ -73,7 +75,7 @@ export const useBitcoinAddresses = ({
             walletAccount: WasmApiWalletAccount,
             wasmAccount: WasmAccount,
             walletAccountAddressKey: DecryptedAddressKey,
-            bitcoinAddresses: WasmApiWalletBitcoinAddressData[]
+            bitcoinAddresses: WasmApiWalletBitcoinAddress[]
         ) => {
             const walletId = walletAccount.WalletID;
             const walletAccountId = walletAccount.ID;
@@ -81,14 +83,14 @@ export const useBitcoinAddresses = ({
             const addressesToUpdate = await Promise.all(
                 bitcoinAddresses.map(async (addr) => {
                     // DB row can be created from a sender request, in this case we want to add the Address and its signature
-                    if (!addr.Data.BitcoinAddressSignature || !addr.Data.BitcoinAddress) {
+                    if (!addr.BitcoinAddressSignature || !addr.BitcoinAddress) {
                         return addr;
                     }
 
                     // Verify if the signature is outdate
                     const isVerified = await verifySignedData(
-                        addr.Data.BitcoinAddress,
-                        addr.Data.BitcoinAddressSignature,
+                        addr.BitcoinAddress,
+                        addr.BitcoinAddressSignature,
                         'wallet.bitcoin-address',
                         [walletAccountAddressKey.privateKey]
                     );
@@ -103,13 +105,13 @@ export const useBitcoinAddresses = ({
                         wasmAccount,
                         walletAccountAddressKey,
                         // Index isn't cleared when BvE is disabled so that when it is turned on again, we can use it
-                        addressToUpdate.Data.BitcoinAddressIndex
+                        addressToUpdate.BitcoinAddressIndex
                     );
 
                     await api.bitcoin_address.updateBitcoinAddress(
                         walletId,
                         walletAccountId,
-                        addressToUpdate.Data.ID,
+                        addressToUpdate.ID,
                         addressData
                     );
                 } catch (e) {
@@ -125,13 +127,13 @@ export const useBitcoinAddresses = ({
             walletAccount: WasmApiWalletAccount,
             wasmAccount: WasmAccount,
             walletAccountAddressKey: DecryptedAddressKey,
-            bitcoinAddresses: WasmApiWalletBitcoinAddressData[]
+            bitcoinAddresses: WasmApiWalletBitcoinAddress[]
         ) => {
             const walletId = walletAccount.WalletID;
             const walletAccountId = walletAccount.ID;
 
             // Compute missing addresses
-            const availableBitcoinAddresses = bitcoinAddresses.filter((a) => !a.Data.Fetched);
+            const availableBitcoinAddresses = bitcoinAddresses.filter((a) => !a.Fetched);
             const addressesToCreate = Math.max(0, walletAccount.PoolSize - availableBitcoinAddresses.length);
 
             // Fill bitcoin address pool
@@ -143,7 +145,7 @@ export const useBitcoinAddresses = ({
 
             if (addressesPoolPayload) {
                 try {
-                    await api.bitcoin_address.addBitcoinAddress(walletId, walletAccountId, addressesPoolPayload);
+                    await api.bitcoin_address.addBitcoinAddresses(walletId, walletAccountId, addressesPoolPayload);
                 } catch (e) {
                     console.error('Could not add new bitcoin addresses', e);
                 }
@@ -164,14 +166,12 @@ export const useBitcoinAddresses = ({
         }) => {
             const firstAddress = account.Addresses.at(0);
 
-            const unusedBitcoinAddresses = await api.bitcoin_address
-                .getBitcoinAddresses(wallet.ID, account.ID)
-                .then((data) => data[0]);
+            const unusedBitcoinAddresses = await getBitcoinAddressPool(wallet.ID, account.ID);
 
             // Mark all addresses already in the pool as used to avoid reusing them
             for (const address of unusedBitcoinAddresses) {
-                if (address.Data.BitcoinAddressIndex) {
-                    await accountChainData.account.markReceiveAddressesUsedTo(address.Data.BitcoinAddressIndex);
+                if (address.BitcoinAddressIndex) {
+                    await accountChainData.account.markReceiveAddressesUsedTo(address.BitcoinAddressIndex);
                 }
             }
 

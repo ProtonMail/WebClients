@@ -124,7 +124,6 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
             <EmailIntegrationInput
                 wallet={wallet}
                 walletAccount={walletAccount}
-                value={walletAccount.Addresses}
                 options={addressesWithAvailability}
                 loading={isLoadingEmailUpdate}
                 shouldShowBvEWarning={shouldShowBvEWarning}

@@ -1,5 +1,6 @@
 export * from './useApiWalletsData';
 export * from './useApiWalletTransactionData';
+export * from './useBitcoinAddressPool';
 export * from './useBitcoinAddressHighestIndex';
 export * from './useBitcoinNetwork';
 export * from './useCountriesByProvider';
