@@ -108,7 +108,7 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
         });
 
         if (addressesPoolPayload?.[0]?.length) {
-            await walletApi.bitcoin_address.addBitcoinAddress(wallet.ID, walletAccount.ID, addressesPoolPayload);
+            await walletApi.bitcoin_address.addBitcoinAddresses(wallet.ID, walletAccount.ID, addressesPoolPayload);
         }
     };
 
