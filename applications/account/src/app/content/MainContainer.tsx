@@ -149,6 +149,7 @@ const MainContainer = () => {
     const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
+    const isGlobalSSOEnabled = useFlag('GlobalSSO');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -192,6 +193,7 @@ const MainContainer = () => {
         isUserGroupsMembershipFeatureEnabled,
         isB2BDrive,
         isB2BAuthLogsEnabled,
+        isGlobalSSOEnabled,
         showGatewaysForBundlePlan,
     });
 
