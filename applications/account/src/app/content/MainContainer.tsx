@@ -320,7 +320,10 @@ const MainContainer = () => {
         return <Redirect to={`/${appSlug}${path}`} />;
     })();
 
-    if (getRequiresAddressSetup(app, user)) {
+    if (
+        getRequiresAddressSetup(app, user) &&
+        location.pathname !== `${prefixPath}${routes.account.routes.password.to}`
+    ) {
         const toPath = `/${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(location.pathname))}`;
         return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}&to-type=settings&to-path=${toPath}`} />;
     }

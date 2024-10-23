@@ -83,16 +83,19 @@ const PasswordsSection = () => {
 
             if (action === 'change-password') {
                 handleChangePassword(changePasswordMode);
+                params.delete('action');
+                return params;
             } else if (action === 'session-recovery-password-reset-available') {
                 setSkipInfoStep(false);
                 setSessionRecoveryPasswordResetModalOpen(true);
+                params.delete('action');
+                return params;
             } else if (action === 'session-recovery-reset-password') {
                 setSkipInfoStep(true);
                 setSessionRecoveryPasswordResetModalOpen(true);
+                params.delete('action');
+                return params;
             }
-
-            params.delete('action');
-            return params;
         },
         [loading]
     );
