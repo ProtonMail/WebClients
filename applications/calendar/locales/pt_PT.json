@@ -767,6 +767,18 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Collapse navigation bar": [
+        "Recolher a barra de navegação"
+      ],
+      "Display navigation bar": [
+        "Mostrar a barra de navegação"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Atualização importante disponível. Para continuar a utilizar a aplicação, atualize para a versão mais recente. ${ downloadUpdate }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Selecionar ciclo de faturação ${ billingText }"
       ]
     },
     "Action subline": {
@@ -2571,6 +2583,9 @@
       ],
       "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
         "Foi convidado para ${ eventTitle }.\n\n${ eventDetailsText }"
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Este evento foi atualizado. Veja o que mudou:\n\n${ updateEventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -5010,6 +5025,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Parece que o fuso horário do seu sistema mudou para ${ timezone }. Deseja atualizar a sua preferência de fuso horário?"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
       ]
     },
     "info": {
@@ -5545,6 +5563,15 @@
       ],
       "Your password (admin)": [
         "A sua palavra-passe (admin)"
+      ],
+      "Address": [
+        "Endereço"
+      ],
+      "First name": [
+        "Nome próprio"
+      ],
+      "Last name": [
+        "Apelido"
       ]
     },
     "Label for contact group color": {
@@ -8913,6 +8940,9 @@
       ],
       "Your exposed information": [
         "As suas informações expostas"
+      ],
+      "High security for your account": [
+        "Alta segurança para sua conta"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -9452,6 +9482,21 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoramento da Dark Web"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
       ]
     }
   }

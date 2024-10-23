@@ -4211,8 +4211,8 @@
         "Új névjegy csoport"
       ],
       "Create a secure cloud for ${ n } member": [
-        "Hozzon létre biztonságos felhőt ${ n } tagnak",
-        "Hozzon létre biztonságos felhőt ${ n } tagnak"
+        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ n } tagnak"
       ],
       "Create in": [
         "Létrehozás itt"
@@ -4830,7 +4830,7 @@
         "Valóban szeretné ezt az eseményt frissíteni?"
       ],
       "Writing assistant": [
-        "Fogalmazási segéd"
+        "Írási segéd"
       ],
       "Yearly": [
         "Évente"
@@ -5507,6 +5507,15 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Address": [
+        "Cím"
+      ],
+      "First name": [
+        "Keresztnév"
+      ],
+      "Last name": [
+        "Vezetéknév"
       ]
     },
     "Label for contact group color": {
@@ -6059,8 +6068,8 @@
         "${ n } üzenet naponta"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként",
-        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként"
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként",
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként"
       ],
       "${ n } user": [
         "${ n } felhasználó",
@@ -6075,8 +6084,8 @@
         "${ n } VPN kapcsolat"
       ],
       "${ options }-day file version history": [
-        "${ options } napos fájl verzió előzmény",
-        "${ options } napos fájl verzió előzmény"
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
@@ -9460,6 +9469,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Évente, ${ untilString }"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Események megtekintése"
       ]
     }
   }

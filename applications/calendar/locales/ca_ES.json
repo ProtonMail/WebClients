@@ -723,7 +723,7 @@
         "Millora ara"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Millora a ${ BRAND_NAME } Unlimited"
+        "Milloreu a ${ BRAND_NAME } Unlimited"
       ],
       "Upload picture": [
         "Carrega la imatge"
@@ -2516,6 +2516,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Codifiqueu els esdeveniments per colors per a facilitar l'organització diària, controlar el temps i la priorització de tasques."
       ]
     },
     "description": {
@@ -2904,7 +2907,7 @@
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Email address disabled": [
-        "Correu electrònic desactivada"
+        "Correu electrònic desactivat"
       ],
       "Email address is required": [
         "L'adreça de correu electrònic és obligatòria."
@@ -3643,6 +3646,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "El vostre compte utilitza ${ usedSpace } d'emmagatzematge, que supera els ${ inviteSpace } que us van assignar. Elimineu algunes dades o demaneu a l'administrador del pla que augmenti l'emmagatzematge."
+      ],
+      "You have successfully joined the family group": [
+        "Us heu unit al grup familiar."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3781,7 +3787,7 @@
     },
     "Google Meet": {
       "Join Google Meet": [
-        "Uniu-vos a Google Meet"
+        "Uniu-vos al Google Meet"
       ],
       "Joining instructions": [
         "Instruccions per unir-se"
@@ -5697,6 +5703,15 @@
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
+      ],
+      "Address": [
+        "Adreça"
+      ],
+      "First name": [
+        "Nom"
+      ],
+      "Last name": [
+        "Cognom"
       ]
     },
     "Label for contact group color": {
@@ -6630,6 +6645,26 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
+      ],
+      "Generate emails with a prompt": [
+        "Genera correus electrònics amb un missatge"
+      ],
+      "Secure link sharing": [
+        "Compartició d'enllaços segurs"
+      ],
+      "Support for up to 2 users": [
+        "Suport per a 2 usuaris"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Fins a ${ n } usuari (${ adminsText }, ${ usersText })",
+        "Fins a ${ n } usuaris (${ adminsText }, ${ usersText })"
       ]
     },
     "new_plans: feature highlight": {
@@ -6743,7 +6778,7 @@
     },
     "new_plans: Title": {
       "Get Mail Plus for ${ price }": [
-        "Obtingueu Mail Plus per ${ price }"
+        "Obtingueu el Mail Plus per ${ price }"
       ],
       "Starting from ${ price }": [
         "Comenceu des de ${ price }"
@@ -8705,6 +8740,13 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } usuari",
+        "${ planNumberOfUsers } usuaris"
+      ],
+      "Folders, labels and filters": [
+        "Carpetes, etiquetes i filtres"
       ]
     },
     "subscription reminder": {
@@ -10152,6 +10194,50 @@
       ],
       "Passcode: ${ password }": [
         "Codi d'accés: ${ password }"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "Emmagatzematge de ${ maxSpaceTB }"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
+      ],
+      "Cancel and downgrade": [
+        "Cancel·la i passa a un pla inferior"
+      ],
+      "Encrypted password manager": [
+        "Gestor de contrasenyes xifrat"
+      ],
+      "Save ${ upsellSavings }": [
+        "Estalvieu el ${ upsellSavings }"
+      ],
+      "Try ${ planName }": [
+        "Proveu ${ planName }"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Monitoratge de la web fosca"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } compte d'usuari",
+        "${ n } comptes d'usuari"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "Get it for ${ monthlyPrice }": [
+        "Obteniu-lo per ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Presentem ${ passFamilyPlanName }"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Mostra els esdeveniments"
       ]
     }
   }

@@ -785,6 +785,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Toggle Contacts app": [
+        "Afficher/Masquer l'application Contacts"
       ]
     },
     "Action subline": {
@@ -1246,6 +1249,9 @@
       ],
       "View (see all event details)": [
         "Voir tous les détails de l'événement"
+      ],
+      "Edit (view, create or edit event details)": [
+        "Modifier (afficher, créer ou modifier les informations de l'événement)"
       ]
     },
     "Calendar sharing error": {
@@ -2534,6 +2540,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Cette opération peut prendre quelques minutes. Pendant ce temps, vous pouvez continuer à utiliser ${ CALENDAR_APP_NAME } comme d'habitude."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -3287,6 +3299,9 @@
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Vous avez atteint la limite du nombre de contacts pour votre compte."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3703,7 +3718,7 @@
         "Vous avez des factures non payées. Nous vous invitons à les régler avant de rejoindre un abonnement familial."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Vous avez une invitation à lier votre compte ${ BRAND_NAME } à cet abonnement familial pour profiter tous ensemble des fonctionnalités premium de ${ brandOrAppName }."
+        "Vous avez une invitation pour lier votre compte ${ BRAND_NAME } à cet abonnement familial pour profiter tous ensemble des fonctionnalités premium de ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Le nombre d'adresses e-mail de votre compte dépasse celui prévu avec cet abonnement. ${ addressSettingsLink }"
@@ -3712,6 +3727,12 @@
         "Votre compte utilise ${ usedSpace } d'espace de stockage, ce qui dépasse les ${ inviteSpace } dont vous disposez. Supprimez certaines données ou demandez à l'administrateur de l'abonnement d'augmenter votre espace de stockage."
       ],
       "Your cannot accept this invitation with your current plan.": [
+        "Vous ne pouvez pas accepter cette invitation avec votre abonnement actuel."
+      ],
+      "Manage addresses": [
+        "Gérer les adresses"
+      ],
+      "You cannot accept this invitation with your current plan.": [
         "Vous ne pouvez pas accepter cette invitation avec votre abonnement actuel."
       ]
     },
@@ -3740,6 +3761,9 @@
       ],
       "Set up your family account": [
         "Créez votre compte familial"
+      ],
+      "Configure your family account and invite users": [
+        "Configurez votre compte familial et invitez des utilisateurs."
       ]
     },
     "familyOffer_2023:Title": {
@@ -3907,6 +3931,10 @@
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestion a été trouvée. Utilisez le clavier pour naviguer.",
+        "${ itemsCount } suggestions ont été trouvées. Utilisez le clavier pour naviguer."
       ]
     },
     "Human verification method": {
@@ -5246,6 +5274,12 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Le fuseau horaire de votre système semble avoir changé pour ${ timezone }. Voulez-vous mettre à jour votre préférence de fuseau horaire ?"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mois)"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nos alertes privilégient la sécurité. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
       ]
     },
     "info": {
@@ -5786,6 +5820,15 @@
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
+      ],
+      "Address": [
+        "Adresse"
+      ],
+      "First name": [
+        "Prénom"
+      ],
+      "Last name": [
+        "Nom"
       ]
     },
     "Label for contact group color": {
@@ -6767,6 +6810,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilisateur",
+        "Jusqu'à ${ numberOfUsers } utilisateurs"
+      ],
+      "TOR over VPN": [
+        "TOR via VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -7120,6 +7170,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Envoyez l'ensemble de votre trafic Internet à travers le réseau TOR en un seul clic."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7359,6 +7415,9 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Sélectionnez ce à quoi ${ BRAND_NAME } peut accéder : afficher vos messages électroniques et leurs paramètres, afficher et télécharger vos contacts, afficher et télécharger tous les agendas auxquels vous accédez à partir de Google Agenda."
+      ],
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Sélectionnez ce à quoi ${ BRAND_NAME } peut accéder : afficher vos messages électroniques et leurs paramètres, afficher et télécharger vos contacts, afficher et télécharger tous les agendas auxquels vous accédez à partir de Google Calendar."
       ]
     },
     "Onboarding": {
@@ -7896,6 +7955,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Les alias sont fournis par ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Utilisé par exemple sur Amazon pour vos achats."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -8590,6 +8652,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Votre abonnement a été acheté avec une application iOS. Pour apporter des modifications à votre abonnement ou mettre à jour vos données de paiement, vous devez donc vous rendre sur l'App Store d'Apple."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Il vous suffit de vous connecter à votre compte Apple App Store, puis de sélectionner ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -8912,6 +8977,71 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } vous permet de vous assurer que chaque membre de votre famille, ainsi que leurs données, sont protégés lorsqu'ils sont en ligne."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } calendrier par utilisateur",
+        "${ planNumberOfCalendars } calendriers par utilisateur"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domaine de messagerie personnalisé",
+        "${ planNumberOfDomains } domaines de messagerie personnalisés"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresse e-mail",
+        "${ planNumberOfEmails } adresses e-mail"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } adresse e-mail par utilisateur",
+        "${ planNumberOfEmails } adresses e-mail par utilisateur"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } utilisateur",
+        "${ planNumberOfUsers } utilisateurs"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "Protection avancée des comptes ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Dark web monitoring": [
+        "Surveillance du dark web"
+      ],
+      "Folders, labels and filters": [
+        "Dossiers, labels et filtres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Dossiers, labels et filtres personnalisés"
+      ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Voici comment nous avons riposté lorsque ${ BRAND_NAME } a été bloqué lors d'une campagne agressive."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Voici comment nous avons soutenu les activistes locaux lorsque la vie privée et la liberté d'expression étaient menacées."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Si vous dépassez les limites de l'abonnement gratuit, vous ne pourrez plus :"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Si votre utilisation dépasse les limites de l'abonnement gratuit, vous pourriez rencontrer des restrictions d'accès aux fonctionnalités du produit et à vos données."
+      ],
+      "Limitations of the free plan:": [
+        "Limites de l'abonnement gratuit :"
+      ],
+      "Upload any new files": [
+        "Importer tout nouveau fichier"
+      ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Les abonnements utilisateurs sont la seule source de revenus de ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission pour la protection de la vie privée en ligne, et d'aider les militants et organisations qui luttent pour la liberté."
+      ],
+      "Users won’t be able to upload files on their devices": [
+        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils."
+      ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Lorsque votre abonnement ${ planName } se termine le ${ expiryDate }, vous passerez à l'abonnement gratuit de ${ BRAND_NAME }."
       ]
     },
     "subscription reminder": {
@@ -9796,6 +9926,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "We're setting up calendar search": [
+        "Nous configurons la recherche dans le calendrier."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -9982,6 +10115,9 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN et bien d'autres fonctionnalités."
+      ],
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN et bien d'autres fonctionnalités."
       ]
     },
@@ -10370,6 +10506,63 @@
       ],
       "Passcode: ${ password }": [
         "Code d’accès :${ password }"
+      ]
+    },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } d'espace de stockage"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } d'espace de stockage pour vos messages"
+      ],
+      "Advanced account protection": [
+        "Protection avancée des comptes"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Toutes les applications ${ BRAND_NAME } et les fonctionnalités premium"
+      ],
+      "Cancel and downgrade": [
+        "Annuler et passer à un abonnement inférieur"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Stockage cloud et partage de vos fichiers"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Stockage cloud chiffré pour les photos et les documents."
+      ],
+      "Encrypted password manager": [
+        "Gestionnaire de mots de passe chiffré"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Notre abonnement gratuit de base avec une messagerie et un stockage chiffrés de bout en bout. Aucune fonctionnalité premium incluse."
+      ],
+      "Save ${ upsellSavings }": [
+        "Économisez ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Économisez de l'argent avec ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Calendrier partagé et personnel sécurisé"
+      ],
+      "Try ${ planName }": [
+        "J'essaie ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Essayez ${ upsellPlanName } et conservez l'accès à toutes les fonctionnalités premium de messagerie et de calendrier."
+      ],
+      "Ultra fast and private VPN": [
+        "Un VPN ultrarapide et privé"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Surveillance du dark web"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Afficher les événements"
       ]
     }
   }

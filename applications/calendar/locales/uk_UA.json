@@ -2541,6 +2541,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ваш обліковий запис і способи відновлення налаштовано."
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Позначайте події кольором, щоб легше організувати свій день, відстежувати час і визначати пріоритетність завдань."
       ]
     },
     "description": {
@@ -5816,6 +5819,15 @@
       ],
       "Your password (admin)": [
         "Новий пароль (адмін)"
+      ],
+      "Address": [
+        "Адреса"
+      ],
+      "First name": [
+        "Ім'я"
+      ],
+      "Last name": [
+        "Прізвище"
       ]
     },
     "Label for contact group color": {
@@ -6589,7 +6601,7 @@
         "HTML-підписи"
       ],
       "Integrated 2FA authenticator": [
-        "Інтегрований 2FA автентифікатор"
+        "Інтегрований автентифікатор 2FA"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch/Постійна VPN"
@@ -8631,7 +8643,7 @@
         "Усього ${ planMaxSpace } сховища"
       ],
       "${ planName } gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.": [
-        "${ planName } надає вам доступ до всіх застосунків та преміум функцій. Вбудована функція приватності дозволяє вам продовжувати роботу, знаючи, що ваші дані та особистість у безпеці."
+        "${ planName } надає вам доступ до всіх застосунків та преміумфункцій. Вбудована функція приватності дозволяє вам продовжувати роботу, знаючи, що ваші дані та особистість у безпеці."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
@@ -10331,6 +10343,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
+      ]
+    },
+    "Feature": {
+      "Dark Web Monitoring": [
+        "Відстеження Dark Web"
       ]
     }
   }
