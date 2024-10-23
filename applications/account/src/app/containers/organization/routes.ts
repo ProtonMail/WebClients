@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { canUseGroups } from '@proton/components';
 import type { SectionConfig } from '@proton/components';
+import { PLANS } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -28,6 +29,7 @@ interface Props {
     canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
     isB2BAuthLogsEnabled: boolean;
+    isGlobalSSOEnabled: boolean;
     showGatewaysForBundlePlan: boolean;
     groups: Group[] | undefined;
 }
@@ -40,6 +42,7 @@ export const getOrganizationAppRoutes = ({
     canDisplayB2BLogsVPN,
     isUserGroupsFeatureEnabled,
     isB2BAuthLogsEnabled,
+    isGlobalSSOEnabled,
     showGatewaysForBundlePlan,
     groups,
 }: Props) => {
@@ -93,6 +96,13 @@ export const getOrganizationAppRoutes = ({
     const subSectionTitle = isPartOfFamily ? '' : c('Title').t`Multi-user support`;
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
+
+    const isPassAndGlobalSSOEnabled =
+        app === APPS.PROTONPASS ||
+        organization?.PlanName === PLANS.PASS_PRO ||
+        organization?.PlanName === PLANS.PASS_BUSINESS
+            ? isGlobalSSOEnabled
+            : true;
 
     return {
         available: canHaveOrganization && app !== APPS.PROTONWALLET,
@@ -256,6 +266,7 @@ export const getOrganizationAppRoutes = ({
                 to: '/single-sign-on',
                 icon: 'key',
                 available:
+                    isPassAndGlobalSSOEnabled &&
                     appSupportsSSO(app) &&
                     (planSupportsSSO(organization?.PlanName) || upsellPlanSSO(organization?.PlanName)) &&
                     canHaveOrganization &&
