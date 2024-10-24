@@ -26,7 +26,6 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import type { Audience, Currency, Cycle, Plan, Subscription } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import ScribeAddon from '../ScribeAddon';
@@ -296,8 +295,7 @@ export const ProtonPlanCustomizer = ({
     scribeEnabled = true,
     ...rest
 }: Props) => {
-    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
-    const supportedAddons = getSupportedAddons(planIDs, { showGatewaysForBundlePlan });
+    const supportedAddons = getSupportedAddons(planIDs);
     const showAddonDescriptions = mode !== 'signup' && !forceHideDescriptions;
 
     const isAllowedAddon = useCallback(

@@ -41,7 +41,6 @@ interface Arguments {
     isB2BDrive: boolean;
     isB2BAuthLogsEnabled: boolean;
     isGlobalSSOEnabled: boolean;
-    showGatewaysForBundlePlan: boolean;
     isScribePaymentEnabled: boolean;
 }
 
@@ -67,7 +66,6 @@ export const getRoutes = ({
     isB2BDrive,
     isB2BAuthLogsEnabled,
     isGlobalSSOEnabled,
-    showGatewaysForBundlePlan,
     isScribePaymentEnabled,
 }: Arguments) => {
     return {
@@ -106,7 +104,6 @@ export const getRoutes = ({
             isUserGroupsFeatureEnabled,
             isB2BAuthLogsEnabled,
             isGlobalSSOEnabled,
-            showGatewaysForBundlePlan,
             groups,
             isScribePaymentEnabled,
         }),
