@@ -1,37 +1,9 @@
 import { selectOrganization, selectUser } from '@proton/account';
 import { useIsOrganizationBeforeBackfill } from '@proton/components/containers/payments/subscription/assistant/useIsOrganizationBeforeBackfill';
 import useScribePaymentsEnabled from '@proton/components/containers/payments/subscription/assistant/useScribePaymentsEnabled';
-import { PLANS } from '@proton/payments';
+import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { baseUseSelector } from '@proton/react-redux-store';
-import type { Organization } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
-
-const PLANS_SUPPORTING_SCRIBE = [
-    PLANS.MAIL_PRO,
-    PLANS.MAIL_BUSINESS,
-    PLANS.BUNDLE_PRO,
-    PLANS.BUNDLE_PRO_2024,
-    PLANS.VISIONARY,
-    PLANS.DUO,
-    PLANS.FAMILY,
-    PLANS.FREE,
-    PLANS.DRIVE,
-    PLANS.MAIL,
-    PLANS.PASS,
-    PLANS.VPN,
-    PLANS.VPN2024,
-    PLANS.WALLET,
-    PLANS.BUNDLE,
-    PLANS.VPN_PASS_BUNDLE,
-];
-
-function isScribeSupported(organization?: Organization): boolean {
-    if (!organization) {
-        return false;
-    }
-
-    return PLANS_SUPPORTING_SCRIBE.includes(organization.PlanName);
-}
 
 const useAssistantFeatureEnabled = () => {
     const accessToAssistant = useFlag('ComposerAssistant');
@@ -42,7 +14,8 @@ const useAssistantFeatureEnabled = () => {
     const userHasScribeSeat = !!user?.NumAI;
 
     const organization = baseUseSelector(selectOrganization)?.value;
-    const planSupportsScribe = isScribeSupported(organization) || (user ? user.isFree : false);
+    const organizationScribeEnabled = !!organization?.Settings.ShowScribeWritingAssistant || !!user?.isAdmin;
+    const planSupportsScribe = isScribeSupported(organization, user);
 
     const paymentsEnabled = accessToAssistant && !isOrganizationBeforeBackfill && scribePaymentsEnabled;
 
@@ -53,7 +26,9 @@ const useAssistantFeatureEnabled = () => {
         // but if you have a seat you can still use it
         (scribePaymentsEnabled || userHasScribeSeat) &&
         // user can't enter scribe trial if the organization plan doesn't support it
-        planSupportsScribe;
+        planSupportsScribe &&
+        // If org admin disabled scribe to sub users, do not show the feature
+        organizationScribeEnabled;
 
     return {
         /**
