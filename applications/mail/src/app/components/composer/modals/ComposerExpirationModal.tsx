@@ -17,15 +17,9 @@ import {
 } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms';
-import {
-    Checkbox,
-    DateInputTwo,
-    InputFieldTwo,
-    TimeInput,
-    useNotifications,
-    useUserSettings,
-} from '@proton/components';
+import { Checkbox, DateInputTwo, InputFieldTwo, TimeInput, useNotifications } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isValidDate } from '@proton/shared/lib/date/date';
 import { setBit } from '@proton/shared/lib/helpers/bitset';

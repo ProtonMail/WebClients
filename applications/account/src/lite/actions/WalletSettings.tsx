@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     CredentialLeakSection,
     LogsSection,
@@ -10,7 +11,6 @@ import {
     SentinelSection,
     SessionsSection,
     SubscriptionModalProvider,
-    useUserSettings,
 } from '@proton/components';
 import { APPS, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 

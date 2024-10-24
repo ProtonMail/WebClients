@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event';
 import { mocked } from 'jest-mock';
 import { setupServer } from 'msw/node';
 
+import { useGetEncryptionPreferences, useNotifications } from '@proton/components';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
-import { useGetEncryptionPreferences, useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import type { PublicKeyReference } from '@proton/crypto';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';

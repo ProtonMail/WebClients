@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import useUserSettings from '@proton/components/hooks/useUserSettings';
 import { useDispatch } from '@proton/redux-shared-store';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';

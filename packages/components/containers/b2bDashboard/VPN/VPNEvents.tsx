@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Pagination, usePaginationAsync } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import TimeIntl from '@proton/components/components/time/TimeIntl';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
-import { useNotifications, useUserSettings } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';

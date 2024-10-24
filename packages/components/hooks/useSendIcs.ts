@@ -22,7 +22,7 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { useGetEncryptionPreferences } from './index';
+import useGetEncryptionPreferences from './useGetEncryptionPreferences';
 
 export interface SendIcsParams {
     method: ICAL_METHOD;

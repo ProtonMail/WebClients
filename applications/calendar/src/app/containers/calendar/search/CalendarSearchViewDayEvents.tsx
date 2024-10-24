@@ -4,7 +4,7 @@ import { isSameDay } from 'date-fns';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useUserSettings } from '@proton/components/hooks/useUserSettings';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
