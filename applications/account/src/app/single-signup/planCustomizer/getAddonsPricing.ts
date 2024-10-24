@@ -10,15 +10,13 @@ export default function getAddonsPricing({
     plansMap,
     planIDs,
     cycle,
-    showGatewaysForBundlePlan,
 }: {
     currentPlan: Plan;
     plansMap: { [key: string]: Plan };
     planIDs: PlanIDs;
     cycle: Cycle;
-    showGatewaysForBundlePlan: boolean;
 }) {
-    const supportedAddons = getSupportedAddons(planIDs, { showGatewaysForBundlePlan });
+    const supportedAddons = getSupportedAddons(planIDs);
 
     return Object.entries(supportedAddons)
         .map(([addonName]) => {
