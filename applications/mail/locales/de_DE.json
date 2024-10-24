@@ -4841,6 +4841,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Invite members and get everything up and running.": [
+        "Lade Mitglieder ein und bringe alles zum Laufen."
+      ],
       "Set up your family": [
         "Family einrichten"
       ],
@@ -8090,6 +8093,9 @@
       "Filter Name": [
         "Filtername"
       ],
+      "First name": [
+        "Vorname"
+      ],
       "Folder location": [
         "Pfad des Ordners"
       ],
@@ -8158,6 +8164,9 @@
       ],
       "Last month only": [
         "Nur den letzten Monat"
+      ],
+      "Last name": [
+        "Nachname"
       ],
       "Layout": [
         "Anordnung"
@@ -9400,6 +9409,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Secure link sharing": [
+        "Sicheres Teilen von Links"
+      ],
       "See team's availability": [
         "Verfügbarkeit des Teams anzeigen"
       ],
@@ -9750,9 +9762,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Ein Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und wieder entfernen, Speicherplatz zuweisen, Domains konfigurieren und andere Aufgaben ausführen können."
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Unsere robuste Infrastruktur ermöglicht dir den Zugriff auf dein Konto, wann immer nötig."
       ],
@@ -9797,6 +9806,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Sicheres Teilen von einzelnen Einträgen mit anderen (selbst wenn sie ${ PASS_APP_NAME } nicht nutzen)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher. Dank Zero-Access-Verschlüsselung kann nicht einmal ${ BRAND_NAME } auf diese Informationen zugreifen."
@@ -10035,6 +10047,9 @@
       "Download the desktop app": [
         "Desktop-App herunterladen"
       ],
+      "Download the desktop app and continue": [
+        "Lade die Desktop-App herunter und fahre fort"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Eine so starke Verschlüsselung, dass nur du und die beabsichtigten Empfänger deine E-Mails einsehen können. ${ kbLinkEncryption }"
       ],
@@ -10058,6 +10073,9 @@
       ],
       "Google Play": [
         "Google Play"
+      ],
+      "Industry-leading spam protection": [
+        "Branchenführender Spam-Schutz"
       ],
       "Let's get started": [
         "Fangen wir an"
@@ -10094,14 +10112,26 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Willkommen bei ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "Wo Privatsphäre der Standard ist."
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Wähle dein bevorzugtes Aussehen und deine bevorzugte Bedienung."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfiguriere deine Organisation, verknüpfe deinen Domainnamen und erstelle Konten, um sicherzustellen, dass alle Mitglieder deiner Organisation geschützt sind."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Entdecke alle ${ BRAND_NAME }-Dienste"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "Verlinke deinen Domainnamen und erstelle Konten für alle Mitglieder deiner Organisation."
+      ],
+      "Make it your own": [
+        "Mach es zu deinem"
       ],
       "Pick a theme": [
         "Wähle ein Design"
@@ -10214,11 +10244,17 @@
       "${ n } user account": [
         "${ n } Benutzerkonto",
         "${ n } Benutzerkonten"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
       ]
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
         "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Jährlich abgerechnet zu ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (gegenüber 6 einzelnen ${ passPlusPlanName }-Abonnements)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exklusives Angebot, das nur für frühe Unterstützer von ${ PASS_APP_NAME } gilt."
@@ -10273,6 +10309,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "More plans are available in other currencies": [
+        "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
       "Payment Processing": [
         "Zahlungsabwicklung"
@@ -10722,6 +10761,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(dadurch wird ${ PASS_APP_NAME } geöffnet)"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Veranstaltungen ansehen"
       ]
     },
     "Security Center - Info": {

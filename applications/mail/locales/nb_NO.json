@@ -610,7 +610,7 @@
         "Importer fra Outlook"
       ],
       "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
-        "Viktig oppdatering tilgjengelig. For å fortsette å bruke appen, vennligst oppdater til den nyeste versjonen ${ downloadUpdate }."
+        "Viktig oppdatering tilgjengelig. For å fortsette å bruke appen, oppdater til den nyeste versjonen ${ downloadUpdate }."
       ],
       "In the morning": [
         "Om morgenen"
@@ -4040,7 +4040,7 @@
         "Feil i en av betingelsene"
       ],
       "Error while saving draft. Please try again.": [
-        "Feil under lagring av utkast. Vennligst prøv på nytt."
+        "Feil under lagring av utkast. Prøv på nytt."
       ],
       "Error while sending the message. Message is not sent.": [
         "Feil under sending av meldingen. Melding er ikke sendt."
@@ -4190,17 +4190,17 @@
         "Aktiver søket ditt på nytt"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Vennligst løs den uthevede konflikten for å fortsette.",
-        "Vennligst løs de uthevede konfliktene for å fortsette."
+        "Løs den uthevede konflikten for å fortsette.",
+        "Løs de uthevede konfliktene for å fortsette."
       ],
       "Please provide either a first name, a last name or a display name": [
-        "Vennligst angi enten et fornavn, et etternavn eller et visningsnavn."
+        "Angi enten et fornavn, et etternavn eller et visningsnavn."
       ],
       "Please select a category and what went wrong with the generated text": [
         "Velg en kategori og hva som gikk galt med den genererte teksten"
       ],
       "Please try again or refresh the page.": [
-        "Vennligst forsøk igjen eller last inn siden på nytt."
+        "Forsøk igjen eller last inn siden på nytt."
       ],
       "Please try generating the text again": [
         "Prøv å generere teksten på nytt"
@@ -4224,10 +4224,10 @@
         "Problem med å laste ned skriveassistenten. Hvis du bruker privat modus, kan du prøve å bruke vanlig nettlesingsmodus eller kjøre skriveassistenten på tjenere."
       ],
       "Problem downloading the writing assistant. Please try again.": [
-        "Problem med å laste ned skriveassistenten. Vennligst prøv på nytt."
+        "Problem med å laste ned skriveassistenten. Prøv på nytt."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
-        "Problem med å laste skriveassistenten til enheten. Vennligst prøv på nytt."
+        "Problem med å laste skriveassistenten til enheten. Prøv på nytt."
       ],
       "Problem unloading data not needed when the writing assistant is inactive": [
         "Problem med å laste ut data som ikke er nødvendig når skriveassistenten er inaktiv"
@@ -4282,7 +4282,7 @@
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
       ],
       "Something went wrong. Please try again.": [
-        "Noe gikk galt. Vennligst forsøk igjen."
+        "Noe gikk galt. Forsøk igjen."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Beklager, ${ BRAND_NAME } kan ikke dekryptere meldingen din. Undersøk om alle nøklene dine er aktive."
@@ -4429,7 +4429,7 @@
         "Importen din blir ikke behandlet."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        "Søket samsvarte med for mange resultater. Vennligst begrens søket, og prøv på nytt."
+        "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4643,7 +4643,7 @@
         "Åpne i nettleser"
       ],
       "Please refresh the page or try again later.": [
-        "Vennligst oppdater siden eller forsøk igjen senere."
+        "Oppdater siden eller forsøk igjen senere."
       ],
       "Something went wrong": [
         "Noe gikk galt"
@@ -4652,7 +4652,7 @@
         "For å bruke ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }, bytt til nettversjonen."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Vi kunne ikke laste denne siden. Vennligst oppdater siden eller undersøk internettforbindelsen din."
+        "Vi kunne ikke laste denne siden. Oppdater siden eller undersøk internettforbindelsen din."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Når ekstra passord er aktivert, kan aliasadministrasjon bare gjøres i ${ PASS_APP_NAME }."
@@ -4877,7 +4877,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Vennligst prøv på nytt."
+        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
       ]
     },
     "fido2: Info": {
@@ -5387,7 +5387,7 @@
         "Hendelsene er importert. De importerte hendelsene vises nå i kalenderen din."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Vennligst ikke lukk fanen før importen er fullført."
+        "Ikke lukk fanen før importprosessen er fullført."
       ]
     },
     "Import calendar warning": {
@@ -5868,7 +5868,7 @@
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontotilgang begrenset på grunn av ubetalte fakturaer. Vennligst kontakt systemansvarlig."
+        "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
       ],
       "Account size": [
         "Kontostørrelse"
@@ -6367,13 +6367,13 @@
         "Jeg sender denne meldingen til en ikke-${ MAIL_APP_NAME }-bruker."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hvis du har problemer med å opprette kontoen din, vennligst be om en invitasjon og vi vil svare innen en arbeidsdag."
+        "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Hvis du ikke finner e-posten i innboksen din, vennligst sjekk søppelposten."
+        "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -6446,7 +6446,7 @@
         "Mistet internettilkobling"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internettilkobling tapt, vennligst kontroller enhetens tilkobling."
+        "Internett-tilkoblingen tapt. Sjekk enhetens tilkobling."
       ],
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
@@ -6632,7 +6632,7 @@
         "ikke-${ MAIL_APP_NAME }"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Ingen av de opplastede nøklene er gyldige for kryptering. For å kunne sende meldinger til denne adressen, vennligst last opp en gyldig nøkkel eller deaktiver \"krypter e-poster\"."
+        "Ingen av de opplastede nøklene er gyldige for kryptering. For å kunne sende meldinger til denne adressen, last opp en gyldig nøkkel eller deaktiver \"krypter e-poster\"."
       ],
       "Normal": [
         "Normal"
@@ -6656,10 +6656,10 @@
         "Organisasjonsstørrelse"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Systemet vårt flagget denne meldingen som et forsøk på nettfisking. Vennligst kontroller at den er legitim."
+        "Systemet vårt flagget denne meldingen som et forsøk på nettfisking. Kontroller at den er legitim."
       ],
       "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Systemet vårt flagget denne meldingen som en mistenkelig e-post. Vennligst kontroller at den er legitim før du klikker på koblinger eller vedlegg."
+        "Systemet vårt flagget denne meldingen som en mistenkelig e-post. Kontroller at den er legitim før du klikker på koblinger eller vedlegg."
       ],
       "password": [
         "passord"
@@ -6680,7 +6680,7 @@
         "Ren tekst"
       ],
       "Please add at least one recipient.": [
-        "Vennligst legg til minst én mottaker."
+        "Legg til minst én mottaker."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Be eieren om å invitere deg direkte til dokumentet."
@@ -6692,10 +6692,10 @@
         "Vennligst autentiser betalingen din i verifiseringsfanen."
       ],
       "Please fill out this field.": [
-        "Vennligst fyll ut dette feltet."
+        "Fyll ut dette feltet."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Vennligst legg merke til at adressene tildelt disse gruppene IKKE vil bli slettet."
+        "Legg merke til at adressene tildelt disse gruppene IKKE vil bli slettet."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Legg merke til at adressene som har blitt tildelt denne gruppen IKKE vil bli slettet."
@@ -6704,35 +6704,35 @@
         "Legg merke til at denne oppgaven kan ta litt tid avhengig av størrelsen på adresseboken din."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Vennligst vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ remainingCreditsFormatted } kreditter igjen."
+        "Vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ remainingCreditsFormatted } kreditter igjen."
       ],
       "Please open the document to view it.": [
-        "Vennligst åpne dokumentet for å se det."
+        "Åpne dokumentet for å se det."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Vennligst oppgi et navn og en e-postadresse for å opprette en gruppe."
+        "Oppgi et navn og en e-postadresse for å opprette en gruppe."
       ],
       "Please select the folders you would like to import:": [
-        "Vennligst velg hvilke mapper du ønsker å importere:"
+        "Velg mappene du vil importere:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Vennligst velg hvilken type kobling du vil sette inn og fyll ut alle felt."
+        "Velg hvilken type kobling du vil sette inn og fyll ut alle felt."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Vennligst velg hvilke e-postadresser som skal legges til i ${ groupCount } gruppe.",
-        "Vennligst velg hvilke e-postadresser som skal legges til i ${ groupCount } grupper."
+        "Velg hvilke e-postadresser som skal legges til i ${ groupCount } gruppe.",
+        "Velg hvilke e-postadresser som skal legges til i ${ groupCount } grupper."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Vennligst velg hvilke e-postadresser som skal legges til i ${ groupName }."
+        "Velg hvilken eller hvilke e-postadresser du vil legge til i ${ groupName }."
       ],
       "Please share what the issue is": [
-        "Vennligst del hva problemet er"
+        "Del gjerne hva problemet er"
       ],
       "Please share what you expected": [
-        "Vennligst del hva du forventet"
+        "Del gjerne hva du forventet"
       ],
       "Please try again in a few moments": [
-        "Vennligst prøv igjen om få øyeblikk"
+        "Prøv igjen om noen øyeblikk"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Vennligst prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
@@ -6741,16 +6741,16 @@
         "Vennligst prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
       ],
       "Please use another browser or download the file.": [
-        "Vennligst bruk en annen nettleser eller last ned filen."
+        "Bruk en annen nettleser eller last ned filen."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Vennligst vent til endringene dine er synkronisert med tjeneren."
+        "Vent til endringene dine er synkronisert med tjeneren."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Vennligst vent mens vi ser etter kontakter som kan gjensigneres med den primære krypteringsnøkkelen."
+        "Vent mens vi ser etter kontakter som kan signeres på nytt med den primære krypteringsnøkkelen."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Vennligst vent mens vi ser etter kontakter som har kryptert data med den deaktiverte nøkkelen."
+        "Vent mens vi ser etter kontakter som inneholder data kryptert med den inaktive nøkkelen."
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke lastes"
@@ -6859,7 +6859,7 @@
         "Velg alle ${ elementsCount } i ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Vennligst velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
+        "Velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
       ],
       "Select what you want to import.": [
         "Velg hva du ønsker å importere."
@@ -6886,7 +6886,7 @@
         "Sendt med <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> sikker e-post."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Vennligst prøv på nytt om noen få minutter."
+        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -6946,7 +6946,7 @@
         "Abonnementet avsluttes: aktiver på nytt innen ${ byDate } for å beholde fordelene med ${ planName }. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Midlertidig utilgjengelig. Vennligst kom tilbake senere."
+        "Midlertidig utilgjengelig. Kom tilbake senere."
       ],
       "Test link": [
         "Testkobling"
@@ -7019,7 +7019,7 @@
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Denne nettleseren støtter ikke forhåndsvisning av PDF-dokumenter. Vennligst last ned filen."
+        "Denne nettleseren støtter ikke forhåndsvisning av PDF-dokumenter. Last ned filen."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
         "Denne samtalen inneholder en planlagt melding. Sending av denne meldingen vil bli kansellert."
@@ -7135,7 +7135,7 @@
         "For å fullføre betalingen din, vennligst send ${ btcAmountBold } til adressen nedenfor."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "For å bekjempe søppelpost og misbruk, vennligst verifiser at du er et menneske."
+        "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For å importere hendelser, først opprett en kalender i ${ CALENDAR_APP_NAME }. Dette er hvor hendelsene vil vises etter importen."
@@ -7159,7 +7159,7 @@
         "I morgen, ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "For mange meldinger venter på å bli sendt. Vennligst vent til en annen melding er sendt før du planlegger denne."
+        "For mange meldinger venter på å bli sendt. Vent til en annen melding er sendt før du planlegger denne."
       ],
       "Total email addresses": [
         "Totalt antall e-postadresser"
@@ -7282,7 +7282,7 @@
         "Advarsel"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Vi beklager. Dette kan ha vært en feil fra vår side. Kan du vennligst bekrefte at du vil merke denne e-posten som legitim?"
+        "Vi beklager. Dette kan ha vært en feil fra vår side. Kan du bekrefte at du vil merke denne e-posten som legitim?"
       ],
       "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
         "Vi har blokkert følgende annonsører og organisasjoner fra å se når du åpner denne e-postadressen, hvilken enhet du bruker, og hvor du befinner deg."
@@ -7863,7 +7863,7 @@
         "${ n } måneder"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Midlertidig utilgjengelig, vennligst kom tilbake senere)."
+        "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
       "Actions": [
         "Handlinger"
@@ -8093,6 +8093,9 @@
       "Filter Name": [
         "Filternavn"
       ],
+      "First name": [
+        "Fornavn"
+      ],
       "Folder location": [
         "Mappeplassering"
       ],
@@ -8161,6 +8164,9 @@
       ],
       "Last month only": [
         "Kun siste måned"
+      ],
+      "Last name": [
+        "Etternavn"
       ],
       "Layout": [
         "Utforming"
@@ -8619,7 +8625,7 @@
         "Vilkår"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
-        "Denne ICS-filen inneholder mer enn en hendelse. Vennligst last den ned og importer hendelsene i ${ CALENDAR_APP_NAME }."
+        "Denne ICS-filen inneholder mer enn en hendelse. Last den ned og importer hendelsene i ${ CALENDAR_APP_NAME }."
       ],
       "Trash": [
         "Papirkurv"
@@ -9552,7 +9558,7 @@
         "${ brand } slutter på ${ last4 }"
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre mellomtjenere"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -9742,7 +9748,7 @@
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private mellomtjenere."
+        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private porttjenere."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Behandle abonnementet ditt, inkludert tilpasning av planen din. Betalingsmåter akseptert er kredittkort, PayPal, kryptovaluta og bankoverføring."
@@ -9755,9 +9761,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighet for å se innbokser for ikke-private brukere på samme måte som brukeren, inkludert fullstendige meldings- og kontaktdetaljer."
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Verktøy for organisasjonsadministrasjon som administratorer kan bruke til å legge til og fjerne brukere, tildele lagringsplass, konfigurere domener og utføre andre oppgaver."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robuste infrastruktur sikrer at du får tilgang til kontoen din når du trenger den"
@@ -9910,7 +9913,7 @@
         "Støtte for mange plattformer"
       ],
       "Private gateways": [
-        "Private mellomtjenere"
+        "Private porttjenere"
       ],
       "Require 2FA": [
         "Krever 2FA"
@@ -10459,13 +10462,13 @@
         "Telefonnummer"
       ],
       "Please describe the problem and include any error messages": [
-        "Vennligst beskriv problemet og inkluder eventuelle feilmeldinger."
+        "Beskriv problemet og inkluder eventuelle feilmeldinger"
       ],
       "Please insert link first": [
-        "Vennligst sett inn kobling først"
+        "Sett inn kobling først"
       ],
       "Please share what you expected": [
-        "Vennligst del hva du forventet"
+        "Del gjerne hva du forventet"
       ],
       "Search date, name, email address, or subject line": [
         "Søk dato, navn, e-postadresse eller emnelinje"
@@ -10901,7 +10904,7 @@
         "Kontogjenoppretting ikke tilgjengelig for eldre adressenøkler."
       ],
       "Please generate keys before you try to change your password": [
-        "Vennligst generer nøkler før du prøver å endre passordet."
+        "Generer nøkler før du prøver å endre passordet."
       ]
     },
     "session_recovery:available:info": {
@@ -10917,7 +10920,7 @@
         "Forespørsel om tilbakestilling av passord godkjent (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Vennligst gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
+        "Gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Denne tillatelsen utløper om ${ timeRemaining.inDays } dag",
@@ -11015,7 +11018,7 @@
         "${ gracePeriodHoursRemaining } timer til"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
-        "Hvis du ikke ba om å tilbakestille passordet ditt, vennligst avbryt forespørselen nå."
+        "Hvis du ikke har bedt om å tilbakestille passordet ditt, avbryt denne forespørselen nå."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Tilbakestilling av passord forespurt (${ user.Email }). Du kan endre passordet ditt om ${ hoursRemaining } time.",
@@ -13444,7 +13447,7 @@
         "Hopp over bekreftelse?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Noen av kontaktene som skal slås sammen, viser feil. Vennligst gjennomgå dem individuelt."
+        "Noen av kontaktene som skal slås sammen, viser feil. Gjennomgå dem individuelt."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Aliasprefikset kan ikke være lenger enn 40 tegn."
