@@ -15,8 +15,8 @@ import {
     useErrorHandler,
     useKTActivation,
     useLocalState,
+    useMyCountry,
 } from '@proton/components';
-import { useMyCountry } from '@proton/components/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
