@@ -1,3 +1,4 @@
+import { getCacheStorage } from '@proton/pass/lib/api/cache';
 import { createNetworkError } from '@proton/pass/lib/api/fetch-controller';
 import type { Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -12,7 +13,8 @@ const OFFLINE_ASSET_MANIFEST = '/assets/offline.json';
 const EXCLUDED_OFFLINE_ASSETS_RE = /(offline|version)\.json/;
 const ASSET_ROUTE = globToRegExp('/assets/*');
 
-export const getOfflineCache = (): Promise<Maybe<Cache>> => caches.open(OFFLINE_CACHE_KEY).catch(noop);
+export const getOfflineCache = async (): Promise<Maybe<Cache>> =>
+    getCacheStorage()?.open(OFFLINE_CACHE_KEY).catch(noop);
 
 /** Excludes certain assets (offline.json and version.json) from being
  * cached, ensuring they are always served from the network. */
