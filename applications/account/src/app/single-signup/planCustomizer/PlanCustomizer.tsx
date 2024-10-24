@@ -6,7 +6,6 @@ import { Icon, Info } from '@proton/components';
 import { ADDON_NAMES, type PlanIDs } from '@proton/payments';
 import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
 import type { Currency, Cycle, Plan } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import ButtonNumberInput from './ButtonNumberInput';
@@ -53,13 +52,11 @@ const PlanCustomizer = ({
     className,
     ...rest
 }: Props) => {
-    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
     const addonsPricing = getAddonsPricing({
         currentPlan,
         plansMap,
         planIDs,
         cycle,
-        showGatewaysForBundlePlan,
     });
 
     if (addonsPricing.length === 0) {

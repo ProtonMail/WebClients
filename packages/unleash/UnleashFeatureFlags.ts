@@ -45,15 +45,9 @@ enum AccountFlag {
     B2BLogsVPN = 'B2BLogsVPN',
     WalletAppSwitcherNewBadge = 'WalletAppSwitcherNewBadge',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
-    SAMLTest = 'SamlTest',
-    SecurityCheckup = 'SecurityCheckup',
-    PassB2BForceLock = 'PassB2BForceLock',
-    SignedInForgot2FAFlow = 'SignedInForgot2FAFlow',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
-    ShowGatewaysForBundlePlan = 'ShowGatewaysForBundlePlan',
     GlobalSSO = 'GlobalSSO',
-    ShowBundleUpsellFromVPNBiz = 'ShowBundleUpsellFromVPNBiz',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
 }
 
