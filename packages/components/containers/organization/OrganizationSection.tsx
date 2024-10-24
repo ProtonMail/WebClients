@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
@@ -39,7 +40,7 @@ import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useOrganizationKey, useSubscription } from '../../hooks';
+import { useNotifications, useSubscription } from '../../hooks';
 import DomainModal from '../domains/DomainModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';

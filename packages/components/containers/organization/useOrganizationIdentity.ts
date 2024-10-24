@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import type { IconName } from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
 import { OrganizationSignatureState, validateOrganizationSignatureHelper } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useOrganizationKey } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 
 export interface OrganizationIdentityState {

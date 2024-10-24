@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Form from '@proton/components/components/form/Form';
@@ -26,7 +27,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useGetOrganizationKey, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     mode: 'reactivate' | 'activate';

@@ -8,7 +8,6 @@ export { default as useIsMnemonicAvailable } from './useIsMnemonicAvailable';
 export { default as useMyCountry } from './useMyCountry';
 export { default as useNotifications } from './useNotifications';
 export * from './useOrganization';
-export { useGetOrganizationKey, default as useOrganizationKey } from './useOrganizationKey';
 export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';
 export { default as useSpotlightOnFeature } from './useSpotlightOnFeature';
 export { default as useSubscription, useGetSubscription } from './useSubscription';

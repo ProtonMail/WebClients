@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -21,7 +22,7 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import { getRenamedAddressKeys } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
+import { useGetUserKeys, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps<'form'> {
     address: Address;

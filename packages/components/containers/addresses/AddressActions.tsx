@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { disableAllowAddressDeletion } from '@proton/account';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
@@ -14,7 +15,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
 import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
-import { useNotifications, useOrganizationKey } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import DeleteAddressPrompt from './DeleteAddressPrompt';
 import DisableAddressModal from './DisableAddressModal';
