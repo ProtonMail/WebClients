@@ -19,6 +19,8 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectCalendars = (state: CalendarsState) => state[name];
 
+export const selectCalendarsWithMembers = (state: CalendarsState) => state[name].value;
+
 const modelThunk = createAsyncModelThunk<Model, CalendarsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument

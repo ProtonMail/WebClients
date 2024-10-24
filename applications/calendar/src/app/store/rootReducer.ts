@@ -10,6 +10,7 @@ import { breachesCountReducer } from '@proton/components';
 import { sharedReducers } from '@proton/redux-shared-store';
 
 import { busySlotsReducer } from './busySlots/busySlotsSlice';
+import { eventsReducer } from './events/eventsSlice';
 
 export const rootReducer = combineReducers({
     ...sharedReducers,
@@ -19,4 +20,5 @@ export const rootReducer = combineReducers({
     ...holidaysDirectoryReducer,
     ...busySlotsReducer,
     ...breachesCountReducer,
+    ...eventsReducer,
 });

@@ -16,7 +16,7 @@
 
 .calendar-dayeventcell-inner,
 .calendar-eventcell {
-	border: solid rgb(0 0 0 / 0.2);
+	border: solid var(--color-alt);
 	border-block-start-width: 1px;
 	border-block-end-width: 1px;
 	border-inline-start-width: 5px;
@@ -24,8 +24,8 @@
 	padding-block: em(2);
 	padding-inline: em(3);
 	border-radius: var(--border-radius-sm);
-	background-color: var(--background-strong);
-	color: var(--text-norm);
+	background-color: var(--color-main);
+	color: var(--foreground);
 	cursor: pointer;
 	opacity: var(--opacity);
 	transition:
@@ -46,9 +46,6 @@
 	}
 
 	&.isLoaded {
-		border-color: var(--color-alt);
-		background-color: var(--color-main);
-		color: var(--foreground);
 		animation: none;
 	}
 

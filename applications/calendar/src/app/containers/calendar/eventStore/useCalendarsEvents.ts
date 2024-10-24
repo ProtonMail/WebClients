@@ -1,16 +1,19 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { FeatureCode, useFeature } from '@proton/features';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
 import { DAY } from '@proton/shared/lib/constants';
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { generateEventUniqueId } from '../../../helpers/event';
 import type { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
+import { visualEventsSelector } from '../../../store/events/eventsSelectors';
+import { eventsActions } from '../../../store/events/eventsSlice';
+import { useCalendarDispatch, useCalendarSelector } from '../../../store/hooks';
 import type { CalendarViewEvent, CalendarViewEventData } from '../interface';
 import { getExistingFetch } from './cache/fetchCalendarEvents';
 import { getRecurringEvents } from './cache/getRecurringEvents';
@@ -28,7 +31,10 @@ const useCalendarsEvents = (
     initializeCacheOnlyCalendarsIDs: string[],
     onCacheInitialized: () => void
 ): [CalendarViewEvent[], boolean] => {
-    const metadataOnly = !!useFeature(FeatureCode.CalendarFetchMetadataOnly)?.feature?.Value;
+    const metadataOnly = true;
+    const hasReduxStore = useFlag('CalendarRedux');
+    const dispatch = useCalendarDispatch();
+    const events = useCalendarSelector(visualEventsSelector);
     const [rerender, setRerender] = useState<any>();
     const loading = useCalendarsEventsFetcher({
         calendars: requestedCalendars,
@@ -195,14 +201,20 @@ const useCalendarsEvents = (
     }, [rerender, loading, tzid, requestedCalendars, utcDateRange]);
 
     useCalendarsEventsReader({
-        calendarEvents: eventsResults,
+        calendarEvents: hasReduxStore ? events : eventsResults,
         calendarsEventsCacheRef,
         rerender: () => setRerender({}),
         getOpenedMailEvents,
         metadataOnly,
     });
 
-    return [eventsResults, loading];
+    useEffect(() => {
+        if (hasReduxStore) {
+            dispatch(eventsActions.synchronizeEvents(eventsResults));
+        }
+    }, [eventsResults, hasReduxStore]);
+
+    return [hasReduxStore ? events : eventsResults, loading];
 };
 
 export default useCalendarsEvents;
