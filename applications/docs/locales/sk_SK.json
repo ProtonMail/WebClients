@@ -1004,6 +1004,47 @@
         "Pokračovať v predplatnom"
       ]
     },
+    "Cancellation upsell": {
+      "${ maxSpaceTB } storage": [
+        "${ maxSpaceTB } úložisko"
+      ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } úložisko pre emaily"
+      ],
+      "Advanced account protection": [
+        "Advanced account protection"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Všetky ${ BRAND_NAME } aplikácie a prémiové funkcie"
+      ],
+      "Cloud storage and sharing for large files": [
+        "Cloudové úložisko a zdieľanie veľkých súborov"
+      ],
+      "Encrypted cloud storage for photos and documents": [
+        "Šifrované cloudové úložisko pre fotografie a dokumenty"
+      ],
+      "Encrypted password manager": [
+        "Šifrovaný správca hesiel"
+      ],
+      "Save ${ upsellSavings }": [
+        "Ušetrite ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Ušetrite peniaze s ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Zabezpečený osobný a zdieľaný kalendár"
+      ],
+      "Try ${ planName }": [
+        "Vyskúšajte ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "Vyskúšajte ${ upsellPlanName } a zachovajte si prístup ku všetkým prémiovým funkciám emailu a kalendára."
+      ],
+      "Ultra fast and private VPN": [
+        "Ultra rýchla a súkromná VPN"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } používateľ",
@@ -3096,14 +3137,26 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
+      "Accounts with custom domains cannot join a family plan.": [
+        "Účty s vlastnými doménami sa nemôžu pripojiť k rodinnému tarifu."
+      ],
       "customer support": [
         "zákaznícka podpora"
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Rodinné tarify v súčasnej dobe nepodporujú externé účty. Pred pripojením si vytvorte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
       ],
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a family plan.": [
+        "Doživotné účty nemôžu byť pripojené k rodinnému tarifu."
+      ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Vlastníci tarify s členmi, sa nemôžu pripojiť k inej rodinnej tarife."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
@@ -3125,6 +3178,12 @@
       ],
       "You have successfully joined the family group": [
         "Úspešne ste sa pripojili do rodinnej skupiny"
+      ],
+      "You have unpaid invoices. Please pay them before joining a family plan.": [
+        "Máte nezaplatené faktúry. Pred pripojením k rodinnému tarifu ich prosím uhraďte."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Môžete prepojiť svoj účet ${ BRAND_NAME } s týmto rodinným tarifom a spoločne využívať všetky prémiové funkcie ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má viac emailových adries než koľko máte k dispozícii v tomto pláne. ${ addressSettingsLink }"
@@ -4889,6 +4948,9 @@
       "Add to group": [
         "Pridať do skupiny"
       ],
+      "Address": [
+        "Adresa"
+      ],
       "Anyone on the Internet with the link can view": [
         "Ktokoľvek na internete s odkazom môže zobraziť"
       ],
@@ -5057,6 +5119,9 @@
       "Extended address": [
         "Rozšírená adresa"
       ],
+      "First name": [
+        "Krstné meno"
+      ],
       "Folder location": [
         "Umiestnenie priečinka"
       ],
@@ -5113,6 +5178,9 @@
       ],
       "Last month only": [
         "Iba minulý mesiac"
+      ],
+      "Last name": [
+        "Priezvisko"
       ],
       "Log in or sign up ": [
         "Prihláste sa alebo zaregistrujte "
@@ -6154,6 +6222,9 @@
       "Secure Core servers": [
         "Servery Secure Core"
       ],
+      "Secure link sharing": [
+        "Zdieľanie bezpečných odkazov"
+      ],
       "See team's availability": [
         "Pozrite si dostupnosť tímu"
       ],
@@ -6337,6 +6408,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "Chráňte citlivé obchodné informácie a bezpečne spolupracujte."
       ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ PASS_SHORT_APP_NAME } Plus pre 6 užívateľov."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -6493,9 +6567,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnosť zobraziť nesúkromné schránky používateľov tak, ako by to urobil používateľ, vrátane celých správ a kontaktných údajov"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Nástroj na správu organizácie, ktorý umožňuje správcom pridávať a odstraňovať používateľov, prideľovať úložisko, konfigurovať domény a vykonávať ďalšie úlohy"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naša robustná infraštruktúra zaisťuje, že budete mať prístup k svojmu účtu, keď ho budete potrebovať"
       ],
@@ -6540,6 +6611,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Bezpečne zdieľajte jednotlivé položky s kýmkoľvek (aj keď nepoužívajú ${ PASS_APP_NAME })"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Bezpečne si uložte podrobnosti o svojich kontaktoch, ako je telefónne číslo, adresa, narodeniny a osobné poznámky. Šifrovanie s nulovým prístupom zaisťuje, že k nim nebude mať prístup ani ${ BRAND_NAME }."
@@ -6941,6 +7015,28 @@
         "Bezpečné zdieľanie trezorov (${ n } trezorov) a zdieľanie odkazu"
       ]
     },
+    "pass_signup_2024: Info": {
+      "Admin panel to manage users and subscription": [
+        "Panel správcu pre správu užívateľov a predplatného"
+      ]
+    },
+    "PassFamilyPlan2024": {
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Účtované ročne za ${ yearlyPrice }. Ušetrite ${ yearlySavedPrice } s ${ passFamilyPlanName } (oproti 6 individuálnym predplatným ${ passPlusPlanName })."
+      ],
+      "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
+        "Exkluzívna ponuka dostupná iba pre včasných podporovateľov ${ PASS_APP_NAME }."
+      ],
+      "Get it for ${ monthlyPrice }": [
+        "Získajte za ${ monthlyPrice }"
+      ],
+      "Introducing ${ passFamilyPlanName }": [
+        "Predstavujeme ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Časovo obmedzená ponuka."
+      ]
+    },
     "passwordless": {
       "Organization key does not exist.": [
         "Kľúč organizácie neexistuje."
@@ -7296,6 +7392,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(otvorí ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Zobraziť udalosti"
       ]
     },
     "Security Center - Info": {
@@ -8015,6 +8116,9 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
+      ],
+      "Folders, labels, and custom filters": [
+        "Zložky, štítky a vlastné filtre"
       ]
     },
     "Subscription renewal state": {
