@@ -1228,6 +1228,9 @@
       "Toggle Calendar app": [
         "Basculer vers l'application Calendar"
       ],
+      "Toggle Contacts app": [
+        "Afficher/Masquer l'application Contacts"
+      ],
       "Toggle security center app": [
         "Activer l'application du centre de sécurité"
       ],
@@ -4099,6 +4102,9 @@
       "Invalid expiration time": [
         "Le délai d'expiration n'est pas valide."
       ],
+      "Invalid IBAN": [
+        "Cet IBAN n'est pas valide."
+      ],
       "Invalid name": [
         "Le nom n'est pas valide."
       ],
@@ -4310,6 +4316,9 @@
       ],
       "Thanks for the feedback!": [
         "Merci pour les commentaires."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Le montant a changé. Nous vous invitons à réessayer."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "La pièce jointe n'a pas pu être déchiffrée.\nSi vous avez la clé privée correspondante, vous aurez toujours la possibilité de déchiffrer le fichier avec un programme tel que GnuPG.",
@@ -6407,6 +6416,9 @@
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "J'envoie ce message à une personne qui n'utilise pas ${ MAIL_APP_NAME }."
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
@@ -6695,6 +6707,9 @@
       ],
       "Organization size": [
         "Taille de l’organisation"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nos alertes privilégient la sécurité. Si vous ne reconnaissez pas les informations compromises, vous pouvez ignorer ce rapport."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Notre système a signalé ce message comme tentative de phishing/hameçonnage. Nous vous invitons à vérifier qu'il est légitime."
@@ -7222,6 +7237,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Désactivez cette option pour faire des recherches uniquement par date, nom, adresse e-mail ou objet du message. Pour désactiver la recherche dans le contenu des messages (et supprimer les messages qui ont été téléchargés pour permettre cette fonctionnalité), accédez aux paramètres."
       ],
       "Turn on to search the content of your messages": [
         "Activer pour rechercher dans le contenu de vos messages"
@@ -7951,6 +7969,9 @@
       "And": [
         "Et"
       ],
+      "Anderson": [
+        "Durant"
+      ],
       "ANY": [
         "N'IMPORTE"
       ],
@@ -8034,6 +8055,9 @@
       ],
       "Colors": [
         "Couleurs"
+      ],
+      "Company name": [
+        "Nom de l'entreprise"
       ],
       "Composer": [
         "Éditeur"
@@ -8140,6 +8164,9 @@
       "Filter Name": [
         "Nom du filtre"
       ],
+      "First name": [
+        "Prénom"
+      ],
       "Folder location": [
         "Emplacement du dossier"
       ],
@@ -8163,6 +8190,9 @@
       ],
       "I understand the risk": [
         "Je comprends le risque."
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "SI"
@@ -8208,6 +8238,9 @@
       ],
       "Last month only": [
         "Le mois dernier seulement"
+      ],
+      "Last name": [
+        "Nom"
       ],
       "Layout": [
         "Disposition"
@@ -8341,6 +8374,9 @@
       "Reveal password": [
         "Afficher le mot de passe"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
       "Search in": [
         "Rechercher dans"
       ],
@@ -8385,6 +8421,9 @@
       ],
       "Then": [
         "Alors"
+      ],
+      "Thomas": [
+        "Andréa"
       ],
       "Time": [
         "Heure"
@@ -9812,9 +9851,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Outil de gestion d'une organisation qui permet aux administrateurs d'ajouter ou de retirer des utilisateurs, d'attribuer de l'espace de stockage, de configurer des domaines et de réaliser d'autres tâches."
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La fiabilité de notre infrastructure vous garantit l'accès à votre compte chaque fois que vous en avez besoin."
       ],
@@ -10345,11 +10381,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transfert bancaire"
+      ],
       "Credit/debit card": [
         "Carte de paiement"
       ],
       "New credit/debit card": [
         "Nouvelle carte de paiement"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utiliser le nom de l'entreprise"
+      ],
+      "Use personal name": [
+        "Utiliser un nom personnel"
       ]
     },
     "Payments": {
@@ -10429,6 +10476,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8  semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
+      ],
+      "Street address, postal code, and city": [
+        "Adresse, code postal et ville"
       ]
     },
     "PGP key encryption warning": {
