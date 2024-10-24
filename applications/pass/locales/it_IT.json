@@ -568,21 +568,38 @@
       ],
       "Write us on Twitter": [
         "Scrivici su Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Il tuo gestore di password non è presente? Richiedilo."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Costi minimi, sicurezza massima: ottieni un anno di Pass Plus a soli ${ relativePrice } al mese."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "accesso a vita"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Tutte le funzionalità premium. 6 utenti. 1 abbonamento."
+      ],
+      "Limited-stock available!": [
+        "Stock limitato disponibile!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "Approfitta dell'offerta"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Offerta del Black Friday"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Paga una volta e ricevi ${ lifetimeAccessJSX } per Pass Plus. Solo ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Risparmia fino a ${ discountJSX } su Pass Family. Solo ${ relativePrice }/mese."
       ]
     },
     "Browser": {
@@ -731,6 +748,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } riga csv corrotta trovata",
         "${ errors.length } righe csv corrotte trovate"
+      ],
+      "Domain not available, try again later": [
+        "Dominio non disponibile, riprovare più tardi"
       ],
       "Editing item failed": [
         "Modifica dell'elemento non riuscita"
@@ -1130,6 +1150,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà l'impronta digitale o il PIN del dispositivo."
       ],
+      "Add your custom email address to monitor:": [
+        "Aggiungi il tuo indirizzo email personalizzato da monitorare:"
+      ],
       "Admin": [
         "Amministratore"
       ],
@@ -1325,6 +1348,12 @@
       "Expires in ${ remainingTime }": [
         "Scade tra ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Password aggiuntiva creata"
+      ],
+      "Extra password successfully removed": [
+        "Password aggiuntiva rimossa"
+      ],
       "Fill in the CSV with your data": [
         "Compila il file CSV con i tuoi dati"
       ],
@@ -1471,6 +1500,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Impostazioni di monitoraggio aggiornate con successo"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Molto più che un gestore di password, ${ PASS_APP_NAME } protegge le tue password e i tuoi indirizzi email tramite gli alias. Grazie alla tecnologia che sta alla base di ${ MAIL_APP_NAME }, i tuoi dati sono crittografati end-to-end e rimangono accessibili solo a te."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
@@ -1656,6 +1688,9 @@
       "Select vault to share": [
         "Seleziona una cassaforte da condividere"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Seleziona dove vuoi che le tue casseforti importate siano salvate."
+      ],
       "Selected items permanently deleted": [
         "Gli elementi selezionati sono stati eliminati definitivamente"
       ],
@@ -1676,6 +1711,9 @@
       ],
       "Settings successfully updated": [
         "Impostazioni aggiornate correttamente"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Condividi i tuoi dati di accesso e le note sicure con un massimo di 10 persone"
       ],
       "Sign in to your account": [
         "Accedi al tuo account"
@@ -1747,6 +1785,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Per migrare i dati provenienti da un altro gestore di password, accedi al gestore di password, esporta i tuoi dati e caricali su ${ PASS_APP_NAME }. Una volta importati i dati, elimina il file esportato."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Per controllare i tuoi dati importati, clicca sull'icona di ${ PASS_APP_NAME } nella barra degli strumenti del tuo browser."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
       ],
@@ -1777,11 +1818,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Effettua ora l'upgrade per sbloccare le funzionalità premium"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Effettua l'aggiornamento a un piano a pagamento per poter creare casseforti multiple."
+      ],
       "Use vaults to share this item with others.": [
         "Usa le casseforti per poter condividere questo elemento con altri."
       ],
       "User's access removed": [
         "Accesso dell'utente rimosso"
+      ],
+      "User's access successfully updated": [
+        "Accesso dell'utente aggiornato con successo"
       ],
       "username": [
         "nome utente"
@@ -2017,6 +2064,9 @@
       "Capital letters (A-Z)": [
         "Lettere maiuscole (A-Z)"
       ],
+      "Capitalize": [
+        "Maiuscole"
+      ],
       "Card": [
         "Carta"
       ],
@@ -2205,6 +2255,9 @@
       ],
       "Import passwords": [
         "Importa le password"
+      ],
+      "Imported from: ": [
+        "Importato da: "
       ],
       "Imported on : ": [
         "Importato su : "
@@ -2497,6 +2550,12 @@
       ],
       "Today": [
         "Oggi"
+      ],
+      "Total imported items: ": [
+        "Totale elementi importati: "
+      ],
+      "Total items: ": [
+        "Totale elementi: "
       ],
       "TOTP": [
         "TOTP"
@@ -2814,6 +2873,9 @@
       "Dark Web Monitoring": [
         "Monitoraggio del Dark Web"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Eliminare cassaforte \"${ vaultName }\"?"
+      ],
       "Details": [
         "Dettagli"
       ],
@@ -2870,6 +2932,9 @@
       ],
       "Last modified": [
         "Ultima modifica"
+      ],
+      "Leave vault?": [
+        "Abbandonare la cassaforte?"
       ],
       "Loading breaches...": [
         "Caricamento delle violazioni di dati..."
@@ -2930,6 +2995,9 @@
       ],
       "Pending access to the shared data": [
         "In attesa dell'accesso ai dati condivisi"
+      ],
+      "Permanently remove all items?": [
+        "Rimuovere definitivamente tutti gli elementi?"
       ],
       "Pinned (${ items.length })": [
         "Fissati (${ items.length })"
@@ -3069,6 +3137,9 @@
       "Section name cannot be empty": [
         "Il nome di sezione non può essere vuoto"
       ],
+      "URL already exists": [
+        "URL già esistente"
+      ],
       "URL cannot be empty": [
         "L'URL non può essere vuoto"
       ],
@@ -3100,6 +3171,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Impossibile creare la cassaforte \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Impossibile spedire gli inviti ai seguenti indirizzi:"
       ],
       "Duplicate email addresses.": [
         "Indirizzi email duplicati."
@@ -3189,6 +3263,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Verifica che l'estensione sia installata e abilitata correttamente"
       ],
+      "Please contact us to investigate the issue": [
+        "Contattaci per indagare sul problema"
+      ],
       "Please update the extension to its latest version": [
         "Aggiorna l'estensione alla versione più recente"
       ],
@@ -3266,6 +3343,9 @@
       ],
       "Your session was locked.": [
         "La tua sessione è stata bloccata."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Non puoi creare più casseforti di quelle consentite dal tuo abbonamento."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Il tuo abbonamento non ti consente di creare più casseforti. Tutti gli elementi verranno importati nella tua prima cassaforte. Per importare in più casseforti, effettua l'upgrade del tuo abbonamento."
