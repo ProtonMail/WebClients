@@ -9,32 +9,33 @@ import {
 } from 'proton-pass-extension/app/content/constants.static';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
-import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
+import { AutosaveForm } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveForm';
+import { AutosaveSelect } from 'proton-pass-extension/app/content/injections/apps/notification/components/AutosaveSelect';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import type { NotificationAction, NotificationActions } from 'proton-pass-extension/app/content/types/notification';
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Scroll } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
-import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import { AutosaveMode, type AutosavePayload, type AutosaveRequest, WorkerMessageType } from '@proton/pass/types';
+import {
+    type AutosaveCreatePayload,
+    type AutosaveFormValues,
+    AutosaveMode,
+    type AutosavePayload,
+    type AutosaveUpdatePayload,
+    WorkerMessageType,
+} from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
 
 type Props = Extract<NotificationActions, { action: NotificationAction.AUTOSAVE }>;
-type AutosaveFormValues = AutosaveRequest & { step: 'select' | 'edit' };
 
 const getInitialValues = ({ userIdentifier, password, type }: AutosavePayload, domain: string): AutosaveFormValues =>
     type === AutosaveMode.UPDATE
@@ -42,7 +43,7 @@ const getInitialValues = ({ userIdentifier, password, type }: AutosavePayload, d
         : { name: domain, password, shareId: '', step: 'edit', type, userIdentifier };
 
 export const Autosave: FC<Props> = ({ data }) => {
-    const { settings, visible, close, domain, resize } = useIFrameContext();
+    const { visible, close, domain, resize } = useIFrameContext();
     const { onTelemetry } = usePassCore();
     const { createNotification } = useNotifications();
 
@@ -122,13 +123,11 @@ export const Autosave: FC<Props> = ({ data }) => {
         // Max we accept is 3
         if (form.values.type === AutosaveMode.UPDATE) {
             const candidates = data.type === AutosaveMode.UPDATE ? data.candidates.length : 0;
-            candidates > 3
-                ? resize(NOTIFICATION_WIDTH)
-                : resize(NOTIFICATION_HEIGHT_XS + MIN_DROPDOWN_HEIGHT * candidates);
+            if (candidates > 3) return resize(NOTIFICATION_WIDTH);
+            if (candidates === 1) return resize(NOTIFICATION_HEIGHT_XS + MIN_DROPDOWN_HEIGHT * candidates + 10);
+            resize(NOTIFICATION_HEIGHT_XS + MIN_DROPDOWN_HEIGHT * candidates);
         }
     }, [data, form]);
-
-    const isUpdateStep = form.values.step === 'select' && data.type === AutosaveMode.UPDATE;
 
     return (
         <FormikProvider value={form}>
@@ -157,135 +156,12 @@ export const Autosave: FC<Props> = ({ data }) => {
                         />
                     }
                 />
-
-                {isUpdateStep && (
-                    <Scroll className="overflow-hidden" scrollContained>
-                        {data.candidates.map(({ itemId, shareId, url, userIdentifier, name }) => (
-                            <ListItem
-                                key={`${shareId}-${itemId}`}
-                                className="rounded-xl"
-                                icon="user"
-                                title={name}
-                                subTitle={userIdentifier}
-                                url={url}
-                                action={
-                                    data?.candidates.length > 1 && (
-                                        <ButtonLike
-                                            as="div"
-                                            pill
-                                            color="norm"
-                                            loading={busy}
-                                            disabled={busy}
-                                            className="flex-auto"
-                                            onClick={() =>
-                                                form.setValues((values) => ({
-                                                    ...values,
-                                                    type: AutosaveMode.UPDATE,
-                                                    step: 'edit',
-                                                    itemId,
-                                                    shareId,
-                                                    name: name || values.name,
-                                                    userIdentifier: userIdentifier || values.userIdentifier,
-                                                }))
-                                            }
-                                        >{c('Label').t`Update`}</ButtonLike>
-                                    )
-                                }
-                            />
-                        ))}
-                    </Scroll>
+                {form.values.step === 'select' && (
+                    <AutosaveSelect data={data as AutosaveUpdatePayload} busy={busy} form={form} />
                 )}
-
                 {form.values.step === 'edit' && (
-                    <div>
-                        <div className="flex flex-nowrap items-center mb-2">
-                            <ItemIcon
-                                url={domain}
-                                icon={'user'}
-                                size={5}
-                                alt=""
-                                className="shrink-0"
-                                loadImage={settings.loadDomainImages}
-                            />
-                            <div className="flex-auto">
-                                <Field
-                                    lengthLimiters
-                                    name="name"
-                                    component={TitleField}
-                                    spellCheck={false}
-                                    autoComplete={'off'}
-                                    placeholder={c('Placeholder').t`Untitled`}
-                                    maxLength={MAX_ITEM_NAME_LENGTH}
-                                    className="pr-0"
-                                    dense
-                                />
-                            </div>
-                        </div>
-
-                        <FieldsetCluster>
-                            <Field name="userIdentifier" component={TextField} label={c('Label').t`Username/email`} />
-                            <Field hidden name="password" component={TextField} label={c('Label').t`Password`} />
-                        </FieldsetCluster>
-                    </div>
+                    <AutosaveForm data={data as AutosaveCreatePayload} busy={busy} form={form} />
                 )}
-
-                <div className="flex justify-space-between shrink-0 gap-3 mt-1">
-                    {isUpdateStep ? (
-                        <>
-                            <Button pill color="norm" shape="ghost" type="submit">{c('Action')
-                                .t`Create new login`}</Button>
-                            {data?.candidates.length === 1 && (
-                                <ButtonLike
-                                    as="div"
-                                    pill
-                                    color="norm"
-                                    loading={busy}
-                                    disabled={busy}
-                                    onClick={() =>
-                                        form.setValues((values) => ({
-                                            ...values,
-                                            type: AutosaveMode.UPDATE,
-                                            step: 'edit',
-                                            itemId: data.candidates[0].itemId,
-                                            shareId: data.candidates[0].shareId,
-                                            name: data.candidates[0].name || values.name,
-                                            userIdentifier: data.candidates[0].userIdentifier || values.userIdentifier,
-                                        }))
-                                    }
-                                >
-                                    <span className="text-ellipsis">{c('Action').t`Update this login`}</span>
-                                </ButtonLike>
-                            )}
-                        </>
-                    ) : (
-                        <>
-                            <Button
-                                pill
-                                color="norm"
-                                shape="outline"
-                                onClick={() => close({ discard: shouldDiscard })}
-                            >{c('Action').t`Not now`}</Button>
-                            <Button
-                                pill
-                                color="norm"
-                                type="submit"
-                                loading={busy}
-                                disabled={busy}
-                                className="flex-auto"
-                            >
-                                <span className="text-ellipsis">
-                                    {(() => {
-                                        const { type } = form.values;
-                                        if (type === AutosaveMode.NEW) {
-                                            return busy ? c('Action').t`Saving` : c('Action').t`Add`;
-                                        }
-                                        return busy ? c('Action').t`Updating` : c('Action').t`Update`;
-                                    })()}
-                                </span>
-                            </Button>
-                        </>
-                    )}
-                </div>
             </Form>
         </FormikProvider>
     );
