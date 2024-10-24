@@ -691,9 +691,6 @@
       "Verify": [
         "Verifica"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Verifica ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Verifica account"
       ],
@@ -4739,6 +4736,9 @@
       "username": [
         "nome utente"
       ],
+      "Username": [
+        "Nome utente"
+      ],
       "Users": [
         "Utenti"
       ],
@@ -5394,6 +5394,9 @@
       "Expires": [
         "Scadenza"
       ],
+      "First name": [
+        "Nome"
+      ],
       "Gateway name": [
         "Nome del gateway"
       ],
@@ -5423,6 +5426,9 @@
       ],
       "Key": [
         "Chiave"
+      ],
+      "Last name": [
+        "Cognome"
       ],
       "Level for NetShield blocker filtering": [
         "Livello di filtro per NetShield"
@@ -6858,9 +6864,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Strumento di gestione dell'organizzazione che consente agli amministratori di aggiungere e rimuovere utenti, assegnare lo spazio di archiviazione, configurare i domini ed eseguire altre attività"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra solida infrastruttura ti assicura che sarai in grado di accedere al tuo account quando ne hai bisogno"
       ],
@@ -7938,12 +7941,6 @@
       "For security reasons, the token is hidden": [
         "Per motivi di sicurezza, il token è nascosto"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Accedi al tuo provider di identità, copia e incolla i dati seguenti e completa la configurazione di SCIM per ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Accedi al tuo provider di identità, copia e incolla il token seguente e riattiva SCIM per ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Se hai perso o dimenticato il token SCIM, puoi generarne uno nuovo, ma tieni presente che le impostazioni del tuo provider di identità dovranno essere aggiornate."
       ],
@@ -7952,9 +7949,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Una volta disabilitato SCIM per la tua organizzazione, **tutti gli utenti SCIM forniti automaticamente dal tuo provider di identità verranno convertiti in utenti SSO** e potrai gestirli direttamente nelle impostazioni di ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Semplifica la gestione degli utenti tra diversi servizi. Aggiungi, modifica e rimuovi utenti nel tuo provider di identità: queste modifiche verranno automaticamente applicate alla tua organizzazione ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Il provisioning automatico di SCIM sarà disabilitato finché non inserirai il nuovo token SCIM nelle impostazioni del tuo provider di identità."
@@ -8544,6 +8538,16 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita gli amici su ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } ha richiesto il tuo aiuto per accedere.",
+        "${ n } hanno richiesto il tuo aiuto per accedere."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } utente si è unito alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:",
+        "${ n } utenti si sono uniti alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:"
       ]
     },
     "State": {
@@ -9457,6 +9461,9 @@
       "Action": [
         "Azione"
       ],
+      "Actions": [
+        "Azioni"
+      ],
       "Activate organization key": [
         "Attiva la chiave dell'organizzazione"
       ],
@@ -9660,6 +9667,9 @@
       ],
       "Delete user?": [
         "Vuoi eliminare l'utente?"
+      ],
+      "Device": [
+        "Dispositivo"
       ],
       "Device connected!": [
         "Dispositivo connesso!"
@@ -9884,6 +9894,9 @@
       "Processing...": [
         "Elaborazione..."
       ],
+      "QR Code": [
+        "Codice QR"
+      ],
       "Recommended": [
         "Consigliato"
       ],
@@ -9967,9 +9980,6 @@
       ],
       "Sign in to join the Beta program": [
         "Accedi per partecipare al programma Beta"
-      ],
-      "Sign in to your organization": [
-        "Accedi alla tua organizzazione"
       ],
       "Sign out": [
         "Esci dall'account"
@@ -10240,10 +10250,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } utenti si sono uniti alla tua organizzazione tramite il tuo provider di identità. Approva o rifiuta i loro account adesso:",
-        "${ n } utenti si sono uniti alla tua organizzazione tramite il tuo provider di identità. Approva o rifiuta i loro account adesso:"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Gli amministratori non possono accedere ai dati degli utenti privati ​​e non possono reimpostare la loro password."
       ],
