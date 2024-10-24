@@ -1,8 +1,7 @@
 import { useCallback } from 'react';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { relocalizeText } from '@proton/shared/lib/i18n/relocalize';
-
-import useUserSettings from './useUserSettings';
 
 const useRelocalizeText = () => {
     const [userSettings] = useUserSettings();

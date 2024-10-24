@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useApi from '@proton/components/hooks/useApi';
@@ -12,7 +13,7 @@ import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 import { getDefaultTimeFormat } from '@proton/shared/lib/settings/helper';
 
-import { useNotifications, useUserSettings } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

@@ -1,6 +1,5 @@
 export { default as useFeature } from './useFeature';
 export { default as useFeatures } from './useFeatures';
-export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
 export { default as useModals } from './useModals';
 export { default as useNotifications } from './useNotifications';
@@ -8,7 +7,6 @@ export { default as useSubscription, useGetSubscription } from './useSubscriptio
 export { default as usePreventCloseTab } from './usePreventCloseTab';
 export * from './useSessionRecovery';
 export { useUserKeys, useGetUserKeys } from './useUserKeys';
-export { default as useUserSettings } from './useUserSettings';
 export { useWelcomeFlags } from './useWelcomeFlags';
 export * from './drawer';
 export * from './usePreferredPlansMap';

@@ -864,6 +864,7 @@ export { default as useFolderColor } from './hooks/useFolderColor';
 export { default as useForceRefresh } from './hooks/useForceRefresh';
 export { default as useGetCalendarEventRaw } from './hooks/useGetCalendarEventRaw';
 export { default as useGetCalendarInfo } from './hooks/useGetCalendarInfo';
+export { default as useGetEncryptionPreferences } from './hooks/useGetEncryptionPreferences';
 export { default as useGetVerificationPreferences } from './hooks/useGetVerificationPreferences';
 export { default as useHasSuspendedCounter } from './hooks/useHasSuspendedCounter';
 export { useHotkeys, type HotkeyTuple } from './hooks/useHotkeys';

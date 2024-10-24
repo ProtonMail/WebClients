@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
@@ -22,7 +23,7 @@ import type { FetchedBreaches, SampleBreach } from '@proton/components/container
 import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
 import { useBreaches } from '@proton/components/containers/credentialLeak/useBreaches';
 import GenericError from '@proton/components/containers/error/GenericError';
-import { useNotifications, useUserSettings } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';

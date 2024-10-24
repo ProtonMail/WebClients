@@ -11,6 +11,7 @@ import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     AccountRecoverySection,
     AuthenticatedBugModal,
@@ -61,7 +62,6 @@ import {
     useSubscription,
     useToggle,
     useUnprivatizeMembers,
-    useUserSettings,
 } from '@proton/components';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';

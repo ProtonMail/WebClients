@@ -86,7 +86,14 @@ jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
     useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
 }));
 
-jest.mock('@proton/components/hooks/useUserSettings', () => () => [{}, jest.fn()]);
+jest.mock('@proton/account/userSettings/hooks', () => ({
+    __esModule: true,
+    useUserSettings: jest.fn(() => [
+        {
+            EarlyAccess: false,
+        },
+    ]),
+}));
 jest.mock('@proton/components/hooks/useSubscription', () => () => [{}, jest.fn()]);
 
 jest.mock('@proton/components/hooks/useApi', () => ({
