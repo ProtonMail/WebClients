@@ -7,12 +7,12 @@ import {
     unprivatizeApprovalMembers,
     unprivatizeMembersBackground,
 } from '@proton/account/members/unprivatizeMembers';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import useOrganizationKey from '@proton/components/hooks/useOrganizationKey';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch, useSelector } from '@proton/redux-shared-store';
 import type { Member } from '@proton/shared/lib/interfaces';

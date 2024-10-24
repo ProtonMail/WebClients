@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { getMemberAddresses } from '@proton/account';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -43,7 +44,7 @@ import {
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import { useGetOrganization, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../../hooks';
+import { useGetOrganization, useGetUserKeys, useNotifications } from '../../../hooks';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;

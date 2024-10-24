@@ -1,6 +1,7 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
-import { useGetOrganizationKey, useGetUserKeys, useKTVerifier, useNotifications } from '@proton/components';
+import { useGetUserKeys, useKTVerifier, useNotifications } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useMembers } from '@proton/account/members/hooks';
 import { unprivatizeMembersBackground } from '@proton/account/members/unprivatizeMembers';
-import { useOrganizationKey } from '@proton/components/hooks';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import noop from '@proton/utils/noop';
 
