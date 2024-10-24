@@ -572,21 +572,38 @@
       ],
       "Write us on Twitter": [
         "Escríbanos en Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "¿No aparece su gestor de contraseñas? Solicítelo."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Ahorro inteligente. Obtenga Pass Plus durante un año por solo ${ relativePrice } al mes."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "un acceso para toda la vida"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Todos los servicios premium, 6 usuarios y una sola suscripción."
+      ],
+      "Limited-stock available!": [
+        "¡Existencia limitada disponible!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "Obtener la oferta"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Oferta de Black Friday"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Pague una vez y obtenga ${ lifetimeAccessJSX } a Pass Plus. Solo por ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Ahorre hasta un ${ discountJSX } con Pass Family. Solo por ${ relativePrice }/mes."
       ]
     },
     "Browser": {
@@ -702,6 +719,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Se detectó ${ errors.length } fila CSV dañada.",
         "Se detectaron ${ errors.length } filas CSV dañadas."
+      ],
+      "Domain not available, try again later": [
+        "Dominio no disponible, inténtelo más tarde"
       ],
       "Editing item failed": [
         "Error al editar el elemento"
@@ -1324,6 +1344,12 @@
       "Expires in ${ remainingTime }": [
         "Expira en ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Se creó la contraseña adicional."
+      ],
+      "Extra password successfully removed": [
+        "Se borró la contraseña adicional."
+      ],
       "Fill in the CSV with your data": [
         "Complete el CSV con los datos"
       ],
@@ -1446,6 +1472,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Ajustes de monitoreo actualizados"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege la contraseña y la dirección de correo personal a través de alias de correo electrónico. Desarrollado por la misma tecnología detrás de ${ MAIL_APP_NAME }, los datos están cifrados de extremo a extremo y solo usted puede acceder a ellos."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
@@ -1646,6 +1675,9 @@
       "Select destination vault": [
         "Seleccione la bóveda de destino"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Seleccione dónde desea guardar sus bóvedas importadas."
+      ],
       "Selected items permanently deleted": [
         "Los elementos seleccionados fueron eliminados permanentemente"
       ],
@@ -1666,6 +1698,9 @@
       ],
       "Settings successfully updated": [
         "Ajustes actualizados con éxito"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Comparta sus inicios de sesión y notas con hasta 10 personas"
       ],
       "Sign in or create an account to continue.": [
         "Inicie sesión o cree una cuenta para continuar."
@@ -1731,8 +1766,14 @@
       "This version will be added to the history as the newest version.": [
         "Esta versión será añadida al historial como la versión nueva."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Esto rechazará el dispositivo **${ name }** que intentó iniciar sesión en su cuenta ${ BRAND_NAME } el **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar los datos desde otro gestor de contraseñas, vaya al gestor, exporte los datos y luego cárguelos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimine el archivo exportado."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Para verificar los datos importados, pulse el ícono de ${ PASS_APP_NAME } en la barra de herramientas del navegador."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Intente recargar o reinstalar la extensión y asegúrese de que el navegador y ${ PASS_SHORT_APP_NAME } estén actualizados."
@@ -1776,11 +1817,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Mejore el plan ahora para desbloquear funciones premium"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Mejore a un plan de pago para crear varias bóvedas."
+      ],
       "Use vaults to share this item with others.": [
         "Use las bóvedas para compartir este elemento con otras personas."
       ],
       "User's access removed": [
         "El acceso del usuario fue borrado."
+      ],
+      "User's access successfully updated": [
+        "Se actualizó el acceso del usuario."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Bóveda \"${ payload.content.name }\" eliminada con éxito"
@@ -2018,6 +2065,9 @@
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
       ],
+      "Capitalize": [
+        "Mayúsculas"
+      ],
       "Card": [
         "Tarjeta"
       ],
@@ -2203,6 +2253,9 @@
       ],
       "Import passwords": [
         "Importar contraseñas"
+      ],
+      "Imported from: ": [
+        "Importado desde: "
       ],
       "Imported on : ": [
         "Importado en: "
@@ -2502,6 +2555,12 @@
       "Today": [
         "Hoy"
       ],
+      "Total imported items: ": [
+        "Número total de elementos importados: "
+      ],
+      "Total items: ": [
+        "Número total de elementos: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2719,6 +2778,43 @@
         "Escriba su nota"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Aprobar o negar ahora"
+      ],
+      "No, it wasn’t me": [
+        "No, no fui yo."
+      ],
+      "Sign-in confirmed": [
+        "Inicio de sesión confirmado"
+      ],
+      "Sign-in rejected": [
+        "Inicio de sesión rechazado"
+      ],
+      "Yes, it was me": [
+        "Sí, fui yo."
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Activo"
+      ],
+      "Inactive": [
+        "Inactivo"
+      ],
+      "Pending activation": [
+        "Activación pendiente"
+      ],
+      "Rejected": [
+        "Rechazado"
+      ],
+      "Signed out": [
+        "Desconectado"
+      ],
+      "Unknown": [
+        "Desconocido"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Se activó la sincronización de alias. Los alias de SimpleLogin puede tomar un tiempo en sincronizarse."
@@ -2755,6 +2851,9 @@
       ],
       "Current version": [
         "Versión actual"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "¿Eliminar la bóveda «${ vaultName }»?"
       ],
       "Discard changes?": [
         "¿Descartar cambios?"
@@ -2813,6 +2912,9 @@
       "Last modified": [
         "Última modificación"
       ],
+      "Leave vault?": [
+        "¿Abandonar la bóveda?"
+      ],
       "Log in as...": [
         "Iniciar sesión como..."
       ],
@@ -2855,11 +2957,17 @@
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
       ],
+      "Permanently remove all items?": [
+        "¿Borrar todos los elementos permanentemente?"
+      ],
       "Pin the extension": [
         "Fije la extensión"
       ],
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
+      ],
+      "Reject device?": [
+        "¿Rechazar el dispositivo?"
       ],
       "Remove extra password": [
         "Eliminar la contraseña adicional"
@@ -2965,6 +3073,9 @@
       "Section name cannot be empty": [
         "El nombre de la sección no puede estar vacío"
       ],
+      "URL already exists": [
+        "La URL ya existe."
+      ],
       "URL cannot be empty": [
         "La URL no puede estar vacía."
       ],
@@ -2999,6 +3110,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "No se pudo crear la bóveda \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "No se pudieron enviar las invitaciones a las siguientes direcciones:"
       ],
       "Duplicate email addresses.": [
         "Direcciones de correo duplicadas."
@@ -3069,6 +3183,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña"
+      ],
+      "Please contact us to investigate the issue": [
+        "Contáctenos para investigar el problema."
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifique la dirección de correo para poder usar alias de correo."
@@ -3144,6 +3261,9 @@
       ],
       "Your session was locked.": [
         "La sesión está bloqueada."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "No puede crear más bóvedas de las que permite su suscripción."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
