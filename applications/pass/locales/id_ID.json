@@ -567,21 +567,14 @@
       ],
       "Write us on Twitter": [
         "Tulis tentang kami di Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Pengelola kata sandi Anda tidak terdaftar? Mintalah kepada kami."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Hemat dengan bijak. Dapatkan Pass Plus selama setahun dengan harga ${ relativePrice } per bulan."
-      ]
-    },
-    "bf2023: Label": {
-      "Get the deal": [
-        "Dapatkan penawaran ini"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Penawaran Jumat Hitam"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Jumat Hitam"
       ]
     },
     "Browser": {
@@ -727,6 +720,9 @@
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } baris CSV yang rusak terdeteksi"
+      ],
+      "Domain not available, try again later": [
+        "Domain tidak tersedia, coba lagi nanti"
       ],
       "Editing item failed": [
         "Item gagal disunting"
@@ -1115,6 +1111,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Akses ke ${ PASS_APP_NAME } akan membutuhkan sidik jari atau PIN milik perangkat Anda."
       ],
+      "Add your custom email address to monitor:": [
+        "Tambahkan alamat email khusus Anda untuk dipantau:"
+      ],
       "Admin": [
         "Admin"
       ],
@@ -1309,6 +1308,12 @@
       ],
       "Expires in ${ remainingTime }": [
         "Kedaluwarsa dalam ${ remainingTime }"
+      ],
+      "Extra password successfully created": [
+        "Kata sandi tambahan berhasil dibuat"
+      ],
+      "Extra password successfully removed": [
+        "Kata sandi tambahan berhasil dihapus"
       ],
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
@@ -1637,6 +1642,9 @@
       "Select vault to share": [
         "Pilih brankas untuk dibagikan"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Tentukan di mana brankas yang Anda impor akan tersimpan."
+      ],
       "Selected items permanently deleted": [
         "Item yang dipilih dihapus secara permanen"
       ],
@@ -1657,6 +1665,9 @@
       ],
       "Settings successfully updated": [
         "Pengaturan berhasil diperbarui"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Bagikan entri masuk dan catatan aman Anda, sampai dengan 10 pengguna"
       ],
       "Sign in to your account": [
         "Masuk ke akun Anda"
@@ -1757,11 +1768,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Tingkatkan Sekarang untuk Memperoleh Fitur Premium"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Tingkatkan ke paket berbayar untuk membuat lebih dari satu brankas."
+      ],
       "Use vaults to share this item with others.": [
         "Gunakan brankas untuk membagikan item ini dengan yang lainnya."
       ],
       "User's access removed": [
         "Akses pengguna dihapus"
+      ],
+      "User's access successfully updated": [
+        "Akses pengguna berhasil diperbarui"
       ],
       "username": [
         "nama pengguna"
@@ -1987,6 +2004,9 @@
       "Capital letters (A-Z)": [
         "Huruf kapital (A-Z)"
       ],
+      "Capitalize": [
+        "Kapitalkan"
+      ],
       "Card": [
         "Kartu"
       ],
@@ -2175,6 +2195,9 @@
       ],
       "Import passwords": [
         "Impor kata sandi"
+      ],
+      "Imported from: ": [
+        "Diimpor dari: "
       ],
       "Imported on : ": [
         "Diimpor pada : "
@@ -2467,6 +2490,12 @@
       "Today": [
         "Hari ini"
       ],
+      "Total imported items: ": [
+        "Total item terimpor: "
+      ],
+      "Total items: ": [
+        "Jumlah item: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2718,6 +2747,23 @@
         "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
       ]
     },
+    "sso: auth device state": {
+      "Active": [
+        "Aktif"
+      ],
+      "Inactive": [
+        "Nonaktif"
+      ],
+      "Rejected": [
+        "Ditolak"
+      ],
+      "Signed out": [
+        "Sudah keluar"
+      ],
+      "Unknown": [
+        "Tidak diketahui"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Penyinkronan alias sukses diaktifkan. Alias SimpleLogin mungkin memerlukan beberapa saat untuk sinkron"
@@ -2781,6 +2827,9 @@
       "Dark Web Monitoring": [
         "Pemantauan Dark Web"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Hapus brankas \"${ vaultName }\"?"
+      ],
       "Details": [
         "Rincian"
       ],
@@ -2837,6 +2886,9 @@
       ],
       "Last modified": [
         "Terakhir diubah"
+      ],
+      "Leave vault?": [
+        "Tinggalkan brankas?"
       ],
       "Loading breaches...": [
         "Memuat kebocoran..."
@@ -2897,6 +2949,9 @@
       ],
       "Pending access to the shared data": [
         "Menunggu akses ke data yang dibagikan"
+      ],
+      "Permanently remove all items?": [
+        "Hapus semua item secara permanen?"
       ],
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
@@ -3067,6 +3122,9 @@
       "Could not create vault \"${ vaultName }\"": [
         "Brankas \"${ vaultName }\" tidak dapat dibuat"
       ],
+      "Could not send invitations to the following addresses:": [
+        "Undangan tidak dapat dikirimkan ke alamat berikut:"
+      ],
       "Duplicate email addresses.": [
         "Terdapat alamat email duplikat."
       ],
@@ -3154,6 +3212,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Silakan periksa apakah ekstensi telah terpasang dengan benar dan telah diaktifkan"
       ],
+      "Please contact us to investigate the issue": [
+        "Silakan hubungi kami untuk menyelidiki masalah ini"
+      ],
       "Please update the extension to its latest version": [
         "Silakan perbarui ekstensi ke versi terkini"
       ],
@@ -3231,6 +3292,9 @@
       ],
       "Your session was locked.": [
         "Sesi Anda dikunci."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Langganan Anda tidak mengizinkan Anda untuk membuat lebih banyak brankas."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Paket langganan Anda tidak mengizinkan Anda untuk membuat lebih dari satu brankas. Seluruh item akan diimpor ke brankas pertama Anda. Untuk mengimpor ke lebih dari satu brankas, tingkatkan paket langganan Anda."
