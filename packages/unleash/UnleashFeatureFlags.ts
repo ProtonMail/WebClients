@@ -49,7 +49,6 @@ enum AccountFlag {
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     ShowGatewaysForBundlePlan = 'ShowGatewaysForBundlePlan',
     GlobalSSO = 'GlobalSSO',
-    ShowBundleUpsellFromVPNBiz = 'ShowBundleUpsellFromVPNBiz',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
 }
 
