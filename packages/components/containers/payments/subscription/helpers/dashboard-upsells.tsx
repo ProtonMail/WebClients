@@ -666,7 +666,6 @@ export const resolveUpsellsToDisplay = ({
     canPay,
     isFree,
     canAccessDuoPlan,
-    showBundleUpsellFromVPNBiz,
     ...rest
 }: {
     app: APP_NAMES;
@@ -679,7 +678,6 @@ export const resolveUpsellsToDisplay = ({
     hasPaidMail?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
     canAccessDuoPlan?: boolean;
-    showBundleUpsellFromVPNBiz?: boolean;
 }): Upsell[] => {
     const resolve = () => {
         if (!canPay || !subscription) {
@@ -761,10 +759,9 @@ export const resolveUpsellsToDisplay = ({
             case hasVpnPro(subscription):
                 return [getVpnBusinessUpsell(upsellsPayload), getVpnEnterpriseUpsell(serversCount)];
             case hasVpnBusiness(subscription):
-                return [
-                    getVpnEnterpriseUpsell(serversCount),
-                    showBundleUpsellFromVPNBiz && getBundleProUpsell({ ...upsellsPayload }),
-                ].filter(isTruthy);
+                return [getVpnEnterpriseUpsell(serversCount), getBundleProUpsell({ ...upsellsPayload })].filter(
+                    isTruthy
+                );
             default:
                 return [];
         }
