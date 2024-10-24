@@ -598,21 +598,6 @@
         "Odinštalovať ${ PASS_APP_NAME }"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Šetrite múdro. Získajte ročný Pass Plus len za ${ relativePrice } mesačne."
-      ]
-    },
-    "bf2023: Label": {
-      "Get the deal": [
-        "Využiť ponuku"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Black Friday ponuka"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } desktopová aplikácia"
@@ -768,6 +753,9 @@
         "Zistené ${ errors.length } poškodené riadky csv",
         "Zistených ${ errors.length } poškodených riadkov csv",
         "Zistených ${ errors.length } poškodených riadkov csv"
+      ],
+      "Domain not available, try again later": [
+        "Doména nie je dostupná, skúste to znova neskôr"
       ],
       "Editing item failed": [
         "Upravenie položky zlyhalo"

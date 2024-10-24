@@ -571,6 +571,9 @@
       ],
       "Write us on Twitter": [
         "Skriv till oss på Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Är din lösenordshanterare inte här? Begär det."
       ]
     },
     "App menu": {
@@ -596,19 +599,33 @@
         "Avinstallera ${ PASS_APP_NAME }"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Spara Smart. Få ett års Pass Plus för endast ${ relativePrice } per månad."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "livstidsåtkomst"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alla premiumfunktioner. 6 användare. 1 enkel prenumeration."
+      ],
+      "Limited-stock available!": [
+        "Begränsat lager tillgängligt!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "Ta del av erbjudandet"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Black Friday-erbjudande"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Betala en gång och få ${ lifetimeAccessJSX } till Pass Plus. Endast ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Spara upp till ${ discountJSX } på Pass Family. Endast ${ relativePrice }/månad."
       ]
     },
     "Browser": {
@@ -757,6 +774,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Upptäckte ${ errors.length } skadad CSV-rad",
         "Upptäckte ${ errors.length } skadade CSV-rader"
+      ],
+      "Domain not available, try again later": [
+        "Domän inte tillgänglig, försök igen senare"
       ],
       "Editing item failed": [
         "Misslyckades att redigera objekt"
@@ -1178,6 +1198,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer kräva ditt fingeravtryck eller enhetens PIN-kod."
       ],
+      "Add your custom email address to monitor:": [
+        "Lägg till din anpassade e-postadress att övervaka:"
+      ],
       "Admin": [
         "Admin"
       ],
@@ -1364,6 +1387,12 @@
       "Expires in ${ remainingTime }": [
         "Löper ut om ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Extra lösenord skapat"
+      ],
+      "Extra password successfully removed": [
+        "Extra lösenord borttaget"
+      ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
       ],
@@ -1513,6 +1542,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Övervakningsinställningar uppdaterades"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är end-to-end-krypterad och är endast åtkomlig för dig."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
@@ -1689,6 +1721,9 @@
       "Select vault to share": [
         "Välj valv att dela"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Välj var du vill att dina importerade valv ska sparas."
+      ],
       "Selected items permanently deleted": [
         "Markerade objekt togs bort permanent"
       ],
@@ -1709,6 +1744,9 @@
       ],
       "Settings successfully updated": [
         "Inställningarna har uppdaterats"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Dela dina inloggningar och säkra anteckningar med upp till 10 personer"
       ],
       "Sign in to your account": [
         "Logga in på ditt konto"
@@ -1783,6 +1821,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "För att migrera data från en annan lösenordshanterare, gå till lösenordshanteraren, exportera din data och ladda sedan upp den till ${ PASS_APP_NAME }. När din data har importerats, ta bort den exporterade filen."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "För att granska dina importerade data, klicka på ${ PASS_APP_NAME }-ikonen i din webbläsares verktygsfält."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
@@ -1813,11 +1854,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Uppgradera nu för att låsa upp premiumfunktioner"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Uppgradera till ett betalt paket för att skapa flera valv."
+      ],
       "Use vaults to share this item with others.": [
         "Använd valv för att dela detta objekt med andra."
       ],
       "User's access removed": [
         "Användaråtkomst borttagen"
+      ],
+      "User's access successfully updated": [
+        "Användarens åtkomst uppdaterad"
       ],
       "username": [
         "användarnamn"
@@ -2042,6 +2089,9 @@
       "Capital letters (A-Z)": [
         "Versaler (A–Ö)"
       ],
+      "Capitalize": [
+        "Kapitalisera"
+      ],
       "Card": [
         "Kort"
       ],
@@ -2230,6 +2280,9 @@
       ],
       "Import passwords": [
         "Importera lösenord"
+      ],
+      "Imported from: ": [
+        "Importerad från: "
       ],
       "Imported on : ": [
         "Importerad den : "
@@ -2526,6 +2579,12 @@
       "Today": [
         "Idag"
       ],
+      "Total imported items: ": [
+        "Totalt antal importerade objekt: "
+      ],
+      "Total items: ": [
+        "Totalt antal objekt: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2792,6 +2851,43 @@
         "Din information hittades i minst en dataläcka. Slå på ${ DARK_WEB_MONITORING_NAME } för att visa detaljer. ${ link }"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Godkänn eller neka det nu"
+      ],
+      "Invalid confirmation code": [
+        "Ogiltig bekräftelsekod"
+      ],
+      "No, it wasn’t me": [
+        "Nej, det var inte jag"
+      ],
+      "Sign-in confirmed": [
+        "Inloggning bekräftad"
+      ],
+      "Sign-in rejected": [
+        "Inloggning avisad"
+      ],
+      "Yes, it was me": [
+        "Ja, det var jag"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Rejected": [
+        "Avvisad"
+      ],
+      "Signed out": [
+        "Utloggad"
+      ],
+      "Unknown": [
+        "Okänd"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synkronisering av alias aktiverat. SimpleLogin-alias kan ta lite tid att synkronisera"
@@ -2856,6 +2952,9 @@
       "Dark Web Monitoring": [
         "Övervakning mörka webben"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Ta bort valv ”${ vaultName }”?"
+      ],
       "Details": [
         "Detaljer"
       ],
@@ -2912,6 +3011,9 @@
       ],
       "Last modified": [
         "Senast ändrad"
+      ],
+      "Leave vault?": [
+        "Lämna valv?"
       ],
       "Loading breaches...": [
         "Laddar in intrång …"
@@ -2973,11 +3075,17 @@
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
       ],
+      "Permanently remove all items?": [
+        "Ta bort alla objekt permanent?"
+      ],
       "Pinned (${ items.length })": [
         "Fäst (${ items.length })"
       ],
       "Recommended actions": [
         "Rekommenderade åtgärder"
+      ],
+      "Reject device?": [
+        "Avisa enhet?"
       ],
       "Remove email address?": [
         "Ta bort e-postadress?"
@@ -3111,6 +3219,9 @@
       "Section name cannot be empty": [
         "Namn på sektion kan inte vara tom"
       ],
+      "URL already exists": [
+        "URL finns redan"
+      ],
       "URL cannot be empty": [
         "URL kan inte vara tom"
       ],
@@ -3142,6 +3253,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunde inte skapa valv “${ vaultName }“"
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Kunde inte skicka inbjudningar till följande adresser:"
       ],
       "Duplicate email addresses.": [
         "Dubbletter av e-postadresser."
@@ -3231,6 +3345,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Kontrollera att utökningen är korrekt installerat och aktiverat"
       ],
+      "Please contact us to investigate the issue": [
+        "Kontakta oss för att undersöka problemet"
+      ],
       "Please update the extension to its latest version": [
         "Uppdatera utökningen till den senaste versionen"
       ],
@@ -3308,6 +3425,9 @@
       ],
       "Your session was locked.": [
         "Din session var låst."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Din prenumeration tillåter dig inte att skapa fler valv."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."

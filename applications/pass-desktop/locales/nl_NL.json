@@ -554,21 +554,6 @@
         "Ontwikkelaarstools in-/uitschakelen"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Bespaar slim. Kies nu voor een jaar Pass Plus voor slechts ${ relativePrice } per maand."
-      ]
-    },
-    "bf2023: Label": {
-      "Get the deal": [
-        "Kies deze deal"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Black Friday-aanbieding"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } desktop-app"
@@ -706,6 +691,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } corrupte csv-rij gedetecteerd",
         "${ errors.length } corrupte csv-rijen gedetecteerd"
+      ],
+      "Domain not available, try again later": [
+        "Domein niet beschikbaar, probeer het later opnieuw"
       ],
       "Editing item failed": [
         "Item bewerken mislukt"
