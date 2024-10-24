@@ -691,9 +691,6 @@
       "Verify": [
         "Επαλήθευση"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Επαληθεύστε το ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Επαλήθευση λογαριασμού"
       ],
@@ -5391,6 +5388,9 @@
       "Expires": [
         "Λήγει"
       ],
+      "First name": [
+        "Όνομα"
+      ],
       "Gateway name": [
         "Όνομα πύλης"
       ],
@@ -5420,6 +5420,9 @@
       ],
       "Key": [
         "Κλειδί"
+      ],
+      "Last name": [
+        "Επώνυμο"
       ],
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
@@ -6849,9 +6852,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Επιλογή προβολής εισερχομένων μην ιδιωτικού χρήστη όπως θα έκανε ο χρήστης, συμπεριλαμβανομένου του πλήρους μηνύματος και των στοιχείων επικοινωνίας"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Εργαλείο διαχείρισης οργανισμού που επιτρέπει στους διαχειριστές να προσθέτουν και να καταργούν χρήστες, να εκχωρούν χώρο αποθήκευσης, να ρυθμίζουν τις παραμέτρους τομέων και να εκτελούν άλλες εργασίες"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Η ισχυρή υποδομή μας διασφαλίζει ότι θα μπορείτε να έχετε πρόσβαση στον λογαριασμό σας όταν τον χρειάζεστε"
       ],
@@ -7908,12 +7908,6 @@
       "For security reasons, the token is hidden": [
         "Για λόγους ασφαλείας, το διακριτικό είναι κρυμμένο"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε τα παρακάτω δεδομένα και ολοκληρώστε τη διαμόρφωση του SCIM για το ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε το διακριτικό παρακάτω και ενεργοποιήστε ξανά το SCIM για το ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Εάν έχετε χάσει ή ξεχάσει το διακριτικό SCIM, μπορείτε να δημιουργήσετε ένα νέο, αλλά έχετε υπόψη ότι οι ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας θα πρέπει να ενημερωθούν."
       ],
@@ -7922,9 +7916,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Μόλις απενεργοποιηθεί το SCIM για τον οργανισμό σας, **όλοι οι χρήστες SCIM που παρέχονται αυτόματα από τον πάροχο ταυτότητάς σας θα μετατραπούν σε χρήστες SSO** και θα μπορείτε να τους διαχειριστείτε απευθείας από τις ρυθμίσεις του ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Απλοποιεί τη διαχείριση χρηστών σε διάφορες υπηρεσίες. Προσθέστε, επεξεργαστείτε και καταργήστε χρήστες στην υπηρεσία παροχής ταυτότητάς σας και αυτές οι αλλαγές θα εφαρμοστούν αυτόματα στον οργανισμό σας ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Η αυτόματη παροχή SCIM θα απενεργοποιηθεί μέχρι να εισαγάγετε το νέο διακριτικό SCIM στις ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας."
@@ -9935,9 +9926,6 @@
       "Sign in to join the Beta program": [
         "Συνδεθείτε για να συμμετάσχετε στο πρόγραμμα Beta"
       ],
-      "Sign in to your organization": [
-        "Συνδεθήτε στον οργανισμό σας"
-      ],
       "Sign out": [
         "Αποσύνδεση"
       ],
@@ -10207,10 +10195,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω της υπηρεσίας Παροχής Ταυτότητάς σας. Εγκρίνετε ή απορρίψτε τους λογαριασμούς του τώρα:",
-        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω της υπηρεσίας Παροχής Ταυτότητάς σας. Εγκρίνετε ή απορρίψτε τους λογαριασμούς τους τώρα:"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
       ],

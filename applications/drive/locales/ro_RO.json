@@ -2337,6 +2337,11 @@
         "Factură restantă"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "folosiți asistentul de importare Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul printr-o monitorizare dedicată 24/7 a activităților suspecte, inclusiv intervenția specialiștilor în securitate."
@@ -2403,11 +2408,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "folosiți asistentul de importare Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5753,6 +5753,9 @@
       "Add to group": [
         "Adăugare la grup"
       ],
+      "Address": [
+        "Adresa"
+      ],
       "Anyone on the Internet with the link can view": [
         "Poate vizualiza oricine de pe internet care are legătura web"
       ],
@@ -5965,6 +5968,9 @@
       "File name": [
         "Nume fișier"
       ],
+      "First name": [
+        "Prenume"
+      ],
       "Folder": [
         "Folder"
       ],
@@ -6024,6 +6030,9 @@
       ],
       "Last month only": [
         "Doar luna trecută"
+      ],
+      "Last name": [
+        "Nume de familie"
       ],
       "Location": [
         "Loc"
@@ -7374,14 +7383,6 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -7394,6 +7395,14 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7497,9 +7506,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Instrument de gestionare a organizației care permite administratorilor să adauge și să elimine utilizatorii, să aloce spațiul de stocare, să configureze domenii și să efectueze alte sarcini."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Infrastructura noastră robustă vă asigură că vă veți putea accesa contul atunci când aveți nevoie."

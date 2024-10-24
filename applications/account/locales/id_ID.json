@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -379,6 +379,9 @@
       "Delete your account": [
         "Hapus akun Anda"
       ],
+      "Deny access": [
+        "Tolak akses"
+      ],
       "Details": [
         "Rincian"
       ],
@@ -661,6 +664,9 @@
       "Leave": [
         "Tinggalkan"
       ],
+      "Leave group": [
+        "Tinggalkan grup"
+      ],
       "Let's talk": [
         "Mari berbincang"
       ],
@@ -796,11 +802,14 @@
       "Refresh status": [
         "Muat ulang status"
       ],
+      "refresh the page": [
+        "muat ulang halaman"
+      ],
       "Refresh the page": [
         "Muat ulang halaman"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
+      "Reject": [
+        "Tolak"
       ],
       "Reload": [
         "Muat ulang"
@@ -1188,9 +1197,6 @@
       ],
       "Verify": [
         "Verifikasi"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Verifikasi ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Verifikasi akun"
@@ -1600,14 +1606,6 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1629,6 +1627,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh **diskon ${ discountPercentage } untuk ${ plan.Title }** pada saat Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7042,11 +7048,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Hapus rekaman data MX lainnya atau pastikan Proritas ${ MAIL_APP_NAME } berada pada tingkatan terendah."
@@ -8332,9 +8338,6 @@
       "This is an encryption key you may have previously saved.": [
         "Ini adalah kunci enkripsi yang telah Anda simpan sebelumnya."
       ],
-      "This is an invitation from:": [
-        "Ini adalah undangan dari:"
-      ],
       "This is the password you used before the password reset.": [
         "Berikut ini adalah kata sandi yang Anda gunakan sebelum kata sandi Anda diatur ulang."
       ],
@@ -8595,6 +8598,9 @@
       ],
       "User activated": [
         "Pengguna diaktifkan"
+      ],
+      "Username": [
+        "Nama pengguna"
       ],
       "username": [
         "nama pengguna"
@@ -9987,6 +9993,9 @@
       "Filter Name": [
         "Nama Filter"
       ],
+      "First name": [
+        "Nama depan"
+      ],
       "Folder location": [
         "Lokasi folder"
       ],
@@ -10088,6 +10097,9 @@
       ],
       "Last month only": [
         "Hanya sebulan terakhir"
+      ],
+      "Last name": [
+        "Nama belakang"
       ],
       "Level for NetShield blocker filtering": [
         "Level pemfilteran pemblokir NetShield"
@@ -11380,32 +11392,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -11433,6 +11419,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12086,20 +12098,6 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -12118,6 +12116,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -12219,9 +12231,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Sarana manajemen organisasi yang memungkinkan para admin untuk menambahkan dan menghapus pengguna, mengalokasikan kuota penyimpanan, mengatur domain, dan mengerjakan berbagai hal lainnya"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Infrastruktur kami yang perkasa memastikan bahwa Anda akan selalu dapat mengakses akun Anda pada saat Anda membutuhkannya"
@@ -14202,12 +14211,6 @@
       "For security reasons, the token is hidden": [
         "Demi alasan keamanan, token ini disembunyikan"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Tuju penyedia identitas Anda, lalu salin dan tempel data di bawah ini serta selesaikan pengaturan SCIM untuk ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Tuju penyedia identitas Anda, lalu salin dan tempel data di bawah ini serta aktifkan kembali SCIM untuk ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Apabila Anda kehilangan atau tidak lagi ingat token SCIM ini, Anda dapat menghasilkan token baru, namun dalam prosesnya Anda akan perlu untuk memperbarui pengaturan penyedia identitas Anda."
       ],
@@ -14216,9 +14219,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Setelah SCIM dinonaktifkan bagi organisasi Anda, **seluruh pengguna SCIM yang ditentukan secara otomatis oleh penyedia identitas Anda akan dialihkan menjadi pengguna SSO**, di mana Anda akan dapat mengelola para pengguna ini secara langsung dari dalam menu pengaturan ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Menyederhanakan pengelolaan pengguna pada berbagai layanan. Tambahkan, sunting, dan hapus pengguna pada penyedia identitas Anda, dan perubahan yang Anda buat akan langsung diterapkan pada organisasi ${ VPN_APP_NAME } milik Anda."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Penyediaan SCIM otomatis akan dinonaktifkan hingga Anda memasukkan token SCIM yang baru ke pengaturan penyedia identitas Anda."
@@ -14958,6 +14958,49 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Approve": [
+        "Terima"
+      ],
+      "Cancel": [
+        "Batalkan"
+      ],
+      "Deny": [
+        "Tolak"
+      ],
+      "Deny access": [
+        "Tolak akses"
+      ],
+      "Grant": [
+        "Izinkan"
+      ],
+      "Grant access": [
+        "Izinkan akses"
+      ],
+      "Reject": [
+        "Tolak"
+      ],
+      "Remove": [
+        "Hapus"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktif"
+      ],
+      "Inactive": [
+        "Nonaktif"
+      ],
+      "Rejected": [
+        "Ditolak"
+      ],
+      "Signed out": [
+        "Sudah keluar"
+      ],
+      "Unknown": [
+        "Tidak diketahui"
       ]
     },
     "State": {
@@ -16064,6 +16107,9 @@
       "Action": [
         "Tindakan"
       ],
+      "Actions": [
+        "Tindakan"
+      ],
       "Activate @pm.me": [
         "Aktifkan @pm.me"
       ],
@@ -16199,11 +16245,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -16301,6 +16347,9 @@
       "Create your ${ BRAND_NAME } address": [
         "Buat alamat ${ BRAND_NAME } Anda"
       ],
+      "Created": [
+        "Dibuat"
+      ],
       "Creating user accounts": [
         "Membuat akun pengguna"
       ],
@@ -16396,6 +16445,9 @@
       ],
       "Details": [
         "Rincian"
+      ],
+      "Device": [
+        "Perangkat"
       ],
       "Device connected!": [
         "Perangkat tersambung!"
@@ -16700,6 +16752,9 @@
       "Leave ${ organisationName }?": [
         "Tinggalkan ${ organisationName }?"
       ],
+      "Leave group?": [
+        "Tinggalkan grup?"
+      ],
       "Link confirmation": [
         "Konfirmasi tautan"
       ],
@@ -16723,6 +16778,9 @@
       ],
       "My calendars": [
         "Kalender saya"
+      ],
+      "Name": [
+        "Nama"
       ],
       "Need more labels or folders?": [
         "Butuh lebih banyak label atau folder?"
@@ -16829,6 +16887,9 @@
       "Profile": [
         "Profil"
       ],
+      "QR Code": [
+        "Kode QR"
+      ],
       "Ready, set, forward": [
         "Siap, sedia, teruskan"
       ],
@@ -16858,6 +16919,9 @@
       ],
       "Remove calendar": [
         "Hapus kalender"
+      ],
+      "Remove device?": [
+        "Hapus perangkat?"
       ],
       "Remove domain": [
         "Hapus domain"
@@ -16985,9 +17049,6 @@
       "Sign in to join the Beta program": [
         "Silakan masuk untuk bergabung ke program Beta"
       ],
-      "Sign in to your organization": [
-        "Masuk ke organisasi Anda"
-      ],
       "Sign out": [
         "Keluar"
       ],
@@ -17017,6 +17078,9 @@
       ],
       "Start import process": [
         "Mulai proses impor"
+      ],
+      "State": [
+        "Keadaan"
       ],
       "Status": [
         "Status"
@@ -17540,9 +17604,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } pengguna telah bergabung ke organisasi Anda melalui Penyedia Identitas Anda. Terima atau tolak akun mereka sekarang:"
-      ],
       "Administrator access enabled": [
         "Akses administrator diterima"
       ],

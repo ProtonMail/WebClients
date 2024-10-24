@@ -691,9 +691,6 @@
       "Verify": [
         "Doğrula"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "${ unverifiedSSODomain.DomainName } etki alanını doğrula"
-      ],
       "Verify account": [
         "Hesabı doğrula"
       ],
@@ -5391,6 +5388,9 @@
       "Expires": [
         "Geçerlilik sonu"
       ],
+      "First name": [
+        "Ad"
+      ],
       "Gateway name": [
         "Ağ geçidi adı"
       ],
@@ -5420,6 +5420,9 @@
       ],
       "Key": [
         "Anahtar"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield engelleme süzgeci düzeyi"
@@ -6849,9 +6852,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Kuruluş yönetimi aracı yöneticilerin kullanıcı ekleyip silmesini, kullanıcılara depolama alanı atamasını, etki alanlarını yapılandırmasını ve diğer işlemleri yapmasını sağlar"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Güçlü altyapımız, gerek duyduğunuzda hesabınıza erişmenizi sağlar"
       ],
@@ -7908,12 +7908,6 @@
       "For security reasons, the token is hidden": [
         "Güvenlik nedeniyle kod gizlenmiştir"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Aşağıdaki verileri kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ VPN_APP_NAME } için SCIM yapılandırmasını tamamlayın."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Aşağıdaki kodu kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ VPN_APP_NAME } için SCIM bütünleştirmesini yeniden kullanıma alın."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "SCIM kodunuzu kaybettiyseniz ya da unuttuysanız yeni bir kod oluşturabilirsiniz. Ancak kimlik hizmeti sağlayıcı ayarlarınızı güncellemeniz gerekeceğini unutmayın."
       ],
@@ -7922,9 +7916,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Kuruluşunuzda SCIM kullanımdan kaldırıldığında, **kimlik hizmeti sağlayıcınız tarafından otomatik olarak sunulan tüm SCIM kullanıcıları tek oturum açma kullanıcılarına dönüştürülür** ve bunları doğrudan ${ BRAND_NAME } ayarlarından yönetebilirsiniz."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Farklı hizmetler arasında kullanıcıların yönetimini kolaylaştırır. Kimlik hizmeti sağlayıcınıza kullanıcı ekleyebilir, düzenleyebilir ve kaldırabilirsiniz. Bu değişiklikler otomatik olarak ${ VPN_APP_NAME } kuruluşunuza uygulanır."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Yeni SCIM kodunu kimlik hizmeti sağlayıcınızın ayarlarına yazıncaya kadar SCIM otomatik veri sağlama özelliği kullanım dışı kalır."
@@ -9018,7 +9009,7 @@
         "Yıllık ücretsiz depolama alanı hediyeleri"
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
-        "${ boldedDate } tarihine dek şu anki tarifenizin tüm faydalarının tadını çıkartmaya devam edebilirsiniz."
+        "${ boldedDate } tarihine kadar geçerli tarifenizdeki tüm faydalarının tadını çıkartmayı sürdürebilirsiniz."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "${ planName } aboneliğinizin ${ expiryDate } süresi daha var. Kalan süreye ait kredileri ${ BRAND_NAME } hesabınıza ekleyeceğiz. İptal etmeden önce ücretsiz tarifenin sınırlarını aşmadığınızdan emin olun. ${ learnMoreLink }"
@@ -9938,9 +9929,6 @@
       "Sign in to join the Beta program": [
         "Beta programına katılmak için oturum açın"
       ],
-      "Sign in to your organization": [
-        "Kuruluşunuzda oturum açın"
-      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -10210,10 +10198,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da reddedin:",
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da reddedin:"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
       ],

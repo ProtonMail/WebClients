@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -180,6 +180,9 @@
       ],
       "Back": [
         "Înapoi"
+      ],
+      "Back to sign-in": [
+        "La autentificare"
       ],
       "Block": [
         "Blocare"
@@ -378,6 +381,9 @@
       ],
       "Delete your account": [
         "Ștergere cont"
+      ],
+      "Deny access": [
+        "Refuzare acces"
       ],
       "Details": [
         "Detalii"
@@ -661,6 +667,9 @@
       "Leave": [
         "Lăsați"
       ],
+      "Leave group": [
+        "Părăsire grup"
+      ],
       "Let's talk": [
         "Să discutăm"
       ],
@@ -796,11 +805,14 @@
       "Refresh status": [
         "Actualizare stare"
       ],
+      "refresh the page": [
+        "Împrospătați pagina"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
+      "Reject": [
+        "Respingere"
       ],
       "Reload": [
         "Reîncărcare"
@@ -810,6 +822,9 @@
       ],
       "Remove all members": [
         "Eliminare toți membrii"
+      ],
+      "Remove all other devices": [
+        "Eliminare celelalte dispozitive"
       ],
       "Remove bonuses": [
         "Anulare bonusuri"
@@ -1189,9 +1204,6 @@
       "Verify": [
         "Verifică"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Verificare ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Verificare cont"
       ],
@@ -1203,6 +1215,9 @@
       ],
       "Verify domain": [
         "Verificare domeniu"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Verificare domeniu ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Afișare"
@@ -1608,14 +1623,6 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1637,6 +1644,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3926,11 +3941,20 @@
       "Change other email subscriptions": [
         "Modificare alte abonamente pe e-mail"
       ],
+      "Click the button below to unsubscribe from ${ categories } emails.": [
+        "Faceți clic pe butonul de mai jos pentru a vă dezabona de la mesajele primite pe tema ${ categories }."
+      ],
       "Email subscriptions": [
         "Abonamente pe e-mail"
       ],
+      "If you unsubscribed by accident, you are welcome to resubscribe.": [
+        "Dacă v-ați dezabonat din greșeală, puteți oricând să vă reabonați."
+      ],
       "Resubscribe": [
         "Reabonare"
+      ],
+      "Thank you and goodbye": [
+        "Vă mulțumim și vă dorim o zi bună"
       ],
       "Unsubscribe": [
         "Dezabonare"
@@ -3938,11 +3962,20 @@
       "Unsubscribe?": [
         "Dezabonare?"
       ],
+      "Update email preferences": [
+        "Actualizare preferințe e-mail"
+      ],
+      "We're sorry to see you go.": [
+        "Ne pare rău că părăsiți abonamentul."
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Ce mesaje doriți să primiți de la ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "V-ați reabonat la mesajele venite de la ${ categoriesJsx }."
+      ],
+      "You unsubscribed from ${ categories } emails, and will no longer receive this type of email from ${ BRAND_NAME }.": [
+        "V-ați dezabonat de la mesajele pe tema ${ categories } și nu veți mai primi acest tip de mesaje de la ${ BRAND_NAME }."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -6725,6 +6758,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Un fișier de recuperare vă permite să vă deblocați și să vă accesați datele după recuperarea contului."
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "O frază de recuperare vă permite să vă accesați contul și să vă recuperați mesajele criptate dacă vă uitați parola."
       ],
@@ -6924,6 +6960,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Sigur doriți să oferiți drepturi administrative acestui utilizator?"
+      ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "Sigur părăsiți acest grup? Dacă îl părăsiți, va trebui să primiți o reinvitare de la administratorul grupului pentru a vă realătura grupului."
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Sigur doriți să ștergeți definitiv toate jurnalele?"
@@ -7162,11 +7201,14 @@
       "Data locked": [
         "Date blocate"
       ],
+      "Dedicated servers": [
+        "Servere dedicate"
+      ],
       "dedicated servers": [
         "servere dedicate"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ștergeți orice alte înregistrări MX sau asigurați-vă că prioritatea pentru ${ MAIL_APP_NAME } are cel mai mic număr."
@@ -7361,6 +7403,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Introduceți acum fraza de recuperare pentru a vă modifica parola."
       ],
+      "Event invitations and responses will be sent in this language.": [
+        "Invitațiile la evenimente și răspunsurile vor fi trimise în această limbă."
+      ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Evenimentele conțin încercările de autentificare pentru toate serviciile ${ BRAND_NAME } care vă folosesc informațiile de autentificare ${ BRAND_NAME_TWO }."
       ],
@@ -7492,6 +7537,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Dacă nu ați mai folosit autentificarea cu doi factori, vă recomandăm insistent să ${ guideButton }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Dacă vă pierdeți parola și trebuie să vă recuperați contul, ${ boldImperative } să aveți o ${ boldAccountRecovery }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Dacă vă pierdeți parola și trebuie să vă recuperați contul, ${ boldImperative } să aveți atât o ${ boldAccountAndRecovery }, altfel s-ar putea să nu mai puteți accesa niciunul dintre mesajele, contactele sau fișierele personale."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Dacă vă pierdeți dispozitivul pentru autentificarea cu doi factori (A2F), puteți folosi aceste coduri în locul celor 6 cifre pentru autentificarea cu doi factori pentru a vă conecta la cont. Fiecare cod e de unică folosință."
@@ -7722,8 +7773,14 @@
       "Learn more": [
         "Detalii"
       ],
+      "Learn more about Gateways": [
+        "Aflați mai multe despre porțile de acces"
+      ],
       "learn more about Sieve programming language": [
         "aflați mai multe despre limbajul de programare Sieve"
+      ],
+      "Learn more about single sign-on": [
+        "Aflați mai multe despre autentificarea unică"
       ],
       "Left to Right": [
         "De la stânga la dreapta"
@@ -8034,6 +8091,9 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Vă rugăm să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
+      ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Dacă ștergeți filtrul ${ nameDeleted } se va opri procesarea tuturor acțiunilor automate pe care le declanșează."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
         "După apăsarea pe butonul de confirmare, contul va mai avea ${ remainingCreditsFormatted } (de) credite rămase."
@@ -8424,6 +8484,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Funcția de grupuri nu este acceptată de abonamentul actual. Grupurile create anterior sunt dezactivate și pot fi doar șterse."
       ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "Legătura web spre raportul privind faptul că nu ați setat un cont ${ BRAND_NAME } a expirat. Contactați echipa noastră de asistență pentru a rezolva această problemă."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
       ],
@@ -8481,9 +8544,6 @@
       "This is an encryption key you may have previously saved.": [
         "Acesta este o cheie de criptare pe care ați salvat-o anterior."
       ],
-      "This is an invitation from:": [
-        "Aceasta este o invitație de la:"
-      ],
       "This is the password you used before the password reset.": [
         "Aceasta este parola pe care ați utilizat-o înainte de resetarea parolei."
       ],
@@ -8520,6 +8580,9 @@
       "This will delete all previous versions of your files.": [
         "Aceasta va șterge toate versiunile anterioare ale fișierelor."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Acest lucru va refuza accesul la **${ email }**. Sigur doriți să continuați?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Aceasta va dezactiva autentificarea cu doi factori, incluzând atât aplicația de autentificare, cât și metodele cu chei de securitate."
       ],
@@ -8538,6 +8601,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Această operațiune va șterge permanent contul și toate datele sale. Nu veți mai putea reactiva acest cont."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Aceasta va respinge dispozitivul **${ name }** care a încercat să se conecteze la contul personal ${ BRAND_NAME } la **${ date }**."
+      ],
       "This will remove any enabled 2FA methods.": [
         "Aceasta va elimina toate metodele de A2F activate."
       ],
@@ -8555,6 +8621,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Aceasta vă va deconecta de la orice sesiune activă și va dezactiva autentificarea cu doi factori."
+      ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Aceasta va deconecta dispozitivul **${ name } (creat la ${ date })** de la contul personal ${ BRAND_NAME }."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont ${ BRAND_NAME }. A2F va face contul ${ BRAND_NAME_TWO } mai sigur astfel încât vă recomandăm s-o activați."
@@ -8602,7 +8671,7 @@
         "Pentru a importa evenimente, mai întâi creați un calendar în ${ CALENDAR_APP_NAME }. Aici vor apărea evenimentele după importare."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Pentru a fi la curent cu ultimele actualizări ale produselor ${ BRAND_NAME }, puteți să vă abonați la diferitele noastre adrese de e-mail sau să ne vizitați periodic blogul ${ blogLink }."
+        "Pentru a fi la curent cu ultimele actualizări ale produselor ${ BRAND_NAME }, puteți să vă abonați la diferitele noastre categorii de anunțuri pe e-mail și periodic să ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pentru a continua, selectați o metodă de recuperare a contului pentru a putea verifica solicitarea."
@@ -8744,6 +8813,9 @@
       ],
       "User activated": [
         "Utilizator activat"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ],
       "username": [
         "utilizator"
@@ -8916,6 +8988,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Când faceți clic pe o legătură web, această funcție antiînșelăciune vă va cere să confirmați adresa URL a paginii web."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Când un server este eliminat dintr-o poartă de acces, acesta intră într-o perioadă de dezactivare de 10 zile. Acest server poate fi adăugat la o poartă de acces nouă, dar țara acestuia nu poate fi modificată."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
       ],
@@ -9010,6 +9085,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
+      ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Puteți activa înregistrarea conectărilor pentru a vedea când a fost accesat contul și de la care IP. Se va înregistra adresa IP care accesează contul, ora și încercările eșuate de accesare."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Puteți activa secțiunea „Fotografii” din interfață folosind comutatorul de mai jos."
@@ -10168,6 +10246,9 @@
       "Filter Name": [
         "Nume filtru"
       ],
+      "First name": [
+        "Prenume"
+      ],
       "Folder location": [
         "Amplasare folder"
       ],
@@ -10269,6 +10350,9 @@
       ],
       "Last month only": [
         "Doar luna trecută"
+      ],
+      "Last name": [
+        "Nume de familie"
       ],
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
@@ -10975,6 +11059,9 @@
       "Pay invoice": [
         "Plată factură"
       ],
+      "PayPal without credit card": [
+        "PayPal fără card de credit"
+      ],
       "perform a password reset from your active session": [
         "efectuați o resetare a parolei din sesiunea activă"
       ],
@@ -11589,32 +11676,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Începând de la ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11642,6 +11703,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Începând de la ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12345,20 +12432,6 @@
         "Planul selectat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12377,6 +12450,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -12480,9 +12567,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Instrument de gestionare a organizației care permite administratorilor să adauge și să elimine utilizatorii, să aloce spațiul de stocare, să configureze domenii și să efectueze alte sarcini."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Infrastructura noastră robustă vă asigură că vă veți putea accesa contul atunci când aveți nevoie."
@@ -14514,12 +14598,6 @@
       "For security reasons, the token is hidden": [
         "Din motive de securitate, codul de acces este ascuns."
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Accesați-vă furnizorul de identitate, copiați și inserați datele de mai jos și finalizați configurarea SCIM pentru ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Accesați-vă furnizorul de identitate, copiați și inserați codul de acces de mai jos și reactivați SCIM pentru ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Dacă ați pierdut sau ați uitat codul de acces SCIM, puteți genera unul nou, dar rețineți că setările furnizorului dvs. de identitate vor trebui actualizate."
       ],
@@ -14528,9 +14606,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Odată ce SCIM este dezactivat pentru organizație, **toți utilizatorii SCIM furnizați automat de furnizorul dvs. de identitate vor fi convertiți în utilizatori SSO** și îi veți putea gestiona direct în setările ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Simplificați gestionarea utilizatorilor prin diferite servicii. Adăugați, editați și eliminați utilizatori din furnizorul dvs. de identitate, iar aceste modificări vă vor fi aplicate automat organizației proprii. ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Preluarea automată SCIM va fi dezactivată până când introduceți noul simbol SCIM în setările furnizorului dvs. de identitate."
@@ -15312,6 +15387,104 @@
         "Invitați persoane la ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } membru vă solicită ajutorul pentru a se conecta.",
+        "${ n } membri vă solicită ajutorul pentru a se conecta.",
+        "${ n } de membri vă solicită ajutorul pentru a se conecta."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "Organizației i s-a alăturat ${ n } utilizator prin furnizorul de identitate. Aprobați-i sau ștergeți-i contul acum:",
+        "Organizației i s-au alăturat ${ n } utilizatori prin furnizorul de identitate. Aprobați-le sau ștergeți-le contul acum:",
+        "Organizației i s-au alăturat ${ n } de utilizatori prin furnizorul de identitate. Aprobați-le sau ștergeți-le contul acum:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } utilizator vă solicită ajutorul să se conecteze la contul său ${ BRAND_NAME } folosind autentificarea unică (SSO).",
+        "${ n } utilizatori vă solicită ajutorul să se conecteze la contul lor ${ BRAND_NAME } folosind autentificarea unică (SSO).",
+        "${ n } de utilizatori vă solicită ajutorul să se conecteze la contul lor ${ BRAND_NAME } folosind autentificarea unică (SSO)."
+      ],
+      "Access denied": [
+        "Acces respins"
+      ],
+      "Access granted": [
+        "Acces acordat"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "v-a adăugat la organizația sa ${ BRAND_NAME }"
+      ],
+      "Approve the sign-in from another device": [
+        "Aprobare conectare de pe alt dispozitiv"
+      ],
+      "Ask administrator for help": [
+        "Solicitare ajutor de la administrator"
+      ],
+      "Ask your administrator for access?": [
+        "Solicitați acces de la administrator?"
+      ],
+      "Change backup password": [
+        "Modificare parolă de rezervă"
+      ],
+      "Confirmation code": [
+        "Cod de confirmare"
+      ],
+      "Contact administrator": [
+        "Contactare administrator"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Contactați-vă administratorul dacă problema persistă."
+      ],
+      "Devices available": [
+        "Dispozitive disponibile"
+      ],
+      "Devices management": [
+        "Gestionare dispozitive"
+      ],
+      "Enter your backup password": [
+        "Introduceți parola de rezervă"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Din motive de securitate contul a fost deconectat de la toate celelalte dispozitive active. Înainte de a vă accesa contul, va trebui să introduceți o nouă parolă de rezervă."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Dacă nu vă mai puteți accesa contul ${ BRAND_NAME }, parola de recuperare vă va permite să vă conectați și să vă recuperați datele."
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Este singura modalitate de a vă restabili complet contul, așa că asigurați-vă că o păstrați în siguranță."
+      ],
+      "Join ${ organizationName }": [
+        "Alăturare la ${ organizationName }"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Setați o parolă de rezervă pentru a adăuga un nivel suplimentar de protecție. Aceasta vă va permite să vă conectați dacă nu vă mai puteți conecta, așa că asigurați-vă că o păstrați undeva în siguranță."
+      ],
+      "Set your backup password": [
+        "Setați parola de rezervă"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Partajați codul de confirmare cu administratorul"
+      ],
+      "Sign in to your organization": [
+        "Autentificare în organizație"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Deconectați-vă și reconectați-vă pentru a modifica parola de rezervă."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Aceasta vă va deconecta contul de pe alte dispozitive și va trebui să creați o parolă de rezervă nouă."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Pentru a ne dovedi că dețineți contul **${ email }**, revizuiți codul de confirmare și aprobați solicitarea de pe alt dispozitiv."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Pentru a dovedi că dețineți contul, introduceți parola de rezervă."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Pentru a ne dovedi că dețineți contul la care încercați să vă conectați, trimiteți codul de confirmare administratorului cu adresa **${ adminEmail }**, astfel încât acesta să vă poată aproba cererea pentru adresa **${ email }**."
+      ],
+      "Use backup password instead": [
+        "Folosire parolă de rezervă"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Vi se anulează abonamentul, așteptați."
@@ -15776,6 +15949,9 @@
       "Keep ${ config.planName }": [
         "Păstrare ${ config.planName }"
       ],
+      "Keep subscription": [
+        "Păstrați abonamentul"
+      ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Păstrați-vă echipa în siguranță din mers cu aplicațiile noastre pentru web, iOS, Android, Windows, Mac și Linux."
       ],
@@ -15880,6 +16056,9 @@
       ],
       "Yearly free storage bonuses": [
         "Bonusuri de stocare gratuită anuală"
+      ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "Puteți continua să vă bucurați de toate beneficiile planului actual până la ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Încă mai aveți ${ expiryDate } din abonamentul ${ planName }. Vi se vor adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }. Asigurați-vă că nu depășiți limitele planului gratuit înainte de anulare. ${ learnMoreLink }"
@@ -16464,6 +16643,9 @@
       "Action": [
         "Acțiune"
       ],
+      "Actions": [
+        "Acțiuni"
+      ],
       "Activate @pm.me": [
         "Activare @pm.me"
       ],
@@ -16601,10 +16783,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -16705,6 +16887,9 @@
       "Create your ${ BRAND_NAME } address": [
         "Creați-vă adresa ${ BRAND_NAME }"
       ],
+      "Created": [
+        "Creat"
+      ],
       "Creating user accounts": [
         "Se creează conturile de utilizator"
       ],
@@ -16797,11 +16982,17 @@
       "Delete version history?": [
         "Ștergeți istoricul versiunilor?"
       ],
+      "Deny access to user?": [
+        "Refuzați accesul utilizatorului?"
+      ],
       "Description": [
         "Descriere"
       ],
       "Details": [
         "Detalii"
+      ],
+      "Device": [
+        "Dispozitiv"
       ],
       "Device connected!": [
         "Dispozitiv conectat!"
@@ -17110,6 +17301,9 @@
       "Leave ${ organisationName }?": [
         "Părăsiți ${ organisationName }?"
       ],
+      "Leave group?": [
+        "Părăsiți grupul?"
+      ],
       "Link confirmation": [
         "legătură web de confirmare"
       ],
@@ -17133,6 +17327,9 @@
       ],
       "My calendars": [
         "Calendarele mele"
+      ],
+      "Name": [
+        "Nume"
       ],
       "Need more labels or folders?": [
         "Doriți mai multe etichete și foldere?"
@@ -17239,6 +17436,9 @@
       "Profile": [
         "Profil"
       ],
+      "QR Code": [
+        "Cod QR"
+      ],
       "Ready, set, forward": [
         "Pregătit, gata, înainte"
       ],
@@ -17263,11 +17463,17 @@
       "Refer a friend": [
         "Recomandați pe cineva"
       ],
+      "Reject device?": [
+        "Respingeți dispozitivul?"
+      ],
       "Remove all members?": [
         "Eliminați toți membrii?"
       ],
       "Remove calendar": [
         "Eliminare calendar"
+      ],
+      "Remove device?": [
+        "Eliminați dispozitivul?"
       ],
       "Remove domain": [
         "Eliminare domeniu"
@@ -17395,9 +17601,6 @@
       "Sign in to join the Beta program": [
         "Autentificați-vă pentru a vă alătura programului beta"
       ],
-      "Sign in to your organization": [
-        "Autentificare la organizație"
-      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -17427,6 +17630,9 @@
       ],
       "Start import process": [
         "Începere proces de importare"
+      ],
+      "State": [
+        "Stat"
       ],
       "Status": [
         "Stare"
@@ -17952,11 +18158,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "Organizației i s-a alăturat ${ n } utilizator prin furnizorul de identitate. Aprobați-i sau respingeți-i contul acum:",
-        "Organizației i s-au alăturat ${ n } utilizatori prin furnizorul de identitate. Aprobați-le sau respingeți-le contul acum:",
-        "Organizației i s-au alăturat ${ n } de utilizatori prin furnizorul de identitate. Aprobați-le sau respingeți-le contul acum:"
-      ],
       "Administrator access enabled": [
         "Accesul de administrator s-a activat."
       ],
@@ -18441,6 +18642,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME } este în faza de acces timpuriu. Puteți descărca aplicația pentru iOS prin Apple TestFlight și aplicația pentru Android prin Google Open Testing."
+      ],
       "Coming soon": [
         "În curând"
       ]

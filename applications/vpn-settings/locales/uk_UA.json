@@ -5205,6 +5205,9 @@
       "Expires": [
         "Термін дії"
       ],
+      "First name": [
+        "Ім'я"
+      ],
       "Gateway name": [
         "Назва мережевого шлюзу"
       ],
@@ -5234,6 +5237,9 @@
       ],
       "Key": [
         "Ключ"
+      ],
+      "Last name": [
+        "Прізвище"
       ],
       "Level for NetShield blocker filtering": [
         "Рівень фільтрації блокувальника NetShield"
@@ -6565,9 +6571,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Засіб керування організацією, що дає змогу адміністраторам додавати й вилучати користувачів, розподіляти обсяг сховища, налаштовувати домени, а також виконувати інші завдання"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надійна інфраструктура гарантує можливість доступу до облікового запису коли завгодно"
       ],
@@ -7551,12 +7554,6 @@
       "For security reasons, the token is hidden": [
         "З міркувань безпеки токен приховано"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Перейдіть до свого провайдера ідентифікації, скопіюйте і вставте наведені нижче дані та завершіть налаштування SCIM для ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Перейдіть до свого провайдера ідентифікації, скопіюйте і вставте токен нижче і знову ввімкніть SCIM для ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Якщо ви втратили SCIM-токен, можете згенерувати новий, але пам'ятайте, що після цього потрібно буде оновити налаштування вашого провайдера ідентифікації."
       ],
@@ -7565,9 +7562,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Після вимкнення SCIM у вашій організації **всі користувачі SCIM, автоматично надані вашим провайдером ідентифікації, будуть перетворені на користувачів SSO**, і ви зможете керувати ними безпосередньо в налаштуваннях ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Спрощує керування користувачами в різних сервісах. Додавайте, редагуйте та вилучайте користувачів у вашого провайдера ідентифікації, і ці зміни автоматично застосовуватимуться до вашої організації ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Автоматичне забезпечення SCIM буде вимкнено, доки ви не введете новий SCIM-токен у налаштуваннях вашого провайдера ідентифікації."
@@ -9442,9 +9436,6 @@
       ],
       "Sign in to join the Beta program": [
         "Увійдіть, щоб приєднатися до програми бета-тестування"
-      ],
-      "Sign in to your organization": [
-        "Увійдіть до своєї організації"
       ],
       "Sign out": [
         "Вийти"

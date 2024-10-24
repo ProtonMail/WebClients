@@ -70,11 +70,11 @@
       "Accept": [
         "Прыняць"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -180,6 +180,9 @@
       ],
       "Back": [
         "Назад"
+      ],
+      "Back to sign-in": [
+        "Вярнуцца да ўваходу"
       ],
       "Block": [
         "Блакіраваць"
@@ -378,6 +381,9 @@
       ],
       "Delete your account": [
         "Выдаліць уліковы запіс"
+      ],
+      "Deny access": [
+        "Адмовіць у доступе"
       ],
       "Details": [
         "Падрабязнасці"
@@ -661,6 +667,9 @@
       "Leave": [
         "Выйсці"
       ],
+      "Leave group": [
+        "Выйсці з групы"
+      ],
       "Let's talk": [
         "Звяжыцеся з намі"
       ],
@@ -796,11 +805,14 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
+      "refresh the page": [
+        "абнавіць старонку"
+      ],
       "Refresh the page": [
         "Абнавіць старонку"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
+      "Reject": [
+        "Адхіліць"
       ],
       "Reload": [
         "Перазагрузіць"
@@ -810,6 +822,9 @@
       ],
       "Remove all members": [
         "Выдаліць усіх удзельнікаў"
+      ],
+      "Remove all other devices": [
+        "Выдаліць усе іншыя прылады"
       ],
       "Remove bonuses": [
         "Выдаліць бонусы"
@@ -1189,9 +1204,6 @@
       "Verify": [
         "Праверка"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Праверыць ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Праверыць уліковы запіс"
       ],
@@ -1203,6 +1215,9 @@
       ],
       "Verify domain": [
         "Праверыць дамен"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Праверыць дамен ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Прагледзець"
@@ -1612,14 +1627,6 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1641,6 +1648,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3454,6 +3469,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
       ],
+      "Available with ${ BRAND_NAME } Mail Plus": [
+        "Даступна з ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
       ],
@@ -4606,6 +4624,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
+      ],
+      "Please upload a square logo": [
+        "Запампуйце квадратны лагатып"
       ],
       "Please upload an xml file": [
         "Запампуйце файл xml"
@@ -5865,6 +5886,9 @@
       "Back to sign in": [
         "Вярнуцца да ўваходу"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features.": [
+        "Працягвайце атрымліваць асалоду ад хуткай, сканцэнтраванай і бяспечнай настольнай праграмы. Палепшыце, каб разблакіраваць неабмежаваны доступ і іншыя прэміяльныя функцыі."
+      ],
       "Keep using the desktop app": [
         "Працягнуць выкарыстанне настольнай праграмай"
       ],
@@ -6015,6 +6039,11 @@
         "Пакінуў(ла) групу"
       ]
     },
+    "group_invite_2024": {
+      "You have no groups to manage": [
+        "Вы не кіруеце ніякімі групамі"
+      ]
+    },
     "group_invite_2024: Error message, recovery": {
       "Please try opening the link again.": [
         "Паспрабуйце адкрыць спасылку яшчэ раз."
@@ -6029,11 +6058,17 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "для ${ email }"
+      ],
       "Group invitation accepted": [
         "Групавое запрашэнне прынята"
       ],
       "Group invitation declined": [
         "Групавое запрашэнне адхілена"
+      ],
+      "Group membership": [
+        "Прыналежнасць да групы"
       ]
     },
     "Header": {
@@ -6802,6 +6837,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Файл аднаўлення дазваляе разблакіраваць і прагледзець вашы даныя пасля аднаўлення ўліковага запісу"
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Фраза аднаўлення дазваляе вам атрымаць доступ да ўліковага запісу і аднавіць зашыфраваныя паведамленні, калі вы забылі пароль"
       ],
@@ -7008,6 +7046,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Вы сапраўды хочаце даць гэтаму карыстальніку прывілеі адміністратара?"
+      ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "Вы сапраўды хочаце выйсці з групы? Вам неабходна будзе паўторна атрымаць запрашэнне адміністратара групы, калі вы выйдзеце з яе, а потым перадумаеце і захочаце вярнуцца."
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Вы сапраўды хочаце незваротна выдаліць усе вашы журналы?"
@@ -7249,11 +7290,14 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
+      ],
       "dedicated servers": [
         "вылучаныя серверы"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Выдаліце ​​ўсе іншыя запісы MX або пераканайцеся, што ${ MAIL_APP_NAME } мае самае нізкае значэнне ў полі прыярытэту."
@@ -7449,6 +7493,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Увядзіце фразу аднаўлення, каб змяніць пароль."
+      ],
+      "Event invitations and responses will be sent in this language.": [
+        "Запрашэнні на падзею і адказы будуць адпраўляцца на гэтай мове."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "У падзеях пералічаны спробы аўтарызацыі ва ўсіх сэрвісах ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME_TWO }."
@@ -7813,8 +7860,14 @@
       "Learn more": [
         "Даведацца больш"
       ],
+      "Learn more about Gateways": [
+        "Даведацца больш аб шлюзах"
+      ],
       "learn more about Sieve programming language": [
         "даведацца больш аб мове праграмавання Sieve"
+      ],
+      "Learn more about single sign-on": [
+        "Даведацца больш аб адзіным уваходзе"
       ],
       "Left to Right": [
         "Злева направа"
@@ -8127,6 +8180,9 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Захоўвайце яе ў бяспечным месцы. Яна вам спатрэбіцца для доступу да вашага ўліковага запісу і расшыфроўкі даных у выпадку скідання пароля."
+      ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Звярніце ўвагу, што калі вы выдаліце ​​фільтр ${ nameDeleted }, то мы больш не будзем апрацоўваць усе аўтаматычныя дзеянні, якія ён запускае."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
         "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ remainingCreditsFormatted }."
@@ -8521,6 +8577,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Функцыя груп не падтрымліваюцца вашай бягучай падпіскай. Папярэдне створаныя групы адключаны і іх можна толькі выдалены."
       ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "Спасылка аб справаздачы, што вы не наладзілі ўліковы запіс ${ BRAND_NAME } пратэрмінавана. Звяжыцеся з нашай камандай падтрымкі, каб вырашыць гэту праблему."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
       ],
@@ -8578,9 +8637,6 @@
       "This is an encryption key you may have previously saved.": [
         "Гэта ключ шыфравання, які вы магчыма захавалі раней."
       ],
-      "This is an invitation from:": [
-        "Гэта запрашэнне ад:"
-      ],
       "This is the password you used before the password reset.": [
         "Гэта пароль, які вы выкарыстоўвалі перад скіданнем пароля."
       ],
@@ -8617,6 +8673,9 @@
       "This will delete all previous versions of your files.": [
         "Гэта выдаліць усе папярэднія версіі вашых файлаў."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Гэта прывядзе да адмовы ў доступе да **${ email }**. Вы сапраўды хочаце працягнуць?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Гэта адключыць двухфактарную аўтэнтыфікацыю, а таксама праграму аўтэнтыфікатар і метады ключоў бяспекі."
       ],
@@ -8635,6 +8694,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Гэта незваротна выдаліць ваш уліковы запіс і ўсе звязаныя з ім даныя. У вас не будзе магчымасці аднавіць яго пазней."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Гэта прывядзе да адхілення прылады з назвай **${ name }**, якая **${ date }** спрабавала ўвайсці ў ваш уліковы запіс ${ BRAND_NAME }"
+      ],
       "This will remove any enabled 2FA methods.": [
         "Гэта прывядзе да выдалення ўсіх уключаных спосабаў 2ФА."
       ],
@@ -8652,6 +8714,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Гэта прывядзе да выхаду з любога актыўнага сеанса і адключэння двухфактарнай аўтэнтыфікацыі."
+      ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Гэта прывядзе да выдалення сувязі прылады з назвай **${ name } (створана ${ date })** з вашым уліковым запісам ${ BRAND_NAME }"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
@@ -8842,6 +8907,9 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
+      "Username": [
+        "Імя карыстальніка"
+      ],
       "username": [
         "імя карыстальніка"
       ],
@@ -9013,6 +9081,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Калі вы націсніце на спасылку, функцыя антыфішынгавай абароны папросіць вас пацвердзіць URL-адрас вэб-старонкі."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Сервер уступае ў 10-дзённы перыяд дэактывацыі, калі ён выдаляецца са шлюза. Гэты сервер можа быць дадзены ў новы шлюз, але яго краіна не можа быць зменена."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
       ],
@@ -9111,6 +9182,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
+      ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Вы можаце ўключыць журналы аўтэнтыфікацыі, каб бачыць у які час і з якога IP-адраса ажыццяўляўся доступ да ўліковага запісу. Мы будзем запісваць IP-адрасы, якія мелі доступ да ўліковага запісу, а таксама час наведвання і няўдалыя спробы ўваходу."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Вы можаце ўключыць раздзел Фатаграфіі ў інтэрфейсе з дапамогай пераключальніка, які размяшчаецца ніжэй."
@@ -9981,6 +10055,9 @@
       "Awarded": [
         "Узнагароджаны"
       ],
+      "Backup password": [
+        "Рэзервовы пароль"
+      ],
       "Beta": [
         "Бэта"
       ],
@@ -10281,6 +10358,9 @@
       "Filter Name": [
         "Назва фільтра"
       ],
+      "First name": [
+        "Імя"
+      ],
       "Folder location": [
         "Размяшчэнне папкі"
       ],
@@ -10382,6 +10462,9 @@
       ],
       "Last month only": [
         "Толькі за апошні месяц"
+      ],
+      "Last name": [
+        "Прозвішча"
       ],
       "Level for NetShield blocker filtering": [
         "Узровень фільтрацыі блакіроўшчыка NetShield"
@@ -10592,6 +10675,9 @@
       ],
       "Remove image metadata": [
         "Выдаліць метаданыя відарыса"
+      ],
+      "Repeat backup password": [
+        "Паўтарыце рэзервовы пароль"
       ],
       "Repeat password": [
         "Паўтарыце пароль"
@@ -11085,6 +11171,9 @@
       "Pay invoice": [
         "Аплаціць рахунак"
       ],
+      "PayPal without credit card": [
+        "PayPal без крэдытнай карткі"
+      ],
       "perform a password reset from your active session": [
         "ажыццявіць скіданне пароля з вашага актыўнага сеанса"
       ],
@@ -11254,6 +11343,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Дадаванне памочніка ў напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "Усе праграмы ${ BRAND_NAME } for Business і прэміяльныя функцыі для яго комплекснай абароны"
       ],
       "An encrypted email service that puts your privacy first": [
         "Зашыфраваны сэрвіс электроннай пошты, які ставіць вашу прыватнасць на першае месца"
@@ -11439,6 +11531,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забылі сваё імя карыстальніка ўліковага запісу ${ BRAND_NAME }? Знайдзіце яго выкарыстоўваючы пошту або нумар тэлефона і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
+      ],
+      "Private and secure email, no bank card required": [
+        "Прыватная і бяспечная электронная пошта, якая не патрабуе банкаўскую картку"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Скінуць пароль свайго ўліковага запісу ${ BRAND_NAME }"
@@ -11710,32 +11805,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Пачніце з коштам у памеры ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Пачатковы кошт ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11763,6 +11832,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Пачніце з коштам у памеры ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Пачатковы кошт ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12491,20 +12586,6 @@
         "Выбраны тарыфны план: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Атрымайце Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -12523,6 +12604,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -12627,9 +12722,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Інструмент кіравання для арганізацый з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, вылучаць сховішча, канфігурыраваць дамены і выконваць іншыя задачы"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надзейная інфраструктура гарантуе вам пастаянны доступ да вашага ўліковага запісу"
@@ -14545,6 +14637,9 @@
       "Your recovery email": [
         "Ваша электронная пошта для аднаўлення"
       ],
+      "Your recovery email address is:": [
+        "Ваша электронная пошта для аднаўлення доступу:"
+      ],
       "Your recovery email and phone can **only recover access to your account**.": [
         "Ваша электронная пошта і нумар тэлефона могуць **аднавіць доступ толькі да вашага ўліковага запісу**."
       ],
@@ -14655,12 +14750,6 @@
       "For security reasons, the token is hidden": [
         "У мэтах бяспекі токен схаваны"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце даныя ніжэй і завяршыце канфігурацыю SCIM для ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце токен ніжэй і паўторна ўключыце SCIM для ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Вы можаце згенерыраваць новы токен SCIM, калі папярэдні быў страчаны або забыты. Памятайце, што ў такіх выпадках неабходна абнаўляць налады ў вашым пастаўшчыку пасведчанняў."
       ],
@@ -14669,9 +14758,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Пасля адключэння SCIM для вашай арганізацыі **ўсе карыстальнікі SCIM, якія аўтаматычна забяспечаны вашым пастаўшчыком пасведчанняў, будуць пераўтвораны ў карыстальнікаў SSO** і ў вас будзе магчымасць кіраваць імі наўпрост у наладах ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Спрашчэнне кіравання карыстальнікамі паміж рознымі сэрвісамі. Дадаванне, рэдагаванне і выдаленне карыстальнікаў у вашым пастаўшчыку пасведчанняў. Усе пералічаныя змены будуць аўтаматычна ўжывацца для вашай арганізацыі ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Аўтаматычная падрыхтоўка SCIM будзе адключана да таго моманту, пакуль вамі не будзе ўведзены новы токен SCIM у налады вашага пастаўшчыка пасведчанняў."
@@ -15473,6 +15559,88 @@
         "Запрасіць сяброў у ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } удзельнік запытаў вашу дапамогу з уваходам.",
+        "${ n } удзельнікі запыталі вашу дапамогу з уваходам.",
+        "${ n } удзельнікаў запыталі вашу дапамогу з уваходам.",
+        "${ n } удзельнікаў запыталі вашу дапамогу з уваходам."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або выдаліце яго/іх уліковыя запісы:",
+        "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або выдаліце іх уліковыя запісы:",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або выдаліце іх уліковыя запісы:",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або выдаліце іх уліковыя запісы:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } карыстальнік запытвае вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу.",
+        "${ n } карыстальнікі запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу.",
+        "${ n } карыстальнікаў запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу.",
+        "${ n } карыстальнікаў запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу."
+      ],
+      "Access denied": [
+        "У доступе адмоўлена"
+      ],
+      "Access granted": [
+        "Доступ дазволены"
+      ],
+      "Approve the sign-in from another device": [
+        "Ухваліце ​​ўваход з іншай прылады"
+      ],
+      "Ask administrator for help": [
+        "Папрасіце адміністратара дапамагчы вам"
+      ],
+      "Ask your administrator for access?": [
+        "Запытаць доступ у вашага адміністратара?"
+      ],
+      "Confirmation code": [
+        "Код пацвярджэння"
+      ],
+      "Contact administrator": [
+        "Звязацца з адміністратарам"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Звяжыце са сваім адміністратарам, калі праблема застанецца."
+      ],
+      "Devices available": [
+        "Даступныя прылады"
+      ],
+      "Devices management": [
+        "Кіраванне прыладамі"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Вы выйшлі з сістэмы на ўсіх вашых іншых актыўных прыладах у мэтах бяспекі. Вам неабходна будзе ўвесці новы рэзервовы пароль перад тым, як вы атрымаеце доступ да свайго ўліковага запісу."
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Задаць рэзервовы пароль, каб дадаць дадатковы слой бяспекі. Ён дазволіць вам увайсці ў выпадку, калі вы не зможаце атрымаць доступ да свайго ўліковага запісу. Пераканайцеся, што ён захаваны ў надзейным месцы."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Гэта дзеянне прывядзе да завяршэння сеанса на вашых іншых прыладах і вам давядзецца стварыць новы рэзервовы пароль."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Праверце код пацвярджэння і ўхваліце запыт ад іншай прылады. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці ў электронную пошту **${ email }**."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Увядзіце свой рэзервовы пароль. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Абагуліце код пацвярджэння з вашым адміністратарам **${ adminEmail }** для таго, каб ён мог ухваліць запыт для **${ email }**. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці."
+      ],
+      "Use backup password instead": [
+        "Замест гэтага скарыстайцеся рэзервовай копіяй пароля"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Актыўна"
+      ],
+      "Inactive": [
+        "Неактыўна"
+      ],
+      "Signed out": [
+        "Вы выйшлі"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
@@ -16043,7 +16211,7 @@
         "У карыстальнікаў не будзе магчымасці адпраўляць электронныя лісты"
       ],
       "Users won’t be able to upload files on their devices": [
-        "У карыстальнікаў не будзе магчымасці запампоўваць файлы на свае прылады"
+        "У карыстальнікаў не будзе магчымасці запампоўваць файлы са сваіх прылад"
       ],
       "Version history": [
         "Гісторыя версій"
@@ -16061,7 +16229,7 @@
         "Калі вы скасуеце падпіску ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Ваша каманда будзе адчуваць перапыненні ў працы, паколькі бясплатны тарыфны план не падтрымлівае бясплатных карыстальнікаў."
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Вы будзеце паніжаны да бясплатнага тарыфнага плана ${ BRAND_NAME }, калі ваша падпіска ${ planName } завершыцца ${ expiryDate }"
+        "Вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } Free, калі ваша падпіска ${ planName } завершыцца ${ expiryDate }"
       ],
       "Yearly free storage bonuses": [
         "Штогадовы бонус бясплатнага сховішча"
@@ -16216,6 +16384,12 @@
       "Default calendar updated": [
         "Прадвызначаны каляндар абноўлены"
       ],
+      "Device deleted": [
+        "Выдаленая прылада"
+      ],
+      "Device rejected": [
+        "Адхіленая прылада"
+      ],
       "Display name updated": [
         "Бачнае імя абноўлена"
       ],
@@ -16362,6 +16536,12 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Вы атрымаеце сваё імя карыстальніка праз электронную пошту на працягу хвіліны, калі вы ўвялі слушны адрас электроннай пошты для аднаўлення доступу."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Вы атрымаеце сваё імя карыстальніка праз SMS на працягу хвіліны, калі вы ўвялі слушны нумар тэлефона для аднаўлення доступу."
       ]
     },
     "Success message": {
@@ -16658,6 +16838,9 @@
       "Action": [
         "Дзеянне"
       ],
+      "Actions": [
+        "Дзеянні"
+      ],
       "Activate @pm.me": [
         "Актываваць @pm.me"
       ],
@@ -16796,10 +16979,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -16901,6 +17084,9 @@
       "Create your ${ BRAND_NAME } address": [
         "Стварыць свой адрас ${ BRAND_NAME }"
       ],
+      "Created": [
+        "Створана"
+      ],
       "Creating user accounts": [
         "Стварэнне ўліковых запісаў карыстальніка"
       ],
@@ -16994,11 +17180,17 @@
       "Delete version history?": [
         "Выдаліць гісторыю версій?"
       ],
+      "Deny access to user?": [
+        "Адмовіць у доступе карыстальніку?"
+      ],
       "Description": [
         "Апісанне"
       ],
       "Details": [
         "Падрабязнасці"
+      ],
+      "Device": [
+        "Прылада"
       ],
       "Device connected!": [
         "Прылада падключана!"
@@ -17309,6 +17501,9 @@
       "Leave ${ organisationName }?": [
         "Выйсці з ${ organisationName }?"
       ],
+      "Leave group?": [
+        "Выйсці з групы?"
+      ],
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
@@ -17332,6 +17527,9 @@
       ],
       "My calendars": [
         "Мае календары"
+      ],
+      "Name": [
+        "Назва"
       ],
       "Need more labels or folders?": [
         "Неабходна больш метак або папак?"
@@ -17438,6 +17636,9 @@
       "Profile": [
         "Профіль"
       ],
+      "QR Code": [
+        "QR-код"
+      ],
       "Ready, set, forward": [
         "На старт, увага, марш"
       ],
@@ -17462,11 +17663,17 @@
       "Refer a friend": [
         "Запрасіць сябра"
       ],
+      "Reject device?": [
+        "Адхіліць прыладу?"
+      ],
       "Remove all members?": [
         "Выдаліць усіх удзельнікаў?"
       ],
       "Remove calendar": [
         "Выдаліць каляндар"
+      ],
+      "Remove device?": [
+        "Выдаліць прыладу?"
       ],
       "Remove domain": [
         "Выдаліць дамен"
@@ -17594,9 +17801,6 @@
       "Sign in to join the Beta program": [
         "Увайдзіце, каб далучыцца да бэта-праграмы"
       ],
-      "Sign in to your organization": [
-        "Увайсці ў сваю арганізацыю"
-      ],
       "Sign out": [
         "Выйсці"
       ],
@@ -17626,6 +17830,9 @@
       ],
       "Start import process": [
         "Пачаць працэс імпартавання"
+      ],
+      "State": [
+        "Стан"
       ],
       "Status": [
         "Статус"
@@ -17993,6 +18200,9 @@
       "Set the default layout for your Inbox.": [
         "Задайце прадвызначаны макет для папкі Уваходныя."
       ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Задае наступны ніжні калонтытул у лістах, якія вы адпраўляеце: ${ signature } Спасылка звязана з вашай рэферальнай праграмай. Ніжні калонтытул будзе з'яўляцца ніжэй вашага подпісу. Вы можаце персаналізаваць свой подпіс у любы час у наладах."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Паказвае відарыс кожнага адпраўніка ў спісе паведамлення. Будуць паказаны ініцыялы адпраўніка ў выпадку, калі фатаграфія недаступна."
       ],
@@ -18152,12 +18362,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце яго/іх уліковыя запісы:",
-        "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце іх уліковыя запісы:",
-        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце іх уліковыя запісы:",
-        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце іх уліковыя запісы:"
-      ],
       "Administrator access enabled": [
         "Доступ для адміністратара ўключаны"
       ],
@@ -18633,6 +18837,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME } знаходзіцца ў стадыі ранняга доступу. Вы можаце спампаваць праграму для iOS праз Apple TestFlight і праграму для Android праз Google Open Testing."
+      ],
       "Coming soon": [
         "Неўзабаве з'явіцца"
       ]

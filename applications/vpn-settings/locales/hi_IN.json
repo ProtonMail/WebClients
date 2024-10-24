@@ -4581,6 +4581,9 @@
       "Expires": [
         "समय खत्म"
       ],
+      "First name": [
+        "पहला नाम"
+      ],
       "Gateway name": [
         "गेटवे का नाम"
       ],
@@ -4601,6 +4604,9 @@
       ],
       "Key": [
         "चाबी"
+      ],
+      "Last name": [
+        "अंतिम नाम"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield ब्लॉकर फिल्टर की ताकत"
@@ -5697,9 +5703,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "पूरे संदेश और संपर्क जानकारी के साथ निजी-नहीं यूज़र इनबॉक्स देखने का विकल्प।"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "संगठन मैनेजमेंट टूल एडमिन को यूज़र जोड़ने और निकालने, स्टोरेज का बटवारा करने, डोमेन की संरचना बदलने, और दूसरे काम करने देता है"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "हमारा तगड़ा इंफ्रास्ट्रक्चर पक्का करता है की आप जब चाहे अपना खाता एक्सेस कर सके"
       ],
@@ -6406,9 +6409,6 @@
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "यदि आपने SCIM टोकन खो दिया या भूल गए हैं, तो आप एक नया उत्पन्न कर सकते हैं, लेकिन ध्यान दें कि आपके पहचान प्रदाता सेटिंग्स को अपडेट किया जाना चाहिए।"
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "विभिन्न सेवाओं में उपयोगकर्ता प्रबंधन को सरल बनाता है। अपने पहचान प्रदाता में उपयोगकर्ताओं को जोड़ें, संपादित करें, और हटाएं, और ये परिवर्तन आपके ${ VPN_APP_NAME } संगठन में स्वचालित रूप से लागू हो जाएंगे।"
       ]
     },
     "scim: Label": {
@@ -7833,9 +7833,6 @@
       ],
       "Sign in to join the Beta program": [
         "बीटा कार्यक्रम में शामिल होने के लिए साइन इन करें"
-      ],
-      "Sign in to your organization": [
-        "अपने संगठन में साइन इन करें"
       ],
       "Sign out": [
         "साइन आउट करें"

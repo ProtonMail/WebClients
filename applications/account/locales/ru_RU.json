@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -796,11 +796,14 @@
       "Refresh status": [
         "Обновить статус"
       ],
+      "refresh the page": [
+        "обновить страницу"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
-      "refresh the page": [
-        "обновить страницу"
+      "Reject": [
+        "Отказать"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1188,9 +1191,6 @@
       ],
       "Verify": [
         "Подтвердить"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Проверить ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Подтвердить аккаунт"
@@ -1612,14 +1612,6 @@
         "Выберите Новогоднее предложение"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1641,6 +1633,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3881,11 +3881,20 @@
       "Change other email subscriptions": [
         "Изменить другие подписки"
       ],
+      "Click the button below to unsubscribe from ${ categories } emails.": [
+        "Нажмите кнопку ниже, чтобы отказаться от рассылки электронных писем ${ categories }."
+      ],
       "Email subscriptions": [
         "Подписки на рассылки"
       ],
+      "If you unsubscribed by accident, you are welcome to resubscribe.": [
+        "Если вы случайно отписались от рассылки, то можете подписаться снова."
+      ],
       "Resubscribe": [
         "Возобновить подписку"
+      ],
+      "Thank you and goodbye": [
+        "Спасибо и до свидания"
       ],
       "Unsubscribe": [
         "Отменить подписку"
@@ -3893,11 +3902,20 @@
       "Unsubscribe?": [
         "Отменить подписку?"
       ],
+      "Update email preferences": [
+        "Обновить настройки электронной почты"
+      ],
+      "We're sorry to see you go.": [
+        "Нам жаль, что вы уходите."
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Какую электронную почту вы хотите получать от ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Вы снова подписаны на ${ categoriesJsx }."
+      ],
+      "You unsubscribed from ${ categories } emails, and will no longer receive this type of email from ${ BRAND_NAME }.": [
+        "Вы отписались от электронных писем ${ categories } и больше не будете получать подобные электронные письма от ${ BRAND_NAME }."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -7160,11 +7178,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
@@ -8458,9 +8476,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Это ключ шифрования, который вы могли сохранить ранее."
-      ],
-      "This is an invitation from:": [
-        "Это приглашение от:"
       ],
       "This is the password you used before the password reset.": [
         "Это пароль, который вы использовали до сброса пароля."
@@ -10141,6 +10156,9 @@
       "Filter Name": [
         "Название фильтра"
       ],
+      "First name": [
+        "Имя"
+      ],
       "Folder location": [
         "Размещение папки"
       ],
@@ -10242,6 +10260,9 @@
       ],
       "Last month only": [
         "Только за последний месяц"
+      ],
+      "Last name": [
+        "Фамилия"
       ],
       "Level for NetShield blocker filtering": [
         "Уровень для фильтрации блокировщика NetShield"
@@ -11570,26 +11591,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Начните с ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11617,6 +11618,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Начните с ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -12345,17 +12366,6 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -12374,6 +12384,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -12478,9 +12499,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просмотра публичных папок входящих сообщений пользователей, как это делает сам пользователь, включая полную информацию о сообщениях и контактах"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Инструмент управления для организаций, с помощью которого администраторы могут добавлять и удалять пользователей, выделять место в хранилище, настраивать домены и выполнять другие задачи"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надежная инфраструктура гарантирует, что вы сможете получить доступ к своему аккаунту, когда вам это необходимо"
@@ -14503,12 +14521,6 @@
       "For security reasons, the token is hidden": [
         "Токен скрыт по соображениям безопасности"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Перейдите в ваш провайдер личных данных, скопируйте и вставьте данные внизу и завершите конфигурацию SCIM для ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Перейдите в ваш провайдер личных данных, скопируйте и вставьте данные внизу и повторно включите SCIM для ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Если вы потеряли или забыли токен SCIM, вы можете сгенерировать новый, но имейте в виду, что настройки поставщика личных данных придется обновить."
       ],
@@ -14517,9 +14529,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "После отключения SCIM в вашей организации **все пользователи SCIM, автоматически созданные вашим поставщиком идентификационных данных, будут преобразованы в пользователей SSO**, и вы сможете управлять ими непосредственно в настройках ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Упрощает управление пользователями в различных службах. Добавляйте, редактируйте и удаляйте пользователей в своем провайдере идентификации, и эти изменения будут автоматически применены к вашей организации ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Автоматическая настройка SCIM будет отключена до тех пор, пока вы не введете новый токен SCIM в настройках вашего провайдера."
@@ -15620,6 +15629,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
+      ],
       "${ dayDiff } day left": [
         "Остался ${ dayDiff } день",
         "Осталось ${ dayDiff } дня",
@@ -15698,6 +15710,9 @@
         "${ planNumberOfUsers } пользователей",
         "${ planNumberOfUsers } пользователей"
       ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "Передовая защита аккаунта ${ PROTON_SENTINEL_NAME }"
+      ],
       "2 users": [
         "2 пользователя"
       ],
@@ -15761,6 +15776,9 @@
       "Folders, labels and filters": [
         "Папки, ярлыки и фильтры"
       ],
+      "Folders, labels, and custom filters": [
+        "Папки, ярлыки и пользовательские фильтры"
+      ],
       "Got it": [
         "Применить"
       ],
@@ -15778,6 +15796,9 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Как мы поддержали местных активистов, когда под угрозой оказались частная жизнь и свобода слова."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Если вы превысите лимиты бесплатного тарифа, вы не сможете сделать следующее:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
         "Если ваше потребление превышает пределы бесплатного тарифа, вы можете столкнуться с ограничением доступа к функциям продукта и своим данным."
@@ -15853,6 +15874,9 @@
       ],
       "Unlimited privacy for two": [
         "Неограниченная конфиденциальность для двоих"
+      ],
+      "Upload any new files": [
+        "Загрузить новые файлы"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
         "Подписки пользователей - это единственный источник дохода ${ BRAND_NAME }. Ваша поддержка позволяет нам оставаться независимыми, продолжать нашу миссию по обеспечению неприкосновенности частной жизни в Интернете, а также помогать активистам и организациям, борющимся за свободу."
@@ -16599,10 +16623,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -16703,6 +16727,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "Создайте свой адрес ${ BRAND_NAME }"
+      ],
+      "Created": [
+        "Создан"
       ],
       "Creating user accounts": [
         "Создание пользовательских аккаунтов"
@@ -17124,6 +17151,9 @@
       "My calendars": [
         "Мои календари"
       ],
+      "Name": [
+        "Имя"
+      ],
       "Network error": [
         "Ошибка сети"
       ],
@@ -17253,6 +17283,9 @@
       "Remove calendar": [
         "Удалить календарь"
       ],
+      "Remove device?": [
+        "Удалить устройство?"
+      ],
       "Remove domain": [
         "Удалить домен"
       ],
@@ -17372,9 +17405,6 @@
       ],
       "Sign in to join the Beta program": [
         "Войдите, чтобы присоединиться к программе \"Бета\""
-      ],
-      "Sign in to your organization": [
-        "Войдите в вашу организацию"
       ],
       "Sign out": [
         "Выйти"
@@ -17931,12 +17961,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } пользователь присоединился к вашей организации через провайдера идентификации. Одобрите или отклоните его аккаунт прямо сейчас:",
-        "${ n } пользователя присоединились к вашей организации через провайдера идентификации. Одобрите или отклоните их аккаунты прямо сейчас:",
-        "${ n } пользователей присоединились к вашей организации через провайдера идентификации. Одобрите или отклоните их аккаунты прямо сейчас:",
-        "${ n } пользователей присоединились к вашей организации через провайдера идентификации. Одобрите или отклоните их аккаунты прямо сейчас:"
-      ],
       "Administrator access enabled": [
         "Доступ администратора включен"
       ],

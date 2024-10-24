@@ -571,21 +571,6 @@
         "Інструменти розробника"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Розумне збереження. Отримайте річний Pass Plus лише за ${ relativePrice } в місяць."
-      ]
-    },
-    "bf2023: Label": {
-      "Get the deal": [
-        "Скористатися пропозицією"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Пропозиція з нагоди Чорної П'ятниці"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
@@ -729,6 +714,9 @@
         "Виявлено ${ errors.length } пошкоджених csv рядки",
         "Виявлено ${ errors.length } пошкоджених csv рядків",
         "Виявлено ${ errors.length } пошкоджених csv рядків"
+      ],
+      "Domain not available, try again later": [
+        "Домен недоступний, повторіть спробу пізніше"
       ],
       "Editing item failed": [
         "Помилка редагування елемента"

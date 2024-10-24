@@ -691,9 +691,6 @@
       "Verify": [
         "Verifizieren"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Überprüfe ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Konto verifizieren"
       ],
@@ -5391,6 +5388,9 @@
       "Expires": [
         "Gültig bis"
       ],
+      "First name": [
+        "Vorname"
+      ],
       "Gateway name": [
         "Gateway-Name"
       ],
@@ -5420,6 +5420,9 @@
       ],
       "Key": [
         "Schlüssel"
+      ],
+      "Last name": [
+        "Nachname"
       ],
       "Level for NetShield blocker filtering": [
         "Stufe für NetShield-Blocker-Filterung"
@@ -6448,6 +6451,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Secure link sharing": [
+        "Sicheres Teilen von Links"
+      ],
       "See team's availability": [
         "Verfügbarkeit des Teams anzeigen"
       ],
@@ -6846,9 +6852,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Ein Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und wieder entfernen, Speicherplatz zuweisen, Domains konfigurieren und andere Aufgaben ausführen können."
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Unsere robuste Infrastruktur ermöglicht dir den Zugriff auf dein Konto, wann immer nötig."
       ],
@@ -6893,6 +6896,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Sicheres Teilen von einzelnen Einträgen mit anderen (selbst wenn sie ${ PASS_APP_NAME } nicht nutzen)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher. Dank Zero-Access-Verschlüsselung kann nicht einmal ${ BRAND_NAME } auf diese Informationen zugreifen."
@@ -7357,11 +7363,17 @@
       "${ n } user account": [
         "${ n } Benutzerkonto",
         "${ n } Benutzerkonten"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
       ]
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
         "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Jährlich abgerechnet zu ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (gegenüber 6 einzelnen ${ passPlusPlanName }-Abonnements)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exklusives Angebot, das nur für frühe Unterstützer von ${ PASS_APP_NAME } gilt."
@@ -7496,6 +7508,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "More plans are available in other currencies": [
+        "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
       "Payment Processing": [
         "Zahlungsabwicklung"
@@ -7893,12 +7908,6 @@
       "For security reasons, the token is hidden": [
         "Der Token ist aus Sicherheitsgründen ausgeblendet."
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Gehe zu deinem Identitätsanbieter, kopiere die unten stehenden Daten und füge sie ein, um die Konfiguration von SCIM für ${ VPN_APP_NAME } abzuschließen."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Gehe zu deinem Identitätsanbieter, kopiere den unten stehenden Token und füge ihn ein, um SCIM für ${ VPN_APP_NAME } wieder zu aktivieren."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Wenn du den SCIM-Token verloren oder vergessen hast, kannst du einen neuen generieren. Beachte aber, dass die Einstellungen deines Identitätsanbieters aktualisiert werden müssen."
       ],
@@ -7907,9 +7916,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Sobald SCIM für deine Organisation deaktiviert ist, werden **alle SCIM-Benutzer, die automatisch von deinem Identitätsanbieter bereitgestellt werden, in SSO-Benutzer** umgewandelt und du kannst sie direkt in den Einstellungen von ${ BRAND_NAME } verwalten."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Vereinfacht die Benutzerverwaltung über verschiedene Dienste hinweg. Füge Benutzer in deinem Identitätsanbieter hinzu, bearbeite und entferne sie, und diese Änderungen werden automatisch auf deine ${ VPN_APP_NAME }-Organisation übertragen."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Das automatische SCIM-Provisioning wird deaktiviert, bis du den neuen SCIM-Token in die Einstellungen deines Identitätsanbieters eingibst."
@@ -8894,6 +8900,9 @@
       "Keep ${ config.planName }": [
         "${ config.planName } behalten"
       ],
+      "Keep subscription": [
+        "Abonnement behalten"
+      ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Sorge unterwegs für die Sicherheit deines Teams, mit unseren Apps für Web, iOS, Android, Windows, Mac und Linux."
       ],
@@ -8999,6 +9008,9 @@
       "Yearly free storage bonuses": [
         "Jährliche Boni für kostenlosen Speicherplatz"
       ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "Du kannst weiterhin alle Vorteile deines aktuellen Tarifs bis ${ boldedDate } nutzen."
+      ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Du hast noch ${ expiryDate } in deinem ${ planName }-Abonnement verbleibend. Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu. Vergewissere dich, dass du die Grenzen des kostenlosen Abonnements nicht überschreitest, bevor du kündigst. ${ learnMoreLink }"
       ],
@@ -9087,6 +9099,11 @@
       ],
       "Expiring": [
         "Verfallend"
+      ]
+    },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Zeig die Details der VPN-Sitzung für deine Organisation an."
       ]
     },
     "Success": {
@@ -9912,9 +9929,6 @@
       "Sign in to join the Beta program": [
         "Melde dich an, um am Beta-Programm teilzunehmen."
       ],
-      "Sign in to your organization": [
-        "Bei deiner Organisation anmelden"
-      ],
       "Sign out": [
         "Abmelden"
       ],
@@ -10184,8 +10198,14 @@
       ]
     },
     "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
+      ],
       "Approve all": [
         "Alle genehmigen"
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Wenn du den Benutzer als privat einstufst, kannst du ihm nicht helfen, wieder Zugang zu seinen Daten oder seinem Konto zu erhalten."
       ],
       "Could not enable administrator access: ${ error }": [
         "Fehler beim Aktivieren des Administratorzugriffs: ${ error }"
@@ -10199,11 +10219,23 @@
       "Enable manually": [
         "Manuell aktivieren"
       ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Sobald der Nutzer zustimmt, kannst du ihm helfen, wieder Zugang zu seinem Konto zu erhalten oder seine Daten zu verwalten."
+      ],
+      "Organization key must be activated to request data access": [
+        "Der Organisationsschlüssel muss aktiviert werden, um den Datenzugang zu beantragen"
+      ],
       "Pending admin access": [
         "Admin-Zugriff ausstehend"
       ],
       "Private user": [
         "Privater Benutzer"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Antrag auf Kontoverwaltung gesendet, Genehmigung des Benutzers steht noch aus"
+      ],
+      "Request user permission for data access": [
+        "Fordere die Benutzererlaubnis für den Datenzugriff an."
       ],
       "Revoke access": [
         "Zugriff entfernen"
@@ -10213,6 +10245,18 @@
       ],
       "Send request": [
         "Anfrage senden"
+      ],
+      "The user must have an address to request data access": [
+        "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Dadurch wird die ausstehende Anfrage für den Administratorzugriff auf die Daten des Benutzers oder das Zurücksetzen des Passworts gelöscht."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Dadurch wird dem Administrator die Berechtigung entzogen, das Konto dieses Benutzers zu verwalten."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Um fortzufahren, musst du die Erlaubnis des Benutzers anfordern, um auf seine Daten zuzugreifen oder sein Passwort zurückzusetzen."
       ]
     },
     "upsell panel": {

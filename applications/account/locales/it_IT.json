@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -796,11 +796,14 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
+      "refresh the page": [
+        "aggiorna la pagina"
+      ],
       "Refresh the page": [
         "Aggiorna la pagina"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
+      "Reject": [
+        "Rifiuta"
       ],
       "Reload": [
         "Ricarica"
@@ -1188,9 +1191,6 @@
       ],
       "Verify": [
         "Verifica"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Verifica ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Verifica account"
@@ -1604,14 +1604,6 @@
         "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB di spazio di archiviazione (2 volte di più rispetto a qualsiasi altro piano)"
@@ -1633,6 +1625,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Il piano ${ plan } è tornato, ma solo per un periodo di tempo limitato"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7111,11 +7111,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "dedicated servers": [
-        "server dedicati"
-      ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "dedicated servers": [
+        "server dedicati"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Cancelli ogni altro record MX oppure si assicuri che la priorità di ${ MAIL_APP_NAME } sia il numero minimo."
@@ -8417,9 +8417,6 @@
       "This is an encryption key you may have previously saved.": [
         "Questa è una chiave di crittografia che potresti aver salvato in precedenza."
       ],
-      "This is an invitation from:": [
-        "Questo è un invito da:"
-      ],
       "This is the password you used before the password reset.": [
         "Questa è la password che hai usato prima della reimpostazione della password."
       ],
@@ -8680,6 +8677,9 @@
       ],
       "User activated": [
         "Utente attivato"
+      ],
+      "Username": [
+        "Nome utente"
       ],
       "username": [
         "nome utente"
@@ -10088,6 +10088,9 @@
       "Filter Name": [
         "Nome del filtro"
       ],
+      "First name": [
+        "Nome"
+      ],
       "Folder location": [
         "Percorso cartella"
       ],
@@ -10189,6 +10192,9 @@
       ],
       "Last month only": [
         "Solo il mese scorso"
+      ],
+      "Last name": [
+        "Cognome"
       ],
       "Level for NetShield blocker filtering": [
         "Livello di filtro per NetShield"
@@ -11498,32 +11504,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Inizia per ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "A partire da ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua Gratis"
@@ -11551,6 +11531,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Inizia per ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partire da ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12229,23 +12235,6 @@
         "Il tuo piano selezionato: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Ottieni Mail Plus per ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partire da ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -12264,6 +12253,23 @@
       ],
       "Unlock premium features by upgrading": [
         "Sblocca le funzionalità premium effettuando l'upgrade"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Ottieni Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partire da ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -12366,9 +12372,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Strumento di gestione dell'organizzazione che consente agli amministratori di aggiungere e rimuovere utenti, assegnare lo spazio di archiviazione, configurare i domini ed eseguire altre attività"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra solida infrastruttura ti assicura che sarai in grado di accedere al tuo account quando ne hai bisogno"
@@ -14385,12 +14388,6 @@
       "For security reasons, the token is hidden": [
         "Per motivi di sicurezza, il token è nascosto"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Accedi al tuo provider di identità, copia e incolla i dati seguenti e completa la configurazione di SCIM per ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Accedi al tuo provider di identità, copia e incolla il token seguente e riattiva SCIM per ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Se hai perso o dimenticato il token SCIM, puoi generarne uno nuovo, ma tieni presente che le impostazioni del tuo provider di identità dovranno essere aggiornate."
       ],
@@ -14399,9 +14396,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Una volta disabilitato SCIM per la tua organizzazione, **tutti gli utenti SCIM forniti automaticamente dal tuo provider di identità verranno convertiti in utenti SSO** e potrai gestirli direttamente nelle impostazioni di ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Semplifica la gestione degli utenti tra diversi servizi. Aggiungi, modifica e rimuovi utenti nel tuo provider di identità: queste modifiche verranno automaticamente applicate alla tua organizzazione ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Il provisioning automatico di SCIM sarà disabilitato finché non inserirai il nuovo token SCIM nelle impostazioni del tuo provider di identità."
@@ -15161,6 +15155,16 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita gli amici su ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } ha richiesto il tuo aiuto per accedere.",
+        "${ n } hanno richiesto il tuo aiuto per accedere."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } utente si è unito alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:",
+        "${ n } utenti si sono uniti alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:"
       ]
     },
     "State": {
@@ -16294,6 +16298,9 @@
       "Action": [
         "Azione"
       ],
+      "Actions": [
+        "Azioni"
+      ],
       "Activate @pm.me": [
         "Attiva @pm.me"
       ],
@@ -16430,11 +16437,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-All address": [
-        "Indirizzi catch-all"
-      ],
       "Catch-all address": [
         "Indirizzi Catch-all"
+      ],
+      "Catch-All address": [
+        "Indirizzi catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
@@ -16533,6 +16540,9 @@
       "Create your ${ BRAND_NAME } address": [
         "Crea il tuo indirizzo ${ BRAND_NAME }"
       ],
+      "Created": [
+        "Creazione"
+      ],
       "Creating user accounts": [
         "Creazione degli account utente"
       ],
@@ -16629,6 +16639,9 @@
       ],
       "Details": [
         "Dettagli"
+      ],
+      "Device": [
+        "Dispositivo"
       ],
       "Device connected!": [
         "Dispositivo connesso!"
@@ -16959,6 +16972,9 @@
       "My calendars": [
         "I miei calendari"
       ],
+      "Name": [
+        "Nome"
+      ],
       "Need more labels or folders?": [
         "Ti servono più etichette o cartelle?"
       ],
@@ -17064,6 +17080,9 @@
       "Profile": [
         "Profilo"
       ],
+      "QR Code": [
+        "Codice QR"
+      ],
       "Ready, set, forward": [
         "Pronti, partenza, via"
       ],
@@ -17093,6 +17112,9 @@
       ],
       "Remove calendar": [
         "Rimuovi calendario"
+      ],
+      "Remove device?": [
+        "Rimuovere il dispositivo?"
       ],
       "Remove domain": [
         "Rimuovi dominio"
@@ -17220,9 +17242,6 @@
       "Sign in to join the Beta program": [
         "Accedi per partecipare al programma Beta"
       ],
-      "Sign in to your organization": [
-        "Accedi alla tua organizzazione"
-      ],
       "Sign out": [
         "Esci dall'account"
       ],
@@ -17252,6 +17271,9 @@
       ],
       "Start import process": [
         "Avvia il processo d'importazione"
+      ],
+      "State": [
+        "Stato"
       ],
       "Status": [
         "Stato"
@@ -17776,10 +17798,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } utenti si sono uniti alla tua organizzazione tramite il tuo provider di identità. Approva o rifiuta i loro account adesso:",
-        "${ n } utenti si sono uniti alla tua organizzazione tramite il tuo provider di identità. Approva o rifiuta i loro account adesso:"
-      ],
       "Administrator access enabled": [
         "Accesso amministratore abilitato"
       ],
@@ -18235,6 +18253,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME } è in Accesso Anticipato. Puoi scaricare l'app iOS tramite Apple TestFlight e l'app Android tramite Google Test Aperti."
+      ],
       "Coming soon": [
         "In arrivo"
       ]

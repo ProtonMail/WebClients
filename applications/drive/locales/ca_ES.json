@@ -352,7 +352,7 @@
         "Amplia la carpeta"
       ],
       "Explore on my own": [
-        "Explorar pel vostre compte"
+        "Vull explorar pel meu compte"
       ],
       "Explore while you wait": [
         "Exploreu mentre espereu"
@@ -2294,6 +2294,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
@@ -2345,11 +2350,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3961,6 +3961,9 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mes)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
       ],
@@ -4065,7 +4068,7 @@
         "Segur que voleu eliminar completament de la paperera els elements seleccionats?"
       ],
       "Are you sure you want to proceed?": [
-        "Esteu segur que voleu procedir?"
+        "Segur que voleu procedir?"
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
@@ -5529,6 +5532,12 @@
       "Add to group": [
         "Afegeix al grup"
       ],
+      "Address": [
+        "Adreça"
+      ],
+      "Anderson": [
+        "Pujol"
+      ],
       "Anyone on the Internet with the link can view": [
         "Qualsevol persona a Internet amb l'enllaç pot visualitzar-ho"
       ],
@@ -5615,6 +5624,9 @@
       ],
       "Comment": [
         "Comentari"
+      ],
+      "Company name": [
+        "Nom de l'empresa"
       ],
       "Confirm password": [
         "Confirmeu la contrasenya"
@@ -5740,6 +5752,9 @@
       "File name": [
         "Nom del fitxer"
       ],
+      "First name": [
+        "Nom"
+      ],
       "Folder": [
         "Carpeta"
       ],
@@ -5760,6 +5775,9 @@
       ],
       "I understand the risk": [
         "Entenc el risc"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -5799,6 +5817,9 @@
       ],
       "Last month only": [
         "Només el darrer mes"
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Location": [
         "Ubicació"
@@ -5994,6 +6015,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Això eliminarà de manera permanent tots els fitxers de la vostra unitat bloquejada."
+      ],
+      "Thomas": [
+        "Adrià"
       ],
       "Title": [
         "Títol"
@@ -6370,6 +6394,9 @@
       "Graphics Interchange Format (GIF)": [
         "Format d'intercanvi de gràfics (GIF)"
       ],
+      "GZip Archive": [
+        "Arxiu GZip"
+      ],
       "HyperText Markup Language (HTML)": [
         "Llenguatge d'etiquetatge d'hipertext (HTML)"
       ],
@@ -6387,6 +6414,9 @@
       ],
       "Java Archive (JAR)": [
         "Arxiu Java (JAR)"
+      ],
+      "JPEG image": [
+        "Imatge JPEG"
       ],
       "MP3 audio": [
         "Àudio MP3"
@@ -6767,7 +6797,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb un missatge"
+        "Genera correus electrònics amb una petició"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -6893,6 +6923,9 @@
       ],
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
@@ -7076,14 +7109,6 @@
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Obtingueu el Mail Plus per ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Comenceu des de ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -7096,6 +7121,14 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtingueu el Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Comenceu des de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7192,9 +7225,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Eina de gestió d'organitzacions que permet als administradors afegir i esborrar usuaris, assignar emmagatzematge, configurar dominis i acomplir altres tasques."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra robusta infraestructura garanteix que podreu accedir al vostre compte quan ho necessiteu"
@@ -7623,7 +7653,7 @@
         "Instal·la més tard"
       ],
       "Invite members": [
-        "Invite members"
+        "Convideu els membres."
       ],
       "Maybe later": [
         "Potser després"
@@ -7655,10 +7685,10 @@
     },
     "Onboarding Info": {
       "Collaborate on documents": [
-        "Col·labora en documents"
+        "Col·laboreu en documents"
       ],
       "Drag and drop your files here": [
-        "Arrossega i deixa anar els vostres fitxers aquí"
+        "Arrossegueu i deixeu anar els vostres fitxers aquí"
       ],
       "Edit documents online": [
         "Editeu documents en línia"
@@ -7837,6 +7867,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferència bancària"
+      ],
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
@@ -9997,6 +10030,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
+      ],
+      "Shared with end-to-end encryption": [
+        "Compartit amb xifratge d'extrem a extrem"
       ],
       "Show side panel": [
         "Mostra el panell lateral"
