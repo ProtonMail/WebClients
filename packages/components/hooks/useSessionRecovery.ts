@@ -4,6 +4,7 @@ import { differenceInMilliseconds } from 'date-fns';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useSessionRecoveryLocalStorage } from '@proton/components/containers/account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import { useInterval } from '@proton/hooks';
 import { APPS, DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
@@ -13,7 +14,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import useAuthentication from './useAuthentication';
 import useConfig from './useConfig';
-import useUserSettings from './useUserSettings';
 
 export const useIsSessionRecoveryInitiatedByCurrentSession = () => {
     const [user] = useUser();

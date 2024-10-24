@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { type FC, useEffect, useMemo, useState } from 'react';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { ModalStateProps } from '@proton/components';
 import {
     Loader,
@@ -9,7 +10,6 @@ import {
     ModalTwoFooter,
     useApi,
     useDrivePlan,
-    useUserSettings,
     useWelcomeFlags,
 } from '@proton/components';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';

@@ -1,11 +1,11 @@
-import { useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 
 import { render } from 'proton-mail/helpers/test/render';
 
 import AccountsLoginModal from './AccountsLoginModal';
 import { getOnlineServices } from './getOnlineServices';
 
-jest.mock('@proton/components/hooks/useUserSettings');
+jest.mock('@proton/account/userSettings/hooks');
 const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
 
 describe('AccountsLoginModal', () => {

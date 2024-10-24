@@ -2,14 +2,14 @@ import { render } from '@testing-library/react';
 import { nextFriday, nextMonday, nextSaturday, nextSunday, nextThursday, nextTuesday, nextWednesday } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 
 import SnoozeDurationSelection from './SnoozeDurationSelection';
 
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/components/hooks/useUserSettings');
+jest.mock('@proton/account/userSettings/hooks');
 
 const renderComponent = (canUnsnooze: boolean) => {
     return render(

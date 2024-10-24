@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms';
 import { Icon, SettingsLink } from '@proton/components';
-import { useUserSettings } from '@proton/components/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';

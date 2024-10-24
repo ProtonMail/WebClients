@@ -4,8 +4,9 @@ import { memo, useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { EditorMetadata } from '@proton/components';
-import { DropdownMenuButton, Icon, useUserSettings } from '@proton/components';
+import { DropdownMenuButton, Icon } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';

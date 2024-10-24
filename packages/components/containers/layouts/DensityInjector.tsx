@@ -1,8 +1,7 @@
 import { useLayoutEffect } from 'react';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
-
-import { useUserSettings } from '../../hooks';
 
 const { COMPACT, COMFORTABLE } = DENSITY;
 

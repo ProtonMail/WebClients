@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
@@ -14,7 +15,7 @@ import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import { getDefaultWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import { useNotifications, useUserSettings } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 interface Props {
     className?: string;

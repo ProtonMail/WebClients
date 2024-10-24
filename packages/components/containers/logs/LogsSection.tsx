@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Icon from '@proton/components/components/icon/Icon';
@@ -28,7 +29,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 
-import { useModals, useUserSettings } from '../../hooks';
+import { useModals } from '../../hooks';
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
 import { getAllAuthenticationLogs } from './helper';

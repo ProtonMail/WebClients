@@ -1,5 +1,5 @@
 import { useUser } from '@proton/account/user/hooks';
-import { useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { getIsAssistantOpened } from '@proton/llm/lib';
 import type { OpenedAssistant } from '@proton/llm/lib/types';

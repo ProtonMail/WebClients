@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
+import { useGetUserSettings, useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
@@ -15,7 +16,6 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
 import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
-import { useGetUserSettings } from '@proton/components/hooks/useUserSettings';
 import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -24,7 +24,7 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
-import { useGetUserKeys, useUserSettings } from '../../hooks';
+import { useGetUserKeys } from '../../hooks';
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

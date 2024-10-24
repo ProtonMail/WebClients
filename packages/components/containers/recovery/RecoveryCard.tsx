@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { ButtonLike, Href } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
@@ -23,7 +24,6 @@ import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useUserSettings } from '../../hooks';
 import type { RecoveryCardStatusProps } from './RecoveryCardStatus';
 import RecoveryCardStatus from './RecoveryCardStatus';
 import getSentinelRecoveryProps from './getSentinelRecoveryProps';

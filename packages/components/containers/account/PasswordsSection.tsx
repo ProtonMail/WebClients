@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
@@ -14,7 +15,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
 
-import { useUserSettings } from '../../hooks';
 import { useAvailableRecoveryMethods, useIsSessionRecoveryInitiationAvailable } from '../../hooks/useSessionRecovery';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';

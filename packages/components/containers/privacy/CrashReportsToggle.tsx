@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -8,7 +9,7 @@ import { updateCrashReports } from '@proton/shared/lib/api/settings';
 import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useUserSettings } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 interface Props {
     id?: string;

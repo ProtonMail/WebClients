@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
 import { Icon, useApi, useEventManager, useSpotlightOnFeature } from '@proton/components';
-import { useNotifications, useUserSettings } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useAssistantSubscriptionStatus, {
     ASSISTANT_TRIAL_TIME_DAYS,
 } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
