@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -769,11 +769,14 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
+      "refresh the page": [
+        "frissítse az oldalt"
+      ],
       "Refresh the page": [
         "Oldal frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
+      "Reject": [
+        "Elutasítás"
       ],
       "Reload": [
         "Újratöltés"
@@ -1140,9 +1143,6 @@
       ],
       "Verify": [
         "Ellenőrzés"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "${ unverifiedSSODomain.DomainName } ellenőrzése"
       ],
       "Verify account": [
         "Fiók ellenőrzése"
@@ -1523,14 +1523,6 @@
         "Válassza ki az Új évi ajánlatát"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Sajnos ez a ajánlat nem elérhető a jelenlegi előfizetésével. De megtud takarítani **${ discountPercentage } a ${ plan.Title }** vásárlásakkor ha előfizet **${ months }**"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB tárhely (2x több mint bármelyik másik előfizetésben)"
@@ -1552,6 +1544,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "A ${ plan } előfizetés vissza jött ideiglenesen"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Sajnos ez a ajánlat nem elérhető a jelenlegi előfizetésével. De megtud takarítani **${ discountPercentage } a ${ plan.Title }** vásárlásakkor ha előfizet **${ months }**"
       ]
     },
     "bf2023: Offers": {
@@ -7808,9 +7808,6 @@
       "This is an encryption key you may have previously saved.": [
         "Ez egy titkosítási kulcs amelyet korábban lementhetett."
       ],
-      "This is an invitation from:": [
-        "Ez egy meghívó a következőtől:"
-      ],
       "This is the password you used before the password reset.": [
         "Ez az a jelszó, amelyet a jelszó visszaállítása előtt használt."
       ],
@@ -9370,6 +9367,9 @@
       "Filter Name": [
         "Szűrő neve"
       ],
+      "First name": [
+        "Keresztnév"
+      ],
       "Folder location": [
         "Mappa helye"
       ],
@@ -9465,6 +9465,9 @@
       ],
       "Last month only": [
         "Csak az utolsó hónap"
+      ],
+      "Last name": [
+        "Vezetéknév"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield blokkoló szűrési szintje"
@@ -10688,23 +10691,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -10732,6 +10718,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -11299,14 +11302,6 @@
         "A választott csomagja: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -11325,6 +11320,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -11388,9 +11391,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Lehetőség van a nem-privát felhasználók levelezésének megnyitására, ahogy a felhasználó látja, beleértve az üzenetek és a névjegyek részleteit"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Szervezeti karbantartási eszköz, amellyel az adminisztrátor létrehozhat vagy törölhet felhasználókat, tárhelyet oszthat szét, domain neveket állíthat be és egyéb feladatokat végezhet"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nagyteljesítményű infrastruktúránk biztosítja, hogy mindig elérhesse a fiókját amikor szüksége van rá"
@@ -14843,10 +14843,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -14936,6 +14936,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "Hozza létre saját ${ BRAND_NAME } címét"
+      ],
+      "Created": [
+        "Létrehozva"
       ],
       "Creating user accounts": [
         "Új felhasználói fiókok létrehozása"
@@ -15321,6 +15324,9 @@
       "My calendars": [
         "Saját naptárak"
       ],
+      "Name": [
+        "Név"
+      ],
       "Network error": [
         "Hálózati hiba"
       ],
@@ -15441,6 +15447,9 @@
       "Remove calendar": [
         "Naptár eltávolítása"
       ],
+      "Remove device?": [
+        "Eszköz eltávolítása?"
+      ],
       "Remove user?": [
         "Felhasználó eltávolítása?"
       ],
@@ -15545,9 +15554,6 @@
       ],
       "Sign in to join the Beta program": [
         "Jelentkezzen be a Béta programhoz való csatlakozáshoz"
-      ],
-      "Sign in to your organization": [
-        "Jelentkezzen be a szervezetébe"
       ],
       "Sign out": [
         "Kijelentkezés"

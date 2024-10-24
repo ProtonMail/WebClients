@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -793,11 +793,14 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
+      "refresh the page": [
+        "pagina vernieuwen"
+      ],
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
+      "Reject": [
+        "Afwijzen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -1589,14 +1592,6 @@
         "Selecteer uw eindejaarsaanbieding"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB opslagruimte (2x meer dan binnen elk ander abonnement)"
@@ -1618,6 +1613,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Het ${ plan }-abonnement is tijdelijk terug"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6995,11 +6998,11 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Verwijder alle andere MX records of zorg ervoor dat ${ MAIL_APP_NAME } zijn prioriteit het laagste getal is."
@@ -8253,9 +8256,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Dit is een coderingssleutel die u misschien eerder hebt opgeslagen."
-      ],
-      "This is an invitation from:": [
-        "Dit is een uitnodiging van:"
       ],
       "This is the password you used before the password reset.": [
         "Dit is het wachtwoord dat u gebruikte vóór de wachtwoordreset."
@@ -9876,6 +9876,9 @@
       "Filter Name": [
         "Filternaam"
       ],
+      "First name": [
+        "Voornaam"
+      ],
       "Folder location": [
         "Map locatie"
       ],
@@ -9974,6 +9977,9 @@
       ],
       "Last month only": [
         "Alleen vorige maand"
+      ],
+      "Last name": [
+        "Achternaam"
       ],
       "Level for NetShield blocker filtering": [
         "Niveau voor NetShield blokkeerfiltering"
@@ -10192,7 +10198,7 @@
         "2FA vereisen voor beheerders"
       ],
       "Require 2FA for everyone": [
-        "2FA vereisejn voor iedereen"
+        "2FA vereisen voor iedereen"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -11262,32 +11268,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Begin voor ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Vanaf ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Doorgaan met gratis"
@@ -11315,6 +11295,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Begin voor ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Vanaf ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade naar ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11993,20 +11999,6 @@
         "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -12025,6 +12017,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -12127,9 +12133,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Tool voor organisatiebeheer waarmee beheerders gebruikers kunnen toevoegen en verwijderen, opslagruimte kunnen toewijzen, domeinen kunnen configureren en andere taken kunnen uitvoeren"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
@@ -13906,12 +13909,6 @@
       "For security reasons, the token is hidden": [
         "Om veiligheidsredenen is de token verborgen"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Ga naar uw identiteitsprovider, kopieer en plak de gegevens hieronder en voltooi de configuratie van SCIM voor ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Ga naar uw identiteitsprovider, kopieer en plak de token hieronder en schakel SCIM voor ${ VPN_APP_NAME } opnieuw in."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Als u de SCIM-token bent vergeten of verloren, kunt u een nieuwe genereren, maar wees ervan bewust dat uw identiteitsprovider instellingen zullen moeten worden bijgewerkt."
       ],
@@ -13920,9 +13917,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM-gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO-gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Vereenvoudigt gebruikersbeheer over verschillende diensten. Voeg toe, bewerk en verwijder gebruikers in uw identiteitsprovider, en deze wijzigingen zullen automatisch worden toegepast op uw ${ VPN_APP_NAME } organisatie."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "De automatische bepaling van SCIM wordt uitgeschakeld totdat u de nieuwe SCIM-token in de instellingen van uw identiteit provider invoert."
@@ -15910,11 +15904,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -16009,6 +16003,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "Maak uw ${ BRAND_NAME }-adres aan"
+      ],
+      "Created": [
+        "Aangemaakt"
       ],
       "Creating user accounts": [
         "Gebruikersaccounts aan het maken"
@@ -16427,6 +16424,9 @@
       "My calendars": [
         "Mijn agenda's"
       ],
+      "Name": [
+        "Naam"
+      ],
       "Need more labels or folders?": [
         "Meer labels of mappen nodig?"
       ],
@@ -16556,6 +16556,9 @@
       "Remove calendar": [
         "Agenda verwijderen"
       ],
+      "Remove device?": [
+        "Apparaat verwijderen?"
+      ],
       "Remove domain": [
         "Verwijder bestand"
       ],
@@ -16675,9 +16678,6 @@
       ],
       "Sign in to join the Beta program": [
         "Log in om deel te nemen aan het Bèta programma"
-      ],
-      "Sign in to your organization": [
-        "Aanmelden bij uw organisatie"
       ],
       "Sign out": [
         "Uitloggen"

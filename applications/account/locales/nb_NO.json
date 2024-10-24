@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -180,6 +180,9 @@
       ],
       "Back": [
         "Tilbake"
+      ],
+      "Back to sign-in": [
+        "Tilbake til pålogging"
       ],
       "Block": [
         "Blokkér"
@@ -308,7 +311,7 @@
         "Opprett mappe"
       ],
       "Create Gateway": [
-        "Opprett mellomtjener"
+        "Opprett porttjener"
       ],
       "Create label": [
         "Opprett etikett"
@@ -350,7 +353,7 @@
         "Slett og bekreft"
       ],
       "Delete Gateway": [
-        "Slett mellomtjener"
+        "Slett porttjener"
       ],
       "Delete group": [
         "Slett gruppe"
@@ -378,6 +381,9 @@
       ],
       "Delete your account": [
         "Slett kontoen din"
+      ],
+      "Deny access": [
+        "Nekt tilgang"
       ],
       "Details": [
         "Detaljer"
@@ -443,7 +449,7 @@
         "Rediger e-postadresse"
       ],
       "Edit Gateway": [
-        "Rediger mellomtjener"
+        "Rediger porttjener"
       ],
       "Edit group": [
         "Rediger gruppe"
@@ -661,6 +667,9 @@
       "Leave": [
         "Forlat"
       ],
+      "Leave group": [
+        "Forlat gruppen"
+      ],
       "Let's talk": [
         "La oss snakke"
       ],
@@ -796,11 +805,14 @@
       "Refresh status": [
         "Oppdater status"
       ],
+      "refresh the page": [
+        "oppdater siden"
+      ],
       "Refresh the page": [
         "Oppdater siden"
       ],
-      "refresh the page": [
-        "oppdater siden"
+      "Reject": [
+        "Avvis"
       ],
       "Reload": [
         "Last inn på nytt"
@@ -810,6 +822,9 @@
       ],
       "Remove all members": [
         "Fjern alle medlemmer"
+      ],
+      "Remove all other devices": [
+        "Fjern alle andre enheter"
       ],
       "Remove bonuses": [
         "Fjern bonuser"
@@ -1189,9 +1204,6 @@
       "Verify": [
         "Verifiser"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Verifiser ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Verifiser konto"
       ],
@@ -1203,6 +1215,9 @@
       ],
       "Verify domain": [
         "Verifiser domene"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Verifiser domenet ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Vis"
@@ -1604,14 +1619,6 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1633,6 +1640,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4396,13 +4411,13 @@
         "IMAP-tjener kreves"
       ],
       "Impossible to create the gateway": [
-        "Umulig å opprette mellomtjeneren"
+        "Umulig å opprette porttjeneren"
       ],
       "Impossible to edit the gateway": [
-        "Umulig å redigere mellomtjeneren"
+        "Umulig å redigere porttjeneren"
       ],
       "Impossible to rename the gateway": [
-        "Umulig å gi mellomtjeneren nytt navn"
+        "Umulig å gi porttjeneren nytt navn"
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "Feil filtype. Last opp en fil i PNG- eller JPEG-format."
@@ -4547,8 +4562,8 @@
         "Vennligst aktiver støtte for flere brukere før du legger brukere til din organisasjon."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Vennligst løs den uthevede konflikten for å fortsette.",
-        "Vennligst løs de uthevede konfliktene for å fortsette."
+        "Løs den uthevede konflikten for å fortsette.",
+        "Løs de uthevede konfliktene for å fortsette."
       ],
       "Please generate keys before you try to change your password": [
         "Vennligst generer nøkler før du prøver å endre passordet"
@@ -4993,7 +5008,7 @@
         "Åpne i nettleser"
       ],
       "Please refresh the page or try again later.": [
-        "Vennligst oppdater siden eller forsøk igjen senere."
+        "Oppdater siden eller forsøk igjen senere."
       ],
       "Something went wrong": [
         "Noe gikk galt"
@@ -5005,7 +5020,7 @@
         "For å bruke ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }, bytt til nettversjonen."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Vi kunne ikke laste denne siden. Vennligst oppdater siden eller undersøk internettforbindelsen din."
+        "Vi kunne ikke laste denne siden. Oppdater siden eller undersøk internettforbindelsen din."
       ]
     },
     "Error message, Disable account": {
@@ -5513,7 +5528,7 @@
         "Vennligst deaktiver 2FA via sikkerhetsnøkkelen før deaktivering av TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Vennligst prøv på nytt."
+        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Noe gikk galt da du registrerte sikkerhetsnøkkelen din. Vennligst forsøk igjen."
@@ -6180,7 +6195,7 @@
         "Hendelsene er importert. De importerte hendelsene vises nå i kalenderen din."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Vennligst ikke lukk fanen før importen er fullført."
+        "Ikke lukk fanen før importprosessen er fullført."
       ]
     },
     "Import calendar warning": {
@@ -6684,6 +6699,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "En gjenopprettingsfil lar deg låse opp og se dine data etter en gjenoppretting av konto."
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "En gjenopprettingsfrase lar deg få tilgang til kontoen din og gjenopprette krypterte meldinger hvis du glemmer passordet ditt."
       ],
@@ -6694,7 +6712,7 @@
         "Få tilgang til passordene dine og beskytt nettidentitetene sømløst på tvers av enhetene. Last ned og installer de relevante ${ PASS_APP_NAME }-appene og utvidelsene."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Kontotilgang begrenset på grunn av ubetalte fakturaer. Vennligst kontakt systemansvarlig."
+        "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
       ],
       "account recovery and data recovery method": [
         "kontogjenoppretting og datagjenopprettingsmetode"
@@ -6752,12 +6770,12 @@
         "Legg til navn og logo for å opprette en mer personlig opplevelse for organisasjonen."
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "Legger til ${ addedServerCount } mellomtjener",
-        "Legger til ${ addedServerCount } mellomtjenere"
+        "Legger til ${ addedServerCount } porttjener",
+        "Legger til ${ addedServerCount } porttjenere"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Legger til mellomtjener: ${ serverNumber } / ${ total }",
-        "Legger til mellomtjenere: ${ serverNumber } / ${ total }"
+        "Legger til porttjener: ${ serverNumber } / ${ total }",
+        "Legger til porttjenere: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Ytterligere alternativer"
@@ -6877,6 +6895,9 @@
       "Are you sure you want to give administrative privileges to this user?": [
         "Er du sikker på at du vil gi administrative rettigheter til denne brukeren?"
       ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "Er du sikker på at du vil forlate denne gruppen? Hvis du slutter, må du bli invitert på nytt av gruppeadministratoren for å bli med igjen."
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Er du sikker på at du vil slette alle loggene dine permanent?"
       ],
@@ -6890,7 +6911,7 @@
         "Er du sikker på at du ønsker å fjerne domenet ${ boldDomain }?"
       ],
       "Ask your organization admin to setup Gateways.": [
-        "Be organisasjonsadministratoren om å konfigurere mellomtjenere."
+        "Be organisasjonsadministratoren om å konfigurere porttjenere."
       ],
       "Attention required": [
         "Oppmerksomhet kreves"
@@ -7063,11 +7084,11 @@
         "Opprett i"
       ],
       "Create your first Gateway": [
-        "Opprett din første mellomtjener"
+        "Opprett din første porttjener"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Oppretter mellomtjener: ${ serverNumber } / ${ total }",
-        "Oppretter mellomtjenere: ${ serverNumber } / ${ total }"
+        "Oppretter porttjener: ${ serverNumber } / ${ total }",
+        "Oppretter porttjenere: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Oppretter kontoen din"
@@ -7111,11 +7132,14 @@
       "Data locked": [
         "Data låst"
       ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
+      ],
       "dedicated servers": [
         "dedikerte tjenere"
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slett andre MX-poster, eller kontroller at ${ MAIL_APP_NAME }s prioritet har det laveste tallet."
@@ -7124,8 +7148,8 @@
         "Slett kobling?"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "Sletter ${ deletedServerCount } mellomtjener",
-        "Sletter ${ deletedServerCount } mellomtjenere"
+        "Sletter ${ deletedServerCount } porttjener",
+        "Sletter ${ deletedServerCount } porttjenere"
       ],
       "Disable recovery by ${ type }": [
         "Dekativer gjenoppretting etter ${ type }"
@@ -7308,6 +7332,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Skriv inn gjenopprettingsfrasen for å endre passordet ditt nå."
       ],
+      "Event invitations and responses will be sent in this language.": [
+        "Hendelseinvitasjoner og responser vil bli sendt på dette språket."
+      ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Hendelser inkluderer autentiseringsforsøk for alle ${ BRAND_NAME }-tjenester som bruker ${ BRAND_NAME_TWO }-legitimasjonen din."
       ],
@@ -7357,13 +7384,13 @@
         "frigjøre plass ved å slette eldre meldinger eller annen data"
       ],
       "Gateways": [
-        "Mellomtjenere"
+        "Porttjenere"
       ],
       "Gateways monitoring is disabled.": [
-        "Overvåking av mellomtjenere er deaktivert."
+        "Overvåking av porttjenere er deaktivert."
       ],
       "Gateways monitoring is enabled.": [
-        "Overvåking av mellomtjenere er aktivert."
+        "Overvåking av porttjenere er aktivert."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generering av ny gjenopprettingsfrase vil deaktivere den gamle."
@@ -7417,7 +7444,7 @@
         "Hvis dette alternativet er aktivert, kan organisasjonsmedlemmer bare dele hvelv innen organisasjonen"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Hvis du har problemer med å opprette kontoen din, vennligst be om en invitasjon og vi vil svare innen en arbeidsdag."
+        "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "Hvis du er logget på et annet sted, kan du kanskje ${ signedInPasswordResetLink }."
@@ -7429,7 +7456,7 @@
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Hvis du ikke finner e-posten i innboksen din, vennligst sjekk søppelposten."
+        "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Hvis du har et egendefinert domene med ${ MAIL_APP_NAME }, kan du sette opp en catch-all-e-postadresse for å motta meldinger sendt til ditt domene, men til en ugyldig e-postadresse (f.eks. på grunn av skrivefeil)."
@@ -7439,6 +7466,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Hvis du aldri har brukt tofaktorautentisering før, anbefaler vi deg sterkt ${ guideButton }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Hvis du mister passordet og behøver å gjenopprette kontoen din, ${ boldImperative } at du har en ${ boldAccountRecovery } på plass."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Hvis du mister passordet ditt og trenger å gjenopprette kontoen din, ${ boldImperative } at du har både en ${ boldAccountAndRecovery } på plass, ellers kan du kanskje ikke få tilgang til noen av e-postene, kontaktene eller filene dine."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Hvis du mister den tofaktoraktiverte enheten din, kan disse kodene brukes i stedet for den 6-sifrede tofaktorautentiseringskoden for å logge på kontoen din. Hver kode kan bare brukes én gang."
@@ -7541,7 +7574,7 @@
         "Mistet internettilkobling"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internettilkobling tapt, vennligst kontroller enhetens tilkobling."
+        "Internett-tilkoblingen tapt. Sjekk enhetens tilkobling."
       ],
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
@@ -7667,8 +7700,14 @@
       "Learn more": [
         "Lær mer"
       ],
+      "Learn more about Gateways": [
+        "Lær mer om porttjenere"
+      ],
       "learn more about Sieve programming language": [
         "lær mer om Sieve-programmeringsspråk"
+      ],
+      "Learn more about single sign-on": [
+        "Lær mer om enkel pålogging"
       ],
       "Left to Right": [
         "Venstre til høyre"
@@ -7710,7 +7749,7 @@
         "Laster inn kalender, vennligst vent. Du vil bli omdirigert til vår planleggingsplattform Calendly i en ny fane."
       ],
       "Loading gateways monitoring current status.": [
-        "Laster mellomtjenere som overvåker gjeldende status."
+        "Laster porttjenere som overvåker gjeldende status."
       ],
       "Loading preview": [
         "Laster forhåndsvisning"
@@ -7809,10 +7848,10 @@
         "Ingen mappe valgt"
       ],
       "No gateways": [
-        "Ingen mellomtjenere"
+        "Ingen porttjenere"
       ],
       "No Gateways yet": [
-        "Ingen mellomtjenere enda"
+        "Ingen porttjenere enda"
       ],
       "No imports or forwarding history.": [
         "Ingen importer eller videresendingshistorikk."
@@ -7874,7 +7913,7 @@
         "Organisasjonsstørrelse"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
-        "Organiser dine dedikerte tjenere i mellomtjenere og bestem hvilke medlemmer som kan få tilgang til dem."
+        "Organiser dine dedikerte tjenere i porttjenere og bestem hvilke medlemmer som kan få tilgang til dem."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Andre administratorer finnes i organisasjonen din, du er ansvarlig for å kommunisere det nye passordet til dem."
@@ -7970,25 +8009,28 @@
         "Vennligst angi gjenopprettingsfrasen bestående av 12 ord som er tilknyttet din konto."
       ],
       "Please fill out this field.": [
-        "Vennligst fyll ut dette feltet."
+        "Fyll ut dette feltet."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Vennligst ta godt vare på den. Du trenger den for å få tilgang til kontoen din og dekryptere dine data i tilfelle en tilbakestilling av passord."
       ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Vær oppmerksom på at hvis du sletter filteret, ${ nameDeleted }, slutter vi å behandle alle de automatiserte handlingene det utløser."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Vennligst vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ remainingCreditsFormatted } kreditter igjen."
+        "Vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ remainingCreditsFormatted } kreditter igjen."
       ],
       "please open a support ticket": [
         "vennligst åpne en støtteforespørsel"
       ],
       "Please open the document to view it.": [
-        "Vennligst åpne dokumentet for å se det."
+        "Åpne dokumentet for å se det."
       ],
       "Please select the folders you would like to import:": [
-        "Vennligst velg hvilke mapper du ønsker å importere:"
+        "Velg mappene du vil importere:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Vennligst velg hvilken type kobling du vil sette inn og fyll ut alle felt."
+        "Velg hvilken type kobling du vil sette inn og fyll ut alle felt."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Vennligst prøv igjen ved å bruke en annen betalingsmåte eller kontakt banken din."
@@ -7997,13 +8039,13 @@
         "Vennligst prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
       ],
       "Please use another browser or download the file.": [
-        "Vennligst bruk en annen nettleser eller last ned filen."
+        "Bruk en annen nettleser eller last ned filen."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Vennligst bekreft betaling i den nye fanen som ble åpnet."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Vennligst vent til endringene dine er synkronisert med tjeneren."
+        "Vent til endringene dine er synkronisert med tjeneren."
       ],
       "Plus ${ numOfBreaches } more": [
         "Pluss ${ numOfBreaches } til"
@@ -8180,7 +8222,7 @@
         "Tjenerbelastning"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Vennligst prøv på nytt om noen få minutter."
+        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -8295,7 +8337,7 @@
         "Sveitsisk basert"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Midlertidig utilgjengelig. Vennligst kom tilbake senere."
+        "Midlertidig utilgjengelig. Kom tilbake senere."
       ],
       "Test link": [
         "Testkobling"
@@ -8360,6 +8402,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Gruppefunksjonen støttes ikke på det gjeldende abonnementet. Tidligere opprettede grupper er deaktivert og kan bare slettes."
       ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "Koblingen for å rapportere at du ikke konfigurerte en ${ BRAND_NAME }-konto er utløpt. Ta kontakt med vår kundestøtte for å løse denne saken."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synlig for brukerne dine mens de er innlogget."
       ],
@@ -8385,7 +8430,7 @@
         "Denne kontoen er suspendert på grunn av et potensielt brudd på retningslinjene."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Denne nettleseren støtter ikke forhåndsvisning av PDF-dokumenter. Vennligst last ned filen."
+        "Denne nettleseren støtter ikke forhåndsvisning av PDF-dokumenter. Last ned filen."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Dette kan ta få sekunder eller få minutter avhengig av enheten din."
@@ -8416,9 +8461,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Dette er en krypteringsnøkkel du kan ha lagret tidligere."
-      ],
-      "This is an invitation from:": [
-        "Dette er en invitasjon fra:"
       ],
       "This is the password you used before the password reset.": [
         "Dette er passordet du brukte før tilbakestillingen av passordet."
@@ -8456,6 +8498,9 @@
       "This will delete all previous versions of your files.": [
         "Dette vil slette alle tidligere versjoner av filene dine."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Dette vil nekte tilgang til **${ email }**. Er du sikker på at du vil fortsette?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Dette vil deaktivere tofaktorautentisering, inkludert både autentiseringsappen og sikkerhetsnøkkelmetoder."
       ],
@@ -8474,6 +8519,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dette vil permanent slette kontoen og alle tilhørende data. Du kan ikke aktivere denne kontoen på nytt senere."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Dette vil avvise enheten **${ name }** som prøvde å logge på ${ BRAND_NAME }-kontoen din den **${ date }**."
+      ],
       "This will remove any enabled 2FA methods.": [
         "Dette vil fjerne alle aktiverte 2FA-metoder."
       ],
@@ -8491,6 +8539,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dette vil logge deg av alle aktive økter og deaktivere tofaktorautentisering."
+      ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Dette vil koble fra enheten **${ name } (opprettet den ${ date })** fra ${ BRAND_NAME }-kontoen din."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Denne veiviseren vil aktivere To-Faktor Autentisering (2FA) på din ${ BRAND_NAME }-konto. Tofaktorautentisering vil gjøre din ${ BRAND_NAME_TWO }-konto sikrere, så vi anbefaler å aktivere den."
@@ -8532,7 +8583,7 @@
         "For å sikre at du ikke mister viktige data, lagrer ${ DRIVE_APP_NAME } eldre versjoner av dine filer når du og dine samarbeidspartnere gjør endringer. Velg hvor lenge ${ BRAND_NAME } bør beholde tidligere versjoner."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "For å bekjempe søppelpost og misbruk, vennligst verifiser at du er et menneske."
+        "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For å importere hendelser, først opprett en kalender i ${ CALENDAR_APP_NAME }. Dette er hvor hendelsene vil vises etter importen."
@@ -8589,7 +8640,7 @@
         "To-passord-modus gjør bruk av separate passord for innlogging og datadekryptering. Dette gir en mindre sikkerhetsfordel i noen situasjoner, men vi anbefaler en-passord-modus for fleste brukere. For å bytte til to-passord-modus, først angi et innloggingpassord og deretter angi et andre passord."
       ],
       "Unable to check gateways monitoring current status.": [
-        "Kan ikke sjekke mellomtjenere som overvåker gjeldende status."
+        "Kan ikke sjekke porttjenere som overvåker gjeldende status."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Ikke i stand til å verifisere gjenopprettingsfilsignatur. Vennligst kontakt kundestøtte."
@@ -8680,6 +8731,9 @@
       ],
       "User activated": [
         "Bruker aktivert"
+      ],
+      "Username": [
+        "Brukernavn"
       ],
       "username": [
         "brukernavn"
@@ -8852,6 +8906,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Når du klikker på en kobling, vil denne anti-nettfiskefunksjonen spørre deg om å bekrefte nettadressen til nettsiden."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Når du fjerner en tjener fra en porttjener, går den inn i en 10-dagers deaktiveringsperiode. Denne tjeneren kan legges til en ny porttjener, men landet kan ikke endres."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
       ],
@@ -8942,6 +8999,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere den en gang for å sikre riktig e-postadresse for bekreftelse."
+      ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Du kan aktivere autentiseringslogger for å se når kontoen din er åpnet, og fra hvilken IP. Vi vil registrere IP-adressen som får tilgang til kontoen og klokkeslettet, samt mislykkede forsøk."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Du kan aktivere fotoseksjonen fra grensesnittet ved å bruke bryteren nedenfor."
@@ -9163,7 +9223,7 @@
         "Støttesaken din er stengt. Takk for at du kontaktet kundestøtte for ${ BRAND_NAME }."
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
-        "Du vil kunne legge til disse tjenerne i en annen mellomtjener umiddelbart."
+        "Du vil kunne legge til disse tjenerne i en annen porttjener umiddelbart."
       ],
       "Zoom meeting": [
         "Zoom-møte"
@@ -9645,7 +9705,7 @@
         "${ UsedAddresses } av ${ MaxAddresses } e-postadresser"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(Midlertidig utilgjengelig, vennligst kom tilbake senere)."
+        "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
       "1 hour": [
         "1 time"
@@ -10088,6 +10148,9 @@
       "Filter Name": [
         "Filternavn"
       ],
+      "First name": [
+        "Fornavn"
+      ],
       "Folder location": [
         "Mappeplassering"
       ],
@@ -10101,7 +10164,7 @@
         "Fra: ${ fromEmail }"
       ],
       "Gateway name": [
-        "Navn på mellomtjener"
+        "Navn på porttjener"
       ],
       "Gift code": [
         "Gavekode"
@@ -10189,6 +10252,9 @@
       ],
       "Last month only": [
         "Kun siste måned"
+      ],
+      "Last name": [
+        "Etternavn"
       ],
       "Level for NetShield blocker filtering": [
         "Nivå på blokkeringsfiltrering for NetShield"
@@ -10895,6 +10961,9 @@
       "Pay invoice": [
         "Betal faktura"
       ],
+      "PayPal without credit card": [
+        "PayPal uten kredittkort"
+      ],
       "perform a password reset from your active session": [
         "utføre en tilbakestilling av passord fra den aktive økten"
       ],
@@ -11498,32 +11567,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Starter fra ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11551,6 +11594,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12089,7 +12158,7 @@
         "* Med 30 måneders abonnement. Andre abonnementsalternativer tilgjengelig i kassen."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre mellomtjenere"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -12229,20 +12298,6 @@
         "Planen du har valgt: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Starter fra ${ price }"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -12261,6 +12316,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -12350,7 +12419,7 @@
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private mellomtjenere."
+        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private porttjenere."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Behandle abonnementet ditt, inkludert tilpasning av planen din. Betalingsmåter akseptert er kredittkort, PayPal, kryptovaluta og bankoverføring."
@@ -12363,9 +12432,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighet for å se innbokser for ikke-private brukere på samme måte som brukeren, inkludert fullstendige meldings- og kontaktdetaljer."
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Verktøy for organisasjonsadministrasjon som administratorer kan bruke til å legge til og fjerne brukere, tildele lagringsplass, konfigurere domener og utføre andre oppgaver."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robuste infrastruktur sikrer at du får tilgang til kontoen din når du trenger den"
@@ -12529,7 +12595,7 @@
         "Støtte for mange plattformer"
       ],
       "Private gateways": [
-        "Private mellomtjenere"
+        "Private porttjenere"
       ],
       "Require 2FA": [
         "Krever 2FA"
@@ -13791,10 +13857,10 @@
         "Telefonnummer"
       ],
       "Please describe the problem and include any error messages": [
-        "Vennligst beskriv problemet og inkluder eventuelle feilmeldinger."
+        "Beskriv problemet og inkluder eventuelle feilmeldinger"
       ],
       "Please insert link first": [
-        "Vennligst sett inn kobling først"
+        "Sett inn kobling først"
       ],
       "Please select a country": [
         "Vennligst velg et land"
@@ -14382,12 +14448,6 @@
       "For security reasons, the token is hidden": [
         "Av sikkerhetsgrunner er tokenet skjult"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Gå til identitetsleverandøren, kopier og lim inn dataene nedenfor og fullfør konfigureringen av SCIM for ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Gå til identitetsleverandøren, kopier og lim inn tokenet nedenfor, og aktiver SCIM på nytt for ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Hvis du har mistet eller glemt SCIM-tokenet, kan du generere et nytt, men vær oppmerksom på at innstillingene for identitetsleverandøren må oppdateres."
       ],
@@ -14396,9 +14456,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Når SCIM er deaktivert for organisasjonen, blir **alle SCIM-brukere som leveres automatisk av identitetsleverandøren, konvertert til SSO-brukere**, og du kan administrere dem direkte i ${ BRAND_NAME }-innstillingene."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Forenkler brukeradministrasjon på tvers av ulike tjenester. Legg til, rediger og fjern brukere i identitetsleverandøren, så brukes disse endringene automatisk på ${ VPN_APP_NAME }-organisasjonen."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Den automatiske klargjøringen av SCIM deaktiveres til du angir det nye SCIM-tokenet i identitetsleverandørens innstillinger."
@@ -14519,7 +14576,7 @@
         "Kontogjenoppretting ikke tilgjengelig for eldre adressenøkler."
       ],
       "Please generate keys before you try to change your password": [
-        "Vennligst generer nøkler før du prøver å endre passordet."
+        "Generer nøkler før du prøver å endre passordet."
       ]
     },
     "session_recovery:available:info": {
@@ -14541,7 +14598,7 @@
         "Forespørsel om tilbakestilling av passord godkjent (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Vennligst gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
+        "Gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Denne tillatelsen utløper om ${ timeRemaining.inDays } dag",
@@ -14672,7 +14729,7 @@
         "Hvis du ikke ba om å tilbakestille passordet ditt, vennligst avbryt forespørselen nå."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
-        "Hvis du ikke ba om å tilbakestille passordet ditt, vennligst avbryt forespørselen nå."
+        "Hvis du ikke har bedt om å tilbakestille passordet ditt, avbryt denne forespørselen nå."
       ],
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Tilbakestilling av passord tilgjengelig fra ${ boldDate }. Dette gir deg tid til å avbryte eventuelle falske forespørsler."
@@ -15158,6 +15215,212 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen sin med enkel pålogging."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } medlem ba om din hjelp til å logge på.",
+        "${ n } medlemmer ba om din hjelp til å logge på."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } bruker har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller slett kontoene deres nå:",
+        "${ n } brukere har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller slett kontoene deres nå:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } bruker ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen sin med enkel pålogging.",
+        "${ n } brukere ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen deres med enkel pålogging."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSO-brukere (levert av identitetsleverandøren) slettes**, og du må opprette dem manuelt for å legge dem til i organisasjonen igjen."
+      ],
+      "Access denied": [
+        "Tilgang nektet"
+      ],
+      "Access granted": [
+        "Tilgang godkjent"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "la deg til deres ${ BRAND_NAME }-organisasjon"
+      ],
+      "Approve": [
+        "Godkjenn"
+      ],
+      "Approve or deny it now": [
+        "Godkjenn eller avvis den nå"
+      ],
+      "Approve the sign-in from another device": [
+        "Godkjenn påloggingen fra en annen enhet"
+      ],
+      "Ask administrator for help": [
+        "Spør administrator om hjelp"
+      ],
+      "Ask your administrator for access?": [
+        "Spørre din administrator om tilgang?"
+      ],
+      "Backup password": [
+        "Reservepassord"
+      ],
+      "Change backup password": [
+        "Endre reservepassordet"
+      ],
+      "Confirm backup password": [
+        "Bekreft reservepassord"
+      ],
+      "Confirmation code": [
+        "Bekreftelseskode"
+      ],
+      "Contact administrator": [
+        "Kontakt administrator"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Kontakt administratoren hvis problemet vedvarer."
+      ],
+      "Current device": [
+        "Gjeldende enhet"
+      ],
+      "Deny": [
+        "Avslå"
+      ],
+      "Deny access": [
+        "Nekt tilgang"
+      ],
+      "Devices available": [
+        "Enheter tilgjengelig"
+      ],
+      "Devices management": [
+        "Administrasjon av enheter"
+      ],
+      "Do you want to remove all other devices than the current one?": [
+        "Ønsker du å fjerne alle andre enheter utenom den gjeldende?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Skriv inn bekreftelseskoden vi sendte på den andre enheten din."
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Skriv inn bekreftelseskoden vi sendte til denne brukeren."
+      ],
+      "Enter your backup password": [
+        "Angi reservepassordet ditt"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Av sikkerhetshensyn har du blitt logget av alle de andre aktive enhetene dine. Før du får tilgang til kontoen din, må du skrive inn et nytt reservepassord."
+      ],
+      "Grant": [
+        "Tillat"
+      ],
+      "Grant access": [
+        "Gi tilgang"
+      ],
+      "Grant access to user?": [
+        "Gi tilgang til brukeren?"
+      ],
+      "Grant access to users?": [
+        "Vil du gi brukere tilgang?"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Hvis du ikke sendte denne forespørselen, kanseller den nå."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Hvis du blir låst ute av ${ BRAND_NAME }-kontoen din, vil ditt reservepassord la deg logge på og gjenopprette dataene dine."
+      ],
+      "Invalid confirmation code": [
+        "Ugyldig bekreftelseskode"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Det er den eneste måten å gjenopprette kontoen din på, så sørg for at du oppbevarer det på et trygt sted."
+      ],
+      "Join ${ organizationName }": [
+        "Bli med i ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Sørg for at du lagrer det på et trygt sted, slik at du kan få tilgang til kontoen din igjen hvis du mister tilgangen til legitimasjonen for identitetsleverandøren."
+      ],
+      "New backup password": [
+        "Nytt reservepassord"
+      ],
+      "No, it wasn’t me": [
+        "Nei, det var ikke meg"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Ikke-SSO-brukere (opprettet manuelt, ikke levert av identitetsleverandøren din) kan fortsatt logge på organisasjonen din."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Når enkel pålogging er deaktivert for organisasjonen din:"
+      ],
+      "Reject": [
+        "Avvis"
+      ],
+      "Remove": [
+        "Fjern"
+      ],
+      "Remove all other devices": [
+        "Fjern alle andre enheter"
+      ],
+      "Remove single sign-on": [
+        "Fjern enkel pålogging"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Fjerne enkel pålogging for organisasjonen din?"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Angi et reservepassord for å legge til et ekstra lag med beskyttelse. Den lar deg logge på hvis du blir låst ute, så sørg for å oppbevare den et trygt sted."
+      ],
+      "Set your backup password": [
+        "Angi reservepassordet ditt"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Del bekreftelseskoden med administratoren din"
+      ],
+      "Sign in to your organization": [
+        "Logg på organisasjonen"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Logg av og på igjen for å endre reservepassordet"
+      ],
+      "Sign-in confirmed": [
+        "Pålogging bekreftet"
+      ],
+      "Sign-in rejected": [
+        "Pålogging avvist"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Pålogging forespurt på en annen enhet. Var det deg?"
+      ],
+      "Single sign-on removed": [
+        "Enkel pålogging fjernet"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Legitimasjonen fra identitetsleverandøren din blir slettet."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Dette vil logge brukeren ut av de andre enhetene sine, og vedkommende må opprette et nytt reservepassord."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Dette vil logge deg ut av de andre enhetene dine, og du må opprette et nytt reservepassord."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "For å være sikker på at det virkelig er du som prøver å logge på **${ email }**, kan du se gjennom bekreftelseskoden og godkjenne forespørselen fra en annen enhet."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "For å være sikker på at det virkelig er du som prøver å logge på, skriv inn ditt reservepassord."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "For å være sikker på at det virkelig er du som prøver å logge på, del bekreftelseskoden med administratoren din **${ adminEmail }** slik at de kan godkjenne forespørselen for **${ email }**."
+      ],
+      "Tried to sign in at": [
+        "Prøvde å logge inn på"
+      ],
+      "Use backup password instead": [
+        "Bruk reservepassord i stedet"
+      ],
+      "User details:": [
+        "Brukerdetaljer:"
+      ],
+      "Yes, it was me": [
+        "Ja, det var meg"
       ]
     },
     "State": {
@@ -16288,6 +16551,9 @@
       "Action": [
         "Handling"
       ],
+      "Actions": [
+        "Handlinger"
+      ],
       "Activate @pm.me": [
         "Aktiver @pm.me"
       ],
@@ -16424,10 +16690,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -16501,13 +16767,13 @@
         "Opprett ${ selectedUserIds.length } brukere"
       ],
       "Create a new Gateway": [
-        "Opprett en ny mellomtjener"
+        "Opprett en ny porttjener"
       ],
       "Create a new gateway": [
-        "Opprett en ny mellomtjener"
+        "Opprett en ny porttjener"
       ],
       "Create Gateway": [
-        "Opprett mellomtjener"
+        "Opprett porttjener"
       ],
       "Create multiple user accounts": [
         "Opprett flere brukerkontoer"
@@ -16526,6 +16792,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "Opprett din ${ BRAND_NAME }-adresse"
+      ],
+      "Created": [
+        "Opprettet"
       ],
       "Creating user accounts": [
         "Oppretter brukerkontoer"
@@ -16618,11 +16887,17 @@
       "Delete version history?": [
         "Slette versjonshistorikk?"
       ],
+      "Deny access to user?": [
+        "Nekte tilgang til bruker?"
+      ],
       "Description": [
         "Beskrivelse"
       ],
       "Details": [
         "Detaljer"
+      ],
+      "Device": [
+        "Enhet"
       ],
       "Device connected!": [
         "Enhet tilkoblet!"
@@ -16679,7 +16954,7 @@
         "Rediger filter"
       ],
       "Edit Gateway ${ currentName }": [
-        "Rediger mellomtjener ${ currentName }"
+        "Rediger porttjener ${ currentName }"
       ],
       "Edit invoice details": [
         "Rediger fakturadetaljer"
@@ -16694,7 +16969,7 @@
         "Rediger Sieve-filter"
       ],
       "Edit the list of servers of the gateway": [
-        "Rediger listen over tjenere for mellomtjeneren"
+        "Rediger listen over tjenere for porttjeneren"
       ],
       "Edit user": [
         "Rediger bruker"
@@ -16703,7 +16978,7 @@
         "Rediger brukere"
       ],
       "Edit who can access the gateway": [
-        "Rediger hvem som har tilgang til mellomtjeneren"
+        "Rediger hvem som har tilgang til porttjeneren"
       ],
       "Email": [
         "E-post"
@@ -16800,19 +17075,19 @@
         "Videresend e-poster"
       ],
       "Gateway": [
-        "Mellomtjener"
+        "Porttjener"
       ],
       "Gateway monitor": [
-        "Overvåking av mellomtjener"
+        "Overvåking av porttjener"
       ],
       "Gateway monitor disabled": [
-        "Overvåking av mellomtjener er deaktivert"
+        "Overvåking av porttjener er deaktivert"
       ],
       "Gateway monitor enabled": [
-        "Overvåking av mellomtjener er aktivert"
+        "Overvåking av porttjener er aktivert"
       ],
       "Gateways": [
-        "Mellomtjenere"
+        "Porttjenere"
       ],
       "General": [
         "Generelt"
@@ -16929,6 +17204,9 @@
       "Leave ${ organisationName }?": [
         "Forlate ${ organisationName }?"
       ],
+      "Leave group?": [
+        "Forlate gruppen?"
+      ],
       "Link confirmation": [
         "Bekreftelse av kobling"
       ],
@@ -16952,6 +17230,9 @@
       ],
       "My calendars": [
         "Mine kalendere"
+      ],
+      "Name": [
+        "Navn"
       ],
       "Need more labels or folders?": [
         "Behov for flere etiketter eller mapper?"
@@ -17058,6 +17339,9 @@
       "Profile": [
         "Profil"
       ],
+      "QR Code": [
+        "QR-kode"
+      ],
       "Ready, set, forward": [
         "Klar, ferdig, gå"
       ],
@@ -17082,11 +17366,17 @@
       "Refer a friend": [
         "Verv en venn"
       ],
+      "Reject device?": [
+        "Avvise enhet?"
+      ],
       "Remove all members?": [
         "Fjern alle medlemmer?"
       ],
       "Remove calendar": [
         "Fjern kalender"
+      ],
+      "Remove device?": [
+        "Fjern enhet?"
       ],
       "Remove domain": [
         "Fjern domene"
@@ -17101,7 +17391,7 @@
         "Fjern bruker?"
       ],
       "Rename the gateway": [
-        "Gi mellomtjeneren nytt navn"
+        "Gi porttjeneren nytt navn"
       ],
       "Report a problem": [
         "Rapporter et problem"
@@ -17214,9 +17504,6 @@
       "Sign in to join the Beta program": [
         "Logg på for å bli med i testprogrammet"
       ],
-      "Sign in to your organization": [
-        "Logg på din organisasjon"
-      ],
       "Sign out": [
         "Logg av"
       ],
@@ -17246,6 +17533,9 @@
       ],
       "Start import process": [
         "Start importprosessen"
+      ],
+      "State": [
+        "Tilstand"
       ],
       "Status": [
         "Status"
@@ -17770,10 +18060,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } bruker har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller avvis kontoene deres nå:",
-        "${ n } brukere har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller avvis kontoene deres nå:"
-      ],
       "Administrator access enabled": [
         "Administratortilgang aktivert"
       ],
@@ -18244,6 +18530,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME } er i tidlig tilgang. Du kan laste ned iOS-appen via Apple TestFlight og Android-appen via Google open testing."
+      ],
       "Coming soon": [
         "Kommer snart"
       ]
