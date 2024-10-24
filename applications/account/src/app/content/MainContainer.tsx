@@ -151,6 +151,7 @@ const MainContainer = () => {
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const isGlobalSSOEnabled = useFlag('GlobalSSO');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
+    const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -195,7 +196,7 @@ const MainContainer = () => {
         isB2BDrive,
         isB2BAuthLogsEnabled,
         isGlobalSSOEnabled,
-        isScribePaymentEnabled,
+        isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
     });
 
     useEffect(() => {
