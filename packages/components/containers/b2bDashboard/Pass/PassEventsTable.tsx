@@ -164,7 +164,7 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                                 </div>,
                                 <div className="flex flex-column cursor-pointer">
                                     <div
-                                        className="flex flex-row mb-1 text-bold"
+                                        className="flex flex-row mb-1 text-semibold"
                                         onClick={() => onEventClick(eventType)}
                                     >
                                         {eventTypeName}
