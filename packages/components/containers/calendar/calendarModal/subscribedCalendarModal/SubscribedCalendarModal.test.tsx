@@ -26,9 +26,12 @@ jest.mock('../personalCalendarModal/calendarModalState', () => ({
     })),
 }));
 
-jest.mock('@proton/components', () => ({
-    useOrganization: jest.fn(() => []),
+jest.mock('@proton/account/organization/hooks', () => ({
     useActiveBreakpoint: jest.fn(),
+}));
+
+jest.mock('@proton/account/organization/hooks', () => ({
+    useOrganization: jest.fn(() => []),
 }));
 
 const mockApi = jest.fn();

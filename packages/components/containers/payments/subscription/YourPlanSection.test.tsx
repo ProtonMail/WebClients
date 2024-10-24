@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -10,7 +11,6 @@ import { renderWithProviders } from '@proton/components/containers/contacts/test
 import { useSubscription } from '@proton/components/hooks';
 import useCache from '@proton/components/hooks/useCache';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useOrganization } from '@proton/components/hooks/useOrganization';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useFeature } from '@proton/features';
 import { PLANS, type PaymentMethodStatusExtended } from '@proton/payments';
@@ -65,7 +65,7 @@ jest.mock('@proton/components/hooks/useSubscription');
 const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
 mockUseSubscription.mockReturnValue([subscriptionBundle, false]);
 
-jest.mock('@proton/components/hooks/useOrganization');
+jest.mock('@proton/account/organization/hooks');
 const mockUseOrganization = useOrganization as jest.MockedFunction<any>;
 mockUseOrganization.mockReturnValue([[], false]);
 

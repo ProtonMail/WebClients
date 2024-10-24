@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { VideoConferenceOrganizationSection } from '@proton/calendar';
 import {
     AuthenticationLogs,
@@ -22,7 +23,6 @@ import {
     SsoPage,
     UsersAndAddressesSection,
     VPNEvents,
-    useOrganization,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import OrganizationScribeSection from '@proton/components/containers/organization/scribe/OrganizationScribeSection';
@@ -47,7 +47,20 @@ const OrganizationSettingsRouter = ({
     const [organization] = useOrganization();
 
     const {
-        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso, connectionEvents, groups, scribe, videoConf },
+        routes: {
+            gateways,
+            setup,
+            domains,
+            orgKeys,
+            users,
+            filter,
+            security,
+            sso,
+            connectionEvents,
+            groups,
+            scribe,
+            videoConf,
+        },
     } = organizationAppRoutes;
 
     if (!organizationAppRoutes.available) {
