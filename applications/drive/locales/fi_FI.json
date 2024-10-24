@@ -2324,6 +2324,11 @@
         "Erääntynyt lasku"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2390,11 +2395,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5660,6 +5660,9 @@
       "Add to group": [
         "Lisää ryhmään"
       ],
+      "Address": [
+        "Osoite"
+      ],
       "Anyone on the Internet with the link can view": [
         "Linkin välityksellä kuka tahansa voi tarkastella"
       ],
@@ -5871,6 +5874,9 @@
       "File name": [
         "Tiedostonimi"
       ],
+      "First name": [
+        "Etunimi"
+      ],
       "Folder": [
         "Kansio"
       ],
@@ -5930,6 +5936,9 @@
       ],
       "Last month only": [
         "Vain viime kuu"
+      ],
+      "Last name": [
+        "Sukunimi"
       ],
       "Location": [
         "Sijainti"
@@ -7251,14 +7260,6 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Alkaen ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -7271,6 +7272,14 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7373,9 +7382,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Organisaation hallintatyökalulla ylläpitäjät voivat lisätä ja poistaa käyttäjiä, jakaa tallennustilan, määrittää verkkotunnukset sekä suorittaa muita tehtäviä."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vahva infrastruktuurimme varmistaa, että pääset tilillesi, kun sitä tarvitset"

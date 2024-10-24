@@ -2324,6 +2324,11 @@
         "Onbetaalde factuur"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2390,11 +2395,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5660,6 +5660,9 @@
       "Add to group": [
         "Toevoegen aan groep"
       ],
+      "Address": [
+        "Adres"
+      ],
       "Anyone on the Internet with the link can view": [
         "Iedereen op het Internet kan het met deze link bekijken"
       ],
@@ -5871,6 +5874,9 @@
       "File name": [
         "Bestandsnaam"
       ],
+      "First name": [
+        "Voornaam"
+      ],
       "Folder": [
         "Map"
       ],
@@ -5930,6 +5936,9 @@
       ],
       "Last month only": [
         "Alleen vorige maand"
+      ],
+      "Last name": [
+        "Achternaam"
       ],
       "Location": [
         "Locatie"
@@ -7251,14 +7260,6 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -7271,6 +7272,14 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7373,9 +7382,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Tool voor organisatiebeheer waarmee beheerders gebruikers kunnen toevoegen en verwijderen, opslagruimte kunnen toewijzen, domeinen kunnen configureren en andere taken kunnen uitvoeren"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
