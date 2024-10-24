@@ -878,16 +878,14 @@ export { default as useLocalState } from './hooks/useLocalState';
 export { default as useMyCountry } from './hooks/useMyCountry';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
 export { getOnlineStatus, default as useOnline } from './hooks/useOnline';
+export { PreventLeaveProvider, default as usePreventLeave } from './hooks/usePreventLeave';
 export { default as useProgressiveRollout } from './hooks/useProgressiveRollout';
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
 export { default as useRelocalizeText } from './hooks/useRelocalizeText';
 export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';
-export {
-    useMultiSortedList,
-    default as useSortedList,
-    useSortedListAsync,
-    type SortConfig,
-} from './hooks/useSortedList';
+export { useMultiSortedList, default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
+export type { SortConfig } from './hooks/useSortedList';
+export { default as useSpotlightOnFeature } from './hooks/useSpotlightOnFeature';
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useWindowSize } from './hooks/useWindowSize';

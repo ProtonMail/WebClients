@@ -7,7 +7,7 @@ import Icons from '@proton/icons/Icons';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
-import { PreventLeaveProvider } from '../../hooks';
+import { PreventLeaveProvider } from '../../hooks/usePreventLeave';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
 import ModalsProvider from '../modals/Provider';
