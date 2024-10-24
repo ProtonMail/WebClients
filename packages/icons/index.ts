@@ -214,6 +214,7 @@ export type IconName =
     | 'lock-check-filled'
     | 'lock-exclamation-filled'
     | 'lock-filled'
+    | 'lock-open-filled-2'
     | 'lock-open-check-filled'
     | 'lock-open-exclamation-filled'
     | 'lock-open-pen-filled'
