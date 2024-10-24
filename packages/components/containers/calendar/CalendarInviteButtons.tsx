@@ -13,6 +13,7 @@ import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
+import useFlag from '@proton/unleash/useFlag';
 import move from '@proton/utils/move';
 import noop from '@proton/utils/noop';
 
@@ -31,6 +32,7 @@ const CalendarInviteButtons = ({
     className = '',
 }: Props) => {
     const api = useApi();
+    const hasOptimisticRSVP = useFlag('CalendarReduxRSVP');
     const [subscription] = useSubscription();
     const plan: PLANS = getPlan(subscription)?.Name || PLANS.FREE;
     const [loadingAccept, withLoadingAccept] = useLoading();
@@ -43,6 +45,9 @@ const CalendarInviteButtons = ({
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'yes', plan },
         });
+        if (hasOptimisticRSVP) {
+            return accept();
+        }
         return withLoadingAccept(accept());
     };
     const onTentative = () => {
@@ -50,6 +55,9 @@ const CalendarInviteButtons = ({
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'maybe', plan },
         });
+        if (hasOptimisticRSVP) {
+            return acceptTentatively();
+        }
         return withLoadingTentative(acceptTentatively());
     };
     const onDecline = () => {
@@ -57,6 +65,9 @@ const CalendarInviteButtons = ({
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'no', plan },
         });
+        if (hasOptimisticRSVP) {
+            return decline();
+        }
         return withLoadingDecline(decline());
     };
 
