@@ -276,7 +276,7 @@ describe('$handleBeforeInputEvent', () => {
       })
     })
 
-    test('should split existing non-insert suggestion when trying to insert into it', async () => {
+    test('should insert text into existing delete suggestion and move selection accordingly', async () => {
       const suggestionID = 'test'
       await update(() => {
         const paragraph = $createParagraphNode().append($createTextNode('Hello'))
@@ -296,11 +296,44 @@ describe('$handleBeforeInputEvent', () => {
       })
       editor!.read(() => {
         const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+        expect(paragraph.getChildrenSize()).toBe(2)
+        const suggestionNode = paragraph.getChildAtIndex<ProtonNode>(1)
+        expect($isSuggestionNode(suggestionNode)).toBe(true)
+        expect(suggestionNode?.getSuggestionTypeOrThrow()).toBe('delete')
+        expect(suggestionNode?.getSuggestionIdOrThrow()).toBe(suggestionID)
+        expect(suggestionNode?.getTextContent()).toBe('Wornewld')
+        const selection = $getSelection()
+        expect($isRangeSelection(selection)).toBe(true)
+        expect(selection?.isCollapsed()).toBe(true)
+        expect((selection as RangeSelection).anchor.offset).toBe(6)
+      })
+    })
+
+    test('should split existing non-insert suggestion when trying to insert into it', async () => {
+      const suggestionID = 'test'
+      await update(() => {
+        const paragraph = $createParagraphNode().append($createTextNode('Hello'))
+        const suggestionNode = $createSuggestionNode(suggestionID, 'property-change').append($createTextNode('World'))
+        paragraph.append(suggestionNode)
+        $getRoot().append(paragraph)
+        suggestionNode.getFirstChildOrThrow<TextNode>().select(3, 3) // Move selection to after 'r'
+        $handleBeforeInputEvent(
+          editor!,
+          {
+            inputType: 'insertText',
+            data: 'new',
+            dataTransfer: null,
+          } as InputEvent,
+          onSuggestionCreation,
+        )
+      })
+      editor!.read(() => {
+        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
         expect(paragraph.getChildrenSize()).toBe(4)
         const suggestionNode1 = paragraph.getChildAtIndex<ProtonNode>(1)
         expect($isSuggestionNode(suggestionNode1)).toBe(true)
         expect(suggestionNode1?.getTextContent()).toBe('Wor')
-        expect(suggestionNode1?.getSuggestionTypeOrThrow()).toBe('delete')
+        expect(suggestionNode1?.getSuggestionTypeOrThrow()).toBe('property-change')
         const suggestionNode2 = paragraph.getChildAtIndex<ProtonNode>(2)
         expect($isSuggestionNode(suggestionNode2)).toBe(true)
         expect(suggestionNode2?.getTextContent()).toBe('new')
@@ -308,7 +341,7 @@ describe('$handleBeforeInputEvent', () => {
         const suggestionNode3 = paragraph.getChildAtIndex<ProtonNode>(3)
         expect($isSuggestionNode(suggestionNode3)).toBe(true)
         expect(suggestionNode3?.getTextContent()).toBe('ld')
-        expect(suggestionNode3?.getSuggestionTypeOrThrow()).toBe('delete')
+        expect(suggestionNode3?.getSuggestionTypeOrThrow()).toBe('property-change')
       })
     })
 
