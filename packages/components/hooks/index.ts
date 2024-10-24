@@ -27,7 +27,6 @@ export { default as useUserSettings } from './useUserSettings';
 export { default as useVPNServersCount } from './useVPNServersCount';
 export { useWelcomeFlags } from './useWelcomeFlags';
 export * from './drawer';
-export * from './useDriveWindowsGASpotlight';
 export { default as useAllowAddressDeletion, useGetAllowAddressDeletion } from './useAllowAddressDeletion';
 export { default as useGroups, useGetGroups } from './useGroups';
 export { default as useGroupMemberships } from './useGroupMemberships';
