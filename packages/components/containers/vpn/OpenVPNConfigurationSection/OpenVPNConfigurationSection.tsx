@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import groupBy from 'lodash/groupBy';
 import { c, msgid } from 'ttag';
 
+import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -24,7 +25,7 @@ import {
     getCountryOptions,
     getLocalizedCountryByAbbr,
 } from '../../../helpers/countries';
-import { usePlans, useUserSettings } from '../../../hooks';
+import { useUserSettings } from '../../../hooks';
 import useSortedList from '../../../hooks/useSortedList';
 import type { EnhancedLogical } from '../OpenVPNConfigurationSection/interface';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';

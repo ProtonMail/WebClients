@@ -1,4 +1,5 @@
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import {
     type Currency,
@@ -8,7 +9,6 @@ import {
 } from '@proton/payments';
 
 import { useCurrencies } from '../payments/client-extensions/useCurrencies';
-import usePlans from './usePlans';
 import useSubscription from './useSubscription';
 
 type PreferredPlansMapHook = {

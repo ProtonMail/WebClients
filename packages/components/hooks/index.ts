@@ -14,7 +14,6 @@ export { default as useNotifications } from './useNotifications';
 export { default as useOnline } from './useOnline';
 export * from './useOrganization';
 export { useGetOrganizationKey, default as useOrganizationKey } from './useOrganizationKey';
-export { default as usePlans, useGetPlans } from './usePlans';
 export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';
 export { default as useSpotlightOnFeature } from './useSpotlightOnFeature';
 export { default as useSubscription, useGetSubscription } from './useSubscription';
