@@ -27,13 +27,14 @@ import noop from '@proton/utils/noop';
 
 const unAuthStorageKey = 'ua_uid';
 
+const setupComplete = Symbol('setup complete');
 const context: {
     UID: string | undefined;
     auth: { set: boolean; id: any; finalised: boolean };
     api: Api;
     refresh: () => void;
     abortController: AbortController;
-    promises: Promise<void>[];
+    setup: null | typeof setupComplete | Promise<void>;
     challenge: ReturnType<typeof createPromise<ChallengePayload | undefined>>;
 } = {
     UID: undefined,
@@ -41,7 +42,7 @@ const context: {
     abortController: new AbortController(),
     challenge: createPromise<ChallengePayload | undefined>(),
     auth: { set: false, id: {}, finalised: false },
-    promises: [],
+    setup: null,
     refresh: () => {},
 };
 
@@ -142,7 +143,24 @@ const mnemonicAuthConfig = authMnemonic('', true);
 const auth2FAConfig = auth2FA({ TwoFactorCode: '' });
 const localKeyConfig = setLocalKey('');
 
+const initSetup = (): Promise<void> | undefined => {
+    if (context.setup === setupComplete) {
+        return;
+    }
+    if (context.setup === null) {
+        context.setup = setup()
+            .then(() => {
+                context.setup = setupComplete;
+            })
+            .catch(() => {
+                context.setup = null;
+            });
+    }
+    return context.setup;
+};
+
 export const apiCallback: Api = async (config: any) => {
+    await initSetup();
     const UID = context.UID;
     if (!UID) {
         return context.api(config);
