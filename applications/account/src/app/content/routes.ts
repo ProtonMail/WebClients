@@ -42,6 +42,7 @@ interface Arguments {
     isB2BAuthLogsEnabled: boolean;
     isGlobalSSOEnabled: boolean;
     showGatewaysForBundlePlan: boolean;
+    isScribePaymentEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -67,6 +68,7 @@ export const getRoutes = ({
     isB2BAuthLogsEnabled,
     isGlobalSSOEnabled,
     showGatewaysForBundlePlan,
+    isScribePaymentEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -106,6 +108,7 @@ export const getRoutes = ({
             isGlobalSSOEnabled,
             showGatewaysForBundlePlan,
             groups,
+            isScribePaymentEnabled,
         }),
         vpn: getVpnAppRoutes({ app }),
         wallet: getWalletAppRoutes(),

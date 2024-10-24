@@ -40,10 +40,16 @@ export const deleteOrganizationLogo = () => ({
     method: 'delete',
 });
 
-export const updateOrganizationSettings = ({ ShowName }: { ShowName: boolean }) => ({
+export const updateOrganizationSettings = ({
+    ShowName,
+    ShowScribeWritingAssistant,
+}: {
+    ShowName?: boolean;
+    ShowScribeWritingAssistant?: boolean;
+}) => ({
     url: 'core/v4/organizations/settings',
     method: 'put',
-    data: { ShowName },
+    data: { ShowName, ShowScribeWritingAssistant },
 });
 
 export const getOrganizationSettings = () => ({
