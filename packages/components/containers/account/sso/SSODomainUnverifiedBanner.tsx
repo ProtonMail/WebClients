@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { InlineLinkButton } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useCustomDomains } from '@proton/components/hooks';
 import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 
 import TXTRecordModal from '../../organization/sso/TXTRecordModal';
