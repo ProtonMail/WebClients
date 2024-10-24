@@ -32,7 +32,6 @@ interface Props {
     isUserGroupsFeatureEnabled: boolean;
     isB2BAuthLogsEnabled: boolean;
     isGlobalSSOEnabled: boolean;
-    showGatewaysForBundlePlan: boolean;
     groups: Group[] | undefined;
     isScribePaymentEnabled?: boolean;
 }
@@ -46,7 +45,6 @@ export const getOrganizationAppRoutes = ({
     isUserGroupsFeatureEnabled,
     isB2BAuthLogsEnabled,
     isGlobalSSOEnabled,
-    showGatewaysForBundlePlan,
     groups,
     isScribePaymentEnabled,
 }: Props) => {
@@ -57,7 +55,7 @@ export const getOrganizationAppRoutes = ({
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
     const hasActiveOrganization = isOrgActive && hasOrganization;
-    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription, { showGatewaysForBundlePlan });
+    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
     const hasSubUsers = (organization?.UsedMembers || 0) > 1;
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
@@ -193,9 +191,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Gateways`,
                 to: '/gateways',
                 icon: 'servers',
-                available:
-                    hasVpnB2BPlan ||
-                    (showGatewaysForBundlePlan && (hasBundlePro2024(subscription) || hasBundlePro(subscription))),
+                available: hasVpnB2BPlan || hasBundlePro2024(subscription) || hasBundlePro(subscription),
                 subsections: [
                     {
                         id: 'servers',

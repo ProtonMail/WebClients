@@ -18,7 +18,6 @@ import type { OrganizationGetResponse } from '@proton/pass/types';
 import { BitField, type Maybe } from '@proton/pass/types';
 import type { OrganizationSettings } from '@proton/pass/types/data/organization';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash';
 
 import GenericError from '../error/GenericError';
 
@@ -43,7 +42,6 @@ const PassPolicies = () => {
     const handleError = useErrorHandler();
 
     const policies = getPolicies();
-    const showForceLock = useFlag('PassB2BForceLock');
     const [organizationSettings, setOrganizationSettings] = useState<Maybe<OrganizationGetResponse>>();
 
     const touched = useRef<keyof OrganizationSettings>();
@@ -97,30 +95,24 @@ const PassPolicies = () => {
                                 </li>
                             ))}
                         </ul>
-                        {showForceLock && (
-                            <SettingsLayout>
-                                <SettingsLayoutLeft>
-                                    <label
-                                        className="text-semibold"
-                                        htmlFor="pass-lock-select"
-                                        id="label-pass-lock-select"
-                                    >
-                                        <span className="mr-1"> {c('Label').t`Lock app after inactivity`}</span>
-                                        <Info
-                                            title={c('Info')
-                                                .t`After being locked, organization members will need to unlock ${PASS_APP_NAME} with their password or PIN etc.`}
-                                        />
-                                    </label>
-                                </SettingsLayoutLeft>
-                                <SettingsLayoutRight>
-                                    <PassLockSelector
-                                        value={organizationSettings?.Settings?.ForceLockSeconds}
-                                        disabled={loading || !organizationSettings.CanUpdate}
-                                        onChange={handleLockChange}
+                        <SettingsLayout>
+                            <SettingsLayoutLeft>
+                                <label className="text-semibold" htmlFor="pass-lock-select" id="label-pass-lock-select">
+                                    <span className="mr-1"> {c('Label').t`Lock app after inactivity`}</span>
+                                    <Info
+                                        title={c('Info')
+                                            .t`After being locked, organization members will need to unlock ${PASS_APP_NAME} with their password or PIN etc.`}
                                     />
-                                </SettingsLayoutRight>
-                            </SettingsLayout>
-                        )}
+                                </label>
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight>
+                                <PassLockSelector
+                                    value={organizationSettings?.Settings?.ForceLockSeconds}
+                                    disabled={loading || !organizationSettings.CanUpdate}
+                                    onChange={handleLockChange}
+                                />
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
                     </>
                 )}
             </SettingsSection>

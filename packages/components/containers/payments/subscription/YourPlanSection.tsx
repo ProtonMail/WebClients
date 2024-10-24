@@ -12,7 +12,6 @@ import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useOrganization, usePlans, usePreferredPlansMap, useSubscription, useVPNServersCount } from '../../../hooks';
@@ -42,8 +41,6 @@ const YourPlanSection = ({ app }: Props) => {
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
-    const showBundleUpsellFromVPNBiz = useFlag('ShowBundleUpsellFromVPNBiz');
-
     useLoad();
 
     const loading =
@@ -66,7 +63,6 @@ const YourPlanSection = ({ app }: Props) => {
         serversCount,
         openSubscriptionModal,
         canAccessDuoPlan,
-        showBundleUpsellFromVPNBiz,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 

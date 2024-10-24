@@ -172,7 +172,6 @@ const Step1 = ({
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
-    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
 
     const silentApi = getSilentApi(normalApi);
     const { getPaymentsApi } = usePaymentsApi();
@@ -361,7 +360,6 @@ const Step1 = ({
                 organization: model.session.organization,
                 plans: model.plans,
                 user: model.session.user,
-                showGatewaysForBundlePlan,
             });
 
             checkOptions.planIDs = switchedPlanIds;

@@ -134,7 +134,6 @@ const SignupContainer = ({
     const ktActivation = useKTActivation();
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
-    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
 
     // Override the app to always be mail in trial or refer-a-friend signup
     if (isMailTrial || isMailRefer) {
@@ -285,15 +284,9 @@ const SignupContainer = ({
             });
             const plansMap = getPlansMap(Plans, currency, false);
 
-            const planParameters = getPlanIDsFromParams(
-                Plans,
-                currency,
-                signupParameters,
-                {
-                    plan: PLANS.FREE,
-                },
-                { showGatewaysForBundlePlan }
-            );
+            const planParameters = getPlanIDsFromParams(Plans, currency, signupParameters, {
+                plan: PLANS.FREE,
+            });
             const cycle = signupParameters.cycle || DEFAULT_CYCLE;
             const billingAddress = DEFAULT_TAX_BILLING_ADDRESS;
             const coupon = signupParameters.coupon;

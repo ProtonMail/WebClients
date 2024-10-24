@@ -191,8 +191,7 @@ export const getPlanIDsFromParams = (
         ips?: number;
         users?: number;
     },
-    defaults: { plan: PLANS },
-    flags: { showGatewaysForBundlePlan: boolean }
+    defaults: { plan: PLANS }
 ): PlanParameters => {
     const freePlanIDs = {};
 
@@ -223,7 +222,7 @@ export const getPlanIDsFromParams = (
     }
 
     const planIDs = { [plan.Name]: 1 };
-    const supportedAddons = getSupportedAddons(planIDs, flags);
+    const supportedAddons = getSupportedAddons(planIDs);
 
     if (signupParameters.users !== undefined) {
         const usersAddon = plans.find(

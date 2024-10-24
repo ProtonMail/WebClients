@@ -17,7 +17,6 @@ import metrics, { observeApiError } from '@proton/metrics';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 
 import { useNotifications } from '../../../hooks';
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
@@ -41,7 +40,6 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
-    const samlTestEnabled = useFlag('SamlTest');
 
     const ssoInfo: SSOInfo = {
         url: sso.SSOURL,
@@ -206,7 +204,7 @@ const SSOInfoForm = ({ domain, sso, issuerID, callbackURL, onImportSaml, onTestS
 
             <div className="flex gap-4">
                 <Button onClick={onImportSaml}>{c('Action').t`Import new SAML metadata`}</Button>
-                {samlTestEnabled && <Button onClick={onTestSaml}>{c('Action').t`Test SAML configuration`}</Button>}
+                <Button onClick={onTestSaml}>{c('Action').t`Test SAML configuration`}</Button>
                 <Button color="norm" disabled={!isFormDirty} loading={submitting} type="submit">
                     {c('Action').t`Save SAML configuration`}
                 </Button>
