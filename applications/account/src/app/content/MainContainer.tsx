@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
+import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
@@ -27,7 +28,6 @@ import {
     useConvertExternalAddresses,
     useDeviceRecovery,
     useDrivePlan,
-    useGroups,
     useIsDataRecoveryAvailable,
     useIsSessionRecoveryAvailable,
     useOrganizationTheme,

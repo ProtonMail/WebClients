@@ -11,5 +11,4 @@ export { useUserKeys, useGetUserKeys } from './useUserKeys';
 export { default as useUserSettings } from './useUserSettings';
 export { useWelcomeFlags } from './useWelcomeFlags';
 export * from './drawer';
-export { default as useGroups, useGetGroups } from './useGroups';
 export * from './usePreferredPlansMap';
