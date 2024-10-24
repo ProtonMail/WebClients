@@ -9,12 +9,12 @@ import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 
+import { useNotifications } from '../../hooks';
 import {
     useAvailableRecoveryMethods,
     useIsSessionRecoveryEnabled,
     useIsSessionRecoveryInitiationAvailable,
-    useNotifications,
-} from '../../hooks';
+} from '../../hooks/useSessionRecovery';
 import ChangePasswordModal, { MODES } from '../account/ChangePasswordModal';
 import ReauthUsingRecoveryModal from '../account/ReauthUsingRecoveryModal';
 import SettingsLayout from '../account/SettingsLayout';

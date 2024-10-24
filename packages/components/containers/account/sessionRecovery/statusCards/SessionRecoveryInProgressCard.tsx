@@ -7,7 +7,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { useSessionRecoveryGracePeriodHoursRemaining } from '../../../../hooks';
+import { useSessionRecoveryGracePeriodHoursRemaining } from '../../../../hooks/useSessionRecovery';
 import ConfirmSessionRecoveryCancellationModal from '../ConfirmSessionRecoveryCancellationModal';
 import SessionRecoveryStatusTitle from './SessionRecoveryStatusTitle';
 import handWarningIcon from './hand-warning-icon.svg';

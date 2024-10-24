@@ -24,7 +24,8 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useIsSessionRecoveryInitiationAvailable, useUserSettings } from '../../hooks';
+import { useUserSettings } from '../../hooks';
+import { useIsSessionRecoveryInitiationAvailable } from '../../hooks/useSessionRecovery';
 import MnemonicInputField, { useMnemonicInputValidation } from '../mnemonic/MnemonicInputField';
 
 interface Props extends ModalProps {

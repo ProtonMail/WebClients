@@ -14,7 +14,8 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
 
-import { useAvailableRecoveryMethods, useIsSessionRecoveryInitiationAvailable, useUserSettings } from '../../hooks';
+import { useUserSettings } from '../../hooks';
+import { useAvailableRecoveryMethods, useIsSessionRecoveryInitiationAvailable } from '../../hooks/useSessionRecovery';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
 import SettingsLayout from './SettingsLayout';
