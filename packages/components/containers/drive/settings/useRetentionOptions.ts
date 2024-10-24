@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { useDrivePlan } from '../../../hooks/drive';
+import { useDrivePlan } from '../../../hooks/drive/useDrivePlan';
 import { getRetentionLabel } from './retentionLabels';
 
 type RevisionRetentionOption = {

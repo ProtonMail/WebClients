@@ -831,6 +831,9 @@ export { default as WireGuardConfigurationSection } from './containers/vpn/WireG
 export { getAppVersion } from './helpers/appVersion';
 export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';
 export { getObjectKeys } from './helpers/getObjectKeys';
+export { useDriveB2BPhotosEnabledSetting } from './hooks/drive/useDriveB2BPhotosEnabledSetting';
+export { useDrivePlan } from './hooks/drive/useDrivePlan';
+export { useRevisionRetentionDays } from './hooks/drive/useRevisionRetentionDays';
 export { default as useIsSecurityCheckupAvailable } from './hooks/securityCheckup/useIsSecurityCheckupAvailable';
 export { default as useSecurityCheckup } from './hooks/securityCheckup/useSecurityCheckup';
 export { default as useActiveBreakpoint } from './hooks/useActiveBreakpoint';
@@ -875,12 +878,12 @@ export { default as useProgressiveRollout } from './hooks/useProgressiveRollout'
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
 export { default as useRelocalizeText } from './hooks/useRelocalizeText';
 export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';
+export {
+    useMultiSortedList,
+    default as useSortedList,
+    useSortedListAsync,
+    type SortConfig,
+} from './hooks/useSortedList';
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
 export { default as useToggle } from './hooks/useToggle';
 export { default as useWindowSize } from './hooks/useWindowSize';
-export {
-    default as useSortedList,
-    useSortedListAsync,
-    useMultiSortedList,
-    type SortConfig,
-} from './hooks/useSortedList';

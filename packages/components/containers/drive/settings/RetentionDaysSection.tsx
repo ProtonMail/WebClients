@@ -5,9 +5,9 @@ import { Button } from '@proton/atoms';
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import Radio from '@proton/components/components/input/Radio';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import { useRevisionRetentionDays } from '@proton/components/hooks/drive/useRevisionRetentionDays';
 import clsx from '@proton/utils/clsx';
 
+import { useRevisionRetentionDays } from '../../../hooks/drive/useRevisionRetentionDays';
 import { BusinessUpgradeBanner } from './banner/BusinessUpgradeBanner';
 import { FreeUpgradeBanner } from './banner/FreeUpgradeBanner';
 import { useRetentionOptions } from './useRetentionOptions';
