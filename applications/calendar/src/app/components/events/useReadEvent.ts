@@ -6,7 +6,7 @@ import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import type { CalendarSettings, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import type { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
+import type { CalendarViewEventData } from '../../containers/calendar/interface';
 import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
 import { propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToNotificationModel';
 
@@ -24,7 +24,7 @@ const DEFAULT_VEVENT: VcalVeventComponent = {
     },
 };
 const useReadEvent = (
-    value: DecryptedEventTupleResult | undefined,
+    targetEventData: CalendarViewEventData,
     tzid: string,
     calendarSettings?: CalendarSettings
 ): EventModelReadView => {
@@ -32,7 +32,7 @@ const useReadEvent = (
         const [
             { veventComponent = DEFAULT_VEVENT, hasDefaultNotifications, verificationStatus, selfAddressData },
             { IsProtonProtonInvite },
-        ] = value || [
+        ] = targetEventData.eventReadResult?.result || [
             {
                 veventComponent: DEFAULT_VEVENT,
                 hasDefaultNotifications: true,
@@ -62,7 +62,7 @@ const useReadEvent = (
             notifications,
             isAllDay,
         };
-    }, [value, tzid, calendarSettings]);
+    }, [targetEventData, tzid, calendarSettings]);
 };
 
 export default useReadEvent;

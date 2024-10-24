@@ -41,7 +41,6 @@ export enum FeatureCode {
     CollapsibleSidebarSpotlightCalendar = 'CollapsibleSidebarSpotlightCalendar',
     CalendarBusySlotsSpotlight = 'CalendarBusySlotsSpotlight',
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
-    CalendarFetchMetadataOnly = 'CalendarFetchMetadataOnly',
     CalendarEncryptedSearch = 'CalendarEncryptedSearch',
     CalendarEventColorSpotlight = 'CalendarEventColorSpotlight',
     CleanUTMTrackers = 'CleanUTMTrackers',
