@@ -245,8 +245,6 @@ const SubscriptionContainer = ({
     const getCalendars = useGetCalendars();
     const { APP_NAME } = useConfig();
 
-    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
-
     const [loading, withLoading] = useLoading();
     const [loadingCheck, withLoadingCheck] = useLoading();
     const [blockCycleSelector, withBlockCycleSelector] = useLoading();
@@ -291,7 +289,6 @@ const SubscriptionContainer = ({
                 organization,
                 plans,
                 user,
-                showGatewaysForBundlePlan,
             });
         }
 

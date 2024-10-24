@@ -122,7 +122,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
-                showGatewaysForBundlePlan: false,
             })
         ).toEqual({
             [PLANS.VISIONARY]: 1,
@@ -139,7 +138,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
-                showGatewaysForBundlePlan: false,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -157,7 +155,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
-                showGatewaysForBundlePlan: false,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -176,7 +173,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
-                showGatewaysForBundlePlan: true,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -194,7 +190,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
-                showGatewaysForBundlePlan: true,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
@@ -212,7 +207,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
-                showGatewaysForBundlePlan: true,
             })
         ).toEqual({
             [PLANS.VPN_BUSINESS]: 1,
@@ -230,7 +224,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization: MOCK_ORGANIZATION,
                 user,
-                showGatewaysForBundlePlan: false,
             })
         ).toEqual({
             [PLANS.MAIL]: 1,
@@ -248,7 +241,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization,
                 user,
-                showGatewaysForBundlePlan: false,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO]: 1,
@@ -276,7 +268,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization,
                 user,
-                showGatewaysForBundlePlan: false,
             })
         ).toEqual({
             [PLANS.MAIL_PRO]: 1,
@@ -307,7 +298,6 @@ describe('switchPlan', () => {
                 plans: getLongTestPlans(),
                 organization,
                 user,
-                showGatewaysForBundlePlan: false,
             })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,

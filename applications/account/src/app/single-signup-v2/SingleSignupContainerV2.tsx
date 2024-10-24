@@ -213,7 +213,6 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
-    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -689,9 +688,7 @@ const SingleSignupContainerV2 = ({
                 user: resumedSession?.User ? formatUser(resumedSession?.User) : undefined,
             });
 
-            const planParameters = getPlanIDsFromParams(plans, currency, signupParameters, defaults, {
-                showGatewaysForBundlePlan,
-            });
+            const planParameters = getPlanIDsFromParams(plans, currency, signupParameters, defaults);
             const cycle = signupParameters.cycle || defaults.cycle;
             const invite = signupParameters.invite;
             const coupon = signupParameters.coupon;
@@ -734,7 +731,6 @@ const SingleSignupContainerV2 = ({
                         billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
                     },
                     toApp: product,
-                    showGatewaysForBundlePlan,
                 }),
                 getSubscriptionDataCycleMapping(paymentsApi, plansMap, coupon),
             ]);
@@ -903,7 +899,6 @@ const SingleSignupContainerV2 = ({
                 plansMap: model.plansMap,
                 upsellPlanCard,
                 toApp: product,
-                showGatewaysForBundlePlan,
             });
 
             const statusPromise = paymentsApi.statusExtendedAutomatic();
@@ -967,7 +962,6 @@ const SingleSignupContainerV2 = ({
                     billingAddress: model.subscriptionData.billingAddress,
                 },
                 toApp: product,
-                showGatewaysForBundlePlan,
             });
 
             const session: SessionData = {

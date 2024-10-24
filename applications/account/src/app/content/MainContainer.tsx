@@ -149,7 +149,6 @@ const MainContainer = () => {
     const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
     const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
-    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
     const isGlobalSSOEnabled = useFlag('GlobalSSO');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
 
@@ -196,7 +195,6 @@ const MainContainer = () => {
         isB2BDrive,
         isB2BAuthLogsEnabled,
         isGlobalSSOEnabled,
-        showGatewaysForBundlePlan,
         isScribePaymentEnabled,
     });
 
