@@ -11,6 +11,7 @@ import {
     getPrivateAdminError,
     getPrivateText,
 } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button, Card } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -41,7 +42,7 @@ import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton
 import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useOrganization } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import Addresses from '../addresses/Addresses';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';

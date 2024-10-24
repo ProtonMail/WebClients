@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useMembers } from '@proton/account/members/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { getPrivatizeError } from '@proton/account/organizationKey/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -23,7 +24,7 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 
-import { useNotifications, useOrganization } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import ActivatePasswordlessOrganizationKey from './ActivatePasswordlessOrganizationKey';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
 import ChangeOrganizationKeysPasswordlessModal from './ChangeOrganizationKeysPasswordlessModal';

@@ -4,7 +4,6 @@ export { default as useGetEncryptionPreferences } from './useGetEncryptionPrefer
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
 export { default as useModals } from './useModals';
 export { default as useNotifications } from './useNotifications';
-export * from './useOrganization';
 export { default as useSubscription, useGetSubscription } from './useSubscription';
 export { default as usePreventCloseTab } from './usePreventCloseTab';
 export * from './useSessionRecovery';

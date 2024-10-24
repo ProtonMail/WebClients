@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import type { AcceptOrganizationKeyInvitePayload } from '@proton/account';
 import { acceptOrganizationKeyInvite, prepareAcceptOrganizationKeyInvite } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button, Card, CircleLoader } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -22,7 +23,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useOrganization } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 
 interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {

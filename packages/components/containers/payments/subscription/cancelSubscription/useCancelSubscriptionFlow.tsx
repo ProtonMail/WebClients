@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
@@ -36,13 +37,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
-import {
-    useGetSubscription,
-    useNotifications,
-    useOrganization,
-    usePreferredPlansMap,
-    useSubscription,
-} from '../../../../hooks';
+import { useGetSubscription, useNotifications, usePreferredPlansMap, useSubscription } from '../../../../hooks';
 import DowngradeModal from '../../DowngradeModal';
 import LossLoyaltyModal from '../../LossLoyaltyModal';
 import MemberDowngradeModal from '../../MemberDowngradeModal';

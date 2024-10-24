@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms';
 import { OnboardingStep, type OnboardingStepRenderCallback, useSettingsLink } from '@proton/components';
-import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 

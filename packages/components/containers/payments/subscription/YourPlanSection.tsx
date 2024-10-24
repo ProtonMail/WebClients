@@ -1,4 +1,5 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
@@ -16,7 +17,7 @@ import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, isTrial } from '@pro
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
-import { useOrganization, usePreferredPlansMap, useSubscription } from '../../../hooks';
+import { usePreferredPlansMap, useSubscription } from '../../../hooks';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import { resolveUpsellsToDisplay } from './helpers';
 import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';

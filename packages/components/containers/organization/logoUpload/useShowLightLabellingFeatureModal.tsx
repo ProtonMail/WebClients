@@ -1,5 +1,6 @@
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useOrganization, useWelcomeFlags } from '@proton/components/hooks';
+import { useWelcomeFlags } from '@proton/components/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import { FeatureCode, useFeature } from '@proton/features';
 import { APPS } from '@proton/shared/lib/constants';

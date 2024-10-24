@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useApi } from '@proton/components';
-import { useOrganization } from '@proton/components/hooks';
 import { PLANS } from '@proton/payments';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';

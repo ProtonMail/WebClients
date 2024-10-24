@@ -1,5 +1,5 @@
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { FeatureCode, useFeature } from '@proton/features';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';

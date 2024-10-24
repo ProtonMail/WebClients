@@ -7,6 +7,7 @@ import OrganizationSettingsRouter from 'proton-account/src/app/containers/organi
 import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useUser } from '@proton/account/user/hooks';
 import {
@@ -57,7 +58,6 @@ import {
     useConvertExternalAddresses,
     useGroups,
     useModalState,
-    useOrganization,
     useSubscription,
     useToggle,
     useUnprivatizeMembers,

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -7,7 +8,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
-import { useGetOrganization, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';

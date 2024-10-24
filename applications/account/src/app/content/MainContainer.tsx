@@ -4,6 +4,7 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useUser } from '@proton/account/user/hooks';
@@ -28,7 +29,6 @@ import {
     useGroupMemberships,
     useGroups,
     useIsDataRecoveryAvailable,
-    useOrganization,
     useOrganizationTheme,
     useRecoveryNotification,
     useShowThemeSelection,
