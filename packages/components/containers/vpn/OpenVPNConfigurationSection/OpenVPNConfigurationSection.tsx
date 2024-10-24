@@ -24,7 +24,8 @@ import {
     getCountryOptions,
     getLocalizedCountryByAbbr,
 } from '../../../helpers/countries';
-import { usePlans, useSortedList, useUserSettings } from '../../../hooks';
+import { usePlans, useUserSettings } from '../../../hooks';
+import useSortedList from '../../../hooks/useSortedList';
 import type { EnhancedLogical } from '../OpenVPNConfigurationSection/interface';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import ServerConfigs from './ServerConfigs';

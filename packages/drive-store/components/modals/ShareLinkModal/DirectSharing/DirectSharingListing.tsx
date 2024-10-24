@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar, CircleLoader } from '@proton/atoms';
-import { useSortedList } from '@proton/components/hooks';
+import useSortedList from '@proton/components/hooks/useSortedList';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
