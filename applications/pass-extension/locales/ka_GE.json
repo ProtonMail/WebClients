@@ -572,21 +572,38 @@
       ],
       "Write us on Twitter": [
         "მოგვწერეთ ტვიტერზე"
+      ],
+      "Your password manager is not here? Request it.": [
+        "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "დაზოგეთ ჭკვიანურად. მიიღეთ ერთი წლით Pass Plus, მხოლოდ, ${ relativePrice }/თვეში."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "უვადო წვდომა"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "ყველა ფასიანი სერვისი. 6 მომხმარებელი. ერთი იოლი გამოწერა."
+      ],
+      "Limited-stock available!": [
+        "ხელმისაწვდომია შეზღუდული რაოდენობა!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "ფასდაკლების მიღება"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "შავი პარასკევის შემოთავაზება"
+    "bf2024: Title": {
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "გადაიხადეთ ერთხელ და მიიღეთ ${ lifetimeAccessJSX } Pass Plus-ზე. მხოლოდ ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "დაზოეთ ${ discountJSX }-მდე Pass Family-ზე. მხოლოდ ${ relativePrice }/თვეში."
       ]
     },
     "Browser": {
@@ -702,6 +719,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი",
         "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი"
+      ],
+      "Domain not available, try again later": [
+        "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
       ],
       "Editing item failed": [
         "ელემენტის ჩასწორების შეცდომა"
@@ -1324,6 +1344,12 @@
       "Expires in ${ remainingTime }": [
         "ვადა ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "დამატებითი პაროლი წარმატებით შეიქმნა"
+      ],
+      "Extra password successfully removed": [
+        "დამატებითი პაროლი წარმატებით წაიშალა"
+      ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
       ],
@@ -1446,6 +1472,9 @@
       ],
       "Monitoring settings successfully updated": [
         "მონიტორინგის პარამეტრები წარმატებით განახლდა"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "წარმოადგენს რა მეტს, ვიდრე პაროლების მმართველი, ${ PASS_APP_NAME } თქვენს პაროლებს და პირადი ელფოსტის მისამართებს ფსევდონიებით იცავს. დაფუძნებული იგივე ტექნოლოგიაზე, რაზეც ${ MAIL_APP_NAME }, თქვენი მონაცემები გამჭოლადაა დაშიფრული და წვდომადი, მხოლოდ, თქვენთვსაა."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
@@ -1646,6 +1675,9 @@
       "Select destination vault": [
         "აირჩიეთ სამიზნე საცავი"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "აირჩიეთ, სად გნებავთ თქვენი შემოტანილი საცავების შენახვა."
+      ],
       "Selected items permanently deleted": [
         "მონიშნული ელემენტები სამუდამოდ წაიშალა"
       ],
@@ -1666,6 +1698,9 @@
       ],
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "გაუზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები 10 პიროვნებამდე"
       ],
       "Sign in or create an account to continue.": [
         "გასაგრძელებლად შედით ან შექმენით ანგარიში."
@@ -1776,11 +1811,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა ახლავე"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "ერთზე მეტი საცავის შესაქმნელად ფასიან ტარიფზე უნდა გადახვიდეთ."
+      ],
       "Use vaults to share this item with others.": [
         "ამ ელემენტის სხვებთან გასაზიარებლად, საცავები გამოიყენეთ."
       ],
       "User's access removed": [
         "მომხმარებლის წვდომა წაიშალა"
+      ],
+      "User's access successfully updated": [
+        "მომხმარებლის წვდომები წარმატებით განახლდა"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "საცავი \"${ payload.content.name }\" წარმატებით წაიშალა"
@@ -2018,6 +2059,9 @@
       "Capital letters (A-Z)": [
         "მაღალი რეგისტრის სიმბოლოები (A-Z)"
       ],
+      "Capitalize": [
+        "ზედა რეგისტრში გადაყვანა"
+      ],
       "Card": [
         "ბარათი"
       ],
@@ -2203,6 +2247,9 @@
       ],
       "Import passwords": [
         "პაროლების შემოტანა"
+      ],
+      "Imported from: ": [
+        "შემოტანილია : "
       ],
       "Imported on : ": [
         "შემოტანის დრო : "
@@ -2502,6 +2549,12 @@
       "Today": [
         "დღეს"
       ],
+      "Total imported items: ": [
+        "შემოტანილი ელემენტები სულ: "
+      ],
+      "Total items: ": [
+        "სულ ელემენტები: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2756,6 +2809,9 @@
       "Current version": [
         "მიმდინარე ვერსია"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "წავშალო საცავი \"${ vaultName }\"?"
+      ],
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
       ],
@@ -2813,6 +2869,9 @@
       "Last modified": [
         "ბოლო ცვლილება"
       ],
+      "Leave vault?": [
+        "გავიდე საცავიდან?"
+      ],
       "Log in as...": [
         "შესვლა, როგორც..."
       ],
@@ -2854,6 +2913,9 @@
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
+      ],
+      "Permanently remove all items?": [
+        "წავშალო სამუდამოდ ყველა ელემენტი?"
       ],
       "Pin the extension": [
         "გაფართოების მიმაგრება"
@@ -2965,6 +3027,9 @@
       "Section name cannot be empty": [
         "განყოფლების სახელი ცარიელი ვერ იქნება"
       ],
+      "URL already exists": [
+        "URL უკვე არსებობს"
+      ],
       "URL cannot be empty": [
         "URL ცარიელი ვერ იქნება"
       ],
@@ -2999,6 +3064,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "საცავის '${ vaultName }' შექმნა შეუძლებელია"
+      ],
+      "Could not send invitations to the following addresses:": [
+        "მოსაწვევი ვერ გავაგზავნე შემდეგ მისამართებზე:"
       ],
       "Duplicate email addresses.": [
         "დუბლირებული ელფოსტის მისამართები."
@@ -3069,6 +3137,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-ით დაშიფრული გატანის ფაილისთვის საკვანძო ფრაზა აუცილებელია"
+      ],
+      "Please contact us to investigate the issue": [
+        "დაგვიკავშირდით ამ პრობლემის გამოსაკვლევად"
       ],
       "Please verify your email address in order to use email aliases": [
         "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
@@ -3144,6 +3215,9 @@
       ],
       "Your session was locked.": [
         "თქვენი სესია დაბლოკილია."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "ტარიფის მიერ დაშვებული საცავეების რაოდენობას ვერ გადააჭარბებთ."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი პირველ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."
