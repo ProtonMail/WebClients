@@ -596,19 +596,33 @@
         "${ PASS_APP_NAME } deinstallieren"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Spare clever. Hol dir ein Jahr Pass Plus für nur ${ relativePrice } pro Monat."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "lebenslanger Zugang"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
+      ],
+      "Limited-stock available!": [
+        "Begrenzter Bestand verfügbar!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
-        "Sichere dir das Angebot"
+        "Angebot nutzen"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Black Friday-Angebot"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Einmal bezahlen und ${ lifetimeAccessJSX } für Pass Plus erhalten. Nur ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Spare bis zu ${ discountJSX } auf Pass Family. Nur ${ relativePrice }/Monat."
       ]
     },
     "Browser": {
@@ -757,6 +771,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } beschädigte CSV-Zeile gefunden",
         "${ errors.length } beschädigte CSV-Zeilen gefunden"
+      ],
+      "Domain not available, try again later": [
+        "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
       "Editing item failed": [
         "Fehler beim Bearbeiten des Eintrags."

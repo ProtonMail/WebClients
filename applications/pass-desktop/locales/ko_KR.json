@@ -570,6 +570,9 @@
       ],
       "Write us on Twitter": [
         "Twitter에서 작성"
+      ],
+      "Your password manager is not here? Request it.": [
+        "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
       ]
     },
     "App menu": {
@@ -595,19 +598,33 @@
         "${ PASS_APP_NAME } 제거"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "알뜰하게 할인 받으세요. 오직 ${ relativePrice } 당 개월만 추가하여 Pass Plus를 1년 동안 사용하세요."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "평생 이용권"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "모든 프리미엄 기능. 6명의 사용자. 한 번의 쉬운 구독으로."
+      ],
+      "Limited-stock available!": [
+        "한정 수량 구매 가능!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
-        "혜택 얻기"
+        "구매하기"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "블랙 프라이데이 오퍼"
+    "bf2024: Title": {
+      "Black Friday": [
+        "블랙 프라이데이"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "한 번 결제하고 Pass Plus ${ lifetimeAccessJSX }을 얻으세요. 단돈 ${ relativePrice } 입니다."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Pass Family로 최대 ${ discountJSX }을 절약하세요. 오직 ${ relativePrice }달 입니다."
       ]
     },
     "Browser": {
@@ -756,6 +773,9 @@
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } 손상된 csv 행 감지됨"
+      ],
+      "Domain not available, try again later": [
+        "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
       ],
       "Editing item failed": [
         "항목 수정 실패"
@@ -1169,6 +1189,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }에 접근하려면 지문 인식 및 기기 PIN코드가 필요합니다."
       ],
+      "Add your custom email address to monitor:": [
+        "모니터랑할 커스텀 이메일 주소를 추가하세요:"
+      ],
       "Admin": [
         "관리자"
       ],
@@ -1364,6 +1387,12 @@
       "Expires in ${ remainingTime }": [
         "${ remainingTime }에 만료"
       ],
+      "Extra password successfully created": [
+        "추가 비밀번호가 성공적으로 생성되었습니다"
+      ],
+      "Extra password successfully removed": [
+        "추가 비밀번호가 성공적으로 삭제되었습니다"
+      ],
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
       ],
@@ -1510,6 +1539,9 @@
       ],
       "Monitoring settings successfully updated": [
         "모니터링 설정이 업데이트되었습니다"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "단순한 비밀번호 관리자가 아닌 ${ PASS_APP_NAME }는 비밀번호 뿐만 아니라 별칭으로 개인 이메일 주소도 보호합니다. ${ MAIL_APP_NAME }과 동일한 기술로 종단간 암호화하여 오직 당신만 데이터에 접근할 수 있습니다."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
@@ -1697,6 +1729,9 @@
       "Select vault to share": [
         "공유하려면 금고 선택"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "불러온 금고들을 저장할 곳을 선택하세요."
+      ],
       "Selected items permanently deleted": [
         "선택한 항목을 영구적으로 지웠습니다."
       ],
@@ -1717,6 +1752,9 @@
       ],
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "최대 10명까지 로그인과 안전한 메모를 공유하세요"
       ],
       "Sign in to your account": [
         "계정에 로그인하세요"
@@ -1790,6 +1828,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "타 비밀번호 관리자에서 데이터를 이전하려면, 현재 사용 중인 비밀번호 관리자에 이동하여 데이터를 불러온 다음 ${ PASS_APP_NAME }에 업로드 하십시오. 데이터를 모두 가져오면 해당 추출된 파일은 삭제하십시오."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "불러온 데이터를 검토하려면 브라우저 툴바의 ${ PASS_APP_NAME } 아이콘을 클릭하세요."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
       ],
@@ -1820,11 +1861,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "프리미엄 기능 잠금해제 하려면 업그레이드"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "유료 플랜으로 업그레이드하여 여러개의 금고를 생성하세요."
+      ],
       "Use vaults to share this item with others.": [
         "다른 사람과 이 항목을 공유하려면 금고를 사용하세요."
       ],
       "User's access removed": [
         "사용자 접근 삭제됨"
+      ],
+      "User's access successfully updated": [
+        "사용자 접근 권한이 성공적으로 업데이트 되었습니다"
       ],
       "username": [
         "사용자 이름"
@@ -2050,6 +2097,9 @@
       "Capital letters (A-Z)": [
         "대문자 알파벳 (A-Z)"
       ],
+      "Capitalize": [
+        "대문자화"
+      ],
       "Card": [
         "카드"
       ],
@@ -2238,6 +2288,9 @@
       ],
       "Import passwords": [
         "비밀번호 불러오기"
+      ],
+      "Imported from: ": [
+        "다음에서 불러옴: "
       ],
       "Imported on : ": [
         "불러온 위치 : "
@@ -2529,6 +2582,12 @@
       ],
       "Today": [
         "오늘"
+      ],
+      "Total imported items: ": [
+        "총 불러온 항목: "
+      ],
+      "Total items: ": [
+        "총 항목: "
       ],
       "TOTP": [
         "TOTP"
@@ -2858,6 +2917,9 @@
       "Dark Web Monitoring": [
         "다크 웹 모니터링"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "금고 \"${ vaultName }\"을(를) 삭제할까요?"
+      ],
       "Details": [
         "세부 사항"
       ],
@@ -2914,6 +2976,9 @@
       ],
       "Last modified": [
         "마지막 수정"
+      ],
+      "Leave vault?": [
+        "금고를 떠날까요?"
       ],
       "Loading breaches...": [
         "유출 검색 중..."
@@ -2975,11 +3040,17 @@
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
       ],
+      "Permanently remove all items?": [
+        "영구적으로 모든 항목들을 삭제할까요?"
+      ],
       "Pinned (${ items.length })": [
         "고정됨 (${ items.length })"
       ],
       "Recommended actions": [
         "권장하는 조치"
+      ],
+      "Reject device?": [
+        "기기를 거절할까요?"
       ],
       "Remove email address?": [
         "이메일 주소를 삭제하시겠습니까?"
@@ -3112,6 +3183,9 @@
       "Section name cannot be empty": [
         "섹션 이름은 비워둘 수 없습니다"
       ],
+      "URL already exists": [
+        "URL이 이미 존재합니다"
+      ],
       "URL cannot be empty": [
         "URL은 필수 정보입니다."
       ],
@@ -3143,6 +3217,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" 금고를 생성할 수 없음"
+      ],
+      "Could not send invitations to the following addresses:": [
+        "아래의 주소로 초대장을 보내지 못했습니다:"
       ],
       "Duplicate email addresses.": [
         "중복된 이메일 주소들입니다."
@@ -3231,6 +3308,9 @@
       "Please check that the extension is properly installed and enabled": [
         "확장 프로그램이 제대로 설치되었고 활성화 되었는지 확인해주세요."
       ],
+      "Please contact us to investigate the issue": [
+        "문제에 대해 조사하기 위해 저희에게 연락해주세요"
+      ],
       "Please update the extension to its latest version": [
         "확장 프로그램을 최신 버전으로 업데이트해 주세요."
       ],
@@ -3308,6 +3388,9 @@
       ],
       "Your session was locked.": [
         "사용자의 세션이 잠겼습니다."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "현재 구독 플랜으로 더 금고를 생성할 수 없습니다."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
