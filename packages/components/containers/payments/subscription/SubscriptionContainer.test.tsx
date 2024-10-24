@@ -27,6 +27,11 @@ jest.mock('@proton/components/components/portal/Portal', () => ({
     default: jest.fn(({ children }) => <>{children}</>),
 }));
 
+jest.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled', () => ({
+    __esModule: true,
+    default: jest.fn(() => ({ paymentsEnabled: false, enabled: false })),
+}));
+
 const ContextSubscriptionContainer = applyHOCs(
     withReduxStore({
         user: buildUser({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),

@@ -2,8 +2,10 @@ import { c } from 'ttag';
 
 import { canUseGroups } from '@proton/components';
 import type { SectionConfig } from '@proton/components';
+import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { PLANS } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
@@ -32,6 +34,7 @@ interface Props {
     isGlobalSSOEnabled: boolean;
     showGatewaysForBundlePlan: boolean;
     groups: Group[] | undefined;
+    isScribePaymentEnabled?: boolean;
 }
 
 export const getOrganizationAppRoutes = ({
@@ -45,6 +48,7 @@ export const getOrganizationAppRoutes = ({
     isGlobalSSOEnabled,
     showGatewaysForBundlePlan,
     groups,
+    isScribePaymentEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
@@ -54,6 +58,7 @@ export const getOrganizationAppRoutes = ({
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
     const hasActiveOrganization = isOrgActive && hasOrganization;
     const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription, { showGatewaysForBundlePlan });
+    const hasSubUsers = (organization?.UsedMembers || 0) > 1;
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
     const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
@@ -84,6 +89,14 @@ export const getOrganizationAppRoutes = ({
         (isOrgActive || (!isOrgActive && (organization?.UsedMembers ?? 0) > 1)) &&
         // The org must be setup to allow users to access this page
         (hasOrganizationKey || hasOrganization);
+
+    const canShowScribeSection =
+        isScribePaymentEnabled &&
+        // Some b2b accounts do not support scribe
+        isScribeSupported(organization, user) &&
+        // The user must have a plan that supports multi-user
+        hasMemberCapablePlan &&
+        hasSubUsers;
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -271,6 +284,18 @@ export const getOrganizationAppRoutes = ({
                     (planSupportsSSO(organization?.PlanName) || upsellPlanSSO(organization?.PlanName)) &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
+            },
+            scribe: <SectionConfig>{
+                text: c('Title').t`${BRAND_NAME} Scribe`,
+                title: c('Title').t`${BRAND_NAME} Scribe writing assistant`,
+                to: '/organization-scribe',
+                icon: 'pen-sparks',
+                available: canShowScribeSection,
+                subsections: [
+                    {
+                        id: 'scribe-management',
+                    },
+                ],
             },
         },
     };

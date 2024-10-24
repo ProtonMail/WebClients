@@ -6,11 +6,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useMembers, useOrganization, useSubscription } from '@proton/components/hooks';
 import { MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
-import {
-    getHasExternalMemberCapableB2BPlan,
-    getHasMailB2BPlan,
-    hasAnyBundlePro,
-} from '@proton/shared/lib/helpers/subscription';
+import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 const UserAndAddressesSectionIntro = () => {
@@ -23,7 +19,7 @@ const UserAndAddressesSectionIntro = () => {
 
     const selfMember = members?.find((member) => member.Self);
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
-    const hasInboxB2BPlan = hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
+    const hasInboxB2BPlan = getHasInboxB2BPlan(subscription);
     const hasFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
 
     if (hasFamilyOrg) {

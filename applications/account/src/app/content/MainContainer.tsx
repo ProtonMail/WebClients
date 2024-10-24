@@ -42,6 +42,7 @@ import UnprivatizationRequestTopBanner from '@proton/components/containers/membe
 import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
+import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -150,6 +151,7 @@ const MainContainer = () => {
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
     const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
     const isGlobalSSOEnabled = useFlag('GlobalSSO');
+    const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -195,6 +197,7 @@ const MainContainer = () => {
         isB2BAuthLogsEnabled,
         isGlobalSSOEnabled,
         showGatewaysForBundlePlan,
+        isScribePaymentEnabled,
     });
 
     useEffect(() => {

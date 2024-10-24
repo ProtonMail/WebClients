@@ -416,6 +416,10 @@ export const getHasMailB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasMailPro(subscription) || hasMailBusiness(subscription);
 };
 
+export const getHasInboxB2BPlan = (subscription: MaybeFreeSubscription) => {
+    return hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
+};
+
 export const getPrimaryPlan = (subscription: Subscription | undefined) => {
     if (!subscription) {
         return;

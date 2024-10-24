@@ -24,6 +24,7 @@ import {
     useOrganization,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import OrganizationScribeSection from '@proton/components/containers/organization/scribe/OrganizationScribeSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { getOrganizationAppRoutes } from './routes';
@@ -45,7 +46,7 @@ const OrganizationSettingsRouter = ({
     const [organization] = useOrganization();
 
     const {
-        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso, connectionEvents, groups },
+        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso, connectionEvents, groups, scribe },
     } = organizationAppRoutes;
 
     if (!organizationAppRoutes.available) {
@@ -136,6 +137,13 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, groups)}>
                     <PrivateMainSettingsArea config={groups}>
                         <OrganizationGroupsManagementSection organization={organization} />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(scribe) && (
+                <Route path={getSectionPath(path, scribe)}>
+                    <PrivateMainSettingsArea config={scribe}>
+                        <OrganizationScribeSection organization={organization} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

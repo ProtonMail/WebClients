@@ -58,6 +58,7 @@ export interface OrganizationIdentityOutput {
 export interface OrganizationSettings {
     ShowName: boolean;
     LogoID: string | null;
+    ShowScribeWritingAssistant: boolean;
 }
 
 export interface OrganizationWithSettings extends Organization {
