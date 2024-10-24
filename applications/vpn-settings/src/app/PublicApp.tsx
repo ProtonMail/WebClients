@@ -77,7 +77,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
         <>
             <NotificationsChildren />
             <ModalsChildren />
-            <UnAuthenticatedApiProvider loader={loader}>
+            <UnAuthenticatedApiProvider>
                 <UnleashFlagProviderWrapper>
                     <PublicAppSetup loader={loader}>
                         <ForceRefreshContext.Provider value={refresh}>
