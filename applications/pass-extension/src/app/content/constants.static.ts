@@ -7,7 +7,7 @@ export const DROPDOWN_WIDTH = 250;
 export const MIN_DROPDOWN_HEIGHT = 60;
 export const NOTIFICATION_HEIGHT = 335;
 export const NOTIFICATION_HEIGHT_SM = 220;
-export const NOTIFICATION_HEIGHT_XS = 120;
+export const NOTIFICATION_HEIGHT_XS = 110;
 export const NOTIFICATION_WIDTH = 320;
 
 export const IFRAME_APP_READY_EVENT = 'PassIFrameReady';
