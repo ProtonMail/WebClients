@@ -16,13 +16,8 @@ import { getOrganization, getOrganizationSettings } from '@proton/shared/lib/api
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';
-import {
-    type Organization,
-    type OrganizationSettings,
-    type User,
-    UserLockedFlags,
-} from '@proton/shared/lib/interfaces';
+import type { OrganizationWithSettings, Organization, OrganizationSettings, User } from '@proton/shared/lib/interfaces';
+import { UserLockedFlags } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
@@ -143,6 +138,7 @@ const modelThunk = (options?: {
                 const defaultSettings = {
                     ShowName: false,
                     LogoID: null,
+                    ShowScribeWritingAssistant: true,
                 };
 
                 const [Organization, OrganizationSettings] = await Promise.all([
@@ -155,7 +151,7 @@ const modelThunk = (options?: {
                         ? defaultSettings
                         : extraArgument
                               .api<OrganizationSettings>(getOrganizationSettings())
-                              .then(({ ShowName, LogoID }) => ({ ShowName, LogoID }))
+                              .then(({ ShowName, LogoID, ShowScribeWritingAssistant }) => ({ ShowName, LogoID, ShowScribeWritingAssistant }))
                               .catch(() => {
                                   return defaultSettings;
                               }),
