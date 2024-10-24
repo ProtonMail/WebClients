@@ -1,15 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-* @param {string} word_start
-* @returns {(string)[]}
-*/
-export function getWordsAutocomplete(word_start: string): (string)[];
-/**
-* @returns {number}
-*/
-export function getDefaultStopGap(): number;
-/**
 * @param {WasmPsbt} psbt
 * @param {WasmAccount} account
 * @returns {Promise<WasmTransactionDetailsData>}
@@ -19,44 +10,30 @@ export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount):
 */
 export function setPanicHook(): void;
 /**
+* @returns {number}
 */
-export enum WasmScriptType {
-  Legacy = 1,
-  NestedSegwit = 2,
-  NativeSegwit = 3,
-  Taproot = 4,
+export function getDefaultStopGap(): number;
+/**
+* @param {string} word_start
+* @returns {(string)[]}
+*/
+export function getWordsAutocomplete(word_start: string): (string)[];
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
 }
 /**
 */
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
-export enum WasmSortOrder {
-  Asc = 0,
-  Desc = 1,
-}
-/**
-*/
-export enum WasmWalletTransactionFlag {
-  Suspicious = 0,
-  Private = 1,
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
 }
 /**
 */
@@ -70,14 +47,6 @@ export enum WasmLanguage {
   Japanese = 6,
   Korean = 7,
   Spanish = 8,
-}
-/**
-*/
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
 }
 /**
 */
@@ -101,6 +70,20 @@ export enum WasmNetwork {
 }
 /**
 */
+export enum WasmScriptType {
+  Legacy = 1,
+  NestedSegwit = 2,
+  NativeSegwit = 3,
+  Taproot = 4,
+}
+/**
+*/
+export enum WasmSortOrder {
+  Asc = 0,
+  Desc = 1,
+}
+/**
+*/
 export enum WasmChangeSpendPolicy {
   ChangeAllowed = 0,
   OnlyChange = 1,
@@ -108,15 +91,30 @@ export enum WasmChangeSpendPolicy {
 }
 /**
 */
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
 }
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
-
+/**
+*/
+export enum WasmWalletTransactionFlag {
+  Suspicious = 0,
+  Private = 1,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
 export type WasmGatewayProvider = "Banxa" | "Ramp" | "MoonPay" | "Unsupported";
 
 export interface WasmApiCountry {
@@ -170,33 +168,6 @@ export interface WasmBalance {
     trusted_pending: number;
     untrusted_pending: number;
     confirmed: number;
-}
-
-export type WasmInviteNotificationType = "Newcomer" | "EmailIntegration" | "Unsupported";
-
-export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
-
-export interface WasmExchangeRateOrTransactionTime {
-    key: WasmExchangeRateOrTransactionTimeEnum;
-    value: string;
-}
-
-export interface WasmTransactionData {
-    label: string | null;
-    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
-}
-
-export interface WasmEmailIntegrationData {
-    address_id: string | null;
-    body: string | null;
-    recipients: Record<string, string> | null;
-    is_anonymous: number | null;
-}
-
-export interface WasmAddressInfo {
-    index: number;
-    address: string;
-    keychain: WasmKeychainKind;
 }
 
 export interface WasmApiWalletBitcoinAddressLookup {
@@ -401,6 +372,35 @@ export interface WasmTransactionTime {
     confirmation_time: number | null;
     last_seen: number | null;
 }
+
+export type WasmInviteNotificationType = "Newcomer" | "EmailIntegration" | "Unsupported";
+
+export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
+
+export interface WasmExchangeRateOrTransactionTime {
+    key: WasmExchangeRateOrTransactionTimeEnum;
+    value: string;
+}
+
+export interface WasmTransactionData {
+    label: string | null;
+    exchange_rate_or_transaction_time: WasmExchangeRateOrTransactionTime;
+}
+
+export interface WasmEmailIntegrationData {
+    address_id: string | null;
+    body: string | null;
+    recipients: Record<string, string> | null;
+    is_anonymous: number | null;
+}
+
+export interface WasmAddressInfo {
+    index: number;
+    address: string;
+    keychain: WasmKeychainKind;
+}
+
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
 /**
 */
@@ -847,6 +847,10 @@ export class WasmDerivationPath {
 * @returns {WasmDerivationPath}
 */
   static fromString(str: string): WasmDerivationPath;
+/**
+* @returns {string}
+*/
+  toString(): string;
 }
 /**
 */
