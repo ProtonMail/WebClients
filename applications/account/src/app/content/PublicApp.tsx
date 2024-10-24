@@ -625,7 +625,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                     </UnAuthenticated>
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.CLOSE_TICKET}>
-                    <UnAuthenticatedApiProvider loader={loader}>
+                    <UnAuthenticatedApiProvider>
                         <UnAuthenticated>
                             <CloseTicketContainer />
                         </UnAuthenticated>
@@ -690,7 +690,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                         onActiveSessions={handleActiveSessions}
                         loader={loader}
                     >
-                        <UnAuthenticatedApiProvider loader={loader}>
+                        <UnAuthenticatedApiProvider>
                             <UnleashFlagProviderWrapper>
                                 <PublicAppSetup loader={loader}>
                                     <PaymentSwitcher loader={loader}>
