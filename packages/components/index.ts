@@ -883,6 +883,19 @@ export { default as useProgressiveRollout } from './hooks/useProgressiveRollout'
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
 export { default as useRelocalizeText } from './hooks/useRelocalizeText';
 export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';
+export {
+    useAvailableRecoveryMethods,
+    useIsSessionRecoveryAvailable,
+    useIsSessionRecoveryEnabled,
+    useIsSessionRecoveryInitiatedByCurrentSession,
+    useIsSessionRecoveryInitiationAvailable,
+    useSessionRecoveryGracePeriodHoursRemaining,
+    useSessionRecoveryInsecureTimeRemaining,
+    useSessionRecoveryState,
+    useShouldNotifyPasswordResetAvailable,
+    useShouldNotifySessionRecoveryCancelled,
+    useShouldNotifySessionRecoveryInProgress,
+} from './hooks/useSessionRecovery';
 export { default as useShowThemeSelection } from './hooks/useShowThemeSelection';
 export { useMultiSortedList, default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
 export type { SortConfig } from './hooks/useSortedList';

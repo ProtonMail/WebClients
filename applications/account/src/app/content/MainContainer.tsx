@@ -29,6 +29,7 @@ import {
     useDrivePlan,
     useGroups,
     useIsDataRecoveryAvailable,
+    useIsSessionRecoveryAvailable,
     useOrganizationTheme,
     useRecoveryNotification,
     useShowThemeSelection,
@@ -42,7 +43,6 @@ import { getIsSectionAvailable, getRoutePaths } from '@proton/components/contain
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
-import { useIsSessionRecoveryAvailable } from '@proton/components/hooks';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
