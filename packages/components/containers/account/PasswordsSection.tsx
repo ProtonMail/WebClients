@@ -9,16 +9,12 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import ChangeBackupPasswordModal from '@proton/components/containers/account/ChangeBackupPasswordModal';
+import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
 
-import {
-    useAvailableRecoveryMethods,
-    useIsSessionRecoveryInitiationAvailable,
-    useSearchParamsEffect,
-    useUserSettings,
-} from '../../hooks';
+import { useAvailableRecoveryMethods, useIsSessionRecoveryInitiationAvailable, useUserSettings } from '../../hooks';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
 import SettingsLayout from './SettingsLayout';

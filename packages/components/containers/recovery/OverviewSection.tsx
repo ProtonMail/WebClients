@@ -12,7 +12,8 @@ import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import { useSearchParamsEffect, useUserKeys } from '../../hooks';
+import { useUserKeys } from '../../hooks';
+import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
 import RecoverDataCard from './RecoverDataCard';
 import RecoverDataConfirmModal from './RecoverDataConfirmModal';
