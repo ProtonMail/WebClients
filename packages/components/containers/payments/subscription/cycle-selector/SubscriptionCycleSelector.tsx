@@ -13,7 +13,6 @@ import type { CYCLE } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/lib/helpers/planIDs';
 import type { Currency, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { getShortBillingText } from '../../helper';
@@ -51,8 +50,8 @@ const CycleItem = ({
     );
 };
 
-const getMonthlySuffix = (planIDs: PlanIDs, flags: { showGatewaysForBundlePlan: boolean }) => {
-    const supportedAddons = getSupportedAddons(planIDs, flags);
+const getMonthlySuffix = (planIDs: PlanIDs) => {
+    const supportedAddons = getSupportedAddons(planIDs);
 
     return (Object.keys(supportedAddons) as ADDON_NAMES[]).some((addon) => isMemberAddon(addon))
         ? c('Suffix').t`/user per month`
@@ -88,8 +87,7 @@ const SubscriptionCycleSelector = ({
     additionalCheckResults = [],
     allowedCycles,
 }: Props) => {
-    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
-    const monthlySuffix = getMonthlySuffix(planIDs, { showGatewaysForBundlePlan });
+    const monthlySuffix = getMonthlySuffix(planIDs);
 
     const selectedPlan = useMemo(() => {
         return new SelectedPlan(planIDs, plansMap, selectedCycle, currency);

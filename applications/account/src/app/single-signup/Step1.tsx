@@ -105,7 +105,6 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
-import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -426,8 +425,6 @@ const Step1 = ({
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
     const [changingCurrency, withChangingCurrency] = useLoading();
     const { getAvailableCurrencies } = useCurrencies();
-
-    const showGatewaysForBundlePlan = useFlag('ShowGatewaysForBundlePlan');
 
     const { plansMap } = model;
 
@@ -920,7 +917,6 @@ const Step1 = ({
         plansMap: model.plansMap,
         planIDs: options.planIDs,
         cycle: options.cycle,
-        showGatewaysForBundlePlan,
     });
 
     const coupon = (() => {
