@@ -33,7 +33,7 @@ interface Props {
     isB2BAuthLogsEnabled: boolean;
     isGlobalSSOEnabled: boolean;
     groups: Group[] | undefined;
-    isScribePaymentEnabled?: boolean;
+    isScribeEnabled?: boolean;
 }
 
 export const getOrganizationAppRoutes = ({
@@ -46,7 +46,7 @@ export const getOrganizationAppRoutes = ({
     isB2BAuthLogsEnabled,
     isGlobalSSOEnabled,
     groups,
-    isScribePaymentEnabled,
+    isScribeEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
@@ -89,7 +89,7 @@ export const getOrganizationAppRoutes = ({
         (hasOrganizationKey || hasOrganization);
 
     const canShowScribeSection =
-        isScribePaymentEnabled &&
+        isScribeEnabled &&
         // Some b2b accounts do not support scribe
         isScribeSupported(organization, user) &&
         // The user must have a plan that supports multi-user
