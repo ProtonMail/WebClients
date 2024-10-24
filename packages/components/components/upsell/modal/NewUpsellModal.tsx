@@ -2,10 +2,11 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
 import type { ModalSize, ModalStateProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader, Price, SettingsLink, usePlans } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader, Price, SettingsLink } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import { type Currency, PLANS } from '@proton/payments';
 import { APPS, type APP_NAMES, CYCLE, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
