@@ -572,21 +572,38 @@
       ],
       "Write us on Twitter": [
         "Escríbenos en Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "¿No aparece tu gestor de contraseñas? Solicítalo."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Ahorra con inteligencia. Contrata Pass Plus durante un año por solo ${ relativePrice } al mes."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "un acceso para toda la vida"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Todos los servicios premium, 6 usuarios y una sola suscripción."
+      ],
+      "Limited-stock available!": [
+        "¡Disponibilidad limitada!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "Aprovéchate de la oferta"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Oferta de Black Friday"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Paga una vez y obtén ${ lifetimeAccessJSX } a Pass Plus. Solo por ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Ahorra hasta un ${ discountJSX } con Pass Family. Solo por ${ relativePrice }/mes."
       ]
     },
     "Browser": {
@@ -702,6 +719,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Se ha detectado ${ errors.length } fila dañada en el archivo CSV.",
         "Se han detectado ${ errors.length } filas dañadas en el archivo CSV."
+      ],
+      "Domain not available, try again later": [
+        "Dominio no disponible. Inténtalo de nuevo más tarde."
       ],
       "Editing item failed": [
         "Error al editar el elemento"
@@ -1324,6 +1344,12 @@
       "Expires in ${ remainingTime }": [
         "Expira en ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Se ha creado la contraseña adicional."
+      ],
+      "Extra password successfully removed": [
+        "Se ha borrado la contraseña adicional."
+      ],
       "Fill in the CSV with your data": [
         "Rellenar el CSV con tus datos"
       ],
@@ -1446,6 +1472,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Los ajustes de monitoreo se han actualizado."
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege tu contraseña y tu dirección de correo personal a través de alias de correo electrónico. Se ha desarrollado con la misma tecnología detrás de ${ MAIL_APP_NAME }, tus datos están cifrados de extremo a extremo y sólo son accesibles por ti."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
@@ -1646,6 +1675,9 @@
       "Select destination vault": [
         "Selecciona la caja fuerte de destino"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Selecciona dónde quieres guardar tus cajas fuertes importadas."
+      ],
       "Selected items permanently deleted": [
         "Los elementos seleccionados han sido eliminados permanentemente."
       ],
@@ -1666,6 +1698,9 @@
       ],
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Comparte tus inicios de sesión y notas con hasta 10 personas"
       ],
       "Sign in or create an account to continue.": [
         "Inicia sesión o crea una cuenta para continuar."
@@ -1731,8 +1766,14 @@
       "This version will be added to the history as the newest version.": [
         "Esta versión será añadida al historial como la versión nueva."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Esto rechazará el dispositivo **${ name }** que ha intentado iniciar sesión en tu cuenta ${ BRAND_NAME } el **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar los datos desde otro gestor de contraseñas, ve al gestor, exporta tus datos y luego cárgalos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimina el archivo exportado."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Para verificar los datos importados, haz clic en el ícono de ${ PASS_APP_NAME } en la barra de herramientas del navegador."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Intenta recargar o reinstalar la extensión y asegúrate de que el navegador y ${ PASS_SHORT_APP_NAME } estén actualizados."
@@ -1776,11 +1817,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Mejora ahora para desbloquear funciones premium"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Mejora a un plan de pago para crear varias cajas fuertes."
+      ],
       "Use vaults to share this item with others.": [
         "Utiliza las cajas fuertes para compartir este elemento con otras personas."
       ],
       "User's access removed": [
         "Se ha borrado el acceso del usuario."
+      ],
+      "User's access successfully updated": [
+        "Se ha actualizado el acceso del usuario."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Se ha eliminado la caja fuerte \"${ payload.content.name }\"."
@@ -2018,6 +2065,9 @@
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
       ],
+      "Capitalize": [
+        "Mayúsculas"
+      ],
       "Card": [
         "Tarjeta"
       ],
@@ -2203,6 +2253,9 @@
       ],
       "Import passwords": [
         "Importar contraseñas"
+      ],
+      "Imported from: ": [
+        "Importado desde: "
       ],
       "Imported on : ": [
         "Importado el: "
@@ -2502,6 +2555,12 @@
       "Today": [
         "Hoy"
       ],
+      "Total imported items: ": [
+        "Número total de elementos importados: "
+      ],
+      "Total items: ": [
+        "Número total de elementos: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2719,6 +2778,58 @@
         "Escribe tu nota"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Aprobar o negar ahora"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Ingrese el código de confirmación que te enviamos a tu otro dispositivo."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Si no has hecho esta solicitud, cancélala ahora."
+      ],
+      "Invalid confirmation code": [
+        "El código de confirmación no es válido."
+      ],
+      "No, it wasn’t me": [
+        "No, no fui yo."
+      ],
+      "Sign-in confirmed": [
+        "Inicio de sesión confirmado"
+      ],
+      "Sign-in rejected": [
+        "Inicio de sesión rechazado"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Se ha solicitado un inicio de sesión en un nuevo dispositivo. ¿Has sido tú?"
+      ],
+      "Yes, it was me": [
+        "Sí, fui yo."
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Activo"
+      ],
+      "Inactive": [
+        "Inactivo"
+      ],
+      "Pending activation": [
+        "Activación pendiente"
+      ],
+      "Pending admin activation": [
+        "Pendiente de la activación del administrador"
+      ],
+      "Rejected": [
+        "Rechazado"
+      ],
+      "Signed out": [
+        "Sesión terminada"
+      ],
+      "Unknown": [
+        "Desconocido"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Se ha activado la sincronización de alias. Los alias de SimpleLogin puede tomar un tiempo en sincronizarse."
@@ -2755,6 +2866,9 @@
       ],
       "Current version": [
         "Versión actual"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "¿Eliminar la caja fuerte «${ vaultName }»?"
       ],
       "Discard changes?": [
         "¿Descartar los cambios?"
@@ -2813,6 +2927,9 @@
       "Last modified": [
         "Última modificación"
       ],
+      "Leave vault?": [
+        "¿Abandonar la caja fuerte?"
+      ],
       "Log in as...": [
         "Iniciar sesión como..."
       ],
@@ -2855,11 +2972,17 @@
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
       ],
+      "Permanently remove all items?": [
+        "¿Borrar todos los elementos permanentemente?"
+      ],
       "Pin the extension": [
         "Ancla la extensión"
       ],
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
+      ],
+      "Reject device?": [
+        "¿Rechazar el dispositivo?"
       ],
       "Remove extra password": [
         "Borrar la contraseña adicional"
@@ -2965,6 +3088,9 @@
       "Section name cannot be empty": [
         "El nombre de la sección no puede estar vacío."
       ],
+      "URL already exists": [
+        "La URL ya existe."
+      ],
       "URL cannot be empty": [
         "La URL no puede estar vacía."
       ],
@@ -2999,6 +3125,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "No se ha podido crear la caja fuerte \"${ vaultName }\"."
+      ],
+      "Could not send invitations to the following addresses:": [
+        "No se han podido enviar las invitaciones a las siguientes direcciones:"
       ],
       "Duplicate email addresses.": [
         "Direcciones de correo duplicadas"
@@ -3069,6 +3198,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña."
+      ],
+      "Please contact us to investigate the issue": [
+        "Contáctanos para investigar el problema."
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifica tu dirección de correo electrónico para poder utilizar alias de correo electrónico."
@@ -3144,6 +3276,9 @@
       ],
       "Your session was locked.": [
         "La sesión está bloqueada."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "No puedes crear más cajas fuertes de las que permite tu suscripción."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias cajas fuertes. Todos los elementos serán importados atsu primera caja fuerte. Para importar a varias cajas fuertes mejora tu suscripción."
