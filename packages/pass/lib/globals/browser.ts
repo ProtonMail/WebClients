@@ -38,6 +38,9 @@ export default ((): Browser => {
                     self[key] = new Proxy(value, {
                         get(target, prop, receiver) {
                             if (process.env.NODE_ENV !== 'development') {
+                                /** Early return `undefined` for 'app' property to prevent
+                                 * Sentry's ChromeApp detection from generating errors */
+                                if (prop === 'app') return undefined;
                                 return logger.error(`[Extension::Error] extension API is protected`);
                             }
 
