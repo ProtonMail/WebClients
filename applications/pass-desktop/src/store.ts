@@ -3,6 +3,7 @@ import Store from 'electron-store';
 import type { ClipboardStoreProperties, DesktopTheme } from '@proton/pass/types';
 
 import type { StoreInstallProperties } from './lib/install-info';
+import type { WindowConfigStoreProperties } from './lib/window-management';
 import type { StoreUpdateProperties } from './update';
 
 type RootStore = {
@@ -10,6 +11,7 @@ type RootStore = {
     update?: StoreUpdateProperties;
     clipboard?: ClipboardStoreProperties;
     theme?: DesktopTheme;
+    windowConfig?: WindowConfigStoreProperties;
 };
 
 export const store = new Store<RootStore>({
