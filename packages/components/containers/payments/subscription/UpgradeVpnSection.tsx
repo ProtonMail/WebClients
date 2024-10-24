@@ -5,7 +5,6 @@ import useLoad from '@proton/components/hooks/useLoad';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import useFlag from '@proton/unleash/useFlag';
 
 import { usePlans, usePreferredPlansMap, useSubscription, useVPNServersCount } from '../../../hooks';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
@@ -27,8 +26,6 @@ const UpgradeVpnSection = ({ app }: Props) => {
     const [serversCount, serversCountLoading] = useVPNServersCount();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
-    const showBundleUpsellFromVPNBiz = useFlag('ShowBundleUpsellFromVPNBiz');
-
     useLoad();
 
     const loading = loadingSubscription || loadingPlans || serversCountLoading || plansMapLoading;
@@ -44,7 +41,6 @@ const UpgradeVpnSection = ({ app }: Props) => {
         freePlan,
         serversCount,
         openSubscriptionModal,
-        showBundleUpsellFromVPNBiz,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 
