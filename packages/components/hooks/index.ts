@@ -5,7 +5,6 @@ export { default as useHandler, useEventListener, useSubscribeEventManager, useI
 export { default as useModals } from './useModals';
 export { default as useNotifications } from './useNotifications';
 export * from './useOrganization';
-export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './useSortedList';
 export { default as useSubscription, useGetSubscription } from './useSubscription';
 export { default as usePreventCloseTab } from './usePreventCloseTab';
 export * from './useSessionRecovery';
@@ -13,7 +12,6 @@ export { useUserKeys, useGetUserKeys } from './useUserKeys';
 export { default as useUserSettings } from './useUserSettings';
 export { useWelcomeFlags } from './useWelcomeFlags';
 export * from './drawer';
-export { default as useAllowAddressDeletion, useGetAllowAddressDeletion } from './useAllowAddressDeletion';
 export { default as useGroups, useGetGroups } from './useGroups';
 export { default as useGroupMemberships } from './useGroupMemberships';
 export * from './usePreferredPlansMap';
