@@ -6,7 +6,7 @@ import { getAppID } from "../store/idStore";
 import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
 import { isLinux, isMac, isWindows } from "./helpers";
 import { LogMessage, Transport } from "electron-log";
-import { getAppURL } from "../store/urlStore";
+import { defaultAppURL, getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
 import { getWindowBounds } from "../store/boundsStore";
 import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
@@ -30,7 +30,7 @@ export async function initializeSentry() {
     }
 
     const appID = await getAppID();
-    const mailURL = new URL(getAppURL().mail);
+    const mailURL = new URL(defaultAppURL.mail);
     const environment = mailURL.hostname.replace(/^mail./i, "");
     const release = `${pkg.name}@${pkg.version}+${app.isPackaged ? "packaged" : "unpackaged"}`;
     const dsn = process.env.DESKTOP_SENTRY_DSN.replace("sentry", `${mailURL.host}/api/core/v4/reports/sentry`);
