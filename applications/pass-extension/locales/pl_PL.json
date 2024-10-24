@@ -576,19 +576,14 @@
         "Napisz do nas na Twitterze"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Oszczędzaj mądrze. Skorzystaj z rozwiązania Pass Plus za jedynie ${ relativePrice } miesięcznie."
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Wszystkie funkcje premium. 6 użytkowników. Jedna prosta subskrypcja."
       ]
     },
-    "bf2023: Label": {
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Oferta z okazji Czarnego Piątku"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Czarny Piątek"
       ]
     },
     "Browser": {
@@ -710,6 +705,9 @@
         "Wykryto ${ errors.length } uszkodzone wiersze pliku CSV",
         "Wykryto ${ errors.length } uszkodzonych wierszy pliku CSV",
         "Wykryto ${ errors.length } uszkodzonych wierszy pliku CSV"
+      ],
+      "Domain not available, try again later": [
+        "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
       "Editing item failed": [
         "Edytowanie elementu nie powiodło się"
@@ -1350,6 +1348,12 @@
       ],
       "Expires in ${ remainingTime }": [
         "Wygasa za ${ remainingTime }"
+      ],
+      "Extra password successfully created": [
+        "Dodatkowe hasło zostało utworzone"
+      ],
+      "Extra password successfully removed": [
+        "Dodatkowe hasło zostało usunięte"
       ],
       "Fill in the CSV with your data": [
         "Wypełnij plik CSV danymi"
@@ -2073,6 +2077,9 @@
       "Capital letters (A-Z)": [
         "Wielkie litery (A-Z)"
       ],
+      "Capitalize": [
+        "Wielkie litery"
+      ],
       "Card": [
         "Karta"
       ],
@@ -2258,6 +2265,9 @@
       ],
       "Import passwords": [
         "Importuj hasła"
+      ],
+      "Imported from: ": [
+        "Zaimportowano z: "
       ],
       "Imported on : ": [
         "Zaimportowano: "
@@ -2817,6 +2827,9 @@
       "Current version": [
         "Obecna wersja"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Usunąć sejf \"${ vaultName }\"?"
+      ],
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
       ],
@@ -2874,6 +2887,9 @@
       "Last modified": [
         "Zmodyfikowano"
       ],
+      "Leave vault?": [
+        "Opuścić sejf?"
+      ],
       "Log in as...": [
         "Zaloguj się jako..."
       ],
@@ -2915,6 +2931,9 @@
       ],
       "Pending access to the shared data": [
         "Oczekujący dostęp do udostępnionych danych"
+      ],
+      "Permanently remove all items?": [
+        "Usunąć trwale wszystkie elementy?"
       ],
       "Pin the extension": [
         "Przypnij rozszerzenie"

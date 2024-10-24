@@ -570,21 +570,38 @@
       ],
       "Write us on Twitter": [
         "Napište nám na Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Váš správce hesel zde není? Požádejte o něj."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Šetřete chytře. Získejte roční předplatné Pass Plus za pouhých ${ relativePrice } měsíčně."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "doživotní přístup"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Všechny prémiové funkce. 6 uživatelů. 1 snadné předplatné."
+      ],
+      "Limited-stock available!": [
+        "K dispozici je omezený počet kusů!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "Využít nabídku"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Nabídka pro Black Friday"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Zaplaťte jednou a získejte ${ lifetimeAccessJSX } do Pass Plus. Pouze za ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Ušetřete až ${ discountJSX } na Pass Family. Pouze za ${ relativePrice }/měsíc."
       ]
     },
     "Browser": {
@@ -739,6 +756,9 @@
         "Zjištěny ${ errors.length } poškozené řádky csv",
         "Zjištěno ${ errors.length } poškozených řádků csv",
         "Zjištěno ${ errors.length } poškozených řádků csv"
+      ],
+      "Domain not available, try again later": [
+        "Doména není dostupná, zkuste to znovu později"
       ],
       "Editing item failed": [
         "Úprava položky se nezdařila"
@@ -1160,6 +1180,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Přístup k ${ PASS_APP_NAME } bude vyžadovat váš otisk prstu nebo PIN zařízení."
       ],
+      "Add your custom email address to monitor:": [
+        "Přidejte vlastní e-mailovou adresu pro sledování:"
+      ],
       "Admin": [
         "Správce"
       ],
@@ -1355,6 +1378,12 @@
       "Expires in ${ remainingTime }": [
         "Vyprší za ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Dodatečné heslo úspěšně vytvořeno"
+      ],
+      "Extra password successfully removed": [
+        "Dodatečné heslo úspěšně odebráno"
+      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
       ],
@@ -1507,6 +1536,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Nastavení sledování úspěšně aktualizováno"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } není obyčejný správce hesel. Chrání vaše heslo a osobní e-mailovou adresu pomocí e-mailových aliasů. Funguje na stejné technologii jako ${ MAIL_APP_NAME }, vaše data jsou koncově šifrována a dostupná jen vám."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
@@ -1694,6 +1726,9 @@
       "Select vault to share": [
         "Vyberte trezor, který chcete sdílet"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Vyberte, kam chcete importované trezory uložit."
+      ],
       "Selected items permanently deleted": [
         "Vybrané položky byly trvale smazány"
       ],
@@ -1714,6 +1749,9 @@
       ],
       "Settings successfully updated": [
         "Nastavení bylo úspěšně aktualizováno"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Sdílení přihlašovacích údajů a zabezpečených poznámek až s 10 lidmi"
       ],
       "Sign in to your account": [
         "Přihlaste se ke svému účtu"
@@ -1784,8 +1822,14 @@
       "This version will be added to the history as the newest version.": [
         "Verze bude přidána do historie jako nejnovější verze."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Tím zamítnete zařízení **${ name }**, které se **${ date }** pokusilo přihlásit k vašemu účtu ${ BRAND_NAME }."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Chcete-li přenést data z jiného správce hesel, přejděte do správce hesel, exportujte data a poté je nahrajte do ${ PASS_APP_NAME }. Po importu dat exportovaný soubor smažte."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Chcete-li si prohlédnout importovaná data, klikněte na ikonu ${ PASS_APP_NAME } v panelu nástrojů svého prohlížeče."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
@@ -1817,11 +1861,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Přejděte nyní na vyšší tarif pro odemčení prémiových funkcí"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Chcete-li vytvořit více trezorů, přejděte na placený tarif."
+      ],
       "Use vaults to share this item with others.": [
         "Pomocí trezorů můžete tuto položku sdílet s ostatními."
       ],
       "User's access removed": [
         "Přístup uživatele odebrán"
+      ],
+      "User's access successfully updated": [
+        "Přístup uživatele byl úspěšně aktualizován"
       ],
       "username": [
         "uživatelské jméno"
@@ -2077,6 +2127,9 @@
       "Capital letters (A-Z)": [
         "Velká písmena (A-Z)"
       ],
+      "Capitalize": [
+        "Velkými písmeny"
+      ],
       "Card": [
         "Karta"
       ],
@@ -2265,6 +2318,9 @@
       ],
       "Import passwords": [
         "Importovat hesla"
+      ],
+      "Imported from: ": [
+        "Importováno z: "
       ],
       "Imported on : ": [
         "Importováno: "
@@ -2560,6 +2616,12 @@
       "Today": [
         "Dnes"
       ],
+      "Total imported items: ": [
+        "Celkem importovaných položek: "
+      ],
+      "Total items: ": [
+        "Celkový počet položek: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2814,6 +2876,58 @@
         "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti. ${ link }"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Schválit nebo zamítnout nyní"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Zadejte potvrzovací kód, který jsme vám odeslali na vaše druhé zařízení."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Pokud jste tuto žádost nepodali, zrušte ji nyní."
+      ],
+      "Invalid confirmation code": [
+        "Neplatný potvrzovací kód"
+      ],
+      "No, it wasn’t me": [
+        "Ne, nejde o mojí žádost"
+      ],
+      "Sign-in confirmed": [
+        "Přihlášení potvrzeno"
+      ],
+      "Sign-in rejected": [
+        "Přihlášení odmítnuto"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Požadavek na přihlášení na jiném zařízení. Byli jste to vy?"
+      ],
+      "Yes, it was me": [
+        "Ano, jde o mojí žádost"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktivní"
+      ],
+      "Inactive": [
+        "Neaktivní"
+      ],
+      "Pending activation": [
+        "Čeká na aktivaci"
+      ],
+      "Pending admin activation": [
+        "Čeká na aktivaci správcem"
+      ],
+      "Rejected": [
+        "Odmítnuto"
+      ],
+      "Signed out": [
+        "Odhlášeno"
+      ],
+      "Unknown": [
+        "Neznámý"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synchronizace aliasů byla úspěšně povolena. Synchronizace aliasů SimpleLogin může nějakou dobu trvat"
@@ -2880,6 +2994,9 @@
       "Dark Web Monitoring": [
         "Sledování Dark webu"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Smazat trezor \"${ vaultName }\"?"
+      ],
       "Details": [
         "Podrobnosti"
       ],
@@ -2936,6 +3053,9 @@
       ],
       "Last modified": [
         "Naposledy změněno"
+      ],
+      "Leave vault?": [
+        "Opustit trezor?"
       ],
       "Loading breaches...": [
         "Načítání úniků..."
@@ -2997,11 +3117,17 @@
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
       ],
+      "Permanently remove all items?": [
+        "Trvale smazat všechny položky?"
+      ],
       "Pinned (${ items.length })": [
         "Připnuto (${ items.length })"
       ],
       "Recommended actions": [
         "Doporučené akce"
+      ],
+      "Reject device?": [
+        "Odmítnout zařízení?"
       ],
       "Remove email address?": [
         "Odebrat e-mailovou adresu?"
@@ -3137,6 +3263,9 @@
       "Section name cannot be empty": [
         "Název sekce nemůže být prázdný"
       ],
+      "URL already exists": [
+        "URL adresa již existuje"
+      ],
       "URL cannot be empty": [
         "URL adresa nemůže být prázdná"
       ],
@@ -3168,6 +3297,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nelze vytvořit trezor \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Nepodařilo se odeslat pozvánky těmto adresám:"
       ],
       "Duplicate email addresses.": [
         "Duplicitní e-mailové adresy."
@@ -3259,6 +3391,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Zkontrolujte prosím, že je rozšíření správně nainstalováno a povoleno"
       ],
+      "Please contact us to investigate the issue": [
+        "Kontaktujte nás prosím pro vyšetření problému"
+      ],
       "Please update the extension to its latest version": [
         "Prosím, aktualizujte rozšíření na jeho nejnovější verzi"
       ],
@@ -3336,6 +3471,9 @@
       ],
       "Your session was locked.": [
         "Vaše relace byla uzamčena."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Nemůžete vytvořit více trezorů, než umožňuje vaše předplatné."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho prvního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."

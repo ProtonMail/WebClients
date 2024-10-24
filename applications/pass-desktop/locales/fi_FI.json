@@ -571,6 +571,9 @@
       ],
       "Write us on Twitter": [
         "Kirjoita meille Twitterissä"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Eikö salasanahallintaasi ole listattu? Pyydä sen lisäystä."
       ]
     },
     "App menu": {
@@ -596,19 +599,30 @@
         "Poista ${ PASS_APP_NAME }"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Säästä fiksusti. Hanki Pass Plus vuodeksi edulliseen ${ relativePrice } kuukausihintaan."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "elinikäisen pääsyn"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Kaikki premium-ominaisuudet. Kuusi käyttäjää. Yksi helppo tilaus."
+      ],
+      "Limited-stock available!": [
+        "Rajoitetusti saatavilla!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "Hyödynnä tarjous"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Black Friday -tarjous"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Maksa kerran, ja saat ${ lifetimeAccessJSX } Pass Plussaan. Vain ${ relativePrice }."
       ]
     },
     "Browser": {
@@ -760,6 +774,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Havaittiin ${ errors.length } virheellinen CSV-rivi",
         "Havaittiin ${ errors.length } virheellinen CSV-rivi"
+      ],
+      "Domain not available, try again later": [
+        "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
       "Editing item failed": [
         "Kohteen muokkaus epäonnistui"
@@ -1184,6 +1201,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }:n käyttäminen vaatii sormenjälkesi tai laitteen PIN-koodin"
       ],
+      "Add your custom email address to monitor:": [
+        "Lisää oma sähköpostiosoitteesi valvontaan:"
+      ],
       "Admin": [
         "Ylläpito"
       ],
@@ -1378,6 +1398,12 @@
       ],
       "Expires in ${ remainingTime }": [
         "Erääntymiseen: ${ remainingTime }"
+      ],
+      "Extra password successfully created": [
+        "Lisäsalasana luotiin"
+      ],
+      "Extra password successfully removed": [
+        "Lisäsalasana poistettiin"
       ],
       "Fill in the CSV with your data": [
         "Täytä CSV omilla tiedoillasi"
@@ -1716,6 +1742,9 @@
       "Select vault to share": [
         "Valitse jaettava holvi"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Valitse, mihin haluat tallentaa tuodut holvin."
+      ],
       "Selected items permanently deleted": [
         "Valitut kohteet poistettiin pysyvästi"
       ],
@@ -1736,6 +1765,9 @@
       ],
       "Settings successfully updated": [
         "Asetukset tallennettiin"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Jaa kirjautumistietosi ja suojatut muistiinpanosi jopa 10 henkilölle"
       ],
       "Sign in to your account": [
         "Kirjaudu tilillesi"
@@ -1839,6 +1871,9 @@
       ],
       "Upgrade Now to Unlock Premium Features": [
         "Päivitä tilauksesi nyt avataksesi Premium-ominaisuudet"
+      ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Päivitä maksulliseen tilaukseen luodaksesi useita holveja."
       ],
       "Use vaults to share this item with others.": [
         "Jaa kohde muille holvien avulla."
@@ -2269,6 +2304,9 @@
       "Import passwords": [
         "Tuo salasanoja"
       ],
+      "Imported from: ": [
+        "Tuotu lähteestä: "
+      ],
       "Imported on : ": [
         "Tuontiaika: "
       ],
@@ -2560,6 +2598,12 @@
       ],
       "Today": [
         "Tänään"
+      ],
+      "Total imported items: ": [
+        "Kohteita tuotiin yhteensä: "
+      ],
+      "Total items: ": [
+        "Kohteita yhteensä: "
       ],
       "TOTP": [
         "TOTP"
@@ -2891,6 +2935,9 @@
       "Dark Web Monitoring": [
         "Pimeän verkon valvonta"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Poistetaanko holvi \"${ vaultName }\"?"
+      ],
       "Details": [
         "Lisätiedot"
       ],
@@ -2947,6 +2994,9 @@
       ],
       "Last modified": [
         "Muokattu viimeksi"
+      ],
+      "Leave vault?": [
+        "Poistutaanko holvista?"
       ],
       "Loading breaches...": [
         "Tietomurtoja ladataan..."
@@ -3007,6 +3057,9 @@
       ],
       "Pending access to the shared data": [
         "Odotetaan käyttöoikeutta jaettuihin tietoihin"
+      ],
+      "Permanently remove all items?": [
+        "Poistetaanko kaikki kohteet pysyvästi?"
       ],
       "Pinned (${ items.length })": [
         "Kiinnitykset (${ items.length })"
@@ -3146,6 +3199,9 @@
       "Section name cannot be empty": [
         "Osion nimi ei voi olla tyhjä"
       ],
+      "URL already exists": [
+        "URL-osoite on jo olemassa"
+      ],
       "URL cannot be empty": [
         "URL ei voi olla tyhjä"
       ],
@@ -3177,6 +3233,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Holvia \"${ vaultName }\" ei voitu luoda"
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Kutsuja ei voitu lähettää seuraaviin osoitteisiin:"
       ],
       "Duplicate email addresses.": [
         "Sähköpostiosoitteiden kaksoiskappaleita."
@@ -3265,6 +3324,9 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Tarkista, että laajennus on asennettu oikein ja otettu käyttöön"
+      ],
+      "Please contact us to investigate the issue": [
+        "Ota meihin yhteyttä ongelman selvittämiseksi"
       ],
       "Please update the extension to its latest version": [
         "Päivitä laajennus uusimpaan versioon"

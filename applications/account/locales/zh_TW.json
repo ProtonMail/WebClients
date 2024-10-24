@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -790,11 +790,14 @@
       "Refresh status": [
         "重新整理狀態"
       ],
+      "refresh the page": [
+        "重新整理此頁面"
+      ],
       "Refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
-        "重新整理此頁面"
+      "Reject": [
+        "婉拒"
       ],
       "Reload": [
         "重新載入"
@@ -1570,14 +1573,6 @@
         "選擇你的年終優惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1593,6 +1588,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
     },
     "bf2023: Offers": {
@@ -2002,6 +2005,9 @@
       "All ${ BRAND_NAME } apps and premium features": [
         "所有${ BRAND_NAME }應用程式和頂級質子版功能"
       ],
+      "Cancel and downgrade": [
+        "取消並且降級"
+      ],
       "Cloud storage and sharing for large files": [
         "大型文件雲端儲存與共享"
       ],
@@ -2010,6 +2016,12 @@
       ],
       "Encrypted password manager": [
         "加密密碼管理"
+      ],
+      "Save ${ upsellSavings }": [
+        "省下${ upsellSavings }"
+      ],
+      "Try ${ planName }": [
+        "嘗試${ planName }"
       ],
       "Ultra fast and private VPN": [
         "超快與私有的VPN"
@@ -6735,10 +6747,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7928,9 +7940,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "這是您先前可能儲存的加密金鑰。"
-      ],
-      "This is an invitation from:": [
-        "此邀請函寄件者："
       ],
       "This is the password you used before the password reset.": [
         "此密碼是你重設前的舊密碼。"
@@ -9453,6 +9462,9 @@
       "Filter Name": [
         "篩選器名稱"
       ],
+      "First name": [
+        "名"
+      ],
       "Folder location": [
         "資料夾位置"
       ],
@@ -9554,6 +9566,9 @@
       ],
       "Last month only": [
         "僅過去 1 個月"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Level for NetShield blocker filtering": [
         "Bridge 攔截過濾等級"
@@ -10798,32 +10813,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Get started for ${ price }": [
-        "使用${ price }取得"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "從${ priceMailPlus }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "升級至${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "繼續使用免費方案"
@@ -10851,6 +10840,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Get started for ${ price }": [
+        "使用${ price }取得"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "從${ priceMailPlus }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11483,20 +11498,6 @@
         "您選擇的方案：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -11515,6 +11516,20 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -11595,9 +11610,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "此選項可視作使用者般檢視非私人使用者的收件匣，包括完整郵件和聯絡人詳細資料"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "組織管理工具可讓管理員新增或移除使用者、分配儲存空間、組態設定網域，以及進行其他工作"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "我們穩固的基礎架構用在一時，確保您在需要時均能存取到您的帳號"
@@ -12584,8 +12596,14 @@
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "全部頂級質子版功能。6位用戶。一個簡單的訂購。"
+      ],
       "Get it for ${ monthlyPrice }": [
         "只需${ monthlyPrice }"
+      ],
+      "Limited-time deal.": [
+        "限時優惠。"
       ]
     },
     "passwordless": {
@@ -14252,6 +14270,9 @@
       "Folders, labels and filters": [
         "資料夾，標籤和過濾"
       ],
+      "Folders, labels, and custom filters": [
+        "資料夾，標籤和自訂過濾規則"
+      ],
       "Got it": [
         "瞭解"
       ],
@@ -14317,6 +14338,9 @@
       ],
       "Unlimited privacy for two": [
         "無限隱私提供給兩位"
+      ],
+      "Upload any new files": [
+        "上載任何新文件"
       ],
       "Users won’t be able to manage their calendars": [
         "使用者將無法管理行事曆"
@@ -15028,10 +15052,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -15126,6 +15150,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "創建 ${ BRAND_NAME } 電郵位址"
+      ],
+      "Created": [
+        "已創建"
       ],
       "Creating user accounts": [
         "創建使用者帳號"
@@ -15541,6 +15568,9 @@
       "My calendars": [
         "我的行事曆"
       ],
+      "Name": [
+        "名稱"
+      ],
       "Need more labels or folders?": [
         "需要更多的標籤或資料夾？"
       ],
@@ -15673,6 +15703,9 @@
       "Remove calendar": [
         "移除行事曆"
       ],
+      "Remove device?": [
+        "移除裝置？"
+      ],
       "Remove domain": [
         "移除網域"
       ],
@@ -15795,9 +15828,6 @@
       ],
       "Sign in to join the Beta program": [
         "登入以加入體驗版方案"
-      ],
-      "Sign in to your organization": [
-        "登入您的組織"
       ],
       "Sign out": [
         "登出"

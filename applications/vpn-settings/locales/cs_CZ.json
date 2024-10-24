@@ -85,6 +85,9 @@
       "Back": [
         "Zpět"
       ],
+      "Back to sign-in": [
+        "Zpět k přihlášení"
+      ],
       "Block": [
         "Blokovat"
       ],
@@ -189,6 +192,9 @@
       ],
       "Delete your account": [
         "Smazat účet"
+      ],
+      "Deny access": [
+        "Zamítnout přístup"
       ],
       "Details": [
         "Detaily"
@@ -691,9 +697,6 @@
       "Verify": [
         "Ověřit"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Ověřit ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Ověřit účet"
       ],
@@ -705,6 +708,9 @@
       ],
       "Verify domain": [
         "Ověřit doménu"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Ověřit doménu ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Zobrazit"
@@ -2607,6 +2613,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
       ],
+      "Please upload a square logo": [
+        "Nahrajte logo ve čtvercovém tvaru"
+      ],
       "Please upload an xml file": [
         "Nahrejte prosím soubor xml"
       ],
@@ -2782,6 +2791,9 @@
       "Got it": [
         "Rozumím"
       ],
+      "Invite a user": [
+        "Pozvat uživatele"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Pozvat stávajícího uživatele ${ BRAND_NAME }"
       ],
@@ -2933,6 +2945,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Pokud již uživatel má adresu ${ MAIL_APP_NAME }, zadejte ji zde. V opačném případě si musí nejprve vytvořit účet."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Pokud uživatel již má účet ${ BRAND_NAME }, zadejte jej zde. V opačném případě si musí účet nejprve vytvořit."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organizationName }."
@@ -3836,6 +3851,9 @@
       "Dedicated servers": [
         "Dedikované servery"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ${ MAIL_APP_NAME } záznam má nejnižší prioritu."
       ],
@@ -4210,6 +4228,12 @@
       ],
       "Learn more": [
         "Zjistěte více"
+      ],
+      "Learn more about Gateways": [
+        "Další informace o branách"
+      ],
+      "Learn more about single sign-on": [
+        "Dozvědět se víc o jednotném přihlášení (SSO)"
       ],
       "Let's get started by pressing the New group button above": [
         "Začněme stisknutím tlačítka Nová skupina, které je výše"
@@ -4691,6 +4715,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Toto ověření může trvat až jednu hodinu. Po úspěšném ověření neodebírejte záznam TXT, protože je potřebný k potvrzení, že jste nadále vlastníkem domény."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Tímto bude přístup k **${ email }** zamítnut. Jste si jisti, že chcete pokračovat?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Tím dojde k deaktivaci dvoufázového ověřování, včetně aplikace pro autentizaci a metod bezpečnostního klíče."
       ],
@@ -4835,6 +4862,9 @@
       "username": [
         "uživatelské jméno"
       ],
+      "Username": [
+        "Uživatelské jméno"
+      ],
       "Users": [
         "Uživatelé"
       ],
@@ -4951,6 +4981,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Když předplatné zrušíte, nebude obnoveno, ale výhody tarifu můžete využívat až do konce předplaceného období. Poté budete převedeni na tarif ${ BRAND_NAME } Free."
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Pokud odeberete server z brány, začne běžet desetidenní deaktivační lhůta. Tento server lze přidat do nové brány, ale jeho zemi nelze změnit."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
@@ -5365,6 +5398,9 @@
       "Authenticator app": [
         "Ověřovací aplikace"
       ],
+      "Backup password": [
+        "Záložní heslo"
+      ],
       "Billing address": [
         "Fakturační adresa"
       ],
@@ -5512,6 +5548,9 @@
       "Expires": [
         "Vyprší"
       ],
+      "First name": [
+        "Křestní jméno"
+      ],
       "Gateway name": [
         "Název brány"
       ],
@@ -5541,6 +5580,9 @@
       ],
       "Key": [
         "Klíč"
+      ],
+      "Last name": [
+        "Příjmení"
       ],
       "Level for NetShield blocker filtering": [
         "Úroveň filtrování NetShield"
@@ -5673,6 +5715,9 @@
       ],
       "Recovery phrase": [
         "Obnovovací fráze"
+      ],
+      "Repeat backup password": [
+        "Zopakujte záložní heslo"
       ],
       "Reply (ACS) URL": [
         "Odpovědní (ASC) URL adresa"
@@ -5917,6 +5962,9 @@
       ],
       "Pay invoice": [
         "Zaplatit fakturu"
+      ],
+      "PayPal without credit card": [
+        "PayPal bez platební karty"
       ],
       "perform a password reset from your active session": [
         "resetujte heslo z vaší aktuální relace"
@@ -7027,9 +7075,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Nástroj pro správu organizace, který umožňuje správcům přidat uživatele, přiřadit úložný prostor, nastavit domény a další úkony"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naše výkonná infrastruktura zajistí, že budete mít přístup k účtu kdykoliv to bude potřeba"
       ],
@@ -7676,6 +7721,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Pro obnovení oprávnění správce použijte metodu obnovení dat, kontaktujte jiného správce a nebo resetujte klíč organizace."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Pravost této identity se nám nepodařilo ověřit."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nepodařilo se nám ověřit bezpečnost klíče adresy tohoto odesílatele. Někdy dochází ke zpoždění při aktualizaci informací o odesílateli. Zkuste to později. Pokud nedůvěřujete platnosti této pozvánky nebo odesílatele, kontaktujte zákaznickou podporu ${ BRAND_NAME }."
       ],
@@ -8031,6 +8079,9 @@
       "Changing organization password": [
         "Změna hesla organizace"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Vytváření nebo přístup k nesoukromých uživatelským účtům"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Z důvodu změny hesla byla omezena vaše oprávnění správce organizace. Následující akce již nejsou povoleny:"
       ]
@@ -8057,6 +8108,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Přihlášení nebylo úspěšně dokončeno."
+      ],
       "Something went wrong": [
         "Něco se pokazilo"
       ]
@@ -8118,6 +8172,12 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Předpoklad:** ověření SAML musí být nastaveno pro povolení zprovoznění SCIM."
       ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Předpoklad:** Pro povolení zprovozňování SCIM, je nutné ověřit vlastnictví domény **${ domainName }**. Toto ověření může trvat až jednu hodinu."
+      ],
+      "Enter the token into your identity provider": [
+        "Zadejte token do vašeho poskytovatele identity"
+      ],
       "Enter URL and token into your identity provider": [
         "Zadejte URL a token do vašeho poskytovatele identity"
       ],
@@ -8127,12 +8187,6 @@
       "For security reasons, the token is hidden": [
         "Z bezpečnostních důvodů je token skryt"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Jděte k vašemu poskytovateli identity, zkopírujte a vložte níže uvedená data a dokončete nastavení SCIM pro ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Jděte k vašemu poskytovateli identity, zkopírujte a vložte níže uvedený token a opět povolte SCIM pro ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Pokud jste ztratili nebo zapomněli token SCIM, můžete vygenerovat nový, budete ale muset aktualizovat nastavení vašeho poskytovatele identity."
       ],
@@ -8141,9 +8195,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Po vypnutí SCIM pro vaši organizaci budou **všichni uživatelé SCIM, kteří byli automaticky poskytnuti vaším poskytovatelem identit, převedeni na uživatele SSO** a budete je moci spravovat přímo v nastavení ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Zjednodušuje správu uživatelů v různých službách. Přidávejte, upravujte a odebírejte uživatele u svého poskytovatele identity a tyto změny se automaticky použijí na vaši organizaci ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatické zprovoznění SCIM bude deaktivováno do doby, kdy zadáte nový token SCIM do nastavení vašeho poskytovatele identity."
@@ -8457,6 +8508,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Až bude resetování hesla k dispozici, budeme vás znovu kontaktovat."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Stav žádosti můžete kdykoli zkontrolovat ${ accountAndPasswordSectionLink } v nastavení."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "v části Účet a heslo"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8771,6 +8830,202 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvěte přátele do ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } člen vás požádal o pomoc s přihlášením.",
+        "${ n } členové vás požádali o pomoc s přihlášením.",
+        "${ n } členů vás požádalo o pomoc s přihlášením.",
+        "${ n } členů vás požádalo o pomoc s přihlášením."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } uživatel se připojil k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo smažte jeho účet nyní:",
+        "${ n } uživatelé se připojili k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo smažte jejich účty nyní:",
+        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo smažte jejich účty nyní:",
+        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo smažte jejich účty nyní:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } uživatel vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
+        "${ n } uživatelé vás žádají o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
+        "${ n } uživatelů vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
+        "${ n } uživatelů vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSO uživatelé (poskytovaní poskytovatelem identit) budou smazáni** a budete je muset vytvořit ručně, abyste je mohli přidat zpět do organizace."
+      ],
+      "Access denied": [
+        "Přístup zamítnut"
+      ],
+      "Access granted": [
+        "Přístup povolen"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "vás přidali do své organizace ${ BRAND_NAME }."
+      ],
+      "Approve or deny it now": [
+        "Schválit nebo zamítnout nyní"
+      ],
+      "Approve the sign-in from another device": [
+        "Schválení přihlášení z jiného zařízení"
+      ],
+      "Ask administrator for help": [
+        "Požádat správce o pomoc"
+      ],
+      "Ask your administrator for access?": [
+        "Požádat správce o přístup?"
+      ],
+      "Backup password": [
+        "Záložní heslo"
+      ],
+      "Cancel": [
+        "Zrušit"
+      ],
+      "Change backup password": [
+        "Změnit záložní heslo"
+      ],
+      "Confirm backup password": [
+        "Potvrdit záložní heslo"
+      ],
+      "Confirmation code": [
+        "Kód pro potvrzení"
+      ],
+      "Contact administrator": [
+        "Kontaktovat správce"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Pokud problém přetrvává, kontaktujte správce."
+      ],
+      "Deny": [
+        "Zamítnout"
+      ],
+      "Deny access": [
+        "Zamítnout přístup"
+      ],
+      "Devices available": [
+        "Dostupná zařízení"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Zadejte potvrzovací kód, který jsme odeslali tomuto uživateli."
+      ],
+      "Enter your backup password": [
+        "Zadejte své záložní heslo"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Pro vaši bezpečnost jste byli odhlášeni ze všech ostatních aktivních zařízení. Před přístupem k účtu je třeba zadat nové záložní heslo."
+      ],
+      "Grant": [
+        "Povolit"
+      ],
+      "Grant access": [
+        "Povolit přístup"
+      ],
+      "Grant access to user?": [
+        "Povolit přístup uživateli?"
+      ],
+      "Grant access to users?": [
+        "Povolit přístup uživatelům?"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Pokud dojde k uzamčení vašeho účtu ${ BRAND_NAME }, vaše záložní heslo vám umožní přihlásit se a obnovit vaše data."
+      ],
+      "Invalid confirmation code": [
+        "Neplatný potvrzovací kód"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Jde o jediný způsob, jak plně obnovit váš účet. Proto se ujistěte, že jste ho uložili na bezpečné místo."
+      ],
+      "Join ${ organizationName }": [
+        "Připojit se k ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Ujistěte se, že heslo uložíte na bezpečné místo, abyste se mohli vrátit ke svému účtu, pokud ztratíte přístup k přihlašovacím údajům poskytovatele identit."
+      ],
+      "New backup password": [
+        "Nové záložní heslo"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Uživatelé, kteří nejsou součástí systému jednotného přihlášení SSO (tj. jsou vytvoření ručně a nikoliv přes poskytovatele identity) se do vaší organizace mohou nadále přihlásit."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "V momentě, kdy dojde ke zrušení jednotného přihlášení pro vaši organizaci:"
+      ],
+      "Remove single sign-on": [
+        "Zrušit jednotné přihlášení"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Zrušit jednotné přihlášení pro vaši organizaci?"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Nastavením záložního hesla získáte další úroveň ochrany. Umožní vám přihlásit se, pokud se zablokujete, takže si ho nezapomeňte uložit na bezpečné místo."
+      ],
+      "Set your backup password": [
+        "Nastavte své záložní heslo"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Sdílejte potvrzovací kód s vaším správcem"
+      ],
+      "Sign in to your organization": [
+        "Přihlaste se ke své organizaci"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Odhlaste se a znovu přihlaste pro změnu zálohovacího hesla"
+      ],
+      "Single sign-on removed": [
+        "Jednotné přihlášení zrušeno"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Přihlašovací údaje od vašeho poskytovatele identity budou smazány."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Tím se uživatel odhlásí z ostatních zařízení a bude muset vytvořit nové záložní heslo."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Tím se odhlásíte z ostatních zařízení a budete muset vytvořit nové záložní heslo."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Pro ověření vašeho pokusu o přihlášení k **${ email }** zkontrolujte potvrzovací kód a schvalte požadavek pocházející z jiného zařízení."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Abychom se ujistili, že se o přihlášení pokoušíte skutečně vy, prosím zadejte své záložní heslo."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Pro ověření vašeho pokusu o přihlášení sdílejte potvrzovací kód se správcem **${ adminEmail }**, aby mohl(a) schválit žádost pro **${ email }**."
+      ],
+      "Tried to sign in at": [
+        "Pokusil(a) jsem se přihlásit k"
+      ],
+      "Use backup password instead": [
+        "Místo toho použít záložní heslo"
+      ],
+      "User details:": [
+        "Podrobnosti o uživateli:"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktivní"
+      ],
+      "Inactive": [
+        "Neaktivní"
+      ],
+      "Pending activation": [
+        "Čeká na aktivaci"
+      ],
+      "Pending admin activation": [
+        "Čeká na aktivaci správcem"
+      ],
+      "Rejected": [
+        "Odmítnuto"
+      ],
+      "Signed out": [
+        "Odhlášeno"
+      ],
+      "Unknown": [
+        "Neznámý"
       ]
     },
     "State": {
@@ -9537,6 +9792,12 @@
       ],
       "You have successfully unsubscribed": [
         "Předplatné bylo úspěšně zrušeno"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Pokud jste zadali platnou e-mailovou adresu pro obnovení, obdržíte své uživatelské jméno do jedné minuty e-mailem."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Pokud jste zadali platné telefonní číslo pro obnovení, obdržíte do minuty své uživatelské jméno prostřednictvím SMS."
       ]
     },
     "Success message": {
@@ -9724,6 +9985,9 @@
         "Účet pozastaven"
       ],
       "Action": [
+        "Akce"
+      ],
+      "Actions": [
         "Akce"
       ],
       "Activate organization key": [
@@ -9935,6 +10199,12 @@
       ],
       "Delete user?": [
         "Smazat uživatele?"
+      ],
+      "Deny access to user?": [
+        "Zamítnout přístup uživateli?"
+      ],
+      "Device": [
+        "Zařízení"
       ],
       "Device connected!": [
         "Zařízení připojeno!"
@@ -10161,6 +10431,9 @@
       "Processing...": [
         "Zpracovávání..."
       ],
+      "QR Code": [
+        "QR kód"
+      ],
       "Recommended": [
         "Doporučeno"
       ],
@@ -10244,9 +10517,6 @@
       ],
       "Sign in to join the Beta program": [
         "Přihlaste se do programu Beta"
-      ],
-      "Sign in to your organization": [
-        "Přihlaste se ke své organizaci"
       ],
       "Sign out": [
         "Odhlásit se"
@@ -10503,6 +10773,9 @@
       ],
       "User declined invitation": [
         "Uživatel odmítl pozvání"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Čekání na přijetí pozvánky uživatelem"
       ]
     },
     "Tooltip for news": {
@@ -10519,12 +10792,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } uživatel se připojil k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo zamítněte jeho účet nyní:",
-        "${ n } uživatelé se připojili k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo zamítněte jejich účty nyní:",
-        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo zamítněte jejich účty nyní:",
-        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo zamítněte jejich účty nyní:"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
       ],

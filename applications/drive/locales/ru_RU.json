@@ -2297,6 +2297,11 @@
         "Просроченный счёт"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
@@ -2354,11 +2359,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ваш аккаунт и методы восстановления данных настроены."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5772,6 +5772,9 @@
       "Add to group": [
         "Добавить в группу"
       ],
+      "Address": [
+        "Адрес"
+      ],
       "Anyone on the Internet with the link can view": [
         "Каждый, кто находится в Интернете и имеет ссылку, может посмотреть"
       ],
@@ -5985,6 +5988,9 @@
       "File name": [
         "Имя файла"
       ],
+      "First name": [
+        "Имя"
+      ],
       "Folder": [
         "Папка"
       ],
@@ -6044,6 +6050,9 @@
       ],
       "Last month only": [
         "Только за последний месяц"
+      ],
+      "Last name": [
+        "Фамилия"
       ],
       "Location": [
         "Место"
@@ -7417,11 +7426,6 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7434,6 +7438,11 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7538,9 +7547,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просмотра публичных папок входящих сообщений пользователей, как это делает сам пользователь, включая полную информацию о сообщениях и контактах"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Инструмент управления для организаций, с помощью которого администраторы могут добавлять и удалять пользователей, выделять место в хранилище, настраивать домены и выполнять другие задачи"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надежная инфраструктура гарантирует, что вы сможете получить доступ к своему аккаунту, когда вам это необходимо"
@@ -9358,6 +9364,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
+      ],
       "${ dayDiff } day left": [
         "Остался ${ dayDiff } день",
         "Осталось ${ dayDiff } дня",
@@ -9436,6 +9445,9 @@
         "${ planNumberOfUsers } пользователей",
         "${ planNumberOfUsers } пользователей"
       ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "Передовая защита аккаунта ${ PROTON_SENTINEL_NAME }"
+      ],
       "2 users": [
         "2 пользователя"
       ],
@@ -9493,6 +9505,9 @@
       "Folders, labels and filters": [
         "Папки, ярлыки и фильтры"
       ],
+      "Folders, labels, and custom filters": [
+        "Папки, ярлыки и пользовательские фильтры"
+      ],
       "Helping activists in Hong Kong": [
         "Помощь активистам в Гонконге"
       ],
@@ -9504,6 +9519,9 @@
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Как мы поддержали местных активистов, когда под угрозой оказались частная жизнь и свобода слова."
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Если вы превысите лимиты бесплатного тарифа, вы не сможете сделать следующее:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
         "Если ваше потребление превышает пределы бесплатного тарифа, вы можете столкнуться с ограничением доступа к функциям продукта и своим данным."
@@ -9567,6 +9585,9 @@
       ],
       "Unlimited privacy for two": [
         "Неограниченная конфиденциальность для двоих"
+      ],
+      "Upload any new files": [
+        "Загрузить новые файлы"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
         "Подписки пользователей - это единственный источник дохода ${ BRAND_NAME }. Ваша поддержка позволяет нам оставаться независимыми, продолжать нашу миссию по обеспечению неприкосновенности частной жизни в Интернете, а также помогать активистам и организациям, борющимся за свободу."

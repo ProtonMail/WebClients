@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -796,11 +796,14 @@
       "Refresh status": [
         "Durumu yenile"
       ],
+      "refresh the page": [
+        "sayfayı yenile"
+      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
+      "Reject": [
+        "Reddet"
       ],
       "Reload": [
         "Yenile"
@@ -1188,9 +1191,6 @@
       ],
       "Verify": [
         "Doğrula"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "${ unverifiedSSODomain.DomainName } etki alanını doğrula"
       ],
       "Verify account": [
         "Hesabı doğrula"
@@ -1604,14 +1604,6 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1633,6 +1625,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -3912,17 +3912,29 @@
       "Change other email subscriptions": [
         "Diğer e-posta aboneliklerini değiştir"
       ],
+      "Click the button below to unsubscribe from ${ categories } emails.": [
+        "${ categories } e-postalarının aboneliğinden ayrılmak için aşağıdaki düğmeye tıklayın."
+      ],
       "Email subscriptions": [
         "E-posta abonelikleri"
       ],
+      "If you unsubscribed by accident, you are welcome to resubscribe.": [
+        "Abonelikten yanlışlıkla ayrıldıysanız yeniden abone olabilirsiniz."
+      ],
       "Resubscribe": [
         "Yeniden abone ol"
+      ],
+      "Thank you and goodbye": [
+        "Teşekkür ederiz hoşça kalın"
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
       ],
       "Unsubscribe?": [
         "Abonelikten çıkılsın mı?"
+      ],
+      "Update email preferences": [
+        "E-posta tercihlerini güncelle"
       ],
       "We're sorry to see you go.": [
         "Gittiğinizi görmek bizi üzüyor."
@@ -3932,6 +3944,9 @@
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "${ categoriesJsx } e-postalarına yeniden abone oldunuz."
+      ],
+      "You unsubscribed from ${ categories } emails, and will no longer receive this type of email from ${ BRAND_NAME }.": [
+        "${ categories } e-postalarının aboneliğinden ayrıldınız. Artık ${ BRAND_NAME } tarafından bu türde e-postalar almayacaksınız."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -7096,11 +7111,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Diğer tüm MX kayıtlarını silin veya ${ MAIL_APP_NAME } kaydının Priority değerinin en küçüğü olduğundan emin olun."
@@ -8398,9 +8413,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Bu dosya daha önce kaydettiğiniz bir şifreleme anahtarı olabilir."
-      ],
-      "This is an invitation from:": [
-        "Bu davet şuradan geliyor:"
       ],
       "This is the password you used before the password reset.": [
         "Bu parola, sıfırlama öncesinde kullandığınız paroladır."
@@ -10070,6 +10082,9 @@
       "Filter Name": [
         "Süzgeç adı"
       ],
+      "First name": [
+        "Ad"
+      ],
       "Folder location": [
         "Klasör konumu"
       ],
@@ -10171,6 +10186,9 @@
       ],
       "Last month only": [
         "Yalnızca son ay"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield engelleme süzgeci düzeyi"
@@ -11477,32 +11495,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Get started for ${ price }": [
-        "${ price } ile başlayın"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -11530,6 +11522,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Get started for ${ price }": [
+        "${ price } ile başlayın"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: feature": {
@@ -12208,20 +12226,6 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price } ile Mail Plus edinin"
-      ],
-      "Starting from ${ price }": [
-        "${ price } tutarından başlayan fiyatlarla"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -12240,6 +12244,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -12342,9 +12360,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Kuruluş yönetimi aracı yöneticilerin kullanıcı ekleyip silmesini, kullanıcılara depolama alanı atamasını, etki alanlarını yapılandırmasını ve diğer işlemleri yapmasını sağlar"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Güçlü altyapımız, gerek duyduğunuzda hesabınıza erişmenizi sağlar"
@@ -14340,12 +14355,6 @@
       "For security reasons, the token is hidden": [
         "Güvenlik nedeniyle kod gizlenmiştir"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Aşağıdaki verileri kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ VPN_APP_NAME } için SCIM yapılandırmasını tamamlayın."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Aşağıdaki kodu kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ VPN_APP_NAME } için SCIM bütünleştirmesini yeniden kullanıma alın."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "SCIM kodunuzu kaybettiyseniz ya da unuttuysanız yeni bir kod oluşturabilirsiniz. Ancak kimlik hizmeti sağlayıcı ayarlarınızı güncellemeniz gerekeceğini unutmayın."
       ],
@@ -14354,9 +14363,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Kuruluşunuzda SCIM kullanımdan kaldırıldığında, **kimlik hizmeti sağlayıcınız tarafından otomatik olarak sunulan tüm SCIM kullanıcıları tek oturum açma kullanıcılarına dönüştürülür** ve bunları doğrudan ${ BRAND_NAME } ayarlarından yönetebilirsiniz."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Farklı hizmetler arasında kullanıcıların yönetimini kolaylaştırır. Kimlik hizmeti sağlayıcınıza kullanıcı ekleyebilir, düzenleyebilir ve kaldırabilirsiniz. Bu değişiklikler otomatik olarak ${ VPN_APP_NAME } kuruluşunuza uygulanır."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Yeni SCIM kodunu kimlik hizmeti sağlayıcınızın ayarlarına yazıncaya kadar SCIM otomatik veri sağlama özelliği kullanım dışı kalır."
@@ -15670,7 +15676,7 @@
         "Yıllık ücretsiz depolama alanı hediyeleri"
       ],
       "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
-        "${ boldedDate } tarihine dek şu anki tarifenizin tüm faydalarının tadını çıkartmaya devam edebilirsiniz."
+        "${ boldedDate } tarihine kadar geçerli tarifenizdeki tüm faydalarının tadını çıkartmayı sürdürebilirsiniz."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "${ planName } aboneliğinizin ${ expiryDate } süresi daha var. Kalan süreye ait kredileri ${ BRAND_NAME } hesabınıza ekleyeceğiz. İptal etmeden önce ücretsiz tarifenin sınırlarını aşmadığınızdan emin olun. ${ learnMoreLink }"
@@ -16385,10 +16391,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -16487,6 +16493,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresinizi oluşturun"
+      ],
+      "Created": [
+        "Oluşturulma"
       ],
       "Creating user accounts": [
         "Kullanıcı hesapları ekleniyor"
@@ -16914,6 +16923,9 @@
       "My calendars": [
         "Takvimlerim"
       ],
+      "Name": [
+        "Ad"
+      ],
       "Need more labels or folders?": [
         "Daha fazla etiket ya da klasör mü gerekiyor?"
       ],
@@ -17049,6 +17061,9 @@
       "Remove calendar": [
         "Takvimi kaldır"
       ],
+      "Remove device?": [
+        "Aygıt kaldırılsın mı?"
+      ],
       "Remove domain": [
         "Etki alanını kaldır"
       ],
@@ -17174,9 +17189,6 @@
       ],
       "Sign in to join the Beta program": [
         "Beta programına katılmak için oturum açın"
-      ],
-      "Sign in to your organization": [
-        "Kuruluşunuzda oturum açın"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -17731,10 +17743,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da reddedin:",
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da reddedin:"
-      ],
       "Administrator access enabled": [
         "Yönetici yetkisi verildi"
       ],

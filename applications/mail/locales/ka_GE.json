@@ -2145,6 +2145,9 @@
       "Try ${ planName }": [
         "სცადეთ ${ planName }"
       ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "სცადეთ ${ upsellPlanName } და შეინარჩუნეთ წვდომა ყველა ფასიან ელფოსტის და კალენდრის ფუნქციებთან."
+      ],
       "Ultra fast and private VPN": [
         "ზეჩქარი და კონფიდენციალური VPN"
       ]
@@ -8078,6 +8081,9 @@
       "Filter Name": [
         "ფილტრის სახელი"
       ],
+      "First name": [
+        "სახელი"
+      ],
       "Folder location": [
         "საქაღალდის მდებარეობა"
       ],
@@ -8146,6 +8152,9 @@
       ],
       "Last month only": [
         "მხოლოდ ბოლო თვეში"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Layout": [
         "განლაგება"
@@ -9737,9 +9746,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "შესაძლებლობა დაათვალიეროთ საჯარო საქაღალდეები შემოსული შეტყობინებებით და კონტაქტის დეტალებით"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "ორგანიზაციის მართვის ხელსაწყო, რომელიც საშუალებას აძლევს ადმინისტრატორებს დაამატონ და წაშალონ მომხმარებლები, გამოუყონ საცავი, დაამატონ დომენები და სხვა"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "ჩვენი ძლიერი ინფრასტრუქტურა უზრუნველყოფს, რომ თქვენ შეძლებთ თქვენს ანგარიშზე წვდომას, როცა ეს დაგჭირდებათ"
@@ -11591,6 +11597,9 @@
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } საბაზისო მოთხოვნებზე შორს მისის, რომ დაგეხმაროთ, უფრო პროდუქტიული და ორგანიზებული ბრძანდებოდეთ და საფოსტო ყუთის, განრიგის და ა.შ. კონტროლში დაგეხმაროთ."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } დაგეხმარებათ დარწმუნდეთ, რომ თქვენი ოჯახის წევრები - და მათი მონაცემები - დაცულია, როცა ისინი ინტერნეტში მუშაობენ."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } გთავაზობთ ${ planMaxSpace } საცავს თქვენი ელფოსტების, მიმაგრებული ფაილების, პაროლების, მოვლენებისა და ფაილებისთვის. ასევე შეგიძლიათ წლიური საცავის ბონუსების მიღებაც."

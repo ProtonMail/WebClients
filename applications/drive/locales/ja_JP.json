@@ -2145,6 +2145,11 @@
         "未払いの請求"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
@@ -2187,11 +2192,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "アカウントとデータの回復手段が設定されています。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5132,6 +5132,9 @@
       "Add to group": [
         "グループに追加"
       ],
+      "Address": [
+        "メールアドレス"
+      ],
       "Anyone on the Internet with the link can view": [
         "このリンクを知っていれば、インターネット上の誰でも閲覧できます"
       ],
@@ -5342,6 +5345,9 @@
       "File name": [
         "ファイル名"
       ],
+      "First name": [
+        "名"
+      ],
       "Folder": [
         "フォルダー"
       ],
@@ -5401,6 +5407,9 @@
       ],
       "Last month only": [
         "過去 1 か月のみ"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Location": [
         "場所"
@@ -6558,11 +6567,6 @@
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }で Mail Plus を入手する"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -6575,6 +6579,11 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }で Mail Plus を入手する"
       ]
     },
     "new_plans: tooltip": {
@@ -6667,9 +6676,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "完全なメッセージと連絡先の詳細を含む、非プライベート ユーザーの受信箱をユーザーと同じように表示するオプション"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "管理者がユーザーの追加と削除、ストレージの割り当て、ドメインの構成、およびその他のタスクを実行できるようにする組織管理ツール"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "当社の堅牢なインフラストラクチャにより、必要なときにアカウントにアクセスできるようになります。"

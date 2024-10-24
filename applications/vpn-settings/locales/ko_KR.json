@@ -691,9 +691,6 @@
       "Verify": [
         "인증"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "${ unverifiedSSODomain.DomainName }을(를) 인증하기"
-      ],
       "Verify account": [
         "계정 인증"
       ],
@@ -4691,6 +4688,9 @@
       "username": [
         "사용자 이름"
       ],
+      "Username": [
+        "사용자 이름"
+      ],
       "Users": [
         "사용자"
       ],
@@ -5335,6 +5335,9 @@
       "Expires": [
         "만료"
       ],
+      "First name": [
+        "이름"
+      ],
       "Gateway name": [
         "게이트웨이 이름"
       ],
@@ -5364,6 +5367,9 @@
       ],
       "Key": [
         "키"
+      ],
+      "Last name": [
+        "성"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield 차단 필터링 수준"
@@ -6769,9 +6775,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "비공개가 아닌 사용자의 수신함을 사용자가 볼 수 있는 옵션으로, 전체 메시지와 연락처 세부사항을 포함하여 볼 수 있습니다"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "관리자가 사용자를 추가 및 제거하고, 저장소를 할당하고, 도메인을 구성하고, 다른 작업을 수행할 수 있는 조직 관리 도구"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
       ],
@@ -7839,12 +7842,6 @@
       "For security reasons, the token is hidden": [
         "보안 상의 이유로 토큰이 숨겨짐"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "ID 공급업체로 이동하여 아래 데이터를 복사하여 붙여넣고 ${ VPN_APP_NAME }에 대해서 SCIM 설정을 완료합니다."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "ID 공급업체로 이동하여 아래 토큰을 복사하여 붙여넣고 ${ VPN_APP_NAME }에 대해서 SCIM을 다시 활성화합니다."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "SCIM 토큰을 분실하거나 잊어버리셨다면 새로 만들 수는 있지만, ID 공급자 설정이 업데이트되어 있어야 합니다."
       ],
@@ -7853,9 +7850,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "SCIM이 사용자 조직에 한 번 비활성화 되면, **사용자의 신원 인증 제공자에 의한 모든 SCIM 사용자들이 SSO 사용자로 전환됩니다.** ${ BRAND_NAME } 설정 내에서 즉시 관리 또한 가능하게 됩니다."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "여러 서비스 간에 사용자 관리를 간소화합니다. ID 공급자에서 사용자를 추가, 편집, 제거하면 해당 변경 사항이 ${ VPN_APP_NAME } 조직에 자동으로 적용됩니다."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM 자동 프로비저닝은 신원 제공자의 설정에 새 SCIM 토큰을 입력할 때까지 비활성화됩니다."
@@ -8426,6 +8420,17 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "친구를 ${ BRAND_NAME }에 초대하세요."
+      ]
+    },
+    "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n }명의 멤버가 로그인하는데 도움을 오청했습니다."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n }명의 사용자가 신원 제공자를 통해 당신의 조직에 들어왔습니다. 승인하거나 계정을 삭제하세요:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n }명의 사용자가 ${ BRAND_NAME } 계정에 SSO를 통해 로그인하는데 도움을 요청하고 있습니다."
       ]
     },
     "State": {
@@ -9516,6 +9521,12 @@
       "Delete user?": [
         "사용자를 삭제합니까?"
       ],
+      "Deny access to user?": [
+        "사용자에게 접근을 거부할까요?"
+      ],
+      "Device": [
+        "기기"
+      ],
       "Device connected!": [
         "디바이스 연결됨!"
       ],
@@ -9738,6 +9749,9 @@
       "Processing...": [
         "처리 중..."
       ],
+      "QR Code": [
+        "QR코드"
+      ],
       "Recommended": [
         "추천됨"
       ],
@@ -9821,9 +9835,6 @@
       ],
       "Sign in to join the Beta program": [
         "베타 프로그램에 참여하려면 로그인"
-      ],
-      "Sign in to your organization": [
-        "조직에 로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -10093,9 +10104,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n }명 사용자가 신원 제공자를 통해 조직에 참가했습니다. 해당 계정을 수락 및 거절하십시오:"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
       ],

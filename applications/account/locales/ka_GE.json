@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -796,11 +796,14 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
+      "refresh the page": [
+        "გვერდის განახლება"
+      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
-        "გვერდის განახლება"
+      "Reject": [
+        "უარყოფა"
       ],
       "Reload": [
         "თავიდან ჩატვირთვა"
@@ -1188,9 +1191,6 @@
       ],
       "Verify": [
         "გადამოწმება"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "${ unverifiedSSODomain.DomainName }-ის შემოწმება"
       ],
       "Verify account": [
         "ანგარიშის გადამოწმება"
@@ -1604,14 +1604,6 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1633,6 +1625,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -2072,6 +2072,9 @@
       ],
       "Try ${ planName }": [
         "სცადეთ ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "სცადეთ ${ upsellPlanName } და შეინარჩუნეთ წვდომა ყველა ფასიან ელფოსტის და კალენდრის ფუნქციებთან."
       ],
       "Ultra fast and private VPN": [
         "ზეჩქარი და კონფიდენციალური VPN"
@@ -3903,8 +3906,14 @@
       "Change other email subscriptions": [
         "ელფოსტის სხვა გამოწერების შეცვლა"
       ],
+      "Click the button below to unsubscribe from ${ categories } emails.": [
+        "დააწკაპუნეთ ღილაკზე, რომ ${ categories }-ის ელფოსტების გამოწერა გააუქმოთ."
+      ],
       "Email subscriptions": [
         "ელფოსტის გამოწერები"
+      ],
+      "If you unsubscribed by accident, you are welcome to resubscribe.": [
+        "თუ გამოწერა შემთხვევით გააუქმეთ, თავიდან გამოწერა პრობლემი გარეშე შეგიძლიათ."
       ],
       "Resubscribe": [
         "თავიდან გამოწერა"
@@ -3917,6 +3926,12 @@
       ],
       "Unsubscribe?": [
         "გავაუქმო გამოწერა?"
+      ],
+      "Update email preferences": [
+        "ელფოსტის პარამეტრების განახლება"
+      ],
+      "We're sorry to see you go.": [
+        "ვწუხვართ, რომ გვტოვებთ."
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "რომელი ელფოსტების მიღება გნებავთ ${ BRAND_NAME }?"
@@ -7087,11 +7102,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "წაშალეთ ყველა სხვა MX ჩანაწერი ან დარწმუნდით, რომ ${ MAIL_APP_NAME }-ის პრიორიტეტი ყველაზე ნაკლებია."
@@ -7549,6 +7564,9 @@
       ],
       "It appears some of your data is encrypted and locked.": [
         "როგორც ჩანს, ზოგიერთი თქვენი მონაცემი დაშიფრული და დაბლოკილია."
+      ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "სერვერის ქვეყნის შეცვლას 10 დღემდე სჭირდება, ასე რომ, დარწმუნდით, რომ თქვენი არჩევანი სწორია."
       ],
       "Item autofilled in ${ vaultLink }": [
         "ელემენტი ავტოშევსებულია ${ vaultLink }-ში"
@@ -8386,9 +8404,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "ეს დაშიფვრის გასაღებია, რომელიც ადრე შეინახეთ."
-      ],
-      "This is an invitation from:": [
-        "ეს მოსაწვევი ვისგანაა:"
       ],
       "This is the password you used before the password reset.": [
         "ეს პაროლია, რომელსაც მის შეცვლამდე იყენებდით."
@@ -10055,6 +10070,9 @@
       "Filter Name": [
         "ფილტრის სახელი"
       ],
+      "First name": [
+        "სახელი"
+      ],
       "Folder location": [
         "საქაღალდის მდებარეობა"
       ],
@@ -10156,6 +10174,9 @@
       ],
       "Last month only": [
         "მხოლოდ ბოლო თვეში"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Level for NetShield blocker filtering": [
         "Netshield blocker-ის ფილტრის დონე"
@@ -11462,32 +11483,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Get started for ${ price }": [
-        "დაწყება ${ price }-დან"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "უფასოთი გაგრძელება"
@@ -11515,6 +11510,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Get started for ${ price }": [
+        "დაწყება ${ price }-დან"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "ასწიეთ სატარიფო გეგმა ${ MAIL_SHORT_APP_NAME } Plus-მდე"
       ]
     },
     "new_plans: feature": {
@@ -12190,20 +12211,6 @@
         "გადახდის არჩეული ტარიფი: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "მიიღეთ Mail Plus ფასით ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -12222,6 +12229,20 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -12324,9 +12345,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "შესაძლებლობა დაათვალიეროთ საჯარო საქაღალდეები შემოსული შეტყობინებებით და კონტაქტის დეტალებით"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "ორგანიზაციის მართვის ხელსაწყო, რომელიც საშუალებას აძლევს ადმინისტრატორებს დაამატონ და წაშალონ მომხმარებლები, გამოუყონ საცავი, დაამატონ დომენები და სხვა"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "ჩვენი ძლიერი ინფრასტრუქტურა უზრუნველყოფს, რომ თქვენ შეძლებთ თქვენს ანგარიშზე წვდომას, როცა ეს დაგჭირდებათ"
@@ -14316,12 +14334,6 @@
       "For security reasons, the token is hidden": [
         "უსაფრთხოების მიზნით კოდი დამალულია"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა მონაცემები და დაასრულეთ SCIM-ის მორგება ${ VPN_APP_NAME }-სთვის."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა კოდი და თავიდან ჩართეთ SCIM ${ VPN_APP_NAME }-სთვის."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "თუ დაკარგეთ ან დაგავიწყდათ SCIM-ის კოდი, შეგიძლიათ, ახალი შექმნათ, მაგრამ, გაითვალისწინეთ, რომ საჭირო იქნება თქვენი იდენტიფიკატორის მომწოდებლის პარამეტრების განახლება."
       ],
@@ -14330,9 +14342,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "როცა თქვენს ორგანიზაციაზე SCIM-ს გამორთავთ, **ყველა SCIM-ის მომხმარებლები, რომლებიც ავტომატურადაა მოწოდებული თქვენი იდენტიფიკატორების მომწოდებლის მიერ, ავტომატურად იქნება გადაყვანილი SSO-ის მომხმარებლებში** და საშუალება გექნებათ, ისინი პირდაპირ ${ BRAND_NAME }-ის მორგების ფანჯრიდან მართოთ."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "ამარტივებს მომხმარებლის მართვას სხვადასხვა სერვისისთვი. დაამატეთ, ჩაასწორეთ და წაშალეთ მომხმარებლები თქვენს იდენტიფიკატორის მომწოდებელში და ის ცვლილებები თქვენს ${ VPN_APP_NAME } ორგანიზაციაზე ავტომატურად გადატარდა."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM-ის ავტომატური გაშლა გაითიშება, სანამ არ შეიყვანთ ახალ SCIM-ის კოდს თქვენი იდენტიფიკატორის მომწოდებლის პარამეტრებში."
@@ -15403,6 +15412,9 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } საბაზისო მოთხოვნებზე შორს მისის, რომ დაგეხმაროთ, უფრო პროდუქტიული და ორგანიზებული ბრძანდებოდეთ და საფოსტო ყუთის, განრიგის და ა.შ. კონტროლში დაგეხმაროთ."
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } დაგეხმარებათ დარწმუნდეთ, რომ თქვენი ოჯახის წევრები - და მათი მონაცემები - დაცულია, როცა ისინი ინტერნეტში მუშაობენ."
+      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } გთავაზობთ ${ planMaxSpace } საცავს თქვენი ელფოსტების, მიმაგრებული ფაილების, პაროლების, მოვლენებისა და ფაილებისთვის. ასევე შეგიძლიათ წლიური საცავის ბონუსების მიღებაც."
       ],
@@ -16346,10 +16358,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -16448,6 +16460,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "შექმენით თქვენი ${ BRAND_NAME }-ის მისამართი"
+      ],
+      "Created": [
+        "შექმნილია"
       ],
       "Creating user accounts": [
         "მომხმარებლის ანგარიშების შექმნა"
@@ -16875,6 +16890,9 @@
       "My calendars": [
         "ჩემი კალენდრები"
       ],
+      "Name": [
+        "სახელი"
+      ],
       "Need more labels or folders?": [
         "გჭირდებათ მეტი ჭდე ან საქაღალდე?"
       ],
@@ -17010,6 +17028,9 @@
       "Remove calendar": [
         "კალენდრის წაშლა"
       ],
+      "Remove device?": [
+        "წავშალო მოწყობილობა?"
+      ],
       "Remove domain": [
         "დომენის წაშლა"
       ],
@@ -17135,9 +17156,6 @@
       ],
       "Sign in to join the Beta program": [
         "შედით სისტემაში ბეტა პროგრამაში დასარეგისტრირებლად"
-      ],
-      "Sign in to your organization": [
-        "შედით თქვენს ორგანიზაციაში"
       ],
       "Sign out": [
         "გასვლა"
@@ -17689,10 +17707,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტეიფიკატორების მომწოდებლით. დაადასტურეთ ან უარჰყავთი მათი ანგარიშები ახლა:",
-        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტეიფიკატორების მომწოდებლით. დაადასტურეთ ან უარჰყავთი მათი ანგარიშები ახლა:"
-      ],
       "Administrator access enabled": [
         "ადმინისტრატორის წვდომა ჩართულია"
       ],

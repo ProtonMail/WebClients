@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -796,11 +796,14 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
+      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
+      "Reject": [
+        "Απόρριψη"
       ],
       "Reload": [
         "Ανανέωση"
@@ -1188,9 +1191,6 @@
       ],
       "Verify": [
         "Επαλήθευση"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Επαληθεύστε το ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Επαλήθευση λογαριασμού"
@@ -1604,14 +1604,6 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πρόγραμμα)"
@@ -1633,6 +1625,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -7111,11 +7111,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
@@ -8413,9 +8413,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Αυτό είναι ένα κλειδί κρυπτογράφησης που ίσως αποθηκεύσατε προηγουμένως."
-      ],
-      "This is an invitation from:": [
-        "Αυτή είναι μια πρόσκληση από:"
       ],
       "This is the password you used before the password reset.": [
         "Αυτός είναι ο κωδικός που χρησιμοποιούσατε πριν την επαναφορά κωδικού πρόσβασης."
@@ -10085,6 +10082,9 @@
       "Filter Name": [
         "Όνομα φίλτρου"
       ],
+      "First name": [
+        "Όνομα"
+      ],
       "Folder location": [
         "Τοποθεσία φακέλου"
       ],
@@ -10186,6 +10186,9 @@
       ],
       "Last month only": [
         "Τελευταίο μήνα μόνο"
+      ],
+      "Last name": [
+        "Επώνυμο"
       ],
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
@@ -11492,32 +11495,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Ξεκινήστε με ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Ξεκινώντας από ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
@@ -11545,6 +11522,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Ξεκινήστε με ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ξεκινώντας από ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12223,20 +12226,6 @@
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Αποκτήστε το Mail Plus για ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ξεκινώντας από ${ price }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -12255,6 +12244,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium χαρακτηριστικά με αναβάθμιση"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ξεκινώντας από ${ price }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -12357,9 +12360,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Επιλογή προβολής εισερχομένων μην ιδιωτικού χρήστη όπως θα έκανε ο χρήστης, συμπεριλαμβανομένου του πλήρους μηνύματος και των στοιχείων επικοινωνίας"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Εργαλείο διαχείρισης οργανισμού που επιτρέπει στους διαχειριστές να προσθέτουν και να καταργούν χρήστες, να εκχωρούν χώρο αποθήκευσης, να ρυθμίζουν τις παραμέτρους τομέων και να εκτελούν άλλες εργασίες"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Η ισχυρή υποδομή μας διασφαλίζει ότι θα μπορείτε να έχετε πρόσβαση στον λογαριασμό σας όταν τον χρειάζεστε"
@@ -14355,12 +14355,6 @@
       "For security reasons, the token is hidden": [
         "Για λόγους ασφαλείας, το διακριτικό είναι κρυμμένο"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε τα παρακάτω δεδομένα και ολοκληρώστε τη διαμόρφωση του SCIM για το ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε το διακριτικό παρακάτω και ενεργοποιήστε ξανά το SCIM για το ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Εάν έχετε χάσει ή ξεχάσει το διακριτικό SCIM, μπορείτε να δημιουργήσετε ένα νέο, αλλά έχετε υπόψη ότι οι ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας θα πρέπει να ενημερωθούν."
       ],
@@ -14369,9 +14363,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Μόλις απενεργοποιηθεί το SCIM για τον οργανισμό σας, **όλοι οι χρήστες SCIM που παρέχονται αυτόματα από τον πάροχο ταυτότητάς σας θα μετατραπούν σε χρήστες SSO** και θα μπορείτε να τους διαχειριστείτε απευθείας από τις ρυθμίσεις του ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Απλοποιεί τη διαχείριση χρηστών σε διάφορες υπηρεσίες. Προσθέστε, επεξεργαστείτε και καταργήστε χρήστες στην υπηρεσία παροχής ταυτότητάς σας και αυτές οι αλλαγές θα εφαρμοστούν αυτόματα στον οργανισμό σας ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Η αυτόματη παροχή SCIM θα απενεργοποιηθεί μέχρι να εισαγάγετε το νέο διακριτικό SCIM στις ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας."
@@ -16397,10 +16388,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -16499,6 +16490,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "Δημιουργήστε τη ${ BRAND_NAME } διεύθυνσής σας"
+      ],
+      "Created": [
+        "Δημιουργήθηκε"
       ],
       "Creating user accounts": [
         "Δημιουργία λογαριασμών χρηστών"
@@ -16926,6 +16920,9 @@
       "My calendars": [
         "Τα ημερολόγιά μου"
       ],
+      "Name": [
+        "Όνομα"
+      ],
       "Need more labels or folders?": [
         "Χρειάζεστε περισσότερες ετικέτες ή φακέλους;"
       ],
@@ -17061,6 +17058,9 @@
       "Remove calendar": [
         "Αφαίρεση ημερολογίου"
       ],
+      "Remove device?": [
+        "Διαγραφή συσκευής;"
+      ],
       "Remove domain": [
         "Αφαίρεση τομέα"
       ],
@@ -17186,9 +17186,6 @@
       ],
       "Sign in to join the Beta program": [
         "Συνδεθείτε για να συμμετάσχετε στο πρόγραμμα Beta"
-      ],
-      "Sign in to your organization": [
-        "Συνδεθήτε στον οργανισμό σας"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -17743,10 +17740,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω της υπηρεσίας Παροχής Ταυτότητάς σας. Εγκρίνετε ή απορρίψτε τους λογαριασμούς του τώρα:",
-        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω της υπηρεσίας Παροχής Ταυτότητάς σας. Εγκρίνετε ή απορρίψτε τους λογαριασμούς τους τώρα:"
-      ],
       "Administrator access enabled": [
         "Η πρόσβαση διαχειριστή ενεργοποιήθηκε"
       ],

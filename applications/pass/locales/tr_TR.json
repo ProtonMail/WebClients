@@ -570,21 +570,6 @@
         "Bize Twitter üzerinden yazın"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "İndirimli alın. Ayda tarifenize yalnızca ${ relativePrice } ek ödeme ile bir yıllık Pass Plus edinin."
-      ]
-    },
-    "bf2023: Label": {
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Muhteşem Cuma teklifi"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } masaüstü uygulaması"
@@ -731,6 +716,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } bozuk CSV satırı bulundu",
         "${ errors.length } bozuk CSV satırı bulundu"
+      ],
+      "Domain not available, try again later": [
+        "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Editing item failed": [
         "Öge düzenlenemedi"
@@ -3189,6 +3177,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Lütfen eklentinin düzgün olarak kurulduğundan ve etkin olduğundan emin olun"
       ],
+      "Please contact us to investigate the issue": [
+        "Sorunu çözebilmek için lütfen bizimle iletişime geçin"
+      ],
       "Please update the extension to its latest version": [
         "Lütfen eklentiyi son sürümüne güncelleyin"
       ],
@@ -3266,6 +3257,9 @@
       ],
       "Your session was locked.": [
         "Oturumunuz kilitlenmiş."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Aboneliğiniz daha fazla kasa oluşturmanıza izin vermiyor."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."

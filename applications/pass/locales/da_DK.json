@@ -570,21 +570,6 @@
         "Skriv til os på Twitter"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Spar smart. Få et år med Pass Plus for kun ${ relativePrice } pr. måned."
-      ]
-    },
-    "bf2023: Label": {
-      "Get the deal": [
-        "Gør brug af tilbuddet"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Black Friday-tilbud"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } skrivebordsapp"
@@ -731,6 +716,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Registrerede ${ errors.length } beskadiget CSV-række",
         "Registrerede ${ errors.length } beskadigede CSV-rækker"
+      ],
+      "Domain not available, try again later": [
+        "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
       "Editing item failed": [
         "Redigering af element mislykkedes"

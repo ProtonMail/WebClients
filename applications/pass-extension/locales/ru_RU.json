@@ -576,19 +576,33 @@
         "Написать нам в Twitter"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Экономьте с умом. Получите год Pass Plus всего за ${ relativePrice } в месяц."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "пожизненный доступ"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Все платные функции. 6 пользователей. 1 простая подписка."
+      ],
+      "Limited-stock available!": [
+        "Доступно ограниченное количество!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
-        "Получить со скидкой"
+        "Заключить сделку"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Предложение Черная пятница"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Черная пятница"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Заплатите один раз и получите ${ lifetimeAccessJSX } к Pass Plus. Всего ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Сэкономьте до ${ discountJSX } на Pass Family. Всего ${ relativePrice }/месяц."
       ]
     },
     "Browser": {
@@ -710,6 +724,9 @@
         "Обнаружены ${ errors.length } повреждённые строки в csv",
         "Обнаружено ${ errors.length } повреждённых строк в csv",
         "Обнаружено ${ errors.length } повреждённых строк в csv"
+      ],
+      "Domain not available, try again later": [
+        "Домен недоступен, повторите попытку позже"
       ],
       "Editing item failed": [
         "Ошибка при редактировании элемента"

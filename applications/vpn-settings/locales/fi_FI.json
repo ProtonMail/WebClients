@@ -691,9 +691,6 @@
       "Verify": [
         "Vahvista"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Vahvista ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Vahvista tili"
       ],
@@ -4736,6 +4733,9 @@
       "username": [
         "käyttäjätunnus"
       ],
+      "Username": [
+        "Käyttäjätunnus"
+      ],
       "Users": [
         "Käyttäjät"
       ],
@@ -5391,6 +5391,9 @@
       "Expires": [
         "Erääntyy"
       ],
+      "First name": [
+        "Etunimi"
+      ],
       "Gateway name": [
         "Yhdyskäytävän nimi"
       ],
@@ -5420,6 +5423,9 @@
       ],
       "Key": [
         "Avain"
+      ],
+      "Last name": [
+        "Sukunimi"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield-suodatuksen taso"
@@ -6849,9 +6855,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Organisaation hallintatyökalulla ylläpitäjät voivat lisätä ja poistaa käyttäjiä, jakaa tallennustilan, määrittää verkkotunnukset sekä suorittaa muita tehtäviä."
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vahva infrastruktuurimme varmistaa, että pääset tilillesi, kun sitä tarvitset"
       ],
@@ -7908,12 +7911,6 @@
       "For security reasons, the token is hidden": [
         "Tunniste on tietoturvasyistä piilotettu"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Siirry identiteetin tarjoajaasi, kopioi ja liitä alla olevat tiedot ja viimeistele SCIM-määritys ${ VPN_APP_NAME }:lle."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Siirry identiteetin tarjoajaasi, kopioi ja liitä alla oleva tunniste ja ota SCIM uudelleen käyttöön ${ VPN_APP_NAME }:lle."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Jos olet kadottanut tai unohtanut SCIM-tunnisteen, voit luoda uuden, mutta ota huomioon, että identiteetin tarjoajan asetukset on päivitettävä."
       ],
@@ -7922,9 +7919,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki identitetin tarjoajan automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Yksinkertaistaa eri palveluiden välistä käyttäjähallintaa. Lisää, muokkaa ja poista käyttäjiä identiteettitoimittajastasi, niin muutokset toteutetaan automaattisesti myös ${ VPN_APP_NAME } -organisaatiossasi."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM:n automaattinen valmistelu on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen identiteetin tarjoajan asetuksiin."
@@ -8514,6 +8508,17 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
+      ]
+    },
+    "sso": {
+      "Access denied": [
+        "Pääsy evätty"
+      ],
+      "Deny access": [
+        "Kiellä käyttöoikeus"
+      ],
+      "Grant access": [
+        "Myönnä käyttöoikeus"
       ]
     },
     "State": {
@@ -9628,6 +9633,9 @@
       "Delete user?": [
         "Poistetaanko käyttäjä?"
       ],
+      "Device": [
+        "Laite"
+      ],
       "Device connected!": [
         "Laite on yhdistetty!"
       ],
@@ -9851,6 +9859,9 @@
       "Processing...": [
         "Käsitellään..."
       ],
+      "QR Code": [
+        "QR-koodi"
+      ],
       "Recommended": [
         "Suositus"
       ],
@@ -9934,9 +9945,6 @@
       ],
       "Sign in to join the Beta program": [
         "Liity beetaohjelmaan kirjautumalla"
-      ],
-      "Sign in to your organization": [
-        "Kirjaudu organisaatioosi"
       ],
       "Sign out": [
         "Kirjaudu ulos"

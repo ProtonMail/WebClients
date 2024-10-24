@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -796,11 +796,14 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
+      "refresh the page": [
+        "aktualisiere die Seite"
+      ],
       "Refresh the page": [
         "Seite aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
+      "Reject": [
+        "Ablehnen"
       ],
       "Reload": [
         "Neu laden"
@@ -1188,9 +1191,6 @@
       ],
       "Verify": [
         "Verifizieren"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Überprüfe ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Konto verifizieren"
@@ -1604,14 +1604,6 @@
         "Wähle dein Jahresendangebot"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1633,6 +1625,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -3909,11 +3909,23 @@
       ]
     },
     "Email Unsubscribe": {
+      "Change other email subscriptions": [
+        "Ändere anderer E-Mail-Abonnements"
+      ],
+      "Click the button below to unsubscribe from ${ categories } emails.": [
+        "Klicke auf die Schaltfläche unten, um die E-Mails von ${ categories } abzubestellen."
+      ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
       ],
+      "If you unsubscribed by accident, you are welcome to resubscribe.": [
+        "Wenn du dich versehentlich abgemeldet hast, kannst du dich gerne wieder anmelden."
+      ],
       "Resubscribe": [
         "Erneut abonnieren"
+      ],
+      "Thank you and goodbye": [
+        "Danke und auf Wiedersehen"
       ],
       "Unsubscribe": [
         "Abbestellen"
@@ -3921,11 +3933,20 @@
       "Unsubscribe?": [
         "Abbestellen?"
       ],
+      "Update email preferences": [
+        "E-Mail-Einstellungen aktualisieren"
+      ],
+      "We're sorry to see you go.": [
+        "Wir bedauern, dass du gehst."
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Welche E-Mails möchtest du von ${ BRAND_NAME } erhalten?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Du hast ${ categoriesJsx }-E-Mails erneut abonniert."
+      ],
+      "You unsubscribed from ${ categories } emails, and will no longer receive this type of email from ${ BRAND_NAME }.": [
+        "Du hast dich von ${ categories } E-Mails abgemeldet und wirst diese Art von E-Mails von ${ BRAND_NAME } nicht mehr erhalten."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -7090,11 +7111,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
@@ -8392,9 +8413,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Dies ist möglicherweise ein zuvor von Ihnen gespeicherter Verschlüsselungsschlüssel."
-      ],
-      "This is an invitation from:": [
-        "Diese Einladung kommt von:"
       ],
       "This is the password you used before the password reset.": [
         "Es handelt sich dabei um das Passwort, das du vor dem Zurücksetzen des Passworts verwendet hast."
@@ -10064,6 +10082,9 @@
       "Filter Name": [
         "Filtername"
       ],
+      "First name": [
+        "Vorname"
+      ],
       "Folder location": [
         "Pfad des Ordners"
       ],
@@ -10165,6 +10186,9 @@
       ],
       "Last month only": [
         "Nur den letzten Monat"
+      ],
+      "Last name": [
+        "Nachname"
       ],
       "Level for NetShield blocker filtering": [
         "Stufe für NetShield-Blocker-Filterung"
@@ -11471,32 +11495,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Starte für ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Ab ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -11524,6 +11522,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Starte für ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ab ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11882,6 +11906,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Secure link sharing": [
+        "Sicheres Teilen von Links"
+      ],
       "See team's availability": [
         "Verfügbarkeit des Teams anzeigen"
       ],
@@ -12199,20 +12226,6 @@
         "Das von dir ausgewählte Abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -12231,6 +12244,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -12334,9 +12361,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Ein Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und wieder entfernen, Speicherplatz zuweisen, Domains konfigurieren und andere Aufgaben ausführen können."
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Unsere robuste Infrastruktur ermöglicht dir den Zugriff auf dein Konto, wann immer nötig."
       ],
@@ -12381,6 +12405,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Sicheres Teilen von einzelnen Einträgen mit anderen (selbst wenn sie ${ PASS_APP_NAME } nicht nutzen)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher. Dank Zero-Access-Verschlüsselung kann nicht einmal ${ BRAND_NAME } auf diese Informationen zugreifen."
@@ -13418,11 +13445,17 @@
       "${ n } user account": [
         "${ n } Benutzerkonto",
         "${ n } Benutzerkonten"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
       ]
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
         "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Jährlich abgerechnet zu ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (gegenüber 6 einzelnen ${ passPlusPlanName }-Abonnements)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exklusives Angebot, das nur für frühe Unterstützer von ${ PASS_APP_NAME } gilt."
@@ -13557,6 +13590,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "More plans are available in other currencies": [
+        "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
       "Payment Processing": [
         "Zahlungsabwicklung"
@@ -14319,12 +14355,6 @@
       "For security reasons, the token is hidden": [
         "Der Token ist aus Sicherheitsgründen ausgeblendet."
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Gehe zu deinem Identitätsanbieter, kopiere die unten stehenden Daten und füge sie ein, um die Konfiguration von SCIM für ${ VPN_APP_NAME } abzuschließen."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Gehe zu deinem Identitätsanbieter, kopiere den unten stehenden Token und füge ihn ein, um SCIM für ${ VPN_APP_NAME } wieder zu aktivieren."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Wenn du den SCIM-Token verloren oder vergessen hast, kannst du einen neuen generieren. Beachte aber, dass die Einstellungen deines Identitätsanbieters aktualisiert werden müssen."
       ],
@@ -14333,9 +14363,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Sobald SCIM für deine Organisation deaktiviert ist, werden **alle SCIM-Benutzer, die automatisch von deinem Identitätsanbieter bereitgestellt werden, in SSO-Benutzer** umgewandelt und du kannst sie direkt in den Einstellungen von ${ BRAND_NAME } verwalten."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Vereinfacht die Benutzerverwaltung über verschiedene Dienste hinweg. Füge Benutzer in deinem Identitätsanbieter hinzu, bearbeite und entferne sie, und diese Änderungen werden automatisch auf deine ${ VPN_APP_NAME }-Organisation übertragen."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Das automatische SCIM-Provisioning wird deaktiviert, bis du den neuen SCIM-Token in die Einstellungen deines Identitätsanbieters eingibst."
@@ -15540,6 +15567,9 @@
       "Keep ${ config.planName }": [
         "${ config.planName } behalten"
       ],
+      "Keep subscription": [
+        "Abonnement behalten"
+      ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Sorge unterwegs für die Sicherheit deines Teams, mit unseren Apps für Web, iOS, Android, Windows, Mac und Linux."
       ],
@@ -15645,6 +15675,9 @@
       "Yearly free storage bonuses": [
         "Jährliche Boni für kostenlosen Speicherplatz"
       ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "Du kannst weiterhin alle Vorteile deines aktuellen Tarifs bis ${ boldedDate } nutzen."
+      ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "Du hast noch ${ expiryDate } in deinem ${ planName }-Abonnement verbleibend. Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu. Vergewissere dich, dass du die Grenzen des kostenlosen Abonnements nicht überschreitest, bevor du kündigst. ${ learnMoreLink }"
       ],
@@ -15733,6 +15766,11 @@
       ],
       "Expiring": [
         "Verfallend"
+      ]
+    },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Zeig die Details der VPN-Sitzung für deine Organisation an."
       ]
     },
     "Success": {
@@ -16353,11 +16391,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -16455,6 +16493,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "Erstelle deine ${ BRAND_NAME }-E-Mail-Adresse"
+      ],
+      "Created": [
+        "Erstellt"
       ],
       "Creating user accounts": [
         "Benutzerkonten werden erstellt"
@@ -16882,6 +16923,9 @@
       "My calendars": [
         "Meine Kalender"
       ],
+      "Name": [
+        "Name"
+      ],
       "Need more labels or folders?": [
         "Benötigst du weitere Kategorien oder Ordner?"
       ],
@@ -17017,6 +17061,9 @@
       "Remove calendar": [
         "Kalender entfernen"
       ],
+      "Remove device?": [
+        "Gerät entfernen?"
+      ],
       "Remove domain": [
         "Domain entfernen"
       ],
@@ -17142,9 +17189,6 @@
       ],
       "Sign in to join the Beta program": [
         "Melde dich an, um am Beta-Programm teilzunehmen."
-      ],
-      "Sign in to your organization": [
-        "Bei deiner Organisation anmelden"
       ],
       "Sign out": [
         "Abmelden"
@@ -17705,11 +17749,20 @@
       "Administrator access rejected": [
         "Administratorzugriff deaktiviert"
       ],
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Admins haben keinen Zugriff auf die Daten privater Nutzer und können deren Passwort nicht zurücksetzen."
+      ],
       "An administrator of ${ orgName } wants to enable admin access for your account.": [
         "Ein Administrator von ${ orgName } möchte Admin-Zugriff für dein Konto aktivieren."
       ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "Ein Administrator der Organisation **${ orgName }** (**${ adminEmail }**) möchte den Administratorzugriff für dein Konto aktivieren."
+      ],
       "Approve all": [
         "Alle genehmigen"
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Wenn du den Benutzer als privat einstufst, kannst du ihm nicht helfen, wieder Zugang zu seinen Daten oder seinem Konto zu erhalten."
       ],
       "Cancel": [
         "Abbrechen"
@@ -17735,6 +17788,12 @@
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Wenn du den Zugriff auf deine Anmeldedaten verlierst, kann der Administrator deiner Organisation dein Passwort zurücksetzen und den Zugriff auf dein Konto wiederherstellen."
       ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Sobald der Nutzer zustimmt, kannst du ihm helfen, wieder Zugang zu seinem Konto zu erhalten oder seine Daten zu verwalten."
+      ],
+      "Organization key must be activated to request data access": [
+        "Der Organisationsschlüssel muss aktiviert werden, um den Datenzugang zu beantragen"
+      ],
       "Pending admin access": [
         "Admin-Zugriff ausstehend"
       ],
@@ -17744,6 +17803,12 @@
       "reject": [
         "ablehnen"
       ],
+      "Request to manage account sent, awaiting user approval": [
+        "Antrag auf Kontoverwaltung gesendet, Genehmigung des Benutzers steht noch aus"
+      ],
+      "Request user permission for data access": [
+        "Fordere die Benutzererlaubnis für den Datenzugriff an."
+      ],
       "Revoke access": [
         "Zugriff entfernen"
       ],
@@ -17752,6 +17817,18 @@
       ],
       "Send request": [
         "Anfrage senden"
+      ],
+      "The user must have an address to request data access": [
+        "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Dadurch wird die ausstehende Anfrage für den Administratorzugriff auf die Daten des Benutzers oder das Zurücksetzen des Passworts gelöscht."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Dadurch wird dem Administrator die Berechtigung entzogen, das Konto dieses Benutzers zu verwalten."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Um fortzufahren, musst du die Erlaubnis des Benutzers anfordern, um auf seine Daten zuzugreifen oder sein Passwort zurückzusetzen."
       ],
       "View request": [
         "Anfrage ansehen"

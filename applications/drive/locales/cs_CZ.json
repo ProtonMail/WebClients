@@ -2350,6 +2350,11 @@
         "Faktura po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2416,11 +2421,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5843,6 +5843,9 @@
       "Add to group": [
         "Přidat do skupiny"
       ],
+      "Address": [
+        "Adresa"
+      ],
       "Anyone on the Internet with the link can view": [
         "Kdokoli na internetu s odkazem může zobrazit"
       ],
@@ -6056,6 +6059,9 @@
       "File name": [
         "Název souboru"
       ],
+      "First name": [
+        "Křestní jméno"
+      ],
       "Folder": [
         "Složka"
       ],
@@ -6115,6 +6121,9 @@
       ],
       "Last month only": [
         "Pouze minulý měsíc"
+      ],
+      "Last name": [
+        "Příjmení"
       ],
       "Location": [
         "Umístění"
@@ -7494,14 +7503,6 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Získejte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -7514,6 +7515,14 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7618,9 +7627,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Nástroj pro správu organizace, který umožňuje správcům přidat uživatele, přiřadit úložný prostor, nastavit domény a další úkony"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naše výkonná infrastruktura zajistí, že budete mít přístup k účtu kdykoliv to bude potřeba"

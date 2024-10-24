@@ -572,21 +572,38 @@
       ],
       "Write us on Twitter": [
         "Skriv til oss på Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Passordbehandleren din er ikke her? Be om den."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Spar smart. Få et år med Pass Plus for bare ${ relativePrice } per måned."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "livslang tilgang"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Alle premiumfunksjoner. 6 brukere. Ett enkelt abonnement."
+      ],
+      "Limited-stock available!": [
+        "Begrenset lager tilgjengelig!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "Skaff deg tilbudet"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Black Friday-tilbud"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Betal én gang og få ${ lifetimeAccessJSX } til Pass Plus. Kun ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Spar opptil ${ discountJSX } på Pass Family. Kun ${ relativePrice }/måned."
       ]
     },
     "Browser": {
@@ -702,6 +719,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Oppdaget ${ errors.length } korrupt csv-rad",
         "Oppdaget ${ errors.length } korrupte csv-rader"
+      ],
+      "Domain not available, try again later": [
+        "Domenet er ikke tilgjengelig. Prøv igjen senere."
       ],
       "Editing item failed": [
         "Redigering av element mislyktes"
@@ -973,7 +993,7 @@
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "Vennligst oppdater siden eller forsøk igjen senere."
+        "Oppdater siden eller forsøk igjen senere."
       ],
       "Something went wrong": [
         "Noe gikk galt"
@@ -1324,6 +1344,12 @@
       "Expires in ${ remainingTime }": [
         "Utløper om ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Ekstra passord vellykket opprettet"
+      ],
+      "Extra password successfully removed": [
+        "Ekstra passord vellykket fjernet"
+      ],
       "Fill in the CSV with your data": [
         "Fyll ut CSV-filen med dataene dine"
       ],
@@ -1372,7 +1398,7 @@
         "Mistet internettilkobling"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internettilkobling tapt, vennligst kontroller enhetens tilkobling."
+        "Internett-tilkoblingen tapt. Sjekk enhetens tilkobling."
       ],
       "Invitation sent": [
         "Invitasjon sendt"
@@ -1446,6 +1472,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Overvåkingsinnstillingene er oppdatert"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Mer enn en passordbehandler, ${ PASS_APP_NAME } beskytter passordet ditt og din personlige e-postadresse via e-postaliaser. Drevet av den samme teknologien bak ${ MAIL_APP_NAME }, er dataene dine kryptert fra ende til ende og er bare tilgjengelige for deg."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
@@ -1646,6 +1675,9 @@
       "Select destination vault": [
         "Velg destinasjonshvelv"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Velg hvor du vil at de importerte hvelvene skal lagres."
+      ],
       "Selected items permanently deleted": [
         "Valgte elementer permanent slettet"
       ],
@@ -1656,7 +1688,7 @@
         "Valgte elementer er gjenopprettet fra papirkurven"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Vennligst prøv på nytt om noen få minutter."
+        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -1666,6 +1698,9 @@
       ],
       "Settings successfully updated": [
         "Innstillinger oppdatert"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Del pålogginger og sikre notater med opptil 10 personer"
       ],
       "Sign in or create an account to continue.": [
         "Logg på eller opprett en konto for å fortsette."
@@ -1731,8 +1766,14 @@
       "This version will be added to the history as the newest version.": [
         "Denne versjonen vil bli lagt til i historikken som den nyeste versjonen."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Dette vil avvise enheten **${ name }** som prøvde å logge på ${ BRAND_NAME }-kontoen din den **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For å migrere data fra en annen passordbehandler, gå til passordbehandleren, eksporter dataene dine og last dem deretter opp til ${ PASS_APP_NAME }. Når dataene er importert, sletter du den eksporterte filen."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "For å se gjennom de importerte dataene dine, klikk på ${ PASS_APP_NAME }-ikonet i nettleserens verktøylinje."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Prøv å laste inn eller installere utvidelsen på nytt, og sørg for at nettleseren og ${ PASS_SHORT_APP_NAME } er oppdatert."
@@ -1776,11 +1817,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Oppgrader nå for å låse opp premiumfunksjoner"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Oppgrader til en betalt plan for å opprette flere hvelv."
+      ],
       "Use vaults to share this item with others.": [
         "Bruk hvelv for å dele dette elementet med andre."
       ],
       "User's access removed": [
         "Brukerens tilgang fjernet"
+      ],
+      "User's access successfully updated": [
+        "Brukerens tilgang oppdatert"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Hvelv \"${ payload.content.name }\" slettet"
@@ -2018,6 +2065,9 @@
       "Capital letters (A-Z)": [
         "Store bokstaver (A–Å)"
       ],
+      "Capitalize": [
+        "Gjør om til store bokstaver"
+      ],
       "Card": [
         "Kort"
       ],
@@ -2203,6 +2253,9 @@
       ],
       "Import passwords": [
         "Importer passord"
+      ],
+      "Imported from: ": [
+        "Importert fra: "
       ],
       "Imported on : ": [
         "Importert den : "
@@ -2502,6 +2555,12 @@
       "Today": [
         "I dag"
       ],
+      "Total imported items: ": [
+        "Totalt antall importerte elementer: "
+      ],
+      "Total items: ": [
+        "Totalt antall elementer: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2680,7 +2739,7 @@
         "Velg et hvelv"
       ],
       "Please describe the problem and include any error messages": [
-        "Vennligst beskriv problemet og inkluder eventuelle feilmeldinger."
+        "Beskriv problemet og inkluder eventuelle feilmeldinger"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Skriv inn \"${ vaultName }\" for å bekrefte sletting"
@@ -2719,6 +2778,35 @@
         "Skriv notatet ditt"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Godkjenn eller avvis den nå"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Skriv inn bekreftelseskoden vi sendte på den andre enheten din."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Hvis du ikke sendte denne forespørselen, kanseller den nå."
+      ],
+      "Invalid confirmation code": [
+        "Ugyldig bekreftelseskode"
+      ],
+      "No, it wasn’t me": [
+        "Nei, det var ikke meg"
+      ],
+      "Sign-in confirmed": [
+        "Pålogging bekreftet"
+      ],
+      "Sign-in rejected": [
+        "Pålogging avvist"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Pålogging forespurt på en annen enhet. Var det deg?"
+      ],
+      "Yes, it was me": [
+        "Ja, det var meg"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Aliassynkronisering aktivert. SimpleLogin-aliaser kan ta litt tid å synkronisere"
@@ -2755,6 +2843,9 @@
       ],
       "Current version": [
         "Gjeldende versjon"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Slette hvelv \"${ vaultName }\"?"
       ],
       "Discard changes?": [
         "Forkaste endringer?"
@@ -2813,6 +2904,9 @@
       "Last modified": [
         "Sist endret"
       ],
+      "Leave vault?": [
+        "Forlate hvelv?"
+      ],
       "Log in as...": [
         "Logg på som..."
       ],
@@ -2855,11 +2949,17 @@
       "Pending access to the shared data": [
         "Venter på tilgang til de delte dataene"
       ],
+      "Permanently remove all items?": [
+        "Fjerne alle elementer permanent?"
+      ],
       "Pin the extension": [
         "Fest utvidelsen"
       ],
       "Pinned (${ items.length })": [
         "Festet (${ items.length })"
+      ],
+      "Reject device?": [
+        "Avvise enhet?"
       ],
       "Remove extra password": [
         "Fjern ekstra passord"
@@ -2965,6 +3065,9 @@
       "Section name cannot be empty": [
         "Seksjonsnavn kan ikke være tomt"
       ],
+      "URL already exists": [
+        "Nettadresse finnes allerede"
+      ],
       "URL cannot be empty": [
         "Nettadresse kan ikke være tom"
       ],
@@ -2999,6 +3102,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke opprette hvelv \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Kunne ikke sende invitasjoner til følgende adresser:"
       ],
       "Duplicate email addresses.": [
         "Dupliserte e-postadresser."
@@ -3069,6 +3175,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-kryptert eksportfil krever passfrase."
+      ],
+      "Please contact us to investigate the issue": [
+        "Vennligst kontakt oss for å undersøke problemet."
       ],
       "Please verify your email address in order to use email aliases": [
         "Vennligst bekreft e-postadressen din for å kunne bruke e-postaliaser."
@@ -3144,6 +3253,9 @@
       ],
       "Your session was locked.": [
         "Økten din ble låst."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Abonnementet ditt lar deg ikke opprette flere hvelv."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonnementet ditt lar deg ikke opprette flere hvelv. Alle elementer vil bli importert til ditt første hvelv. Hvis du vil importere til flere hvelv, oppgraderer du abonnementet."

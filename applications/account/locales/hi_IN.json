@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -757,11 +757,11 @@
       "Refresh status": [
         "रीफ्रेश स्थिति"
       ],
-      "Refresh the page": [
-        "पन्ना रिफ्रेश करें"
-      ],
       "refresh the page": [
         "पृष्ठ रिफ्रेश करें"
+      ],
+      "Refresh the page": [
+        "पन्ना रिफ्रेश करें"
       ],
       "Reload": [
         "रिलोड"
@@ -1461,14 +1461,6 @@
         "अपना वर्ष के अंत का ऑफ़र चुनें"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 टीबी स्टोरेज (किसी भी अन्य योजना की तुलना में 2 गुना ज़्यादा)"
@@ -1490,6 +1482,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "केवल सीमित समय के लिए ${ plan } योजना वापस आ गई है"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
       ]
     },
     "bf2023: Offers": {
@@ -6167,11 +6167,11 @@
       "Data locked": [
         "डेटा लॉक"
       ],
-      "dedicated servers": [
-        "समर्पित सर्वर"
-      ],
       "Dedicated servers": [
         "विशेष सर्वर"
+      ],
+      "dedicated servers": [
+        "समर्पित सर्वर"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "कोई भी अन्य MX रिकॉर्ड को हटा दें या सुनिश्चित करें कि ${ MAIL_APP_NAME } की प्राथमिकता सबसे कम नंबर पे है।"
@@ -8757,6 +8757,9 @@
       "Filter Name": [
         "नाम फिल्टर करें"
       ],
+      "First name": [
+        "पहला नाम"
+      ],
       "Folder location": [
         "फ़ोल्डर स्थान"
       ],
@@ -8846,6 +8849,9 @@
       ],
       "Last month only": [
         "पिछले महीने ही"
+      ],
+      "Last name": [
+        "अंतिम नाम"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield ब्लॉकर फिल्टर की ताकत"
@@ -9977,23 +9983,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free जारी रखें"
@@ -10021,6 +10010,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -10512,14 +10518,6 @@
         "आपकी चुनी हुई योजना: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -10538,6 +10536,14 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -10604,9 +10610,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "पूरे संदेश और संपर्क जानकारी के साथ निजी-नहीं यूज़र इनबॉक्स देखने का विकल्प।"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "संगठन मैनेजमेंट टूल एडमिन को यूज़र जोड़ने और निकालने, स्टोरेज का बटवारा करने, डोमेन की संरचना बदलने, और दूसरे काम करने देता है"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "हमारा तगड़ा इंफ्रास्ट्रक्चर पक्का करता है की आप जब चाहे अपना खाता एक्सेस कर सके"
@@ -11854,9 +11857,6 @@
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "यदि आपने SCIM टोकन खो दिया या भूल गए हैं, तो आप एक नया उत्पन्न कर सकते हैं, लेकिन ध्यान दें कि आपके पहचान प्रदाता सेटिंग्स को अपडेट किया जाना चाहिए।"
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "विभिन्न सेवाओं में उपयोगकर्ता प्रबंधन को सरल बनाता है। अपने पहचान प्रदाता में उपयोगकर्ताओं को जोड़ें, संपादित करें, और हटाएं, और ये परिवर्तन आपके ${ VPN_APP_NAME } संगठन में स्वचालित रूप से लागू हो जाएंगे।"
       ]
     },
     "scim: Label": {
@@ -13302,10 +13302,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [
@@ -13398,6 +13398,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "अपना ${ BRAND_NAME } पता बनाएं"
+      ],
+      "Created": [
+        "निर्मित"
       ],
       "Creating user accounts": [
         "यूज़र खाते बना रहे"
@@ -13789,6 +13792,9 @@
       "My calendars": [
         "मेरे कैलेंडर"
       ],
+      "Name": [
+        "नाम"
+      ],
       "Network error": [
         "नेटवर्क एरर"
       ],
@@ -13899,6 +13905,9 @@
       ],
       "Remove calendar": [
         "कैलेंडर हटाएं"
+      ],
+      "Remove device?": [
+        "डिवाइस हटाएं?"
       ],
       "Remove domain": [
         "डोमेन हटाएं"
@@ -14013,9 +14022,6 @@
       ],
       "Sign in to join the Beta program": [
         "बीटा कार्यक्रम में शामिल होने के लिए साइन इन करें"
-      ],
-      "Sign in to your organization": [
-        "अपने संगठन में साइन इन करें"
       ],
       "Sign out": [
         "साइन आउट करें"

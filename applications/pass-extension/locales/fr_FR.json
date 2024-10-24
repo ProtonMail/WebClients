@@ -577,19 +577,33 @@
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Petit prix, grande protection : profitez de Proton Pass Plus pendant un an pour seulement ${ relativePrice } par mois."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "un accès à vie"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Toutes les fonctionnalités premium, 6 utilisateurs et 1 seul abonnement."
+      ],
+      "Limited-stock available!": [
+        "Le nombre d'offres disponibles est limité !"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
-        "J'en profite"
+        "Je profite de l'offre"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Offre Black Friday"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Payez une seule fois et obtenez ${ lifetimeAccessJSX } à Pass Plus pour seulement ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Économisez jusqu'à ${ discountJSX } sur Pass Family pour seulement ${ relativePrice }/mois."
       ]
     },
     "Browser": {
@@ -705,6 +719,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } ligne CSV corrompue a été détectée.",
         "${ errors.length } lignes CSV corrompues ont été détectées."
+      ],
+      "Domain not available, try again later": [
+        "Le domaine n'est pas disponible, réessayez plus tard."
       ],
       "Editing item failed": [
         "La modification de l'élément n'a pas abouti."
@@ -1328,7 +1345,7 @@
         "Expire dans ${ remainingTime }"
       ],
       "Extra password successfully created": [
-        "Le mot de passe supplémentaire est créé."
+        "Le mot de passe supplémentaire a été créé."
       ],
       "Extra password successfully removed": [
         "Le mot de passe supplémentaire a été retiré."
@@ -1748,6 +1765,9 @@
       ],
       "This version will be added to the history as the newest version.": [
         "Cette version sera ajoutée à l'historique comme la version la plus récente."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Ceci refusera l'appareil **${ name }** qui a tenté de se connecter à votre compte ${ BRAND_NAME } le **${ date }**."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Pour transférer des données depuis un autre gestionnaire de mots de passe, rendez-vous dans ce gestionnaire, exportez vos données, puis importez-les dans ${ PASS_APP_NAME }. Une fois vos données importées, supprimez le fichier qui a servi au transfert."
@@ -2758,6 +2778,67 @@
         "Rédigez votre note."
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "L'approuver ou le refuser"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Saisissez le code de confirmation envoyé sur l'autre appareil."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Si vous n'êtes pas à l'origine de cette demande, annulez-la maintenant."
+      ],
+      "Invalid confirmation code": [
+        "Le code de confirmation n'est pas valide."
+      ],
+      "No, it wasn’t me": [
+        "Non, ce n'était pas moi."
+      ],
+      "Sign-in confirmed": [
+        "La connexion a été confirmée."
+      ],
+      "Sign-in failed": [
+        "La connexion n'a pas abouti."
+      ],
+      "Sign-in rejected": [
+        "La connexion a été rejetée."
+      ],
+      "Sign-in rejection failure": [
+        "Le refus de connextion n'a pas abouti."
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Une connexion a été demandée sur un autre appareil. En êtes-vous à l'origine ?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Une connexion a été demandée sur un autre appareil. En êtes-vous à l'origine ? "
+      ],
+      "Yes, it was me": [
+        "Oui, c'était moi."
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Actif"
+      ],
+      "Inactive": [
+        "Inactif"
+      ],
+      "Pending activation": [
+        "Activation en attente"
+      ],
+      "Pending admin activation": [
+        "En attente de l'activation de l'administrateur"
+      ],
+      "Rejected": [
+        "Rejeté"
+      ],
+      "Signed out": [
+        "Déconnecté"
+      ],
+      "Unknown": [
+        "Inconnu"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "La synchronisation des alias a été activée. La synchronisation des alias SimpleLogin peut prendre un certain temps."
@@ -2908,6 +2989,9 @@
       ],
       "Pinned (${ items.length })": [
         "Épinglés (${ items.length })"
+      ],
+      "Reject device?": [
+        "Voulez-vous rejeter l'appareil ?"
       ],
       "Remove extra password": [
         "Retirer le mot de passe supplémentaire"
