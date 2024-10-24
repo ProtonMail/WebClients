@@ -13,6 +13,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
+import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings';
 import { useLoading } from '@proton/hooks';
@@ -23,7 +24,7 @@ import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
-import { useGetUserKeys, useIsMnemonicAvailable, useUserSettings } from '../../hooks';
+import { useGetUserKeys, useUserSettings } from '../../hooks';
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

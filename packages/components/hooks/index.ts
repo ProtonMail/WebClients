@@ -3,8 +3,6 @@ export { default as useFeatures } from './useFeatures';
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
 export { default as useModals } from './useModals';
-export { default as useIsMnemonicAvailable } from './useIsMnemonicAvailable';
-export { default as useMyCountry } from './useMyCountry';
 export { default as useNotifications } from './useNotifications';
 export * from './useOrganization';
 export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';

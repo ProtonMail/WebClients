@@ -2,8 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useErrorHandler } from '@proton/components';
-import { useMyCountry } from '@proton/components/hooks';
+import { useErrorHandler, useMyCountry } from '@proton/components';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
