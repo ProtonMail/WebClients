@@ -5260,6 +5260,9 @@
       "Expires": [
         "Udløber"
       ],
+      "First name": [
+        "Fornavn"
+      ],
       "Gateway name": [
         "Gateway-navn"
       ],
@@ -5289,6 +5292,9 @@
       ],
       "Key": [
         "Nøgle"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
@@ -5436,6 +5442,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Search by email": [
+        "Søg via e-mail"
       ],
       "Second password": [
         "Anden adgangskode"
@@ -6702,9 +6711,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Organisationsstyringsværktøj, der lader administratorer tilføje og fjerne brugere, tildele lagerplads, konfigurere domæner og udføre andre opgaver"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vores robuste infrastruktur sikrer, at du kan få adgang til din konto, når du har brug for det"
       ],
@@ -7723,12 +7729,6 @@
       "For security reasons, the token is hidden": [
         "Af hensyn til sikkerheden er tokenet skjult"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Gå til din identitetsudbyder, kopier og indsæt data nedenfor, og afslut konfigurationen af SCIM for ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Gå til din identitetsudbyder, kopier og indsæt tokenet nedenfor, og genaktiver SCIM for ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Hvis du har mistet eller glemt SCIM-tokenet, kan du generere et nyt, men vær opmærksom på, at indstillingerne for din identitetsudbyder skal opdateres."
       ],
@@ -7737,9 +7737,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Så snart SCIM er deaktiveret for din organisation, bliver **alle SCIM-brugere, der tildeles automatisk af din identitetsudbyder, omdannet til SSO-brugere**, og du vil kunne styre dem direkte i ${ BRAND_NAME }-indstillingerne."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Brugeradministration forenkles på tværs af forskellige tjenester. Tilføj, rediger og fjern brugere i din identitetsudbyder, og disse ændringer anvendes automatisk i din ${ VPN_APP_NAME }-organisation."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM's automatiske provisionering deaktiveres, indtil du indtaster det nye SCIM-token via din identitetsudbyders indstillinger."
@@ -9589,6 +9586,9 @@
       "Remove domain": [
         "Fjern domæne"
       ],
+      "Remove server?": [
+        "Fjern server?"
+      ],
       "Remove single sign-on": [
         "Fjern single sign-on"
       ],
@@ -9657,9 +9657,6 @@
       ],
       "Sign in to join the Beta program": [
         "Log ind for tilmelding til Beta programmet"
-      ],
-      "Sign in to your organization": [
-        "Log ind med din organisation"
       ],
       "Sign out": [
         "Log ud"

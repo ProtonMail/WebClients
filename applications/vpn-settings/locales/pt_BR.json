@@ -190,6 +190,9 @@
       "Delete your account": [
         "Excluir sua conta"
       ],
+      "Deny access": [
+        "Negar acesso"
+      ],
       "Details": [
         "Detalhes"
       ],
@@ -690,9 +693,6 @@
       ],
       "Verify": [
         "Verificar"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Verificar ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Verificar conta"
@@ -2589,6 +2589,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Atualize para um plano de negócios com mais de 1 usuário para gerenciar vários usuários."
       ],
+      "Please upload a square logo": [
+        "Faça upload de um logotipo quadrado"
+      ],
       "Please upload an xml file": [
         "Envie um arquivo xml"
       ],
@@ -2763,6 +2766,9 @@
       ],
       "Got it": [
         "Entendi"
+      ],
+      "Invite a user": [
+        "Convidar um usuário"
       ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Convidar um usuário ${ BRAND_NAME } existente"
@@ -3766,6 +3772,9 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Exclua quaisquer outros registros MX ou certifique-se de que a prioridade do ${ MAIL_APP_NAME } é o menor número."
       ],
@@ -4136,6 +4145,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Learn more about Gateways": [
+        "Saiba mais sobre Gateways"
       ],
       "Let's get started by pressing the New group button above": [
         "Vamos começar pressionando o botão Novo grupo acima"
@@ -4601,6 +4613,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Essa verificação pode levar até uma hora. Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Isso negará o acesso a **${ email }**. Você tem certeza de que deseja continuar?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Isso desativará a autenticação de dois fatores, incluindo o aplicativo autenticador e os métodos de chave de segurança."
       ],
@@ -4745,6 +4760,9 @@
       "username": [
         "Nome de usuário"
       ],
+      "Username": [
+        "Nome de usuário"
+      ],
       "Users": [
         "Usuários"
       ],
@@ -4861,6 +4879,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Quando você remove um servidor de um Gateway, ele entra em um período de desativação de 10 dias. Esse servidor pode ser adicionado a um novo Gateway, mas seu país não pode ser alterado."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
@@ -5253,6 +5274,9 @@
       "Authenticator app": [
         "Aplicativo autenticador"
       ],
+      "Backup password": [
+        "Senha de backup"
+      ],
       "Billing address": [
         "Endereço de cobrança"
       ],
@@ -5400,6 +5424,9 @@
       "Expires": [
         "Data de validade"
       ],
+      "First name": [
+        "Primeiro nome"
+      ],
       "Gateway name": [
         "Nome do gateway"
       ],
@@ -5429,6 +5456,9 @@
       ],
       "Key": [
         "Chave"
+      ],
+      "Last name": [
+        "Sobrenome"
       ],
       "Level for NetShield blocker filtering": [
         "Nível de filtragem de bloqueio NetShield"
@@ -5561,6 +5591,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperação"
+      ],
+      "Repeat backup password": [
+        "Repetir senha de backup"
       ],
       "Reply (ACS) URL": [
         "URL de resposta (ACS)"
@@ -5805,6 +5838,9 @@
       ],
       "Pay invoice": [
         "Pagar fatura"
+      ],
+      "PayPal without credit card": [
+        "Paypal sem cartão de crédito"
       ],
       "perform a password reset from your active session": [
         "execute uma redefinição de senha da sua sessão ativa"
@@ -6864,9 +6900,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para visualizar caixas de entrada de usuários não privados da mesma forma que o próprio usuário, incluindo a mensagem completa e os detalhes de contato"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Ferramenta de gerenciamento da organização que possibilita que os administradores adicionem e removam usuários, aloquem armazenamento, configurem domínios e executem outras tarefas"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "A confiabilidade de nossa infraestrutura garante o acesso à sua conta sempre que necessário."
       ],
@@ -7487,6 +7520,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Utilize um método de recuperação de dados, entre em contato com outro administrador ou redefina a chave da organização para restaurar os privilégios de administrador."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Não foi possível verificar a autenticidade desta identidade."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Não foi possível verificar a segurança da chave do endereço deste remetente. Às vezes, há um atraso na atualização das informações do remetente. Tente novamente mais tarde. Se você não confia na validade deste convite ou remetente, entre em contato com o Suporte ao Cliente ${ BRAND_NAME }."
       ],
@@ -7868,6 +7904,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "O início de sessão não foi concluído."
+      ],
       "Something went wrong": [
         "Algo deu errado"
       ]
@@ -7938,12 +7977,6 @@
       "For security reasons, the token is hidden": [
         "Por motivos de segurança, o token está oculto."
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Vá até seu provedor de identidade, copie e cole os dados abaixo e conclua a configuração do SCIM para ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Vá até o seu provedor de identidade, copie e cole o token abaixo e reabilite o SCIM para ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Se você perdeu ou se esqueceu do token SCIM, você pode gerar um novo, mas esteja ciente que as configurações do seu provedor de identidade deverão ser atualizadas."
       ],
@@ -7952,9 +7985,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Assim que o SCIM for desabilitado para sua organização, **todos os usuários SCIM fornecidos automaticamente pelo seu provedor de identidade serão convertidos para usuários SSO** e você poderá administrá-los diretamente através das configurações da ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Simplifica o gerenciamento de usuário entre diferentes serviços. Adicione, edite e remova usuários do seu provedor de identidade, e essas mudanças serão automaticamente aplicadas à sua organização ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "O provisionamento automático do SCIM será desabilitado até você inserir o novo token SCIM nas configurações do seu provedor de identidade."
@@ -8544,6 +8574,131 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } membro solicitou sua ajuda para fazer login.",
+        "${ n } membro solicitaram sua ajuda para fazer login."
+      ],
+      "Access denied": [
+        "Acesso negado"
+      ],
+      "Access granted": [
+        "Acesso concedido"
+      ],
+      "Approve or deny it now": [
+        "Aprovar ou recusar agora"
+      ],
+      "Ask administrator for help": [
+        "Pedir ajuda ao administrador"
+      ],
+      "Ask your administrator for access?": [
+        "Pedir acesso ao administrador?"
+      ],
+      "Backup password": [
+        "Senha de backup"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Change backup password": [
+        "Alterar senha de backup"
+      ],
+      "Confirm backup password": [
+        "Confirmar senha de backup"
+      ],
+      "Confirmation code": [
+        "Código de confirmação"
+      ],
+      "Contact administrator": [
+        "Contatar o administrador"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Entre em contato com o administrador se o problema persistir."
+      ],
+      "Deny": [
+        "Negar"
+      ],
+      "Deny access": [
+        "Negar acesso"
+      ],
+      "Devices available": [
+        "Dispositivos disponíveis"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Digite o código de confirmação que enviamos a esse usuário."
+      ],
+      "Enter your backup password": [
+        "Digite sua senha de backup"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Para sua segurança, você foi desconectado de todos os seus outros dispositivos ativos. Antes de acessar sua conta, você precisará digitar uma nova senha de backup."
+      ],
+      "Grant": [
+        "Permitir"
+      ],
+      "Grant access": [
+        "Permitir acesso"
+      ],
+      "Grant access to user?": [
+        "Conceder acesso para o usuário?"
+      ],
+      "Grant access to users?": [
+        "Conceder acesso para os usuários?"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Se você não puder acessar sua conta ${ BRAND_NAME }, sua senha de backup permitirá que você inicie a sessão e recupere seus dados."
+      ],
+      "Invalid confirmation code": [
+        "Código de confirmação inválido"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Essa é a única maneira de restaurar totalmente sua conta, portanto, certifique-se de mantê-la em um local seguro."
+      ],
+      "New backup password": [
+        "Nova senha de backup"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Defina uma senha de backup para adicionar uma camada extra de proteção. Ela permitirá que você inicie sessão caso fique bloqueado, portanto, certifique-se de mantê-la em um local seguro."
+      ],
+      "Set your backup password": [
+        "Definir sua senha de backup"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Compartilhe o código de confirmação com seu administrador"
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Para ter certeza de que é realmente você que está tentando iniciar sessão em **${ email }**, revise o código de confirmação e aprove a solicitação do outro dispositivo."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Para ter certeza de que é realmente você que está tentando se conectar, compartilhe o código de confirmação com seu administrador **${ adminEmail }** para ele poder aprovar a solicitação de **${ email }**."
+      ],
+      "Tried to sign in at": [
+        "Tentou iniciar sessão em"
+      ],
+      "User details:": [
+        "Detalhes do usuário"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Ativo"
+      ],
+      "Inactive": [
+        "Inativo"
+      ],
+      "Pending activation": [
+        "Ativação pendente"
+      ],
+      "Rejected": [
+        "Rejeitado"
+      ],
+      "Signed out": [
+        "Encerrar sessão"
+      ],
+      "Unknown": [
+        "Desconhecido"
       ]
     },
     "State": {
@@ -9457,6 +9612,9 @@
       "Action": [
         "Ação"
       ],
+      "Actions": [
+        "Ações"
+      ],
       "Activate organization key": [
         "Ativar chave da organização"
       ],
@@ -9660,6 +9818,12 @@
       ],
       "Delete user?": [
         "Excluir usuário?"
+      ],
+      "Deny access to user?": [
+        "Negar acesso para o usuário?"
+      ],
+      "Device": [
+        "Dispositivo"
       ],
       "Device connected!": [
         "Dispositivo conectado!"
@@ -9884,6 +10048,9 @@
       "Processing...": [
         "Processando..."
       ],
+      "QR Code": [
+        "Código QR"
+      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -9967,9 +10134,6 @@
       ],
       "Sign in to join the Beta program": [
         "Inicie sessão para participar do programa Beta"
-      ],
-      "Sign in to your organization": [
-        "Iniciar sessão na sua organização."
       ],
       "Sign out": [
         "Encerrar sessão"
@@ -10224,6 +10388,9 @@
       ],
       "User declined invitation": [
         "O usuário rejeitou o convite"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Esperando o usuário aceitar o convite"
       ]
     },
     "Tooltip for news": {
@@ -10240,10 +10407,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } usuário entrou na sua organização por meio do seu provedor de identidade. Aprove ou rejeite a conta dele:",
-        "${ n } usuários entraram na sua organização por meio do seu provedor de identidade. Aprove ou rejeite as contas deles:"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
       ],

@@ -5280,6 +5280,9 @@
       "Expires": [
         "Verloopt"
       ],
+      "First name": [
+        "Voornaam"
+      ],
       "Gateway name": [
         "Naam Gateway"
       ],
@@ -5309,6 +5312,9 @@
       ],
       "Key": [
         "Sleutel"
+      ],
+      "Last name": [
+        "Achternaam"
       ],
       "Level for NetShield blocker filtering": [
         "Niveau voor NetShield blokkeerfiltering"
@@ -5449,7 +5455,7 @@
         "2FA vereisen voor beheerders"
       ],
       "Require 2FA for everyone": [
-        "2FA vereisejn voor iedereen"
+        "2FA vereisen voor iedereen"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -6735,9 +6741,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Tool voor organisatiebeheer waarmee beheerders gebruikers kunnen toevoegen en verwijderen, opslagruimte kunnen toewijzen, domeinen kunnen configureren en andere taken kunnen uitvoeren"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
       ],
@@ -7776,12 +7779,6 @@
       "For security reasons, the token is hidden": [
         "Om veiligheidsredenen is de token verborgen"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Ga naar uw identiteitsprovider, kopieer en plak de gegevens hieronder en voltooi de configuratie van SCIM voor ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Ga naar uw identiteitsprovider, kopieer en plak de token hieronder en schakel SCIM voor ${ VPN_APP_NAME } opnieuw in."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Als u de SCIM-token bent vergeten of verloren, kunt u een nieuwe genereren, maar wees ervan bewust dat uw identiteitsprovider instellingen zullen moeten worden bijgewerkt."
       ],
@@ -7790,9 +7787,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM-gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO-gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Vereenvoudigt gebruikersbeheer over verschillende diensten. Voeg toe, bewerk en verwijder gebruikers in uw identiteitsprovider, en deze wijzigingen zullen automatisch worden toegepast op uw ${ VPN_APP_NAME } organisatie."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "De automatische bepaling van SCIM wordt uitgeschakeld totdat u de nieuwe SCIM-token in de instellingen van uw identiteit provider invoert."
@@ -9751,9 +9745,6 @@
       ],
       "Sign in to join the Beta program": [
         "Log in om deel te nemen aan het Bèta programma"
-      ],
-      "Sign in to your organization": [
-        "Aanmelden bij uw organisatie"
       ],
       "Sign out": [
         "Uitloggen"

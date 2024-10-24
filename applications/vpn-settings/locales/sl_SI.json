@@ -5089,6 +5089,9 @@
       "Expires": [
         "Poteče"
       ],
+      "First name": [
+        "Ime"
+      ],
       "Gateway name": [
         "Ime prehoda"
       ],
@@ -5112,6 +5115,9 @@
       ],
       "Key": [
         "Ključ"
+      ],
+      "Last name": [
+        "Priimek"
       ],
       "Level for NetShield blocker filtering": [
         "Raven za filtriranje NetShield."
@@ -6440,9 +6446,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost ogleda nezasebnih nabiralnikov uporabnikov, kot bi to storil uporabnik sam, vključno s celotnimi sporočili in podatki o stikih."
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Orodje za upravljanje organizacij, ki omogoča skrbnikom dodajanje in odstranjevanje uporabnikov, dodeljevanje prostora, konfiguracijo domen in izvajanje drugih nalog."
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naš močan infrastrukturni sistem zagotavlja, da boste lahko dostopali do svojega računa, ko ga boste potrebovali."
       ],
@@ -7397,12 +7400,6 @@
       "For security reasons, the token is hidden": [
         "Iz varnostnih razlogov je žeton skrit"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Pojdite k svojemu ponudniku identitete, kopirajte in prilepite spodnje podatke ter dokončajte konfiguracijo SCIM za ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Pojdite k svojemu ponudniku identitete, kopirajte in prilepite spodnji žeton ter znova omogočite SCIM za ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Če ste izgubili ali pozabili žeton SCIM, lahko ustvarite novega, vendar se zavedajte, da bo treba posodobiti nastavitve vašega ponudnika identitete."
       ],
@@ -7411,9 +7408,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Ko je SCIM onemogočen za vašo organizacijo, bodo **vsi uporabniki SCIM, ki jih samodejno zagotovi vaš ponudnik identitete, pretvorjeni v uporabnike SSO** in upravljali jih boste lahko neposredno v nastavitvah ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Poenostavlja upravljanje uporabnikov v različnih storitvah. Dodajte, uredite in odstranite uporabnike v svojem ponudniku identitete in te spremembe bodo samodejno uporabljene v vaši organizaciji ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Samodejno zagotavljanje SCIM bo onemogočeno, dokler ne vnesete novega žetona SCIM v nastavitve svojega ponudnika identitete."
@@ -9279,9 +9273,6 @@
       ],
       "Sign in to join the Beta program": [
         "Prijavite se, da se pridružite programu Beta"
-      ],
-      "Sign in to your organization": [
-        "Prijavite se v svojo organizacijo"
       ],
       "Sign out": [
         "Odjava"
