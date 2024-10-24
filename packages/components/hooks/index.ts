@@ -5,8 +5,7 @@ export { default as useHandler, useEventListener, useSubscribeEventManager, useI
 export { default as useModals } from './useModals';
 export { default as useNotifications } from './useNotifications';
 export * from './useOrganization';
-export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';
-export { default as useSpotlightOnFeature } from './useSpotlightOnFeature';
+export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './useSortedList';
 export { default as useSubscription, useGetSubscription } from './useSubscription';
 export { default as usePreventCloseTab } from './usePreventCloseTab';
 export * from './useSessionRecovery';

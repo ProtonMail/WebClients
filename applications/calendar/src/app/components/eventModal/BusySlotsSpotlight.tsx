@@ -5,8 +5,14 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms';
-import { Spotlight, useActiveBreakpoint, useBusySlotsAvailable, useSpotlightShow } from '@proton/components';
-import { useSpotlightOnFeature, useWelcomeFlags } from '@proton/components/hooks';
+import {
+    Spotlight,
+    useActiveBreakpoint,
+    useBusySlotsAvailable,
+    useSpotlightOnFeature,
+    useSpotlightShow,
+} from '@proton/components';
+import { useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
