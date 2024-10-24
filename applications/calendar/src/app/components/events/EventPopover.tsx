@@ -116,8 +116,7 @@ const EventPopover = ({
     const isCalendarWritable = getIsCalendarWritable(calendarData);
 
     const isSearchView = view === VIEWS.SEARCH;
-
-    const model = useReadEvent(eventReadResult?.result, tzid, calendarBootstrap?.CalendarSettings);
+    const model = useReadEvent(targetEventData, tzid, calendarBootstrap?.CalendarSettings);
     const {
         eventReadError,
         isEventReadLoading,
@@ -129,7 +128,6 @@ const EventPopover = ({
         isSelfAddressActive,
         color,
     } = getEventInformation(targetEvent, model, hasPaidMail);
-
     const canDuplicateEvent =
         !isSearchView &&
         onDuplicate &&

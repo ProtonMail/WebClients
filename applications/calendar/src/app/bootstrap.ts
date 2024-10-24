@@ -105,13 +105,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             const [user, userSettings, features] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(userSettingsThunk()),
-                dispatch(
-                    fetchFeatures([
-                        FeatureCode.EarlyAccessScope,
-                        FeatureCode.CalendarFetchMetadataOnly,
-                        FeatureCode.AutoAddHolidaysCalendars,
-                    ])
-                ),
+                dispatch(fetchFeatures([FeatureCode.EarlyAccessScope, FeatureCode.AutoAddHolidaysCalendars])),
             ]);
 
             dispatch(welcomeFlagsActions.initial(userSettings));

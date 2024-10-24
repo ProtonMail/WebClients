@@ -31,7 +31,7 @@ const PartDayRegularEvent = ({
 }: PartDayRegularEventProps) => {
     const [{ hasPaidMail }] = useUser();
     const { start, end, data: targetEventData } = event;
-    const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
+    const model = useReadEvent(targetEventData, tzid);
 
     const { isEventReadLoading, color, eventReadError, eventTitleSafe } = getEventInformation(
         event,
@@ -76,7 +76,7 @@ const PartDayRegularEvent = ({
             size={size}
             style={eventStyle}
             isLoaded={!isEventReadLoading}
-            isPast={!isEventReadLoading && isBeforeNow}
+            isPast={isBeforeNow}
             isSelected={isSelected}
             isUnanswered={isUnanswered}
             isCancelled={isCancelled}
