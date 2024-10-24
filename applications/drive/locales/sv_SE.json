@@ -2323,6 +2323,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
@@ -2386,11 +2391,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5654,6 +5654,9 @@
       "Add to group": [
         "Lägg till i grupp"
       ],
+      "Address": [
+        "Adress"
+      ],
       "Anyone on the Internet with the link can view": [
         "Vem som helst på Internet med länken kan visa"
       ],
@@ -5865,6 +5868,9 @@
       "File name": [
         "Filnamn"
       ],
+      "First name": [
+        "Förnamn"
+      ],
       "Folder": [
         "Mapp"
       ],
@@ -5924,6 +5930,9 @@
       ],
       "Last month only": [
         "Endast den senaste månaden"
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Location": [
         "Plats"
@@ -7293,17 +7302,6 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7316,6 +7314,17 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -7418,9 +7427,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Möjlighet att visa icke-privata användares inkorgar som användaren själv gör, inklusive fullständiga meddelanden och kontaktuppgifter"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Organisationshanteringsverktyg som låter administratörer lägga till och ta bort användare, allokera lagringsutrymme, konfigurera domäner och utföra andra uppgifter"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robusta infrastruktur säkerställer att du kommer att kunna komma åt ditt konto när du behöver det"

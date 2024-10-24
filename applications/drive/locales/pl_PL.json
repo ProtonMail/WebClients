@@ -2344,6 +2344,11 @@
         "Zaległa faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chroni Twoje konto dzięki dedykowanemu całodobowemu monitorowaniu podejrzanej aktywności — w tym obsługi specjalistów ds. bezpieczeństwa."
@@ -2410,11 +2415,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5834,6 +5834,9 @@
       "Add to group": [
         "Dodaj do grupy"
       ],
+      "Address": [
+        "Adres"
+      ],
       "Anyone on the Internet with the link can view": [
         "Każdy, kto posiada link, może zobaczyć zawartość"
       ],
@@ -6047,6 +6050,9 @@
       "File name": [
         "Nazwa pliku"
       ],
+      "First name": [
+        "Imię"
+      ],
       "Folder": [
         "Folder"
       ],
@@ -6106,6 +6112,9 @@
       ],
       "Last month only": [
         "Tylko ostatni miesiąc"
+      ],
+      "Last name": [
+        "Nazwisko"
       ],
       "Location": [
         "Lokalizacja"
@@ -7542,14 +7551,6 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -7562,6 +7563,14 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7666,9 +7675,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Możliwość przeglądania służbowych skrzynek odbiorczych użytkowników w taki sam sposób, w jaki robi to użytkownik, łącznie z pełnymi wiadomościami i szczegółami kontaktu"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Narzędzie do zarządzania organizacją umożliwia administratorom dodawanie, usuwanie użytkowników, przydzielanie przestrzeni dyskowej, konfigurowanie domen i wykonywanie innych zadań"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nasza solidna infrastruktura zapewnia dostęp do konta wtedy, gdy jest ono potrzebne"

@@ -2324,6 +2324,11 @@
         "Süresi geçmiş fatura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2390,11 +2395,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5663,6 +5663,9 @@
       "Add to group": [
         "Gruba ekle"
       ],
+      "Address": [
+        "Adres"
+      ],
       "Anyone on the Internet with the link can view": [
         "İnternet üzerinden bağlantıyı bilen herkes görüntüleyebilir"
       ],
@@ -5874,6 +5877,9 @@
       "File name": [
         "Dosya adı"
       ],
+      "First name": [
+        "Ad"
+      ],
       "Folder": [
         "Klasör"
       ],
@@ -5933,6 +5939,9 @@
       ],
       "Last month only": [
         "Yalnızca son ay"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Location": [
         "Konum"
@@ -7254,14 +7263,6 @@
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price } ile Mail Plus edinin"
-      ],
-      "Starting from ${ price }": [
-        "${ price } tutarından başlayan fiyatlarla"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -7274,6 +7275,14 @@
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
       ]
     },
     "new_plans: tooltip": {
@@ -7376,9 +7385,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Kuruluş yönetimi aracı yöneticilerin kullanıcı ekleyip silmesini, kullanıcılara depolama alanı atamasını, etki alanlarını yapılandırmasını ve diğer işlemleri yapmasını sağlar"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Güçlü altyapımız, gerek duyduğunuzda hesabınıza erişmenizi sağlar"
