@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -180,6 +180,9 @@
       ],
       "Back": [
         "Tillbaka"
+      ],
+      "Back to sign-in": [
+        "Tillbaka till inloggning"
       ],
       "Block": [
         "Blockera"
@@ -378,6 +381,9 @@
       ],
       "Delete your account": [
         "Ta bort ditt konto"
+      ],
+      "Deny access": [
+        "Neka åtkomst"
       ],
       "Details": [
         "Detaljer"
@@ -661,6 +667,9 @@
       "Leave": [
         "Lämna"
       ],
+      "Leave group": [
+        "Lämna grupp"
+      ],
       "Let's talk": [
         "Låt oss prata!"
       ],
@@ -796,11 +805,14 @@
       "Refresh status": [
         "Uppdatera status"
       ],
+      "refresh the page": [
+        "uppdatera sidan"
+      ],
       "Refresh the page": [
         "Uppdatera sidan"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
+      "Reject": [
+        "Avvisa"
       ],
       "Reload": [
         "Ladda om"
@@ -810,6 +822,9 @@
       ],
       "Remove all members": [
         "Ta bort alla medlemmar"
+      ],
+      "Remove all other devices": [
+        "Ta bort alla andra enheter"
       ],
       "Remove bonuses": [
         "Ta bort bonusar"
@@ -1189,9 +1204,6 @@
       "Verify": [
         "Verifiera"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Verifiera ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Verifiera konto"
       ],
@@ -1203,6 +1215,9 @@
       ],
       "Verify domain": [
         "Verifiera domän"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Verifiera domänen ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Visa"
@@ -1600,14 +1615,6 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1629,6 +1636,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3893,6 +3908,9 @@
       "Email subscriptions": [
         "E-postprenumerationer"
       ],
+      "If you unsubscribed by accident, you are welcome to resubscribe.": [
+        "Om du avslutade prenumerationen av misstag är du välkommen att prenumerera igen."
+      ],
       "Resubscribe": [
         "Prenumerera igen"
       ],
@@ -4537,6 +4555,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
       ],
+      "Please upload a square logo": [
+        "Ladda upp en fyrkantig bild"
+      ],
       "Please upload an xml file": [
         "Ladda upp en xml-fil"
       ],
@@ -5152,6 +5173,9 @@
       ],
       "Got it": [
         "Jag förstår"
+      ],
+      "Invite a user": [
+        "Bjud in en användare"
       ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Bjud in en befintlig ${ BRAND_NAME }-användare"
@@ -5921,6 +5945,11 @@
         "Lämnat grupp"
       ]
     },
+    "group_invite_2024": {
+      "You have no groups to manage": [
+        "Du har inga grupper att hantera"
+      ]
+    },
     "group_invite_2024: Error message, recovery": {
       "Please try opening the link again.": [
         "Försök att öppna länken igen."
@@ -5935,11 +5964,17 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "för ${ email }"
+      ],
       "Group invitation accepted": [
         "Gruppinbjudan accepterad"
       ],
       "Group invitation declined": [
         "Gruppinbjudan avböjd"
+      ],
+      "Group membership": [
+        "Gruppmedlemskap"
       ]
     },
     "Header": {
@@ -7088,11 +7123,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Ta bort andra MX-poster eller se till att ${ MAIL_APP_NAME }s prioritet är det lägsta numret."
@@ -7622,6 +7657,9 @@
       ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "Learn more about Gateways": [
+        "Lär dig mer om gateways"
       ],
       "learn more about Sieve programming language": [
         "lär dig mer om Sieve programmeringsspråk"
@@ -8367,9 +8405,6 @@
       "This is an encryption key you may have previously saved.": [
         "Detta är en krypteringsnyckel som du kanske har sparat tidigare."
       ],
-      "This is an invitation from:": [
-        "Detta är en inbjudan från:"
-      ],
       "This is the password you used before the password reset.": [
         "Det här är lösenordet som du hade innan lösenordsåterställningen."
       ],
@@ -8624,6 +8659,9 @@
       ],
       "User activated": [
         "Användare aktiverad"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "username": [
         "användarnamn"
@@ -9711,6 +9749,9 @@
       "Awarded": [
         "Belönades"
       ],
+      "Backup password": [
+        "Säkerhetskopieringslösenord"
+      ],
       "Beta": [
         "Beta"
       ],
@@ -10011,6 +10052,9 @@
       "Filter Name": [
         "Filternamn"
       ],
+      "First name": [
+        "Förnamn"
+      ],
       "Folder location": [
         "Mappens plats"
       ],
@@ -10112,6 +10156,9 @@
       ],
       "Last month only": [
         "Endast den senaste månaden"
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Level for NetShield blocker filtering": [
         "Nivå på blockeringsfiltrering för NetShield"
@@ -10322,6 +10369,9 @@
       ],
       "Remove image metadata": [
         "Ta bort bild-metadata"
+      ],
+      "Repeat backup password": [
+        "Repetera säkerhetskopieringslösenord"
       ],
       "Repeat password": [
         "Upprepa lösenord"
@@ -10814,6 +10864,9 @@
       ],
       "Pay invoice": [
         "Betala faktura"
+      ],
+      "PayPal without credit card": [
+        "PayPal utan kreditkort"
       ],
       "perform a password reset from your active session": [
         "utför en lösenordsåterställning från din aktiva session"
@@ -11418,32 +11471,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom igång för ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Startar från ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11471,6 +11498,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom igång för ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12143,23 +12196,6 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -12178,6 +12214,23 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -12280,9 +12333,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Möjlighet att visa icke-privata användares inkorgar som användaren själv gör, inklusive fullständiga meddelanden och kontaktuppgifter"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Organisationshanteringsverktyg som låter administratörer lägga till och ta bort användare, allokera lagringsutrymme, konfigurera domäner och utföra andra uppgifter"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robusta infrastruktur säkerställer att du kommer att kunna komma åt ditt konto när du behöver det"
@@ -14180,6 +14230,9 @@
       "Your recovery email": [
         "Din e-post för återställning"
       ],
+      "Your recovery email address is:": [
+        "Din e-postadress för återställning är:"
+      ],
       "Your recovery email and phone can **only recover access to your account**.": [
         "Din e-post och telefon för återställning kan **endast återställa åtkomst till ditt konto**."
       ],
@@ -14212,6 +14265,9 @@
       ],
       "Your recovery phone is set": [
         "Din telefon för återställning är inställd"
+      ],
+      "Your recovery phone number is:": [
+        "Ditt telefonnummer för återställning är:"
       ]
     },
     "saml: Action": {
@@ -14287,20 +14343,11 @@
       "For security reasons, the token is hidden": [
         "Token är dold av säkerhetsskäl"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Gå till din identitetsleverantör, kopiera och klistra in data nedan och slutför konfigureringen av SCIM för ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Gå till din identitetsleverantör, kopiera och klistra in token nedan och återaktivera SCIM för ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Om du har förlorat eller glömt SCIM-token kan du skapa en ny, men tänk på att inställningarna för din identitetsleverantör måste uppdateras."
       ],
       "Make sure you copy the above SCIM token now.": [
         "Se till att du kopierar SCIM-token ovan nu."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ VPN_APP_NAME }-organisation."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "För att återaktivera synkronisering med din identitetsleverantör måste du slutföra SCIM-integreringen igen."
@@ -15042,6 +15089,142 @@
         "Bjud in vänner till ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "Access denied": [
+        "Åtkomst nekad"
+      ],
+      "Access granted": [
+        "Åtkomst beviljad"
+      ],
+      "Approve": [
+        "Godkänn"
+      ],
+      "Approve or deny it now": [
+        "Godkänn eller neka det nu"
+      ],
+      "Approve the sign-in from another device": [
+        "Godkänn inloggningen från annan enhet"
+      ],
+      "Ask administrator for help": [
+        "Be administratör om hjälp"
+      ],
+      "Backup password": [
+        "Säkerhetskopieringslösenord"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Confirm backup password": [
+        "Bekräfta säkerhetskopieringslösenord"
+      ],
+      "Confirmation code": [
+        "Bekräftelsekod"
+      ],
+      "Contact administrator": [
+        "Kontakta administratör"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Kontakta din administratör om problemet kvarstår."
+      ],
+      "Current device": [
+        "Nuvarande enhet"
+      ],
+      "Deny": [
+        "Neka"
+      ],
+      "Deny access": [
+        "Neka åtkomst"
+      ],
+      "Devices available": [
+        "Enheter tillgängliga"
+      ],
+      "Devices management": [
+        "Enhetshantering"
+      ],
+      "Enter your backup password": [
+        "Ange ditt säkerhetskopieringslösenord"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "För din säkerhet har du blivit utloggad från alla dina andra aktiva enheter. Innan du kommer åt ditt konto måste du ange ett nytt säkerhetskopieringslösenord."
+      ],
+      "Grant": [
+        "Bevilja"
+      ],
+      "Grant access": [
+        "Bevilja åtkomst"
+      ],
+      "Grant access to user?": [
+        "Bevilja åtkomst till användare?"
+      ],
+      "Grant access to users?": [
+        "Bevilja åtkomst till användare?"
+      ],
+      "Invalid confirmation code": [
+        "Ogiltig bekräftelsekod"
+      ],
+      "Join ${ organizationName }": [
+        "Gå med ${ organizationName }"
+      ],
+      "New backup password": [
+        "Nytt säkerhetskopieringslösenord"
+      ],
+      "No, it wasn’t me": [
+        "Nej, det var inte jag"
+      ],
+      "Reject": [
+        "Avvisa"
+      ],
+      "Remove": [
+        "Ta bort"
+      ],
+      "Remove all other devices": [
+        "Ta bort alla andra enheter"
+      ],
+      "Set your backup password": [
+        "Ange ditt säkerhetskopieringslösenord"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Dela bekräftelsekoden med din administratör"
+      ],
+      "Sign in to your organization": [
+        "Logga in på din organisation"
+      ],
+      "Sign-in confirmed": [
+        "Inloggning bekräftad"
+      ],
+      "Sign-in rejected": [
+        "Inloggning avisad"
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "För att vara säker på att det verkligen är du som försöker logga in, ange ditt säkerhetskopieringslösenord."
+      ],
+      "Use backup password instead": [
+        "Använd säkerhetskopieringslösenord istället"
+      ],
+      "User details:": [
+        "Användardetaljer:"
+      ],
+      "Yes, it was me": [
+        "Ja, det var jag"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Rejected": [
+        "Avvisad"
+      ],
+      "Signed out": [
+        "Utloggad"
+      ],
+      "Unknown": [
+        "Okänd"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Avbryter din prenumeration, vänta"
@@ -15578,6 +15761,9 @@
       "Yearly free storage bonuses": [
         "Årliga bonusar med gratis lagringsutrymme"
       ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "Du kan fortsätta att dra nytta av alla fördelar med ditt nuvarande paket fram till ${ boldedDate }."
+      ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
       ]
@@ -15718,6 +15904,12 @@
       ],
       "Default calendar updated": [
         "Standardkalender uppdaterad"
+      ],
+      "Device deleted": [
+        "Enhet borttagen"
+      ],
+      "Device rejected": [
+        "Enhet avvisad"
       ],
       "Display name updated": [
         "Visningsnamn uppdaterat"
@@ -16152,6 +16344,9 @@
       "Action": [
         "Åtgärd"
       ],
+      "Actions": [
+        "Åtgärder"
+      ],
       "Activate @pm.me": [
         "Aktivera @pm.me"
       ],
@@ -16288,10 +16483,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -16391,6 +16586,9 @@
       "Create your ${ BRAND_NAME } address": [
         "Skapa din ${ BRAND_NAME }-adress"
       ],
+      "Created": [
+        "Skapad"
+      ],
       "Creating user accounts": [
         "Skapar användarkonton"
       ],
@@ -16482,11 +16680,17 @@
       "Delete version history?": [
         "Ta bort versionshistorik?"
       ],
+      "Deny access to user?": [
+        "Neka åtkomst till användare?"
+      ],
       "Description": [
         "Beskrivning"
       ],
       "Details": [
         "Detaljer"
+      ],
+      "Device": [
+        "Enhet"
       ],
       "Device connected!": [
         "Enhet ansluten!"
@@ -16787,6 +16991,9 @@
       "Leave ${ organisationName }?": [
         "Lämna ${ organisationName }?"
       ],
+      "Leave group?": [
+        "Lämna grupp?"
+      ],
       "Link confirmation": [
         "Länkbekräftelse"
       ],
@@ -16810,6 +17017,9 @@
       ],
       "My calendars": [
         "Mina kalendrar"
+      ],
+      "Name": [
+        "Namn"
       ],
       "Need more labels or folders?": [
         "Behöver du fler etiketter eller mappar?"
@@ -16919,6 +17129,9 @@
       "Profile": [
         "Profil"
       ],
+      "QR Code": [
+        "QR-kod"
+      ],
       "Recommended": [
         "Rekommenderad"
       ],
@@ -16940,11 +17153,17 @@
       "Refer a friend": [
         "Hänvisa en vän"
       ],
+      "Reject device?": [
+        "Avisa enhet?"
+      ],
       "Remove all members?": [
         "Ta bort alla medlemmar?"
       ],
       "Remove calendar": [
         "Ta bort kalender"
+      ],
+      "Remove device?": [
+        "Ta bort enhet?"
       ],
       "Remove domain": [
         "Ta bort domän"
@@ -17071,9 +17290,6 @@
       ],
       "Sign in to join the Beta program": [
         "Logga in för att gå med i Beta-programmet"
-      ],
-      "Sign in to your organization": [
-        "Logga in på din organisation"
       ],
       "Sign out": [
         "Logga ut"
@@ -17631,10 +17847,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller avvisa deras konton nu:",
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller avvisa deras konton nu:"
-      ],
       "Administrator access enabled": [
         "Administratörsåtkomst aktiverad"
       ],

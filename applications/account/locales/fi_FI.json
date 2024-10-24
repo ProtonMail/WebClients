@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "Activate": [
-        "Ota käyttöön"
-      ],
       "activate": [
         "ota käyttöön"
+      ],
+      "Activate": [
+        "Ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -796,11 +796,14 @@
       "Refresh status": [
         "Päivitä tila"
       ],
+      "refresh the page": [
+        "Päivitä sivu"
+      ],
       "Refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
-        "Päivitä sivu"
+      "Reject": [
+        "Kieltäydy"
       ],
       "Reload": [
         "Päivitä"
@@ -1188,9 +1191,6 @@
       ],
       "Verify": [
         "Vahvista"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Vahvista ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Vahvista tili"
@@ -1604,14 +1604,6 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1633,6 +1625,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7105,11 +7105,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Poista kaikki muut MX-tietueet tai varmista, että ${ MAIL_APP_NAME }in painotus on pienin numero."
@@ -8408,9 +8408,6 @@
       "This is an encryption key you may have previously saved.": [
         "Tämä on salausavain, jonka olet saattanut tallentaa aiemmin."
       ],
-      "This is an invitation from:": [
-        "Tämän kutsun on lähettänyt:"
-      ],
       "This is the password you used before the password reset.": [
         "Tämä on ennen salasanan uudelleenasetusta käyttämäsi salasana."
       ],
@@ -8671,6 +8668,9 @@
       ],
       "User activated": [
         "Käyttäjä aktivoitiin"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ],
       "username": [
         "käyttäjätunnus"
@@ -10079,6 +10079,9 @@
       "Filter Name": [
         "Suodattimen nimi"
       ],
+      "First name": [
+        "Etunimi"
+      ],
       "Folder location": [
         "Kansion sijainti"
       ],
@@ -10180,6 +10183,9 @@
       ],
       "Last month only": [
         "Vain viime kuu"
+      ],
+      "Last name": [
+        "Sukunimi"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield-suodatuksen taso"
@@ -11486,32 +11492,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Aloita hintaan ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Alkaen ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11539,6 +11519,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Aloita hintaan ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
       ]
     },
     "new_plans: feature": {
@@ -12217,20 +12223,6 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -12249,6 +12241,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -12351,9 +12357,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Organisaation hallintatyökalulla ylläpitäjät voivat lisätä ja poistaa käyttäjiä, jakaa tallennustilan, määrittää verkkotunnukset sekä suorittaa muita tehtäviä."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vahva infrastruktuurimme varmistaa, että pääset tilillesi, kun sitä tarvitset"
@@ -14349,12 +14352,6 @@
       "For security reasons, the token is hidden": [
         "Tunniste on tietoturvasyistä piilotettu"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Siirry identiteetin tarjoajaasi, kopioi ja liitä alla olevat tiedot ja viimeistele SCIM-määritys ${ VPN_APP_NAME }:lle."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Siirry identiteetin tarjoajaasi, kopioi ja liitä alla oleva tunniste ja ota SCIM uudelleen käyttöön ${ VPN_APP_NAME }:lle."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Jos olet kadottanut tai unohtanut SCIM-tunnisteen, voit luoda uuden, mutta ota huomioon, että identiteetin tarjoajan asetukset on päivitettävä."
       ],
@@ -14363,9 +14360,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki identitetin tarjoajan automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Yksinkertaistaa eri palveluiden välistä käyttäjähallintaa. Lisää, muokkaa ja poista käyttäjiä identiteettitoimittajastasi, niin muutokset toteutetaan automaattisesti myös ${ VPN_APP_NAME } -organisaatiossasi."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM:n automaattinen valmistelu on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen identiteetin tarjoajan asetuksiin."
@@ -15125,6 +15119,17 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
+      ]
+    },
+    "sso": {
+      "Access denied": [
+        "Pääsy evätty"
+      ],
+      "Deny access": [
+        "Kiellä käyttöoikeus"
+      ],
+      "Grant access": [
+        "Myönnä käyttöoikeus"
       ]
     },
     "State": {
@@ -16391,10 +16396,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -16494,6 +16499,9 @@
       "Create your ${ BRAND_NAME } address": [
         "Luo ${ BRAND_NAME }-osoitteesi"
       ],
+      "Created": [
+        "Luotu"
+      ],
       "Creating user accounts": [
         "Käyttäjätilien luonti"
       ],
@@ -16590,6 +16598,9 @@
       ],
       "Details": [
         "Lisätiedot"
+      ],
+      "Device": [
+        "Laite"
       ],
       "Device connected!": [
         "Laite on yhdistetty!"
@@ -16920,6 +16931,9 @@
       "My calendars": [
         "Omat kalenterit"
       ],
+      "Name": [
+        "Nimi"
+      ],
       "Need more labels or folders?": [
         "Tarvitsetko enemmän tunnisteita tai kansioita?"
       ],
@@ -17025,6 +17039,9 @@
       "Profile": [
         "Profiili"
       ],
+      "QR Code": [
+        "QR-koodi"
+      ],
       "Recommended": [
         "Suositus"
       ],
@@ -17051,6 +17068,9 @@
       ],
       "Remove calendar": [
         "Poista kalenteri"
+      ],
+      "Remove device?": [
+        "Poistetaanko laite?"
       ],
       "Remove domain": [
         "Poista verkkotunnus"
@@ -17177,9 +17197,6 @@
       ],
       "Sign in to join the Beta program": [
         "Liity beetaohjelmaan kirjautumalla"
-      ],
-      "Sign in to your organization": [
-        "Kirjaudu organisaatioosi"
       ],
       "Sign out": [
         "Kirjaudu ulos"
