@@ -41,7 +41,7 @@ const FullDayEvent = ({
     const [{ hasPaidMail }] = useUser();
     const { start, end, data: targetEventData, isAllDay, isAllPartDay } = event;
 
-    const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
+    const model = useReadEvent(targetEventData, tzid);
     const { isEventReadLoading, color, eventReadError, eventTitleSafe } = getEventInformation(
         event,
         model,
@@ -137,7 +137,7 @@ const FullDayEvent = ({
                     'calendar-dayeventcell-inner text-left flex',
                     !isAllDay && 'isNotAllDay',
                     !isEventReadLoading && 'isLoaded',
-                    !isEventReadLoading && isBeforeNow && 'isPast',
+                    isBeforeNow && 'isPast',
                     isSelected && 'isSelected',
                     isUnanswered && 'isUnanswered',
                     isCancelled && 'isCancelled',

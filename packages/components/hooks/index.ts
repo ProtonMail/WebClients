@@ -32,6 +32,7 @@ export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLe
 export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './useSortedList';
 export { default as useSpotlightOnFeature } from './useSpotlightOnFeature';
 export { default as useSubscription, useGetSubscription } from './useSubscription';
+export { default as usePreventCloseTab } from './usePreventCloseTab';
 export * from './useSAMLConfigs';
 export * from './useSessionRecovery';
 export * from './securityCheckup';

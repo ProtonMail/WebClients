@@ -8,6 +8,7 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
+import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import {
     Dropzone,
     ImportModal,
@@ -17,10 +18,10 @@ import {
     useConfig,
     useContactEmails,
     useContactEmailsCache,
-    useEventManager,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
     useNotifications,
+    usePreventCloseTab,
     useRelocalizeText,
     useUserSettings,
 } from '@proton/components';
@@ -33,7 +34,6 @@ import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     attendeeDeleteSingleEdit,
     updateAttendeePartstat,
-    updateMember,
     updatePersonalEventPart,
 } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
@@ -126,6 +126,8 @@ import useBusySlots from '../../hooks/useBusySlots';
 import type { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
+import usePauseCalendarEventLoop from '../../hooks/usePauseCalendarEventLoop';
+import usePendingNotifications from '../../hooks/usePendingNotifications';
 import type {
     AttendeeDeleteSingleEditOperation,
     InviteActions,
@@ -136,6 +138,9 @@ import type {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
+import { getCurrentPartstat } from '../../store/events/eventsCache';
+import { type CalendarViewEventStore, eventsActions } from '../../store/events/eventsSlice';
+import { useCalendarDispatch } from '../../store/hooks';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -306,7 +311,14 @@ const InteractiveCalendarView = ({
 }: Props) => {
     const api = useApi();
     const [userSettings] = useUserSettings();
-    const { call } = useEventManager();
+    const hasPendingEvents = useMemo(() => {
+        const pendingEvents = events.filter((event: CalendarViewEventStore) => event.isSaving || event.isDeleting);
+        return pendingEvents.length > 0;
+    }, [events]);
+    usePreventCloseTab(hasPendingEvents);
+    usePauseCalendarEventLoop(activeCalendars, hasPendingEvents);
+    usePendingNotifications();
+    const dispatch = useCalendarDispatch();
     const { call: calendarCall } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
@@ -318,6 +330,8 @@ const InteractiveCalendarView = ({
     const [{ hasPaidMail }] = useUser();
     const isSavingEvent = useRef(false);
     const isEditSingleOccurrenceEnabled = useFlag('EditSingleOccurrenceWeb');
+    const hasReduxStore = useFlag('CalendarRedux');
+    const hasOptimisticRSVP = useFlag('CalendarReduxRSVP');
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const isSearchView = view === VIEWS.SEARCH;
@@ -437,6 +451,38 @@ const InteractiveCalendarView = ({
     const sortedEvents = useMemo(() => {
         return sortEvents(events.concat());
     }, [events]);
+
+    const isProcessing = useCallback(
+        (uniqueId: string) => {
+            if (hasReduxStore) {
+                const selectedEvent: CalendarViewEventStore | undefined = events.find(
+                    (event) => event.uniqueId === uniqueId
+                );
+
+                if (!selectedEvent) {
+                    return false;
+                }
+
+                if (selectedEvent.isSaving || selectedEvent.isDeleting) {
+                    return true;
+                }
+
+                return events.some((event: CalendarViewEventStore) => {
+                    const { UID } = event.data?.eventData as CalendarEvent;
+                    const { UID: selectedUID } = selectedEvent.data?.eventData as CalendarEvent;
+
+                    if (UID && UID === selectedUID) {
+                        return event.isSaving || event.isDeleting;
+                    }
+
+                    return false;
+                });
+            } else {
+                return isSavingEvent.current;
+            }
+        },
+        [events, hasReduxStore]
+    );
 
     const sortedEventsWithTemporary = useMemo(() => {
         return sortWithTemporaryEvent(sortedEvents, temporaryEvent);
@@ -637,14 +683,15 @@ const InteractiveCalendarView = ({
         // Manually dispatch a mousedown event, since it has been blocked by our custom mouse handlers
         containerRef?.dispatchEvent(new Event('mousedown'));
 
-        if (isSavingEvent.current) {
-            return;
-        }
         if (isEventDownAction(mouseDownAction)) {
             const { event, type } = mouseDownAction.payload;
 
             // If already creating something in blocking mode and not touching on the temporary event.
             if (temporaryEvent && event.uniqueId !== 'tmp' && isInTemporaryBlocking) {
+                return;
+            }
+
+            if (isProcessing(event.uniqueId)) {
                 return;
             }
 
@@ -756,7 +803,7 @@ const InteractiveCalendarView = ({
         }
 
         if (isCreateDownAction(mouseDownAction)) {
-            if (!createEventCalendar || !createEventCalendarBootstrap) {
+            if (!createEventCalendar || !createEventCalendarBootstrap || isSavingEvent.current) {
                 return;
             }
 
@@ -1197,20 +1244,10 @@ const InteractiveCalendarView = ({
             return !calendar?.Display;
         });
 
-        // TODO: Remove when optimistic
         if (hiddenCalendars.length > 0) {
-            await Promise.all(
-                hiddenCalendars.map((calendarID) => {
-                    const members = activeCalendars.find(({ ID }) => ID === calendarID)?.Members || [];
-                    const [{ ID: memberID }] = getMemberAndAddress(addresses, members);
-
-                    return api({
-                        ...updateMember(calendarID, memberID, { Display: 1 }),
-                        silence: true,
-                    });
-                })
-            );
-            await call();
+            hiddenCalendars.forEach((calendarID) => {
+                void dispatch(changeCalendarVisiblity({ calendarID, display: true }));
+            });
         }
     };
 
@@ -1362,12 +1399,22 @@ const InteractiveCalendarView = ({
     const handleSaveEvent = async (
         temporaryEvent: CalendarViewEventTemporaryEvent,
         inviteActions: InviteActions,
-        isDuplicatingEvent = false
+        isDuplicatingEvent = false,
+        isChangePartstat = false
     ) => {
         let hasStartChanged;
+        // uid is not defined when we create a new event
+        const UID = temporaryEvent.tmpData.uid || 'tmp';
+        const { ID } = temporaryEvent.data.eventData as CalendarEvent;
+        const selfEmail = inviteActions.selfAddress?.Email;
+        let oldPartstat: string | undefined;
 
         try {
             isSavingEvent.current = true;
+            if (isChangePartstat && selfEmail && inviteActions.partstat && hasOptimisticRSVP) {
+                oldPartstat = getCurrentPartstat(temporaryEvent.uniqueId, selfEmail);
+                dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: inviteActions.partstat }));
+            }
             const {
                 syncActions,
                 updatePartstatActions = [],
@@ -1382,7 +1429,11 @@ const InteractiveCalendarView = ({
                 inviteActions,
                 isDuplicatingEvent,
                 api,
-                onSaveConfirmation: handleSaveConfirmation,
+                onSaveConfirmation: async (params) => {
+                    const result = await handleSaveConfirmation(params);
+                    dispatch(eventsActions.markEventAsSaving({ UID, isSaving: true }));
+                    return result;
+                },
                 onEquivalentAttendees: handleEquivalentAttendees,
                 getEventDecrypted,
                 getCalendarBootstrap,
@@ -1396,6 +1447,7 @@ const InteractiveCalendarView = ({
                 handleSyncActions,
                 isEditSingleOccurrenceEnabled,
             });
+
             hasStartChanged = hasStartChangedProp;
             const [syncResponses, updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
                 handleSyncActions(syncActions),
@@ -1423,9 +1475,10 @@ const InteractiveCalendarView = ({
                 ...updatePartstatActions.map(({ data: { calendarID } }) => calendarID),
                 ...updatePersonalPartActions.map(({ data: { calendarID } }) => calendarID),
             ]);
+
             await handleUpdateVisibility(uniqueCalendarIDs);
             calendarsEventsCache.rerender?.();
-            handleCreateNotification(texts);
+
             // call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the event changes you just saved)
             void calendarCall(uniqueCalendarIDs);
             if (sendActions.length) {
@@ -1443,7 +1496,12 @@ const InteractiveCalendarView = ({
                 const hasChanged = +newStartDate !== +(isDuplicatingEvent ? temporaryEvent.tmpData.initialDate : date);
                 changeDate(newStartDate, hasChanged);
             }
+
+            handleCreateNotification(texts);
         } catch (e: any) {
+            if (isChangePartstat && selfEmail && oldPartstat && hasOptimisticRSVP) {
+                dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: oldPartstat }));
+            }
             if (e instanceof EscapeTryBlockError) {
                 if (e.recursive) {
                     // we need to escape the outer block
@@ -1455,10 +1513,16 @@ const InteractiveCalendarView = ({
             }
         } finally {
             isSavingEvent.current = false;
+            dispatch(eventsActions.markEventAsSaving({ UID, isSaving: false }));
         }
     };
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions) => {
+        const eventData = targetEvent.data.eventData as CalendarEvent;
+        const isRecurring = !!eventData.RRule;
+        const { UID } = eventData;
+        let recurringType: RECURRING_TYPES | undefined;
+
         try {
             const {
                 syncActions,
@@ -1469,7 +1533,14 @@ const InteractiveCalendarView = ({
             } = await getDeleteEventActions({
                 targetEvent,
                 addresses,
-                onDeleteConfirmation: handleDeleteConfirmation,
+                onDeleteConfirmation: async (params) => {
+                    const result = await handleDeleteConfirmation(params);
+                    recurringType = result.type;
+                    dispatch(eventsActions.markEventAsDeleting({ UID, isDeleting: true }));
+                    dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: true, isRecurring, recurringType }));
+                    closeModal('createEventModal');
+                    return result;
+                },
                 api,
                 getEventDecrypted,
                 getCalendarBootstrap,
@@ -1479,6 +1550,7 @@ const InteractiveCalendarView = ({
                 inviteActions,
                 sendIcs: handleSendIcs,
             });
+
             // some operations may refer to the events to be deleted, so we execute those first
             const [updatePartstatResponses, updatePersonalPartResponses, attendeeDeleteSingleEditResponses] =
                 await Promise.all([
@@ -1511,7 +1583,9 @@ const InteractiveCalendarView = ({
                 upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache, getOpenedMailEvents);
             }
             calendarsEventCache.rerender?.();
+
             handleCreateNotification(texts);
+
             const uniqueCalendarIDs = unique([
                 ...syncActions.map(({ calendarID }) => calendarID),
                 ...updatePartstatActions.map(({ data: { calendarID } }) => calendarID),
@@ -1520,6 +1594,7 @@ const InteractiveCalendarView = ({
             // call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the events you just deleted)
             void calendarCall(uniqueCalendarIDs);
         } catch (e: any) {
+            dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: false, isRecurring, recurringType }));
             if (e instanceof EscapeTryBlockError) {
                 if (e.recursive) {
                     // we need to escape the outer block
@@ -1529,6 +1604,8 @@ const InteractiveCalendarView = ({
             } else {
                 createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
             }
+        } finally {
+            dispatch(eventsActions.markEventAsDeleting({ UID, isDeleting: false }));
         }
     };
 
@@ -1988,7 +2065,8 @@ const InteractiveCalendarView = ({
                                     newTemporaryModel,
                                     tzid
                                 );
-                                return handleSaveEvent(newTemporaryEvent, inviteActions);
+
+                                return handleSaveEvent(newTemporaryEvent, inviteActions, false, true);
                             }}
                             onClose={handleCloseEventPopover}
                             onNavigateToEventFromSearch={(
@@ -2078,8 +2156,6 @@ const InteractiveCalendarView = ({
 
                         try {
                             await handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions);
-
-                            closeModal('createEventModal');
                         } catch (error) {
                             return noop();
                         }
