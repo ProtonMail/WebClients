@@ -27,7 +27,8 @@ import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSetting
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useSearchParamsEffect, useUserSettings } from '../../hooks';
+import { useNotifications, useUserSettings } from '../../hooks';
+import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import { getDisabledString, getEnableString, getEnabledString } from '../credentialLeak/helpers';
 
 interface Props {

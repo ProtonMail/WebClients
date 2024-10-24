@@ -30,7 +30,6 @@ export { useUserKeys, useGetUserKeys } from './useUserKeys';
 export { default as useUserSettings } from './useUserSettings';
 export { default as useVPNServersCount } from './useVPNServersCount';
 export { useWelcomeFlags } from './useWelcomeFlags';
-export { default as useSearchParamsEffect } from './useSearchParamsEffect';
 export * from './drawer';
 export * from './useDriveWindowsGASpotlight';
 export { default as useAllowAddressDeletion, useGetAllowAddressDeletion } from './useAllowAddressDeletion';
