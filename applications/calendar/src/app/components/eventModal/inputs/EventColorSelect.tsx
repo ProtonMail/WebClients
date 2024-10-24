@@ -10,10 +10,11 @@ import {
     Spotlight,
     UpsellModal,
     useModalState,
+    useSpotlightOnFeature,
     useSpotlightShow,
     useUpsellConfig
 } from '@proton/components';
-import { useSpotlightOnFeature, useWelcomeFlags } from '@proton/components/hooks';
+import { useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
 import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import {
