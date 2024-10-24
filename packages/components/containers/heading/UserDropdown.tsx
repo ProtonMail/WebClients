@@ -6,6 +6,7 @@ import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { signoutAction, useUserSettings } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike, CircleLoader, NotificationDot } from '@proton/atoms';
@@ -33,7 +34,6 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useOrganization } from '@proton/components/hooks/useOrganization';
 import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecovery';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import useSubscription from '@proton/components/hooks/useSubscription';

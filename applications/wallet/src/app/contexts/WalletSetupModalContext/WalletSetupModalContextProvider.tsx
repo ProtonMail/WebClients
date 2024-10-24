@@ -3,8 +3,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useModalState, useModalStateWithData } from '@proton/components';
-import { useOrganization } from '@proton/components/hooks';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { DEFAULT_MAX_SUB_WALLETS, DEFAULT_MAX_WALLETS } from '@proton/wallet';
 import { useUserEligibility, useUserWalletSettings } from '@proton/wallet/store';

@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { Button } from '@proton/atoms';
@@ -31,7 +32,7 @@ import type { Cycle } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { useOrganization, useSubscription } from '../../hooks';
+import { useSubscription } from '../../hooks';
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
 import PlanSelection from './subscription/PlanSelection';

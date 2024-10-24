@@ -6,6 +6,7 @@ import first from 'lodash/first';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import type {
     WasmApiEmailAddress,
     WasmApiWalletAccount,
@@ -15,7 +16,7 @@ import type {
     WasmScriptType,
 } from '@proton/andromeda';
 import { WasmAccount, WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
-import { useNotifications, useOrganization, useUserKeys } from '@proton/components/hooks';
+import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import {
     DEFAULT_FIRST_ACCOUNT_INDEX,

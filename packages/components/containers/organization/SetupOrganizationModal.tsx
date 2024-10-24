@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { OrganizationKeyRotationPayload } from '@proton/account';
 import { MAX_CHARS_API, createPasswordlessOrganizationKeys, getKeyRotationPayload } from '@proton/account';
 import { useMembers } from '@proton/account/members/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
@@ -33,7 +34,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useOrganization, useSubscription } from '../../hooks';
+import { useNotifications, useSubscription } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, {
     getInitialStorage,
