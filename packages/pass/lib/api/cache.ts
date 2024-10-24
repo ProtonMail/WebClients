@@ -8,6 +8,13 @@ export const CACHE_KEY = 'Pass::Http::Cache';
 export const CACHED_IMAGE_DEFAULT_MAX_AGE = 1_209_600; /* 14 days */
 export const CACHED_IMAGE_FALLBACK_MAX_AGE = 86_400; /* 1 day */
 
+/** Returns the Cache Storage API if available.
+ * Will not be defined on:
+ * - Non-secure contexts (non-HTTPS/localhost)
+ * - Safari Private/Lockdown mode
+ * - Browsers without Cache API support */
+export const getCacheStorage = (): Maybe<CacheStorage> => globalThis?.caches;
+
 export const getResponseMaxAge = (response: Response): MaybeNull<number> => {
     const cacheControlHeader = response.headers.get('Cache-Control');
     const maxAge = cacheControlHeader?.match(/max-age=(\d+)/)?.[1];
@@ -48,7 +55,8 @@ export const withMaxAgeHeaders = (res: Response, maxAge: number): Headers => {
     return headers;
 };
 
-export const getCache = (): Promise<Maybe<Cache>> => caches.open(CACHE_KEY).catch(noop);
+export const getCache = async (): Promise<Maybe<Cache>> => getCacheStorage()?.open(CACHE_KEY).catch(noop);
+export const clearCache = async (): Promise<Maybe<boolean>> => getCacheStorage()?.delete(CACHE_KEY).catch(noop);
 
 /** Opens the http cache and wipes every stale
  * entries. This allows triggering revalidation */
@@ -70,5 +78,3 @@ export const cleanCache = async () => {
         await Promise.all(staleKeys.map((req) => cache?.delete(req).catch(noop)));
     } catch {}
 };
-
-export const clearCache = () => caches.delete(CACHE_KEY).catch(noop);
