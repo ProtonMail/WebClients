@@ -4209,6 +4209,9 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mes)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
       ],
@@ -5301,11 +5304,17 @@
       "Add to group": [
         "Afegeix al grup"
       ],
+      "Address": [
+        "Adreça"
+      ],
       "All day": [
         "Tot el dia"
       ],
       "All-day event notifications": [
         "Notificacions d'esdeveniments de tot el dia"
+      ],
+      "Anderson": [
+        "Pujol"
       ],
       "App password": [
         "Contrasenya de l'aplicació"
@@ -5372,6 +5381,9 @@
       ],
       "Colors": [
         "Colors"
+      ],
+      "Company name": [
+        "Nom de l'empresa"
       ],
       "Confirm password": [
         "Confirmeu la contrasenya"
@@ -5469,6 +5481,9 @@
       "Extended address": [
         "Adreça completa"
       ],
+      "First name": [
+        "Nom"
+      ],
       "Folder location": [
         "Ubicació de la carpeta"
       ],
@@ -5486,6 +5501,9 @@
       ],
       "I understand the risk": [
         "Entenc el risc"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -5516,6 +5534,9 @@
       ],
       "Last month only": [
         "Només el darrer mes"
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Location": [
         "Ubicació"
@@ -5655,6 +5676,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Thomas": [
+        "Adrià"
       ],
       "Time zone": [
         "Zona horària"
@@ -6442,7 +6466,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb un missatge"
+        "Genera correus electrònics amb una petició"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -6568,6 +6592,9 @@
       ],
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
@@ -6867,9 +6894,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Eina de gestió d'organitzacions que permet als administradors afegir i esborrar usuaris, assignar emmagatzematge, configurar dominis i acomplir altres tasques."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra robusta infraestructura garanteix que podreu accedir al vostre compte quan ho necessiteu"
@@ -7369,6 +7393,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferència bancària"
+      ],
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
@@ -9461,6 +9488,9 @@
       ],
       "Warning: suspected fake website": [
         "Avís: presumpte lloc web fals"
+      ],
+      "We're setting up calendar search": [
+        "Estem configurant la cerca al calendari."
       ],
       "We've locked some calendars to protect your data": [
         "Hem bloquejat alguns calendaris per a protegir les vostres dades"
