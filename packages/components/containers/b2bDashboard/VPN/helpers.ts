@@ -29,7 +29,7 @@ export const getVPNEventColor = (event: string) => {
 export const getVPNEventIcon = (event: string) => {
     switch (event) {
         case 'session_end':
-            return 'lock-filled';
+            return 'lock-open-filled-2';
         case 'session_start':
             return 'lock-filled';
         case 'session_roaming':
