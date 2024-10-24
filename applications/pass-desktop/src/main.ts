@@ -13,6 +13,7 @@ import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
 import { getTheme } from './lib/theming';
+import { getWindowConfig, registerWindowManagementHandlers } from './lib/window-management';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
@@ -105,9 +106,8 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
     if (ctx.window) return ctx.window;
 
     ctx.window = new BrowserWindow({
+        ...getWindowConfig(),
         show: false,
-        width: 960,
-        height: 680,
         opacity: 1,
         autoHideMenuBar: true,
         webPreferences: {
@@ -124,11 +124,10 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             x: 20,
             y: 18,
         },
-        minWidth: 881,
-        minHeight: 680,
     });
 
     setApplicationMenu(ctx.window);
+    registerWindowManagementHandlers(ctx.window);
 
     ctx.window.on('close', (e) => {
         if (!ctx.quitting) {
