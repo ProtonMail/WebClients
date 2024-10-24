@@ -23,15 +23,16 @@ import useChecklist from '../hooks/useChecklist';
 
 const { REDUCED, HIDDEN } = CHECKLIST_DISPLAY_TYPE;
 
-const completedChecklist = [
+export const CHECKLIST_ITEMS_TO_COMPLETE = [
     ChecklistKey.AccountLogin,
     ChecklistKey.Import,
     ChecklistKey.ProtectInbox,
     ChecklistKey.MobileApp,
 ];
 
-export interface ContextState {
+export interface OnboardingChecklistContext {
     expiresAt: Date;
+    createdAt: Date;
     loading: boolean;
     isUserPaid: boolean;
     isChecklistFinished: boolean;
@@ -43,7 +44,7 @@ export interface ContextState {
     canDisplayChecklist: boolean;
 }
 
-const GetStartedChecklistContext = createContext<ContextState>({} as ContextState);
+const GetStartedChecklistContext = createContext<OnboardingChecklistContext>({} as OnboardingChecklistContext);
 
 const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const api = useApi();
@@ -69,7 +70,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const isLoading = loadingFreeChecklist || loadingPaidChecklist;
     const isUserPaid = paidUserChecklist.Code === 1000;
     const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
-    const isChecklistFinished = completedChecklist?.every((item) => items?.includes(item));
+    const isChecklistFinished = CHECKLIST_ITEMS_TO_COMPLETE?.every((item) => items?.includes(item));
 
     useEffect(() => {
         if (submitting) {
@@ -132,7 +133,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
 
     const canDisplayChecklist = isBefore(new Date(), getExpiredAt());
 
-    const context: ContextState = {
+    const context: OnboardingChecklistContext = {
         isUserPaid,
         loading: isLoading,
         isChecklistFinished,
@@ -141,6 +142,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         items: new Set([...doneItems]),
         displayState,
         expiresAt: getExpiredAt(),
+        createdAt: isUserPaid ? fromUnixTime(paidUserChecklist.CreatedAt) : fromUnixTime(freeUserChecklist.CreatedAt),
         markItemsAsDone,
         canDisplayChecklist,
     };
@@ -148,6 +150,6 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     return <GetStartedChecklistContext.Provider value={context}>{children}</GetStartedChecklistContext.Provider>;
 };
 
-export const useGetStartedChecklist = () => useContext(GetStartedChecklistContext) as ContextState;
+export const useGetStartedChecklist = () => useContext(GetStartedChecklistContext) as OnboardingChecklistContext;
 
 export default GetStartedChecklistProvider;
