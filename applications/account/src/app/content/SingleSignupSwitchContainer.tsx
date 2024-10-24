@@ -10,7 +10,6 @@ import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/pe
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
-import { useFlag } from '@proton/unleash';
 
 import SignupContainer from '../signup/SignupContainer';
 import { getSignupMeta } from '../signup/signupPagesJson';
@@ -61,7 +60,6 @@ const SingleSignupSwitchContainer = ({
     paths,
     onBack,
 }: Props) => {
-    const singleSignupEnabled = useFlag('SingleSignup');
     const location = useLocation();
 
     const renderSingleSignup =
@@ -70,8 +68,7 @@ const SingleSignupSwitchContainer = ({
         singlePageSignupPaths.has(location.pathname as any) ||
         singlePageSignupPlans.has(searchParams.get('plan') as any) ||
         getHas2024OfferCoupon(searchParams.get('coupon')) ||
-        searchParams.get('mode') === 'sps' ||
-        singleSignupEnabled;
+        searchParams.get('mode') === 'sps';
 
     if (renderSingleSignup) {
         return (
