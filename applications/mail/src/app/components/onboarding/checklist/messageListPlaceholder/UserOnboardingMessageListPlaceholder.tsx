@@ -4,8 +4,8 @@ import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
 
 import useMailOnboardingVariant from '../../useMailOnboardingVariant';
-import UsersOnboardingChecklist from '../UsersOnboardingChecklist';
 import UsersOnboardingChecklistPlaceholder from './variants/new/UsersOnboardingReplaceAccountPlaceholder';
+import OldOnboardingChecklistPlaceholder from './variants/old/OldOnboardingChecklistPlaceholder';
 
 interface Props {
     location: 'list' | 'emptyPlaceholder' | 'mailboxContainerPlaceholder';
@@ -23,7 +23,7 @@ const UserOnboardingMessageListPlaceholder = ({ location }: Props) => {
     const hidden = location === 'list' && viewportWidth['>=large'] ? isColumnMode(mailSettings) : undefined;
 
     if (variant === 'old') {
-        return <UsersOnboardingChecklist displayOnMobile={hidden} />;
+        return <OldOnboardingChecklistPlaceholder displayOnMobile={hidden} />;
     }
 
     if (variant === 'new') {

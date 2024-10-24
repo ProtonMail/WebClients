@@ -11,14 +11,14 @@ import StorageRewardModal from './modals/StorageRewardModal';
 
 type ModalKey = 'gmailForward' | 'protectLogin' | 'login' | 'mobileApps' | 'storageReward';
 
-interface OnboardingChecklistContextProps {
+interface OnboardingChecklistModalsContextProps {
     displayModal: (modal: ModalKey, show: boolean) => void;
     isModalOpened: (modal: ModalKey) => boolean;
 }
 
-const ModalContext = createContext<OnboardingChecklistContextProps | undefined>(undefined);
+const ModalContext = createContext<OnboardingChecklistModalsContextProps | undefined>(undefined);
 
-export const useOnboardingChecklistContext = () => {
+export const useOnboardingChecklistModalsContext = () => {
     const context = useContext(ModalContext);
     if (!context) {
         throw new Error('useModalContext must be used within OnboardingChecklistProvider');
@@ -26,7 +26,7 @@ export const useOnboardingChecklistContext = () => {
     return context;
 };
 
-const OnboardingChecklistProvider = ({ children }: { children: ReactNode }) => {
+const OnboardingChecklistModalsProvider = ({ children }: { children: ReactNode }) => {
     const [gmailForwardProps, setGmailForwardOpen, renderGmailForward] = useModalState();
     const [protectLoginProps, setProtectModalOpen, renderProtectInbox] = useModalState();
     const [loginModalProps, setLoginModalOpen, renderLogin] = useModalState();
@@ -93,4 +93,4 @@ const OnboardingChecklistProvider = ({ children }: { children: ReactNode }) => {
     );
 };
 
-export default OnboardingChecklistProvider;
+export default OnboardingChecklistModalsProvider;
