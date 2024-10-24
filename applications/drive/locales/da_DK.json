@@ -2277,6 +2277,11 @@
         "Forfalden faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2343,11 +2348,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5616,6 +5616,9 @@
       "Add to group": [
         "Føj til gruppe"
       ],
+      "Address": [
+        "Adresse"
+      ],
       "Anyone on the Internet with the link can view": [
         "Enhver på internettet med linket kan se"
       ],
@@ -5827,6 +5830,9 @@
       "File name": [
         "Filnavn"
       ],
+      "First name": [
+        "Fornavn"
+      ],
       "Folder": [
         "Mappe"
       ],
@@ -5886,6 +5892,9 @@
       ],
       "Last month only": [
         "Kun seneste måned"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Location": [
         "Placering"
@@ -7200,14 +7209,6 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Fra ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -7220,6 +7221,14 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Fra ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7322,9 +7331,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Organisationsstyringsværktøj, der lader administratorer tilføje og fjerne brugere, tildele lagerplads, konfigurere domæner og udføre andre opgaver"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vores robuste infrastruktur sikrer, at du kan få adgang til din konto, når du har brug for det"

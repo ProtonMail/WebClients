@@ -2153,6 +2153,11 @@
         "Lejárt számla"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "használja az Easy Switch importálási asszisztenst"
+      ]
+    },
     "Description": {
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Névjegyek visszafejtése… Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
@@ -2183,11 +2188,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "használja az Easy Switch importálási asszisztenst"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5113,6 +5113,9 @@
       "Add to group": [
         "Hozzáadás csoporthoz"
       ],
+      "Address": [
+        "Cím"
+      ],
       "App password": [
         "Jelszó hozzáadása"
       ],
@@ -5309,6 +5312,9 @@
       "File name": [
         "Fájl neve"
       ],
+      "First name": [
+        "Keresztnév"
+      ],
       "Folder": [
         "Mappa"
       ],
@@ -5365,6 +5371,9 @@
       ],
       "Last month only": [
         "Csak az utolsó hónap"
+      ],
+      "Last name": [
+        "Vezetéknév"
       ],
       "Location": [
         "Hely"
@@ -6431,9 +6440,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Lehetőség van a nem-privát felhasználók levelezésének megnyitására, ahogy a felhasználó látja, beleértve az üzenetek és a névjegyek részleteit"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Szervezeti karbantartási eszköz, amellyel az adminisztrátor létrehozhat vagy törölhet felhasználókat, tárhelyet oszthat szét, domain neveket állíthat be és egyéb feladatokat végezhet"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nagyteljesítményű infrastruktúránk biztosítja, hogy mindig elérhesse a fiókját amikor szüksége van rá"
