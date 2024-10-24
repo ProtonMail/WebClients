@@ -12,6 +12,7 @@ import useIsSecurityCheckupAvailable from '@proton/components/hooks/securityChec
 import useSecurityCheckup from '@proton/components/hooks/securityCheckup/useSecurityCheckup';
 import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
 import useIsDataRecoveryAvailable from '@proton/components/hooks/useIsDataRecoveryAvailable';
+import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import useRecoveryStatus from '@proton/components/hooks/useRecoveryStatus';
@@ -22,7 +23,7 @@ import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useIsMnemonicAvailable, useUserSettings } from '../../hooks';
+import { useUserSettings } from '../../hooks';
 import type { RecoveryCardStatusProps } from './RecoveryCardStatus';
 import RecoveryCardStatus from './RecoveryCardStatus';
 import getSentinelRecoveryProps from './getSentinelRecoveryProps';
