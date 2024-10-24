@@ -570,21 +570,38 @@
       ],
       "Write us on Twitter": [
         "Напішыце нам у Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Адсутнічае ваш менеджар пароляў? Запытайце яго."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Эканомце з розумам. Атрымайце год падпіскі на Pass Plus усяго за ${ relativePrice } у месяц."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "пажыццёвы доступ"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Усе прэміяльныя функцыі. 6 карыстальнікаў. 1 простая падпіска."
+      ],
+      "Limited-stock available!": [
+        "У наяўнасці абмежаваная колькасць!"
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
-        "Скарыстацца прапановай"
+        "Атрымаць прапанову"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Прапанова \"Чорная пятніца\""
+    "bf2024: Title": {
+      "Black Friday": [
+        "Чорная пятніца"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Заплаціце адзін раз і атрымайце ${ lifetimeAccessJSX } да Pass Plus. Усяго за ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Зэканомце да ${ discountJSX } з Pass Family. Толькі ${ relativePrice }/месяц."
       ]
     },
     "Browser": {
@@ -739,6 +756,9 @@
         "Выяўлены ${ errors.length } пашкоджаныя радкі CSV",
         "Выяўлены ${ errors.length } пашкоджаных радкоў CSV",
         "Выяўлены ${ errors.length } пашкоджаных радкоў CSV"
+      ],
+      "Domain not available, try again later": [
+        "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
       "Editing item failed": [
         "Збой рэдагавання элемента"
@@ -1160,6 +1180,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступу да ${ PASS_APP_NAME } спатрэбіцца ваш адбітак пальца або PIN-код прылады."
       ],
+      "Add your custom email address to monitor:": [
+        "Дадайце карыстальніцкі адрас электроннай пошты для назірання:"
+      ],
       "Admin": [
         "Адміністратар"
       ],
@@ -1355,6 +1378,12 @@
       "Expires in ${ remainingTime }": [
         "Тэрмін дзеяння завершыцца ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Дадатковы пароль паспяхова створаны"
+      ],
+      "Extra password successfully removed": [
+        "Дадатковы пароль паспяхова выдалены"
+      ],
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
       ],
@@ -1507,6 +1536,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Налады назірання паспяхова абноўлены"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
@@ -1694,6 +1726,9 @@
       "Select vault to share": [
         "Выберыце сховішча для абагулення"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Выберыце куды вы хочаце захаваць свае імпартаваныя сховішчы."
+      ],
       "Selected items permanently deleted": [
         "Выбраныя элементы незваротна выдалены"
       ],
@@ -1714,6 +1749,9 @@
       ],
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Дзяліцеся сваімі запісамі ўваходу і бяспечнымі нататкамі (да 10 карыстальнікаў)"
       ],
       "Sign in to your account": [
         "Увайдзіце ў свой уліковы запіс"
@@ -1784,8 +1822,14 @@
       "This version will be added to the history as the newest version.": [
         "Гэта версія будзе дададзена ў гісторыю як самая новая."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Гэта прывядзе да адхілення прылады з назвай **${ name }**, якая **${ date }** спрабавала ўвайсці ў ваш уліковы запіс ${ BRAND_NAME }"
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Для пераносу даных з іншага менеджара пароляў вам неабходна перайсці ў яго і экспартаваць свае даныя, а потым запампаваць іх у ${ PASS_APP_NAME }. Пасля завяршэння працэсу імпартавання, выдаліце экспартаваны файл."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Для прагляду імпартаваных даных, націсніце на значок ${ PASS_APP_NAME } у панэлі інструментаў свайго браўзера."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
@@ -1817,11 +1861,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Перайдзіце на платны тарыфны план, каб стварыць некалькі сховішчаў."
+      ],
       "Use vaults to share this item with others.": [
         "Выкарыстанне сховішча для абагулення элементаў з іншымі."
       ],
       "User's access removed": [
         "Доступ карыстальніка выдалены"
+      ],
+      "User's access successfully updated": [
+        "Доступ карыстальніка паспяхова абноўлены"
       ],
       "username": [
         "імя карыстальніка"
@@ -2077,6 +2127,9 @@
       "Capital letters (A-Z)": [
         "Вялікія літары (A-Z)"
       ],
+      "Capitalize": [
+        "Вялікімі літарамі"
+      ],
       "Card": [
         "Картка"
       ],
@@ -2265,6 +2318,9 @@
       ],
       "Import passwords": [
         "Імпартаваць паролі"
+      ],
+      "Imported from: ": [
+        "Імпартавана з: "
       ],
       "Imported on : ": [
         "Імпартавана:"
@@ -2560,6 +2616,12 @@
       "Today": [
         "Сёння"
       ],
+      "Total imported items: ": [
+        "Усяго імпартаваных элементаў: "
+      ],
+      "Total items: ": [
+        "Усяго элементаў: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2814,6 +2876,17 @@
         "Вашы звесткі былі знойдзены прынамсі ў адной уцечцы даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ]
     },
+    "sso: auth device state": {
+      "Active": [
+        "Актыўна"
+      ],
+      "Inactive": [
+        "Неактыўна"
+      ],
+      "Signed out": [
+        "Вы выйшлі"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Сінхранізацыя псеўданімаў паспяхова ўключана. Можа спатрэбіцца некаторы час, каб сінхранізаваць псеўданімы SimpleLogin"
@@ -2880,6 +2953,9 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Выдаліць сховішча \"${ vaultName }\"?"
+      ],
       "Details": [
         "Падрабязнасці"
       ],
@@ -2936,6 +3012,9 @@
       ],
       "Last modified": [
         "Апошняе змяненне"
+      ],
+      "Leave vault?": [
+        "Выйсці са сховішча?"
       ],
       "Loading breaches...": [
         "Загрузка парушэнняў..."
@@ -2997,11 +3076,17 @@
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
       ],
+      "Permanently remove all items?": [
+        "Незваротна выдаліць усе элементы?"
+      ],
       "Pinned (${ items.length })": [
         "Замацавана (${ items.length })"
       ],
       "Recommended actions": [
         "Рэкамендаваныя дзеянні"
+      ],
+      "Reject device?": [
+        "Адхіліць прыладу?"
       ],
       "Remove email address?": [
         "Выдаліць адрас электроннай пошты?"
@@ -3137,6 +3222,9 @@
       "Section name cannot be empty": [
         "Назва раздзела не можа быць пустой"
       ],
+      "URL already exists": [
+        "URL-адрас ужо існуе"
+      ],
       "URL cannot be empty": [
         "URL-адрас не можа быць пустым"
       ],
@@ -3168,6 +3256,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Немагчыма стварыць сховішча \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Немагчыма адправіць запрашэнні на наступныя адрасы:"
       ],
       "Duplicate email addresses.": [
         "Дубліраваныя адрасы электроннай пошты."
@@ -3259,6 +3350,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Пераканайцеся, што пашырэнне правільна ўсталявана і ўключана"
       ],
+      "Please contact us to investigate the issue": [
+        "Звяжыцеся з намі для даследавання праблемы"
+      ],
       "Please update the extension to its latest version": [
         "Абнавіце пашырэнне да апошняй версіі"
       ],
@@ -3336,6 +3430,9 @@
       ],
       "Your session was locked.": [
         "Ваш сеанс быў заблакіраваны."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Ваша падпіска не дазваляе ствараць яшчэ больш сховішчаў."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."

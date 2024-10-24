@@ -85,6 +85,9 @@
       "Back": [
         "Précédent"
       ],
+      "Back to sign-in": [
+        "Retour à la connexion"
+      ],
       "Block": [
         "Bloquer"
       ],
@@ -189,6 +192,9 @@
       ],
       "Delete your account": [
         "Supprimer votre compte"
+      ],
+      "Deny access": [
+        "Refuser l'accès"
       ],
       "Details": [
         "Détails"
@@ -691,9 +697,6 @@
       "Verify": [
         "Vérifier"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Vérifier ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Vérifier le compte"
       ],
@@ -705,6 +708,9 @@
       ],
       "Verify domain": [
         "Vérifier le domaine"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Vérifier le domaine ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Afficher"
@@ -2517,6 +2523,9 @@
       "Invalid expiration date": [
         "La date d'expiration n’est pas valide."
       ],
+      "Invalid IBAN": [
+        "Cet IBAN n'est pas valide."
+      ],
       "Invalid invitation link": [
         "Le lien d'invitation n'est pas valide."
       ],
@@ -2615,6 +2624,9 @@
       ],
       "Tab closed": [
         "L'onglet est fermé."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Le montant a changé. Nous vous invitons à réessayer."
       ],
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
@@ -3975,6 +3987,9 @@
       "High Priority": [
         "Priorité élevée"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Il s'agit de la clé publique de votre fournisseur d'identité pour signer les déclarations d'authentification. Téléchargez ou copiez le hash du certificat de votre fournisseur d'identité. Il vous suffit ensuite de coller ce dernier dans le champ texte correspondant."
       ],
@@ -4619,6 +4634,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Cette vérification peut prendre jusqu'à une heure. Après une vérification réussie, ne supprimez pas l'enregistrement TXT car il est nécessaire pour confirmer que vous possédez toujours le domaine."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Cela refusera l'accès à **${ email }**. Êtes-vous sûr de vouloir continuer ?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Ceci désactivera l'authentification à deux facteurs, à savoir à la fois l'application d'authentification et la clé de sécurité."
       ],
@@ -4762,6 +4780,9 @@
       ],
       "username": [
         "nom d'utilisateur"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -5265,6 +5286,9 @@
       "Amount due": [
         "Montant à payer"
       ],
+      "Anderson": [
+        "Durant"
+      ],
       "Assertion Consumer Service URL": [
         "URL Assertion Consumer Service (ACS)"
       ],
@@ -5273,6 +5297,9 @@
       ],
       "Authenticator app": [
         "Application d'authentification"
+      ],
+      "Backup password": [
+        "Mot de passe de secours"
       ],
       "Billing address": [
         "Adresse de facturation"
@@ -5324,6 +5351,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces."
+      ],
+      "Company name": [
+        "Nom de l'entreprise"
       ],
       "Config to connect to ${ serverName }": [
         "Configuration pour se connecter à ${ serverName }"
@@ -5421,6 +5451,9 @@
       "Expires": [
         "Expire le"
       ],
+      "First name": [
+        "Prénom"
+      ],
       "Gateway name": [
         "Nom de la Passerelle"
       ],
@@ -5439,6 +5472,9 @@
       "Hide password": [
         "Masquer le mot de passe"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Interval": [
         "Intervalle"
       ],
@@ -5450,6 +5486,9 @@
       ],
       "Key": [
         "Clé"
+      ],
+      "Last name": [
+        "Nom"
       ],
       "Level for NetShield blocker filtering": [
         "Niveau pour le blocage par filtrage NetShield"
@@ -5583,6 +5622,9 @@
       "Recovery phrase": [
         "Phrase de récupération"
       ],
+      "Repeat backup password": [
+        "Confirmer le mot de passe de secours"
+      ],
       "Reply (ACS) URL": [
         "URL (ACS) de réponse"
       ],
@@ -5594,6 +5636,9 @@
       ],
       "Reveal password": [
         "Afficher le mot de passe"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
       ],
       "Search": [
         "Rechercher"
@@ -5627,6 +5672,9 @@
       ],
       "System information": [
         "Informations système"
+      ],
+      "Thomas": [
+        "Andréa"
       ],
       "Two-password mode": [
         "Mode deux mots de passe"
@@ -6888,9 +6936,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Outil de gestion d'une organisation qui permet aux administrateurs d'ajouter ou de retirer des utilisateurs, d'attribuer de l'espace de stockage, de configurer des domaines et de réaliser d'autres tâches."
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La fiabilité de notre infrastructure vous garantit l'accès à votre compte chaque fois que vous en avez besoin."
       ],
@@ -7528,11 +7573,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transfert bancaire"
+      ],
       "Credit/debit card": [
         "Carte de paiement"
       ],
       "New credit/debit card": [
         "Nouvelle carte de paiement"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utiliser le nom de l'entreprise"
+      ],
+      "Use personal name": [
+        "Utiliser un nom personnel"
       ]
     },
     "Payments": {
@@ -7624,6 +7680,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "En confirmant ce paiement, vous autorisez ${ BRAND_NAME } et Stripe, notre prestataire de services de paiement, à donner instruction à votre banque de débiter votre compte, et à votre banque de le débiter en conséquence. Vous pouvez obtenir un remboursement dans un délai de 8  semaines à compter de la date de débit, conformément aux conditions de votre accord avec votre banque."
+      ],
+      "Street address, postal code, and city": [
+        "Adresse, code postal et ville"
       ]
     },
     "Permission": {
@@ -7857,6 +7921,9 @@
       "Changing organization password": [
         "Changement du mot de passe de l'organisation"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Création ou accès aux comptes utilisateurs non privés"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "En raison d'un changement du mot de passe, les droits administrateur de votre organisation ont été restreints. Les actions suivantes ne sont plus autorisées :"
       ]
@@ -7962,11 +8029,11 @@
       "For security reasons, the token is hidden": [
         "Pour des raisons de sécurité, le jeton est masqué."
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Connectez-vous à votre fournisseur d'identité, copiez et collez les données ci-dessous et terminez la configuration du SCIM pour ${ VPN_APP_NAME }."
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Connectez-vous à votre fournisseur d'identité, copiez et collez les données ci-dessous et terminez la configuration du SCIM pour ${ appName }."
       ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Connectez-vous à votre fournisseur d'identité, copiez et collez le jeton ci-dessous et réactivez le SCIM pour ${ VPN_APP_NAME }."
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Connectez-vous à votre fournisseur d'identité, copiez et collez le jeton ci-dessous et réactivez le SCIM pour ${ appName }."
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Si vous avez perdu ou oublié le jeton SCIM, vous pouvez en générer un nouveau. Toutefois, rappelez-vous que vous devrez mettre à jour les paramètres de votre fournisseur d'identité."
@@ -7977,8 +8044,8 @@
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Lorsque le SCIM est désactivé pour votre organisation, **tous les utilisateurs SCIM fournis automatiquement par votre fournisseur d'identité seront convertis en utilisateurs SSO** et vous pourrez les gérer directement depuis les paramètres de ${ BRAND_NAME }."
       ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Ceci simplifie la gestion des utilisateurs entre les différents services. Ajoutez, modifiez et retirez des utilisateurs dans votre fournisseur d'identité et ces modifications s'appliqueront automatiquement à votre organisation ${ VPN_APP_NAME }."
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Ceci simplifie la gestion des utilisateurs entre les différents services. Ajoutez, modifiez et retirez des utilisateurs depuis votre fournisseur d'identité et ces modifications s'appliqueront automatiquement à votre organisation ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Le provisionnement automatique SCIM sera désactivé jusqu'à ce que vous entriez le nouveau jeton SCIM dans les paramètres de votre fournisseur d'identité."
@@ -8579,6 +8646,114 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } sollicite votre aide pour se connecter à leur son ${ BRAND_NAME } avec l'authentification unique (SSO)."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } membre a sollicité votre aide pour se connecter.",
+        "${ n } membres ont sollicité votre aide pour se connecter."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou supprimer ses comptes :",
+        "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou supprimer leurs comptes :"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } membre a sollicité votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO).",
+        "${ n } membres ont sollicité votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO)."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**Les utilisateurs d'authentification unique (SSO) fournis par votre fournisseur d'identité seront supprimés** et vous devrez les créer manuellement pour les réintégrer dans votre organisation."
+      ],
+      "Access denied": [
+        "L'accès a été refusé."
+      ],
+      "Access granted": [
+        "L'accès a été autorisé."
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "vous a ajouté à son organisation ${ BRAND_NAME }"
+      ],
+      "Approve or deny it now": [
+        "L'approuver ou le refuser"
+      ],
+      "Approve the sign-in from another device": [
+        "Approuver la connexion depuis un autre appareil"
+      ],
+      "Ask administrator for help": [
+        "Demander de l'aide à l'administrateur"
+      ],
+      "Ask your administrator for access?": [
+        "Souhaitez-vous demander l'accès à votre administrateur ?"
+      ],
+      "Backup password": [
+        "Mot de passe de secours"
+      ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Change backup password": [
+        "Changer le mot de passe de secours"
+      ],
+      "Confirm backup password": [
+        "Confirmer le mot de passe de secours"
+      ],
+      "Confirmation code": [
+        "Code de confirmation"
+      ],
+      "Contact administrator": [
+        "Contacter l'administrateur"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Contactez votre administrateur si le problème persiste."
+      ],
+      "Deny": [
+        "Refuser"
+      ],
+      "Deny access": [
+        "Refuser l'accès"
+      ],
+      "Devices available": [
+        "Appareils disponibles"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Saisissez le code de confirmation envoyé à cet utilisateur."
+      ],
+      "Enter your backup password": [
+        "Saisissez votre mot de passe de secours."
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Pour des raisons de sécurité, vous avez été déconnecté de tous vos autres appareils actifs. Avant d'accéder à votre compte, vous devrez saisir un nouveau mot de passe de secours."
+      ],
+      "Grant": [
+        "Autoriser"
+      ],
+      "Grant access": [
+        "Autoriser l'accès"
+      ],
+      "Grant access to user?": [
+        "Voulez-vous autoriser l'accès à l'utilisateur ?"
+      ],
+      "Grant access to users?": [
+        "Voulez-vous autoriser l'accès aux utilisateurs ?"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, votre kit de secours vous permettra de vous connecter et de récupérer vos données."
+      ],
+      "Invalid confirmation code": [
+        "Le code de confirmation n'est pas valide."
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Il s'agit du seul moyen de restaurer complètement votre compte. Nous vous conseillons de le garder en lieu sûr."
+      ],
+      "Join ${ organizationName }": [
+        "Rejoindre ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Assurez-vous de l’enregistrer dans un endroit sûr afin de pouvoir retrouver l’accès à votre compte si vous perdez les identifiants de votre fournisseur d'identité."
+      ],
+      "New backup password": [
+        "Nouveau mot de passe de secours"
+      ],
       "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
         "Les utilisateurs qui n'utilisent pas l'authentification unique (créés manuellement et non fournis par votre fournisseur d'identité) peuvent toujours se connecter à votre organisation."
       ],
@@ -8591,11 +8766,73 @@
       "Remove single sign-on for your organization?": [
         "Voulez-vous retirer l'authentification unique de votre organisation ?"
       ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Définissez un mot de passe de secours pour davantage de protection. Il vous permettra de vous connecter si vous êtes bloqué. Assurez-vous de le conserver dans un endroit sûr."
+      ],
+      "Set your backup password": [
+        "Définir le mot de passe de secours"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Partagez le code de confirmation avec votre administrateur."
+      ],
+      "Sign in to your organization": [
+        "Connectez-vous à votre organisation."
+      ],
+      "Sign out and in again to change your backup password": [
+        "Déconnectez-vous et reconnectez-vous pour changer votre mot de passe de secours."
+      ],
       "Single sign-on removed": [
         "L'authentification unique a été retirée."
       ],
       "The credentials from your Identity Provider will be deleted.": [
         "Les identifiants de votre fournisseur d'identité seront supprimés."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Ceci déconnectera l'utilisateur de ses autres appareils et il devra créer un nouveau mot de passe de secours."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Ceci vous déconnectera de vos autres appareils et vous devrez créer un nouveau mot de passe de secours."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Pour vous assurer que c’est bien vous qui essayez de vous connecter à **${ email }**, vérifiez le code de confirmation et approuvez la demande depuis un autre appareil."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Pour s'assurer que c'est bien vous qui tentez de vous connecter, veuillez entrer votre mot de passe de secours."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Pour vous assurer que c’est bien vous qui essayez de vous connecter, partagez le code de confirmation avec votre administrateur **${ adminEmail }** afin qu'il puisse approuver la demande pour **${ email }**."
+      ],
+      "Tried to sign in at": [
+        "Tentative de connexion à"
+      ],
+      "Use backup password instead": [
+        "Utiliser plutôt le mot de passe de secours"
+      ],
+      "User details:": [
+        "Informations sur l’utilisateur :"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Actif"
+      ],
+      "Inactive": [
+        "Inactif"
+      ],
+      "Pending activation": [
+        "Activation en attente"
+      ],
+      "Pending admin activation": [
+        "En attente de l'activation de l'administrateur"
+      ],
+      "Rejected": [
+        "Rejeté"
+      ],
+      "Signed out": [
+        "Déconnecté"
+      ],
+      "Unknown": [
+        "Inconnu"
       ]
     },
     "State": {
@@ -9323,6 +9560,12 @@
       ],
       "You have successfully unsubscribed": [
         "La désinscription a été effectuée."
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Vous recevrez votre nom d’utilisateur par e-mail dans une minute si vous avez saisi une adresse e-mail de récupération valide."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Vous recevrez votre nom d’utilisateur par SMS dans une minute si vous avez saisi un numéro de téléphone récupération valide."
       ]
     },
     "Success message": {
@@ -9511,6 +9754,9 @@
       ],
       "Action": [
         "Action"
+      ],
+      "Actions": [
+        "Actions"
       ],
       "Activate organization key": [
         "Activer la clé de l'organisation"
@@ -9715,6 +9961,12 @@
       ],
       "Delete user?": [
         "Supprimer l'utilisateur ?"
+      ],
+      "Deny access to user?": [
+        "Voulez-vous refuser l'accès à l'utilisateur ?"
+      ],
+      "Device": [
+        "Appareil"
       ],
       "Device connected!": [
         "L'appareil est connecté !"
@@ -10026,9 +10278,6 @@
       "Sign in to join the Beta program": [
         "Connectez-vous pour rejoindre le programme bêta"
       ],
-      "Sign in to your organization": [
-        "Connectez-vous à votre organisation"
-      ],
       "Sign out": [
         "Se déconnecter"
       ],
@@ -10304,10 +10553,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou rejeter ses comptes :",
-        "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou rejeter leurs comptes :"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
       ],

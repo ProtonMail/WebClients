@@ -70,11 +70,11 @@
       "Accept": [
         "Akceptuj"
       ],
-      "Activate": [
-        "Aktywuj"
-      ],
       "activate": [
         "aktywować"
+      ],
+      "Activate": [
+        "Aktywuj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -180,6 +180,9 @@
       ],
       "Back": [
         "Wstecz"
+      ],
+      "Back to sign-in": [
+        "Powrót do logowania"
       ],
       "Block": [
         "Zablokuj"
@@ -661,6 +664,9 @@
       "Leave": [
         "Opuść"
       ],
+      "Leave group": [
+        "Opuść grupę"
+      ],
       "Let's talk": [
         "Porozmawiajmy"
       ],
@@ -796,11 +802,14 @@
       "Refresh status": [
         "Odśwież status"
       ],
+      "refresh the page": [
+        "Odśwież stronę"
+      ],
       "Refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
-        "Odśwież stronę"
+      "Reject": [
+        "Odrzuć"
       ],
       "Reload": [
         "Odśwież"
@@ -810,6 +819,9 @@
       ],
       "Remove all members": [
         "Usuń wszystkich użytkowników"
+      ],
+      "Remove all other devices": [
+        "Usuń inne urządzenia"
       ],
       "Remove bonuses": [
         "Zrezygnuj z bonusów"
@@ -1189,9 +1201,6 @@
       "Verify": [
         "Zweryfikuj"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Zweryfikuj domenę ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Zweryfikuj konto"
       ],
@@ -1203,6 +1212,9 @@
       ],
       "Verify domain": [
         "Zweryfikuj domenę"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Zweryfikuj domenę ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Podgląd"
@@ -1612,14 +1624,6 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1641,6 +1645,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4601,6 +4613,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
       ],
+      "Please upload a square logo": [
+        "Prześlij kwadratowe logo"
+      ],
       "Please upload an xml file": [
         "Prześlij plik XML"
       ],
@@ -7243,11 +7258,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Usuń wszystkie inne rekordy MX lub upewnij się, że priorytet rekordu ${ MAIL_APP_NAME } posiada najniższy numer."
@@ -7999,6 +8014,18 @@
       "or ${ selectFileButton }": [
         "lub ${ selectFileButton }"
       ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "lub przypisz do innego kraju za ${ availableAgainAfterDays } dzień",
+        "lub przypisz do innego kraju za ${ availableAgainAfterDays } dni",
+        "lub przypisz do innego kraju za ${ availableAgainAfterDays } dni",
+        "lub przypisz do innego kraju za ${ availableAgainAfterDays } dnia"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "lub przypisz do innego kraju za ${ availableAgainAfterHours } godzinę",
+        "lub przypisz do innego kraju za ${ availableAgainAfterHours } godziny",
+        "lub przypisz do innego kraju za ${ availableAgainAfterHours } godzin",
+        "lub przypisz do innego kraju za ${ availableAgainAfterHours } godziny"
+      ],
       "Or select a particular server:": [
         "Lub wybierz serwer:"
       ],
@@ -8556,9 +8583,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "To jest klucz szyfrowania, który mógł zostać wcześniej zapisany."
-      ],
-      "This is an invitation from:": [
-        "Zaproszenie od:"
       ],
       "This is the password you used before the password reset.": [
         "To jest hasło używane przed zrestartowaniem hasła."
@@ -9153,6 +9177,12 @@
         "Masz ${ availableCount } nowe dostępne serwery.",
         "Masz ${ availableCount } nowych dostępnych serwerów.",
         "Masz ${ availableCount } nowych dostępnych serwerów."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Dostępny jest ${ unassignedAvailableCount } ostatnio używany serwer. Poczekaj na zakończenie dezaktywacji, aby przydzielić serwer do innego kraju.",
+        "Dostępne są ${ unassignedAvailableCount } ostatnio używane serwery. Poczekaj na zakończenie dezaktywacji, aby przydzielić serwery do innego kraju.",
+        "Dostępnych jest ${ unassignedAvailableCount } ostatnio używanych serwerów. Poczekaj na zakończenie dezaktywacji, aby przydzielić serwery do innego kraju.",
+        "Dostępnych jest ${ unassignedAvailableCount } ostatnio używanych serwerów. Poczekaj na zakończenie dezaktywacji, aby przydzielić serwery do innego kraju."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Masz wersję próbną subskrypcji ${ planTitle }. Jeśli chcesz kontynuować subskrypcję po zakończeniu wersji próbnej, dodaj metodę płatności."
@@ -9954,6 +9984,9 @@
       "Awarded": [
         "Przyznano"
       ],
+      "Backup password": [
+        "Hasło kopii zapasowej"
+      ],
       "Beta": [
         "Beta"
       ],
@@ -10254,6 +10287,9 @@
       "Filter Name": [
         "Nazwa filtra"
       ],
+      "First name": [
+        "Imię"
+      ],
       "Folder location": [
         "Lokalizacja folderu"
       ],
@@ -10355,6 +10391,9 @@
       ],
       "Last month only": [
         "Tylko ostatni miesiąc"
+      ],
+      "Last name": [
+        "Nazwisko"
       ],
       "Level for NetShield blocker filtering": [
         "Poziom filtrów NetShield"
@@ -10565,6 +10604,9 @@
       ],
       "Remove image metadata": [
         "Usuń metadane obrazu"
+      ],
+      "Repeat backup password": [
+        "Potwierdź hasło kopii zapasowej"
       ],
       "Repeat password": [
         "Potwierdź hasło"
@@ -11683,32 +11725,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11736,6 +11752,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Od ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12464,20 +12506,6 @@
         "Wybrany plan: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -12496,6 +12524,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -12600,9 +12642,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Możliwość przeglądania służbowych skrzynek odbiorczych użytkowników w taki sam sposób, w jaki robi to użytkownik, łącznie z pełnymi wiadomościami i szczegółami kontaktu"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Narzędzie do zarządzania organizacją umożliwia administratorom dodawanie, usuwanie użytkowników, przydzielanie przestrzeni dyskowej, konfigurowanie domen i wykonywanie innych zadań"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nasza solidna infrastruktura zapewnia dostęp do konta wtedy, gdy jest ono potrzebne"
@@ -14515,6 +14554,9 @@
       "Your recovery email": [
         "Twój adres pomocniczy"
       ],
+      "Your recovery email address is:": [
+        "Twój adres pomocniczy:"
+      ],
       "Your recovery email and phone can **only recover access to your account**.": [
         "Tylko adres i numer pomocniczy może zostać użyty do **odzyskania dostępu do konta**."
       ],
@@ -14547,6 +14589,9 @@
       ],
       "Your recovery phone is set": [
         "Numer pomocniczy został ustawiony"
+      ],
+      "Your recovery phone number is:": [
+        "Twój numer pomocniczy:"
       ]
     },
     "saml: Action": {
@@ -14625,12 +14670,6 @@
       "For security reasons, the token is hidden": [
         "Ze względów bezpieczeństwa token jest ukryty"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Przejdź do dostawcy tożsamości, a następnie skopiuj i wklej poniższe dane, aby zakończyć konfigurację SCIM dla ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Przejdź do dostawcy tożsamości, a następnie skopiuj i wklej poniższy token, aby ponownie włączyć konfigurację SCIM dla ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Jeśli stracisz lub zapomnisz token SCIM, możesz wygenerować nowy. Pamiętaj, że w ustawieniach dostawcy tożsamości będzie wtedy konieczna jego aktualizacja."
       ],
@@ -14639,9 +14678,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Jeśli wyłączysz integrację SCIM, **wszyscy użytkownicy SCIM od dostawcy tożsamości zostaną przekonwertowani na użytkowników SSO** i będzie można nimi bezpośrednio zarządzać w ustawieniach ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Upraszcza zarządzanie użytkownikami w różnych usługach. Dodawaj, edytuj i usuwaj użytkowników u dostawcy tożsamości, a zmiany te zostaną automatycznie zastosowane w organizacji ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatyczna konfiguracja SCIM zostanie wyłączona. Wpisz nowy token SCIM do dostawcy tożsamości."
@@ -15441,6 +15477,38 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } użytkownik poprosił o pomoc w zalogowaniu się.",
+        "${ n } użytkowników poprosiło o pomoc w zalogowaniu się.",
+        "${ n } użytkowników poprosiło o pomoc w zalogowaniu się.",
+        "${ n } użytkowników poprosiło o pomoc w zalogowaniu się."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } użytkownik dołączył do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub usuń ich konta:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub usuń ich konta:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub usuń ich konta:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub usuń ich konta:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } użytkownik poprosił o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO.",
+        "${ n } użytkowników poprosiło o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO.",
+        "${ n } użytkowników poprosiło o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO.",
+        "${ n } użytkowników poprosiło o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO."
+      ],
+      "Access denied": [
+        "Odmowa dostępu"
+      ],
+      "Access granted": [
+        "Dostęp został przyznany"
+      ],
+      "Cancel": [
+        "Anuluj"
+      ],
+      "User details:": [
+        "Szczegóły użytkownika:"
       ]
     },
     "State": {
@@ -16766,10 +16834,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -16870,6 +16938,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "Utwórz adres ${ BRAND_NAME }"
+      ],
+      "Created": [
+        "Utworzono"
       ],
       "Creating user accounts": [
         "Tworzenie kont użytkowników"
@@ -17279,6 +17350,9 @@
       "Leave ${ organisationName }?": [
         "Opuścić organizację ${ organisationName }?"
       ],
+      "Leave group?": [
+        "Opuścić grupę?"
+      ],
       "Link confirmation": [
         "Potwierdź otwieranie linków"
       ],
@@ -17302,6 +17376,9 @@
       ],
       "My calendars": [
         "Moje kalendarze"
+      ],
+      "Name": [
+        "Nazwa"
       ],
       "Need more labels or folders?": [
         "Potrzebujesz więcej etykiet lub folderów?"
@@ -17408,6 +17485,9 @@
       "Profile": [
         "Profil"
       ],
+      "QR Code": [
+        "Kod QR"
+      ],
       "Ready, set, forward": [
         "Gotowy, do startu, naprzód"
       ],
@@ -17437,6 +17517,9 @@
       ],
       "Remove calendar": [
         "Usuń kalendarz"
+      ],
+      "Remove device?": [
+        "Usunąć urządzenie?"
       ],
       "Remove domain": [
         "Usuń domenę"
@@ -17563,9 +17646,6 @@
       ],
       "Sign in to join the Beta program": [
         "Zaloguj się, aby dołączyć do wersji beta"
-      ],
-      "Sign in to your organization": [
-        "Zaloguj się do organizacji"
       ],
       "Sign out": [
         "Wyloguj"
@@ -18122,12 +18202,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } użytkownik dołączył do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konto:",
-        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
-        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konta:",
-        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub odrzuć konta:"
-      ],
       "Administrator access enabled": [
         "Dostęp administratora został włączony"
       ],
@@ -18603,6 +18677,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "Usługa ${ WALLET_APP_NAME } jest dostępna we wcześniejszym dostępie. Pobierz aplikację na iOS za pomocą usługi TestFlight lub na Androidzie za pomocą programu testów beta."
+      ],
       "Coming soon": [
         "Wkrótce"
       ]

@@ -3580,6 +3580,9 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mes)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
       ],
@@ -4701,6 +4704,12 @@
       "Add to group": [
         "Afegeix al grup"
       ],
+      "Address": [
+        "Adreça"
+      ],
+      "Anderson": [
+        "Pujol"
+      ],
       "Anyone on the Internet with the link can view": [
         "Qualsevol persona a Internet amb l'enllaç pot visualitzar-ho"
       ],
@@ -4781,6 +4790,9 @@
       ],
       "Colors": [
         "Colors"
+      ],
+      "Company name": [
+        "Nom de l'empresa"
       ],
       "Confirm password": [
         "Confirmeu la contrasenya"
@@ -4869,6 +4881,9 @@
       "Extended address": [
         "Adreça completa"
       ],
+      "First name": [
+        "Nom"
+      ],
       "Folder location": [
         "Ubicació de la carpeta"
       ],
@@ -4883,6 +4898,9 @@
       ],
       "I understand the risk": [
         "Entenc el risc"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Ignore": [
         "Ignorar"
@@ -4925,6 +4943,9 @@
       ],
       "Last month only": [
         "Només el darrer mes"
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Log in or sign up ": [
         "Inicieu sessió o registreu-vos "
@@ -5066,6 +5087,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Thomas": [
+        "Adrià"
       ],
       "Title": [
         "Títol"
@@ -5404,6 +5428,9 @@
       "Graphics Interchange Format (GIF)": [
         "Format d'intercanvi de gràfics (GIF)"
       ],
+      "GZip Archive": [
+        "Arxiu GZip"
+      ],
       "HyperText Markup Language (HTML)": [
         "Llenguatge d'etiquetatge d'hipertext (HTML)"
       ],
@@ -5421,6 +5448,9 @@
       ],
       "Java Archive (JAR)": [
         "Arxiu Java (JAR)"
+      ],
+      "JPEG image": [
+        "Imatge JPEG"
       ],
       "MP3 audio": [
         "Àudio MP3"
@@ -5801,7 +5831,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb un missatge"
+        "Genera correus electrònics amb una petició"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -5927,6 +5957,9 @@
       ],
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
@@ -6226,9 +6259,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Eina de gestió d'organitzacions que permet als administradors afegir i esborrar usuaris, assignar emmagatzematge, configurar dominis i acomplir altres tasques."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra robusta infraestructura garanteix que podreu accedir al vostre compte quan ho necessiteu"
@@ -6671,6 +6701,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferència bancària"
+      ],
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
@@ -8428,6 +8461,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"
+      ],
+      "Shared with end-to-end encryption": [
+        "Compartit amb xifratge d'extrem a extrem"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"

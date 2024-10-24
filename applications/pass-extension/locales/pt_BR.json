@@ -572,21 +572,32 @@
       ],
       "Write us on Twitter": [
         "Escreva-nos no Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Seu gerenciador de senhas não está aqui? Solicite."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Economize de forma inteligente. Ganhe um ano do Pass Plus por apenas ${ relativePrice } por mês."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "acesso vitalício"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Todos os recursos premium. 6 usuários. 1 assinatura fácil."
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "Obtenha a oferta"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Oferta da Black Friday"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Pague uma vez e obtenha o ${ lifetimeAccessJSX } para Pass Plus. Apenas por ${ relativePrice }."
       ]
     },
     "Browser": {
@@ -702,6 +713,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Foi detectada ${ errors.length } linha corrompida no arquivo CSV.",
         "Foram detectadas ${ errors.length } linhas corrompidas no arquivo CSV."
+      ],
+      "Domain not available, try again later": [
+        "Domínio indisponível. Tente novamente mais tarde."
       ],
       "Editing item failed": [
         "Erro ao editar o item"
@@ -1324,6 +1338,12 @@
       "Expires in ${ remainingTime }": [
         "Expira em ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Senha adicional criada com sucesso"
+      ],
+      "Extra password successfully removed": [
+        "Senha adicional removida com sucesso"
+      ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
       ],
@@ -1446,6 +1466,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Configurações de monitoramento atualizadas com sucesso"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
@@ -1646,6 +1669,9 @@
       "Select destination vault": [
         "Selecione o cofre de destino"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Selecione onde quer salvar seus cofres importados."
+      ],
       "Selected items permanently deleted": [
         "Itens selecionados excluídos permanentemente"
       ],
@@ -1666,6 +1692,9 @@
       ],
       "Settings successfully updated": [
         "Configurações atualizadas"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Compartilhe seus inícios de sessão e notas seguras, com até 10 pessoas"
       ],
       "Sign in or create an account to continue.": [
         "Inicie sessão ou crie uma conta para continuar."
@@ -1734,6 +1763,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar dados de outro gerenciador de senhas, acesse o gerenciador de senhas, exporte seus dados e faça o envio deles para ${ PASS_APP_NAME }. Depois que seus dados forem importados, exclua o arquivo exportado."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Para revisar seus dados importados, clique no ícone do ${ PASS_APP_NAME } na barra de ferramentas de seu navegador."
+      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Tente recarregar ou reinstalar a extensão e verifique se o navegador e o ${ PASS_SHORT_APP_NAME } estão atualizados."
       ],
@@ -1776,11 +1808,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Faça upgrade agora para desbloquear recursos premium"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Faça upgrade para um plano pago para criar múltiplos cofres."
+      ],
       "Use vaults to share this item with others.": [
         "Use cofres para compartilhar este item com outros."
       ],
       "User's access removed": [
         "Acesso do usuário removido"
+      ],
+      "User's access successfully updated": [
+        "Acesso do usuário atualizado com sucesso"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Cofre \"${ payload.content.name }\" excluído"
@@ -2018,6 +2056,9 @@
       "Capital letters (A-Z)": [
         "Letras maiúsculas (A-Z)"
       ],
+      "Capitalize": [
+        "Maiúsculas"
+      ],
       "Card": [
         "Cartão"
       ],
@@ -2203,6 +2244,9 @@
       ],
       "Import passwords": [
         "Importar senhas"
+      ],
+      "Imported from: ": [
+        "Importado de: "
       ],
       "Imported on : ": [
         "Importado em: "
@@ -2505,6 +2549,12 @@
       "Today": [
         "Hoje"
       ],
+      "Total imported items: ": [
+        "Total de itens importados: "
+      ],
+      "Total items: ": [
+        "Total de itens: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2722,6 +2772,46 @@
         "Escreva sua nota"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Aprovar ou recusar agora"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Digite o código de confirmação que enviamos para seu outro dispositivo."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Se você não fez essa solicitação, cancele-a agora."
+      ],
+      "Invalid confirmation code": [
+        "Código de confirmação inválido"
+      ],
+      "No, it wasn’t me": [
+        "Não, não fui eu"
+      ],
+      "Yes, it was me": [
+        "Sim, era eu"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Ativo"
+      ],
+      "Inactive": [
+        "Inativo"
+      ],
+      "Pending activation": [
+        "Ativação pendente"
+      ],
+      "Rejected": [
+        "Rejeitado"
+      ],
+      "Signed out": [
+        "Encerrar sessão"
+      ],
+      "Unknown": [
+        "Desconhecido"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "A sincronização de aliases foi realizada com sucesso. Os aliases do SimpleLogin podem levar algum tempo para serem sincronizados"
@@ -2758,6 +2848,9 @@
       ],
       "Current version": [
         "Versão atual"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Excluir cofre \"${ vaultName }\"?"
       ],
       "Discard changes?": [
         "Descartar alterações?"
@@ -2816,6 +2909,9 @@
       "Last modified": [
         "Última modificação"
       ],
+      "Leave vault?": [
+        "Deixar cofre?"
+      ],
       "Log in as...": [
         "Iniciar sessão como..."
       ],
@@ -2863,6 +2959,9 @@
       ],
       "Pinned (${ items.length })": [
         "Fixado(${ items.length })"
+      ],
+      "Reject device?": [
+        "Rejeitar o dispositivo?"
       ],
       "Remove extra password": [
         "Remover senha adicional"
@@ -2968,6 +3067,9 @@
       "Section name cannot be empty": [
         "O nome da seção não pode estar vazio"
       ],
+      "URL already exists": [
+        "URL já existe"
+      ],
       "URL cannot be empty": [
         "O URL não pode estar vazio"
       ],
@@ -3002,6 +3104,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Não foi possível criar o cofre \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Não foi possível enviar convites para os seguintes endereços:"
       ],
       "Duplicate email addresses.": [
         "Endereços de e-mail duplicados."
@@ -3072,6 +3177,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "O arquivo de exportação criptografado com PGP requer uma frase secreta"
+      ],
+      "Please contact us to investigate the issue": [
+        "Entre em contato conosco para investigar o problema"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifique seu endereço de e-mail para usar os aliases de e-mail"
@@ -3147,6 +3255,9 @@
       ],
       "Your session was locked.": [
         "Sua sessão foi bloqueada."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Sua assinatura não permite a criação de múltiplos cofres."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."

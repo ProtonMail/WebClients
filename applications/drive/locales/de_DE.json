@@ -576,6 +576,9 @@
       "Open navigation": [
         "Navigation öffnen"
       ],
+      "Open scan and download info": [
+        "Öffne Scan und lade Informationen herunter"
+      ],
       "Pause all": [
         "Alle anhalten"
       ],
@@ -2321,6 +2324,11 @@
         "Überfällige Rechnung"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2387,11 +2395,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5656,6 +5659,9 @@
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
+      "Address": [
+        "Anschrift"
+      ],
       "Anyone on the Internet with the link can view": [
         "Für jeden im Internet mit diesem Link sichtbar"
       ],
@@ -5867,6 +5873,9 @@
       "File name": [
         "Dateiname"
       ],
+      "First name": [
+        "Vorname"
+      ],
       "Folder": [
         "Ordner"
       ],
@@ -5926,6 +5935,9 @@
       ],
       "Last month only": [
         "Nur den letzten Monat"
+      ],
+      "Last name": [
+        "Nachname"
       ],
       "Location": [
         "Ort"
@@ -7074,6 +7086,9 @@
       "Secure Core servers": [
         "Secure Core-Server"
       ],
+      "Secure link sharing": [
+        "Sicheres Teilen von Links"
+      ],
       "See team's availability": [
         "Verfügbarkeit des Teams anzeigen"
       ],
@@ -7301,14 +7316,6 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -7321,6 +7328,14 @@
       ],
       "Switch plans?": [
         "Abonnement wechseln?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7424,9 +7439,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Ein Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und wieder entfernen, Speicherplatz zuweisen, Domains konfigurieren und andere Aufgaben ausführen können."
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Unsere robuste Infrastruktur ermöglicht dir den Zugriff auf dein Konto, wann immer nötig."
       ],
@@ -7471,6 +7483,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "Sicheres Teilen von einzelnen Einträgen mit anderen (selbst wenn sie ${ PASS_APP_NAME } nicht nutzen)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher. Dank Zero-Access-Verschlüsselung kann nicht einmal ${ BRAND_NAME } auf diese Informationen zugreifen."
@@ -7810,6 +7825,10 @@
       "The link to your item was deleted": [
         "Der Link zu deinem Element wurde gelöscht"
       ],
+      "This item was not removed from your list": [
+        "Dieser Eintrag wurde nicht aus deiner Liste entfernt",
+        "Einige Einträge konnten nicht von deiner Liste entfernt werden"
+      ],
       "This item was succefully removed from your list": [
         "Dieser Eintrag wurde erfolgreich aus deiner Liste entfernt",
         "Alle Einträge wurde erfolgreich aus deiner Liste entfernt"
@@ -8107,11 +8126,17 @@
       "${ n } user account": [
         "${ n } Benutzerkonto",
         "${ n } Benutzerkonten"
+      ],
+      "Admin panel to manage users and subscription": [
+        "Admin-Panel zur Verwaltung von Benutzern und Abonnements"
       ]
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
         "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Jährlich abgerechnet zu ${ yearlyPrice }. Spare ${ yearlySavedPrice } mit ${ passFamilyPlanName } (gegenüber 6 einzelnen ${ passPlusPlanName }-Abonnements)."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exklusives Angebot, das nur für frühe Unterstützer von ${ PASS_APP_NAME } gilt."
@@ -8166,6 +8191,9 @@
       ],
       "MM/YY": [
         "MM/JJ"
+      ],
+      "More plans are available in other currencies": [
+        "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
       "Payment Processing": [
         "Zahlungsabwicklung"
@@ -8483,6 +8511,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(dadurch wird ${ PASS_APP_NAME } geöffnet)"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Veranstaltungen ansehen"
       ]
     },
     "Security Center - Info": {

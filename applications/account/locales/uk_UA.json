@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -781,11 +781,14 @@
       "Refresh status": [
         "Оновити стан"
       ],
+      "refresh the page": [
+        "оновити сторінку"
+      ],
       "Refresh the page": [
         "Оновити сторінку"
       ],
-      "refresh the page": [
-        "оновити сторінку"
+      "Reject": [
+        "Відхилити"
       ],
       "Reload": [
         "Перезавантажити"
@@ -1582,14 +1585,6 @@
         "Оберіть свою пропозицію Кінця року"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом. Але ви можете отримати **${ plan.Title } зі знижкою ${ discountPercentage }**, якщо передплатите на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ТБ сховища (вдвічі більше, ніж з будь-яким іншим планом)"
@@ -1611,6 +1606,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "План ${ plan } доступний знову лише протягом обмеженого часу"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом. Але ви можете отримати **${ plan.Title } зі знижкою ${ discountPercentage }**, якщо передплатите на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6939,11 +6942,11 @@
       "Data locked": [
         "Дані заблоковано"
       ],
-      "dedicated servers": [
-        "виділені сервери"
-      ],
       "Dedicated servers": [
         "Виділені сервери"
+      ],
+      "dedicated servers": [
+        "виділені сервери"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Видаліть будь-які інші MX-записи або впевніться, що встановлено найнижче число пріоритету ${ MAIL_APP_NAME }."
@@ -8195,9 +8198,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Це ключ шифрування, який ви могли раніше зберегти."
-      ],
-      "This is an invitation from:": [
-        "Це запрошення є від:"
       ],
       "This is the password you used before the password reset.": [
         "Це пароль, яким ви користувалися перед скиданням пароля."
@@ -9831,6 +9831,9 @@
       "Filter Name": [
         "Назва фільтра"
       ],
+      "First name": [
+        "Ім'я"
+      ],
       "Folder location": [
         "Розташування теки"
       ],
@@ -9929,6 +9932,9 @@
       ],
       "Last month only": [
         "Лише останній місяць"
+      ],
+      "Last name": [
+        "Прізвище"
       ],
       "Level for NetShield blocker filtering": [
         "Рівень фільтрації блокувальника NetShield"
@@ -11233,23 +11239,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Залишити безплатний"
@@ -11277,6 +11266,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -11880,14 +11886,6 @@
         "Обраний вами тарифний план: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -11906,6 +11904,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -12007,9 +12013,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Засіб керування організацією, що дає змогу адміністраторам додавати й вилучати користувачів, розподіляти обсяг сховища, налаштовувати домени, а також виконувати інші завдання"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надійна інфраструктура гарантує можливість доступу до облікового запису коли завгодно"
@@ -13740,12 +13743,6 @@
       "For security reasons, the token is hidden": [
         "З міркувань безпеки токен приховано"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Перейдіть до свого провайдера ідентифікації, скопіюйте і вставте наведені нижче дані та завершіть налаштування SCIM для ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Перейдіть до свого провайдера ідентифікації, скопіюйте і вставте токен нижче і знову ввімкніть SCIM для ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Якщо ви втратили SCIM-токен, можете згенерувати новий, але пам'ятайте, що після цього потрібно буде оновити налаштування вашого провайдера ідентифікації."
       ],
@@ -13754,9 +13751,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Після вимкнення SCIM у вашій організації **всі користувачі SCIM, автоматично надані вашим провайдером ідентифікації, будуть перетворені на користувачів SSO**, і ви зможете керувати ними безпосередньо в налаштуваннях ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Спрощує керування користувачами в різних сервісах. Додавайте, редагуйте та вилучайте користувачів у вашого провайдера ідентифікації, і ці зміни автоматично застосовуватимуться до вашої організації ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Автоматичне забезпечення SCIM буде вимкнено, доки ви не введете новий SCIM-токен у налаштуваннях вашого провайдера ідентифікації."
@@ -15666,11 +15660,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-All address": [
-        "Catch-All адреса"
-      ],
       "Catch-all address": [
         "Catch-all адреси"
+      ],
+      "Catch-All address": [
+        "Catch-All адреса"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -15767,6 +15761,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "Створіть свою адресу ${ BRAND_NAME }"
+      ],
+      "Created": [
+        "Створено"
       ],
       "Creating user accounts": [
         "Створення облікових записів користувачів"
@@ -16185,6 +16182,9 @@
       "My calendars": [
         "Мої календарі"
       ],
+      "Name": [
+        "Назва"
+      ],
       "Network error": [
         "Помилка мережі"
       ],
@@ -16308,6 +16308,9 @@
       "Remove calendar": [
         "Вилучити календар"
       ],
+      "Remove device?": [
+        "Вилучити пристрій?"
+      ],
       "Remove domain": [
         "Вилучити домен"
       ],
@@ -16424,9 +16427,6 @@
       ],
       "Sign in to join the Beta program": [
         "Увійдіть, щоб приєднатися до програми бета-тестування"
-      ],
-      "Sign in to your organization": [
-        "Увійдіть до своєї організації"
       ],
       "Sign out": [
         "Вийти"

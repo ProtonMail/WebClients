@@ -464,16 +464,6 @@
         "在 Twitter 上寫上我們"
       ]
     },
-    "bf2023: Label": {
-      "Get the deal": [
-        "取得優惠"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "黑色星期五優惠"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME }桌面應用程式"
@@ -554,6 +544,9 @@
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "刪除${ errors.length }錯誤的CSV項目"
+      ],
+      "Domain not available, try again later": [
+        "網域無法使用，請稍後再試"
       ],
       "Editing item failed": [
         "修改項目失敗"

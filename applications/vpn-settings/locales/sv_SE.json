@@ -85,6 +85,9 @@
       "Back": [
         "Tillbaka"
       ],
+      "Back to sign-in": [
+        "Tillbaka till inloggning"
+      ],
       "Block": [
         "Blockera"
       ],
@@ -189,6 +192,9 @@
       ],
       "Delete your account": [
         "Ta bort ditt konto"
+      ],
+      "Deny access": [
+        "Neka åtkomst"
       ],
       "Details": [
         "Detaljer"
@@ -691,9 +697,6 @@
       "Verify": [
         "Verifiera"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Verifiera ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Verifiera konto"
       ],
@@ -705,6 +708,9 @@
       ],
       "Verify domain": [
         "Verifiera domän"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Verifiera domänen ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Visa"
@@ -2574,6 +2580,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
       ],
+      "Please upload a square logo": [
+        "Ladda upp en fyrkantig bild"
+      ],
       "Please upload an xml file": [
         "Ladda upp en xml-fil"
       ],
@@ -2748,6 +2757,9 @@
       ],
       "Got it": [
         "Jag förstår"
+      ],
+      "Invite a user": [
+        "Bjud in en användare"
       ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Bjud in en befintlig ${ BRAND_NAME }-användare"
@@ -4103,6 +4115,9 @@
       "Learn more": [
         "Lär dig mer"
       ],
+      "Learn more about Gateways": [
+        "Lär dig mer om gateways"
+      ],
       "Let's get started by pressing the New group button above": [
         "Låt oss komma igång genom att trycka på knappen ”Ny grupp” ovan"
       ],
@@ -4699,6 +4714,9 @@
       "username": [
         "användarnamn"
       ],
+      "Username": [
+        "Användarnamn"
+      ],
       "Users": [
         "Användare"
       ],
@@ -5189,6 +5207,9 @@
       "Authenticator app": [
         "Autentiseringsapp"
       ],
+      "Backup password": [
+        "Säkerhetskopieringslösenord"
+      ],
       "Billing address": [
         "Faktureringsadress"
       ],
@@ -5336,6 +5357,9 @@
       "Expires": [
         "Löper ut"
       ],
+      "First name": [
+        "Förnamn"
+      ],
       "Gateway name": [
         "Gateway-namn"
       ],
@@ -5365,6 +5389,9 @@
       ],
       "Key": [
         "Nyckel"
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Level for NetShield blocker filtering": [
         "Nivå på blockeringsfiltrering för NetShield"
@@ -5497,6 +5524,9 @@
       ],
       "Recovery phrase": [
         "Återställningsfras"
+      ],
+      "Repeat backup password": [
+        "Repetera säkerhetskopieringslösenord"
       ],
       "Reply (ACS) URL": [
         "Svar-URL (ACS)"
@@ -5738,6 +5768,9 @@
       ],
       "Pay invoice": [
         "Betala faktura"
+      ],
+      "PayPal without credit card": [
+        "PayPal utan kreditkort"
       ],
       "perform a password reset from your active session": [
         "utför en lösenordsåterställning från din aktiva session"
@@ -6787,9 +6820,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Möjlighet att visa icke-privata användares inkorgar som användaren själv gör, inklusive fullständiga meddelanden och kontaktuppgifter"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Organisationshanteringsverktyg som låter administratörer lägga till och ta bort användare, allokera lagringsutrymme, konfigurera domäner och utföra andra uppgifter"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robusta infrastruktur säkerställer att du kommer att kunna komma åt ditt konto när du behöver det"
@@ -7865,20 +7895,11 @@
       "For security reasons, the token is hidden": [
         "Token är dold av säkerhetsskäl"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Gå till din identitetsleverantör, kopiera och klistra in data nedan och slutför konfigureringen av SCIM för ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Gå till din identitetsleverantör, kopiera och klistra in token nedan och återaktivera SCIM för ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Om du har förlorat eller glömt SCIM-token kan du skapa en ny, men tänk på att inställningarna för din identitetsleverantör måste uppdateras."
       ],
       "Make sure you copy the above SCIM token now.": [
         "Se till att du kopierar SCIM-token ovan nu."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ VPN_APP_NAME }-organisation."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "För att återaktivera synkronisering med din identitetsleverantör måste du slutföra SCIM-integreringen igen."
@@ -8450,6 +8471,112 @@
         "Bjud in vänner till ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "Access denied": [
+        "Åtkomst nekad"
+      ],
+      "Access granted": [
+        "Åtkomst beviljad"
+      ],
+      "Approve or deny it now": [
+        "Godkänn eller neka det nu"
+      ],
+      "Approve the sign-in from another device": [
+        "Godkänn inloggningen från annan enhet"
+      ],
+      "Ask administrator for help": [
+        "Be administratör om hjälp"
+      ],
+      "Backup password": [
+        "Säkerhetskopieringslösenord"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Confirm backup password": [
+        "Bekräfta säkerhetskopieringslösenord"
+      ],
+      "Confirmation code": [
+        "Bekräftelsekod"
+      ],
+      "Contact administrator": [
+        "Kontakta administratör"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Kontakta din administratör om problemet kvarstår."
+      ],
+      "Deny": [
+        "Neka"
+      ],
+      "Deny access": [
+        "Neka åtkomst"
+      ],
+      "Devices available": [
+        "Enheter tillgängliga"
+      ],
+      "Enter your backup password": [
+        "Ange ditt säkerhetskopieringslösenord"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "För din säkerhet har du blivit utloggad från alla dina andra aktiva enheter. Innan du kommer åt ditt konto måste du ange ett nytt säkerhetskopieringslösenord."
+      ],
+      "Grant": [
+        "Bevilja"
+      ],
+      "Grant access": [
+        "Bevilja åtkomst"
+      ],
+      "Grant access to user?": [
+        "Bevilja åtkomst till användare?"
+      ],
+      "Grant access to users?": [
+        "Bevilja åtkomst till användare?"
+      ],
+      "Invalid confirmation code": [
+        "Ogiltig bekräftelsekod"
+      ],
+      "Join ${ organizationName }": [
+        "Gå med ${ organizationName }"
+      ],
+      "New backup password": [
+        "Nytt säkerhetskopieringslösenord"
+      ],
+      "Set your backup password": [
+        "Ange ditt säkerhetskopieringslösenord"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Dela bekräftelsekoden med din administratör"
+      ],
+      "Sign in to your organization": [
+        "Logga in på din organisation"
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "För att vara säker på att det verkligen är du som försöker logga in, ange ditt säkerhetskopieringslösenord."
+      ],
+      "Use backup password instead": [
+        "Använd säkerhetskopieringslösenord istället"
+      ],
+      "User details:": [
+        "Användardetaljer:"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Rejected": [
+        "Avvisad"
+      ],
+      "Signed out": [
+        "Utloggad"
+      ],
+      "Unknown": [
+        "Okänd"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Avbryter din prenumeration, vänta"
@@ -8936,6 +9063,9 @@
       "Yearly free storage bonuses": [
         "Årliga bonusar med gratis lagringsutrymme"
       ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "Du kan fortsätta att dra nytta av alla fördelar med ditt nuvarande paket fram till ${ boldedDate }."
+      ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
       ]
@@ -9337,6 +9467,9 @@
       "Action": [
         "Åtgärd"
       ],
+      "Actions": [
+        "Åtgärder"
+      ],
       "Activate organization key": [
         "Aktivera organisationsnyckel"
       ],
@@ -9540,6 +9673,12 @@
       ],
       "Delete user?": [
         "Ta bort användare?"
+      ],
+      "Deny access to user?": [
+        "Neka åtkomst till användare?"
+      ],
+      "Device": [
+        "Enhet"
       ],
       "Device connected!": [
         "Enhet ansluten!"
@@ -9755,6 +9894,9 @@
       "Processing...": [
         "Bearbetar..."
       ],
+      "QR Code": [
+        "QR-kod"
+      ],
       "Recommended": [
         "Rekommenderad"
       ],
@@ -9838,9 +9980,6 @@
       ],
       "Sign in to join the Beta program": [
         "Logga in för att gå med i Beta-programmet"
-      ],
-      "Sign in to your organization": [
-        "Logga in på din organisation"
       ],
       "Sign out": [
         "Logga ut"
@@ -10111,10 +10250,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller avvisa deras konton nu:",
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller avvisa deras konton nu:"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
       ],

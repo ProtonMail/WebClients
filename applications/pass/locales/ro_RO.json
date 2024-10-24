@@ -571,21 +571,6 @@
         "Scrieți-ne pe Twitter"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Salvați inteligent. Obțineți un an de Proton Pass Plus pentru încă doar ${ relativePrice } pe lună."
-      ]
-    },
-    "bf2023: Label": {
-      "Get the deal": [
-        "Obțineți oferta"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Ofertă de Vinerea neagră"
-      ]
-    },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "Aplicați ${ MAIL_APP_NAME } Desktop"
@@ -735,6 +720,9 @@
         "S-a detectat ${ errors.length } rând cu erori în csv.",
         "S-au detectat ${ errors.length } rânduri cu erori în csv.",
         "S-au detectat ${ errors.length } de rânduri cu erori în csv."
+      ],
+      "Domain not available, try again later": [
+        "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
       "Editing item failed": [
         "Editarea articolelor a eșuat."
@@ -1763,6 +1751,9 @@
       ],
       "This version will be added to the history as the newest version.": [
         "Această versiune va fi adăugată la istoric ca cea mai nouă versiune."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Aceasta va respinge dispozitivul **${ name }** care a încercat să se conecteze la contul personal ${ BRAND_NAME } la **${ date }**."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Pentru a migra datele dintr-un alt manager de parole, accesați managerul de parole, exportați datele, apoi încărcați-le în ${ PASS_APP_NAME }. După ce datele v-au fost importate, puteți șterge fișierul exportat."
@@ -2969,6 +2960,9 @@
       ],
       "Recommended actions": [
         "Acțiuni recomandate"
+      ],
+      "Reject device?": [
+        "Respingeți dispozitivul?"
       ],
       "Remove email address?": [
         "Eliminați adresa de e-mail?"

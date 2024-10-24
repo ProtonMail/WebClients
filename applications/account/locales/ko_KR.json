@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -796,11 +796,14 @@
       "Refresh status": [
         "상태 새로고침"
       ],
+      "refresh the page": [
+        "페이지 새로고침"
+      ],
       "Refresh the page": [
         "페이지 새로 고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
+      "Reject": [
+        "거절"
       ],
       "Reload": [
         "새로고침"
@@ -1188,9 +1191,6 @@
       ],
       "Verify": [
         "인증"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "${ unverifiedSSODomain.DomainName }을(를) 인증하기"
       ],
       "Verify account": [
         "계정 인증"
@@ -1600,14 +1600,6 @@
         "연말 할인 선택"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1629,6 +1621,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
       ]
     },
     "bf2023: Offers": {
@@ -6811,6 +6811,9 @@
       "Are you sure you want to give administrative privileges to this user?": [
         "정말 이 사용자로 관리자 권한을 이전하시겠습니까?"
       ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "정말로 이 그룹을 떠날까요? 만약 떠난다면, 이 그룹에 다시 들어오기 위해 그룹 관리자에게 다시 초대받아야 합니다."
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "정말로 모든 로그를 영구적으로 제거할까요?"
       ],
@@ -7042,10 +7045,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -8278,6 +8281,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "그룹 기능은 현재 구독에서 지원하지 않습니다. 최근에 생성된 그룹이 비활성화 되었으며 삭제만 가능합니다."
       ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "설정하지 않은 ${ BRAND_NAME } 계정의 보고서에 대한 주소가 만료되었습니다. 문제 해결을 위해 지원팀에 연락해주세요."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "구성원이 로그인하고 있을 경우 이름을 확인할 수 있습니다."
       ],
@@ -8334,9 +8340,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "잠정적으로 저장한 암호화 키일 수 있습니다."
-      ],
-      "This is an invitation from:": [
-        "다음 사음자의 초대입니다:"
       ],
       "This is the password you used before the password reset.": [
         "비밀번호를 재설정하기 전에 사용한 비밀번호입니다."
@@ -8598,6 +8601,9 @@
       ],
       "User activated": [
         "사용자 활성화됨"
+      ],
+      "Username": [
+        "사용자 이름"
       ],
       "username": [
         "사용자 이름"
@@ -9990,6 +9996,9 @@
       "Filter Name": [
         "필터 이름"
       ],
+      "First name": [
+        "이름"
+      ],
       "Folder location": [
         "폴더 위치"
       ],
@@ -10091,6 +10100,9 @@
       ],
       "Last month only": [
         "지난 달"
+      ],
+      "Last name": [
+        "성"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield 차단 필터링 수준"
@@ -11389,32 +11401,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "${ price }로 시작하세요."
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -11442,6 +11428,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "${ price }로 시작하세요."
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: feature": {
@@ -12095,20 +12107,6 @@
         "${ planName } 플랜을 선택하셨습니다"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -12127,6 +12125,20 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -12228,9 +12240,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "비공개가 아닌 사용자의 수신함을 사용자가 볼 수 있는 옵션으로, 전체 메시지와 연락처 세부사항을 포함하여 볼 수 있습니다"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "관리자가 사용자를 추가 및 제거하고, 저장소를 할당하고, 도메인을 구성하고, 다른 작업을 수행할 수 있는 조직 관리 도구"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
@@ -14232,12 +14241,6 @@
       "For security reasons, the token is hidden": [
         "보안 상의 이유로 토큰이 숨겨짐"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "ID 공급업체로 이동하여 아래 데이터를 복사하여 붙여넣고 ${ VPN_APP_NAME }에 대해서 SCIM 설정을 완료합니다."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "ID 공급업체로 이동하여 아래 토큰을 복사하여 붙여넣고 ${ VPN_APP_NAME }에 대해서 SCIM을 다시 활성화합니다."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "SCIM 토큰을 분실하거나 잊어버리셨다면 새로 만들 수는 있지만, ID 공급자 설정이 업데이트되어 있어야 합니다."
       ],
@@ -14246,9 +14249,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "SCIM이 사용자 조직에 한 번 비활성화 되면, **사용자의 신원 인증 제공자에 의한 모든 SCIM 사용자들이 SSO 사용자로 전환됩니다.** ${ BRAND_NAME } 설정 내에서 즉시 관리 또한 가능하게 됩니다."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "여러 서비스 간에 사용자 관리를 간소화합니다. ID 공급자에서 사용자를 추가, 편집, 제거하면 해당 변경 사항이 ${ VPN_APP_NAME } 조직에 자동으로 적용됩니다."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM 자동 프로비저닝은 신원 제공자의 설정에 새 SCIM 토큰을 입력할 때까지 비활성화됩니다."
@@ -14988,6 +14988,17 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "친구를 ${ BRAND_NAME }에 초대하세요."
+      ]
+    },
+    "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n }명의 멤버가 로그인하는데 도움을 오청했습니다."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n }명의 사용자가 신원 제공자를 통해 당신의 조직에 들어왔습니다. 승인하거나 계정을 삭제하세요:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n }명의 사용자가 ${ BRAND_NAME } 계정에 SSO를 통해 로그인하는데 도움을 요청하고 있습니다."
       ]
     },
     "State": {
@@ -16226,11 +16237,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -16328,6 +16339,9 @@
       "Create your ${ BRAND_NAME } address": [
         "${ BRAND_NAME } 의 주소를 만드세요"
       ],
+      "Created": [
+        "생성함"
+      ],
       "Creating user accounts": [
         "사용자 계정 만드는 중"
       ],
@@ -16418,11 +16432,17 @@
       "Delete version history?": [
         "버전 기록을 삭제하시겠어요?"
       ],
+      "Deny access to user?": [
+        "사용자에게 접근을 거부할까요?"
+      ],
       "Description": [
         "설명"
       ],
       "Details": [
         "세부 사항"
+      ],
+      "Device": [
+        "기기"
       ],
       "Device connected!": [
         "디바이스 연결됨!"
@@ -16727,6 +16747,9 @@
       "Leave ${ organisationName }?": [
         "${ organisationName }을(를) 떠나시겠어요?"
       ],
+      "Leave group?": [
+        "그룹을 떠날까요?"
+      ],
       "Link confirmation": [
         "링크 확인"
       ],
@@ -16750,6 +16773,9 @@
       ],
       "My calendars": [
         "내 캘린더"
+      ],
+      "Name": [
+        "이름"
       ],
       "Need more labels or folders?": [
         "더 많은 라벨이나 폴더가 필요하세요?"
@@ -16856,6 +16882,9 @@
       "Profile": [
         "프로필"
       ],
+      "QR Code": [
+        "QR코드"
+      ],
       "Ready, set, forward": [
         "눈 깜짝 할 사이에 이메일 전달"
       ],
@@ -16880,11 +16909,17 @@
       "Refer a friend": [
         "친구 초대"
       ],
+      "Reject device?": [
+        "기기를 거절할까요?"
+      ],
       "Remove all members?": [
         "그룹 구성원을 추방하시겠습니까?"
       ],
       "Remove calendar": [
         "캘린더 삭제"
+      ],
+      "Remove device?": [
+        "기기를 삭제할까요?"
       ],
       "Remove domain": [
         "도메인 제거"
@@ -17012,9 +17047,6 @@
       "Sign in to join the Beta program": [
         "베타 프로그램에 참여하려면 로그인"
       ],
-      "Sign in to your organization": [
-        "조직에 로그인"
-      ],
       "Sign out": [
         "로그아웃"
       ],
@@ -17044,6 +17076,9 @@
       ],
       "Start import process": [
         "불러오기 과정 시작"
+      ],
+      "State": [
+        "상태"
       ],
       "Status": [
         "상태"
@@ -17567,9 +17602,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n }명 사용자가 신원 제공자를 통해 조직에 참가했습니다. 해당 계정을 수락 및 거절하십시오:"
-      ],
       "Administrator access enabled": [
         "관리자 권한 활성화 됨"
       ],
@@ -18026,6 +18058,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME }은 현재 얼리 엑세스 상태입니다. iOS에서 Apple Testflight, 안드로이드에서 Google Open Testing을 통해 앱을 받으실 수 있습니다."
+      ],
       "Coming soon": [
         "출시 예정"
       ]

@@ -691,9 +691,6 @@
       "Verify": [
         "გადამოწმება"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "${ unverifiedSSODomain.DomainName }-ის შემოწმება"
-      ],
       "Verify account": [
         "ანგარიშის გადამოწმება"
       ],
@@ -1165,6 +1162,9 @@
       ],
       "Try ${ planName }": [
         "სცადეთ ${ planName }"
+      ],
+      "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
+        "სცადეთ ${ upsellPlanName } და შეინარჩუნეთ წვდომა ყველა ფასიან ელფოსტის და კალენდრის ფუნქციებთან."
       ],
       "Ultra fast and private VPN": [
         "ზეჩქარი და კონფიდენციალური VPN"
@@ -4056,6 +4056,9 @@
       "Invite rejected": [
         "მოწვევა უარყოფილია"
       ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "სერვერის ქვეყნის შეცვლას 10 დღემდე სჭირდება, ასე რომ, დარწმუნდით, რომ თქვენი არჩევანი სწორია."
+      ],
       "Item autofilled in ${ vaultLink }": [
         "ელემენტი ავტოშევსებულია ${ vaultLink }-ში"
       ],
@@ -5379,6 +5382,9 @@
       "Expires": [
         "ვადა"
       ],
+      "First name": [
+        "სახელი"
+      ],
       "Gateway name": [
         "რაუტერის სახელი"
       ],
@@ -5408,6 +5414,9 @@
       ],
       "Key": [
         "გასაღები"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Level for NetShield blocker filtering": [
         "Netshield blocker-ის ფილტრის დონე"
@@ -6834,9 +6843,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "შესაძლებლობა დაათვალიეროთ საჯარო საქაღალდეები შემოსული შეტყობინებებით და კონტაქტის დეტალებით"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "ორგანიზაციის მართვის ხელსაწყო, რომელიც საშუალებას აძლევს ადმინისტრატორებს დაამატონ და წაშალონ მომხმარებლები, გამოუყონ საცავი, დაამატონ დომენები და სხვა"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "ჩვენი ძლიერი ინფრასტრუქტურა უზრუნველყოფს, რომ თქვენ შეძლებთ თქვენს ანგარიშზე წვდომას, როცა ეს დაგჭირდებათ"
       ],
@@ -7887,12 +7893,6 @@
       "For security reasons, the token is hidden": [
         "უსაფრთხოების მიზნით კოდი დამალულია"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა მონაცემები და დაასრულეთ SCIM-ის მორგება ${ VPN_APP_NAME }-სთვის."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა კოდი და თავიდან ჩართეთ SCIM ${ VPN_APP_NAME }-სთვის."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "თუ დაკარგეთ ან დაგავიწყდათ SCIM-ის კოდი, შეგიძლიათ, ახალი შექმნათ, მაგრამ, გაითვალისწინეთ, რომ საჭირო იქნება თქვენი იდენტიფიკატორის მომწოდებლის პარამეტრების განახლება."
       ],
@@ -7901,9 +7901,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "როცა თქვენს ორგანიზაციაზე SCIM-ს გამორთავთ, **ყველა SCIM-ის მომხმარებლები, რომლებიც ავტომატურადაა მოწოდებული თქვენი იდენტიფიკატორების მომწოდებლის მიერ, ავტომატურად იქნება გადაყვანილი SSO-ის მომხმარებლებში** და საშუალება გექნებათ, ისინი პირდაპირ ${ BRAND_NAME }-ის მორგების ფანჯრიდან მართოთ."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "ამარტივებს მომხმარებლის მართვას სხვადასხვა სერვისისთვი. დაამატეთ, ჩაასწორეთ და წაშალეთ მომხმარებლები თქვენს იდენტიფიკატორის მომწოდებელში და ის ცვლილებები თქვენს ${ VPN_APP_NAME } ორგანიზაციაზე ავტომატურად გადატარდა."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM-ის ავტომატური გაშლა გაითიშება, სანამ არ შეიყვანთ ახალ SCIM-ის კოდს თქვენი იდენტიფიკატორის მომწოდებლის პარამეტრებში."
@@ -8753,6 +8750,9 @@
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } საბაზისო მოთხოვნებზე შორს მისის, რომ დაგეხმაროთ, უფრო პროდუქტიული და ორგანიზებული ბრძანდებოდეთ და საფოსტო ყუთის, განრიგის და ა.შ. კონტროლში დაგეხმაროთ."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } დაგეხმარებათ დარწმუნდეთ, რომ თქვენი ოჯახის წევრები - და მათი მონაცემები - დაცულია, როცა ისინი ინტერნეტში მუშაობენ."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } გთავაზობთ ${ planMaxSpace } საცავს თქვენი ელფოსტების, მიმაგრებული ფაილების, პაროლების, მოვლენებისა და ფაილებისთვის. ასევე შეგიძლიათ წლიური საცავის ბონუსების მიღებაც."
@@ -9902,9 +9902,6 @@
       "Sign in to join the Beta program": [
         "შედით სისტემაში ბეტა პროგრამაში დასარეგისტრირებლად"
       ],
-      "Sign in to your organization": [
-        "შედით თქვენს ორგანიზაციაში"
-      ],
       "Sign out": [
         "გასვლა"
       ],
@@ -10171,10 +10168,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტეიფიკატორების მომწოდებლით. დაადასტურეთ ან უარჰყავთი მათი ანგარიშები ახლა:",
-        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტეიფიკატორების მომწოდებლით. დაადასტურეთ ან უარჰყავთი მათი ანგარიშები ახლა:"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
       ],

@@ -187,6 +187,9 @@
       "Delete your account": [
         "Elimineu el vostre compte"
       ],
+      "Deny access": [
+        "Denega l'accés"
+      ],
       "Details": [
         "Detalls"
       ],
@@ -687,9 +690,6 @@
       ],
       "Verify": [
         "Verifica"
-      ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Verifica ${ unverifiedSSODomain.DomainName }"
       ],
       "Verify account": [
         "Verifiqueu el compte"
@@ -2703,6 +2703,9 @@
       "Got it": [
         "D'acord"
       ],
+      "Invite a user": [
+        "Convida un usuari"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Convida un usuari de ${ BRAND_NAME } existent"
       ],
@@ -3406,6 +3409,9 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mes)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obteniu una adreça de ${ BRAND_NAME }** per a utilitzar tots els serveis de ${ BRAND_NAME_TWO }, inclosos ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -3523,7 +3529,7 @@
         "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
       ],
       "Are you sure you want to remove all members from this group?": [
-        "Esteu segur que voleu esborrar tots els membres d'aquest grup?"
+        "Segur que voleu esborrar tots els membres d'aquest grup?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Segur que voleu esborrar el domini «${ boldDomain }»?"
@@ -3814,7 +3820,7 @@
         "Passarel·les"
       ],
       "Gateways monitoring is disabled.": [
-        "El monitor de passarel·les està desactivat."
+        "La supervisió de passarel·les està desactivada."
       ],
       "Gateways monitoring is enabled.": [
         "El monitor de passarel·les està activat."
@@ -4007,6 +4013,9 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "Learn more about single sign-on": [
+        "Obteniu més informació sobre l'inici de sessió únic"
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
@@ -4566,6 +4575,9 @@
       "username": [
         "nom d'usuari"
       ],
+      "Username": [
+        "Nom d'usuari"
+      ],
       "Users": [
         "Usuaris"
       ],
@@ -5046,6 +5058,9 @@
       "Amount due": [
         "Import a deure"
       ],
+      "Anderson": [
+        "Pujol"
+      ],
       "Assertion Consumer Service URL": [
         "URL d'Assertion Consumer Service"
       ],
@@ -5105,6 +5120,9 @@
       ],
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
+      ],
+      "Company name": [
+        "Nom de l'empresa"
       ],
       "Config to connect to ${ serverName }": [
         "Configuració per a connectar-se a ${ serverName }"
@@ -5202,6 +5220,9 @@
       "Expires": [
         "Expira"
       ],
+      "First name": [
+        "Nom"
+      ],
       "Gateway name": [
         "Nom de la passarel·la"
       ],
@@ -5220,6 +5241,9 @@
       "Hide password": [
         "Amaga la contrasenya"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Interval": [
         "Interval"
       ],
@@ -5231,6 +5255,9 @@
       ],
       "Key": [
         "Clau"
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Level for NetShield blocker filtering": [
         "Nivell de filtratge del bloquejador NetShield"
@@ -5364,6 +5391,9 @@
       "Recovery phrase": [
         "Frase de recuperació"
       ],
+      "Repeat backup password": [
+        "Confirma la contrasenya de recuperació"
+      ],
       "Reply (ACS) URL": [
         "URL (ACS) de resposta"
       ],
@@ -5408,6 +5438,9 @@
       ],
       "System information": [
         "Informació del sistema"
+      ],
+      "Thomas": [
+        "Adrià"
       ],
       "Two-password mode": [
         "Mode de dues contrasenyes"
@@ -5601,6 +5634,9 @@
       ],
       "Pay invoice": [
         "Paga la factura"
+      ],
+      "PayPal without credit card": [
+        "Paypal sense targeta de crèdit"
       ],
       "perform a password reset from your active session": [
         "realitzar un restabliment de contrasenya des de la vostra sessió activa"
@@ -6127,7 +6163,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb un missatge"
+        "Genera correus electrònics amb una petició"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -6269,6 +6305,9 @@
       ],
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
@@ -6606,9 +6645,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Eina de gestió d'organitzacions que permet als administradors afegir i esborrar usuaris, assignar emmagatzematge, configurar dominis i acomplir altres tasques."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra robusta infraestructura garanteix que podreu accedir al vostre compte quan ho necessiteu"
@@ -7217,6 +7253,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferència bancària"
+      ],
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
@@ -7606,12 +7645,6 @@
       "For security reasons, the token is hidden": [
         "Per raons de seguretat, el testimoni està amagat"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Aneu al vostre proveïdor d'identitat, copieu i enganxeu les dades següents i acabeu de configurar l'SCIM per a ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Aneu al vostre proveïdor d'identitat, copieu i enganxeu el token que apareix a continuació i torneu a activar l'SCIM per a ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Si heu perdut o oblidat el testimoni d'SCIM, en podeu generar un de nou, però tingueu en compte que caldrà actualitzar les preferències del vostre proveïdor d'identitat."
       ],
@@ -7620,9 +7653,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Quan SCIM estigui desactivat per a la vostra organització, **tots els usuaris d'SCIM proporcionats automàticament pel vostre proveïdor d'identitat es convertiran en usuaris d'SSO** i podreu gestionar-los directament des de les preferències de ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Se simplifica la gestió d'usuaris en diferents serveis. Afegiu, editeu i esborreu usuaris del vostre proveïdor d'identitat i aquests canvis s'aplicaran automàticament a la vostra organització de ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "El subministrament automàtic d'SCIM es desactivarà fins que introduïu el nou testimoni d'SCIM a la configuració del vostre proveïdor d'identitat."
@@ -8212,6 +8242,64 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convida amistats a ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Access denied": [
+        "S'ha denegat l'accés."
+      ],
+      "Access granted": [
+        "S'ha atorgat l'accés."
+      ],
+      "Ask administrator for help": [
+        "Demaneu ajuda a l'administrador"
+      ],
+      "Cancel": [
+        "Cancel·la"
+      ],
+      "Confirmation code": [
+        "Codi de confirmació"
+      ],
+      "Deny": [
+        "Denega"
+      ],
+      "Deny access": [
+        "Denega l'accés"
+      ],
+      "Devices available": [
+        "Dispositius disponibles"
+      ],
+      "Enter your backup password": [
+        "Introduïu la vostra contrasenya de recuperació"
+      ],
+      "Grant": [
+        "Autoritza"
+      ],
+      "Grant access": [
+        "Autoritza l'accés"
+      ],
+      "Set your backup password": [
+        "Configureu la vostra contrasenya de recuperació"
+      ],
+      "Sign in to your organization": [
+        "Inicieu la sessió a la vostra organització"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Actiu"
+      ],
+      "Inactive": [
+        "Inactiu"
+      ],
+      "Rejected": [
+        "Rebutjat"
+      ],
+      "Signed out": [
+        "Desconnectat"
+      ],
+      "Unknown": [
+        "Desconegut"
       ]
     },
     "State": {
@@ -9051,6 +9139,9 @@
       "Action": [
         "Acció"
       ],
+      "Actions": [
+        "Accions"
+      ],
       "Activate organization key": [
         "Activar la clau d'organització"
       ],
@@ -9247,6 +9338,9 @@
       ],
       "Delete user?": [
         "Voleu eliminar l'usuari?"
+      ],
+      "Device": [
+        "Dispositiu"
       ],
       "Device connected!": [
         "S'ha connectat el dispositiu"
@@ -9471,6 +9565,9 @@
       "Processing...": [
         "Processant..."
       ],
+      "QR Code": [
+        "Codi QR"
+      ],
       "Recommended": [
         "Recomanat"
       ],
@@ -9554,9 +9651,6 @@
       ],
       "Sign in to join the Beta program": [
         "Inicieu la sessió per unir-vos al programa Beta"
-      ],
-      "Sign in to your organization": [
-        "Inicieu la sessió a la vostra organització"
       ],
       "Sign out": [
         "Tanca la sessió"
