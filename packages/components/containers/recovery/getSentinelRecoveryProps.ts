@@ -34,11 +34,23 @@ export const populateCallToActions = (
     let text = '';
 
     if (!set) {
-        text = c('Info').t`Add a recovery ${type}`;
+        if (type === 'phone number') {
+            text = c('Info').t`Add a recovery phone number`;
+        } else if (type === 'email address') {
+            text = c('Info').t`Add a recovery email address`;
+        }
     } else if (hasMnemonic && enabled) {
-        text = c('Info').t`Disable recovery by ${type}`;
+        if (type === 'phone number') {
+            text = c('Info').t`Disable recovery by phone number`;
+        } else if (type === 'email address') {
+            text = c('Info').t`Disable recovery by email address`;
+        }
     } else {
-        text = c('Info').t`Verify ${type}`;
+        if (type === 'phone number') {
+            text = c('Info').t`Verify phone number`;
+        } else if (type === 'email address') {
+            text = c('Info').t`Verify email address`;
+        }
     }
     return {
         text: text,
