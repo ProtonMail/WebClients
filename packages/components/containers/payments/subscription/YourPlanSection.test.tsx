@@ -2,11 +2,12 @@ import { fireEvent, render, screen, waitFor, within } from '@testing-library/rea
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
-import { usePlans, useSubscription, useVPNServersCount } from '@proton/components/hooks';
+import { useSubscription, useVPNServersCount } from '@proton/components/hooks';
 import useCache from '@proton/components/hooks/useCache';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useOrganization } from '@proton/components/hooks/useOrganization';
@@ -38,7 +39,7 @@ mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
-jest.mock('@proton/components/hooks/usePlans');
+jest.mock('@proton/account/plans/hooks');
 const mockUsePlans = usePlans as jest.MockedFunction<any>;
 mockUsePlans.mockReturnValue([{ plans: getLongTestPlans(), freePlan: FREE_PLAN }, false]);
 

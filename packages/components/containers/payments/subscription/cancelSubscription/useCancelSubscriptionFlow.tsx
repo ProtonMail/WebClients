@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { usePlans } from '@proton/account/plans/hooks';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -38,7 +39,6 @@ import {
     useGetSubscription,
     useNotifications,
     useOrganization,
-    usePlans,
     usePreferredPlansMap,
     useSubscription,
     useVPNServersCount,

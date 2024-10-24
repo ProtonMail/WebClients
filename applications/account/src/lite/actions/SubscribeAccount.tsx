@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import {
@@ -17,7 +18,6 @@ import {
     Tooltip,
     VpnLogo,
     useOrganization,
-    usePlans,
     useSubscription,
 } from '@proton/components';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';

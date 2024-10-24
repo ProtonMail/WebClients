@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { createContext, useContext, useRef } from 'react';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -19,7 +20,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useOrganization, usePlans, useSubscription } from '../../../hooks';
+import { useOrganization, useSubscription } from '../../../hooks';
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import InAppPurchaseModal from './InAppPurchaseModal';
