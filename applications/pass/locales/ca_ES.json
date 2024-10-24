@@ -564,19 +564,14 @@
         "Escriviu-nos a Twitter"
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Estalvieu amb intel·ligència. Aconseguiu un any de Pass Plus per només ${ relativePrice } al mes."
-      ]
-    },
-    "bf2023: Label": {
+    "bf2024: Label": {
       "Get the deal": [
-        "Obtingueu l’oferta"
+        "Aconseguiu l'oferta"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Oferta del Black Friday"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Browser": {
@@ -716,6 +711,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "S'ha detectat ${ errors.length } fila CSV corrupta",
         "S'han detectat ${ errors.length } files CSV corruptes"
+      ],
+      "Domain not available, try again later": [
+        "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Editing item failed": [
         "No s'ha pogut editar l'element"
@@ -1264,6 +1262,12 @@
       ],
       "Expires in ${ remainingTime }": [
         "Caduca en ${ remainingTime }"
+      ],
+      "Extra password successfully created": [
+        "S'ha creat la contrasenya addicional."
+      ],
+      "Extra password successfully removed": [
+        "S'ha esborrat la contrasenya addicional."
       ],
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
@@ -1909,6 +1913,9 @@
       ],
       "Capital letters (A-Z)": [
         "Lletres majúscules (A-Z)"
+      ],
+      "Capitalize": [
+        "Majúscules"
       ],
       "Card": [
         "Targeta"
@@ -2637,6 +2644,28 @@
         "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls. ${ link }"
       ]
     },
+    "sso": {
+      "Yes, it was me": [
+        "Sí, era jo."
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Actiu"
+      ],
+      "Inactive": [
+        "Inactiu"
+      ],
+      "Rejected": [
+        "Rebutjat"
+      ],
+      "Signed out": [
+        "Desconnectat"
+      ],
+      "Unknown": [
+        "Desconegut"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Les caixes fortes no poden contenir més d'${ vault.targetMaxMembers } usuari.",
@@ -2698,6 +2727,9 @@
       "Dark Web Monitoring": [
         "Monitoratge de la web fosca"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Voleu eliminar la caixa forta «${ vaultName }»?"
+      ],
       "Details": [
         "Detalls"
       ],
@@ -2737,6 +2769,9 @@
       "Import to vault(s)": [
         "Importa a la(es) caixa(es) forta(es)"
       ],
+      "Import your aliases from SimpleLogin": [
+        "Importeu els vostres àlies de SimpleLogin"
+      ],
       "Import your data": [
         "Importeu les vostres dades"
       ],
@@ -2751,6 +2786,9 @@
       ],
       "Last modified": [
         "Última modificació"
+      ],
+      "Leave vault?": [
+        "Voleu deixar la caixa forta?"
       ],
       "Loading breaches...": [
         "S'estan carregant les infraccions..."
@@ -2802,6 +2840,9 @@
       ],
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
+      ],
+      "Permanently remove all items?": [
+        "Voleu esborrar els elements de manera permanent?"
       ],
       "Pinned (${ items.length })": [
         "Ancorat (${ items.length })"
@@ -2940,6 +2981,9 @@
       ],
       "Section name cannot be empty": [
         "El nom de la selecció no pot estar buit."
+      ],
+      "URL already exists": [
+        "L'URL ja existeix."
       ],
       "URL cannot be empty": [
         "L'URL no pot ser buit."

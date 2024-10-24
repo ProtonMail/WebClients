@@ -568,21 +568,29 @@
       ],
       "Write us on Twitter": [
         "Γράψτε μας στο Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
       ]
     },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Εξοικονομήστε έξυπνα. Αποκτήστε ένα χρόνο Pass Plus μόνο για ${ relativePrice } ανά μήνα."
+    "bf2024: Deal": {
+      "lifetime access": [
+        "ισόβια πρόσβαση"
       ]
     },
-    "bf2023: Label": {
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Όλα τα premium χαρακτηριστικά. 6 χρήστες. 1 εύκολη συνδρομή."
+      ]
+    },
+    "bf2024: Label": {
       "Get the deal": [
         "Αποκτήστε την προσφορά"
       ]
     },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Προσφορά Black Friday"
+    "bf2024: Title": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Browser": {
@@ -731,6 +739,9 @@
       "Detected ${ errors.length } corrupted csv row": [
         "Εντοπίστηκε ${ errors.length } αλλοιωμένη γραμμή csv",
         "Εντοπίστηκε ${ errors.length } αλλοιωμένες γραμμές csv"
+      ],
+      "Domain not available, try again later": [
+        "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
       "Editing item failed": [
         "Η επεξεργασία του στοιχείου απέτυχε"
@@ -1130,6 +1141,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει το δακτυλικό αποτύπωμα σας ή το PIN της συσκευής σας."
       ],
+      "Add your custom email address to monitor:": [
+        "Προσθέστε την προσαρμοσμένη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για παρακολούθηση:"
+      ],
       "Admin": [
         "Διαχειριστής"
       ],
@@ -1325,6 +1339,12 @@
       "Expires in ${ remainingTime }": [
         "Λήγει σε ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Ο επιπλέον κωδικός πρόσβασης δημιουργήθηκε με επιτυχία"
+      ],
+      "Extra password successfully removed": [
+        "Ο επιπλέον κωδικός πρόσβασης καταργήθηκε με επιτυχία"
+      ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
       ],
@@ -1471,6 +1491,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Οι ρυθμίσεις παρακολούθησης ενημερώθηκαν με επιτυχία"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Περισσότερο από έναν διαχειριστή κωδικών πρόσβασης, το ${ PASS_APP_NAME } προστατεύει τον κωδικό πρόσβασής σας και την προσωπική σας διεύθυνση email μέσω ψευδωνύμων email. Με την ίδια τεχνολογία πίσω από το ${ MAIL_APP_NAME }, τα δεδομένα σας είναι κρυπτογραφημένα από άκρο σε άκρο και είναι προσβάσιμα μόνο από εσάς."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
@@ -1656,6 +1679,9 @@
       "Select vault to share": [
         "Επιλογή κρύπτης για κοινή χρήση"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Επιλέξτε πού θέλετε να αποθηκευτούν οι κρύπτες που έχετε εισαγάγει."
+      ],
       "Selected items permanently deleted": [
         "Τα επιλεγμένα στοιχεία διαγράφηκαν οριστικά"
       ],
@@ -1676,6 +1702,9 @@
       ],
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Μοιραστείτε τα στοιχεία σύνδεσής σας και ασφαλείς σημειώσεις, με έως και 10 άτομα"
       ],
       "Sign in to your account": [
         "Συνδεθείτε στον λογαριασμό σας"
@@ -1747,6 +1776,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Για να μεταφέρετε δεδομένα από έναν άλλο διαχειριστή κωδικών πρόσβασης, μεταβείτε στον διαχειριστή κωδικών πρόσβασης, εξαγάγετε τα δεδομένα σας και, στη συνέχεια, ανεβάστε τα στο ${ PASS_APP_NAME }. Μόλις εισαχθούν τα δεδομένα σας, διαγράψτε το εξαγόμενο αρχείο."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Για να ελέγξετε τα εισαγόμενα δεδομένα σας, κάντε κλικ στο εικονίδιο ${ PASS_APP_NAME } στη γραμμή εργαλείων του προγράμματος περιήγησής σας."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
@@ -1777,11 +1809,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Αναβαθμίστε τώρα για να ξεκλειδώσετε Premium χαρακτηριστικά"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Κάντε αναβάθμιση σε πλάνο επί πληρωμή για να δημιουργήσετε πολλαπλές κρύπτες."
+      ],
       "Use vaults to share this item with others.": [
         "Χρησιμοποιήστε κρύπτες για να μοιραστείτε αυτό το στοιχείο με άλλους."
       ],
       "User's access removed": [
         "Η πρόσβαση του χρήστη καταργήθηκε"
+      ],
+      "User's access successfully updated": [
+        "Η πρόσβαση του χρήστη ενημερώθηκε με επιτυχία"
       ],
       "username": [
         "όνομα χρήστη"
@@ -2017,6 +2055,9 @@
       "Capital letters (A-Z)": [
         "Κεφαλαία γράμματα (A-Z)"
       ],
+      "Capitalize": [
+        "Κεφαλαιοποίηση"
+      ],
       "Card": [
         "Κάρτα"
       ],
@@ -2205,6 +2246,9 @@
       ],
       "Import passwords": [
         "Εισαγωγή κωδικών πρόσβασης"
+      ],
+      "Imported from: ": [
+        "Εισαγωγή από: "
       ],
       "Imported on : ": [
         "Εισαγωγή στο : "
@@ -2497,6 +2541,12 @@
       ],
       "Today": [
         "Σήμερα"
+      ],
+      "Total imported items: ": [
+        "Σύνολο εισαγόμενων αντικείμενων: "
+      ],
+      "Total items: ": [
+        "Συνολικά αντικείμενα: "
       ],
       "TOTP": [
         "TOTP"
@@ -2814,6 +2864,9 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Διαγραφή κρύπτης \"${ vaultName }\";"
+      ],
       "Details": [
         "Λεπτομέρειες"
       ],
@@ -2870,6 +2923,9 @@
       ],
       "Last modified": [
         "Τελευταία τροποποίηση"
+      ],
+      "Leave vault?": [
+        "Αποχώρηση από την κρύπτη;"
       ],
       "Loading breaches...": [
         "Φόρτωση παραβιάσεων..."
@@ -2930,6 +2986,9 @@
       ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
+      ],
+      "Permanently remove all items?": [
+        "Οριστική αφαίρεση όλων των στοιχείων;"
       ],
       "Pinned (${ items.length })": [
         "Καρφιτσώθηκαν (${ items.length })"
@@ -3069,6 +3128,9 @@
       "Section name cannot be empty": [
         "Το όνομα ενότητας δεν μπορεί να είναι κενό"
       ],
+      "URL already exists": [
+        "Το URL υπάρχει ήδη"
+      ],
       "URL cannot be empty": [
         "Η διεύθυνση URL δεν μπορεί να είναι κενή"
       ],
@@ -3100,6 +3162,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Δεν ήταν δυνατή η δημιουργία κρύπτης \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Δεν ήταν δυνατή η αποστολή προσκλήσεων στις ακόλουθες διευθύνσεις:"
       ],
       "Duplicate email addresses.": [
         "Διπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
@@ -3189,6 +3254,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Παρακαλούμε ελέγξτε ότι η επέκταση έχει εγκατασταθεί και ενεργοποιηθεί σωστά"
       ],
+      "Please contact us to investigate the issue": [
+        "Επικοινωνήστε μαζί μας για να διερευνήσουμε το ζήτημα"
+      ],
       "Please update the extension to its latest version": [
         "Παρακαλούμε ενημερώστε την επέκταση στην πιο πρόσφατη έκδοσή της"
       ],
@@ -3266,6 +3334,9 @@
       ],
       "Your session was locked.": [
         "Η συνεδρία σας ήταν κλειδωμένη."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Δεν μπορείτε να δημιουργήσετε περισσότερες κρύπτες από όσες επιτρέπει η συνδρομή σας."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
