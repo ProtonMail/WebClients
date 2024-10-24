@@ -28,6 +28,7 @@ enum CommonFeatureFlag {
     DarkWebEmailNotifications = 'DarkWebEmailNotifications',
     InboxNewUpsellModals = 'InboxNewUpsellModals',
     NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
+    ScribeAdminSetting = 'ScribeAdminSetting',
 }
 
 enum AccountFlag {
