@@ -40,8 +40,9 @@ import clsx from '@proton/utils/clsx';
 
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
-import { useIsSessionRecoveryAvailable, useNotifications, useSessionRecoveryState } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
+import { useIsSessionRecoveryAvailable, useSessionRecoveryState } from '../../hooks/useSessionRecovery';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import EditExternalAddressModal from './EditExternalAddressModal';
 import SettingsLayout from './SettingsLayout';

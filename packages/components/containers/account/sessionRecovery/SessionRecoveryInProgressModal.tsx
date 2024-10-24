@@ -12,7 +12,7 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 
-import { useSessionRecoveryGracePeriodHoursRemaining } from '../../../hooks';
+import { useSessionRecoveryGracePeriodHoursRemaining } from '../../../hooks/useSessionRecovery';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import SessionRecoveryInProgressModalIllustration from './SessionRecoveryInProgressModalIllustration';
 import { useSessionRecoveryLocalStorage } from './SessionRecoveryLocalStorageManager';

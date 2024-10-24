@@ -18,7 +18,8 @@ import { initiateSessionRecovery } from '@proton/shared/lib/api/sessionRecovery'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
-import { useAvailableRecoveryMethods, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
+import { useAvailableRecoveryMethods } from '../../../hooks/useSessionRecovery';
 import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmedPrompt';
 import sessionRecoveryIllustration from './session-recovery-illustration.svg';
 

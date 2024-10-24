@@ -17,7 +17,8 @@ import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 import clsx from '@proton/utils/clsx';
 
-import { useAvailableRecoveryMethods, useNotifications, useUserSettings } from '../../hooks';
+import { useNotifications, useUserSettings } from '../../hooks';
+import { useAvailableRecoveryMethods } from '../../hooks/useSessionRecovery';
 import LostTwoFAModal from './LostTwoFAModal';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
