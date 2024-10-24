@@ -85,6 +85,9 @@
       "Back": [
         "Назад"
       ],
+      "Back to sign-in": [
+        "Вярнуцца да ўваходу"
+      ],
       "Block": [
         "Блакіраваць"
       ],
@@ -189,6 +192,9 @@
       ],
       "Delete your account": [
         "Выдаліць уліковы запіс"
+      ],
+      "Deny access": [
+        "Адмовіць у доступе"
       ],
       "Details": [
         "Падрабязнасці"
@@ -691,9 +697,6 @@
       "Verify": [
         "Праверка"
       ],
-      "Verify ${ unverifiedSSODomain.DomainName }": [
-        "Праверыць ${ unverifiedSSODomain.DomainName }"
-      ],
       "Verify account": [
         "Праверыць уліковы запіс"
       ],
@@ -705,6 +708,9 @@
       ],
       "Verify domain": [
         "Праверыць дамен"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Праверыць дамен ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Прагледзець"
@@ -2607,6 +2613,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
       ],
+      "Please upload a square logo": [
+        "Запампуйце квадратны лагатып"
+      ],
       "Please upload an xml file": [
         "Запампуйце файл xml"
       ],
@@ -3836,6 +3845,9 @@
       "Dedicated servers": [
         "Вылучаныя серверы"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Выдаліце ​​ўсе іншыя запісы MX або пераканайцеся, што ${ MAIL_APP_NAME } мае самае нізкае значэнне ў полі прыярытэту."
       ],
@@ -4210,6 +4222,12 @@
       ],
       "Learn more": [
         "Даведацца больш"
+      ],
+      "Learn more about Gateways": [
+        "Даведацца больш аб шлюзах"
+      ],
+      "Learn more about single sign-on": [
+        "Даведацца больш аб адзіным уваходзе"
       ],
       "Let's get started by pressing the New group button above": [
         "Пачніце са стварэння новай групы націснуўшы адпаведную кнопку вышэй"
@@ -4688,6 +4706,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Гэта праверка можа заняць да адной гадзіны. Пасля паспяховай праверкі не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Гэта прывядзе да адмовы ў доступе да **${ email }**. Вы сапраўды хочаце працягнуць?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Гэта адключыць двухфактарную аўтэнтыфікацыю, а таксама праграму аўтэнтыфікатар і метады ключоў бяспекі."
       ],
@@ -4832,6 +4853,9 @@
       "username": [
         "імя карыстальніка"
       ],
+      "Username": [
+        "Імя карыстальніка"
+      ],
       "Users": [
         "Карыстальнікі"
       ],
@@ -4948,6 +4972,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Сервер уступае ў 10-дзённы перыяд дэактывацыі, калі ён выдаляецца са шлюза. Гэты сервер можа быць дадзены ў новы шлюз, але яго краіна не можа быць зменена."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
@@ -5362,6 +5389,9 @@
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
       ],
+      "Backup password": [
+        "Рэзервовы пароль"
+      ],
       "Billing address": [
         "Адрас для аплаты"
       ],
@@ -5509,6 +5539,9 @@
       "Expires": [
         "Дзейнічае да"
       ],
+      "First name": [
+        "Імя"
+      ],
       "Gateway name": [
         "Назва шлюза"
       ],
@@ -5538,6 +5571,9 @@
       ],
       "Key": [
         "Ключ"
+      ],
+      "Last name": [
+        "Прозвішча"
       ],
       "Level for NetShield blocker filtering": [
         "Узровень фільтрацыі блакіроўшчыка NetShield"
@@ -5670,6 +5706,9 @@
       ],
       "Recovery phrase": [
         "Фраза аднаўлення"
+      ],
+      "Repeat backup password": [
+        "Паўтарыце рэзервовы пароль"
       ],
       "Reply (ACS) URL": [
         "URL-адрас адказу (ACS)"
@@ -5911,6 +5950,9 @@
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
+      ],
+      "PayPal without credit card": [
+        "PayPal без крэдытнай карткі"
       ],
       "perform a password reset from your active session": [
         "ажыццявіць скіданне пароля з вашага актыўнага сеанса"
@@ -7021,9 +7063,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Інструмент кіравання для арганізацый з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, вылучаць сховішча, канфігурыраваць дамены і выконваць іншыя задачы"
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надзейная інфраструктура гарантуе вам пастаянны доступ да вашага ўліковага запісу"
       ],
@@ -8100,12 +8139,6 @@
       "For security reasons, the token is hidden": [
         "У мэтах бяспекі токен схаваны"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце даныя ніжэй і завяршыце канфігурацыю SCIM для ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце токен ніжэй і паўторна ўключыце SCIM для ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Вы можаце згенерыраваць новы токен SCIM, калі папярэдні быў страчаны або забыты. Памятайце, што ў такіх выпадках неабходна абнаўляць налады ў вашым пастаўшчыку пасведчанняў."
       ],
@@ -8114,9 +8147,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Пасля адключэння SCIM для вашай арганізацыі **ўсе карыстальнікі SCIM, якія аўтаматычна забяспечаны вашым пастаўшчыком пасведчанняў, будуць пераўтвораны ў карыстальнікаў SSO** і ў вас будзе магчымасць кіраваць імі наўпрост у наладах ${ BRAND_NAME }."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Спрашчэнне кіравання карыстальнікамі паміж рознымі сэрвісамі. Дадаванне, рэдагаванне і выдаленне карыстальнікаў у вашым пастаўшчыку пасведчанняў. Усе пералічаныя змены будуць аўтаматычна ўжывацца для вашай арганізацыі ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Аўтаматычная падрыхтоўка SCIM будзе адключана да таго моманту, пакуль вамі не будзе ўведзены новы токен SCIM у налады вашага пастаўшчыка пасведчанняў."
@@ -8746,6 +8776,85 @@
         "Запрасіць сяброў у ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "${ n } member requested your help to sign in.": [
+        "${ n } удзельнік запытаў вашу дапамогу з уваходам.",
+        "${ n } удзельнікі запыталі вашу дапамогу з уваходам.",
+        "${ n } удзельнікаў запыталі вашу дапамогу з уваходам.",
+        "${ n } удзельнікаў запыталі вашу дапамогу з уваходам."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або выдаліце яго/іх уліковыя запісы:",
+        "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або выдаліце іх уліковыя запісы:",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або выдаліце іх уліковыя запісы:",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або выдаліце іх уліковыя запісы:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } карыстальнік запытвае вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу.",
+        "${ n } карыстальнікі запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу.",
+        "${ n } карыстальнікаў запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу.",
+        "${ n } карыстальнікаў запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу."
+      ],
+      "Access denied": [
+        "У доступе адмоўлена"
+      ],
+      "Access granted": [
+        "Доступ дазволены"
+      ],
+      "Approve the sign-in from another device": [
+        "Ухваліце ​​ўваход з іншай прылады"
+      ],
+      "Ask administrator for help": [
+        "Папрасіце адміністратара дапамагчы вам"
+      ],
+      "Ask your administrator for access?": [
+        "Запытаць доступ у вашага адміністратара?"
+      ],
+      "Confirmation code": [
+        "Код пацвярджэння"
+      ],
+      "Contact administrator": [
+        "Звязацца з адміністратарам"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Звяжыце са сваім адміністратарам, калі праблема застанецца."
+      ],
+      "Devices available": [
+        "Даступныя прылады"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Вы выйшлі з сістэмы на ўсіх вашых іншых актыўных прыладах у мэтах бяспекі. Вам неабходна будзе ўвесці новы рэзервовы пароль перад тым, як вы атрымаеце доступ да свайго ўліковага запісу."
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Задаць рэзервовы пароль, каб дадаць дадатковы слой бяспекі. Ён дазволіць вам увайсці ў выпадку, калі вы не зможаце атрымаць доступ да свайго ўліковага запісу. Пераканайцеся, што ён захаваны ў надзейным месцы."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Гэта дзеянне прывядзе да завяршэння сеанса на вашых іншых прыладах і вам давядзецца стварыць новы рэзервовы пароль."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Праверце код пацвярджэння і ўхваліце запыт ад іншай прылады. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці ў электронную пошту **${ email }**."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Увядзіце свой рэзервовы пароль. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Абагуліце код пацвярджэння з вашым адміністратарам **${ adminEmail }** для таго, каб ён мог ухваліць запыт для **${ email }**. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці."
+      ],
+      "Use backup password instead": [
+        "Замест гэтага скарыстайцеся рэзервовай копіяй пароля"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Актыўна"
+      ],
+      "Inactive": [
+        "Неактыўна"
+      ],
+      "Signed out": [
+        "Вы выйшлі"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Скасаванне вашай падпіскі. Пачакайце..."
@@ -9266,7 +9375,7 @@
         "У карыстальнікаў не будзе магчымасці адпраўляць электронныя лісты"
       ],
       "Users won’t be able to upload files on their devices": [
-        "У карыстальнікаў не будзе магчымасці запампоўваць файлы на свае прылады"
+        "У карыстальнікаў не будзе магчымасці запампоўваць файлы са сваіх прылад"
       ],
       "Version history": [
         "Гісторыя версій"
@@ -9284,7 +9393,7 @@
         "Калі вы скасуеце падпіску ${ planName }, вы будзеце паніжаны да ${ BRAND_NAME } Free, які прапануе толькі да 1 ГБ сховішча Mail і да 5 ГБ сховішча Drive. Ваша каманда будзе адчуваць перапыненні ў працы, паколькі бясплатны тарыфны план не падтрымлівае бясплатных карыстальнікаў."
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Вы будзеце паніжаны да бясплатнага тарыфнага плана ${ BRAND_NAME }, калі ваша падпіска ${ planName } завершыцца ${ expiryDate }"
+        "Вы будзеце паніжаны да тарыфнага плана ${ BRAND_NAME } Free, калі ваша падпіска ${ planName } завершыцца ${ expiryDate }"
       ],
       "Yearly free storage bonuses": [
         "Штогадовы бонус бясплатнага сховішча"
@@ -9510,6 +9619,12 @@
       ],
       "You have successfully unsubscribed": [
         "Вы паспяхова скасавалі падпіску"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Вы атрымаеце сваё імя карыстальніка праз электронную пошту на працягу хвіліны, калі вы ўвялі слушны адрас электроннай пошты для аднаўлення доступу."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Вы атрымаеце сваё імя карыстальніка праз SMS на працягу хвіліны, калі вы ўвялі слушны нумар тэлефона для аднаўлення доступу."
       ]
     },
     "Success message": {
@@ -9698,6 +9813,9 @@
       ],
       "Action": [
         "Дзеянне"
+      ],
+      "Actions": [
+        "Дзеянні"
       ],
       "Activate organization key": [
         "Актываваць ключ арганізацыі"
@@ -9908,6 +10026,12 @@
       ],
       "Delete user?": [
         "Выдаліць карыстальніка?"
+      ],
+      "Deny access to user?": [
+        "Адмовіць у доступе карыстальніку?"
+      ],
+      "Device": [
+        "Прылада"
       ],
       "Device connected!": [
         "Прылада падключана!"
@@ -10134,6 +10258,9 @@
       "Processing...": [
         "Апрацоўка..."
       ],
+      "QR Code": [
+        "QR-код"
+      ],
       "Recommended": [
         "Рэкамендавана"
       ],
@@ -10217,9 +10344,6 @@
       ],
       "Sign in to join the Beta program": [
         "Увайдзіце, каб далучыцца да бэта-праграмы"
-      ],
-      "Sign in to your organization": [
-        "Увайсці ў сваю арганізацыю"
       ],
       "Sign out": [
         "Выйсці"
@@ -10492,12 +10616,6 @@
       ]
     },
     "unprivatization": {
-      "${ n } user have joined your organization through your Identity Provider. Approve or reject their accounts now:": [
-        "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце яго/іх уліковыя запісы:",
-        "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце іх уліковыя запісы:",
-        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце іх уліковыя запісы:",
-        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Ухваліце або адхіліце іх уліковыя запісы:"
-      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
       ],

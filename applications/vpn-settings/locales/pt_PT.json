@@ -4691,6 +4691,9 @@
       "Expires": [
         "Expira"
       ],
+      "First name": [
+        "Nome próprio"
+      ],
       "Gateway name": [
         "Nome do gateway"
       ],
@@ -4714,6 +4717,9 @@
       ],
       "Key": [
         "Chave"
+      ],
+      "Last name": [
+        "Apelido"
       ],
       "Level for NetShield blocker filtering": [
         "Nível de filtragem do bloqueador NetShield"
@@ -5881,9 +5887,6 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para ver as caixas de entrada de utilizadores não privados como o utilizador faria, incluindo todas as mensagens e detalhes de contacto"
       ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Ferramenta de gestão da organização que permite aos administradores adicionar e remover utilizadores, atribuir armazenamento, configurar domínios e realizar outras tarefas."
-      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "A fiabilidade da nossa infraestrutura garante-lhe o acesso à sua conta sempre que precisar."
       ],
@@ -6623,11 +6626,6 @@
       ],
       "Generate token": [
         "Gerar um token"
-      ]
-    },
-    "scim: Info": {
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Vá para o seu provedor de identidade, copie e cole os dados abaixo e termine de configurar SCIM para ${ VPN_APP_NAME }."
       ]
     },
     "scim: Label": {
@@ -8285,9 +8283,6 @@
       ],
       "Sign in to join the Beta program": [
         "Inicie sessão para aderir ao programa Beta"
-      ],
-      "Sign in to your organization": [
-        "Iniciar sessão na sua organização"
       ],
       "Sign out": [
         "Terminar sessão"
