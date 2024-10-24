@@ -12,7 +12,7 @@ import gmailForwardSmall from '@proton/styles/assets/img/illustrations/checklist
 import gmailForward from '@proton/styles/assets/img/illustrations/checklist-gmail-forward.svg';
 import protectInboxSmall from '@proton/styles/assets/img/illustrations/checklist-protect-inbox-small.svg';
 import protectInbox from '@proton/styles/assets/img/illustrations/checklist-protect-inbox.svg';
-import useFlag from '@proton/unleash/useFlag';
+import { useFlag } from '@proton/unleash';
 
 import CheckListItem from './CheckListItem';
 
