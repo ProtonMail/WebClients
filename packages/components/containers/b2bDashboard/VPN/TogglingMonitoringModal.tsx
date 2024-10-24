@@ -12,18 +12,18 @@ interface Props extends ModalProps {
 const TogglingMonitoringModal = ({ enabling, onChange, ...rest }: Props) => {
     const { onClose } = rest;
 
-    const disableButtons: [JSX.Element] = [
+    const disableButtons: [JSX.Element, JSX.Element] = [
         <Button color={enabling ? 'norm' : 'danger'} onClick={onChange}>
             {enabling ? c('Action').t`Got it` : c('Action').t`Disable`}
+        </Button>,
+        <Button color="weak" onClick={onClose}>
+            {c('Action').t`Cancel`}
         </Button>,
     ];
 
-    const enableButtons: [JSX.Element, JSX.Element] = [
+    const enableButtons: [JSX.Element] = [
         <Button color={enabling ? 'norm' : 'danger'} onClick={onChange}>
             {enabling ? c('Action').t`Got it` : c('Action').t`Disable`}
-        </Button>,
-        <Button color="norm" onClick={onClose}>
-            {c('Action').t`Cancel`}
         </Button>,
     ];
 

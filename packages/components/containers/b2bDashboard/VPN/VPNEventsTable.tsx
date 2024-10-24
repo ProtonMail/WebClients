@@ -66,7 +66,7 @@ const VPNEventsTable = ({
                 onToggleSort={toggleSort}
                 cells={[
                     { content: c('Title').t`User`, className: 'w-1/3' },
-                    { key: 'time', content: c('TableHeader').t`Event`, sorting: true, className: 'w-1/6' },
+                    { key: 'time', content: c('TableHeader').t`Event`, sorting: true, className: 'w-1/4' },
                     { content: c('Title').t`Gateway`, className: 'w-1/6' },
                     { content: c('Title').t`Origin`, className: 'w-1/6' },
                     { content: c('Title').t`Device name`, className: 'w-1/6' },
@@ -110,7 +110,7 @@ const VPNEventsTable = ({
                                         />
                                         <div className="flex flex-column">
                                             <span
-                                                className={clsx('text-bold', getVPNEventColor(eventType))}
+                                                className={clsx('text-semibold', getVPNEventColor(eventType))}
                                                 onClick={() => onEventClick(eventType)}
                                             >
                                                 {eventTypeName}
