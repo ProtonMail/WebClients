@@ -1,8 +1,10 @@
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+
 import type { ResumedSessionResult } from '../authentication/persistedSessionHelper';
 import type { APP_NAMES } from '../constants';
 import { SECOND } from '../constants';
 import { createTimeoutError } from '../fetch/ApiError';
-import { getIsDrawerPostMessage, postMessageFromIframe } from './helpers';
+import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from './helpers';
 import { DRAWER_EVENTS, type SESSION_MESSAGE } from './interfaces';
 
 export const resumeSessionDrawerApp = ({
@@ -48,7 +50,17 @@ export const resumeSessionDrawerApp = ({
 
         // Resolve the promise if the parent app does not respond
         timeout = setTimeout(() => {
+            captureMessage('Drawer iframe session timeout', {
+                level: 'info',
+                extra: {
+                    parentApp,
+                    isAuthorizedApp: getIsAuthorizedApp(parentApp || ''),
+                    locationOrigin: window.location.origin,
+                    locationHref: window.location.href,
+                },
+            });
+
             reject(createTimeoutError({}));
-        }, SECOND);
+        }, 10 * SECOND);
     });
 };
