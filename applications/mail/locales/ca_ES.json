@@ -1557,7 +1557,7 @@
         "Executa al dispositiu"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
-        "Funciona de manera segura als servidors de ${ BRAND_NAME }"
+        "Executa de manera segura als servidors de ${ BRAND_NAME }"
       ],
       "Securely run on device": [
         "Executa de manera segura al dispositiu"
@@ -4884,6 +4884,11 @@
         "No llegit"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Té adjunts"
+      ]
+    },
     "Filter preview": {
       "read": [
         "llegit"
@@ -5685,6 +5690,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mes)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtre si es compleixen totes les condicions següents)"
@@ -7729,6 +7737,9 @@
       "And": [
         "I"
       ],
+      "Anderson": [
+        "Pujol"
+      ],
       "ANY": [
         "QUALSEVOL"
       ],
@@ -7812,6 +7823,9 @@
       ],
       "Colors": [
         "Colors"
+      ],
+      "Company name": [
+        "Nom de l'empresa"
       ],
       "Composer": [
         "Editor"
@@ -7918,6 +7932,9 @@
       "Filter Name": [
         "Nom del filtre"
       ],
+      "First name": [
+        "Nom"
+      ],
       "Folder location": [
         "Ubicació de la carpeta"
       ],
@@ -7941,6 +7958,9 @@
       ],
       "I understand the risk": [
         "Entenc el risc"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "SI"
@@ -7986,6 +8006,9 @@
       ],
       "Last month only": [
         "Només el darrer mes"
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Layout": [
         "Disseny"
@@ -8163,6 +8186,9 @@
       ],
       "Then": [
         "Aleshores"
+      ],
+      "Thomas": [
+        "Adrià"
       ],
       "Time": [
         "Hora"
@@ -9105,7 +9131,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb un missatge"
+        "Genera correus electrònics amb una petició"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -9231,6 +9257,9 @@
       ],
       "Support for up to 2 users": [
         "Suport per a 2 usuaris"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticació de dos factors"
@@ -9530,9 +9559,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Eina de gestió d'organitzacions que permet als administradors afegir i esborrar usuaris, assignar emmagatzematge, configurar dominis i acomplir altres tasques."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra robusta infraestructura garanteix que podreu accedir al vostre compte quan ho necessiteu"
@@ -9981,6 +10007,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferència bancària"
+      ],
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
