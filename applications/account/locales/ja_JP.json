@@ -67,11 +67,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -775,11 +775,14 @@
       "Refresh status": [
         "状態を更新"
       ],
+      "refresh the page": [
+        "ページを更新"
+      ],
       "Refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
-        "ページを更新"
+      "Reject": [
+        "拒否"
       ],
       "Reload": [
         "再読み込み"
@@ -1547,14 +1550,6 @@
         "年末オファーを選択してください"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1576,6 +1571,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
       ]
     },
     "bf2023: Offers": {
@@ -6494,10 +6497,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -9136,6 +9139,9 @@
       "Filter Name": [
         "フィルター名"
       ],
+      "First name": [
+        "名"
+      ],
       "Folder location": [
         "フォルダーの場所"
       ],
@@ -9231,6 +9237,9 @@
       ],
       "Last month only": [
         "過去 1 か月のみ"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield ブロッカーのフィルタリング強度"
@@ -10439,26 +10448,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Get started for ${ price }": [
-        "${ price } で始めましょう"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free で続行"
@@ -10486,6 +10475,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Get started for ${ price }": [
+        "${ price } で始めましょう"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -11040,17 +11049,6 @@
         "選択中のプラン: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price }で Mail Plus を入手する"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -11069,6 +11067,17 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price }で Mail Plus を入手する"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -11161,9 +11170,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "完全なメッセージと連絡先の詳細を含む、非プライベート ユーザーの受信箱をユーザーと同じように表示するオプション"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "管理者がユーザーの追加と削除、ストレージの割り当て、ドメインの構成、およびその他のタスクを実行できるようにする組織管理ツール"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "当社の堅牢なインフラストラクチャにより、必要なときにアカウントにアクセスできるようになります。"
@@ -12868,12 +12874,6 @@
       "For security reasons, the token is hidden": [
         "セキュリティ上の理由から、トークンは隠されています"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "ID プロバイダーに移動し、以下のデータをコピーして貼り付け、${ VPN_APP_NAME } の SCIM の構成を完了します。"
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "ID プロバイダーに移動し、以下のトークンをコピーして貼り付け、${ VPN_APP_NAME } の SCIM を再度有効にします。"
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "SCIM トークンを紛失または忘れた場合は、新しいトークンを生成できますが、ID プロバイダーの設定を更新する必要があることに注意してください。"
       ],
@@ -12882,9 +12882,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "組織で SCIM が無効になると、**アイデンティティ プロバイダーによって自動的に提供されたすべての SCIM ユーザーが SSO ユーザーに変換され**、${ BRAND_NAME } 設定内で直接管理できるようになります。"
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "さまざまなサービスにわたるユーザー管理を簡素化します。 ID プロバイダーでユーザーを追加、編集、削除すると、それらの変更は ${ VPN_APP_NAME } 組織に自動的に適用されます。"
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM 自動プロビジョニングは、新しい SCIM トークンを ID プロバイダーの設定に入力するまで無効になります。"
@@ -14528,10 +14525,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
       "Change login password": [
@@ -14626,6 +14623,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "${ BRAND_NAME } アドレスを作成"
+      ],
+      "Created": [
+        "作成した"
       ],
       "Creating user accounts": [
         "アカウントを作成中"
@@ -15029,6 +15029,9 @@
       "My calendars": [
         "マイカレンダー"
       ],
+      "Name": [
+        "名前"
+      ],
       "Network error": [
         "ネットワークエラー"
       ],
@@ -15145,6 +15148,9 @@
       ],
       "Remove calendar": [
         "カレンダーを削除する"
+      ],
+      "Remove device?": [
+        "デバイスを削除しますか？"
       ],
       "Remove domain": [
         "ドメインを削除する"
@@ -15265,9 +15271,6 @@
       ],
       "Sign in to join the Beta program": [
         "サインインしてベータプログラムに参加する"
-      ],
-      "Sign in to your organization": [
-        "組織にサインインする"
       ],
       "Sign out": [
         "サインアウト"

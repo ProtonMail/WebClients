@@ -61,11 +61,11 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -748,11 +748,14 @@
       "Refresh status": [
         "刷新状态"
       ],
+      "refresh the page": [
+        "刷新页面"
+      ],
       "Refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
-        "刷新页面"
+      "Reject": [
+        "拒绝"
       ],
       "Reload": [
         "刷新"
@@ -1445,14 +1448,6 @@
         "选择您的年终优惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 存储空间 (是其他套餐的 2 倍)"
@@ -1474,6 +1469,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "套餐 ${ plan } 限时回归"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -6119,10 +6122,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -8697,6 +8700,9 @@
       "Filter Name": [
         "筛选规则名称"
       ],
+      "First name": [
+        "名"
+      ],
       "Folder location": [
         "文件夹位置"
       ],
@@ -8789,6 +8795,9 @@
       ],
       "Last month only": [
         "仅上个月"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Level for NetShield blocker filtering": [
         "NetShield 过滤级别"
@@ -9962,23 +9971,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -10006,6 +9998,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -10498,14 +10507,6 @@
         "您所选的账户等级：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -10524,6 +10525,14 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -10598,9 +10607,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "可查看非私密用户的邮件全文与联系人详情"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "机构管理员能够执行增删用户、分配存储空间、配置域名等操作"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "我们稳定的系统架构确保您能够在需要时顺利登录账户"
@@ -13307,10 +13313,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -13402,6 +13408,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "创建 ${ BRAND_NAME } 地址"
+      ],
+      "Created": [
+        "创建时间"
       ],
       "Creating user accounts": [
         "正在创建账户"
@@ -13781,6 +13790,9 @@
       "My calendars": [
         "我的日历"
       ],
+      "Name": [
+        "名称"
+      ],
       "Network error": [
         "网络错误"
       ],
@@ -13892,6 +13904,9 @@
       "Remove calendar": [
         "删除日历"
       ],
+      "Remove device?": [
+        "移除设备？"
+      ],
       "Remove domain": [
         "移除域名"
       ],
@@ -14002,9 +14017,6 @@
       ],
       "Sign in to join the Beta program": [
         "登录以加入测试版计划"
-      ],
-      "Sign in to your organization": [
-        "登录到您的组织"
       ],
       "Sign out": [
         "退出"

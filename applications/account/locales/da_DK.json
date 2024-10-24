@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -796,11 +796,14 @@
       "Refresh status": [
         "Opdater status"
       ],
+      "refresh the page": [
+        "opdater siden"
+      ],
       "Refresh the page": [
         "Opdater siden"
       ],
-      "refresh the page": [
-        "opdater siden"
+      "Reject": [
+        "Afvis"
       ],
       "Reload": [
         "Genindlæs"
@@ -1598,14 +1601,6 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1627,6 +1622,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3858,6 +3861,9 @@
       ],
       "Unsubscribe?": [
         "Afmeld?"
+      ],
+      "We're sorry to see you go.": [
+        "Vi er kede af, at du forlader os."
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Hvilke e-mails ønsker du at modtage fra ${ BRAND_NAME }?"
@@ -6990,11 +6996,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
@@ -8260,9 +8266,6 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Dette er en krypteringsnøgle, som du måske tidligere har gemt."
-      ],
-      "This is an invitation from:": [
-        "Dette er en invitation fra:"
       ],
       "This is the password you used before the password reset.": [
         "Dette er den adgangskode, du brugte før adgangskodenulstillingen."
@@ -9909,6 +9912,9 @@
       "Filter Name": [
         "Filternavn"
       ],
+      "First name": [
+        "Fornavn"
+      ],
       "Folder location": [
         "Mappeplacering"
       ],
@@ -10010,6 +10016,9 @@
       ],
       "Last month only": [
         "Kun seneste måned"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
@@ -10238,6 +10247,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Search by email": [
+        "Søg via e-mail"
       ],
       "Second password": [
         "Anden adgangskode"
@@ -11307,32 +11319,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Fra ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11360,6 +11346,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Fra ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12031,20 +12043,6 @@
         "Dit valgte abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -12063,6 +12061,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -12165,9 +12177,6 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Organisationsstyringsværktøj, der lader administratorer tilføje og fjerne brugere, tildele lagerplads, konfigurere domæner og udføre andre opgaver"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vores robuste infrastruktur sikrer, at du kan få adgang til din konto, når du har brug for det"
@@ -14119,12 +14128,6 @@
       "For security reasons, the token is hidden": [
         "Af hensyn til sikkerheden er tokenet skjult"
       ],
-      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ VPN_APP_NAME }.": [
-        "Gå til din identitetsudbyder, kopier og indsæt data nedenfor, og afslut konfigurationen af SCIM for ${ VPN_APP_NAME }."
-      ],
-      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ VPN_APP_NAME }.": [
-        "Gå til din identitetsudbyder, kopier og indsæt tokenet nedenfor, og genaktiver SCIM for ${ VPN_APP_NAME }."
-      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Hvis du har mistet eller glemt SCIM-tokenet, kan du generere et nyt, men vær opmærksom på, at indstillingerne for din identitetsudbyder skal opdateres."
       ],
@@ -14133,9 +14136,6 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Så snart SCIM er deaktiveret for din organisation, bliver **alle SCIM-brugere, der tildeles automatisk af din identitetsudbyder, omdannet til SSO-brugere**, og du vil kunne styre dem direkte i ${ BRAND_NAME }-indstillingerne."
-      ],
-      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ VPN_APP_NAME } organization.": [
-        "Brugeradministration forenkles på tværs af forskellige tjenester. Tilføj, rediger og fjern brugere i din identitetsudbyder, og disse ændringer anvendes automatisk i din ${ VPN_APP_NAME }-organisation."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM's automatiske provisionering deaktiveres, indtil du indtaster det nye SCIM-token via din identitetsudbyders indstillinger."
@@ -16076,11 +16076,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -16178,6 +16178,9 @@
       ],
       "Create your ${ BRAND_NAME } address": [
         "Opret din ${ BRAND_NAME }-adresse"
+      ],
+      "Created": [
+        "Oprettet"
       ],
       "Creating user accounts": [
         "Opretter brugerkonti"
@@ -16596,6 +16599,9 @@
       "My calendars": [
         "Mine kalendere"
       ],
+      "Name": [
+        "Navn"
+      ],
       "Need more labels or folders?": [
         "Brug for flere etiketter eller mapper?"
       ],
@@ -16731,8 +16737,14 @@
       "Remove calendar": [
         "Fjern kalender"
       ],
+      "Remove device?": [
+        "Fjern enhed?"
+      ],
       "Remove domain": [
         "Fjern domæne"
+      ],
+      "Remove server?": [
+        "Fjern server?"
       ],
       "Remove single sign-on": [
         "Fjern single sign-on"
@@ -16853,9 +16865,6 @@
       ],
       "Sign in to join the Beta program": [
         "Log ind for tilmelding til Beta programmet"
-      ],
-      "Sign in to your organization": [
-        "Log ind med din organisation"
       ],
       "Sign out": [
         "Log ud"
