@@ -16,6 +16,13 @@ const driveFilesMatch = danger.git.fileMatch('applications/drive', 'packages/dri
 const driveFilesTouched =
     driveFilesMatch.created || driveFilesMatch.edited || driveFilesMatch.deleted || driveFilesMatch.modified;
 
+/**
+ * Fails if no assignee is provided.
+ *
+ * @param {Object} options - The options object.
+ * @param {boolean} [options.disabled=false] - Indicates whether the check is disabled.
+ * @returns {void}
+ */
 const failIfNoAssignees = ({ disabled = false }) => {
     if (disabled) return;
 
@@ -24,6 +31,13 @@ const failIfNoAssignees = ({ disabled = false }) => {
     }
 };
 
+/**
+ * Fails if no description is provided.
+ *
+ * @param {Object} options - The options object.
+ * @param {boolean} [options.disabled=false] - Indicates whether the check is disabled.
+ * @returns {void}
+ */
 const failIfNoDescription = ({ disabled = false }) => {
     if (disabled) return;
 
