@@ -131,7 +131,7 @@ export const Autosave: FC<Props> = ({ data }) => {
 
     return (
         <FormikProvider value={form}>
-            <Form className="ui-violet flex flex-column flex-nowrap justify-space-between h-full anime-fadein gap-2">
+            <Form className="ui-violet flex flex-column flex-nowrap *:shrink-0 justify-space-between h-full anime-fadein gap-2">
                 <NotificationHeader
                     discardOnClose={shouldDiscard}
                     title={(() => {
