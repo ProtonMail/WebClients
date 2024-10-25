@@ -14,7 +14,7 @@ import { useCalendarSelector } from '../store/hooks';
 // Count the number of events sharing the same UID that are pending
 const countPendingEvents = (events: CalendarViewEventStore[], UID: string, key: 'isSaving' | 'isDeleting') => {
     return events.reduce((acc, event) => {
-        const { UID: eventUID } = event.data.eventData as CalendarEvent;
+        const eventUID = (event.data?.eventData as CalendarEvent)?.UID;
 
         if (UID === eventUID && event[key]) {
             return acc + 1;
@@ -75,7 +75,7 @@ const usePendingNotifications = () => {
             return;
         }
         events.forEach((event) => {
-            const { UID } = event.data.eventData as CalendarEvent;
+            const UID = (event.data?.eventData as CalendarEvent)?.UID;
             handleNotification(UID, !!event.isSaving, savingIds, 'isSaving');
             handleNotification(UID, !!event.isDeleting, deletingIds, 'isDeleting');
         });

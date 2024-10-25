@@ -468,8 +468,8 @@ const InteractiveCalendarView = ({
                 }
 
                 return events.some((event: CalendarViewEventStore) => {
-                    const { UID } = event.data?.eventData as CalendarEvent;
-                    const { UID: selectedUID } = selectedEvent.data?.eventData as CalendarEvent;
+                    const UID = (event.data?.eventData as CalendarEvent)?.UID;
+                    const selectedUID = (selectedEvent.data?.eventData as CalendarEvent)?.UID;
 
                     if (UID && UID === selectedUID) {
                         return event.isSaving || event.isDeleting;
@@ -1405,7 +1405,7 @@ const InteractiveCalendarView = ({
         let hasStartChanged;
         // uid is not defined when we create a new event
         const UID = temporaryEvent.tmpData.uid || 'tmp';
-        const { ID } = temporaryEvent.data.eventData as CalendarEvent;
+        const ID = (temporaryEvent.data?.eventData as CalendarEvent)?.ID;
         const selfEmail = inviteActions.selfAddress?.Email;
         let oldPartstat: string | undefined;
 
@@ -1518,9 +1518,10 @@ const InteractiveCalendarView = ({
     };
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions) => {
-        const eventData = targetEvent.data.eventData as CalendarEvent;
-        const isRecurring = !!eventData.RRule;
-        const { UID } = eventData;
+        const eventData = targetEvent.data?.eventData as CalendarEvent;
+        const { RRule, UID } = eventData || {};
+        const isRecurring = !!RRule;
+
         let recurringType: RECURRING_TYPES | undefined;
 
         try {
