@@ -14,9 +14,10 @@ const useOffer = (): Operation => {
     const [subscription, subscriptionLoading] = useSubscription();
     const { isActive, loading: flagsLoading } = useOfferFlags(config);
     const [lastSubscriptionEnd, lastSubscriptionEndLoading] = useLastSubscriptionEnd();
-    const preferredCurrency = useAutomaticCurrency();
+    const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const protonConfig = useConfig();
-    const isLoading = flagsLoading || userLoading || subscriptionLoading || lastSubscriptionEndLoading;
+    const isLoading =
+        flagsLoading || userLoading || subscriptionLoading || lastSubscriptionEndLoading || loadingCurrency;
     const isEligible = getIsEligible({ subscription, protonConfig, user, lastSubscriptionEnd, preferredCurrency });
 
     const isValid = isEligible && isActive;

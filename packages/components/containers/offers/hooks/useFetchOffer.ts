@@ -19,7 +19,7 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
     const { paymentsApi } = usePaymentsApiWithCheckFallback();
     const [loading, withLoading] = useLoading();
     const [state, setState] = useState<Partial<{ offer: Offer; offerConfig: OfferConfig }>>();
-    const [plansResult] = usePlans();
+    const [plansResult, plansLoading] = usePlans();
     const plans = plansResult?.plans;
 
     useEffect(() => {
@@ -65,7 +65,7 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
         void withLoading(updateOfferPrices());
     }, [offerConfig, currency, plans]);
 
-    return [state?.offer, loading];
+    return [state?.offer, loading || plansLoading];
 }
 
 export default useFetchOffer;
