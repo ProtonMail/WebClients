@@ -2,11 +2,6 @@ import { type FC, useEffect } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
-import {
-    MIN_DROPDOWN_HEIGHT,
-    NOTIFICATION_HEIGHT_XS,
-    NOTIFICATION_WIDTH,
-} from 'proton-pass-extension/app/content/constants.static';
 import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
@@ -23,14 +18,7 @@ import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import {
-    type AutosaveCreatePayload,
-    type AutosaveFormValues,
-    AutosaveMode,
-    type AutosavePayload,
-    type AutosaveUpdatePayload,
-    WorkerMessageType,
-} from '@proton/pass/types';
+import { type AutosaveFormValues, AutosaveMode, type AutosavePayload, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { withMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
@@ -43,7 +31,7 @@ const getInitialValues = ({ userIdentifier, password, type }: AutosavePayload, d
         : { name: domain, password, shareId: '', step: 'edit', type, userIdentifier };
 
 export const Autosave: FC<Props> = ({ data }) => {
-    const { visible, close, domain, resize } = useIFrameContext();
+    const { visible, close, domain } = useIFrameContext();
     const { onTelemetry } = usePassCore();
     const { createNotification } = useNotifications();
 
@@ -81,6 +69,8 @@ export const Autosave: FC<Props> = ({ data }) => {
         },
 
         onSubmit: async (values, { setValues }) => {
+            /** submit event from `select` step means the
+             * user clicked the `create new login` button */
             if (values.step === 'select') {
                 return setValues(
                     withMerge<AutosaveFormValues>({
@@ -113,21 +103,12 @@ export const Autosave: FC<Props> = ({ data }) => {
 
     useEffect(() => {
         if (shouldUpdate) {
-            form.setValues({ ...getInitialValues(data, domain), shareId: form.values.shareId }).catch(noop);
+            form.setValues({
+                ...getInitialValues(data, domain),
+                shareId: form.values.shareId,
+            }).catch(noop);
         }
     }, [shouldUpdate, data]);
-
-    useEffect(() => {
-        if (form.values.step === 'edit') return resize(NOTIFICATION_WIDTH);
-
-        // Max we accept is 3
-        if (form.values.type === AutosaveMode.UPDATE) {
-            const candidates = data.type === AutosaveMode.UPDATE ? data.candidates.length : 0;
-            if (candidates > 3) return resize(NOTIFICATION_WIDTH);
-            if (candidates === 1) return resize(NOTIFICATION_HEIGHT_XS + MIN_DROPDOWN_HEIGHT * candidates + 10);
-            resize(NOTIFICATION_HEIGHT_XS + MIN_DROPDOWN_HEIGHT * candidates);
-        }
-    }, [data, form]);
 
     return (
         <FormikProvider value={form}>
@@ -156,11 +137,10 @@ export const Autosave: FC<Props> = ({ data }) => {
                         />
                     }
                 />
-                {form.values.step === 'select' && (
-                    <AutosaveSelect data={data as AutosaveUpdatePayload} busy={busy} form={form} />
-                )}
-                {form.values.step === 'edit' && (
-                    <AutosaveForm data={data as AutosaveCreatePayload} busy={busy} form={form} />
+                {form.values.step === 'select' && data.type === AutosaveMode.UPDATE ? (
+                    <AutosaveSelect data={data} busy={busy} form={form} />
+                ) : (
+                    <AutosaveForm data={data} busy={busy} form={form} />
                 )}
             </Form>
         </FormikProvider>
