@@ -302,18 +302,18 @@ const SubscriptionContainer = ({
 
         const currency = getPlanCurrencyFromPlanIDs(plansMap, planIDs) ?? preferredCurrency;
 
-        const cycle = getInitialCycle(
-            maybeCycle,
+        const cycle = getInitialCycle({
+            cycleParam: maybeCycle,
             subscription,
             planIDs,
             plansMap,
-            step === SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            isPlanSelection: step === SUBSCRIPTION_STEPS.PLAN_SELECTION,
             app,
             minimumCycle,
             maximumCycle,
             currency,
-            allowDowncycling
-        );
+            allowDowncycling,
+        });
 
         const model: Model = {
             step,
@@ -1044,6 +1044,7 @@ const SubscriptionContainer = ({
                                 if (isFreePlanSelected) {
                                     return null;
                                 }
+
                                 return (
                                     <>
                                         <h2 className="text-2xl text-bold mb-4">
