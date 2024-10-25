@@ -134,7 +134,7 @@ const verifyAttachment = async ({ resolveAttachment, updateSpy }: VerifyAttachme
 
     await waitForAutoSave(updateSpy);
 
-    expect(screen.getByRole('button', { name: 'Show attachment details' })).toHaveTextContent('1 file attached');
+    expect(screen.getByTitle('Show attachment details')).toHaveTextContent('1 file attached');
 };
 
 describe('Composer attachments', () => {
@@ -186,9 +186,7 @@ describe('Composer attachments', () => {
         await switchAddress();
 
         await waitFor(() => {
-            expect(screen.getByRole('button', { name: 'Show attachment details' })).toHaveTextContent(
-                '1 file attached'
-            );
+            expect(screen.getByTitle('Show attachment details')).toHaveTextContent('1 file attached');
         });
 
         await saveNow(container);
