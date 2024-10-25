@@ -121,7 +121,10 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
                     },
                 });
             } catch (error: any) {
-                throw new Error(error?.error ?? c('Wallet Send').t`Could not broadcast transaction`);
+                throw new Error(
+                    error?.error ??
+                        c('Wallet Send').t`Could not broadcast transaction. Please sync your wallet and try again`
+                );
             }
         });
     };
