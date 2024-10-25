@@ -27,7 +27,7 @@ const AuthDeviceModal: FC<Props> = ({ pendingAuthDevice, onExit }) => {
 
     const reject = useRequest(rejectPendingAuthDevice, {
         initialRequestId: rejectPendingAuthDeviceRequest(pendingAuthDevice.ID),
-        onSuccess: onClose,
+        onStart: onClose,
     });
 
     return (
