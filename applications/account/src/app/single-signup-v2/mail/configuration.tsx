@@ -12,15 +12,7 @@ import {
 } from '@proton/components/containers/payments/features/mail';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { PLANS } from '@proton/payments';
-import {
-    APPS,
-    BRAND_NAME,
-    CALENDAR_APP_NAME,
-    CYCLE,
-    MAIL_APP_NAME,
-    MAIL_SHORT_APP_NAME,
-    SSO_PATHS,
-} from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CYCLE, MAIL_APP_NAME, MAIL_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -31,44 +23,76 @@ import Benefits from '../Benefits';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
-import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
+import {
+    getAdvancedSecurityBenefit,
+    getAppsIncludedBenefit,
+    getAppsMailIncludedBenefit,
+    getBasedInSwitzerlandGDPRBenefit,
+    getBenefits,
+    getBuiltInEncryptionBenefit,
+    getBundleVisionaryBenefits,
+    getEmailAliasesBenefit,
+    getFamilyDuoBenefits,
+    getGenericFeatures,
+    getISO27001CertifiedBenefit,
+    getJoinString,
+    getOpenSourceAndAuditedBenefit,
+    getSwissPrivacyLawsBenefit,
+    getTeamKnowsEncryptionBenefit,
+    getWorksOnAllDevicesBenefit,
+} from '../configuration/helper';
 import type { PlanParameters, SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
 import CustomStep from './CustomStep';
 import setupAccount from './account-setup.svg';
 
-export const getMailBenefits = (plan: PLANS | undefined): BenefitItem[] => {
+const getMailBenefitsTitle = (plan: PLANS | undefined, audience: Audience | undefined) => {
+    if (plan === PLANS.BUNDLE_PRO_2024 || plan === PLANS.BUNDLE || plan === PLANS.FAMILY) {
+        return getBenefits(BRAND_NAME);
+    }
+    if (audience === Audience.B2B) {
+        return getBenefits(MAIL_APP_NAME);
+    }
+    return c('Signup: Info').t`The only email service with:`;
+};
+
+export const getMailBenefits = (plan: PLANS | undefined, audience: Audience | undefined): BenefitItem[] => {
+    if (plan === PLANS.BUNDLE || plan === PLANS.VISIONARY) {
+        return getBundleVisionaryBenefits();
+    }
+
+    if (plan === PLANS.FAMILY || plan === PLANS.DUO) {
+        return getFamilyDuoBenefits();
+    }
+
+    if (plan === PLANS.BUNDLE_PRO_2024) {
+        return [
+            getOpenSourceAndAuditedBenefit(),
+            getBasedInSwitzerlandGDPRBenefit(),
+            getISO27001CertifiedBenefit(),
+            getTeamKnowsEncryptionBenefit(),
+            getWorksOnAllDevicesBenefit(),
+            getAppsIncludedBenefit(),
+        ];
+    }
+
+    if (audience === Audience.B2B) {
+        return [
+            getOpenSourceAndAuditedBenefit(),
+            getBasedInSwitzerlandGDPRBenefit(),
+            getISO27001CertifiedBenefit(),
+            getTeamKnowsEncryptionBenefit(),
+            getWorksOnAllDevicesBenefit(),
+            getAppsMailIncludedBenefit(),
+        ];
+    }
+
     return [
-        {
-            key: 1,
-            text: c('pass_signup_2023: Info').t`End-to-end encryption`,
-            icon: {
-                name: 'lock',
-            },
-        },
-        ...getGenericBenefits(),
-        plan === PLANS.DUO || plan === PLANS.FAMILY
-            ? {
-                  key: 12,
-                  text: c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
-                  icon: {
-                      name: 'pen-sparks',
-                  },
-              }
-            : {
-                  key: 12,
-                  text: c('pass_signup_2023: Info').t`Works on all devices`,
-                  icon: {
-                      name: 'mobile',
-                  },
-              },
-        {
-            key: 2,
-            text: CALENDAR_APP_NAME,
-            icon: {
-                name: 'brand-proton-calendar',
-            },
-        },
+        getBuiltInEncryptionBenefit(),
+        getSwissPrivacyLawsBenefit(),
+        getEmailAliasesBenefit(),
+        getAdvancedSecurityBenefit(),
+        getAppsMailIncludedBenefit(),
     ];
 };
 
@@ -266,12 +290,10 @@ export const getMailConfiguration = ({
         };
     }
 
-    const benefitItems = getMailBenefits(plan?.Name as PLANS);
+    const benefitItems = getMailBenefits(plan?.Name as PLANS, audience);
     const benefits = benefitItems && (
         <div>
-            <div className="text-lg text-semibold">
-                {getBenefits(plan?.Name === PLANS.BUNDLE_PRO_2024 ? BRAND_NAME : MAIL_APP_NAME)}
-            </div>
+            <div className="text-lg text-semibold">{getMailBenefitsTitle(plan?.Name as PLANS, audience)}</div>
             <Benefits className="mt-5 mb-5" features={benefitItems} />
             <div>{getJoinString()}</div>
         </div>

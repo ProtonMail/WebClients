@@ -32,7 +32,7 @@ import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import StepLabel, { StepLabelSize } from '../StepLabel';
-import { getBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
+import { getBenefits, getGenericFeatures, getJoinString, getSwissPrivacyLawsBenefit } from '../configuration/helper';
 import type { SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
 import setupAccount from '../mail/account-setup.svg';
@@ -42,30 +42,24 @@ export const getWalletBenefits = (): BenefitItem[] => {
     return [
         {
             key: 1,
-            text: c('pass_signup_2023: Info').t`End-to-end encryption`,
+            text: c('Signup: Info').t`End-to-end encrypted transactions`,
             icon: {
                 name: 'lock' as const,
             },
         },
         {
             key: 2,
-            text: c('pass_signup_2023: Info').t`Protected by Swiss privacy laws`,
+            text: c('Signup: Info').t`Self-custody — only you have access to your wallet keys`,
             icon: {
-                name: 'shield' as const,
+                name: 'user' as const,
             },
         },
-        {
-            key: 3,
-            text: c('pass_signup_2023: Info').t`Open source and audited`,
-            icon: {
-                name: 'magnifier' as const,
-            },
-        },
+        getSwissPrivacyLawsBenefit(),
         {
             key: 4,
-            text: c('pass_signup_2023: Info').t`Works on all devices`,
+            text: c('Signup: Info').t`Open source and verified`,
             icon: {
-                name: 'mobile' as const,
+                name: 'magnifier' as const,
             },
         },
     ].filter(isTruthy);
