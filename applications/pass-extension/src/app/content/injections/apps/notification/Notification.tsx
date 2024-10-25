@@ -1,4 +1,4 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC, useEffect, useRef, useState } from 'react';
 
 import {
     useIFrameContext,
@@ -22,8 +22,10 @@ import { PasskeyGet } from './views/PasskeyGet';
 import './Notification.scss';
 
 export const Notification: FC = () => {
-    const { visible } = useIFrameContext();
+    const { visible, resize } = useIFrameContext();
     const app = useAppState();
+    const ref = useRef<HTMLDivElement>(null);
+
     const [state, setState] = useState<MaybeNull<NotificationActions>>(null);
     const loading = state === null || clientBusy(app.state.status);
 
@@ -31,27 +33,35 @@ export const Notification: FC = () => {
 
     useEffect(() => {
         if (!visible) setState(null);
+
+        if (ref.current) {
+            const obs = new ResizeObserver(([entry]) => resize(entry.contentRect.height));
+            obs.observe(ref.current);
+            return () => obs.disconnect();
+        }
     }, [visible]);
 
     return (
         <Localized>
-            <div className="h-full p-4 bg-norm relative" style={{ '--anime-delay': '0s' }}>
-                {(() => {
-                    if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
+            <div className="min-h-full bg-norm relative" style={{ '--anime-delay': '0s' }} ref={ref}>
+                <div className="h-full p-4">
+                    {(() => {
+                        if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 
-                    switch (state.action) {
-                        case NotificationAction.AUTOSAVE:
-                            return <Autosave {...state} />;
-                        case NotificationAction.OTP:
-                            return <AutofillOTP {...state} />;
-                        case NotificationAction.PASSKEY_CREATE:
-                            return <PasskeyCreate {...state} />;
-                        case NotificationAction.PASSKEY_GET:
-                            return <PasskeyGet {...state} />;
-                    }
-                })()}
+                        switch (state.action) {
+                            case NotificationAction.AUTOSAVE:
+                                return <Autosave {...state} />;
+                            case NotificationAction.OTP:
+                                return <AutofillOTP {...state} />;
+                            case NotificationAction.PASSKEY_CREATE:
+                                return <PasskeyCreate {...state} />;
+                            case NotificationAction.PASSKEY_GET:
+                                return <PasskeyGet {...state} />;
+                        }
+                    })()}
 
-                <NotificationsChildren />
+                    <NotificationsChildren />
+                </div>
             </div>
         </Localized>
     );

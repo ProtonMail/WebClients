@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import { Field, FormikContextType } from 'formik';
+import { Field, type FormikContextType } from 'formik';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { c } from 'ttag';
 
@@ -10,11 +10,12 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
-import { type AutosaveCreatePayload, type AutosaveFormValues, AutosaveMode } from '@proton/pass/types';
+import type { AutosavePayload } from '@proton/pass/types';
+import { type AutosaveFormValues, AutosaveMode } from '@proton/pass/types';
 
 type Props = {
-    data: AutosaveCreatePayload;
     busy: boolean;
+    data: AutosavePayload;
     form: FormikContextType<AutosaveFormValues>;
 };
 
@@ -66,7 +67,7 @@ export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
                     label={c('Label').t`Password`}
                 />
             </FieldsetCluster>
-            <div className="flex justify-space-between shrink-0 gap-3 mt-1">
+            <div className="flex justify-space-between gap-3 mt-1">
                 <Button pill color="norm" shape="outline" onClick={() => close({ discard: shouldDiscard })}>{c('Action')
                     .t`Not now`}</Button>
                 <Button pill color="norm" type="submit" loading={busy} disabled={busy} className="flex-auto">
