@@ -4,7 +4,8 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { useApi, useGetUserKeys, useNotifications } from '@proton/components';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi, useNotifications } from '@proton/components';
 import {
     INDEXING_STATUS,
     checkVersionedESDB,

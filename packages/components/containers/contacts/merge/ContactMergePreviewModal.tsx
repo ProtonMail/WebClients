@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -13,7 +14,6 @@ import type { ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { useUserKeys } from '../../../hooks';
 import ContactMergeErrorContent from './ContactMergeErrorContent';
 import ContactMergeViewContent from './ContactMergeViewContent';
 import MergingModalContent from './ContactMergingContent';

@@ -6,7 +6,6 @@ export { default as useNotifications } from './useNotifications';
 export { default as useSubscription, useGetSubscription } from './useSubscription';
 export { default as usePreventCloseTab } from './usePreventCloseTab';
 export * from './useSessionRecovery';
-export { useUserKeys, useGetUserKeys } from './useUserKeys';
 export { useWelcomeFlags } from './useWelcomeFlags';
 export * from './drawer';
 export * from './usePreferredPlansMap';
