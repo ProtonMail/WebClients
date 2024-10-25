@@ -22,13 +22,13 @@ describe('LocationField', () => {
 
         expect(screen.getByText('Search in'));
 
-        const allMailButton = screen.getByRole('button', { name: 'Search in All mail' });
+        const allMailButton = screen.getByRole('button', { name: 'All mail' });
         expect(allMailButton).toBeInTheDocument();
         expect(allMailButton).toHaveClass('button-solid-norm');
 
-        expect(screen.getByRole('button', { name: 'Search in Inbox' }));
-        expect(screen.getByRole('button', { name: 'Search in Drafts' }));
-        expect(screen.getByRole('button', { name: 'Search in Sent' }));
+        expect(screen.getByRole('button', { name: 'Inbox' }));
+        expect(screen.getByRole('button', { name: 'Drafts' }));
+        expect(screen.getByRole('button', { name: 'Sent' }));
         expect(screen.getByRole('button', { name: 'Other' }));
     });
 
@@ -37,7 +37,7 @@ describe('LocationField', () => {
             const onChange = jest.fn();
             renderWithProviders(<LocationField value={MAILBOX_LABEL_IDS.INBOX} onChange={onChange} />);
 
-            const draftsButton = screen.getByRole('button', { name: 'Search in Drafts' });
+            const draftsButton = screen.getByRole('button', { name: 'Drafts' });
             await userEvent.click(draftsButton);
 
             await waitFor(() => {
@@ -77,7 +77,7 @@ describe('LocationField', () => {
             renderWithProviders(<LocationField value={'36'} onChange={onChange} />);
 
             expect(screen.getByText('Highlighted')).toBeInTheDocument();
-            const customLabelButton = screen.getByRole('button', { name: 'Remove' });
+            const customLabelButton = screen.getByRole('button', { name: 'Highlighted' });
             expect(customLabelButton).toBeInTheDocument();
             expect(customLabelButton).toHaveClass('button-solid-norm');
 
@@ -100,7 +100,7 @@ describe('LocationField', () => {
                 });
 
                 expect(screen.getByText('Highlighted')).toBeInTheDocument();
-                const customLabelButton = screen.getByRole('button', { name: 'Remove' });
+                const customLabelButton = screen.getByRole('button', { name: 'Highlighted' });
                 expect(customLabelButton).toBeInTheDocument();
                 expect(customLabelButton).toHaveClass('button-solid-norm');
 
