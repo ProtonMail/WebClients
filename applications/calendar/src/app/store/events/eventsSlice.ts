@@ -75,7 +75,7 @@ const slice = createSlice({
         ) {
             const { targetEvent, isDeleted, recurringType } = action.payload;
             const { uniqueId: targetUniqueId } = targetEvent;
-            const { UID: targetUID } = targetEvent.data?.eventData as CalendarEvent;
+            const targetUID = (targetEvent.data?.eventData as CalendarEvent)?.UID;
 
             if (recurringType === RECURRING_TYPES.SINGLE) {
                 // Find and update only the target event (single edit case included)
@@ -90,7 +90,7 @@ const slice = createSlice({
                 let needRefresh = true;
                 // Update all instances of the recurring event
                 state.events.forEach((event) => {
-                    const { UID } = event.data?.eventData as CalendarEvent;
+                    const UID = (event.data?.eventData as CalendarEvent)?.UID;
 
                     if (UID && UID === targetUID) {
                         const eventReadResult = getEventReadResult(event.uniqueId);
@@ -130,7 +130,7 @@ const slice = createSlice({
                 // Update all future instances of the recurring event
                 state.events.forEach((event) => {
                     if (event.start >= targetEvent.start) {
-                        const { UID } = event.data?.eventData as CalendarEvent;
+                        const UID = (event.data?.eventData as CalendarEvent)?.UID;
 
                         if (UID && UID === targetUID) {
                             event.isDeleted = isDeleted;
@@ -141,7 +141,7 @@ const slice = createSlice({
         },
         markEventAsDeleting(state, action: PayloadAction<{ UID: string; isDeleting: boolean }>) {
             state.events.forEach((event) => {
-                const { UID } = event.data?.eventData as CalendarEvent;
+                const UID = (event.data?.eventData as CalendarEvent)?.UID;
 
                 if (UID === action.payload.UID) {
                     event.isDeleting = action.payload.isDeleting;
@@ -150,7 +150,7 @@ const slice = createSlice({
         },
         markEventAsSaving(state, action: PayloadAction<{ UID: string; isSaving: boolean }>) {
             state.events.forEach((event) => {
-                const { UID } = event.data?.eventData as CalendarEvent;
+                const UID = (event.data?.eventData as CalendarEvent)?.UID;
 
                 if (UID === action.payload.UID) {
                     event.isSaving = action.payload.isSaving;
@@ -159,7 +159,7 @@ const slice = createSlice({
         },
         updateInvite(state, action: PayloadAction<{ ID: string; selfEmail: string; partstat: string }>) {
             state.events.forEach((event) => {
-                const { ID } = event.data?.eventData as CalendarEvent;
+                const ID = (event.data?.eventData as CalendarEvent)?.ID;
                 // We use the event ID instead of the event UID since single edit must not change for invite.
                 if (ID && ID === action.payload.ID) {
                     const needRefresh = setPartstat(event.uniqueId, action.payload.selfEmail, action.payload.partstat);
