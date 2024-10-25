@@ -65,7 +65,7 @@ export const useVolumeLinkView = () => {
                     if (error.data?.Code === API_CUSTOM_ERROR_CODES.NOT_FOUND) {
                         return undefined;
                     }
-                    return error;
+                    throw error;
                 });
                 if (link?.shareId) {
                     volumeState.setVolumeShareIds(volumeId, [link.shareId]);
@@ -146,7 +146,7 @@ export const useVolumeLinkView = () => {
                         text: error.message,
                     });
                 }
-                return error;
+                throw error;
             });
     };
 
