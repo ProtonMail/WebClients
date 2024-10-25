@@ -1,7 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import { useHandler } from './index';
+import { useHandler } from './useHandler';
 
 export interface ContactFocusContext {
     elementIDs: string[];

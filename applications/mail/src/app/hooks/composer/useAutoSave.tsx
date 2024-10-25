@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
+import type { Cancellable } from '@proton/components';
 import { useHandler } from '@proton/components';
-import type { Cancellable } from '@proton/components/hooks/useHandler';
 
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
 import type { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';

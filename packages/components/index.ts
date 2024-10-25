@@ -866,6 +866,8 @@ export { default as useGetCalendarEventRaw } from './hooks/useGetCalendarEventRa
 export { default as useGetCalendarInfo } from './hooks/useGetCalendarInfo';
 export { default as useGetEncryptionPreferences } from './hooks/useGetEncryptionPreferences';
 export { default as useGetVerificationPreferences } from './hooks/useGetVerificationPreferences';
+export { useEventListener, useHandler, useInterval, useSubscribeEventManager } from './hooks/useHandler';
+export type { Cancellable } from './hooks/useHandler';
 export { default as useHasSuspendedCounter } from './hooks/useHasSuspendedCounter';
 export { useHotkeys, type HotkeyTuple } from './hooks/useHotkeys';
 export { default as useInboxDesktopBadgeCount } from './hooks/useInboxDesktopBadgeCount';
