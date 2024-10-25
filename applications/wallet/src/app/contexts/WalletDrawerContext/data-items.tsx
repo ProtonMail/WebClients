@@ -8,6 +8,7 @@ import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Href } from '@proton/atoms';
 import { Icon, Info, MiddleEllipsis, Tooltip, useModalState } from '@proton/components';
 import { SECOND } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/index';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
@@ -186,6 +187,7 @@ export const DateDataItem = ({ tx }: TxDataListItemProps) => {
 export const StatusDataItem = ({ tx, onBoost }: TxDataListItemProps & { onBoost: () => void }) => {
     const isConfirmed = !!tx?.networkData.time.confirmed;
     const isSentTx = isSentTransaction(tx);
+    const isRbfEnabled = useFlag('WalletRbf');
 
     const [boostTransactionModal, setBoostTransactionModal, renderBoostTransactionModal] = useModalState();
 
@@ -204,7 +206,7 @@ export const StatusDataItem = ({ tx, onBoost }: TxDataListItemProps & { onBoost:
                 </span>
             </div>
 
-            {!isConfirmed && isSentTx && (
+            {isRbfEnabled && !isConfirmed && isSentTx && (
                 <>
                     <Button
                         className="flex flex-row items-center"
