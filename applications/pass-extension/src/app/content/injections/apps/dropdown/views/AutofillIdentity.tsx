@@ -4,8 +4,8 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
+import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
-import { DropdownItemsList } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownItemsList';
 import type { DropdownAction, DropdownActions } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
@@ -115,7 +115,7 @@ export const AutofillIdentity: FC<Props> = ({ domain }) => {
                 }
             />
             {dropdownItems.length > 0 ? (
-                <DropdownItemsList>{dropdownItems}</DropdownItemsList>
+                <ScrollableItemsList>{dropdownItems}</ScrollableItemsList>
             ) : (
                 <ListItem
                     icon={PassIconStatus.ACTIVE}
