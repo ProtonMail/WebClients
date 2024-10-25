@@ -90,7 +90,7 @@ export const PasskeyGet: FC<Props> = (props) => {
     const { postMessage, domain } = useIFrameContext();
 
     return (
-        <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2 anime-fade-in">
+        <div className="ui-violet flex flex-column flex-nowrap *:shrink-0 justify-space-between h-full gap-2 anime-fade-in">
             <NotificationHeader
                 title={c('Info').t`Passkey sign-in`}
                 onClose={() =>

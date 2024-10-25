@@ -71,7 +71,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
         <>
             {form.values.step === 'select' && (
                 <>
-                    <div className="shrink-0 py-1 px-2">
+                    <div className="py-1 px-2">
                         {`${c('Label').t`Passkey`} • ${domain}`}
                         <span className="block text-xs color-weak">{c('Info')
                             .t`Select an existing login or create a new one.`}</span>
@@ -133,7 +133,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
                 </>
             )}
 
-            <div className="shrink-0 flex justify-space-between">
+            <div className="flex justify-space-between">
                 <Button
                     pill
                     color="norm"
@@ -241,7 +241,10 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
     return (
         <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2 anime-fade-in">
             <FormikProvider value={form}>
-                <Form id={formId} className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
+                <Form
+                    id={formId}
+                    className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap *:shrink-0 gap-2"
+                >
                     <NotificationHeader
                         title={(() => {
                             switch (form.values.step) {
