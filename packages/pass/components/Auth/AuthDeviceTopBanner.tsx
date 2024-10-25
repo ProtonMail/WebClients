@@ -8,20 +8,47 @@ import { Button } from '@proton/atoms';
 import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { confirmPendingAuthDevice, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';
+import { confirmPendingAuthDeviceRequest, rejectPendingAuthDeviceRequest } from '@proton/pass/store/actions/requests';
 import { selectPendingAuthDevices } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { first } from '@proton/pass/utils/array/first';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
+type Props = { pendingAuthDevice: AuthDeviceOutput; onExit: () => void };
+
+const AuthDeviceModal: FC<Props> = ({ pendingAuthDevice, onExit }) => {
+    const [open, setOpen] = useState(true);
+    const onClose = () => setOpen(false);
+
+    const confirm = useRequest(confirmPendingAuthDevice, {
+        initialRequestId: confirmPendingAuthDeviceRequest(pendingAuthDevice.ID),
+        onSuccess: onClose,
+    });
+
+    const reject = useRequest(rejectPendingAuthDevice, {
+        initialRequestId: rejectPendingAuthDeviceRequest(pendingAuthDevice.ID),
+        onSuccess: onClose,
+    });
+
+    return (
+        <AbstractAuthDevicesModal
+            open={open}
+            loading={confirm.loading}
+            pendingAuthDevice={pendingAuthDevice}
+            onConfirm={async (data) => confirm.dispatch(data)}
+            onReject={async (data) => reject.dispatch(data)}
+            onClose={onClose}
+            onExit={onExit}
+        />
+    );
+};
+
 export const AuthDeviceTopBanner: FC = () => {
+    const [pendingAuthDevice, setPendingAuthDevice] = useState<MaybeNull<AuthDeviceOutput>>(null);
     const pendingAuthDevices = useSelector(selectPendingAuthDevices);
-    const [open, setOpen] = useState(false);
-    const [tmpAuthDevice, setTmpAuthDevice] = useState<MaybeNull<AuthDeviceOutput>>(null);
+    const tmpAuthDevice = first(pendingAuthDevices);
 
-    const pendingAuthDevice = pendingAuthDevices?.[0];
-    const confirm = useRequest(confirmPendingAuthDevice, { onSuccess: () => setOpen(false) });
-    const reject = useRequest(rejectPendingAuthDevice, { onSuccess: () => setOpen(false) });
-
-    return pendingAuthDevice ? (
+    return tmpAuthDevice ? (
         <>
             <TopBar visible className="bg-warning ui-orange justify-center text-center">
                 <span>{c('sso').t`Sign-in requested on another device. Was it you? `}</span>
@@ -31,28 +58,13 @@ export const AuthDeviceTopBanner: FC = () => {
                     className="text-semibold"
                     shape="underline"
                     color="norm"
-                    onClick={() => {
-                        setTmpAuthDevice(pendingAuthDevice);
-                        setOpen(true);
-                    }}
+                    onClick={() => setPendingAuthDevice(tmpAuthDevice)}
                 >
                     {c('sso').t`Approve or deny it now`}
                 </Button>
             </TopBar>
-            {tmpAuthDevice && (
-                <AbstractAuthDevicesModal
-                    open={open}
-                    loading={confirm.loading}
-                    pendingAuthDevice={tmpAuthDevice}
-                    onConfirm={async (data) => confirm.dispatch(data)}
-                    onReject={async (data) => reject.dispatch(data)}
-                    onClose={() => {
-                        setOpen(false);
-                    }}
-                    onExit={() => {
-                        setTmpAuthDevice(null);
-                    }}
-                />
+            {pendingAuthDevice && (
+                <AuthDeviceModal pendingAuthDevice={pendingAuthDevice} onExit={() => setPendingAuthDevice(null)} />
             )}
         </>
     ) : null;
