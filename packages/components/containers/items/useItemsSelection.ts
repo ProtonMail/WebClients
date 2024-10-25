@@ -1,9 +1,8 @@
 import type { ChangeEvent, DependencyList } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
+import useHandler from '@proton/components/hooks/useHandler';
 import unique from '@proton/utils/unique';
-
-import useHandler from '../../hooks/useHandler';
 
 interface Props {
     activeID?: string;

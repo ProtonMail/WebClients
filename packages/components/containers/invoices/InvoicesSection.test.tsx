@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 
+import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { applyHOCs, withConfig, withPaymentContext } from '@proton/testing';
 
-import { useSubscribeEventManager } from '../../hooks';
 import InvoicesSection from './InvoicesSection';
 
 jest.mock('../../hooks/useHandler', () => {

@@ -1,9 +1,9 @@
 import type { DragEvent } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import useHandler from '@proton/components/hooks/useHandler';
 import generateUID from '@proton/utils/generateUID';
 
-import useHandler from '../../hooks/useHandler';
 import { DRAG_ITEM_ID_KEY, DRAG_ITEM_KEY } from './constants';
 
 import './items.scss';

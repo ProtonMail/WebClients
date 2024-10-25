@@ -12,7 +12,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal/LinkConfirmationModal';
 import { getHostname, isExternal, punycodeUrl } from '../helpers/url';
-import { useHandler, useNotifications } from './index';
+import { useNotifications } from './index';
+import useHandler from './useHandler';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
 

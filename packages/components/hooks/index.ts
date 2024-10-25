@@ -1,6 +1,5 @@
 export { default as useFeature } from './useFeature';
 export { default as useFeatures } from './useFeatures';
-export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
 export { default as useModals } from './useModals';
 export { default as useNotifications } from './useNotifications';
 export { default as useSubscription, useGetSubscription } from './useSubscription';
