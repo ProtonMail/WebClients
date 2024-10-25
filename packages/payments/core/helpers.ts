@@ -135,7 +135,7 @@ export function getPreferredCurrency({
     const fallbackResult = (() => {
         const planCurrency = plans?.[0]?.Currency;
         if (!planCurrency) {
-            return DEFAULT_CURRENCY;
+            return user?.Currency ?? DEFAULT_CURRENCY;
         }
 
         // we can't fallback to regional currency if they are not enabled and if user doesn't have history with
