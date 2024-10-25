@@ -12,7 +12,7 @@ import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
-    getHas2023OfferCoupon,
+    getHas2024OfferCoupon,
     getNormalCycleFromCustomCycle,
     getPlan,
     getPlanIDs,
@@ -194,7 +194,7 @@ const getUpsell = ({
     }
 
     if (currentPlan) {
-        if (getHas2023OfferCoupon(options.coupon)) {
+        if (getHas2024OfferCoupon(options.coupon)) {
             if (getHasAnyPlusPlan(currentPlan.Name)) {
                 const hasSelectedPassBundle =
                     hasSelectedPlan(planParameters.plan, [PLANS.VPN_PASS_BUNDLE]) &&

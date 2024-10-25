@@ -386,7 +386,7 @@ const SingleSignupContainerV2 = ({
         };
     });
 
-    const theme = getPublicTheme(toApp, audience, viewportWidth);
+    const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters);
 
     const signupConfiguration = (() => {
         const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
