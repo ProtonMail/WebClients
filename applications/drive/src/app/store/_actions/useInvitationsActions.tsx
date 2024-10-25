@@ -56,15 +56,17 @@ export const useInvitationsActions = () => {
                 throw error;
             });
 
+        // TODO: Remove this section with Invitation section refactor
+        // Since we want to show the accepted share at the same place in the list we have to set the cache manually and not waiting event to run
+        /* --- SECTION-START --- */
         // Due to how cache is done, we do that to prevent multiple call to share bootstrap
         // We only need link's preload in case of accept in the shared with me section
         if (preloadLink) {
             await getLink(abortSignal, invitation.share.shareId, invitation.link.linkId);
         }
-
-        // TODO: Remove this when we will have events
-        linksListing.setSharedWithMeShareIdsState([invitation.share.shareId]);
+        linksListing.setShareIdsState([invitation.share.shareId]);
         setVolumeShareIds(invitation.share.volumeId, [invitation.share.shareId]);
+        /* --- SECTION-END --- */
 
         invitationsState.removeInvitations([invitation.invitation.invitationId]);
         createNotification({

@@ -436,8 +436,8 @@ export function useLinksListingProvider() {
         getCachedBookmarkDetails: bookmarksLinksListing.getCachedBookmarkDetails,
         getCachedLinks,
 
-        //TODO: Removed when events for shares and invitations
-        setSharedWithMeShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,
+        // TODO: Remove this with Invitation section refactor
+        setShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,
         // TODO: remove when we will have events for bookmarks
         removeCachedBookmarkLink: bookmarksLinksListing.removeCachedBookmarkLink,
     };

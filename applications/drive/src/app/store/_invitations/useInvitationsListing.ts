@@ -21,9 +21,10 @@ import { useDefaultShare } from '../_shares';
 import { useInvitations } from './useInvitations';
 import { useInvitationsState } from './useInvitationsState';
 
-interface FetchSharedLinksMeta extends FetchMeta {
+interface FetchInvitationsMeta extends FetchMeta {
     lastPage: number;
     lastSorting: SortParams;
+    obseleteInvitationsIds: Set<string>;
 }
 
 /**
@@ -34,11 +35,34 @@ export function useInvitationsListing() {
     const { getDefaultShare } = useDefaultShare();
     const { getPrivateAddressKeys } = useDriveCrypto();
     const { loadFullListingWithAnchor } = useLinksListingHelpers();
-    const { setInvitations, getAllInvitations, getInvitation } = useInvitationsState();
     const { decryptInvitationLinkName } = useInvitations();
-    const fetchMeta = useRef<FetchSharedLinksMeta>({
+    const { setInvitations, getAllInvitations, getInvitation, removeInvitations } = useInvitationsState();
+    const invitationsIdsState = useRef<Set<string>>(new Set());
+
+    const setInvitationsIdsState = (invitationIds: Set<string> | string[]) => {
+        invitationsIdsState.current = new Set([...invitationsIdsState.current, ...invitationIds]);
+    };
+
+    const removeInvitationIdsFromState = (invitationIds: Set<string>) => {
+        invitationsIdsState.current = new Set([...invitationsIdsState.current].filter((id) => !invitationIds.has(id)));
+    };
+
+    /**
+     * Finds invitation IDs that are no longer present in the current state.
+     */
+    const findObseleteInvitationIds = (invitationIds: Set<string>) => {
+        const currentInvitationIdsSet = invitationsIdsState.current;
+        if (invitationIds.size === 0) {
+            return currentInvitationIdsSet;
+        }
+        const obseleteInvitationIds = currentInvitationIdsSet.difference(invitationIds);
+        return obseleteInvitationIds;
+    };
+
+    const fetchMeta = useRef<FetchInvitationsMeta>({
         lastPage: 0,
         lastSorting: DEFAULT_SORTING,
+        obseleteInvitationsIds: new Set(),
     });
 
     const loadInvitationsDetails = async (
@@ -103,9 +127,20 @@ export function useInvitationsListing() {
             signal
         );
 
-        await loadInvitationsDetails(response.Invitations, privateKeys);
+        const invitationsIds = response.Invitations.map((invitation) => invitation.InvitationID);
+        setInvitationsIdsState(invitationsIds);
 
+        fetchMeta.current.obseleteInvitationsIds = findObseleteInvitationIds(new Set(invitationsIds));
+
+        await loadInvitationsDetails(response.Invitations, privateKeys);
         fetchMeta.current.isEverythingFetched = !response.More;
+
+        // Clean up obsolete invitations when all invitations are fetched
+        if (fetchMeta.current.isEverythingFetched) {
+            removeInvitations(Array.from(fetchMeta.current.obseleteInvitationsIds));
+            removeInvitationIdsFromState(fetchMeta.current.obseleteInvitationsIds);
+            fetchMeta.current.obseleteInvitationsIds = new Set();
+        }
 
         return {
             AnchorID: response.AnchorID,
@@ -119,7 +154,9 @@ export function useInvitationsListing() {
     const loadInvitations = async (signal: AbortSignal): Promise<{ Count?: number } | void> => {
         const { addressId } = await getDefaultShare();
         const privateKeys = await getPrivateAddressKeys(addressId);
-
+        // This function (loadSharedWithMeLinks) will be called only once (in useEffect of useSharedWithMeView).
+        // We reset the state of fetchMeta to allow fetching new items in case of tab change for exemple
+        fetchMeta.current.isEverythingFetched = false;
         const callback = (AnchorID?: string) => fetchInvitationsNextPage(signal, privateKeys, AnchorID);
         return loadFullListingWithAnchor(callback);
     };
