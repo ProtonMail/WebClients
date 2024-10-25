@@ -725,7 +725,13 @@ const SingleSignupContainerV2 = ({
                     },
                     toApp: product,
                 }),
-                getSubscriptionDataCycleMapping(paymentsApi, plansMap, coupon),
+                getSubscriptionDataCycleMapping(
+                    paymentsApi,
+                    plansMap,
+                    // if plan parameters are defined, we assume we won't be showing the plan cards
+                    // and that we won't need to fetch the subscription data from the API call with each coupon
+                    planParameters.defined ? undefined : coupon
+                ),
             ]);
 
             let session: SessionData | undefined;
