@@ -16,6 +16,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
@@ -31,7 +32,6 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
-import { useNotifications } from '../../hooks';
 import { useHotkeys } from '../../hooks/useHotkeys';
 import UpgradeBanner from '../account/UpgradeBanner';
 import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';

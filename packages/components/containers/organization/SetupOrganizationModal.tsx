@@ -20,6 +20,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -34,7 +35,7 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useSubscription } from '../../hooks';
+import { useSubscription } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, {
     getInitialStorage,

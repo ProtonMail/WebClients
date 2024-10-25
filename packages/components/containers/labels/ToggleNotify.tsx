@@ -6,11 +6,10 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateLabel } from '@proton/shared/lib/api/labels';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-
-import { useNotifications } from '../../hooks';
 
 interface Props {
     label: Folder;

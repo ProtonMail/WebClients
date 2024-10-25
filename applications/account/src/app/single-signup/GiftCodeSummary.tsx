@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader, Input } from '@proton/atoms';
-import { Icon, Info, Price, UnderlineButton } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
+import { Icon, Info, Price, UnderlineButton, useNotifications } from '@proton/components';
 import { type Currency } from '@proton/payments';
 
 interface Props {

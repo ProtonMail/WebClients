@@ -26,6 +26,7 @@ import AuthModal, { type AuthModalResult } from '@proton/components/containers/p
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -40,7 +41,7 @@ import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useSubscription } from '../../hooks';
+import { useSubscription } from '../../hooks';
 import DomainModal from '../domains/DomainModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';

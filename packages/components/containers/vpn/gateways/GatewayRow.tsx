@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import Copy from '@proton/components/components/button/Copy';
 import TableRow from '@proton/components/components/table/TableRow';
-import { useNotifications } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import clsx from '@proton/utils/clsx';
 
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';

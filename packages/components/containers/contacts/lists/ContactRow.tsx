@@ -7,13 +7,13 @@ import { Button } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { addPlus } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 
-import { useNotifications } from '../../../hooks';
 import ItemCheckbox from '../../items/ItemCheckbox';
 import ContactGroupLabels from '../group/ContactGroupLabels';
 import { ContactRowItemFirstLine, ContactRowItemSecondLine } from './ContactRowItem';

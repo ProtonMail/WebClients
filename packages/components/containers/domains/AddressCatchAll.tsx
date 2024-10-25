@@ -2,11 +2,10 @@ import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
 import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCatchAll } from '@proton/shared/lib/api/domains';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
-
-import { useNotifications } from '../../hooks';
 
 interface Props {
     address: DomainAddress;

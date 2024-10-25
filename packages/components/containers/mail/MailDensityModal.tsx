@@ -9,11 +9,11 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import type { DENSITY } from '@proton/shared/lib/constants';
 
-import { useNotifications } from '../../hooks';
 import DensityRadiosCards from '../layouts/DensityRadiosCards';
 
 import './ModalSettingsLayoutCards.scss';

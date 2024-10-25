@@ -27,6 +27,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -45,8 +46,6 @@ import {
 } from '@proton/shared/lib/keys';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
-
-import { useNotifications } from '../../../hooks';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;

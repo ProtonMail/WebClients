@@ -4,8 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
-import { Icon, useApi, useEventManager, useSpotlightOnFeature } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
+import { Icon, useApi, useEventManager, useNotifications, useSpotlightOnFeature } from '@proton/components';
 import useAssistantSubscriptionStatus, {
     ASSISTANT_TRIAL_TIME_DAYS,
 } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';

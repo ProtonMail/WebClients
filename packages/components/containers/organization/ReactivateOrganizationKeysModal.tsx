@@ -17,6 +17,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -26,8 +27,6 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
-
-import { useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     mode: 'reactivate' | 'activate';

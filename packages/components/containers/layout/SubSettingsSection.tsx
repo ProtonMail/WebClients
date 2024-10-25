@@ -7,10 +7,9 @@ import { c } from 'ttag';
 import Icon from '@proton/components/components/icon/Icon';
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
-
-import { useNotifications } from '../../hooks';
 
 export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
     id: string;

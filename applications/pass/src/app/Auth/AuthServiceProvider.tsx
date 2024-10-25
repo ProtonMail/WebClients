@@ -7,7 +7,7 @@ import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/Serv
 import { createAuthService } from 'proton-pass-web/lib/auth';
 import { getStateKey } from 'proton-pass-web/lib/sessions';
 
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
 import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/components/Core/ConnectivityProvider';

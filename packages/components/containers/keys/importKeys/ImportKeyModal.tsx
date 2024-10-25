@@ -8,12 +8,13 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import type { ArmoredKeyWithInfo, OnKeyImportCallback } from '@proton/shared/lib/keys';
 import getRandomString from '@proton/utils/getRandomString';
 
-import { useModals, useNotifications } from '../../../hooks';
+import { useModals } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 import SelectKeyFiles from '../shared/SelectKeyFiles';

@@ -15,8 +15,15 @@ import {
 } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { Button } from '@proton/atoms';
-import { Alert, DropdownActions, Prompt, useApi, useEventManager, useModalState } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
+import {
+    Alert,
+    DropdownActions,
+    Prompt,
+    useApi,
+    useEventManager,
+    useModalState,
+    useNotifications,
+} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 

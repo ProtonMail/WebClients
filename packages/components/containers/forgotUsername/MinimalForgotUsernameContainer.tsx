@@ -7,10 +7,9 @@ import Alert from '@proton/components/components/alert/Alert';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import EmailInput from '@proton/components/components/input/EmailInput';
 import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';
-
-import { useNotifications } from '../../hooks';
 
 const MinimalForgotUsernameContainer = () => {
     const api = useApi();

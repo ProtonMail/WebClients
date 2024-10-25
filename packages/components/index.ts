@@ -880,6 +880,7 @@ export { default as useKeyPress } from './hooks/useKeyPress';
 export { default as useLocalState } from './hooks/useLocalState';
 export { default as useMyCountry } from './hooks/useMyCountry';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
+export { default as useNotifications } from './hooks/useNotifications';
 export { getOnlineStatus, default as useOnline } from './hooks/useOnline';
 export { PreventLeaveProvider, default as usePreventLeave } from './hooks/usePreventLeave';
 export { default as useProgressiveRollout } from './hooks/useProgressiveRollout';

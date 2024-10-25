@@ -13,11 +13,10 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import type { Address } from '@proton/shared/lib/interfaces';
-
-import { useNotifications } from '../../hooks';
 
 interface Props extends ModalProps<'form'> {
     address: Address;

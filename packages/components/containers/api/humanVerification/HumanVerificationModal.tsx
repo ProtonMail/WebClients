@@ -7,13 +7,13 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useNotifications } from '../../../hooks';
 import HumanVerificationForm from './HumanVerificationForm';
 import { isVerifyAddressOwnership } from './helper';
 import { type HumanVerificationResult, HumanVerificationSteps, type VerificationModel } from './interface';

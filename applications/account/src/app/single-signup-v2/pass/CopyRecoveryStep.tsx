@@ -3,9 +3,8 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
-import { Copy } from '@proton/components';
+import { Copy, useNotifications } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

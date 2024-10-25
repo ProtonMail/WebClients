@@ -11,12 +11,13 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
 import { buyCredit, validateCredit } from '@proton/shared/lib/api/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { useNotifications, useSubscription } from '../../hooks';
+import { useSubscription } from '../../hooks';
 
 const GiftCodeSection = () => {
     const [value, setValue] = useState('');

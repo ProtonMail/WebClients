@@ -16,13 +16,13 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { querySessions, revokeOtherSessions, revokeSession } from '@proton/shared/lib/api/auth';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
-import { useNotifications } from '../../hooks';
 import SessionAction from './SessionAction';
 import type { Session } from './interface';
 

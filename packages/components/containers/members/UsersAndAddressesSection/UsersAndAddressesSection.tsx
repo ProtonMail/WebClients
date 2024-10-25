@@ -33,6 +33,7 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
@@ -66,10 +67,7 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import Tooltip from '../../../components/tooltip/Tooltip';
-import {
-    useNotifications,
-    useSubscription,
-} from '../../../hooks';
+import { useSubscription } from '../../../hooks';
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import AddressModal from '../../addresses/AddressModal';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';

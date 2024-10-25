@@ -10,6 +10,7 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import useApi from '@proton/components/hooks/useApi';
 import { useGetCalendarInfo } from '@proton/components/hooks/useGetCalendarInfo';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
@@ -25,7 +26,6 @@ import type { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@p
 import type { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys';
 
-import { useNotifications } from '../../../hooks';
 import DeleteLinkConfirmationModal from './DeleteLinkConfirmationModal';
 import EditLinkModal from './EditLinkModal';
 import LinkTable from './LinkTable';

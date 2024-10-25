@@ -14,6 +14,7 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { PLANS } from '@proton/payments';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
@@ -26,7 +27,7 @@ import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/
 import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
 import EmptyViewContainer from '../../../containers/app/EmptyViewContainer';
 import { getCountryOptions } from '../../../helpers/countries';
-import { useNotifications, useSubscription } from '../../../hooks';
+import { useSubscription } from '../../../hooks';
 import useSortedList from '../../../hooks/useSortedList';
 import type { Gateway } from './Gateway';
 import type { GatewayLogical } from './GatewayLogical';

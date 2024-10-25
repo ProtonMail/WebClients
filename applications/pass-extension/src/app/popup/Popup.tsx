@@ -6,8 +6,7 @@ import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/E
 import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
 import { usePopupSizeSurgery } from 'proton-pass-extension/lib/hooks/usePopupSizeSurgery';
 
-import { ErrorBoundary, NotificationsContext } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
+import { ErrorBoundary, NotificationsContext, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';

@@ -34,6 +34,7 @@ import AssistantUpdateSubscriptionButton from '@proton/components/containers/pay
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -61,7 +62,7 @@ import { useFlag } from '@proton/unleash';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useNotifications, useSubscription } from '../../hooks';
+import { useSubscription } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
