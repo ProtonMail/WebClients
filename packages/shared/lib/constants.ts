@@ -682,14 +682,6 @@ export enum CYCLE {
 
 export const DEFAULT_CYCLE = CYCLE.YEARLY;
 
-export const BLACK_FRIDAY = {
-    COUPON_CODE: 'BF2022',
-    START: new Date(Date.UTC(2021, 10, 1, 5)), // 6 AM CET
-    END: new Date(Date.UTC(2022, 0, 1, 17)), // 6 PM CET
-    CYBER_START: new Date(Date.UTC(2020, 10, 30, 6)),
-    CYBER_END: new Date(Date.UTC(2020, 11, 1, 6)),
-};
-
 export const PRODUCT_PAYER = {
     START: new Date(Date.UTC(2020, 9, 28, 6)),
     END: new Date(Date.UTC(2020, 11, 15, 6)),
