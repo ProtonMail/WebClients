@@ -52,7 +52,7 @@ export const useBookmarksActions = () => {
                     if (e?.data?.Code === API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
                         return undefined;
                     }
-                    return e;
+                    throw e;
                 });
                 if (!hideNotifications) {
                     createNotification({
