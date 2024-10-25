@@ -4,13 +4,15 @@ import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import identity from '@proton/utils/identity';
 
-export type OnboardingStorageData = { onboarding: string };
-
-export type OnboardingServiceOptions = {
+type OnboardingServiceOptions<StorageKey extends string> = {
     /** defines where onboarding data will be stored */
-    storage: AnyStorage<OnboardingStorageData>;
+    storage: AnyStorage<Record<StorageKey, string>>;
     /** defines which onboarding rule this service supports  */
     rules: OnboardingRule[];
+    /** resolves the storage key for the current user */
+    getStorageKey: () => StorageKey;
+    /** triggered on OnboardingService::init before hydration */
+    migrate?: (storageKey: StorageKey) => void;
 };
 
 export type OnboardingWhen = (previousAck: Maybe<OnboardingAcknowledgment>, state: OnboardingState) => boolean;
@@ -40,7 +42,7 @@ export const createOnboardingRule = (options: OnboardingRule): OnboardingRule =>
         options.when?.(previousAck, state) ?? !state.acknowledged.some((data) => data.message === options.message),
 });
 
-export const createOnboardingService = (options: OnboardingServiceOptions) => {
+export const createOnboardingService = <StorageKey extends string>(options: OnboardingServiceOptions<StorageKey>) => {
     const state: OnboardingState = { ...INITIAL_ONBOARDING_STATE };
 
     /** Sets the onboarding service state and updates the storage */
@@ -48,7 +50,7 @@ export const createOnboardingService = (options: OnboardingServiceOptions) => {
         state.acknowledged = update.acknowledged ?? state.acknowledged;
         state.installedOn = update.installedOn ?? state.installedOn;
         state.updatedOn = update.updatedOn ?? state.updatedOn;
-        void options.storage.setItem('onboarding', JSON.stringify(state));
+        void options.storage.setItem(options.getStorageKey(), JSON.stringify(state));
     };
 
     const checkRule = (rule: OnboardingRule): boolean => {
@@ -96,7 +98,9 @@ export const createOnboardingService = (options: OnboardingServiceOptions) => {
 
     const init = async () => {
         try {
-            const onboarding = await options.storage.getItem('onboarding');
+            const key = options.getStorageKey();
+            options.migrate?.(key);
+            const onboarding = await options.storage.getItem(key);
             if (typeof onboarding === 'string') setState(JSON.parse(onboarding));
             else throw Error('Onboarding data not found');
         } catch {

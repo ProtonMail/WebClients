@@ -17,7 +17,6 @@ import {
     createUpdateRule,
     createUserRatingRule,
 } from '@proton/pass/lib/onboarding/rules';
-import type { OnboardingStorageData } from '@proton/pass/lib/onboarding/service';
 import { createOnboardingService as createCoreOnboardingService } from '@proton/pass/lib/onboarding/service';
 import type { State } from '@proton/pass/store/types';
 import type { ExtensionStorage, TabId } from '@proton/pass/types';
@@ -26,8 +25,12 @@ import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
-export const createOnboardingService = (storage: ExtensionStorage<OnboardingStorageData>, store: Store<State>) => {
+export const createOnboardingService = (
+    storage: ExtensionStorage<Record<'onboarding', string>>,
+    store: Store<State>
+) => {
     const { acknowledge, init, setState, getMessage, checkMessage } = createCoreOnboardingService({
+        getStorageKey: () => 'onboarding',
         storage,
         rules: [
             /* The order below defines the priority for spotlight display (first rule with `when` returning `true`).
