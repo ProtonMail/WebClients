@@ -13,6 +13,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { useFilters } from '@proton/mail/filters/hooks';
@@ -22,7 +23,6 @@ import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/consta
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import generateUID from '@proton/utils/generateUID';
 
-import { useNotifications } from '../../../hooks';
 import { getDefaultFolders, noFolderValue } from '../constants';
 import type {
     Actions,

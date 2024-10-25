@@ -11,14 +11,13 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Address, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
-
-import { useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     members: Member[];

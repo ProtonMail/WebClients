@@ -8,10 +8,9 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
-import { useNotifications } from '../../hooks';
 
 const MXSection = () => {
     const { createNotification } = useNotifications();

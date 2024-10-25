@@ -43,7 +43,7 @@ jest.mock('../../utils/errorHandling');
 const mockedSendErrorReport = jest.mocked(sendErrorReport);
 
 const mockedCreateNotification = jest.fn();
-jest.mock('@proton/components/hooks', () => {
+jest.mock('@proton/components', () => {
     return {
         useNotifications: jest.fn(() => ({ createNotification: mockedCreateNotification })),
     };

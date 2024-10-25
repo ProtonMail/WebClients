@@ -13,6 +13,7 @@ import AuthModal, { type AuthModalResult } from '@proton/components/containers/p
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { queryUnlock } from '@proton/shared/lib/api/user';
@@ -20,8 +21,6 @@ import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constant
 import type { User } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
-
-import { useNotifications } from '../../hooks';
 
 export const getActivateString = (user: User) => {
     return c('Action').t`Activate ${user.Name}@pm.me`;

@@ -12,11 +12,11 @@ import AuthModal from '@proton/components/containers/password/AuthModal';
 import type { AuthModalResult } from '@proton/components/containers/password/interface';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 import noop from '@proton/utils/noop';
 
-import { useNotifications } from '../../hooks';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
 

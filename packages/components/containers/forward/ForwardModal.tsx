@@ -23,6 +23,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
@@ -39,7 +40,6 @@ import { addAddressKeysProcess, getEmailFromKey, splitKeys } from '@proton/share
 import illustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { useNotifications } from '../../hooks';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import type { Condition } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';

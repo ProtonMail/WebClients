@@ -11,9 +11,8 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
-
-import { useNotifications } from '../../hooks';
 
 const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;

@@ -17,7 +17,7 @@ import type {
     WasmScriptType,
 } from '@proton/andromeda';
 import { WasmAccount, WasmDerivationPath, WasmMnemonic, WasmWallet } from '@proton/andromeda';
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import {
     DEFAULT_FIRST_ACCOUNT_INDEX,

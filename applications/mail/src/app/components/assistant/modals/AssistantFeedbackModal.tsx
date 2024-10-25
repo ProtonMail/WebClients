@@ -15,9 +15,9 @@ import {
     Tooltip,
     useApi,
     useModalStateObject,
+    useNotifications,
 } from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useAssistant } from '@proton/llm/lib';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';

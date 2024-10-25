@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import noop from '@proton/utils/noop';
@@ -35,7 +35,7 @@ const inviteeExternalNonProton = {
 };
 
 const mockedCreateNotification = jest.fn();
-jest.mock('@proton/components/hooks', () => ({
+jest.mock('@proton/components', () => ({
     useGetEncryptionPreferences: jest.fn(),
     useNotifications: jest.fn(),
     useApi: jest.fn().mockReturnValue(() => new Promise((resolve) => resolve(undefined))),

@@ -8,6 +8,7 @@ import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hook
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { createCalendar, updateCalendarSettings, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
     getOwnedPersonalCalendars,
@@ -20,7 +21,6 @@ import type { CalendarSettings, CalendarWithOwnMembers, VisualCalendar } from '@
 import type { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 
-import { useNotifications } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager/calendar/CalendarModelEventManagerProvider';
 
 interface Props {

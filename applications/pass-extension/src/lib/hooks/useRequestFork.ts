@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import { requestFork } from '@proton/pass/lib/auth/fork';
 import browser from '@proton/pass/lib/globals/browser';
 import type { ForkType } from '@proton/shared/lib/authentication/fork/constants';

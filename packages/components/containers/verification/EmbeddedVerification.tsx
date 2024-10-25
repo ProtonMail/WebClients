@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import useConfig from '@proton/components/hooks/useConfig';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppUrlFromApiUrl, getAppUrlRelativeToOrigin, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
-
-import { useNotifications } from '../../hooks';
 
 interface EmbeddedVerificationProps {
     token: string;
