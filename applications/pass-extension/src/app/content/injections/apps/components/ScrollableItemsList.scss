@@ -1,0 +1,6 @@
+.pass-scrollable-items-list {
+	&--increase-surface {
+		inline-size: calc(100% + 2rem);
+		margin-inline-start: -1rem;
+	}
+}

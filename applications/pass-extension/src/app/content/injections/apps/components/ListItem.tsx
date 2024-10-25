@@ -9,6 +9,8 @@ import { ListItemIcon, type ListItemIconProps } from './ListItemIcon';
 import './ListItem.scss';
 
 export const LIST_ITEM_HEIGHT = 3.75; /* rem */
+export const LIST_MAX_VISIBLE_ITEMS = 3;
+export const LIST_MAX_HEIGHT = LIST_MAX_VISIBLE_ITEMS * LIST_ITEM_HEIGHT;
 
 type Props = {
     action?: ReactNode;
