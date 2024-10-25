@@ -1,8 +1,9 @@
 import type { MaybeNull } from '@proton/pass/types';
 
 export const PASS_ELEMENT_ROLE = 'data-protonpass-role';
+export const PASS_ELEMENT_THEME = 'data-protonpass-theme';
 
-const ALLOWED_ATTRS = [PASS_ELEMENT_ROLE, 'aria-hidden'];
+const ALLOWED_ATTRS = [PASS_ELEMENT_ROLE, PASS_ELEMENT_THEME, 'aria-hidden'];
 const MAX_ATTR_REMOVAL_ATTEMPTS = 25;
 
 export class ProtonPassElement extends HTMLElement {

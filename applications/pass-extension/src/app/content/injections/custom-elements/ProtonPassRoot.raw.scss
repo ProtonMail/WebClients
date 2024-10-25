@@ -3,6 +3,9 @@
 :host {
 	@include reset;
 
+	--frame-background-color-dark: #1f1f31;
+	--frame-background-color-light: #fbf9fe;
+
 	position: fixed !important;
 	inline-size: 100% !important;
 	border: 0 !important;
@@ -11,6 +14,18 @@
 	inset-block-start: 0 !important;
 	inset-inline-start: 0 !important;
 	block-size: 0 !important;
+
+	--frame-background-color: var(--frame-background-color-dark);
+}
+
+:host([data-protonpass-theme='light']) {
+	--frame-background-color: var(--frame-background-color-light);
+}
+
+:host([data-protonpass-theme='os']) {
+	@media (prefers-color-scheme: light) {
+		--frame-background-color: var(--frame-background-color-light);
+	}
 }
 
 iframe {
@@ -19,6 +34,7 @@ iframe {
 	block-size: var(--frame-height) !important;
 	inset-block-start: var(--frame-top) !important;
 	inset-inline: var(--frame-left) var(--frame-right) !important;
+	background-color: var(--frame-background-color) !important;
 	box-shadow: 0 2px 10px rgb(0 0 0 / 0.3) !important;
 	border-radius: 12px !important;
 	border: none !important;
