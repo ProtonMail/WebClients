@@ -157,6 +157,11 @@ export const getSignupSearchParams = (
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
 
 export const getThemeFromLocation = (location: Location, searchParams: URLSearchParams) => {
+    const hasBFCoupon = getHas2024OfferCoupon(searchParams.get('coupon')?.toUpperCase());
+    const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.VISIONARY;
+    if (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary)) {
+        return { themeType: ThemeTypes.Carbon, className: '' };
+    }
     if (location.pathname === SSO_PATHS.PASS_SIGNUP || location.pathname === SSO_PATHS.MAIL_SIGNUP) {
         return { themeType: ThemeTypes.Storefront, className: 'signup-v2-account-gradient' };
     }
@@ -174,11 +179,6 @@ export const getThemeFromLocation = (location: Location, searchParams: URLSearch
     }
     if (location.pathname === SSO_PATHS.WALLET_SIGNUP) {
         return { themeType: ThemeTypes.StorefrontWallet, className: 'signup-v2-account-gradient--wallet' };
-    }
-    const hasBFCoupon = getHas2024OfferCoupon(searchParams.get('coupon')?.toUpperCase());
-    const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.VISIONARY;
-    if (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary)) {
-        return { themeType: ThemeTypes.Carbon, className: '' };
     }
     return null;
 };
