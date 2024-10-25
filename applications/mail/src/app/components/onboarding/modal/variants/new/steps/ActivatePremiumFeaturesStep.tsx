@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import {
     OnboardingStep,
@@ -14,7 +15,6 @@ import {
     useApi,
     useAuthentication,
     useEventManager,
-    useGetUserKeys,
     useKTVerifier,
 } from '@proton/components';
 import { orderAddress, setupAddress } from '@proton/shared/lib/api/addresses';

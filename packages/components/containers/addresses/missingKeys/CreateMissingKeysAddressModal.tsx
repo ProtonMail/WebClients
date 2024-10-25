@@ -8,6 +8,7 @@ import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -45,7 +46,7 @@ import {
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import { useGetUserKeys, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;

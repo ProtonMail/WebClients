@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
@@ -20,7 +21,7 @@ import type { User } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useGetUserKeys, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 
 export const getActivateString = (user: User) => {
     return c('Action').t`Activate ${user.Name}@pm.me`;

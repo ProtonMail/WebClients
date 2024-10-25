@@ -2,10 +2,10 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import type { WasmBitcoinUnit } from '@proton/andromeda';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useUserKeys } from '@proton/components/hooks/useUserKeys';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { encryptWalletDataWithWalletKey, useWalletApiClients } from '@proton/wallet';

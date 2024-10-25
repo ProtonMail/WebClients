@@ -7,6 +7,7 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -42,7 +43,7 @@ import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { useGetUserKeys, useNotifications } from '../../hooks';
+import { useNotifications } from '../../hooks';
 import GenericError from '../error/GenericError';
 import { handleChangeLoginPassword } from './changePasswordHelper';
 

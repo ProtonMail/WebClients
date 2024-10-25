@@ -1,3 +1,4 @@
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import usePrimaryRecoverySecret from '@proton/components/hooks/usePrimaryRecoverySecret';
@@ -7,8 +8,6 @@ import {
     generateRecoverySecret,
     validateRecoverySecret,
 } from '@proton/shared/lib/recoveryFile/recoveryFile';
-
-import { useGetUserKeys } from '../../hooks';
 
 const useDownloadRecoveryFile = () => {
     const api = useApi();
