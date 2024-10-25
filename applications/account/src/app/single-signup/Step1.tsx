@@ -91,7 +91,7 @@ import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helper
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getHas2023OfferCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import type {
     Currency,
@@ -870,7 +870,7 @@ const Step1 = ({
     const planInformation = getPlanInformation({ selectedPlan: options.plan, vpnServersCountData, mode });
 
     const upsellToCycle = (() => {
-        if (options.plan.Name === PLANS.BUNDLE && getHas2023OfferCoupon(options.checkResult.Coupon?.Code)) {
+        if (options.plan.Name === PLANS.BUNDLE && getHas2024OfferCoupon(options.checkResult.Coupon?.Code)) {
             return;
         }
         if (options.cycle === CYCLE.MONTHLY) {
@@ -976,8 +976,8 @@ const Step1 = ({
     });
 
     const isBlackFriday =
-        getHas2023OfferCoupon(vpnSubscriptionMapping?.[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code) ||
-        getHas2023OfferCoupon(options.checkResult.Coupon?.Code);
+        getHas2024OfferCoupon(vpnSubscriptionMapping?.[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code) ||
+        getHas2024OfferCoupon(options.checkResult.Coupon?.Code);
 
     const isCyberWeekPeriod = getIsCyberWeekPeriod();
     const isBlackFridayPeriod = getIsBlackFridayPeriod();
@@ -986,7 +986,7 @@ const Step1 = ({
         <div className="w-full text-sm color-norm opacity-70 text-center">
             <div className="mx-auto w-full md:w-7/10">
                 *
-                {getHas2023OfferCoupon(options.checkResult.Coupon?.Code)
+                {getHas2024OfferCoupon(options.checkResult.Coupon?.Code)
                     ? getBlackFridayRenewalNoticeText({
                           price: options.checkResult.Amount + (options.checkResult.CouponDiscount || 0),
                           cycle: options.cycle,
@@ -1590,7 +1590,7 @@ const Step1 = ({
                                                     }
 
                                                     if (
-                                                        getHas2023OfferCoupon(options.checkResult.Coupon?.Code) &&
+                                                        getHas2024OfferCoupon(options.checkResult.Coupon?.Code) &&
                                                         options.cycle === CYCLE.MONTHLY
                                                     ) {
                                                         return null;

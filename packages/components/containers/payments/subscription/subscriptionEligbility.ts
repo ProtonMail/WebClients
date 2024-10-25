@@ -1,6 +1,6 @@
 import { type ADDON_NAMES, PLANS } from '@proton/payments';
 import { CYCLE, isFreeSubscription } from '@proton/shared/lib/constants';
-import { getHas2023OfferCoupon, getPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, PlansMap, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../../offers/interface';
@@ -138,7 +138,7 @@ export const getEligibility = ({
 
     const okResult = (): Eligibility => ({ type: 'pass-through' });
 
-    if (getHas2023OfferCoupon(offer.coupon)) {
+    if (getHas2024OfferCoupon(offer.coupon)) {
         if (
             eligibleBlackFridayConfigs.some((config) => {
                 return config.deals.some((deal) => {

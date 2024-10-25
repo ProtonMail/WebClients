@@ -42,7 +42,7 @@ import {
 } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
-    getHas2023OfferCoupon,
+    getHas2024OfferCoupon,
     getHasSomeVpnPlan,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
@@ -948,7 +948,7 @@ const SubscriptionContainer = ({
                     </Tooltip>
                 </div>
             )}
-            {!getHas2023OfferCoupon(couponCode) && (
+            {!getHas2024OfferCoupon(couponCode) && (
                 <PaymentGiftCode
                     giftCodeRef={giftCodeRef}
                     key={

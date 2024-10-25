@@ -52,7 +52,7 @@ import {
     getTotalFromPricing,
     switchPlan,
 } from '@proton/shared/lib/helpers/planIDs';
-import { getHas2023OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import type { Api, Currency, Cycle, SubscriptionPlan, User, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -446,7 +446,7 @@ const Step1 = ({
     const renewalNotice = !hasSelectedFree && (
         <div className="w-full text-sm color-norm opacity-70">
             *
-            {getHas2023OfferCoupon(options.checkResult.Coupon?.Code)
+            {getHas2024OfferCoupon(options.checkResult.Coupon?.Code)
                 ? getBlackFridayRenewalNoticeText({
                       price: options.checkResult.Amount + (options.checkResult.CouponDiscount || 0),
                       cycle: options.cycle,
