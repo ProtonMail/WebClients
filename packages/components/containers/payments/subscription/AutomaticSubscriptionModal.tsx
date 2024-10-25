@@ -200,7 +200,7 @@ const AutomaticSubscriptionModal = () => {
     const [unavailableModalProps, setUnavailableModal, renderUnavailableModal] = useModalState();
     const [promotionAppliedProps, setPromotionAppliedModal, renderPromotionAppliedModal] = useModalState();
     const { getPreferredCurrency } = useCurrencies();
-    const preferredCurrency = useAutomaticCurrency();
+    const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const [paymentStatus, loadingPaymentStatus] = usePaymentStatus();
 
     useLoad();
@@ -214,6 +214,7 @@ const AutomaticSubscriptionModal = () => {
             loadingModal ||
             loadingLastSubscriptionEnd ||
             loadingPaymentStatus ||
+            loadingCurrency ||
             !paymentStatus
         ) {
             return;

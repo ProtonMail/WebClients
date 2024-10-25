@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
@@ -10,8 +10,15 @@ import useFetchOffer from './useFetchOffer';
 const useOfferModal = (offerConfig: OfferConfig) => {
     const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
     const [fetchOffer, setFetchOffer] = useState(false);
-    const defaultCurrency = useAutomaticCurrency();
-    const [currency, setCurrency] = useState<Currency>(defaultCurrency);
+    const [automaticCurrency, loadingCurrency] = useAutomaticCurrency();
+    const [controlledCurrency, setCurrency] = useState<Currency | undefined>();
+    const currency = controlledCurrency ?? automaticCurrency;
+
+    useEffect(() => {
+        if (!loadingCurrency) {
+            setCurrency(automaticCurrency);
+        }
+    }, [automaticCurrency, loadingCurrency]);
 
     const [offer, loadingOffer] = useFetchOffer({
         offerConfig: fetchOffer ? offerConfig : undefined,
