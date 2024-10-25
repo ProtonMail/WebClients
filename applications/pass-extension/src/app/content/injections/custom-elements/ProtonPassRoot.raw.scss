@@ -43,7 +43,7 @@ iframe {
 
 	&.visible {
 		display: block;
-		transition: block-size 0.15s ease-in-out 0.05s;
+		transition: block-size 0.15s ease-in-out;
 		animation: var(--frame-animation) 0.25s ease-in-out 0.05s both !important;
 	}
 

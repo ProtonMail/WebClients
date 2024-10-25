@@ -1,10 +1,5 @@
 import { NOTIFICATION_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
-import {
-    NOTIFICATION_HEIGHT,
-    NOTIFICATION_HEIGHT_SM,
-    NOTIFICATION_HEIGHT_XS,
-    NOTIFICATION_WIDTH,
-} from 'proton-pass-extension/app/content/constants.static';
+import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
@@ -61,13 +56,9 @@ export const createNotification = ({ root, onDestroy }: NotificationOptions): In
             }
         }),
         position: () => ({ top: 15, right: 15 }),
-        dimensions: ({ action }) => ({
+        dimensions: () => ({
             width: NOTIFICATION_WIDTH,
-            height: (() => {
-                if (action === NotificationAction.OTP) return NOTIFICATION_HEIGHT_SM;
-                if (action === NotificationAction.AUTOSAVE) return NOTIFICATION_HEIGHT_XS;
-                return NOTIFICATION_HEIGHT;
-            })(),
+            height: NOTIFICATION_MIN_HEIGHT,
         }),
     });
 

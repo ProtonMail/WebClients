@@ -3,12 +3,13 @@ export const INPUT_BASE_STYLES_ATTR = `data-protonpass-base-css`;
 export const ICON_MAX_HEIGHT = 28;
 export const ICON_MIN_HEIGHT = 16;
 export const ICON_PADDING = 8;
+
 export const DROPDOWN_WIDTH = 250;
-export const MIN_DROPDOWN_HEIGHT = 60;
-export const NOTIFICATION_HEIGHT = 335;
-export const NOTIFICATION_HEIGHT_SM = 220;
-export const NOTIFICATION_HEIGHT_XS = 110;
+export const DROPDOWN_MIN_HEIGHT = 90;
+
 export const NOTIFICATION_WIDTH = 320;
+export const NOTIFICATION_MIN_HEIGHT = 180;
+export const NOTIFICATION_HEIGHT = 350;
 
 export const IFRAME_APP_READY_EVENT = 'PassIFrameReady';
 export const CLIENT_SCRIPT_READY_EVENT = 'PassClientScriptReady';
