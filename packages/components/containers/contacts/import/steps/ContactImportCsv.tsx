@@ -9,6 +9,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Table from '@proton/components/components/table/Table';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
 import { toVCardContacts } from '@proton/shared/lib/contacts/helpers/csv';
 import { getHasPreVcardsContacts } from '@proton/shared/lib/contacts/helpers/import';
@@ -20,7 +21,6 @@ import {
 import type { ImportContactsModel, PreVcardsProperty } from '@proton/shared/lib/interfaces/contacts/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { useNotifications } from '../../../../hooks';
 import ContactImportCsvTableBody from './ContactImportCsvTableBody';
 import ContactImportCsvTableHeader from './ContactImportCsvTableHeader';
 

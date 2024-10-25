@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useAddressesKeys, useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
 import { ANONYMOUS_SENDER_ADDRESS_ID, type IWasmApiWalletData } from '@proton/wallet';
 

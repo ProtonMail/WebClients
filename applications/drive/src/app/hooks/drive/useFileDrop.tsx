@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import { DS_STORE } from '@proton/shared/lib/drive/constants';
 import { isImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
 

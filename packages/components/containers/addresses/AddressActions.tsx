@@ -6,6 +6,7 @@ import DropdownActions from '@proton/components/components/dropdown/DropdownActi
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
@@ -15,7 +16,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import EditExternalAddressModal from '../../containers/account/EditExternalAddressModal';
 import EditInternalAddressModal from '../../containers/addresses/EditInternalAddressModal';
-import { useNotifications } from '../../hooks';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import DeleteAddressPrompt from './DeleteAddressPrompt';
 import DisableAddressModal from './DisableAddressModal';

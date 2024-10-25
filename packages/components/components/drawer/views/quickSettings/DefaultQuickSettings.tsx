@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
@@ -14,7 +15,6 @@ import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@pr
 import ThemeCards from '../../../../containers/themes/ThemeCards';
 import { useTheme } from '../../../../containers/themes/ThemeProvider';
 import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
-import { useNotifications } from '../../../../hooks';
 import useShowThemeSelection from '../../../../hooks/useShowThemeSelection';
 import DrawerAppHeadline from '../shared/DrawerAppHeadline';
 import DrawerAppSection from '../shared/DrawerAppSection';

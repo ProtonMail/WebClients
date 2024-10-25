@@ -1,13 +1,8 @@
 import { c } from 'ttag';
 
-import type {
-    WasmAddressDetails,
-    WasmApiWalletAccount,
-    WasmApiWalletBitcoinAddress} from '@proton/andromeda';
-import {
-    WasmKeychainKind,
-} from '@proton/andromeda';
-import { Copy, useNotifications } from '@proton/components/index';
+import type { WasmAddressDetails, WasmApiWalletAccount, WasmApiWalletBitcoinAddress } from '@proton/andromeda';
+import { WasmKeychainKind } from '@proton/andromeda';
+import { Copy, useNotifications } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store';
 

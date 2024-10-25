@@ -16,13 +16,13 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import GenericError from '@proton/components/containers/error/GenericError';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
-import { useNotifications } from '../../hooks';
 import AddressModal from './AddressModal';
 import AddressesTable from './AddressesTable';
 import AddressesWithUser from './AddressesWithUser';

@@ -12,13 +12,13 @@ import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLa
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 
-import { useNotifications } from '../../../hooks';
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
 

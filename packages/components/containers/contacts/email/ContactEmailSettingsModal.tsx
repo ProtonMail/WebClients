@@ -20,6 +20,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
@@ -44,7 +45,6 @@ import {
 import clsx from '@proton/utils/clsx';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { useNotifications } from '../../../hooks';
 import { useKeyTransparencyContext } from '../../keyTransparency/useKeyTransparencyContext';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
 import ContactMIMETypeSelect from './ContactMIMETypeSelect';

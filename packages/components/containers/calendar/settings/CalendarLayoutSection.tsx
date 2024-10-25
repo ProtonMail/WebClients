@@ -8,9 +8,9 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import ViewPreferenceSelector from '@proton/components/containers/calendar/settings/ViewPreferenceSelector';
 import WeekStartSection from '@proton/components/containers/general/WeekStartSection';
-import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';

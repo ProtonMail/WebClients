@@ -3,9 +3,8 @@ import { c } from 'ttag';
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import useDownloadRecoveryFile from '@proton/components/hooks/recoveryFile/useDownloadRecoveryFile';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-
-import { useNotifications } from '../../hooks';
 
 interface Props extends Omit<ButtonProps, 'onClick'> {}
 

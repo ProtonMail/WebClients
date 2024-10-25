@@ -17,6 +17,7 @@ import useOneDollarConfig from '@proton/components/components/upsell/useOneDolla
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -27,7 +28,6 @@ import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresse
 import addressesImg from '@proton/styles/assets/img/illustrations/new-upsells-img/addresses.svg';
 import move from '@proton/utils/move';
 
-import { useNotifications } from '../../hooks';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 import { getPermissions, getStatus } from './helper';

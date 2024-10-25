@@ -15,6 +15,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useHandler from '@proton/components/hooks/useHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { useLoading } from '@proton/hooks';
@@ -88,7 +89,6 @@ import type {
 } from '../../../../components/payments/react-extensions/interface';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
-import { useNotifications } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import { isSubscriptionUnchanged } from '../../payments/helper';
 import InclusiveVatText from '../InclusiveVatText';

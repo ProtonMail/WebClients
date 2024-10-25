@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
 import Field from '@proton/components/components/container/Field';
-import { useNotifications } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import clsx from '@proton/utils/clsx';
 
 import type { AdvancedSimpleFilterModalModel, SimpleFilterModalModel } from '../interfaces';

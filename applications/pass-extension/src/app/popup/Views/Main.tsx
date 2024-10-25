@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { usePopupStateEffects } from 'proton-pass-extension/lib/hooks/usePopupStateEffects';
 
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';

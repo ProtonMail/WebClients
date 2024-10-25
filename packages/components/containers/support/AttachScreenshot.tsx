@@ -10,12 +10,11 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
 import { resize, toBlob } from '@proton/shared/lib/helpers/image';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import removeItem from '@proton/utils/removeIndex';
-
-import { useNotifications } from '../../hooks';
 
 export interface Screenshot {
     name: string;

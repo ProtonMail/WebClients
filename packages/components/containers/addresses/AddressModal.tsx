@@ -25,6 +25,7 @@ import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVe
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
@@ -47,8 +48,6 @@ import {
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
-
-import { useNotifications } from '../../hooks';
 
 const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
 

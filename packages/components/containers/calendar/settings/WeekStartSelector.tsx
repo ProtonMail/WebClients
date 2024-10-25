@@ -7,6 +7,7 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getAutomaticText } from '@proton/components/containers/general/helper';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateWeekStart } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
@@ -14,8 +15,6 @@ import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import { getDefaultWeekStartsOn } from '@proton/shared/lib/settings/helper';
-
-import { useNotifications } from '../../../hooks';
 
 interface Props {
     className?: string;

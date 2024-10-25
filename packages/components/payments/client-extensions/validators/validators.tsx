@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import Loader from '@proton/components/components/loader/Loader';
 import FormModal from '@proton/components/components/modal/FormModal';
-import { useModals, useNotifications } from '@proton/components/hooks';
+import { useModals } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import {
     type ChargebeePaypalModalHandles,
     PAYMENT_METHOD_TYPES,
