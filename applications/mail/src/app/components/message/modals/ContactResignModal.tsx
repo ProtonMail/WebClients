@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
@@ -15,7 +16,6 @@ import {
     PrimaryButton,
     useApi,
     useGetEncryptionPreferences,
-    useGetUserKeys,
     useNotifications,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';

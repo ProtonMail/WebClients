@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
@@ -24,7 +25,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { useNotifications, useUserKeys } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';

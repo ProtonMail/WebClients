@@ -1,9 +1,9 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
 import useConfig from '../useConfig';
-import { useUserKeys } from '../useUserKeys';
 
 const useIsRecoveryFileAvailable = () => {
     const [user, loadingUser] = useUser();

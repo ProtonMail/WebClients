@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { addContacts, labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
@@ -12,7 +13,7 @@ import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { useGetUserKeys, useNotifications } from '../../../hooks';
+import { useNotifications } from '../../../hooks';
 
 export type UpdateGroupOptions = {
     groupID: string | undefined;

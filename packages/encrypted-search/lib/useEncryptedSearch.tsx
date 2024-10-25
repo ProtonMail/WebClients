@@ -4,9 +4,9 @@ import type { IDBPDatabase } from 'idb';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { SECOND } from '@proton/shared/lib/constants';
 import { storeESUserChoiceInboxDesktop } from '@proton/shared/lib/desktop/encryptedSearch';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

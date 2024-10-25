@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
-import { useCache, useEventManager, useUserKeys } from '@proton/components';
+import { useUserKeys } from '@proton/account/userKeys/hooks';
+import { useCache, useEventManager } from '@proton/components';
 import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useContactGroups } from '@proton/mail';
