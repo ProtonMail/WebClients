@@ -115,7 +115,15 @@ const SubscriptionCheckout = ({
         plansMap,
         checkResult,
     });
-    const { planTitle, usersTitle, withDiscountPerCycle, addons, membersPerMonth, couponDiscount } = checkout;
+    const {
+        planTitle,
+        usersTitle,
+        withDiscountPerCycle,
+        addons,
+        membersPerMonth,
+        couponDiscount,
+        withDiscountPerMonth,
+    } = checkout;
 
     const plan = getPlanFromCheckout(planIDs, plansMap);
     const currencies = useAvailableCurrenciesForPlan(plan, subscription);
@@ -202,7 +210,11 @@ const SubscriptionCheckout = ({
             </div>
             <CheckoutRow
                 title={usersTitle}
-                amount={membersPerMonth}
+                // That a very naïve approach for the discounted number of members.
+                // It will NOT work for the actual member addons and it can break when/if we introduce B2C addons
+                // This is valid only for B2C plans without addons, so it should be good enough for the BF2024.
+                // Kill it with fire after the BF is done (revert it to be just amount={membersPerMonth})
+                amount={hasBFDiscount ? withDiscountPerMonth : membersPerMonth}
                 currency={currency}
                 suffix={perMonthSuffix}
                 loading={loading}
@@ -248,7 +260,8 @@ const SubscriptionCheckout = ({
                                 ) : null} */}
                             </>
                         }
-                        amount={amount}
+                        // revert it to amount={amount} after BF
+                        amount={hasBFDiscount ? withDiscountPerCycle : amount}
                         currency={currency}
                         loading={loading}
                         data-testid="price"
@@ -256,7 +269,8 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            {!!couponDiscount && (
+            {/* remove !hasBFDiscount after BF */}
+            {!!couponDiscount && !hasBFDiscount && (
                 <CheckoutRow
                     title={c('Title').t`Coupon`}
                     amount={couponDiscount}
