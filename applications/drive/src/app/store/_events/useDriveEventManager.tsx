@@ -17,7 +17,7 @@ import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import { driveEventsResultToDriveEvents } from '../_api';
 import type { VolumeType } from '../_volumes';
 import { EventsMetrics, countEventsPerType, getErrorCategory } from './driveEventsMetrics';
-import type { DriveEvent, EventHandler } from './interface';
+import type { DriveCoreEvent, DriveEvent, EventHandler } from './interface';
 
 const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';
 
@@ -28,6 +28,7 @@ const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
     eventHandlers: {
         register: () => 'id',
         unregister: () => false,
+        subscribeToCore: () => () => {},
     },
 
     volumes: {
@@ -120,6 +121,15 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         const eventManager = await createVolumeEventManager(volumeId, type);
         eventManager.subscribe((payload: DriveEventsResult) => genericHandler(volumeId, type, payload));
         eventManagers.current.set(volumeId, eventManager);
+    };
+
+    /**
+     * Subscribe to core events from the general event manager
+     */
+    const subscribeToCoreEvents = (listener: (event: DriveCoreEvent) => void) => {
+        return generalEventManager.subscribe((event) => {
+            listener(event);
+        });
     };
 
     /**
@@ -274,6 +284,7 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         eventHandlers: {
             register: registerEventHandler,
             unregister: unregisterEventHandler,
+            subscribeToCore: subscribeToCoreEvents,
         },
 
         pollEvents: {

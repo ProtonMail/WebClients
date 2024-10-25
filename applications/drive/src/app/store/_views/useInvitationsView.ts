@@ -4,11 +4,13 @@ import useLoading from '@proton/hooks/useLoading';
 
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
 import { sendErrorReport } from '../../utils/errorHandling';
+import { useDriveEventManager } from '../_events';
 import { useInvitationsListing } from '../_invitations/useInvitationsListing';
 
 export const useInvitationsView = () => {
     const [isLoading, withLoading] = useLoading(true);
     const { getCachedInvitations, loadInvitations } = useInvitationsListing();
+    const driveEventManager = useDriveEventManager();
 
     const cachedInvitations = getCachedInvitations();
 
@@ -36,6 +38,19 @@ export const useInvitationsView = () => {
             }, []),
         [cachedInvitations]
     );
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        const unsubscribe = driveEventManager.eventHandlers.subscribeToCore((event) => {
+            if (event.DriveShareRefresh?.Action === 2) {
+                loadInvitations(abortController.signal).catch(sendErrorReport);
+            }
+        });
+        return () => {
+            unsubscribe();
+            abortController.abort();
+        };
+    }, [driveEventManager.eventHandlers.subscribeToCore]);
 
     useEffect(() => {
         const abortController = new AbortController();
