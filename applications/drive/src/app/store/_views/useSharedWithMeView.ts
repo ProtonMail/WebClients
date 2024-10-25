@@ -10,6 +10,7 @@ import { useRedirectToPublicPage } from '../../hooks/util/useRedirectToPublicPag
 import { sendErrorReport } from '../../utils/errorHandling';
 import { getTokenFromSearchParams } from '../../utils/url/token';
 import { useBookmarksActions } from '../_bookmarks';
+import { useDriveEventManager } from '../_events';
 import { useLinksListing } from '../_links';
 import { useUserSettings } from '../_settings';
 import { useInvitationsView } from './useInvitationsView';
@@ -38,10 +39,14 @@ export default function useSharedWithMeView(shareId: string) {
     const { invitationsBrowserItems, isLoading: isInvitationsLoading } = useInvitationsView();
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { cleanupUrl } = useRedirectToPublicPage();
+    const driveEventManager = useDriveEventManager();
 
-    const loadSharedWithMeLinks = useCallback(async (signal: AbortSignal) => {
-        await linksListing.loadLinksSharedWithMeLink(signal);
-    }, []); //TODO: No deps params as too much work needed in linksListing
+    const loadSharedWithMeLinks = useCallback(
+        async (signal: AbortSignal) => {
+            await linksListing.loadLinksSharedWithMeLink(signal);
+        },
+        [linksListing]
+    );
     const abortSignalForCache = useAbortSignal([]);
     const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedWithMeLink(abortSignalForCache);
     const { links: bookmarksLinks, isDecrypting: isDecryptingBookmarks } =
@@ -64,6 +69,20 @@ export default function useSharedWithMeView(shareId: string) {
         });
         return acc;
     }, []);
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        const unsubscribe = driveEventManager.eventHandlers.subscribeToCore((event) => {
+            if (event.DriveShareRefresh?.Action === 2) {
+                loadSharedWithMeLinks(abortController.signal).catch(sendErrorReport);
+            }
+        });
+
+        return () => {
+            unsubscribe();
+            abortController.abort();
+        };
+    }, [loadSharedWithMeLinks, driveEventManager.eventHandlers]);
 
     useEffect(() => {
         const newInvitationsPositions = new Map(invitationsPositions.current);
