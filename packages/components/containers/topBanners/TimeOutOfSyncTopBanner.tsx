@@ -3,9 +3,12 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import useApi from '@proton/components/hooks/useApi';
+import { ping } from '@proton/shared/lib/api/tests';
 import { HOUR, SECOND } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import noop from '@proton/utils/noop';
 
 import useApiServerTime from '../../hooks/useApiServerTime';
 import TopBanner from './TopBanner';
@@ -31,11 +34,17 @@ const TimeOutOfSyncTopBanner = () => {
     const [ignore, setIgnore] = useState(false);
     const previousUpdateLocalTime = useRef(new Date());
 
+    const api = useApi();
     const serverTime = useApiServerTime();
     const currentUpdateLocalTime = new Date();
     const isStaleServerTime = isStaleServerTimeUpdate(previousUpdateLocalTime.current, currentUpdateLocalTime);
 
     useEffect(() => {
+        if (isStaleServerTime) {
+            // We ping the server to trigger a server time update: do not want to wait up to 30s for the event loop
+            // request to be processed, since the stale serverTime() value will be used by the apps in the meantime.
+            void api({ ...ping() }).catch(noop);
+        }
         previousUpdateLocalTime.current = currentUpdateLocalTime;
     });
 
