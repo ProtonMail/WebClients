@@ -1,10 +1,14 @@
 import { useCallback, useRef } from 'react';
 
+import { c } from 'ttag';
+
 import type { PrivateKeyReference } from '@proton/crypto/lib';
 import { queryInvitationDetails, queryListPendingInvitations } from '@proton/shared/lib/api/drive/invitation';
 import type { ShareInvitationDetailsPayload } from '@proton/shared/lib/interfaces/drive/invitation';
 import type { ListDrivePendingInvitationsPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
+import { sendErrorReport } from '../../utils/errorHandling';
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { shareInvitationDetailsPayloadToShareInvitationDetails, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import {
@@ -53,12 +57,32 @@ export function useInvitationsListing() {
                         decryptedLinkName: await decryptInvitationLinkName(invitationDetails, privateKeys),
                     }))
                     .catch((error) => {
+                        // Invitation does not exist
                         if (error.data?.Code === 2501) {
-                            return undefined;
+                            return;
                         }
-                        return error;
+
+                        const errorToReport = new EnrichedError(
+                            c('Notification').t`Failed to load invitation details`,
+                            {
+                                tags: {
+                                    volumeId: invitation.VolumeID,
+                                    shareId: invitation.ShareID,
+                                    invitationId: invitation.InvitationID,
+                                },
+                                extra: {
+                                    e: error,
+                                },
+                            },
+                            'Failed to load invitation details'
+                        );
+                        sendErrorReport(errorToReport);
+                        // We do not want to stop invitation listing in case there is an issue with one invitation
+                        return;
                     }));
-            setInvitations([invitationDetailsWithName]);
+            if (invitationDetailsWithName) {
+                setInvitations([invitationDetailsWithName]);
+            }
         }
     };
 
