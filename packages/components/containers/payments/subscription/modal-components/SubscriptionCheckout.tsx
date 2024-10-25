@@ -15,7 +15,7 @@ import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout'
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromCheckout, hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
-import { getHas2023OfferCoupon, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type {
     Currency,
@@ -141,7 +141,7 @@ const SubscriptionCheckout = ({
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers, freePlan });
 
-    const hasBFDiscount = getHas2023OfferCoupon(checkResult.Coupon?.Code);
+    const hasBFDiscount = getHas2024OfferCoupon(checkResult.Coupon?.Code);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
