@@ -80,7 +80,7 @@ import FeatureItem from './FeatureItem';
 import FreeLogo from './FreeLogo';
 import Guarantee from './Guarantee';
 import Layout from './Layout';
-import { PlanCardSelector, UpsellCardSelector } from './PlanCardSelector';
+import { PlanCardSelector } from './PlanCardSelector';
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
 import { type SubscriptionDataCycleMapping, getAccessiblePlans, getFreeSubscriptionData, getFreeTitle } from './helper';
@@ -118,7 +118,6 @@ const Step1 = ({
         audiences,
     },
     signupParameters,
-    relativePrice,
     currentPlan,
     onComplete,
     model,
@@ -426,10 +425,9 @@ const Step1 = ({
 
     let step = 1;
 
-    const hasUpsellSection = model.upsell.mode === UpsellTypes.UPSELL;
     const hidePlanSelectorCoupons = new Set([COUPON_CODES.TRYMAILPLUS2024, COUPON_CODES.MAILPLUSINTRO]);
     const hasPlanSelector =
-        (!model.planParameters?.defined || hasUpsellSection) &&
+        !model.planParameters?.defined &&
         ([SignupMode.Default, SignupMode.Onboarding, SignupMode.MailReferral].includes(mode) ||
             (mode === SignupMode.Invite && app === APPS.PROTONWALLET)) &&
         !hidePlanSelectorCoupons.has(model.subscriptionData.checkResult.Coupon?.Code as any) &&
@@ -794,28 +792,7 @@ const Step1 = ({
                                                 accountDetailsRef.current?.scrollInto('email');
                                             }}
                                         />
-                                    ) : (
-                                        <UpsellCardSelector
-                                            audience={audience}
-                                            relativePrice={relativePrice}
-                                            plansMap={model.plansMap}
-                                            currentPlan={currentPlan}
-                                            freePlan={model.freePlan}
-                                            subscription={model.session?.subscription}
-                                            checkout={checkout}
-                                            plan={selectedPlan}
-                                            cycle={options.cycle}
-                                            currency={options.currency}
-                                            coupon={options.checkResult?.Coupon?.Code}
-                                            vpnServersCountData={vpnServersCountData}
-                                            onSelect={() => {
-                                                accountStepPaymentRef.current?.scrollIntoView();
-                                            }}
-                                            onKeep={async () => {
-                                                await handleCompletion(getFreeSubscriptionData(model.subscriptionData));
-                                            }}
-                                        />
-                                    );
+                                    ) : null;
                                 })()}
                                 {model.upsell.mode === UpsellTypes.PLANS && (
                                     <>
