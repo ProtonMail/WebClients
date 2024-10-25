@@ -26,7 +26,12 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getIsB2BAudienceFromPlan, getIsVpnPlan, isTaxInclusive } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHas2024OfferCoupon,
+    getIsB2BAudienceFromPlan,
+    getIsVpnPlan,
+    isTaxInclusive,
+} from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
@@ -481,7 +486,8 @@ const AccountStepPayment = ({
 
                 const proration = subscriptionData.checkResult?.Proration ?? 0;
                 const credits = subscriptionData.checkResult?.Credit ?? 0;
-                const couponDiscount = currentCheckout.couponDiscount || 0;
+                const isBFOffer = getHas2024OfferCoupon(subscriptionData.checkResult?.Coupon?.Code);
+                const couponDiscount = isBFOffer ? 0 : currentCheckout.couponDiscount || 0;
 
                 const showAmountDue = proration !== 0 || credits !== 0 || couponDiscount !== 0;
 
@@ -538,7 +544,20 @@ const AccountStepPayment = ({
                                         {
                                             id: 'amount',
                                             left: <span>{getTotalBillingText(options.cycle)}</span>,
-                                            right: (
+                                            right: isBFOffer ? (
+                                                <>
+                                                    {loadingPaymentDetails ? (
+                                                        <CircleLoader />
+                                                    ) : (
+                                                        <>
+                                                            <Price currency={subscriptionData.currency}>
+                                                                {currentCheckout.withDiscountPerCycle}
+                                                            </Price>
+                                                            {!showAmountDue && '*'}
+                                                        </>
+                                                    )}
+                                                </>
+                                            ) : (
                                                 <>
                                                     {getPrice(currentCheckout.withoutDiscountPerCycle)}
                                                     {!showAmountDue && '*'}
