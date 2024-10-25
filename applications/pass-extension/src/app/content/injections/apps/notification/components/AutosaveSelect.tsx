@@ -1,27 +1,27 @@
 import { type FC } from 'react';
 
-import { FormikContextType } from 'formik';
+import type { FormikContextType } from 'formik';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
+import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { c } from 'ttag';
 
-import { Button, Scroll } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import { type AutosaveFormValues, AutosaveMode, type AutosaveUpdatePayload } from '@proton/pass/types';
 
 type Props = {
-    data: AutosaveUpdatePayload;
     busy: boolean;
+    data: AutosaveUpdatePayload;
     form: FormikContextType<AutosaveFormValues>;
 };
 
 export const AutosaveSelect: FC<Props> = ({ data, busy, form }) => (
     <>
-        <Scroll className="overflow-hidden" scrollContained>
+        <ScrollableItemsList increaseSurface>
             {data.candidates.map(({ itemId, shareId, url, userIdentifier, name }) => (
                 <ListItem
                     key={`${shareId}-${itemId}`}
-                    // Do not use px-0; the way the CSS is compiled prevents it from overriding higher px-n classes
-                    className="rounded-xl pl-0 pr-0"
+                    className="rounded-none"
                     icon="user"
                     title={name}
                     subTitle={userIdentifier}
@@ -51,11 +51,18 @@ export const AutosaveSelect: FC<Props> = ({ data, busy, form }) => (
                     }
                 />
             ))}
-        </Scroll>
+        </ScrollableItemsList>
+
         <div className="flex justify-space-between shrink-0 gap-3 mt-1">
-            <Button pill color="norm" shape="underline" type="submit" className="text-no-decoration p-0 pt-1">{c(
-                'Action'
-            ).t`Create new login`}</Button>
+            <Button
+                pill
+                color="norm"
+                shape="underline"
+                type="submit"
+                className="text-no-decoration hover:text-underline p-0 pt-1"
+            >
+                {c('Action').t`Create new login`}
+            </Button>
             {data?.candidates.length === 1 && (
                 <ButtonLike
                     as="div"
