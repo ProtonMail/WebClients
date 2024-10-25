@@ -1,3 +1,4 @@
+import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 import type { EncryptedLink } from '../_links';
@@ -23,4 +24,10 @@ export type DriveEvent = {
 
 export type DriveEventData = {
     externalInvitationSignup?: string;
+};
+
+export type DriveCoreEvent = {
+    DriveShareRefresh?: {
+        Action: EVENT_ACTIONS;
+    };
 };
