@@ -19,7 +19,15 @@ export interface PassDB extends DBSchema {
 export const CACHE_DB_VERSION = 1;
 export const CACHE_DB_PREFIX = 'pass:db::';
 
-export const getPassDBs = async () => (await indexedDB.databases()).map(prop('name')).filter(truthy);
+/** `indexedDB.database` is not supported on Firefox <126
+ * see: https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/databases#browser_compatibility */
+export const getPassDBs = async () => {
+    try {
+        return (await indexedDB.databases()).map(prop('name')).filter(truthy);
+    } catch {
+        return [];
+    }
+};
 
 /** DB is created for each userID for account switching capabilities. */
 export const getPassDBName = (userID: string) => `${CACHE_DB_PREFIX}${userID}`;
