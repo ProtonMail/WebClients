@@ -318,6 +318,7 @@ export type IconName =
     | 'size-arrow-up'
     | 'size-arrow-down'
     | 'speech-bubble'
+    | 'sliders'
     | 'squares'
     | 'squares-in-square'
     | 'star'
@@ -414,6 +415,7 @@ export { IcArrowsUpAndLeftBig } from './icons/IcArrowsUpAndLeftBig';
 export { IcAt } from './icons/IcAt';
 export { IcBackspace } from './icons/IcBackspace';
 export { IcBagPercent } from './icons/IcBagPercent';
+export { IcBank } from './icons/IcBank';
 export { IcBell } from './icons/IcBell';
 export { IcBolt } from './icons/IcBolt';
 export { IcBoltFilled } from './icons/IcBoltFilled';
@@ -580,6 +582,7 @@ export { IcLockCheck } from './icons/IcLockCheck';
 export { IcLockCheckFilled } from './icons/IcLockCheckFilled';
 export { IcLockExclamationFilled } from './icons/IcLockExclamationFilled';
 export { IcLockFilled } from './icons/IcLockFilled';
+export { IcLockOpenFilled2 } from './icons/IcLockOpenFilled2';
 export { IcLockOpenCheckFilled } from './icons/IcLockOpenCheckFilled';
 export { IcLockOpenExclamationFilled } from './icons/IcLockOpenExclamationFilled';
 export { IcLockOpenPenFilled } from './icons/IcLockOpenPenFilled';
@@ -683,6 +686,7 @@ export { IcShieldHalfFilled } from './icons/IcShieldHalfFilled';
 export { IcSizeArrowUp } from './icons/IcSizeArrowUp';
 export { IcSizeArrowDown } from './icons/IcSizeArrowDown';
 export { IcSpeechBubble } from './icons/IcSpeechBubble';
+export { IcSliders } from './icons/IcSliders';
 export { IcSquares } from './icons/IcSquares';
 export { IcSquaresInSquare } from './icons/IcSquaresInSquare';
 export { IcStar } from './icons/IcStar';
