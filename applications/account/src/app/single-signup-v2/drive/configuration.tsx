@@ -24,7 +24,6 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { PLANS } from '@proton/payments';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { APPS, BRAND_NAME, CYCLE, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -35,146 +34,113 @@ import Benefits from '../Benefits';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
-import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
+import {
+    getBuiltInEncryptionBenefit,
+    getBundleVisionaryBenefits,
+    getFamilyDuoBenefits,
+    getGenericFeatures,
+    getJoinString,
+    getSwissPrivacyLawsBenefit,
+} from '../configuration/helper';
 import type { SignupConfiguration } from '../interface';
 import { SignupMode } from '../interface';
 import CustomStep from '../mail/CustomStep';
 import setupAccount from '../mail/account-setup.svg';
 
-export const getDriveBenefits = ({
-    mode,
-    freePlan,
-}: {
-    mode: SignupMode;
-    freePlan: FreePlanDefault;
-}): BenefitItem[] => {
-    if (mode === SignupMode.Invite) {
-        const totalStorageSize = humanSize({ bytes: freePlan.MaxDriveRewardSpace, fraction: 0 });
-
-        return [
-            {
-                key: 1,
-                text: c('drive_signup_2023: Info').t`Protected by Swiss privacy laws`,
-                icon: {
-                    name: 'shield',
-                },
-            },
-            {
-                key: 2,
-                text: c('drive_signup_2023: Feature').t`End-to-end encrypted`,
-                icon: {
-                    name: 'lock',
-                },
-            },
-            {
-                key: 3,
-                text: c('drive_signup_2023: Feature').t`${totalStorageSize} of storage for free`,
-                icon: {
-                    name: 'storage',
-                },
-            },
-        ];
+const getDriveBenefitsTitle = (plan: PLANS | undefined, audience: Audience | undefined) => {
+    if (audience === Audience.B2B) {
+        return c('Signup: Info').t`The only business solution that is:`;
     }
-
-    return [
-        {
-            key: 1,
-            text: c('drive_signup_2023: Info').t`Encrypted cloud storage for all your files`,
-            icon: {
-                name: 'lock',
-            },
-        },
-        {
-            key: 2,
-            text: c('drive_signup_2023: Info').t`Advanced sharing security`,
-            icon: {
-                name: 'arrow-up-from-square',
-            },
-        },
-        ...getGenericBenefits(),
-        {
-            key: 12,
-            text: c('pass_signup_2023: Info').t`Works on all devices`,
-            icon: {
-                name: 'mobile',
-            },
-        },
-    ];
+    return c('Signup: Info').t`The only cloud storage with:`;
 };
 
-export const getDriveB2BBenefits = ({
-    mode,
-    freePlan,
-}: {
-    mode: SignupMode;
-    freePlan: FreePlanDefault;
-}): BenefitItem[] => {
-    if (mode === SignupMode.Invite) {
-        const totalStorageSize = humanSize({ bytes: freePlan.MaxDriveRewardSpace, fraction: 0 });
+const getAppsDriveIncludedBenefit = (): BenefitItem => {
+    return {
+        key: `apps-drive-included`,
+        text: c('Signup: Info').t`Email, calendar, password manager, and VPN included`,
+        icon: {
+            name: 'grid-2',
+        },
+    };
+};
 
+const getAppsForAllDevicesBenefit = (): BenefitItem => {
+    return {
+        key: `apps-for-all-devices`,
+        text: c('Signup: Info').t`Apps for all devices`,
+        icon: {
+            name: 'mobile',
+        },
+    };
+};
+
+const getAdvancedSharingSecurityBenefit = (): BenefitItem => {
+    return {
+        key: `advanced-sharing-security`,
+        text: c('Signup: Info').t`Advanced sharing security`,
+        icon: {
+            name: 'arrow-up-from-square',
+        },
+    };
+};
+
+export const getDriveBenefits = (plan: PLANS | undefined, audience: Audience | undefined): BenefitItem[] => {
+    if (plan === PLANS.BUNDLE || plan === PLANS.VISIONARY) {
+        return getBundleVisionaryBenefits();
+    }
+
+    if (plan === PLANS.FAMILY || plan === PLANS.DUO) {
+        return getFamilyDuoBenefits();
+    }
+
+    if (audience === Audience.B2B) {
         return [
             {
                 key: 1,
-                text: c('drive_signup_2023: Info').t`Protected by Swiss privacy laws`,
-                icon: {
-                    name: 'shield',
-                },
-            },
-            {
-                key: 2,
-                text: c('drive_signup_2023: Feature').t`End-to-end encrypted`,
+                text: getBoldFormattedText(c('drive_signup_2024: Info').t`**Secure:** end-to-end encryption`),
                 icon: {
                     name: 'lock',
                 },
             },
             {
-                key: 3,
-                text: c('drive_signup_2023: Feature').t`${totalStorageSize} of storage for free`,
+                key: 2,
+                text: getBoldFormattedText(c('drive_signup_2024: Info').t`**Collaborative:** online document editor`),
                 icon: {
-                    name: 'storage',
+                    name: 'users',
+                },
+            },
+            {
+                key: 3,
+                text: getBoldFormattedText(
+                    c('drive_signup_2024: Info').t`**Simple and user-friendly:** import your files and setup in minutes`
+                ),
+                icon: {
+                    name: 'cloud',
+                },
+            },
+            {
+                key: 4,
+                text: getBoldFormattedText(c('drive_signup_2024: Info').t`**GDPR** and **HIPAA** compliant`),
+                icon: {
+                    name: 'shield',
+                },
+            },
+            {
+                key: 5,
+                text: getBoldFormattedText(c('drive_signup_2024: Info').t`**ISO 27001** certified`),
+                icon: {
+                    name: 'globe',
                 },
             },
         ];
     }
 
     return [
-        {
-            key: 1,
-            text: getBoldFormattedText(c('drive_signup_2024: Info').t`**Secure:** end-to-end encryption`),
-            icon: {
-                name: 'lock',
-            },
-        },
-        {
-            key: 2,
-            text: getBoldFormattedText(c('drive_signup_2024: Info').t`**Collaborative:** online document editor`),
-            icon: {
-                name: 'users',
-            },
-        },
-        {
-            key: 3,
-            text: getBoldFormattedText(
-                c('drive_signup_2024: Info').t`**Simple and user-friendly:** import your files and setup in minutes`
-            ),
-            icon: {
-                name: 'cloud',
-            },
-        },
-        {
-            key: 4,
-            text: getBoldFormattedText(c('drive_signup_2024: Info').t`**GDPR** and **HIPAA** compliant`),
-            icon: {
-                name: 'shield',
-            },
-        },
-        {
-            key: 5,
-            text: getBoldFormattedText(c('drive_signup_2024: Info').t`**ISO 27001** certified`),
-            icon: {
-                name: 'globe',
-            },
-        },
+        getBuiltInEncryptionBenefit(),
+        getAdvancedSharingSecurityBenefit(),
+        getSwissPrivacyLawsBenefit(),
+        getAppsForAllDevicesBenefit(),
+        getAppsDriveIncludedBenefit(),
     ];
 };
 
@@ -255,6 +221,7 @@ export const getDriveConfiguration = ({
     isLargeViewport,
     plansMap,
     mode,
+    plan,
     hideFreePlan,
     freePlan,
     audience,
@@ -263,6 +230,7 @@ export const getDriveConfiguration = ({
     audience: Audience.B2B | Audience.B2C;
     plansMap?: PlansMap;
     mode: SignupMode;
+    plan: Plan | undefined;
     isLargeViewport: boolean;
     freePlan: FreePlanDefault;
 }): SignupConfiguration => {
@@ -366,10 +334,9 @@ export const getDriveConfiguration = ({
         ].filter(isTruthy),
     };
 
-    const benefitItems = getDriveBenefits({ mode, freePlan });
-    const benefitB2BItems = getDriveB2BBenefits({ mode, freePlan });
-    const benefitsTitle = getBenefits(DRIVE_APP_NAME);
-    const benefitsB2BTitle = c('drive_signup_2024: TitleB2B').t`The only business solution that is:`;
+    const benefitItems = getDriveBenefits(plan?.Name as PLANS, audience);
+
+    const benefitsTitle = getDriveBenefitsTitle(plan?.Name as PLANS, audience);
     const benefitsOnboardingTitle = benefitsTitle;
     const benefitsInviteTitle = c('drive_signup_2023: Title').t`Free, encrypted, and secure cloud storage`;
     const benefits = benefitItems && (
@@ -377,14 +344,14 @@ export const getDriveConfiguration = ({
             <div className="text-lg text-semibold">
                 {
                     {
-                        [SignupMode.Default]: audience === Audience.B2B ? benefitsB2BTitle : benefitsTitle,
+                        [SignupMode.Default]: benefitsTitle,
                         [SignupMode.Onboarding]: benefitsOnboardingTitle,
                         [SignupMode.Invite]: benefitsInviteTitle,
                         [SignupMode.MailReferral]: benefitsTitle,
                     }[mode]
                 }
             </div>
-            <Benefits className="mt-5 mb-5" features={audience === Audience.B2B ? benefitB2BItems : benefitItems} />
+            <Benefits className="mt-5 mb-5" features={benefitItems} />
             <div>{getJoinString(audience)}</div>
         </div>
     );
