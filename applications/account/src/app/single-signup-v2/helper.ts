@@ -6,8 +6,15 @@ import type { BillingAddress, PAYMENT_METHOD_TYPES, PaymentsApi, SavedPaymentMet
 import { type ADDON_NAMES, PLANS, type PlanIDs } from '@proton/payments';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, COUPON_CODES, CYCLE, DEFAULT_CURRENCY, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import type {
+    APP_NAMES} from '@proton/shared/lib/constants';
+import {
+    APPS,
+    COUPON_CODES,
+    CYCLE,
+    DEFAULT_CURRENCY,
+    FREE_SUBSCRIPTION,
+} from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
@@ -193,133 +200,78 @@ const getUpsell = ({
         return defaultValue;
     }
 
+    const getUpsellData = ({
+        plan,
+        cycle = CYCLE.YEARLY,
+        coupon = COUPON_CODES.BLACK_FRIDAY_2024,
+    }: {
+        plan: Plan;
+        cycle?: CYCLE;
+        coupon?: string;
+    }) => {
+        return {
+            ...defaultValue,
+            plan,
+            subscriptionOptions: {
+                planIDs: {
+                    [plan.Name]: 1,
+                },
+                cycle,
+                coupon,
+            },
+            mode: UpsellTypes.UPSELL,
+        };
+    };
+
     if (currentPlan) {
         if (getHas2024OfferCoupon(options.coupon)) {
             if (getHasAnyPlusPlan(currentPlan.Name)) {
-                const hasSelectedPassBundle =
-                    hasSelectedPlan(planParameters.plan, [PLANS.VPN_PASS_BUNDLE]) &&
-                    [CYCLE.FIFTEEN, CYCLE.THIRTY].includes(options.cycle);
-
-                const isValidPassBundleFromPass =
-                    currentPlan.Name === PLANS.PASS &&
-                    hasSelectedPassBundle &&
-                    !(options.cycle === CYCLE.FIFTEEN && subscription?.Cycle === CYCLE.TWO_YEARS);
-
-                const isValidPassBundleFromVPN1 =
-                    currentPlan.Name === PLANS.VPN &&
-                    [CYCLE.MONTHLY].includes(subscription?.Cycle as any) &&
-                    hasSelectedPassBundle;
-
-                const isValidPassBundleFromVPN12 =
-                    currentPlan.Name === PLANS.VPN &&
-                    [CYCLE.YEARLY, CYCLE.FIFTEEN].includes(subscription?.Cycle as any) &&
-                    hasSelectedPassBundle &&
-                    options.cycle === CYCLE.THIRTY;
-
-                // If the user is on a plus plan, and selects bundle, visionary, or family -> let it pass through
-                if (
-                    (options.cycle === CYCLE.YEARLY &&
-                        (hasSelectedPlan(planParameters.plan, [
-                            PLANS.BUNDLE,
-                            PLANS.VISIONARY,
-                            PLANS.DUO,
-                            PLANS.FAMILY,
-                        ]) ||
-                            (hasMonthlyCycle && hasSelectedPlan(planParameters.plan, [currentPlan.Name])))) ||
-                    isValidPassBundleFromPass ||
-                    isValidPassBundleFromVPN1 ||
-                    isValidPassBundleFromVPN12
-                ) {
-                    return {
-                        ...defaultValue,
-                        plan: planParameters.plan,
-                        subscriptionOptions: {
-                            planIDs: planParameters.planIDs,
-                            cycle: options.cycle,
-                            coupon: COUPON_CODES.END_OF_YEAR_2023,
-                        },
-                        mode: UpsellTypes.UPSELL,
-                    };
+                if (currentPlan.Name === PLANS.PASS) {
+                    if (
+                        options.cycle === CYCLE.YEARLY &&
+                        hasSelectedPlan(planParameters.plan, [PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])
+                    ) {
+                        return getUpsellData({ plan: planParameters.plan });
+                    }
+                    const plan = getSafePlan(plansMap, PLANS.PASS_FAMILY);
+                    return getUpsellData({ plan });
                 }
 
-                // Any other selected plan will give bundle
-                const plan = getSafePlan(plansMap, PLANS.BUNDLE);
-                return {
-                    ...defaultValue,
-                    plan,
-                    subscriptionOptions: {
-                        planIDs: {
-                            [plan.Name]: 1,
-                        },
-                        cycle: CYCLE.YEARLY,
-                        coupon: COUPON_CODES.END_OF_YEAR_2023,
-                    },
-                    mode: UpsellTypes.UPSELL,
-                };
+                if ((currentPlan.Name === PLANS.VPN2024 || currentPlan.Name === PLANS.VPN) && hasMonthlyCycle) {
+                    if (
+                        (options.cycle === CYCLE.YEARLY || options.cycle === CYCLE.TWO_YEARS) &&
+                        hasSelectedPlan(planParameters.plan, [PLANS.VPN2024])
+                    ) {
+                        return getUpsellData({
+                            plan: planParameters.plan,
+                            cycle: options.cycle,
+                            coupon: options.coupon,
+                        });
+                    }
+                }
+
+                const isValidBundleDuoFamilyFromPlus =
+                    options.cycle === CYCLE.YEARLY &&
+                    hasSelectedPlan(planParameters.plan, [PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY]);
+
+                if (isValidBundleDuoFamilyFromPlus) {
+                    return getUpsellData({ plan: planParameters.plan });
+                }
+                // Any other selected plan will give yearly bundle
+                return getUpsellData({ plan: getSafePlan(plansMap, PLANS.BUNDLE) });
             }
 
             if (currentPlan.Name === PLANS.BUNDLE) {
-                if (
-                    options.cycle === CYCLE.YEARLY &&
-                    (hasSelectedPlan(planParameters.plan, [PLANS.VISIONARY, PLANS.FAMILY]) ||
-                        (hasMonthlyCycle && hasSelectedPlan(planParameters.plan, [currentPlan.Name])))
-                ) {
-                    return {
-                        ...defaultValue,
-                        plan: planParameters.plan,
-                        subscriptionOptions: {
-                            planIDs: planParameters.planIDs,
-                            cycle: options.cycle,
-                            coupon: COUPON_CODES.END_OF_YEAR_2023,
-                        },
-                        mode: UpsellTypes.UPSELL,
-                    };
+                if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.DUO, PLANS.FAMILY])) {
+                    return getUpsellData({ plan: planParameters.plan });
                 }
-
-                const plan = getSafePlan(plansMap, PLANS.VISIONARY);
-                return {
-                    ...defaultValue,
-                    plan,
-                    subscriptionOptions: {
-                        planIDs: {
-                            [plan.Name]: 1,
-                        },
-                        cycle: CYCLE.YEARLY,
-                        coupon: COUPON_CODES.END_OF_YEAR_2023,
-                    },
-                    mode: UpsellTypes.UPSELL,
-                };
+                return getUpsellData({ plan: getSafePlan(plansMap, PLANS.DUO) });
             }
 
-            if (currentPlan.Name === PLANS.FAMILY) {
-                if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.VISIONARY])) {
-                    return {
-                        ...defaultValue,
-                        plan: planParameters.plan,
-                        subscriptionOptions: {
-                            planIDs: planParameters.planIDs,
-                            cycle: options.cycle,
-                            coupon: COUPON_CODES.END_OF_YEAR_2023,
-                        },
-                        mode: UpsellTypes.UPSELL,
-                    };
+            if (currentPlan.Name === PLANS.PASS_FAMILY || currentPlan.Name === PLANS.DUO) {
+                if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.FAMILY])) {
+                    return getUpsellData({ plan: planParameters.plan });
                 }
-
-                const plan = hasMonthlyCycle
-                    ? getSafePlan(plansMap, currentPlan.Name)
-                    : getSafePlan(plansMap, PLANS.VISIONARY);
-                return {
-                    ...defaultValue,
-                    plan,
-                    subscriptionOptions: {
-                        planIDs: {
-                            [plan.Name]: 1,
-                        },
-                        cycle: CYCLE.YEARLY,
-                        coupon: COUPON_CODES.END_OF_YEAR_2023,
-                    },
-                    mode: UpsellTypes.UPSELL,
-                };
             }
 
             if (getHasBusinessUpsell(currentPlan.Name)) {
@@ -550,7 +502,7 @@ export const getUserInfo = async ({
         return getSubscriptionData(paymentsApi, optionsWithSubscriptionDefaults);
     })();
 
-    if (user && hasAccess({ toApp, user, audience, currentPlan })) {
+    if (user && hasAccess({ toApp, user, audience, currentPlan }) && !getHas2024OfferCoupon(options.coupon)) {
         state.access = true;
     }
 
@@ -564,13 +516,20 @@ export const getUserInfo = async ({
             state.access = false;
         } else if (
             getHasAnyPlusPlan(currentPlan.Name) &&
-            [PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
+            [PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
                 planParameters.plan.Name as any
             )
         ) {
             state.access = false;
         } else if (
             currentPlan.Name === PLANS.BUNDLE &&
+            [PLANS.DUO, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
+                planParameters.plan.Name as any
+            )
+        ) {
+            state.access = false;
+        } else if (
+            currentPlan.Name === PLANS.DUO &&
             [PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
                 planParameters.plan.Name as any
             )
