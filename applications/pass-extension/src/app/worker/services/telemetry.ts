@@ -11,7 +11,6 @@ import type { EventDispatcherAlarm } from '@proton/pass/utils/event/dispatcher';
 import noop from '@proton/utils/noop';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
-export const TELEMETRY_STORAGE_KEY = 'telemetry';
 
 export const createAlarmHandles = (alarmName: string): EventDispatcherAlarm => {
     return {
@@ -21,12 +20,12 @@ export const createAlarmHandles = (alarmName: string): EventDispatcherAlarm => {
     };
 };
 
-export const createTelemetryService = (storage: ExtensionStorage<Record<typeof TELEMETRY_STORAGE_KEY, string>>) => {
+export const createTelemetryService = (storage: ExtensionStorage<Record<'telemetry', string>>) => {
     const { push, send, start, stop } = createCoreTelemetryService({
         alarm: createAlarmHandles(TELEMETRY_ALARM_NAME),
         storage,
         getEnabled: withContext((ctx) => selectTelemetryEnabled(ctx.service.store.getState())),
-        getStorageKey: () => TELEMETRY_STORAGE_KEY,
+        getStorageKey: () => 'telemetry',
         getUserTier: withContext((ctx) => selectUserTier(ctx.service.store.getState())),
     });
 

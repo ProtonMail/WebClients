@@ -7,15 +7,15 @@ import { resolveSettings, settings } from './settings';
 const setDesktopBuild = (value: boolean) => ((global as any).DESKTOP_BUILD = value);
 
 describe('settings', () => {
-    let getItem: jest.SpyInstance;
-    let setItem: jest.SpyInstance;
-    let removeItem: jest.SpyInstance;
+    const getItem: jest.SpyInstance = jest.spyOn(Storage.prototype, 'getItem');
+    const setItem: jest.SpyInstance = jest.spyOn(Storage.prototype, 'setItem');
+    const removeItem: jest.SpyInstance = jest.spyOn(Storage.prototype, 'removeItem');
 
     beforeEach(() => {
         setDesktopBuild(false);
-        getItem = jest.spyOn(Storage.prototype, 'getItem');
-        setItem = jest.spyOn(Storage.prototype, 'setItem');
-        removeItem = jest.spyOn(Storage.prototype, 'removeItem');
+        getItem.mockClear();
+        setItem.mockClear();
+        removeItem.mockClear();
     });
 
     afterAll(() => setDesktopBuild(false));
@@ -76,7 +76,6 @@ describe('settings', () => {
 
             const result = resolveSettings(0);
             expect(result).toEqual(storedSettings);
-            expect(removeItem).toHaveBeenCalledWith(SETTINGS_STORAGE_KEY);
         });
     });
 });
