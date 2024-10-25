@@ -29,6 +29,8 @@ enum CommonFeatureFlag {
     InboxNewUpsellModals = 'InboxNewUpsellModals',
     NewCancellationFlowUpsell = 'NewCancellationFlowUpsell',
     ScribeAdminSetting = 'ScribeAdminSetting',
+    WalletRbf = 'WalletRbf',
+    WalletAddressList = 'WalletAddressList',
 }
 
 enum AccountFlag {
