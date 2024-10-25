@@ -12,13 +12,13 @@ import {
     Icon,
     getCheckoutRenewNoticeText,
     useErrorHandler,
+    useHandler,
     useModalState,
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useHandler from '@proton/components/hooks/useHandler';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';

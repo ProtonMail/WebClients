@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { EditorActions, EditorMetadata } from '@proton/components';
-import { useHandler, useNotifications } from '@proton/components/hooks';
+import { useHandler, useNotifications } from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
