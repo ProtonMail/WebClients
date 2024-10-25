@@ -72,6 +72,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
 
     const onSettingsChange = (settings: ProxiedSettings) => {
         context.setSettings(settings);
+        context.service.iframe.setTheme(settings.theme);
         void reconciliate();
     };
 
@@ -116,6 +117,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
             context.setState({ ...res.state, ready: true, stale: false });
             context.setSettings(res.settings);
             context.setFeatureFlags(res.features);
+            context.service.iframe.setTheme(res.settings.theme);
 
             /* if the user has disabled every injection setting or added the current
              * domain to the pause list we can safely destroy the content-script context */
