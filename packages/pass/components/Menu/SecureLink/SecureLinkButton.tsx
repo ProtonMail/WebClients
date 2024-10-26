@@ -40,7 +40,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({ className, parentC
                     : onClick
             }
             parentClassName={parentClassName}
-            extra={free && <PassPlusPromotionButton />}
+            extra={free && <PassPlusPromotionButton style={{ '--background-norm': 'var(--background-strong)' }} />}
         />
     );
 };
