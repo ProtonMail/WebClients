@@ -9,7 +9,7 @@ const container = document.querySelector('.app-root');
 const root = createRoot(container!);
 
 root.render(
-    <ExtensionRoot endpoint="popup">
+    <ExtensionRoot endpoint="popup" wasm>
         <ExtensionSetup>
             <Popup />
         </ExtensionSetup>
