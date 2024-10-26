@@ -129,7 +129,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
 
 export const App = () => {
     return (
-        <PassCoreProvider {...getPassCoreProps()}>
+        <PassCoreProvider {...getPassCoreProps()} wasm>
             <Icons />
             <ErrorBoundary component={<StandardErrorPage big />}>
                 <NotificationsProvider>

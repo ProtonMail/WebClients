@@ -138,7 +138,7 @@ export const App = () => (
     <ServiceWorkerProvider>
         <ServiceWorkerContext.Consumer>
             {(sw) => (
-                <PassCoreProvider {...getPassCoreProps(sw?.client)}>
+                <PassCoreProvider {...getPassCoreProps(sw?.client)} wasm>
                     <CompatibilityCheck compatibilities={PASS_WEB_COMPAT}>
                         <Icons />
 
