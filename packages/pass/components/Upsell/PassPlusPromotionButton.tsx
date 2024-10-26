@@ -17,7 +17,11 @@ export const PassPlusPromotionButton: FC<Props> = ({ className, ...props }) => (
         {...props}
         className={clsx(className, 'flex items-center button-xs')}
         iconSize={3.5}
-        style={{ '--upgrade-color-stop-1': '#fcd38d', '--upgrade-color-stop-2': '#9834ff' }}
+        style={{
+            ...props.style,
+            '--upgrade-color-stop-1': '#fcd38d',
+            '--upgrade-color-stop-2': '#9834ff',
+        }}
     >
         <Icon name="plus" size={3} className="mb-0.5" />
     </PromotionButton>
