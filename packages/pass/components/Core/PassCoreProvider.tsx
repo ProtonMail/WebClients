@@ -95,20 +95,20 @@ export type PassCoreContextValue = {
     isFirstLaunch?: () => boolean;
 };
 
-export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale'>;
+export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale'> & { wasm?: boolean };
 
 const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
 
 /** The `PassCoreProvider` must be made available on all pass
  * clients : it provides implementations for processes that are
  * dependent on the platform. */
-export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, ...core }) => {
+export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, wasm, ...core }) => {
     const [appLocale, setAppLocale] = useState(DEFAULT_LOCALE);
     const [theme, setTheme] = useState<PassThemeOption>(PASS_DEFAULT_THEME);
     const context = useMemo<PassCoreContextValue>(() => ({ ...core, setTheme, locale: appLocale }), [appLocale]);
 
     useEffect(() => {
-        preloadPassCoreUI()?.catch(noop);
+        if (wasm) preloadPassCoreUI()?.catch(noop);
 
         core
             .getTheme?.()

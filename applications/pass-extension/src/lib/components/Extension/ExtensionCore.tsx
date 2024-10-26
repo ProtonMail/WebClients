@@ -37,7 +37,13 @@ import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
 
-const getExtensionCoreProps = (
+export type ExtensionCoreProps = {
+    endpoint: ClientEndpoint;
+    theme?: PassThemeOption;
+    wasm?: boolean;
+};
+
+const getPassCoreProviderProps = (
     endpoint: ClientEndpoint,
     config: PassConfig,
     theme?: PassThemeOption
@@ -186,14 +192,9 @@ const getExtensionCoreProps = (
     };
 };
 
-type Props = {
-    endpoint: ClientEndpoint;
-    theme?: PassThemeOption;
-};
-
-export const ExtensionCore: FC<PropsWithChildren<Props>> = ({ children, endpoint, theme }) => {
+export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ children, endpoint, theme, wasm }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
-    const coreProps = useMemo(() => getExtensionCoreProps(endpoint, config, theme), []);
+    const coreProps = useMemo(() => getPassCoreProviderProps(endpoint, config, theme), []);
     const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
     const message = resolveMessageFactory(endpoint);
 
@@ -211,6 +212,7 @@ export const ExtensionCore: FC<PropsWithChildren<Props>> = ({ children, endpoint
             {...coreProps}
             getCurrentTabUrl={() => currentTabUrl.current}
             setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
+            wasm={wasm}
         >
             <AuthStoreProvider store={authStore}>
                 <UnlockProvider unlock={unlock}>{children}</UnlockProvider>
