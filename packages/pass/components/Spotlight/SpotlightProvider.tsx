@@ -9,7 +9,7 @@ import { PendingNewUsersApprovalModal } from '@proton/pass/components/Share/Pend
 import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
 import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
-import { UpsellRef } from '@proton/pass/constants';
+import type { UpsellRef } from '@proton/pass/constants';
 import type { MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -128,12 +128,14 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         <SpotlightContext.Provider value={ctx}>
             {children}
 
-            <UpsellingModal
-                onClose={closeUpselling}
-                open={state.upselling !== null}
-                upsellType={state.upselling?.type ?? 'free-trial'}
-                upsellRef={state.upselling?.upsellRef ?? UpsellRef.DEFAULT}
-            />
+            {state.upselling && (
+                <UpsellingModal
+                    open
+                    onClose={closeUpselling}
+                    upsellType={state.upselling.type}
+                    upsellRef={state.upselling.upsellRef}
+                />
+            )}
 
             <PendingShareAccessModal open={state.pendingShareAccess} onClose={closePendingShareAccess} />
             <PendingNewUsersApprovalModal />
