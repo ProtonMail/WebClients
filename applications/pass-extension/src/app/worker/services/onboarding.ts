@@ -7,7 +7,6 @@ import {
     createAliasSyncEnableRule,
     createAliasTrashConfirmRule,
     createBlackFriday2024Rule,
-    createFamilyPlanPromo2024Rule,
     createMonitorRule,
     createPendingShareAccessRule,
     createPermissionsRule,
@@ -42,9 +41,7 @@ export const createOnboardingService = (
             createStorageIssueRule(withContext((ctx) => ctx.service.storage.getState().storageFull)),
             createUpdateRule(withContext((ctx) => ctx.service.activation.getAvailableUpdate())),
             createTrialRule(store),
-            ...(BUILD_TARGET !== 'safari'
-                ? [createBlackFriday2024Rule(store), createFamilyPlanPromo2024Rule(store)]
-                : []),
+            ...(BUILD_TARGET !== 'safari' ? [createBlackFriday2024Rule(store)] : []),
             createSecurityRule(store),
             createUserRatingRule(store),
             createUserRenewalRule(store),
