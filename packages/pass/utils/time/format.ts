@@ -31,16 +31,25 @@ export const epochToRelativeDate = (epoch: number, options?: RelativeDaysAgoOpti
 type TimeRemainingOptions = {
     format?: (remaining: string) => string;
     expiredLabel?: string;
+    dateInThePast?: boolean;
 };
 
-export const timeRemaining = (epoch: number, options?: TimeRemainingOptions): string => {
+export const epochToDateLabel = (epoch: number, options?: TimeRemainingOptions): string => {
     const start = Date.now();
     const end = new Date(epochToMs(epoch));
     const format = options?.format ?? identity;
 
-    if (start > end.getTime()) return options?.expiredLabel ?? c('Label').t`Expired`;
+    if (!options?.dateInThePast && start > end.getTime()) return options?.expiredLabel ?? c('Label').t`Expired`;
 
-    let { days = 0, hours = 0, minutes = 0 } = intervalToDuration({ start, end });
+    let { years = 0, months = 0, days = 0, hours = 0, minutes = 0 } = intervalToDuration({ start, end });
+
+    if (years) {
+        return format(c('Label').ngettext(msgid`${years} year`, `${years} years`, years));
+    }
+
+    if (months) {
+        return format(c('Label').ngettext(msgid`${months} month`, `${months} months`, months));
+    }
 
     if (days) {
         if (hours >= 23) days++;
