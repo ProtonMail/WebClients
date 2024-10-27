@@ -7,7 +7,7 @@
 	--offer-text-color: var(--text-invert);
 
 	background: var(--banner-background-color) !important;
-	color: var(--background-invert);
+	color: var(--text-norm);
 
 	&::before {
 		content: '';
@@ -32,7 +32,7 @@
 	}
 
 	&--btn {
-		--text-norm: var(--text-invert);
+		--btn-text-color: #08031f;
 		--btn-background-color: white;
 
 		&--deal {
@@ -44,10 +44,19 @@
 			&,
 			&:hover,
 			&:focus {
-				border: 0;
-				outline: 2px solid rgb(255 255 255 / 0.3) !important;
 				background: var(--btn-background-color) !important;
+				border: 0;
+				color: var(--btn-text-color) !important;
+				outline: 2px solid rgb(255 255 255 / 0.3) !important;
 			}
 		}
+	}
+}
+
+.pass-light {
+	.pass-bf2024-banner {
+		--banner-background-color: #5817d1;
+
+		color: var(--text-invert);
 	}
 }
