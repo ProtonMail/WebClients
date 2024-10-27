@@ -121,26 +121,28 @@ export const MonitorSummary: FC = () => {
                             <MonitorLearnMore />
                         </section>
 
-                        <UpsellingModal
-                            upsellRef={UpsellRef.PASS_MONITOR}
-                            upsellType={upsellType}
-                            upgradePath={upgradePath}
-                            open={upsellModalOpen}
-                            onClose={() => setUpsellModalOpen(false)}
-                            features={
-                                <div className="border border-weak p-4 w-full rounded-xl">
-                                    {features.map(({ label, icon }) => (
-                                        <CardContent
-                                            key={label}
-                                            className="p-2 text-lg color-primary"
-                                            icon={icon}
-                                            title={label}
-                                            ellipsis
-                                        />
-                                    ))}
-                                </div>
-                            }
-                        />
+                        {upsellModalOpen && (
+                            <UpsellingModal
+                                open
+                                upsellRef={UpsellRef.PASS_MONITOR}
+                                upsellType={upsellType}
+                                upgradePath={upgradePath}
+                                onClose={() => setUpsellModalOpen(false)}
+                                features={
+                                    <div className="border border-weak p-4 w-full rounded-xl">
+                                        {features.map(({ label, icon }) => (
+                                            <CardContent
+                                                key={label}
+                                                className="p-2 text-lg color-primary"
+                                                icon={icon}
+                                                title={label}
+                                                ellipsis
+                                            />
+                                        ))}
+                                    </div>
+                                }
+                            />
+                        )}
                     </div>
                 </Scroll>
             </div>
