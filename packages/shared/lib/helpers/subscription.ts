@@ -512,7 +512,7 @@ export const getHas2024OfferCoupon = (coupon: string | undefined | null): boolea
     if (!coupon) {
         return false;
     }
-    return blackFriday2024Discounts.has(coupon);
+    return blackFriday2024Discounts.has(coupon?.toUpperCase());
 };
 
 export const allCycles = Object.freeze(
