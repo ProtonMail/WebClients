@@ -1,5 +1,5 @@
 import { type ADDON_NAMES, PLANS } from '@proton/payments';
-import { CYCLE, isFreeSubscription } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, isFreeSubscription } from '@proton/shared/lib/constants';
 import { getHas2024OfferCoupon, getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, PlansMap, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -11,14 +11,11 @@ export interface PlanCombination {
     cycle: CYCLE;
 }
 
-export interface PlanCombinationWithDiscount extends PlanCombination {
-    discount: number;
-}
-
 export type Eligibility =
     | {
           type: 'upsell';
-          planCombination: PlanCombinationWithDiscount;
+          planCombination: PlanCombination;
+          discount: number;
       }
     | {
           type: 'sub-user';
@@ -44,75 +41,38 @@ const getSafePlan = (plansMap: PlansMap, planName: PLANS | ADDON_NAMES) => {
     return plan;
 };
 
-const getVpnFifteenOffer = (plansMap: PlansMap): Eligibility => {
-    const plan = getSafePlan(plansMap, PLANS.VPN);
+const getUpsellOffer = ({
+    plan: planName,
+    plansMap,
+    discount = 50,
+}: {
+    plan: PLANS;
+    plansMap: PlansMap;
+    discount?: number;
+}): Eligibility => {
+    const plan = getSafePlan(plansMap, planName);
     return {
         type: 'upsell',
-        planCombination: {
-            plan,
-            cycle: CYCLE.FIFTEEN,
-            discount: 52,
-        },
-    };
-};
-
-const getVpnThirtyOffer = (plansMap: PlansMap): Eligibility => {
-    const plan = getSafePlan(plansMap, PLANS.VPN);
-    return {
-        type: 'upsell',
-        planCombination: {
-            plan,
-            cycle: CYCLE.THIRTY,
-            discount: 60,
-        },
-    };
-};
-
-const getVpnPassFifteenOffer = (plansMap: PlansMap): Eligibility => {
-    const plan = getSafePlan(plansMap, PLANS.VPN_PASS_BUNDLE);
-    return {
-        type: 'upsell',
-        planCombination: {
-            plan,
-            cycle: CYCLE.FIFTEEN,
-            discount: 47,
-        },
-    };
-};
-
-const getVpnPassThirtyOffer = (plansMap: PlansMap): Eligibility => {
-    const plan = getSafePlan(plansMap, PLANS.VPN_PASS_BUNDLE);
-    return {
-        type: 'upsell',
-        planCombination: {
-            plan,
-            cycle: CYCLE.THIRTY,
-            discount: 55,
-        },
-    };
-};
-
-const getBundleOffer = (plansMap: PlansMap): Eligibility => {
-    const plan = getSafePlan(plansMap, PLANS.BUNDLE);
-    return {
-        type: 'upsell',
+        discount,
         planCombination: {
             plan,
             cycle: CYCLE.YEARLY,
-            discount: 33,
+            coupon: COUPON_CODES.BLACK_FRIDAY_2024,
         },
     };
 };
 
 interface Combination {
     latest: {
-        plan: PLANS;
+        plan: (PLANS | ADDON_NAMES)[];
         cycles: CYCLE[];
     };
-    target: {
-        plan: PLANS;
-        cycles: CYCLE[];
-    };
+    target:
+        | true
+        | {
+              plan: (PLANS | ADDON_NAMES)[];
+              cycles: CYCLE[];
+          };
     result: () => Eligibility;
 }
 
@@ -149,293 +109,115 @@ export const getEligibility = ({
             return okResult();
         }
 
-        const getPlusUpsell = (from: PLANS, to: PLANS) => {
-            return {
+        const upsells: Combination[] = [
+            // 1M,3M VPN -> 1Y,2Y VPN OK
+            {
                 latest: {
-                    plan: from,
+                    plan: [PLANS.FREE, PLANS.VPN, PLANS.VPN2024],
+                    cycles: [CYCLE.MONTHLY, CYCLE.THREE],
+                },
+                target: {
+                    plan: [PLANS.VPN2024],
+                    cycles: [CYCLE.YEARLY, CYCLE.TWO_YEARS],
+                },
+                result: okResult,
+            },
+            // Pass -> Pass family OK
+            {
+                latest: {
+                    plan: [PLANS.PASS],
                     cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: {
-                    plan: to,
-                    cycles: [CYCLE.MONTHLY, CYCLE.FIFTEEN, CYCLE.THIRTY],
+                    plan: [PLANS.PASS_FAMILY],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
-                result: () => getBundleOffer(plansMap),
-            };
-        };
-
-        const vpnUpsells: Combination[] = [
-            {
-                latest: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY],
-                },
-                target: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY],
-                },
-                result: () => getVpnFifteenOffer(plansMap),
+                result: okResult,
             },
+            // Plus plan -> bundle, duo, family OK
             {
                 latest: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.YEARLY, CYCLE.FIFTEEN],
+                    plan: [PLANS.VPN, PLANS.VPN2024, PLANS.MAIL, PLANS.PASS, PLANS.DRIVE],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY, CYCLE.FIFTEEN],
+                    plan: [PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
-                result: () => getVpnThirtyOffer(plansMap),
+                result: okResult,
             },
+            // Bundle -> duo, family OK
             {
                 latest: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.TWO_YEARS, CYCLE.THIRTY],
+                    plan: [PLANS.BUNDLE],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY, CYCLE.FIFTEEN, CYCLE.THIRTY],
+                    plan: [PLANS.DUO, PLANS.FAMILY],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
-                result: () => getBundleOffer(plansMap),
+                result: okResult,
             },
+            // Pass family & duo -> family OK
             {
                 latest: {
-                    plan: PLANS.PASS,
-                    cycles: [CYCLE.MONTHLY],
+                    plan: [PLANS.DUO, PLANS.PASS_FAMILY],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY, CYCLE.FIFTEEN],
+                    plan: [PLANS.FAMILY],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
-                result: () => getVpnPassFifteenOffer(plansMap),
+                result: okResult,
             },
+            // Bundle -> anything else, upsell to Duo
             {
                 latest: {
-                    plan: PLANS.PASS,
-                    cycles: [CYCLE.MONTHLY],
+                    plan: [PLANS.BUNDLE],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
-                target: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.THIRTY],
-                },
-                result: () => getVpnPassThirtyOffer(plansMap),
+                target: true,
+                result: () => getUpsellOffer({ plan: PLANS.DUO, plansMap, discount: 40 }),
             },
+            // Plus plan -> anything else upsell to bundle
             {
                 latest: {
-                    plan: PLANS.PASS,
-                    cycles: [CYCLE.YEARLY],
+                    plan: [PLANS.VPN, PLANS.VPN2024, PLANS.MAIL, PLANS.PASS, PLANS.DRIVE],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
-                target: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY, CYCLE.FIFTEEN],
-                },
-                result: () => getVpnPassFifteenOffer(plansMap),
+                target: true,
+                result: () => getUpsellOffer({ plan: PLANS.BUNDLE, plansMap, discount: 50 }),
             },
+            // Pass -> anything else upsell to Pass family
             {
                 latest: {
-                    plan: PLANS.PASS,
-                    cycles: [CYCLE.YEARLY],
+                    plan: [PLANS.PASS],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
-                target: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.THIRTY],
-                },
-                result: () => getVpnPassThirtyOffer(plansMap),
+                target: true,
+                result: () => getUpsellOffer({ plan: PLANS.PASS_FAMILY, plansMap, discount: 50 }),
             },
+            // Pass family & duo -> anything else upsell to family
             {
                 latest: {
-                    plan: PLANS.PASS,
-                    cycles: [CYCLE.TWO_YEARS],
+                    plan: [PLANS.DUO, PLANS.PASS_FAMILY],
+                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
-                target: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY, CYCLE.FIFTEEN, CYCLE.THIRTY],
-                },
-                result: () => getVpnPassThirtyOffer(plansMap),
-            },
-            {
-                latest: {
-                    plan: PLANS.BUNDLE,
-                    cycles: [CYCLE.MONTHLY],
-                },
-                target: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY, CYCLE.FIFTEEN, CYCLE.THIRTY],
-                },
-                result: () => getBundleOffer(plansMap),
-            },
-            {
-                latest: {
-                    plan: PLANS.BUNDLE,
-                    cycles: [CYCLE.MONTHLY],
-                },
-                target: {
-                    plan: PLANS.VPN_PASS_BUNDLE,
-                    cycles: [CYCLE.MONTHLY, CYCLE.FIFTEEN, CYCLE.THIRTY],
-                },
-                result: () => getBundleOffer(plansMap),
-            },
-            getPlusUpsell(PLANS.MAIL, PLANS.VPN),
-            getPlusUpsell(PLANS.MAIL, PLANS.VPN_PASS_BUNDLE),
-            getPlusUpsell(PLANS.DRIVE, PLANS.VPN),
-            getPlusUpsell(PLANS.DRIVE, PLANS.VPN_PASS_BUNDLE),
-        ];
-
-        const vpnPassUpsells: Combination[] = [
-            {
-                latest: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.YEARLY],
-                },
-                target: {
-                    plan: PLANS.VPN_PASS_BUNDLE,
-                    cycles: [CYCLE.FIFTEEN],
-                },
-                result: () => getVpnPassThirtyOffer(plansMap),
-            },
-            {
-                latest: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.FIFTEEN],
-                },
-                target: {
-                    plan: PLANS.VPN_PASS_BUNDLE,
-                    cycles: [CYCLE.FIFTEEN],
-                },
-                result: () => getVpnPassThirtyOffer(plansMap),
-            },
-            {
-                latest: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.TWO_YEARS, CYCLE.THIRTY],
-                },
-                target: {
-                    plan: PLANS.VPN_PASS_BUNDLE,
-                    cycles: [CYCLE.FIFTEEN, CYCLE.THIRTY],
-                },
-                result: () => getBundleOffer(plansMap),
-            },
-            {
-                latest: {
-                    plan: PLANS.PASS,
-                    cycles: [CYCLE.TWO_YEARS],
-                },
-                target: {
-                    plan: PLANS.VPN_PASS_BUNDLE,
-                    cycles: [CYCLE.FIFTEEN],
-                },
-                result: () => getVpnPassThirtyOffer(plansMap),
+                target: true,
+                result: () => getUpsellOffer({ plan: PLANS.FAMILY, plansMap, discount: 40 }),
             },
         ];
 
-        const bundle12Ok: Combination[] = [
-            {
-                latest: {
-                    plan: PLANS.BUNDLE,
-                    cycles: [CYCLE.MONTHLY],
-                },
-                target: {
-                    plan: PLANS.BUNDLE,
-                    cycles: [CYCLE.YEARLY],
-                },
-                result: okResult,
-            },
-            {
-                latest: {
-                    plan: PLANS.MAIL,
-                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
-                },
-                target: {
-                    plan: PLANS.BUNDLE,
-                    cycles: [CYCLE.YEARLY],
-                },
-                result: okResult,
-            },
-            {
-                latest: {
-                    plan: PLANS.DRIVE,
-                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
-                },
-                target: {
-                    plan: PLANS.BUNDLE,
-                    cycles: [CYCLE.YEARLY],
-                },
-                result: okResult,
-            },
-            {
-                latest: {
-                    plan: PLANS.PASS,
-                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
-                },
-                target: {
-                    plan: PLANS.BUNDLE,
-                    cycles: [CYCLE.YEARLY],
-                },
-                result: okResult,
-            },
-            {
-                latest: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
-                },
-                target: {
-                    plan: PLANS.BUNDLE,
-                    cycles: [CYCLE.YEARLY],
-                },
-                result: okResult,
-            },
-        ];
-
-        // Assumes upsells are first
-        const vpnPassBundleOk: Combination[] = [
-            {
-                latest: {
-                    plan: PLANS.FREE,
-                    cycles: [],
-                },
-                target: {
-                    plan: PLANS.VPN_PASS_BUNDLE,
-                    cycles: [CYCLE.FIFTEEN, CYCLE.THIRTY],
-                },
-                result: okResult,
-            },
-            {
-                latest: {
-                    plan: PLANS.PASS,
-                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
-                },
-                target: {
-                    plan: PLANS.VPN_PASS_BUNDLE,
-                    cycles: [CYCLE.FIFTEEN, CYCLE.THIRTY],
-                },
-                result: okResult,
-            },
-            {
-                latest: {
-                    plan: PLANS.VPN,
-                    cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.FIFTEEN, CYCLE.TWO_YEARS, CYCLE.THIRTY],
-                },
-                target: {
-                    plan: PLANS.VPN_PASS_BUNDLE,
-                    cycles: [CYCLE.FIFTEEN, CYCLE.THIRTY],
-                },
-                result: okResult,
-            },
-        ];
-
-        const combinations: Combination[] = [...vpnUpsells, ...vpnPassUpsells, ...bundle12Ok, ...vpnPassBundleOk];
+        const combinations: Combination[] = upsells;
 
         const combination = combinations.find((combination) => {
-            const correctPlan =
-                combination.latest.plan === PLANS.FREE
-                    ? isFreeSubscription(latest)
-                    : latestPlan?.Name === combination.latest.plan;
-            const correctCycle =
-                combination.latest.plan === PLANS.FREE
-                    ? true
-                    : combination.latest.cycles.includes(latest?.Cycle as any);
+            const correctFree = combination.latest.plan.includes(PLANS.FREE) && isFreeSubscription(subscription);
+            const correctPlan = correctFree || combination.latest.plan.includes(latestPlan?.Name as any);
+            const correctCycle = correctFree ? true : combination.latest.cycles.includes(latest?.Cycle as any);
             return (
-                combination.target.plan === offer.plan.Name &&
-                combination.target.cycles.includes(offer.cycle) &&
+                (combination.target === true ||
+                    (combination.target.plan.includes(offer.plan.Name) &&
+                        combination.target.cycles.includes(offer.cycle))) &&
                 correctPlan &&
                 correctCycle
             );
