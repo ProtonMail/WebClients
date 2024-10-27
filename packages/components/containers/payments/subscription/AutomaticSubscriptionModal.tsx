@@ -61,7 +61,7 @@ import {
     blackFriday2024VPNMonthlyConfig,
     blackFriday2024VPNMonthlyEligibility,
 } from '../../offers/operations/blackFridayVPN2024Monthly';
-import type { Eligibility, PlanCombinationWithDiscount } from './subscriptionEligbility';
+import type { Eligibility, PlanCombination } from './subscriptionEligbility';
 import { getEligibility } from './subscriptionEligbility';
 
 const getParameters = (
@@ -123,7 +123,8 @@ const getParameters = (
 };
 
 interface Props extends ModalProps {
-    planCombination: PlanCombinationWithDiscount;
+    discount: number;
+    planCombination: PlanCombination;
     onConfirm: () => void;
 }
 
@@ -156,7 +157,7 @@ const UnavailablePrompt = (rest: ModalProps) => {
     );
 };
 
-const UpsellPrompt = ({ planCombination: { discount, plan, cycle }, onConfirm, ...rest }: Props) => {
+const UpsellPrompt = ({ discount, planCombination: { plan, cycle }, onConfirm, ...rest }: Props) => {
     const months = getMonths(cycle);
     const discountPercentage = `${discount}%`;
     return (
@@ -285,11 +286,13 @@ const AutomaticSubscriptionModal = () => {
         }
 
         if (eligibility.type === 'upsell') {
+            const { plan, coupon, cycle } = eligibility.planCombination;
             tmpProps.current = {
                 props: {
                     ...openProps,
-                    plan: eligibility.planCombination.plan.Name as PLANS,
-                    cycle: eligibility.planCombination.cycle,
+                    plan: plan.Name as PLANS,
+                    cycle,
+                    coupon,
                 },
                 eligibility,
             };
@@ -310,6 +313,7 @@ const AutomaticSubscriptionModal = () => {
             {renderUnavailableModal && <UnavailablePrompt {...unavailableModalProps} />}
             {renderUpsellModal && tmp && tmp.eligibility.type === 'upsell' && (
                 <UpsellPrompt
+                    discount={tmp.eligibility.discount}
                     planCombination={tmp.eligibility.planCombination}
                     {...upsellModalProps}
                     onConfirm={() => {
