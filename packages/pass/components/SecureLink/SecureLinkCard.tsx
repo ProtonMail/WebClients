@@ -13,7 +13,7 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { getViewCountString } from '@proton/pass/lib/i18n/helpers';
 import { secureLinkRemove } from '@proton/pass/store/actions';
 import type { SecureLink } from '@proton/pass/types';
-import { timeRemaining } from '@proton/pass/utils/time/format';
+import { epochToDateLabel } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
 type Props = SecureLink & { onClick: () => void };
@@ -38,7 +38,7 @@ export const SecureLinkCard: FC<Props> = ({
 
     const remaining = useMemo(
         () =>
-            timeRemaining(expirationDate, {
+            epochToDateLabel(expirationDate, {
                 format: (remainingTime) => c('Info').t`Expires in ${remainingTime}`,
                 expiredLabel: c('Label').t`Expired link`,
             }),

@@ -15,7 +15,6 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateEmailForm } from '@proton/pass/lib/validation/email';
 import { aliasCreateContact } from '@proton/pass/store/actions';
 import type { AliasCreateContactValues, UniqueItem } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp/pipe';
 
 const FORM_ID = 'create-contact-form';
 
@@ -25,14 +24,14 @@ type Props = ModalStateProps &
     };
 
 export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, name, open, onClose }) => {
-    const { loading, dispatch } = useRequest(aliasCreateContact, {});
+    const { loading, dispatch } = useRequest(aliasCreateContact, { onSuccess: onClose });
 
     const form = useFormik<AliasCreateContactValues>({
         initialValues: { email: '' },
         validateOnChange: true,
         validateOnMount: false,
         validate: validateEmailForm,
-        onSubmit: pipe(({ email }) => dispatch({ itemId, shareId, name, email }), onClose),
+        onSubmit: ({ email }) => dispatch({ itemId, shareId, name, email }),
     });
 
     useEffect(() => {
