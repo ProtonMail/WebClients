@@ -1,11 +1,9 @@
 import type { FC } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Icon, useModalState } from '@proton/components';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
-import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { UniqueItem } from '@proton/pass/types';
 
 import { SidebarContactsView } from './SidebarContactsView';
@@ -16,7 +14,6 @@ type Props = UniqueItem & {
 
 export const AliasContact: FC<Props> = ({ aliasEmail, shareId, itemId }) => {
     const [viewContacts, openViewContactSidebar] = useModalState();
-    const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
 
     return (
         <>
@@ -32,7 +29,7 @@ export const AliasContact: FC<Props> = ({ aliasEmail, shareId, itemId }) => {
                 <>
                     <SidebarContactsView
                         onClose={viewContacts.onClose}
-                        aliasDetails={aliasDetails}
+                        aliasEmail={aliasEmail}
                         shareId={shareId}
                         itemId={itemId}
                     />
