@@ -45,6 +45,7 @@ export enum Actions {
     SignUpFlowAndRedirectCompleted = 'signUpFlowAndRedirectCompleted',
     RedirectToCorrectContextShare = 'redirectToCorrectContextShare',
     RedirectToCorrectAcceptInvitation = 'RedirectToCorrectAcceptInvitation',
+    AddToBookmarkTriggeredModal = 'addToBookmarkTriggeredModal',
     // onboarding actions
     OnboardingV2Shown = 'onboardingV2Shown',
     OnboardingV2InstallMacApp = 'onboardingV2InstallMacApp',
@@ -245,11 +246,11 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1) => 
 
 const TEN_MINUTES = 10 * 60 * 1000;
 
-export async function getTimeBasedHash(str: string, interval: number = TEN_MINUTES) {
+export async function getTimeBasedHash(interval: number = TEN_MINUTES) {
     const timeBase = Math.floor(Date.now() / interval) * interval;
 
     const encoder = new TextEncoder();
-    const data = encoder.encode(str + timeBase.toString());
+    const data = encoder.encode(timeBase.toString());
     const hashBuffer = await CryptoProxy.computeHash({ algorithm: 'SHA256', data });
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -280,19 +281,11 @@ export async function getTimeBasedHash(str: string, interval: number = TEN_MINUT
 export const traceTelemetry = (action: Actions, duration: number = TEN_MINUTES) => {
     return {
         start: async () => {
-            const session = getLastActivePersistedUserSession();
-            if (session) {
-                localStorageWithExpiry.storeData(
-                    `telemetry-trace-${action}`,
-                    await getTimeBasedHash(session.UID, duration),
-                    duration
-                );
-            }
+            localStorageWithExpiry.storeData(`telemetry-trace-${action}`, await getTimeBasedHash(duration), duration);
         },
         end: async () => {
             const data = localStorageWithExpiry.getData(`telemetry-trace-${action}`);
-            const session = getLastActivePersistedUserSession();
-            if (data && session && data === (await getTimeBasedHash(session.UID, duration))) {
+            if (data && data === (await getTimeBasedHash(duration))) {
                 countActionWithTelemetry(action);
             }
             localStorageWithExpiry.deleteData(`telemetry-trace-${action}`);
