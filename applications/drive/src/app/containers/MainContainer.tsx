@@ -59,8 +59,8 @@ const FloatingElements = () => {
     const drawerWidth = useDrawerWidth();
     return (
         <div
-            className="flex fixed bottom-0 flex-column z-up w-full items-end right-custom"
-            style={{ '--right-custom': `${drawerWidth}px` }}
+            className="flex fixed bottom-0 flex-column z-up w-full items-end right-custom max-w-custom"
+            style={{ '--right-custom': `${drawerWidth}px`, '--max-w-custom': '50em' }}
         >
             <GiftFloatingButton />
             <TransferManager />
