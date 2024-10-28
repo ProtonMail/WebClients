@@ -1,19 +1,16 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useEffect } from 'react'
 import type { ElementNode, LexicalNode } from 'lexical'
-import {
-  $createParagraphNode,
-  $getSelection,
-  $isParagraphNode,
-  $isRootOrShadowRoot,
-  COMMAND_PRIORITY_EDITOR,
-  createCommand,
-} from 'lexical'
+import { $createParagraphNode, $getSelection, $isParagraphNode, COMMAND_PRIORITY_EDITOR, createCommand } from 'lexical'
 import { $setBlocksType } from '@lexical/selection'
 import { $createHeadingNode, $createQuoteNode, $isHeadingNode, $isQuoteNode } from '@lexical/rich-text'
 import { $createCodeNode, $isCodeNode } from '@lexical/code'
+import type { ListType } from '@lexical/list'
+import { $createListNode, $isListItemNode, $isListNode } from '@lexical/list'
+import { $findMatchingParent } from '@lexical/utils'
+import { $isNonInlineLeafElement } from '../Utils/isNonInlineLeafElement'
 
-export type BlockType = 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'code' | 'quote'
+export type BlockType = 'paragraph' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'code' | 'quote' | ListType
 
 export const blockTypeToBlockName: { [k in BlockType]: string } = {
   paragraph: 'Normal',
@@ -25,6 +22,9 @@ export const blockTypeToBlockName: { [k in BlockType]: string } = {
   h6: 'Heading 5',
   code: 'Code block',
   quote: 'Quote',
+  bullet: 'Bulleted list',
+  number: 'Numbered list',
+  check: 'Check list',
 }
 
 export const blockTypeToCreateElementFn: { [k in BlockType]: () => ElementNode } = {
@@ -37,13 +37,16 @@ export const blockTypeToCreateElementFn: { [k in BlockType]: () => ElementNode }
   h6: () => $createHeadingNode('h6'),
   code: () => $createCodeNode(),
   quote: () => $createQuoteNode(),
+  bullet: () => $createListNode('bullet'),
+  number: () => $createListNode('number'),
+  check: () => $createListNode('check'),
 }
 
 /**
  * Returns the block type for a given node.
  */
 export function $getElementBlockType(element: LexicalNode): BlockType | null {
-  if (!$isRootOrShadowRoot(element.getParent())) {
+  if (!$isNonInlineLeafElement(element)) {
     return null
   }
 
@@ -55,6 +58,12 @@ export function $getElementBlockType(element: LexicalNode): BlockType | null {
     return element.getTag()
   } else if ($isParagraphNode(element)) {
     return 'paragraph'
+  } else if ($isListItemNode(element)) {
+    const list = $findMatchingParent(element, $isListNode)
+    if (!list) {
+      throw new Error('Could not find list for list item')
+    }
+    return list.getListType()
   }
 
   return null

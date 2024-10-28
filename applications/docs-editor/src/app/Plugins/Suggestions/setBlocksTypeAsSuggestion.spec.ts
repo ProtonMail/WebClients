@@ -6,11 +6,12 @@ import { $isParagraphNode } from 'lexical'
 import { $createParagraphNode, $createRangeSelection, $createTextNode, $getRoot, $setSelection } from 'lexical'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
 import type { HeadingNode } from '@lexical/rich-text'
-import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
+import { $isHeadingNode } from '@lexical/rich-text'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
-import { $createListItemNode, $createListNode, $isListItemNode, $isListNode } from '@lexical/list'
+import { $createListItemNode, $isListNode } from '@lexical/list'
 import { blockTypeToCreateElementFn } from '../BlockTypePlugin'
+import { $createCustomListNode } from '../CustomList/$createCustomListNode'
 
 const onSuggestionCreation = jest.fn()
 const logger = {
@@ -96,59 +97,6 @@ describe('$setBlocksTypeAsSuggestion', () => {
     })
   })
 
-  describe('Selection including non-changeable blocks', () => {
-    beforeEach(() => {
-      editor.update(
-        () => {
-          const paragraph = $createParagraphNode().append($createTextNode('p'))
-          const list = $createListNode('number').append($createListItemNode().append($createTextNode('li')))
-          const h1 = $createHeadingNode('h1').append($createTextNode('h1'))
-          $getRoot().append(paragraph, list, h1)
-          const selection = $createRangeSelection()
-          selection.anchor.set(paragraph.getFirstChildOrThrow().__key, 0, 'text')
-          selection.focus.set(h1.getFirstChildOrThrow().__key, 2, 'text')
-          $setSelection(selection)
-          $setBlocksTypeAsSuggestion('h2', onSuggestionCreation, logger)
-        },
-        { discrete: true },
-      )
-    })
-
-    testEditorState('first block should be changed to h2', () => {
-      const firstBlock = $getRoot().getChildAtIndex<ElementNode>(0)!
-      expect($isHeadingNode(firstBlock)).toBe(true)
-      expect((firstBlock as HeadingNode).getTag()).toBe('h2')
-    })
-
-    testEditorState('first block should have correct suggestion', () => {
-      const firstBlock = $getRoot().getChildAtIndex<ElementNode>(0)!
-      const suggestion = firstBlock.getFirstChildOrThrow<ProtonNode>()
-      expect($isSuggestionNode(suggestion)).toBe(true)
-      expect(suggestion.getSuggestionTypeOrThrow()).toBe('block-type-change')
-      expect(suggestion.__properties.nodePropertiesChanged!.initialBlockType).toBe('paragraph')
-    })
-
-    testEditorState('second block should be left as-is', () => {
-      const secondBlock = $getRoot().getChildAtIndex<ElementNode>(1)!
-      expect($isListNode(secondBlock)).toBe(true)
-      expect($isListItemNode(secondBlock.getFirstChildOrThrow())).toBe(true)
-    })
-
-    testEditorState('third block should be changed to h2', () => {
-      const thirdBlock = $getRoot().getChildAtIndex<ElementNode>(2)!
-      expect($isHeadingNode(thirdBlock)).toBe(true)
-      expect((thirdBlock as HeadingNode).getTag()).toBe('h2')
-    })
-
-    testEditorState('third block should have correct suggestion', () => {
-      const thirdBlock = $getRoot().getChildAtIndex<ElementNode>(2)!
-      const suggestion = thirdBlock.getFirstChildOrThrow<ProtonNode>()
-      expect($isSuggestionNode(suggestion)).toBe(true)
-      expect(suggestion.getSuggestionTypeOrThrow()).toBe('block-type-change')
-      expect(suggestion.__properties.nodePropertiesChanged!.initialBlockType).toBe('h1')
-    })
-  })
-
   describe('Selection including all changeable blocks', () => {
     const allChangeableTypes = Object.entries(blockTypeToCreateElementFn)
 
@@ -158,7 +106,11 @@ describe('$setBlocksTypeAsSuggestion', () => {
           const root = $getRoot()
           for (const [blockType, createElement] of allChangeableTypes) {
             const element = createElement()
-            element.append($createTextNode(blockType))
+            if ($isListNode(element)) {
+              element.append($createListItemNode().append($createTextNode(blockType)))
+            } else {
+              element.append($createTextNode(blockType))
+            }
             root.append(element)
           }
           const selection = $createRangeSelection()
@@ -193,6 +145,42 @@ describe('$setBlocksTypeAsSuggestion', () => {
         expect(suggestion.getSuggestionTypeOrThrow()).toBe('block-type-change')
         expect(suggestion.__properties.nodePropertiesChanged!.initialBlockType).toBe(originalBlockType)
       }
+    })
+  })
+
+  describe('Selection inside single list item', () => {
+    beforeEach(() => {
+      editor.update(
+        () => {
+          const root = $getRoot()
+          const list = $createCustomListNode('number', undefined, 'upper-roman', 'bracket')
+          const listItem = $createListItemNode()
+          const text = $createTextNode('Hello')
+          root.append(list.append(listItem.append(text)))
+          text.select(3, 3)
+          $setBlocksTypeAsSuggestion('h2', onSuggestionCreation, logger)
+        },
+        { discrete: true },
+      )
+    })
+
+    testEditorState('list should be changed to h2', () => {
+      const root = $getRoot()
+      expect(root.getChildrenSize()).toBe(1)
+      const element = root.getFirstChildOrThrow<HeadingNode>()
+      expect($isHeadingNode(element)).toBe(true)
+      expect(element.getTag()).toBe('h2')
+    })
+
+    testEditorState('blocks should have correct suggestion', () => {
+      const element = $getRoot().getFirstChildOrThrow<HeadingNode>()
+      const suggestion = element.getFirstChildOrThrow<ProtonNode>()
+      expect($isSuggestionNode(suggestion)).toBe(true)
+      expect(suggestion.getSuggestionTypeOrThrow()).toBe('block-type-change')
+      expect(suggestion.__properties.nodePropertiesChanged!.initialBlockType).toBe('number')
+      expect(suggestion.__properties.nodePropertiesChanged!.listInfo).toBeTruthy()
+      expect(suggestion.__properties.nodePropertiesChanged!.listInfo.listStyleType).toBe('upper-roman')
+      expect(suggestion.__properties.nodePropertiesChanged!.listInfo.listMarker).toBe('bracket')
     })
   })
 
