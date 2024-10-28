@@ -1523,6 +1523,9 @@
       "This version will be added to the history as the newest version.": [
         "Deze versie zal aan de geschiedenis worden toegevoegd als de nieuwste versie."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Dit zal het apparaat **${ name }** afwijzen, die proberen in te loggen op uw ${ BRAND_NAME } account op **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Om gegevens te migreren uit een andere wachtwoordbeheerder, gaat u naar de wachtwoordbeheerder, exporteert u uw gegevens, dan uploadt u het naar ${ PASS_APP_NAME }. Wanneer uw gegevens geïmporteerd zijn, verwijdert u het geëxporteerde bestand."
       ],
@@ -2430,6 +2433,26 @@
         "Schrijf uw notitie"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Keur goed of weiger nu"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Als u dit verzoek niet heeft gemaakt, annuleer het dan nu."
+      ],
+      "No, it wasn’t me": [
+        "Nee, dat was ik niet"
+      ],
+      "Sign-in confirmed": [
+        "Inloggen bevestigd"
+      ],
+      "Sign-in rejected": [
+        "Inloggen geweigerd"
+      ],
+      "Yes, it was me": [
+        "Ja, dat was ik"
+      ]
+    },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruiker bevatten.",
@@ -2553,6 +2576,9 @@
       ],
       "Pinned (${ items.length })": [
         "Vastgemaakt (${ items.length })"
+      ],
+      "Reject device?": [
+        "Apparaat weigeren?"
       ],
       "Remove extra password": [
         "Verwijder uw extra wachtwoord"

@@ -572,6 +572,38 @@
       ],
       "Write us on Twitter": [
         "Bize Twitter üzerinden yazın"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ]
+    },
+    "bf2024: Deal": {
+      "lifetime access": [
+        "ömür boyu erişim"
+      ]
+    },
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Tüm ücretli hizmetler. 6 kullanıcı. Bir kolay abonelik."
+      ],
+      "Limited-stock available!": [
+        "Sınırlı sayıda stok var!"
+      ]
+    },
+    "bf2024: Label": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "bf2024: Title": {
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Bir kere ${ lifetimeAccessJSX } ödeyerek Pass Plus tarifesi alın. Yalnızca ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Pass Family tarifesi ile ${ discountJSX } oranına varan indirim kazanın. Yalnızca ${ relativePrice }/ay."
       ]
     },
     "Browser": {
@@ -1312,6 +1344,12 @@
       "Expires in ${ remainingTime }": [
         "${ remainingTime } sonra geçerlilik süresi dolacak"
       ],
+      "Extra password successfully created": [
+        "Ek parola oluşturuldu"
+      ],
+      "Extra password successfully removed": [
+        "Ek parola kaldırıldı"
+      ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
@@ -1434,6 +1472,9 @@
       ],
       "Monitoring settings successfully updated": [
         "İzleme ayarları güncellendi"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Bir parola yöneticisinden daha fazlası. ${ PASS_APP_NAME } parolalarınızı ve takma e-posta adresleri ile e-posta adresinizi korur. ${ MAIL_APP_NAME } ile aynı teknolojiyi kullandığından, verileriniz uçtan uca şifreleme ile korunur ve yalnızca sizin tarafınızdan erişilebilir."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
@@ -1634,6 +1675,9 @@
       "Select destination vault": [
         "Hedef kasayı seçin"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "İçe aktarılan kasaların kaydedileceği yeri seçin."
+      ],
       "Selected items permanently deleted": [
         "Seçilmiş ögeler kalıcı olarak silindi"
       ],
@@ -1654,6 +1698,9 @@
       ],
       "Settings successfully updated": [
         "Ayarlar güncellendi"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
       ],
       "Sign in or create an account to continue.": [
         "İlerlemek için oturum ya da hesap açın."
@@ -1719,8 +1766,14 @@
       "This version will be added to the history as the newest version.": [
         "Bu sürüm geçmişe en yeni sürüm olarak eklenecek."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Bu işlem, **${ date }** tarihinde ${ BRAND_NAME } hesabınızda oturum açmayı deneyen **${ name }** aygıtına izin vermeyecek."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Başka bir parola yöneticisindeki verileri aktarmak için parola yöneticisine gidin, verilerinizi dışa aktarın ve ardından ${ PASS_APP_NAME } uygulamasına yükleyin. Verileriniz içe aktarıldıktan sonra dışa aktardığınız dosyayı silin."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "İçe aktarılan verilerinizi gözden geçirmek için tarayıcınızın araç çubuğundaki ${ PASS_APP_NAME } simgesine tıklayın."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Eklentiyi yeniden yüklemeyi ya da yeniden kurmayı deneyin ve tarayıcınızın ve ${ PASS_SHORT_APP_NAME } uygulamasının güncel olduğundan emin olun."
@@ -1764,11 +1817,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Birden çok kasa oluşturabilmek için ücretli bir tarifeye geçin."
+      ],
       "Use vaults to share this item with others.": [
         "Bu ögeyi başkaları ile paylaşmak için kasaları kullanın."
       ],
       "User's access removed": [
         "Kullanıcının erişimi kaldırıldı"
+      ],
+      "User's access successfully updated": [
+        "Kullanıcının erişimi güncellendi"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "\"${ payload.content.name }\" kasası silindi"
@@ -2006,6 +2065,9 @@
       "Capital letters (A-Z)": [
         "Büyük harfler (A-Z)"
       ],
+      "Capitalize": [
+        "Harfleri büyüt"
+      ],
       "Card": [
         "Kart"
       ],
@@ -2191,6 +2253,9 @@
       ],
       "Import passwords": [
         "Parolaları içe aktar"
+      ],
+      "Imported from: ": [
+        "Şuradan içe aktarıldı: "
       ],
       "Imported on : ": [
         "Şu zamanda içe aktarıldı: "
@@ -2490,6 +2555,12 @@
       "Today": [
         "Bugün"
       ],
+      "Total imported items: ": [
+        "Toplam içe aktarılan öge: "
+      ],
+      "Total items: ": [
+        "Toplam öge: "
+      ],
       "TOTP": [
         "Tek kullanımlık parola"
       ],
@@ -2707,6 +2778,67 @@
         "Notunuzu yazın"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Şimdi izin verin ya da vermeyin"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Diğer aygıtınıza gönderdiğimiz doğrulama kodunu yazın."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Böyle bir istekte bulunmadıysanız iptal edin."
+      ],
+      "Invalid confirmation code": [
+        "Doğrulama kodu geçersiz"
+      ],
+      "No, it wasn’t me": [
+        "Hayır, ben değildim"
+      ],
+      "Sign-in confirmed": [
+        "Oturum açmaya izin verildi"
+      ],
+      "Sign-in failed": [
+        "Oturum açılamadı"
+      ],
+      "Sign-in rejected": [
+        "Oturum açmaya izin verilmedi"
+      ],
+      "Sign-in rejection failure": [
+        "Oturum açma reddi sorunu"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Başka bir aygıttan oturum açılması istendi. Bunu siz mi yaptınız?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Başka bir aygıttan oturum açılması istendi. Siz miydiniz? "
+      ],
+      "Yes, it was me": [
+        "Evet, bendim"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Etkin"
+      ],
+      "Inactive": [
+        "Etkin değil"
+      ],
+      "Pending activation": [
+        "Etkinleştirilmesi bekleniyor"
+      ],
+      "Pending admin activation": [
+        "Yönetici tarafından etkinleştirilmesi gerekiyor"
+      ],
+      "Rejected": [
+        "İzin verilmedi"
+      ],
+      "Signed out": [
+        "Oturum kapatıldı"
+      ],
+      "Unknown": [
+        "Bilinmiyor"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Takma adların eşitlenmesi açıldı. SimpleLogin takma adlarının eşitlenmesi biraz zaman alabilir"
@@ -2743,6 +2875,9 @@
       ],
       "Current version": [
         "Güncel sürüm"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "\"${ vaultName }\" kasası silinsin mi?"
       ],
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
@@ -2801,6 +2936,9 @@
       "Last modified": [
         "Son değiştirilme"
       ],
+      "Leave vault?": [
+        "Kasadan ayrılmak istiyor musunuz?"
+      ],
       "Log in as...": [
         "Şu olarak oturum aç..."
       ],
@@ -2843,11 +2981,17 @@
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
       ],
+      "Permanently remove all items?": [
+        "Tüm ögeler kalıcı olarak silinsin mi?"
+      ],
       "Pin the extension": [
         "Eklentiyi sabitle"
       ],
       "Pinned (${ items.length })": [
         "Sabitlenmiş (${ items.length })"
+      ],
+      "Reject device?": [
+        "Aygıt reddedilsin mi?"
       ],
       "Remove extra password": [
         "Ek parolayı kaldır"
@@ -2953,6 +3097,9 @@
       "Section name cannot be empty": [
         "Bölüm adı boş olamaz"
       ],
+      "URL already exists": [
+        "Adres zaten var"
+      ],
       "URL cannot be empty": [
         "Adres boş olamaz"
       ],
@@ -2987,6 +3134,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" kasası oluşturulamadı"
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Şu adreslere davetler gönderilemedi:"
       ],
       "Duplicate email addresses.": [
         "E-posta adresleri yineleniyor."
@@ -3059,7 +3209,7 @@
         "PGP ile şifrelenmiş dışa aktarma dosyası için parola ifadesi gereklidir"
       ],
       "Please contact us to investigate the issue": [
-        "Sorunu çözebilmek için lütfen bizimle iletişime geçin"
+        "Sorunu araştırmamız için lütfen bizimle görüşün"
       ],
       "Please verify your email address in order to use email aliases": [
         "Lütfen e-posta takma adlarını kullanabilmek için e-posta adresinizi doğrulayın"
@@ -3137,7 +3287,7 @@
         "Oturumunuz kilitlenmiş."
       ],
       "Your subscription does not allow you to create more vaults.": [
-        "Aboneliğiniz daha fazla kasa oluşturmanıza izin vermiyor."
+        "Abonelik tarifeniz daha fazla kasa oluşturmanıza izin vermiyor."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."

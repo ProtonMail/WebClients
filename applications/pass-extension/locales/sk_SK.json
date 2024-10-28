@@ -224,6 +224,9 @@
       "Feedback & Help": [
         "Spätná väzba a Pomoc"
       ],
+      "Fill in": [
+        "Vyplniť"
+      ],
       "Fill password": [
         "Vyplniť heslo"
       ],
@@ -1756,6 +1759,9 @@
       "This version will be added to the history as the newest version.": [
         "Táto verzia bude pridaná do histórie ako najnovšia verzia."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Tým zamietnete zariadenie **${ name }**, ktoré sa **${ date }** pokúsilo prihlásiť k vášmu účtu ${ BRAND_NAME }."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Ak chcete migrovať údaje z iného správcu hesiel, prejdite do správcu hesiel, exportujte svoje údaje a potom ich nahrajte do ${ PASS_APP_NAME }. Po importovaní údajov odstráňte exportovaný súbor."
       ],
@@ -2766,6 +2772,41 @@
         "Napíšte si poznámku"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Schváliť alebo zamietnuť teraz"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Zadajte potvrdzovací kód, ktorý sme vám odoslali na vaše druhé zariadenie."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Ak ste túto žiadosť nepodali, zrušte ju teraz."
+      ],
+      "Invalid confirmation code": [
+        "Neplatný potvrdzovací kód"
+      ],
+      "No, it wasn’t me": [
+        "Nie, nejde o moju žiadosť"
+      ],
+      "Sign-in confirmed": [
+        "Prihlásenie potvrdené"
+      ],
+      "Sign-in failed": [
+        "Prihlásenie zlyhalo"
+      ],
+      "Sign-in rejected": [
+        "Prihlásenie odmietnuté"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Požiadavka na prihlásenie na inom zariadení. Boli ste to vy?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Požiadavka na prihlásenie na inom zariadení. Boli ste to vy? "
+      ],
+      "Yes, it was me": [
+        "Áno, ide o moju žiadosť"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synchronizácia aliasov bola úspešne zapnutá. Synchronizácia aliasov SimpleLogin môže určitý čas trvať"
@@ -2909,6 +2950,9 @@
       ],
       "Pinned (${ items.length })": [
         "Pripnuté (${ items.length })"
+      ],
+      "Reject device?": [
+        "Odmietnuť zariadenie?"
       ],
       "Remove extra password": [
         "Odstrániť dodatočné heslo"

@@ -1746,6 +1746,9 @@
       "This version will be added to the history as the newest version.": [
         "이 버전이 기록의 가장 최신 버전으로 기록될 것입니다."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "이 작업은 **${ date }**에 사용자의 ${ BRAND_NAME } 계정에 로그인 시도한 기기 **${ name }**을(를) 거부합니다."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "타 비밀번호 관리자에서 데이터를 이전하려면, 현재 사용 중인 비밀번호 관리자에 이동하여 데이터를 불러온 다음 ${ PASS_APP_NAME }에 업로드 하십시오. 데이터를 모두 가져오면 해당 추출된 파일은 삭제하십시오."
       ],
@@ -2742,6 +2745,67 @@
       ],
       "Write your note": [
         "메모를 작성하세요"
+      ]
+    },
+    "sso": {
+      "Approve or deny it now": [
+        "지금 수락 및 거부"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "나의 다른 기기로 전송한 확인 코드를 입력하세요."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "본인이 요청하지 않았다면, 즉시 취소하세요."
+      ],
+      "Invalid confirmation code": [
+        "유효하지 않은 확인 코드"
+      ],
+      "No, it wasn’t me": [
+        "아뇨, 제가 아니였어요."
+      ],
+      "Sign-in confirmed": [
+        "로그인 확인됨"
+      ],
+      "Sign-in failed": [
+        "로그인 실패"
+      ],
+      "Sign-in rejected": [
+        "로그인 거부됨"
+      ],
+      "Sign-in rejection failure": [
+        "로그인 취소 시패"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "다른 기기에서 로그인이 요청되었습니다. 본인이 맞나요?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "다른 기기에서 로그인이 요청되었습니다. 본인이 맞나요? "
+      ],
+      "Yes, it was me": [
+        "네, 저였어요."
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "활성"
+      ],
+      "Inactive": [
+        "비활성"
+      ],
+      "Pending activation": [
+        "활성화 대기 중"
+      ],
+      "Pending admin activation": [
+        "관리자 활성화 대기 중"
+      ],
+      "Rejected": [
+        "거절됨"
+      ],
+      "Signed out": [
+        "로그아웃됨"
+      ],
+      "Unknown": [
+        "알 수 없음"
       ]
     },
     "Success": {
