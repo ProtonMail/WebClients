@@ -19,7 +19,7 @@ export const getSettingsStorageKey = getStorageKey(SETTINGS_STORAGE_KEY);
 export const getTelemetryStorageKey = getStorageKey(TELEMETRY_STORAGE_KEY);
 export const getOnboardingStorageKey = getStorageKey(ONBOARDING_STORAGE_KEY);
 
-const LOCALID_STORAGE_KEYS = [SETTINGS_STORAGE_KEY, TELEMETRY_STORAGE_KEY, B2B_STORAGE_KEY];
+const LOCALID_STORAGE_KEYS = [SETTINGS_STORAGE_KEY, TELEMETRY_STORAGE_KEY, B2B_STORAGE_KEY, ONBOARDING_STORAGE_KEY];
 const LOCALID_STORAGE_RE = new RegExp(`^(?:${LOCALID_STORAGE_KEYS.join('|')})::(\\d+)`);
 
 export const clearUserLocalData = (localID: number) => {
