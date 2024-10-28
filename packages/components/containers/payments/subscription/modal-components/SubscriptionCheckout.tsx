@@ -28,7 +28,7 @@ import type {
 
 import { usePlans } from '../../../../hooks';
 import Checkout from '../../Checkout';
-import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';
+import { getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import type { OnBillingAddressChange } from '../../TaxCountrySelector';
 import { WrappedTaxCountrySelector } from '../../TaxCountrySelector';
@@ -164,20 +164,6 @@ const SubscriptionCheckout = ({
             hasGuarantee={hasGuarantee}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
             paymentMethods={paymentMethods}
-            hiddenRenewNotice={
-                hasBFDiscount && (
-                    <div className="color-weak">
-                        *{' '}
-                        {getBlackFridayRenewalNoticeText({
-                            price: withDiscountPerCycle,
-                            cycle,
-                            plansMap,
-                            planIDs,
-                            currency,
-                        })}
-                    </div>
-                )
-            }
             renewNotice={
                 displayRenewNotice
                     ? getCheckoutRenewNoticeText({

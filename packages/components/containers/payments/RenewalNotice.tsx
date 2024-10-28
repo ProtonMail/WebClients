@@ -2,12 +2,12 @@ import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import Time from '@proton/components/components/time/Time';
-import { PLANS, type PlanIDs } from '@proton/payments';
+import { type PlanIDs } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
-import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
+import { getOptimisticRenewCycleAndPrice, isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
+import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import type { Coupon, Currency, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import Price from '../../components/price/Price';
@@ -32,7 +32,13 @@ export const getBlackFridayRenewalNoticeText = ({
     planIDs: PlanIDs;
     currency: Currency;
 }) => {
-    const nextCycle = getNormalCycleFromCustomCycle(cycle);
+    const { renewPrice: renewAmount, renewalLength } = getOptimisticRenewCycleAndPrice({
+        planIDs,
+        plansMap,
+        cycle,
+        currency,
+    });
+
     const plan = getPlanFromPlanIDs(plansMap, planIDs);
     const discountedPrice = (
         <Price key="a" currency={currency}>
@@ -41,11 +47,11 @@ export const getBlackFridayRenewalNoticeText = ({
     );
     const nextPrice = plan ? (
         <Price key="b" currency={currency}>
-            {plan?.Pricing[nextCycle] || 0}
+            {renewAmount}
         </Price>
     ) : null;
 
-    if (nextCycle === CYCLE.MONTHLY) {
+    if (renewalLength === CYCLE.MONTHLY) {
         // translator: The specially discounted price of $8.99 is valid for the first month. Then it will automatically be renewed at $9.99 every month. You can cancel at any time.
         return c('bf2023: renew')
             .jt`The specially discounted price of ${discountedPrice} is valid for the first month. Then it will automatically be renewed at ${nextPrice} every month. You can cancel at any time.`;
@@ -60,7 +66,7 @@ export const getBlackFridayRenewalNoticeText = ({
         return c('bf2023: renew').ngettext(msgid`${n} month`, `the first ${n} months`, n);
     })(cycle);
 
-    const nextMonths = getMonths(nextCycle);
+    const nextMonths = getMonths(renewalLength);
 
     // translator: The specially discounted price of EUR XX is valid for the first 30 months. Then it will automatically be renewed at the discounted price of EUR XX for 24 months. You can cancel at any time.
     return c('bf2023: renew')
@@ -207,8 +213,17 @@ export const getCheckoutRenewNoticeText = ({
     currency: Currency;
     coupon: Coupon;
 } & RenewalNoticeProps) => {
-    const isSpeciallyRenewedPlan = !!planIDs[PLANS.VPN2024];
+    if (getHas2024OfferCoupon(coupon?.Code)) {
+        return getBlackFridayRenewalNoticeText({
+            currency,
+            planIDs,
+            plansMap,
+            cycle,
+            price: checkout.withDiscountPerCycle,
+        });
+    }
 
+    const isSpeciallyRenewedPlan = isSpecialRenewPlan(planIDs);
     if (isSpeciallyRenewedPlan) {
         const specialLengthRenewNotice = getSpecialLengthRenewNoticeText({
             cycle,
