@@ -50,6 +50,14 @@ import {
     blackFriday2024InboxFreeYearlyEligibility,
 } from '../../offers/operations/blackFridayInbox2024FreeYearly';
 import {
+    blackFriday2024PassFreeConfig,
+    blackFriday2024PassFreeEligibility,
+} from '../../offers/operations/blackFridayPass2024Free';
+import {
+    blackFriday2024PassPlusConfig,
+    blackFriday2024PassPlusEligibility,
+} from '../../offers/operations/blackFridayPass2024Plus';
+import {
     blackFriday2024VPNFreeConfig,
     blackFriday2024VPNFreeEligibility,
 } from '../../offers/operations/blackFridayVPN2024Free';
@@ -246,6 +254,8 @@ const AutomaticSubscriptionModal = () => {
             blackFriday2024VPNMonthlyEligibility(options) && blackFriday2024VPNMonthlyConfig,
             blackFriday2024UnlimitedEligibility(options) && blackFriday2024UnlimitedConfig,
             blackFriday2024DuoEligibility(options) && blackFriday2024DuoConfig,
+            blackFriday2024PassPlusEligibility(options) && blackFriday2024PassPlusConfig,
+            blackFriday2024PassFreeEligibility(options) && blackFriday2024PassFreeConfig,
         ].filter(isTruthy);
 
         const eligibility = getEligibility({
