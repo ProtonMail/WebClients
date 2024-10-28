@@ -9,7 +9,7 @@ import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import type { AccountWithChainData } from '../../../types';
 import { EmailListItem } from '../../EmailListItem';
-import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import type { BtcAddressMap } from '../useEmailAndBtcAddressesMaps';
 import { BitcoinAmountInputWithBalanceAndCurrencySelect } from './BitcoinAmountInputWithBalanceAndCurrencySelect';
 import { useAmountInputStep } from './useAmountInputStep';
 
