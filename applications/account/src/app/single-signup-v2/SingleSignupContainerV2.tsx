@@ -395,6 +395,7 @@ const SingleSignupContainerV2 = ({
                 plansMap: model.plansMap,
                 isLargeViewport: viewportWidth['>=large'],
                 hideFreePlan: signupParameters.hideFreePlan,
+                toApp,
             });
         }
         if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
