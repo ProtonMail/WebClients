@@ -6,15 +6,8 @@ import type { BillingAddress, PAYMENT_METHOD_TYPES, PaymentsApi, SavedPaymentMet
 import { type ADDON_NAMES, PLANS, type PlanIDs } from '@proton/payments';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import type {
-    APP_NAMES} from '@proton/shared/lib/constants';
-import {
-    APPS,
-    COUPON_CODES,
-    CYCLE,
-    DEFAULT_CURRENCY,
-    FREE_SUBSCRIPTION,
-} from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES, CYCLE, DEFAULT_CURRENCY, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
@@ -189,7 +182,7 @@ const getUpsell = ({
 
     const defaultValue = {
         plan: undefined,
-        unlockPlan: plansMap[getUnlockPlanName(toApp)],
+        unlockPlan: !currentPlan ? plansMap[getUnlockPlanName(toApp)] : undefined,
         currentPlan,
         mode: UpsellTypes.PLANS,
         subscriptionOptions: {},
@@ -272,6 +265,7 @@ const getUpsell = ({
                 if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.FAMILY])) {
                     return getUpsellData({ plan: planParameters.plan });
                 }
+                return getUpsellData({ plan: getSafePlan(plansMap, PLANS.FAMILY) });
             }
 
             if (getHasBusinessUpsell(currentPlan.Name)) {
@@ -502,49 +496,13 @@ export const getUserInfo = async ({
         return getSubscriptionData(paymentsApi, optionsWithSubscriptionDefaults);
     })();
 
-    if (user && hasAccess({ toApp, user, audience, currentPlan }) && !getHas2024OfferCoupon(options.coupon)) {
+    if (user && hasAccess({ toApp, user, audience, currentPlan })) {
         state.access = true;
     }
 
     // TODO: WalletEA
     if (toApp === APPS.PROTONWALLET) {
         state.access = false;
-    }
-
-    if (state.access && state.payable && planParameters.defined && currentPlan) {
-        if (currentPlan.Name !== PLANS.VISIONARY && planParameters.plan.Name === PLANS.VISIONARY) {
-            state.access = false;
-        } else if (
-            getHasAnyPlusPlan(currentPlan.Name) &&
-            [PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
-                planParameters.plan.Name as any
-            )
-        ) {
-            state.access = false;
-        } else if (
-            currentPlan.Name === PLANS.BUNDLE &&
-            [PLANS.DUO, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
-                planParameters.plan.Name as any
-            )
-        ) {
-            state.access = false;
-        } else if (
-            currentPlan.Name === PLANS.DUO &&
-            [PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
-                planParameters.plan.Name as any
-            )
-        ) {
-            state.access = false;
-        } else if (
-            currentPlan.Name === PLANS.FAMILY &&
-            [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(planParameters.plan.Name as any)
-        ) {
-            state.access = false;
-        }
-
-        if (planParameters.plan.Name === currentPlan.Name) {
-            state.access = true;
-        }
     }
 
     return {
