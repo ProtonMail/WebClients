@@ -2,7 +2,6 @@ import { isSEPACountry } from 'ibantools';
 
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import {
-    BLACK_FRIDAY,
     MIN_BITCOIN_AMOUNT,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,
     MIN_PAYPAL_AMOUNT_INHOUSE,
@@ -228,11 +227,7 @@ export class PaymentMethods {
     }
 
     private isCashAvailable(): boolean {
-        return (
-            this.statusExtended.VendorStates.Cash &&
-            !isSignupFlow(this.flow) &&
-            this.coupon !== BLACK_FRIDAY.COUPON_CODE
-        );
+        return this.statusExtended.VendorStates.Cash && !isSignupFlow(this.flow);
     }
 
     private isSEPADirectDebitAvailable(): boolean {
@@ -273,7 +268,6 @@ export class PaymentMethods {
         return (
             this.statusExtended.VendorStates.Bitcoin &&
             flowSupportsBtc &&
-            this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
             !this.isB2BPlan()
         );

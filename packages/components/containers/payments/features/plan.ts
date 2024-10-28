@@ -28,12 +28,15 @@ import { get24x7Support, getAdminPanel, getPassMonitor, getSentinel, getSupport,
 import type { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
 import {
     getContactGroupsManagement,
+    getDarkWebMonitoringFeature,
+    getDesktopAppFeature,
     getFoldersAndLabelsFeature,
     getMailAppFeature,
     getNAddressesFeature,
     getNAddressesFeatureB2B,
     getNDomainsFeature,
     getNMessagesFeature,
+    getOwnDomainFeature,
     getProtonScribe,
     getSMTPToken,
 } from './mail';
@@ -379,10 +382,9 @@ export const getMailPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlan
             getStorageFeature(plan.MaxSpace, { freePlan }),
             getNAddressesFeature({ n: plan.MaxAddresses }),
             getFoldersAndLabelsFeature('unlimited'),
-            getNMessagesFeature('unlimited'),
-            getNDomainsFeature({ n: plan.MaxDomains }),
-            getSupport('priority'),
-            getCalendarAppFeature(),
+            getOwnDomainFeature(),
+            getDesktopAppFeature(),
+            getDarkWebMonitoringFeature(),
         ],
     };
 };

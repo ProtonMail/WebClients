@@ -15,6 +15,7 @@ import DealTitle from './DealTitle';
 
 const Deals = (props: OfferProps) => {
     const { deals, hideDealTitle, hideDealPriceInfos } = props.offer;
+
     const [isExpanded, setIsExpanded] = useState(true);
     const { viewportWidth } = useActiveBreakpoint();
 

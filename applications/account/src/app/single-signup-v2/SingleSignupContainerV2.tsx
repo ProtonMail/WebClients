@@ -306,15 +306,7 @@ const SingleSignupContainerV2 = ({
             };
         }
 
-        // Due to the scribe addon and drive b2b complexity in dealing with signed in users we'll temporarily disable it
         let signIn: SignupParameters2['signIn'] = 'standard';
-        if (
-            [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE].includes(toApp as any) ||
-            productParam === 'generic'
-        ) {
-            localID = -1;
-            signIn = 'redirect';
-        }
 
         if (isMailTrial) {
             result.referrer = REFERRER_CODE_MAIL_TRIAL;
@@ -386,7 +378,7 @@ const SingleSignupContainerV2 = ({
         };
     });
 
-    const theme = getPublicTheme(toApp, audience, viewportWidth);
+    const theme = getPublicTheme(toApp, audience, viewportWidth, signupParameters);
 
     const signupConfiguration = (() => {
         const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
@@ -733,7 +725,13 @@ const SingleSignupContainerV2 = ({
                     },
                     toApp: product,
                 }),
-                getSubscriptionDataCycleMapping(paymentsApi, plansMap, coupon),
+                getSubscriptionDataCycleMapping(
+                    paymentsApi,
+                    plansMap,
+                    // if plan parameters are defined, we assume we won't be showing the plan cards
+                    // and that we won't need to fetch the subscription data from the API call with each coupon
+                    planParameters.defined ? undefined : coupon
+                ),
             ]);
 
             let session: SessionData | undefined;

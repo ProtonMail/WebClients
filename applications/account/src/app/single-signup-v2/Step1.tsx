@@ -6,14 +6,7 @@ import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton, Vr } from '@proton/atoms';
 import type { IconName } from '@proton/components';
-import {
-    CurrencySelector,
-    CycleSelector,
-    Icon,
-    getBlackFridayRenewalNoticeText,
-    getCheckoutRenewNoticeText,
-    useModalState,
-} from '@proton/components';
+import { CurrencySelector, CycleSelector, Icon, getCheckoutRenewNoticeText, useModalState } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
@@ -52,7 +45,7 @@ import {
     getTotalFromPricing,
     switchPlan,
 } from '@proton/shared/lib/helpers/planIDs';
-import { getHas2023OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import type { Api, Currency, Cycle, SubscriptionPlan, User, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -80,7 +73,7 @@ import FeatureItem from './FeatureItem';
 import FreeLogo from './FreeLogo';
 import Guarantee from './Guarantee';
 import Layout from './Layout';
-import { PlanCardSelector, UpsellCardSelector } from './PlanCardSelector';
+import { PlanCardSelector } from './PlanCardSelector';
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
 import { type SubscriptionDataCycleMapping, getAccessiblePlans, getFreeSubscriptionData, getFreeTitle } from './helper';
@@ -118,7 +111,6 @@ const Step1 = ({
         audiences,
     },
     signupParameters,
-    relativePrice,
     currentPlan,
     onComplete,
     model,
@@ -426,10 +418,9 @@ const Step1 = ({
 
     let step = 1;
 
-    const hasUpsellSection = model.upsell.mode === UpsellTypes.UPSELL;
     const hidePlanSelectorCoupons = new Set([COUPON_CODES.TRYMAILPLUS2024, COUPON_CODES.MAILPLUSINTRO]);
     const hasPlanSelector =
-        (!model.planParameters?.defined || hasUpsellSection) &&
+        !model.planParameters?.defined &&
         ([SignupMode.Default, SignupMode.Onboarding, SignupMode.MailReferral].includes(mode) ||
             (mode === SignupMode.Invite && app === APPS.PROTONWALLET)) &&
         !hidePlanSelectorCoupons.has(model.subscriptionData.checkResult.Coupon?.Code as any) &&
@@ -446,22 +437,14 @@ const Step1 = ({
     const renewalNotice = !hasSelectedFree && (
         <div className="w-full text-sm color-norm opacity-70">
             *
-            {getHas2023OfferCoupon(options.checkResult.Coupon?.Code)
-                ? getBlackFridayRenewalNoticeText({
-                      price: options.checkResult.Amount + (options.checkResult.CouponDiscount || 0),
-                      cycle: options.cycle,
-                      plansMap: model.plansMap,
-                      planIDs: options.planIDs,
-                      currency: options.currency,
-                  })
-                : getCheckoutRenewNoticeText({
-                      coupon: options.checkResult.Coupon,
-                      cycle: options.cycle,
-                      plansMap: model.plansMap,
-                      planIDs: options.planIDs,
-                      checkout,
-                      currency: options.currency,
-                  })}
+            {getCheckoutRenewNoticeText({
+                coupon: options.checkResult.Coupon,
+                cycle: options.cycle,
+                plansMap: model.plansMap,
+                planIDs: options.planIDs,
+                checkout,
+                currency: options.currency,
+            })}
         </div>
     );
 
@@ -601,10 +584,10 @@ const Step1 = ({
                     </div>
                 )}
                 {(() => {
-                    const wrap = (iconName: IconName, textLaunchOffer: ReactNode) => {
+                    const wrap = (iconName: IconName | null, textLaunchOffer: ReactNode) => {
                         return (
                             <div className="signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4">
-                                <Icon name={iconName} size={3.5} className="shrink-0 mt-1" />
+                                {iconName && <Icon name={iconName} size={3.5} className="shrink-0 mt-1" />}
                                 <span className="ml-2 flex-1">{textLaunchOffer}</span>
                             </div>
                         );
@@ -657,6 +640,14 @@ const Step1 = ({
                             c('mail_signup_2024: Info').t`Limited time offer: **Get up to 35% off** yearly plans`
                         );
                         return wrap('hourglass', textLaunchOffer);
+                    }
+
+                    if (getHas2024OfferCoupon(options.checkResult.Coupon?.Code)) {
+                        const discount = checkout.discountPercent;
+                        return wrap(
+                            'bag-percent',
+                            c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday discount has been applied`
+                        );
                     }
 
                     if (selectedPlan.Name === PLANS.DUO && options.cycle === CYCLE.YEARLY) {
@@ -794,28 +785,7 @@ const Step1 = ({
                                                 accountDetailsRef.current?.scrollInto('email');
                                             }}
                                         />
-                                    ) : (
-                                        <UpsellCardSelector
-                                            audience={audience}
-                                            relativePrice={relativePrice}
-                                            plansMap={model.plansMap}
-                                            currentPlan={currentPlan}
-                                            freePlan={model.freePlan}
-                                            subscription={model.session?.subscription}
-                                            checkout={checkout}
-                                            plan={selectedPlan}
-                                            cycle={options.cycle}
-                                            currency={options.currency}
-                                            coupon={options.checkResult?.Coupon?.Code}
-                                            vpnServersCountData={vpnServersCountData}
-                                            onSelect={() => {
-                                                accountStepPaymentRef.current?.scrollIntoView();
-                                            }}
-                                            onKeep={async () => {
-                                                await handleCompletion(getFreeSubscriptionData(model.subscriptionData));
-                                            }}
-                                        />
-                                    );
+                                    ) : null;
                                 })()}
                                 {model.upsell.mode === UpsellTypes.PLANS && (
                                     <>

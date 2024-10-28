@@ -42,7 +42,7 @@ import {
 } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
-    getHas2023OfferCoupon,
+    getHas2024OfferCoupon,
     getHasSomeVpnPlan,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
@@ -302,18 +302,18 @@ const SubscriptionContainer = ({
 
         const currency = getPlanCurrencyFromPlanIDs(plansMap, planIDs) ?? preferredCurrency;
 
-        const cycle = getInitialCycle(
-            maybeCycle,
+        const cycle = getInitialCycle({
+            cycleParam: maybeCycle,
             subscription,
             planIDs,
             plansMap,
-            step === SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            isPlanSelection: step === SUBSCRIPTION_STEPS.PLAN_SELECTION,
             app,
             minimumCycle,
             maximumCycle,
             currency,
-            allowDowncycling
-        );
+            allowDowncycling,
+        });
 
         const model: Model = {
             step,
@@ -948,7 +948,7 @@ const SubscriptionContainer = ({
                     </Tooltip>
                 </div>
             )}
-            {!getHas2023OfferCoupon(couponCode) && (
+            {!getHas2024OfferCoupon(couponCode) && (
                 <PaymentGiftCode
                     giftCodeRef={giftCodeRef}
                     key={
@@ -1044,6 +1044,7 @@ const SubscriptionContainer = ({
                                 if (isFreePlanSelected) {
                                     return null;
                                 }
+
                                 return (
                                     <>
                                         <h2 className="text-2xl text-bold mb-4">

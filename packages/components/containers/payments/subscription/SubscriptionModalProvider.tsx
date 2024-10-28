@@ -145,6 +145,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                     render={({ onSubmit, title, content, footer, step }) => {
                         return (
                             <ModalTwo
+                                blurBackdrop={true}
                                 className={clsx([
                                     subscriptionModalClassName,
                                     [SUBSCRIPTION_STEPS.PLAN_SELECTION, SUBSCRIPTION_STEPS.CHECKOUT].includes(step) &&
