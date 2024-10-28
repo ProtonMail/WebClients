@@ -1766,8 +1766,14 @@
       "This version will be added to the history as the newest version.": [
         "ეს ვერსია დაემატება ისტორიაში, როგორც უახლესი ვერსია."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "ეს  უარჰყოფს მოწყობილობას **${ name }**, რომელმაც ცადა, თქვენს ${ BRAND_NAME }-ის ანგარიშში შესულიყო. მცდელობის თარიღი: **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "სხვა პაროლების მმართველიდან მონაცემების შემოსატანად, გადადით პაროლების მმართველში, გამოიტანეთ თქვენი მონაცემები და ატვირთეთ ის ${ PASS_APP_NAME }-ზე. როცა მონაცემების შემოტანა დასრულდება, გამოტანილი ფაილი წაშალეთ."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ ${ PASS_APP_NAME }-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "სცადეთ, თავიდან ჩატვირთოთ ან თავიდან დააყენოთ გააფართოება, რომ დარწმუნდეთ, რომ თქვენი ბრაუზერი და ${ PASS_SHORT_APP_NAME } უკანასკნელი ვერსიითაა."
@@ -2772,6 +2778,67 @@
         "დაწერეთ თქვენი შენიშვნა"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "დაადასტურეთ არ უარჰყავით ის ახლა"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "შეიყვანეთ დადასტურების კოდი, რომელიც თქვენს სხვა მოწყობილობაზე გავაგზავნეთ."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "თუ მოთხოვნა თქვენი არაა, გააუქმეთ ის ახლავე."
+      ],
+      "Invalid confirmation code": [
+        "არასწორი შემამოწმებელი კოდი"
+      ],
+      "No, it wasn’t me": [
+        "არა, მე არ ვიყავი"
+      ],
+      "Sign-in confirmed": [
+        "შესვლა დადასტურებულია"
+      ],
+      "Sign-in failed": [
+        "შესვლა ჩავარდა"
+      ],
+      "Sign-in rejected": [
+        "შესვლა უარყოფილია"
+      ],
+      "Sign-in rejection failure": [
+        "შესვლის უარყოფა ჩავარდა"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "მოთხოვნილია შესვლა სხვა მოწყობილობიდან. შენ იყავი ცელქო?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "მოთხოვნილია შესვლა სხვა მოწყობილობიდან. შენ იყავი ცელქო? "
+      ],
+      "Yes, it was me": [
+        "დიახ, მე ვიყავი"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "აქტიური"
+      ],
+      "Inactive": [
+        "არააქტიური"
+      ],
+      "Pending activation": [
+        "გააქტიურების ლოდინი"
+      ],
+      "Pending admin activation": [
+        "ადმინის გააქტიურების მოლოდინი"
+      ],
+      "Rejected": [
+        "უარყოფილია"
+      ],
+      "Signed out": [
+        "გასული"
+      ],
+      "Unknown": [
+        "უცნობი"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "ფსევდონიმების სინქრონიზაცის ჩართვა წარმატებულია. SimpleLogin-ის ფსევდონიმების სინქრონიზაციას, შეიძლება, რაღაც დრო დასჭირდეს"
@@ -2922,6 +2989,9 @@
       ],
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
+      ],
+      "Reject device?": [
+        "უარვყო მოწყობილობა?"
       ],
       "Remove extra password": [
         "დამატებითი პაროლის წაშლა"

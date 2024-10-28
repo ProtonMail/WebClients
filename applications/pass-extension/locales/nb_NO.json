@@ -2797,14 +2797,46 @@
       "Sign-in confirmed": [
         "Pålogging bekreftet"
       ],
+      "Sign-in failed": [
+        "Pålogging mislyktes"
+      ],
       "Sign-in rejected": [
         "Pålogging avvist"
+      ],
+      "Sign-in rejection failure": [
+        "Feil ved avvisning av pålogging"
       ],
       "Sign-in requested on another device. Was it you?": [
         "Pålogging forespurt på en annen enhet. Var det deg?"
       ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Pålogging forespurt på en annen enhet. Var det deg? "
+      ],
       "Yes, it was me": [
         "Ja, det var meg"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Pending activation": [
+        "Avventer aktivering"
+      ],
+      "Pending admin activation": [
+        "Avventer administratoraktivering"
+      ],
+      "Rejected": [
+        "Avvist"
+      ],
+      "Signed out": [
+        "Logget av"
+      ],
+      "Unknown": [
+        "Ukjent"
       ]
     },
     "Success": {
