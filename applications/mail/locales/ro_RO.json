@@ -580,7 +580,7 @@
         "Îmi place acest răspuns"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Imaginea nu au putut fi încărcată cu protecția împotriva urmăririi activată."
+        "Imaginea nu a putut fi încărcată cu protecția împotriva urmăririi activată."
       ],
       "Image will be loaded without a proxy": [
         "Imaginea va fi încărcată fără proxy."
@@ -1231,6 +1231,9 @@
       ],
       "Toggle Calendar app": [
         "Comutare la aplicație Calendar"
+      ],
+      "Toggle Contacts app": [
+        "Comutare aplicație Contacte"
       ],
       "Toggle security center app": [
         "Comutare centru de securitate"
@@ -3557,6 +3560,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pentru a asigura cea mai mare securitate posibilă a contului, setați o frază de recuperare."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
       ],
@@ -3933,6 +3939,12 @@
       "A problem occurred, please try again.": [
         "A apărut o problemă. Reîncercați."
       ],
+      "Add at least one action": [
+        "Adăugați cel puțin o acțiune"
+      ],
+      "Add at least one condition": [
+        "Adăugați cel puțin o condiție"
+      ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
@@ -4113,6 +4125,9 @@
       "Invalid expiration time": [
         "Data expirării nu este validă."
       ],
+      "Invalid IBAN": [
+        "Acest IBAN nu este valid."
+      ],
       "Invalid name": [
         "Nume nevalid"
       ],
@@ -4279,6 +4294,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Trimiterea atașamentelor este restricționată până când atingeți limitele planului sau schimbați tipul de abonament."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Trimiterea atașamentelor este restricționată în timp ce depășiți limitele planului actual sau până când treceți la un plan cu plată superior."
+      ],
       "Signature not verified": [
         "Semnătură neverificată"
       ],
@@ -4326,6 +4344,9 @@
       ],
       "Thanks for the feedback!": [
         "Mulțumim pentru informare!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Suma datorată s-a schimbat. Mai încercați."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Atașamentul nu a putut fi decriptat.\nDacă aveți cheia privată corespunzătoare, veți putea decripta\nfișierul cu un program cum ar fi GnuPG.",
@@ -4443,6 +4464,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Ați atins numărul maxim de calendare."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Ați atins limita numărului de contacte disponibil pentru acest cont."
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
@@ -4820,6 +4844,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Conturile pe viață nu se pot alătura unui plan de familie."
       ],
+      "Manage addresses": [
+        "Gestionare adrese"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Proprietarii unui plan cu membri nu se pot alătura unui alt plan de familie."
       ],
@@ -4837,6 +4864,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Puteți accepta doar 3 invitații într-o perioadă de 6 luni. Contactați ${ supportLink } dacă aveți nevoie de o excepție."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Nu puteți accepta această invitație cu planul actual."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Ați primit invitația să vă alăturați la ${ bannerOrganization }. ${ viewInviteButton }"
@@ -4874,6 +4904,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Configurați contul de familie și invitați utilizatori"
+      ],
       "Invite members and get everything up and running.": [
         "Invitați membri și puneți totul în funcțiune."
       ],
@@ -5062,6 +5095,11 @@
         "Necitite"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Are atașamente"
+      ]
+    },
     "Filter preview": {
       "read": [
         "citit"
@@ -5153,6 +5191,9 @@
       ],
       "Start free trial": [
         "Începeți să încercați gratuit"
+      ],
+      "Try the new desktop app": [
+        "Încercați noua aplicație pentru desktop"
       ],
       "Upgrade now": [
         "Modificare"
@@ -5924,6 +5965,9 @@
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/lună)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrare dacă TOATE condițiile următoare sunt îndeplinite)"
       ],
@@ -6032,6 +6076,9 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Orice mesaj programat sau amânat va fi anulat."
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul «Toate mesajele»."
       ],
       "Applying actions to conversations": [
         "Se aplică acțiunile la conversații"
@@ -6360,6 +6407,9 @@
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Mesajele etichetate cu eticheta ${ nameDeleted } nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
+      ],
       "embedded image": [
         "imagine inclusă",
         "imagini incluse",
@@ -6472,6 +6522,9 @@
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Trimit acest mesaj unui destinatar care nu este utilizator al ${ MAIL_APP_NAME }."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
@@ -6763,6 +6816,9 @@
       "Organization size": [
         "Mărime organizație"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Alertele noastre au ca prioritate siguranța. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
       ],
@@ -7018,6 +7074,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Amânat până la ${ dateString } la ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Amânat până astăzi, ${ formattedTime }"
@@ -7292,6 +7351,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Dezactivați pentru a căuta numai după dată, nume, adresă de e-mail sau conținut subiect. Pentru a dezactiva căutarea în conținutul mesajelor (și a șterge mesajele descărcate pentru a activa această funcție), accesați rubrica Setări."
+      ],
       "Turn on to search the content of your messages": [
         "Activare căutarea în conținutul mesajelor."
       ],
@@ -7321,6 +7383,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Modificați-vă planul cu unul superior pentru a putea șterge automat mesajele care au stat în folderul «Gunoi» și «Nedorite» mai mult de 30 de zile."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Treceți la alt plan pentru a crea mai multe foldere, filtre și adrese."
@@ -8038,6 +8103,9 @@
       "And": [
         "Şi"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "ORICARE"
       ],
@@ -8121,6 +8189,9 @@
       ],
       "Colors": [
         "Culori"
+      ],
+      "Company name": [
+        "Nume companie"
       ],
       "Composer": [
         "Compunere mesaje"
@@ -8253,6 +8324,9 @@
       ],
       "I understand the risk": [
         "Înțeleg riscul"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "DACĂ"
@@ -8434,6 +8508,9 @@
       "Reveal password": [
         "Afișare parolă"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Search in": [
         "Căutare în"
       ],
@@ -8478,6 +8555,9 @@
       ],
       "Then": [
         "Atunci"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time": [
         "Ora"
@@ -8971,6 +9051,9 @@
       ]
     },
     "Message image": {
+      "Image could not be loaded.": [
+        "Imaginea nu s-a putut încărca."
+      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Imaginea nu a fost încărcată pentru a vă proteja intimitatea."
       ]
@@ -9606,6 +9689,9 @@
       "Sync and backup all your files across devices": [
         "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
       ],
+      "TOR over VPN": [
+        "Tor prin VPN"
+      ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
       ],
@@ -9878,6 +9964,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
       ],
@@ -9929,6 +10018,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Instrument de gestionare a organizației care le permite administratorilor să adauge și să elimine utilizatori, să le gestioneze accesul la serviciile ${ BRAND_NAME } și să îndeplinească alte sarcini."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Infrastructura noastră robustă vă asigură că vă veți putea accesa contul atunci când aveți nevoie."
       ],
@@ -9970,6 +10062,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetați parolele și autentificarea cu doi factori a utilizatorilor."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Redirecționați traficul din Internet prin rețeaua TOR cu un singur clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
@@ -10144,6 +10239,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Pentru ca importarea să funcționeze, trebuie să selectați toate articolele solicitate așa cum e arătat în imagine."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selectați ce poate accesa ${ BRAND_NAME }: accesare mesaje primite pe e-mail și setări, afișare și descărcare contacte, afișare și descărcare toate agendele pe care le accesați din Google Calendar."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10455,11 +10555,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transfer bancar"
+      ],
       "Credit/debit card": [
         "Card de credit/debit"
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Folosire nume companie"
+      ],
+      "Use personal name": [
+        "Folosire nume personal"
       ]
     },
     "Payments": {
@@ -10539,6 +10650,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul, iar banca să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
+      ],
+      "Street address, postal code, and city": [
+        "Strada, cod poștal și oraș"
       ]
     },
     "PGP key encryption warning": {
@@ -10930,6 +11049,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Încercați ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Folosit pentru cumpărături pe Amazon etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
@@ -11763,6 +11885,9 @@
     "Subscription change warning": {
       "Got it": [
         "Am înțeles"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Doar conectați-vă în App Store de la Apple și apoi selectați ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Doar conectați-vă în Magazinul Play și apoi apăsați pe ${ subscriptions }."
@@ -13534,6 +13659,9 @@
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Această versiune a TOR Browser nu este suportată. Actualizați la cea mai recentă ${ stableRelease }."
       ]
     },
     "Update font modal": {
@@ -13605,6 +13733,11 @@
       ],
       "No ads": [
         "Fără reclame"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     },
     "wallet_signup_2024: Info": {
