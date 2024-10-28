@@ -17,7 +17,7 @@ import {
   $createTabNode,
   $createParagraphNode,
 } from 'lexical'
-import { $isBlock } from '../../Utils/isBlock'
+import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 import { $splitNodeAtPoint } from '../../Utils/splitNodeAtPoint'
 import { DeleteInputTypes, InsertionInputTypes } from './InputTypes'
 import type { ProtonNode } from './ProtonNode'
@@ -345,7 +345,11 @@ function $handleInsertTextData(
     let node = focus.getNode()
     let offset = focus.offset
 
-    while (!$isBlock(node)) {
+    /**
+     * We split until we reach the node where we can insert
+     * the new suggestion node.
+     */
+    while (!$isNonInlineLeafElement(node)) {
       ;[node, offset] = $splitNodeAtPoint(node, offset)
     }
 
