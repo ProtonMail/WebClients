@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
-import { APPS_CONFIGURATION, APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { APP_NAMES} from '@proton/shared/lib/constants';
+import { APPS_CONFIGURATION, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getAllAppVersions } from '@proton/shared/lib/desktop/version';
 import { getBrowser, getDevice, getOS } from '@proton/shared/lib/helpers/browser';
-import { electronAppVersion, isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { electronAppVersion, isElectronApp, isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 export const getClientName = (appName: APP_NAMES) => {
     return `Web ${APPS_CONFIGURATION[appName].bareName}`;
@@ -48,6 +50,10 @@ export const getReportInfo = () => {
     const device = getDevice();
     const os = getEnhancedOSInfo();
 
+    const extendedElectronVersion: string = isElectronMail
+        ? getAllAppVersions()
+        : (electronAppVersion ?? browser.version ?? '');
+
     const Browser =
         browser.name?.toLowerCase() === 'electron'
             ? c('Browser').t`${MAIL_APP_NAME} Desktop application`
@@ -58,7 +64,7 @@ export const getReportInfo = () => {
         OSVersion: os.version || '',
         OSArtificial: os.artificial,
         Browser,
-        BrowserVersion: isElectronApp ? electronAppVersion : browser.version,
+        BrowserVersion: isElectronApp ? extendedElectronVersion : browser.version,
         Resolution: `${window.innerHeight} x ${window.innerWidth}`,
         DeviceName: device.vendor,
         DeviceModel: device.model,
