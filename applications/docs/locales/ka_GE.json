@@ -184,6 +184,9 @@
       "Copy link": [
         "ბმულის კოპირება"
       ],
+      "Create a copy": [
+        "ასლის შექმნა"
+      ],
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
@@ -1006,6 +1009,9 @@
       ],
       "Encrypted password manager": [
         "დაშიფრული პაროლების მმართველი"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "ჩვენი ძირითადი, უფასო სატარიფო გეგმა გამჭოლად დაშიფრული ელფოსტითა და საცავით. ფასიანი ფუნქციების გარეშე."
       ],
       "Save ${ upsellSavings }": [
         "დაზოგეთ ${ upsellSavings }"
@@ -2078,6 +2084,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "იმისათვის, რომ გქონდეთ უმაღლესი შესაძლო უსაფრთხოება თქვენი ანგარიშისთვის, დააყენეთ აღდგენის ფრაზა."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე ან ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს არ შეიცავს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
@@ -2101,6 +2110,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია."
+      ],
+      "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
+        "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
       ]
     },
     "description": {
@@ -2531,6 +2543,9 @@
       "Invalid expiration date": [
         "არასწორი ვადა"
       ],
+      "Invalid IBAN": [
+        "არასწორი IBAN"
+      ],
       "Invalid name": [
         "არასწორი სახელი"
       ],
@@ -2674,6 +2689,9 @@
       "The address might be misspelled": [
         "ალბათ, მისამართი შეგეშალათ"
       ],
+      "The amount due has changed. Please try again.": [
+        "გადასახდელი თანხა შეიცვალა. თავიდან სცადეთ."
+      ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "დოკუმენტი, რომლის გადაყვანასაც ცდილობთ, მეტისმეტად დიდია. ეს, შეიძლება, მაშინ მოხეს, თუ დოკუმენტი ბევრ სურათს ან სხვა მედიას შეიცავს. სცადეთ თავიდან, ამჯერად ცოტა პატარა დოკუმენტით."
       ],
@@ -2785,6 +2803,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
       ],
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
@@ -3108,6 +3129,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "სამუდამო ანგარიშები ოჯახის გეგმაში ვერ შევლენ."
       ],
+      "Manage addresses": [
+        "მისამართების მართვა"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "წევრების მქონე ტარიფების მფლობელებს სხვა ოჯახურ ტარიფში გაერთიანება არ შეუძლიათ."
       ],
@@ -3125,6 +3149,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "6 თვეში, მხოლოდ, 3 მოსაწვევს შეგიძლიათ, დაეთანხმოთ. თუ გსურთ, გამონაკლისი დაუშვათ, დაუკავშირდით: ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "მიმდინარე სატარიფო გეგმით მოსაწვევს ვერ დაეთანხმებით."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "გაქვთ მოსაწვევი, ${ bannerOrganization }-ს შეუერთდეთ. ${ viewInviteButton }"
@@ -3672,6 +3699,9 @@
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /თვეში)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
       ],
@@ -4017,6 +4047,9 @@
       "High Priority": [
         "მაღალი პრიორიტეტი"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
@@ -4135,6 +4168,9 @@
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
+      "Making a copy...": [
+        "ასლის შექმნა..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
       ],
@@ -4220,6 +4256,9 @@
       ],
       "Organization size": [
         "ორგანიზაციის ზომა"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
       ],
       "Owner": [
         "მფლობელი"
@@ -4598,6 +4637,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "შესული ხართ როგორც ${ user.Name } (${ user.Email })."
       ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "ამჟამად დოკუმენტი მხოლოდ-კითხვის რეჟიმში გაქვთ ღია. მსწერეთ მფლობელს, თუ დოკუმენტის ჩასწორების წვდომა გრჭირდებათ."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "იყენებთ უფრო მეტ საცავს, ვიდრე ${ downgradedPlanName } ტარიფი შეიცავს. წაშალეთ მონაცემები იმისთვის, რომ ტარიფის ჩამოწევა შეძლოთ."
       ],
@@ -4827,6 +4869,9 @@
       "Address": [
         "მისამართი"
       ],
+      "Anderson": [
+        "ანდერსონი"
+      ],
       "Anyone on the Internet with the link can view": [
         "ნახვა შეუძლია ყველას, ვისაც ინტერნეტი და ეს ბმული აქვს"
       ],
@@ -4907,6 +4952,9 @@
       ],
       "Colors": [
         "ფერები"
+      ],
+      "Company name": [
+        "კომპანიის სახელი"
       ],
       "Confirm password": [
         "პაროლის დადასტურება"
@@ -5012,6 +5060,9 @@
       ],
       "I understand the risk": [
         "მე ვიღებ რისკს"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Ignore": [
         "იგნორი"
@@ -5160,6 +5211,9 @@
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, ჟენევა"
+      ],
       "Security code (${ codeName })": [
         "უსაფრთხოების კოდი (${ codeName })"
       ],
@@ -5198,6 +5252,9 @@
       ],
       "Theme": [
         "თემა"
+      ],
+      "Thomas": [
+        "თომასი"
       ],
       "Title": [
         "სათაური"
@@ -5536,6 +5593,9 @@
       "Graphics Interchange Format (GIF)": [
         "გრაფიკის მიმოცვლის ფორმატი (GIF)"
       ],
+      "GZip Archive": [
+        "Gzip-ით შეკუმშული არქივი"
+      ],
       "HyperText Markup Language (HTML)": [
         "ჰიპერტექსტის აწყობის ენა (HTML)"
       ],
@@ -5553,6 +5613,9 @@
       ],
       "Java Archive (JAR)": [
         "Java არქივი (JAR)"
+      ],
+      "JPEG image": [
+        "JPEG გამოსახულება"
       ],
       "MP3 audio": [
         "MP3 აუდიო"
@@ -5589,6 +5652,9 @@
       ],
       "Opus audio": [
         "Opus აუდიო"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "გადატანადი ქსელური გრაფიკა (PNG)"
       ],
       "RAR archive": [
         "RAR არქივი"
@@ -6092,6 +6158,9 @@
       "Sync and backup all your files across devices": [
         "დაასინქრონეთ და დაამარქაფეთ ყველა თქვენი ფაილი ყველა თქვენს მოწყობილობაზე"
       ],
+      "TOR over VPN": [
+        "Tor VPN-ის ზემოდან"
+      ],
       "Two-factor authentication": [
         "2FA"
       ],
@@ -6252,6 +6321,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "დაიცავით კონფიდენციალური კომპანიის ინფორმაცია და იმუშავეთ ერთად უსაფრთხოდ."
       ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "დაიცავით თქვენი ოჯახი ${ PASS_SHORT_APP_NAME } Plus-ის ფასიანი ფუნქციებით 6 მომხმარებლისთვის."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "დაიცავით თქვენი ოჯახის კონფიდენციალობა ყველა ${ BRAND_NAME }-ის სერვისის ერთად."
       ],
@@ -6355,6 +6427,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "შექმენით ${ n }-მდე ელფოსტის მისამართი/ფსევდონიმი, რომლებიც შეგიძლიათ, ოჯახის წევრებს მიანიჭოთ. გამოიყენეთ ისინი, მაგალითად, შოინგისთვის. JemalShpper@${ domain }."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "დაიცავით თავი VPN-ის გამოვლენისგან თქვენი ტრაფიკის ბევრ სერვერზე გატარებით"
       ],
@@ -6448,8 +6523,14 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
       ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "უსაფრთხოდ გააზიარეთ ინდივიდუალური ელემენტები ყველასთან (მათთანაც კი, ვინც ${ PASS_APP_NAME }-ს არ იყენებს)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "შეინახეთ კონტაქტების ისეთი დეტალები, როგორიცაა ტელეფონის ნომერი, მისამართი, დაბადების დღე და პირადი შენიშვნები, უსაფრთხოდ. ნულოვანი წვდომით დაშიფვრა უზრუნველყოფს, რომ მათზე წვდომა ${ BRAND_NAME }-საც კი არ ჰქონდეს."
@@ -6735,6 +6816,9 @@
       "Share invitation declined": [
         "გაზიარების მოსაწვევი უარყოფილია"
       ],
+      "Stopping the sharing of this item has failed": [
+        "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "\"${ name }\"-მდე ბმულის წაშლის შეცდომა"
       ],
@@ -6773,6 +6857,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "შემოსატანად საჭიროა, რომ მონიშნოთ ყველა საჭირო ელემენტი, ისე, როგორც ეს GIF-ზეა."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "აირჩიეთ, რასთან აქვს ${ BRAND_NAME }-ს წვდომა: ნახოს თქვენი ელფოსტის შეტყობინებები დ პარამეტრები, ნახოს და გადმოწეროს თქვენი კონტაქტები; გადმოწეროს და ნახოს ყველა გეგმა Google Calendar-დან."
       ]
     },
     "Option": {
@@ -6862,11 +6951,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "საბანკო გადარიცხვა"
+      ],
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "კომპანიის სახელის გამოყენება"
+      ],
+      "Use personal name": [
+        "პირადი სახელის გამოყენება"
       ]
     },
     "Payments": {
@@ -6946,6 +7046,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "ქუჩის მსამართი, საფოსტო კოდი და ქალაქი"
       ]
     },
     "PGP key encryption warning": {
@@ -7184,6 +7289,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "სცადეთ ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "გამოიყენება Amazon-ზე შოპინგისთვის და ა.შ."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "როცა გკითხავენ ელფოსტის მისამართს, ეს ფსევდონიმი მიეცით. ფსევდონიმები უზრუნველყოფილია პროგრამით ${ passLink }."
@@ -7796,6 +7904,9 @@
     "Subscription change warning": {
       "Got it": [
         "გავიგე"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "შედით თქვენს Apple App Store-ის ანგარიშზე და ${ subscriptions } აირჩიეთ."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "შედით თქვენს Play Store-ის ანგარიშზე და ${ subscriptions }-ს დააწექით."
@@ -8660,6 +8771,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "აირჩიეთ PGP-ის სქემა, რომელიც გამოყენებული იქნება ხელმოწერისა და შიფრაციისთვის. გაითვალისწინეთ, რომ PGP/Inline-ით ფორმატირებულ ელფოსტებს ვერ გააგზავნით"
       ],
+      "Shared with end-to-end encryption": [
+        "გაზიარებულია გამჭოლი დაშიფვრით"
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "სისტემური ქვესაქაღალდეები ${ MAIL_APP_NAME }-ში ცალკე საქაღალდეებად გამოჩნდება"
       ],
@@ -8750,6 +8864,11 @@
       ],
       "No ads": [
         "რეკლამის გარეშე"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "წვდომა Secure Core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
       ]
     },
     "wallet_signup_2024: Info": {
