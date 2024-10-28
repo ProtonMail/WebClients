@@ -132,6 +132,8 @@ export function useSuggestionCommentContent(
       color = 'weak'
     } else if (type === 'clear-formatting') {
       title = c('Label').t`Clear formatting`
+    } else if (type === 'align-change') {
+      title = c('Label').t`Align`
     }
     if (!!replaceWith || type === 'delete' || type === 'insert') {
       content = `"${content}"`
