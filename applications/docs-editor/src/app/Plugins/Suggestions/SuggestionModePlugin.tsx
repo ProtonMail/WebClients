@@ -82,6 +82,8 @@ import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
 import { INSERT_HORIZONTAL_RULE_COMMAND } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $insertDividerAsSuggestion } from './insertDividerAsSuggestion'
 import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
+import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfNeeded'
+import { $setElementAlignmentAsSuggestion } from './setElementAlignmentAsSuggestion'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -274,7 +276,7 @@ export function SuggestionModePlugin({
          * or re-open their respective suggestion threads.
          */
         function handleUndoRedo({ editorState, prevEditorState, dirtyElements, tags }) {
-          const isUndoOrRedoUpdate = tags.has('historic')
+          const isUndoOrRedoUpdate = tags.has('historic') || tags.has(ResolveSuggestionsUpdateTag)
           if (!isUndoOrRedoUpdate) {
             return
           }
@@ -358,7 +360,7 @@ export function SuggestionModePlugin({
       editor.registerCommand(
         FORMAT_ELEMENT_COMMAND,
         (payload) => {
-          return true
+          return $setElementAlignmentAsSuggestion(payload, addCreatedIDtoSet, suggestionModeLogger)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
