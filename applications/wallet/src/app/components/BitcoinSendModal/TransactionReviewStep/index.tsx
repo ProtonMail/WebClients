@@ -17,12 +17,12 @@ import { useBitcoinBlockchainContext } from '../../../contexts';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { convertAmount, isUndefined } from '../../../utils';
 import { EmailListItem } from '../../EmailListItem';
-import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { EmailSelect } from '../../EmailSelect';
 import type { RecipientDetailsModalOwnProps } from '../../RecipientDetailsModal';
 import { RecipientDetailsModal } from '../../RecipientDetailsModal';
 import { TextAreaModal } from '../../TextAreaModal';
 import { SecondaryAmount } from '../SecondaryAmount';
+import type { BtcAddressMap } from '../useEmailAndBtcAddressesMaps';
 import { FeesModal } from './FeesModal';
 import { getAnonymousSenderAddress, useTransactionReview } from './useTransactionReview';
 

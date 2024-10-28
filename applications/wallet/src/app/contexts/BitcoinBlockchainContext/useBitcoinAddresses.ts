@@ -40,7 +40,7 @@ export const useBitcoinAddresses = ({
     isSyncing,
 }: {
     apiWalletsData?: IWasmApiWalletData[];
-    walletsChainData: Partial<Record<string, WalletWithChainData>>;
+    walletsChainData: SimpleMap<WalletWithChainData>;
     isSyncing: (walletId: string, accountId?: string | undefined) => boolean;
 }) => {
     const api = useWalletApiClients();

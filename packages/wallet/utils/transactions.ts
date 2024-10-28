@@ -2,7 +2,7 @@ import type { WasmApiClients, WasmApiWalletTransaction, WasmTransactionDetails }
 import type { PrivateKeyReference } from '@proton/crypto';
 import { SECOND } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import type { DecryptedKey, SimpleMap } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type {
@@ -14,7 +14,7 @@ import type {
 import { removeMasterPrefix } from './account';
 import { decryptTextData, decryptWalletData, encryptPgp, hmac } from './crypto';
 
-const parsedRecipientList = (toList: string | null): Partial<Record<string, string>> => {
+const parsedRecipientList = (toList: string | null): SimpleMap<string> => {
     try {
         const parsed = toList ? JSON.parse(toList) : {};
 

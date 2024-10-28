@@ -28,7 +28,7 @@ export const DEFAULT_SETTINGS: WasmUserSettings = {
     ReceiveTransactionNotification: null,
 };
 
-export const bitcoinUnitChange = createAction('bitcoin unit change', (payload: { bitcoinUnit: WasmBitcoinUnit }) => ({
+export const bitcoinUnitChange = createAction('bitcoin-unit/update', (payload: { bitcoinUnit: WasmBitcoinUnit }) => ({
     payload,
 }));
 
