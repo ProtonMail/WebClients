@@ -15,5 +15,5 @@ export type MailboxDefaultDTO = { defaultMailboxID: number };
 
 export type CatchAllDTO = { domainID: number; catchAll: boolean };
 export type CustomDomainMailboxesDTO = { domainID: number; mailboxIDs: number[] };
-export type CustomDomainNameDTO = { domainID: number; name: string };
+export type CustomDomainNameDTO = { domainID: number; name: MaybeNull<string> };
 export type RandomPrefixDTO = { domainID: number; randomPrefix: boolean };
