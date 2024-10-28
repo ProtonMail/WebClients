@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { usePlans } from '@proton/components/hooks';
 import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import type { Currency } from '@proton/shared/lib/interfaces';
@@ -18,11 +19,14 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
     const { paymentsApi } = usePaymentsApiWithCheckFallback();
     const [loading, withLoading] = useLoading();
     const [state, setState] = useState<Partial<{ offer: Offer; offerConfig: OfferConfig }>>();
+    const [plansResult, plansLoading] = usePlans();
+    const plans = plansResult?.plans;
 
     useEffect(() => {
-        if (!offerConfig) {
+        if (!offerConfig || !plans) {
             return;
         }
+
         const updateOfferPrices = async () => {
             try {
                 // Reset previous offer prices in case the offer config has changed from what was previously cached
@@ -30,7 +34,7 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
                     setState(undefined);
                 }
 
-                const result = await fetchDealPrices(paymentsApi, offerConfig, currency);
+                const result = await fetchDealPrices(paymentsApi, offerConfig, currency, plans);
 
                 // We make an offer based on offerConfig + fetched results above
                 const offer: Offer = {
@@ -43,7 +47,10 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
                             prices: {
                                 withCoupon: withCoupon.Amount + (withCoupon.CouponDiscount || 0),
                                 withoutCoupon: withoutCoupon.Amount + (withoutCoupon.CouponDiscount || 0), // BUNDLE discount can be applied
-                                withoutCouponMonthly: withoutCouponMonthly.Amount,
+                                // in rare cases a plan doesn't have a monthly price, so we use 0 as a fallback.
+                                // It can be potentially done smarter, e.g. take the amount without coupon and devide it
+                                // byt the cycle length. But that wasn't required for the purpose of Pass Lifetime offer
+                                withoutCouponMonthly: withoutCouponMonthly?.Amount ?? 0,
                             },
                         };
                     }),
@@ -56,9 +63,9 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
         };
 
         void withLoading(updateOfferPrices());
-    }, [offerConfig, currency]);
+    }, [offerConfig, currency, plans]);
 
-    return [state?.offer, loading];
+    return [state?.offer, loading || plansLoading];
 }
 
 export default useFetchOffer;

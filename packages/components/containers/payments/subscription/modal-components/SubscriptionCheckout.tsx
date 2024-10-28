@@ -15,7 +15,7 @@ import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout'
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromCheckout, hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
-import { getHas2023OfferCoupon, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type {
     Currency,
@@ -28,7 +28,7 @@ import type {
 
 import { usePlans } from '../../../../hooks';
 import Checkout from '../../Checkout';
-import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';
+import { getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import type { OnBillingAddressChange } from '../../TaxCountrySelector';
 import { WrappedTaxCountrySelector } from '../../TaxCountrySelector';
@@ -115,7 +115,15 @@ const SubscriptionCheckout = ({
         plansMap,
         checkResult,
     });
-    const { planTitle, usersTitle, withDiscountPerCycle, addons, membersPerMonth, couponDiscount } = checkout;
+    const {
+        planTitle,
+        usersTitle,
+        withDiscountPerCycle,
+        addons,
+        membersPerMonth,
+        couponDiscount,
+        withDiscountPerMonth,
+    } = checkout;
 
     const plan = getPlanFromCheckout(planIDs, plansMap);
     const currencies = useAvailableCurrenciesForPlan(plan, subscription);
@@ -141,7 +149,7 @@ const SubscriptionCheckout = ({
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers, freePlan });
 
-    const hasBFDiscount = getHas2023OfferCoupon(checkResult.Coupon?.Code);
+    const hasBFDiscount = getHas2024OfferCoupon(checkResult.Coupon?.Code);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
@@ -156,20 +164,6 @@ const SubscriptionCheckout = ({
             hasGuarantee={hasGuarantee}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
             paymentMethods={paymentMethods}
-            hiddenRenewNotice={
-                hasBFDiscount && (
-                    <div className="color-weak">
-                        *{' '}
-                        {getBlackFridayRenewalNoticeText({
-                            price: withDiscountPerCycle,
-                            cycle,
-                            plansMap,
-                            planIDs,
-                            currency,
-                        })}
-                    </div>
-                )
-            }
             renewNotice={
                 displayRenewNotice
                     ? getCheckoutRenewNoticeText({
@@ -202,7 +196,11 @@ const SubscriptionCheckout = ({
             </div>
             <CheckoutRow
                 title={usersTitle}
-                amount={membersPerMonth}
+                // That a very naïve approach for the discounted number of members.
+                // It will NOT work for the actual member addons and it can break when/if we introduce B2C addons
+                // This is valid only for B2C plans without addons, so it should be good enough for the BF2024.
+                // Kill it with fire after the BF is done (revert it to be just amount={membersPerMonth})
+                amount={hasBFDiscount ? withDiscountPerMonth : membersPerMonth}
                 currency={currency}
                 suffix={perMonthSuffix}
                 loading={loading}
@@ -248,7 +246,8 @@ const SubscriptionCheckout = ({
                                 ) : null} */}
                             </>
                         }
-                        amount={amount}
+                        // revert it to amount={amount} after BF
+                        amount={hasBFDiscount ? withDiscountPerCycle : amount}
                         currency={currency}
                         loading={loading}
                         data-testid="price"
@@ -256,7 +255,8 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            {!!couponDiscount && (
+            {/* remove !hasBFDiscount after BF */}
+            {!!couponDiscount && !hasBFDiscount && (
                 <CheckoutRow
                     title={c('Title').t`Coupon`}
                     amount={couponDiscount}

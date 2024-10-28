@@ -63,7 +63,7 @@ const CreditsModal = ({ status, ...props }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
-    const preferredCurrency = useAutomaticCurrency();
+    const [preferredCurrency] = useAutomaticCurrency();
     const [currency, setCurrency] = useState<Currency>(preferredCurrency);
     const [amount, setAmount] = useState(DEFAULT_CREDITS_AMOUNT);
     const debouncedAmount = useDebounceInput(amount);

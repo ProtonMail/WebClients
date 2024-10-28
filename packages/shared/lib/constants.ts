@@ -682,14 +682,6 @@ export enum CYCLE {
 
 export const DEFAULT_CYCLE = CYCLE.YEARLY;
 
-export const BLACK_FRIDAY = {
-    COUPON_CODE: 'BF2022',
-    START: new Date(Date.UTC(2021, 10, 1, 5)), // 6 AM CET
-    END: new Date(Date.UTC(2022, 0, 1, 17)), // 6 PM CET
-    CYBER_START: new Date(Date.UTC(2020, 10, 30, 6)),
-    CYBER_END: new Date(Date.UTC(2020, 11, 1, 6)),
-};
-
 export const PRODUCT_PAYER = {
     START: new Date(Date.UTC(2020, 9, 28, 6)),
     END: new Date(Date.UTC(2020, 11, 15, 6)),
@@ -785,9 +777,17 @@ export function isFreeSubscription(obj: any): obj is FreeSubscription {
 
 export enum COUPON_CODES {
     BLACK_FRIDAY_2023 = 'BF2023',
+    BLACK_FRIDAY_2024 = 'BF2024YR',
+    BLACK_FRIDAY_2024_MONTH = 'BF2024MO',
+    BLACK_FRIDAY_2024_PCMAG = 'BF2024PCMAG',
+    BLACK_FRIDAY_2024_HB = 'BF2024HB',
+    BLACK_FRIDAY_2024_VPNLIGHTNING = 'BF2024VPNLIGHTNING',
+    BLACK_FRIDAY_2024_PASS_LIFE = 'BF2024PASSLIFE',
+    DEGOOGLE = 'DEGOOGLE', // DEGOOGLE 2024 Campain
     LIFETIME = 'LIFETIME',
     REFERRAL = 'REFERRAL',
     END_OF_YEAR_2023 = 'EOY2023',
+    END_OF_YEAR_2024 = 'EOY2024',
     EOY_2023_1M_INTRO = 'EOY1MINTRO',
     PASS_B2B_INTRO = 'PASS2024B2BINTRO',
     VPN_INTRO_2024 = 'VPNINTROPRICE2024',

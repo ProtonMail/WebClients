@@ -32,12 +32,18 @@ const user = {
     Flags: { sso: false },
 } as UserModel;
 
+// Mock offer config file because it is supposed to change a lot
+jest.mock('@proton/components/containers/offers/hooks/useOfferConfig.ts', () => ({
+    __esModule: true,
+    default: jest.fn(() => [undefined, false]),
+}));
+
 describe('MailHeader', () => {
     let props: ReturnType<typeof getProps>;
 
     const setup = async () => {
         minimalCache();
-        addApiMock('payments/v4/plans', () => ({}));
+        addApiMock('payments/v4/plans', () => ({ Plans: [] }));
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
         addApiMock('payments/v4/subscription/latest', () => ({}));
 

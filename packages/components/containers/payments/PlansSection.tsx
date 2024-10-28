@@ -64,13 +64,14 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const api = useApi();
     const { paymentsApi } = usePaymentsApi(api);
     const location = useLocation();
-    const preferredCurrency = useAutomaticCurrency();
+    const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const currentPlanIDs = getPlanIDs(subscription);
     const searchParams = getSearchParams(location.search);
     const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
 
     const [open] = useSubscriptionModal();
-    const isLoading = loadingPlans || loadingSubscription || loadingOrganization || statusLoading || !status;
+    const isLoading =
+        loadingPlans || loadingSubscription || loadingOrganization || statusLoading || !status || loadingCurrency;
     const [selectedCurrency, setCurrency] = useState<Currency>();
     const currency = selectedCurrency || preferredCurrency;
     const plansMap = getPlansMap(plans, currency);

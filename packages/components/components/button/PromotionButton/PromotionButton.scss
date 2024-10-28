@@ -66,4 +66,18 @@
 			}
 		}
 	}
+
+	// used for BF, to be used with ghost variant
+	&--bf-2024 {
+		&#{&} {
+			--button-default-background-color: var(--optional-bg-promotion-bw-button);
+			--button-hover-background-color: color-mix(in srgb, var(--optional-bg-promotion-bw-button) 90%, transparent);
+			--button-active-background-color: color-mix(in srgb, var(--optional-bg-promotion-bw-button) 80%, transparent);
+			--button-default-text-color: var(--optional-text-promotion-bw-button);
+			--button-hover-text-color: var(--optional-text-promotion-bw-button);
+			--button-active-text-color: var(--optional-text-promotion-bw-button);
+
+			border: 0;
+		}
+	}
 }

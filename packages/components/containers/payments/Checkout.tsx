@@ -18,7 +18,6 @@ export interface Props {
     hasGuarantee?: boolean;
     description?: ReactNode;
     renewNotice: ReactNode;
-    hiddenRenewNotice?: ReactNode;
     paymentMethods: MethodsHook;
 }
 
@@ -31,7 +30,6 @@ const Checkout = ({
     hasGuarantee,
     description,
     renewNotice,
-    hiddenRenewNotice,
     paymentMethods,
 }: Props) => {
     const disableCurrencySelector =
@@ -54,7 +52,7 @@ const Checkout = ({
 
             <div className={loading ? 'opacity-50 *:pointer-events-none' : ''}>{children}</div>
             <div className="text-sm lh-standard">
-                {!hiddenRenewNotice && renewNotice && (
+                {renewNotice && (
                     <div className="flex flex-nowrap color-weak">
                         <span className="shrink-0 mr-2">
                             <Icon name="info-circle" size={4} />
@@ -81,12 +79,6 @@ const Checkout = ({
                 )}
             </div>
             {description}
-            {hiddenRenewNotice && (
-                <div className="mt-4">
-                    <hr />
-                    <div className="text-sm lh-standard">{hiddenRenewNotice}</div>
-                </div>
-            )}
         </div>
     );
 };
