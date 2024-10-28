@@ -3,7 +3,7 @@ import { useState } from 'react';
 import omit from 'lodash/omit';
 
 import type { PublicKeyReference } from '@proton/crypto/lib';
-import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
+import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum InvalidRecipientErrorCode {
@@ -42,7 +42,9 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
     };
 
     const exists = (recipient: Recipient) => {
-        return Boolean(recipientEmailMap[canonicalizeEmail(recipient.Address)] || btcAddressMap[recipient.Address]);
+        const email = canonicalizeEmailByGuess(recipient.Address);
+
+        return Boolean(recipientEmailMap[email] || btcAddressMap[recipient.Address]);
     };
 
     const addValidRecipient = (
@@ -50,9 +52,11 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
         value: BtcAddressOrError['value'],
         addressKey?: PublicKeyReference
     ) => {
+        const email = canonicalizeEmailByGuess(recipient.Address);
+
         setRecipientEmailMap((prev) => ({
             ...prev,
-            [canonicalizeEmail(recipient.Address)]: { btcAddress: { value }, recipient, addressKey },
+            [email]: { btcAddress: { value }, recipient, addressKey },
         }));
 
         if (value) {
@@ -61,11 +65,16 @@ export const useEmailAndBtcAddressesMaps = ({ initBtcAddressMap = {}, initRecipi
     };
 
     const addInvalidRecipient = (recipient: Recipient, error: BtcAddressOrError['error']) => {
-        setRecipientEmailMap((prev) => ({ ...prev, [recipient.Address]: { btcAddress: { error }, recipient } }));
+        const email = canonicalizeEmailByGuess(recipient.Address);
+
+        setRecipientEmailMap((prev) => ({
+            ...prev,
+            [email]: { btcAddress: { error }, recipient },
+        }));
     };
 
     const removeRecipient = (recipient: Recipient) => {
-        const email = canonicalizeEmail(recipient.Address);
+        const email = canonicalizeEmailByGuess(recipient.Address);
         const recipientToRemove = recipientEmailMap[email];
 
         setRecipientEmailMap((prev) => omit(prev, email));

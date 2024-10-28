@@ -1,42 +1,26 @@
-import type { ChangeEvent } from 'react';
-import { useEffect, useMemo, useState } from 'react';
-
-import last from 'lodash/last';
 import { c } from 'ttag';
 
-import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
-import { Href } from '@proton/atoms';
-import type { ModalOwnProps } from '@proton/components';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-    Tooltip,
-} from '@proton/components';
-import { useNotifications, useUserKeys } from '@proton/components/hooks';
+import type { WasmScriptType } from '@proton/andromeda';
+import Href from '@proton/atoms/Href/Href';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import Icon from '@proton/components/components/icon/Icon';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useLoading from '@proton/hooks/useLoading';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import {
-    BASE_INDEX_OPTIONS,
-    DEFAULT_INDEX,
-    SCRIPT_TYPES,
-    decryptWalletAccount,
-    encryptWalletDataWithWalletKey,
-    getDefaultWalletAccountName,
-    useWalletApiClients,
-} from '@proton/wallet';
-import { useWalletDispatch, walletAccountCreation } from '@proton/wallet/store';
+import { BASE_INDEX_OPTIONS, SCRIPT_TYPES } from '@proton/wallet';
 
 import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';
-import { useBitcoinBlockchainContext } from '../../contexts';
 import type { SubTheme } from '../../utils';
-import { getDescriptionByScriptType, getLabelByScriptType, isUndefined } from '../../utils';
+import { getDescriptionByScriptType, getLabelByScriptType } from '../../utils';
+import { useWalletAccountCreationModal } from './useWalletAccountCreationModal';
 
 export interface WalletAccountCreationModalOwnProps {
     apiWalletData: IWasmApiWalletData;
@@ -46,99 +30,23 @@ export interface WalletAccountCreationModalOwnProps {
 type Props = ModalOwnProps & WalletAccountCreationModalOwnProps;
 
 export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps }: Props) => {
-    // TODO use different default if 0 is already added
-    const [label, setLabel] = useState(getDefaultWalletAccountName(apiWalletData.WalletAccounts));
-
-    const [selectedScriptType, setSelectedScriptType] = useState(WasmScriptType.NativeSegwit);
-
-    const [selectedIndex, setSelectedIndex] = useState<string | number>(DEFAULT_INDEX);
-    const [inputIndex, setInputIndex] = useState<number>(DEFAULT_INDEX);
-
     const [loading, withLoading] = useLoading();
-    const { network } = useBitcoinBlockchainContext();
-    const { createNotification } = useNotifications();
-    const [userKeys] = useUserKeys();
-    const dispatch = useWalletDispatch();
 
-    const api = useWalletApiClients();
+    const {
+        label,
+        onLabelChange,
 
-    const indexesByScriptType = useMemo(() => {
-        return apiWalletData.WalletAccounts.reduce((acc: Partial<Record<WasmScriptType, Set<number>>>, cur) => {
-            const set = acc[cur.ScriptType as WasmScriptType] ?? new Set();
+        selectedIndex,
+        onIndexSelect,
+        inputIndex,
+        onIndexChange,
 
-            const derivationPathByPart = cur.DerivationPath.split('/');
-            const indexPart = last(derivationPathByPart);
-            const unhardenedIndexStr = indexPart?.replace("'", '');
+        indexesByScriptType,
+        selectedScriptType,
+        onScriptTypeSelect,
 
-            // TODO: find a better way to get index, maybe store on db side?
-            const i = Number(unhardenedIndexStr);
-
-            if (!Number.isFinite(i)) {
-                return acc;
-            }
-
-            set.add(i);
-            return {
-                ...acc,
-                [cur.ScriptType as WasmScriptType]: set,
-            };
-        }, {});
-    }, [apiWalletData.WalletAccounts]);
-
-    useEffect(() => {
-        let index = 0;
-        while (indexesByScriptType[selectedScriptType]?.has(index)) {
-            index++;
-        }
-        setSelectedIndex(index);
-        setInputIndex(index);
-    }, [selectedScriptType, indexesByScriptType]);
-
-    const onAccountCreation = async () => {
-        const index = Number.isFinite(selectedIndex) ? (selectedIndex as number) : inputIndex;
-        if (isUndefined(network) || !userKeys || indexesByScriptType[selectedScriptType]?.has(index)) {
-            return;
-        }
-
-        const derivationPath = WasmDerivationPath.fromParts(selectedScriptType, network, index);
-
-        const { Wallet, WalletKey } = apiWalletData;
-
-        if (!WalletKey?.DecryptedKey) {
-            return;
-        }
-
-        const [encryptedLabel] = await encryptWalletDataWithWalletKey([label], WalletKey.DecryptedKey);
-
-        // Typeguard
-        if (!encryptedLabel) {
-            return;
-        }
-
-        try {
-            const createdAccount = await api.wallet.createWalletAccount(
-                Wallet.ID,
-                derivationPath,
-                encryptedLabel,
-                selectedScriptType
-            );
-
-            createNotification({ text: c('Wallet Account').t`Your account was successfully created` });
-
-            const decryptedAccount = await decryptWalletAccount({
-                walletKey: WalletKey.DecryptedKey,
-                walletAccount: createdAccount.Data,
-            });
-
-            dispatch(walletAccountCreation(decryptedAccount));
-            modalProps.onClose?.();
-        } catch (error: any) {
-            createNotification({
-                text: error?.error ?? c('Wallet Account').t`Error adding account to wallet. Please try again.`,
-                type: 'error',
-            });
-        }
-    };
+        createWalletAccount,
+    } = useWalletAccountCreationModal(apiWalletData, modalProps.onClose);
 
     return (
         <Modal title={c('Wallet Account').t`Add wallet account`} className={theme} {...modalProps}>
@@ -156,9 +64,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                 {...PASSWORD_MANAGER_IGNORE_PROPS}
                 value={label}
                 disabled={loading}
-                onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                    setLabel(event.target.value);
-                }}
+                onChange={onLabelChange}
             />
 
             <Collapsible className="my-2">
@@ -182,9 +88,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                             aria-describedby="label-account-script-type"
                             value={selectedScriptType}
                             disabled={loading}
-                            onChange={(event) => {
-                                setSelectedScriptType(event.value);
-                            }}
+                            onChange={onScriptTypeSelect}
                             options={SCRIPT_TYPES.map((opt) => ({
                                 label: getLabelByScriptType(opt as WasmScriptType),
                                 value: opt,
@@ -224,12 +128,11 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                                         </div>
                                     }
                                     id="account-index-selector"
+                                    data-testid="account-index-selector"
                                     aria-describedby="label-account-index"
                                     value={BASE_INDEX_OPTIONS.includes(selectedIndex) ? selectedIndex : 'custom'}
                                     disabled={loading}
-                                    onChange={(event) => {
-                                        setSelectedIndex(event.value);
-                                    }}
+                                    onChange={onIndexSelect}
                                     options={BASE_INDEX_OPTIONS.map((index) => ({
                                         label: index.toString(),
                                         value: index,
@@ -249,9 +152,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                                         min={0}
                                         type="number"
                                         disabled={loading}
-                                        onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                                            setInputIndex(Number(event.target.value));
-                                        }}
+                                        onChange={onIndexChange}
                                         error={
                                             indexesByScriptType[selectedScriptType]?.has(inputIndex) &&
                                             c('Wallet account').t`This account is already created`
@@ -280,7 +181,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                     shape="solid"
                     color="norm"
                     onClick={() => {
-                        void withLoading(onAccountCreation());
+                        void withLoading(createWalletAccount());
                     }}
                 >{c('Wallet Account').t`Create wallet account`}</Button>
                 <Button

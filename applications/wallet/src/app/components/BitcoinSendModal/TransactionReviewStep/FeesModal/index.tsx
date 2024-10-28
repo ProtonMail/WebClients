@@ -38,7 +38,7 @@ export const FeesModal = ({
 
     const getFeeOption = useCallback(
         async (icon: IconName, text: string, blockTarget: number): Promise<[IconName, string, number, number]> => {
-            const feeRate = getFeesByBlockTarget(blockTarget) ?? blockTarget;
+            const feeRate = getFeesByBlockTarget(blockTarget) ?? 1;
             const draftPsbt = await txBuilder.setFeeRate(BigInt(feeRate)).createDraftPsbt(network);
 
             return [icon, text, feeRate, Number(draftPsbt.total_fees)];
@@ -49,20 +49,17 @@ export const FeesModal = ({
     const [feeOptions, setFeeOptions] = useState<[IconName, string, number, number][]>([]);
 
     useEffect(() => {
-        const options: [IconName, string, number, number][] = [];
-        // Fetch with `allSettled` to get fee options even if some of them fail
-        void Promise.allSettled([
-            getFeeOption('chevron-up', c('Wallet send').t`High priority`, 1),
-            getFeeOption('minus', c('Wallet send').t`Median priority`, 5),
-            getFeeOption('chevron-down', c('Wallet send').t`Low priority`, 10),
-        ]).then((results) =>
-            results.forEach((result) => {
-                if (result.status === 'fulfilled') {
-                    options.push(result.value);
-                }
-            })
-        );
-        setFeeOptions(options);
+        const run = async () => {
+            const options = await Promise.allSettled([
+                getFeeOption('chevron-up', c('Wallet send').t`High priority`, 1),
+                getFeeOption('minus', c('Wallet send').t`Median priority`, 5),
+                getFeeOption('chevron-down', c('Wallet send').t`Low priority`, 10),
+            ]).then((results) => results.filter((result) => 'value' in result).map((result) => result.value));
+
+            setFeeOptions(options);
+        };
+
+        void run();
     }, [getFeeOption]);
 
     const handleFeesSelection = async (feeRate: number) => {
