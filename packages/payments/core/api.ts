@@ -15,15 +15,18 @@ export async function getPaymentMethodStatus(api: Api) {
         status.CountryCode = DEFAULT_TAX_BILLING_ADDRESS.CountryCode;
     }
 
-    const keys = Object.keys(status.VendorStates) as (keyof PaymentMethodStatusExtended['VendorStates'])[];
-    // Normalizing the boolean values, converting them from 0 or 1 to false or true
-    for (const key of keys) {
-        status.VendorStates[key] = !!status.VendorStates[key];
-    }
-    // The backend doesn't return the Cash key. We still use it in the frontend,
-    // so we synthetize it here.
-    if (!Object.hasOwn(status.VendorStates, 'Cash')) {
-        status.VendorStates.Cash = true;
+    if ('VendorStates' in status) {
+        const keys = Object.keys(status.VendorStates) as (keyof PaymentMethodStatusExtended['VendorStates'])[];
+        // Normalizing the boolean values, converting them from 0 or 1 to false or true
+        for (const key of keys) {
+            status.VendorStates[key] = !!status.VendorStates[key];
+        }
+
+        // The backend doesn't return the Cash key. We still use it in the frontend,
+        // so we synthetize it here.
+        if (!Object.hasOwn(status.VendorStates, 'Cash')) {
+            status.VendorStates.Cash = true;
+        }
     }
     return status;
 }

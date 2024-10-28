@@ -92,4 +92,6 @@
   --optional-promotion-interaction-hover: rgb(138 110 255 / 0.2);
   --optional-promotion-background-start: rgb(138 110 255 / 0.3);
   --optional-promotion-background-end: rgb(99 61 255 / 0.1);
+  --optional-bg-promotion-bw-button: var(--background-invert);
+  --optional-text-promotion-bw-button: var(--text-invert);
 }

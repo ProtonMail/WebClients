@@ -33,7 +33,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getHas2023OfferCoupon, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Currency, Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
@@ -190,7 +190,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             return 'dark';
         }
 
-        if (getHas2023OfferCoupon(signupParameters.coupon)) {
+        if (getHas2024OfferCoupon(signupParameters.coupon)) {
             return 'bf2023';
         }
     })();

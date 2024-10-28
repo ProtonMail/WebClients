@@ -18,6 +18,7 @@ const OfferDisableButton = (props: OfferProps) => {
             color="norm"
             loading={loading}
             data-testid="cta:hide-offer"
+            className="offer-disable-button"
             onClick={async () => {
                 await withLoading(handleHide());
                 props.onCloseModal?.();

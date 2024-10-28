@@ -7,7 +7,7 @@ import { useDealContext } from '../deal/DealContext';
 
 const DealPrice = () => {
     const {
-        deal: { prices, cycle, dealSuffixPrice, suffixOnNewLine },
+        deal: { prices, cycle, dealSuffixPrice, suffixOnNewLine, isLifeTime },
         currency,
     } = useDealContext();
     const { withCoupon = 0, withoutCouponMonthly = 0 } = prices || {};
@@ -23,17 +23,22 @@ const DealPrice = () => {
                     suffixOnNewLine && 'offer-monthly-price--suffix-new-line'
                 )}
                 suffix={dealSuffixPriceString ? dealSuffixPriceString : c('specialoffer: Offers').t`/ month`}
+                suffixClassName={clsx([isLifeTime && 'visibility-hidden w-0'])}
                 isDisplayedInSentence
             >
-                {withCoupon / cycle}
+                {isLifeTime ? withCoupon : withCoupon / cycle}
             </Price>
-            <Price
-                className="text-strike color-weak offer-regular-price relative"
-                currency={currency}
-                suffix={c('specialoffer: Offers').t`/ month`}
-            >
-                {withoutCouponMonthly}
-            </Price>
+            {isLifeTime ? (
+                <span className="color-weak offer-regular-price relative">Limited-stock available!</span>
+            ) : (
+                <Price
+                    className="text-strike color-weak offer-regular-price relative"
+                    currency={currency}
+                    suffix={c('specialoffer: Offers').t`/ month`}
+                >
+                    {withoutCouponMonthly}
+                </Price>
+            )}
         </div>
     );
 };
