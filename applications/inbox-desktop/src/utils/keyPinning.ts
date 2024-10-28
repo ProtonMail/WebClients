@@ -1,7 +1,7 @@
 import crypto from "crypto";
 import { Request } from "electron";
 import { CERT_PROTON_ME } from "../constants";
-import { isProdEnv } from "./config";
+import { isProdEnv } from "./isProdEnv";
 import { isHostAllowed } from "./urls/urlTests";
 
 export const checkKeys = (request: Request) => {
