@@ -573,6 +573,20 @@
       ],
       "Write us on Twitter": [
         "Scrieți-ne pe Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ]
+    },
+    "bf2024: Title": {
+      "Black Friday": [
+        "Vinerea Neagră"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Plătiți o dată și primiți ${ lifetimeAccessJSX } la Pass Plus. Doar ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Economisiți până la ${ discountJSX } cu Pass Family. Doar ${ relativePrice }/lună."
       ]
     },
     "Browser": {
@@ -1327,6 +1341,12 @@
       "Expires in ${ remainingTime }": [
         "Expiră peste ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Parola suplimentară s-a creat."
+      ],
+      "Extra password successfully removed": [
+        "Parola suplimentară s-a eliminat."
+      ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
       ],
@@ -1452,6 +1472,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Setările monitorizării s-au actualizat,"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Mai mult decât un manager de parole, ${ PASS_APP_NAME } vă protejează parolele și adresele de e-mail personale prin aliasuri de e-mail. Creat cu aceeași tehnologie folosită la ${ MAIL_APP_NAME }, datele vă sunt criptate bilateral și doar dvs. le puteți accesa."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
@@ -1653,6 +1676,9 @@
       "Select destination vault": [
         "Selectare seif destinație"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Selectați unde doriți să fie salvate seifurile importate."
+      ],
       "Selected items permanently deleted": [
         "Articolele selectate s-au șters permanent."
       ],
@@ -1673,6 +1699,9 @@
       ],
       "Settings successfully updated": [
         "Setările s-au actualizat."
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Partajați-vă datele de conectare și notițele securizate cu până la 10 persoane"
       ],
       "Sign in or create an account to continue.": [
         "Conectați-vă sau creați un cont pentru a continua."
@@ -1745,6 +1774,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Pentru a migra datele dintr-un alt manager de parole, accesați managerul de parole, exportați datele, apoi încărcați-le în ${ PASS_APP_NAME }. După ce datele v-au fost importate, puteți șterge fișierul exportat."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Pentru a revizui datele importate, faceți clic pe pictograma ${ PASS_APP_NAME } din bara de utilitare a navigatorului."
+      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Încercați să reîncărcați sau să reinstalați extensia și asigurați-vă că navigatorul web și ${ PASS_SHORT_APP_NAME } sunt actualizate."
       ],
@@ -1787,11 +1819,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Modificați-vă acum contul pentru a debloca funcțiile premium"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Treceți la un plan cu plată pentru a putea crea seifuri multiple."
+      ],
       "Use vaults to share this item with others.": [
         "Folosiți seifurile pentru a partaja acest articol cu alții."
       ],
       "User's access removed": [
         "Accesul utilizatorului a fot eliminat."
+      ],
+      "User's access successfully updated": [
+        "Accesul utilizatorului a fost actualizat."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Seiful „${ payload.content.name }” a fost șters."
@@ -2038,6 +2076,9 @@
       "Capital letters (A-Z)": [
         "Majuscule (A-Z)"
       ],
+      "Capitalize": [
+        "Majuscule"
+      ],
       "Card": [
         "Card"
       ],
@@ -2223,6 +2264,9 @@
       ],
       "Import passwords": [
         "Importare parole"
+      ],
+      "Imported from: ": [
+        "Importat din: "
       ],
       "Imported on : ": [
         "Importat la data: "
@@ -2523,6 +2567,12 @@
       "Today": [
         "Astăzi"
       ],
+      "Total imported items: ": [
+        "Total articole importate: "
+      ],
+      "Total items: ": [
+        "Total articole:"
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2741,6 +2791,67 @@
         "Scrieți-vă notița"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Aprobați sau respingeți acum"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Introduceți codul de confirmare primit pe celălalt dispozitiv."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Dacă nu ați efectuat această solicitare, anulați-o acum."
+      ],
+      "Invalid confirmation code": [
+        "Cod de confirmare nevalid."
+      ],
+      "No, it wasn’t me": [
+        "Nu, nu am fost eu"
+      ],
+      "Sign-in confirmed": [
+        "Conectare confirmată"
+      ],
+      "Sign-in failed": [
+        "Conectare eșuată"
+      ],
+      "Sign-in rejected": [
+        "Conectare respinsă"
+      ],
+      "Sign-in rejection failure": [
+        "Eroare respingere conectare."
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Solicitare de conectare de pe alt dispozitiv. Sunteți dvs.?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Solicitare de conectare de pe alt dispozitiv. Sunteți dvs.?"
+      ],
+      "Yes, it was me": [
+        "Da, eu am fost"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Activă"
+      ],
+      "Inactive": [
+        "Inactivă"
+      ],
+      "Pending activation": [
+        "Așteaptă activarea"
+      ],
+      "Pending admin activation": [
+        "Așteaptă activare de la administrator"
+      ],
+      "Rejected": [
+        "Respinsă"
+      ],
+      "Signed out": [
+        "Deconectat"
+      ],
+      "Unknown": [
+        "Necunoscută"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Sincronizarea aliasurilor s-a activat. Sincronizarea aliasurilor SimpleLogin ar putea dura ceva timp."
@@ -2778,6 +2889,9 @@
       ],
       "Current version": [
         "Versiune curentă"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Ștergeți seiful „${ vaultName }”?"
       ],
       "Discard changes?": [
         "Anulare modificări?"
@@ -2836,6 +2950,9 @@
       "Last modified": [
         "Ultima modificare"
       ],
+      "Leave vault?": [
+        "Părăsiți seiful?"
+      ],
       "Log in as...": [
         "Autentificare ca..."
       ],
@@ -2877,6 +2994,9 @@
       ],
       "Pending access to the shared data": [
         "În așteptarea accesului la datele partajate"
+      ],
+      "Permanently remove all items?": [
+        "Ștergeți definitiv toate articolele?"
       ],
       "Pin the extension": [
         "Fixare extensie"
@@ -3026,6 +3146,9 @@
       "Could not create vault \"${ vaultName }\"": [
         "Nu s-a putut crea seiful „${ vaultName }”."
       ],
+      "Could not send invitations to the following addresses:": [
+        "Nu s-au putut trimite invitații la următoarele adrese:"
+      ],
       "Duplicate email addresses.": [
         "Adrese de e-mail duplicate."
       ],
@@ -3096,6 +3219,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Fișierul criptat PGP exportat necesită o frază de acces."
+      ],
+      "Please contact us to investigate the issue": [
+        "Contactați-ne pentru a investiga problema."
       ],
       "Please verify your email address in order to use email aliases": [
         "Verificați-vă adresa de e-mail pentru a utiliza aliasurile de e-mail."
@@ -3171,6 +3297,9 @@
       ],
       "Your session was locked.": [
         "Sesiunea a fost blocată."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Abonamentul actual nu vă permite să creați mai multe seifuri."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
