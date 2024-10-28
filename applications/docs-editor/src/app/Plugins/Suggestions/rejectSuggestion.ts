@@ -10,6 +10,8 @@ import { $findMatchingParent } from '@lexical/utils'
 import { $deleteTableColumn, $isTableCellNode, $isTableNode, $isTableRowNode } from '@lexical/table'
 import type { BlockType } from '../BlockTypePlugin'
 import { blockTypeToCreateElementFn } from '../BlockTypePlugin'
+import type { ListInfo } from '../CustomList/$getListInfo'
+import { $isCustomListNode } from '../CustomList/$isCustomListNode'
 
 export function $rejectSuggestion(suggestionID: string): boolean {
   const nodes = $nodesOfType(ProtonNode)
@@ -168,7 +170,12 @@ export function $rejectSuggestion(suggestionID: string): boolean {
     } else if (suggestionType === 'block-type-change') {
       const block = node.getTopLevelElementOrThrow()
       node.remove()
-      const changedProperties = node.__properties.nodePropertiesChanged
+      const changedProperties = node.__properties.nodePropertiesChanged as
+        | {
+            initialBlockType: BlockType
+            listInfo?: ListInfo
+          }
+        | undefined
       if (!changedProperties) {
         continue
       }
@@ -177,6 +184,15 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       const initialBlockTypeNode = createInitialBlockTypeElement()
       initialBlockTypeNode.setFormat(block.getFormatType())
       initialBlockTypeNode.setIndent(block.getIndent())
+      if ($isCustomListNode(initialBlockTypeNode) && changedProperties.listInfo) {
+        const { listStyleType, listMarker } = changedProperties.listInfo
+        if (listStyleType) {
+          initialBlockTypeNode.setListStyleType(listStyleType)
+        }
+        if (listMarker) {
+          initialBlockTypeNode.setMarker(listMarker)
+        }
+      }
       block.replace(initialBlockTypeNode, true)
     } else if (suggestionType === 'align-change') {
       const elementParent = $findMatchingParent(node, (e): e is ElementNode => $isElementNode(e) && !e.isInline())

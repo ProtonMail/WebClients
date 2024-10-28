@@ -18,6 +18,7 @@ import { $patchStyleText, getStyleObjectFromCSS } from '@lexical/selection'
 import type { TableRowNode, TableCellNode, TableNode } from '@lexical/table'
 import { $createTableNodeWithDimensions } from '@lexical/table'
 import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
+import type { CustomListNode } from '../CustomList/CustomListNode'
 
 describe('$rejectSuggestion', () => {
   const editor = createHeadlessEditor({
@@ -776,6 +777,16 @@ describe('$rejectSuggestion', () => {
                   initialBlockType: 'h1',
                 }),
               ),
+            $createHeadingNode('h2').append(
+              $createSuggestionNode(suggestionID, 'block-type-change', {
+                initialBlockType: 'number',
+                listInfo: {
+                  listType: 'number',
+                  listMarker: 'bracket',
+                  listStyleType: 'upper-roman',
+                },
+              }),
+            ),
           )
           $rejectSuggestion(suggestionID)
         },
@@ -785,14 +796,28 @@ describe('$rejectSuggestion', () => {
       )
     })
 
-    it('should revert block types to original', () => {
+    it('should revert first to paragraph', () => {
       editor.read(() => {
-        const root = $getRoot()
-        const first = root.getFirstChildOrThrow<ElementNode>()
+        const first = $getRoot().getChildAtIndex<ElementNode>(0)
         expect($isParagraphNode(first)).toBe(true)
-        const last = root.getLastChildOrThrow<HeadingNode>()
-        expect($isHeadingNode(last)).toBe(true)
-        expect(last.getTag()).toBe('h1')
+      })
+    })
+
+    it('should revert second to h1', () => {
+      editor.read(() => {
+        const second = $getRoot().getChildAtIndex<HeadingNode>(1)
+        expect($isHeadingNode(second)).toBe(true)
+        expect(second?.getTag()).toBe('h1')
+      })
+    })
+
+    it('should revert third to list', () => {
+      editor.read(() => {
+        const third = $getRoot().getChildAtIndex<CustomListNode>(2)
+        expect($isListNode(third)).toBe(true)
+        expect(third?.getListType()).toBe('number')
+        expect(third?.getListStyleType()).toBe('upper-roman')
+        expect(third?.getListMarker()).toBe('bracket')
       })
     })
 
@@ -808,10 +833,9 @@ describe('$rejectSuggestion', () => {
 
     it('should keep element format and indent', () => {
       editor.read(() => {
-        const root = $getRoot()
-        const last = root.getLastChildOrThrow<HeadingNode>()
-        expect(last.getFormatType()).toBe('right')
-        expect(last.getIndent()).toBe(1)
+        const second = $getRoot().getChildAtIndex<HeadingNode>(1)!
+        expect(second.getFormatType()).toBe('right')
+        expect(second.getIndent()).toBe(1)
       })
     })
   })

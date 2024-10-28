@@ -1,11 +1,15 @@
-import { $getRoot, $getSelection, $isElementNode, $isRootOrShadowRoot } from 'lexical'
+import { $getRoot, $getSelection } from 'lexical'
 import type { BlockType } from '../BlockTypePlugin'
 import { $getElementBlockType, blockTypeToCreateElementFn } from '../BlockTypePlugin'
 import { GenerateUUID } from '@proton/docs-core'
-import { $insertFirst } from '@lexical/utils'
+import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import type { Logger } from '@proton/utils/logs'
+import { $isListItemNode } from '@lexical/list'
+import type { ListInfo } from '../CustomList/$getListInfo'
+import { $getListInfo } from '../CustomList/$getListInfo'
+import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 
 export function $setBlocksTypeAsSuggestion(
   blockType: BlockType,
@@ -58,7 +62,7 @@ export function $setBlocksTypeAsSuggestion(
   }
 
   const nodes = selection.getNodes()
-  const firstSelectedBlock = anchor !== null ? anchor.getNode().getTopLevelElementOrThrow() : false
+  const firstSelectedBlock = anchor !== null ? $findMatchingParent(anchor.getNode(), $isNonInlineLeafElement) : false
   if (firstSelectedBlock && nodes.indexOf(firstSelectedBlock) === -1) {
     nodes.push(firstSelectedBlock)
   }
@@ -66,8 +70,7 @@ export function $setBlocksTypeAsSuggestion(
   let didCreateSuggestion = false
 
   for (const node of nodes) {
-    const isBlockLevel = $isElementNode(node) && !node.isInline() && $isRootOrShadowRoot(node.getParent())
-    if (!isBlockLevel) {
+    if (!$isNonInlineLeafElement(node)) {
       logger.info(`Skipping node of type ${node.__type} as its not a block-level element`)
       continue
     }
@@ -76,6 +79,14 @@ export function $setBlocksTypeAsSuggestion(
     if (!nodeBlockType) {
       logger.info(`Skipping node because changing its block type is not yet supported`)
       continue
+    }
+
+    let listInfo: ListInfo | undefined
+    if ($isListItemNode(node)) {
+      listInfo = $getListInfo(node)
+      if (!listInfo) {
+        continue
+      }
     }
 
     const targetElement = createElement()
@@ -98,12 +109,12 @@ export function $setBlocksTypeAsSuggestion(
         existingSuggestion.remove()
       }
     } else {
-      $insertFirst(
-        targetElement,
-        $createSuggestionNode(suggestionID, 'block-type-change', {
-          initialBlockType: nodeBlockType,
-        }),
-      )
+      const properties = {
+        initialBlockType: nodeBlockType,
+        listInfo,
+      }
+      const suggestionNode = $createSuggestionNode(suggestionID, 'block-type-change', properties)
+      $insertFirst(targetElement, suggestionNode)
     }
 
     didCreateSuggestion = true
