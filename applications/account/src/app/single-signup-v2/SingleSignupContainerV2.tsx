@@ -289,7 +289,7 @@ const SingleSignupContainerV2 = ({
             result.email = initialSearchParams.get('email') || result.email;
         }
 
-        let localID = Number(searchParams.get('u'));
+        let localID = Number(searchParams.get('u') || undefined);
         let mode = searchParams.get('mode') === SignupMode.Onboarding ? SignupMode.Onboarding : SignupMode.Default;
 
         // pass new user invite
