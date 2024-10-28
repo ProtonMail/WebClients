@@ -18,6 +18,7 @@ export type SuggestionType =
   | 'duplicate-table-column'
   | 'block-type-change'
   | 'clear-formatting'
+  | 'align-change'
 
 export type SuggestionSummaryType =
   | SuggestionType

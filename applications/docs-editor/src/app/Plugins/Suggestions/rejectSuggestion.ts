@@ -1,5 +1,5 @@
 import { $isListItemNode, $isListNode } from '@lexical/list'
-import type { ElementNode } from 'lexical'
+import type { ElementFormatType, ElementNode } from 'lexical'
 import { $nodesOfType, $isElementNode, $isTextNode } from 'lexical'
 import { $unwrapSuggestionNode } from './Utils'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
@@ -178,6 +178,18 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       initialBlockTypeNode.setFormat(block.getFormatType())
       initialBlockTypeNode.setIndent(block.getIndent())
       block.replace(initialBlockTypeNode, true)
+    } else if (suggestionType === 'align-change') {
+      const elementParent = $findMatchingParent(node, (e): e is ElementNode => $isElementNode(e) && !e.isInline())
+      node.remove()
+      if (!elementParent) {
+        continue
+      }
+      const changedProperties = node.__properties.nodePropertiesChanged
+      if (!changedProperties) {
+        continue
+      }
+      const initialFormatType = changedProperties.initialFormatType as ElementFormatType
+      elementParent.setFormat(initialFormatType)
     } else if (suggestionType === 'clear-formatting') {
       const children = node.getChildren()
       const changedProperties = node.__properties.nodePropertiesChanged

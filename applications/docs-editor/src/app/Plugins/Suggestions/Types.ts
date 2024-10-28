@@ -20,6 +20,7 @@ export const SuggestionTypesThatCanBeEmpty: SuggestionType[] = [
   'delete-table-column',
   'duplicate-table-column',
   'block-type-change',
+  'align-change',
 ]
 
 export const SuggestionTypesThatAffectWholeParent: SuggestionType[] = [
@@ -33,6 +34,7 @@ export const SuggestionTypesThatAffectWholeParent: SuggestionType[] = [
   'delete-table-column',
   'duplicate-table-column',
   'block-type-change',
+  'align-change',
 ]
 
 export function $isSuggestionThatAffectsWholeParent(node: LexicalNode): node is ProtonNode {

@@ -888,7 +888,7 @@ export default function DocumentEditorToolbar({
               content={
                 AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || <Icon name="text-align-left" />
               }
-              disabled={!isEditable || isSuggestionMode}
+              disabled={!isEditable}
               contentProps={DropdownContentProps}
               data-testid="alignment-button"
             >

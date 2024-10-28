@@ -1,5 +1,5 @@
-import type { NodeKey, LexicalEditor } from 'lexical'
-import { $getNodeByKey, $isTextNode } from 'lexical'
+import type { NodeKey, LexicalEditor, ElementNode } from 'lexical'
+import { $getNodeByKey, $isElementNode, $isTextNode } from 'lexical'
 import type { SuggestionSummaryType } from '@proton/docs-shared'
 import { $isSuggestionNode } from './ProtonNode'
 import { getFormatsForFlag } from '../../Utils/TextFormatUtils'
@@ -7,6 +7,8 @@ import { $isLinkNode } from '@lexical/link'
 import { $isImageNode } from '../Image/ImageNode'
 import { $getElementBlockType, blockTypeToBlockName } from '../BlockTypePlugin'
 import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
+import { $findMatchingParent } from '@lexical/utils'
+import capitalize from '@proton/utils/capitalize'
 
 export type SuggestionSummaryContent = { type: SuggestionSummaryType; content: string; replaceWith?: string }[]
 
@@ -53,14 +55,15 @@ export function generateSuggestionSummary(
           } else if (isFirstChildDivider) {
             type = 'insert-divider'
           }
+          content = ''
         } else if (currentType === 'delete') {
           if (isFirstChildImage) {
             type = 'delete-image'
           } else if (isFirstChildDivider) {
             type = 'delete-divider'
           }
+          content = ''
         }
-        content = ''
       }
 
       if (currentType === 'property-change') {
@@ -98,6 +101,17 @@ export function generateSuggestionSummary(
 
       if (currentType === 'clear-formatting') {
         content = ''
+      }
+
+      if (currentType === 'align-change') {
+        const nonInlineParent = $findMatchingParent(
+          node,
+          (el): el is ElementNode => $isElementNode(el) && !el.isInline(),
+        )
+        if (nonInlineParent) {
+          const currentAlign = nonInlineParent.getFormatType()
+          content = capitalize(currentAlign) as string
+        }
       }
 
       const lastItem = summary[summary.length - 1]
