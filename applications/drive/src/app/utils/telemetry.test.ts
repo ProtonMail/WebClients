@@ -175,34 +175,27 @@ describe('getTimeBasedHash', () => {
     });
 
     it('should return the same hash for inputs within the same interval', async () => {
-        const hash1 = await getTimeBasedHash('test');
+        const hash1 = await getTimeBasedHash();
         Date.now = jest.fn(() => now + 5 * 60 * 1000); // 5 minutes later
-        const hash2 = await getTimeBasedHash('test');
+        const hash2 = await getTimeBasedHash();
 
         expect(hash1).toBe(hash2);
     });
 
     it('should return different hashes for inputs in different intervals', async () => {
-        const hash1 = await getTimeBasedHash('test');
+        const hash1 = await getTimeBasedHash();
         Date.now = jest.fn(() => now + 15 * 60 * 1000); // 15 minutes later
-        const hash2 = await getTimeBasedHash('test');
-
-        expect(hash1).not.toBe(hash2);
-    });
-
-    it('should return different hashes for different inputs in the same interval', async () => {
-        const hash1 = await getTimeBasedHash('test1');
-        const hash2 = await getTimeBasedHash('test2');
+        const hash2 = await getTimeBasedHash();
 
         expect(hash1).not.toBe(hash2);
     });
 
     it('should use the default interval of 10 minutes when not specified', async () => {
-        const hash1 = await getTimeBasedHash('test');
+        const hash1 = await getTimeBasedHash();
         Date.now = jest.fn(() => now + 9 * 60 * 1000); // 9 minutes later
-        const hash2 = await getTimeBasedHash('test');
+        const hash2 = await getTimeBasedHash();
         Date.now = jest.fn(() => now + 11 * 60 * 1000); // 11 minutes later
-        const hash3 = await getTimeBasedHash('test');
+        const hash3 = await getTimeBasedHash();
 
         expect(hash1).toBe(hash2);
         expect(hash1).not.toBe(hash3);
@@ -211,29 +204,29 @@ describe('getTimeBasedHash', () => {
     it('should use a custom interval when specified', async () => {
         const customInterval = 5 * 60 * 1000; // 5 minutes
 
-        const hash1 = await getTimeBasedHash('test', customInterval);
+        const hash1 = await getTimeBasedHash(customInterval);
         Date.now = jest.fn(() => now + 4 * 60 * 1000); // 4 minutes later
-        const hash2 = await getTimeBasedHash('test', customInterval);
+        const hash2 = await getTimeBasedHash(customInterval);
         Date.now = jest.fn(() => now + 6 * 60 * 1000); // 6 minutes later
-        const hash3 = await getTimeBasedHash('test', customInterval);
+        const hash3 = await getTimeBasedHash(customInterval);
 
         expect(hash1).toBe(hash2);
         expect(hash1).not.toBe(hash3);
     });
 
     it('should handle edge cases around interval boundaries', async () => {
-        const hash1 = await getTimeBasedHash('test');
+        const hash1 = await getTimeBasedHash();
         Date.now = jest.fn(() => now + 10 * 60 * 1000 - 1); // 1ms before next interval
-        const hash2 = await getTimeBasedHash('test');
+        const hash2 = await getTimeBasedHash();
         Date.now = jest.fn(() => now + 10 * 60 * 1000); // Exactly at next interval
-        const hash3 = await getTimeBasedHash('test');
+        const hash3 = await getTimeBasedHash();
 
         expect(hash1).toBe(hash2);
         expect(hash1).not.toBe(hash3);
     });
 
     it('should produce a hex string of correct length', async () => {
-        const hash = await getTimeBasedHash('test');
+        const hash = await getTimeBasedHash();
 
         expect(hash).toMatch(/^[0-9a-f]{64}$/); // 32 bytes = 64 hex characters
     });

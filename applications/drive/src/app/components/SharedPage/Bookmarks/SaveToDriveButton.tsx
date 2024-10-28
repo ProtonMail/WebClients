@@ -16,6 +16,7 @@ import {
     publicRedirectSpotlightWasShown,
     setPublicRedirectSpotlightToShown,
 } from '../../../utils/publicRedirectSpotlight';
+import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useSignupFlowModal } from '../../modals/SignupFlowModal/SignupFlowModal';
 
 export interface Props {
@@ -59,6 +60,7 @@ export const SaveToDriveButton = ({ className, alreadyBookmarked, customPassword
                         className={clsx('flex items-center', className)}
                         onClick={async () => {
                             if (!user) {
+                                countActionWithTelemetry(Actions.AddToBookmarkTriggeredModal);
                                 showSignupFlowModal({ customPassword });
                             } else if (alreadyBookmarked) {
                                 openNewTab(getAppHref('/shared-with-me', APPS.PROTONDRIVE));
