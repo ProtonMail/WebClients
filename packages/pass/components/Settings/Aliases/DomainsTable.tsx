@@ -12,6 +12,7 @@ import type { CustomDomainOutput } from '@proton/pass/types';
 type Props = {
     domains: CustomDomainOutput[];
     openModalDNS: (domain: CustomDomainOutput) => void;
+    openModalInfo: (domain: CustomDomainOutput) => void;
     handleRemoveDomainClick: (domain: CustomDomainOutput) => void;
 };
 
@@ -25,7 +26,7 @@ const getDomainStatusLabel = ({ OwnershipVerified, MxVerified }: CustomDomainOut
     return null;
 };
 
-export const DomainsTable: FC<Props> = ({ domains, handleRemoveDomainClick, openModalDNS }) => {
+export const DomainsTable: FC<Props> = ({ domains, handleRemoveDomainClick, openModalDNS, openModalInfo }) => {
     const canManageAlias = useSelector(selectUserPlan)?.ManageAlias;
 
     return (
@@ -46,7 +47,7 @@ export const DomainsTable: FC<Props> = ({ domains, handleRemoveDomainClick, open
                             <TableRow key={domain.ID}>
                                 <TableCell>{domain.Domain}</TableCell>
                                 <TableCell>{domain.AliasCount}</TableCell>
-                                <TableCell>{statusLabel && <Badge type="primary">{statusLabel}</Badge>}</TableCell>
+                                <TableCell>{statusLabel && <Badge type="light">{statusLabel}</Badge>}</TableCell>
                                 <TableCell>
                                     <div className="flex justify-end">
                                         <QuickActionsDropdown
@@ -59,6 +60,10 @@ export const DomainsTable: FC<Props> = ({ domains, handleRemoveDomainClick, open
                                             originalPlacement="bottom-end"
                                             disabled={!canManageAlias}
                                         >
+                                            <DropdownMenuButton
+                                                label={c('Action').t`Check settings`}
+                                                onClick={() => openModalInfo(domain)}
+                                            />
                                             <DropdownMenuButton
                                                 label={c('Action').t`Check DNS`}
                                                 onClick={() => openModalDNS(domain)}
