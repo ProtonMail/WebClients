@@ -7,10 +7,12 @@ import { AbstractAuthDevicesModal } from '@proton/account/sso/AbstractAuthDevice
 import { Button } from '@proton/atoms';
 import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { confirmPendingAuthDevice, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';
 import { confirmPendingAuthDeviceRequest, rejectPendingAuthDeviceRequest } from '@proton/pass/store/actions/requests';
 import { selectPendingAuthDevices } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { first } from '@proton/pass/utils/array/first';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
@@ -44,11 +46,12 @@ const AuthDeviceModal: FC<Props> = ({ pendingAuthDevice, onExit }) => {
 };
 
 export const AuthDeviceTopBanner: FC = () => {
-    const [pendingAuthDevice, setPendingAuthDevice] = useState<MaybeNull<AuthDeviceOutput>>(null);
+    const kill = useFeatureFlag(PassFeature.PassKillSSO);
     const pendingAuthDevices = useSelector(selectPendingAuthDevices);
+    const [pendingAuthDevice, setPendingAuthDevice] = useState<MaybeNull<AuthDeviceOutput>>(null);
     const tmpAuthDevice = first(pendingAuthDevices);
 
-    return tmpAuthDevice ? (
+    return tmpAuthDevice && !kill ? (
         <>
             <TopBar visible className="bg-warning ui-orange justify-center text-center">
                 <span>{c('sso').t`Sign-in requested on another device. Was it you? `}</span>
