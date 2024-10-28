@@ -1,3 +1,4 @@
+/* eslint-disable custom-rules/deprecate-classes */
 import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import type { ProtonNode } from './ProtonNode'
@@ -896,6 +897,57 @@ describe('$rejectSuggestion', () => {
         const third = paragraph.getChildAtIndex<TextNode>(2)!
         expect(third.getFormat()).toBe(1)
         expect(third.getStyle()).toBe('color: #fff;')
+      })
+    })
+  })
+
+  describe('align-change', () => {
+    beforeEach(() => {
+      const suggestionID = Math.random().toString()
+
+      editor.update(
+        () => {
+          $getRoot().append(
+            $createParagraphNode()
+              .setFormat('center')
+              .append(
+                $createSuggestionNode(suggestionID, 'align-change', {
+                  initialFormatType: '',
+                }),
+              ),
+            $createHeadingNode('h2')
+              .setFormat('center')
+              .append(
+                $createSuggestionNode(suggestionID, 'align-change', {
+                  initialFormatType: 'right',
+                }),
+              ),
+          )
+          $rejectSuggestion(suggestionID)
+        },
+        {
+          discrete: true,
+        },
+      )
+    })
+
+    it('should revert format to original', () => {
+      editor.read(() => {
+        const root = $getRoot()
+        const first = root.getFirstChildOrThrow<ElementNode>()
+        expect(first.getFormatType()).toBe('')
+        const last = root.getLastChildOrThrow<ElementNode>()
+        expect(last.getFormatType()).toBe('right')
+      })
+    })
+
+    it('should remove suggestion nodes', () => {
+      editor.read(() => {
+        const root = $getRoot()
+        const first = root.getFirstChildOrThrow<ElementNode>()
+        expect(first.getChildrenSize()).toBe(0)
+        const last = root.getLastChildOrThrow<HeadingNode>()
+        expect(last.getChildrenSize()).toBe(0)
       })
     })
   })
