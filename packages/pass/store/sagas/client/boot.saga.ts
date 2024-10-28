@@ -70,9 +70,10 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         if (online) {
             yield put(startEventPolling());
             yield put(withRevalidate(getBreaches.intent()));
-            yield put(getAuthDevices.intent());
             yield put(withRevalidate(aliasSyncStatus.intent()));
             yield put(withRevalidate(secureLinksGet.intent()));
+            yield put(getAuthDevices.intent());
+
             if (EXTENSION_BUILD) yield put(resolveWebsiteRules.intent());
 
             if (fromCache) {
