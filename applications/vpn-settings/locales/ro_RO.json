@@ -2532,6 +2532,9 @@
       "Invalid expiration date": [
         "Data expirării nu este validă."
       ],
+      "Invalid IBAN": [
+        "Acest IBAN nu este valid."
+      ],
       "Invalid invitation link": [
         "Legătura de invitație nu este validă."
       ],
@@ -2604,6 +2607,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
       ],
+      "Please upload a square logo": [
+        "Încărcați un logo pătrat."
+      ],
       "Please upload an xml file": [
         "Încărcați un fișier xml."
       ],
@@ -2627,6 +2633,9 @@
       ],
       "Tab closed": [
         "Filă închisă."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Suma datorată s-a schimbat. Mai încercați."
       ],
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."
@@ -2779,6 +2788,9 @@
       "Got it": [
         "Am înțeles"
       ],
+      "Invite a user": [
+        "Invitați un utilizator"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Invitare utilizator ${ BRAND_NAME } existent"
       ],
@@ -2836,6 +2848,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Conturile pe viață nu se pot alătura unui plan de familie."
       ],
+      "Manage addresses": [
+        "Gestionare adrese"
+      ],
       "Manage user accounts": [
         "Gestionare conturi utilizatori"
       ],
@@ -2870,6 +2885,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Puteți accepta doar 3 invitații într-o perioadă de 6 luni. Contactați ${ supportLink } dacă aveți nevoie de o excepție."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Nu puteți accepta această invitație cu planul actual."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Ați primit invitația să vă alăturați la ${ bannerOrganization }. ${ viewInviteButton }"
@@ -2927,6 +2945,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Dacă utilizatorul are deja o adresă ${ MAIL_APP_NAME }, introduceți-o aici. În caz contrar, acesta va trebui să-și creeze mai întâi un cont."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Dacă utilizatorul are deja un cont ${ BRAND_NAME }, introduceți-o aici. În caz contrar, acesta va trebui să-și creeze mai întâi un cont."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitația va fi anulată și utilizatorul nu va putea să se alăture organizației ${ organizationName }."
@@ -3541,6 +3562,9 @@
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/lună)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obțineți o adresă ${ BRAND_NAME }** pentru a utiliza toate serviciile ${ BRAND_NAME_TWO }, inclusiv ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -4002,6 +4026,9 @@
       ],
       "High Priority": [
         "Prioritate înaltă"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Cheia publică a furnizorului de identitate pentru a semna afirmațiile de autentificare. Ar trebui să existe un loc pentru a descărca sau copia hash-ul certificatului de la furnizorul de identitate. Doar lipiți hash-ul certificatului în câmpul de text."
@@ -5321,6 +5348,9 @@
       "Amount due": [
         "Suma datorată"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Assertion Consumer Service URL": [
         "URL ACS (Assertion Consumer Service)"
       ],
@@ -5329,6 +5359,9 @@
       ],
       "Authenticator app": [
         "Aplicație Authenticator"
+      ],
+      "Backup password": [
+        "Parola de rezervă"
       ],
       "Billing address": [
         "Adresă de facturare"
@@ -5380,6 +5413,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
+      ],
+      "Company name": [
+        "Nume companie"
       ],
       "Config to connect to ${ serverName }": [
         "Configurare pentru conectare la ${ serverName }"
@@ -5497,6 +5533,9 @@
       ],
       "Hide password": [
         "Ascundere parolă"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Interval"
@@ -5645,6 +5684,9 @@
       "Recovery phrase": [
         "Fraza de recuperare"
       ],
+      "Repeat backup password": [
+        "Repetare parolă de rezervă"
+      ],
       "Reply (ACS) URL": [
         "URL răspuns (ACS)"
       ],
@@ -5656,6 +5698,9 @@
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search": [
         "Căutare"
@@ -5689,6 +5734,9 @@
       ],
       "System information": [
         "Informații sistem"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Two-password mode": [
         "Mod cu două parole"
@@ -6613,6 +6661,9 @@
       "Sync and backup all your files across devices": [
         "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
       ],
+      "TOR over VPN": [
+        "Tor prin VPN"
+      ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
       ],
@@ -6923,6 +6974,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
       ],
@@ -6974,6 +7028,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Instrument de gestionare a organizației care le permite administratorilor să adauge și să elimine utilizatori, să le gestioneze accesul la serviciile ${ BRAND_NAME } și să îndeplinească alte sarcini."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Infrastructura noastră robustă vă asigură că vă veți putea accesa contul atunci când aveți nevoie."
       ],
@@ -7015,6 +7072,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetați parolele și autentificarea cu doi factori a utilizatorilor."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Redirecționați traficul din Internet prin rețeaua TOR cu un singur clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
@@ -7613,6 +7673,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Utilizați o metodă de recuperare a datelor, contactați un alt administrator sau resetați cheia organizației pentru a restabili privilegiile de administrator."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Nu am putut verifica autenticitatea acestei identități."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nu s-a putut verifica securitatea cheii adresei a acestui expeditor. Uneori există o întârziere în actualizarea informațiilor expeditorului. Încercați mai târziu. Dacă nu aveți încredere în validitatea acestei invitații sau a expeditorului, contactați serviciul de asistență pentru clienți ${ BRAND_NAME }."
       ],
@@ -7633,11 +7696,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transfer bancar"
+      ],
       "Credit/debit card": [
         "Card de credit/debit"
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Folosire nume companie"
+      ],
+      "Use personal name": [
+        "Folosire nume personal"
       ]
     },
     "Payments": {
@@ -7729,6 +7803,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul, iar banca să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
+      ],
+      "Street address, postal code, and city": [
+        "Strada, cod poștal și oraș"
       ]
     },
     "Permission": {
@@ -7965,6 +8047,9 @@
       "Changing organization password": [
         "Schimbarea parolei organizației"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Creare sau accesare conturi utilizatori non-privați"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Datorită modificării parolei, drepturile de administrare a organizației v-au fost restricționate. Următoarele acțiuni nu mai sunt permise:"
       ]
@@ -7991,6 +8076,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Înscrierea nu o fost finalizată corect."
+      ],
       "Something went wrong": [
         "Ceva nu a mers bine."
       ]
@@ -8051,6 +8139,12 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Cerință preliminară:** autentificarea SAML trebuie configurată pentru a activa furnizarea SCIM."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Cerință preliminară:** pentru a activa furnizarea SCIM, trebuie să dovediți că dețineți domeniul **${ domainName }**. Această verificare poate dura până la o oră."
+      ],
+      "Enter the token into your identity provider": [
+        "Introduceți codul de acces la furnizorul de identitate."
       ],
       "Enter URL and token into your identity provider": [
         "Introduceți adresa URL și codul de acces în furnizorul dvs. de identitate."
@@ -8371,6 +8465,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Veți primi o notificare când vă veți putea reseta parola."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Puteți verifica starea solicitării oricând ${ accountAndPasswordSectionLink } din setări."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "în secțiunea „Cont și parolă”"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8680,6 +8782,9 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } vă solicită ajutorul să se conecteze la contul său ${ BRAND_NAME } folosind autentificarea unică (SSO)."
+      ],
       "${ n } member requested your help to sign in.": [
         "${ n } membru vă solicită ajutorul pentru a se conecta.",
         "${ n } membri vă solicită ajutorul pentru a se conecta.",
@@ -8695,6 +8800,9 @@
         "${ n } utilizatori vă solicită ajutorul să se conecteze la contul lor ${ BRAND_NAME } folosind autentificarea unică (SSO).",
         "${ n } de utilizatori vă solicită ajutorul să se conecteze la contul lor ${ BRAND_NAME } folosind autentificarea unică (SSO)."
       ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**Utilizatorii cu autentificare unică (SSO) (furnizați de către furnizorul de identitate) vor fi șterși** și va trebui să-i creați manual pentru a-i adăuga înapoi la organizație."
+      ],
       "Access denied": [
         "Acces respins"
       ],
@@ -8703,6 +8811,9 @@
       ],
       "added you to their ${ BRAND_NAME } organization": [
         "v-a adăugat la organizația sa ${ BRAND_NAME }"
+      ],
+      "Approve or deny it now": [
+        "Aprobați sau respingeți acum"
       ],
       "Approve the sign-in from another device": [
         "Aprobare conectare de pe alt dispozitiv"
@@ -8713,8 +8824,17 @@
       "Ask your administrator for access?": [
         "Solicitați acces de la administrator?"
       ],
+      "Backup password": [
+        "Parola de rezervă"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
       "Change backup password": [
         "Modificare parolă de rezervă"
+      ],
+      "Confirm backup password": [
+        "Confirmare parolă de rezervă"
       ],
       "Confirmation code": [
         "Cod de confirmare"
@@ -8725,8 +8845,17 @@
       "Contact your administrator if the problem persists.": [
         "Contactați-vă administratorul dacă problema persistă."
       ],
+      "Deny": [
+        "Refuzare"
+      ],
+      "Deny access": [
+        "Refuzare acces"
+      ],
       "Devices available": [
         "Dispozitive disponibile"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Introduceți codul de confirmare trimis acestui utilizator."
       ],
       "Enter your backup password": [
         "Introduceți parola de rezervă"
@@ -8734,14 +8863,47 @@
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Din motive de securitate contul a fost deconectat de la toate celelalte dispozitive active. Înainte de a vă accesa contul, va trebui să introduceți o nouă parolă de rezervă."
       ],
+      "Grant": [
+        "Permitere"
+      ],
+      "Grant access": [
+        "Permitere acces"
+      ],
+      "Grant access to user?": [
+        "Acordați acces utilizatorului?"
+      ],
+      "Grant access to users?": [
+        "Permiteți accesul utilizatorilor?"
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
         "Dacă nu vă mai puteți accesa contul ${ BRAND_NAME }, parola de recuperare vă va permite să vă conectați și să vă recuperați datele."
+      ],
+      "Invalid confirmation code": [
+        "Cod de confirmare nevalid."
       ],
       "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
         "Este singura modalitate de a vă restabili complet contul, așa că asigurați-vă că o păstrați în siguranță."
       ],
       "Join ${ organizationName }": [
         "Alăturare la ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Asigurați-vă că o salvați într-un loc sigur, astfel încât să puteți reveni în cont dacă pierdeți accesul la acreditările furnizorului de identitate."
+      ],
+      "New backup password": [
+        "Parolă de rezervă nouă"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Utilizatorii care nu folosesc autentificarea unică (SSO) (creați manual, nu cei furnizați de către furnizorul de identitate) încă pot să se autentifice la organizație."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "După ce conectarea prin autentificare unică (SSO) este dezactivată pentru organizație:"
+      ],
+      "Remove single sign-on": [
+        "Eliminare conectare cu autentificare unică"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Eliminați conectarea prin autentificare unică pentru organizație?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Setați o parolă de rezervă pentru a adăuga un nivel suplimentar de protecție. Aceasta vă va permite să vă conectați dacă nu vă mai puteți conecta, așa că asigurați-vă că o păstrați undeva în siguranță."
@@ -8758,6 +8920,15 @@
       "Sign out and in again to change your backup password": [
         "Deconectați-vă și reconectați-vă pentru a modifica parola de rezervă."
       ],
+      "Single sign-on removed": [
+        "Conectarea prin autentificare unică a fost eliminată."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Acreditările de la furnizorul de identitate personal vor fi șterse."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Aceasta va deconecta utilizatorul de pe alte dispozitive și va trebui să-și creeze o parolă de rezervă nouă."
+      ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Aceasta vă va deconecta contul de pe alte dispozitive și va trebui să creați o parolă de rezervă nouă."
       ],
@@ -8770,8 +8941,37 @@
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Pentru a ne dovedi că dețineți contul la care încercați să vă conectați, trimiteți codul de confirmare administratorului cu adresa **${ adminEmail }**, astfel încât acesta să vă poată aproba cererea pentru adresa **${ email }**."
       ],
+      "Tried to sign in at": [
+        "A încercat să se conecteze la"
+      ],
       "Use backup password instead": [
         "Folosire parolă de rezervă"
+      ],
+      "User details:": [
+        "Detalii utilizator:"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Activă"
+      ],
+      "Inactive": [
+        "Inactivă"
+      ],
+      "Pending activation": [
+        "Așteaptă activarea"
+      ],
+      "Pending admin activation": [
+        "Așteaptă activare de la administrator"
+      ],
+      "Rejected": [
+        "Respinsă"
+      ],
+      "Signed out": [
+        "Deconectat"
+      ],
+      "Unknown": [
+        "Necunoscută"
       ]
     },
     "State": {
@@ -8983,6 +9183,9 @@
     "Subscription change warning": {
       "Got it": [
         "Am înțeles"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Doar conectați-vă în App Store de la Apple și apoi selectați ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Doar conectați-vă în Magazinul Play și apoi apăsați pe ${ subscriptions }."
@@ -9517,6 +9720,12 @@
       ],
       "You have successfully unsubscribed": [
         "V-ați dezabonat cu succes"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Veți primi numele de utilizator prin e-mail într-un minut dacă ați introdus o adresă de e-mail de recuperare validă."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Veți primi numele de utilizator prin SMS într-un minut dacă ați introdus un număr de telefon de recuperare valid."
       ]
     },
     "Success message": {
@@ -9669,6 +9878,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } gratuit"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
       "${ VPN_APP_NAME } clients": [
         "Clieți ${ VPN_APP_NAME }"
@@ -10487,6 +10699,9 @@
       ],
       "User declined invitation": [
         "Utilizatorul a refuzat invitația"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Se așteaptă ca utilizatorul să accepte invitația"
       ]
     },
     "Tooltip for news": {
@@ -10500,6 +10715,9 @@
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Această versiune a TOR Browser nu este suportată. Actualizați la cea mai recentă ${ stableRelease }."
       ]
     },
     "unprivatization": {
@@ -10812,6 +11030,11 @@
       ],
       "Your ${ selected } plan": [
         "Planul dvs. ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     },
     "VPNClient": {

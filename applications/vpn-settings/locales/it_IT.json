@@ -85,6 +85,9 @@
       "Back": [
         "Indietro"
       ],
+      "Back to sign-in": [
+        "Torna all'accesso"
+      ],
       "Block": [
         "Blocca"
       ],
@@ -189,6 +192,9 @@
       ],
       "Delete your account": [
         "Elimina il mio account"
+      ],
+      "Deny access": [
+        "Nega l'accesso"
       ],
       "Details": [
         "Dettagli"
@@ -702,6 +708,9 @@
       ],
       "Verify domain": [
         "Verifica il dominio"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Verifica il dominio ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Visualizza"
@@ -2514,6 +2523,9 @@
       "Invalid expiration date": [
         "Data di scadenza non valida"
       ],
+      "Invalid IBAN": [
+        "IBAN non valido"
+      ],
       "Invalid invitation link": [
         "Link di invito non valido"
       ],
@@ -2586,6 +2598,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Effettua l'upgrade a un piano aziendale con più di 1 utente per gestire più utenti."
       ],
+      "Please upload a square logo": [
+        "Carica un logo quadrato"
+      ],
       "Please upload an xml file": [
         "Carica un file xml"
       ],
@@ -2609,6 +2624,9 @@
       ],
       "Tab closed": [
         "Scheda chiusa"
+      ],
+      "The amount due has changed. Please try again.": [
+        "L'importo dovuto è cambiato. Per favore riprova."
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -2761,6 +2779,9 @@
       "Got it": [
         "Ho capito"
       ],
+      "Invite a user": [
+        "Invita un utente"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Invita un utente ${ BRAND_NAME } esistente"
       ],
@@ -2818,6 +2839,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Gli account a vita non possono essere associati a un piano famiglia."
       ],
+      "Manage addresses": [
+        "Gestisci gli indirizzi"
+      ],
       "Manage user accounts": [
         "Gestisci gli account degli utenti"
       ],
@@ -2851,6 +2875,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Puoi accettare solo 3 inviti nell'arco di 6 mesi. Se ti serve un'eccezione, contatta ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Non puoi accettare questo invito con il tuo piano attuale."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Hai ricevuto un invito a ${ bannerOrganization }. ${ viewInviteButton }"
@@ -2906,6 +2933,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Se l'utente ha già un indirizzo ${ MAIL_APP_NAME }, inseriscilo qui. In caso contrario, deve prima creare un account."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "L'invito verrà annullato e l'utente non potrà unirsi a ${ organizationName }."
@@ -3501,6 +3531,9 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membri)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mese)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Ottieni un indirizzo ${ BRAND_NAME }** per usare tutti i servizi ${ BRAND_NAME_TWO } inclusi ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -3757,6 +3790,9 @@
       "Dedicated servers": [
         "Server dedicati"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Cancelli ogni altro record MX oppure si assicuri che la priorità di ${ MAIL_APP_NAME } sia il numero minimo."
       ],
@@ -3951,6 +3987,9 @@
       "High Priority": [
         "Priorità alta"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Chiave pubblica del fornitore di identità per firmare le autenticazioni e le autorizzazioni. Dovresti riuscire a scaricare o copiare l'hash del certificato dal fornitore di identità. Incolla l'hash del certificato nel campo di testo."
       ],
@@ -4127,6 +4166,12 @@
       ],
       "Learn more": [
         "Scopri di più"
+      ],
+      "Learn more about Gateways": [
+        "Scopri di più sui Gateway"
+      ],
+      "Learn more about single sign-on": [
+        "Scopri di più sul single sign-on"
       ],
       "Let's get started by pressing the New group button above": [
         "Iniziamo premendo il pulsante Nuovo gruppo qui sopra"
@@ -4592,6 +4637,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Questa verifica può richiedere fino a un'ora. Dopo la verifica, non rimuovere questo record TXT in quanto è necessario per confermare che tu continui a possedere il dominio."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Ciò negherà l'accesso a **${ email }**. Sei sicuro di voler continuare?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Ciò disabiliterà l'autenticazione a due fattori, inclusi sia l'app di autenticazione che i metodi della chiave di sicurezza."
       ],
@@ -4855,6 +4903,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, il tuo abbonamento non verrà rinnovato, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di abbonamento. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Quando rimuovi un server da un Gateway, entra in un periodo di disattivazione di 10 giorni. Questo server può essere aggiunto a un nuovo Gateway, ma il suo paese non può essere modificato."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
@@ -5238,6 +5289,9 @@
       "Amount due": [
         "Importo da pagare"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
       ],
@@ -5246,6 +5300,9 @@
       ],
       "Authenticator app": [
         "App di autenticazione"
+      ],
+      "Backup password": [
+        "Password di backup"
       ],
       "Billing address": [
         "Indirizzo di fatturazione"
@@ -5297,6 +5354,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Codice a 6 cifre senza spazi"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
       ],
       "Config to connect to ${ serverName }": [
         "Configurazione per connettersi a ${ serverName }"
@@ -5414,6 +5474,9 @@
       ],
       "Hide password": [
         "Nascondi la password"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Intervallo"
@@ -5562,6 +5625,9 @@
       "Recovery phrase": [
         "Frase di recupero"
       ],
+      "Repeat backup password": [
+        "Ripeti la password di backup"
+      ],
       "Reply (ACS) URL": [
         "URL di risposta (ACS)."
       ],
@@ -5573,6 +5639,9 @@
       ],
       "Reveal password": [
         "Mostra la password"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search": [
         "Cerca"
@@ -5606,6 +5675,9 @@
       ],
       "System information": [
         "Informazioni sul sistema"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Two-password mode": [
         "Modalità a doppia password"
@@ -5805,6 +5877,9 @@
       ],
       "Pay invoice": [
         "Pagamento della fattura"
+      ],
+      "PayPal without credit card": [
+        "PayPal senza carta di credito"
       ],
       "perform a password reset from your active session": [
         "esegui una reimpostazione della password dalla sessione attiva"
@@ -6506,6 +6581,9 @@
       "Sync and backup all your files across devices": [
         "Sincronizza ed effettua il backup dei file su tutti i tuoi dispositivi"
       ],
+      "TOR over VPN": [
+        "TOR su VPN"
+      ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
       ],
@@ -6813,6 +6891,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server"
       ],
@@ -6864,6 +6945,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Strumento di gestione dell'organizzazione che consente agli amministratori di aggiungere e rimuovere utenti, gestire il loro accesso ai servizi ${ BRAND_NAME } ed eseguire altre attività."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra solida infrastruttura ti assicura che sarai in grado di accedere al tuo account quando ne hai bisogno"
       ],
@@ -6905,6 +6989,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Reimposta le password degli utenti e l'autenticazione a due fattori sugli utenti"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Indirizza il tuo traffico internet tramite la rete TOR con un singolo click."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
@@ -7496,6 +7583,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Utilizza un metodo di recupero dei dati, contatta un altro amministratore o reimposta la chiave dell'organizzazione per ripristinare i privilegi di amministratore."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Non è stato possibile verificare l'autenticità di questa identità."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Non siamo riusciti a verificare la sicurezza della chiave dell'indirizzo di questo mittente. A volte potrebbe verificarsi un ritardo nell'aggiornamento delle informazioni del mittente. Riprova più tardi. Se non sei sicuro della validità di questo invito o del mittente, contatta l'assistenza clienti di ${ BRAND_NAME }."
       ],
@@ -7516,11 +7606,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bonifico"
+      ],
       "Credit/debit card": [
         "Carta di credito/debito"
       ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilizza il nome dell'azienda"
+      ],
+      "Use personal name": [
+        "Usa il nome personale"
       ]
     },
     "Payments": {
@@ -7612,6 +7713,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confermando questo pagamento, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a istruire la tua banca ad addebitare il tuo conto e la tua banca ad addebitare il tuo conto di conseguenza. Puoi ottenere un rimborso entro 8 settimane dalla data di addebito, secondo le condizioni dell'accordo con la tua banca."
+      ],
+      "Street address, postal code, and city": [
+        "Indirizzo, codice postale e città"
       ]
     },
     "Permission": {
@@ -7845,6 +7954,9 @@
       "Changing organization password": [
         "Cambiamento della password dell'organizzazione in corso"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Creazione o accesso ad account utente non privati"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "A causa di un cambiamento di password, i privilegi da amministratore della tua organizzazione sono stati limitati. Non saranno più permesse le seguenti azioni:"
       ]
@@ -7871,6 +7983,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "L'accesso non è stato completato correttamente."
+      ],
       "Something went wrong": [
         "Qualcosa è andato storto."
       ]
@@ -7931,6 +8046,12 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Prerequisito:** l'autenticazione SAML deve essere configurata per abilitare il provisioning SCIM."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Prerequisito:** per abilitare il provisioning SCIM, è necessario verificare la proprietà del dominio **${ domainName }**. Questa verifica può richiedere fino a un'ora."
+      ],
+      "Enter the token into your identity provider": [
+        "Inserisci il token nel tuo provider di identità"
       ],
       "Enter URL and token into your identity provider": [
         "Inserisci l'URL e il token nel tuo provider di identità"
@@ -8240,6 +8361,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Ti contatteremo nuovamente quando la reimpostazione della password sarà disponibile."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "È possibile controllare lo stato della richiesta in qualsiasi momento nella sezione ${ accountAndPasswordSectionLink } delle impostazioni."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "nella sezione Account e password"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8541,6 +8670,9 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } sta richiedendo il tuo aiuto per accedere al proprio account ${ BRAND_NAME } con Single Sign-On."
+      ],
       "${ n } member requested your help to sign in.": [
         "${ n } ha richiesto il tuo aiuto per accedere.",
         "${ n } hanno richiesto il tuo aiuto per accedere."
@@ -8548,6 +8680,183 @@
       "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
         "${ n } utente si è unito alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:",
         "${ n } utenti si sono uniti alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } utente sta richiedendo il tuo aiuto per accedere al proprio account ${ BRAND_NAME } con Single Sign-On.",
+        "${ n } utenti richiedono il tuo aiuto per accedere al proprio account ${ BRAND_NAME } con Single Sign-On."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**Gli utenti SSO (forniti dal tuo provider di identità) verranno eliminati** e dovrai crearli manualmente per aggiungerli nuovamente alla tua organizzazione."
+      ],
+      "Access denied": [
+        "Accesso negato"
+      ],
+      "Access granted": [
+        "Accesso autorizzato"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "ti ha aggiunto alla sua organizzazione ${ BRAND_NAME }"
+      ],
+      "Approve or deny it now": [
+        "Approvalo o negalo adesso"
+      ],
+      "Approve the sign-in from another device": [
+        "Approva l'accesso da un altro dispositivo"
+      ],
+      "Ask administrator for help": [
+        "Chiedi aiuto all'amministratore"
+      ],
+      "Ask your administrator for access?": [
+        "Vuoi chiedere l'accesso al tuo amministratore?"
+      ],
+      "Backup password": [
+        "Password di backup"
+      ],
+      "Cancel": [
+        "Annulla"
+      ],
+      "Change backup password": [
+        "Modifica la password di backup"
+      ],
+      "Confirm backup password": [
+        "Conferma la password di backup"
+      ],
+      "Confirmation code": [
+        "Codice di conferma"
+      ],
+      "Contact administrator": [
+        "Contatta l'amministratore"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Contatta l'amministratore se il problema persiste."
+      ],
+      "Deny": [
+        "Rifiuta"
+      ],
+      "Deny access": [
+        "Nega l'accesso"
+      ],
+      "Devices available": [
+        "Dispositivi disponibili"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Inserisci il codice di conferma che abbiamo inviato a questo utente."
+      ],
+      "Enter your backup password": [
+        "Inserisci la tua password di backup"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Per la tua sicurezza, sei stato disconnesso da tutti i tuoi altri dispositivi attivi. Prima di accedere al tuo account, dovrai inserire una nuova password di backup."
+      ],
+      "Grant": [
+        "Concedi"
+      ],
+      "Grant access": [
+        "Consenti accesso"
+      ],
+      "Grant access to user?": [
+        "Consentire l'accesso all'utente?"
+      ],
+      "Grant access to users?": [
+        "Consentire l'accesso all'utente?"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Se non riesci ad accedere al tuo account ${ BRAND_NAME }, la password di backup ti consentirà di accedere e recuperare i tuoi dati."
+      ],
+      "Invalid confirmation code": [
+        "Codice di conferma non valido"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "È l'unico modo per ripristinare completamente il tuo account, quindi assicurati di conservarlo in un posto sicuro."
+      ],
+      "Join ${ organizationName }": [
+        "Unisciti a ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Assicurati di salvarlo in un posto sicuro in modo da poter tornare al tuo account se perdi l'accesso alle credenziali del tuo provider di identità."
+      ],
+      "New backup password": [
+        "Nuova password di backup"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Gli utenti che non usano SSO (creati manualmente, non forniti dal tuo fornitore di identità) possono comunque accedere alla tua organizzazione."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Quando single sign-on viene disabilitato per la tua organizzazione:"
+      ],
+      "Remove single sign-on": [
+        "Rimuovi il single sign-on"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Vuoi rimuovere il single sign-on per la tua organizzazione?"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Imposta una password di backup per aggiungere un ulteriore livello di protezione. Ti consentirà di accedere se rimani bloccato, quindi assicurati di conservarlo in un posto sicuro."
+      ],
+      "Set your backup password": [
+        "Imposta la tua password di backup"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Condividi il codice di conferma con il tuo amministratore"
+      ],
+      "Sign in to your organization": [
+        "Accedi alla tua organizzazione"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Esci e accedi di nuovo per modificare la password di backup"
+      ],
+      "Single sign-on removed": [
+        "Single sign-on rimosso"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Le credenziali del tuo fornitore di identità verranno eliminate."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Ciò disconnetterà l'utente dagli altri dispositivi e dovrà creare una nuova password di backup."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Questo ti disconnetterà dagli altri tuoi dispositivi e dovrai creare una nuova password di backup."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Per essere sicuri che sia davvero tu a tentare di accedere, inserisci la password di backup."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Per assicurarti che sia davvero tu a tentare di accedere, condividi il codice di conferma con il tuo amministratore **${ adminEmail }** in modo che possa approvare la richiesta di **${ email }**."
+      ],
+      "Tried to sign in at": [
+        "Ho provato ad accedere alle"
+      ],
+      "Use backup password instead": [
+        "Utilizza invece la password di backup"
+      ],
+      "User details:": [
+        "Dettagli utente:"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Attivo"
+      ],
+      "Inactive": [
+        "Non attivo"
+      ],
+      "Pending activation": [
+        "In attesa di attivazione"
+      ],
+      "Pending admin activation": [
+        "In attesa di attivazione da parte dell'amministratore"
+      ],
+      "Rejected": [
+        "Rifiutato"
+      ],
+      "Signed out": [
+        "Disconnesso"
+      ],
+      "Unknown": [
+        "Sconosciuto"
       ]
     },
     "State": {
@@ -8744,6 +9053,9 @@
     "Subscription change warning": {
       "Got it": [
         "Ho capito"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Accedi al tuo account Apple nell'App Store e seleziona ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Accedi al tuo account Play Store e clicca ${ subscriptions }."
@@ -9272,6 +9584,12 @@
       ],
       "You have successfully unsubscribed": [
         "Abbonamento annullato con successo"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Riceverai il tuo nome utente tramite email entro un minuto se l'indirizzo email di recupero che hai inserito è valido."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Riceverai il tuo nome utente via SMS entro un minuto se hai inserito un numero di telefono di recupero valido."
       ]
     },
     "Success message": {
@@ -9424,6 +9742,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } clienti"
@@ -9667,6 +9988,9 @@
       ],
       "Delete user?": [
         "Vuoi eliminare l'utente?"
+      ],
+      "Deny access to user?": [
+        "Negare l'accesso all'utente?"
       ],
       "Device": [
         "Dispositivo"
@@ -10234,6 +10558,9 @@
       ],
       "User declined invitation": [
         "L'utente ha rifiutato l'invito"
+      ],
+      "Waiting for user to accept the invitation": [
+        "In attesa che l'utente accetti l'invito"
       ]
     },
     "Tooltip for news": {
@@ -10247,6 +10574,9 @@
     "Tor out of date": {
       "stable release": [
         "versione stabile"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Questa versione di TOR Browser non è supportata. Aggiornala all'ultima ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10549,6 +10879,11 @@
       ],
       "Your ${ selected } plan": [
         "Il tuo piano ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
       ]
     },
     "VPNClient": {

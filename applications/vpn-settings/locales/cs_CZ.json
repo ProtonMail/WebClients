@@ -2541,6 +2541,9 @@
       "Invalid expiration date": [
         "Neplatné datum expirace"
       ],
+      "Invalid IBAN": [
+        "Neplatný IBAN"
+      ],
       "Invalid invitation link": [
         "Neplatný odkaz pozvánky"
       ],
@@ -2639,6 +2642,9 @@
       ],
       "Tab closed": [
         "Záložka zavřena"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Částka k zaplacení se změnila. Zkuste to prosím znovu."
       ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"
@@ -2851,6 +2857,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Doživotní účty nemohou být připojeny k rodinnému tarifu."
       ],
+      "Manage addresses": [
+        "Spravovat adresy"
+      ],
       "Manage user accounts": [
         "Spravovat uživatelské účty"
       ],
@@ -2886,6 +2895,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Během 6 měsíců můžete přijmout pouze 3 pozvánky. Pokud požadujete výjimku, kontaktujte prosím ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "S vaším současným tarifem nemůžete přijmout tuto pozvánku."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3581,6 +3593,9 @@
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/měsíc)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Získejte adresu ${ BRAND_NAME }** pro používání všech služeb ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -4052,6 +4067,9 @@
       "High Priority": [
         "Vysoká priorita"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Veřejný klíč poskytovatele identity pro podepisování ověření. Váš poskytovatel identity by měl nabízet možnost zkopírovat nebo stáhnout hash certifikátu. Vložte tento hash certifikátu do textového pole."
       ],
@@ -4233,7 +4251,7 @@
         "Další informace o branách"
       ],
       "Learn more about single sign-on": [
-        "Dozvědět se víc o jednotném přihlášení (SSO)"
+        "Více informací o jednotném přihlášení (SSO)"
       ],
       "Let's get started by pressing the New group button above": [
         "Začněme stisknutím tlačítka Nová skupina, které je výše"
@@ -5389,6 +5407,9 @@
       "Amount due": [
         "Částka k zaplacení"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Assertion Consumer Service URL": [
         "URL adresa služby Assertion Consumer Service"
       ],
@@ -5451,6 +5472,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
+      ],
+      "Company name": [
+        "Název společnosti"
       ],
       "Config to connect to ${ serverName }": [
         "Nastavení pro připojení k ${ serverName }"
@@ -5568,6 +5592,9 @@
       ],
       "Hide password": [
         "Skrýt heslo"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Interval"
@@ -5731,6 +5758,9 @@
       "Reveal password": [
         "Zobrazit heslo"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Ženeva"
+      ],
       "Search": [
         "Hledat"
       ],
@@ -5763,6 +5793,9 @@
       ],
       "System information": [
         "Informace o systému"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Two-password mode": [
         "Režim dvou hesel"
@@ -6708,6 +6741,9 @@
       "Sync and backup all your files across devices": [
         "Synchronizace a zálohování všech vašich souborů mezi zařízeními"
       ],
+      "TOR over VPN": [
+        "TOR skrze VPN"
+      ],
       "Two-factor authentication": [
         "Dvoufázové ověření"
       ],
@@ -7024,6 +7060,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
       ],
@@ -7075,6 +7114,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Nástroj pro správu organizace, který umožňuje správcům přidávat a odebírat uživatele, spravovat jejich přístup ke službám ${ BRAND_NAME } a provádět další úkony."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naše výkonná infrastruktura zajistí, že budete mít přístup k účtu kdykoliv to bude potřeba"
       ],
@@ -7116,6 +7158,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Směrujte svůj internetový provoz skrze síť TOR jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
@@ -7744,11 +7789,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankovní převod"
+      ],
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Použít název společnosti"
+      ],
+      "Use personal name": [
+        "Použít vlastní jméno"
       ]
     },
     "Payments": {
@@ -7840,6 +7896,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrzením této platby zmocňujete ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, aby dali pokyn vaší bance k odepsání peněz z vašeho účtu a aby vaše banka odpovídajícím způsobem odepsala peníze z vašeho účtu. Vrácení peněz je možné do 8 týdnů od data odepsání peněz za podmínek stanovených ve smlouvě s bankou."
+      ],
+      "Street address, postal code, and city": [
+        "Ulice, poštovní směrovací číslo a město"
       ]
     },
     "Permission": {
@@ -8882,7 +8946,7 @@
         "Záložní heslo"
       ],
       "Cancel": [
-        "Zrušit"
+        "Zpět"
       ],
       "Change backup password": [
         "Změnit záložní heslo"
@@ -8891,7 +8955,7 @@
         "Potvrdit záložní heslo"
       ],
       "Confirmation code": [
-        "Kód pro potvrzení"
+        "Potvrzovací kód"
       ],
       "Contact administrator": [
         "Kontaktovat správce"
@@ -8960,7 +9024,7 @@
         "Zrušit jednotné přihlášení pro vaši organizaci?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
-        "Nastavením záložního hesla získáte další úroveň ochrany. Umožní vám přihlásit se, pokud se zablokujete, takže si ho nezapomeňte uložit na bezpečné místo."
+        "Nastavením záložního hesla získáte další úroveň ochrany. Umožní vám přihlásit se, pokud není možné přihlásit se běžným způsobem. Uložte si záložní heslo na bezpečném místě."
       ],
       "Set your backup password": [
         "Nastavte své záložní heslo"
@@ -8972,7 +9036,7 @@
         "Přihlaste se ke své organizaci"
       ],
       "Sign out and in again to change your backup password": [
-        "Odhlaste se a znovu přihlaste pro změnu zálohovacího hesla"
+        "Odhlaste se a znovu přihlaste pro změnu záložního hesla"
       ],
       "Single sign-on removed": [
         "Jednotné přihlášení zrušeno"
@@ -8996,7 +9060,7 @@
         "Pro ověření vašeho pokusu o přihlášení sdílejte potvrzovací kód se správcem **${ adminEmail }**, aby mohl(a) schválit žádost pro **${ email }**."
       ],
       "Tried to sign in at": [
-        "Pokusil(a) jsem se přihlásit k"
+        "Pokus o přihlášení z"
       ],
       "Use backup password instead": [
         "Místo toho použít záložní heslo"
@@ -9252,6 +9316,9 @@
     "Subscription change warning": {
       "Got it": [
         "Rozumím"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Stačí se přihlásit k účtu v Apple App Store a vybrat ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Stačí se přihlásit k účtu v Obchodě Play a stisknout ${ subscriptions }."
@@ -9950,6 +10017,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
       ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } klienti"
@@ -10789,6 +10859,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilní verze"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tato verze prohlížeče TOR není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -11111,6 +11184,11 @@
       ],
       "Your ${ selected } plan": [
         "Váš tarif ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
       ]
     },
     "VPNClient": {
