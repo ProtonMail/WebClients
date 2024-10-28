@@ -62,9 +62,6 @@ export type UpdateSharedURL = WithSRPPayload<{
  */
 export interface SharedURLInfo {
     ContentKeyPacket: string;
-    ContentKeyPacketSignature: string;
-    CreateTime: number;
-    ExpirationTime: number | null;
     LinkID: string;
     LinkType: LinkType;
     MIMEType: string;
