@@ -674,6 +674,9 @@
       "Today": [
         "오늘"
       ],
+      "Toggle Contacts app": [
+        "연락처 앱 열기/닫기"
+      ],
       "Toggle settings": [
         "설정 켜기/끄기"
       ],
@@ -885,6 +888,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "지금 떠나면, 이벤트를 잃게 됩니다."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "이 탭을 닫지 마세요. 일부 요청이 백그라운드에서 진행 중입니다."
       ]
     },
     "Apps dropdown": {
@@ -1222,6 +1228,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "편집 (보기 또는 이벤트 생성 또는 상세 정보 편집)"
+      ],
       "View (see all event details)": [
         "보기 (모든 이벤트 상세정보 확인)"
       ]
@@ -2516,8 +2525,14 @@
       "Set a recovery method to prevent losing access to your account.": [
         "계정 접근 불가 상황을 막기 위해선 복구 방법을 설정하십시오."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "약간의 시간이 걸릴 수 있습니다. 진행되고 있는 동안에도 지금처럼 ${ CALENDAR_APP_NAME }를 사용할 수 있습니다."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 초과하지 않도록 하십시오. 파일이 더 크면, 더 작은 파일로 나누세요. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
@@ -3023,6 +3038,9 @@
       "Invalid expiration date": [
         "올바르지 않은 만료 기한"
       ],
+      "Invalid IBAN": [
+        "유효하지 않은 IBAN"
+      ],
       "Invalid link to the event": [
         "유효하지 않은 이벤트 링크"
       ],
@@ -3197,6 +3215,9 @@
       "The address might be misspelled": [
         "주소가 철자가 틀렸을 수 있습니다"
       ],
+      "The amount due has changed. Please try again.": [
+        "결제 예정 가격이 변경되었습니다. 다시 시도해 주세요."
+      ],
       "The email addresses do not match": [
         "이메일 주소가 일치하지 않습니다."
       ],
@@ -3277,6 +3298,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "계정의 최대 연락처 수를 초과했습니다"
       ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
@@ -3665,6 +3689,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "평생 계정은 가족 플랜에 합류할 수 없습니다."
       ],
+      "Manage addresses": [
+        "주소 관리"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "구성원들이 있는 요금제의 소유자가 다른 그룹 가족 플랜에 합류할 수 없습니다."
       ],
@@ -3682,6 +3709,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "6개월 기간 동안 3개 초대를 수락할 수 있습니다. 제외가 필요하다면 ${ supportLink }에 연락해 주십시오."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "현재 플랜에서 이 초대를 수락할 수 없습니다."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } 가입에 초대되었습니다. ${ viewInviteButton }"
@@ -3719,6 +3749,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "가족 계정을 구성하고 사용자를 초대하세요. "
+      ],
       "Set up your family": [
         "가족 계정 설정"
       ],
@@ -4235,6 +4268,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 회원)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/월간)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 추가 저장공간"
       ],
@@ -4445,6 +4481,9 @@
       "Dedicated servers": [
         "전용 서버"
       ],
+      "Deleting event...": [
+        "이벤트 삭제하는 중..."
+      ],
       "Discard changes?": [
         "변경 사항 취소"
       ],
@@ -4540,6 +4579,9 @@
       ],
       "High Priority": [
         "중요도 높음"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -4718,6 +4760,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "조직 내 다른 사용자들은 나의 바쁜 시간대를 확인할 수 있습니다. 이벤트의 세부 정보는 공유되지 않습니다."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "경고는 안전을 위해 나타납니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
+      ],
       "password": [
         "비밀번호"
       ],
@@ -4795,6 +4840,9 @@
       ],
       "Removed participants will be notified.": [
         "삭제된 참가자들에게 알림이 전송됩니다."
+      ],
+      "Saving event...": [
+        "이벤트 저장 중..."
       ],
       "Select a service provider to start": [
         "서비스 제공자를 선택해 시작하기"
@@ -5337,6 +5385,9 @@
       "All-day event notifications": [
         "상시 이벤트 알림"
       ],
+      "Anderson": [
+        "길동"
+      ],
       "App password": [
         "앱 비밀번호"
       ],
@@ -5402,6 +5453,9 @@
       ],
       "Colors": [
         "색상"
+      ],
+      "Company name": [
+        "회사명"
       ],
       "Confirm password": [
         "비밀번호 확인"
@@ -5519,6 +5573,9 @@
       ],
       "I understand the risk": [
         "위험 사항을 이해했어요."
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "모든 메시지 가져오기"
@@ -5655,6 +5712,9 @@
       "Reveal password": [
         "비밀번호 표시"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "서울 종로구 청와대로 1"
+      ],
       "Secondary": [
         "2순위"
       ],
@@ -5690,6 +5750,9 @@
       ],
       "Theme": [
         "테마"
+      ],
+      "Thomas": [
+        "홍"
       ],
       "Time zone": [
         "시간대"
@@ -6609,6 +6672,9 @@
       "Sync and backup all your files across devices": [
         "기기를 넘나들며 파일을 동기화 및 백업하세요"
       ],
+      "TOR over VPN": [
+        "VPN을 통한 TOR"
+      ],
       "Two-factor authentication": [
         "2단계 인증"
       ],
@@ -6869,6 +6935,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "가족 구성원에게 할당할 수 있는 최대 ${ n }개의 이메일 주소/별명을 생성하세요. 이를 온라인 신원으로 사용하세요. 예를 들면, 쇼핑 계정에는 JohnShopper@${ domain }을 사용할 수 있습니다."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "여러 서버를 통해 인터넷 트래픽을 전달하여 VPN 개인 정보에 대한 위협으로부터 방어합니다"
       ],
@@ -6920,6 +6989,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "비공개가 아닌 사용자의 수신함을 사용자가 볼 수 있는 옵션으로, 전체 메시지와 연락처 세부사항을 포함하여 볼 수 있습니다"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "관리자가 사용자를 추가 및 제거하고, 저장소를 할당하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, 수행할 수 있는 조직 관리 도구"
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
       ],
@@ -6961,6 +7033,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "사용자 암호 및 2단계 인증 재설정"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "한번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -7235,6 +7310,11 @@
         "가져오기가 작동하려면, GIF에 표시된 대로 요청된 모든 항목을 선택해야 합니다."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "${ BRAND_NAME }이 접근할 수 있는 것을 선택하세요: 이메일 메시지와 설정을 확인하고, 연락처를 확인 및 다운로드하고, Google Calendar에서 액세스하는 모든 아젠다를 확인하고 다운로드하세요."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "${ appName }에 오신 것을 환영합니다"
@@ -7410,11 +7490,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "게좌 이체"
+      ],
       "Credit/debit card": [
         "신용/체크카드"
       ],
       "New credit/debit card": [
         "신용/체크카드 추가"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "회사 이름 사용"
+      ],
+      "Use personal name": [
+        "개인 이름 사용"
       ]
     },
     "Payments": {
@@ -7494,6 +7585,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "이 결제를 확인함으로써, 자사 결제 서비스 제공자인 ${ BRAND_NAME }과 Stripe가 사용자의 은행 계좌에서 금액을 인출하도록 동의하고, 사용자의 은행이 이에 따라 계좌에서 금액을 인출하도록 수행할 수 있는 권한을 부여하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
+      ],
+      "Street address, postal code, and city": [
+        "주소명, 우편 번호 및 도시"
       ]
     },
     "PGP key encryption warning": {
@@ -7752,6 +7851,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 체험"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "쇼핑을 위해 쿠팡에서 사용됨, 기타 등등"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "이메일 주소를 누군가 물어본다면, 별칭을 대신 제공하세요. 별칭이 ${ passLink }에 의해 제공됩니다."
@@ -8412,6 +8514,9 @@
     "Subscription change warning": {
       "Got it": [
         "확인하였습니다."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "사용자의 Apple App Store 계정으로 로그인하여 ${ subscriptions }을 선택하세요."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "사용자의 Play Store 계정에 로그인하고 ${ subscriptions }을 누르세요."
@@ -9538,6 +9643,9 @@
       "Warning: suspected fake website": [
         "경고: 가짜 웹 사이트일 수 있음"
       ],
+      "We're setting up calendar search": [
+        "캘린더 검색을 준비하고 있습니다"
+      ],
       "We've locked some calendars to protect your data": [
         "데이터를 보호하기 위해 일부 캘린더를 잠궜습니다"
       ],
@@ -9736,6 +9844,11 @@
       ],
       "No ads": [
         "광고 없음"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
       ]
     },
     "wallet_signup_2024: Info": {
