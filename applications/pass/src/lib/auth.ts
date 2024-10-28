@@ -93,7 +93,7 @@ export const createAuthService = ({
 
         onInit: async (options) => {
             const sessions = getPersistedSessions();
-            await localGarbageCollect(sessions);
+            await localGarbageCollect(sessions).catch(noop);
 
             const activeLocalID = authStore.getLocalID();
             const pathLocalID = getLocalIDFromPathname(history.location.pathname);
