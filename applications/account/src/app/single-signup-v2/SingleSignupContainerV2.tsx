@@ -929,6 +929,17 @@ const SingleSignupContainerV2 = ({
 
             measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
 
+            setSignupParameters((previous) => {
+                // Clear the email on signout, signout implies the email exists so don't need to autofill it again
+                if (previous.email) {
+                    return {
+                        ...previous,
+                        email: undefined,
+                    };
+                }
+                return previous;
+            });
+
             setModelDiff({
                 optimistic: {},
                 session: undefined,
