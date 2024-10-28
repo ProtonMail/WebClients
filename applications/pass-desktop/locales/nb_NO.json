@@ -1612,6 +1612,9 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Nettilgang til ${ PASS_APP_NAME } krever en PIN-kode. Du blir logget ut etter 3 mislykkede forsøk."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
+      ],
       "Owner": [
         "Eier"
       ],
@@ -2908,14 +2911,46 @@
       "Sign-in confirmed": [
         "Pålogging bekreftet"
       ],
+      "Sign-in failed": [
+        "Pålogging mislyktes"
+      ],
       "Sign-in rejected": [
         "Pålogging avvist"
+      ],
+      "Sign-in rejection failure": [
+        "Feil ved avvisning av pålogging"
       ],
       "Sign-in requested on another device. Was it you?": [
         "Pålogging forespurt på en annen enhet. Var det deg?"
       ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Pålogging forespurt på en annen enhet. Var det deg? "
+      ],
       "Yes, it was me": [
         "Ja, det var meg"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Pending activation": [
+        "Avventer aktivering"
+      ],
+      "Pending admin activation": [
+        "Avventer administratoraktivering"
+      ],
+      "Rejected": [
+        "Avvist"
+      ],
+      "Signed out": [
+        "Logget av"
+      ],
+      "Unknown": [
+        "Ukjent"
       ]
     },
     "Success": {

@@ -273,7 +273,7 @@
         "S'està important"
       ],
       "Include in monitoring": [
-        "Incloure en la supervisió"
+        "Inclou en la supervisió"
       ],
       "Install extension": [
         "Instal·la l'extensió"
@@ -300,7 +300,7 @@
         "L'enllaç caduca després de"
       ],
       "Lock ${ PASS_APP_NAME }": [
-        "Bloquejar ${ PASS_APP_NAME }"
+        "Bloqueja ${ PASS_APP_NAME }"
       ],
       "Make admin": [
         "Estableix com a administrador"
@@ -587,6 +587,19 @@
         "Desinstal·la ${ PASS_APP_NAME }"
       ]
     },
+    "bf2024: Deal": {
+      "lifetime access": [
+        "accés de per vida"
+      ]
+    },
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Totes les funcions premium. 6 usuaris. 1 subscripció fàcil."
+      ],
+      "Limited-stock available!": [
+        "Disponibilitat limitada!"
+      ]
+    },
     "bf2024: Label": {
       "Get the deal": [
         "Aconseguiu l'oferta"
@@ -595,6 +608,12 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Pagueu una vegada i obteniu ${ lifetimeAccessJSX } per Pass Plus. Només ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Estalvieu fins a ${ discountJSX } a Pass Family. Només ${ relativePrice }/mes."
       ]
     },
     "Browser": {
@@ -832,7 +851,7 @@
         "No s'ha pogut actualitzar l'estat de supervisió d'aquesta adreça de correu electrònic"
       ],
       "File could not be parsed": [
-        "No s'ha pogut analitzar el fitxer"
+        "No s'ha pogut analitzar el fitxer."
       ],
       "File could not be read": [
         "No s'ha pogut llegir el fitxer."
@@ -1149,6 +1168,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
+      "Add your custom email address to monitor:": [
+        "Afegiu la vostra adreça electrònica personalitzada per supervisar:"
+      ],
       "Admin": [
         "Administrador"
       ],
@@ -1297,7 +1319,7 @@
         "No s'ha pogut activar el bloqueig amb contrasenya"
       ],
       "Enabling PIN auto-lock": [
-        "S'està activant el bloqueig automàtic del PIN"
+        "S'està activant el bloqueig automàtic amb codi PIN"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
@@ -1414,7 +1436,7 @@
         "L'element s'ha mogut a la paperera"
       ],
       "Item permanently deleted": [
-        "S'ha eliminat l'element de forma permanent"
+        "S'ha eliminat l'element de forma permanent."
       ],
       "Item restored": [
         "S'ha restaurat l'element"
@@ -2166,6 +2188,9 @@
       "Import passwords": [
         "Importa les contrasenyes"
       ],
+      "Imported from: ": [
+        "Importat des de: "
+      ],
       "Imported on : ": [
         "Importat en: "
       ],
@@ -2452,6 +2477,12 @@
       "Today": [
         "Avui"
       ],
+      "Total imported items: ": [
+        "Total d'elements importats: "
+      ],
+      "Total items: ": [
+        "Nombre total d'elements: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2719,6 +2750,24 @@
       ]
     },
     "sso": {
+      "Invalid confirmation code": [
+        "El codi de confirmació no és vàlid."
+      ],
+      "No, it wasn’t me": [
+        "No, no era jo."
+      ],
+      "Sign-in confirmed": [
+        "S'ha confirmat l'inici de sessió."
+      ],
+      "Sign-in failed": [
+        "No s'ha pogut iniciar la sessió."
+      ],
+      "Sign-in rejected": [
+        "S'ha rebutjat l'inici de sessió."
+      ],
+      "Sign-in rejection failure": [
+        "No s'ha pogut rebutjar l'inic de sessió."
+      ],
       "Yes, it was me": [
         "Sí, era jo."
       ]
@@ -2841,7 +2890,7 @@
         "Importació - ${ date }"
       ],
       "Import to vault(s)": [
-        "Importa a la(es) caixa(es) forta(es)"
+        "Importa a les caixes fortes"
       ],
       "Import your aliases from SimpleLogin": [
         "Importeu els vostres àlies de SimpleLogin"
@@ -2923,6 +2972,9 @@
       ],
       "Recommended actions": [
         "Accions recomanades"
+      ],
+      "Reject device?": [
+        "Voleu rebutjar el dispositiu?"
       ],
       "Remove email address?": [
         "Vols esborrar l'adreça de correu electrònic?"
@@ -3067,11 +3119,17 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Es requereix la contrasenya de ${ BRAND_NAME }."
+      ],
       "A description of the problem is required": [
         "Es requereix una descripció del problema"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tots els elements de la paperera s'eliminaran permanentment. No podeu desfer aquesta acció."
+      ],
+      "An error occurred while exporting your data": [
+        "S'ha produït un error en exportar les dades."
       ],
       "At least one email address is required": [
         "Es requereix almenys una adreça de correu electrònic"
@@ -3084,6 +3142,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "No s'ha pogut crear la caixa forta \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "No s'han pogut enviar invitacions a les següents adreces:"
       ],
       "Duplicate email addresses.": [
         "Duplicitat d'adreces de correu electrònic."
@@ -3162,7 +3223,7 @@
         "Només es permeten caràcters alfanumèrics, punts, guions i guions baixos"
       ],
       "Passphrase is required": [
-        "La frase de contrasenya és obligatòria"
+        "La frase de contrasenya és obligatòria."
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
@@ -3247,6 +3308,9 @@
       ],
       "Your session was locked.": [
         "S'ha bloquejat la sessió."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "No podeu crear més caixes fortes del que permet la vostra subscripció."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
