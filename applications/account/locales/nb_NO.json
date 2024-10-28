@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -1953,6 +1953,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Rediger (se, opprett og endre hendelsesdetaljer)"
+      ],
       "View (see all event details)": [
         "Vis (se alle hendelsesdetaljer)"
       ]
@@ -3441,6 +3444,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorter innkommende meldinger automatisk før de når innboksen din."
       ],
+      "Available with ${ BRAND_NAME } Mail Plus": [
+        "Tilgjengelig med ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulerer! Du har tjent maksimalt ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
       ],
@@ -3476,6 +3482,9 @@
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Konfigurer automatisk videresending for å omdirigere innkommende e-post til en annen e-postadresse."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
@@ -4285,6 +4294,12 @@
       "Account does not exist": [
         "Kontoen finnes ikke"
       ],
+      "Add at least one action": [
+        "Legg til minst én handling"
+      ],
+      "Add at least one condition": [
+        "Legg til minst én betingelse"
+      ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
       ],
@@ -4455,6 +4470,9 @@
       "Invalid expiration date": [
         "Ugyldig utløpsdato"
       ],
+      "Invalid IBAN": [
+        "Ugyldig IBAN"
+      ],
       "Invalid invitation link": [
         "Ugyldig invitasjonskobling"
       ],
@@ -4586,6 +4604,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
       ],
+      "Please upload a square logo": [
+        "Last opp en firkantet logo"
+      ],
       "Please upload an xml file": [
         "Vennligst last opp en xml-fil"
       ],
@@ -4652,6 +4673,9 @@
       ],
       "The address might be misspelled": [
         "Adressen kan være feilstavet."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Det forfalte beløpet er endret. Prøv igjen."
       ],
       "The email addresses do not match": [
         "E-postadressene samsvarer ikke"
@@ -4769,6 +4793,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nådd grensen for antall kontakter for kontoen din"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har brukt alle adressene i planen din. Vennligst oppgrader planen din for å legge til en ny adresse."
@@ -5202,6 +5229,9 @@
       "Got it": [
         "Forstått"
       ],
+      "Invite a user": [
+        "Inviter en bruker"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Inviter en eksisterende ${ BRAND_NAME }-bruker"
       ],
@@ -5277,6 +5307,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livsvarige kontoer kan ikke bli med i en familieplan."
       ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
       "Manage user accounts": [
         "Administrere brukerkontoer"
       ],
@@ -5316,6 +5349,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan bare godta 3 invitasjoner i løpet av en 6-måneders periode. Ta kontakt med ${ supportLink } hvis du trenger et unntak."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kan ikke godta denne invitasjonen med din nåværende plan."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blitt invitert til å bli med ${ bannerOrganization }. ${ viewInviteButton }"
@@ -5374,6 +5410,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brukeren allerede har en ${ MAIL_APP_NAME }-adresse, angi den her. Ellers må de opprette en konto først."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Hvis brukeren allerede har en konto med ${ BRAND_NAME }, skriv den inn her. Ellers må de opprette en konto først."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitasjonen avbrytes, og brukeren kan ikke bli med ${ organizationName }."
@@ -5814,6 +5853,9 @@
       "Back to sign in": [
         "Tilbake til pålogging"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features.": [
+        "Fortsett å nyte en rask, fokusert og sikker skrivebordsopplevelse. Oppgrader for å låse opp ubegrenset tilgang og andre premiumfunksjoner."
+      ],
       "Keep using the desktop app": [
         "Fortsett å bruke skrivebordsappen"
       ],
@@ -5962,6 +6004,11 @@
         "Forlot gruppen"
       ]
     },
+    "group_invite_2024": {
+      "You have no groups to manage": [
+        "Du har ingen grupper å administrere"
+      ]
+    },
     "group_invite_2024: Error message, recovery": {
       "Please try opening the link again.": [
         "Vennligst prøv å åpne koblingen på nytt."
@@ -5976,11 +6023,17 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "for ${ email }"
+      ],
       "Group invitation accepted": [
         "Gruppeinvitasjon godtatt"
       ],
       "Group invitation declined": [
         "Gruppeinvitasjon avslått"
+      ],
+      "Group membership": [
+        "Gruppemedlemskap"
       ]
     },
     "Header": {
@@ -6647,6 +6700,9 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/måned)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrer hvis ALLE følgende betingelser er oppfylt)"
       ],
@@ -6734,9 +6790,6 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Legg til en @pm.me e-postadresse til kontoen din. Dette enkle, kortere domene står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding.\""
-      ],
-      "Add a recovery ${ type }": [
-        "Legg til gjenopprettng ${ type }"
       ],
       "Add a recovery email address": [
         "Legg til en gjenopprettings-e-postadresse"
@@ -6852,6 +6905,9 @@
       ],
       "and": [
         "og"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuelle undermapper vil også bli slettet. E-postmeldinger som er lagret i mappen ${ nameDeleted }, vil imidlertid ikke bli slettet og finnes i All e-post-mappen."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Alle med denne koblingen kan se alle hendelsesdetaljene i denne kalenderen, for eksempel tittel, sted eller deltakere."
@@ -7151,9 +7207,6 @@
         "Sletter ${ deletedServerCount } porttjener",
         "Sletter ${ deletedServerCount } porttjenere"
       ],
-      "Disable recovery by ${ type }": [
-        "Dekativer gjenoppretting etter ${ type }"
-      ],
       "Disabled on ${ formattedDateAndTime }": [
         "Deaktivert den ${ formattedDateAndTime }"
       ],
@@ -7259,6 +7312,9 @@
       ],
       "Emailing preference saved": [
         "Preferanse for sending av e-post lagret"
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-postmeldinger merket med etiketten, ${ nameDeleted }, vil ikke bli slettet og kan fortsatt bli funnet i den respektive mappen."
       ],
       "Enable email notifications": [
         "Aktiver e-postvarsler"
@@ -7424,6 +7480,9 @@
       ],
       "High Priority": [
         "Høy prioritet"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsleverandørens offentlige nøkkel for å signere godkjenningsdeklarasjoner. Det bør være et sted å laste ned eller kopiere sertifikatnummeret fra identitetsleverandøren. Bare lim inn sertifikathashen i tekstfeltfeltet."
@@ -7920,6 +7979,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andre brukere i organisasjonen din vil se de travle tidslukene dine. Ingen hendelsesdetaljer deles."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Utdatert gjenopprettingsfil; oppdater for å sikre tilgang til dine data."
@@ -8767,9 +8829,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifisering vil åpne en ny fane, vennligst deaktiver eventuell blokkering av sprett-opp-vinduer. Du vil ikke bli belastet. Alle beløp som benyttes for å bekrefte kortet vil bli tilbakebetalt umiddelbart."
-      ],
-      "Verify ${ type }": [
-        "Verifiser ${ type }"
       ],
       "Verify domain": [
         "Verifiser domene"
@@ -9803,6 +9862,9 @@
       "And": [
         "Og"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "NOEN"
       ],
@@ -9847,6 +9909,9 @@
       ],
       "Awarded": [
         "Belønnet"
+      ],
+      "Backup password": [
+        "Reservepassord"
       ],
       "Beta": [
         "Testversjon"
@@ -9919,6 +9984,9 @@
       ],
       "Colors": [
         "Farger"
+      ],
+      "Company name": [
+        "Foretaksnavn"
       ],
       "Composer": [
         "Skrivevindu"
@@ -10183,6 +10251,9 @@
       ],
       "I understand the risk": [
         "Jeg forstår risikoen"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "HVIS"
@@ -10466,6 +10537,9 @@
       "Remove image metadata": [
         "Fjern bildemetadata"
       ],
+      "Repeat backup password": [
+        "Gjenta reservepassord"
+      ],
       "Repeat password": [
         "Gjenta passord"
       ],
@@ -10480,6 +10554,9 @@
       ],
       "Reveal password": [
         "Avslør passord"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search": [
         "Søk"
@@ -10582,6 +10659,9 @@
       ],
       "Then": [
         "Deretter"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time format": [
         "Tidsformat"
@@ -11122,6 +11202,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Legg til ${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "Alle ${ BRAND_NAME } for Business-apper og premiumfunksjoner for å beskytte hele virksomheten din"
+      ],
       "An encrypted email service that puts your privacy first": [
         "En kryptert e-posttjeneste som setter personvernet ditt først"
       ],
@@ -11302,6 +11385,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt brukernavnet for ${ BRAND_NAME }-kontoen? Finn den ved hjelp av gjenopprettings-e-postadressen eller telefonnummeret ditt, og få tilgang til ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer."
+      ],
+      "Private and secure email, no bank card required": [
+        "Privat og sikker e-post, ingen bankkort kreves"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Tilbakestill ditt ${ BRAND_NAME }-kontopassord"
@@ -12027,6 +12113,9 @@
       "Tailored to your needs": [
         "Skreddersydd til dine behov"
       ],
+      "TOR over VPN": [
+        "TOR over VPN"
+      ],
       "Two-factor authentication": [
         "Tofaktorautentisering"
       ],
@@ -12382,6 +12471,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
       ],
@@ -12433,6 +12525,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighet for å se innbokser for ikke-private brukere på samme måte som brukeren, inkludert fullstendige meldings- og kontaktdetaljer."
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisasjonsadministrasjonsverktøy som lar administratorer legge til og fjerne brukere, administrere tilgangen deres til ${ BRAND_NAME }-tjenester og utføre andre oppgaver."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robuste infrastruktur sikrer at du får tilgang til kontoen din når du trenger den"
       ],
@@ -12474,6 +12569,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Rute internettrafikken din gjennom TOR-nettverket med et enkelt klikk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
@@ -12767,6 +12865,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen skal fungere, må du velge alle forespurte elementer som vist i GIF-en."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Velg hva ${ BRAND_NAME } kan få tilgang til: se e-postmeldinger og innstillinger, se og last ned kontaktene dine, se og last ned alle agendaer du får tilgang til fra Google Calendar."
       ]
     },
     "Onboarding": {
@@ -13638,6 +13741,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Bruk en datagjenopprettingsmetode, kontakt en annen administrator, eller tilbakestill organisasjonsnøkkelen for å gjenopprette administratorrettigheter."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Vi kunne ikke bekrefte ektheten til denne identiteten."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kan ikke bekrefte sikkerheten til denne avsenderens adressenøkkel. Noen ganger er det en forsinkelse i oppdateringen av avsenderens informasjon. Prøv igjen senere. Hvis du ikke stoler på gyldigheten av denne invitasjonen eller avsenderen, kan du kontakte kundestøtte for ${ BRAND_NAME }."
       ],
@@ -13658,11 +13764,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverføring"
+      ],
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bruk firmanavn"
+      ],
+      "Use personal name": [
+        "Bruk personlig navn"
       ]
     },
     "Payments": {
@@ -13754,6 +13871,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Vennligst forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved å bekrefte denne betalingen autoriserer du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, til å instruere banken din om å debitere kontoen din, og banken din til å debitere kontoen din tilsvarende. Du kan få refusjon innen 8 uker fra belastningsdatoen, i henhold til vilkårene i avtalen din med banken."
+      ],
+      "Street address, postal code, and city": [
+        "Gateadresse, postnummer og by"
       ]
     },
     "Permission": {
@@ -14115,6 +14240,9 @@
       "Changing organization password": [
         "Endring av organisasjonspassord"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Opprette eller få tilgang til ikke-private brukerkontoer"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "På grunn av en endring av passord har administratorrettighetene til organisasjonen blitt begrenset. Følgende handlinger er ikke lenger tillatt:"
       ]
@@ -14326,6 +14454,9 @@
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Kontoen din og dataene dine kan gjenopprettes. Sjekk om du fortsatt har tilgang til gjenopprettingsmetodene dine."
       ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Kontoen din og dataene dine kan gjenopprettes. Du har anbefalt tiltak for å beskytte kontoen din ytterligere."
+      ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Kontoen din og dataene dine kan gjenopprettes. Du har anbefalte handlinger."
       ],
@@ -14337,6 +14468,9 @@
       ],
       "Your recovery email": [
         "Gjenopprettings-e-posten din"
+      ],
+      "Your recovery email address is:": [
+        "Din gjenopprettings-e-postadresse er:"
       ],
       "Your recovery email and phone can **only recover access to your account**.": [
         "Gjenopprettings-e-posten og telefonen kan **bare gjenopprette tilgangen til kontoen din**."
@@ -14370,6 +14504,9 @@
       ],
       "Your recovery phone is set": [
         "Gjenopprettingstelefonen er angitt"
+      ],
+      "Your recovery phone number is:": [
+        "Telefonnummeret ditt for gjenoppretting er:"
       ]
     },
     "saml: Action": {
@@ -14378,6 +14515,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Påloggingen ble ikke fullført."
+      ],
       "Something went wrong": [
         "Noe gikk galt"
       ]
@@ -14438,6 +14578,12 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Forutsetning:** SAML-autentisering må konfigureres for å aktivere SCIM-klargjøring."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Forutsetning:** for å aktivere SCIM-klargjøring, må du bekrefte eierskapet til domenet **${ domainName }**. Denne verifiseringen kan ta opptil én time."
+      ],
+      "Enter the token into your identity provider": [
+        "Skriv inn tokenet i identitetsleverandøren din"
       ],
       "Enter URL and token into your identity provider": [
         "Skriv inn nettadresse og token i identitetsleverandøren din"
@@ -14779,6 +14925,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Vi vil kontakte deg når tilbakestilling av passord er tilgjengelig igjen."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Du kan når som helst sjekke statusen til forespørselen din ${ accountAndPasswordSectionLink } i innstillingene."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "i seksjonen konto og passord"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15263,6 +15417,9 @@
       "Backup password": [
         "Reservepassord"
       ],
+      "Cancel": [
+        "Avbryt"
+      ],
       "Change backup password": [
         "Endre reservepassordet"
       ],
@@ -15421,6 +15578,29 @@
       ],
       "Yes, it was me": [
         "Ja, det var meg"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Pending activation": [
+        "Avventer aktivering"
+      ],
+      "Pending admin activation": [
+        "Avventer administratoraktivering"
+      ],
+      "Rejected": [
+        "Avvist"
+      ],
+      "Signed out": [
+        "Logget av"
+      ],
+      "Unknown": [
+        "Ukjent"
       ]
     },
     "State": {
@@ -15667,6 +15847,9 @@
     "Subscription change warning": {
       "Got it": [
         "Forstått"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Bare logg på din Apple App Store-konto, deretter velg ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Bare logg på din Play Store-konto, deretter klikk ${ subscriptions }."
@@ -16124,6 +16307,12 @@
       "Default calendar updated": [
         "Standardkalender oppdatert"
       ],
+      "Device deleted": [
+        "Enhet slettet"
+      ],
+      "Device rejected": [
+        "Enhet avslått"
+      ],
       "Display name updated": [
         "Visningsnavn oppdatert"
       ],
@@ -16270,6 +16459,12 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Du vil motta brukernavnet ditt via e-post innen et minutt hvis du har oppgitt en gyldig e-postadresse for gjenoppretting."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Du vil motta brukernavnet ditt via SMS innen et minutt hvis du har oppgitt et gyldig telefonnummer for gjenoppretting."
       ]
     },
     "Success message": {
@@ -17901,6 +18096,9 @@
       "Set the default layout for your Inbox.": [
         "Angi standardstil for innboksen din."
       ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Angir den følgende bunnteksten i e-poster du sender ut: ${ signature } Koblingen peker til din vervekobling. Bunnteksten vises under signaturen din. Du kan tilpasse signaturen din når som helst i innstillinger."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Vis bildet av hver avsender i meldingslisten. Avsenderens initialer vises hvis et bilde ikke er tilgjengelig."
       ],
@@ -18016,6 +18214,9 @@
       ],
       "User declined invitation": [
         "Brukeren avslo invitasjonen"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Venter på at brukeren godtar invitasjonen"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -18057,6 +18258,9 @@
     "Tor out of date": {
       "stable release": [
         "stabil utgivelse"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denne versjonen av TOR-nettleser støttes ikke. Oppdater til seneste ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18437,6 +18641,11 @@
         "Planen du har valgt ${ selected }"
       ]
     },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
+      ]
+    },
     "VPNClient": {
       "Android": [
         "Android"
@@ -18637,6 +18846,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "Gjenopprettingsfilen din er utdatert. Den kan ikke gjenopprette nye data hvis du tilbakestiller passordet ditt på nytt."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "Gjenopprettingsfrasen din er utdatert. Den kan ikke gjenopprette nye data hvis du tilbakestiller passordet ditt på nytt."
       ]
     },
     "Warning for domain modal": {

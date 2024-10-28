@@ -70,11 +70,11 @@
       "Accept": [
         "Akceptuj"
       ],
-      "activate": [
-        "aktywować"
-      ],
       "Activate": [
         "Aktywuj"
+      ],
+      "activate": [
+        "aktywować"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
@@ -6844,9 +6844,6 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"${ MAIL_APP_NAME } me\" lub \"Private Message me.\""
       ],
-      "Add a recovery ${ type }": [
-        "Dodaj odzyskiwanie przez ${ type }"
-      ],
       "Add a recovery email address": [
         "Dodaj adres pomocniczy"
       ],
@@ -7275,9 +7272,6 @@
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy"
-      ],
-      "Disable recovery by ${ type }": [
-        "Wyłącz odzyskiwanie przez ${ type }"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Wyłączono w dniu: ${ formattedDateAndTime }"
@@ -8877,9 +8871,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien. Twoje konto nie zostanie obciążone, kwota pobrana w celu zweryfikowania karty płatniczej, zostanie od razu zwrócona."
-      ],
-      "Verify ${ type }": [
-        "Zweryfikuj ${ type }"
       ],
       "Verify domain": [
         "Zweryfikuj domenę"

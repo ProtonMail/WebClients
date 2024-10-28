@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -6071,9 +6071,6 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
-      "Add a recovery ${ type }": [
-        "Adicionar ${ type } de recuperação"
-      ],
       "Add a recovery email address": [
         "Adicionar um e-mail de recuperação"
       ],
@@ -6423,9 +6420,6 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "A apagar ${ deletedServerCount } servidor gateway",
         "A apagar ${ deletedServerCount } servidores gateway"
-      ],
-      "Disable recovery by ${ type }": [
-        "Desativar recuperação por ${ type }"
       ],
       "Discount": [
         "Desconto"
@@ -7801,9 +7795,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "A verificação abrirá um novo separador, pelo que deve desativar os bloqueadores de pop-ups. Não lhe será cobrado nada. Qualquer montante utilizado para verificar o cartão será reembolsado imediatamente."
-      ],
-      "Verify ${ type }": [
-        "Verificar ${ type }"
       ],
       "Verify domain": [
         "Verificar o domínio"
