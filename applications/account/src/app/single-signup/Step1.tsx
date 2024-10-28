@@ -15,7 +15,6 @@ import {
     StyledPayPalButton,
     Toggle,
     VpnLogo,
-    getBlackFridayRenewalNoticeText,
     getCheckoutRenewNoticeText,
     isBlackFridayPeriod as getIsBlackFridayPeriod,
     isCyberWeekPeriod as getIsCyberWeekPeriod,
@@ -986,22 +985,14 @@ const Step1 = ({
         <div className="w-full text-sm color-norm opacity-70 text-center">
             <div className="mx-auto w-full md:w-7/10">
                 *
-                {getHas2024OfferCoupon(options.checkResult.Coupon?.Code)
-                    ? getBlackFridayRenewalNoticeText({
-                          price: options.checkResult.Amount + (options.checkResult.CouponDiscount || 0),
-                          cycle: options.cycle,
-                          plansMap: model.plansMap,
-                          planIDs: options.planIDs,
-                          currency: options.currency,
-                      })
-                    : getCheckoutRenewNoticeText({
-                          coupon: options.checkResult.Coupon,
-                          cycle: options.cycle,
-                          plansMap: model.plansMap,
-                          planIDs: options.planIDs,
-                          checkout: actualCheckout,
-                          currency: options.currency,
-                      })}
+                {getCheckoutRenewNoticeText({
+                    coupon: options.checkResult.Coupon,
+                    cycle: options.cycle,
+                    plansMap: model.plansMap,
+                    planIDs: options.planIDs,
+                    checkout: actualCheckout,
+                    currency: options.currency,
+                })}
             </div>
         </div>
     );
