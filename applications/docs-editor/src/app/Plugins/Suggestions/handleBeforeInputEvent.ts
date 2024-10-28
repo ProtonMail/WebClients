@@ -307,6 +307,19 @@ function $handleInsertParagraph(
   return true
 }
 
+function $canTextDataBeInsertedDirectlyIntoSuggestion(suggestion: ProtonNode | null): boolean {
+  if (!suggestion) {
+    return false
+  }
+
+  const type = suggestion.getSuggestionTypeOrThrow()
+  if (type === 'insert' || type === 'delete') {
+    return true
+  }
+
+  return false
+}
+
 function $handleInsertTextData(
   data: string,
   selection: RangeSelection,
@@ -323,9 +336,10 @@ function $handleInsertTextData(
   textNode.setFormat(selection.format)
   textNode.setStyle(selection.style)
 
-  const isInsideExistingNonInsertSuggestion =
-    existingParentSuggestion && existingParentSuggestion.getSuggestionTypeOrThrow() !== 'insert'
-  if (isInsideExistingNonInsertSuggestion) {
+  const canInsertTextDataDirectly = $canTextDataBeInsertedDirectlyIntoSuggestion(existingParentSuggestion)
+
+  const shouldSplitExistingSuggestionBeforeInserting = existingParentSuggestion && !canInsertTextDataDirectly
+  if (shouldSplitExistingSuggestionBeforeInserting) {
     logger?.info('Will split existing non-insert suggestion and insert new insert suggestion')
     const focus = selection.focus
     let node = focus.getNode()
@@ -374,7 +388,7 @@ function $handleInsertTextData(
     return true
   }
 
-  if (isInsideExistingInsertSuggestion) {
+  if (existingParentSuggestion && canInsertTextDataDirectly) {
     logger?.info('Will just insert text as already inside insert suggestion')
     if (isFocusNodeText) {
       const latestFocusOffset = selection.focus.offset
