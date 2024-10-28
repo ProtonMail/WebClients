@@ -2,7 +2,7 @@
 @import '~@proton/styles/scss/lib';
 
 .transfers-manager {
-	width: 100%;
+	inline-size: 100%;
 	position: relative;
 	z-index: map.get($z-indexes, 'transfer-manager');
 	box-shadow: var(--shadow-lifted);
@@ -20,8 +20,6 @@
 	}
 
 	@include media('>small') {
-		inline-size: 60%;
-		max-inline-size: 50em;
 		margin-inline-end: inherit;
 
 		// Make rounded border for both manager and header to not include
