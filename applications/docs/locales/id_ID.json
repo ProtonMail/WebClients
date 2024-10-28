@@ -183,6 +183,9 @@
       "Copy link": [
         "Salin tautan"
       ],
+      "Create a copy": [
+        "Buat salinan"
+      ],
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
@@ -2071,6 +2074,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Untuk memastikan keamanan yang setinggi mungkin pada akun Anda, tentukanlah frasa pemulihan."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Untuk mengimpor melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ini, silakan pisahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
@@ -2525,6 +2531,9 @@
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
       ],
+      "Invalid IBAN": [
+        "IBAN tidak valid"
+      ],
       "Invalid name": [
         "Nama tidak valid"
       ],
@@ -2663,6 +2672,9 @@
       "The address might be misspelled": [
         "Alamat mungkin salah ketik"
       ],
+      "The amount due has changed. Please try again.": [
+        "Biaya yang tertagih telah berubah. Silakan coba lagi."
+      ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Dokumen yang Anda coba konversi terlalu besar. Hal ini dapat terjadi apabila dokumen yang bersangkutan mengandung gambar atatu media lainnya dalam jumlah yang besar. Silakan coba lagi dengan dokumen yang berbeda."
       ],
@@ -2773,6 +2785,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Anda telah mencapai batas jumlah kalender maksimum."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Anda telah mencapai batas jumlah kontak untuk akun Anda"
       ],
       "You must set a name": [
         "Anda harus mengatur nama"
@@ -3095,6 +3110,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Akun Lifetime tidak dapat bergabung dalam paket grup."
       ],
+      "Manage addresses": [
+        "Kelola alamat"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Pemilik paket dengan anggota tidak dapat bergabung ke paket keluarga lain."
       ],
@@ -3112,6 +3130,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Anda hanya dapat menerima 3 undangan dalam periode 6 bulan. Silakan hubungi ${ supportLink } jika Anda membutuhkan pengecualian."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Anda telah diundang untuk bergabung ke ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3629,6 +3650,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/bulan)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
@@ -3968,6 +3992,9 @@
       "High Priority": [
         "Prioritas Tinggi"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
@@ -4085,6 +4112,9 @@
       "Low Priority": [
         "Prioritas Rendah"
       ],
+      "Making a copy...": [
+        "Membuat salinan..."
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4168,6 +4198,9 @@
       ],
       "Organization size": [
         "Ukuran organisasi"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
       "Owner": [
         "Pemilik"
@@ -4771,6 +4804,9 @@
       "Address": [
         "Alamat"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Anyone on the Internet with the link can view": [
         "Siapa pun di Internet yang memiliki tautan ini akan dapat melihat"
       ],
@@ -4851,6 +4887,9 @@
       ],
       "Colors": [
         "Warna"
+      ],
+      "Company name": [
+        "Nama perusahaan"
       ],
       "Confirm password": [
         "Konfirmasi kata sandi"
@@ -4956,6 +4995,9 @@
       ],
       "I understand the risk": [
         "Saya paham akan risikonya"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Ignore": [
         "Abaikan"
@@ -5104,6 +5146,9 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Security code (${ codeName })": [
         "Kode keamanan (${ codeName })"
       ],
@@ -5142,6 +5187,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Title": [
         "Judul"
@@ -5484,6 +5532,9 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
+      "GZip Archive": [
+        "Arsip GZip"
+      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5504,6 +5555,9 @@
       ],
       "JavaScript": [
         "JavaScript"
+      ],
+      "JPEG image": [
+        "Gambar JPEG"
       ],
       "JSON": [
         "JSON"
@@ -5570,6 +5624,9 @@
       ],
       "Opus audio": [
         "Audio Opus"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "Python": [
         "Python"
@@ -6069,6 +6126,9 @@
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
       ],
+      "TOR over VPN": [
+        "TOR via VPN"
+      ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
       ],
@@ -6380,6 +6440,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Sarana manajemen organisasi yang memungkinkan para admin untuk menambahkan dan menghapus pengguna, mengelola akses mereka ke layanan ${ BRAND_NAME }, dan mengerjakan berbagai hal lainnya."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Infrastruktur kami yang perkasa memastikan bahwa Anda akan selalu dapat mengakses akun Anda pada saat Anda membutuhkannya"
       ],
@@ -6421,6 +6484,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Alihkan lalu lintas internet Anda melalui jaringan TOR dengan satu kali klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
@@ -6699,6 +6765,9 @@
       "Share invitation declined": [
         "Undangan untuk berbagi ditolak"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Pembagian item gagal dihentikan"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Tautan ke \"${ name }\" gagal dihapus"
       ],
@@ -6737,6 +6806,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Agar proses impor dapat berlangsung, Anda harus memilih seluruh item yang diminta sebagaimana yang ditampilkan dalam GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Tentukan apa-apa saja yang dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, melihat dan mengunduh seluruh agenda yang Anda akses dari Google Calender."
       ]
     },
     "Option": {
@@ -6826,11 +6900,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transfer bank"
+      ],
       "Credit/debit card": [
         "Kartu kredit/debit"
       ],
       "New credit/debit card": [
         "Kartu kredit/debit baru"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Gunakan nama perusahaan"
+      ],
+      "Use personal name": [
+        "Gunakan nama pribadi"
       ]
     },
     "Payments": {
@@ -6910,6 +6995,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda untuk mendebit akun Anda, serta bank Anda untuk mendebit akun Anda. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
+      ],
+      "Street address, postal code, and city": [
+        "Alamat, kode pos, dan kota"
       ]
     },
     "PGP key encryption warning": {
@@ -7143,6 +7236,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Digunakan pada Amazon untuk berbegai keperluan (mis. untuk berjualan)"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Pada saat Anda diminta untuk memberikan alamat email, gunakan alias ini sebagai gantinya. Seluruh alias disediakan oleh ${ passLink }."
@@ -7732,6 +7828,9 @@
     "Subscription change warning": {
       "Got it": [
         "Mengerti"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Cukup masuk ke akun Apple App Store Anda, lalu pilih ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Anda hanya perlu untuk masuk ke akun Play Store Anda dan mengetuk ${ subscriptions }."
@@ -8580,6 +8679,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP yang akan digunakan untuk menandatangani atau mengenkripsi pesan kepada pengguna. Mohon diperhatikan bahwa PGP/Inline mewajibkan penggunaan pesan teks polos"
       ],
+      "Shared with end-to-end encryption": [
+        "Dibagikan dengan enkripsi end-to-end"
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
       ],
@@ -8662,6 +8764,11 @@
       ],
       "No ads": [
         "Tanpa iklan"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
       ]
     },
     "wallet_signup_2024: Info": {

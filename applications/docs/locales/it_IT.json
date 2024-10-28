@@ -184,6 +184,9 @@
       "Copy link": [
         "Copia link"
       ],
+      "Create a copy": [
+        "Crea una copia"
+      ],
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
@@ -2084,6 +2087,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per garantire la massima sicurezza possibile per il tuo account, imposta una frase di recupero."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per importare i tuoi contatti da Google o Outlook, ${ easySwitchLink }."
       ],
@@ -2540,6 +2546,9 @@
       "Invalid expiration date": [
         "Data di scadenza non valida"
       ],
+      "Invalid IBAN": [
+        "IBAN non valido"
+      ],
       "Invalid name": [
         "Nome non valido"
       ],
@@ -2683,6 +2692,9 @@
       "The address might be misspelled": [
         "L'indirizzo potrebbe esser errato"
       ],
+      "The amount due has changed. Please try again.": [
+        "L'importo dovuto è cambiato. Per favore riprova."
+      ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Il documento che stai provando a convertire è troppo grande. Questo può verificarsi quando il documento contiene un numero elevato di immagini o di altri elementi multimediali. Riprova con un documento più piccolo."
       ],
@@ -2794,6 +2806,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Hai raggiunto il numero massimo di calendari."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Hai raggiunto il numero limite di contatti per il tuo account"
       ],
       "You must set a name": [
         "È necessario impostare un nome"
@@ -3117,6 +3132,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Gli account a vita non possono essere associati a un piano famiglia."
       ],
+      "Manage addresses": [
+        "Gestisci gli indirizzi"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "I titolari di un piano con membri non possono aderire a un altro piano famiglia."
       ],
@@ -3134,6 +3152,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Puoi accettare solo 3 inviti nell'arco di 6 mesi. Se ti serve un'eccezione, contatta ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Non puoi accettare questo invito con il tuo piano attuale."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Hai ricevuto un invito a ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3681,6 +3702,9 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membri)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mese)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } memoria bonus"
       ],
@@ -4026,6 +4050,9 @@
       "High Priority": [
         "Priorità alta"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
       ],
@@ -4144,6 +4171,9 @@
       "Low Priority": [
         "Priorità bassa"
       ],
+      "Making a copy...": [
+        "Creazione di una copia..."
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4229,6 +4259,9 @@
       ],
       "Organization size": [
         "Dimensione dell'organizzazione"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "I nostri avvisi danno priorità alla sicurezza. Se non riconosci nessuna delle informazioni violate, puoi tranquillamente ignorare questa segnalazione."
       ],
       "Owner": [
         "Proprietario"
@@ -4842,6 +4875,9 @@
       "Address": [
         "Indirizzo"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Anyone on the Internet with the link can view": [
         "Chiunque su Internet con questo link può visualizzare"
       ],
@@ -4922,6 +4958,9 @@
       ],
       "Colors": [
         "Colori"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
       ],
       "Confirm password": [
         "Conferma la password"
@@ -5027,6 +5066,9 @@
       ],
       "I understand the risk": [
         "Comprendo i rischi"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Ignore": [
         "Ignora"
@@ -5175,6 +5217,9 @@
       "Reveal password": [
         "Mostra la password"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Security code (${ codeName })": [
         "Codice di sicurezza (${ codeName })"
       ],
@@ -5213,6 +5258,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Title": [
         "Titolo"
@@ -5551,6 +5599,9 @@
       "Graphics Interchange Format (GIF)": [
         "File GIF"
       ],
+      "GZip Archive": [
+        "Archivio Gzip"
+      ],
       "HyperText Markup Language (HTML)": [
         "File HTML"
       ],
@@ -5571,6 +5622,9 @@
       ],
       "JavaScript": [
         "JavaScript"
+      ],
+      "JPEG image": [
+        "Immagine JPEG"
       ],
       "JSON": [
         "JSON"
@@ -5637,6 +5691,9 @@
       ],
       "Opus audio": [
         "File Opus"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "Python": [
         "Python"
@@ -6155,6 +6212,9 @@
       "Sync and backup all your files across devices": [
         "Sincronizza ed effettua il backup dei file su tutti i tuoi dispositivi"
       ],
+      "TOR over VPN": [
+        "TOR su VPN"
+      ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
       ],
@@ -6424,6 +6484,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server"
       ],
@@ -6475,6 +6538,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Strumento di gestione dell'organizzazione che consente agli amministratori di aggiungere e rimuovere utenti, gestire il loro accesso ai servizi ${ BRAND_NAME } ed eseguire altre attività."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra solida infrastruttura ti assicura che sarai in grado di accedere al tuo account quando ne hai bisogno"
       ],
@@ -6516,6 +6582,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Reimposta le password degli utenti e l'autenticazione a due fattori sugli utenti"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Indirizza il tuo traffico internet tramite la rete TOR con un singolo click."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
@@ -6807,6 +6876,9 @@
       "Share invitation declined": [
         "Invito alla condivisione rifiutato"
       ],
+      "Stopping the sharing of this item has failed": [
+        "L'interruzione della condivisione di questo elemento non è riuscita"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Eliminazione del link a \"${ name }\" non riuscita"
       ],
@@ -6845,6 +6917,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Affinché l'importazione funzioni, devi selezionare tutti gli elementi richiesti come mostrato nella GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Seleziona ciò a cui ${ BRAND_NAME } può accedere: visualizzare i tuoi messaggi email e le impostazioni, vedere e scaricare i tuoi contatti, vedere e scaricare tutte le agende a cui accedi da Google Calendar."
       ]
     },
     "Option": {
@@ -6937,11 +7014,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bonifico"
+      ],
       "Credit/debit card": [
         "Carta di credito/debito"
       ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilizza il nome dell'azienda"
+      ],
+      "Use personal name": [
+        "Usa il nome personale"
       ]
     },
     "Payments": {
@@ -7021,6 +7109,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confermando questo pagamento, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a istruire la tua banca ad addebitare il tuo conto e la tua banca ad addebitare il tuo conto di conseguenza. Puoi ottenere un rimborso entro 8 settimane dalla data di addebito, secondo le condizioni dell'accordo con la tua banca."
+      ],
+      "Street address, postal code, and city": [
+        "Indirizzo, codice postale e città"
       ]
     },
     "PGP key encryption warning": {
@@ -7259,6 +7355,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prova ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Utilizzato su Amazon per acquisti, ecc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quando ti viene chiesto il tuo indirizzo email, dagli invece questo alias. Gli alias sono forniti da ${ passLink }."
@@ -7871,6 +7970,9 @@
     "Subscription change warning": {
       "Got it": [
         "Ho capito"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Accedi al tuo account Apple nell'App Store e seleziona ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Accedi al tuo account Play Store e clicca ${ subscriptions }."
@@ -8735,6 +8837,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo semplice"
       ],
+      "Shared with end-to-end encryption": [
+        "Condiviso con crittografia end-to-end"
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
       ],
@@ -8825,6 +8930,11 @@
       ],
       "No ads": [
         "Nessuna pubblicità"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
       ]
     },
     "wallet_signup_2024: Info": {
