@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -6608,9 +6608,6 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me e-mailadresse til din konto. Dette simple, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
       ],
-      "Add a recovery ${ type }": [
-        "Tilføj en gendannelse ${ type }"
-      ],
       "Add a recovery email address": [
         "Tilføj en e-mailadresse til gendannelse"
       ],
@@ -7011,9 +7008,6 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } gateway-server",
         "Sletter ${ deletedServerCount } gateway-servere"
-      ],
-      "Disable recovery by ${ type }": [
-        "Deaktiver gendannelse ved ${ type }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Hvis du deaktiverer totrins-godkendelse, bliver din konto mindre sikker. Gør kun dette med det største forbehold."
@@ -8557,9 +8551,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor pop-up blockere. Du vil ikke blive debiteret. Ethvert beløb anvendt til bekræftelse af kortet refunderes straks."
-      ],
-      "Verify ${ type }": [
-        "Bekræft ${ type }"
       ],
       "Verify domain": [
         "Bekræft domæne"

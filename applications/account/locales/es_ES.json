@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -123,6 +123,9 @@
       ],
       "Add label": [
         "Añadir una etiqueta"
+      ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Agregar más asientos para ${ BRAND_NAME } Scribe"
       ],
       "Add notification": [
         "Añadir notificación"
@@ -1633,7 +1636,7 @@
         "Funciones exclusivas y acceso anticipado"
       ],
       "Help us fight for online privacy": [
-        "Ayúdanos a defender la privacidad en línea"
+        "Ayúdanos a defender la privacidad online"
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Versiones premium de todos los servicios de ${ BRAND_NAME }"
@@ -3468,6 +3471,9 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Obtén hasta ${ credits } créditos por invitar amigos a ${ BRAND_NAME }."
       ],
+      "If disabled, only admins will have access.": [
+        "En caso de desactivación, solo los administradores tendrán acceso."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
       ],
@@ -4673,6 +4679,9 @@
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita."
+      ],
+      "The amount due has changed. Please try again.": [
+        "El importe a pagar ha cambiado. Por favor, inténtalo de nuevo."
       ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"
@@ -6791,9 +6800,6 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añade una dirección de correo electrónico @pm.me a tu cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME } me\" o \"Mensaje privado\"."
       ],
-      "Add a recovery ${ type }": [
-        "Añadir una recuperación ${ type }"
-      ],
       "Add a recovery email address": [
         "Añadir una dirección de correo de recuperación"
       ],
@@ -7210,8 +7216,11 @@
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
         "Eliminando ${ deletedServerCount } servidores de puerta de enlace"
       ],
-      "Disable recovery by ${ type }": [
-        "Desactivar la recuperación por ${ type }"
+      "Disable recovery by email address": [
+        "Desactivar la recuperación por dirección de correo electrónico"
+      ],
+      "Disable recovery by phone number": [
+        "Desactivar la recuperación por número de teléfono"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Desactivado el ${ formattedDateAndTime }"
@@ -8833,11 +8842,14 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificación abrirá una nueva pestaña, desactiva cualquier bloqueador de ventanas emergentes. No se te cobrará este proceso. Cualquier monto utilizado para verificar la tarjeta te será reembolsado inmediatamente."
       ],
-      "Verify ${ type }": [
-        "Verificar ${ type }"
-      ],
       "Verify domain": [
         "Verificar el dominio"
+      ],
+      "Verify email address": [
+        "Verificar la dirección de correo electrónico"
+      ],
+      "Verify phone number": [
+        "Verificar el número de teléfono"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifica tu identidad con una clave de uso único de duración definida desde la aplicación de autenticación."
@@ -10544,7 +10556,7 @@
         "Eliminar los metadatos de la imagen"
       ],
       "Repeat backup password": [
-        "Repite a contraseña de respaldo"
+        "Repite la contraseña de respaldo"
       ],
       "Repeat password": [
         "Repetir contraseña"
@@ -11066,7 +11078,7 @@
         "Iniciar sesión"
       ],
       "stay safer online": [
-        "mantener tu seguridad en línea"
+        "mantén tu seguridad online"
       ],
       "switch account": [
         "cambiar de cuenta"
@@ -12001,7 +12013,7 @@
         "Política de cero registros"
       ],
       "Online document editor": [
-        "Editor de documentos en línea"
+        "Editor de documentos online"
       ],
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
@@ -12465,7 +12477,7 @@
         "Elige horarios personalizados para recibir recordatorios de un correo o para que llegue tu mensaje."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
+        "Crea varias direcciones de correo electrónico para tus identidades online, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
@@ -12527,6 +12539,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Herramienta de gestión de la organización que permite a los administradores agregar y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrás acceder a tu cuenta cuando lo necesites."
@@ -13484,7 +13499,7 @@
         "Es la única forma de restaurar tu cuenta, por lo que tomes las medidas necesarias para mantenerlo a salvo."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Únete a más de 100 millones de personas que han elegido ${ BRAND_NAME } para tu seguridad en línea"
+        "Únete a más de 100 millones de personas que han elegido ${ BRAND_NAME } para tu seguridad online"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Iniciando ${ PASS_APP_NAME }"
@@ -13758,7 +13773,7 @@
         "Usar el nombre de la empresa"
       ],
       "Use personal name": [
-        "Usar un nombre personal"
+        "Usar el nombre de la persona"
       ]
     },
     "Payments": {
@@ -13853,6 +13868,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autorizas a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a tu banco para que realice el cargo en tu cuenta, y a tu banco para que realice el cargo correspondiente en tu cuenta. Puedes obtener un reembolso en un plazo de 8 semanas a partir de la fecha del cargo, según las condiciones de tu acuerdo con tu banco."
+      ],
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
       ]
@@ -14586,7 +14604,7 @@
         "Una vez que SCIM esté desactivado para tu organización, **todos los usuarios SCIM proporcionados automáticamente por tu proveedor de identidad serán convertidos a usuarios SSO** y podrás gestionarlos directamente en los ajustes de ${ BRAND_NAME }."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
-        "Simplifica la administración de usuarios a través de diferentes servicios. Añade, edita y elimina usuarios en tu proveedor de identidad, y los cambios serán aplicados automáticamente en tu organización ${ appName }."
+        "Simplifica la administración de usuarios a través de diferentes servicios. Añade, edita y elimina usuarios en tu proveedor de identidad, y los cambios serán aplicados automáticamente en la organización ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "El aprovisionamiento automático SCIM será desactivado hasta que ingrese el nuevo token SCIM en la configuración de tu proveedor de identidad."
@@ -15226,7 +15244,7 @@
         "Transmisiones seguras"
       ],
       "Support online privacy": [
-        "Apoya la privacidad en línea"
+        "Apoya la privacidad online"
       ]
     },
     "specialoffer: Footer": {
@@ -16677,6 +16695,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
@@ -17177,6 +17198,9 @@
       ],
       "Email subscriptions": [
         "Boletines electrónicos"
+      ],
+      "Enable for all users": [
+        "Activar para todos los usuarios"
       ],
       "Encryption and keys": [
         "Cifrado y claves"
@@ -18792,7 +18816,7 @@
         "Esto eliminará todos los mensajes, carpetas y etiquetas creados durante la importación."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Desafortunadamente, no estamos en línea en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
+        "Desafortunadamente, no estamos conectados en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "No se ha podido verificar el servidor de correo. Si confías en él, puedes omitir esta verificación."
