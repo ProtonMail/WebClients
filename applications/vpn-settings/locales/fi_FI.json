@@ -85,6 +85,9 @@
       "Back": [
         "Takaisin"
       ],
+      "Back to sign-in": [
+        "Palaa kirjautumiseen"
+      ],
       "Block": [
         "Estä"
       ],
@@ -189,6 +192,9 @@
       ],
       "Delete your account": [
         "Poista tilisi"
+      ],
+      "Deny access": [
+        "Kiellä käyttöoikeus"
       ],
       "Details": [
         "Lisätiedot"
@@ -702,6 +708,9 @@
       ],
       "Verify domain": [
         "Vahvista verkkotunnus"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Vahvista verkkotunnus ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Tarkastele"
@@ -2514,6 +2523,9 @@
       "Invalid expiration date": [
         "Virheellinen voimassaolon päättymisaika"
       ],
+      "Invalid IBAN": [
+        "Virheellinen IBAN"
+      ],
       "Invalid invitation link": [
         "Virheellinen kutsulinkki"
       ],
@@ -2586,6 +2598,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
+      "Please upload a square logo": [
+        "Lähetä neliön muotoinen logo"
+      ],
       "Please upload an xml file": [
         "Lähetä XML-tiedosto"
       ],
@@ -2609,6 +2624,9 @@
       ],
       "Tab closed": [
         "Välilehti suljettiin"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Maksettava määrä on muuttunut. Yritä uudelleen."
       ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
@@ -2761,6 +2779,9 @@
       "Got it": [
         "Selvä"
       ],
+      "Invite a user": [
+        "Kutsu käyttäjä"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Kutsu olemassa oleva ${ BRAND_NAME }-käyttäjä"
       ],
@@ -2818,6 +2839,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Elinikäiset tilit eivät voi liittyä perhetilaukseen."
       ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
+      ],
       "Manage user accounts": [
         "Hallitse käyttäjätilejä"
       ],
@@ -2851,6 +2875,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Voit hyväksyä 6 kuukauden aikana vain kolme kutsua. Ota yhteyttä ${ supportLink }, jos tarvitset poikkeusluvan."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Et voi hyväksyä tätä kutsua nykyisellä tilauksellasi."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3501,6 +3528,9 @@
         "(${ memberCount } jäsen)",
         "(${ memberCount } jäsentä)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/kuukausi)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hanki ${ BRAND_NAME }-osoite** käyttääksesi kaikkia ${ BRAND_NAME_TWO }-palveluita, kuten ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -4127,6 +4157,12 @@
       ],
       "Learn more": [
         "Lue lisää"
+      ],
+      "Learn more about Gateways": [
+        "Lue lisää yhdyskäytävistä"
+      ],
+      "Learn more about single sign-on": [
+        "Lue lisää kertakirjautumisesta"
       ],
       "Let's get started by pressing the New group button above": [
         "Aloitetaan painamalla yläpuolelta \"Uusi ryhmä\""
@@ -5235,6 +5271,9 @@
       "Amount due": [
         "Erääntyvä summa"
       ],
+      "Anderson": [
+        "Andersson"
+      ],
       "Assertion Consumer Service URL": [
         "Valtuutuksen käyttäjäpalvelun (Assertion Consumer Service, ACS) URL"
       ],
@@ -5243,6 +5282,9 @@
       ],
       "Authenticator app": [
         "Todennussovellus"
+      ],
+      "Backup password": [
+        "Varasalasana"
       ],
       "Billing address": [
         "Laskutusosoite"
@@ -5294,6 +5336,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Koodi sisältää 6 numeroa ilman välilyöntejä"
+      ],
+      "Company name": [
+        "Yrityksen nimi"
       ],
       "Config to connect to ${ serverName }": [
         "Yhteysmääritys palvelimelle ${ serverName }"
@@ -5411,6 +5456,9 @@
       ],
       "Hide password": [
         "Piilota salasana"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Aikaväli"
@@ -5559,6 +5607,9 @@
       "Recovery phrase": [
         "Palautuslauseke"
       ],
+      "Repeat backup password": [
+        "Toista varasalasana"
+      ],
       "Reply (ACS) URL": [
         "Vastaus URL (ACS)"
       ],
@@ -5570,6 +5621,9 @@
       ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search": [
         "Haku"
@@ -5603,6 +5657,9 @@
       ],
       "System information": [
         "Järjestelmätiedot"
+      ],
+      "Thomas": [
+        "Tuomas"
       ],
       "Two-password mode": [
         "Kahden salasanan tila"
@@ -5799,6 +5856,9 @@
       ],
       "Pay invoice": [
         "Maksa lasku"
+      ],
+      "PayPal without credit card": [
+        "PayPal ilman maksukorttia"
       ],
       "perform a password reset from your active session": [
         "salasanan uudelleenasetus onnistua aktiivisen istunnon kautta"
@@ -6499,6 +6559,9 @@
       ],
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
+      ],
+      "TOR over VPN": [
+        "TOR + VPN"
       ],
       "Two-factor authentication": [
         "Kaksivaiheinen tunnistautuminen"
@@ -7466,6 +7529,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Käytä palautustapaa, ota yhteyttä toiseen ylläpitäjään tai nollaa organisaation avain ylläpitäjän oikeuksien palauttamiseksi."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Emme voineet vahvistaa tämän identiteetin aitoutta."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakaspalveluun."
       ],
@@ -7486,11 +7552,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Pankkisiirto"
+      ],
       "Credit/debit card": [
         "Maksukortti"
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Käytä yrityksen nimeä"
+      ],
+      "Use personal name": [
+        "Käytä henkilön nimeä"
       ]
     },
     "Payments": {
@@ -7582,6 +7659,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "Katuosoite, postinumero ja kaupunki"
       ]
     },
     "Permission": {
@@ -8514,11 +8596,109 @@
       "Access denied": [
         "Pääsy evätty"
       ],
+      "Approve or deny it now": [
+        "Hyväksy tai hylkää se nyt"
+      ],
+      "Approve the sign-in from another device": [
+        "Hyväksy kirjautuminen toiselta laitteelta"
+      ],
+      "Ask administrator for help": [
+        "Pyydä ylläpitäjältä apua"
+      ],
+      "Backup password": [
+        "Varasalasana"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Change backup password": [
+        "Vaihda varasalasanaa"
+      ],
+      "Confirm backup password": [
+        "Vahvista varasalasana"
+      ],
+      "Confirmation code": [
+        "Vahvistuskoodi"
+      ],
+      "Contact administrator": [
+        "Ota yhteyttä ylläpitäjään"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Ota yhteyttä ylläpitäjääsi, jos ongelma jatkuu."
+      ],
+      "Deny": [
+        "Kiellä"
+      ],
       "Deny access": [
         "Kiellä käyttöoikeus"
       ],
+      "Devices available": [
+        "Saatavilla olevat laitteet"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Syötä vahvistuskoodi, jonka lähetimme tälle käyttäjälle."
+      ],
+      "Enter your backup password": [
+        "Syötä varasalasanasi"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Turvallisuutesi takaamiseksi sinut on kirjattu ulos kaikista muista laitteistasi. Ennen pääsyä tilillesi sinun täytyy asettaa uusi varasalasana."
+      ],
+      "Grant": [
+        "Myönnä"
+      ],
       "Grant access": [
         "Myönnä käyttöoikeus"
+      ],
+      "Invalid confirmation code": [
+        "Virheellinen vahvistuskoodi"
+      ],
+      "Join ${ organizationName }": [
+        "Liity organisaatioon ${ organizationName }"
+      ],
+      "New backup password": [
+        "Uusi varasalasana"
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Kun kertakirjautuminen on poistettu käytöstä organisaatioltasi:"
+      ],
+      "Remove single sign-on": [
+        "Poista kertakirjautuminen"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Poistetaanko kertakirjautuminen organisaatioltasi?"
+      ],
+      "Set your backup password": [
+        "Määritä varasalasanasi"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Jaa vahvistuskoodi ylläpitäjäsi kanssa"
+      ],
+      "Sign in to your organization": [
+        "Kirjaudu sisään organisaatioosi"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Kirjaudu ulos ja uudelleen sisään vaihtaaksesi varasalasanasi"
+      ],
+      "Single sign-on removed": [
+        "Kertakirjautuminen poistettiin"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Identiteetinhallintasi kirjautumistiedot poistetaan."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Tämä kirjaa sinut ulos muilta laitteiltasi, ja sinun on luotava uusi varasalasana."
+      ],
+      "Use backup password instead": [
+        "Käytä varasalasanaa sen sijaan"
+      ],
+      "User details:": [
+        "Käyttäjätiedot:"
+      ]
+    },
+    "sso: auth device state": {
+      "Unknown": [
+        "Tuntematon"
       ]
     },
     "State": {
@@ -8716,6 +8896,9 @@
       "Got it": [
         "Selvä"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Kirjaudu vain Apple App Store -tilillesi ja valitse sitten ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Kirjaudu Play Store -tilillesi ja paina sitten ${ subscriptions }."
       ],
@@ -8779,6 +8962,9 @@
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } tarjoaa perusasioita enemmän, jotta voit olla tuotteliaampi ja järjestelmällisempi, hallita postilaatikkoasi ja sähköposti-identiteettiäsi, ja paljon muuta."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } auttaa sinua turvaamaan jokaisen perheenjäsenesi — ja heidän tietonsa — aina, kun he ovat verkossa."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } tarjoaa ${ planMaxSpace } tallennustilaa sähköposteillesi, liitetiedostoillesi, tapahtumillesi, salasanoillesi ja tiedostoillesi. Olet myös oikeutettu vuosittaisiin tallennustilabonuksiin."
@@ -9240,6 +9426,12 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Saat käyttäjätunnuksesi sähköpostitse minuutin kuluessa, jos syötit kelvollisen palautussähköpostiosoitteen."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Saat käyttäjätunnuksesi tekstiviestitse minuutin kuluessa, jos syötit kelvollisen palautuspuhelinnumeron."
       ]
     },
     "Success message": {
@@ -9393,6 +9585,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } -päätteet"
       ],
@@ -9428,6 +9623,9 @@
       ],
       "Action": [
         "Toiminto"
+      ],
+      "Actions": [
+        "Toiminnot"
       ],
       "Activate organization key": [
         "Aktivoi organisaation avain"
@@ -10199,6 +10397,9 @@
       ],
       "User declined invitation": [
         "Käyttäjä hylkäsi kutsun"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Odotetaan, että käyttäjä hyväksyy kutsun"
       ]
     },
     "Tooltip for news": {
@@ -10212,6 +10413,9 @@
     "Tor out of date": {
       "stable release": [
         "vakaaseen versioon"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tätä Tor-selaimen versiota ei tueta. Päivitä viimeisimpään ${ stableRelease }"
       ]
     },
     "unprivatization": {

@@ -587,7 +587,7 @@
         "Todos los servicios premium, 6 usuarios y una sola suscripción."
       ],
       "Limited-stock available!": [
-        "¡Existencia limitada disponible!"
+        "¡Disponibilidad limitada!"
       ]
     },
     "bf2024: Label": {
@@ -2782,14 +2782,35 @@
       "Approve or deny it now": [
         "Aprobar o negar ahora"
       ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Ingrese el código de confirmación que le enviamos al otro dispositivo."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Si no realizó esta solicitud, cancélela ahora."
+      ],
+      "Invalid confirmation code": [
+        "Código de confirmación inválido"
+      ],
       "No, it wasn’t me": [
         "No, no fui yo."
       ],
       "Sign-in confirmed": [
         "Inicio de sesión confirmado"
       ],
+      "Sign-in failed": [
+        "Error al iniciar sesión"
+      ],
       "Sign-in rejected": [
         "Inicio de sesión rechazado"
+      ],
+      "Sign-in rejection failure": [
+        "Error al rechazar el inicio de sesión"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Se solicitó un inicio de sesión en otro dispositivo. ¿Ha sido usted?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Se solicitó un inicio de sesión en otro dispositivo. ¿Ha sido usted? "
       ],
       "Yes, it was me": [
         "Sí, fui yo."
@@ -2804,6 +2825,9 @@
       ],
       "Pending activation": [
         "Activación pendiente"
+      ],
+      "Pending admin activation": [
+        "Activación pendiente del administrador"
       ],
       "Rejected": [
         "Rechazado"

@@ -581,6 +581,9 @@
     "bf2024: Info": {
       "All premium features. 6 users. 1 easy subscription.": [
         "Todos os recursos premium. 6 usuários. 1 assinatura fácil."
+      ],
+      "Limited-stock available!": [
+        "Estoque limitado disponível!"
       ]
     },
     "bf2024: Label": {
@@ -594,6 +597,9 @@
       ],
       "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
         "Pague uma vez e obtenha o ${ lifetimeAccessJSX } para Pass Plus. Apenas por ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Economize até ${ discountJSX } no Pass Family. Apenas ${ relativePrice }/mês."
       ]
     },
     "Browser": {
@@ -1546,6 +1552,9 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Os nossos alertas priorizam a segurança. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
+      ],
       "Owner": [
         "Proprietário"
       ],
@@ -1775,6 +1784,9 @@
       ],
       "This version will be added to the history as the newest version.": [
         "Esta versão será adicionada ao histórico como a versão mais recente."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Isso rejeitará o dispositivo **${ name }** que tentou entrar na sua conta ${ BRAND_NAME } em **${ date }**."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Para migrar dados de outro gerenciador de senhas, acesse o gerenciador de senhas, exporte seus dados e faça o envio deles para ${ PASS_APP_NAME }. Depois que seus dados forem importados, exclua o arquivo exportado."
@@ -2822,6 +2834,21 @@
       "No, it wasn’t me": [
         "Não, não fui eu"
       ],
+      "Sign-in confirmed": [
+        "Início de sessão confirmado"
+      ],
+      "Sign-in failed": [
+        "Erro ao iniciar sessão"
+      ],
+      "Sign-in rejected": [
+        "Início de sessão rejeitado"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Solicitação de início de sessão em outro dispositivo. Foi você?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Foi efetuada uma solicitação de início de sessão em outro dispositivo. Foi você? "
+      ],
       "Yes, it was me": [
         "Sim, era eu"
       ]
@@ -2835,6 +2862,9 @@
       ],
       "Pending activation": [
         "Ativação pendente"
+      ],
+      "Pending admin activation": [
+        "Ativação pendente de administrador"
       ],
       "Rejected": [
         "Rejeitado"
@@ -3032,6 +3062,9 @@
       ],
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
+      ],
+      "Permanently remove all items?": [
+        "Remover permanentemente todos os itens?"
       ],
       "Pinned (${ items.length })": [
         "Fixado(${ items.length })"

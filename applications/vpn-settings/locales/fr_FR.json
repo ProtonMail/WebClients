@@ -55,6 +55,9 @@
       "Add domain": [
         "Ajouter un domaine"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Ajouter plus d'accès à ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Ajouter PayPal"
       ],
@@ -2192,6 +2195,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "En cas de désactivation, seuls les administrateurs y ont accès."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Séparez les différentes facettes de votre vie et organisez votre boîte de réception avec des adresses supplémentaires."
       ],
@@ -6936,6 +6942,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Outil de gestion de l'organisation qui permet aux administrateurs d'ajouter et de supprimer des utilisateurs, de gérer leur accès aux services ${ BRAND_NAME }, et d'effectuer d'autres tâches."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La fiabilité de notre infrastructure vous garantit l'accès à votre compte chaque fois que vous en avez besoin."
       ],
@@ -7588,7 +7597,7 @@
         "Utiliser le nom de l'entreprise"
       ],
       "Use personal name": [
-        "Utiliser un nom personnel"
+        "Utiliser le nom de la personne"
       ]
     },
     "Payments": {
@@ -8647,7 +8656,7 @@
     },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ boldedMemberAddress } sollicite votre aide pour se connecter à leur son ${ BRAND_NAME } avec l'authentification unique (SSO)."
+        "${ boldedMemberAddress } sollicite votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO)."
       ],
       "${ n } member requested your help to sign in.": [
         "${ n } membre a sollicité votre aide pour se connecter.",
@@ -9307,7 +9316,7 @@
         "Importer tout nouveau fichier"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
-        "Les abonnements utilisateurs sont la seule source de revenus de ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission pour la protection de la vie privée en ligne, et d'aider les militants et organisations qui luttent pour la liberté."
+        "Les abonnements des utilisateurs sont la seule source de revenus de ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission pour la protection de la vie privée en ligne, et d'aider les militants et organisations qui luttent pour la liberté."
       ],
       "Users won’t be able to manage their calendars": [
         "Les utilisateurs ne pourront plus gérer leurs calendriers."
@@ -9719,6 +9728,12 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clients ${ VPN_APP_NAME }"
       ],
@@ -10036,6 +10051,9 @@
       ],
       "Email subscriptions": [
         "Newsletters"
+      ],
+      "Enable for all users": [
+        "Activer pour tous les utilisateurs"
       ],
       "Enter 2FA code": [
         "Entrez le code A2F"

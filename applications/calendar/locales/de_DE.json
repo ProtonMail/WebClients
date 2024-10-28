@@ -3050,6 +3050,9 @@
       "Invalid expiration date": [
         "Ungültiges Ablaufdatum"
       ],
+      "Invalid IBAN": [
+        "Ungültige IBAN"
+      ],
       "Invalid link to the event": [
         "Link zum Termin ungültig"
       ],
@@ -3701,6 +3704,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lebenslang lizenzierte Konten können keinem Familienabonnement beitreten."
       ],
+      "Manage addresses": [
+        "Adressen verwalten"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Familienabonnement beitreten."
       ],
@@ -4301,6 +4307,9 @@
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/Monat)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
       ],
@@ -4517,6 +4526,10 @@
       "Dedicated servers": [
         "Dezidierte Server"
       ],
+      "Deleting event...": [
+        "Termin wird gelöscht...",
+        "Termine werden gelöscht..."
+      ],
       "Discard changes?": [
         "Änderungen verwerfen?"
       ],
@@ -4613,6 +4626,9 @@
       ],
       "High Priority": [
         "Hohe Priorität"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
@@ -4870,6 +4886,10 @@
       ],
       "Removed participants will be notified.": [
         "Entfernte Teilnehmer werden benachrichtigt."
+      ],
+      "Saving event...": [
+        "Termin wird gespeichert...",
+        "Termine werden gespeichert..."
       ],
       "Select a service provider to start": [
         "Wähle einen Dienstanbieter, um anzufangen"
@@ -5418,6 +5438,9 @@
       "All-day event notifications": [
         "Benachrichtigungen zu ganztägigen Terminen"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "App password": [
         "App-Passwort"
       ],
@@ -5483,6 +5506,9 @@
       ],
       "Colors": [
         "Farben"
+      ],
+      "Company name": [
+        "Unternehmensname"
       ],
       "Confirm password": [
         "Passwort bestätigen"
@@ -5600,6 +5626,9 @@
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -5737,6 +5766,9 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32,\n1228 Plan-les-Ouates\nGenf, Schweiz"
+      ],
       "Secondary": [
         "Sekundäre"
       ],
@@ -5772,6 +5804,9 @@
       ],
       "Theme": [
         "Farbschema"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time zone": [
         "Zeitzone"
@@ -6718,6 +6753,9 @@
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
+      "TOR over VPN": [
+        "Tor über VPN"
+      ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
       ],
@@ -7034,6 +7072,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und entfernen, ihren Zugriff auf ${ BRAND_NAME }-Dienste verwalten und andere Aufgaben durchführen können."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Unsere robuste Infrastruktur ermöglicht dir den Zugriff auf dein Konto, wann immer nötig."
@@ -7554,6 +7595,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Banküberweisung"
+      ],
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
@@ -7901,6 +7945,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ausprobieren"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Verwendet auf Amazon für Shopping, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."

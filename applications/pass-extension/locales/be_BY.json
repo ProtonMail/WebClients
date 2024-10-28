@@ -2840,6 +2840,44 @@
         "Напішыце сваю нататку"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Ухваліць або адхіліць яго"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Увядзіце код пацвярджэння адпраўлены на вашу іншую прыладу."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Скасуйце гэты запыт, калі вы яго не рабілі."
+      ],
+      "Invalid confirmation code": [
+        "Памылковы код пацвярджэння"
+      ],
+      "No, it wasn’t me": [
+        "Не, гэта быў не я."
+      ],
+      "Sign-in confirmed": [
+        "Уваход пацверджаны"
+      ],
+      "Sign-in failed": [
+        "Абмыла ўваходу"
+      ],
+      "Sign-in rejected": [
+        "Уваход адхілены"
+      ],
+      "Sign-in rejection failure": [
+        "Збой адхілення ўваходу"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Запытаны ўваход на іншай прыладзе. Гэта былі вы?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Запытаны ўваход на іншай прыладзе. Гэта былі вы? "
+      ],
+      "Yes, it was me": [
+        "Так, гэта быў я."
+      ]
+    },
     "sso: auth device state": {
       "Active": [
         "Актыўна"
@@ -2847,8 +2885,20 @@
       "Inactive": [
         "Неактыўна"
       ],
+      "Pending activation": [
+        "Чаканне актывацыі"
+      ],
+      "Pending admin activation": [
+        "Чаканне актывацыі адміністратара"
+      ],
+      "Rejected": [
+        "Адхілена"
+      ],
       "Signed out": [
         "Вы выйшлі"
+      ],
+      "Unknown": [
+        "Невядома"
       ]
     },
     "Success": {

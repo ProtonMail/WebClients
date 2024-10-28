@@ -828,6 +828,9 @@
       "Toggle Calendar app": [
         "Agenda app kiezen"
       ],
+      "Toggle Contacts app": [
+        "Contact app kiezen"
+      ],
       "Toggle settings": [
         "Instellingen openen/sluiten"
       ],
@@ -2324,11 +2327,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2369,6 +2367,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Stel een herstelzin in om de hoogst mogelijke beveiliging van uw account te waarborgen."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
@@ -2395,6 +2396,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2466,6 +2472,9 @@
       ]
     },
     "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Openen in ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Save for later": [
         "Opslaan voor later"
       ]
@@ -2814,6 +2823,9 @@
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
       ],
+      "Invalid IBAN": [
+        "Ongeldige IBAN"
+      ],
       "Invalid name": [
         "Ongeldige naam"
       ],
@@ -2966,6 +2978,9 @@
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
       ],
+      "The amount due has changed. Please try again.": [
+        "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
+      ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
       ],
@@ -3065,6 +3080,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "U heeft de limiet van het aantal contacten bereikt voor dit account"
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -3412,6 +3430,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Levenslange accounts kunnen niet deelnemen aan een Family-abonnement."
       ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander Family-abonnement."
       ],
@@ -3429,6 +3450,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "U kunt slechts 3 uitnodigingen accepteren in een periode van 6 maanden. Neem contact op met ${ supportLink } als hierop een uitzondering moet worden gemaakt."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "U kunt deze uitnodiging niet accepteren met uw huidige abonnement."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3466,6 +3490,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Configureer uw gezinsaccount en nodig gebruikers uit"
+      ],
       "Set up your family": [
         "Uw gezin configureren"
       ],
@@ -4057,6 +4084,9 @@
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/maand)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
       ],
@@ -4536,6 +4566,9 @@
       "How does encrypted search work?": [
         "Hoe werkt versleuteld zoeken?"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
@@ -4575,6 +4608,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
+      ],
+      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Intussen meldt u zich aan voor uw eigen ${ DRIVE_APP_NAME }-account en beschermt u uw gegevens met end-to-end versleuteling en deelt u deze veilig."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
@@ -4784,6 +4820,9 @@
       ],
       "Organization size": [
         "Grootte van de organisatie"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
       ],
       "Owner": [
         "Eigenaar"
@@ -5663,6 +5702,9 @@
       "Address": [
         "Adres"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Anyone on the Internet with the link can view": [
         "Iedereen op het Internet kan het met deze link bekijken"
       ],
@@ -5749,6 +5791,9 @@
       ],
       "Comment": [
         "Reactie"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
       ],
       "Confirm password": [
         "Bevestig wachtwoord"
@@ -5897,6 +5942,9 @@
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -6063,6 +6111,9 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
       "Security code (${ codeName })": [
         "Beveiligingscode (${ codeName })"
       ],
@@ -6134,6 +6185,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Dit zal alle bestanden op uw vergrendelde schijf permanent verwijderen."
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Title": [
         "Titel"
@@ -7066,6 +7120,9 @@
       "Sync and backup all your files across devices": [
         "Synchroniseer en back-up al uw bestanden op alle apparaten"
       ],
+      "TOR over VPN": [
+        "Tor via VPN"
+      ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
       ],
@@ -7260,6 +7317,14 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -7272,14 +7337,6 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7332,6 +7389,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
@@ -7383,6 +7443,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME } diensten kunnen beheren en andere taken kunnen uitvoeren."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
       ],
@@ -7424,6 +7487,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -7693,6 +7759,9 @@
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
       ],
+      "Failed to load invitation details": [
+        "Fout bij het laden van uitnodigingsdetails"
+      ],
       "Failed to move, please try again": [
         "Verplaatsen mislukt, probeer het opnieuw"
       ],
@@ -7757,6 +7826,9 @@
       "The item was not added to your drive": [
         "Het item werd niet aan uw schijf toegevoegd"
       ],
+      "The item was successfully added to your drive": [
+        "Het item is succesvol toegevoegd aan uw drive"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "De link naar \"${ name }\" kon niet worden verwijderd"
       ],
@@ -7808,6 +7880,11 @@
         "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Welkom bij ${ appName }"
@@ -7820,8 +7897,14 @@
       "Get started": [
         "Aan de slag"
       ],
+      "Install and continue": [
+        "Installeren en doorgaan"
+      ],
       "Install later": [
         "Later installeren"
+      ],
+      "Invite members": [
+        "Nodig leden uit"
       ],
       "Maybe later": [
         "Misschien later"
@@ -7834,6 +7917,9 @@
       ],
       "Skip": [
         "Overslaan"
+      ],
+      "Skip for now": [
+        "Sla voorlopig over"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Begin met ${ DRIVE_APP_NAME }"
@@ -7849,11 +7935,44 @@
       ]
     },
     "Onboarding Info": {
+      "Access your files on the go": [
+        "Onderweg toegang tot uw bestanden"
+      ],
+      "Back up your photos and memories": [
+        "Back-up maken van uw foto's en herinneringen"
+      ],
+      "Backup your photos and memories": [
+        "Back-up maken van uw foto's en herinneringen"
+      ],
+      "Choose your favorite theme": [
+        "Kies uw favoriete thema"
+      ],
       "Collaborate on documents": [
         "Samenwerken aan documenten"
       ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "Wilt u ${ DRIVE_APP_NAME } liever in licht- of donkere modus? Selecteer de kleur die u het meest inspireert."
+      ],
+      "Drag and drop your files here": [
+        "Sleep en plaats uw bestanden hier naartoe"
+      ],
+      "Edit documents online": [
+        "Documenten online bewerken"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "End-to-end versleutelde opslag voor uw bestanden"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Sneller uploaden voor grote of meerdere bestanden"
+      ],
       "Final approval in progress": [
         "De laatste goedkeuring is bezig"
+      ],
+      "Final approval pending": [
+        "Laatste goedkeuring in afwachting"
+      ],
+      "Free up hard drive space on your computer": [
+        "Maak ruimte vrij op de harde schijf op uw computer"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "Ga aan de slag met ${ DRIVE_APP_NAME } en we zullen uw opslag upgraden naar 5 GB!"
@@ -7864,17 +7983,44 @@
       "Get the mobile app": [
         "Download de mobiele app"
       ],
+      "Got an Android? We've got you covered.": [
+        "Heeft u een Android? We hebben alles voor u."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "Heeft u een iPhone? We hebben alles voor u."
+      ],
+      "Hang tight": [
+        "Hou vol"
+      ],
+      "Invitation accepted": [
+        "Uitnodiging geaccepteerd"
+      ],
+      "Invitation received": [
+        "Uitnodiging ontvangen"
+      ],
       "Invite team members": [
         "Teamleden uitnodigen"
       ],
       "Manage access": [
         "Toegang beheren"
       ],
+      "Organize files right from your desktop": [
+        "Beheer bestanden direct vanaf uw bureaublad"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Bescherm uw financiële documenten, identiteitskaarten, projectbestanden, foto's en meer met end-to-end versleuteling."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Scan de QR-code om de mobiele app te installeren"
+      ],
       "Secure your files": [
         "Beveilig uw bestanden"
       ],
       "Securely share files and folders": [
         "Veilig bestanden en mappen delen"
+      ],
+      "Securely store, manage, and share your business-critical files with confidence.": [
+        "Sla uw bedrijfskritische bestanden veilig op, beheer ze en deel ze met vertrouwen."
       ],
       "Set a recovery method": [
         "Stel een herstelmethode in"
@@ -7892,11 +8038,23 @@
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Sla bestanden op en deel ze veilig. Begin met het beveiligen van bestanden die voor u het meest privé zijn, zoals ID's, contracten en persoonlijke foto's."
       ],
+      "Sync and access your files from anywhere": [
+        "Synchroniseer en krijg overal toegang tot uw bestanden"
+      ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "De eigenaar moet de toegang tot delen goedkeuren. U ontvangt een e-mail zodra dit is gedaan."
       ],
       "Upload a file": [
         "Upload een bestand"
+      ],
+      "Upload your first file": [
+        "Upload uw eerste bestand"
+      ],
+      "Work faster, smarter": [
+        "Werk sneller, slimmer"
+      ],
+      "Work together": [
+        "Werk samen"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Uw vertrouwde online kluis voor vitale documenten en te koesteren herinneringen."
@@ -8029,11 +8187,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverschrijving"
+      ],
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bedrijfsnaam gebruiken"
+      ],
+      "Use personal name": [
+        "Gebruik persoonlijke naam"
       ]
     },
     "Payments": {
@@ -8113,6 +8282,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, autoriseert u ${ BRAND_NAME } en Stripe, onze provider van betalingsdiensten, om uw bank te instrueren om uw rekening en uw bank dienovereenkomstig in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+      ],
+      "Street address, postal code, and city": [
+        "Straatnaam, postcode en plaats"
       ]
     },
     "PGP key encryption warning": {
@@ -8366,6 +8543,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Gebruikt in Amazon voor winkelen enz."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wanneer uw e-mailadres gevraagd wordt, geef dan deze alias op. Aliassen worden geleverd door ${ passLink }."
@@ -8994,6 +9174,9 @@
       "Got it": [
         "Begrepen"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Log in op uw Apple App Store account, selecteer dan op ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log in op uw Play Store-account, druk dan op ${ subscriptions }."
       ],
@@ -9172,7 +9355,7 @@
         "Als u de limiet van het gratis abonnement overschrijdt, kunt u niet of geen:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Als uw gebruik de limieten van het gratis abonnement overschrijdt kunt u beperkte toegang tot productfuncties en uw gegevens ervaren."
+        "Als uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw gegevens ervaren."
       ],
       "Invited members will be removed from your organization": [
         "Uitgenodigde leden zullen uit uw organisatie worden verwijderd"
@@ -10380,6 +10563,11 @@
       ],
       "No ads": [
         "Geen advertenties"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     },
     "wallet_signup_2024: Info": {

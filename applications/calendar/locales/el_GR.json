@@ -3050,6 +3050,9 @@
       "Invalid expiration date": [
         "Μη έγκυρη ημερομηνία λήξης"
       ],
+      "Invalid IBAN": [
+        "Μη έγκυρο IBAN"
+      ],
       "Invalid link to the event": [
         "Μη έγκυρος σύνδεσμος για την εκδήλωση"
       ],
@@ -3701,6 +3704,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
       ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο οικογενειακό πλάνο."
       ],
@@ -3718,6 +3724,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Μπορείτε να δεχτείτε μόνο 3 προσκλήσεις σε μια περίοδο 6 μηνών. Επικοινωνήστε με το ${ supportLink } εάν χρειάζεστε εξαίρεση."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Δεν μπορείτε να αποδεχτείτε αυτήν την πρόσκληση με το τρέχον πλάνο σας."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Έχετε προσκληθεί να εγγραφείτε στο ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3755,6 +3764,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Ρυθμίστε τις παραμέτρους του οικογενειακού λογαριασμού σας και προσκαλέστε χρήστες"
+      ],
       "Set up your family": [
         "Ρύθμιση της οικογένειάς σας"
       ],
@@ -4300,6 +4312,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/μήνα)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
@@ -5484,6 +5499,9 @@
       "Colors": [
         "Χρώματα"
       ],
+      "Company name": [
+        "Όνομα εταιρείας"
+      ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
       ],
@@ -5600,6 +5618,9 @@
       ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -6718,6 +6739,9 @@
       "Sync and backup all your files across devices": [
         "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
       ],
+      "TOR over VPN": [
+        "TOR μέσω VPN"
+      ],
       "Two-factor authentication": [
         "Ταυτοποίηση δύο παραγόντων"
       ],
@@ -6984,6 +7008,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Δημιουργήστε έως και ${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα που μπορείτε να αντιστοιχίσετε σε μέλη της οικογένειας. Χρησιμοποιήστε τα για διαδικτυακές ταυτότητες, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Προστατεύει από την απειλή για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο διαδίκτυο μέσω πολλών διακομιστών"
       ],
@@ -7076,6 +7103,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Επαναφέρετε τους κωδικούς πρόσβασης χρήστη και επαναφέρετε τον έλεγχο ταυτότητας δύο παραγόντων στους χρήστες"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Δρομολογήστε την κίνηση σας στο διαδίκτυο, μέσω του δικτύου TOR με ένα μόνο κλικ"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
@@ -7554,6 +7584,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Τραπεζική μεταφορά"
+      ],
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
       ],
@@ -7901,6 +7934,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Δοκιμάστε το ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
@@ -9936,6 +9972,11 @@
       ],
       "No ads": [
         "Χωρίς διαφημίσεις"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Πρόσβαση σε Secure Core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, TOR μέσω VPN, και πολλά άλλα."
       ]
     },
     "wallet_signup_2024: Info": {

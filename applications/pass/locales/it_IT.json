@@ -1552,6 +1552,9 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accesso online a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la sessione. Verrai disconnesso dopo 3 tentativi falliti."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "I nostri avvisi danno priorità alla sicurezza. Se non riconosci nessuna delle informazioni violate, puoi tranquillamente ignorare questa segnalazione."
+      ],
       "Owner": [
         "Proprietario"
       ],
@@ -1781,6 +1784,9 @@
       ],
       "This version will be added to the history as the newest version.": [
         "Questa versione verrà aggiunta alla cronologia come versione più recente."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Il dispositivo **${ name }** che ha tentato di accedere al tuo account ${ BRAND_NAME } il **${ date }** rifiuterà."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Per migrare i dati provenienti da un altro gestore di password, accedi al gestore di password, esporta i tuoi dati e caricali su ${ PASS_APP_NAME }. Una volta importati i dati, elimina il file esportato."
@@ -2809,6 +2815,67 @@
         "Le tue informazioni sono state trovate in almeno una fuga di dati. Attiva ${ DARK_WEB_MONITORING_NAME } per visualizzare i dettagli e le azioni da seguire. ${ link }"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Approvalo o negalo adesso"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Inserisci il codice di conferma che abbiamo inviato sull'altro tuo dispositivo."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Se non hai effettuato tu questa richiesta, annullala immediatamente."
+      ],
+      "Invalid confirmation code": [
+        "Codice di conferma non valido"
+      ],
+      "No, it wasn’t me": [
+        "No, non ero io"
+      ],
+      "Sign-in confirmed": [
+        "Accesso confermato"
+      ],
+      "Sign-in failed": [
+        "Registrazione fallita"
+      ],
+      "Sign-in rejected": [
+        "Accesso rifiutato"
+      ],
+      "Sign-in rejection failure": [
+        "Errore di rifiuto dell'accesso"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Accesso richiesto su un altro dispositivo. Eri tu?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Accesso richiesto su un altro dispositivo. Eri tu? "
+      ],
+      "Yes, it was me": [
+        "Sì, ero io"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Attivo"
+      ],
+      "Inactive": [
+        "Non attivo"
+      ],
+      "Pending activation": [
+        "In attesa di attivazione"
+      ],
+      "Pending admin activation": [
+        "In attesa di attivazione da parte dell'amministratore"
+      ],
+      "Rejected": [
+        "Rifiutato"
+      ],
+      "Signed out": [
+        "Disconnesso"
+      ],
+      "Unknown": [
+        "Sconosciuto"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Sincronizzazione degli alias abilitata correttamente. La sincronizzazione degli alias SimpleLogin potrebbe richiedere del tempo"
@@ -3004,6 +3071,9 @@
       ],
       "Recommended actions": [
         "Azioni consigliate"
+      ],
+      "Reject device?": [
+        "Rifiutare il dispositivo?"
       ],
       "Remove email address?": [
         "Vuoi rimuovere l'indirizzo email?"

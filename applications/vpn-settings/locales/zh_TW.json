@@ -1120,8 +1120,17 @@
       "Encrypted password manager": [
         "加密密碼管理"
       ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "我們的基本免費方案包含端對端加密電子郵件和儲存空間。不包含頂級功能。"
+      ],
       "Save ${ upsellSavings }": [
         "省下${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "透過${ upsellPlanName }省錢"
+      ],
+      "Secure personal and shared calendar": [
+        "安全保護個人及共享行事曆"
       ],
       "Try ${ planName }": [
         "嘗試${ planName }"
@@ -2438,6 +2447,9 @@
       "Invalid expiration date": [
         "到期日無效"
       ],
+      "Invalid IBAN": [
+        "國際銀行帳號不正確"
+      ],
       "Invalid invitation link": [
         "無效的邀請連結"
       ],
@@ -2736,6 +2748,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "終身帳號無法加入群組方案。"
       ],
+      "Manage addresses": [
+        "管理電子郵件地址"
+      ],
       "Manage user accounts": [
         "管理使用者帳號"
       ],
@@ -2765,6 +2780,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "您在六個月內只能接受三次邀請。若您需要例外，請聯絡 ${ supportLink }。"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "您無法使用目前方案接受此邀請函。"
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
@@ -3361,6 +3379,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**取得一個 ${ BRAND_NAME } 位址**並用於全部 ${ BRAND_NAME_TWO } 服務，包括 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }。"
       ],
@@ -3592,6 +3613,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "正在刪除 ${ deletedServerCount } 台閘道伺服器"
       ],
+      "Disabled on ${ formattedDateAndTime }": [
+        "於${ formattedDateAndTime }寧用"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
       ],
@@ -3669,6 +3693,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "開啟單一登入 (SSO) 來保障你的組織安全"
+      ],
+      "Enabled on ${ formattedDateAndTime }": [
+        "於${ formattedDateAndTime }啟用"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "由您的身分提供者提供的端點 URL (範例：https://idp.example.com/sso/saml)。"
@@ -3765,6 +3792,9 @@
       ],
       "High Priority": [
         "首要優先順序"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "身分提供者簽署驗證判斷提示的公開金鑰。身分提供者應在某處備有憑證雜湊可供下載或複製。只需在文字區域欄位中貼上憑證雜湊即可。"
@@ -4471,6 +4501,9 @@
       "username": [
         "使用者名稱"
       ],
+      "Username": [
+        "使用者名稱"
+      ],
       "Users": [
         "使用者"
       ],
@@ -4912,6 +4945,9 @@
       "Amount due": [
         "應付金額"
       ],
+      "Anderson": [
+        "安德松"
+      ],
       "Assertion Consumer Service URL": [
         "消費者服務聲明網址"
       ],
@@ -4971,6 +5007,9 @@
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
+      ],
+      "Company name": [
+        "公司名字"
       ],
       "Config to connect to ${ serverName }": [
         "架構組態以連接 ${ serverName }"
@@ -5088,6 +5127,9 @@
       ],
       "Hide password": [
         "隱藏密碼"
+      ],
+      "IBAN": [
+        "國際銀行帳號"
       ],
       "Interval": [
         "時間間隔"
@@ -5280,6 +5322,9 @@
       ],
       "System information": [
         "系統資訊"
+      ],
+      "Thomas": [
+        "湯姆斯"
       ],
       "Two-password mode": [
         "雙重密碼模式"
@@ -6138,6 +6183,9 @@
       "Sync and backup all your files across devices": [
         "於裝置同步及備份您全部的檔案"
       ],
+      "TOR over VPN": [
+        "經 TOR 的 VPN"
+      ],
       "Two-factor authentication": [
         "兩步驟驗證"
       ],
@@ -6913,6 +6961,9 @@
       "Get it for ${ monthlyPrice }": [
         "只需${ monthlyPrice }"
       ],
+      "Introducing ${ passFamilyPlanName }": [
+        "介紹 ${ passFamilyPlanName }"
+      ],
       "Limited-time deal.": [
         "限時優惠。"
       ]
@@ -6956,11 +7007,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "銀行轉帳"
+      ],
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "使用公司名字"
+      ],
+      "Use personal name": [
+        "使用個人名字"
       ]
     },
     "Payments": {
@@ -8589,6 +8651,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }訂閱撰寫扳手"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } 客戶端"
       ],
@@ -8625,6 +8690,9 @@
       "Action": [
         "動作"
       ],
+      "Actions": [
+        "操作"
+      ],
       "Activate organization key": [
         "啟用組織金鑰"
       ],
@@ -8639,6 +8707,9 @@
       ],
       "Add credits": [
         "儲值"
+      ],
+      "Add dedicated servers": [
+        "新增專用伺服器"
       ],
       "Add domain": [
         "加入網域"
@@ -8723,6 +8794,9 @@
       ],
       "Change second password": [
         "變更第二密碼"
+      ],
+      "Click a value in the table to use it as filter": [
+        "點及於表格中的任何值以當作過濾器"
       ],
       "Close": [
         "關閉"
@@ -8813,6 +8887,9 @@
       ],
       "Delete user?": [
         "刪除使用者?"
+      ],
+      "Device": [
+        "裝置"
       ],
       "Device connected!": [
         "裝置已連線！"
@@ -8915,6 +8992,15 @@
       ],
       "Gateway": [
         "網關"
+      ],
+      "Gateway monitor": [
+        "閘道器監控"
+      ],
+      "Gateway monitor disabled": [
+        "閘道器監控已停用"
+      ],
+      "Gateway monitor enabled": [
+        "閘道器監控已啟用"
       ],
       "Gateways": [
         "閘道器"
@@ -9027,6 +9113,9 @@
       "Processing...": [
         "處理中..."
       ],
+      "QR Code": [
+        "QRCode"
+      ],
       "Recommended": [
         "推薦"
       ],
@@ -9038,6 +9127,9 @@
       ],
       "Remove domain": [
         "移除網域"
+      ],
+      "Remove server?": [
+        "移除伺服器?"
       ],
       "Remove single sign-on": [
         "移除單一登入"
@@ -9346,6 +9438,9 @@
     "Tor out of date": {
       "stable release": [
         "穩定版本"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "此版本的 Tor 瀏覽器已不受支援，請更新至最新版本 ${ stableRelease } 。"
       ]
     },
     "unprivatization": {
