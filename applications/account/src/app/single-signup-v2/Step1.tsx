@@ -642,7 +642,11 @@ const Step1 = ({
                         return wrap('hourglass', textLaunchOffer);
                     }
 
-                    if (getHas2024OfferCoupon(options.checkResult.Coupon?.Code)) {
+                    const hasOptimistic2024OfferCoupon = getHas2024OfferCoupon(options.coupon);
+                    const has2024OfferCoupon = getHas2024OfferCoupon(options.checkResult.Coupon?.Code);
+
+                    // Using real coupon to show the correct discount percentage
+                    if (has2024OfferCoupon) {
                         const discount = checkout.discountPercent;
                         return wrap(
                             'bag-percent',
@@ -650,7 +654,12 @@ const Step1 = ({
                         );
                     }
 
-                    if (selectedPlan.Name === PLANS.DUO && options.cycle === CYCLE.YEARLY) {
+                    // Using optimistic coupon to avoid this displaying before above is finished
+                    if (
+                        selectedPlan.Name === PLANS.DUO &&
+                        options.cycle === CYCLE.YEARLY &&
+                        !hasOptimistic2024OfferCoupon
+                    ) {
                         const discount = getSimplePriceString(options.currency, checkout.discountPerCycle, '');
                         const name = selectedPlan.Title;
                         const textLaunchOffer = getBoldFormattedText(
