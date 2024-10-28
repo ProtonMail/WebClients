@@ -1224,6 +1224,9 @@
       "Toggle Calendar app": [
         "캘린더 앱 열기/닫기"
       ],
+      "Toggle Contacts app": [
+        "연락처 앱 열기/닫기"
+      ],
       "Toggle security center app": [
         "보안 센터 앱 열기/닫기"
       ],
@@ -3519,6 +3522,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 초과하지 않도록 하십시오. 파일이 더 크면, 더 작은 파일로 나누세요. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
       ],
@@ -3893,6 +3899,12 @@
       "A problem occurred, please try again.": [
         "문제가 발생했습니다. 다시 시도해 주세요."
       ],
+      "Add at least one action": [
+        "하나 이상의 옵션을 추가하십시오"
+      ],
+      "Add at least one condition": [
+        "하나 이상의 조건을 추가하세요"
+      ],
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
       ],
@@ -4067,6 +4079,9 @@
       "Invalid expiration time": [
         "유효하지 않은 만료 시간"
       ],
+      "Invalid IBAN": [
+        "유효하지 않은 IBAN"
+      ],
       "Invalid name": [
         "유효하지 않은 이름"
       ],
@@ -4223,6 +4238,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "첨부 기능이 요금제의 상한을 만족하거나 업그레이드하기 전까지 제한됩니다."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "파일 첨부가 요금제의 상한을 초과한 상태에선 플랜을 업그레이드하기 전까지 제한됩니다."
+      ],
       "Signature not verified": [
         "인증되지 않은 서명입니다."
       ],
@@ -4270,6 +4288,9 @@
       ],
       "Thanks for the feedback!": [
         "의견을 주셔서 감사합니다!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "결제 예정 가격이 변경되었습니다. 다시 시도해 주세요."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "첨부 파일을 복호화할 수 없습니다.\n해당하는 비밀 키를 가지고 있다면, GnuPG 등의\n프로그램으로 파일을 복호화할 수 있습니다."
@@ -4381,6 +4402,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "계정의 최대 연락처 수를 초과했습니다"
       ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
@@ -4754,6 +4778,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "평생 계정은 가족 플랜에 합류할 수 없습니다."
       ],
+      "Manage addresses": [
+        "주소 관리"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "구성원들이 있는 요금제의 소유자가 다른 그룹 가족 플랜에 합류할 수 없습니다."
       ],
@@ -4771,6 +4798,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "6개월 기간 동안 3개 초대를 수락할 수 있습니다. 제외가 필요하다면 ${ supportLink }에 연락해 주십시오."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "현재 플랜에서 이 초대를 수락할 수 없습니다."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } 가입에 초대되었습니다. ${ viewInviteButton }"
@@ -4808,6 +4838,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "가족 계정을 구성하고 사용자를 초대하세요. "
+      ],
       "Invite members and get everything up and running.": [
         "구성원을 초대하고 모든 것을 시작 및 실행하세요"
       ],
@@ -4984,6 +5017,11 @@
         "읽지 않음"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "첨부파일"
+      ]
+    },
     "Filter preview": {
       "read": [
         "읽음"
@@ -5075,6 +5113,9 @@
       ],
       "Start free trial": [
         "무료 체험 시작하기"
+      ],
+      "Try the new desktop app": [
+        "새로운 데스크톱 앱을 사용해보세요"
       ],
       "Upgrade now": [
         "지금 업그레이드"
@@ -5746,6 +5787,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 회원)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/월간)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(다음 조건이 모두 충족되면 필터링하기)"
       ],
@@ -5844,6 +5888,9 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "예약하거나 방해 금지된 메시지가 취소됩니다."
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "모든 하위폴더 역시 삭제됩니다. 하지만, 이 폴더 ${ nameDeleted }에 보관된 이메일들은 삭제되지 않으며 모든 메일함에서 찾을 수 있습니다."
       ],
       "Applying actions to conversations": [
         "대화에 조치 적용하기"
@@ -6160,6 +6207,9 @@
       "Emails are automatically signed": [
         "이메일들이 자동적으로 서명됨"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "라벨 ${ nameDeleted }로 태그된 이메일들은 삭제되지 않으며 해당하는 폴더에서 여전히 찾을 수 있습니다."
+      ],
       "embedded image": [
         "삽입된 이미지"
       ],
@@ -6258,6 +6308,9 @@
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "${ MAIL_APP_NAME }을 사용하고 있지 않는 유저에게 이 메시지를 보내고 있습니다."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
@@ -6547,6 +6600,9 @@
       "Organization size": [
         "조직 크기"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "경고는 안전을 위해 나타납니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "당사 시스템이 이 메시지를 피싱 시도로 확인했습니다. 해당 메일이 합법적인 내용인지 확인해 주세요."
       ],
@@ -6798,6 +6854,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "${ formattedTime } ${ dateString }까지 방해 금지됨"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "오늘, ${ formattedTime }까지 방해금지됨"
@@ -7066,6 +7125,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "날짜, 이름, 이메일 주소, 제목만을 검색하기 위해서는 설정을 꺼주세요. 메시지 콘탠츠 비활성화(와 이 기능을 활성화하기 위해 다운로드한 메시지를 삭제)하기 위해 설정으로 이동하세요."
+      ],
       "Turn on to search the content of your messages": [
         "사용자 메시지의 컨텐츠 검색을 활성화 하세요"
       ],
@@ -7095,6 +7157,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "계정에 더 많은 주소를 추가하려면 업그레이드하세요."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "휴지통 및 스팸함에 30일 이상 방치된 메시지들을 자동으로 삭제하려면 업그레이드 하세요."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "더 많은 폴더, 필터, 주소를 만들려면 업그레이드하세요."
@@ -7770,6 +7835,9 @@
       "And": [
         "그리고"
       ],
+      "Anderson": [
+        "길동"
+      ],
       "ANY": [
         "모두"
       ],
@@ -7853,6 +7921,9 @@
       ],
       "Colors": [
         "색상"
+      ],
+      "Company name": [
+        "회사명"
       ],
       "Composer": [
         "작성기"
@@ -7985,6 +8056,9 @@
       ],
       "I understand the risk": [
         "위험 사항을 이해했어요."
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "만약"
@@ -8166,6 +8240,9 @@
       "Reveal password": [
         "비밀번호 표시"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "서울 종로구 청와대로 1"
+      ],
       "Search in": [
         "검색"
       ],
@@ -8210,6 +8287,9 @@
       ],
       "Then": [
         "다음"
+      ],
+      "Thomas": [
+        "홍"
       ],
       "Time": [
         "시간"
@@ -8693,6 +8773,9 @@
       ]
     },
     "Message image": {
+      "Image could not be loaded.": [
+        "이미지를 불러올 수 없습니다."
+      ],
       "Image has not been loaded in order to protect your privacy.": [
         "프라이버시를 보호하기 위해 이미지가 로드되지 않았습니다."
       ]
@@ -9284,6 +9367,9 @@
       "Sync and backup all your files across devices": [
         "기기를 넘나들며 파일을 동기화 및 백업하세요"
       ],
+      "TOR over VPN": [
+        "VPN을 통한 TOR"
+      ],
       "Two-factor authentication": [
         "2단계 인증"
       ],
@@ -9544,6 +9630,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "가족 구성원에게 할당할 수 있는 최대 ${ n }개의 이메일 주소/별명을 생성하세요. 이를 온라인 신원으로 사용하세요. 예를 들면, 쇼핑 계정에는 JohnShopper@${ domain }을 사용할 수 있습니다."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "여러 서버를 통해 인터넷 트래픽을 전달하여 VPN 개인 정보에 대한 위협으로부터 방어합니다"
       ],
@@ -9595,6 +9684,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "비공개가 아닌 사용자의 수신함을 사용자가 볼 수 있는 옵션으로, 전체 메시지와 연락처 세부사항을 포함하여 볼 수 있습니다"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "관리자가 사용자를 추가 및 제거하고, 저장소를 할당하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, 수행할 수 있는 조직 관리 도구"
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
       ],
@@ -9636,6 +9728,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "사용자 암호 및 2단계 인증 재설정"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "한번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -9810,6 +9905,11 @@
         "가져오기가 작동하려면, GIF에 표시된 대로 요청된 모든 항목을 선택해야 합니다."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "${ BRAND_NAME }이 접근할 수 있는 것을 선택하세요: 이메일 메시지와 설정을 확인하고, 연락처를 확인 및 다운로드하고, Google Calendar에서 액세스하는 모든 아젠다를 확인하고 다운로드하세요."
+      ]
+    },
     "Onboarding List Placeholder": {
       "Finance": [
         "금융"
@@ -9886,7 +9986,7 @@
         "강력한 암호화로, 이메일은 오직 당신과 주고 받는 사람간에서만 볼 수 있습니다. ${ kbLinkEncryption }"
       ],
       "Fixed and focused": [
-        "고정되고 집중됨"
+        "고정되고 집중되게"
       ],
       "For your eyes only": [
         "눈으로만 보세요"
@@ -9925,7 +10025,7 @@
         "다음"
       ],
       "On the move": [
-        "이동 중"
+        "이동 중에"
       ],
       "Protection from trackers": [
         "트래커로부터 보호"
@@ -10113,11 +10213,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "게좌 이체"
+      ],
       "Credit/debit card": [
         "신용/체크카드"
       ],
       "New credit/debit card": [
         "신용/체크카드 추가"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "회사 이름 사용"
+      ],
+      "Use personal name": [
+        "개인 이름 사용"
       ]
     },
     "Payments": {
@@ -10197,6 +10308,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "이 결제를 확인함으로써, 자사 결제 서비스 제공자인 ${ BRAND_NAME }과 Stripe가 사용자의 은행 계좌에서 금액을 인출하도록 동의하고, 사용자의 은행이 이에 따라 계좌에서 금액을 인출하도록 수행할 수 있는 권한을 부여하는 것으로 간주합니다. 은행과의 합의 조건에 따라 인출일로부터 8주 이내에 환불을 받을 수 있습니다."
+      ],
+      "Street address, postal code, and city": [
+        "주소명, 우편 번호 및 도시"
       ]
     },
     "PGP key encryption warning": {
@@ -10576,6 +10695,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 체험"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "쇼핑을 위해 쿠팡에서 사용됨, 기타 등등"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "이메일 주소를 누군가 물어본다면, 별칭을 대신 제공하세요. 별칭이 ${ passLink }에 의해 제공됩니다."
@@ -11351,6 +11473,9 @@
     "Subscription change warning": {
       "Got it": [
         "확인하였습니다."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "사용자의 Apple App Store 계정으로 로그인하여 ${ subscriptions }을 선택하세요."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "사용자의 Play Store 계정에 로그인하고 ${ subscriptions }을 누르세요."
@@ -13024,6 +13149,9 @@
     "Tor out of date": {
       "stable release": [
         "안정 배포판"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "이 버전의 Tor 브라우저가 지원되지 않습니다. 최신 ${ stableRelease } 으로 업데이트 해주세요"
       ]
     },
     "Update font modal": {
@@ -13081,6 +13209,11 @@
       ],
       "No ads": [
         "광고 없음"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
       ]
     },
     "wallet_signup_2024: Info": {

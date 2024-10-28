@@ -3541,6 +3541,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante un archivo CSV y VCF, asegúrese que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídalo en archivos pequeños. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
@@ -4100,7 +4103,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
-        "El IBAN no es válido."
+        "IBAN inválido"
       ],
       "Invalid name": [
         "Nombre inválido"
@@ -4313,6 +4316,9 @@
       ],
       "Thanks for the feedback!": [
         "¡Gracias por los comentarios!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "El importe a pagar ha cambiado. Intente de nuevo."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "El archivo adjunto no se pudo descifrar.\nSi tiene la clave privada correspondiente, aún podrá descifrar\nel archivo con un programa como GnuPG.",
@@ -7232,6 +7238,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Desactívela para buscar solo por fecha, nombre, dirección de correo o asunto. Para desactivar la búsqueda en el contenido del mensaje (y eliminar los mensajes descargados para activar esta función), vaya a los ajustes."
+      ],
       "Turn on to search the content of your messages": [
         "Actívelo para buscar el contenido de los mensajes"
       ],
@@ -9845,6 +9854,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrá acceder a la cuenta cuando la necesite"
       ],
@@ -10390,7 +10402,7 @@
         "Usar el nombre de la empresa"
       ],
       "Use personal name": [
-        "Usar un nombre personal"
+        "Usar el nombre de la persona"
       ]
     },
     "Payments": {
@@ -10473,6 +10485,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a su banco para que debite su cuenta, y a su banco para que debite el cargo correspondiente en su cuenta. Puede obtener un reembolso en un plazo de 8 semanas a partir de la fecha del débito, según las condiciones de su acuerdo con su banco."
+      ],
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
       ]

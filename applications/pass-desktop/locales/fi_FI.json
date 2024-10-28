@@ -2871,6 +2871,46 @@
         "Tietojasi on löytynyt ainakin yhdestä tietovuodosta. Ota ${ DARK_WEB_MONITORING_NAME } käyttöön nähdäksesi tarkemmat tiedot. ${ link }"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Hyväksy tai hylkää se nyt"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Syötä vahvistuskoodi, jonka lähetimme toiseen laitteeseesi."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Jos et tehnyt tätä pyyntöä, peruuta se nyt."
+      ],
+      "Invalid confirmation code": [
+        "Virheellinen vahvistuskoodi"
+      ],
+      "No, it wasn’t me": [
+        "Ei, se en ollut minä"
+      ],
+      "Sign-in confirmed": [
+        "Kirjautuminen vahvistettu"
+      ],
+      "Sign-in failed": [
+        "Kirjautuminen epäonnistui"
+      ],
+      "Sign-in rejected": [
+        "Kirjautuminen hylätty"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Kirjautumista pyydettiin toisella laitteella. Olitko se sinä?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Kirjautumista pyydettiin toisella laitteella. Olitko se sinä? "
+      ],
+      "Yes, it was me": [
+        "Kyllä, se olin minä"
+      ]
+    },
+    "sso: auth device state": {
+      "Unknown": [
+        "Tuntematon"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Aliasten synkronointi on käytössä. SimpleLogin-aliasten synkronointi voi kestää jonkin aikaa."
@@ -3066,6 +3106,9 @@
       ],
       "Recommended actions": [
         "Suositellut toimenpiteet"
+      ],
+      "Reject device?": [
+        "Hylätäänkö laite?"
       ],
       "Remove email address?": [
         "Poistetaanko sähköpostiosoite?"

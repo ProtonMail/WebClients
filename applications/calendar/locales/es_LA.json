@@ -896,6 +896,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Si sale ahora, perderá su evento."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "No cierre esta pestaña. Algunas solicitudes aún se están procesando en segundo plano."
       ]
     },
     "Apps dropdown": {
@@ -2549,6 +2552,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante un archivo CSV y VCF, asegúrese que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídalo en archivos pequeños. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
@@ -3060,7 +3066,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
-        "El IBAN no es válido."
+        "IBAN inválido"
       ],
       "Invalid link to the event": [
         "Enlace al evento inválido"
@@ -3240,6 +3246,9 @@
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
+      ],
+      "The amount due has changed. Please try again.": [
+        "El importe a pagar ha cambiado. Intente de nuevo."
       ],
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
@@ -4544,6 +4553,10 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Deleting event...": [
+        "Eliminando el evento...",
+        "Eliminando los eventos..."
+      ],
       "Discard changes?": [
         "¿Descartar los cambios?"
       ],
@@ -4903,6 +4916,10 @@
       ],
       "Removed participants will be notified.": [
         "Se notificarán a los participantes borrados."
+      ],
+      "Saving event...": [
+        "Guardando el evento...",
+        "Guardando los eventos..."
       ],
       "Select a service provider to start": [
         "Seleccione un proveedor de servicios para comenzar"
@@ -7092,6 +7109,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrá acceder a la cuenta cuando la necesite"
       ],
@@ -7634,7 +7654,7 @@
         "Usar el nombre de la empresa"
       ],
       "Use personal name": [
-        "Usar un nombre personal"
+        "Usar el nombre de la persona"
       ]
     },
     "Payments": {
@@ -7717,6 +7737,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a su banco para que debite su cuenta, y a su banco para que debite el cargo correspondiente en su cuenta. Puede obtener un reembolso en un plazo de 8 semanas a partir de la fecha del débito, según las condiciones de su acuerdo con su banco."
+      ],
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
       ]

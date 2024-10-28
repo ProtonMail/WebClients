@@ -1246,6 +1246,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Urejanje (ogled, ustvarjanje ali urejanje podrobnosti dogodka)"
+      ],
       "View (see all event details)": [
         "Ogled (vseh podrobnosti dogodka)"
       ]
@@ -2507,6 +2510,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavite način obnovitve, da preprečite izgubo dostopa do svojega računa."
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "To lahko traja nekaj minut. Medtem lahko še naprej uporabljate ${ CALENDAR_APP_NAME } kot običajno."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Za uvoz stikov iz Googla ali Outlooka ${ easySwitchLink }."
@@ -4498,6 +4504,12 @@
       "Dedicated servers": [
         "Namenski strežniki"
       ],
+      "Deleting event...": [
+        "Brisanje dogodka ...",
+        "Brisanje dogodkov ...",
+        "Brisanje dogodkov ...",
+        "Brisanje dogodkov ..."
+      ],
       "Discard changes?": [
         "Zavrzi spremembe?"
       ],
@@ -4854,6 +4866,12 @@
       ],
       "Removed participants will be notified.": [
         "Odstranjeni udeleženci bodo obveščeni."
+      ],
+      "Saving event...": [
+        "Shranjevanje dogodka ...",
+        "Shranjevanje dogodkov ...",
+        "Shranjevanje dogodkov ...",
+        "Shranjevanje dogodkov ..."
       ],
       "Select a service provider to start": [
         "Za začetek izberite ponudnika storitve"
@@ -9548,6 +9566,9 @@
       ],
       "Warning: suspected fake website": [
         "Pozor: morebitno lažno spletno mesto"
+      ],
+      "We're setting up calendar search": [
+        "Pripravljamo iskanje po koledarju."
       ],
       "We've locked some calendars to protect your data": [
         "Zaradi zaščite vaših podatkov smo zaklenili nekatere koledarje"

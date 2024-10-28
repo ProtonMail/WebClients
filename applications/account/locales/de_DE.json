@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -379,6 +379,9 @@
       "Delete your account": [
         "Konto löschen"
       ],
+      "Deny access": [
+        "Zugriff verweigern"
+      ],
       "Details": [
         "Details"
       ],
@@ -661,6 +664,9 @@
       "Leave": [
         "Verlassen"
       ],
+      "Leave group": [
+        "Gruppe verlassen"
+      ],
       "Let's talk": [
         "Lass uns reden"
       ],
@@ -813,6 +819,9 @@
       ],
       "Remove all members": [
         "Alle Mitglieder entfernen"
+      ],
+      "Remove all other devices": [
+        "Alle anderen Geräte entfernen"
       ],
       "Remove bonuses": [
         "Prämien entfernen"
@@ -3426,6 +3435,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortiere deine eingehenden Nachrichten automatisch, bevor sie deinen Posteingang erreichen."
       ],
+      "Available with ${ BRAND_NAME } Mail Plus": [
+        "Verfügbar mit ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Herzlichen Glückwunsch! Du hast das Maximum von ${ rewardsLimit } kostenlosen Monaten von ${ plusPlanName } verdient."
       ],
@@ -4440,6 +4452,9 @@
       "Invalid expiration date": [
         "Ungültiges Ablaufdatum"
       ],
+      "Invalid IBAN": [
+        "Ungültige IBAN"
+      ],
       "Invalid invitation link": [
         "Ungültiger Einladungslink"
       ],
@@ -5262,6 +5277,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lebenslang lizenzierte Konten können keinem Familienabonnement beitreten."
       ],
+      "Manage addresses": [
+        "Adressen verwalten"
+      ],
       "Manage user accounts": [
         "Benutzerkonten verwalten"
       ],
@@ -5966,6 +5984,9 @@
       ],
       "Group invitation declined": [
         "Gruppeneinladung abgelehnt"
+      ],
+      "Group membership": [
+        "Gruppenmitgliedschaft"
       ]
     },
     "Header": {
@@ -6632,6 +6653,9 @@
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/Monat)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtern, wenn ALLE der folgenden Bedingungen erfüllt sind)"
       ],
@@ -6716,9 +6740,6 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Füge deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
-      ],
-      "Add a recovery ${ type }": [
-        "Füge ${ type }-Wiederherstellung hinzu"
       ],
       "Add a recovery email address": [
         "E-Mail-Adresse zur Wiederherstellung hinzufügen"
@@ -7127,9 +7148,6 @@
         "${ deletedServerCount } Gateway-Server wird gelöscht",
         "${ deletedServerCount } Gateway-Server werden gelöscht"
       ],
-      "Disable recovery by ${ type }": [
-        "Wiederherstellung über ${ type } deaktivieren"
-      ],
       "Disabled on ${ formattedDateAndTime }": [
         "Deaktiviert am ${ formattedDateAndTime }"
       ],
@@ -7397,6 +7415,9 @@
       ],
       "High Priority": [
         "Hohe Priorität"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Öffentlicher Schlüssel des Identitätsanbieters zur Signierung von Authentifizierungsbehauptungen. Es sollte einen Ort geben, um den Zertifikat-Hash vom Identitätsanbieter herunterzuladen oder zu kopieren. Füge einfach den Zertifikat-Hash in das Textfeld ein."
@@ -8708,9 +8729,6 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Die Verifizierung öffnet einen neuen Tab — bitte deaktiviere daher alle Pop-up-Blocker. Dein Konto wird nicht belastet. Jeder Betrag, der zur Verifizierung der Karte verwendet wird, wird sofort zurückerstattet."
       ],
-      "Verify ${ type }": [
-        "${ type } verifizieren"
-      ],
       "Verify domain": [
         "Domain verifizieren"
       ],
@@ -9737,6 +9755,9 @@
       "And": [
         "Und"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "JEDE"
       ],
@@ -9853,6 +9874,9 @@
       ],
       "Colors": [
         "Farben"
+      ],
+      "Company name": [
+        "Unternehmensname"
       ],
       "Composer": [
         "Verfassen-Fenster"
@@ -10117,6 +10141,9 @@
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "WENN"
@@ -10415,6 +10442,9 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32,\n1228 Plan-les-Ouates\nGenf, Schweiz"
+      ],
       "Search": [
         "Suche"
       ],
@@ -10516,6 +10546,9 @@
       ],
       "Then": [
         "Dann"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time format": [
         "Zeitformat"
@@ -10891,6 +10924,9 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
+      ],
+      "PayPal without credit card": [
+        "PayPal ohne Kreditkarte"
       ],
       "perform a password reset from your active session": [
         "dein Passwort in deiner aktiven Sitzung zurücksetzen"
@@ -11955,6 +11991,9 @@
       "Tailored to your needs": [
         "Auf deine Bedürfnisse zugeschnitten"
       ],
+      "TOR over VPN": [
+        "Tor über VPN"
+      ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
       ],
@@ -12360,6 +12399,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und entfernen, ihren Zugriff auf ${ BRAND_NAME }-Dienste verwalten und andere Aufgaben durchführen können."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Unsere robuste Infrastruktur ermöglicht dir den Zugriff auf dein Konto, wann immer nötig."
@@ -13565,6 +13607,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Banküberweisung"
+      ],
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
@@ -15124,6 +15169,70 @@
         "Lade Freunde zu ${ BRAND_NAME } ein"
       ]
     },
+    "sso": {
+      "Access denied": [
+        "Zugriff verweigert"
+      ],
+      "Access granted": [
+        "Zugriff gewährt"
+      ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Contact administrator": [
+        "Administrator kontaktieren"
+      ],
+      "Deny access": [
+        "Zugriff verweigern"
+      ],
+      "Devices available": [
+        "Verfügbare Geräte"
+      ],
+      "Devices management": [
+        "Geräteverwaltung"
+      ],
+      "Grant access": [
+        "Zugriff gewähren"
+      ],
+      "Invalid confirmation code": [
+        "Ungültiger Bestätigungscode"
+      ],
+      "Join ${ organizationName }": [
+        "${ organizationName } beitreten"
+      ],
+      "No, it wasn’t me": [
+        "Nein, das war ich nicht"
+      ],
+      "Reject": [
+        "Ablehnen"
+      ],
+      "Remove": [
+        "Entfernen"
+      ],
+      "Sign-in confirmed": [
+        "Anmeldung bestätigt"
+      ],
+      "Yes, it was me": [
+        "Ja, das war ich"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Pending activation": [
+        "Ausstehende Aktivierung"
+      ],
+      "Signed out": [
+        "Abgemeldet"
+      ],
+      "Unknown": [
+        "Unbekannt"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
@@ -15824,6 +15933,9 @@
       ],
       "Default calendar updated": [
         "Standardkalender aktualisiert"
+      ],
+      "Device deleted": [
+        "Gerät gelöscht"
       ],
       "Display name updated": [
         "Anzeigename aktualisiert"

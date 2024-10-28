@@ -1222,6 +1222,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "編輯 (檢視、創建或編輯行程詳細資料)"
+      ],
       "View (see all event details)": [
         "檢視（檢視所有事件的詳細資訊）"
       ]
@@ -1350,8 +1353,17 @@
       "Encrypted password manager": [
         "加密密碼管理"
       ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "我們的基本免費方案包含端對端加密電子郵件和儲存空間。不包含頂級功能。"
+      ],
       "Save ${ upsellSavings }": [
         "省下${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "透過${ upsellPlanName }省錢"
+      ],
+      "Secure personal and shared calendar": [
+        "安全保護個人及共享行事曆"
       ],
       "Try ${ planName }": [
         "嘗試${ planName }"
@@ -2498,6 +2510,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "設定救援方法可以避免您再也無法存取您的帳戶。"
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "這可能需要幾分鐘的時間。同時，您可以像往常一樣繼續使用${ CALENDAR_APP_NAME }。"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "以確保您帳戶的最高可能的安全，設置復原詞句。"
       ],
@@ -2991,6 +3006,9 @@
       "Invalid expiration date": [
         "到期日無效"
       ],
+      "Invalid IBAN": [
+        "國際銀行帳號不正確"
+      ],
       "Invalid link to the event": [
         "事件的連結無效"
       ],
@@ -3245,6 +3263,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "您已用鑿行事曆組的上限。"
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "您的帳號已達聯絡人數量限制"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -3630,6 +3651,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "終身帳號無法加入群組方案。"
       ],
+      "Manage addresses": [
+        "管理電子郵件地址"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "有成員的方案的擁有者無法加入其他家庭方案。"
       ],
@@ -3647,6 +3671,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "您在六個月內只能接受三次邀請。若您需要例外，請聯絡 ${ supportLink }。"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "您無法使用目前方案接受此邀請函。"
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
@@ -3678,6 +3705,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "設定您家庭帳號和邀請使用者"
+      ],
       "Set up your family": [
         "設定您的家庭"
       ],
@@ -4194,6 +4224,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
       ],
@@ -4404,6 +4437,9 @@
       "Dedicated servers": [
         "專用伺服器"
       ],
+      "Deleting event...": [
+        "正在刪除活動..."
+      ],
       "Discard changes?": [
         "放棄變更？"
       ],
@@ -4499,6 +4535,9 @@
       ],
       "High Priority": [
         "首要優先順序"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -4754,6 +4793,9 @@
       ],
       "Removed participants will be notified.": [
         "已移除的參與者將獲通知。"
+      ],
+      "Saving event...": [
+        "正在儲存活動..."
       ],
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
@@ -5296,6 +5338,9 @@
       "All-day event notifications": [
         "全日事件通知"
       ],
+      "Anderson": [
+        "安德松"
+      ],
       "App password": [
         "應用程式密碼"
       ],
@@ -5361,6 +5406,9 @@
       ],
       "Colors": [
         "色彩"
+      ],
+      "Company name": [
+        "公司名字"
       ],
       "Confirm password": [
         "確認密碼"
@@ -5478,6 +5526,9 @@
       ],
       "I understand the risk": [
         "我已了解此可能的風險"
+      ],
+      "IBAN": [
+        "國際銀行帳號"
       ],
       "Import all messages": [
         "匯入全部郵件"
@@ -5649,6 +5700,9 @@
       ],
       "Theme": [
         "主題"
+      ],
+      "Thomas": [
+        "湯姆斯"
       ],
       "Time zone": [
         "時區"
@@ -6568,6 +6622,9 @@
       "Sync and backup all your files across devices": [
         "於裝置同步及備份您全部的檔案"
       ],
+      "TOR over VPN": [
+        "經 TOR 的 VPN"
+      ],
       "Two-factor authentication": [
         "兩步驟驗證"
       ],
@@ -7287,6 +7344,9 @@
       "Get it for ${ monthlyPrice }": [
         "只需${ monthlyPrice }"
       ],
+      "Introducing ${ passFamilyPlanName }": [
+        "介紹 ${ passFamilyPlanName }"
+      ],
       "Limited-time deal.": [
         "限時優惠。"
       ]
@@ -7303,11 +7363,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "銀行轉帳"
+      ],
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "使用公司名字"
+      ],
+      "Use personal name": [
+        "使用個人名字"
       ]
     },
     "Payments": {
@@ -7633,6 +7704,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "嘗試${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "於Amazon購物時等…"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
@@ -9317,6 +9391,9 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
+      ],
+      "We're setting up calendar search": [
+        "我們正在設定行事曆搜尋"
       ],
       "We've locked some calendars to protect your data": [
         "我們已鎖定部份行事曆以保護您的資料"

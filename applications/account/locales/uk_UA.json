@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -6537,9 +6537,6 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Додайте адресу @pm.me до свого облікового запису. Цей простий короткий домен означає скорочення від \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
       ],
-      "Add a recovery ${ type }": [
-        "Додайте відновлення ${ type }"
-      ],
       "Add a recovery email address": [
         "Додати адресу резервної електронної пошти"
       ],
@@ -6959,9 +6956,6 @@
         "Видалення ${ deletedServerCount } шлюзових серверів",
         "Видалення ${ deletedServerCount } шлюзових серверів",
         "Видалення ${ deletedServerCount } шлюзових серверів"
-      ],
-      "Disable recovery by ${ type }": [
-        "Вимкнути відновлення за ${ type }"
       ],
       "Discount": [
         "Знижка"
@@ -8480,9 +8474,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться."
-      ],
-      "Verify ${ type }": [
-        "Підтвердити ${ type }"
       ],
       "Verify domain": [
         "Засвідчити домен"

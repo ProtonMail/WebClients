@@ -677,6 +677,9 @@
       "Today": [
         "Tänään"
       ],
+      "Toggle Contacts app": [
+        "Kytke Yhteystiedot-sovellus"
+      ],
       "Toggle settings": [
         "Kytke asetuksia"
       ],
@@ -1235,6 +1238,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Muokkaus (tarkastele, luo tai muokkaa tapahtumia)"
+      ],
       "View (see all event details)": [
         "Tarkastelu (näytä kaikki tapahtumatiedot)"
       ]
@@ -2534,6 +2540,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Aseta palautustapa, jottet menetä pääsyä tilillesi."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Tämä voi kestää muutamia minuutteja. Voit jatkaa ${ CALENDAR_APP_NAME }in käyttöä odottaessasi normaalisti."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla salauslauseke."
       ],
@@ -3047,6 +3056,9 @@
       "Invalid expiration date": [
         "Virheellinen voimassaolon päättymisaika"
       ],
+      "Invalid IBAN": [
+        "Virheellinen IBAN"
+      ],
       "Invalid link to the event": [
         "Virheellinen tapahtumalinkki"
       ],
@@ -3226,6 +3238,9 @@
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"
       ],
+      "The amount due has changed. Please try again.": [
+        "Maksettava määrä on muuttunut. Yritä uudelleen."
+      ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
       ],
@@ -3307,6 +3322,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Olet saavuttanut kalenterien enimmäismäärän."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Olet saavuttanut tilisi yhteystietojen enimmäismäärän"
       ],
       "You must set a name": [
         "Nimi on asetettava"
@@ -3698,6 +3716,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Elinikäiset tilit eivät voi liittyä perhetilaukseen."
       ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Jäseniä sisältävän tilauksen omistajat eivät voi liittyä toiseen perhetilaukseen."
       ],
@@ -3715,6 +3736,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Voit hyväksyä 6 kuukauden aikana vain kolme kutsua. Ota yhteyttä ${ supportLink }, jos tarvitset poikkeusluvan."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Et voi hyväksyä tätä kutsua nykyisellä tilauksellasi."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3752,6 +3776,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Määritä perhetilisi ja kutsu käyttäjiä"
+      ],
       "Set up your family": [
         "Määritä perheesi"
       ],
@@ -4298,6 +4325,9 @@
         "(${ memberCount } jäsen)",
         "(${ memberCount } jäsentä)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/kuukausi)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } tallennustilaetua"
       ],
@@ -4513,6 +4543,10 @@
       ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "Deleting event...": [
+        "Poistetaan tapahtumaa...",
+        "Poistetaan tapahtumia..."
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
@@ -4867,6 +4901,10 @@
       ],
       "Removed participants will be notified.": [
         "Poistetuille osallistujille ilmoitetaan."
+      ],
+      "Saving event...": [
+        "Tallennetaan tapahtumaa...",
+        "Tallennetaan tapahtumia..."
       ],
       "Select a service provider to start": [
         "Aloita valitsemalla palveluntarjoaja"
@@ -5415,6 +5453,9 @@
       "All-day event notifications": [
         "Kokopäiväisten tapahtumien ilmoitukset"
       ],
+      "Anderson": [
+        "Andersson"
+      ],
       "App password": [
         "Sovellussalasana"
       ],
@@ -5480,6 +5521,9 @@
       ],
       "Colors": [
         "Värit"
+      ],
+      "Company name": [
+        "Yrityksen nimi"
       ],
       "Confirm password": [
         "Vahvista salasana"
@@ -5597,6 +5641,9 @@
       ],
       "I understand the risk": [
         "Ymmärrän riskin"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Tuo kaikki viestit"
@@ -5734,6 +5781,9 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Secondary": [
         "Toissijainen"
       ],
@@ -5769,6 +5819,9 @@
       ],
       "Theme": [
         "Teema"
+      ],
+      "Thomas": [
+        "Tuomas"
       ],
       "Time zone": [
         "Aikavyöhyke"
@@ -6715,6 +6768,9 @@
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
       ],
+      "TOR over VPN": [
+        "TOR + VPN"
+      ],
       "Two-factor authentication": [
         "Kaksivaiheinen tunnistautuminen"
       ],
@@ -7551,11 +7607,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Pankkisiirto"
+      ],
       "Credit/debit card": [
         "Maksukortti"
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Käytä yrityksen nimeä"
+      ],
+      "Use personal name": [
+        "Käytä henkilön nimeä"
       ]
     },
     "Payments": {
@@ -7635,6 +7702,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "Katuosoite, postinumero ja kaupunki"
       ]
     },
     "PGP key encryption warning": {
@@ -7898,6 +7970,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Kokeile ${ PASS_APP_NAME }ia"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Käytetään Amazonissa ostoksiin jne."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Kun sähköpostiosoitettasi pyydetään, anna osoitteesi sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
@@ -8583,6 +8658,9 @@
       "Got it": [
         "Selvä"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Kirjaudu vain Apple App Store -tilillesi ja valitse sitten ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Kirjaudu Play Store -tilillesi ja paina sitten ${ subscriptions }."
       ],
@@ -8646,6 +8724,9 @@
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } tarjoaa perusasioita enemmän, jotta voit olla tuotteliaampi ja järjestelmällisempi, hallita postilaatikkoasi ja sähköposti-identiteettiäsi, ja paljon muuta."
+      ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } auttaa sinua turvaamaan jokaisen perheenjäsenesi — ja heidän tietonsa — aina, kun he ovat verkossa."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } tarjoaa ${ planMaxSpace } tallennustilaa sähköposteillesi, liitetiedostoillesi, tapahtumillesi, salasanoillesi ja tiedostoillesi. Olet myös oikeutettu vuosittaisiin tallennustilabonuksiin."
@@ -9724,6 +9805,9 @@
       ],
       "Warning: suspected fake website": [
         "Varoitus: epäilty huijaussivusto"
+      ],
+      "We're setting up calendar search": [
+        "Määritämme kalenterihakua"
       ],
       "We've locked some calendars to protect your data": [
         "Osa kalentereista on lukittu tietojesi suojaamiseksi"

@@ -677,6 +677,9 @@
       "Today": [
         "Avui"
       ],
+      "Toggle Contacts app": [
+        "Alterna l'aplicació Contactes"
+      ],
       "Toggle settings": [
         "Commuta les preferències"
       ],
@@ -1343,6 +1346,9 @@
       "${ maxSpaceTB } storage": [
         "Emmagatzematge de ${ maxSpaceTB }"
       ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } d'emmagatzematge de correu electrònic"
+      ],
       "Advanced account protection": [
         "Protecció avançada del compte"
       ],
@@ -1357,6 +1363,9 @@
       ],
       "Try ${ planName }": [
         "Proveu ${ planName }"
+      ],
+      "Ultra fast and private VPN": [
+        "VPN ultraràpida i privada"
       ]
     },
     "Checkout row": {
@@ -2986,6 +2995,9 @@
       "Invalid expiration date": [
         "Data de caducitat invàlida"
       ],
+      "Invalid IBAN": [
+        "L'IBAN no és vàlid."
+      ],
       "Invalid link to the event": [
         "L'enllaç a l'esdeveniment no és vàlid"
       ],
@@ -3619,11 +3631,17 @@
       "customer support": [
         "atenció al client"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Els plans familiars actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
+      ],
+      "Manage addresses": [
+        "Gestiona les adreces"
       ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
@@ -4421,6 +4439,10 @@
       "Dedicated servers": [
         "Servidors dedicats"
       ],
+      "Deleting event...": [
+        "Eliminant l'esdeveniment...",
+        "Eliminant els esdeveniments..."
+      ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
@@ -4771,6 +4793,10 @@
       ],
       "Removed participants will be notified.": [
         "Els participants esborrats seran notificats."
+      ],
+      "Saving event...": [
+        "Desant l'esdeveniment...",
+        "Desant els esdeveniments..."
       ],
       "Select a service provider to start": [
         "Seleccioneu un proveïdor de serveis per començar"
@@ -6255,6 +6281,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6302,6 +6331,10 @@
         "${ n } missatge per dia",
         "${ n } missatges per dia"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } ${ PASS_SHORT_APP_NAME } caixa forta compartida per usuari",
+        "${ n } ${ PASS_SHORT_APP_NAME } caixes fortes compartides per usuari"
+      ],
       "${ n } vault": [
         "${ n } caixa forta",
         "${ n } caixes fortes"
@@ -6332,6 +6365,12 @@
       ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Per a ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "1 TB secure storage": [
         "1 TB d'emmagatzematge segur"
@@ -6466,7 +6505,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb una petició"
+        "Genera correus electrònics amb una demanda"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -7401,6 +7440,14 @@
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilitza el nom de l'empresa"
+      ],
+      "Use personal name": [
+        "Utilitza el nom de la persona"
       ]
     },
     "Payments": {
@@ -8469,6 +8516,9 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } va més enllà de l'essencial per a ajudar-vos a tenir una major productivitat, capacitat d'organització i el control de la vostra safata d'entrada, la vostra identitat de correu electrònic i molt més."
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } us ajuda a assegurar-vos que els membres de la vostra família, i les seves dades, estiguin protegits sempre que estiguin en línia."
+      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per als vostres correus electrònics, adjunts, esdeveniments, contrasenyes i fitxers. També podeu optar a bonificacions d'emmagatzematge anuals."
       ],
@@ -8481,9 +8531,28 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per usuari per a correus electrònics, adjunts, esdeveniments, fitxers i contrasenyes. També podeu optar a bonificacions anuals d'emmagatzematge."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } calendari per usuari",
+        "${ planNumberOfCalendars } calendaris per usuari"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } adreça de correu electrònic per usuari",
+        "${ planNumberOfEmails } adreces de correu electrònic per usuari"
+      ],
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } usuari",
         "${ planNumberOfUsers } usuaris"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "Protecció avançada del compte ${ PROTON_SENTINEL_NAME }"
       ],
       "2 users": [
         "2 usuaris"
@@ -8517,6 +8586,9 @@
       ],
       "Comprehensive privacy and security": [
         "Privacitat i seguretat integrals"
+      ],
+      "Dark web monitoring": [
+        "Supervisió de la web fosca"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplicació d'escriptori i compatibilitat amb clients de correu electrònic (a través d'IMAP)"
@@ -8556,6 +8628,9 @@
       ],
       "Learn more about our impact": [
         "Descobriu més sobre el nostre impacte"
+      ],
+      "Limitations of the free plan:": [
+        "Limitacions del pla gratuït:"
       ],
       "Make your business stand out": [
         "Feu que el vostre negoci destaqui"

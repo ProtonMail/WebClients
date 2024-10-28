@@ -186,6 +186,9 @@
       "Copy link": [
         "Kopírovat odkaz"
       ],
+      "Create a copy": [
+        "Vytvořit kopii"
+      ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
@@ -2110,6 +2113,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Chcete-li zajistit co nejvyšší zabezpečení účtu, nastavte frázi pro obnovení."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
       ],
@@ -2570,6 +2576,9 @@
       "Invalid expiration date": [
         "Neplatné datum expirace"
       ],
+      "Invalid IBAN": [
+        "Neplatný IBAN"
+      ],
       "Invalid name": [
         "Neplatný název"
       ],
@@ -2723,6 +2732,9 @@
       "The address might be misspelled": [
         "Adresa může obsahovat překlep"
       ],
+      "The amount due has changed. Please try again.": [
+        "Částka k zaplacení se změnila. Zkuste to prosím znovu."
+      ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Dokument, který se snažíte převést, je příliš velký. K tomu může dojít, pokud dokument obsahuje velké množství obrázků nebo jiných médií. Zkuste to prosím znovu s menším dokumentem."
       ],
@@ -2836,6 +2848,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Dosáhli jste maximálního počtu kalendářů."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosáhli jste limitu počtu kontaktů vašeho účtu"
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -3161,6 +3176,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Doživotní účty nemohou být připojeny k rodinnému tarifu."
       ],
+      "Manage addresses": [
+        "Spravovat adresy"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Vlastníci tarifu se členy, se nemohou připojit k jinému rodinnému tarifu."
       ],
@@ -3178,6 +3196,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Během 6 měsíců můžete přijmout pouze 3 pozvánky. Pokud požadujete výjimku, kontaktujte prosím ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "S vaším současným tarifem nemůžete přijmout tuto pozvánku."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3785,6 +3806,9 @@
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/měsíc)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
       ],
@@ -4142,6 +4166,9 @@
       "High Priority": [
         "Vysoká priorita"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
@@ -4262,6 +4289,9 @@
       "Low Priority": [
         "Nízká priorita"
       ],
+      "Making a copy...": [
+        "Vytváření kopie..."
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -4351,6 +4381,9 @@
       ],
       "Organization size": [
         "Velikost organizace"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Prioritou našich upozornění je bezpečnost. Pokud nepoznáváte žádné z uniklých informací, můžete tuto zprávu bez obav ignorovat."
       ],
       "Owner": [
         "Vlastník"
@@ -4975,6 +5008,9 @@
       "Address": [
         "Adresa"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Anyone on the Internet with the link can view": [
         "Kdokoli na internetu s odkazem může zobrazit"
       ],
@@ -5055,6 +5091,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Company name": [
+        "Název společnosti"
       ],
       "Confirm password": [
         "Potvrdit heslo"
@@ -5160,6 +5199,9 @@
       ],
       "I understand the risk": [
         "Rozumím rizikům"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Ignore": [
         "Ignorovat"
@@ -5308,6 +5350,9 @@
       "Reveal password": [
         "Zobrazit heslo"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Ženeva"
+      ],
       "Security code (${ codeName })": [
         "Kód zabezpečení (${ codeName })"
       ],
@@ -5346,6 +5391,9 @@
       ],
       "Theme": [
         "Motiv"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Title": [
         "Název"
@@ -5694,6 +5742,9 @@
       "Graphics Interchange Format (GIF)": [
         "Formát pro výměnu grafiky (GIF)"
       ],
+      "GZip Archive": [
+        "GZip komprimovaný archiv"
+      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5711,6 +5762,9 @@
       ],
       "Java Archive (JAR)": [
         "Archiv Java (JAR)"
+      ],
+      "JPEG image": [
+        "JPEG obrázek"
       ],
       "MP3 audio": [
         "MP3 audio"
@@ -5747,6 +5801,9 @@
       ],
       "Opus audio": [
         "Opus audio"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Přenosná síťová grafika (PNG)"
       ],
       "RAR archive": [
         "RAR archiv"
@@ -6288,6 +6345,9 @@
       "Sync and backup all your files across devices": [
         "Synchronizace a zálohování všech vašich souborů mezi zařízeními"
       ],
+      "TOR over VPN": [
+        "TOR skrze VPN"
+      ],
       "Two-factor authentication": [
         "Dvoufázové ověření"
       ],
@@ -6566,6 +6626,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
       ],
@@ -6617,6 +6680,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Nástroj pro správu organizace, který umožňuje správcům přidávat a odebírat uživatele, spravovat jejich přístup ke službám ${ BRAND_NAME } a provádět další úkony."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naše výkonná infrastruktura zajistí, že budete mít přístup k účtu kdykoliv to bude potřeba"
       ],
@@ -6658,6 +6724,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Směrujte svůj internetový provoz skrze síť TOR jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
@@ -6975,6 +7044,9 @@
       "Share invitation declined": [
         "Pozvánka sdílení byla odmítnuta"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Ukončení sdílení této položky selhalo"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Odkaz na \"${ name }\" se nepodařilo odstranit"
       ],
@@ -7013,6 +7085,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Aby import fungoval, musíte vybrat všechny požadované položky, jak je znázorněno na obrázku GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Vyberte, k čemu může ${ BRAND_NAME } přistupovat: zobrazit e-mailové zprávy a nastavení, zobrazit a stáhnout kontakty, zobrazit a stáhnout všechny denní události, ke kterým máte přístup z kalendáře Google."
       ]
     },
     "Option": {
@@ -7111,11 +7188,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankovní převod"
+      ],
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Použít název společnosti"
+      ],
+      "Use personal name": [
+        "Použít vlastní jméno"
       ]
     },
     "Payments": {
@@ -7195,6 +7283,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrzením této platby zmocňujete ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, aby dali pokyn vaší bance k odepsání peněz z vašeho účtu a aby vaše banka odpovídajícím způsobem odepsala peníze z vašeho účtu. Vrácení peněz je možné do 8 týdnů od data odepsání peněz za podmínek stanovených ve smlouvě s bankou."
+      ],
+      "Street address, postal code, and city": [
+        "Ulice, poštovní směrovací číslo a město"
       ]
     },
     "PGP key encryption warning": {
@@ -7443,6 +7539,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Vyzkoušejte ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Použito na Amazonu pro nakupování, atd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
@@ -8101,6 +8200,9 @@
     "Subscription change warning": {
       "Got it": [
         "Rozumím"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Stačí se přihlásit k účtu v Apple App Store a vybrat ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Stačí se přihlásit k účtu v Obchodě Play a stisknout ${ subscriptions }."
@@ -8997,6 +9099,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
+      "Shared with end-to-end encryption": [
+        "Sdíleno koncově šifrované"
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
       ],
@@ -9103,6 +9208,11 @@
       ],
       "No ads": [
         "Bez reklam"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
       ]
     },
     "wallet_signup_2024: Info": {

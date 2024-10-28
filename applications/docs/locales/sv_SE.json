@@ -184,6 +184,9 @@
       "Copy link": [
         "Kopiera länk"
       ],
+      "Create a copy": [
+        "Skapa en kopia"
+      ],
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
       ],
@@ -2080,6 +2083,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -2171,6 +2177,9 @@
       ]
     },
     "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bekräfta förlust av ${ PASS_APP_NAME } specialrabatt"
+      ],
       "Remove discount": [
         "Ta bort rabatt"
       ],
@@ -2522,6 +2531,9 @@
       "Invalid expiration date": [
         "Ogiltigt förfallodatum"
       ],
+      "Invalid IBAN": [
+        "Ogiltigt IBAN"
+      ],
       "Invalid name": [
         "Ogiltigt namn"
       ],
@@ -2664,6 +2676,9 @@
       ],
       "The address might be misspelled": [
         "Adressen kan vara felstavad"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Det förfallna beloppet har ändrats. Försök igen."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Dokumentet du försöker konvertera är för stort. Detta kan inträffa om dokumentet har ett stort antal bilder eller andra media. Försök igen med ett mindre dokument."
@@ -3099,6 +3114,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livstidskonton kan inte gå med i ett familjepaket."
       ],
+      "Manage addresses": [
+        "Hantera adresser"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Ägare av ett paket med medlemmar kan inte gå med i ett annat familjepaket."
       ],
@@ -3116,6 +3134,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan bara acceptera 3 inbjudningar under en 6-månadersperiod. Kontakta ${ supportLink } om du behöver ett undantag."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kan inte acceptera denna inbjudan med ditt nuvarande paket."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blivit inbjuden att gå med i ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3672,6 +3693,9 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmar)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/månad)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -4017,6 +4041,9 @@
       "High Priority": [
         "Hög prioritet"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
       ],
@@ -4134,6 +4161,9 @@
       ],
       "Low Priority": [
         "Låg prioritet"
+      ],
+      "Making a copy...": [
+        "Gör en kopia …"
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
@@ -4833,6 +4863,9 @@
       "Address": [
         "Adress"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Anyone on the Internet with the link can view": [
         "Vem som helst på Internet med länken kan visa"
       ],
@@ -4913,6 +4946,9 @@
       ],
       "Colors": [
         "Färger"
+      ],
+      "Company name": [
+        "Företagsnamn"
       ],
       "Confirm password": [
         "Bekräfta lösenord"
@@ -5018,6 +5054,9 @@
       ],
       "I understand the risk": [
         "Jag förstår risken"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Ignore": [
         "Ignorera"
@@ -5166,6 +5205,9 @@
       "Reveal password": [
         "Visa lösenord"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
       "Security code (${ codeName })": [
         "Säkerhetskod (${ codeName })"
       ],
@@ -5204,6 +5246,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Title": [
         "Rubrik"
@@ -5548,6 +5593,9 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
+      "GZip Archive": [
+        "GZip-arkiv"
+      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5568,6 +5616,9 @@
       ],
       "JavaScript": [
         "JavaScript"
+      ],
+      "JPEG image": [
+        "JPEG-bild"
       ],
       "JSON": [
         "JSON"
@@ -5634,6 +5685,9 @@
       ],
       "Opus audio": [
         "Opus-ljud"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "Python": [
         "Python"
@@ -6146,6 +6200,9 @@
       "Sync and backup all your files across devices": [
         "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
       ],
+      "TOR over VPN": [
+        "TOR över VPN"
+      ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
       ],
@@ -6415,6 +6472,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Skapa upp till ${ n } e-postadresser/alias som du kan tilldela familjemedlemmar. Använd dem för onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Försvarar mot hot mot VPN-integriteten genom att skicka din Internet-trafik via flera servrar"
       ],
@@ -6466,6 +6526,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Möjlighet att visa icke-privata användares inkorgar som användaren själv gör, inklusive fullständiga meddelanden och kontaktuppgifter"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationshanteringsverktyg som låter administratörer lägga till och ta bort användare, hantera deras åtkomst till ${ BRAND_NAME }-tjänster och utföra andra uppgifter."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robusta infrastruktur säkerställer att du kommer att kunna komma åt ditt konto när du behöver det"
       ],
@@ -6507,6 +6570,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Återställ användarlösenord och återställ tvåfaktorsautentisering för användare"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Dirigera din Internettrafik genom TOR-nätverket med ett enda klick"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
@@ -6838,6 +6904,11 @@
         "För att importen ska fungera måste du välja alla begärda objekt som visas i GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Välj vad ${ BRAND_NAME } kan komma åt: visa dina e-postmeddelanden och inställningar, visa och ladda ner dina kontakter, visa och ladda ner alla agendor du kommer åt från Google Kalender."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Lägg till i befintlig grupp"
@@ -6897,6 +6968,9 @@
       "All premium features. 6 users. 1 easy subscription.": [
         "Alla premiumfunktioner. 6 användare. 1 enkel prenumeration."
       ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Faktureras årligen till ${ yearlyPrice }. Spara ${ yearlySavedPrice } med ${ passFamilyPlanName } (jämfört med 6 individuella ${ passPlusPlanName }-prenumerationer)."
+      ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exklusivt erbjudande endast tillgängligt för ${ PASS_APP_NAME } tidiga supportrar."
       ],
@@ -6925,6 +6999,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Banköverföring"
+      ],
       "Bitcoin": [
         "Bitcoin"
       ],
@@ -6936,6 +7013,14 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Använd företagsnamn"
+      ],
+      "Use personal name": [
+        "Använd personligt namn"
       ]
     },
     "Payments": {
@@ -7012,6 +7097,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto och din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdatumet, enligt villkoren i ditt avtal med din bank."
+      ],
+      "Street address, postal code, and city": [
+        "Gatuadress, postnummer och ort"
       ]
     },
     "PGP key encryption warning": {
@@ -7250,6 +7343,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prova ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Används på Amazon för shopping etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "När du tillfrågas om din e-postadress, ge detta alias istället. Alias ​​tillhandahålls av ${ passLink }."
@@ -7862,6 +7958,9 @@
     "Subscription change warning": {
       "Got it": [
         "Förstått"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Logga bara in på ditt Apple App Store-konto och välj sedan ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Logga bara in på ditt Play Store-konto och tryck sedan på ${ subscriptions }"
@@ -8723,6 +8822,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"
       ],
+      "Shared with end-to-end encryption": [
+        "Delat med end-to-end-kryptering"
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
       ],
@@ -8813,6 +8915,11 @@
       ],
       "No ads": [
         "Inga annonser"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN och mer."
       ]
     },
     "wallet_signup_2024: Info": {

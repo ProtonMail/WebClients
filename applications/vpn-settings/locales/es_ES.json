@@ -55,6 +55,9 @@
       "Add domain": [
         "Añadir dominio"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Agregar más asientos para ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Añadir PayPal"
       ],
@@ -2192,6 +2195,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "En caso de desactivación, solo los administradores tendrán acceso."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantén separadas las distintas partes de tu vida y tu bandeja de entrada organizada con direcciones adicionales."
       ],
@@ -2624,6 +2630,9 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
+      ],
+      "The amount due has changed. Please try again.": [
+        "El importe a pagar ha cambiado. Por favor, inténtalo de nuevo."
       ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"
@@ -5620,7 +5629,7 @@
         "Frase de recuperación"
       ],
       "Repeat backup password": [
-        "Repite a contraseña de respaldo"
+        "Repite la contraseña de respaldo"
       ],
       "Reply (ACS) URL": [
         "URL (ACS) de respuesta"
@@ -6460,7 +6469,7 @@
         "Política de cero registros"
       ],
       "Online document editor": [
-        "Editor de documentos en línea"
+        "Editor de documentos online"
       ],
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
@@ -6870,7 +6879,7 @@
         "Elige horarios personalizados para recibir recordatorios de un correo o para que llegue tu mensaje."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
+        "Crea varias direcciones de correo electrónico para tus identidades online, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
@@ -6932,6 +6941,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Herramienta de gestión de la organización que permite a los administradores agregar y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrás acceder a tu cuenta cuando lo necesites."
@@ -7585,7 +7597,7 @@
         "Usar el nombre de la empresa"
       ],
       "Use personal name": [
-        "Usar un nombre personal"
+        "Usar el nombre de la persona"
       ]
     },
     "Payments": {
@@ -7680,6 +7692,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autorizas a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a tu banco para que realice el cargo en tu cuenta, y a tu banco para que realice el cargo correspondiente en tu cuenta. Puedes obtener un reembolso en un plazo de 8 semanas a partir de la fecha del cargo, según las condiciones de tu acuerdo con tu banco."
+      ],
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
       ]
@@ -8039,7 +8054,7 @@
         "Una vez que SCIM esté desactivado para tu organización, **todos los usuarios SCIM proporcionados automáticamente por tu proveedor de identidad serán convertidos a usuarios SSO** y podrás gestionarlos directamente en los ajustes de ${ BRAND_NAME }."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
-        "Simplifica la administración de usuarios a través de diferentes servicios. Añade, edita y elimina usuarios en tu proveedor de identidad, y los cambios serán aplicados automáticamente en tu organización ${ appName }."
+        "Simplifica la administración de usuarios a través de diferentes servicios. Añade, edita y elimina usuarios en tu proveedor de identidad, y los cambios serán aplicados automáticamente en la organización ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "El aprovisionamiento automático SCIM será desactivado hasta que ingrese el nuevo token SCIM en la configuración de tu proveedor de identidad."
@@ -8509,7 +8524,7 @@
         "Transmisiones seguras"
       ],
       "Support online privacy": [
-        "Apoya la privacidad en línea"
+        "Apoya la privacidad online"
       ]
     },
     "specialoffer: Footer": {
@@ -9713,6 +9728,12 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clientes de ${ VPN_APP_NAME }"
       ],
@@ -10030,6 +10051,9 @@
       ],
       "Email subscriptions": [
         "Boletines electrónicos"
+      ],
+      "Enable for all users": [
+        "Activar para todos los usuarios"
       ],
       "Enter 2FA code": [
         "Ingresa el código 2FA"
@@ -10912,7 +10936,7 @@
         "La configuración de la fecha y la hora de tu dispositivo no están sincronizadas. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Desafortunadamente, no estamos en línea en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
+        "Desafortunadamente, no estamos conectados en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar online."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Se ha detectado un problema con tu configuración DNS. Asegúrate de que tus registros coinciden con las instrucciones de abajo. Si el problema persiste, se tendrá que cerrar la sesión de DKIM."

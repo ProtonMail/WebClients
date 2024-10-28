@@ -2327,11 +2327,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2372,6 +2367,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante un archivo CSV y VCF, asegúrese que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídalo en archivos pequeños. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar los contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
@@ -2398,6 +2396,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2821,7 +2824,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
-        "El IBAN no es válido."
+        "IBAN inválido"
       ],
       "Invalid name": [
         "Nombre inválido"
@@ -2974,6 +2977,9 @@
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
+      ],
+      "The amount due has changed. Please try again.": [
+        "El importe a pagar ha cambiado. Intente de nuevo."
       ],
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
@@ -4604,7 +4610,7 @@
         "Importando los datos de ${ fromEmail } a ${ toEmail }."
       ],
       "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "Mientras tanto, obtén una cuenta de ${ DRIVE_APP_NAME }, protege tus datos con cifrado de extremo a extremo y compártelos de forma segura."
+        "Mientras tanto, obtenga una cuenta de ${ DRIVE_APP_NAME }, proteja los datos con cifrado de extremo a extremo y compártalos de forma segura."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrá enviar un depósito con una dirección Bitcoin."
@@ -7380,6 +7386,14 @@
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtenga Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7392,14 +7406,6 @@
       ],
       "Switch plans?": [
         "¿Quiere cambiar de plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Obtenga Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7505,6 +7511,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrá acceder a la cuenta cuando la necesite"
@@ -7819,6 +7828,9 @@
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
       ],
+      "Failed to load invitation details": [
+        "Error al cargar los detalles de la invitación"
+      ],
       "Failed to move, please try again": [
         "Error al mover, inténtelo de nuevo"
       ],
@@ -7887,7 +7899,7 @@
         "El elemento no se añadió a su drive"
       ],
       "The item was successfully added to your drive": [
-        "Se agregó el elemento al drive."
+        "El elemento se añadió a su drive con éxito"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Error al eliminar el enlace a \"${ name }\""
@@ -8262,7 +8274,7 @@
         "Usar el nombre de la empresa"
       ],
       "Use personal name": [
-        "Usar un nombre personal"
+        "Usar el nombre de la persona"
       ]
     },
     "Payments": {
@@ -8345,6 +8357,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a su banco para que debite su cuenta, y a su banco para que debite el cargo correspondiente en su cuenta. Puede obtener un reembolso en un plazo de 8 semanas a partir de la fecha del débito, según las condiciones de su acuerdo con su banco."
+      ],
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
       ]

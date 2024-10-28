@@ -683,8 +683,11 @@
       "Today": [
         "Dnes"
       ],
+      "Toggle Contacts app": [
+        "Přepnout aplikaci Kontakty"
+      ],
       "Toggle settings": [
-        "Otevřít/zavřít nastavení"
+        "Přepnout nastavení"
       ],
       "Trust": [
         "Důvěřovat"
@@ -909,6 +912,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Pokud nyní odejdete, přijdete o svou událost."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Tuto kartu nezavírejte. Některé požadavky jsou stále zpracovávány na pozadí."
       ]
     },
     "Apps dropdown": {
@@ -1261,6 +1267,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Úprava (zobrazit, vytvořit nebo upravit detaily události)"
+      ],
       "View (see all event details)": [
         "Zobrazení (zobrazit všechny podrobnosti o události)"
       ]
@@ -2579,8 +2588,14 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavte metodu obnovení, abyste zabránili ztrátě přístupu k účtu."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Může to trvat několik minut. Mezitím můžete ${ CALENDAR_APP_NAME } používat jak potřebujete."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Chcete-li zajistit co nejvyšší zabezpečení účtu, nastavte frázi pro obnovení."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
@@ -3104,6 +3119,9 @@
       "Invalid expiration date": [
         "Neplatné datum expirace"
       ],
+      "Invalid IBAN": [
+        "Neplatný IBAN"
+      ],
       "Invalid link to the event": [
         "Neplatný odkaz k události"
       ],
@@ -3293,6 +3311,9 @@
       "The address might be misspelled": [
         "Adresa může obsahovat překlep"
       ],
+      "The amount due has changed. Please try again.": [
+        "Částka k zaplacení se změnila. Zkuste to prosím znovu."
+      ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"
       ],
@@ -3376,6 +3397,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Dosáhli jste maximálního počtu kalendářů."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosáhli jste limitu počtu kontaktů vašeho účtu"
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -3773,6 +3797,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Doživotní účty nemohou být připojeny k rodinnému tarifu."
       ],
+      "Manage addresses": [
+        "Spravovat adresy"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Vlastníci tarifu se členy, se nemohou připojit k jinému rodinnému tarifu."
       ],
@@ -3790,6 +3817,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Během 6 měsíců můžete přijmout pouze 3 pozvánky. Pokud požadujete výjimku, kontaktujte prosím ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "S vaším současným tarifem nemůžete přijmout tuto pozvánku."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3827,6 +3857,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Nastavte váš rodinný účet a pozvěte uživatele"
+      ],
       "Set up your family": [
         "Nastavte si vaši rodinu"
       ],
@@ -4433,6 +4466,9 @@
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/měsíc)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
       ],
@@ -4661,6 +4697,12 @@
       "Dedicated servers": [
         "Dedikované servery"
       ],
+      "Deleting event...": [
+        "Mazání události...",
+        "Mazání událostí...",
+        "Mazání událostí...",
+        "Mazání událostí..."
+      ],
       "Discard changes?": [
         "Zahodit změny?"
       ],
@@ -4759,6 +4801,9 @@
       ],
       "High Priority": [
         "Vysoká priorita"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -4940,6 +4985,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Ostatní uživatelé ve vaši organizaci uvidí, kdy jste zaneprázdněni. Žádné detaily události nebudou sdíleny."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Prioritou našich upozornění je bezpečnost. Pokud nepoznáváte žádné z uniklých informací, můžete tuto zprávu bez obav ignorovat."
+      ],
       "password": [
         "heslo"
       ],
@@ -5020,6 +5068,12 @@
       ],
       "Removed participants will be notified.": [
         "Odebraní účastníci budou upozorněni."
+      ],
+      "Saving event...": [
+        "Ukládání události...",
+        "Ukládání událostí...",
+        "Ukládání událostí...",
+        "Ukládání událostí..."
       ],
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
@@ -5580,6 +5634,9 @@
       "All-day event notifications": [
         "Oznámení celodenních událostí"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "App password": [
         "Heslo aplikace"
       ],
@@ -5645,6 +5702,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Company name": [
+        "Název společnosti"
       ],
       "Confirm password": [
         "Potvrdit heslo"
@@ -5762,6 +5822,9 @@
       ],
       "I understand the risk": [
         "Rozumím rizikům"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -5901,6 +5964,9 @@
       "Reveal password": [
         "Zobrazit heslo"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Ženeva"
+      ],
       "Secondary": [
         "Sekundární"
       ],
@@ -5936,6 +6002,9 @@
       ],
       "Theme": [
         "Motiv"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time zone": [
         "Časové pásmo"
@@ -6936,6 +7005,9 @@
       "Sync and backup all your files across devices": [
         "Synchronizace a zálohování všech vašich souborů mezi zařízeními"
       ],
+      "TOR over VPN": [
+        "TOR skrze VPN"
+      ],
       "Two-factor authentication": [
         "Dvoufázové ověření"
       ],
@@ -7214,6 +7286,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
       ],
@@ -7265,6 +7340,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Nástroj pro správu organizace, který umožňuje správcům přidávat a odebírat uživatele, spravovat jejich přístup ke službám ${ BRAND_NAME } a provádět další úkony."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naše výkonná infrastruktura zajistí, že budete mít přístup k účtu kdykoliv to bude potřeba"
       ],
@@ -7306,6 +7384,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Směrujte svůj internetový provoz skrze síť TOR jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
@@ -7646,6 +7727,11 @@
         "Aby import fungoval, musíte vybrat všechny požadované položky, jak je znázorněno na obrázku GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Vyberte, k čemu může ${ BRAND_NAME } přistupovat: zobrazit e-mailové zprávy a nastavení, zobrazit a stáhnout kontakty, zobrazit a stáhnout všechny denní události, ke kterým máte přístup z kalendáře Google."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Vítejte v ${ appName }"
@@ -7842,6 +7928,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankovní převod"
+      ],
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
@@ -7850,6 +7939,14 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Použít název společnosti"
+      ],
+      "Use personal name": [
+        "Použít vlastní jméno"
       ]
     },
     "Payments": {
@@ -7929,6 +8026,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrzením této platby zmocňujete ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, aby dali pokyn vaší bance k odepsání peněz z vašeho účtu a aby vaše banka odpovídajícím způsobem odepsala peníze z vašeho účtu. Vrácení peněz je možné do 8 týdnů od data odepsání peněz za podmínek stanovených ve smlouvě s bankou."
+      ],
+      "Street address, postal code, and city": [
+        "Ulice, poštovní směrovací číslo a město"
       ]
     },
     "PGP key encryption warning": {
@@ -8202,6 +8307,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Vyzkoušejte ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Použito na Amazonu pro nakupování, atd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
@@ -8934,6 +9042,9 @@
     "Subscription change warning": {
       "Got it": [
         "Rozumím"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Stačí se přihlásit k účtu v Apple App Store a vybrat ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Stačí se přihlásit k účtu v Obchodě Play a stisknout ${ subscriptions }."
@@ -10120,6 +10231,9 @@
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
       ],
+      "We're setting up calendar search": [
+        "Nastavujeme vyhledávání v kalendáři"
+      ],
       "We've locked some calendars to protect your data": [
         "Uzamkli jsme některé vaše kalendáře, abychom ochránili vaše údaje"
       ],
@@ -10339,6 +10453,11 @@
       ],
       "No ads": [
         "Bez reklam"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
       ]
     },
     "wallet_signup_2024: Info": {

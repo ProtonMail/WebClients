@@ -3572,7 +3572,7 @@
         "Actualiza tu cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de última generación impulsada por inteligencia artificial con soporte dedicado de expertos las 24 horas, los 7 días de la semana."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
-        "Usa ${ MAIL_APP_NAME } para iniciar sesión en servicios en línea, a diferencia de otros proveedores de correo electrónico, nosotros nunca rastrearemos tus datos ni los compartiremos con terceros."
+        "Usa ${ MAIL_APP_NAME } para iniciar tus sesiones online, a diferencia de otros proveedores de correo electrónico, nosotros nunca rastrearemos tus datos ni los compartiremos con terceros."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
@@ -4316,6 +4316,9 @@
       ],
       "Thanks for the feedback!": [
         "¡Gracias por los comentarios!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "El importe a pagar ha cambiado. Por favor, inténtalo de nuevo."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "El archivo adjunto no se ha podido descifrar.\nSi tienes la clave privada correspondiente, aún podrás descifrar\nel archivo con un programa como GnuPG.",
@@ -5252,7 +5255,7 @@
         "Abre la lista de comprobación y obtén almacenamiento gratis"
       ],
       "Popular online services": [
-        "Servicios populares en línea"
+        "Servicios online populares"
       ],
       "privacy features": [
         "funciones de privacidad"
@@ -7235,6 +7238,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Desactívala para buscar sólo por fecha, nombre, dirección de correo electrónico o asunto. Para desactivar el contenido de los mensajes de búsqueda (y eliminar los mensajes descargados para activar esta función), ve a Configuración."
+      ],
       "Turn on to search the content of your messages": [
         "Actívala para buscar en el contenido de sus mensajes."
       ],
@@ -8696,7 +8702,7 @@
         "Destacados"
       ],
       "stay safer online": [
-        "mantener tu seguridad en línea"
+        "mantén tu seguridad online"
       ],
       "Terms": [
         "Términos"
@@ -9423,7 +9429,7 @@
         "Distintos roles de administración"
       ],
       "Online document editor": [
-        "Editor de documentos en línea"
+        "Editor de documentos online"
       ],
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
@@ -9785,7 +9791,7 @@
         "Elige horarios personalizados para recibir recordatorios de un correo o para que llegue tu mensaje."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
+        "Crea varias direcciones de correo electrónico para tus identidades online, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
@@ -9847,6 +9853,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Herramienta de gestión de la organización que permite a los administradores agregar y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrás acceder a tu cuenta cuando lo necesites."
@@ -10080,7 +10089,7 @@
         "He transferido mis inicios de sesión a ${ BRAND_NAME }."
       ],
       "Privacy for all your online accounts": [
-        "Privacidad para todas tus cuentas en línea"
+        "Privacidad para todas tus cuentas online"
       ],
       "Shopping": [
         "Compras"
@@ -10089,7 +10098,7 @@
         "Redes sociales"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Usa tu dirección ${ MAIL_APP_NAME } para iniciar sesión en tus servicios en línea sin ser rastreado. Cambia tu dirección de correo electrónico para tus servicios más usados ahora. ${ learnMoreLink }"
+        "Usa tu dirección ${ MAIL_APP_NAME } para iniciar sesión en tus servicios online sin ser rastreado. Cambia ya tu dirección de correo electrónico para tus servicios más usados. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -10253,7 +10262,7 @@
         "Criptomonedas"
       ],
       "E-commerce and Retail": [
-        "Comercio electrónico y en tienda"
+        "Comercio electrónico y tiendas"
       ],
       "Entertainment": [
         "Entretenimiento"
@@ -10393,7 +10402,7 @@
         "Usar el nombre de la empresa"
       ],
       "Use personal name": [
-        "Usar un nombre personal"
+        "Usar el nombre de la persona"
       ]
     },
     "Payments": {
@@ -10476,6 +10485,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autorizas a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a tu banco para que realice el cargo en tu cuenta, y a tu banco para que realice el cargo correspondiente en tu cuenta. Puedes obtener un reembolso en un plazo de 8 semanas a partir de la fecha del cargo, según las condiciones de tu acuerdo con tu banco."
+      ],
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
       ]
@@ -10859,7 +10871,7 @@
         "Abrir ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Protege tu identidad en línea."
+        "Protege tu identidad online."
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prueba ${ PASS_APP_NAME }"
@@ -11334,7 +11346,7 @@
         "Transmisiones seguras"
       ],
       "Support online privacy": [
-        "Apoya la privacidad en línea"
+        "Apoya la privacidad online"
       ]
     },
     "specialoffer: Footer": {
@@ -13602,7 +13614,7 @@
         "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Considera la posibilidad de personalizar tu importación."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Desafortunadamente, no estamos en línea en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
+        "Desafortunadamente, no estamos conectados en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "No se ha podido verificar el servidor de correo. Si confías en él, puedes omitir esta verificación."

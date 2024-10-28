@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "activate": [
-        "activeer"
-      ],
       "Activate": [
         "Activeren"
+      ],
+      "activate": [
+        "activeer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -157,6 +157,9 @@
       "Allow": [
         "Toestaan"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Versleutelde end-to-end e-mail voor deze groep toestaan"
+      ],
       "Always allow sending": [
         "Verzenden altijd toestaan"
       ],
@@ -177,6 +180,9 @@
       ],
       "Back": [
         "Terug"
+      ],
+      "Back to sign-in": [
+        "Terug naar aanmelden"
       ],
       "Block": [
         "Blokkeer"
@@ -658,6 +664,9 @@
       "Leave": [
         "Verlaat"
       ],
+      "Leave group": [
+        "Groep verlaten"
+      ],
       "Let's talk": [
         "Laten we praten!"
       ],
@@ -873,6 +882,9 @@
       ],
       "Resume": [
         "Hervatten"
+      ],
+      "Resume membership": [
+        "Lidmaatschap hervatten"
       ],
       "Retry": [
         "Opnieuw proberen"
@@ -1168,6 +1180,9 @@
       "Use authentication code": [
         "Verificatiecode gebruiken"
       ],
+      "Use group sending permissions": [
+        "Groepsverzend machtigingen gebruiken"
+      ],
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
@@ -1195,6 +1210,9 @@
       "Verify domain": [
         "Domein verifiëren"
       ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Controleer het domein ${ unverifiedSSODomain.DomainName }"
+      ],
       "View": [
         "Bekijken"
       ],
@@ -1206,6 +1224,9 @@
       ],
       "View plans details": [
         "Abonnementsgegevens bekijken"
+      ],
+      "View recovery settings": [
+        "Herstelinstellingen weergeven"
       ],
       "Void": [
         "Ongeldig"
@@ -1926,6 +1947,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Bewerk (bekijk, creëer of bewerk afspraakdetails)"
+      ],
       "View (see all event details)": [
         "Volledig beeld (bekijk alle afspraakdetails)"
       ]
@@ -3432,6 +3456,9 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
@@ -4199,6 +4226,12 @@
       "Account does not exist": [
         "Account bestaat niet"
       ],
+      "Add at least one action": [
+        "Voeg minimaal één actie toe"
+      ],
+      "Add at least one condition": [
+        "Voeg tenminste één voorwaarde toe"
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -4365,6 +4398,9 @@
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
+      ],
+      "Invalid IBAN": [
+        "Ongeldige IBAN"
       ],
       "Invalid invitation link": [
         "Ongeldige uitnodigingskoppeling"
@@ -4564,6 +4600,9 @@
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
       ],
+      "The amount due has changed. Please try again.": [
+        "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
+      ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
       ],
@@ -4680,6 +4719,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "U heeft de limiet van het aantal contacten bereikt voor dit account"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen."
@@ -5176,6 +5218,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Levenslange accounts kunnen niet deelnemen aan een Family-abonnement."
       ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
       "Manage user accounts": [
         "Gebruikersaccounts beheren"
       ],
@@ -5212,6 +5257,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "U kunt slechts 3 uitnodigingen accepteren in een periode van 6 maanden. Neem contact op met ${ supportLink } als hierop een uitzondering moet worden gemaakt."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "U kunt deze uitnodiging niet accepteren met uw huidige abonnement."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
@@ -6528,6 +6576,9 @@
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/maand)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filter als aan ALLE van de volgende voorwaarden is voldaan)"
       ],
@@ -6571,11 +6622,17 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Een ${ protonSubdomain } wordt gehost door ${ BRAND_NAME }, waardoor u snel een subdomein kunt instellen. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Een aangepast domein is vereist voor het maken van groepen. Als u geen aangepast domein heeft ingesteld, doe dit dan eerst onder ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
+      ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Een herstelbestand laat u uw gegevens ontgrendelen en bekijken na accountherstel"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Met een herstelzin kunt u toegang krijgen tot uw account en uw gecodeerde berichten herstellen als u uw wachtwoord bent vergeten"
@@ -6609,9 +6666,6 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
-      ],
-      "Add a recovery ${ type }": [
-        "Voeg een herstel ${ type } toe."
       ],
       "Add a recovery email address": [
         "Voeg een herstel-e-mailadres toe"
@@ -6661,6 +6715,9 @@
       "Affected user is on row": [
         "Deze gebruiker staat op rij",
         "Deze gebruikers staan op rijen"
+      ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Nadat ze vergrendeld zijn, moeten organisatieleden ${ PASS_APP_NAME } ontgrendelen met hun wachtwoord of pincode, etc."
       ],
       "Align left": [
         "Links uitlijnen"
@@ -6725,6 +6782,9 @@
       "and": [
         "en"
       ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuele submappen zullen ook worden verwijderd. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden verwijderd en zijn terug te vinden in de map Alle berichten."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Iedereen met deze link kan alle details van deze agenda zien, zoals titel, locatie of deelnemers."
       ],
@@ -6766,6 +6826,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Weet u zeker dat u beheerdersrechten aan deze gebruiker wilt geven?"
+      ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "Weet u zeker dat u deze groep wilt verlaten? Als u dit verlaat, moet u opnieuw worden uitgenodigd door de groepsbeheerder om opnieuw lid te worden."
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Weet u zeker dat u alle logs permanent wilt verwijderen?"
@@ -6899,6 +6962,9 @@
       "Configure SAML authentication for your organization through an identity provider like Okta, Microsoft Azure, or Google Identity Platform. This will enable SAML for the whole organization.": [
         "Configureer SAML-authenticatie voor uw organisatie via een identiteitsprovider zoals Okta, Microsoft Azure of Google Identity Platform. Dit zal SAML voor de hele organisatie inschakelen."
       ],
+      "Connection data will be available in around 1 hour.": [
+        "Verbindingsgegevens zullen beschikbaar zijn in ongeveer 1 uur."
+      ],
       "Continue with ${ freeName }": [
         "Ga verder met ${ freeName }"
       ],
@@ -7004,6 +7070,9 @@
       "dedicated servers": [
         "toegewijde servers"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Verwijder alle andere MX records of zorg ervoor dat ${ MAIL_APP_NAME } zijn prioriteit het laagste getal is."
       ],
@@ -7014,8 +7083,11 @@
         "${ deletedServerCount } gatewayserver wordt verwijderd",
         "${ deletedServerCount } gatewayservers worden verwijderd"
       ],
-      "Disable recovery by ${ type }": [
-        "Herstel via ${ type } uitschakelen"
+      "Disabled on ${ formattedDateAndTime }": [
+        "Uitgeschakeld op ${ formattedDateAndTime }"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Het uitschakelen van tweestapsverificatie maakt uw account minder veilig. Ga alleen verder als het absoluut nodig is."
       ],
       "Discount": [
         "Korting"
@@ -7117,6 +7189,12 @@
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Mails getagd met het label ${ nameDeleted } zullen niet verwijderd worden en zijn terug te vinden in hun respectievelijke map."
+      ],
+      "Enable email notifications": [
+        "E-mailmelding inschakelen"
+      ],
       "Enable single sign-on to keep your organization safe": [
         "Schakel eenmalig inloggen in om uw organisatie veilig te houden"
       ],
@@ -7125,6 +7203,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Activeer TLS of SSL op de externe dienst indien dit wordt ondersteund."
+      ],
+      "Enabled on ${ formattedDateAndTime }": [
+        "Ingeschakeld op ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Het opnieuw inschakelen van herstel per uitdrukking zal een nieuwe herstelzin genereren."
@@ -7183,6 +7264,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Vul uw herstelzin in om het wachtwoord nu te wijzigen."
       ],
+      "Event invitations and responses will be sent in this language.": [
+        "Evenementuitnodigingen en antwoorden worden in deze taal verzonden."
+      ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Afspraken bevatten authenticatiepogingen voor alle ${ BRAND_NAME }-diensten die uw ${ BRAND_NAME_TWO }-inloggegevens gebruiken."
       ],
@@ -7209,6 +7293,9 @@
       ],
       "finance": [
         "financiën"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Voor een 10-jarige versie geschiedenis, neem contact op met ons verkoopteam."
       ],
       "for choosing ${ product }": [
         "voor het kiezen van ${ product }"
@@ -7270,6 +7357,9 @@
       "High Priority": [
         "Hoge Prioriteit"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identiteitsprovider heeft een publieke sleutel om authenticatieverklaringen te ondertekenen. Er moet een plaats zijn om de certificaathash van de identiteitsprovider te downloaden of te kopiëren. Plak gewoon de certificaathash in het tekstveld."
       ],
@@ -7311,6 +7401,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Als u nog nooit eerder tweestapsverificatie heeft gebruikt, raden we u aan om ${ guideButton }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Als u uw wachtwoord verliest en uw account moet herstellen, ${ boldImperative } dat u een ${ boldAccountRecovery } heeft."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Als u uw wachtwoord verliest en uw account moet herstellen, ${ boldImperative } dat u zowel ${ boldAccountAndRecovery } heeft, anders heeft u wellicht geen toegang meer tot uw e-mails, contacten of bestanden."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Als u uw tweestapsverificatie-apparaat kwijtraakt, kunnen deze codes worden gebruikt in plaats van de 6-cijferige tweestapsverificatiecode om in te loggen op uw account. Elke code kan slechts één keer worden gebruikt."
@@ -7446,6 +7542,9 @@
       "It appears some of your data is encrypted and locked.": [
         "Het ziet er naar uit dat een deel van uw data versleuteld en vergrendeld is."
       ],
+      "It takes 10 days to change a server's country, so make sure your selection is correct.": [
+        "Het duurt 10 dagen om het land van een server te veranderen, dus zorg ervoor dat uw selectie correct is."
+      ],
       "Item autofilled in ${ vaultLink }": [
         "Item automatisch gevuld in ${ vaultLink }"
       ],
@@ -7536,8 +7635,14 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Learn more about Gateways": [
+        "Meer informatie over Gateways"
+      ],
       "learn more about Sieve programming language": [
         "leer meer over de programmeertaal Sieve"
+      ],
+      "Learn more about single sign-on": [
+        "Meer informatie over single sign-on"
       ],
       "Left to Right": [
         "Van links naar rechts"
@@ -7577,6 +7682,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Laden van gateways die huidige status monitoren."
       ],
       "Loading preview": [
         "Voorbeeld laden"
@@ -7650,6 +7758,9 @@
       "New user invited to organization": [
         "Nieuwe gebruiker uitgenodigd voor de organisatie"
       ],
+      "New VPN connection data will stop being collected and shown.": [
+        "Nieuwe VPN-verbindingsgegevens zullen niet langer worden verzameld en getoond."
+      ],
       "No account keys exist": [
         "Er bestaan geen accountsleutels"
       ],
@@ -7722,6 +7833,14 @@
       "or ${ selectFileButton }": [
         "of ${ selectFileButton }"
       ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "of toewijzen aan een land in ${ availableAgainAfterDays } dag",
+        "of toewijzen aan een land in ${ availableAgainAfterDays } dagen"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "of wijs toe aan elk land in ${ availableAgainAfterHours } uur",
+        "of toewijzen aan een land in ${ availableAgainAfterHours } uur"
+      ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
       ],
@@ -7736,6 +7855,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andere gebruikers binnen uw organisatie zien uw bezette slots. Er worden geen details over het event gedeeld."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Verouderd herstelbestand; werk het bij om toegang tot uw gegevens te garanderen"
@@ -7826,6 +7948,9 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Bewaar het veilig. U hebt het nodig om toegang te krijgen tot uw account en om uw gegevens te decoderen in geval van een nieuw wachtwoord."
+      ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Let op, wanneer u de filter wist ${ nameDeleted } zullen alle geautomatiseerde acties van de filter niet langer uitgevoerd worden."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
         "Houd er rekening mee dat, wanneer u op de knop Bevestigen klikt, uw account nog ${ remainingCreditsFormatted } credits over heeft."
@@ -7947,6 +8072,9 @@
       "Remember to share the user's sign in details with them.": [
         "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Verwijder metadata van afbeeldingen om uw privacy te beschermen."
+      ],
       "Remove one of your calendars to join this one": [
         "Verwijder één van uw agenda's om lid te worden van deze"
       ],
@@ -7995,6 +8123,9 @@
       "SCIM token active": [
         "SCIM-token actief"
       ],
+      "Search by an email address to begin": [
+        "Zoek op een e-mailadres om te beginnen"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Beveilig uw ${ BRAND_NAME }-account"
       ],
@@ -8003,6 +8134,9 @@
       ],
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
+      ],
+      "Select recently used servers": [
+        "Selecteer recent gebruikte servers"
       ],
       "Select what you want to import.": [
         "Selecteer wat u wilt importeren."
@@ -8200,6 +8334,12 @@
       "The format of your CSV file is incorrect.": [
         "Het formaat van uw CSV-bestand is onjuist."
       ],
+      "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
+        "De groepen-functie wordt niet ondersteund in uw huidige abonnement. Eerder gemaakte groepen zijn uitgeschakeld en kunnen alleen worden verwijderd."
+      ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "De link om te melden dat u geen ${ BRAND_NAME }-account hebt ingesteld, is verlopen. Neem contact op met ons ondersteuningsteam om dit probleem op te lossen."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "De naam zal zichtbaar zijn voor uw gebruikers wanneer ze ingelogd zijn."
       ],
@@ -8293,6 +8433,12 @@
       "This will delete all previous versions of your files.": [
         "Dit zal alle vorige versies van uw bestanden verwijderen."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Dit zal de toegang van **${ email }**weigeren. Weet u zeker dat u wilt doorgaan?"
+      ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Dit zal tweestapsauthenticatie uitschakelen, zowel de authenticatie-app als beveiligingssleutelmethoden."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Dit zal uw huidige herstelzin uitschakelen. U kunt deze dan niet meer gebruiken om toegang te krijgen tot uw account of om uw gegevens te ontsleutelen."
       ],
@@ -8307,6 +8453,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Dit zal uw account en alle bijbehorende gegevens permanent verwijderen. U zult dit account niet kunnen heractiveren."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Dit zal het apparaat **${ name }** afwijzen, die proberen in te loggen op uw ${ BRAND_NAME } account op **${ date }**."
       ],
       "This will remove any enabled 2FA methods.": [
         "Dit verwijdert alle ingeschakelde 2FA methoden."
@@ -8325,6 +8474,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dit zal je afmelden van alle actieve sessies en de 2-factor authenticatie uitschakelen."
+      ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Dit zal het koppelen van het apparaat **${ name } (aangemaakt op ${ date })** loskoppelen van uw ${ BRAND_NAME }-account."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME }-account. Tweestapsverificatie zal uw ${ BRAND_NAME_TWO }-account veiliger maken en daarom raden we aan om het in te schakelen."
@@ -8422,6 +8574,9 @@
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "Twee wachtwoorden modus gebruikt aparte wachtwoorden voor inloggen en ontsleuteling van data. Dit biedt in sommige gevallen een klein veiligheidsvoordeel, echter raden we voor de meeste gebruikers één wachtwoord modus aan. Om te wisselen naar twee wachtwoorden modus stelt u eerst een inlogwachtwoord in en vervolgens een tweede wachtwoord."
       ],
+      "Unable to check gateways monitoring current status.": [
+        "Kan de huidige status van het monitoren van gateways niet controleren."
+      ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan de handtekening van het herstelbestand niet verifiëren. Neem contact op met ondersteuning."
       ],
@@ -8467,6 +8622,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
+      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Upgrade naar ${ firstPlanNames }of ${ lastPlanName } abonnement om toegang te krijgen tot ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgrade om een korter @pm.me-adres aan uw account toe te voegen dat gemakkelijker te delen is. Het staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me\"."
       ],
@@ -8491,6 +8649,9 @@
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Gebruik een wachtwoordbeheerder om voor u sterke wachtwoorden te genereren en veilig op te slaan en gemakkelijker in te loggen."
       ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Gebruik een herstelmethode om uw tweestapsverificatiemethodes uit te schakelen."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
       ],
@@ -8505,6 +8666,9 @@
       ],
       "User activated": [
         "Gebruiker geactiveerd"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ],
       "username": [
         "gebruikersnaam"
@@ -8538,9 +8702,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
-      ],
-      "Verify ${ type }": [
-        "Verifieer ${ type }"
       ],
       "Verify domain": [
         "Domein verifiëren"
@@ -8677,6 +8838,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Wanneer u op een link klikt, zal deze anti-phishing-functie u vragen om de URL van de webpagina te bevestigen."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Wanneer u een server uit een Gateway verwijdert, voert deze een deactivatieperiode van 10 dagen in. Deze server kan worden toegevoegd aan een nieuwe gateway, maar zijn land kan niet worden veranderd."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
@@ -8694,6 +8858,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
+      ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Met groepen kunt u snel en gemakkelijk e-mails versturen naar alle mensen in een specifieke groep."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Met je huidige abonnement kunt u met uw @pm.me-adres enkel berichten ontvangen. Upgrade om berichten te verzenden en extra adressen aan te maken met @pm.me."
@@ -8741,6 +8908,9 @@
         "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie",
         "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicenties"
       ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "U bent momenteel niet in een groep en er zijn geen openstaande uitnodigingen"
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "U bent ingelogd op het account ${ memberAddress }."
       ],
@@ -8761,6 +8931,12 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
+      ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "U kunt inschakelen dat bijgehouden wordt wanneer uw account benaderd wordt, en vanaf welk IP-adres. We zullen dan het IP-adres bijhouden vanaf waar uw account benaderd wordt, de tijd wanneer dit gebeurt, evenals mislukte inlogpogingen."
+      ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "U kunt het gedeelte Foto's inschakelen vanuit de interface met de onderstaande schakelaar."
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
@@ -8806,6 +8982,17 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
+      ],
+      "You do not have permission to perform this action": [
+        "U heeft geen rechten om deze actie uit te voeren"
+      ],
+      "You have ${ availableCount } new server available.": [
+        "U heeft ${ availableCount } nieuwe server beschikbaar.",
+        "U heeft ${ availableCount } nieuwe servers beschikbaar."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "U heeft ${ unassignedAvailableCount } onlangs gebruikte servers beschikbaar. Om deze servers toe te wijzen aan een ander land, moet u wachten tot de deactivatie is voltooid.",
+        "U heeft ${ unassignedAvailableCount } onlangs gebruikte servers beschikbaar. Om deze servers toe te wijzen aan een ander land, moet u wachten tot de deactivatie is voltooid."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
@@ -8866,6 +9053,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
+      ],
+      "You won’t be able to reassign these servers to another country for 10 days.": [
+        "U kunt deze servers niet meer toewijzen aan een ander land gedurende 10 dagen."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden."
@@ -8963,6 +9153,9 @@
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Uw supportticket werd afgesloten. Bedankt om contact op te nemen met ${ BRAND_NAME }-ondersteuning."
+      ],
+      "You’ll be able to add these servers to another Gateway immediately.": [
+        "U kunt deze servers onmiddellijk aan een andere Gateway toevoegen."
       ],
       "Zoom meeting": [
         "Zoom meeting"
@@ -9531,6 +9724,9 @@
       "And": [
         "En"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "MINIMAAL EEN"
       ],
@@ -9647,6 +9843,9 @@
       ],
       "Colors": [
         "Kleuren"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
       ],
       "Composer": [
         "Opstelvenster"
@@ -9911,6 +10110,9 @@
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "ALS"
@@ -10203,6 +10405,9 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
       "Search": [
         "Zoeken"
       ],
@@ -10301,6 +10506,9 @@
       ],
       "Then": [
         "Dan"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time format": [
         "Tijdsformaat"
@@ -11728,6 +11936,9 @@
       "Tailored to your needs": [
         "Aangepast aan uw behoeften"
       ],
+      "TOR over VPN": [
+        "Tor via VPN"
+      ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
       ],
@@ -12083,6 +12294,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
@@ -12134,6 +12348,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME } diensten kunnen beheren en andere taken kunnen uitvoeren."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
       ],
@@ -12175,6 +12392,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -12456,6 +12676,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
       ]
     },
     "Onboarding": {
@@ -13320,11 +13545,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverschrijving"
+      ],
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bedrijfsnaam gebruiken"
+      ],
+      "Use personal name": [
+        "Gebruik persoonlijke naam"
       ]
     },
     "Payments": {
@@ -13413,6 +13649,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, autoriseert u ${ BRAND_NAME } en Stripe, onze provider van betalingsdiensten, om uw bank te instrueren om uw rekening en uw bank dienovereenkomstig in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+      ],
+      "Street address, postal code, and city": [
+        "Straatnaam, postcode en plaats"
       ]
     },
     "Permission": {
@@ -14673,6 +14917,71 @@
         "Nodig vrienden uit voor ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } lid heeft uw hulp gevraagd om in te loggen.",
+        "${ n } leden hebben uw hulp gevraagd om in te loggen."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Nu hun accounts goedkeuren of verwijderen:",
+        "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Nu hun accounts goedkeuren of verwijderen:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal.",
+        "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal."
+      ],
+      "Approve or deny it now": [
+        "Keur goed of weiger nu"
+      ],
+      "Deny": [
+        "Weigeren"
+      ],
+      "Deny access": [
+        "Toegang weigeren"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Voer de bevestigingscode in die we naar deze gebruiker hebben gestuurd."
+      ],
+      "Grant": [
+        "Verlenen"
+      ],
+      "Grant access": [
+        "Toegang verlenen"
+      ],
+      "Grant access to user?": [
+        "Toegang verlenen aan gebruiker?"
+      ],
+      "Grant access to users?": [
+        "Toegang verlenen aan gebruiker?"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Als u dit verzoek niet heeft gemaakt, annuleer het dan nu."
+      ],
+      "No, it wasn’t me": [
+        "Nee, dat was ik niet"
+      ],
+      "Sign-in confirmed": [
+        "Inloggen bevestigd"
+      ],
+      "Sign-in rejected": [
+        "Inloggen geweigerd"
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Dit zal de gebruiker uitloggen uit zijn andere apparaten en hij zal een nieuw back-upwachtwoord moeten maken."
+      ],
+      "Tried to sign in at": [
+        "Probeerde u aan te melden om"
+      ],
+      "User details:": [
+        "Gebruik details:"
+      ],
+      "Yes, it was me": [
+        "Ja, dat was ik"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Uw abonnement wordt geannuleerd, even geduld"
@@ -14915,6 +15224,9 @@
       "Got it": [
         "Begrepen"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Log in op uw Apple App Store account, selecteer dan op ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log in op uw Play Store-account, druk dan op ${ subscriptions }."
       ],
@@ -15105,7 +15417,7 @@
         "Als u de limiet van het gratis abonnement overschrijdt, kunt u niet of geen:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Als uw gebruik de limieten van het gratis abonnement overschrijdt kunt u beperkte toegang tot productfuncties en uw gegevens ervaren."
+        "Als uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw gegevens ervaren."
       ],
       "Invited members will be removed from your organization": [
         "Uitgenodigde leden zullen uit uw organisatie worden verwijderd"
@@ -15778,6 +16090,9 @@
       "Action": [
         "Actie"
       ],
+      "Actions": [
+        "Acties"
+      ],
       "Activate @pm.me": [
         "Activeer @pm.me"
       ],
@@ -15786,6 +16101,10 @@
       ],
       "Activate user": [
         "Activeer gebruiker"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "${ totalServerCount } server toevoegen?",
+        "Toevoegen van ${ totalServerCount } servers?"
       ],
       "Add a custom logo": [
         "Voeg een aangepast logo toe"
@@ -15804,6 +16123,9 @@
       ],
       "Add credits": [
         "Tegoed toevoegen"
+      ],
+      "Add dedicated servers": [
+        "Speciale servers toevoegen"
       ],
       "Add domain": [
         "Domein toevoegen"
@@ -15849,6 +16171,9 @@
       ],
       "Amount due": [
         "Verschuldigd bedrag"
+      ],
+      "An address for each role": [
+        "Een adres voor elke rol"
       ],
       "App": [
         "App"
@@ -15936,6 +16261,9 @@
       ],
       "Clear out the junk": [
         "Spam opruimen"
+      ],
+      "Click a value in the table to use it as filter": [
+        "Klik op een waarde in de tabel om deze als filter te gebruiken"
       ],
       "Close": [
         "Sluit"
@@ -16098,11 +16426,17 @@
       "Delete version history?": [
         "Versiegeschiedenis verwijderen?"
       ],
+      "Deny access to user?": [
+        "Gebruiker de toegang weigeren?"
+      ],
       "Description": [
         "Beschrijving"
       ],
       "Details": [
         "Details"
+      ],
+      "Device": [
+        "Apparaat"
       ],
       "Device connected!": [
         "Appparaat verbonden!"
@@ -16282,6 +16616,15 @@
       "Gateway": [
         "Gateway"
       ],
+      "Gateway monitor": [
+        "Gateway monitor"
+      ],
+      "Gateway monitor disabled": [
+        "Gateway monitor uitgeschakeld"
+      ],
+      "Gateway monitor enabled": [
+        "Gateway monitor ingeschakeld"
+      ],
       "Gateways": [
         "Gateways"
       ],
@@ -16400,6 +16743,9 @@
       "Leave ${ organisationName }?": [
         "${ organisationName } verlaten?"
       ],
+      "Leave group?": [
+        "Groep verlaten?"
+      ],
       "Link confirmation": [
         "Link bevestigen"
       ],
@@ -16505,6 +16851,9 @@
       "Personalise your e-mail footer": [
         "Personaliseer de voettekst van uw e-mail"
       ],
+      "Personalize your email footer": [
+        "Personaliseer de voettekst van uw e-mail"
+      ],
       "Phone": [
         "Telefoon"
       ],
@@ -16529,6 +16878,12 @@
       "Profile": [
         "Profiel"
       ],
+      "QR Code": [
+        "QR-code"
+      ],
+      "Ready, set, forward": [
+        "Klaar, ingesteld, vooruit"
+      ],
       "Recommended": [
         "Aanbevolen"
       ],
@@ -16550,6 +16905,9 @@
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
+      "Reject device?": [
+        "Apparaat weigeren?"
+      ],
       "Remove all members?": [
         "Alle leden verwijderen?"
       ],
@@ -16561,6 +16919,9 @@
       ],
       "Remove domain": [
         "Verwijder bestand"
+      ],
+      "Remove server?": [
+        "Server verwijderen?"
       ],
       "Remove single sign-on": [
         "Verwijder single sign-on"
@@ -16609,6 +16970,9 @@
       ],
       "Security and privacy": [
         "Veiligheid en privacy"
+      ],
+      "Security events": [
+        "Veiligheidsgebeurtenissen"
       ],
       "Security logs": [
         "Beveiligingslogboek"
@@ -16708,6 +17072,9 @@
       ],
       "Start import process": [
         "Importproces starten"
+      ],
+      "State": [
+        "Land/Staat"
       ],
       "Status": [
         "Status"
@@ -17208,11 +17575,18 @@
     "Tor out of date": {
       "stable release": [
         "stabiele release"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Deze versie van TOR Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
       ]
     },
     "unprivatization": {
       "Cancel": [
         "Annuleren"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Kon de beheerderstoegang voor ${ n } -gebruiker niet automatisch inschakelen, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:",
+        "Kon beheerderstoegang niet automatisch inschakelen voor ${ n } gebruikers, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:"
       ],
       "reject": [
         "afwijzen"
@@ -17500,6 +17874,11 @@
         "Je ${ selected }-abonnement"
       ]
     },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
+      ]
+    },
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "${ n } account per portemonnee",
@@ -17570,6 +17949,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME } is in vroegtijdige toegang. U kunt de iOS app downloaden via Apple TestFlight en de Android app via Google open tests."
+      ],
       "Coming soon": [
         "Binnenkort beschikbaar"
       ]

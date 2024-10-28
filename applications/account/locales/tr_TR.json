@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "activate": [
-        "kullanıma al"
-      ],
       "Activate": [
         "Kullanıma al"
+      ],
+      "activate": [
+        "kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -180,6 +180,9 @@
       ],
       "Back": [
         "Geri"
+      ],
+      "Back to sign-in": [
+        "Oturum açmaya dön"
       ],
       "Block": [
         "Engelle"
@@ -378,6 +381,9 @@
       ],
       "Delete your account": [
         "Hesabınızı silin"
+      ],
+      "Deny access": [
+        "İzin verme"
       ],
       "Details": [
         "Bilgiler"
@@ -661,6 +667,9 @@
       "Leave": [
         "Ayrıl"
       ],
+      "Leave group": [
+        "Gruptan ayrıl"
+      ],
       "Let's talk": [
         "Hadi konuşalım!"
       ],
@@ -813,6 +822,9 @@
       ],
       "Remove all members": [
         "Tüm üyeleri kaldır"
+      ],
+      "Remove all other devices": [
+        "Diğer tüm aygıtları kaldır"
       ],
       "Remove bonuses": [
         "Hediyeleri kaldır"
@@ -1203,6 +1215,9 @@
       ],
       "Verify domain": [
         "Etki alanını doğrula"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "${ unverifiedSSODomain.DomainName } etki alanını doğrula"
       ],
       "View": [
         "Görüntüle"
@@ -1938,6 +1953,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Düzenleme (etkinlik bilgilerini görüntüleme, ekleme ya da düzenleme)"
+      ],
       "View (see all event details)": [
         "Görüntüleme (tüm etkinlik bilgilerini görüntüleme)"
       ]
@@ -3426,6 +3444,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Gelen iletilerinizi gelen kutunuza ulaşmadan önce otomatik olarak sıralayın."
       ],
+      "Available with ${ BRAND_NAME } Mail Plus": [
+        "${ BRAND_NAME } Mail Plus tarifesiyle kullanılabilir"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
       ],
@@ -3461,6 +3482,9 @@
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Gelen e-postaları başka bir e-posta adresine iletmek için otomatik iletmeyi ayarlayın."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
@@ -4270,6 +4294,12 @@
       "Account does not exist": [
         "Hesap bulunamadı"
       ],
+      "Add at least one action": [
+        "En az bir işlem ekleyin"
+      ],
+      "Add at least one condition": [
+        "En az bir koşul ekleyin"
+      ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
@@ -4440,6 +4470,9 @@
       "Invalid expiration date": [
         "Son kullanma tarihi geçersiz"
       ],
+      "Invalid IBAN": [
+        "IBAN geçersiz"
+      ],
       "Invalid invitation link": [
         "Davet bağlantısı geçersiz"
       ],
@@ -4571,6 +4604,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
+      "Please upload a square logo": [
+        "Lütfen kare biçiminde bir logo yükleyin"
+      ],
       "Please upload an xml file": [
         "Lütfen bir XML dosyası yükleyin"
       ],
@@ -4637,6 +4673,9 @@
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Ödenecek tutar değişti. Lütfen yeniden deneyin."
       ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
@@ -4754,6 +4793,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Hesabınızın kişi sayısı sınırına ulaştınız"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek için lütfen tarifenizi yükseltin."
@@ -5187,6 +5229,9 @@
       "Got it": [
         "Anladım"
       ],
+      "Invite a user": [
+        "Kullanıcı davet et"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Var olan bir ${ BRAND_NAME } kullanıcısı davet et"
       ],
@@ -5262,6 +5307,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime hesaplar bir aile tarifesine katılamaz."
       ],
+      "Manage addresses": [
+        "Adres yönetimi"
+      ],
       "Manage user accounts": [
         "Kullanıcı hesaplarını yönet"
       ],
@@ -5301,6 +5349,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "6 aylık dönemde yalnızca 3 davet kabul edebilirsiniz. Bu sınırı aşmaya gerek duyuyorsanız lütfen ${ supportLink } ile görüşün."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Geçerli tarifenizle bu daveti kabul edemezsiniz."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } ailesine davet edildiniz. ${ viewInviteButton }"
@@ -5359,6 +5410,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Kullanıcının zaten bir ${ MAIL_APP_NAME } adresi varsa buraya yazın. Yoksa önce bir hesap açmaları gerekir."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Kullanıcının zaten bir ${ BRAND_NAME } hesabı varsa buraya yazın. Yoksa önce bir hesap açmaları gerekir."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Davet iptal edilecek ve kullanıcı ${ organizationName } kuruluşuna katılamayacak."
@@ -5799,6 +5853,9 @@
       "Back to sign in": [
         "Oturum açmaya dön"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features.": [
+        "Hızlı, odaklanmış ve güvenli bir masaüstü deneyimini yaşamayı sürdürün. Sınırsız erişim ile diğer ücretli özelliklere erişmek için tarifenizi yükseltin."
+      ],
       "Keep using the desktop app": [
         "Masaüstü uygulamasını kullanmayı sürdürün"
       ],
@@ -5947,6 +6004,11 @@
         "Gruptan ayrıldı"
       ]
     },
+    "group_invite_2024": {
+      "You have no groups to manage": [
+        "Yönetebileceğiniz bir grup yok"
+      ]
+    },
     "group_invite_2024: Error message, recovery": {
       "Please try opening the link again.": [
         "Lütfen bağlantıyı açmayı yeniden deneyin."
@@ -5961,11 +6023,17 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "${ email } için"
+      ],
       "Group invitation accepted": [
         "Grup daveti kabul edildi"
       ],
       "Group invitation declined": [
         "Grup daveti reddedildi"
+      ],
+      "Group membership": [
+        "Grup üyeliği"
       ]
     },
     "Header": {
@@ -6632,6 +6700,9 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/ay)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülür)"
       ],
@@ -6684,6 +6755,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Bir kurtarma dosyası, bir hesabı kurtarırken verilerinizin kilidini açıp görüntülemenizi sağlar"
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Kurtarma ifadesi, parolanızı unutursanız hesabınıza erişmenizi sağlar ve şifrelenmiş iletilerinizi kurtarır"
       ],
@@ -6716,9 +6790,6 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
-      ],
-      "Add a recovery ${ type }": [
-        "${ type } kurtarması ekle"
       ],
       "Add a recovery email address": [
         "Bir kurtarma e-postası adresi ekle"
@@ -6835,6 +6906,9 @@
       "and": [
         "ve"
       ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Bu bağlantıya sahip olan herkes bu takvimdeki etkinliklerin başlık, yer veya katılımcılar gibi tüm bilgileri görebilir."
       ],
@@ -6876,6 +6950,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Bu kullanıcıya yönetici yetkileri vermek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "Bu gruptan ayrılmak istediğinize emin misiniz? Ayrılırsanız, yeniden katılmanız için grup yöneticisi tarafından yeniden davet edilmeniz gerekir."
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Tüm günlük kayıtlarınızı silmek istediğinize emin misiniz?"
@@ -7117,6 +7194,9 @@
       "dedicated servers": [
         "size ayrılmış sunucular"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Diğer tüm MX kayıtlarını silin veya ${ MAIL_APP_NAME } kaydının Priority değerinin en küçüğü olduğundan emin olun."
       ],
@@ -7126,9 +7206,6 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor"
-      ],
-      "Disable recovery by ${ type }": [
-        "${ type } kurtarmasını kapat"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime } zamanında kapatıldı"
@@ -7236,6 +7313,9 @@
       "Emailing preference saved": [
         "E-posta ayarı kaydedildi"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "${ nameDeleted } etiketi ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
+      ],
       "Enable email notifications": [
         "E-posta bildirimlerini aç"
       ],
@@ -7307,6 +7387,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Parolanızı değiştirmek için kurtarma ifadenizi yazın."
+      ],
+      "Event invitations and responses will be sent in this language.": [
+        "Etkinlik davetleri ve yanıtları bu dilde gönderilir."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Olay kayıtlarında, ${ BRAND_NAME_TWO } kimlik doğrulama bilgilerinizi kullanan tüm ${ BRAND_NAME } hizmetlerinin kimlik doğrulama girişimleri bulunur."
@@ -7398,6 +7481,9 @@
       "High Priority": [
         "Yüksek öncelik"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Kimlik hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamakta kullanacağı herkese açık anahtarı. Kimlik hizmeti sağlayıcıdan sertifika karmasının indirileceği veya kopyalanacağı bir yer bulunmalıdır. Sertifika karmasını metin alanı alanına yapıştırmanız yeterlidir."
       ],
@@ -7439,6 +7525,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "İki adımlı kimlik doğrulamayı daha önce kullanmadıysanız, kesinlikle ${ guideButton }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Parolanızı kaybederseniz ve ${ boldImperative } hesabınızı kurtarmanız gerekirse, bir ${ boldAccountRecovery } olması gerekir."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Parolanızı kaybederseniz ve ${ boldImperative } hesabınızı kurtarmanız gerekirse, bir ${ boldAccountAndRecovery } olması gerekir. Yoksa e-postalarınıza, kişilerinize ve dosyalarınıza erişemeyebilirsiniz."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "İki adımlı doğrulama aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki adımlı doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
@@ -7569,7 +7661,7 @@
       ],
       "Invite successfully sent": [
         "Davet gönderildi",
-        "Davet gönderildi"
+        "Davetler gönderildi"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Bazı verileriniz şifrelenmiş ve kilitlenmiş görünüyor."
@@ -7667,8 +7759,14 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "Learn more about Gateways": [
+        "Ağ geçitleri hakkında ayrıntılı bilgi alın"
+      ],
       "learn more about Sieve programming language": [
         "Sieve programlama dili hakkında ayrıntılı bilgi alabilirsiniz"
+      ],
+      "Learn more about single sign-on": [
+        "Tek oturum açma hakkında ayrıntılı bilgi alın"
       ],
       "Left to Right": [
         "Soldan sağa"
@@ -7882,6 +7980,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Kuruluşunuzdaki diğer kullanıcılar meşgul zamanlarınızı görecek. Etkinlik bilgileri paylaşılmaz."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Uyarılarımız güvenliğe öncelik verir. Ele geçirilen bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Kurtarma dosyası eski olabilir. Verilerinize erişebileceğinizden emin olmak için güncelleyin"
       ],
@@ -7971,6 +8072,9 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Lütfen güvenli bir yerde saklayın. Parolanızı sıfırlamanız durumunda hesabınıza erişmek ve verilerinizin şifresini çözmek için bu ifadeye gerek duyacaksınız."
+      ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "${ nameDeleted } süzgecini silerseniz, tetiklediği tüm otomatik işlemlerin durdurulacağını unutmayın."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
         "Onayla düğmesine tıkladığınız zaman hesabınızda ${ remainingCreditsFormatted } kredi kalacağını lütfen unutmayın."
@@ -8357,6 +8461,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Gruplar özelliği geçerli tarifenizde bulunmuyor. Daha önce oluşturulmuş gruplar kullanılamaz ve yalnızca silinebilir."
       ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "${ BRAND_NAME } hesabı oluşturmadığınızı bildiren bağlantının süresi dolmuş. Bu sorunu çözmek için lütfen destek ekibimizle görüşün."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
@@ -8450,6 +8557,9 @@
       "This will delete all previous versions of your files.": [
         "Bu işlem dosyalarınızın tüm önceki sürümlerini siler."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Bu işlem iki adımlı doğrulamayı kapatacak. Kimlik doğrulama uygulaması ve güvenlik anahtarı yöntemleri kullanılamayacak."
       ],
@@ -8468,6 +8578,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Bu işlem, hesabınızı ve tüm verilerini kalıcı olarak siler. Bu hesabı yeniden kullanıma alamazsınız."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Bu işlem, **${ date }** tarihinde ${ BRAND_NAME } hesabınızda oturum açmayı deneyen **${ name }** aygıtına izin vermeyecek."
+      ],
       "This will remove any enabled 2FA methods.": [
         "Bu işlem, kullanımdaki tüm iki adımlı doğrulama yöntemlerini kaldırır."
       ],
@@ -8485,6 +8598,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Bu seçenek, tüm etkin oturumlarınızdan çıkılmasını ve iki adımlı kimlik doğrulamasının kapatılmasını sağlar."
+      ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Bu işlem, **${ name } (${ date } tarihinde oluşturuldu)** aygıtını ${ BRAND_NAME } hesabınızdan ayıracak."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki adımlı doğrulamayı (2FA) açar. ${ BRAND_NAME_TWO } hesabınızı daha güvenli kılacağından iki adımlı doğrulamayı açmanızı öneririz."
@@ -8675,6 +8791,9 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
+      "Username": [
+        "Kullanıcı adı"
+      ],
       "username": [
         "kullanıcı adı"
       ],
@@ -8707,9 +8826,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar hemen geri ödenir."
-      ],
-      "Verify ${ type }": [
-        "${ type } doğrula"
       ],
       "Verify domain": [
         "Etki alanını doğrula"
@@ -8846,6 +8962,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Bir bağlantıya tıkladığınızda, bu kimlik avı girişimi önleme özelliği, site sayfasının adresini onaylamanızı ister."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Bir sunucuyu bir ağ geçidinden kaldırdığınızda, 10 günlük bir kullanımdan kaldırma süreci başlar. Bu sunucu yeni bir ağ geçidine eklenebilir, ancak ülkesi değiştirilemez."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
       ],
@@ -8936,6 +9055,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
+      ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Hesabınıza ne zaman ve hangi IP adresinden erişildiğini görmek için kimlik doğrulama günlüğünü açabilirsiniz. Başarısız oturum açma girişimlerinin yanında hesaba erişen IP adresini ve saatini de kaydedeceğiz."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Arayüzde aşağıdaki anahtarı kullanarak Fotoğraflar bölümünü açabilirsiniz."
@@ -9737,6 +9859,9 @@
       "And": [
         "Ve"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "BİRİ"
       ],
@@ -9781,6 +9906,9 @@
       ],
       "Awarded": [
         "Hediye edilen"
+      ],
+      "Backup password": [
+        "Yedek parola"
       ],
       "Beta": [
         "Beta"
@@ -9853,6 +9981,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Company name": [
+        "Kuruluş adı"
       ],
       "Composer": [
         "Oluşturucu"
@@ -10117,6 +10248,9 @@
       ],
       "I understand the risk": [
         "Riski anladım"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "EĞER"
@@ -10400,6 +10534,9 @@
       "Remove image metadata": [
         "Görsel üst verilerini kaldır"
       ],
+      "Repeat backup password": [
+        "Yedek parola onayı"
+      ],
       "Repeat password": [
         "Parola onayı"
       ],
@@ -10414,6 +10551,9 @@
       ],
       "Reveal password": [
         "Parolayı görüntüle"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search": [
         "Ara"
@@ -10516,6 +10656,9 @@
       ],
       "Then": [
         "Önce"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time format": [
         "Saat biçimi"
@@ -10892,6 +11035,9 @@
       "Pay invoice": [
         "Faturayı öde"
       ],
+      "PayPal without credit card": [
+        "Kredi kartı olmadan PayPal"
+      ],
       "perform a password reset from your active session": [
         "etkin oturumunuzdan parola sıfırlama isteğinde bulunun"
       ],
@@ -11049,6 +11195,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "Tüm ${ BRAND_NAME } for Business uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler"
       ],
       "An encrypted email service that puts your privacy first": [
         "Gizliliğinize öncelik veren şifrelenmiş e-posta hizmeti"
@@ -11230,6 +11379,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } hesabınızın kullanıcı adını unuttunuz mu? Kurtarma e-posta adresinizi ya da telefon numaranızı kullanarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
+      ],
+      "Private and secure email, no bank card required": [
+        "Gizli ve güvenli e-posta. Kredi kartı bilgilerinizi vermeniz gerekmez"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } hesabınızın parolasını sıfırlayın"
@@ -11955,6 +12107,9 @@
       "Tailored to your needs": [
         "Gereksinimlerinize göre uyarlanmış"
       ],
+      "TOR over VPN": [
+        "VPN üzerinden Tor"
+      ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
       ],
@@ -12310,6 +12465,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
       ],
@@ -12361,6 +12519,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Kuruluş yönetimi aracı yöneticilerin kullanıcı ekleyip silmesini, ${ BRAND_NAME } hizmetlerine erişim izinlerini ayarlamasını ve diğer işlemleri yapmasını sağlar."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Güçlü altyapımız, gerek duyduğunuzda hesabınıza erişmenizi sağlar"
       ],
@@ -12402,6 +12563,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -12695,6 +12859,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
       ]
     },
     "Onboarding": {
@@ -13545,6 +13714,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Yönetici yetkilerini geri yüklemek için bir veri kurtarma yöntemi kullanın, başka bir yöneticiye başvurun ya da kuruluş anahtarını sıfırlayın."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Bu kimliğin gerçekliğini doğrulayamadık."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Bu göndericinin adres anahtarının güvenli olduğunu doğrulayamadık. Bazen gönderici bilgilerinin güncellenmesi gecikebilir. Bir süre sonra yeniden deneyin. Bu davetiyenin veya göndericinin geçerliliğine güvenmiyorsanız, ${ BRAND_NAME } müşteri destek ekibi ile görüşün."
       ],
@@ -13565,11 +13737,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Banka havalesi"
+      ],
       "Credit/debit card": [
         "Kredi ya da banka kartı"
       ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Kuruluş adı kullanılsın"
+      ],
+      "Use personal name": [
+        "Kişi adı kullanılsın"
       ]
     },
     "Payments": {
@@ -13661,6 +13844,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onaylayarak, ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine bankanıza hesabınızdan para çekmesi talimatını vermesini ve bankanızın da buna göre hesabınızdan para çekmesine izin vermiş olursunuz. Bankanızla yaptığınız anlaşmanın koşulları uyarınca, paranın çekilme tarihinden itibaren 8 hafta içinde geri ödeme alabilirsiniz."
+      ],
+      "Street address, postal code, and city": [
+        "Sokak adresi, posta kodu ve il"
       ]
     },
     "Permission": {
@@ -14022,6 +14213,9 @@
       "Changing organization password": [
         "Kuruluş parolasını değiştirme"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Korunmayan kullanıcı hesaplarını ekleme ya da erişme"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Parola değişikliği nedeniyle kuruluş yöneticinizin yetkileri kısıtlandı. Artık aşağıdaki işlemlere izin verilmiyor:"
       ]
@@ -14233,6 +14427,9 @@
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Hesabınız ve verileriniz kurtarılabilir. Kurtarma yöntemlerinizin erişilebilir olduğundan emin olun."
       ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Hesabınız ve verileriniz kurtarılabilir. Hesabınızın güvenliğini artırmak için yapabileceğiniz işlemler var."
+      ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Hesabınız ve verileriniz kurtarılabilir. Yapmanız önerilen işlemler var."
       ],
@@ -14244,6 +14441,9 @@
       ],
       "Your recovery email": [
         "Kurtarma e-posta adresiniz"
+      ],
+      "Your recovery email address is:": [
+        "Kurtarma e-posta adresiniz:"
       ],
       "Your recovery email and phone can **only recover access to your account**.": [
         "Kurtarma e-posta adresiniz ve telefon numaranız **yalnızca hesabınıza erişimi kurtarabilir**."
@@ -14277,6 +14477,9 @@
       ],
       "Your recovery phone is set": [
         "Kurtarma telefon numaranız ayarlandı"
+      ],
+      "Your recovery phone number is:": [
+        "Kurtarma telefon numaranız:"
       ]
     },
     "saml: Action": {
@@ -14285,6 +14488,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Oturum açılamadı."
+      ],
       "Something went wrong": [
         "Bir sorun çıktı"
       ]
@@ -14345,6 +14551,12 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Ön koşul:** SCIM veri sağlamasını kullanıma almak için SAML kimlik doğrulamasının yapılandırılması gerekir."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Ön koşul:** SCIM veri sağlamasını açmak için **${ domainName }** etki alanının sahibi olduğunuzu doğrulamanız gerekir. Bu doğrulama bir saat kadar sürebilir."
+      ],
+      "Enter the token into your identity provider": [
+        "Kodu kimlik hizmeti sağlayıcınıza yazın"
       ],
       "Enter URL and token into your identity provider": [
         "Adresi ve kodu kimlik hizmeti sağlayıcınıza yazın"
@@ -14686,6 +14898,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Parolanızı sıfırlayabileceğiniz zaman sizinle yeniden iletişim kuracağız."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "İsteğinizin durumunu istediğiniz zaman ayarlar içinde ${ accountAndPasswordSectionLink } kontrol edebilirsiniz."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "hesap ve parola bölümünden"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15124,6 +15344,238 @@
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ]
     },
+    "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress }, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } üye oturum açmak için yardımınızı istedi.",
+        "${ n } üye oturum açmak için yardımınızı istedi."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da silin:",
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da silin:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor.",
+        "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**Tek oturum açma kullanıcıları (kimlik hizmeti sağlayıcınızdan gelen) silinecek** ve bunları kuruluşunuza yeniden eklemek için el ile oluşturmanız gerekecek."
+      ],
+      "Access denied": [
+        "Erişim izni verilmedi"
+      ],
+      "Access granted": [
+        "Erişim izni verildi"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "sizi ${ BRAND_NAME } kuruluşuna ekledi"
+      ],
+      "Approve": [
+        "İzin ver"
+      ],
+      "Approve or deny it now": [
+        "Şimdi izin verin ya da vermeyin"
+      ],
+      "Approve the sign-in from another device": [
+        "Oturum açma işlemine başka bir aygıttan izin verin"
+      ],
+      "Ask administrator for help": [
+        "Yardım almak için yöneticiye sorun"
+      ],
+      "Ask your administrator for access?": [
+        "Yöneticinizden erişim izni istensin mi?"
+      ],
+      "Backup password": [
+        "Yedek parola"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Change backup password": [
+        "Yedek parolayı değiştir"
+      ],
+      "Confirm backup password": [
+        "Yedek parola onayı"
+      ],
+      "Confirmation code": [
+        "Doğrulama kodu"
+      ],
+      "Contact administrator": [
+        "Yönetici ile görüşün"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Sorun sürerse yöneticiniz ile görüşün."
+      ],
+      "Current device": [
+        "Bu aygıt"
+      ],
+      "Deny": [
+        "İzin verme"
+      ],
+      "Deny access": [
+        "Erişime izin verme"
+      ],
+      "Devices available": [
+        "Kullanılabilecek aygıtlar"
+      ],
+      "Devices management": [
+        "Aygıt yönetimi"
+      ],
+      "Do you want to remove all other devices than the current one?": [
+        "Geçerli aygıt dışındaki diğer tüm aygıtları kaldırmak istiyor musunuz?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Diğer aygıtınıza gönderdiğimiz doğrulama kodunu yazın."
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Bu kullanıcıya gönderilmiş doğrulama kodunu yazın."
+      ],
+      "Enter your backup password": [
+        "Yedek parolanızı yazın"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Güvenliğiniz için, diğer tüm etkin aygıtlarınızdaki oturumlar kapatıldı. Hesabınıza erişmeden önce, yeni bir yedek parola yazmanız gerekecek."
+      ],
+      "Grant": [
+        "İzin ver"
+      ],
+      "Grant access": [
+        "Erişime izin ver"
+      ],
+      "Grant access to user?": [
+        "Kullanıcıya izin verilsin mi?"
+      ],
+      "Grant access to users?": [
+        "Kullanıcılara izin verilsin mi?"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Böyle bir istekte bulunmadıysanız iptal edin."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz, yedek parolanız oturum açmanızı ve verilerinizi kurtarmanızı sağlar."
+      ],
+      "Invalid confirmation code": [
+        "Doğrulama kodu geçersiz"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Hesabınızı tam olarak kurtarmanın tek yolu bu olduğundan bunu güvenli bir yerde sakladığınızdan emin olun."
+      ],
+      "Join ${ organizationName }": [
+        "${ organizationName } kuruluşuna katıl"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Kimlik hizmeti sağlayıcınızın kimlik bilgilerine erişimi kaybederseniz hesabınıza erişebilmeniz için bunu güvenli bir yere kaydettiğinizden emin olun."
+      ],
+      "New backup password": [
+        "Yeni yedek parola"
+      ],
+      "No, it wasn’t me": [
+        "Hayır, ben değildim"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Tek oturum açma ile gelmeyen kullanıcılar (el ile oluşturulan, kimlik hizmeti sağlayıcınız tarafından sağlanmayan) yine de kuruluşunuzda oturum açabilir."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Kuruluşunuz için tek oturum açma kapatıldığında:"
+      ],
+      "Reject": [
+        "İzin verme"
+      ],
+      "Remove": [
+        "Kaldır"
+      ],
+      "Remove all other devices": [
+        "Diğer tüm aygıtları kaldır"
+      ],
+      "Remove single sign-on": [
+        "Tek oturum açmayı kaldır"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Kuruluşunuz için tek oturum açma kaldırılsın mı?"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Ek bir koruma katmanı eklemek için bir yedek parola ayarlayın. Bu parola hesabınız kilitlenirse oturum açmanızı sağlar. Bu nedenle güvenli bir yerde sakladığınızdan emin olun."
+      ],
+      "Set your backup password": [
+        "Yedek parolanızı ayarlayın"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Doğrulama kodunu yöneticiniz ile paylaşın"
+      ],
+      "Sign in to your organization": [
+        "Kuruluşunuzda oturum açın"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Yedek parolanızı değiştirmek için oturumunuzu kapatıp yeniden açın"
+      ],
+      "Sign-in confirmed": [
+        "Oturum açmaya izin verildi"
+      ],
+      "Sign-in rejected": [
+        "Oturum açmaya izin verilmedi"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Başka bir aygıttan oturum açılması istendi. Bunu siz mi yaptınız?"
+      ],
+      "Single sign-on removed": [
+        "Tek oturum açma kaldırıldı"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Kimlik hizmeti sağlayıcınızdaki kimlik bilgileri silinecek."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Bu işlem kullanıcının diğer aygıtlardaki oturumlarını kapatacak ve yeni bir yedek parola oluşturmaları gerekecek."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Bu işlem diğer aygıtlardaki oturumlarınızı kapatacak ve yeni bir yedek parola oluşturmanız gerekecek."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "**${ email }** hesabınızda oturum açmaya çalışan kişinin gerçekten siz olduğunuzdan emin olmak için doğrulama kodunu inceleyin ve başka bir aygıttan isteği onaylayın."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Oturum açmaya çalışanın gerçekten siz olduğunuzdan emin olmamız için lütfen yedek parolanızı yazın."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Oturum açmaya çalışanın gerçekten siz olduğunuzdan emin olmak için, onay kodunu yöneticinizle **${ adminEmail }** paylaşın. Böylece **${ email }** isteğini onaylayabilir."
+      ],
+      "Tried to sign in at": [
+        "Şuradan oturum açmaya çalıştı"
+      ],
+      "Use backup password instead": [
+        "Bunun yerine yedek parolayı kullan"
+      ],
+      "User details:": [
+        "Kullanıcı bilgileri:"
+      ],
+      "Yes, it was me": [
+        "Evet, bendim"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Etkin"
+      ],
+      "Inactive": [
+        "Etkin değil"
+      ],
+      "Pending activation": [
+        "Etkinleştirilmesi bekleniyor"
+      ],
+      "Pending admin activation": [
+        "Yönetici tarafından etkinleştirilmesi gerekiyor"
+      ],
+      "Rejected": [
+        "İzin verilmedi"
+      ],
+      "Signed out": [
+        "Oturum kapatıldı"
+      ],
+      "Unknown": [
+        "Bilinmiyor"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Lütfen aboneliğiniz iptal edilirken bekleyin"
@@ -15368,6 +15820,9 @@
     "Subscription change warning": {
       "Got it": [
         "Anladım"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } seçin."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
@@ -15825,6 +16280,12 @@
       "Default calendar updated": [
         "Varsayılan takvim güncellendi"
       ],
+      "Device deleted": [
+        "Aygıt silindi"
+      ],
+      "Device rejected": [
+        "Aygıta izin verilmedi"
+      ],
       "Display name updated": [
         "Görüntülenecek ad güncellendi"
       ],
@@ -15971,6 +16432,12 @@
       ],
       "You have successfully unsubscribed": [
         "Abonelikten ayrıldınız"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Geçerli bir kurtarma e-posta adresi yazdıysanız, bir dakika içinde kullanıcı adınızın bulunduğu bir e-posta alacaksınız."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Geçerli bir kurtarma telefon numarası yazdıysanız, bir dakika içinde kullanıcı adınızın bulunduğu bir SMS alacaksınız."
       ]
     },
     "Success message": {
@@ -16254,6 +16721,9 @@
       ],
       "Action": [
         "İşlem"
+      ],
+      "Actions": [
+        "İşlemler"
       ],
       "Activate @pm.me": [
         "@pm.me adresini kullanıma al"
@@ -16588,11 +17058,17 @@
       "Delete version history?": [
         "Sürüm geçmişi silinsin mi?"
       ],
+      "Deny access to user?": [
+        "Kullanıcının erişme izni reddedilsin mi?"
+      ],
       "Description": [
         "Açıklama"
       ],
       "Details": [
         "Ayrıntılar"
+      ],
+      "Device": [
+        "Aygıt"
       ],
       "Device connected!": [
         "Aygıt bağlandı!"
@@ -16899,6 +17375,9 @@
       "Leave ${ organisationName }?": [
         "${ organisationName } kuruluşundan ayrılmak istiyor musunuz?"
       ],
+      "Leave group?": [
+        "Gruptan ayrılmak istiyor musunuz?"
+      ],
       "Link confirmation": [
         "Bağlantı onayı"
       ],
@@ -17031,6 +17510,9 @@
       "Profile": [
         "Profil"
       ],
+      "QR Code": [
+        "Kare kod"
+      ],
       "Ready, set, forward": [
         "Hazırla, ayarla, ilet"
       ],
@@ -17054,6 +17536,9 @@
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
+      ],
+      "Reject device?": [
+        "Aygıt reddedilsin mi?"
       ],
       "Remove all members?": [
         "Tüm üyeler kaldırılsın mı?"
@@ -17219,6 +17704,9 @@
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
+      ],
+      "State": [
+        "Durum"
       ],
       "Status": [
         "Durum"
@@ -17584,6 +18072,9 @@
       "Set the default layout for your Inbox.": [
         "Gelen kutunuzun varsayılan düzenini ayarlayın."
       ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "Gönderdiğiniz e-postalara şu alt bilgi eklenir: ${ signature } Bağlantı, öneri bağlantınıza yönlenir. Alt bilgi, imzanızın altında görüntülenir. İmzanızı istediğiniz zaman ayarlar bölümünden kişiselleştirebilirsiniz."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "İleti listesinde her göndericinin görseli görüntülenir. Göndericinin görseli yoksa adı ve soyadının baş harfleri görüntülenir."
       ],
@@ -17699,6 +18190,9 @@
       ],
       "User declined invitation": [
         "Kullanıcı daveti reddetti"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Kullanıcının daveti kabul etmesi bekleniyor"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17740,6 +18234,9 @@
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
       ]
     },
     "unprivatization": {
@@ -18120,6 +18617,11 @@
         "${ selected } tarifeniz"
       ]
     },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "Cüzdan başına ${ n } hesap",
@@ -18190,6 +18692,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME } erken erişime sunuldu. iOS uygulamasını Apple TestFlight üzerinden, Android uygulamasını ise Google Açık Test üzerinden indirebilirsiniz."
+      ],
       "Coming soon": [
         "Yakında"
       ]
@@ -18294,6 +18799,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "Kurtarma dosyanızın geçerlilik süresi geçmiş. Parolanızı yeniden sıfırlarsanız bu ifade yeni verileri kurtarmakta kullanılamaz."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "Kurtarma ifadenizin kullanma süresi geçmiş. Parolanızı yeniden sıfırlarsanız bu ifade yeni verileri kurtarmakta kullanılamaz."
       ]
     },
     "Warning for domain modal": {
