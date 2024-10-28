@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { ProtonLogo } from '@proton/components/index';
+import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/SpotlightContent';
 import {
     PASS_FAMILY_BF_2024_MONTHLY_PRICE,
@@ -31,6 +32,7 @@ export const BlackFriday2024Offer: FC<BaseSpotlightMessage> = ({ onClose = noop 
     const user = useSelector(selectUser);
     const userPlan = useSelector(selectUserPlan);
     const lifetimeUpsell = useFeatureFlag(PassFeature.PassBlackFriday2024Lifetime);
+    const online = useConnectivity();
 
     const offer = useMemo<MaybeNull<BF2024Offer>>(() => {
         switch (userPlan?.InternalName) {
@@ -124,6 +126,7 @@ export const BlackFriday2024Offer: FC<BaseSpotlightMessage> = ({ onClose = noop 
                         shape="solid"
                         color="norm"
                         size="medium"
+                        disabled={!online}
                         className={clsx(
                             'pass-bf2024-banner--btn text-sm text-semibold px-3',
                             offer === PassFeature.PassBlackFriday2024Lifetime && 'pass-bf2024-banner--btn--deal'
