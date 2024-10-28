@@ -6,7 +6,6 @@ import {
   $computeTableMap,
   $computeTableMapSkipCellCheck,
   $createTableCellNode,
-  $deleteTableColumn,
   $getNodeTriplet,
   $isTableCellNode,
   $isTableNode,
@@ -55,6 +54,8 @@ import { $insertTableColumnAtSelection } from './TableUtils/insertNewColumnAtSel
 import { $moveSelectionToCell } from './TableUtils/moveSelectionToCell'
 import { duplicateRow } from './TableUtils/duplicateRow'
 import { duplicateSelectedColumn } from './TableUtils/duplicateSelectedColumn'
+import { $handleDeleteTableRowCommand } from './TableUtils/handleDeleteTableRowCommand'
+import { $handleDeleteTableColumnCommand } from './TableUtils/handleDeleteTableColumnCommand'
 
 export function TablePlugin({
   hasCellMerge = false,
@@ -159,27 +160,8 @@ export function TablePlugin({
         },
         COMMAND_PRIORITY_EDITOR,
       ),
-      editor.registerCommand(
-        DELETE_TABLE_ROW_COMMAND,
-        (row) => {
-          row.remove()
-          return true
-        },
-        COMMAND_PRIORITY_EDITOR,
-      ),
-      editor.registerCommand(
-        DELETE_TABLE_COLUMN_COMMAND,
-        (cell) => {
-          const table = $findMatchingParent(cell, $isTableNode)
-          if (!table) {
-            return false
-          }
-          const cellIndex = cell.getIndexWithinParent()
-          $deleteTableColumn(table, cellIndex)
-          return true
-        },
-        COMMAND_PRIORITY_EDITOR,
-      ),
+      editor.registerCommand(DELETE_TABLE_ROW_COMMAND, $handleDeleteTableRowCommand, COMMAND_PRIORITY_EDITOR),
+      editor.registerCommand(DELETE_TABLE_COLUMN_COMMAND, $handleDeleteTableColumnCommand, COMMAND_PRIORITY_EDITOR),
       editor.registerCommand(
         DELETE_TABLE_ROW_AT_SELECTION_COMMAND,
         () => {
