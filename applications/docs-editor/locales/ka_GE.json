@@ -535,6 +535,9 @@
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "შემცველობა, რომლის ჩასმასაც ცდილობთ, მეტისმეტად დიდია. სცადეთ, პატარა ნაწილებით ჩასვათ."
       ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "ენა, რომელსაც იყენებთ, ამჟამად, მინიშნების რეჟიმში მხარდაჭერილი არაა. გადაერთეთ ჩასწორების რეჟიმში, ან შეცვალეთ ენა."
+      ],
       "Viewing": [
         "ნახვა"
       ],
@@ -555,8 +558,14 @@
       "Change indent level": [
         "შეწევის დონის შეცვლა"
       ],
+      "Clear formatting": [
+        "დაფორმატების მოცილება"
+      ],
       "Delete": [
         "წაშლა"
+      ],
+      "Delete divider": [
+        "გამყოფის წაშლა"
       ],
       "Delete image": [
         "გამოსახულების წაშლა"
@@ -567,17 +576,44 @@
       "Delete paragraph": [
         "აბზაცის წაშლა"
       ],
+      "Delete table": [
+        "ცხრილის წაშლა"
+      ],
+      "Delete table column": [
+        "ცხრილის სვეტის წაშლა"
+      ],
+      "Delete table row": [
+        "ცხრილის მწკრივის წაშლა"
+      ],
+      "Duplicate table column": [
+        "ცხრილის სვეტის დადუბლირება"
+      ],
+      "Duplicate table row": [
+        "ცხრილის მწკრივის დადუბლირება"
+      ],
       "Format": [
         "ფორმატი"
       ],
       "Insert": [
         "ჩასმა"
       ],
+      "Insert divider": [
+        "გამყოფის ჩასმა"
+      ],
       "Insert image": [
         "გამოსახულების ჩასმა"
       ],
       "Insert paragraph": [
         "აბზაცის ჩასმა"
+      ],
+      "Insert table": [
+        "ცხრილის ჩასმა"
+      ],
+      "Insert table column": [
+        "ცხრილის სვეტის ჩასმა"
+      ],
+      "Insert table row": [
+        "ცხრილის მწკრივის ჩასმა"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "კლავიატურის მალსახმობი: ${ shortcut }"

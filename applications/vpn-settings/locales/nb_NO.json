@@ -2523,6 +2523,9 @@
       "Invalid expiration date": [
         "Ugyldig utløpsdato"
       ],
+      "Invalid IBAN": [
+        "Ugyldig IBAN"
+      ],
       "Invalid invitation link": [
         "Ugyldig invitasjonskobling"
       ],
@@ -2595,6 +2598,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
       ],
+      "Please upload a square logo": [
+        "Last opp en firkantet logo"
+      ],
       "Please upload an xml file": [
         "Vennligst last opp en xml-fil"
       ],
@@ -2618,6 +2624,9 @@
       ],
       "Tab closed": [
         "Fane lukket"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Det forfalte beløpet er endret. Prøv igjen."
       ],
       "The email addresses do not match": [
         "E-postadressene samsvarer ikke"
@@ -2770,6 +2779,9 @@
       "Got it": [
         "Forstått"
       ],
+      "Invite a user": [
+        "Inviter en bruker"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Inviter en eksisterende ${ BRAND_NAME }-bruker"
       ],
@@ -2827,6 +2839,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livsvarige kontoer kan ikke bli med i en familieplan."
       ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
       "Manage user accounts": [
         "Administrere brukerkontoer"
       ],
@@ -2860,6 +2875,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan bare godta 3 invitasjoner i løpet av en 6-måneders periode. Ta kontakt med ${ supportLink } hvis du trenger et unntak."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kan ikke godta denne invitasjonen med din nåværende plan."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blitt invitert til å bli med ${ bannerOrganization }. ${ viewInviteButton }"
@@ -2915,6 +2933,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brukeren allerede har en ${ MAIL_APP_NAME }-adresse, angi den her. Ellers må de opprette en konto først."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Hvis brukeren allerede har en konto med ${ BRAND_NAME }, skriv den inn her. Ellers må de opprette en konto først."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitasjonen avbrytes, og brukeren kan ikke bli med ${ organizationName }."
@@ -3510,6 +3531,9 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/måned)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Få en ${ BRAND_NAME }-adresse** for å bruke alle ${ BRAND_NAME_TWO }-tjenester inkludert ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -3962,6 +3986,9 @@
       ],
       "High Priority": [
         "Høy prioritet"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsleverandørens offentlige nøkkel for å signere godkjenningsdeklarasjoner. Det bør være et sted å laste ned eller kopiere sertifikatnummeret fra identitetsleverandøren. Bare lim inn sertifikathashen i tekstfeltfeltet."
@@ -5262,6 +5289,9 @@
       "Amount due": [
         "Skyldig beløp"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Assertion Consumer Service URL": [
         "URL-adresse for påstand om forbrukertjeneste"
       ],
@@ -5270,6 +5300,9 @@
       ],
       "Authenticator app": [
         "Autentiseringsapp"
+      ],
+      "Backup password": [
+        "Reservepassord"
       ],
       "Billing address": [
         "Fakturaadresse"
@@ -5321,6 +5354,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Koden består av 6 sifre uten mellomrom"
+      ],
+      "Company name": [
+        "Foretaksnavn"
       ],
       "Config to connect to ${ serverName }": [
         "Konfig for å koble til ${ serverName }"
@@ -5438,6 +5474,9 @@
       ],
       "Hide password": [
         "Skjul passord"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Intervall"
@@ -5586,6 +5625,9 @@
       "Recovery phrase": [
         "Gjenopprettingsfrase"
       ],
+      "Repeat backup password": [
+        "Gjenta reservepassord"
+      ],
       "Reply (ACS) URL": [
         "URL-adresse for svar (ACS)"
       ],
@@ -5597,6 +5639,9 @@
       ],
       "Reveal password": [
         "Avslør passord"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search": [
         "Søk"
@@ -5630,6 +5675,9 @@
       ],
       "System information": [
         "Systeminformasjon"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Two-password mode": [
         "To-passordmodus"
@@ -6533,6 +6581,9 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhetskopier alle filene dine på tvers av enheter"
       ],
+      "TOR over VPN": [
+        "TOR over VPN"
+      ],
       "Two-factor authentication": [
         "Tofaktorautentisering"
       ],
@@ -6837,6 +6888,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
       ],
@@ -6888,6 +6942,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighet for å se innbokser for ikke-private brukere på samme måte som brukeren, inkludert fullstendige meldings- og kontaktdetaljer."
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisasjonsadministrasjonsverktøy som lar administratorer legge til og fjerne brukere, administrere tilgangen deres til ${ BRAND_NAME }-tjenester og utføre andre oppgaver."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robuste infrastruktur sikrer at du får tilgang til kontoen din når du trenger den"
       ],
@@ -6929,6 +6986,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Rute internettrafikken din gjennom TOR-nettverket med et enkelt klikk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
@@ -7520,6 +7580,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Bruk en datagjenopprettingsmetode, kontakt en annen administrator, eller tilbakestill organisasjonsnøkkelen for å gjenopprette administratorrettigheter."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Vi kunne ikke bekrefte ektheten til denne identiteten."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Vi kan ikke bekrefte sikkerheten til denne avsenderens adressenøkkel. Noen ganger er det en forsinkelse i oppdateringen av avsenderens informasjon. Prøv igjen senere. Hvis du ikke stoler på gyldigheten av denne invitasjonen eller avsenderen, kan du kontakte kundestøtte for ${ BRAND_NAME }."
       ],
@@ -7540,11 +7603,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverføring"
+      ],
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bruk firmanavn"
+      ],
+      "Use personal name": [
+        "Bruk personlig navn"
       ]
     },
     "Payments": {
@@ -7636,6 +7710,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Vennligst forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved å bekrefte denne betalingen autoriserer du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, til å instruere banken din om å debitere kontoen din, og banken din til å debitere kontoen din tilsvarende. Du kan få refusjon innen 8 uker fra belastningsdatoen, i henhold til vilkårene i avtalen din med banken."
+      ],
+      "Street address, postal code, and city": [
+        "Gateadresse, postnummer og by"
       ]
     },
     "Permission": {
@@ -7869,6 +7951,9 @@
       "Changing organization password": [
         "Endring av organisasjonspassord"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Opprette eller få tilgang til ikke-private brukerkontoer"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "På grunn av en endring av passord har administratorrettighetene til organisasjonen blitt begrenset. Følgende handlinger er ikke lenger tillatt:"
       ]
@@ -7895,6 +7980,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Påloggingen ble ikke fullført."
+      ],
       "Something went wrong": [
         "Noe gikk galt"
       ]
@@ -7955,6 +8043,12 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Forutsetning:** SAML-autentisering må konfigureres for å aktivere SCIM-klargjøring."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Forutsetning:** for å aktivere SCIM-klargjøring, må du bekrefte eierskapet til domenet **${ domainName }**. Denne verifiseringen kan ta opptil én time."
+      ],
+      "Enter the token into your identity provider": [
+        "Skriv inn tokenet i identitetsleverandøren din"
       ],
       "Enter URL and token into your identity provider": [
         "Skriv inn nettadresse og token i identitetsleverandøren din"
@@ -8264,6 +8358,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Vi vil kontakte deg når tilbakestilling av passord er tilgjengelig igjen."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Du kan når som helst sjekke statusen til forespørselen din ${ accountAndPasswordSectionLink } i innstillingene."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "i seksjonen konto og passord"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8607,6 +8709,9 @@
       "Backup password": [
         "Reservepassord"
       ],
+      "Cancel": [
+        "Avbryt"
+      ],
       "Change backup password": [
         "Endre reservepassordet"
       ],
@@ -8726,6 +8831,29 @@
       ],
       "User details:": [
         "Brukerdetaljer:"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Pending activation": [
+        "Avventer aktivering"
+      ],
+      "Pending admin activation": [
+        "Avventer administratoraktivering"
+      ],
+      "Rejected": [
+        "Avvist"
+      ],
+      "Signed out": [
+        "Logget av"
+      ],
+      "Unknown": [
+        "Ukjent"
       ]
     },
     "State": {
@@ -8922,6 +9050,9 @@
     "Subscription change warning": {
       "Got it": [
         "Forstått"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Bare logg på din Apple App Store-konto, deretter velg ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Bare logg på din Play Store-konto, deretter klikk ${ subscriptions }."
@@ -9450,6 +9581,12 @@
       ],
       "You have successfully unsubscribed": [
         "Du har avsluttet abonnementet"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Du vil motta brukernavnet ditt via e-post innen et minutt hvis du har oppgitt en gyldig e-postadresse for gjenoppretting."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Du vil motta brukernavnet ditt via SMS innen et minutt hvis du har oppgitt et gyldig telefonnummer for gjenoppretting."
       ]
     },
     "Success message": {
@@ -9600,6 +9737,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME }-klienter"
       ],
@@ -10412,6 +10552,9 @@
       ],
       "User declined invitation": [
         "Brukeren avslo invitasjonen"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Venter på at brukeren godtar invitasjonen"
       ]
     },
     "Tooltip for news": {
@@ -10425,6 +10568,9 @@
     "Tor out of date": {
       "stable release": [
         "stabil utgivelse"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denne versjonen av TOR-nettleser støttes ikke. Oppdater til seneste ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10727,6 +10873,11 @@
       ],
       "Your ${ selected } plan": [
         "Planen du har valgt ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     },
     "VPNClient": {

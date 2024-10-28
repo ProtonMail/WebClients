@@ -1228,6 +1228,9 @@
       "Toggle Calendar app": [
         "Takvim uygulamasına geç"
       ],
+      "Toggle Contacts app": [
+        "Kişiler uygulamasına geç"
+      ],
       "Toggle security center app": [
         "Güvenlik merkezi uygulamasını aç/kapat"
       ],
@@ -3538,6 +3541,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Hesabınızda olabilecek en yüksek güvenliğini sağlamak için bir kurtarma ifadesi belirleyin."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
       ],
@@ -3913,6 +3919,12 @@
       "A problem occurred, please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "Add at least one action": [
+        "En az bir işlem ekleyin"
+      ],
+      "Add at least one condition": [
+        "En az bir koşul ekleyin"
+      ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
@@ -4090,6 +4102,9 @@
       "Invalid expiration time": [
         "Geçerlilik süresi geçersiz"
       ],
+      "Invalid IBAN": [
+        "IBAN geçersiz"
+      ],
       "Invalid name": [
         "Ad geçersiz"
       ],
@@ -4251,6 +4266,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Tarifenizin sınırlarına düşene ya da tarifenizi yükseltene kadar ek dosyalar gönderemeyeceksiniz."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Tarifenizin sınırlarınızı aştığınızda veya tarifenizi yükseltene dek ek dosyalar gönderemeyeceksiniz."
+      ],
       "Signature not verified": [
         "İmza doğrulanamadı"
       ],
@@ -4298,6 +4316,9 @@
       ],
       "Thanks for the feedback!": [
         "Geri bildiriminiz için teşekkürler!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Ödenecek tutar değişti. Lütfen yeniden deneyin."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Ek dosyanın şifresi çözülemedi.\nİlgili kişisel anahtara sahipseniz, GnuPG gibi programlarla dosyanın şifresini çözebilirsiniz.",
@@ -4412,6 +4433,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Eklenebilecek en fazla takvim sayısı sınırına ulaştınız."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Hesabınızın kişi sayısı sınırına ulaştınız"
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -4787,6 +4811,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime hesaplar bir aile tarifesine katılamaz."
       ],
+      "Manage addresses": [
+        "Adres yönetimi"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Üyeleri olan bir tarifenin sahipleri başka bir aile tarifesine katılamaz."
       ],
@@ -4804,6 +4831,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "6 aylık dönemde yalnızca 3 davet kabul edebilirsiniz. Bu sınırı aşmaya gerek duyuyorsanız lütfen ${ supportLink } ile görüşün."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Geçerli tarifenizle bu daveti kabul edemezsiniz."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } ailesine davet edildiniz. ${ viewInviteButton }"
@@ -4841,6 +4871,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Aile hesabınızı yapılandırın ve kullanıcıları davet edin"
+      ],
       "Invite members and get everything up and running.": [
         "Üyeleri davet edin ve her şeyi çalışır duruma getirin."
       ],
@@ -5023,6 +5056,11 @@
         "Okunmamış"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Ek dosyaları var"
+      ]
+    },
     "Filter preview": {
       "read": [
         "okunmuş"
@@ -5114,6 +5152,9 @@
       ],
       "Start free trial": [
         "Ücretsiz deneme süresini başlatın"
+      ],
+      "Try the new desktop app": [
+        "Yeni masaüstü uygulamasını deneyin"
       ],
       "Upgrade now": [
         "Şimdi yükseltin"
@@ -5835,6 +5876,9 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/ay)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülür)"
       ],
@@ -5938,6 +5982,9 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Zamanlanmış veya ertelenmiş tüm iletiler iptal edilecek."
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
       ],
       "Applying actions to conversations": [
         "İşlemler yazışmalara uygulanıyor"
@@ -6260,6 +6307,9 @@
       "Emails are automatically signed": [
         "E-postalar otomatik olarak imzalanıyor"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "${ nameDeleted } etiketi ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
+      ],
       "embedded image": [
         "gömülmüş görsel",
         "gömülmüş görsel"
@@ -6365,6 +6415,9 @@
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir alıcıya gönderiyorum."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -6655,6 +6708,9 @@
       "Organization size": [
         "Kuruluş boyutu"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Uyarılarımız güvenliğe öncelik verir. Ele geçirilen bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
       ],
@@ -6908,6 +6964,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "${ dateString } tarihine ${ formattedTime } saatine ertelendi"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Bugün ${ formattedTime } saatine ertelendi"
@@ -7179,6 +7238,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Yalnızca tarihe, ada, e-posta adresine veya konu satırına göre aramayı kapatın. İleti içeriğini aramayı kapatmak (ve bu özelliği etkinleştirmek için indirilen iletileri silmek) için Ayarlar bölümüne gidin."
+      ],
       "Turn on to search the content of your messages": [
         "İletilerinizin içeriklerini arayabilmek için açın"
       ],
@@ -7208,6 +7270,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Hesabınıza daha fazla adres eklemek için tarifenizi yükseltin."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Çöp veya İstenmeyen kutularında 30 günden uzun süredir duran iletilerin otomatik olarak silinmesi için tarifenizi yükseltin."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Daha fazla klasör, süzgeç ve adres oluşturmak için tarifenizi yükseltin."
@@ -7904,6 +7969,9 @@
       "And": [
         "Ve"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "BİRİ"
       ],
@@ -7987,6 +8055,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Company name": [
+        "Kuruluş adı"
       ],
       "Composer": [
         "Oluşturucu"
@@ -8119,6 +8190,9 @@
       ],
       "I understand the risk": [
         "Riski anladım"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "EĞER"
@@ -8300,6 +8374,9 @@
       "Reveal password": [
         "Parolayı görüntüle"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Search in": [
         "Şurada ara"
       ],
@@ -8344,6 +8421,9 @@
       ],
       "Then": [
         "Önce"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time": [
         "Saat"
@@ -8832,6 +8912,9 @@
       ]
     },
     "Message image": {
+      "Image could not be loaded.": [
+        "Görsel yüklenemedi."
+      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Görsel, gizliliğinizi korumak için yüklenmedi."
       ]
@@ -9445,6 +9528,9 @@
       "Sync and backup all your files across devices": [
         "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
       ],
+      "TOR over VPN": [
+        "VPN üzerinden Tor"
+      ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
       ],
@@ -9711,6 +9797,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
       ],
@@ -9762,6 +9851,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Kuruluş yönetimi aracı yöneticilerin kullanıcı ekleyip silmesini, ${ BRAND_NAME } hizmetlerine erişim izinlerini ayarlamasını ve diğer işlemleri yapmasını sağlar."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Güçlü altyapımız, gerek duyduğunuzda hesabınıza erişmenizi sağlar"
       ],
@@ -9803,6 +9895,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
@@ -9976,6 +10071,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10284,11 +10384,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Banka havalesi"
+      ],
       "Credit/debit card": [
         "Kredi ya da banka kartı"
       ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Kuruluş adı kullanılsın"
+      ],
+      "Use personal name": [
+        "Kişi adı kullanılsın"
       ]
     },
     "Payments": {
@@ -10368,6 +10479,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onaylayarak, ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine bankanıza hesabınızdan para çekmesi talimatını vermesini ve bankanızın da buna göre hesabınızdan para çekmesine izin vermiş olursunuz. Bankanızla yaptığınız anlaşmanın koşulları uyarınca, paranın çekilme tarihinden itibaren 8 hafta içinde geri ödeme alabilirsiniz."
+      ],
+      "Street address, postal code, and city": [
+        "Sokak adresi, posta kodu ve il"
       ]
     },
     "PGP key encryption warning": {
@@ -10753,6 +10872,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını deneyin"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Amazon alışverişleri için kullanıldı gibi."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
@@ -11557,6 +11679,9 @@
     "Subscription change warning": {
       "Got it": [
         "Anladım"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } seçin."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
@@ -13279,6 +13404,9 @@
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
       ]
     },
     "Update font modal": {
@@ -13343,6 +13471,11 @@
       ],
       "No ads": [
         "Reklamsız"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
       ]
     },
     "wallet_signup_2024: Info": {

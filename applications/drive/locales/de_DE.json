@@ -2324,11 +2324,6 @@
         "Überfällige Rechnung"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2395,6 +2390,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2816,6 +2816,9 @@
       ],
       "Invalid expiration date": [
         "Ungültiges Ablaufdatum"
+      ],
+      "Invalid IBAN": [
+        "Ungültige IBAN"
       ],
       "Invalid name": [
         "Ungültiger Name"
@@ -3414,6 +3417,9 @@
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Lebenslang lizenzierte Konten können keinem Familienabonnement beitreten."
+      ],
+      "Manage addresses": [
+        "Adressen verwalten"
       ],
       "Owners of a plan with members cannot join another family plan.": [
         "Besitzer eines Abonnements mit Mitgliedern können keinem anderen Familienabonnement beitreten."
@@ -4060,6 +4066,9 @@
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/Monat)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
       ],
@@ -4538,6 +4547,9 @@
       ],
       "How does encrypted search work?": [
         "Wie funktioniert die verschlüsselte Suche?"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
@@ -5662,6 +5674,9 @@
       "Address": [
         "Anschrift"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Anyone on the Internet with the link can view": [
         "Für jeden im Internet mit diesem Link sichtbar"
       ],
@@ -5748,6 +5763,9 @@
       ],
       "Comment": [
         "Kommentar"
+      ],
+      "Company name": [
+        "Unternehmensname"
       ],
       "Confirm password": [
         "Passwort bestätigen"
@@ -5896,6 +5914,9 @@
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -6062,6 +6083,9 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32,\n1228 Plan-les-Ouates\nGenf, Schweiz"
+      ],
       "Security code (${ codeName })": [
         "Sicherheitscode (${ codeName })"
       ],
@@ -6133,6 +6157,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Dadurch werden alle Dateien auf dem gesperrten Laufwerk dauerhaft gelöscht."
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Title": [
         "Titel"
@@ -6518,6 +6545,9 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
+      "GZip Archive": [
+        "GZip-Archiv"
+      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -6538,6 +6568,9 @@
       ],
       "JavaScript": [
         "JavaScript"
+      ],
+      "JPEG image": [
+        "JPEG-Bild"
       ],
       "JSON": [
         "JSON"
@@ -6604,6 +6637,9 @@
       ],
       "Opus audio": [
         "Opus-Audio"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "Python": [
         "Python"
@@ -7122,6 +7158,9 @@
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
+      "TOR over VPN": [
+        "Tor über VPN"
+      ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
       ],
@@ -7316,6 +7355,14 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -7328,14 +7375,6 @@
       ],
       "Switch plans?": [
         "Abonnement wechseln?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7438,6 +7477,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und entfernen, ihren Zugriff auf ${ BRAND_NAME }-Dienste verwalten und andere Aufgaben durchführen können."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Unsere robuste Infrastruktur ermöglicht dir den Zugriff auf dein Konto, wann immer nötig."
@@ -7748,6 +7790,9 @@
       ],
       "Failed to download files: ${ err }": [
         "Download der Dateien fehlgeschlagen: ${ err }"
+      ],
+      "Failed to load invitation details": [
+        "Einladungsdetails konnten nicht geladen werden"
       ],
       "Failed to move, please try again": [
         "Verschieben fehlgeschlagen, bitte versuche es erneut"
@@ -8166,6 +8211,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Banküberweisung"
+      ],
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
@@ -8503,6 +8551,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ausprobieren"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Verwendet auf Amazon für Shopping, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."

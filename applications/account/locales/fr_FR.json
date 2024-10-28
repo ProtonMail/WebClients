@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -123,6 +123,9 @@
       ],
       "Add label": [
         "Ajouter un label"
+      ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Ajouter plus d'accès à ${ BRAND_NAME } Scribe"
       ],
       "Add notification": [
         "Ajouter une notification"
@@ -3468,6 +3471,9 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Recevez jusqu'à ${ credits } de crédits en invitant vos amis à rejoindre ${ BRAND_NAME }."
       ],
+      "If disabled, only admins will have access.": [
+        "En cas de désactivation, seuls les administrateurs y ont accès."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
       ],
@@ -3934,7 +3940,7 @@
     },
     "Email Unsubscribe": {
       "Change other email subscriptions": [
-        "Modifier les autres abonnements e-mail"
+        "Modifier les autres abonnements"
       ],
       "Click the button below to unsubscribe from ${ categories } emails.": [
         "Cliquez sur le bouton ci-dessous pour vous désabonner des e-mails de la catégorie ${ categories }."
@@ -6794,9 +6800,6 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Ajoutez une adresse e-mail @pm.me à votre compte. Ce domaine simple et court signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
       ],
-      "Add a recovery ${ type }": [
-        "Ajouter une récupération ${ type }"
-      ],
       "Add a recovery email address": [
         "Ajoutez une adresse e-mail de récupération."
       ],
@@ -7213,8 +7216,11 @@
         "Suppression de ${ deletedServerCount } serveur de Passerelle",
         "Suppression de ${ deletedServerCount } serveurs de Passerelle"
       ],
-      "Disable recovery by ${ type }": [
-        "Désactiver la récupération par ${ type }"
+      "Disable recovery by email address": [
+        "Désactiver la récupération par adresse e-mai"
+      ],
+      "Disable recovery by phone number": [
+        "Désactiver la récupération par numéro de téléphone"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Désactivation le ${ formattedDateAndTime }"
@@ -8836,11 +8842,14 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La vérification ouvrira un nouvel onglet : veillez à désactiver les bloqueurs de pop-up. Vous ne serez pas facturé, le montant utilisé pour vérifier la carte vous sera immédiatement remboursé."
       ],
-      "Verify ${ type }": [
-        "Vérifier ${ type }"
-      ],
       "Verify domain": [
         "Vérifier le domaine"
+      ],
+      "Verify email address": [
+        "Vérifier l'adresse e-mail"
+      ],
+      "Verify phone number": [
+        "Vérifier le numéro de téléphone"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Confirmez votre identité avec un mot de passe à usage unique et à durée limitée qui est généré par une application d'authentification."
@@ -12531,6 +12540,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Outil de gestion de l'organisation qui permet aux administrateurs d'ajouter et de supprimer des utilisateurs, de gérer leur accès aux services ${ BRAND_NAME }, et d'effectuer d'autres tâches."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La fiabilité de notre infrastructure vous garantit l'accès à votre compte chaque fois que vous en avez besoin."
       ],
@@ -13761,7 +13773,7 @@
         "Utiliser le nom de l'entreprise"
       ],
       "Use personal name": [
-        "Utiliser un nom personnel"
+        "Utiliser le nom de la personne"
       ]
     },
     "Payments": {
@@ -15364,7 +15376,7 @@
     },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ boldedMemberAddress } sollicite votre aide pour se connecter à leur son ${ BRAND_NAME } avec l'authentification unique (SSO)."
+        "${ boldedMemberAddress } sollicite votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO)."
       ],
       "${ n } member requested your help to sign in.": [
         "${ n } membre a sollicité votre aide pour se connecter.",
@@ -16116,7 +16128,7 @@
         "Importer tout nouveau fichier"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
-        "Les abonnements utilisateurs sont la seule source de revenus de ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission pour la protection de la vie privée en ligne, et d'aider les militants et organisations qui luttent pour la liberté."
+        "Les abonnements des utilisateurs sont la seule source de revenus de ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission pour la protection de la vie privée en ligne, et d'aider les militants et organisations qui luttent pour la liberté."
       ],
       "Users won’t be able to manage their calendars": [
         "Les utilisateurs ne pourront plus gérer leurs calendriers."
@@ -16683,6 +16695,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
@@ -17183,6 +17198,9 @@
       ],
       "Email subscriptions": [
         "Newsletters"
+      ],
+      "Enable for all users": [
+        "Activer pour tous les utilisateurs"
       ],
       "Encryption and keys": [
         "Chiffrement et clés"

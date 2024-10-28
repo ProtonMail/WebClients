@@ -184,6 +184,9 @@
       "Copy link": [
         "Kopioi linkki"
       ],
+      "Create a copy": [
+        "Luo kopio"
+      ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
@@ -2540,6 +2543,9 @@
       "Invalid expiration date": [
         "Virheellinen voimassaolon päättymisaika"
       ],
+      "Invalid IBAN": [
+        "Virheellinen IBAN"
+      ],
       "Invalid name": [
         "Virheellinen nimi"
       ],
@@ -2683,6 +2689,9 @@
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"
       ],
+      "The amount due has changed. Please try again.": [
+        "Maksettava määrä on muuttunut. Yritä uudelleen."
+      ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Muunnettava dokumentti on liian suuri. Näin voi käydä, jos dokumentissa on paljon kuvia tai muuta mediaa. Yritä uudelleen pienemmällä dokumentilla."
       ],
@@ -2794,6 +2803,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Olet saavuttanut kalenterien enimmäismäärän."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Olet saavuttanut tilisi yhteystietojen enimmäismäärän"
       ],
       "You must set a name": [
         "Nimi on asetettava"
@@ -3117,6 +3129,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Elinikäiset tilit eivät voi liittyä perhetilaukseen."
       ],
+      "Manage addresses": [
+        "Hallitse osoitteita"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Jäseniä sisältävän tilauksen omistajat eivät voi liittyä toiseen perhetilaukseen."
       ],
@@ -3134,6 +3149,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Voit hyväksyä 6 kuukauden aikana vain kolme kutsua. Ota yhteyttä ${ supportLink }, jos tarvitset poikkeusluvan."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Et voi hyväksyä tätä kutsua nykyisellä tilauksellasi."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3681,6 +3699,9 @@
         "(${ memberCount } jäsen)",
         "(${ memberCount } jäsentä)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/kuukausi)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } tallennustilaetua"
       ],
@@ -4143,6 +4164,9 @@
       ],
       "Low Priority": [
         "Alhainen tärkeys"
+      ],
+      "Making a copy...": [
+        "Luodaan kopiota..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
@@ -4839,6 +4863,9 @@
       "Address": [
         "Osoite"
       ],
+      "Anderson": [
+        "Andersson"
+      ],
       "Anyone on the Internet with the link can view": [
         "Linkin välityksellä kuka tahansa voi tarkastella"
       ],
@@ -4919,6 +4946,9 @@
       ],
       "Colors": [
         "Värit"
+      ],
+      "Company name": [
+        "Yrityksen nimi"
       ],
       "Confirm password": [
         "Vahvista salasana"
@@ -5024,6 +5054,9 @@
       ],
       "I understand the risk": [
         "Ymmärrän riskin"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Ignore": [
         "Ohita"
@@ -5172,6 +5205,9 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Security code (${ codeName })": [
         "Turvakoodi (${ codeName })"
       ],
@@ -5210,6 +5246,9 @@
       ],
       "Theme": [
         "Teema"
+      ],
+      "Thomas": [
+        "Tuomas"
       ],
       "Title": [
         "Nimi"
@@ -5548,6 +5587,9 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
+      "GZip Archive": [
+        "GZip-arkisto"
+      ],
       "HyperText Markup Language (HTML)": [
         "Hypertekstin merkintäkieli (HTML)"
       ],
@@ -5565,6 +5607,9 @@
       ],
       "Java Archive (JAR)": [
         "Java-arkisto (JAR)"
+      ],
+      "JPEG image": [
+        "JPEG-kuva"
       ],
       "MP3 audio": [
         "MP3-ääni"
@@ -5601,6 +5646,9 @@
       ],
       "Opus audio": [
         "Opus-ääni"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "RAR-arkisto"
@@ -6103,6 +6151,9 @@
       ],
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
+      ],
+      "TOR over VPN": [
+        "TOR + VPN"
       ],
       "Two-factor authentication": [
         "Kaksivaiheinen tunnistautuminen"
@@ -6753,6 +6804,9 @@
       "Share invitation declined": [
         "Kieltäydyit jakokutsusta"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Tämän kohteen jakamisen lopettaminen epäonnistui"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Kohteen \"${ name }\" linkin poisto epäonnistui"
       ],
@@ -6883,11 +6937,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Pankkisiirto"
+      ],
       "Credit/debit card": [
         "Maksukortti"
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Käytä yrityksen nimeä"
+      ],
+      "Use personal name": [
+        "Käytä henkilön nimeä"
       ]
     },
     "Payments": {
@@ -6967,6 +7032,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Korttiasi ei hyväksytty. Kokeile eri korttia tai ole veloituksen hyväksymisestä yhteydessä pankkiisi."
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "Katuosoite, postinumero ja kaupunki"
       ]
     },
     "PGP key encryption warning": {
@@ -7205,6 +7275,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Kokeile ${ PASS_APP_NAME }ia"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Käytetään Amazonissa ostoksiin jne."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Kun sähköpostiosoitettasi pyydetään, anna osoitteesi sijaan tämä alias. Aliakset tarjoaa ${ passLink }."
@@ -7817,6 +7890,9 @@
     "Subscription change warning": {
       "Got it": [
         "Selvä"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Kirjaudu vain Apple App Store -tilillesi ja valitse sitten ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Kirjaudu Play Store -tilillesi ja paina sitten ${ subscriptions }."
@@ -8680,6 +8756,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
+      ],
+      "Shared with end-to-end encryption": [
+        "Jaettu päästä päähän -salauksella"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Järjestelmän alikansiot näkyvät ${ MAIL_APP_NAME }issa erillisinä kansioina"

@@ -1228,6 +1228,9 @@
       "Toggle Calendar app": [
         "Åpne/lukke kalender-app"
       ],
+      "Toggle Contacts app": [
+        "Slå av/på Kontakter-appen"
+      ],
       "Toggle security center app": [
         "Veksle sikkerhetssenter-app"
       ],
@@ -3538,6 +3541,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "For å sikre høyest mulig sikkerhet for kontoen din, angi en gjenopprettingsfrase."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -3913,6 +3919,12 @@
       "A problem occurred, please try again.": [
         "En feil oppstod. Forsøk igjen."
       ],
+      "Add at least one action": [
+        "Legg til minst én handling"
+      ],
+      "Add at least one condition": [
+        "Legg til minst én betingelse"
+      ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
       ],
@@ -4090,6 +4102,9 @@
       "Invalid expiration time": [
         "Ugyldig utløpstid"
       ],
+      "Invalid IBAN": [
+        "Ugyldig IBAN"
+      ],
       "Invalid name": [
         "Ugyldig navn"
       ],
@@ -4251,6 +4266,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Sending av vedlegg er begrenset til du oppfyller plangrensene eller oppgraderer."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Det er begrenset å sende vedlegg mens du overskrider plangrensene eller til du oppgraderer planen."
+      ],
       "Signature not verified": [
         "Signatur ikke bekreftet"
       ],
@@ -4298,6 +4316,9 @@
       ],
       "Thanks for the feedback!": [
         "Takk for tilbakemeldingen!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Det forfalte beløpet er endret. Prøv igjen."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Vedlegget kan ikke dekrypteres.\nHvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere\nfilen med et program som GnuPG.",
@@ -4412,6 +4433,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nådd grensen for antall kontakter for kontoen din"
       ],
       "You must set a name": [
         "Du må angi et navn"
@@ -4787,6 +4811,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livsvarige kontoer kan ikke bli med i en familieplan."
       ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Eiere av en plan med medlemmer kan ikke bli med i en annen familieplan."
       ],
@@ -4804,6 +4831,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan bare godta 3 invitasjoner i løpet av en 6-måneders periode. Ta kontakt med ${ supportLink } hvis du trenger et unntak."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kan ikke godta denne invitasjonen med din nåværende plan."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blitt invitert til å bli med ${ bannerOrganization }. ${ viewInviteButton }"
@@ -4841,6 +4871,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Konfigurer familiekontoen din og inviter brukere"
+      ],
       "Invite members and get everything up and running.": [
         "Inviter medlemmer og få alt i gang."
       ],
@@ -5023,6 +5056,11 @@
         "Ulest"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Har vedlegg"
+      ]
+    },
     "Filter preview": {
       "read": [
         "lest"
@@ -5114,6 +5152,9 @@
       ],
       "Start free trial": [
         "Start gratis prøveperiode"
+      ],
+      "Try the new desktop app": [
+        "Prøv den nye skrivebordsappen"
       ],
       "Upgrade now": [
         "Oppgrader nå"
@@ -5835,6 +5876,9 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/måned)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrer hvis ALLE følgende betingelser er oppfylt)"
       ],
@@ -5938,6 +5982,9 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Alle planlagte eller utsatte meldinger blir kansellert."
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuelle undermapper vil også bli slettet. E-postmeldinger som er lagret i mappen ${ nameDeleted }, vil imidlertid ikke bli slettet og finnes i All e-post-mappen."
       ],
       "Applying actions to conversations": [
         "Anvender handlinger på samtaler"
@@ -6260,6 +6307,9 @@
       "Emails are automatically signed": [
         "E-post signeres automatisk"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-postmeldinger merket med etiketten, ${ nameDeleted }, vil ikke bli slettet og kan fortsatt bli funnet i den respektive mappen."
+      ],
       "embedded image": [
         "innebygd bilde",
         "innebygde bilder"
@@ -6365,6 +6415,9 @@
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jeg sender denne meldingen til en ikke-${ MAIL_APP_NAME }-bruker."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
@@ -6655,6 +6708,9 @@
       "Organization size": [
         "Organisasjonsstørrelse"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Systemet vårt flagget denne meldingen som et forsøk på nettfisking. Kontroller at den er legitim."
       ],
@@ -6908,6 +6964,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Slumret til ${ dateString } kl. ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Slumret til i dag, ${ formattedTime }"
@@ -7179,6 +7238,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Slå av for å søke bare etter dato, navn, e-postadresse eller emnelinje. For å deaktivere søkemeldingsinnhold (og slette meldinger som er lastet ned for å aktivere denne funksjonen), gå til innstillinger."
+      ],
       "Turn on to search the content of your messages": [
         "Slå på for å søke etter innhold i meldingene dine"
       ],
@@ -7208,6 +7270,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Oppgrader for å legge til flere adresser til kontoen din."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Oppgrader for å få automatisk sletting av meldinger som har ligget i papirkurven eller søppelposten i mer enn 30 dager."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Oppgrader for å opprette flere mapper, filtre og adresser."
@@ -7904,6 +7969,9 @@
       "And": [
         "Og"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "NOEN"
       ],
@@ -7987,6 +8055,9 @@
       ],
       "Colors": [
         "Farger"
+      ],
+      "Company name": [
+        "Foretaksnavn"
       ],
       "Composer": [
         "Skrivevindu"
@@ -8119,6 +8190,9 @@
       ],
       "I understand the risk": [
         "Jeg forstår risikoen"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "HVIS"
@@ -8300,6 +8374,9 @@
       "Reveal password": [
         "Avslør passord"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Search in": [
         "Søk i"
       ],
@@ -8344,6 +8421,9 @@
       ],
       "Then": [
         "Deretter"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time": [
         "Tidspunkt"
@@ -8832,6 +8912,9 @@
       ]
     },
     "Message image": {
+      "Image could not be loaded.": [
+        "Bildet kunne ikke lastes inn."
+      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Bildet er ikke lastet inn for å beskytte personvernet ditt."
       ]
@@ -9445,6 +9528,9 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhetskopier alle filene dine på tvers av enheter"
       ],
+      "TOR over VPN": [
+        "TOR over VPN"
+      ],
       "Two-factor authentication": [
         "Tofaktorautentisering"
       ],
@@ -9711,6 +9797,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
       ],
@@ -9762,6 +9851,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighet for å se innbokser for ikke-private brukere på samme måte som brukeren, inkludert fullstendige meldings- og kontaktdetaljer."
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisasjonsadministrasjonsverktøy som lar administratorer legge til og fjerne brukere, administrere tilgangen deres til ${ BRAND_NAME }-tjenester og utføre andre oppgaver."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robuste infrastruktur sikrer at du får tilgang til kontoen din når du trenger den"
       ],
@@ -9803,6 +9895,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Rute internettrafikken din gjennom TOR-nettverket med et enkelt klikk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
@@ -9976,6 +10071,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen skal fungere, må du velge alle forespurte elementer som vist i GIF-en."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Velg hva ${ BRAND_NAME } kan få tilgang til: se e-postmeldinger og innstillinger, se og last ned kontaktene dine, se og last ned alle agendaer du får tilgang til fra Google Calendar."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10284,11 +10384,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverføring"
+      ],
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bruk firmanavn"
+      ],
+      "Use personal name": [
+        "Bruk personlig navn"
       ]
     },
     "Payments": {
@@ -10368,6 +10479,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Vennligst forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved å bekrefte denne betalingen autoriserer du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, til å instruere banken din om å debitere kontoen din, og banken din til å debitere kontoen din tilsvarende. Du kan få refusjon innen 8 uker fra belastningsdatoen, i henhold til vilkårene i avtalen din med banken."
+      ],
+      "Street address, postal code, and city": [
+        "Gateadresse, postnummer og by"
       ]
     },
     "PGP key encryption warning": {
@@ -10753,6 +10872,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Brukt på Amazon for shopping, og så videre."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Aliaser leveres av ${ passLink }."
@@ -11557,6 +11679,9 @@
     "Subscription change warning": {
       "Got it": [
         "Forstått"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Bare logg på din Apple App Store-konto, deretter velg ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Bare logg på din Play Store-konto, deretter klikk ${ subscriptions }."
@@ -13279,6 +13404,9 @@
     "Tor out of date": {
       "stable release": [
         "stabil utgivelse"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denne versjonen av TOR-nettleser støttes ikke. Oppdater til seneste ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13343,6 +13471,11 @@
       ],
       "No ads": [
         "Ingen annonser"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     },
     "wallet_signup_2024: Info": {

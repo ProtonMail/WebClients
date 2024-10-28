@@ -677,6 +677,9 @@
       "Today": [
         "Oggi"
       ],
+      "Toggle Contacts app": [
+        "Pulsante app Contatti"
+      ],
       "Toggle settings": [
         "Cambia le impostazioni"
       ],
@@ -893,6 +896,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Uscendo ora, perderai il tuo evento."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Non chiudere questa scheda. Alcune richieste sono ancora in fase di elaborazione in background."
       ]
     },
     "Apps dropdown": {
@@ -1235,6 +1241,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Modifica (vedi, crea o modifica i dettagli dell'evento)"
+      ],
       "View (see all event details)": [
         "Visualizza (mostra i dettagli dell'evento)"
       ]
@@ -2537,8 +2546,14 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Imposta un metodo di recupero per evitare di perdere l'accesso al tuo account."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "L'operazione può richiedere alcuni minuti. Nel frattempo puoi continuare a utilizzare ${ CALENDAR_APP_NAME } come al solito."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per garantire la massima sicurezza possibile per il tuo account, imposta una frase di recupero."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per importare i tuoi contatti da Google o Outlook, ${ easySwitchLink }."
@@ -3050,6 +3065,9 @@
       "Invalid expiration date": [
         "Data di scadenza non valida"
       ],
+      "Invalid IBAN": [
+        "IBAN non valido"
+      ],
       "Invalid link to the event": [
         "Link all'evento non valido"
       ],
@@ -3229,6 +3247,9 @@
       "The address might be misspelled": [
         "L'indirizzo potrebbe esser errato"
       ],
+      "The amount due has changed. Please try again.": [
+        "L'importo dovuto è cambiato. Per favore riprova."
+      ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
       ],
@@ -3310,6 +3331,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Hai raggiunto il numero massimo di calendari."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Hai raggiunto il numero limite di contatti per il tuo account"
       ],
       "You must set a name": [
         "È necessario impostare un nome"
@@ -3701,6 +3725,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Gli account a vita non possono essere associati a un piano famiglia."
       ],
+      "Manage addresses": [
+        "Gestisci gli indirizzi"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "I titolari di un piano con membri non possono aderire a un altro piano famiglia."
       ],
@@ -3718,6 +3745,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Puoi accettare solo 3 inviti nell'arco di 6 mesi. Se ti serve un'eccezione, contatta ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Non puoi accettare questo invito con il tuo piano attuale."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Hai ricevuto un invito a ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3755,6 +3785,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Configura il tuo account famiglia e invita degli utenti"
+      ],
       "Set up your family": [
         "Configura la tua famiglia"
       ],
@@ -4301,6 +4334,9 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membri)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mese)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } memoria bonus"
       ],
@@ -4517,6 +4553,10 @@
       "Dedicated servers": [
         "Server dedicati"
       ],
+      "Deleting event...": [
+        "Eliminazione evento...",
+        "Eliminazione eventi..."
+      ],
       "Discard changes?": [
         "Annullare le modifiche?"
       ],
@@ -4613,6 +4653,9 @@
       ],
       "High Priority": [
         "Priorità alta"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
@@ -4792,6 +4835,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Gli altri utenti all'interno della tua organizzazione vedranno quando sei occupato. Non verranno condivisi i dettagli degli eventi."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "I nostri avvisi danno priorità alla sicurezza. Se non riconosci nessuna delle informazioni violate, puoi tranquillamente ignorare questa segnalazione."
+      ],
       "password": [
         "password"
       ],
@@ -4870,6 +4916,10 @@
       ],
       "Removed participants will be notified.": [
         "I partecipanti rimossi saranno notificati."
+      ],
+      "Saving event...": [
+        "Salvataggio evento...",
+        "Salvataggio eventi..."
       ],
       "Select a service provider to start": [
         "Seleziona un fornitore di servizi per iniziare"
@@ -5421,6 +5471,9 @@
       "All-day event notifications": [
         "Notifiche dell'evento per tutto il giorno"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "App password": [
         "Password app"
       ],
@@ -5486,6 +5539,9 @@
       ],
       "Colors": [
         "Colori"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
       ],
       "Confirm password": [
         "Conferma la password"
@@ -5603,6 +5659,9 @@
       ],
       "I understand the risk": [
         "Comprendo i rischi"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Importa tutti i messaggi"
@@ -5740,6 +5799,9 @@
       "Reveal password": [
         "Mostra la password"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Secondary": [
         "Secondario"
       ],
@@ -5775,6 +5837,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time zone": [
         "Fuso orario"
@@ -6721,6 +6786,9 @@
       "Sync and backup all your files across devices": [
         "Sincronizza ed effettua il backup dei file su tutti i tuoi dispositivi"
       ],
+      "TOR over VPN": [
+        "TOR su VPN"
+      ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"
       ],
@@ -6990,6 +7058,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server"
       ],
@@ -7041,6 +7112,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Strumento di gestione dell'organizzazione che consente agli amministratori di aggiungere e rimuovere utenti, gestire il loro accesso ai servizi ${ BRAND_NAME } ed eseguire altre attività."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra solida infrastruttura ti assicura che sarai in grado di accedere al tuo account quando ne hai bisogno"
       ],
@@ -7082,6 +7156,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Reimposta le password degli utenti e l'autenticazione a due fattori sugli utenti"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Indirizza il tuo traffico internet tramite la rete TOR con un singolo click."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
@@ -7378,6 +7455,11 @@
         "Affinché l'importazione funzioni, devi selezionare tutti gli elementi richiesti come mostrato nella GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Seleziona ciò a cui ${ BRAND_NAME } può accedere: visualizzare i tuoi messaggi email e le impostazioni, vedere e scaricare i tuoi contatti, vedere e scaricare tutte le agende a cui accedi da Google Calendar."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Ti diamo il benvenuto in ${ appName }"
@@ -7560,11 +7642,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bonifico"
+      ],
       "Credit/debit card": [
         "Carta di credito/debito"
       ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilizza il nome dell'azienda"
+      ],
+      "Use personal name": [
+        "Usa il nome personale"
       ]
     },
     "Payments": {
@@ -7644,6 +7737,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confermando questo pagamento, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a istruire la tua banca ad addebitare il tuo conto e la tua banca ad addebitare il tuo conto di conseguenza. Puoi ottenere un rimborso entro 8 settimane dalla data di addebito, secondo le condizioni dell'accordo con la tua banca."
+      ],
+      "Street address, postal code, and city": [
+        "Indirizzo, codice postale e città"
       ]
     },
     "PGP key encryption warning": {
@@ -7907,6 +8008,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prova ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Utilizzato su Amazon per acquisti, ecc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quando ti viene chiesto il tuo indirizzo email, dagli invece questo alias. Gli alias sono forniti da ${ passLink }."
@@ -8591,6 +8695,9 @@
     "Subscription change warning": {
       "Got it": [
         "Ho capito"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Accedi al tuo account Apple nell'App Store e seleziona ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Accedi al tuo account Play Store e clicca ${ subscriptions }."
@@ -9737,6 +9844,9 @@
       "Warning: suspected fake website": [
         "Attenzione: sospetto sito web falso"
       ],
+      "We're setting up calendar search": [
+        "Stiamo configurando la ricerca nel calendario"
+      ],
       "We've locked some calendars to protect your data": [
         "Abbiamo bloccato alcuni dei tuoi calendari per proteggere i tuoi dati"
       ],
@@ -9942,6 +10052,11 @@
       ],
       "No ads": [
         "Nessuna pubblicità"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
       ]
     },
     "wallet_signup_2024: Info": {

@@ -70,11 +70,11 @@
       "Accept": [
         "Prijať"
       ],
-      "activate": [
-        "aktivovať"
-      ],
       "Activate": [
         "Aktivovať"
+      ],
+      "activate": [
+        "aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -180,6 +180,9 @@
       ],
       "Back": [
         "Späť"
+      ],
+      "Back to sign-in": [
+        "Späť na prihlásenie"
       ],
       "Block": [
         "Blokovať"
@@ -378,6 +381,9 @@
       ],
       "Delete your account": [
         "Zmazať účet"
+      ],
+      "Deny access": [
+        "Zamietnuť prístup"
       ],
       "Details": [
         "Detaily"
@@ -661,6 +667,9 @@
       "Leave": [
         "Opustiť"
       ],
+      "Leave group": [
+        "Opustiť skupinu"
+      ],
       "Let's talk": [
         "Porozprávajme sa"
       ],
@@ -813,6 +822,9 @@
       ],
       "Remove all members": [
         "Odstrániť všetkých členov"
+      ],
+      "Remove all other devices": [
+        "Odobrať všetky ostatné zariadenia"
       ],
       "Remove bonuses": [
         "Odstrániť bonusy"
@@ -1203,6 +1215,9 @@
       ],
       "Verify domain": [
         "Overiť doménu"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Overiť doménu ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Zobraziť"
@@ -1954,6 +1969,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Upraviť (zobraziť, vytvoriť alebo upraviť podrobnosti o udalosti)"
+      ],
       "View (see all event details)": [
         "Zobrazenie (zobraziť všetky podrobnosti o udalosti)"
       ]
@@ -2065,6 +2083,9 @@
       "All ${ BRAND_NAME } apps and premium features": [
         "Všetky ${ BRAND_NAME } aplikácie a prémiové funkcie"
       ],
+      "Cancel and downgrade": [
+        "Zrušiť a znížiť"
+      ],
       "Cloud storage and sharing for large files": [
         "Cloudové úložisko a zdieľanie veľkých súborov"
       ],
@@ -2073,6 +2094,9 @@
       ],
       "Encrypted password manager": [
         "Šifrovaný správca hesiel"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Náš základný bezplatný plán s end-to-end šifrovaným emailom a úložiskom. Neobsahuje žiadne prémiové funkcie."
       ],
       "Save ${ upsellSavings }": [
         "Ušetrite ${ upsellSavings }"
@@ -3448,6 +3472,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Automatické triedenie prichádzajúcich správ pred ich doručením do schránky."
       ],
+      "Available with ${ BRAND_NAME } Mail Plus": [
+        "K dispozicii s ${ BRAND_NAME } Mail Plus"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulujeme! Získali ste maximum ${ rewardsLimit } bezplatných mesiacov ${ plusPlanName }."
       ],
@@ -3483,6 +3510,9 @@
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "Nastavenie automatického preposielania na presmerovanie prichádzajúcich emailov na inú emailovú adresu."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pri importovaní prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
@@ -4292,6 +4322,12 @@
       "Account does not exist": [
         "Účet neexistuje"
       ],
+      "Add at least one action": [
+        "Pridajte aspoň jednu akciu"
+      ],
+      "Add at least one condition": [
+        "Pridajte aspoň jednu podmienku"
+      ],
       "Address primary private key not found": [
         "Primárny súkromný kľúč adresy nenájdený"
       ],
@@ -4466,6 +4502,9 @@
       "Invalid expiration date": [
         "Neplatný koniec platnosti"
       ],
+      "Invalid IBAN": [
+        "Neplatný IBAN"
+      ],
       "Invalid invitation link": [
         "Neplatný odkaz pozvánky"
       ],
@@ -4601,6 +4640,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
       ],
+      "Please upload a square logo": [
+        "Nahrajte logo v štvorcovom tvare"
+      ],
       "Please upload an xml file": [
         "Nahrajte XML súbor"
       ],
@@ -4669,6 +4711,9 @@
       ],
       "The address might be misspelled": [
         "Adresa môže obsahovať preklep"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
       ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
@@ -4786,6 +4831,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Dosiahli ste maximálny počet kalendárov."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosiahli ste limit počtu kontaktov pre svoj účet"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Limit počtu adries vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať novú adresu."
@@ -5298,6 +5346,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Doživotné účty nemôžu byť pripojené k rodinnému tarifu."
       ],
+      "Manage addresses": [
+        "Spravovať adresy"
+      ],
       "Manage user accounts": [
         "Spravovať používateľské účty"
       ],
@@ -5339,6 +5390,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Počas 6-mesačného obdobia môžete prijať iba 3 pozvánky. Ak požadujete výnimku, kontaktujte ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "S vaším aktuálnym plánom nemôžete prijať túto pozvánku."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Boli ste pozvaní, aby ste sa pripojili k ${ bannerOrganization }. ${ viewInviteButton }"
@@ -5859,6 +5913,9 @@
       "Back to sign in": [
         "Späť na prihlásenie"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features.": [
+        "Aj naďalej si môžete užívať rýchle, efektívne a bezpečné práce s počítačom. Navýšte váš účet pre odomknutie neobmedzeného prístupu a ďalších prémiových funkcií."
+      ],
       "Keep using the desktop app": [
         "Pokračujte v používaní desktopovej aplikácie"
       ],
@@ -6009,6 +6066,11 @@
         "Opustiť skupinu"
       ]
     },
+    "group_invite_2024": {
+      "You have no groups to manage": [
+        "Nemáte žiadne skupiny, ktoré by ste mohli spravovať"
+      ]
+    },
     "group_invite_2024: Error message, recovery": {
       "Please try opening the link again.": [
         "Skúste odkaz otvoriť znovu, prosím."
@@ -6023,11 +6085,17 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "pre ${ email }"
+      ],
       "Group invitation accepted": [
         "Pozvánka do skupiny bola prijatá"
       ],
       "Group invitation declined": [
         "Pozvánka do skupiny bola odmietnutá"
+      ],
+      "Group membership": [
+        "Členstvo v skupine"
       ]
     },
     "Header": {
@@ -6194,6 +6262,12 @@
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Pridajte tento záznam do svojej domény v ovládacom paneli registrátora názvu domény"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Našiel sa ${ itemsCount } návrh, na navigáciu použite klávesnicu.",
+        "Našli sa ${ itemsCount } návrhy, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ itemsCount } návrhov, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ itemsCount } návrhov, na navigáciu použite klávesnicu."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použite klávesy hore a dole pre prechádzanie návrhov po zadaní. Stlačte tlačidlo Enter pre potvrdenie vašej voľby, alebo tlačidlo Esc pre zatvorenie návrhov."
@@ -6736,6 +6810,9 @@
         "(${ memberCount } členov)",
         "(${ memberCount } členov)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mesiac)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrovanie, ak sú splnené VŠETKY nasledujúce podmienky)"
       ],
@@ -6790,6 +6867,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefónne číslo možno použiť iba na overenie jedného účtu ${ BRAND_NAME }"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Súbor pre obnovenie vám umožňuje odomknúť a zobraziť dáta po obnovení účtu"
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Fráza pre obnovenie vám umožní získať prístup k vášmu účtu a obnoviť zašifrované správy, ak zabudnete svoje heslo."
       ],
@@ -6822,9 +6902,6 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Pridajte do svojho konta emailovú adresu @pm.me. Táto jednoduchá, kratšia doména znamená \"${ MAIL_APP_NAME } me\" alebo \"Private Message me.\""
-      ],
-      "Add a recovery ${ type }": [
-        "Pridať obnovenie ${ type }"
       ],
       "Add a recovery email address": [
         "Pridať email pre obnovenie"
@@ -6955,6 +7032,9 @@
       "and": [
         "a"
       ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Budú odstránené aj všetky podpriečinky. Emaily uložené v priečinku ${ nameDeleted } sa však neodstránia a nájdete ich v priečinku Všetka pošta."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Ktokoľvek s týmto odkazom môže vidieť všetky podrobnosti o podujatí v tomto kalendári, ako je názov, miesto alebo účastníci."
       ],
@@ -6996,6 +7076,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Naozaj chcete tomuto používateľovi prideliť oprávnenia správcu?"
+      ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "Ste si istí, že chcete opustiť túto skupinu? Ak skupinu opustíte, budete musieť byť znovu pozvaní správcom skupiny, aby ste sa do nej mohli znova pripojiť."
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Naozaj chcete natrvalo vymazať všetky vaše záznamy?"
@@ -7243,6 +7326,9 @@
       "dedicated servers": [
         "dedikované servery"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstráňte všetky ostatné MX záznamy, alebo sa uistite, že priorita ${ MAIL_APP_NAME } má najnižšie číslo."
       ],
@@ -7254,9 +7340,6 @@
         "Odstraňovanie ${ deletedServerCount } serverov brány",
         "Odstraňovanie ${ deletedServerCount } serverov brány",
         "Odstraňovanie ${ deletedServerCount } serverov brány"
-      ],
-      "Disable recovery by ${ type }": [
-        "Deaktivovať obnovenie ${ type }"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Vypnuté od ${ formattedDateAndTime }"
@@ -7366,6 +7449,9 @@
       "Emailing preference saved": [
         "Nastavenie emailu uložené"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Emaily označené štítkom ${ nameDeleted } nebudú vymazané a je možné ich stále nájsť v príslušnom priečinku."
+      ],
       "Enable email notifications": [
         "Povoliť emailové notifikácie"
       ],
@@ -7437,6 +7523,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Zadajte frázu na obnovenie a zmeňte si heslo."
+      ],
+      "Event invitations and responses will be sent in this language.": [
+        "Pozvánky na udalosti a odpovede budú zaslané v tomto jazyku."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Udalosti zaznamenávajú pokusy o prihlásenie do všetkých služieb ${ BRAND_NAME } s použitím vašich prístupových údajov ${ BRAND_NAME_TWO }."
@@ -7528,6 +7617,9 @@
       "High Priority": [
         "Vysoká priorita"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Verejný kľúč poskytovateľa identity na podpisovanie autentifikačných overení. Malo by tu byť miesto na stiahnutie alebo skopírovanie hash certifikátu od poskytovateľa identity. Stačí vložiť hash certifikátu do poľa textovej oblasti."
       ],
@@ -7569,6 +7661,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Ak ste ešte nikdy nepoužívali dvojstupňové overovanie, dôrazne vám odporúčame, ${ guideButton }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Ak stratíte svoje heslo a potrebujete obnoviť svoj účet, ${ boldImperative } že máte k dispozícii ${ boldAccountRecovery }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Pokiaľ stratíte svoje heslo a potrebujete obnoviť svoj účet, ${ boldImperative } že máte k dispozícii zároveň ${ boldAccountAndRecovery }, inak možno nebudete mať prístup k svojim emailom, kontaktom alebo súborom."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ak stratíte zariadenie určené pre dvojstupňové overenie, tieto kódy môžete použiť namiesto 6-miestneho dvojstupňového overovacieho kódu na prihlásenie do svojho účtu. Každý kód je možné použiť iba raz."
@@ -7801,6 +7899,9 @@
       "Learn more": [
         "Zistiť viac"
       ],
+      "Learn more about Gateways": [
+        "Ďalšie informácie o bránach"
+      ],
       "learn more about Sieve programming language": [
         "získať ďalšie informácie o programovacom jazyku Sieve"
       ],
@@ -8020,6 +8121,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Ostatní používatelia vo vašej organizácii uvidia vaše obsadené sloty. Žiadne podrobnosti o udalosti sa nezdieľajú."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Prioritou našich upozornení je bezpečnosť. Ak nepoznáte žiadnu z ohrozených informácií, môžete túto správu pokojne ignorovať."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "Zastaraný obnovovací súbor; aktualizujte, aby ste zaistili prístup k vašim údajom"
       ],
@@ -8115,6 +8219,9 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Uložte si ho na bezpečnom mieste. V prípade obnovenia hesla ho budete potrebovať pre prístup k vášmu účtu a k dešifrovaniu vašich údajov."
+      ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Vezmite prosím na vedomie, že ak zmažete filter ${ nameDeleted }, prestaneme spracovávať všetky automatické akcie, ktoré spúšťa."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
         "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ remainingCreditsFormatted }."
@@ -8509,6 +8616,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Funkcia skupín nie je vo vašom aktuálnom predplatnom podporovaná. V minulosti vytvorené skupiny sú deaktivované a môžete ich iba odstrániť."
       ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "Vypršal odkaz na hlásenie, že ste nenastavili ${ BRAND_NAME } účet. Kontaktujte prosím náš tím podpory pre vyriešenie tohto problému."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Meno bude viditeľné pre vašich používateľov, keď budú prihlásení."
       ],
@@ -8602,6 +8712,9 @@
       "This will delete all previous versions of your files.": [
         "Toto zmaže všetky predchádzajúce verzie vašich súborov."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Týmto bude prístup k **${ email }** zamietnutý. Ste si istí, že chcete pokračovať?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Tým dôjde k deaktivácii dvojfázového overovania, vrátane aplikácie pre autentizáciu a metód bezpečnostného kľúča."
       ],
@@ -8620,6 +8733,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Týmto sa natrvalo vymaže váš účet a všetky jeho údaje. Tento účet už nebude možné znovu reaktivovať."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Tým zamietnete zariadenie **${ name }**, ktoré sa **${ date }** pokúsilo prihlásiť k vášmu účtu ${ BRAND_NAME }."
+      ],
       "This will remove any enabled 2FA methods.": [
         "Týmto odstránite všetky povolené metódy 2FA."
       ],
@@ -8637,6 +8753,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Toto vás odhlási zo všetkých aktívnych relácií a vypne dvojstupňové overenie."
+      ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "Tým sa odpojí zariadenie **${ name } (vytvorené ${ date })** z vášho účtu ${ BRAND_NAME }."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tento sprievodca povolí na vašom účte ${ BRAND_NAME } dvojstupňové overenie (2FA). Dvojstupňové overenie zvýši bezpečnosť vášho účtu ${ BRAND_NAME_TWO }, preto vám ho odporúčame povoliť."
@@ -8860,9 +8979,6 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Pri overovaní sa otvorí nová karta, vypnite prosím blokovanie automaticky otváraných okien. Nebudú vám účtované žiadne poplatky. Akákoľvek suma použitá na overenie karty bude okamžite vrátená."
       ],
-      "Verify ${ type }": [
-        "Overte ${ type }"
-      ],
       "Verify domain": [
         "Overiť doménu"
       ],
@@ -8998,6 +9114,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Keď kliknete na odkaz, táto funkcia proti phishingu vás požiada o potvrdenie adresy URL webovej stránky."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Ak odstránite server z brány, začne plynúť desaťdňová deaktivačná lehota. Tento server je možné pridať do novej brány, ale jeho krajina sa nedá zmeniť."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
       ],
@@ -9096,6 +9215,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Pre zaistenie správnej emailovej adresy pre overenie môžete tento údaj jedenkrát upraviť."
+      ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "Môžete zapnúť log overovania, aby ste mali prehľad, kedy a z ktorej IP adresy bolo pristúpené k vášmu účtu. Budeme zaznamenávať IP adresu a čas prístupu k vášmu účtu, rovnako ako nepodarené prihlásenia."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "Sekciu Fotografie môžete povoliť v rozhraní pomocou prepínača nižšie."
@@ -9921,6 +10043,9 @@
       "And": [
         "A"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "AKÝKOĽVEK"
       ],
@@ -9965,6 +10090,9 @@
       ],
       "Awarded": [
         "Ocenený"
+      ],
+      "Backup password": [
+        "Záložné heslo"
       ],
       "Beta": [
         "Beta"
@@ -10037,6 +10165,9 @@
       ],
       "Colors": [
         "Farby"
+      ],
+      "Company name": [
+        "Názov spoločnosti"
       ],
       "Composer": [
         "Editor"
@@ -10301,6 +10432,9 @@
       ],
       "I understand the risk": [
         "Rozumiem rizikám"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "AK"
@@ -10584,6 +10718,9 @@
       "Remove image metadata": [
         "Odstrániť metadáta obrázku"
       ],
+      "Repeat backup password": [
+        "Zopakujte záložné heslo"
+      ],
       "Repeat password": [
         "Zopakovať heslo"
       ],
@@ -10598,6 +10735,9 @@
       ],
       "Reveal password": [
         "Odkryť heslo"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search": [
         "Hľadať"
@@ -10700,6 +10840,9 @@
       ],
       "Then": [
         "Potom"
+      ],
+      "Thomas": [
+        "Tomáš"
       ],
       "Time format": [
         "Formát času"
@@ -11076,6 +11219,9 @@
       "Pay invoice": [
         "Zaplatiť faktúru"
       ],
+      "PayPal without credit card": [
+        "PayPal bez platobnej karty"
+      ],
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
       ],
@@ -11245,6 +11391,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Pridať asistenta písania ${ BRAND_NAME } Scribe"
+      ],
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "Všetky aplikácie ${ BRAND_NAME } for Business a prémiové funkcie na ochranu celej vašej firmy"
       ],
       "An encrypted email service that puts your privacy first": [
         "Šifrovaná emailová služba, ktorá stavia vaše súkromie na prvé miesto"
@@ -11430,6 +11579,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zabudli ste používateľské meno vášho ${ BRAND_NAME } účtu? Nájdite ho pomocou obnovovacieho emailu alebo telefónneho čísla a získajte opätovný prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
+      ],
+      "Private and secure email, no bank card required": [
+        "Súkromný a zabezpečený email, bez nutnosti platobnej karty"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetujte heslo k vášmu účtu ${ BRAND_NAME }"
@@ -11847,6 +11999,12 @@
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
+      ],
       "${ options }-day file version history": [
         "${ options }-dňová história verzií súborov",
         "${ options }-dňová história verzií súborov",
@@ -12195,6 +12353,9 @@
       "Tailored to your needs": [
         "Ušité na mieru"
       ],
+      "TOR over VPN": [
+        "TOR cez VPN"
+      ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
       ],
@@ -12249,6 +12410,12 @@
         "Až ${ n } používateľov",
         "Až ${ n } používateľov"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Až ${ n } používateľ (${ adminsText }, ${ usersText })",
+        "Až ${ n } používatelia (${ adminsText }, ${ usersText })",
+        "Až ${ n } používateľov (${ adminsText }, ${ usersText })",
+        "Až ${ n } používateľov (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
       ],
@@ -12269,6 +12436,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme temný web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } správca",
+        "${ admins } správcovia",
+        "${ admins } správcov",
+        "${ admins } správcov"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ]
     },
     "new_plans: feature info": {
@@ -12542,6 +12723,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chráni pred hrozbou VPN súkromia tým, že internetovú prevádzku prenáša cez viacero serverov"
       ],
@@ -12593,6 +12777,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnosť zobraziť nesúkromné schránky používateľov tak, ako by to urobil používateľ, vrátane celých správ a kontaktných údajov"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Nástroj na správu organizácie, ktorý umožňuje správcom pridávať a odoberať používateľov, spravovať ich prístup k službám ${ BRAND_NAME } a vykonávať ďalšie úlohy."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naša robustná infraštruktúra zaisťuje, že budete mať prístup k svojmu účtu, keď ho budete potrebovať"
       ],
@@ -12634,6 +12821,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Smerujte vašu internetovú prevádzku cez sieť TOR jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -12939,6 +13129,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Aby import fungoval, musíte vybrať všetky požadované položky, ako je znázornené na obrázku GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: prezerajte si emailové správy a nastavenia, prezerajte a sťahujte svoje kontakty, zobrazujte a sťahujte všetky agendy, ku ktorým máte prístup z Google kalendára."
       ]
     },
     "Onboarding": {
@@ -13696,11 +13891,20 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } používateľský účet",
+        "${ n } používateľské účty",
+        "${ n } používateľských účtov",
+        "${ n } používateľských účtov"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel správcu pre správu užívateľov a predplatného"
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Všetky prémiové funkcie. 6 používateľov. 1 jednoduché predplatné."
+      ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
         "Účtované ročne za ${ yearlyPrice }. Ušetrite ${ yearlySavedPrice } s ${ passFamilyPlanName } (oproti 6 individuálnym predplatným ${ passPlusPlanName })."
       ],
@@ -13812,11 +14016,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankový prevod"
+      ],
       "Credit/debit card": [
         "Platobná karta"
       ],
       "New credit/debit card": [
         "Nová platobná karta"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Použiť názov spoločnosti"
+      ],
+      "Use personal name": [
+        "Použiť vlastné meno"
       ]
     },
     "Payments": {
@@ -13908,6 +14123,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrdením tejto platby oprávňujete spoločnosť ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali pokyn vašej banke na odpísanie finančných prostriedkov z vášho účtu a aby vaša banka zodpovedajúcim spôsobom odpísala finančné prostriedky z vášho účtu. Peniaze môžete získať späť do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
+      ],
+      "Street address, postal code, and city": [
+        "Ulica, PSČ a mesto"
       ]
     },
     "Permission": {
@@ -14486,6 +14709,9 @@
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Váš účet a dáta je možné obnoviť. Skontrolujte, či stále máte prístup k metódam obnovenia."
       ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Váš účet a dáta je možné obnoviť. Sú tu niektoré odporúčané akcie pre dodatočné zabezpečenie vášho účtu."
+      ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Váš účet a dáta môžu byť obnovené. Sú tu niektoré odporúčané akcie."
       ],
@@ -14497,6 +14723,9 @@
       ],
       "Your recovery email": [
         "Váš email pre obnovenie"
+      ],
+      "Your recovery email address is:": [
+        "Vaša emailová adresa na obnovenie je:"
       ],
       "Your recovery email and phone can **only recover access to your account**.": [
         "Iba váš email pre obnovenie a telefón môžu **obnoviť prístup k vášmu účtu**."
@@ -14530,6 +14759,9 @@
       ],
       "Your recovery phone is set": [
         "Váš telefón pre obnovenie je nastavený"
+      ],
+      "Your recovery phone number is:": [
+        "Vaše telefónne číslo pre obnovenie je:"
       ]
     },
     "saml: Action": {
@@ -15417,6 +15649,107 @@
         "Pozvite priateľov do ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSO užívatelia (poskytovaní poskytovateľom identít) budú zmazaní** a budete ich musieť vytvoriť ručne, aby ste ich mohli pridať späť do organizácie."
+      ],
+      "Approve": [
+        "Potvrdiť"
+      ],
+      "Approve or deny it now": [
+        "Schváliť alebo zamietnuť teraz"
+      ],
+      "Current device": [
+        "Aktuálne zariadenie"
+      ],
+      "Deny": [
+        "Zamietnuť"
+      ],
+      "Deny access": [
+        "Zamietnuť prístup"
+      ],
+      "Devices management": [
+        "Správa zariadení"
+      ],
+      "Do you want to remove all other devices than the current one?": [
+        "Chcete zanechať iba aktuálne zariadenie a odstrániť všetky ostatné?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Zadajte potvrdzovací kód, ktorý sme vám odoslali na vaše druhé zariadenie."
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Zadajte potvrdzovací kód, ktorý sme odoslali tomuto používateľovi."
+      ],
+      "Grant": [
+        "Povoliť"
+      ],
+      "Grant access": [
+        "Povoliť prístup"
+      ],
+      "Grant access to user?": [
+        "Povoliť prístup používateľovi?"
+      ],
+      "Grant access to users?": [
+        "Povoliť prístup používateľom?"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Ak ste túto žiadosť nepodali, zrušte ju teraz."
+      ],
+      "Invalid confirmation code": [
+        "Neplatný potvrdzovací kód"
+      ],
+      "No, it wasn’t me": [
+        "Nie, nejde o moju žiadosť"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Používatelia, ktorí nie sú súčasťou systému jednotného prihlásenia SSO (tj sú vytvorení ručne a nie cez poskytovateľa identity) sa do vašej organizácie môžu naďalej prihlásiť."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "V momente, keď dôjde k zrušeniu jednotného prihlásenia pre vašu organizáciu:"
+      ],
+      "Reject": [
+        "Odmietnuť"
+      ],
+      "Remove": [
+        "Odstrániť"
+      ],
+      "Remove single sign-on": [
+        "Zrušiť jednotné prihlásenie"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Nastavením záložného hesla získate ďalšiu úroveň ochrany. Umožní vám prihlásiť sa, pokiaľ nie je možné prihlásiť sa bežným spôsobom. Uložte si záložné heslo na bezpečnom mieste."
+      ],
+      "Sign-in confirmed": [
+        "Prihlásenie potvrdené"
+      ],
+      "Sign-in rejected": [
+        "Prihlásenie odmietnuté"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Požiadavka na prihlásenie na inom zariadení. Boli ste to vy?"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Prihlasovacie údaje od vášho poskytovateľa identity budú zmazané."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Tým sa používateľ odhlási z ostatných zariadení a bude musieť vytvoriť nové záložné heslo."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Tým sa odhlásite z ostatných zariadení a budete musieť vytvoriť nové záložné heslo."
+      ],
+      "Tried to sign in at": [
+        "Pokus o prihlásenie z"
+      ],
+      "User details:": [
+        "Podrobnosti o používateľovi:"
+      ],
+      "Yes, it was me": [
+        "Áno, ide o moju žiadosť"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Rušenie vášho predplatného, počkajte prosím"
@@ -15692,6 +16025,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Prihláste sa do Apple Store a potom vyberte ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Prihláste sa do Obchodu Play a potom stlačte ${ subscriptions }."
       ],
@@ -15772,6 +16108,36 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } ponúka ${ planMaxSpace } úložného priestoru na používateľa pre emaily, prílohy, udalosti, súbory a heslá. Máte tiež nárok na každoročný bonusový priestor v úložisku."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalendár na používateľa",
+        "${ planNumberOfCalendars } kalendáre na používateľa",
+        "${ planNumberOfCalendars } kalendárov na používateľa",
+        "${ planNumberOfCalendars } kalendárov na používateľa"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } emailová adresa na používateľa",
+        "${ planNumberOfEmails } emailové adresy na používateľa",
+        "${ planNumberOfEmails } emailových adries na používateľa",
+        "${ planNumberOfEmails } emailových adries na používateľa"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } používateľ",
+        "${ planNumberOfUsers } používatelia",
+        "${ planNumberOfUsers } používateľov",
+        "${ planNumberOfUsers } používateľov"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "Pokročilá ochrana účtu ${ PROTON_SENTINEL_NAME }"
@@ -16130,6 +16496,12 @@
       "Default calendar updated": [
         "Predvolený kalendár aktualizovaný"
       ],
+      "Device deleted": [
+        "Zariadenie zmazané"
+      ],
+      "Device rejected": [
+        "Zariadenie odmietnuté"
+      ],
       "Display name updated": [
         "Zobrazované meno aktualizované"
       ],
@@ -16276,6 +16648,12 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Ak ste zadali platnú emailovú adresu pre obnovenie, dostanete svoje užívateľské meno do jednej minúty emailom."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Ak ste zadali platné telefónne číslo na obnovenie, dostanete do minúty svoje užívateľské meno prostredníctvom SMS."
       ]
     },
     "Success message": {
@@ -16571,6 +16949,9 @@
       ],
       "Action": [
         "Akcia"
+      ],
+      "Actions": [
+        "Akcie"
       ],
       "Activate @pm.me": [
         "Aktivovať @pm.me"
@@ -16911,11 +17292,17 @@
       "Delete version history?": [
         "Vymazať históriu verzií?"
       ],
+      "Deny access to user?": [
+        "Zamietnuť prístup užívateľovi?"
+      ],
       "Description": [
         "Popis"
       ],
       "Details": [
         "Podrobnosti"
+      ],
+      "Device": [
+        "Zariadenie"
       ],
       "Device connected!": [
         "Zariadenie pripojené!"
@@ -17226,6 +17613,9 @@
       "Leave ${ organisationName }?": [
         "Opustiť ${ organisationName }?"
       ],
+      "Leave group?": [
+        "Opustiť skupinu?"
+      ],
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
       ],
@@ -17358,6 +17748,9 @@
       "Profile": [
         "Profil"
       ],
+      "QR Code": [
+        "QR kód"
+      ],
       "Ready, set, forward": [
         "Pripraviť, nastaviť, preposlať"
       ],
@@ -17381,6 +17774,9 @@
       ],
       "Refer a friend": [
         "Odporučiť priateľa"
+      ],
+      "Reject device?": [
+        "Odmietnuť zariadenie?"
       ],
       "Remove all members?": [
         "Odstrániť všetkých členov?"
@@ -17546,6 +17942,9 @@
       ],
       "Start import process": [
         "Zahájiť proces importu"
+      ],
+      "State": [
+        "Stav"
       ],
       "Status": [
         "Stav"
@@ -17913,6 +18312,9 @@
       "Set the default layout for your Inbox.": [
         "Nastavte predvolené rozloženie vašej schránky."
       ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "V odosielaných emailoch nastaví nasledujúce päty: ${ signature } Odkaz odkazuje na váš odporúčací odkaz. Zápätie sa zobrazí pod vašim podpisom. Podpis si môžete kedykoľvek prispôsobiť v nastavení."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Zobrazí obrázok každého odosielateľa. Ak nie je k dispozícii obrázok, zobrazia sa iniciály odosielateľa."
       ],
@@ -18069,6 +18471,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Táto verzia TOR prehliadača nie je podporovaná. Aktualizujte, prosím, na poslednú ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18469,6 +18874,11 @@
       ],
       "Your ${ selected } plan": [
         "Váš ${ selected } plán"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, TOR cez VPN a ďalšie."
       ]
     },
     "wallet_signup_2024: Info": {

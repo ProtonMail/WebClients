@@ -2115,8 +2115,17 @@
       "Encrypted password manager": [
         "加密密碼管理"
       ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "我們的基本免費方案包含端對端加密電子郵件和儲存空間。不包含頂級功能。"
+      ],
       "Save ${ upsellSavings }": [
         "省下${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "透過${ upsellPlanName }省錢"
+      ],
+      "Secure personal and shared calendar": [
+        "安全保護個人及共享行事曆"
       ],
       "Try ${ planName }": [
         "嘗試${ planName }"
@@ -3846,6 +3855,12 @@
       "A problem occurred, please try again.": [
         "發生問題，請再試一次。"
       ],
+      "Add at least one action": [
+        "添加至少一個動作"
+      ],
+      "Add at least one condition": [
+        "添加至少一個條件"
+      ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
       ],
@@ -4020,6 +4035,9 @@
       "Invalid expiration time": [
         "無效的到期時間"
       ],
+      "Invalid IBAN": [
+        "國際銀行帳號不正確"
+      ],
       "Invalid name": [
         "無效的名稱"
       ],
@@ -4175,6 +4193,9 @@
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "傳送附件以限制直到您符合您方案的限制或升級。"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "當您超出方案限制時，附件無法使用，直到升級您的方案。"
       ],
       "Signature not verified": [
         "簽章尚未驗證"
@@ -4334,6 +4355,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "您已用鑿行事曆組的上限。"
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "您的帳號已達聯絡人數量限制"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -4704,6 +4728,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "終身帳號無法加入群組方案。"
       ],
+      "Manage addresses": [
+        "管理電子郵件地址"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "有成員的方案的擁有者無法加入其他家庭方案。"
       ],
@@ -4721,6 +4748,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "您在六個月內只能接受三次邀請。若您需要例外，請聯絡 ${ supportLink }。"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "您無法使用目前方案接受此邀請函。"
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
@@ -4752,6 +4782,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "設定您家庭帳號和邀請使用者"
+      ],
       "Set up your family": [
         "設定您的家庭"
       ],
@@ -4925,6 +4958,11 @@
         "未讀"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "有附件"
+      ]
+    },
     "Filter preview": {
       "read": [
         "已讀"
@@ -5016,6 +5054,9 @@
       ],
       "Start free trial": [
         "開始免費試用"
+      ],
+      "Try the new desktop app": [
+        "嘗試新的桌面應用程式"
       ],
       "Upgrade now": [
         "立刻升级"
@@ -5687,6 +5728,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(篩選須符合下列「全部」條件)"
       ],
@@ -6199,6 +6243,9 @@
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "我正傳送郵件給一位非 ${ MAIL_APP_NAME } 的使用者。"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -7711,6 +7758,9 @@
       "And": [
         "且"
       ],
+      "Anderson": [
+        "安德松"
+      ],
       "ANY": [
         "任一"
       ],
@@ -7794,6 +7844,9 @@
       ],
       "Colors": [
         "色彩"
+      ],
+      "Company name": [
+        "公司名字"
       ],
       "Composer": [
         "撰寫器"
@@ -7926,6 +7979,9 @@
       ],
       "I understand the risk": [
         "我已了解此可能的風險"
+      ],
+      "IBAN": [
+        "國際銀行帳號"
       ],
       "IF": [
         "如"
@@ -8151,6 +8207,9 @@
       ],
       "Then": [
         "則"
+      ],
+      "Thomas": [
+        "湯姆斯"
       ],
       "Time": [
         "時間"
@@ -8634,6 +8693,9 @@
       ]
     },
     "Message image": {
+      "Image could not be loaded.": [
+        "無法載入圖片。"
+      ],
       "Image has not been loaded in order to protect your privacy.": [
         "為了保護您的隱私，不會載入圖像."
       ]
@@ -9225,6 +9287,9 @@
       "Sync and backup all your files across devices": [
         "於裝置同步及備份您全部的檔案"
       ],
+      "TOR over VPN": [
+        "經 TOR 的 VPN"
+      ],
       "Two-factor authentication": [
         "兩步驟驗證"
       ],
@@ -9715,6 +9780,9 @@
       ]
     },
     "Onboarding modal": {
+      "Access email and calendar right from your desktop with the desktop app.": [
+        "於桌面應用程式存取電子郵件和行事曆。"
+      ],
       "Activate premium features": [
         "激活頂級質子版功能"
       ],
@@ -9772,6 +9840,9 @@
       "Get the desktop app": [
         "取得桌面應用程式"
       ],
+      "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
+        "從${ mobileAppAppStoreLink }或${ mobileAppGooglePlayLink }取得移動裝置的應用程式。"
+      ],
       "Google Play": [
         "Google Play"
       ],
@@ -9780,6 +9851,9 @@
       ],
       "Let's get started": [
         "讓我們開始吧"
+      ],
+      "Make the most of your paid plan.": [
+        "使用您的付費方案的最大部份。"
       ],
       "Maybe later": [
         "稍後再說"
@@ -9821,6 +9895,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "探索所有 ${ BRAND_NAME } 服務"
+      ],
+      "Link your domain name and create accounts for all members of your organization.": [
+        "替組織成員連結網域名稱及創建帳號。"
       ],
       "Make it your own": [
         "讓它專屬於您"
@@ -9945,6 +10022,9 @@
       "Get it for ${ monthlyPrice }": [
         "只需${ monthlyPrice }"
       ],
+      "Introducing ${ passFamilyPlanName }": [
+        "介紹 ${ passFamilyPlanName }"
+      ],
       "Limited-time deal.": [
         "限時優惠。"
       ]
@@ -9961,11 +10041,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "銀行轉帳"
+      ],
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "使用公司名字"
+      ],
+      "Use personal name": [
+        "使用個人名字"
       ]
     },
     "Payments": {
@@ -10412,6 +10503,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "嘗試${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "於Amazon購物時等…"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
@@ -11019,6 +11113,9 @@
       ]
     },
     "Step": {
+      "In the account settings, look for the option to edit or change your email address ": [
+        "在帳號設定，找尋編輯或變更電子郵件地址。 "
+      ],
       "Select service to update": [
         "選取更新服務"
       ],
@@ -12750,6 +12847,9 @@
     "Tor out of date": {
       "stable release": [
         "穩定版本"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "此版本的 Tor 瀏覽器已不受支援，請更新至最新版本 ${ stableRelease } 。"
       ]
     },
     "Update font modal": {

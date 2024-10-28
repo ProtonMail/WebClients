@@ -989,6 +989,9 @@
       "${ maxSpaceTB } storage": [
         "Emmagatzematge de ${ maxSpaceTB }"
       ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } d'emmagatzematge de correu electrònic"
+      ],
       "Advanced account protection": [
         "Protecció avançada del compte"
       ],
@@ -1003,6 +1006,9 @@
       ],
       "Try ${ planName }": [
         "Proveu ${ planName }"
+      ],
+      "Ultra fast and private VPN": [
+        "VPN ultraràpida i privada"
       ]
     },
     "Checkout row": {
@@ -2345,6 +2351,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "S'ha produït un error en intentar duplicar el document. Torneu-ho a provar."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "S'ha produït un error en intentar restaurar el document. Torneu-ho a provar."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "S'ha produït un error en intentar enviar el document a la paperera. Torneu-ho a provar."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "S'ha produït un error en crear un document nou. Torneu-ho a provar"
       ],
@@ -2472,6 +2484,9 @@
       ],
       "Invalid expiration date": [
         "Data de caducitat invàlida"
+      ],
+      "Invalid IBAN": [
+        "L'IBAN no és vàlid."
       ],
       "Invalid name": [
         "Nom no vàlid"
@@ -3032,11 +3047,17 @@
       "customer support": [
         "atenció al client"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Els plans familiars actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidat per: ${ inviteEmail }"
+      ],
+      "Manage addresses": [
+        "Gestiona les adreces"
       ],
       "Sorry, you can't switch plans at this time.": [
         "No podeu canviar de pla en aquest moment."
@@ -5488,6 +5509,9 @@
       "Opus audio": [
         "Àudio Opus"
       ],
+      "Portable Network Graphics (PNG)": [
+        "Gràfics de xarxa portàtils (PNG)"
+      ],
       "RAR archive": [
         "Arxiu RAR"
       ],
@@ -5620,6 +5644,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5667,6 +5694,10 @@
         "${ n } missatge per dia",
         "${ n } missatges per dia"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } ${ PASS_SHORT_APP_NAME } caixa forta compartida per usuari",
+        "${ n } ${ PASS_SHORT_APP_NAME } caixes fortes compartides per usuari"
+      ],
       "${ n } vault": [
         "${ n } caixa forta",
         "${ n } caixes fortes"
@@ -5697,6 +5728,12 @@
       ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Per a ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "1 TB secure storage": [
         "1 TB d'emmagatzematge segur"
@@ -5831,7 +5868,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb una petició"
+        "Genera correus electrònics amb una demanda"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -6709,6 +6746,14 @@
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilitza el nom de l'empresa"
+      ],
+      "Use personal name": [
+        "Utilitza el nom de la persona"
       ]
     },
     "Payments": {
@@ -7695,6 +7740,14 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
       ]
     },
     "Subscription renewal state": {

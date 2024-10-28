@@ -2084,6 +2084,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Stel een herstelzin in om de hoogst mogelijke beveiliging van uw account te waarborgen."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
@@ -2186,6 +2189,9 @@
       ]
     },
     "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Openen in ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Save for later": [
         "Opslaan voor later"
       ]
@@ -2537,6 +2543,9 @@
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
       ],
+      "Invalid IBAN": [
+        "Ongeldige IBAN"
+      ],
       "Invalid name": [
         "Ongeldige naam"
       ],
@@ -2680,6 +2689,9 @@
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
       ],
+      "The amount due has changed. Please try again.": [
+        "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
+      ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Het document dat u probeert te converteren is te groot. Dit kan gebeuren als het document een groot aantal afbeeldingen of andere media heeft. Probeer het opnieuw met een kleiner document."
       ],
@@ -2791,6 +2803,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "U heeft de limiet van het aantal contacten bereikt voor dit account"
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -3114,6 +3129,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Levenslange accounts kunnen niet deelnemen aan een Family-abonnement."
       ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander Family-abonnement."
       ],
@@ -3131,6 +3149,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "U kunt slechts 3 uitnodigingen accepteren in een periode van 6 maanden. Neem contact op met ${ supportLink } als hierop een uitzondering moet worden gemaakt."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "U kunt deze uitnodiging niet accepteren met uw huidige abonnement."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3678,6 +3699,9 @@
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/maand)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
       ],
@@ -4023,6 +4047,9 @@
       "High Priority": [
         "Hoge Prioriteit"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
@@ -4226,6 +4253,9 @@
       ],
       "Organization size": [
         "Grootte van de organisatie"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
       ],
       "Owner": [
         "Eigenaar"
@@ -4836,6 +4866,9 @@
       "Address": [
         "Adres"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Anyone on the Internet with the link can view": [
         "Iedereen op het Internet kan het met deze link bekijken"
       ],
@@ -4916,6 +4949,9 @@
       ],
       "Colors": [
         "Kleuren"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
       ],
       "Confirm password": [
         "Bevestig wachtwoord"
@@ -5021,6 +5057,9 @@
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Ignore": [
         "Negeren"
@@ -5169,6 +5208,9 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
       "Security code (${ codeName })": [
         "Beveiligingscode (${ codeName })"
       ],
@@ -5207,6 +5249,9 @@
       ],
       "Theme": [
         "Thema"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Title": [
         "Titel"
@@ -6101,6 +6146,9 @@
       "Sync and backup all your files across devices": [
         "Synchroniseer en back-up al uw bestanden op alle apparaten"
       ],
+      "TOR over VPN": [
+        "Tor via VPN"
+      ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
       ],
@@ -6367,6 +6415,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
@@ -6418,6 +6469,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME } diensten kunnen beheren en andere taken kunnen uitvoeren."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
       ],
@@ -6459,6 +6513,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -6790,6 +6847,11 @@
         "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
@@ -6880,11 +6942,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverschrijving"
+      ],
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bedrijfsnaam gebruiken"
+      ],
+      "Use personal name": [
+        "Gebruik persoonlijke naam"
       ]
     },
     "Payments": {
@@ -6964,6 +7037,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, autoriseert u ${ BRAND_NAME } en Stripe, onze provider van betalingsdiensten, om uw bank te instrueren om uw rekening en uw bank dienovereenkomstig in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+      ],
+      "Street address, postal code, and city": [
+        "Straatnaam, postcode en plaats"
       ]
     },
     "PGP key encryption warning": {
@@ -7202,6 +7283,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Gebruikt in Amazon voor winkelen enz."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wanneer uw e-mailadres gevraagd wordt, geef dan deze alias op. Aliassen worden geleverd door ${ passLink }."
@@ -7814,6 +7898,9 @@
     "Subscription change warning": {
       "Got it": [
         "Begrepen"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Log in op uw Apple App Store account, selecteer dan op ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log in op uw Play Store-account, druk dan op ${ subscriptions }."
@@ -8768,6 +8855,11 @@
       ],
       "No ads": [
         "Geen advertenties"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     },
     "wallet_signup_2024: Info": {

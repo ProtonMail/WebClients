@@ -55,6 +55,9 @@
       "Add domain": [
         "Añadir dominio"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Agregar más asientos para ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Añadir PayPal"
       ],
@@ -2192,6 +2195,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "En caso de desactivación, solo los administradores tendrán acceso."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantenga separadas las distintas partes de su vida y su buzón organizados con direcciones adicionales."
       ],
@@ -2524,7 +2530,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
-        "El IBAN no es válido."
+        "IBAN inválido"
       ],
       "Invalid invitation link": [
         "Enlace de invitación inválido"
@@ -2598,6 +2604,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Actualice a un plan profesional con más de 1 usuario para gestionar el soporte multiusuario."
       ],
+      "Please upload a square logo": [
+        "Cargar un logo cuadrado"
+      ],
       "Please upload an xml file": [
         "Cargue un archivo xml"
       ],
@@ -2621,6 +2630,9 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
+      ],
+      "The amount due has changed. Please try again.": [
+        "El importe a pagar ha cambiado. Intente de nuevo."
       ],
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
@@ -4628,6 +4640,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Esta verificación puede tomar hasta una hora. Después de la verificación, no borre el registro TXT ya que se necesita para confirmar que continúa siendo el propietario del dominio."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Esto denegará el acceso a **${ email }**. ¿En verdad desea continuar?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Esto desactivará la autenticación de dos factores, incluyendo los métodos de aplicación de autenticación y la clave de seguridad."
       ],
@@ -5612,6 +5627,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperación"
+      ],
+      "Repeat backup password": [
+        "Repetir la contraseña de respaldo"
       ],
       "Reply (ACS) URL": [
         "URL (ACS) de respuesta"
@@ -6924,6 +6942,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrá acceder a la cuenta cuando la necesite"
       ],
@@ -7576,7 +7597,7 @@
         "Usar el nombre de la empresa"
       ],
       "Use personal name": [
-        "Usar un nombre personal"
+        "Usar el nombre de la persona"
       ]
     },
     "Payments": {
@@ -7671,6 +7692,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a su banco para que debite su cuenta, y a su banco para que debite el cargo correspondiente en su cuenta. Puede obtener un reembolso en un plazo de 8 semanas a partir de la fecha del débito, según las condiciones de su acuerdo con su banco."
+      ],
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
       ]
@@ -8017,6 +8041,9 @@
       "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
         "Vaya al proveedor de identidad, copie y pegue los datos debajo y finalice la configuración SCIM para ${ appName }."
       ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Vaya al proveedor de identidad, copie y pegue el token a continuación y reactive SCIM para ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Si ha perdido u olvidado el token SCIM, puede generar uno nuevo, pero recuerde que la configuración de proveedor de identidad necesitará actualizarse."
       ],
@@ -8025,6 +8052,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Una vez que SCIM esté desactivado para la organización, **todos los usuarios SCIM proporcionados automáticamente por el proveedor de identidad serán convertidos a usuarios SSO** y podrá gestionarlos directamente en los ajustes de ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Simplifica la administración de usuarios a través de diferentes servicios. Añada, edite y elimine usuarios en el proveedor de identidad, y los cambios serán aplicados automáticamente en la organización ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "El aprovisionamiento automático SCIM será desactivado hasta que ingrese el nuevo token SCIM en la configuración del proveedor de identidad."
@@ -8628,6 +8658,10 @@
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } está solicitando su ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único."
       ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } miembro solicitó su ayuda para iniciar sesión.",
+        "${ n } miembros solicitaron su ayuda para iniciar sesión."
+      ],
       "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
         "${ n } usuario se ha unido a su organización a través de su proveedor de identidad. Apruebe o elimine su cuenta ahora.",
         "${ n } usuarios se han unido a su organización a través de su proveedor de identidad. Apruebe o elimine sus cuentas ahora."
@@ -8636,14 +8670,29 @@
         "${ n } usuario está solicitando su ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único.",
         "${ n } usuarios están solicitando su ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único."
       ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**Los usuarios con SSO (proporcionados por su proveedor de identidades) serán eliminados** y tendrá que crearlos manualmente para añadirlos de nuevo a su organización."
+      ],
       "Access denied": [
         "Acceso denegado"
       ],
       "Access granted": [
         "Acceso ortogado"
       ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "le añadieron a su organización de ${ BRAND_NAME }"
+      ],
       "Approve or deny it now": [
         "Aprobar o negar ahora"
+      ],
+      "Approve the sign-in from another device": [
+        "Aprobar el inicio de sesión desde otro dispositivo"
+      ],
+      "Ask administrator for help": [
+        "Pedir ayuda al administrador"
+      ],
+      "Ask your administrator for access?": [
+        "¿Pedir acceso a su administrador?"
       ],
       "Backup password": [
         "Contraseña de respaldo"
@@ -8654,11 +8703,17 @@
       "Change backup password": [
         "Cambiar la contraseña de respaldo"
       ],
+      "Confirm backup password": [
+        "Confirmar la contraseña de respaldo"
+      ],
       "Confirmation code": [
         "Código de confirmación"
       ],
       "Contact administrator": [
         "Contactar al administrador"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Contacte con su administrador si el problema continúa."
       ],
       "Deny": [
         "Denegar"
@@ -8669,6 +8724,15 @@
       "Devices available": [
         "Dispositivos disponibles"
       ],
+      "Enter the confirmation code we sent to this user.": [
+        "Ingrese el código de confirmación que le enviamos a este usuario."
+      ],
+      "Enter your backup password": [
+        "Ingrese su contraseña de respaldo"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Por su seguridad, ha cerrado la sesión en todos sus dispositivos activos. Antes de acceder a su cuenta, necesitará ingresar la contraseña de respaldo."
+      ],
       "Grant": [
         "Ortogar"
       ],
@@ -8678,8 +8742,20 @@
       "Grant access to user?": [
         "¿Otorgar acceso al usuario?"
       ],
+      "Grant access to users?": [
+        "¿Otorgar acceso a los usuarios?"
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
         "Si se bloquea su cuenta ${ BRAND_NAME }, su contraseña de respaldo le permitirá iniciar la sesión y recuperar sus datos."
+      ],
+      "Invalid confirmation code": [
+        "Código de confirmación inválido"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Es la única forma de restaurar la cuenta, así que tome las medidas necesarias para mantenerla a salvo."
+      ],
+      "Join ${ organizationName }": [
+        "Unirse a ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
         "Asegúrese de guardarla en un lugar seguro para que pueda volver a ingresar a su cuenta si pierde el acceso a las credenciales de su proveedor de identidad."
@@ -8699,6 +8775,21 @@
       "Remove single sign-on for your organization?": [
         "¿Quitar el inicio de sesión único de la organización?"
       ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Establezca una contraseña de respaldo para añadir una capa adicional de protección. Le permitirá iniciar sesión si se bloquea la cuenta, así que asegúrese de guardarla en un lugar seguro."
+      ],
+      "Set your backup password": [
+        "Establezca su contraseña de respaldo"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Comparta el código de confirmación con su administrador"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sesión en la organización"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Cierre la sesión y vuelva a iniciarla para cambiar la contraseña de respaldo"
+      ],
       "Single sign-on removed": [
         "Se quitó el inicio de sesión único."
       ],
@@ -8708,8 +8799,23 @@
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Esto cerrará la sesión del usuario en sus otros dispositivos y tendrá que crear una nueva contraseña de respaldo."
       ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Esto cerrará la sesión en sus otros dispositivos y tendrá que crear una contraseña de respaldo nueva."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Para confirmar que en verdad es usted quien intenta iniciar sesión en **${ email }**, revise el código de confirmación y acepte la solicitud desde otro dispositivo."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Para asegurarnos de que es usted quien intenta iniciar sesión, ingrese su contraseña de respaldo."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Para confirmar que en verdad es usted quien intenta iniciar sesión, comparta el código de confirmación con su administrador **${ adminEmail }** para que acepte la solicitud para **${ email }**."
+      ],
       "Tried to sign in at": [
         "Intenté iniciar sesión en"
+      ],
+      "Use backup password instead": [
+        "Usar la contraseña de respaldo en su lugar"
       ],
       "User details:": [
         "Detalles del usuario:"
@@ -8724,6 +8830,9 @@
       ],
       "Pending activation": [
         "Activación pendiente"
+      ],
+      "Pending admin activation": [
+        "Activación pendiente del administrador"
       ],
       "Rejected": [
         "Rechazado"
@@ -9619,6 +9728,12 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Clientes de ${ VPN_APP_NAME }"
       ],
@@ -9936,6 +10051,9 @@
       ],
       "Email subscriptions": [
         "Suscripciones de correo"
+      ],
+      "Enable for all users": [
+        "Activar para todos los usuarios"
       ],
       "Enter 2FA code": [
         "Ingrese el código 2FA"

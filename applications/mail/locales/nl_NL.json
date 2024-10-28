@@ -1228,6 +1228,9 @@
       "Toggle Calendar app": [
         "Agenda app kiezen"
       ],
+      "Toggle Contacts app": [
+        "Contact app kiezen"
+      ],
       "Toggle security center app": [
         "Beveiligingscentrumapp in-/uitschakelen"
       ],
@@ -3538,6 +3541,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Stel een herstelzin in om de hoogst mogelijke beveiliging van uw account te waarborgen."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Importeer uw contacten uit Google of Outlook, ${ easySwitchLink }."
       ],
@@ -3913,6 +3919,12 @@
       "A problem occurred, please try again.": [
         "Er is een probleem opgetreden, probeer het opnieuw."
       ],
+      "Add at least one action": [
+        "Voeg minimaal één actie toe"
+      ],
+      "Add at least one condition": [
+        "Voeg tenminste één voorwaarde toe"
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -4090,6 +4102,9 @@
       "Invalid expiration time": [
         "Ongeldige verlooptijd"
       ],
+      "Invalid IBAN": [
+        "Ongeldige IBAN"
+      ],
       "Invalid name": [
         "Ongeldige naam"
       ],
@@ -4251,6 +4266,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Het verzenden van bijlagen is beperkt tot het bereiken van het maximum van uw abonnement of door te upgraden."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Het verzenden van bijlagen is beperkt terwijl u de limieten van uw abonnement overschrijdt of tot u uw abonnement upgrade."
+      ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
       ],
@@ -4298,6 +4316,9 @@
       ],
       "Thanks for the feedback!": [
         "Bedankt voor de feedback!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "De bijlage kon niet worden ontsleuteld.\nAls u de bijbehorende private sleutel heeft, kunt u nog steeds\nhet bestand decoderen met een programma zoals GnuPG.",
@@ -4412,6 +4433,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "U hebt het maximum aantal agenda's bereikt."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "U heeft de limiet van het aantal contacten bereikt voor dit account"
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -4787,6 +4811,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Levenslange accounts kunnen niet deelnemen aan een Family-abonnement."
       ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander Family-abonnement."
       ],
@@ -4804,6 +4831,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "U kunt slechts 3 uitnodigingen accepteren in een periode van 6 maanden. Neem contact op met ${ supportLink } als hierop een uitzondering moet worden gemaakt."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "U kunt deze uitnodiging niet accepteren met uw huidige abonnement."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
@@ -4841,6 +4871,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Configureer uw gezinsaccount en nodig gebruikers uit"
+      ],
       "Invite members and get everything up and running.": [
         "Nodig leden uit en krijg alles op gang."
       ],
@@ -5023,6 +5056,11 @@
         "Ongelezen"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Heeft bijlagen"
+      ]
+    },
     "Filter preview": {
       "read": [
         "gelezen"
@@ -5114,6 +5152,9 @@
       ],
       "Start free trial": [
         "Start gratis proefperiode"
+      ],
+      "Try the new desktop app": [
+        "Probeer de nieuwe desktop-app"
       ],
       "Upgrade now": [
         "Upgrade nu"
@@ -5835,6 +5876,9 @@
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/maand)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filter als aan ALLE van de volgende voorwaarden is voldaan)"
       ],
@@ -5938,6 +5982,9 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Eventuele geplande of uitgestelde berichten zullen geannuleerd worden."
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuele submappen zullen ook worden verwijderd. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden verwijderd en zijn terug te vinden in de map Alle berichten."
       ],
       "Applying actions to conversations": [
         "Acties op gesprekken toepassen"
@@ -6260,6 +6307,9 @@
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Mails getagd met het label ${ nameDeleted } zullen niet verwijderd worden en zijn terug te vinden in hun respectievelijke map."
+      ],
       "embedded image": [
         "ingesloten afbeelding",
         "ingesloten afbeeldingen"
@@ -6365,6 +6415,9 @@
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Ik verzend dit bericht naar een niet-${ MAIL_APP_NAME }-gebruiker."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -6655,6 +6708,9 @@
       "Organization size": [
         "Grootte van de organisatie"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
       ],
@@ -6908,6 +6964,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Gesnoozed tot ${ dateString } om ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Gesnoozed tot vandaag, ${ formattedTime }"
@@ -7179,6 +7238,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Uitschakelen om alleen te zoeken op datum, naam, e-mailadres of onderwerpregel. Ga naar Instellingen om de inhoud van zoekberichten uit te schakelen (en berichten te verwijderen die zijn gedownload om deze functie in te schakelen)."
+      ],
       "Turn on to search the content of your messages": [
         "Zet aan om de inhoud van uw berichten te doorzoeken"
       ],
@@ -7208,6 +7270,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Upgrade om meer adressen aan uw account toe te voegen."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Upgrade om automatisch berichten te verwijderen die meer dan 30 dagen in de Prullenbak of Spam zitten."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Upgrade om meer mappen, filters en adressen te maken."
@@ -7904,6 +7969,9 @@
       "And": [
         "En"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "MINIMAAL EEN"
       ],
@@ -7987,6 +8055,9 @@
       ],
       "Colors": [
         "Kleuren"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
       ],
       "Composer": [
         "Opstelvenster"
@@ -8119,6 +8190,9 @@
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "ALS"
@@ -8300,6 +8374,9 @@
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
       "Search in": [
         "Zoeken in"
       ],
@@ -8344,6 +8421,9 @@
       ],
       "Then": [
         "Dan"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time": [
         "Tijd"
@@ -8832,6 +8912,9 @@
       ]
     },
     "Message image": {
+      "Image could not be loaded.": [
+        "Afbeelding kon niet worden geladen."
+      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Afbeelding is niet geladen om uw privacy te beschermen."
       ]
@@ -9445,6 +9528,9 @@
       "Sync and backup all your files across devices": [
         "Synchroniseer en back-up al uw bestanden op alle apparaten"
       ],
+      "TOR over VPN": [
+        "Tor via VPN"
+      ],
       "Two-factor authentication": [
         "Tweestapsverificatie"
       ],
@@ -9711,6 +9797,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
       ],
@@ -9762,6 +9851,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME } diensten kunnen beheren en andere taken kunnen uitvoeren."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
       ],
@@ -9803,6 +9895,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
@@ -9976,6 +10071,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10284,11 +10384,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverschrijving"
+      ],
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bedrijfsnaam gebruiken"
+      ],
+      "Use personal name": [
+        "Gebruik persoonlijke naam"
       ]
     },
     "Payments": {
@@ -10368,6 +10479,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, autoriseert u ${ BRAND_NAME } en Stripe, onze provider van betalingsdiensten, om uw bank te instrueren om uw rekening en uw bank dienovereenkomstig in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+      ],
+      "Street address, postal code, and city": [
+        "Straatnaam, postcode en plaats"
       ]
     },
     "PGP key encryption warning": {
@@ -10753,6 +10872,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Probeer ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Gebruikt in Amazon voor winkelen enz."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wanneer uw e-mailadres gevraagd wordt, geef dan deze alias op. Aliassen worden geleverd door ${ passLink }."
@@ -11558,6 +11680,9 @@
       "Got it": [
         "Begrepen"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Log in op uw Apple App Store account, selecteer dan op ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Log in op uw Play Store-account, druk dan op ${ subscriptions }."
       ],
@@ -11736,7 +11861,7 @@
         "Als u de limiet van het gratis abonnement overschrijdt, kunt u niet of geen:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Als uw gebruik de limieten van het gratis abonnement overschrijdt kunt u beperkte toegang tot productfuncties en uw gegevens ervaren."
+        "Als uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw gegevens ervaren."
       ],
       "Invited members will be removed from your organization": [
         "Uitgenodigde leden zullen uit uw organisatie worden verwijderd"
@@ -13279,6 +13404,9 @@
     "Tor out of date": {
       "stable release": [
         "stabiele release"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Deze versie van TOR Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13343,6 +13471,11 @@
       ],
       "No ads": [
         "Geen advertenties"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     },
     "wallet_signup_2024: Info": {

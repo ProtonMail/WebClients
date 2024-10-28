@@ -4090,6 +4090,9 @@
       "Invalid expiration time": [
         "Μη έγκυρος χρόνος λήξης"
       ],
+      "Invalid IBAN": [
+        "Μη έγκυρο IBAN"
+      ],
       "Invalid name": [
         "Μη έγκυρο όνομα"
       ],
@@ -4250,6 +4253,9 @@
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Η αποστολή συνημμένων περιορίζεται μέχρι να συμπληρώσετε τα όρια του προγράμματός σας ή να κάνετε αναβάθμιση."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Η αποστολή συνημμένων περιορίζεται όταν υπερβαίνετε τα όρια του προγράμματός σας ή μέχρι να αναβαθμίσετε το πρόγραμμά σας."
       ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
@@ -4787,6 +4793,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Οι λογαριασμοί εφ' όρου ζωής δεν μπορούν να συμμετάσχουν σε οικογενειακό πλάνο."
       ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Οι κάτοχοι ενός προγράμματος με μέλη δεν μπορούν να συμμετάσχουν σε άλλο οικογενειακό πλάνο."
       ],
@@ -4804,6 +4813,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Μπορείτε να δεχτείτε μόνο 3 προσκλήσεις σε μια περίοδο 6 μηνών. Επικοινωνήστε με το ${ supportLink } εάν χρειάζεστε εξαίρεση."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Δεν μπορείτε να αποδεχτείτε αυτήν την πρόσκληση με το τρέχον πλάνο σας."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Έχετε προσκληθεί να εγγραφείτε στο ${ bannerOrganization }. ${ viewInviteButton }"
@@ -4841,6 +4853,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Ρυθμίστε τις παραμέτρους του οικογενειακού λογαριασμού σας και προσκαλέστε χρήστες"
+      ],
       "Invite members and get everything up and running.": [
         "Προσκαλέστε μέλη και ξεκινήστε τα πάντα."
       ],
@@ -5023,6 +5038,11 @@
         "Μη διαβασμένα"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Έχει συνημμένα"
+      ]
+    },
     "Filter preview": {
       "read": [
         "ανάγνωση"
@@ -5114,6 +5134,9 @@
       ],
       "Start free trial": [
         "Εκκίνηση δωρεάν δοκιμής"
+      ],
+      "Try the new desktop app": [
+        "Δοκιμάστε τη νέα εφαρμογή για υπολογιστές"
       ],
       "Upgrade now": [
         "Αναβαθμίστε τώρα"
@@ -5835,6 +5858,9 @@
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/μήνα)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Φιλτράρετε εάν πληρούνται ΟΛΕΣ οι ακόλουθες συνθήκες)"
       ],
@@ -5938,6 +5964,9 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Τυχόν προγραμματισμένα μηνύματα ή μηνύματα που έχουν αναβληθεί θα ακυρωθούν."
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δε θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
       ],
       "Applying actions to conversations": [
         "Εφαρμογή ενεργειών σε συνομιλίες"
@@ -6259,6 +6288,9 @@
       ],
       "Emails are automatically signed": [
         "Τα μηνύματα υπογράφονται αυτόματα"
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου με ετικέτα ${ nameDeleted } δε θα διαγραφούν και μπορούν ακόμα να βρεθούν στον αντίστοιχο φάκελο."
       ],
       "embedded image": [
         "ενσωματωμένη εικόνα",
@@ -6908,6 +6940,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Αναβολή έως ${ dateString } στις ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Αναβολή έως σήμερα, ${ formattedTime }"
@@ -7988,6 +8023,9 @@
       "Colors": [
         "Χρώματα"
       ],
+      "Company name": [
+        "Όνομα εταιρείας"
+      ],
       "Composer": [
         "Συντάκτης"
       ],
@@ -8119,6 +8157,9 @@
       ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "ΑΝ"
@@ -9445,6 +9486,9 @@
       "Sync and backup all your files across devices": [
         "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
       ],
+      "TOR over VPN": [
+        "TOR μέσω VPN"
+      ],
       "Two-factor authentication": [
         "Ταυτοποίηση δύο παραγόντων"
       ],
@@ -9711,6 +9755,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Δημιουργήστε έως και ${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα που μπορείτε να αντιστοιχίσετε σε μέλη της οικογένειας. Χρησιμοποιήστε τα για διαδικτυακές ταυτότητες, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Προστατεύει από την απειλή για το απόρρητο του VPN μεταβιβάζοντας την κυκλοφορία στο διαδίκτυο μέσω πολλών διακομιστών"
       ],
@@ -9803,6 +9850,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Επαναφέρετε τους κωδικούς πρόσβασης χρήστη και επαναφέρετε τον έλεγχο ταυτότητας δύο παραγόντων στους χρήστες"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Δρομολογήστε την κίνηση σας στο διαδίκτυο, μέσω του δικτύου TOR με ένα μόνο κλικ"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
@@ -10284,6 +10334,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Τραπεζική μεταφορά"
+      ],
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
       ],
@@ -10753,6 +10806,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Δοκιμάστε το ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
@@ -13279,6 +13335,9 @@
     "Tor out of date": {
       "stable release": [
         "ευσταθή έκδοση"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Αυτή η έκδοση του περιηγητή TOR δεν υποστηρίζεται. Παρακαλούμε ενημερώστε στην τελευταία ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13343,6 +13402,11 @@
       ],
       "No ads": [
         "Χωρίς διαφημίσεις"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Πρόσβαση σε Secure Core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, TOR μέσω VPN, και πολλά άλλα."
       ]
     },
     "wallet_signup_2024: Info": {

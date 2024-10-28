@@ -674,6 +674,9 @@
       "Today": [
         "Hari ini"
       ],
+      "Toggle Contacts app": [
+        "Tampilkan/sembunyikan aplikasi Kontak"
+      ],
       "Toggle settings": [
         "Aktifkan/nonaktifkan pengaturan"
       ],
@@ -885,6 +888,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Dengan keluar sekarang, Anda akan kehilangan acara Anda."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Mohon untuk tidak menutup tab ini. Sebagaian permintaan masih diproses di belakang layar."
       ]
     },
     "Apps dropdown": {
@@ -1222,6 +1228,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Sunting (lihat, buat, atau sunting rincian acara)"
+      ],
       "View (see all event details)": [
         "Tampilan penuh (lihat seluruh rincian acara)"
       ]
@@ -2516,8 +2525,14 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Tentukan metode pemulihan untuk mencegah hilangnya akses menuju akun Anda."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Proses ini dapat memakan waktu sejenak. Selagi menunggu, Anda dapat lanjut menggunakan ${ CALENDAR_APP_NAME } seperti biasa."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Untuk memastikan keamanan yang setinggi mungkin pada akun Anda, tentukanlah frasa pemulihan."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Untuk mengimpor melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ini, silakan pisahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
@@ -3023,6 +3038,9 @@
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
       ],
+      "Invalid IBAN": [
+        "IBAN tidak valid"
+      ],
       "Invalid link to the event": [
         "Tautan ke acara tidak vallid"
       ],
@@ -3197,6 +3215,9 @@
       "The address might be misspelled": [
         "Alamat mungkin salah ketik"
       ],
+      "The amount due has changed. Please try again.": [
+        "Biaya yang tertagih telah berubah. Silakan coba lagi."
+      ],
       "The email addresses do not match": [
         "Alamat email tidak sesuai"
       ],
@@ -3277,6 +3298,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Anda telah mencapai batas jumlah kalender maksimum."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Anda telah mencapai batas jumlah kontak untuk akun Anda"
       ],
       "You must set a name": [
         "Anda harus mengatur nama"
@@ -3665,6 +3689,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Akun Lifetime tidak dapat bergabung dalam paket grup."
       ],
+      "Manage addresses": [
+        "Kelola alamat"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Pemilik paket dengan anggota tidak dapat bergabung ke paket keluarga lain."
       ],
@@ -3682,6 +3709,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Anda hanya dapat menerima 3 undangan dalam periode 6 bulan. Silakan hubungi ${ supportLink } jika Anda membutuhkan pengecualian."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Anda telah diundang untuk bergabung ke ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3719,6 +3749,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Atur akun keluarga Anda dan undang pengguna"
+      ],
       "Set up your family": [
         "Siapkan keluarga Anda"
       ],
@@ -4235,6 +4268,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/bulan)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ruang penyimpanan tambahan"
       ],
@@ -4445,6 +4481,9 @@
       "Dedicated servers": [
         "Server khusus"
       ],
+      "Deleting event...": [
+        "Menghapus acara..."
+      ],
       "Discard changes?": [
         "Buang perubahan?"
       ],
@@ -4540,6 +4579,9 @@
       ],
       "High Priority": [
         "Prioritas Tinggi"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
@@ -4718,6 +4760,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Pengguna lain dalam organisasi Anda akan dapat melihat waktu sibuk Anda. Tidak ada rincian acara yang akan dibagikan."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
+      ],
       "password": [
         "kata sandi"
       ],
@@ -4795,6 +4840,9 @@
       ],
       "Removed participants will be notified.": [
         "Peserta yang dihapus akan diberi tahu."
+      ],
+      "Saving event...": [
+        "Menyimpan acara..."
       ],
       "Select a service provider to start": [
         "Pilih layanan email yang Anda gunakan untuk memulai"
@@ -5337,6 +5385,9 @@
       "All-day event notifications": [
         "Notifikasi acara sepanjang hari"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "App password": [
         "Kata sandi aplikasi"
       ],
@@ -5402,6 +5453,9 @@
       ],
       "Colors": [
         "Warna"
+      ],
+      "Company name": [
+        "Nama perusahaan"
       ],
       "Confirm password": [
         "Konfirmasi kata sandi"
@@ -5519,6 +5573,9 @@
       ],
       "I understand the risk": [
         "Saya paham akan risikonya"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -5655,6 +5712,9 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Secondary": [
         "Sekunder"
       ],
@@ -5690,6 +5750,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time zone": [
         "Zona waktu"
@@ -6609,6 +6672,9 @@
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
       ],
+      "TOR over VPN": [
+        "TOR via VPN"
+      ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
       ],
@@ -6920,6 +6986,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Sarana manajemen organisasi yang memungkinkan para admin untuk menambahkan dan menghapus pengguna, mengelola akses mereka ke layanan ${ BRAND_NAME }, dan mengerjakan berbagai hal lainnya."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Infrastruktur kami yang perkasa memastikan bahwa Anda akan selalu dapat mengakses akun Anda pada saat Anda membutuhkannya"
       ],
@@ -6961,6 +7030,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Alihkan lalu lintas internet Anda melalui jaringan TOR dengan satu kali klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
@@ -7235,6 +7307,11 @@
         "Agar proses impor dapat berlangsung, Anda harus memilih seluruh item yang diminta sebagaimana yang ditampilkan dalam GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Tentukan apa-apa saja yang dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, melihat dan mengunduh seluruh agenda yang Anda akses dari Google Calender."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Selamat datang di ${ appName }"
@@ -7410,11 +7487,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transfer bank"
+      ],
       "Credit/debit card": [
         "Kartu kredit/debit"
       ],
       "New credit/debit card": [
         "Kartu kredit/debit baru"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Gunakan nama perusahaan"
+      ],
+      "Use personal name": [
+        "Gunakan nama pribadi"
       ]
     },
     "Payments": {
@@ -7494,6 +7582,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda untuk mendebit akun Anda, serta bank Anda untuk mendebit akun Anda. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
+      ],
+      "Street address, postal code, and city": [
+        "Alamat, kode pos, dan kota"
       ]
     },
     "PGP key encryption warning": {
@@ -7752,6 +7848,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Digunakan pada Amazon untuk berbegai keperluan (mis. untuk berjualan)"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Pada saat Anda diminta untuk memberikan alamat email, gunakan alias ini sebagai gantinya. Seluruh alias disediakan oleh ${ passLink }."
@@ -8412,6 +8511,9 @@
     "Subscription change warning": {
       "Got it": [
         "Mengerti"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Cukup masuk ke akun Apple App Store Anda, lalu pilih ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Anda hanya perlu untuk masuk ke akun Play Store Anda dan mengetuk ${ subscriptions }."
@@ -9538,6 +9640,9 @@
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
       ],
+      "We're setting up calendar search": [
+        "Kami sedang mempersiapkan pencarian kalender"
+      ],
       "We've locked some calendars to protect your data": [
         "Kami telah mengunci sebagian kalender untuk melindungi data Anda"
       ],
@@ -9736,6 +9841,11 @@
       ],
       "No ads": [
         "Tanpa iklan"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
       ]
     },
     "wallet_signup_2024: Info": {

@@ -598,12 +598,12 @@
     },
     "bf2024: Deal": {
       "lifetime access": [
-        "lebenslanger Zugang"
+        "lebenslangen Zugang"
       ]
     },
     "bf2024: Info": {
       "All premium features. 6 users. 1 easy subscription.": [
-        "Alle Premiumfunktionen. 6 Benutzer. 1 einfaches Abonnement."
+        "Alle Premiumfunktionen. Sechs Benutzer. Ein einfaches Abonnement."
       ],
       "Limited-stock available!": [
         "Begrenzter Bestand verfügbar!"
@@ -611,7 +611,7 @@
     },
     "bf2024: Label": {
       "Get the deal": [
-        "Angebot nutzen"
+        "Zugreifen"
       ]
     },
     "bf2024: Title": {
@@ -2828,6 +2828,40 @@
         "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen. ${ link }"
       ]
     },
+    "sso": {
+      "Invalid confirmation code": [
+        "Ungültiger Bestätigungscode"
+      ],
+      "No, it wasn’t me": [
+        "Nein, das war ich nicht"
+      ],
+      "Sign-in confirmed": [
+        "Anmeldung bestätigt"
+      ],
+      "Sign-in failed": [
+        "Anmeldung fehlgeschlagen"
+      ],
+      "Yes, it was me": [
+        "Ja, das war ich"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Pending activation": [
+        "Ausstehende Aktivierung"
+      ],
+      "Signed out": [
+        "Abgemeldet"
+      ],
+      "Unknown": [
+        "Unbekannt"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Die Synchronisierung der Aliasse wurde erfolgreich aktiviert. Die Synchronisierung der SimpleLogin-Aliasse kann einige Zeit in Anspruch nehmen."
@@ -2949,6 +2983,9 @@
       "Last modified": [
         "Zuletzt geändert"
       ],
+      "Leave vault?": [
+        "Tresor verlassen?"
+      ],
       "Loading breaches...": [
         "Lade Datenlecks..."
       ],
@@ -3008,6 +3045,9 @@
       ],
       "Pending access to the shared data": [
         "Zugriff auf die geteilten Daten ist ausstehend"
+      ],
+      "Permanently remove all items?": [
+        "Alle Einträge dauerhaft löschen?"
       ],
       "Pinned (${ items.length })": [
         "Angeheftet (${ items.length })"

@@ -1231,6 +1231,9 @@
       "Toggle Calendar app": [
         "Alternar aplicativo de calendário"
       ],
+      "Toggle Contacts app": [
+        "Alternar o aplicativo Contatos"
+      ],
       "Toggle security center app": [
         "Ativar aplicativo da central de segurança"
       ],
@@ -3544,6 +3547,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para assegurar a máxima proteção de sua conta, defina uma frase de recuperação."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importação por um arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar seus contatos do Google o Outlook, ${ easySwitchLink }."
       ],
@@ -3919,6 +3925,12 @@
       "A problem occurred, please try again.": [
         "Ocorreu um erro. Tente novamente."
       ],
+      "Add at least one action": [
+        "Adicione pelo menos uma ação"
+      ],
+      "Add at least one condition": [
+        "Adicione pelo menos uma condição"
+      ],
       "Address primary private key not found": [
         "Chave privada principal do endereço não encontrada"
       ],
@@ -4096,6 +4108,9 @@
       "Invalid expiration time": [
         "O tempo de expiração não é válido."
       ],
+      "Invalid IBAN": [
+        "IBAN inválido"
+      ],
       "Invalid name": [
         "O nome não é válido."
       ],
@@ -4257,6 +4272,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "O envio de anexos é restrito até que você atenda aos limites ou atualização do seu plano."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "O envio de anexos será restrito enquanto você exceder os limites do seu plano ou até que você faça um upgrade do seu plano."
+      ],
       "Signature not verified": [
         "Assinatura não verificada"
       ],
@@ -4304,6 +4322,9 @@
       ],
       "Thanks for the feedback!": [
         "Obrigado pelo feedback!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "O valor devido foi alterado. Tente novamente."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Não foi possível descriptografar o anexo.\nCaso tenha a chave privada correspondente, você ainda será capaz de descriptografar\no arquivo com um programa como o GnuPG.",
@@ -4418,6 +4439,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Você atingiu o número máximo de calendários."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Você atingiu o número limite de contatos da sua conta"
       ],
       "You must set a name": [
         "Você deve especificar um nome"
@@ -4793,6 +4817,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Contas vitalícias não podem ingressar em um plano de família."
       ],
+      "Manage addresses": [
+        "Gerenciar endereços"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Proprietários de um plano com membros não podem participar de outro plano de família."
       ],
@@ -4810,6 +4837,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Você pode aceitar somente 3 convites em um período de 6 meses. Entre em contato com ${ supportLink } se precisar de uma exceção."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Você não pode aceitar esse convite com seu plano atual."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
@@ -4847,6 +4877,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Configure sua conta familiar e convide usuários"
+      ],
       "Invite members and get everything up and running.": [
         "Convide membros e coloque tudo em funcionamento."
       ],
@@ -5029,6 +5062,11 @@
         "Não lidos"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Tem anexos"
+      ]
+    },
     "Filter preview": {
       "read": [
         "lidos"
@@ -5120,6 +5158,9 @@
       ],
       "Start free trial": [
         "Iniciar avaliação gratuita"
+      ],
+      "Try the new desktop app": [
+        "Teste o novo aplicativo para computador"
       ],
       "Upgrade now": [
         "Fazer upgrade agora"
@@ -5850,6 +5891,9 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mês)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrar se TODAS as seguintes condições forem atendidas)"
       ],
@@ -5953,6 +5997,9 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Todas as mensagens agendadas ou adiadas serão canceladas."
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
       ],
       "Applying actions to conversations": [
         "Aplicando ações para as conversas"
@@ -6275,6 +6322,9 @@
       "Emails are automatically signed": [
         "E-mails são assinados automaticamente"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Os e-mails marcados com o marcador ${ nameDeleted } não serão excluídos e ainda podem ser encontrados na respectiva pasta."
+      ],
       "embedded image": [
         "imagem incorporada",
         "imagens incorporadas"
@@ -6380,6 +6430,9 @@
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estou enviando essa mensagem para um usuário que não usam o ${ MAIL_APP_NAME }."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
@@ -6670,6 +6723,9 @@
       "Organization size": [
         "Tamanho da organização"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Os nossos alertas priorizam a segurança. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Verifique se é legítimo."
       ],
@@ -6923,6 +6979,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Adiado até ${ dateString } às ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Adiado até hoje, ${ formattedTime }"
@@ -7194,6 +7253,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Desative para pesquisar apenas por data, nome, endereço de e-mail ou linha de assunto. Para desativar o conteúdo da mensagem de pesquisa (e excluir as mensagens baixadas para ativar esse recurso), vá para Configurações."
+      ],
       "Turn on to search the content of your messages": [
         "Ative para pesquisar o conteúdo de suas mensagens"
       ],
@@ -7223,6 +7285,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Atualize para adicionar mais endereços à sua conta."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Faça upgrade para eliminar automaticamente as mensagens que se encontram na Lixeira ou no Spam há mais de 30 dias."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Atualize para criar mais pastas, filtros e endereços."
@@ -7925,6 +7990,9 @@
       "And": [
         "E"
       ],
+      "Anderson": [
+        "Braga"
+      ],
       "ANY": [
         "QUALQUER"
       ],
@@ -8008,6 +8076,9 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Company name": [
+        "Nome da empresa"
       ],
       "Composer": [
         "Compositor"
@@ -8140,6 +8211,9 @@
       ],
       "I understand the risk": [
         "Eu entendo o risco"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "SE"
@@ -8321,6 +8395,9 @@
       "Reveal password": [
         "Mostrar senha"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Search in": [
         "Procurar em"
       ],
@@ -8365,6 +8442,9 @@
       ],
       "Then": [
         "Então"
+      ],
+      "Thomas": [
+        "Andrea"
       ],
       "Time": [
         "Hora"
@@ -8853,6 +8933,9 @@
       ]
     },
     "Message image": {
+      "Image could not be loaded.": [
+        "Não foi possível carregar a imagem."
+      ],
       "Image has not been loaded in order to protect your privacy.": [
         "A imagem não foi carregada para proteger a sua privacidade."
       ]
@@ -9466,6 +9549,9 @@
       "Sync and backup all your files across devices": [
         "Sincronize e faça backup dos seus arquivos em todos os dispositivos"
       ],
+      "TOR over VPN": [
+        "Tor sobre VPN"
+      ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
       ],
@@ -9735,6 +9821,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crie até ${ n } endereços de e-mail ou aliases que você pode atribuir aos membros da sua família. Utilize-os como identidades digitais como, por exemplo, JoaoDasCompras@${ domain } para contas em e-commerce."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Proteja-se de ameaças à privacidade da VPN ao transmitir seu tráfego de internet por meio de múltiplos servidores"
       ],
@@ -9786,6 +9875,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para visualizar caixas de entrada de usuários não privados da mesma forma que o próprio usuário, incluindo a mensagem completa e os detalhes de contato"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Ferramenta de gerenciamento da organização que permite que os administradores adicionem e removam usuários, gerenciem seu acesso aos serviços ${ BRAND_NAME } e executem outras tarefas."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "A confiabilidade de nossa infraestrutura garante o acesso à sua conta sempre que necessário."
       ],
@@ -9827,6 +9919,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Redefina as senhas de usuários e redefina a autenticação de dois fatores para os usuários"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Envie todo o seu tráfego na internet por meio da rede TOR com um único clique"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com um armazenamento cloud criptografado. Inclui sincronização automática, compartilhamento de arquivo criptografado, e mais."
@@ -10000,6 +10095,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Para que a importação funcione, você deve selecionar todos os itens solicitados conforme mostrado no GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selecione o que ${ BRAND_NAME } pode acessar: visualizar suas mensagens e configurações de e-mail, visualizar e baixar seus contatos, visualizar e baixar todas as agendas que você acessa no Google Agenda."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10308,6 +10408,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferência bancária"
+      ],
       "Bitcoin": [
         "Bitcoin"
       ],
@@ -10319,6 +10422,14 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Usar nome da empresa"
+      ],
+      "Use personal name": [
+        "Usar nome pessoal"
       ]
     },
     "Payments": {
@@ -10398,6 +10509,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ao confirmar este pagamento, você autoriza a ${ BRAND_NAME } e Stripe, nosso provedor de serviços de pagamento, a instruir seu banco a debitar sua conta, e seu banco a debitar sua conta de acordo. Você pode obter um reembolso no prazo de 8 semanas a partir da data do débito, de acordo com as condições do seu contrato com o banco."
+      ],
+      "Street address, postal code, and city": [
+        "Endereço da rua, CEP e cidade"
       ]
     },
     "PGP key encryption warning": {
@@ -10783,6 +10902,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Experimente o ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Usado na Amazon para compras, etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Aliases são fornecidos por ${ passLink }"
@@ -11587,6 +11709,9 @@
     "Subscription change warning": {
       "Got it": [
         "Entendido"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Basta iniciar sessão na sua conta da Apple App Store e selecionar ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Basta iniciar sessão na sua conta da Play Store e pressionar ${ subscriptions }."
@@ -13309,6 +13434,9 @@
     "Tor out of date": {
       "stable release": [
         "versão estável"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Esta versão do navegador TOR não é suportada. Atualize-o para a última ${ stableRelease }."
       ]
     },
     "Update font modal": {
@@ -13373,6 +13501,11 @@
       ],
       "No ads": [
         "Sem anúncios"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acesso a servidores Secure Core, downloads rápidos P2P/BitTorrent, Tor over VPN, e mais."
       ]
     },
     "wallet_signup_2024: Info": {

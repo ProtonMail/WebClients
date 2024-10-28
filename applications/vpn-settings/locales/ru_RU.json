@@ -85,6 +85,9 @@
       "Back": [
         "Назад"
       ],
+      "Back to sign-in": [
+        "Вернуться к входу"
+      ],
       "Block": [
         "Заблокировать"
       ],
@@ -189,6 +192,9 @@
       ],
       "Delete your account": [
         "Удалить учётную запись"
+      ],
+      "Deny access": [
+        "Отказать в доступе"
       ],
       "Details": [
         "Информация"
@@ -2729,6 +2735,9 @@
       "Got it": [
         "ОК"
       ],
+      "Invite a user": [
+        "Пригласить пользователя"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Пригласить существующего пользователя ${ BRAND_NAME }"
       ],
@@ -3275,10 +3284,10 @@
     },
     "Group member count": {
       "${ memberCount } member": [
-        "${ memberCount } член",
-        "${ memberCount } члена",
-        "${ memberCount } членов",
-        "${ memberCount } член"
+        "${ memberCount } участник",
+        "${ memberCount } участника",
+        "${ memberCount } участников",
+        "${ memberCount } участников"
       ]
     },
     "Header": {
@@ -4743,6 +4752,9 @@
       "username": [
         "имя пользователя"
       ],
+      "Username": [
+        "Имя пользователя"
+      ],
       "Users": [
         "Пользователи"
       ],
@@ -5255,6 +5267,9 @@
       "Authenticator app": [
         "Приложение-аутентификатор"
       ],
+      "Backup password": [
+        "Пароль резервной копии"
+      ],
       "Billing address": [
         "Адрес для выставления счета"
       ],
@@ -5569,6 +5584,9 @@
       ],
       "Recovery phrase": [
         "Фраза для восстановления"
+      ],
+      "Repeat backup password": [
+        "Повторите пароль резервной копии"
       ],
       "Reply (ACS) URL": [
         "URL ответа (ACS)"
@@ -6911,6 +6929,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просмотра публичных папок входящих сообщений пользователей, как это делает сам пользователь, включая полную информацию о сообщениях и контактах"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Инструмент управления организацией, позволяющий администраторам добавлять и удалять пользователей, управлять их доступом к службам ${ BRAND_NAME } и выполнять другие задачи."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надежная инфраструктура гарантирует, что вы сможете получить доступ к своему аккаунту, когда вам это необходимо"
       ],
@@ -7054,10 +7075,10 @@
         "Центральная панель управления"
       ],
       "Create up to ${ n } calendar": [
-        "Создайте до ${ n } календаря",
         "Создайте до ${ n } календарей",
-        "Создайте до ${ n } календарей",
-        "Создайте до ${ n } календарей"
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей"
       ],
       "Dedicated Account manager": [
         "Выделенный менеджер аккаунтов"
@@ -8618,6 +8639,145 @@
         "Пригласите друзей в ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } просит вас помочь ему войти в свой аккаунт ${ BRAND_NAME } с единым входом."
+      ],
+      "Access denied": [
+        "Доступ запрещен"
+      ],
+      "Access granted": [
+        "Доступ предоставлен"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "добавил вас в свою организацию ${ BRAND_NAME }"
+      ],
+      "Approve or deny it now": [
+        "Одобрить или отклонить сейчас"
+      ],
+      "Approve the sign-in from another device": [
+        "Одобрить вход с другого устройства"
+      ],
+      "Ask administrator for help": [
+        "Обратитесь за помощью к администратору"
+      ],
+      "Ask your administrator for access?": [
+        "Запросить доступ у администратора?"
+      ],
+      "Backup password": [
+        "Пароль резервной копии"
+      ],
+      "Cancel": [
+        "Отменить"
+      ],
+      "Change backup password": [
+        "Изменить пароль резервной копии"
+      ],
+      "Confirm backup password": [
+        "Подтвердите пароль резервной копии"
+      ],
+      "Confirmation code": [
+        "Код подтверждения"
+      ],
+      "Contact administrator": [
+        "Связаться с администратором"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Если проблема не устраняется, обратитесь к администратору."
+      ],
+      "Deny": [
+        "Отказать"
+      ],
+      "Deny access": [
+        "Отказать в доступе"
+      ],
+      "Devices available": [
+        "Доступные устройства"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Введите код подтверждения, который мы отправили этому пользователю."
+      ],
+      "Enter your backup password": [
+        "Введите пароль резервной копии"
+      ],
+      "Grant": [
+        "Предоставить"
+      ],
+      "Grant access": [
+        "Предоставить доступ"
+      ],
+      "Grant access to user?": [
+        "Предоставить доступ пользователю?"
+      ],
+      "Grant access to users?": [
+        "Предоставить доступ пользователям?"
+      ],
+      "Invalid confirmation code": [
+        "Недействительный код подтверждения"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Это единственный способ полностью восстановить аккаунт, поэтому храните его в надежном месте."
+      ],
+      "Join ${ organizationName }": [
+        "Присоединиться к ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Убедитесь, что вы сохранили его в безопасном месте, чтобы иметь возможность вернуться в свой аккаунт если вы потеряете доступ к своим учетным данным поставщика личных данных."
+      ],
+      "New backup password": [
+        "Новый пароль резервной копии"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Установите пароль резервной копии, чтобы обеспечить дополнительный уровень защиты. Он позволит вам войти в систему, если вы будете заблокированы, поэтому храните его в надежном месте."
+      ],
+      "Set your backup password": [
+        "Установите пароль резервной копии"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Сообщите код подтверждения своему администратору"
+      ],
+      "Sign in to your organization": [
+        "Войдите в свою организацию"
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Это отключит пользователя от других устройств, и ему придется создать новый пароль резервной копии."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Это отключит вас от других устройств, и вам придется создать новый пароль резервной копии."
+      ],
+      "Tried to sign in at": [
+        "Попытка входа в систему на"
+      ],
+      "Use backup password instead": [
+        "Вместо этого используйте пароль резервной копии"
+      ],
+      "User details:": [
+        "Информация о пользователе:"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Активное"
+      ],
+      "Inactive": [
+        "Неактивное"
+      ],
+      "Pending activation": [
+        "Ожидает активации"
+      ],
+      "Pending admin activation": [
+        "Ожидание активации администратором"
+      ],
+      "Rejected": [
+        "Отклонено"
+      ],
+      "Signed out": [
+        "Выполнен выход"
+      ],
+      "Unknown": [
+        "Неизвестное"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Отмена подписки, пожалуйста, подождите"
@@ -9517,6 +9677,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Клиенты ${ VPN_APP_NAME }"
       ],
@@ -9552,6 +9715,9 @@
       ],
       "Action": [
         "Действие"
+      ],
+      "Actions": [
+        "Действия"
       ],
       "Activate organization key": [
         "Активация ключа организации"
@@ -9753,6 +9919,12 @@
       ],
       "Delete user?": [
         "Удалить пользователя?"
+      ],
+      "Deny access to user?": [
+        "Отказать пользователю в доступе?"
+      ],
+      "Device": [
+        "Устройство"
       ],
       "Device connected!": [
         "Устройство подключено!"
@@ -9982,6 +10154,9 @@
       "Remove domain": [
         "Удалить домен"
       ],
+      "Remove server?": [
+        "Удалить сервер?"
+      ],
       "Remove single sign-on": [
         "Удалить SSO"
       ],
@@ -10070,10 +10245,10 @@
         "Подписка"
       ],
       "Successfully created ${ n } user account": [
-        "Успешно создана ${ n } учетная запись пользователя",
-        "Успешно созданы ${ n } учетных записи пользователя",
-        "Успешно созданы ${ n } учетных записи пользователя",
-        "Успешно созданы ${ n } учетных записи пользователя"
+        "Успешно создан ${ n } аккаунт пользователя",
+        "Успешно создано ${ n } аккаунта пользователя",
+        "Успешно создано ${ n } аккаунтов пользователя",
+        "Успешно создано ${ n } аккаунтов пользователя"
       ],
       "Summary": [
         "Сводка"

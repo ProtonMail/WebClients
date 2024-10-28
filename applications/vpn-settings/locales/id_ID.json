@@ -85,6 +85,9 @@
       "Back": [
         "Kembali"
       ],
+      "Back to sign-in": [
+        "Kembali ke layar masuk"
+      ],
       "Block": [
         "Blokir"
       ],
@@ -705,6 +708,9 @@
       ],
       "Verify domain": [
         "Verifikasi domain"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Verifikasi domain ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Lihat"
@@ -2508,6 +2514,9 @@
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
       ],
+      "Invalid IBAN": [
+        "IBAN tidak valid"
+      ],
       "Invalid invitation link": [
         "Tautan undangan tidak valid"
       ],
@@ -2580,6 +2589,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
       ],
+      "Please upload a square logo": [
+        "Silakan unggah logo berbentuk persegi"
+      ],
       "Please upload an xml file": [
         "Silakan unggah berkas xml"
       ],
@@ -2603,6 +2615,9 @@
       ],
       "Tab closed": [
         "Tab ditutup"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Biaya yang tertagih telah berubah. Silakan coba lagi."
       ],
       "The email addresses do not match": [
         "Alamat email tidak sesuai"
@@ -2755,6 +2770,9 @@
       "Got it": [
         "Mengerti"
       ],
+      "Invite a user": [
+        "Undang pengguna"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Undang pengguna ${ BRAND_NAME } yang sudah ada"
       ],
@@ -2812,6 +2830,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Akun Lifetime tidak dapat bergabung dalam paket grup."
       ],
+      "Manage addresses": [
+        "Kelola alamat"
+      ],
       "Manage user accounts": [
         "Kelola akun pengguna"
       ],
@@ -2844,6 +2865,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Anda hanya dapat menerima 3 undangan dalam periode 6 bulan. Silakan hubungi ${ supportLink } jika Anda membutuhkan pengecualian."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Anda telah diundang untuk bergabung ke ${ bannerOrganization }. ${ viewInviteButton }"
@@ -2897,6 +2921,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jika pengguna sudah memiliki alamat ${ MAIL_APP_NAME }, masukkan di sini. Jika belum, mereka harus membuat sebuah akun terlebih dahulu."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Apabila pengguna telah memiliki alamat ${ BRAND_NAME }, masukkan alamat ini di sini. Apabila belum, mereka perlu untuk membuat akun terlebih dahulu."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Undangan ini akan dibatalkan dan pengguna yang bersangkutan tidak akan dapat bergabung ke ${ organizationName }."
@@ -3473,6 +3500,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/bulan)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Dapatkan alamat ${ BRAND_NAME }** untuk menggunakan seluruh layanan ${ BRAND_NAME_TWO } yang meliputi ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -3914,6 +3944,9 @@
       "High Priority": [
         "Prioritas Tinggi"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Kunci publik penyedia identitas untuk menandatangani pernyataan autentikasi. Harus ada tempat untuk mengunduh atau menyalin hash sertifikat dari penyedia identitas. Cukup tempelkan hash sertifikat di bidang area teks."
       ],
@@ -4090,6 +4123,12 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Learn more about Gateways": [
+        "Pelajari lebih lanjut tentang Gateway"
+      ],
+      "Learn more about single sign-on": [
+        "Pelajari lebih lanjut mengenai single sign-on"
       ],
       "Let's get started by pressing the New group button above": [
         "Mari kita mulai dengan mengeklik tombol Grup baru di atas"
@@ -4543,6 +4582,9 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Proses verifikasi ini dapat memakan waktu hingga satu jam. Setelah proses verifikasi berhasil, jangan hapus rekaman TXT ini karena rekaman ini akan dibutuhkan untuk mengonfirmasi bahwa Anda tetap merupakan pemilik dari domain yang bersangkutan."
+      ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Tindakan ini akan menolak akses ke **${ email }**. Apakah Anda yakin ingin melanjutkan?"
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Ini akan menonaktifkan autentikasi dua faktor, termasuk metode aplikasi autentikator dan kunci keamanan."
@@ -5179,6 +5221,9 @@
       "Amount due": [
         "Jumlah tagihan"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Assertion Consumer Service URL": [
         "URL Assertion Consumer Service"
       ],
@@ -5187,6 +5232,9 @@
       ],
       "Authenticator app": [
         "Aplikasi autentikator"
+      ],
+      "Backup password": [
+        "Kata sandi cadangan"
       ],
       "Billing address": [
         "Alamat tagihan"
@@ -5238,6 +5286,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
+      "Company name": [
+        "Nama perusahaan"
       ],
       "Config to connect to ${ serverName }": [
         "Konfigurasi untuk tersambung ke ${ serverName }"
@@ -5355,6 +5406,9 @@
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Interval"
@@ -5503,6 +5557,9 @@
       "Recovery phrase": [
         "Frasa pemulihan"
       ],
+      "Repeat backup password": [
+        "Ulangi kata sandi cadangan"
+      ],
       "Reply (ACS) URL": [
         "URL balasan (ACS)"
       ],
@@ -5514,6 +5571,9 @@
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search": [
         "Cari"
@@ -5547,6 +5607,9 @@
       ],
       "System information": [
         "Informasi sistem"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Two-password mode": [
         "Mode kata sandi ganda"
@@ -5740,6 +5803,9 @@
       ],
       "Pay invoice": [
         "Bayar faktur"
+      ],
+      "PayPal without credit card": [
+        "PayPal tanpa kartu kredit"
       ],
       "perform a password reset from your active session": [
         "melangsungkan pengaturan ulang kata sandi dari sesi Anda yang sedang aktif"
@@ -6420,6 +6486,9 @@
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
       ],
+      "TOR over VPN": [
+        "TOR via VPN"
+      ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
       ],
@@ -6769,6 +6838,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Sarana manajemen organisasi yang memungkinkan para admin untuk menambahkan dan menghapus pengguna, mengelola akses mereka ke layanan ${ BRAND_NAME }, dan mengerjakan berbagai hal lainnya."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Infrastruktur kami yang perkasa memastikan bahwa Anda akan selalu dapat mengakses akun Anda pada saat Anda membutuhkannya"
       ],
@@ -6810,6 +6882,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Atur ulang kata sandi dan status autentikasi dua faktor pengguna"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Alihkan lalu lintas internet Anda melalui jaringan TOR dengan satu kali klik"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan ruang penyimpanan terenkripsi berbasis cloud. Dengan dukungan sinkronisasi otomatis, file sharing terenkripsi, dan masih banyak lagi."
@@ -7373,6 +7448,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Gunakan metode pemulihan data, hubungi administrator lain, atau atur ulang kunci organisasi untuk memulihkan hak administrator."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Kami tidak dapat memverifikasi keaslian identitas ini."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Kami tidak dapat memastikan keamanan kunci alamat pengirim ini. Terkadang, hal ini disebabkan oleh terdapatnya jeda dalam memperbarui informasi pengirim. Silakan coba lagi nanti. Apabila Anda tidak memercayai keabsahan undangan atau pengirim ini, silakan hubungi Layanan Dukungan ${ BRAND_NAME }."
       ],
@@ -7393,11 +7471,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transfer bank"
+      ],
       "Credit/debit card": [
         "Kartu kredit/debit"
       ],
       "New credit/debit card": [
         "Kartu kredit/debit baru"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Gunakan nama perusahaan"
+      ],
+      "Use personal name": [
+        "Gunakan nama pribadi"
       ]
     },
     "Payments": {
@@ -7489,6 +7578,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda untuk mendebit akun Anda, serta bank Anda untuk mendebit akun Anda. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
+      ],
+      "Street address, postal code, and city": [
+        "Alamat, kode pos, dan kota"
       ]
     },
     "Permission": {
@@ -7719,6 +7816,9 @@
       "Changing organization password": [
         "Mengubah kata sandi organisasi"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Membuat atau mengakses akun pengguna non-privat"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Karena adanya perubahan kata sandi, hak istimewa administrator organisasi Anda telah dibatasi. Tindakan berikut tidak lagi diizinkan:"
       ]
@@ -7745,6 +7845,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil dirampungkan."
+      ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
       ]
@@ -7805,6 +7908,12 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Prasyarat:** Autentikasi SAML harus terlebih dahulu diatur untuk mengaktifkan penyediaan SCIM."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Prasyarat:** Untuk mengaktifkan penyediaan SCIM, Anda harus memverifikasi kepemilikan domain **${ domainName }**. Proses verifikasi ini dapat berlangsung hingga satu jam."
+      ],
+      "Enter the token into your identity provider": [
+        "Masukkan token ini ke penyedia identitas Anda"
       ],
       "Enter URL and token into your identity provider": [
         "Masukkan URL dan token ke penyedia identitas Anda"
@@ -8103,6 +8212,9 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Kami akan kembali menghubungi Anda ketika pengaturan ulang kata sandi telah tersedia."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Anda dapat memeriksa status permintaan Anda kapan saja pada ${ accountAndPasswordSectionLink } di menu pengaturan."
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8396,8 +8508,59 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } meminta bantuan Anda untuk masuk ke Akun ${ BRAND_NAME } mereka dengan single sign-on."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } anggota meminta bantuan Anda untuk masuk."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } pengguna telah bergabung ke organisasi Anda melalui Penyedia Identitas Anda. Setujui atau tolak akun mereka sekarang juga:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } pengguna meminta bantuan Anda untuk masuk ke Akun ${ BRAND_NAME } mereka dengan single sign-on."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**Anggota SSO (yang diberikan oleh Penyedia Identitas Anda) akan dihapus** dan Anda akan perlu untuk membuat anggota ini secara manual untuk menambahkan mereka kembali ke dalam organisasi Anda."
+      ],
+      "Access denied": [
+        "Akses ditolak"
+      ],
+      "Access granted": [
+        "Akses diberikan"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "menambahkan Anda ke organisasi ${ BRAND_NAME } mereka"
+      ],
+      "Approve or deny it now": [
+        "Setujui atau tolak permintaan ini sekarang"
+      ],
+      "Approve the sign-in from another device": [
+        "Setujui entri masuk dari perangkat lainnya"
+      ],
+      "Ask administrator for help": [
+        "Minta bantuan kepada administrator"
+      ],
+      "Ask your administrator for access?": [
+        "Minta akses kepada administrator Anda?"
+      ],
+      "Backup password": [
+        "Kata sandi cadangan"
+      ],
       "Cancel": [
         "Batalkan"
+      ],
+      "Change backup password": [
+        "Ganti kata sandi cadangan"
+      ],
+      "Confirmation code": [
+        "Kode konfirmasi"
+      ],
+      "Contact administrator": [
+        "Hubungi administrator"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Hubungi administrator Anda apabila masalah ini terus berlanjut."
       ],
       "Deny": [
         "Tolak"
@@ -8405,11 +8568,83 @@
       "Deny access": [
         "Tolak akses"
       ],
+      "Devices available": [
+        "Perangkat yang tersedia"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Masukkan kode konfirmasi yang kami kirim ke pengguna ini."
+      ],
+      "Enter your backup password": [
+        "Masukkan kata sandi cadangan Anda"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Demi keamanan Anda, Anda telah dikeluarkan dari seluruh perangkat aktif lainnya yang Anda miliki. Sebelum mengakses akun, Anda akan perlu untuk memasukkan kata sandi cadangan yang baru."
+      ],
       "Grant": [
         "Izinkan"
       ],
       "Grant access": [
         "Izinkan akses"
+      ],
+      "Grant access to user?": [
+        "Berikan akses pengguna?"
+      ],
+      "Grant access to users?": [
+        "Berikan akses ke pengguna?"
+      ],
+      "Invalid confirmation code": [
+        "Kode konfirmasi tidak valid"
+      ],
+      "Join ${ organizationName }": [
+        "Gabung ke ${ organizationName }"
+      ],
+      "New backup password": [
+        "Kata sandi cadangan baru"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Pengguna non-SSO (yang dihasilkan secara manual, bukan yang disediakan oleh Penyedia Identitas Anda) akan tetap dapat masuk ke organisasi Anda."
+      ],
+      "Remove single sign-on": [
+        "Hapus single sign-on"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Tentukan kata sandi cadangan untuk menerapkan lapisan keamanan tambahan. Kata sandi ini akan memungkinkan Anda untuk masuk apabila Anda terkunci, sehingga pastikan Anda menyimpan kata sandi ini di tempat yang aman."
+      ],
+      "Set your backup password": [
+        "Tentukan kata sandi cadangan Anda"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Bagikan kode konfirmasi ini dengan administrator Anda"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Keluar dan masuk kembali untuk mengubah kata sandi cadangan Anda"
+      ],
+      "Single sign-on removed": [
+        "Single sign-on dihapus"
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Tindakan ini akan mengeluarkan pengguna yang bersangkutan dari perangkat lainnya yang mereka miliki, di mana mereka akan perlu untuk membuat kata sandi cadangan baru."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Tindakan ini akan mengeluarkan Anda dari perangkat lainnya yang Anda miliki, dan Anda akan perlu untuk membuat kata sandi cadangan baru."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Untuk memastikan bahwa entri masuk ke **${ email }** ini benar-benar berasal dari Anda, tinjau kode konfirmasi yang tertera dan setujui permintaan ini dari perangkat lainnya."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Untuk memastikan bahwa upaya masuk ini benar-benar berasal dari Anda, silakan masukkan kata sandi cadangan Anda."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Untuk memastikan bahwa entri masuk ini benar-benar berasal dari Anda, bagikan kode konfirmasi ini dengan administrator **${ adminEmail }** Anda agar mereka dapat menerima permintaan untuk **${ email }**."
+      ],
+      "Tried to sign in at": [
+        "Mencoba masuk pada"
+      ],
+      "Use backup password instead": [
+        "Gunakan kata sandi cadangan"
+      ],
+      "User details:": [
+        "Rincian pengguna:"
       ]
     },
     "sso: auth device state": {
@@ -8418,6 +8653,12 @@
       ],
       "Inactive": [
         "Nonaktif"
+      ],
+      "Pending activation": [
+        "Aktivasi tertunda"
+      ],
+      "Pending admin activation": [
+        "Menunggu aktivasi admin"
       ],
       "Rejected": [
         "Ditolak"
@@ -8608,6 +8849,9 @@
     "Subscription change warning": {
       "Got it": [
         "Mengerti"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Cukup masuk ke akun Apple App Store Anda, lalu pilih ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Anda hanya perlu untuk masuk ke akun Play Store Anda dan mengetuk ${ subscriptions }."
@@ -9130,6 +9374,12 @@
       ],
       "You have successfully unsubscribed": [
         "Anda berhasil berhenti berlangganan"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Apabila Anda memasukkan email pemulihan yang valid, Anda akan menerima nama pengguna Anda via email dalam rentang waktu satu menit."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Apabila Anda memasukkan nomor telepon pemulihan yang valid, Anda akan menerima nama pengguna Anda via SMS dalam rentang waktu satu menit."
       ]
     },
     "Success message": {
@@ -9282,6 +9532,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
       ],
       "${ VPN_APP_NAME } clients": [
         "Klien ${ VPN_APP_NAME }"
@@ -9522,6 +9775,9 @@
       ],
       "Delete user?": [
         "Hapus pengguna?"
+      ],
+      "Deny access to user?": [
+        "Tolak akses pengguna?"
       ],
       "Device": [
         "Perangkat"
@@ -10087,6 +10343,9 @@
       ],
       "User declined invitation": [
         "Pengguna menolak undangan"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Menunggu pengguna untuk menerima undangan"
       ]
     },
     "Tooltip for news": {
@@ -10100,6 +10359,9 @@
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Versi TOR Browser ini sudah tidak lagi didukung. Silakan perbarui browser Anda ke ${ stableRelease } terbaru"
       ]
     },
     "unprivatization": {
@@ -10392,6 +10654,11 @@
       ],
       "Your ${ selected } plan": [
         "Paket ${ selected } pilihan Anda"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
       ]
     },
     "wallet_signup_2024: Info": {
