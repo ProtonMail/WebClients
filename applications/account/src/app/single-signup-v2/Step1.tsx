@@ -45,7 +45,7 @@ import {
     getTotalFromPricing,
     switchPlan,
 } from '@proton/shared/lib/helpers/planIDs';
-import { getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import type { Api, Currency, Cycle, SubscriptionPlan, User, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -584,10 +584,10 @@ const Step1 = ({
                     </div>
                 )}
                 {(() => {
-                    const wrap = (iconName: IconName, textLaunchOffer: ReactNode) => {
+                    const wrap = (iconName: IconName | null, textLaunchOffer: ReactNode) => {
                         return (
                             <div className="signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4">
-                                <Icon name={iconName} size={3.5} className="shrink-0 mt-1" />
+                                {iconName && <Icon name={iconName} size={3.5} className="shrink-0 mt-1" />}
                                 <span className="ml-2 flex-1">{textLaunchOffer}</span>
                             </div>
                         );
@@ -640,6 +640,14 @@ const Step1 = ({
                             c('mail_signup_2024: Info').t`Limited time offer: **Get up to 35% off** yearly plans`
                         );
                         return wrap('hourglass', textLaunchOffer);
+                    }
+
+                    if (getHas2024OfferCoupon(options.checkResult.Coupon?.Code)) {
+                        const discount = checkout.discountPercent;
+                        return wrap(
+                            'bag-percent',
+                            c('pass_signup_2023: Info').jt`Your ${discount}% Black Friday discount has been applied`
+                        );
                     }
 
                     if (selectedPlan.Name === PLANS.DUO && options.cycle === CYCLE.YEARLY) {
