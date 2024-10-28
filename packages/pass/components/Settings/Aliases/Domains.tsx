@@ -6,19 +6,25 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/index';
 import { DomainAddModal } from '@proton/pass/components/Settings/Aliases/DomainAddModal';
 import { DomainDeleteModal } from '@proton/pass/components/Settings/Aliases/DomainDeleteModal';
-import { DomainDetailsModal } from '@proton/pass/components/Settings/Aliases/DomainDetailsModal';
+import {
+    DOMAIN_TABS_ORDER_MAP,
+    DomainDetailsModal,
+    DomainTab,
+} from '@proton/pass/components/Settings/Aliases/DomainDetailsModal';
 import { DomainsTable } from '@proton/pass/components/Settings/Aliases/DomainsTable';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { getCustomDomains } from '@proton/pass/store/actions';
 import { selectUserPlan } from '@proton/pass/store/selectors';
-import type { CustomDomainOutput, CustomDomainSettingsOutput, MaybeNull } from '@proton/pass/types';
+import type { CustomDomainOutput, CustomDomainSettingsOutput, Maybe, MaybeNull } from '@proton/pass/types';
+
+export type CustomDomainInfo = CustomDomainOutput & Maybe<CustomDomainSettingsOutput>;
 
 type DomainAction =
     | { type: 'add' }
     | ({ type: 'remove' } & CustomDomainOutput)
-    | ({ type: 'verify-DNS' } & CustomDomainOutput)
-    | ({ type: 'info' } & CustomDomainOutput & CustomDomainSettingsOutput);
+    | ({ type: DomainTab.DNS } & CustomDomainOutput)
+    | ({ type: DomainTab.INFO } & CustomDomainOutput);
 
 export const Domains: FC = () => {
     const [domains, setDomains] = useState<MaybeNull<CustomDomainOutput[]>>(null);
@@ -32,7 +38,11 @@ export const Domains: FC = () => {
     });
 
     const handleOpenModalDNS = (domain: CustomDomainOutput) => {
-        setAction({ type: 'verify-DNS', ...domain });
+        setAction({ type: DomainTab.DNS, ...domain });
+    };
+
+    const handleOpenDomainInfo = (domain: CustomDomainOutput) => {
+        setAction({ type: DomainTab.INFO, ...domain });
     };
 
     const handleAddDomainClick = () => {
@@ -69,6 +79,14 @@ export const Domains: FC = () => {
         });
     };
 
+    const changeTab = (tab: number) => {
+        setAction((action) => {
+            if (action?.type !== DomainTab.DNS && action?.type !== DomainTab.INFO) return action;
+
+            return { ...action, type: DOMAIN_TABS_ORDER_MAP[tab] };
+        });
+    };
+
     useEffect(() => {
         getAllDomains.dispatch();
     }, []);
@@ -100,15 +118,17 @@ export const Domains: FC = () => {
                     <DomainsTable
                         domains={domains}
                         openModalDNS={handleOpenModalDNS}
+                        openModalInfo={handleOpenDomainInfo}
                         handleRemoveDomainClick={handleRemoveDomainClick}
                     />
                 )}
             </SettingsPanel>
 
             {action?.type === 'add' && <DomainAddModal onClose={() => setAction(null)} onSubmit={handleAdded} />}
-            {(action?.type === 'verify-DNS' || action?.type === 'info') && (
+            {(action?.type === DomainTab.DNS || action?.type === DomainTab.INFO) && (
                 <DomainDetailsModal
                     tab={action.type}
+                    changeTab={changeTab}
                     onClose={() => setAction(null)}
                     domain={action}
                     onVerify={handleVerifyClick}
