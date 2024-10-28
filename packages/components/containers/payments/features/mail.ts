@@ -108,6 +108,42 @@ export const getB2BNDomainsFeature = (n: number): PlanCardFeatureDefinition => (
     included: true,
 });
 
+export const getOwnDomainText = () => {
+    return c('BF2024: Deal details').t`Use your own email domain`;
+};
+
+export const getOwnDomainFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: getOwnDomainText(),
+        included: true,
+        icon: 'globe',
+    };
+};
+
+export const getDesktopAppText = () => {
+    return c('BF2024: Deal details').t`${MAIL_APP_NAME} desktop app`;
+};
+
+export const getDesktopAppFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: getDesktopAppText(),
+        included: true,
+        icon: 'desktop',
+    };
+};
+
+export const getDarkWebMonitoringText = () => {
+    return c('BF2024: Deal details').t`Dark Web Monitoring`;
+};
+
+export const getDarkWebMonitoringFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: getDarkWebMonitoringText(),
+        icon: 'eye',
+        included: true,
+    };
+};
+
 export const getNDomainsFeature = ({ n, highlight }: { n: number; highlight?: boolean }): PlanCardFeatureDefinition => {
     if (n === 0) {
         return {
