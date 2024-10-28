@@ -46,6 +46,156 @@ export const getGenericBenefits = (): BenefitItem[] => {
     ];
 };
 
+export const getBuiltInEncryptionBenefit = (): BenefitItem => {
+    return {
+        key: `built-in-encryption`,
+        text: c('Signup: Info').t`Built-in encryption`,
+        icon: {
+            name: 'lock',
+        },
+    };
+};
+
+export const getEndToEndEncryptionBenefit = (): BenefitItem => {
+    return {
+        key: `end-to-end-encryption`,
+        text: c('Signup: Info').t`End-to-end encryption`,
+        icon: {
+            name: 'lock',
+        },
+    };
+};
+
+export const getSwissPrivacyLawsBenefit = (): BenefitItem => {
+    return {
+        key: `swiss-privacy-laws`,
+        text: c('Signup: Info').t`Protected by Swiss privacy laws`,
+        icon: {
+            name: 'shield',
+        },
+    };
+};
+
+export const getWorksOnAllDevicesBenefit = (): BenefitItem => {
+    return {
+        key: `works-on-all-devices`,
+        text: c('Signup: Info').t`Works on all devices`,
+        icon: {
+            name: 'mobile',
+        },
+    };
+};
+
+export const getISO27001CertifiedBenefit = (): BenefitItem => {
+    return {
+        key: `iso27001-certified`,
+        text: c('Signup: Info').t`ISO 27001 certified`,
+        icon: {
+            name: 'globe',
+        },
+    };
+};
+
+export const getBasedInSwitzerlandGDPRBenefit = (): BenefitItem => {
+    return {
+        key: `based-in-switzerland-gdpr`,
+        text: c('Signup: Info').t`Based in Switzerland, GDPR compliant`,
+        icon: {
+            name: 'shield',
+        },
+    };
+};
+
+export const getTeamKnowsEncryptionBenefit = (): BenefitItem => {
+    return {
+        key: `team-knows-encryption`,
+        text: c('Signup: Info').t`From the team that knows encryption`,
+        icon: {
+            name: 'lock',
+        },
+    };
+};
+
+export const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
+    return {
+        key: `open-source-and-audited`,
+        text: c('Signup: Info').t`Open source and audited`,
+        icon: {
+            name: 'magnifier',
+        },
+    };
+};
+
+export const getAppsMailIncludedBenefit = (): BenefitItem => {
+    return {
+        key: `apps-mail-included`,
+        text: c('Signup: Info').t`Calendar, password manager, file storage, and VPN included`,
+        icon: {
+            name: 'grid-2',
+        },
+    };
+};
+
+export const getAppsIncludedBenefit = (): BenefitItem => {
+    return {
+        key: `apps-included`,
+        text: c('Signup: Info').t`Integrated email, calendar, file storage, password manager, and VPN`,
+        icon: {
+            name: 'grid-2',
+        },
+    };
+};
+
+export const getEmailAliasesBenefit = (): BenefitItem => {
+    return {
+        key: `email-aliases`,
+        text: c('Signup: Info').t`Email aliases`,
+        icon: {
+            name: 'alias',
+        },
+    };
+};
+
+export const getAdvancedSecurityBenefit = (): BenefitItem => {
+    return {
+        key: `advanced-security`,
+        text: c('Signup: Info').t`Advanced security features`,
+        icon: {
+            name: 'sliders',
+        },
+    };
+};
+
+export const getScribeBenefit = (): BenefitItem => {
+    return {
+        key: `scribe-benefit`,
+        text: c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
+        icon: {
+            name: 'pen-sparks',
+        },
+    };
+};
+
+export const getBundleVisionaryBenefits = (): BenefitItem[] => {
+    return [
+        getEndToEndEncryptionBenefit(),
+        getSwissPrivacyLawsBenefit(),
+        getOpenSourceAndAuditedBenefit(),
+        getWorksOnAllDevicesBenefit(),
+        getAppsIncludedBenefit(),
+    ];
+};
+
+export const getFamilyDuoBenefits = (): BenefitItem[] => {
+    return [
+        getEndToEndEncryptionBenefit(),
+        getSwissPrivacyLawsBenefit(),
+        getOpenSourceAndAuditedBenefit(),
+        getScribeBenefit(),
+        getAppsIncludedBenefit(),
+    ];
+};
+
 export const getGenericFeatures = (isLargeViewport: boolean, audience?: Audience) => {
     const e2e = {
         key: 'e2e',
