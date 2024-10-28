@@ -1,25 +1,27 @@
 import { FeatureCode, useFeatures } from '@proton/features';
 
 import type { OfferConfig, OfferId, Operation } from '../interface';
-import { blackFriday2023DriveFreeConfig, useBlackFriday2023DriveFree } from '../operations/blackFridayDrive2023Free';
-import { blackFriday2023DrivePlusConfig, useBlackFriday2023DrivePlus } from '../operations/blackFridayDrive2023Plus';
+import { blackFriday2024DuoConfig, useBlackFriday2024Duo } from '../operations/blackFriday2024Duo';
+import { blackFriday2024PlusConfig, useBlackFriday2024Plus } from '../operations/blackFriday2024Plus';
+import { blackFriday2024UnlimitedConfig, useBlackFriday2024Unlimited } from '../operations/blackFriday2024Unlimited';
+import { blackFriday2024DriveFreeConfig, useBlackFriday2024DriveFree } from '../operations/blackFridayDrive2024Free';
 import {
-    blackFriday2023DriveUnlimitedConfig,
-    useBlackFriday2023DriveUnlimited,
-} from '../operations/blackFridayDrive2023Unlimited';
-import { blackFriday2023InboxFreeConfig, useBlackFriday2023InboxFree } from '../operations/blackFridayInbox2023Free';
-import { blackFriday2023InboxMailConfig, useBlackFriday2023InboxMail } from '../operations/blackFridayInbox2023Plus';
+    blackFriday2024DriveFreeYearlyConfig,
+    useBlackFriday2024DriveFreeYearly,
+} from '../operations/blackFridayDrive2024FreeYearly';
+import { blackFriday2024InboxFreeConfig, useBlackFriday2024InboxFree } from '../operations/blackFridayInbox2024Free';
 import {
-    blackFriday2023InboxUnlimitedConfig,
-    useBlackFriday2023InboxUnlimited,
-} from '../operations/blackFridayInbox2023Unlimited';
-import { blackFriday2023VPNFreeConfig, useBlackFriday2023VPNFree } from '../operations/blackFridayVPN2023Free';
-import { blackFriday2023VPNMonthlyConfig, useBlackFriday2023VPNMonthly } from '../operations/blackFridayVPN2023Monthly';
+    blackFriday2024InboxFreeYearlyConfig,
+    useBlackFriday2024InboxFreeYearly,
+} from '../operations/blackFridayInbox2024FreeYearly';
+import { blackFriday2024PassFreeConfig, useBlackFriday2024PassFree } from '../operations/blackFridayPass2024Free';
+import { blackFriday2024PassPlusConfig, useBlackFriday2024PassPlus } from '../operations/blackFridayPass2024Plus';
+import { blackFriday2024VPNFreeConfig, useBlackFriday2024VPNFree } from '../operations/blackFridayVPN2024Free';
 import {
-    blackFriday2023VPNTwoYearsConfig,
-    useBlackFriday2023VPNTwoYears,
-} from '../operations/blackFridayVPN2023TwoYears';
-import { blackFriday2023VPNYearlyConfig, useBlackFriday2023VPNYearly } from '../operations/blackFridayVPN2023Yearly';
+    blackFriday2024VPNFreeYearlyConfig,
+    useBlackFriday2024VPNFreeYearly,
+} from '../operations/blackFridayVPN2024FreeYearly';
+import { blackFriday2024VPNMonthlyConfig, useBlackFriday2024VPNMonthly } from '../operations/blackFridayVPN2024Monthly';
 import { duoPlan2024TwoYearConfig, useDuoPlanTwoYear2024 } from '../operations/duoPlan2024TwoYears';
 import { duoPlan2024YearlyConfig, useDuoPlan2024Yearly } from '../operations/duoPlan2024Yearly';
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
@@ -35,17 +37,19 @@ const configs: Record<OfferId, OfferConfig> = {
     'go-unlimited-2022': goUnlimited2022Config,
     'mail-trial-2023': mailTrial2023Config,
     'mail-trial-2024': mailTrial2024Config,
-    'black-friday-2023-inbox-free': blackFriday2023InboxFreeConfig,
-    'black-friday-2023-inbox-mail': blackFriday2023InboxMailConfig,
-    'black-friday-2023-inbox-unlimited': blackFriday2023InboxUnlimitedConfig,
-    'black-friday-2023-vpn-free': blackFriday2023VPNFreeConfig,
-    'black-friday-2023-vpn-monthly': blackFriday2023VPNMonthlyConfig,
-    'black-friday-2023-vpn-yearly': blackFriday2023VPNYearlyConfig,
-    'black-friday-2023-vpn-two-years': blackFriday2023VPNTwoYearsConfig,
-    'black-friday-2023-drive-free': blackFriday2023DriveFreeConfig,
-    'black-friday-2023-drive-plus': blackFriday2023DrivePlusConfig,
-    'black-friday-2023-drive-unlimited': blackFriday2023DriveUnlimitedConfig,
     'pass-family-plan-2024-yearly': passFamilyPlan2024YearlyConfig,
+    'black-friday-2024-inbox-free': blackFriday2024InboxFreeConfig,
+    'black-friday-2024-pass-free': blackFriday2024PassFreeConfig,
+    'black-friday-2024-drive-free': blackFriday2024DriveFreeConfig,
+    'black-friday-2024-vpn-free': blackFriday2024VPNFreeConfig,
+    'black-friday-2024-inbox-free-yearly': blackFriday2024InboxFreeYearlyConfig,
+    'black-friday-2024-drive-free-yearly': blackFriday2024DriveFreeYearlyConfig,
+    'black-friday-2024-vpn-free-yearly': blackFriday2024VPNFreeYearlyConfig,
+    'black-friday-2024-plus': blackFriday2024PlusConfig,
+    'black-friday-2024-pass-plus': blackFriday2024PassPlusConfig,
+    'black-friday-2024-vpn-monthly': blackFriday2024VPNMonthlyConfig,
+    'black-friday-2024-unlimited': blackFriday2024UnlimitedConfig,
+    'black-friday-2024-duo': blackFriday2024DuoConfig,
 };
 
 const OFFERS_FEATURE_FLAGS = Object.values(configs).map(({ featureCode }) => featureCode);
@@ -61,32 +65,39 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     const goUnlimited2022 = useGoUnlimited2022();
     const mailTrial2023 = useMailTrial2023();
     const mailTrial2024 = useMailTrial2024();
-    const blackFriday2023InboxFree = useBlackFriday2023InboxFree();
-    const blackFriday2023InboxMail = useBlackFriday2023InboxMail();
-    const blackFriday2023InboxUnlimited = useBlackFriday2023InboxUnlimited();
-    const blackFriday2023VPNFree = useBlackFriday2023VPNFree();
-    const blackFriday2023VPNMonthly = useBlackFriday2023VPNMonthly();
-    const blackFriday2023VPNYearly = useBlackFriday2023VPNYearly();
-    const blackFriday2023VPNTwoYears = useBlackFriday2023VPNTwoYears();
-    const blackFriday2023DriveFree = useBlackFriday2023DriveFree();
-    const blackFriday2023DrivePlus = useBlackFriday2023DrivePlus();
-    const blackFriday2023DriveUnlimited = useBlackFriday2023DriveUnlimited();
+
+    const blackFriday2024InboxFree = useBlackFriday2024InboxFree();
+    const blackFriday2024PassFree = useBlackFriday2024PassFree();
+    const blackFriday2024DriveFree = useBlackFriday2024DriveFree();
+    const blackFriday2024VPNFree = useBlackFriday2024VPNFree();
+    const blackFriday2024InboxFreeYearly = useBlackFriday2024InboxFreeYearly();
+    const blackFriday2024DriveFreeYearly = useBlackFriday2024DriveFreeYearly();
+    const blackFriday2024VPNFreeYearly = useBlackFriday2024VPNFreeYearly();
+    const blackFriday2024Plus = useBlackFriday2024Plus();
+    const blackFriday2024PassPlus = useBlackFriday2024PassPlus();
+    const blackFriday2024VPNMonthly = useBlackFriday2024VPNMonthly();
+    const blackFriday2024Unlimited = useBlackFriday2024Unlimited();
+    const blackFriday2024Duo = useBlackFriday2024Duo();
 
     // Offer order matters
     const allOffers: Operation[] = [
         passFamilyPlan2024Yearly,
+        blackFriday2024InboxFree,
+        blackFriday2024PassFree,
+        blackFriday2024DriveFree,
+        blackFriday2024VPNFree,
+        blackFriday2024InboxFreeYearly,
+        blackFriday2024DriveFreeYearly,
+        blackFriday2024VPNFreeYearly,
+
+        blackFriday2024Plus,
+        blackFriday2024PassPlus,
+        blackFriday2024VPNMonthly,
+        blackFriday2024Unlimited,
+        blackFriday2024Duo,
+
         duoPlan2024Yearly,
         duoPlan2024TwoYear,
-        blackFriday2023InboxFree,
-        blackFriday2023InboxMail,
-        blackFriday2023InboxUnlimited,
-        blackFriday2023VPNFree,
-        blackFriday2023VPNMonthly,
-        blackFriday2023VPNYearly,
-        blackFriday2023VPNTwoYears,
-        blackFriday2023DriveFree,
-        blackFriday2023DrivePlus,
-        blackFriday2023DriveUnlimited,
         goUnlimited2022,
         mailTrial2023,
         mailTrial2024,

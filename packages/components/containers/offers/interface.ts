@@ -1,7 +1,7 @@
 import type { JSXElementConstructor, ReactNode } from 'react';
 
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms';
-import type { IconName } from '@proton/components';
+import type { IconName, IconSize } from '@proton/components';
 import type { FeatureCode } from '@proton/features';
 import type { PlanIDs } from '@proton/payments';
 import type { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
@@ -15,17 +15,19 @@ export type OfferId =
     | 'go-unlimited-2022'
     | 'mail-trial-2023'
     | 'mail-trial-2024'
-    | 'black-friday-2023-inbox-free'
-    | 'black-friday-2023-inbox-mail'
-    | 'black-friday-2023-inbox-unlimited'
-    | 'black-friday-2023-vpn-free'
-    | 'black-friday-2023-vpn-monthly'
-    | 'black-friday-2023-vpn-yearly'
-    | 'black-friday-2023-vpn-two-years'
-    | 'black-friday-2023-drive-free'
-    | 'black-friday-2023-drive-plus'
-    | 'black-friday-2023-drive-unlimited'
-    | 'pass-family-plan-2024-yearly';
+    | 'pass-family-plan-2024-yearly'
+    | 'black-friday-2024-inbox-free'
+    | 'black-friday-2024-pass-free'
+    | 'black-friday-2024-drive-free'
+    | 'black-friday-2024-vpn-free'
+    | 'black-friday-2024-inbox-free-yearly'
+    | 'black-friday-2024-drive-free-yearly'
+    | 'black-friday-2024-vpn-free-yearly'
+    | 'black-friday-2024-pass-plus'
+    | 'black-friday-2024-plus'
+    | 'black-friday-2024-vpn-monthly'
+    | 'black-friday-2024-unlimited'
+    | 'black-friday-2024-duo';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
@@ -73,6 +75,7 @@ export interface OfferConfig {
         shape?: ButtonLikeShape;
         gradient?: boolean;
         iconGradient?: boolean;
+        iconSize?: IconSize;
         icon?: IconName;
         getCTAContent?: () => string;
         variant?: string;
@@ -87,7 +90,7 @@ export interface OfferConfig {
     hideDealPriceInfos?: boolean;
 }
 
-interface Feature {
+export interface Feature {
     badge?: string;
     disabled?: boolean;
     icon?: IconName;
@@ -99,6 +102,7 @@ export interface Deal {
     couponCode?: COUPON_CODES;
     ref: string;
     cycle: CYCLE;
+    isLifeTime?: boolean;
     features?: () => Feature[];
     getCTAContent?: () => string;
     buttonSize?: ButtonLikeSize;
@@ -111,6 +115,8 @@ export interface Deal {
     isGuaranteed?: boolean;
     dealSuffixPrice?: () => string;
     suffixOnNewLine?: boolean;
+    /** to replace "Save xxx%", better use a short text */
+    bubbleText?: string;
 }
 
 export interface Prices {

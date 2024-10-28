@@ -6,21 +6,36 @@ import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscr
 import type { Currency, Cycle, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { getAllowedCycles } from './getAllowedCycles';
+import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
 
-export function getInitialCycle(
-    cycleParam: Cycle | undefined,
-    subscription: SubscriptionModel | FreeSubscription,
-    planIDs: PlanIDs,
-    plansMap: FullPlansMap,
-    isPlanSelection: boolean,
-    app: ProductParam,
-    minimumCycle: Cycle | undefined,
-    maximumCycle: Cycle | undefined,
-    currency: Currency,
-    allowDowncycling: boolean,
-    defaultCycles?: Cycle[]
-): Cycle {
+interface GetInitialCycleParams {
+    cycleParam: Cycle | undefined;
+    subscription: SubscriptionModel | FreeSubscription;
+    planIDs: PlanIDs;
+    plansMap: FullPlansMap;
+    isPlanSelection: boolean;
+    app: ProductParam;
+    minimumCycle: Cycle | undefined;
+    maximumCycle: Cycle | undefined;
+    currency: Currency;
+    allowDowncycling: boolean;
+    defaultCycles?: Cycle[];
+}
+
+export function getInitialCycle({
+    cycleParam,
+    subscription,
+    planIDs,
+    plansMap,
+    isPlanSelection,
+    app,
+    minimumCycle,
+    maximumCycle,
+    currency,
+    allowDowncycling,
+    defaultCycles,
+}: GetInitialCycleParams): Cycle {
     let cycle = (() => {
         if (isPlanSelection) {
             if (app === APPS.PROTONPASS) {
@@ -40,13 +55,6 @@ export function getInitialCycle(
             return DEFAULT_CYCLE;
         }
 
-        /**
-         * Users that are on the 15 or 30-month cycle should not default to that,
-         * e.g. when clicking "explore other plans".
-         * The condition also includes the cycle of upcoming subscription. The upcoming cycle must be
-         * longer than the current cycle, according to the backend logic. That's why it takes precedence and the
-         * frontend also considers it to be longer.
-         * */
         const cycle =
             getNormalCycleFromCustomCycle(subscription.UpcomingSubscription?.Cycle) ??
             getNormalCycleFromCustomCycle(subscription?.Cycle) ??
@@ -55,13 +63,15 @@ export function getInitialCycle(
         return cycle;
     })();
 
-    cycle = getNormalCycleFromCustomCycle(
-        Math.max(
-            cycle,
-            subscription?.Cycle ?? Number.NEGATIVE_INFINITY,
-            subscription?.UpcomingSubscription?.Cycle ?? Number.NEGATIVE_INFINITY
-        )
-    );
+    if (isSamePlanCheckout(subscription, planIDs)) {
+        cycle = getNormalCycleFromCustomCycle(
+            Math.max(
+                cycle,
+                subscription?.Cycle ?? Number.NEGATIVE_INFINITY,
+                subscription?.UpcomingSubscription?.Cycle ?? Number.NEGATIVE_INFINITY
+            )
+        );
+    }
     cycle = notHigherThanAvailableOnBackend(planIDs, plansMap, cycle);
 
     const allowedCycles = getAllowedCycles({
@@ -74,6 +84,16 @@ export function getInitialCycle(
         plansMap,
         allowDowncycling,
     });
+
+    // Respect the minimum cycle
+    if (minimumCycle && cycle < minimumCycle) {
+        cycle = minimumCycle;
+    }
+
+    // Respect the maximum cycle
+    if (maximumCycle && cycle > maximumCycle) {
+        cycle = maximumCycle;
+    }
 
     if (!allowedCycles.includes(cycle)) {
         cycle = allowedCycles.at(0) ?? DEFAULT_CYCLE;

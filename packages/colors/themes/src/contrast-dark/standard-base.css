@@ -71,4 +71,7 @@
     --optional-promotion-interaction-hover: rgba(110 166 255 / 0.2);
     --optional-promotion-background-start: rgba(110 156 255 / 0.3);
     --optional-promotion-background-end: rgba(61 122 255 / 0.1);
+
+    --optional-bg-promotion-bw-button: var(--background-invert);
+    --optional-text-promotion-bw-button: var(--text-invert);
 }

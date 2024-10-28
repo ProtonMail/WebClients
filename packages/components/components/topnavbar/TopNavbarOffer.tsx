@@ -147,6 +147,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
                     shape={offerConfig.topButton?.shape || 'solid'}
                     buttonGradient={offerConfig.topButton?.gradient}
                     iconGradient={!!offerConfig.topButton?.iconGradient}
+                    iconSize={offerConfig.topButton?.iconSize}
                     iconName={upgradeIcon}
                     onClick={() => {
                         setOfferModalOpen(true);
@@ -155,8 +156,9 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
                     loading={loadingOffer && !offer}
                     className={clsx([
                         offerConfig.topButton?.variant && `button-promotion--${offerConfig.topButton?.variant}`,
+                        offerConfig.topButton?.variant === 'bf-2024' && 'text-uppercase text-semibold',
                     ])}
-                    pill={!!offerConfig.topButton?.variant}
+                    pill={!!offerConfig.topButton?.variant && offerConfig.topButton?.variant !== 'bf-2024'}
                     data-testid="cta:special-offer"
                 >
                     {CTAText}

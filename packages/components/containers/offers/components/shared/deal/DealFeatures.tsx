@@ -51,7 +51,7 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
             )}
             {!isExpanded && (
                 <div className="w-full text-center flex">
-                    <InlineLinkButton className="mx-auto" onClick={() => expand()}>
+                    <InlineLinkButton className="mx-auto offer-see-plan-features" onClick={() => expand()}>
                         <span>{c('Action').t`See plan features`}</span>
                         <Icon name="chevron-down" className="ml-2" />
                     </InlineLinkButton>

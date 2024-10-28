@@ -99,6 +99,9 @@
   --optional-promotion-interaction-hover: rgb(109 74 255 / 0.08);
   --optional-promotion-background-start: rgb(109 74 255 / 0.15);
   --optional-promotion-background-end: rgb(70 26 255 / 0.04);
+
+  --optional-bg-promotion-bw-button: var(--background-invert);
+  --optional-text-promotion-bw-button: var(--text-invert);
 }
 
 .ui-prominent {

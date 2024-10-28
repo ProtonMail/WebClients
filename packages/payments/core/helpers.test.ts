@@ -1,4 +1,4 @@
-import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
+import { DEFAULT_CURRENCY, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import {
     ChargebeeEnabled,
     type Plan,
@@ -484,6 +484,42 @@ describe('payments core helpers', () => {
                     paramPlanName,
                 })
             ).toEqual('EUR');
+        });
+
+        it('should return user currency if user is free, plans are undefined, subscription is free and status does not have preferred currency', () => {
+            const user = {
+                Currency: 'CHF',
+                isPaid: false,
+                Credit: 0,
+            } as UserModel;
+
+            const subscription = FREE_SUBSCRIPTION;
+
+            const plans = undefined;
+
+            const status = {
+                // non-existent country code to make sure that this test doesn't break
+                // as we add more regional currencies and countries
+                CountryCode: 'XX',
+                State: null,
+                VendorStates: {
+                    Apple: true,
+                    Bitcoin: true,
+                    Card: true,
+                    InApp: false,
+                    Paypal: true,
+                    Cash: true,
+                },
+            };
+
+            expect(
+                getPreferredCurrency({
+                    user,
+                    plans,
+                    subscription,
+                    status,
+                })
+            ).toEqual('CHF');
         });
     });
 

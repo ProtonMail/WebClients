@@ -10,7 +10,7 @@ const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
     return (
         <div className="mb-4">
             {offer.deals.map((deal) => {
-                const { prices, cycle, dealName, star } = deal;
+                const { prices, cycle, dealName } = deal;
                 const { withoutCoupon = 0, withoutCouponMonthly = 0 } = prices || {};
                 const discount = getDiscount(deal);
                 const discountedAmount = (
@@ -25,7 +25,13 @@ const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
                 );
                 const description = getRenewDescription(cycle, discountedAmount, regularAmount, discount);
 
-                if (!description || !star) {
+                // only display description for these 3 promos
+                if (
+                    !description ||
+                    (offer?.ID !== 'black-friday-2024-inbox-free' &&
+                        offer?.ID !== 'black-friday-2024-drive-free' &&
+                        offer?.ID !== 'black-friday-2024-vpn-free')
+                ) {
                     return null;
                 }
 
@@ -33,16 +39,20 @@ const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
 
                 return (
                     <p key={key} className="text-sm text-center color-weak">
-                        <sup className="mr-2">{star}</sup>
                         {description}
                     </p>
                 );
             })}
-            <p className="text-sm text-center color-weak">
-                <div>{c('bf2023: Footer').t`Discounts are based on standard monthly pricing.`}</div>
-                <div>{c('bf2023: Footer')
-                    .t`Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.`}</div>
-            </p>
+
+            {offer?.ID !== 'black-friday-2024-inbox-free' &&
+                offer?.ID !== 'black-friday-2024-drive-free' &&
+                offer?.ID !== 'black-friday-2024-vpn-free' && (
+                    <p className="text-sm text-center color-weak">
+                        <div>{c('BF2024: Footer').t`Discounts are based on standard monthly pricing.`}</div>
+                        <div>{c('BF2024: Footer')
+                            .t`Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.`}</div>
+                    </p>
+                )}
         </div>
     );
 };

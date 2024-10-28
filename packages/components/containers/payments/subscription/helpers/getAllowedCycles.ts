@@ -1,10 +1,10 @@
 import { ADDON_NAMES, PLANS, type PlanIDs, isRegionalCurrency } from '@proton/payments';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import { CYCLE } from '@proton/shared/lib/constants';
-import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
-import { getPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { Currency, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
+import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
 
 function capMaximumCycle(
@@ -106,9 +106,7 @@ export const getAllowedCycles = ({
 }): CYCLE[] => {
     const isTrialSubscription = isTrial(subscription);
     const sortedCycles = defaultCycles.sort((a, b) => b - a);
-    const currentPlanName: PLANS | undefined = getPlan(subscription)?.Name;
-    const newPlanName: PLANS | undefined = getPlanFromIds(planIDs);
-    const isSamePlan = currentPlanName === newPlanName;
+    const isSamePlan = isSamePlanCheckout(subscription, planIDs);
 
     const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, currency, plansMap, subscription);
 

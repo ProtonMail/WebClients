@@ -9,6 +9,7 @@ import { passApps } from '@proton/shared/lib/authentication/apps';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { useFlag } from '@proton/unleash';
 
 import SignupContainer from '../signup/SignupContainer';
@@ -68,6 +69,7 @@ const SingleSignupSwitchContainer = ({
         singlePageSignupApps.has(maybePreAppIntent as any) ||
         singlePageSignupPaths.has(location.pathname as any) ||
         singlePageSignupPlans.has(searchParams.get('plan') as any) ||
+        getHas2024OfferCoupon(searchParams.get('coupon')) ||
         searchParams.get('mode') === 'sps' ||
         singleSignupEnabled;
 
