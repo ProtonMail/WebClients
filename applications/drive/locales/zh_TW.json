@@ -1276,8 +1276,17 @@
       "Encrypted password manager": [
         "加密密碼管理"
       ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "我們的基本免費方案包含端對端加密電子郵件和儲存空間。不包含頂級功能。"
+      ],
       "Save ${ upsellSavings }": [
         "省下${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "透過${ upsellPlanName }省錢"
+      ],
+      "Secure personal and shared calendar": [
+        "安全保護個人及共享行事曆"
       ],
       "Try ${ planName }": [
         "嘗試${ planName }"
@@ -2299,11 +2308,6 @@
         "逾期帳單"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "雙重驗證可以增加一層安全保障，防止盜用。"
@@ -2364,6 +2368,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2764,6 +2773,9 @@
       "Invalid expiration date": [
         "到期日無效"
       ],
+      "Invalid IBAN": [
+        "國際銀行帳號不正確"
+      ],
       "Invalid name": [
         "無效的名稱"
       ],
@@ -3006,6 +3018,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "您已用鑿行事曆組的上限。"
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "您的帳號已達聯絡人數量限制"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -3348,6 +3363,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "終身帳號無法加入群組方案。"
       ],
+      "Manage addresses": [
+        "管理電子郵件地址"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "有成員的方案的擁有者無法加入其他家庭方案。"
       ],
@@ -3365,6 +3383,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "您在六個月內只能接受三次邀請。若您需要例外，請聯絡 ${ supportLink }。"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "您無法使用目前方案接受此邀請函。"
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
@@ -3396,6 +3417,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "設定您家庭帳號和邀請使用者"
+      ],
       "Set up your family": [
         "設定您的家庭"
       ],
@@ -3889,6 +3913,9 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
       ],
+      "${ invitations.length } pending invitation": [
+        "${ invitations.length }處理邀請函"
+      ],
       "${ nbFile } encrypted file": [
         "${ nbFile }加密的檔案"
       ],
@@ -3939,6 +3966,9 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -4407,6 +4437,9 @@
       ],
       "How does encrypted search work?": [
         "加密搜索如何運作？"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -5499,6 +5532,9 @@
       "Address": [
         "電郵位址"
       ],
+      "Anderson": [
+        "安德松"
+      ],
       "Anyone on the Internet with the link can view": [
         "網路上的任何人只要知道連結都可以檢視"
       ],
@@ -5585,6 +5621,9 @@
       ],
       "Comment": [
         "評論"
+      ],
+      "Company name": [
+        "公司名字"
       ],
       "Confirm password": [
         "確認密碼"
@@ -5732,6 +5771,9 @@
       ],
       "I understand the risk": [
         "我已了解此可能的風險"
+      ],
+      "IBAN": [
+        "國際銀行帳號"
       ],
       "Import all messages": [
         "匯入全部郵件"
@@ -5969,6 +6011,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "此舉將會永久刪除所有位於鎖定之雲端硬碟內的檔案。"
+      ],
+      "Thomas": [
+        "湯姆斯"
       ],
       "Title": [
         "標題"
@@ -6877,6 +6922,9 @@
       "Sync and backup all your files across devices": [
         "於裝置同步及備份您全部的檔案"
       ],
+      "TOR over VPN": [
+        "經 TOR 的 VPN"
+      ],
       "Two-factor authentication": [
         "兩步驟驗證"
       ],
@@ -7048,6 +7096,14 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -7060,14 +7116,6 @@
       ],
       "Switch plans?": [
         "切換方案？"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
       ]
     },
     "new_plans: tooltip": {
@@ -7603,14 +7651,29 @@
       "End-to-end encrypted storage for your files": [
         "端對端加密儲存您的檔案"
       ],
+      "Final approval in progress": [
+        "最後審核正在進行"
+      ],
+      "Final approval pending": [
+        "正在審核許可"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "開始使用 ${ DRIVE_APP_NAME }，我們會將您儲存空間升級至 5GB！"
       ],
       "Get the desktop app": [
         "取得桌面應用程式"
       ],
+      "Get the mobile app": [
+        "取得手機應用程式"
+      ],
       "Hang tight": [
         "準備好"
+      ],
+      "Invitation accepted": [
+        "接受邀请"
+      ],
+      "Invitation received": [
+        "邀請已收到"
       ],
       "Invite team members": [
         "邀請團隊成員"
@@ -7620,6 +7683,9 @@
       ],
       "Secure your files": [
         "確保您的檔案安全"
+      ],
+      "Securely share files and folders": [
+        "安全保護共享檔案和資料夾"
       ],
       "Set a recovery method": [
         "設定備援方法"
@@ -7745,6 +7811,9 @@
       "Get it for ${ monthlyPrice }": [
         "只需${ monthlyPrice }"
       ],
+      "Introducing ${ passFamilyPlanName }": [
+        "介紹 ${ passFamilyPlanName }"
+      ],
       "Limited-time deal.": [
         "限時優惠。"
       ]
@@ -7761,11 +7830,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "銀行轉帳"
+      ],
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "使用公司名字"
+      ],
+      "Use personal name": [
+        "使用個人名字"
       ]
     },
     "Payments": {
@@ -8081,6 +8161,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "嘗試${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "於Amazon購物時等…"
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "當網站要求您輸入電子郵件時，給他們別名就好。 別名由 ${ passLink } 提供。"
