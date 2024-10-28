@@ -151,18 +151,6 @@ export function SuggestionModePlugin({
               // as no more nodes existing for that suggestion.
               if (suggestionNodeKeys.size === 0) {
                 markNodeMap.delete(id)
-                suggestionModeLogger.info(
-                  `Resolving thread for suggestion ${id} as all nodes for it have been deleted.`,
-                )
-                controller
-                  .getAllThreads()
-                  .then((threads) => {
-                    const thread = threads.find((t) => t.markID === id)
-                    if (thread) {
-                      controller.rejectSuggestion(thread.id).catch(sendErrorMessage)
-                    }
-                  })
-                  .catch(sendErrorMessage)
               }
             } else {
               // No suggestion node for the given ID existed before.
