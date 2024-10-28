@@ -1234,13 +1234,16 @@
         "Abychom mohli bezpečně prohledávat vaše e-maily, musíme do prohlížeče stáhnout kopie vašich zpráv. Počáteční stahování může chvíli trvat."
       ],
       "Toggle Calendar app": [
-        "Zobrazení aplikace kalendáře"
+        "Přepnout aplikaci Calendar"
+      ],
+      "Toggle Contacts app": [
+        "Přepnout aplikaci Kontakty"
       ],
       "Toggle security center app": [
-        "Přepnout aplikaci centrum zabezpečení"
+        "Přepnout aplikaci Bezpečnostní centrum"
       ],
       "Toggle settings": [
-        "Otevřít/zavřít nastavení"
+        "Přepnout nastavení"
       ],
       "Tomorrow": [
         "Zítra"
@@ -3576,6 +3579,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Chcete-li zajistit co nejvyšší zabezpečení účtu, nastavte frázi pro obnovení."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
       ],
@@ -3953,6 +3959,12 @@
       "A problem occurred, please try again.": [
         "Objevil se problém, prosím zkuste to znovu."
       ],
+      "Add at least one action": [
+        "Přidejte alespoň jednu akci"
+      ],
+      "Add at least one condition": [
+        "Přidejte alespoň jednu podmínku"
+      ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
@@ -4136,6 +4148,9 @@
       "Invalid expiration time": [
         "Neplatný čas pro vypršení platnosti"
       ],
+      "Invalid IBAN": [
+        "Neplatný IBAN"
+      ],
       "Invalid name": [
         "Neplatný název"
       ],
@@ -4307,6 +4322,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Odesílání příloh je omezeno, dokud se nevejdete do limitů svého tarifu nebo neprovedete navýšení."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Odesílání příloh je omezeno, když překročíte limity svého tarifu, nebo dokud nenavýšíte svůj tarif."
+      ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
       ],
@@ -4354,6 +4372,9 @@
       ],
       "Thanks for the feedback!": [
         "Děkujeme za zpětnou vazbu!"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Částka k zaplacení se změnila. Zkuste to prosím znovu."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Přílohu nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubor nadále dešifrovat \nprogramem, jako je např. GnuPG.",
@@ -4474,6 +4495,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Dosáhli jste maximálního počtu kalendářů."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosáhli jste limitu počtu kontaktů vašeho účtu"
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -4853,6 +4877,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Doživotní účty nemohou být připojeny k rodinnému tarifu."
       ],
+      "Manage addresses": [
+        "Spravovat adresy"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Vlastníci tarifu se členy, se nemohou připojit k jinému rodinnému tarifu."
       ],
@@ -4870,6 +4897,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Během 6 měsíců můžete přijmout pouze 3 pozvánky. Pokud požadujete výjimku, kontaktujte prosím ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "S vaším současným tarifem nemůžete přijmout tuto pozvánku."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
@@ -4907,6 +4937,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Nastavte váš rodinný účet a pozvěte uživatele"
+      ],
       "Invite members and get everything up and running.": [
         "Pozvěte členy a vše uveďte do chodu."
       ],
@@ -5101,6 +5134,11 @@
         "Nepřečteno"
       ]
     },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "S přílohami"
+      ]
+    },
     "Filter preview": {
       "read": [
         "přečteno"
@@ -5192,6 +5230,9 @@
       ],
       "Start free trial": [
         "Zkuste bezplatnou zkušební verzi"
+      ],
+      "Try the new desktop app": [
+        "Vyzkoušejte novou desktopovou aplikaci"
       ],
       "Upgrade now": [
         "Navýšit nyní"
@@ -6013,6 +6054,9 @@
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/měsíc)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrování pokud jsou splněny všechny následující podmínky)"
       ],
@@ -6126,6 +6170,9 @@
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Všechny naplánované nebo odložené zprávy budou zrušeny."
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Všechny podsložky budou rovněž smazány. E-maily uložené ve složce ${ nameDeleted } však smazány nebudou a lze je nalézt ve složce Všechna pošta."
       ],
       "Applying actions to conversations": [
         "Použití akcí na konverzace"
@@ -6460,6 +6507,9 @@
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-maily označené štítkem ${ nameDeleted } nebudou smazány a lze je stále nalézt v příslušné složce."
+      ],
       "embedded image": [
         "vložený obrázek",
         "vložené obrázky",
@@ -6579,6 +6629,9 @@
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Tuto zprávu posílám uživateli, který není uživatelem služby ${ MAIL_APP_NAME }."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -6871,6 +6924,9 @@
       "Organization size": [
         "Velikost organizace"
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Prioritou našich upozornění je bezpečnost. Pokud nepoznáváte žádné z uniklých informací, můžete tuto zprávu bez obav ignorovat."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Zkontrolujte, že se jedná o legitimní zprávu."
       ],
@@ -7128,6 +7184,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Odloženo do ${ dateString }, ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Odloženo do dneška, ${ formattedTime }"
@@ -7405,6 +7464,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
       ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Vypněte pro vyhledávání pouze podle data, jména, e-mailové adresy nebo předmětu. Chcete-li deaktivovat vyhledávání v obsahu zpráv (a smazat zprávy stažené pro povolení této funkce), přejděte do Nastavení."
+      ],
       "Turn on to search the content of your messages": [
         "Zapněte pro možnost vyhledávat v obsahu vašich zpráv"
       ],
@@ -7434,6 +7496,9 @@
       ],
       "Upgrade to add more addresses to your account.": [
         "Navyšte svůj účet a přidejte více e-mailových adres k vašemu účtu."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Navyšte svůj tarif pro automatické mazání zpráv, které jsou v koši nebo spamu déle než 30 dní."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Navyšte svůj účet pro vytváření více složek, filtrů a adres."
@@ -8172,6 +8237,9 @@
       "And": [
         "A"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "ANY": [
         "JAKÝKOLI"
       ],
@@ -8255,6 +8323,9 @@
       ],
       "Colors": [
         "Barvy"
+      ],
+      "Company name": [
+        "Název společnosti"
       ],
       "Composer": [
         "Editor"
@@ -8387,6 +8458,9 @@
       ],
       "I understand the risk": [
         "Rozumím rizikům"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "POKUD"
@@ -8568,6 +8642,9 @@
       "Reveal password": [
         "Zobrazit heslo"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Ženeva"
+      ],
       "Search in": [
         "Hledat v"
       ],
@@ -8612,6 +8689,9 @@
       ],
       "Then": [
         "Potom"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time": [
         "Čas"
@@ -9110,6 +9190,9 @@
       ]
     },
     "Message image": {
+      "Image could not be loaded.": [
+        "Obrázek se nepodařilo načíst."
+      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Obrázek nebyl nahrán kvůli ochraně vašeho soukromí."
       ]
@@ -9767,6 +9850,9 @@
       "Sync and backup all your files across devices": [
         "Synchronizace a zálohování všech vašich souborů mezi zařízeními"
       ],
+      "TOR over VPN": [
+        "TOR skrze VPN"
+      ],
       "Two-factor authentication": [
         "Dvoufázové ověření"
       ],
@@ -10045,6 +10131,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
       ],
@@ -10096,6 +10185,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Nástroj pro správu organizace, který umožňuje správcům přidávat a odebírat uživatele, spravovat jejich přístup ke službám ${ BRAND_NAME } a provádět další úkony."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naše výkonná infrastruktura zajistí, že budete mít přístup k účtu kdykoliv to bude potřeba"
       ],
@@ -10137,6 +10229,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Směrujte svůj internetový provoz skrze síť TOR jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
@@ -10312,6 +10407,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "Aby import fungoval, musíte vybrat všechny požadované položky, jak je znázorněno na obrázku GIF."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Vyberte, k čemu může ${ BRAND_NAME } přistupovat: zobrazit e-mailové zprávy a nastavení, zobrazit a stáhnout kontakty, zobrazit a stáhnout všechny denní události, ke kterým máte přístup z kalendáře Google."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10626,11 +10726,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankovní převod"
+      ],
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Použít název společnosti"
+      ],
+      "Use personal name": [
+        "Použít vlastní jméno"
       ]
     },
     "Payments": {
@@ -10710,6 +10821,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrzením této platby zmocňujete ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, aby dali pokyn vaší bance k odepsání peněz z vašeho účtu a aby vaše banka odpovídajícím způsobem odepsala peníze z vašeho účtu. Vrácení peněz je možné do 8 týdnů od data odepsání peněz za podmínek stanovených ve smlouvě s bankou."
+      ],
+      "Street address, postal code, and city": [
+        "Ulice, poštovní směrovací číslo a město"
       ]
     },
     "PGP key encryption warning": {
@@ -11107,6 +11226,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Vyzkoušejte ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Použito na Amazonu pro nakupování, atd."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Když se vás zeptají na e-mailovou adresu, dejte jim místo toho tento alias. Aliasy jsou poskytovány ${ passLink }."
@@ -11969,6 +12091,9 @@
     "Subscription change warning": {
       "Got it": [
         "Rozumím"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Stačí se přihlásit k účtu v Apple App Store a vybrat ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Stačí se přihlásit k účtu v Obchodě Play a stisknout ${ subscriptions }."
@@ -13789,6 +13914,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilní verze"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tato verze prohlížeče TOR není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13867,6 +13995,11 @@
       ],
       "No ads": [
         "Bez reklam"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
       ]
     },
     "wallet_signup_2024: Info": {
