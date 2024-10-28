@@ -37,7 +37,7 @@ export const Select = <V extends unknown>({
 }: Props<V>) => {
     const selectRef = useRef<HTMLDivElement>(null);
 
-    const searchableSelect = (
+    const select = (
         <InputField<typeof SelectTwo<V>>
             as={SelectTwo}
             dropdownClassName="wallet-select-dropdown"
@@ -50,7 +50,13 @@ export const Select = <V extends unknown>({
             {...props}
         >
             {options.map((opt) => (
-                <Option key={opt.id} title={opt.label} value={opt.value} disabled={opt.disabled}>
+                <Option
+                    key={opt.id}
+                    data-testid={`option-${opt.id}`}
+                    title={opt.label}
+                    value={opt.value}
+                    disabled={opt.disabled}
+                >
                     {opt.children}
                 </Option>
             ))}
@@ -66,7 +72,7 @@ export const Select = <V extends unknown>({
                 ref={selectRef}
                 classname={containerClassName}
             >
-                {searchableSelect}
+                {select}
             </InputFieldStacked>
         );
     }
@@ -74,7 +80,7 @@ export const Select = <V extends unknown>({
     return (
         <div ref={selectRef} className={clsx(containerClassName, 'wallet-select')}>
             <div className="shrink-0">{prefix}</div>
-            {searchableSelect}
+            {select}
         </div>
     );
 };

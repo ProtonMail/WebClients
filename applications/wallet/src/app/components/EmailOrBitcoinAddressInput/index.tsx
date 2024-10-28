@@ -1,41 +1,25 @@
 import type { KeyboardEvent } from 'react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
-import type { QRCode } from 'jsqr';
-import compact from 'lodash/compact';
 import { c } from 'ttag';
 
-import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmNetwork } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms';
-import type { AddressesAutocompleteItem } from '@proton/components';
-import {
-    Dropdown,
-    DropdownSizeUnit,
-    Icon,
-    Tooltip,
-    getContactsAutocompleteItems,
-    getRecipientFromAutocompleteItem,
-    useAutocompleteFilter,
-    useModalState,
-} from '@proton/components';
+import { Dropdown, DropdownSizeUnit, Icon, Tooltip } from '@proton/components';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
-import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { Address, Recipient } from '@proton/shared/lib/interfaces';
+import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { handleRecipientInputChange, inputToRecipient, splitBySeparator } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
 import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet';
 
 import type { InputProps } from '../../atoms';
 import { CoreButton, Input } from '../../atoms';
 import { PASSWORD_MANAGER_IGNORE_PROPS } from '../../constants';
-import { isValidBitcoinAddress } from '../../utils';
-import { isSelfAddress } from '../../utils/email';
+import type { BtcAddressOrError, RecipientEmailMap } from '../BitcoinSendModal/useEmailAndBtcAddressesMaps';
 import { EmailListItem } from '../EmailListItem';
 import { QRCodeReaderModal } from '../QRCodeReaderModal';
-import type { BtcAddressOrError, RecipientEmailMap } from './useEmailAndBtcAddressesMaps';
+import { useEmailOrBitcoinAddressInput } from './useEmailOrBitcoinAddressInput';
 
 import './EmailOrBitcoinAddressInput.scss';
 
@@ -64,16 +48,6 @@ interface Props extends Omit<InputProps, 'label' | 'value' | 'onChange'> {
     }) => JSX.Element | null;
 }
 
-const validateInput = (input: string, addresses: Address[], network: WasmNetwork) => {
-    if (validateEmailAddress(input)) {
-        if (isSelfAddress(input, addresses)) {
-            return c('Error').t`Bitcoin via Email to self is not supported`;
-        }
-    } else if (!isValidBitcoinAddress(input, network)) {
-        return c('Error').t`Input isn't a valid email or bitcoin address`;
-    }
-};
-
 export const EmailOrBitcoinAddressInput = ({
     contactEmails,
     contactEmailsMap,
@@ -92,121 +66,37 @@ export const EmailOrBitcoinAddressInput = ({
 }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const [input, setInput] = useState('');
-    const [emailError, setEmailError] = useState('');
-
-    const [addresses = []] = useAddresses();
-
-    const [qrCodeModal, setQrCodeModal] = useModalState();
     const [cameraPermissionError, setCameraPermissionError] = useState<DOMException['name']>();
 
-    const recipientsWithBtcAddress = compact(Object.values(recipientEmailMap));
+    const {
+        input,
+        setInput,
 
-    const [recipientsByAddress] = useMemo(() => {
-        return recipientsWithBtcAddress.reduce<[Set<string>, Set<string>]>(
-            (acc, { recipient: { Address } }) => {
-                if (Address) {
-                    acc[0].add(canonicalizeEmail(Address));
-                }
+        setEmailError,
+        emailError,
 
-                return acc;
-            },
-            [new Set(), new Set()]
-        );
-    }, [recipientsWithBtcAddress]);
+        recipientsWithBtcAddress,
 
-    const filteredContactEmails = useMemo(
-        () => contactEmails?.filter(({ Email }) => !excludedEmails.includes(Email)),
-        [contactEmails, excludedEmails]
-    );
+        filteredOptions,
 
-    const contactsAutocompleteItems = useMemo(() => {
-        return getContactsAutocompleteItems(
-            filteredContactEmails,
-            ({ Email }) =>
-                !recipientsByAddress.has(canonicalizeEmail(Email)) && !validateInput(Email, addresses, network)
-        );
-    }, [filteredContactEmails, recipientsByAddress, addresses, network]);
+        qrCodeModal,
+        setQrCodeModal,
 
-    const safeAddRecipients = useCallback(
-        (newRecipients: Recipient[]) => {
-            const recipients = newRecipients.filter(({ Address }) => {
-                return !validateInput(Address || '', addresses, network);
-            });
-
-            if (recipients.length) {
-                setInput('');
-                setEmailError('');
-                onAddRecipients(recipients);
-            }
-        },
-        [onAddRecipients, addresses, network]
-    );
+        handleAddRecipientFromSelect,
+        handleAddRecipientFromInput,
+        handleAddRecipientFromScan,
+    } = useEmailOrBitcoinAddressInput({
+        contactEmails,
+        recipientEmailMap,
+        limit,
+        onAddRecipients,
+        excludedEmails,
+        network,
+    });
 
     useEffect(() => {
         inputRef.current?.focus();
     });
-
-    const handleAddRecipientFromInput = (input: string) => {
-        const trimmedInput = input.trim();
-        if (!trimmedInput.length) {
-            setInput('');
-            return;
-        }
-
-        const inputs = splitBySeparator(trimmedInput);
-
-        const recipients = inputs.map((input) => inputToRecipient(input));
-        const { validRecipients, invalidRecipients, errors } = recipients.reduce<{
-            validRecipients: Recipient[];
-            invalidRecipients: Recipient[];
-            errors: string[];
-        }>(
-            (acc, recipient) => {
-                const error = validateInput(recipient.Address || '', addresses, network);
-                if (error) {
-                    acc.errors.push(error);
-                    acc.invalidRecipients.push(recipient);
-                } else {
-                    acc.validRecipients.push(recipient);
-                }
-                return acc;
-            },
-            { validRecipients: [], invalidRecipients: [], errors: [] }
-        );
-
-        safeAddRecipients(validRecipients);
-
-        if (errors.length) {
-            setEmailError(errors[0]);
-            setInput(invalidRecipients.map(({ Address }) => Address).join(', '));
-        }
-    };
-
-    const handleSelect = useCallback(
-        (item: AddressesAutocompleteItem) => {
-            safeAddRecipients(getRecipientFromAutocompleteItem(contactEmails, item));
-        },
-        [safeAddRecipients, contactEmails]
-    );
-
-    const getData = useCallback((value: { label: string }) => {
-        return value.label;
-    }, []);
-
-    const filteredOptions = useAutocompleteFilter(input, contactsAutocompleteItems, getData, limit, 1);
-
-    const handleInputChange = (newValue: string) => {
-        handleRecipientInputChange(newValue, true, safeAddRecipients, setInput);
-    };
-
-    const handleAddRecipientFromScan = (qrcode: QRCode) => {
-        const value = qrcode.data.trimStart();
-        handleInputChange(value);
-        onChange?.(value);
-
-        qrCodeModal.onClose();
-    };
 
     const listContent = useMemo(() => {
         if (recipientsWithBtcAddress?.length) {
@@ -286,10 +176,7 @@ export const EmailOrBitcoinAddressInput = ({
                         value={input}
                         disabled={recipientsWithBtcAddress.length >= MAX_RECIPIENTS_PER_TRANSACTIONS || disabled}
                         {...PASSWORD_MANAGER_IGNORE_PROPS}
-                        onValue={(value: string) => {
-                            handleInputChange(value.trimStart());
-                            onChange?.(value);
-                        }}
+                        onValue={setInput}
                         onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
                             setEmailError('');
                             if (event.key === 'Enter') {
@@ -388,7 +275,7 @@ export const EmailOrBitcoinAddressInput = ({
                                         chunks={chunks}
                                         name={option.value.Name}
                                         address={option.value.Email}
-                                        onClick={() => handleSelect(option)}
+                                        onClick={() => handleAddRecipientFromSelect(option)}
                                     />
                                 </li>
                             );

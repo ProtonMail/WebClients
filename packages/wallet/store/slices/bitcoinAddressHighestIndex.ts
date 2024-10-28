@@ -4,12 +4,13 @@ import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 import { MINUTE } from '@proton/shared/lib/constants';
+import { type SimpleMap } from '@proton/shared/lib/interfaces';
 
 import type { WalletThunkArguments } from '../thunk';
 
 const name = 'bitcoin_address_highest_index' as const;
 
-type HighestIndexByWalletAccountId = Partial<Record<string, { time: number; index: number }>>;
+type HighestIndexByWalletAccountId = SimpleMap<{ time: number; index: number }>;
 export interface BitcoinAddressHighestIndexState {
     [name]: ModelState<HighestIndexByWalletAccountId>;
 }

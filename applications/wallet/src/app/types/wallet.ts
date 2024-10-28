@@ -1,4 +1,5 @@
 import type { WasmAccount, WasmApiWalletAccount, WasmWallet } from '@proton/andromeda';
+import { type SimpleMap } from '@proton/shared/lib/interfaces';
 import { type IWasmApiWalletData } from '@proton/wallet';
 
 export type AccountWithChainData = {
@@ -8,16 +9,14 @@ export type AccountWithChainData = {
     poolSize: number;
 };
 
-export type AccountChainDataByAccountId = Partial<Record<string, AccountWithChainData>>;
-export type AccountIdByDerivationPathAndWalletId = Partial<Record<string, Partial<Record<string, string>>>>;
+export type AccountChainDataByAccountId = SimpleMap<AccountWithChainData>;
+export type AccountIdByDerivationPathAndWalletId = SimpleMap<SimpleMap<string>>;
 
 export type WalletWithChainData = {
     wallet: WasmWallet;
     accounts: AccountChainDataByAccountId;
 };
 
-export type WalletChainDataByWalletId = Partial<Record<string, WalletWithChainData>>;
+export type WalletChainDataByWalletId = SimpleMap<WalletWithChainData>;
 
-export type WalletMap = Partial<
-    Record<string, { wallet: IWasmApiWalletData; accounts: Partial<Record<string, WasmApiWalletAccount>> }>
->;
+export type WalletMap = SimpleMap<{ wallet: IWasmApiWalletData; accounts: SimpleMap<WasmApiWalletAccount> }>;

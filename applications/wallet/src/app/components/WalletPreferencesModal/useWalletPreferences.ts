@@ -3,8 +3,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import type { WasmBitcoinUnit } from '@proton/andromeda';
-import { useModalState } from '@proton/components';
-import { useNotifications, useUserKeys } from '@proton/components/hooks';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { useUserKeys } from '@proton/components/hooks/useUserKeys';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { encryptWalletDataWithWalletKey, useWalletApiClients } from '@proton/wallet';
@@ -12,7 +13,8 @@ import { bitcoinUnitChange, useUserWalletSettings, useWalletDispatch, walletUpda
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
-import { getAccountBalance, getAccountWithChainDataFromManyWallets, getThemeForWallet } from '../../utils';
+import { useBvEWarning } from '../../hooks/useBvEWarning';
+import { getThemeForWallet } from '../../utils';
 
 export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAccount?: () => void) => {
     const [walletName, setWalletName] = useState(wallet.Wallet.Name);
@@ -29,7 +31,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
     const dispatch = useWalletDispatch();
     const [userKeys] = useUserKeys();
 
-    const { apiWalletsData = [], walletsChainData } = useBitcoinBlockchainContext();
+    const { apiWalletsData = [] } = useBitcoinBlockchainContext();
 
     const { open } = useWalletSetupModalContext();
     const openBackupModal = () => {
@@ -122,29 +124,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
         window.localStorage.clear();
     };
 
-    const [shouldShowBvEWarningByAccountId, setShouldShowBvEWarningByAccountId] = useState<
-        Partial<Record<string, boolean>>
-    >({});
-
-    useEffect(() => {
-        const run = async () => {
-            for (const account of wallet.WalletAccounts) {
-                const accountChainData = getAccountWithChainDataFromManyWallets(
-                    walletsChainData,
-                    account.WalletID,
-                    account.ID
-                );
-
-                const balance = await getAccountBalance(accountChainData);
-                setShouldShowBvEWarningByAccountId((prev) => ({
-                    ...prev,
-                    [account.ID]: account.Priority === 1 || balance > 0,
-                }));
-            }
-        };
-
-        void run();
-    }, [wallet.WalletAccounts, walletsChainData]);
+    const { bveWarningByAccountId } = useBvEWarning(wallet);
 
     useEffect(() => {
         if (!wallet.WalletAccounts?.length) {
@@ -163,7 +143,7 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
         setWalletName,
         updateWalletName,
 
-        shouldShowBvEWarningByAccountId,
+        bveWarningByAccountId,
 
         openBackupModal,
 

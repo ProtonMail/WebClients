@@ -36,7 +36,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
         setWalletName,
         loadingWalletNameUpdate,
         updateWalletName,
-        shouldShowBvEWarningByAccountId,
+        bveWarningByAccountId,
         walletDeletionConfirmationModal,
         openWalletDeletionConfirmationModal,
         openBackupModal,
@@ -108,9 +108,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
                                             wallet={wallet}
                                             walletAccount={walletAccount}
                                             otherWallets={otherWallets}
-                                            shouldShowBvEWarning={Boolean(
-                                                shouldShowBvEWarningByAccountId[walletAccount.ID]
-                                            )}
+                                            shouldShowBvEWarning={Boolean(bveWarningByAccountId[walletAccount.ID])}
                                         />
                                     </div>
                                 );
