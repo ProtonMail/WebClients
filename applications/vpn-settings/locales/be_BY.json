@@ -2541,6 +2541,9 @@
       "Invalid expiration date": [
         "Памылковая дата завяршэння тэрміну дзеяння"
       ],
+      "Invalid IBAN": [
+        "Памылковы IBAN"
+      ],
       "Invalid invitation link": [
         "Памылковая спасылка запрашэння"
       ],
@@ -2639,6 +2642,9 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -2791,6 +2797,9 @@
       "Got it": [
         "Зразумела"
       ],
+      "Invite a user": [
+        "Запрасіць карыстальніка"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Запрасіць існуючага карыстальніка ${ BRAND_NAME }"
       ],
@@ -2848,6 +2857,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Пажыццёвыя ўліковыя запісы нельга далучыць да сямейнага тарыфнага плана."
       ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
+      ],
       "Manage user accounts": [
         "Кіраванне ўліковымі запісамі карыстальнікаў"
       ],
@@ -2883,6 +2895,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Вы можаце прыняць толькі 3 запрашэнні за 6 месяцаў. Калі вам неабходна павялічыць іх колькасць, перайдзіце па спасылцы ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Вы не можаце прыняць гэта запрашэнне з вашым бягучым тарыфным планам."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас запрасілі далучыцца да ${ bannerOrganization }. ${ viewInviteButton }"
@@ -2942,6 +2957,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Калі ў карыстальніка ўжо ёсць адрас ${ MAIL_APP_NAME }, увядзіце яго тут. У адваротным выпадку спачатку неабходна стварыць уліковы запіс."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Калі ў карыстальніка ёсць уліковы запіс з ${ BRAND_NAME }, увядзіце яго тут. У адваротным выпадку спачатку неабходна стварыць яго."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organizationName }."
@@ -3575,6 +3593,9 @@
         "(${ memberCount } удзельнікаў)",
         "(${ memberCount } удзельнікі)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/месяц)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Атрымайце адрас ${ BRAND_NAME }**, каб карыстацца ўсімі сэрвісамі ${ BRAND_NAME_TWO }, уключаючы ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -4045,6 +4066,9 @@
       ],
       "High Priority": [
         "Высокі прыярытэт"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
@@ -5380,6 +5404,9 @@
       "Amount due": [
         "Да аплаты"
       ],
+      "Anderson": [
+        "Маўр"
+      ],
       "Assertion Consumer Service URL": [
         "URL-адрас службы сцверджання кліентаў (ACS)"
       ],
@@ -5442,6 +5469,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
+      ],
+      "Company name": [
+        "Назва кампаніі"
       ],
       "Config to connect to ${ serverName }": [
         "Канфігурацыя для падключэння да ${ serverName }"
@@ -5559,6 +5589,9 @@
       ],
       "Hide password": [
         "Схаваць пароль"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Інтэрвал"
@@ -5722,6 +5755,9 @@
       "Reveal password": [
         "Паказаць пароль"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Жэнева"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -5754,6 +5790,9 @@
       ],
       "System information": [
         "Сістэмная інфармацыя"
+      ],
+      "Thomas": [
+        "Янка"
       ],
       "Two-password mode": [
         "Рэжым двух пароляў"
@@ -6696,6 +6735,9 @@
       "Sync and backup all your files across devices": [
         "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
       ],
+      "TOR over VPN": [
+        "Tor праз VPN"
+      ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
       ],
@@ -7012,6 +7054,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтыфікацыі ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў"
       ],
@@ -7063,6 +7108,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць сваім доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надзейная інфраструктура гарантуе вам пастаянны доступ да вашага ўліковага запісу"
       ],
@@ -7104,6 +7152,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Скідайце паролі і двухфактарную аўтэнтыфікацыю карыстальнікаў"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Накіроўвайце свой трафік праз сетку TOR адным націскам"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
@@ -7688,6 +7739,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Мы не можам праверыць аўтэнтыфікацыю гэтай ідэнтычнасці."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Мы не можам праверыць, ці з'яўляецца бяспечным адрасны ключ гэтага адпраўніка. Здараецца так, што ўзнікае затрымка пры абнаўленні звестак адпраўніка. Паспрабуйце яшчэ раз пазней. Калі вы сумняваецеся ў сапраўднасці гэтага запрашэння або адпраўніка, звярніцеся ў службу падтрымкі кліентаў ${ BRAND_NAME }."
       ],
@@ -7708,11 +7762,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Банкаўскі перавод"
+      ],
       "Credit/debit card": [
         "Банкаўская картка"
       ],
       "New credit/debit card": [
         "Новая банкаўская картка"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Выкарыстоўваць назву кампаніі"
+      ],
+      "Use personal name": [
+        "Выкарыстоўваць асабістае імя"
       ]
     },
     "Payments": {
@@ -7804,6 +7869,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "Адрас вуліцы, паштовы індэкс і горад"
       ]
     },
     "Permission": {
@@ -8043,6 +8113,9 @@
       "Changing organization password": [
         "Змена пароля арганізацыі"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Стварэнне або доступ да непрыватных уліковых запісаў карыстальнікаў"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Па прычыне змены пароля вашы правы адміністратара арганізацыі былі абмежаваны. Цяпер вам забаронены наступныя дзеянні:"
       ]
@@ -8069,6 +8142,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Рэгістрацыя завяршылася з памылкай."
+      ],
       "Something went wrong": [
         "Нешта пайшло не так"
       ]
@@ -8129,6 +8205,12 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Неабходная ўмова:** аўтэнтыфікацыя SAML павінна быць сканфігурыравана для ўключэння падрыхтоўкі SCIM."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Абавязковая ўмова:** для ўключэння кантролю выкарыстання SCIM, вам неабходна пацвердзіць права ўласнасці на дамен **${ domainName }**. Гэта праверка можа заняць да адной гадзіны."
+      ],
+      "Enter the token into your identity provider": [
+        "Увядзіце токен у свайго пастаўшчыка пасведчанняў"
       ],
       "Enter URL and token into your identity provider": [
         "Увядзіце URL-адрас і токен у свайго пастаўшчыка пасведчанняў"
@@ -8460,6 +8542,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Мы паўторна звяжамся з вамі, калі скіданне пароля стане даступным."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Вы можаце праверыць статус вашага запыту ў любы час у наладах ${ accountAndPasswordSectionLink }."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "раздзела ўліковы запіс і пароль"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8777,6 +8867,9 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } запытвае вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу."
+      ],
       "${ n } member requested your help to sign in.": [
         "${ n } удзельнік запытаў вашу дапамогу з уваходам.",
         "${ n } удзельнікі запыталі вашу дапамогу з уваходам.",
@@ -8795,11 +8888,20 @@
         "${ n } карыстальнікаў запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу.",
         "${ n } карыстальнікаў запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу."
       ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "Карыстальнікі **SSO (дзе пастаўшчыком пасведчанняў з'яўляецеся вы) будуць выдалены** і вам неабходна будзе стварыць іх уручную, каб дадаць іх назад у вашу арганізацыю."
+      ],
       "Access denied": [
         "У доступе адмоўлена"
       ],
       "Access granted": [
         "Доступ дазволены"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "дадалі вас у сваю арганізацыю ${ BRAND_NAME }."
+      ],
+      "Approve or deny it now": [
+        "Ухваліць або адхіліць яго"
       ],
       "Approve the sign-in from another device": [
         "Ухваліце ​​ўваход з іншай прылады"
@@ -8810,6 +8912,18 @@
       "Ask your administrator for access?": [
         "Запытаць доступ у вашага адміністратара?"
       ],
+      "Backup password": [
+        "Рэзервовы пароль"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Change backup password": [
+        "Змяніць рэзервовы пароль"
+      ],
+      "Confirm backup password": [
+        "Пацвердзіце рэзервовы пароль"
+      ],
       "Confirmation code": [
         "Код пацвярджэння"
       ],
@@ -8819,14 +8933,89 @@
       "Contact your administrator if the problem persists.": [
         "Звяжыце са сваім адміністратарам, калі праблема застанецца."
       ],
+      "Deny": [
+        "Забараніць"
+      ],
+      "Deny access": [
+        "Адмовіць у доступе"
+      ],
       "Devices available": [
         "Даступныя прылады"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Увядзіце код пацвярджэння адпраўлены гэтаму карыстальніку."
+      ],
+      "Enter your backup password": [
+        "Увядзіце свой рэзервовы пароль"
       ],
       "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
         "Вы выйшлі з сістэмы на ўсіх вашых іншых актыўных прыладах у мэтах бяспекі. Вам неабходна будзе ўвесці новы рэзервовы пароль перад тым, як вы атрымаеце доступ да свайго ўліковага запісу."
       ],
+      "Grant": [
+        "Дазволіць"
+      ],
+      "Grant access": [
+        "Даць доступ"
+      ],
+      "Grant access to user?": [
+        "Даць доступ карыстальніку?"
+      ],
+      "Grant access to users?": [
+        "Даць доступ карыстальнікам?"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Ваш рэзервовы пароль дазволіць вам увайсці і аднавіць даныя, калі вы не маеце доступу да свайго ўліковага запісу ${ BRAND_NAME },"
+      ],
+      "Invalid confirmation code": [
+        "Памылковы код пацвярджэння"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Гэта адзіны спосаб для поўнага аднаўлення вашага ўліковага запісу. Пераканайцеся, што ён захаваны ў надзейным месцы."
+      ],
+      "Join ${ organizationName }": [
+        "Далучыцца да ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Пераканайцеся, што вы захавалі яго ў надзейным месцы. Такім чынам, калі вы страціце доступ да ўліковых даных свайго пастаўшчыка пасведчанняў, вы заўсёды зможаце вярнуцца ў свой уліковы запіс."
+      ],
+      "New backup password": [
+        "Новы рэзервовы пароль"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Карыстальнікі, якія не належаць да SSO (створаныя ўручную і не забяспечаныя вашым пастаўшчыком пасведчанняў) усё яшчэ могуць уваходзіць у вашу арганізацыю."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Пасля адключэння адзінага ўваходу для вашай арганізацыі:"
+      ],
+      "Remove single sign-on": [
+        "Выдаліць адзіны ўваход"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Выдаліць адзіны ўваход для вашай арганізацыі?"
+      ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
         "Задаць рэзервовы пароль, каб дадаць дадатковы слой бяспекі. Ён дазволіць вам увайсці ў выпадку, калі вы не зможаце атрымаць доступ да свайго ўліковага запісу. Пераканайцеся, што ён захаваны ў надзейным месцы."
+      ],
+      "Set your backup password": [
+        "Задаць рэзервовы пароль"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Абагуліць код пацвярджэння з вашым адміністратарам"
+      ],
+      "Sign in to your organization": [
+        "Увайсці ў сваю арганізацыю"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Выйдзіце, а потым зноў увайдзіце. Гэта дазволіць змяніць ваш рэзервовы пароль."
+      ],
+      "Single sign-on removed": [
+        "Адзіны ўваход выдалены"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Уліковыя даныя ад вашага пастаўшчыка пасведчанняў будуць выдалены."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Гэта дзеянне прывядзе да выхаду карыстальніка з яго іншых прылад, і яму давядзецца стварыць новы рэзервовы пароль."
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Гэта дзеянне прывядзе да завяршэння сеанса на вашых іншых прыладах і вам давядзецца стварыць новы рэзервовы пароль."
@@ -8840,8 +9029,14 @@
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Абагуліце код пацвярджэння з вашым адміністратарам **${ adminEmail }** для таго, каб ён мог ухваліць запыт для **${ email }**. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці."
       ],
+      "Tried to sign in at": [
+        "Спроба ўваходу ў"
+      ],
       "Use backup password instead": [
         "Замест гэтага скарыстайцеся рэзервовай копіяй пароля"
+      ],
+      "User details:": [
+        "Падрабязнасці карыстальніка:"
       ]
     },
     "sso: auth device state": {
@@ -8851,8 +9046,20 @@
       "Inactive": [
         "Неактыўна"
       ],
+      "Pending activation": [
+        "Чаканне актывацыі"
+      ],
+      "Pending admin activation": [
+        "Чаканне актывацыі адміністратара"
+      ],
+      "Rejected": [
+        "Адхілена"
+      ],
       "Signed out": [
         "Вы выйшлі"
+      ],
+      "Unknown": [
+        "Невядома"
       ]
     },
     "State": {
@@ -9079,6 +9286,9 @@
     "Subscription change warning": {
       "Got it": [
         "Зразумела"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Проста ўвайдзіце ў свой уліковы запіс App Store, а потым выберыце ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Проста ўвайдзіце ў свой уліковы запіс Play Store, а потым націсніце ${ subscriptions }."
@@ -9777,6 +9987,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe памочнік у напісанні"
       ],
       "${ VPN_APP_NAME } clients": [
         "Кліенты ${ VPN_APP_NAME }"
@@ -10600,6 +10813,9 @@
       ],
       "User declined invitation": [
         "Карыстальнік адхіліў запрашэнне"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Чаканне прыняцця запрашэння карыстальнікам"
       ]
     },
     "Tooltip for news": {
@@ -10613,6 +10829,9 @@
     "Tor out of date": {
       "stable release": [
         "стабільны выпуск"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Гэта версія браўзера TOR не падтрымліваецца. Абнавіце праграму да апошняй ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10935,6 +11154,11 @@
       ],
       "Your ${ selected } plan": [
         "Ваш тарыфны план ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN і іншыя функцыі."
       ]
     },
     "wallet_signup_2024: Info": {

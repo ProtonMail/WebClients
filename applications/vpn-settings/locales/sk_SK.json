@@ -85,6 +85,9 @@
       "Back": [
         "Späť"
       ],
+      "Back to sign-in": [
+        "Späť na prihlásenie"
+      ],
       "Block": [
         "Blokovať"
       ],
@@ -189,6 +192,9 @@
       ],
       "Delete your account": [
         "Zmazať účet"
+      ],
+      "Deny access": [
+        "Zamietnuť prístup"
       ],
       "Details": [
         "Detaily"
@@ -703,6 +709,9 @@
       "Verify domain": [
         "Overiť doménu"
       ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Overiť doménu ${ unverifiedSSODomain.DomainName }"
+      ],
       "View": [
         "Zobraziť"
       ],
@@ -1153,6 +1162,9 @@
       "All ${ BRAND_NAME } apps and premium features": [
         "Všetky ${ BRAND_NAME } aplikácie a prémiové funkcie"
       ],
+      "Cancel and downgrade": [
+        "Zrušiť a znížiť"
+      ],
       "Cloud storage and sharing for large files": [
         "Cloudové úložisko a zdieľanie veľkých súborov"
       ],
@@ -1161,6 +1173,9 @@
       ],
       "Encrypted password manager": [
         "Šifrovaný správca hesiel"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Náš základný bezplatný plán s end-to-end šifrovaným emailom a úložiskom. Neobsahuje žiadne prémiové funkcie."
       ],
       "Save ${ upsellSavings }": [
         "Ušetrite ${ upsellSavings }"
@@ -2526,6 +2541,9 @@
       "Invalid expiration date": [
         "Neplatný koniec platnosti"
       ],
+      "Invalid IBAN": [
+        "Neplatný IBAN"
+      ],
       "Invalid invitation link": [
         "Neplatný odkaz pozvánky"
       ],
@@ -2598,6 +2616,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
       ],
+      "Please upload a square logo": [
+        "Nahrajte logo v štvorcovom tvare"
+      ],
       "Please upload an xml file": [
         "Nahrajte XML súbor"
       ],
@@ -2621,6 +2642,9 @@
       ],
       "Tab closed": [
         "Karta zatvorená"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
       ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
@@ -2830,6 +2854,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Doživotné účty nemôžu byť pripojené k rodinnému tarifu."
       ],
+      "Manage addresses": [
+        "Spravovať adresy"
+      ],
       "Manage user accounts": [
         "Spravovať používateľské účty"
       ],
@@ -2865,6 +2892,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Počas 6-mesačného obdobia môžete prijať iba 3 pozvánky. Ak požadujete výnimku, kontaktujte ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "S vaším aktuálnym plánom nemôžete prijať túto pozvánku."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Boli ste pozvaní, aby ste sa pripojili k ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3433,6 +3463,12 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Pridajte tento záznam do svojej domény v ovládacom paneli registrátora názvu domény"
       ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Našiel sa ${ itemsCount } návrh, na navigáciu použite klávesnicu.",
+        "Našli sa ${ itemsCount } návrhy, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ itemsCount } návrhov, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ itemsCount } návrhov, na navigáciu použite klávesnicu."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použite klávesy hore a dole pre prechádzanie návrhov po zadaní. Stlačte tlačidlo Enter pre potvrdenie vašej voľby, alebo tlačidlo Esc pre zatvorenie návrhov."
       ]
@@ -3550,6 +3586,9 @@
         "(${ memberCount } členovia)",
         "(${ memberCount } členov)",
         "(${ memberCount } členov)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mesiac)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Získajte ${ BRAND_NAME }** adresu, ak chcete využívať všetky služby ${ BRAND_NAME_TWO } vrátane služieb ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
@@ -3821,6 +3860,9 @@
       "Dedicated servers": [
         "Dedikované servery"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstráňte všetky ostatné MX záznamy, alebo sa uistite, že priorita ${ MAIL_APP_NAME } má najnižšie číslo."
       ],
@@ -4019,6 +4061,9 @@
       "High Priority": [
         "Vysoká priorita"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Verejný kľúč poskytovateľa identity na podpisovanie autentifikačných overení. Malo by tu byť miesto na stiahnutie alebo skopírovanie hash certifikátu od poskytovateľa identity. Stačí vložiť hash certifikátu do poľa textovej oblasti."
       ],
@@ -4195,6 +4240,9 @@
       ],
       "Learn more": [
         "Zistiť viac"
+      ],
+      "Learn more about Gateways": [
+        "Ďalšie informácie o bránach"
       ],
       "Let's get started by pressing the New group button above": [
         "Začnime stlačením vyššie uvedeného tlačidla Nová skupina"
@@ -4673,6 +4721,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Toto overenie môže trvať až jednu hodinu. Po úspešnom overení neodstraňujte záznam TXT, pretože je potrebný na potvrdenie, že doménu naďalej vlastníte."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Týmto bude prístup k **${ email }** zamietnutý. Ste si istí, že chcete pokračovať?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Tým dôjde k deaktivácii dvojfázového overovania, vrátane aplikácie pre autentizáciu a metód bezpečnostného kľúča."
       ],
@@ -4933,6 +4984,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Ak odstránite server z brány, začne plynúť desaťdňová deaktivačná lehota. Tento server je možné pridať do novej brány, ale jeho krajina sa nedá zmeniť."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
@@ -5338,6 +5392,9 @@
       "Amount due": [
         "Čiastka k zaplateniu"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Assertion Consumer Service URL": [
         "URL adresa zákazníckej služby"
       ],
@@ -5346,6 +5403,9 @@
       ],
       "Authenticator app": [
         "Aplikácia 2FA"
+      ],
+      "Backup password": [
+        "Záložné heslo"
       ],
       "Billing address": [
         "Fakturačná adresa"
@@ -5397,6 +5457,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kód je 6 čísiel bez medzier"
+      ],
+      "Company name": [
+        "Názov spoločnosti"
       ],
       "Config to connect to ${ serverName }": [
         "Konfigurácia na pripojenie k ${ serverName }"
@@ -5514,6 +5577,9 @@
       ],
       "Hide password": [
         "Skryť heslo"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Interval"
@@ -5662,6 +5728,9 @@
       "Recovery phrase": [
         "Obnovovacia fráza"
       ],
+      "Repeat backup password": [
+        "Zopakujte záložné heslo"
+      ],
       "Reply (ACS) URL": [
         "URL adresa odpovede (ACS)"
       ],
@@ -5673,6 +5742,9 @@
       ],
       "Reveal password": [
         "Odkryť heslo"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Search": [
         "Hľadať"
@@ -5706,6 +5778,9 @@
       ],
       "System information": [
         "Systémové informácie"
+      ],
+      "Thomas": [
+        "Tomáš"
       ],
       "Two-password mode": [
         "Režim s dvomi heslami"
@@ -5902,6 +5977,9 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
+      ],
+      "PayPal without credit card": [
+        "PayPal bez platobnej karty"
       ],
       "perform a password reset from your active session": [
         "resetovať heslo z Vášho aktuálneho prihlásenia"
@@ -6300,6 +6378,12 @@
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
+      ],
       "${ options }-day file version history": [
         "${ options }-dňová história verzií súborov",
         "${ options }-dňová história verzií súborov",
@@ -6639,6 +6723,9 @@
       "Sync and backup all your files across devices": [
         "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
       ],
+      "TOR over VPN": [
+        "TOR cez VPN"
+      ],
       "Two-factor authentication": [
         "Dvojstupňové overenie"
       ],
@@ -6693,6 +6780,12 @@
         "Až ${ n } používateľov",
         "Až ${ n } používateľov"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Až ${ n } používateľ (${ adminsText }, ${ usersText })",
+        "Až ${ n } používatelia (${ adminsText }, ${ usersText })",
+        "Až ${ n } používateľov (${ adminsText }, ${ usersText })",
+        "Až ${ n } používateľov (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
       ],
@@ -6713,6 +6806,20 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme temný web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } správca",
+        "${ admins } správcovia",
+        "${ admins } správcov",
+        "${ admins } správcov"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ]
     },
     "new_plans: feature info": {
@@ -6935,6 +7042,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chráni pred hrozbou VPN súkromia tým, že internetovú prevádzku prenáša cez viacero serverov"
       ],
@@ -6986,6 +7096,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnosť zobraziť nesúkromné schránky používateľov tak, ako by to urobil používateľ, vrátane celých správ a kontaktných údajov"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Nástroj na správu organizácie, ktorý umožňuje správcom pridávať a odoberať používateľov, spravovať ich prístup k službám ${ BRAND_NAME } a vykonávať ďalšie úlohy."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Naša robustná infraštruktúra zaisťuje, že budete mať prístup k svojmu účtu, keď ho budete potrebovať"
       ],
@@ -7027,6 +7140,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Obnoviť heslá a dvojstupňové overenie používateľov"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Smerujte vašu internetovú prevádzku cez sieť TOR jediným kliknutím"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, zdieľanie šifrovaných súborov a ďalšie."
@@ -7506,11 +7622,20 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } používateľský účet",
+        "${ n } používateľské účty",
+        "${ n } používateľských účtov",
+        "${ n } používateľských účtov"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel správcu pre správu užívateľov a predplatného"
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Všetky prémiové funkcie. 6 používateľov. 1 jednoduché predplatné."
+      ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
         "Účtované ročne za ${ yearlyPrice }. Ušetrite ${ yearlySavedPrice } s ${ passFamilyPlanName } (oproti 6 individuálnym predplatným ${ passPlusPlanName })."
       ],
@@ -7622,11 +7747,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankový prevod"
+      ],
       "Credit/debit card": [
         "Platobná karta"
       ],
       "New credit/debit card": [
         "Nová platobná karta"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Použiť názov spoločnosti"
+      ],
+      "Use personal name": [
+        "Použiť vlastné meno"
       ]
     },
     "Payments": {
@@ -7718,6 +7854,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrdením tejto platby oprávňujete spoločnosť ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali pokyn vašej banke na odpísanie finančných prostriedkov z vášho účtu a aby vaša banka zodpovedajúcim spôsobom odpísala finančné prostriedky z vášho účtu. Peniaze môžete získať späť do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
+      ],
+      "Street address, postal code, and city": [
+        "Ulica, PSČ a mesto"
       ]
     },
     "Permission": {
@@ -8690,6 +8834,68 @@
         "Pozvite priateľov do ${ BRAND_NAME }"
       ]
     },
+    "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSO užívatelia (poskytovaní poskytovateľom identít) budú zmazaní** a budete ich musieť vytvoriť ručne, aby ste ich mohli pridať späť do organizácie."
+      ],
+      "Approve or deny it now": [
+        "Schváliť alebo zamietnuť teraz"
+      ],
+      "Deny": [
+        "Zamietnuť"
+      ],
+      "Deny access": [
+        "Zamietnuť prístup"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Zadajte potvrdzovací kód, ktorý sme odoslali tomuto používateľovi."
+      ],
+      "Grant": [
+        "Povoliť"
+      ],
+      "Grant access": [
+        "Povoliť prístup"
+      ],
+      "Grant access to user?": [
+        "Povoliť prístup používateľovi?"
+      ],
+      "Grant access to users?": [
+        "Povoliť prístup používateľom?"
+      ],
+      "Invalid confirmation code": [
+        "Neplatný potvrdzovací kód"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Používatelia, ktorí nie sú súčasťou systému jednotného prihlásenia SSO (tj sú vytvorení ručne a nie cez poskytovateľa identity) sa do vašej organizácie môžu naďalej prihlásiť."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "V momente, keď dôjde k zrušeniu jednotného prihlásenia pre vašu organizáciu:"
+      ],
+      "Remove single sign-on": [
+        "Zrušiť jednotné prihlásenie"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Nastavením záložného hesla získate ďalšiu úroveň ochrany. Umožní vám prihlásiť sa, pokiaľ nie je možné prihlásiť sa bežným spôsobom. Uložte si záložné heslo na bezpečnom mieste."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Prihlasovacie údaje od vášho poskytovateľa identity budú zmazané."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Tým sa používateľ odhlási z ostatných zariadení a bude musieť vytvoriť nové záložné heslo."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Tým sa odhlásite z ostatných zariadení a budete musieť vytvoriť nové záložné heslo."
+      ],
+      "Tried to sign in at": [
+        "Pokus o prihlásenie z"
+      ],
+      "User details:": [
+        "Podrobnosti o používateľovi:"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Rušenie vášho predplatného, počkajte prosím"
@@ -8915,6 +9121,9 @@
       "Got it": [
         "Rozumiem"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Prihláste sa do Apple Store a potom vyberte ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Prihláste sa do Obchodu Play a potom stlačte ${ subscriptions }."
       ],
@@ -8995,6 +9204,36 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } ponúka ${ planMaxSpace } úložného priestoru na používateľa pre emaily, prílohy, udalosti, súbory a heslá. Máte tiež nárok na každoročný bonusový priestor v úložisku."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalendár na používateľa",
+        "${ planNumberOfCalendars } kalendáre na používateľa",
+        "${ planNumberOfCalendars } kalendárov na používateľa",
+        "${ planNumberOfCalendars } kalendárov na používateľa"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } emailová adresa na používateľa",
+        "${ planNumberOfEmails } emailové adresy na používateľa",
+        "${ planNumberOfEmails } emailových adries na používateľa",
+        "${ planNumberOfEmails } emailových adries na používateľa"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } používateľ",
+        "${ planNumberOfUsers } používatelia",
+        "${ planNumberOfUsers } používateľov",
+        "${ planNumberOfUsers } používateľov"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "Pokročilá ochrana účtu ${ PROTON_SENTINEL_NAME }"
@@ -9424,6 +9663,12 @@
       ],
       "You have successfully unsubscribed": [
         "Predplatné bolo úspešne zrušené"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Ak ste zadali platnú emailovú adresu pre obnovenie, dostanete svoje užívateľské meno do jednej minúty emailom."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Ak ste zadali platné telefónne číslo na obnovenie, dostanete do minúty svoje užívateľské meno prostredníctvom SMS."
       ]
     },
     "Success message": {
@@ -9577,6 +9822,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe, asistent písania"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } klienti"
       ],
@@ -9612,6 +9860,9 @@
       ],
       "Action": [
         "Akcia"
+      ],
+      "Actions": [
+        "Akcie"
       ],
       "Activate organization key": [
         "Aktivovať kľúč organizácie"
@@ -9822,6 +10073,12 @@
       ],
       "Delete user?": [
         "Vymazať používateľa?"
+      ],
+      "Deny access to user?": [
+        "Zamietnuť prístup užívateľovi?"
+      ],
+      "Device": [
+        "Zariadenie"
       ],
       "Device connected!": [
         "Zariadenie pripojené!"
@@ -10047,6 +10304,9 @@
       ],
       "Processing...": [
         "Prebieha spracovanie..."
+      ],
+      "QR Code": [
+        "QR kód"
       ],
       "Recommended": [
         "Odporúčané"
@@ -10400,6 +10660,9 @@
     "Tor out of date": {
       "stable release": [
         "stabilná verzia"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Táto verzia TOR prehliadača nie je podporovaná. Aktualizujte, prosím, na poslednú ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10722,6 +10985,11 @@
       ],
       "Your ${ selected } plan": [
         "Váš ${ selected } plán"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, TOR cez VPN a ďalšie."
       ]
     },
     "wallet_signup_2024: Info": {
