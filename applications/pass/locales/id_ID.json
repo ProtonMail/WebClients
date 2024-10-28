@@ -572,9 +572,30 @@
         "Pengelola kata sandi Anda tidak terdaftar? Mintalah kepada kami."
       ]
     },
+    "bf2024: Deal": {
+      "lifetime access": [
+        "akses seumur hidup"
+      ]
+    },
+    "bf2024: Info": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Seluruh fitur premium. 6 pengguna. 1 langganan mudah."
+      ],
+      "Limited-stock available!": [
+        "Persediaan terbatas!"
+      ]
+    },
+    "bf2024: Label": {
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ]
+    },
     "bf2024: Title": {
       "Black Friday": [
         "Jumat Hitam"
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Hemat hingga ${ discountJSX } untuk Pass Family. Hanya ${ relativePrice }/bulan."
       ]
     },
     "Browser": {
@@ -1459,6 +1480,9 @@
       "Monitoring settings successfully updated": [
         "Pengaturan pemantauan berhasil diperbarui"
       ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alias email. Didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
@@ -1506,6 +1530,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Akses ${ PASS_APP_NAME } secara daring akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 percobaan gagal."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
       "Owner": [
         "Pemilik"
@@ -1735,8 +1762,14 @@
       "This version will be added to the history as the newest version.": [
         "Versi ini akan ditambahkan ke riwayat sebagai versi terbaru."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Tindakan ini akan menolak izin akses perangkat **${ name }** yang mencoba untuk masuk ke akun ${ BRAND_NAME } Anda pada **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Untuk memindahkan data dari pengelola kata sandi lain, tuju pengelola kata sandi yang dimaksud, ekspor data Anda, lalu unggah data ini ke ${ PASS_APP_NAME }. Setelah data selesai diunggah, hapus berkas yang diekspor."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Untuk meninjau data Anda yang telah diimpor, klik ikon ${ PASS_APP_NAME } pada bilah toolbar browser Anda."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
@@ -2747,12 +2780,50 @@
         "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini. ${ link }"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Setujui atau tolak permintaan ini sekarang"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Masukkan kode konfirmasi yang kami kirim ke perangkat lainnya yang Anda miliki."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Apabila Anda tidak mengajukan hal ini, batalkan permintaan ini sekarang juga."
+      ],
+      "Invalid confirmation code": [
+        "Kode konfirmasi tidak valid"
+      ],
+      "No, it wasn’t me": [
+        "Tidak, itu bukan saya"
+      ],
+      "Sign-in confirmed": [
+        "Masuk dikonfirmasi"
+      ],
+      "Sign-in rejected": [
+        "Masuk ditolak"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Terdapat permintaan entri masuk pada perangkat lainnya. Apakah ini Anda?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Terdapat permintaan entri masuk pada perangkat lainnya. Apakah ini Anda? "
+      ],
+      "Yes, it was me": [
+        "Ya, itu saya"
+      ]
+    },
     "sso: auth device state": {
       "Active": [
         "Aktif"
       ],
       "Inactive": [
         "Nonaktif"
+      ],
+      "Pending activation": [
+        "Aktivasi tertunda"
+      ],
+      "Pending admin activation": [
+        "Menunggu aktivasi admin"
       ],
       "Rejected": [
         "Ditolak"
@@ -2959,6 +3030,9 @@
       "Recommended actions": [
         "Tindakan yang direkomendasikan"
       ],
+      "Reject device?": [
+        "Tolak perangkat?"
+      ],
       "Remove email address?": [
         "Hapus alamat email?"
       ],
@@ -3089,6 +3163,9 @@
       ],
       "Section name cannot be empty": [
         "Nama bagian tidak dapat dikosongkan"
+      ],
+      "URL already exists": [
+        "URL sudah ada"
       ],
       "URL cannot be empty": [
         "URL tidak boleh kosong"
