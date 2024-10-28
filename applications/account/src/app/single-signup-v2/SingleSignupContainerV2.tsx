@@ -101,7 +101,7 @@ import {
     getSessionDataFromSignup,
     getUserInfo,
 } from './helper';
-import type { SignupModelV2, SignupParameters2, Upsell } from './interface';
+import type { PlanParameters, SignupModelV2, SignupParameters2, Upsell } from './interface';
 import { SignupMode, Steps, UpsellTypes } from './interface';
 import { getMailConfiguration } from './mail/configuration';
 import type { TelemetryMeasurementData } from './measure';
@@ -109,6 +109,7 @@ import { getPaymentMethodsAvailable, getPlanNameFromSession, getSignupTelemetryD
 import AccessModal from './modals/AccessModal';
 import SubUserModal from './modals/SubUserModal';
 import UnlockModal from './modals/UnlockModal';
+import UpsellModal from './modals/UpsellModal';
 import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
 import { getPassConfiguration } from './pass/configuration';
 import { getWalletConfiguration } from './wallet/configuration';
@@ -270,6 +271,7 @@ const SingleSignupContainerV2 = ({
     const { viewportWidth } = useActiveBreakpoint();
 
     const [unlockModalProps, setUnlockModal, renderUnlockModal] = useModalState();
+    const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const [visionaryModalProps, setVisionaryModal, renderVisionaryModal] = useModalState();
     const [subUserModalProps, setSubUserModal, renderSubUserModal] = useModalState();
     const [accessModalProps, setHasAccessModal, renderAccessModal] = useModalState();
@@ -555,15 +557,38 @@ const SingleSignupContainerV2 = ({
 
     const upsellPlanCard = planCards[audience].find((planCard) => planCard.type === 'best');
 
-    const triggerModals = (
-        session: SessionData,
-        upsell: Upsell,
-        subscriptionData: SubscriptionData,
+    const triggerModals = ({
+        session,
+        upsell,
+        subscriptionData,
+        options,
+        planParameters,
+    }: {
+        session: SessionData;
+        upsell: Upsell;
+        subscriptionData: SubscriptionData;
+        planParameters?: PlanParameters;
         options?: {
             ignoreUnlock: boolean;
-        }
-    ) => {
+        };
+    }) => {
         const planName = getPlanNameFromSession(session);
+
+        if (session.subscription && options?.ignoreUnlock !== true && upsell.plan?.Name) {
+            if ([PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].includes(upsell.plan.Name as any)) {
+                setUnlockModal(true);
+                return;
+            }
+            if (PLANS.VISIONARY === upsell.plan.Name) {
+                setVisionaryModal(true);
+                return;
+            }
+            const hasCheckResult = subscriptionData.planIDs[upsell.plan.Name];
+            if ((planParameters?.defined && planParameters.plan.Name !== upsell.plan.Name) || !hasCheckResult) {
+                setUpsellModal(true);
+                return;
+            }
+        }
 
         if (session.state.access) {
             setHasAccessModal(true);
@@ -573,23 +598,6 @@ const SingleSignupContainerV2 = ({
         if (session.organization && !session.state.payable) {
             if (getHasBusinessUpsell(planName)) {
                 setSubUserModal(true);
-                return;
-            }
-        }
-
-        if (session.subscription && options?.ignoreUnlock !== true && upsell.plan?.Name) {
-            const hasCheckResult = subscriptionData.planIDs[upsell.plan.Name];
-            // If this plan was not selected through a query parameter, e.g. that we overrode it to something else, because it fits
-            // the copy of the unlock modal better.
-            if (signupParameters.preSelectedPlan === upsell.plan.Name || !hasCheckResult) {
-                return;
-            }
-            if ([PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].includes(upsell.plan.Name as any)) {
-                setUnlockModal(true);
-                return;
-            }
-            if (PLANS.VISIONARY === upsell.plan.Name) {
-                setVisionaryModal(true);
                 return;
             }
         }
@@ -803,10 +811,22 @@ const SingleSignupContainerV2 = ({
                         };
                         setModelDiff({ subscriptionData: cache.subscriptionData, cache, step: Steps.Loading });
                     } else {
-                        triggerModals(session, upsell, subscriptionData, { ignoreUnlock: onboardingMode });
+                        triggerModals({
+                            planParameters,
+                            session,
+                            upsell,
+                            subscriptionData,
+                            options: { ignoreUnlock: onboardingMode },
+                        });
                     }
                 } else {
-                    triggerModals(session, upsell, subscriptionData, { ignoreUnlock: false });
+                    triggerModals({
+                        planParameters,
+                        session,
+                        upsell,
+                        subscriptionData,
+                        options: { ignoreUnlock: false },
+                    });
                 }
 
                 const planName = getPlanNameFromSession(session);
@@ -983,7 +1003,7 @@ const SingleSignupContainerV2 = ({
                 upsell,
             });
 
-            triggerModals(session, upsell, subscriptionData);
+            triggerModals({ planParameters: model.planParameters, session, upsell, subscriptionData });
             measure({
                 event: TelemetryAccountSignupEvents.beSignInSuccess,
                 dimensions: { plan: getPlanNameFromSession(session) },
@@ -1232,6 +1252,29 @@ const SingleSignupContainerV2 = ({
                     }}
                     onFree={async () => {
                         unlockModalProps.onClose();
+                        await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
+                    }}
+                />
+            )}
+            {renderUpsellModal && (
+                <UpsellModal
+                    {...upsellModalProps}
+                    dark={theme.dark}
+                    currentPlan={model.upsell.currentPlan}
+                    appName={shortProductAppName}
+                    subscriptionData={model.subscriptionData}
+                    upsellPlan={model.upsell.plan}
+                    freePlan={model.freePlan}
+                    vpnServersCountData={model.vpnServersCountData}
+                    unlockPlan={model.upsell.unlockPlan}
+                    relativePrice={relativePrice}
+                    plansMap={model.plansMap}
+                    onUpgrade={() => {
+                        upsellModalProps.onClose();
+                        step1Ref.current?.scrollIntoPayment();
+                    }}
+                    onFree={async () => {
+                        upsellModalProps.onClose();
                         await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
                     }}
                 />
