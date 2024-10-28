@@ -3,6 +3,11 @@ import type { ReactElement } from 'react';
 import { c, msgid } from 'ttag';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
+import {
+    getDarkWebMonitoringText,
+    getDesktopAppText,
+    getOwnDomainText,
+} from '@proton/components/containers/payments/features/mail';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     BRAND_NAME,
@@ -160,9 +165,9 @@ export const getMailPlus2024InboxFeatures = (): { name: string }[] => {
         { ...getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 }), true) }, // true remove the tooltip
         { name: c('BF2024: Deal details').t`10 email addresses` },
         { name: c('BF2024: Deal details').t`Unlimited folders, labels and filters` },
-        { name: c('BF2024: Deal details').t`Use your own email domain` },
-        { name: c('BF2024: Deal details').t`${MAIL_APP_NAME} desktop app` },
-        { name: c('BF2024: Deal details').t`Dark Web Monitoring` },
+        { name: getOwnDomainText() },
+        { name: getDesktopAppText() },
+        { name: getDarkWebMonitoringText() },
     ];
 };
 
@@ -174,7 +179,7 @@ export const getPassPlusFeatures = () => {
         { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
         { name: c('BF2024: Deal details').t`Integrated 2FA authenticator` },
         { name: c('BF2024: Deal details').t`Password health alerts` },
-        { name: c('BF2024: Deal details').t`Dark Web Monitoring` },
+        { name: getDarkWebMonitoringText() },
         { name: c('BF2024: Deal details').t`Advanced account protection` },
     ];
 };
@@ -187,7 +192,7 @@ export const getFamilyPassFeatures = () => {
         { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
         { name: c('BF2024: Deal details').t`Integrated 2FA authenticator` },
         { name: c('BF2024: Deal details').t`Password health alerts` },
-        { name: c('BF2024: Deal details').t`Dark Web Monitoring` },
+        { name: getDarkWebMonitoringText() },
         { name: c('BF2024: Deal details').t`Advanced account protection` },
         { name: c('BF2024: Deal details').t`Admin panel to manage your family` },
         { name: c('BF2024: Deal details').t`Easily add or remove users` },
