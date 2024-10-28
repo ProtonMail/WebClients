@@ -27,7 +27,6 @@ for arg in "${@:2}"; do # Skip first {title} argument
         \"type\": \"section\",
         \"text\": {
             \"type\": \"mrkdwn\",
-            \"emoji\": true,
             \"text\": \"*${description}*: <${CI_PROJECT_URL}/-/jobs/${jobid}/artifacts/download|Download> (expires in 1 week)\"
         }
     }"
