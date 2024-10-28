@@ -21,7 +21,6 @@ import {
     getExchangeRateFromBitcoinUnit,
     isWalletAccountSet,
 } from '../../utils';
-import { useEmailAndBtcAddressesMaps } from '../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { InviteModal } from '../InviteModal';
 import { InviteSentConfirmModal } from '../InviteSentConfirmModal';
 import type { Steps } from '../ModalHeaderWithStepper';
@@ -32,6 +31,7 @@ import { RecipientsSelectionStep } from './RecipientsSelectionStep';
 import { TransactionReviewStep } from './TransactionReviewStep';
 import { useFeesInput } from './TransactionReviewStep/useFeesInput';
 import { TransactionSendConfirmationModal } from './TransactionSendConfirmationModal';
+import { useEmailAndBtcAddressesMaps } from './useEmailAndBtcAddressesMaps';
 
 interface Props {
     theme?: SubTheme;

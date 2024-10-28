@@ -12,7 +12,7 @@ import { ANONYMOUS_SENDER_ADDRESS_ID, type IWasmApiWalletData } from '@proton/wa
 import { usePrimaryAddressKey } from '../../../hooks/usePrimaryAddressKey';
 import { usePsbt } from '../../../hooks/usePsbt';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
-import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
+import type { BtcAddressMap } from '../useEmailAndBtcAddressesMaps';
 
 // Anonymous sender address is discriminated by the absence of a Key field
 export const getAnonymousSenderAddress = () => ({
