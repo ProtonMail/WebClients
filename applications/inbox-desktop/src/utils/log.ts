@@ -1,6 +1,7 @@
-import { Session, WebContents } from "electron";
+import { WebContents } from "electron";
 import Logger from "electron-log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
+import { appSession } from "./session";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
@@ -10,6 +11,7 @@ export const settingsLogger = Logger.scope("settings");
 export const updateLogger = Logger.scope("update");
 export const protocolLogger = Logger.scope("protocol");
 export const viewLogger = (viewID: CHANGE_VIEW_TARGET) => Logger.scope(viewID);
+export const sentryLogger = Logger.scope("sentry");
 
 export function initializeLog() {
     Logger.initialize({ preload: true });
@@ -17,10 +19,9 @@ export function initializeLog() {
 }
 
 export async function connectNetLogger(
-    session: Session,
     getWebContentsViewName: (webContents: WebContents) => CHANGE_VIEW_TARGET | null,
 ) {
-    session.webRequest.onCompleted((details) => {
+    appSession().webRequest.onCompleted((details) => {
         const viewName = details.webContents ? getWebContentsViewName(details.webContents) : null;
 
         if (details.statusCode >= 200 && details.statusCode < 400) {
