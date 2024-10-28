@@ -11,6 +11,7 @@ import { WasmWallet, getDefaultStopGap } from '@proton/andromeda';
 import usePrevious from '@proton/hooks/usePrevious';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { type SimpleMap } from '@proton/shared/lib/interfaces';
 import generateUID from '@proton/utils/generateUID';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet';
@@ -165,9 +166,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         []
     );
 
-    const [syncingMetatadaByAccountId, setSyncingMetatadaByAccountId] = useState<
-        Partial<Record<string, SyncingMetadata>>
-    >({});
+    const [syncingMetatadaByAccountId, setSyncingMetatadaByAccountId] = useState<SimpleMap<SyncingMetadata>>({});
 
     // We use refs coupled to the state to deps from the syncing loop
     const syncingMetatadaByAccountIdRef = useMirroredRef(syncingMetatadaByAccountId, {});

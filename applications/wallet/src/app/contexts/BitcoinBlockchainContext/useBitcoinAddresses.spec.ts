@@ -126,6 +126,7 @@ describe('useBitcoinAddresses', () => {
             mockUseWalletApiClients({
                 bitcoin_address: {
                     addBitcoinAddresses: mockAddBitcoinAddresses,
+                    getBitcoinAddresses: vi.fn().mockResolvedValue([]),
                 },
             });
         });

@@ -1,8 +1,8 @@
 import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
 
-import { Price } from '../../atoms/Price';
-import { convertAmount, convertAmountStr, getLabelByUnit } from '../../utils';
+import { Price } from '../../../atoms/Price';
+import { convertAmount, convertAmountStr, getLabelByUnit } from '../../../utils';
 
 export const SecondaryAmount = ({
     key,
