@@ -6,8 +6,12 @@ import {
     IPCInboxHostUpdateMessageSchema,
 } from "@proton/shared/lib/desktop/desktopTypes";
 import Logger from "electron-log";
+import { captureMessage } from "@sentry/electron/renderer";
+import * as Sentry from "@sentry/electron/renderer";
 
 const preloadLogger = Logger.scope("preload");
+
+Sentry.init();
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
     hasFeature: (feature) => {
@@ -28,6 +32,18 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
         ipcRenderer.send("clientUpdate", { type, payload });
     },
 } satisfies IPCInboxMessageBroker);
+
+contextBridge.exposeInMainWorld("crashBandicoot", {
+    reportCrash: () => {
+        const messageId = captureMessage("Crash bandicoot report", {
+            level: "error",
+            tags: { logScope: "crashBandicoot" },
+            extra: {},
+        });
+
+        console.log(`${messageId} reported`);
+    },
+});
 
 function addHostUpdateListener(eventType: IPCInboxHostUpdateMessageType, callback: IPCInboxHostUpdateListener) {
     const handleHostUpdate = (_event: IpcRendererEvent, message: unknown) => {

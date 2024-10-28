@@ -1,9 +1,8 @@
-import { BrowserView, BrowserWindow, Event, Input, Rectangle, Session, WebContents, app } from "electron";
+import { BrowserView, BrowserWindow, Event, Input, Rectangle, WebContents, app } from "electron";
 import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
-import { getConfig } from "../config";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { urlHasMailto, readAndClearMailtoArgs } from "../protocol/mailto";
@@ -16,8 +15,9 @@ import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
+import { getAppURL, URLConfig } from "../../store/urlStore";
 
-type ViewID = keyof ReturnType<typeof getConfig>["url"];
+type ViewID = keyof URLConfig;
 
 let currentViewID: ViewID;
 
@@ -45,9 +45,9 @@ const IGNORED_NET_ERROR_CODES = [
     -300, // INVALID_URL
 ];
 
-export const viewCreationAppStartup = (session: Session) => {
-    mainWindow = createBrowserWindow(session);
-    createViews(session);
+export const viewCreationAppStartup = () => {
+    mainWindow = createBrowserWindow();
+    createViews();
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
@@ -101,8 +101,8 @@ export const viewCreationAppStartup = (session: Session) => {
     return mainWindow;
 };
 
-const createView = (viewID: ViewID, session: Session) => {
-    const view = new BrowserView(getWindowConfig(session));
+const createView = (viewID: ViewID) => {
+    const view = new BrowserView(getWindowConfig());
 
     handleBeforeHandle(viewID, view);
 
@@ -118,11 +118,11 @@ const createView = (viewID: ViewID, session: Session) => {
     return view;
 };
 
-const createViews = (session: Session) => {
+const createViews = () => {
     mainLogger.info("Creating views");
-    browserViewMap.mail = createView("mail", session);
-    browserViewMap.calendar = createView("calendar", session);
-    browserViewMap.account = createView("account", session);
+    browserViewMap.mail = createView("mail");
+    browserViewMap.calendar = createView("calendar");
+    browserViewMap.account = createView("account");
 
     if (isWindows) {
         mainWindow!.setMenuBarVisibility(false);
@@ -152,16 +152,14 @@ const createViews = (session: Session) => {
     browserViewMap.calendar.setAutoResize({ width: true, height: true });
     browserViewMap.account.setAutoResize({ width: true, height: true });
 
-    const config = getConfig();
-
     const mailto = readAndClearMailtoArgs();
-    loadURL("mail", config.url.mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
+    loadURL("mail", getAppURL().mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
         updateViewBounds("mail");
     });
 };
 
-const createBrowserWindow = (session: Session) => {
-    mainWindow = new BrowserWindow({ ...getWindowConfig(session) });
+const createBrowserWindow = () => {
+    mainWindow = new BrowserWindow(getWindowConfig());
 
     setApplicationMenu();
 
@@ -378,12 +376,12 @@ export async function reloadHiddenViews() {
 }
 
 export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
-    const config = getConfig();
+    const appURL = getAppURL();
     const loadPromises = [];
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             if (PRELOADED_VIEWS.includes(viewID as ViewID) && toHomepage) {
-                const homepageURL = await updateLocalID(config.url[viewID as ViewID]);
+                const homepageURL = await updateLocalID(appURL[viewID as ViewID]);
                 viewLogger(viewID as ViewID).info("reset to home page", homepageURL);
                 loadPromises.push(loadURL(viewID as ViewID, homepageURL));
             } else {
@@ -396,7 +394,7 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
 }
 
 export async function showEndOfTrial() {
-    const trialEndURL = `${getConfig().url.account}/trial-ended`;
+    const trialEndURL = `${getAppURL().account}/trial-ended`;
     await loadURL("account", trialEndURL);
     showView("account");
     resetHiddenViews();
@@ -425,6 +423,10 @@ export function getAccountView() {
 
 export function getMainWindow() {
     return mainWindow!;
+}
+
+export function getCurrentViewID() {
+    return currentViewID;
 }
 
 export function getCurrentView() {
