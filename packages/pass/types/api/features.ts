@@ -6,6 +6,7 @@ export enum PassFeature {
     PassBlackFriday2024Lifetime = 'PassBlackFriday2024Lifetime',
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
     PassFamilyPlanPromo2024 = 'PassFamilyPlanPromo2024',
+    PassKillSSO = 'PassKillSSO',
     PassSimpleLoginAliasesSync = 'PassSimpleLoginAliasesSync',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebOfflineMode = 'PassWebOfflineMode',

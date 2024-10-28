@@ -109,6 +109,7 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassBlackFriday2024Lifetime]: false,
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
     [PassFeature.PassFamilyPlanPromo2024]: false,
+    [PassFeature.PassKillSSO]: false,
     [PassFeature.PassSimpleLoginAliasesSync]: false,
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebOfflineMode]: false,
