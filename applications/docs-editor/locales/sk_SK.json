@@ -537,6 +537,9 @@
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Obsah, ktorý sa pokúšate vložiť, je príliš veľký na to, aby sa dal vložiť naraz. Skúste to znova a vkladajte po menších častiach."
       ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "Jazyk, ktorý používate, nie je v režime návrhov momentálne podporovaný. Prepnite sa do režimu úprav alebo zmeňte jazyk, prosím."
+      ],
       "Viewing": [
         "Prezerá"
       ],
@@ -551,8 +554,23 @@
       "Background colour": [
         "Farba pozadia"
       ],
+      "Change image size": [
+        "Zmeniť veľkosť obrázka"
+      ],
+      "Change indent level": [
+        "Zmeniť úroveň odsadenia"
+      ],
+      "Clear formatting": [
+        "Vymazať formátovanie"
+      ],
       "Delete": [
         "Odstrániť"
+      ],
+      "Delete divider": [
+        "Vymazať oddeľovač"
+      ],
+      "Delete image": [
+        "Vymazať obrázok"
       ],
       "Delete link": [
         "Vymazať odkaz"
@@ -560,14 +578,44 @@
       "Delete paragraph": [
         "Vymazať odsek"
       ],
+      "Delete table": [
+        "Vymazať tabuľku"
+      ],
+      "Delete table column": [
+        "Vymazať stĺpec tabuľky"
+      ],
+      "Delete table row": [
+        "Vymazať riadok tabuľky"
+      ],
+      "Duplicate table column": [
+        "Duplikovať stĺpec tabuľky"
+      ],
+      "Duplicate table row": [
+        "Duplikovať riadok tabuľky"
+      ],
       "Format": [
         "Formát"
       ],
       "Insert": [
         "Vložit"
       ],
+      "Insert divider": [
+        "Vložiť oddeľovač"
+      ],
+      "Insert image": [
+        "Vložiť obrázok"
+      ],
       "Insert paragraph": [
         "Vložiť odsek"
+      ],
+      "Insert table": [
+        "Vložiť tabuľku"
+      ],
+      "Insert table column": [
+        "Vložiť stĺpec tabuľky"
+      ],
+      "Insert table row": [
+        "Vložiť riadok tabuľky"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová skratka: ${ shortcut }"
@@ -617,6 +665,9 @@
       ],
       "Delete thread": [
         "Vymazať vlákno"
+      ],
+      "Language not supported": [
+        "Jazyk nie je podporovaný"
       ]
     }
   }
