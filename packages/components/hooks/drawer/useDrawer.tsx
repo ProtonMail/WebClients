@@ -19,6 +19,7 @@ import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 export const DrawerContext = createContext<{
     /**
@@ -142,6 +143,15 @@ export const DrawerProvider = ({
     const handleReceived = useCallback(
         async (event: MessageEvent) => {
             if (!getIsDrawerPostMessage(event)) {
+                // Temporary sentry log to investigate MAILWEB-5949
+                if (event?.data?.type === DRAWER_EVENTS.READY) {
+                    captureMessage('Drawer iframe session parent - unauthorized origin', {
+                        level: 'info',
+                        extra: {
+                            origin: event.origin,
+                        },
+                    });
+                }
                 return;
             }
 
@@ -178,26 +188,35 @@ export const DrawerProvider = ({
                     break;
                 case DRAWER_EVENTS.READY:
                     {
-                        if (appInView) {
-                            const user = await getUser();
-                            postMessageToIframe(
-                                {
-                                    type: DRAWER_EVENTS.SESSION,
-                                    payload: {
-                                        UID: authentication.getUID(),
-                                        localID: authentication.getLocalID(),
-                                        keyPassword: authentication.getPassword(),
-                                        persistent: authentication.getPersistent(),
-                                        trusted: authentication.getTrusted(),
-                                        clientKey: authentication.getClientKey(),
-                                        offlineKey: authentication.getOfflineKey(),
-                                        User: user,
-                                        tag: versionCookieAtLoad,
-                                    },
+                        if (!appInView) {
+                            // Temporary sentry log to investigate MAILWEB-5949
+                            captureMessage('Drawer iframe session parent - no app in view', {
+                                level: 'info',
+                                extra: {
+                                    origin: event.origin,
                                 },
-                                appInView
-                            );
+                            });
+                            return;
                         }
+
+                        const user = await getUser();
+                        postMessageToIframe(
+                            {
+                                type: DRAWER_EVENTS.SESSION,
+                                payload: {
+                                    UID: authentication.getUID(),
+                                    localID: authentication.getLocalID(),
+                                    keyPassword: authentication.getPassword(),
+                                    persistent: authentication.getPersistent(),
+                                    trusted: authentication.getTrusted(),
+                                    clientKey: authentication.getClientKey(),
+                                    offlineKey: authentication.getOfflineKey(),
+                                    User: user,
+                                    tag: versionCookieAtLoad,
+                                },
+                            },
+                            appInView
+                        );
                     }
                     break;
                 case DRAWER_EVENTS.API_REQUEST:
