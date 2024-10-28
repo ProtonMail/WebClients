@@ -344,7 +344,17 @@ export const maybePickSessionByEmail = async ({
         }).catch(noop);
 
         if (maybeMatchingResumedSession) {
-            return { session: maybeMatchingResumedSession, sessions, type: GetActiveSessionType.AutoPick };
+            // Increase ordered priority to the requested session
+            const sortedSessions = [
+                ...sessions.filter((a) => a.remote.LocalID === maybeMatchingResumedSession.LocalID),
+                ...sessions.filter((a) => a.remote.LocalID !== maybeMatchingResumedSession.LocalID),
+            ];
+
+            return {
+                session: maybeMatchingResumedSession,
+                sessions: sortedSessions,
+                type: GetActiveSessionType.AutoPick,
+            };
         }
 
         // If a matching email could not be found, fallback to switch since it's unsure which account the user should use
