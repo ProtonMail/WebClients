@@ -12,6 +12,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import {
+    reinviteGroupMember,
     resumeGroupMember as resumeGroupMemberApi,
     deleteGroupMember as revokeGroupInvitation,
     updateGroupMember,
@@ -20,7 +21,7 @@ import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
-import { useErrorHandler } from '../../../hooks';
+import { useErrorHandler, useNotifications } from '../../../hooks';
 
 interface PermissionOption {
     label: string;
@@ -63,6 +64,7 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete }: Props) => {
     const handleError = useErrorHandler();
     const { call } = useEventManager();
     const dispatch = baseUseDispatch();
+    const { createNotification } = useNotifications();
 
     const memberPermissionOptions: PermissionOption[] = [
         { label: c('Action').t`Use group sending permissions`, value: GROUP_MEMBER_PERMISSIONS.NONE },
@@ -86,6 +88,15 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete }: Props) => {
                     memberID: member.ID,
                 })
             );
+        } catch (error) {
+            handleError(error);
+        }
+    };
+
+    const handleResendInvitation = async () => {
+        try {
+            await api(reinviteGroupMember(member.ID));
+            createNotification({ text: c('Success notification').t`Resent invitation` });
         } catch (error) {
             handleError(error);
         }
@@ -117,6 +128,10 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete }: Props) => {
         : GROUP_MEMBER_PERMISSIONS.NONE;
 
     const isPaused = member.State === GROUP_MEMBER_STATE.PAUSED;
+    const isPending = member.State === GROUP_MEMBER_STATE.PENDING;
+    const isRejected = member.State === GROUP_MEMBER_STATE.REJECTED;
+
+    const canResendInvitation = isPending || isRejected;
 
     return (
         <>
@@ -158,6 +173,15 @@ const GroupMemberItemDropdown = ({ member, group, canOnlyDelete }: Props) => {
                             disabled={canOnlyDelete}
                         >
                             {c('Action').t`Resume membership`}
+                        </DropdownMenuButton>
+                    )}
+                    {canResendInvitation && (
+                        <DropdownMenuButton
+                            className="text-left"
+                            onClick={handleResendInvitation}
+                            disabled={canOnlyDelete}
+                        >
+                            {c('Action').t`Resend invitation`}
                         </DropdownMenuButton>
                     )}
                     <DropdownMenuButton
