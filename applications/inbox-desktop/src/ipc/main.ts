@@ -21,6 +21,7 @@ import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import { setInstallSourceReported, getInstallSource } from "../store/installInfoStore";
 import { getESUserChoice, setESUserChoice } from "../store/userSettingsStore";
 import { checkDefaultMailto, getDefaultMailto, setDefaultMailtoTelemetryReported } from "../utils/protocol/default";
+import { getAllAppVersions, storeAppVersion } from "../utils/appVersions";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -62,6 +63,9 @@ export const handleIPCCalls = () => {
             }
             case "colorScheme":
                 event.returnValue = getColorScheme();
+                break;
+            case "getAllAppVersions":
+                event.returnValue = getAllAppVersions();
                 break;
             default:
                 ipcLogger.error(`Invalid getInfo message: ${message}`);
@@ -143,6 +147,9 @@ export const handleIPCCalls = () => {
                 setESUserChoice(payload.userID, payload.userChoice);
                 break;
             }
+            case "storeAppVersion":
+                storeAppVersion(payload);
+                break;
             default:
                 ipcLogger.error(`unknown message type: ${type}`);
                 break;
