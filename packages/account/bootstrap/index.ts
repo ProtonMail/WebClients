@@ -37,9 +37,11 @@ import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
+import { storeAppVersion } from '@proton/shared/lib/desktop/version';
 import { resumeSessionDrawerApp } from '@proton/shared/lib/drawer/session';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import sentry, { setSentryEnabled, setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
@@ -115,6 +117,9 @@ export const init = ({
     locales: TtagLocaleMap;
 }) => {
     metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
+    if (isElectronMail) {
+        storeAppVersion(config.APP_NAME, config.APP_VERSION);
+    }
     if (!authentication.UID) {
         setMetricsEnabled(true);
     }
