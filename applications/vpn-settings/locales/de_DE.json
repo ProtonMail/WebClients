@@ -190,6 +190,9 @@
       "Delete your account": [
         "Konto löschen"
       ],
+      "Deny access": [
+        "Zugriff verweigern"
+      ],
       "Details": [
         "Details"
       ],
@@ -2514,6 +2517,9 @@
       "Invalid expiration date": [
         "Ungültiges Ablaufdatum"
       ],
+      "Invalid IBAN": [
+        "Ungültige IBAN"
+      ],
       "Invalid invitation link": [
         "Ungültiger Einladungslink"
       ],
@@ -2817,6 +2823,9 @@
       ],
       "Lifetime accounts cannot join a family plan.": [
         "Lebenslang lizenzierte Konten können keinem Familienabonnement beitreten."
+      ],
+      "Manage addresses": [
+        "Adressen verwalten"
       ],
       "Manage user accounts": [
         "Benutzerkonten verwalten"
@@ -3501,6 +3510,9 @@
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/Monat)"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Hol dir eine ${ BRAND_NAME }-Adresse**, um alle unsere ${ BRAND_NAME_TWO }-Dienste einschließlich ${ MAIL_SHORT_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } zu nutzen."
       ],
@@ -3950,6 +3962,9 @@
       ],
       "High Priority": [
         "Hohe Priorität"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Öffentlicher Schlüssel des Identitätsanbieters zur Signierung von Authentifizierungsbehauptungen. Es sollte einen Ort geben, um den Zertifikat-Hash vom Identitätsanbieter herunterzuladen oder zu kopieren. Füge einfach den Zertifikat-Hash in das Textfeld ein."
@@ -5232,6 +5247,9 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
       ],
@@ -5291,6 +5309,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
+      ],
+      "Company name": [
+        "Unternehmensname"
       ],
       "Config to connect to ${ serverName }": [
         "Konfiguration zur Verbindung mit ${ serverName }"
@@ -5408,6 +5429,9 @@
       ],
       "Hide password": [
         "Passwort ausblenden"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Intervall"
@@ -5568,6 +5592,9 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32,\n1228 Plan-les-Ouates\nGenf, Schweiz"
+      ],
       "Search": [
         "Suche"
       ],
@@ -5600,6 +5627,9 @@
       ],
       "System information": [
         "Systeminformationen"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Two-password mode": [
         "Zwei-Passwort-Modus"
@@ -5796,6 +5826,9 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
+      ],
+      "PayPal without credit card": [
+        "PayPal ohne Kreditkarte"
       ],
       "perform a password reset from your active session": [
         "dein Passwort in deiner aktiven Sitzung zurücksetzen"
@@ -6497,6 +6530,9 @@
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
+      "TOR over VPN": [
+        "Tor über VPN"
+      ],
       "Two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung"
       ],
@@ -6851,6 +6887,9 @@
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und entfernen, ihren Zugriff auf ${ BRAND_NAME }-Dienste verwalten und andere Aufgaben durchführen können."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Unsere robuste Infrastruktur ermöglicht dir den Zugriff auf dein Konto, wann immer nötig."
@@ -7483,6 +7522,9 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Banküberweisung"
+      ],
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
@@ -8507,6 +8549,52 @@
         "Lade Freunde zu ${ BRAND_NAME } ein"
       ]
     },
+    "sso": {
+      "Access denied": [
+        "Zugriff verweigert"
+      ],
+      "Access granted": [
+        "Zugriff gewährt"
+      ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Contact administrator": [
+        "Administrator kontaktieren"
+      ],
+      "Deny access": [
+        "Zugriff verweigern"
+      ],
+      "Devices available": [
+        "Verfügbare Geräte"
+      ],
+      "Grant access": [
+        "Zugriff gewähren"
+      ],
+      "Invalid confirmation code": [
+        "Ungültiger Bestätigungscode"
+      ],
+      "Join ${ organizationName }": [
+        "${ organizationName } beitreten"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Inactive": [
+        "Inaktiv"
+      ],
+      "Pending activation": [
+        "Ausstehende Aktivierung"
+      ],
+      "Signed out": [
+        "Abgemeldet"
+      ],
+      "Unknown": [
+        "Unbekannt"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
@@ -9381,6 +9469,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } Geräte"

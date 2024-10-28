@@ -2284,6 +2284,9 @@
       "Invalid expiration date": [
         "Érvénytelen lejárati dátum"
       ],
+      "Invalid IBAN": [
+        "Érvénytelen IBAN"
+      ],
       "Invalid invitation link": [
         "Érvénytelen meghívó hivatkozás"
       ],
@@ -2373,6 +2376,9 @@
       ],
       "Tab closed": [
         "Fül bezárva"
+      ],
+      "The amount due has changed. Please try again.": [
+        "A befizetendő összeg megváltozott. Kérjük próbálja meg újra."
       ],
       "The email addresses do not match": [
         "Az e-mail címek nem egyeznek"
@@ -3055,6 +3061,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz",
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Használja a Fel és Le billentyűket a javaslatok eléréséhez és böngészéséhez. Nyomja meg az Enter billentyűt a választásának megerősítéséhez, vagy az Escape billentyűt a javaslatok doboz bezárásához."
       ]
@@ -3152,6 +3162,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /hónap)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Szerezzen ${ BRAND_NAME } címet** és használja az összes ${ BRAND_NAME_TWO } szolgáltatást, mint például a ${ MAIL_SHORT_APP_NAME } és a ${ CALENDAR_SHORT_APP_NAME }."
@@ -3520,6 +3533,9 @@
       "High Priority": [
         "Magas prioritású"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ha egy másik adminisztrátor megváltoztatná ezt a jelszót, el kell kérni tőle az új Szervezeti Jelszót."
       ],
@@ -3828,6 +3844,9 @@
         "A felhasználó e-mail címe hiányzik a következő sorban:",
         "A felhasználó e-mail címe hiányzik a következő sorokban:"
       ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Kérjük kérje meg a dokumentum tulajdonosát hogy hívja meg."
+      ],
       "Please authenticate your card in the verification tab.": [
         "Kérjük, hitelesítse a kártyáját az ellenőrző lapon."
       ],
@@ -3843,8 +3862,14 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Írja be a fiókhoz tartozó, 12 szóból álló, helyreállítási jelmondatát."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "A megerősítés gombra kattintva a fiókban ${ remainingCreditsFormatted } kredit marad meg."
+      ],
       "please open a support ticket": [
         "kérjük, nyisson egy ügyfélszolgálati jegyet"
+      ],
+      "Please open the document to view it.": [
+        "Kérjük nyissa meg a dokumentumot, hogy megnézhesse."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Kérjük, próbálkozzon újra egy másik fizetési mód használatával, vagy lépjen kapcsolatba a bankjával."
@@ -3876,11 +3901,17 @@
       "Preview for this file type is not supported": [
         "Ehhez a fájltípushoz nem jeleníthető meg előnézet"
       ],
+      "Preview of documents is not yet supported.": [
+        "A dokumentumok előnézete még nem támogatott."
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Az ár tartalmaz minden vonatkozó, megújulás-alapú kedvezményt és a fiókjában mentett, le nem járt kupont."
       ],
       "Protected by Swiss privacy laws": [
         "Svájc adatvédelmi törvényei által védve"
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "A dokumentum nyilvános megosztása még nem támogatott."
       ],
       "read our two-factor authentication guide first": [
         "először olvassa el a kétlépcsős hitelesítésről szóló útmutatót"
@@ -4389,6 +4420,9 @@
       "You can now access and manage the account as an administrator.": [
         "Most adminisztrátorként érheti el és kezelheti a fiókot."
       ],
+      "You can now return to the application to continue": [
+        "Most már visszatérhet az applikációba és fojtathatja"
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Egyszerre csak egy csevegés-ablakot tud megnyitni. Zárja be előző beszélgetéseit, mielőtt belekezd egy újba."
       ],
@@ -4427,6 +4461,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "A bejelentkezés után az ${ destination } oldalra kerül átirányításra."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Ezen a dátumon elveszíted a hozzáférést a ${ planTitle } szerverekhez és funkciókhoz."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
@@ -5468,6 +5505,10 @@
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
       ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
+      ],
       "${ options }-day file version history": [
         "Fájlok változtatási előzményeinek megtartása ${ options } napig",
         "Fájlok változtatási előzményeinek megtartása ${ options } napig"
@@ -5774,6 +5815,10 @@
         "Akár ${ n } felhasználó",
         "Akár ${ n } felhasználó"
       ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })",
+        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Akár ${ totalStorageSize } tárhely"
       ],
@@ -5789,6 +5834,16 @@
       "Vault sharing (up to ${ n } person)": [
         "Tároló megosztás (${ n } személyig)",
         "Tároló megosztás (${ n } személyig)"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } adminisztrátor",
+        "${ admins } adminisztrátorok"
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználók"
       ]
     },
     "new_plans: feature info": {
@@ -6425,6 +6480,12 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Minden ${ BRAND_NAME } Plus szolgáltatás. ${ br } Egy egyszerű előfizetés."
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } felhasználói fiók",
+        "${ n } felhasználói fiókok"
       ]
     },
     "password_reset: info": {
@@ -7572,6 +7633,26 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "A ${ planName } ${ planMaxSpace } tárhelyet kínál felhasználónként e-mailek, mellékletek, események, fájlok és jelszavak számára. Ezenkívül jogosult éves tárolási bónuszokra."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } naptár felhasználónként",
+        "${ planNumberOfCalendars } naptár felhasználónként"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } saját e-mail domain név",
+        "${ planNumberOfDomains } saját e-mail domain név"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } email cím",
+        "${ planNumberOfEmails } e-mail cím"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mail cím felhasználónként",
+        "${ planNumberOfEmails } e-mail cím felhasználónként"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } felhasználó",
+        "${ planNumberOfUsers } felhasználó"
+      ],
       "Add any new files": [
         "Bármilyen új fájl hozzáadása"
       ],
@@ -8001,6 +8082,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe írási segéd"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME } kliensek"
       ],
