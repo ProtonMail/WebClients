@@ -2908,6 +2908,58 @@
         "Ваша информация была обнаружена как минимум в одной утечке данных. Включите ${ DARK_WEB_MONITORING_NAME } для просмотра подробностей. ${ link }"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Одобрить или отклонить сейчас"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Введите код подтверждения, который мы отправили на другое устройство."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Если вы не делали этот запрос, отмените его сейчас."
+      ],
+      "Invalid confirmation code": [
+        "Недействительный код подтверждения"
+      ],
+      "No, it wasn’t me": [
+        "Нет, это было не я"
+      ],
+      "Sign-in confirmed": [
+        "Вход подтвержден"
+      ],
+      "Sign-in rejected": [
+        "Вход отклонен"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Запрос входа на другом устройстве. Это были вы?"
+      ],
+      "Yes, it was me": [
+        "Да, это была я."
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Активное"
+      ],
+      "Inactive": [
+        "Неактивное"
+      ],
+      "Pending activation": [
+        "Ожидает активации"
+      ],
+      "Pending admin activation": [
+        "Ожидание активации администратором"
+      ],
+      "Rejected": [
+        "Отклонено"
+      ],
+      "Signed out": [
+        "Выполнен выход"
+      ],
+      "Unknown": [
+        "Неизвестное"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Синхронизация псевдонимов успешно включена. Синхронизация псевдонимов SimpleLogin может занять некоторое время"
@@ -3096,6 +3148,9 @@
       ],
       "Recommended actions": [
         "Рекомендуемые действия"
+      ],
+      "Reject device?": [
+        "Отклонить устройство?"
       ],
       "Remove email address?": [
         "Удалить адрес электронной почты?"

@@ -1818,6 +1818,9 @@
       "This version will be added to the history as the newest version.": [
         "Denna version kommer att läggas till i historiken som den senaste versionen."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Detta kommer avvisa enheten **${ name }** som försökte logga in på ditt ${ BRAND_NAME }-konto den **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "För att migrera data från en annan lösenordshanterare, gå till lösenordshanteraren, exportera din data och ladda sedan upp den till ${ PASS_APP_NAME }. När din data har importerats, ta bort den exporterade filen."
       ],
@@ -2855,6 +2858,12 @@
       "Approve or deny it now": [
         "Godkänn eller neka det nu"
       ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Ange bekräftelsekoden vi skickade på din andra enhet."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Om du inte gjorde denna begäran, avbryt den nu."
+      ],
       "Invalid confirmation code": [
         "Ogiltig bekräftelsekod"
       ],
@@ -2864,8 +2873,17 @@
       "Sign-in confirmed": [
         "Inloggning bekräftad"
       ],
+      "Sign-in failed": [
+        "Inloggning misslyckades"
+      ],
       "Sign-in rejected": [
         "Inloggning avisad"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Inloggning begärd på annan enhet. Var det du?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Inloggning begärd på annan enhet. Var det du? "
       ],
       "Yes, it was me": [
         "Ja, det var jag"
@@ -2877,6 +2895,9 @@
       ],
       "Inactive": [
         "Inaktiv"
+      ],
+      "Pending activation": [
+        "Väntande aktivering"
       ],
       "Rejected": [
         "Avvisad"
