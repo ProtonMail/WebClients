@@ -397,6 +397,7 @@ const SingleSignupContainerV2 = ({
                 audience,
                 freePlan: model.freePlan,
                 mode: signupParameters.mode,
+                plan,
                 plansMap: model.plansMap,
                 isLargeViewport: viewportWidth['>=large'],
                 hideFreePlan: signupParameters.hideFreePlan,
