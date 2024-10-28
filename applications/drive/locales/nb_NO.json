@@ -828,6 +828,9 @@
       "Toggle Calendar app": [
         "Åpne/lukke kalender-app"
       ],
+      "Toggle Contacts app": [
+        "Slå av/på Kontakter-appen"
+      ],
       "Toggle settings": [
         "Åpne/lukke innstillinger"
       ],
@@ -2324,11 +2327,6 @@
         "Forfalt faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "bruk Easy Switch-importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert 24/7 overvåking av mistenkelig aktivitet – inkludert eskalering til sikkerhetsspesialister."
@@ -2369,6 +2367,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "For å sikre høyest mulig sikkerhet for kontoen din, angi en gjenopprettingsfrase."
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
       ],
@@ -2395,6 +2396,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "bruk Easy Switch-importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2817,6 +2823,9 @@
       "Invalid expiration date": [
         "Ugyldig utløpsdato"
       ],
+      "Invalid IBAN": [
+        "Ugyldig IBAN"
+      ],
       "Invalid name": [
         "Ugyldig navn"
       ],
@@ -2969,6 +2978,9 @@
       "The address might be misspelled": [
         "Adressen kan være feilstavet."
       ],
+      "The amount due has changed. Please try again.": [
+        "Det forfalte beløpet er endret. Prøv igjen."
+      ],
       "The email addresses do not match": [
         "E-postadressene samsvarer ikke"
       ],
@@ -3068,6 +3080,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nådd maksimalt antall kalendere."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nådd grensen for antall kontakter for kontoen din"
       ],
       "You must set a name": [
         "Du må angi et navn"
@@ -3415,6 +3430,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Livsvarige kontoer kan ikke bli med i en familieplan."
       ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Eiere av en plan med medlemmer kan ikke bli med i en annen familieplan."
       ],
@@ -3432,6 +3450,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kan bare godta 3 invitasjoner i løpet av en 6-måneders periode. Ta kontakt med ${ supportLink } hvis du trenger et unntak."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kan ikke godta denne invitasjonen med din nåværende plan."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du har blitt invitert til å bli med ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3469,6 +3490,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Konfigurer familiekontoen din og inviter brukere"
+      ],
       "Set up your family": [
         "Sett opp familien din"
       ],
@@ -4060,6 +4084,9 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/måned)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -4539,6 +4566,9 @@
       "How does encrypted search work?": [
         "Hvordan fungerer kryptert søk?"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
@@ -4578,6 +4608,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
+      ],
+      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "I mellomtiden kan du registrere deg for din egen ${ DRIVE_APP_NAME }-konto og beskytte dataene dine med ende-til-ende-kryptering og dele dem sikkert."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
@@ -4787,6 +4820,9 @@
       ],
       "Organization size": [
         "Organisasjonsstørrelse"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
       ],
       "Owner": [
         "Eier"
@@ -5666,6 +5702,9 @@
       "Address": [
         "Adresse"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "Anyone on the Internet with the link can view": [
         "Alle på Internett med koblingen kan se"
       ],
@@ -5752,6 +5791,9 @@
       ],
       "Comment": [
         "Kommentar"
+      ],
+      "Company name": [
+        "Foretaksnavn"
       ],
       "Confirm password": [
         "Bekreft passord"
@@ -5900,6 +5942,9 @@
       ],
       "I understand the risk": [
         "Jeg forstår risikoen"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Importer alle meldinger"
@@ -6066,6 +6111,9 @@
       "Reveal password": [
         "Avslør passord"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Security code (${ codeName })": [
         "Sikkerhetskode (${ codeName })"
       ],
@@ -6137,6 +6185,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Dette vil permanent slette alle filer i din låste stasjon."
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Title": [
         "Tittel"
@@ -6522,6 +6573,9 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
+      "GZip Archive": [
+        "GZip-arkiv"
+      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -6542,6 +6596,9 @@
       ],
       "JavaScript": [
         "JavaScript"
+      ],
+      "JPEG image": [
+        "JPEG-bilde"
       ],
       "JSON": [
         "JSON"
@@ -6608,6 +6665,9 @@
       ],
       "Opus audio": [
         "Opus-lyd"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Bærbar nettverksgrafikk (PNG)"
       ],
       "Python": [
         "Python"
@@ -7126,6 +7186,9 @@
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhetskopier alle filene dine på tvers av enheter"
       ],
+      "TOR over VPN": [
+        "TOR over VPN"
+      ],
       "Two-factor authentication": [
         "Tofaktorautentisering"
       ],
@@ -7320,6 +7383,14 @@
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -7332,14 +7403,6 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Starter fra ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7392,6 +7455,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
       ],
@@ -7443,6 +7509,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighet for å se innbokser for ikke-private brukere på samme måte som brukeren, inkludert fullstendige meldings- og kontaktdetaljer."
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisasjonsadministrasjonsverktøy som lar administratorer legge til og fjerne brukere, administrere tilgangen deres til ${ BRAND_NAME }-tjenester og utføre andre oppgaver."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vår robuste infrastruktur sikrer at du får tilgang til kontoen din når du trenger den"
       ],
@@ -7484,6 +7553,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Tilbakestill brukerpassord og tilbakestill tofaktorautentisering på brukere"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Rute internettrafikken din gjennom TOR-nettverket med et enkelt klikk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
@@ -7753,6 +7825,9 @@
       "Failed to download files: ${ err }": [
         "Kunne ikke laste ned filer: ${ err }"
       ],
+      "Failed to load invitation details": [
+        "Kunne ikke laste inn invitasjonsdetaljer"
+      ],
       "Failed to move, please try again": [
         "Kunne ikke flytte, vennligst prøv igjen."
       ],
@@ -7811,11 +7886,17 @@
       "Share invitation declined": [
         "Delingsinvitasjon avslått"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Det mislyktes å stoppe delingen av dette elementet"
+      ],
       "Subfolder failed to be loaded": [
         "Undermappen kunne ikke lastes inn"
       ],
       "The item was not added to your drive": [
         "Elementet ble ikke lagt til i din Drive"
+      ],
+      "The item was successfully added to your drive": [
+        "Elementet ble lagt til i din Drive"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Koblingen til \"${ name }\" kunne ikke slettes"
@@ -7866,6 +7947,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "For at importen skal fungere, må du velge alle forespurte elementer som vist i GIF-en."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Velg hva ${ BRAND_NAME } kan få tilgang til: se e-postmeldinger og innstillinger, se og last ned kontaktene dine, se og last ned alle agendaer du får tilgang til fra Google Calendar."
       ]
     },
     "Onboarding": {
@@ -8170,11 +8256,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Bankoverføring"
+      ],
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bruk firmanavn"
+      ],
+      "Use personal name": [
+        "Bruk personlig navn"
       ]
     },
     "Payments": {
@@ -8254,6 +8351,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Vennligst forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved å bekrefte denne betalingen autoriserer du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, til å instruere banken din om å debitere kontoen din, og banken din til å debitere kontoen din tilsvarende. Du kan få refusjon innen 8 uker fra belastningsdatoen, i henhold til vilkårene i avtalen din med banken."
+      ],
+      "Street address, postal code, and city": [
+        "Gateadresse, postnummer og by"
       ]
     },
     "PGP key encryption warning": {
@@ -8507,6 +8612,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Brukt på Amazon for shopping, og så videre."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Aliaser leveres av ${ passLink }."
@@ -9134,6 +9242,9 @@
     "Subscription change warning": {
       "Got it": [
         "Forstått"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Bare logg på din Apple App Store-konto, deretter velg ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Bare logg på din Play Store-konto, deretter klikk ${ subscriptions }."
@@ -10428,6 +10539,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Velg PGP-ordningen som skal brukes når du signerer eller krypterer til en bruker. Merk at PGP/Inline tvinger meldinger i ren tekst."
       ],
+      "Shared with end-to-end encryption": [
+        "Delt med ende-til-ende-kryptering"
+      ],
       "Show side panel": [
         "Vis sidepanel"
       ],
@@ -10521,6 +10635,11 @@
       ],
       "No ads": [
         "Ingen annonser"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     },
     "wallet_signup_2024: Info": {
