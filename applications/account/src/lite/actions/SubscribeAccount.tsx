@@ -42,7 +42,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import {
-    getHas2023OfferCoupon,
+    getHas2024OfferCoupon,
     getPlan,
     getUpgradedPlan,
     getValidCycle,
@@ -333,8 +333,8 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
                                             // Ignore visionary since it doesn't require a BF coupon
                                             !data.model.planIDs[PLANS.VISIONARY] &&
                                             // Tried to apply the BF coupon, but the API responded without it.
-                                            getHas2023OfferCoupon(coupon?.toUpperCase()) &&
-                                            !getHas2023OfferCoupon(data.result.Coupon?.Code)
+                                            getHas2024OfferCoupon(coupon?.toUpperCase()) &&
+                                            !getHas2024OfferCoupon(data.result.Coupon?.Code)
                                         ) {
                                             setError(offerUnavailableError);
                                         }

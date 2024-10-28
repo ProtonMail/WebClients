@@ -16,6 +16,7 @@ type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
 interface OwnProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {
     iconName?: IconName;
     icon?: boolean;
+    iconSize?: IconSize;
     iconGradient?: boolean;
     upsell?: boolean;
     shape?: ButtonButtonLikeProps['shape'];
@@ -36,6 +37,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
         iconName,
         icon,
         iconGradient = true,
+        iconSize,
         shape = 'outline',
         size = 'medium',
         upsell,
@@ -48,16 +50,17 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
     }: PromotionButtonProps<E>,
     ref: ForwardedRef<Element>
 ) => {
-    let iconSize: IconSize | undefined;
     const { viewportWidth } = useActiveBreakpoint();
 
-    switch (true) {
-        case (icon && upsell) || size === 'small':
-            iconSize = 4;
-            break;
-        default:
-            iconSize = 5;
-            break;
+    if (iconSize === undefined) {
+        switch (true) {
+            case (icon && upsell) || size === 'small':
+                iconSize = 4;
+                break;
+            default:
+                iconSize = 5;
+                break;
+        }
     }
 
     if (responsive && !viewportWidth['>=large']) {

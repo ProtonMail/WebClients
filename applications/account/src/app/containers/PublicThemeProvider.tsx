@@ -3,8 +3,11 @@ import { createContext, useContext } from 'react';
 
 import type { Breakpoints } from '@proton/components';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+
+import type { SignupParameters2 } from '../single-signup-v2/interface';
 
 export interface PublicTheme {
     type?: ThemeTypes;
@@ -36,8 +39,25 @@ const PublicThemeContext = createContext<PublicTheme>(defaultValue);
 export const getPublicTheme = (
     toApp: APP_NAMES | undefined,
     audience: Audience,
-    viewportWidth: Breakpoints['viewportWidth']
+    viewportWidth: Breakpoints['viewportWidth'],
+    signupParameters: SignupParameters2
 ): PublicTheme => {
+    const darkTheme = getHas2024OfferCoupon(signupParameters.coupon);
+    if (darkTheme) {
+        return {
+            type: ThemeTypes.Carbon,
+            background: 'bf',
+            intent: toApp,
+            dark: true,
+            card: {
+                className: viewportWidth.xsmall ? 'ui-prominent' : defaultValue.card.className,
+            },
+            layout: {
+                className: 'ui-prominent',
+            },
+        };
+    }
+
     if (toApp === APPS.PROTONWALLET) {
         return {
             ...defaultValue,

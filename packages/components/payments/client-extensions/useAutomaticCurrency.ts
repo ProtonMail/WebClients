@@ -6,15 +6,19 @@ import { useCurrencies } from './useCurrencies';
 
 export const useAutomaticCurrency = () => {
     const { getPreferredCurrency } = useCurrencies();
-    const [user] = useUser();
-    const [subscription] = useSubscription();
-    const [plans] = usePlans();
-    const [status] = usePaymentStatus();
+    const [user, userLoading] = useUser();
+    const [subscription, subscriptionLoading] = useSubscription();
+    const [plans, plansLoading] = usePlans();
+    const [status, statusLoading] = usePaymentStatus();
 
-    return getPreferredCurrency({
+    const loading = userLoading || subscriptionLoading || plansLoading || statusLoading;
+
+    const currency = getPreferredCurrency({
         user,
         plans: plans?.plans,
         status,
         subscription,
     });
+
+    return [currency, loading] as const;
 };

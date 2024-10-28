@@ -1,5 +1,5 @@
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { BLACK_FRIDAY, MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE } from '@proton/shared/lib/constants';
+import { MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE } from '@proton/shared/lib/constants';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES, PLANS } from './constants';
@@ -158,25 +158,6 @@ describe('getNewMethods()', () => {
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
     });
 
-    it('should not include Bitcoin when Bitcoin is not available due to coupon', () => {
-        const methods = new PaymentMethods(
-            status,
-            [],
-            ChargebeeEnabled.INHOUSE_FORCED,
-            500,
-            BLACK_FRIDAY.COUPON_CODE,
-            'subscription',
-            undefined,
-            undefined,
-            undefined,
-            false,
-            undefinedBillingAddress,
-            enableSepaTrue
-        );
-
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-    });
-
     it.each(['signup'] as PaymentMethodFlows[])(
         'should not include Bitcoin when Bitcoin is not available due to flow %s',
         (flow) => {
@@ -235,25 +216,6 @@ describe('getNewMethods()', () => {
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
-    });
-
-    it('should not include Cash when Cash is not available due to coupon', () => {
-        const methods = new PaymentMethods(
-            status,
-            [],
-            ChargebeeEnabled.INHOUSE_FORCED,
-            500,
-            BLACK_FRIDAY.COUPON_CODE,
-            'subscription',
-            undefined,
-            undefined,
-            undefined,
-            false,
-            undefinedBillingAddress,
-            enableSepaTrue
-        );
-
-        expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
     });
 
     it.each(['signup', 'signup-pass', 'signup-pass-upgrade'] as PaymentMethodFlows[])(
@@ -824,28 +786,6 @@ describe('Cash', () => {
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
     });
 
-    it('should not display cash if BF coupon is present', () => {
-        const flow: PaymentMethodFlows = 'subscription';
-        const coupon = BLACK_FRIDAY.COUPON_CODE;
-
-        const methods = new PaymentMethods(
-            status,
-            [],
-            ChargebeeEnabled.INHOUSE_FORCED,
-            500,
-            coupon,
-            flow,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            undefinedBillingAddress,
-            enableSepaTrue
-        );
-
-        expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
-    });
-
     it.each(signupFlows)('should not display cash in signup flows', (flow) => {
         const coupon = '';
 
@@ -924,28 +864,6 @@ describe('Chargebee Bitcoin', () => {
         'add-paypal',
     ] as PaymentMethodFlows[])('should not display bitcoin in %s flow', (flow) => {
         const coupon = '';
-
-        const methods = new PaymentMethods(
-            status,
-            [],
-            ChargebeeEnabled.CHARGEBEE_FORCED,
-            500,
-            coupon,
-            flow,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            undefinedBillingAddress,
-            enableSepaTrue
-        );
-
-        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
-    });
-
-    it('should not display bitcoin if coupon is present', () => {
-        const flow: PaymentMethodFlows = 'subscription';
-        const coupon = BLACK_FRIDAY.COUPON_CODE;
 
         const methods = new PaymentMethods(
             status,
@@ -1184,28 +1102,6 @@ describe('Bitcoin', () => {
         'add-paypal',
     ] as PaymentMethodFlows[])('should not display bitcoin in %s flow', (flow) => {
         const coupon = '';
-
-        const methods = new PaymentMethods(
-            status,
-            [],
-            ChargebeeEnabled.CHARGEBEE_FORCED,
-            500,
-            coupon,
-            flow,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            undefinedBillingAddress,
-            enableSepaTrue
-        );
-
-        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
-    });
-
-    it('should not display bitcoin if coupon is present', () => {
-        const flow: PaymentMethodFlows = 'subscription';
-        const coupon = BLACK_FRIDAY.COUPON_CODE;
 
         const methods = new PaymentMethods(
             status,

@@ -1,0 +1,253 @@
+@import '~@proton/styles/scss/lib';
+
+.offer-modal[class*='offer-black-friday-2024'] {
+	background: linear-gradient(180deg, #40395f 0%, #08031f 100%);
+
+	// taxonomy override for unique layout
+	--modal-text-color: white;
+	--text-norm: white;
+	--text-weak: rgb(255 255 255 / 0.7);
+	--color-promo: #fad857;
+
+	.modal-close-icon {
+		inline-size: 1rem;
+		block-size: 1rem;
+	}
+
+	// overrides for 1 plan design
+	&.offer-modal--one-deal {
+		&#{&} {
+			--size: #{em(470)};
+
+			.scroll-outer-vertical .scroll-inner,
+			.scroll-outer-vertical .scroll-child {
+				overflow: overlay;
+			}
+		}
+
+		.modal-two-content {
+			flex-direction: column;
+		}
+
+		.offer-plan {
+			margin-block-end: 0;
+
+			&.is-focused {
+				box-shadow: none;
+				padding: 0;
+				background-color: transparent;
+			}
+		}
+
+		.offer-percentage {
+			display: none;
+		}
+
+		.offer-percentage--one-plan {
+			display: block;
+			position: static;
+			transform: none;
+			inset-inline-start: 0;
+			margin-block: 0.25em auto;
+			max-inline-size: none;
+		}
+
+		.offer-cta {
+			margin-block-end: 0;
+		}
+
+		.offer-see-plan-features {
+			margin-block: var(--space-4);
+		}
+
+		.offer-features {
+			margin-block-end: 0;
+		}
+	}
+
+	// override for 2 plan or more display
+	&:not(.offer-modal--one-deal) {
+		.offer-plan-namePeriod {
+			@include media('<=#{em(850, 16)}') {
+				min-block-size: 5em; // proton unlimited on 2 lines // TOCHECK WITH ALL
+			}
+			@include media('<=small') {
+				min-block-size: 0;
+			}
+		}
+	}
+
+	// override for 3 plans (Pass)
+	.offer-main-wrapper--3deals {
+		.offer-monthly-price-container {
+			.offer-monthly-price {
+				.currency,
+				.amount--large {
+					font-size: em(30);
+				}
+			}
+		}
+
+		.offer-plan-namePeriod {
+			@include media('<=#{em(950, 16)}') {
+				min-block-size: 6.2em; // proton unlimited on 2 lines
+			}
+			@include media('<=small') {
+				min-block-size: 0;
+			}
+		}
+	}
+
+	.offer-plan {
+		background-color: rgb(255 255 255 / 0.05);
+		border-radius: var(--border-radius-xl);
+		border: 0;
+		box-shadow: 0 0 0 3px transparent;
+		padding: var(--space-6);
+
+		&.is-focused {
+			box-shadow: 0 0 0 3px #b5a3ff;
+		}
+	}
+
+	.offer-percentage {
+		--primary: var(--color-promo);
+		--background-weak: #e2dbff;
+		--text-weak: #494b7a;
+
+		border: 0;
+		font-size: em(16);
+		padding-block: var(--space-2);
+		border-radius: var(--border-radius-full);
+
+		&.bg-primary {
+			color: #322080;
+		}
+	}
+
+	.offer-plan-container {
+		@include media('>=medium') {
+			max-inline-size: rem(384);
+		}
+	}
+
+	.offer-most-popular > span {
+		color: var(--text-weak);
+	}
+
+	.offer-monthly-price-container {
+		text-align: start;
+
+		.offer-monthly-price {
+			.currency,
+			.amount--large {
+				font-size: em(48); // will probably remove it because of 3 plans
+			}
+		}
+	}
+
+	.offer-cta {
+		&.button-solid-norm {
+			--button-default-background-color: white;
+			--button-hover-background-color: white;
+			--button-active-background-color: rgb(255 255 255 / 0.8);
+			--button-default-text-color: #6d4aff;
+			--button-hover-text-color: #6d4aff;
+			--button-active-text-color: #6d4aff;
+
+			// box-shadow: 0 0 24px 0 rgb(250 216 87 / 0.5);
+
+			&:hover {
+				box-shadow: 0 0 48px 0 rgb(255 255 255 / 0.3);
+			}
+
+			&:active {
+				box-shadow: none;
+			}
+		}
+
+		&.button-outline-norm {
+			--button-default-background-color: transparent;
+			--button-hover-background-color: rgb(255 255 255 / 0.05);
+			--button-active-background-color: rgb(255 255 255 / 0.1);
+			--button-default-text-color: white;
+			--button-hover-text-color: white;
+			--button-active-text-color: white;
+			--button-default-border-color: white;
+			--button-hover-border-color: white;
+			--button-active-border-color: white;
+		}
+	}
+
+	.offer-see-plan-features {
+		color: var(--text-weak);
+	}
+
+	// dirty overrides for feature list because no other way to do it
+	.offer-features {
+		--background-weak: rgb(255 255 255 / 0.1);
+
+		span.align-middle {
+			inline-size: 100%;
+			display: flex;
+		}
+
+		span.text-left {
+			flex: 1 1 0;
+		}
+
+		svg.color-primary {
+			color: rgb(255 255 255 / 0.7);
+		}
+
+		.info-button {
+			margin-block: auto;
+			inset-block-start: 0;
+		}
+
+		svg.color-success {
+			color: white;
+		}
+	}
+
+	.offer-deal-price-infos {
+		text-align: center;
+	}
+
+	.offers-currency-selector {
+		.button-group {
+			--background-norm: rgb(255 255 255 / 0.1);
+
+			border: 0;
+		}
+
+		.vr {
+			visibility: hidden;
+		}
+
+		.button-group-item {
+			--background-norm: transparent;
+			--button-active-background-color: rgb(255 255 255 / 0.2);
+
+			&:hover {
+				--button-hover-background-color: rgb(255 255 255 / 0.1);
+			}
+
+			&.is-selected:not([disabled]) {
+				background-color: rgb(255 255 255 / 0.2);
+			}
+		}
+	}
+
+	.offer-disable-button {
+		color: var(--text-weak);
+		font-size: em(12);
+	}
+}
+
+// small fix to save a bit of space for some promotions
+.modal-two:has([class*='offer-black-friday-2024']) {
+	@include media('>=#{em(680, 16)}') {
+		padding-inline: 2em;
+	}
+}

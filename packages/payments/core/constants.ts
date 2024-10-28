@@ -129,6 +129,7 @@ export enum PLANS {
     PASS_PRO = 'passpro2024',
     PASS_BUSINESS = 'passbiz2024',
     PASS_FAMILY = 'passfamily2024',
+    PASS_LIFETIME = 'passlifetime2024',
 }
 
 export const AddonKey: Readonly<{
@@ -222,7 +223,7 @@ export const AddonLimit: { [key in ADDON_NAMES]: number } = {
 
 export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.FREE]: 'Free',
-    [PLANS.VPN2024]: 'Plus',
+    [PLANS.VPN2024]: 'VPN Plus',
     [PLANS.DRIVE]: 'Drive Plus',
     [PLANS.DRIVE_PRO]: 'Drive Essentials',
     [PLANS.DRIVE_BUSINESS]: 'Drive Professional',
@@ -246,6 +247,7 @@ export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.PASS_PRO]: 'Pass Essentials',
     [PLANS.PASS_BUSINESS]: 'Pass Professional',
     [PLANS.PASS_FAMILY]: 'Pass Family',
+    [PLANS.PASS_LIFETIME]: 'Pass Lifetime',
 };
 
 export enum PLAN_TYPES {

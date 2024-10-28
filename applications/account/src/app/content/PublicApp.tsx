@@ -71,7 +71,7 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
@@ -576,7 +576,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
     })();
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
-    const hasBFCoupon = getHas2023OfferCoupon(searchParams.get('coupon')?.toUpperCase());
+    const hasBFCoupon = getHas2024OfferCoupon(searchParams.get('coupon')?.toUpperCase());
     const theme = getThemeFromLocation(location, searchParams);
     const loader = theme ? (
         <UnAuthenticated theme={theme.themeType}>

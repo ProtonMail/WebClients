@@ -9,46 +9,6 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import {
-    blackFriday2023DriveFreeConfig,
-    blackFriday2023DriveFreeEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayDrive2023Free';
-import {
-    blackFriday2023DrivePlusConfig,
-    blackFriday2023DrivePlusEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayDrive2023Plus';
-import {
-    blackFriday2023DriveUnlimitedConfig,
-    blackFriday2023DriveUnlimitedEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayDrive2023Unlimited';
-import {
-    blackFriday2023InboxFreeConfig,
-    blackFriday2023InboxFreeEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayInbox2023Free';
-import {
-    blackFriday2023InboxMailConfig,
-    blackFriday2023InboxMailEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayInbox2023Plus';
-import {
-    blackFriday2023InboxUnlimitedConfig,
-    blackFriday2023InboxUnlimitedEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayInbox2023Unlimited';
-import {
-    blackFriday2023VPNFreeConfig,
-    blackFriday2023VPNFreeEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayVPN2023Free';
-import {
-    blackFriday2023VPNMonthlyConfig,
-    blackFriday2023VPNMonthlyEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayVPN2023Monthly';
-import {
-    blackFriday2023VPNTwoYearsConfig,
-    blackFriday2023VPNTwoYearsEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayVPN2023TwoYears';
-import {
-    blackFriday2023VPNYearlyConfig,
-    blackFriday2023VPNYearlyEligibility,
-} from '@proton/components/containers/offers/operations/blackFridayVPN2023Yearly';
 import { getMonths } from '@proton/components/containers/payments/SubscriptionsSection';
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
@@ -58,6 +18,7 @@ import { usePlans, useSubscription } from '@proton/components/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import useLoad from '@proton/components/hooks/useLoad';
+import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';
 import type { PLANS } from '@proton/payments';
@@ -66,7 +27,41 @@ import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { Eligibility, PlanCombinationWithDiscount } from './subscriptionEligbility';
+import { blackFriday2024DuoConfig, blackFriday2024DuoEligibility } from '../../offers/operations/blackFriday2024Duo';
+import { blackFriday2024PlusConfig, blackFriday2024PlusEligibility } from '../../offers/operations/blackFriday2024Plus';
+import {
+    blackFriday2024UnlimitedConfig,
+    blackFriday2024UnlimitedEligibility,
+} from '../../offers/operations/blackFriday2024Unlimited';
+import {
+    blackFriday2024DriveFreeConfig,
+    blackFriday2024DriveFreeEligibility,
+} from '../../offers/operations/blackFridayDrive2024Free';
+import {
+    blackFriday2024DriveFreeYearlyConfig,
+    blackFriday2024DriveFreeYearlyEligibility,
+} from '../../offers/operations/blackFridayDrive2024FreeYearly';
+import {
+    blackFriday2024InboxFreeConfig,
+    blackFriday2024InboxFreeEligibility,
+} from '../../offers/operations/blackFridayInbox2024Free';
+import {
+    blackFriday2024InboxFreeYearlyConfig,
+    blackFriday2024InboxFreeYearlyEligibility,
+} from '../../offers/operations/blackFridayInbox2024FreeYearly';
+import {
+    blackFriday2024VPNFreeConfig,
+    blackFriday2024VPNFreeEligibility,
+} from '../../offers/operations/blackFridayVPN2024Free';
+import {
+    blackFriday2024VPNFreeYearlyConfig,
+    blackFriday2024VPNFreeYearlyEligibility,
+} from '../../offers/operations/blackFridayVPN2024FreeYearly';
+import {
+    blackFriday2024VPNMonthlyConfig,
+    blackFriday2024VPNMonthlyEligibility,
+} from '../../offers/operations/blackFridayVPN2024Monthly';
+import type { Eligibility, PlanCombination } from './subscriptionEligbility';
 import { getEligibility } from './subscriptionEligbility';
 
 const getParameters = (
@@ -128,7 +123,8 @@ const getParameters = (
 };
 
 interface Props extends ModalProps {
-    planCombination: PlanCombinationWithDiscount;
+    discount: number;
+    planCombination: PlanCombination;
     onConfirm: () => void;
 }
 
@@ -161,7 +157,7 @@ const UnavailablePrompt = (rest: ModalProps) => {
     );
 };
 
-const UpsellPrompt = ({ planCombination: { discount, plan, cycle }, onConfirm, ...rest }: Props) => {
+const UpsellPrompt = ({ discount, planCombination: { plan, cycle }, onConfirm, ...rest }: Props) => {
     const months = getMonths(cycle);
     const discountPercentage = `${discount}%`;
     return (
@@ -205,6 +201,7 @@ const AutomaticSubscriptionModal = () => {
     const [unavailableModalProps, setUnavailableModal, renderUnavailableModal] = useModalState();
     const [promotionAppliedProps, setPromotionAppliedModal, renderPromotionAppliedModal] = useModalState();
     const { getPreferredCurrency } = useCurrencies();
+    const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
     const [paymentStatus, loadingPaymentStatus] = usePaymentStatus();
 
     useLoad();
@@ -218,6 +215,7 @@ const AutomaticSubscriptionModal = () => {
             loadingModal ||
             loadingLastSubscriptionEnd ||
             loadingPaymentStatus ||
+            loadingCurrency ||
             !paymentStatus
         ) {
             return;
@@ -235,18 +233,19 @@ const AutomaticSubscriptionModal = () => {
             protonConfig,
             user,
             lastSubscriptionEnd,
+            preferredCurrency,
         };
         const eligibleBlackFridayConfigs = [
-            blackFriday2023InboxFreeEligibility(options) && blackFriday2023InboxFreeConfig,
-            blackFriday2023InboxMailEligibility(options) && blackFriday2023InboxMailConfig,
-            blackFriday2023InboxUnlimitedEligibility(options) && blackFriday2023InboxUnlimitedConfig,
-            blackFriday2023VPNFreeEligibility(options) && blackFriday2023VPNFreeConfig,
-            blackFriday2023VPNMonthlyEligibility(options) && blackFriday2023VPNMonthlyConfig,
-            blackFriday2023VPNYearlyEligibility(options) && blackFriday2023VPNYearlyConfig,
-            blackFriday2023VPNTwoYearsEligibility(options) && blackFriday2023VPNTwoYearsConfig,
-            blackFriday2023DriveFreeEligibility(options) && blackFriday2023DriveFreeConfig,
-            blackFriday2023DrivePlusEligibility(options) && blackFriday2023DrivePlusConfig,
-            blackFriday2023DriveUnlimitedEligibility(options) && blackFriday2023DriveUnlimitedConfig,
+            blackFriday2024InboxFreeEligibility(options) && blackFriday2024InboxFreeConfig,
+            blackFriday2024DriveFreeEligibility(options) && blackFriday2024DriveFreeConfig,
+            blackFriday2024VPNFreeEligibility(options) && blackFriday2024VPNFreeConfig,
+            blackFriday2024InboxFreeYearlyEligibility(options) && blackFriday2024InboxFreeYearlyConfig,
+            blackFriday2024DriveFreeYearlyEligibility(options) && blackFriday2024DriveFreeYearlyConfig,
+            blackFriday2024VPNFreeYearlyEligibility(options) && blackFriday2024VPNFreeYearlyConfig,
+            blackFriday2024PlusEligibility(options) && blackFriday2024PlusConfig,
+            blackFriday2024VPNMonthlyEligibility(options) && blackFriday2024VPNMonthlyConfig,
+            blackFriday2024UnlimitedEligibility(options) && blackFriday2024UnlimitedConfig,
+            blackFriday2024DuoEligibility(options) && blackFriday2024DuoConfig,
         ].filter(isTruthy);
 
         const eligibility = getEligibility({
@@ -287,11 +286,13 @@ const AutomaticSubscriptionModal = () => {
         }
 
         if (eligibility.type === 'upsell') {
+            const { plan, coupon, cycle } = eligibility.planCombination;
             tmpProps.current = {
                 props: {
                     ...openProps,
-                    plan: eligibility.planCombination.plan.Name as PLANS,
-                    cycle: eligibility.planCombination.cycle,
+                    plan: plan.Name as PLANS,
+                    cycle,
+                    coupon,
                 },
                 eligibility,
             };
@@ -312,6 +313,7 @@ const AutomaticSubscriptionModal = () => {
             {renderUnavailableModal && <UnavailablePrompt {...unavailableModalProps} />}
             {renderUpsellModal && tmp && tmp.eligibility.type === 'upsell' && (
                 <UpsellPrompt
+                    discount={tmp.eligibility.discount}
                     planCombination={tmp.eligibility.planCombination}
                     {...upsellModalProps}
                     onConfirm={() => {
