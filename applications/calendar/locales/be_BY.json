@@ -683,6 +683,9 @@
       "Today": [
         "Сёння"
       ],
+      "Toggle Contacts app": [
+        "Пераключыць на праграму Кантакты"
+      ],
       "Toggle settings": [
         "Пераключэнне наладаў"
       ],
@@ -909,6 +912,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Калі вы выйдзеце цяпер, то ваша падзея будзе страчана."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Не закрывайце гэту ўкладку. Некаторыя запыты ўсё яшчэ апрацоўваюцца ў фоне."
       ]
     },
     "Apps dropdown": {
@@ -1261,6 +1267,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Рэдагаванне (выгляд, стварэнне або рэдагаванне падрабязнасцяў падзеі)"
+      ],
       "View (see all event details)": [
         "Прагледзець (усе падрабязнасці падзеі)"
       ]
@@ -2579,8 +2588,14 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Задаць спосаб аднаўлення, каб прадухіліць страту доступу да вашага ўліковага запісу."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Гэта можа заняць некалькі хвілін. Тым часам вы можаце працягнуць карыстацца ${ CALENDAR_APP_NAME }."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
@@ -3104,6 +3119,9 @@
       "Invalid expiration date": [
         "Памылковая дата завяршэння тэрміну дзеяння"
       ],
+      "Invalid IBAN": [
+        "Памылковы IBAN"
+      ],
       "Invalid link to the event": [
         "Памылковая спасылка на падзею"
       ],
@@ -3293,6 +3311,9 @@
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
       ],
+      "The amount due has changed. Please try again.": [
+        "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
+      ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
       ],
@@ -3376,6 +3397,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Вы дасягнулі максімальнай колькасці календароў."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
@@ -3773,6 +3797,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Пажыццёвыя ўліковыя запісы нельга далучыць да сямейнага тарыфнага плана."
       ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Уладальнікі тарыфнага плана з удзельнікамі не могуць далучацца да іншых сямейных тарыфных планаў."
       ],
@@ -3790,6 +3817,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Вы можаце прыняць толькі 3 запрашэнні за 6 месяцаў. Калі вам неабходна павялічыць іх колькасць, перайдзіце па спасылцы ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Вы не можаце прыняць гэта запрашэнне з вашым бягучым тарыфным планам."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас запрасілі далучыцца да ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3827,6 +3857,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Сканфігурыруйце сямейны ўліковы запіс і запрасіце карыстальнікаў"
+      ],
       "Set up your family": [
         "Наладзьце сямейны ўліковы запіс"
       ],
@@ -4433,6 +4466,9 @@
         "(${ memberCount } удзельнікаў)",
         "(${ memberCount } удзельнікі)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/месяц)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
       ],
@@ -4661,6 +4697,12 @@
       "Dedicated servers": [
         "Вылучаныя серверы"
       ],
+      "Deleting event...": [
+        "Выдаленне падзеі...",
+        "Выдаленне падзей...",
+        "Выдаленне падзей...",
+        "Выдаленне падзей..."
+      ],
       "Discard changes?": [
         "Адхіліць змены?"
       ],
@@ -4759,6 +4801,9 @@
       ],
       "High Priority": [
         "Высокі прыярытэт"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
@@ -4940,6 +4985,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Іншыя карыстальнікі ў вашай арганізацыі будуць бачыць вашы інтэрвалы занятасці. Падрабязнасці аб падзеі не абагульваюцца."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
+      ],
       "password": [
         "пароль"
       ],
@@ -5020,6 +5068,12 @@
       ],
       "Removed participants will be notified.": [
         "Выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
+      ],
+      "Saving event...": [
+        "Захаванне падзеі...",
+        "Захаванне падзей...",
+        "Захаванне падзей...",
+        "Захаванне падзей..."
       ],
       "Select a service provider to start": [
         "Выберыце пастаўшчыка паслуг, каб пачаць"
@@ -5580,6 +5634,9 @@
       "All-day event notifications": [
         "Апавяшчэнні пра падзеі на ўвесь дзень"
       ],
+      "Anderson": [
+        "Маўр"
+      ],
       "App password": [
         "Пароль праграмы"
       ],
@@ -5645,6 +5702,9 @@
       ],
       "Colors": [
         "Колеры"
+      ],
+      "Company name": [
+        "Назва кампаніі"
       ],
       "Confirm password": [
         "Пацвердзіце пароль"
@@ -5762,6 +5822,9 @@
       ],
       "I understand the risk": [
         "Я разумею рызыку"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
@@ -5901,6 +5964,9 @@
       "Reveal password": [
         "Паказаць пароль"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Жэнева"
+      ],
       "Secondary": [
         "Другі"
       ],
@@ -5936,6 +6002,9 @@
       ],
       "Theme": [
         "Тэма"
+      ],
+      "Thomas": [
+        "Янка"
       ],
       "Time zone": [
         "Часавы пояс"
@@ -6936,6 +7005,9 @@
       "Sync and backup all your files across devices": [
         "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
       ],
+      "TOR over VPN": [
+        "Tor праз VPN"
+      ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
       ],
@@ -7214,6 +7286,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтыфікацыі ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў"
       ],
@@ -7265,6 +7340,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць сваім доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надзейная інфраструктура гарантуе вам пастаянны доступ да вашага ўліковага запісу"
       ],
@@ -7306,6 +7384,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Скідайце паролі і двухфактарную аўтэнтыфікацыю карыстальнікаў"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Накіроўвайце свой трафік праз сетку TOR адным націскам"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, абагульванне зашыфраваных файлаў і іншыя функцыі."
@@ -7646,6 +7727,11 @@
         "Для імпартавання даных, вы павінны выбраць усе запытаныя элементы, як паказана на відарысе GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд вашых электронных лістоў і налад, прагляд і спампоўванне кантактаў, прагляд і спампоўванне распарадку дня з праграмы Каляндар Google."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Вітаем у ${ appName }"
@@ -7842,11 +7928,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Банкаўскі перавод"
+      ],
       "Credit/debit card": [
         "Банкаўская картка"
       ],
       "New credit/debit card": [
         "Новая банкаўская картка"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Выкарыстоўваць назву кампаніі"
+      ],
+      "Use personal name": [
+        "Выкарыстоўваць асабістае імя"
       ]
     },
     "Payments": {
@@ -7926,6 +8023,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "Адрас вуліцы, паштовы індэкс і горад"
       ]
     },
     "PGP key encryption warning": {
@@ -8199,6 +8301,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Паспрабуйце ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Выкарыстоўвайце на Amazon для пакупак і г.д."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Дайце гэты псеўданім замест таго, каб уводзіць ваш сапраўдны адрас электроннай пошты. Псеўданімы забяспечваюцца ${ passLink }."
@@ -8931,6 +9036,9 @@
     "Subscription change warning": {
       "Got it": [
         "Зразумела"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Проста ўвайдзіце ў свой уліковы запіс App Store, а потым выберыце ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Проста ўвайдзіце ў свой уліковы запіс Play Store, а потым націсніце ${ subscriptions }."
@@ -10117,6 +10225,9 @@
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
+      "We're setting up calendar search": [
+        "Наладжванне пошуку ў календары"
+      ],
       "We've locked some calendars to protect your data": [
         "Мы заблакіравалі некаторыя календары, каб абараніць вашы даныя"
       ],
@@ -10336,6 +10447,11 @@
       ],
       "No ads": [
         "Без рэкламы"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN і іншыя функцыі."
       ]
     },
     "wallet_signup_2024: Info": {

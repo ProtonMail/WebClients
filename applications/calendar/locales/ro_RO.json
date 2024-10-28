@@ -351,7 +351,7 @@
         "Ascundere fusuri orare"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Imaginea nu au putut fi încărcată cu protecția împotriva urmăririi activată."
+        "Imaginea nu a putut fi încărcată cu protecția împotriva urmăririi activată."
       ],
       "Image will be loaded without a proxy": [
         "Imaginea va fi încărcată fără proxy."
@@ -680,6 +680,9 @@
       "Today": [
         "Astăzi"
       ],
+      "Toggle Contacts app": [
+        "Comutare aplicație Contacte"
+      ],
       "Toggle settings": [
         "Comutare setări"
       ],
@@ -901,6 +904,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Renunțând acum, veți pierde evenimentul."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Nu închideți această filă. Unele solicitări sunt încă procesate în fundal."
       ]
     },
     "Apps dropdown": {
@@ -1248,6 +1254,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Editare (afișare, creare sau editare detalii evenimente)"
+      ],
       "View (see all event details)": [
         "Afișare (afișare toate detaliile evenimentului)"
       ]
@@ -2558,8 +2567,14 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Setați o metodă de recuperare pentru a preveni pierderea accesului la cont."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Aceasta ar putea dura câteva minute. Între timp, puteți continua să folosiți ${ CALENDAR_APP_NAME } ca de obicei."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pentru a asigura cea mai mare securitate posibilă a contului, setați o frază de recuperare."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
@@ -3077,6 +3092,9 @@
       "Invalid expiration date": [
         "Data expirării nu este validă."
       ],
+      "Invalid IBAN": [
+        "Acest IBAN nu este valid."
+      ],
       "Invalid link to the event": [
         "legătură web nevalidă la eveniment."
       ],
@@ -3261,6 +3279,9 @@
       "The address might be misspelled": [
         "Adresa ar putea fi scrisă greșit"
       ],
+      "The amount due has changed. Please try again.": [
+        "Suma datorată s-a schimbat. Mai încercați."
+      ],
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."
       ],
@@ -3343,6 +3364,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Ați atins numărul maxim de calendare."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Ați atins limita numărului de contacte disponibil pentru acest cont."
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
@@ -3737,6 +3761,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Conturile pe viață nu se pot alătura unui plan de familie."
       ],
+      "Manage addresses": [
+        "Gestionare adrese"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Proprietarii unui plan cu membri nu se pot alătura unui alt plan de familie."
       ],
@@ -3754,6 +3781,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Puteți accepta doar 3 invitații într-o perioadă de 6 luni. Contactați ${ supportLink } dacă aveți nevoie de o excepție."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Nu puteți accepta această invitație cu planul actual."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Ați primit invitația să vă alăturați la ${ bannerOrganization }. ${ viewInviteButton }"
@@ -3791,6 +3821,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Configurați contul de familie și invitați utilizatori"
+      ],
       "Set up your family": [
         "Configurare familie"
       ],
@@ -4367,6 +4400,9 @@
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/lună)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
       ],
@@ -4589,6 +4625,11 @@
       "Dedicated servers": [
         "Servere dedicate"
       ],
+      "Deleting event...": [
+        "Se șterge evenimentul...",
+        "Se șterg evenimentele...",
+        "Se șterg evenimentele..."
+      ],
       "Discard changes?": [
         "Anulare modificări?"
       ],
@@ -4686,6 +4727,9 @@
       ],
       "High Priority": [
         "Prioritate înaltă"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
@@ -4866,6 +4910,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Alți utilizatori din organizație vă vor vedea perioadele când aveți activități. Detaliile despre eveniment nu sunt distribuite."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Alertele noastre au ca prioritate siguranța. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
+      ],
       "password": [
         "parola"
       ],
@@ -4945,6 +4992,11 @@
       ],
       "Removed participants will be notified.": [
         "Participanţii eliminaţi vor fi notificaţi."
+      ],
+      "Saving event...": [
+        "Se salvează evenimentul...",
+        "Se salvează evenimentele...",
+        "Se salvează evenimentele..."
       ],
       "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
@@ -5499,6 +5551,9 @@
       "All-day event notifications": [
         "Notificări evenimente toată ziua"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "App password": [
         "Parola aplicației"
       ],
@@ -5564,6 +5619,9 @@
       ],
       "Colors": [
         "Culori"
+      ],
+      "Company name": [
+        "Nume companie"
       ],
       "Confirm password": [
         "Confirmare parolă"
@@ -5681,6 +5739,9 @@
       ],
       "I understand the risk": [
         "Înțeleg riscul"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -5819,6 +5880,9 @@
       "Reveal password": [
         "Afișare parolă"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Secondary": [
         "Secundar"
       ],
@@ -5854,6 +5918,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time zone": [
         "Fus orar"
@@ -6827,6 +6894,9 @@
       "Sync and backup all your files across devices": [
         "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
       ],
+      "TOR over VPN": [
+        "Tor prin VPN"
+      ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
       ],
@@ -7099,6 +7169,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
       ],
@@ -7150,6 +7223,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Instrument de gestionare a organizației care le permite administratorilor să adauge și să elimine utilizatori, să le gestioneze accesul la serviciile ${ BRAND_NAME } și să îndeplinească alte sarcini."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Infrastructura noastră robustă vă asigură că vă veți putea accesa contul atunci când aveți nevoie."
       ],
@@ -7191,6 +7267,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetați parolele și autentificarea cu doi factori a utilizatorilor."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Redirecționați traficul din Internet prin rețeaua TOR cu un singur clic."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
@@ -7509,6 +7588,11 @@
         "Pentru ca importarea să funcționeze, trebuie să selectați toate articolele solicitate așa cum e arătat în imagine."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selectați ce poate accesa ${ BRAND_NAME }: accesare mesaje primite pe e-mail și setări, afișare și descărcare contacte, afișare și descărcare toate agendele pe care le accesați din Google Calendar."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bun venit la ${ appName }"
@@ -7698,11 +7782,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transfer bancar"
+      ],
       "Credit/debit card": [
         "Card de credit/debit"
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Folosire nume companie"
+      ],
+      "Use personal name": [
+        "Folosire nume personal"
       ]
     },
     "Payments": {
@@ -7782,6 +7877,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul, iar banca să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
+      ],
+      "Street address, postal code, and city": [
+        "Strada, cod poștal și oraș"
       ]
     },
     "PGP key encryption warning": {
@@ -8050,6 +8153,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Încercați ${ PASS_APP_NAME }"
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Folosit pentru cumpărături pe Amazon etc."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
@@ -8758,6 +8864,9 @@
     "Subscription change warning": {
       "Got it": [
         "Am înțeles"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Doar conectați-vă în App Store de la Apple și apoi selectați ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Doar conectați-vă în Magazinul Play și apoi apăsați pe ${ subscriptions }."
@@ -9924,6 +10033,9 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
+      "We're setting up calendar search": [
+        "Se setează căutarea calendarului"
+      ],
       "We've locked some calendars to protect your data": [
         "Vi s-au blocat câteva calendare pentru a vă proteja datele"
       ],
@@ -10136,6 +10248,11 @@
       ],
       "No ads": [
         "Fără reclame"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     },
     "wallet_signup_2024: Info": {
