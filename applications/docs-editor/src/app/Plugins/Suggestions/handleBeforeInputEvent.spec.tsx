@@ -1126,6 +1126,48 @@ describe('$handleBeforeInputEvent', () => {
       })
     })
 
+    test('should not wrap existing selection with "delete" if inserting data transfer', async () => {
+      let commandDisposer!: () => void
+      commandDisposer = editor!.registerCommand(
+        SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
+        () => true,
+        COMMAND_PRIORITY_CRITICAL,
+      )
+      await update(() => {
+        const paragraph = $createParagraphNode()
+        const textNode = $createTextNode('Hello world')
+        paragraph.append(textNode)
+        $getRoot().append(paragraph)
+        textNode.select(3, 8)
+      })
+      const dataTransfer = {
+        getData: (format: string) => {
+          if (format === 'text/plain') {
+            return 'Hello\tWorld\nParagraph'
+          }
+          return ''
+        },
+        types: ['text/plain'],
+      } as unknown as DataTransfer
+      await update(() => {
+        $handleBeforeInputEvent(
+          editor!,
+          {
+            inputType: 'insertFromPaste',
+            data: null,
+            dataTransfer,
+          } as InputEvent,
+          onSuggestionCreation,
+        )
+      })
+      editor!.read(() => {
+        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+        expect(paragraph.getChildrenSize()).toBe(1)
+        expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+      })
+      commandDisposer()
+    })
+
     describe('insertReplacementText', () => {
       describe('Existing insert suggestion', () => {
         let text!: TextNode
