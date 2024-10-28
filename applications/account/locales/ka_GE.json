@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -180,6 +180,9 @@
       ],
       "Back": [
         "უკან"
+      ],
+      "Back to sign-in": [
+        "შესვლის გვერდზე დაბრუნება"
       ],
       "Block": [
         "დაბლოკვა"
@@ -378,6 +381,9 @@
       ],
       "Delete your account": [
         "თქვენი ანგარიშის წაშლა"
+      ],
+      "Deny access": [
+        "წვდომის აკრძალვა"
       ],
       "Details": [
         "დეტალები"
@@ -661,6 +667,9 @@
       "Leave": [
         "გასვლა"
       ],
+      "Leave group": [
+        "ჯგუფის დატოვება"
+      ],
       "Let's talk": [
         "ვიბაზროთ"
       ],
@@ -813,6 +822,9 @@
       ],
       "Remove all members": [
         "ყველა წევრის წაშლა"
+      ],
+      "Remove all other devices": [
+        "ყველა სხვა მოწყობილობის წაშლა"
       ],
       "Remove bonuses": [
         "ბონუსების წაშლა"
@@ -1203,6 +1215,9 @@
       ],
       "Verify domain": [
         "დომენის გადამოწმება"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "დომენის ${ unverifiedSSODomain.DomainName } შემოწმება"
       ],
       "View": [
         "ნახვა"
@@ -1938,6 +1953,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "ჩასწორება (მოვლენის დეტალების ნახვა, შექმნა ან ჩასწორება)"
+      ],
       "View (see all event details)": [
         "ხედი (ყველა იხილეთ მოვლენის დეტალებში)"
       ]
@@ -2060,6 +2078,9 @@
       ],
       "Encrypted password manager": [
         "დაშიფრული პაროლების მმართველი"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "ჩვენი ძირითადი, უფასო სატარიფო გეგმა გამჭოლად დაშიფრული ელფოსტითა და საცავით. ფასიანი ფუნქციების გარეშე."
       ],
       "Save ${ upsellSavings }": [
         "დაზოგეთ ${ upsellSavings }"
@@ -3423,6 +3444,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "თქვენი შემომავალი შეტყობინებების ავტომატური დალაგება მანამდე, სანამ ის თქვენს საფოსტო ყუთამდე მოაღწევს."
       ],
+      "Available with ${ BRAND_NAME } Mail Plus": [
+        "ხელმისაწვდომია ${ BRAND_NAME } Mail Plus-თან ერთად"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "გილოცავთ! თქვენ ახლა ${ plusPlanName }-ის, მაქსიმუმ, ${ rewardsLimit } უფასო თვე გაქვთ."
       ],
@@ -3447,6 +3471,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
       ],
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "იქონიეთ თქვენი ცხოვრების ნაწილები ცალ-ცალკე და საფოსტო ყუთი კი - დალაგებული, დამატებითი მისამართებით."
+      ],
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "შექმენით საკუთარი ელფოსტის ქვედა კოლონტიტული - გამოაჩინეთ თქვენი ბრენდი და არა ჩვენი."
       ],
@@ -3455,6 +3482,9 @@
       ],
       "Set up auto-forwarding to redirect incoming emails to another email address.": [
         "მოირგეთ ავტომატური გადაგაზვნა, რომ გადაამისამართოთ შემომავალი ელფოსტები სხვა ელფოსტის მისამართზე."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე ან ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს არ შეიცავს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
@@ -3938,6 +3968,9 @@
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "თქვენ თავიდან გამოიწერეთ ${ categoriesJsx } ელფოსტა."
+      ],
+      "You unsubscribed from ${ categories } emails, and will no longer receive this type of email from ${ BRAND_NAME }.": [
+        "თქვენ გააუქმეთ გამოწერა ${ categories } ელფოსტებიდან და აღარ მიიღებთ ამ ტიპის ელფოსტას ${ BRAND_NAME }-სგან."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -4261,6 +4294,12 @@
       "Account does not exist": [
         "ანგარიში არ არსებობს"
       ],
+      "Add at least one action": [
+        "დაამატეთ, სულ ცოტა, ერთი ქმედება"
+      ],
+      "Add at least one condition": [
+        "დაამატეთ, სულ ცოტა, ერთი პირობა"
+      ],
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
       ],
@@ -4431,6 +4470,9 @@
       "Invalid expiration date": [
         "არასწორი ვადა"
       ],
+      "Invalid IBAN": [
+        "არასწორი IBAN"
+      ],
       "Invalid invitation link": [
         "არასწორი მოსაწვევის ბმული"
       ],
@@ -4562,6 +4604,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
       ],
+      "Please upload a square logo": [
+        "ატვირთეთ ოთხკუთხედი ლოგო"
+      ],
       "Please upload an xml file": [
         "ატვირთეთ XML ფაილი"
       ],
@@ -4628,6 +4673,9 @@
       ],
       "The address might be misspelled": [
         "ალბათ, მისამართი შეგეშალათ"
+      ],
+      "The amount due has changed. Please try again.": [
+        "გადასახდელი თანხა შეიცვალა. თავიდან სცადეთ."
       ],
       "The email addresses do not match": [
         "ელფოსტის მისამართები არ ემთხვევა"
@@ -4745,6 +4793,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "თქვენ მიაღწიეთ კალენდრების მაქსიმალურ რაოდენობას."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "თქვენს სატარიფო გეგმაში შემავალ ყველა მისამართს უკვე იყენებთ. ახალი მისამართის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
@@ -5178,6 +5229,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "Invite a user": [
+        "მომხმარებლის მოწვევა"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "არსებული ${ BRAND_NAME }-ის მომხმარებლის მოწვევა"
       ],
@@ -5253,6 +5307,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "სამუდამო ანგარიშები ოჯახის გეგმაში ვერ შევლენ."
       ],
+      "Manage addresses": [
+        "მისამართების მართვა"
+      ],
       "Manage user accounts": [
         "მომხმარებლის ანგარიშების მართვა"
       ],
@@ -5292,6 +5349,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "6 თვეში, მხოლოდ, 3 მოსაწვევს შეგიძლიათ, დაეთანხმოთ. თუ გსურთ, გამონაკლისი დაუშვათ, დაუკავშირდით: ${ supportLink }."
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "მიმდინარე სატარიფო გეგმით მოსაწვევს ვერ დაეთანხმებით."
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "გაქვთ მოსაწვევი, ${ bannerOrganization }-ს შეუერთდეთ. ${ viewInviteButton }"
@@ -5350,6 +5410,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "თუ მომხმარებელს ${ MAIL_APP_NAME }-ის მისამართი უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "თუ მომხმარებელს ${ BRAND_NAME }-ის ანგარიში უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "მოსაწვევი გაუქმდება და მომხმარებელს ${ organizationName }-სთან მიერთება აღარ შეეძლება."
@@ -5790,6 +5853,9 @@
       "Back to sign in": [
         "შესვლის გვერდზე დაბრუნება"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features.": [
+        "განაგრძეთ ისიამოვნეთ სწრაფი, ორიენტირებული და უსაფრთხო დესკტოპის გამოცდილებით. განაახლეთ ულიმიტო წვდომისა და სხვა პრემიუმ ფუნქციების განბლოკვის მიზნით."
+      ],
       "Keep using the desktop app": [
         "კომპიუტერის აპის გამოყენების გაგრძელება"
       ],
@@ -5938,6 +6004,11 @@
         "გავიდა ჯგუფიდან"
       ]
     },
+    "group_invite_2024": {
+      "You have no groups to manage": [
+        "სამართავი ჯგუფების გარეშე"
+      ]
+    },
     "group_invite_2024: Error message, recovery": {
       "Please try opening the link again.": [
         "კიდევ ერთხელ სცადეთ, ბმული გახსნათ."
@@ -5952,11 +6023,17 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "${ email }-სთვის"
+      ],
       "Group invitation accepted": [
         "ჯგუფში მიწვევა მიღებულია"
       ],
       "Group invitation declined": [
         "ჯგუფში მიწვევა უარყოფილია"
+      ],
+      "Group membership": [
+        "ჯგუფის წევრობა"
       ]
     },
     "Header": {
@@ -6623,6 +6700,9 @@
         "(${ memberCount } წევრი)",
         "(${ memberCount } წევრი)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /თვეში)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(ფილტრაცია, თუ ყველა შემდეგი პირობა სრულდება)"
       ],
@@ -6675,6 +6755,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "ტელეფონის ნომერი, მხოლოდ, ერთი ${ BRAND_NAME }-ის ანგარიშის გადასამოწმებლად შეგიძლიათ, გამოიყენოთ"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "აღდგენის ფაილი საშუალებას გაძლევთ, თქვენი ანგარიშის აღდგენის შემდეგ გახსნათ და დაათვალიეროთ თქვენი მონაცემები"
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "აღდგენის ფრაზა საშუალებას გაძლევთ, დაიბრუნოთ თქვენს ანგარიშთან წვდომა და აღადგინოთ თქვენი დაშიფრული შეტყობინებები, თუ პაროლს დაკარგავთ"
       ],
@@ -6707,9 +6790,6 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "დაამატეთ @pm.me ელ. ფოსტის მისამართი თქვენს ანგარიშზე. ეს მარტივი, მოკლე დომენი ნიშნავს \"${ MAIL_APP_NAME } me \" ან \" პირადად მომწერე.\""
-      ],
-      "Add a recovery ${ type }": [
-        "${ type } აღდგენის დამატება"
       ],
       "Add a recovery email address": [
         "აღდგენის ელფოსტის მისამართის დამატება"
@@ -6826,6 +6906,9 @@
       "and": [
         "და"
       ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "წაშლება ასევე ყველა ქვესაქაღალდეც. მაგრამ ელფოსტა, რომელიც დამახსოვრებულია საქაღალდეში ${ nameDeleted }, არ წაიშლება და შეგიძლიათ, ყველა ელფოსტის საქაღალდეში იპოვოთ."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "ნებისმიერს, ვისაც ეს ბმული აქვს, შეუძლია ნახოს კალენდრის ამ მოვლენის ისეთი დეტალები, როგორიცაა სათაური, მდებარეობა და მონაწილეები."
       ],
@@ -6867,6 +6950,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, ამ მომხმარებელს ადმინისტრირების პრივილეგიები მიანიჭოთ?"
+      ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გახვიდეთ ჯგუფიდან? თუ გახვალთ, თავიდან შესასვლელად ჯგუფის ადმინისტრატორის მოსაწვევი დაგჭირდებათ."
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "დარწმუნებული ბრძანდებით, რომ ჟურნალის სამუდამოდ წაშლა გნებავთ?"
@@ -7108,6 +7194,9 @@
       "dedicated servers": [
         "გამოყოფილი სერვერი"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "წაშალეთ ყველა სხვა MX ჩანაწერი ან დარწმუნდით, რომ ${ MAIL_APP_NAME }-ის პრიორიტეტი ყველაზე ნაკლებია."
       ],
@@ -7117,9 +7206,6 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } რაუტერი სერვერის წაშლა",
         "${ deletedServerCount } რაუტერი სერვერის წაშლა"
-      ],
-      "Disable recovery by ${ type }": [
-        "${ type }-ით აღდგენის გათიშვა"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "გათიშვის თარიღი ${ formattedDateAndTime }"
@@ -7227,6 +7313,9 @@
       "Emailing preference saved": [
         "დაგზავნის მორგება შენახულია"
       ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "ჭდით ${ nameDeleted } მონიშნული ელფოსტები არ წაიშლება და ჯერ კიდევ შეგიძლიათ იპოვოთ შესაბამის საქაღალდეში."
+      ],
       "Enable email notifications": [
         "ელფოსტის გაფრთხილებების ჩართვა"
       ],
@@ -7298,6 +7387,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "შეიყვანეთ აღდგენის ფრაზა, რომ თქვენი პაროლი ახლავე შეცვალოთ."
+      ],
+      "Event invitations and responses will be sent in this language.": [
+        "მოვლენების მოსაწვევებისა და პასუხები გაგზავნილი იქნება ამ ენით."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "მოვლენები შეიცავს ავთენტიკაციის მცდელობებს ${ BRAND_NAME }-ის სერვისებთან, სადაც ${ BRAND_NAME_TWO }-ის მომხმარებელს და პაროლს იყენებთ."
@@ -7389,6 +7481,9 @@
       "High Priority": [
         "მაღალი პრიორიტეტი"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "იდენტიფიკატორის მომწოდებლის საჯარო გასაღები ავთენტიკაციის მცდელობების ხელმოსაწერად. იდენტიფიკატორის მომწოდებელს უნდა ჰქონდეს ადგილი, საიდანაც სერტიფიკატის ჰეშის გადმოწერა ან კოპირება შეგიძლიათ. ეს სერტიფიკატის ჰეში, უბრალოდ, ტექსტის ველში ჩასვით."
       ],
@@ -7430,6 +7525,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "თუ 2FA არასდროს გამოგიყენებიათ, დაჟინებით გირჩევთ ეწვიოთ ${ guideButton }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "თუ დაკარგავთ თქვენს პაროლს და გჭირდებათ, აღადგინოთ თქვენი ანგარიში, ${ boldImperative } რომ გაქვთ ${ boldAccountRecovery }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "თუ პაროლი დაკარგეთ და ანგარიშის აღდგენა გნებავთ, ${ boldImperative } რომ გაქვთ ორივე ${ boldAccountAndRecovery }. წინააღმდეგ შემთხვევაში, წვდომას (ელფოსტა, კონტაქტები, ფაილები) ვერ დაიბრუნებთ."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "თუ თქვენს 2FA-ჩართულ მოწყობილობას დაკარგავთ, ეს კოდები თქვენს ანგარიშში შესასვლელად 6-ციფრიანი 2FA კოდის მაგიერ შეგიძლიათ, გამოიყენოთ. ყოველი კოდი, მხოლოდ, ერთხელ იქნება ნაჩვენები."
@@ -7658,8 +7759,14 @@
       "Learn more": [
         "მეტის ნახვა"
       ],
+      "Learn more about Gateways": [
+        "შეიტყვეთ მეტი კარიბჭეების შესახებ"
+      ],
       "learn more about Sieve programming language": [
         "გაიგეთ მეტი პროგრამირების ენა Sieve-ის შესახებ"
+      ],
+      "Learn more about single sign-on": [
+        "გაიგეთ მეტი SSO-ის შესახებ"
       ],
       "Left to Right": [
         "მარცხნიდან მარჯვნივ"
@@ -7873,6 +7980,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "სხვა მომხმარებლები თქვენს ორგანიზაციაში დაინახავენ თქვენს დაკავებულ სლოტებს. მოვლენის დეტალები გაზიარებული არ იქნება."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
+      ],
       "Outdated recovery file; update to ensure access to your data": [
         "აღდგენის ფაილი მოძველებულია; ფაილებთან გარანტირებული წვდომისთვის განაახლეთ ის"
       ],
@@ -7962,6 +8072,9 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "გაუფრთხილდით. დაგჭირდებათ თქვენს ანგარიშთან წვდომისთვის ან პაროლის შეცვლის შემთხვევაში მონაცემების გასაშიფრად."
+      ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "დაიმახსოვრეთ, რომ ფილტრის ${ nameDeleted } წაშლის შედეგად ასევე შეწყდება იმ ავტომატური ქმედებების დამუშავებაც, რომელსაც ის ატრიგერებს."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
         "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
@@ -8348,6 +8461,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "ჯგუფების ფუნქცია თქვენს მიმდინარე სატარიფო გეგმაში მხარდაჭერილი არაა. ადრე შექმნილი ჯგუფები გათიშულია და მათი, მხოლოდ, წაშლა შეგიძლიათ."
       ],
+      "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "ბმულს, რომელის გაფრთხილებდათ, რომ ${ BRAND_NAME }-ის ანგარიში არ გაგიმართავთ, ვადა ამოეწურა. პრობლემის გადასაწყვეტად დაუკავშირდით ჩვენს მხარდაჭერის გუნდს."
+      ],
       "The name will be visible to your users while they are signed in.": [
         "სახელი, რომელიც გამოჩნდება, როცა თქვენი მომხმარებლები სისტემაში შედიან."
       ],
@@ -8441,6 +8557,9 @@
       "This will delete all previous versions of your files.": [
         "ეს თქვენი ფაილების ყველა წინა ვერსიას წაშლის."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "ეს აკრძალავს წვდომას **${ email }**-სთან. მართლა გნებავთ, გააგრძელოთ?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "ეს 2FA-ს გამორთავს ორივე, ავთენტიკატორი აპის და უსაფრთხოების გასაღების მეთოდების ჩათვლით."
       ],
@@ -8459,6 +8578,9 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "თქვენი ანგარიში და მონაცემები სამუდამოდ წაიშლება. ანგარიშის რეაქტივაციას ვეღარ შეძლებთ."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "ეს  უარჰყოფს მოწყობილობას **${ name }**, რომელმაც ცადა, თქვენს ${ BRAND_NAME }-ის ანგარიშში შესულიყო. მცდელობის თარიღი: **${ date }**."
+      ],
       "This will remove any enabled 2FA methods.": [
         "ეს ყველა ჩართულ 2FA-ის მეთოდს წაშლის."
       ],
@@ -8476,6 +8598,9 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "ამის გაკეთებით ყველა აქტიური სესიიდან გამოხვალთ და 2FA გაითიშება."
+      ],
+      "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
+        "ეს მოხსნის მოწყობილობას **${ name } (შექმნის თარიღია ${ date })** თქვენი ${ BRAND_NAME }-ის ანგარიშიდან."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "დაგეხმარებათ ${ BRAND_NAME }-ის თქვენს ანგარიშზე 2FA-ის ჩართვაში. 2FA-ი ${ BRAND_NAME_TWO }-ის თქვენს ანგარიშს უფრო დაცულს ხდის, ამიტომ რეკომენდებულია, ჩართოთ ის."
@@ -8621,6 +8746,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
       ],
+      "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "ასწიეთ სატარიფო გეგმა ${ firstPlanNames }-ზე ან ${ lastPlanName }-ზე, რომ მიიღოთ წვდომა ${ PROTON_SENTINEL_NAME }-ზე"
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "აწიეთ ტარიფი, რათა უფრო მოკლე, @pm.me მისამართები გქონდეთ, რომლებიც გასაზიარებლად უფრო ადვილია. ის ნიშნავს \"${ MAIL_APP_NAME } მე\", ანუ \"პირადად მომწერე\"."
       ],
@@ -8663,6 +8791,9 @@
       "User activated": [
         "მომხმრებელი გააქტიურდა"
       ],
+      "Username": [
+        "მომხმარებლის სახელი"
+      ],
       "username": [
         "მომხმარებლის სახელი"
       ],
@@ -8695,9 +8826,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "შემოწმებისთვის ახალი ჩანართი გაიხსნება. გთხოვთ გამორთოთ მხტუნარების მბლოკავები. თანხა, რომელიც ბარათის შესამოწმებლად ჩამოგეჭრებათ, მომენტალურად დაგიბრუნდებათ."
-      ],
-      "Verify ${ type }": [
-        "${ type }-ის გადამოწმება"
       ],
       "Verify domain": [
         "დომენის გადამოწმება"
@@ -8924,6 +9052,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
+      ],
+      "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "თქვენ შეგიძლიათ, ჩართოთ ავტორიზაციის ჟურნალი, რომ ნახოთ, როდის შედიან თქვენს ანგარიშში და რომელი IP-დან. ჩვენ ჩავიწერთ IP მისამართს, რომლიდანაც წვდომა განხორციელდა და დროს, ისევე, როგორც წარუმატებელ მცდელობებს."
       ],
       "You can enable the Photos section from the interface using the toggle below.": [
         "ფოტოების სექციის ჩართვა ინტერფეისიდან შეგიძლიათ, ქვემო მხარეს არსებული გადასართველით."
@@ -9725,6 +9856,9 @@
       "And": [
         "და"
       ],
+      "Anderson": [
+        "ანდერსონი"
+      ],
       "ANY": [
         "ნებისმიერი"
       ],
@@ -9769,6 +9903,9 @@
       ],
       "Awarded": [
         "მინიჭებულია"
+      ],
+      "Backup password": [
+        "მარქაფი პაროლი"
       ],
       "Beta": [
         "ბეტა"
@@ -9841,6 +9978,9 @@
       ],
       "Colors": [
         "ფერები"
+      ],
+      "Company name": [
+        "კომპანიის სახელი"
       ],
       "Composer": [
         "წერილთმწერი"
@@ -10105,6 +10245,9 @@
       ],
       "I understand the risk": [
         "მე ვიღებ რისკს"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "თუ"
@@ -10388,6 +10531,9 @@
       "Remove image metadata": [
         "გამოსახულების მეტამონაცემების წაშლა"
       ],
+      "Repeat backup password": [
+        "გაიმეორეთ მარქაფი პაროლი"
+      ],
       "Repeat password": [
         "გაიმეორეთ პაროლი"
       ],
@@ -10402,6 +10548,9 @@
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, ჟენევა"
       ],
       "Search": [
         "ძებნა"
@@ -10504,6 +10653,9 @@
       ],
       "Then": [
         "მაშინ"
+      ],
+      "Thomas": [
+        "თომასი"
       ],
       "Time format": [
         "დროის ფორმატი"
@@ -10880,6 +11032,9 @@
       "Pay invoice": [
         "ინვოისის გადახდა"
       ],
+      "PayPal without credit card": [
+        "PayPal-ი საკრედიტო ბარათის გარეშე"
+      ],
       "perform a password reset from your active session": [
         "პაროლი ჩამოყრა აქტიური სესიიდან"
       ],
@@ -11037,6 +11192,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "დააატეთ წერის დამხმარე ${ BRAND_NAME } Scribe"
+      ],
+      "All ${ BRAND_NAME } for Business apps and premium features to protect your entire business": [
+        "ყველა ${ BRAND_NAME }-ის ბიზნეს-აპები და ფასიანი თვისებები, რომ თქვენი ბიზნესი მთლიანად დაიცვათ"
       ],
       "An encrypted email service that puts your privacy first": [
         "დაშიფრული ელფოსტის სერვისი, რომელიც თქვენ კონფიდენციალობას პირველ ადგილას აყენებს"
@@ -11218,6 +11376,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი? იპოვეთ ის თქვენი აღდგენის ელფოსტის ან ტელეფონის ნომრის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
+      ],
+      "Private and secure email, no bank card required": [
+        "კოფიდენციალური და უსაფრთხო ელფოსტა. საბანკო ბარათი საჭირო არაა"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "შეცვალეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი"
@@ -11943,6 +12104,9 @@
       "Tailored to your needs": [
         "მორგებული თქვენ საჭიროებებზე"
       ],
+      "TOR over VPN": [
+        "Tor VPN-ის ზემოდან"
+      ],
       "Two-factor authentication": [
         "2FA"
       ],
@@ -12124,6 +12288,9 @@
       "Protect sensitive business information and collaborate securely.": [
         "დაიცავით კონფიდენციალური კომპანიის ინფორმაცია და იმუშავეთ ერთად უსაფრთხოდ."
       ],
+      "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
+        "დაიცავით თქვენი ოჯახი ${ PASS_SHORT_APP_NAME } Plus-ის ფასიანი ფუნქციებით 6 მომხმარებლისთვის."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "დაიცავით თქვენი ოჯახის კონფიდენციალობა ყველა ${ BRAND_NAME }-ის სერვისის ერთად."
       ],
@@ -12295,6 +12462,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "შექმენით ${ n }-მდე ელფოსტის მისამართი/ფსევდონიმი, რომლებიც შეგიძლიათ, ოჯახის წევრებს მიანიჭოთ. გამოიყენეთ ისინი, მაგალითად, შოინგისთვის. JemalShpper@${ domain }."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "გამოყოფილი სერვერები გამოყოფილი IP მისამართებით, რომლებიც, წვდომის უფრო ზუსტი მართვისთვის, შეგიძლიათ, პირად რაუტერებში ჩაამატოთ"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "დაიცავით თავი VPN-ის გამოვლენისგან თქვენი ტრაფიკის ბევრ სერვერზე გატარებით"
       ],
@@ -12388,8 +12558,14 @@
       "Reset user passwords and reset two-factor authentication on users": [
         "მომხმარებლების პაროლებისა და 2FA-ის აღდგენა"
       ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "გადაამისამართეთ თქვენი ინტერნეტ-ტრაფიკი Tor-ის ქსელში თაგუნას ერთადერთი წკაპუნით"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს მოიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
+      ],
+      "Securely share individual items with anyone (even if they don't use ${ PASS_APP_NAME })": [
+        "უსაფრთხოდ გააზიარეთ ინდივიდუალური ელემენტები ყველასთან (მათთანაც კი, ვინც ${ PASS_APP_NAME }-ს არ იყენებს)"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "შეინახეთ კონტაქტების ისეთი დეტალები, როგორიცაა ტელეფონის ნომერი, მისამართი, დაბადების დღე და პირადი შენიშვნები, უსაფრთხოდ. ნულოვანი წვდომით დაშიფვრა უზრუნველყოფს, რომ მათზე წვდომა ${ BRAND_NAME }-საც კი არ ჰქონდეს."
@@ -12677,6 +12853,11 @@
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "შემოსატანად საჭიროა, რომ მონიშნოთ ყველა საჭირო ელემენტი, ისე, როგორც ეს GIF-ზეა."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "აირჩიეთ, რასთან აქვს ${ BRAND_NAME }-ს წვდომა: ნახოს თქვენი ელფოსტის შეტყობინებები დ პარამეტრები, ნახოს და გადმოწეროს თქვენი კონტაქტები; გადმოწეროს და ნახოს ყველა გეგმა Google Calendar-დან."
       ]
     },
     "Onboarding": {
@@ -13524,6 +13705,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "გამოიყენეთ მონაცემების აღდგენის მეთოდი, დაუკავშირდით სხვა ადმინისტრატორს ან ჩამოყარეთ ორგანიზაციის გასაღები, რომ ადმინისტრატორის უფლებები აღიდგინოთ."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "ამ იდენტიფიკატორის სინამდვილის გადამოწმება შეუძლებელია."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "გამომგზავნის მისამართის გასაღების უსაფრთხოების გადამოწმება ვერ შევძელით. ხანდახან გამომგზავნის ინფორმაციის განახლება ოდნავი დაყოვნებით ხდება. მოგვიანებით სცადეთ. თუ არ ენდობით ამ მოსაწვევის ან გამომგზავნის სისწორეს, დაუკავშირდით ${ BRAND_NAME }-ის მხარდაჭერის გუნს."
       ],
@@ -13544,11 +13728,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "საბანკო გადარიცხვა"
+      ],
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "კომპანიის სახელის გამოყენება"
+      ],
+      "Use personal name": [
+        "პირადი სახელის გამოყენება"
       ]
     },
     "Payments": {
@@ -13640,6 +13835,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "ქუჩის მსამართი, საფოსტო კოდი და ქალაქი"
       ]
     },
     "Permission": {
@@ -14001,6 +14201,9 @@
       "Changing organization password": [
         "ორგანიზაციის პაროლის შეცვლა"
       ],
+      "Creating or accessing non-private user accounts": [
+        "არაკონფიდენციალური მომხმარებლების შექმნა ან მათთან წვდომა"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "პაროლის შეცვლის გამო თქვენი ორგანიზაციის ადმინისტრირების პრივილეგიები შეზღუდულია. აიკრძალა შემდეგი ქმედებები:"
       ]
@@ -14212,6 +14415,9 @@
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "თქვენი ანგარიშისა და მონაცემების აღდგენა შესაძლებელია. შეამოწმეთ, გაქვთ ჯერ კიდევ წვდომა თქვენი აღდგენის მეთოდებთან, თუ აღარ."
       ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "თქვენი ანგარიშის და მონაცემების აღდგენა შესაძლებელია. ასევე, კიდევ გაქვთ ქმედებები, რათა თქვენი ანგარიში კიდევ უფრო მეტად დაიცვათ."
+      ],
       "Your account and data can be recovered. You have recommended actions.": [
         "თქვენი მონაცემებისა და ანგარიშის აღდგენა შესაძლებელია. გაქვთ რეკომენდებული ქმედებები."
       ],
@@ -14223,6 +14429,9 @@
       ],
       "Your recovery email": [
         "თქვენი აღდგენის ელფოსტა"
+      ],
+      "Your recovery email address is:": [
+        "თქვენი აღდგენის ელფოსტის მისამართია:"
       ],
       "Your recovery email and phone can **only recover access to your account**.": [
         "თქვენი აღდგენის ტელეფონი და ელფოსტა **მხოლოდ თქვენს ანგარიშთან წვდომისთვის შეგიძლიათ, გამოიყენოთ**."
@@ -14256,6 +14465,9 @@
       ],
       "Your recovery phone is set": [
         "თქვენი აღდგენის ტელეფონი დაყენებულია"
+      ],
+      "Your recovery phone number is:": [
+        "თქვენი აღდგენის ტელეფონის ნომერია:"
       ]
     },
     "saml: Action": {
@@ -14264,6 +14476,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "შესვლა წარმატებით არ დასრულდა."
+      ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
       ]
@@ -14324,6 +14539,12 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**წინასწარი მოთხოვნები:** SCIM გაშლისთვის SAML ავთენტიკაცია აუცილებლად ჩართული უნდა იყოს."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**წინასწარი მოთხოვნა:** SCIM გაშლის ჩასართავად, უნდა გადაამოწმოთ, გეკუთვნით თუ არა თქვენ დომენი **${ domainName }**. ამ გადამოწმებას, შეიძლება, ერთ საათამდე დასჭირდეს."
+      ],
+      "Enter the token into your identity provider": [
+        "შეიყვანეთ კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
       "Enter URL and token into your identity provider": [
         "შეიყვანეთ URL და კოდი თქვენი იდენტიფიკატორის მომწოდებელში"
@@ -14665,6 +14886,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "დაგიკავშირდებით, როცა პაროლის ჩამოყრა ხელმისაწვდომი იქნება."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "თქვენი მოთხოვნის სტატუსის შემოწმება ნებისმიერ დროს შეგიძლიათ, მორგების ფანჯარაში, ${ accountAndPasswordSectionLink }."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "მომხმარებლისა და პაროლის სექციაში"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15103,6 +15332,226 @@
         "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
       ]
     },
+    "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } წევრმა ითხოვა თქვენი დახმარება შესვლის შესახებ.",
+        "${ n } წევრმა ითხოვა თქვენი დახმარება შესვლის შესახებ."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტიფიკატორების მომწოდებლით. დაადასტურეთ ან წაშალეთ მათი ანგარიშები ახლა:",
+        "${ n } მომხმარებელი შემოუერთდა თქვენს ორგანიზაციას თქვენი იდენტიფიკატორების მომწოდებლით. დაადასტურეთ ან წაშალეთ მათი ანგარიშები ახლა:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ.",
+        "${ n } მომხმარებელი ითხოვს თქვენს დახმარებას, რომ ${ BRAND_NAME }-ში SSO-ით შევიდნენ."
+      ],
+      "Access denied": [
+        "წვდომა აკრძალულია"
+      ],
+      "Access granted": [
+        "წვდომა მონიჭებულია"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "დაგამატათ თავის ${ BRAND_NAME }-ის ორგანიზაციაში"
+      ],
+      "Approve": [
+        "დადასტურება"
+      ],
+      "Approve or deny it now": [
+        "დაადასტურეთ არ უარჰყავით ის ახლა"
+      ],
+      "Approve the sign-in from another device": [
+        "სხვა მოწყობილობიდან შესვლის დაშვება"
+      ],
+      "Ask administrator for help": [
+        "ადმინისთვის დახმარების თხოვნა"
+      ],
+      "Ask your administrator for access?": [
+        "ვთხოვოთ თქვენს ადმინისტრატორს წვდომა?"
+      ],
+      "Backup password": [
+        "მარქაფი პაროლი"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Change backup password": [
+        "მარქაფი პაროლის შეცვლა"
+      ],
+      "Confirm backup password": [
+        "დაადასტურეთ მარქაფი პაროლი"
+      ],
+      "Confirmation code": [
+        "დადასტურების კოდი"
+      ],
+      "Contact administrator": [
+        "დაკავშირება ადმინისტრატორთან"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "დაუკავშირდით თქვენს ადმინისტრატორს, თუ პაროლი არ გაქრება."
+      ],
+      "Current device": [
+        "მიმდინარე მოწყობილობა"
+      ],
+      "Deny": [
+        "უარყოფა"
+      ],
+      "Deny access": [
+        "წვდომის აკრძალვა"
+      ],
+      "Devices available": [
+        "ხელმსაწვდომი მოწყობილობები"
+      ],
+      "Devices management": [
+        "მოწყობილობის მართვა"
+      ],
+      "Do you want to remove all other devices than the current one?": [
+        "გნებავთ მიმდინარეს გარდა ყველა მოწყობილობის წაშლა?"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "შეიყვანეთ დადასტურების კოდი, რომელიც თქვენს სხვა მოწყობილობაზე გავაგზავნეთ."
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "შეიყვანეთ დადასტურების კოდი, რომელიც ამ მომხმარებელს გავუგზავნეთ."
+      ],
+      "Enter your backup password": [
+        "შეიყვანეთ თქვენი მარქაფის პაროლი"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "თქვენი უსაფრთხოებისთვის გახვედით ყველა თქვენი აქტიური მოწყობილობიდან. თქვენს ანგარიშთან წვდომამდე ახალი მარქაფის პაროლის შეყვანა მოგიწევთ."
+      ],
+      "Grant": [
+        "უფლების მიცემა"
+      ],
+      "Grant access": [
+        "წვდომის უფლების მიცემა"
+      ],
+      "Grant access to user?": [
+        "მივანიჭო წვდომა მომხმარებელს?"
+      ],
+      "Grant access to users?": [
+        "მივანიჭო წვდომა მომხმარებლებს?"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "თუ მოთხოვნა თქვენი არაა, გააუქმეთ ის ახლავე."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "თუ თქვენი ${ BRAND_NAME }-ის ანგარიში დაგებლოკათ, თქვენი მარქაფი პაროლი შესვლაში და თქვენი მონაცემების აღდგენაში დაგეხმარებათ."
+      ],
+      "Invalid confirmation code": [
+        "არასწორი შემამოწმებელი კოდი"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "ეს ერთად-ერთი გზაა, თქვენი ანგარიში სრულად აღადგინოთ, ასე რომ, დარწმუნდით, რომ ის დაცულ ადგილას გაქვთ შენახული."
+      ],
+      "Join ${ organizationName }": [
+        "${ organizationName }-ში შესვლა"
+      ],
+      "New backup password": [
+        "ახალი მარქაფი პაროლი"
+      ],
+      "No, it wasn’t me": [
+        "არა, მე არ ვიყავი"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "არა-SSO მომხმარებლებს (შექმნილი ხელით, არა მოწოდებული იდენტიფიკატორის მომწოდებლის მიერ) ორგანიზაციაში შესვლა ჯერ კიდევ შეუძლიათ."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "როცა თქვენი ორგანიზაციისთვის SSO გაითიშება:"
+      ],
+      "Reject": [
+        "უარყოფა"
+      ],
+      "Remove": [
+        "წაშლა"
+      ],
+      "Remove all other devices": [
+        "ყველა სხვა მოწყობილობის წაშლა"
+      ],
+      "Remove single sign-on": [
+        "SSO-ის წაშლა"
+      ],
+      "Remove single sign-on for your organization?": [
+        "წავშალო SSO თქვენი ორგანიზაციისთვის?"
+      ],
+      "Set your backup password": [
+        "დააყენეთ თქვენი მარქაფი პაროლი"
+      ],
+      "Share the confirmation code with your administrator": [
+        "გაუზიარეთ დადასტურების კოდი თქვენს ადმინისტრატორს"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
+      ],
+      "Sign out and in again to change your backup password": [
+        "გადით და შემოდით, რომ შეცვალოთ თქვენი მარქაფი პაროლი"
+      ],
+      "Sign-in confirmed": [
+        "შესვლა დადასტურებულია"
+      ],
+      "Sign-in rejected": [
+        "შესვლა უარყოფილია"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "მოთხოვნილია შესვლა სხვა მოწყობილობიდან. შენ იყავი ცელქო?"
+      ],
+      "Single sign-on removed": [
+        "SSO წაიშალა"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "წაიშლება ავტორიზაციის დეტალები თქვენი იდენტიფიკატორის მომწოდებლიდან."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "ეს გაიყვანს მომხმარებელს ყველა თავისი მოწყობილობიდან და ისინი იძულებული იქნებიან, ახალი მარქაფი პაროლი შექმნან."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "ეს გაგიყვანთ ყველა თქვენი სხვა მოწყობილობებიდან და მგიწევთ, ახალი მარქაფი პაროლი შექმნათ."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "იმისათვის, რომ დავრწმუნდეთ, რომ ის, ვინც თქვენს **${ email }**-ში შედის, თქვენ ბრძანდებით, იხილეთ კოდი და დაადასტურეთ მოთხოვნა სხვა მოწყობილობიდან."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "იმისათვის რომ დავრწმუნდეთ, რომ ეს ნამდვილად თქვენ ცდილობთ შესვლას, შეიყვანეთ თქვენი მარქაფის პაროლი."
+      ],
+      "Tried to sign in at": [
+        "შესვლი მცდელობის დრო"
+      ],
+      "Use backup password instead": [
+        "გამოყენეთ მარქაფი პაროლი"
+      ],
+      "User details:": [
+        "მომხმარებლის დეტალები:"
+      ],
+      "Yes, it was me": [
+        "დიახ, მე ვიყავი"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "აქტიური"
+      ],
+      "Inactive": [
+        "არააქტიური"
+      ],
+      "Pending activation": [
+        "გააქტიურების ლოდინი"
+      ],
+      "Pending admin activation": [
+        "ადმინის გააქტიურების მოლოდინი"
+      ],
+      "Rejected": [
+        "უარყოფილია"
+      ],
+      "Signed out": [
+        "გასული"
+      ],
+      "Unknown": [
+        "უცნობი"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "მიმდინარეობს თქვენი გამოწერის გაუქმება. მოითმინეთ"
@@ -15348,6 +15797,9 @@
       "Got it": [
         "გავიგე"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "შედით თქვენს Apple App Store-ის ანგარიშზე და ${ subscriptions } აირჩიეთ."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "შედით თქვენს Play Store-ის ანგარიშზე და ${ subscriptions }-ს დააწექით."
       ],
@@ -15537,6 +15989,9 @@
       "If you exceed free plan limits, you won't be able to:": [
         "თუ გადააცილებთ უფასო სატარიფო გეგმის შეზღუდვებს, თქვენ არ შეგეძლებათ:"
       ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "თუ თქვენი გამოყენება აჭარბებს უფასო სატარიფო გეგმის შეზღუდვვებს, შეიძლება, თქვენს მონაცემებთან ან პროდუქტის თვისებებთან წვდომა შეგეზღუდოთ."
+      ],
       "Invited members will be removed from your organization": [
         "მოწვეული წევრები წაიშლება თქვენი ორგანიზაციიდან"
       ],
@@ -15642,8 +16097,14 @@
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "როცა თქვენი ${ planName }-ის გამოწერგას გააუქმებთ, ტარიფი ჩამოწეული იქნება ${ BRAND_NAME } Free-ზე, რომელსაც, მხოლოდ, 1 გბ Mail-ის და 5 გბ-მდე Drive-ის საცავი გააჩნია. თქვენი გუნდი დაკარგავს უნარს, იმუშაოს, რადგან უფასო სატარიფო გეგმაში დამატებითი მომხმარებლების ქონა მხარდაჭერილი არაა."
       ],
+      "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "როცა თქვენი ${ planName } გამოწერა დასრულდება ${ expiryDate }-ზე, თქენი სატარიფო გეგმა ${ BRAND_NAME } Free-ზე ჩამოიწევა."
+      ],
       "Yearly free storage bonuses": [
         "წლიური უფასო საცავის ბონუსები"
+      ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "თქვენი სატარიფო გეგმისგან სიამოვნების მიღება შეგიძლიათ თარიღამდე ${ boldedDate }."
       ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "თქვენს ${ planName } გამოწერაზე ${ expiryDate } დაგრჩათ. ჩვენ დაგიმატებთ კრედიტებს დარჩენილი დროისთვის თქვენს ${ BRAND_NAME }-ის ანგარიშზე. დარწმუნდით, რომ არსცდებით უფასო სატარიფო გეგმის შეზღუდვებს, სანამ გააუქმებთ. ${ learnMoreLink }"
@@ -15792,6 +16253,12 @@
       "Default calendar updated": [
         "ნაგულისხმევი კალენდარი განახლდა"
       ],
+      "Device deleted": [
+        "მოწყობილობა წაიშალა"
+      ],
+      "Device rejected": [
+        "მოწყობილობა უარყოფილია"
+      ],
       "Display name updated": [
         "საჩვენებელი სახელი განახლდა"
       ],
@@ -15938,6 +16405,12 @@
       ],
       "You have successfully unsubscribed": [
         "გამოწერა წარმატებით გაუქმდა"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "თუ ელფოსტის მისამართი სწორია, რამდენიმე წუთში თქვენ მიიღებთ ელ-ფოსტას თქვენი მომხმარებლის სახელებით."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "თუ ტელეფონის ნომერი სწორია, რამდენიმე წუთში თქვენ მიიღებთ SMS-ს თქვენი მომხმარებლის სახელით."
       ]
     },
     "Success message": {
@@ -16221,6 +16694,9 @@
       ],
       "Action": [
         "ქმედება"
+      ],
+      "Actions": [
+        "ქმედებები"
       ],
       "Activate @pm.me": [
         "გაააქტიურეთ @pm.me"
@@ -16555,11 +17031,17 @@
       "Delete version history?": [
         "წავშალო ვერსიის ისტორია?"
       ],
+      "Deny access to user?": [
+        "ავუკრძალო წვდომა მომხმარებელს?"
+      ],
       "Description": [
         "აღწერა"
       ],
       "Details": [
         "დეტალები"
+      ],
+      "Device": [
+        "მოწყობილობა"
       ],
       "Device connected!": [
         "მოწყობილობა მიერთებულია!"
@@ -16866,6 +17348,9 @@
       "Leave ${ organisationName }?": [
         "გავიდე ${ organisationName }-დან?"
       ],
+      "Leave group?": [
+        "ჯგუფის დატოვება?"
+      ],
       "Link confirmation": [
         "ბმულის დადასტურება"
       ],
@@ -16998,6 +17483,9 @@
       "Profile": [
         "პროფილი"
       ],
+      "QR Code": [
+        "QR კოდი"
+      ],
       "Ready, set, forward": [
         "ყურადღება, მომზადება, წინ"
       ],
@@ -17021,6 +17509,9 @@
       ],
       "Refer a friend": [
         "მიმართეთ მეგობარს"
+      ],
+      "Reject device?": [
+        "უარვყო მოწყობილობა?"
       ],
       "Remove all members?": [
         "წავშალო ყველა წევრი?"
@@ -17186,6 +17677,9 @@
       ],
       "Start import process": [
         "შემოტანის დაწყება"
+      ],
+      "State": [
+        "მდგომარეობა"
       ],
       "Status": [
         "სტატუსი"
@@ -17548,6 +18042,9 @@
       "Set the default layout for your Inbox.": [
         "დააყენეთ თქვენი საფოსტო ყუთის ნაგულისხმები განლაგება."
       ],
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings.": [
+        "დააყენებს თქვენს მიერ გაგზავნილ ქვედა კოლონტიტულს: ${ signature } ბმული თქვენს რეფერალურ ბმულზე მიუთითებს. კოლონტიტული ხელმოწერის ქვემოთ გამოჩნდება. ხელმოწერის მორგება პარამეტრებიდან შეგიძლიათ."
+      ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "შეტყობინებების სიაში თითოეული გამომზავნის გამოსახულების ჩვენება. თუ სურათი ხელმისაწვდომი არაა, გამომგზავნის ინიციალებს გაჩვენებთ."
       ],
@@ -17663,6 +18160,9 @@
       ],
       "User declined invitation": [
         "მომხმარებელმა უარჰყო მოსაწვევი"
+      ],
+      "Waiting for user to accept the invitation": [
+        "მომხმარებლის დადასტურების მოლოდინი"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17704,6 +18204,9 @@
     "Tor out of date": {
       "stable release": [
         "სტაბილური რელიზი"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -18080,6 +18583,11 @@
         "თქვენი ტარიფი ${ selected }"
       ]
     },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "წვდომა Secure Core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
+      ]
+    },
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "${ n } ანგარიში თითოეული საფულისთვის",
@@ -18150,6 +18658,9 @@
       ]
     },
     "wallet_signup_2024:Info": {
+      "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
+        "${ WALLET_APP_NAME } ადრეული წვდომითაა. შეგიძლიათ, გადმოწეროთ iOS-ის აპი Apple TestFlight-დან და Android-ის აპი Google open testing-დან."
+      ],
       "Coming soon": [
         "სულ მალე"
       ]
@@ -18254,6 +18765,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "თქვენი აღდგენის ფაილი ვადაგასულია. თუ პაროლს კიდევ ჩამოყრით ახალ მონაცემებს მისით ვერ აღადგენთ."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "თქვენი აღდგენის ფრაზა ვადაგასულია. თუ პაროლს კიდევ ჩამოყრით ახალ მონაცემებს მისით ვერ აღადგენთ."
       ]
     },
     "Warning for domain modal": {

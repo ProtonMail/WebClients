@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activa"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -177,6 +177,9 @@
       ],
       "Back": [
         "Torna"
+      ],
+      "Back to sign-in": [
+        "Torna a l'inici de sessió"
       ],
       "Block": [
         "Bloqueja"
@@ -2043,6 +2046,9 @@
       "${ maxSpaceTB } storage": [
         "Emmagatzematge de ${ maxSpaceTB }"
       ],
+      "${ planMaxSpace } email storage": [
+        "${ planMaxSpace } d'emmagatzematge de correu electrònic"
+      ],
       "Advanced account protection": [
         "Protecció avançada del compte"
       ],
@@ -2057,6 +2063,9 @@
       ],
       "Try ${ planName }": [
         "Proveu ${ planName }"
+      ],
+      "Ultra fast and private VPN": [
+        "VPN ultraràpida i privada"
       ]
     },
     "Checkout row": {
@@ -3826,7 +3835,7 @@
         "Subscripcions per correu electrònic"
       ],
       "Resubscribe": [
-        "Resubscriviu-vos"
+        "Torneu a subscriure's"
       ],
       "Unsubscribe": [
         "Anul·la la subscripció"
@@ -4162,6 +4171,9 @@
       "Account does not exist": [
         "El compte no existeix."
       ],
+      "Add at least one action": [
+        "Afegiu almenys una acció"
+      ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
@@ -4328,6 +4340,9 @@
       ],
       "Invalid expiration date": [
         "Data de caducitat invàlida"
+      ],
+      "Invalid IBAN": [
+        "L'IBAN no és vàlid."
       ],
       "Invalid invitation link": [
         "L'enllaç d'invitació no és vàlid"
@@ -5115,6 +5130,9 @@
       "customer support": [
         "atenció al client"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Els plans familiars actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
+      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
       ],
@@ -5135,6 +5153,9 @@
       ],
       "Leave Visionary plan": [
         "Deixa el pla Visionary"
+      ],
+      "Manage addresses": [
+        "Gestiona les adreces"
       ],
       "Manage user accounts": [
         "Gestiona comptes d'usuari"
@@ -5646,6 +5667,9 @@
       "Back to sign in": [
         "Torna a l'inici de sessió"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features.": [
+        "Continueu gaudint d'una experiència d'escriptori ràpida, concentrada i segura. Actualitzeu per desbloquejar l'accés il·limitat i altres funcions prèmium."
+      ],
       "Keep using the desktop app": [
         "Continua utilitzant l'aplicació d'escriptori"
       ],
@@ -5805,6 +5829,9 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "per a ${ email }"
+      ],
       "Group invitation accepted": [
         "S'ha acceptat la invitació del grup."
       ],
@@ -6554,9 +6581,6 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
       ],
-      "Add a recovery ${ type }": [
-        "Afegeix un ${ type } de recuperació"
-      ],
       "Add a recovery email address": [
         "Afegeix una adreça de correu electrònic de recuperació"
       ],
@@ -6718,7 +6742,7 @@
         "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
       ],
       "Are you sure you want to remove all members from this group?": [
-        "Segur que voleu esborrar tots els membres d'aquest grup?"
+        "Esteu segur que voleu esborrar tots els membres d'aquest grup?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Segur que voleu esborrar el domini «${ boldDomain }»?"
@@ -6953,9 +6977,6 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "S'està eliminant ${ deletedServerCount } servidor de passarel·la",
         "S'estan eliminant ${ deletedServerCount } servidors de passarel·la"
-      ],
-      "Disable recovery by ${ type }": [
-        "Desactiva la recuperació per ${ type }"
       ],
       "Discount": [
         "Descompte"
@@ -7475,6 +7496,9 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "Learn more about Gateways": [
+        "Més informació sobre les passarel·les"
       ],
       "learn more about Sieve programming language": [
         "saber-ne més sobre el llenguatge de programació Sieve"
@@ -8467,11 +8491,14 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificació obrirà una pestanya nova. Desactiveu els bloquejadors de finestres emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta serà retornada immediatament."
       ],
-      "Verify ${ type }": [
-        "Verifica ${ type }"
-      ],
       "Verify domain": [
         "Verifica el domini"
+      ],
+      "Verify email address": [
+        "Verifica l'adreça electrònica"
+      ],
+      "Verify phone number": [
+        "Verifica el número de telèfon"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifiqueu la vostra identitat amb una contrasenya d'un sol ús i de durada limitada generada per una aplicació d'autenticació."
@@ -9515,6 +9542,9 @@
       ],
       "Awarded": [
         "Premiat"
+      ],
+      "Backup password": [
+        "Contrasenya de recuperació"
       ],
       "Beta": [
         "Beta"
@@ -10971,6 +11001,9 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i més."
       ],
+      "Private and secure email, no bank card required": [
+        "Correu electrònic privat i segur, no es requereix targeta de pagament"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
       ],
@@ -11288,6 +11321,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11335,6 +11371,10 @@
         "${ n } missatge per dia",
         "${ n } missatges per dia"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } ${ PASS_SHORT_APP_NAME } caixa forta compartida per usuari",
+        "${ n } ${ PASS_SHORT_APP_NAME } caixes fortes compartides per usuari"
+      ],
       "${ n } vault": [
         "${ n } caixa forta",
         "${ n } caixes fortes"
@@ -11365,6 +11405,12 @@
       ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Per a ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Per a tots els serveis de ${ BRAND_NAME }"
       ],
       "1 TB secure storage": [
         "1 TB d'emmagatzematge segur"
@@ -11517,7 +11563,7 @@
         "Acord de processament de dades RGPD"
       ],
       "Generate emails with a prompt": [
-        "Genera correus electrònics amb una petició"
+        "Genera correus electrònics amb una demanda"
       ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
@@ -13235,6 +13281,14 @@
         "Nova targeta de crèdit/dèbit"
       ]
     },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilitza el nom de l'empresa"
+      ],
+      "Use personal name": [
+        "Utilitza el nom de la persona"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "País de facturació"
@@ -13800,6 +13854,9 @@
       "Your recovery phone": [
         "El vostre telèfon de recuperació"
       ],
+      "Your recovery phone has been enabled": [
+        "S'ha activat el vostre telèfon de recuperació."
+      ],
       "Your recovery phone is set": [
         "El vostre telèfon de recuperació està configurat."
       ],
@@ -13861,6 +13918,9 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Prerequisit:** Cal configurar l'autenticació SAML per a activar el subministrament SCIM."
+      ],
+      "Enter the token into your identity provider": [
+        "Introduïu el token al vostre proveïdor d'identitat."
       ],
       "Enter URL and token into your identity provider": [
         "Introduïu l'URL i el token al vostre proveïdor d'identitat"
@@ -14653,11 +14713,23 @@
       "Ask administrator for help": [
         "Demaneu ajuda a l'administrador"
       ],
+      "Backup password": [
+        "Contrasenya de recuperació"
+      ],
       "Cancel": [
         "Cancel·la"
       ],
+      "Change backup password": [
+        "Canvia la contrasenya de recuperació"
+      ],
+      "Confirm backup password": [
+        "Confirmeu la contrasenya de recuperació"
+      ],
       "Confirmation code": [
         "Codi de confirmació"
+      ],
+      "Contact administrator": [
+        "Contacteu amb l'administrador"
       ],
       "Current device": [
         "Dispositiu actual"
@@ -14671,6 +14743,9 @@
       "Devices available": [
         "Dispositius disponibles"
       ],
+      "Devices management": [
+        "Gestió dels dispositius"
+      ],
       "Enter your backup password": [
         "Introduïu la vostra contrasenya de recuperació"
       ],
@@ -14680,17 +14755,53 @@
       "Grant access": [
         "Autoritza l'accés"
       ],
+      "Grant access to user?": [
+        "Voleu donar accés a l'usuari?"
+      ],
+      "Grant access to users?": [
+        "Donar accés als usuaris?"
+      ],
+      "Invalid confirmation code": [
+        "El codi de confirmació no és vàlid."
+      ],
+      "Join ${ organizationName }": [
+        "Uniu-vos a ${ organizationName }"
+      ],
+      "New backup password": [
+        "Nova contrasenya de recuperació"
+      ],
+      "No, it wasn’t me": [
+        "No, no era jo."
+      ],
       "Reject": [
         "Rebutja"
       ],
       "Remove": [
         "Esborra"
       ],
+      "Remove single sign-on": [
+        "Elimina l'inici de sessió únic"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Voleu esborrar l'inici de sessió únic de la vostra organització?"
+      ],
       "Set your backup password": [
         "Configureu la vostra contrasenya de recuperació"
       ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
+      ],
+      "Sign-in confirmed": [
+        "S'ha confirmat l'inici de sessió."
+      ],
+      "Sign-in rejected": [
+        "S'ha rebutjat l'inici de sessió."
+      ],
+      "Single sign-on removed": [
+        "S'ha esborrat l'inici de sessió únic."
+      ],
+      "User details:": [
+        "Detalls de l'usuari:"
       ],
       "Yes, it was me": [
         "Sí, era jo."
@@ -15011,6 +15122,9 @@
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } va més enllà de l'essencial per a ajudar-vos a tenir una major productivitat, capacitat d'organització i el control de la vostra safata d'entrada, la vostra identitat de correu electrònic i molt més."
       ],
+      "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
+        "${ planName } us ajuda a assegurar-vos que els membres de la vostra família, i les seves dades, estiguin protegits sempre que estiguin en línia."
+      ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per als vostres correus electrònics, adjunts, esdeveniments, contrasenyes i fitxers. També podeu optar a bonificacions d'emmagatzematge anuals."
       ],
@@ -15023,9 +15137,28 @@
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } ofereix ${ planMaxSpace } d'emmagatzematge per usuari per a correus electrònics, adjunts, esdeveniments, fitxers i contrasenyes. També podeu optar a bonificacions anuals d'emmagatzematge."
       ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } calendari per usuari",
+        "${ planNumberOfCalendars } calendaris per usuari"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } adreça de correu electrònic per usuari",
+        "${ planNumberOfEmails } adreces de correu electrònic per usuari"
+      ],
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } usuari",
         "${ planNumberOfUsers } usuaris"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "Protecció avançada del compte ${ PROTON_SENTINEL_NAME }"
       ],
       "2 users": [
         "2 usuaris"
@@ -15065,6 +15198,9 @@
       ],
       "Comprehensive privacy and security": [
         "Privacitat i seguretat integrals"
+      ],
+      "Dark web monitoring": [
+        "Supervisió de la web fosca"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplicació d'escriptori i compatibilitat amb clients de correu electrònic (a través d'IMAP)"
@@ -15116,6 +15252,9 @@
       ],
       "Learn more about our impact": [
         "Descobriu més sobre el nostre impacte"
+      ],
+      "Limitations of the free plan:": [
+        "Limitacions del pla gratuït:"
       ],
       "Make your business stand out": [
         "Feu que el vostre negoci destaqui"
@@ -15342,6 +15481,9 @@
       ],
       "Device deleted": [
         "S'ha eliminat el dispositiu."
+      ],
+      "Device rejected": [
+        "S'ha rebutjat el dispositiu."
       ],
       "Display name updated": [
         "S'ha actualitzat el nom a mostrar"
@@ -15715,6 +15857,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
@@ -16102,6 +16247,9 @@
       "Delete version history?": [
         "Voleu eliminar l'historial de versions?"
       ],
+      "Deny access to user?": [
+        "Denegar l'accés a l'usuari?"
+      ],
       "Description": [
         "Descripció"
       ],
@@ -16206,6 +16354,9 @@
       ],
       "Email subscriptions": [
         "Subscripcions per correu electrònic"
+      ],
+      "Enable for all users": [
+        "Activa per a tots els usuaris"
       ],
       "Encryption and keys": [
         "Xifratge i claus"
@@ -16574,6 +16725,9 @@
       ],
       "Refer a friend": [
         "Recomana a un amic"
+      ],
+      "Reject device?": [
+        "Voleu rebutjar el dispositiu?"
       ],
       "Remove all members?": [
         "Voleu suprimir tots els membres?"
@@ -17724,6 +17878,9 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "La vostra frase de recuperació està obsoleta. No pot recuperar dades noves si restabliu la contrasenya."
       ]
     },
     "Warning for domain modal": {

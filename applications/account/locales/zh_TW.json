@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1897,6 +1897,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "編輯 (檢視、創建或編輯行程詳細資料)"
+      ],
       "View (see all event details)": [
         "檢視（檢視所有事件的詳細資訊）"
       ]
@@ -2017,8 +2020,17 @@
       "Encrypted password manager": [
         "加密密碼管理"
       ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "我們的基本免費方案包含端對端加密電子郵件和儲存空間。不包含頂級功能。"
+      ],
       "Save ${ upsellSavings }": [
         "省下${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "透過${ upsellPlanName }省錢"
+      ],
+      "Secure personal and shared calendar": [
+        "安全保護個人及共享行事曆"
       ],
       "Try ${ planName }": [
         "嘗試${ planName }"
@@ -4075,6 +4087,12 @@
       "Account does not exist": [
         "帳號不存在"
       ],
+      "Add at least one action": [
+        "添加至少一個動作"
+      ],
+      "Add at least one condition": [
+        "添加至少一個條件"
+      ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
       ],
@@ -4239,6 +4257,9 @@
       ],
       "Invalid expiration date": [
         "到期日無效"
+      ],
+      "Invalid IBAN": [
+        "國際銀行帳號不正確"
       ],
       "Invalid invitation link": [
         "無效的邀請連結"
@@ -4551,6 +4572,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "您已用鑿行事曆組的上限。"
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "您的帳號已達聯絡人數量限制"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
@@ -5033,6 +5057,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "終身帳號無法加入群組方案。"
       ],
+      "Manage addresses": [
+        "管理電子郵件地址"
+      ],
       "Manage user accounts": [
         "管理使用者帳號"
       ],
@@ -5065,6 +5092,9 @@
       ],
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "您在六個月內只能接受三次邀請。若您需要例外，請聯絡 ${ supportLink }。"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "您無法使用目前方案接受此邀請函。"
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "您已被邀請加入 ${ bannerOrganization }。${ viewInviteButton }"
@@ -6312,6 +6342,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /月)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(篩選須符合下列「全部」條件)"
       ],
@@ -6389,9 +6422,6 @@
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "加入一個 @pm.me 的電郵位址到您的帳號。此較為簡短的網域代表「${ MAIL_APP_NAME } me」或「私訊我」。"
-      ],
-      "Add a recovery ${ type }": [
-        "添加個復原${ type }"
       ],
       "Add a recovery email address": [
         "加入復原電郵位址"
@@ -6762,8 +6792,8 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "正在刪除 ${ deletedServerCount } 台閘道伺服器"
       ],
-      "Disable recovery by ${ type }": [
-        "透過${ type }停用復原"
+      "Disabled on ${ formattedDateAndTime }": [
+        "於${ formattedDateAndTime }寧用"
       ],
       "Discount": [
         "折扣"
@@ -6875,6 +6905,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "若外部服務支援，啟用TLS或SSL。"
+      ],
+      "Enabled on ${ formattedDateAndTime }": [
+        "於${ formattedDateAndTime }啟用"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "再次啟用短語回復方案將會生成新的短語。"
@@ -7004,6 +7037,9 @@
       ],
       "High Priority": [
         "首要優先順序"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "國際銀行帳號${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "身分提供者簽署驗證判斷提示的公開金鑰。身分提供者應在某處備有憑證雜湊可供下載或複製。只需在文字區域欄位中貼上憑證雜湊即可。"
@@ -8169,6 +8205,9 @@
       "User activated": [
         "使用者已啟用"
       ],
+      "Username": [
+        "使用者名稱"
+      ],
       "username": [
         "使用者名稱"
       ],
@@ -8198,9 +8237,6 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "驗證將開新索引標籤，請停用任何彈出式視窗攔截程式。您不會被收費。任何用於驗證信用卡的金額都會馬上退還。"
-      ],
-      "Verify ${ type }": [
-        "驗證${ type }"
       ],
       "Verify domain": [
         "驗證網域"
@@ -9126,6 +9162,9 @@
       "And": [
         "且"
       ],
+      "Anderson": [
+        "安德松"
+      ],
       "ANY": [
         "任一"
       ],
@@ -9239,6 +9278,9 @@
       ],
       "Colors": [
         "色彩"
+      ],
+      "Company name": [
+        "公司名字"
       ],
       "Composer": [
         "撰寫器"
@@ -9497,6 +9539,9 @@
       ],
       "I understand the risk": [
         "我已了解此可能的風險"
+      ],
+      "IBAN": [
+        "國際銀行帳號"
       ],
       "IF": [
         "如"
@@ -9896,6 +9941,9 @@
       ],
       "Then": [
         "則"
+      ],
+      "Thomas": [
+        "湯姆斯"
       ],
       "Time format": [
         "時間格式"
@@ -11250,6 +11298,9 @@
       "Sync and backup all your files across devices": [
         "於裝置同步及備份您全部的檔案"
       ],
+      "TOR over VPN": [
+        "經 TOR 的 VPN"
+      ],
       "Two-factor authentication": [
         "兩步驟驗證"
       ],
@@ -12602,6 +12653,9 @@
       "Get it for ${ monthlyPrice }": [
         "只需${ monthlyPrice }"
       ],
+      "Introducing ${ passFamilyPlanName }": [
+        "介紹 ${ passFamilyPlanName }"
+      ],
       "Limited-time deal.": [
         "限時優惠。"
       ]
@@ -12645,11 +12699,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "銀行轉帳"
+      ],
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "使用公司名字"
+      ],
+      "Use personal name": [
+        "使用個人名字"
       ]
     },
     "Payments": {
@@ -14926,6 +14991,9 @@
       "Action": [
         "動作"
       ],
+      "Actions": [
+        "操作"
+      ],
       "Activate @pm.me": [
         "啟用 @pm.me"
       ],
@@ -14952,6 +15020,9 @@
       ],
       "Add credits": [
         "儲值"
+      ],
+      "Add dedicated servers": [
+        "新增專用伺服器"
       ],
       "Add domain": [
         "加入網域"
@@ -15084,6 +15155,9 @@
       ],
       "Clear out the junk": [
         "清除垃圾"
+      ],
+      "Click a value in the table to use it as filter": [
+        "點及於表格中的任何值以當作過濾器"
       ],
       "Close": [
         "關閉"
@@ -15249,6 +15323,9 @@
       ],
       "Details": [
         "詳細資訊"
+      ],
+      "Device": [
+        "裝置"
       ],
       "Device connected!": [
         "裝置已連線！"
@@ -15427,6 +15504,15 @@
       "Gateway": [
         "網關"
       ],
+      "Gateway monitor": [
+        "閘道器監控"
+      ],
+      "Gateway monitor disabled": [
+        "閘道器監控已停用"
+      ],
+      "Gateway monitor enabled": [
+        "閘道器監控已啟用"
+      ],
       "Gateways": [
         "閘道器"
       ],
@@ -15543,6 +15629,9 @@
       ],
       "Leave ${ organisationName }?": [
         "退出 ${ organisationName } ?"
+      ],
+      "Leave group?": [
+        "退出群組?"
       ],
       "Link confirmation": [
         "外部連結確認"
@@ -15676,6 +15765,9 @@
       "Profile": [
         "個人檔案"
       ],
+      "QR Code": [
+        "QRCode"
+      ],
       "Recommended": [
         "推薦"
       ],
@@ -15697,6 +15789,9 @@
       "Refer a friend": [
         "引薦親友"
       ],
+      "Reject device?": [
+        "拒絕裝置？"
+      ],
       "Remove all members?": [
         "移除所有成員?"
       ],
@@ -15708,6 +15803,9 @@
       ],
       "Remove domain": [
         "移除網域"
+      ],
+      "Remove server?": [
+        "移除伺服器?"
       ],
       "Remove single sign-on": [
         "移除單一登入"
@@ -15858,6 +15956,9 @@
       ],
       "Start import process": [
         "開始匯入流程"
+      ],
+      "State": [
+        "省/州"
       ],
       "Status": [
         "狀態"
@@ -16345,6 +16446,9 @@
     "Tor out of date": {
       "stable release": [
         "穩定版本"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "此版本的 Tor 瀏覽器已不受支援，請更新至最新版本 ${ stableRelease } 。"
       ]
     },
     "unprivatization": {
