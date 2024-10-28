@@ -13,6 +13,7 @@ import {
 } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
+import { getAuthDevices } from '@proton/pass/store/actions/creators/sso';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
@@ -34,6 +35,8 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
         yield put(withRevalidate(getOrganizationSettings.intent()));
         yield put(withRevalidate(secureLinksGet.intent()));
+        yield put(getAuthDevices.intent());
+
         if (EXTENSION_BUILD) yield put(withRevalidate(resolveWebsiteRules.intent()));
 
         yield put(syncSuccess(yield call(synchronize, payload.type)));
