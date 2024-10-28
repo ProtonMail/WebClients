@@ -23,7 +23,8 @@ import { PlanCardFeatureList } from '@proton/components/containers/payments/subs
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS } from '@proton/payments';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
-import { APPS, BRAND_NAME, CYCLE, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import type { APPS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CYCLE, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -225,6 +226,7 @@ export const getDriveConfiguration = ({
     hideFreePlan,
     freePlan,
     audience,
+    toApp,
 }: {
     hideFreePlan: boolean;
     audience: Audience.B2B | Audience.B2C;
@@ -233,6 +235,7 @@ export const getDriveConfiguration = ({
     plan: Plan | undefined;
     isLargeViewport: boolean;
     freePlan: FreePlanDefault;
+    toApp: typeof APPS.PROTONDRIVE | typeof APPS.PROTONDOCS;
 }): SignupConfiguration => {
     const logo = <DriveLogo />;
     const title = c('drive_signup_2024: Info').t`Secure cloud storage that gives you control of your data`;
@@ -401,7 +404,7 @@ export const getDriveConfiguration = ({
             })(),
             cycle: CYCLE.YEARLY,
         },
-        product: APPS.PROTONDRIVE,
+        product: toApp,
         shortProductAppName: DRIVE_SHORT_APP_NAME,
         productAppName: DRIVE_APP_NAME,
         setupImg: <img src={setupAccount} alt="" />,
