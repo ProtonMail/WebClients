@@ -1,7 +1,14 @@
 import type { LexicalNode } from 'lexical'
-import { $createRangeSelection, $getNodeByKey, $getSelection, $isElementNode, $isRangeSelection } from 'lexical'
+import {
+  $createRangeSelection,
+  $getNodeByKey,
+  $getSelection,
+  $isElementNode,
+  $isRangeSelection,
+  $isTextNode,
+} from 'lexical'
 import { GenerateUUID } from '@proton/docs-core'
-import { $createSuggestionNode } from './ProtonNode'
+import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { $wrapSelectionInSuggestionNode, $isNodeNotInline } from './Utils'
 import type { Logger } from '@proton/utils/logs'
 
@@ -44,6 +51,12 @@ export function $selectionInsertClipboardNodes(
     offset: point.offset,
     type: point.type,
   }
+  const pointNode = point.getNode()
+  const currentBlock = pointNode.getTopLevelElement()
+  const isAtStartOfBlock =
+    $isElementNode(currentBlock) &&
+    anchorBeforeInserting.offset === 0 &&
+    currentBlock.getFirstDescendant()?.is(pointNode)
 
   const suggestionID = GenerateUUID()
 
@@ -73,7 +86,15 @@ export function $selectionInsertClipboardNodes(
     suggestionNode.append(...nodes)
     latestSelection.insertNodes([suggestionNode])
     logger.info('Appended all nodes as one suggestion node as all nodes were inline')
-    onSuggestionCreation(suggestionID)
+    const prevSibling = suggestionNode.getPreviousSibling()
+    const nextSibling = suggestionNode.getNextSibling()
+    const sibling = $isSuggestionNode(prevSibling) ? prevSibling : nextSibling
+    if ($isSuggestionNode(sibling) && sibling.getSuggestionTypeOrThrow() === 'delete') {
+      logger.info('Using same suggestion ID as sibling to create replace suggestion')
+      suggestionNode.setSuggestionId(sibling.getSuggestionIdOrThrow())
+    } else {
+      onSuggestionCreation(suggestionID)
+    }
     return true
   }
 
@@ -96,23 +117,55 @@ export function $selectionInsertClipboardNodes(
   const doesBeforeAnchorExist = $getNodeByKey(anchorBeforeInserting.key)?.isAttached()
 
   const selectionToMark = $createRangeSelection()
-  if (doesBeforeAnchorExist) {
+  if (isAtStartOfBlock || !doesBeforeAnchorExist) {
+    // When inserting at the start of a block or into an empty paragraph,
+    // Lexical creates a new paragraph, moves the contents of the current block
+    // into it and after inserting all the nodes removes the initial block,
+    // so we need to use the first inserted node as the new anchor.
+    logger.info('Anchor before insertion doesnt exist, using first inserted node')
+    const firstNode = nodes[0]
+    selectionToMark.anchor.set(firstNode.getKey(), 0, $isTextNode(firstNode) ? 'text' : 'element')
+  } else {
     logger.info('Anchor before insertion still exists, using that.')
     selectionToMark.anchor.set(anchorBeforeInserting.key, anchorBeforeInserting.offset, anchorBeforeInserting.type)
-  } else {
-    // This only seems to be the case when pasting in an empty paragraph
-    // as internally Lexical seems to replace it with a new paragraph
-    // which has a different key
-    logger.info("Anchor before insertion doesn't exist, using first node")
-    const firstNode = nodes[0]
-    selectionToMark.anchor.set(firstNode.getKey(), 0, $isElementNode(firstNode) ? 'element' : 'text')
   }
   selectionToMark.focus.set(anchorAfterInserting.key, anchorAfterInserting.offset, anchorAfterInserting.type)
   logger.info('Selection to wrap:', selectionToMark)
 
-  $wrapSelectionInSuggestionNode(selectionToMark, selectionToMark.isBackward(), suggestionID, 'insert', logger)
-  onSuggestionCreation(suggestionID)
-  logger.info('Wrapped selection in suggestion', suggestionID)
+  const suggestionNodes = $wrapSelectionInSuggestionNode(
+    selectionToMark,
+    selectionToMark.isBackward(),
+    suggestionID,
+    'insert',
+    logger,
+  )
+  if (!suggestionNodes.length) {
+    logger.info('Selection was not wrapped')
+    return true
+  }
+
+  const firstNode = suggestionNodes[0]
+  const firstNodePrevSibling = firstNode.getPreviousSibling()
+
+  const lastNode = suggestionNodes[suggestionNodes.length - 1]
+  const lastNodeNextSibling = lastNode.getNextSibling()
+
+  let suggestionIDtoUseForReplace: string | undefined
+  if ($isSuggestionNode(firstNodePrevSibling) && firstNodePrevSibling.getSuggestionTypeOrThrow() === 'delete') {
+    suggestionIDtoUseForReplace = firstNodePrevSibling.getSuggestionIdOrThrow()
+  } else if ($isSuggestionNode(lastNodeNextSibling) && lastNodeNextSibling.getSuggestionTypeOrThrow() === 'delete') {
+    suggestionIDtoUseForReplace = lastNodeNextSibling.getSuggestionIdOrThrow()
+  }
+
+  if (suggestionIDtoUseForReplace) {
+    logger.info('Creating replace suggestion by using same suggestion ID as delete suggestion sibling')
+    for (const suggestion of suggestionNodes) {
+      suggestion.setSuggestionId(suggestionIDtoUseForReplace)
+    }
+  } else {
+    logger.info('Wrapped selection in suggestion', suggestionID)
+    onSuggestionCreation(suggestionID)
+  }
 
   return true
 }
