@@ -2,7 +2,7 @@ import { $generateNodesFromSerializedNodes, $insertGeneratedNodes } from '@lexic
 import { $isCodeNode } from '@lexical/code'
 import { $findMatchingParent } from '@lexical/utils'
 import { GenerateUUID } from '@proton/docs-core'
-import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode, DecoratorNode} from 'lexical';
+import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode, DecoratorNode } from 'lexical'
 import { $isDecoratorNode } from 'lexical'
 import {
   UNDO_COMMAND,
@@ -201,7 +201,12 @@ function $handleInsertInput(
     `Has targetRange: ${!!targetRange}`,
   )
 
-  if (!selection.isCollapsed()) {
+  /**
+   * When inserting nodes generated from a dataTransfer, we want to let the `selectionInsertClipboardNodes`
+   * handle wrapping any existing non-collapsed selection in a "delete" suggestion instead of doing it
+   * here which will collapse the selection and make it difficult to create a selection of the inserted nodes.
+   */
+  if (!selection.isCollapsed() && data !== null && dataTransfer === null) {
     logger?.info('Wrapping non-collapsed selection in a delete suggestion')
     const isInsideExistingSelection = $isWholeSelectionInsideSuggestion(selection)
     const nodes = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete', logger)
@@ -225,8 +230,10 @@ function $handleInsertInput(
     return $handleInsertParagraph(latestSelection, suggestionID, onSuggestionCreation, logger)
   }
 
+  const canApplyTargetRangeForInputType = inputType !== 'insertText' && inputType !== 'insertFromPaste'
+
   if (
-    inputType !== 'insertText' &&
+    canApplyTargetRangeForInputType &&
     latestSelection.isCollapsed() &&
     !$isRootNode(latestSelection.anchor.getNode()) &&
     targetRange
