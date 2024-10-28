@@ -3,7 +3,7 @@ import Store from "electron-store";
 import { mainLogger } from "../utils/log";
 import { z } from "zod";
 
-const store = new Store();
+const store = new Store<{ appID: AppID }>();
 
 const appIDSchema = z.object({
     id: z.string(),
@@ -13,11 +13,10 @@ const appIDSchema = z.object({
 
 type AppID = z.infer<typeof appIDSchema>;
 
-export const saveAppID = () => {
+export const saveAppID = async () => {
     if (!store.has("appID")) {
-        generateAppID().then((appID) => {
-            store.set("appID", appID);
-        });
+        const appID = await generateAppID();
+        store.set("appID", appID);
     }
 };
 
@@ -34,4 +33,9 @@ export const generateAppID = async () => {
 
     mainLogger.info("AppID generated", appID);
     return appID;
+};
+
+export const getAppID = async () => {
+    await saveAppID();
+    return store.get("appID");
 };
