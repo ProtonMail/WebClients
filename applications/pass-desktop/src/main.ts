@@ -105,8 +105,15 @@ const createSession = () => {
 const createWindow = async (session: Session): Promise<BrowserWindow> => {
     if (ctx.window) return ctx.window;
 
+    const { x, y, minHeight, minWidth, height, width, maximized, zoomLevel } = getWindowConfig();
+
     ctx.window = new BrowserWindow({
-        ...getWindowConfig(),
+        x,
+        y,
+        minHeight,
+        minWidth,
+        width,
+        height,
         show: false,
         opacity: 1,
         autoHideMenuBar: true,
@@ -126,6 +133,10 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         },
     });
 
+    if (zoomLevel) {
+        ctx.window.webContents.setZoomLevel(zoomLevel);
+    }
+
     setApplicationMenu(ctx.window);
     registerWindowManagementHandlers(ctx.window);
 
@@ -141,6 +152,10 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
     await ctx.window.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
     ctx.window.show();
+
+    if (maximized) {
+        ctx.window.maximize();
+    }
 
     return ctx.window;
 };

@@ -1,4 +1,4 @@
-import type { BrowserWindow, BrowserWindowConstructorOptions, Rectangle } from 'electron';
+import type { BrowserWindow, Rectangle } from 'electron';
 import { screen } from 'electron';
 
 import type { Optional } from '@proton/shared/lib/interfaces';
@@ -11,7 +11,7 @@ export type WindowConfigStoreProperties = {
     y: number;
     width: number;
     height: number;
-    zoom: number;
+    zoomLevel: number;
     maximized: boolean;
 };
 
@@ -26,7 +26,7 @@ const DEFAULT_CONFIG: WindowConfigProperties = {
     minHeight: 680,
     minWidth: 881,
     width: 960,
-    zoom: 1,
+    zoomLevel: 1,
 };
 
 const safeCoordinate = (
@@ -60,12 +60,14 @@ const ensureWindowIsVisible = (bounds: Rectangle) => {
     };
 };
 
-export const getWindowConfig = (): BrowserWindowConstructorOptions => {
+export const getWindowConfig = (): WindowConfigProperties => {
     const windowConfig = store.get('windowConfig');
 
     if (!windowConfig) return DEFAULT_CONFIG;
 
     return {
+        minHeight: DEFAULT_CONFIG.minHeight,
+        minWidth: DEFAULT_CONFIG.minWidth,
         ...windowConfig,
         ...ensureWindowIsVisible(windowConfig),
     };
@@ -75,7 +77,7 @@ const saveWindowConfig = (browserWindow: BrowserWindow) => {
     const config: WindowConfigStoreProperties = {
         ...browserWindow.getBounds(),
         maximized: browserWindow.isMaximized(),
-        zoom: browserWindow.webContents.getZoomFactor(),
+        zoomLevel: browserWindow.webContents.getZoomLevel(),
     };
 
     store.set('windowConfig', config);
