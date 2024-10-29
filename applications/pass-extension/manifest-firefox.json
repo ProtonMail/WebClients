@@ -55,10 +55,10 @@
         "scripting",
         "storage",
         "unlimitedStorage",
-        "privacy",
         "webRequest",
         "webRequestBlocking"
     ],
+    "optional_permissions": ["privacy"],
     "host_permissions": ["https://*/*", "http://*/*"],
     "action": {
         "default_popup": "popup.html",

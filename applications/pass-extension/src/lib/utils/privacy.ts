@@ -24,8 +24,15 @@ export const AUTOFILL_CONTROLLABLE = BROWSER_AUTOFILL_SETTINGS.length > 0;
 export const settingControlledAndDisabled = ({ levelOfControl, value }: Types.SettingGetCallbackDetailsType) =>
     levelOfControl === 'controlled_by_this_extension' && !value;
 
+const checkPrivacyPermission = async (): Promise<boolean> =>
+    browser.permissions.contains({ permissions: ['privacy'] }).catch(() => false);
+
+const requestPrivacyPermission = (): Promise<boolean> =>
+    browser.permissions.request({ permissions: ['privacy'] }).catch(() => false);
+
 export const checkBrowserAutofillCapabilities = async (): Promise<boolean> => {
     if (!BROWSER_AUTOFILL_SETTINGS.length) return false;
+    if (!(await checkPrivacyPermission())) return false;
 
     const results = await Promise.all(
         BROWSER_AUTOFILL_SETTINGS.map(async (key) => {
@@ -43,6 +50,18 @@ export const checkBrowserAutofillCapabilities = async (): Promise<boolean> => {
 
 export const setBrowserAutofillCapabilities = async (enabled: boolean): Promise<boolean> => {
     try {
+        if (!(await checkPrivacyPermission())) {
+            const accepted = await requestPrivacyPermission();
+            if (!accepted) throw new Error('Permission not granted');
+
+            /** privacy may not be immediately available after granting
+             * the permission - as such reload the current page */
+            if (typeof browser.privacy === 'undefined') {
+                window.location.reload();
+                throw new Error('Permission needs reload');
+            }
+        }
+
         await Promise.all(
             BROWSER_AUTOFILL_SETTINGS.map((key) =>
                 browser.privacy.services[key as PrivacyServiceKey].set({
