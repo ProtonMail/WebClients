@@ -21,7 +21,7 @@ import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { checkInvoice, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 

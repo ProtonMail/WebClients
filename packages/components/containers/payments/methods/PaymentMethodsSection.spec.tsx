@@ -3,8 +3,7 @@ import { render } from '@testing-library/react';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
-import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import { FREE_SUBSCRIPTION, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { applyHOCs, mockUseUser, withEventManager } from '@proton/testing';
 
 import { useSubscription } from '../../../hooks';

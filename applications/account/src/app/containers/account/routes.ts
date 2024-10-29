@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { DEFAULT_CURRENCY } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
     BRAND_NAME,
     DARK_WEB_MONITORING_NAME,
-    DEFAULT_CURRENCY,
     PRODUCT_NAMES,
     PROTON_SENTINEL_NAME,
     REFERRAL_PROGRAM_MAX_AMOUNT,

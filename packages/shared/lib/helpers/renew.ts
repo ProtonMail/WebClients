@@ -1,7 +1,8 @@
 import { PLANS, type PlanIDs } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import type { Currency, Cycle, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Cycle, PlansMap } from '@proton/shared/lib/interfaces';
 
 // This is currently hardcoded. Once the payments backend supports renewals at different cycles,
 // it will be changed to more generic code. Currently there is no way to tell which plan renews at which cycle,

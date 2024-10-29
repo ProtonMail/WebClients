@@ -1,4 +1,3 @@
-import { DEFAULT_CURRENCY, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import {
     ChargebeeEnabled,
     type Plan,
@@ -7,7 +6,7 @@ import {
     type UserModel,
 } from '@proton/shared/lib/interfaces';
 
-import { PLANS } from './constants';
+import { DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS } from './constants';
 import {
     getAvailableCurrencies,
     getPreferredCurrency,

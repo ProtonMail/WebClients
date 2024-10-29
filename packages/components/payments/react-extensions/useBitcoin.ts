@@ -10,6 +10,7 @@ import {
     type TokenPaymentMethod,
     isTokenPaymentMethod,
 } from '@proton/payments';
+import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     type CreateBitcoinTokenData,
@@ -17,7 +18,6 @@ import {
     createToken,
     getTokenStatus,
 } from '@proton/shared/lib/api/payments';
-import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { type Api } from '@proton/shared/lib/interfaces';
 

@@ -1,7 +1,5 @@
-import { DEFAULT_CURRENCY, type FreeSubscription } from '@proton/shared/lib/constants';
 import {
     ChargebeeEnabled,
-    type Currency,
     type Plan,
     type Subscription,
     type User,
@@ -10,14 +8,16 @@ import {
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
-import { type ADDON_NAMES, type PLANS, signupFlows } from './constants';
+import { type ADDON_NAMES, DEFAULT_CURRENCY, type PLANS, signupFlows } from './constants';
 import type {
+    Currency,
     Invoice,
     PaymentMethodFlows,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
     PlainPaymentMethodType,
 } from './interface';
+import { type FreeSubscription } from './interface';
 import { isPaymentMethodStatusExtended, isStringPLAN } from './type-guards';
 
 export function isChargebeePaymentMethod(paymentMethodType: PlainPaymentMethodType | undefined) {
@@ -249,4 +249,8 @@ export function getCurrencyRate(currency: Currency): number {
     }
 
     return 1;
+}
+
+export function isFreeSubscription(obj: any): obj is FreeSubscription {
+    return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
 }

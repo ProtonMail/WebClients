@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button, Pill } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon, Price, StripedItem, StripedList } from '@proton/components';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 type ConditionalProps =

@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/payments';
-import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/shared/lib/constants';
+import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { addTokensResponse, apiMock } from '@proton/testing';
 
 import { usePaypal } from './usePaypal';

@@ -7,14 +7,13 @@ import { ButtonLike } from '@proton/atoms';
 import type { ModalSize, ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader, Price, SettingsLink, usePlans } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
-import { PLANS } from '@proton/payments';
+import { type Currency, PLANS } from '@proton/payments';
 import { APPS, type APP_NAMES, CYCLE, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import {
     type SourceEventUpsell,
     UPSELL_MODALS_TYPE,
     sendRequestUpsellModalReport,
 } from '@proton/shared/lib/helpers/upsell';
-import { type Currency } from '@proton/shared/lib/interfaces';
 
 import './NewUpsellModal.scss';
 

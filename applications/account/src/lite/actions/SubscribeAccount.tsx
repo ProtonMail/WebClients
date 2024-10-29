@@ -26,6 +26,7 @@ import SubscriptionContainer from '@proton/components/containers/payments/subscr
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { type PaymentMethodStatusExtended } from '@proton/payments';
 import { PLANS, PLAN_TYPES } from '@proton/payments';
+import { CURRENCIES, type Currency } from '@proton/payments';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
@@ -33,7 +34,6 @@ import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
     COUPON_CODES,
-    CURRENCIES,
     DRIVE_APP_NAME,
     HTTP_STATUS_CODE,
     MAIL_APP_NAME,
@@ -48,7 +48,6 @@ import {
     getValidCycle,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Currency } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';

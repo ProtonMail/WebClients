@@ -1,4 +1,4 @@
-import { isFreeSubscription } from '@proton/shared/lib/constants';
+import { isFreeSubscription } from '@proton/payments';
 
 import { useSubscription } from './useSubscription';
 

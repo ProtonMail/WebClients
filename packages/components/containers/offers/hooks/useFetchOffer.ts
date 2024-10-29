@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { usePlans } from '@proton/components/hooks';
 import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
 
 import { fetchDealPrices } from '../helpers/dealPrices';
 import type { Offer, OfferConfig } from '../interface';

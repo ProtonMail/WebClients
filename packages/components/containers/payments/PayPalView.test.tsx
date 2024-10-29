@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { usePaypal } from '@proton/components/payments/react-extensions/usePaypal';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
 import { apiMock, mockVerifyPayment } from '@proton/testing';
 
 import PayPalView from './PayPalView';

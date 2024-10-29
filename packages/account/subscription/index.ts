@@ -7,6 +7,7 @@ import {
     original,
 } from '@reduxjs/toolkit';
 
+import { FREE_SUBSCRIPTION } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { CacheType } from '@proton/redux-utilities';
 import {
@@ -18,7 +19,6 @@ import {
 } from '@proton/redux-utilities';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSubscription } from '@proton/shared/lib/api/payments';
-import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { Subscription, SubscriptionModel, User } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';

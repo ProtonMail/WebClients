@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import Icon from '@proton/components/components/icon/Icon';
 import { type MethodsHook } from '@proton/components/payments/react-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
 
 import CurrencySelector from './CurrencySelector';
 

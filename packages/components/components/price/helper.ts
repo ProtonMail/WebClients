@@ -1,5 +1,4 @@
-import { CurrencySymbols } from '@proton/shared/lib/constants';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency, CurrencySymbols } from '@proton/payments';
 
 /**
  * Make amount readable

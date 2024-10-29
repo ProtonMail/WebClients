@@ -24,13 +24,8 @@ import {
     isSavedPaymentMethodExternal,
     isSavedPaymentMethodInternal,
 } from '@proton/payments';
-import type {
-    Api,
-    BillingPlatform,
-    ChargebeeEnabled,
-    ChargebeeUserExists,
-    Currency,
-} from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
+import type { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
 

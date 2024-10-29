@@ -1,11 +1,7 @@
 import { isSEPACountry } from 'ibantools';
 
+import { MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/payments';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import {
-    MIN_BITCOIN_AMOUNT,
-    MIN_PAYPAL_AMOUNT_CHARGEBEE,
-    MIN_PAYPAL_AMOUNT_INHOUSE,
-} from '@proton/shared/lib/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, BillingPlatform, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
