@@ -366,12 +366,16 @@ export type AbbreviatedTimezone = 'offset' | 'city';
 /**
  * Get an abbreviated time zone, from AbbreviatedTimezone type:
  * - "offset": "Europe/Paris" should return "GMT+1" (winter time) or 'GMT+2' (summer time)
- * - "city": "EuropesParis" should return "Paris"
+ * - "city": "Europe/Paris" should return "Paris"
  */
-export const getAbbreviatedTimezoneName = (abbreviatedTimezone: AbbreviatedTimezone, timezone: string | undefined) => {
+export const getAbbreviatedTimezoneName = (
+    abbreviatedTimezone: AbbreviatedTimezone,
+    timezone: string | undefined,
+    date?: Date
+) => {
     if (timezone) {
         if (abbreviatedTimezone === 'offset') {
-            const timezoneOffset = getTimezoneOffset(new Date(), timezone).offset;
+            const timezoneOffset = getTimezoneOffset(date || new Date(), timezone).offset;
             const abbreviatedTimezoneName = formatGMTOffsetAbbreviation(timezoneOffset);
             return abbreviatedTimezoneName;
         }
