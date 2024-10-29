@@ -55,7 +55,7 @@ const ContactImportCsvTableRowsNField = ({ preVcards, onToggle }: Props) => {
                 <RowDisplay
                     selectValue="firstName"
                     checked={firstName.checked}
-                    onToggle={() => onToggle(0)}
+                    onToggle={() => onToggle(lastName ? 1 : 0)}
                     header={firstName.header}
                     value={firstName.value}
                 />
@@ -64,7 +64,7 @@ const ContactImportCsvTableRowsNField = ({ preVcards, onToggle }: Props) => {
                 <RowDisplay
                     selectValue="lastName"
                     checked={lastName.checked}
-                    onToggle={() => onToggle(1)}
+                    onToggle={() => onToggle(0)}
                     header={lastName.header}
                     value={lastName.value}
                 />
