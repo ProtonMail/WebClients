@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 import Price from '@proton/components/components/price/Price';
+import { type Currency } from '@proton/payments';
 import { isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import type { AddonDescription } from '@proton/shared/lib/helpers/checkout';
-import type { Currency } from '@proton/shared/lib/interfaces';
 
 export const AddonTooltip = ({
     addon,

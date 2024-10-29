@@ -10,7 +10,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { usePlans } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { PLANS } from '@proton/payments';
+import { type Currency, PLANS } from '@proton/payments';
 import {
     APPS,
     APP_UPSELL_REF_PATH,
@@ -29,7 +29,6 @@ import {
     useNewUpsellModalVariant,
 } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { type Currency } from '@proton/shared/lib/interfaces';
 import shieldImg from '@proton/styles/assets/img/illustrations/new-upsells-img/shield.svg';
 import protonSentinelImage from '@proton/styles/assets/img/illustrations/upsell-proton-sentinel.svg';
 

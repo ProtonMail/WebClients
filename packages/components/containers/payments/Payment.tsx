@@ -16,17 +16,18 @@ import type { CardFieldStatus } from '@proton/components/payments/react-extensio
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { type ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
-import type {
-    CardModel,
-    PaymentMethodFlows,
-    PaymentMethodStatusExtended,
-    PaymentMethodType,
-    SavedPaymentMethodExternal,
-    SavedPaymentMethodInternal,
+import {
+    type CardModel,
+    MIN_CREDIT_AMOUNT,
+    type PaymentMethodFlows,
+    type PaymentMethodStatusExtended,
+    type PaymentMethodType,
+    type SavedPaymentMethodExternal,
+    type SavedPaymentMethodInternal,
 } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/payments';
-import { APPS, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
-import type { ChargebeeEnabled, Currency, User } from '@proton/shared/lib/interfaces';
+import { type Currency, PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/payments';
+import { APPS } from '@proton/shared/lib/constants';
+import type { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 

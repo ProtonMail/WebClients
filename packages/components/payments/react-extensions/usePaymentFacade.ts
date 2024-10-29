@@ -19,6 +19,7 @@ import type {
 } from '@proton/payments';
 import {
     type ADDON_NAMES,
+    type Currency,
     PAYMENT_METHOD_TYPES,
     type PLANS,
     type PlanIDs,
@@ -30,13 +31,11 @@ import {
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type {} from '@proton/shared/lib/constants';
 import type {
     Api,
     BillingPlatform,
     ChargebeeEnabled,
     ChargebeeUserExists,
-    Currency,
     Cycle,
     User,
 } from '@proton/shared/lib/interfaces';

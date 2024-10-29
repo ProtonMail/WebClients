@@ -9,7 +9,7 @@ import Bordered from '@proton/components/components/container/Bordered';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
-import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
+import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/payments';
 
 import BitcoinDetails from './BitcoinDetails';
 import type { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';

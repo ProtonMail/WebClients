@@ -1,10 +1,10 @@
 import { fromUnixTime, isBefore } from 'date-fns';
 
-import { PLANS } from '@proton/payments/index';
+import { type Currency, PLANS } from '@proton/payments';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { getPlan, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import hasOneBF2024Coupon from '../../helpers/hasBF2024Coupons';
 import hasEligibileCurrencyForBF from '../../helpers/hasEligibileCurrencyForBF';

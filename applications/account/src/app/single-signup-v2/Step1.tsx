@@ -24,6 +24,7 @@ import {
     getPlansMap,
     isRegionalCurrency,
 } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -46,7 +47,7 @@ import {
     switchPlan,
 } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
-import type { Api, Currency, Cycle, SubscriptionPlan, User, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Api, Cycle, SubscriptionPlan, User, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { useFlag } from '@proton/unleash';

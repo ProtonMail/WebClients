@@ -6,8 +6,8 @@ import useSpotlightShow from '@proton/components/components/spotlight/useSpotlig
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import type { Offer, OfferConfig } from '@proton/components/containers/offers/interface';
 import { FeatureCode, useFeature } from '@proton/features';
+import { type Currency } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type { Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';

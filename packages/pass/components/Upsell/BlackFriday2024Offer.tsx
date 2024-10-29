@@ -19,7 +19,7 @@ import { selectUser, selectUserPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
+import { DEFAULT_CURRENCY } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

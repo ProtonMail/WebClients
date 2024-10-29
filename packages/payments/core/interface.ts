@@ -17,11 +17,13 @@ import type {
 } from '@proton/chargebee/lib';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import type { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/api/payments';
-import type { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type {
     ADDON_NAMES,
     Autopay,
+    CURRENCIES,
+    FREE_SUBSCRIPTION,
     INVOICE_STATE,
     INVOICE_TYPE,
     MethodStorage,
@@ -80,6 +82,8 @@ export interface WrappedCardPayment {
 export interface TokenPaymentMethod {
     Payment: TokenPayment;
 }
+
+export type Currency = (typeof CURRENCIES)[number];
 
 export interface AmountAndCurrency {
     Amount: number;
@@ -428,3 +432,5 @@ export type MaxKeys =
     | 'MaxTier'
     | 'MaxIPs' // synthetic key, it does't exist in the API
     | 'MaxAI'; // synthetic key, it does't exist in the API
+
+export type FreeSubscription = typeof FREE_SUBSCRIPTION;

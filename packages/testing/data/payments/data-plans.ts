@@ -1,6 +1,7 @@
-import { isRegionalCurrency } from '@proton/payments';
+import { isRegionalCurrency, type Currency } from '@proton/payments';
 import { type CYCLE } from '@proton/shared/lib/constants';
-import type { Currency, Plan, PlansMap, Pricing } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap, Pricing } from '@proton/shared/lib/interfaces';
+
 
 // borrowed from:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze

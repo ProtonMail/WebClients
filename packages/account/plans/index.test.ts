@@ -1,8 +1,8 @@
 import { type PaymentMethodStatusExtended } from '@proton/payments';
-import { PLANS } from '@proton/payments';
+import { type Currency, PLANS } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
-import { type Currency, type Plan, type SubscriptionModel, type UserModel } from '@proton/shared/lib/interfaces';
+import { type Plan, type SubscriptionModel, type UserModel } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { paymentStatusReducer } from '../paymentStatus';

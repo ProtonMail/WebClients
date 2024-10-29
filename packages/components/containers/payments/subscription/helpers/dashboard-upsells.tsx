@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { ButtonLikeProps } from '@proton/atoms';
 import { type FullPlansMap } from '@proton/payments';
 import { PLANS } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -40,14 +41,7 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type {
-    Currency,
-    Cycle,
-    FreePlanDefault,
-    Plan,
-    Subscription,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { Cycle, FreePlanDefault, Plan, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

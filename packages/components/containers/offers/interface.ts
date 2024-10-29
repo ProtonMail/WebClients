@@ -4,8 +4,9 @@ import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms';
 import type { IconName, IconSize } from '@proton/components';
 import type { FeatureCode } from '@proton/features';
 import type { PlanIDs } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import type { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
-import type { Currency, Optional } from '@proton/shared/lib/interfaces';
+import type { Optional } from '@proton/shared/lib/interfaces';
 
 export type OfferId =
     // This offer runs all the time and is used to remind users to upgrade once their account is old enough

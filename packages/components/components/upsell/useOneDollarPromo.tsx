@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import Price from '@proton/components/components/price/Price';
+import { type Currency } from '@proton/payments';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import { useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
-import type { Currency } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 
 const useOneDollarConfig = () => {

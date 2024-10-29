@@ -9,7 +9,7 @@ import Info from '@proton/components/components/link/Info';
 import useConfig from '@proton/components/hooks/useConfig';
 import { type MethodsHook } from '@proton/components/payments/react-extensions';
 import type { FullPlansMap, PaymentMethodStatusExtended, PlanIDs } from '@proton/payments';
-import { PLANS, getAvailableCurrencies } from '@proton/payments';
+import { type Currency, PLANS, getAvailableCurrencies } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
@@ -18,7 +18,6 @@ import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getHas2024OfferCoupon, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type {
-    Currency,
     Cycle,
     FreePlanDefault,
     Plan,

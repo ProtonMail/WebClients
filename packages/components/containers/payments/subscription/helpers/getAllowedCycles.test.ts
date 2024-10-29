@@ -1,6 +1,6 @@
-import { ADDON_NAMES, PLANS, type PlanIDs } from '@proton/payments';
-import { COUPON_CODES, CYCLE, DEFAULT_CURRENCY, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
-import type { Currency, Plan } from '@proton/shared/lib/interfaces';
+import { ADDON_NAMES, type Currency, DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS, type PlanIDs } from '@proton/payments';
+import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP, getSubscriptionMock } from '@proton/testing/data';
 
 import { getAllowedCycles } from './getAllowedCycles';

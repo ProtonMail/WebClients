@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import { FREE_SUBSCRIPTION } from '@proton/payments';
 
 import useMozillaCheck from './useMozillaCheck';
 import { useSubscription } from './useSubscription';

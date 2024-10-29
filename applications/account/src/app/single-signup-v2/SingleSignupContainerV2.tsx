@@ -27,7 +27,7 @@ import type { PaymentProcessorType } from '@proton/components/payments/react-ext
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/payments';
-import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
+import { type Currency, DEFAULT_CURRENCY, DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -43,19 +43,12 @@ import type {
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import {
-    APPS,
-    BRAND_NAME,
-    CYCLE,
-    DEFAULT_CURRENCY,
-    REFERRER_CODE_MAIL_TRIAL,
-    SSO_PATHS,
-} from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CYCLE, REFERRER_CODE_MAIL_TRIAL, SSO_PATHS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Currency, Cycle } from '@proton/shared/lib/interfaces';
+import type { Cycle } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -113,6 +106,7 @@ import UpsellModal from './modals/UpsellModal';
 import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
 import { getPassConfiguration } from './pass/configuration';
 import { getWalletConfiguration } from './wallet/configuration';
+
 
 const getRecoveryKit = async () => {
     // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { type Currency } from '@proton/payments';
 import { getClientVPNInfo } from '@proton/shared/lib/api/vpn';
-import type { Currency } from '@proton/shared/lib/interfaces';
 
 import useApi from './useApi';
 import useCache from './useCache';
