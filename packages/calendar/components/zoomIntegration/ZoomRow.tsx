@@ -9,7 +9,7 @@ import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { OAuthProps } from '@proton/activation/src/interface';
 import { EASY_SWITCH_SOURCES, ImportType, OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button, CircleLoader } from '@proton/atoms';
-import { Icon, IconRow, useApi } from '@proton/components';
+import { Icon, IconRow, ZoomUpsellModal, useApi, useModalStateObject } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
 import type { EventModel, VideoConferenceMeetingCreation } from '@proton/shared/lib/interfaces/calendar';
@@ -52,6 +52,8 @@ export const ZoomRow = ({ model, setModel }: Props) => {
         errorMessage: c('Error').t`Failed to load oauth modal.`,
     });
 
+    const zoomUpsellModal = useModalStateObject();
+
     useEffect(() => {
         if (loadingConfig || oauthTokenLoading) {
             setProcessState('loadingConfig');
@@ -81,9 +83,8 @@ export const ZoomRow = ({ model, setModel }: Props) => {
     };
 
     const handleClick = async () => {
-        if (user.isFree) {
-            // TODO display upsell for Zoom, will be done in a separate MR
-            alert('Display upsell for zoom');
+        if (!user.hasPaidMail) {
+            zoomUpsellModal.openModal(true);
             return;
         }
 
@@ -126,31 +127,34 @@ export const ZoomRow = ({ model, setModel }: Props) => {
     }
 
     return (
-        <IconRow icon={getIcon(processState)} labelClassName={clsx(processState === 'loading' && 'my-auto p-0')}>
-            {(processState === 'connected' || processState === 'disconnected') && (
-                <div className="flex items-center gap-1">
-                    <Button
-                        onClick={handleClick}
-                        disabled={loadingConfig || oauthTokenLoading}
-                        loading={loadingConfig || oauthTokenLoading}
-                        shape="underline"
-                        className="p-0"
-                        color="norm"
-                        size="small"
-                    >
-                        {c('Zoom integration').t`Add Zoom meeting`}
-                    </Button>
-                    {user.isFree && <Icon name="upgrade" className="color-primary" />}
-                </div>
-            )}
+        <>
+            {zoomUpsellModal.render && <ZoomUpsellModal modalProps={zoomUpsellModal.modalProps} />}
+            <IconRow icon={getIcon(processState)} labelClassName={clsx(processState === 'loading' && 'my-auto p-0')}>
+                {(processState === 'connected' || processState === 'disconnected') && (
+                    <div className="flex items-center gap-1">
+                        <Button
+                            onClick={handleClick}
+                            disabled={loadingConfig || oauthTokenLoading}
+                            loading={loadingConfig || oauthTokenLoading}
+                            shape="underline"
+                            className="p-0"
+                            color="norm"
+                            size="small"
+                        >
+                            {c('Zoom integration').t`Add Zoom meeting`}
+                        </Button>
+                        {user.isFree && <Icon name="upgrade" className="color-primary" />}
+                    </div>
+                )}
 
-            {(processState === 'loading' || processState === 'loadingConfig') && (
-                <Button disabled shape="ghost" className="p-0" color="norm" size="small">
-                    {loadingConfig
-                        ? c('Zoom integration').t`Loading Zoom configuration`
-                        : c('Zoom integration').t`Adding conferencing details`}
-                </Button>
-            )}
-        </IconRow>
+                {(processState === 'loading' || processState === 'loadingConfig') && (
+                    <Button disabled shape="ghost" className="p-0" color="norm" size="small">
+                        {loadingConfig
+                            ? c('Zoom integration').t`Loading Zoom configuration`
+                            : c('Zoom integration').t`Adding conferencing details`}
+                    </Button>
+                )}
+            </IconRow>
+        </>
     );
 };
