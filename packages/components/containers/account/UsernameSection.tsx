@@ -17,7 +17,6 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
-import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -98,7 +97,8 @@ const UsernameSection = ({ app }: Props) => {
     };
 
     const isPrimaryAddressExternal = primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL;
-    const isExternalUserAndPrimaryAddressExternal = getIsExternalAccount(user) && isPrimaryAddressExternal;
+    const isExternalUser = getIsExternalAccount(user);
+    const isExternalUserAndPrimaryAddressExternal = isExternalUser && isPrimaryAddressExternal;
 
     const isPrimaryAddressExternalAndVerified =
         isPrimaryAddressExternal &&
@@ -108,10 +108,7 @@ const UsernameSection = ({ app }: Props) => {
 
     const canEditExternalAddress = canVerifyExternalAddress && (user.isPrivate || user.isAdmin);
 
-    const canSetupProtonAddress =
-        canEditExternalAddress &&
-        APP_NAME === APPS.PROTONACCOUNT &&
-        getAvailableApps({ user, context: 'app' }).includes(APPS.PROTONMAIL);
+    const canSetupProtonAddress = isExternalUser && user.isPrivate && APP_NAME === APPS.PROTONACCOUNT;
 
     useSearchParamsEffect(
         (params) => {
