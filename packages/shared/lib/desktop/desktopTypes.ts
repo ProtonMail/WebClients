@@ -54,7 +54,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'checkDefaultMailtoAndSignal'; payload?: undefined }
     | { type: 'defaultMailtoTelemetryReported'; payload: number }
     | { type: 'setESUserChoice'; payload: { userID: string; userChoice: boolean } }
-    | { type: 'storeAppVersion'; payload: AppVersion };
+    | { type: 'storeAppVersion'; payload: AppVersion }
+    | { type: 'triggerCrash'; payload?: undefined };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 export const IPCInboxHostUpdateMessageSchema = z.union([

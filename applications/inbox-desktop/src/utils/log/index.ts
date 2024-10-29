@@ -1,7 +1,7 @@
 import { WebContents } from "electron";
 import Logger from "electron-log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
-import { appSession } from "./session";
+import { appSession } from "../session";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
