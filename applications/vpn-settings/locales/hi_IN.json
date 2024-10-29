@@ -792,34 +792,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } स्टोरेज"
-      ],
       "1 user": [
         "1 यूज़र"
       ],
       "3 TB": [
         "3 टीबी"
       ],
-      "3,000+ servers across 65+ countries": [
-        "65+ देशों में 3,000+ सर्वर"
-      ],
       "6 users": [
         "6 यूज़र"
       ],
-      "Ad-blocker and malware protection": [
-        "ऐड-ब्लॉकर और मालवेयर सुरक्षा"
-      ],
-      "High speed streaming": [
-        "तेज़ स्ट्रीमिंग"
-      ],
       "Premium Password Manager": [
         "प्रीमियम पासवर्ड मैनेजर"
-      ]
-    },
-    "bf2023: Footer": {
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
       ]
     },
     "bf2023: header": {
@@ -875,15 +858,9 @@
         "ऑफर अनुपलब्ध"
       ]
     },
-    "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 65+ देशों में 3,000+ सर्वर, उच्चतम वीपीएन गति, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक, तेज़ बिटटोरेंट डाउनलोड और बहुत कुछ शामिल है।"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "अपने ईमेल और शेड्यूल को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। संस्करण इतिहास, एन्क्रिप्टेड फ़ाइल साझाकरण, और बहुत कुछ शामिल है।"
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -2071,14 +2048,6 @@
         "सत्यापन ईमेल ${ address } पर भेजा गया"
       ]
     },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 टीबी"
-      ],
-      "6 users": [
-        "6 यूज़र"
-      ]
-    },
     "Error": {
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ user.Name } यूजर नाम है। ${ emailAddress } बनाने के लिए, कृपया सेटिंग्स > संदेश और रचना > लघु डोमेन (pm.me) पर जाएं"
@@ -2548,9 +2517,6 @@
       ],
       "Continue": [
         "जारी रखें"
-      ],
-      "Dark Web Monitoring": [
-        "डार्क वेब मॉनिटरिंग"
       ],
       "Fastest VPN servers": [
         "सबसे तेज़ वीपीएन सर्वर"
@@ -5023,17 +4989,6 @@
         "सौदा पाएं"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "10 email addresses": [
-        "10 ईमेल पते"
-      ],
-      "Auto-delete Spam and Trash": [
-        "स्पैम और ट्रैश को स्वचालित रूप से हटाएं"
-      ],
-      "Support for 1 custom email domain": [
-        "1 कस्टम ईमेल डोमेन के लिए सहायता"
-      ]
-    },
     "Member action": {
       "Activate user": [
         "उपयोगकर्ता को सक्रिय करें"
@@ -6715,9 +6670,6 @@
       "6 users": [
         "6 यूज़र"
       ],
-      "64 countries": [
-        "64 देश"
-      ],
       "All paid Mail and Calendar features": [
         "सभी प्रीमियम मेल और कैलेंडर सुविधाएं"
       ],
@@ -6816,26 +6768,12 @@
         "30 महीने के लिए मानक दाम ${ amount }"
       ]
     },
-    "specialoffer: Title": {
-      "Black Friday Sale": [
-        "ब्लैक फ्राइडे की सेल"
-      ],
-      "Cyber Week Sale": [
-        "साइबर हफ्ते की सेल"
-      ],
-      "End of Year Sale": [
-        "साल खत्म होने का सेल"
-      ]
-    },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
         "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, प्रति उपयोगकर्ता 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Netflix, Disney+, Prime Video और वैसे स्ट्रीम सेवाओं के कंटेंट तक पहुंचे, चाहे आप जहा भी हो।"
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"

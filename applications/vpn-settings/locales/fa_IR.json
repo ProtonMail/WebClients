@@ -587,9 +587,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } فضای ذخیره سازی"
-      ],
       "1 user": [
         "۱ کاربر"
       ],
@@ -606,6 +603,11 @@
       "${ n } month": [
         "${ n } ماه",
         "${ n } ماه اول"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -1710,11 +1712,6 @@
     "Email verification": {
       "Verification email sent to ${ address }": [
         "ایمیل تایید به ${ address } فرستاده شد"
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 users": [
-        "6 کاربر"
       ]
     },
     "Error": {
@@ -3453,17 +3450,6 @@
         "برای ${ price }"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "10 email addresses": [
-        "۱۰ نشانی ایمیل"
-      ],
-      "Support for 1 custom email domain": [
-        "پشتیبانی از ١ دامنهٔ ایمیل سفارشی"
-      ],
-      "Unlimited folders, labels and filters": [
-        "پوشه‌ها، برچسب‌ها و فیلترهای نامحدود"
-      ]
-    },
     "Member action": {
       "Add address": [
         "افزودن نشانی"
@@ -4471,9 +4457,6 @@
       "6 users": [
         "6 کاربر"
       ],
-      "64 countries": [
-        "۶۴ کشور"
-      ],
       "Highest VPN speed": [
         "بالاترین سرعت VPN"
       ]
@@ -4502,11 +4485,6 @@
       ],
       "30 months": [
         "30 ماه"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "از هر جای دنیا به سرویس های استریم از جمله Netflix, Dysney+ و Prime Video دسترسی داشته باشید."
       ]
     },
     "Storage": {

@@ -478,6 +478,9 @@
       "Resend code": [
         "კოდის თავიდან გაგზავნა"
       ],
+      "Resend invitation": [
+        "მოსაწვევის თავიდან გაგზავნა"
+      ],
       "Reset": [
         "თავიდან"
       ],
@@ -885,43 +888,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } საცავი"
-      ],
       "1 user": [
         "1 მომხმარებელი"
       ],
       "3 TB": [
         "3 ტბ"
       ],
-      "3,000+ servers across 65+ countries": [
-        "3,000+ სერვერი 65+ ქვეყანაში"
-      ],
       "6 users": [
         "6 მომხმარებელი"
       ],
-      "Access content worldwide": [
-        "იქონიეთ წვდომა შემცველობასთან მთელი დედამიწიდან"
-      ],
-      "Ad-blocker and malware protection": [
-        "რეკლამების ბლოკირება და არასასურველი პროგრამებისგან დაცვა"
-      ],
-      "Extended version history": [
-        "გაფართოებული ვერსიის ისტორია"
-      ],
-      "High speed streaming": [
-        "ჩქაროსნული სტრიმინგი"
-      ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "თქვენი გამოწერა გადახდის ციკლის ბოლოს სტანდარტული ფასდაკლების ტარიფით და ხანგრძლივობით განახლდება."
       ]
     },
     "bf2023: header": {
@@ -978,39 +955,143 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "წვდომა დაბლოკილ შემცველობასთან და ინტერნეტში ანონიმურად მუშაობა. შეიცავს 3,000 სერვერს 65+ ქვეყანაში, ჩქაროსნულ VPN-ს, სტრიმინგის სერვისებs, არასასურველი პროგრამების და რეკლამების დაბლოკვs, სწრაფ BitTorrent-ის გადმოწერებს და სხვ."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "შეიცავს 1 თქვენი ელფოსტის დომენის, 10 ელფოსტის მისამართის, 10 Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus და ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } საცავი"
+      ],
+      "1 TB total": [
+        "1 ტბ ჯამში"
+      ],
+      "1 user": [
+        "1 მომხმარებელი"
+      ],
+      "1 user account": [
+        "1 მომხმარებლის ანგარიში"
+      ],
+      "10 email addresses": [
+        "10 ელფოსტის მისამართი"
+      ],
+      "2 users": [
+        "2 მომხმარებელი"
+      ],
+      "3 TB": [
+        "3 ტბ"
+      ],
+      "6 user accounts": [
+        "6 მომხმარებლის ანგარიში"
+      ],
+      "6 users": [
+        "6 მომხმარებელი"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ სერვერი 110+ ქვეყანაში"
+      ],
+      "Ad-blocker and malware protection": [
+        "რეკლამების დაბლოკვა და არასასურველი პროგრამებისგან დაცვა"
+      ],
+      "Admin panel to manage your family": [
+        "ადმინის პანელი ოჯახის სამართავად"
+      ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვა"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-ის მონიტორინგი"
+      ],
+      "Easily add or remove users": [
+        "ადვილად დაამატეთ ან წაშალეთ მომხმარებლები"
+      ],
+      "High speed streaming": [
+        "ჩქაროსნული სტრიმინგი"
+      ],
+      "Integrated 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
+      "Password health alerts": [
+        "პაროლის სიმთელის გაფრთხილებები"
+      ],
+      "Private photo backup": [
+        "კონფიდენციალური სურათების მარქაფი"
+      ],
+      "Protect 10 devices at a time": [
+        "დაიცავით 10 მოწყობილობამდე ერთდროულად"
+      ],
+      "Secure file storage & sharing": [
+        "დაცული ფაილების საცავი და გაზიარება"
+      ],
+      "Secure vault and link sharing": [
+        "დაცული საცავი და ბმულის გაზიარება"
+      ],
+      "Unlimited folders, labels and filters": [
+        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "შეუზღუდავი შესვლის დეტალები, შენიშვნები და საკრედიტო ბარათები"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ თქვენი საკუთარი ელფოსტის დომენი"
+      ],
+      "Version history": [
+        "ვერსიის ისტორია"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "თქვენი გამოწერა გადახდის ციკლის ბოლოს სტანდარტული ფასდაკლების ტარიფით და ხანგრძლივობით განახლდება."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "ყველაზე პოპულარული"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal }-სთვის"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "განახლდება 1 თვეში ფასად ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
       ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "აუარეთ გვერდი ლოკალური ინტერნეტის დაბლოკვებს და ცენზურას ჩვენი სერვერების გლობალური ქსელით."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ hide-my-email-ის ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს, Dark Web-ის მონიტორინგს და სხვ."
       ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "შეიცავს ${ domains } მომხმარებლის დომენის, ${ addresses } ელფოსტის მისამართის, განუსაზღვრელი hide-my-email ფსევდონიმებს, კალენდრის გაზიარებას და სხვ.",
-        "შეიცავს ${ domains } მომხმარებლის დომენის, ${ addresses } ელფოსტის მისამართის, განუსაზღვრელი hide-my-email ფსევდონიმებს, კალენდრის გაზიარებას და სხვ."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "შეიცავს 1 თქვენი ელფოსტის დომენის, 10 ელფოსტის მისამართის, 10 Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს მომხმარებლის დომენების მხარდაჭერას, 15 ელფოსტის მისამართს, განუსაზღვრელ hide-my-email-ის ფსევდონიმს, კალენდრის გაზიარებას და სხვ."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს დოკუმენტის რედაქტორს ბრაუზერისთვის, ფოტოების მარქაფს, ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield-ი იცავს თქვენს მოწყობილობებს და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით."
       ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის აპს შორის."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "დაიმახსოვრეთ თითოეული ფაილის 200 ვერსიამდე, 10 წლამდე ვადით."
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
     "Billing cycle": {
@@ -2402,33 +2483,6 @@
         "უსახელო"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ის და ${ PASS_SHORT_APP_NAME }-ის ფასიანი ფუნქციები"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "შეიცავს ვერსიის ისტორიას ${ DRIVE_SHORT_APP_NAME }-ში, წვდომას ათასობით ${ VPN_SHORT_APP_NAME }-ის სერვერებზე, მის ${ PASS_SHORT_APP_NAME }-ზე გაზიარებას და ა.შ."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 ტბ"
-      ],
-      "6 users": [
-        "6 მომხმარებელი"
-      ],
-      "Early access to new apps and features": [
-        "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "ადრეული წვდომა ${ MAIL_APP_NAME }-ის კომპიუტერის აპზე"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის ფასიანი ფუნქციები"
-      ]
-    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ასევე შეგიძლიათ, შეამოწმოთ ჩვენი ${ statusPageLink }"
@@ -3054,9 +3108,6 @@
       ],
       "Continue": [
         "გაგრძელება"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
       ],
       "Fastest VPN servers": [
         "ყველაზე სწრაფი VPN სერვერები"
@@ -5979,26 +6030,6 @@
         "სპეციალური შეთავაზება"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
-      ],
-      "10 email addresses": [
-        "10 ელფოსტის მისამართი"
-      ],
-      "Auto-delete Spam and Trash": [
-        "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
-      ],
-      "Custom schedule send and snooze times": [
-        "მომხმარებლის მიერ აღწერილი გაგზავნისა და დადუმების დრო"
-      ],
-      "Support for 1 custom email domain": [
-        "1 ხელით მითითებული დომენის მხარდაჭერა"
-      ],
-      "Unlimited folders, labels and filters": [
-        "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "განახლების დრო ${ renewablePrice }. გააუქმეთ ნებისმიერ დროს"
@@ -8466,9 +8497,6 @@
       "6 users": [
         "6 მომხმარებელი"
       ],
-      "64 countries": [
-        "64 ქვეყანა"
-      ],
       "All paid Mail and Calendar features": [
         "ყველა ფასიანი Mail-ის და Calendar-ის ფუნქცია"
       ],
@@ -8580,15 +8608,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "შავი პარასკევი"
-      ],
-      "Cyber Week Sale": [
-        "კიბერ-კვირის ფასდაკლება"
-      ],
-      "End of Year Sale": [
-        "წლის ბოლოს ფასდაკლება"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "ასწიეთ სატარიფო გეგმა დაზოგეთ მეტი 2 წლით ${ planName }"
       ]
@@ -8599,9 +8618,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "წვდომა ვიდეოებთან და ინტერნეტში ანონიმურად მუშაობა. ჩვენ 1700 სერვერი გვაქვს 60+ ქვეყანაში, ჩქაროსნულ VPN, 10 VPN მიერთება, სტრიმინგის სერვისები, არასასურველი პროგრამების და რეკლამების დაბლოკვა და სხვ."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+ და Prime Video-ის ჩათვლით, ნებისმიერი ადგილიდან."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "ყველა ჩვენი ფასიანი სერვისის მაქსიმალური შეზღუდვებია: 100 ელფოსტის მისამართი, 10 მომხმარებლის დომენის მხარდაჭერა, განუსაზღვრელი Hide-my-email-ის მეტსახელები, კალენდრის გაზიარება, დაშიფრული ღრუბლოვანი საცავი და ფაილების გაზიარება და სხვ."
