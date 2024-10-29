@@ -768,43 +768,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } lagerplads"
-      ],
       "1 user": [
         "1 bruger"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "3.000+ servere fordelt på 65+ lande"
-      ],
       "6 users": [
         "6 brugere"
       ],
-      "Access content worldwide": [
-        "Tilgå indhold over hele verden"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonceblokering og beskyttelse mod malware"
-      ],
-      "Extended version history": [
-        "Udvidet versionshistorik"
-      ],
-      "High speed streaming": [
-        "Streaming ved høj hastighed"
-      ],
       "Premium Password Manager": [
         "Premium adgangskodeadministrator"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Rabatter er baseret på månedlig standardpris."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris og varighed ved slutningen af din faktureringscyklus."
       ]
     },
     "bf2023: Offers": {
@@ -828,39 +802,13 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Tilgå blokeret indhold og surf privat. Inkluderer 3.000+ servere fordelt op 65+ lande, højeste VPN hastigheder, adgang til verdensomspændende streamingtjenester, malware- og ad-blocker, hurtige BitTorrent-downloads, og meget mere."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst."
-      ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Omgå lokale internetblokeringer og censur med vores globale netværk af servere."
-      ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer understøttelse af ${ domains } brugerdefinerede e-mail-domæner, ${ addresses } e-mailadresse, ubegrænsede hide-my-email-aliasser, kalenderdeling og meget mere.",
-        "Inkluderer understøttelse af ${ domains } brugerdefinerede e-mail-domæner, ${ addresses } e-mailadresser, ubegrænsede hide-my-email-aliasser, kalenderdeling og meget mere."
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og mere."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer understøttelse af bruger-e-mail-domæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling og mere."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og meget mere."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Det specialdesignede NetShield beskytter dine enheder og sætter farten i vejret på din browsing ved at blokere annoncer, trackere og malware."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Lagerplads er delt mellem alle ${ BRAND_NAME }-apps."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Gem op til 200 versioner af hver fil i op til 10 år."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -2286,33 +2234,6 @@
         "Opdatering til en begivenhed med start den ${ formattedStart }"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Betalt ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME } funktioner"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Inkluderer ${ DRIVE_SHORT_APP_NAME }, adgang til tusindvis af højhastigheds ${ VPN_SHORT_APP_NAME } servere, deling i ${ PASS_SHORT_APP_NAME } og mere."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 brugere"
-      ],
-      "Early access to new apps and features": [
-        "Forhåndsadgang til nye apps og funktioner"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Tidlig adgang til ${ MAIL_APP_NAME } skrivebord-app"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Betalt ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_APP_NAME } funktioner"
-      ]
-    },
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" findes allerede"
@@ -3143,11 +3064,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
-      ]
-    },
-    "Feature": {
-      "Dark Web Monitoring": [
-        "Monitorering af det mørke net"
       ]
     },
     "fido2: Error": {
@@ -5375,26 +5291,6 @@
         "Særtilbud"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } desktop applikation."
-      ],
-      "10 email addresses": [
-        "10 e-mailadresse"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Slet automatisk elementer i Spam og Papirkurven"
-      ],
-      "Custom schedule send and snooze times": [
-        "Brugerdefineret tidsplan for afsendelse og udsættelse"
-      ],
-      "Support for 1 custom email domain": [
-        "Understøttelse af 1 brugerdefineret e-mail-domæne"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Ubegrænsede mapper, etiketter og filtre"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Fornyes til ${ renewablePrice }, annuller når som helst"
@@ -7425,9 +7321,6 @@
       "6 users": [
         "6 brugere"
       ],
-      "64 countries": [
-        "64 lande"
-      ],
       "All paid Mail and Calendar features": [
         "Alle betalte Mail og Kalender funktioner"
       ],
@@ -7539,15 +7432,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday-tilbud"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week-udsalg"
-      ],
-      "End of Year Sale": [
-        "Udsalg ved årets afslutning"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Opgradér og spar mere med 2 års ${ planName }"
       ]
@@ -7558,9 +7442,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Få adgang til blokeret indhold, og browse privat. Inkluderer 1700 servere i mere end 60 lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."

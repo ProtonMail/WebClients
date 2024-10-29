@@ -466,6 +466,9 @@
       "Resend code": [
         "Reenviar código"
       ],
+      "Resend invitation": [
+        "Reenviar o convite"
+      ],
       "Reset": [
         "Redefinir"
       ],
@@ -841,32 +844,14 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
       "1 user": [
         "1 utilizador"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "+3,000 servidores em +65 países"
-      ],
       "6 users": [
         "6 utilizadores"
-      ],
-      "Access content worldwide": [
-        "Aceda a conteúdo em todo o mundo"
-      ],
-      "Ad-blocker and malware protection": [
-        "Bloqueador de anúncios e proteção de malware"
-      ],
-      "Extended version history": [
-        "Histórico de versão estendido"
-      ],
-      "High speed streaming": [
-        "Streaming de alta velocidade"
       ],
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
@@ -892,15 +877,13 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui o suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais.",
-        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -2128,20 +2111,6 @@
         "E-mail de verificação enviado para ${ address }"
       ]
     },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 utilizadores"
-      ],
-      "Early access to new apps and features": [
-        "Acesso antecipado a novas aplicações e funcionalidades"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Funcionalidades pagas ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
-      ]
-    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Também pode consultar a nossa ${ statusPageLink }"
@@ -2226,6 +2195,9 @@
       ],
       "Invalid expiration date": [
         "A data de expiração é inválida."
+      ],
+      "Invalid IBAN": [
+        "IBAN inválido"
       ],
       "Invalid invitation link": [
         "A ligação de convite é inválida."
@@ -2313,6 +2285,9 @@
       ],
       "Tab closed": [
         "Separador fechado"
+      ],
+      "The amount due has changed. Please try again.": [
+        "O montante devido foi alterado. Por favor, tente novamente."
       ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
@@ -2664,9 +2639,6 @@
       ],
       "Continue": [
         "Continuar"
-      ],
-      "Dark Web Monitoring": [
-        "Monitoramento da Dark Web"
       ],
       "Fastest VPN servers": [
         "Servidores VPN mais rápidos"
@@ -3107,6 +3079,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mês)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obtenha um endereço ${ BRAND_NAME } ** para usar todos os serviços ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
@@ -5133,23 +5108,6 @@
         "Oferta Especial"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Aplicação para desktop ${ MAIL_APP_NAME }"
-      ],
-      "10 email addresses": [
-        "10 endereços de e-mail"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Eliminação automática das pastas Spam e Lixo"
-      ],
-      "Support for 1 custom email domain": [
-        "Apoio ao cliente para 1 domínio de e-mail personalizado"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Pastas, etiquetas e filtros ilimitados"
-      ]
-    },
     "mailtrial2024: Info": {
       "for the first month": [
         "pelo primeiro mês"
@@ -5369,6 +5327,10 @@
       "${ n } VPN connection": [
         "${ n } ligação VPN",
         "${ n } ligações VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilizador",
+        "Até ${ numberOfUsers } utilizadores"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } com ${ n } alias hide-my-email",
@@ -6283,6 +6245,12 @@
         "Todos os serviços ${ BRAND_NAME } Plus.${ br }Uma subscrição fácil."
       ]
     },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } conta de utilizador",
+        "${ n } contas de utilizador"
+      ]
+    },
     "passwordless": {
       "Change organization key": [
         "Alterar a chave da organização"
@@ -7021,9 +6989,6 @@
       "6 users": [
         "6 utilizadores"
       ],
-      "64 countries": [
-        "64 países"
-      ],
       "All paid Mail and Calendar features": [
         "Todas as funcionalidades pagas do Mail e do Calendar"
       ],
@@ -7132,15 +7097,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Promoção Black Friday"
-      ],
-      "Cyber Week Sale": [
-        "Promoção da Cyber Week"
-      ],
-      "End of Year Sale": [
-        "Promoção de fim de ano."
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Actualize e poupe mais com 2 anos de ${ planName }"
       ]
@@ -7151,9 +7107,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Aceda a conteúdos bloqueados e navegue em privado. Inclui 1700 servidores em mais de 60 países, a velocidade VPN mais elevada, 10 ligações VPN, serviços de streaming em todo o mundo, bloqueador de malware e de anúncios e muito mais."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide-my-email, partilha de calendário, armazenamento encriptado na nuvem e partilha de ficheiros e muito mais."
@@ -7362,6 +7315,26 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } de armazenamento total"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } calendário por utilizador",
+        "${ planNumberOfCalendars } calendários por utilizador"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domínio de e-mail personalizado",
+        "${ planNumberOfDomains } domínios de e-mail personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } endereço de e-mail",
+        "${ planNumberOfEmails } endereços de e-mail"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } endereço de e-mail por utilizador",
+        "${ planNumberOfEmails } endereços de e-mail por utilizador"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } utilizador",
+        "${ planNumberOfUsers } utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"

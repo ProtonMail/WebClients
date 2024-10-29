@@ -862,6 +862,9 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
+      "Resend invitation": [
+        "Uitnodiging opnieuw verzenden"
+      ],
       "Reset": [
         "Resetten"
       ],
@@ -1563,34 +1566,11 @@
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "Meer dan 3.000 servers in meer dan 65 landen"
-      ],
       "6 users": [
         "6 gebruikers"
       ],
-      "Access content worldwide": [
-        "Wereldwijd toegang tot content"
-      ],
-      "Ad-blocker and malware protection": [
-        "Advertentieblokkering en bescherming tegen malware"
-      ],
-      "Extended version history": [
-        "Uitgebreide versiegeschiedenis bekijken"
-      ],
-      "High speed streaming": [
-        "Streamen met hoge snelheid"
-      ],
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Kortingen zijn gebaseerd op standaardprijzen per maand."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
       ]
     },
     "bf2023: header": {
@@ -1670,39 +1650,125 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 3.000 servers in meer dan 65 landen, de hoogste VPN-snelheid, toegang tot wereldwijde streamingdiensten, malware- en advertentieblokkering, snelle BitTorrent-downloads en meer."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
       ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } opslagruimte"
+      ],
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "1 user account": [
+        "1 gebruikersaccount"
+      ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
+      "2 users": [
+        "2 gebruikers"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 gebruikersaccounts"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Meer dan 8.500 servers in meer dan 110 landen"
+      ],
+      "Ad-blocker and malware protection": [
+        "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Easily add or remove users": [
+        "Eenvoudig gebruikers toevoegen of verwijderen"
+      ],
+      "High speed streaming": [
+        "Streamen met hoge snelheid"
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde 2FA-authenticator"
+      ],
+      "Online document editor": [
+        "Online documenteditor"
+      ],
+      "Password health alerts": [
+        "Wachtwoordgezondheidswaarschuwingen"
+      ],
+      "Private photo backup": [
+        "Privé foto back-up"
+      ],
+      "Protect 10 devices at a time": [
+        "Bescherm 10 apparaten tegelijkertijd"
+      ],
+      "Secure file storage & sharing": [
+        "Veilige bestandsopslag en delen"
+      ],
+      "Secure vault and link sharing": [
+        "Veilige kluis en het delen van links"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Onbeperkt aantal logins, notities en creditcards"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ],
+      "Version history": [
+        "Versiegeschiedenis"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Kortingen zijn gebaseerd op standaardprijzen per maand."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Populairste keuze"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "voor ${ durationDeal }"
+      ]
+    },
+    "BF2024: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
       ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Omzeil plaatselijke internetblokkades en censuur met ons wereldwijde serversnetwerk."
-      ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadres, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer.",
-        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beveilig uw e-mails en plan met end-to-end versleuteling. Inclusief ondersteuning voor aangepaste e-maildomeinen, 15 e-mailadressen, een onbeperkt aantal hide-my-email-aliassen, agenda delen en meer."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
-      ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-apps."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Bewaar tot 200 versies van elk bestand tot wel 10 jaar."
       ]
     },
     "Billing cycle": {
@@ -3647,25 +3713,6 @@
         ".rpm voor Fedora / Red Hat"
       ]
     },
-    "drive_signup_2023: Feature": {
-      "${ totalStorageSize } of storage for free": [
-        "${ totalStorageSize } aan gratis opslagruimte"
-      ],
-      "End-to-end encrypted": [
-        "End-to-end versleuteld"
-      ]
-    },
-    "drive_signup_2023: Info": {
-      "Advanced sharing security": [
-        "Geavanceerde beveiliging voor delen"
-      ],
-      "Encrypted cloud storage for all your files": [
-        "Versleutelde cloudopslag voor al uw bestanden"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Beschermd door Zwitserse privacywetten"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Maak een gratis ${ DRIVE_APP_NAME } account aan om veilig toegang te krijgen tot dit bestand"
@@ -4181,33 +4228,6 @@
     "Empty group name": {
       "Unnamed": [
         "Naamloos"
-      ]
-    },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Betaalde ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- en ${ PASS_SHORT_APP_NAME }-functies"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Bevat versiegeschiedenis in ${ DRIVE_SHORT_APP_NAME }, toegang tot duizenden snelle ${ VPN_SHORT_APP_NAME } servers, delen in ${ PASS_SHORT_APP_NAME } en meer."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 gebruikers"
-      ],
-      "Early access to new apps and features": [
-        "Vroegtijdige toegang nieuwe applicaties functies"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME }-desktopapp"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Betaalde ${ MAIL_SHORT_APP_NAME }- en ${ CALENDAR_APP_NAME }-functies"
       ]
     },
     "Error": {
@@ -5152,6 +5172,9 @@
       "Got it": [
         "Begrepen"
       ],
+      "Invite a user": [
+        "Een gebruiker uitnodigen"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Bestaande ${ BRAND_NAME }-gebruiker uitnodigen"
       ],
@@ -5424,9 +5447,6 @@
       ],
       "Continue": [
         "Doorgaan"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
       ],
       "Fastest VPN servers": [
         "Snelste VPN-servers"
@@ -9772,6 +9792,9 @@
       "Awarded": [
         "Toegekend"
       ],
+      "Backup password": [
+        "Back-up wachtwoord"
+      ],
       "Beta": [
         "Bèta"
       ],
@@ -11070,26 +11093,6 @@
       ],
       "Special Offer": [
         "Speciale aanbieding"
-      ]
-    },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-desktopapp"
-      ],
-      "10 email addresses": [
-        "10 e-mailadressen"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Spam en Prullenbak automatisch verwijderen"
-      ],
-      "Custom schedule send and snooze times": [
-        "Aangepaste planning en snooze-tijden voor verzenden"
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-maildomein"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
       ]
     },
     "mailtrial2024: Footer": {
@@ -13228,12 +13231,6 @@
       "Encrypted password manager that also protects your identity": [
         "Versleutelde wachtwoordkluis die ook uw identiteit beschermt"
       ],
-      "End-to-end encrypted notes": [
-        "End-to-end versleutelde notities"
-      ],
-      "End-to-end encryption": [
-        "End-to-end versleuteling"
-      ],
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
         "Voer een weergavenaam in voor **${ username }**. Dit is wat uw gebruikers zullen zien wanneer u hun rechten wijzigt of gegevens met hen deelt."
       ],
@@ -13379,9 +13376,6 @@
       ],
       "Welcome to ${ shortName } Plus": [
         "Welkom bij ${ shortName } Plus"
-      ],
-      "Works on all devices": [
-        "Werkt op alle apparaten"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "U heeft al toegang tot de premium ${ appName }-functies — niet nodig om opnieuw aan te kopen."
@@ -14756,9 +14750,6 @@
       "6 users": [
         "6 gebruikers"
       ],
-      "64 countries": [
-        "64 landen"
-      ],
       "All paid Mail and Calendar features": [
         "Alle betaalde Mail- en Calendar-kenmerken"
       ],
@@ -14870,15 +14861,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday-aanbieding"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week-aanbieding"
-      ],
-      "End of Year Sale": [
-        "Eindejaarsuitverkoop"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Upgrade en bespaar meer met 2 jaar ${ planName }"
       ]
@@ -14889,9 +14871,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Bekijk inhoud van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Al onze premium diensten met hun hoogste limieten: 100 e-mailadressen, ondersteuning voor 10 aangepaste domeinen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's, versleutelde cloudopslag, versleuteld bestanden delen en meer."
@@ -14933,8 +14912,17 @@
         "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal.",
         "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal."
       ],
+      "Access denied": [
+        "Toegang geweigerd"
+      ],
       "Approve or deny it now": [
         "Keur goed of weiger nu"
+      ],
+      "Backup password": [
+        "Back-up wachtwoord"
+      ],
+      "Cancel": [
+        "Annuleren"
       ],
       "Deny": [
         "Weigeren"
@@ -14963,6 +14951,12 @@
       "No, it wasn’t me": [
         "Nee, dat was ik niet"
       ],
+      "Reject": [
+        "Afwijzen"
+      ],
+      "Remove": [
+        "Verwijderen"
+      ],
       "Sign-in confirmed": [
         "Inloggen bevestigd"
       ],
@@ -14980,6 +14974,20 @@
       ],
       "Yes, it was me": [
         "Ja, dat was ik"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Actief"
+      ],
+      "Inactive": [
+        "Inactief"
+      ],
+      "Rejected": [
+        "Afgewezen"
+      ],
+      "Unknown": [
+        "Onbekend"
       ]
     },
     "State": {
