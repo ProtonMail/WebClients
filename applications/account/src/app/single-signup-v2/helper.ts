@@ -52,15 +52,17 @@ export const getFreeTitle = (appName: string) => {
 };
 
 export const getHasBusinessUpsell = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    const proPlansWithoutPass = [
+    const proPlans = [
         PLANS.MAIL_PRO,
         PLANS.MAIL_BUSINESS,
         PLANS.DRIVE_PRO,
         PLANS.DRIVE_BUSINESS,
         PLANS.VPN_PRO,
         PLANS.VPN_BUSINESS,
+        PLANS.PASS_PRO,
+        PLANS.PASS_BUSINESS,
     ];
-    return proPlansWithoutPass.some((plan) => plan === subscribedPlan);
+    return proPlans.some((plan) => plan === subscribedPlan);
 };
 
 export const getHasAnyPlusPlan = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
@@ -216,7 +218,7 @@ const getUpsell = ({
         };
     };
 
-    if (currentPlan) {
+    if (currentPlan && planParameters.defined) {
         if (getHas2024OfferCoupon(options.coupon)) {
             if (getHasAnyPlusPlan(currentPlan.Name)) {
                 if (currentPlan.Name === PLANS.PASS) {
@@ -279,12 +281,7 @@ const getUpsell = ({
             if (audience === Audience.B2B) {
                 return defaultValue;
             } else {
-                if (
-                    getHasAnyPlusPlan(currentPlan.Name) &&
-                    ![PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
-                        planParameters.plan.Name as any
-                    )
-                ) {
+                if (getHasAnyPlusPlan(currentPlan.Name) && getHasAnyPlusPlan(planParameters.plan.Name)) {
                     return {
                         ...defaultValue,
                         plan: plansMap[PLANS.BUNDLE],
@@ -304,6 +301,12 @@ const getUpsell = ({
                         mode: UpsellTypes.UPSELL,
                     };
                 }
+
+                return {
+                    ...defaultValue,
+                    plan: plansMap[planParameters.plan.Name],
+                    mode: UpsellTypes.UPSELL,
+                };
             }
         }
     }
