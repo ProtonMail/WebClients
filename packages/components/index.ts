@@ -324,6 +324,7 @@ export { default as TreeViewItem } from './components/treeview/TreeViewItem';
 export type { UpsellFeature as UpsellFeatures } from './components/upsell/modal/interface';
 export { default as NewUpsellModal } from './components/upsell/modal/NewUpsellModal';
 export { default as AutoDeleteUpsellModal } from './components/upsell/modal/types/AutoDeleteUpsellModal';
+export { default as ZoomUpsellModal } from './components/upsell/modal/types/ZoomUpsellModal';
 export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modal/types/ComposerAssistantB2BUpsellModal';
 export { default as FiltersUpsellModal } from './components/upsell/modal/types/FiltersUpsellModal';
 export { default as LabelsUpsellModal } from './components/upsell/modal/types/LabelsUpsellModal';

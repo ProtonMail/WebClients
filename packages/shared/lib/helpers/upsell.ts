@@ -41,7 +41,8 @@ export type SourceEventUpsell =
     | 'BUTTON_PASS_ALIASES'
     | 'BUTTON_COLOR_PER_EVENT'
     | 'BUTTON_SENTINEL'
-    | 'BUTTON_SCRIBE';
+    | 'BUTTON_SCRIBE'
+    | 'BUTTON_ZOOM';
 
 export const sendRequestUpsellModalReport = ({
     api,
