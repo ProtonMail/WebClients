@@ -598,6 +598,9 @@
       "Black Friday": [
         "Jumat Hitam"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Bayar sekali dan dapatkan ${ lifetimeAccessJSX } untuk Pass Plus. Hanya ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Hemat hingga ${ discountJSX } untuk Pass Family. Hanya ${ relativePrice }/bulan."
       ]
@@ -2763,8 +2766,14 @@
       "Sign-in confirmed": [
         "Masuk dikonfirmasi"
       ],
+      "Sign-in failed": [
+        "Gagal masuk"
+      ],
       "Sign-in rejected": [
         "Masuk ditolak"
+      ],
+      "Sign-in rejection failure": [
+        "Kegagalan masuk"
       ],
       "Sign-in requested on another device. Was it you?": [
         "Terdapat permintaan entri masuk pada perangkat lainnya. Apakah ini Anda?"

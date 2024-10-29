@@ -835,6 +835,9 @@
       "Resend code": [
         "コードを再送信"
       ],
+      "Resend invitation": [
+        "招待の再送"
+      ],
       "Reset": [
         "リセット"
       ],
@@ -1508,23 +1511,8 @@
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "65か国以上、3,000台以上のサーバー"
-      ],
       "6 users": [
         "6 ユーザー"
-      ],
-      "Access content worldwide": [
-        "世界中のコンテンツにアクセス"
-      ],
-      "Ad-blocker and malware protection": [
-        "広告ブロッカーとマルウェア防止"
-      ],
-      "Extended version history": [
-        "拡張バージョン履歴"
-      ],
-      "High speed streaming": [
-        "高速ストリーミング"
       ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -1606,17 +1594,13 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "私たちのグローバルなサーバーのネットワークで、地域のインターネットブロックと検閲をバイパスします。"
-      ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } 個のカスタムメールドメイン、 ${ addresses } 個のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などのサポートが含まれています。"
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -3413,22 +3397,6 @@
         "Fedora / Red Hat 用の .rpm"
       ]
     },
-    "drive_signup_2023: Feature": {
-      "End-to-end encrypted": [
-        "エンドツーエンド暗号化"
-      ]
-    },
-    "drive_signup_2023: Info": {
-      "Advanced sharing security": [
-        "高度な共有セキュリティ"
-      ],
-      "Encrypted cloud storage for all your files": [
-        "すべてのファイルを暗号化されたクラウド ストレージに保存"
-      ],
-      "Protected by Swiss privacy laws": [
-        "スイスのプライバシー法によって保護されています"
-      ]
-    },
     "drive_signup_2024: Info": {
       "Advanced protection that goes beyond industry standards": [
         "業界標準を超えた高度な保護"
@@ -3847,20 +3815,6 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "警告"
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 ユーザー"
-      ],
-      "Early access to new apps and features": [
-        "新しいアプリや機能への早期アクセス"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } デスクトップアプリへの早期アクセス"
       ]
     },
     "Error": {
@@ -4981,9 +4935,6 @@
       ],
       "Continue": [
         "続ける"
-      ],
-      "Dark Web Monitoring": [
-        "ダークウェブモニタリング"
       ],
       "Fastest VPN servers": [
         "最速の VPN サーバー"
@@ -10061,26 +10012,6 @@
         "特別オファー"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } デスクトップアプリ"
-      ],
-      "10 email addresses": [
-        "10個のメールアドレス"
-      ],
-      "Auto-delete Spam and Trash": [
-        "迷惑メールとごみ箱を自動削除"
-      ],
-      "Custom schedule send and snooze times": [
-        "カスタムスケジュールの送信時間とスヌーズ時間"
-      ],
-      "Support for 1 custom email domain": [
-        "1つのカスタムドメインメールアドレスをサポート"
-      ],
-      "Unlimited folders, labels and filters": [
-        "制限なしのフォルダー、ラベル、フィルター"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "以降は ${ renewablePrice } で更新されます。いつでもキャンセル可能です。"
@@ -11988,12 +11919,6 @@
       "Encrypted password manager that also protects your identity": [
         "個人情報も保護する暗号化パスワード・マネージャー"
       ],
-      "End-to-end encrypted notes": [
-        "エンドツーエンド暗号化されたメモ"
-      ],
-      "End-to-end encryption": [
-        "エンドツーエンド暗号化"
-      ],
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
         "**${ username }** の表示名を入力します。 これは、ユーザーの権限を変更したり、ユーザーとデータを共有したりするときに表示されます。"
       ],
@@ -12125,9 +12050,6 @@
       ],
       "Welcome to ${ shortName } Plus": [
         "${ shortName } Plus へようこそ"
-      ],
-      "Works on all devices": [
-        "すべてのデバイスで動作します"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "すでにプレミアム ${ appName } 機能にアクセスできます。再度購入する必要はありません。"
@@ -13431,9 +13353,6 @@
       "6 users": [
         "6 ユーザー"
       ],
-      "64 countries": [
-        "64 か国"
-      ],
       "All paid Mail and Calendar features": [
         "有料の Mail と Calendar の全機能"
       ],
@@ -13533,15 +13452,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "ブラックフライデーセール"
-      ],
-      "Cyber Week Sale": [
-        "サイバーウィークセール"
-      ],
-      "End of Year Sale": [
-        "年末セール"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "アップグレードして${ planName }の2年契約でもっとお得に"
       ]
@@ -13552,9 +13462,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "ブロックされたコンテンツへのアクセスや、プライベートなブラウジングが可能です。60 か国以上の 1700 台のサーバー、最高速の VPN、10 件の VPN 接続、世界的なストリーミングサービス、マルウェアおよび広告ブロッカーなどが含まれます。"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Netflix、Disney+、Prime Video などのストリーミングサービス上のコンテンツにどこからでもアクセスします。"
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "すべてのプレミアムサービスを高い自由度で利用できます。100 件のメールアドレス、10 件の独自ドメイン対応、無制限の hide-my-email エイリアス、カレンダー共有、暗号化クラウドストレージとファイル共有など。"

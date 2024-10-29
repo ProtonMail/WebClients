@@ -868,6 +868,9 @@
       "Resend code": [
         "Znovu odoslať kód"
       ],
+      "Resend invitation": [
+        "Znovu poslať pozvánku"
+      ],
       "Reset": [
         "Resetovať"
       ],
@@ -1577,34 +1580,11 @@
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "3000+ serverov v 65+ krajinách"
-      ],
       "6 users": [
         "6 používateľov"
       ],
-      "Access content worldwide": [
-        "Prístup k obsahu z celého sveta"
-      ],
-      "Ad-blocker and malware protection": [
-        "Ad-blocker a ochrana pred malvérom"
-      ],
-      "Extended version history": [
-        "Rozšírená história verzií"
-      ],
-      "High speed streaming": [
-        "Vysokorýchlostné streamovanie"
-      ],
       "Premium Password Manager": [
         "Prémiový správca hesiel"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Zľavy sú tvorené na základe štandardných mesačných cien."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Vaše predplatné sa automaticky obnoví so štandardnou zľavnenou sadzbou a trvaním na konci vášho fakturačného cyklu."
       ]
     },
     "bf2023: header": {
@@ -1686,41 +1666,13 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Získajte prístup k blokovanému obsahu a vyhľadávajte v súkromí. Obsahuje 3000+ serverov v 65+ krajinách, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
-      ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Obíďte obmedzenia a cenzúru miestneho internetu pomocou našej globálnej siete serverov."
-      ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailovú adresu, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
-        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailové adresy, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
-        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
-        "Obsahuje podporu ${ domains } vlastných emailových domén, ${ addresses } emailových adries, neobmedzené množstvo hide-my-email aliasov, zdieľanie kalendára a ďalšie."
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je podpora vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov, zdieľanie kalendára a ďalšie."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa históriu verzií, zdieľanie šifrovaných súborov a ďalšie."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Špeciálne navrhnutý NetShield chráni vaše zariadenia a zrýchľuje vaše prehliadanie tým, že blokuje reklamy, sledovače a malvér."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Úložný priestor je zdieľaný medzi všetkými aplikáciami ${ BRAND_NAME }."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Uložte až 200 verzií každého súboru až na 10 rokov."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -3702,25 +3654,6 @@
         ".rpm pre Fedora / Red Hat"
       ]
     },
-    "drive_signup_2023: Feature": {
-      "${ totalStorageSize } of storage for free": [
-        "${ totalStorageSize } bezplatného úložného priestoru"
-      ],
-      "End-to-end encrypted": [
-        "Šifrovanie počas celého spojenia"
-      ]
-    },
-    "drive_signup_2023: Info": {
-      "Advanced sharing security": [
-        "Pokročilá bezpečnosť zdieľania"
-      ],
-      "Encrypted cloud storage for all your files": [
-        "Šifrované cloudové úložisko pre všetky vaše súbory"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Vytvorte si bezplatné konto ${ DRIVE_APP_NAME } pre bezpečný prístup k súboru"
@@ -3762,11 +3695,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Riešenia šité na mieru pre väčšie organizácie s vlastnými potrebami"
-      ]
-    },
-    "drive_signup_2024: TitleB2B": {
-      "The only business solution that is:": [
-        "Jediné firemné riešenie, ktoré je:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4277,33 +4205,6 @@
     "Empty group name": {
       "Unnamed": [
         "Bez názvu"
-      ]
-    },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Funkcie plateného ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Zahŕňa históriu verzií v ${ DRIVE_SHORT_APP_NAME }, prístup k tisícom vysokorýchlostných ${ VPN_SHORT_APP_NAME } serverov, zdieľanie v ${ PASS_SHORT_APP_NAME } a mnoho ďalšieho."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 používateľov"
-      ],
-      "Early access to new apps and features": [
-        "Skorší prístup k novým aplikáciám a funkciám"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Skorší prístup k desktopovej aplikácii ${ MAIL_APP_NAME }"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Funkcie plateného ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -5582,9 +5483,6 @@
       ],
       "Continue": [
         "Pokračovať"
-      ],
-      "Dark Web Monitoring": [
-        "Monitorovanie Dark Webu"
       ],
       "Fastest VPN servers": [
         "Najrýchlejšie VPN servery"
@@ -11436,26 +11334,6 @@
         "Špeciálna ponuka"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Desktopová aplikácia ${ MAIL_APP_NAME } "
-      ],
-      "10 email addresses": [
-        "10 emailových adries"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Automatické mazanie spamu a koša"
-      ],
-      "Custom schedule send and snooze times": [
-        "Vlastné časy odoslania a odloženia"
-      ],
-      "Support for 1 custom email domain": [
-        "Podpora pre 1 vlastnú emailovú doménu"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Neobmedzený počet priečinkov, štítkov a filtrov"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Obnovuje sa za ${ renewablePrice }, zrušiť môžete kedykoľvek"
@@ -13693,12 +13571,6 @@
       "Encrypted password manager that also protects your identity": [
         "Šifrovaný správca hesiel, ktorý chráni aj vašu identitu"
       ],
-      "End-to-end encrypted notes": [
-        "End-to-end šifrované poznámky"
-      ],
-      "End-to-end encryption": [
-        "End-to-end šifrovanie"
-      ],
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
         "Zadajte zobrazované meno pre **${ username }**. Toto uvidia vaši používatelia, keď zmeníte ich oprávnenia alebo s nimi budete zdieľať údaje."
       ],
@@ -13848,9 +13720,6 @@
       ],
       "Welcome to ${ shortName } Plus": [
         "Vitajte v ${ shortName } Plus"
-      ],
-      "Works on all devices": [
-        "Funguje na všetkých zariadeniach"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Už máte prístup k prémiovým funkciám ${ appName } - nemusíte si ich kupovať znova."
@@ -15486,9 +15355,6 @@
       "6 users": [
         "6 používateľov"
       ],
-      "64 countries": [
-        "64 krajín"
-      ],
       "All paid Mail and Calendar features": [
         "Všetky platené funkcie pošty a kalendára"
       ],
@@ -15602,15 +15468,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday zľavy"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week zľavy"
-      ],
-      "End of Year Sale": [
-        "Koncoročné zľavy"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Inovujte a ušetrite viac s 2 rokmi ${ planName }"
       ]
@@ -15621,9 +15478,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Získajte prístup k zablokovanému obsahu a prehliadajte v súkromí. Zahŕňa 1700 serverov vo viac ako 60 krajinách, najvyššiu rýchlosť VPN, 10 pripojení VPN, celosvetové streamovacie služby, blokovanie malvéru a reklám a ďalšie."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+ a Prime Video odkiaľkoľvek."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Všetky naše prémiové služby s najvyššími limitmi: 100 emailových adries, podpora pre 10 vlastných domén, neobmedzený počet hide-my-email aliasov, zdieľanie kalendára, šifrované cloudové úložisko a zdieľanie súborov a ďalšie."

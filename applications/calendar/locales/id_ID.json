@@ -934,43 +934,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "Ruang penyimpanan ${ storageSize }"
-      ],
       "1 user": [
         "1 pengguna"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "3000+ server di 65+ negara"
-      ],
       "6 users": [
         "6 pengguna"
       ],
-      "Access content worldwide": [
-        "Akses konten di seluruh dunia"
-      ],
-      "Ad-blocker and malware protection": [
-        "Pemblokir iklan dan perlindungan perangkat lunak jahat"
-      ],
-      "Extended version history": [
-        "Riwayat versi yang terperinci"
-      ],
-      "High speed streaming": [
-        "Streaming berkecepatan tinggi"
-      ],
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Diskon berdasarkan penetapan harga standar per bulan."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Langganan Anda akan diperbarui secara otomatis dengan tarif dan durasi diskon standar di akhir siklus tagihan Anda."
       ]
     },
     "bf2023: Offers": {
@@ -993,38 +967,152 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi 3000+ server di 65+ negara, kecepatan VPN tertinggi, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, unduhan BitTorrent kilat, dan masih banyak lagi."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Akses konten di layanan streaming termasuk Netflix, Disney+, Prime Video, dan lainnya, dari mana pun."
-      ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Lewati pemblokiran dan penyensoran internet lokal dengan jaringan server global kami."
-      ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Meliputi dukungan untuk ${ domains } domain email khusus, ${ addresses } alamat email, alias hide-my-email tanpa batasan jumlah, fitur berbagi kalender, dan masih banyak lagi."
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, pembagian kalender, dan masih banyak lagi."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Jumat Hitam"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikasi desktop ${ MAIL_APP_NAME }"
       ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Masuk secara aman di semua perangkat Anda. Termasuk alias terbatas, pembagian, 2FA terintegrasi, dan lainnya."
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus dan ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliuti dukungan untuk domain email khusus, 15 alamat email, alias hide-my-email tanpa batasan jumlah, pembagian kalender, dan masih banyak lagi."
+      "${ storageSize } storage": [
+        "Ruang penyimpanan ${ storageSize }"
       ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi riwayat versi, pembagian berkas terenkripsi, dan masih banyak lagi."
+      "1 TB total": [
+        "Jumlah 1 TB"
+      ],
+      "1 user": [
+        "1 pengguna"
+      ],
+      "1 user account": [
+        "1 akun pengguna"
+      ],
+      "10 email addresses": [
+        "10 alamat email"
+      ],
+      "2 users": [
+        "2 pengguna"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 akun pengguna"
+      ],
+      "6 users": [
+        "6 pengguna"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ server di 110+ negara"
+      ],
+      "Ad-blocker and malware protection": [
+        "Pemblokir iklan dan perlindungan perangkat lunak jahat"
+      ],
+      "Admin panel to manage your family": [
+        "Panel akun untuk mengelola keluarga Anda"
+      ],
+      "Advanced account protection": [
+        "Perlindungan akun tingkat lanjut"
+      ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
+      ],
+      "Easily add or remove users": [
+        "Tambah atau kurangi pengguna secara mudah"
+      ],
+      "High speed streaming": [
+        "Streaming berkecepatan tinggi"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
+      "Online document editor": [
+        "Penyunting dokumen daring"
+      ],
+      "Password health alerts": [
+        "Peringatan kesehatan kata sandi"
+      ],
+      "Private photo backup": [
+        "Pencadangan foto pribadi"
+      ],
+      "Protect 10 devices at a time": [
+        "Lindungi 10 perangkat secara bersamaan"
+      ],
+      "Secure file storage & sharing": [
+        "Penyimpanan & pembagian berkas aman"
+      ],
+      "Secure vault and link sharing": [
+        "Pembagian brankas dan tautan aman"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Tanpa batasan jumlah folder, label, dan filter"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Tanpa batasan jumlah alias hide-my-email"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
+      ],
+      "Version history": [
+        "Riwayat versi"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Diskon berdasar pada harga bulanan standar."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir masa tagihan Anda."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Terpopuler"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "untuk ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Diperbarui setelah 1 bulan dengan ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi 8500+ server di 110+ negara, 10 perangkat, streaming berkecepatan tinggi, pemblokir iklan, perlindungan malware, VPN Accelerator, dan masih banyak lagi."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Dirancang secara khusus, NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan perangkat lunak jahat."
       ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Ruang penyimpanan terbagi antar seluruh aplikasi ${ BRAND_NAME }."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Simpan hingga 200 versi berkas sampai 10 tahun."
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
       ]
     },
     "Billing cycle": {
@@ -2821,33 +2909,6 @@
         "Pembaruan untuk acara yang dimulai pada ${ formattedStart }"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Berbagai fitur ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME } berbayar"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Meliputi riwayat versi pada ${ DRIVE_SHORT_APP_NAME }, akses ke ratusan server ${ VPN_SHORT_APP_NAME } berkecepatan tinggi, fitur untuk saling berbagi pada ${ PASS_SHORT_APP_NAME }, dan masih banyak lagi."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 pengguna"
-      ],
-      "Early access to new apps and features": [
-        "Akses dini ke berbagai aplikasi dan fitur baru"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Akses dini ke aplikasi desktop ${ MAIL_APP_NAME }"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Berbagai fitur ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_APP_NAME } berbayar"
-      ]
-    },
     "Error": {
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda"
@@ -3776,11 +3837,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian berkas terenkripsi, dan masih banyak lagi."
-      ]
-    },
-    "Feature": {
-      "Dark Web Monitoring": [
-        "Pemantauan Dark Web"
       ]
     },
     "fido2: Error": {
@@ -5998,26 +6054,6 @@
         "Penawaran Spesial"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Aplikasi desktop ${ MAIL_APP_NAME }"
-      ],
-      "10 email addresses": [
-        "10 alamat email"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Kosongkan Spam dan Sampah secara otomatis"
-      ],
-      "Custom schedule send and snooze times": [
-        "Waktu pengiriman dan penundaan yang dapat disesuaikan"
-      ],
-      "Support for 1 custom email domain": [
-        "Dukungan 1 domain email khusus"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Tanpa batasan jumlah folder, label, dan filter"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Terbarui dengan harga ${ renewablePrice }, batalkan kapan saja"
@@ -6934,6 +6970,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Buat hingga ${ n } alamat/alias email yang dapat Anda tentukan kepada para anggota keluarga. Gunakan alamat/alias ini untuk identitas online-nya masing-masing, mis. JohnShopper@${ domain } untuk akun berbelanja."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Melindungi Anda dari ancaman terhadap privasi VPN dengan mengalihkan lalu lintas internet Anda melalui berbagai server"
@@ -8186,9 +8225,6 @@
       "6 users": [
         "6 pengguna"
       ],
-      "64 countries": [
-        "64 negara"
-      ],
       "All paid Mail and Calendar features": [
         "Semua fitur Mail dan Calendar yang berbayar"
       ],
@@ -8299,15 +8335,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Diskon Jumat Hitam"
-      ],
-      "Cyber Week Sale": [
-        "Penawaran Minggu Siber"
-      ],
-      "End of Year Sale": [
-        "Penawaran Akhir Tahun"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Tingkatkan dan hemat lebih banyak dengan ${ planName } selama 2 tahun"
       ]
@@ -8318,9 +8345,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Akses konten terblokir dan jelajahi secara pribadi. Beserta 1700 server di 60+ negara, kecepatan VPN tertinggi, 10 koneksi VPN, layanan streaming seluruh dunia, pemblokir perangkat lunak jahat dan iklan, dan lebih banyak lagi."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Akses konten di layanan streaming, termasuk Netflix, Disney+, dan Prime Video, dari mana pun."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Semua layanan premium kami dengan batas tertinggi: 100 alamat email, dukungan 10 domain kustom, alias Hide-my-email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."

@@ -776,6 +776,11 @@
         "${ n } mjeseci"
       ]
     },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } mjesec",
@@ -1902,14 +1907,6 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Ažuriranje događaja s početkom ${ formattedStart }"
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 korisnika"
       ]
     },
     "Error": {
@@ -3745,11 +3742,6 @@
         "Posebna ponuda"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "10 email addresses": [
-        "10 adrese e-pošte"
-      ]
-    },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
@@ -4409,9 +4401,6 @@
       ],
       "6 users": [
         "6 korisnika"
-      ],
-      "64 countries": [
-        "64 države"
       ],
       "Highest VPN speed": [
         "Najviša VPN brzina"

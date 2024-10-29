@@ -928,43 +928,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } 儲存空間"
-      ],
       "1 user": [
         "1 位使用者"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "超過 3500 臺伺服器，遍布於 65 以上個國家"
-      ],
       "6 users": [
         "6 個使用者"
       ],
-      "Access content worldwide": [
-        "存取跨國內容"
-      ],
-      "Ad-blocker and malware protection": [
-        "廣告攔截與惡意程式保護"
-      ],
-      "Extended version history": [
-        "展開版本紀錄"
-      ],
-      "High speed streaming": [
-        "高速串流"
-      ],
       "Premium Password Manager": [
         "進階版密碼管理器"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "折扣是以每月標準價格為基礎。"
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
       ]
     },
     "bf2023: Offers": {
@@ -987,38 +961,13 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "存取遭封鎖的內容並保持隱私。使用遍佈於65+個國家的超過 3000 台伺服器，讓最快的 VPN 帶您暢享世上的串流平台，還有病毒與廣告攔截器、迅速的 BitTorrent 下載等多項功能可用。"
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "在世界各地暢享串流服務的影音內容，包含 Netflix、Disney+、Prime Video 等平台。"
-      ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "我們遍佈全世界的網路與伺服器助您翻過長城，免於審查。"
-      ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包含對 ${ domains } 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "在您所有的裝置安全登入。包含無限郵件別名、共享以及整合的 2FA等功能。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "透過端對端加密保護您的電子郵件。包含自訂電子郵件網域、15 個電子郵件位址、無限的 hide-my-email 別名與行事曆共用等等的功能。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "儲存空間於${ BRAND_NAME }共用。"
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "包存最多200份檔案歷程記錄長達10年。"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -2789,33 +2738,6 @@
         "原訂自 ${ formattedStart } 起一事有變"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "包含 ${ DRIVE_SHORT_APP_NAME } 版本歷程、存取 ${ VPN_SHORT_APP_NAME } 數以千計高速伺服器、${ PASS_SHORT_APP_NAME } 的分享功能以及更多。"
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 位使用者"
-      ],
-      "Early access to new apps and features": [
-        "搶先體驗新應用程式與功能"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "提早存取${ MAIL_APP_NAME }桌面應用程式"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
-      ]
-    },
     "Error": {
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME }無法連接外部帳號"
@@ -3732,11 +3654,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
-      ]
-    },
-    "Feature": {
-      "Dark Web Monitoring": [
-        "暗網監控"
       ]
     },
     "fido2: Error": {
@@ -5948,26 +5865,6 @@
         "特別優惠"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } 桌面應用程式"
-      ],
-      "10 email addresses": [
-        "10 個電子郵件位址"
-      ],
-      "Auto-delete Spam and Trash": [
-        "自動清理垃圾郵件及垃圾桶"
-      ],
-      "Custom schedule send and snooze times": [
-        "自訂寄出時間與暫緩處理郵件"
-      ],
-      "Support for 1 custom email domain": [
-        "支援 1 個自訂電子郵件網域"
-      ],
-      "Unlimited folders, labels and filters": [
-        "資料夾、標籤與篩選器無上限"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "更新價 ${ renewablePrice }，任何時間都可取消"
@@ -8042,9 +7939,6 @@
       "6 users": [
         "6 個使用者"
       ],
-      "64 countries": [
-        "64 個國家"
-      ],
       "All paid Mail and Calendar features": [
         "所有付費郵件與行事曆功能"
       ],
@@ -8155,15 +8049,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "黑色星期五特賣"
-      ],
-      "Cyber Week Sale": [
-        "Cyber​​ Week 熱賣"
-      ],
-      "End of Year Sale": [
-        "年終優惠"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "使用兩年的 ${ planName } 升級並節省更多"
       ]
@@ -8174,9 +8059,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "存取攔截的內容並進行私密瀏覽。包含 60 多個國家的 1700 臺伺服器、最高的 VPN 速度、10 個 VPN 連線、全球串流影音服務以及惡意軟體與廣告攔截器等。"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "我們所有具有最高限制的進階版服務：100 組電子郵件位址、支援 10 組自訂網域、無限制的隱藏 hide-my-email 別名、行事曆分享、加密雲端儲存與檔案分享等。"

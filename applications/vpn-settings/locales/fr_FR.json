@@ -481,6 +481,9 @@
       "Resend code": [
         "Renvoyer le code"
       ],
+      "Resend invitation": [
+        "Renvoyer l'invitation"
+      ],
       "Reset": [
         "Réinitialiser"
       ],
@@ -888,43 +891,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } d'espace de stockage"
-      ],
       "1 user": [
         "1 utilisateur"
       ],
       "3 TB": [
         "3 To"
       ],
-      "3,000+ servers across 65+ countries": [
-        "Plus de 3 000 serveurs répartis dans plus de 65 pays"
-      ],
       "6 users": [
         "6 utilisateurs"
       ],
-      "Access content worldwide": [
-        "Accès aux contenus dans le monde entier"
-      ],
-      "Ad-blocker and malware protection": [
-        "Bloqueur de publicité et protection contre les logiciels malveillants"
-      ],
-      "Extended version history": [
-        "Historique des versions plus détaillé"
-      ],
-      "High speed streaming": [
-        "Streaming ultra-rapide"
-      ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe version premium"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Les réductions sont calculées sur les prix mensuels habituels."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
       ]
     },
     "bf2023: header": {
@@ -981,39 +958,153 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend plus de 3 000 serveurs répartis dans plus de 65 pays, les vitesses VPN les plus élevées, l'accès aux services de streaming dans le monde entier, un bloqueur de publicité, la protection contre les logiciels malveillants, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Application de bureau ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus et ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } d'espace de stockage"
+      ],
+      "1 TB total": [
+        "1 To au total"
+      ],
+      "1 user": [
+        "1 utilisateur"
+      ],
+      "1 user account": [
+        "1 compte utilisateur"
+      ],
+      "10 email addresses": [
+        "10 adresses e-mail"
+      ],
+      "2 users": [
+        "2 utilisateurs"
+      ],
+      "3 TB": [
+        "3 To"
+      ],
+      "6 user accounts": [
+        "6 comptes utilisateur"
+      ],
+      "6 users": [
+        "6 utilisateurs"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Plus de 8500 serveurs dans plus de 110 pays"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueur de publicité et protection contre les logiciels malveillants"
+      ],
+      "Admin panel to manage your family": [
+        "Panneau d'administration pour gérer votre famille"
+      ],
+      "Advanced account protection": [
+        "Protection avancée des comptes"
+      ],
+      "Dark Web Monitoring": [
+        "Surveillance du dark web"
+      ],
+      "Easily add or remove users": [
+        "Ajoutez ou retirez facilement des utilisateurs"
+      ],
+      "High speed streaming": [
+        "Streaming ultra rapide"
+      ],
+      "Integrated 2FA authenticator": [
+        "Authentification à deux facteurs (A2F) intégrée"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Password health alerts": [
+        "Alertes de sécurité des mots de passe"
+      ],
+      "Private photo backup": [
+        "Sauvegarde de vos photos privées"
+      ],
+      "Protect 10 devices at a time": [
+        "Protégez 10 appareils en même temps"
+      ],
+      "Secure file storage & sharing": [
+        "Stockage de fichiers sécurisé et partage de liens"
+      ],
+      "Secure vault and link sharing": [
+        "Coffre-fort sécurisé et partage de liens"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nombre illimité de dossiers, labels et filtres"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Nombre illimité de connexions, de notes et de cartes de crédit"
+      ],
+      "Use your own email domain": [
+        "Utilisez vos propres domaines de messagerie"
+      ],
+      "Version history": [
+        "Historique des versions"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Les réductions sont calculées sur les prix mensuels habituels."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Le plus populaire"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "pour ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Renouvellement après 1 mois à ${ regularAmount }"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Accès à des contenus bloqués et navigation en toute confidentialité. Comprends plus de 8 500 serveurs dans plus de 110 pays, 10 appareils, streaming à haute vitesse, bloqueur de publicités et protection contre les logiciels malveillants, VPN Accelerator et bien plus encore."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1, Eurosport France… où que vous soyez."
       ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Contournez les blocages et la censure locale sur internet grâce à notre réseau mondial de serveurs."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification à deux facteurs A2F, la surveillance du Dark Web et plus encore."
       ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de ${ domains } domaines de messagerie personnalisés, ${ addresses } adresse e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités.",
-        "Comprend la prise en charge de ${ domains } domaines de messagerie personnalisés, ${ addresses } adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprends ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprends 15 adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
       ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Sécurisez vos connexions sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Sécurisez votre messagerie et votre agenda grâce au chiffrement de bout en bout. Comprend la prise en charge de domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendriers et bien d'autres fonctionnalités."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Protégez vos fichiers avec un stockage cloud chiffré. Comprend un éditeur de documents en ligne, une sauvegarde de vos photos, un historique des versions, la fonction de partage de fichiers chiffrés et plus encore."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "La fonctionnalité NetShield est spécialement conçue pour protéger vos appareils et accélérer votre navigation en bloquant les publicités, les traqueurs et les logiciels malveillants."
       ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "L'espace de stockage est partagé entre toutes les applications ${ BRAND_NAME }."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Conservez jusqu'à 200 versions de chaque fichier pendant 10 ans."
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
       ]
     },
     "Billing cycle": {
@@ -2408,33 +2499,6 @@
         "Sans nom"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Fonctionnalités payantes de ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ PASS_SHORT_APP_NAME }"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Comprend l'historique des versions pour ${ DRIVE_SHORT_APP_NAME }, l'accès à des milliers de serveurs ultra-rapides pour ${ VPN_SHORT_APP_NAME }, le partage dans ${ PASS_SHORT_APP_NAME } et bien d'autres fonctionnalités."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 To"
-      ],
-      "6 users": [
-        "6 utilisateurs"
-      ],
-      "Early access to new apps and features": [
-        "Accès en avant-première aux nouvelles fonctionnalités et applications"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Accès en avant-première à l'application de bureau ${ MAIL_APP_NAME }"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
-      ]
-    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
@@ -3060,9 +3124,6 @@
       ],
       "Continue": [
         "Continuer"
-      ],
-      "Dark Web Monitoring": [
-        "Surveillance du dark web"
       ],
       "Fastest VPN servers": [
         "Serveurs VPN les plus rapides"
@@ -5988,26 +6049,6 @@
         "Offre spéciale"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Application de bureau ${ MAIL_APP_NAME }"
-      ],
-      "10 email addresses": [
-        "10 adresses e-mail"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
-      ],
-      "Custom schedule send and snooze times": [
-        "Personnalisation de l'heure d'envoi et de la période de mise en attente"
-      ],
-      "Support for 1 custom email domain": [
-        "Prise en charge d'un domaine de messagerie personnalisé"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nombre illimité de dossiers, labels et filtres"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Renouvellement au prix de ${ renewablePrice } avec possibilité de résiliation à tout moment"
@@ -8493,9 +8534,6 @@
       "6 users": [
         "6 utilisateurs"
       ],
-      "64 countries": [
-        "64 pays"
-      ],
       "All paid Mail and Calendar features": [
         "Toutes les fonctionnalités des abonnements payants Mail et Calendar"
       ],
@@ -8607,15 +8645,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Offre Black Friday"
-      ],
-      "Cyber Week Sale": [
-        "Offre Cyber Week"
-      ],
-      "End of Year Sale": [
-        "Offre de fin d'année"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Changez d'abonnement et économisez plus avec 2 ans de ${ planName }"
       ]
@@ -8626,9 +8655,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Accédez aux contenus bloqués et naviguez de manière privée. Comprend 1 700 serveurs dans plus de 60 pays, la vitesse VPN la plus élevée, 10 connexions VPN, l'accès aux services de streaming du monde entier, le blocage des logiciels malveillants et des publicités…"
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Accédez au contenu des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « hide-my-email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
@@ -9618,6 +9644,9 @@
       ],
       "Preferences updated": [
         "Les préférences ont été mises à jour."
+      ],
+      "Resent invitation": [
+        "Renvoyer l'invitation"
       ]
     },
     "Suffix": {

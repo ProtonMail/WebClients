@@ -55,6 +55,9 @@
       "Add domain": [
         "Afegir domini"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Afegeix més llicències per a ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Afegir PayPal"
       ],
@@ -475,6 +478,9 @@
       "Resend code": [
         "Reenvia el codi"
       ],
+      "Resend invitation": [
+        "Reenvia la invitació"
+      ],
       "Reset": [
         "Restablir"
       ],
@@ -879,43 +885,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } d'emmagatzematge"
-      ],
       "1 user": [
         "1 usuari"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "Més de 3 000 servidors en més de 65 països"
-      ],
       "6 users": [
         "6 usuaris"
       ],
-      "Access content worldwide": [
-        "Accediu al contingut a tot el món"
-      ],
-      "Ad-blocker and malware protection": [
-        "Bloquejador d'anuncis i publicitat i protecció contra programari maliciós"
-      ],
-      "Extended version history": [
-        "Historial de versions ampliat"
-      ],
-      "High speed streaming": [
-        "Estríming d'alta velocitat"
-      ],
       "Premium Password Manager": [
         "Gestor de contrasenyes prèmium"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Els descomptes es basen en els preus mensuals estàndard."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "La vostra subscripció es renovarà automàticament a la tarifa amb descompte i durada predeterminades al final del cicle de facturació."
       ]
     },
     "bf2023: header": {
@@ -972,39 +952,132 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Accediu al contingut bloquejat i navegueu de forma privada. Inclou més de 3.000 servidors en més de 65 països, velocitats de VPN més altes, accés a serveis de transmissió en línia a tot el món, bloqueig de programari maliciós i d'anuncis, descàrregues ràpides de BitTorrent, etc."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
-      ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Eviteu els bloquejos i la censura locals a Internet amb la nostra xarxa global de servidors."
-      ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclou suport per a ${ domains } dominis de correu electrònic personalitzats, ${ addresses } adreça de correu electrònic, àlies hide-my-email il·limitats, compartició de calendari, etc.",
-        "Inclou suport per a ${ domains } dominis de correu electrònic personalitzats, ${ addresses } adreces de correu electrònic, àlies hide-my-email il·limitats, compartició de calendari, etc."
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
       ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus i ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou suport per a dominis de correu personalitzats, 15 adreces de correu electrònic, àlies hide-my-email il·limitats, compartició de calendari, etc."
+      "${ storageSize } storage": [
+        "${ storageSize } d'emmagatzematge"
       ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
+      "1 TB total": [
+        "1 TB en total"
+      ],
+      "1 user": [
+        "1 usuari"
+      ],
+      "1 user account": [
+        "1 compte d'usuari"
+      ],
+      "10 email addresses": [
+        "10 adreces de correu electrònic"
+      ],
+      "2 users": [
+        "2 usuaris"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 comptes d'usuari"
+      ],
+      "6 users": [
+        "6 usuaris"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Més de 8 500 servidors en més de 110 països"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloquejador d'anuncis i protecció contra programari maliciós"
+      ],
+      "Admin panel to manage your family": [
+        "Panell d'administració per gestionar la vostra família"
+      ],
+      "Advanced account protection": [
+        "Protecció avançada del compte"
+      ],
+      "Dark Web Monitoring": [
+        "Supervisió de la web fosca"
+      ],
+      "Easily add or remove users": [
+        "Afegiu o elimineu usuaris fàcilment"
+      ],
+      "High speed streaming": [
+        "Estríming d'alta velocitat"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador de doble factor (2FA) integrat"
+      ],
+      "Online document editor": [
+        "Editor de documents en línia"
+      ],
+      "Password health alerts": [
+        "Alertes d'estat de les contrasenyes"
+      ],
+      "Private photo backup": [
+        "Còpia de seguretat de fotos privades"
+      ],
+      "Protect 10 devices at a time": [
+        "Protegiu 10 dispositius alhora"
+      ],
+      "Secure file storage & sharing": [
+        "Emmagatzematge i ús compartit de fitxers segurs"
+      ],
+      "Secure vault and link sharing": [
+        "Compartició segura de caixes fortes i enllaços"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nombre il·limitat de carpetes, etiquetes i filtres"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Nombre il·limitat d'inicis de sessió, notes i targetes de crèdit"
+      ],
+      "Use your own email domain": [
+        "Utilitzeu el vostre propi domini de correu electrònic"
+      ],
+      "Version history": [
+        "Historial de versions"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Els descomptes es basen en els preus mensuals estàndard."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "La vostra subscripció es renovarà automàticament a la tarifa amb descompte i durada predeterminades al final del cicle de facturació."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Més populars"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "durant ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Es renova al cap d'1 mes a ${ regularAmount }"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "L'espai d'emmagatzematge està compartit entre totes les aplicacions de ${ BRAND_NAME }."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Emmagatzemeu fins a 200 versions de cada fitxer durant un màxim de 10 anys."
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "L'espai d'emmagatzematge està compartit entre tots els serveis de ${ BRAND_NAME }."
       ]
     },
     "Billing cycle": {
@@ -1138,6 +1211,9 @@
       ],
       "Advanced account protection": [
         "Protecció avançada del compte"
+      ],
+      "All ${ BRAND_NAME } apps and premium features": [
+        "Totes les aplicacions de ${ BRAND_NAME } i característiques prèmium"
       ],
       "Cancel and downgrade": [
         "Cancel·la i passa a un pla inferior"
@@ -2296,6 +2372,9 @@
       "2 users": [
         "2 usuaris"
       ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Accés complet a tots els productes de ${ BRAND_NAME }"
+      ],
       "You save ${ amountSave }": [
         "Estalvieu ${ amountSave }"
       ]
@@ -2306,6 +2385,11 @@
       ],
       "Double your storage": [
         "Dobleu l'emmagatzematge"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Presentem ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email spam notification": {
@@ -2345,33 +2429,6 @@
     "Empty group name": {
       "Unnamed": [
         "Sense nom"
-      ]
-    },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Característiques de pagament de ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Inclou l'historial de versions en ${ DRIVE_SHORT_APP_NAME }, accés a milers de servidors d'alta velocitat ${ VPN_SHORT_APP_NAME }, compartició en ${ PASS_SHORT_APP_NAME }, etc."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 usuaris"
-      ],
-      "Early access to new apps and features": [
-        "Accés anticipat a noves aplicacions i característiques"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Accés anticipat a l'aplicació d'escriptori de ${ MAIL_APP_NAME }"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Característiques de pagament de ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -2543,6 +2600,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Milloreu a un pla per a empreses amb més d'un usuari per a gestionar múltiples usuaris."
       ],
+      "Please upload a square logo": [
+        "Carregeu un logo quadrat."
+      ],
       "Please upload an xml file": [
         "Carregueu un arxiu XML"
       ],
@@ -2632,6 +2692,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
+      ],
+      "You've assigned all of your servers.": [
+        "Heu assignat tots els vostres servidors."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "El vostre compte o organització té una factura vençuda. Pagueu totes les factures pendents."
@@ -2779,6 +2842,9 @@
         "Només es permet ${ n } invitació acceptada en un període de 6 mesos.",
         "Només es permeten ${ n } invitacions acceptades en un període de 6 mesos."
       ],
+      "Owners of a plan with members cannot join another family plan.": [
+        "Els propietaris d'un pla amb membres no poden unir-se a un altre pla familiar."
+      ],
       "Pending": [
         "Pendent"
       ],
@@ -2800,6 +2866,9 @@
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Només podeu acceptar 3 invitacions en un període de 6 mesos. Poseu-vos en contacte amb ${ supportLink } si necessiteu una excepció."
       ],
+      "You cannot accept this invitation with your current plan.": [
+        "No podeu acceptar aquesta invitació amb el vostre pla actual."
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
@@ -2820,6 +2889,9 @@
       "You need to configure a custom domain before creating a new user.": [
         "Heu de configurar un domini personalitzat abans de crear un usuari."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
+        "Esteu convidat a enllaçar el vostre compte de ${ BRAND_NAME } a aquest pla familiar i gaudir junts de totes les característiques prèmium de ${ brandOrAppName }."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "El vostre compte té més adreces de correu electrònic de les que teniu disponibles en aquest pla. ${ addressSettingsLink }"
       ],
@@ -2833,6 +2905,9 @@
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Creeu i gestioneu els membres de la família i assigneu-los espai d'emmagatzematge compartit entre ${ DRIVE_APP_NAME } i ${ MAIL_APP_NAME }."
+      ],
+      "Create and manage family members.": [
+        "Creu i gestioneu els membres de la família."
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si l'usuari ja té una adreça ${ MAIL_APP_NAME }, introduïu-la aquí. En cas contrari, primer haurà de crear un compte."
@@ -2954,9 +3029,6 @@
       ],
       "Continue": [
         "Continua"
-      ],
-      "Dark Web Monitoring": [
-        "Monitoratge de la web fosca"
       ],
       "Fastest VPN servers": [
         "Els servidors VPN més ràpids"
@@ -3325,6 +3397,10 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Afegiu aquest registre al domini, al tauler de control del registrador de noms de domini"
       ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "S'ha trobat ${ itemsCount } suggeriment. Utilitzeu el teclat per navegar.",
+        "S'han trobat ${ itemsCount } suggeriments. Utilitzeu el teclat per navegar."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
       ]
@@ -3680,6 +3756,9 @@
         "S'està eliminant ${ deletedServerCount } servidor de passarel·la",
         "S'estan eliminant ${ deletedServerCount } servidors de passarel·la"
       ],
+      "Disabled on ${ formattedDateAndTime }": [
+        "Desactivació el ${ formattedDateAndTime }"
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -3758,6 +3837,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Habiliteu l'inici de sessió únic per a mantenir segura la vostra organització"
+      ],
+      "Enabled on ${ formattedDateAndTime }": [
+        "Activació el ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "S'ha rebut l'URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.com/sso/saml)."
@@ -3857,6 +3939,9 @@
       ],
       "High Priority": [
         "Alta prioritat"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Hi ha d'haver un lloc on descarregar o copiar l'empremta electrònica del certificat del proveïdor d'identitat. Simplement, enganxeu-la al camp de l'àrea de text."
@@ -4149,6 +4234,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Existeixen altres administradors a la teva organització, ets el responsable de comunicar'ls-hi la nova contrasenya."
       ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - S'ha confirmat el correu electrònic personalitzat."
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - S'ha creat un correu electrònic personalitzat."
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - S'ha eliminat el correu electrònic personalitzat."
+      ],
       "password": [
         "contrasenya"
       ],
@@ -4198,6 +4292,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduïu la frase de recuperació de 12 paraules associada amb el vostre compte."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ remainingCreditsFormatted } crèdits restants."
       ],
       "please open a support ticket": [
         "obriu un tiquet de suport"
@@ -4303,6 +4400,9 @@
       ],
       "SCIM token active": [
         "Testimoni SCIM actiu"
+      ],
+      "Search by an email address to begin": [
+        "Cerqueu per adreça de correu electrònic per començar."
       ],
       "Secure your ${ BRAND_NAME } Account": [
         "Protegiu el vostre compte de ${ BRAND_NAME }"
@@ -4830,6 +4930,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Se us redirigirà a ${ destination } després d'iniciar la sessió."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Perdreu accés a funcions de ${ planTitle } en aquesta data."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
@@ -5502,6 +5605,9 @@
       "What is your main reason for canceling or downgrading?": [
         "Quin és el vostre principal motiu per cancel·lar o reduir la subscripció?"
       ],
+      "Who can send to this group address?": [
+        "Qui pot enviar missatges a aquesta adreça de grup?"
+      ],
       "Why would you like to cancel?": [
         "Per què voleu cancel·lar?"
       ],
@@ -5769,26 +5875,6 @@
         "Oferta especial"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
-      ],
-      "10 email addresses": [
-        "10 adreces de correu electrònic"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Neteja automàtica del correu brossa i la paperera"
-      ],
-      "Custom schedule send and snooze times": [
-        "Personalització de l'hora d'enviament i del temps de posposició"
-      ],
-      "Support for 1 custom email domain": [
-        "Suport per a 1 domini de correu personalitzat"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Carpetes, etiquetes i filtres il·limitats"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Es renova per ${ renewablePrice } i ho podeu cancel·lar en qualsevol moment"
@@ -5938,6 +6024,9 @@
       ],
       "Upgrade now": [
         "Millora ara"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: action": {
@@ -6090,6 +6179,12 @@
       ],
       "Advanced network security": [
         "Seguretat de xarxa avançada"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tots els productes i funcions de ${ BRAND_NAME }"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Tots els serveis prèmium de ${ BRAND_NAME }. Una subscripció senzilla"
       ],
       "Auto-delete Spam and Trash": [
         "Neteja automàticament el correu brossa i la paperera"
@@ -6379,6 +6474,9 @@
       "Unlimited messages per day": [
         "Missatges diaris il·limitats"
       ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Nombre il·limitat de caixes fortes de ${ PASS_SHORT_APP_NAME } compartides per usuari"
+      ],
       "Unlimited shared vaults with access permissions": [
         "Caixes fortes compartides il·limitades amb permisos d'accés"
       ],
@@ -6592,6 +6690,9 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
       ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, sincronització automàtica i compartició de fitxers xifrats."
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge d’extrem a extrem. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email, etc."
       ],
@@ -6634,6 +6735,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Servidors dedicats amb adreces IP dedicades poden ser afegits a portes d'enllaç privades per a activar un control d'accés més optimitzat"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors"
@@ -6694,6 +6798,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalitzeu la vostra signatura de correu electrònic amb logos, imatges, icones de xarxes socials, enllaços als detalls de contacte, etc."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "L'Equip per a l'Èxit del Client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu per a clients amb almenys 20 usuaris."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."
@@ -7193,6 +7300,9 @@
       ],
       "Introducing ${ passFamilyPlanName }": [
         "Presentem ${ passFamilyPlanName }"
+      ],
+      "Limited-time deal.": [
+        "Oferta per temps limitat."
       ]
     },
     "password_reset: info": {
@@ -7381,6 +7491,11 @@
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
       ]
     },
+    "Payments.Sepa": {
+      "Street address, postal code, and city": [
+        "Adreça, codi postal i ciutat"
+      ]
+    },
     "Permission": {
       "No permission": [
         "Sense permís"
@@ -7464,6 +7579,9 @@
       ],
       "Search for a user or address": [
         "Cerca un usuari o adreça"
+      ],
+      "Search for an email or IP address": [
+        "Busqueu un correu electrònic o una adreça IP"
       ],
       "Search users": [
         "Cercar usuaris"
@@ -7632,6 +7750,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "No s'ha completat l'inici de sessió."
+      ],
       "Something went wrong": [
         "Alguna cosa ha anat malament."
       ]
@@ -7994,6 +8115,11 @@
         "Ens posarem en contacte de nou quan hi hagi disponible el restabliment de contrasenya."
       ]
     },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "a la secció de compte i contrasenya"
+      ]
+    },
     "session_recovery:initiation:notification": {
       "Password reset confirmed": [
         "S'ha confirmat el restabliment de la contrasenya."
@@ -8131,9 +8257,6 @@
       "6 users": [
         "6 usuaris"
       ],
-      "64 countries": [
-        "64 països"
-      ],
       "All paid Mail and Calendar features": [
         "Totes les característiques de pagament de Correu i Calendari"
       ],
@@ -8245,15 +8368,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Oferta del Black Friday"
-      ],
-      "Cyber Week Sale": [
-        "Oferta Cyber Week"
-      ],
-      "End of Year Sale": [
-        "Oferta de final d'any"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Milloreu i estalvieu més amb 2 anys de ${ planName }"
       ]
@@ -8264,9 +8378,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis d'estríming a tot el món, bloquejador de programari maliciós i anuncis, etc."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Accediu al contingut dels serveis de transmissió en línia, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol xifrat, compartició de fitxers, etc."
@@ -8299,8 +8410,17 @@
       "Access granted": [
         "S'ha atorgat l'accés."
       ],
+      "Approve or deny it now": [
+        "Aprova-lo o rebutja-lo"
+      ],
+      "Approve the sign-in from another device": [
+        "Aprova l'inici de sessió des d'un altre dispositiu"
+      ],
       "Ask administrator for help": [
         "Demaneu ajuda a l'administrador"
+      ],
+      "Ask your administrator for access?": [
+        "Voleu demanar accés al vostre administrador?"
       ],
       "Backup password": [
         "Contrasenya de recuperació"
@@ -8368,6 +8488,12 @@
       "Single sign-on removed": [
         "S'ha esborrat l'inici de sessió únic."
       ],
+      "Tried to sign in at": [
+        "He intentat iniciar sessió a"
+      ],
+      "Use backup password instead": [
+        "Utilitza la contrasenya de recuperació en lloc"
+      ],
       "User details:": [
         "Detalls de l'usuari:"
       ]
@@ -8378,6 +8504,12 @@
       ],
       "Inactive": [
         "Inactiu"
+      ],
+      "Pending activation": [
+        "Activació pendent"
+      ],
+      "Pending admin activation": [
+        "Activació de l'administrador pendent"
       ],
       "Rejected": [
         "Rebutjat"
@@ -8584,6 +8716,9 @@
       "Got it": [
         "Entesos"
       ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Inicieu la sessió al vostre compte de l'App Store d'Apple i, després, seleccioneu ${ subscriptions }."
+      ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Inicieu la sessió al vostre compte de la Play Store i, després, premeu ${ subscriptions }."
       ],
@@ -8606,6 +8741,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
+      ],
       "${ dayDiff } day left": [
         "Queda ${ dayDiff } dia.",
         "Queden ${ dayDiff } dies."
@@ -8750,6 +8888,12 @@
       "How our customer support team got our VPN app directly into people's hands.": [
         "Com el nostre equip d'atenció al client va posar la nostra aplicació VPN directament en mans de la gent."
       ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Com vam lluitar quan ${ BRAND_NAME } va ser bloquejat en una campanya agressiva."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Com vam donar suport als activistes locals quan la privacitat i la llibertat d'expressió es van veure amenaçades."
+      ],
       "Invited members will be removed from your organization": [
         "Els membres convidats seran eliminats de l'organització"
       ],
@@ -8827,6 +8971,9 @@
       ],
       "Unlimited privacy for two": [
         "Privadesa il·limitada per a dos"
+      ],
+      "Upload any new files": [
+        "Carregueu qualsevol fitxer nou"
       ],
       "Users won’t be able to manage their calendars": [
         "Els usuaris no podran gestionar els seus calendaris"
@@ -9268,6 +9415,10 @@
       ],
       "Activate user": [
         "Activa l'usuari"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "Voleu afegir ${ totalServerCount } servidor?",
+        "Voleu afegir ${ totalServerCount } servidors?"
       ],
       "Add address": [
         "Afegeix una adreça"
@@ -9974,6 +10125,9 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
+      "IP address (Internet Service Provider)": [
+        "Adreça IP (proveïdor de serveis d'Internet)"
+      ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Els membres que no utilitzen l'A2F rebran un correu electrònic sol·licitant-los que ho habiliten al més aviat possible."
       ],
@@ -10033,6 +10187,9 @@
     "Tor out of date": {
       "stable release": [
         "versió estable"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Aquesta versió del Navegador TOR no està suportada. Actualitzeu a la darrera ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10041,6 +10198,9 @@
       ],
       "Delete request": [
         "Elimina la sol·licitud"
+      ],
+      "Delete request to access user data?": [
+        "Voleu eliminar la sol·licitud d'accés a les dades de l'usuari?"
       ],
       "Enable manually": [
         "Activa manualment"
@@ -10051,6 +10211,9 @@
       "Private user": [
         "Usuari privat"
       ],
+      "Request user permission for data access": [
+        "Sol·licita permís a l'usuari per accedir a les dades"
+      ],
       "Revoke access": [
         "Revoca l'accés"
       ],
@@ -10059,6 +10222,9 @@
       ],
       "Send request": [
         "Envia una sol·licitud"
+      ],
+      "The user must have an address to request data access": [
+        "L'usuari ha de tenir una adreça per sol·licitar l'accés a les dades."
       ]
     },
     "upsell panel": {
