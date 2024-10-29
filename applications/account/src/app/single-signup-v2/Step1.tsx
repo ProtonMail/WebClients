@@ -812,12 +812,13 @@ const Step1 = ({
                 )}
                 <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
                     {(() => {
+                        const hasBenefits = !model.session?.user;
                         const step2Summary = (
                             <RightSummary
                                 variant={isDarkBg ? 'gradientBorder' : 'gradient'}
-                                className={clsx('p-6 hidden md:flex rounded-xl')}
+                                className={clsx('p-6 hidden md:flex rounded-xl', !hasBenefits && 'visibility-hidden')}
                             >
-                                {benefits}
+                                {hasBenefits ? benefits : null}
                             </RightSummary>
                         );
 
