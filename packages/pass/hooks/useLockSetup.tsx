@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -29,33 +29,63 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-export const useLockSetup = () => {
+type LockState = {
+    /** If `true`, user should not be able to toggle the TTL */
+    orgControlled: boolean;
+    /** Loading state for any ongoing lock mutation */
+    loading: boolean;
+    /** Current lock mode (Accounts for optimistic updates) */
+    mode: LockMode;
+    /** TTL Value is disabled when `orgControlled` or `LockMode.NONE` */
+    ttl: { value: Maybe<number>; disabled: boolean };
+};
+
+type BiometricsState = {
+    /** `true` if biometric already setup or on successful `canCheckPresence` */
+    enabled: boolean;
+    /** Biometrics is a paid only feature (disabled for free users) */
+    needsUpgrade: boolean;
+};
+
+type PasswordState = {
+    /** Password lock can be enabled if the user is not in two
+     * password mode OR if he has a valid offline password. */
+    enabled: boolean;
+};
+
+interface LockSetup {
+    lock: LockState;
+    biometrics: BiometricsState;
+    password: PasswordState;
+    setLockMode: (mode: LockMode) => Promise<void>;
+    setLockTTL: (ttl: number) => Promise<void>;
+}
+
+export const useLockSetup = (): LockSetup => {
     const { getBiometricsKey } = usePassCore();
+    const { createNotification } = useNotifications();
+
     const confirmPin = usePinUnlock();
     const confirmPassword = usePasswordUnlock();
+    const spotlight = useSpotlight();
     const authStore = useAuthStore();
+
     const org = useOrganization({ sync: true });
     const orgLockTTL = org?.settings.ForceLockSeconds;
 
-    const { createNotification } = useNotifications();
-    const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
-    const lockTTL = useSelector(selectLockTTL);
     const currentLockMode = useSelector(selectLockMode);
-    const twoPwdMode = pwdMode === SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE;
-    const hasOfflinePassword = authStore?.hasOfflinePassword() ?? false;
     const hasExtraPassword = useSelector(selectExtraPasswordEnabled);
-    const canPasswordLock = !EXTENSION_BUILD && (!twoPwdMode || hasOfflinePassword);
-    const canToggleTTL = currentLockMode !== LockMode.NONE && !orgLockTTL;
-    const [biometricsEnabled, setBiometricsEnabled] = useState(currentLockMode === LockMode.BIOMETRICS);
+    const lockTTL = useSelector(selectLockTTL);
+    const pwdMode = useSelector(selectUserSettings)?.Password?.Mode;
     const plan = useSelector(selectPassPlan);
     const isFreePlan = !isPaidPlan(plan);
-    const spotlight = useSpotlight();
 
     /** When switching locks, the next lock might temporarily
      * be set to `LockMode.NONE` before updating to the new lock.
      * This temporary state change can cause flickering. To avoid
      * this, we use an optimistic value for the next lock. */
     const [nextLock, setNextLock] = useState<MaybeNull<{ ttl: number; mode: LockMode }>>(null);
+    const [biometricsEnabled, setBiometricsEnabled] = useState(currentLockMode === LockMode.BIOMETRICS);
 
     const unlock = useUnlock((err) => createNotification({ type: 'error', text: err.message }));
 
@@ -66,7 +96,7 @@ export const useLockSetup = () => {
         onSuccess: () => setNextLock(null),
     });
 
-    const handleLockModeSwitch = async (mode: LockMode) => {
+    const setLockMode = async (mode: LockMode) => {
         if (isFreePlan && mode === LockMode.BIOMETRICS) {
             return spotlight.setUpselling({
                 type: 'pass-plus',
@@ -176,7 +206,7 @@ export const useLockSetup = () => {
         }
     };
 
-    const handleLockTTLChange = async (ttl: number) => {
+    const setLockTTL = async (ttl: number) => {
         switch (currentLockMode) {
             case LockMode.SESSION:
                 return confirmPin({
@@ -220,16 +250,38 @@ export const useLockSetup = () => {
         })().catch(noop);
     }, [currentLockMode]);
 
+    const lock = useMemo(
+        () => ({
+            orgControlled: Boolean(orgLockTTL),
+            loading: createLock.loading,
+            mode: nextLock?.mode ?? currentLockMode,
+            ttl: {
+                value: nextLock?.ttl || orgLockTTL || lockTTL,
+                disabled: Boolean(currentLockMode === LockMode.NONE || orgLockTTL),
+            },
+        }),
+        [currentLockMode, nextLock, orgLockTTL, lockTTL, createLock.loading]
+    );
+
+    const biometrics = useMemo(
+        () => ({ enabled: biometricsEnabled, needsUpgrade: isFreePlan }),
+        [biometricsEnabled, isFreePlan]
+    );
+
+    const password = useMemo(
+        () => ({
+            enabled:
+                !EXTENSION_BUILD &&
+                (pwdMode !== SETTINGS_PASSWORD_MODE.TWO_PASSWORD_MODE || (authStore?.hasOfflinePassword() ?? false)),
+        }),
+        [pwdMode]
+    );
+
     return {
-        handleLockModeSwitch,
-        handleLockTTLChange,
-        lockValue: nextLock?.mode ?? currentLockMode,
-        biometricsEnabled,
-        canPasswordLock,
-        canToggleTTL,
-        ttlOrgValue: orgLockTTL,
-        ttlValue: nextLock?.ttl || orgLockTTL || lockTTL,
-        loading: createLock.loading,
-        isFreePlan,
+        lock,
+        biometrics,
+        password,
+        setLockMode,
+        setLockTTL,
     };
 };
