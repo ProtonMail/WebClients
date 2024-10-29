@@ -4,10 +4,10 @@ import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Price from '@proton/components/components/price/Price';
 import { usePlans } from '@proton/components/hooks';
-import { PLANS } from '@proton/payments/index';
+import type { Currency } from '@proton/payments';
+import { PLANS } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, CYCLE, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import type { Currency } from '@proton/shared/lib/interfaces';
 import zoomUpsellSvg from '@proton/styles/assets/img/illustrations/upsell-zoom-header.svg';
 
 import NewUpsellModal from '../NewUpsellModal';

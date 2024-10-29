@@ -79,6 +79,15 @@ const slice = createSlice({
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
         },
+        updateOrganizationSettings: (
+            state,
+            action: PayloadAction<{ value: Partial<OrganizationWithSettings['Settings']> }>
+        ) => {
+            if (!state.value) {
+                return;
+            }
+            state.value.Settings = updateObject(state.value.Settings, action.payload.value);
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(serverEvent, (state, action) => {
@@ -195,6 +204,7 @@ const modelThunk = (options?: {
 };
 
 export const organizationReducer = { [name]: slice.reducer };
+export const organizationActions = slice.actions;
 export const organizationThunk = modelThunk;
 
 export const MAX_CHARS_API = {
