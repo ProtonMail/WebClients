@@ -36,6 +36,8 @@ interface Props {
     isZoomIntegrationEnabled: boolean;
 }
 
+const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
+
 export const getOrganizationAppRoutes = ({
     app,
     user,
@@ -101,7 +103,8 @@ export const getOrganizationAppRoutes = ({
     const canShowVideoConferenceSection =
         isZoomIntegrationEnabled &&
         (hasActiveOrganizationKey || (isPartOfFamily && hasOrganization)) &&
-        user.hasPaidMail;
+        user.hasPaidMail &&
+        videoConferenceValidApplications.has(app);
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
