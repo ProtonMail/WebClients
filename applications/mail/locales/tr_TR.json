@@ -1612,43 +1612,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } depolama alanı"
-      ],
       "1 user": [
         "1 kullanıcı"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "65 üzerindeki ülkede 3.000 üzerinde sunucu"
-      ],
       "6 users": [
         "6 kullanıcı"
       ],
-      "Access content worldwide": [
-        "Dünya'daki tüm içeriklere erişin"
-      ],
-      "Ad-blocker and malware protection": [
-        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
-      ],
-      "Extended version history": [
-        "Genişletilmiş sürüm geçmişi"
-      ],
-      "High speed streaming": [
-        "Yüksek hızlı yayın akışı izleme"
-      ],
       "Premium Password Manager": [
         "Ücretli parola yöneticisi"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "İndirimler standart aylık ücretlendirmeye göre yapılır."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak standart tarife ve süre üzerinden yenilenir."
       ]
     },
     "bf2023: Offers": {
@@ -1672,39 +1646,153 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 65 üzerindeki ülkede 3.000 üzerinde sunucu, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Netflix, Disney+ ve Prime Video ve diğer yayın akışı hizmetlerindeki içeriğe her yerden erişin."
-      ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Yerel internet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
-      ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve diğer özellikleri içerir.",
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve diğer özellikleri içerir."
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve diğer özellikler."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
       ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus ve ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "E-postalarınızı ve zaman planınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşma ve diğer özellikler."
+      "${ storageSize } storage": [
+        "${ storageSize } depolama alanı"
       ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      "1 TB total": [
+        "Toplam 1 TB"
+      ],
+      "1 user": [
+        "1 kullanıcı"
+      ],
+      "1 user account": [
+        "1 kullanıcı hesabı"
+      ],
+      "10 email addresses": [
+        "10 e-posta adresi"
+      ],
+      "2 users": [
+        "2 kullanıcı"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 kullanıcı hesabı"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "8500+ servers across 110+ countries": [
+        "110 üzerinde ülkede 8.500 üzerinde sunucu"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
+      ],
+      "Admin panel to manage your family": [
+        "Ailenizi yönetmek için yönetici panosu"
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
+      "Dark Web Monitoring": [
+        "Karanlık ağ izleme"
+      ],
+      "Easily add or remove users": [
+        "Kullanıcıları kolayca ekleme ve çıkarma"
+      ],
+      "High speed streaming": [
+        "Yüksek hızda yayın akışı izleme"
+      ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Password health alerts": [
+        "Parola sağlığı uyarıları"
+      ],
+      "Private photo backup": [
+        "Gizli fotoğraf yedekleme"
+      ],
+      "Protect 10 devices at a time": [
+        "Aynı anda 10 aygıtı koruyun"
+      ],
+      "Secure file storage & sharing": [
+        "Güvenli dosya depolama alanı ve paylaşımı"
+      ],
+      "Secure vault and link sharing": [
+        "Güvenli kasa ve bağlantı paylaşımı"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adları"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Sınırsız sayıda oturum açma, not ve kredi kartı kaydı"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ],
+      "Version history": [
+        "Sürüm geçmişi"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "İndirimler, standart aylık fiyatlara uygulanır"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Aboneliğiniz, fatura döneminizin sonunda standart indirimli oranla ve süreyle otomatik olarak yenilenir."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "En çok kullanılan"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal } için"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "1 ay sonra ${ regularAmount } tutarla yenilenir."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 110 üzerinde ülkede 8.500 üzerinde sunucu, 10 aygıt, yüksek hızlı yayın akışı izleme, reklam engelleyici ve kötü amaçlı yazılım koruması, VPN Accelerator ve diğer şeyler."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Netflix, Disney+, Prime Video ve diğer internet yayın akışı içeriklerine herhangi bir yerden erişin."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Tüm aygıtlarınızda güvenli oturum açma. Sınırsız sayıda hide-my-email takma adı, paylaşım, bütünleşik iki adımlı doğrulama, karanlık ağ izleme ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internet üzerinde gezinme hızınızı artırır."
+        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyerek gezinmenizi hızlandırır."
       ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Depolama alanı tüm ${ BRAND_NAME } uygulamaları arasında paylaşılır."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Her dosyanın 200 taneye kadar sürümünü 10 yıla kadar tutun."
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
       ]
     },
     "Billing cycle": {
@@ -3876,33 +3964,6 @@
         "Şifrelenmiş üst bilgiler dosya adı"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "${ DRIVE_SHORT_APP_NAME } sürüm geçmişi, binlerce yüksek hızlı ${ VPN_SHORT_APP_NAME } sunucusuna erişim, ${ PASS_SHORT_APP_NAME } parola paylaşımı ve diğer özellikler."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 kullanıcı"
-      ],
-      "Early access to new apps and features": [
-        "Yeni uygulama ve özelliklere erken erişim"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulamasına erken erişim"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_APP_NAME } özellikleri"
-      ]
-    },
     "Error": {
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } dış hesabınızla bağlantı kuramadı"
@@ -4901,11 +4962,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
-      ]
-    },
-    "Feature": {
-      "Dark Web Monitoring": [
-        "Karanlık ağ izleme"
       ]
     },
     "fido2: Error": {
@@ -8854,26 +8910,6 @@
         "Özel teklif"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } masaüstü uygulaması"
-      ],
-      "10 email addresses": [
-        "10 e-posta adresi"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Otomatik olarak istenmeyenleri ve çöpü boşaltma"
-      ],
-      "Custom schedule send and snooze times": [
-        "Özel zamanlanmış gönderim ve erteleme süreleri"
-      ],
-      "Support for 1 custom email domain": [
-        "1 özel e-posta etki alanı desteği"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Sınırsız klasör, etiket ve süzgeç"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "${ renewablePrice } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz"
@@ -11312,9 +11348,6 @@
       "6 users": [
         "6 kullanıcı"
       ],
-      "64 countries": [
-        "64 ülkede"
-      ],
       "All paid Mail and Calendar features": [
         "Tüm ücretli Mail ve Calendar özellikleri"
       ],
@@ -11426,15 +11459,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Muhteşem Cuma kampanyası"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week kampanyası"
-      ],
-      "End of Year Sale": [
-        "Yıl sonu kampanyası"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "2 yıllık ${ planName } tarifesine yükselterek daha fazla indirim kazanın"
       ]
@@ -11445,9 +11469,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 60 üzerinde ülkede 1.700 sunucu, en yüksek VPN hızı, 10 VPN bağlantısı, tüm dünyadaki yayın akış hizmetlerine erişim, kötü amaçlı yazılımları ve reklamları engelleme ve diğer özellikler."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız hide-my-email takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
