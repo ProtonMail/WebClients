@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
+import { VideoConferenceOrganizationSection } from '@proton/calendar';
 import {
     AuthenticationLogs,
     CatchAllSection,
@@ -46,7 +47,7 @@ const OrganizationSettingsRouter = ({
     const [organization] = useOrganization();
 
     const {
-        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso, connectionEvents, groups, scribe },
+        routes: { gateways, setup, domains, orgKeys, users, filter, security, sso, connectionEvents, groups, scribe, videoConf },
     } = organizationAppRoutes;
 
     if (!organizationAppRoutes.available) {
@@ -67,6 +68,13 @@ const OrganizationSettingsRouter = ({
                     <PrivateMainSettingsArea config={setup}>
                         <OrganizationScheduleCallSection onOpenChat={onOpenChat} />
                         <OrganizationSection organization={organization} app={app} />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
+            {getIsSectionAvailable(videoConf) && (
+                <Route path={getSectionPath(path, videoConf)}>
+                    <PrivateMainSettingsArea config={videoConf}>
+                        <VideoConferenceOrganizationSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

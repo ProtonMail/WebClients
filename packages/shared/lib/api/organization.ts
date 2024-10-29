@@ -43,13 +43,15 @@ export const deleteOrganizationLogo = () => ({
 export const updateOrganizationSettings = ({
     ShowName,
     ShowScribeWritingAssistant,
+    VideoConferencingEnabled,
 }: {
     ShowName?: boolean;
     ShowScribeWritingAssistant?: boolean;
+    VideoConferencingEnabled?: boolean;
 }) => ({
     url: 'core/v4/organizations/settings',
     method: 'put',
-    data: { ShowName, ShowScribeWritingAssistant },
+    data: { ShowName, ShowScribeWritingAssistant, VideoConferencingEnabled },
 });
 
 export const getOrganizationSettings = () => ({

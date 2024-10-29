@@ -276,11 +276,7 @@ const PopoverEventContent = ({
 
     return (
         <>
-            <VideoConferencingWidgetConfig
-                description={model.description}
-                location={model.location}
-                widgetLocation="calendar"
-            />
+            <VideoConferencingWidgetConfig model={model} widgetLocation="calendar" />
             {sanitizedLocation ? (
                 <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-pin">
                     <span className="text-break" dangerouslySetInnerHTML={{ __html: sanitizedLocation }} />

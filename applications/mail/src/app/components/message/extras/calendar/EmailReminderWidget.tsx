@@ -403,11 +403,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                         </IconRow>
 
                         <div className="mb-4">
-                            <VideoConferencingWidgetConfig
-                                location={vevent.location?.value?.trim()}
-                                description={vevent.description?.value}
-                                widgetLocation="mail-headers"
-                            />
+                            <VideoConferencingWidgetConfig model={vevent} widgetLocation="mail-headers" />
                         </div>
                         {!!sanitizedAndUrlifiedLocation && (
                             <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName={labelClassName}>

@@ -1,3 +1,4 @@
+import { getVideoConferencingData } from '@proton/calendar';
 import { EVENT_VERIFICATION_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';
@@ -46,6 +47,8 @@ export const propertiesToModel = ({
 
     const { start, end } = propertiesToDateTimeModel(dtstart, getDtendProperty(veventComponent), isAllDay, tzid);
     const { selfAttendeeIndex, selfAddress } = selfAddressData || {};
+    const { meetingId, meetingUrl, password } = getVideoConferencingData(veventComponent);
+
     return {
         uid: uid ? uid.value : undefined,
         frequencyModel: propertiesToFrequencyModel(rrule, start),
@@ -65,6 +68,9 @@ export const propertiesToModel = ({
         selfAddress,
         start,
         end,
+        conferenceId: meetingId,
+        conferenceUrl: meetingUrl,
+        conferencePasscode: password,
         rest,
     };
 };
