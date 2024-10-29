@@ -901,37 +901,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } tárhely"
-      ],
       "1 user": [
         "1 felhasználó"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "3,000+ szerver több mint 65 országban"
-      ],
       "6 users": [
         "6 felhasználó"
       ],
-      "Access content worldwide": [
-        "Hozzáférés tartalmakhoz világszerte"
-      ],
-      "Ad-blocker and malware protection": [
-        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
-      ],
-      "High speed streaming": [
-        "Nagy sebességű videózás"
-      ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "A kedvezmények a standard havi árazás alapján kerülnek kiszámításra."
       ]
     },
     "bf2023: Offers": {
@@ -949,21 +929,13 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Tartalmazza ${ domains } egyéni e-mail domain név, ${ addresses } e-mail cím, korlátlan hide-my-email e-mail álnév, naptármegosztás és még sok más lehetőség támogatását.",
-        "Tartalmazza ${ domains } egyéni e-mail domain név, ${ addresses } e-mail cím, korlátlan hide-my-email e-mail álnév, naptármegosztás és még sok más lehetőség támogatását."
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Saját domain név használatát is lehetővé teszi. 15 e-mail cím, korlátlan számú hide-my-email e-mail álnév, naptár megosztás és további lehetőségek."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Változások megjegyzését, titkosított megosztást és további lehetőségeket tartalmaz."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "A tárhelye meg van osztva minden ${ BRAND_NAME } alkalmazás között."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -2608,17 +2580,6 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Frissítés egy eseményhez: ${ formattedStart }"
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 felhasználó"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Korai hozzáférés a ${ MAIL_APP_NAME } asztali alkalmazáshoz"
       ]
     },
     "Error": {
@@ -5709,23 +5670,6 @@
         "Különleges ajánlat"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } asztali alkalmazás"
-      ],
-      "10 email addresses": [
-        "10 e-mail cím"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Levélszemét és Lomtár automatikus törlése"
-      ],
-      "Support for 1 custom email domain": [
-        "Egy saját e-mail domain név használata"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Korlátlan számú mappa, címke és szűrő"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Előfizetés megújul ${ renewablePrice }, bármikor lemondhatja"
@@ -7631,9 +7575,6 @@
       "6 users": [
         "6 felhasználó"
       ],
-      "64 countries": [
-        "64 ország"
-      ],
       "All paid Mail and Calendar features": [
         "Minden fizetős Mail és Calendar funkció"
       ],
@@ -7742,15 +7683,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday Akció"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Heti Akció"
-      ],
-      "End of Year Sale": [
-        "Évvégi Akció"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Váltson csomagot és takarítson meg mégtöbbet a 2 éves ${ planName } csomaggal"
       ]
@@ -7761,9 +7693,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Férjen hozzá blokkolt tartalmakhoz és böngésszen biztonságban. 1700 szerver, több mint 64 országban, a legnagyobb VPN sebesség, 10 VPN kapcsolat, videónézés bárhol a világon, vírus- és reklámvédelem, és még továbbiak."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Akárhonnan elérhet videós szolgáltatásokat, mint például Netflix, Disney+ vagy Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Minden prémium szolgáltatásunk a legmagasabb korlátokkal: 100 e-mail cím, 10 saját domain név támogatása, korlátlan számú hide-my-email álnév, naptármegosztás, titkosított felhőalapú tárolás és fájlmegosztás stb."
