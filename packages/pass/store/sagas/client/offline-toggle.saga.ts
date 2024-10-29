@@ -28,12 +28,10 @@ function* offlineToggleWorker(
             throw new Error(message);
         }
 
-        const hasOfflineComponents = authStore.getOfflineKD() && authStore.getOfflineConfig();
-
         /** If the user does not have offline components setup on
          * the authentication store, generate the `offlineConfig`
          * `offlineKD` and persist the session immediately */
-        if (payload.enabled && !hasOfflineComponents) {
+        if (payload.enabled && !authStore.hasOfflinePassword()) {
             const data: OfflineComponents = yield getOfflineComponents(payload.loginPassword);
             authStore.setOfflineConfig(data.offlineConfig);
             authStore.setOfflineKD(data.offlineKD);

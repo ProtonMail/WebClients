@@ -9,6 +9,7 @@ import { useNavigatorOnline } from '@proton/pass/hooks/useNavigatorOnline';
 import type { ApiSubscriptionEvent, MaybeNull } from '@proton/pass/types';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import type { PubSub } from '@proton/pass/utils/pubsub/factory';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
@@ -36,9 +37,10 @@ export const ConnectivityProvider: FC<PropsWithChildren<Props>> = ({ children, o
         asyncLock(() =>
             Promise.resolve(onPing?.())
                 .catch(noop)
-                .finally(async () => {
+                .then(async () => {
                     const apiState = await getApiState?.();
                     setApiOnline(apiState?.online ?? navigator.onLine);
+                    return wait(50); /* ensure refs are synced */
                 })
         ),
         []
