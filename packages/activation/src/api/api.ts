@@ -3,7 +3,7 @@ import { ImportType } from '../interface';
 
 export const getTokens = () => ({
     url: 'oauth-token/v1/tokens',
-    method: 'get',
+    method: 'GET',
 });
 
 export const createToken = (
@@ -13,7 +13,7 @@ export const createToken = (
     }
 ) => ({
     url: 'oauth-token/v1/tokens',
-    method: 'post',
+    method: 'POST',
     data,
 });
 
@@ -25,12 +25,12 @@ export const createSync = (importerID: string) => ({
 
 export const getSyncList = () => ({
     url: 'importer/v1/sync',
-    method: 'get',
+    method: 'GET',
 });
 
 export const resumeSync = (syncId: string) => ({
     url: `importer/v1/sync/${syncId}/resume`,
-    method: 'put',
+    method: 'PUT',
 });
 
 export const deleteSync = (syncId: String) => ({
@@ -40,35 +40,35 @@ export const deleteSync = (syncId: String) => ({
 
 export const createImport = (data: CreateImportPayload) => ({
     url: 'importer/v1/importers',
-    method: 'post',
+    method: 'POST',
     data,
 });
 
 export const getImport = (importerID: string) => ({
     url: `importer/v1/importers/${importerID}`,
-    method: 'get',
+    method: 'GET',
 });
 
 export const updateImport = (importerID: string, data: CreateImportPayload) => ({
     url: `importer/v1/importers/${importerID}`,
-    method: 'put',
+    method: 'PUT',
     data,
 });
 
 export const startImportTask = (data: LaunchImportPayload) => ({
     url: 'importer/v1/importers/start',
-    method: 'post',
+    method: 'POST',
     data,
 });
 
 export const getImportsList = () => ({
     url: 'importer/v1/importers',
-    method: 'get',
+    method: 'GET',
 });
 
 export const getImportReportsList = () => ({
     url: 'importer/v1/reports',
-    method: 'get',
+    method: 'GET',
 });
 
 export const getMailImportData = (
@@ -78,24 +78,24 @@ export const getMailImportData = (
     }
 ) => ({
     url: `importer/v1/mail/importers/${importerID}`,
-    method: 'get',
+    method: 'GET',
     params,
 });
 
 export const getAuthenticationMethod = (params: { Email: string }) => ({
     url: 'importer/v1/mail/importers/authinfo',
-    method: 'get',
+    method: 'GET',
     params,
 });
 
 export const getCalendarImportData = (importerID: string) => ({
     url: `importer/v1/calendar/importers/${importerID}`,
-    method: 'get',
+    method: 'GET',
 });
 
 export const getContactsImportData = (importerID: string) => ({
     url: `importer/v1/contacts/importers/${importerID}`,
-    method: 'get',
+    method: 'GET',
 });
 
 export const deleteImportReport = (reportID: string, importType: ImportType) => {
@@ -113,13 +113,13 @@ export const deleteImportReport = (reportID: string, importType: ImportType) => 
 
 export const cancelImport = (data: { ImporterID: string; Products: ImportType[] }) => ({
     url: 'importer/v1/importers/cancel',
-    method: 'put',
+    method: 'PUT',
     data,
 });
 
 export const resumeImport = (data: { ImporterID: string; Products: ImportType[] }) => ({
     url: 'importer/v1/importers/resume',
-    method: 'put',
+    method: 'PUT',
     data,
 });
 
