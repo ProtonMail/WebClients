@@ -475,6 +475,9 @@
       "Resend code": [
         "Wyślij ponownie kod"
       ],
+      "Resend invitation": [
+        "Wyślij ponownie zaproszenie"
+      ],
       "Reset": [
         "Resetuj"
       ],
@@ -890,43 +893,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } przestrzeni dyskowej"
-      ],
       "1 user": [
         "1 użytkownik"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "Ponad 3000 serwerów w ponad 65 krajach"
-      ],
       "6 users": [
         "6 użytkowników"
       ],
-      "Access content worldwide": [
-        "Dostęp do treści na całym świecie"
-      ],
-      "Ad-blocker and malware protection": [
-        "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
-      ],
-      "Extended version history": [
-        "Rozszerzona historia wersji"
-      ],
-      "High speed streaming": [
-        "Szybki streaming"
-      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
       ]
     },
     "bf2023: header": {
@@ -985,35 +962,13 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Uzyskaj dostęp do zablokowanych treści i ciesz się prywatnym przeglądaniem. Obejmuje więcej niż 3000 serwerów w ponad 65 krajach, najwyższe szybkości VPN, dostęp do usług streamingowych na całym świecie, ochronę przed złośliwym oprogramowaniem i blokady reklam, a także szybkie pobieranie BitTorrent oraz inne funkcje."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+, Prime Video i nie tylko."
-      ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Omijaj lokalne blokady internetowe i cenzurę dzięki naszej globalnej sieci serwerów."
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Loguj się bezpiecznie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów, udostępnianie, zintegrowane uwierzytelnianie dwustopniowe i nie tylko."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje obsługę niestandardowych domen e-mail, 15 adresów e-mail, nieograniczonej liczby aliasów hide-my-email, udostępniania kalendarza i wiele więcej."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, zaszyfrowane udostępnianie plików i nie tylko."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi aplikacjami ${ BRAND_NAME }."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Przechowuj do 200 wersji każdego pliku przez okres aż do 10 lat."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -2411,33 +2366,6 @@
         "Bez nazwy"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Płatne funkcje ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Zawiera historię wersji w ${ DRIVE_SHORT_APP_NAME }, dostęp do tysięcy szybkich serwerów ${ VPN_SHORT_APP_NAME }, udostępnianie w ${ PASS_SHORT_APP_NAME } i wiele więcej."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 użytkowników"
-      ],
-      "Early access to new apps and features": [
-        "Wcześniejszy dostęp do nowych aplikacji i funkcji"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Wcześniejszy dostęp do aplikacji desktopowej ${ MAIL_APP_NAME }"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Płatne funkcje ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
-      ]
-    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
@@ -3057,9 +2985,6 @@
       ],
       "Continue": [
         "Kontynuuj"
-      ],
-      "Dark Web Monitoring": [
-        "Monitoring dark web"
       ],
       "Fastest VPN servers": [
         "Najszybsze serwery VPN"
@@ -6030,26 +5955,6 @@
         "Oferta specjalna"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
-      ],
-      "10 email addresses": [
-        "10 adresów e-mail"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Automatyczne usuwanie Spamu i opróżnianie Kosza"
-      ],
-      "Custom schedule send and snooze times": [
-        "Niestandardowe godziny wysyłania i odkładania wiadomości"
-      ],
-      "Support for 1 custom email domain": [
-        "Wsparcie dla 1 niestandardowej domeny e-mail"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Nieograniczona liczba folderów, etykiet i filtrów"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Odnowienie za ${ renewablePrice }. Anuluj w dowolnym momencie"
@@ -8577,9 +8482,6 @@
       "6 users": [
         "6 użytkowników"
       ],
-      "64 countries": [
-        "64 kraje"
-      ],
       "All paid Mail and Calendar features": [
         "Wszystkie płatne funkcje usług Mail i Calendar"
       ],
@@ -8693,15 +8595,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Wyprzedaż z okazji Czarnego Piątku"
-      ],
-      "Cyber Week Sale": [
-        "Wyprzedaż Cyber Week"
-      ],
-      "End of Year Sale": [
-        "Wyprzedaż końcoworoczna"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Ulepsz konto i zaoszczędź więcej dzięki dwuletniemu planowi ${ planName }"
       ]
@@ -8712,9 +8605,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Uzyskaj dostęp do zablokowanych treści i przeglądaj prywatnie Internet. Zawiera 1700 serwerów w ponad 60 krajach, najwyższe prędkości VPN, 10 połączeń VPN, usługi streamingu na całym świecie, blokowanie reklam i złośliwego oprogramowania i wiele więcej."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie, udostępnianie plików i wiele więcej."

@@ -1431,7 +1431,7 @@
         "Ingen resultater funnet"
       ],
       "Please try another search term.": [
-        "Vennligst prøv et annet søkeord."
+        "Prøv et annet søkeord."
       ],
       "You don't have any contacts.": [
         "Du har ingen kontakter"
@@ -1612,43 +1612,17 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } lagringsplass"
-      ],
       "1 user": [
         "1 bruker"
       ],
       "3 TB": [
         "3 TB"
       ],
-      "3,000+ servers across 65+ countries": [
-        "3,000+ tjenere i 65+ land"
-      ],
       "6 users": [
         "6 brukere"
       ],
-      "Access content worldwide": [
-        "Få tilgang til innhold over hele verden"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonseblokkering og skadevarebeskyttelse"
-      ],
-      "Extended version history": [
-        "Utvidet versjonshistorikk"
-      ],
-      "High speed streaming": [
-        "Strømming med høy hastighet"
-      ],
       "Premium Password Manager": [
         "Premium passordbehandler"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Rabatter er basert på standard månedspris."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Abonnementet ditt fornyes automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
       ]
     },
     "bf2023: Offers": {
@@ -1672,39 +1646,153 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 3,000+ tjenere i 65+ land , høyeste VPN-hastigheter, tilgang til strømmetjenester verden over, skadevare- og annonseblokkering, raske BitTorrent-nedlastinger og mer."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-skrivebordsapp"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } lagringsplass"
+      ],
+      "1 TB total": [
+        "1 TB totalt"
+      ],
+      "1 user": [
+        "1 bruker"
+      ],
+      "1 user account": [
+        "1 brukerkonto"
+      ],
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "2 users": [
+        "2 brukere"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 brukerkontoer"
+      ],
+      "6 users": [
+        "6 brukere"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ tjenere i 110+ land"
+      ],
+      "Ad-blocker and malware protection": [
+        "Annonseblokkering og skadevarebeskyttelse"
+      ],
+      "Admin panel to manage your family": [
+        "Administrasjonspanel for å administrere familien din"
+      ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
+      ],
+      "Dark Web Monitoring": [
+        "Overvåking av det mørke nettet"
+      ],
+      "Easily add or remove users": [
+        "Legg til eller fjern brukere enkelt"
+      ],
+      "High speed streaming": [
+        "Strømming med høy hastighet"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrert 2FA-autentisering"
+      ],
+      "Online document editor": [
+        "Dokumentredigering på nett"
+      ],
+      "Password health alerts": [
+        "Varsler for passordhelse"
+      ],
+      "Private photo backup": [
+        "Privat sikkerhetskopiering av bilder"
+      ],
+      "Protect 10 devices at a time": [
+        "Beskytt 10 enheter om gangen"
+      ],
+      "Secure file storage & sharing": [
+        "Sikker fillagring og -deling"
+      ],
+      "Secure vault and link sharing": [
+        "Sikker hvelv og deling av koblinger"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrenset antall mapper, etiketter og filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrenset antall hide-my-email-aliaser"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Ubegrenset antall pålogginger, notater, kredittkort"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ],
+      "Version history": [
+        "Versjonshistorikk"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabatter er basert på standard månedspris."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Abonnementet ditt fornyes automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Mest populær"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "for ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Fornyes etter 1 måned til ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ tjenere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få tilgang til innhold på strømmetjenester inkludert Netflix, Disney+, Prime Video og mer fra hvor som helst."
       ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Omgå lokale internettblokkeringer og sensur med vårt globale nettverk av tjenere."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset hide-my-email-aliaser, deling, integrert 2FA, overvåking av det mørke nettet og mer."
       ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer støtte for ${ domains } egendefinerte e-postdomener, ${ addresses } e-postadresse, ubegrensede hide-my-email-aliaser, kalenderdeling og mer.",
-        "Inkluderer støtte for ${ domains } egendefinerte e-postdomener, ${ addresses } e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Sikre e-postene dine med planlegging og ende-til-ende kryptering. Inkluderer støtte for egendefinerte e-postdomener, 15 e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Sikre filene dine med kryptert skylagring. Inkluderer versjonshistorikk, kryptert fildeling og mer."
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Sikre filene dine med kryptert skylagring. Inkluderer dokumentredigering på nett, sikkerhetskopiering av bilder, versjonshistorikk, kryptert fildeling og mer."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen din ved å blokkere annonser, sporere og skadelig programvare."
       ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Lagringsplass er delt mellom alle ${ BRAND_NAME }-apper."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Lagre opptil 200 versjoner av hver fil i opptil 10 år."
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
       ]
     },
     "Billing cycle": {
@@ -1874,7 +1962,7 @@
         "${ participantName } ba om de siste oppdateringene til en hendelse som ikke eksisterer i kalenderen din lenger."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "${ participantName } ba om de siste oppdateringene til en hendelse som ikke samsvarer med invitasjonsdetaljene. Vennligst kontroller invitasjonsdetaljene i kalenderen."
+        "${ participantName } ba om de siste oppdateringene til en hendelse som ikke samsvarer med invitasjonsdetaljene. Kontroller invitasjonsdetaljene i kalenderen."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } takket nei til en invitasjon og foreslo et nytt tidspunkt for en forekomst av denne hendelsen."
@@ -2054,10 +2142,10 @@
         "Denne invitasjonen er utdatert. Hendelsen er oppdatert."
       ],
       "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Dette nye tidsforslaget samsvarer ikke med invitasjonsdetaljene. Vennligst kontroller invitasjonsdetaljene i kalenderen."
+        "Dette nye tidsforslaget samsvarer ikke med invitasjonsdetaljene. Kontroller invitasjonsdetaljene i kalenderen."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "Denne responsen samsvarer ikke med invitasjonsdetaljene. Vennligst kontroller invitasjonsdetaljene i kalenderen."
+        "Denne responsen samsvarer ikke med invitasjonsdetaljene. Kontroller invitasjonsdetaljene i kalenderen."
       ],
       "This response is out of date.": [
         "Denne responsen er utdatert."
@@ -3657,7 +3745,7 @@
         "Mangler funksjon(er)"
       ],
       "Other reason (please comment)": [
-        "Annen årsak (vennligst kommenter)"
+        "Annen årsak (kommenter gjerne)"
       ],
       "Subscription is too expensive": [
         "Abonnementet er for dyrt"
@@ -3876,33 +3964,6 @@
         "Filnavn for krypterte meldingshoder"
       ]
     },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Betalte ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- og ${ PASS_SHORT_APP_NAME }-funksjoner"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Inkluderer versjonshistorikk i ${ DRIVE_SHORT_APP_NAME }, tilgang til tusener av høyhastighets ${ VPN_SHORT_APP_NAME }-tjenere, deling i ${ PASS_SHORT_APP_NAME } og mer."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 TB"
-      ],
-      "6 users": [
-        "6 brukere"
-      ],
-      "Early access to new apps and features": [
-        "Tidlig tilgang til nye apper og funksjoner"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Tidlig tilgang til ${ MAIL_APP_NAME }-skrivebordsappen"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Betalte ${ MAIL_SHORT_APP_NAME }- og ${ CALENDAR_APP_NAME }-funksjoner"
-      ]
-    },
     "Error": {
       "${ BRAND_NAME } can't connect to your external account": [
         "${ BRAND_NAME } kan ikke koble til den eksterne kontoen"
@@ -4061,7 +4122,7 @@
         "Feil under opplasting av vedlegg. Melding er ikke sendt."
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "Kryptering av vedlegg mislyktes. Vennligst forøk igjen."
+        "Kryptering av vedlegg mislyktes. Forsøk igjen."
       ],
       "Filter with this name already exists": [
         "Et filter med dette navnet eksisterer allerede"
@@ -4903,11 +4964,6 @@
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
       ]
     },
-    "Feature": {
-      "Dark Web Monitoring": [
-        "Overvåking av det mørke nettet"
-      ]
-    },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Prøv på nytt."
@@ -5505,16 +5561,16 @@
         "${ BRAND_NAME } kan ikke koble til kontoen din. Vennlist sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Vennligst sørg for at e-posttjeneradressen og portnummeret stemmer."
+        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-posttjenerdressen og portnummeret er riktige."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Vennligst sørg for at:"
+        "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Vennligst sørg for at e-posttjeneradressen og portnummeret stemmer."
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-posttjeneradressen og portnummeret stemmer."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Vennligst sørg for at:"
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
       ],
       "2-step verification is enabled in your external account.": [
         "Totrinnsbekreftelse er aktiveret på din eksterne konto."
@@ -5529,7 +5585,7 @@
         "IMAP-adgang er aktivert på din Yahoo-konto."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "For mange nylige forespørsler. Vennligst forsøk igjen om få øyeblikk."
+        "For mange nylige forespørsler. Prøv igjen om noen få øyeblikk."
       ],
       "Use your app password if:": [
         "Bruk app-passordet ditt hvis:"
@@ -6598,7 +6654,7 @@
         "Status for nedlasting av melding:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "Meldingsutløp fungerer ut-av-esken når du sender e-post til andre ${ MAIL_APP_NAME }-brukere. For å sende utløpende e-postmeldinger til ikke-${ BRAND_NAME }-brukere, vennligst avbryt og legg til passordbeskyttelse til e-posten din."
+        "Meldingsutløp fungerer ut-av-esken når du sender e-post til andre ${ MAIL_APP_NAME }-brukere. For å sende utløpende e-postmeldinger til ikke-${ BRAND_NAME }-brukere, avbryt og legg til passordbeskyttelse til e-posten din."
       ],
       "Message headers": [
         "Meldingoverskrifter"
@@ -8854,26 +8910,6 @@
         "Spesialtilbud"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-skrivebordsapp"
-      ],
-      "10 email addresses": [
-        "10 e-postadresser"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Auto-slett søppelpost og papirkurv"
-      ],
-      "Custom schedule send and snooze times": [
-        "Egendefinerte tidsplaner, sende- og utsettelsestider"
-      ],
-      "Support for 1 custom email domain": [
-        "Støtte for 1 egendefinert e-postdomene"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Ubegrenset antall mapper, etiketter og filtre"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Fornyes til ${ renewablePrice }, avbryt når som helst"
@@ -10431,16 +10467,16 @@
         "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
       "Please select billing country": [
-        "Vennligst velg faktureringsland"
+        "Velg faktureringsland"
       ],
       "Please select billing state": [
-        "Vennligst velg faktureringsstat"
+        "Velg faktureringsstat"
       ],
       "Please select your billing country first.": [
-        "Vennligst velg faktureringslandet ditt først."
+        "Velg faktureringslandet ditt først."
       ],
       "Please select your billing state first.": [
-        "Vennligst velg faktureringsstaten din først."
+        "Velg faktureringsstaten din først."
       ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
@@ -10817,7 +10853,7 @@
         "Kan ikke sende til arrangøradresse: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again.": [
-        "Kryptering av invitasjonen på nytt mislyktes. Vennligst forsøk igjen."
+        "Kryptering av invitasjonen på nytt mislyktes. Forsøk igjen."
       ]
     },
     "Safety review": {
@@ -11312,9 +11348,6 @@
       "6 users": [
         "6 brukere"
       ],
-      "64 countries": [
-        "64 land"
-      ],
       "All paid Mail and Calendar features": [
         "Alle betalte Mail- og Calendar-funksjoner"
       ],
@@ -11426,15 +11459,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Black Friday-salg"
-      ],
-      "Cyber Week Sale": [
-        "Cyber Week-salg"
-      ],
-      "End of Year Sale": [
-        "Salg ved årsslutt"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Oppgrader og spar mer med 2 år med ${ planName }."
       ]
@@ -11445,9 +11469,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Få tilgang til innhold på strømmetjenester, inkludert Netflix, Disney+ og Prime Video fra hvor som helst."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle våre premium-tjenester med sine høyeste grenser: 100 e-postadresser, støtte for 10 tilpassede domener, ubegrensede hide-my-email-aliaser, kalenderdeling, kryptert skylagring + fildeling og mer."
@@ -11493,7 +11514,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "Kansellerer abonnementet ditt, vennligst vent"
+        "Kansellerer abonnementet ditt, vent litt"
       ]
     },
     "Status": {
@@ -13574,7 +13595,7 @@
         "Vennligst legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Feilrapporter er ikke ende-til-ende-kryptert, vennligst ikke send noe sensitiv informasjon."
+        "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
       ],
       "Skip verification?": [
         "Hopp over bekreftelse?"
@@ -13608,7 +13629,7 @@
         "Denne handlingen er irreversibel. Skriv inn ordet ${ boldDanger } i feltet for å fortsette."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Denne importen kan overskride lagringskapasiteten som for øyeblikket er tilgjengelig på ${ BRAND_NAME }-kontoen. Vennligst vurder å tilpasse importen."
+        "Denne importen kan overskride lagringskapasiteten som for øyeblikket er tilgjengelig på ${ BRAND_NAME }-kontoen. Vurder å tilpasse importen."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."

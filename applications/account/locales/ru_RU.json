@@ -865,6 +865,9 @@
       "Resend code": [
         "Повторно отправить код"
       ],
+      "Resend invitation": [
+        "Отправить повторное приглашение"
+      ],
       "Reset": [
         "Сбросить"
       ],
@@ -1571,34 +1574,11 @@
       "3 TB": [
         "3 ТБ"
       ],
-      "3,000+ servers across 65+ countries": [
-        "Свыше 3000 серверов более чем в 65 странах"
-      ],
       "6 users": [
         "6 пользователей"
       ],
-      "Access content worldwide": [
-        "Доступ к контенту по всему миру"
-      ],
-      "Ad-blocker and malware protection": [
-        "Блокировщик рекламы и защита от вредоносных программ"
-      ],
-      "Extended version history": [
-        "Подробная история версий"
-      ],
-      "High speed streaming": [
-        "Высокоскоростной стриминг"
-      ],
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Скидки рассчитываются исходя из стандартной платы за месяц."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Подписка автоматически продлится на обычный срок по стандартной цене с учетом скидки в конце платёжного цикла."
       ]
     },
     "bf2023: header": {
@@ -1680,41 +1660,13 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше 3000 серверов более чем в 65 странах, высокую скорость VPN-подключения, доступ к стриминговым платформам со всего мира, защиту от вирусов, блокировщик рекламы, быстрое скачивание через BitTorrent и многое другое."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
-      ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
-      ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку ${ domains } пользовательского почтового домена, ${ addresses } адреса электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
-        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
-        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
-        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое."
-      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, 15 адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместный доступ к календарю и не только."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Храните до 200 версий каждого файла сроком до 10 лет."
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     },
     "Billing cycle": {
@@ -3628,25 +3580,6 @@
         ".rpm для Fedora / Red Hat"
       ]
     },
-    "drive_signup_2023: Feature": {
-      "${ totalStorageSize } of storage for free": [
-        "${ totalStorageSize } хранилища бесплатно"
-      ],
-      "End-to-end encrypted": [
-        "Со сквозным шифрованием"
-      ]
-    },
-    "drive_signup_2023: Info": {
-      "Advanced sharing security": [
-        "Дополнительная безопасность совместного доступа"
-      ],
-      "Encrypted cloud storage for all your files": [
-        "Зашифрованное облачное хранилище для всех ваших файлов"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Защищено швейцарскими законами о конфиденциальности"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Создайте бесплатный аккаунт ${ DRIVE_APP_NAME } для защищенного доступа к файлу"
@@ -3688,11 +3621,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Индивидуальные решения для крупных организаций с индивидуальными потребностями"
-      ]
-    },
-    "drive_signup_2024: TitleB2B": {
-      "The only business solution that is:": [
-        "Единственное решение для бизнеса:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4203,33 +4131,6 @@
     "Empty group name": {
       "Unnamed": [
         "Без имени"
-      ]
-    },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Платные функции ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ PASS_SHORT_APP_NAME }"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Включает историю версий в ${ DRIVE_SHORT_APP_NAME }, доступ к тысячам высокоскоростных ${ VPN_SHORT_APP_NAME } серверам, совместное использование в ${ PASS_SHORT_APP_NAME } и другое"
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 ТБ"
-      ],
-      "6 users": [
-        "6 пользователей"
-      ],
-      "Early access to new apps and features": [
-        "Early access to new apps and features"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Ранний доступ к приложению ${ MAIL_APP_NAME } для настольных компьютеров"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Платные функции ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -5484,9 +5385,6 @@
       ],
       "Continue": [
         "Продолжить"
-      ],
-      "Dark Web Monitoring": [
-        "Мониторинг Темной паутины"
       ],
       "Fastest VPN servers": [
         "Самые быстрые серверы VPN"
@@ -11189,26 +11087,6 @@
         "Специальное предложение"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Приложение ${ MAIL_APP_NAME } для ПК"
-      ],
-      "10 email addresses": [
-        "10 адресов электронной почты"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Автоудаление спама и сообщений в корзине"
-      ],
-      "Custom schedule send and snooze times": [
-        "Пользовательское планирование и откладывание писем на любое время"
-      ],
-      "Support for 1 custom email domain": [
-        "Поддержка 1 пользовательского домена электронной почты"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Неограниченное количество папок, ярлыков и фильтров"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Затем стоимость подписки составит ${ renewablePrice }. Отменить её можно в любое время"
@@ -13420,12 +13298,6 @@
       "Encrypted password manager that also protects your identity": [
         "Зашифрованный менеджер паролей, который также защищает вашу личную информацию"
       ],
-      "End-to-end encrypted notes": [
-        "Заметки со сквозным шифрованием"
-      ],
-      "End-to-end encryption": [
-        "Сквозное шифрование"
-      ],
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
         "Введите отображаемое имя для **${ username }**. Его будут видеть ваши пользователи, когда вы будете изменять их права или делиться с ними данными."
       ],
@@ -13575,9 +13447,6 @@
       ],
       "Welcome to ${ shortName } Plus": [
         "Welcome to ${ shortName } Plus"
-      ],
-      "Works on all devices": [
-        "Работает на всех устройствах"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "У вас уже есть доступ к премиальным функциям ${ appName } - нет необходимости покупать снова."
@@ -15182,9 +15051,6 @@
       "6 users": [
         "6 пользователей"
       ],
-      "64 countries": [
-        "64 страны"
-      ],
       "All paid Mail and Calendar features": [
         "Все платные функции Mail и Calendar"
       ],
@@ -15295,15 +15161,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Черная пятница"
-      ],
-      "Cyber Week Sale": [
-        "Кибернеделя"
-      ],
-      "End of Year Sale": [
-        "Конец года"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Переходите на тариф ${ planName } и экономьте больше целых 2 года"
       ]
@@ -15314,9 +15171,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Включает 1700 серверов с высокой скоростью более чем в 60 странах, 10 VPN-подключений, доступ к стриминговым платформам со всего мира, блокировщик рекламы, функцию защиты от вредоносных программ и другие преимущества."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Наслаждайтесь контентом на стриминговых платформах, таких как Netflix, Disney+ и Amazon Prime Video, из любой точки мира."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Все наших платные сервисы с максимальными лимитами: 100 адресов электронной почты, поддержка 10 своих доменов и неограниченного числа псевдонимов hide-my-email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, и другое."
