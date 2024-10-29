@@ -1,82 +1,67 @@
+import type { EventModelReadView, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import useFlag from '@proton/unleash/useFlag';
 
 import type { VideoConferenceLocation } from './VideoConferencingWidget';
 import { VideoConferencingWidget } from './VideoConferencingWidget';
-import { SEPARATOR_GOOGLE_EVENTS } from './constants';
+import { SEPARATOR_GOOGLE_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import { getGoogleMeetDataFromDescription, getGoogleMeetDataFromLocation } from './googleMeet/googleMeetHelpers';
+import { getVideoConferencingData } from './modelHelpers';
 import { getZoomDataFromLocation, getZoomFromDescription } from './zoom/zoomHelpers';
 
 interface Props {
+    model: EventModelReadView | VcalVeventComponent;
     description?: string;
-    location?: string;
     widgetLocation: VideoConferenceLocation;
 }
 
 const separatorRegex = new RegExp(SEPARATOR_GOOGLE_EVENTS);
 
-export const VideoConferencingWidgetConfig = ({ description, location, widgetLocation }: Props) => {
+export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) => {
     const videoConferenceWidget = useFlag('VideoConferenceWidget');
     if (!videoConferenceWidget) {
         return null;
     }
 
-    if (!description && !location) {
-        return null;
+    const { description, location, meetingId, meetingUrl, password } = getVideoConferencingData(model);
+
+    // Native Zoom integration
+    if (meetingId && meetingUrl) {
+        return (
+            <VideoConferencingWidget
+                location={widgetLocation}
+                data={{
+                    service: VIDEO_CONF_SERVICES.ZOOM, // The only supported provider is Zoom for the moment
+                    meetingId,
+                    meetingUrl,
+                    password,
+                }}
+            />
+        );
     }
 
+    // Events containing a Google separator in the description field
     const googleMeetingDescriptionSeparator = separatorRegex.test(description ?? '');
     if (googleMeetingDescriptionSeparator && description) {
         if (description.includes('zoom.us')) {
             const data = getZoomFromDescription(description);
-            return (
-                <VideoConferencingWidget
-                    service="zoom"
-                    meetingUrl={data.meetingUrl}
-                    joiningInstructions={data.joiningInstructions}
-                    meetingId={data.meetingId}
-                    password={data.password}
-                    location={widgetLocation}
-                />
-            );
+            return <VideoConferencingWidget location={widgetLocation} data={data} />;
         } else if (description.includes('meet.google.com')) {
             const data = getGoogleMeetDataFromDescription(description);
-            return (
-                <VideoConferencingWidget
-                    service="google-meet"
-                    meetingUrl={data.meetingUrl}
-                    joiningInstructions={data.joiningInstructions}
-                    meetingId={data.meetingId}
-                    location={widgetLocation}
-                />
-            );
+            return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
     }
 
-    if (location && location.includes('meet.google.com')) {
-        const data = getGoogleMeetDataFromLocation(location);
-        return (
-            <VideoConferencingWidget
-                service="google-meet"
-                meetingUrl={data.meetingUrl}
-                joiningInstructions={data.joiningInstructions}
-                meetingId={data.meetingId}
-                location={widgetLocation}
-            />
-        );
-    }
+    // Event containing a location field with a supported video conferencing link
+    if (location) {
+        if (location.includes('meet.google.com')) {
+            const data = getGoogleMeetDataFromLocation(location);
+            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+        }
 
-    if (location && location.includes('zoom.us')) {
-        const data = getZoomDataFromLocation(location);
-        return (
-            <VideoConferencingWidget
-                service="zoom"
-                meetingUrl={data.meetingUrl}
-                joiningInstructions={data.joiningInstructions}
-                meetingId={data.meetingId}
-                password={data.password}
-                location={widgetLocation}
-            />
-        );
+        if (location.includes('zoom.us')) {
+            const data = getZoomDataFromLocation(location);
+            return <VideoConferencingWidget location={widgetLocation} data={data} />;
+        }
     }
 
     return null;

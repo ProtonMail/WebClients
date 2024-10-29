@@ -13,8 +13,9 @@ describe('OAuth url generation', () => {
 
     it('Should throw an error when unsupported provider (getOAuthAuthorizationUrl)', () => {
         const config = {
-            'importer.google.client_id': 'string',
-            'importer.outlook.client_id': 'string',
+            'oauth.google.client_id': 'string',
+            'oauth.outlook.client_id': 'string',
+            'oauth.zoom.client_id': 'string',
         };
 
         expect(() =>
@@ -28,6 +29,9 @@ describe('OAuth url generation', () => {
 
         const outlookNumber = getProviderNumber(ImportProvider.OUTLOOK);
         expect(outlookNumber).toStrictEqual(OAUTH_PROVIDER.OUTLOOK);
+
+        const zoomNumber = getProviderNumber(OAUTH_PROVIDER.ZOOM);
+        expect(zoomNumber).toStrictEqual(OAUTH_PROVIDER.ZOOM);
     });
 
     it('Should return appropriate Google redirect URL', () => {
@@ -56,12 +60,26 @@ describe('OAuth url generation', () => {
         expect(redirectUrl).toStrictEqual('https://www.protontesting.com/oauth/callback');
     });
 
+    it('Should return appropriate Zoom redirect URL', () => {
+        Object.defineProperty(window, 'location', {
+            configurable: true,
+            enumerable: true,
+            value: new URL(window.location.href),
+        });
+        const expectedUrl = 'https://www.protontesting.com/mypath';
+        window.location.href = expectedUrl;
+
+        const redirectUrl = getOAuthRedirectURL(OAUTH_PROVIDER.ZOOM);
+        expect(redirectUrl).toStrictEqual('https://www.protontesting.com/oauth/callback');
+    });
+
     it('Should return appropriate Outlook OAuth URL', () => {
         const provider = ImportProvider.OUTLOOK;
         const scopesMail = getScopeFromProvider(provider, [ImportType.MAIL]);
         const config = {
-            'importer.google.client_id': 'string',
-            'importer.outlook.client_id': 'string',
+            'oauth.google.client_id': 'string',
+            'oauth.outlook.client_id': 'string',
+            'oauth.zoom.client_id': 'string',
         };
 
         const outlookMailsRedirect = getOAuthAuthorizationUrl({
@@ -123,8 +141,9 @@ describe('OAuth url generation', () => {
         const provider = ImportProvider.GOOGLE;
         const scopesMail = getScopeFromProvider(provider, [ImportType.MAIL]);
         const config = {
-            'importer.google.client_id': 'string',
-            'importer.outlook.client_id': 'string',
+            'oauth.google.client_id': 'string',
+            'oauth.outlook.client_id': 'string',
+            'oauth.zoom.client_id': 'string',
         };
 
         const googleMailsRedirect = getOAuthAuthorizationUrl({

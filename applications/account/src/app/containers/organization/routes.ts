@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
-import { canUseGroups } from '@proton/components';
 import type { SectionConfig } from '@proton/components';
+import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { PLANS } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     appSupportsSSO,
@@ -34,7 +33,10 @@ interface Props {
     isGlobalSSOEnabled: boolean;
     groups: Group[] | undefined;
     isScribeEnabled?: boolean;
+    isZoomIntegrationEnabled: boolean;
 }
+
+const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
 
 export const getOrganizationAppRoutes = ({
     app,
@@ -47,6 +49,7 @@ export const getOrganizationAppRoutes = ({
     isGlobalSSOEnabled,
     groups,
     isScribeEnabled,
+    isZoomIntegrationEnabled,
 }: Props) => {
     const isAdmin = user.isAdmin && !user.isSubUser;
 
@@ -96,6 +99,13 @@ export const getOrganizationAppRoutes = ({
         hasMemberCapablePlan &&
         hasSubUsers;
 
+    // add test to only show if org is elligible for zoom
+    const canShowVideoConferenceSection =
+        isZoomIntegrationEnabled &&
+        (hasActiveOrganizationKey || (isPartOfFamily && hasOrganization)) &&
+        user.hasPaidMail &&
+        videoConferenceValidApplications.has(app);
+
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
         : c('Settings section title').t`Organization`;
@@ -119,6 +129,17 @@ export const getOrganizationAppRoutes = ({
         available: canHaveOrganization && app !== APPS.PROTONWALLET,
         header: sectionTitle,
         routes: {
+            videoConf: <SectionConfig>{
+                text: c('Title').t`Video conference`,
+                to: '/video-conference',
+                icon: 'camera',
+                available: canShowVideoConferenceSection,
+                subsections: [
+                    {
+                        id: 'enable-zoom',
+                    },
+                ],
+            },
             users: <SectionConfig>{
                 text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',

@@ -12,6 +12,7 @@ export enum ImportProvider {
 export enum OAUTH_PROVIDER {
     GOOGLE = 1,
     OUTLOOK = 2,
+    ZOOM = 3,
 }
 
 export interface OAuthProps {
@@ -237,6 +238,7 @@ export enum EASY_SWITCH_SOURCES {
     CONTACT_WEB_IMPORT_BUTTON = 'contacts-web-import-button',
     MAIL_WEB_CHECKLIST = 'mail-web-checklist',
     MAIL_WEB_ONBOARDING = 'mail-web-onboarding',
+    CALENDAR_WEB_CREATE_EVENT = 'calendar-web-create-event',
     // Used as fallback when source could be undefined, will allow ot indicate missing source in log tool
     UNKNOWN = 'unknown',
 }

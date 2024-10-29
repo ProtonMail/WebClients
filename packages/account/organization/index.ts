@@ -16,7 +16,7 @@ import { getOrganization, getOrganizationSettings } from '@proton/shared/lib/api
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { OrganizationWithSettings, Organization, OrganizationSettings, User } from '@proton/shared/lib/interfaces';
+import type { Organization, OrganizationSettings, OrganizationWithSettings, User } from '@proton/shared/lib/interfaces';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -79,6 +79,15 @@ const slice = createSlice({
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
         },
+        updateOrganizationSettings: (
+            state,
+            action: PayloadAction<{ value: Partial<OrganizationWithSettings['Settings']> }>
+        ) => {
+            if (!state.value) {
+                return;
+            }
+            state.value.Settings = updateObject(state.value.Settings, action.payload.value);
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(serverEvent, (state, action) => {
@@ -139,6 +148,7 @@ const modelThunk = (options?: {
                     ShowName: false,
                     LogoID: null,
                     ShowScribeWritingAssistant: true,
+                    VideoConferencingEnabled: false,
                 };
 
                 const [Organization, OrganizationSettings] = await Promise.all([
@@ -151,7 +161,12 @@ const modelThunk = (options?: {
                         ? defaultSettings
                         : extraArgument
                               .api<OrganizationSettings>(getOrganizationSettings())
-                              .then(({ ShowName, LogoID, ShowScribeWritingAssistant }) => ({ ShowName, LogoID, ShowScribeWritingAssistant }))
+                              .then(({ ShowName, LogoID, ShowScribeWritingAssistant, VideoConferencingEnabled }) => ({
+                                  ShowName,
+                                  LogoID,
+                                  ShowScribeWritingAssistant,
+                                  VideoConferencingEnabled,
+                              }))
                               .catch(() => {
                                   return defaultSettings;
                               }),
@@ -189,6 +204,7 @@ const modelThunk = (options?: {
 };
 
 export const organizationReducer = { [name]: slice.reducer };
+export const organizationActions = slice.actions;
 export const organizationThunk = modelThunk;
 
 export const MAX_CHARS_API = {

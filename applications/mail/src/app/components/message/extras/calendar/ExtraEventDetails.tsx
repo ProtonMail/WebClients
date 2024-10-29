@@ -80,11 +80,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                 </IconRow>
             )}
             <div className="mb-4">
-                <VideoConferencingWidgetConfig
-                    location={trimmedLocation}
-                    description={vevent.description?.value}
-                    widgetLocation="mail-headers"
-                />
+                <VideoConferencingWidgetConfig model={vevent} widgetLocation="mail-headers" />
             </div>
             {!!participantsList.length && (
                 <IconRow title={c('Label').t`Participants`} icon="users" labelClassName="inline-flex pt-0.5">
