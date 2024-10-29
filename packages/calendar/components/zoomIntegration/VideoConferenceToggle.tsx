@@ -1,28 +1,26 @@
 import { c } from 'ttag';
 
-import { useApi, useEventManager, useNotifications, useOrganization, useToggle } from '@proton/components';
+import { toggleZoomSettings } from '@proton/calendar/calendars/actions';
+import { useNotifications, useOrganization, useToggle } from '@proton/components';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import { Info, SettingsLayoutLeft, SettingsLayoutRight } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
-import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
+import { useDispatch } from '@proton/redux-shared-store';
 
 interface Props {
     withInfo?: boolean;
 }
 
 export const VideoConferenceToggle = ({ withInfo }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
+    const dispatch = useDispatch();
     const [organization, loadingOrganization] = useOrganization();
-    const { state, toggle } = useToggle(organization?.Settings.VideoConferencingEnabled);
+    const { state } = useToggle(organization?.Settings.VideoConferencingEnabled);
 
     const handleToggle = async (checked: boolean) => {
-        toggle();
-        await api(updateOrganizationSettings({ VideoConferencingEnabled: checked }));
-        await call();
+        await dispatch(toggleZoomSettings({ checked }));
         createNotification({ text: c('Notification').t`Video conferencing settings have been updated` });
     };
 
