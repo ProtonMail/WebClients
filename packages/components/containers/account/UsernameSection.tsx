@@ -17,6 +17,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
+import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -35,6 +36,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
+import { getIsExternalAccount } from '@proton/shared/lib/keys';
 import clsx from '@proton/utils/clsx';
 
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
@@ -95,10 +97,21 @@ const UsernameSection = ({ app }: Props) => {
         });
     };
 
-    const canEditExternalAddress =
-        user.Type === UserType.EXTERNAL &&
-        primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
-        primaryAddress.ConfirmationState === AddressConfirmationState.CONFIRMATION_NOT_CONFIRMED;
+    const isPrimaryAddressExternal = primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL;
+    const isExternalUserAndPrimaryAddressExternal = getIsExternalAccount(user) && isPrimaryAddressExternal;
+
+    const isPrimaryAddressExternalAndVerified =
+        isPrimaryAddressExternal &&
+        primaryAddress?.ConfirmationState === AddressConfirmationState.CONFIRMATION_CONFIRMED;
+
+    const canVerifyExternalAddress = isExternalUserAndPrimaryAddressExternal && !isPrimaryAddressExternalAndVerified;
+
+    const canEditExternalAddress = canVerifyExternalAddress && (user.isPrivate || user.isAdmin);
+
+    const canSetupProtonAddress =
+        canEditExternalAddress &&
+        APP_NAME === APPS.PROTONACCOUNT &&
+        getAvailableApps({ user, context: 'app' }).includes(APPS.PROTONMAIL);
 
     useSearchParamsEffect(
         (params) => {
@@ -133,36 +146,34 @@ const UsernameSection = ({ app }: Props) => {
                 {isSessionRecoveryAvailable && sessionRecoveryStatus === SessionRecoveryState.INSECURE && (
                     <PasswordResetAvailableCard className="mb-6" />
                 )}
-                {user.Type === UserType.EXTERNAL &&
-                    primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
-                    APP_NAME === APPS.PROTONACCOUNT && (
-                        <div className="mb-6">
-                            <AppLink
-                                toApp={APPS.PROTONACCOUNT}
-                                to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&from-type=settings&from-path=${fromPath}`}
-                                className="text-no-decoration"
-                                data-testid="get-proton-address"
-                            >
-                                <PromotionBanner
-                                    mode="banner"
-                                    rounded
-                                    contentCentered={false}
-                                    icon={<img width="40" src={mailCalendar} alt="" className="shrink-0" />}
-                                    description={getBoldFormattedText(
-                                        c('Info')
-                                            .t`**Get a ${BRAND_NAME} address** to use all ${BRAND_NAME_TWO} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`
-                                    )}
-                                    cta={
-                                        <div className="mr-4">
-                                            <Icon name="chevron-right" size={4} />
-                                        </div>
-                                    }
-                                />
-                            </AppLink>
-                        </div>
-                    )}
+                {canSetupProtonAddress && (
+                    <div className="mb-6">
+                        <AppLink
+                            toApp={APPS.PROTONACCOUNT}
+                            to={`${SETUP_ADDRESS_PATH}?to=${APPS.PROTONMAIL}&from=${app}&from-type=settings&from-path=${fromPath}`}
+                            className="text-no-decoration"
+                            data-testid="get-proton-address"
+                        >
+                            <PromotionBanner
+                                mode="banner"
+                                rounded
+                                contentCentered={false}
+                                icon={<img width="40" src={mailCalendar} alt="" className="shrink-0" />}
+                                description={getBoldFormattedText(
+                                    c('Info')
+                                        .t`**Get a ${BRAND_NAME} address** to use all ${BRAND_NAME_TWO} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`
+                                )}
+                                cta={
+                                    <div className="mr-4">
+                                        <Icon name="chevron-right" size={4} />
+                                    </div>
+                                }
+                            />
+                        </AppLink>
+                    </div>
+                )}
 
-                {canEditExternalAddress && (
+                {canVerifyExternalAddress && (
                     <Card className="mb-8" rounded bordered={true} background={false}>
                         <div className="h3 text-bold mb-6">{c('Info').t`Secure your ${BRAND_NAME} Account`}</div>
                         <div className="flex gap-4 flex-nowrap items-start">
@@ -196,10 +207,9 @@ const UsernameSection = ({ app }: Props) => {
                         <div className="text-semibold">{c('Label').t`Username`}</div>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="pt-2">
-                        {user.Type === UserType.EXTERNAL && primaryAddress?.Type === ADDRESS_TYPE.TYPE_EXTERNAL ? (
+                        {isExternalUserAndPrimaryAddressExternal ? (
                             <div>
-                                {primaryAddress.ConfirmationState ===
-                                AddressConfirmationState.CONFIRMATION_CONFIRMED ? (
+                                {isPrimaryAddressExternalAndVerified ? (
                                     <div className="flex">
                                         {primaryAddress.Email}
                                         <Tooltip title={c('Tooltip').t`Verified email address`} openDelay={0}>
@@ -212,30 +222,28 @@ const UsernameSection = ({ app }: Props) => {
                                     </div>
                                 ) : (
                                     <>
-                                        <div className="flex">
-                                            {!canEditExternalAddress ? (
-                                                primaryAddress.Email
-                                            ) : (
-                                                <>
-                                                    <span className="mr-2">{primaryAddress.Email}</span>
-                                                    <InlineLinkButton
-                                                        className="mr-1"
-                                                        onClick={() => {
-                                                            setTmpAddress(primaryAddress);
-                                                            setEditAddressModalOpen(true);
-                                                        }}
-                                                        aria-label={c('Action').t`Edit email address`}
-                                                    >
-                                                        {c('Action').t`Edit`}
-                                                    </InlineLinkButton>
-                                                    <Info
-                                                        className="self-center"
-                                                        title={c('Info')
-                                                            .t`You can edit this once to ensure the correct email address for verification.`}
-                                                    />
-                                                </>
-                                            )}
-                                        </div>
+                                        {canEditExternalAddress ? (
+                                            <div className="flex">
+                                                <span className="mr-2">{primaryAddress.Email}</span>
+                                                <InlineLinkButton
+                                                    className="mr-1"
+                                                    onClick={() => {
+                                                        setTmpAddress(primaryAddress);
+                                                        setEditAddressModalOpen(true);
+                                                    }}
+                                                    aria-label={c('Action').t`Edit email address`}
+                                                >
+                                                    {c('Action').t`Edit`}
+                                                </InlineLinkButton>
+                                                <Info
+                                                    className="self-center"
+                                                    title={c('Info')
+                                                        .t`You can edit this once to ensure the correct email address for verification.`}
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div>{primaryAddress.Email}</div>
+                                        )}
                                         <div className="flex">
                                             <Icon
                                                 name="exclamation-circle-filled"
