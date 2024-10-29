@@ -150,6 +150,8 @@ export const handleIPCCalls = () => {
             case "storeAppVersion":
                 storeAppVersion(payload);
                 break;
+            case "triggerCrash":
+                throw new Error("Crash bandicoot");
             default:
                 ipcLogger.error(`unknown message type: ${type}`);
                 break;
