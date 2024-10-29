@@ -36,6 +36,7 @@ import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import {
+    getBenefits,
     getBuiltInEncryptionBenefit,
     getBundleVisionaryBenefits,
     getFamilyDuoBenefits,
@@ -49,6 +50,9 @@ import CustomStep from '../mail/CustomStep';
 import setupAccount from '../mail/account-setup.svg';
 
 const getDriveBenefitsTitle = (plan: PLANS | undefined, audience: Audience | undefined) => {
+    if (plan === PLANS.BUNDLE || plan === PLANS.FAMILY) {
+        return getBenefits(BRAND_NAME);
+    }
     if (audience === Audience.B2B) {
         return c('Signup: Info').t`The only business solution that is:`;
     }
