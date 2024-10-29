@@ -1,4 +1,4 @@
-import { BrowserView, BrowserWindow, Event, Input, Rectangle, WebContents, app } from "electron";
+import { BrowserView, BrowserWindow, Event, Input, Rectangle, WebContents, app, nativeTheme } from "electron";
 import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
@@ -16,6 +16,10 @@ import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
 import { getAppURL, URLConfig } from "../../store/urlStore";
+import { join } from "node:path";
+import { c } from "ttag";
+import { isElectronOnMac } from "@proton/shared/lib/helpers/desktop";
+import { APPS, APPS_CONFIGURATION, CALENDAR_APP_NAME, MAIL_APP_NAME } from "@proton/shared/lib/constants";
 
 type ViewID = keyof URLConfig;
 
@@ -33,6 +37,12 @@ const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
     account: undefined,
 };
 
+const viewTitleMap: Record<ViewID, string> = {
+    mail: MAIL_APP_NAME,
+    calendar: CALENDAR_APP_NAME,
+    account: APPS_CONFIGURATION[APPS.PROTONACCOUNT].name,
+};
+
 const PRELOADED_VIEWS: ViewID[] = ["mail", "calendar"];
 let mainWindow: undefined | BrowserWindow = undefined;
 
@@ -40,14 +50,19 @@ let mainWindow: undefined | BrowserWindow = undefined;
  * @see https://www.electronjs.org/docs/latest/api/web-contents#event-did-fail-load
  * @see https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h
  */
-const IGNORED_NET_ERROR_CODES = [
-    -3, // ABORTED
-    -300, // INVALID_URL
-];
+const NET_ERROR_CODE = {
+    ABORTED: -3,
+    CONNECTION_REFUSED: -102,
+    ERR_NAME_NOT_RESOLVED: -105,
+    INVALID_URL: -300,
+};
 
-export const viewCreationAppStartup = () => {
+export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
+
+export const viewCreationAppStartup = async () => {
     mainWindow = createBrowserWindow();
     createViews();
+    await showLoadingPage(viewTitleMap.mail);
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
@@ -63,9 +78,9 @@ export const viewCreationAppStartup = () => {
     mainWindow.on("unmaximize", debouncedSaveWindowBounds);
 
     const updateViewsBounds = () => {
-        for (const viewID of Object.keys(browserViewMap) as ViewID[]) {
-            if (browserViewMap[viewID]) {
-                updateViewBounds(viewID);
+        for (const [viewID, view] of Object.entries(browserViewMap)) {
+            if (view && viewID) {
+                updateViewBounds(view, viewID as ViewID);
             }
         }
     };
@@ -104,7 +119,9 @@ export const viewCreationAppStartup = () => {
 const createView = (viewID: ViewID) => {
     const view = new BrowserView(getWindowConfig());
 
-    handleBeforeHandle(viewID, view);
+    if (viewID) {
+        handleBeforeHandle(viewID, view);
+    }
 
     view.webContents.on("context-menu", (_e, props) => {
         createContextMenu(props, view)?.popup();
@@ -131,9 +148,9 @@ const createViews = () => {
             if (input.key === "Alt" && input.type === "keyDown") {
                 mainWindow!.setMenuBarVisibility(!mainWindow!.isMenuBarVisible());
 
-                for (const viewID of Object.keys(browserViewMap) as ViewID[]) {
-                    if (browserViewMap[viewID]) {
-                        updateViewBounds(viewID);
+                for (const [viewID, view] of Object.entries(browserViewMap)) {
+                    if (view && viewID) {
+                        updateViewBounds(view, viewID as ViewID);
                     }
                 }
             }
@@ -154,7 +171,7 @@ const createViews = () => {
 
     const mailto = readAndClearMailtoArgs();
     loadURL("mail", getAppURL().mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
-        updateViewBounds("mail");
+        updateViewBounds(browserViewMap.mail, "mail");
     });
 };
 
@@ -171,7 +188,7 @@ const createBrowserWindow = () => {
     return mainWindow;
 };
 
-function updateViewBounds(viewID: ViewID) {
+function updateViewBounds(view: BrowserView | undefined, viewID: ViewID | null = null) {
     if (!mainWindow) {
         viewLogger(viewID).warn("cannot adjust view bounds, mainWindow is null");
         return;
@@ -201,8 +218,6 @@ function updateViewBounds(viewID: ViewID) {
         width: windowWidth - horizontalMargin,
         height: windowHeight - verticalMargin,
     };
-
-    const view = browserViewMap[viewID];
 
     if (!view) {
         viewLogger(viewID).warn("cannot adjust view bounds, view is null");
@@ -243,51 +258,33 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
         throw new Error("mainWindow is undefined");
     }
 
-    const internalShowView = async (windowTitle: string) => {
-        const view = browserViewMap[viewID]!;
-        updateViewBounds(viewID);
-        view.webContents.setZoomFactor(getWindowBounds().zoom);
+    const view = browserViewMap[viewID]!;
+    updateViewBounds(view, viewID);
+    view.webContents.setZoomFactor(getWindowBounds().zoom);
 
-        if (viewID === currentViewID) {
-            viewLogger(viewID).info("showView loading in current view", url);
-            await loadURL(viewID, url);
-            return;
-        }
+    if (viewID === currentViewID) {
+        viewLogger(viewID).info("showView loading in current view", url);
+        await loadURL(viewID, url);
+        return;
+    }
 
-        currentViewID = viewID;
-        mainWindow!.title = windowTitle;
+    currentViewID = viewID;
+    mainWindow!.title = viewTitleMap[viewID];
 
-        if (url && urlHasMailto(url)) {
-            viewLogger(viewID).debug(`showView loading mailto ${url} from`, await getViewURL(viewID));
-            const loadPromise = loadURL(viewID, url);
-            mainWindow!.setBrowserView(view);
-            await loadPromise;
-        } else if (url && !isSameURL(url, await getViewURL(viewID))) {
-            viewLogger(viewID).debug("showView current url is different", await getViewURL(viewID));
-            viewLogger(viewID).info("showView loading", url);
-            await loadURL(viewID, "about:blank");
-            const loadPromise = loadURL(viewID, url);
-            mainWindow!.setBrowserView(view);
-            await loadPromise;
-        } else {
-            viewLogger(viewID).info("showView showing view for ", url);
-            mainWindow!.setBrowserView(view);
-        }
-    };
-
-    switch (viewID) {
-        case "mail":
-            await internalShowView("Proton Mail");
-            break;
-        case "calendar":
-            await internalShowView("Proton Calendar");
-            break;
-        case "account":
-            await internalShowView("Proton");
-            break;
-        default:
-            viewLogger(viewID).error("showView unsupported view");
-            break;
+    if (url && urlHasMailto(url)) {
+        viewLogger(viewID).debug(`showView loading mailto ${url} from`, await getViewURL(viewID));
+        await showLoadingPage(viewTitleMap[viewID]);
+        await loadURL(viewID, url);
+        mainWindow!.setBrowserView(view);
+    } else if (url && !isSameURL(url, await getViewURL(viewID))) {
+        viewLogger(viewID).debug("showView current url is different", await getViewURL(viewID));
+        viewLogger(viewID).info("showView loading", url);
+        await showLoadingPage(viewTitleMap[viewID]);
+        await loadURL(viewID, url);
+        mainWindow!.setBrowserView(view);
+    } else {
+        viewLogger(viewID).info("showView showing view for ", url);
+        mainWindow!.setBrowserView(view);
     }
 }
 
@@ -332,6 +329,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
         const handleLoadTimeout = () => {
             viewLogger(viewID).error("loadURL timeout", url);
+            showNetworkErrorPage(viewID);
             cleanup();
         };
 
@@ -343,6 +341,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         const handleLoadError = (_event: Event, errorCode: number, errorDescription: string) => {
             if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
                 viewLogger(viewID).error("did-fail-load", url, errorCode, errorDescription);
+                showNetworkErrorPage(viewID);
             }
             cleanup();
         };
@@ -357,6 +356,65 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
     await loadingViewMap[viewID];
     return;
+}
+
+export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
+    const view = browserViewMap[viewID];
+
+    if (!view) {
+        viewLogger(viewID).warn("cannot show error page, view is null");
+        return;
+    }
+
+    const filePath = app.isPackaged
+        ? join(process.resourcesPath, "error-network.html")
+        : join(app.getAppPath(), "assets/error-network.html");
+
+    const query: Record<string, string> = {
+        theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+        title: c("error screen").t`Cannot establish connection`,
+        description: c("error screen")
+            .t`Check your internet connection or network settings. If the issue persists, please contact customer support.`,
+        button: c("error screen").t`Try again`,
+        buttonTarget: getAppURL()[viewID],
+    };
+
+    if (isElectronOnMac) {
+        query.draggable = "";
+    }
+
+    await view.webContents.loadFile(filePath, { query });
+}
+
+async function showLoadingPage(title: string): Promise<void> {
+    if (!mainWindow) {
+        mainLogger.error("Cannot show loading page, mainWindow is null");
+        return;
+    }
+
+    mainLogger.info("Show loading view");
+    const loadingView = new BrowserView(getWindowConfig());
+    await renderLoadingPage(loadingView, title);
+
+    mainWindow.setBrowserView(loadingView);
+}
+
+async function renderLoadingPage(view: BrowserView, title: string): Promise<void> {
+    const filePath = app.isPackaged
+        ? join(process.resourcesPath, "loading.html")
+        : join(app.getAppPath(), "assets/loading.html");
+
+    const query: Record<string, string> = {
+        message: c("loading screen").t`Loading ${title}…`,
+        theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+    };
+
+    if (isElectronOnMac) {
+        query.draggable = "";
+    }
+
+    await view.webContents.loadFile(filePath, { query });
+    updateViewBounds(view);
 }
 
 async function getViewURL(viewID: ViewID): Promise<string> {
@@ -386,7 +444,7 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
                 loadPromises.push(loadURL(viewID as ViewID, homepageURL));
             } else {
                 viewLogger(viewID as ViewID).info("reset to blank");
-                loadPromises.push(loadURL(viewID as ViewID, "about:blank"));
+                loadPromises.push(renderLoadingPage(view, viewTitleMap[viewID as ViewID]));
             }
         }
     }

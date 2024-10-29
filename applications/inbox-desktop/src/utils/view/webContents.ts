@@ -20,23 +20,25 @@ import {
     resetHiddenViews,
     getZoom,
     showView,
+    showNetworkErrorPage,
+    IGNORED_NET_ERROR_CODES,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, viewLogger } from "../log";
 
 export function handleWebContents(contents: WebContents) {
-    const log = (eventName: string, ...args: unknown[]) => {
+    const logger = () => {
         const viewName = getWebContentsViewName(contents);
 
         if (viewName) {
-            viewLogger(viewName).info(eventName, ...args);
+            return viewLogger(viewName);
         } else {
-            mainLogger.info(eventName, ...args);
+            return mainLogger;
         }
     };
 
     const isCurrentContent = () => {
-        return getCurrentView()!.webContents === contents;
+        return getCurrentView()?.webContents === contents;
     };
 
     const preventDefault = (ev: Electron.Event) => {
@@ -44,13 +46,13 @@ export function handleWebContents(contents: WebContents) {
     };
 
     contents.on("did-navigate", (ev, url) => {
-        log("did-navigate", url);
+        logger().info("did-navigate", url);
 
         if (isHostAllowed(url)) {
             // We need to ensure that the zoom is consistent for all URLs.
             // Currently electron stores the zoom factor for each URL (this is chromium's behavior)
             // and it is not able to have a default zoom factor (lack of API).
-            log("did-navigate set zoom factor to", getZoom());
+            logger().debug("did-navigate set zoom factor to", getZoom());
             contents.setZoomFactor(getZoom());
         }
 
@@ -64,7 +66,7 @@ export function handleWebContents(contents: WebContents) {
     });
 
     contents.on("did-navigate-in-page", (ev, url) => {
-        log("did-navigate-in-page", url);
+        logger().info("did-navigate-in-page", url);
 
         if (!isCurrentContent()) {
             return;
@@ -90,8 +92,21 @@ export function handleWebContents(contents: WebContents) {
 
     contents.on("will-attach-webview", preventDefault);
 
+    contents.on("did-fail-load", (_event, errorCode, validatedURL) => {
+        logger().error("did-fail-load", errorCode, validatedURL);
+
+        if (!isCurrentContent()) {
+            return;
+        }
+
+        if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
+            const viewName = getWebContentsViewName(contents);
+            if (viewName) showNetworkErrorPage(viewName);
+        }
+    });
+
     contents.on("will-navigate", (details) => {
-        log("will-navigate", details.url);
+        logger().info("will-navigate", details.url);
 
         if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
             return preventDefault(details);
@@ -123,13 +138,13 @@ export function handleWebContents(contents: WebContents) {
         const { url } = details;
 
         if (isCalendar(url)) {
-            log("Calendar link", url);
+            logger().debug("Calendar link", url);
             showView("calendar", url);
             return { action: "deny" };
         }
 
         if (isMail(url)) {
-            log("Mail link", url);
+            logger().debug("Mail link", url);
             showView("mail", url);
             return { action: "deny" };
         }
@@ -137,10 +152,10 @@ export function handleWebContents(contents: WebContents) {
         if (isAccount(url)) {
             // Upsell links should be opened in browser to avoid 3D secure issues
             if (isAccoutLite(url) || isUpsellURL(url)) {
-                log("Account lite or upsell in browser", url);
+                logger().debug("Account lite or upsell in browser", url);
                 shell.openExternal(url);
             } else {
-                log("Account link", url);
+                logger().debug("Account link", url);
                 showView("account", url);
             }
 
@@ -148,21 +163,21 @@ export function handleWebContents(contents: WebContents) {
         }
 
         if (isHostAllowed(url)) {
-            log("Allowed host", url);
+            logger().debug("Allowed host", url);
             return { action: "allow" };
         }
 
         if (global.oauthProcess) {
-            log("OAuth link in app", url);
+            logger().debug("OAuth link in app", url);
             return { action: "allow" };
         }
 
         if (global.subscriptionProcess) {
-            log("Subscription link in modal", url);
+            logger().debug("Subscription link in modal", url);
             return { action: "allow" };
         }
 
-        log("Other link in browser", url);
+        logger().debug("Other link in browser", url);
         shell.openExternal(url);
         return { action: "deny" };
     });
