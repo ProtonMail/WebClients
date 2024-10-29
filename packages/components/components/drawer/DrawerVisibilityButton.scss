@@ -25,12 +25,22 @@
 		border-start-end-radius: 0;
 		border-end-end-radius: 0;
 
+		&.drawer-visibility-control-button {
+			background-color: var(--interaction-default-active);
+		}
+
 		// To enlarge the click area
 		&::before {
 			position: absolute;
 			content: '';
 			inset-inline: -1em 0;
 			inset-block: -0.5em;
+		}
+	}
+
+	&--hide &-button {
+		&.drawer-visibility-control-button {
+			background-color: var(--interaction-default);
 		}
 	}
 
