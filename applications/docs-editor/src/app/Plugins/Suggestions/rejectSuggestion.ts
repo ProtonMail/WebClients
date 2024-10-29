@@ -173,6 +173,8 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       const changedProperties = node.__properties.nodePropertiesChanged as
         | {
             initialBlockType: BlockType
+            initialFormatType?: ElementFormatType
+            initialIndent?: number
             listInfo?: ListInfo
           }
         | undefined
@@ -181,9 +183,13 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       }
       const initialBlockType = changedProperties.initialBlockType as BlockType
       const createInitialBlockTypeElement = blockTypeToCreateElementFn[initialBlockType]
+      const formatType = changedProperties.initialFormatType || block.getFormatType()
+      const indent = changedProperties.initialIndent || block.getIndent()
       const initialBlockTypeNode = createInitialBlockTypeElement()
-      initialBlockTypeNode.setFormat(block.getFormatType())
-      initialBlockTypeNode.setIndent(block.getIndent())
+      initialBlockTypeNode.setFormat(formatType)
+      if (initialBlockTypeNode.canIndent()) {
+        initialBlockTypeNode.setIndent(indent)
+      }
       if ($isCustomListNode(initialBlockTypeNode) && changedProperties.listInfo) {
         const { listStyleType, listMarker } = changedProperties.listInfo
         if (listStyleType) {
@@ -194,6 +200,14 @@ export function $rejectSuggestion(suggestionID: string): boolean {
         }
       }
       block.replace(initialBlockTypeNode, true)
+      if ($isCustomListNode(initialBlockTypeNode)) {
+        for (const item of initialBlockTypeNode.getChildren()) {
+          if (!$isListItemNode(item)) {
+            continue
+          }
+          item.setIndent(indent)
+        }
+      }
     } else if (suggestionType === 'align-change') {
       const elementParent = $findMatchingParent(node, (e): e is ElementNode => $isElementNode(e) && !e.isInline())
       node.remove()
