@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { CurrencySymbols } from '@proton/shared/lib/constants';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency, CurrencySymbols } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 import { humanPrice } from './helper';

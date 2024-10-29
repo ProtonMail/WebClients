@@ -12,9 +12,9 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import Price from '@proton/components/components/price/Price';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
-import { isSplittedUser } from '@proton/payments';
+import { isFreeSubscription, isSplittedUser } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, isFreeSubscription } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';

@@ -24,12 +24,21 @@ import type {
     PaymentMethodStatusExtended,
     PlainPaymentMethodType,
 } from '@proton/payments';
-import { PAYMENT_METHOD_TYPES, PLANS, type PlanIDs, getPlansMap, isOnSessionMigration } from '@proton/payments';
+import {
+    type Currency,
+    DEFAULT_CURRENCY,
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+    type PlanIDs,
+    getPlansMap,
+    isFreeSubscription,
+    isOnSessionMigration,
+} from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { ProrationMode, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
-import { APPS, DEFAULT_CURRENCY, isFreeSubscription } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { AddonGuard } from '@proton/shared/lib/helpers/addons';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
@@ -51,7 +60,6 @@ import {
     getPlanIDs,
 } from '@proton/shared/lib/helpers/subscription';
 import type {
-    Currency,
     Cycle,
     FreePlanDefault,
     Organization,

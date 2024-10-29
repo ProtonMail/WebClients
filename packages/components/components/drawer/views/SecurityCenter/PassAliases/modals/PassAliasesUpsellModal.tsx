@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { NewUpsellModal, Price, UpsellModal } from '@proton/components';
 import { usePlans } from '@proton/components/hooks';
-import { PLANS, PLAN_NAMES } from '@proton/payments';
+import { type Currency, PLANS, PLAN_NAMES } from '@proton/payments';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -18,7 +18,6 @@ import {
     getUpsellRef,
     useNewUpsellModalVariant,
 } from '@proton/shared/lib/helpers/upsell';
-import type { Currency } from '@proton/shared/lib/interfaces';
 import identityImg from '@proton/styles/assets/img/illustrations/new-upsells-img/identity.svg';
 
 interface Props {

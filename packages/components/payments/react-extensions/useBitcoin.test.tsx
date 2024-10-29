@@ -2,10 +2,9 @@ import { act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import type { AmountAndCurrency } from '@proton/payments';
-import { PAYMENT_TOKEN_STATUS } from '@proton/payments';
+import { MAX_BITCOIN_AMOUNT, PAYMENT_TOKEN_STATUS } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { createTokenV4, getTokenStatusV4 } from '@proton/shared/lib/api/payments';
-import { MAX_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { addApiMock, addApiResolver, apiMock, flushPromises } from '@proton/testing';
 
 import useBitcoin, { BITCOIN_POLLING_INTERVAL } from './useBitcoin';

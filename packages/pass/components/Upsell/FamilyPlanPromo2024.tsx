@@ -12,7 +12,8 @@ import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { selectUser, selectUserPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { DEFAULT_CURRENCY, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { DEFAULT_CURRENCY } from '@proton/payments';
+import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { PASS_LAUNCH_OFFER } from '@proton/shared/lib/helpers/subscription';
 import noop from '@proton/utils/noop';
 

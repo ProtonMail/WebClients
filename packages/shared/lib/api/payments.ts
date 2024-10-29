@@ -16,6 +16,7 @@ import type {
     WrappedPaypalPayment,
 } from '@proton/payments';
 import {
+    type Currency,
     type INVOICE_STATE,
     type INVOICE_TYPE,
     PAYMENT_METHOD_TYPES,
@@ -27,7 +28,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import type { ProductParam } from '../apps/product';
 import { getProductHeaders } from '../apps/product';
-import type { Api, Currency, Cycle, FreePlanDefault, Renew, Subscription } from '../interfaces';
+import type { Api, Cycle, FreePlanDefault, Renew, Subscription } from '../interfaces';
 
 export type PaymentsVersion = 'v4' | 'v5';
 let paymentsVersion: PaymentsVersion = 'v4';

@@ -1,7 +1,7 @@
 import type { enums } from '@proton/crypto';
 
 import { sizeUnits } from './helpers/size';
-import type { Currency, KeyGenConfig } from './interfaces';
+import type { KeyGenConfig } from './interfaces';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
 export const RETRY_DELAY_MAX = 10; // seconds
@@ -364,19 +364,6 @@ export enum ACCOUNT_DELETION_REASONS {
 
 export const FORBIDDEN_LABEL_NAMES = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'outbox'];
 
-export enum SUBSCRIPTION_CANCELLATION_REASONS {
-    DIFFERENT_ACCOUNT = 'DIFFERENT_ACCOUNT',
-    TOO_EXPENSIVE = 'TOO_EXPENSIVE',
-    MISSING_FEATURE = 'MISSING_FEATURE',
-    QUALITY_ISSUE = 'QUALITY_ISSUE',
-    STREAMING_SERVICE_UNSUPPORTED = 'STREAMING_SERVICE_UNSUPPORTED',
-    SWITCHING_TO_DIFFERENT_SERVICE = 'SWITCHING_TO_DIFFERENT_SERVICE',
-    VPN_CONNECTION_ISSUE = 'VPN_CONNECTION_ISSUE',
-    NOT_WILLING_TO_SHARE = 'NOT_WILLING_TO_SHARE',
-    TEMPORARY = 'TEMPORARY',
-    OTHER = 'OTHER',
-}
-
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
 export const MAX_SIZE_SCREENSHOT = 500 * 1000;
 
@@ -398,22 +385,6 @@ export enum INVOICE_OWNER {
     USER = 0,
     ORGANIZATION = 1,
 }
-
-export enum CurrencySymbols {
-    USD = 'US$',
-    EUR = '€',
-    CHF = 'CHF',
-    BRL = 'BRL',
-}
-
-export const CURRENCIES = Object.keys(CurrencySymbols) as readonly (keyof typeof CurrencySymbols)[];
-
-export const DEFAULT_CURRENCY = 'EUR' as Currency;
-export const MIN_CREDIT_AMOUNT = 500;
-export const MAX_CREDIT_AMOUNT = 4000000;
-export const MIN_BITCOIN_AMOUNT = 499;
-export const MAX_BITCOIN_AMOUNT = MAX_CREDIT_AMOUNT;
-export const DEFAULT_CREDITS_AMOUNT = 5000;
 
 export enum UNPAID_STATE {
     NOT_UNPAID = 0,
@@ -687,10 +658,6 @@ export const PRODUCT_PAYER = {
     END: new Date(Date.UTC(2020, 11, 15, 6)),
 };
 
-export const MIN_PAYPAL_AMOUNT_INHOUSE = 499;
-export const MIN_PAYPAL_AMOUNT_CHARGEBEE = 100;
-export const MAX_PAYPAL_AMOUNT = 99999900;
-
 export enum NEWSLETTER_SUBSCRIPTIONS {
     ANNOUNCEMENTS = 'Announcements',
     /** not displayed anymore, turning on one product news should turn it on as well */
@@ -759,21 +726,6 @@ export enum LABEL_EXCLUSIVE {
 export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 
 export const DARK_MODE_CLASS = 'isDarkMode';
-
-export const FREE_SUBSCRIPTION = {
-    isFreeSubscription: true,
-    Plans: undefined,
-    Currency: undefined,
-    CouponCode: undefined,
-    Cycle: undefined,
-    UpcomingSubscription: undefined,
-};
-
-export type FreeSubscription = typeof FREE_SUBSCRIPTION;
-
-export function isFreeSubscription(obj: any): obj is FreeSubscription {
-    return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
-}
 
 export enum COUPON_CODES {
     BLACK_FRIDAY_2023 = 'BF2023',
