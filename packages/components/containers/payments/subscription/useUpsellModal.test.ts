@@ -1,5 +1,5 @@
 import { PLANS } from '@proton/payments';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
 
 import { freePlan, plans, subscriptionBundlePro } from './__mocks__/data';
 import type { Feature } from './helpers/getPlanFeatures';

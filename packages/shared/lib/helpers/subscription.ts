@@ -2,6 +2,7 @@ import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import {
     ADDON_NAMES,
+    type Currency,
     type MaxKeys,
     PLANS,
     PLAN_SERVICES,
@@ -11,13 +12,12 @@ import {
     isSplittedUser,
     onSessionMigrationChargebeeStatus,
 } from '@proton/payments';
+import { type FreeSubscription, isFreeSubscription } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getSupportedAddons, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/addons';
 
-import type { APP_NAMES, FreeSubscription } from '../constants';
-import { APPS, COUPON_CODES, CYCLE, isFreeSubscription } from '../constants';
+import { APPS, type APP_NAMES, COUPON_CODES, CYCLE } from '../constants';
 import type {
-    Currency,
     Organization,
     Plan,
     PlansMap,

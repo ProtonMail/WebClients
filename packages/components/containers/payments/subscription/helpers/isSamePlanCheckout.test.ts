@@ -1,5 +1,4 @@
-import { ADDON_NAMES, PLANS, type PlanIDs } from '@proton/payments';
-import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS, type PlanIDs } from '@proton/payments';
 import { type Plan } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 import { getTestPlans } from '@proton/testing/data';

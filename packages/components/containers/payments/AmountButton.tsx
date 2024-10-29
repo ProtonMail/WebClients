@@ -1,7 +1,7 @@
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Price from '@proton/components/components/price/Price';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends Omit<ButtonProps, 'onSelect' | 'onClick'> {

@@ -1,4 +1,4 @@
-import type { MaxKeys, PaymentMethodFlows } from './interface';
+import type { Currency, MaxKeys, PaymentMethodFlows } from './interface';
 
 export enum PAYMENT_TOKEN_STATUS {
     STATUS_PENDING = 0,
@@ -261,3 +261,31 @@ export enum PLAN_SERVICES {
     VPN = 4,
     PASS = 8,
 }
+
+export enum CurrencySymbols {
+    USD = 'US$',
+    EUR = '€',
+    CHF = 'CHF',
+    BRL = 'BRL',
+}
+
+export const CURRENCIES = Object.keys(CurrencySymbols) as readonly (keyof typeof CurrencySymbols)[];
+
+export const DEFAULT_CURRENCY = 'EUR' as Currency;
+
+export const MIN_CREDIT_AMOUNT = 500;
+export const MAX_CREDIT_AMOUNT = 4000000;
+export const MIN_BITCOIN_AMOUNT = 499;
+export const MAX_BITCOIN_AMOUNT = MAX_CREDIT_AMOUNT;
+export const MIN_PAYPAL_AMOUNT_INHOUSE = 499;
+export const MIN_PAYPAL_AMOUNT_CHARGEBEE = 100;
+export const MAX_PAYPAL_AMOUNT = 99999900;
+
+export const FREE_SUBSCRIPTION = {
+    isFreeSubscription: true,
+    Plans: undefined,
+    Currency: undefined,
+    CouponCode: undefined,
+    Cycle: undefined,
+    UpcomingSubscription: undefined,
+};

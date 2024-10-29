@@ -1,9 +1,9 @@
 import { c, msgid } from 'ttag';
 
-import { ADDON_NAMES, type MaxKeys, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
+import { ADDON_NAMES, type Currency, type MaxKeys, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
 
 import { CYCLE, DEFAULT_CYCLE, VPN_PASS_PROMOTION_COUPONS } from '../constants';
-import type { Currency, Plan, PlansMap, Pricing, Subscription, SubscriptionCheckResponse } from '../interfaces';
+import type { Plan, PlansMap, Pricing, Subscription, SubscriptionCheckResponse } from '../interfaces';
 import { isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from './addons';
 import { getPlanFromCheckout } from './planIDs';
 import {

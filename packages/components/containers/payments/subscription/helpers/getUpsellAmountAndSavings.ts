@@ -1,6 +1,6 @@
-import { getPlansMap } from '@proton/payments';
+import { type Currency, getPlansMap } from '@proton/payments';
 import type { CYCLE } from '@proton/shared/lib/constants';
-import type { Currency, Cycle, Plan, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import type { Cycle, Plan, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { getAllowedCycles } from '../helpers/getAllowedCycles';
 

@@ -3,6 +3,8 @@ import type { Location } from 'history';
 import {
     type ADDON_NAMES,
     AddonLimit,
+    CURRENCIES,
+    type Currency,
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
@@ -13,11 +15,11 @@ import {
 import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
 import { otherProductParamValues } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, CURRENCIES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { getHas2024OfferCoupon, getPlanMaxIPs, getValidCycle } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, Plan } from '@proton/shared/lib/interfaces';
+import type { Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import clamp from '@proton/utils/clamp';

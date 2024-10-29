@@ -1,8 +1,14 @@
-import { ADDON_NAMES, PLANS, type PlanIDs, isRegionalCurrency } from '@proton/payments';
-import type { FreeSubscription } from '@proton/shared/lib/constants';
+import {
+    ADDON_NAMES,
+    type Currency,
+    type FreeSubscription,
+    PLANS,
+    type PlanIDs,
+    isRegionalCurrency,
+} from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';

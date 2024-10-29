@@ -1,8 +1,14 @@
 import { renderHook } from '@testing-library/react';
 
-import { ADDON_NAMES, PLANS, getPlanByName } from '@proton/payments';
-import { APPS, CYCLE, DEFAULT_CURRENCY, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import {
+    ADDON_NAMES,
+    type Currency,
+    DEFAULT_CURRENCY,
+    FREE_SUBSCRIPTION,
+    PLANS,
+    getPlanByName,
+} from '@proton/payments';
+import { APPS, CYCLE } from '@proton/shared/lib/constants';
 import { Audience, type Plan, type User } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP, getLongTestPlans, getTestPlans } from '@proton/testing/data';
 import { useFlag } from '@proton/unleash';
