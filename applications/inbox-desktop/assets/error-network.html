@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <style>
+            body {
+                font-family: system-ui;
+                margin: 0;
+                width: 100vw;
+                height: 100vh;
+                display: grid;
+                place-items: center;
+                text-align: center;
+            }
+
+            #wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            #header {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            #title,
+            #description {
+                margin: 0 auto;
+            }
+
+            #description {
+                max-width: 50ch;
+            }
+
+            #button {
+                display: flex;
+                gap: 2rem;
+                -webkit-app-region: no-drag;
+                font-size: 1rem;
+                font-family: inherit;
+                padding: 0.5rem 1rem;
+                border-radius: 0.5rem;
+                border: solid thin #ccc;
+                background: transparent;
+                cursor: pointer;
+                color: inherit;
+            }
+
+            #button:hover {
+                border-color: #aaa;
+            }
+
+            #button:hover:active {
+                border-color: #ddd;
+            }
+
+            #spinner {
+                width: 10em;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper" aria-hidden="true" aria-live="assertive" aria-atomic="true">
+            <img id="spinner" src="./error-network.svg" />
+            <header id="header">
+                <h1 id="title"></h1>
+                <p id="description"></p>
+            </header>
+            <button id="button" style="display: none" type="button"></button>
+        </div>
+
+        <script type="module">
+            const titleElement = document.getElementById("title");
+            const descriptionElement = document.getElementById("description");
+            const buttonElement = document.getElementById("button");
+            const wrapperElement = document.getElementById("wrapper");
+            const locationSearchParams = new URLSearchParams(location.search);
+
+            const title = locationSearchParams.get("title") || "";
+            const description = locationSearchParams.get("description") || "";
+            const buttonText = locationSearchParams.get("button") || "";
+            const buttonTarget = locationSearchParams.get("buttonTarget") || "";
+            const theme = locationSearchParams.get("theme") || "light";
+            const draggable = locationSearchParams.has("draggable");
+
+            if (draggable) {
+                document.body.style.setProperty("-webkit-app-region-", "drag");
+            }
+
+            document.documentElement.style.background = theme === "dark" ? "#666" : "#fff";
+            document.documentElement.style.color = theme === "dark" ? "#e1e1e1" : "#222";
+
+            titleElement.textContent = title;
+            descriptionElement.textContent = description;
+            buttonElement.textContent = buttonText;
+
+            buttonElement.addEventListener("click", () => {
+                window.location.href = buttonTarget;
+            });
+
+            const maxCooldown = 300;
+            const cooldownDuration = 1000 * 60 * 60 * 2; // 2 hours
+            const retryCooldownList = [1, 2, 5, 10, 30, 60, 180, maxCooldown];
+
+            buttonElement.style.display = "block";
+            wrapperElement.removeAttribute("aria-hidden");
+
+            (async () => {
+                const firstCheckDatetime = Date.now();
+
+                while (true) {
+                    if (Date.now() - firstCheckDatetime > cooldownDuration) {
+                        return;
+                    }
+
+                    await new Promise((resolve) => {
+                        const cooldown = retryCooldownList.length ? retryCooldownList.shift() : maxCooldown;
+                        setTimeout(resolve, cooldown * 1000);
+                    });
+
+                    try {
+                        const response = await fetch(buttonTarget);
+                        if (response.ok) buttonElement.click();
+                    } catch {}
+                }
+            })();
+        </script>
+    </body>
+</html>
