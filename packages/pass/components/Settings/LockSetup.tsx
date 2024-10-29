@@ -15,30 +15,18 @@ type Props = { noTTL?: boolean };
 
 export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const online = useConnectivity();
-
-    const {
-        handleLockModeSwitch,
-        handleLockTTLChange,
-        lockValue,
-        biometricsEnabled,
-        canPasswordLock,
-        canToggleTTL,
-        ttlValue,
-        ttlOrgValue,
-        loading,
-        isFreePlan,
-    } = useLockSetup();
+    const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
 
     return (
         <>
             <RadioGroup<LockMode>
                 name="lock-mode"
-                onChange={handleLockModeSwitch}
-                value={lockValue}
+                onChange={setLockMode}
+                value={lock.mode}
                 className={clsx('flex-nowrap gap-3', !online && 'opacity-70 pointer-events-none')}
-                disableChange={!online || loading}
+                disableChange={!online || lock.loading}
                 options={[
-                    ...(!ttlOrgValue
+                    ...(!lock.orgControlled
                         ? [
                               {
                                   label: (
@@ -62,7 +50,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                         ),
                         value: LockMode.SESSION,
                     },
-                    ...(canPasswordLock
+                    ...(password.enabled
                         ? [
                               {
                                   label: (
@@ -77,7 +65,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                           ]
                         : []),
 
-                    ...(DESKTOP_BUILD && canPasswordLock
+                    ...(DESKTOP_BUILD && password.enabled
                         ? [
                               {
                                   label: (
@@ -85,17 +73,17 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                                           <span className="block">
                                               {c('Label').t`Biometrics`}
                                               <span className="block color-weak text-sm">
-                                                  {biometricsEnabled
+                                                  {biometrics.enabled
                                                       ? c('Info')
                                                             .t`Access to ${PASS_APP_NAME} will require your fingerprint or device PIN.`
                                                       : c('Info')
                                                             .t`This option is currently not available on your device.`}
                                               </span>
                                           </span>
-                                          {isFreePlan && <PassPlusPromotionButton className="button-xs" />}
+                                          {biometrics.needsUpgrade && <PassPlusPromotionButton className="button-xs" />}
                                       </span>
                                   ),
-                                  disabled: !biometricsEnabled,
+                                  disabled: !biometrics.enabled,
                                   value: LockMode.BIOMETRICS,
                               },
                           ]
@@ -107,13 +95,13 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                 <>
                     <hr className="mt-2 mb-4 border-weak shrink-0" />
                     <LockTTLField
-                        ttl={ttlValue}
-                        disabled={!online || !canToggleTTL || loading}
-                        onChange={handleLockTTLChange}
+                        ttl={lock.ttl.value}
+                        disabled={!online || lock.ttl.disabled || lock.loading}
+                        onChange={setLockTTL}
                         label={
                             <>
                                 {c('Label').t`Auto-lock after`}
-                                {Boolean(ttlOrgValue) && (
+                                {lock.orgControlled && (
                                     <span className="color-weak text-sm">
                                         {` (${c('Info').t`Set by your organization`})`}
                                     </span>
