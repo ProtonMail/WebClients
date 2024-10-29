@@ -179,6 +179,10 @@ export interface EventModelView {
     selfAddress?: Address;
     status: ICAL_EVENT_STATUS;
     verificationStatus: EVENT_VERIFICATION_STATUS;
+    conferenceId?: string;
+    conferenceUrl?: string;
+    conferencePasscode?: string;
+    conferenceCreator?: string;
     rest?: any;
 }
 

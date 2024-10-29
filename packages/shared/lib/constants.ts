@@ -592,6 +592,7 @@ export enum MAIL_UPSELL_PATHS {
     ASSISTANT_TOGGLE = 'assistant-toggle',
     ASSISTANT_TOGGLE_DOWNGRADE = 'assistant-toggle-downgrade',
     ASSISTANT_COMPOSER = 'assistant-composer',
+    ZOOM_MEETING = 'zoom-meeting',
 }
 
 export enum CALENDAR_UPSELL_PATHS {

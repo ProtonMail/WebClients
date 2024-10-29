@@ -115,3 +115,11 @@ export interface HolidaysDirectoryCalendar {
     };
     Timezones: string[];
 }
+
+export interface VideoConferenceMeetingCreation {
+    VideoConference: {
+        ID: string;
+        URL: string;
+        Password: string;
+    };
+}
