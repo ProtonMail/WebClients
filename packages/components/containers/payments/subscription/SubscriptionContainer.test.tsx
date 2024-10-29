@@ -7,10 +7,10 @@ import {
     organizationDefaultResponse,
     plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
-import { PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
+import { type Currency, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
 import { type CheckSubscriptionData, createTokenV4, subscribe } from '@proton/shared/lib/api/payments';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import type { Currency, Organization, Plan, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { Organization, Plan, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { addApiMock, apiMock, applyHOCs, withDeprecatedModals, withReduxStore } from '@proton/testing';

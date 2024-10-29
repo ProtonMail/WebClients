@@ -7,12 +7,11 @@ import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputField from '@proton/components/components/v2/field/InputField';
-import { SelectedPlan } from '@proton/payments';
-import { type ADDON_NAMES, type PlanIDs } from '@proton/payments';
+import { type ADDON_NAMES, type Currency, type PlanIDs, SelectedPlan } from '@proton/payments';
 import type { CYCLE } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/lib/helpers/planIDs';
-import type { Currency, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { getShortBillingText } from '../../helper';

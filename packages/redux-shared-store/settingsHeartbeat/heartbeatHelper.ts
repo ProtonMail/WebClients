@@ -1,6 +1,6 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
-import { isFreeSubscription } from '@proton/shared/lib/constants';
+import { isFreeSubscription } from '@proton/payments';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 import type { Subscription, UserModel, UserSettings } from '@proton/shared/lib/interfaces';

@@ -22,9 +22,10 @@ import { useAutomaticCurrency } from '@proton/components/payments/client-extensi
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';
 import type { PLANS } from '@proton/payments';
-import { CURRENCIES, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { CURRENCIES, type Currency } from '@proton/payments';
+import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { blackFriday2024DuoConfig, blackFriday2024DuoEligibility } from '../../offers/operations/blackFriday2024Duo';

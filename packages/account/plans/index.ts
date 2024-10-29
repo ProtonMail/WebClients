@@ -1,7 +1,13 @@
 import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { getAvailableCurrencies, isRegionalCurrency } from '@proton/payments';
+import {
+    CURRENCIES,
+    type Currency,
+    DEFAULT_CURRENCY,
+    getAvailableCurrencies,
+    isRegionalCurrency,
+} from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     cacheHelper,
@@ -11,8 +17,8 @@ import {
     previousSelector,
 } from '@proton/redux-utilities';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
-import { CURRENCIES, DAY, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
-import type { Api, Currency, FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
+import { DAY } from '@proton/shared/lib/constants';
+import type { Api, FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
 
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';

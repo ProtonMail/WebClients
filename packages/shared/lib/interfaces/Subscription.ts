@@ -1,10 +1,9 @@
-import type { ADDON_NAMES, PLANS, PLAN_TYPES } from '@proton/payments';
+import type { ADDON_NAMES, Currency, PLANS, PLAN_TYPES } from '@proton/payments';
 
 import type { ProrationMode } from '../api/payments';
-import type { CURRENCIES, CYCLE } from '../constants';
+import type { CYCLE } from '../constants';
 import type { Nullable } from './utils';
 
-export type Currency = (typeof CURRENCIES)[number];
 export type Cycle =
     | CYCLE.MONTHLY
     | CYCLE.YEARLY

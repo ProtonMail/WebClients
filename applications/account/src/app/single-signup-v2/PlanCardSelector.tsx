@@ -9,13 +9,13 @@ import { getShortPlan } from '@proton/components/containers/payments/features/pl
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, type PlanIDs } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import { BRAND_NAME, CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromCheckout, getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import type {
-    Currency,
     FreePlanDefault,
     Plan,
     PlansMap,

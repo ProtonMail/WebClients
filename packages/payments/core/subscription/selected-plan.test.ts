@@ -1,9 +1,9 @@
-import { CYCLE, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/shared/lib/constants';
 import { type Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { PLANS_MAP } from '@proton/testing/data';
 
-import { ADDON_NAMES, PLANS } from '../constants';
+import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS } from '../constants';
 import { SelectedPlan } from './selected-plan';
 
 const mailBizWithScribe: Subscription = {
