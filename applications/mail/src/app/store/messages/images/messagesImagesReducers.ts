@@ -232,7 +232,9 @@ export const loadFakeProxyFulFilled = (
                 const { image, tracker, error } = getStateImage(imageToLoad, messageState);
 
                 if (image) {
-                    image.error = error;
+                    if (!!error) {
+                        image.error = error;
+                    }
                     image.tracker = tracker;
                 }
             }
