@@ -89,9 +89,12 @@ export function $setBlocksTypeAsSuggestion(
       }
     }
 
+    const initialFormatType = node.getFormatType()
+    const initialIndent = node.getIndent()
+
     const targetElement = createElement()
-    targetElement.setFormat(node.getFormatType())
-    targetElement.setIndent(node.getIndent())
+    targetElement.setFormat(initialFormatType)
+    targetElement.setIndent(initialIndent)
     node.replace(targetElement, true)
 
     const existingSuggestion = targetElement
@@ -111,6 +114,8 @@ export function $setBlocksTypeAsSuggestion(
     } else {
       const properties = {
         initialBlockType: nodeBlockType,
+        initialFormatType,
+        initialIndent,
         listInfo,
       }
       const suggestionNode = $createSuggestionNode(suggestionID, 'block-type-change', properties)
