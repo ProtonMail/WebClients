@@ -777,16 +777,19 @@ describe('$rejectSuggestion', () => {
                   initialBlockType: 'h1',
                 }),
               ),
-            $createHeadingNode('h2').append(
-              $createSuggestionNode(suggestionID, 'block-type-change', {
-                initialBlockType: 'number',
-                listInfo: {
-                  listType: 'number',
-                  listMarker: 'bracket',
-                  listStyleType: 'upper-roman',
-                },
-              }),
-            ),
+            $createHeadingNode('h2')
+              .setIndent(1)
+              .append(
+                $createSuggestionNode(suggestionID, 'block-type-change', {
+                  initialBlockType: 'number',
+                  listInfo: {
+                    listType: 'number',
+                    listMarker: 'bracket',
+                    listStyleType: 'upper-roman',
+                  },
+                }),
+                $createTextNode('List item'),
+              ),
           )
           $rejectSuggestion(suggestionID)
         },
@@ -826,8 +829,10 @@ describe('$rejectSuggestion', () => {
         const root = $getRoot()
         const first = root.getFirstChildOrThrow<ElementNode>()
         expect(first.getChildrenSize()).toBe(0)
-        const last = root.getLastChildOrThrow<HeadingNode>()
-        expect(last.getChildrenSize()).toBe(0)
+        const second = root.getChildAtIndex<HeadingNode>(1)!
+        expect(second.getChildrenSize()).toBe(0)
+        const third = root.getChildAtIndex<ListNode>(2)!
+        expect(third.getChildrenSize()).toBe(1)
       })
     })
 
@@ -836,6 +841,23 @@ describe('$rejectSuggestion', () => {
         const second = $getRoot().getChildAtIndex<HeadingNode>(1)!
         expect(second.getFormatType()).toBe('right')
         expect(second.getIndent()).toBe(1)
+      })
+    })
+
+    it('should recover list nesting', () => {
+      editor.read(() => {
+        const third = $getRoot().getChildAtIndex<ListNode>(2)!
+        expect(third.getChildrenSize()).toBe(1)
+        const firstLI = third.getFirstChildOrThrow<ListItemNode>()
+        expect($isListItemNode(firstLI)).toBe(true)
+        expect(firstLI.getChildrenSize()).toBe(1)
+        const nestedList = firstLI.getFirstChildOrThrow<ListNode>()
+        expect($isListNode(nestedList)).toBe(true)
+        expect(nestedList.getChildrenSize()).toBe(1)
+        const nestedLI = nestedList.getFirstChildOrThrow<ListItemNode>()
+        expect($isListItemNode(nestedLI)).toBe(true)
+        expect(nestedLI.getIndent()).toBe(1)
+        expect(nestedLI.getChildrenSize()).toBe(1)
       })
     })
   })
