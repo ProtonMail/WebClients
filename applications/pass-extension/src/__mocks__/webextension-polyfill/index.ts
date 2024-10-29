@@ -9,6 +9,10 @@ const browser = {
             return false;
         }),
     },
+    permissions: {
+        request: jest.fn(async () => true),
+        contains: jest.fn(async () => true),
+    },
     privacy: {
         services: {
             autofillAddressEnabled: { get: jest.fn(), set: jest.fn() },
