@@ -1,5 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
+import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import {
     calendarSettingsReducer,
     calendarsBootstrapReducer,
@@ -21,4 +22,5 @@ export const rootReducer = combineReducers({
     ...busySlotsReducer,
     ...breachesCountReducer,
     ...eventsReducer,
+    ...oauthTokenReducer,
 });
