@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <style>
+            body {
+                font-family: system-ui;
+                font-size: 14px;
+                margin: 0;
+                width: 100vw;
+                height: calc(100vh - 0.9rem);
+                display: grid;
+                place-items: center;
+            }
+
+            #wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            #spinner {
+                width: 8.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper" aria-hidden="true" aria-live="assertive" aria-atomic="true">
+            <img id="spinner" src="./proton-spinner.svg" />
+            <div id="message"></div>
+        </div>
+
+        <script type="module">
+            const messageElement = document.getElementById("message");
+            const wrapperElement = document.getElementById("wrapper");
+            const locationSearchParams = new URLSearchParams(location.search);
+
+            const message = locationSearchParams.get("message") || "Loading…";
+            const theme = locationSearchParams.get("theme") || "light";
+            const draggable = locationSearchParams.has("draggable");
+
+            if (draggable) {
+                document.body.style.setProperty("-webkit-app-region-", "drag");
+            }
+
+            wrapperElement.style.color = theme === "dark" ? "#e1e1e1" : "#666";
+            messageElement.textContent = message;
+            document.title = message;
+
+            wrapperElement.removeAttribute("aria-hidden");
+        </script>
+    </body>
+</html>

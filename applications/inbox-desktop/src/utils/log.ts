@@ -11,7 +11,7 @@ export const settingsLogger = Logger.scope("settings");
 export const updateLogger = Logger.scope("update");
 export const protocolLogger = Logger.scope("protocol");
 export const utilsLogger = Logger.scope("utils");
-export const viewLogger = (viewID: CHANGE_VIEW_TARGET) => Logger.scope(viewID);
+export const viewLogger = (viewID: CHANGE_VIEW_TARGET | null) => (viewID ? Logger.scope(viewID) : Logger.scope("view"));
 export const sentryLogger = Logger.scope("sentry");
 
 export function initializeLog() {

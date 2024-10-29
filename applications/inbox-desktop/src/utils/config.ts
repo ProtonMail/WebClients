@@ -24,18 +24,27 @@ export const getName = () => {
 };
 
 export const getExtraResource = () => {
+    const commonResources = [
+        "./assets/loading.html",
+        "./assets/error-network.html",
+        "../../packages/styles/assets/img/errors/error-network.svg",
+        "../../packages/styles/assets/img/loading-spinners/proton-spinner.svg",
+        "../../packages/styles/assets/img/loading-spinners/proton-spinner-negative.svg",
+    ];
+
     switch (type()) {
         case "Darwin":
-            return ["./src/macos/Proton Mail Uninstaller.app", "./src/macos/uninstall.sh"];
+            return [...commonResources, "./src/macos/Proton Mail Uninstaller.app", "./src/macos/uninstall.sh"];
         case "Windows_NT":
             return [
+                ...commonResources,
                 "./src/windows/uninstall.bat",
                 "./src/utils/protocol/protonmail-mailto-register.reg",
                 "./src/utils/protocol/protonmail-mailto-delete.reg",
                 "./assets/icons/icon.ico",
             ];
         default:
-            return [];
+            return commonResources;
     }
 };
 
