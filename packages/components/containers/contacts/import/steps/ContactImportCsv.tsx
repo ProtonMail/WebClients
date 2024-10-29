@@ -17,12 +17,19 @@ import {
     modifyContactType,
     toggleContactChecked,
 } from '@proton/shared/lib/contacts/helpers/importCsv';
-import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import type { ImportContactsModel, PreVcardsProperty } from '@proton/shared/lib/interfaces/contacts/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { useNotifications } from '../../../../hooks';
 import ContactImportCsvTableBody from './ContactImportCsvTableBody';
 import ContactImportCsvTableHeader from './ContactImportCsvTableHeader';
+
+// Helper function to find the index and check if it's still selected
+const findCheckedIndex = (preVcards: PreVcardsProperty, headerName: string, index: number) => {
+    const foundIndex = preVcards.findIndex(({ header }) => header.toLowerCase() === headerName.toLowerCase());
+    const isChecked = foundIndex !== -1 && preVcards[foundIndex].checked;
+    return isChecked && foundIndex !== index;
+};
 
 interface Props {
     model: ImportContactsModel;
@@ -44,17 +51,19 @@ const ImportCsvModalContent = ({ model, setModel, onClose }: Props) => {
 
     const handleToggle = (groupIndex: number) => (index: number) => {
         if (preVcardsContacts[0][groupIndex][index].combineInto === 'fn-main') {
-            // do not allow to uncheck first name and last name simultaneously
             const preVcards = preVcardsContacts[0][groupIndex];
-            const firstNameIndex = preVcards.findIndex(({ header }) => header.toLowerCase() === 'first name');
-            const lastNameIndex = preVcards.findIndex(({ header }) => header.toLowerCase() === 'last name');
-            const isFirstNameChecked = firstNameIndex !== -1 && preVcards[firstNameIndex].checked;
-            const isLastNameChecked = lastNameIndex !== -1 && preVcards[lastNameIndex].checked;
 
-            if ((!isFirstNameChecked && index === lastNameIndex) || (!isLastNameChecked && index === firstNameIndex)) {
+            // Display name cannot be empty, so if no row is selected after the current update, prevent the action
+            const isDisplayNameStillChecked = findCheckedIndex(preVcards, 'display name', index);
+            const isFirstNameStillChecked = findCheckedIndex(preVcards, 'first name', index);
+            const isLastNameStillChecked = findCheckedIndex(preVcards, 'last name', index);
+
+            const isRowValid = isDisplayNameStillChecked || isFirstNameStillChecked || isLastNameStillChecked;
+
+            if (!isRowValid) {
                 return createNotification({
                     type: 'error',
-                    text: c('Error notification').t`First name and last name cannot be unchecked at the same time`,
+                    text: c('Error notification').t`Display name cannot be empty`,
                 });
             }
         }
