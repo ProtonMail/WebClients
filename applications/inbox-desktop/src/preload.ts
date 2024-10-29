@@ -6,7 +6,6 @@ import {
     IPCInboxHostUpdateMessageSchema,
 } from "@proton/shared/lib/desktop/desktopTypes";
 import Logger from "electron-log";
-import { captureMessage } from "@sentry/electron/renderer";
 import * as Sentry from "@sentry/electron/renderer";
 
 const preloadLogger = Logger.scope("preload");
@@ -34,14 +33,11 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
 } satisfies IPCInboxMessageBroker);
 
 contextBridge.exposeInMainWorld("crashBandicoot", {
-    reportCrash: () => {
-        const messageId = captureMessage("Crash bandicoot report", {
-            level: "error",
-            tags: { logScope: "crashBandicoot" },
-            extra: {},
+    triggerCrash: () => {
+        ipcRenderer.send("clientUpdate", {
+            type: "triggerCrash",
+            payload: undefined,
         });
-
-        console.log(`${messageId} reported`);
     },
 });
 
