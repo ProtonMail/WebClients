@@ -130,7 +130,6 @@ export interface Upsell {
 
 export enum SignupMode {
     Default = 'default',
-    Onboarding = 'onboarding',
     Invite = 'invite',
     MailReferral = 'mailReferral',
 }

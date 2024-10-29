@@ -861,6 +861,10 @@ const SubscriptionContainer = ({
             delete withoutGift.gift;
             return withLoadingGift(check(withoutGift));
         }
+        if (getHas2024OfferCoupon(gift.trim().toUpperCase())) {
+            createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
+            return;
+        }
         void withLoadingGift(check({ ...model, gift }, true));
     };
 
