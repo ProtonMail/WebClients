@@ -54,8 +54,8 @@ export const loadEmbeddedFulfilled = (
 
         // Then we can mark images as loaded
         // They are mot marked directly when replacing urls,
-        // because this would trigger a rerender in the composer too early and we would not display them
-        updatedEmbeddedImages = markEmbeddedAsLoaded(embeddedImages, payload);
+        // because this would trigger a rerender in the composer too early, and we would not display them
+        updatedEmbeddedImages = markEmbeddedAsLoaded(updatedEmbeddedImages, payload);
 
         messageState.messageImages = updateImages(
             messageState.messageImages,
