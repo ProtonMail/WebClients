@@ -10,8 +10,9 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { BilledUserModal } from '@proton/components/payments/client-extensions/billed-user';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import type { Nullable } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -121,6 +122,21 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 modalState.onClose();
             };
 
+            let blurBackdrop = true;
+            let rootClassName: string | undefined;
+            if (getHas2024OfferCoupon(rest.coupon)) {
+                blurBackdrop = false;
+                if (app === APPS.PROTONVPN_SETTINGS) {
+                    rootClassName = 'subscription-modal-bf-bg subscription-modal--vpn-bg';
+                } else if (app === APPS.PROTONPASS) {
+                    rootClassName = 'subscription-modal-bf-bg subscription-modal--pass-bg';
+                } else if (app === APPS.PROTONDRIVE) {
+                    rootClassName = 'subscription-modal-bf-bg subscription-modal--drive-bg';
+                } else {
+                    rootClassName = 'subscription-modal-bf-bg subscription-modal--mail-bg';
+                }
+            }
+
             subscriptionModal = (
                 <SubscriptionContainer
                     parent="subscription-modal"
@@ -145,7 +161,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                     render={({ onSubmit, title, content, footer, step }) => {
                         return (
                             <ModalTwo
-                                blurBackdrop={true}
+                                blurBackdrop={blurBackdrop}
                                 className={clsx([
                                     subscriptionModalClassName,
                                     [SUBSCRIPTION_STEPS.PLAN_SELECTION, SUBSCRIPTION_STEPS.CHECKOUT].includes(step) &&
@@ -154,6 +170,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                                         'subscription-modal--large-width',
                                     [SUBSCRIPTION_STEPS.CHECKOUT].includes(step) && 'subscription-modal--medium-width',
                                 ])}
+                                rootClassName={rootClassName}
                                 data-testid="plansModal"
                                 {...modalState}
                                 onClose={handleClose}

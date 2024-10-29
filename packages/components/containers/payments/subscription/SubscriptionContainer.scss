@@ -1,4 +1,23 @@
 @import '~@proton/styles/scss/lib';
+@import '~@proton/styles/scss/specifics/bf-background';
+
+@include media('>xsmall') {
+	.subscription-modal {
+		@include bf-bgs;
+	}
+}
+
+@include media('<=xsmall') {
+	.subscription-modal-bf-bg {
+		padding: 0;
+		background: var(--background-norm);
+
+		.subscription-modal {
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+}
 
 .subscription-modal {
 	&--large-width {
