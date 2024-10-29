@@ -245,7 +245,6 @@ export const getDriveConfiguration = ({
     const title = c('drive_signup_2024: Info').t`Secure cloud storage that gives you control of your data`;
     const b2bTitle = c('drive_signup_2024: Info').t`Protect sensitive business information and collaborate securely`;
     const inviteTitle = c('drive_signup_2023: Title').t`You're invited to access a file in ${DRIVE_APP_NAME}`;
-    const onboardingTitle = title;
 
     const features = getGenericFeatures(isLargeViewport, audience);
 
@@ -344,7 +343,6 @@ export const getDriveConfiguration = ({
     const benefitItems = getDriveBenefits(plan?.Name as PLANS, audience);
 
     const benefitsTitle = getDriveBenefitsTitle(plan?.Name as PLANS, audience);
-    const benefitsOnboardingTitle = benefitsTitle;
     const benefitsInviteTitle = c('drive_signup_2023: Title').t`Free, encrypted, and secure cloud storage`;
     const benefits = benefitItems && (
         <div>
@@ -352,7 +350,6 @@ export const getDriveConfiguration = ({
                 {
                     {
                         [SignupMode.Default]: benefitsTitle,
-                        [SignupMode.Onboarding]: benefitsOnboardingTitle,
                         [SignupMode.Invite]: benefitsInviteTitle,
                         [SignupMode.MailReferral]: benefitsTitle,
                     }[mode]
@@ -367,7 +364,6 @@ export const getDriveConfiguration = ({
         logo,
         title: {
             [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
-            [SignupMode.Onboarding]: onboardingTitle,
             [SignupMode.Invite]: inviteTitle,
             [SignupMode.MailReferral]: title,
         }[mode],

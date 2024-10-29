@@ -332,7 +332,6 @@ export const getPassConfiguration = ({
     const title = c('pass_signup_2023: Info').t`Encrypted password manager that also protects your identity`;
     const b2bTitle = c('pass_signup_2023: Info').t`Get the security and features your business needs`;
     const inviteTitle = c('pass_signup_2023: Info').t`You have been invited to join ${PASS_APP_NAME}`;
-    const onboardingTitle = c('pass_signup_2023: Info').t`Unlock ${PASS_APP_NAME} premium features by upgrading`;
 
     const features = getGenericFeatures(isLargeViewport);
     const planTitle = plansMap?.[PLANS.PASS_PRO]?.Title || PLAN_NAMES[PLANS.PASS_PRO];
@@ -477,7 +476,6 @@ export const getPassConfiguration = ({
         logo,
         title: {
             [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
-            [SignupMode.Onboarding]: onboardingTitle,
             [SignupMode.Invite]: inviteTitle,
             [SignupMode.MailReferral]: title,
         }[mode],

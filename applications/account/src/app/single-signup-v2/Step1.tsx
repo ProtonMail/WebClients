@@ -71,13 +71,11 @@ import Box from './Box';
 import BoxContent from './BoxContent';
 import BoxHeader from './BoxHeader';
 import FeatureItem from './FeatureItem';
-import FreeLogo from './FreeLogo';
 import Guarantee from './Guarantee';
 import Layout from './Layout';
 import { PlanCardSelector } from './PlanCardSelector';
-import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
-import { type SubscriptionDataCycleMapping, getAccessiblePlans, getFreeSubscriptionData, getFreeTitle } from './helper';
+import { type SubscriptionDataCycleMapping, getAccessiblePlans, getFreeSubscriptionData } from './helper';
 import type {
     Measure,
     OnOpenLogin,
@@ -90,7 +88,6 @@ import type {
 import { SignupMode, UpsellTypes } from './interface';
 import DriveTrial2024UpsellModal from './modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
-import { getFreePassFeatures } from './pass/configuration';
 
 export interface Step1Rref {
     scrollIntoPayment: () => void;
@@ -102,7 +99,6 @@ const Step1 = ({
         features,
         title,
         productAppName: appName,
-        shortProductAppName: shortAppName,
         product: app,
         benefits,
         signupTypes,
@@ -398,7 +394,6 @@ const Step1 = ({
     })();
 
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
-    const isOnboardingMode = mode === SignupMode.Onboarding;
 
     const termsAndConditionsLink = (
         <Href className="color-weak" key="terms" href={getLocaleTermsURL(app)}>
@@ -422,7 +417,7 @@ const Step1 = ({
     const hidePlanSelectorCoupons = new Set([COUPON_CODES.TRYMAILPLUS2024, COUPON_CODES.MAILPLUSINTRO]);
     const hasPlanSelector =
         !model.planParameters?.defined &&
-        ([SignupMode.Default, SignupMode.Onboarding, SignupMode.MailReferral].includes(mode) ||
+        ([SignupMode.Default, SignupMode.MailReferral].includes(mode) ||
             (mode === SignupMode.Invite && app === APPS.PROTONWALLET)) &&
         !hidePlanSelectorCoupons.has(model.subscriptionData.checkResult.Coupon?.Code as any) &&
         !hidePlanSelectorCoupons.has(model.optimistic.coupon as any) &&
@@ -570,7 +565,7 @@ const Step1 = ({
                 >
                     <h1 className="m-0 large-font lg:px-4 text-semibold">{title}</h1>
                 </div>
-                {!isOnboardingMode && hasPlanSelector && model.upsell.mode !== UpsellTypes.UPSELL && (
+                {hasPlanSelector && model.upsell.mode !== UpsellTypes.UPSELL && (
                     <div className="flex flex-nowrap mb-4 gap-1 md:gap-8 text-sm md:text-rg">
                         {features.map(({ key, left, text }, i, arr) => {
                             return (
@@ -610,7 +605,6 @@ const Step1 = ({
 
                     if (
                         selectedPlan.Name === PLANS.VISIONARY &&
-                        !isOnboardingMode &&
                         model.upsell.mode !== UpsellTypes.UPSELL &&
                         mode !== SignupMode.Invite
                     ) {
@@ -816,24 +810,9 @@ const Step1 = ({
                         </Box>
                     </>
                 )}
-                <Box
-                    className={clsx('mt-12 w-full max-w-custom', isOnboardingMode && !hasSelectedFree && 'hidden')}
-                    style={boxWidth}
-                >
+                <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
                     {(() => {
-                        const step2Summary = isOnboardingMode ? (
-                            <RightSummary variant="gradientBorder" className="mx-auto md:mx-0 rounded-xl">
-                                <RightPlanSummary
-                                    title={getFreeTitle(shortAppName)}
-                                    price={getSimplePriceString(options.currency, 0)}
-                                    regularPrice={getSimplePriceString(options.currency, 0)}
-                                    logo={<FreeLogo app={app} dark={theme.dark} />}
-                                    discount={0}
-                                    free
-                                    features={getFreePassFeatures()}
-                                />
-                            </RightSummary>
-                        ) : (
+                        const step2Summary = (
                             <RightSummary
                                 variant={isDarkBg ? 'gradientBorder' : 'gradient'}
                                 className={clsx('p-6 hidden md:flex rounded-xl')}
@@ -855,10 +834,6 @@ const Step1 = ({
                         );
 
                         const user = model?.session?.user;
-
-                        if (isOnboardingMode && !hasSelectedFree) {
-                            return null;
-                        }
 
                         const willShowStep2 = !hasSelectedFree;
                         const willHaveSingleStep = step === 1 && !willShowStep2;
@@ -900,19 +875,12 @@ const Step1 = ({
                                                         {cta}
                                                     </Button>
                                                 )}
-                                                {!isOnboardingMode && (
-                                                    <div
-                                                        className={clsx(
-                                                            'text-center',
-                                                            hasSelectedFree ? 'mt-4' : 'mt-6'
-                                                        )}
-                                                    >
-                                                        {
-                                                            // translator: Full sentence "Or create a new account"
-                                                            c('pass_signup_2023: Action').jt`Or ${createANewAccount}`
-                                                        }
-                                                    </div>
-                                                )}
+                                                <div className={clsx('text-center', hasSelectedFree ? 'mt-4' : 'mt-6')}>
+                                                    {
+                                                        // translator: Full sentence "Or create a new account"
+                                                        c('pass_signup_2023: Action').jt`Or ${createANewAccount}`
+                                                    }
+                                                </div>
                                             </div>
                                             {step2Summary}
                                         </div>
