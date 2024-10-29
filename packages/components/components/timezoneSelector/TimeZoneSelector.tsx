@@ -86,7 +86,7 @@ export const TimeZoneSelector = ({
         },
         unstyled: unstyledSelect,
         renderSelected: () =>
-            abbreviatedTimezone ? getAbbreviatedTimezoneName(abbreviatedTimezone, timezone) : undefined,
+            abbreviatedTimezone ? getAbbreviatedTimezoneName(abbreviatedTimezone, timezone, date) : undefined,
         originalPlacement: 'bottom-start',
         ...rest,
         children: timezoneOptions,
