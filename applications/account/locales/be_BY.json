@@ -868,6 +868,9 @@
       "Resend code": [
         "Адправіць код яшчэ раз"
       ],
+      "Resend invitation": [
+        "Паўторна адправіць запрашэнне"
+      ],
       "Reset": [
         "Скінуць"
       ],
@@ -1577,34 +1580,11 @@
       "3 TB": [
         "3 ТБ"
       ],
-      "3,000+ servers across 65+ countries": [
-        "Больш за 3000 сервераў у больш як 65 краінах"
-      ],
       "6 users": [
         "6 карыстальнікаў"
       ],
-      "Access content worldwide": [
-        "Доступ да змесціва па ўсім свеце"
-      ],
-      "Ad-blocker and malware protection": [
-        "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
-      ],
-      "Extended version history": [
-        "Пашыраная гісторыя версій"
-      ],
-      "High speed streaming": [
-        "Высакахуткасныя трансляцыі"
-      ],
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
       ]
     },
     "bf2023: header": {
@@ -1686,41 +1666,150 @@
       ]
     },
     "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 3000 сервераў, якія ахопліваюць 65 краін, найвышэйшую хуткасць VPN, доступ да сэрвісаў з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, хуткія спампоўванні ў BitTorrent, а таксама іншыя функцыі."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } прасторы ў сховішчы"
+      ],
+      "1 TB total": [
+        "Агулам 1 ТБ"
+      ],
+      "1 user": [
+        "1 карыстальнік"
+      ],
+      "1 user account": [
+        "1 уліковы запіс карыстальніка"
+      ],
+      "10 email addresses": [
+        "10 адрасоў электроннай пошты"
+      ],
+      "2 users": [
+        "2 карыстальнікі"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 user accounts": [
+        "6 уліковых запісаў карыстальніка"
+      ],
+      "6 users": [
+        "6 карыстальнікаў"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Больш за 8500 сервераў у больш чым 110 краінах"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
+      ],
+      "Admin panel to manage your family": [
+        "Панэль адміністратара для кіравання вашай сям'ёй"
+      ],
+      "Advanced account protection": [
+        "Пашыраная абарона ўліковага запісу"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Easily add or remove users": [
+        "Лёгкае дадаванне або выдаленне карыстальнікаў"
+      ],
+      "High speed streaming": [
+        "Высакахуткасныя трансляцыі"
+      ],
+      "Integrated 2FA authenticator": [
+        "Інтэграваны аўтэнтыфікатар 2ФА"
+      ],
+      "Online document editor": [
+        "Воблачны рэдактар дакументаў"
+      ],
+      "Password health alerts": [
+        "Папярэджанні якасці пароля"
+      ],
+      "Private photo backup": [
+        "Прыватнае рэзерваванне фатаграфій"
+      ],
+      "Protect 10 devices at a time": [
+        "Абараняйце 10 прылад адначасова"
+      ],
+      "Secure file storage & sharing": [
+        "Бяспечнае файлавае сховішча і абагульванне"
+      ],
+      "Secure vault and link sharing": [
+        "Бяспечнае сховішча і абагульванне спасылкі"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
+      ],
+      "Use your own email domain": [
+        "Выкарыстоўвайце ўласны дамен электроннай пошты"
+      ],
+      "Version history": [
+        "Гісторыя версій"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Найбольш папулярны"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Доступ да заблакіраванага змесціва і прыватны прагляд. Уключае больш за 8500 сервераў у больш чым 110 краінах, 10 прылад, высакахуткасныя трансляцыі, блакіроўшчык рэкламы і шкодных праграм, VPN Accelerator і многае іншае."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
       ],
-      "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Абыходзьце блакіроўкі і цэнзуру ў сваёй краіне з дапамогай нашай глабальнай сеткі сервераў."
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, Dark Web Monitoring і іншыя функцыі."
       ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку для ${ domains } карыстальніцкага дамена электроннай пошты, ${ addresses } адраса электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі.",
-        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі.",
-        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі.",
-        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў электроннай пошты hide-my-email, абагульванне календара і іншыя функцыі."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
       ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Прастора сховішча размеркавана паміж усімі праграмамі ${ BRAND_NAME }"
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Захоўвайце да 200 версій кожнага файла да 10 гадоў."
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
       ]
     },
     "Billing cycle": {
@@ -3702,25 +3791,6 @@
         ".rpm для Fedora/Red Hat"
       ]
     },
-    "drive_signup_2023: Feature": {
-      "${ totalStorageSize } of storage for free": [
-        "${ totalStorageSize } сховішча бясплатна"
-      ],
-      "End-to-end encrypted": [
-        "Зашыфравана скразным метадам"
-      ]
-    },
-    "drive_signup_2023: Info": {
-      "Advanced sharing security": [
-        "Дадатковая бяспека пры абагуленні"
-      ],
-      "Encrypted cloud storage for all your files": [
-        "Зашыфраванае воблачнае сховішча для ўсіх вашых файлаў"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Абаронены швейцарскімі законамі аб прыватнасці"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Стварыць бясплатны ўліковы запіс ${ DRIVE_APP_NAME } для бяспечнага доступу да файла"
@@ -3762,11 +3832,6 @@
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі пажаданнямі"
-      ]
-    },
-    "drive_signup_2024: TitleB2B": {
-      "The only business solution that is:": [
-        "Адзінае рашэнне для бізнесу, якое"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4277,33 +4342,6 @@
     "Empty group name": {
       "Unnamed": [
         "Без назвы"
-      ]
-    },
-    "eof2023: Deal details": {
-      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
-        "Платныя функцыі ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }"
-      ]
-    },
-    "eof2023: Tooltip": {
-      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Уключае гісторыю версій у ${ DRIVE_SHORT_APP_NAME }, доступ да тысяч высакахуткасных сервераў ${ VPN_SHORT_APP_NAME }, абагульванне ў ${ PASS_SHORT_APP_NAME } і іншыя функцыі."
-      ]
-    },
-    "eoy2023: Deal details": {
-      "6 TB": [
-        "6 ТБ"
-      ],
-      "6 users": [
-        "6 карыстальнікаў"
-      ],
-      "Early access to new apps and features": [
-        "Ранні доступ да новых праграм і функцый"
-      ],
-      "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Ранні доступ для настольнай праграмы ${ MAIL_APP_NAME }"
-      ],
-      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Платныя функцыі ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -5588,9 +5626,6 @@
       ],
       "Continue": [
         "Працягнуць"
-      ],
-      "Dark Web Monitoring": [
-        "Dark Web Monitoring"
       ],
       "Fastest VPN servers": [
         "Найхутчэйшыя серверы VPN"
@@ -7668,12 +7703,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Калі вы ніколі раней не выкарыстоўвалі двухфактарную аўтэнтыфікацыю, то мы настойліва рэкамендуем вам ${ guideButton }."
       ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Калі вы страціце свой пароль і вам неабходна будзе аднавіць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountRecovery }."
-      ],
-      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Калі вы страціце свой пароль і вам неабходна будзе аднавіць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountAndRecovery }. У адваротным выпадку вы не зможаце атрымаць доступ да электроннай пошты, кантактаў або файлаў."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
       ],
@@ -8764,7 +8793,7 @@
         "Гэта прывядзе да выхаду з любога актыўнага сеанса і адключэння двухфактарнай аўтэнтыфікацыі."
       ],
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
-        "Гэта прывядзе да выдалення сувязі прылады з назвай **${ name } (створана ${ date })** з вашым уліковым запісам ${ BRAND_NAME }"
+        "Гэта прывядзе да адвязкі прылады з назвай **${ name } (створана ${ date })** ад вашага ўліковага запісу ${ BRAND_NAME }"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
@@ -11448,26 +11477,6 @@
         "Спецыяльная прапанова"
       ]
     },
-    "mailtrial2024: Deal details": {
-      "${ MAIL_APP_NAME } desktop app": [
-        "Настольная праграма ${ MAIL_APP_NAME }"
-      ],
-      "10 email addresses": [
-        "10 адрасоў электроннай пошты"
-      ],
-      "Auto-delete Spam and Trash": [
-        "Аўтаматычнае выдаленне спаму і смецця"
-      ],
-      "Custom schedule send and snooze times": [
-        "Карыстальніцкае планаванне адпраўкі і адкладання"
-      ],
-      "Support for 1 custom email domain": [
-        "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
-      ]
-    },
     "mailtrial2024: Footer": {
       "Renews at ${ renewablePrice }, cancel anytime": [
         "Падаўжаецца за ${ renewablePrice }. Скасаваць можна ў любы час"
@@ -13705,12 +13714,6 @@
       "Encrypted password manager that also protects your identity": [
         "Зашыфраваны менеджар пароляў, які таксама абараняе вашу ідэнтычнасць"
       ],
-      "End-to-end encrypted notes": [
-        "Нататкі са скразным шыфраваннем"
-      ],
-      "End-to-end encryption": [
-        "Скразное шыфраванне"
-      ],
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
         "Увядзіце бачнае імя для **${ username }**. Гэту назву будуць бачыць вашы карыстальнікі, калі вы зменіце іх дазволы або абагуліце даныя з імі."
       ],
@@ -13860,9 +13863,6 @@
       ],
       "Welcome to ${ shortName } Plus": [
         "Вітаем у ${ shortName } Plus"
-      ],
-      "Works on all devices": [
-        "Працуе на ўсіх прыладах"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "У вас ужо ёсць доступ да прэміяльных функцый ${ appName }. Няма неабходнасці купляць іх яшчэ раз."
@@ -15518,9 +15518,6 @@
       "6 users": [
         "6 карыстальнікаў"
       ],
-      "64 countries": [
-        "64 краіны"
-      ],
       "All paid Mail and Calendar features": [
         "Усе платныя функцыі Mail і Calendar"
       ],
@@ -15634,15 +15631,6 @@
       ]
     },
     "specialoffer: Title": {
-      "Black Friday Sale": [
-        "Распродаж з нагоды \"Чорнай пятніцы\""
-      ],
-      "Cyber Week Sale": [
-        "Распродаж з нагоды \"Кібертыдня\""
-      ],
-      "End of Year Sale": [
-        "Распродаж з нагоды заканчэння года"
-      ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Палепшыце свой тарыфны план і зэканомце больш грошай, купіўшы ${ planName } на 2 гады"
       ]
@@ -15653,9 +15641,6 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключае 1700 сервераў у больш як 60 краінах, найвышэйшую хуткасць VPN, 10 падключэнняў па VPN, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
-      ],
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагульванне календара, зашыфраванае воблачнае сховішча, абагульванне файлаў і іншыя функцыі."
