@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { createToken, getTokens } from '@proton/activation/src/api';
+import { useOAuthToken } from '@proton/activation';
+import { createToken } from '@proton/activation/src/api';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { OAuthProps } from '@proton/activation/src/interface';
 import { EASY_SWITCH_SOURCES, ImportType, OAUTH_PROVIDER } from '@proton/activation/src/interface';
@@ -18,7 +19,7 @@ import clsx from '@proton/utils/clsx';
 import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingWidget';
 import { VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
 
-type ZoomIntegrationState = 'disconnected' | 'connected' | 'loading' | 'meeting-present';
+type ZoomIntegrationState = 'loadingConfig' | 'disconnected' | 'connected' | 'loading' | 'meeting-present';
 
 const getIcon = (state: ZoomIntegrationState) => {
     switch (state) {
@@ -28,6 +29,7 @@ const getIcon = (state: ZoomIntegrationState) => {
         case 'meeting-present':
             return <img src={zoomLogo} className="h-6 w-6" alt="" />;
         case 'loading':
+        case 'loadingConfig':
             return <CircleLoader className="color-primary h-4 w-4" />;
     }
 };
@@ -39,13 +41,24 @@ interface Props {
 
 export const ZoomRow = ({ model, setModel }: Props) => {
     const [user] = useUser();
-    const [processState, setProcessState] = useState<ZoomIntegrationState>('disconnected');
+    const [oAuthToken, oauthTokenLoading] = useOAuthToken();
+    const isUserConnectedToZoom = oAuthToken?.some(({ Provider }) => Provider === OAUTH_PROVIDER.ZOOM);
+
+    const [processState, setProcessState] = useState<ZoomIntegrationState>('loadingConfig');
 
     const api = useApi();
     const [, withLoading] = useLoading();
     const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
-        errorMessage: c('loc_nightly:Error').t`Failed to load oauth modal.`,
+        errorMessage: c('Error').t`Failed to load oauth modal.`,
     });
+
+    useEffect(() => {
+        if (loadingConfig || oauthTokenLoading) {
+            setProcessState('loadingConfig');
+        } else {
+            setProcessState(isUserConnectedToZoom ? 'connected' : 'disconnected');
+        }
+    }, [loadingConfig, oauthTokenLoading]);
 
     useEffect(() => {
         if (model.conferenceUrl) {
@@ -74,14 +87,10 @@ export const ZoomRow = ({ model, setModel }: Props) => {
             return;
         }
 
-        const { Tokens } = await api(getTokens());
-
-        if (!Tokens.length) {
-            setProcessState('disconnected');
-
+        if (processState === 'disconnected') {
             triggerOAuthPopup({
                 provider: OAUTH_PROVIDER.ZOOM,
-                scope: [].join(' '),
+                scope: '',
                 callback: async (oAuthProps: OAuthProps) => {
                     const { Code, Provider, RedirectUri } = oAuthProps;
 
@@ -122,8 +131,8 @@ export const ZoomRow = ({ model, setModel }: Props) => {
                 <div className="flex items-center gap-1">
                     <Button
                         onClick={handleClick}
-                        disabled={loadingConfig}
-                        loading={loadingConfig}
+                        disabled={loadingConfig || oauthTokenLoading}
+                        loading={loadingConfig || oauthTokenLoading}
                         shape="underline"
                         className="p-0"
                         color="norm"
@@ -135,9 +144,12 @@ export const ZoomRow = ({ model, setModel }: Props) => {
                 </div>
             )}
 
-            {processState === 'loading' && (
-                <Button disabled shape="ghost" className="p-0" color="norm" size="small">{c('Zoom integration')
-                    .t`Adding conferencing details`}</Button>
+            {(processState === 'loading' || processState === 'loadingConfig') && (
+                <Button disabled shape="ghost" className="p-0" color="norm" size="small">
+                    {loadingConfig
+                        ? c('Zoom integration').t`Loading Zoom configuration`
+                        : c('Zoom integration').t`Adding conferencing details`}
+                </Button>
             )}
         </IconRow>
     );
