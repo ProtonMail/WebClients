@@ -561,7 +561,6 @@ const SingleSignupContainerV2 = ({
     const triggerModals = ({
         session,
         upsell,
-        subscriptionData,
         options,
         planParameters,
     }: {
@@ -575,7 +574,11 @@ const SingleSignupContainerV2 = ({
     }) => {
         const planName = getPlanNameFromSession(session);
 
-        if (session.subscription && options?.ignoreUnlock !== true && upsell.plan?.Name) {
+        if (session.subscription && options?.ignoreUnlock !== true && upsell.plan?.Name && planParameters?.defined) {
+            // The selected plan is the plan we upsell to, pass through
+            if (planParameters.plan.Name === upsell.plan.Name) {
+                return;
+            }
             if ([PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].includes(upsell.plan.Name as any)) {
                 setUnlockModal(true);
                 return;
@@ -584,11 +587,9 @@ const SingleSignupContainerV2 = ({
                 setVisionaryModal(true);
                 return;
             }
-            const hasCheckResult = subscriptionData.planIDs[upsell.plan.Name];
-            if ((planParameters?.defined && planParameters.plan.Name !== upsell.plan.Name) || !hasCheckResult) {
-                setUpsellModal(true);
-                return;
-            }
+            // The selected plan is different from the plan we upsell to, show the upsell modal
+            setUpsellModal(true);
+            return;
         }
 
         if (session.state.access) {
