@@ -52,7 +52,7 @@ import type { Cycle } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import { formatUser, hasPaidPass } from '@proton/shared/lib/user/helpers';
+import { formatUser } from '@proton/shared/lib/user/helpers';
 import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
@@ -284,7 +284,7 @@ const SingleSignupContainerV2 = ({
         }
 
         let localID = Number(searchParams.get('u') || undefined);
-        let mode = searchParams.get('mode') === SignupMode.Onboarding ? SignupMode.Onboarding : SignupMode.Default;
+        let mode = SignupMode.Default;
 
         // pass new user invite
         const inviter = searchParams.get('inviter');
@@ -525,9 +525,6 @@ const SingleSignupContainerV2 = ({
                 return 'mail_signup';
             }
             if (getIsPassApp(toApp)) {
-                if (signupParameters.mode === SignupMode.Onboarding) {
-                    return 'pass_web_first_onboard';
-                }
                 if (audience === Audience.B2B) {
                     return 'pass_signup_b2b';
                 }
@@ -754,9 +751,6 @@ const SingleSignupContainerV2 = ({
             }
 
             const signupParametersDiff: Partial<SignupParameters2> = {};
-            if (signupParameters.mode === SignupMode.Onboarding && !session?.user) {
-                signupParametersDiff.mode = SignupMode.Default;
-            }
             if (signupParameters.mode === SignupMode.Invite && signupParameters.hideFreePlan) {
                 signupParametersDiff.hideFreePlan = false;
             }
@@ -773,7 +767,6 @@ const SingleSignupContainerV2 = ({
             if (Object.keys(signupParametersDiff).length > 0) {
                 setSignupParameters((old) => ({ ...old, ...signupParametersDiff }));
             }
-            const mode = signupParametersDiff.mode || signupParameters.mode;
 
             setModelDiff({
                 session,
@@ -795,35 +788,13 @@ const SingleSignupContainerV2 = ({
             if (session?.user) {
                 setLoadingChallenge(false);
 
-                if (product === APPS.PROTONPASS) {
-                    const onboardingMode = mode === SignupMode.Onboarding;
-
-                    if (onboardingMode && hasPaidPass(session.user)) {
-                        const freeSubscriptionData = getFreeSubscriptionData(subscriptionData);
-                        const cache: UserCacheResult = {
-                            type: 'user',
-                            subscriptionData: freeSubscriptionData,
-                            session,
-                        };
-                        setModelDiff({ subscriptionData: cache.subscriptionData, cache, step: Steps.Loading });
-                    } else {
-                        triggerModals({
-                            planParameters,
-                            session,
-                            upsell,
-                            subscriptionData,
-                            options: { ignoreUnlock: onboardingMode },
-                        });
-                    }
-                } else {
-                    triggerModals({
-                        planParameters,
-                        session,
-                        upsell,
-                        subscriptionData,
-                        options: { ignoreUnlock: false },
-                    });
-                }
+                triggerModals({
+                    planParameters,
+                    session,
+                    upsell,
+                    subscriptionData,
+                    options: { ignoreUnlock: false },
+                });
 
                 const planName = getPlanNameFromSession(session);
                 measure({

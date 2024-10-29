@@ -137,7 +137,6 @@ export const getWalletConfiguration = ({
     const title = c('wallet_signup_2024: Info').t`A safer way to hold your Bitcoin`;
     const inviteTitle1 = c('wallet_signup_2024: Info').t`You're Invited.`;
     const inviteTitle2 = c('wallet_signup_2024: Info').t`Exclusive early access to ${appName}.`;
-    const onboardingTitle = c('wallet_signup_2024: Info').t`Unlock ${appName} premium features by upgrading`;
 
     const features = getGenericFeatures(isLargeViewport);
 
@@ -257,7 +256,6 @@ export const getWalletConfiguration = ({
         logo,
         title: {
             [SignupMode.Default]: title,
-            [SignupMode.Onboarding]: onboardingTitle,
             [SignupMode.Invite]: (
                 <>
                     {inviteTitle1}
