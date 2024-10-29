@@ -157,7 +157,6 @@ export const getMailConfiguration = ({
     const title = c('mail_signup_2024: Info').t`An encrypted email service that puts your privacy first`;
     const b2bTitle = c('mail_signup_2024: Info').t`Encrypted solutions to protect your entire business`;
     const inviteTitle = c('mail_signup_2024: Info').t`You’ve been invited to try ${MAIL_APP_NAME}`;
-    const onboardingTitle = title;
 
     const features = getGenericFeatures(isLargeViewport, audience);
 
@@ -324,7 +323,6 @@ export const getMailConfiguration = ({
         ],
         title: {
             [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
-            [SignupMode.Onboarding]: onboardingTitle,
             [SignupMode.Invite]: inviteTitle,
             [SignupMode.MailReferral]: title,
         }[mode],

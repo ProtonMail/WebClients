@@ -1,0 +1,31 @@
+@mixin bf-bgs {
+	&--vpn-bg {
+		background: radial-gradient(
+				45.16% 45.16% at 50% -4.08%,
+				rgb(0 240 195 / 0.3) 0%,
+				rgb(74 136 255 / 0.2) 58.39%,
+				rgb(109 74 255 / 0) 100%
+			),
+			#191927;
+	}
+
+	&--mail-bg {
+		background: radial-gradient(50.8% 32.61% at 50.8% -3.95%, rgb(122 102 204 / 0.6) 0%, rgb(109 74 255 / 0) 100%),
+			#191927;
+	}
+
+	&--pass-bg {
+		background: radial-gradient(
+				37.95% 36.3% at 50% -9.45%,
+				rgb(249 164 159 / 0.4) 0%,
+				rgb(128 80 169 / 0.4) 50.52%,
+				rgb(109 74 255 / 0) 97.68%
+			),
+			#191927;
+	}
+
+	&--drive-bg {
+		background: radial-gradient(39.8% 39.8% at 50.8% -2.41%, rgb(255 98 192 / 0.35) 0%, rgb(109 74 255 / 0) 100%),
+			#191927;
+	}
+}
