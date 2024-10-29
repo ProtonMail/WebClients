@@ -18,13 +18,26 @@ import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { APPS, BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import shuffle from '@proton/utils/shuffle';
 
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
+
+export enum SUBSCRIPTION_CANCELLATION_REASONS {
+    DIFFERENT_ACCOUNT = 'DIFFERENT_ACCOUNT',
+    TOO_EXPENSIVE = 'TOO_EXPENSIVE',
+    MISSING_FEATURE = 'MISSING_FEATURE',
+    QUALITY_ISSUE = 'QUALITY_ISSUE',
+    STREAMING_SERVICE_UNSUPPORTED = 'STREAMING_SERVICE_UNSUPPORTED',
+    SWITCHING_TO_DIFFERENT_SERVICE = 'SWITCHING_TO_DIFFERENT_SERVICE',
+    VPN_CONNECTION_ISSUE = 'VPN_CONNECTION_ISSUE',
+    NOT_WILLING_TO_SHARE = 'NOT_WILLING_TO_SHARE',
+    TEMPORARY = 'TEMPORARY',
+    OTHER = 'OTHER',
+}
 
 interface ReasonOption {
     title: string;

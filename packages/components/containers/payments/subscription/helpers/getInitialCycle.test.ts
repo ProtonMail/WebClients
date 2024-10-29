@@ -1,5 +1,5 @@
-import { type FullPlansMap, PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
-import { APPS, CYCLE, FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import { FREE_SUBSCRIPTION, type FullPlansMap, PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
+import { APPS, CYCLE } from '@proton/shared/lib/constants';
 import type { Plan, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 import { getTestPlans } from '@proton/testing/data';

@@ -71,6 +71,7 @@ import {
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
@@ -92,14 +93,7 @@ import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHas2024OfferCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
-import type {
-    Currency,
-    Cycle,
-    CycleMapping,
-    Plan,
-    StrictPlan,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { Cycle, CycleMapping, Plan, StrictPlan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import Price from '@proton/components/components/price/Price';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 export interface Props {

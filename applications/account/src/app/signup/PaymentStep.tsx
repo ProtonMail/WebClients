@@ -36,13 +36,14 @@ import {
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Api, Currency, Cycle, Plan } from '@proton/shared/lib/interfaces';
+import type { Api, Cycle, Plan } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 

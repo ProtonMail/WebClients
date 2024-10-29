@@ -18,9 +18,10 @@ import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import type { PaymentMethodStatusExtended } from '@proton/payments';
 import { PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Currency, Cycle, FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Cycle, FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import Content from '../public/Content';

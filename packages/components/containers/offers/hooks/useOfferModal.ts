@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
-import type { Currency } from '@proton/shared/lib/interfaces';
+import { type Currency } from '@proton/payments';
 
 import type { OfferConfig } from '../interface';
 import useFetchOffer from './useFetchOffer';

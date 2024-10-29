@@ -7,9 +7,10 @@ import { PassLogo, Radio } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import { PLANS, type PlanIDs } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
-import type { Currency, CycleMapping } from '@proton/shared/lib/interfaces';
+import type { CycleMapping } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import SaveLabel2 from './SaveLabel2';

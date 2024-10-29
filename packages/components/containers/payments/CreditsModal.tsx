@@ -21,20 +21,20 @@ import { useChargebeeContext } from '@proton/components/payments/client-extensio
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
-import { PAYMENT_METHOD_TYPES, type PaymentMethodStatusExtended } from '@proton/payments';
-import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import {
-    APPS,
-    DEFAULT_CREDITS_AMOUNT,
+    type Currency,
     MAX_BITCOIN_AMOUNT,
     MIN_BITCOIN_AMOUNT,
     MIN_CREDIT_AMOUNT,
+    PAYMENT_METHOD_TYPES,
+    type PaymentMethodStatusExtended,
     isFreeSubscription,
-} from '@proton/shared/lib/constants';
+} from '@proton/payments';
+import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Currency } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
@@ -56,6 +56,8 @@ const getCurrenciesI18N = () => ({
 type Props = {
     status: PaymentMethodStatusExtended;
 } & ModalProps;
+
+export const DEFAULT_CREDITS_AMOUNT = 5000;
 
 const CreditsModal = ({ status, ...props }: Props) => {
     const { APP_NAME } = useConfig();

@@ -6,9 +6,10 @@ import { getDealDurationText } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import { type Currency } from '@proton/payments';
 import type { CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
-import type { Currency, Cycle } from '@proton/shared/lib/interfaces';
+import type { Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

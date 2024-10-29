@@ -3,12 +3,13 @@ import { c, msgid } from 'ttag';
 
 import Time from '@proton/components/components/time/Time';
 import { type PlanIDs } from '@proton/payments';
+import { type Currency } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getOptimisticRenewCycleAndPrice, isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
-import type { Coupon, Currency, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import type { Coupon, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import Price from '../../components/price/Price';
 import { getMonths } from './SubscriptionsSection';

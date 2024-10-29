@@ -1,10 +1,8 @@
+import { MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE } from '@proton/payments';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE } from '@proton/shared/lib/constants';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { PAYMENT_METHOD_TYPES, PLANS } from './constants';
-import { signupFlows } from './constants';
-import { Autopay, MethodStorage } from './constants';
+import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES, PLANS, signupFlows } from './constants';
 import {
     type PaymentMethodFlows,
     type PaymentMethodStatus,

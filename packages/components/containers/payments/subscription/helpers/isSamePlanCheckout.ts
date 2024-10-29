@@ -1,5 +1,4 @@
-import { type PlanIDs } from '@proton/payments';
-import { type FreeSubscription } from '@proton/shared/lib/constants';
+import { type FreeSubscription, type PlanIDs } from '@proton/payments';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 import { type Subscription } from '@proton/shared/lib/interfaces';
