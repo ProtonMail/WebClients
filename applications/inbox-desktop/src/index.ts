@@ -6,46 +6,28 @@ import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { initializeUpdateChecks, updateDownloaded } from "./update";
-import { isLinux, isMac, isWindows } from "./utils/helpers";
+import { isMac } from "./utils/helpers";
 import { isHostAllowed } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
 import { getMainWindow, getWebContentsViewName, viewCreationAppStartup } from "./utils/view/viewManagement";
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
-import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, observeNativeTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
-import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
+import { registerLogIPCForwardTransport } from "./utils/log/logIPCForwardTransport";
 import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
 import { checkDefaultProtocols } from "./utils/protocol/default";
 import { initializeSentry } from "./utils/sentry";
 import { appSession } from "./utils/session";
+import { captureTopLevelRejection, captureUncaughtErrors } from "./utils/log/captureUncaughtErrors";
+import { logInitialAppInfo } from "./utils/log/logInitialAppInfo";
 
 (async function () {
     initializeLog();
+    captureUncaughtErrors();
     await initializeSentry();
-
-    mainLogger.info(
-        "App start is mac:",
-        isMac,
-        "is windows:",
-        isWindows,
-        "isLinux:",
-        isLinux,
-        "version:",
-        app.getVersion(),
-        "params",
-        process.argv,
-    );
-
-    mainLogger.info(
-        "Desktop features:",
-        Object.entries(DESKTOP_FEATURES)
-            .map(([key, value]) => `${key}:${value}`)
-            .join(", "),
-    );
-
+    logInitialAppInfo();
     handleStartupMailto();
 
     // Handle squirrel events at the very top of the application
@@ -74,99 +56,6 @@ import { appSession } from "./utils/session";
 
     app.setAppUserModelId(pkg.config.appUserModelId);
 
-    const gotTheLock = app.requestSingleInstanceLock();
-    if (!gotTheLock) {
-        mainLogger.info("App is already running");
-        app.quit();
-    } else {
-        checkDefaultProtocols();
-
-        app.on("second-instance", (_ev, argv) => {
-            mainLogger.info("Second instance called", argv);
-
-            // Bring window to focus
-            const mainWindow = getMainWindow();
-            if (mainWindow) {
-                if (mainWindow.isMinimized()) {
-                    mainWindow.restore();
-                }
-
-                mainWindow.show();
-            }
-        });
-
-        app.whenReady().then(() => {
-            registerLogIPCForwardTransport();
-            observeNativeTheme();
-            const settings = getSettings();
-
-            if (settings.overrideError) {
-                urlOverrideError();
-            }
-
-            if (settings.theme) {
-                updateNativeTheme(getTheme());
-            }
-
-            connectNetLogger(getWebContentsViewName);
-
-            app.on("activate", () => {
-                if (isMac) {
-                    getMainWindow()?.show();
-                    return;
-                }
-
-                if (!getMainWindow()) {
-                    return viewCreationAppStartup();
-                }
-            });
-
-            viewCreationAppStartup();
-
-            // Check updates
-            initializeUpdateChecks();
-
-            // Trigger blank notification to force presence in settings
-            new Notification();
-
-            // Handle IPC calls coming from the destkop application
-            handleIPCCalls();
-
-            app.on("open-url", (_e: Event, url: string) => {
-                mainLogger.info("Open URL event", url);
-
-                // Bring window to focus
-                const mainWindow = getMainWindow();
-                if (mainWindow.isMinimized()) {
-                    mainWindow.restore();
-                }
-                mainWindow.show();
-            });
-
-            handleAppReadyMailto();
-
-            // Security addition, reject all permissions except notifications
-            appSession().setPermissionRequestHandler((webContents, permission, callback) => {
-                try {
-                    const { host, protocol } = new URL(webContents.getURL());
-                    if (!isHostAllowed(host) || protocol !== "https:") {
-                        return callback(false);
-                    }
-
-                    if (ALLOWED_PERMISSIONS.includes(permission)) {
-                        return callback(true);
-                    }
-
-                    mainLogger.info("Permission request rejected", permission);
-                    callback(false);
-                } catch (error) {
-                    mainLogger.error("Permission request error", error);
-                    callback(false);
-                }
-            });
-        });
-    }
-
     app.on("before-quit", () => {
         const mainWindow = getMainWindow();
 
@@ -183,8 +72,94 @@ import { appSession } from "./utils/session";
         }
     });
 
-    // Security addition
     app.on("web-contents-created", (_ev, contents) => {
         handleWebContents(contents);
     });
-})();
+
+    app.on("second-instance", (_ev, argv) => {
+        mainLogger.info("Second instance called", argv);
+
+        // Bring window to focus
+        const mainWindow = getMainWindow();
+        if (mainWindow) {
+            if (mainWindow.isMinimized()) {
+                mainWindow.restore();
+            }
+
+            mainWindow.show();
+        }
+    });
+
+    if (!app.requestSingleInstanceLock()) {
+        mainLogger.info("App is already running");
+        app.quit();
+        return;
+    }
+
+    // After this point we should be able to use all electron APIs safely.
+    await app.whenReady();
+
+    checkDefaultProtocols();
+    registerLogIPCForwardTransport();
+    observeNativeTheme();
+    connectNetLogger(getWebContentsViewName);
+    initializeUpdateChecks();
+    new Notification();
+    handleIPCCalls();
+    handleAppReadyMailto();
+
+    // After this point the main window and views have been created
+    viewCreationAppStartup();
+
+    const settings = getSettings();
+
+    if (settings.overrideError) {
+        urlOverrideError();
+    }
+
+    if (settings.theme) {
+        updateNativeTheme(getTheme());
+    }
+
+    app.on("activate", () => {
+        if (isMac) {
+            getMainWindow()?.show();
+            return;
+        }
+
+        if (!getMainWindow()) {
+            return viewCreationAppStartup();
+        }
+    });
+
+    app.on("open-url", (_e: Event, url: string) => {
+        mainLogger.info("Open URL event", url);
+
+        // Bring window to focus
+        const mainWindow = getMainWindow();
+        if (mainWindow.isMinimized()) {
+            mainWindow.restore();
+        }
+        mainWindow.show();
+    });
+
+    // Security addition, reject all permissions except notifications
+    appSession().setPermissionRequestHandler((webContents, permission, callback) => {
+        try {
+            const { host, protocol } = new URL(webContents.getURL());
+            if (!isHostAllowed(host) || protocol !== "https:") {
+                return callback(false);
+            }
+
+            if (ALLOWED_PERMISSIONS.includes(permission)) {
+                return callback(true);
+            }
+
+            mainLogger.info("Permission request rejected", permission);
+            callback(false);
+        } catch (error) {
+            mainLogger.error("Permission request error", error);
+            callback(false);
+        }
+    });
+})().catch(captureTopLevelRejection);
