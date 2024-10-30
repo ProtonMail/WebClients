@@ -18,7 +18,7 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
   const api = useApi()
   const unleashClient = useUnleashClient()
 
-  const { user, UID } = usePublicSessionUser()
+  const { user, UID, localID } = usePublicSessionUser()
 
   if (user) {
     /** Allow the API to make authenticated requests, such as bookmarking a document for the current session user */
@@ -60,13 +60,16 @@ function PublicApplicationContent({ publicDriveCompat }: { publicDriveCompat: Pu
     }
   }, [application.logger, openAction])
 
-  if (!isAppReady) {
+  if (!isAppReady || !openAction) {
     return null
   }
 
   return (
     <ApplicationProvider application={application}>
-      <UserProvider publicContext={{ user, compat: publicDriveCompat }} privateContext={undefined}>
+      <UserProvider
+        publicContext={{ user, localID, compat: publicDriveCompat, openParams: openAction }}
+        privateContext={undefined}
+      >
         <WordCountContextProvider>
           <Switch>
             <Route path={'*'}>

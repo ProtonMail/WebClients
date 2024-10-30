@@ -17,6 +17,8 @@ import type {
   BroadcastSource,
   DataTypesThatDocumentCanBeExportedAs,
   DocTrashState,
+  EditorEventData,
+  EditorEvent,
 } from '@proton/docs-shared'
 import {
   DocAwarenessEvent,
@@ -285,6 +287,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
       this.updatesReceivedWhileEditorInvokerWasNotReady.length = 0
     }
+  }
+
+  async editorReportingEvent(_event: EditorEvent, _data: EditorEventData[EditorEvent]): Promise<void> {
+    // no-op
   }
 
   public getSureDocument(): DocumentMetaInterface {

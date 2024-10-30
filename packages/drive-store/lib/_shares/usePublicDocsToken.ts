@@ -1,12 +1,18 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { handleDriveCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { getAuthHeaders } from '@proton/shared/lib/fetch/headers';
 
 import { usePublicAuth, usePublicSession } from '../../store/_api';
+import { getUrlPassword } from '../../utils/url/password';
 
 export const usePublicDocsToken = () => {
+    /**
+     * Run this to update the window location hash value,
+     * in case we are coming back from signup/signin and needing to get the hash from local storage.
+     */
+    getUrlPassword();
+
     const { search, hash } = useLocation();
 
     const params = useMemo(() => new URLSearchParams(search), [search]);
@@ -15,38 +21,19 @@ export const usePublicDocsToken = () => {
 
     const { isLoading, isPasswordNeeded, submitPassword, error, customPassword } = usePublicAuth(token, urlPassword);
     const { getSessionInfo } = usePublicSession();
-    const [passwordError, setPasswordError] = useState<Error | null>(null);
-    const isHandlingCustomPassword = useRef(false);
 
-    const isError = !!error[0] || !!passwordError;
+    const isError = !!error[0];
     const isReady = !isLoading && !isPasswordNeeded && !isError;
-
-    useEffect(() => {
-        if (isLoading || isError || !isPasswordNeeded) {
-            return;
-        }
-
-        if (isHandlingCustomPassword.current) {
-            return;
-        }
-
-        isHandlingCustomPassword.current = true;
-
-        handleDriveCustomPassword({
-            submitPassword,
-            onError: (e) => {
-                setPasswordError(e);
-            },
-        });
-    }, [isLoading, isPasswordNeeded, isError, submitPassword, isHandlingCustomPassword]);
 
     return {
         isReady,
         isError,
-        error: passwordError || (error[0] as Error),
+        error: error[0] as Error,
         customPassword,
         token,
         urlPassword,
+        isPasswordNeeded,
+        submitPassword,
         getPublicAuthHeaders: () => {
             const sessionInfo = getSessionInfo();
 
