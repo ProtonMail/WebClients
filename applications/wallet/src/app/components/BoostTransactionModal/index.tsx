@@ -14,7 +14,7 @@ import { type Address } from '@proton/shared/lib/interfaces';
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, type TransactionData, useWalletApiClients } from '@proton/wallet';
-import { useUserWalletSettings } from '@proton/wallet/store';
+import { DEFAULT_FEE_SETTINGS, useNetworkFees, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, Modal } from '../../atoms';
 import { Price } from '../../atoms/Price';
@@ -30,7 +30,6 @@ import {
 import {
     findNearestBlockTargetFeeRate,
     findQuickestBlock,
-    useFees,
 } from '../BitcoinSendModal/TransactionReviewStep/useFeesInput';
 
 interface Props extends ModalStateProps {
@@ -51,8 +50,14 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
 
     const getRecipientVerifiedAddressKey = useGetRecipientVerifiedAddressKey();
 
-    const { feesList } = useFees();
-    const feeRateForNextBlock = useMemo(() => findNearestBlockTargetFeeRate(1, feesList), [feesList]);
+    const [fees, loadingFees] = useNetworkFees();
+
+    const feeRateForNextBlock = useMemo(
+        () => findNearestBlockTargetFeeRate(1, fees?.feesList ?? [], fees?.minimumBroadcastFee),
+        [fees]
+    );
+
+    const { feesList, minimumIncrementalFee } = fees ?? DEFAULT_FEE_SETTINGS;
 
     const exchangeRate = transaction.apiData?.ExchangeRate;
     const currentFees = transaction.networkData.fee ?? 0;
@@ -61,9 +66,9 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
 
     const feesForNextBlock = Math.ceil(transactionSize * (feeRateForNextBlock ?? 1));
 
-    // Min RBF FeeRate should 1sat/vbytes superior to replaced transaction feeRate
-    const min = Math.ceil(currentFees + transactionSize);
-    const max = Math.max(Math.ceil(currentFees * 3), feesForNextBlock * 2);
+    // Min RBF FeeRate should be transaction size * incremental fee or minimum relay fee (1 sat/vbytes by default) superior to replaced transaction feeRate
+    const min = Math.ceil(currentFees + transactionSize * minimumIncrementalFee);
+    const max = Math.max(Math.ceil(currentFees * 3), feesForNextBlock * 2) + transactionSize * minimumIncrementalFee;
     // We want the slider to be set to 1/3
     const initialValue = Math.ceil(min + (max - min) / 3);
 
@@ -243,6 +248,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                     <Slider
                         min={min}
                         max={max}
+                        disabled={loadingFees}
                         step={1}
                         value={feesValue}
                         onChange={(value) => setFeesValue(value)}
@@ -261,7 +267,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                     fullWidth
                     size="large"
                     color="norm"
-                    disabled={loading}
+                    disabled={loading || loadingFees}
                     onClick={() => {
                         void withLoading(handleConfirmBoost());
                     }}
