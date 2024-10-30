@@ -5,11 +5,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import { useDrawer } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { updateHideDrawer } from '@proton/shared/lib/api/settings';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+
+import useDrawer from '../../hooks/drawer/useDrawer';
 
 import './DrawerVisibilityButton.scss';
 

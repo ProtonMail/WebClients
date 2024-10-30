@@ -3,12 +3,12 @@ import { c } from 'ttag';
 import { ThemeColor } from '@proton/colors/types';
 import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import { useDrawer } from '@proton/components/hooks';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 
+import useDrawer from '../../../hooks/drawer/useDrawer';
 import SecurityCenterDrawerLogo from '../drawerIcons/SecurityCenterDrawerLogo';
 import {
     selectAccountSecurityElements,

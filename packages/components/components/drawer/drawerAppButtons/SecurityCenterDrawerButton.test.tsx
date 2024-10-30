@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 
 import { ThemeColor } from '@proton/colors/types';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import { useDrawer } from '@proton/components/hooks';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { useFlag } from '@proton/unleash';
 
@@ -44,6 +43,13 @@ jest.mock('../drawerIcons/SecurityCenterDrawerLogo', () => ({
     SecurityCenterDrawerLogo: jest.fn(() => <div>SecurityCenterDrawerLogo</div>),
 }));
 
+jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+    __esModule: true,
+    default: jest.fn(() => ({
+        toggleDrawerApp: jest.fn(),
+    })),
+}));
+
 const setupMocks = ({
     canDisplayBreachNotifications = true,
     canDisplayNewSentinelSettings = true,
@@ -79,10 +85,6 @@ const setupMocks = ({
             default:
                 return null;
         }
-    });
-
-    (useDrawer as jest.Mock).mockReturnValue({
-        toggleDrawerApp: jest.fn(),
     });
 
     (useSecurityCenter as jest.Mock).mockReturnValue(isSecurityCenterEnabled);
