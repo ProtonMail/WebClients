@@ -1,9 +1,12 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useRouteMatch } from 'react-router-dom';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { OnboardingStatus } from '@proton/pass/store/selectors';
 import { selectOnboardingComplete, selectOnboardingEnabled, selectOnboardingState } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
@@ -16,6 +19,8 @@ type OnboardingContextValue = {
     enabled: boolean;
     state: OnboardingStatus;
     steps: { done: number; total: number };
+    launch: () => void;
+    isActive: boolean;
 };
 
 const OnboardingContext = createContext<OnboardingContextValue>({
@@ -28,15 +33,19 @@ const OnboardingContext = createContext<OnboardingContextValue>({
         vaultShared: false,
     },
     steps: { done: 0, total: 0 },
+    launch: noop,
+    isActive: false,
 });
 
 export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
     const { onboardingAcknowledge, onboardingCheck } = usePassCore();
     const extension = usePassExtensionLink();
+    const { navigate } = useNavigation();
 
     const state = useSelector(selectOnboardingState);
     const complete = useSelector(selectOnboardingComplete(extension.installed));
     const disabled = !useSelector(selectOnboardingEnabled(extension.installed));
+    const isActive = useRouteMatch(getLocalPath('onboarding'));
 
     const [enabled, setEnabled] = useState(!disabled);
 
@@ -63,6 +72,8 @@ export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
                 done: steps.filter(truthy).length,
                 total: steps.length,
             },
+            launch: () => navigate(getLocalPath('onboarding')),
+            isActive: Boolean(isActive),
         };
     }, [complete, enabled, extension, state]);
 
