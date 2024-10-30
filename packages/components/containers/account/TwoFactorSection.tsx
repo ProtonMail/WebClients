@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
@@ -185,20 +185,35 @@ const TwoFactorSection = () => {
                     {registeredKeys.length > 0 && (
                         <div className="mb-4">
                             <div>
-                                <Button
-                                    disabled={registeredKeys.length >= maxSecurityKeyLength}
-                                    onClick={() => {
-                                        setAddSecurityKeyModal(true);
-                                    }}
-                                    className="flex flex-nowrap items-center"
-                                >
-                                    <Icon name="plus" className="mr-2" />
-                                    {c('fido2: Action').t`Add security key`}
-                                </Button>
+                                {registeredKeys.length < maxSecurityKeyLength ? (
+                                    <Button
+                                        onClick={() => {
+                                            setAddSecurityKeyModal(true);
+                                        }}
+                                        className="flex flex-nowrap items-center"
+                                    >
+                                        <Icon name="plus" className="mr-2" />
+                                        {c('fido2: Action').t`New security key`}
+                                    </Button>
+                                ) : (
+                                    <div className="flex gap-2 items-center flex-nowrap rounded bg-weak border p-2">
+                                        <Icon name="info-circle" size={4} className="shrink-0" />
+                                        <p className="m-0">
+                                            {c('fido2: Info').ngettext(
+                                                msgid`You've reached the maximum of ${maxSecurityKeyLength} security key.`,
+                                                `You've reached the maximum of ${maxSecurityKeyLength} security keys.`,
+                                                maxSecurityKeyLength
+                                            )}
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                             <div className="mt-4 w-full">
-                                <div className="text-bold pb-2 border-bottom">
-                                    {c('fido2: Title').t`Registered security keys`}
+                                <div className="pb-2 border-bottom">
+                                    <span className="text-bold">{c('fido2: Title').t`Security keys`} </span>
+                                    <span className="color-weak">
+                                        ({registeredKeys.length}/{maxSecurityKeyLength})
+                                    </span>
                                 </div>
                                 {registeredKeys.map((registeredKey) => {
                                     const id = getId(registeredKey);
