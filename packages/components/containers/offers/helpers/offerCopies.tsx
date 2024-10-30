@@ -121,7 +121,7 @@ const getPremiumDriveFeature = () => ({
         .t`Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.`,
 });
 
-const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
+const getPremiumInboxFeature = (domains?: number, addresses?: number, scribe?: boolean) => {
     const name = c('BF2024: Deal details').t`${MAIL_SHORT_APP_NAME} Plus and ${CALENDAR_SHORT_APP_NAME}`;
 
     if (addresses) {
@@ -133,6 +133,17 @@ const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
             };
         }
 
+        if (scribe === false) {
+            return {
+                name,
+                tooltip: c('BF2024: Tooltip').ngettext(
+                    msgid`Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email address, support for custom email domains, unlimited hide-my-email aliases and more.`,
+                    `Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email addresses, support for custom email domains, unlimited hide-my-email aliases and more.`,
+                    addresses
+                ),
+            };
+        }
+
         return {
             name,
             tooltip: c('BF2024: Tooltip').ngettext(
@@ -140,6 +151,14 @@ const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
                 `Secure your emails and schedule with end-to-end encryption. Includes ${addresses} email addresses, support for custom email domains, ${BRAND_NAME} Scribe writing assistant, unlimited hide-my-email aliases and more.`,
                 addresses
             ),
+        };
+    }
+
+    if (scribe === false) {
+        return {
+            name,
+            tooltip: c('BF2024: Tooltip')
+                .t`Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.`,
         };
     }
 
@@ -222,7 +241,7 @@ export const getUnlimitedVPNFeatures = () => [
 export const getUnlimitedInboxFeatures = () => [
     getStorageSizeFeature(humanSize({ bytes: 500 * 1024 ** 3, fraction: 0 })),
     { name: c('BF2024: Deal details').t`1 user` },
-    getPremiumInboxFeature(3, 15),
+    getPremiumInboxFeature(3, 15, false),
     getPremiumVPNFeature(),
     getPremiumPasswordManagerFeature(),
     getPremiumDriveFeature(),
@@ -231,7 +250,7 @@ export const getUnlimitedInboxFeatures = () => [
 export const getUnlimitedInboxFeaturesForPass = () => [
     { name: c('BF2024: Deal details').t`1 user account` },
     getPremiumPasswordManagerFeature(),
-    getPremiumInboxFeature(3, 15),
+    getPremiumInboxFeature(3, 15, false),
     getPremiumVPNFeature(),
     getPremiumDriveFeature(),
     //...getPremiumNonInboxFeature(),
