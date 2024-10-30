@@ -14,7 +14,7 @@ import type { AnyDocControllerInterface } from '@proton/docs-core/lib/Controller
 import { isPrivateDocController } from '@proton/docs-core/lib/Controller/Document/isPrivateDocController'
 import PopoverPill from '../PopoverPill'
 import { useDocsContext } from '../../Containers/ContextProvider'
-import { HeaderPublicOptions } from './HeaderPublicOptions'
+import { HeaderPublicOptions } from '../../Apps/Public/Header/HeaderPublicOptions'
 
 const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()
@@ -52,7 +52,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
       {/* Right */}
       <div className="flex flex-1 items-center justify-end">
         {publicContext ? (
-          <HeaderPublicOptions context={publicContext} controller={controller} />
+          <HeaderPublicOptions controller={controller} />
         ) : (
           <>
             <DocumentActiveUsers className="mr-2 hidden md:flex" />
@@ -86,6 +86,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
 const ViewOnlyPill = () => {
   return (
     <PopoverPill
+      alignment="center"
       title={
         <div className="flex gap-2" data-testid="changes-info-e2e-encrypted">
           <Icon name="eye" className="h-6 w-6 fill-current" />

@@ -10,6 +10,8 @@ import type {
   DataTypesThatDocumentCanBeExportedAs,
   InternalEventBusInterface,
   SuggestionSummaryType,
+  EditorEventData,
+  EditorEvent,
 } from '@proton/docs-shared'
 import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import type { DocControllerInterface } from '../../Controller/Document/DocControllerInterface'
@@ -74,6 +76,10 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     }
 
     return this.docs.editorRequestsPropagationOfUpdate(message, updateSource)
+  }
+
+  async editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void> {
+    return this.docs.editorReportingEvent(event, data)
   }
 
   public provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void {

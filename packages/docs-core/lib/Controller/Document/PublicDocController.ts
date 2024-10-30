@@ -6,6 +6,8 @@ import type {
   DocumentMetaInterface,
   DataTypesThatDocumentCanBeExportedAs,
   WebsocketConnectionInterface,
+  EditorEventData,
+  EditorEvent,
 } from '@proton/docs-shared'
 import { DocUpdateOrigin, DocumentRole } from '@proton/docs-shared'
 import type { LoadDocument } from '../../UseCase/LoadDocument'
@@ -70,6 +72,13 @@ export class PublicDocController implements AnyDocControllerInterface {
     await this.sendInitialCommitToEditor()
 
     this.showEditorIfAllConnectionsReady()
+  }
+
+  async editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void> {
+    this.eventBus.publish({
+      type: event,
+      payload: data,
+    })
   }
 
   public getSureDocument(): DocumentMetaInterface {

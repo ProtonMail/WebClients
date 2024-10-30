@@ -6,6 +6,8 @@ const POPOVER_CLOSE_DELAY = 250
 const POPOVER_FOCUS_EVENT_NAME = 'popover:focus'
 const POPOVER_FOCUS_EVENT = new Event(POPOVER_FOCUS_EVENT_NAME)
 
+const MAGIC_OFFSET_FOR_PERFECT_CENTERING = 44
+
 const usePopover = () => {
   const { anchorRef, isOpen, toggle } = usePopperAnchor<HTMLButtonElement>()
   const { floating, position } = usePopper({
@@ -32,11 +34,13 @@ const PopoverPill = ({
   title,
   content,
   onToggle,
+  alignment = 'left',
 }: {
   children: React.ReactNode
   title: React.ReactNode
   content: React.ReactNode
   onToggle?: (isOpen: boolean) => void
+  alignment?: 'left' | 'center'
 }) => {
   const { anchorRef, position, floating, toggle, isOpen } = usePopover()
   const containerRef = useRef<HTMLDivElement>(null)
@@ -107,9 +111,10 @@ const PopoverPill = ({
           style={{
             position: 'absolute',
             zIndex: 9999,
-            top: 0,
-            left: 0,
-            transform: `translate3d(${position.left}px, ${position.top}px, 0)`,
+            top: alignment === 'center' ? position.top : 0,
+            left: alignment === 'center' ? position.left + MAGIC_OFFSET_FOR_PERFECT_CENTERING : 0,
+            transform:
+              alignment === 'center' ? `translateX(-50%)` : `translate3d(${position.left}px, ${position.top}px, 0)`,
           }}
           className="bg-norm border-norm shadow-lifted w-[392px] select-text overflow-hidden rounded-lg border"
           ref={floating}

@@ -32,6 +32,16 @@ export interface PublicDriveCompat {
     urlPassword: string;
 
     /**
+     * Whether or not a custom password is needed.
+     */
+    isPasswordNeeded: boolean;
+
+    /**
+     * Submits the custom password.
+     */
+    submitPassword: (customPassword: string) => Promise<void>;
+
+    /**
      * Whether or not the interface is ready to receive calls.
      */
     isReady: boolean;
@@ -71,7 +81,17 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
-    const { isReady, isError, error, getPublicAuthHeaders, customPassword, token, urlPassword } = usePublicDocsToken();
+    const {
+        isReady,
+        isError,
+        error,
+        getPublicAuthHeaders,
+        customPassword,
+        token,
+        urlPassword,
+        isPasswordNeeded,
+        submitPassword,
+    } = usePublicDocsToken();
 
     const { isNodeLoading, getNode, getNodeContentKey } = usePublicNode();
     const { openDocumentWindow } = useOpenDocument();
@@ -81,6 +101,8 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
     return {
         isDocsEnabled,
         customPassword,
+        isPasswordNeeded,
+        submitPassword,
         token,
         urlPassword,
         isReady: isReady && !isNodeLoading,
