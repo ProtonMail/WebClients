@@ -23,7 +23,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_GET }>;
 
-const PasskeyGetView: FC<Props> = ({ request, token, passkeys }) => {
+const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDomain }) => {
     const { onTelemetry } = usePassCore();
     const { postMessage, close, domain } = useIFrameContext();
     const { createNotification } = useNotifications();
@@ -31,7 +31,10 @@ const PasskeyGetView: FC<Props> = ({ request, token, passkeys }) => {
     const authenticate = (passkey: SelectedPasskey) => {
         sendMessage
             .on(
-                contentScriptMessage({ type: WorkerMessageType.PASSKEY_GET, payload: { domain, passkey, request } }),
+                contentScriptMessage({
+                    type: WorkerMessageType.PASSKEY_GET,
+                    payload: { domain: passkeyDomain, passkey, request },
+                }),
                 async (result) => {
                     if (result.type !== 'success') throw new Error(result.error);
 
