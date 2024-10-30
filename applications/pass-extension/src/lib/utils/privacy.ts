@@ -50,16 +50,14 @@ export const checkBrowserAutofillCapabilities = async (): Promise<boolean> => {
 
 export const setBrowserAutofillCapabilities = async (enabled: boolean): Promise<boolean> => {
     try {
-        if (!(await checkPrivacyPermission())) {
-            const accepted = await requestPrivacyPermission();
-            if (!accepted) throw new Error('Permission not granted');
+        const accepted = await requestPrivacyPermission();
+        if (!accepted) throw new Error('Permission not granted');
 
-            /** privacy may not be immediately available after granting
-             * the permission - as such reload the current page */
-            if (typeof browser.privacy === 'undefined') {
-                window.location.reload();
-                throw new Error('Permission needs reload');
-            }
+        /** privacy may not be immediately available after granting
+         * the permission - as such reload the current page */
+        if (typeof browser.privacy === 'undefined') {
+            window.location.reload();
+            throw new Error('Permission needs reload');
         }
 
         await Promise.all(
