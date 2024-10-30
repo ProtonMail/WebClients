@@ -1,12 +1,13 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import type { SessionKey } from 'packages/crypto/lib';
 
+import useLoading from '@proton/hooks/useLoading';
 import { querySharedURLMetadata, querySharedURLPath } from '@proton/shared/lib/api/drive/sharing';
 import type { LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 
 import { linkMetaToEncryptedLink, usePublicSession } from '../../store/_api';
-import { type DecryptedLink, useLink } from '../../store/_links';
+import { type DecryptedLink, useLink, usePublicLinksListing } from '../../store/_links';
 import { useLinksListingHelpers } from '../../store/_links/useLinksListing/useLinksListingHelpers';
 import { usePublicShare } from '../../store/_shares';
 import { useAbortSignal } from '../../store/_views/utils';
@@ -31,12 +32,27 @@ export const usePublicNode = () => {
     const { request } = usePublicSession();
     const { cacheLoadedLinks } = useLinksListingHelpers();
     const { getLinkSessionKey } = useLink();
+    const [isNodeLoading, withNodeLoading] = useLoading();
+    const { loadChildren } = usePublicLinksListing();
+
+    useEffect(() => {
+        if (!token || !rootLink?.linkId) {
+            return;
+        }
+        const loading = () =>
+            withNodeLoading(async () => {
+                await loadChildren(abortSignal, token, rootLink?.linkId, false);
+            });
+        void loading();
+    }, [token, rootLink?.linkId]);
 
     const getNode = async (nodeMeta: PublicNodeMeta, force?: boolean): Promise<DecryptedNode> => {
         const cached = cache.current.get(getCacheKey(nodeMeta));
         if (cached && !force) {
             return decryptedLinkToNode(cached);
         }
+
+        let latestToken = token;
 
         if (!rootLink || !token || force) {
             try {
@@ -45,6 +61,8 @@ export const usePublicNode = () => {
                 cache.current.set(getCacheKey(link), link);
                 setRootLink(link);
                 setToken(token);
+
+                latestToken = token;
 
                 if (nodeMeta.linkId === link.linkId) {
                     return decryptedLinkToNode(link);
@@ -62,15 +80,25 @@ export const usePublicNode = () => {
 
         try {
             const { ParentLinkIDs } = await request<{ ParentLinkIDs: string[] }>(
-                querySharedURLPath(token, nodeMeta.linkId)
+                querySharedURLPath(latestToken, nodeMeta.linkId)
             );
 
             const { Links } = await request<LinkMetaBatchPayload>(
-                querySharedURLMetadata(token, [nodeMeta.linkId, ...ParentLinkIDs])
+                querySharedURLMetadata(latestToken, [nodeMeta.linkId, ...ParentLinkIDs])
             );
 
-            const encryptedLinks = Links.map((linkMeta) => linkMetaToEncryptedLink(linkMeta, token));
-            const { links, errors } = await cacheLoadedLinks(abortSignal, token, encryptedLinks, []);
+            const encryptedLinks = Links.map((linkMeta) => {
+                const encryptedLink = linkMetaToEncryptedLink(linkMeta, latestToken);
+
+                // Backend should not return signature address,
+                // as it is not supported in a public context
+                delete encryptedLink.nameSignatureAddress;
+                delete encryptedLink.signatureAddress;
+
+                return encryptedLink;
+            });
+
+            const { links, errors } = await cacheLoadedLinks(abortSignal, latestToken, encryptedLinks, []);
 
             if (errors && errors.length > 0) {
                 throw new Error(`Error while caching links: ${errors}`);
@@ -78,7 +106,6 @@ export const usePublicNode = () => {
 
             const decryptedLinks = links.map((link) => link.decrypted);
             decryptedLinks.forEach((link) => cache.current.set(getCacheKey(link), link));
-
             const requestedLink = decryptedLinks.find((link) => link.linkId === nodeMeta.linkId);
             if (!requestedLink) {
                 throw new Error('Could not find requested link in resulting array');
@@ -114,5 +141,5 @@ export const usePublicNode = () => {
         return contentKey;
     };
 
-    return { getNode, getNodeContentKey };
+    return { isNodeLoading, getNode, getNodeContentKey };
 };
