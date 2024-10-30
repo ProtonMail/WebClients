@@ -15,5 +15,6 @@ export * from './useUserWalletSettings';
 export * from './useWalletSettings';
 export * from './useWalletAccountExchangeRate';
 export * from './useHideAmounts';
+export * from './useNetworkFees';
 
 export * from './app';
