@@ -159,7 +159,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
 
 type Props = Extract<NotificationActions, { action: NotificationAction.PASSKEY_CREATE }>;
 
-export const PasskeyCreate: FC<Props> = ({ request, token }) => {
+export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain }) => {
     const [loading, setLoading] = useMountedState(false);
     const { onTelemetry, config } = usePassCore();
     const { close, postMessage, domain } = useIFrameContext();
@@ -183,7 +183,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token }) => {
                 const result = await sendMessage(
                     contentScriptMessage({
                         type: WorkerMessageType.PASSKEY_CREATE,
-                        payload: { request, domain },
+                        payload: { request, domain: passkeyDomain },
                     })
                 );
 
