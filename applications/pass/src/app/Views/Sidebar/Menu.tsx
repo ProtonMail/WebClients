@@ -75,6 +75,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             </Scroll>
 
             <div className="flex flex-column flex-nowrap pb-2">
+                {onboarding.enabled && <OnboardingButton />}
                 <SecureLinkButton
                     className="rounded"
                     activeClassName="color-primary bg-weak"
@@ -96,7 +97,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         className="rounded"
                     />
                 )}
-                {onboarding.enabled && <OnboardingButton />}
                 {org && org.b2bAdmin && <AdminPanelButton {...org.organization} />}
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
                 <MonitorButton />
