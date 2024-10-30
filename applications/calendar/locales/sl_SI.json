@@ -1248,6 +1248,9 @@
     "Calendar sharing access option label": {
       "View (see all event details)": [
         "Ogled (vseh podrobnosti dogodka)"
+      ],
+      "Edit (view, create or edit event details)": [
+        "Urejanje (ogled, ustvarjanje ali urejanje podrobnosti dogodka)"
       ]
     },
     "Calendar sharing error": {
@@ -2528,6 +2531,9 @@
       ],
       "Your account and data recovery methods are set.": [
         "Vaš račun in načini za obnovitev podatkov so nastavljeni."
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "To lahko traja nekaj minut. Medtem lahko še naprej uporabljate ${ CALENDAR_APP_NAME } kot običajno."
       ]
     },
     "description": {
@@ -5247,6 +5253,18 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Vaš sistemski časovni pas se je spremenil v ${ timezone }. Ali želite posodobiti nastavitve časovnega pasu?"
+      ],
+      "Deleting event...": [
+        "Brisanje dogodka ...",
+        "Brisanje dogodkov ...",
+        "Brisanje dogodkov ...",
+        "Brisanje dogodkov ..."
+      ],
+      "Saving event...": [
+        "Shranjevanje dogodka ...",
+        "Shranjevanje dogodkov ...",
+        "Shranjevanje dogodkov ...",
+        "Shranjevanje dogodkov ..."
       ]
     },
     "info": {
@@ -5801,6 +5819,9 @@
       ],
       "Your password (admin)": [
         "Vaše geslo (admin)"
+      ],
+      "IBAN": [
+        "IBAN"
       ]
     },
     "Label for contact group color": {
@@ -9572,6 +9593,9 @@
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"
+      ],
+      "We're setting up calendar search": [
+        "Pripravljamo iskanje po koledarju."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10184,6 +10208,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Letno, ${ untilString }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "1 user": [
+        "1 uporabnik"
+      ],
+      "3 TB": [
+        "3 TB"
       ]
     }
   }

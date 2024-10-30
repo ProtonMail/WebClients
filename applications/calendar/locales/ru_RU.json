@@ -903,6 +903,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Если выйти сейчас, вы потеряете событие."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Не закрывайте эту вкладку. Некоторые запросы все еще обрабатываются в фоновом режиме."
       ]
     },
     "Apps dropdown": {
@@ -3317,6 +3320,9 @@
       ],
       "Your import will not be processed.": [
         "Импорт не будет обработан."
+      ],
+      "Invalid IBAN": [
+        "Неверный IBAN"
       ]
     },
     "Error accepting calendar invitation": {
@@ -5328,6 +5334,21 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Похоже, что ваш часовой пояс изменился на ${ timezone }. Вы хотите обновить настройки часового пояса?"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } в месяц)"
+      ],
+      "Deleting event...": [
+        "Удаление события...",
+        "Удаление событий...",
+        "Удаление событий...",
+        "Удаление событий..."
+      ],
+      "Saving event...": [
+        "Сохранение события...",
+        "Сохранение событий...",
+        "Сохранение событий...",
+        "Сохраняю событий..."
       ]
     },
     "info": {
@@ -5887,6 +5908,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "IBAN": [
+        "IBAN"
       ]
     },
     "Label for contact group color": {
@@ -7266,6 +7290,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Инструмент управления организацией, позволяющий администраторам добавлять и удалять пользователей, управлять их доступом к службам ${ BRAND_NAME } и выполнять другие задачи."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7300,10 +7327,10 @@
         "Центральная панель управления"
       ],
       "Create up to ${ n } calendar": [
-        "Создайте до ${ n } календаря",
         "Создайте до ${ n } календарей",
-        "Создайте до ${ n } календарей",
-        "Создайте до ${ n } календарей"
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей"
       ],
       "Dedicated Account manager": [
         "Выделенный менеджер аккаунтов"
@@ -8592,6 +8619,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Цена без скидки: ${ amount } за 30 месяцев."
+      ],
+      "/month": [
+        "в месяц"
       ]
     },
     "specialoffer: Title": {
@@ -10659,6 +10689,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Ежегодно ${ untilString }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     }
   }

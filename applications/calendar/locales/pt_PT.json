@@ -3098,6 +3098,15 @@
       ],
       "Your import will not be processed.": [
         "A sua importação não será processada."
+      ],
+      "Invalid IBAN": [
+        "IBAN inválido"
+      ],
+      "The amount due has changed. Please try again.": [
+        "O montante devido foi alterado. Por favor, tente novamente."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Atingiu o limite do número de contactos da sua conta"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4996,6 +5005,9 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Parece que o fuso horário do seu sistema mudou para ${ timezone }. Deseja atualizar a sua preferência de fuso horário?"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mês)"
       ]
     },
     "info": {
@@ -6378,6 +6390,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Partilha de cofre (até ${ n } pessoa)",
         "Partilha de cofre (até ${ n } pessoas)"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilizador",
+        "Até ${ numberOfUsers } utilizadores"
       ]
     },
     "new_plans: feature highlight": {
@@ -7986,6 +8002,26 @@
       ],
       "Yearly free storage bonuses": [
         "Bónus de armazenamento gratuito anual"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } calendário por utilizador",
+        "${ planNumberOfCalendars } calendários por utilizador"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domínio de e-mail personalizado",
+        "${ planNumberOfDomains } domínios de e-mail personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } endereço de e-mail",
+        "${ planNumberOfEmails } endereços de e-mail"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } endereço de e-mail por utilizador",
+        "${ planNumberOfEmails } endereços de e-mail por utilizador"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } utilizador",
+        "${ planNumberOfUsers } utilizadores"
       ]
     },
     "subscription reminder": {
@@ -9386,6 +9422,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } conta de utilizador",
+        "${ n } contas de utilizador"
       ]
     }
   }

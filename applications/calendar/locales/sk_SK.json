@@ -787,6 +787,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Toggle Contacts app": [
+        "Prepnúť na aplikáciu Kontakty"
       ]
     },
     "Action subline": {
@@ -909,6 +912,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Ak teraz odídete, prídete o svoju udalosť."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Nezatvárajte túto kartu, prosím. Niektoré požiadavky sa stále spracovávajú na pozadí."
       ]
     },
     "Apps dropdown": {
@@ -1263,6 +1269,9 @@
     "Calendar sharing access option label": {
       "View (see all event details)": [
         "Zobrazenie (zobraziť všetky podrobnosti o udalosti)"
+      ],
+      "Edit (view, create or edit event details)": [
+        "Upraviť (zobraziť, vytvoriť alebo upraviť podrobnosti o udalosti)"
       ]
     },
     "Calendar sharing error": {
@@ -1317,10 +1326,10 @@
     },
     "Calendar subscription not synced error; long version": {
       "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Odkaz na kalendár nie je dostupný mimo ekosystému poskytovateľa kalendára."
+        "Odkaz na kalendár nie je dostupný mimo ekosystému sprostredkovateľa kalendára."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Odkaz na kalendár je dočasne nedostupný. Skontrolujte, či je odkaz od poskytovateľa kalendára stále platný."
+        "Odkaz na kalendár je dočasne nedostupný. Skontrolujte, či je odkaz od sprostredkovateľa kalendára stále platný."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Od poslednej aktualizácie uplynulo viac ako 12 hodín — ${ CALENDAR_APP_NAME } sa pokúsi kalendár aktualizovať v priebehu niekoľkých hodín."
@@ -1406,6 +1415,12 @@
       ],
       "Ultra fast and private VPN": [
         "Ultra rýchla a súkromná VPN"
+      ],
+      "Cancel and downgrade": [
+        "Zrušiť a znížiť"
+      ],
+      "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
+        "Náš základný bezplatný plán s end-to-end šifrovaným emailom a úložiskom. Neobsahuje žiadne prémiové funkcie."
       ]
     },
     "Checkout row": {
@@ -2602,6 +2617,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Môže to trvať niekoľko minút. Medzitým môžete používať ${ CALENDAR_APP_NAME } ako zvyčajne."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pri importovaní prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3376,6 +3397,15 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude spracovaný."
+      ],
+      "Invalid IBAN": [
+        "Neplatný IBAN"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Dosiahli ste limit počtu kontaktov pre svoj účet"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3802,6 +3832,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "Manage addresses": [
+        "Spravovať adresy"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "S vaším aktuálnym plánom nemôžete prijať túto pozvánku."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3826,6 +3862,9 @@
       ],
       "Set up your family account": [
         "Nastavte svoj rodinný účet"
+      ],
+      "Configure your family account and invite users": [
+        "Nakonfigurujte svoj rodinný účet a pozvite používateľov"
       ]
     },
     "familyOffer_2023:Title": {
@@ -4006,6 +4045,12 @@
     "Hint": {
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použite klávesy hore a dole pre prechádzanie návrhov po zadaní. Stlačte tlačidlo Enter pre potvrdenie vašej voľby, alebo tlačidlo Esc pre zatvorenie návrhov."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Našiel sa ${ itemsCount } návrh, na navigáciu použite klávesnicu.",
+        "Našli sa ${ itemsCount } návrhy, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ itemsCount } návrhov, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ itemsCount } návrhov, na navigáciu použite klávesnicu."
       ]
     },
     "Human verification method": {
@@ -5407,6 +5452,27 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Zdá sa, že vaše systémové časové pásmo sa zmenilo na ${ timezone }. Chcete aktualizovať nastavenia časového pásma?"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mesiac)"
+      ],
+      "Deleting event...": [
+        "Mazanie udalosti...",
+        "Mazanie udalostí...",
+        "Mazanie udalostí...",
+        "Mazanie udalostí..."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Prioritou našich upozornení je bezpečnosť. Ak nepoznáte žiadnu z ohrozených informácií, môžete túto správu pokojne ignorovať."
+      ],
+      "Saving event...": [
+        "Ukladanie udalosti...",
+        "Ukladanie udalostí...",
+        "Ukladanie udalostí...",
+        "Ukladanie udalostí..."
       ]
     },
     "info": {
@@ -5966,6 +6032,21 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Company name": [
+        "Názov spoločnosti"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Thomas": [
+        "Tomáš"
       ]
     },
     "Label for contact group color": {
@@ -6992,6 +7073,21 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme temný web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
+      ],
+      "TOR over VPN": [
+        "TOR cez VPN"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Až ${ n } používateľ (${ adminsText }, ${ usersText })",
+        "Až ${ n } používatelia (${ adminsText }, ${ usersText })",
+        "Až ${ n } používateľov (${ adminsText }, ${ usersText })",
+        "Až ${ n } používateľov (${ adminsText }, ${ usersText })"
       ]
     },
     "new_plans: feature info": {
@@ -7328,6 +7424,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Môžete mať viac ako jedného správcu. Všetci správcovia môžu pridávať a spravovať používateľov, ale iba primárny správca má kontrolu nad fakturáciou."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Nástroj na správu organizácie, ktorý umožňuje správcom pridávať a odoberať používateľov, spravovať ich prístup k službám ${ BRAND_NAME } a vykonávať ďalšie úlohy."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Smerujte vašu internetovú prevádzku cez sieť TOR jediným kliknutím"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7761,6 +7866,12 @@
     "pass_signup_2024: Info": {
       "Admin panel to manage users and subscription": [
         "Panel správcu pre správu užívateľov a predplatného"
+      ],
+      "${ n } user account": [
+        "${ n } používateľský účet",
+        "${ n } používateľské účty",
+        "${ n } používateľských účtov",
+        "${ n } používateľských účtov"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7778,6 +7889,9 @@
       ],
       "Limited-time deal.": [
         "Časovo obmedzená ponuka."
+      ],
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Všetky prémiové funkcie. 6 používateľov. 1 jednoduché predplatné."
       ]
     },
     "passwordless": {
@@ -7800,6 +7914,9 @@
       ],
       "New credit/debit card": [
         "Nová platobná karta"
+      ],
+      "Bank transfer": [
+        "Bankový prevod"
       ]
     },
     "Payments": {
@@ -8155,6 +8272,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Keď budete požiadaní o uvedenie vašej emailovej adresy, uveďte namiesto nej tento alias. Aliasy sú poskytované pomocou ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Používa sa v službe Amazon na nakupovanie atď."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -8899,6 +9019,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Váš plán bol zakúpený pomocou aplikácie pre iOS. Ak chcete vykonať zmeny vo svojom pláne alebo aktualizovať podrobnosti o platbe, budete musieť prejsť do obchodu Apple App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Prihláste sa do Apple Store a potom vyberte ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -9154,6 +9277,36 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalendár na používateľa",
+        "${ planNumberOfCalendars } kalendáre na používateľa",
+        "${ planNumberOfCalendars } kalendárov na používateľa",
+        "${ planNumberOfCalendars } kalendárov na používateľa"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } emailová adresa na používateľa",
+        "${ planNumberOfEmails } emailové adresy na používateľa",
+        "${ planNumberOfEmails } emailových adries na používateľa",
+        "${ planNumberOfEmails } emailových adries na používateľa"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } používateľ",
+        "${ planNumberOfUsers } používatelia",
+        "${ planNumberOfUsers } používateľov",
+        "${ planNumberOfUsers } používateľov"
       ]
     },
     "subscription reminder": {
@@ -10063,6 +10216,9 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "We're setting up calendar search": [
+        "Nastavujeme vyhľadávanie v kalendári"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10714,6 +10870,51 @@
       ],
       "Passcode: ${ password }": [
         "Prístupový kód: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } správca",
+        "${ admins } správcovia",
+        "${ admins } správcov",
+        "${ admins } správcov"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: prezerajte si emailové správy a nastavenia, prezerajte a sťahujte svoje kontakty, zobrazujte a sťahujte všetky agendy, ku ktorým máte prístup z Google kalendára."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Použiť názov spoločnosti"
+      ],
+      "Use personal name": [
+        "Použiť vlastné meno"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potvrdením tejto platby oprávňujete spoločnosť ${ BRAND_NAME } a spoločnosť Stripe, nášho poskytovateľa platobných služieb, aby dali pokyn vašej banke na odpísanie finančných prostriedkov z vášho účtu a aby vaša banka zodpovedajúcim spôsobom odpísala finančné prostriedky z vášho účtu. Peniaze môžete získať späť do 8 týždňov od dátumu odpísania z účtu za podmienok stanovených v zmluve s vašou bankou."
+      ],
+      "Street address, postal code, and city": [
+        "Ulica, PSČ a mesto"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Prístup k Secure core serverom, rýchle P2P/BitTorrent sťahovanie, TOR cez VPN a ďalšie."
       ]
     }
   }

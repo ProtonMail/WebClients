@@ -779,6 +779,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Toggle Contacts app": [
+        "Slå av/på Kontakter-appen"
       ]
     },
     "Action subline": {
@@ -810,7 +813,7 @@
         "Ingen resultater funnet"
       ],
       "Please try another search term.": [
-        "Vennligst prøv et annet søkeord."
+        "Prøv et annet søkeord."
       ],
       "You don't have any contacts.": [
         "Du har ingen kontakter"
@@ -893,6 +896,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Ved å forlate nå vil du miste hendelsen."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Ikke lukk denne fanen. Noen forespørsler behandles fortsatt i bakgrunnen."
       ]
     },
     "Apps dropdown": {
@@ -1237,6 +1243,9 @@
     "Calendar sharing access option label": {
       "View (see all event details)": [
         "Vis (se alle hendelsesdetaljer)"
+      ],
+      "Edit (view, create or edit event details)": [
+        "Rediger (se, opprett og endre hendelsesdetaljer)"
       ]
     },
     "Calendar sharing error": {
@@ -2566,6 +2575,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Dette kan ta noen få minutter. I mellomtiden kan du fortsette å bruke ${ CALENDAR_APP_NAME } som vanlig."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -2630,7 +2645,7 @@
         "Mangler funksjon(er)"
       ],
       "Other reason (please comment)": [
-        "Annen årsak (vennligst kommenter)"
+        "Annen årsak (kommenter gjerne)"
       ],
       "Subscription is too expensive": [
         "Abonnementet er for dyrt"
@@ -3153,7 +3168,7 @@
         "Aktiver søket ditt på nytt"
       ],
       "Please create an address first.": [
-        "Vennligst lag en adresse først."
+        "Opprett en adresse først."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs den uthevede konflikten for å fortsette.",
@@ -3316,6 +3331,15 @@
       ],
       "Your import will not be processed.": [
         "Importen din blir ikke behandlet."
+      ],
+      "Invalid IBAN": [
+        "Ugyldig IBAN"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Det forfalte beløpet er endret. Prøv igjen."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nådd grensen for antall kontakter for kontoen din"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3736,6 +3760,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Kontoen din bruker ${ usedSpace } med lagringsplass som overskrider de ${ inviteSpace } tildelt deg. Slett noen data, eller be planadministratoren om å øke lagringsplassen."
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kan ikke godta denne invitasjonen med din nåværende plan."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3760,6 +3790,9 @@
       ],
       "Set up your family account": [
         "Konfigurer familiekontoen din"
+      ],
+      "Configure your family account and invite users": [
+        "Konfigurer familiekontoen din og inviter brukere"
       ]
     },
     "familyOffer_2023:Title": {
@@ -4050,16 +4083,16 @@
         "${ BRAND_NAME } kan ikke koble til kontoen din. Vennlist sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Vennligst sørg for at e-posttjeneradressen og portnummeret stemmer."
+        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-posttjenerdressen og portnummeret er riktige."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
-        "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Vennligst sørg for at:"
+        "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Vennligst sørg for at e-posttjeneradressen og portnummeret stemmer."
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-posttjeneradressen og portnummeret stemmer."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Vennligst sørg for at:"
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
       ],
       "2-step verification is enabled in your external account.": [
         "Totrinnsbekreftelse er aktiveret på din eksterne konto."
@@ -4074,7 +4107,7 @@
         "IMAP-adgang er aktivert på din Yahoo-konto."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "For mange nylige forespørsler. Vennligst forsøk igjen om få øyeblikk."
+        "For mange nylige forespørsler. Prøv igjen om noen få øyeblikk."
       ],
       "Use your app password if:": [
         "Bruk app-passordet ditt hvis:"
@@ -4805,10 +4838,10 @@
         "PGP/MIME sender automatisk meldingen ved hjelp av gjeldende skrivemodus."
       ],
       "Please authenticate your card in the verification tab.": [
-        "Vennligst autentiser kortet ditt i verifiseringsfanen."
+        "Autentiser kortet ditt i verifiseringsfanen."
       ],
       "Please authenticate your payment in the verification tab.": [
-        "Vennligst autentiser betalingen din i verifiseringsfanen."
+        "Autentiser betalingen din i verifiseringsfanen."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Legg merke til at adressene tildelt disse gruppene IKKE vil bli slettet."
@@ -4826,7 +4859,7 @@
         "Oppgi et navn og en e-postadresse for å opprette en gruppe."
       ],
       "Please remove the duplicates and try again.": [
-        "Vennligst fjern duplikatene og prøv igjen."
+        "Fjern duplikatene og prøv igjen."
       ],
       "Please select the folders you would like to import:": [
         "Velg mappene du vil importere:"
@@ -4950,7 +4983,7 @@
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Verifiseringsprosessen vil åpne en ny nettleserfane. Vennligst deaktiver alle aktive blokkeringer av sprett-opp-vinduer."
+        "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
@@ -4977,7 +5010,7 @@
         "Denne koblingen kan være et homografangrep. Kontroller at dette er koblingen du ønsker å besøke, eller la være å åpne den."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "For å fullføre betalingen din, vennligst send ${ btcAmountBold } til adressen nedenfor."
+        "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
@@ -5022,7 +5055,7 @@
         "Verifisering kan ta noen minutter."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Verifisering vil åpne en ny fane, vennligst deaktiver eventuell blokkering av sprett-opp-vinduer. Du vil ikke bli belastet. Alle beløp som benyttes for å bekrefte kortet vil bli tilbakebetalt umiddelbart."
+        "Verifisering vil åpne en ny fane, deaktiver eventuell blokkering av sprettoppvinduer. Du vil ikke bli belastet. Alle beløp som benyttes for å bekrefte kortet vil bli tilbakebetalt umiddelbart."
       ],
       "Version number successfully copied to clipboard": [
         "Versjonsnummeret ble kopiert til utklippstavlen"
@@ -5046,7 +5079,7 @@
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprett-opp-vinduer, vennligst deaktiver blokkeringen for å fortsette."
+        "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
       "We'll email you once import is complete.": [
         "Vi sender deg en e-post når importen er fullført."
@@ -5136,12 +5169,12 @@
         "Du kan importere én datatype om gangen."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
       ],
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
@@ -5168,7 +5201,7 @@
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, vennligst klikk knappen nedenfor."
+        "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, klikk knappen nedenfor."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Du har tidligere avvist denne invitasjonen. Be eieren om en ny invitasjon"
@@ -5265,6 +5298,23 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Systemets tidssone ser ut til å ha endret seg til ${ timezone }. Vil du oppdatere preferansen for tidssone?"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/måned)"
+      ],
+      "Deleting event...": [
+        "Sletter hendelse...",
+        "Sletter hendelser..."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våre varsler prioriterer sikkerhet. Hvis du ikke gjenkjenner noe av informasjonen som er brutt, kan du trygt ignorere denne rapporten."
+      ],
+      "Saving event...": [
+        "Lagrer hendelse...",
+        "Lagrer hendelser..."
       ]
     },
     "info": {
@@ -5431,7 +5481,7 @@
         "Lagre automatisk kontakter"
       ],
       "Beta Access": [
-        "Testversjon-tilgang"
+        "Beta-tilgang"
       ],
       "Billing address": [
         "Fakturaadresse"
@@ -5494,13 +5544,13 @@
         "Kopier"
       ],
       "Could you please let us know which provider?": [
-        "Kan du vennligst fortelle oss hvilken leverandør?"
+        "Kan du fortelle oss hvilken leverandør?"
       ],
       "Could you please specify which streaming service?": [
-        "Kan du vennligst spesifisere hvilken strømmetjeneste?"
+        "Kan du spesifisere hvilken strømmetjeneste?"
       ],
       "Could you please specify?": [
-        "Kan du vennligst spesifisere?"
+        "Kan du spesifisere?"
       ],
       "Country": [
         "Land"
@@ -5814,6 +5864,21 @@
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Company name": [
+        "Foretaksnavn"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Thomas": [
+        "Thomas"
       ]
     },
     "Label for contact group color": {
@@ -6792,6 +6857,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "TOR over VPN": [
+        "TOR over VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -7136,6 +7204,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer enn en administrator. Alle administratorere kan legge til og behandle brukere, men kun primæradministratoren har kontroll på fakturering."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisasjonsadministrasjonsverktøy som lar administratorer legge til og fjerne brukere, administrere tilgangen deres til ${ BRAND_NAME }-tjenester og utføre andre oppgaver."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Rute internettrafikken din gjennom TOR-nettverket med et enkelt klikk"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7559,6 +7636,9 @@
       ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
+      ],
+      "Bank transfer": [
+        "Bankoverføring"
       ]
     },
     "Payments": {
@@ -7590,16 +7670,16 @@
         "Vennligst aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
       "Please select billing country": [
-        "Vennligst velg faktureringsland"
+        "Velg faktureringsland"
       ],
       "Please select billing state": [
-        "Vennligst velg faktureringsstat"
+        "Velg faktureringsstat"
       ],
       "Please select your billing country first.": [
-        "Vennligst velg faktureringslandet ditt først."
+        "Velg faktureringslandet ditt først."
       ],
       "Please select your billing state first.": [
-        "Vennligst velg faktureringsstaten din først."
+        "Velg faktureringsstaten din først."
       ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
@@ -7729,7 +7809,7 @@
         "Beskriv problemet og inkluder eventuelle feilmeldinger"
       ],
       "Please select a country": [
-        "Vennligst velg et land"
+        "Velg et land"
       ],
       "Search events": [
         "Søk hendelser"
@@ -7789,8 +7869,8 @@
         "Velg antall brukere som skal inkluderes i planen. Hver ekstra bruker koster ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Skulle du trenge mer enn ${ maxUsers } brukerkonto, vennligst ${ contact } vår salgsavdeling.",
-        "Skulle du trenge flere enn ${ maxUsers } brukerkontoer, vennligst ${ contact } vår salgsavdeling."
+        "Skulle du trenge mer enn ${ maxUsers } brukerkonto, ${ contact } vår salgsavdeling.",
+        "Skulle du trenge flere enn ${ maxUsers } brukerkontoer, ${ contact } vår salgsavdeling."
       ]
     },
     "Price": {
@@ -7904,6 +7984,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Aliaser leveres av ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Brukt på Amazon for shopping, og så videre."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -8184,7 +8267,7 @@
         "Feil ved signaturbekreftelse"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Du har aktivert adresseverifisering for ${ boldSenderEmail }. Vi kan ikke bekrefte ektheten til denne kalenderinvitasjonen. Dette kan skyldes endringer i krypteringsnøklene til denne kontakten. Vennligst gå gjennom de avanserte PGP-innstillingene, eller du kan be ${ boldSenderEmail } om en ny invitasjon."
+        "Du har aktivert adresseverifisering for ${ boldSenderEmail }. Vi kan ikke bekrefte ektheten til denne kalenderinvitasjonen. Dette kan skyldes endringer i krypteringsnøklene til denne kontakten. Gå gjennom de avanserte PGP-innstillingene, eller du kan be ${ boldSenderEmail } om en ny invitasjon."
       ]
     },
     "Signing preference for emails": {
@@ -8431,7 +8514,7 @@
     },
     "State": {
       "Canceling your subscription, please wait": [
-        "Kansellerer abonnementet ditt, vennligst vent"
+        "Kansellerer abonnementet ditt, vent litt"
       ]
     },
     "Storage": {
@@ -8600,6 +8683,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Planen din ble kjøpt med en iOS-app. Så for å gjøre endringer i planen din eller oppdatere betalingsinformasjonen din, må du gå til Apple App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Bare logg på din Apple App Store-konto, deretter velg ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -9754,6 +9840,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "We're setting up calendar search": [
+        "Vi setter opp kalendersøk"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10013,7 +10102,7 @@
         "Vennligst legg merke til at ved å velge denne betalingsmåten, så kan ikke kontoen bli oppgradert umiddelbart. Vi vil oppdatere kontoen så snart betalingen har gått igjennom."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Feilrapporter er ikke ende-til-ende-kryptert, vennligst ikke send noe sensitiv informasjon."
+        "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
       ],
       "Skip verification?": [
         "Hopp over bekreftelse?"
@@ -10043,7 +10132,7 @@
         "Denne handlingen er irreversibel. Skriv inn ordet ${ boldDanger } i feltet for å fortsette."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
-        "Denne importen kan overskride lagringskapasiteten som for øyeblikket er tilgjengelig på ${ BRAND_NAME }-kontoen. Vennligst vurder å tilpasse importen."
+        "Denne importen kan overskride lagringskapasiteten som for øyeblikket er tilgjengelig på ${ BRAND_NAME }-kontoen. Vurder å tilpasse importen."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
@@ -10323,6 +10412,177 @@
       ],
       "Passcode: ${ password }": [
         "Passkode: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-skrivebordsapp"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } lagringsplass"
+      ],
+      "1 TB total": [
+        "1 TB totalt"
+      ],
+      "1 user": [
+        "1 bruker"
+      ],
+      "1 user account": [
+        "1 brukerkonto"
+      ],
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "2 users": [
+        "2 brukere"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 brukerkontoer"
+      ],
+      "6 users": [
+        "6 brukere"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ tjenere i 110+ land"
+      ],
+      "Ad-blocker and malware protection": [
+        "Annonseblokkering og skadevarebeskyttelse"
+      ],
+      "Admin panel to manage your family": [
+        "Administrasjonspanel for å administrere familien din"
+      ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
+      ],
+      "Dark Web Monitoring": [
+        "Overvåking av det mørke nettet"
+      ],
+      "Easily add or remove users": [
+        "Legg til eller fjern brukere enkelt"
+      ],
+      "High speed streaming": [
+        "Strømming med høy hastighet"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrert 2FA-autentisering"
+      ],
+      "Online document editor": [
+        "Dokumentredigering på nett"
+      ],
+      "Password health alerts": [
+        "Varsler for passordhelse"
+      ],
+      "Private photo backup": [
+        "Privat sikkerhetskopiering av bilder"
+      ],
+      "Protect 10 devices at a time": [
+        "Beskytt 10 enheter om gangen"
+      ],
+      "Secure file storage & sharing": [
+        "Sikker fillagring og -deling"
+      ],
+      "Secure vault and link sharing": [
+        "Sikker hvelv og deling av koblinger"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Ubegrenset antall mapper, etiketter og filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrenset antall hide-my-email-aliaser"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Ubegrenset antall pålogginger, notater, kredittkort"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ],
+      "Version history": [
+        "Versjonshistorikk"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabatter er basert på standard månedspris."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Abonnementet ditt fornyes automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Mest populær"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "for ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Fornyes etter 1 måned til ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ tjenere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Få tilgang til innhold på strømmetjenester inkludert Netflix, Disney+, Prime Video og mer fra hvor som helst."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset hide-my-email-aliaser, deling, integrert 2FA, overvåking av det mørke nettet og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Sikre filene dine med kryptert skylagring. Inkluderer dokumentredigering på nett, sikkerhetskopiering av bilder, versjonshistorikk, kryptert fildeling og mer."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen din ved å blokkere annonser, sporere og skadelig programvare."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Velg hva ${ BRAND_NAME } kan få tilgang til: se e-postmeldinger og innstillinger, se og last ned kontaktene dine, se og last ned alle agendaer du får tilgang til fra Google Calendar."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bruk firmanavn"
+      ],
+      "Use personal name": [
+        "Bruk personlig navn"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Ved å bekrefte denne betalingen autoriserer du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, til å instruere banken din om å debitere kontoen din, og banken din til å debitere kontoen din tilsvarende. Du kan få refusjon innen 8 uker fra belastningsdatoen, i henhold til vilkårene i avtalen din med banken."
+      ],
+      "Street address, postal code, and city": [
+        "Gateadresse, postnummer og by"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     }
   }
