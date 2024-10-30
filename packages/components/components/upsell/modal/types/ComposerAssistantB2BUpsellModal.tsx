@@ -7,8 +7,9 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import Price from '@proton/components/components/price/Price';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { usePreferredPlansMap, useSubscription } from '@proton/components/hooks';
+import { useSubscription } from '@proton/components/hooks';
 import useAssistantUpsellConfig from '@proton/components/hooks/assistant/useAssistantUpsellConfig';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import type { ADDON_NAMES, PLANS } from '@proton/payments';
 import { PLAN_TYPES, getScribeAddonNameByPlan } from '@proton/payments';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

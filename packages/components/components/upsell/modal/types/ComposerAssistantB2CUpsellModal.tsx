@@ -6,7 +6,7 @@ import { type ModalStateProps } from '@proton/components/components/modalTwo/use
 import Price from '@proton/components/components/price/Price';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
-import { usePreferredPlansMap } from '@proton/components/hooks';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { PLANS } from '@proton/payments';
 import {
     APP_UPSELL_REF_PATH,
