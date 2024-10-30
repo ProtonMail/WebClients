@@ -1,13 +1,31 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { EmptyViewContainer, useModalState } from '@proton/components';
+import { EmptyViewContainer, useModalState, useTheme } from '@proton/components';
+import { getPlaceholderSrc } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
-import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
-import noSpamSvg from '@proton/styles/assets/img/illustrations/no-messages-in-spam.svg';
-import noUnreadSvg from '@proton/styles/assets/img/illustrations/no-unread-messages.svg';
+import noSpamSvgDark from '@proton/styles/assets/img/placeholders/auto-delete-cool-dark.svg';
+import noSpamSvgCool from '@proton/styles/assets/img/placeholders/auto-delete-cool-light.svg';
+import noSpamSvgWarm from '@proton/styles/assets/img/placeholders/auto-delete-warm-light.svg';
+import {
+    default as noResultFolderSvgDark,
+    default as noUnreadSvgDark,
+} from '@proton/styles/assets/img/placeholders/inbox-empty-cool-dark.svg';
+import {
+    default as noResultFolderSvgCool,
+    default as noUnreadSvgCool,
+} from '@proton/styles/assets/img/placeholders/inbox-empty-cool-light.svg';
+import {
+    default as noResultFolderSvgWarm,
+    default as noUnreadSvgWarm,
+} from '@proton/styles/assets/img/placeholders/inbox-empty-warm-light.svg';
+import noSearchResultDark from '@proton/styles/assets/img/placeholders/search-empty-cool-dark.svg';
+import noSearchResultCool from '@proton/styles/assets/img/placeholders/search-empty-cool-light.svg';
+import noSearchResultWarm from '@proton/styles/assets/img/placeholders/search-empty-warm-light.svg';
+import noTrashSvgDark from '@proton/styles/assets/img/placeholders/trash-empty-cool-dark.svg';
+import noTrashSvgCool from '@proton/styles/assets/img/placeholders/trash-empty-cool-light.svg';
+import noTrashSvgWarm from '@proton/styles/assets/img/placeholders/trash-empty-warm-light.svg';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -23,6 +41,8 @@ interface Props {
 }
 
 const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
+    const theme = useTheme();
+
     const { esStatus } = useEncryptedSearchContext();
     const { isEnablingContentSearch, isContentIndexingPaused, contentIndexingDone, isEnablingEncryptedSearch } =
         esStatus;
@@ -32,7 +52,8 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
     const isScheduled = labelID === MAILBOX_LABEL_IDS.SCHEDULED && !isSearch;
     const isSnoozed = labelID === MAILBOX_LABEL_IDS.SNOOZED && !isSearch;
     const isSpam = labelID === MAILBOX_LABEL_IDS.SPAM && !isSearch;
-    const isFolder = !isInbox && !isScheduled && !isSnoozed && !isSearch && !isSpam;
+    const isTrash = labelID === MAILBOX_LABEL_IDS.TRASH && !isSearch;
+    const isFolder = !isInbox && !isScheduled && !isSnoozed && !isSearch && !isSpam && !isTrash;
 
     // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
     const encryptedSearchEnabled =
@@ -49,27 +70,81 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         </Button>
     );
 
+    const folderPicture = getPlaceholderSrc({
+        theme: theme.information.theme,
+        warmLight: noResultFolderSvgWarm,
+        coolLight: noResultFolderSvgCool,
+        coolDark: noResultFolderSvgDark,
+    });
+
     const imageProps = (() => {
         if (isSpam) {
-            return { src: noSpamSvg, alt: c('Search - no results').t`No messages found` };
+            return {
+                src: getPlaceholderSrc({
+                    theme: theme.information.theme,
+                    warmLight: noSpamSvgWarm,
+                    coolLight: noSpamSvgCool,
+                    coolDark: noSpamSvgDark,
+                }),
+                alt: c('Search - no results').t`No messages found`,
+            };
         }
         if (isUnread) {
-            return { src: noUnreadSvg, alt: c('Search - no results').t`No unread messages found` };
+            return {
+                src: getPlaceholderSrc({
+                    theme: theme.information.theme,
+                    warmLight: noUnreadSvgWarm,
+                    coolLight: noUnreadSvgCool,
+                    coolDark: noUnreadSvgDark,
+                }),
+                alt: c('Search - no results').t`No unread messages found`,
+            };
         }
         if (isSearch) {
-            return { src: noResultSearchSvg, alt: c('Search - no results').t`No results found` };
+            return {
+                src: getPlaceholderSrc({
+                    theme: theme.information.theme,
+                    warmLight: noSearchResultWarm,
+                    coolLight: noSearchResultCool,
+                    coolDark: noSearchResultDark,
+                }),
+                alt: c('Search - no results').t`No results found`,
+            };
         }
         if (isFolder) {
-            return { src: noResultSearchSvg, alt: c('Search - no results').t`No messages found` };
+            return {
+                src: folderPicture,
+                alt: c('Search - no results').t`No messages found`,
+            };
         }
         if (isInbox) {
-            return { src: noResultInboxSvg, alt: c('Search - no results').t`No messages found` };
+            return {
+                src: folderPicture,
+                alt: c('Search - no results').t`No messages found`,
+            };
         }
         if (isScheduled) {
-            return { src: noResultSearchSvg, alt: c('Search - no results').t`No messages scheduled` };
+            return {
+                src: folderPicture,
+                alt: c('Search - no results').t`No messages scheduled`,
+            };
         }
         if (isSnoozed) {
-            return { src: noResultSearchSvg, alt: c('Search - no results').t`No snoozed messages` };
+            return {
+                src: folderPicture,
+                alt: c('Search - no results').t`No snoozed messages`,
+            };
+        }
+        if (isTrash) {
+            return {
+                src: getPlaceholderSrc({
+                    theme: theme.information.theme,
+                    warmLight: noTrashSvgWarm,
+                    coolLight: noTrashSvgCool,
+                    coolDark: noTrashSvgDark,
+                }),
+                alt: c('Search - no results').t`No messages found`,
+            };
         }
     })();
 
@@ -78,7 +153,7 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
             <ProtonPassPlaceholder />
         </div>
     ) : (
-        <EmptyViewContainer imageProps={imageProps}>
+        <EmptyViewContainer imageProps={imageProps} height={128}>
             <h3 className="text-bold" data-testid="empty-view-placeholder--empty-title">
                 {isSearch
                     ? c('Search - no results').t`No results found`
