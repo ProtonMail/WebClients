@@ -51,7 +51,7 @@ export const getFreeTitle = (appName: string) => {
     return c('Title').t`${appName} Free`;
 };
 
-export const getHasBusinessUpsell = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
+export const getIsProductB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
     const proPlans = [
         PLANS.MAIL_PRO,
         PLANS.MAIL_BUSINESS,
@@ -62,7 +62,11 @@ export const getHasBusinessUpsell = (subscribedPlan: PLANS | ADDON_NAMES | undef
         PLANS.PASS_PRO,
         PLANS.PASS_BUSINESS,
     ];
-    return proPlans.some((plan) => plan === subscribedPlan);
+    return proPlans.some((proPlan) => plan === proPlan);
+};
+
+export const getIsBundleB2BPlan = (plan: PLANS | ADDON_NAMES | undefined) => {
+    return [PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].some((bundlePlan) => plan === bundlePlan);
 };
 
 export const getHasAnyPlusPlan = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
@@ -182,9 +186,9 @@ const getUpsell = ({
 }): Upsell => {
     const hasMonthlyCycle = subscription?.Cycle === CYCLE.MONTHLY;
 
-    const defaultValue = {
+    const noUpsell = {
         plan: undefined,
-        unlockPlan: !currentPlan ? plansMap[getUnlockPlanName(toApp)] : undefined,
+        unlockPlan: plansMap[getUnlockPlanName(toApp)],
         currentPlan,
         mode: UpsellTypes.PLANS,
         subscriptionOptions: {},
@@ -192,10 +196,10 @@ const getUpsell = ({
 
     // TODO: WalletEA
     if (toApp === APPS.PROTONWALLET) {
-        return defaultValue;
+        return noUpsell;
     }
 
-    const getUpsellData = ({
+    const getBlackFridayUpsellData = ({
         plan,
         cycle = CYCLE.YEARLY,
         coupon = COUPON_CODES.BLACK_FRIDAY_2024,
@@ -205,7 +209,7 @@ const getUpsell = ({
         coupon?: string;
     }) => {
         return {
-            ...defaultValue,
+            ...noUpsell,
             plan,
             subscriptionOptions: {
                 planIDs: {
@@ -218,7 +222,19 @@ const getUpsell = ({
         };
     };
 
+    const getUpsellData = (plan: PLANS | ADDON_NAMES) => {
+        return {
+            ...noUpsell,
+            plan: plansMap[plan],
+            mode: UpsellTypes.UPSELL,
+        };
+    };
+
     if (currentPlan && planParameters.defined) {
+        if (planParameters.plan.Name === PLANS.VISIONARY) {
+            return getUpsellData(planParameters.plan.Name);
+        }
+
         if (getHas2024OfferCoupon(options.coupon)) {
             if (getHasAnyPlusPlan(currentPlan.Name)) {
                 if (currentPlan.Name === PLANS.PASS) {
@@ -226,10 +242,10 @@ const getUpsell = ({
                         options.cycle === CYCLE.YEARLY &&
                         hasSelectedPlan(planParameters.plan, [PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])
                     ) {
-                        return getUpsellData({ plan: planParameters.plan });
+                        return getBlackFridayUpsellData({ plan: planParameters.plan });
                     }
                     const plan = getSafePlan(plansMap, PLANS.PASS_FAMILY);
-                    return getUpsellData({ plan });
+                    return getBlackFridayUpsellData({ plan });
                 }
 
                 if ((currentPlan.Name === PLANS.VPN2024 || currentPlan.Name === PLANS.VPN) && hasMonthlyCycle) {
@@ -237,7 +253,7 @@ const getUpsell = ({
                         (options.cycle === CYCLE.YEARLY || options.cycle === CYCLE.TWO_YEARS) &&
                         hasSelectedPlan(planParameters.plan, [PLANS.VPN2024])
                     ) {
-                        return getUpsellData({
+                        return getBlackFridayUpsellData({
                             plan: planParameters.plan,
                             cycle: options.cycle,
                             coupon: options.coupon,
@@ -250,68 +266,67 @@ const getUpsell = ({
                     hasSelectedPlan(planParameters.plan, [PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY]);
 
                 if (isValidBundleDuoFamilyFromPlus) {
-                    return getUpsellData({ plan: planParameters.plan });
+                    return getBlackFridayUpsellData({ plan: planParameters.plan });
                 }
                 // Any other selected plan will give yearly bundle
-                return getUpsellData({ plan: getSafePlan(plansMap, PLANS.BUNDLE) });
+                return getBlackFridayUpsellData({ plan: getSafePlan(plansMap, PLANS.BUNDLE) });
             }
 
             if (currentPlan.Name === PLANS.BUNDLE) {
                 if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.DUO, PLANS.FAMILY])) {
-                    return getUpsellData({ plan: planParameters.plan });
+                    return getBlackFridayUpsellData({ plan: planParameters.plan });
                 }
-                return getUpsellData({ plan: getSafePlan(plansMap, PLANS.DUO) });
+                return getBlackFridayUpsellData({ plan: getSafePlan(plansMap, PLANS.DUO) });
             }
 
             if (currentPlan.Name === PLANS.PASS_FAMILY || currentPlan.Name === PLANS.DUO) {
                 if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.FAMILY])) {
-                    return getUpsellData({ plan: planParameters.plan });
+                    return getBlackFridayUpsellData({ plan: planParameters.plan });
                 }
-                return getUpsellData({ plan: getSafePlan(plansMap, PLANS.FAMILY) });
+                return getBlackFridayUpsellData({ plan: getSafePlan(plansMap, PLANS.FAMILY) });
             }
 
-            if (getHasBusinessUpsell(currentPlan.Name)) {
-                return {
-                    ...defaultValue,
-                    plan: plansMap[PLANS.BUNDLE_PRO_2024] ?? plansMap[PLANS.BUNDLE_PRO],
-                    mode: UpsellTypes.UPSELL,
-                };
+            if (getIsProductB2BPlan(currentPlan.Name) && !getIsBundleB2BPlan(planParameters.plan.Name)) {
+                return getUpsellData(PLANS.BUNDLE_PRO_2024);
             }
         } else {
             if (audience === Audience.B2B) {
-                return defaultValue;
+                if (getIsProductB2BPlan(planParameters.plan.Name) || getIsBundleB2BPlan(planParameters.plan.Name)) {
+                    return getUpsellData(planParameters.plan.Name);
+                }
+                return noUpsell;
             } else {
-                if (getHasAnyPlusPlan(currentPlan.Name) && getHasAnyPlusPlan(planParameters.plan.Name)) {
-                    return {
-                        ...defaultValue,
-                        plan: plansMap[PLANS.BUNDLE],
-                        mode: UpsellTypes.UPSELL,
-                    };
+                if (getHasAnyPlusPlan(currentPlan.Name)) {
+                    if (
+                        hasSelectedPlan(planParameters.plan, [PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])
+                    ) {
+                        return getUpsellData(planParameters.plan.Name);
+                    }
+                    return getUpsellData(PLANS.BUNDLE);
                 }
 
-                if (
-                    getHasBusinessUpsell(currentPlan.Name) &&
-                    ![PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY].includes(
-                        planParameters.plan.Name as any
-                    )
-                ) {
-                    return {
-                        ...defaultValue,
-                        plan: plansMap[PLANS.BUNDLE_PRO_2024] ?? plansMap[PLANS.BUNDLE_PRO],
-                        mode: UpsellTypes.UPSELL,
-                    };
+                if (currentPlan.Name === PLANS.BUNDLE) {
+                    if (hasSelectedPlan(planParameters.plan, [PLANS.DUO, PLANS.FAMILY])) {
+                        return getUpsellData(planParameters.plan.Name);
+                    }
+                    return getUpsellData(PLANS.DUO);
                 }
 
-                return {
-                    ...defaultValue,
-                    plan: plansMap[planParameters.plan.Name],
-                    mode: UpsellTypes.UPSELL,
-                };
+                if (currentPlan.Name === PLANS.PASS_FAMILY || currentPlan.Name === PLANS.DUO) {
+                    if (hasSelectedPlan(planParameters.plan, [PLANS.DUO, PLANS.FAMILY])) {
+                        return getUpsellData(planParameters.plan.Name);
+                    }
+                    return getUpsellData(PLANS.FAMILY);
+                }
+
+                if (getIsProductB2BPlan(currentPlan.Name) && !getIsBundleB2BPlan(planParameters.plan.Name)) {
+                    return getUpsellData(PLANS.BUNDLE_PRO_2024);
+                }
             }
         }
     }
 
-    return defaultValue;
+    return noUpsell;
 };
 
 export const getRelativeUpsellPrice = (
@@ -469,6 +484,20 @@ export const getUserInfo = async ({
         toApp,
     });
 
+    if (user && hasAccess({ toApp, user, audience, currentPlan })) {
+        state.access = true;
+    }
+
+    // TODO: WalletEA
+    if (toApp === APPS.PROTONWALLET) {
+        state.access = false;
+    }
+
+    // Disable the access modal and show the upsell flow instead
+    if (state.payable && upsell.plan?.Name) {
+        state.access = false;
+    }
+
     const subscriptionData = await (() => {
         const optionsWithSubscriptionDefaults = {
             ...options,
@@ -478,7 +507,7 @@ export const getUserInfo = async ({
             coupon: subscription.CouponCode || options.coupon,
         };
 
-        if (!state.payable) {
+        if (!state.payable || state.access) {
             return getFreeSubscriptionData(optionsWithSubscriptionDefaults);
         }
 
@@ -498,15 +527,6 @@ export const getUserInfo = async ({
 
         return getSubscriptionData(paymentsApi, optionsWithSubscriptionDefaults);
     })();
-
-    if (user && hasAccess({ toApp, user, audience, currentPlan })) {
-        state.access = true;
-    }
-
-    // TODO: WalletEA
-    if (toApp === APPS.PROTONWALLET) {
-        state.access = false;
-    }
 
     return {
         paymentMethods,
