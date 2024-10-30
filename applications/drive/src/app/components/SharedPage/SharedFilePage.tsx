@@ -20,7 +20,7 @@ interface Props {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     hideSaveToDrive?: boolean;
     partialView?: boolean;
-    openInDocs?: () => void;
+    openInDocs?: (linkId: string) => void;
 }
 
 export default function SharedFilePage({
@@ -86,7 +86,7 @@ export default function SharedFilePage({
                     imgThumbnailUrl={link?.cachedThumbnailUrl}
                     isPublic
                     isPublicDocsAvailable={isDocsPublicSharingEnabled}
-                    onOpenInDocs={openInDocs}
+                    onOpenInDocs={link && openInDocs ? () => openInDocs(link.linkId) : undefined}
                 />
             </SharedPageLayout>
             <SharedPageTransferManager rootItem={link} />
