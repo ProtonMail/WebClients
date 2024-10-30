@@ -7,7 +7,6 @@ import { useApiWalletsData, useBitcoinNetwork } from '@proton/wallet/store';
 import { BitcoinBlockchainContext } from '.';
 import { type WalletMap } from '../../types';
 import { useBitcoinAddresses } from './useBitcoinAddresses';
-import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 import { useWalletsChainData } from './useWalletsChainData';
 
 interface Props {
@@ -35,8 +34,6 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         getSyncingData,
     } = useWalletsChainData(apiWalletsData);
 
-    const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
-
     const { manageBitcoinAddressPool, bitcoinAddressHelperByWalletAccountId } = useBitcoinAddresses({
         apiWalletsData,
         walletsChainData,
@@ -62,9 +59,6 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
 
                 isSyncing,
                 getSyncingData,
-
-                feesEstimation,
-                loadingFeesEstimation,
 
                 manageBitcoinAddressPool,
                 bitcoinAddressHelperByWalletAccountId,

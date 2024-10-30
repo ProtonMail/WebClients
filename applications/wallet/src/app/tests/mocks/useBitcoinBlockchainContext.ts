@@ -1,5 +1,5 @@
 import { WasmNetwork } from '@proton/andromeda';
-import { apiWalletsData, getFeesEstimationMap, mockedWalletChainDataByWalletId } from '@proton/wallet/tests';
+import { apiWalletsData, mockedWalletChainDataByWalletId } from '@proton/wallet/tests';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import * as useBitcoinBlockchainContextModule from '../../contexts/BitcoinBlockchainContext';
@@ -26,9 +26,6 @@ export const mockUseBitcoinBlockchainContext = (
 
         isSyncing: vi.fn(),
         getSyncingData: vi.fn(),
-
-        feesEstimation: getFeesEstimationMap(),
-        loadingFeesEstimation: false,
 
         manageBitcoinAddressPool: vi.fn(),
         bitcoinAddressHelperByWalletAccountId: {},
