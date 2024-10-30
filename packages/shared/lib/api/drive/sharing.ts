@@ -30,7 +30,7 @@ export const querySharedURLPath = (token: string, linkID: string) => {
 
 export const querySharedURLMetadata = (token: string, LinkIDs: string[]) => {
     return {
-        method: 'get',
+        method: 'post',
         url: `drive/urls/${token}/links/fetch_metadata`,
         silence: true,
         data: {
