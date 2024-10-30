@@ -3577,6 +3577,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3657,6 +3660,9 @@
       ],
       "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
         "Din ${ PLAN_NAMES[PLANS.PASS] }-prenumeration är till ett specialpris på ${ price } per år. Genom att nedgradera till ett Free-paket kommer du förlora rabatten permanent, även om du uppgraderar igen i framtiden."
+      ],
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Bekräfta förlust av ${ PASS_APP_NAME } specialrabatt"
       ]
     },
     "Download attachments": {
@@ -4396,6 +4402,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Add at least one action": [
+        "Lägg till minst en åtgärd"
+      ],
+      "Add at least one condition": [
+        "Lägg till minst ett villkor"
+      ],
+      "Invalid IBAN": [
+        "Ogiltigt IBAN"
+      ],
+      "The amount due has changed. Please try again.": [
+        "Det förfallna beloppet har ändrats. Försök igen."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4788,6 +4806,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ditt konto använder ${ usedSpace } lagringsutrymme, vilket överstiger ${ inviteSpace } du tilldelades. Ta bort lite data eller be administratören för paketet att öka ditt lagringsutrymme."
+      ],
+      "Manage addresses": [
+        "Hantera adresser"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kan inte acceptera denna inbjudan med ditt nuvarande paket."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4815,6 +4839,9 @@
       ],
       "Set up your family account": [
         "Ställ in ditt familjekonto"
+      ],
+      "Configure your family account and invite users": [
+        "Konfigurera ditt familjekonto och bjud in användare"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5088,6 +5115,9 @@
       ],
       "Upgrade now": [
         "Uppgradera nu"
+      ],
+      "Try the new desktop app": [
+        "Prova den nya appen för stationär dator"
       ]
     },
     "Get started checklist instructions": {
@@ -7551,6 +7581,18 @@
       ],
       "Your private writing assistant": [
         "Din privata skrivassistent"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/månad)"
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-post märkta med etiketten ${ nameDeleted } kommer inte att tas bort och kan fortfarande hittas i respektive mapp."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Uppgradera för att ta bort meddelanden som har legat i papperskorg och skräppost i mer än 30 dagar automatiskt."
       ]
     },
     "info": {
@@ -8381,6 +8423,21 @@
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Company name": [
+        "Företagsnamn"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
+      "Thomas": [
+        "Thomas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8814,6 +8871,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Bilden har inte laddats in för att skydda din integritet."
+      ],
+      "Image could not be loaded.": [
+        "Bild kunde inte laddas."
       ]
     },
     "Message notification": {
@@ -9493,6 +9553,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "TOR over VPN": [
+        "TOR över VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -9840,6 +9903,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kan ha mer än en administratör. Alla administratörer kan lägga till och hantera användare men endast den primära administratören har kontroll över fakturering."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationshanteringsverktyg som låter administratörer lägga till och ta bort användare, hantera deras åtkomst till ${ BRAND_NAME }-tjänster och utföra andra uppgifter."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Dirigera din Internettrafik genom TOR-nätverket med ett enda klick"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10229,6 +10301,9 @@
       ],
       "Limited-time deal.": [
         "Tidsbegränsat erbjudande."
+      ],
+      "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
+        "Faktureras årligen till ${ yearlyPrice }. Spara ${ yearlySavedPrice } med ${ passFamilyPlanName } (jämfört med 6 individuella ${ passPlusPlanName }-prenumerationer)."
       ]
     },
     "passwordless": {
@@ -10257,6 +10332,9 @@
       ],
       "PayPal": [
         "PayPal"
+      ],
+      "Bank transfer": [
+        "Banköverföring"
       ]
     },
     "Payments": {
@@ -10721,6 +10799,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "När du tillfrågas om din e-postadress, ge detta alias istället. Alias ​​tillhandahålls av ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Används på Amazon för shopping etc."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11537,6 +11618,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ditt paket köptes med en iOS-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Apple App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Logga bara in på ditt Apple App Store-konto och välj sedan ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -11789,6 +11873,15 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } avancerat kontoskydd"
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "Om du överskrider gränserna för gratispaketet kommer du inte att kunna:"
+      ],
+      "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
+        "Om din användning överskrider gränserna för gratispaketet kan du uppleva begränsad åtkomst till produktfunktioner och din data."
       ]
     },
     "subscription reminder": {
@@ -13223,6 +13316,9 @@
     "Tor out of date": {
       "stable release": [
         "stabil utgåva"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Denna version av TOR-webbläsare stöds inte. Uppdatera till senaste ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13694,6 +13790,151 @@
       ],
       "Passcode: ${ password }": [
         "Lösenkod: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-app för stationär dator"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus och ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } lagringsutrymme"
+      ],
+      "1 TB total": [
+        "1 TB totalt"
+      ],
+      "1 user": [
+        "1 användare"
+      ],
+      "1 user account": [
+        "1 användarkonto"
+      ],
+      "10 email addresses": [
+        "10 e-postadresser"
+      ],
+      "2 users": [
+        "2 användare"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 användarkonton"
+      ],
+      "6 users": [
+        "6 användare"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8 500+ servrar i 110+ länder"
+      ],
+      "Admin panel to manage your family": [
+        "Administratörspanel för att hantera din familj"
+      ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
+      "Dark Web Monitoring": [
+        "Övervakning mörka webben"
+      ],
+      "Easily add or remove users": [
+        "Lägg till eller ta bort användare enkelt"
+      ],
+      "High speed streaming": [
+        "Höghastighetsstreaming"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrerad 2FA-autentisering"
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
+      "Protect 10 devices at a time": [
+        "Skydda 10 enheter åt gången"
+      ],
+      "Secure vault and link sharing": [
+        "Säker delning av valv och länk"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Obegränsat antal mappar, etiketter och filter"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Obegränsat antal hide-my-email-alias"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Obegränsat antal inloggningar, anteckningar, kreditkort"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
+      ],
+      "Version history": [
+        "Versionshistorik"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabatterna är baserade på ordinarie månadspriser."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Mest populär"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "för ${ durationDeal }"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-tjänster."
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Har bilagor"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Välj vad ${ BRAND_NAME } kan komma åt: visa dina e-postmeddelanden och inställningar, visa och ladda ner dina kontakter, visa och ladda ner alla agendor du kommer åt från Google Kalender."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Använd företagsnamn"
+      ],
+      "Use personal name": [
+        "Använd personligt namn"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Genom att bekräfta denna betalning auktoriserar du ${ BRAND_NAME } och Stripe, vår betaltjänstleverantör, att instruera din bank att debitera ditt konto och din bank att debitera ditt konto i enlighet med detta. Du kan få en återbetalning inom 8 veckor från debiteringsdatumet, enligt villkoren i ditt avtal med din bank."
+      ],
+      "Street address, postal code, and city": [
+        "Gatuadress, postnummer och ort"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN och mer."
       ]
     }
   }

@@ -580,7 +580,7 @@
         "Îmi place acest răspuns"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Imaginea nu au putut fi încărcată cu protecția împotriva urmăririi activată."
+        "Imaginea nu a putut fi încărcată cu protecția împotriva urmăririi activată."
       ],
       "Image will be loaded without a proxy": [
         "Imaginea va fi încărcată fără proxy."
@@ -1413,6 +1413,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Toggle Contacts app": [
+        "Comutare aplicație Contacte"
       ]
     },
     "action": {
@@ -3616,6 +3619,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4461,6 +4467,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Limitați căutarea și reîncercați."
+      ],
+      "Add at least one action": [
+        "Adăugați cel puțin o acțiune"
+      ],
+      "Add at least one condition": [
+        "Adăugați cel puțin o condiție"
+      ],
+      "Invalid IBAN": [
+        "Acest IBAN nu este valid."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Trimiterea atașamentelor este restricționată în timp ce depășiți limitele planului actual sau până când treceți la un plan cu plată superior."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Suma datorată s-a schimbat. Mai încercați."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Ați atins limita numărului de contacte disponibil pentru acest cont."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4855,6 +4879,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Contul utilizează ${ usedSpace } de stocare, care depășește cei ${ inviteSpace } care vi s-au alocat. Ștergeți unele date sau cereți administratorului planului să vă crească limita de stocare."
+      ],
+      "Manage addresses": [
+        "Gestionare adrese"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Nu puteți accepta această invitație cu planul actual."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4882,6 +4912,9 @@
       ],
       "Set up your family account": [
         "Configurare cont de familie"
+      ],
+      "Configure your family account and invite users": [
+        "Configurați contul de familie și invitați utilizatori"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5156,6 +5189,9 @@
       ],
       "Upgrade now": [
         "Modificare"
+      ],
+      "Try the new desktop app": [
+        "Încercați noua aplicație pentru desktop"
       ]
     },
     "Get started checklist instructions": {
@@ -7702,6 +7738,30 @@
       ],
       "Your private writing assistant": [
         "Asistentul personal privat de scriere"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/lună)"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul «Toate mesajele»."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Mesajele etichetate cu eticheta ${ nameDeleted } nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Alertele noastre au ca prioritate siguranța. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Amânat până la ${ dateString } la ${ formattedTime }"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Dezactivați pentru a căuta numai după dată, nume, adresă de e-mail sau conținut subiect. Pentru a dezactiva căutarea în conținutul mesajelor (și a șterge mesajele descărcate pentru a activa această funcție), accesați rubrica Setări."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Modificați-vă planul cu unul superior pentru a putea șterge automat mesajele care au stat în folderul «Gunoi» și «Nedorite» mai mult de 30 de zile."
       ]
     },
     "info": {
@@ -8532,6 +8592,21 @@
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Company name": [
+        "Nume companie"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Thomas": [
+        "Thomas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8973,6 +9048,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Imaginea nu a fost încărcată pentru a vă proteja intimitatea."
+      ],
+      "Image could not be loaded.": [
+        "Imaginea nu s-a putut încărca."
       ]
     },
     "Message notification": {
@@ -9683,6 +9761,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "TOR over VPN": [
+        "Tor prin VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -10030,6 +10111,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Instrument de gestionare a organizației care le permite administratorilor să adauge și să elimine utilizatori, să le gestioneze accesul la serviciile ${ BRAND_NAME } și să îndeplinească alte sarcini."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Redirecționați traficul din Internet prin rețeaua TOR cu un singur clic."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10460,6 +10550,9 @@
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ],
+      "Bank transfer": [
+        "Transfer bancar"
       ]
     },
     "Payments": {
@@ -10933,6 +11026,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Când vi se solicită adresa de e-mail furnizați acest alias. Aliasurile sunt furnizate de către ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Folosit pentru cumpărături pe Amazon etc."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11778,6 +11874,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Abonamentul a fost achiziționat din aplicația iOS. Pentru a face modificări la acesta sau a actualiza detaliile de plată, va trebui să o faceți din App Store de la Apple."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Doar conectați-vă în App Store de la Apple și apoi selectați ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -13534,6 +13633,9 @@
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Această versiune a TOR Browser nu este suportată. Actualizați la cea mai recentă ${ stableRelease }."
       ]
     },
     "Update font modal": {
@@ -14055,6 +14157,183 @@
       ],
       "Passcode: ${ password }": [
         "Co de acces: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus și ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } spațiu de stocare"
+      ],
+      "1 TB total": [
+        "1 TiB total"
+      ],
+      "1 user": [
+        "Un utilizator"
+      ],
+      "1 user account": [
+        "Un cont de utilizator"
+      ],
+      "10 email addresses": [
+        "10 adrese de e-mail"
+      ],
+      "2 users": [
+        "Doi utilizatori"
+      ],
+      "3 TB": [
+        "3 TiB"
+      ],
+      "6 user accounts": [
+        "6 conturi de utilizator"
+      ],
+      "6 users": [
+        "6 utilizatori"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Peste 8.500 de servere în peste 110 de țări"
+      ],
+      "Ad-blocker and malware protection": [
+        "Protecție malware și blocare reclame"
+      ],
+      "Admin panel to manage your family": [
+        "Panou de administrare pentru gestionarea familiei"
+      ],
+      "Advanced account protection": [
+        "Protecție avansată a contului"
+      ],
+      "Dark Web Monitoring": [
+        "Monitorizare pe internetul ascuns"
+      ],
+      "Easily add or remove users": [
+        "Adăugare și eliminare ușoară utilizatori"
+      ],
+      "High speed streaming": [
+        "Transmisii în flux de mare viteză"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autentificator A2F integrat"
+      ],
+      "Online document editor": [
+        "Editor online de documente"
+      ],
+      "Password health alerts": [
+        "Alerte stare parole"
+      ],
+      "Private photo backup": [
+        "Conservare privată fotografii"
+      ],
+      "Protect 10 devices at a time": [
+        "Protejare 10 dispozitive simultan"
+      ],
+      "Secure file storage & sharing": [
+        "Stocare și partajare securizată fișiere"
+      ],
+      "Secure vault and link sharing": [
+        "Partajare sigură seif și legături web"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliasuri hide-my-email nelimitate"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Date de autentificare, note și carduri de plată nelimitate"
+      ],
+      "Use your own email domain": [
+        "Utilizați propriul domeniu de e-mail"
+      ],
+      "Version history": [
+        "Istoric versiuni"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Reducerile sunt bazate pe prețul standard lunar."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "* Abonamentul se va reînnoi automat la aceeași sumă redusă și durată la sfârșitul ciclului de facturare."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Cel mai popular"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "pentru ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Se reînnoiește lunar cu ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Accesați conținutul blocat și navigați în mod privat. Include peste 8.500 de servere în peste 110 țări, 10 dispozitive simultan, transmisii în flux la viteză maximă, blocare reclame și protecție malware, accelerator VPN și altele."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney +, Prime Video și altele."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, monitorizare internet ascuns și altele."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Securizați-vă fișierele cu stocare criptată în cloud. Include editor de documente online, conservare pentru fotografii, istoricul versiunilor, partajarea fișierelor criptate și multe altele."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield special conceput să vă protejeze dispozitivele și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Are atașamente"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selectați ce poate accesa ${ BRAND_NAME }: accesare mesaje primite pe e-mail și setări, afișare și descărcare contacte, afișare și descărcare toate agendele pe care le accesați din Google Calendar."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Folosire nume companie"
+      ],
+      "Use personal name": [
+        "Folosire nume personal"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confirmând această plată, autorizați ${ BRAND_NAME } și Stripe, furnizorul nostru de servicii de plată, să solicite băncii să vă debiteze contul, iar banca să vă debiteze contul în consecință. Puteți obține o rambursare în termen de 8 săptămâni de la data debitului, în condițiile acordului pe care îl aveți cu banca."
+      ],
+      "Street address, postal code, and city": [
+        "Strada, cod poștal și oraș"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     }
   }

@@ -4430,6 +4430,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Invalid IBAN": [
+        "Μη έγκυρο IBAN"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Η αποστολή συνημμένων περιορίζεται όταν υπερβαίνετε τα όρια του προγράμματός σας ή μέχρι να αναβαθμίσετε το πρόγραμμά σας."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4822,6 +4828,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ο λογαριασμός σας χρησιμοποιεί αποθηκευτικό χώρο ${ usedSpace }, ο οποίος υπερβαίνει τα ${ inviteSpace } που σας έχουν εκχωρηθεί. Διαγράψτε ορισμένα δεδομένα ή ζητήστε από τον διαχειριστή του προγράμματος να αυξήσει τον αποθηκευτικό σας χώρο."
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Δεν μπορείτε να αποδεχτείτε αυτήν την πρόσκληση με το τρέχον πλάνο σας."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4849,6 +4861,9 @@
       ],
       "Set up your family account": [
         "Ρυθμίστε τον οικογενειακό λογαριασμό σας"
+      ],
+      "Configure your family account and invite users": [
+        "Ρυθμίστε τις παραμέτρους του οικογενειακού λογαριασμού σας και προσκαλέστε χρήστες"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5117,6 +5132,9 @@
       ],
       "Upgrade now": [
         "Αναβαθμίστε τώρα"
+      ],
+      "Try the new desktop app": [
+        "Δοκιμάστε τη νέα εφαρμογή για υπολογιστές"
       ]
     },
     "Get started checklist instructions": {
@@ -7574,6 +7592,18 @@
       ],
       "Your private writing assistant": [
         "Ο προσωπικός σας βοηθός γραφής"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/μήνα)"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δε θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου με ετικέτα ${ nameDeleted } δε θα διαγραφούν και μπορούν ακόμα να βρεθούν στον αντίστοιχο φάκελο."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Αναβολή έως ${ dateString } στις ${ formattedTime }"
       ]
     },
     "info": {
@@ -8398,6 +8428,12 @@
       ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Company name": [
+        "Όνομα εταιρείας"
+      ],
+      "IBAN": [
+        "IBAN"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9519,6 +9555,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "TOR over VPN": [
+        "TOR μέσω VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -9863,6 +9902,12 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Μπορείτε να έχετε περισσότερους από έναν διαχειριστές. Όλοι οι διαχειριστές μπορούν να προσθέτουν και να διαχειρίζονται χρήστες, αλλά μόνο ο κύριος διαχειριστής έχει τον έλεγχο της χρέωσης."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Δρομολογήστε την κίνηση σας στο διαδίκτυο, μέσω του δικτύου TOR με ένα μόνο κλικ"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10289,6 +10334,9 @@
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
+      ],
+      "Bank transfer": [
+        "Τραπεζική μεταφορά"
       ]
     },
     "Payments": {
@@ -10756,6 +10804,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Τα ψευδώνυμα παρέχονται από το ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -13279,6 +13330,9 @@
     "Tor out of date": {
       "stable release": [
         "ευσταθή έκδοση"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Αυτή η έκδοση του περιηγητή TOR δεν υποστηρίζεται. Παρακαλούμε ενημερώστε στην τελευταία ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13758,6 +13812,21 @@
       ],
       "Passcode: ${ password }": [
         "Κωδικός πρόσβασης: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Έχει συνημμένα"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Πρόσβαση σε Secure Core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, TOR μέσω VPN, και πολλά άλλα."
       ]
     }
   }

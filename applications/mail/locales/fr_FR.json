@@ -4688,6 +4688,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Le prénom et le nom de famille ne peuvent pas être décochés en même temps."
+      ],
+      "Display name cannot be empty": [
+        "Le nom d'affichage ne peut pas être vide."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -9955,6 +9958,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Outil de gestion de l'organisation qui permet aux administrateurs d'ajouter et de supprimer des utilisateurs, de gérer leur accès aux services ${ BRAND_NAME }, et d'effectuer d'autres tâches."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10396,7 +10402,7 @@
         "Utiliser le nom de l'entreprise"
       ],
       "Use personal name": [
-        "Utiliser un nom personnel"
+        "Utiliser le nom de la personne"
       ]
     },
     "Payments": {
@@ -11927,7 +11933,7 @@
         "Importer tout nouveau fichier"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
-        "Les abonnements utilisateurs sont la seule source de revenus de ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission pour la protection de la vie privée en ligne, et d'aider les militants et organisations qui luttent pour la liberté."
+        "Les abonnements des utilisateurs sont la seule source de revenus de ${ BRAND_NAME }. Votre soutien nous permet de rester indépendants, de poursuivre notre mission pour la protection de la vie privée en ligne, et d'aider les militants et organisations qui luttent pour la liberté."
       ],
       "Users won’t be able to manage their calendars": [
         "Les utilisateurs ne pourront plus gérer leurs calendriers."
@@ -13888,6 +13894,151 @@
       ],
       "Passcode: ${ password }": [
         "Code d’accès :${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Application de bureau ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus et ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } d'espace de stockage"
+      ],
+      "1 TB total": [
+        "1 To au total"
+      ],
+      "1 user": [
+        "1 utilisateur"
+      ],
+      "1 user account": [
+        "1 compte utilisateur"
+      ],
+      "10 email addresses": [
+        "10 adresses e-mail"
+      ],
+      "2 users": [
+        "2 utilisateurs"
+      ],
+      "3 TB": [
+        "3 To"
+      ],
+      "6 user accounts": [
+        "6 comptes utilisateur"
+      ],
+      "6 users": [
+        "6 utilisateurs"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Plus de 8500 serveurs dans plus de 110 pays"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueur de publicité et protection contre les logiciels malveillants"
+      ],
+      "Admin panel to manage your family": [
+        "Panneau d'administration pour gérer votre famille"
+      ],
+      "Advanced account protection": [
+        "Protection avancée des comptes"
+      ],
+      "Dark Web Monitoring": [
+        "Surveillance du dark web"
+      ],
+      "Easily add or remove users": [
+        "Ajoutez ou retirez facilement des utilisateurs"
+      ],
+      "High speed streaming": [
+        "Streaming ultra rapide"
+      ],
+      "Integrated 2FA authenticator": [
+        "Authentification à deux facteurs (A2F) intégrée"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Password health alerts": [
+        "Alertes de sécurité des mots de passe"
+      ],
+      "Private photo backup": [
+        "Sauvegarde de vos photos privées"
+      ],
+      "Protect 10 devices at a time": [
+        "Protégez 10 appareils en même temps"
+      ],
+      "Secure file storage & sharing": [
+        "Stockage de fichiers sécurisé et partage de liens"
+      ],
+      "Secure vault and link sharing": [
+        "Coffre-fort sécurisé et partage de liens"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Nombre illimité de dossiers, labels et filtres"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Nombre illimité de connexions, de notes et de cartes de crédit"
+      ],
+      "Use your own email domain": [
+        "Utilisez vos propres domaines de messagerie"
+      ],
+      "Version history": [
+        "Historique des versions"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Les réductions sont calculées sur les prix mensuels habituels."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Le plus populaire"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "pour ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Renouvellement après 1 mois à ${ regularAmount }"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Accès à des contenus bloqués et navigation en toute confidentialité. Comprend plus de 8 500 serveurs dans plus de 110 pays, 10 appareils, streaming à haute vitesse, bloqueur de publicités et protection contre les logiciels malveillants, VPN Accelerator et bien plus encore."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1, Eurosport France… où que vous soyez."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification à deux facteurs A2F, la surveillance du Dark Web et plus encore."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Protégez vos fichiers avec un stockage cloud chiffré. Comprend un éditeur de documents en ligne, une sauvegarde de vos photos, un historique des versions, la fonction de partage de fichiers chiffrés et plus encore."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "La fonctionnalité NetShield est spécialement conçue pour protéger vos appareils et accélérer votre navigation en bloquant les publicités, les traqueurs et les logiciels malveillants."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "L'espace de stockage est partagé entre tous les services ${ BRAND_NAME }."
       ]
     }
   }

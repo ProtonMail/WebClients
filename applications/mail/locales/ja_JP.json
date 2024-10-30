@@ -7707,6 +7707,9 @@
       ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
+      ],
+      "Company name": [
+        "会社名"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9299,6 +9302,9 @@
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ],
+      "Bank transfer": [
+        "銀行振込"
       ]
     },
     "Payments": {
@@ -9484,7 +9490,7 @@
         "テキスト"
       ],
       "To": [
-        "終了日"
+        "宛先"
       ],
       "Type a command…": [
         "コマンドを入力…"
@@ -12140,6 +12146,41 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet に参加"
+      ],
+      "Joining instructions": [
+        "参加手順"
+      ],
+      "Meeting link:": [
+        "ミーティングリンク:"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "会社名を使用する"
+      ],
+      "Use personal name": [
+        "個人名を使用する"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Zoom ミーティングに参加"
+      ],
+      "Meeting ID:": [
+        "ミーティング ID:"
+      ],
+      "Passcode: ${ password }": [
+        "パスコード: ${ password }"
       ]
     }
   }

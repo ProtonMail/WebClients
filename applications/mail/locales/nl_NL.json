@@ -1408,6 +1408,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Toggle Contacts app": [
+        "Contact app kiezen"
       ]
     },
     "action": {
@@ -3597,6 +3600,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4430,6 +4436,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "Add at least one action": [
+        "Voeg minimaal één actie toe"
+      ],
+      "Add at least one condition": [
+        "Voeg tenminste één voorwaarde toe"
+      ],
+      "Invalid IBAN": [
+        "Ongeldige IBAN"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Het verzenden van bijlagen is beperkt terwijl u de limieten van uw abonnement overschrijdt of tot u uw abonnement upgrade."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "U heeft de limiet van het aantal contacten bereikt voor dit account"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4822,6 +4846,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "U kunt deze uitnodiging niet accepteren met uw huidige abonnement."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4849,6 +4879,9 @@
       ],
       "Set up your family account": [
         "Uw gezinsaccount configureren"
+      ],
+      "Configure your family account and invite users": [
+        "Configureer uw gezinsaccount en nodig gebruikers uit"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5117,6 +5150,9 @@
       ],
       "Upgrade now": [
         "Upgrade nu"
+      ],
+      "Try the new desktop app": [
+        "Probeer de nieuwe desktop-app"
       ]
     },
     "Get started checklist instructions": {
@@ -7574,6 +7610,30 @@
       ],
       "Your private writing assistant": [
         "Uw privé schrijfhulp"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/maand)"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuele submappen zullen ook worden verwijderd. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden verwijderd en zijn terug te vinden in de map Alle berichten."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Mails getagd met het label ${ nameDeleted } zullen niet verwijderd worden en zijn terug te vinden in hun respectievelijke map."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Gesnoozed tot ${ dateString } om ${ formattedTime }"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Uitschakelen om alleen te zoeken op datum, naam, e-mailadres of onderwerpregel. Ga naar Instellingen om de inhoud van zoekberichten uit te schakelen (en berichten te verwijderen die zijn gedownload om deze functie in te schakelen)."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Upgrade om automatisch berichten te verwijderen die meer dan 30 dagen in de Prullenbak of Spam zitten."
       ]
     },
     "info": {
@@ -8398,6 +8458,21 @@
       ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Company name": [
+        "Bedrijfsnaam"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
+      "Thomas": [
+        "Thomas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8834,6 +8909,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Afbeelding is niet geladen om uw privacy te beschermen."
+      ],
+      "Image could not be loaded.": [
+        "Afbeelding kon niet worden geladen."
       ]
     },
     "Message notification": {
@@ -9519,6 +9597,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "TOR over VPN": [
+        "Tor via VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -9863,6 +9944,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME } diensten kunnen beheren en andere taken kunnen uitvoeren."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10289,6 +10379,9 @@
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ],
+      "Bank transfer": [
+        "Bankoverschrijving"
       ]
     },
     "Payments": {
@@ -10756,6 +10849,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wanneer uw e-mailadres gevraagd wordt, geef dan deze alias op. Aliassen worden geleverd door ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Gebruikt in Amazon voor winkelen enz."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11572,6 +11668,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Uw abonnement was gekocht met een iOS-app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Log in op uw Apple App Store account, selecteer dan op ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -11736,7 +11835,7 @@
         "Als u de limiet van het gratis abonnement overschrijdt, kunt u niet of geen:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Als uw gebruik de limieten van het gratis abonnement overschrijdt kunt u beperkte toegang tot productfuncties en uw gegevens ervaren."
+        "Als uw gebruik de limieten van het gratis abonnement overschrijdt, kunt u beperkte toegang tot productfuncties en uw gegevens ervaren."
       ],
       "Invited members will be removed from your organization": [
         "Uitgenodigde leden zullen uit uw organisatie worden verwijderd"
@@ -13279,6 +13378,9 @@
     "Tor out of date": {
       "stable release": [
         "stabiele release"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Deze versie van TOR Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13758,6 +13860,154 @@
       ],
       "Passcode: ${ password }": [
         "Toegangscode: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } opslagruimte"
+      ],
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "1 user account": [
+        "1 gebruikersaccount"
+      ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
+      "2 users": [
+        "2 gebruikers"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 gebruikersaccounts"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Meer dan 8.500 servers in meer dan 110 landen"
+      ],
+      "Ad-blocker and malware protection": [
+        "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Easily add or remove users": [
+        "Eenvoudig gebruikers toevoegen of verwijderen"
+      ],
+      "High speed streaming": [
+        "Streamen met hoge snelheid"
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde 2FA-authenticator"
+      ],
+      "Online document editor": [
+        "Online documenteditor"
+      ],
+      "Password health alerts": [
+        "Wachtwoordgezondheidswaarschuwingen"
+      ],
+      "Private photo backup": [
+        "Privé foto back-up"
+      ],
+      "Protect 10 devices at a time": [
+        "Bescherm 10 apparaten tegelijkertijd"
+      ],
+      "Secure file storage & sharing": [
+        "Veilige bestandsopslag en delen"
+      ],
+      "Secure vault and link sharing": [
+        "Veilige kluis en het delen van links"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Onbeperkt aantal logins, notities en creditcards"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ],
+      "Version history": [
+        "Versiegeschiedenis"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Kortingen zijn gebaseerd op standaardprijzen per maand."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Populairste keuze"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "voor ${ durationDeal }"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Heeft bijlagen"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Bedrijfsnaam gebruiken"
+      ],
+      "Use personal name": [
+        "Gebruik persoonlijke naam"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Door deze betaling te bevestigen, autoriseert u ${ BRAND_NAME } en Stripe, onze provider van betalingsdiensten, om uw bank te instrueren om uw rekening en uw bank dienovereenkomstig in rekening te brengen. U kunt een restitutie binnen 8 weken ontvangen van de debitdatum, onder de voorwaarden van uw overeenkomst met uw bank."
+      ],
+      "Street address, postal code, and city": [
+        "Straatnaam, postcode en plaats"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     }
   }

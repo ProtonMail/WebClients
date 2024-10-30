@@ -1403,6 +1403,9 @@
       ],
       "Zoom out": [
         "Perkecil"
+      ],
+      "Toggle Contacts app": [
+        "Tampilkan/sembunyikan aplikasi Kontak"
       ]
     },
     "action": {
@@ -3445,7 +3448,7 @@
         "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Hapus pesan spam dan sampah secara otomatis dan buka lebih banyak fitur premium saat Anda meningkatkan."
+        "Hapus pesan spam dan sampah secara otomatis dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Hapus email di Sampah dan Spam lebih dari 30 hari yang lalu."
@@ -3578,6 +3581,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Untuk mengimpor melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ini, silakan pisahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -4399,6 +4405,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Pencarian Anda membuahkan terlalu banyak hasil. Silakan persempit kriteria pencarian Anda dan coba lagi."
+      ],
+      "Add at least one action": [
+        "Tambah setidaknya satu tindakan"
+      ],
+      "Add at least one condition": [
+        "Tambah setidaknya satu kondisi"
+      ],
+      "Invalid IBAN": [
+        "IBAN tidak valid"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Pengiriman lampiran dibatasi pada saat Anda telah melebihi batas paket Anda atau hingga Anda meningkatkan akun."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Biaya yang tertagih telah berubah. Silakan coba lagi."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Anda telah mencapai batas jumlah kontak untuk akun Anda"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4789,6 +4813,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
+      ],
+      "Manage addresses": [
+        "Kelola alamat"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4816,6 +4846,9 @@
       ],
       "Set up your family account": [
         "Siapkan akun keluarga Anda"
+      ],
+      "Configure your family account and invite users": [
+        "Atur akun keluarga Anda dan undang pengguna"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5078,6 +5111,9 @@
       ],
       "Upgrade now": [
         "Tingkatkan sekarang"
+      ],
+      "Try the new desktop app": [
+        "Coba aplikasi desktop baru kami"
       ]
     },
     "Get started checklist instructions": {
@@ -7446,6 +7482,30 @@
       ],
       "Your private writing assistant": [
         "Asisten penulisan pribadi Anda"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/bulan)"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Seluruh subfolder yang ada juga akan dihapus. Meskipun demikian, seluruh email yang tersimpan pada folder ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada folder Semua Surat."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Email yang ditandai dengan label ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Peringatan kami mengutamakan keamanan. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Ditunda hingga ${ dateString } pada pukul ${ formattedTime }"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Nonaktifkan pilihan ini untuk membatasi pencarian hanya berdasarkan tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan (dan menghapus pesan yang telah diunduh untuk mengaktifkan fitur ini), tuju menu Pengaturan."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Tingkatkan untuk menghapus pesan yang telah berada di Sampah dan Spam selama lebih dari 30 hari secara otomatis."
       ]
     },
     "info": {
@@ -8264,6 +8324,21 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Company name": [
+        "Nama perusahaan"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Thomas": [
+        "Thomas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8695,6 +8770,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Gambar tidak dimuat demi melindungi privasi Anda."
+      ],
+      "Image could not be loaded.": [
+        "Gambar tidak dapat dimuat."
       ]
     },
     "Message notification": {
@@ -9355,6 +9433,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
+      ],
+      "TOR over VPN": [
+        "TOR via VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -9696,6 +9777,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Anda dapat menetapkan lebih dari satu admin. Seluruh admin akan dapat menambahkan dan mengelola pengguna, namun segala hal terkait pembayaran hanya akan dapat diatur oleh admin utama."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Sarana manajemen organisasi yang memungkinkan para admin untuk menambahkan dan menghapus pengguna, mengelola akses mereka ke layanan ${ BRAND_NAME }, dan mengerjakan berbagai hal lainnya."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Alihkan lalu lintas internet Anda melalui jaringan TOR dengan satu kali klik"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10118,6 +10208,9 @@
       ],
       "New credit/debit card": [
         "Kartu kredit/debit baru"
+      ],
+      "Bank transfer": [
+        "Transfer bank"
       ]
     },
     "Payments": {
@@ -10579,6 +10672,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Pada saat Anda diminta untuk memberikan alamat email, gunakan alias ini sebagai gantinya. Seluruh alias disediakan oleh ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Digunakan pada Amazon untuk berbegai keperluan (mis. untuk berjualan)"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11366,6 +11462,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Paket langganan Anda dibeli melalui aplikasi iOS. Oleh karenanya, Anda harus membuka Apple App Store untuk mengubah paket langganan atau memperbarui rincian pembayaran Anda."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Cukup masuk ke akun Apple App Store Anda, lalu pilih ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -13024,6 +13123,9 @@
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Versi TOR Browser ini sudah tidak lagi didukung. Silakan perbarui browser Anda ke ${ stableRelease } terbaru"
       ]
     },
     "Update font modal": {
@@ -13461,6 +13563,181 @@
       ],
       "Passcode: ${ password }": [
         "Kode sandi: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Jumat Hitam"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplikasi desktop ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus dan ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "Ruang penyimpanan ${ storageSize }"
+      ],
+      "1 TB total": [
+        "Jumlah 1 TB"
+      ],
+      "1 user": [
+        "1 pengguna"
+      ],
+      "1 user account": [
+        "1 akun pengguna"
+      ],
+      "10 email addresses": [
+        "10 alamat email"
+      ],
+      "2 users": [
+        "2 pengguna"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 akun pengguna"
+      ],
+      "6 users": [
+        "6 pengguna"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ server di 110+ negara"
+      ],
+      "Ad-blocker and malware protection": [
+        "Pemblokir iklan dan perlindungan perangkat lunak jahat"
+      ],
+      "Admin panel to manage your family": [
+        "Panel akun untuk mengelola keluarga Anda"
+      ],
+      "Advanced account protection": [
+        "Perlindungan akun tingkat lanjut"
+      ],
+      "Dark Web Monitoring": [
+        "Pemantauan Dark Web"
+      ],
+      "Easily add or remove users": [
+        "Tambah atau kurangi pengguna secara mudah"
+      ],
+      "High speed streaming": [
+        "Streaming berkecepatan tinggi"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
+      "Online document editor": [
+        "Penyunting dokumen daring"
+      ],
+      "Password health alerts": [
+        "Peringatan kesehatan kata sandi"
+      ],
+      "Private photo backup": [
+        "Pencadangan foto pribadi"
+      ],
+      "Protect 10 devices at a time": [
+        "Lindungi 10 perangkat secara bersamaan"
+      ],
+      "Secure file storage & sharing": [
+        "Penyimpanan & pembagian berkas aman"
+      ],
+      "Secure vault and link sharing": [
+        "Pembagian brankas dan tautan aman"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Tanpa batasan jumlah folder, label, dan filter"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Tanpa batasan jumlah alias hide-my-email"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Tanpa batasan jumlah entri masuk, catatan, dan kartu kredit"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain email milik Anda sendiri"
+      ],
+      "Version history": [
+        "Riwayat versi"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Diskon berdasar pada harga bulanan standar."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir masa tagihan Anda."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Terpopuler"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "untuk ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Diperbarui setelah 1 bulan dengan ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Akses konten yang diblokir dan jelajahi internet secara privat. Meliputi 8500+ server di 110+ negara, 10 perangkat, streaming berkecepatan tinggi, pemblokir iklan, perlindungan malware, VPN Accelerator, dan masih banyak lagi."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Akses konten pada berbagai layanan streaming seperti Netflix, Disney+, Prime Video, dan lainnya dari mana saja."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Entri masuk yang aman pada seluruh perangkat Anda. Meliputi alias hide-my-email tanpa batasan jumlah, pembagian entri, 2FA yang terintegrasi, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Dirancang secara khusus, NetShield melindungi perangkat Anda dan mempercepat penjelajahan Anda dengan memblokir iklan, pelacak, dan perangkat lunak jahat."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Mengandung lampiran"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Tentukan apa-apa saja yang dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, melihat dan mengunduh seluruh agenda yang Anda akses dari Google Calender."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Gunakan nama perusahaan"
+      ],
+      "Use personal name": [
+        "Gunakan nama pribadi"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Dengan mengonfirmasi pembayaran ini, Anda mengotorisir ${ BRAND_NAME } dan Stripe, penyedia layanan pembayaran kami, untuk meminta bank Anda untuk mendebit akun Anda, serta bank Anda untuk mendebit akun Anda. Anda dapat memperoleh pengembalian dana dalam jangka waktu 8 minggu dari tanggal pendebitan, sesuai dengan ketentuan perjanjian antara Anda dan bank Anda."
+      ],
+      "Street address, postal code, and city": [
+        "Alamat, kode pos, dan kota"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
       ]
     }
   }

@@ -1391,7 +1391,7 @@
         "Sí, asistiré"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos.",
+        "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos."
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
@@ -3572,7 +3572,7 @@
         "Actualiza tu cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de última generación impulsada por inteligencia artificial con soporte dedicado de expertos las 24 horas, los 7 días de la semana."
       ],
       "Use ${ MAIL_APP_NAME } to sign in to online services since, unlike other email providers, we will never track your data and share it with third parties.": [
-        "Usa ${ MAIL_APP_NAME } para iniciar sesión en servicios en línea, a diferencia de otros proveedores de correo electrónico, nosotros nunca rastrearemos tus datos ni los compartiremos con terceros."
+        "Usa ${ MAIL_APP_NAME } para iniciar tus sesiones online, a diferencia de otros proveedores de correo electrónico, nosotros nunca rastrearemos tus datos ni los compartiremos con terceros."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
@@ -4212,7 +4212,7 @@
         "Proporciona al menos un nombre, apellido o nombre a mostrar"
       ],
       "Please select a category and what went wrong with the generated text": [
-        "Selecciona una categoría y lo que salió mal con el texto generado"
+        "Selecciona una categoría y qué salió mal con el texto generado"
       ],
       "Please try again or refresh the page.": [
         "Inténtalo de nuevo o actualiza la página."
@@ -4239,13 +4239,13 @@
         "Error al descargar el asistente de escritura. Si estás usando el modo incógnito, intenta usar la navegación normal o ejecuta el asistente en los servidores."
       ],
       "Problem downloading the writing assistant. Please try again.": [
-        "Error al descargar el asistente de escritura. Intenta de nuevo."
+        "Error al descargar el asistente de escritura. Inténtalo de nuevo."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
-        "Error al cargar el asistente de escritura en el dispositivo. Intenta de nuevo."
+        "Error al cargar el asistente de escritura en el dispositivo. Inténtalo de nuevo."
       ],
       "Problem unloading data not needed when the writing assistant is inactive": [
-        "Error al descargar datos que no son necesarios cuando el asistente de escritura está inactivo"
+        "Error al eliminar datos innecesarios cuando el asistente de escritura está inactivo"
       ],
       "Process aborted": [
         "Proceso anulado"
@@ -4264,10 +4264,10 @@
         "Tiempo de espera agotado"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
-        "El envío de archivos adjuntos está limitado hasta que respetes los límites de tu plan o mejores."
+        "El envío de archivos adjuntos está restringido hasta que respetes los límites de tu plan o lo mejores."
       ],
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
-        "El envío de archivos adjuntos está limitado mientras excedas los límites del plan o hasta que lo mejores."
+        "El envío de archivos adjuntos está restringido mientras excedas los límites del plan o hasta que lo mejores."
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -4422,8 +4422,8 @@
         "No puedes enviar un correo a más de ${ maxContacts } destinatarios."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "No puedes abrir más de ${ maxActiveComposer } ventana de edición a la vez",
-        "No puedes abrir más de ${ maxActiveComposer } ventanas de edición a la vez"
+        "No se puede abrir más de ${ maxActiveComposer } ventana de edición a la vez",
+        "No se pueden abrir más de ${ maxActiveComposer } ventanas de edición a la vez"
       ],
       "You did not provide a file.": [
         "No has proporcionado ningún archivo."
@@ -4432,7 +4432,7 @@
         "Ha alcanzado la cantidad máxima de calendarios."
       ],
       "You have reached the number of contacts limit for your account": [
-        "Has alcanzado el número límite de contactos para tu cuenta."
+        "Has alcanzado el límite de contactos para tu cuenta."
       ],
       "You must set a name": [
         "Debes establecer un nombre."
@@ -4451,6 +4451,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
+      ],
+      "The amount due has changed. Please try again.": [
+        "El importe a pagar ha cambiado. Por favor, inténtalo de nuevo."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4685,6 +4688,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "El nombre y apellido no pueden desmarcarse al mismo tiempo."
+      ],
+      "Display name cannot be empty": [
+        "El nombre a mostrar no puede estar vacío."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5252,7 +5258,7 @@
         "Abre la lista de comprobación y obtén almacenamiento gratis"
       ],
       "Popular online services": [
-        "Servicios populares en línea"
+        "Servicios online populares"
       ],
       "privacy features": [
         "funciones de privacidad"
@@ -6736,7 +6742,7 @@
         "Añade al menos un destinatario."
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Pregunta al propietario que te invite directamente al documento."
+        "Pide al propietario que te invite directamente al documento."
       ],
       "Please authenticate your card in the verification tab.": [
         "Autentica tu tarjeta en la pestaña de verificación."
@@ -6809,13 +6815,13 @@
         "Error al cargar la vista previa"
       ],
       "Preview for this file type is currently not supported on this browser.": [
-        "La vista previa para este tipo de archivo no está admitida en este navegador."
+        "La vista previa para este tipo de archivo no está soportada en este navegador."
       ],
       "Preview for this file type is not supported": [
         "No se admite la vista previa para este tipo de archivo."
       ],
       "Preview of documents is not yet supported.": [
-        "La previsualización de documentos aún no está admitida."
+        "La previsualización de documentos aún no está disponible."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
@@ -6836,7 +6842,7 @@
         "Protege tu correo electrónico de ser filtrado a listas de correo o spammers con ${ maskMyEmailButton }."
       ],
       "Public sharing of documents is not yet supported.": [
-        "El intercambio público de documentos aún no está admitido."
+        "La compartición pública de documentos aún no está disponible."
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -7047,7 +7053,7 @@
         "El remitente original de este mensaje ya no es válido. Tu mensaje se enviará desde tu dirección por defecto ${ defaultEmail }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
+        "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
       ],
       "The sender has requested a read receipt.": [
         "El remitente ha solicitado una confirmación de lectura."
@@ -7425,7 +7431,7 @@
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
       "You are about to open your default browser and visit:": [
-        "Estás a punto de abrir tu navegador por defecto y consultar:"
+        "Estás a punto de abrir tu navegador por defecto y visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
@@ -7472,7 +7478,7 @@
         "Puedes utilizar ${ VPN_APP_NAME } gratis, hoy."
       ],
       "You cannot reply from the invited address.": [
-        "No puedes responder desde la dirección invitada."
+        "No se puede responder desde la dirección invitada."
       ],
       "You do not have any messages here": [
         "No tienes ningún mensaje aquí."
@@ -7586,7 +7592,7 @@
         "Tu cuenta se actualizará una vez que el pago se haya completado."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "El navegador no admite el asistente de escritura. Intenta ejecutarlo en los servidores."
+        "El navegador no soporta el asistente de escritura. Prueba a ejecutarlo en los servidores."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
@@ -7604,7 +7610,7 @@
         "Tus archivos serán cifrados y después guardados."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "El hardware no admite ejecutar el asistente de escritura. Intenta ejecutarlo en los servidores."
+        "El hardware no soporta ejecutar el asistente de escritura. Prueba a ejecutarlo en los servidores."
       ],
       "Your information was found on ${ displayedDate }": [
         "Se han encontrado tus datos el ${ displayedDate }."
@@ -7633,6 +7639,9 @@
       ],
       "Your private writing assistant": [
         "Tu asistente de escritura privado"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Desactívala para buscar sólo por fecha, nombre, dirección de correo electrónico o asunto. Para desactivar el contenido de los mensajes de búsqueda (y eliminar los mensajes descargados para activar esta función), ve a Configuración."
       ]
     },
     "info": {
@@ -8696,7 +8705,7 @@
         "Destacados"
       ],
       "stay safer online": [
-        "mantener tu seguridad en línea"
+        "mantén tu seguridad online"
       ],
       "Terms": [
         "Términos"
@@ -9423,7 +9432,7 @@
         "Distintos roles de administración"
       ],
       "Online document editor": [
-        "Editor de documentos en línea"
+        "Editor de documentos online"
       ],
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
@@ -9785,7 +9794,7 @@
         "Elige horarios personalizados para recibir recordatorios de un correo o para que llegue tu mensaje."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
+        "Crea varias direcciones de correo electrónico para tus identidades online, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Crea hasta ${ n } calendario o añade calendarios de amigos, familiares, compañeros y organizaciones.",
@@ -9952,6 +9961,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puedes tener varios administradores. Todos tienen permiso para añadir y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Herramienta de gestión de la organización que permite a los administradores agregar y eliminar usuarios, administrar su acceso a los servicios de ${ BRAND_NAME }, y realizar otras acciones."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10080,7 +10092,7 @@
         "He transferido mis inicios de sesión a ${ BRAND_NAME }."
       ],
       "Privacy for all your online accounts": [
-        "Privacidad para todas tus cuentas en línea"
+        "Privacidad para todas tus cuentas online"
       ],
       "Shopping": [
         "Compras"
@@ -10089,7 +10101,7 @@
         "Redes sociales"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Usa tu dirección ${ MAIL_APP_NAME } para iniciar sesión en tus servicios en línea sin ser rastreado. Cambia tu dirección de correo electrónico para tus servicios más usados ahora. ${ learnMoreLink }"
+        "Usa tu dirección ${ MAIL_APP_NAME } para iniciar sesión en tus servicios online sin ser rastreado. Cambia ya tu dirección de correo electrónico para tus servicios más usados. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -10253,7 +10265,7 @@
         "Criptomonedas"
       ],
       "E-commerce and Retail": [
-        "Comercio electrónico y en tienda"
+        "Comercio electrónico y tiendas"
       ],
       "Entertainment": [
         "Entretenimiento"
@@ -10393,7 +10405,7 @@
         "Usar el nombre de la empresa"
       ],
       "Use personal name": [
-        "Usar un nombre personal"
+        "Usar el nombre de la persona"
       ]
     },
     "Payments": {
@@ -10478,6 +10490,9 @@
     "Payments.Sepa": {
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autorizas a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a tu banco para que realice el cargo en tu cuenta, y a tu banco para que realice el cargo correspondiente en tu cuenta. Puedes obtener un reembolso en un plazo de 8 semanas a partir de la fecha del cargo, según las condiciones de tu acuerdo con tu banco."
       ]
     },
     "PGP key encryption warning": {
@@ -10859,7 +10874,7 @@
         "Abrir ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Protege tu identidad en línea."
+        "Protege tu identidad online."
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prueba ${ PASS_APP_NAME }"
@@ -11334,7 +11349,7 @@
         "Transmisiones seguras"
       ],
       "Support online privacy": [
-        "Apoya la privacidad en línea"
+        "Apoya la privacidad online"
       ]
     },
     "specialoffer: Footer": {
@@ -12097,8 +12112,8 @@
         "${ elementsCount } conversaciones pausadas"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } conversación con pausa desactivada",
-        "${ elementsCount } conversaciones con pausa desactivadas"
+        "${ elementsCount } conversación reanudada",
+        "${ elementsCount } conversaciones reanudadas"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } mensaje añadido a ${ labelName }.",
@@ -13602,7 +13617,7 @@
         "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Considera la posibilidad de personalizar tu importación."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Desafortunadamente, no estamos en línea en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
+        "Desafortunadamente, no estamos conectados en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "No se ha podido verificar el servidor de correo. Si confías en él, puedes omitir esta verificación."
@@ -13882,6 +13897,151 @@
       ],
       "Passcode: ${ password }": [
         "Código de acceso: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } de almacenamiento"
+      ],
+      "1 TB total": [
+        "1 TB en total"
+      ],
+      "1 user": [
+        "1 usuario"
+      ],
+      "1 user account": [
+        "1 cuenta de usuario"
+      ],
+      "10 email addresses": [
+        "10 direcciones de correo electrónico"
+      ],
+      "2 users": [
+        "2 usuarios"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 cuentas de usuario"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Más de 8500 servidores en más de 110 países"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anuncios y protección contra malware"
+      ],
+      "Admin panel to manage your family": [
+        "Panel de administración para administrar tu familia"
+      ],
+      "Advanced account protection": [
+        "Protección de cuentas avanzada"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
+      ],
+      "Easily add or remove users": [
+        "Añadir o borrar usuarios fácilmente"
+      ],
+      "High speed streaming": [
+        "Streaming de alta velocidad"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Password health alerts": [
+        "Alertas de estado de las contraseñas"
+      ],
+      "Private photo backup": [
+        "Copia de seguridad de fotos privadas"
+      ],
+      "Protect 10 devices at a time": [
+        "Protege 10 dispositivos a la vez"
+      ],
+      "Secure file storage & sharing": [
+        "Almacenamiento y uso compartido seguro de archivos"
+      ],
+      "Secure vault and link sharing": [
+        "Intercambio seguro de caja fuerte y enlaces"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Número ilimitado de alias de hide-my-email"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ],
+      "Version history": [
+        "Historial de versiones"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Los descuentos se basan en la cuota estándar mensual."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Más popular"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "por ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Se renueva después de 1 mes por ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Accede a contenido bloqueado y navega de forma privada. Incluye más de 8500 servidores en más de 110 países, 10 dispositivos, streaming de alta velocidad, bloqueador de anuncios y protección contra malware, acelerador de VPN y más."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Inicios de sesión seguros en todos tus dispositivos. Incluye alias ilimitados hide-my-email, uso compartido, autenticación de dos factores integrada, monitoreo de la Dark Web y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo electrónico, el soporte de dominios de correo electrónico personalizados, el asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más.",
+        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo electrónico, el soporte de dominios de correo electrónico personalizados, el asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte de dominios de correo electrónico personalizados, asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Protege tus archivos con almacenamiento en la nube cifrado. Incluye editor de documentos en línea, copia de seguridad de fotos, historial de versiones, uso de intercambio de archivos cifrados y más."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "La tecnología NetShield tiene como fin proteger tus dispositivos y que puedas navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
       ]
     }
   }

@@ -1418,6 +1418,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Toggle Contacts app": [
+        "Пераключыць на праграму Кантакты"
       ]
     },
     "action": {
@@ -3635,6 +3638,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -4492,6 +4498,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "Add at least one action": [
+        "Дадайце прынамсі адно дзеянне"
+      ],
+      "Add at least one condition": [
+        "Дадайце прынамсі адну ўмову"
+      ],
+      "Invalid IBAN": [
+        "Памылковы IBAN"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Магчымасць адпраўкі далучэнняў будзе абмежавана да таго моманту, пакуль вы перавышаеце абмежаванні тарыфнага плана. Палепшыце свой тарыфны план, каб зняць гэта абмежаванне."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Сума для аплаты змянілася. Паспрабуйце яшчэ раз."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4888,6 +4912,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш уліковы запіс выкарыстоўвае ${ usedSpace } сховішча, што перавышае абмежаванне на ${ inviteSpace }. Выдаліце некаторыя даныя або папрасіце адміністратара тарыфнага плана павялічыць даступны аб'ём у сховішчы."
+      ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Вы не можаце прыняць гэта запрашэнне з вашым бягучым тарыфным планам."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4915,6 +4945,9 @@
       ],
       "Set up your family account": [
         "Наладзіць сямейны ўліковы запіс"
+      ],
+      "Configure your family account and invite users": [
+        "Сканфігурыруйце сямейны ўліковы запіс і запрасіце карыстальнікаў"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5195,6 +5228,9 @@
       ],
       "Upgrade now": [
         "Палепшыць"
+      ],
+      "Try the new desktop app": [
+        "Паспрабуйце новую настольную праграму"
       ]
     },
     "Get started checklist instructions": {
@@ -6272,7 +6308,7 @@
         "Пацвердзіць скаргу на фішынг"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
-        "Заплануйце адпраўку электроннага ліста іменна тады, калі вашаму атрымальніку найбольш пасуе атрымаць яго."
+        "Заплануйце адпраўку электроннага ліста менавіта тады, калі вашаму атрымальніку найбольш пасуе атрымаць яго."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Кантакт прызначаны групе ${ contactGroupName }"
@@ -7830,6 +7866,30 @@
       ],
       "Your private writing assistant": [
         "Ваш прыватны памочнік у напісанні"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/месяц)"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Папярэджанні з нашага боку нацэлены на бяспеку. Калі вы не выявілі ў сябе ніякай уцечкі звестак, то можаце смела праігнараваць гэту справаздачу."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Адкладзена да ${ dateString }, ${ formattedTime }"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Выключыце, каб шукаць толькі па даце, імі, адрасе электроннай пошты або радку тэмы. Перайдзіце ў налады, каб адключыць пошук па змесціве паведамлення (і выдаліць спампаваныя паведамленні, каб уключыць гэту функцыю)."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Палепшыце свой тарыфны план, каб аўтаматычна выдаляць паведамленні, якія былі ў папках сметніца або спам больш за 30 дзён."
       ]
     },
     "info": {
@@ -8666,6 +8726,21 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "Anderson": [
+        "Маўр"
+      ],
+      "Company name": [
+        "Назва кампаніі"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Жэнева"
+      ],
+      "Thomas": [
+        "Янка"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9112,6 +9187,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Відарыс не быў загружаны, каб абараніць вашу прыватнасць."
+      ],
+      "Image could not be loaded.": [
+        "Не атрымалася загрузіць відарыс."
       ]
     },
     "Message notification": {
@@ -9847,6 +9925,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "TOR over VPN": [
+        "Tor праз VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -10197,6 +10278,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас можа быць некалькі адміністратараў. Усе адміністратары могуць дадаваць і кіраваць карыстальнікамі, але толькі асноўны адміністратар кантралюе аплату."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць сваім доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Накіроўвайце свой трафік праз сетку TOR адным націскам"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10631,6 +10721,9 @@
       ],
       "New credit/debit card": [
         "Новая банкаўская картка"
+      ],
+      "Bank transfer": [
+        "Банкаўскі перавод"
       ]
     },
     "Payments": {
@@ -11110,6 +11203,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Дайце гэты псеўданім замест таго, каб уводзіць ваш сапраўдны адрас электроннай пошты. Псеўданімы забяспечваюцца ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Выкарыстоўвайце на Amazon для пакупак і г.д."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11287,7 +11383,7 @@
         "${ timeRemaining.inHours } гадзін"
       ],
       "Password reset request approved (${ user.Email }).": [
-        "Запыт на скіданне пароля пацверджаны (${ user.Email })."
+        "Запыт на скіданне пароля ўхвалены (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Перайдзіце на прыладу, якая знаходзіцца ў сістэме (з якой быў ініцыяваны запыт), каб змяніць пароль."
@@ -11984,6 +12080,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ваш тарыфны план куплены з дапамогай праграмы для iOS. Такім чынам, каб унесці змены ў яго або абнавіць рэквізіты плацяжу, вам неабходна зайсці ў Apple App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Проста ўвайдзіце ў свой уліковы запіс App Store, а потым выберыце ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -13789,6 +13888,9 @@
     "Tor out of date": {
       "stable release": [
         "стабільны выпуск"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Гэта версія браўзера TOR не падтрымліваецца. Абнавіце праграму да апошняй ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -14352,6 +14454,179 @@
       ],
       "Passcode: ${ password }": [
         "Код доступу: ${ password }"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } прасторы ў сховішчы"
+      ],
+      "1 TB total": [
+        "Агулам 1 ТБ"
+      ],
+      "1 user": [
+        "1 карыстальнік"
+      ],
+      "1 user account": [
+        "1 уліковы запіс карыстальніка"
+      ],
+      "10 email addresses": [
+        "10 адрасоў электроннай пошты"
+      ],
+      "2 users": [
+        "2 карыстальнікі"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 user accounts": [
+        "6 уліковых запісаў карыстальніка"
+      ],
+      "6 users": [
+        "6 карыстальнікаў"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Больш за 8500 сервераў у больш чым 110 краінах"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
+      ],
+      "Admin panel to manage your family": [
+        "Панэль адміністратара для кіравання вашай сям'ёй"
+      ],
+      "Advanced account protection": [
+        "Пашыраная абарона ўліковага запісу"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
+      "Easily add or remove users": [
+        "Лёгкае дадаванне або выдаленне карыстальнікаў"
+      ],
+      "High speed streaming": [
+        "Высакахуткасныя трансляцыі"
+      ],
+      "Integrated 2FA authenticator": [
+        "Інтэграваны аўтэнтыфікатар 2ФА"
+      ],
+      "Online document editor": [
+        "Воблачны рэдактар дакументаў"
+      ],
+      "Password health alerts": [
+        "Папярэджанні якасці пароля"
+      ],
+      "Private photo backup": [
+        "Прыватнае рэзерваванне фатаграфій"
+      ],
+      "Protect 10 devices at a time": [
+        "Абараняйце 10 прылад адначасова"
+      ],
+      "Secure file storage & sharing": [
+        "Бяспечнае файлавае сховішча і абагульванне"
+      ],
+      "Secure vault and link sharing": [
+        "Бяспечнае сховішча і абагульванне спасылкі"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Неабмежаваная колькасць запісаў уваходу, нататак і крэдытных картак"
+      ],
+      "Use your own email domain": [
+        "Выкарыстоўвайце ўласны дамен электроннай пошты"
+      ],
+      "Version history": [
+        "Гісторыя версій"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Найбольш папулярны"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "за ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Доступ да заблакіраванага змесціва і прыватны прагляд. Уключае больш за 8500 сервераў у больш чым 110 краінах, 10 прылад, высакахуткасныя трансляцыі, блакіроўшчык рэкламы і шкодных праграм, VPN Accelerator і многае іншае."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне, інтэграцыю з 2ФА, Dark Web Monitoring і іншыя функцыі."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Прастора сховішча размеркавана паміж усімі сэрвісамі ${ BRAND_NAME }"
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Змяшчае далучэнні"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд вашых электронных лістоў і налад, прагляд і спампоўванне кантактаў, прагляд і спампоўванне распарадку дня з праграмы Каляндар Google."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Выкарыстоўваць назву кампаніі"
+      ],
+      "Use personal name": [
+        "Выкарыстоўваць асабістае імя"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку зрабіць спісанне з вашага рахунка, а вашаму банку - адпаведна правесці гэту аперацыю. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
+      ],
+      "Street address, postal code, and city": [
+        "Адрас вуліцы, паштовы індэкс і горад"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN і іншыя функцыі."
       ]
     }
   }

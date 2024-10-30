@@ -4430,6 +4430,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Invalid IBAN": [
+        "Ungültige IBAN"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4822,6 +4825,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Dein Konto verwendet Speicher in Höhe von ${ usedSpace }, was den dir zugewiesenen Speicherplatz von ${ inviteSpace } übersteigt. Lösche einige Daten oder bitte den Abonnement-Administrator, deinen Speicher zu erhöhen."
+      ],
+      "Manage addresses": [
+        "Adressen verwalten"
       ]
     },
     "familyOffer_2023:Label": {
@@ -7574,6 +7580,12 @@
       ],
       "Your private writing assistant": [
         "Dein privater Schreibassistent"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/Monat)"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ]
     },
     "info": {
@@ -8398,6 +8410,21 @@
       ],
       "Your password (admin)": [
         "Dein Passwort (Admin)"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Company name": [
+        "Unternehmensname"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32,\n1228 Plan-les-Ouates\nGenf, Schweiz"
+      ],
+      "Thomas": [
+        "Thomas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9519,6 +9546,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
+      ],
+      "TOR over VPN": [
+        "Tor über VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -9863,6 +9893,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Du kannst mehr als einen Administrator haben. Alle Administratoren können Benutzer hinzufügen und verwalten, aber nur der Hauptadministrator hat Zugriff auf die Abrechnung."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und entfernen, ihren Zugriff auf ${ BRAND_NAME }-Dienste verwalten und andere Aufgaben durchführen können."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10289,6 +10322,9 @@
       ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
+      ],
+      "Bank transfer": [
+        "Banküberweisung"
       ]
     },
     "Payments": {
@@ -10756,6 +10792,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gibst du stattdessen diesen Alias an. Aliasse werden von ${ passLink } zur Verfügung gestellt."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Verwendet auf Amazon für Shopping, etc."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -13758,6 +13797,61 @@
       ],
       "Passcode: ${ password }": [
         "Passcode: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } Speicherplatz"
+      ],
+      "1 user": [
+        "1 Benutzer"
+      ],
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
+      ],
+      "2 users": [
+        "2 Benutzer"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web-Überwachung"
+      ],
+      "Easily add or remove users": [
+        "Benutzer einfach hinzufügen oder entfernen"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Am beliebtesten"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "für ${ durationDeal }"
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Enthält Anhänge"
       ]
     }
   }

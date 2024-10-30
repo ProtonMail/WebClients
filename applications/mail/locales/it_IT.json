@@ -1408,6 +1408,9 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Toggle Contacts app": [
+        "Pulsante app Contatti"
       ]
     },
     "action": {
@@ -3597,6 +3600,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4430,6 +4436,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "Add at least one action": [
+        "Aggiungi almeno un'azione"
+      ],
+      "Add at least one condition": [
+        "Aggiungi almeno una condizione"
+      ],
+      "Invalid IBAN": [
+        "IBAN non valido"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "L'invio di allegati è limitato quando superi i limiti del tuo piano o finché non aggiorni il tuo piano."
+      ],
+      "The amount due has changed. Please try again.": [
+        "L'importo dovuto è cambiato. Per favore riprova."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Hai raggiunto il numero limite di contatti per il tuo account"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4822,6 +4846,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
+      ],
+      "Manage addresses": [
+        "Gestisci gli indirizzi"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Non puoi accettare questo invito con il tuo piano attuale."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4849,6 +4879,9 @@
       ],
       "Set up your family account": [
         "Configura il tuo account famiglia"
+      ],
+      "Configure your family account and invite users": [
+        "Configura il tuo account famiglia e invita degli utenti"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5117,6 +5150,9 @@
       ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
+      ],
+      "Try the new desktop app": [
+        "Prova la nuova applicazione desktop"
       ]
     },
     "Get started checklist instructions": {
@@ -7574,6 +7610,30 @@
       ],
       "Your private writing assistant": [
         "Il tuo assistente alla scrittura privato"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mese)"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Verrà eliminata anche qualsiasi sottocartella. Tuttavia non verranno eliminate le email presenti nella cartella ${ nameDeleted }, le quali potranno ancora essere trovate in Tutta la posta."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Le email etichettate con l'etichetta ${ nameDeleted } non verranno eliminate e potranno ancora essere trovate nella loro cartella."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "I nostri avvisi danno priorità alla sicurezza. Se non riconosci nessuna delle informazioni violate, puoi tranquillamente ignorare questa segnalazione."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Posticipata fino alle ${ formattedTime } del ${ dateString }"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Disattiva per cercare solo per data, nome, indirizzo email o riga dell'oggetto. Per disabilitare la ricerca del contenuto dei messaggi (ed eliminare i messaggi scaricati per abilitare questa funzione), vai su Impostazioni."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Aggiorna il piano per eliminare automaticamente gli elementi presenti nel Cestino o in Spam dopo 30 giorni."
       ]
     },
     "info": {
@@ -8401,6 +8461,21 @@
       ],
       "Your password (admin)": [
         "La tua password (admin)"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Company name": [
+        "Nome dell'azienda"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Thomas": [
+        "Thomas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8837,6 +8912,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "L'immagine non è stata caricata per proteggere la tua privacy."
+      ],
+      "Image could not be loaded.": [
+        "L'immagine non può essere caricata."
       ]
     },
     "Message notification": {
@@ -9522,6 +9600,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "TOR over VPN": [
+        "TOR su VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -9869,6 +9950,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puoi avere più di un amministratore. Tutti gli amministratori possono aggiungere e gestire gli utenti, ma solo l'amministratore principale ha il controllo sulla fatturazione."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Strumento di gestione dell'organizzazione che consente agli amministratori di aggiungere e rimuovere utenti, gestire il loro accesso ai servizi ${ BRAND_NAME } ed eseguire altre attività."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Indirizza il tuo traffico internet tramite la rete TOR con un singolo click."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10295,6 +10385,9 @@
       ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
+      ],
+      "Bank transfer": [
+        "Bonifico"
       ]
     },
     "Payments": {
@@ -10762,6 +10855,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Quando ti viene chiesto il tuo indirizzo email, dagli invece questo alias. Gli alias sono forniti da ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Utilizzato su Amazon per acquisti, ecc."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11578,6 +11674,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Il piano è stato acquistato dall'app per iOS. Per modificare il piano o aggiornare le informazioni di pagamento devi farlo attraverso l'Apple App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Accedi al tuo account Apple nell'App Store e seleziona ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -13285,6 +13384,9 @@
     "Tor out of date": {
       "stable release": [
         "versione stabile"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Questa versione di TOR Browser non è supportata. Aggiornala all'ultima ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13764,6 +13866,182 @@
       ],
       "Passcode: ${ password }": [
         "Codice di accesso: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Applicazione desktop di ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } di archiviazione"
+      ],
+      "1 TB total": [
+        "1 TB"
+      ],
+      "1 user": [
+        "1 utente"
+      ],
+      "1 user account": [
+        "1 account utente"
+      ],
+      "10 email addresses": [
+        "10 indirizzi email"
+      ],
+      "2 users": [
+        "2 utenti"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 account utente"
+      ],
+      "6 users": [
+        "6 utenti"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Oltre 8500 server in più di 110 Paesi"
+      ],
+      "Ad-blocker and malware protection": [
+        "Blocco degli annunci e protezione da malware"
+      ],
+      "Admin panel to manage your family": [
+        "Pannello di amministrazione per gestire la tua famiglia"
+      ],
+      "Advanced account protection": [
+        "Protezione avanzata dell'account"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoraggio del dark web"
+      ],
+      "Easily add or remove users": [
+        "Aggiungi o rimuovi utenti facilmente"
+      ],
+      "High speed streaming": [
+        "Streaming ad alta velocità"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticatore 2FA integrato"
+      ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
+      "Password health alerts": [
+        "Avvisi sullo stato di integrità delle password"
+      ],
+      "Private photo backup": [
+        "Backup privato delle foto"
+      ],
+      "Protect 10 devices at a time": [
+        "Proteggi 10 dispositivi alla volta"
+      ],
+      "Secure file storage & sharing": [
+        "Archiviazione e condivisione sicura dei file"
+      ],
+      "Secure vault and link sharing": [
+        "Condivisione sicura di casseforti e link"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Alias hide-my-email illimitati"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Login, note e carte illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio di posta personalizzato"
+      ],
+      "Version history": [
+        "Cronologia delle versioni"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Gli sconti si riferiscono al prezzo mensile standard."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Al termine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente al prezzo scontato e alla durata standard."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Più popolare"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "per ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Si rinnova dopo 1 mese a ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Accedi ai contenuti bloccati e naviga in privato. Include oltre 8.500 server in più di 110 paesi, 10 dispositivi, streaming ad alta velocità, blocco degli annunci, protezione da malware, VPN Accelerator e molto altro."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, condivisione, autenticazione a due fattori, monitoraggio del dark web e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Proteggi le email e la l'agenda con la crittografia end-to-end. Include 15 indirizzi email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Proteggi i file con l'archiviazione cloud crittografata. Include editor di documenti online, backup delle foto, cronologia delle versioni, condivisione di file crittografata e molto altro."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield è progettato appositamente per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Ha allegati"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Seleziona ciò a cui ${ BRAND_NAME } può accedere: visualizzare i tuoi messaggi email e le impostazioni, vedere e scaricare i tuoi contatti, vedere e scaricare tutte le agende a cui accedi da Google Calendar."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilizza il nome dell'azienda"
+      ],
+      "Use personal name": [
+        "Usa il nome personale"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Confermando questo pagamento, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a istruire la tua banca ad addebitare il tuo conto e la tua banca ad addebitare il tuo conto di conseguenza. Puoi ottenere un rimborso entro 8 settimane dalla data di addebito, secondo le condizioni dell'accordo con la tua banca."
+      ],
+      "Street address, postal code, and city": [
+        "Indirizzo, codice postale e città"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
       ]
     }
   }

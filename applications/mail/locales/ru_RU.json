@@ -4412,6 +4412,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш поиск дал слишком много результатов. Пожалуйста, ограничьте поиск и повторите попытку."
+      ],
+      "Invalid IBAN": [
+        "Неверный IBAN"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -5720,9 +5723,9 @@
       ],
       "${ elementsCount } conversation will be moved": [
         "${ elementsCount } цепочка будет перемещена",
-        "${ elementsCount } цепочки будет перемещены",
-        "${ elementsCount } цепочек будет перемещены",
-        "${ elementsCount } цепочек будет перемещены"
+        "${ elementsCount } цепочки будут перемещены",
+        "${ elementsCount } цепочек будут перемещены",
+        "${ elementsCount } цепочек будут перемещены"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
         "С ${ elementsCount } цепочки будет снята пометка:",
@@ -5750,9 +5753,9 @@
       ],
       "${ elementsCount } message will be moved": [
         "${ elementsCount } сообщение будет перемещено",
-        "${ elementsCount } сообщения будет перемещены",
-        "${ elementsCount } сообщений будет перемещены",
-        "${ elementsCount } сообщений будет перемещены"
+        "${ elementsCount } сообщения будут перемещены",
+        "${ elementsCount } сообщений будут перемещены",
+        "${ elementsCount } сообщений будут перемещены"
       ],
       "${ elementsCount } message will be unlabelled from:": [
         "С ${ elementsCount } сообщения будет снята пометка:",
@@ -6193,7 +6196,7 @@
         "Создать ${ calendarsToBeCreatedCount } новых календарей"
       ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
-        "Создайте папку, как «${ suggestedFolderName }», чтобы хранить все ваши чеки в одном месте."
+        "Создайте папку, например, «${ suggestedFolderName }», чтобы хранить все чеки в одном месте."
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
@@ -7249,7 +7252,7 @@
         "Публичный ключ отправителя пока не отмечен как доверенный."
       ],
       "to ${ destinationElement } folder.": [
-        "в ${ destinationElement } папку."
+        "в папку ${ destinationElement }."
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Чтобы вам не мешали открытые вкладки в вашем браузере, используйте настольное приложение."
@@ -7724,6 +7727,9 @@
       ],
       "Your private writing assistant": [
         "Ваш конфиденциальный помощник по написанию"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } в месяц)"
       ]
     },
     "info": {
@@ -8560,6 +8566,9 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ],
+      "IBAN": [
+        "IBAN"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10082,6 +10091,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Инструмент управления организацией, позволяющий администраторам добавлять и удалять пользователей, управлять их доступом к службам ${ BRAND_NAME } и выполнять другие задачи."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10116,10 +10128,10 @@
         "Центральная панель управления"
       ],
       "Create up to ${ n } calendar": [
-        "Создайте до ${ n } календаря",
         "Создайте до ${ n } календарей",
-        "Создайте до ${ n } календарей",
-        "Создайте до ${ n } календарей"
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей"
       ],
       "Dedicated Account manager": [
         "Выделенный менеджер аккаунтов"
@@ -11580,6 +11592,9 @@
       ],
       "Standard price ${ amount } for 30 months": [
         "Цена без скидки: ${ amount } за 30 месяцев."
+      ],
+      "/month": [
+        "в месяц"
       ]
     },
     "specialoffer: Title": {
@@ -14187,6 +14202,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Ежегодно ${ untilString }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
       ]
     }
   }

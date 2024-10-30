@@ -1408,6 +1408,9 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Toggle Contacts app": [
+        "Kişiler uygulamasına geç"
       ]
     },
     "action": {
@@ -3597,6 +3600,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4430,6 +4436,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Add at least one action": [
+        "En az bir işlem ekleyin"
+      ],
+      "Add at least one condition": [
+        "En az bir koşul ekleyin"
+      ],
+      "Invalid IBAN": [
+        "IBAN geçersiz"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Tarifenizin sınırlarınızı aştığınızda veya tarifenizi yükseltene dek ek dosyalar gönderemeyeceksiniz."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Ödenecek tutar değişti. Lütfen yeniden deneyin."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Hesabınızın kişi sayısı sınırına ulaştınız"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4822,6 +4846,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Hesabınız, size ayrılmış ${ inviteSpace } boyutunu aşan ${ usedSpace } depolama alanı kullanıyor. Bazı verileri silin ya da tarife yöneticisinden depolama alanınızı artırmasını isteyin."
+      ],
+      "Manage addresses": [
+        "Adres yönetimi"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Geçerli tarifenizle bu daveti kabul edemezsiniz."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4849,6 +4879,9 @@
       ],
       "Set up your family account": [
         "Aile hesabınızı oluşturun"
+      ],
+      "Configure your family account and invite users": [
+        "Aile hesabınızı yapılandırın ve kullanıcıları davet edin"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5117,6 +5150,9 @@
       ],
       "Upgrade now": [
         "Şimdi yükseltin"
+      ],
+      "Try the new desktop app": [
+        "Yeni masaüstü uygulamasını deneyin"
       ]
     },
     "Get started checklist instructions": {
@@ -7574,6 +7610,30 @@
       ],
       "Your private writing assistant": [
         "Kişisel yazma yardımcınız"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/ay)"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "${ nameDeleted } etiketi ile işaretlenmiş e-postalar silinmeyecek ve hala ilgili klasörde bulunabilecek."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Uyarılarımız güvenliğe öncelik verir. Ele geçirilen bilgiler size tanıdık gelmiyorsa, bu raporu güvenle yok sayabilirsiniz."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "${ dateString } tarihine ${ formattedTime } saatine ertelendi"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Yalnızca tarihe, ada, e-posta adresine veya konu satırına göre aramayı kapatın. İleti içeriğini aramayı kapatmak (ve bu özelliği etkinleştirmek için indirilen iletileri silmek) için Ayarlar bölümüne gidin."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Çöp veya İstenmeyen kutularında 30 günden uzun süredir duran iletilerin otomatik olarak silinmesi için tarifenizi yükseltin."
       ]
     },
     "info": {
@@ -8398,6 +8458,21 @@
       ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
+      ],
+      "Anderson": [
+        "Anderson"
+      ],
+      "Company name": [
+        "Kuruluş adı"
+      ],
+      "IBAN": [
+        "IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Thomas": [
+        "Thomas"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8834,6 +8909,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Görsel, gizliliğinizi korumak için yüklenmedi."
+      ],
+      "Image could not be loaded.": [
+        "Görsel yüklenemedi."
       ]
     },
     "Message notification": {
@@ -9519,6 +9597,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını kontrol etmek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "TOR over VPN": [
+        "VPN üzerinden Tor"
       ]
     },
     "new_plans: feature highlight": {
@@ -9863,6 +9944,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Kuruluş yönetimi aracı yöneticilerin kullanıcı ekleyip silmesini, ${ BRAND_NAME } hizmetlerine erişim izinlerini ayarlamasını ve diğer işlemleri yapmasını sağlar."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10289,6 +10379,9 @@
       ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
+      ],
+      "Bank transfer": [
+        "Banka havalesi"
       ]
     },
     "Payments": {
@@ -10756,6 +10849,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "E-posta adresiniz sorulduğunda, bunun yerine bu takma adı verin. Takma adlar ${ passLink } tarafından sağlanır."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Amazon alışverişleri için kullanıldı gibi."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11572,6 +11668,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Tarifeniz bir iOS uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Apple App Store uygulamasını kullanmalısınız."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } seçin."
       ]
     },
     "subscription downgrading info": {
@@ -13279,6 +13378,9 @@
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
       ]
     },
     "Update font modal": {
@@ -13758,6 +13860,182 @@
       ],
       "Passcode: ${ password }": [
         "Geçiş kodu: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Muhteşem Cuma"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } depolama alanı"
+      ],
+      "1 TB total": [
+        "Toplam 1 TB"
+      ],
+      "1 user": [
+        "1 kullanıcı"
+      ],
+      "1 user account": [
+        "1 kullanıcı hesabı"
+      ],
+      "10 email addresses": [
+        "10 e-posta adresi"
+      ],
+      "2 users": [
+        "2 kullanıcı"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 kullanıcı hesabı"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "8500+ servers across 110+ countries": [
+        "110 üzerinde ülkede 8.500 üzerinde sunucu"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
+      ],
+      "Admin panel to manage your family": [
+        "Ailenizi yönetmek için yönetici panosu"
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
+      "Dark Web Monitoring": [
+        "Karanlık ağ izleme"
+      ],
+      "Easily add or remove users": [
+        "Kullanıcıları kolayca ekleme ve çıkarma"
+      ],
+      "High speed streaming": [
+        "Yüksek hızda yayın akışı izleme"
+      ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik 2 adımlı kimlik doğrulayıcı"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Password health alerts": [
+        "Parola sağlığı uyarıları"
+      ],
+      "Private photo backup": [
+        "Gizli fotoğraf yedekleme"
+      ],
+      "Protect 10 devices at a time": [
+        "Aynı anda 10 aygıtı koruyun"
+      ],
+      "Secure file storage & sharing": [
+        "Güvenli dosya depolama alanı ve paylaşımı"
+      ],
+      "Secure vault and link sharing": [
+        "Güvenli kasa ve bağlantı paylaşımı"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adları"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Sınırsız sayıda oturum açma, not ve kredi kartı kaydı"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ],
+      "Version history": [
+        "Sürüm geçmişi"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "İndirimler, standart aylık fiyatlara uygulanır"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Aboneliğiniz, fatura döneminizin sonunda standart indirimli oranla ve süreyle otomatik olarak yenilenir."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "En çok kullanılan"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal } için"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "1 ay sonra ${ regularAmount } tutarla yenilenir."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 110 üzerinde ülkede 8.500 üzerinde sunucu, 10 aygıt, yüksek hızlı yayın akışı izleme, reklam engelleyici ve kötü amaçlı yazılım koruması, VPN Accelerator ve diğer şeyler."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Netflix, Disney+, Prime Video ve diğer internet yayın akışı içeriklerine herhangi bir yerden erişin."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Tüm aygıtlarınızda güvenli oturum açma. Sınırsız sayıda hide-my-email takma adı, paylaşım, bütünleşik iki adımlı doğrulama, karanlık ağ izleme ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, izleyicileri ve kötü amaçlı yazılımları engelleyerek gezinmenizi hızlandırır."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Depolama alanı tüm ${ BRAND_NAME } hizmetleri arasında paylaşılır."
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Ek dosyaları var"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Kuruluş adı kullanılsın"
+      ],
+      "Use personal name": [
+        "Kişi adı kullanılsın"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Bu ödemeyi onaylayarak, ${ BRAND_NAME } ve ödeme hizmeti sağlayıcımız Stripe hizmetine bankanıza hesabınızdan para çekmesi talimatını vermesini ve bankanızın da buna göre hesabınızdan para çekmesine izin vermiş olursunuz. Bankanızla yaptığınız anlaşmanın koşulları uyarınca, paranın çekilme tarihinden itibaren 8 hafta içinde geri ödeme alabilirsiniz."
+      ],
+      "Street address, postal code, and city": [
+        "Sokak adresi, posta kodu ve il"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
       ]
     }
   }

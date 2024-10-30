@@ -4037,6 +4037,33 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "Add at least one action": [
+        "Adjon hozzá legalább egy műveletet"
+      ],
+      "Add at least one condition": [
+        "Adjon hozzá legalább egy feltételt"
+      ],
+      "Invalid IBAN": [
+        "Érvénytelen IBAN"
+      ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "Hiba az író asszisztens letöltése közben. Ha privát módban van kérjük próbálja meg a sima böngészési módot vagy futtassa az asszisztenset a szervereken."
+      ],
+      "Problem unloading data not needed when the writing assistant is inactive": [
+        "Probléma merült fel a nem szükséges adatok eltávolításakor, amikor az írósegéd inaktív"
+      ],
+      "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "Elérte az Ön által választott csomag által megengedett határokat, ezért a csatolmányok küldése korlátozott lehet, amíg magasabb csomagra nem vált."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Elérte az Ön által választott csomag által megengedett határokat, ezért a csatolmányok küldése korlátozott lehet, amíg magasabb csomagra nem vált."
+      ],
+      "The amount due has changed. Please try again.": [
+        "A befizetendő összeg megváltozott. Kérjük próbálja meg újra."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4864,6 +4891,10 @@
     "Hint": {
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Használja a Fel és Le billentyűket a javaslatok eléréséhez és böngészéséhez. Nyomja meg az Enter billentyűt a választásának megerősítéséhez, vagy az Escape billentyűt a javaslatok doboz bezárásához."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz",
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz"
       ]
     },
     "Human verification method": {
@@ -6909,6 +6940,105 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } /hónap)"
+      ],
+      "Another tip will be displayed next time you open Mail": [
+        "Még egy tipp ki lesz írva amikor legközelebb megnyitja a Proton Mail-t."
+      ],
+      "Any scheduled or snoozed messages will be canceled.": [
+        "Minden időzített vagy némított üzenet le lesz mondva"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Minden almappa is ki lesz törölve.De az e-mailek a ${ nameDeleted } mappába nem lesznek törölve és megtalálhatók lesznek a minden levél mappában."
+      ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Biztosan áthelyezi az összes üzenetet itt az Archívumba?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Biztosan áthelyezi az összes üzenetet ebben a Kukába?"
+      ],
+      "Contact unassigned from group ${ contactGroupName }": [
+        "Névjegy a csoportból eltávolítva: ${ contactGroupName }"
+      ],
+      "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
+        "Csináljon egy mappát például \"${ suggestedFolderName }\" hogy minden online visszaigazolását egy helyen tárolja."
+      ],
+      "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
+        "Tudtad? Lefoglaltunk neked egy rövidebb e-mail címet. Ez a felhasználóneved és utána \"@${ PM_DOMAIN }\"."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "A ${ nameDeleted } címkével ellátott e-mailek nem kerülnek törlésre, és továbbra is megtalálhatók az adott mappában."
+      ],
+      "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
+        "Adjon egy színes címkét a számláknak például \"${ suggestedLabelName }\". Miután be lettek fizetve változtassa meg a címkét \"${ suggestedPaidLabelName }-re\""
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Include Spam/Trash.": [
+        "A Levélszemét/Kuka hozzáadása"
+      ],
+      "Learn more about the writing assistant": [
+        "Tudj meg többet az író asszisztensről"
+      ],
+      "Message actions in progress. This may take a while.": [
+        "A művelet folyamatban van. Ez egy ideig eltarthat."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Figyelmeztetéseink a biztonságot helyezik előtérbe.Ha nem ismeri fel ezeket a feltört információkat nyugodtan figyelmen kívül hagyhatja ezt."
+      ],
+      "Please ask the owner to directly invite you to the document.": [
+        "Kérjük kérje meg a dokumentum tulajdonosát hogy hívja meg."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "A megerősítés gombra kattintva a fiókban ${ remainingCreditsFormatted } kredit marad meg."
+      ],
+      "Please open the document to view it.": [
+        "Kérjük nyissa meg a dokumentumot, hogy megnézhesse."
+      ],
+      "Preview of documents is not yet supported.": [
+        "A dokumentumok előnézete még nem támogatott."
+      ],
+      "Public sharing of documents is not yet supported.": [
+        "A dokumentum nyilvános megosztása még nem támogatott."
+      ],
+      "Sat, ${ formatTime }": [
+        "Szombat,${ formatTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "A ma napig némított,${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Holnapig némított,${ formattedTime }"
+      ],
+      "Snoozing this conversation will be canceled.": [
+        "A beszélgetések némítása amíg vissza nincs vonva."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Az e-mail cím ${ boldNoReplyEmail } nem fogad el válaszokat. Biztos el akarja küldeni az üzenetet?"
+      ],
+      "to ${ destinationElement } folder.": [
+        "${ destinationElement } mappa áthelyezése."
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Frissítés a ${ MAIL_APP_NAME } Plus-ra a használathoz."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Váltson nagyobb csomagra a 30 napja lomtárban vagy a levélszemét mappában lévő üzenetek automatikus törléséhez."
+      ],
+      "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
+        "Amikor feliratkozik egy hírlevélre akkor használjon egy alias-t az e-mail címed helyett. Így az adataid rejtve maradnak és kikapcsolhatod az alias-t akár mikor."
+      ],
+      "You are about to open your default browser and visit:": [
+        "Egy új böngésző fülön a következő címet fogja megnyitni:"
+      ],
+      "You can now return to the application to continue": [
+        "Most már visszatérhet az applikációba és fojtathatja"
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Ezen a dátumon elveszíted a hozzáférést a ${ planTitle } szerverekhez és funkciókhoz."
       ]
     },
     "info": {
@@ -8690,6 +8820,14 @@
       "Vault sharing (up to ${ n } person)": [
         "Tároló megosztás (${ n } személyig)",
         "Tároló megosztás (${ n } személyig)"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })",
+        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })"
       ]
     },
     "new_plans: feature info": {
@@ -10396,6 +10534,26 @@
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
         "${ planName } csomagunk nem csak az üzleti adatait és kommunikációját tartja biztonságban. Támogatja megfelelőségi céljait, kiemeli vállalkozását, és kapcsolatot tart a csapattal."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } naptár felhasználónként",
+        "${ planNumberOfCalendars } naptár felhasználónként"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } saját e-mail domain név",
+        "${ planNumberOfDomains } saját e-mail domain név"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } email cím",
+        "${ planNumberOfEmails } e-mail cím"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mail cím felhasználónként",
+        "${ planNumberOfEmails } e-mail cím felhasználónként"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } felhasználó",
+        "${ planNumberOfUsers } felhasználó"
       ]
     },
     "subscription reminder": {
@@ -12121,6 +12279,27 @@
       ],
       "Yearly, ${ untilString }": [
         "Évente, ${ untilString }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } adminisztrátor",
+        "${ admins } adminisztrátorok"
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználók"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } felhasználói fiók",
+        "${ n } felhasználói fiókok"
       ]
     }
   }

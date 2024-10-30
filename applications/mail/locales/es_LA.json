@@ -3600,6 +3600,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante un archivo CSV y VCF, asegúrese que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídalo en archivos pequeños. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4100,7 +4103,7 @@
         "Fecha de expiración inválida"
       ],
       "Invalid IBAN": [
-        "El IBAN no es válido."
+        "IBAN inválido"
       ],
       "Invalid name": [
         "Nombre inválido"
@@ -4448,6 +4451,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "The amount due has changed. Please try again.": [
+        "El importe a pagar ha cambiado. Intente de nuevo."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4682,6 +4688,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "El nombre y apellido no pueden desmarcarse al mismo tiempo"
+      ],
+      "Display name cannot be empty": [
+        "El nombre a mostrar no puede estar vacío."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7630,6 +7639,9 @@
       ],
       "Your private writing assistant": [
         "Su asistente de escritura privado"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Desactívela para buscar solo por fecha, nombre, dirección de correo o asunto. Para desactivar la búsqueda en el contenido del mensaje (y eliminar los mensajes descargados para activar esta función), vaya a los ajustes."
       ]
     },
     "info": {
@@ -9949,6 +9961,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Puede tener varios administradores. Todos tienen permiso para añadir y gestionar usuarios, pero solo el administrador principal puede controlar la facturación."
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10390,7 +10405,7 @@
         "Usar el nombre de la empresa"
       ],
       "Use personal name": [
-        "Usar un nombre personal"
+        "Usar el nombre de la persona"
       ]
     },
     "Payments": {
@@ -10475,6 +10490,9 @@
     "Payments.Sepa": {
       "Street address, postal code, and city": [
         "Dirección, código postal y ciudad"
+      ],
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Al confirmar este pago, autoriza a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a dar instrucciones a su banco para que debite su cuenta, y a su banco para que debite el cargo correspondiente en su cuenta. Puede obtener un reembolso en un plazo de 8 semanas a partir de la fecha del débito, según las condiciones de su acuerdo con su banco."
       ]
     },
     "PGP key encryption warning": {
@@ -13879,6 +13897,151 @@
       ],
       "Passcode: ${ password }": [
         "Código de acceso: ${ password }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } de almacenamiento"
+      ],
+      "1 TB total": [
+        "1 TB en total"
+      ],
+      "1 user": [
+        "1 usuario"
+      ],
+      "1 user account": [
+        "1 cuenta de usuario"
+      ],
+      "10 email addresses": [
+        "10 direcciones de correo electrónico"
+      ],
+      "2 users": [
+        "2 usuarios"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 cuentas de usuario"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Más de 8500 servidores en más de 110 países"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anuncios y protección contra malware"
+      ],
+      "Admin panel to manage your family": [
+        "Panel de administración para gestionar a su familia"
+      ],
+      "Advanced account protection": [
+        "Protección de cuentas avanzada"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
+      ],
+      "Easily add or remove users": [
+        "Añadir o borrar usuarios fácilmente"
+      ],
+      "High speed streaming": [
+        "Streaming de alta velocidad"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Password health alerts": [
+        "Alertas de estado de las contraseñas"
+      ],
+      "Private photo backup": [
+        "Copia de seguridad privada de fotos"
+      ],
+      "Protect 10 devices at a time": [
+        "Proteja 10 dispositivos a la vez"
+      ],
+      "Secure file storage & sharing": [
+        "Almacenamiento y uso compartido seguro de archivos"
+      ],
+      "Secure vault and link sharing": [
+        "Intercambio seguro de bóveda y enlaces"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Número ilimitado de alias de hide-my-email"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use su propio dominio de correo electrónico"
+      ],
+      "Version history": [
+        "Historial de versiones"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Los descuentos se basan en la cuota estándar mensual."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Más popular"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "por ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Se renueva después de 1 mes por ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Acceda a contenido geobloqueado y navegue privadamente. Incluye más de 8500 servidores en más de 110 países, 10 dispositivos, streaming de gran velocidad, bloqueador de anuncios y malware, VPN Accelerator y más."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Acceda desde cualquier lugar al contenido de servicios de streaming como Netflix, Disney+ o Prime Video, entre otros."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Inicios de sesión seguros en todos los dispositivos. Incluye alias de hide-my-email ilimitados, uso compartido, 2FA integrado, Monitoreo de Dark Web y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo, asistente de escritura ${ BRAND_NAME } Scribe, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo, asistente de escritura ${ BRAND_NAME } Scribe, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo, soporte para dominios de correo, asistente de escritura ${ BRAND_NAME } Scribe, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Asegure sus archivos con almacenamiento cifrado en la nube. Incluye editor de documentos online, historial de versiones, intercambio de archivos cifrado y más."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "La tecnología NetShield tiene como fin proteger los dispositivos y que pueda navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
       ]
     }
   }

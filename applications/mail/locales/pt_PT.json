@@ -4160,6 +4160,24 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa obteve demasiadas correspondências. Limite a pesquisa e tente novamente."
+      ],
+      "Add at least one action": [
+        "Adicione pelo menos uma ação"
+      ],
+      "Add at least one condition": [
+        "Adicione pelo menos uma condição"
+      ],
+      "Invalid IBAN": [
+        "IBAN inválido"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "O envio de anexos é limitado enquanto exceder os limites do seu plano ou até atualizar o seu plano."
+      ],
+      "The amount due has changed. Please try again.": [
+        "O montante devido foi alterado. Por favor, tente novamente."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Atingiu o limite do número de contactos da sua conta"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7237,6 +7255,9 @@
       ],
       "Your private writing assistant": [
         "Seu assistente de escrita privado"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice }/mês)"
       ]
     },
     "info": {
@@ -9037,6 +9058,10 @@
       "Vault sharing (up to ${ n } person)": [
         "Partilha de cofre (até ${ n } pessoa)",
         "Partilha de cofre (até ${ n } pessoas)"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilizador",
+        "Até ${ numberOfUsers } utilizadores"
       ]
     },
     "new_plans: feature highlight": {
@@ -10740,6 +10765,26 @@
       ],
       "Yearly free storage bonuses": [
         "Bónus de armazenamento gratuito anual"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } calendário por utilizador",
+        "${ planNumberOfCalendars } calendários por utilizador"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domínio de e-mail personalizado",
+        "${ planNumberOfDomains } domínios de e-mail personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } endereço de e-mail",
+        "${ planNumberOfEmails } endereços de e-mail"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } endereço de e-mail por utilizador",
+        "${ planNumberOfEmails } endereços de e-mail por utilizador"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } utilizador",
+        "${ planNumberOfUsers } utilizadores"
       ]
     },
     "subscription reminder": {
@@ -12540,6 +12585,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "BF2024: Action (top button in header)": {
+      "Black Friday": [
+        "Black Friday"
+      ]
+    },
+    "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } conta de utilizador",
+        "${ n } contas de utilizador"
       ]
     }
   }
