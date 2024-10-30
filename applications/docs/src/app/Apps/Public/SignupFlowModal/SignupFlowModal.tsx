@@ -19,25 +19,25 @@ import {
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
 import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import { PLANS } from '@proton/payments'
-import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators'
-import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url'
 
 import { useDocsPublicToken } from '@proton/drive-store/hooks/drive/useDocsPublicToken'
-import { Actions, countActionWithTelemetry, traceTelemetry } from '@proton/drive-store/utils/telemetry'
-import { waitForBookmarkingMessageFromDriveClient } from '@proton/shared/lib/drive/sharing/docsBookmarking'
+import { Actions, countActionWithTelemetry } from '@proton/drive-store/utils/telemetry'
+import { openNewTabToSignIn } from '../Utils/Redirection'
+import { openNewTabToSignUp } from '../Utils/Redirection'
+import { RedirectAction } from '@proton/drive-store/store/_documents'
 
 export interface Props {
-  customPassword?: string
+  urlPassword: string
+  redirectAction: RedirectAction
 }
 
-export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Props & ModalStateProps) => {
+export const SignupFlowModal = ({ urlPassword, onClose, redirectAction, ...modalProps }: Props & ModalStateProps) => {
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const api = useApi()
-  const { token, urlPassword } = useDocsPublicToken()
+  const { token, linkId } = useDocsPublicToken()
 
   useEffect(() => {
     countActionWithTelemetry(Actions.ViewSignUpFlowModal)
@@ -46,14 +46,6 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
   const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
     setError(emailValidator(e.target.value))
-  }
-
-  const openNewTab = (url: string) => {
-    const w = waitForBookmarkingMessageFromDriveClient(token, urlPassword + (customPassword ?? ''), () => {
-      onClose()
-    })
-
-    w.handle.location.assign(url)
   }
 
   /*
@@ -70,44 +62,13 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
       // Email is verified and available to use
       // We redirect to DRIVE_SIGNUP
       if (Code === 1000) {
-        await Promise.all([
-          countActionWithTelemetry(Actions.SignUpFlowModal),
-          traceTelemetry(Actions.SignUpFlowAndRedirectCompleted).start(),
-        ])
-        const returnUrlSearchParams = new URLSearchParams()
-        returnUrlSearchParams.append('token', token)
-        const returnUrl = `/shared-with-me?`.concat(returnUrlSearchParams.toString())
-        const url = new URL(DRIVE_SIGNUP)
-        // This autofill the sign-up email input
-        url.searchParams.append('email', email)
-        url.searchParams.append('plan', PLANS.FREE)
-        openNewTab(
-          getUrlWithReturnUrl(url.toString(), {
-            returnUrl,
-            context: 'private',
-          }),
-        )
+        await openNewTabToSignUp({ action: redirectAction, token, email, linkId, urlPassword })
       }
     } catch (err) {
       const { code, message } = getApiError(err)
       // Email is already in use, we redirect to SIGN_IN
       if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code) {
-        countActionWithTelemetry(Actions.SignInFlowModal)
-        const returnUrlSearchParams = new URLSearchParams()
-        returnUrlSearchParams.append('token', token)
-        // Always return to public page in case of signin. This will be done in MainContainer.tsx on page loading
-        returnUrlSearchParams.append('redirectToPublic', 'true')
-        const returnUrl = `/shared-with-me?`.concat(returnUrlSearchParams.toString())
-        const url = new URL(DRIVE_SIGNIN)
-        // This autofill the sign-in email input
-        url.searchParams.append('username', email)
-        openNewTab(
-          getUrlWithReturnUrl(url.toString(), {
-            returnUrl,
-            context: 'private',
-          }),
-        )
-
+        await openNewTabToSignIn({ action: redirectAction, token, email, linkId, urlPassword })
         return
       }
       // Other errors we show the error message
@@ -132,7 +93,9 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
         title={
           <div className="flex-column mb-1 flex">
             <DriveLogo variant="glyph-only" size={12} />
-            {c('Title').t`Save it for later in ${DRIVE_APP_NAME}`}
+            {redirectAction === RedirectAction.MakeCopy
+              ? c('Title').t`Make a copy to your ${DRIVE_APP_NAME}`
+              : c('Title').t`Save it for later in ${DRIVE_APP_NAME}`}
           </div>
         }
         subline={c('Info').t`Keep your files secure with end-to-end encryption.`}

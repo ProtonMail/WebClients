@@ -9,6 +9,8 @@ import type {
   DocumentRole,
   DataTypesThatDocumentCanBeExportedAs,
   SuggestionSummaryType,
+  EditorEvent,
+  EditorEventData,
 } from '@proton/docs-shared'
 
 export interface EditorOrchestratorInterface {
@@ -20,7 +22,7 @@ export interface EditorOrchestratorInterface {
   provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   editorReportingError(error: string, extraInfo: { irrecoverable?: boolean; lockEditor?: boolean }): void
-
+  editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void>
   getTypersExcludingSelf(threadId: string): string[]
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>
   beganTypingInThread(threadID: string): void
