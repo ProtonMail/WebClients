@@ -165,6 +165,7 @@ export function Editor({
                   justifySelf: 'center',
                 }}
                 isSuggestionMode={isSuggestionMode}
+                data-testid="main-editor"
               />
             </div>
           }
