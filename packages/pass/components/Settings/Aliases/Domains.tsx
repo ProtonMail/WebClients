@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
+import { DefaultDomainSelector } from '@proton/pass/components/Settings/Aliases/DefaultDomainSelector';
 import { DomainAddModal } from '@proton/pass/components/Settings/Aliases/DomainAddModal';
 import { DomainDeleteModal } from '@proton/pass/components/Settings/Aliases/DomainDeleteModal';
 import {
@@ -104,6 +105,9 @@ export const Domains: FC = () => {
     return (
         <>
             <SettingsPanel title={c('Label').t`Domains`} className="flex-1" contentClassname="pt-4 pb-2">
+                <div className="text-bold mb-2">{c('Title').t`Select the default domain for aliases`}</div>
+                <DefaultDomainSelector className="mb-6" />
+
                 <div className="text-bold mb-2">{c('Title').t`Custom domains`}</div>
                 <div>{c('Info')
                     .t`Bring your own domain and you don't have to buy yet another email hosting solution.`}</div>
