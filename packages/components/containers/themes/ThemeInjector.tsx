@@ -18,7 +18,7 @@ import { electronAppTheme as defaultElectronAppTheme, getDefaultThemeSetting } f
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-import { useDrawer } from '../../hooks';
+import useDrawer from '../../hooks/drawer/useDrawer';
 import { useTheme } from './ThemeProvider';
 
 export const DrawerThemeInjector = () => {

@@ -16,12 +16,12 @@ import {
     CacheProvider,
     CalendarModelEventManagerProvider,
     ConfigProvider,
+    DrawerProvider,
     ModalsChildren,
     ModalsProvider,
     SpotlightProvider,
 } from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
-import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';

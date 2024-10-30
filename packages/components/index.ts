@@ -908,3 +908,10 @@ export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendar
 export { default as useToggle } from './hooks/useToggle';
 export { default as useVPNServersCount } from './hooks/useVPNServersCount';
 export { default as useWindowSize } from './hooks/useWindowSize';
+export { DrawerProvider, default as useDrawer } from './hooks/drawer/useDrawer';
+export { default as useDrawerLocalStorage } from './hooks/drawer/useDrawerLocalStorage';
+export { default as useDrawerParent } from './hooks/drawer/useDrawerParent';
+export { default as useDrawerWidth } from './hooks/drawer/useDrawerWidth';
+export { default as useObserveDrawerIframeAppLocation } from './hooks/drawer/useObserveDrawerIframeAppLocation';
+export { default as useOpenDrawerOnLoad } from './hooks/drawer/useOpenDrawerOnLoad';
+export { default as useToggleDrawerApp } from './hooks/drawer/useToggleDrawerApp';

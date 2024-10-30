@@ -19,7 +19,7 @@ import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
 import Header from '../../components/header/Header';
-import { useDrawer } from '../../hooks';
+import useDrawer from '../../hooks/drawer/useDrawer';
 import { useHotkeys } from '../../hooks/useHotkeys';
 
 import './DrawerAppHeader.scss';
