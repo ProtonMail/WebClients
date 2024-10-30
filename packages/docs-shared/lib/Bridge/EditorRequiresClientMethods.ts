@@ -6,9 +6,11 @@ import type { RtsMessagePayload } from '../Doc/RtsMessagePayload'
 import type { BroadcastSource } from './BroadcastSource'
 import type { WordCountInfoCollection } from '../WordCount/WordCountTypes'
 import type { SuggestionSummaryType } from '../SuggestionType'
+import type { EditorEvent, EditorEventData } from './EditorEvent'
 
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
+  editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void>
 
   getTypersExcludingSelf(threadId: string): Promise<string[]>
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>

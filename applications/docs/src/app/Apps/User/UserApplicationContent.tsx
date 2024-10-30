@@ -23,6 +23,7 @@ import { useUser } from '@proton/account/user/hooks'
 import UserProvider from '../../Containers/ContextProvider'
 import { PublicDocumentCopier } from '../../Components/PublicDocumentCopier'
 import { useUnleashClient } from '@proton/unleash'
+import { getUrlPassword } from '@proton/drive-store/utils/url/password'
 
 const HomepageRoute = lazy(() => import('../../Components/Homepage/HomepageRoute'))
 
@@ -89,7 +90,7 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
 
   const [user] = useUser()
 
-  const { openAction, updateParameters } = useDocsUrlBar({ isDocsEnabled: driveCompat.isDocsEnabled })
+  const { openAction, updateParameters, navigateToAction } = useDocsUrlBar({ isDocsEnabled: driveCompat.isDocsEnabled })
 
   const [actionMode, setActionMode] = useState<DocumentAction['mode']>()
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
@@ -138,6 +139,23 @@ function DocsRoute({ driveCompat }: { driveCompat: DriveCompat }) {
     const isOpeningDocsAtRootPage = !openAction
     const isOpeningDocsWithCreateAction = openAction && openAction.mode === 'create'
     const shouldCreateNewRootDoc = isOpeningDocsAtRootPage || isOpeningDocsWithCreateAction
+    const isRedirectBackToPublicContext = openAction && openAction.mode === 'open-url-reauth'
+
+    if (isRedirectBackToPublicContext) {
+      application.logger.info('Redirecting back to public context', {
+        action: openAction,
+      })
+
+      navigateToAction(
+        {
+          ...openAction,
+          mode: 'open-url',
+          urlPassword: getUrlPassword(),
+        },
+        'public',
+      )
+      return
+    }
 
     if (shouldCreateNewRootDoc) {
       setIsCreatingNewDocument(true)
@@ -233,6 +251,15 @@ function Content({
 
   if (openAction?.mode === 'copy-public') {
     return <PublicDocumentCopier />
+  }
+
+  /** Waiting for redirection */
+  if (openAction?.mode === 'open-url-reauth') {
+    return (
+      <div className="flex-column flex h-full w-full items-center justify-center gap-4">
+        <CircleLoader size="large" />
+      </div>
+    )
   }
 
   if (

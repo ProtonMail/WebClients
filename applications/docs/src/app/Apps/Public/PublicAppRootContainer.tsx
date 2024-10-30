@@ -7,6 +7,8 @@ import { c } from 'ttag'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { useEffect } from 'react'
+import PasswordPage from './PasswordPage/PasswordPage'
+import { UnAuthenticated } from '@proton/components'
 
 const PublicAppRootContainer = () => {
   void import('../../tailwind.scss')
@@ -14,7 +16,9 @@ const PublicAppRootContainer = () => {
   return (
     <LocationErrorBoundary>
       <PublicDriveStoreProvider>
-        <RenderApplicationWhenReady />
+        <UnAuthenticated>
+          <RenderApplicationWhenReady />
+        </UnAuthenticated>
       </PublicDriveStoreProvider>
     </LocationErrorBoundary>
   )
@@ -55,6 +59,10 @@ const RenderApplicationWhenReady = () => {
         </div>
       </div>
     )
+  }
+
+  if (publicDriveCompat.isPasswordNeeded) {
+    return <PasswordPage submitPassword={publicDriveCompat.submitPassword} />
   }
 
   if (!publicDriveCompat.isReady) {

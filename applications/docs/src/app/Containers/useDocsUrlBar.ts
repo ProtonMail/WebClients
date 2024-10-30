@@ -5,13 +5,14 @@ import type { DocumentAction } from '@proton/drive-store'
 import { APPS } from '@proton/shared/lib/constants'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { parseOpenAction } from './parseOpenAction'
 
-export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled: boolean }) {
+export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled?: boolean } = { isDocsEnabled: true }) {
   const { getLocalID } = useAuthentication()
 
   const { search } = useLocation()
   const searchParams = new URLSearchParams(search)
-  const [openAction, setOpenAction] = useState<DocumentAction | null>(null)
+  const [openAction, setOpenAction] = useState<DocumentAction | null>(parseOpenAction(searchParams))
 
   const updateParameters = useCallback((newVolumeId: string, newLinkId: string) => {
     setOpenAction({
@@ -28,93 +29,59 @@ export function useDocsUrlBar({ isDocsEnabled }: { isDocsEnabled: boolean }) {
     history.replaceState(null, '', newUrl.toString())
   }, [])
 
+  const navigateToAction = useCallback((action: DocumentAction, context: 'private' | 'public' = 'private') => {
+    const userPortion = location.pathname.match(/u\/\d+/)?.[0]
+    if (context === 'private' && !userPortion) {
+      throw new Error('Attempting to navigate to private action without user portion')
+    }
+
+    const newUrl = new URL(context === 'private' ? location.href : location.origin)
+
+    newUrl.searchParams.set('mode', action.mode)
+
+    if ('volumeId' in action) {
+      newUrl.searchParams.set('volumeId', action.volumeId)
+    }
+
+    if ('linkId' in action) {
+      newUrl.searchParams.set('linkId', action.linkId)
+    }
+
+    if ('action' in action && action.action) {
+      newUrl.searchParams.set('action', action.action)
+    }
+
+    if ('token' in action) {
+      newUrl.searchParams.set('token', action.token)
+    }
+
+    if ('urlPassword' in action) {
+      newUrl.hash = action.urlPassword
+    }
+
+    window.location.assign(newUrl.toString())
+  }, [])
+
+  const removeActionFromUrl = useCallback(() => {
+    const newUrl = new URL(location.href)
+    newUrl.searchParams.delete('action')
+    history.replaceState(null, '', newUrl.toString())
+  }, [])
+
   useEffectOnce(() => {
-    const mode = (searchParams.get('mode') ?? 'open') as DocumentAction['mode']
-    const parentLinkId = searchParams.get('parentLinkId')
-    const volumeId = searchParams.get('volumeId')
-    const linkId = searchParams.get('linkId')
-    const token = searchParams.get('token')
+    const action = parseOpenAction(searchParams)
 
-    const hasValidPublicLink = token && linkId
-    const hasRequiredParametersToLoadOrCreateADocument = volumeId && mode && (linkId || parentLinkId)
-    const hasValidRoute = hasValidPublicLink || hasRequiredParametersToLoadOrCreateADocument
-
-    if (!hasValidRoute && !isDocsEnabled) {
+    if (!action && isDocsEnabled === false) {
       window.location.assign(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
       return
-    }
-
-    if (mode === 'copy-public') {
-      setOpenAction({
-        mode,
-      })
-
-      return
-    }
-
-    if (hasValidPublicLink) {
-      const urlPassword = window.location.hash
-
-      setOpenAction({
-        mode: 'open-url',
-        token,
-        linkId,
-        urlPassword,
-      })
-      return
-    }
-
-    if (!volumeId || !mode) {
-      return
-    }
-
-    if (mode === 'open' || mode === 'convert') {
-      if (!linkId) {
-        return
-      }
-
-      setOpenAction({
-        mode,
-        volumeId,
-        linkId,
-      })
-    } else if (mode === 'create') {
-      if (!parentLinkId) {
-        return
-      }
-
-      setOpenAction({
-        mode,
-        volumeId,
-        parentLinkId,
-      })
-    }
-
-    if (mode === 'history') {
-      if (!linkId) {
-        return
-      }
-      setOpenAction({
-        mode,
-        volumeId,
-        linkId,
-      })
-    }
-
-    if (mode === 'download') {
-      if (!linkId) {
-        return
-      }
-      setOpenAction({
-        mode,
-        volumeId,
-        linkId,
-      })
     }
   })
 
   return {
     openAction,
     updateParameters,
+    removeActionFromUrl,
+    navigateToAction,
+    linkId: openAction && 'linkId' in openAction ? openAction.linkId : undefined,
   }
 }

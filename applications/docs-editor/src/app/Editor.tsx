@@ -138,7 +138,12 @@ export function Editor({
       <SafeLexicalComposer initialConfig={BuildInitialEditorConfig({ onError: onEditorError })}>
         <KeyboardShortcutsPlugin />
         {(systemMode === EditorSystemMode.Edit || systemMode === EditorSystemMode.PublicView) && (
-          <Toolbar hasEditAccess={role.canEdit()} userMode={userMode} onUserModeChange={onUserModeChange} />
+          <Toolbar
+            hasEditAccess={role.canEdit()}
+            clientInvoker={clientInvoker}
+            userMode={userMode}
+            onUserModeChange={onUserModeChange}
+          />
         )}
         <RichTextPlugin
           contentEditable={
