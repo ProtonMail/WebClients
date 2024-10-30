@@ -22,6 +22,7 @@ import {
     getUserKeys,
     userWalletSettings,
 } from '../tests';
+import * as wasmUtilsModule from '../utils/wasm';
 import { useWalletAutoCreate } from './useWalletAutoCreate';
 
 vi.mock('@proton/andromeda', async () => {
@@ -46,19 +47,18 @@ describe('useWalletAutoCreate', () => {
     const mockedUpdateWalletAccountFiatCurrency = vi.fn();
     const mockedGetUserWalletSettings = vi.fn(async () => [{ ...userWalletSettings, WalletCreated: 0 }]);
 
+    const mockedIsWasmSupported = vi.spyOn(wasmUtilsModule, 'isWasmSupported');
+    const mockedLoadWasmModule = vi.spyOn(wasmUtilsModule, 'loadWasmModule');
+
     beforeAll(async () => {
         await CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
         mockUseConfig();
     });
 
     beforeEach(async () => {
-        mockedCreateWallet.mockClear();
-        mockedCreateWalletAccount.mockClear();
-        mockedAddEmailAddress.mockClear();
-        mockedAddBitcoinAddresses.mockClear();
-        mockedUpdateWalletAccountFiatCurrency.mockClear();
-        mockedGetUserWalletSettings.mockClear();
+        vi.clearAllMocks();
 
+        mockedIsWasmSupported.mockReturnValue(true);
         mockedGetUserWalletSettings.mockResolvedValue([{ ...userWalletSettings, WalletCreated: 0 }]);
 
         vi.spyOn(andromedaModule, 'WasmProtonWalletApiClient').mockReturnValue({
@@ -108,12 +108,29 @@ describe('useWalletAutoCreate', () => {
         });
     });
 
+    describe('when wasm is not supported on browser', () => {
+        it('should not autocreate wallet', async () => {
+            mockedIsWasmSupported.mockReturnValue(false);
+            renderHook(() => useWalletAutoCreate({ higherLevelPilot: true }));
+
+            // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
+            await wait(100);
+
+            expect(mockedLoadWasmModule).not.toHaveBeenCalled();
+
+            expect(mockedGetUserWalletSettings).not.toHaveBeenCalled();
+            expect(mockedCreateWallet).not.toHaveBeenCalled();
+        });
+    });
+
     describe('when higher level pilot is false', () => {
         it('should not autocreate wallet', async () => {
             renderHook(() => useWalletAutoCreate({ higherLevelPilot: false }));
 
             // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
             await wait(100);
+
+            expect(mockedLoadWasmModule).not.toHaveBeenCalled();
 
             expect(mockedGetUserWalletSettings).not.toHaveBeenCalled();
             expect(mockedCreateWallet).not.toHaveBeenCalled();
@@ -131,6 +148,8 @@ describe('useWalletAutoCreate', () => {
 
             // We need to wait some time to assert no call where sent, there is no way to do such an assertion without that
             await wait(100);
+
+            expect(mockedLoadWasmModule).not.toHaveBeenCalled();
 
             expect(mockedGetUserWalletSettings).not.toHaveBeenCalled();
             expect(mockedCreateWallet).not.toHaveBeenCalled();
