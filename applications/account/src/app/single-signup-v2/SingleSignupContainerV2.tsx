@@ -601,7 +601,7 @@ const SingleSignupContainerV2 = ({
     const getSubscriptionDataCycleMapping = async (
         paymentsApi: PaymentsApi,
         plansMap: FullPlansMap,
-        coupon: string | undefined
+        coupon: string | undefined | null
     ) => {
         const [b2c, b2b] = await Promise.all(
             ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
@@ -733,7 +733,7 @@ const SingleSignupContainerV2 = ({
                     plansMap,
                     // if plan parameters are defined, we assume we won't be showing the plan cards
                     // and that we won't need to fetch the subscription data from the API call with each coupon
-                    planParameters.defined ? undefined : coupon
+                    planParameters.defined ? null : coupon
                 ),
             ]);
 
