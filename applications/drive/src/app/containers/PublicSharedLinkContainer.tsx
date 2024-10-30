@@ -99,21 +99,24 @@ function PublicShareLinkInitContainer() {
     const showLoadingPage = isLoading || isLoadingDecrypt;
     const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
 
-    const openInDocs = useCallback(() => {
-        if (!isDocsPublicSharingEnabled || !link || error) {
-            return;
-        }
+    const openInDocs = useCallback(
+        (linkId: string) => {
+            if (!isDocsPublicSharingEnabled || error) {
+                return;
+            }
 
-        const w = handleDocsCustomPassword(customPassword);
+            const w = handleDocsCustomPassword(customPassword);
 
-        openDocumentWindow({
-            mode: 'open-url',
-            token,
-            urlPassword,
-            linkId: link.linkId,
-            window: w.handle,
-        });
-    }, [isDocsPublicSharingEnabled, link, error, token, urlPassword, customPassword]);
+            openDocumentWindow({
+                mode: 'open-url',
+                token,
+                urlPassword,
+                linkId,
+                window: w.handle,
+            });
+        },
+        [isDocsPublicSharingEnabled, error, token, urlPassword, customPassword]
+    );
 
     // This hook automatically redirects to Docs when opening a document.
     useEffect(() => {
@@ -122,7 +125,7 @@ function PublicShareLinkInitContainer() {
         }
 
         if (isProtonDocument(link.mimeType)) {
-            openInDocs();
+            openInDocs(link.linkId);
         }
     }, [isDocsPublicSharingEnabled, error, link]);
 

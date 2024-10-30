@@ -73,7 +73,7 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
 
     const { isReady, isError, error, getPublicAuthHeaders, customPassword, token, urlPassword } = usePublicDocsToken();
 
-    const { getNode, getNodeContentKey } = usePublicNode();
+    const { isNodeLoading, getNode, getNodeContentKey } = usePublicNode();
     const { openDocumentWindow } = useOpenDocument();
 
     const redirectToAuthedDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open', window: window });
@@ -83,7 +83,7 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
         customPassword,
         token,
         urlPassword,
-        isReady,
+        isReady: isReady && !isNodeLoading,
         isError,
         error,
         redirectToAuthedDocument: redirectToAuthedDocument,

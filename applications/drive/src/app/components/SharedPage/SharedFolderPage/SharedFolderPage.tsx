@@ -28,7 +28,7 @@ interface Props {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     hideSaveToDrive?: boolean;
     partialView?: boolean;
-    openInDocs?: () => void;
+    openInDocs?: (linkId: string) => void;
 }
 
 interface PreviewContainerProps {
@@ -38,7 +38,7 @@ interface PreviewContainerProps {
     onClose: () => void;
     onNavigate: (linkId: DecryptedLink['linkId']) => void;
     onDownload: () => void;
-    openInDocs?: () => void;
+    openInDocs?: (linkId: string) => void;
 }
 
 function SharedPagePreviewContainer({
@@ -91,7 +91,7 @@ function SharedPagePreviewContainer({
             onClose={onClose}
             onDownload={hideDownload ? undefined : onDownload}
             isPublicDocsAvailable={isDocsPublicSharingEnabled}
-            onOpenInDocs={openInDocs}
+            onOpenInDocs={openInDocs && loadedLink ? () => openInDocs(loadedLink.linkId) : undefined}
         />
     );
 }
@@ -113,7 +113,7 @@ export default function SharedFolder({
 
     const onItemOpen = (item: DecryptedLink) => {
         if (isProtonDocument(item.mimeType) && openInDocs) {
-            openInDocs();
+            openInDocs(item.linkId);
             return;
         }
 
