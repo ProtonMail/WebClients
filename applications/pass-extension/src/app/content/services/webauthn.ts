@@ -75,7 +75,7 @@ export const createWebAuthNService = () => {
                     switch (data.request.type) {
                         case WorkerMessageType.PASSKEY_CREATE: {
                             const { token } = data;
-                            const { request } = data.request.payload;
+                            const { request, domain } = data.request.payload;
 
                             return approveRequest(token, () => {
                                 const settings = ctx.getSettings();
@@ -85,6 +85,7 @@ export const createWebAuthNService = () => {
                                 .then(() =>
                                     ctx?.service.iframe.attachNotification()?.open({
                                         action: NotificationAction.PASSKEY_CREATE,
+                                        domain,
                                         request,
                                         token,
                                     })
@@ -115,9 +116,10 @@ export const createWebAuthNService = () => {
 
                                             return ctx?.service.iframe.attachNotification()?.open({
                                                 action: NotificationAction.PASSKEY_GET,
+                                                domain,
+                                                passkeys,
                                                 request,
                                                 token,
-                                                passkeys,
                                             });
                                         }
                                     );

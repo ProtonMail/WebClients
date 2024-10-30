@@ -114,6 +114,7 @@ export const NotificationDebug: FC = () => {
                         token: 'some-token',
                         request: JSON.stringify({}),
                         passkeys: [],
+                        domain: 'webauthn.io',
                     }}
                 >
                     <Notification />
@@ -126,6 +127,7 @@ export const NotificationDebug: FC = () => {
                     payload={{
                         action: NotificationAction.PASSKEY_CREATE,
                         token: 'some-token',
+                        domain: 'webauthn.io',
                         request: JSON.stringify({
                             rp: {
                                 name: 'webauthn.io',
