@@ -1,11 +1,15 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID } from '@proton/components';
+import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID, useTheme } from '@proton/components';
 import { useDrawer } from '@proton/components/hooks';
-import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
+import { getPlaceholderSrc } from '@proton/mail';
+import noSpamSvgDark from '@proton/styles/assets/img/placeholders/auto-delete-cool-dark.svg';
+import noSpamSvgLight from '@proton/styles/assets/img/placeholders/auto-delete-cool-light.svg';
+import noSpamSvgWarm from '@proton/styles/assets/img/placeholders/auto-delete-warm-light.svg';
 
 const ProtonPassPlaceholder = () => {
+    const theme = useTheme();
     const { toggleDrawerApp, appInView } = useDrawer();
 
     const openSecurityCenterInDrawer = () => {
@@ -20,9 +24,15 @@ const ProtonPassPlaceholder = () => {
         <>
             <div className="mb-8">
                 <img
-                    src={connectSimpleLoginSvg}
+                    height={128}
+                    src={getPlaceholderSrc({
+                        theme: theme.information.theme,
+                        warmLight: noSpamSvgWarm,
+                        coolLight: noSpamSvgLight,
+                        coolDark: noSpamSvgDark,
+                    })}
                     alt={c('Alternative text for conversation image').t`Conversation`}
-                    className="h-auto"
+                    className="w-auto"
                 />
             </div>
             <h2 className="text-bold">{c('Title').t`Don't give spam a chance`}</h2>
