@@ -273,6 +273,14 @@ const getUpsell = ({
             }
 
             if (currentPlan.Name === PLANS.BUNDLE) {
+                if (
+                    subscription?.CouponCode === COUPON_CODES.DEGOOGLE &&
+                    hasMonthlyCycle &&
+                    options.cycle === CYCLE.YEARLY &&
+                    hasSelectedPlan(planParameters.plan, [PLANS.BUNDLE])
+                ) {
+                    return getBlackFridayUpsellData({ plan: planParameters.plan });
+                }
                 if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.DUO, PLANS.FAMILY])) {
                     return getBlackFridayUpsellData({ plan: planParameters.plan });
                 }
@@ -612,7 +620,7 @@ export const getPlanCardSubscriptionData = async ({
     planIDs: PlanIDs[];
     plansMap: PlansMap;
     paymentsApi: PaymentsApi;
-    coupon?: string;
+    coupon?: string | null;
     billingAddress: BillingAddress;
 }): Promise<SubscriptionDataCycleMapping> => {
     const result = await Promise.all(
@@ -620,7 +628,8 @@ export const getPlanCardSubscriptionData = async ({
             cycles
                 .map((cycle) => [planIDs, cycle] as const)
                 .map(async ([planIDs, cycle]): Promise<SubscriptionData> => {
-                    const coupon = getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle });
+                    const coupon =
+                        maybeCoupon === null ? undefined : getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle });
 
                     // make sure that the plan and all its addons exist
                     const plansToCheck = Object.keys(planIDs) as (PLANS | ADDON_NAMES)[];
