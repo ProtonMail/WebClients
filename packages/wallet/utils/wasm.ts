@@ -10,3 +10,7 @@ export const isWasmSupported = () => {
 
     return false;
 };
+
+export const loadWasmModule = async () => {
+    return import('@proton/andromeda');
+};
