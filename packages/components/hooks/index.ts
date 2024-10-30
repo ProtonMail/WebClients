@@ -5,5 +5,4 @@ export { default as useSubscription, useGetSubscription } from './useSubscriptio
 export { default as usePreventCloseTab } from './usePreventCloseTab';
 export * from './useSessionRecovery';
 export { useWelcomeFlags } from './useWelcomeFlags';
-export * from './drawer';
 export * from './usePreferredPlansMap';

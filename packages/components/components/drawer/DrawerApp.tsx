@@ -14,7 +14,7 @@ import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useDrawer } from '../../hooks';
+import useDrawer from '../../hooks/drawer/useDrawer';
 import DrawerContactModals from './DrawerContactModals';
 import DrawerSecurityCenterView from './views/DrawerSecurityCenterView';
 import { useGetBreachesCounts } from './views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
