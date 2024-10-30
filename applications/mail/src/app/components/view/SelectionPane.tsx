@@ -5,14 +5,16 @@ import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { useModalState } from '@proton/components';
+import { useModalState, useTheme } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useFolders, useLabels } from '@proton/mail';
+import { getPlaceholderSrc, useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import conversationSvg from '@proton/styles/assets/img/illustrations/selected-emails.svg';
+import conversationSvgDark from '@proton/styles/assets/img/placeholders/inbox-cool-dark.svg';
+import conversationSvgLight from '@proton/styles/assets/img/placeholders/inbox-cool-light.svg';
+import conversationSvgWarm from '@proton/styles/assets/img/placeholders/inbox-warm-light.svg';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -42,6 +44,8 @@ interface Props {
 const { SPAM } = MAILBOX_LABEL_IDS;
 
 const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onCheckAll }: Props) => {
+    const theme = useTheme();
+
     const appLocation = useLocation();
     const conversationMode = isConversationMode(labelID, mailSettings, location);
     const { selectAll, setSelectAll, getBannerTextWithLocation } = useSelectAll({ labelID });
@@ -214,7 +218,17 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                         )}
                     </div>
                     <div className="mb-2">
-                        <img src={conversationSvg} width={144} height={101} alt="" />
+                        <img
+                            src={getPlaceholderSrc({
+                                theme: theme.information.theme,
+                                warmLight: conversationSvgWarm,
+                                coolLight: conversationSvgLight,
+                                coolDark: conversationSvgDark,
+                            })}
+                            className="w-auto"
+                            height={128}
+                            alt=""
+                        />
                     </div>
                     {checkeds === 0 && labelName && (
                         <h3 className="lh-rg text-ellipsis" title={labelName}>

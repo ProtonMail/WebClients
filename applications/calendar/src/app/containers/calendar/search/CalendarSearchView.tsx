@@ -5,11 +5,14 @@ import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, IllustrationPlaceholder, SkeletonLoader } from '@proton/components';
+import { Icon, IllustrationPlaceholder, SkeletonLoader, useTheme } from '@proton/components';
+import { getPlaceholderSrc } from '@proton/mail';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
+import noSearchResultDark from '@proton/styles/assets/img/placeholders/search-empty-cool-dark.svg';
+import noSearchResultCool from '@proton/styles/assets/img/placeholders/search-empty-cool-light.svg';
+import noSearchResultWarm from '@proton/styles/assets/img/placeholders/search-empty-warm-light.svg';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
@@ -72,6 +75,8 @@ const CalendarSearchView = ({
     setInteractiveData,
     getOpenedMailEvents,
 }: Props) => {
+    const theme = useTheme();
+
     const [closestToDateRef, setClosestToDateRef] = useState<HTMLDivElement | null>(null);
 
     const { items, recurrenceIDsMap, loading } = useCalendarSearch();
@@ -314,7 +319,15 @@ const CalendarSearchView = ({
                     )}
 
                     <div className="flex flex-column justify-center items-center grow w-full">
-                        <IllustrationPlaceholder title={c('Info message').t`No results found`} url={noResultsImg} />
+                        <IllustrationPlaceholder
+                            title={c('Info message').t`No results found`}
+                            url={getPlaceholderSrc({
+                                theme: theme.information.theme,
+                                warmLight: noSearchResultWarm,
+                                coolLight: noSearchResultCool,
+                                coolDark: noSearchResultDark,
+                            })}
+                        />
                         <div className="text-center">
                             {c('Info calendar search')
                                 .t`You can either update your search query or close search to go back to calendar views`}
