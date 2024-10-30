@@ -124,33 +124,35 @@ const UpsellModal = ({
 
     return (
         <ModalTwo {...rest} size="small" disableCloseOnEscape={true}>
-            <ModalTwoContent className="text-center">
-                <img src={svg} alt="" className="mb-4 mt-4" />
+            <ModalTwoContent>
+                <div className="text-center">
+                    <img src={svg} alt="" className="mb-4 mt-4" />
 
-                {title && <div className="text-bold h3 mb-4">{title}</div>}
-                <div className="mb-2 color-weak">
-                    {c('pass_signup_2023: Info')
-                        .t`The offer you selected is not available for ${currentPlanTitle} subscribers.`}
-                </div>
-                {checkout && (
-                    <div className="color-weak mb-4">
-                        {(() => {
-                            const discount = `${checkout.discountPercent}%`;
-                            if (relativePrice) {
+                    {title && <div className="text-bold h3 mb-4">{title}</div>}
+                    <div className="mb-2 color-weak">
+                        {c('pass_signup_2023: Info')
+                            .t`The offer you selected is not available for ${currentPlanTitle} subscribers.`}
+                    </div>
+                    {checkout && (
+                        <div className="color-weak mb-4">
+                            {(() => {
+                                const discount = `${checkout.discountPercent}%`;
+                                if (relativePrice) {
+                                    return getBoldFormattedText(
+                                        c('pass_signup_2023: Info')
+                                            .t`But you can get ${discount} off by upgrading to **${upsellPlanTitle}** — it’s just ${relativePrice} extra per month.`
+                                    );
+                                }
                                 return getBoldFormattedText(
                                     c('pass_signup_2023: Info')
-                                        .t`But you can get ${discount} off by upgrading to **${upsellPlanTitle}** — it’s just ${relativePrice} extra per month.`
+                                        .t`But you can get ${discount} off by upgrading to **${upsellPlanTitle}**.`
                                 );
-                            }
-                            return getBoldFormattedText(
-                                c('pass_signup_2023: Info')
-                                    .t`But you can get ${discount} off by upgrading to **${upsellPlanTitle}**.`
-                            );
-                        })()}
-                    </div>
-                )}
+                            })()}
+                        </div>
+                    )}
 
-                {features && <PlanCardFeatureList icon={false} iconColor="color-success" features={features} />}
+                    {features && <PlanCardFeatureList icon={false} iconColor="color-success" features={features} />}
+                </div>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button shape="ghost" color="norm" fullWidth onClick={onFree}>

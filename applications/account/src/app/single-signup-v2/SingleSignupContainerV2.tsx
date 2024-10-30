@@ -27,7 +27,14 @@ import type { PaymentProcessorType } from '@proton/components/payments/react-ext
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/payments';
-import { type Currency, DEFAULT_CURRENCY, DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, PLANS, getPlansMap } from '@proton/payments';
+import {
+    type Currency,
+    DEFAULT_CURRENCY,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    PAYMENT_METHOD_TYPES,
+    PLANS,
+    getPlansMap,
+} from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -88,7 +95,7 @@ import {
     type SubscriptionDataCycleMapping,
     getAccessiblePlans,
     getFreeSubscriptionData,
-    getHasBusinessUpsell,
+    getIsProductB2BPlan,
     getPlanCardSubscriptionData,
     getRelativeUpsellPrice,
     getSessionDataFromSignup,
@@ -106,7 +113,6 @@ import UpsellModal from './modals/UpsellModal';
 import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
 import { getPassConfiguration } from './pass/configuration';
 import { getWalletConfiguration } from './wallet/configuration';
-
 
 const getRecoveryKit = async () => {
     // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
@@ -552,22 +558,23 @@ const SingleSignupContainerV2 = ({
     const triggerModals = ({
         session,
         upsell,
-        options,
         planParameters,
     }: {
         session: SessionData;
         upsell: Upsell;
         subscriptionData: SubscriptionData;
         planParameters?: PlanParameters;
-        options?: {
-            ignoreUnlock: boolean;
-        };
     }) => {
         const planName = getPlanNameFromSession(session);
 
-        if (session.subscription && options?.ignoreUnlock !== true && upsell.plan?.Name && planParameters?.defined) {
+        if (session.state.access) {
+            setHasAccessModal(true);
+            return;
+        }
+
+        if (session.subscription && upsell.plan?.Name) {
             // The selected plan is the plan we upsell to, pass through
-            if (planParameters.plan.Name === upsell.plan.Name) {
+            if (planParameters?.plan.Name === upsell.plan.Name) {
                 return;
             }
             if ([PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024].includes(upsell.plan.Name as any)) {
@@ -583,13 +590,8 @@ const SingleSignupContainerV2 = ({
             return;
         }
 
-        if (session.state.access) {
-            setHasAccessModal(true);
-            return;
-        }
-
         if (session.organization && !session.state.payable) {
-            if (getHasBusinessUpsell(planName)) {
+            if (getIsProductB2BPlan(planName)) {
                 setSubUserModal(true);
                 return;
             }
@@ -793,7 +795,6 @@ const SingleSignupContainerV2 = ({
                     session,
                     upsell,
                     subscriptionData,
-                    options: { ignoreUnlock: false },
                 });
 
                 const planName = getPlanNameFromSession(session);
