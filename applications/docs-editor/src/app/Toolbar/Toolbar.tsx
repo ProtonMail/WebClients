@@ -100,10 +100,12 @@ export default function DocumentEditorToolbar({
   userMode,
   onUserModeChange,
   hasEditAccess,
+  isPreviewModeToolbar = false,
 }: {
   userMode: EditorUserMode
   onUserModeChange: (mode: EditorUserMode) => void
   hasEditAccess: boolean
+  isPreviewModeToolbar?: boolean
 }) {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
@@ -643,7 +645,7 @@ export default function DocumentEditorToolbar({
     >
       <div
         className="DocumentEditorToolbar bg-norm flex w-full flex-nowrap items-center gap-1.5 overflow-auto px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
-        data-testid="main-toolbar"
+        data-testid={isPreviewModeToolbar ? 'preview-mode-toolbar' : 'main-toolbar'}
       >
         {showUndoRedoInToolbar && (
           <>
@@ -1353,7 +1355,7 @@ export default function DocumentEditorToolbar({
                     isActive={isSuggestionMode}
                     icon={<SpeechBubblePenIcon className="h-4 w-4" />}
                     label={c('Info').t`Suggesting`}
-                    description={c('Description').t`Edits become suggestion`}
+                    description={c('Description').t`Edits become suggestions`}
                     onClick={() => {
                       onUserModeChange(EditorUserMode.Suggest)
                     }}
