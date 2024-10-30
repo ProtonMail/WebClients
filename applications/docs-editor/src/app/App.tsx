@@ -18,7 +18,8 @@ import { ApplicationProvider } from './ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import locales from './locales'
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
-import type { LexicalEditor, SerializedEditorState } from 'lexical'
+import type { EditorState } from 'lexical'
+import { type LexicalEditor, type SerializedEditorState } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
 import { exportDataFromEditorState } from './Conversion/Exporter/ExportDataFromEditorState'
 import { ThemeStyles } from './Theme'
@@ -31,6 +32,8 @@ import { EditorUserMode } from './EditorUserMode'
 import { CircleLoader } from '@proton/atoms/index'
 import { useBridge } from './useBridge'
 import { removeCommentThreadMarks } from './Tools/removeCommentThreadMarks'
+import { rejectAllSuggestions } from './Plugins/Suggestions/rejectAllSuggestions'
+import { PreviewModeEditor } from './PreviewModeEditor'
 
 type Props = {
   systemMode: EditorSystemMode
@@ -61,6 +64,23 @@ export function App({ systemMode }: Props) {
   })
 
   const editorRef = useRef<LexicalEditor | null>(null)
+  const [clonedEditorState, setClonedEditorState] = useState<EditorState>()
+
+  useEffect(() => {
+    if (userMode !== EditorUserMode.Preview) {
+      return
+    }
+
+    if (!editorRef.current) {
+      return
+    }
+
+    setClonedEditorState(editorRef.current.getEditorState().clone())
+
+    return editorRef.current.registerUpdateListener(({ editorState }) => {
+      setClonedEditorState(editorState.clone())
+    })
+  }, [userMode])
 
   const setEditorRef = useCallback(
     (instance: LexicalEditor | null) => {
@@ -75,6 +95,7 @@ export function App({ systemMode }: Props) {
         editorRef.current
       ) {
         removeCommentThreadMarks(editorRef.current)
+        rejectAllSuggestions(editorRef.current)
       }
     },
     [systemMode],
@@ -344,6 +365,7 @@ export function App({ systemMode }: Props) {
   }
 
   const isSuggestionMode = userMode === EditorUserMode.Suggest
+  const isPreviewMode = userMode === EditorUserMode.Preview
 
   return (
     <div
@@ -360,25 +382,34 @@ export function App({ systemMode }: Props) {
         isSuggestionMode={isSuggestionMode}
         isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
       >
-        <Editor
-          clientInvoker={bridge.getClientInvoker()}
-          docMap={docMap}
-          docState={docState}
-          documentId={editorConfig.current.documentId}
-          editingLocked={editingLocked || userMode === EditorUserMode.Preview}
-          editorInitializationConfig={editorConfig.current.editorInitializationConfig}
-          hidden={editorHidden}
-          isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
-          onEditorError={onEditorError}
-          onEditorLoadResult={onEditorLoadResult}
-          onUserModeChange={onUserModeChange}
-          role={application.getRole()}
-          setEditorRef={setEditorRef}
-          showTreeView={showTreeView}
-          systemMode={systemMode}
-          userMode={userMode}
-          username={editorConfig.current.username}
-        />
+        {isPreviewMode && clonedEditorState && (
+          <PreviewModeEditor
+            clonedEditorState={clonedEditorState}
+            role={application.getRole()}
+            onUserModeChange={onUserModeChange}
+          />
+        )}
+        <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
+          <Editor
+            clientInvoker={bridge.getClientInvoker()}
+            docMap={docMap}
+            docState={docState}
+            documentId={editorConfig.current.documentId}
+            editingLocked={editingLocked || userMode === EditorUserMode.Preview}
+            editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+            hidden={editorHidden}
+            isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
+            onEditorError={onEditorError}
+            onEditorLoadResult={onEditorLoadResult}
+            onUserModeChange={onUserModeChange}
+            role={application.getRole()}
+            setEditorRef={setEditorRef}
+            showTreeView={showTreeView}
+            systemMode={systemMode}
+            userMode={userMode}
+            username={editorConfig.current.username}
+          />
+        </div>
       </ApplicationProvider>
       <Icons />
     </div>
