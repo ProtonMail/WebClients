@@ -31,6 +31,7 @@ enum CommonFeatureFlag {
     ScribeAdminSetting = 'ScribeAdminSetting',
     WalletRbf = 'WalletRbf',
     WalletAddressList = 'WalletAddressList',
+    WalletMinFee = 'WalletMinFee',
 }
 
 enum AccountFlag {

@@ -8,6 +8,7 @@ import { exchangeRateReducer } from './exchangeRate';
 import { fiatCurrenciesReducer } from './fiatCurrencies';
 import { fiatCurrenciesByProviderReducer } from './fiatCurrenciesByProvider';
 import { hideAmountsReducer } from './hideAmounts';
+import { networkFeesReducer } from './networkFees';
 import { paymentMethodsByProviderReducer } from './paymentMethodByProvider';
 import { priceGraphDataReducer } from './priceGraphData';
 import { quotesByProviderReducer } from './quotesByProvider';
@@ -33,6 +34,7 @@ export * from './userEligibility';
 export * from './userWalletSettings';
 export * from './walletSettings';
 export * from './hideAmounts';
+export * from './networkFees';
 
 export const walletReducers = {
     ...exchangeRateReducer,
@@ -52,4 +54,5 @@ export const walletReducers = {
     ...bitcoinNetworkReducer,
     ...userWalletSettingsReducer,
     ...hideAmountsReducer,
+    ...networkFeesReducer,
 };

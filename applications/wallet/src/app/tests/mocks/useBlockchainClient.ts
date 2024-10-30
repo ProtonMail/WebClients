@@ -6,7 +6,7 @@ export const mockUseBlockchainClient = (
     mockedValue?: Partial<
         Pick<
             WasmBlockchainClient,
-            'getFeesEstimation' | 'getMempoolMinFee' | 'fullSync' | 'partialSync' | 'shouldSync' | 'broadcastPsbt'
+            'getFeesEstimation' | 'getMininumFees' | 'fullSync' | 'partialSync' | 'shouldSync' | 'broadcastPsbt'
         >
     >
 ) => {
@@ -14,7 +14,7 @@ export const mockUseBlockchainClient = (
 
     spy.mockReturnValue({
         getFeesEstimation: vi.fn(),
-        getMempoolMinFee: vi.fn(),
+        getMininumFees: vi.fn(),
         fullSync: vi.fn(),
         partialSync: vi.fn(),
         shouldSync: vi.fn(),
