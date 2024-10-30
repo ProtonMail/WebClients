@@ -10,13 +10,15 @@ import DocumentEditorTheme from './Theme/Theme'
  */
 export const ShouldBootstrap = false
 
-export function BuildInitialEditorConfig(config: { onError: (e: Error) => void }): InitialConfigType {
+export function BuildInitialEditorConfig(
+  config: { onError: (e: Error) => void } & Partial<InitialConfigType>,
+): InitialConfigType {
   return {
     editable: false,
     editorState: null,
     namespace: 'editor',
     nodes: AllNodes,
     theme: DocumentEditorTheme,
-    onError: config.onError,
+    ...config,
   }
 }

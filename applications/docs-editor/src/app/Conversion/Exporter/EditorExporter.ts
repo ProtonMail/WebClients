@@ -4,6 +4,7 @@ import { AllNodes } from '../../AllNodes'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'
 import { removeCommentThreadMarks } from '../../Tools/removeCommentThreadMarks'
+import { rejectAllSuggestions } from '../../Plugins/Suggestions/rejectAllSuggestions'
 
 export type ExporterRequiredCallbacks = {
   fetchExternalImageAsBase64: DocxExportContext['fetchExternalImageAsBase64']
@@ -34,6 +35,7 @@ export abstract class EditorExporter {
     if (!options.customStateHandling) {
       this.editor.setEditorState(this.editor.parseEditorState(editorState))
       this.removeCommentThreadMarks()
+      this.removeSuggestions()
     }
   }
 
@@ -42,6 +44,13 @@ export abstract class EditorExporter {
    */
   protected removeCommentThreadMarks() {
     removeCommentThreadMarks(this.editor)
+  }
+
+  /**
+   * We don't want suggestions in the exported document so we remove them before exporting
+   */
+  protected removeSuggestions() {
+    rejectAllSuggestions(this.editor)
   }
 
   abstract export(): Promise<Uint8Array>
