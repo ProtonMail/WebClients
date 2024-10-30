@@ -365,7 +365,7 @@ export function App({ systemMode }: Props) {
   }
 
   const isSuggestionMode = userMode === EditorUserMode.Suggest
-  const isPreviewMode = userMode === EditorUserMode.Preview
+  const isPreviewMode = systemMode === EditorSystemMode.Edit && userMode === EditorUserMode.Preview
 
   return (
     <div
