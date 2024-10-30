@@ -4,6 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 interface Props {
     className?: string;
+    height?: number;
     illustrationClassName?: string;
     title?: string;
     url: string;
@@ -14,6 +15,7 @@ interface Props {
 
 const IllustrationPlaceholder = ({
     className,
+    height,
     illustrationClassName,
     title,
     url,
@@ -23,7 +25,7 @@ const IllustrationPlaceholder = ({
 }: Props) => {
     return (
         <div className={clsx('flex *:min-size-auto flex-column flex-nowrap items-center w-full', className)}>
-            <img src={url} alt={title} className={clsx('p-1 mb-4', illustrationClassName)} />
+            <img src={url} alt={title} className={clsx('p-1 mb-4', illustrationClassName)} height={height} />
             {!!title && (
                 <h1
                     className={clsx(
