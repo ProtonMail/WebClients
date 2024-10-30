@@ -59,8 +59,9 @@ const RenderApplicationWhenReady = () => {
 
   if (!publicDriveCompat.isReady) {
     return (
-      <div className="flex-column flex h-full w-full items-center justify-center gap-4">
+      <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
         <CircleLoader size="large" />
+        <div className="text-center">{c('Info').t`Loading document...`}</div>
       </div>
     )
   }
