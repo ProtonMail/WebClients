@@ -1,23 +1,23 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+*/
+export function setPanicHook(): void;
+/**
+* @param {string} word_start
+* @returns {(string)[]}
+*/
+export function getWordsAutocomplete(word_start: string): (string)[];
+/**
 * @param {WasmPsbt} psbt
 * @param {WasmAccount} account
 * @returns {Promise<WasmTransactionDetailsData>}
 */
 export function createTransactionFromPsbt(psbt: WasmPsbt, account: WasmAccount): Promise<WasmTransactionDetailsData>;
 /**
-*/
-export function setPanicHook(): void;
-/**
 * @returns {number}
 */
 export function getDefaultStopGap(): number;
-/**
-* @param {string} word_start
-* @returns {(string)[]}
-*/
-export function getWordsAutocomplete(word_start: string): (string)[];
 /**
 */
 export enum WasmScriptType {
@@ -28,12 +28,66 @@ export enum WasmScriptType {
 }
 /**
 */
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
+}
+/**
+*/
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
+/**
+*/
 export enum WasmWordCount {
   Words12 = 0,
   Words15 = 1,
   Words18 = 2,
   Words21 = 3,
   Words24 = 4,
+}
+/**
+*/
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
+}
+/**
+*/
+export enum WasmWalletTransactionFlag {
+  Suspicious = 0,
+  Private = 1,
 }
 /**
 */
@@ -57,63 +111,9 @@ export enum WasmNetwork {
 }
 /**
 */
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
-/**
-*/
 export enum WasmSortOrder {
   Asc = 0,
   Desc = 1,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
-*/
-export enum WasmWalletTransactionFlag {
-  Suspicious = 0,
-  Private = 1,
-}
-/**
-*/
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
-}
-/**
-*/
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
 }
 export type WasmGatewayProvider = "Banxa" | "Ramp" | "MoonPay" | "Unsupported";
 
@@ -373,6 +373,8 @@ export interface WasmTransactionTime {
     last_seen: number | null;
 }
 
+export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
+
 export type WasmInviteNotificationType = "Newcomer" | "EmailIntegration" | "Unsupported";
 
 export type WasmExchangeRateOrTransactionTimeEnum = "ExchangeRate" | "TransactionTime";
@@ -399,8 +401,6 @@ export interface WasmAddressInfo {
     address: string;
     keychain: WasmKeychainKind;
 }
-
-export type WasmBitcoinUnit = "BTC" | "MBTC" | "SATS";
 
 /**
 */
@@ -778,10 +778,9 @@ export class WasmBlockchainClient {
 */
   getFeesEstimation(): Promise<Map<string, number>>;
 /**
-* Return mempool minimum fee in sat/vB instead of BTC/kB
-* @returns {Promise<number>}
+* @returns {Promise<WasmMinimumFees>}
 */
-  getMempoolMinFee(): Promise<number>;
+  getMininumFees(): Promise<WasmMinimumFees>;
 /**
 * @param {WasmAccount} account
 * @param {number | undefined} [stop_gap]
@@ -1037,6 +1036,17 @@ export class WasmMigratedWalletTransactions {
 /**
 */
   0: (WasmMigratedWalletTransactionData)[];
+}
+/**
+*/
+export class WasmMinimumFees {
+  free(): void;
+/**
+*/
+  MinimumBroadcastFee: number;
+/**
+*/
+  MinimumIncrementalFee: number;
 }
 /**
 */

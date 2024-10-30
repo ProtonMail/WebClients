@@ -6,12 +6,14 @@ import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import type { IconName } from '@proton/components';
 import { Icon, Tooltip } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';
 import { Price } from '../../../../atoms/Price';
 import type { TxBuilderHelper } from '../../../../hooks/useTxBuilder';
+import { convertAmount } from '../../../../utils';
 import { SecondaryAmount } from '../../SecondaryAmount';
 
 import './FeesModal.scss';
@@ -119,7 +121,7 @@ export const FeesModal = ({
                                     settingsBitcoinUnit={settings.BitcoinUnit}
                                     secondaryExchangeRate={accountExchangeRate}
                                     primaryExchangeRate={exchangeRate}
-                                    value={feesAtFeeRate}
+                                    value={convertAmount(Number(feesAtFeeRate), COMPUTE_BITCOIN_UNIT, exchangeRate)}
                                 />
                             </span>
                         </div>

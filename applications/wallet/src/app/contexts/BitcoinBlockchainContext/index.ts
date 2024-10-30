@@ -34,9 +34,6 @@ export interface BitcoinBlockchainContextValue {
     isSyncing: (walletId: string, accountId?: string) => boolean;
     getSyncingData: (walletId: string, accountId?: string) => SyncingMetadata | undefined;
 
-    feesEstimation: Map<string, number>;
-    loadingFeesEstimation: boolean;
-
     manageBitcoinAddressPool: ({
         wallet,
         account,
@@ -66,9 +63,6 @@ export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextVa
 
     isSyncing: () => false,
     getSyncingData: () => undefined,
-
-    feesEstimation: new Map(),
-    loadingFeesEstimation: false,
 
     manageBitcoinAddressPool: async () => {},
     bitcoinAddressHelperByWalletAccountId: {},
