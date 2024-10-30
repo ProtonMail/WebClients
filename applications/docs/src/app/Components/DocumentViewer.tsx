@@ -21,7 +21,7 @@ import type {
   EditorInitializationConfig,
   LiveCommentsTypeStatusChangeData,
 } from '@proton/docs-shared'
-import { CommentsEvent, EditorSystemMode, LiveCommentsEvent } from '@proton/docs-shared'
+import { CommentsEvent, EditorEvent, EditorSystemMode, LiveCommentsEvent } from '@proton/docs-shared'
 import { EditorFrame } from './EditorFrame'
 import { mergeRegister } from '@lexical/utils'
 import { useSignatureCheckFailedModal } from './Modals/SignatureCheckFailedModal'
@@ -35,6 +35,7 @@ import { useAuthentication } from '@proton/components'
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings'
 import WordCountOverlay from './WordCount/WordCountOverlay'
 import { useSuggestionsFeatureFlag } from '../Hooks/useSuggestionsFeatureFlag'
+import { useWelcomeSplashModal } from '../Apps/Public/WelcomeSplashModal/WelcomeSplashModal'
 
 type Props = {
   nodeMeta: NodeMeta | PublicNodeMeta
@@ -54,6 +55,8 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
   const [signatureFailedModal, openSignatureFailedModal] = useSignatureCheckFailedModal()
   const isSignatureFailedModalOpen = useRef(false)
   const [hasSignatureIssues, setHasSignatureIssues] = useState(false)
+
+  const [publicSplashModal, openPublicSplashModal] = useWelcomeSplashModal()
 
   const [genericAlertModal, showGenericAlertModal] = useGenericAlertModal()
 
@@ -125,6 +128,14 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
       setHasSignatureIssues(true)
     }, DocControllerEvent.SquashVerificationObjectionDecisionRequired)
   }, [application.eventBus])
+
+  useEffect(() => {
+    return application.eventBus.addEventCallback(() => {
+      if (isPublicViewer) {
+        openPublicSplashModal({})
+      }
+    }, EditorEvent.ToolbarClicked)
+  }, [application.eventBus, isPublicViewer, openPublicSplashModal])
 
   useEffect(() => {
     return application.eventBus.addEventCallback(() => {
@@ -333,6 +344,7 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
         onFrameReady={onFrameReady}
         systemMode={isPublicViewer ? EditorSystemMode.PublicView : EditorSystemMode.Edit}
       />
+      {publicSplashModal}
       {signatureFailedModal}
       {genericAlertModal}
     </div>

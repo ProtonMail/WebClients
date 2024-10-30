@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
-import { waitForUrlPasswordFromDocsClient } from '@proton/shared/lib/drive/sharing/docsBookmarking';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { partialPublicViewKey } from '../../hooks/util/usePartialPublicView';
@@ -77,11 +76,7 @@ export const useBookmarksActions = () => {
     ) => {
         // Saved in localStorage if coming from public Drive client; otherwise could be coming from Docs client
         const urlPassword = getUrlPassword({ readOnly: true });
-        if (!urlPassword) {
-            waitForUrlPasswordFromDocsClient(token, (data) => {
-                void performAddBookmark({ token, hideNotifications, urlPassword: data.urlPassword, abortSignal });
-            });
-        } else {
+        if (urlPassword) {
             await performAddBookmark({ token, hideNotifications, urlPassword, abortSignal });
         }
     };

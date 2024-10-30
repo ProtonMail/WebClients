@@ -16,6 +16,7 @@ import type { UserState } from '@lexical/yjs'
 import { GenerateUUID } from '@proton/docs-core'
 import type { ErrorInfo } from 'react'
 import type { WordCountInfoCollection } from '@proton/docs-shared'
+import type { EditorEvent, EditorEventData } from '@proton/docs-shared'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {
@@ -28,6 +29,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
 
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
     return this.invokeClientMethod('editorRequestsPropagationOfUpdate', [message, debugSource])
+  }
+
+  async editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void> {
+    return this.invokeClientMethod('editorReportingEvent', [event, data])
   }
 
   async getTypersExcludingSelf(threadId: string): Promise<string[]> {

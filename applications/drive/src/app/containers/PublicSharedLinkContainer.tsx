@@ -7,9 +7,9 @@ import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import * as storage from '@proton/shared/lib/helpers/storage';
+import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import { useSignupFlowModal } from '../components/modals/SignupFlowModal/SignupFlowModal';
@@ -105,7 +105,7 @@ function PublicShareLinkInitContainer() {
                 return;
             }
 
-            const w = handleDocsCustomPassword(customPassword);
+            const w = getNewWindow();
 
             openDocumentWindow({
                 mode: 'open-url',
