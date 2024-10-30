@@ -14,7 +14,7 @@ import { traceError } from '@proton/shared/lib/helpers/sentry'
 import type { ErrorInfo } from 'react'
 import { ApplicationEvent } from '../Application/ApplicationEvent'
 import { WordCountEvent } from './WordCountEvent'
-
+import type { EditorEvent, EditorEventData } from '@proton/docs-shared'
 /** Handle messages sent by the editor to the client */
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
   constructor(
@@ -25,6 +25,10 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {
     return this.docOrchestrator.editorRequestsPropagationOfUpdate(message, debugSource)
+  }
+
+  async editorReportingEvent(event: EditorEvent, data: EditorEventData[EditorEvent]): Promise<void> {
+    return this.docOrchestrator.editorReportingEvent(event, data)
   }
 
   async getTypersExcludingSelf(threadId: string): Promise<string[]> {

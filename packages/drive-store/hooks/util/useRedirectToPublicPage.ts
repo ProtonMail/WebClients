@@ -6,21 +6,27 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getSharedLink } from '../../store/_shares';
 import { deleteStoredUrlPassword, getUrlPassword } from '../../utils/url/password';
 
-const redirectToPublicKey = 'redirectToPublic';
-
+export const drivePublicRedirectionReasonKey = 'drivePublicRedirectionReason';
+export enum RedirectionReason {
+    ACCOUNT_SWITCH = 'accountSwitch',
+    SIGNIN = 'signin',
+}
 export const useRedirectToPublicPage = () => {
     const location = useLocation();
     const history = useHistory();
 
-    const needToRedirectToPublicPage = useMemo(() => {
+    const redirectionReason = useMemo(() => {
         const urlSearchParams = new URLSearchParams(location.search);
-        const redirectToPublic = urlSearchParams.get(redirectToPublicKey);
-        return redirectToPublic === 'true';
+        const redirectionReasonParams = urlSearchParams.get(drivePublicRedirectionReasonKey);
+        return redirectionReasonParams === RedirectionReason.ACCOUNT_SWITCH ||
+            redirectionReasonParams === RedirectionReason.SIGNIN
+            ? redirectionReasonParams
+            : undefined;
     }, [location]);
 
     const cleanupUrl = () => {
         const newUrlSearchParams = new URLSearchParams(location.search);
-        newUrlSearchParams.delete(redirectToPublicKey);
+        newUrlSearchParams.delete(drivePublicRedirectionReasonKey);
         newUrlSearchParams.delete('token');
         deleteStoredUrlPassword();
         history.replace({
@@ -43,5 +49,5 @@ export const useRedirectToPublicPage = () => {
         replaceUrl(url);
     };
 
-    return { needToRedirectToPublicPage, redirectToPublicPage, cleanupUrl };
+    return { redirectionReason, redirectToPublicPage, cleanupUrl };
 };

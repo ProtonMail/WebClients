@@ -83,6 +83,8 @@ import { INSERT_FILE_COMMAND } from '../Commands/Events'
 import { EditorUserMode } from '../EditorUserMode'
 import type { BlockType } from '../Plugins/BlockTypePlugin'
 import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTypePlugin'
+import { EditorEvent } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 
 const stepFontSize = (currentFontSize: string, step: number): string => {
   const currentFontIndex = FontSizes.indexOf(parseFloat(currentFontSize))
@@ -101,11 +103,13 @@ export default function DocumentEditorToolbar({
   onUserModeChange,
   hasEditAccess,
   isPreviewModeToolbar = false,
+  clientInvoker,
 }: {
   userMode: EditorUserMode
   onUserModeChange: (mode: EditorUserMode) => void
   hasEditAccess: boolean
   isPreviewModeToolbar?: boolean
+  clientInvoker?: EditorRequiresClientMethods
 }) {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
@@ -630,11 +634,16 @@ export default function DocumentEditorToolbar({
     },
   }
 
+  const onToolbarAnywhereClicked = useCallback(() => {
+    void clientInvoker?.editorReportingEvent(EditorEvent.ToolbarClicked, undefined)
+  }, [clientInvoker])
+
   const isEditMode = userMode === EditorUserMode.Edit
   const isPreviewMode = userMode === EditorUserMode.Preview
   const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   return (
+    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
     <div
       className="bg-norm z-1 flex flex-nowrap items-center gap-1.5 print:hidden"
       style={{
@@ -642,6 +651,8 @@ export default function DocumentEditorToolbar({
         gridRow: '1',
         scrollbarWidth: 'thin',
       }}
+      onClick={onToolbarAnywhereClicked}
+      role="presentation"
     >
       <div
         className="DocumentEditorToolbar bg-norm flex w-full flex-nowrap items-center gap-1.5 overflow-auto px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
@@ -1318,6 +1329,7 @@ export default function DocumentEditorToolbar({
           as={Button}
           shape="solid"
           type="button"
+          disabled={!hasEditAccess}
           className="ml-auto flex gap-2 py-2"
           style={{
             border: '0',

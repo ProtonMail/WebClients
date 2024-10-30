@@ -10,6 +10,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser'
 
 import { useDocsPublicToken } from '@proton/drive-store/hooks/drive/useDocsPublicToken'
 import { SignupFlowModal } from './SignupFlowModal'
+import { RedirectAction } from '@proton/drive-store/store/_documents'
 
 jest.mock('@proton/components/hooks/useApi')
 const mockedUseApi = jest.mocked(useApi)
@@ -24,6 +25,7 @@ const mockToken = 'mockToken'
 jest.mocked(useDocsPublicToken).mockReturnValue({
   token: mockToken,
   urlPassword: mockUrlPassword,
+  linkId: 'mockLinkId',
 })
 
 const ResizeObserverMock = jest.fn(() => ({
@@ -79,12 +81,28 @@ describe('SignupFlowModal', () => {
   })
 
   it('should open the modal and delete the password from localStorage on mount', () => {
-    render(<SignupFlowModal open onClose={() => {}} onExit={() => {}} />)
+    render(
+      <SignupFlowModal
+        redirectAction={RedirectAction.MakeCopy}
+        urlPassword={mockUrlPassword}
+        open
+        onClose={() => {}}
+        onExit={() => {}}
+      />,
+    )
     expect(screen.getByTestId('public-share-signup-modal-email')).toBeInTheDocument()
   })
 
   it('should handle email input change and validation', () => {
-    render(<SignupFlowModal open onClose={() => {}} onExit={() => {}} />)
+    render(
+      <SignupFlowModal
+        redirectAction={RedirectAction.MakeCopy}
+        urlPassword={mockUrlPassword}
+        open
+        onClose={() => {}}
+        onExit={() => {}}
+      />,
+    )
     const emailInput = screen.getByTestId<HTMLInputElement>('public-share-signup-modal-email')
 
     fireEvent.change(emailInput, { target: { value: 'invalid-email' } })
@@ -101,7 +119,15 @@ describe('SignupFlowModal', () => {
     )
     when(mockedReplaceUrl).expectCalledWith(expectedReplaceUrl)
 
-    render(<SignupFlowModal open onClose={() => {}} onExit={() => {}} />)
+    render(
+      <SignupFlowModal
+        redirectAction={RedirectAction.MakeCopy}
+        urlPassword={mockUrlPassword}
+        open
+        onClose={() => {}}
+        onExit={() => {}}
+      />,
+    )
     const emailInput = screen.getByTestId('public-share-signup-modal-email')
     const submitButton = screen.getByText('Continue')
 
@@ -118,7 +144,15 @@ describe('SignupFlowModal', () => {
     )
     when(mockedReplaceUrl).expectCalledWith(expectedReplaceUrl)
 
-    render(<SignupFlowModal open onClose={() => {}} onExit={() => {}} />)
+    render(
+      <SignupFlowModal
+        redirectAction={RedirectAction.MakeCopy}
+        urlPassword={mockUrlPassword}
+        open
+        onClose={() => {}}
+        onExit={() => {}}
+      />,
+    )
     const emailInput = screen.getByTestId('public-share-signup-modal-email')
     const submitButton = screen.getByText('Continue')
 
@@ -132,7 +166,15 @@ describe('SignupFlowModal', () => {
 
     mockApi.mockRejectedValue({ data: { Code: '123456', Error: 'Some error occurred' } })
 
-    render(<SignupFlowModal open onClose={() => {}} onExit={() => {}} />)
+    render(
+      <SignupFlowModal
+        redirectAction={RedirectAction.MakeCopy}
+        urlPassword={mockUrlPassword}
+        open
+        onClose={() => {}}
+        onExit={() => {}}
+      />,
+    )
     const emailInput = screen.getByTestId('public-share-signup-modal-email')
     const submitButton = screen.getByText('Continue')
 

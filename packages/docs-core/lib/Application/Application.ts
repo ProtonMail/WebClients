@@ -17,6 +17,7 @@ import type { PublicDocLoader } from '../Services/DocumentLoader/PublicDocLoader
 import type { HttpHeaders } from '../Api/DocsApi'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { UnleashClient } from '@proton/unleash'
+import type { AnyDocControllerInterface } from '../Controller/Document/AnyDocControllerInterface'
 
 declare const window: CustomWindow
 
@@ -59,6 +60,10 @@ export class Application implements ApplicationInterface {
 
   public get logger(): LoggerInterface {
     return this.deps.get<LoggerInterface>(App_TYPES.Logger)
+  }
+
+  public get docController(): AnyDocControllerInterface {
+    return this.docLoader.getDocController()
   }
 
   public get docLoader(): DocLoaderInterface {
