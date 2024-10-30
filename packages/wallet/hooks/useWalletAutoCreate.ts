@@ -20,9 +20,10 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 
-import { WalletType } from '..';
+import { WalletType } from '../types/api';
 import { encryptWalletData } from '../utils/crypto';
 import { getDefaultWalletName } from '../utils/wallet';
+import { isWasmSupported, loadWasmModule } from '../utils/wasm';
 
 const DEFAULT_ACCOUNT_LABEL = 'Primary Account';
 
@@ -198,7 +199,7 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
 
     const shouldCreateWallet = async () => {
         try {
-            if (!higherLevelPilot) {
+            if (!higherLevelPilot || !isWasmSupported()) {
                 return false;
             }
 
@@ -214,7 +215,7 @@ export const useWalletAutoCreate = ({ higherLevelPilot = true }: { higherLevelPi
             }
 
             // lazy load wasm here
-            wasm = await import('@proton/andromeda');
+            wasm = await loadWasmModule();
 
             const walletApi = await getWalletApi();
             userWalletSettings = (await walletApi.settings.getUserSettings())[0];
