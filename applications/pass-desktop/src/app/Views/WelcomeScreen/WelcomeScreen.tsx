@@ -19,9 +19,9 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import protonPassIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 
-import './OnboardingLobby.scss';
+import './WelcomeScreen.scss';
 
-export const OnboardingLobby: FC = () => {
+export const WelcomeScreen: FC = () => {
     const authService = useAuthService();
     const online = useConnectivity();
     const { SSO_URL: host } = usePassConfig();
