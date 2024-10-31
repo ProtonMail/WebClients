@@ -4,11 +4,12 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
-import { Prompt, type PromptProps, useConfig } from '@proton/components';
+import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
-import { useErrorHandler } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import { useLoading } from '@proton/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useLoading from '@proton/hooks/useLoading';
 import { SCOPE_REAUTH_SSO, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -17,7 +18,7 @@ import { API_CODES, APPS } from '@proton/shared/lib/constants';
 import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
-import type { OwnAuthModalProps } from './interface';
+import type { OwnAuthModalProps, SSOAuthModalResult } from './interface';
 
 type State =
     | {
@@ -35,8 +36,10 @@ type State =
 const initialState = { type: 'init' } as const;
 
 export interface SSOAuthModalProps
-    extends OwnAuthModalProps,
-        Omit<PromptProps, 'title' | 'buttons' | 'children' | 'onError'> {}
+    extends Omit<OwnAuthModalProps, 'onSuccess'>,
+        Omit<PromptProps, 'title' | 'buttons' | 'children' | 'onError'> {
+    onSuccess?: (data: SSOAuthModalResult) => Promise<void> | void;
+}
 
 const SSOAuthModal = ({ onCancel, onClose, onSuccess, onError, config, ...rest }: SSOAuthModalProps) => {
     const [submitting] = useLoading();
@@ -95,7 +98,7 @@ const SSOAuthModal = ({ onCancel, onClose, onSuccess, onError, config, ...rest }
                 },
             });
             // We want to just keep the modal open until the consumer's promise is finished. Not interested in errors.
-            await onSuccess?.({ type: 'sso', response })?.catch(noop);
+            await onSuccess?.({ type: 'sso', response, credentials: { ssoReauthToken: token } })?.catch(noop);
             onClose?.();
         } catch (error) {
             if (error instanceof ExternalSSOError) {

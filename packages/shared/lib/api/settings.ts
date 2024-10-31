@@ -184,9 +184,10 @@ export const disableTotp = () => ({
     method: 'put',
 });
 
-export const disable2FA = () => ({
+export const disable2FA = (data: { PersistPasswordScope?: boolean } | undefined) => ({
     url: 'core/v4/settings/2fa',
     method: 'put',
+    data,
 });
 
 export const updateHideDrawer = (HideSidePanel: DRAWER_VISIBILITY) => ({

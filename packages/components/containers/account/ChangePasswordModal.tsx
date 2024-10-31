@@ -513,6 +513,7 @@ const ChangePasswordModal = ({
     if (!authed) {
         return (
             <AuthModal
+                scope="password"
                 config={unlockPasswordChanges()}
                 {...rest}
                 onCancel={onClose}

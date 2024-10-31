@@ -622,7 +622,6 @@ export { default as ViewModeToggle } from './containers/layouts/ViewModeToggle';
 export { default as AbuseModal } from './containers/login/AbuseModal';
 export { default as FooterDetails } from './containers/login/FooterDetails';
 export { default as MinimalLoginContainer } from './containers/login/MinimalLoginContainer';
-export { default as UnlockModal } from './containers/login/UnlockModal';
 export { default as LogsSection } from './containers/logs/LogsSection';
 export { default as LogsTable } from './containers/logs/LogsTable';
 export { default as WipeLogsButton } from './containers/logs/WipeLogsButton';
@@ -731,6 +730,7 @@ export { OtherMailPreferencesSection } from './containers/otherMailPreferences/O
 export { default as IndexSection } from './containers/overview/IndexSection';
 export { default as SummarySection } from './containers/overview/SummarySection';
 export { default as AuthModal } from './containers/password/AuthModal';
+export type { AuthModalResult } from './containers/password/AuthModal';
 export { default as Alert3ds } from './containers/payments/Alert3ds';
 export { default as CreditsSection } from './containers/payments/CreditsSection';
 export { default as CurrencySelector } from './containers/payments/CurrencySelector';

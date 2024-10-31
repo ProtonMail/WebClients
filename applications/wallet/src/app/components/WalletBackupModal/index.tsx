@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
-import { Prompt, UnlockModal } from '@proton/components';
+import { AuthModal, Prompt } from '@proton/components';
+import { queryUnlock } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import accessKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';
@@ -35,7 +36,13 @@ export const WalletBackupModal = ({ apiWalletData, theme, ...modalProps }: Props
 
     if (!hasPassword) {
         return (
-            <UnlockModal open={modalProps.open} onCancel={modalProps.onClose} onSuccess={() => setHasPassword(true)} />
+            <AuthModal
+                scope="locked"
+                config={queryUnlock()}
+                open={modalProps.open}
+                onCancel={modalProps.onClose}
+                onSuccess={() => setHasPassword(true)}
+            />
         );
     }
 

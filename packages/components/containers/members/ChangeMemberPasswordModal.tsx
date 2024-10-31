@@ -36,7 +36,6 @@ import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { generateKeySaltAndPassphrase, getDecryptedUserKeys, getIsPasswordless } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
-import type { Credentials } from '@proton/shared/lib/srp';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
@@ -55,7 +54,7 @@ interface Props extends ModalProps {
 const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const [data, setData] = useState<{ UID: string; credentials: Credentials }>();
+    const [data, setData] = useState<{ UID: string }>();
     const authentication = useAuthentication();
 
     const api = useApi();
@@ -105,24 +104,19 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
     if (!data) {
         return (
             <AuthModal
+                scope="password"
                 config={authMember(member.ID, { Unlock: true })}
                 {...rest}
                 onCancel={onClose}
                 onSuccess={async (result) => {
-                    if (result.type !== 'srp') {
-                        return;
-                    }
-                    const { response, credentials } = result;
+                    const { response } = result;
 
                     const data = await response.json();
-
                     const UID = data?.UID;
-
                     if (!UID) {
                         throw new Error('Failed to get auth data');
                     }
-
-                    setData({ UID, credentials });
+                    setData({ UID });
                 }}
             />
         );
@@ -159,7 +153,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         );
     };
 
-    const changeMemberPassword = async ({ memberApi, credentials }: { memberApi: Api; credentials: Credentials }) => {
+    const changeMemberPassword = async ({ memberApi }: { memberApi: Api }) => {
         const keyPassword = authentication.getPassword();
         const userAsMember = await memberApi<{ User: User }>(getUser()).then(({ User }) => formatUser(User));
         const organizationKey = await getOrganizationKey();
@@ -199,11 +193,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         });
 
         if (member['2faStatus']) {
-            await srpVerify({
-                api: memberApi,
-                credentials,
-                config: disable2FA(),
-            });
+            await memberApi(disable2FA({ PersistPasswordScope: true }));
         }
 
         await srpVerify({
@@ -225,9 +215,9 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
 
             setLoading(true);
 
-            const { UID, credentials } = data;
+            const { UID } = data;
             const memberApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
-            await changeMemberPassword({ memberApi, credentials });
+            await changeMemberPassword({ memberApi });
             await call();
 
             notifySuccess();

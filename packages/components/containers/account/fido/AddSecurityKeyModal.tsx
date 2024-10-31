@@ -118,6 +118,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     if (!authed) {
         return (
             <AuthModal
+                scope="password"
                 config={unlockPasswordChanges()}
                 {...rest}
                 onCancel={onClose}

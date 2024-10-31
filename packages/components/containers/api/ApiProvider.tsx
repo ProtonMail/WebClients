@@ -10,6 +10,7 @@ import type {
     ApiVerificationEvent,
     ApiWithListener,
 } from '@proton/shared/lib/api/createApi';
+import { queryUnlock } from '@proton/shared/lib/api/user';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
 import { UNPAID_STATE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -32,25 +33,14 @@ const HumanVerificationModal = lazy(
         )
 );
 
-const AuthModalContainer = lazy(
+const AuthModal = lazy(
     () =>
         import(
             /* webpackChunkName: "auth-modal" */
             /* webpackMode: "lazy" */
             /* webpackFetchPriority: "low" */
             /* webpackPrefetch: true */
-            '../password/AuthModalContainer'
-        )
-);
-
-const UnlockModal = lazy(
-    () =>
-        import(
-            /* webpackChunkName: "unlock-modal" */
-            /* webpackMode: "lazy" */
-            /* webpackFetchPriority: "low" */
-            /* webpackPrefetch: true */
-            '../login/UnlockModal'
+            '../password/AuthModal'
         )
 );
 
@@ -153,12 +143,14 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
                     )}
                     {unlock && (
                         <Suspense fallback={null}>
-                            <UnlockModal
+                            <AuthModal
+                                scope="locked"
                                 open={unlock.open}
                                 onCancel={() => {
                                     unlock.payload.error.cancel = true;
                                     unlock.payload.reject(unlock.payload.error);
                                 }}
+                                config={queryUnlock()}
                                 onSuccess={() => {
                                     if (!api) {
                                         unlock.payload.reject(unlock.payload.error);
@@ -208,7 +200,8 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
                     )}
                     {reauth && (
                         <Suspense fallback={null}>
-                            <AuthModalContainer
+                            <AuthModal
+                                scope="password"
                                 open={reauth.open}
                                 config={reauth.payload.options}
                                 onCancel={() => {
