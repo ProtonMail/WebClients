@@ -1,3 +1,12 @@
+### Version 1.24.1
+
+-   Add SSO device verification support
+-   Improve Safari Lockdown Mode / Edge Enhanced Security Mode detection
+-   Properly detect missing WASM browser support
+-   Fix onboarding local state not accounting for multi-account
+-   Fix locked state edge-case blocking user data revalidation
+-   Fix unsupported `indexedDB` API usage in older firefox versions
+
 ### Version 1.24.0
 
 -   Added in-app account switching capabilities
