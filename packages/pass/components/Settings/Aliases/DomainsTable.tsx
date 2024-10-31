@@ -31,7 +31,7 @@ export const DomainsTable: FC<Props> = ({ domains, handleRemoveDomainClick, open
 
     return (
         <>
-            <Table responsive="cards" hasActions>
+            <Table responsive="cards" hasActions borderWeak>
                 <TableHeader>
                     <TableRow>
                         <TableHeaderCell className="w-1/2">{c('Title').t`Domain`}</TableHeaderCell>
