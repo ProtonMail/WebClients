@@ -1,5 +1,6 @@
 export * from './contactEmails';
 export * from './contacts';
+export * from './contacts/contactSlice';
 export * from './counts';
 export * from './filters';
 export * from './forwarding';

@@ -3,14 +3,13 @@ import { useEffect, useMemo, useState } from 'react';
 
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
-import { getContact } from '@proton/shared/lib/api/contacts';
+import { useGetContact } from '@proton/mail/contacts/contactHooks';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';
-import type { Contact, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
@@ -29,8 +28,8 @@ type Props = ContactMergePreviewModalProps & ModalProps;
 
 const ContactMergePreviewModal = ({ beMergedModel, beDeletedModel, updateModel, ...rest }: Props) => {
     const { call } = useEventManager();
-    const api = useApi();
     const [userKeysList] = useUserKeys();
+    const getContact = useGetContact();
     const { privateKeys, publicKeys } = useMemo(() => splitKeys(userKeysList), [userKeysList]);
 
     const [loading, withLoading] = useLoading(true);
@@ -59,7 +58,7 @@ const ContactMergePreviewModal = ({ beMergedModel, beDeletedModel, updateModel, 
         const mergeContacts = async () => {
             try {
                 const requests = beMergedIDs.map((ID: string) => async () => {
-                    const { Contact } = await api<{ Contact: Contact }>(getContact(ID));
+                    const Contact = await getContact(ID);
                     const { vCardContact, errors } = await prepareVCardContact(Contact, { privateKeys, publicKeys });
                     if (errors.length) {
                         setModel({ ...model, errorOnLoad: true });

@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 
-import ContactProvider from '@proton/components/containers/contacts/ContactProvider';
 import EventNotices from '@proton/components/containers/eventManager/EventNotices';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -43,24 +42,22 @@ const StandardPrivateApp = ({
 
     return (
         <PaymentSwitcher loader={loader}>
-            <ContactProvider>
-                <KeyTransparencyManager appName={APP_NAME}>
-                    <SessionRecoveryLocalStorageManager>
-                        <EventNotices />
-                        <ThemeInjector />
-                        <DensityInjector />
-                        <NotificationsChildren />
-                        {!noModals && <ModalsChildren />}
-                        <KeyBackgroundManager
-                            hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                            hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                            hasMemberKeyMigration={hasMemberKeyMigration}
-                        />
-                        <StorageListener />
-                        <ForceRefreshProvider>{children}</ForceRefreshProvider>
-                    </SessionRecoveryLocalStorageManager>
-                </KeyTransparencyManager>
-            </ContactProvider>
+            <KeyTransparencyManager appName={APP_NAME}>
+                <SessionRecoveryLocalStorageManager>
+                    <EventNotices />
+                    <ThemeInjector />
+                    <DensityInjector />
+                    <NotificationsChildren />
+                    {!noModals && <ModalsChildren />}
+                    <KeyBackgroundManager
+                        hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                        hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                        hasMemberKeyMigration={hasMemberKeyMigration}
+                    />
+                    <StorageListener />
+                    <ForceRefreshProvider>{children}</ForceRefreshProvider>
+                </SessionRecoveryLocalStorageManager>
+            </KeyTransparencyManager>
         </PaymentSwitcher>
     );
 };
