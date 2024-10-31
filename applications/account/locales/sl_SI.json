@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -1622,6 +1622,14 @@
     "BF2024: Action (top button in header)": {
       "Black Friday": [
         "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "1 user": [
+        "1 uporabnik"
+      ],
+      "3 TB": [
+        "3 TB"
       ]
     },
     "Billing cycle": {
@@ -4773,9 +4781,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Potrdilo ${ name } ni bilo najdeno ali je že preklicano."
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Imena in priimka ni mogoče hkrati odznačiti"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5190,9 +5195,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Dodaj varnostni ključ"
-      ],
       "Delete key": [
         "Izbriši ključ"
       ]
@@ -5272,9 +5274,6 @@
       ],
       "Register your security key": [
         "Registrirajte svoj varnostni ključ."
-      ],
-      "Registered security keys": [
-        "Registrirani varnostni ključi"
       ],
       "Security key registered": [
         "Varnostni ključ je registriran."
@@ -9604,6 +9603,9 @@
       "I understand the risk": [
         "Razumem tveganje"
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "IF": [
         "ČE"
       ],
@@ -12694,9 +12696,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "za začetek uporabe ${ PASS_APP_NAME } na vašem telefonu"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Odklenite premijske funkcije ${ PASS_APP_NAME } z nadgradnjo"
-      ],
       "Updating your account": [
         "Posodabljanje vašega računa"
       ],
@@ -14243,6 +14242,14 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Deny": [
+        "Zavrni"
+      ],
+      "Grant": [
+        "Odobri"
       ]
     },
     "State": {
@@ -16935,9 +16942,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Prijavite se za brezplačen račun ${ BRAND_NAME } in si zagotovite svoje mesto. Prej ko se prijavite, prej boste dobili dostop do ${ appName }. Po prijavi lahko nadgradite tudi na naš ekskluzivni paket Visionary, da preskočite čakalni seznam in takoj začnete uporabljati ${ appName }."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Odklenite premijske funkcije ${ appName } z nadgradnjo"
       ]
     },
     "wallet_signup_2024:Info": {

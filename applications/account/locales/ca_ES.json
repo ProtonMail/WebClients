@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -5019,9 +5019,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "No s'ha trobat el certificat ${ name } o ja s'ha revocat"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "El nom i els cognoms no es poden desmarcar a la vegada"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5449,9 +5446,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Afegeix una clau de seguretat"
-      ],
       "Delete key": [
         "Elimina la clau"
       ]
@@ -5531,9 +5525,6 @@
       ],
       "Register your security key": [
         "Registreu la vostra clau de seguretat"
-      ],
-      "Registered security keys": [
-        "Claus de seguretat registrades"
       ],
       "Security key registered": [
         "S'ha registrat la clau de seguretat"
@@ -13252,9 +13243,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "per començar a utilitzar ${ PASS_APP_NAME } al vostre telèfon."
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Desbloquegeu característiques prèmium de ${ PASS_APP_NAME } millorant la subscripció"
-      ],
       "Updating your account": [
         "S'està actualitzant el compte"
       ],
@@ -13973,7 +13961,7 @@
         "Verifica"
       ],
       "Verify your recovery email address": [
-        "Verifiqueu la vostra adreça de correu electrònic de recuperació"
+        "Verifiqueu l'adreça de correu electrònic de recuperació"
       ],
       "Verify your recovery phone number": [
         "Verifiqueu el vostre número de telèfon de recuperació"
@@ -14664,6 +14652,9 @@
     "Signup: Info": {
       "Apps for all devices": [
         "Aplicacions per a tots els dispositius"
+      ],
+      "Built-in encryption": [
+        "Xifratge integrat"
       ],
       "Email aliases": [
         "Àlies de correu electrònic"
@@ -15915,6 +15906,9 @@
       "Preferences updated": [
         "S'han actualitzat les preferències."
       ],
+      "Resent invitation": [
+        "Reenvia la invitació"
+      ],
       "Status updated": [
         "S'ha actualitzat l'estat"
       ]
@@ -16764,6 +16758,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Augmenteu la vostra privacitat amb més adreces"
+      ],
+      "Integrations": [
+        "Integracions"
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
@@ -18012,9 +18009,6 @@
       ],
       "Join ${ appName } early access!": [
         "Uniu-vos a l'accés anticipat de ${ appName }!"
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Desbloquegeu característiques prèmium de ${ appName } millorant la subscripció"
       ],
       "You're Invited.": [
         "Heu estat convidat."

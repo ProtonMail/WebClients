@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -5153,8 +5153,8 @@
       "Certificate ${ name } not found or already revoked": [
         "Certificatul ${ name } nu a fost găsit sau a fost deja anulat."
       ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Numele și prenumele nu pot fi debifate simultan."
+      "Display name cannot be empty": [
+        "Numele afișat nu poate fi gol."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5622,9 +5622,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Adăugare cheie de securitate"
-      ],
       "Delete key": [
         "Ștergere cheie"
       ]
@@ -5704,9 +5701,6 @@
       ],
       "Register your security key": [
         "Înregistrați cheia de securitate"
-      ],
-      "Registered security keys": [
-        "Chei de securitate înregistrate"
       ],
       "Security key registered": [
         "Cheia de securitate înregistrată"
@@ -13744,9 +13738,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "pentru a începe să utilizați ${ PASS_APP_NAME } pe telefon"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Deblocați funcțiile premium ${ PASS_APP_NAME } modificând abonamentul"
-      ],
       "Updating your account": [
         "Se actualizează contul"
       ],
@@ -18936,9 +18927,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Înscrieți-vă pentru un cont gratuit ${ BRAND_NAME } pentru a vă asigura locul. Cu cât vă înregistrați mai devreme, cu atât mai devreme veți avea acces la ${ appName }. După înregistrare, puteți și să treceți la planul nostru exclusiv Visionary pentru a sări peste lista de așteptare și pentru a începe să utilizați ${ appName } imediat."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Deblocați funcțiile premium ${ appName } modificând abonamentul"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Utilizatorii planului Visionary și prietenii acestora invitați pot partaja accesul timpuriu la aplicație cu alții. Invitați-vă prietenii să încerce ${ appName } gratuit!"

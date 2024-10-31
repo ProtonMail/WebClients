@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -4309,9 +4309,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "${ name } प्रमाण नहीं मिला या पहले से रद्द है"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "पहला नाम और अंतिम नाम एक ही समय में अनियंत्रित नहीं किया जा सकता"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4639,9 +4636,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "सुरक्षा चाबी जोड़े"
-      ],
       "Delete key": [
         "चाबी मिटाएं"
       ]
@@ -4715,9 +4709,6 @@
       ],
       "Register your security key": [
         "अपना सुरक्षा चाबी रजिस्टर करें"
-      ],
-      "Registered security keys": [
-        "रजिस्टर किए सुरक्षा चाबियां"
       ],
       "Security key registered": [
         "सुरक्षा चाबी रजिस्टर किया गया"
@@ -11253,9 +11244,6 @@
       "Setting up your organization": [
         "अपना संगठन स्थापित करना"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "अपग्रेड करके ${ PASS_APP_NAME } प्रीमियम सुविधाओं को अनलॉक करें"
-      ],
       "Verifying your payment": [
         "आपका भुगतान सत्यापित कर रहे"
       ],
@@ -14639,9 +14627,6 @@
     "wallet_signup_2024: Info": {
       "Get started": [
         "शुरू करें"
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "अपग्रेड करके ${ appName } प्रीमियम सुविधाओं को अनलॉक करें"
       ]
     },
     "wallet_signup_2024:Info": {
