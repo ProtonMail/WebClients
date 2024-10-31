@@ -3174,11 +3174,6 @@
         "予定をインポートするためにはアクティブな個人カレンダーが必要です"
       ]
     },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "姓と名のチェックを同時にはずすことはできません"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "画像が選択されていません"
@@ -3339,6 +3334,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime アカウントはファミリープランに参加できません。"
       ],
+      "Manage addresses": [
+        "アドレスの管理"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "申し訳ありませんが、現在あなたのプランは変更できません。"
       ],
@@ -3484,6 +3482,17 @@
       ],
       "Very small": [
         "極小"
+      ]
+    },
+    "Google Meet": {
+      "Join Google Meet": [
+        "Google Meet に参加"
+      ],
+      "Joining instructions": [
+        "参加手順"
+      ],
+      "Meeting link:": [
+        "ミーティングリンク:"
       ]
     },
     "Group": {
@@ -4993,6 +5002,9 @@
       ],
       "Colors": [
         "色"
+      ],
+      "Company name": [
+        "会社名"
       ],
       "Confirm password": [
         "パスワードの確認"
@@ -6794,11 +6806,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "銀行振込"
+      ],
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "会社名を使用する"
+      ],
+      "Use personal name": [
+        "個人名を使用する"
       ]
     },
     "Payments": {
@@ -9077,6 +9100,17 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Zoom Meeting": {
+      "Join Zoom Meeting": [
+        "Zoom ミーティングに参加"
+      ],
+      "Meeting ID:": [
+        "ミーティング ID:"
+      ],
+      "Passcode: ${ password }": [
+        "パスコード: ${ password }"
       ]
     }
   }
