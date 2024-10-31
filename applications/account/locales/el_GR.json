@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -4953,9 +4953,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Το πιστοποιητικό ${ name } είτε δεν βρέθηκε είτε ανακλήθηκε ήδη"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Το όνομα και το επώνυμο δεν μπορούν να είναι απο-επιλεγμένα και τα δύο ταυτόχρονα"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5410,9 +5407,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Προσθήκη κλειδιού ασφαλείας"
-      ],
       "Delete key": [
         "Διαγραφή κλειδιού"
       ]
@@ -5492,9 +5486,6 @@
       ],
       "Register your security key": [
         "Καταχωρήστε το κλειδί ασφαλείας σας"
-      ],
-      "Registered security keys": [
-        "Καταχωρημένα κλειδιά ασφαλείας"
       ],
       "Security key registered": [
         "Το κλειδί ασφαλείας καταχωρήθηκε"
@@ -13289,9 +13280,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "για να ξεκινήσετε να χρησιμοποιείτε το ${ PASS_APP_NAME } στο τηλέφωνό σας"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Ξεκλειδώστε premium χαρακτηριστικά του ${ PASS_APP_NAME } με αναβάθμιση"
-      ],
       "Updating your account": [
         "Πραγματοποιείται ενημέρωση του λογαριασμού σας"
       ],
@@ -18103,9 +18091,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Εγγραφείτε για έναν δωρεάν λογαριασμό ${ BRAND_NAME } για να εξασφαλίσετε τη θέση σας. Όσο νωρίτερα εγγραφείτε, τόσο πιο γρήγορα θα αποκτήσετε πρόσβαση στο ${ appName }. Μετά την εγγραφή, μπορείτε επίσης να κάνετε αναβάθμιση στο αποκλειστικό μας πλάνο Visionary για να παραλείψετε τη λίστα αναμονής και να αρχίσετε να χρησιμοποιείτε το ${ appName } αμέσως."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Ξεκλειδώστε premium χαρακτηριστικά του ${ appName } με αναβάθμιση"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Οι Visionary χρήστες και οι προσκεκλημένοι φίλοι τους μπορούν να μοιραστούν την πρώιμη πρόσβαση με άλλους, να προσκαλέσουν τους φίλους σας να δοκιμάσουν την ${ appName } δωρεάν!"

@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -5173,8 +5173,8 @@
       "Certificate ${ name } not found or already revoked": [
         "Certifikát ${ name } nebyl nalezen nebo byl již odvolán"
       ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Je potřeba vybrat křestní jméno a nebo příjmení"
+      "Display name cannot be empty": [
+        "Zobrazované jméno nesmí být prázdné"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5649,9 +5649,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Přidat bezpečnostní klíč"
-      ],
       "Delete key": [
         "Odstranit klíč"
       ]
@@ -5731,9 +5728,6 @@
       ],
       "Register your security key": [
         "Zaregistrujte svůj bezpečnostní klíč"
-      ],
-      "Registered security keys": [
-        "Registrované bezpečnostní klíče"
       ],
       "Security key registered": [
         "Bezpečnostní klíč registrován"
@@ -13890,9 +13884,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "a začněte používat ${ PASS_APP_NAME } na vašem telefonu"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Odemkněte prémiové funkce ${ PASS_APP_NAME } navýšením tarifu"
-      ],
       "Updating your account": [
         "Aktualizace vašeho účtu"
       ],
@@ -19156,9 +19147,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Zaregistrujte si bezplatný účet ${ BRAND_NAME } a zajistěte si své místo. Čím dříve se zaregistrujete, tím dříve získáte přístup k ${ appName }. Po registraci můžete také provést navýšení na náš exkluzivní tarif Visionary, přeskočit tím čekací listinu a začít používat ${ appName } ihned."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Odemkněte prémiové funkce ${ appName } navýšením tarifu"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Uživatelé Visionary a jimi pozvaní přátelé mohou sdílet předběžný přístup s ostatními, pozvěte své přátele, aby si bezplatně vyzkoušeli ${ appName }!"

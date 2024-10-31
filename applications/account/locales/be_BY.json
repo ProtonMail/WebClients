@@ -70,11 +70,11 @@
       "Accept": [
         "Прыняць"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -407,7 +407,7 @@
         "Адхіліць змены"
       ],
       "Domain name": [
-        "Назва дамена"
+        "Даменнае імя"
       ],
       "Don't show again": [
         "Больш не паказваць"
@@ -5168,8 +5168,8 @@
       "Certificate ${ name } not found or already revoked": [
         "Сертыфікат ${ name } не знойдзены або ўжо быў адкліканы"
       ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Немагчыма адначасова зняць пазнаку з імя і прозвішча"
+      "Display name cannot be empty": [
+        "Бачнае імя не можа быць пустым"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5644,9 +5644,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Дадаць ключ бяспекі"
-      ],
       "Delete key": [
         "Выдалiць ключ"
       ]
@@ -5726,9 +5723,6 @@
       ],
       "Register your security key": [
         "Рэгістрацыя вашага ключа бяспекі"
-      ],
-      "Registered security keys": [
-        "Зарэгістраваныя ключы бяспекі"
       ],
       "Security key registered": [
         "Ключ бяспекі зарэгістраваны"
@@ -7702,6 +7696,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Калі вы ніколі раней не выкарыстоўвалі двухфактарную аўтэнтыфікацыю, то мы настойліва рэкамендуем вам ${ guideButton }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Калі вы страціце свой пароль і вам неабходна будзе аднавіць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountRecovery }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Калі вы страціце свой пароль і вам неабходна будзе аднавіць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountAndRecovery }. У адваротным выпадку вы не зможаце атрымаць доступ да электроннай пошты, кантактаў або файлаў."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
@@ -13852,9 +13852,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "каб пачаць выкарыстоўваць ${ PASS_APP_NAME } на тэлефоне"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Палепшыце сваю падпіску, каб разблакіраваць прэміяльныя функцыі ${ PASS_APP_NAME }"
-      ],
       "Updating your account": [
         "Абнаўленне вашага ўліковага запісу"
       ],
@@ -14141,6 +14138,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку зрабіць спісанне з вашага рахунка, а вашаму банку - адпаведна правесці гэту аперацыю. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
+      ],
       "Street address, postal code, and city": [
         "Адрас вуліцы, паштовы індэкс і горад"
       ]
@@ -14656,10 +14656,10 @@
         "для аўтаматычнага аднаўлення вашых даных пры ўваходзе ў давераную прыладу"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Увядзіце праверачны код адпраўлены на электронную пошту ${ boldEmail } для пацвярджэння таго, што яна належыць іменна вам."
+        "Увядзіце праверачны код адпраўлены на электронную пошту ${ boldEmail } для пацвярджэння таго, што яна належыць менавіта вам."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
-        "Увядзіце праверачны код адпраўлены на ваш нумар тэлефона ${ boldPhoneNumber } для пацвярджэння таго, што ён належыць іменна вам."
+        "Увядзіце праверачны код адпраўлены на ваш нумар тэлефона ${ boldPhoneNumber } для пацвярджэння таго, што ён належыць менавіта вам."
       ],
       "to recover your account and data if you're ever locked out": [
         "для аднаўлення вашага ўліковага запісу і даных пры магчымай блакіроўцы"
@@ -15015,7 +15015,7 @@
         "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
       ],
       "Password reset request approved (${ user.Email }).": [
-        "Запыт на скіданне пароля пацверджаны (${ user.Email })."
+        "Запыт на скіданне пароля ўхвалены (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Перайдзіце на прыладу, якая знаходзіцца ў сістэме (з якой быў ініцыяваны запыт), каб змяніць пароль."
@@ -15224,7 +15224,7 @@
     },
     "session_recovery:initiation:link": {
       "in the Account and password section": [
-        "раздзела ўліковы запіс і пароль"
+        "раздзела Ўліковы запіс і пароль"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15689,7 +15689,7 @@
         "${ n } карыстальнікаў запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу."
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
-        "Карыстальнікі **SSO (дзе пастаўшчыком пасведчанняў з'яўляецеся вы) будуць выдалены** і вам неабходна будзе стварыць іх уручную, каб дадаць іх назад у вашу арганізацыю."
+        "**Карыстальнікі SSO (дзе пастаўшчыком пасведчанняў з'яўляецеся вы) будуць выдалены** і вам неабходна будзе стварыць іх уручную, каб дадаць іх назад у вашу арганізацыю."
       ],
       "Access denied": [
         "У доступе адмоўлена"
@@ -15701,7 +15701,7 @@
         "дадалі вас у сваю арганізацыю ${ BRAND_NAME }."
       ],
       "Approve": [
-        "Зацвердзіць"
+        "Ухваліць"
       ],
       "Approve or deny it now": [
         "Ухваліць або адхіліць яго"
@@ -15860,13 +15860,13 @@
         "Гэта дзеянне прывядзе да завяршэння сеанса на вашых іншых прыладах і вам давядзецца стварыць новы рэзервовы пароль."
       ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
-        "Праверце код пацвярджэння і ўхваліце запыт ад іншай прылады. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці ў электронную пошту **${ email }**."
+        "Праверце код пацвярджэння і ўхваліце запыт ад іншай прылады. Гэта дазволіць пераканацца ў тым, што менавіта вы спрабуеце ўвайсці ў электронную пошту **${ email }**."
       ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
-        "Увядзіце свой рэзервовы пароль. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці."
+        "Увядзіце свой рэзервовы пароль. Гэта дазволіць пераканацца ў тым, што менавіта вы спрабуеце ўвайсці."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
-        "Абагуліце код пацвярджэння з вашым адміністратарам **${ adminEmail }** для таго, каб ён мог ухваліць запыт для **${ email }**. Гэта дазволіць пераканацца ў тым, што іменна вы спрабуеце ўвайсці."
+        "Абагуліце код пацвярджэння з вашым адміністратарам **${ adminEmail }** для таго, каб ён мог ухваліць запыт для **${ email }**. Гэта дазволіць пераканацца ў тым, што менавіта вы спрабуеце ўвайсці."
       ],
       "Tried to sign in at": [
         "Спроба ўваходу ў"
@@ -18650,7 +18650,7 @@
         "Адміністратар арганізацыі **${ orgName }** (**${ adminEmail }**) хоча ўключыць доступ адміністратара для вашага ўліковага запісу."
       ],
       "Approve all": [
-        "Зацвердзіць усе"
+        "Ухваліць усе"
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "У вас больш не будзе магчымасці дапамагаць карыстальніку аднавіць доступ да яго даных або ўліковага запісу, калі ён стане прыватным."
@@ -19092,9 +19092,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Зарэгіструйце бясплатны ўліковы запіс ${ BRAND_NAME }, каб абараніць сваё месца. Чым раней вы зарэгіструецеся, тым хутчэй атрымаеце доступ да ${ appName }. Вам таксама будзе даступны пераход на наш эксклюзіўны тарыфны план Visionary. Заўважце, што вам не давядзецца знаходзіцца ў спісе чакання і ў вас будзе магчымасць адразу пачаць выкарыстоўваць ${ appName }."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Палепшыце сваю падпіску, каб разблакіраваць прэміяльныя функцыі ${ appName }"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Карыстальнікі Visionary і іх запрошаныя сябры змогуць абагульваць ранні доступ з іншымі. Яны таксама змогуць запрасіць сваіх сяброў, каб паспрабаваць ${ appName } бясплатна!"

@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -5113,8 +5113,8 @@
       "Certificate ${ name } not found or already revoked": [
         "인증서 ${ name }가 없거나 이미 폐기되었습니다"
       ],
-      "First name and last name cannot be unchecked at the same time": [
-        "이름과 성을 동시에 선택 해제할 수 없습니다."
+      "Display name cannot be empty": [
+        "디스플레이 이름은 비어 있을 수 없습니다"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5568,9 +5568,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "보안 키 추가"
-      ],
       "Delete key": [
         "키 삭제"
       ]
@@ -5650,9 +5647,6 @@
       ],
       "Register your security key": [
         "사용자의 보안 키 추가"
-      ],
-      "Registered security keys": [
-        "등록된 보안 키"
       ],
       "Security key registered": [
         "보안 키 등록됨"
@@ -13452,9 +13446,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "${ PASS_APP_NAME }를 휴대폰에서 사용하려면 설치하세요."
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "업그레이드하여 ${ PASS_APP_NAME } 프리미엄 기능을 잠금 해제하세요"
-      ],
       "Updating your account": [
         "계정 업데이트 중"
       ],
@@ -18493,9 +18484,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "얼리 액세스 권한 목록에 추가하기 위해 무료 ${ BRAND_NAME } 계정을 생성하세요. 더 빨리 등록할 수록 ${ appName } 접근 권한에 대한 우선 순위가 부여됩니다. 로그인 한 후, 대기 명단을 건너뛰고 즉시 ${ appName }을 사용할 수 있도록 최상위 플랜인 Visionary 플랜 업그레이드가 가능합니다."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "업그레이드하여 ${ appName } 프리미엄 기능을 잠금 해제하세요"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Visionary 사용자와 초대받은 친구는 다른 사람들과 얼리 액세스를 공유하고 친구를 초대하여 ${ appName }을 무료로 사용해 볼 수 있습니다."

@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -4865,9 +4865,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Certifikat ${ name } ikke fundet eller allerede tilbagekaldt"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "For- og efternavn kan ikke afmarkeres samtidig"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5292,9 +5289,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Tilføj sikkerhedsnøgle"
-      ],
       "Delete key": [
         "Slet nøgle"
       ]
@@ -5374,9 +5368,6 @@
       ],
       "Register your security key": [
         "Registrer din sikkerhedsnøgle"
-      ],
-      "Registered security keys": [
-        "Registrerede sikkerhedsnøgler"
       ],
       "Security key registered": [
         "Sikkerhedsnøgle registreret"
@@ -13055,9 +13046,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "for at starte med at bruge ${ PASS_APP_NAME } på din telefon"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Lås op for ${ PASS_APP_NAME }-premiumfunktioner ved at opgradere"
-      ],
       "Updating your account": [
         "Opdaterer din konto"
       ],
@@ -17666,9 +17654,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Tilmeld dig en gratis ${ BRAND_NAME }-konto for at sikre dig en plads. Jo hurtigere, du tilmelder dig, jo før kan du tilgå ${ appName }. Du kan også opgradere til vores eksklusive Visionary-abonnement for at undgå ventelisten og starte med at bruge ${ appName } med det samme."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Lås op for ${ appName }-premiumfunktioner ved at opgradere"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Visionary-brugere og deres inviterede venner kan dele tidlig adgang med andre, inviter dine venner til at prøve ${ appName } gratis!"

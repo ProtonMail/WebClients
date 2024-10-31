@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -4521,9 +4521,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "O certificado ${ name } não foi encontrado ou já foi revogado."
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Não pode desmarcar o primeiro nome e o apelido ao mesmo tempo"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4904,9 +4901,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Adicionar uma chave de segurança"
-      ],
       "Delete key": [
         "Eliminar a chave"
       ]
@@ -4986,9 +4980,6 @@
       ],
       "Register your security key": [
         "Registe a sua chave de segurança"
-      ],
-      "Registered security keys": [
-        "As chaves de segurança foram registadas."
       ],
       "Security key registered": [
         "A chave de segurança foi registada."
@@ -8375,7 +8366,7 @@
         "Ir para Com estrela"
       ],
       "Go to Trash": [
-        "Ir para Lixeira"
+        "Ir para Lixo"
       ],
       "Insert link": [
         "Inserir hiperligação"
@@ -8423,7 +8414,7 @@
         "Mover para spam"
       ],
       "Move to Trash": [
-        "Mover para Lixeira"
+        "Mover para o Lixo"
       ],
       "Move to...": [
         "Mover para..."
@@ -10431,7 +10422,7 @@
         "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens de spam e de lixeira"
+        "Eliminar automaticamente mensagens do Spam e do Lixo"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -11789,9 +11780,6 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "para começar a utilizar o ${ PASS_APP_NAME } no seu telemóvel"
-      ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Desbloqueie as funcionalidades premium do ${ PASS_APP_NAME } com a atualização do seu plano."
       ],
       "Updating your account": [
         "A atualizar a sua conta"
@@ -14033,7 +14021,7 @@
         "Limpar"
       ],
       "Clear out the junk": [
-        "Limpe a lixeira"
+        "Limpe o lixo"
       ],
       "Click a value in the table to use it as filter": [
         "Clique num valor da tabela para utilizá-lo como filtro"
@@ -15538,9 +15526,6 @@
       ],
       "Get started": [
         "Começar"
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Desbloqueie as funcionalidades premium do ${ appName } com a atualização do seu plano."
       ]
     },
     "wallet_signup_2024:Info": {
