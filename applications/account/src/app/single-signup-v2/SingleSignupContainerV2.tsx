@@ -873,10 +873,7 @@ const SingleSignupContainerV2 = ({
                 return model.planParameters?.planIDs;
             })();
 
-            let cycle = signupParameters.cycle || model.subscriptionData.cycle;
-            if (!signupConfiguration.cycles.includes(cycle)) {
-                cycle = signupConfiguration.defaults.cycle;
-            }
+            const cycle = signupParameters.cycle || signupConfiguration.defaults.cycle;
 
             const paymentsApi = getPaymentsApi(silentApi);
             const userInfoPromise = getUserInfo({
