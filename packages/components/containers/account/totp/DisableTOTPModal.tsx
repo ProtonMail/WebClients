@@ -21,6 +21,7 @@ const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
         <>
             {renderAuthModal && (
                 <AuthModal
+                    scope="password"
                     config={disableTotp()}
                     {...authModalProps}
                     onCancel={onClose}

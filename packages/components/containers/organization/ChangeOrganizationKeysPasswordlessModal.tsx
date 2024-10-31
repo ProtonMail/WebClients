@@ -69,6 +69,7 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
         <>
             {renderAuthModal && config && (
                 <AuthModal
+                    scope="password"
                     {...authModalProps}
                     config={config}
                     onCancel={() => {
