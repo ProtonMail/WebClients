@@ -597,6 +597,9 @@
       ],
       "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
         "Maksa kerran, ja saat ${ lifetimeAccessJSX } Pass Plussaan. Vain ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Säästä jopa ${ discountJSX } Pass Familyllä. Vain ${ relativePrice }/kuukausi."
       ]
     },
     "Browser": {
@@ -1546,6 +1549,9 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii PIN-koodin. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
+      ],
       "Owner": [
         "Omistaja"
       ],
@@ -1776,8 +1782,14 @@
       "This version will be added to the history as the newest version.": [
         "Tämä versio lisätään historiaan uusimpana versiona."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Tämä hylkää laitteen **${ name }**, joka yritti kirjautua ${ BRAND_NAME }-tilillesi **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Tuo tietosi muista salasanahallinnoista lataamalla käyttämästäsi palvelusta viemäsi tiedosto ${ PASS_APP_NAME }iin. Kun tietosi on tuotu, poista vientitiedosto."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin ${ PASS_APP_NAME }-kuvaketta."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
@@ -1817,6 +1829,9 @@
       ],
       "User's access removed": [
         "Käyttäjän käyttöoikeus mitätöitiin"
+      ],
+      "User's access successfully updated": [
+        "Käyttäjän käyttöoikeutta muutettiin"
       ],
       "username": [
         "käyttäjätunnus"
@@ -2051,6 +2066,9 @@
       ],
       "Capital letters (A-Z)": [
         "Isot kirjaimet (A-Z)"
+      ],
+      "Capitalize": [
+        "Isot alkukirjaimet"
       ],
       "Card": [
         "Kortti"
@@ -2830,6 +2848,24 @@
       ]
     },
     "sso: auth device state": {
+      "Active": [
+        "Aktiivinen"
+      ],
+      "Inactive": [
+        "Ei-aktiivinen"
+      ],
+      "Pending activation": [
+        "Odottaa aktivointia"
+      ],
+      "Pending admin activation": [
+        "Odottaa ylläpitäjän aktivointia"
+      ],
+      "Rejected": [
+        "Hylätty"
+      ],
+      "Signed out": [
+        "Kirjattu ulos"
+      ],
       "Unknown": [
         "Tuntematon"
       ]
@@ -3371,6 +3407,9 @@
       ],
       "Your session was locked.": [
         "Istuntosi on lukittu."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Tilauksesi ei salli sinun luoda enempää holveja."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia, joten kaikki kohteet tuodaan ensimmäiseen holviisi. Tuo useisiin holveihin päivittämällä tilauksesi."
