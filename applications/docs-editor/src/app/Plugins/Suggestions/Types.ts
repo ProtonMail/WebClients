@@ -1,7 +1,9 @@
 import type { SuggestionType } from '@proton/docs-shared'
-import type { LexicalNode } from 'lexical'
+import type { ElementFormatType, LexicalNode } from 'lexical'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
+import type { BlockType } from '../BlockTypePlugin'
+import type { ListInfo } from '../CustomList/$getListInfo'
 
 export enum ProtonNodeTypes {
   Suggestion = 'suggestion',
@@ -54,4 +56,15 @@ export type SuggestionProperties = {
    * @example `__format` Used to store text format
    */
   nodePropertiesChanged?: Record<string, any>
+}
+
+export type BlockTypeChangeSuggestionProperties = {
+  initialBlockType: BlockType
+  initialFormatType?: ElementFormatType
+  initialIndent?: number
+  listInfo?: ListInfo
+}
+
+export type IndentChangeSuggestionProperties = {
+  indent: number
 }

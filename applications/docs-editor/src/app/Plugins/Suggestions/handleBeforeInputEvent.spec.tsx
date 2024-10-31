@@ -24,8 +24,9 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../Utils/react-test-utils'
-import type { ListItemNode } from '@lexical/list'
-import { $createListItemNode, $createListNode } from '@lexical/list'
+import type { ListItemNode, ListNode } from '@lexical/list'
+import { $isListItemNode } from '@lexical/list'
+import { $createListItemNode, $createListNode, $isListNode } from '@lexical/list'
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
 import type { Logger } from '@proton/utils/logs'
 import { $createHorizontalRuleNode, $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
@@ -346,187 +347,286 @@ describe('$handleBeforeInputEvent', () => {
     })
 
     describe('Insert paragraph', () => {
-      let initialParagraph: ParagraphNode
+      describe('Inside paragraph', () => {
+        let initialParagraph: ParagraphNode
 
-      beforeEach(async () => {
-        await update(() => {
-          initialParagraph = $createParagraphNode().append($createTextNode('Hello'))
-          $getRoot().append(initialParagraph)
+        beforeEach(async () => {
+          await update(() => {
+            initialParagraph = $createParagraphNode().append($createTextNode('Hello'))
+            $getRoot().append(initialParagraph)
+          })
+        })
+
+        describe('At start of block', () => {
+          beforeEach(async () => {
+            await update(() => {
+              initialParagraph.selectStart()
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertParagraph',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          test('root should have 2 children', () => {
+            editor!.read(() => {
+              expect($getRoot().getChildrenSize()).toBe(2)
+            })
+          })
+
+          test('first paragraph should have split node only', () => {
+            editor!.read(() => {
+              const root = $getRoot()
+              const paragraph1 = root.getChildAtIndex<ElementNode>(0)
+              expect($isParagraphNode(paragraph1)).toBe(true)
+              expect(paragraph1?.getChildrenSize()).toBe(1)
+              const child = paragraph1?.getFirstChild<ProtonNode>()
+              expect($isSuggestionNode(child)).toBe(true)
+              expect(child?.getSuggestionTypeOrThrow()).toBe('split')
+            })
+          })
+
+          test('second paragraph should have text', () => {
+            editor!.read(() => {
+              const root = $getRoot()
+              const paragraph2 = root.getChildAtIndex<ElementNode>(1)
+              expect($isParagraphNode(paragraph2)).toBe(true)
+              expect($isTextNode(paragraph2?.getFirstChild())).toBe(true)
+              expect(paragraph2?.getTextContent()).toBe('Hello')
+            })
+          })
+        })
+
+        describe('In middle of block', () => {
+          beforeEach(async () => {
+            await update(() => {
+              initialParagraph.getFirstChildOrThrow<TextNode>().select(3, 3)
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertParagraph',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          test('root should have 2 children', () => {
+            editor!.read(() => {
+              expect($getRoot().getChildrenSize()).toBe(2)
+            })
+          })
+
+          test('first paragraph should have part of initial text and split node', () => {
+            editor!.read(() => {
+              const paragraph1 = $getRoot().getChildAtIndex<ElementNode>(0)
+              expect($isParagraphNode(paragraph1)).toBe(true)
+              expect(paragraph1?.getChildrenSize()).toBe(2)
+              const text = paragraph1?.getFirstChild()
+              expect($isTextNode(text)).toBe(true)
+              expect(text?.getTextContent()).toBe('Hel')
+              const suggestion = paragraph1?.getLastChildOrThrow<ProtonNode>()
+              expect($isSuggestionNode(suggestion)).toBe(true)
+              expect(suggestion?.getSuggestionTypeOrThrow()).toBe('split')
+            })
+          })
+
+          test('second paragraph should have rest of initial text', () => {
+            editor!.read(() => {
+              const paragraph2 = $getRoot().getChildAtIndex<ElementNode>(1)
+              expect($isParagraphNode(paragraph2)).toBe(true)
+              expect(paragraph2?.getTextContent()).toBe('lo')
+            })
+          })
+        })
+
+        describe('At end of block', () => {
+          beforeEach(async () => {
+            await update(() => {
+              initialParagraph.selectEnd()
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertParagraph',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          test('root should have 2 children', () => {
+            editor!.read(() => {
+              expect($getRoot().getChildrenSize()).toBe(2)
+            })
+          })
+
+          test('first paragraph should have text and split node', () => {
+            editor!.read(() => {
+              const paragraph1 = $getRoot().getChildAtIndex<ElementNode>(0)
+              expect($isParagraphNode(paragraph1)).toBe(true)
+              expect($isTextNode(paragraph1?.getFirstChild())).toBe(true)
+              expect($isSuggestionNode(paragraph1?.getLastChild())).toBe(true)
+              expect(paragraph1?.getLastChildOrThrow<ProtonNode>().getSuggestionTypeOrThrow()).toBe('split')
+            })
+          })
+
+          test('second paragraph should be empty', () => {
+            editor!.read(() => {
+              const paragraph2 = $getRoot().getChildAtIndex<ElementNode>(1)
+              expect($isParagraphNode(paragraph2)).toBe(true)
+              expect(paragraph2?.getChildrenSize()).toBe(0)
+            })
+          })
+
+          test('consecutive splits should use same ID', async () => {
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertParagraph',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+
+            editor!.read(() => {
+              const nodes = $nodesOfType(ProtonNode).filter($isSuggestionNode)
+              expect(nodes.length).toBe(2)
+              const first = nodes[0]
+              const second = nodes[1]
+              expect(first.getSuggestionIdOrThrow()).toBe(second.getSuggestionIdOrThrow())
+            })
+          })
+
+          test('non-consecutive splits should not use same ID', async () => {
+            await update(() => {
+              $insertNodes([$createTextNode('World')])
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertParagraph',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+
+            editor!.read(() => {
+              const nodes = $nodesOfType(ProtonNode).filter($isSuggestionNode)
+              expect(nodes.length).toBe(2)
+              const first = nodes[0]
+              const second = nodes[1]
+              expect(first.getSuggestionIdOrThrow()).not.toBe(second.getSuggestionIdOrThrow())
+            })
+          })
         })
       })
 
-      describe('At start of block', () => {
-        beforeEach(async () => {
-          await update(() => {
-            initialParagraph.selectStart()
-            $handleBeforeInputEvent(
-              editor!,
-              {
-                inputType: 'insertParagraph',
-                data: null,
-                dataTransfer: null,
-              } as InputEvent,
-              onSuggestionCreation,
-            )
+      describe('Inside empty list item', () => {
+        describe('Nested list', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const root = $getRoot()
+              const listItem = $createListItemNode()
+              const list = $createListNode('bullet').append(listItem)
+              root.append(list)
+              listItem.setIndent(1)
+              listItem.selectEnd()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertParagraph',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          test('root should have 1 child', () => {
+            editor!.read(() => {
+              expect($getRoot().getChildrenSize()).toBe(1)
+            })
+          })
+
+          test('only child should be non-nested list', () => {
+            editor!.read(() => {
+              const list = $getRoot().getFirstChildOrThrow<ListNode>()
+              expect($isListNode(list)).toBe(true)
+              const listItem = list.getFirstChildOrThrow<ListItemNode>()
+              expect($isListItemNode(listItem)).toBe(true)
+              expect(listItem.getChildrenSize()).toBe(1)
+            })
+          })
+
+          test('list item should have indent-change suggestion', () => {
+            editor!.read(() => {
+              const listItem = $getRoot().getFirstChildOrThrow<ListNode>().getFirstChildOrThrow<ListItemNode>()
+              const suggestion = listItem.getFirstChildOrThrow<ProtonNode>()
+              expect($isSuggestionNode(suggestion)).toBe(true)
+              expect(suggestion.getSuggestionTypeOrThrow()).toBe('indent-change')
+              expect(suggestion.__properties.nodePropertiesChanged!.indent).toBe(1)
+            })
           })
         })
 
-        test('root should have 2 children', () => {
-          editor!.read(() => {
-            expect($getRoot().getChildrenSize()).toBe(2)
-          })
-        })
-
-        test('first paragraph should have split node only', () => {
-          editor!.read(() => {
-            const root = $getRoot()
-            const paragraph1 = root.getChildAtIndex<ElementNode>(0)
-            expect($isParagraphNode(paragraph1)).toBe(true)
-            expect(paragraph1?.getChildrenSize()).toBe(1)
-            const child = paragraph1?.getFirstChild<ProtonNode>()
-            expect($isSuggestionNode(child)).toBe(true)
-            expect(child?.getSuggestionTypeOrThrow()).toBe('split')
-          })
-        })
-
-        test('second paragraph should have text', () => {
-          editor!.read(() => {
-            const root = $getRoot()
-            const paragraph2 = root.getChildAtIndex<ElementNode>(1)
-            expect($isParagraphNode(paragraph2)).toBe(true)
-            expect($isTextNode(paragraph2?.getFirstChild())).toBe(true)
-            expect(paragraph2?.getTextContent()).toBe('Hello')
-          })
-        })
-      })
-
-      describe('In middle of block', () => {
-        beforeEach(async () => {
-          await update(() => {
-            initialParagraph.getFirstChildOrThrow<TextNode>().select(3, 3)
-            $handleBeforeInputEvent(
-              editor!,
-              {
-                inputType: 'insertParagraph',
-                data: null,
-                dataTransfer: null,
-              } as InputEvent,
-              onSuggestionCreation,
-            )
-          })
-        })
-
-        test('root should have 2 children', () => {
-          editor!.read(() => {
-            expect($getRoot().getChildrenSize()).toBe(2)
-          })
-        })
-
-        test('first paragraph should have part of initial text and split node', () => {
-          editor!.read(() => {
-            const paragraph1 = $getRoot().getChildAtIndex<ElementNode>(0)
-            expect($isParagraphNode(paragraph1)).toBe(true)
-            expect(paragraph1?.getChildrenSize()).toBe(2)
-            const text = paragraph1?.getFirstChild()
-            expect($isTextNode(text)).toBe(true)
-            expect(text?.getTextContent()).toBe('Hel')
-            const suggestion = paragraph1?.getLastChildOrThrow<ProtonNode>()
-            expect($isSuggestionNode(suggestion)).toBe(true)
-            expect(suggestion?.getSuggestionTypeOrThrow()).toBe('split')
-          })
-        })
-
-        test('second paragraph should have rest of initial text', () => {
-          editor!.read(() => {
-            const paragraph2 = $getRoot().getChildAtIndex<ElementNode>(1)
-            expect($isParagraphNode(paragraph2)).toBe(true)
-            expect(paragraph2?.getTextContent()).toBe('lo')
-          })
-        })
-      })
-
-      describe('At end of block', () => {
-        beforeEach(async () => {
-          await update(() => {
-            initialParagraph.selectEnd()
-            $handleBeforeInputEvent(
-              editor!,
-              {
-                inputType: 'insertParagraph',
-                data: null,
-                dataTransfer: null,
-              } as InputEvent,
-              onSuggestionCreation,
-            )
-          })
-        })
-
-        test('root should have 2 children', () => {
-          editor!.read(() => {
-            expect($getRoot().getChildrenSize()).toBe(2)
-          })
-        })
-
-        test('first paragraph should have text and split node', () => {
-          editor!.read(() => {
-            const paragraph1 = $getRoot().getChildAtIndex<ElementNode>(0)
-            expect($isParagraphNode(paragraph1)).toBe(true)
-            expect($isTextNode(paragraph1?.getFirstChild())).toBe(true)
-            expect($isSuggestionNode(paragraph1?.getLastChild())).toBe(true)
-            expect(paragraph1?.getLastChildOrThrow<ProtonNode>().getSuggestionTypeOrThrow()).toBe('split')
-          })
-        })
-
-        test('second paragraph should be empty', () => {
-          editor!.read(() => {
-            const paragraph2 = $getRoot().getChildAtIndex<ElementNode>(1)
-            expect($isParagraphNode(paragraph2)).toBe(true)
-            expect(paragraph2?.getChildrenSize()).toBe(0)
-          })
-        })
-
-        test('consecutive splits should use same ID', async () => {
-          await update(() => {
-            $handleBeforeInputEvent(
-              editor!,
-              {
-                inputType: 'insertParagraph',
-                data: null,
-                dataTransfer: null,
-              } as InputEvent,
-              onSuggestionCreation,
-            )
+        describe('Non-nested list', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const root = $getRoot()
+              const listItem = $createListItemNode()
+              const list = $createListNode('bullet').append(listItem)
+              root.append(list)
+              listItem.selectEnd()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertParagraph',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
           })
 
-          editor!.read(() => {
-            const nodes = $nodesOfType(ProtonNode).filter($isSuggestionNode)
-            expect(nodes.length).toBe(2)
-            const first = nodes[0]
-            const second = nodes[1]
-            expect(first.getSuggestionIdOrThrow()).toBe(second.getSuggestionIdOrThrow())
-          })
-        })
-
-        test('non-consecutive splits should not use same ID', async () => {
-          await update(() => {
-            $insertNodes([$createTextNode('World')])
-            $handleBeforeInputEvent(
-              editor!,
-              {
-                inputType: 'insertParagraph',
-                data: null,
-                dataTransfer: null,
-              } as InputEvent,
-              onSuggestionCreation,
-            )
+          test('root should have 1 child', () => {
+            editor!.read(() => {
+              expect($getRoot().getChildrenSize()).toBe(1)
+            })
           })
 
-          editor!.read(() => {
-            const nodes = $nodesOfType(ProtonNode).filter($isSuggestionNode)
-            expect(nodes.length).toBe(2)
-            const first = nodes[0]
-            const second = nodes[1]
-            expect(first.getSuggestionIdOrThrow()).not.toBe(second.getSuggestionIdOrThrow())
+          test('only child should be paragraph', () => {
+            editor!.read(() => {
+              expect($isParagraphNode($getRoot().getFirstChild())).toBe(true)
+            })
+          })
+
+          test('list item should have block-type-change suggestion', () => {
+            editor!.read(() => {
+              const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+              const suggestion = paragraph.getFirstChildOrThrow<ProtonNode>()
+              expect($isSuggestionNode(suggestion)).toBe(true)
+              expect(suggestion.getSuggestionTypeOrThrow()).toBe('block-type-change')
+              expect(suggestion.__properties.nodePropertiesChanged!.initialBlockType).toBe('bullet')
+            })
           })
         })
       })
@@ -548,7 +648,7 @@ describe('$handleBeforeInputEvent', () => {
             }
             return ''
           },
-          types: ['text/plain'],
+          types: [],
         } as unknown as DataTransfer
         await update(() => {
           $handleBeforeInputEvent(
