@@ -2516,6 +2516,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime アカウントはファミリープランに参加できません。"
       ],
+      "Manage addresses": [
+        "アドレスの管理"
+      ],
       "Manage user accounts": [
         "ユーザーアカウントを管理"
       ],
@@ -2692,9 +2695,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "セキュリティキーを追加"
-      ],
       "Delete key": [
         "キーを削除"
       ]
@@ -2774,9 +2774,6 @@
       ],
       "Register your security key": [
         "セキュリティキーの登録"
-      ],
-      "Registered security keys": [
-        "登録されたセキュリティキー"
       ],
       "Security key registered": [
         "セキュリティキーが登録されました"
@@ -4644,6 +4641,9 @@
       ],
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
+      ],
+      "Company name": [
+        "会社名"
       ],
       "Config to connect to ${ serverName }": [
         "${ serverName } に接続する"
@@ -6551,11 +6551,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "銀行振込"
+      ],
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "会社名を使用する"
+      ],
+      "Use personal name": [
+        "個人名を使用する"
       ]
     },
     "Payments": {
