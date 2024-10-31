@@ -1,9 +1,9 @@
 import { $generateNodesFromSerializedNodes, $insertGeneratedNodes } from '@lexical/clipboard'
 import { $isCodeNode } from '@lexical/code'
-import { $findMatchingParent } from '@lexical/utils'
+import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import { GenerateUUID } from '@proton/docs-core'
 import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode, DecoratorNode } from 'lexical'
-import { $isDecoratorNode } from 'lexical'
+import { $isDecoratorNode, $isParagraphNode } from 'lexical'
 import {
   UNDO_COMMAND,
   REDO_COMMAND,
@@ -32,7 +32,11 @@ import {
 import { $generateNodesFromDOM } from '@lexical/html'
 import type { Logger } from '@proton/utils/logs'
 import { INSERT_FILE_COMMAND } from '../../Commands/Events'
+import type { BlockTypeChangeSuggestionProperties, IndentChangeSuggestionProperties } from './Types'
 import { TextEditingSuggestionTypes } from './Types'
+import type { ListItemNode } from '@lexical/list'
+import { $handleListInsertParagraph, $isListItemNode } from '@lexical/list'
+import { $getListInfo } from '../CustomList/$getListInfo'
 
 /**
  * This is the main core of suggestion mode. It handles input events,
@@ -266,8 +270,15 @@ function $handleInsertParagraph(
   onSuggestionCreation: (id: string) => void,
   logger?: Logger,
 ): boolean {
+  const focus = selection.focus.getNode()
+
+  const isEmptyListItemNode = $isListItemNode(focus) && focus.isEmpty()
+  if (isEmptyListItemNode) {
+    return $handleInsertParagraphOnEmptyListItem(focus, suggestionID, onSuggestionCreation, logger)
+  }
+
   const currentNonInlineElement = $findMatchingParent(
-    selection.focus.getNode(),
+    focus,
     (node): node is ElementNode => $isElementNode(node) && !node.isInline(),
   )
   if (!currentNonInlineElement) {
@@ -304,6 +315,56 @@ function $handleInsertParagraph(
   logger?.info('Created new paragraph by splitting existing one and added split suggestion to the previous')
   onSuggestionCreation(splitNode.getSuggestionIdOrThrow())
 
+  return true
+}
+
+function $handleInsertParagraphOnEmptyListItem(
+  listItem: ListItemNode,
+  suggestionID: string,
+  onSuggestionCreation: (id: string) => void,
+  logger?: Logger,
+): boolean {
+  logger?.info('Inserting paragraph on empty list item')
+
+  const initialIndent = listItem.getIndent()
+  const initialFormatType = listItem.getFormatType()
+  const listInfo = $getListInfo(listItem)
+
+  const didInsert = $handleListInsertParagraph()
+  if (!didInsert) {
+    logger?.info('Did not insert paragraph')
+    return true
+  }
+
+  const selection = $getSelection()
+  if (!$isRangeSelection(selection) || !selection.isCollapsed()) {
+    throw new Error('Expected selection after inserting paragraph to be collapsed')
+  }
+
+  const focus = selection.focus.getNode()
+
+  if ($isParagraphNode(focus)) {
+    $insertFirst(
+      focus,
+      $createSuggestionNode(suggestionID, 'block-type-change', {
+        initialBlockType: listInfo.listType,
+        initialFormatType,
+        initialIndent,
+        listInfo,
+      } satisfies BlockTypeChangeSuggestionProperties),
+    )
+  } else if ($isListItemNode(focus)) {
+    $insertFirst(
+      focus,
+      $createSuggestionNode(suggestionID, 'indent-change', {
+        indent: initialIndent,
+      } satisfies IndentChangeSuggestionProperties),
+    )
+  } else {
+    throw new Error('Expected focus after inserting to be a paragraph or list item')
+  }
+
+  onSuggestionCreation(suggestionID)
   return true
 }
 
