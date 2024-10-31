@@ -82,7 +82,7 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
     const {
-        isReady,
+        isReady: isDocsTokenReady,
         isError,
         error,
         getPublicAuthHeaders,
@@ -93,7 +93,7 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
         submitPassword,
     } = usePublicDocsToken();
 
-    const { isNodeLoading, getNode, getNodeContentKey } = usePublicNode();
+    const { getNode, getNodeContentKey } = usePublicNode();
     const { openDocumentWindow } = useOpenDocument();
 
     const redirectToAuthedDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open', window: window });
@@ -105,7 +105,7 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
         submitPassword,
         token,
         urlPassword,
-        isReady: isReady && !isNodeLoading,
+        isReady: isDocsTokenReady,
         isError,
         error,
         redirectToAuthedDocument: redirectToAuthedDocument,

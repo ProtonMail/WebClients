@@ -6,7 +6,7 @@ import { Button, CircleLoader } from '@proton/atoms/index'
 import { c } from 'ttag'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import PasswordPage from './PasswordPage/PasswordPage'
 import { UnAuthenticated } from '@proton/components'
 
@@ -27,13 +27,25 @@ const PublicAppRootContainer = () => {
 const RenderApplicationWhenReady = () => {
   const publicDriveCompat = usePublicDriveCompat()
 
-  useEffect(() => {
-    if (publicDriveCompat.error) {
-      console.error('publicDriveCompat error', publicDriveCompat.error)
-    }
-  }, [publicDriveCompat])
+  const { isError, error, isReady, isPublicDocsEnabled, isPasswordNeeded, submitPassword } = publicDriveCompat
 
-  if (publicDriveCompat.isError) {
+  const hasRenderedContentRef = useRef(false)
+
+  useEffect(() => {
+    const shouldRenderContent = isReady && !isError && isPublicDocsEnabled && !isPasswordNeeded
+    if (hasRenderedContentRef.current && !shouldRenderContent) {
+      throw new Error('Invalid state transition: PublicApplicationContent is being unmounted after being mounted')
+    }
+    hasRenderedContentRef.current = shouldRenderContent
+  }, [isReady, isError, isPublicDocsEnabled, isPasswordNeeded])
+
+  useEffect(() => {
+    if (error) {
+      console.error('publicDriveCompat error', error)
+    }
+  }, [error])
+
+  if (isError) {
     return (
       <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
         <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
@@ -50,7 +62,7 @@ const RenderApplicationWhenReady = () => {
     )
   }
 
-  if (publicDriveCompat.isReady && !publicDriveCompat.isPublicDocsEnabled) {
+  if (isReady && !isPublicDocsEnabled) {
     return (
       <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
         <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
@@ -61,11 +73,11 @@ const RenderApplicationWhenReady = () => {
     )
   }
 
-  if (publicDriveCompat.isPasswordNeeded) {
-    return <PasswordPage submitPassword={publicDriveCompat.submitPassword} />
+  if (isPasswordNeeded) {
+    return <PasswordPage submitPassword={submitPassword} />
   }
 
-  if (!publicDriveCompat.isReady) {
+  if (!isReady) {
     return (
       <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
         <CircleLoader size="large" />
