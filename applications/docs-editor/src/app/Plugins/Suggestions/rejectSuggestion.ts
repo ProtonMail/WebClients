@@ -10,10 +10,12 @@ import { $findMatchingParent } from '@lexical/utils'
 import { $deleteTableColumn, $isTableCellNode, $isTableNode, $isTableRowNode } from '@lexical/table'
 import type { BlockType } from '../BlockTypePlugin'
 import { blockTypeToCreateElementFn } from '../BlockTypePlugin'
-import type { ListInfo } from '../CustomList/$getListInfo'
 import { $isCustomListNode } from '../CustomList/$isCustomListNode'
+import type { BlockTypeChangeSuggestionProperties, IndentChangeSuggestionProperties } from './Types'
+import type { Logger } from '@proton/utils/logs'
+import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 
-export function $rejectSuggestion(suggestionID: string): boolean {
+export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolean {
   const nodes = $nodesOfType(ProtonNode)
   for (const node of nodes) {
     if (!$isSuggestionNode(node)) {
@@ -126,7 +128,7 @@ export function $rejectSuggestion(suggestionID: string): boolean {
       }
       imageNode.setWidthAndHeight(initialWidth, initialHeight)
     } else if (suggestionType === 'indent-change') {
-      const changedProperties = node.__properties.nodePropertiesChanged
+      const changedProperties = node.__properties.nodePropertiesChanged as IndentChangeSuggestionProperties | undefined
       if (!changedProperties) {
         node.remove()
         continue
@@ -168,17 +170,12 @@ export function $rejectSuggestion(suggestionID: string): boolean {
     } else if (suggestionType === 'delete-table-column') {
       node.remove()
     } else if (suggestionType === 'block-type-change') {
-      const block = node.getTopLevelElementOrThrow()
+      const block = $findMatchingParent(node, $isNonInlineLeafElement)
       node.remove()
       const changedProperties = node.__properties.nodePropertiesChanged as
-        | {
-            initialBlockType: BlockType
-            initialFormatType?: ElementFormatType
-            initialIndent?: number
-            listInfo?: ListInfo
-          }
+        | BlockTypeChangeSuggestionProperties
         | undefined
-      if (!changedProperties) {
+      if (!changedProperties || !block) {
         continue
       }
       const initialBlockType = changedProperties.initialBlockType as BlockType
@@ -208,6 +205,7 @@ export function $rejectSuggestion(suggestionID: string): boolean {
           item.setIndent(indent)
         }
       }
+      initialBlockTypeNode.selectStart()
     } else if (suggestionType === 'align-change') {
       const elementParent = $findMatchingParent(node, (e): e is ElementNode => $isElementNode(e) && !e.isInline())
       node.remove()

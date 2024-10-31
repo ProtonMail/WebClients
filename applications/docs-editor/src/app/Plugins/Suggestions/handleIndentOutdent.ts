@@ -4,6 +4,7 @@ import { $getSelection, $isRangeSelection, $isElementNode } from 'lexical'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { GenerateUUID } from '@proton/docs-core'
 import type { Logger } from '@proton/utils/logs'
+import type { IndentChangeSuggestionProperties } from './Types'
 
 export function $handleIndentOutdentAsSuggestion(
   type: 'indent' | 'outdent',
@@ -75,7 +76,7 @@ export function $handleIndentOutdentAsSuggestion(
       logger.info('Adding indent-change suggestion')
       const suggestionNode = $createSuggestionNode(suggestionID, 'indent-change', {
         indent: currentIndent,
-      })
+      } satisfies IndentChangeSuggestionProperties)
       $insertFirst(parentBlock, suggestionNode)
     }
   }
