@@ -276,6 +276,7 @@ export const VPN_TV_PATHS = Object.values(VPN_TV_PATHS_MAP);
 
 export const SSO_PATHS = {
     EXTERNAL_SSO_LOGIN: '/sso/login',
+    EXTERNAL_SSO_REAUTH: '/sso/reauth',
     OAUTH_AUTHORIZE: '/oauth/authorize',
     OAUTH_CONFIRM_FORK: '/oauth/confirm',
     AUTHORIZE: '/authorize',

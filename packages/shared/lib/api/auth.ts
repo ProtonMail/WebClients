@@ -4,6 +4,7 @@ import { HTTP_ERROR_CODES } from '../errors';
 import type { AuthenticationCredentialsPayload } from '../webauthn/interface';
 
 export const PASSWORD_WRONG_ERROR = 8002;
+export const SCOPE_REAUTH_SSO = 9107;
 
 export const auth = (
     data:
@@ -130,13 +131,24 @@ export const getLocalSessions = (params?: { Email: string }) => ({
     params,
 });
 
-export const getInfo = (Username?: string, intent: 'Proton' | 'Auto' | 'SSO' = 'Proton', isTesting?: boolean) => ({
+export const getInfo = ({
+    username,
+    intent = 'Proton',
+    isTesting,
+    reauthScope,
+}: {
+    username?: string;
+    intent?: 'Proton' | 'Auto' | 'SSO';
+    isTesting?: boolean;
+    reauthScope?: 'password' | 'locked';
+}) => ({
     method: 'post',
     url: 'core/v4/auth/info',
     data: {
-        ...(Username ? { Username } : undefined),
+        ...(username ? { Username: username } : undefined),
         Intent: intent,
         ...(isTesting ? { IsTesting: isTesting } : undefined),
+        ...(reauthScope ? { ReauthScope: reauthScope } : undefined),
     },
 });
 

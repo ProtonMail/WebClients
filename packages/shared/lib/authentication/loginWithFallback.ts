@@ -27,7 +27,7 @@ const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload, p
     const data = { Username: username, Payload: payload };
 
     do {
-        const { authInfo = await api<InfoResponse>(getInfo(username)), lastAuthVersion } = state;
+        const { authInfo = await api<InfoResponse>(getInfo({ username })), lastAuthVersion } = state;
 
         const { version, done } = getAuthVersionWithFallback(authInfo, username, lastAuthVersion);
 

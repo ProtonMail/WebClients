@@ -301,7 +301,7 @@ export const handleLogin = async ({
     persistent: boolean;
     api: Api;
 }) => {
-    const infoResult = await api<InfoResponse>(getInfo(username));
+    const infoResult = await api<InfoResponse>(getInfo({ username }));
     const authResult = await loginWithFallback({
         api,
         credentials: { username, password },
