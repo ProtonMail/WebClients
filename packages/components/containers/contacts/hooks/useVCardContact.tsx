@@ -15,7 +15,7 @@ export type VCardContactModel = {
 };
 
 interface Props {
-    contact: Contact;
+    contact: Contact | undefined;
     userKeysList?: DecryptedKey[];
 }
 

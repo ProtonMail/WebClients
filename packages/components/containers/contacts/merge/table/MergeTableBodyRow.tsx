@@ -9,10 +9,10 @@ import OrderableTableRow from '@proton/components/components/orderableTable/Orde
 import TableRow from '@proton/components/components/table/TableRow';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useUserKeys } from '@proton/components/hooks/useUserKeys';
+import { useContact } from '@proton/mail/contacts/contactHooks';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
-import useContactConditionally from '../../hooks/useContactConditionally';
 import useVCardContact from '../../hooks/useVCardContact';
 import EmailsTableCell from './EmailsTableCell';
 import NameTableCell from './NameTableCell';
@@ -45,7 +45,7 @@ const MergeTableBodyRow = ({
     const { Name, emails } = Contact;
     const [userKeysList] = useUserKeys();
     // Allow to control when we fetch contacts and avoid fetching them when the row is not visible
-    const [contact] = useContactConditionally(isIntersecting ? ID : undefined);
+    const [contact] = useContact(isIntersecting ? ID : undefined);
     const { vCardContact } = useVCardContact({ contact, userKeysList });
 
     const { viewportWidth } = useActiveBreakpoint();
