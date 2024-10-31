@@ -719,6 +719,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Uppgradera till ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Uppgradera till Mail Plus"
+      ],
       "Upload picture": [
         "Ladda upp bild"
       ],
@@ -3561,8 +3564,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Förnamn och efternamn kan inte avmarkeras samtidigt"
+      "Display name cannot be empty": [
+        "Visningsnamn kan inte vara tomt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10384,6 +10387,14 @@
     "Yearly recurring event, frequency (until)": {
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Lägg till Zoom-möte"
+      ],
+      "Adding conferencing details": [
+        "Lägger till konferensdetaljer"
       ]
     },
     "Zoom Meeting": {

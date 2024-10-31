@@ -728,6 +728,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Navýšit na ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Navýšit na Mail Plus"
+      ],
       "Upload picture": [
         "Nahrát obrázek"
       ],
@@ -2643,6 +2646,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Barevné označení událostí vám usnadní organizaci dne, sledování času a určování priorit úkolů."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Vytvořte schůzku na Zoomu a jedním kliknutím přidejte podrobnosti o připojení k události."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -3682,8 +3688,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Je potřeba vybrat křestní jméno a nebo příjmení"
+      "Display name cannot be empty": [
+        "Zobrazované jméno nesmí být prázdné"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10009,6 +10015,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Získat ${ appName[APP_NAME] } aplikace"
       ],
+      "Get Zooming faster": [
+        "Získejte rychlejší Zoom"
+      ],
       "Gift": [
         "Dárek"
       ],
@@ -10923,6 +10932,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročně, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Přidat schůzku na Zoomu"
+      ],
+      "Adding conferencing details": [
+        "Přidávání detailů o konferencích"
+      ],
+      "Loading Zoom configuration": [
+        "Načítání konfigurace Zoomu"
       ]
     },
     "Zoom Meeting": {
