@@ -35,16 +35,19 @@ export const usePublicNode = () => {
     const [isNodeLoading, withNodeLoading] = useLoading();
     const { loadChildren } = usePublicLinksListing();
 
+    const rootLinkId = rootLink?.linkId;
+    const rootLinkIsFile = rootLink?.isFile;
+
     useEffect(() => {
-        if (!token || !rootLink?.linkId) {
+        if (!token || !rootLinkId || rootLinkIsFile) {
             return;
         }
         const loading = () =>
             withNodeLoading(async () => {
-                await loadChildren(abortSignal, token, rootLink?.linkId, false);
+                await loadChildren(abortSignal, token, rootLinkId, false);
             });
         void loading();
-    }, [token, rootLink?.linkId]);
+    }, [token, rootLinkId, rootLinkIsFile]);
 
     const getNode = async (nodeMeta: PublicNodeMeta, force?: boolean): Promise<DecryptedNode> => {
         const cached = cache.current.get(getCacheKey(nodeMeta));
