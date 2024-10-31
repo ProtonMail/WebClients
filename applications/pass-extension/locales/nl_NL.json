@@ -855,6 +855,9 @@
       "The URL is in the list": [
         "De URL is in de lijst"
       ],
+      "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
+        "Dit kan gebeuren na een lange tijd dat ${ PASS_SHORT_APP_NAME } niet wordt gebruikt, of uw Safari geschiedenis opschonen."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Te veel mislukte pogingen. Log opnieuw in."
       ],
@@ -903,6 +906,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Er is een probleem opgetreden tijdens het starten van ${ PASS_SHORT_APP_NAME }. Als dit probleem zich blijft voordoen, neem contact op met onze klantenservice voor hulp."
       ],
+      "Wrong extra password": [
+        "Verkeerd extra wachtwoord"
+      ],
       "Wrong password": [
         "Fout wachtwoord"
       ],
@@ -911,6 +917,9 @@
       ],
       "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
         "U bent momenteel offline. Hervat de verbinding om ${ PASS_SHORT_APP_NAME } te ontgrendelen."
+      ],
+      "Your browser is having difficulties activating ${ PASS_APP_NAME }.": [
+        "Uw browser ondervindt problemen bij het activeren van ${ PASS_APP_NAME }."
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
@@ -1072,6 +1081,12 @@
       ],
       "Auto-lock successfully disabled.": [
         "Auto-vergrendelen succesvol ingeschakeld."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Automatisch het gegenereerde wachtwoord kopiëren naar het klembord"
+      ],
+      "Autosaved on ${ url }": [
+        "Automatisch bewaard op ${ url }"
       ],
       "Built in 2FA authenticator": [
         "Ingebouwd in 2FA-authenticator"
@@ -1437,6 +1452,15 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
       ],
+      "Quickly autofill your 2FA tokens.": [
+        "Vul snel uw 2FA-tokens in."
+      ],
+      "Quickly autofill your identities.": [
+        "Automatisch invullen van uw identiteiten."
+      ],
+      "Quickly autofill your saved credentials.": [
+        "Vul snel automatisch uw opgeslagen inloggegevens in."
+      ],
       "Registering PIN lock failed": [
         "Registreren PIN-vergrendeling mislukt"
       ],
@@ -1548,6 +1572,9 @@
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Om gegevens te migreren uit een andere wachtwoordbeheerder, gaat u naar de wachtwoordbeheerder, exporteert u uw gegevens, dan uploadt u het naar ${ PASS_APP_NAME }. Wanneer uw gegevens geïmporteerd zijn, verwijdert u het geëxporteerde bestand."
+      ],
+      "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
+        "Probeer de extensie opnieuw te laden of opnieuw te installeren en zorg ervoor dat uw browser en ${ PASS_SHORT_APP_NAME } up-to-date zijn."
       ],
       "Unable to copy to clipboard": [
         "Kan niet kopiëren naar Klembord"
@@ -1721,6 +1748,9 @@
       ],
       "24 hours": [
         "24 uur"
+      ],
+      "2FA autofill": [
+        "2FA autofill"
       ],
       "2FA secret key (TOTP)": [
         "2FA geheime sleutel (TOTP)"
@@ -1965,6 +1995,9 @@
       "Identity": [
         "Identiteit"
       ],
+      "Identity autofill": [
+        "Identity autofill"
+      ],
       "Import": [
         "Importeren"
       ],
@@ -2030,6 +2063,9 @@
       ],
       "Login": [
         "Inloggen"
+      ],
+      "Login autofill": [
+        "Login automatisch invullen"
       ],
       "Logins": [
         "Logins"
@@ -2281,6 +2317,9 @@
       "Update": [
         "Bijwerken"
       ],
+      "Use ${ PASS_APP_NAME } as your browser's default password manager": [
+        "${ PASS_APP_NAME } gebruiken als standaard wachtwoordbeheer van uw browser"
+      ],
       "Username": [
         "Gebruikersnaam"
       ],
@@ -2325,6 +2364,9 @@
       ],
       "You are about to create": [
         "U staat op het punt volgende aan te maken"
+      ],
+      "Your browser will stop using its built-in password manager.": [
+        "Uw browser zal stoppen met het gebruik van de ingebouwde wachtwoordmanager."
       ],
       "ZIP or Postal code": [
         "Postcode"
@@ -2457,8 +2499,14 @@
       "Approve or deny it now": [
         "Keur goed of weiger nu"
       ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Voer de bevestigingscode in die we op uw andere apparaat hebben verzonden."
+      ],
       "If you didn't make this request, cancel it now.": [
         "Als u dit verzoek niet heeft gemaakt, annuleer het dan nu."
+      ],
+      "Invalid confirmation code": [
+        "Ongeldige verificatie code"
       ],
       "No, it wasn’t me": [
         "Nee, dat was ik niet"
@@ -2468,6 +2516,9 @@
       ],
       "Sign-in rejected": [
         "Inloggen geweigerd"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Inloggen op een ander apparaat. Was jij het?"
       ],
       "Yes, it was me": [
         "Ja, dat was ik"
@@ -2480,8 +2531,17 @@
       "Inactive": [
         "Inactief"
       ],
+      "Pending activation": [
+        "Afwachting van activering"
+      ],
+      "Pending admin activation": [
+        "Wachtend op admin activering"
+      ],
       "Rejected": [
         "Afgewezen"
+      ],
+      "Signed out": [
+        "Uitgelogd"
       ],
       "Unknown": [
         "Onbekend"
@@ -2728,6 +2788,9 @@
       ],
       "An error occurred while exporting your data": [
         "Er is een fout opgetreden bij het exporteren van uw gegevens"
+      ],
+      "An error occurred while resuming your session": [
+        "Er is een fout opgetreden tijdens het hervatten van uw sessie"
       ],
       "At least one email address is required": [
         "Ten minste één e-mailadres is vereist"
