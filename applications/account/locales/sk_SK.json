@@ -70,11 +70,11 @@
       "Accept": [
         "Prijať"
       ],
-      "Activate": [
-        "Aktivovať"
-      ],
       "activate": [
         "aktivovať"
+      ],
+      "Activate": [
+        "Aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -1986,10 +1986,10 @@
     },
     "Calendar subscription not synced error; long version": {
       "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Odkaz na kalendár nie je dostupný mimo ekosystému poskytovateľa kalendára."
+        "Odkaz na kalendár nie je dostupný mimo ekosystému sprostredkovateľa kalendára."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Odkaz na kalendár je dočasne nedostupný. Skontrolujte, či je odkaz od poskytovateľa kalendára stále platný."
+        "Odkaz na kalendár je dočasne nedostupný. Skontrolujte, či je odkaz od sprostredkovateľa kalendára stále platný."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Od poslednej aktualizácie uplynulo viac ako 12 hodín — ${ CALENDAR_APP_NAME } sa pokúsi kalendár aktualizovať v priebehu niekoľkých hodín."
@@ -5030,9 +5030,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Certifikát ${ name } sa nenašiel, alebo bol zrušený"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Je potrebné vybrať krstné meno alebo priezvisko"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5501,9 +5498,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Pridať bezpečnostný kľúč"
-      ],
       "Delete key": [
         "Zmazať kľúč"
       ]
@@ -5583,9 +5577,6 @@
       ],
       "Register your security key": [
         "Zaregistrujte svoj bezpečnostný kľúč"
-      ],
-      "Registered security keys": [
-        "Registrované bezpečnostné kľúče"
       ],
       "Security key registered": [
         "Bezpečnostný kľúč zaregistrovaný"
@@ -5940,9 +5931,9 @@
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } člen",
-        "${ memberCount } členov",
         "${ memberCount } členovia",
-        "${ memberCount } členovia"
+        "${ memberCount } členov",
+        "${ memberCount } členov"
       ]
     },
     "Group state": {
@@ -7798,7 +7789,7 @@
         "Zistiť viac"
       ],
       "Learn more about Gateways": [
-        "Ďalšie informácie o bránach"
+        "Zistiť viac o bránach"
       ],
       "learn more about Sieve programming language": [
         "získať ďalšie informácie o programovacom jazyku Sieve"
@@ -8305,7 +8296,7 @@
         "Vyberte poskytovateľa služieb a začnite"
       ],
       "Select recently used servers": [
-        "Vyberte nedávno použité servery"
+        "Výber nedávno použitých serverov"
       ],
       "Select what you want to import.": [
         "Vyberte čo chcete importovať."
@@ -8356,7 +8347,7 @@
         "Zdieľaný trezor bol aktualizovaný"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "Zobrazí obrázok každého odosielateľa. Ak nie je k dispozícii obrázok, zobrazia sa iniciály odosielateľa."
+        "Zobrazí obrázok každého odosielateľa v zozname správ. Ak nie je k dispozícii obrázok, zobrazia sa iniciály odosielateľa."
       ],
       "Show original message": [
         "Zobraziť pôvodnú správu"
@@ -8551,7 +8542,7 @@
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Táto funkcia oneskoruje posielanie Vašich emailov, dáva možnosť prerušiť zasielanie správy, ktorá už bola na ceste a vrátiť ju späť."
+        "Táto funkcia oneskoruje odosielanie emailov a dáva vám možnosť zrušiť odoslanie počas zvoleného časového rámca."
       ],
       "This file is too large to preview": [
         "Tento súbor je príliš veľký na zobrazenie náhľadu"
@@ -9010,7 +9001,7 @@
         "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Keď kliknete na odkaz, táto funkcia proti phishingu vás požiada o potvrdenie adresy URL webovej stránky."
+        "Keď kliknete na odkaz, táto funkcia proti phishingu vás požiada o potvrdenie URL adresy webovej stránky."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ak odstránite server z brány, začne plynúť desaťdňová deaktivačná lehota. Tento server je možné pridať do novej brány, ale jeho krajina sa nedá zmeniť."
@@ -9073,16 +9064,16 @@
         "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupnej používateľskej licencie a ${ usedAI } z vašej ${ maxAI } dostupnej licencie asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a ${ usedAI } z vašej ${ maxAI } dostupnej licencie asistenta písania.",
         "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a ${ usedAI } z vašich ${ maxAI } dostupných licencií asistenta písania.",
         "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a ${ usedAI } z vašich ${ maxAI } dostupných licencií asistenta písania.",
         "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a ${ usedAI } z vašich ${ maxAI } dostupných licencií asistenta písania."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašej ${ maxAI } dostupnej licencie asistenta písania.",
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania."
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašej ${ maxAI } dostupnej licencie asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupnej používateľskej licencie.",
@@ -9181,10 +9172,10 @@
         "Máte dostupných ${ availableCount } nových serverov."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "Máte k dispozícii ${ unassignedAvailableCount } nedávno použitý server. Ak chcete tento server priradiť k inej krajine, musíte počkať na ukončenie deaktivácie.",
-        "Máte k dispozícii ${ unassignedAvailableCount } nedávno použité servery. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na ukončenie deaktivácie.",
-        "Máte k dispozícii ${ unassignedAvailableCount } nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na ukončenie deaktivácie.",
-        "Máte k dispozícii ${ unassignedAvailableCount } nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na ukončenie deaktivácie."
+        "Máte k dispozícii ${ unassignedAvailableCount } z nedávno použitých serverov. Ak chcete tento server priradiť k inej krajine, musíte počkať na dokončenie deaktivácie.",
+        "Máte k dispozícii ${ unassignedAvailableCount } z nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na dokončenie deaktivácie.",
+        "Máte k dispozícii ${ unassignedAvailableCount } z nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na dokončenie deaktivácie.",
+        "Máte k dispozícii ${ unassignedAvailableCount } z nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na dokončenie deaktivácie."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Máte skúšobné predplatné ${ planTitle }. Ak chcete pokračovať v predplatnom aj po skončení skúšobnej lehoty, pridajte spôsob platby."
@@ -13709,9 +13700,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "na začatie používania ${ PASS_APP_NAME } v telefóne"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Odomknite prémiové funkcie ${ PASS_APP_NAME } upgradom"
-      ],
       "Updating your account": [
         "Aktualizácia vášho účtu"
       ],
@@ -17168,7 +17156,7 @@
         "Vypnúť dvojstupňové overenie"
       ],
       "Disable two-factor authentication?": [
-        "Deaktivovať dvojfázové overenie?"
+        "Deaktivovať dvojstupňové overenie?"
       ],
       "Discard changes?": [
         "Zrušiť zmeny?"
@@ -17342,10 +17330,10 @@
         "Monitorovanie brány"
       ],
       "Gateway monitor disabled": [
-        "Monitorovanie brán vypnuté"
+        "Monitorovanie brány deaktivované"
       ],
       "Gateway monitor enabled": [
-        "Monitorovanie brán povolené"
+        "Monitorovanie brány aktivované"
       ],
       "Gateways": [
         "Brány"
@@ -17576,7 +17564,7 @@
         "Prispôsobte si pätičku vašich emailov"
       ],
       "Personalize your email footer": [
-        "Prispôsobte si pätičku vašich emailov"
+        "Prispôsobte si zápätie vašich emailov"
       ],
       "Phone": [
         "Telefón"
@@ -18789,9 +18777,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Zaregistrujte sa do bezplatného účtu ${ BRAND_NAME } a zabezpečte si miesto. Čím skôr sa zaregistrujete, tým skôr získate prístup k ${ appName }. Po registrácii môžete tiež prejsť na náš exkluzívny plán Visionary, aby ste preskočili čakací zoznam a mohli začať používať ${ appName } hneď."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Odomknite prémiové funkcie ${ appName } upgradom"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Používatelia Visionary a ich pozvaní priatelia môžu zdieľať predčasný prístup s ostatnými, pozvite svojich priateľov, aby vyskúšali${ appName } zadarmo!"

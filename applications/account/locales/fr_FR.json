@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -1783,7 +1783,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accès à des contenus bloqués et navigation en toute confidentialité. Comprends plus de 8 500 serveurs dans plus de 110 pays, 10 appareils, streaming à haute vitesse, bloqueur de publicités et protection contre les logiciels malveillants, VPN Accelerator et bien plus encore."
+        "Accès à des contenus bloqués et navigation en toute confidentialité. Comprend plus de 8 500 serveurs dans plus de 110 pays, 10 appareils, streaming à haute vitesse, bloqueur de publicités et protection contre les logiciels malveillants, VPN Accelerator et bien plus encore."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1, Eurosport France… où que vous soyez."
@@ -1792,11 +1792,11 @@
         "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification à deux facteurs A2F, la surveillance du Dark Web et plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprends ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
         "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprends 15 adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Protégez vos fichiers avec un stockage cloud chiffré. Comprend un éditeur de documents en ligne, une sauvegarde de vos photos, un historique des versions, la fonction de partage de fichiers chiffrés et plus encore."
@@ -5139,8 +5139,8 @@
       "Certificate ${ name } not found or already revoked": [
         "Le certificat ${ name } est introuvable ou a déjà été révoqué."
       ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Le prénom et le nom de famille ne peuvent pas être décochés en même temps."
+      "Display name cannot be empty": [
+        "Le nom d'affichage ne peut pas être vide."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5604,11 +5604,11 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Ajouter une clé de sécurité"
-      ],
       "Delete key": [
         "Supprimer la clé"
+      ],
+      "New security key": [
+        "Nouvelle clé de sécurité"
       ]
     },
     "fido2: Error": {
@@ -5687,11 +5687,11 @@
       "Register your security key": [
         "Enregistrez votre clé de sécurité."
       ],
-      "Registered security keys": [
-        "Les clés de sécurité ont été enregistrées."
-      ],
       "Security key registered": [
         "La clé de sécurité a été enregistrée."
+      ],
+      "Security keys": [
+        "Clés de sécurité"
       ]
     },
     "file size format": {
@@ -9905,6 +9905,9 @@
       "Allowed Domain": [
         "Domaine autorisé"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Permet à tous les membres de votre organisation d'ajouter de manière transparente des liens de vidéoconférence à leurs invitations de calendrier."
+      ],
       "Amount": [
         "Montant"
       ],
@@ -10228,6 +10231,9 @@
       ],
       "Emails (last month)": [
         "Messages (mois dernier)"
+      ],
+      "Enable video conferencing ": [
+        "Activer la vidéoconférence "
       ],
       "End date": [
         "Date de fin"
@@ -12809,6 +12815,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "L'authentification à deux facteurs (A2F) n'est plus obligatoire."
+      ],
+      "Video conferencing settings have been updated": [
+        "Les paramètres de vidéoconférence ont été mis à jour."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13488,8 +13497,14 @@
       "Get in touch with our sales team": [
         "Contactez notre équipe commerciale"
       ],
+      "Get online privacy, for your whole family": [
+        "Protégez la vie privée en ligne de toute la famille."
+      ],
       "Get the security and features your business needs": [
         "Bénéficiez de la sécurité et des fonctionnalités dont votre activité a besoin."
+      ],
+      "Get unlimited privacy for two": [
+        "Profitez d'une confidentialité illimitée pour deux personnes."
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Je comprends qu'en cas de perte de mes informations de récupération, je peux perdre définitivement l'accès à mon compte."
@@ -13571,6 +13586,9 @@
         "Partage de coffre-fort sécurisé (${ n } coffre-fort) et partage de liens",
         "Partage de coffres-forts sécurisés (${ n } coffres-forts) et partage de liens"
       ],
+      "Secure your family’s passwords and online identities": [
+        "Protégez les mots de passe et les identités en ligne de votre famille."
+      ],
       "Secured by end-to-end encryption": [
         "Sécurisé avec un chiffrement de bout en bout"
       ],
@@ -13591,9 +13609,6 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "pour utiliser ${ PASS_APP_NAME } sur votre téléphone."
-      ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Bénéficiez des fonctionnalités premium de ${ PASS_APP_NAME } en mettant à jour votre abonnement."
       ],
       "Updating your account": [
         "Mise à jour de votre compte"
@@ -17448,6 +17463,9 @@
       "Increase your privacy with more addresses": [
         "Renforcez la protection de votre vie privée en utilisant plusieurs adresses"
       ],
+      "Integrations": [
+        "Intégrations"
+      ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
       ],
@@ -17914,6 +17932,9 @@
       "Version history": [
         "Historique des versions"
       ],
+      "Video conference": [
+        "Vidéoconférence"
+      ],
       "VPN apps": [
         "Applications VPN"
       ],
@@ -18090,6 +18111,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Un administrateur peut gérer les comptes utilisateur ou accorder des droits administrateur aux autres utilisateurs. Seul l'administrateur principal peut modifier l'abonnement de l'organisation."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Permet d'ajouter de manière transparente des liens de vidéoconférence à vos invitations de calendrier."
       ],
       "An approximate location of the IP address": [
         "Un emplacement approximatif de l'adresse IP"
@@ -18773,9 +18797,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Inscrivez-vous et obtenez un compte ${ BRAND_NAME } gratuit pour garantir votre place. Plus vous vous inscrivez tôt, plus vous aurez accès rapidement à ${ appName }. Après l'inscription, vous pouvez également passer à notre abonnement exclusif Visionary pour éviter la liste d'attente et commencer à utiliser ${ appName } immédiatement."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Bénéficiez des fonctionnalités premium de ${ appName } en améliorant votre abonnement."
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Les utilisateurs Visionary et leurs amis invités peuvent partager un accès anticipé avec d'autres personnes. Invitez vos amis à essayer ${ appName } gratuitement !"

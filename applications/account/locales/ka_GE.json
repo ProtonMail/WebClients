@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -5122,9 +5122,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "სერტიფიკატი ${ name } არ არსებობს ან გაუქმებულია"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "სახელი და გვარი ერთდროულად ვერ გამოირთვება"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5585,9 +5582,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "უსაფრთხოების გასაღების დამატება"
-      ],
       "Delete key": [
         "გასაღების წაშლა"
       ]
@@ -5667,9 +5661,6 @@
       ],
       "Register your security key": [
         "დაარეგისტრირეთ თქვენი უსაფრთხოების გასაღები"
-      ],
-      "Registered security keys": [
-        "დარეგისტრირებული უსაფრთხოების გასაღებები"
       ],
       "Security key registered": [
         "უსაფრთხოების გასაღები დარეგისტრირებულია"
@@ -13555,9 +13546,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "${ PASS_APP_NAME }-ის თქვენ ტელეფონზე გამოყენების დასაწყებად"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "${ PASS_APP_NAME }-ის ფასიანი ფუნქციების დასანახად ფასიან ვერსიაზე გადადით"
-      ],
       "Updating your account": [
         "თქვენი ანგარიშის განახლება"
       ],
@@ -18622,9 +18610,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "მოირგეთ უფასო ${ BRAND_NAME }-ის ანგარიში, რომ თქვენი ადგილი უსაფრთხო გახადოთ. რაც ადრე შეხვალთ, მით მალე მიიღებთ წვდომას ${ appName }-ის აპებთან. რეგისტრაციის შემდეგ შეგიძლიათ ტარიფი ჩვენს ექსკლუზიურ Visionary გეგმაზე ასწიოთ, რომ გამოტოვოთ მოლოდინის რიგში ყოფნა და ${ appName }-ის გამოყენება მაშინვე დაიწყოთ."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "${ appName }-ის ფასიანი ფუნქციების დასანახად ფასიან ვერსიაზე გადადით"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Visionary-ის მომხმარებლებს და მათ მოწვეულ მეგობრებს შეუძლიათ, სხვებს გაუზიარონ ადრეული წვდომა. მოიწვიეთ მეგობრები, რომ ${ appName } უფასოდ გამოსცადონ!"

@@ -67,11 +67,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -4581,9 +4581,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "証明書 ${ name } は見つからないか、すでに失効しています"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "姓と名のチェックを同時にはずすことはできません"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4771,6 +4768,9 @@
       "Lifetime accounts cannot join a family plan.": [
         "Lifetime アカウントはファミリープランに参加できません。"
       ],
+      "Manage addresses": [
+        "アドレスの管理"
+      ],
       "Manage user accounts": [
         "ユーザーアカウントを管理"
       ],
@@ -4953,9 +4953,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "セキュリティキーを追加"
-      ],
       "Delete key": [
         "キーを削除"
       ]
@@ -5035,9 +5032,6 @@
       ],
       "Register your security key": [
         "セキュリティキーの登録"
-      ],
-      "Registered security keys": [
-        "登録されたセキュリティキー"
       ],
       "Security key registered": [
         "セキュリティキーが登録されました"
@@ -8865,6 +8859,9 @@
       "Colors": [
         "色"
       ],
+      "Company name": [
+        "会社名"
+      ],
       "Composer": [
         "メール作成"
       ],
@@ -12039,9 +12036,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "してモバイル端末で ${ PASS_APP_NAME } を使い始めましょう"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "アップグレードして ${ PASS_APP_NAME } のプレミアム機能をロック解除しましょう"
-      ],
       "Updating your account": [
         "アカウントの更新"
       ],
@@ -12186,11 +12180,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "銀行振込"
+      ],
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "会社名を使用する"
+      ],
+      "Use personal name": [
+        "個人名を使用する"
       ]
     },
     "Payments": {
@@ -15962,9 +15967,6 @@
       ],
       "Get started": [
         "始めましょう"
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "アップグレードして ${ appName } のプレミアム機能をロック解除しましょう"
       ]
     },
     "wallet_signup_2024:app-switcher": {

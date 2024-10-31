@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -5132,9 +5132,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "${ name } sertifikası bulunamadı ya da zaten geçersiz kılınmış"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Ad ve soyad alanlarının işareti aynı anda kaldırılamaz"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5595,9 +5592,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Güvenlik anahtarı ekle"
-      ],
       "Delete key": [
         "Anahtarı sil"
       ]
@@ -5677,9 +5671,6 @@
       ],
       "Register your security key": [
         "Güvenlik anahtarınızı kaydedin"
-      ],
-      "Registered security keys": [
-        "Kayıtlı güvenlik anahtarları"
       ],
       "Security key registered": [
         "Güvenlik anahtarı kaydedildi"
@@ -13571,9 +13562,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "telefonunuzda ${ PASS_APP_NAME } kullanmaya başlayın"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Tarifenizi yükselterek ücretli ${ PASS_APP_NAME } özelliklerine erişin"
-      ],
       "Updating your account": [
         "Hesabınız güncelleniyor"
       ],
@@ -18666,9 +18654,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Yerinizi garantilemek için ücretsiz bir ${ BRAND_NAME } hesabı açın. Hesabınızı ne kadar erken açarsanız, ${ appName } uygulamasına o kadar erken erişirsiniz. Hesabınızı açtıktan sonra, bekleme listesini atlayıp ${ appName } uygulamasını hemen kullanmaya başlamak için özel Visionary tarifemize de yükseltebilirsiniz."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Tarifenizi yükselterek ücretli ${ appName } özelliklerine erişin"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Visionary kullanıcıları ve davet ettikleri arkadaşları erken erişimi başkalarıyla paylaşabilir. Arkadaşlarınızı ${ appName } uygulamasını ücretsiz olarak denemeleri için davet edin!"

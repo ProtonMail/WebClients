@@ -1788,6 +1788,9 @@
       "This version will be added to the history as the newest version.": [
         "Эта версия будет добавлена в историю как новейшая версия."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Это отклонит устройство **${ name }**, которое пыталось войти в ваш аккаунт ${ BRAND_NAME } **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Чтобы перенести данные из другого менеджера паролей, перейдите в менеджер паролей, экспортируйте свои данные, а затем загрузите их в ${ PASS_APP_NAME }. После того как данные будут импортированы, удалите экспортированный файл."
       ],
@@ -2817,11 +2820,20 @@
       "Sign-in confirmed": [
         "Вход подтвержден"
       ],
+      "Sign-in failed": [
+        "Войти не удалось"
+      ],
       "Sign-in rejected": [
         "Вход отклонен"
       ],
+      "Sign-in rejection failure": [
+        "Ошибка отказа входа"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Запрос входа на другом устройстве. Это были вы?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Запрошен вход на другом устройстве. Это были вы? "
       ],
       "Yes, it was me": [
         "Да, это была я."

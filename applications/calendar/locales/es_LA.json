@@ -722,6 +722,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Mejore a ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Mejorar a Mail Plus"
+      ],
       "Upload picture": [
         "Cargar imagen"
       ],
@@ -2601,6 +2604,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Los eventos con códigos de colores ayudan a organizar su día más fácilmente, seguir el tiempo y priorizar tareas."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Cree una reunión de Zoom y añada detalles de ingreso a su evento con un solo clic."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos… esto puede tardar unos minutos. Cuando el proceso se complete, podrá descargar el archivo con todos los contactos exportados."
       ],
@@ -3086,6 +3092,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Error al obtener la ocurrencia original de la serie"
+      ],
+      "Failed to load oauth modal.": [
+        "Error al cargar la ventana OAuth"
       ],
       "First name is too long": [
         "El nombre es demasiado largo"
@@ -3614,8 +3623,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "El nombre y apellido no pueden desmarcarse al mismo tiempo"
+      "Display name cannot be empty": [
+        "El nombre a mostrar no puede estar vacío."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -9621,6 +9630,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Obtenga las aplicaciones de ${ appName[APP_NAME] }"
       ],
+      "Get Zooming faster": [
+        "Obtener Zoom más rápido"
+      ],
       "Gift": [
         "Regalía"
       ],
@@ -10451,6 +10463,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Añadir una reunión de Zoom"
+      ],
+      "Adding conferencing details": [
+        "Agregando los detalles de la conferencia"
+      ],
+      "Loading Zoom configuration": [
+        "Cargando la configuración de Zoom"
       ]
     },
     "Zoom Meeting": {

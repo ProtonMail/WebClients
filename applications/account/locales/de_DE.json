@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -1660,14 +1660,23 @@
       ]
     },
     "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-Desktop App"
+      ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus und ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
         "${ storageSize } Speicherplatz"
       ],
+      "1 TB total": [
+        "1 TB Speicherplatz"
+      ],
       "1 user": [
         "1 Benutzer"
+      ],
+      "1 user account": [
+        "1 Benutzerkonto"
       ],
       "10 email addresses": [
         "10 E-Mail-Adressen"
@@ -1678,8 +1687,23 @@
       "3 TB": [
         "3 TB"
       ],
+      "6 user accounts": [
+        "6 Benutzerkonten"
+      ],
       "6 users": [
         "6 Benutzer"
+      ],
+      "8500+ servers across 110+ countries": [
+        "Mehr als 8500 Server in 110 Ländern"
+      ],
+      "Ad-blocker and malware protection": [
+        "Werbeblocker & Malware-Schutz"
+      ],
+      "Admin panel to manage your family": [
+        "Administrationskonsole zur Verwaltung deiner Familie"
+      ],
+      "Advanced account protection": [
+        "Erweiterter Kontoschutz"
       ],
       "Dark Web Monitoring": [
         "Dark Web-Überwachung"
@@ -1687,11 +1711,52 @@
       "Easily add or remove users": [
         "Benutzer einfach hinzufügen oder entfernen"
       ],
+      "High speed streaming": [
+        "Hochgeschwindigkeits-Streaming"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
+      "Password health alerts": [
+        "Warnungen zur Passwortsicherheit"
+      ],
+      "Private photo backup": [
+        "Private Fotosicherung"
+      ],
+      "Protect 10 devices at a time": [
+        "Schütze 10 Geräte gleichzeitig"
+      ],
+      "Secure file storage & sharing": [
+        "Sichere Dateispeicherung und -freigabe"
+      ],
+      "Secure vault and link sharing": [
+        "Sichere Tresor- und Linkfreigabe"
+      ],
       "Unlimited folders, labels and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte hide-my-email-Aliasse"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Unbegrenzte Logins, Notizen, Kreditkarten"
+      ],
       "Use your own email domain": [
         "Nutze deine eigene E-Mail-Domain"
+      ],
+      "Version history": [
+        "Versionsverlauf"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
       ]
     },
     "BF2024: Info": {
@@ -1702,6 +1767,36 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "für ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Verlängert sich nach 1 Monat zum ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Greife auf blockierte Inhalte zu und surfe privat. Enthält über 8.500 Server in über 110 Ländern, 10 Geräte, Hochgeschwindigkeits-Streaming, Werbeblocker und Malware-Schutz, VPN Accelerator und mehr."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter hide-my-email-Aliasse, Freigabe, integrierter 2FA, Dark Web-Überwachung und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte hide-my-email-Aliasse und mehr.",
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Editor für Onlinedokumente, Fotosicherung, Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Das speziell entwickelte NetShield schützt deine Geräte und beschleunigt das Surfen durch das Blockieren von Werbung, Trackern und Malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Der Speicherplatz wird von allen ${ BRAND_NAME }-Services gemeinsam genutzt."
       ]
     },
     "Billing cycle": {
@@ -5010,9 +5105,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Zertifikat ${ name } nicht gefunden oder bereits widerrufen"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Vor- und Nachname können nicht gleichzeitig deaktiviert werden"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5464,9 +5556,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Sicherheitsschlüssel hinzufügen"
-      ],
       "Delete key": [
         "Schlüssel löschen"
       ]
@@ -5546,9 +5635,6 @@
       ],
       "Register your security key": [
         "Deinen Sicherheitsschlüssel registrieren"
-      ],
-      "Registered security keys": [
-        "Registrierte Sicherheitsschlüssel"
       ],
       "Security key registered": [
         "Sicherheitsschlüssel registriert"
@@ -13349,9 +13435,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         ", um ${ PASS_APP_NAME } auf deinem Handy zu verwenden"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Schalte ${ PASS_APP_NAME }-Premium-Funktionen durch ein Upgrade frei"
-      ],
       "Updating your account": [
         "Dein Konto wird aktualisiert"
       ],
@@ -18177,9 +18260,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Melde dich für ein kostenloses Konto bei ${ BRAND_NAME } an, um dir deinen Platz zu sichern. Je früher du dich anmeldest, desto früher erhältst du Zugang zu ${ appName }. Nach der Anmeldung kannst du auch auf unser exklusives Visionary-Abonnement upgraden, um die Warteliste zu überspringen und ${ appName } sofort nutzen zu können."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Schalte ${ appName }-Premium-Funktionen durch ein Upgrade frei"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Visionary-Benutzer und ihre eingeladenen Freunde können frühzeitigen Zugang mit anderen teilen, lade deine Freunde ein, um ${ appName } kostenlos auszuprobieren!"

@@ -896,6 +896,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Poistumalla nyt menetät tapahtumasi."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Älä sulje tätä välilehteä. Joitain pyyntöjä käsitellään edelleen taustalla."
       ]
     },
     "Apps dropdown": {
@@ -983,17 +986,35 @@
       ]
     },
     "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } -työpöytäsovellus"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } tallennustilaa"
+      ],
       "1 TB total": [
         "1 Tt yhteensä"
       ],
       "1 user": [
         "1 käyttäjä"
       ],
+      "1 user account": [
+        "1 käyttäjätili"
+      ],
+      "10 email addresses": [
+        "10 sähköpostiosoitetta"
+      ],
       "2 users": [
         "2 käyttäjää"
       ],
       "3 TB": [
         "3 Tt"
+      ],
+      "6 user accounts": [
+        "Kuusi käyttäjätiliä"
       ],
       "6 users": [
         "6 käyttäjää"
@@ -1004,11 +1025,29 @@
       "Ad-blocker and malware protection": [
         "Mainos- ja haittaohjelmaesto"
       ],
+      "Admin panel to manage your family": [
+        "Ylläpitopaneeli perheesi hallintaan"
+      ],
+      "Advanced account protection": [
+        "Edistynyt tilin suojaus"
+      ],
+      "Dark Web Monitoring": [
+        "Pimeän verkon valvonta"
+      ],
+      "Easily add or remove users": [
+        "Lisää tai poista käyttäjiä helposti"
+      ],
       "High speed streaming": [
         "Nopea suoratoisto"
       ],
+      "Integrated 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
       "Online document editor": [
         "Verkkodokumenttieditori"
+      ],
+      "Password health alerts": [
+        "Salasanaterveyshälytykset"
       ],
       "Private photo backup": [
         "Yksityinen kuvien varmuuskopiointi"
@@ -1019,8 +1058,68 @@
       "Secure file storage & sharing": [
         "Suojattu tiedoston tallennus ja jako"
       ],
+      "Secure vault and link sharing": [
+        "Holvien ja linkkien turvallinen jakaminen"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Rajattomasti Hide-my-email-aliaksia"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Rajattomasti kirjautumistietoja, muistiinpanoja, maksukortteja"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa verkkotunnusta sähköpostiosoitteillesi"
+      ],
       "Version history": [
         "Versiohistoria"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Tilauksesi uusitaan automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Suosituin"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "hintaan ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Suojata kirjautumisesi kaikilla laitteillasi. Sisältää rajoittamattoman määrän Hide-my-email-aliaksia, jakamisen, integroidun 2FA:n, pimeän verkon valvonnan ja paljon muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seuraajia ja haittaohjelmia."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
       ]
     },
     "Billing cycle": {
@@ -2496,6 +2595,9 @@
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Hallitse päivääsi, seuraa ajankäyttöäsi ja korosta tärkeitä tapahtumia. Värikoodaa kalenterisi mukautettavilla tapahtumaväreillä."
       ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "Värikoodaa tapahtumat, jotta sinun on helpompi suunnitella päiväsi, seurata ajankäyttöäsi ja laittaa tehtäväsi tärkeysjärjestykseen."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
       ],
@@ -2534,6 +2636,9 @@
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla salauslauseke."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
@@ -3503,11 +3608,6 @@
       ],
       "You need an active personal calendar to import events": [
         "Tarvitset tapahtumien tuontiin aktiivisen henkilökohtaisen kalenterin"
-      ]
-    },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Etu- ja sukunimen valintoja ei voi poistaa samanaikaisesti"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4602,6 +4702,9 @@
       "High Priority": [
         "Korkea tärkeys"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
@@ -4779,6 +4882,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Organisaatiosi muut käyttäjät näkevät varatut aikasi. Tapahtumatietoja ei jaeta."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
       ],
       "password": [
         "salasana"
@@ -6974,6 +7080,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille ja käytä niitä verkkoidentiteeteillesi, kuten esim. MikkoOstaja@${ domain } ostostileille."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Suojaa VPN-yksityisyyden uhkilta ohjaamalla Internet-tietoliikenteesi useiden palvelinten kautta"
       ],
@@ -7025,6 +7134,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisaation hallintatyökalulla ylläpitäjät voivat lisätä ja poistaa käyttäjiä, hallita heidän ${ BRAND_NAME }-palveluiden käyttöoikeuksiaan ja suorittaa muita tehtäviä."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vahva infrastruktuurimme varmistaa, että pääset tilillesi, kun sitä tarvitset"
       ],
@@ -7066,6 +7178,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Vaadi käyttäjien salasanojen uudelleenasetus ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
@@ -7362,6 +7477,11 @@
         "Jotta tuonti toimii, sinun on valittava kaikki pyydetyt kohteet GIF-animaatiossa kuvatulla tavalla."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Valitse, mitä ${ BRAND_NAME } voi tehdä: tarkastella sähköpostiviestejäsi ja -asetuksiasi, tarkastella ja ladata yhteystietojasi, tarkastella ja ladata kaikkia käyttämiäsi esityslistoja Google Calendarista."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Tervetuloa ${ appName } -sovellukseen"
@@ -7486,7 +7606,7 @@
     },
     "pass_signup_2023: Info": {
       "Secure vault and link sharing": [
-        "Turvallisten holvien ja linkkien jakaminen"
+        "Holvien ja linkkien turvallinen jakaminen"
       ],
       "Secure vault sharing": [
         "Suojattu holvien jako"
@@ -7496,8 +7616,8 @@
         "Turvallisten holvien jakaminen (${ n } holvia)"
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
-        "Turvallisten holvien (${ n } holvi) ja linkkien jakaminen",
-        "Turvallisten holvien (${ n } holvia) ja linkkien jakaminen"
+        "Holvien (${ n } holvi) ja linkkien turvallinen jakaminen",
+        "Holvien (${ n } holvia) ja linkkien turvallinen jakaminen"
       ]
     },
     "pass_signup_2024: Info": {
@@ -7538,9 +7658,6 @@
       ],
       "The organization key must be activated first.": [
         "Organisaation avain on ensin aktivoitava."
-      ],
-      "You need access to the organization key to perform this operation.": [
-        "Tarvitset organisaation avaimen käyttöoikeuden tämän toiminnon suorittamiseksi."
       ]
     },
     "Payment method option": {
@@ -7642,6 +7759,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Vahvistamalla tämän maksun valtuutat ${ BRAND_NAME }in ja maksupalveluntarjoajamme Stripen ohjeistamaan pankkiasi veloittamaan tiliäsi asianmukaisesti. Voit pyytää hyvitystä 8 viikon kuluessa veloituspäivästä, pankkisi kanssa tekemäsi sopimuksen ehtojen mukaisesti."
+      ],
       "Street address, postal code, and city": [
         "Katuosoite, postinumero ja kaupunki"
       ]
@@ -8000,9 +8120,6 @@
         "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
         "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
-      "This permission expires soon": [
-        "Tämä käyttöoikeus vanhenee pian"
-      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Voit nyt vapaasti vaihtaa salasanasi tilille ${ boldEmail } ${ boldDaysRemaining } ajan."
       ],
@@ -8129,9 +8246,6 @@
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
         "Jos kirjaudut ulos ennen kuin olet nollannut salasanasi, voit menettää tilisi käyttöoikeuden."
-      ],
-      "If you sign out without resetting your password, you could lose access to your account.": [
-        "Jos kirjaudut ulos nollaamatta salasanaasi, voit menettää tilisi käyttöoikeuden."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Aikaa jäljellä kunnes voit nollata salasanasi: ${ boldTimeLeft }."
@@ -9936,6 +10050,11 @@
       ],
       "No ads": [
         "Ei mainoksia"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Pääsy Secure Core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN ja muuta."
       ]
     },
     "wallet_signup_2024: Info": {
