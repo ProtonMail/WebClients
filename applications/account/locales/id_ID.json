@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -3516,7 +3516,7 @@
     },
     "Description": {
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Hapus pesan spam dan sampah secara otomatis dan buka lebih banyak fitur premium saat Anda meningkatkan."
+        "Hapus pesan spam dan sampah secara otomatis dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Hapus email di Sampah dan Spam lebih dari 30 hari yang lalu."
@@ -5112,9 +5112,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Sertifikat ${ name } tidak ditemukan atau sudah dicabut"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Nama depan dan nama belakang tidak boleh dikosongkan sekaligus"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5568,9 +5565,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Tambah kunci keamanan"
-      ],
       "Delete key": [
         "Hapus kunci"
       ]
@@ -5650,9 +5644,6 @@
       ],
       "Register your security key": [
         "Daftarkan kunci keamanan Anda"
-      ],
-      "Registered security keys": [
-        "Kunci keamanan yang terdaftar"
       ],
       "Security key registered": [
         "Kunci keamanan didaftarkan"
@@ -13422,9 +13413,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "untuk mulai menggunakan ${ PASS_APP_NAME } pada ponsel Anda"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Dapatkan berbagai fitur premium ${ PASS_APP_NAME } dengan meningkatkan paket langganan"
-      ],
       "Updating your account": [
         "Memperbarui akun Anda"
       ],
@@ -18443,9 +18431,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Daftarkan akun ${ BRAND_NAME } gratis untuk mengamankan tempat Anda. Lebih awal Anda daftar, lebih awal Anda akan mendapatkan akses ke ${ appName }. Setelah mendaftar, Anda juga dapat meningkatkan ke paket Visionary eksklusif kami untuk melewati daftar tunggu dan langsung mulai menggunakan ${ appName }."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Dapatkan berbagai fitur premium ${ appName } dengan meningkatkan paket langganan"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Pengguna Visionary dan teman-temannya yang diundang dapat membagikan akses awal dengan lainnya, undang teman Anda untuk mencoba ${ appName } secara gratis!"

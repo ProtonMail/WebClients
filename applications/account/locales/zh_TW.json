@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -4776,9 +4776,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "找不到憑證 ${ name } 或已被撤銷"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "姓氏和名字無法同時取消勾選"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5169,9 +5166,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "加入安全性金鑰"
-      ],
       "Delete key": [
         "刪除金鑰"
       ]
@@ -5251,9 +5245,6 @@
       ],
       "Register your security key": [
         "註冊您的安全金鑰"
-      ],
-      "Registered security keys": [
-        "已註冊的安全金鑰"
       ],
       "Security key registered": [
         "安全金鑰已註冊"
@@ -12468,9 +12459,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "於手機啟用${ PASS_APP_NAME }"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "升級以解鎖${ PASS_APP_NAME }付費版功能"
-      ],
       "Updating your account": [
         "更新您的帳號"
       ],
@@ -16614,9 +16602,6 @@
       ],
       "Invite Friends": [
         "邀請朋友"
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "升級以解鎖${ appName }付費版功能"
       ],
       "You're Invited.": [
         "您已被邀請"

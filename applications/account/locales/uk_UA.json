@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -1199,7 +1199,7 @@
         "Переглянути подробиці тарифного плану"
       ],
       "Void": [
-        "Анульовано"
+        "Видалити"
       ],
       "Void all recovery files": [
         "Видалити всі файли відновлення"
@@ -4782,9 +4782,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Сертифікат ${ name } не знайдено або вже відкликано"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Не можна прибрати позначку одночасно з імені та прізвища"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5172,9 +5169,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Додати ключ безпеки"
-      ],
       "Delete key": [
         "Видалити ключ"
       ]
@@ -5254,9 +5248,6 @@
       ],
       "Register your security key": [
         "Зареєструйте свій ключ безпеки"
-      ],
-      "Registered security keys": [
-        "Зареєстровані ключі безпеки"
       ],
       "Security key registered": [
         "Ключ безпеки зареєстровано"
@@ -6935,6 +6926,9 @@
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Кожен домен може мати лише один запис SPF (TXT). Якщо ви хочете зберегти наявний запис SPF (TXT), додайте ${ spf } до свого поточного запису (розмістіть його після ${ spfValue })."
       ],
+      "Early access": [
+        "Ранній доступ"
+      ],
       "Edit email address": [
         "Змінити адресу електронної пошти"
       ],
@@ -8344,6 +8338,9 @@
       ],
       "User activated": [
         "Користувач активований"
+      ],
+      "Username": [
+        "Ім’я користувача"
       ],
       "username": [
         "ім'я користувача"
@@ -12901,9 +12898,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "щоб почати використовувати ${ PASS_APP_NAME } на телефоні"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Розблокуйте преміальні функції ${ PASS_APP_NAME }, передплативши тарифний план"
-      ],
       "Updating your account": [
         "Оновлення облікового запису"
       ],
@@ -15543,6 +15537,9 @@
       "Clear out the junk": [
         "Приберіть усе зайве"
       ],
+      "Click a value in the table to use it as filter": [
+        "Клацніть на значення в таблиці, щоб використовувати його як фільтр"
+      ],
       "Close": [
         "Закрити"
       ],
@@ -15713,6 +15710,9 @@
       ],
       "Details": [
         "Подробиці"
+      ],
+      "Device": [
+        "Пристрій"
       ],
       "Device connected!": [
         "Пристрій під'єднано!"
@@ -16106,6 +16106,9 @@
       ],
       "Personalise your e-mail footer": [
         "Налаштуйте нижній колонтитул листа"
+      ],
+      "Personalize your email footer": [
+        "Налаштуйте свій підпис електронної пошти"
       ],
       "Phone": [
         "Телефон"
@@ -17169,9 +17172,6 @@
       ],
       "Join ${ appName } early access!": [
         "Приєднуйтеся до раннього доступу ${ appName }!"
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Розблокуйте преміальні функції ${ appName }, передплативши тарифний план"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Користувачі Visionary та їхні запрошені друзі можуть ділитися раннім доступом з іншими, запрошуйте друзів спробувати ${ appName } безплатно!"
