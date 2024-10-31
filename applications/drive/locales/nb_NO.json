@@ -3365,8 +3365,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Kan ikke fjerne merket samtidig for fornavn og etternavn"
+      "Display name cannot be empty": [
+        "Visningsnavn kan ikke være tomt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4911,10 +4911,10 @@
         "Be eieren om å invitere deg direkte til dokumentet."
       ],
       "Please authenticate your card in the verification tab.": [
-        "Vennligst autentiser kortet ditt i verifiseringsfanen."
+        "Autentiser kortet ditt i verifiseringsfanen."
       ],
       "Please authenticate your payment in the verification tab.": [
-        "Vennligst autentiser betalingen din i verifiseringsfanen."
+        "Autentiser betalingen din i verifiseringsfanen."
       ],
       "Please enter the password to decrypt and view content.": [
         "Skriv inn passordet for å dekryptere og vise innhold."
@@ -5195,7 +5195,7 @@
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Verifiseringsprosessen vil åpne en ny nettleserfane. Vennligst deaktiver alle aktive blokkeringer av sprett-opp-vinduer."
+        "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Det er filer som fortsatt må overføres. Å stenge overføringsbehandleren vil avslutte alle operasjoner."
@@ -5265,7 +5265,7 @@
         "Dette vil laste opp en ny versjon av mappen"
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "For å fullføre betalingen din, vennligst send ${ btcAmountBold } til adressen nedenfor."
+        "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "For å muliggjøre virkelig privat søk, må ${ DRIVE_APP_NAME } indeksere filene dine lokalt."
@@ -5382,7 +5382,7 @@
         "Verifisering kan ta noen minutter."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Verifisering vil åpne en ny fane, vennligst deaktiver eventuell blokkering av sprett-opp-vinduer. Du vil ikke bli belastet. Alle beløp som benyttes for å bekrefte kortet vil bli tilbakebetalt umiddelbart."
+        "Verifisering vil åpne en ny fane, deaktiver eventuell blokkering av sprettoppvinduer. Du vil ikke bli belastet. Alle beløp som benyttes for å bekrefte kortet vil bli tilbakebetalt umiddelbart."
       ],
       "Version is deleted": [
         "Versjon er slettet"
@@ -5427,7 +5427,7 @@
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprett-opp-vinduer, vennligst deaktiver blokkeringen for å fortsette."
+        "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
       "We'll email you once import is complete.": [
         "Vi sender deg en e-post når importen er fullført."
@@ -5508,12 +5508,12 @@
         "Du kan importere én datatype om gangen."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
       ],
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
@@ -5541,7 +5541,7 @@
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, vennligst klikk knappen nedenfor."
+        "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, klikk knappen nedenfor."
       ],
       "You need access": [
         "Du må ha tilgang"
@@ -5789,7 +5789,7 @@
         "Lagre automatisk kontakter"
       ],
       "Beta Access": [
-        "Testversjon-tilgang"
+        "Beta-tilgang"
       ],
       "Billing address": [
         "Fakturaadresse"
@@ -5864,13 +5864,13 @@
         "Brudd på opphavsrett"
       ],
       "Could you please let us know which provider?": [
-        "Kan du vennligst fortelle oss hvilken leverandør?"
+        "Kan du fortelle oss hvilken leverandør?"
       ],
       "Could you please specify which streaming service?": [
-        "Kan du vennligst spesifisere hvilken strømmetjeneste?"
+        "Kan du spesifisere hvilken strømmetjeneste?"
       ],
       "Could you please specify?": [
-        "Kan du vennligst spesifisere?"
+        "Kan du spesifisere?"
       ],
       "Country": [
         "Land"
@@ -6993,7 +6993,7 @@
         "Auto-slett søppelpost og papirkurv"
       ],
       "Auto-delete spam and trashed messages": [
-        "Autoslett søppelpost og meldinger i papirkurven"
+        "Fjern automatisk søppelpost og meldinger som er slettet"
       ],
       "Auto-reply": [
         "Autosvar"
@@ -8541,8 +8541,8 @@
         "Velg antall brukere som skal inkluderes i planen. Hver ekstra bruker koster ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Skulle du trenge mer enn ${ maxUsers } brukerkonto, vennligst ${ contact } vår salgsavdeling.",
-        "Skulle du trenge flere enn ${ maxUsers } brukerkontoer, vennligst ${ contact } vår salgsavdeling."
+        "Skulle du trenge mer enn ${ maxUsers } brukerkonto, ${ contact } vår salgsavdeling.",
+        "Skulle du trenge flere enn ${ maxUsers } brukerkontoer, ${ contact } vår salgsavdeling."
       ]
     },
     "Price": {
