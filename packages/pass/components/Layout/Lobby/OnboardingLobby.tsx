@@ -1,10 +1,9 @@
-import { type CSSProperties, type ComponentPropsWithoutRef, type FC, useState } from 'react';
+import { type FC } from 'react';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import onboarding1 from '@proton/pass/assets/desktop-onboarding/onboarding-1.png';
 import onboarding2 from '@proton/pass/assets/desktop-onboarding/onboarding-2.png';
 import onboarding3 from '@proton/pass/assets/desktop-onboarding/onboarding-3.png';
@@ -13,60 +12,14 @@ import onboarding5 from '@proton/pass/assets/desktop-onboarding/onboarding-5.png
 import onboarding6 from '@proton/pass/assets/desktop-onboarding/onboarding-6.png';
 import onboarding7 from '@proton/pass/assets/desktop-onboarding/onboarding-7.png';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
+import { Carousel } from '@proton/pass/components/Carousel/Carousel';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import protonPassIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
-import clsx from '@proton/utils/clsx';
 
 import './OnboardingLobby.scss';
-
-type CarouselProps = ComponentPropsWithoutRef<'div'> & {
-    steps: { image: string; title: string; description: string }[];
-    textClassName?: string;
-    textStyle?: CSSProperties;
-};
-
-const Carousel: FC<CarouselProps> = ({ steps, className, textClassName, textStyle, ...rest }) => {
-    const [currentStep, setCurrentStep] = useState(0);
-
-    const onStepChange = (offset: number) => {
-        const nextIndex = (((currentStep + offset) % steps.length) + steps.length) % steps.length;
-        setCurrentStep(nextIndex);
-    };
-
-    return (
-        <div className={clsx('carousel', className)} {...rest}>
-            <img src={steps[currentStep].image} className="carousel__image w-full mb-4" alt="" />
-
-            <div className="carousel__stepper mb-6">
-                {steps.map((s, i) => (
-                    <Button
-                        key={i}
-                        shape="ghost"
-                        className={clsx(i === currentStep && 'selected')}
-                        onClick={() => onStepChange(i - currentStep)}
-                    />
-                ))}
-            </div>
-
-            <div className={clsx('carousel__text', textClassName)} style={textStyle}>
-                <p className="m-0 mb-2 text-bold text-lg">{steps[currentStep].title}</p>
-                <p className="m-0 color-weak">{steps[currentStep].description}</p>
-            </div>
-
-            <div className="carousel__nav">
-                <Button shape="solid" onClick={() => onStepChange(-1)}>
-                    <Icon name="chevron-left" alt={c('Action').t`Previous`} />
-                </Button>
-                <Button shape="solid" onClick={() => onStepChange(1)}>
-                    <Icon name="chevron-right" alt={c('Action').t`Next`} />
-                </Button>
-            </div>
-        </div>
-    );
-};
 
 export const OnboardingLobby: FC = () => {
     const authService = useAuthService();
