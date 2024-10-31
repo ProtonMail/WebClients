@@ -2,7 +2,7 @@ import { isSEPACountry } from 'ibantools';
 
 import { MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/payments';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHas2024OfferCoupon, getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, BillingPlatform, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
@@ -223,7 +223,7 @@ export class PaymentMethods {
     }
 
     private isCashAvailable(): boolean {
-        return this.statusExtended.VendorStates.Cash && !isSignupFlow(this.flow);
+        return this.statusExtended.VendorStates.Cash && !isSignupFlow(this.flow) && !getHas2024OfferCoupon(this.coupon);
     }
 
     private isSEPADirectDebitAvailable(): boolean {
@@ -241,7 +241,7 @@ export class PaymentMethods {
 
         const cbUser = this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
 
-        return flowSupportsDirectDebit && billingCountrySupportsSEPA && cbUser;
+        return flowSupportsDirectDebit && billingCountrySupportsSEPA && cbUser && !getHas2024OfferCoupon(this.coupon);
     }
 
     private isBitcoinAvailable(): boolean {
