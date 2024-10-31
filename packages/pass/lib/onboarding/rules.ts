@@ -149,29 +149,11 @@ export const createAliasSyncEnableRule = (store: Store<State>) =>
         },
     });
 
-/* - Single message for both Lifetime and Family offers
- * - `extraData` stores the acknowledged feature flag
- * - Pass Family offer shown to free and pass2023 users
- * - Pass Unlimited offer shown to pass2023 users */
+/* - Pass Family offer shown to pass2023 users
+ * - Pass Lifetime offer shown to free users */
 export const createBlackFriday2024Rule = (store: Store<State>) =>
     createOnboardingRule({
         message: OnboardingMessage.BLACK_FRIDAY_2024,
-        onAcknowledge: (ack) => {
-            /** FIXME: >= 1.25.0 - leverage `extraData` parameter
-             * passed to `onAcknowledge` instead of inferring which
-             * offer was acknowledged by the user */
-            const state = store.getState();
-            const plan = selectUserPlan(state);
-            const lifetimeUpsell = selectFeatureFlag(PassFeature.PassBlackFriday2024Lifetime)(state);
-            const lifeTimeAck = lifetimeUpsell && plan?.InternalName === 'pass2023';
-
-            return {
-                ...ack,
-                extraData: lifeTimeAck
-                    ? PassFeature.PassBlackFriday2024Lifetime
-                    : PassFeature.PassBlackFriday2024Family,
-            };
-        },
         when: (previous) => {
             /* sanity check in-case feature flags are unreliable */
             const now = api.getState().serverTime?.getTime() ?? Date.now();
@@ -179,15 +161,12 @@ export const createBlackFriday2024Rule = (store: Store<State>) =>
 
             const state = store.getState();
             const plan = selectUserPlan(state);
-            const familyUpsell = selectFeatureFlag(PassFeature.PassBlackFriday2024Family)(state);
-            const lifetimeUpsell = selectFeatureFlag(PassFeature.PassBlackFriday2024Lifetime)(state);
 
             switch (plan?.InternalName) {
                 case 'pass2023':
-                    if (lifetimeUpsell && previous?.extraData !== PassFeature.PassBlackFriday2024Lifetime) return true;
-                    return !previous && familyUpsell;
+                    return !previous && selectFeatureFlag(PassFeature.PassBlackFriday2024Family)(state);
                 case 'free':
-                    return !previous && familyUpsell;
+                    return !previous && selectFeatureFlag(PassFeature.PassBlackFriday2024Lifetime)(state);
                 default:
                     return false;
             }
