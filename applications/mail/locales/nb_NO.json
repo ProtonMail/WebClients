@@ -4688,6 +4688,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Kan ikke fjerne merket samtidig for fornavn og etternavn"
+      ],
+      "Display name cannot be empty": [
+        "Visningsnavn kan ikke være tomt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -9294,7 +9297,7 @@
         "Auto-slett søppelpost og papirkurv"
       ],
       "Auto-delete spam and trashed messages": [
-        "Autoslett søppelpost og meldinger i papirkurven"
+        "Fjern automatisk søppelpost og meldinger som er slettet"
       ],
       "Auto-reply": [
         "Autosvar"
