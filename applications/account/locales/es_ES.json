@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -4844,7 +4844,7 @@
         "Ha alcanzado la cantidad máxima de calendarios."
       ],
       "You have reached the number of contacts limit for your account": [
-        "Has alcanzado el número límite de contactos para tu cuenta."
+        "Has alcanzado el límite de contactos para tu cuenta."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Has utilizado todas las direcciones de tu plan. Pasa a un plan superior para añadir una dirección."
@@ -5139,8 +5139,8 @@
       "Certificate ${ name } not found or already revoked": [
         "Certificado ${ name } no encontrado o ya revocado"
       ],
-      "First name and last name cannot be unchecked at the same time": [
-        "El nombre y apellido no pueden desmarcarse al mismo tiempo."
+      "Display name cannot be empty": [
+        "El nombre a mostrar no puede estar vacío."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5604,9 +5604,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Añadir llave de seguridad"
-      ],
       "Delete key": [
         "Eliminar la llave"
       ]
@@ -5687,11 +5684,11 @@
       "Register your security key": [
         "Registra tu llave de seguridad."
       ],
-      "Registered security keys": [
-        "Llaves de seguridad registradas"
-      ],
       "Security key registered": [
         "Llave de seguridad registrada"
+      ],
+      "Security keys": [
+        "Claves de seguridad"
       ]
     },
     "file size format": {
@@ -8105,7 +8102,7 @@
         "Añade direcciones de correo para los usuarios seleccionados."
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Pregunta al propietario que te invite directamente al documento."
+        "Pide al propietario que te invite directamente al documento."
       ],
       "Please authenticate your card in the verification tab.": [
         "Autentica tu tarjeta en la pestaña de verificación."
@@ -8174,13 +8171,13 @@
         "Error al cargar la vista previa"
       ],
       "Preview for this file type is currently not supported on this browser.": [
-        "La vista previa para este tipo de archivo no está admitida en este navegador."
+        "La vista previa para este tipo de archivo no está soportada en este navegador."
       ],
       "Preview for this file type is not supported": [
         "No se admite la vista previa para este tipo de archivo."
       ],
       "Preview of documents is not yet supported.": [
-        "La previsualización de documentos aún no está admitida."
+        "La previsualización de documentos aún no está disponible."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
@@ -8201,7 +8198,7 @@
         "Enlace de invitación público"
       ],
       "Public sharing of documents is not yet supported.": [
-        "El intercambio público de documentos aún no está admitido."
+        "La compartición pública de documentos aún no está disponible."
       ],
       "purchase additional storage": [
         "comprar almacenamiento adicional"
@@ -9072,7 +9069,7 @@
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
       "You are about to open your default browser and visit:": [
-        "Estás a punto de abrir tu navegador por defecto y consultar:"
+        "Estás a punto de abrir tu navegador por defecto y visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
@@ -9163,7 +9160,7 @@
         "No puedes recomendar a usuarios de ${ MAIL_APP_NAME }."
       ],
       "You cannot undo this action.": [
-        "No puedes deshacer esta acción."
+        "No se puede deshacer esta acción."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No has establecido un método de recuperación por lo que la recuperación de cuentas es imposible si olvidas tu contraseña. ¿Quieres continuar sin método de recuperación?"
@@ -10228,6 +10225,9 @@
       ],
       "Emails (last month)": [
         "Correos electrónicos (último mes)"
+      ],
+      "Enable video conferencing ": [
+        "Activar la videoconferencia "
       ],
       "End date": [
         "Fecha de fin"
@@ -12809,6 +12809,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "La autenticación de dos factores ya no es requerida."
+      ],
+      "Video conferencing settings have been updated": [
+        "Se han actualizado los ajustes de videoconferencia."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13488,8 +13491,14 @@
       "Get in touch with our sales team": [
         "Ponte en contacto con nuestro equipo de ventas"
       ],
+      "Get online privacy, for your whole family": [
+        "Disfruta de privacidad online para toda la familia."
+      ],
       "Get the security and features your business needs": [
         "Obtén la seguridad y funciones que necesita tu negocio"
+      ],
+      "Get unlimited privacy for two": [
+        "Disfruta de privacidad ilimitada para dos"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Entiendo que al perder mis detalles de recuperación, puedo permanentemente perder acceso a mi cuenta."
@@ -13591,9 +13600,6 @@
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
         "para utilizar ${ PASS_APP_NAME } en tu teléfono"
-      ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Accede a las características premium de ${ PASS_APP_NAME } al mejorar tu plan"
       ],
       "Updating your account": [
         "Actualizando tu cuenta"
@@ -17448,6 +17454,9 @@
       "Increase your privacy with more addresses": [
         "Protege aún más tu privacidad con más direcciones"
       ],
+      "Integrations": [
+        "Integraciones"
+      ],
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
@@ -17913,6 +17922,9 @@
       ],
       "Version history": [
         "Historial de versiones"
+      ],
+      "Video conference": [
+        "Videoconferencia"
       ],
       "VPN apps": [
         "Aplicaciones VPN"
@@ -18773,9 +18785,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Regístrate para obtener una cuenta gratuita de ${ BRAND_NAME } y asegura tu lugar. Cuanto antes te registres, antes tendrás acceso a ${ appName }. Después de registrarte, también puedes mejorar a nuestro plan exclusivo Visionary para saltarte la lista de espera y comenzar a usar ${ appName } de inmediato."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Consigue acceso a las funciones prémium de ${ appName } al mejorar tu plan"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "¡Los usuarios de Visionary y sus amigos invitados pueden compartir acceso anticipado con otros, invita a tus amigos a probar ${ appName } gratis!"

@@ -719,6 +719,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited로 업그레이드하기"
       ],
+      "Upgrade to Mail Plus": [
+        "Mail Plus로 업그레이드"
+      ],
       "Upload picture": [
         "사진 업로드"
       ],
@@ -2580,6 +2583,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "이벤트를 컬러 코딩하여 하루를 더 쉽게 정리하고, 시간을 추적하고, 작업의 우선순위를 지정할 수 있습니다."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "한 번의 클릭으로 Zoom 미팅을 생성하고 내 이벤트의 참가 상세 사항을 추가하세요."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
       ],
@@ -3059,6 +3065,9 @@
       ],
       "Failed to get original occurrence in series": [
         "시리즈에서 원래 발생을 얻지 못했습니다."
+      ],
+      "Failed to load oauth modal.": [
+        "인증 모달 로드 오류"
       ],
       "First name is too long": [
         "이름이 너무 깁니다."
@@ -3580,8 +3589,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "이름과 성을 동시에 선택 해제할 수 없습니다."
+      "Display name cannot be empty": [
+        "디스플레이 이름은 비어 있을 수 없습니다"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -9424,6 +9433,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } 앱 받기"
       ],
+      "Get Zooming faster": [
+        "더 빠르게 Zoom 참가하기"
+      ],
       "Gift": [
         "선물"
       ],
@@ -10212,6 +10224,17 @@
       ],
       "Yearly, ${ untilString }": [
         "연간, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoom 미팅 추가"
+      ],
+      "Adding conferencing details": [
+        "컨퍼런스 상세 사항 추가 중"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom 미팅 구성을 불러오는 중"
       ]
     },
     "Zoom Meeting": {

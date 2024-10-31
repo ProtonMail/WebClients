@@ -728,6 +728,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Палепшыць да ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Палепшыць да Mail Plus"
+      ],
       "Upload picture": [
         "Запампаваць малюнак"
       ],
@@ -2638,6 +2641,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Пазначайце колерам падзеі, каб з іх дапамогай прасцей арганізаваць свой дзень, адсачыць час і вызначыць прыярытэтныя заданні."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Стварыце сустрэчу Zoom і дадайце падрабязнасці аб далучэнні да падзеі адным націскам."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
@@ -3135,6 +3141,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Не ўдалося атрымаць арыгінальнае паўтарэнне ў серыі"
+      ],
+      "Failed to load oauth modal.": [
+        "Не ўдалося загрузіць акно OAuth."
       ],
       "First name is too long": [
         "Занадта доўгае імя"
@@ -3677,8 +3686,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Немагчыма адначасова зняць пазнаку з імя і прозвішча"
+      "Display name cannot be empty": [
+        "Бачнае імя не можа быць пустым"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -8057,6 +8066,9 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Пацвярджаючы гэты плацеж, вы надзяляеце паўнамоцтвамі ${ BRAND_NAME } і Stripe, нашага пастаўшчыка плацежных паслуг, даць указанне вашаму банку зрабіць спісанне з вашага рахунка, а вашаму банку - адпаведна правесці гэту аперацыю. Вы можаце вярнуць спісаныя сродкі на працягу 8 тыдняў з даты спісання ў адпаведнасці з умовамі дагавора з вашым банкам."
+      ],
       "Street address, postal code, and city": [
         "Адрас вуліцы, паштовы індэкс і горад"
       ]
@@ -8416,7 +8428,7 @@
         "${ timeRemaining.inHours } гадзін"
       ],
       "Password reset request approved (${ user.Email }).": [
-        "Запыт на скіданне пароля пацверджаны (${ user.Email })."
+        "Запыт на скіданне пароля ўхвалены (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Перайдзіце на прыладу, якая знаходзіцца ў сістэме (з якой быў ініцыяваны запыт), каб змяніць пароль."
@@ -9998,6 +10010,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Атрымаць праграмы ${ appName[APP_NAME] }"
       ],
+      "Get Zooming faster": [
+        "Паскорыць Zoom"
+      ],
       "Gift": [
         "Падарунак"
       ],
@@ -10912,6 +10927,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Дадаць сустрэчу ў Zoom"
+      ],
+      "Adding conferencing details": [
+        "Дадаванне падрабязнасцяў канферэнцыі"
+      ],
+      "Loading Zoom configuration": [
+        "Загрузка канфігурацыі Zoom"
       ]
     },
     "Zoom Meeting": {

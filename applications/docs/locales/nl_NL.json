@@ -402,6 +402,9 @@
       "Next month": [
         "Volgende maand"
       ],
+      "No, thanks": [
+        "Nee, bedankt"
+      ],
       "Not now": [
         "Niet nu"
       ],
@@ -818,6 +821,9 @@
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
       ],
+      "1 TB total": [
+        "1 TB totaal"
+      ],
       "1 user": [
         "1 gebruiker"
       ],
@@ -844,6 +850,9 @@
       ],
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "Admin panel to manage your family": [
+        "Beheerderpaneel om uw gezin te beheren"
       ],
       "Advanced account protection": [
         "Geavanceerde accountbeveiliging"
@@ -910,14 +919,36 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "voor ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Verlenging na 1 maand voor ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8.500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, Dark Web Monitoring en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief online documenteditor, foto back-up, versiegeschiedenis, versleuteld bestanden delen en meer."
+      ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
       ]
     },
     "Billing cycle": {
@@ -3041,11 +3072,6 @@
         "Wanneer extra wachtwoord is ingeschakeld, kan aliasbeheer alleen worden gedaan in ${ PASS_APP_NAME }."
       ]
     },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Voornaam en achternaam kunnen niet tegelijkertijd worden uitgeschakeld"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Geen afbeelding geselecteerd"
@@ -3994,6 +4020,9 @@
       "End-to-end encrypted.": [
         "End-to-end versleuteld."
       ],
+      "Enter password": [
+        "Vul login wachtwoord in"
+      ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw verificatie-app in"
       ],
@@ -4308,6 +4337,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Authenticeer uw betaling in het verificatietabblad."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Voer een wachtwoord in om de content te ontsleutelen en te bekijken."
       ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Exporteer een kopie van de huidige wijzigingen vanuit het hoofdmenu en laad de pagina opnieuw."

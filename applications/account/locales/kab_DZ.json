@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "Activate": [
-        "Rmed"
-      ],
       "activate": [
         "rmed"
+      ],
+      "Activate": [
+        "Rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -3668,9 +3668,6 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Aselkin ${ name } ur yettwaf ara neɣ yettwaḥwi yakan"
-      ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Aɣara d yisem ulamek ttwaṛcamen ɣef tikkelt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3937,9 +3934,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Rnu tasarut n teɣlist"
-      ],
       "Delete key": [
         "Kkes tasarut"
       ]
@@ -3969,9 +3963,6 @@
       ],
       "Register your security key": [
         "Sekles tasarutt-ik·im n tɣellist"
-      ],
-      "Registered security keys": [
-        "Isekles tisura n tɣellist"
       ],
       "Security key registered": [
         "Tasarut n tɣellist tettwasekles"
