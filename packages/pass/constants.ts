@@ -49,7 +49,9 @@ export const WEBSITE_RULES_SUPPORTED_VERSION = '1';
 
 export const ITEM_COUNT_RATING_PROMPT = 10;
 
-export const PASS_UPGRADE_PATH = 'pass/signup';
+/** Prefer navigating to signup from extension/desktop
+ * as we cannot guarantee the session exists */
+export const PASS_UPGRADE_PATH = EXTENSION_BUILD || DESKTOP_BUILD ? 'pass/signup' : 'pass/dashboard';
 
 export enum AccountPath {
     ACCOUNT_PASSWORD = 'pass/account-password',

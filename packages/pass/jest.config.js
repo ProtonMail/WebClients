@@ -14,5 +14,6 @@ module.exports = {
         BUILD_TARGET: 'test',
         ENV: 'test',
         EXTENSION_BUILD: false,
+        DESKTOP_BUILD: false,
     },
 };
