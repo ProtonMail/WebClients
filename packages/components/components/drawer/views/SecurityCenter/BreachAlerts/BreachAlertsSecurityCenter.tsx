@@ -249,11 +249,7 @@ const BreachAlertsSecurityCenter = () => {
                             </h3>
                             {count === 0 ? (
                                 <div className="drawerAppSection shadow-norm px-4 py-3 rounded-lg w-full flex flex-nowrap gap-2">
-                                    <Icon
-                                        name="checkmark-circle-filled"
-                                        className="color-success shrink-0 mt-0.5"
-                                        alt=""
-                                    />
+                                    <Icon name="checkmark-circle-filled" className="color-success shrink-0" alt="" />
                                     <p className="m-0 color-weak text-left flex-1 text-sm">{c('Title')
                                         .t`No breaches detected`}</p>
                                 </div>
