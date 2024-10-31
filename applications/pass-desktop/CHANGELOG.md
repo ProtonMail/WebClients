@@ -1,3 +1,10 @@
+### Version 1.24.1
+
+-   Add SSO device verification support
+-   Improve offline detection on app launch
+-   Fix onboarding local state not accounting for multi-account
+-   Fix locked state edge-case blocking user data revalidation
+
 ### Version 1.24.0
 
 -   Added in-app account switching capabilities
