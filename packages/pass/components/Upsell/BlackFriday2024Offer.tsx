@@ -29,17 +29,19 @@ type BF2024Offer = PassFeature.PassBlackFriday2024Family | PassFeature.PassBlack
 
 /** FIXME: move to `@proton/pass/components/Onboarding` in 1.25.0 */
 export const BlackFriday2024Offer: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
+    const online = useConnectivity();
+
     const user = useSelector(selectUser);
     const userPlan = useSelector(selectUserPlan);
-    const lifetimeUpsell = useFeatureFlag(PassFeature.PassBlackFriday2024Lifetime);
-    const online = useConnectivity();
+    const lifetime = useFeatureFlag(PassFeature.PassBlackFriday2024Lifetime);
+    const family = useFeatureFlag(PassFeature.PassBlackFriday2024Family);
 
     const offer = useMemo<MaybeNull<BF2024Offer>>(() => {
         switch (userPlan?.InternalName) {
             case 'pass2023':
-                return lifetimeUpsell ? PassFeature.PassBlackFriday2024Lifetime : PassFeature.PassBlackFriday2024Family;
+                return family ? PassFeature.PassBlackFriday2024Family : null;
             case 'free':
-                return PassFeature.PassBlackFriday2024Family;
+                return lifetime ? PassFeature.PassBlackFriday2024Lifetime : null;
             default:
                 return null;
         }
