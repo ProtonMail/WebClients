@@ -456,7 +456,6 @@ export { default as ContactEmailsProvider, useContactEmailsCache } from './conta
 export type { ContactEmailsCache, GroupWithContacts } from './containers/contacts/ContactEmailsProvider';
 export { default as ContactGroupDropdown } from './containers/contacts/ContactGroupDropdown';
 export { default as ContactImage } from './containers/contacts/ContactImage';
-export { default as ContactProvider } from './containers/contacts/ContactProvider';
 export { default as ContactEditModal } from './containers/contacts/edit/ContactEditModal';
 export type { ContactEditModalProps, ContactEditProps } from './containers/contacts/edit/ContactEditModal';
 export {

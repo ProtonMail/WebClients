@@ -36,7 +36,6 @@ import AuthenticationProvider from '../../authentication/Provider';
 import ConfigProvider from '../../config/Provider';
 import EventManagerContext from '../../eventManager/context';
 import NotificationsContext from '../../notifications/notificationsContext';
-import ContactProvider from '../ContactProvider';
 import { extendStore, setupStore } from './store';
 
 export const mockedCryptoApi = {
@@ -99,9 +98,7 @@ const TestProvider = ({ children }: { children: ReactNode }) => {
                     <NotificationsContext.Provider value={notificationManager}>
                         <EventManagerContext.Provider value={eventManager}>
                             <AuthenticationProvider store={{} as any}>
-                                <Router history={history}>
-                                    <ContactProvider>{children}</ContactProvider>
-                                </Router>
+                                <Router history={history}>{children}</Router>
                             </AuthenticationProvider>
                         </EventManagerContext.Provider>
                     </NotificationsContext.Provider>
