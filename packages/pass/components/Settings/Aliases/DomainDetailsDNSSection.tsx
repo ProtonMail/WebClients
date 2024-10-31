@@ -48,7 +48,6 @@ export const DomainDetailsDNSSection: FC<PropsWithChildren<Props>> = ({
             >
                 {isVerified ? c('Action').t`Re-verify` : c('Action').t`Verify`}
             </Button>
-            <hr />
         </>
     );
 };

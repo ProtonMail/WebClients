@@ -40,7 +40,7 @@ export const AliasMailboxesTable: FC<Props> = ({ mailboxes, onVerify, onChangeDe
 
     return (
         <>
-            <Table responsive="cards" hasActions>
+            <Table responsive="cards" hasActions borderWeak>
                 <TableHeader>
                     <TableRow>
                         <TableHeaderCell className="w-1/2">{c('Title').t`Mailbox`}</TableHeaderCell>

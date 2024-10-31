@@ -236,7 +236,7 @@ export const DomainDetailsDNS = ({ domain, onVerify }: Props) => {
     const sections = getSections(domain);
 
     return (
-        <div>
+        <div className="pb-1">
             <div>{c('Info').t`Please follow the steps below to set up your domain.`}</div>
             <div className="mb-5">{c('Info').t`DNS changes could take up to 24 hours to update.`}</div>
             {sections.map(({ title, content, isVerified, errorMessages }, index) => (
@@ -257,6 +257,7 @@ export const DomainDetailsDNS = ({ domain, onVerify }: Props) => {
                             <span> {c('Error').t`A domain ownership must be verified first.`}</span>
                         </Card>
                     )}
+                    {index < sections.length - 1 && <hr />}
                 </div>
             ))}
         </div>
