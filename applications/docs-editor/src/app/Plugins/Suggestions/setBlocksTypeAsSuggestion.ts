@@ -10,6 +10,7 @@ import { $isListItemNode } from '@lexical/list'
 import type { ListInfo } from '../CustomList/$getListInfo'
 import { $getListInfo } from '../CustomList/$getListInfo'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
+import type { BlockTypeChangeSuggestionProperties } from './Types'
 
 export function $setBlocksTypeAsSuggestion(
   blockType: BlockType,
@@ -117,7 +118,7 @@ export function $setBlocksTypeAsSuggestion(
         initialFormatType,
         initialIndent,
         listInfo,
-      }
+      } satisfies BlockTypeChangeSuggestionProperties
       const suggestionNode = $createSuggestionNode(suggestionID, 'block-type-change', properties)
       $insertFirst(targetElement, suggestionNode)
     }
