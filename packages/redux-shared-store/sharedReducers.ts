@@ -28,6 +28,7 @@ import { featuresReducer } from '@proton/features';
 import {
     categoriesReducer,
     contactEmailsReducer,
+    contactReducer,
     contactsReducer,
     importerConfigReducer,
     mailSettingsReducer,
@@ -51,6 +52,7 @@ export const sharedReducers = {
     ...domainsReducer,
     organizationTheme: organizationThemeSlice.reducer,
     ...userInvitationsReducer,
+    ...contactReducer,
     ...contactsReducer,
     ...contactEmailsReducer,
     ...categoriesReducer,
