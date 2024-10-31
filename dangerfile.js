@@ -2,9 +2,56 @@ import { danger, fail, markdown, warn } from 'danger';
 
 const matchWhitespaceAtStartOfLine = /^\s+/gm;
 
+const inboxFilesTouched = danger.git.fileMatch(
+    'applications/mail',
+    'applications/calendar',
+    'packages/activation',
+    'packages/mail-store',
+    'packages/calendar-store',
+    'packages/ai-assistant',
+    'packages/llm'
+);
+
 const driveFilesMatch = danger.git.fileMatch('applications/drive', 'packages/drive-store');
 const driveFilesTouched =
     driveFilesMatch.created || driveFilesMatch.edited || driveFilesMatch.deleted || driveFilesMatch.modified;
+
+/**
+ * Fails if no assignee is provided.
+ *
+ * @param {Object} options - The options object.
+ * @param {boolean} [options.disabled=false] - Indicates whether the check is disabled.
+ * @returns {void}
+ */
+const failIfNoAssignees = ({ disabled = false }) => {
+    if (disabled) return;
+
+    if (!danger.gitlab.mr.assignees?.length) {
+        fail('This pull request needs an assignee, and optionally include any reviewers.');
+    }
+};
+
+/**
+ * Fails if no description is provided.
+ *
+ * @param {Object} options - The options object.
+ * @param {boolean} [options.disabled=false] - Indicates whether the check is disabled.
+ * @returns {void}
+ */
+const failIfNoDescription = ({ disabled = false }) => {
+    if (disabled) return;
+
+    if (!danger.gitlab.mr.description) {
+        fail('Merge request description is missing');
+        markdown(
+            `
+            ## 🟠 Add an MR description
+
+            Please consider adding a more [meaningful description](https://confluence.protontech.ch/display/~glinford/Writing+Meaningful+Merge+Request+Descriptions).
+        `.replace(matchWhitespaceAtStartOfLine, '')
+        );
+    }
+};
 
 if (driveFilesTouched) {
     const expectedSection = [];
@@ -31,16 +78,10 @@ if (driveFilesTouched) {
             markdown(section);
         }
     }
-} else if (!danger.gitlab.mr.description) {
-    fail('Merge request description is missing');
-    markdown(
-        `
-        ## 🟠 Add an MR description
-        
-        Please consider adding a more [meaningful description](https://confluence.protontech.ch/display/~glinford/Writing+Meaningful+Merge+Request+Descriptions).
-    `.replace(matchWhitespaceAtStartOfLine, '')
-    );
 }
+
+failIfNoDescription({ disabled: inboxFilesTouched || driveFilesTouched });
+failIfNoAssignees({ disabled: inboxFilesTouched });
 
 if (danger.gitlab.mr.title.includes('WIP') || danger.gitlab.mr.title.startsWith('Draft:')) {
     warn('PR is considered WIP');
@@ -48,10 +89,6 @@ if (danger.gitlab.mr.title.includes('WIP') || danger.gitlab.mr.title.startsWith(
 
 if (danger.gitlab.mr.squash) {
     warn('Commits will be squashed');
-}
-
-if (!danger.gitlab.mr.assignees?.length) {
-    fail('This pull request needs an assignee, and optionally include any reviewers.');
 }
 
 const fileThresholdForLargePR = 200;
