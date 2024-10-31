@@ -145,7 +145,7 @@ const MessageBodyIframe = ({
                     >
                         <button
                             type="button"
-                            className="proton-toggle-button inline-flex"
+                            className="proton-toggle-button"
                             onClick={() => {
                                 setShowBlockquote(!showBlockquote);
                             }}
