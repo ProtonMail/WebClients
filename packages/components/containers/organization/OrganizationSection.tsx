@@ -12,6 +12,7 @@ import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
@@ -35,9 +36,9 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
-import type { Credentials } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
 
-import { useCustomDomains, useModals, useNotifications, useOrganizationKey, useSubscription } from '../../hooks';
+import { useCustomDomains, useNotifications, useOrganizationKey, useSubscription } from '../../hooks';
 import DomainModal from '../domains/DomainModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';
@@ -57,7 +58,6 @@ interface Props {
 
 const OrganizationSection = ({ app, organization }: Props) => {
     const { APP_NAME } = useConfig();
-    const { createModal } = useModals();
     const [organizationKey] = useOrganizationKey();
     const [user] = useUser();
     const getAddresses = useGetAddresses();
@@ -71,6 +71,9 @@ const OrganizationSection = ({ app, organization }: Props) => {
         useModalState();
     const [editOrganizationNameProps, setEditOrganizationNameModal, renderEditOrganizationNameModal] = useModalState();
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
+    const [setupOrganizationModalProps, setSetupOrganizationModal, renderSetupOrganizationModal] = useModalState();
+
+    const [authModal, showAuthModal] = useModalTwoPromise<undefined, AuthModalResult>();
 
     const { createNotification } = useNotifications();
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
@@ -94,6 +97,17 @@ const OrganizationSection = ({ app, organization }: Props) => {
 
     return (
         <>
+            {authModal((props) => {
+                return (
+                    <AuthModal
+                        {...props}
+                        config={unlockPasswordChanges()}
+                        onCancel={props.onReject}
+                        onSuccess={props.onResolve}
+                    />
+                );
+            })}
+
             {renderNewDomain && <DomainModal {...newDomainModalProps} />}
 
             {renderOrganizationLogoModal && (
@@ -123,6 +137,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                     {...editOrganizationIdentityProps}
                 />
             )}
+            {renderSetupOrganizationModal && <SetupOrganizationModal {...setupOrganizationModalProps} />}
 
             {(() => {
                 if (!hasMemberCapablePlan || !isOrgActive) {
@@ -180,16 +195,10 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                         });
                                     }
 
-                                    await new Promise((resolve, reject) => {
-                                        createModal(
-                                            <AuthModal
-                                                onCancel={reject}
-                                                onSuccess={resolve}
-                                                config={unlockPasswordChanges()}
-                                            />
-                                        );
-                                    });
-                                    createModal(<SetupOrganizationModal />);
+                                    try {
+                                        await showAuthModal();
+                                        setSetupOrganizationModal(true);
+                                    } catch {}
                                 }}
                             >
                                 {buttonCTA}
@@ -217,20 +226,10 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                     }
 
                                     const run = async () => {
-                                        const { credentials } = await new Promise<{
-                                            credentials: Credentials;
-                                        }>((resolve, reject) => {
-                                            createModal(
-                                                <AuthModal
-                                                    onCancel={reject}
-                                                    onSuccess={resolve}
-                                                    config={unlockPasswordChanges()}
-                                                />
-                                            );
-                                        });
+                                        const authResult = await showAuthModal();
 
                                         // VPN username only users might arrive here through the VPN business plan in protonvpn.com
-                                        if (user.isPrivate && !user.Keys.length) {
+                                        if (user.isPrivate && !user.Keys.length && authResult.type === 'srp') {
                                             const [addresses, domains] = await Promise.all([
                                                 getAddresses(),
                                                 api<{
@@ -242,7 +241,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                                 addresses,
                                                 api,
                                                 username: user.Name,
-                                                password: credentials.password,
+                                                password: authResult.credentials.password,
                                                 domains,
                                                 preAuthKTVerify: preAuthKTVerifier.preAuthKTVerify,
                                                 productParam: app,
@@ -251,16 +250,16 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                                 api,
                                                 authentication,
                                                 keyPassword: passphrase,
-                                                clearKeyPassword: credentials.password,
+                                                clearKeyPassword: authResult.credentials.password,
                                                 User: user,
                                             });
                                             await preAuthKTVerifier.preAuthKTCommit(user.ID, api);
                                         }
 
-                                        createModal(<SetupOrganizationModal />);
+                                        setSetupOrganizationModal(true);
                                     };
 
-                                    withLoading(run());
+                                    withLoading(run().catch(noop));
                                 }}
                             >{c('Action').t`Enable multi-user support`}</PrimaryButton>
                         </>
