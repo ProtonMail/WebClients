@@ -32,14 +32,14 @@ const HumanVerificationModal = lazy(
         )
 );
 
-const AuthModal = lazy(
+const AuthModalContainer = lazy(
     () =>
         import(
             /* webpackChunkName: "auth-modal" */
             /* webpackMode: "lazy" */
             /* webpackFetchPriority: "low" */
             /* webpackPrefetch: true */
-            '../password/AuthModal'
+            '../password/AuthModalContainer'
         )
 );
 
@@ -208,7 +208,7 @@ const ApiProvider = ({ api, children }: { api: ApiWithListener; children: ReactN
                     )}
                     {reauth && (
                         <Suspense fallback={null}>
-                            <AuthModal
+                            <AuthModalContainer
                                 open={reauth.open}
                                 config={reauth.payload.options}
                                 onCancel={() => {

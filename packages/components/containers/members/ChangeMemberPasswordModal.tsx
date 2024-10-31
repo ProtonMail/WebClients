@@ -108,7 +108,12 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
                 config={authMember(member.ID, { Unlock: true })}
                 {...rest}
                 onCancel={onClose}
-                onSuccess={async ({ credentials, response }) => {
+                onSuccess={async (result) => {
+                    if (result.type !== 'srp') {
+                        return;
+                    }
+                    const { response, credentials } = result;
+
                     const data = await response.json();
 
                     const UID = data?.UID;

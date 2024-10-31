@@ -178,10 +178,6 @@ const PasswordsSection = () => {
             )}
             {(() => {
                 if (getIsGlobalSSOAccount(user)) {
-                    const supportsReauth = false;
-                    if (!supportsReauth) {
-                        return null;
-                    }
                     return (
                         <SettingsSection>
                             <SettingsLayout>
