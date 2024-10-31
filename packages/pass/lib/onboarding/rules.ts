@@ -33,6 +33,11 @@ export const createPendingShareAccessRule = (store: Store<State>) =>
         },
     });
 
+export const createWelcomeRule = () =>
+    createOnboardingRule({
+        message: OnboardingMessage.WELCOME,
+    });
+
 export const createPermissionsRule = (checkPermissionsGranted: () => boolean) =>
     createOnboardingRule({
         message: OnboardingMessage.PERMISSIONS_REQUIRED,
