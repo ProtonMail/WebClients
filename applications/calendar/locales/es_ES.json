@@ -722,6 +722,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Mejora a ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Mejorar a Mail Plus"
+      ],
       "Upload picture": [
         "Cargar imagen"
       ],
@@ -771,7 +774,7 @@
         "Sí, asistiré"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos.",
+        "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos."
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
@@ -3087,6 +3090,9 @@
       "Failed to get original occurrence in series": [
         "No se ha podido obtener la ocurrencia original de la serie."
       ],
+      "Failed to load oauth modal.": [
+        "Error al cargar la ventana OAuth"
+      ],
       "First name is too long": [
         "El nombre es demasiado largo."
       ],
@@ -3394,7 +3400,7 @@
         "Ha alcanzado la cantidad máxima de calendarios."
       ],
       "You have reached the number of contacts limit for your account": [
-        "Has alcanzado el número límite de contactos para tu cuenta."
+        "Has alcanzado el límite de contactos para tu cuenta."
       ],
       "You must set a name": [
         "Debes establecer un nombre."
@@ -3614,8 +3620,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "El nombre y apellido no pueden desmarcarse al mismo tiempo."
+      "Display name cannot be empty": [
+        "El nombre a mostrar no puede estar vacío."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5053,7 +5059,7 @@
         "El organizador de esta serie de eventos no será notificado de que rechazas la invitación porque no puedes enviar correos electrónicos desde la dirección invitada. ¿Quieres eliminar todos los eventos de esta serie de todos modos?"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
+        "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
@@ -5221,7 +5227,7 @@
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
       "You are about to open your default browser and visit:": [
-        "Estás a punto de abrir tu navegador por defecto y consultar:"
+        "Estás a punto de abrir tu navegador por defecto y visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
@@ -5256,7 +5262,7 @@
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
       ],
       "You cannot undo this action.": [
-        "No puedes deshacer esta acción."
+        "No se puede deshacer esta acción."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Tiene una suscripción de prueba ${ planTitle }. Si deseas continuar tu suscripción después del periodo de prueba, añade un método de pago."
@@ -9621,6 +9627,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Obtén las aplicaciones de ${ appName[APP_NAME] }"
       ],
+      "Get Zooming faster": [
+        "Obtén Zoom más rápido"
+      ],
       "Gift": [
         "Regalo"
       ],
@@ -10451,6 +10460,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Añadir una reunión de Zoom"
+      ],
+      "Adding conferencing details": [
+        "Agregando los detalles de la conferencia"
+      ],
+      "Loading Zoom configuration": [
+        "Cargando la configuración de Zoom"
       ]
     },
     "Zoom Meeting": {

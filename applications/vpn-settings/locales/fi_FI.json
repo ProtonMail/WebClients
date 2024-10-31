@@ -965,17 +965,35 @@
       ]
     },
     "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } -työpöytäsovellus"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } tallennustilaa"
+      ],
       "1 TB total": [
         "1 Tt yhteensä"
       ],
       "1 user": [
         "1 käyttäjä"
       ],
+      "1 user account": [
+        "1 käyttäjätili"
+      ],
+      "10 email addresses": [
+        "10 sähköpostiosoitetta"
+      ],
       "2 users": [
         "2 käyttäjää"
       ],
       "3 TB": [
         "3 Tt"
+      ],
+      "6 user accounts": [
+        "Kuusi käyttäjätiliä"
       ],
       "6 users": [
         "6 käyttäjää"
@@ -986,11 +1004,29 @@
       "Ad-blocker and malware protection": [
         "Mainos- ja haittaohjelmaesto"
       ],
+      "Admin panel to manage your family": [
+        "Ylläpitopaneeli perheesi hallintaan"
+      ],
+      "Advanced account protection": [
+        "Edistynyt tilin suojaus"
+      ],
+      "Dark Web Monitoring": [
+        "Pimeän verkon valvonta"
+      ],
+      "Easily add or remove users": [
+        "Lisää tai poista käyttäjiä helposti"
+      ],
       "High speed streaming": [
         "Nopea suoratoisto"
       ],
+      "Integrated 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
       "Online document editor": [
         "Verkkodokumenttieditori"
+      ],
+      "Password health alerts": [
+        "Salasanaterveyshälytykset"
       ],
       "Private photo backup": [
         "Yksityinen kuvien varmuuskopiointi"
@@ -1001,8 +1037,68 @@
       "Secure file storage & sharing": [
         "Suojattu tiedoston tallennus ja jako"
       ],
+      "Secure vault and link sharing": [
+        "Holvien ja linkkien turvallinen jakaminen"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Rajattomasti Hide-my-email-aliaksia"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Rajattomasti kirjautumistietoja, muistiinpanoja, maksukortteja"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa verkkotunnusta sähköpostiosoitteillesi"
+      ],
       "Version history": [
         "Versiohistoria"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Tilauksesi uusitaan automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Suosituin"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "hintaan ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Suojata kirjautumisesi kaikilla laitteillasi. Sisältää rajoittamattoman määrän Hide-my-email-aliaksia, jakamisen, integroidun 2FA:n, pimeän verkon valvonnan ja paljon muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seuraajia ja haittaohjelmia."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
       ]
     },
     "Billing cycle": {
@@ -2899,6 +2995,9 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jos käyttäjällä on jo ${ MAIL_APP_NAME } -osoite, syötä se tähän. Muutoin heidän on ensin luotava tili."
       ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Jos käyttäjällä on jo ${ BRAND_NAME }-tili, syötä se tähän. Muuten heidän on ensin luotava tili."
+      ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Kutsu perutaan, eikä käyttäjä voi liittyä organisaatioon ${ organizationName }."
       ],
@@ -3034,9 +3133,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Liitä suojausavain"
-      ],
       "Delete key": [
         "Poista avain"
       ]
@@ -3116,9 +3212,6 @@
       ],
       "Register your security key": [
         "Rekisteröi suojausavaimesi"
-      ],
-      "Registered security keys": [
-        "Liitetyt suojausavaimet"
       ],
       "Security key registered": [
         "Suojausavain rekisteröitiin"
@@ -3637,7 +3730,7 @@
         "Edellyttää Basic-, Plus- tai Visionary-tilausta"
       ],
       "Be sure to copy your password and store it somewhere safe.": [
-        "Muista kopioida salasanasi ja säilyttää se turvallisessa paikassa."
+        "Muista kopioida salasanasi ja tallenna se turvalliseen paikkaan."
       ],
       "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
         "Ennen käyttäjän aktivointia sinun on annettava salasana ja luotava osoitteille salausavaimet."
@@ -3697,10 +3790,10 @@
         "Kopioitiin leikepöydälle"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "Kopioi ja liitä tämä URL identiteetinhallintasi ACS (Assertion Consumer Service) URL -kenttään."
+        "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopio ja liitä tämä URL identiteetinhallintasi Entiteetin ID -kenttään."
+        "Kopio ja liitä tämä URL identiteetintarjoajasi Entiteetin ID -kenttään."
       ],
       "Copy the suggested password to clipboard": [
         "Kopioi ehdotettu salasana leikepöydälle"
@@ -3845,7 +3938,7 @@
         "Otettu käyttöön ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
-        "Identiteetin tarjoajalta (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
+        "Identiteetintarjoajaltasi (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
       ],
       "Enhance your network security": [
         "Paranna verkkotietoturvaasi"
@@ -3932,7 +4025,7 @@
         "Hanki ${ upsellPlanName }"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
-        "Mene identiteetinhallintaasi noutamaan ${ appName } SAML metadata ja tuo se tähän."
+        "Nouda ${ appName }:n SAML-metatiedot identiteetintarjoajastasi ja tuo ne tähän."
       ],
       "Group deleted": [
         "Ryhmä poistettiin"
@@ -3943,8 +4036,11 @@
       "High Priority": [
         "Korkea tärkeys"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
-        "Identiteetinhallinnan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Identiteetinhallinnassasi pitäisi olla kohta, josta voit kopioida tai ladata varmenteen tiivisteen. Liitä lataamasi tai kopioimasi varmenteen tiiviste tekstikenttään."
+        "Identiteetintarjoajan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Identiteetintarjoajallasi pitäisi olla paikka, josta voit kopioida tai ladata varmenteen tiivisteen. Liitä lataamasi tai kopioimasi varmenteen tiiviste tekstikenttään."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jos toinen ylläpitäjä on vaihtanut salasanan, sinun on pyydettävä heitä toimittamaan organisaation uusi salasana."
@@ -4687,7 +4783,7 @@
         "Valitettavasti tilille ei ole määritetty palautustapoja."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
-        "Identiteetin tarjoajan luoma yksilöllinen tunnistetieto, yleensä identiteetin tarjoajan nimen sisältävän URL-osoitteen muodossa (esim. https://idp.esimerkki.fi/XXXXX)."
+        "Identiteetintarjoajasi luoma yksilöllinen tunnistetieto, yleensä identiteetintarjoajan nimen sisältävän URL-osoitteen muodossa (esim. https://idp.esimerkki.fi/XXXXX)."
       ],
       "Unknown event type": [
         "Tuntematon tapahtumatyyppi"
@@ -4843,7 +4939,7 @@
         "Lähetämme palautuskoodin tilin palautusta varten ilmoittamaasi puhelinnumeroon."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
-        "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetinhallintaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetinhallintasi soveltuviin tietokenttiin."
+        "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetintarjoajaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetintarjoajasi soveltuviin tietokenttiin."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Kun peruutat nykyisen maksullisen tilauksesi, tilauksesi saldo palautetaan tilikrediitteinä ja sinut alennetaan ${ BRAND_NAME } ${ PLANS.FREE } -tilaukseen."
@@ -6809,6 +6905,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille ja käytä niitä verkkoidentiteeteillesi, kuten esim. MikkoOstaja@${ domain } ostostileille."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Suojaa VPN-yksityisyyden uhkilta ohjaamalla Internet-tietoliikenteesi useiden palvelinten kautta"
       ],
@@ -6860,6 +6959,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Organisaation hallintatyökalulla ylläpitäjät voivat lisätä ja poistaa käyttäjiä, hallita heidän ${ BRAND_NAME }-palveluiden käyttöoikeuksiaan ja suorittaa muita tehtäviä."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vahva infrastruktuurimme varmistaa, että pääset tilillesi, kun sitä tarvitset"
       ],
@@ -6901,6 +7003,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Vaadi käyttäjien salasanojen uudelleenasetus ja palauta kaksivaiheinen tunnistautuminen oletustilaan"
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Ohjaa Internet-tietoliikenteesi Tor-verkon kautta yhdellä painalluksella"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
@@ -7109,9 +7214,6 @@
       ],
       "My reason isn't listed": [
         "Syytäni ei ole listattu"
-      ],
-      "No permission": [
-        "Ei käyttöoikeutta"
       ],
       "Organization only": [
         "Vain organisaatio"
@@ -7336,7 +7438,7 @@
         "Palautuspakettiasi valmistellaan"
       ],
       "Secure vault and link sharing": [
-        "Turvallisten holvien ja linkkien jakaminen"
+        "Holvien ja linkkien turvallinen jakaminen"
       ],
       "Secure vault sharing": [
         "Suojattu holvien jako"
@@ -7346,8 +7448,8 @@
         "Turvallisten holvien jakaminen (${ n } holvia)"
       ],
       "Secure vault sharing (${ n } vault) and link sharing": [
-        "Turvallisten holvien (${ n } holvi) ja linkkien jakaminen",
-        "Turvallisten holvien (${ n } holvia) ja linkkien jakaminen"
+        "Holvien (${ n } holvi) ja linkkien turvallinen jakaminen",
+        "Holvien (${ n } holvia) ja linkkien turvallinen jakaminen"
       ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
@@ -7408,9 +7510,6 @@
       ]
     },
     "passwordless": {
-      "All administrators will get access to the key.": [
-        "Kaikki ylläpitäjät saavat käyttöoikeuden avaimeen."
-      ],
       "Are you sure you want to change your organization key?": [
         "Haluatko varmasti muuttaa organisaation avainta?"
       ],
@@ -7450,14 +7549,8 @@
       "The following administrators could not be restored.": [
         "Seuraavia ylläpitäjiä ei voitu palauttaa"
       ],
-      "The following administrators will get access to the organization key.": [
-        "Seuraavat ylläpitäjät saavat organisaation avaimen käyttöoikeuden."
-      ],
       "The organization key must be activated first.": [
         "Organisaation avain on ensin aktivoitava."
-      ],
-      "This will send the latest organization key to the administrators that currently don't have access to it.": [
-        "Tämä lähettää uusimman organisaation avaimen niille ylläpitäjille, joilla ei tällä hetkellä ole käyttöoikeutta siihen."
       ],
       "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
         "Ei-yksityisten käyttäjätilien luominen ja niiden käyttö vaatii organisaatioavaimesi aktivoimista."
@@ -7488,9 +7581,6 @@
       ],
       "You must privatize all users before generating a new organization key": [
         "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaation avaimen luontia"
-      ],
-      "You need access to the organization key to perform this operation.": [
-        "Tarvitset organisaation avaimen käyttöoikeuden tämän toiminnon suorittamiseksi."
       ]
     },
     "Payment method option": {
@@ -7604,14 +7694,14 @@
       ]
     },
     "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Vahvistamalla tämän maksun valtuutat ${ BRAND_NAME }in ja maksupalveluntarjoajamme Stripen ohjeistamaan pankkiasi veloittamaan tiliäsi asianmukaisesti. Voit pyytää hyvitystä 8 viikon kuluessa veloituspäivästä, pankkisi kanssa tekemäsi sopimuksen ehtojen mukaisesti."
+      ],
       "Street address, postal code, and city": [
         "Katuosoite, postinumero ja kaupunki"
       ]
     },
     "Permission": {
-      "No permission": [
-        "Ei käyttöoikeutta"
-      ],
       "Organization only": [
         "Vain organisaatio"
       ],
@@ -7829,15 +7919,14 @@
       ]
     },
     "Restore administrator panel": {
-      "${ n } administrator in your organization need access to the organization key.": [
-        "${ n } organisaatiosi ylläpitäjällä on oltava organisaation avaimen käyttöoikeus.",
-        "${ n } organisaatiosi ylläpitäjällä on oltava organisaation avaimen käyttöoikeus."
-      ],
       "Changing organization keys": [
         "Muuta organisaation avaimia"
       ],
       "Changing organization password": [
         "Organisaation salasanan vaihtaminen"
+      ],
+      "Creating or accessing non-private user accounts": [
+        "Ei-yksityisten käyttäjätilien luominen ja käyttäminen"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Ylläpito-oikeuksiasi organisaatiossa on rajoitettu salasanan vaihdon seurauksena. Seuraavia toimintoja ei enää sallita:"
@@ -7865,6 +7954,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Sisäänkirjautumista ei suoritettu loppuun."
+      ],
       "Something went wrong": [
         "Jokin meni pieleen"
       ]
@@ -7883,7 +7975,7 @@
         "Testataksesi tätä SAML-määritystä, syötä **${ domainName }** -verkkotunnukseen liittyvän käyttäjän kirjautumistiedot"
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
-        "Saimme kelvollisen SAML-vastauksen identiteetin tarjoajaltasi. SSO on otettu käyttöön organisaatiollesi."
+        "Saimme kelvollisen SAML-vastauksen identiteetintarjoajaltasi. SSO on otettu käyttöön organisaatiollesi."
       ],
       "We’re testing your configuration to ensure SSO is working.": [
         "Määritystäsi testataan SSO:n toiminnan varmistamiseksi."
@@ -7926,8 +8018,11 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Edellytys:** SCIM-provisioinnin käyttöönotto vaatii SAML-todennuksen määritystä."
       ],
+      "Enter the token into your identity provider": [
+        "Syötä tunniste identiteetintarjoajaasi"
+      ],
       "Enter URL and token into your identity provider": [
-        "Syötä URL-osoite ja tunniste identiteetin tarjoajaasi"
+        "Syötä URL-osoite ja tunniste identiteetintarjoajaasi"
       ],
       "For security reasons, the SCIM token will be hidden after saving your changes and you won’t be able to see it again.": [
         "Turvallisuussyistä SCIM-tunniste piilotetaan muutosten tallentamisen jälkeen, etkä voi enää nähdä sitä."
@@ -7936,22 +8031,22 @@
         "Tunniste on tietoturvasyistä piilotettu"
       ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
-        "Jos olet kadottanut tai unohtanut SCIM-tunnisteen, voit luoda uuden, mutta ota huomioon, että identiteetin tarjoajan asetukset on päivitettävä."
+        "Jos olet kadottanut tai unohtanut SCIM-tunnisteen, voit luoda uuden, mutta ota huomioon, että identiteetintarjoajasi asetukset on päivitettävä."
       ],
       "Make sure you copy the above SCIM token now.": [
         "Varmista, että kopioit yllä olevan SCIM-tunnuksen nyt."
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
-        "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki identitetin tarjoajan automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
+        "Kun SCIM on poistettu käytöstä organisaatiollesi, **kaikki tunnistietojen toimittajasi automaattisesti tarjoamat SCIM-käyttäjät muutetaan SSO-käyttäjiksi**, ja voit hallita heitä suoraan ${ BRAND_NAME } -asetuksissa."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
-        "SCIM:n automaattinen valmistelu on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen identiteetin tarjoajan asetuksiin."
+        "SCIM:n automaattinen valmistelu on pois käytöstä, kunnes syötät uuden SCIM-tunnisteen identiteetintarjoajasi asetuksiin."
       ],
       "The SCIM base URL and token will be deleted.": [
         "SCIM-URL-osoite ja -tunniste poistetaan."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
-        "Ottaaksesi synkronoinnin uudelleen käyttöön identiteetin tarjoajan kanssa, sinun on tehtävä SCIM-integrointi uudelleen."
+        "Ottaaksesi synkronoinnin uudelleen käyttöön identiteetintarjoajasi kanssa, sinun on tehtävä SCIM-integrointi uudelleen."
       ]
     },
     "scim: Label": {
@@ -8080,9 +8175,6 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
         "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
-      ],
-      "This permission expires soon": [
-        "Tämä käyttöoikeus vanhenee pian"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Voit nyt vapaasti vaihtaa salasanasi tilille ${ boldEmail } ${ boldDaysRemaining } ajan."
@@ -8234,6 +8326,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Saat ilmoituksen kun salasanan nollaus on käytettävissä."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Voit tarkistaa pyyntösi tilan milloin tahansa asetusten ${ accountAndPasswordSectionLink }."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "tili ja salasana -osiossa"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8268,9 +8368,6 @@
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
         "Jos kirjaudut ulos ennen kuin olet nollannut salasanasi, voit menettää tilisi käyttöoikeuden."
-      ],
-      "If you sign out without resetting your password, you could lose access to your account.": [
-        "Jos kirjaudut ulos nollaamatta salasanaasi, voit menettää tilisi käyttöoikeuden."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Aikaa jäljellä kunnes voit nollata salasanasi: ${ boldTimeLeft }."
@@ -8520,8 +8617,29 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } pyytää apuasi kirjautumaan heidän ${ BRAND_NAME }-tilillensä kertakirjautumisella."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } jäsen pyysi apuasi kirjautumisessa.",
+        "${ n } jäsentä pyysi apuasi kirjautumisessa."
+      ],
+      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
+        "${ n } käyttäjä on liittynyt organisaatioosi identiteetintarjoajan kautta. Hyväksy tai poista heidän tilinsä nyt:",
+        "${ n } käyttäjää on liittynyt organisaatioosi identiteetintarjoajan kautta. Hyväksy tai poista heidän tilinsä nyt:"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } käyttäjä pyytää apuasi kirjautumaan heidän ${ BRAND_NAME }-tilillensä kertakirjautumisella.",
+        "${ n } käyttäjää pyytää apuasi kirjautumaan heidän ${ BRAND_NAME }-tileillensä kertakirjautumisella."
+      ],
       "Access denied": [
         "Pääsy evätty"
+      ],
+      "Access granted": [
+        "Käyttöoikeus myönnettiin"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "lisäsi sinut heidän ${ BRAND_NAME }-organisaatioonsa"
       ],
       "Approve or deny it now": [
         "Hyväksy tai hylkää se nyt"
@@ -8531,6 +8649,9 @@
       ],
       "Ask administrator for help": [
         "Pyydä ylläpitäjältä apua"
+      ],
+      "Ask your administrator for access?": [
+        "Pyydä ylläpitäjältä käyttöoikeutta?"
       ],
       "Backup password": [
         "Varasalasana"
@@ -8577,11 +8698,23 @@
       "Grant access": [
         "Myönnä käyttöoikeus"
       ],
+      "Grant access to user?": [
+        "Myönnetäänkö käyttäjälle käyttöoikeus?"
+      ],
+      "Grant access to users?": [
+        "Myönnetäänkö käyttäjille käyttöoikeus?"
+      ],
       "Invalid confirmation code": [
         "Virheellinen vahvistuskoodi"
       ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Se on ainoa tapa palauttaa tilisi kokonaan, joten muista tallentaa se turvalliseen paikkaan."
+      ],
       "Join ${ organizationName }": [
         "Liity organisaatioon ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Tallenna se turvalliseen paikkaan, jotta pääset takaisin tilillesi, vaikka kadottaisit identiteetintarjoajasi kirjautumistiedot."
       ],
       "New backup password": [
         "Uusi varasalasana"
@@ -8594,6 +8727,9 @@
       ],
       "Remove single sign-on for your organization?": [
         "Poistetaanko kertakirjautuminen organisaatioltasi?"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Aseta varasalasana suojauksen parantamiseksi. Voit kirjautua sillä sisään, jos lukittaudut ulos, joten tallenna se turvalliseen paikkaan."
       ],
       "Set your backup password": [
         "Määritä varasalasanasi"
@@ -8611,7 +8747,10 @@
         "Kertakirjautuminen poistettiin"
       ],
       "The credentials from your Identity Provider will be deleted.": [
-        "Identiteetinhallintasi kirjautumistiedot poistetaan."
+        "Identiteetintarjoajan kirjautumistiedot poistetaan."
+      ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Tämä kirjaa käyttäjän ulos muilta laitteiltaan, ja hänen on luotava uusi varasalasana."
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Tämä kirjaa sinut ulos muilta laitteiltasi, ja sinun on luotava uusi varasalasana."
@@ -8624,6 +8763,24 @@
       ]
     },
     "sso: auth device state": {
+      "Active": [
+        "Aktiivinen"
+      ],
+      "Inactive": [
+        "Ei-aktiivinen"
+      ],
+      "Pending activation": [
+        "Odottaa aktivointia"
+      ],
+      "Pending admin activation": [
+        "Odottaa ylläpitäjän aktivointia"
+      ],
+      "Rejected": [
+        "Hylätty"
+      ],
+      "Signed out": [
+        "Kirjattu ulos"
+      ],
       "Unknown": [
         "Tuntematon"
       ]
@@ -9758,6 +9915,9 @@
       "Delete user?": [
         "Poistetaanko käyttäjä?"
       ],
+      "Deny access to user?": [
+        "Kielletäänkö käyttäjän käyttöoikeus?"
+      ],
       "Device": [
         "Laite"
       ],
@@ -9834,7 +9994,7 @@
         "Syötä vahvistuskoodi"
       ],
       "Enter endpoints into your identity provider": [
-        "Syötä päätepisteet identiteetin tarjoajaasi"
+        "Syötä päätepisteet identiteetintarjoajaasi"
       ],
       "Enter SAML metadata": [
         "Syötä SAML-metatiedot"
@@ -10249,22 +10409,22 @@
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "Kopioi ja liitä tämä URL identiteetinhallintasi ACS (Assertion Consumer Service) URL -kenttään."
+        "Kopioi ja liitä tämä URL identiteetintarjoajasi ACS (Assertion Consumer Service) URL -kenttään."
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Kopio ja liitä tämä URL identiteetinhallintasi Entiteetin ID -kenttään."
+        "Kopio ja liitä tämä URL identiteetintarjoajasi Entiteetin ID -kenttään."
       ],
       "Device information such as operating system": [
         "Muun muassa käyttöjärjestelmän kaltaisia tietoja käytetystä laitteesta"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
-        "Identiteetin tarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
+        "Identiteetintarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
       ],
       "Feature in early access": [
         "Ominaisuus on varhaisessa käytössä"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
-        "Identiteetinhallinnan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Hae varmenteen tiiviste identiteetinhallinnastasi."
+        "Identiteetintarjoajan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Hae varmenteen tiiviste identiteetintarjoajaltasi."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
@@ -10297,7 +10457,7 @@
         "Ollessaan kirjautuneina verkkosovelluksiimme, käyttäjät näkevät ${ BRAND_NAME }-kuvakkeen tilalla oman logosi."
       ],
       "Usually an URL that contains the identity provider's name within": [
-        "Yleensä identiteetin tarjoajan nimen sisältävä URL-osoite"
+        "Yleensä identiteetintarjoajan nimen sisältävä URL-osoite"
       ],
       "Verified email address": [
         "Vahvistettu sähköpostiosoite"
@@ -10355,8 +10515,12 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Jos teet käyttäjästä yksityisen, et voi enää auttaa häntä tietojen tai käyttäjätilin palautuksessa."
       ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "${ n } käyttäjän ylläpitäjän oikeuksia ei voitu ottaa automaattisesti käyttöön, koska heidän salausavaimensa on päivitetty sillä välin:",
+        "${ n } käyttäjän ylläpitäjän oikeuksia ei voitu ottaa automaattisesti käyttöön, koska heidän salausavaimensa on päivitetty sillä välin:"
+      ],
       "Could not enable administrator access: ${ error }": [
-        "Ylläpitäjän käyttöoikeutta ei voitu ottaa käyttöön: ${ error }"
+        "Ylläpitäjän käyttöoikeuksia ei voitu myöntää: ${ error }"
       ],
       "Delete request": [
         "Poista pyyntö"
@@ -10396,9 +10560,6 @@
       ],
       "The user must have an address to request data access": [
         "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Tämä poistaa odottavan ylläpitäjän pääsypyynnön käyttäjän tietoihin tai salasanan nollaukseen."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tämä mitätöi ylläpitäjän oikeuden hallita tämän käyttäjän tiliä."
@@ -10511,7 +10672,7 @@
         "Kertakirjautuminen"
       ],
       "SSO user provided by your identity provider": [
-        "Identiteetinhallintasi SSO-käyttäjä"
+        "Identiteetintarjoajasi SSO-käyttäjä"
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
@@ -10641,6 +10802,11 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } -tilauksesi"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Pääsy Secure Core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN ja muuta."
       ]
     },
     "wallet_signup_2024: Info": {

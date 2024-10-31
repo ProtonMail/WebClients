@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -4639,7 +4639,7 @@
         "Vennligst angi en gjenopprettings-/varslings-e-post først"
       ],
       "Please try again in a few moments.": [
-        "Vennligst prøv igjen om få øyeblikk."
+        "Prøv igjen om noen øyeblikk."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å få støtte for flere brukere"
@@ -5133,8 +5133,8 @@
       "Certificate ${ name } not found or already revoked": [
         "Sertifikat ${ name } ikke funnet eller allerede tilbakekalt"
       ],
-      "First name and last name cannot be unchecked at the same time": [
-        "Kan ikke fjerne merket samtidig for fornavn og etternavn"
+      "Display name cannot be empty": [
+        "Visningsnavn kan ikke være tomt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5595,9 +5595,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Legg til sikkerhetsnøkkel"
-      ],
       "Delete key": [
         "Slett nøkkel"
       ]
@@ -5677,9 +5674,6 @@
       ],
       "Register your security key": [
         "Registrer sikkerhetsnøkkelen din"
-      ],
-      "Registered security keys": [
-        "Registrerte sikkerhetsnøkler"
       ],
       "Security key registered": [
         "Sikkerhetsnøkkel registrert"
@@ -6605,7 +6599,7 @@
         "${ BRAND_NAME } deler aldri informasjonen din med tredjeparter. Data kommer fra ${ BRAND_NAME }s egne analyser og Constella Etterretning."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "${ BRAND_NAME } satte en import på pause fordi det mistet forbindelsen med din e-posttilbyder. Vennligst koble opp på nytt."
+        "${ BRAND_NAME } satte en import på pause fordi vi mistet forbindelsen med din e-posttilbyder. Koble opp på nytt."
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
         "${ BRAND_NAME } satte en import på pause fordi kontoen din begynner å få lite plass. Du kan:"
@@ -6664,8 +6658,8 @@
         "${ number } tjenere"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } opplastet fil er ikke en gyldig privat nøkkel. Vennligst verifiser og prøv på nytt.",
-        "${ numberOfNonPrivateKeys } opplastede filer er ikke gyldige private nøkler. Vennligst verifiser og prøv på nytt."
+        "${ numberOfNonPrivateKeys } opplastet fil er ikke en gyldig privat nøkkel. Verifiser og prøv på nytt.",
+        "${ numberOfNonPrivateKeys } opplastede filer er ikke gyldige private nøkler. Verifiser og prøv på nytt."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
@@ -7396,7 +7390,7 @@
         "Skriv inn koden sendt til ditt telefonnummer ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Skriv inn koden som ble sendt til ${ email }. Finner du ikke meldingen i innboksen din, vennligst sjekk søppelpostmappen."
+        "Skriv inn koden som ble sendt til ${ email }. Finner du ikke meldingen i innboksen din, sjekk søppelpostmappen."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Angi påloggingsinformasjonen til e-postkontoen du ønskere å importere fra."
@@ -7459,7 +7453,7 @@
         "finans"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "For en 10-års versjonshistorikk, vennligst kontakt vårt salgsapparat."
+        "Kontakt vårt salgsapparat for en 10-årig versjonshistorikk."
       ],
       "for choosing ${ product }": [
         "for at du velger ${ product }"
@@ -7625,7 +7619,7 @@
         "VIKTIG: Hvis DNS-konsollen ikke tillater at CNAME-verdier slutter med en prikk, kan du fjerne den siste prikken i CNAME-verdiene."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Viktig: Vennligst sørg for å lagre gjenopprettingskodene. Ellers kan du permanent miste tilgang til kontoen din hvis du mister tofaktorautentiseringsenheten."
+        "Viktig: sørg for å lagre gjenopprettingskodene. Ellers kan du permanent miste tilgang til kontoen din hvis du mister tofaktorautentiseringsenheten."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -8085,36 +8079,36 @@
         "Telefonnummer"
       ],
       "Please add a password for the user on row": [
-        "Vennligst legg til et passord for brukeren på rad",
-        "Vennligst legg til passord for brukerne på radene"
+        "Legg til et passord for brukeren på rad",
+        "Legg til passord for brukerne på radene"
       ],
       "Please add an email address for the user on row": [
-        "Vennligst legg til en e-postadresse for brukeren på rad",
-        "Vennligst legg til e-postadresser for brukerne på radene"
+        "Legg til en e-postadresse for brukeren på rad",
+        "Legg til e-postadresser for brukerne på radene"
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Be eieren om å invitere deg direkte til dokumentet."
       ],
       "Please authenticate your card in the verification tab.": [
-        "Vennligst autentiser kortet ditt i verifiseringsfanen."
+        "Autentiser kortet ditt i verifiseringsfanen."
       ],
       "Please authenticate your payment in the verification tab.": [
-        "Vennligst autentiser betalingen din i verifiseringsfanen."
+        "Autentiser betalingen din i verifiseringsfanen."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
-        "Vennligst sjekk filen din for feil eller kontakt kundestøtte for mer informasjon."
+        "Sjekk filen din for feil eller kontakt kundestøtte for mer informasjon."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
-        "Vennligst sjekk filen din, eller prøv å bruke vår ${ csvTemplateButton }."
+        "Sjekk filen din, eller prøv å bruke vår ${ csvTemplateButton }."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "Vennligst angi gjenopprettingsfrasen bestående av 12 ord som er tilknyttet din konto."
+        "Angi gjenopprettingsfrasen bestående av 12 ord som er tilknyttet din konto."
       ],
       "Please fill out this field.": [
         "Fyll ut dette feltet."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Vennligst ta godt vare på den. Du trenger den for å få tilgang til kontoen din og dekryptere dine data i tilfelle en tilbakestilling av passord."
+        "Ta godt vare på den. Du trenger den for å få tilgang til kontoen din og dekryptere dine data i tilfelle en tilbakestilling av passord."
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Vær oppmerksom på at hvis du sletter filteret, ${ nameDeleted }, slutter vi å behandle alle de automatiserte handlingene det utløser."
@@ -8144,7 +8138,7 @@
         "Bruk en annen nettleser eller last ned filen."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Vennligst bekreft betaling i den nye fanen som ble åpnet."
+        "Bekreft betaling i den nye fanen som ble åpnet."
       ],
       "Please wait till your changes are synced with the server.": [
         "Vent til endringene dine er synkronisert med tjeneren."
@@ -8372,7 +8366,7 @@
         "SMTP-innsending tillater 3-partstjenester eller enheter å sende e-post via ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. Denne funksjonen er bare tilgjengelig for ${ BRAND_NAME } for forretningsbrukere med egendefinerte domener."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "SMTP-innsending tillater tredje-parttjenester eller enheter å sende e-post gjennom ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. For å be om tilgang, vennligst ${ createTicket } der du beskriver dine bruksområder, hvilke egendefinerte domener du ønsker å bruke, og forventede timebaserte og daglige e-postvolumer."
+        "SMTP-innsending tillater tredje-parttjenester eller enheter å sende e-post gjennom ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. For å be om tilgang, ${ createTicket } der du beskriver dine bruksområder, hvilke egendefinerte domener du ønsker å bruke, og forventede timebaserte og daglige e-postvolumer."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "SMTP-innsending tillater tredje-parttjenester eller enheter å sende e-post gjennom ${ MAIL_APP_NAME } for dine egendefinerte domeneadresser. For å bruke denne funksjonen, start med å generere et nytt token."
@@ -8472,7 +8466,7 @@
         "Nedlastingsantallet inkluderer både faktiske nedlastinger og forekomster der filer forhåndsvises."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
-        "E-postverifiseringskoblingen er utløpt. Vennligst logg på for å sende en verifiseringskobling på nytt."
+        "E-postverifiseringskoblingen er utløpt. Logg på for å sende en verifiseringskobling på nytt."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "De krypterte dataene er litt større på grunn av overbelastingen av kryptering og signaturer, som sikrer sikkerheten til dataene dine."
@@ -8514,7 +8508,7 @@
         "Den tryggeste måten å surfe, strømme og være på nettet på."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "Verifiseringsprosessen vil åpne en ny nettleserfane. Vennligst deaktiver alle aktive blokkeringer av sprett-opp-vinduer."
+        "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Disse konfigurasjonsfilene lar deg velge hvilken ${ VPN_APP_NAME }-tjener du kobler til når du bruker en tredje-part VPN-app eller setter opp en VPN-forbindelse på en ruter."
@@ -8538,7 +8532,7 @@
         "Dette kan ta få sekunder eller få minutter avhengig av enheten din."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Dette kan ta litt tid. Vennligst ikke lukk siden eller koble fra internett."
+        "Dette kan ta litt tid. Ikke lukk siden eller koble fra internett."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Denne funksjonen forsinker utsending av e-postene dine. På denne måte kan du angre sending av e-posten i den valgte tidsrammen."
@@ -8553,7 +8547,7 @@
         "Denne invitasjonskoblingen er utløpt. Vi har nettopp sendt deg en ny kobling."
       ],
       "This invitation link is already used. Please sign in directly instead.": [
-        "Denne invitasjonskoblingen er allerede brukt. Vennligst logg på direkte istedenfor."
+        "Denne invitasjonskoblingen er allerede brukt. Logg på direkte istedenfor."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dette er en frase på 12 ord som du ble bedt om å angi."
@@ -8586,7 +8580,7 @@
         "Dette tokenet vil ikke være tilgjengelig etter at du lukker dette vinduet, og du bør ikke dele det med noen."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "Denne koblingen til å avslutte abonnementet er utløpt. Vennligst åpne en mer nylig e-post fra denne e-postlisten."
+        "Denne koblingen til å avslutte abonnementet er utløpt. Åpne en mer nylig e-post fra denne e-postlisten."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne brukeren er for øyeblikket ansvarlig for betalinger i organisasjonen din. Ved å degradere dette medlemmet, vil du bli ansvarlig for betalinger i organisasjonen din."
@@ -8613,7 +8607,7 @@
         "Dette vil laste ned en fil inneholdende din private nøkkel. Beskytt denne fila ved å kryptere den med et passord."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dette vil aktivere at PayPal skal brukes til å betale for ditt ${ BRAND_NAME }-abonnement. Vi vil omdirigere deg til PayPal i en ny nettleserfane. Hvis du blokkerer sprett-opp-vinduer, vennligst deaktiver blokkeringen for å fortsette."
+        "Dette vil aktivere at PayPal skal brukes til å betale for ditt ${ BRAND_NAME }-abonnement. Vi vil omdirigere deg til PayPal i en ny nettleserfane. Hvis du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Dette vil permanent slette all data og alle e-postadresser tilknyttet denne brukeren."
@@ -8658,13 +8652,13 @@
         "For å unngå tap av data, kun slett den hvis du vet hva du gjør eller har eksportert en kopi."
       ],
       "To cancel your subscription, please reach out to us.": [
-        "For å avbryte abonnementet ditt, vennligst ta kontakt med oss."
+        "Ta kontakt med oss for å avbryte abonnementet ditt."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
-        "For å fullføre betalingen din, vennligst send ${ btcAmountBold } til adressen nedenfor."
+        "For å fullføre betalingen, send ${ btcAmountBold } til adressen nedenfor."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
-        "For å bekrefte, vennligst angi navnet på brukeren du ønsker å slette."
+        "For å bekrefte, angi navnet på brukeren du ønsker å slette."
       ],
       "to continue to ${ product }": [
         "for å fortsette til ${ product }"
@@ -8745,7 +8739,7 @@
         "Kan ikke sjekke porttjenere som overvåker gjeldende status."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Ikke i stand til å verifisere gjenopprettingsfilsignatur. Vennligst kontakt kundestøtte."
+        "Ikke i stand til å verifisere gjenopprettingsfilsignatur. Kontakt kundestøtte."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Dessverre er det ingen gjenopprettingsmetode lagret for denne kontoen."
@@ -8808,7 +8802,7 @@
         "Last opp organisasjonens logo for å styrke merkeidentiteten og skape en personlig opplevelse for brukerne."
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Opplastet fil er ikke en gyldig privat nøkkel. Vennligst verifiser og prøv på nytt."
+        "Opplastet fil er ikke en gyldig privat nøkkel. Verifiser og prøv på nytt."
       ],
       "URL link": [
         "Kobling til nettadresse"
@@ -8868,7 +8862,7 @@
         "Verifisering kan ta noen minutter."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Verifisering vil åpne en ny fane, vennligst deaktiver eventuell blokkering av sprett-opp-vinduer. Du vil ikke bli belastet. Alle beløp som benyttes for å bekrefte kortet vil bli tilbakebetalt umiddelbart."
+        "Verifisering vil åpne en ny fane, deaktiver eventuell blokkering av sprettoppvinduer. Du vil ikke bli belastet. Alle beløp som benyttes for å bekrefte kortet vil bli tilbakebetalt umiddelbart."
       ],
       "Verify domain": [
         "Verifiser domene"
@@ -8949,7 +8943,7 @@
         "Vi bruker 3-D Secure for å beskytte dine betalinger"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprett-opp-vinduer, vennligst deaktiver blokkeringen for å fortsette."
+        "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
       "We'll email you once import is complete.": [
         "Vi sender deg en e-post når importen er fullført."
@@ -9109,12 +9103,12 @@
         "Du kan importere én datatype om gangen."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Vennligst fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
       ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nå få tilgang til og behandle kontoen som en administrator."
@@ -9192,7 +9186,7 @@
         "Du må ha et kredittkort eller en bankkonto tilknyttet din PayPal-konto for å kunne legge den til som betalingsmåte."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, vennligst klikk knappen nedenfor."
+        "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, klikk knappen nedenfor."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Du trenger en aktiv personlig kalender for å importere dine hendelser fra ICS."
@@ -9243,7 +9237,7 @@
         "Ditt ${ BRAND_NAME }-passord"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
-        "Dine ${ VPN_APP_NAME }- og ${ MAIL_APP_NAME }-kontoer er koblet. For å slette de begge, vennligst logg på ${ loginLink } og slett din konto der."
+        "Dine ${ VPN_APP_NAME }- og ${ MAIL_APP_NAME }-kontoer er koblet. For å slette de begge, logg på ${ loginLink } og slett din konto der."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
@@ -9316,7 +9310,7 @@
         "Gjenopprettingsfrasen din er en serie på 12 tilfeldig genererte ord i en bestemt rekkefølge."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Abonnementet ditt administreres av Mozilla. Vennligst kontakt Mozilla-støtte."
+        "Abonnementet ditt administreres av Mozilla. Kontakt Mozilla-støtte."
       ],
       "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
         "Støttesaken din er stengt. Takk for at du kontaktet kundestøtte for ${ BRAND_NAME }."
@@ -9330,7 +9324,7 @@
     },
     "info": {
       "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+        "Flere dupliserte nøkler oppdaget. Last opp individuelt for mer informasjon."
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
@@ -9936,7 +9930,7 @@
         "Gå frem automatisk"
       ],
       "Auto-delete unwanted messages": [
-        "Autoslett uønskede meldinger"
+        "Automatisk sletting av uønskede meldinger"
       ],
       "Auto-detect primary time zone": [
         "Oppdag primær tidssone automatisk"
@@ -10080,13 +10074,13 @@
         "Kopier"
       ],
       "Could you please let us know which provider?": [
-        "Kan du vennligst fortelle oss hvilken leverandør?"
+        "Kan du fortelle oss hvilken leverandør?"
       ],
       "Could you please specify which streaming service?": [
-        "Kan du vennligst spesifisere hvilken strømmetjeneste?"
+        "Kan du spesifisere hvilken strømmetjeneste?"
       ],
       "Could you please specify?": [
-        "Kan du vennligst spesifisere?"
+        "Kan du spesifisere?"
       ],
       "Country": [
         "Land"
@@ -10521,19 +10515,19 @@
         "Frase består av 12 unike ord i en spesifikk rekkefølge"
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
-        "Vennligst legg til de 3 følgende CNAME-postene. Merk: det kan ta flere timer å oppdatere DNS-poster."
+        "Legg til de 3 følgende CNAME-postene. Merk: det kan ta flere timer å oppdatere DNS-poster."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
-        "Vennligst legg til følgende to MX-poster. Merk: det kan ta flere timer å oppdatere DNS-poster."
+        "Legg til følgende to MX-poster. Merk: det kan ta flere timer å oppdatere DNS-poster."
       ],
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
-        "Vennligst legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
+        "Legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
       ],
       "Please select files to upload": [
-        "Vennligst velg filer for opplasting"
+        "Velg filer for opplasting"
       ],
       "Please share any feedback to help us improve.": [
-        "Vennligst del eventuelle tilbakemeldinger for å hjelpe oss med å bli bedre."
+        "Gjerne del eventuelle tilbakemeldinger for å hjelpe oss med å bli bedre."
       ],
       "Port": [
         "Port"
@@ -11876,7 +11870,7 @@
         "Auto-slett søppelpost og papirkurv"
       ],
       "Auto-delete spam and trashed messages": [
-        "Autoslett søppelpost og meldinger i papirkurven"
+        "Fjern automatisk søppelpost og meldinger som er slettet"
       ],
       "Auto-reply": [
         "Autosvar"
@@ -13598,9 +13592,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "for å begynne å bruke ${ PASS_APP_NAME } på telefonen din"
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Lås opp ${ PASS_APP_NAME }-premiumfunksjoner ved å oppgradere"
-      ],
       "Updating your account": [
         "Oppdaterer kontoen din"
       ],
@@ -14002,7 +13993,7 @@
         "Velg et land"
       ],
       "Please select the main reason": [
-        "Vennligst velg hovedårsaken"
+        "Velg hovedårsaken"
       ],
       "Printer": [
         "Skriver"
@@ -14081,8 +14072,8 @@
         "Velg antall brukere som skal inkluderes i planen. Hver ekstra bruker koster ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Skulle du trenge mer enn ${ maxUsers } brukerkonto, vennligst ${ contact } vår salgsavdeling.",
-        "Skulle du trenge flere enn ${ maxUsers } brukerkontoer, vennligst ${ contact } vår salgsavdeling."
+        "Skulle du trenge mer enn ${ maxUsers } brukerkonto, ${ contact } vår salgsavdeling.",
+        "Skulle du trenge flere enn ${ maxUsers } brukerkontoer, ${ contact } vår salgsavdeling."
       ]
     },
     "Price": {
@@ -18713,9 +18704,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Registrer deg for en gratis ${ BRAND_NAME }-konto for å sikre deg plassen din. Jo tidligere du registrerer deg, jo raskere får du tilgang til ${ appName }. Etter registrering kan du også oppgradere til vår eksklusive Visionary-plan for å hoppe over ventelisten og begynne å bruke ${ appName } med en gang."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Lås opp ${ appName }-premiumfunksjoner ved å oppgradere"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Visionary-brukere og de inviterte vennene deres kan dele tidlig tilgang med andre. Inviter vennene dine for å prøve ${ appName } helt gratis!"

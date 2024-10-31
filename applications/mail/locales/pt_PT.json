@@ -764,7 +764,7 @@
         "Mover tudo para o arquivo"
       ],
       "Move all to trash": [
-        "Mover tudo para a lixeira"
+        "Mover tudo para o lixo"
       ],
       "move emails to": [
         "mover os e-mails para"
@@ -788,7 +788,7 @@
         "Mover para a pasta de spam e cancelar subscrição"
       ],
       "Move to trash": [
-        "Mover para a lixeira"
+        "Mover para o lixo"
       ],
       "Move to...": [
         "Mover para..."
@@ -4375,11 +4375,6 @@
         "Ainda não tem contactos. Comece por criar um contacto"
       ]
     },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Não pode desmarcar o primeiro nome e o apelido ao mesmo tempo"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nenhuma imagem selecionada"
@@ -5621,7 +5616,7 @@
         "Tem a certeza que deseja mover todas as mensagens deste local para o Arquivo?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Tem a certeza que deseja mover todas as mensagens deste local para o Lixeira?"
+        "Tem a certeza de que pretende mover todas as mensagens desta localização para o lixo?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tem a certeza de que pretende eliminar permanentemente esta ${ count } conversa?",
@@ -5651,7 +5646,7 @@
         "Atenção Requerida"
       ],
       "Automatically delete messages that have been in trash and spam for more than 30 days.": [
-        "Elimine automaticamente as mensagens que se encontram na lixeira e no spam há mais de 30 dias."
+        "Eliminar automaticamente as mensagens que se encontram no lixo e no spam há mais de 30 dias."
       ],
       "Awaiting transaction": [
         "A aguardar transação"
@@ -6073,7 +6068,7 @@
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
       ],
       "Include Spam/Trash.": [
-        "Incluir Spam/Lixeira."
+        "Incluir Spam/Lixo."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Inclua seu prompt e a resposta para nos ajudar a melhorar a precisão."
@@ -6217,7 +6212,7 @@
         "A mensagem será enviada amanhã às ${ formattedTime }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
-        "As mensagens que estiverem na lixeira e no spam há mais de 30 dias serão automaticamente eliminadas."
+        "As mensagens que estiverem no lixo e no spam há mais de 30 dias serão automaticamente eliminadas."
       ],
       "MM/YY": [
         "MM/AA"
@@ -6673,13 +6668,13 @@
         "Esta conversa contém uma mensagem agendada. O envio desta mensagem será cancelado."
       ],
       "This conversation contains non-trashed messages.": [
-        "Esta conversa contém mensagens não enviadas para a lixeira."
+        "Esta conversa contém mensagens que não estão no lixo."
       ],
       "This conversation contains one or more expiring messages": [
         "Esta conversa contém uma ou mais mensagens com expiração."
       ],
       "This conversation contains trashed messages.": [
-        "Esta conversa contém mensagens enviadas para a lixeira."
+        "Esta conversa contém mensagens do lixo."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Esta conversação será marcada como spam. Gostaria também de remover a subscrição a futuros e-mails?",
@@ -7360,7 +7355,7 @@
         "Ir para Com estrela"
       ],
       "Go to Trash": [
-        "Ir para Lixeira"
+        "Ir para Lixo"
       ],
       "Insert link": [
         "Inserir hiperligação"
@@ -7408,7 +7403,7 @@
         "Mover para spam"
       ],
       "Move to Trash": [
-        "Mover para Lixeira"
+        "Mover para o Lixo"
       ],
       "Move to...": [
         "Mover para..."
@@ -8268,7 +8263,7 @@
         "Este ficheiro ICS contém mais do que um evento. Transfira-o e importe os eventos em ${ CALENDAR_APP_NAME }"
       ],
       "Trash": [
-        "Lixeira"
+        "Lixo"
       ],
       "What’s this?": [
         "O que é isto?"
@@ -8770,7 +8765,7 @@
         "Eliminação automática das pastas Spam e Lixeira"
       ],
       "Auto-delete spam and trashed messages": [
-        "Eliminar automaticamente mensagens de spam e de lixeira"
+        "Eliminar automaticamente mensagens do Spam e do Lixo"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -11355,7 +11350,7 @@
         "Alterar a palavra-passe"
       ],
       "Clear out the junk": [
-        "Limpe a lixeira"
+        "Limpe o lixo"
       ],
       "Clearing data": [
         "A limpar os dados"
@@ -11682,7 +11677,7 @@
         "Mover todas as mensagens para o Arquivo"
       ],
       "Move all messages to trash": [
-        "Mover todas as mensagens para o Lixeira"
+        "Mover todas as mensagens para o lixo"
       ],
       "Move to": [
         "Mover para"
@@ -11697,7 +11692,7 @@
         "Mover para spam"
       ],
       "Move to trash": [
-        "Mover para a lixeira"
+        "Mover para o lixo"
       ],
       "Moving a scheduled message": [
         "A mover uma mensagem agendada"
@@ -11919,7 +11914,7 @@
         "Para"
       ],
       "Trash": [
-        "Lixeira"
+        "Lixo"
       ],
       "Trust new key?": [
         "Confiar em nova chave?",

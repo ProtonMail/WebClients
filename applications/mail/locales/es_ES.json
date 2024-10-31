@@ -1391,7 +1391,7 @@
         "Sí, asistiré"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos.",
+        "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contactos."
       ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
@@ -4273,7 +4273,7 @@
         "Proporciona al menos un nombre, apellido o nombre a mostrar"
       ],
       "Please select a category and what went wrong with the generated text": [
-        "Selecciona una categoría y lo que salió mal con el texto generado"
+        "Selecciona una categoría y qué salió mal con el texto generado"
       ],
       "Please try again or refresh the page.": [
         "Inténtalo de nuevo o actualiza la página."
@@ -4300,13 +4300,13 @@
         "Error al descargar el asistente de escritura. Si estás usando el modo incógnito, intenta usar la navegación normal o ejecuta el asistente en los servidores."
       ],
       "Problem downloading the writing assistant. Please try again.": [
-        "Error al descargar el asistente de escritura. Intenta de nuevo."
+        "Error al descargar el asistente de escritura. Inténtalo de nuevo."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
-        "Error al cargar el asistente de escritura en el dispositivo. Intenta de nuevo."
+        "Error al cargar el asistente de escritura en el dispositivo. Inténtalo de nuevo."
       ],
       "Problem unloading data not needed when the writing assistant is inactive": [
-        "Error al descargar datos que no son necesarios cuando el asistente de escritura está inactivo"
+        "Error al eliminar datos innecesarios cuando el asistente de escritura está inactivo"
       ],
       "Process aborted": [
         "Proceso anulado"
@@ -4325,10 +4325,10 @@
         "Tiempo de espera agotado"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
-        "El envío de archivos adjuntos está limitado hasta que respetes los límites de tu plan o mejores."
+        "El envío de archivos adjuntos está restringido hasta que respetes los límites de tu plan o lo mejores."
       ],
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
-        "El envío de archivos adjuntos está limitado mientras excedas los límites del plan o hasta que lo mejores."
+        "El envío de archivos adjuntos está restringido mientras excedas los límites del plan o hasta que lo mejores."
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -4486,8 +4486,8 @@
         "No puedes enviar un correo a más de ${ maxContacts } destinatarios."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "No puedes abrir más de ${ maxActiveComposer } ventana de edición a la vez",
-        "No puedes abrir más de ${ maxActiveComposer } ventanas de edición a la vez"
+        "No se puede abrir más de ${ maxActiveComposer } ventana de edición a la vez",
+        "No se pueden abrir más de ${ maxActiveComposer } ventanas de edición a la vez"
       ],
       "You did not provide a file.": [
         "No has proporcionado ningún archivo."
@@ -4496,7 +4496,7 @@
         "Ha alcanzado la cantidad máxima de calendarios."
       ],
       "You have reached the number of contacts limit for your account": [
-        "Has alcanzado el número límite de contactos para tu cuenta."
+        "Has alcanzado el límite de contactos para tu cuenta."
       ],
       "You must set a name": [
         "Debes establecer un nombre."
@@ -4747,8 +4747,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "El nombre y apellido no pueden desmarcarse al mismo tiempo."
+      "Display name cannot be empty": [
+        "El nombre a mostrar no puede estar vacío."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -6795,7 +6795,7 @@
         "Añade al menos un destinatario."
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Pregunta al propietario que te invite directamente al documento."
+        "Pide al propietario que te invite directamente al documento."
       ],
       "Please authenticate your card in the verification tab.": [
         "Autentica tu tarjeta en la pestaña de verificación."
@@ -6868,13 +6868,13 @@
         "Error al cargar la vista previa"
       ],
       "Preview for this file type is currently not supported on this browser.": [
-        "La vista previa para este tipo de archivo no está admitida en este navegador."
+        "La vista previa para este tipo de archivo no está soportada en este navegador."
       ],
       "Preview for this file type is not supported": [
         "No se admite la vista previa para este tipo de archivo."
       ],
       "Preview of documents is not yet supported.": [
-        "La previsualización de documentos aún no está admitida."
+        "La previsualización de documentos aún no está disponible."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
@@ -6895,7 +6895,7 @@
         "Protege tu correo electrónico de ser filtrado a listas de correo o spammers con ${ maskMyEmailButton }."
       ],
       "Public sharing of documents is not yet supported.": [
-        "El intercambio público de documentos aún no está admitido."
+        "La compartición pública de documentos aún no está disponible."
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -7106,7 +7106,7 @@
         "El remitente original de este mensaje ya no es válido. Tu mensaje se enviará desde tu dirección por defecto ${ defaultEmail }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
+        "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
       ],
       "The sender has requested a read receipt.": [
         "El remitente ha solicitado una confirmación de lectura."
@@ -7487,7 +7487,7 @@
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
       "You are about to open your default browser and visit:": [
-        "Estás a punto de abrir tu navegador por defecto y consultar:"
+        "Estás a punto de abrir tu navegador por defecto y visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
@@ -7534,7 +7534,7 @@
         "Puedes utilizar ${ VPN_APP_NAME } gratis, hoy."
       ],
       "You cannot reply from the invited address.": [
-        "No puedes responder desde la dirección invitada."
+        "No se puede responder desde la dirección invitada."
       ],
       "You do not have any messages here": [
         "No tienes ningún mensaje aquí."
@@ -7648,7 +7648,7 @@
         "Tu cuenta se actualizará una vez que el pago se haya completado."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
-        "El navegador no admite el asistente de escritura. Intenta ejecutarlo en los servidores."
+        "El navegador no soporta el asistente de escritura. Prueba a ejecutarlo en los servidores."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
@@ -7666,7 +7666,7 @@
         "Tus archivos serán cifrados y después guardados."
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
-        "El hardware no admite ejecutar el asistente de escritura. Intenta ejecutarlo en los servidores."
+        "El hardware no soporta ejecutar el asistente de escritura. Prueba a ejecutarlo en los servidores."
       ],
       "Your information was found on ${ displayedDate }": [
         "Se han encontrado tus datos el ${ displayedDate }."
@@ -12130,8 +12130,8 @@
         "${ elementsCount } conversaciones pausadas"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } conversación con pausa desactivada",
-        "${ elementsCount } conversaciones con pausa desactivadas"
+        "${ elementsCount } conversación reanudada",
+        "${ elementsCount } conversaciones reanudadas"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } mensaje añadido a ${ labelName }.",

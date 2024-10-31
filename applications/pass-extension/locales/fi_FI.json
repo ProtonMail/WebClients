@@ -601,6 +601,9 @@
       ],
       "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
         "Maksa kerran, ja saat ${ lifetimeAccessJSX } Pass Plussaan. Vain ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Säästä jopa ${ discountJSX } Pass Familyllä. Vain ${ relativePrice }/kuukausi."
       ]
     },
     "Browser": {
@@ -1760,8 +1763,14 @@
       "This version will be added to the history as the newest version.": [
         "Tämä versio lisätään historiaan uusimpana versiona."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Tämä hylkää laitteen **${ name }**, joka yritti kirjautua ${ BRAND_NAME }-tilillesi **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Tuo tietosi muista salasanahallinnoista lataamalla käyttämästäsi palvelusta viemäsi tiedosto ${ PASS_APP_NAME }iin. Kun tietosi on tuotu, poista vientitiedosto."
+      ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin ${ PASS_APP_NAME }-kuvaketta."
       ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Yritä ladata tai asentaa laajennus uudelleen ja varmista, että selaimesi ja ${ PASS_SHORT_APP_NAME } ovat ajan tasalla."
@@ -1813,6 +1822,9 @@
       ],
       "User's access removed": [
         "Käyttäjän käyttöoikeus mitätöitiin"
+      ],
+      "User's access successfully updated": [
+        "Käyttäjän käyttöoikeutta muutettiin"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Holvi \"${ payload.content.name }\" poistettiin"
@@ -2049,6 +2061,9 @@
       ],
       "Capital letters (A-Z)": [
         "Isot kirjaimet (A-Z)"
+      ],
+      "Capitalize": [
+        "Isot alkukirjaimet"
       ],
       "Card": [
         "Kortti"
@@ -2796,6 +2811,24 @@
       ]
     },
     "sso: auth device state": {
+      "Active": [
+        "Aktiivinen"
+      ],
+      "Inactive": [
+        "Ei-aktiivinen"
+      ],
+      "Pending activation": [
+        "Odottaa aktivointia"
+      ],
+      "Pending admin activation": [
+        "Odottaa ylläpitäjän aktivointia"
+      ],
+      "Rejected": [
+        "Hylätty"
+      ],
+      "Signed out": [
+        "Kirjattu ulos"
+      ],
       "Unknown": [
         "Tuntematon"
       ]
@@ -3246,6 +3279,9 @@
       ],
       "Your session was locked.": [
         "Istuntosi on lukittu."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Tilauksesi ei salli sinun luoda enempää holveja."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia, joten kaikki kohteet tuodaan ensimmäiseen holviisi. Tuo useisiin holveihin päivittämällä tilauksesi."

@@ -1272,10 +1272,10 @@
     },
     "Calendar subscription not synced error; long version": {
       "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
-        "Odkaz na kalendár nie je dostupný mimo ekosystému poskytovateľa kalendára."
+        "Odkaz na kalendár nie je dostupný mimo ekosystému sprostredkovateľa kalendára."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Odkaz na kalendár je dočasne nedostupný. Skontrolujte, či je odkaz od poskytovateľa kalendára stále platný."
+        "Odkaz na kalendár je dočasne nedostupný. Skontrolujte, či je odkaz od sprostredkovateľa kalendára stále platný."
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Od poslednej aktualizácie uplynulo viac ako 12 hodín — ${ CALENDAR_APP_NAME } sa pokúsi kalendár aktualizovať v priebehu niekoľkých hodín."
@@ -2535,7 +2535,7 @@
         "Nastavte metódu obnovenia, aby ste predišli strate prístupu k vášmu účtu."
       ],
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
-        "Môže to trvať niekoľko minút. Medzitým môžete ${ CALENDAR_APP_NAME } používať ako zvyčajne."
+        "Môže to trvať niekoľko minút. Medzitým môžete používať ${ CALENDAR_APP_NAME } ako zvyčajne."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Ak chcete zabezpečiť čo najvyššiu bezpečnosť svojho účtu, nastavte frázu na obnovenie."
@@ -3537,11 +3537,6 @@
       ],
       "You need an active personal calendar to import events": [
         "Na import udalostí potrebujete aktívny osobný kalendár"
-      ]
-    },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Je potrebné vybrať krstné meno alebo priezvisko"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {

@@ -70,11 +70,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -4670,8 +4670,8 @@
       "Certificate ${ name } not found or already revoked": [
         "A tanúsítvány: ${ name } nem található vagy már vissza lett vonva"
       ],
-      "First name and last name cannot be unchecked at the same time": [
-        "A vezetéknév vagy keresztnév egyike kiválasztva kell maradjon"
+      "Display name cannot be empty": [
+        "A Megjelenített név mező nem lehet üres"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5030,9 +5030,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Hitelesítési kulcs hozzáadása"
-      ],
       "Delete key": [
         "Kulcs törlése"
       ]
@@ -5106,9 +5103,6 @@
       ],
       "Register your security key": [
         "Regisztrálja a hitelesítési kulcsát"
-      ],
-      "Registered security keys": [
-        "Regisztrált hitelesítési kulcsok"
       ],
       "Security key registered": [
         "Hitelesítési kulcs regisztrálva"
@@ -12311,9 +12305,6 @@
       "to start using ${ PASS_APP_NAME } on your phone": [
         "hogy elkezdje használni ${ PASS_APP_NAME } a telefonján."
       ],
-      "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
-        "Váltson nagyobb csomagra a ${ PASS_APP_NAME } prémium funkciók eléréshez"
-      ],
       "Updating your account": [
         "Fiók frissítésé"
       ],
@@ -16432,9 +16423,6 @@
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
         "Regisztráljon egy ingyenes ${ BRAND_NAME } fiókra, hogy lefoglaljon egy helyet a listán. Minél hamarabb regisztrál, annál hamarább lesz hozzáférése a ${ appName }. Miután regisztrált, megtudja szerezni a Visionary előfizetést, hogy azonnal tudja használni ${ appName }."
-      ],
-      "Unlock ${ appName } premium features by upgrading": [
-        "Váltson nagyobb csomagra a ${ appName } prémium funkciók eléréshez"
       ],
       "Visionary users and their invited friends can share early access with others, invite your friends to try ${ appName } for free!": [
         "Visionary felhasználók megtudják osztani a korai hozzáférést barátokkal. Hívja meg a barátait, hogy ki próbálhassak a ${ appName } ingyen!"
