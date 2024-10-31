@@ -1,4 +1,5 @@
 import type { MutableRefObject } from 'react';
+import { useCallback } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
@@ -26,7 +27,6 @@ import type { Fido2Data, InfoAuthedResponse } from '@proton/shared/lib/authentic
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Unwrap } from '@proton/shared/lib/interfaces';
-import type { Credentials, SrpConfig } from '@proton/shared/lib/srp';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
@@ -35,6 +35,7 @@ import noop from '@proton/utils/noop';
 import { useErrorHandler, useUserSettings } from '../../hooks';
 import TotpInputs from '../account/totp/TotpInputs';
 import { getAuthTypes } from './getAuthTypes';
+import type { OwnAuthModalProps } from './interface';
 
 const FORM_ID = 'auth-form';
 
@@ -165,14 +166,9 @@ enum Step {
     TWO_FA,
 }
 
-export interface AuthModalProps extends Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'onSuccess' | 'onError'> {
-    config: SrpConfig;
-    onSuccess?: (data: { credentials: Credentials; response: Response }) => Promise<void> | void;
-    onCancel: (() => void) | undefined;
-    onError?: (error: any) => void;
-    prioritised2FAItem?: 'fido2' | 'totp';
-    onRecoveryClick?: () => void;
-}
+export interface AuthModalProps
+    extends OwnAuthModalProps,
+        Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'onSuccess' | 'onError'> {}
 
 const AuthModal = ({
     config,
@@ -204,10 +200,10 @@ const AuthModal = ({
         onClose?.();
     };
 
-    const refresh = async () => {
-        const infoResult = await api<InfoAuthedResponse>(getInfo());
+    const refresh = useCallback(async () => {
+        const infoResult = await api<InfoAuthedResponse>(getInfo({ intent: 'Proton' }));
         setInfoResult(infoResult);
-    };
+    }, []);
 
     const isLoadingAuth = !infoResult;
     const authTypes = getAuthTypes(infoResult, userSettings, APP_NAME);
@@ -250,7 +246,7 @@ const AuthModal = ({
                 },
             });
             // We want to just keep the modal open until the consumer's promise is finished. Not interested in errors.
-            await onSuccess?.({ credentials, response })?.catch(noop);
+            await onSuccess?.({ type: 'srp', credentials, response })?.catch(noop);
             onClose?.();
         } catch (error: any) {
             errorHandler(error);

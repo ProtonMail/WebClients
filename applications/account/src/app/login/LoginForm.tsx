@@ -191,7 +191,7 @@ const LoginForm = ({
         let ssoInfoResponse: SSOInfoResponse | undefined;
         try {
             await startUnAuthFlow();
-            ssoInfoResponse = await api<SSOInfoResponse>(getInfo(username, 'SSO'));
+            ssoInfoResponse = await api<SSOInfoResponse>(getInfo({ username, intent: 'SSO' }));
         } catch (e) {
             const { code } = getApiError(e);
             if (code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP) {
