@@ -9,6 +9,7 @@ import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import { setUsedBfOffer } from '@proton/components/containers/offers/bfOffer';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -432,13 +433,20 @@ const SubscriptionContainer = ({
         try {
             setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
             try {
+                const codes = getCodesForSubscription();
                 await operations.subscribe({
-                    Codes: getCodesForSubscription(),
+                    Codes: codes,
                     Plans: model.planIDs,
                     Cycle: model.cycle,
                     product: app,
                     taxBillingAddress: model.taxBillingAddress,
                 });
+
+                if (codes.some((code) => getHas2024OfferCoupon(code))) {
+                    setUsedBfOffer(true);
+                } else {
+                    setUsedBfOffer(false);
+                }
 
                 // eslint-disable-next-line @typescript-eslint/no-use-before-define
                 paymentFacade.telemetry.reportPaymentSuccess(paymentProcessorType);
