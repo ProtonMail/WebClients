@@ -1,3 +1,11 @@
+### Version 1.24.1
+
+-   Add SSO device verification support
+-   Make "privacy" permission optional
+-   Fix introduced passkey regression in 1.24.0 for rpIDs with `www` subdomains
+-   Fix locked state edge-case blocking user data revalidation
+-   Fix reported conflict with ShortPixel Adaptive Image WP plugin
+
 ### Version 1.24.0
 
 -   Trigger autofill only when field is focused
