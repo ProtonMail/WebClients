@@ -52,6 +52,7 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
     const createCredentials: CredentialsCreate = (options) =>
         promise<MaybeNull<Credential>>(async (resolve, reject) => {
             if (!options?.publicKey || !bridge.getState().connected) return resolve(create(options));
+            if (options.signal?.aborted) return reject(new Exception(options.signal.reason, 'AbortError'));
 
             const result = await bridge.sendMessage(
                 {
@@ -61,7 +62,7 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
                         domain: location.hostname,
                     },
                 },
-                { timeout: options.publicKey.timeout }
+                { timeout: options.publicKey.timeout, signal: options.signal }
             );
 
             if (result.type === 'error') {
@@ -84,6 +85,7 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
     const getCredentials: CredentialsGet = (options) =>
         promise<MaybeNull<Credential>>(async (resolve, reject) => {
             if (!options?.publicKey || !bridge.getState().connected) return resolve(get(options));
+            if (options.signal?.aborted) return reject(new Exception(options.signal.reason, 'AbortError'));
 
             const result = await bridge.sendMessage(
                 {
@@ -93,7 +95,7 @@ type BridgeErrorOptions = { data: MessageFailure; onReject: (error: Error) => vo
                         domain: location.hostname,
                     },
                 },
-                { timeout: options.publicKey.timeout }
+                { timeout: options.publicKey.timeout, signal: options.signal }
             );
 
             if (result.type === 'error') {
