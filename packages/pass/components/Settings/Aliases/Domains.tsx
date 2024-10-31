@@ -14,6 +14,9 @@ import {
 } from '@proton/pass/components/Settings/Aliases/DomainDetailsModal';
 import { DomainsTable } from '@proton/pass/components/Settings/Aliases/DomainsTable';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
+import { UpsellRef } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { getCustomDomains } from '@proton/pass/store/actions';
 import { selectUserPlan } from '@proton/pass/store/selectors';
@@ -32,6 +35,8 @@ export const Domains: FC = () => {
     const [action, setAction] = useState<MaybeNull<DomainAction>>(null);
     const canManageAlias = useSelector(selectUserPlan)?.ManageAlias;
 
+    const spotlight = useSpotlight();
+
     const getAllDomains = useActionRequest(getCustomDomains.intent, {
         onSuccess: ({ data }: { data: CustomDomainOutput[] }) => {
             setDomains(data);
@@ -47,6 +52,13 @@ export const Domains: FC = () => {
     };
 
     const handleAddDomainClick = () => {
+        if (!canManageAlias) {
+            return spotlight.setUpselling({
+                type: 'pass-plus',
+                upsellRef: UpsellRef.SETTING,
+            });
+        }
+
         setAction({ type: 'add' });
     };
 
@@ -111,13 +123,10 @@ export const Domains: FC = () => {
                 <div className="text-bold mb-2">{c('Title').t`Custom domains`}</div>
                 <div>{c('Info')
                     .t`Bring your own domain and you don't have to buy yet another email hosting solution.`}</div>
-                <Button
-                    color="weak"
-                    shape="solid"
-                    className="my-2"
-                    onClick={handleAddDomainClick}
-                    disabled={!canManageAlias}
-                >{c('Action').t`Add custom domain`}</Button>
+                <Button color="weak" shape="solid" className="my-2" onClick={handleAddDomainClick}>
+                    {c('Action').t`Add custom domain`}
+                    {!canManageAlias && <PassPlusIcon className="ml-2" />}
+                </Button>
                 {domains && domains.length > 0 && (
                     <DomainsTable
                         domains={domains}

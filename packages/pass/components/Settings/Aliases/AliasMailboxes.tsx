@@ -8,6 +8,9 @@ import { AliasMailboxesTable } from '@proton/pass/components/Settings/Aliases/Al
 import { MailboxAddModal } from '@proton/pass/components/Settings/Aliases/MailboxAddModal';
 import { MailboxVerifyModal } from '@proton/pass/components/Settings/Aliases/MailboxVerifyModal';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
+import { UpsellRef } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { getMailboxes } from '@proton/pass/store/actions';
 import { selectUserPlan } from '@proton/pass/store/selectors';
@@ -24,7 +27,18 @@ export const AliasMailboxes: FC = () => {
     const getAllMailboxes = useActionRequest(getMailboxes.intent, { onSuccess: ({ data }) => setMailboxes(data) });
     const canManageAlias = useSelector(selectUserPlan)?.ManageAlias;
 
-    const handleAddMailboxClick = () => setAction({ type: 'add' });
+    const spotlight = useSpotlight();
+
+    const handleAddMailboxClick = () => {
+        if (!canManageAlias) {
+            return spotlight.setUpselling({
+                type: 'pass-plus',
+                upsellRef: UpsellRef.SETTING,
+            });
+        }
+
+        setAction({ type: 'add' });
+    };
 
     const handleRemoved = (mailboxId: number) =>
         setMailboxes((prevState) => prevState?.filter((item) => item.MailboxID !== mailboxId) ?? null);
@@ -59,13 +73,10 @@ export const AliasMailboxes: FC = () => {
             <div>{c('Info')
                 .t`Emails sent to your aliases are forwarded to your mailboxes. An alias can have more than one mailbox: useful to share an alias between you and your friends.`}</div>
 
-            <Button
-                color="weak"
-                shape="solid"
-                className="mt-2"
-                disabled={!canManageAlias}
-                onClick={handleAddMailboxClick}
-            >{c('Action').t`Add mailbox`}</Button>
+            <Button color="weak" shape="solid" className="mt-2" onClick={handleAddMailboxClick}>
+                {c('Action').t`Add mailbox`}
+                {!canManageAlias && <PassPlusIcon className="ml-2" />}
+            </Button>
 
             <AliasMailboxesTable
                 mailboxes={mailboxes}
