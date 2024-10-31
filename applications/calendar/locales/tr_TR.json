@@ -782,6 +782,9 @@
       ],
       "Toggle Contacts app": [
         "Kişiler uygulamasına geç"
+      ],
+      "Upgrade to Mail Plus": [
+        "Mail Plus tarifesine yükselt"
       ]
     },
     "Action subline": {
@@ -2581,6 +2584,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Tek tıklamayla Zoom toplantısı oluşturun ve etkinliğinize katılım bilgilerini ekleyin."
       ]
     },
     "description": {
@@ -3340,6 +3346,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
+      ],
+      "Failed to load oauth modal.": [
+        "Oauth penceresi yüklenemedi."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3555,6 +3564,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Ad ve soyad alanlarının işareti aynı anda kaldırılamaz"
+      ],
+      "Display name cannot be empty": [
+        "Görüntülenecek ad boş olamaz"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -9843,6 +9855,9 @@
       ],
       "We're setting up calendar search": [
         "Takvim araması hazırlanıyor"
+      ],
+      "Get Zooming faster": [
+        "Daha hızlı Zoom görüşmeleri yapın"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10583,6 +10598,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoom toplantısı ekle"
+      ],
+      "Adding conferencing details": [
+        "Toplantı bilgileri ekleniyor"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom yapılandırması yükleniyor"
       ]
     }
   }

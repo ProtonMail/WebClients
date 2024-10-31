@@ -779,6 +779,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Upgrade to Mail Plus": [
+        "Uppgradera till Mail Plus"
       ]
     },
     "Action subline": {
@@ -3533,6 +3536,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Förnamn och efternamn kan inte avmarkeras samtidigt"
+      ],
+      "Display name cannot be empty": [
+        "Visningsnamn kan inte vara tomt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10516,6 +10522,14 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN och mer."
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Lägg till Zoom-möte"
+      ],
+      "Adding conferencing details": [
+        "Lägger till konferensdetaljer"
       ]
     }
   }

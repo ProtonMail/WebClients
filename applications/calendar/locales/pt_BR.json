@@ -782,6 +782,9 @@
       ],
       "Toggle Contacts app": [
         "Alternar o aplicativo Contatos"
+      ],
+      "Upgrade to Mail Plus": [
+        "Faça upgrade para o Mail Plus"
       ]
     },
     "Action subline": {
@@ -2584,6 +2587,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importação por um arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Crie uma reunião Zoom e adicione detalhes de participação ao seu evento com um clique."
       ]
     },
     "description": {
@@ -3343,6 +3349,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Você atingiu o número limite de contatos da sua conta"
+      ],
+      "Failed to load oauth modal.": [
+        "Falha ao carregar o modal oauth."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3558,6 +3567,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Nome e sobrenome não podem ser desmarcados ao mesmo tempo"
+      ],
+      "Display name cannot be empty": [
+        "O campo de nome de exibição não pode estar vazio"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10481,7 +10493,7 @@
         "6 usuários"
       ],
       "8500+ servers across 110+ countries": [
-        "Mais de 8500 servidores em mais de 110 países"
+        "Mais de 8.500 servidores em mais de 110 países"
       ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção contra malware"
@@ -10529,7 +10541,7 @@
         "Alíases ilimitados do hide-my-email"
       ],
       "Unlimited logins, notes, credit cards": [
-        "Inícios de sessão ilimitados, notas, cartões de crédito"
+        "Logins ilimitados, notas, cartões de crédito"
       ],
       "Use your own email domain": [
         "Use o seu próprio domínio de e-mail"
@@ -10561,20 +10573,20 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Acesse conteúdo bloqueado e navegue privadamente. Inclui mais de 8.500 servidores em mais de 110 países, 10 dispositivos, alta velocidade de streaming, bloqueador de anúncios ,proteção de malware, VPN Accelerator e muito mais."
+        "Acesse conteúdo bloqueado e navegue privadamente. Inclui mais de 8.500 servidores em mais de 110 países, 10 dispositivos, alta velocidade de streaming, bloqueador de anúncios, proteção contra malware, VPN Accelerator e muito mais."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Acesse conteúdo em serviços de streaming, incluindo Netflix, Disney+, Prime Video e muito mais, de qualquer lugar."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ide-my-email ilimitados, compartilhamento, 2FA integrado, monitoramento da Dark Web e muito mais."
+        "Logins seguros em todos os seus dispositivos. Inclui aliases ide-my-email ilimitados, compartilhamento, 2FA integrado, monitoramento da Dark Web e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteja seus e-mails e agende com criptografia de ponta a ponta. Inclui 15${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais.",
-        "Proteja seus e-mails e agende com criptografia de ponta a ponta. Inclui 15${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
+        "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais.",
+        "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteja seus e-mails e agende com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
+        "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui editor de documento on-line, histórico de versões, compartilhamento de arquivo criptografado e muito mais."
@@ -10610,6 +10622,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acesso a servidores Secure Core, downloads rápidos P2P/BitTorrent, Tor over VPN, e mais."
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Adicionar uma reunião do Zoom"
+      ],
+      "Adding conferencing details": [
+        "Adicionar detalhes da conferência"
+      ],
+      "Loading Zoom configuration": [
+        "Carregando a configuração do Zoom"
       ]
     }
   }

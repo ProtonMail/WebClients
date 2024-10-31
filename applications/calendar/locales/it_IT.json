@@ -782,6 +782,9 @@
       ],
       "Toggle Contacts app": [
         "Pulsante app Contatti"
+      ],
+      "Upgrade to Mail Plus": [
+        "Passa a Mail Plus"
       ]
     },
     "Action subline": {
@@ -2581,6 +2584,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Crea una riunione Zoom e aggiungi i dettagli di partecipazione al tuo evento con un clic."
       ]
     },
     "description": {
@@ -3340,6 +3346,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Hai raggiunto il numero limite di contatti per il tuo account"
+      ],
+      "Failed to load oauth modal.": [
+        "Impossibile caricare la modalità Oauth."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3555,6 +3564,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Nome e cognome non possono essere deselezionati contemporaneamente"
+      ],
+      "Display name cannot be empty": [
+        "Il campo Nome visualizzato non può essere vuoto"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -9849,6 +9861,9 @@
       ],
       "We're setting up calendar search": [
         "Stiamo configurando la ricerca nel calendario"
+      ],
+      "Get Zooming faster": [
+        "Ottieni Zoom rapidamente"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10433,7 +10448,7 @@
         "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
-        "${ storageSize } di archiviazione"
+        "${ storageSize } di spazio d'archiviazione"
       ],
       "1 TB total": [
         "1 TB"
@@ -10460,10 +10475,10 @@
         "6 utenti"
       ],
       "8500+ servers across 110+ countries": [
-        "Oltre 8500 server in più di 110 Paesi"
+        "Oltre 8500 server in più di 110 paesi"
       ],
       "Ad-blocker and malware protection": [
-        "Blocco degli annunci e protezione da malware"
+        "Ad-blocker e protezione da malware"
       ],
       "Admin panel to manage your family": [
         "Pannello di amministrazione per gestire la tua famiglia"
@@ -10499,7 +10514,7 @@
         "Archiviazione e condivisione sicura dei file"
       ],
       "Secure vault and link sharing": [
-        "Condivisione sicura di casseforti e link"
+        "Condivisione sicura tramite casseforti e link"
       ],
       "Unlimited folders, labels and filters": [
         "Cartelle, etichette e filtri illimitati"
@@ -10508,7 +10523,7 @@
         "Alias hide-my-email illimitati"
       ],
       "Unlimited logins, notes, credit cards": [
-        "Login, note e carte illimitati"
+        "Login, note e carte di credito illimitati"
       ],
       "Use your own email domain": [
         "Usa il tuo dominio di posta personalizzato"
@@ -10540,23 +10555,23 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accedi ai contenuti bloccati e naviga in privato. Include oltre 8.500 server in più di 110 paesi, 10 dispositivi, streaming ad alta velocità, blocco degli annunci, protezione da malware, VPN Accelerator e molto altro."
+        "Accedi ai contenuti bloccati e naviga in privato. Include oltre 8.500 server in più di 110 paesi, 10 dispositivi, streaming ad alta velocità, ad-blocker, protezione da malware, VPN Accelerator e molto altro."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, condivisione, autenticazione a due fattori, monitoraggio del dark web e molto altro."
+        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, monitoraggio del dark web e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
-        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteggi le email e la l'agenda con la crittografia end-to-end. Include 15 indirizzi email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include 15 indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Proteggi i file con l'archiviazione cloud crittografata. Include editor di documenti online, backup delle foto, cronologia delle versioni, condivisione di file crittografata e molto altro."
+        "Proteggi i file con l'archiviazione cloud crittografata. Include l'editor di documenti online, il backup delle foto, la cronologia delle versioni, la condivisione di file crittografata e molto altro."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield è progettato appositamente per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
@@ -10589,6 +10604,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Aggiungi riunione Zoom"
+      ],
+      "Adding conferencing details": [
+        "Aggiunta di dettagli sulla conferenza"
+      ],
+      "Loading Zoom configuration": [
+        "Caricamento configurazione Zoom"
       ]
     }
   }

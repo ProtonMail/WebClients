@@ -790,6 +790,9 @@
       ],
       "Toggle Contacts app": [
         "Пераключыць на праграму Кантакты"
+      ],
+      "Upgrade to Mail Plus": [
+        "Палепшыць да Mail Plus"
       ]
     },
     "Action subline": {
@@ -2623,6 +2626,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Стварыце сустрэчу Zoom і дадайце падрабязнасці аб далучэнні да падзеі адным націскам."
       ]
     },
     "description": {
@@ -3406,6 +3412,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
+      ],
+      "Failed to load oauth modal.": [
+        "Не ўдалося загрузіць акно OAuth."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3623,6 +3632,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Немагчыма адначасова зняць пазнаку з імя і прозвішча"
+      ],
+      "Display name cannot be empty": [
+        "Бачнае імя не можа быць пустым"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10233,6 +10245,9 @@
       ],
       "We're setting up calendar search": [
         "Наладжванне пошуку ў календары"
+      ],
+      "Get Zooming faster": [
+        "Паскорыць Zoom"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11019,7 +11034,7 @@
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, рэзерваванне фатаграфій, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
@@ -11052,6 +11067,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN і іншыя функцыі."
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Дадаць сустрэчу ў Zoom"
+      ],
+      "Adding conferencing details": [
+        "Дадаванне падрабязнасцяў канферэнцыі"
+      ],
+      "Loading Zoom configuration": [
+        "Загрузка канфігурацыі Zoom"
       ]
     }
   }

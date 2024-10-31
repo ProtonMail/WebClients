@@ -758,6 +758,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Upgrade to Mail Plus": [
+        "Mail Plus előfizetés"
       ]
     },
     "Action subline": {
@@ -2400,6 +2403,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Hozzon létre egy Zoom értekezletet, és egyetlen kattintással adja hozzá a csatlakozási adatokat az eseményhez."
       ]
     },
     "description": {
@@ -3301,6 +3307,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "A vezetéknév vagy keresztnév egyike kiválasztva kell maradjon"
+      ],
+      "Display name cannot be empty": [
+        "A Megjelenített név mező nem lehet üres"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -8888,6 +8897,9 @@
       ],
       "Your exposed information": [
         "Az ön kiszivárgott információi"
+      ],
+      "Get Zooming faster": [
+        "Gyorsabb Zoomolás"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -9445,6 +9457,17 @@
       "${ n } user account": [
         "${ n } felhasználói fiók",
         "${ n } felhasználói fiókok"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoom találkozó hozzáadása"
+      ],
+      "Adding conferencing details": [
+        "Konferencia részleteinek hozzáadása"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom konfiguráció betöltése"
       ]
     }
   }

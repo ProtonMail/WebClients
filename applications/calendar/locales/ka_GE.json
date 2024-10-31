@@ -782,6 +782,9 @@
       ],
       "Toggle Contacts app": [
         "კონტაქტების აპის გადართვა"
+      ],
+      "Upgrade to Mail Plus": [
+        "აწევა Mail Plus-მდე"
       ]
     },
     "Action subline": {
@@ -3337,6 +3340,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
+      ],
+      "Failed to load oauth modal.": [
+        "შეუძლებელია Oauth-ის მოდალის ჩატვირთვა."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3552,6 +3558,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "სახელი და გვარი ერთდროულად ვერ გამოირთვება"
+      ],
+      "Display name cannot be empty": [
+        "საჩვენებელი სახელი ცარიელი ვერ იქნება"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -9831,6 +9840,9 @@
       ],
       "We're setting up calendar search": [
         "მიმდინარეობს კალენდრის ძებნის მორგება"
+      ],
+      "Get Zooming faster": [
+        "Zoom-ის გასწრაფება"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10558,6 +10570,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "წვდომა Secure Core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoom-ის შეხვედრის დამატება"
+      ],
+      "Adding conferencing details": [
+        "კონფერენციის დეტალების დამატება"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom-ის კონფიგურაციის ჩატვირთვა"
       ]
     }
   }

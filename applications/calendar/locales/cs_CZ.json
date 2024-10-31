@@ -790,6 +790,9 @@
       ],
       "Toggle Contacts app": [
         "Přepnout aplikaci Kontakty"
+      ],
+      "Upgrade to Mail Plus": [
+        "Navýšit na Mail Plus"
       ]
     },
     "Action subline": {
@@ -2623,6 +2626,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Pro importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Vytvořte schůzku na Zoomu a jedním kliknutím přidejte podrobnosti o připojení k události."
       ]
     },
     "description": {
@@ -3623,6 +3629,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Je potřeba vybrat křestní jméno a nebo příjmení"
+      ],
+      "Display name cannot be empty": [
+        "Zobrazované jméno nesmí být prázdné"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10236,6 +10245,9 @@
       ],
       "We're setting up calendar search": [
         "Nastavujeme vyhledávání v kalendáři"
+      ],
+      "Get Zooming faster": [
+        "Získejte rychlejší Zoom"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11060,6 +11072,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Přidat schůzku na Zoomu"
+      ],
+      "Adding conferencing details": [
+        "Přidávání detailů o konferencích"
+      ],
+      "Loading Zoom configuration": [
+        "Načítání konfigurace Zoomu"
       ]
     }
   }

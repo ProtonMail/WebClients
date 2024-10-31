@@ -786,6 +786,9 @@
       ],
       "Toggle Contacts app": [
         "Comutare aplicație Contacte"
+      ],
+      "Upgrade to Mail Plus": [
+        "Treceți la Mail Plus"
       ]
     },
     "Action subline": {
@@ -2602,6 +2605,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Creați o întâlnire pe Zoom și adăugați detaliile de conectare la evenimentul dvs. cu un singur clic."
       ]
     },
     "description": {
@@ -3373,6 +3379,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Ați atins limita numărului de contacte disponibil pentru acest cont."
+      ],
+      "Failed to load oauth modal.": [
+        "Eșuare încărcare panou modal OAuth."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3589,6 +3598,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Numele și prenumele nu pot fi debifate simultan."
+      ],
+      "Display name cannot be empty": [
+        "Numele afișat nu poate fi gol."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10038,6 +10050,9 @@
       ],
       "We're setting up calendar search": [
         "Se setează căutarea calendarului"
+      ],
+      "Get Zooming faster": [
+        "Accesați mai rapid Zoom"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10820,6 +10835,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Adăugare întâlnire pe Zoom"
+      ],
+      "Adding conferencing details": [
+        "Se adaugă detaliile conferinței"
+      ],
+      "Loading Zoom configuration": [
+        "Se încarcă configurația Zoom"
       ]
     }
   }

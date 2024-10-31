@@ -782,6 +782,9 @@
       ],
       "Toggle Contacts app": [
         "Slå av/på Kontakter-appen"
+      ],
+      "Upgrade to Mail Plus": [
+        "Oppgrader til Mail Plus"
       ]
     },
     "Action subline": {
@@ -2581,6 +2584,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Opprett et Zoom-møte og legg til deltakelsesdetaljer til hendelsen din med ett klikk."
       ]
     },
     "description": {
@@ -3340,6 +3346,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nådd grensen for antall kontakter for kontoen din"
+      ],
+      "Failed to load oauth modal.": [
+        "Kunne ikke laste inn oauth-modal."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3555,6 +3564,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Kan ikke fjerne merket samtidig for fornavn og etternavn"
+      ],
+      "Display name cannot be empty": [
+        "Visningsnavn kan ikke være tomt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -6554,7 +6566,7 @@
         "Auto-slett søppelpost og papirkurv"
       ],
       "Auto-delete spam and trashed messages": [
-        "Autoslett søppelpost og meldinger i papirkurven"
+        "Fjern automatisk søppelpost og meldinger som er slettet"
       ],
       "Auto-reply": [
         "Autosvar"
@@ -9843,6 +9855,9 @@
       ],
       "We're setting up calendar search": [
         "Vi setter opp kalendersøk"
+      ],
+      "Get Zooming faster": [
+        "Skaff deg Zoom raskere"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10583,6 +10598,17 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Legg til Zoom-møte"
+      ],
+      "Adding conferencing details": [
+        "Legger til konferansedetaljer"
+      ],
+      "Loading Zoom configuration": [
+        "Laster inn Zoom-konfigurasjonen"
       ]
     }
   }
