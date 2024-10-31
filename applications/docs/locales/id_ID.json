@@ -402,6 +402,9 @@
       "Next month": [
         "Bulan selanjutnya"
       ],
+      "No, thanks": [
+        "Tidak, terima kasih"
+      ],
       "Not now": [
         "Tidak sekarang"
       ],
@@ -433,7 +436,7 @@
         "PDF (.pdf)"
       ],
       "Plain Text (.txt)": [
-        "Teks Polos (.txt)"
+        "Teks polos (.txt)"
       ],
       "Preview contact": [
         "Pratinjau kontak"
@@ -658,7 +661,7 @@
         "Lihat faktur"
       ],
       "Web page (.html)": [
-        "Laman web (.html)"
+        "Halaman web (.html)"
       ],
       "What do I get?": [
         "Apa yang akan saya dapatkan?"
@@ -3050,11 +3053,6 @@
         "Pada saat kata sandi tambahan diaktifkan, pengelolaan alias hanya dapat dilakukan di ${ PASS_APP_NAME }."
       ]
     },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Nama depan dan nama belakang tidak boleh dikosongkan sekaligus"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Tidak ada gambar yang dipilih"
@@ -3967,6 +3965,9 @@
       "End-to-end encrypted.": [
         "Terenkripsi end-to-end."
       ],
+      "Enter password": [
+        "Masukkan kata sandi"
+      ],
       "Enter the code from your authenticator app": [
         "Masukkan kode yang tertera pada aplikasi autentikator Anda"
       ],
@@ -4282,6 +4283,9 @@
       "Please authenticate your payment in the verification tab.": [
         "Silakan autentikasi pembayaran Anda pada tab verifikasi."
       ],
+      "Please enter the password to decrypt and view content.": [
+        "Silakan masukkan kata sandi untuk mendekripsi dan melihat isi konten."
+      ],
       "Please export a copy of your current changes from the main menu and reload the page.": [
         "Silakan ekspor salinan perubahan Anda saat ini dari menu utama dan muat ulang halaman ini."
       ],
@@ -4445,7 +4449,7 @@
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
-        "Dokumen ini sedang memproses banyak aktivitas. Sebagian fitur dapat tidak tersedia untuk sementara waktu."
+        "Dokumen ini sedang memiliki banyak aktivitas. Sebagian fitur mungkin tidak akan tersedia untuk sementara waktu."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "Dokumen ini tidak ada, atau Anda mungkin tidak memiliki izin untuk melihat dokumen ini. Anda dapat mencoba untuk memuat ulang halaman untuk memeriksa apakah masalah ini terus berlanjut."
@@ -4634,7 +4638,7 @@
         "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
-        "Anda saat ini menampilkan dokumen ini dalam mode hanya tampil. Sampaikan kepada pemilik untuk meminta akses penyuntingan dan komentar."
+        "Anda sedang menampilkan dokumen ini dalam mode hanya baca (read-only). Hubungi pemilik dokumen untuk meminta izin menyunting dan menulis komentar."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Anda menggunakan ruang penyimpanan lebih dari yang terliput pada paket ${ downgradedPlanName }. Silakan hapus sebagian data untuk dapat menurunkan paket."
