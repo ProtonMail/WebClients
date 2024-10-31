@@ -725,6 +725,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Treceți la ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Treceți la Mail Plus"
+      ],
       "Upload picture": [
         "Încărcare imagine"
       ],
@@ -2622,6 +2625,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Codificați-vă evenimentele prin culori pentru a vă facilita organizarea zilei, urmărirea timpului și prioritizarea sarcinilor."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Creați o întâlnire pe Zoom și adăugați detaliile de conectare la evenimentul dvs. cu un singur clic."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
       ],
@@ -3113,6 +3119,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Nu s-a putut obține apariția inițială în serie."
+      ],
+      "Failed to load oauth modal.": [
+        "Eșuare încărcare panou modal OAuth."
       ],
       "First name is too long": [
         "Prenumele este prea lung."
@@ -3648,8 +3657,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "Numele și prenumele nu pot fi debifate simultan."
+      "Display name cannot be empty": [
+        "Numele afișat nu poate fi gol."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -9812,6 +9821,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Obțineți aplicația ${ appName[APP_NAME] }"
       ],
+      "Get Zooming faster": [
+        "Accesați mai rapid Zoom"
+      ],
       "Gift": [
         "Cadou"
       ],
@@ -10684,6 +10696,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Adăugare întâlnire pe Zoom"
+      ],
+      "Adding conferencing details": [
+        "Se adaugă detaliile conferinței"
+      ],
+      "Loading Zoom configuration": [
+        "Se încarcă configurația Zoom"
       ]
     },
     "Zoom Meeting": {

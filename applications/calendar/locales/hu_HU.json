@@ -698,6 +698,9 @@
       "Upgrade now": [
         "Váltás nagyobb csomagra"
       ],
+      "Upgrade to Mail Plus": [
+        "Mail Plus előfizetés"
+      ],
       "Upload picture": [
         "Kép feltöltése"
       ],
@@ -2340,6 +2343,9 @@
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Szervezze meg jobban a napját, kövesse nyomon az idejét, és rangsorolja a feladatokat. Színkódolja a naptárát saját eseményszínekkel."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Hozzon létre egy Zoom értekezletet, és egyetlen kattintással adja hozzá a csatlakozási adatokat az eseményhez."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Névjegyek visszafejtése… Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
       ],
@@ -3260,8 +3266,8 @@
       ]
     },
     "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        "A vezetéknév vagy keresztnév egyike kiválasztva kell maradjon"
+      "Display name cannot be empty": [
+        "A Megjelenített név mező nem lehet üres"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -8575,6 +8581,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } alkalmazások"
       ],
+      "Get Zooming faster": [
+        "Gyorsabb Zoomolás"
+      ],
       "Gift": [
         "Ajándék"
       ],
@@ -9369,6 +9378,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Évente, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoom találkozó hozzáadása"
+      ],
+      "Adding conferencing details": [
+        "Konferencia részleteinek hozzáadása"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom konfiguráció betöltése"
       ]
     }
   }
