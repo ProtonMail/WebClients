@@ -2,10 +2,10 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { UnlockModal, useModalState } from '@proton/components';
+import { AuthModal, useModalState } from '@proton/components';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
 import { useErrorHandler } from '@proton/components/hooks';
-import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
+import { queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { AddressGenerationPayload } from '@proton/shared/lib/keys';
@@ -75,16 +75,25 @@ const GenerateAddressStep = ({
     return (
         <>
             {renderUnlockModal && payload && (
-                <UnlockModal
+                <AuthModal
+                    scope="locked"
+                    config={queryUnlock()}
                     {...unlockModalProps}
-                    onSuccess={async (password) => {
-                        return onSubmit({
-                            ...payload,
-                            setup: {
-                                mode: 'setup',
-                                loginPassword: password,
-                            },
-                        }).catch(noop);
+                    onSuccess={async (result) => {
+                        if (result.type === 'srp') {
+                            return onSubmit({
+                                ...payload,
+                                setup: {
+                                    mode: 'setup',
+                                    loginPassword: result.credentials.password,
+                                },
+                            }).catch(noop);
+                        } else {
+                            setUnlockModalOpen(false);
+                        }
+                    }}
+                    onCancel={() => {
+                        setUnlockModalOpen(false);
                     }}
                 />
             )}

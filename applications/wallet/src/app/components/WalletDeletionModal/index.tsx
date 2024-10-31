@@ -38,6 +38,7 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
     if (!authed) {
         return (
             <AuthModal
+                scope="password"
                 open={modalProps.open}
                 onCancel={modalProps.onClose}
                 config={unlockPasswordChanges()}

@@ -70,6 +70,7 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
         <>
             {renderAuthModal && (
                 <AuthModal
+                    scope="password"
                     config={unlockPasswordChanges()}
                     {...authModalProps}
                     onCancel={authModalProps.onClose}

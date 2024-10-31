@@ -20,7 +20,7 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import AuthModal from '@proton/components/containers/password/AuthModal';
+import AuthModal, { type AuthModalResult } from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -101,6 +101,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                 return (
                     <AuthModal
                         {...props}
+                        scope="password"
                         config={unlockPasswordChanges()}
                         onCancel={props.onReject}
                         onSuccess={props.onResolve}
