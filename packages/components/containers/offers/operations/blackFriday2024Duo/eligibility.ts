@@ -6,6 +6,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getPlan, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import type { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
+import { usedBfOffer } from '../../bfOffer';
 import hasOneBF2024Coupon from '../../helpers/hasBF2024Coupons';
 import hasEligibileCurrencyForBF from '../../helpers/hasEligibileCurrencyForBF';
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
@@ -39,7 +40,7 @@ const isEligible = ({ subscription, user, protonConfig, lastSubscriptionEnd = 0,
     const { canPay, isDelinquent } = user;
     const notDelinquent = !isDelinquent;
     const isNotExternal = !isManagedExternally(subscription);
-    const hasBF2024Coupon = hasOneBF2024Coupon(subscription);
+    const hasBF2024Coupon = hasOneBF2024Coupon(subscription) || usedBfOffer;
 
     const isPreferredCurrencyEligible = hasEligibileCurrencyForBF(preferredCurrency);
 
