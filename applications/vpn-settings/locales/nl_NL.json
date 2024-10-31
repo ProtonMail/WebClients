@@ -193,6 +193,9 @@
       "Delete your account": [
         "Uw account verwijderen"
       ],
+      "Deny access": [
+        "Toegang weigeren"
+      ],
       "Details": [
         "Details"
       ],
@@ -971,6 +974,9 @@
       "${ storageSize } storage": [
         "${ storageSize } opslagruimte"
       ],
+      "1 TB total": [
+        "1 TB totaal"
+      ],
       "1 user": [
         "1 gebruiker"
       ],
@@ -997,6 +1003,9 @@
       ],
       "Ad-blocker and malware protection": [
         "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "Admin panel to manage your family": [
+        "Beheerderpaneel om uw gezin te beheren"
       ],
       "Advanced account protection": [
         "Geavanceerde accountbeveiliging"
@@ -1063,14 +1072,36 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "voor ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Verlenging na 1 maand voor ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 8.500 servers in meer dan 110 landen, 10 apparaten, high-speed streaming, advertentieblokkering en malwarebescherming, VPN Accelerator en meer."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
       ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, Dark Web Monitoring en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief online documenteditor, foto back-up, versiegeschiedenis, versleuteld bestanden delen en meer."
+      ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
       ]
     },
     "Billing cycle": {
@@ -2241,6 +2272,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Weet u zeker dat u deze groep wilt verwijderen?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Houd er rekening mee dat als u de groep ${ displayGroupName } (met adres ${ displayGroupAddressEmail }) verwijdert, u niet langer e-mails kan ontvangen met behulp van dit adres."
       ]
     },
     "Delinquent modal title": {
@@ -2249,6 +2283,9 @@
       ]
     },
     "Description": {
+      "Keep different parts of your life separate and your inbox organized with additional addresses.": [
+        "Houd verschillende delen van uw leven gescheiden en uw postvak in georganiseerd met extra adressen."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ]
@@ -2625,6 +2662,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
       ],
+      "Please upload a square logo": [
+        "Upload een vierkant logo"
+      ],
       "Please upload an xml file": [
         "Upload een xml-bestand"
       ],
@@ -2717,6 +2757,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
+      ],
+      "You've assigned all of your servers.": [
+        "U heeft al uw servers toegewezen."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
@@ -3078,9 +3121,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Beveiligingssleutel toevoegen"
-      ],
       "Delete key": [
         "Sleutel verwijderen"
       ]
@@ -3160,9 +3200,6 @@
       ],
       "Register your security key": [
         "Registreer uw beveiligingssleutel"
-      ],
-      "Registered security keys": [
-        "Geregistreerde beveiligingssleutels"
       ],
       "Security key registered": [
         "Veiligheidssleutel geregistreerd"
@@ -5151,6 +5188,11 @@
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Geen geldig e-mailadres"
+      ]
+    },
     "invitation status": {
       "Declined": [
         "Afgewezen"
@@ -5160,6 +5202,9 @@
       ],
       "Pending": [
         "In behandeling"
+      ],
+      "Sending invite...": [
+        "Uitnodiging verzenden..."
       ]
     },
     "Invoice state display as badge": {
@@ -5241,6 +5286,9 @@
       ],
       "Account storage": [
         "Opslagruimte account"
+      ],
+      "Add all organization members": [
+        "Alle leden van de organisatie toevoegen"
       ],
       "Add group member": [
         "Groepslid toevoegen"
@@ -5614,6 +5662,9 @@
       "Recovery phrase": [
         "Herstelzin"
       ],
+      "Repeat backup password": [
+        "Herhaal back-upwachtwoord"
+      ],
       "Reply (ACS) URL": [
         "Antwoord (ACS) URL"
       ],
@@ -5631,6 +5682,9 @@
       ],
       "Search": [
         "Zoeken"
+      ],
+      "Search by email": [
+        "Zoeken via e-mail"
       ],
       "Second password": [
         "Tweede wachtwoord"
@@ -5857,6 +5911,9 @@
       ],
       "Pay invoice": [
         "Factuur betalen"
+      ],
+      "PayPal without credit card": [
+        "PayPal zonder creditcard"
       ],
       "perform a password reset from your active session": [
         "mogelijk een wachtwoord reset vanuit uw actieve sessie uitvoeren"
@@ -7608,6 +7665,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "We verwerken uw betaling voor de factuur. Wacht tot de betaling is voltooid voordat u uw abonnement wijzigt of betalingsgegevens bijwerkt. Dank u voor uw geduld."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Via de geselecteerde betaalmethode wordt ${ amountToCharge } in rekening gebracht."
       ]
     },
     "Payments.Error": {
@@ -7866,6 +7926,9 @@
       "Changing organization password": [
         "Organisatiewachtwoord wijzigen"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Creëren van of toegang tot niet-privé gebruikers."
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Als gevolg van het wijzigen van een wachtwoord zijn uw beheerdersbevoegdheden beperkt. De volgende acties zijn niet langer toegestaan:"
       ]
@@ -7892,6 +7955,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggen is niet gelukt."
+      ],
       "Something went wrong": [
         "Er is iets fout gegaan"
       ]
@@ -7952,6 +8018,12 @@
     "scim: Info": {
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Vereist:** SAML-authenticatie moet worden geconfigureerd om SCIM-bepaling in te schakelen."
+      ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Vereist:** Om SCIM-bevoorrading in te schakelen dient u eigenaarschap van het domein **${ domainName }** te verifiëren. Deze verificatie kan tot één uur duren."
+      ],
+      "Enter the token into your identity provider": [
+        "Voer het token in in uw identiteitsprovider"
       ],
       "Enter URL and token into your identity provider": [
         "Voer URL en token in bij uw identiteitsprovider"
@@ -8261,6 +8333,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "We nemen opnieuw contact met u op wanneer wachtwoord reset beschikbaar is."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "U kan de status van uw aanvraag op elke moment bekijken ${ accountAndPasswordSectionLink } van uw instellingen."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "in de accountinstellingen"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8562,11 +8642,29 @@
         "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal.",
         "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal."
       ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**SSO-gebruikers (aangeboden door uw Identity Provider) worden verwijderd** en u moet ze handmatig aanmaken om ze weer toe te voegen aan uw organisatie."
+      ],
       "Access denied": [
         "Toegang geweigerd"
       ],
+      "Access granted": [
+        "Toegang verleend"
+      ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "heeft u toegevoegd aan hun ${ BRAND_NAME } organisatie"
+      ],
       "Approve or deny it now": [
         "Keur goed of weiger nu"
+      ],
+      "Approve the sign-in from another device": [
+        "De aanmelding vanaf een ander apparaat goedkeuren"
+      ],
+      "Ask administrator for help": [
+        "Vraag de beheerder om hulp"
+      ],
+      "Ask your administrator for access?": [
+        "Toegang vragen aan uw beheerder?"
       ],
       "Backup password": [
         "Back-up wachtwoord"
@@ -8574,14 +8672,38 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Change backup password": [
+        "Back-up wachtwoord wijzigen"
+      ],
+      "Confirm backup password": [
+        "Back-up-wachtwoord bevestigen"
+      ],
+      "Confirmation code": [
+        "Bevestigingscode"
+      ],
+      "Contact administrator": [
+        "Contact opnemen met beheerder"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Neem contact op met de beheerder als het probleem aanhoudt."
+      ],
       "Deny": [
         "Weigeren"
       ],
       "Deny access": [
         "Toegang weigeren"
       ],
+      "Devices available": [
+        "Beschikbare apparaten"
+      ],
       "Enter the confirmation code we sent to this user.": [
         "Voer de bevestigingscode in die we naar deze gebruiker hebben gestuurd."
+      ],
+      "Enter your backup password": [
+        "Voer uw back-up wachtwoord in"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Voor uw veiligheid bent u afgemeld van al uw andere actieve apparaten. Voordat u toegang krijgt tot uw account, moet u een nieuw wachtwoord voor back-up invoeren."
       ],
       "Grant": [
         "Verlenen"
@@ -8595,11 +8717,77 @@
       "Grant access to users?": [
         "Toegang verlenen aan gebruiker?"
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Als u van uw ${ BRAND_NAME }-account wordt geblokkeerd, kunt u met uw back-upwachtwoord inloggen en uw gegevens herstellen."
+      ],
+      "Invalid confirmation code": [
+        "Ongeldige verificatie code"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Het is de enige manier om uw account volledig te herstellen, dus zorg ervoor dat u het ergens veilig bewaart."
+      ],
+      "Join ${ organizationName }": [
+        "Word lid van ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Zorg ervoor dat u het ergens veilig opslaat zodat u terug naar uw account kunt als u de toegang tot uw Identity Provider gegevens verliest."
+      ],
+      "New backup password": [
+        "Nieuw back-up wachtwoord"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Niet-SSO-gebruikers (handmatig gemaakt, niet door uw identiteitsprovider) kunnen nog steeds inloggen in uw organisatie."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Zodra eenmalige aanmelding voor uw organisatie is uitgeschakeld:"
+      ],
+      "Remove single sign-on": [
+        "Verwijder single sign-on"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Verwijder single sign-on voor uw organisatie?"
+      ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Stel een back-upwachtwoord in om een extra laag bescherming toe te voegen. Het stelt je in staat om in te loggen als u buitengesloten bent, dus zorg ervoor dat u het ergens veilig houdt."
+      ],
+      "Set your backup password": [
+        "Stel uw back-up wachtwoord in"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Deel de bevestigingscode met uw beheerder"
+      ],
+      "Sign in to your organization": [
+        "Aanmelden bij uw organisatie"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Log uit en opnieuw in om uw back-up wachtwoord te wijzigen"
+      ],
+      "Single sign-on removed": [
+        "Single sign-on verwijderd"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "De referenties van uw Identity Provider worden verwijderd."
+      ],
       "This will sign the user out of their other devices and they will have to create a new backup password.": [
         "Dit zal de gebruiker uitloggen uit zijn andere apparaten en hij zal een nieuw back-upwachtwoord moeten maken."
       ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Dit zal u uitloggen uit uw andere apparaten en u moet een nieuw back-upwachtwoord maken."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Om er zeker van te zijn dat u het echt bent die zich probeert aan te melden bij **${ email }**, bekijkt u de bevestigingscode en keurt u het verzoek goed vanaf een ander apparaat."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Om er zeker van te zijn dat het echt probeert om in te loggen, voer uw wachtwoord voor back-up in."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Om zeker te zijn dat u echt probeert in te loggen, deel de bevestigingscode met uw beheerder **${ adminEmail }** zodat deze het verzoek voor **${ email }** kan goedkeuren."
+      ],
       "Tried to sign in at": [
         "Probeerde u aan te melden om"
+      ],
+      "Use backup password instead": [
+        "Gebruik in plaats daarvan back-upwachtwoord"
       ],
       "User details:": [
         "Gebruik details:"
@@ -8612,8 +8800,17 @@
       "Inactive": [
         "Inactief"
       ],
+      "Pending activation": [
+        "Afwachting van activering"
+      ],
+      "Pending admin activation": [
+        "Wachtend op admin activering"
+      ],
       "Rejected": [
         "Afgewezen"
+      ],
+      "Signed out": [
+        "Uitgelogd"
       ],
       "Unknown": [
         "Onbekend"
@@ -8792,6 +8989,9 @@
       ],
       "1 email address": [
         "1 e-mailadres"
+      ],
+      "1 email address per user": [
+        "1 e-mailadres per gebruiker"
       ],
       "1 VPN connection": [
         "1 VPN-verbinding"
@@ -9012,6 +9212,9 @@
       "Keep ${ config.planName }": [
         "${ config.planName } behouden"
       ],
+      "Keep subscription": [
+        "Abonnement behouden"
+      ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
         "Houd uw team veilig onderweg met onze apps voor web, iOS, Android, Windows, Mac en Linux."
       ],
@@ -9117,6 +9320,9 @@
       "Yearly free storage bonuses": [
         "Jaarlijkse gratis opslagbonussen"
       ],
+      "You can continue to enjoy all the benefits of your current plan until ${ boldedDate }.": [
+        "U kunt blijven genieten van alle voordelen van uw huidige abonnement tot ${ boldedDate }."
+      ],
       "You still have ${ expiryDate } on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink }": [
         "U hebt nog ${ expiryDate } te gaan op uw ${ planName }-abonnement. We zullen het tegoed voor de resterende tijd toevoegen aan uw ${ BRAND_NAME } Account. Zorg ervoor dat u de limieten van het gratis abonnement niet overschrijdt voordat u deze annuleert. ${ learnMoreLink }"
       ],
@@ -9207,6 +9413,11 @@
         "Verlopen"
       ]
     },
+    "Subtitle": {
+      "View VPN session details for your organization.": [
+        "Bekijk VPN-sessiedetails voor uw organisatie."
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "Account verwijderd. Uitloggen..."
@@ -9274,6 +9485,15 @@
       "Organization activated": [
         "Organisatie geactiveerd"
       ],
+      "Organization logo removed": [
+        "Organisatielogo verwijderd"
+      ],
+      "Organization logo updated": [
+        "Organisatielogo bijgewerkt"
+      ],
+      "Organization name updated": [
+        "Organisatienaam bijgewerkt"
+      ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
       ],
@@ -9321,6 +9541,12 @@
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "U ontvangt uw gebruikersnaam via e-mail binnen een minuut als u een geldig herstel-e-mailadres hebt ingevoerd."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "U ontvangt uw gebruikersnaam binnen een minuut via SMS als u een geldig herstel-telefoonnummer hebt ingevoerd."
       ]
     },
     "Success message": {
@@ -10271,6 +10497,18 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ],
+      "Group membership paused": [
+        "Groepslidmaatschap gepauzeerd"
+      ],
+      "Sending member invitation": [
+        "Uitnodiging aan het versturen"
+      ],
+      "User declined invitation": [
+        "Gebruiker weigerde uitnodiging"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Wachten tot gebruiker de uitnodiging accepteert"
       ]
     },
     "Tooltip for news": {
@@ -10290,12 +10528,21 @@
       ]
     },
     "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Kon de beheerderstoegang voor ${ n } -gebruiker niet automatisch inschakelen, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:",
         "Kon beheerderstoegang niet automatisch inschakelen voor ${ n } gebruikers, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:"
       ],
+      "Organization key must be activated to request data access": [
+        "Organisatiesleutel moet worden geactiveerd om gegevenstoegang te vragen"
+      ],
       "Revoke access": [
         "Toegang ontzeggen"
+      ],
+      "The user must have an address to request data access": [
+        "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
       ]
     },
     "upsell panel": {
@@ -10391,6 +10638,9 @@
       ],
       "It's you": [
         "Jij bent het"
+      ],
+      "Pending admin access": [
+        "In afwachting van admin toegang"
       ],
       "Private": [
         "Privé"

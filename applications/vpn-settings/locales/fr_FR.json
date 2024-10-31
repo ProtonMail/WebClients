@@ -1082,7 +1082,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accès à des contenus bloqués et navigation en toute confidentialité. Comprends plus de 8 500 serveurs dans plus de 110 pays, 10 appareils, streaming à haute vitesse, bloqueur de publicités et protection contre les logiciels malveillants, VPN Accelerator et bien plus encore."
+        "Accès à des contenus bloqués et navigation en toute confidentialité. Comprend plus de 8 500 serveurs dans plus de 110 pays, 10 appareils, streaming à haute vitesse, bloqueur de publicités et protection contre les logiciels malveillants, VPN Accelerator et bien plus encore."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1, Eurosport France… où que vous soyez."
@@ -1091,11 +1091,11 @@
         "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification à deux facteurs A2F, la surveillance du Dark Web et plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprends ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
         "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprends 15 adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines e-mail personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Protégez vos fichiers avec un stockage cloud chiffré. Comprend un éditeur de documents en ligne, une sauvegarde de vos photos, un historique des versions, la fonction de partage de fichiers chiffrés et plus encore."
@@ -3142,11 +3142,11 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Ajouter une clé de sécurité"
-      ],
       "Delete key": [
         "Supprimer la clé"
+      ],
+      "New security key": [
+        "Nouvelle clé de sécurité"
       ]
     },
     "fido2: Error": {
@@ -3225,11 +3225,11 @@
       "Register your security key": [
         "Enregistrez votre clé de sécurité."
       ],
-      "Registered security keys": [
-        "Les clés de sécurité ont été enregistrées."
-      ],
       "Security key registered": [
         "La clé de sécurité a été enregistrée."
+      ],
+      "Security keys": [
+        "Clés de sécurité"
       ]
     },
     "file size format": {
@@ -5347,6 +5347,9 @@
       "Allowed Domain": [
         "Domaine autorisé"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Permet à tous les membres de votre organisation d'ajouter de manière transparente des liens de vidéoconférence à leurs invitations de calendrier."
+      ],
       "Amount": [
         "Montant"
       ],
@@ -5505,6 +5508,9 @@
       ],
       "Email or username": [
         "E-mail ou nom d'utilisateur"
+      ],
+      "Enable video conferencing ": [
+        "Activer la vidéoconférence "
       ],
       "Enter the code displayed on your TV": [
         "Saisissez le code affiché sur votre téléviseur."
@@ -7205,6 +7211,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "L'authentification à deux facteurs (A2F) n'est plus obligatoire."
+      ],
+      "Video conferencing settings have been updated": [
+        "Les paramètres de vidéoconférence ont été mis à jour."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10407,6 +10416,9 @@
       "Verifying your payment...": [
         "Vérification de votre paiement en cours"
       ],
+      "Video conference": [
+        "Vidéoconférence"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Nous vous enverrons un message à votre nouvelle adresse e-mail avec des instructions pour effectuer la modification."
       ],
@@ -10492,6 +10504,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Un administrateur peut gérer les comptes utilisateur ou accorder des droits administrateur aux autres utilisateurs. Seul l'administrateur principal peut modifier l'abonnement de l'organisation."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Permet d'ajouter de manière transparente des liens de vidéoconférence à vos invitations de calendrier."
       ],
       "An approximate location of the IP address": [
         "Un emplacement approximatif de l'adresse IP"

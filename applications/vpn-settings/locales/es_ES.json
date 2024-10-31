@@ -3142,9 +3142,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Añadir llave de seguridad"
-      ],
       "Delete key": [
         "Eliminar la llave"
       ]
@@ -3225,11 +3222,11 @@
       "Register your security key": [
         "Registra tu llave de seguridad."
       ],
-      "Registered security keys": [
-        "Llaves de seguridad registradas"
-      ],
       "Security key registered": [
         "Llave de seguridad registrada"
+      ],
+      "Security keys": [
+        "Claves de seguridad"
       ]
     },
     "file size format": {
@@ -4410,7 +4407,7 @@
         "Añade direcciones de correo para los usuarios seleccionados."
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Pregunta al propietario que te invite directamente al documento."
+        "Pide al propietario que te invite directamente al documento."
       ],
       "Please authenticate your card in the verification tab.": [
         "Autentica tu tarjeta en la pestaña de verificación."
@@ -4461,13 +4458,13 @@
         "Error al cargar la vista previa"
       ],
       "Preview for this file type is currently not supported on this browser.": [
-        "La vista previa para este tipo de archivo no está admitida en este navegador."
+        "La vista previa para este tipo de archivo no está soportada en este navegador."
       ],
       "Preview for this file type is not supported": [
         "No se admite la vista previa para este tipo de archivo."
       ],
       "Preview of documents is not yet supported.": [
-        "La previsualización de documentos aún no está admitida."
+        "La previsualización de documentos aún no está disponible."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
@@ -4476,7 +4473,7 @@
         "Protegido por la legislación suiza sobre privacidad"
       ],
       "Public sharing of documents is not yet supported.": [
-        "El intercambio público de documentos aún no está admitido."
+        "La compartición pública de documentos aún no está disponible."
       ],
       "read our two-factor authentication guide first": [
         "lee primero nuestra guía de autenticación de dos factores"
@@ -5505,6 +5502,9 @@
       ],
       "Email or username": [
         "Dirección de correo electrónico o nombre de usuario"
+      ],
+      "Enable video conferencing ": [
+        "Activar la videoconferencia "
       ],
       "Enter the code displayed on your TV": [
         "Introduce el código mostrado en tu TV"
@@ -7205,6 +7205,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "La autenticación de dos factores ya no es requerida."
+      ],
+      "Video conferencing settings have been updated": [
+        "Se han actualizado los ajustes de videoconferencia."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10406,6 +10409,9 @@
       ],
       "Verifying your payment...": [
         "Verificando tu pago..."
+      ],
+      "Video conference": [
+        "Videoconferencia"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviaremos un correo a su dirección nueva con instrucciones para finalizar el cambio."
