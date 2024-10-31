@@ -928,6 +928,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Er is een probleem opgetreden tijdens het starten van ${ PASS_SHORT_APP_NAME }. Als dit probleem zich blijft voordoen, neem contact op met onze klantenservice voor hulp."
       ],
+      "Wrong extra password": [
+        "Verkeerd extra wachtwoord"
+      ],
       "Wrong password": [
         "Fout wachtwoord"
       ],
@@ -2580,8 +2583,14 @@
       "Approve or deny it now": [
         "Keur goed of weiger nu"
       ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Voer de bevestigingscode in die we op uw andere apparaat hebben verzonden."
+      ],
       "If you didn't make this request, cancel it now.": [
         "Als u dit verzoek niet heeft gemaakt, annuleer het dan nu."
+      ],
+      "Invalid confirmation code": [
+        "Ongeldige verificatie code"
       ],
       "No, it wasn’t me": [
         "Nee, dat was ik niet"
@@ -2591,6 +2600,9 @@
       ],
       "Sign-in rejected": [
         "Inloggen geweigerd"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Inloggen op een ander apparaat. Was jij het?"
       ],
       "Yes, it was me": [
         "Ja, dat was ik"
@@ -2603,8 +2615,17 @@
       "Inactive": [
         "Inactief"
       ],
+      "Pending activation": [
+        "Afwachting van activering"
+      ],
+      "Pending admin activation": [
+        "Wachtend op admin activering"
+      ],
       "Rejected": [
         "Afgewezen"
+      ],
+      "Signed out": [
+        "Uitgelogd"
       ],
       "Unknown": [
         "Onbekend"
