@@ -3018,9 +3018,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Pridať bezpečnostný kľúč"
-      ],
       "Delete key": [
         "Zmazať kľúč"
       ]
@@ -3100,9 +3097,6 @@
       ],
       "Register your security key": [
         "Zaregistrujte svoj bezpečnostný kľúč"
-      ],
-      "Registered security keys": [
-        "Registrované bezpečnostné kľúče"
       ],
       "Security key registered": [
         "Bezpečnostný kľúč zaregistrovaný"
@@ -3269,9 +3263,9 @@
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } člen",
-        "${ memberCount } členov",
         "${ memberCount } členovia",
-        "${ memberCount } členovia"
+        "${ memberCount } členov",
+        "${ memberCount } členov"
       ]
     },
     "Header": {
@@ -4161,7 +4155,7 @@
         "Zistiť viac"
       ],
       "Learn more about Gateways": [
-        "Ďalšie informácie o bránach"
+        "Zistiť viac o bránach"
       ],
       "Let's get started by pressing the New group button above": [
         "Začnime stlačením vyššie uvedeného tlačidla Nová skupina"
@@ -4476,7 +4470,7 @@
         "Zabezpečujeme váš účet"
       ],
       "Select recently used servers": [
-        "Vyberte nedávno použité servery"
+        "Výber nedávno použitých serverov"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Posielajte emaily, aby ste povzbudili svojich členov k ochrane ich účtov pomocou 2FA."
@@ -4953,16 +4947,16 @@
         "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupnej používateľskej licencie a ${ usedAI } z vašej ${ maxAI } dostupnej licencie asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a ${ usedAI } z vašej ${ maxAI } dostupnej licencie asistenta písania.",
         "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a ${ usedAI } z vašich ${ maxAI } dostupných licencií asistenta písania.",
         "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a ${ usedAI } z vašich ${ maxAI } dostupných licencií asistenta písania.",
         "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a ${ usedAI } z vašich ${ maxAI } dostupných licencií asistenta písania."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašej ${ maxAI } dostupnej licencie asistenta písania.",
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
-        "Momentálne využívate ${ usedMembers } zo svojich ${ maxMembers } dostupných používateľských licencií a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania."
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašej ${ maxAI } dostupnej licencie asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania.",
+        "Momentálne využívate ${ usedMembers } zo svojej ${ maxMembers } dostupnej používateľskej licencie a žiadnu z vašich ${ maxAI } dostupných licencií asistenta písania."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupnej používateľskej licencie.",
@@ -5010,10 +5004,10 @@
         "Máte dostupných ${ availableCount } nových serverov."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "Máte k dispozícii ${ unassignedAvailableCount } nedávno použitý server. Ak chcete tento server priradiť k inej krajine, musíte počkať na ukončenie deaktivácie.",
-        "Máte k dispozícii ${ unassignedAvailableCount } nedávno použité servery. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na ukončenie deaktivácie.",
-        "Máte k dispozícii ${ unassignedAvailableCount } nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na ukončenie deaktivácie.",
-        "Máte k dispozícii ${ unassignedAvailableCount } nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na ukončenie deaktivácie."
+        "Máte k dispozícii ${ unassignedAvailableCount } z nedávno použitých serverov. Ak chcete tento server priradiť k inej krajine, musíte počkať na dokončenie deaktivácie.",
+        "Máte k dispozícii ${ unassignedAvailableCount } z nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na dokončenie deaktivácie.",
+        "Máte k dispozícii ${ unassignedAvailableCount } z nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na dokončenie deaktivácie.",
+        "Máte k dispozícii ${ unassignedAvailableCount } z nedávno použitých serverov. Ak chcete tieto servery priradiť k inej krajine, musíte počkať na dokončenie deaktivácie."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Máte skúšobné predplatné ${ planTitle }. Ak chcete pokračovať v predplatnom aj po skončení skúšobnej lehoty, pridajte spôsob platby."
@@ -9974,7 +9968,7 @@
         "Vypnúť dvojstupňové overenie"
       ],
       "Disable two-factor authentication?": [
-        "Deaktivovať dvojfázové overenie?"
+        "Deaktivovať dvojstupňové overenie?"
       ],
       "Discard changes?": [
         "Zrušiť zmeny?"
@@ -10073,10 +10067,10 @@
         "Monitorovanie brány"
       ],
       "Gateway monitor disabled": [
-        "Monitorovanie brán vypnuté"
+        "Monitorovanie brány deaktivované"
       ],
       "Gateway monitor enabled": [
-        "Monitorovanie brán povolené"
+        "Monitorovanie brány aktivované"
       ],
       "Gateways": [
         "Brány"

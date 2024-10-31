@@ -944,6 +944,14 @@
         "Black Friday"
       ]
     },
+    "BF2024: Deal details": {
+      "1 user": [
+        "1 uporabnik"
+      ],
+      "3 TB": [
+        "3 TB"
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } mesec",
@@ -2841,9 +2849,6 @@
       ]
     },
     "fido2: Action": {
-      "Add security key": [
-        "Dodaj varnostni ključ"
-      ],
       "Delete key": [
         "Izbriši ključ"
       ]
@@ -2923,9 +2928,6 @@
       ],
       "Register your security key": [
         "Registrirajte svoj varnostni ključ."
-      ],
-      "Registered security keys": [
-        "Registrirani varnostni ključi"
       ],
       "Security key registered": [
         "Varnostni ključ je registriran."
@@ -5022,6 +5024,9 @@
       ],
       "Hide password": [
         "Skrij geslo"
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "Interval": [
         "Interval"
@@ -7919,6 +7924,14 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Deny": [
+        "Zavrni"
+      ],
+      "Grant": [
+        "Odobri"
       ]
     },
     "State": {
