@@ -60,10 +60,11 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
             countActionWithTelemetry(Actions.SubmitSignUpFlowModal);
             const { Code } = await api({
                 ...queryCheckEmailAvailability(email),
-                silence: [API_CUSTOM_ERROR_CODES.ALREADY_USED],
+                silence: [API_CUSTOM_ERROR_CODES.ALREADY_USED, API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
             });
             // Email is verified and available to use
             // We redirect to DRIVE_SIGNUP
+            // If user pass proton domain we redirect him to signin page in all case
             if (Code === 1000) {
                 saveUrlPasswordForRedirection(urlPassword + (customPassword ?? ''));
                 await Promise.all([
@@ -88,8 +89,8 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
             }
         } catch (err) {
             const { code, message } = getApiError(err);
-            // Email is already in use, we redirect to SIGN_IN
-            if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code) {
+            // Email is already in use or if user pass proton domain we redirect him to, we redirect to SIGN_IN
+            if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code || API_CUSTOM_ERROR_CODES.NOT_ALLOWED === code) {
                 saveUrlPasswordForRedirection(urlPassword + (customPassword ?? ''));
                 await countActionWithTelemetry(Actions.SignInFlowModal);
                 const returnUrlSearchParams = new URLSearchParams();
