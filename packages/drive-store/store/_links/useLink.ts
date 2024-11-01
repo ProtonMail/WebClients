@@ -16,7 +16,9 @@ import type {
 import type { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import useFlag from '@proton/unleash/useFlag';
 
+import { isIgnoredError, isIgnoredErrorForReporting, sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getIsPublicContext } from '../../utils/getIsPublicContext';
 import { tokenIsValid } from '../../utils/url/token';
@@ -79,6 +81,7 @@ export default function useLink() {
     const { getSharePrivateKey, getShare } = useShare();
     const { getDefaultShareAddressEmail } = useDefaultShare();
     const { getDirectSharingInfo } = useDirectSharingInfo();
+
     const isPaid = useIsPaid();
 
     const debouncedRequest = useDebouncedRequest();
@@ -141,6 +144,7 @@ export function useLinkInner(
 ) {
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
+    const isDecryptionErrorDebuggingEnabled = useFlag('DriveDecryptionErrorDebugging');
 
     // Cache certain API errors in order to avoid sending multiple requests to
     // the same failing link. For example, trying to fetch the same missing
@@ -598,6 +602,36 @@ export function useLinkInner(
                 const [nameResult, xattrResult] = await Promise.allSettled([namePromise, xattrPromise]);
 
                 if (nameResult.status === 'rejected') {
+                    // 'AbortError' signify the user has navigated away mid-decryption
+                    // We don't count this as error in our metrics
+                    if (nameResult.reason instanceof Error && isIgnoredErrorForReporting(nameResult.reason)) {
+                        return generateCorruptDecryptedLink(encryptedLink, '�');
+                    }
+
+                    // Temp: debugging decryption issues
+                    try {
+                        if (isDecryptionErrorDebuggingEnabled) {
+                            sendErrorReport(
+                                new EnrichedError(
+                                    nameResult.reason instanceof Error
+                                        ? nameResult.reason.message
+                                        : nameResult.reason.toString(),
+                                    {
+                                        tags: {
+                                            attribute: 'name',
+                                            shareId,
+                                            linkId: encryptedLink.linkId,
+                                            revisionId: revisionId || encryptedLink.activeRevision?.id,
+                                        },
+                                        extra: { e: nameResult.reason },
+                                    },
+                                    'Decryption error'
+                                )
+                            );
+                        }
+                    } catch {
+                        /* silent */
+                    }
                     handleDecryptionError(shareId, encryptedLink);
                     return generateCorruptDecryptedLink(encryptedLink, '�');
                 }
@@ -616,6 +650,36 @@ export function useLinkInner(
                 }
 
                 if (xattrResult.status === 'rejected') {
+                    // 'AbortError' signify the user has navigated away mid-decryption
+                    // We don't count this as error in our metrics
+                    if (xattrResult.reason instanceof Error && isIgnoredErrorForReporting(xattrResult.reason)) {
+                        return generateCorruptDecryptedLink(encryptedLink, name);
+                    }
+
+                    // Temp: debugging decryption issues
+                    try {
+                        if (isDecryptionErrorDebuggingEnabled) {
+                            sendErrorReport(
+                                new EnrichedError(
+                                    xattrResult.reason instanceof Error
+                                        ? xattrResult.reason.message
+                                        : xattrResult.reason.toString(),
+                                    {
+                                        tags: {
+                                            attribute: 'xattr',
+                                            shareId,
+                                            linkId: encryptedLink.linkId,
+                                            revisionId: revisionId || encryptedLink.activeRevision?.id,
+                                        },
+                                        extra: { e: xattrResult.reason },
+                                    },
+                                    'Decryption error'
+                                )
+                            );
+                        }
+                    } catch {
+                        /* silent */
+                    }
                     handleDecryptionError(shareId, encryptedLink);
                     return generateCorruptDecryptedLink(encryptedLink, name);
                 }
@@ -694,6 +758,10 @@ export function useLinkInner(
 
                 return decrypted;
             } catch (e) {
+                if (isIgnoredError(e)) {
+                    return generateCorruptDecryptedLink(encrypted, '�');
+                }
+
                 throw new EnrichedError('Failed to decrypt link', {
                     tags: {
                         shareId,
@@ -725,6 +793,10 @@ export function useLinkInner(
 
             return linksState.getLink(shareId, linkId)?.decrypted as DecryptedLink;
         } catch (e) {
+            if (isIgnoredError(e)) {
+                return generateCorruptDecryptedLink(encryptedLink, '�');
+            }
+
             throw new EnrichedError('Failed to decrypt link', {
                 tags: {
                     shareId,

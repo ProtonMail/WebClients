@@ -90,22 +90,19 @@ export function SharedWithMeContextMenu({
                         />
                     </>
                 )}
-                {selectedBrowserItem?.acceptInvitation &&
-                    selectedBrowserItem.rejectInvitation &&
-                    selectedBrowserItem.invitationDetails && (
-                        <>
-                            <AcceptButton
-                                acceptInvitation={selectedBrowserItem.acceptInvitation}
-                                invitationId={selectedBrowserItem.invitationDetails.invitation.invitationId}
-                                close={close}
-                            />
-                            <DeclineButton
-                                rejectInvitation={selectedBrowserItem.rejectInvitation}
-                                invitationId={selectedBrowserItem.invitationDetails.invitation.invitationId}
-                                close={close}
-                            />
-                        </>
-                    )}
+                {selectedBrowserItem?.invitationDetails && (
+                    <>
+                        <AcceptButton
+                            invitationId={selectedBrowserItem.invitationDetails.invitation.invitationId}
+                            close={close}
+                        />
+                        <DeclineButton
+                            invitationId={selectedBrowserItem.invitationDetails.invitation.invitationId}
+                            showConfirmModal={showConfirmModal}
+                            close={close}
+                        />
+                    </>
+                )}
             </ItemContextMenu>
             {detailsModal}
             {filesDetailsModal}

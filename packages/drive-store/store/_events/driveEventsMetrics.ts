@@ -1,9 +1,12 @@
 import 'core-js/actual/set/difference';
 
 import metrics from '@proton/metrics';
+import type { HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson } from '@proton/metrics/types/drive_sync_errors_total_v1.schema';
+import { getIsNetworkError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
+import { is4xx, is5xx } from '../../utils/errorHandling/apiErrors';
 import type { VolumeType } from '../_volumes';
 import type { DriveEvent } from './interface';
 
@@ -136,4 +139,15 @@ export class EventsMetrics {
             }
         });
     }
+}
+// TODO: DRVWEB-4319 Implement sync errors & sync erroring users and revamp this function with new metric
+export function getErrorCategory(error: any): HttpsProtonMeDriveSyncErrorsTotalV1SchemaJson['Labels']['type'] {
+    if (getIsOfflineError(error) || getIsNetworkError(error)) {
+        return 'network_error';
+    } else if (error?.statusCode && is4xx(error?.statusCode)) {
+        return '4xx';
+    } else if (error?.statusCode && is5xx(error?.statusCode)) {
+        return '5xx';
+    }
+    return 'unknown';
 }

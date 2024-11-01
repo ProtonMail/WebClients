@@ -5,6 +5,7 @@ import { PublicSessionProvider } from '../store/_api';
 import { DevicesProvider } from '../store/_devices';
 import { DownloadsProvider } from '../store/_downloads';
 import { DriveEventManagerProvider } from '../store/_events';
+import { InvitationsStateProvider } from '../store/_invitations/useInvitationsState';
 import { LinksProvider, PublicLinksProvider } from '../store/_links';
 import { SharesProvider } from '../store/_shares';
 import { UploadProvider } from '../store/_uploads';
@@ -18,7 +19,9 @@ export const DriveStoreProvider = ({ children }: { children: React.ReactNode }) 
                     <LinksProvider>
                         <DevicesProvider>
                             <DownloadsProvider>
-                                <UploadProvider>{children}</UploadProvider>
+                                <UploadProvider>
+                                    <InvitationsStateProvider>{children}</InvitationsStateProvider>
+                                </UploadProvider>
                             </DownloadsProvider>
                         </DevicesProvider>
                     </LinksProvider>

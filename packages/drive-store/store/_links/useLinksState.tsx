@@ -316,11 +316,11 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[], o
         }
 
         if (original) {
+            stateUpdated = true;
             const originalParentId = original.encrypted.parentLinkId;
             if (originalParentId !== parentLinkId) {
                 const originalParentChildren = state[shareId].tree[originalParentId];
                 if (originalParentChildren) {
-                    stateUpdated = true;
                     state[shareId].tree[originalParentId] = originalParentChildren.filter(
                         (childLinkId) => childLinkId !== linkId
                     );
