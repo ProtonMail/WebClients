@@ -16,6 +16,15 @@ const driveFilesMatch = danger.git.fileMatch('applications/drive');
 const driveFilesTouched =
     driveFilesMatch.created || driveFilesMatch.edited || driveFilesMatch.deleted || driveFilesMatch.modified;
 
+const docsFilesMatch = danger.git.fileMatch(
+    'applications/docs',
+    'applications/docs-editor',
+    'packages/docs-core',
+    'packages/docs-shared'
+);
+const docsFilesTouched =
+    docsFilesMatch.created || docsFilesMatch.edited || docsFilesMatch.deleted || docsFilesMatch.modified;
+
 /**
  * Fails if no assignee is provided.
  *
@@ -53,6 +62,14 @@ const failIfNoDescription = ({ disabled = false }) => {
     }
 };
 
+const warnIfSquashing = ({ disabled = false }) => {
+    if (disabled) return;
+
+    if (danger.gitlab.mr.squash) {
+        warn('Commits will be squashed');
+    }
+};
+
 if (driveFilesTouched) {
     const expectedSection = [];
 
@@ -81,14 +98,11 @@ if (driveFilesTouched) {
 }
 
 failIfNoDescription({ disabled: inboxFilesTouched || driveFilesTouched });
-failIfNoAssignees({ disabled: inboxFilesTouched });
+failIfNoAssignees({ disabled: inboxFilesTouched || docsFilesTouched });
+warnIfSquashing({ disabled: docsFilesTouched });
 
 if (danger.gitlab.mr.title.includes('WIP') || danger.gitlab.mr.title.startsWith('Draft:')) {
     warn('PR is considered WIP');
-}
-
-if (danger.gitlab.mr.squash) {
-    warn('Commits will be squashed');
 }
 
 const fileThresholdForLargePR = 200;
