@@ -146,7 +146,7 @@ const ForgotUsernameContainer = ({ toApp, metaTags, onBack, loginUrl }: Props) =
     const { createNotification } = useNotifications();
     const errorHandler = useErrorHandler();
     const [method, setMethod] = useState<Method>('email');
-    const [defaultCountry] = useMyCountry();
+    const defaultCountry = useMyCountry();
 
     const createFlow = useFlowRef();
 

@@ -90,7 +90,7 @@ const getFinanceServicesByCountry = ({
 const TabContent = memo(({ selectedCategory }: { selectedCategory: Category }) => {
     const { viewportWidth } = useActiveBreakpoint();
     const [sendMailOnboardingTelemetry] = useMailOnboardingTelemetry();
-    const [countryLocation] = useMyCountry();
+    const countryLocation = useMyCountry();
     const servicesKeys = getFinanceServicesByCountry({ category: selectedCategory, countryLocation }) || [];
 
     return (
