@@ -1,10 +1,10 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/components/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import OfferFooter from '../../components/shared/OfferFooter';
 import OfferHeader from '../../components/shared/OfferHeader';
 import OfferLayout from '../../components/shared/OfferLayout';

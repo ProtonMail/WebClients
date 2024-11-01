@@ -33,10 +33,10 @@ jest.mock('@proton/account/user/hooks', () => ({
     useGetUser: jest.fn(() => [{ isPaid: false, Flags: {} }, false]),
 }));
 
-jest.mock('../../hooks/useSubscription', () => {
+jest.mock('@proton/account/subscription/hooks', () => {
     return {
         __esModule: true,
-        default: jest.fn().mockReturnValue([]),
+        useSubscription: jest.fn().mockReturnValue([]),
     };
 });
 

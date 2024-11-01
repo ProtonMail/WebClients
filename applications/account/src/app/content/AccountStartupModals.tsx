@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import {
     LightLabellingFeatureModal,
     getShouldOpenReferralModal,
     useModalState,
     useShowLightLabellingFeatureModal,
-    useSubscription,
 } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
 import { domIsBusy } from '@proton/shared/lib/busy';

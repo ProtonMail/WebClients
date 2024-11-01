@@ -4,11 +4,11 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
-import { useSubscription } from '@proton/components/hooks';
 import useCache from '@proton/components/hooks/useCache';
 import useConfig from '@proton/components/hooks/useConfig';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
@@ -61,7 +61,7 @@ jest.mock('@proton/calendar/calendars/hooks');
 const mockUseCalendars = useCalendars as jest.MockedFunction<any>;
 mockUseCalendars.mockReturnValue([calendars, false]);
 
-jest.mock('@proton/components/hooks/useSubscription');
+jest.mock('@proton/account/subscription/hooks');
 const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
 mockUseSubscription.mockReturnValue([subscriptionBundle, false]);
 

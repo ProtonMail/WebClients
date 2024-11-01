@@ -12,6 +12,7 @@ import {
     getPrivateText,
 } from '@proton/account';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
@@ -62,7 +63,6 @@ import { useFlag } from '@proton/unleash';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useSubscription } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';

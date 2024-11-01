@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import {
@@ -18,7 +19,6 @@ import {
     SUBSCRIPTION_STEPS,
     Tooltip,
     VpnLogo,
-    useSubscription,
 } from '@proton/components';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';

@@ -1,6 +1,6 @@
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useSubscription } from '@proton/components/hooks';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { ADDON_NAMES, type AmountAndCurrency, PLAN_TYPES } from '@proton/payments';
 import { isScribeAddon } from '@proton/shared/lib/helpers/addons';

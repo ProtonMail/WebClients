@@ -1,6 +1,5 @@
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { isFreeSubscription } from '@proton/payments';
-
-import { useSubscription } from './useSubscription';
 
 const useMozillaCheck = (): [isManagedByMozilla: boolean, loading: boolean] => {
     const [subscription, loading] = useSubscription();

@@ -1,4 +1,4 @@
-import { useSubscription } from '@proton/components/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
 import type { Operation } from '../../interface';

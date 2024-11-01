@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
-import useSubscription from '@proton/components/hooks/useSubscription';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { PLANS } from '@proton/payments';
 import { type APP_NAMES } from '@proton/shared/lib/constants';
