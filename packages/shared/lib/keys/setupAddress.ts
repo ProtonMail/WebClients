@@ -272,12 +272,16 @@ export const getRequiresMailKeySetup = (user: tsUser | undefined) => {
     );
 };
 
+export const getIsSSOAccount = (user: tsUser | undefined): user is tsUser => {
+    return Boolean(user && user.Flags.sso);
+};
+
 export const getIsSSOVPNOnlyAccount = (user: tsUser | undefined) => {
-    return user && user.Flags.sso && !user.Keys.length;
+    return getIsSSOAccount(user) && !user.Keys.length;
 };
 
 export const getIsGlobalSSOAccount = (user: tsUser | undefined) => {
-    return user && user.Flags.sso && user.Keys.length > 0;
+    return getIsSSOAccount(user) && user.Keys.length > 0;
 };
 
 export const getIsPublicUserWithoutProtonAddress = (user: tsUser | undefined) => {

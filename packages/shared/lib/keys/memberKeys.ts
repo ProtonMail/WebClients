@@ -328,7 +328,7 @@ export const getMemberKeys = async ({
     memberAddresses,
     organizationKey,
 }: {
-    member: tsMember;
+    member: Pick<tsMember, 'Keys'>;
     memberAddresses: tsAddress[];
     organizationKey: KeyPair;
 }) => {

@@ -57,6 +57,7 @@ const ChangeOrganizationPasswordModal = ({ hasOtherAdmins, organizationKey, onCl
         <>
             {renderAuthModal && config && (
                 <AuthModal
+                    scope="password"
                     {...authModal}
                     onCancel={undefined}
                     onSuccess={async () => {

@@ -26,6 +26,7 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
         <>
             {renderAuthModal && (
                 <AuthModal
+                    scope="password"
                     config={disableMnemonicPhrase()}
                     {...authModalProps}
                     onCancel={undefined}

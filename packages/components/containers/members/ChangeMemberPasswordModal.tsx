@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
-import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { changeMemberPassword } from '@proton/account/organizationKey/memberPasswordAction';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -15,30 +14,21 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal from '@proton/components/containers/password/AuthModal';
-import { useGetOrganization, useGetOrganizationKey, useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import { getAllAddresses } from '@proton/shared/lib/api/addresses';
-import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useDispatch } from '@proton/redux-shared-store';
+import { revoke } from '@proton/shared/lib/api/auth';
 import { authMember } from '@proton/shared/lib/api/members';
-import { disable2FA } from '@proton/shared/lib/api/settings';
-import { getUser, lockSensitiveSettings } from '@proton/shared/lib/api/user';
+import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import type { Address, Api, User } from '@proton/shared/lib/interfaces';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
-import { generateKeySaltAndPassphrase, getDecryptedUserKeys, getIsPasswordless } from '@proton/shared/lib/keys';
-import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
-import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
-import type { Credentials } from '@proton/shared/lib/srp';
-import { srpVerify } from '@proton/shared/lib/srp';
-import { formatUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import GenericError from '../error/GenericError';
@@ -54,25 +44,21 @@ interface Props extends ModalProps {
 
 const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
     const normalApi = useApi();
+    const dispatch = useDispatch();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
-    const [data, setData] = useState<{ UID: string; credentials: Credentials }>();
-    const authentication = useAuthentication();
+    const [memberAuthData, setMemberAuthData] = useState<{ UID: string }>();
+    const handleError = useErrorHandler();
 
-    const api = useApi();
-    const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
-    const getOrganization = useGetOrganization();
-    const getAddresses = useGetAddresses();
-    const getAddressKeys = useGetAddressKeys();
-    const getOrganizationKey = useGetOrganizationKey();
     const { validator, onFormSubmit } = useFormErrors();
 
-    const lockAndClose = (memberApi?: Api) => {
-        if (memberApi) {
-            void memberApi(lockSensitiveSettings());
+    const lockAndClose = () => {
+        if (memberAuthData?.UID) {
+            Promise.all([
+                silentApi(withUIDHeaders(memberAuthData.UID, revoke())),
+                silentApi(lockSensitiveSettings()),
+            ]).catch(noop);
         }
-
-        void api(lockSensitiveSettings());
         onClose?.();
     };
 
@@ -92,32 +78,22 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         passwordLengthValidator(inputs.confirmPassword) ||
         confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword);
 
-    const validateNewPasswords = () => {
-        if (newPasswordError || confirmPasswordError) {
-            throw new Error('Password error');
-        }
-    };
-
-    const notifySuccess = () => {
-        createNotification({ text: c('Success').t`Password updated` });
-    };
-
-    if (!data) {
+    if (!memberAuthData) {
         return (
             <AuthModal
+                scope="password"
                 config={authMember(member.ID, { Unlock: true })}
                 {...rest}
                 onCancel={onClose}
-                onSuccess={async ({ credentials, response }) => {
+                onSuccess={async (result) => {
+                    const { response } = result;
+
                     const data = await response.json();
-
                     const UID = data?.UID;
-
                     if (!UID) {
                         throw new Error('Failed to get auth data');
                     }
-
-                    setData({ UID, credentials });
+                    setMemberAuthData({ UID });
                 }}
             />
         );
@@ -143,99 +119,37 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         );
     }
 
-    const getAddressesWithKeysList = (addresses: Address[]) => {
-        return Promise.all(
-            addresses.map(async (address) => {
-                return {
-                    address,
-                    keys: await getAddressKeys(address.ID),
-                };
-            })
-        );
-    };
-
-    const changeMemberPassword = async ({ memberApi, credentials }: { memberApi: Api; credentials: Credentials }) => {
-        const keyPassword = authentication.getPassword();
-        const userAsMember = await memberApi<{ User: User }>(getUser()).then(({ User }) => formatUser(User));
-        const organizationKey = await getOrganizationKey();
-        const organization = await getOrganization();
-        const addresses = await getAddresses();
-        const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey, addresses);
-        const error = validateOrganizationKey(organizationKeyInfo);
-
-        if (error) {
-            createNotification({ type: 'error', text: error });
-            return;
-        }
-        if (!organizationKey?.privateKey) {
-            throw new Error('Missing private key');
-        }
-
-        const [memberAddresses, userKeysList] = await Promise.all([
-            getAllAddresses(memberApi),
-            getDecryptedUserKeys(userAsMember.Keys, keyPassword, organizationKey),
-        ]);
-
-        if (userKeysList.length === 0) {
-            throw new Error('No user keys');
-        }
-
-        validateNewPasswords();
-
-        const { passphrase: newKeyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(inputs.newPassword);
-
-        const addressesWithKeys = await getAddressesWithKeysList(memberAddresses);
-        const updateKeysPayload = await getUpdateKeysPayload({
-            addressesKeys: addressesWithKeys,
-            userKeys: userKeysList,
-            organizationKey: getIsPasswordless(organizationKey.Key) ? undefined : organizationKey.privateKey,
-            keyPassword: newKeyPassword,
-            keySalt,
-        });
-
-        if (member['2faStatus']) {
-            await srpVerify({
-                api: memberApi,
-                credentials,
-                config: disable2FA(),
-            });
-        }
-
-        await srpVerify({
-            api: memberApi,
-            credentials: {
-                password: inputs.newPassword,
-            },
-            config: updatePrivateKeyRoute(updateKeysPayload),
-        });
-    };
-
     const onSubmit = async () => {
         if (!onFormSubmit()) {
             return;
         }
+        if (newPasswordError || confirmPasswordError) {
+            return;
+        }
 
         try {
-            stop();
-
             setLoading(true);
 
-            const { UID, credentials } = data;
-            const memberApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
-            await changeMemberPassword({ memberApi, credentials });
-            await call();
+            await dispatch(
+                changeMemberPassword({
+                    api: silentApi,
+                    memberUID: memberAuthData.UID,
+                    password: inputs.newPassword,
+                    member,
+                })
+            );
 
-            notifySuccess();
-            lockAndClose(memberApi);
+            createNotification({ text: c('Success').t`Password updated` });
+            lockAndClose();
         } catch (e: any) {
-            setLoading(false);
+            handleError(e);
             setError(true);
         } finally {
-            start();
+            setLoading(false);
         }
     };
 
-    const handleClose = loading ? noop : () => lockAndClose();
+    const handleClose = loading ? noop : lockAndClose;
 
     const userName = (
         <b key="user" className="text-break">
