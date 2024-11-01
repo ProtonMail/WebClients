@@ -414,6 +414,13 @@ export const passPlusUpsell = {
             icon: 'eye-slash',
         },
         {
+            text: 'Advanced alias features (powered by SimpleLogin)',
+            tooltip:
+                'Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more',
+            included: true,
+            icon: 'brand-simple-login',
+        },
+        {
             text: '50 vaults',
             tooltip: 'Like a folder, a vault is a convenient way to organize your items',
             included: true,
