@@ -1,6 +1,6 @@
 import { isSVG, isSupportedImage, isVideo } from '@proton/shared/lib/helpers/mimetype';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
 
+import { sendErrorReport } from '../../../utils/errorHandling';
 import { imageCannotBeLoadedError, scaleImageFile } from './image';
 import type { Media, ThumbnailInfo } from './interface';
 import { ThumbnailType } from './interface';
@@ -48,7 +48,7 @@ export const getMediaInfo = (mimeTypePromise: Promise<string>, file: Blob, isFor
                 mimeType
             )
             .catch((err) => {
-                traceError(err);
+                sendErrorReport(err);
                 return undefined;
             });
         return mediaInfo;

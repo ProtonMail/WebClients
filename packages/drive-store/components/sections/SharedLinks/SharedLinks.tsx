@@ -6,6 +6,7 @@ import { useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { EncryptedLink, LinkShareUrl, useSharedLinksView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
@@ -94,7 +95,10 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
     const { canUseDocs } = useDriveDocsFeatureFlag();
-
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(
+        sharedLinksView.layout,
+        sharedLinksView.isLoading
+    );
     const { layout, items, sortParams, setSorting, isLoading } = sharedLinksView;
 
     const selectedItems = useMemo(
@@ -129,17 +133,20 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
                     .catch(sendErrorReport);
                 return;
             }
-
             navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
         [navigateToLink, browserItems]
     );
 
-    const handleItemRender = (item: SharedLinkItem) => {
-        if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
-        }
-    };
+    const handleItemRender = useCallback(
+        (item: SharedLinkItem) => {
+            incrementItemRenderedCounter();
+            if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
+                thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
+            }
+        },
+        [thumbnails, incrementItemRenderedCounter]
+    );
 
     /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(

@@ -97,7 +97,8 @@ export function useLinksListingProvider() {
         sorting: SortParams,
         page: number,
         foldersOnly?: boolean,
-        showNotification = true
+        showNotification = true,
+        showAll?: boolean
     ): Promise<FetchResponse> => {
         const { Links } = await debouncedRequest<LinkChildrenResult>(
             {
@@ -106,6 +107,7 @@ export function useLinksListingProvider() {
                     PageSize: PAGE_SIZE,
                     Page: page,
                     FoldersOnly: foldersOnly ? 1 : 0,
+                    ShowAll: showAll ? 1 : 0,
                 }),
                 silence: !showNotification,
             },
@@ -125,7 +127,8 @@ export function useLinksListingProvider() {
         parentLinkId: string,
         sorting?: SortParams,
         foldersOnly?: boolean,
-        showNotification = true
+        showNotification = true,
+        showAll?: boolean
     ): Promise<boolean> => {
         const shareState = getShareFetchState(shareId);
         let linkFetchMeta = shareState.folders[parentLinkId];
@@ -161,7 +164,8 @@ export function useLinksListingProvider() {
                     sorting,
                     page,
                     foldersOnly,
-                    showNotification
+                    showNotification,
+                    showAll
                 );
             },
             showNotification
@@ -350,12 +354,13 @@ export function useLinksListingProvider() {
         shareId: string,
         linkId: string,
         foldersOnly?: boolean,
-        showNotification = true
+        showNotification = true,
+        showAll?: boolean
     ): Promise<void> => {
         // undefined means keep the sorting used the last time = lets reuse what we loaded so far.
         const sorting = undefined;
         return loadFullListing(() =>
-            fetchChildrenNextPage(abortSignal, shareId, linkId, sorting, foldersOnly, showNotification)
+            fetchChildrenNextPage(abortSignal, shareId, linkId, sorting, foldersOnly, showNotification, showAll)
         );
     };
 
@@ -431,8 +436,8 @@ export function useLinksListingProvider() {
         getCachedBookmarkDetails: bookmarksLinksListing.getCachedBookmarkDetails,
         getCachedLinks,
 
-        //TODO: Removed when events for shares and invitations
-        setSharedWithMeShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,
+        // TODO: Remove this with Invitation section refactor
+        setShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,
         // TODO: remove when we will have events for bookmarks
         removeCachedBookmarkLink: bookmarksLinksListing.removeCachedBookmarkLink,
     };
