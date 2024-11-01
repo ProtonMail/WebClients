@@ -51,7 +51,7 @@ export function FloatingQuickActions({
 
   const addCommentLabel = c('Action').t`Add comment`
 
-  const suggestionToggleLabel = isSuggestionMode ? c('Action').t`Exit Suggestion` : c('Action').t`Suggestion Mode`
+  const suggestionToggleLabel = c('Action').t`Add suggestion`
 
   return (
     <div
@@ -71,7 +71,7 @@ export function FloatingQuickActions({
           <AddCommentIcon className="h-4 w-4 fill-current" />
         </button>
       </ToolbarTooltip>
-      {isSuggestionsFeatureEnabled && (
+      {isSuggestionsFeatureEnabled && !isSuggestionMode && (
         <>
           <hr className="min-h-px bg-[--border-weak]" />
           <ToolbarTooltip

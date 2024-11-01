@@ -1,3 +1,4 @@
+import type { MouseEventHandler } from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import clsx from '@proton/utils/clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
@@ -129,8 +130,18 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
     }
   }
 
-  const handleClickThread = () => {
+  const handleClickThread: MouseEventHandler = (event) => {
     controller.markThreadAsRead(thread.id).catch(sendErrorMessage)
+
+    const target = event.target
+    if (!(target instanceof Element)) {
+      return
+    }
+    const isClickingButton = !!target.closest('button')
+    if (isClickingButton) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
 
     scrollEditorToThreadLocation()
   }
