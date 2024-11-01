@@ -9,6 +9,7 @@ import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
@@ -34,7 +35,6 @@ import {
     useOrganizationTheme,
     useRecoveryNotification,
     useShowThemeSelection,
-    useSubscription,
     useToggle,
     useUnprivatizeMembers,
 } from '@proton/components';

@@ -22,7 +22,7 @@ jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/account/addresses/hooks', () => jest.fn().mockImplementation(() => [[], false]));
 jest.mock('@proton/components/hooks/useAuthentication', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/account/user/hooks', () => jest.fn().mockImplementation(() => [{}, false]));
-jest.mock('@proton/components/hooks/useSubscription', () => jest.fn().mockImplementation(() => [{}, false]));
+jest.mock('@proton/account/subscription/hooks', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
 jest.mock('@proton/components/containers/app/ErrorBoundary', () => ({
     __esModule: true,

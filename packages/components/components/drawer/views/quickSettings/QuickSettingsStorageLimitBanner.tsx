@@ -1,8 +1,8 @@
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { useSubscription } from '@proton/components/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import {
     DRIVE_SHORT_APP_NAME,

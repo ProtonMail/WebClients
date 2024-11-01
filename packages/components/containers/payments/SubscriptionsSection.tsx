@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -37,7 +38,6 @@ import noop from '@proton/utils/noop';
 
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
-import { useSubscription } from '../../hooks';
 import { subscriptionExpires } from './subscription/helpers';
 
 export const getMonths = (n: number) => c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);

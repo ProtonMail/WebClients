@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -34,7 +35,6 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useSubscription } from '../../hooks';
 import { ChargebeeCreditCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
@@ -27,7 +28,6 @@ import { INVOICE_OWNER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { useSubscription } from '../../hooks';
 import { useChargebeeUserStatusTracker } from '../../payments/client-extensions/useChargebeeContext';
 import InvoiceActions from './InvoiceActions';
 import InvoiceAmount from './InvoiceAmount';

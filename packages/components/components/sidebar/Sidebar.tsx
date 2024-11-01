@@ -3,6 +3,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getMeterColor } from '@proton/components/components/progress/Meter';
@@ -26,7 +27,6 @@ import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
 import UserDropdown from '../../containers/heading/UserDropdown';
-import { useSubscription } from '../../hooks';
 import useFocusTrap from '../focus/useFocusTrap';
 import Hamburger from './Hamburger';
 import SidebarStorageMeter from './SidebarStorageMeter';

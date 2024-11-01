@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useSubscription } from '@proton/components/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import {
     hasBundle,
     hasBundlePro2024,

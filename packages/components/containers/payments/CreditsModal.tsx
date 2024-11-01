@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
@@ -40,7 +41,6 @@ import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useSubscription } from '../../hooks';
 import { ChargebeePaypalWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
