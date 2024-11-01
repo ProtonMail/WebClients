@@ -1,6 +1,10 @@
 import { useAuthStore } from '@proton/pass//components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { PASS_UPGRADE_PATH, SAFARI_URL_SCHEME, type UpsellRef, UpsellRefPrefix } from '@proton/pass/constants';
+import { SAFARI_URL_SCHEME, type UpsellRef, UpsellRefPrefix } from '@proton/pass/constants';
+
+/** Prefer navigating to signup from extension/desktop
+ * as we cannot guarantee the session exists */
+export const PASS_UPGRADE_PATH = EXTENSION_BUILD || DESKTOP_BUILD ? 'pass/signup' : 'pass/dashboard';
 
 /** `pathRef` will be passed to the upgrade link */
 export const useNavigateToUpgrade = (options: {
