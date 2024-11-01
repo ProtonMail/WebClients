@@ -19,8 +19,10 @@ import useApi from '@proton/components/hooks/useApi';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useDispatch } from '@proton/redux-shared-store';
+import { revoke } from '@proton/shared/lib/api/auth';
 import { authMember } from '@proton/shared/lib/api/members';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
+import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -47,12 +49,16 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
     const [memberAuthData, setMemberAuthData] = useState<{ UID: string }>();
     const handleError = useErrorHandler();
 
-    const api = useApi();
     const { createNotification } = useNotifications();
     const { validator, onFormSubmit } = useFormErrors();
 
     const lockAndClose = () => {
-        api(lockSensitiveSettings()).catch(noop);
+        if (memberAuthData?.UID) {
+            Promise.all([
+                silentApi(withUIDHeaders(memberAuthData.UID, revoke())),
+                silentApi(lockSensitiveSettings()),
+            ]).catch(noop);
+        }
         onClose?.();
     };
 
@@ -147,7 +153,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         }
     };
 
-    const handleClose = loading ? noop : () => lockAndClose();
+    const handleClose = loading ? noop : lockAndClose;
 
     const userName = (
         <b key="user" className="text-break">
