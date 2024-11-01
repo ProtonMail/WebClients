@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { useWelcomeFlags } from '@proton/account';
 import {
     CancellationReminderModal,
     LightLabellingFeatureModal,
@@ -8,7 +9,6 @@ import {
     useModalState,
     useShowLightLabellingFeatureModal,
     useSubscription,
-    useWelcomeFlags,
 } from '@proton/components';
 import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { FeatureCode, useFeature } from '@proton/features';

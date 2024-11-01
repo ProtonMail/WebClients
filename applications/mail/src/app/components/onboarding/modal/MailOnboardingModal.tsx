@@ -1,8 +1,8 @@
 import { useCallback, useEffect } from 'react';
 
+import { useWelcomeFlags } from '@proton/account';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/components';
-import { useWelcomeFlags } from '@proton/components/hooks';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';

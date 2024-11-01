@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms';
 import {
@@ -12,7 +13,6 @@ import {
     useSpotlightOnFeature,
     useSpotlightShow,
 } from '@proton/components';
-import { useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
