@@ -20,9 +20,9 @@ const SetPhoneContainer = () => {
     const { phone } = securityState;
 
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [defaultCountry, loadingCountry] = useMyCountry();
+    const defaultCountry = useMyCountry();
 
-    if (loadingUserSettings || loadingCountry) {
+    if (loadingUserSettings) {
         return <AccountLoaderPage />;
     }
 

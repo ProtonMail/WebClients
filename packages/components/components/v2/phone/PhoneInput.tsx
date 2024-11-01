@@ -1,5 +1,4 @@
-import type { Ref } from 'react';
-import { forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { type Ref, forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
 import type { InputProps } from '@proton/atoms';
 import { Input } from '@proton/atoms';
@@ -38,7 +37,7 @@ export interface Props extends Omit<InputProps, 'type' | 'value' | 'onChange'> {
 }
 
 const PhoneInputBase = (
-    { value: actualValue = '', defaultCountry = 'US', embedded, onChange, onValue, ...rest }: Props,
+    { value: actualValue = '', defaultCountry = '', embedded, onChange, onValue, ...rest }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -46,6 +45,7 @@ const PhoneInputBase = (
     const oldSpecificCountryLengthRef = useRef<number>(0);
     const [isCountryCallingCodeMode, setIsCountryCallingCodeMode] = useState(false);
     const [oldCountry, setOldCountry] = useState(defaultCountry);
+    const onceRef = useRef(false);
 
     const trimmedValue = getTrimmedString(actualValue);
     const previousTrimmedValue = usePreviousValue(trimmedValue);
@@ -92,6 +92,14 @@ const PhoneInputBase = (
         // 3. Guess country from number
         return valueCountryCodeSpecific || oldCountry;
     })();
+
+    useEffect(() => {
+        // Default country might get set async
+        if (defaultCountry && oldCountry === '' && !onceRef.current) {
+            onceRef.current = true;
+            setOldCountry(defaultCountry);
+        }
+    }, [defaultCountry]);
 
     useLayoutEffect(() => {
         if (trimmedValue === '+') {

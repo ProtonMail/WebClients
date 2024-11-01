@@ -72,7 +72,7 @@ const getCountryPromise = (api: Api) => {
     return state.promise;
 };
 
-const useMyCountry = (): [string | undefined, boolean] => {
+const useMyCountry = (): string | undefined => {
     const [country, setMyCountry] = useState<string | undefined>(getInitialValue);
     const api = useApi();
     useEffect(() => {
@@ -81,7 +81,7 @@ const useMyCountry = (): [string | undefined, boolean] => {
         }
         void getCountryPromise(api).then(setMyCountry);
     }, []);
-    return [country, !country];
+    return country;
 };
 
 export default useMyCountry;
