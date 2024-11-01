@@ -199,8 +199,9 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
         return user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CHECKOUT;
     })();
 
-    const disableCycleSelectorParam = searchParams.get('disableCycleSelector');
-    const disablePlanSelectionParam = searchParams.get('disablePlanSelection');
+    const disableCycleSelectorParam = searchParams.get('disableCycleSelector') === 'true';
+    const disablePlanSelectionParam =
+        (searchParams.get('disablePlanSelection') || searchParams.get('disablePlanSelector')) === 'true';
     const hideClose = Boolean(searchParams.get('hideClose'));
 
     const handleNotify = (type: SubscribeType) => {
@@ -307,8 +308,8 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
                                 currency={parsedCurrency}
                                 plan={plan}
                                 coupon={coupon}
-                                disablePlanSelection={Boolean(disablePlanSelectionParam)}
-                                disableCycleSelector={Boolean(disableCycleSelectorParam)}
+                                disablePlanSelection={disablePlanSelectionParam}
+                                disableCycleSelector={disableCycleSelectorParam}
                                 disableThanksStep
                                 onSubscribed={handleSuccess}
                                 onUnsubscribed={handleSuccess}
