@@ -1,8 +1,6 @@
 import './typings/css.d';
 import './typings/index.d';
 
-export * from './hooks';
-
 export { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
@@ -324,11 +322,11 @@ export { default as TreeViewItem } from './components/treeview/TreeViewItem';
 export type { UpsellFeature as UpsellFeatures } from './components/upsell/modal/interface';
 export { default as NewUpsellModal } from './components/upsell/modal/NewUpsellModal';
 export { default as AutoDeleteUpsellModal } from './components/upsell/modal/types/AutoDeleteUpsellModal';
-export { default as ZoomUpsellModal } from './components/upsell/modal/types/ZoomUpsellModal';
 export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modal/types/ComposerAssistantB2BUpsellModal';
 export { default as FiltersUpsellModal } from './components/upsell/modal/types/FiltersUpsellModal';
 export { default as LabelsUpsellModal } from './components/upsell/modal/types/LabelsUpsellModal';
 export { default as PmMeUpsellModal } from './components/upsell/modal/types/PmMeUpsellModal';
+export { default as ZoomUpsellModal } from './components/upsell/modal/types/ZoomUpsellModal';
 export { default as UpsellModal } from './components/upsell/modal/UpsellModal';
 export { default as useUpsellConfig } from './components/upsell/useUpsellConfig';
 export { default as AddressesAutocompleteTwo } from './components/v2/addressesAutocomplete/AddressesAutocomplete';
@@ -871,7 +869,7 @@ export { default as useFolderColor } from './hooks/useFolderColor';
 export { default as useForceRefresh } from './hooks/useForceRefresh';
 export { default as useGetCalendarEventRaw } from './hooks/useGetCalendarEventRaw';
 export { default as useGetCalendarInfo } from './hooks/useGetCalendarInfo';
-export { default as useGetEncryptionPreferences, CACHE_KEY } from './hooks/useGetEncryptionPreferences';
+export { CACHE_KEY, default as useGetEncryptionPreferences } from './hooks/useGetEncryptionPreferences';
 export { default as useGetVerificationPreferences } from './hooks/useGetVerificationPreferences';
 export { useEventListener, useHandler, useInterval, useSubscribeEventManager } from './hooks/useHandler';
 export type { Cancellable } from './hooks/useHandler';
@@ -885,11 +883,13 @@ export { default as useIsInboxElectronApp } from './hooks/useIsInboxElectronApp'
 export { default as useIsMnemonicAvailable } from './hooks/useIsMnemonicAvailable';
 export { default as useKeyPress } from './hooks/useKeyPress';
 export { default as useLocalState } from './hooks/useLocalState';
+export { default as useModals } from './hooks/useModals';
 export { default as useMyCountry } from './hooks/useMyCountry';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
 export { default as useNotifications } from './hooks/useNotifications';
 export { getOnlineStatus, default as useOnline } from './hooks/useOnline';
 export { usePreferredPlansMap } from './hooks/usePreferredPlansMap';
+export { default as usePreventCloseTab } from './hooks/usePreventCloseTab';
 export { PreventLeaveProvider, default as usePreventLeave } from './hooks/usePreventLeave';
 export { default as useProgressiveRollout } from './hooks/useProgressiveRollout';
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
