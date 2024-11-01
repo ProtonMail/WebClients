@@ -12,6 +12,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { useDriveDocsPublicSharingFF } from '../_documents';
 import type { DecryptedLink } from '../_links';
 import { useLink } from '../_links';
+import useLinksState from '../_links/useLinksState';
 import type { ShareURL } from '../_shares';
 import { getSharedLink, splitGeneratedAndCustomPassword, useShareActions, useShareUrl } from '../_shares';
 import type useShareMemberView from './useShareMemberView';
@@ -63,6 +64,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
     }>();
     const { loadShareUrl, updateShareUrl, deleteShareUrl, createShareUrl, getShareIdWithSessionkey } = useShareUrl();
     const { deleteShare } = useShareActions();
+    const { removeLinkForDriveCompat } = useLinksState();
 
     const [sharedLink, setSharedLink] = useState('');
     const [password, setPassword] = useState('');
@@ -152,6 +154,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
                         setPassword(shareUrlInfo.shareUrl.password);
                         setInitialExpiration(shareUrlInfo.shareUrl.expirationTime);
                         const sharedLink = getSharedLink(shareUrlInfo.shareUrl);
+                        removeLinkForDriveCompat(shareId, linkId);
                         if (sharedLink) {
                             setSharedLink(sharedLink);
                             await updateLinkState(abortController.signal);

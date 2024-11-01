@@ -57,17 +57,17 @@ export const SignupFlowModal = ({ urlPassword, onClose, redirectAction, ...modal
       countActionWithTelemetry(Actions.SubmitSignUpFlowModal)
       const { Code } = await api({
         ...queryCheckEmailAvailability(email),
-        silence: [API_CUSTOM_ERROR_CODES.ALREADY_USED],
+        silence: [API_CUSTOM_ERROR_CODES.ALREADY_USED, API_CUSTOM_ERROR_CODES.NOT_ALLOWED],
       })
       // Email is verified and available to use
-      // We redirect to DRIVE_SIGNUP
+      // We redirect to Docs signup
       if (Code === 1000) {
         await openNewTabToSignUp({ action: redirectAction, token, email, linkId, urlPassword })
       }
     } catch (err) {
       const { code, message } = getApiError(err)
-      // Email is already in use, we redirect to SIGN_IN
-      if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code) {
+      // Email is already in use or if user pass proton domain we redirect to SIGN_IN
+      if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code || API_CUSTOM_ERROR_CODES.NOT_ALLOWED === code) {
         await openNewTabToSignIn({ action: redirectAction, token, email, linkId, urlPassword })
         return
       }

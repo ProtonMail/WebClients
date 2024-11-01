@@ -31,7 +31,6 @@ export enum Features {
  * At the present time, these metrics will only work when user is authenticated
  */
 export enum Actions {
-    DismissDocsOnboardingModal = 'dismissDocsOnboardingModal',
     AddToBookmark = 'addToBookmark',
     ViewSignUpFlowModal = 'viewSignUpFlowModal',
     DismissSignUpFlowModal = 'dismissSignUpFlowModal',
@@ -44,13 +43,26 @@ export enum Actions {
     PublicLinkVisit = 'publicLinkVisit',
     DeleteBookmarkFromSharedWithMe = 'DeleteBookmarkFromSharedWithMe',
     SignUpFlowAndRedirectCompleted = 'signUpFlowAndRedirectCompleted',
+    RedirectToCorrectContextShare = 'redirectToCorrectContextShare',
+    RedirectToCorrectAcceptInvitation = 'RedirectToCorrectAcceptInvitation',
+    AddToBookmarkTriggeredModal = 'addToBookmarkTriggeredModal',
+    // onboarding actions
+    OnboardingV2Shown = 'onboardingV2Shown',
+    OnboardingV2InstallMacApp = 'onboardingV2InstallMacApp',
+    OnboardingV2InstallWindowsApp = 'onboardingV2InstallWindowsApp',
+    OnboardingV2InstallSkip = 'onboardingV2InstallSkip',
+    OnboardingV2B2BInvite = 'onboardingV2B2BInvite',
+    OnboardingV2B2BInviteSkip = 'onboardingV2B2BInviteSkip',
+    OnboardingV2UploadFile = 'onboardingV2UploadFile',
+    OnboardingV2UploadFolder = 'onboardingV2UploadFolder',
+    OnboardingV2UploadSkip = 'onboardingV2UploadSkip',
 }
 
 type PerformanceTelemetryAdditionalValues = {
     quantity?: number;
 };
 
-export const sendTelemetryFeaturePerformance = (
+const sendTelemetryFeaturePerformance = (
     api: Api,
     featureName: Features,
     timeInMs: number,
@@ -205,7 +217,7 @@ export const useMeasureFeaturePerformanceOnMount = (features: Features) => {
 
 const apiInstance = createApi({ config, sendLocaleHeaders: true });
 
-export const countActionWithTelemetry = (action: Actions, count: number = 1): void => {
+export const countActionWithTelemetry = (action: Actions, count: number = 1) => {
     const persistedSession = getLastActivePersistedUserSession();
 
     if (persistedSession?.UID) {
@@ -218,7 +230,7 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1): vo
     // Proper back-end solution will be done as part of https://jira.protontech.ch/browse/DD-7
     const loggedInRecently = localStorageWithExpiry.getData(LAST_ACTIVE_PING) ? 'true' : 'false';
 
-    void sendTelemetryReport({
+    return sendTelemetryReport({
         api: apiInstance,
         measurementGroup: TelemetryMeasurementGroups.driveWebActions,
         event: TelemetryDriveWebFeature.actions,
@@ -234,11 +246,11 @@ export const countActionWithTelemetry = (action: Actions, count: number = 1): vo
 
 const TEN_MINUTES = 10 * 60 * 1000;
 
-export async function getTimeBasedHash(str: string, interval: number = TEN_MINUTES) {
+export async function getTimeBasedHash(interval: number = TEN_MINUTES) {
     const timeBase = Math.floor(Date.now() / interval) * interval;
 
     const encoder = new TextEncoder();
-    const data = encoder.encode(str + timeBase.toString());
+    const data = encoder.encode(timeBase.toString());
     const hashBuffer = await CryptoProxy.computeHash({ algorithm: 'SHA256', data });
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -269,19 +281,11 @@ export async function getTimeBasedHash(str: string, interval: number = TEN_MINUT
 export const traceTelemetry = (action: Actions, duration: number = TEN_MINUTES) => {
     return {
         start: async () => {
-            const session = getLastActivePersistedUserSession();
-            if (session) {
-                localStorageWithExpiry.storeData(
-                    `telemetry-trace-${action}`,
-                    await getTimeBasedHash(session.UID, duration),
-                    duration
-                );
-            }
+            localStorageWithExpiry.storeData(`telemetry-trace-${action}`, await getTimeBasedHash(duration), duration);
         },
         end: async () => {
             const data = localStorageWithExpiry.getData(`telemetry-trace-${action}`);
-            const session = getLastActivePersistedUserSession();
-            if (data && session && data === (await getTimeBasedHash(session.UID, duration))) {
+            if (data && data === (await getTimeBasedHash(duration))) {
                 countActionWithTelemetry(action);
             }
             localStorageWithExpiry.deleteData(`telemetry-trace-${action}`);

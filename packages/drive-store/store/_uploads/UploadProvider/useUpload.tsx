@@ -268,7 +268,10 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         sendErrorReport(error);
-                        metrics.uploadFailed(getFailedUploadMetadata(nextFileUpload, control.getProgresses()), error);
+                        metrics.uploadFailed(
+                            getFailedUploadMetadata(nextFileUpload, control.getProgress(nextFileUpload.id)),
+                            error
+                        );
                     }
 
                     // If the error is 429 (rate limited), we should not continue
