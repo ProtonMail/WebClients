@@ -871,7 +871,7 @@ export { default as useFolderColor } from './hooks/useFolderColor';
 export { default as useForceRefresh } from './hooks/useForceRefresh';
 export { default as useGetCalendarEventRaw } from './hooks/useGetCalendarEventRaw';
 export { default as useGetCalendarInfo } from './hooks/useGetCalendarInfo';
-export { default as useGetEncryptionPreferences } from './hooks/useGetEncryptionPreferences';
+export { default as useGetEncryptionPreferences, CACHE_KEY } from './hooks/useGetEncryptionPreferences';
 export { default as useGetVerificationPreferences } from './hooks/useGetVerificationPreferences';
 export { useEventListener, useHandler, useInterval, useSubscribeEventManager } from './hooks/useHandler';
 export type { Cancellable } from './hooks/useHandler';
