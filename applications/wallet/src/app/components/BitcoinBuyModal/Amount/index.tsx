@@ -401,7 +401,7 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                                         label: content.text,
                                     };
                                 })
-                            )}
+                            ).sort((a, b) => a.label.localeCompare(b.label))}
                         />
                     </InputFieldStackedGroup>
 
