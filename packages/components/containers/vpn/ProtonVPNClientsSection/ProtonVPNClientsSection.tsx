@@ -2,6 +2,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useWelcomeFlags } from '@proton/account';
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMenuLink';
@@ -16,7 +17,6 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
 import DownloadClientCard from '../../../components/downloadClientCard/DownloadClientCard';
-import { useWelcomeFlags } from '../../../hooks';
 import OnboardingContent from '../../onboarding/OnboardingContent';
 
 interface DownloadModalProps extends ModalProps {

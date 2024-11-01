@@ -1,5 +1,6 @@
 import { isValidElement, useState } from 'react';
 
+import { useWelcomeFlags } from '@proton/account';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { ModalSize } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -12,7 +13,6 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
-import { useWelcomeFlags } from '../../hooks';
 import type { OnboardingStepComponent, OnboardingStepProps } from './interface';
 import useGenericSteps from './useGenericSteps';
 
