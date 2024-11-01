@@ -1,0 +1,85 @@
+.pass-onboarding-modal {
+	/* Hide elements we don't need */
+	.stepper-labels,
+	.stepper-item-connector,
+	.modal-two-header-actions .vr,
+	.radio-fakeradio {
+		display: none;
+	}
+
+	/* Customize stepper look */
+	.stepper {
+		position: absolute;
+		inset-block-start: 2.35rem;
+		pointer-events: none;
+
+		&-item {
+			max-inline-size: 2rem;
+
+			&-dot {
+				inline-size: 100%;
+				block-size: 0.25rem;
+				border-radius: 1.5rem;
+				background-color: var(--interaction-weak);
+			}
+
+			&--active .stepper-item-dot {
+				opacity: 1;
+				background-color: var(--interaction-norm);
+			}
+		}
+	}
+
+	/* Align modal header */
+	.modal-two-header-actions {
+		inline-size: 100%;
+		justify-content: end;
+	}
+
+	/* Customize lock selector radios */
+	&--lock {
+		& > *,
+		.radio ~ span {
+			inline-size: 100%;
+		}
+
+		& > .field-two-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.field-two-label-container {
+				margin: 0;
+			}
+		}
+
+		& > label:first-of-type {
+			display: none;
+		}
+
+		.radio ~ span,
+		& > .field-two-container {
+			padding: 0.875rem;
+			border-radius: 0.75rem;
+		}
+
+		.radio ~ span .color-weak {
+			display: none;
+		}
+
+		.radio:checked ~ span,
+		.radio:hover ~ span {
+			background: #302d45;
+		}
+
+		.button-promotion {
+			position: absolute;
+			inset-inline-end: 0.875rem;
+		}
+	}
+
+	&--group,
+	&--skip {
+		color: var(--interaction-norm);
+	}
+}
