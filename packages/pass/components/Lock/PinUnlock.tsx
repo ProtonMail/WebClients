@@ -11,7 +11,6 @@ import { useRerender } from '@proton/pass/hooks/useRerender';
 import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { unlock } from '@proton/pass/store/actions';
-import { unlockRequest } from '@proton/pass/store/actions/requests';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {
@@ -28,7 +27,7 @@ export const PinUnlock: FC<Props> = ({ offlineEnabled, onLoading, onOffline }) =
     const [key, rerender] = useRerender('pin-input'); /* Re-render the PIN input with correct input focus */
 
     const sessionUnlock = useRequest(unlock, {
-        initialRequestId: unlockRequest(),
+        initial: true,
         onFailure: () => {
             setValue('');
             rerender();

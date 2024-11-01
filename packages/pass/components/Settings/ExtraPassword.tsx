@@ -12,7 +12,6 @@ import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { validateNewExtraPassword } from '@proton/pass/lib/validation/auth';
 import { extraPasswordToggle } from '@proton/pass/store/actions';
-import { extraPasswordToggleRequest } from '@proton/pass/store/actions/requests';
 import { selectExtraPasswordEnabled, selectLockMode } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -22,7 +21,7 @@ import { SettingsPanel } from './SettingsPanel';
 export const ExtraPassword: FC = () => {
     const online = useConnectivity();
     const confirmPassword = usePasswordUnlock();
-    const toggle = useRequest(extraPasswordToggle, { initialRequestId: extraPasswordToggleRequest() });
+    const toggle = useRequest(extraPasswordToggle, { initial: true });
     const enabled = useSelector(selectExtraPasswordEnabled);
     const biometricsEnabled = useSelector(selectLockMode) === LockMode.BIOMETRICS;
     const biometricsMessage = biometricsEnabled

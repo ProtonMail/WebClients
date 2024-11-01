@@ -13,12 +13,7 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { resolveAddressMonitor, toggleAddressMonitor } from '@proton/pass/store/actions';
-import {
-    deleteCustomAddressRequest,
-    resolveAddressMonitorRequest,
-    toggleAddressMonitorRequest,
-} from '@proton/pass/store/actions/requests';
+import { deleteCustomAddress, resolveAddressMonitor, toggleAddressMonitor } from '@proton/pass/store/actions';
 import { selectMonitorSettingByType, selectRequestInFlight } from '@proton/pass/store/selectors';
 
 type Props = { resolved: boolean; disabled: boolean } & MonitorAddress;
@@ -28,11 +23,10 @@ export const BreachActions: FC<Props> = ({ resolved, disabled, ...address }) => 
     const { deleteAddress } = useMonitor();
 
     const groupMonitored = useSelector(selectMonitorSettingByType(type));
-    const deleting = useSelector(selectRequestInFlight(deleteCustomAddressRequest(email)));
+    const deleting = useSelector(selectRequestInFlight(deleteCustomAddress.requestID(email)));
 
-    const addressId = getAddressId(address);
-    const resolve = useRequest(resolveAddressMonitor, { initialRequestId: resolveAddressMonitorRequest(addressId) });
-    const toggle = useRequest(toggleAddressMonitor, { initialRequestId: toggleAddressMonitorRequest(addressId) });
+    const resolve = useRequest(resolveAddressMonitor, { initial: address });
+    const toggle = useRequest(toggleAddressMonitor, { initial: address });
 
     const confirmResolve = useConfirm(() => resolve.dispatch(address));
     const confirmToggle = useConfirm(() => toggle.dispatch({ ...address, monitor: !monitored }));

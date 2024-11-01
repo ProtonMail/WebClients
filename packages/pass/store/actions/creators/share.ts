@@ -5,7 +5,6 @@ import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
-    shareAccessOptionsRequest,
     shareEditMemberRoleRequest,
     shareLeaveRequest,
     shareRemoveMemberRequest,
@@ -19,6 +18,7 @@ import type {
     ShareEditMemberAccessIntent,
     ShareRemoveMemberAccessIntent,
 } from '@proton/pass/types/data/shares.dto';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const shareEditSync = createAction('share::edit:sync', (payload: { id: string; share: Share }) =>
@@ -133,15 +133,15 @@ export const shareLeaveFailure = createAction(
 );
 
 export const getShareAccessOptions = requestActionsFactory<SelectedShare, ShareAccessOptions>('share::access-options')({
-    requestId: ({ shareId }) => shareAccessOptionsRequest(shareId),
+    key: prop('shareId'),
     success: { config: { maxAge: 15 } },
     failure: {
-        prepare: (error: unknown) =>
+        prepare: (error: unknown, payload) =>
             withNotification({
                 type: 'error',
                 text: c('Error').t`Could not resolve share members`,
                 error,
-            })({ payload: {}, error }),
+            })({ payload, error }),
     },
 });
 

@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { desktopSettingsSetRequest, desktopSettingsSyncRequest } from '@proton/pass/store/actions/requests';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { DesktopSettingsDTO } from '@proton/pass/types/desktop';
 
 export const setDesktopSettings = requestActionsFactory<DesktopSettingsDTO, DesktopSettingsDTO>(
     'desktop-settings::set'
 )({
-    requestId: desktopSettingsSetRequest,
     success: {
         prepare: (payload) =>
             withNotification({
@@ -26,6 +24,4 @@ export const setDesktopSettings = requestActionsFactory<DesktopSettingsDTO, Desk
     },
 });
 
-export const syncDesktopSettings = requestActionsFactory<void, DesktopSettingsDTO>('desktop-settings::sync')({
-    requestId: desktopSettingsSyncRequest,
-});
+export const syncDesktopSettings = requestActionsFactory<void, DesktopSettingsDTO>('desktop-settings::sync')();

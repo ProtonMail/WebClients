@@ -100,7 +100,7 @@ export const useImportForm = ({
     const aliases = useSelector(selectAliasItems);
 
     const importItems = useActionRequest(importItemsIntent, {
-        initialRequestId: itemsImportRequest(),
+        requestId: itemsImportRequest(),
         onSuccess: () => {
             setBusy(false);
             void formRef.current?.setValues(getInitialFormValues());
