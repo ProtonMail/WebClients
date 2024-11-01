@@ -184,7 +184,7 @@ export const disableTotp = () => ({
     method: 'put',
 });
 
-export const disable2FA = (data: { PersistPasswordScope?: boolean } | undefined) => ({
+export const disable2FA = (data?: { PersistPasswordScope?: boolean }) => ({
     url: 'core/v4/settings/2fa',
     method: 'put',
     data,
