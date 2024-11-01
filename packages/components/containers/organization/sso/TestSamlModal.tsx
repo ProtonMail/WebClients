@@ -73,7 +73,9 @@ const handleTestSaml = async ({
 
     try {
         abortController.signal.addEventListener('abort', handleCleanup);
-        const ssoInfoResponse = await authApi<SSOInfoResponse>(getInfo(email, 'SSO', true));
+        const ssoInfoResponse = await authApi<SSOInfoResponse>(
+            getInfo({ username: email, intent: 'SSO', isTesting: true })
+        );
         const { token } = await handleExternalSSOLogin({
             signal: abortController.signal,
             token: ssoInfoResponse.SSOChallengeToken,

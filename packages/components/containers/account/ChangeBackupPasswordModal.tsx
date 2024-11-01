@@ -49,16 +49,21 @@ const ChangeBackupPasswordModal = ({ ...rest }: Props) => {
                     return;
                 }
                 withLoading(
-                    dispatch(changeSSOUserBackupPassword({ newBackupPassword })).catch((e) => {
-                        if (e instanceof AuthDeviceNonExistingError) {
-                            createNotification({
-                                text: c('sso').t`Sign out and in again to change your backup password`,
-                                type: 'error',
-                            });
-                            return;
-                        }
-                        handleError(e);
-                    })
+                    dispatch(changeSSOUserBackupPassword({ newBackupPassword }))
+                        .then(() => {
+                            createNotification({ text: c('Success').t`Backup password updated` });
+                            rest.onClose?.();
+                        })
+                        .catch((e) => {
+                            if (e instanceof AuthDeviceNonExistingError) {
+                                createNotification({
+                                    text: c('sso').t`Sign out and in again to change your backup password`,
+                                    type: 'error',
+                                });
+                                return;
+                            }
+                            handleError(e);
+                        })
                 );
             }}
         >

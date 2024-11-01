@@ -41,6 +41,7 @@ const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
         <>
             {renderAuthModal && (
                 <AuthModal
+                    scope="password"
                     config={unlockPasswordChanges()}
                     {...authModalProps}
                     onCancel={onClose}

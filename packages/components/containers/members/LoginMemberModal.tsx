@@ -81,6 +81,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
         };
         return (
             <AuthModal
+                scope="password"
                 config={authMember(member.ID)}
                 {...rest}
                 onCancel={onClose}
