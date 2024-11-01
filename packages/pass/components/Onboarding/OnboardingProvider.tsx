@@ -7,10 +7,18 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { OnboardingModal } from '@proton/pass/components/Onboarding/OnboardingModal';
+import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
 import type { OnboardingStatus } from '@proton/pass/store/selectors';
-import { selectOnboardingComplete, selectOnboardingEnabled, selectOnboardingState } from '@proton/pass/store/selectors';
+import {
+    selectOnboardingComplete,
+    selectOnboardingEnabled,
+    selectOnboardingState,
+    selectPassPlan,
+} from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 type OnboardingContextValue = {
@@ -37,7 +45,41 @@ const OnboardingContext = createContext<OnboardingContextValue>({
     isActive: false,
 });
 
-export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
+const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
+    const [enabled, setEnabled] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+    const { onboardingAcknowledge, onboardingCheck } = usePassCore();
+    const acknowledge = async () => {
+        await wait(250);
+        setEnabled(false);
+        void onboardingAcknowledge?.(OnboardingMessage.WELCOME);
+    };
+
+    useEffect(() => {
+        (async () => (await onboardingCheck?.(OnboardingMessage.WELCOME)) ?? false)()
+            .then((res) => setEnabled(res))
+            .catch(noop);
+    }, []);
+
+    const context: OnboardingContextValue = {
+        acknowledge,
+        complete: false,
+        enabled,
+        isActive,
+        launch: () => setIsActive(true),
+        steps: { total: 0, done: 0 },
+        state: { vaultCreated: false, vaultImported: false, vaultShared: false },
+    };
+
+    return (
+        <OnboardingContext.Provider value={context}>
+            {children}
+            <OnboardingModal open={enabled && isActive} onClose={() => setIsActive(false)} />
+        </OnboardingContext.Provider>
+    );
+};
+
+const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
     const { onboardingAcknowledge, onboardingCheck } = usePassCore();
     const extension = usePassExtensionLink();
     const { navigate } = useNavigation();
@@ -78,6 +120,25 @@ export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
     }, [complete, enabled, extension, state]);
 
     return <OnboardingContext.Provider value={context}>{children}</OnboardingContext.Provider>;
+};
+
+export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
+    const passPlan = useSelector(selectPassPlan);
+    const onboardingMessage =
+        !isBusinessPlan(passPlan) && DESKTOP_BUILD ? OnboardingMessage.WELCOME : OnboardingMessage.B2B_ONBOARDING;
+
+    const RenderedProvider = useMemo(() => {
+        switch (onboardingMessage) {
+            case OnboardingMessage.B2B_ONBOARDING:
+                return B2BProvider;
+            case OnboardingMessage.WELCOME:
+                return WelcomeProvider;
+            default:
+                return () => children;
+        }
+    }, [onboardingMessage]);
+
+    return <RenderedProvider>{children}</RenderedProvider>;
 };
 
 export const useOnboarding = () => useContext(OnboardingContext);
