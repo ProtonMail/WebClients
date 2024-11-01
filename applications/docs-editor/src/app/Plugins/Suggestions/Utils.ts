@@ -10,6 +10,7 @@ import type { Logger } from '@proton/utils/logs'
 import type { TableCellNode, TableRowNode } from '@lexical/table'
 import { $isTableNode } from '@lexical/table'
 import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
+import { $isCodeNode } from '@lexical/code'
 
 /**
  * Wraps a given selection with suggestion node(s), splitting
@@ -307,4 +308,17 @@ export function $isWholeSelectionInsideSuggestion(selection: RangeSelection): bo
     focusSuggestionParent.getSuggestionIdOrThrow() === anchorSuggestionParent.getSuggestionIdOrThrow()
 
   return isSameSuggestion
+}
+
+export function $isAnyPartOfSelectionInCodeNode(selection: RangeSelection) {
+  const focus = selection.focus.getNode()
+  const anchor = selection.anchor.getNode()
+
+  const isFocusInCodeNode = !!$findMatchingParent(focus, $isCodeNode)
+  if (selection.isCollapsed()) {
+    return isFocusInCodeNode
+  }
+
+  const isAnchorInCodeNode = !!$findMatchingParent(anchor, $isCodeNode)
+  return isFocusInCodeNode || isAnchorInCodeNode
 }
