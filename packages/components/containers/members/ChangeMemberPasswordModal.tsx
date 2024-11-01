@@ -78,10 +78,6 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
         passwordLengthValidator(inputs.confirmPassword) ||
         confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword);
 
-    const notifySuccess = () => {
-        createNotification({ text: c('Success').t`Password updated` });
-    };
-
     if (!memberAuthData) {
         return (
             <AuthModal
@@ -143,7 +139,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
                 })
             );
 
-            notifySuccess();
+            createNotification({ text: c('Success').t`Password updated` });
             lockAndClose();
         } catch (e: any) {
             handleError(e);
