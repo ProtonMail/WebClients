@@ -12,7 +12,7 @@ import type { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@prot
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getRequire2FA, getSSOIntegration } from './b2b';
+import { getActivityLog, getRequire2FA, getSSOIntegration, getTeamPolicies } from './b2b';
 import { getCalendarAppFeature } from './calendar';
 import {
     getBasicFeatures,
@@ -51,6 +51,7 @@ import {
     PASS_PRO_VAULTS,
     PASS_PRO_VAULT_SHARING,
     get2FAAuthenticator,
+    getAdvancedAliasFeatures,
     getCustomFields,
     getDarkWebMonitoring,
     getDataBreachMonitoring,
@@ -239,6 +240,7 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
             getLoginsAndNotes('paid'),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
+            getAdvancedAliasFeatures(true),
             getVaults(PASS_PLUS_VAULTS),
             getVaultSharing(PASS_PLUS_VAULT_SHARING),
             get2FAAuthenticator(true),
@@ -260,6 +262,7 @@ export const getPassProPlan = (plan: Plan): ShortPlan => {
             getLoginsAndNotes('paid'),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
+            getAdvancedAliasFeatures(true),
             getVaults(PASS_PRO_VAULTS),
             getVaultSharing(PASS_PRO_VAULT_SHARING),
             get2FAAuthenticator(true),
@@ -284,6 +287,7 @@ export const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
             getLoginsAndNotes('paid'),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
+            getAdvancedAliasFeatures(true),
             getVaults(PASS_BIZ_VAULTS),
             getVaultSharing(PASS_BIZ_VAULT_SHARING),
             get2FAAuthenticator(true),
@@ -326,6 +330,7 @@ export const getPassFamilyPlan = (plan?: Plan): ShortPlan => {
             getLoginsAndNotes('paid'),
             getDevices(),
             getHideMyEmailAliases('unlimited'),
+            getAdvancedAliasFeatures(true),
             getVaults(PASS_PLUS_VAULTS),
             getVaultSharing(10),
             getLinkSharing(),
@@ -345,7 +350,13 @@ export const getPassBusinessSignupPlan = (plan?: Plan): ShortPlan => {
         label: '',
         description: '',
         cta: getCTA(title),
-        features: [getSSOIntegration(true), getRequire2FA(true), getSentinel(true)],
+        features: [
+            getSSOIntegration(true),
+            getTeamPolicies(),
+            getRequire2FA(true),
+            getActivityLog(),
+            getSentinel(true),
+        ],
     };
 };
 

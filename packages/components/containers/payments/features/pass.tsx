@@ -144,6 +144,20 @@ export const getHideMyEmailAliases = (n: number | 'unlimited'): PlanCardFeatureD
     };
 };
 
+export const getAdvancedAliasFeaturesText = () => {
+    return c('new_plans: feature').t`Advanced alias features (powered by SimpleLogin)`;
+};
+
+export const getAdvancedAliasFeatures = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: getAdvancedAliasFeaturesText(),
+        tooltip: c('new_plans: tooltip')
+            .t`Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more`,
+        included,
+        icon: 'brand-simple-login',
+    };
+};
+
 export const get2FAAuthenticatorText = () => {
     return c('new_plans: feature').t`Integrated 2FA authenticator`;
 };
@@ -295,10 +309,18 @@ export const getPasswordManager = (): PlanCardFeatureDefinition => {
     };
 };
 
+export const getActivityLogText = () => {
+    return c('pass_signup_2024: Info').t`Activity log`;
+};
+
+export const getTeamPoliciesText = () => {
+    return c('pass_signup_2024: Info').t`Team policies`;
+};
+
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
 export const PAID_VAULTS = 10;
-export const FREE_VAULT_SHARING = 3;
+export const FREE_VAULT_SHARING = 2;
 
 export const PASS_PLUS_VAULTS = 50;
 export const PASS_PLUS_VAULT_SHARING = 10;
@@ -408,6 +430,30 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             },
         },
         {
+            name: 'advanced-alias-features',
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: getAdvancedAliasFeatures(true),
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_BUSINESS]: null,
+                [PLANS.PASS]: getAdvancedAliasFeatures(true),
+                [PLANS.PASS_FAMILY]: getAdvancedAliasFeatures(true),
+                [PLANS.WALLET]: null,
+                [PLANS.FAMILY]: getAdvancedAliasFeatures(true),
+                [PLANS.DUO]: getAdvancedAliasFeatures(true),
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.MAIL_BUSINESS]: null,
+                [PLANS.BUNDLE_PRO]: getAdvancedAliasFeatures(true),
+                [PLANS.BUNDLE_PRO_2024]: getAdvancedAliasFeatures(true),
+                [PLANS.PASS_PRO]: getAdvancedAliasFeatures(true),
+                [PLANS.PASS_BUSINESS]: getAdvancedAliasFeatures(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
             name: 'vault-and-item-sharing',
             plans: {
                 [PLANS.FREE]: getVaultSharing(FREE_VAULT_SHARING),
@@ -435,7 +481,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             name: 'secure-link',
             plans: {
                 [PLANS.FREE]: null,
-                [PLANS.BUNDLE]: null,
+                [PLANS.BUNDLE]: getLinkSharing(),
                 [PLANS.MAIL]: null,
                 [PLANS.VPN]: null,
                 [PLANS.DRIVE]: null,

@@ -9,14 +9,18 @@ import {
     PAID_VAULTS,
     get2FAAuthenticator,
     get2FAAuthenticatorText,
+    getActivityLogText,
+    getAdvancedAliasFeatures,
     getDevices,
     getDevicesAndAliases,
     getLoginsAndNotes,
+    getLoginsAndNotesText,
     getPassUsers,
     getPassUsersText,
     getSecureSharingTextEmpty,
     getSecureVaultSharing,
-    getUnlimitedVaultSharingText,
+    getTeamPoliciesText,
+    getUnlimitedHideMyEmailAliasesText,
     getVaultSharing,
 } from '@proton/components/containers/payments/features/pass';
 import {
@@ -57,11 +61,12 @@ import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
 import LetsTalkSubsection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import {
-    getBasedString,
+    getBasedInSwitzerlandGDPRBenefit,
     getBenefits,
     getBundleVisionaryBenefits,
     getGenericFeatures,
     getJoinString,
+    getTeamKnowsEncryptionBenefit,
     getWorksOnAllDevicesBenefit,
 } from '../configuration/helper';
 import type { SignupConfiguration } from '../interface';
@@ -162,6 +167,87 @@ const getEncryptionBenefit = (): BenefitItem => {
         },
     };
 };
+
+const getAdvancedAliasBenefit = (): BenefitItem => {
+    return {
+        key: `advanced-alias`,
+        text: c('pass_signup_2024: Info').t`Advanced alias features (powered by SimpleLogin)`,
+        icon: {
+            name: 'brand-simple-login',
+        },
+    };
+};
+
+const getOpenSourceAndAuditedBenefit = (): BenefitItem => {
+    return {
+        key: 'open-source-and-audited',
+        text: c('pass_signup_2023: Info').t`Open source and audited`,
+        icon: {
+            name: 'magnifier' as const,
+        },
+    };
+};
+
+const getLoginsAndNotesBenefit = (): BenefitItem => {
+    return {
+        key: 'notes',
+        text: getLoginsAndNotesText('paid'),
+        icon: {
+            name: 'note' as const,
+        },
+    };
+};
+
+const getEmailAliasesBenefit = (): BenefitItem => {
+    return {
+        key: 'email-aliases',
+        text: getUnlimitedHideMyEmailAliasesText(),
+        icon: {
+            name: 'eye-slash' as const,
+        },
+    };
+};
+
+const getSecureLinkAndVaultSharingBenefit = (): BenefitItem => {
+    return {
+        key: 'secure-vault-sharing',
+        text: getSecureSharingTextEmpty(true),
+        icon: {
+            name: 'arrow-up-from-square' as const,
+        },
+    };
+};
+
+const getTeamPoliciesBenefit = (): BenefitItem => {
+    return {
+        key: 'team-policies',
+        text: getTeamPoliciesText(),
+        icon: {
+            name: 'users' as const,
+        },
+    };
+};
+
+const getActivityLogBenefit = (): BenefitItem => {
+    return {
+        key: 'activity-log',
+        text: getActivityLogText(),
+        icon: {
+            name: 'list-bullets' as const,
+        },
+    };
+};
+
+const getAdvancedAccountProtectionBenefit = (): BenefitItem => {
+    return {
+        key: 'advanced-account-protection',
+        text: c('pass_signup_2024: Info').t`Advanced account protection`,
+        icon: {
+            name: 'lock' as const,
+        },
+    };
+};
+
 export const getPassBenefits = (
     plan: PLANS | undefined,
     audience: Audience | undefined,
@@ -177,6 +263,7 @@ export const getPassBenefits = (
             getAdminPanelBenefit(),
             getWorksOnAllDevicesBenefit(),
             getAliasesBenefit(),
+            getAdvancedAliasBenefit(),
             getSecureSharingBenefit(),
             get2FABenefit(),
             getAlertsBenefit(),
@@ -185,36 +272,30 @@ export const getPassBenefits = (
         ];
     }
 
-    if (audience === Audience.B2B) {
+    if (plan === PLANS.PASS_PRO) {
         return [
-            {
-                key: 1,
-                text: c('pass_signup_2023: Info').t`Open source and audited`,
-                icon: {
-                    name: 'magnifier' as const,
-                },
-            },
-            {
-                key: 2,
-                text: getUnlimitedVaultSharingText(),
-                icon: {
-                    name: 'vault' as const,
-                },
-            },
-            {
-                key: 3,
-                text: getBasedString(),
-                icon: {
-                    name: 'shield' as const,
-                },
-            },
-            {
-                key: 5,
-                text: c('pass_signup_2023: Info').t`From the team that knows encryption`,
-                icon: {
-                    name: 'lock' as const,
-                },
-            },
+            getOpenSourceAndAuditedBenefit(),
+            getBasedInSwitzerlandGDPRBenefit(),
+            getTeamKnowsEncryptionBenefit(),
+            getLoginsAndNotesBenefit(),
+            getEmailAliasesBenefit(),
+            get2FABenefit(),
+            getSecureLinkAndVaultSharingBenefit(),
+        ];
+    }
+
+    if (plan === PLANS.PASS_BUSINESS) {
+        return [
+            getOpenSourceAndAuditedBenefit(),
+            getBasedInSwitzerlandGDPRBenefit(),
+            getTeamKnowsEncryptionBenefit(),
+            getLoginsAndNotesBenefit(),
+            getEmailAliasesBenefit(),
+            get2FABenefit(),
+            getSecureLinkAndVaultSharingBenefit(),
+            getTeamPoliciesBenefit(),
+            getActivityLogBenefit(),
+            getAdvancedAccountProtectionBenefit(),
         ];
     }
 
@@ -222,20 +303,9 @@ export const getPassBenefits = (
         return [
             getWorksOnAllDevicesBenefit(),
             getAliasesBenefit(),
-            {
-                key: 'secure-vault-sharing-paid',
-                text: getSecureSharingTextEmpty(true),
-                icon: {
-                    name: 'arrow-up-from-square' as const,
-                },
-            },
-            {
-                key: '2fa-authenticator',
-                text: get2FAAuthenticatorText(),
-                icon: {
-                    name: 'key' as const,
-                },
-            },
+            getAdvancedAliasBenefit(),
+            getSecureLinkAndVaultSharingBenefit(),
+            get2FABenefit(),
             {
                 key: 'alerts-for-compromised-emails-and-vulnerable-passwords',
                 text: c('pass_signup_2023: Info').t`Alerts for compromised emails and vulnerable passwords`,
@@ -285,6 +355,7 @@ export const getCustomPassFeatures = () => {
         getPassUsers(1),
         getLoginsAndNotes('paid'),
         getDevicesAndAliases(),
+        getAdvancedAliasFeatures(true),
         getPassKeys(true),
         getSecureVaultSharing(PAID_VAULTS, true),
         getPassMonitor(true),
@@ -297,6 +368,7 @@ export const getCustomPassFamilyFeatures = () => {
         getPassUsers(FAMILY_MAX_USERS),
         getLoginsAndNotes('paid'),
         getDevicesAndAliases(),
+        getAdvancedAliasFeatures(true),
         getPassKeys(true),
         getSecureVaultSharing(PAID_VAULTS, true),
         getPassMonitor(true),
