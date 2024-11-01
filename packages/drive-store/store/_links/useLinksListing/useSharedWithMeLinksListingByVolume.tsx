@@ -16,9 +16,10 @@ import type { FetchLoadLinksMetaByVolume } from './interface';
 import type { FetchMeta, SortParams } from './useLinksListingHelpers';
 import { DEFAULT_SORTING, useLinksListingHelpers } from './useLinksListingHelpers';
 
-interface FetchSharedLinksMeta extends FetchMeta {
+interface FetchSharedWithMeLinksMeta extends FetchMeta {
     lastPage: number;
     lastSorting: SortParams;
+    obseleteShareIds: string[];
 }
 
 /**
@@ -30,25 +31,39 @@ export function useSharedWithMeLinksListingByVolume() {
     const volumesState = useVolumesState();
     const { getVerificationKey } = useDriveCrypto();
     const { getDirectSharingInfo } = useDirectSharingInfo();
-    const shareIdsState = useRef<Set<string>>();
+    const shareIdsState = useRef<Set<string>>(new Set());
 
     const setShareIdsState = (shareIds: string[]) => {
-        const shareIdsSet = shareIdsState.current || new Set();
-
         for (const shareId of shareIds) {
-            shareIdsSet.add(shareId);
+            shareIdsState.current.add(shareId);
         }
+    };
 
-        shareIdsState.current = shareIdsSet;
-        return shareIdsState.current;
+    const removeShareIdsFromState = (shareIds: string[]) => {
+        for (const shareId of shareIds) {
+            shareIdsState.current.delete(shareId);
+        }
     };
 
     const getShareIdsState = (): string[] => Array.from(shareIdsState.current || new Set());
 
+    /**
+     * Finds share IDs that are no longer present in the current state.
+     */
+    const findObseleteShareIds = (shareIds: string[]) => {
+        const currentShareIdsSet = shareIdsState.current;
+        if (shareIds.length === 0) {
+            return Array.from(currentShareIdsSet);
+        }
+        const obseleteShareIds = currentShareIdsSet.difference(new Set(shareIds));
+        return Array.from(obseleteShareIds);
+    };
+
     const { cacheLoadedLinks, loadFullListingWithAnchor, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
-    const fetchMeta = useRef<FetchSharedLinksMeta>({
+    const fetchMeta = useRef<FetchSharedWithMeLinksMeta>({
         lastPage: 0,
         lastSorting: DEFAULT_SORTING,
+        obseleteShareIds: [],
     });
 
     const loadSharedLinksMeta = async (
@@ -153,8 +168,13 @@ export function useSharedWithMeLinksListingByVolume() {
             return getSharedOnDate(b) - getSharedOnDate(a);
         });
 
+        // We will break the loop in case the signal is aborted (unmount of the component)
+        // This is to prevent too many rerender of the file browser due to update of linksState
         for (const [, result] of sortedResults) {
             for (const [shareId, { links, parents }] of Object.entries(result)) {
+                if (signal.aborted) {
+                    break;
+                }
                 const shareInfo = shareInfoMap.get(shareId);
                 const linksWithShareInfo = links.map((link) => ({
                     ...link,
@@ -162,6 +182,9 @@ export function useSharedWithMeLinksListingByVolume() {
                     sharedBy: shareInfo?.sharedBy,
                 }));
                 await cacheLoadedLinks(signal, shareId, linksWithShareInfo, parents);
+            }
+            if (signal.aborted) {
+                break;
             }
         }
     };
@@ -186,17 +209,22 @@ export function useSharedWithMeLinksListingByVolume() {
             volumesState.setVolumeShareIds(link.VolumeID, [link.ShareID]);
             return link.ShareID;
         });
-        const newShareIdsState = setShareIdsState(shareIds);
-
+        setShareIdsState(shareIds);
+        fetchMeta.current.obseleteShareIds = findObseleteShareIds(shareIds.concat(fetchMeta.current.obseleteShareIds));
         const transformedResponse = transformSharedLinksResponseToLinkMap(response);
         await loadSharedLinksMeta(signal, transformedResponse, loadLinksMetaByVolume);
 
         fetchMeta.current.isEverythingFetched = !response.More;
 
+        // Clean up obsolete shareIds when all shared items are fetched
+        if (fetchMeta.current.isEverythingFetched) {
+            removeShareIdsFromState(fetchMeta.current.obseleteShareIds);
+            fetchMeta.current.obseleteShareIds = [];
+        }
         return {
             AnchorID: response.AnchorID,
             More: response.More,
-            Count: newShareIdsState.size,
+            Count: shareIdsState.current.size,
         };
     };
 
@@ -205,14 +233,11 @@ export function useSharedWithMeLinksListingByVolume() {
      */
     const loadSharedWithMeLinks = async (
         signal: AbortSignal,
-        loadLinksMetaByVolume: FetchLoadLinksMetaByVolume,
-        resetFetchStatus: boolean = false
+        loadLinksMetaByVolume: FetchLoadLinksMetaByVolume
     ): Promise<{ Count?: number } | void> => {
-        // TODO: Remove this when we will have share events in place
-        // This allow us to retrigger the loadSharedWithMeLinks call
-        if (resetFetchStatus) {
-            fetchMeta.current.isEverythingFetched = false;
-        }
+        // This function (loadSharedWithMeLinks) will be called only once (in useEffect of useSharedWithMeView).
+        // We reset the state of fetchMeta to allow fetching new items in case of tab change for exemple
+        fetchMeta.current.isEverythingFetched = false;
         const callback = (AnchorID?: string) => fetchSharedLinksNextPage(signal, loadLinksMetaByVolume, AnchorID);
         return loadFullListingWithAnchor(callback);
     };

@@ -10,7 +10,10 @@ import {
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
+import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
+import { userSuccessMetrics } from '../../../utils/metrics/userSuccessMetrics';
 import type { UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
 import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
 import type { Share } from '../../_shares/interface';
@@ -22,7 +25,7 @@ import type { FileUploadReady } from './interface';
 export interface FailedUploadMetadata {
     shareId: string;
     numberOfErrors: number;
-    encryptedTotalTransferSize: number;
+    encryptedTransferSize: number;
     roundedUnencryptedFileSize: number;
 }
 
@@ -36,15 +39,10 @@ const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes,
 
 const ROUND_BYTES = 10000; // For privacy we round file.size metrics to 10k bytes
 
-export const getFailedUploadMetadata = (
-    nextFileUpload: FileUploadReady,
-    progresses: {
-        [x: string]: number;
-    }
-): FailedUploadMetadata => ({
+export const getFailedUploadMetadata = (nextFileUpload: FileUploadReady, progress: number): FailedUploadMetadata => ({
     shareId: nextFileUpload.shareId,
     numberOfErrors: nextFileUpload.numberOfErrors,
-    encryptedTotalTransferSize: Object.values(progresses).reduce((sum, value) => sum + value, 0),
+    encryptedTransferSize: progress,
     roundedUnencryptedFileSize: Math.max(Math.round(nextFileUpload.file.size / ROUND_BYTES) * ROUND_BYTES, ROUND_BYTES),
 });
 
@@ -79,13 +77,25 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
         const errorCategory = getErrorCategory(error);
         const retry = failedUploadMetadata.numberOfErrors > 1;
 
-        if (!IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE.includes(errorCategory)) {
+        if (!IGNORED_ERROR_CATEGORIES_FROM_SUCCESS_RATE.includes(errorCategory) && !isIgnoredErrorForReporting(error)) {
+            userSuccessMetrics.mark(UserAvailabilityTypes.coreFeatureError);
+
             metricsModule.drive_upload_success_rate_total.increment({
                 status: 'failure',
                 shareType,
                 retry: retry ? 'true' : 'false',
                 initiator: 'explicit',
             });
+
+            if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
+                metricsModule.drive_upload_erroring_users_total.increment({
+                    plan: isPaid ? 'paid' : 'free',
+                    shareType,
+                    initiator: 'explicit',
+                });
+
+                lastErroringUserReport.current = Date.now();
+            }
         }
         // Type of error
         metricsModule.drive_upload_errors_total.increment({
@@ -94,26 +104,20 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
             initiator: 'explicit',
         });
 
-        // How many encrypted bytes were sent before it failed
-        metricsModule.drive_upload_errors_transfer_size_histogram.observe({
-            Value: failedUploadMetadata.encryptedTotalTransferSize,
-            Labels: {},
-        });
-
-        // Rounded unencrypted file size of the file that failed the upload
-        metricsModule.drive_upload_errors_file_size_histogram.observe({
-            Value: failedUploadMetadata.roundedUnencryptedFileSize,
-            Labels: {},
-        });
-
-        if (Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
-            metricsModule.drive_upload_erroring_users_total.increment({
-                plan: isPaid ? 'paid' : 'free',
-                shareType,
-                initiator: 'explicit',
+        // If the transfer size is empty that means the upload failed before attempted any transfer
+        // In that case we do not report the sizes
+        if (failedUploadMetadata.encryptedTransferSize) {
+            // How many encrypted bytes were sent before it failed
+            metricsModule.drive_upload_errors_transfer_size_histogram.observe({
+                Value: failedUploadMetadata.encryptedTransferSize,
+                Labels: {},
             });
 
-            lastErroringUserReport.current = Date.now();
+            // Rounded unencrypted file size of the file that failed the upload
+            metricsModule.drive_upload_errors_file_size_histogram.observe({
+                Value: failedUploadMetadata.roundedUnencryptedFileSize,
+                Labels: {},
+            });
         }
     };
 
@@ -163,5 +167,11 @@ export function getErrorCategory(error: any): UploadErrorCategoryType {
     } else if (error?.statusCode && is5xx(error?.statusCode)) {
         return UploadErrorCategory.HTTPServerError;
     }
+
+    sendErrorReport(error, {
+        tags: {
+            label: 'upload-unknown-error',
+        },
+    });
     return UploadErrorCategory.Unknown;
 }

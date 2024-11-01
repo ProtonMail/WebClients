@@ -12,7 +12,7 @@ const inboxFilesTouched = danger.git.fileMatch(
     'packages/llm'
 );
 
-const driveFilesMatch = danger.git.fileMatch('applications/drive', 'packages/drive-store');
+const driveFilesMatch = danger.git.fileMatch('applications/drive');
 const driveFilesTouched =
     driveFilesMatch.created || driveFilesMatch.edited || driveFilesMatch.deleted || driveFilesMatch.modified;
 

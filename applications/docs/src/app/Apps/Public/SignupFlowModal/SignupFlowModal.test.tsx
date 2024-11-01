@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { act } from 'react'
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { verifyAllWhenMocksCalled, when } from 'jest-when'
@@ -131,8 +131,10 @@ describe('SignupFlowModal', () => {
     const emailInput = screen.getByTestId('public-share-signup-modal-email')
     const submitButton = screen.getByText('Continue')
 
-    fireEvent.change(emailInput, { target: { value: 'test@example.com' } })
-    fireEvent.click(submitButton)
+    await act(async () => {
+      fireEvent.change(emailInput, { target: { value: 'test@example.com' } })
+      fireEvent.click(submitButton)
+    })
   })
 
   it('should redirect to SIGN_IN if email is already used', async () => {

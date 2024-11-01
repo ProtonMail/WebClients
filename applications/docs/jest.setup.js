@@ -44,3 +44,12 @@ jest.mock('@proton/drive-store/store/_uploads/initUploadFileWorker.ts', () => {
     initUploadFileWorker: jest.fn(),
   }
 })
+
+jest.mock('@proton/drive-store/utils/metrics/userSuccessMetrics.ts', () => {
+  return {
+      userSuccessMetrics: {
+          init: jest.fn(),
+          mark: jest.fn(),
+      },
+  };
+});

@@ -93,7 +93,7 @@ export function useErrorHandler() {
             });
         }
 
-        errors.forEach(sendErrorReport);
+        errors.forEach((e) => sendErrorReport(e));
     };
 
     return {

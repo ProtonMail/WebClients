@@ -52,11 +52,12 @@ const FileBrowser = <T extends FileBrowserBaseItem, T1>({
 
     onItemContextMenu,
     onItemOpen,
-    onItemRender,
     onScroll,
     onScrollEnd,
     onSort,
     onViewContextMenu,
+
+    onItemRender,
 
     contextMenuAnchorRef,
 
