@@ -83,6 +83,8 @@ export type PassCoreContextValue = {
     writeToClipboard: (text: string) => Promise<void>;
     /** Gets the unlock key via biometrics */
     getBiometricsKey?: (authStore: AuthStore) => Promise<MaybeNull<string>>;
+    /** Checks if this is the first time Pass is being launched */
+    isFirstLaunch?: () => boolean;
 };
 
 export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale'>;
