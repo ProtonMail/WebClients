@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
@@ -16,8 +17,6 @@ import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
 import { buyCredit, validateCredit } from '@proton/shared/lib/api/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-
-import { useSubscription } from '../../hooks';
 
 const GiftCodeSection = () => {
     const [value, setValue] = useState('');

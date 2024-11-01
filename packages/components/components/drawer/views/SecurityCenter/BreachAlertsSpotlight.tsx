@@ -5,12 +5,12 @@ import { c } from 'ttag';
 
 import { useWelcomeFlags } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useSpotlightOnFeature } from '@proton/components';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
-import { useSubscription } from '@proton/components/hooks';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features';
 import { PLANS } from '@proton/payments';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';

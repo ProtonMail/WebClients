@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
@@ -32,7 +33,6 @@ import type { Cycle } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { useSubscription } from '../../hooks';
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
 import PlanSelection from './subscription/PlanSelection';

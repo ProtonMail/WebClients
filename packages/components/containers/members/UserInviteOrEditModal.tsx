@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -25,7 +26,6 @@ import { hasDuo, hasFamily, hasPassFamily, hasVisionary } from '@proton/shared/l
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
-import { useSubscription } from '../../hooks';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 

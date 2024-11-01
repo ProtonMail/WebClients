@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
@@ -12,7 +13,6 @@ import { useRedirectToAccountApp } from '@proton/components/containers/desktop/u
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
-import useSubscription from '@proton/components/hooks/useSubscription';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

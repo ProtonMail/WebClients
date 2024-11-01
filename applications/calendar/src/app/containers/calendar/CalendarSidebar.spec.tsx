@@ -89,7 +89,11 @@ jest.mock('@proton/account/userSettings/hooks', () => ({
         },
     ]),
 }));
-jest.mock('@proton/components/hooks/useSubscription', () => () => [{}, jest.fn()]);
+jest.mock('@proton/account/subscription/hooks', () => () => [{}, jest.fn()]);
+jest.mock('@proton/account/subscription/hooks', () => ({
+    __esModule: true,
+    useSubscription: jest.fn(() => [{ isWelcomeFlow: false }]),
+}));
 
 jest.mock('@proton/components/hooks/useApi', () => ({
     __esModule: true,

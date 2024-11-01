@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { Button, Href } from '@proton/atoms';
 import {
@@ -11,7 +12,6 @@ import {
     Prompt,
     useApi,
     useEventManager,
-    useGetSubscription,
     useHandler,
     useModalState,
     useNotifications,

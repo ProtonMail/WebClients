@@ -1,11 +1,11 @@
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { componentsHookRenderer } from '@proton/components/containers/contacts/tests/render';
-import { useSubscription } from '@proton/components/hooks';
 import { PLANS, PLAN_TYPES } from '@proton/payments';
 import useFlag from '@proton/unleash/useFlag';
 
 import useCancellationFlow from './useCancellationFlow';
 
-jest.mock('@proton/components/hooks/useSubscription');
+jest.mock('@proton/account/subscription/hooks');
 const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
 
 jest.mock('@proton/unleash/useFlag');

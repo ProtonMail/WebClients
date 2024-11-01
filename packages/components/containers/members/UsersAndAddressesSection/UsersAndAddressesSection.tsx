@@ -12,6 +12,7 @@ import { getDomainError } from '@proton/account/members/validateAddUser';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey, useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar, Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -67,7 +68,6 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import Tooltip from '../../../components/tooltip/Tooltip';
-import { useSubscription } from '../../../hooks';
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import AddressModal from '../../addresses/AddressModal';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -15,15 +16,13 @@ import type { OpenCallbackProps } from '@proton/components/containers/payments/s
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useSubscription } from '@proton/components/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import useLastSubscriptionEnd from '@proton/components/hooks/useLastSubscriptionEnd';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';
 import type { PLANS } from '@proton/payments';
-import { CURRENCIES, type Currency } from '@proton/payments';
+import { CURRENCIES, type Currency, type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';
 import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
