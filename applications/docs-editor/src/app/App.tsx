@@ -34,6 +34,7 @@ import { useBridge } from './useBridge'
 import { removeCommentThreadMarks } from './Tools/removeCommentThreadMarks'
 import { rejectAllSuggestions } from './Plugins/Suggestions/rejectAllSuggestions'
 import { PreviewModeEditor } from './PreviewModeEditor'
+import { NotificationsChildren, NotificationsProvider } from '@proton/components'
 
 type Props = {
   systemMode: EditorSystemMode
@@ -382,34 +383,37 @@ export function App({ systemMode }: Props) {
         isSuggestionMode={isSuggestionMode}
         isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
       >
-        {isPreviewMode && clonedEditorState && (
-          <PreviewModeEditor
-            clonedEditorState={clonedEditorState}
-            role={application.getRole()}
-            onUserModeChange={onUserModeChange}
-          />
-        )}
-        <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
-          <Editor
-            clientInvoker={bridge.getClientInvoker()}
-            docMap={docMap}
-            docState={docState}
-            documentId={editorConfig.current.documentId}
-            editingLocked={editingLocked || userMode === EditorUserMode.Preview}
-            editorInitializationConfig={editorConfig.current.editorInitializationConfig}
-            hidden={editorHidden}
-            isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
-            onEditorError={onEditorError}
-            onEditorLoadResult={onEditorLoadResult}
-            onUserModeChange={onUserModeChange}
-            role={application.getRole()}
-            setEditorRef={setEditorRef}
-            showTreeView={showTreeView}
-            systemMode={systemMode}
-            userMode={userMode}
-            username={editorConfig.current.username}
-          />
-        </div>
+        <NotificationsProvider>
+          {isPreviewMode && clonedEditorState && (
+            <PreviewModeEditor
+              clonedEditorState={clonedEditorState}
+              role={application.getRole()}
+              onUserModeChange={onUserModeChange}
+            />
+          )}
+          <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
+            <Editor
+              clientInvoker={bridge.getClientInvoker()}
+              docMap={docMap}
+              docState={docState}
+              documentId={editorConfig.current.documentId}
+              editingLocked={editingLocked || userMode === EditorUserMode.Preview}
+              editorInitializationConfig={editorConfig.current.editorInitializationConfig}
+              hidden={editorHidden}
+              isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
+              onEditorError={onEditorError}
+              onEditorLoadResult={onEditorLoadResult}
+              onUserModeChange={onUserModeChange}
+              role={application.getRole()}
+              setEditorRef={setEditorRef}
+              showTreeView={showTreeView}
+              systemMode={systemMode}
+              userMode={userMode}
+              username={editorConfig.current.username}
+            />
+          </div>
+          <NotificationsChildren />
+        </NotificationsProvider>
       </ApplicationProvider>
       <Icons />
     </div>

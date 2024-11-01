@@ -1,5 +1,4 @@
 import { $generateNodesFromSerializedNodes, $insertGeneratedNodes } from '@lexical/clipboard'
-import { $isCodeNode } from '@lexical/code'
 import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import { GenerateUUID } from '@proton/docs-core'
 import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode, DecoratorNode } from 'lexical'
@@ -28,6 +27,7 @@ import {
   getBoundaryForDeletion,
   $mergeWithExistingSuggestionNode,
   $isWholeSelectionInsideSuggestion,
+  $isAnyPartOfSelectionInCodeNode,
 } from './Utils'
 import { $generateNodesFromDOM } from '@lexical/html'
 import type { Logger } from '@proton/utils/logs'
@@ -37,6 +37,8 @@ import { TextEditingSuggestionTypes } from './Types'
 import type { ListItemNode } from '@lexical/list'
 import { $handleListInsertParagraph, $isListItemNode } from '@lexical/list'
 import { $getListInfo } from '../CustomList/$getListInfo'
+import type { CreateNotificationOptions } from '@proton/components'
+import { c } from 'ttag'
 
 /**
  * This is the main core of suggestion mode. It handles input events,
@@ -48,6 +50,7 @@ export function $handleBeforeInputEvent(
   event: InputEvent,
   onSuggestionCreation: (id: string) => void,
   logger?: Logger,
+  createNotification?: (options: CreateNotificationOptions) => number,
 ): boolean {
   const inputType = event.inputType
 
@@ -71,10 +74,12 @@ export function $handleBeforeInputEvent(
 
   const suggestionID = GenerateUUID()
 
-  const focusNode = selection.focus.getNode()
-
-  if ($findMatchingParent(focusNode, $isCodeNode)) {
+  if ($isAnyPartOfSelectionInCodeNode(selection)) {
     logger?.info('Aborting beforeinput because selection is inside a code-block')
+    createNotification?.({
+      text: c('Warning').t`Making suggestions inside code blocks is not supported`,
+      type: 'warning',
+    })
     return true
   }
 
