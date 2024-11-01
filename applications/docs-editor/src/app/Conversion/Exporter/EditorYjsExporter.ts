@@ -46,7 +46,10 @@ export class EditorYjsExporter extends EditorExporter {
     )
 
     this.editor.setEditorState(this.editor.parseEditorState(this.editorState))
+
     this.removeCommentThreadMarks()
+    this.removeSuggestions()
+
     removeListener()
 
     const editorYjsState = encodeStateAsUpdate(doc)
