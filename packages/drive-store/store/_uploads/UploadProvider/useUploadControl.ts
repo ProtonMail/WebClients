@@ -47,6 +47,8 @@ export default function useUploadControl(
 
     const getProgresses = () => ({ ...progresses.current });
 
+    const getProgress = (id: string) => progresses.current[id];
+
     /**
      * calculateRemainingUploadBytes returns based on progresses of ongoing
      * uploads how many data is planned to be uploaded to properly count the
@@ -152,6 +154,7 @@ export default function useUploadControl(
         remove,
         updateProgress,
         getProgresses,
+        getProgress,
         calculateRemainingUploadBytes,
         calculateFileUploadLoad,
         pauseUploads,

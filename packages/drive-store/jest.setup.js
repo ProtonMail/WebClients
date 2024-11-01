@@ -32,3 +32,24 @@ jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
 jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
+
+jest.mock('./store/_downloads/fileSaver/download.ts', () => {
+    return {
+        initDownloadSW: jest.fn().mockResolvedValue(true),
+    };
+});
+
+jest.mock('./store/_uploads/initUploadFileWorker.ts', () => {
+    return {
+        initUploadFileWorker: jest.fn(),
+    };
+});
+
+jest.mock('./utils/metrics/userSuccessMetrics.ts', () => {
+    return {
+        userSuccessMetrics: {
+            init: jest.fn(),
+            mark: jest.fn(),
+        },
+    };
+});

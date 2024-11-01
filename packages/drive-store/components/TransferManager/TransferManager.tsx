@@ -8,7 +8,6 @@ import {
     Tabs,
     useActiveBreakpoint,
     useConfirmActionModal,
-    useDrawerWidth,
     useElementRect,
     useRightToLeft,
     useToggle,
@@ -265,14 +264,11 @@ const TransferManager = ({
         </>
     );
 
-    const drawerWidth = useDrawerWidth();
-
     return (
         <>
             <div
                 id="transfer-manager"
                 className={clsx(['transfers-manager', minimized && 'transfers-manager--minimized'])}
-                style={{ marginRight: `${drawerWidth}px` }}
             >
                 <div ref={headerRef}>
                     <Header

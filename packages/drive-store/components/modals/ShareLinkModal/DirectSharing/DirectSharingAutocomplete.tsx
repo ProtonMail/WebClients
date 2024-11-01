@@ -85,7 +85,12 @@ export const DirectSharingAutocomplete = ({
                         />
                     }
                     items={invitees.map((invitee) => (
-                        <DirectSharingAddressesInputItem invitee={invitee} disabled={disabled} onRemove={onRemove} />
+                        <DirectSharingAddressesInputItem
+                            key={invitee.contactId}
+                            invitee={invitee}
+                            disabled={disabled}
+                            onRemove={onRemove}
+                        />
                     ))}
                     className={clsx(['multi-select-container', !!count && 'px-2 py-0.5'])}
                 />

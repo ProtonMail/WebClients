@@ -1,7 +1,10 @@
+import { useCallback } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { partialPublicViewKey } from '../../hooks/util/usePartialPublicView';
 import { sendErrorReport } from '../../utils/errorHandling';
@@ -17,32 +20,64 @@ export const useBookmarksActions = () => {
     const linksListing = useLinksListing();
     const { addBookmark, deleteBookmark } = useBookmarks();
 
+    const performAddBookmark = useCallback(
+        async ({
+            token,
+            hideNotifications = false,
+            urlPassword,
+            abortSignal,
+        }: {
+            token: string;
+            hideNotifications?: boolean;
+            urlPassword: string;
+            abortSignal: AbortSignal;
+        }) => {
+            const expectedLength = 10;
+            const validPattern = /^[a-zA-Z0-9]+$/;
+            // Validate the length + verify pattern
+            if (token.length !== expectedLength || !validPattern.test(token)) {
+                return;
+            }
+
+            try {
+                await addBookmark(abortSignal, {
+                    urlPassword,
+                    token,
+                    apiSilence: API_CUSTOM_ERROR_CODES.ALREADY_EXISTS,
+                }).catch((e) => {
+                    // Because we can only list bookmark while being logged-in
+                    // This case will only happend if the user try to bookmark the file he already have while being logged-out
+                    // In other case we don't allow saved to drive if you already have the bookmark.
+                    if (e?.data?.Code === API_CUSTOM_ERROR_CODES.ALREADY_EXISTS) {
+                        return undefined;
+                    }
+                    throw e;
+                });
+                if (!hideNotifications) {
+                    createNotification({
+                        type: 'success',
+                        text: c('Notification').t`The item was successfully added to your drive`,
+                    });
+                }
+            } catch (e) {
+                createNotification({
+                    type: 'error',
+                    text: c('Notification').t`The item was not added to your drive`,
+                });
+                sendErrorReport(e);
+            }
+        },
+        [addBookmark, createNotification]
+    );
+
     const handleAddBookmarkFromPrivateApp = async (
         abortSignal: AbortSignal,
         { token, hideNotifications = false }: { token: string; hideNotifications?: boolean }
     ) => {
-        const expectedLength = 10;
-        const validPattern = /^[a-zA-Z0-9]+$/;
-        // Saved in localStorage
+        // Saved in localStorage if coming from public Drive client; otherwise could be coming from Docs client
         const urlPassword = getUrlPassword({ readOnly: true });
-        // Validate the length + verify pattern
-        if (token.length !== expectedLength || !validPattern.test(token) || !urlPassword) {
-            return;
-        }
-        try {
-            await addBookmark(abortSignal, { urlPassword, token });
-            if (!hideNotifications) {
-                createNotification({
-                    type: 'success',
-                    text: c('Notification').t`The item was succefully added to your drive`,
-                });
-            }
-        } catch (e) {
-            createNotification({
-                type: 'error',
-                text: c('Notification').t`The item was not added to your drive`,
-            });
-            sendErrorReport(e);
+        if (urlPassword) {
+            await performAddBookmark({ token, hideNotifications, urlPassword, abortSignal });
         }
     };
 

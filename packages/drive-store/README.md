@@ -15,4 +15,4 @@ To copy over one particular file from Drive, run `yarn copy absolute_path_to_dri
 
 If you'd like to modify the contents of a file after copying it from drive, run `yarn sync`, then makes the changes directly to the drive-store file.
 
-Then run `git diff absolute_path_to_file > patches/0000x-patch.diff`
+Then run `git diff absolute_path_to_file > ./packages/drive-store/patches/0000x-patch.diff` in the root directory.
