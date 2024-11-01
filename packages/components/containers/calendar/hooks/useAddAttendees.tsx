@@ -5,7 +5,6 @@ import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarInfo from '@proton/components/hooks/useGetCalendarInfo';
-import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import { serverTime } from '@proton/crypto';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
@@ -39,6 +38,7 @@ import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto'
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 
 import { useGetCanonicalEmailsMap } from '../../../hooks/useGetCanonicalEmailsMap';
+import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import useSendIcs from '../../../hooks/useSendIcs';
 
