@@ -738,7 +738,9 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         </UnAuthenticated>
                                                     </Route>
                                                 )}
-                                                <Route path={SSO_PATHS.EXTERNAL_SSO_LOGIN}>
+                                                <Route
+                                                    path={[SSO_PATHS.EXTERNAL_SSO_LOGIN, SSO_PATHS.EXTERNAL_SSO_REAUTH]}
+                                                >
                                                     <UnAuthenticated>
                                                         <ExternalSSOConsumer
                                                             loader={loader}

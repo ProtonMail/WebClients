@@ -52,7 +52,7 @@ const useTipConfig = ({ actionType }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const onCompose = useOnCompose();
-    const { createPremiumAddress, loadingProtonDomains } = usePremiumAddress();
+    const { createPremiumAddress, loadingProtonDomains, authModal } = usePremiumAddress();
     const dispatch = useMailDispatch();
     const mailboxElements = useMailSelector(elements);
     const { sendCTAButtonClickedReport } = useProtonTipsTelemetry();
@@ -160,6 +160,7 @@ const useTipConfig = ({ actionType }: Props) => {
     const renderPmMeUpsellModal = () => {
         return (
             <>
+                {authModal}
                 {pmMeUpsellModal.render && (
                     <PmMeUpsellModal modalProps={pmMeUpsellModal.modalProps} upsellComponent={UPSELL_COMPONENT.TIP} />
                 )}

@@ -1,16 +1,24 @@
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { UnlockModal, useApi, useAuthentication, useEventManager, useKTVerifier } from '@proton/components';
-import { useGetUserKeys, useModals } from '@proton/components/hooks';
+import {
+    AuthModal,
+    type AuthModalResult,
+    useApi,
+    useAuthentication,
+    useEventManager,
+    useKTVerifier,
+    useModalTwoPromise,
+} from '@proton/components';
+import { useGetUserKeys } from '@proton/components/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
+import { queryUnlock } from '@proton/shared/lib/api/user';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 const usePremiumAddress = () => {
     const [user] = useUser();
-    const { createModal } = useModals();
     const api = useApi();
     const { call } = useEventManager();
     const authentication = useAuthentication();
@@ -19,13 +27,12 @@ const usePremiumAddress = () => {
     const getUserKeys = useGetUserKeys();
     const [Domain = ''] = premiumDomains;
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
+    const [authModal, showAuthModal] = useModalTwoPromise<undefined, AuthModalResult>();
 
     const createPremiumAddress = async () => {
         const addresses = await getAddresses();
         const [{ DisplayName = '', Signature = '' } = {}] = addresses || [];
-        await new Promise<string>((resolve, reject) => {
-            createModal(<UnlockModal onClose={() => reject()} onSuccess={resolve} />);
-        });
+        await showAuthModal();
         const { Address } = await api(
             setupAddress({
                 Domain,
@@ -49,7 +56,20 @@ const usePremiumAddress = () => {
         return Address;
     };
 
+    const modal = authModal((props) => {
+        return (
+            <AuthModal
+                {...props}
+                scope="locked"
+                config={queryUnlock()}
+                onCancel={props.onReject}
+                onSuccess={props.onResolve}
+            />
+        );
+    });
+
     return {
+        authModal: modal,
         createPremiumAddress,
         loadingProtonDomains,
     };

@@ -60,6 +60,7 @@ const ChangeOrganizationKeysModal = ({ onClose, mode, hasOtherAdmins, organizati
         <>
             {renderAuthModal && config && (
                 <AuthModal
+                    scope="password"
                     {...authModalProps}
                     config={config}
                     onCancel={() => {

@@ -103,6 +103,7 @@ const GenerateMnemonicModal = ({ confirmStep = false, open, onClose, onExit }: P
         <>
             {renderAuthModal && mnemonicData && (
                 <AuthModal
+                    scope="password"
                     config={unlockPasswordChanges()}
                     {...authModalProps}
                     onCancel={onClose}

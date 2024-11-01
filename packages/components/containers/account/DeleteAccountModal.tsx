@@ -153,6 +153,7 @@ const DeleteAccountModal = (props: Props) => {
         <>
             {renderAuthModal && (
                 <AuthModal
+                    scope="password"
                     config={unlockPasswordChanges()}
                     {...authModalProps}
                     onCancel={undefined}

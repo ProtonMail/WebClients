@@ -72,7 +72,7 @@ interface SrpAuthArguments {
 }
 
 export const srpAuth = async ({ api, credentials, config, info, version }: SrpAuthArguments) => {
-    const actualInfo = info || (await api<InfoResponse>(getInfo(credentials.username)));
+    const actualInfo = info || (await api<InfoResponse>(getInfo({ username: credentials.username })));
     const { expectedServerProof, clientProof, clientEphemeral } = await getSrp(actualInfo, credentials, version);
     const authData = {
         ClientProof: clientProof,
