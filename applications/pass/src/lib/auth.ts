@@ -92,6 +92,8 @@ export const createAuthService = ({
         getPersistedSession,
 
         onInit: async (options) => {
+            if (DESKTOP_BUILD && core.isFirstLaunch?.()) return false;
+
             const sessions = getPersistedSessions();
             await localGarbageCollect(sessions).catch(noop);
 

@@ -54,6 +54,8 @@ import createSecureSessionStorage from '@proton/shared/lib/authentication/create
 import sentry from '@proton/shared/lib/helpers/sentry';
 
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
+import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
+import { isFirstLaunch } from './firstLaunch';
 import locales from './locales';
 
 import './app.scss';
@@ -66,6 +68,7 @@ sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 
 const history = createHashHistory();
 const imageProxy = createImageProxyHandler(api);
+const showWelcome = isFirstLaunch();
 
 export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
@@ -115,6 +118,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
             return null;
         }
     },
+    isFirstLaunch,
 });
 
 export const App = () => {
@@ -137,7 +141,7 @@ export const App = () => {
                                                 <AuthServiceProvider>
                                                     <StoreProvider>
                                                         <Localized>
-                                                            <AppGuard />
+                                                            {showWelcome ? <WelcomeScreen /> : <AppGuard />}
                                                         </Localized>
                                                         <Portal>
                                                             <ModalsChildren />

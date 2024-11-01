@@ -19,14 +19,24 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import protonPassIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
 
+import { dismissFirstLaunch } from '../../firstLaunch';
+
 import './WelcomeScreen.scss';
 
 export const WelcomeScreen: FC = () => {
     const authService = useAuthService();
     const online = useConnectivity();
     const { SSO_URL: host } = usePassConfig();
-    const onRegister = () => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP });
-    const onFork = () => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH });
+
+    const onRegister = () => {
+        dismissFirstLaunch();
+        authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP });
+    };
+
+    const onFork = () => {
+        dismissFirstLaunch();
+        authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH });
+    };
 
     const steps = [
         {
