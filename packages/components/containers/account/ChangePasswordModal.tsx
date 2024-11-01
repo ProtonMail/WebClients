@@ -425,7 +425,11 @@ const ChangePasswordModal = ({
                     keySalt,
                 });
 
-                const routeConfig = updatePrivateKeyRoute({ ...updateKeysPayload, PersistPasswordScope: disable2FA });
+                if (disable2FA) {
+                    await api(disable2FAConfig({ PersistPasswordScope: true }));
+                }
+
+                const routeConfig = updatePrivateKeyRoute(updateKeysPayload);
                 const credentials = {
                     password: inputs.newPassword,
                     totp: inputs.totp,
@@ -441,14 +445,6 @@ const ChangePasswordModal = ({
                     });
                 }
                 await mutatePassword({ keyPassword, clearKeyPassword: inputs.newPassword });
-
-                if (disable2FA) {
-                    await srpVerify({
-                        api,
-                        credentials,
-                        config: disable2FAConfig(),
-                    });
-                }
 
                 await call();
 

@@ -1,5 +1,4 @@
 import type { MutableRefObject } from 'react';
-import { useCallback } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
@@ -184,7 +183,6 @@ const SrpAuthModal = ({
     ...rest
 }: SrpAuthModalProps) => {
     const { APP_NAME } = useConfig();
-    const [infoResult, setInfoResult] = useState<InfoAuthedResponse>();
     const api = useApi();
     const [user] = useUser();
     const [userSettings] = useUserSettings();
@@ -193,6 +191,9 @@ const SrpAuthModal = ({
     const hasBeenAutoSubmitted = useRef(false);
     const errorHandler = useErrorHandler();
     const [fidoError, setFidoError] = useState(false);
+    const infoResultRef = useRef<{
+        data?: { infoResult?: InfoAuthedResponse; authTypes: ReturnType<typeof getAuthTypes> };
+    }>({});
 
     const [password, setPassword] = useState('');
     const [rerender, setRerender] = useState(0);
@@ -203,27 +204,36 @@ const SrpAuthModal = ({
         onClose?.();
     };
 
-    const refresh = useCallback(async () => {
+    const handleSubmit = async ({
+        step,
+        password,
+        twoFa,
+    }: {
+        step: Step;
+        password: string;
+        twoFa: TwoFactorData | undefined;
+    }) => {
+        if (submitting) {
+            return;
+        }
+
         const infoResult = await api<InfoAuthedResponse>(getInfo({ intent: 'Proton' }));
-        setInfoResult(infoResult);
-    }, []);
 
-    const isLoadingAuth = !infoResult;
-    const authTypes =
-        scope === 'locked'
-            ? {
-                  totp: false,
-                  fido2: false,
-                  twoFactor: false,
-              }
-            : getAuthTypes(infoResult, userSettings, APP_NAME);
+        const authTypes =
+            // Locked scope doesn't require 2fa
+            scope === 'locked'
+                ? {
+                      totp: false,
+                      fido2: false,
+                      twoFactor: false,
+                  }
+                : getAuthTypes(infoResult, userSettings, APP_NAME);
 
-    useEffect(() => {
-        refresh().catch(cancelClose);
-    }, []);
+        infoResultRef.current.data = { infoResult, authTypes };
 
-    const handleSubmit = async ({ password, twoFa }: { password: string; twoFa: TwoFactorData | undefined }) => {
-        if (submitting || isLoadingAuth) {
+        if (step === Step.Password && authTypes.twoFactor) {
+            setPassword(password);
+            setStep(Step.TWO_FA);
             return;
         }
 
@@ -260,28 +270,32 @@ const SrpAuthModal = ({
             onClose?.();
         } catch (error: any) {
             errorHandler(error);
+
             const { code } = getApiError(error);
-            if (code !== PASSWORD_WRONG_ERROR) {
-                onError?.(error);
-                cancelClose();
+            // Try again
+            if (code === PASSWORD_WRONG_ERROR) {
+                flushSync(() => {
+                    setFidoError(false);
+                    setPassword('');
+                    setStep(Step.Password);
+                    // Rerender the password form to trigger autofocus and form validation reset
+                    setRerender((old) => ++old);
+                });
                 return;
             }
-            await refresh().catch(cancelClose);
-            flushSync(() => {
-                setFidoError(false);
-                setPassword('');
-                setStep(Step.Password);
-                // Rerender the password form to trigger autofocus and form validation reset
-                setRerender((old) => ++old);
-            });
+
+            onError?.(error);
+            cancelClose();
         }
     };
 
-    const loading = submitting || isLoadingAuth;
+    const loading = submitting;
 
     // Don't allow to close this modal if it's loading as it could leave other consumers in an undefined state
     const handleClose = loading ? noop : cancelClose;
 
+    const infoResult = infoResultRef.current.data?.infoResult;
+    const authTypes = infoResultRef.current.data?.authTypes;
     const fido2 = infoResult?.['2FA']?.FIDO2;
 
     return (
@@ -297,15 +311,7 @@ const SrpAuthModal = ({
                             isSignedInAsAdmin={user?.isSubUser}
                             defaultPassword={password}
                             onSubmit={(password) => {
-                                if (isLoadingAuth) {
-                                    return;
-                                }
-                                if (authTypes.twoFactor) {
-                                    setPassword(password);
-                                    setStep(Step.TWO_FA);
-                                    return;
-                                }
-                                return withSubmitting(handleSubmit({ password, twoFa: undefined }));
+                                return withSubmitting(handleSubmit({ step, password, twoFa: undefined }));
                             }}
                             loading={submitting}
                         />
@@ -322,7 +328,7 @@ const SrpAuthModal = ({
                         return null;
                     }
 
-                    const fido2Tab = authTypes.fido2 &&
+                    const fido2Tab = authTypes?.fido2 &&
                         fido2 && {
                             title: c('fido2: Label').t`Security key`,
                             content: (
@@ -331,6 +337,7 @@ const SrpAuthModal = ({
                                     onSubmit={() => {
                                         withSubmitting(
                                             handleSubmit({
+                                                step,
                                                 password,
                                                 twoFa: {
                                                     type: 'fido2',
@@ -345,7 +352,7 @@ const SrpAuthModal = ({
                             ),
                         };
 
-                    const totpTab = authTypes.totp && {
+                    const totpTab = authTypes?.totp && {
                         title: c('Label').t`Authenticator app`,
                         content: (
                             <TOTPForm
@@ -355,6 +362,7 @@ const SrpAuthModal = ({
                                 onSubmit={(payload) =>
                                     withSubmitting(
                                         handleSubmit({
+                                            step,
                                             password,
                                             twoFa: { type: 'code', payload },
                                         })
@@ -387,8 +395,8 @@ const SrpAuthModal = ({
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" type="submit" form={FORM_ID} loading={submitting} disabled={isLoadingAuth}>
-                    {step === Step.Password && authTypes.twoFactor
+                <Button color="norm" type="submit" form={FORM_ID} loading={submitting}>
+                    {step === Step.Password && authTypes?.twoFactor
                         ? c('Action').t`Continue`
                         : c('Action').t`Authenticate`}
                 </Button>

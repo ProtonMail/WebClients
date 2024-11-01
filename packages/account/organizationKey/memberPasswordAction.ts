@@ -2,7 +2,6 @@ import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { revoke } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { disable2FA } from '@proton/shared/lib/api/settings';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -81,7 +80,6 @@ export const changeMemberPassword = ({
             config: updatePrivateKeyRoute(updateKeysPayload),
         });
 
-        await memberApi(revoke());
         dispatch(upsertMember({ member: await getMember(api, member.ID) }));
     };
 };

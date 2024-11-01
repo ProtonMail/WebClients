@@ -2,14 +2,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import { ExternalSSOError, handleExternalSSOLogin } from '@proton/components/containers/login/ssoExternalLogin';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLoading from '@proton/hooks/useLoading';
 import { SCOPE_REAUTH_SSO, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -41,21 +39,18 @@ export interface SSOAuthModalProps
     onSuccess?: (data: SSOAuthModalResult) => Promise<void> | void;
 }
 
-const SSOAuthModal = ({ onCancel, onClose, onSuccess, onError, config, ...rest }: SSOAuthModalProps) => {
-    const [submitting] = useLoading();
-    //const errorHandler = useErrorHandler();
-    const [user] = useUser();
+const SSOAuthModal = ({ scope, onCancel, onClose, onSuccess, onError, config, ...rest }: SSOAuthModalProps) => {
     const abortRef = useRef<AbortController | null>(null);
     const handleError = useErrorHandler();
     const [state, setState] = useState<State>(initialState);
-    const [ssoInfoResponse, setSsoInfoResponse] = useState<SSOInfoResponse>();
+    const ssoInfoResponsePromiseRef = useRef<Promise<SSOInfoResponse> | null>(null);
     const api = useApi();
     const { APP_NAME } = useConfig();
 
-    const refresh = useCallback(async () => {
-        const ssoInfoResponse = await api<SSOInfoResponse>(getInfo({ intent: 'SSO', reauthScope: 'password' }));
-        setSsoInfoResponse(ssoInfoResponse);
-    }, [user.Email]);
+    const refresh = useCallback(() => {
+        // The SSO info response is cached so that browsers have an easier time allowing the new tab to be opened
+        ssoInfoResponsePromiseRef.current = api<SSOInfoResponse>(getInfo({ intent: 'SSO', reauthScope: scope }));
+    }, []);
 
     const cancelClose = () => {
         onCancel?.();
@@ -63,14 +58,14 @@ const SSOAuthModal = ({ onCancel, onClose, onSuccess, onError, config, ...rest }
     };
 
     useEffect(() => {
-        refresh().catch(cancelClose);
+        refresh();
         return () => {
             abortRef.current?.abort();
         };
     }, []);
 
     const handleSubmit = async () => {
-        if (submitting || !ssoInfoResponse) {
+        if (!ssoInfoResponsePromiseRef.current) {
             return;
         }
 
@@ -83,6 +78,7 @@ const SSOAuthModal = ({ onCancel, onClose, onSuccess, onError, config, ...rest }
             abortRef.current?.abort();
             abortRef.current = abortController;
 
+            const ssoInfoResponse = await ssoInfoResponsePromiseRef.current;
             const { token } = await handleExternalSSOLogin({
                 signal: abortController.signal,
                 token: ssoInfoResponse.SSOChallengeToken,
@@ -102,9 +98,8 @@ const SSOAuthModal = ({ onCancel, onClose, onSuccess, onError, config, ...rest }
             onClose?.();
         } catch (error) {
             if (error instanceof ExternalSSOError) {
-                handleError(error);
                 // Try again
-                await refresh().catch(cancelClose);
+                refresh();
                 setState({ type: 'error', error, extra: c('saml: Error').t`Sign in wasn't successfully completed.` });
                 return;
             }
@@ -112,7 +107,7 @@ const SSOAuthModal = ({ onCancel, onClose, onSuccess, onError, config, ...rest }
             const { code } = getApiError(error);
             // Try again
             if (code === SCOPE_REAUTH_SSO || code === API_CODES.NOT_FOUND_ERROR) {
-                await refresh().catch(cancelClose);
+                refresh();
                 handleError(error);
                 setState(initialState);
                 return;
@@ -126,7 +121,6 @@ const SSOAuthModal = ({ onCancel, onClose, onSuccess, onError, config, ...rest }
         }
     };
 
-    const isLoadingAuth = !ssoInfoResponse;
     const loading = state.type === 'loading';
 
     // Don't allow to close this modal if it's loading as it could leave other consumers in an undefined state
@@ -137,13 +131,18 @@ const SSOAuthModal = ({ onCancel, onClose, onSuccess, onError, config, ...rest }
             {...rest}
             title={c('sso').t`Sign in to your organization`}
             buttons={[
-                <Button color="norm" onClick={handleSubmit} loading={loading} disabled={isLoadingAuth}>
+                <Button color="norm" onClick={handleSubmit} loading={loading}>
                     {c('sso').t`Sign in`}
                 </Button>,
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
             <div>{c('sso').t`You'll be redirected to your third-party SSO provider.`}</div>
+            {state.type === 'error' && state.extra && (
+                <div className="mt-4">
+                    <div className="color-danger">{state.extra}</div>
+                </div>
+            )}
         </Prompt>
     );
 };
