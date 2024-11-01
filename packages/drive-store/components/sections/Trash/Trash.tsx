@@ -6,6 +6,7 @@ import { useActiveBreakpoint } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import type { EncryptedLink, LinkShareUrl } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import type { useTrashView } from '../../../store';
@@ -85,6 +86,7 @@ function Trash({ trashView, shareId }: Props) {
     const { viewportWidth } = useActiveBreakpoint();
     const { canUseDocs } = useDriveDocsFeatureFlag();
     const { openDocument } = useDocumentActions();
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(trashView.layout, trashView.isLoading);
 
     const { layout, items, sortParams, setSorting, isLoading } = trashView;
 
@@ -129,11 +131,15 @@ function Trash({ trashView, shareId }: Props) {
         [navigateToLink, browserItems]
     );
 
-    const handleItemRender = (item: TrashItem) => {
-        if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
-        }
-    };
+    const handleItemRender = useCallback(
+        (item: TrashItem) => {
+            incrementItemRenderedCounter();
+            if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
+                thumbnails.addToDownloadQueue(item.rootShareId, item.linkId, item.activeRevision.id);
+            }
+        },
+        [thumbnails, incrementItemRenderedCounter]
+    );
 
     /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(

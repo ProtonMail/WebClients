@@ -13,6 +13,7 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';
+import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import retryOnError from '../../utils/retryOnError';
 import { hasCustomPassword, hasGeneratedPasswordIncluded, isLegacySharedUrl } from '../_shares';
 import useDebouncedRequest from './useDebouncedRequest';
@@ -41,6 +42,7 @@ function usePublicSessionProvider() {
     const sessionInfo = useRef<SessionInfo>();
     const auth = useAuthentication();
     const [user, setUser] = useState<UserModel>();
+    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
 
     const initHandshake = async (token: string) => {
         /*
@@ -52,13 +54,16 @@ function usePublicSessionProvider() {
         if (persistedSession) {
             try {
                 metrics.setAuthHeaders(persistedSession.UID);
-                const resumedSession = await resumeSession({ api, localID: persistedSession.localID });
+                // We need to silence reponse, in case the token is invalid we just want to show not logged-in page instead of have error notification
+                const resumedSession = await resumeSession({ api: silentApi, localID: persistedSession.localID });
                 if (resumedSession) {
                     auth.setPassword(resumedSession.keyPassword);
                     auth.setUID(persistedSession.UID);
                     auth.setLocalID(persistedSession.localID);
                 }
-                setUser(formatUser(resumedSession.User));
+                const user = formatUser(resumedSession.User);
+                setUser(user);
+                await userSuccessMetrics.setLocalUser(persistedSession.UID, user.isPaid);
             } catch (e) {
                 // TODO: Probably getLastPersistedLocalID is the source of issue
                 // Investigate why later
@@ -118,6 +123,7 @@ function usePublicSessionProvider() {
             };
             // This enables metrics to work for both auth and un-auth customers
             metrics.setAuthHeaders(UID, AccessToken);
+            void userSuccessMetrics.setAuthHeaders(UID, AccessToken);
             return sessionInfo.current;
         });
     };

@@ -2,10 +2,10 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 import type { DriveEvent } from '../_events';
 import { type DriveEvents } from '../_events';
-import { useShareInvitation } from '../_shares';
+import { useInvitations } from '../_invitations';
 
 export const useShareBackgroundActions = () => {
-    const { convertExternalInvitation } = useShareInvitation();
+    const { convertExternalInvitation } = useInvitations();
     const convertExternalInvitationsFromEvents = (
         { events, eventId }: DriveEvents,
         processedEventCounter: (eventId: string, event: DriveEvent) => void
