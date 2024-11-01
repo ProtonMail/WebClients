@@ -28,7 +28,6 @@ import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
-import { offlineResumeRequest } from '@proton/pass/store/actions/requests';
 import { selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
@@ -46,7 +45,7 @@ const MainSwitch: FC = () => {
     const authStore = useAuthStore();
     const localID = authStore?.getLocalID();
     const offline = clientOffline(app.state.status);
-    const offlineResuming = useSelector(selectRequestInFlight(offlineResumeRequest()));
+    const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
 
     const { state: expanded, toggle } = useToggle();
 

@@ -23,7 +23,7 @@ export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasDetailsLoa
     const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
 
     const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
-        initialRequestId: aliasDetailsRequest(aliasEmail),
+        requestId: aliasDetailsRequest(aliasEmail),
         onSuccess: () => onAliasDetailsLoaded?.(aliasDetails),
         onFailure: () => {
             createNotification({

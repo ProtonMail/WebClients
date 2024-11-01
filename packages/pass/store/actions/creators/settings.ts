@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import { offlineToggleRequest, settingsEditRequest } from '@proton/pass/store/actions/requests';
+import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
@@ -52,7 +52,6 @@ export const updatePauseListItem = createAction(
 );
 
 export const offlineToggle = requestActionsFactory<OfflineModeDTO, boolean, boolean>('offline::toggle')({
-    requestId: offlineToggleRequest,
     intent: {
         prepare: (payload) =>
             withNotification({

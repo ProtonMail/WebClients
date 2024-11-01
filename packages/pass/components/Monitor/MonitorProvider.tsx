@@ -7,7 +7,6 @@ import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
-import { breachesRequest } from '@proton/pass/store/actions/requests';
 import {
     selectAliasBreaches,
     selectCustomBreaches,
@@ -45,11 +44,7 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const [action, setAction] = useState<MaybeNull<MonitorAction>>(null);
     const onClose = () => setAction(null);
 
-    const breaches = useRequest(getBreaches, {
-        initialLoading: true,
-        initialRequestId: breachesRequest(),
-    });
-
+    const breaches = useRequest(getBreaches, { loading: true, initial: true });
     useEffect(() => breaches.dispatch(), []);
 
     const context = useMemo<MonitorContextValue>(

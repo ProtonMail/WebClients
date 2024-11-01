@@ -1,24 +1,20 @@
 import { c } from 'ttag';
 
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import {
-    confirmPendingAuthDeviceRequest,
-    getAuthDevicesRequest,
-    rejectPendingAuthDeviceRequest,
-} from '@proton/pass/store/actions/requests';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
+import { prop } from '@proton/pass/utils/fp/lens';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import { ConfirmAuthDeviceError } from '@proton/shared/lib/keys/deviceConfirm';
 
-export const getAuthDevices = requestActionsFactory<void, AuthDeviceOutput[]>('auth::sso::auth_devices')({
-    requestId: getAuthDevicesRequest,
-});
+type ConfirmDeviceDTO = {
+    pendingAuthDevice: AuthDeviceOutput;
+    confirmationCode: string;
+};
 
-export const confirmPendingAuthDevice = requestActionsFactory<
-    { pendingAuthDevice: AuthDeviceOutput; confirmationCode: string },
-    string
->('auth::sso::confirm')({
-    requestId: ({ pendingAuthDevice }) => confirmPendingAuthDeviceRequest(pendingAuthDevice.ID),
+export const getAuthDevices = requestActionsFactory<void, AuthDeviceOutput[]>('auth::sso::auth_devices')();
+
+export const confirmPendingAuthDevice = requestActionsFactory<ConfirmDeviceDTO, string>('auth::sso::confirm')({
+    key: prop('pendingAuthDevice', 'ID'),
     success: {
         prepare: (payload) =>
             withNotification({
@@ -27,17 +23,17 @@ export const confirmPendingAuthDevice = requestActionsFactory<
             })({ payload }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification(
                 error instanceof ConfirmAuthDeviceError
                     ? { type: 'error', text: error.message, error: null }
                     : { type: 'error', text: c('sso').t`Sign-in failed`, error }
-            )({ error, payload: null }),
+            )({ error, payload }),
     },
 });
 
 export const rejectPendingAuthDevice = requestActionsFactory<AuthDeviceOutput, string>('auth::sso::reject')({
-    requestId: (pendingAuthDevice) => rejectPendingAuthDeviceRequest(pendingAuthDevice.ID),
+    key: prop('ID'),
     success: {
         prepare: (payload) =>
             withNotification({
@@ -46,11 +42,11 @@ export const rejectPendingAuthDevice = requestActionsFactory<AuthDeviceOutput, s
             })({ payload }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 type: 'error',
                 text: c('sso').t`Sign-in rejection failure`,
                 error,
-            })({ error, payload: null }),
+            })({ error, payload }),
     },
 });

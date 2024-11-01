@@ -14,11 +14,7 @@ import {
     itemsBulkMoveRequest,
     itemsBulkRestoreRequest,
     itemsBulkTrashRequest,
-    secureLinkCreateRequest,
-    secureLinkOpenRequest,
-    secureLinkRemoveRequest,
-    secureLinksGetRequest,
-    secureLinksRemoveInactiveRequest,
+    selectedItemKey,
 } from '@proton/pass/store/actions/requests';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
@@ -47,6 +43,7 @@ import type {
     UniqueItem,
 } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
@@ -539,25 +536,24 @@ export const itemHistoryFailure = createAction(
 );
 
 export const secureLinksGet = requestActionsFactory<void, SecureLink[]>('secure-link::get')({
-    requestId: secureLinksGetRequest,
     success: { config: { maxAge: UNIX_MINUTE } },
 });
 
 export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, SecureLink>('secure-link::create')({
-    requestId: ({ shareId, itemId }) => secureLinkCreateRequest(shareId, itemId),
+    key: selectedItemKey,
     success: { config: { data: true } },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 type: 'error',
                 text: c('Error').t`Secure link could not be created.`,
                 error,
-            })({ payload: { error: getErrorMessage(error) } }),
+            })({ payload }),
     },
 });
 
 export const secureLinkOpen = requestActionsFactory<SecureLinkQuery, SecureLinkItem>('secure-link::open')({
-    requestId: ({ token }) => secureLinkOpenRequest(token),
+    key: prop('token'),
     success: { config: { data: true } },
     failure: {
         config: { data: true },
@@ -571,7 +567,7 @@ export const secureLinkOpen = requestActionsFactory<SecureLinkQuery, SecureLinkI
 });
 
 export const secureLinkRemove = requestActionsFactory<SecureLinkDeleteDTO, SecureLinkDeleteDTO>('secure-link::remove')({
-    requestId: ({ shareId, itemId }) => secureLinkRemoveRequest(shareId, itemId),
+    key: selectedItemKey,
     intent: {
         prepare: (payload) =>
             withNotification({
@@ -588,18 +584,17 @@ export const secureLinkRemove = requestActionsFactory<SecureLinkDeleteDTO, Secur
             })({ payload }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 type: 'error',
                 text: c('Error')
                     .t`There was an error while removing the secure link. Please try again in a few minutes.`,
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
 export const secureLinksRemoveInactive = requestActionsFactory<void, SecureLink[]>('secure-links::remove::inactive')({
-    requestId: secureLinksRemoveInactiveRequest,
     intent: {
         prepare: (payload) =>
             withNotification({
@@ -616,11 +611,11 @@ export const secureLinksRemoveInactive = requestActionsFactory<void, SecureLink[
             })({ payload }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 type: 'error',
                 text: c('Error').t`Inactive secure links could not be removed.`,
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });

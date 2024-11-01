@@ -49,7 +49,7 @@ export const useAliasOptions = ({
     );
 
     const getAliasOptions = useActionRequest(getAliasOptionsIntent, {
-        initialRequestId: aliasOptionsRequest(shareId),
+        requestId: aliasOptionsRequest(shareId),
         onSuccess: sanitizedAliasOptions ? () => onAliasOptionsLoaded?.(sanitizedAliasOptions) : noop,
     });
 
