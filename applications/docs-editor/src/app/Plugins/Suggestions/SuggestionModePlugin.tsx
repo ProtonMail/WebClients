@@ -440,10 +440,13 @@ export function SuggestionModePlugin({
           } else if (isTab) {
             return editor.dispatchCommand(KEY_TAB_COMMAND, event)
           } else if (isBold) {
+            event.preventDefault()
             return editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'bold')
           } else if (isItalic) {
+            event.preventDefault()
             return editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'italic')
           } else if (isUnderline) {
+            event.preventDefault()
             return editor.dispatchCommand(FORMAT_TEXT_COMMAND, 'underline')
           }
 
