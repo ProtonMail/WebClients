@@ -17,6 +17,7 @@ import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVe
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useModals from '@proton/components/hooks/useModals';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
@@ -30,7 +31,6 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useModals } from '../../hooks';
 import useResignSKLWithPrimaryKey from '../keyTransparency/useResignSKLWithPrimaryKey';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';

@@ -3,9 +3,10 @@ import { type ChangeEvent, useEffect, useMemo, useState } from 'react';
 import last from 'lodash/last';
 import { c } from 'ttag';
 
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { useNotifications, useUserKeys } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import {
     DEFAULT_INDEX,

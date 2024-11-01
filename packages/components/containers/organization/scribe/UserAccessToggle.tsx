@@ -7,9 +7,9 @@ import {
     Toggle,
     useApi,
     useEventManager,
+    useNotifications,
     useToggle,
 } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { OrganizationWithSettings } from '@proton/shared/lib/interfaces';

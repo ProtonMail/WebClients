@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { useMembers } from '@proton/account/members/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { InlineLinkButton } from '@proton/atoms';
 import { SUBSCRIPTION_STEPS, SettingsParagraph, useSubscriptionModal } from '@proton/components';
-import { useMembers, useSubscription } from '@proton/components/hooks';
 import { BRAND_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { getHasExternalMemberCapableB2BPlan, getHasInboxB2BPlan } from '@proton/shared/lib/helpers/subscription';
 

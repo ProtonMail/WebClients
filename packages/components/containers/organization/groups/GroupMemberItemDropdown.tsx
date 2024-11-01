@@ -11,6 +11,7 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import {
     reinviteGroupMember,
@@ -21,8 +22,6 @@ import {
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
-
-import { useNotifications } from '../../../hooks';
 
 interface PermissionOption {
     label: string;
