@@ -4,10 +4,11 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useWelcomeFlags } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useApi, useISESEnabledElectron, useSubscribeEventManager, useWelcomeFlags } from '@proton/components';
+import { useApi, useISESEnabledElectron, useSubscribeEventManager } from '@proton/components';
 import {
     checkVersionedESDB,
     contentIndexingProgress,

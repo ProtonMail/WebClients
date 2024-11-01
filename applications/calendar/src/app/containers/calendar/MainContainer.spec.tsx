@@ -184,7 +184,10 @@ jest.mock('@proton/mail/contactEmails/hooks', () => ({
 }));
 jest.mock('@proton/features/useFeature', () => () => ({}));
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
-jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({ useWelcomeFlags: () => [{}] }));
+jest.mock('@proton/account/welcomeFlags/index', () => ({
+    __esModule: true,
+    useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
+}));
 jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => () => ({}));

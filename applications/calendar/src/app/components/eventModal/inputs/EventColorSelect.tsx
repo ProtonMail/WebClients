@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import {
     Badge,
@@ -12,16 +13,12 @@ import {
     useModalState,
     useSpotlightOnFeature,
     useSpotlightShow,
-    useUpsellConfig
+    useUpsellConfig,
 } from '@proton/components';
-import { useWelcomeFlags } from '@proton/components/hooks';
+import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { FeatureCode } from '@proton/features';
 import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import {
-    getUpsellRef,
-    useNewUpsellModalVariant,
-} from '@proton/shared/lib/helpers/upsell';
-import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
+import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import paintImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paint.svg';
 

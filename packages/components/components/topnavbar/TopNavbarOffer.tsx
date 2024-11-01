@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
@@ -14,7 +15,7 @@ import OfferModal from '../../containers/offers/components/OfferModal';
 import useOfferModal from '../../containers/offers/hooks/useOfferModal';
 import type { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
-import { useSubscription, useWelcomeFlags } from '../../hooks';
+import { useSubscription } from '../../hooks';
 import { PromotionButton } from '../button/PromotionButton';
 import TopNavbarOfferSubscriptionReminder from './TopNavBarOfferSubscriptionReminder';
 import TopNavbarListItem from './TopNavbarListItem';
