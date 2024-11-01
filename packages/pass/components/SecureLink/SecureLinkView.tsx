@@ -9,7 +9,6 @@ import { DateBadge } from '@proton/pass/components/Layout/Badge/DateBadge';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { intoSecureLinkItemRevision } from '@proton/pass/lib/secure-links/secure-links.utils';
 import { secureLinkOpen } from '@proton/pass/store/actions';
-import { secureLinkOpenRequest } from '@proton/pass/store/actions/requests';
 import type { Maybe, MaybeNull, SecureLinkItem } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -22,10 +21,10 @@ const SecureLinkView: FC = () => {
     const [error, setError] = useState<MaybeNull<string>>(null);
 
     const { dispatch, loading } = useRequest(secureLinkOpen, {
-        initialRequestId: secureLinkOpenRequest(token),
-        onFailure: ({ data }) => setError(data.error),
+        initial: { token, linkKey: '' },
         onStart: () => setError(null),
         onSuccess: ({ data }) => setResponse(data),
+        onFailure: ({ data }) => setError(data.error),
     });
 
     useEffect(() => dispatch({ token, linkKey: hash.replaceAll('#', '') }), []);

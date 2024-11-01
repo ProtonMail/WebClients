@@ -15,7 +15,6 @@ import { useRerender } from '@proton/pass/hooks/useRerender';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { unlock } from '@proton/pass/store/actions';
-import { unlockRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -31,7 +30,7 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
     const authStore = useAuthStore();
     const history = useHistory<MaybeNull<AuthRouteState>>();
 
-    const biometricsUnlock = useRequest(unlock, { initialRequestId: unlockRequest() });
+    const biometricsUnlock = useRequest(unlock, { initial: true });
     const disabled = !online && !offlineEnabled;
     const [key, rerender] = useRerender();
     const { getBiometricsKey } = usePassCore();

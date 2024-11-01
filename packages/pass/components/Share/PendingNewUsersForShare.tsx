@@ -7,7 +7,6 @@ import { PendingNewUser } from '@proton/pass/components/Share/PendingNewUser';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { getShareAccessOptions } from '@proton/pass/store/actions';
-import { shareAccessOptionsRequest } from '@proton/pass/store/actions/requests';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { NewUserInviteState } from '@proton/pass/types';
 
@@ -21,8 +20,8 @@ export const PendingNewUsersForShare: FC<Props> = ({
     onInvitesReady,
 }) => {
     const { revalidate, loading, error } = useRequest(getShareAccessOptions, {
-        initialRequestId: shareAccessOptionsRequest(shareId),
-        initialLoading: true,
+        initial: { shareId },
+        loading: true,
         onSuccess: onInvitesReady,
     });
 

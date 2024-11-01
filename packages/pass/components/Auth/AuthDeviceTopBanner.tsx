@@ -9,7 +9,6 @@ import { TopBar } from '@proton/pass/components/Layout/Bar/TopBar';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { confirmPendingAuthDevice, rejectPendingAuthDevice } from '@proton/pass/store/actions/creators/sso';
-import { confirmPendingAuthDeviceRequest, rejectPendingAuthDeviceRequest } from '@proton/pass/store/actions/requests';
 import { selectPendingAuthDevices } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -23,14 +22,11 @@ const AuthDeviceModal: FC<Props> = ({ pendingAuthDevice, onExit }) => {
     const onClose = () => setOpen(false);
 
     const confirm = useRequest(confirmPendingAuthDevice, {
-        initialRequestId: confirmPendingAuthDeviceRequest(pendingAuthDevice.ID),
+        initial: { pendingAuthDevice, confirmationCode: '' },
         onSuccess: onClose,
     });
 
-    const reject = useRequest(rejectPendingAuthDevice, {
-        initialRequestId: rejectPendingAuthDeviceRequest(pendingAuthDevice.ID),
-        onStart: onClose,
-    });
+    const reject = useRequest(rejectPendingAuthDevice, { initial: pendingAuthDevice, onStart: onClose });
 
     return (
         <AbstractAuthDevicesModal

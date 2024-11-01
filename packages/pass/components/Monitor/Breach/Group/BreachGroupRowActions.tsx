@@ -16,8 +16,7 @@ import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTabl
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { getAddressId, intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
-import { addCustomAddress } from '@proton/pass/store/actions';
-import { addCustomAddressRequest, deleteCustomAddressRequest } from '@proton/pass/store/actions/requests';
+import { addCustomAddress, deleteCustomAddress } from '@proton/pass/store/actions';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
@@ -27,11 +26,11 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
     const { type, email } = row;
 
     const add = useRequest(addCustomAddress, {
-        initialRequestId: addCustomAddressRequest(row.email),
+        initial: row.email,
         onSuccess: ({ data }) => verifyAddress(intoCustomMonitorAddress(data)),
     });
 
-    const deleting = useSelector(selectRequestInFlight(deleteCustomAddressRequest(email)));
+    const deleting = useSelector(selectRequestInFlight(deleteCustomAddress.requestID(email)));
     const loading = add.loading || deleting;
 
     if (type === AddressType.CUSTOM) {
