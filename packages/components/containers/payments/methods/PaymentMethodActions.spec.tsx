@@ -3,13 +3,13 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useModals from '@proton/components/hooks/useModals';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { SavedPaymentMethod } from '@proton/payments';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 import { mockOnSessionMigration, mockUseSubscription, mockUseUser } from '@proton/testing';
 
-import { useModals } from '../../../hooks';
 import PaymentMethodActions from './PaymentMethodActions';
 
 jest.mock('../../../hooks/useNotifications', () =>

@@ -1,14 +1,10 @@
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useWelcomeFlags } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import {
-    useActiveBreakpoint,
-    useOrganization,
-    useSpotlightOnFeature,
-    useSpotlightShow,
-    useWelcomeFlags,
-} from '@proton/components';
+import { useActiveBreakpoint, useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 import { FeatureCode } from '@proton/features/interface';
 import spotlightVideoConfImg from '@proton/styles/assets/img/illustrations/spotlight-video-conference.svg';
 import useFlag from '@proton/unleash/useFlag';

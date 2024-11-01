@@ -32,8 +32,9 @@ jest.mock('@proton/react-redux-store', () => ({
     baseUseSelector: jest.fn(),
 }));
 
-jest.mock('@proton/components/hooks', () => ({
-    useDrawer: jest.fn(),
+jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
+    __esModule: true,
+    default: jest.fn(),
 }));
 
 jest.mock('../views/SecurityCenter/useSecurityCenter', () => jest.fn());

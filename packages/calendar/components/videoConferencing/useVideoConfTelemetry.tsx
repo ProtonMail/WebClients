@@ -1,5 +1,7 @@
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useApi, useSubscription, useUserSettings } from '@proton/components/index';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useApi } from '@proton/components';
 import type { TelemetryEvents } from '@proton/shared/lib/api/telemetry';
 import { TelemetryCalendarVideoConferencing, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helpers/metrics';
