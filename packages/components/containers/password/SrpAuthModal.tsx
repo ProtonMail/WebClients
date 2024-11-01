@@ -219,15 +219,7 @@ const SrpAuthModal = ({
 
         const infoResult = await api<InfoAuthedResponse>(getInfo({ intent: 'Proton' }));
 
-        const authTypes =
-            // Locked scope doesn't require 2fa
-            scope === 'locked'
-                ? {
-                      totp: false,
-                      fido2: false,
-                      twoFactor: false,
-                  }
-                : getAuthTypes(infoResult, userSettings, APP_NAME);
+        const authTypes = getAuthTypes({ scope, infoResult, userSettings, app: APP_NAME });
 
         infoResultRef.current.data = { infoResult, authTypes };
 
@@ -297,6 +289,10 @@ const SrpAuthModal = ({
     const infoResult = infoResultRef.current.data?.infoResult;
     const authTypes = infoResultRef.current.data?.authTypes;
     const fido2 = infoResult?.['2FA']?.FIDO2;
+    // This is optimistically determining if we should show "Continue" or "Authenticate" since we don't have the /info result yet
+    // by looking at user settings.
+    // NOTE: This will give wrong values for admins signed in as sub-users.
+    const optimisticTwoFactorEnabled = authTypes ? authTypes.twoFactor : Boolean(userSettings?.['2FA']?.Enabled);
 
     return (
         <Modal {...rest} size="small" onClose={handleClose}>
@@ -396,7 +392,7 @@ const SrpAuthModal = ({
             <ModalFooter>
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
                 <Button color="norm" type="submit" form={FORM_ID} loading={submitting}>
-                    {step === Step.Password && authTypes?.twoFactor
+                    {step === Step.Password && optimisticTwoFactorEnabled
                         ? c('Action').t`Continue`
                         : c('Action').t`Authenticate`}
                 </Button>
