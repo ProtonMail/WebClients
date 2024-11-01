@@ -30,6 +30,7 @@ import type { GetQuotesArgs } from '@proton/wallet/store';
 import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, Input, SearchableSelect, Select } from '../../../atoms';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
+import { countDecimal, formatNumberForDisplay } from '../../../utils';
 import { useDebounceEffect } from '../../../utils/hooks/useDebouncedEffect';
 import { getGatewayNameByGatewayProvider } from '../../../utils/onramp';
 import { DisclaimerModal } from './DisclaimerModal';
@@ -216,6 +217,19 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
 
     const providerName = getGatewayNameByGatewayProvider(selectedPaymentProvider);
 
+    const [digitsAfterDecimalPoint, setDigitsAfterDecimalPoint] = useState<number>(countDecimal(amount.toString()));
+
+    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        const countDigit = countDecimal(newValue);
+        if (countDigit > 2) {
+            return;
+        }
+        setDigitsAfterDecimalPoint(countDecimal(newValue));
+
+        setAmount(Number(event.target.value));
+    };
+
     return (
         <>
             <div className="flex flex-column max-w-full justify-center items-center">
@@ -247,10 +261,10 @@ export const Amount = ({ onConfirm, country: inputCountry, preselectedQuote }: P
                         <Input
                             isGroupElement
                             label={c('bitcoin buy').t`You pay`}
-                            value={amount}
+                            value={`${formatNumberForDisplay(amount, 2, digitsAfterDecimalPoint)}`}
                             type="number"
                             onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                                setAmount(Number(e.target.value));
+                                onChange(e);
                             }}
                             className="invisible-number-input-arrow"
                             disabled={loadingQuotes}
