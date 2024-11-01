@@ -5,6 +5,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+import { getActivityLogText, getTeamPoliciesText } from './pass';
 
 export const getTwoFA = (): PlanCardFeatureDefinition => {
     return {
@@ -19,6 +20,20 @@ export const getRequire2FA = (included: boolean = false): PlanCardFeatureDefinit
     return {
         text: c('new_plans: feature').t`Require 2FA for organization`,
         included,
+    };
+};
+
+export const getTeamPolicies = (): PlanCardFeatureDefinition => {
+    return {
+        text: getTeamPoliciesText(),
+        included: true,
+    };
+};
+
+export const getActivityLog = (): PlanCardFeatureDefinition => {
+    return {
+        text: getActivityLogText(),
+        included: true,
     };
 };
 

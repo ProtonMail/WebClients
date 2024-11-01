@@ -35,7 +35,7 @@ export const PlanDescription = ({ list }: { list: Included[] }) => {
                         if (item.type === 'text') {
                             return (
                                 <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
-                                    <div className="flex-auto text-ellipsis">{item.text}</div>
+                                    <div className="flex-auto">{item.text}</div>
                                 </div>
                             );
                         }

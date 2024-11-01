@@ -22,8 +22,7 @@ import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/feature
 import { getNUsersText } from '../../../features/highlights';
 import {
     get2FAAuthenticatorText,
-    getDevicesAndAliasesText,
-    getDevicesText,
+    getAdvancedAliasFeaturesText,
     getLoginsAndNotesText,
     getPassUsersText,
     getSecureSharingTextEmpty,
@@ -126,11 +125,15 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: getDevicesText(),
+                text: getUnlimitedHideMyEmailAliasesText(),
             },
             {
                 type: 'text',
-                text: getUnlimitedHideMyEmailAliasesText(),
+                text: getAdvancedAliasFeaturesText(),
+            },
+            {
+                type: 'text',
+                text: getSecureSharingTextEmpty(),
             },
             {
                 type: 'text',
@@ -152,7 +155,11 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: getDevicesAndAliasesText(),
+                text: getUnlimitedHideMyEmailAliasesText(),
+            },
+            {
+                type: 'text',
+                text: getAdvancedAliasFeaturesText(),
             },
             {
                 type: 'text',
