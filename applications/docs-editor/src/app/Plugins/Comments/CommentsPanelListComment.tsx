@@ -1,4 +1,5 @@
 import { Button } from '@proton/atoms'
+import type { MouseEventHandler } from 'react'
 import { useCallback, useState } from 'react'
 import {
   DropdownMenu,
@@ -57,10 +58,12 @@ export function CommentsPanelListComment({
 
   const suggestionContent = useSuggestionCommentContent(comment, thread, suggestionID, editor)
 
-  const acceptSuggestion = () => {
+  const acceptSuggestion: MouseEventHandler = (event) => {
     if (!suggestionID) {
       return
     }
+    event.preventDefault()
+    event.stopPropagation()
     const summary = JSON.stringify(generateSuggestionSummary(editor, markNodeMap, suggestionID))
     const didAccept = editor.dispatchCommand(ACCEPT_SUGGESTION_COMMAND, suggestionID)
     if (!didAccept) {
@@ -68,12 +71,15 @@ export function CommentsPanelListComment({
     }
     application.logger.info('Accepting suggestion thread', thread.id)
     controller.acceptSuggestion(thread.id, summary).catch(sendErrorMessage)
+    editor.focus()
   }
 
-  const rejectSuggestion = () => {
+  const rejectSuggestion: MouseEventHandler = (event) => {
     if (!suggestionID) {
       return
     }
+    event.preventDefault()
+    event.stopPropagation()
     const summary = JSON.stringify(generateSuggestionSummary(editor, markNodeMap, suggestionID))
     const didReject = editor.dispatchCommand(REJECT_SUGGESTION_COMMAND, suggestionID)
     if (!didReject) {
@@ -81,6 +87,7 @@ export function CommentsPanelListComment({
     }
     application.logger.info('Rejecting suggestion thread', thread.id)
     controller.rejectSuggestion(thread.id, summary).catch(sendErrorMessage)
+    editor.focus()
   }
 
   const deleteThread = async () => {
