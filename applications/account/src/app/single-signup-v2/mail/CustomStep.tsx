@@ -74,7 +74,7 @@ const CustomStep = ({
     const cacheRef = useRef<SignupCacheResult>(model.cache);
     const cache = cacheRef.current!;
     const accountData = cache.accountData;
-    const [defaultCountry] = useMyCountry();
+    const defaultCountry = useMyCountry();
     const handleError = useErrorHandler();
     const verificationModel = cache.humanVerificationResult?.verificationModel;
 

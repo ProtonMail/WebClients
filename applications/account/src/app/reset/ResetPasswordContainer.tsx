@@ -80,7 +80,7 @@ const ResetPasswordContainer = ({ toApp, metaTags, onLogin, setupVPN, loginUrl, 
     const ktActivation = useKTActivation();
     const resetSelfAudit = useResetSelfAudit();
 
-    const [defaultCountry] = useMyCountry();
+    const defaultCountry = useMyCountry();
 
     const createFlow = useFlowRef();
 

@@ -842,7 +842,6 @@ export { default as useAuthentication } from './hooks/useAuthentication';
 export { default as useAutocompleteAriaProps } from './hooks/useAutocompleteAriaProps';
 export { default as useBeforeUnload } from './hooks/useBeforeUnload';
 export { default as useCache } from './hooks/useCache';
-export { default as useCachedModelResult } from './hooks/useCachedModelResult';
 export { default as useCalendarShareInvitationActions } from './hooks/useCalendarShareInvitationActions';
 export { default as useCalendarShareInvitations } from './hooks/useCalendarShareInvitations';
 export { default as useConfig } from './hooks/useConfig';
