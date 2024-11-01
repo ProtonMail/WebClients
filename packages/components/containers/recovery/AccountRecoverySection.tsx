@@ -24,10 +24,10 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
     const [loadingPhoneReset, withLoadingPhoneReset] = useLoading();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const [defaultCountry, loadingCountry] = useMyCountry();
+    const defaultCountry = useMyCountry();
     const [authModal, showAuthModal] = useModalTwoPromise<{ config: any }, AuthModalResult>();
 
-    if (loadingUserSettings || !userSettings || loadingCountry) {
+    if (loadingUserSettings || !userSettings) {
         return <Loader />;
     }
 

@@ -359,7 +359,7 @@ const SignupContainer = ({
         throw error;
     }
 
-    const [defaultCountry] = useMyCountry();
+    const defaultCountry = useMyCountry();
 
     const handleChangeCurrency = async (currency: Currency) => {
         const checkResult = await getSubscriptionPrices(

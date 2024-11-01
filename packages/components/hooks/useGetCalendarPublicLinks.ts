@@ -14,10 +14,7 @@ export const useGetCalendarPublicLinks = () => {
     const api = useApi();
     const cache = useCache();
     const miss = useCallback(
-        (calendarID: string) => {
-            if (!calendarID) {
-                return Promise.resolve();
-            }
+        (calendarID: string): Promise<CalendarUrlsResponse> => {
             return api<CalendarUrlsResponse>(getPublicLinks(calendarID));
         },
         [api]
