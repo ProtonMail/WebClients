@@ -84,6 +84,7 @@ import { $insertDividerAsSuggestion } from './insertDividerAsSuggestion'
 import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
 import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfNeeded'
 import { $setElementAlignmentAsSuggestion } from './setElementAlignmentAsSuggestion'
+import { useNotifications } from '@proton/components'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -102,6 +103,7 @@ export function SuggestionModePlugin({
 
   const [suggestionModeLogger] = useState(() => new Logger('docs-suggestions-mode'))
 
+  const { createNotification } = useNotifications()
   const [alertModal, showAlertModal] = useGenericAlertModal()
 
   /**
@@ -395,7 +397,7 @@ export function SuggestionModePlugin({
       editor.registerCommand(
         BEFOREINPUT_EVENT_COMMAND,
         (event) => {
-          return $handleBeforeInputEvent(editor, event, addCreatedIDtoSet, suggestionModeLogger)
+          return $handleBeforeInputEvent(editor, event, addCreatedIDtoSet, suggestionModeLogger, createNotification)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
@@ -689,7 +691,7 @@ export function SuggestionModePlugin({
         COMMAND_PRIORITY_CRITICAL,
       ),
     )
-  }, [controller, editor, isSuggestionMode, onUserModeChange, showAlertModal, suggestionModeLogger])
+  }, [controller, createNotification, editor, isSuggestionMode, onUserModeChange, showAlertModal, suggestionModeLogger])
 
   return <>{alertModal}</>
 }
