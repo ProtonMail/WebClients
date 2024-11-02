@@ -97,7 +97,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [{ protonDomains, premiumDomains }] = useProtonDomains();
     const [members, loadingMembers] = useMembers();
-    const [subscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscription();
     const [addresses] = useAddresses();
     const [user] = useUser();
     const { value: memberAddressesMap, retry } = useMemberAddresses({ members, partial: true });
@@ -350,9 +350,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         '',
     ];
 
-    const disableInviteUserButton = loadingOrganization || loadingCustomDomains || hasReachedLimit;
+    const disableInviteUserButton =
+        loadingSubscription || loadingOrganization || loadingCustomDomains || hasReachedLimit;
 
     const disableAddUserButton =
+        loadingSubscription ||
         loadingOrganization ||
         loadingCustomDomains ||
         (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
