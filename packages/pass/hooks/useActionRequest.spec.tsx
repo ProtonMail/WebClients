@@ -36,7 +36,7 @@ const buildHook = (useInitialRequestId: boolean = true, initialActions: UnknownA
         hook: renderHook<PropsWithChildren, ReturnType<typeof useActionRequest>>(
             () =>
                 useActionRequest(start, {
-                    initialRequestId: useInitialRequestId ? requestId : undefined,
+                    requestId: useInitialRequestId ? requestId : undefined,
                     onStart,
                     onSuccess,
                     onFailure,
