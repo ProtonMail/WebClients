@@ -639,6 +639,66 @@ describe('$handleBeforeInputEvent', () => {
             })
           })
         })
+
+        describe('Has empty suggestion(s)', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const root = $getRoot()
+              const listItem = $createListItemNode().append(
+                $createSuggestionNode('test', 'align-change'),
+                $createSuggestionNode('test', 'indent-change'),
+              )
+              const list = $createListNode('bullet').append(listItem)
+              root.append(list)
+              listItem.selectEnd()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'insertParagraph',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          test('root should have 1 child', () => {
+            editor!.read(() => {
+              expect($getRoot().getChildrenSize()).toBe(1)
+            })
+          })
+
+          test('only child should be paragraph', () => {
+            editor!.read(() => {
+              expect($isParagraphNode($getRoot().getFirstChild())).toBe(true)
+            })
+          })
+
+          test('paragraph should have block-type-change suggestion', () => {
+            editor!.read(() => {
+              const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+              const suggestion = paragraph.getFirstChildOrThrow<ProtonNode>()
+              expect($isSuggestionNode(suggestion)).toBe(true)
+              expect(suggestion.getSuggestionTypeOrThrow()).toBe('block-type-change')
+              expect(suggestion.__properties.nodePropertiesChanged!.initialBlockType).toBe('bullet')
+            })
+          })
+
+          test('paragraph should have existing suggestions', () => {
+            editor!.read(() => {
+              const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+              const suggestion1 = paragraph.getChildAtIndex<ProtonNode>(1)!
+              expect($isSuggestionNode(suggestion1)).toBe(true)
+              expect(suggestion1.getSuggestionTypeOrThrow()).toBe('align-change')
+              const suggestion2 = paragraph.getChildAtIndex<ProtonNode>(2)!
+              expect($isSuggestionNode(suggestion2)).toBe(true)
+              expect(suggestion2.getSuggestionTypeOrThrow()).toBe('indent-change')
+            })
+          })
+        })
       })
     })
 
