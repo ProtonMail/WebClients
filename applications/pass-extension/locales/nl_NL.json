@@ -95,6 +95,9 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Continue offline": [
+        "Offline doorgaan"
+      ],
       "Continue without pinning": [
         "Doorgaan zonder vastpinnen"
       ],
@@ -176,6 +179,12 @@
       "Disable autosave on this website": [
         "Automatisch opslaan op deze website uitschakelen"
       ],
+      "Disable instead": [
+        "In plaats daarvan uitschakelen"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Schakel deze alias uit om geen e-mails meer te ontvangen die naar deze alias worden verzonden"
+      ],
       "Discard": [
         "Verwijderen"
       ],
@@ -199,6 +208,12 @@
       ],
       "Edit vault": [
         "Kluis bewerken"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Schakel deze alias in om e-mails te ontvangen die naar deze alias verzonden worden"
+      ],
+      "Entire vault": [
+        "Volledige kluis"
       ],
       "Exclude from monitoring": [
         "Uitsluiten van controle"
@@ -224,8 +239,14 @@
       "Generate password": [
         "Wachtwoord genereren"
       ],
+      "Generate secure link": [
+        "Beveiligde link genereren"
+      ],
       "Generated passwords": [
         "Gegenereerde wachtwoorden"
+      ],
+      "Generating secure link...": [
+        "Beveiligde link genereren..."
       ],
       "Get mobile apps": [
         "Download mobiele apps"
@@ -360,6 +381,9 @@
       "Pin item": [
         "Item vastpinnen"
       ],
+      "Please retry": [
+        "Probeer het opnieuw"
+      ],
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
@@ -381,6 +405,9 @@
       "Remove access": [
         "Toegang verwijderen"
       ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Verwijder alle verlopen links (${ inactiveLinkCount })"
+      ],
       "Remove link": [
         "Link verwijderen"
       ],
@@ -398,6 +425,9 @@
       ],
       "Restore item": [
         "Item herstellen"
+      ],
+      "Restrict number of views": [
+        "Beperk aantal weergaven"
       ],
       "Retry": [
         "Opnieuw proberen"
@@ -446,6 +476,9 @@
       ],
       "Share": [
         "Delen"
+      ],
+      "Share secure link": [
+        "Beveiligde link delen"
       ],
       "Share this vault": [
         "Deel deze kluis"
@@ -539,6 +572,9 @@
       ],
       "Write us on Twitter": [
         "Schrijf ons op Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
       ]
     },
     "bf2024: Deal": {
@@ -549,6 +585,9 @@
     "bf2024: Info": {
       "All premium features. 6 users. 1 easy subscription.": [
         "Alle premium functionaliteiten. 6 gebruikers. 1 eenvoudig abonnement."
+      ],
+      "Limited-stock available!": [
+        "Beperkte voorraad beschikbaar!"
       ]
     },
     "bf2024: Label": {
@@ -559,6 +598,12 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Betaal eenmalig en ontvang ${ lifetimeAccessJSX } om over Plus te gaan. Alleen ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Bespaar tot ${ discountJSX } op Pass Familie. Alleen ${ relativePrice }/maand."
       ]
     },
     "Browser": {
@@ -606,6 +651,12 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-bestand kon niet worden verwerkt. ${ errorDetail }"
+      ],
+      "[Error] an item could not be parsed": [
+        "[Error] een item kon niet worden verwerkt"
+      ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Alias kon niet worden bijgewerkt. Probeer het later opnieuw"
       ],
       "Alias options could not be resolved": [
         "Alias-opties konden niet worden opgevraagd"
@@ -738,6 +789,9 @@
       "Failed to restore items from trash": [
         "Fout bij het herstellen van items uit de prullenbak"
       ],
+      "Failed to sync aliases": [
+        "Fout bij het synchroniseren van aliassen"
+      ],
       "Failed to transfer this vault's ownership.": [
         "Overzetten van eigendom van deze kluis is mislukt."
       ],
@@ -773,6 +827,9 @@
       ],
       "Importing items failed": [
         "Items importeren mislukt"
+      ],
+      "Inactive secure links could not be removed.": [
+        "Inactieve beveiligde links konden niet worden verwijderd."
       ],
       "Invalid password manager": [
         "Ongeldige wachtwoordbeheerder"
@@ -834,6 +891,12 @@
       "Restoring trashed items failed": [
         "Verwijderde items herstellen mislukt"
       ],
+      "Secure link could not be created.": [
+        "Beveiligde link kon niet worden aangemaakt."
+      ],
+      "Secure link could not be opened.": [
+        "Beveiligde link kon niet worden geopend."
+      ],
       "Settings update failed": [
         "Bijwerken instellingen mislukt"
       ],
@@ -854,6 +917,9 @@
       ],
       "The URL is in the list": [
         "De URL is in de lijst"
+      ],
+      "There was an error while removing the secure link. Please try again in a few minutes.": [
+        "Er is een fout opgetreden bij het verwijderen van de beveiligde link. Probeer het over een paar minuten opnieuw."
       ],
       "This may occur after a long time of not using ${ PASS_SHORT_APP_NAME }, or clearing your Safari history.": [
         "Dit kan gebeuren na een lange tijd dat ${ PASS_SHORT_APP_NAME } niet wordt gebruikt, of uw Safari geschiedenis opschonen."
@@ -933,17 +999,6 @@
         "Er is iets fout gegaan"
       ]
     },
-    "FamilyPlanPromo2024": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Alle premium-functionaliteiten. 6 gebruikers. 1 eenvoudig abonnement."
-      ],
-      "Get it for ${ price }/month": [
-        "Neem het voor ${ price }/maand"
-      ],
-      "Introducing ${ planNameJSX }": [
-        "Ontdek ${ planNameJSX }"
-      ]
-    },
     "file size format": {
       "byte": [
         "byte",
@@ -998,6 +1053,13 @@
         "${ count } keer",
         "${ count } keren"
       ],
+      "${ count } view": [
+        "${ count } weergave",
+        "${ count } weergaven"
+      ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } keer bekeken"
+      ],
       "${ memberCount } member": [
         "${ memberCount } lid",
         "${ memberCount } leden"
@@ -1011,6 +1073,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zal het favicon van het item weergeven via de geanonimiseerde afbeeldingsproxy van ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } zal alleen logins importeren, creditcards en identiteiten."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } zal laten weten van zodra gegenereerde wachtwoorden automatisch zijn ingevuld."
@@ -1052,6 +1117,12 @@
       "Access successfully confirmed": [
         "Toegang succesvol bevestigd"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Toegang tot ${ PASS_APP_NAME } vereist altijd uw ${ BRAND_NAME } wachtwoord."
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Toegang tot ${ PASS_APP_NAME } vereist uw vingerafdruk of apparaat pincode."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Krijg onderweg toegang tot uw wachtwoorden met onze mobiele apps."
       ],
@@ -1061,8 +1132,29 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Na het importeren van uw gegevens kunt u het CSV-bestand verwijderen dat uw wachtwoorden voor beveiliging bevat."
       ],
+      "Alias management features from SimpleLogin are coming soon!": [
+        "Alias beheer functies van SimpleLogin komen binnenkort!"
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias met succes uitgeschakeld. U ontvangt niet langer e-mails verzonden naar ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias is succesvol ingeschakeld. U kunt nu e-mails ontvangen verzonden naar ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Alias synchronisatie tussen uw ${ BRAND_NAME } en SimpleLogin accounts is actief."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Aliassen in de prullenbak worden doorgestuurd naar e-mails. Als u geen e-mails meer wilt ontvangen van dit adres, schakel dit in plaats daarvan uit."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Aliassen niet gesynchroniseerd (${ aliasCount })"
+      ],
       "All breaches for this address were resolved": [
         "Alle inbreuken op dit adres zijn opgelost"
+      ],
+      "All inactive secure links were removed": [
+        "Alle inactieve beveiligde links zijn verwijderd"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle items uit \"${ payload.content.name }\" succesvol verplaatst"
@@ -1079,6 +1171,9 @@
       "An item previously shared with you was removed": [
         "Een item dat eerder gedeeld was met u, werd verwijderd"
       ],
+      "Are you sure you want to remove the link?": [
+        "Weet u zeker dat u de koppeling wilt verwijderen?"
+      ],
       "Auto-lock successfully disabled.": [
         "Auto-vergrendelen succesvol ingeschakeld."
       ],
@@ -1088,8 +1183,20 @@
       "Autosaved on ${ url }": [
         "Automatisch bewaard op ${ url }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Voordat u uw gegevens exporteert met dit formaat, open Safari instellingen -> \"Algemene\" tab -> schakel de optie \"Open veilige bestanden na het downloaden\" uit. Dit voorkomt dat Safari op een onjuiste manier het geëxporteerde bestand kan extraheren."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biometrie lock succesvol geregistreerd. Gebruik het om ${ PASS_APP_NAME } te ontgrendelen"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometrie wordt uitgeschakeld en moet opnieuw worden ingeschakeld."
+      ],
       "Built in 2FA authenticator": [
         "Ingebouwd in 2FA-authenticator"
+      ],
+      "Can be viewed": [
+        "Kan worden bekeken"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan items aanmaken, bewerken, verwijderen en exporteren in deze kluis."
@@ -1114,6 +1221,9 @@
       ],
       "Close this window in order to use another passkey manager.": [
         "Sluit dit venster om een andere toegangscodemanager te gebruiken."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Bevestig uw extra wachtwoord om verder te gaan met de verwijdering ervan."
       ],
       "Congratulations, your access has been confirmed": [
         "Gefeliciteerd, uw toegang werd bevestigd"
@@ -1157,6 +1267,9 @@
       "Drop to import": [
         "Neerzetten om te importeren"
       ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Door een beperking van de Safari-browserextensies ontbreekt na het exporteren van de gegevens de bestandsextensie “.pgp”. Geef het bestand na het exporteren een andere naam met de extensie .pgp (bijv. file.pgp)."
+      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importeer eenvoudig uw bestaande wachtwoorden in ${ PASS_APP_NAME }."
       ],
@@ -1180,6 +1293,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Schakel auto-vergrendeling in om uw gegevens te beveiligen"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Biometrie automatisch vergrendelen inschakelen"
+      ],
+      "Enabling biometrics lock failed": [
+        "Biometrie vergrendeling inschakelen mislukt"
       ],
       "Enabling offline mode...": [
         "Offline modus inschakelen..."
@@ -1207,6 +1326,12 @@
       ],
       "Expires in ${ remainingTime }": [
         "Verloopt over ${ remainingTime }"
+      ],
+      "Extra password successfully created": [
+        "Extra wachtwoord succesvol aangemaakt"
+      ],
+      "Extra password successfully removed": [
+        "Extra wachtwoord succesvol verwijderd"
       ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
@@ -1331,6 +1456,9 @@
       "Monitoring settings successfully updated": [
         "Monitoring instellingen succesvol bijgewerkt"
       ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt je wachtwoord en je persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
@@ -1422,11 +1550,35 @@
       "Please confirm your extra password": [
         "Bevestig uw extra wachtwoord"
       ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Bevestig uw extra wachtwoord om biometrische gegevens automatisch te kunnen vergrendelen."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Bevestig uw extra wachtwoord om automatisch te vergrendelen met uw extra wachtwoord."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Bevestig uw extra wachtwoord om uw ${ PASS_APP_NAME } gegevens te exporteren"
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Bevestig uw extra wachtwoord om uw huidige vergrendeling ongedaan te maken."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Bevestig uw extra wachtwoord om de automatische vergrendeltijd bij te werken."
+      ],
       "Please confirm your password": [
         "Bevestig uw wachtwoord"
       ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Bevestig uw wachtwoord om biometrische gegevens automatisch te kunnen vergrendelen."
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Bevestig uw wachtwoord om automatisch te vergrendelen met uw wachtwoord."
+      ],
       "Please confirm your password in order to unregister your current lock.": [
         "Bevestig uw wachtwoord om uw huidige vergrendeling te deactiveren."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Bevestig uw wachtwoord om de auto-lock tijd bij te werken."
       ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Bevestig uw PIN-code om uw huidige vergrendeling te deactiveren."
@@ -1437,8 +1589,14 @@
       "Please consider leaving a review.": [
         "Overweeg om een review te schrijven."
       ],
+      "Please do not close this window": [
+        "Sluit dit venster niet"
+      ],
       "Please enter your current PIN code to continue": [
         "Voer uw huidige pincode in om door te gaan"
+      ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Voer uw extra wachtwoord in om ${ PASS_SHORT_APP_NAME } te gebruiken."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Upgrade om Vroegtijdige toegang te hebben ${ PASS_APP_NAME } web app"
@@ -1461,8 +1619,20 @@
       "Quickly autofill your saved credentials.": [
         "Vul snel automatisch uw opgeslagen inloggegevens in."
       ],
+      "Registering extra password...": [
+        "Extra wachtwoord wordt geregistreerd..."
+      ],
       "Registering PIN lock failed": [
         "Registreren PIN-vergrendeling mislukt"
+      ],
+      "Removing all inactive secure links...": [
+        "Alle inactieve beveiligde koppelingen verwijderen..."
+      ],
+      "Removing extra password...": [
+        "Extra wachtwoord wordt verwijderd..."
+      ],
+      "Removing secure link...": [
+        "Beveiligde koppeling verwijderen..."
       ],
       "Restoring items from trash": [
         "Items herstellen uit prullenbak"
@@ -1488,6 +1658,9 @@
       "Select destination vault": [
         "Kies bestemmingskluis"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Selecteren waar u uw geïmporteerde kluizen wil bewaren."
+      ],
       "Selected items permanently deleted": [
         "Geselecteerde items permanent verwijderd"
       ],
@@ -1503,8 +1676,14 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Set by your organization": [
+        "Ingesteld door uw organisatie"
+      ],
       "Settings successfully updated": [
         "Instellingen succesvol bijgewerkt"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Deel uw aanmeldingen en beveiligde notities, met maximaal 10 personen"
       ],
       "Sign in or create an account to continue.": [
         "Log in of maak een account aan om verder te gaan."
@@ -1538,6 +1717,9 @@
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
         "Het geëxporteerde bestand wordt versleuteld met PGP en vereist een sterke wachtwoordzin."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Het extra wachtwoord is nodig om ${ PASS_APP_NAME }te gebruiken. Het werkt als een extra wachtwoord bovenop uw ${ BRAND_NAME } wachtwoord."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Het volgende ${ result.ignored.length } item kon niet geïmporteerd worden:",
@@ -1573,6 +1755,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Om gegevens te migreren uit een andere wachtwoordbeheerder, gaat u naar de wachtwoordbeheerder, exporteert u uw gegevens, dan uploadt u het naar ${ PASS_APP_NAME }. Wanneer uw gegevens geïmporteerd zijn, verwijdert u het geëxporteerde bestand."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Klik op het ${ PASS_APP_NAME }-pictogram in de werkbalk om uw geïmporteerde gegevens te bekijken."
+      ],
       "Try reloading or reinstalling the extension and make sure your browser and ${ PASS_SHORT_APP_NAME } are up-to-date.": [
         "Probeer de extensie opnieuw te laden of opnieuw te installeren en zorg ervoor dat uw browser en ${ PASS_SHORT_APP_NAME } up-to-date zijn."
       ],
@@ -1600,6 +1785,9 @@
       "Unlock it with your PIN to access the settings": [
         "Ontgrendel het met uw pincode om toegang te krijgen tot de instellingen"
       ],
+      "Unlock with biometrics": [
+        "Ontgrendel met biometrische gegevens"
+      ],
       "Unpinning item...": [
         "Item losmaken..."
       ],
@@ -1612,11 +1800,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Upgrade nu om premiumfuncties te ontgrendelen"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Upgrade naar een betalend abonnement om meerdere kluizen aan te maken."
+      ],
       "Use vaults to share this item with others.": [
         "Gebruik kluizen om dit item met anderen te delen."
       ],
       "User's access removed": [
         "Toegang van verbruiker verwijderd"
+      ],
+      "User's access successfully updated": [
+        "Toegang van de gebruiker bijgewerkt"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Kluis \"${ payload.content.name }\" succesvol verwijderd"
@@ -1642,6 +1836,9 @@
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
         "We hebben gedetecteerd dat u ${ aliasCount } alias hebt die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze importeren?",
         "We hebben gedetecteerd dat u ${ aliasCount } aliassen hebt die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u deze importeren?"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Bij het aanmaken/bewerken van een aanmelding in ${ PASS_APP_NAME } zal de 'gebruikersnaam' invoer altijd zichtbaar zijn."
       ],
       "You are about to create:": [
         "U staat op het punt volgende aan te maken:"
@@ -1678,6 +1875,9 @@
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "U hebt de maximaal toegestane lengte van ${ maxLength } tekens bereikt."
       ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "U wordt uitgelogd en moet opnieuw inloggen op al uw andere apparaten."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "U gebruikt deze pincode om ${ PASS_APP_NAME } te ontgrendelen zodra deze automatisch wordt vergrendeld na een periode van inactiviteit."
       ],
@@ -1695,6 +1895,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
       ]
     },
     "Label": {
@@ -1782,6 +1985,9 @@
       "Add section": [
         "Sectie toevoegen"
       ],
+      "Additional details": [
+        "Aanvullende details"
+      ],
       "Address details": [
         "Adresgegevens"
       ],
@@ -1806,6 +2012,9 @@
       "Alphabetical": [
         "Alfabetisch"
       ],
+      "Always show username field": [
+        "Altijd het veld gebruikersnaam tonen"
+      ],
       "Application logs": [
         "Applicatielogboek"
       ],
@@ -1827,6 +2036,9 @@
       "Autosuggest": [
         "Automatische suggestie"
       ],
+      "Biometrics": [
+        "Biometrie"
+      ],
       "Birthdate": [
         "Geboortedatum"
       ],
@@ -1835,6 +2047,9 @@
       ],
       "Capital letters (A-Z)": [
         "Hoofdletters (A-Z)"
+      ],
+      "Capitalize": [
+        "Maak hoofdletter"
       ],
       "Card": [
         "Kaart"
@@ -1884,6 +2099,9 @@
       "Create an Identity": [
         "Identiteit aanmaken"
       ],
+      "Create lock": [
+        "Vergrendeling aanmaken"
+      ],
       "Create new vault": [
         "Nieuwe kluis aanmaken"
       ],
@@ -1892,6 +2110,9 @@
       ],
       "Created at": [
         "Aangemaakt op"
+      ],
+      "Custom hidden field": [
+        "Aangepast verborgen veld"
       ],
       "Custom text field": [
         "Tekst aangepast veld"
@@ -1962,6 +2183,9 @@
       "First name": [
         "Voornaam"
       ],
+      "Floor, apartment, building": [
+        "Vloer, appartement, gebouw"
+      ],
       "Forwards to": [
         "Stuurt door na"
       ],
@@ -1973,6 +2197,9 @@
       ],
       "General": [
         "Algemeen"
+      ],
+      "Generate a secure link for this item": [
+        "Genereer een beveiligde link voor dit item"
       ],
       "Generic CSV": [
         "Generieke CSV"
@@ -1989,6 +2216,12 @@
       "https://example.com": [
         "https://voorbeeld.com"
       ],
+      "ID Card": [
+        "ID-kaart"
+      ],
+      "ID Card number": [
+        "ID-kaartnummer"
+      ],
       "Identities": [
         "Identiteiten"
       ],
@@ -2003,6 +2236,9 @@
       ],
       "Import passwords": [
         "Wachtwoorden importeren"
+      ],
+      "Imported from: ": [
+        "Geïmporteerd van: "
       ],
       "Imported on : ": [
         "Geïmporteerd op: "
@@ -2078,6 +2314,9 @@
       ],
       "Make all viewers": [
         "Maak alle lezers"
+      ],
+      "max views reached": [
+        "max weergaven bereikt"
       ],
       "Members": [
         "Leden"
@@ -2226,6 +2465,9 @@
       "Select preferred language": [
         "Kies voorkeurstaal"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Selecteer de kluis waar SimpleLogin aliassen worden geïmporteerd in"
+      ],
       "Select your password manager": [
         "Selecteer uw wachtwoordbeheerder"
       ],
@@ -2241,8 +2483,14 @@
       "Share this vault or create a new vault": [
         "Deze kluis delen of een nieuwe kluis aanmaken"
       ],
+      "Shared link": [
+        "Gedeelde koppeling"
+      ],
       "Show website favicons": [
         "Websitepictogrammen weergeven"
+      ],
+      "Social security": [
+        "Burgerservicenummer (rijksregisternummer)"
       ],
       "Social security number": [
         "Burgerservicenummer (Rijksregisternummer)"
@@ -2268,6 +2516,12 @@
       "Support": [
         "Ondersteuning"
       ],
+      "Sync aliases with SimpleLogin": [
+        "Synchroniseer aliassen met SimpleLogin"
+      ],
+      "Tax number": [
+        "BTW-nummer"
+      ],
       "Text": [
         "Tekst"
       ],
@@ -2283,6 +2537,12 @@
       ],
       "Today": [
         "Vandaag"
+      ],
+      "Total imported items: ": [
+        "Totaal geïmporteerde items: "
+      ],
+      "Total items: ": [
+        "Totaal producten: "
       ],
       "TOTP": [
         "TOTP"
@@ -2304,6 +2564,9 @@
       ],
       "Unnamed Credit Card": [
         "Naamloze kredietkaart"
+      ],
+      "Unnamed identity": [
+        "Naamloze identiteit"
       ],
       "Unnamed item": [
         "Naamloos item"
@@ -2443,6 +2706,9 @@
       "Enter password": [
         "Vul wachtwoord in"
       ],
+      "Enter username": [
+        "Vul gebruikersnaam in"
+      ],
       "Full Name": [
         "Volledige naam"
       ],
@@ -2514,11 +2780,20 @@
       "Sign-in confirmed": [
         "Inloggen bevestigd"
       ],
+      "Sign-in failed": [
+        "Inloggen mislukt"
+      ],
       "Sign-in rejected": [
         "Inloggen geweigerd"
       ],
+      "Sign-in rejection failure": [
+        "Sign-in afwijzing mislukt"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Inloggen op een ander apparaat. Was jij het?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Inloggen op een ander apparaat. Was u dit? "
       ],
       "Yes, it was me": [
         "Ja, dat was ik"
@@ -2548,6 +2823,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Synchronisatie aliassen succesvol ingeschakeld. SimpleLogin aliassen kunnen enige tijd duren om te synchroniseren"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruiker bevatten.",
         "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruikers bevatten."
@@ -2580,6 +2858,9 @@
       ],
       "Current version": [
         "Huidige versie"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Kluis \"${ vaultName }\" verwijderen?"
       ],
       "Discard changes?": [
         "Wijzigingen annuleren?"
@@ -2629,11 +2910,17 @@
       "Import to vault(s)": [
         "Importeren naar kluis/kluizen"
       ],
+      "Import your aliases from SimpleLogin": [
+        "Importeer uw aliassen vanuit SimpleLogin"
+      ],
       "Last autofill": [
         "Laatste automatische aanvulling"
       ],
       "Last modified": [
         "Laatst gewijzigd"
+      ],
+      "Leave vault?": [
+        "Kluis verlaten?"
       ],
       "Log in as...": [
         "Log in als..."
@@ -2650,8 +2937,20 @@
       "Modified": [
         "Gewijzigd"
       ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Alle items verplaatsen naar \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "Item verplaatsen naar \"${ vaultName }\"?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "Items verplaatsen naar \"${ vaultName }\"?"
+      ],
       "No items selected": [
         "Geen items geselecteerd"
+      ],
+      "No shared secure links": [
+        "Geen gedeelde beveiligde links"
       ],
       "Our welcome gift to you": [
         "Ons welkomstgeschenk voor u"
@@ -2665,6 +2964,9 @@
       "Pending access to the shared data": [
         "Toegang tot gedeelde data hangende"
       ],
+      "Permanently remove all items?": [
+        "Alle items permanent verwijderen?"
+      ],
       "Pin the extension": [
         "Extensie vastpinnen"
       ],
@@ -2676,6 +2978,9 @@
       ],
       "Remove extra password": [
         "Verwijder uw extra wachtwoord"
+      ],
+      "Remove secure link?": [
+        "Beveiligde koppeling verwijderen?"
       ],
       "Restore this version?": [
         "Deze versie herstellen?"
@@ -2772,6 +3077,12 @@
       "OTP secret or URI required": [
         "OTP-geheim of URI vereist"
       ],
+      "Section name cannot be empty": [
+        "Sectienaam kan niet leeg zijn"
+      ],
+      "URL already exists": [
+        "URL bestaat al"
+      ],
       "URL cannot be empty": [
         "URL mag niet leeg zijn"
       ],
@@ -2780,6 +3091,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME }-wachtwoord is vereist"
+      ],
       "A description of the problem is required": [
         "Een beschrijving van het probleem is vereist"
       ],
@@ -2798,8 +3112,14 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan op dit moment geen mailboxen ophalen voor deze alias"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Let op: U heeft geen toegang tot uw ${ PASS_APP_NAME }-account als u dit wachtwoord verliest."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Kon kluis \"${ vaultName }\" niet maken"
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Kon geen uitnodigingen versturen naar de volgende adressen:"
       ],
       "Duplicate email addresses.": [
         "Dubbele e-mailadressen."
@@ -2809,6 +3129,15 @@
       ],
       "Expiration Date is not in the format MM/YY": [
         "Vervaldatum is niet in het formaat MM/JJ"
+      ],
+      "Extra password cannot be empty": [
+        "Extra wachtwoord kan niet leeg zijn"
+      ],
+      "Extra password is required": [
+        "Extra wachtwoord is vereist"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Extra wachtwoord moet ten minste 8 tekens bevatten"
       ],
       "Invalid alias prefix": [
         "Ongeldig aliasvoorvoegsel"
@@ -2862,11 +3191,17 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-versleuteld exportbestand vereist wachtzin"
       ],
+      "Please contact us to investigate the issue": [
+        "Neem contact met ons op om het probleem te onderzoeken"
+      ],
       "Please verify your email address in order to use email aliases": [
         "Verifieer alstublieft uw e-mailadressen om uw e-mailaliassen te kunnen gebruiken"
       ],
       "Please verify your email address in order to use vault sharing": [
         "Verifieer alstublieft uw e-mailadressen om Kluis Delen te kunnen gebruiken"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Het verwijderen van uw extra wachtwoord zal u uitloggen op alle apparaten en alle actieve sessies beëindigen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -2933,6 +3268,9 @@
       ],
       "Your session was locked.": [
         "Uw sessie is vergrendeld."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "U kunt niet meer kluizen maken dan uw abonnement toestaat."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."
