@@ -85,6 +85,7 @@ import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
 import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfNeeded'
 import { $setElementAlignmentAsSuggestion } from './setElementAlignmentAsSuggestion'
 import { useNotifications } from '@proton/components'
+import { $insertListAsSuggestion } from './insertListAsSuggestion'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -644,28 +645,31 @@ export function SuggestionModePlugin({
       editor.registerCommand(
         INSERT_CHECK_LIST_COMMAND,
         () => {
-          return true
+          return $insertListAsSuggestion(editor, 'check', addCreatedIDtoSet, suggestionModeLogger)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
       editor.registerCommand(
         INSERT_ORDERED_LIST_COMMAND,
         () => {
-          return true
+          return $insertListAsSuggestion(editor, 'number', addCreatedIDtoSet, suggestionModeLogger)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
       editor.registerCommand(
         INSERT_UNORDERED_LIST_COMMAND,
         () => {
-          return true
+          return $insertListAsSuggestion(editor, 'bullet', addCreatedIDtoSet, suggestionModeLogger)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
       editor.registerCommand(
         INSERT_CUSTOM_ORDERED_LIST_COMMAND,
-        () => {
-          return true
+        ({ type, marker }) => {
+          if (!type) {
+            return true
+          }
+          return $insertListAsSuggestion(editor, 'number', addCreatedIDtoSet, suggestionModeLogger, type, marker)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),

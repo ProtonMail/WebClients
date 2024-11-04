@@ -13,6 +13,8 @@ import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $isCodeNode } from '@lexical/code'
 import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfNeeded'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
+import type { ListItemNode } from '@lexical/list'
+import { $isListItemNode } from '@lexical/list'
 
 /**
  * Wraps a given selection with suggestion node(s), splitting
@@ -448,4 +450,21 @@ export function $isSelectionCollapsedAtStartOfElement(selection: RangeSelection,
   }
 
   return false
+}
+
+export function $isEmptyListItemExceptForSuggestions(node: ElementNode | TextNode): ListItemNode | null {
+  let listItem = $isListItemNode(node) ? node : null
+  const nodeParent = node.getParent()
+  if (!listItem && $isListItemNode(nodeParent)) {
+    listItem = nodeParent
+  }
+  if ($isListItemNode(listItem)) {
+    const nonSuggestionChildren = listItem
+      .getChildren()
+      .filter(
+        (node) => !$isSuggestionNode(node) || !SuggestionTypesThatCanBeEmpty.includes(node.getSuggestionTypeOrThrow()),
+      )
+    return nonSuggestionChildren.length === 0 ? listItem : null
+  }
+  return null
 }
