@@ -368,6 +368,7 @@ export type IconName =
     | 'users-merge'
     | 'users-plus'
     | 'vault'
+    | 'video-camera'
     | 'wallet'
     | 'window-image'
     | 'window-maximised'
@@ -737,6 +738,7 @@ export { IcUsersFilled } from './icons/IcUsersFilled';
 export { IcUsersMerge } from './icons/IcUsersMerge';
 export { IcUsersPlus } from './icons/IcUsersPlus';
 export { IcVault } from './icons/IcVault';
+export { IcVideoCamera } from './icons/IcVideoCamera';
 export { IcWallet } from './icons/IcWallet';
 export { IcWindowImage } from './icons/IcWindowImage';
 export { IcWindowMaximised } from './icons/IcWindowMaximised';
