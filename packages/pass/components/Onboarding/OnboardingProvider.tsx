@@ -115,7 +115,7 @@ const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
             launch: () => navigate(getLocalPath('onboarding')),
             isActive: Boolean(isActive),
         };
-    }, [complete, enabled, extension, state]);
+    }, [complete, enabled, extension, state, navigate, isActive]);
 
     return <OnboardingContext.Provider value={context}>{children}</OnboardingContext.Provider>;
 };
