@@ -42,7 +42,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
                 .t`For security reasons, ${PASS_SHORT_APP_NAME} automatically locks itself after 10 minutes of inactivity.\n\nYou can choose between PIN code, biometrics, or your account password to unlock.`,
             component: (
                 <div className="pass-onboarding-modal--lock">
-                    <p className="text-bold">{c('Label').t`Unlock with:`}</p>
+                    <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
                     <OnboardingLockSetup />
                 </div>
             ),
@@ -96,7 +96,8 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             </Stepper>
 
             <ModalTwoContent>
-                <div className="h-custom flex items-center" style={{ '--h-custom': '20rem' }}>
+                {/* height accommodates largest content without layout shifts */}
+                <div className="h-custom flex items-center" style={{ '--h-custom': '23rem' }}>
                     <div className="flex flex-column w-full">
                         <div className="flex items-center gap-6 text-left w-full">
                             <div className="flex-1">
