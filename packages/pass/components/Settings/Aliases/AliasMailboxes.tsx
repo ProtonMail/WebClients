@@ -96,6 +96,7 @@ export const AliasMailboxes: FC = () => {
                     mailboxID={action.MailboxID}
                     sentAt={action.sentAt}
                     onSubmit={handleMailboxVerified}
+                    onRemove={handleRemoved}
                 />
             )}
         </SettingsPanel>
