@@ -14,12 +14,18 @@ import type {
     AliasOptions,
     AliasToggleStatusDTO,
     ItemRevision,
+    MailboxDefaultDTO,
+    MailboxDeleteDTO,
     SelectedItem,
     ShareId,
     SlSyncStatusOutput,
+    UserAliasSettingsGetOutput,
+    UserMailboxOutput,
 } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import identity from '@proton/utils/identity';
 
 export const getAliasOptionsIntent = createAction(
     'alias::options::get::intent',
@@ -122,6 +128,106 @@ export const aliasSyncStatusToggle = requestActionsFactory<AliasToggleStatusDTO,
             withNotification({
                 type: 'error',
                 text: c('Error').t`Alias could not be updated at the moment. Please try again later`,
+                error,
+            })({ payload }),
+    },
+});
+
+export const getMailboxes = requestActionsFactory<void, UserMailboxOutput[]>('alias::mailboxes')({
+    success: { config: { data: true } },
+});
+
+export const createMailbox = requestActionsFactory<string, UserMailboxOutput>('alias::mailbox::create')({
+    key: identity,
+    success: { config: { data: true } },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to create new mailbox`,
+                type: 'error',
+                error,
+            })({ payload: getApiError(error) }),
+    },
+});
+
+export const validateMailbox = requestActionsFactory<{ mailboxID: number; code: string }, UserMailboxOutput>(
+    'alias::mailbox::validate'
+)({
+    key: ({ mailboxID }) => String(mailboxID),
+    success: {
+        prepare: (payload) =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Mailbox successfully verified`,
+            })({ payload }),
+        config: { data: true },
+    },
+    failure: {
+        prepare: (error) =>
+            withNotification({
+                text: c('Error').t`Failed to verify email address`,
+                type: 'error',
+                error,
+            })({ payload: getApiError(error) }),
+    },
+});
+
+export const resendVerifyMailbox = requestActionsFactory<number, UserMailboxOutput>('alias::mailboxes::resend-verify')({
+    key: String,
+    success: {
+        prepare: (data) =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Verification email sent. Please check your inbox to verify your mailbox`,
+            })({ payload: data }),
+        config: { data: true },
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                text: c('Error').t`Failed to resend verification code`,
+                type: 'error',
+                error,
+            })({ payload }),
+    },
+});
+
+export const deleteMailbox = requestActionsFactory<MailboxDeleteDTO, Boolean>('alias::mailbox::delete')({
+    key: ({ mailboxID }) => mailboxID.toString(),
+    success: {
+        prepare: () =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Mailbox successfully deleted`,
+            })({ payload: {} }),
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                text: c('Error').t`Failed to delete the mailbox`,
+                type: 'error',
+                error,
+            })({ payload }),
+    },
+});
+
+export const setDefaultMailbox = requestActionsFactory<MailboxDefaultDTO, UserAliasSettingsGetOutput>(
+    'alias::mailbox::set-default'
+)({
+    key: ({ defaultMailboxID }) => defaultMailboxID.toString(),
+    success: {
+        prepare: (data) =>
+            withNotification({
+                type: 'success',
+                text: c('Success').t`Default mailbox successfully updated`,
+            })({ payload: data }),
+        config: { data: true },
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                text: c('Error').t`Failed to set default mailbox default`,
+                type: 'error',
                 error,
             })({ payload }),
     },

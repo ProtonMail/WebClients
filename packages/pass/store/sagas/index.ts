@@ -3,6 +3,7 @@ import { all } from 'redux-saga/effects';
 import type { PassSaga, RootSagaOptions } from '@proton/pass/store/types';
 
 import aliasDetailsRequest from './alias/alias-details-request.saga';
+import aliasManagementSagas from './alias/alias-management.sagas';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
 import aliasSyncSagas from './alias/alias-sync.sagas';
 import lockCreate from './auth/lock-create.saga';
@@ -60,6 +61,7 @@ import vaultMoveAllItems from './vaults/vault-move-all-items.saga';
 import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
 
 const COMMON_SAGAS = [
+    ...aliasManagementSagas,
     ...aliasSyncSagas,
     ...secureLinkSagas,
     ...ssoSagas,

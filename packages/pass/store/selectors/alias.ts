@@ -16,3 +16,5 @@ export const selectAliasByAliasEmail = (aliasEmail: string) =>
     createSelector([selectAliasItems, () => aliasEmail], (aliasItems, aliasEmail) =>
         aliasItems.find((item) => item.aliasEmail! === aliasEmail)
     );
+
+export const selectCanManageAlias = ({ user: { plan } }: State) => Boolean(plan?.ManageAlias);
