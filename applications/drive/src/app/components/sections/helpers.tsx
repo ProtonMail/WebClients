@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
 import { LinkURLType, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -27,6 +28,9 @@ export const toLinkURLType = (isFile: boolean) => {
 
 export const getLocalizedDescription = (mimeType: string): string | undefined => {
     switch (mimeType) {
+        case 'application/vnd.proton.doc':
+            return DOCS_APP_NAME;
+
         // Compressed archives
         case 'application/java-archive':
             return c('Mimetype').t`Java Archive (JAR)`;
