@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
+import { ButtonLike, Href } from '@proton/atoms';
 import {
     Collapsible,
     CollapsibleContent,
@@ -13,66 +13,80 @@ import {
     IconRow,
     useNotifications,
 } from '@proton/components';
+import { IcVideoCamera } from '@proton/icons';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import googleLogo from '@proton/styles/assets/img/video-conferencing/google-meet.svg';
-import zoomLogo from '@proton/styles/assets/img/video-conferencing/zoom.svg';
 import clsx from '@proton/utils/clsx';
 
 import type { BaseMeetingUrls } from './constants';
-import { VIDEO_CONF_SERVICES } from './constants';
 
 import './VideoConferencing.scss';
 
 export type VideoConferenceLocation = 'calendar' | 'mail-headers';
 
+// todo remove location is not required in the end.
 interface Props {
     location: VideoConferenceLocation;
     data: BaseMeetingUrls;
 }
 
-const getIcon = (service: VIDEO_CONF_SERVICES) => {
-    switch (service) {
-        case VIDEO_CONF_SERVICES.ZOOM:
-            return zoomLogo;
-        case VIDEO_CONF_SERVICES.GOOGLE_MEET:
-            return googleLogo;
-    }
+const EventDetailsRow = ({
+    prefix,
+    suffix,
+    copySuccessText,
+}: {
+    prefix: string;
+    suffix: string;
+    copySuccessText: string;
+}) => {
+    const { createNotification } = useNotifications();
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+
+        textToClipboard(suffix);
+        createNotification({ text: copySuccessText });
+    };
+
+    return (
+        <button type="button" className="flex flex-col gap-1" onClick={handleClick}>
+            <p className="m-0">{prefix}</p>
+            <p className="m-0 text-ellipsis color-weak max-w-full" title={suffix}>
+                {suffix}
+            </p>
+        </button>
+    );
 };
 
-export const VideoConferencingWidget = ({ data, location }: Props) => {
+// TODO change the color of the dropdown header text to norm when hovering
+// TODO clicking anywhere should expend the dropdown
+export const VideoConferencingWidget = ({ data }: Props) => {
     const { createNotification } = useNotifications();
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const { meetingUrl, meetingId, joiningInstructions, password, service } = data;
+    const { meetingUrl, meetingId, joiningInstructions, password, service, meetingHost } = data;
     if (!meetingUrl) {
         return null;
     }
-
-    const handlePasscodeClick = () => {
-        textToClipboard(password);
-        createNotification({
-            text: c('Notification').t`Passcode copied to clipboard`,
-        });
-    };
 
     const hasOnlyLink = meetingUrl && !joiningInstructions && !meetingId && !password;
     const joinText = service === 'zoom' ? c('Zoom Meeting').t`Join Zoom Meeting` : c('Google Meet').t`Join Google Meet`;
 
     return (
-        <IconRow icon={<img src={getIcon(service)} className="w-6 h-6" alt="" />} className="items-center">
-            <div className="group-hover-opacity-container">
-                <div
-                    className={clsx(
-                        'flex flex-col  items-center',
-                        location === 'calendar' ? 'justify-space-between' : 'gap-3',
-                        !hasOnlyLink && 'mb-2'
-                    )}
-                >
-                    <Href href={meetingUrl}>{joinText}</Href>
+        <IconRow icon={<IcVideoCamera />} className="items-center w-full video-conferencing-widget cursor-pointer">
+            <div
+                role="button"
+                tabIndex={0}
+                aria-label={c('Action').t`Expand video conferencing widget`}
+                aria-expanded={isExpanded}
+                className="group-hover-opacity-container"
+                onClick={() => setIsExpanded((prev) => !prev)}
+            >
+                <div className={clsx('flex flex-col items-center justify-space-between', !hasOnlyLink && 'mb-2')}>
+                    <ButtonLike as={Href} href={meetingUrl} shape="solid" color="norm">
+                        {joinText}
+                    </ButtonLike>
                     <Copy
                         value={meetingUrl}
                         shape="ghost"
-                        size="small"
                         className="group-hover:opacity-100 color-weak"
                         onCopy={() => {
                             createNotification({
@@ -81,15 +95,22 @@ export const VideoConferencingWidget = ({ data, location }: Props) => {
                         }}
                     />
                 </div>
+                {meetingId && (
+                    <EventDetailsRow
+                        prefix={c('Zoom Meeting').t`Meeting ID:`}
+                        suffix={meetingId}
+                        copySuccessText={c('Notification').t`Meeting ID copied to clipboard`}
+                    />
+                )}
                 {password && (
-                    <button
-                        type="button"
-                        className="m-0 mb-2 text-sm color-weak max-w-full text-ellipsis"
-                        onClick={handlePasscodeClick}
-                    >{c('Zoom Meeting').t`Passcode: ${password}`}</button>
+                    <EventDetailsRow
+                        prefix={c('Zoom Meeting').t`Passcode:`}
+                        suffix={password}
+                        copySuccessText={c('Notification').t`Passcode copied to clipboard`}
+                    />
                 )}
                 {!hasOnlyLink && (
-                    <Collapsible>
+                    <Collapsible className="mt-2" expandByDefault={isExpanded} externallyControlled>
                         <CollapsibleHeader
                             disableFullWidth
                             suffix={
@@ -98,29 +119,36 @@ export const VideoConferencingWidget = ({ data, location }: Props) => {
                                     shape="ghost"
                                     onClick={() => setIsExpanded((prev) => !prev)}
                                 >
-                                    <Icon name="chevron-down-filled" className="color-weak" />
+                                    <Icon name="chevron-down" />
                                 </CollapsibleHeaderIconButton>
                             }
                             onClick={() => setIsExpanded((prev) => !prev)}
+                            className="collapsible-header-hover-color"
                         >
-                            <p className="m-0 text-sm color-weak">
+                            <button type="button" className="m-0" onClick={() => setIsExpanded((prev) => !prev)}>
                                 {isExpanded ? c('Google Meet').t`Less details` : c('Google Meet').t`More details`}
-                            </p>
+                            </button>
                         </CollapsibleHeader>
-                        <CollapsibleContent>
-                            <section className="text-sm color-weak">
-                                {meetingId && (
-                                    <>
-                                        <p className="m-0">{c('Zoom Meeting').t`Meeting ID:`}</p>
-                                        <p className="m-0 mb-2 text-ellipsis max-w-full" title={meetingId}>
-                                            {meetingId}
-                                        </p>
-                                    </>
+                        <CollapsibleContent onClick={(e) => e.stopPropagation()}>
+                            <section className="mt-2">
+                                <div>
+                                    <p className="m-0">{c('Google Meet').t`Meeting link:`}</p>
+                                    <Href className="block mb-2 text-ellipsis max-w-full" href={meetingUrl}>
+                                        {meetingUrl}
+                                    </Href>
+                                </div>
+                                {meetingHost && (
+                                    <div>
+                                        <p className="m-0">{c('Google Meet').t`Meeting host:`}</p>
+                                        <Href
+                                            className="block mb-2 text-ellipsis max-w-full"
+                                            href={`mailto:${meetingHost}`}
+                                        >
+                                            {meetingHost}
+                                        </Href>
+                                    </div>
                                 )}
-                                <p className="m-0">{c('Google Meet').t`Meeting link:`}</p>
-                                <Href className="block mb-2 text-ellipsis max-w-full" href={meetingUrl}>
-                                    {meetingUrl}
-                                </Href>
+
                                 {joiningInstructions && (
                                     <Href href={joiningInstructions}>{c('Google Meet').t`Joining instructions`}</Href>
                                 )}

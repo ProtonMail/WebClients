@@ -1,4 +1,8 @@
-.video-conferencing-grid {
-	display: grid;
-	grid-template-columns: 2rem minmax(0, 1fr);
+.video-conferencing-widget:hover {
+	.collapsible-header-hover-color {
+                &,
+                button {
+                      color: var(--primary);
+                }
+	}
 }
