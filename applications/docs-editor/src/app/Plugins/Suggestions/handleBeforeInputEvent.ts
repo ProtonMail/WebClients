@@ -1,8 +1,8 @@
 import { $generateNodesFromSerializedNodes, $insertGeneratedNodes } from '@lexical/clipboard'
 import { $findMatchingParent, $insertFirst } from '@lexical/utils'
 import { GenerateUUID } from '@proton/docs-core'
-import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode, DecoratorNode } from 'lexical'
-import { $isDecoratorNode, $isParagraphNode } from 'lexical'
+import type { LexicalEditor, ElementNode, RangeSelection, LexicalNode } from 'lexical'
+import { $isDecoratorNode, $isParagraphNode, OUTDENT_CONTENT_COMMAND } from 'lexical'
 import {
   UNDO_COMMAND,
   REDO_COMMAND,
@@ -28,6 +28,9 @@ import {
   $mergeWithExistingSuggestionNode,
   $isWholeSelectionInsideSuggestion,
   $isAnyPartOfSelectionInCodeNode,
+  $joinNonInlineLeafElements,
+  $getPreviousNonInlineLeafElement,
+  $isSelectionCollapsedAtStartOfElement,
 } from './Utils'
 import { $generateNodesFromDOM } from '@lexical/html'
 import type { Logger } from '@proton/utils/logs'
@@ -39,6 +42,7 @@ import { $handleListInsertParagraph, $isListItemNode } from '@lexical/list'
 import { $getListInfo } from '../CustomList/$getListInfo'
 import type { CreateNotificationOptions } from '@proton/components'
 import { c } from 'ttag'
+import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
 
 /**
  * This is the main core of suggestion mode. It handles input events,
@@ -84,7 +88,7 @@ export function $handleBeforeInputEvent(
   }
 
   if (DeleteInputTypes.includes(inputType)) {
-    return $handleDeleteInput(inputType, selection, suggestionID, onSuggestionCreation, logger)
+    return $handleDeleteInput(editor, inputType, selection, suggestionID, onSuggestionCreation, logger)
   }
 
   if (InsertionInputTypes.includes(inputType)) {
@@ -95,6 +99,7 @@ export function $handleBeforeInputEvent(
 }
 
 function $handleDeleteInput(
+  editor: LexicalEditor,
   inputType: string,
   selection: RangeSelection,
   suggestionID: string,
@@ -116,19 +121,58 @@ function $handleDeleteInput(
 
   let focusNode = selection.focus.getNode()
 
-  const currentBlock = focusNode.getTopLevelElement()
-  const isAtStartOfBlock =
-    isSelectionCollapsed && focusNode.is(currentBlock?.getFirstDescendant()) && selection.focus.offset === 0
+  const currentBlock = $findMatchingParent(focusNode, $isNonInlineLeafElement)
+  if (!currentBlock) {
+    logger?.info('Could not find block parent')
+    return true
+  }
+
+  const isAtStartOfBlock = $isSelectionCollapsedAtStartOfElement(selection, currentBlock)
 
   let didModifySelection = false
 
   if (isAtStartOfBlock) {
-    const previousBlock = currentBlock?.getPreviousSibling<ElementNode | DecoratorNode<unknown>>()
-    if ($isDecoratorNode(previousBlock)) {
-      const key = previousBlock.getKey()
+    logger?.info('Selection is collapsed at start of block')
+
+    const previousSibling = currentBlock?.getPreviousSibling()
+    if ($isDecoratorNode(previousSibling)) {
+      logger?.info('Previous sibling is decorator node')
+      const key = previousSibling.getKey()
       selection.anchor.set(key, 0, 'element')
       selection.focus.set(key, 0, 'element')
       didModifySelection = true
+    }
+
+    const previousBlock = $getPreviousNonInlineLeafElement(currentBlock)
+    if (previousBlock) {
+      if (previousBlock.isEmpty()) {
+        logger?.info('Previous non-inline leaf element is empty')
+        const suggestion = $createSuggestionNode(suggestionID, 'join')
+        previousBlock.append(suggestion)
+        suggestion.selectStart()
+        onSuggestionCreation(suggestionID)
+        return true
+      }
+
+      const splitSuggestion = previousBlock
+        .getChildren()
+        .find((node): node is ProtonNode => $isSuggestionNode(node) && node.getSuggestionTypeOrThrow() === 'split')
+      if (splitSuggestion) {
+        logger?.info('Previous non-inline leaf element has split suggestion')
+        $removeSuggestionNodeAndResolveIfNeeded(splitSuggestion)
+        previousBlock.selectEnd()
+        if (currentBlock.isEmpty()) {
+          currentBlock.remove()
+        } else {
+          $joinNonInlineLeafElements(previousBlock, currentBlock)
+        }
+        return true
+      }
+    }
+
+    if ($isListItemNode(currentBlock) && currentBlock.getIndent() > 0) {
+      editor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
+      return true
     }
   }
 
