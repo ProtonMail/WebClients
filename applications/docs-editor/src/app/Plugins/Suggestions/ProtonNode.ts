@@ -69,6 +69,9 @@ export class ProtonNode extends ElementNode {
       addClassNamesToElement(element, 'Lexical__Suggestion')
       addClassNamesToElement(element, properties.suggestionType)
       element.setAttribute('data-suggestion-id', properties.suggestionID)
+      if (properties.suggestionType === 'delete') {
+        element.setAttribute('spellcheck', 'false')
+      }
     }
     return element
   }
