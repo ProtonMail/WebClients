@@ -5,6 +5,7 @@
 	--banner-ornament-size: #{em(375)};
 	--offer-background-color: rgb(250 204 21 / 1);
 	--offer-text-color: var(--text-invert);
+	--interaction-norm-contrast: white !important; /* close button */
 
 	background: var(--banner-background-color) !important;
 	color: var(--text-norm);
