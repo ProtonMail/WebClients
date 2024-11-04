@@ -16,6 +16,8 @@ import type {
     CreatePendingAliasRequest,
     EnableSLSyncRequest,
     ItemRevisionContentsResponse,
+    MailboxDefaultDTO,
+    MailboxDeleteDTO,
     SlSyncStatusOutput,
 } from '@proton/pass/types';
 import chunk from '@proton/utils/chunk';
@@ -127,3 +129,53 @@ export const toggleAliasStatus = async ({ shareId, itemId, enabled }: AliasToggl
             data: { Enable: enabled },
         })
     ).Item;
+
+export const getMailboxesApi = async () =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox`,
+            method: 'get',
+        })
+    ).Mailboxes!;
+
+export const createMailboxApi = async (email: string) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox`,
+            method: 'post',
+            data: { Email: email },
+        })
+    ).Mailbox!;
+
+export const resendVerifyMailboxApi = async (mailboxID: number) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox/${mailboxID}/verify`,
+            method: 'get',
+        })
+    ).Mailbox!;
+
+export const validateMailboxApi = async ({ mailboxID, code }: { mailboxID: number; code: string }) =>
+    (
+        await api({
+            url: `pass/v1/user/alias/mailbox/${mailboxID}/verify`,
+            method: 'post',
+            data: { Code: code },
+        })
+    ).Mailbox!;
+
+export const deleteMailboxApi = async ({ mailboxID, transferMailboxID }: MailboxDeleteDTO) =>
+    api({
+        url: `pass/v1/user/alias/mailbox/${mailboxID}`,
+        method: 'delete',
+        data: { TransferMailboxID: transferMailboxID },
+    }).then(() => true);
+
+export const setDefaultMailboxApi = async ({ defaultMailboxID }: MailboxDefaultDTO) =>
+    (
+        await api({
+            url: 'pass/v1/user/alias/settings/default_mailbox_id',
+            method: 'put',
+            data: { DefaultMailboxID: defaultMailboxID },
+        })
+    ).Settings!;

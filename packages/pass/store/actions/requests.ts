@@ -5,7 +5,7 @@ import { type EndpointOptions } from './enhancers/endpoint';
 export const selectedItemKey = ({ shareId, itemId }: SelectedItem) => `${shareId}::${itemId}`;
 
 const withItemKey = (base: string) => (shareId: string, itemId: string) => `${base}::${shareId}::${itemId}`;
-const withKey = (base: string) => (key: string) => `${base}::${key}`;
+const withKey = (base: string) => (key: string | number) => `${base}::${key}`;
 
 export const bootRequest = () => 'worker::boot';
 export const syncRequest = () => 'worker::sync';
