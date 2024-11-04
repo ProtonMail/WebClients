@@ -26,6 +26,7 @@ export type AliasFormValues = {
     mailboxes: AliasMailbox[];
 };
 
+export type AliasContactValues = { name: string };
 export type NewAliasFormValues = BaseItemValues & AliasFormValues;
 export type EditAliasFormValues = BaseItemValues & Pick<AliasFormValues, 'mailboxes'>;
 
