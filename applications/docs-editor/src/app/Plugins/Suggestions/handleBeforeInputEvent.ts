@@ -31,12 +31,13 @@ import {
   $joinNonInlineLeafElements,
   $getPreviousNonInlineLeafElement,
   $isSelectionCollapsedAtStartOfElement,
+  $isEmptyListItemExceptForSuggestions,
 } from './Utils'
 import { $generateNodesFromDOM } from '@lexical/html'
 import type { Logger } from '@proton/utils/logs'
 import { INSERT_FILE_COMMAND } from '../../Commands/Events'
 import type { BlockTypeChangeSuggestionProperties, IndentChangeSuggestionProperties } from './Types'
-import { TextEditingSuggestionTypes } from './Types'
+import { SuggestionTypesThatCanBeEmpty, TextEditingSuggestionTypes } from './Types'
 import type { ListItemNode } from '@lexical/list'
 import { $handleListInsertParagraph, $isListItemNode } from '@lexical/list'
 import { $getListInfo } from '../CustomList/$getListInfo'
@@ -321,9 +322,9 @@ function $handleInsertParagraph(
 ): boolean {
   const focus = selection.focus.getNode()
 
-  const isEmptyListItemNode = $isListItemNode(focus) && focus.isEmpty()
-  if (isEmptyListItemNode) {
-    return $handleInsertParagraphOnEmptyListItem(focus, suggestionID, onSuggestionCreation, logger)
+  const emptyListItem = $isEmptyListItemExceptForSuggestions(focus)
+  if (emptyListItem) {
+    return $handleInsertParagraphOnEmptyListItem(emptyListItem, suggestionID, onSuggestionCreation, logger)
   }
 
   const currentNonInlineElement = $findMatchingParent(
@@ -379,9 +380,31 @@ function $handleInsertParagraphOnEmptyListItem(
   const initialFormatType = listItem.getFormatType()
   const listInfo = $getListInfo(listItem)
 
+  const children = listItem.getChildren()
+  const hasOnlyEmptySuggestionChildren = children.every(
+    (node) => $isSuggestionNode(node) && SuggestionTypesThatCanBeEmpty.includes(node.getSuggestionTypeOrThrow()),
+  )
+
+  if (hasOnlyEmptySuggestionChildren) {
+    // Temporarily removing empty suggestion nodes to
+    // allow handling actual empty list item behavior
+    for (const child of children) {
+      child.remove()
+    }
+  }
+
+  function reAddChildren(element: ElementNode) {
+    if (hasOnlyEmptySuggestionChildren) {
+      for (const child of children) {
+        element.append(child)
+      }
+    }
+  }
+
   const didInsert = $handleListInsertParagraph()
   if (!didInsert) {
     logger?.info('Did not insert paragraph')
+    reAddChildren(listItem)
     return true
   }
 
@@ -393,6 +416,7 @@ function $handleInsertParagraphOnEmptyListItem(
   const focus = selection.focus.getNode()
 
   if ($isParagraphNode(focus)) {
+    reAddChildren(focus)
     $insertFirst(
       focus,
       $createSuggestionNode(suggestionID, 'block-type-change', {
@@ -403,6 +427,7 @@ function $handleInsertParagraphOnEmptyListItem(
       } satisfies BlockTypeChangeSuggestionProperties),
     )
   } else if ($isListItemNode(focus)) {
+    reAddChildren(focus)
     $insertFirst(
       focus,
       $createSuggestionNode(suggestionID, 'indent-change', {
