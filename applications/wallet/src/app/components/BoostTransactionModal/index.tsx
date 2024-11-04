@@ -192,6 +192,7 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                 type: 'error',
                 text:
                     error?.error ??
+                    error?.message ??
                     c('Wallet send').t`Could not speed up transaction. Please sync your wallet and try again`,
             });
         }
