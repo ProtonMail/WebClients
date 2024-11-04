@@ -1538,6 +1538,40 @@ describe('$handleBeforeInputEvent', () => {
         expect(anchor!.offset).toBe(firstParagraph.getChildrenSize())
       })
     })
+
+    test('should actually delete divider inserted as suggestion when backspacing at start of block', async () => {
+      await update(() => {
+        const paragraph1 = $createParagraphNode().append($createTextNode('Hello'))
+        const divider = $createSuggestionNode('test', 'insert').append($createHorizontalRuleNode())
+        const paragraph2 = $createParagraphNode()
+        const text = $createTextNode('World')
+        paragraph2.append(text)
+        $getRoot().append(paragraph1, divider, paragraph2)
+        text.select(0, 0)
+      })
+      await update(() => {
+        $handleBeforeInputEvent(
+          editor!,
+          {
+            inputType: 'deleteContentBackward',
+            data: null,
+            dataTransfer: null,
+          } as InputEvent,
+          onSuggestionCreation,
+        )
+      })
+      editor!.read(() => {
+        const root = $getRoot()
+        expect(root.getChildrenSize()).toBe(2)
+
+        for (const child of root.getChildren()) {
+          expect($isParagraphNode(child)).toBe(true)
+        }
+
+        const selection = $getSelection()
+        expect(selection?.isCollapsed()).toBe(true)
+      })
+    })
   })
 
   describe('Replace', () => {
