@@ -135,8 +135,12 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
     const coupon = searchParams.get('coupon') || undefined;
 
     const currencyParam = searchParams.get('currency')?.toUpperCase();
-    const parsedCurrency =
+    let parsedCurrency =
         currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
+
+    if (getHas2024OfferCoupon(coupon) && parsedCurrency === 'BRL') {
+        parsedCurrency = 'USD';
+    }
 
     const maybePlanName = searchParams.get('plan') || '';
     const plan =
