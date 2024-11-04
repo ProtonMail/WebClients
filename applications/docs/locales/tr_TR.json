@@ -561,6 +561,9 @@
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Sign up": [
+        "Hesap açın"
+      ],
       "Skip verification": [
         "Doğrulamayı atla"
       ],
@@ -941,8 +944,15 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifreleme ile e-postalarınızı ve programınızı güvence altına alın. 15 e-posta adresi, özel e-posta alan adları için destek, sınırsız hide-my-email takma adları ve daha fazlasını içerir."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -3075,6 +3085,11 @@
         "Ek parola kullanıldığında, takma ad yönetimi yalnızca ${ PASS_APP_NAME } içinden yapılabilir."
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Görüntülenecek ad boş olamaz"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Herhangi bir görsel seçilmemiş"
@@ -3711,6 +3726,12 @@
         "${ contactsLength } kişi",
         "${ contactsLength } kişi"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME }, tam gizlilik için uçtan uca şifrelemeyle gerçek zamanlı olarak işbirliği yapmanızı sağlar. Düzenlemeye başlamak için dosyanın kopyasını oluşturun veya sahibinden düzenleme izni isteyin."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } içinde"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
@@ -3902,6 +3923,9 @@
         "${ calendarsToBeCreatedCount } yeni takvim ekle",
         "${ calendarsToBeCreatedCount } yeni takvim ekle"
       ],
+      "Create a copy to edit": [
+        "Düzenlemek için kopyasını oluşturun"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
       ],
@@ -3968,6 +3992,9 @@
       ],
       "Document moved to trash": [
         "Belge çöpe atıldı"
+      ],
+      "Document owner has the password": [
+        "Parola belge sahibinde"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Bir şey görmüyor musunuz? Açılır pencere engelleyicilerini kapatmayı unutmayın."
@@ -6825,14 +6852,8 @@
       "External invitation's email was sent again": [
         "Dış davet e-postası yeniden gönderildi"
       ],
-      "Failed to accept share invitation": [
-        "Paylaşma daveti kabul edilemedi"
-      ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Paylaşma daveti reddedilemedi"
       ],
       "Failed to upload files: ${ err }": [
         "Dosyalar yüklenemedi: ${ err }"
@@ -6855,12 +6876,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal } yüklemek için yeterli alan yok"
-      ],
-      "Share invitation accepted successfully": [
-        "Paylaşma daveti kabul edildi"
-      ],
-      "Share invitation declined": [
-        "Paylaşma daveti reddedildi"
       ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
@@ -7309,6 +7324,11 @@
     "Safety review": {
       "Review your account safety": [
         "Hesabınızın güvenliğini değerlendirin"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Oturum açılamadı."
       ]
     },
     "Security Center": {
@@ -7788,6 +7808,20 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Bu belgeyi düzenlemek için, üzerinde değişiklik yapabileceğiniz bir kopya oluşturun."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sign in to your organization": [
+        "Kuruluşunuzda oturum açın"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
     "State": {
@@ -8538,6 +8572,9 @@
       "Link confirmation": [
         "Bağlantı onayı"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamanızda kopyasını oluşturun"
+      ],
       "Manage secure link": [
         "Güvenli bağlantıyı yönet"
       ],
@@ -8696,6 +8733,9 @@
       ],
       "The link expired": [
         "Bağlantının geçerlilik süresi dolmuş"
+      ],
+      "This document is password protected": [
+        "Bu belge parola ile korunuyor"
       ],
       "Unlock contacts groups": [
         "Kişi gruplarının kilidini açın"

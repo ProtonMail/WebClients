@@ -564,6 +564,9 @@
       "Sign out": [
         "Cerrar sesión"
       ],
+      "Sign up": [
+        "Registrarse"
+      ],
       "Skip verification": [
         "Omitir verificación"
       ],
@@ -819,7 +822,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+        "Aplicación de escritorio ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
@@ -852,7 +855,7 @@
         "6 usuarios"
       ],
       "8500+ servers across 110+ countries": [
-        "Más de 8500 servidores en más de 110 países"
+        "Más de 8 500 servidores en más de 110 países"
       ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
@@ -867,7 +870,7 @@
         "Monitoreo de la Dark Web"
       ],
       "Easily add or remove users": [
-        "Añadir o borrar usuarios fácilmente"
+        "Agregar o borrar usuarios fácilmente"
       ],
       "High speed streaming": [
         "Streaming de alta velocidad"
@@ -876,10 +879,10 @@
         "Autenticador 2FA integrado"
       ],
       "Online document editor": [
-        "Editor de documentos online"
+        "Editor de documentos en línea"
       ],
       "Password health alerts": [
-        "Alertas de estado de las contraseñas"
+        "Alertas de estado de la contraseña"
       ],
       "Private photo backup": [
         "Copia de seguridad privada de fotos"
@@ -891,7 +894,7 @@
         "Almacenamiento y uso compartido seguro de archivos"
       ],
       "Secure vault and link sharing": [
-        "Intercambio seguro de bóveda y enlaces"
+        "Uso compartido seguro de bóveda y enlaces"
       ],
       "Unlimited folders, labels and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
@@ -911,7 +914,7 @@
     },
     "BF2024: Footer": {
       "Discounts are based on standard monthly pricing.": [
-        "Los descuentos se basan en la cuota estándar mensual."
+        "Los descuentos se basan en los precios mensuales estándar."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
@@ -924,7 +927,7 @@
     },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
-        "por ${ durationDeal }"
+        "durante ${ durationDeal }"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -932,23 +935,30 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Acceda a contenido geobloqueado y navegue privadamente. Incluye más de 8500 servidores en más de 110 países, 10 dispositivos, streaming de gran velocidad, bloqueador de anuncios y malware, VPN Accelerator y más."
+        "Acceda a contenido bloqueado y navegue de forma privada. Incluye más de 8 500 servidores en más de 110 países, 10 dispositivos, streaming de alta velocidad, bloqueador de anuncios y protección contra malware, VPN Accelerator y más."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Acceda desde cualquier lugar al contenido de servicios de streaming como Netflix, Disney+ o Prime Video, entre otros."
+        "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ o Prime Video, entre otros."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inicios de sesión seguros en todos los dispositivos. Incluye alias de hide-my-email ilimitados, uso compartido, 2FA integrado, Monitoreo de Dark Web y más."
+        "Inicios de sesión seguros en todos los dispositivos. Incluye alias de hide-my-email ilimitados, uso compartido, 2FA integrada, Monitoreo de Dark Web y más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo, asistente de escritura ${ BRAND_NAME } Scribe, alias de hide-my-email ilimitados y más.",
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo, asistente de escritura ${ BRAND_NAME } Scribe, alias de hide-my-email ilimitados y más."
+        "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses }dirección de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo, soporte para dominios de correo, asistente de escritura ${ BRAND_NAME } Scribe, alias de hide-my-email ilimitados y más."
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Asegure sus archivos con almacenamiento cifrado en la nube. Incluye editor de documentos online, historial de versiones, intercambio de archivos cifrado y más."
+        "Asegure sus archivos con almacenamiento cifrado en la nube. Incluye editor de documentos en línea, historial de versiones, intercambio de archivos cifrado y más."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "La tecnología NetShield tiene como fin proteger los dispositivos y que pueda navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
@@ -3719,6 +3729,12 @@
         "${ contactsLength } contacto",
         "${ contactsLength } contactos"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } le permite colaborar en tiempo real con cifrado de extremo a extremo para una completa privacidad. Cree una copia para empezar a editar o pida acceso de edición al propietario."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } en"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupo encontrado"
@@ -3910,6 +3926,9 @@
         "Crear ${ calendarsToBeCreatedCount } calendario nuevo",
         "Crear ${ calendarsToBeCreatedCount } calendarios nuevos"
       ],
+      "Create a copy to edit": [
+        "Crea una copia para editar"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Cree una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las carpetas que le gustaría importar."
       ],
@@ -3976,6 +3995,9 @@
       ],
       "Document moved to trash": [
         "Se movió el documento a la papelera."
+      ],
+      "Document owner has the password": [
+        "El propietario del documento tiene la contraseña"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
@@ -6893,14 +6915,8 @@
       "External invitation's email was sent again": [
         "Se envió nuevamente el correo de invitación externa."
       ],
-      "Failed to accept share invitation": [
-        "Ocurrió un error al aceptar la invitación compartida"
-      ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Ocurrió un error al rechazar la invitación compartida"
       ],
       "Failed to upload files: ${ err }": [
         "Error al cargar los archivos: ${ err }"
@@ -6923,12 +6939,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hay espacio suficiente para cargar ${ formattedTotal }"
-      ],
-      "Share invitation accepted successfully": [
-        "La invitación compartida fue aceptada."
-      ],
-      "Share invitation declined": [
-        "Invitación compartida rechazada"
       ],
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
@@ -7377,6 +7387,11 @@
     "Safety review": {
       "Review your account safety": [
         "Compruebe la seguridad de la cuenta"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "No se completó el inicio de sesión."
       ]
     },
     "Security Center": {
@@ -7856,6 +7871,20 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invite amistades a ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Para editar este documento, cree una copia que pueda modificar."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sesión"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sesión en la organización"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se le redirigirá a su proveedor de SSO de terceros."
       ]
     },
     "State": {
@@ -8606,6 +8635,9 @@
       "Link confirmation": [
         "Confirmación de enlace"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Cree una copia a su ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Gestionar enlace seguro"
       ],
@@ -8764,6 +8796,9 @@
       ],
       "The link expired": [
         "El enlace expiró"
+      ],
+      "This document is password protected": [
+        "Este documento está protegido con contraseña"
       ],
       "Unlock contacts groups": [
         "Desbloquear grupos de contactos"

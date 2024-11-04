@@ -558,6 +558,9 @@
       "Sign out": [
         "Keluar"
       ],
+      "Sign up": [
+        "Daftar"
+      ],
       "Skip verification": [
         "Lewati verifikasi"
       ],
@@ -931,8 +934,14 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
@@ -3053,6 +3062,11 @@
         "Pada saat kata sandi tambahan diaktifkan, pengelolaan alias hanya dapat dilakukan di ${ PASS_APP_NAME }."
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Nama tampilan tidak boleh kosong"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Tidak ada gambar yang dipilih"
@@ -3668,6 +3682,9 @@
       "${ contactsLength } contact": [
         "${ contactsLength } kontak"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } memungkinkan Anda untuk berkolaborasi secara real-time dengan enkripsi end-to-end untuk privasi yang menyeluruh. Untuk mulai menyunting, buat salinan dokumen ini atau minta akses sunting kepada pemilik dokumen."
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
       ],
@@ -3844,6 +3861,9 @@
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Buat ${ calendarsToBeCreatedCount } kalender baru"
+      ],
+      "Create a copy to edit": [
+        "Buat salinan untuk menyunting"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta folder yang ingin Anda impor."
@@ -6772,14 +6792,8 @@
       "External invitation's email was sent again": [
         "Email undangan eksternal telah dikirim ulang"
       ],
-      "Failed to accept share invitation": [
-        "Gagal menerima undangan pembagian"
-      ],
       "Failed to download files: ${ err }": [
         "Gagal mengunduh berkas: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Undangan untuk berbagi gagal ditolak"
       ],
       "Failed to upload files: ${ err }": [
         "Gagal mengunggah berkas: ${ err }"
@@ -6801,12 +6815,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
-      ],
-      "Share invitation accepted successfully": [
-        "Undangan pembagian berhasil diterima"
-      ],
-      "Share invitation declined": [
-        "Undangan untuk berbagi ditolak"
       ],
       "Stopping the sharing of this item has failed": [
         "Pembagian item gagal dihentikan"
@@ -7247,6 +7255,11 @@
     "Safety review": {
       "Review your account safety": [
         "Tinjau keamanan akun Anda"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil dirampungkan."
       ]
     },
     "Security Center": {
@@ -7709,6 +7722,17 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Masuk"
+      ],
+      "Sign in to your organization": [
+        "Masuk ke organisasi Anda"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     },
     "State": {
