@@ -113,7 +113,7 @@ const ComposerAssistantToolbar = ({
                         </Tooltip>
                     </div>
                 ) : (
-                    <div className="flex flex-row flex-nowrap items-center">
+                    <div className="flex flex-row flex-nowrap">
                         <ComposerAssistantCustomInput
                             selectedText={selectedText}
                             isAssistantExpanded={isAssistantExpanded}
