@@ -1,4 +1,4 @@
-import { $isListItemNode, $isListNode } from '@lexical/list'
+import { $createListItemNode, $isListItemNode, $isListNode } from '@lexical/list'
 import type { ElementFormatType, ElementNode } from 'lexical'
 import { $nodesOfType, $isElementNode, $isTextNode } from 'lexical'
 import { $unwrapSuggestionNode } from './Utils'
@@ -171,6 +171,10 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
       node.remove()
     } else if (suggestionType === 'block-type-change') {
       const block = $findMatchingParent(node, $isNonInlineLeafElement)
+      if (!block) {
+        node.remove()
+        continue
+      }
       node.remove()
       const changedProperties = node.__properties.nodePropertiesChanged as
         | BlockTypeChangeSuggestionProperties
@@ -183,7 +187,9 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
       const formatType = changedProperties.initialFormatType || block.getFormatType()
       const indent = changedProperties.initialIndent || block.getIndent()
       const initialBlockTypeNode = createInitialBlockTypeElement()
-      initialBlockTypeNode.setFormat(formatType)
+      if (!$isCustomListNode(initialBlockTypeNode)) {
+        initialBlockTypeNode.setFormat(formatType)
+      }
       if (initialBlockTypeNode.canIndent()) {
         initialBlockTypeNode.setIndent(indent)
       }
@@ -198,10 +204,15 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
       }
       block.replace(initialBlockTypeNode, true)
       if ($isCustomListNode(initialBlockTypeNode)) {
+        if (initialBlockTypeNode.getChildrenSize() === 0) {
+          const emptyListItem = $createListItemNode()
+          initialBlockTypeNode.append(emptyListItem)
+        }
         for (const item of initialBlockTypeNode.getChildren()) {
           if (!$isListItemNode(item)) {
             continue
           }
+          item.setFormat(formatType)
           item.setIndent(indent)
         }
       }
