@@ -22,6 +22,16 @@ export const OnboardingLockSetup: FC = () => {
     };
 
     const lockModes: LockModeOption[] = [
+        ...(!lock.orgControlled
+            ? ([
+                  {
+                      value: LockMode.NONE,
+                      label: c('Label').t`None`,
+                      icon: 'pass-lockmode-none',
+                  },
+              ] as const)
+            : []),
+
         {
             value: LockMode.SESSION,
             label: c('Label').t`PIN code`,
