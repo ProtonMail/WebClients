@@ -114,7 +114,15 @@ export const UploadStepButtons = ({ onNext }: OnboardingProps) => {
                 }}
             />
 
-            <Button size="large" shape="ghost" color="norm" onClick={onNext}>
+            <Button
+                size="large"
+                shape="ghost"
+                color="norm"
+                onClick={() => {
+                    countActionWithTelemetry(Actions.OnboardingV2UploadSkip);
+                    onNext();
+                }}
+            >
                 {c('Onboarding Action').t`Skip for now`}
             </Button>
 
