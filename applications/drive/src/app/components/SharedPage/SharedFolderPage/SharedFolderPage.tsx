@@ -60,7 +60,7 @@ function SharedPagePreviewContainer({
     } = usePublicFileView(shareId, linkId, true, sortParams);
 
     const rootRef = useRef<HTMLDivElement>(null);
-    const hideDownload = isProtonDocument(loadedLink?.mimeType || '');
+    const isDocument = isProtonDocument(loadedLink?.mimeType || '');
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
     return (
@@ -89,9 +89,9 @@ function SharedPagePreviewContainer({
                 )
             }
             onClose={onClose}
-            onDownload={hideDownload ? undefined : onDownload}
+            onDownload={isDocument ? undefined : onDownload}
             isPublicDocsAvailable={isDocsPublicSharingEnabled}
-            onOpenInDocs={openInDocs && loadedLink ? () => openInDocs(loadedLink.linkId) : undefined}
+            onOpenInDocs={openInDocs && loadedLink && isDocument ? () => openInDocs(loadedLink.linkId) : undefined}
         />
     );
 }
