@@ -38,9 +38,9 @@
 
 	/* Customize lock selector radios */
 	&--lock {
-		& > *,
-		.radio ~ span {
-			inline-size: 100%;
+		:checked ~ .pass-lock-option,
+		.pass-lock-option:hover {
+			background-color: var(--interaction-norm-minor-1);
 		}
 
 		& > .field-two-container {
@@ -51,30 +51,6 @@
 			.field-two-label-container {
 				margin: 0;
 			}
-		}
-
-		& > label:first-of-type {
-			display: none;
-		}
-
-		.radio ~ span,
-		& > .field-two-container {
-			padding: 0.875rem;
-			border-radius: 0.75rem;
-		}
-
-		.radio ~ span .color-weak {
-			display: none;
-		}
-
-		.radio:checked ~ span,
-		.radio:hover ~ span {
-			background: #302d45;
-		}
-
-		.button-promotion {
-			position: absolute;
-			inset-inline-end: 0.875rem;
 		}
 	}
 
