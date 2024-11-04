@@ -25,7 +25,7 @@ import {
 import { useEffect, useRef, useState } from 'react'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { SuggestionTypesThatCanBeEmpty, type SuggestionID } from './Types'
-import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND } from '../../Commands/Events'
+import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INSERT_FILE_COMMAND } from '../../Commands/Events'
 import { type EditorRequiresClientMethods } from '@proton/docs-shared'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
@@ -46,11 +46,7 @@ import { CLEAR_FORMATTING_COMMAND, SET_SELECTION_STYLE_PROPERTY_COMMAND } from '
 import { $patchStyleAsSuggestion } from './patchStyleAsSuggestion'
 import { generateSuggestionSummary } from './generateSuggestionSummary'
 import { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from '../Image/ImagePlugin'
-import {
-  $handleImageDragAndDropAsSuggestion,
-  $handleImageSizeChangeAsSuggestion,
-  $insertImageNodeAsSuggestion,
-} from './imageHandling'
+import { $handleImageDragAndDropAsSuggestion, $handleImageSizeChangeAsSuggestion } from './imageHandling'
 import { EditorUserMode } from '../../EditorUserMode'
 import { $handleIndentOutdentAsSuggestion } from './handleIndentOutdent'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
@@ -86,6 +82,7 @@ import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfN
 import { $setElementAlignmentAsSuggestion } from './setElementAlignmentAsSuggestion'
 import { useNotifications } from '@proton/components'
 import { $insertListAsSuggestion } from './insertListAsSuggestion'
+import { eventFiles } from '@lexical/rich-text'
 
 const LIST_TRANSFORMERS = [UNORDERED_LIST, ORDERED_LIST, CHECK_LIST]
 
@@ -403,11 +400,15 @@ export function SuggestionModePlugin({
         COMMAND_PRIORITY_CRITICAL,
       ),
       editor.registerCommand(
-        // Overriding paste event just in case, although this is usually
-        // never triggered when in suggestion mode, except for when pasting
-        // a file like an image, which will be handled in a separate task (DRVDOC-1055)
         PASTE_COMMAND,
         (event) => {
+          const [, files, hasTextContent] = eventFiles(event)
+          if (files.length > 0 && !hasTextContent) {
+            for (const file of files) {
+              editor.dispatchCommand(INSERT_FILE_COMMAND, file)
+            }
+            return true
+          }
           return true
         },
         COMMAND_PRIORITY_CRITICAL,
@@ -552,7 +553,7 @@ export function SuggestionModePlugin({
       ),
       editor.registerCommand(
         INSERT_IMAGE_NODE_COMMAND,
-        (node) => $insertImageNodeAsSuggestion(node, addCreatedIDtoSet, suggestionModeLogger),
+        (node) => $selectionInsertClipboardNodes([node], addCreatedIDtoSet, suggestionModeLogger),
         COMMAND_PRIORITY_CRITICAL,
       ),
       editor.registerCommand(
