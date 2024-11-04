@@ -707,6 +707,9 @@
       "Upgrade now": [
         "立即升级账户"
       ],
+      "Upgrade to Mail Plus": [
+        "升级至 Mail Plus"
+      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -873,6 +876,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "如果现在退出，该日程将不会被保存。"
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "请不要关闭此选项卡。一些请求仍在后台处理。"
       ]
     },
     "Apps dropdown": {
@@ -951,6 +957,148 @@
     "BF2024: Action (top button in header)": {
       "Black Friday": [
         "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus 与 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } 存储空间"
+      ],
+      "1 TB total": [
+        "1 TB 总计"
+      ],
+      "1 user": [
+        "1 位用户"
+      ],
+      "1 user account": [
+        "1 位用户账户"
+      ],
+      "10 email addresses": [
+        "10 个邮箱地址"
+      ],
+      "2 users": [
+        "2 位用户"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 位用户账户"
+      ],
+      "6 users": [
+        "6 位用户"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ servers across 110+ countries"
+      ],
+      "Ad-blocker and malware protection": [
+        "广告拦截及恶意软件防护"
+      ],
+      "Admin panel to manage your family": [
+        "管理员面板管理您的家庭"
+      ],
+      "Advanced account protection": [
+        "高级账户保护"
+      ],
+      "Dark Web Monitoring": [
+        "暗网密码泄露监测"
+      ],
+      "Easily add or remove users": [
+        "轻松添加或移除用户"
+      ],
+      "High speed streaming": [
+        "高速看视频"
+      ],
+      "Integrated 2FA authenticator": [
+        "内置双重验证器"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Password health alerts": [
+        "密码健康警报"
+      ],
+      "Private photo backup": [
+        "私人照片备份"
+      ],
+      "Protect 10 devices at a time": [
+        "Protect 10 devices at a time"
+      ],
+      "Secure file storage & sharing": [
+        "安全文件存储与共享"
+      ],
+      "Secure vault and link sharing": [
+        "安全保险库和链接共享"
+      ],
+      "Unlimited folders, labels and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "无限 hide-my-email 别名"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "无限登录、备注、信用卡"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
+      ],
+      "Version history": [
+        "各版本历史"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "折扣基于标准月费计算。"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "您的订阅将在到期后以标准优惠价自动续订。"
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "常用"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "总计${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Renews after 1 month at ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "随时随地畅享 Netflix、Disney+、Prime Video 等精彩内容。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全。支持 ${ addresses } 个邮箱地址、自有域名、${ BRAND_NAME } Scribe 写作助手、无限量的 hide-my-email 别名等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全。支持自定义域名、15 个邮箱地址、无限量的 hide-my-email 别名等更多高级功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。包括在线文档编辑器、照片备份、版本历史记录、加密文件共享等。"
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "所有 ${ BRAND_NAME } 服务共用同一存储空间。"
       ]
     },
     "Billing cycle": {
@@ -1154,6 +1302,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "编辑（查看、创建或编辑事件详情）"
+      ],
       "View (see all event details)": [
         "允许查看所有日程详情"
       ]
@@ -2359,6 +2510,12 @@
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "更好地组织你的一天，追踪你的时间，优先处理任务。使用自定义活动颜色对日历进行颜色标识。"
       ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "对事件进行颜色编码可以让您更轻松地安排一天的日程、追踪您的时间并确定任务的优先顺序。"
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "创建 Zoom 会议并一键添加加入事件的详细信息。"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "正在解密通讯录，可能需要几分钟的时间。完成后您就可以下载导出的通讯录文件了。"
       ],
@@ -2388,6 +2545,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "设置账户恢复方式，防止因遗忘密码而丧失账户使用权。"
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "这可能需要几分钟。与此同时，您可以继续照常使用 ${ CALENDAR_APP_NAME }。"
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "为了使您的账户受到最高安全保护，请设置恢复短语。"
@@ -2747,6 +2907,9 @@
       ],
       "Failed to get original occurrence in series": [
         "无法获取序列中的原始事件"
+      ],
+      "Failed to load oauth modal.": [
+        "无法加载 oauth 模式。"
       ],
       "First name is too long": [
         "名字太长。"
@@ -4131,6 +4294,9 @@
       "Dedicated servers": [
         "专用服务器"
       ],
+      "Deleting event...": [
+        "正在删除事件..."
+      ],
       "Discard changes?": [
         "舍弃更改？"
       ],
@@ -4478,6 +4644,9 @@
       ],
       "Removed participants will be notified.": [
         "移除的参与者将收到通知"
+      ],
+      "Saving event...": [
+        "正在保存事件..."
       ],
       "Select a service provider to start": [
         "请选择一个服务提供商并开始导入"
@@ -8331,6 +8500,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "下载 ${ appName[APP_NAME] } 应用"
       ],
+      "Get Zooming faster": [
+        "Zoom 速度更快"
+      ],
       "Gift": [
         "礼品码"
       ],
@@ -8564,6 +8736,9 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似虚假网站"
+      ],
+      "We're setting up calendar search": [
+        "我们正在设置日历搜索"
       ],
       "We've locked some calendars to protect your data": [
         "为保护您的数据，我们已锁定一些日历"
@@ -9070,6 +9245,17 @@
       ],
       "Yearly, ${ untilString }": [
         "每年, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "添加 Zoom 会议"
+      ],
+      "Adding conferencing details": [
+        "添加会议详细信息"
+      ],
+      "Loading Zoom configuration": [
+        "正在加载 Zoom 配置"
       ]
     }
   }

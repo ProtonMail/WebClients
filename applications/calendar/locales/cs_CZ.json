@@ -1135,8 +1135,17 @@
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje online editor dokumentů, zálohování fotografií, historii verzí souborů, šifrované sdílení souborů a další funkce."
@@ -8319,6 +8328,11 @@
         "Zkontrolujte bezpečnost svého účtu"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Přihlášení nebylo úspěšně dokončeno."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Všechny aliasy"
@@ -8899,6 +8913,17 @@
       ],
       "You can now collapse the navigation bar.": [
         "Nyní můžete sbalit navigační panel."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Přihlásit se"
+      ],
+      "Sign in to your organization": [
+        "Přihlaste se ke své organizaci"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     },
     "State": {
@@ -10942,7 +10967,7 @@
         "Přidávání detailů o konferencích"
       ],
       "Loading Zoom configuration": [
-        "Načítání konfigurace Zoomu"
+        "Načítání nastavení Zoomu"
       ]
     },
     "Zoom Meeting": {
