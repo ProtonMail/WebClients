@@ -77,8 +77,8 @@ const canFetch = (user: User) => {
 const getMemberFromState = (state: ModelState<EnhancedMember[]>, target: Member) => {
     return state.value?.find((member) => member.ID === target.ID);
 };
-const getMemberIndexFromState = (state: ModelState<EnhancedMember[]>, target: Member) => {
-    return state.value?.findIndex((member) => member.ID === target.ID);
+const getMemberIndexFromState = (members: EnhancedMember[], target: Member) => {
+    return members.findIndex((member) => member.ID === target.ID);
 };
 
 const freeMembers: EnhancedMember[] = [];
@@ -111,16 +111,22 @@ const slice = createSlice({
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
         },
-        upsertMember: (state, action: PayloadAction<{ member: Member }>) => {
-            const memberIndex = getMemberIndexFromState(state, action.payload.member);
+        upsertMember: (state, action: PayloadAction<{ member: Member; type?: 'delete' }>) => {
             if (!state.value) {
+                return;
+            }
+            const memberIndex = getMemberIndexFromState(state.value, action.payload.member);
+            if (action.payload.type === 'delete') {
+                if (memberIndex !== -1) {
+                    state.value.splice(memberIndex, 1);
+                }
                 return;
             }
             const newMember = {
                 ...action.payload.member,
                 addressState: 'partial' as const,
             };
-            if (memberIndex === -1 || memberIndex === undefined) {
+            if (memberIndex === -1) {
                 state.value.push(newMember);
             } else {
                 const previousMember = state.value[memberIndex];

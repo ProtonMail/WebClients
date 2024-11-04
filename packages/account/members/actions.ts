@@ -8,6 +8,7 @@ import {
     checkMemberAddressAvailability,
     createMemberAddress,
     createMember as createMemberConfig,
+    deleteMember,
     deleteUnprivatizationRequest,
     getMember as getMemberConfig,
     privatizeMember as privatizeMemberConfig,
@@ -63,6 +64,40 @@ import InvalidAddressesError from './errors/InvalidAddressesError';
 import UnavailableAddressesError from './errors/UnavailableAddressesError';
 import { MemberCreationValidationError, membersThunk, upsertMember } from './index';
 import validateAddUser from './validateAddUser';
+
+export const deleteMembers = ({
+    members,
+}: {
+    members: Member[];
+}): ThunkAction<
+    Promise<{
+        success: Member[];
+        failure: Member[];
+    }>,
+    OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch, getState, extra) => {
+        const success: Member[] = [];
+        const failure: Member[] = [];
+        for (const member of members) {
+            const deleted = await extra
+                .api(deleteMember(member.ID))
+                .then(() => true)
+                .catch(noop);
+            if (deleted) {
+                success.push(member);
+            } else {
+                failure.push(member);
+            }
+        }
+        for (const member of success) {
+            dispatch(upsertMember({ member, type: 'delete' }));
+        }
+        return { success, failure };
+    };
+};
 
 export const getMember = (api: Api, memberID: string) =>
     api<{
