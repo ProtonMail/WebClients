@@ -1,9 +1,10 @@
-import { KEY_DOWN_COMMAND, type LexicalEditor } from 'lexical'
+import { KEY_DOWN_COMMAND, PASTE_COMMAND, type LexicalEditor } from 'lexical'
 
 import type { Ref } from 'react'
 import { forwardRef, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { mergeRefs } from '../Shared/mergeRefs'
 import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INPUT_EVENT_COMMAND } from '../Commands/Events'
+import { eventFiles } from '@lexical/rich-text'
 
 export type Props = {
   editor: LexicalEditor
@@ -82,6 +83,14 @@ function ContentEditableElementImpl(
             event.preventDefault()
             event.stopImmediatePropagation()
             editor.dispatchCommand(BEFOREINPUT_EVENT_COMMAND, event)
+          }
+        })
+        rootElement.addEventListener('paste', (event) => {
+          const [, files, hasTextContent] = eventFiles(event)
+          if (isSuggestionModeRef.current && files.length > 0 && !hasTextContent) {
+            event.preventDefault()
+            event.stopImmediatePropagation()
+            editor.dispatchCommand(PASTE_COMMAND, event)
           }
         })
       }
