@@ -842,6 +842,9 @@
       ]
     },
     "Error": {
+      "Domain not available, try again later": [
+        "Domeniul nu este disponibil, reîncercați mai târziu."
+      ],
       "Email is not valid": [
         "E-mailul nu este valid"
       ],
@@ -1082,6 +1085,22 @@
     "Placeholder": {
       "Password": [
         "Parola"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Înscrierea nu o fost finalizată corect."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Conectare"
+      ],
+      "Sign in to your organization": [
+        "Autentificare în organizație"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ]
     },
     "Success": {

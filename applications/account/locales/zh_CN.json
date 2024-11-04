@@ -748,10 +748,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reject": [
@@ -1428,6 +1428,14 @@
         "选择您的年终优惠"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 存储空间 (是其他套餐的 2 倍)"
@@ -1449,14 +1457,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "套餐 ${ plan } 限时回归"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -1491,6 +1491,148 @@
     "BF2024: Action (top button in header)": {
       "Black Friday": [
         "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面应用"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus 与 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } 存储空间"
+      ],
+      "1 TB total": [
+        "1 TB 总计"
+      ],
+      "1 user": [
+        "1 位用户"
+      ],
+      "1 user account": [
+        "1 位用户账户"
+      ],
+      "10 email addresses": [
+        "10 个邮箱地址"
+      ],
+      "2 users": [
+        "2 位用户"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 位用户账户"
+      ],
+      "6 users": [
+        "6 位用户"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ servers across 110+ countries"
+      ],
+      "Ad-blocker and malware protection": [
+        "广告拦截及恶意软件防护"
+      ],
+      "Admin panel to manage your family": [
+        "管理员面板管理您的家庭"
+      ],
+      "Advanced account protection": [
+        "高级账户保护"
+      ],
+      "Dark Web Monitoring": [
+        "暗网密码泄露监测"
+      ],
+      "Easily add or remove users": [
+        "轻松添加或移除用户"
+      ],
+      "High speed streaming": [
+        "高速看视频"
+      ],
+      "Integrated 2FA authenticator": [
+        "内置双重验证器"
+      ],
+      "Online document editor": [
+        "在线文档编辑器"
+      ],
+      "Password health alerts": [
+        "密码健康警报"
+      ],
+      "Private photo backup": [
+        "私人照片备份"
+      ],
+      "Protect 10 devices at a time": [
+        "Protect 10 devices at a time"
+      ],
+      "Secure file storage & sharing": [
+        "安全文件存储与共享"
+      ],
+      "Secure vault and link sharing": [
+        "安全保险库和链接共享"
+      ],
+      "Unlimited folders, labels and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "无限 hide-my-email 别名"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "无限登录、备注、信用卡"
+      ],
+      "Use your own email domain": [
+        "个性化邮箱域名"
+      ],
+      "Version history": [
+        "各版本历史"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "折扣基于标准月费计算。"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "您的订阅将在到期后以标准优惠价自动续订。"
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "常用"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "总计${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Renews after 1 month at ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "随时随地畅享 Netflix、Disney+、Prime Video 等精彩内容。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全。支持 ${ addresses } 个邮箱地址、自有域名、${ BRAND_NAME } Scribe 写作助手、无限量的 hide-my-email 别名等高级功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术守护您的邮件安全。支持自定义域名、15 个邮箱地址、无限量的 hide-my-email 别名等更多高级功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。包括在线文档编辑器、照片备份、版本历史记录、加密文件共享等。"
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "所有 ${ BRAND_NAME } 服务共用同一存储空间。"
       ]
     },
     "Billing cycle": {
@@ -1733,6 +1875,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "编辑（查看、创建或编辑事件详情）"
+      ],
       "View (see all event details)": [
         "允许查看所有日程详情"
       ]
@@ -6022,10 +6167,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -9851,6 +9996,23 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -9878,23 +10040,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -10387,6 +10532,14 @@
         "您所选的账户等级：${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -10405,14 +10558,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -13169,10 +13314,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
       "Change login password": [

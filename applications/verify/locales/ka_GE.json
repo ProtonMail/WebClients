@@ -842,6 +842,9 @@
       ]
     },
     "Error": {
+      "Domain not available, try again later": [
+        "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
+      ],
       "Email is not valid": [
         "ელფოსტა არასწორია"
       ],
@@ -1082,6 +1085,22 @@
     "Placeholder": {
       "Password": [
         "პაროლი"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "შესვლა წარმატებით არ დასრულდა."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "შესვლა"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ]
     },
     "Success": {

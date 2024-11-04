@@ -941,6 +941,9 @@
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen mukautetuille sähköpostin verkkotunnuksille, rajattoman määrän hide-my-email-aliaksia ja paljon muuta."
+      ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
       ],
@@ -3070,6 +3073,11 @@
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Kun lisäsalasana on käytössä, aliaksia voidaan hallita vain ${ PASS_APP_NAME }issa."
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Näyttönimi ei voi olla tyhjä"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -6822,14 +6830,8 @@
       "External invitation's email was sent again": [
         "Ulkoinen kutsusähköposti lähetettiin uudelleen"
       ],
-      "Failed to accept share invitation": [
-        "Jakokutsun hyväksyntä epäonnistui"
-      ],
       "Failed to download files: ${ err }": [
         "Tiedostojen lataus epäonnistui: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Jakokutsusta kieltäytyminen epäonnistui"
       ],
       "Failed to upload files: ${ err }": [
         "Tiedostojen tallennus epäonnistui: ${ err }"
@@ -6852,12 +6854,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
-      ],
-      "Share invitation accepted successfully": [
-        "Jakokutsu hyväksyttiin"
-      ],
-      "Share invitation declined": [
-        "Kieltäydyit jakokutsusta"
       ],
       "Stopping the sharing of this item has failed": [
         "Tämän kohteen jakamisen lopettaminen epäonnistui"
@@ -7303,6 +7299,11 @@
     "Safety review": {
       "Review your account safety": [
         "Tarkista tilisi turvallisuus"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Sisäänkirjautumista ei suoritettu loppuun."
       ]
     },
     "Security Center": {
@@ -7776,6 +7777,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Kirjaudu sisään organisaatioosi"
       ]
     },
     "State": {

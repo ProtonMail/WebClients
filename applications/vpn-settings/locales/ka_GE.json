@@ -55,6 +55,9 @@
       "Add domain": [
         "დომენის დამატება"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "მეტი ${ BRAND_NAME } Scribe ადგილების დამატება"
+      ],
       "Add PayPal": [
         "PayPal-ის დამატება"
       ],
@@ -1078,11 +1081,24 @@
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
         "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ hide-my-email-ის ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს, Dark Web-ის მონიტორინგს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართებს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს დოკუმენტის რედაქტორს ბრაუზერისთვის, ფოტოების მარქაფს, ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -2273,6 +2289,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "თუ გამორთულია, წვდომა, მხოლოდ, ადმინებს ექნებათ."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "იქონიეთ თქვენი ცხოვრების ნაწილები ცალ-ცალკე და საფოსტო ყუთი კი - დალაგებული, დამატებითი მისამართებით."
       ],
@@ -3128,6 +3147,9 @@
     "fido2: Action": {
       "Delete key": [
         "გასაღების წაშლა"
+      ],
+      "New security key": [
+        "ახალი უსაფრთხოების გასაღები"
       ]
     },
     "fido2: Error": {
@@ -3181,6 +3203,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "გადაამოწმეთ თქვენი იდენტიფიკაცია ფიზიკური U2F ან FIDO2 უსაფრთხოების გასაღებით"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "მიაღწიეთ ${ maxSecurityKeyLength } უსაფრთხოების გასაღებს. ეს მაქსიმუმია.",
+        "მიაღწიეთ ${ maxSecurityKeyLength } უსაფრთხოების გასაღებს. ეს მაქსიმუმია."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "თქვენი 2FA გასაღები გამოსაყენებლად მზადაა."
       ]
@@ -3208,6 +3234,9 @@
       ],
       "Security key registered": [
         "უსაფრთხოების გასაღები დარეგისტრირებულია"
+      ],
+      "Security keys": [
+        "უსაფრთხოების გასაღებები"
       ]
     },
     "file size format": {
@@ -5322,6 +5351,9 @@
       "Allowed Domain": [
         "დაშვებული დომენი"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "საშუალებას აძლევს ყველას თქვენს ორგანიზაციაში, უპრობლემოდ დაამატოს ვიდეოკონფერენციის ბმულები მათი კალენდრის მოსაწვევებში."
+      ],
       "Amount": [
         "რაოდენობა"
       ],
@@ -5480,6 +5512,9 @@
       ],
       "Email or username": [
         "ელფოსტა ან მომხმარებლის სახელი"
+      ],
+      "Enable video conferencing ": [
+        "ვიდეოკონფერენციების ჩართვა "
       ],
       "Enter the code displayed on your TV": [
         "შეიყვანეთ თქვენს TV-ზე ნაჩვენები კოდი"
@@ -7177,6 +7212,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2FA ავთენტიკაცია აუცილებელი აღარაა"
+      ],
+      "Video conferencing settings have been updated": [
+        "ვიდეოკონფერენციის პარამეტრები განახლდა"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8045,6 +8083,12 @@
       "For security reasons, the token is hidden": [
         "უსაფრთხოების მიზნით კოდი დამალულია"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა მონაცემები და დაასრულეთ SCIM-ის მორგება ${ appName }-სთვის."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე და დააკოპირეთ და დასვით ქვედა კოდი და თავიდან ჩართეთ SCIM ${ appName }-სთვის."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "თუ დაკარგეთ ან დაგავიწყდათ SCIM-ის კოდი, შეგიძლიათ, ახალი შექმნათ, მაგრამ, გაითვალისწინეთ, რომ საჭირო იქნება თქვენი იდენტიფიკატორის მომწოდებლის პარამეტრების განახლება."
       ],
@@ -8737,6 +8781,9 @@
       "Join ${ organizationName }": [
         "${ organizationName }-ში შესვლა"
       ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "დარწმუნდით, რომ ის სადმე უაფრთხო ადგილას შეინახეთ, რომ დაიბრუნოთ თქვენი ანგარიში, თუ თქვენი იდენტიფიკაციის პროვაიდერის შესვლის დეტალებს დაკარგავთ."
+      ],
       "New backup password": [
         "ახალი მარქაფი პაროლი"
       ],
@@ -8757,6 +8804,9 @@
       ],
       "Share the confirmation code with your administrator": [
         "გაუზიარეთ დადასტურების კოდი თქვენს ადმინისტრატორს"
+      ],
+      "Sign in": [
+        "შესვლა"
       ],
       "Sign in to your organization": [
         "შედით თქვენს ორგანიზაციაში"
@@ -8790,6 +8840,9 @@
       ],
       "User details:": [
         "მომხმარებლის დეტალები:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ]
     },
     "sso: auth device state": {
@@ -9424,6 +9477,9 @@
       "Administrator privileges restored": [
         "ადმინისტრატორის პრივილეგიები აღდგენილია"
       ],
+      "Backup password updated": [
+        "მარქაფი პაროლი განახლდა"
+      ],
       "Catch-all address updated": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი განახლებულია"
       ],
@@ -9586,6 +9642,9 @@
       ],
       "Preferences updated": [
         "პარამეტრები განახლდა"
+      ],
+      "Resent invitation": [
+        "მოსაწვევი გაგზავნილია თავიდან"
       ]
     },
     "Suffix": {
@@ -9695,6 +9754,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
@@ -10016,6 +10078,9 @@
       ],
       "Email subscriptions": [
         "ელფოსტის გამოწერები"
+      ],
+      "Enable for all users": [
+        "ჩართვა ყველა მომხმარებლისთვის"
       ],
       "Enter 2FA code": [
         "შეიყვანეთ 2FA კოდი"
@@ -10340,6 +10405,9 @@
       "Verifying your payment...": [
         "თქვენი გადახდის გადამოწმება..."
       ],
+      "Video conference": [
+        "ვიდეოკონფერენცია"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "ჩვენ გამოგიგზავნით ელფოსტას ახალ მისამართზე, ინსტრუქციებით, როგორ დაასრულოთ ცვლილება."
       ],
@@ -10423,6 +10491,12 @@
       ]
     },
     "Tooltip": {
+      "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
+        "ადმინებს შეუძლიათ მომხმარებლის ანგარიშებს მართვა და სხვა მომხმარებლებისთვის ადმინის პრივილეგიების მიცემა. ორგანიზაციის სატარიფო გეგმის ჩასწორება, მხოლოდ, ძირითად ადმინს შეუძლია."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "საშუალებას გაძლევთ, თქვენი კალენდრის მოსაწვევებში ვიდეოკონფერენციების ბმულები უპრობლემოდ ჩაამატოთ."
+      ],
       "An approximate location of the IP address": [
         "IP მისამართის დაახლოებითი მდებარეობა"
       ],
@@ -10538,6 +10612,10 @@
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "მომხმარებლის კონფიდენციალურად გამოცხადებით მათ თავის ანგარიშზე არსებულ მონაცემების აღდგენაში ვეღარ დაეხმარებით."
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:",
+        "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:"
       ],
       "Could not enable administrator access: ${ error }": [
         "ვერ ჩავრთე ადმინისტრატორის წვდომა: ${ error }"

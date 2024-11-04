@@ -842,6 +842,9 @@
       ]
     },
     "Error": {
+      "Domain not available, try again later": [
+        "El domini no està disponible, torneu-ho a provar més tard"
+      ],
       "Email is not valid": [
         "El correu electrònic no és vàlid"
       ],
@@ -1082,6 +1085,16 @@
     "Placeholder": {
       "Password": [
         "Contrasenya"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "No s'ha completat l'inici de sessió."
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Inicieu la sessió a la vostra organització"
       ]
     },
     "Success": {

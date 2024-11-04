@@ -55,6 +55,9 @@
       "Add domain": [
         "Tambah domain"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Tambah lebih banyak kuota ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Tambahkan akun PayPal"
       ],
@@ -1085,8 +1088,14 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
@@ -2274,6 +2283,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Apabila dinonaktifkan, hanya admin yang akan memiliki akses."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Pisahkan aspek kehidupan Anda dan rapikan kotak masuk Anda dengan alamat tambahan."
       ],
@@ -3176,6 +3188,9 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifikasi identitas Anda dengan kunci keamanan fisik U2F atau FIDO2"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Anda telah mencapai batas jumlah maksimum ${ maxSecurityKeyLength } kunci keamanan."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Kunci autentikasi dua faktor Anda siap digunakan."
       ]
@@ -3203,6 +3218,9 @@
       ],
       "Security key registered": [
         "Kunci keamanan didaftarkan"
+      ],
+      "Security keys": [
+        "Kunci keamanan"
       ]
     },
     "file size format": {
@@ -8668,6 +8686,9 @@
       "Share the confirmation code with your administrator": [
         "Bagikan kode konfirmasi ini dengan administrator Anda"
       ],
+      "Sign in": [
+        "Masuk"
+      ],
       "Sign in to your organization": [
         "Masuk ke organisasi Anda"
       ],
@@ -8703,6 +8724,9 @@
       ],
       "User details:": [
         "Rincian pengguna:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     },
     "sso: auth device state": {
@@ -9319,6 +9343,9 @@
       "Administrator privileges restored": [
         "Hak administrator dipulihkan"
       ],
+      "Backup password updated": [
+        "Kata sandi cadangan diperbarui"
+      ],
       "Catch-all address updated": [
         "Alamat catch-all diperbarui"
       ],
@@ -9590,6 +9617,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
@@ -9908,6 +9938,9 @@
       ],
       "Email subscriptions": [
         "Langganan email"
+      ],
+      "Enable for all users": [
+        "Aktifkan untuk seluruh pengguna"
       ],
       "Enter 2FA code": [
         "Masukkan kode 2FA"
@@ -10229,6 +10262,9 @@
       ],
       "Verifying your payment...": [
         "Memverifikasi pembayaran Anda..."
+      ],
+      "Video conference": [
+        "Konferensi video"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Kami akan mengirimkan email ke alamat baru Anda yang berisi panduan untuk menyelesaikan proses migrasi Anda."

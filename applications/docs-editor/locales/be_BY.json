@@ -29,6 +29,9 @@
       "Add new table row": [
         "Дадаць новы радок у табліцу"
       ],
+      "Add suggestion": [
+        "Дадаць прапанову"
+      ],
       "Adjust font size": [
         "Наладзіць памер шрыфту"
       ],
@@ -109,9 +112,6 @@
       ],
       "Edit link": [
         "Рэдагаваць спасылку"
-      ],
-      "Exit Suggestion": [
-        "Выйсці з прапаноў"
       ],
       "Fit table to page width": [
         "Падагнаць табліцу да шырыні старонкі"
@@ -214,9 +214,6 @@
       ],
       "Submit": [
         "Адправіць"
-      ],
-      "Suggestion Mode": [
-        "Рэжым прапановы"
       ],
       "Table options": [
         "Параметры табліцы"
@@ -409,6 +406,9 @@
     "Description": {
       "Edit document directly": [
         "Наўпроставае рэдагаванне дакумента"
+      ],
+      "Edits become suggestions": [
+        "Рэдагаванні пераходзяць у прапановы"
       ],
       "Read or print final document": [
         "Прачытаць або раздрукаваць канчатковы дакумент"
@@ -668,6 +668,11 @@
       ],
       "Language not supported": [
         "Мова не падтрымліваецца"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Стварэнне прапаноў у блоках кода не падтрымліваецца"
       ]
     }
   }

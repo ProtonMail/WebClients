@@ -570,6 +570,9 @@
       "Sign out": [
         "Выйсці з уліковага запісу"
       ],
+      "Sign up": [
+        "Зарэгістравацца"
+      ],
       "Skip verification": [
         "Прапусціць праверку"
       ],
@@ -859,7 +862,7 @@
         "3 ТБ"
       ],
       "6 user accounts": [
-        "6 уліковых запісаў карыстальніка"
+        "6 уліковых запісаў карыстальнікаў"
       ],
       "6 users": [
         "6 карыстальнікаў"
@@ -959,11 +962,20 @@
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, рэзерваванне фатаграфій, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
@@ -3800,6 +3812,12 @@
         "${ contactsLength } кантактаў",
         "${ contactsLength } кантактаў"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } дазваляе вам супрацоўнічаць у рэжыме рэальнага часу з дапамогай скразнога шыфравання для поўнай прыватнасці. Стварыце копію, каб пачаць рэдагаванне, або папрасіце ўладальніка забяспечыць вас правам рэдагавання дакумента."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } у"
+      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзены ${ groupCounts } групы",
@@ -4019,6 +4037,9 @@
         "Стварыць ${ calendarsToBeCreatedCount } новых календароў",
         "Стварыць ${ calendarsToBeCreatedCount } новыя календары"
       ],
+      "Create a copy to edit": [
+        "Стварыць копію для рэдагавання"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Стварыць метку для імпартаваных паведамленняў, прамежак часу для гэтага імпартавання і тыя папкі, якія вы хочаце імпартаваць."
       ],
@@ -4087,6 +4108,9 @@
       ],
       "Document moved to trash": [
         "Дакумент перамешчаны ў сметніцу"
+      ],
+      "Document owner has the password": [
+        "Уладальнік дакумента мае пароль"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
@@ -7099,14 +7123,8 @@
       "External invitation's email was sent again": [
         "Знешні запрашальны ліст быў адпраўлены паўторна"
       ],
-      "Failed to accept share invitation": [
-        "Не ўдалося прыняць абагуленае запрашэнне"
-      ],
       "Failed to download files: ${ err }": [
         "Не ўдалося спампаваць файлы: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Не ўдалося адхіліць абагуленае запрашэнне"
       ],
       "Failed to upload files: ${ err }": [
         "Не ўдалося запампаваць файлы: ${ err }"
@@ -7131,12 +7149,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недастаткова месца для запампоўвання ${ formattedTotal }"
-      ],
-      "Share invitation accepted successfully": [
-        "Абагуленае запрашэнне паспяхова прынята"
-      ],
-      "Share invitation declined": [
-        "Абагуленае запрашэнне адхілена"
       ],
       "Stopping the sharing of this item has failed": [
         "Збой спынення абагульвання гэтага элемента"
@@ -7601,6 +7613,11 @@
     "Safety review": {
       "Review your account safety": [
         "Агляд бяспекі вашага ўліковага запісу"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Рэгістрацыя завяршылася з памылкай."
       ]
     },
     "Security Center": {
@@ -8114,6 +8131,20 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Стварыце копію для рэдагавання гэтага дакумента."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Уваход"
+      ],
+      "Sign in to your organization": [
+        "Увайсці ў сваю арганізацыю"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO"
       ]
     },
     "State": {
@@ -8908,6 +8939,9 @@
       "Link confirmation": [
         "Пацвярджэнне спасылкі"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Зрабіць копію ў ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Кіраванне бяспечнай спасылкай"
       ],
@@ -9066,6 +9100,9 @@
       ],
       "The link expired": [
         "Спасылка пратэрмінавана"
+      ],
+      "This document is password protected": [
+        "Гэты дакумент абаронены паролем"
       ],
       "Unlock contacts groups": [
         "Разблакіраваць групы кантактаў"

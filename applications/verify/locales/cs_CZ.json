@@ -842,6 +842,9 @@
       ]
     },
     "Error": {
+      "Domain not available, try again later": [
+        "Doména není dostupná, zkuste to znovu později"
+      ],
       "Email is not valid": [
         "E-mailová adresa není platná"
       ],
@@ -1082,6 +1085,22 @@
     "Placeholder": {
       "Password": [
         "Heslo"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Přihlášení nebylo úspěšně dokončeno."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Přihlásit se"
+      ],
+      "Sign in to your organization": [
+        "Přihlaste se ke své organizaci"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     },
     "Success": {

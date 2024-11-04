@@ -124,6 +124,9 @@
       "Add label": [
         "Tambah label"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Tambah lebih banyak kuota ${ BRAND_NAME } Scribe"
+      ],
       "Add notification": [
         "Tambah notifikasi"
       ],
@@ -805,11 +808,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reject": [
         "Tolak"
@@ -1595,6 +1598,14 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh **diskon ${ discountPercentage } untuk ${ plan.Title }** pada saat Anda berlangganan selama **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1616,14 +1627,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh **diskon ${ discountPercentage } untuk ${ plan.Title }** pada saat Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1786,8 +1789,14 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
@@ -3548,6 +3557,9 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Dapatkan saldo hingga ${ credits } dengan mengundang teman ke ${ BRAND_NAME }."
       ],
+      "If disabled, only admins will have access.": [
+        "Apabila dinonaktifkan, hanya admin yang akan memiliki akses."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
@@ -5112,6 +5124,9 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Sertifikat ${ name } tidak ditemukan atau sudah dicabut"
+      ],
+      "Display name cannot be empty": [
+        "Nama tampilan tidak boleh kosong"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5620,6 +5635,9 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifikasi identitas Anda dengan kunci keamanan fisik U2F atau FIDO2"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Anda telah mencapai batas jumlah maksimum ${ maxSecurityKeyLength } kunci keamanan."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Kunci autentikasi dua faktor Anda siap digunakan."
       ]
@@ -5647,6 +5665,9 @@
       ],
       "Security key registered": [
         "Kunci keamanan didaftarkan"
+      ],
+      "Security keys": [
+        "Kunci keamanan"
       ]
     },
     "file size format": {
@@ -7150,11 +7171,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -7167,6 +7188,12 @@
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Menghapus ${ deletedServerCount } server gateway"
+      ],
+      "Disable recovery by email address": [
+        "Nonaktifkan pemulihan melalui alamat email"
+      ],
+      "Disable recovery by phone number": [
+        "Nonaktifkan pemulihan melalui nomor telepon"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Dinonaktifkan pada ${ formattedDateAndTime }"
@@ -8740,11 +8767,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "Username": [
-        "Nama pengguna"
-      ],
       "username": [
         "nama pengguna"
+      ],
+      "Username": [
+        "Nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -8778,6 +8805,12 @@
       ],
       "Verify domain": [
         "Verifikasi domain"
+      ],
+      "Verify email address": [
+        "Verifikasi alamat email"
+      ],
+      "Verify phone number": [
+        "Verifikasi nomor telepon"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifikasi identitas Anda dengan kata sandi terbatas waktu yang dihasilkan oleh aplikasi autentikator"
@@ -11546,6 +11579,32 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -11573,32 +11632,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12255,6 +12288,20 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -12273,20 +12320,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -13302,17 +13335,20 @@
       "Free forever": [
         "Gratis untuk selamanya"
       ],
-      "From the team that knows encryption": [
-        "Dari tangan para ahli yang memahami enkripsi"
-      ],
       "Get ${ appName } for ${ browserName }": [
         "Dapatkan ${ appName } untuk ${ browserName }"
       ],
       "Get in touch with our sales team": [
         "Hubungi tim penjualan kami"
       ],
+      "Get online privacy, for your whole family": [
+        "Dapatkan privasi online untuk seluruh keluarga Anda"
+      ],
       "Get the security and features your business needs": [
         "Dapatkan keamanan dan rangkaian fitur yang bisnis Anda butuhkan"
+      ],
+      "Get unlimited privacy for two": [
+        "Dapatkan privasi tanpa batas untuk dua orang pengguna"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Saya mengerti bahwa jika saya kehilangan detail pemulihan, saya dapat kehilangan akses ke akun saya secara permanen."
@@ -13392,6 +13428,9 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Pembagian brankas aman (${ n } brankas) dan tautan aman"
       ],
+      "Secure your family’s passwords and online identities": [
+        "Amankan kata sandi dan identitas online keluarga Anda"
+      ],
       "Secured by end-to-end encryption": [
         "Terlindung oleh enkripsi end-to-end"
       ],
@@ -13427,6 +13466,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Anda telah diundang untuk bergabung ke ${ PASS_APP_NAME }"
+      ],
+      "Your ${ discount }% Black Friday discount has been applied": [
+        "Diskon Jumat Hitam ${ discount }% Anda telah diterapkan"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organisasi Anda memiliki akses ke ${ free }. Apabila Anda ingin mengakses berbagai fitur premium ${ appName }, silakan minta administrator organisasi Anda untuk meningkatkan paket langganan."
@@ -14960,6 +15002,41 @@
         "Minta uji coba"
       ]
     },
+    "Signup: Info": {
+      "Based in Switzerland, GDPR compliant": [
+        "Berbasis di Swiss dan tunduk terhadap GDPR"
+      ],
+      "Built-in encryption": [
+        "Enkripsi yang tertanam secara bawaan"
+      ],
+      "Email aliases": [
+        "Alias email"
+      ],
+      "End-to-end encrypted transactions": [
+        "Transaksi yang terenkripsi end-to-end"
+      ],
+      "End-to-end encryption": [
+        "Enkripsi end-to-end"
+      ],
+      "From the team that knows encryption": [
+        "Dari tangan tim yang memahami enkripsi"
+      ],
+      "ISO 27001 certified": [
+        "Tersertifikasi ISO 27001"
+      ],
+      "Open source and audited": [
+        "Open source dan teraudit"
+      ],
+      "Open source and verified": [
+        "Open source dan terverifikasi"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Terlindung oleh undang-undang privasi Swiss"
+      ],
+      "Works on all devices": [
+        "Dapat digunakan pada seluruh perangkat"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Berpatuh pada GDPR dan HIPAA"
@@ -15312,6 +15389,9 @@
       "Share the confirmation code with your administrator": [
         "Bagikan kode konfirmasi ini dengan administrator Anda"
       ],
+      "Sign in": [
+        "Masuk"
+      ],
       "Sign in to your organization": [
         "Masuk ke organisasi Anda"
       ],
@@ -15359,6 +15439,9 @@
       ],
       "Yes, it was me": [
         "Ya, itu saya"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     },
     "sso: auth device state": {
@@ -16034,6 +16117,9 @@
       "Auto-reply updated": [
         "Pesan balasan otomatis diperbarui"
       ],
+      "Backup password updated": [
+        "Kata sandi cadangan diperbarui"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender ditambahkan. Proses sinkronisasi dapat memakan waktu hingga beberapa menit."
       ],
@@ -16446,6 +16532,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
       ],
@@ -16641,11 +16730,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -16944,6 +17033,9 @@
       "Email subscriptions": [
         "Langganan email"
       ],
+      "Enable for all users": [
+        "Aktifkan untuk seluruh pengguna"
+      ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
       ],
@@ -17120,6 +17212,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Tingkatkan privasi Anda dengan lebih banyak alamat"
+      ],
+      "Integrations": [
+        "Integrasi"
       ],
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
@@ -17585,6 +17680,9 @@
       ],
       "Version history": [
         "Riwayat versi"
+      ],
+      "Video conference": [
+        "Konferensi video"
       ],
       "VPN apps": [
         "Aplikasi VPN"

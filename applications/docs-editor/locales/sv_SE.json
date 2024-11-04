@@ -29,6 +29,9 @@
       "Add new table row": [
         "Lägg till ny tabellrad"
       ],
+      "Add suggestion": [
+        "Lägg till förslag"
+      ],
       "Adjust font size": [
         "Justera teckenstorlek"
       ],
@@ -109,9 +112,6 @@
       ],
       "Edit link": [
         "Redigera länk"
-      ],
-      "Exit Suggestion": [
-        "Avsluta förslag"
       ],
       "Fit table to page width": [
         "Passa tabell till sidbredd"
@@ -214,9 +214,6 @@
       ],
       "Submit": [
         "Skicka"
-      ],
-      "Suggestion Mode": [
-        "Förslagsläge"
       ],
       "Table options": [
         "Tabellalternativ"
@@ -409,6 +406,9 @@
     "Description": {
       "Edit document directly": [
         "Redigera dokument direkt"
+      ],
+      "Edits become suggestions": [
+        "Redigering blir förslag"
       ],
       "Read or print final document": [
         "Läs eller skriv ut slutdokument"
@@ -660,6 +660,11 @@
       ],
       "Language not supported": [
         "Språk stöds inte"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Ge förslag inuti kodblock stöds inte"
       ]
     }
   }

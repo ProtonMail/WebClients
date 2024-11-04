@@ -1115,7 +1115,7 @@
         "Mehr als 8500 Server in 110 Ländern"
       ],
       "Ad-blocker and malware protection": [
-        "Werbeblocker & Malware-Schutz"
+        "Werbeblocker und Malware-Schutz"
       ],
       "Admin panel to manage your family": [
         "Administrationskonsole zur Verwaltung deiner Familie"
@@ -1157,7 +1157,7 @@
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
       ],
       "Unlimited hide-my-email aliases": [
-        "Unbegrenzte hide-my-email-Aliasse"
+        "Unbegrenzte Hide-my-email-Aliasse"
       ],
       "Unlimited logins, notes, credit cards": [
         "Unbegrenzte Logins, Notizen, Kreditkarten"
@@ -1192,20 +1192,23 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Greife auf blockierte Inhalte zu und surfe privat. Enthält über 8.500 Server in über 110 Ländern, 10 Geräte, Hochgeschwindigkeits-Streaming, Werbeblocker und Malware-Schutz, VPN Accelerator und mehr."
+        "Greife auf blockierte Inhalte zu und surfe privat. Umfasst mehr als 8.500 Server in über 110 Ländern, 10 Geräte, Hochgeschwindigkeits-Streaming, Werbeblocker und Malware-Schutz, VPN Accelerator und mehr."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter hide-my-email-Aliasse, Freigabe, integrierter 2FA, Dark Web-Überwachung und mehr."
+        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, Dark Web-Überwachung und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte hide-my-email-Aliasse und mehr.",
-        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte hide-my-email-Aliasse und mehr."
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte hide-my-email-Aliasse und mehr."
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sichere deine E-Mails und deinen Zeitplan mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliase und mehr."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Editor für Onlinedokumente, Fotosicherung, Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
@@ -2412,11 +2415,6 @@
         "Überfällige Rechnung"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2483,6 +2481,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7386,6 +7389,14 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -7398,14 +7409,6 @@
       ],
       "Switch plans?": [
         "Abonnement wechseln?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -9035,6 +9038,14 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Jetzt kannst du Drive-Dateien ganz einfach durchsuchen und gleichzeitig deine Daten schützen."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Anmelden"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du wirst zu deinem SSO-Anbieter weitergeleitet."
       ]
     },
     "State": {

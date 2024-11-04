@@ -1194,11 +1194,24 @@
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
         "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ hide-my-email-ის ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს, Dark Web-ის მონიტორინგს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართებს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს დოკუმენტის რედაქტორს ბრაუზერისთვის, ფოტოების მარქაფს, ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -2405,11 +2418,6 @@
         "ინვოისი გადაცილებულია"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
@@ -2476,6 +2484,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3349,6 +3362,11 @@
       ],
       "You may also refresh the page or try again later.": [
         "განაახლეთ გვერდი ან მოგვიანებთ სცადეთ."
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "საჩვენებელი სახელი ცარიელი ვერ იქნება"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7344,6 +7362,14 @@
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -7356,14 +7382,6 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "მიიღეთ Mail Plus ფასით ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
       ]
     },
     "new_plans: tooltip": {
@@ -8534,6 +8552,11 @@
         "თქვენი ანგარიშის უსაფრთხოების გადახედვა"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "შესვლა წარმატებით არ დასრულდა."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "ყველა ფსევდონიმი"
@@ -9017,6 +9040,17 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "შეგიძლიათ იოლად და უსაფრთხოდ მოძებნოთ ფაილები დრაივზე."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "შესვლა"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ]
     },
     "State": {

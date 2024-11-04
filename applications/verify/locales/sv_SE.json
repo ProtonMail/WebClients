@@ -842,6 +842,9 @@
       ]
     },
     "Error": {
+      "Domain not available, try again later": [
+        "Domän inte tillgänglig, försök igen senare"
+      ],
       "Email is not valid": [
         "E-post är inte giltig"
       ],
@@ -1088,6 +1091,22 @@
     "Placeholder": {
       "Password": [
         "Lösenord"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggning lyckades inte slutföras."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Logga in"
+      ],
+      "Sign in to your organization": [
+        "Logga in på din organisation"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ]
     },
     "Success": {

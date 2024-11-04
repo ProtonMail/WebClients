@@ -999,23 +999,6 @@
         "Jotain meni pieleen"
       ]
     },
-    "FamilyPlanPromo2024": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Kaikki premium-ominaisuudet. Kuusi käyttäjää. Yksi helppo tilaus."
-      ],
-      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
-        "Erikoistarjous ${ PASS_APP_NAME }in varhaisille tukijoille."
-      ],
-      "Get it for ${ price }/month": [
-        "Hanki se hintaan ${ price }/kuukausi"
-      ],
-      "Introducing ${ planNameJSX }": [
-        "Esittelyssä ${ planNameJSX }"
-      ],
-      "Limited-time offer only.": [
-        "Tarjous voimassa vain rajoitetun ajan."
-      ]
-    },
     "file size format": {
       "byte": [
         "tavu",
@@ -1730,7 +1713,7 @@
         "Vienti sisältää vain omistamasi holvit."
       ],
       "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "Viety tiedosto salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
+        "Viety tiedosto salataan PGP:llä ja se vaatii vahvan salalauseen."
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Lisäsalasana tarvitaan ${ PASS_APP_NAME }in käyttöön ja se vaaditaan ${ BRAND_NAME }-tilisi salasanan lisäksi."
@@ -2393,7 +2376,7 @@
         "Pääsyavaimet"
       ],
       "Passphrase": [
-        "Tunnuslauseke"
+        "Salalause"
       ],
       "Passport": [
         "Passi"

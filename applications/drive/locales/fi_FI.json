@@ -1207,6 +1207,9 @@
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen mukautetuille sähköpostin verkkotunnuksille, rajattoman määrän hide-my-email-aliaksia ja paljon muuta."
+      ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
       ],
@@ -2412,11 +2415,6 @@
         "Erääntynyt lasku"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2486,6 +2484,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3359,6 +3362,11 @@
       ],
       "You may also refresh the page or try again later.": [
         "Voit myös päivittää sivun tai yrittää myöhemmin uudelleen."
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Näyttönimi ei voi olla tyhjä"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7354,6 +7362,14 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -7366,14 +7382,6 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Alkaen ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -8547,6 +8555,11 @@
         "Tarkista tilisi turvallisuus"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Sisäänkirjautumista ei suoritettu loppuun."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Kaikki aliakset"
@@ -9024,6 +9037,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nyt voit etsiä Driven tiedostoja helposti pitäen tietosi samalla turvassa."
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Kirjaudu sisään organisaatioosi"
       ]
     },
     "State": {

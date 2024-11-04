@@ -719,6 +719,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Tingkatkan ke ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Tingkatkan ke Mail Plus"
+      ],
       "Upload picture": [
         "Unggah gambar"
       ],
@@ -1102,8 +1105,14 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
@@ -2580,6 +2589,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Berikan warna pada acara untuk mengatur hari Anda, melacak waktu Anda, dan memprioritaskan tugas dengan lebih mudah."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Buat pertemuan Zoom dan tambah rincian gabung ke acara Anda hanya dengan satu kali klik."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
       ],
@@ -3059,6 +3071,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Keberlangsungan asli dalam rangkaian acara gagal diperoleh"
+      ],
+      "Failed to load oauth modal.": [
+        "Modal OAuth gagal dimuat."
       ],
       "First name is too long": [
         "Nama depan terlalu panjang"
@@ -3577,6 +3592,11 @@
       ],
       "You need an active personal calendar to import events": [
         "Anda harus memiliki kalender pribadi yang aktif untuk dapat mengimpor acara"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Nama tampilan tidak boleh kosong"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7852,6 +7872,11 @@
         "Tinjau keamanan akun Anda"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil dirampungkan."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Semua alias"
@@ -8378,6 +8403,17 @@
       ],
       "You can now collapse the navigation bar.": [
         "Anda kini dapat menutup bilah navigasi ini."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Masuk"
+      ],
+      "Sign in to your organization": [
+        "Masuk ke organisasi Anda"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     },
     "State": {
@@ -9419,6 +9455,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Dapatkan aplikasi ${ appName[APP_NAME] }"
       ],
+      "Get Zooming faster": [
+        "Zoom lebih cepat"
+      ],
       "Gift": [
         "Hadiah"
       ],
@@ -10207,6 +10246,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Tahunan, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Tambahkan rapat Zoom"
+      ],
+      "Adding conferencing details": [
+        "Menambahkan rincian pertemuan"
+      ],
+      "Loading Zoom configuration": [
+        "Memuat konfigurasi Zoom"
       ]
     },
     "Zoom Meeting": {

@@ -55,6 +55,9 @@
       "Add domain": [
         "Domein toevoegen"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Voeg meer ${ BRAND_NAME } Scribe plaatsen toe"
+      ],
       "Add PayPal": [
         "PayPal toevoegen"
       ],
@@ -1035,10 +1038,10 @@
         "Bescherm 10 apparaten tegelijkertijd"
       ],
       "Secure file storage & sharing": [
-        "Veilige bestandsopslag en delen"
+        "Veilig bestanden opslaan en delen"
       ],
       "Secure vault and link sharing": [
-        "Veilige kluis en het delen van links"
+        "Veilig delen van kluis en links"
       ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
@@ -1093,6 +1096,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief online documenteditor, foto back-up, versiegeschiedenis, versleuteld bestanden delen en meer."
@@ -2283,6 +2289,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Indien uitgeschakeld, hebben alleen beheerders toegang."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Houd verschillende delen van uw leven gescheiden en uw postvak in georganiseerd met extra adressen."
       ],
@@ -2977,14 +2986,29 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Slechts één gratis proefperiode per gebruiker. Regelmatige prijsstelling is van toepassing daarna."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
+        "Na het verlaten van uw abonnement zal deze gebruiker worden verplaatst naar een ${ BRAND_NAME } Free abonnement."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Na het verlaten van uw abonnement zal deze gebruiker worden verplaatst naar een ${ BRAND_NAME } Onbeperkt abonnement met een gratis proefperiode van 30 dagen.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Standaard wijzen we ${ formattedStorage } opslagruimte toe aan het beheerdersaccount. U kunt de toegewezen opslagruimte die moet worden verdeeld onder aanvullende gebruikers later beheren."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Maak gezinsgebruikers aan, beheer ze en wijs opslagruimte toe die wordt gedeeld tussen ${ DRIVE_APP_NAME } en ${ MAIL_APP_NAME }."
       ],
+      "Create and manage family members.": [
+        "Familieleleden aanmaken en beheren."
+      ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Als de gebruiker al een ${ MAIL_APP_NAME }-adres heeft, voert u het hier in. Anders moet de gebruiker eerst een account aanmaken."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Als de gebruiker al een account met ${ BRAND_NAME } heeft, voer deze hier in. Anders moeten ze eerst een account aanmaken."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "De uitnodiging wordt geannuleerd en de gebruiker zal zich niet kunnen aansluiten bij ${ organizationName }."
@@ -3123,6 +3147,9 @@
     "fido2: Action": {
       "Delete key": [
         "Sleutel verwijderen"
+      ],
+      "New security key": [
+        "Nieuwe beveiligingssleutel"
       ]
     },
     "fido2: Error": {
@@ -3176,6 +3203,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifieer uw identiteit met een fysieke U2F of FIDO2 beveiligingssleutel"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "U heeft het maximum van ${ maxSecurityKeyLength } beveiligingssleutel bereikt.",
+        "U heeft het maximum van ${ maxSecurityKeyLength } beveiligingssleutels bereikt."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Uw tweestapsverificatiesleutel is klaar voor gebruik."
       ]
@@ -3203,6 +3234,9 @@
       ],
       "Security key registered": [
         "Veiligheidssleutel geregistreerd"
+      ],
+      "Security keys": [
+        "Beveiligingssleutels"
       ]
     },
     "file size format": {
@@ -5320,6 +5354,9 @@
       "Allowed Domain": [
         "Toegestaan domein"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
+      ],
       "Amount": [
         "Bedrag"
       ],
@@ -5478,6 +5515,9 @@
       ],
       "Email or username": [
         "E-mailadres of gebruikersnaam"
+      ],
+      "Enable video conferencing ": [
+        "Videovergadering inschakelen "
       ],
       "Enter the code displayed on your TV": [
         "Voer de op uw TV weergegeven code in"
@@ -7143,6 +7183,9 @@
       "An external address cannot be default": [
         "Een extern adres kan niet primair zijn"
       ],
+      "Downloaded 2FA recovery codes": [
+        "Herstelcodes van 2FA gedownload"
+      ],
       "Invalid code": [
         "Ongeldige code"
       ],
@@ -7154,6 +7197,9 @@
       ],
       "Key copied to the clipboard": [
         "Sleutel naar het klembord gekopieerd"
+      ],
+      "Number of records exceeds the download limit of 10000": [
+        "Aantal records overschrijdt de download limiet van 10000"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
@@ -7172,6 +7218,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tweestapsverificatie is niet langer vereist"
+      ],
+      "Video conferencing settings have been updated": [
+        "Instellingen voor videoconferenties zijn bijgewerkt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7315,6 +7364,9 @@
       ]
     },
     "orgidentity": {
+      "${ verify } your email address ${ email } to set organization identity.": [
+        "${ verify } uw e-mailadres ${ email } om organisatidentiteit in te stellen."
+      ],
       "Current organization identity": [
         "Huidige organisatie-identiteit"
       ],
@@ -7326,6 +7378,9 @@
       ],
       "Organization identity": [
         "Organisatie-identiteit"
+      ],
+      "Organization identity updated": [
+        "Identiteit van organisatie bijgewerkt"
       ],
       "Verify": [
         "Verifiëren"
@@ -7561,6 +7616,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Gebruik een dataherstelmethode, neem contact op met een andere beheerder of reset de organisatiesleutel om beheerdersrechten te herstellen."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "We konden de echtheid van deze identiteit niet verifiëren."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "De beveiliging van de adressleutel van deze afzender kon niet worden geverifieerd. Soms is er een vertraging in het bijwerken van de gegevens van de afzender. Probeer het later opnieuw. Als u de geldigheid van deze uitnodiging of afzender niet vertrouwt, neem dan contact op met ${ BRAND_NAME } Customer Support."
       ],
@@ -7781,6 +7839,9 @@
       ],
       "Search for a user or address": [
         "Naar gebruiker of adres zoeken"
+      ],
+      "Search for an email or IP address": [
+        "Zoeken naar een e-mailadres of IP-adres"
       ],
       "Search users": [
         "Zoek gebruikers"
@@ -8034,6 +8095,12 @@
       "For security reasons, the token is hidden": [
         "Om veiligheidsredenen is de token verborgen"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Ga naar uw identiteitsprovider, kopieer en plak de gegevens hieronder en voltooi de configuratie van SCIM voor ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Ga naar uw identiteitsprovider, kopieer en plak de token hieronder en schakel SCIM voor ${ appName } opnieuw in."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Als u de SCIM-token bent vergeten of verloren, kunt u een nieuwe genereren, maar wees ervan bewust dat uw identiteitsprovider instellingen zullen moeten worden bijgewerkt."
       ],
@@ -8042,6 +8109,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Zodra SCIM is uitgeschakeld voor uw organisatie, **zullen alle SCIM-gebruikers die automatisch door uw identiteitsprovider worden aangeboden worden omgezet naar SSO-gebruikers** en u kunt ze direct beheren binnen de ${ BRAND_NAME } instellingen."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Vereenvoudigt gebruikersbeheer over verschillende diensten. Voeg toe, bewerk en verwijder gebruikers in uw identiteitsprovider, en deze wijzigingen zullen automatisch worden toegepast op uw ${ appName } organisatie."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "De automatische bepaling van SCIM wordt uitgeschakeld totdat u de nieuwe SCIM-token in de instellingen van uw identiteit provider invoert."
@@ -9587,6 +9657,12 @@
       ],
       "Preference updated": [
         "Voorkeur bijgewerkt"
+      ],
+      "Preferences updated": [
+        "Voorkeuren bijgewerkt"
+      ],
+      "Resent invitation": [
+        "Uitnodiging opnieuw verzenden"
       ]
     },
     "Suffix": {
@@ -9696,6 +9772,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Gratis"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
@@ -10017,6 +10096,9 @@
       ],
       "Email subscriptions": [
         "Nieuwsbrieven"
+      ],
+      "Enable for all users": [
+        "Inschakelen voor alle gebruikers"
       ],
       "Enter 2FA code": [
         "Voer 2FA-code in"
@@ -10341,6 +10423,9 @@
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
       ],
+      "Video conference": [
+        "Videoconferentie"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "We zullen een e-mail naar uw nieuwe e-mailadres sturen met instructies voor het voltooien van de wijziging."
       ],
@@ -10424,6 +10509,12 @@
       ]
     },
     "Tooltip": {
+      "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
+        "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het plan van de organisatie bewerken."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Maakt het mogelijk om naadloos koppelingen voor videoconferenties toe te voegen aan uw agenda-uitnodigingen."
+      ],
       "An approximate location of the IP address": [
         "Een geschatte locatie van het IP-adres"
       ],
@@ -10471,6 +10562,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
+      ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Dit kan worden veroorzaakt door een wachtwoordreset of de gebruiker die nog niet inlogt."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Dit e-mailadres zal worden getoond aan alle leden van de organisatie bij het uitvoeren van operaties binnen accountbeheer."
@@ -10531,18 +10625,66 @@
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
       ],
+      "Approve all": [
+        "Alles goedkeuren"
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Door de gebruiker privé te maken, zult u hem niet kunnen helpen om toegang te krijgen tot zijn gegevens of account."
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Kon de beheerderstoegang voor ${ n } -gebruiker niet automatisch inschakelen, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:",
         "Kon beheerderstoegang niet automatisch inschakelen voor ${ n } gebruikers, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:"
       ],
+      "Could not enable administrator access: ${ error }": [
+        "Kan beheerderstoegang niet inschakelen: ${ error }"
+      ],
+      "Delete request": [
+        "Verzoek verwijderen"
+      ],
+      "Delete request to access user data?": [
+        "Verzoek voor toegang tot gebruikersgegevens verwijderen?"
+      ],
+      "Enable manually": [
+        "Handmatig inschakelen"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Zodra de gebruiker zijn toestemming geeft, kunt u hen helpen de toegang tot hun account te heroveren of hun gegevens te beheren."
+      ],
       "Organization key must be activated to request data access": [
         "Organisatiesleutel moet worden geactiveerd om gegevenstoegang te vragen"
+      ],
+      "Pending admin access": [
+        "In afwachting van beheerderstoegang"
+      ],
+      "Private user": [
+        "Privégebruiker"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Verzoek om account te beheren verzonden, wachtend op goedkeuring van gebruiker"
+      ],
+      "Request user permission for data access": [
+        "Vraag toestemming aan de gebruiker voor gegevenstoegang"
       ],
       "Revoke access": [
         "Toegang ontzeggen"
       ],
+      "Revoke administrator access?": [
+        "Beheerdersrechten intrekken?"
+      ],
+      "Send request": [
+        "Verzoek verzenden"
+      ],
       "The user must have an address to request data access": [
         "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Hiermee wordt de aanvraag voor beheerderstoegang tot de gegevens van de gebruiker of voor het resetten van het wachtwoord verwijderd."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Hierdoor wordt de beheerder de toestemming ontnomen om de account van deze gebruiker te beheren."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Om verder te gaan, moet u toestemming vragen aan de gebruiker om toegang te krijgen tot hun gegevens of hun wachtwoord te resetten."
       ]
     },
     "upsell panel": {

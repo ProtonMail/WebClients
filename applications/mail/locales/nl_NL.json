@@ -1726,10 +1726,10 @@
         "Bescherm 10 apparaten tegelijkertijd"
       ],
       "Secure file storage & sharing": [
-        "Veilige bestandsopslag en delen"
+        "Veilig bestanden opslaan en delen"
       ],
       "Secure vault and link sharing": [
-        "Veilige kluis en het delen van links"
+        "Veilig delen van kluis en links"
       ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
@@ -1784,6 +1784,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief online documenteditor, foto back-up, versiegeschiedenis, versleuteld bestanden delen en meer."
@@ -4744,6 +4747,11 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "U hebt nog geen contactpersonen. Start met het aanmaken van een contactpersoon"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Weergavenaam kan niet leeg zijn"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10856,6 +10864,11 @@
         "Controleer de veiligheid van uw account"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggen is niet gelukt."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Geen berichten gevonden"
@@ -11505,6 +11518,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Aanmelden bij uw organisatie"
       ]
     },
     "State": {
