@@ -842,6 +842,9 @@
       ]
     },
     "Error": {
+      "Domain not available, try again later": [
+        "Dominio no disponible. Inténtalo de nuevo más tarde."
+      ],
       "Email is not valid": [
         "El correo no es válido."
       ],
@@ -1082,6 +1085,22 @@
     "Placeholder": {
       "Password": [
         "Contraseña"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "No se ha completado el inicio de sesión."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sesión"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sesión en tu organización"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Serás redirigido a tu proveedor de SSO de terceros."
       ]
     },
     "Success": {
