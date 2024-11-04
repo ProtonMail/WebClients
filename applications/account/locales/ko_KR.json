@@ -124,6 +124,9 @@
       "Add label": [
         "라벨 추가"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "더 많은 ${ BRAND_NAME } Scribe 사용 권한 추가"
+      ],
       "Add notification": [
         "알림 추가"
       ],
@@ -805,11 +808,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Refresh the page": [
         "페이지 새로 고침"
+      ],
+      "refresh the page": [
+        "페이지 새로고침"
       ],
       "Reject": [
         "거절"
@@ -1595,6 +1598,14 @@
         "연말 할인 선택"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1616,14 +1627,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
       ]
     },
     "bf2023: Offers": {
@@ -1786,8 +1789,14 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "온라인 문서 편집기, 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -3547,6 +3556,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "친구를 ${ BRAND_NAME }에 초대해서 ${ credits } 크레딧을 획득하세요."
+      ],
+      "If disabled, only admins will have access.": [
+        "비활성화시 관리자만 접근 가능합니다."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
@@ -5570,6 +5582,9 @@
     "fido2: Action": {
       "Delete key": [
         "키 삭제"
+      ],
+      "New security key": [
+        "새로운 보안 키"
       ]
     },
     "fido2: Error": {
@@ -5623,6 +5638,9 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "물리적 U2F 또는 FIDO2 보안 키로 신원 확인"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "최대 ${ maxSecurityKeyLength }개 보안 키 개수에 도달했습니다."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "2단계 인증 키가 사용할 준비가 되었습니다."
       ]
@@ -5650,6 +5668,9 @@
       ],
       "Security key registered": [
         "보안 키 등록됨"
+      ],
+      "Security keys": [
+        "보안 키"
       ]
     },
     "file size format": {
@@ -7153,10 +7174,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
@@ -7170,6 +7191,12 @@
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount }개 게이트웨이 서버 삭제 중"
+      ],
+      "Disable recovery by email address": [
+        "이메일 주소로 복구 비활성화"
+      ],
+      "Disable recovery by phone number": [
+        "전화번호로 복구 비활성화"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime }에 비활성화됨"
@@ -8746,10 +8773,10 @@
       "User activated": [
         "사용자 활성화됨"
       ],
-      "Username": [
+      "username": [
         "사용자 이름"
       ],
-      "username": [
+      "Username": [
         "사용자 이름"
       ],
       "Users": [
@@ -8784,6 +8811,12 @@
       ],
       "Verify domain": [
         "도메인 소유권 인증"
+      ],
+      "Verify email address": [
+        "이메일 주소 인증"
+      ],
+      "Verify phone number": [
+        "전화번호 인증"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "인증 앱에서 실시간 일회용 비밀번호로 신원을 확인하세요"
@@ -9783,6 +9816,9 @@
       "Allowed Domain": [
         "허용된 도메인"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "조직의 모든 구성원이 캘린더 초대장에 화상 회의 링크를 원활하게 추가할 수 있습니다."
+      ],
       "Amount": [
         "금액"
       ],
@@ -10106,6 +10142,9 @@
       ],
       "Emails (last month)": [
         "이마일 (지난 달)"
+      ],
+      "Enable video conferencing ": [
+        "화상 회의 사용 "
       ],
       "End date": [
         "종료일"
@@ -11558,6 +11597,32 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "${ price }로 시작하세요."
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }부터 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -11585,32 +11650,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "${ price }로 시작하세요."
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }부터 시작"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: feature": {
@@ -12267,6 +12306,20 @@
         "${ planName } 플랜을 선택하셨습니다"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -12285,20 +12338,6 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -12652,6 +12691,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "이중 인증이 모두에게 필요하지 않습니다."
+      ],
+      "Video conferencing settings have been updated": [
+        "화상 회의 설정이 변경되었습니다."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13335,17 +13377,20 @@
       "Free forever": [
         "영원히 무료"
       ],
-      "From the team that knows encryption": [
-        "암호화를 아는 팀에서 옴"
-      ],
       "Get ${ appName } for ${ browserName }": [
         "${ browserName }용 ${ appName } 다운로드"
       ],
       "Get in touch with our sales team": [
         "자사 세일즈 팀에 문의하세요."
       ],
+      "Get online privacy, for your whole family": [
+        "나의 가족을 위한 온라인 프라이버시 보호 얻기"
+      ],
       "Get the security and features your business needs": [
         "당신의 비즈니스에 필요한 보안과 기능을 얻으세요"
+      ],
+      "Get unlimited privacy for two": [
+        "두 명을 위한 무제한 프라이버시 보호 받기"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "만일 복구 방법을 잃어버리면 계정에 영구적으로 접근할 수 없음을 확인합니다."
@@ -13425,6 +13470,9 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "안전한 링크 공유 (${ n }개 금고) 및 링크 공유"
       ],
+      "Secure your family’s passwords and online identities": [
+        "나의 가족 비밀번호와 온라인 신원을 보호하세요"
+      ],
       "Secured by end-to-end encryption": [
         "종단간 암호화로 보호됨"
       ],
@@ -13460,6 +13508,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 가입에 초대되었습니다"
+      ],
+      "Your ${ discount }% Black Friday discount has been applied": [
+        "${ discount }% 블랙 프라이데이 할인이 적용되었습니다."
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "사용자의 조직이 ${ free }에 접근했습니다. 프리미엄 ${ appName } 기능에 접근하려면, 조직 관리자로 업그레이드를 요청하시기 바랍니다."
@@ -14446,6 +14497,12 @@
       "For security reasons, the token is hidden": [
         "보안 상의 이유로 토큰이 숨겨짐"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "ID 공급업체로 이동하여 아래 데이터를 복사하여 붙여넣고 ${ appName }에 대해서 SCIM 설정을 완료합니다."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "ID 공급업체로 이동하여 아래 토큰을 복사하여 붙여넣고 ${ appName }에 대해서 SCIM을 다시 활성화합니다."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "SCIM 토큰을 분실하거나 잊어버리셨다면 새로 만들 수는 있지만, ID 공급자 설정이 업데이트되어 있어야 합니다."
       ],
@@ -14454,6 +14511,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "SCIM이 사용자 조직에 한 번 비활성화 되면, **사용자의 신원 인증 제공자에 의한 모든 SCIM 사용자들이 SSO 사용자로 전환됩니다.** ${ BRAND_NAME } 설정 내에서 즉시 관리 또한 가능하게 됩니다."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "여러 서비스 간에 사용자 관리를 간소화합니다. ID 공급자에서 사용자를 추가, 편집, 제거하면 해당 변경 사항이 ${ appName } 조직에 자동으로 적용됩니다."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM 자동 프로비저닝은 신원 제공자의 설정에 새 SCIM 토큰을 입력할 때까지 비활성화됩니다."
@@ -14993,6 +15053,65 @@
         "무료 체험 신청"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "고급 제어 기능"
+      ],
+      "Advanced sharing security": [
+        "향상된 파일 공유 보안 기능"
+      ],
+      "Apps for all devices": [
+        "모든 디바이스용 앱"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "스위스에 본사를 둔 GDPR 준수"
+      ],
+      "Built-in encryption": [
+        "내장형 암호화"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "캘린더, 비밀번호 관리자, 파일 저장소, VPN 포함"
+      ],
+      "Email aliases": [
+        "이메일 별칭"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "이메일, 캘린더, 비밀번호 관리자, VPN 포함"
+      ],
+      "End-to-end encrypted transactions": [
+        "종단간 암호화된 트랜잭션"
+      ],
+      "End-to-end encryption": [
+        "종단간 암호화"
+      ],
+      "From the team that knows encryption": [
+        "암호화를 잘 아는 팀으로부터의 개발"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "통합된 이메일, 캘린더, 파일 스토리지, 비밀번호 관리자 및 VPN"
+      ],
+      "ISO 27001 certified": [
+        "ISO 27001 인증됨"
+      ],
+      "Open source and audited": [
+        "오픈 소스이며 외부 감사를 받았음"
+      ],
+      "Open source and verified": [
+        "오픈소스 및 외부 감사됨"
+      ],
+      "Protected by Swiss privacy laws": [
+        "스위스 개인정보법에 의거해 보호됨"
+      ],
+      "Self-custody — only you have access to your wallet keys": [
+        "자체 보관 — 오직 당신만 지갑 키에 접근할 수 있습니다"
+      ],
+      "The only business solution that is:": [
+        "유일한 비즈니스 솔루션입니다:"
+      ],
+      "Works on all devices": [
+        "모든 기기에서 작동"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "GDPR 및 HIPAA 준수"
@@ -15345,6 +15464,9 @@
       "Share the confirmation code with your administrator": [
         "관리자에게 확인 코드를 공유하세요"
       ],
+      "Sign in": [
+        "로그인"
+      ],
       "Sign in to your organization": [
         "조직에 로그인"
       ],
@@ -15392,6 +15514,9 @@
       ],
       "Yes, it was me": [
         "네, 저였어요."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ]
     },
     "sso: auth device state": {
@@ -16067,6 +16192,9 @@
       "Auto-reply updated": [
         "자동 회신을 업데이트했습니다."
       ],
+      "Backup password updated": [
+        "백업 비밀번호 업데이트됨"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "캘린더가 생성되었습니다. 동기화 되는데 시간이 걸릴 수 있습니다."
       ],
@@ -16318,6 +16446,9 @@
       "Preferences updated": [
         "설정 업데이트 완료"
       ],
+      "Resent invitation": [
+        "초대 재전송"
+      ],
       "Status updated": [
         "상태 업데이트됨"
       ]
@@ -16476,6 +16607,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
@@ -16671,11 +16805,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -16974,6 +17108,9 @@
       "Email subscriptions": [
         "이메일 구독"
       ],
+      "Enable for all users": [
+        "모든 사용자에게 활성화"
+      ],
       "Encryption and keys": [
         "암호화 및 키"
       ],
@@ -17150,6 +17287,9 @@
       ],
       "Increase your privacy with more addresses": [
         "더 많은 주소로 프라이버시를 한 층 향상시키세요"
+      ],
+      "Integrations": [
+        "통합"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
@@ -17616,6 +17756,9 @@
       "Version history": [
         "버전 기록"
       ],
+      "Video conference": [
+        "화상 회의"
+      ],
       "VPN apps": [
         "VPN 앱"
       ],
@@ -17792,6 +17935,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "캘린더 초대장에 화상 회의 링크를 원활하게 추가할 수 있습니다."
       ],
       "An approximate location of the IP address": [
         "IP 주소의 대략적인 위치"

@@ -124,6 +124,9 @@
       "Add label": [
         "Дадаць метку"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Дадаць больш ліцэнзій ${ BRAND_NAME } Scribe"
+      ],
       "Add notification": [
         "Дадаць апавяшчэнне"
       ],
@@ -805,11 +808,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Reject": [
         "Адхіліць"
@@ -1607,6 +1610,14 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1628,14 +1639,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1699,7 +1702,7 @@
         "3 ТБ"
       ],
       "6 user accounts": [
-        "6 уліковых запісаў карыстальніка"
+        "6 уліковых запісаў карыстальнікаў"
       ],
       "6 users": [
         "6 карыстальнікаў"
@@ -1799,11 +1802,20 @@
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, рэзерваванне фатаграфій, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
@@ -3584,6 +3596,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Атрымайце да ${ credits } у крэдытах запрасіўшы сябра ў ${ BRAND_NAME }."
+      ],
+      "If disabled, only admins will have access.": [
+        "Калі адключана, то толькі адміністратары будуць мець доступ."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
@@ -5498,7 +5513,7 @@
         "Калі ў карыстальніка ўжо ёсць адрас ${ MAIL_APP_NAME }, увядзіце яго тут. У адваротным выпадку спачатку неабходна стварыць уліковы запіс."
       ],
       "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
-        "Калі ў карыстальніка ёсць уліковы запіс з ${ BRAND_NAME }, увядзіце яго тут. У адваротным выпадку спачатку неабходна стварыць яго."
+        "Калі ў карыстальніка ёсць уліковы запіс з ${ BRAND_NAME }, увядзіце яго тут. У адваротным выпадку спачатку яго неабходна стварыць."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organizationName }."
@@ -5646,6 +5661,9 @@
     "fido2: Action": {
       "Delete key": [
         "Выдалiць ключ"
+      ],
+      "New security key": [
+        "Новы ключ бяспекі"
       ]
     },
     "fido2: Error": {
@@ -5699,6 +5717,12 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Пацвердзіце сваю ідэнтычнасць пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Вы дасягнулі максімальнай колькасці з ${ maxSecurityKeyLength } ключа бяспекі.",
+        "Вы дасягнулі максімальнай колькасці з ${ maxSecurityKeyLength } ключоў бяспекі.",
+        "Вы дасягнулі максімальнай колькасці з ${ maxSecurityKeyLength } ключоў бяспекі.",
+        "Вы дасягнулі максімальнай колькасці з ${ maxSecurityKeyLength } ключоў бяспекі."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш двухфактарны ключ аўтэнтыфікацыі гатовы да выкарыстання."
       ]
@@ -5726,6 +5750,9 @@
       ],
       "Security key registered": [
         "Ключ бяспекі зарэгістраваны"
+      ],
+      "Security keys": [
+        "Ключы бяспекі"
       ]
     },
     "file size format": {
@@ -7355,11 +7382,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -7375,6 +7402,12 @@
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза"
+      ],
+      "Disable recovery by email address": [
+        "Адключыць аднаўленне доступу па адрасе электроннай пошты"
+      ],
+      "Disable recovery by phone number": [
+        "Адключыць аднаўленне доступу па нумары тэлефона"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Адключана ${ formattedDateAndTime }"
@@ -8984,11 +9017,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "Username": [
-        "Імя карыстальніка"
-      ],
       "username": [
         "імя карыстальніка"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -9022,6 +9055,12 @@
       ],
       "Verify domain": [
         "Праверыць дамен"
+      ],
+      "Verify email address": [
+        "Пацвярджэнне адраса электроннай пошты"
+      ],
+      "Verify phone number": [
+        "Пацвярджэнне нумара тэлефона"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Пацвердзіце сваю ідэнтычнасць пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння, які атрыманы ад праграмы аўтэнтыфікацыі"
@@ -10069,6 +10108,9 @@
       "Allowed Domain": [
         "Дазволены дамен"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Дазваляе кожнаму ўдзельніку вашай арганізацыі бесперашкодна дадаваць спасылкі на відэаканферэнцыі да іх запрашэнняў календара."
+      ],
       "Amount": [
         "Сума"
       ],
@@ -10392,6 +10434,9 @@
       ],
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
+      ],
+      "Enable video conferencing ": [
+        "Уключыць відэаканферэнцыю "
       ],
       "End date": [
         "Дата завяршэння"
@@ -11874,6 +11919,32 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Пачніце з коштам у памеры ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Пачатковы кошт ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11901,32 +11972,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Пачніце з коштам у памеры ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Пачатковы кошт ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12658,6 +12703,20 @@
         "Выбраны тарыфны план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -12676,20 +12735,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Атрымайце Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -13049,6 +13094,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Двухфактарная аўтэнтыфікацыя больш не патрабуецца"
+      ],
+      "Video conferencing settings have been updated": [
+        "Налады відэаканферэнцыі абноўлены"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13735,17 +13783,20 @@
       "Free forever": [
         "Бясплатна назаўсёды"
       ],
-      "From the team that knows encryption": [
-        "Ад каманды экспертаў у галіне шыфравання"
-      ],
       "Get ${ appName } for ${ browserName }": [
         "Атрымайце ${ appName } для ${ browserName }"
       ],
       "Get in touch with our sales team": [
         "Сувязь з нашай камандай па продажам"
       ],
+      "Get online privacy, for your whole family": [
+        "Атрымайце прыватнасць у інтэрнэце для ўсёй вашай сям'і"
+      ],
       "Get the security and features your business needs": [
         "Атрымайце бяспеку і функцыі, якія неабходны вашаму бізнесу"
+      ],
+      "Get unlimited privacy for two": [
+        "Атрымайце неабмежаваную прыватнасць для дваіх"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Я разумею, што пры страце падрабязнасцяў аднаўлення, я магу незваротна згубіць доступ да свайго ўліковага запісу."
@@ -13831,6 +13882,9 @@
         "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі",
         "Бяспечнае абагульванне сховішча (${ n } сховішчаў) і абагульванне спасылкі"
       ],
+      "Secure your family’s passwords and online identities": [
+        "Абараніце свае сямейныя паролі і ідэнтычнасці ў інтэрнэце"
+      ],
       "Secured by end-to-end encryption": [
         "Абаронена скразным шыфраваннем"
       ],
@@ -13866,6 +13920,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Вас запрасілі далучыцца да ${ PASS_APP_NAME }"
+      ],
+      "Your ${ discount }% Black Friday discount has been applied": [
+        "Ваша скідка ў памеры ${ discount }% з нагоды \"Чорнай Пятніцы\" ўжыта"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "У вашай арганізацыі ёсць доступ да ${ free }. Калі вы хочаце атрымаць прэміяльныя функцыі ${ appName }, папрасіце адміністратара сваёй арганізацыі абнавіць тарыфны план."
@@ -14850,7 +14907,7 @@
         "**Неабходная ўмова:** аўтэнтыфікацыя SAML павінна быць сканфігурыравана для ўключэння падрыхтоўкі SCIM."
       ],
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
-        "**Абавязковая ўмова:** для ўключэння кантролю выкарыстання SCIM, вам неабходна пацвердзіць права ўласнасці на дамен **${ domainName }**. Гэта праверка можа заняць да адной гадзіны."
+        "**Абавязковая ўмова:** для падрыхтоўкі SCIM, вам неабходна пацвердзіць права ўласнасці на дамен **${ domainName }**. Гэта праверка можа заняць да адной гадзіны."
       ],
       "Enter the token into your identity provider": [
         "Увядзіце токен у свайго пастаўшчыка пасведчанняў"
@@ -14864,6 +14921,12 @@
       "For security reasons, the token is hidden": [
         "У мэтах бяспекі токен схаваны"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце даныя ніжэй і завяршыце канфігурацыю SCIM для ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Перайдзіце ў свайго пастаўшчыка пасведчанняў, скапіюйце і ўстаўце токен ніжэй і паўторна ўключыце SCIM для ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Вы можаце згенерыраваць новы токен SCIM, калі папярэдні быў страчаны або забыты. Памятайце, што ў такіх выпадках неабходна абнаўляць налады ў вашым пастаўшчыку пасведчанняў."
       ],
@@ -14872,6 +14935,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Пасля адключэння SCIM для вашай арганізацыі **ўсе карыстальнікі SCIM, якія аўтаматычна забяспечаны вашым пастаўшчыком пасведчанняў, будуць пераўтвораны ў карыстальнікаў SSO** і ў вас будзе магчымасць кіраваць імі наўпрост у наладах ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Спрашчэнне кіравання карыстальнікамі паміж рознымі сэрвісамі. Дадаванне, рэдагаванне і выдаленне карыстальнікаў у вашым пастаўшчыку пасведчанняў. Усе пералічаныя змены будуць аўтаматычна ўжывацца для вашай арганізацыі ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Аўтаматычная падрыхтоўка SCIM будзе адключана да таго моманту, пакуль вамі не будзе ўведзены новы токен SCIM у налады вашага пастаўшчыка пасведчанняў."
@@ -15453,6 +15519,71 @@
         "Запытаць пробны перыяд"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "Пашыраныя функцыі бяспекі"
+      ],
+      "Advanced sharing security": [
+        "Дадатковая бяспека пры абагульванні"
+      ],
+      "Apps for all devices": [
+        "Праграмы для ўсіх прылад"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Знаходзіцца ў Швейцарыі і адпавядае патрабаванням GDPR"
+      ],
+      "Built-in encryption": [
+        "Убудаванае шыфраванне"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Уключае каляндар, менеджар пароляў, файлавае сховішча і VPN"
+      ],
+      "Email aliases": [
+        "Псеўданімы электроннай пошты"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "Уключае электронную пошту, каляндар, менеджар пароляў і VPN"
+      ],
+      "End-to-end encrypted transactions": [
+        "Трансакцыі зашыфраваныя скразным метадам"
+      ],
+      "End-to-end encryption": [
+        "Скразное шыфраванне"
+      ],
+      "From the team that knows encryption": [
+        "Ад каманды экспертаў у галіне шыфравання"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Інтэграваная электронная пошта, каляндар, файлавае сховішча і VPN"
+      ],
+      "ISO 27001 certified": [
+        "Сертыфікавана згодна са стандартам ISO 27001"
+      ],
+      "Open source and audited": [
+        "Адкрыты зыходны код і аўдыт"
+      ],
+      "Open source and verified": [
+        "Адкрыты зыходны код і праверка"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Абаронены швейцарскімі законамі аб прыватнасці"
+      ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Самазахоўванне: толькі пры ўмове, што ў вас ёсць доступ да ключоў кашалька"
+      ],
+      "The only business solution that is:": [
+        "Адзінае рашэнне для бізнесу, якое:"
+      ],
+      "The only cloud storage with:": [
+        "Адзінае воблачнае сховішча з:"
+      ],
+      "The only email service with:": [
+        "Адзіны сэрвіс электроннай пошты з:"
+      ],
+      "Works on all devices": [
+        "Працуе на ўсіх прыладах"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Адпавядае патрабаванням GDPR і HIPAA"
@@ -15832,6 +15963,9 @@
       "Share the confirmation code with your administrator": [
         "Абагуліць код пацвярджэння з вашым адміністратарам"
       ],
+      "Sign in": [
+        "Уваход"
+      ],
       "Sign in to your organization": [
         "Увайсці ў сваю арганізацыю"
       ],
@@ -15879,6 +16013,9 @@
       ],
       "Yes, it was me": [
         "Так, гэта быў я."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO"
       ]
     },
     "sso: auth device state": {
@@ -16617,6 +16754,9 @@
       "Auto-reply updated": [
         "Аўтаматычны адказ абноўлены"
       ],
+      "Backup password updated": [
+        "Рэзервовы пароль абноўлены"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Каляндар дададзены. Сінхранізацыя можа заняць некалькі хвілін."
       ],
@@ -16868,6 +17008,9 @@
       "Preferences updated": [
         "Параметры абноўлены"
       ],
+      "Resent invitation": [
+        "Нядаўняе запрашэнне"
+      ],
       "Status updated": [
         "Статус абноўлены"
       ]
@@ -17046,6 +17189,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
@@ -17245,10 +17391,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -17554,6 +17700,9 @@
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
       ],
+      "Enable for all users": [
+        "Уключыць для ўсіх карыстальнікаў"
+      ],
       "Encryption and keys": [
         "Шыфраванне і ключы"
       ],
@@ -17736,6 +17885,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Павялічце сваю прыватнасць з большай колькасцю адрасоў"
+      ],
+      "Integrations": [
+        "Інтэграцыі"
       ],
       "Invalid verification code": [
         "Памылковы праверачны код"
@@ -18205,6 +18357,9 @@
       "Version history": [
         "Гісторыя версій"
       ],
+      "Video conference": [
+        "Відэаканферэнцыя"
+      ],
       "VPN apps": [
         "Праграмы VPN"
       ],
@@ -18381,6 +18536,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратары могуць кіраваць уліковымі запісамі карыстальнікаў і даваць правы адміністратара іншым карыстальнікам. Толькі асноўны адміністратар можа рэдагаваць тарыфны план арганізацыі."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцыі ў запрашэнні вашага календара."
       ],
       "An approximate location of the IP address": [
         "Прыблізнае месцазнаходжанне IP-адраса"
