@@ -2,14 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { deleteMembers } from '@proton/account/members/actions';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
 import { PLANS } from '@proton/payments';
-import { deleteMember } from '@proton/shared/lib/api/members';
+import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
@@ -22,9 +21,8 @@ interface Props extends ModalProps {
 }
 
 const UserRemoveModal = ({ member: initialMember, organization, ...rest }: Props) => {
-    const api = useApi();
     const [member] = useState(initialMember!);
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const [submitting, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
@@ -47,8 +45,10 @@ const UserRemoveModal = ({ member: initialMember, organization, ...rest }: Props
             return;
         }
 
-        await api(deleteMember(member?.ID));
-        await call();
+        const { success } = await dispatch(deleteMembers({ members: [member] }));
+        if (!success.length) {
+            return;
+        }
         rest?.onClose?.();
         createNotification({
             // translator: Success message when a user has been removed from an organization. Looks like: 'John Doe has been removed from Bernie's Family'

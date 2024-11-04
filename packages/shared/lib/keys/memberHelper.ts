@@ -1,4 +1,4 @@
-import { type Member, MemberUnprivatizationState } from '../interfaces';
+import { MEMBER_STATE, type Member, MemberUnprivatizationState } from '../interfaces';
 
 export const getHasMemberUnprivatization = (
     member?: Member
@@ -6,8 +6,12 @@ export const getHasMemberUnprivatization = (
     return Boolean(member && member.Unprivatization);
 };
 
-export const getIsMemberSetup = (member?: Member) => {
+export const getIsMemberSetup = (member?: Member): member is Member => {
     return Boolean(member?.PublicKey);
+};
+
+export const getIsMemberInactive = (member?: Member): member is Member & { State: MEMBER_STATE.STATUS_DISABLED } => {
+    return member?.State === MEMBER_STATE.STATUS_DISABLED;
 };
 
 export enum MemberUnprivatizationMode {

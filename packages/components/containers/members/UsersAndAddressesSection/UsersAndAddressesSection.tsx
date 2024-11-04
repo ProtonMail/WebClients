@@ -48,7 +48,11 @@ import {
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
-import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
+import {
+    MemberUnprivatizationMode,
+    getIsMemberInactive,
+    getMemberUnprivatizationMode,
+} from '@proton/shared/lib/keys/memberHelper';
 import {
     getIsDomainActive,
     getOrganizationDenomination,
@@ -564,7 +568,9 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         const canResendMagicLink = hasPendingMagicLinkInvite;
 
                         const hasPendingFamilyInvitation = member.State === MEMBER_STATE.STATUS_INVITED;
+                        const isInactive = getIsMemberInactive(member);
 
+                        const hasDisabledLayout = hasPendingMagicLinkInvite || isInactive;
                         const hasFeaturesColumn = !hasPendingMagicLinkInvite;
 
                         const memberPermissions = getMemberPermissions({
@@ -669,6 +675,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     {c('Users table: badge').t`SSO`}
                                                                 </UserTableBadge>
                                                             )}
+                                                            {isInactive && (
+                                                                <UserTableBadge type="weak">
+                                                                    {c('Users table: badge').t`Inactive`}
+                                                                </UserTableBadge>
+                                                            )}
                                                         </>
                                                     );
                                                 }
@@ -676,7 +687,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                 if (hasPendingMagicLinkInvite) {
                                                     return (
                                                         <UserTableBadge
-                                                            type="weak"
+                                                            type="info"
                                                             tooltip={c('Users table: badge')
                                                                 .t`Invitation sent, awaiting reply from the invited member`}
                                                         >
@@ -695,7 +706,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     <div
                                         className={clsx(
                                             'flex flex-column flex-nowrap',
-                                            hasPendingMagicLinkInvite && 'color-hint'
+                                            hasDisabledLayout && 'color-hint'
                                         )}
                                     >
                                         <MemberRole member={member} />
@@ -709,7 +720,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     </div>
                                 </TableCell>
                                 <TableCell className="align-baseline">
-                                    <div className={clsx(hasPendingMagicLinkInvite && 'color-hint')}>
+                                    <div className={clsx(hasDisabledLayout && 'color-hint')}>
                                         {hasPendingFamilyInvitation ? (
                                             <p className="m-0 text-ellipsis">{member.Name}</p>
                                         ) : (
