@@ -1,4 +1,5 @@
-import type { ElementNode, LexicalEditor, ParagraphNode, RangeSelection, TextNode } from 'lexical'
+import type { ElementNode, LexicalCommand, LexicalEditor, ParagraphNode, RangeSelection, TextNode } from 'lexical'
+import { OUTDENT_CONTENT_COMMAND } from 'lexical'
 import {
   $insertNodes,
   $isParagraphNode,
@@ -37,6 +38,7 @@ describe('$handleBeforeInputEvent', () => {
   let container: HTMLElement
   let reactRoot: Root
   let editor: LexicalEditor | null = null
+  let dispatchCommandSpy: jest.SpyInstance<boolean, [type: LexicalCommand<unknown>, payload: unknown], any>
 
   async function update(fn: () => void) {
     await ReactTestUtils.act(async () => {
@@ -73,6 +75,8 @@ describe('$handleBeforeInputEvent', () => {
       await Promise.resolve().then()
     })
 
+    dispatchCommandSpy = jest.spyOn(editor!, 'dispatchCommand')
+
     await update(() => {
       $getRoot().clear()
     })
@@ -96,6 +100,12 @@ describe('$handleBeforeInputEvent', () => {
     })
     document.body.removeChild(container)
   })
+
+  function testEditorState(name: string, fn: () => void) {
+    test(name, () => {
+      editor!.read(fn)
+    })
+  }
 
   const onSuggestionCreation = jest.fn()
   const logger = {
@@ -1075,55 +1085,298 @@ describe('$handleBeforeInputEvent', () => {
         })
       })
 
-      describe('Backspacing at start of non-block non-inline element', () => {
-        let paragraphNode!: ParagraphNode
-        let normalListItem1!: ListItemNode
+      describe('Backspacing at start of list item', () => {
+        describe('Nested list item', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const paragraph = $createParagraphNode().append($createTextNode('1'))
+              const list = $createListNode('number').append($createListItemNode().append($createTextNode('2')))
+              const nestedItem = $createListItemNode().append($createTextNode('3'))
+              list.append(nestedItem)
+              $getRoot().append(paragraph, list)
+              nestedItem.setIndent(1)
+              nestedItem.selectStart()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'deleteContentBackward',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
 
-        beforeEach(async () => {
-          await update(() => {
+          test('OUTDENT_CONTENT_COMMAND should be dispatched', () => {
+            expect(dispatchCommandSpy).toHaveBeenCalledWith(OUTDENT_CONTENT_COMMAND, undefined)
+          })
+        })
+
+        describe('Non-nested list item', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const paragraph = $createParagraphNode().append($createTextNode('1'))
+              const firstListItem = $createListItemNode().append($createTextNode('2'))
+              const list = $createListNode('number').append(
+                firstListItem,
+                $createListItemNode().append($createTextNode('3')),
+              )
+              $getRoot().append(paragraph, list)
+              firstListItem.selectStart()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'deleteContentBackward',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          testEditorState('paragraph should have text and join nodes', () => {
+            const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+            expect(paragraph.getChildrenSize()).toBe(2)
+            expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+            const suggestion = paragraph.getLastChildOrThrow<ProtonNode>()
+            expect($isSuggestionNode(suggestion)).toBe(true)
+            expect(suggestion.getSuggestionTypeOrThrow()).toBe('join')
+          })
+
+          testEditorState('selection should be collapsed before join node', () => {
+            const selection = $getSelection()
+            if (!$isRangeSelection(selection)) {
+              throw new Error('Expected range')
+            }
+            expect(selection.isCollapsed()).toBe(true)
+            const text = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChildOrThrow<TextNode>()
+            const focus = selection.focus
+            expect(focus.offset).toBe(text.getTextContentSize())
+            expect(focus.getNode().is(text)).toBe(true)
+          })
+        })
+      })
+
+      describe('Backspacing when previous block is empty', () => {
+        describe('Previous block is previous sibling', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const p1 = $createParagraphNode().append($createTextNode(''))
+              const p2 = $createParagraphNode().append($createTextNode('a'))
+              $getRoot().append(p1, p2)
+              p2.selectStart()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'deleteContentBackward',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          testEditorState('previous block should have join suggestion', () => {
+            const p1 = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+            const join = p1.getFirstChildOrThrow<ProtonNode>()
+            expect($isSuggestionNode(join)).toBe(true)
+            expect(join.getSuggestionTypeOrThrow()).toBe('join')
+          })
+
+          testEditorState('selection should at start of 1st paragraph', () => {
+            const p1 = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+            const selection = $getSelection()
+            if (!$isRangeSelection(selection)) {
+              throw new Error('Not a range')
+            }
+            expect(selection.isCollapsed()).toBe(true)
+            const focus = selection.focus
+            expect(focus.offset).toBe(0)
+            expect(focus.getNode().is(p1.getFirstChild())).toBe(true)
+          })
+        })
+
+        describe('Previous block is nested list item', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const list = $createListNode('bullet')
+              const listItem = $createListItemNode()
+              list.append(listItem)
+              const p1 = $createParagraphNode().append($createTextNode(''))
+              $getRoot().append(list, p1)
+              listItem.setIndent(1)
+              p1.selectStart()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'deleteContentBackward',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          testEditorState('nested list item should have join suggestion', () => {
+            const nestedList = $getRoot()
+              .getFirstChildOrThrow<ListNode>()
+              .getFirstChildOrThrow<ListItemNode>()
+              .getFirstChildOrThrow<ListNode>()
+            const nestedListItem = nestedList.getFirstChildOrThrow<ListItemNode>()
+            const join = nestedListItem.getFirstChildOrThrow<ProtonNode>()
+            expect($isSuggestionNode(join)).toBe(true)
+            expect(join.getSuggestionTypeOrThrow()).toBe('join')
+          })
+
+          testEditorState('selection should at start of nested list item', () => {
+            const nestedList = $getRoot()
+              .getFirstChildOrThrow<ListNode>()
+              .getFirstChildOrThrow<ListItemNode>()
+              .getFirstChildOrThrow<ListNode>()
+            const nestedListItem = nestedList.getFirstChildOrThrow<ListItemNode>()
+            const selection = $getSelection()
+            if (!$isRangeSelection(selection)) {
+              throw new Error('Not a range')
+            }
+            expect(selection.isCollapsed()).toBe(true)
+            const focus = selection.focus
+            expect(focus.offset).toBe(0)
+            expect(focus.getNode().is(nestedListItem.getFirstChild())).toBe(true)
+          })
+        })
+      })
+
+      describe('Backspacing when previous block has split suggestion', () => {
+        describe('Previous block is previous sibling', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const p1 = $createParagraphNode().append($createTextNode('1'), $createSuggestionNode('test', 'split'))
+              const p2 = $createParagraphNode().append($createTextNode('2'))
+              $getRoot().append(p1, p2)
+              p2.selectStart()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'deleteContentBackward',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          testEditorState('root should have 1 child', () => {
             const root = $getRoot()
-            paragraphNode = $createParagraphNode().append($createTextNode('Paragraph'))
-            root.append(paragraphNode)
-            normalListItem1 = $createListItemNode().append($createTextNode('List Item 1'))
-            const nestedListItem1 = $createListItemNode().append($createTextNode('Nested List Item 1'))
-            const list = $createListNode('bullet').append(
-              normalListItem1,
-              $createListItemNode().append($createListNode('bullet').append(nestedListItem1)),
-            )
-            root.append(list)
-            nestedListItem1.selectStart()
+            expect(root.getChildrenSize()).toBe(1)
+            expect($isParagraphNode(root.getFirstChild())).toBe(true)
           })
-          await update(() => {
-            $handleBeforeInputEvent(
-              editor!,
-              {
-                inputType: 'deleteContentBackward',
-                data: null,
-                dataTransfer: null,
-              } as InputEvent,
-              onSuggestionCreation,
-            )
+
+          testEditorState('split suggestion should be removed', () => {
+            const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+            expect(paragraph.getChildrenSize()).toBe(1)
+            expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+          })
+
+          testEditorState('content should be merged', () => {
+            const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+            expect(paragraph.getTextContent()).toBe('12')
+          })
+
+          testEditorState('selection should be between merged content', () => {
+            const textNode = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChildOrThrow<TextNode>()
+            const selection = $getSelection()
+            if (!$isRangeSelection(selection)) {
+              throw new Error('Not a range')
+            }
+            expect(selection.isCollapsed()).toBe(true)
+            const focus = selection.focus
+            expect(focus.offset).toBe(1)
+            expect(focus.getNode().is(textNode)).toBe(true)
           })
         })
 
-        test('root should have 2 children', () => {
-          editor!.read(() => {
+        describe('Previous block is nested list item', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const list = $createListNode('bullet')
+              const listItem = $createListItemNode().append(
+                $createTextNode('1'),
+                $createSuggestionNode('test', 'split'),
+              )
+              list.append(listItem)
+              const p1 = $createParagraphNode().append($createTextNode('2'))
+              $getRoot().append(list, p1)
+              listItem.setIndent(1)
+              p1.selectStart()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'deleteContentBackward',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+              )
+            })
+          })
+
+          testEditorState('root should have 1 child', () => {
             const root = $getRoot()
-            expect(root.getChildrenSize()).toBe(2)
+            expect(root.getChildrenSize()).toBe(1)
+            expect($isListNode(root.getFirstChild())).toBe(true)
           })
-        })
 
-        test('paragraph should only have text', () => {
-          editor!.read(() => {
-            expect(paragraphNode.getChildrenSize()).toBe(1)
+          testEditorState('split node should be removed', () => {
+            const nestedListItem = $getRoot()
+              .getFirstChildOrThrow<ListNode>()
+              .getFirstChildOrThrow<ListItemNode>()
+              .getFirstChildOrThrow<ListNode>()
+              .getFirstChildOrThrow<ListItemNode>()
+            expect(nestedListItem.getChildrenSize()).toBe(1)
+            expect($isTextNode(nestedListItem.getFirstChild())).toBe(true)
           })
-        })
 
-        test('normal list item 1 to have text and join node', async () => {
-          editor!.read(() => {
-            expect(normalListItem1.getChildrenSize()).toBe(2)
-            expect($isTextNode(normalListItem1.getChildAtIndex(0))).toBe(true)
-            expect($isSuggestionNode(normalListItem1.getChildAtIndex(1))).toBe(true)
+          testEditorState('content should be merged', () => {
+            const nestedListItem = $getRoot()
+              .getFirstChildOrThrow<ListNode>()
+              .getFirstChildOrThrow<ListItemNode>()
+              .getFirstChildOrThrow<ListNode>()
+              .getFirstChildOrThrow<ListItemNode>()
+            expect(nestedListItem.getTextContent()).toBe('12')
+          })
+
+          testEditorState('selection should be between merged content', () => {
+            const nestedListItem = $getRoot()
+              .getFirstChildOrThrow<ListNode>()
+              .getFirstChildOrThrow<ListItemNode>()
+              .getFirstChildOrThrow<ListNode>()
+              .getFirstChildOrThrow<ListItemNode>()
+            const textNode = nestedListItem.getFirstChildOrThrow<TextNode>()
+            const selection = $getSelection()
+            if (!$isRangeSelection(selection)) {
+              throw new Error('Not a range')
+            }
+            expect(selection.isCollapsed()).toBe(true)
+            const focus = selection.focus
+            expect(focus.offset).toBe(1)
+            expect(focus.getNode().is(textNode)).toBe(true)
           })
         })
       })
