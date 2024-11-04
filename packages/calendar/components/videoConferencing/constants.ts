@@ -11,5 +11,6 @@ export interface BaseMeetingUrls {
     meetingUrl?: string;
     meetingId?: string;
     joiningInstructions?: string;
+    meetingHost?: string;
     password?: string; // This is used by Zoom meetings
 }

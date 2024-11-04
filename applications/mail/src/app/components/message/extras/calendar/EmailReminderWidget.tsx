@@ -402,14 +402,16 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             <span className="text-break">{Name}</span>
                         </IconRow>
 
-                        <div className="mb-4">
-                            <VideoConferencingWidgetConfig model={vevent} widgetLocation="mail-headers" />
-                        </div>
                         {!!sanitizedAndUrlifiedLocation && (
                             <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName={labelClassName}>
                                 <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                             </IconRow>
                         )}
+
+                        <div className="mb-4">
+                            <VideoConferencingWidgetConfig model={vevent} widgetLocation="mail-headers" />
+                        </div>
+
                         {!!participantsList.length && (
                             <IconRow title={c('Label').t`Participants`} icon="users" labelClassName={labelClassName}>
                                 <ExtraEventParticipants list={participantsList} />

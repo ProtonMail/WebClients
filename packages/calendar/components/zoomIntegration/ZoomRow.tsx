@@ -11,9 +11,9 @@ import { EASY_SWITCH_SOURCES, ImportType, OAUTH_PROVIDER } from '@proton/activat
 import { Button, CircleLoader } from '@proton/atoms';
 import { Icon, IconRow, ZoomUpsellModal, useApi, useModalStateObject } from '@proton/components';
 import { useLoading } from '@proton/hooks';
+import { IcVideoCamera } from '@proton/icons';
 import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
 import type { EventModel, VideoConferenceMeetingCreation } from '@proton/shared/lib/interfaces/calendar';
-import zoomLogo from '@proton/styles/assets/img/video-conferencing/zoom.svg';
 import clsx from '@proton/utils/clsx';
 
 import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingWidget';
@@ -25,9 +25,9 @@ const getIcon = (state: ZoomIntegrationState) => {
     switch (state) {
         case 'disconnected':
         case 'connected':
-            return <img src={zoomLogo} className="h-6 w-6 hidden" alt="" />;
+            return <span />;
         case 'meeting-present':
-            return <img src={zoomLogo} className="h-6 w-6" alt="" />;
+            return <IcVideoCamera />;
         case 'loading':
         case 'loadingConfig':
             return <CircleLoader className="color-primary h-4 w-4" />;
@@ -57,6 +57,8 @@ export const ZoomRow = ({ model, setModel }: Props) => {
     useEffect(() => {
         if (loadingConfig || oauthTokenLoading) {
             setProcessState('loadingConfig');
+        } else if (model.conferenceUrl) {
+            setProcessState('meeting-present');
         } else {
             setProcessState(isUserConnectedToZoom ? 'connected' : 'disconnected');
         }
