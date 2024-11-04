@@ -808,11 +808,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "actualizar la página"
-      ],
       "Refresh the page": [
         "Actualizar la página"
+      ],
+      "refresh the page": [
+        "actualizar la página"
       ],
       "Reject": [
         "Rechazar"
@@ -1602,6 +1602,14 @@
         "Selecciona tu oferta de fin de año"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener **${ discountPercentage } de ${ plan.Title }** al suscribirte durante **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de almacenamiento (el doble que cualquier otro plan)"
@@ -1623,14 +1631,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "El plan ${ plan } está de nuevo disponible por tiempo limitado."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Lo sentimos, esta oferta no está disponible con tu plan actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener **${ discountPercentage } de ${ plan.Title }** al suscribirte durante **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1670,7 +1670,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+        "Aplicación para ordenador ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
@@ -1679,7 +1679,7 @@
         "${ storageSize } de almacenamiento"
       ],
       "1 TB total": [
-        "1 TB en total"
+        "1 TB en total"
       ],
       "1 user": [
         "1 usuario"
@@ -1694,7 +1694,7 @@
         "2 usuarios"
       ],
       "3 TB": [
-        "3 TB"
+        "3 TB"
       ],
       "6 user accounts": [
         "6 cuentas de usuario"
@@ -1718,7 +1718,7 @@
         "Monitoreo de la Dark Web"
       ],
       "Easily add or remove users": [
-        "Añadir o borrar usuarios fácilmente"
+        "Fácil adición y borrado de usuarios"
       ],
       "High speed streaming": [
         "Streaming de alta velocidad"
@@ -1736,22 +1736,22 @@
         "Copia de seguridad de fotos privadas"
       ],
       "Protect 10 devices at a time": [
-        "Protege 10 dispositivos a la vez"
+        "Protección de 10 dispositivos a la vez"
       ],
       "Secure file storage & sharing": [
-        "Almacenamiento y uso compartido seguro de archivos"
+        "Almacenamiento y uso compartido seguros de archivos"
       ],
       "Secure vault and link sharing": [
-        "Intercambio seguro de caja fuerte y enlaces"
+        "Intercambio seguro de bóveda y enlaces"
       ],
       "Unlimited folders, labels and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
+        "Número ilimitado de carpetas, etiquetas y filtros"
       ],
       "Unlimited hide-my-email aliases": [
         "Número ilimitado de alias de hide-my-email"
       ],
       "Unlimited logins, notes, credit cards": [
-        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
+        "Número ilimitado de inicios de sesión, notas y tarjetas de crédito"
       ],
       "Use your own email domain": [
         "Usa tu propio dominio de correo electrónico"
@@ -1783,20 +1783,23 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accede a contenido bloqueado y navega de forma privada. Incluye más de 8500 servidores en más de 110 países, 10 dispositivos, streaming de alta velocidad, bloqueador de anuncios y protección contra malware, acelerador de VPN y más."
+        "Accede a contenido bloqueado y navega de forma privada. Incluye más de 8500 servidores en más de 110 países, 10 dispositivos, streaming de alta velocidad, bloqueador de anuncios, protección contra malware, VPN Accelerator y mucho más."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inicios de sesión seguros en todos tus dispositivos. Incluye alias ilimitados hide-my-email, uso compartido, autenticación de dos factores integrada, monitoreo de la Dark Web y más."
+        "Inicios de sesión seguros en todos tus dispositivos. Incluye un número ilimitado de alias de hide-my-email, uso compartido, 2FA integrada, monitoreo de la Dark Web y mucho más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo electrónico, el soporte de dominios de correo electrónico personalizados, el asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más.",
-        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo electrónico, el soporte de dominios de correo electrónico personalizados, el asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más."
+        "Protege tus correos electrónicos y tu agenda con el cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo electrónico, soporte para los dominios de correo electrónico personalizados, el asistente de escritura Scribe de ${ BRAND_NAME }, alias hide-my-email ilimitados y mucho más.",
+        "Protege tus correos electrónicos y tu agenda con el cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo electrónico, soporte para los dominios de correo electrónico personalizados, el asistente de escritura Scribe de ${ BRAND_NAME }, alias hide-my-email ilimitados y mucho más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte de dominios de correo electrónico personalizados, asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, alias ilimitados hide-my-email y más."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Protege tus archivos con almacenamiento en la nube cifrado. Incluye editor de documentos en línea, copia de seguridad de fotos, historial de versiones, uso de intercambio de archivos cifrados y más."
@@ -5606,6 +5609,9 @@
     "fido2: Action": {
       "Delete key": [
         "Eliminar la llave"
+      ],
+      "New security key": [
+        "Nueva clave de seguridad"
       ]
     },
     "fido2: Error": {
@@ -5658,6 +5664,10 @@
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifica tu identidad con una llave física de seguridad U2F o FIDO2."
+      ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Has alcanzado el número máximo de ${ maxSecurityKeyLength } clave de seguridad.",
+        "Has alcanzado el número máximo de ${ maxSecurityKeyLength } claves de seguridad."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Tu llave de autenticación de dos factores está lista."
@@ -7234,11 +7244,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -8843,11 +8853,11 @@
       "User activated": [
         "Se ha activado el usuario."
       ],
-      "Username": [
-        "Nombre de usuario"
-      ],
       "username": [
         "nombre de usuario"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -9901,6 +9911,9 @@
       ],
       "Allowed Domain": [
         "Dominio permitido"
+      ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Permite fácilmente a todos en tu organización añadir enlaces a videoconferencias a sus invitaciones de calendario."
       ],
       "Amount": [
         "Cantidad"
@@ -11688,6 +11701,32 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comienza por ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -11715,32 +11754,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Cambiar a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comienza por ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "A partir de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12422,6 +12435,20 @@
         "Has seleccionado el plan ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Disfruta de Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -12440,20 +12467,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquea funciones premium al actualizar"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Disfruta de Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -13482,9 +13495,6 @@
       "Free forever": [
         "Gratis para siempre"
       ],
-      "From the team that knows encryption": [
-        "Del equipo que conoce de cifrado"
-      ],
       "Get ${ appName } for ${ browserName }": [
         "Obtén ${ appName } para ${ browserName }"
       ],
@@ -13579,6 +13589,9 @@
       "Secure vault sharing (${ n } vault) and link sharing": [
         "Intercambio seguro de caja fuerte (${ n } caja fuerte) e intercambio de enlaces",
         "Intercambio seguro de caja fuerte (${ n } cajas fuertes) e intercambio de enlaces"
+      ],
+      "Secure your family’s passwords and online identities": [
+        "Protege las contraseñas de tu familia y sus identidades en línea"
       ],
       "Secured by end-to-end encryption": [
         "Protegido por encriptación de extremo a extremo"
@@ -15604,6 +15617,9 @@
       "Share the confirmation code with your administrator": [
         "Comparte el código de confirmación con tu administrador."
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "Sign in to your organization": [
         "Iniciar sesión en tu organización"
       ],
@@ -15651,6 +15667,9 @@
       ],
       "Yes, it was me": [
         "Sí, fui yo."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Serás redirigido a tu proveedor de SSO de terceros."
       ]
     },
     "sso: auth device state": {
@@ -16347,6 +16366,9 @@
       "Auto-reply updated": [
         "Se ha actualizado la respuesta automática."
       ],
+      "Backup password updated": [
+        "Contraseña de respaldo actualizada"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario añadido. La sincronización puede tardar unos minutos."
       ],
@@ -16967,10 +16989,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -18102,6 +18124,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Permite fácilmente añadir enlaces a videoconferencias a tus invitaciones de calendario."
       ],
       "An approximate location of the IP address": [
         "Una ubicación aproximada de la dirección IP"

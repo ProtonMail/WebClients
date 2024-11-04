@@ -805,11 +805,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Reject": [
         "Rifiuta"
@@ -1599,6 +1599,14 @@
         "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB di spazio di archiviazione (2 volte di più rispetto a qualsiasi altro piano)"
@@ -1620,14 +1628,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Il piano ${ plan } è tornato, ma solo per un periodo di tempo limitato"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1673,7 +1673,7 @@
         "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
-        "${ storageSize } di archiviazione"
+        "${ storageSize } di spazio d'archiviazione"
       ],
       "1 TB total": [
         "1 TB"
@@ -1700,10 +1700,10 @@
         "6 utenti"
       ],
       "8500+ servers across 110+ countries": [
-        "Oltre 8500 server in più di 110 Paesi"
+        "Oltre 8500 server in più di 110 paesi"
       ],
       "Ad-blocker and malware protection": [
-        "Blocco degli annunci e protezione da malware"
+        "Ad-blocker e protezione da malware"
       ],
       "Admin panel to manage your family": [
         "Pannello di amministrazione per gestire la tua famiglia"
@@ -1739,7 +1739,7 @@
         "Archiviazione e condivisione sicura dei file"
       ],
       "Secure vault and link sharing": [
-        "Condivisione sicura di casseforti e link"
+        "Condivisione sicura tramite casseforti e link"
       ],
       "Unlimited folders, labels and filters": [
         "Cartelle, etichette e filtri illimitati"
@@ -1748,7 +1748,7 @@
         "Alias hide-my-email illimitati"
       ],
       "Unlimited logins, notes, credit cards": [
-        "Login, note e carte illimitati"
+        "Login, note e carte di credito illimitati"
       ],
       "Use your own email domain": [
         "Usa il tuo dominio di posta personalizzato"
@@ -1780,23 +1780,26 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accedi ai contenuti bloccati e naviga in privato. Include oltre 8.500 server in più di 110 paesi, 10 dispositivi, streaming ad alta velocità, blocco degli annunci, protezione da malware, VPN Accelerator e molto altro."
+        "Accedi ai contenuti bloccati e naviga in privato. Include oltre 8.500 server in più di 110 paesi, 10 dispositivi, streaming ad alta velocità, ad-blocker, protezione da malware, VPN Accelerator e molto altro."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, condivisione, autenticazione a due fattori, monitoraggio del dark web e molto altro."
+        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, monitoraggio del dark web e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
-        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteggi le email e la l'agenda con la crittografia end-to-end. Include 15 indirizzi email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include 15 indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteggi le tue email e il tuo calendario con la crittografia end-to-end. Include 15 indirizzi email, supporto per domini email personalizzati, alias hide-my-email illimitati e molto altro."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Proteggi i file con l'archiviazione cloud crittografata. Include editor di documenti online, backup delle foto, cronologia delle versioni, condivisione di file crittografata e molto altro."
+        "Proteggi i file con l'archiviazione cloud crittografata. Include l'editor di documenti online, il backup delle foto, la cronologia delle versioni, la condivisione di file crittografata e molto altro."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield è progettato appositamente per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
@@ -7222,11 +7225,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "Dedicated servers": [
-        "Server dedicati"
-      ],
       "dedicated servers": [
         "server dedicati"
+      ],
+      "Dedicated servers": [
+        "Server dedicati"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -8828,11 +8831,11 @@
       "User activated": [
         "Utente attivato"
       ],
-      "Username": [
-        "Nome utente"
-      ],
       "username": [
         "nome utente"
+      ],
+      "Username": [
+        "Nome utente"
       ],
       "Users": [
         "Utenti"
@@ -11667,6 +11670,32 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Inizia per ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partire da ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua Gratis"
@@ -11694,32 +11723,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Inizia per ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "A partire da ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12401,6 +12404,23 @@
         "Il tuo piano selezionato: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Ottieni Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partire da ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -12419,23 +12439,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Sblocca le funzionalità premium effettuando l'upgrade"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Ottieni Mail Plus per ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partire da ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -13481,9 +13484,6 @@
       ],
       "Free forever": [
         "Gratis per sempre"
-      ],
-      "From the team that knows encryption": [
-        "Dal team che conosce la crittografia"
       ],
       "Get ${ appName } for ${ browserName }": [
         "Ottieni ${ appName } per ${ browserName }"
@@ -16878,11 +16878,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-all address": [
-        "Indirizzi Catch-all"
-      ],
       "Catch-All address": [
         "Indirizzi catch-all"
+      ],
+      "Catch-all address": [
+        "Indirizzi Catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"

@@ -124,6 +124,9 @@
       "Add label": [
         "Legg til etikett"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Legg til flere ${ BRAND_NAME } Scribe-lisenser"
+      ],
       "Add notification": [
         "Legg til varsel"
       ],
@@ -805,11 +808,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "refresh the page": [
-        "oppdater siden"
-      ],
       "Refresh the page": [
         "Oppdater siden"
+      ],
+      "refresh the page": [
+        "oppdater siden"
       ],
       "Reject": [
         "Avvis"
@@ -1599,6 +1602,14 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1620,14 +1631,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1792,8 +1795,15 @@
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer dokumentredigering på nett, sikkerhetskopiering av bilder, versjonshistorikk, kryptert fildeling og mer."
@@ -3561,6 +3571,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Få opptil ${ credits } i kreditter ved å invitere venner til ${ BRAND_NAME }."
+      ],
+      "If disabled, only admins will have access.": [
+        "Hvis deaktivert, vil bare administratorer ha tilgang."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
@@ -5597,6 +5610,9 @@
     "fido2: Action": {
       "Delete key": [
         "Slett nøkkel"
+      ],
+      "New security key": [
+        "Ny sikkerhetsnøkkel"
       ]
     },
     "fido2: Error": {
@@ -5650,6 +5666,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekreft din identitet med en fysisk U2F eller FIDO2-sikkerhetsnøkkel"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Du har nådd maksimalt ${ maxSecurityKeyLength } sikkerhetsnøkkel.",
+        "Du har nådd maksimalt ${ maxSecurityKeyLength } sikkerhetsnøkler."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Tofaktorautentiseringsnøkkelen er klar til bruk."
       ]
@@ -5677,6 +5697,9 @@
       ],
       "Security key registered": [
         "Sikkerhetsnøkkel registrert"
+      ],
+      "Security keys": [
+        "Sikkerhetsnøkler"
       ]
     },
     "file size format": {
@@ -6799,7 +6822,7 @@
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Få tilgang til passordene dine og beskytt nettidentitetene sømløst på tvers av enhetene. Last ned og installer de relevante ${ PASS_APP_NAME }-appene og utvidelsene."
+        "Skaff deg tilgang til passordene dine og beskytt nettidentitetene sømløst på tvers av enhetene. Last ned og installer de relevante ${ PASS_APP_NAME }-appene og utvidelsene."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontotilgang begrenset på grunn av ubetalte fakturaer. Kontakt systemansvarlig."
@@ -7222,11 +7245,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
-      ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -7240,6 +7263,12 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } porttjener",
         "Sletter ${ deletedServerCount } porttjenere"
+      ],
+      "Disable recovery by email address": [
+        "Deaktiver gjenoppretting via e-postadresse"
+      ],
+      "Disable recovery by phone number": [
+        "Deaktiver gjenoppretting via telefonnummer"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Deaktivert den ${ formattedDateAndTime }"
@@ -8828,11 +8857,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "Username": [
-        "Brukernavn"
-      ],
       "username": [
         "brukernavn"
+      ],
+      "Username": [
+        "Brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -8866,6 +8895,12 @@
       ],
       "Verify domain": [
         "Verifiser domene"
+      ],
+      "Verify email address": [
+        "Verifiser e-postadresse"
+      ],
+      "Verify phone number": [
+        "Bekreft mobilnummer"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifiser din identitet med en tids-basert en-time passord fra en autentiseringsapp."
@@ -9881,6 +9916,9 @@
       "Allowed Domain": [
         "Tillatt domene"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Gjør det mulig for alle i organisasjonen å sømløst legge til videokonferansekoblinger i kalenderinvitasjonene sine."
+      ],
       "Amount": [
         "Beløp"
       ],
@@ -10204,6 +10242,9 @@
       ],
       "Emails (last month)": [
         "E-poster (siste måned)"
+      ],
+      "Enable video conferencing ": [
+        "Aktiver videokonferanser "
       ],
       "End date": [
         "Sluttdato"
@@ -11667,6 +11708,32 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11694,32 +11761,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Starter fra ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12401,6 +12442,20 @@
         "Planen du har valgt: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -12419,20 +12474,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Starter fra ${ price }"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -12788,6 +12829,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tofaktorautentisering kreves ikke lenger"
+      ],
+      "Video conferencing settings have been updated": [
+        "Innstillingene for videokonferanser er oppdatert"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13479,17 +13523,20 @@
       "Free forever": [
         "Gratis for alltid"
       ],
-      "From the team that knows encryption": [
-        "Fra teamet som kan kryptering"
-      ],
       "Get ${ appName } for ${ browserName }": [
         "Skaff deg ${ appName } for ${ browserName }"
       ],
       "Get in touch with our sales team": [
         "Kom i kontakt med salgsavdelingen"
       ],
+      "Get online privacy, for your whole family": [
+        "Skaff deg personvern på nettet, for hele familien din"
+      ],
       "Get the security and features your business needs": [
         "Få sikkerheten og funksjonene bedriften din trenger"
+      ],
+      "Get unlimited privacy for two": [
+        "Skaff deg ubegrenset personvern for to"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Jeg forstår at hvis jeg mister gjenopprettingsdetaljene mine, kan jeg miste tilgangen til kontoen min permanent."
@@ -13571,6 +13618,9 @@
         "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling",
         "Sikker hvelvdeling (${ n } hvelv) og koblingsdeling"
       ],
+      "Secure your family’s passwords and online identities": [
+        "Sikre familiens passord og identiteter på nettet"
+      ],
       "Secured by end-to-end encryption": [
         "Sikret med ende-til-ende-kryptering"
       ],
@@ -13606,6 +13656,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Du er blitt invitert til å bli med ${ PASS_APP_NAME }"
+      ],
+      "Your ${ discount }% Black Friday discount has been applied": [
+        "Din ${ discount }% Black Friday-rabatt er anvendt"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organisasjonen din har tilgang til ${ free }. Hvis du ønsker å få tilgang til ${ appName }-premiumfunksjoner, vennligst spør organisasjonsadministratoren om å oppgradere."
@@ -14596,6 +14649,12 @@
       "For security reasons, the token is hidden": [
         "Av sikkerhetsgrunner er tokenet skjult"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Gå til identitetsleverandøren, kopier og lim inn dataene nedenfor og fullfør konfigureringen av SCIM for ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Gå til identitetsleverandøren, kopier og lim inn tokenet nedenfor, og aktiver SCIM på nytt for ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Hvis du har mistet eller glemt SCIM-tokenet, kan du generere et nytt, men vær oppmerksom på at innstillingene for identitetsleverandøren må oppdateres."
       ],
@@ -14604,6 +14663,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Når SCIM er deaktivert for organisasjonen, blir **alle SCIM-brukere som leveres automatisk av identitetsleverandøren, konvertert til SSO-brukere**, og du kan administrere dem direkte i ${ BRAND_NAME }-innstillingene."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Forenkler brukeradministrasjon på tvers av ulike tjenester. Legg til, rediger og fjern brukere i identitetsleverandøren, så brukes disse endringene automatisk på ${ appName }-organisasjonen."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Den automatiske klargjøringen av SCIM deaktiveres til du angir det nye SCIM-tokenet i identitetsleverandørens innstillinger."
@@ -15157,6 +15219,71 @@
         "Be om prøveversjon"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "Avanserte sikkerhetsfunksjoner"
+      ],
+      "Advanced sharing security": [
+        "Avansert delingssikkerhet"
+      ],
+      "Apps for all devices": [
+        "Apper for alle enheter"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Basert i Sveits, GDPR-kompatibel"
+      ],
+      "Built-in encryption": [
+        "Innebygget kryptering"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Kalender, passordbehandling, fillagring og VPN inkludert"
+      ],
+      "Email aliases": [
+        "E-postaliaser"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "E-post, kalender, passordbehandling og VPN inkludert"
+      ],
+      "End-to-end encrypted transactions": [
+        "Ende-til-ende-krypterte transaksjoner"
+      ],
+      "End-to-end encryption": [
+        "Ende-til-ende-kryptering"
+      ],
+      "From the team that knows encryption": [
+        "Fra teamet som kan kryptering"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Integrert e-post, kalender, fillagring, passordbehandling og VPN"
+      ],
+      "ISO 27001 certified": [
+        "ISO 27001-sertifisert"
+      ],
+      "Open source and audited": [
+        "Åpen kildekode og overvåket"
+      ],
+      "Open source and verified": [
+        "Åpen kildekode og verifisert"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet av sveitsiske personvernlover"
+      ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Selvforvaring – bare du har tilgang til lommeboknøklene"
+      ],
+      "The only business solution that is:": [
+        "Den eneste forretningsløsningen som er:"
+      ],
+      "The only cloud storage with:": [
+        "Den eneste skylagringen med:"
+      ],
+      "The only email service with:": [
+        "Den eneste e-posttjenesten med:"
+      ],
+      "Works on all devices": [
+        "Fungerer på alle enheter"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "GDPR- og HIPAA-kompatibel"
@@ -15381,7 +15508,7 @@
         "Tilgang nektet"
       ],
       "Access granted": [
-        "Tilgang godkjent"
+        "Tilgang gitt"
       ],
       "added you to their ${ BRAND_NAME } organization": [
         "la deg til deres ${ BRAND_NAME }-organisasjon"
@@ -15518,6 +15645,9 @@
       "Share the confirmation code with your administrator": [
         "Del bekreftelseskoden med administratoren din"
       ],
+      "Sign in": [
+        "Logg på"
+      ],
       "Sign in to your organization": [
         "Logg på organisasjonen"
       ],
@@ -15565,6 +15695,9 @@
       ],
       "Yes, it was me": [
         "Ja, det var meg"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du blir omdirigert til din tredjeparts SSO-leverandør."
       ]
     },
     "sso: auth device state": {
@@ -16261,6 +16394,9 @@
       "Auto-reply updated": [
         "Autosvar oppdatert"
       ],
+      "Backup password updated": [
+        "Reservepassord oppdatert"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender lagt til. Det kan ta noen minutter å synkronisere."
       ],
@@ -16512,6 +16648,9 @@
       "Preferences updated": [
         "Preferanser oppdatert"
       ],
+      "Resent invitation": [
+        "Invitasjon sendt på nytt"
+      ],
       "Status updated": [
         "Status oppdatert"
       ]
@@ -16676,6 +16815,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
@@ -16872,10 +17014,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -17177,6 +17319,9 @@
       "Email subscriptions": [
         "E-post abonnementer"
       ],
+      "Enable for all users": [
+        "Aktiver for alle brukere"
+      ],
       "Encryption and keys": [
         "Kryptering og nøkler"
       ],
@@ -17355,6 +17500,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Øk personvernet ditt med flere adresser"
+      ],
+      "Integrations": [
+        "Integreringer"
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
@@ -17822,6 +17970,9 @@
       "Version history": [
         "Versjonshistorikk"
       ],
+      "Video conference": [
+        "Videokonferanse"
+      ],
       "VPN apps": [
         "VPN-apper"
       ],
@@ -17998,6 +18149,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Gjør det mulig å sømløst legge til videokonferansekoblinger i kalenderinvitasjonene dine."
       ],
       "An approximate location of the IP address": [
         "En omtrentlig plassering til IP-adressen"
