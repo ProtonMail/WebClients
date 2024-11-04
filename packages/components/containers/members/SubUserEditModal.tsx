@@ -25,6 +25,7 @@ import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -43,6 +44,7 @@ import Addresses from '../addresses/Addresses';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
+import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
 import { getPrivateLabel } from './helper';
 
@@ -216,6 +218,8 @@ const SubUserEditModal = ({
 
     const hasToggledPrivate = model.private === MEMBER_PRIVATE.UNREADABLE && !unprivatization.pending;
     const hasToggledAdmin = model.role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+    const isPendingAdminAccess =
+        unprivatization.pending && unprivatization.mode === MemberUnprivatizationMode.AdminAccess;
 
     return (
         <>
@@ -254,7 +258,7 @@ const SubUserEditModal = ({
             )}
             {renderConfirmRemoveUnprivatization && (
                 <Prompt
-                    title={c('unprivatization').t`Delete request to access user data?`}
+                    title={c('unprivatization').t`Cancel request to access user data?`}
                     buttons={[
                         <Button
                             color="danger"
@@ -265,18 +269,18 @@ const SubUserEditModal = ({
                                     handleUpdateMember({ private: MEMBER_PRIVATE.UNREADABLE })
                                 ).catch(errorHandler);
                             }}
-                        >{c('unprivatization').t`Delete request`}</Button>,
+                        >{c('unprivatization').t`Cancel request`}</Button>,
                         <Button
                             onClick={() => {
                                 confirmRemoveUnprivatizationProps.onClose();
                             }}
-                        >{c('Action').t`Cancel`}</Button>,
+                        >{c('unprivatization').t`Keep request`}</Button>,
                     ]}
                     {...confirmRemoveUnprivatizationProps}
                 >
                     <div>
                         {c('unprivatization')
-                            .t`This will delete the pending request for administrator access to the user’s data or password reset.`}
+                            .t`This will cancel the pending request for administrator access to the user’s data or password reset.`}
                     </div>
                 </Prompt>
             )}
@@ -418,65 +422,62 @@ const SubUserEditModal = ({
                     />
 
                     <div className="flex flex-column gap-2 mb-4">
-                        {allowVpnAccessConfiguration && hasVPN ? (
-                            <MemberToggleContainer
-                                toggle={
-                                    <Toggle
-                                        id="vpn-toggle"
-                                        checked={model.vpn}
-                                        loading={loadingVPN}
-                                        onChange={({ target }) => {
-                                            withLoadingVPN(handleUpdateMember({ vpn: target.checked })).catch(
-                                                errorHandler
-                                            );
-                                        }}
-                                    />
-                                }
-                                label={
-                                    <label className="text-semibold" htmlFor="vpn-toggle">
-                                        {c('Label for new member').t`VPN connections`}
-                                    </label>
-                                }
-                            />
-                        ) : null}
-
                         {allowPrivateMemberConfiguration && canTogglePrivate && (
-                            <MemberToggleContainer
-                                toggle={
-                                    <Toggle
-                                        id="private-toggle"
-                                        checked={hasToggledPrivate}
-                                        loading={loadingUnprivatization}
-                                        onChange={({ target }) => {
-                                            if (hasToggledPrivate && !target.checked) {
-                                                setConfirmUnprivatizationModal(true);
-                                                return;
-                                            }
-                                            if (!hasToggledPrivate && target.checked && unprivatization.pending) {
-                                                setConfirmRemoveUnprivatizationModal(true);
-                                                return;
-                                            }
-                                            if (!hasToggledPrivate && target.checked) {
-                                                setConfirmPrivatizationModal(true);
-                                                return;
-                                            }
-                                        }}
-                                    />
-                                }
-                                label={
-                                    <label className="text-semibold" htmlFor="private-toggle">
-                                        {getPrivateLabel()}
-                                    </label>
-                                }
-                                assistiveText={
-                                    <>
-                                        {unprivatization.pending &&
-                                        unprivatization.mode === MemberUnprivatizationMode.AdminAccess
-                                            ? c('unprivatization').t`Pending admin access`
-                                            : getPrivateText()}
-                                    </>
-                                }
-                            />
+                            <>
+                                <MemberToggleContainer
+                                    toggle={
+                                        <Toggle
+                                            disabled={isPendingAdminAccess}
+                                            id="private-toggle"
+                                            checked={hasToggledPrivate}
+                                            loading={!isPendingAdminAccess && loadingUnprivatization}
+                                            onChange={({ target }) => {
+                                                if (hasToggledPrivate && !target.checked) {
+                                                    setConfirmUnprivatizationModal(true);
+                                                    return;
+                                                }
+                                                if (!hasToggledPrivate && target.checked && unprivatization.pending) {
+                                                    setConfirmRemoveUnprivatizationModal(true);
+                                                    return;
+                                                }
+                                                if (!hasToggledPrivate && target.checked) {
+                                                    setConfirmPrivatizationModal(true);
+                                                    return;
+                                                }
+                                            }}
+                                        />
+                                    }
+                                    label={
+                                        <label className="text-semibold" htmlFor="private-toggle">
+                                            {getPrivateLabel()}
+                                        </label>
+                                    }
+                                    assistiveText={getPrivateText()}
+                                />
+                                {isPendingAdminAccess && (
+                                    <SubUserCreateHint className="bg-weak">
+                                        <div className="flex-column md:flex-row flex gap-2">
+                                            <div className="md:flex-1">
+                                                {getBoldFormattedText(
+                                                    c('unprivatization')
+                                                        .t`**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.`
+                                                )}
+                                            </div>
+                                            <div className="md:shrink-0">
+                                                <Button
+                                                    loading={loadingUnprivatization}
+                                                    size="small"
+                                                    onClick={() => {
+                                                        setConfirmRemoveUnprivatizationModal(true);
+                                                    }}
+                                                >
+                                                    {c('unprivatization').t`Cancel request`}
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </SubUserCreateHint>
+                                )}
+                            </>
                         )}
 
                         {(canPromoteAdmin || canRevokeAdmin) && (
@@ -543,6 +544,28 @@ const SubUserEditModal = ({
                                 }
                             />
                         )}
+
+                        {allowVpnAccessConfiguration && hasVPN ? (
+                            <MemberToggleContainer
+                                toggle={
+                                    <Toggle
+                                        id="vpn-toggle"
+                                        checked={model.vpn}
+                                        loading={loadingVPN}
+                                        onChange={({ target }) => {
+                                            withLoadingVPN(handleUpdateMember({ vpn: target.checked })).catch(
+                                                errorHandler
+                                            );
+                                        }}
+                                    />
+                                }
+                                label={
+                                    <label className="text-semibold" htmlFor="vpn-toggle">
+                                        {c('Label for new member').t`VPN connections`}
+                                    </label>
+                                }
+                            />
+                        ) : null}
 
                         {allowAIAssistantConfiguration && (
                             <MemberToggleContainer
