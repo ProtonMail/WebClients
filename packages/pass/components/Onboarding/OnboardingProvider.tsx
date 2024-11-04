@@ -18,7 +18,6 @@ import {
 } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 type OnboardingContextValue = {
@@ -49,8 +48,7 @@ const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     const [enabled, setEnabled] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const { onboardingAcknowledge, onboardingCheck } = usePassCore();
-    const acknowledge = async () => {
-        await wait(250);
+    const acknowledge = () => {
         setEnabled(false);
         void onboardingAcknowledge?.(OnboardingMessage.WELCOME);
     };
