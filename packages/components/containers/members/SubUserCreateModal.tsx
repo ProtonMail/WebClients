@@ -434,23 +434,6 @@ const SubUserCreateModal = ({
                 )}
 
                 <div className="flex flex-column gap-2">
-                    {allowVpnAccessConfiguration && hasVPN && (
-                        <MemberToggleContainer
-                            toggle={
-                                <Toggle
-                                    id="vpn-toggle"
-                                    checked={model.vpn}
-                                    onChange={({ target }) => handleChange('vpn')(target.checked)}
-                                />
-                            }
-                            label={
-                                <label className="text-semibold" htmlFor="vpn-toggle">
-                                    {c('user_modal').t`VPN connections`}
-                                </label>
-                            }
-                        />
-                    )}
-
                     {allowPrivateMemberConfiguration && (
                         <MemberToggleContainer
                             toggle={
@@ -496,6 +479,23 @@ const SubUserCreateModal = ({
                                 }
                             />
                         </>
+                    )}
+
+                    {allowVpnAccessConfiguration && hasVPN && (
+                        <MemberToggleContainer
+                            toggle={
+                                <Toggle
+                                    id="vpn-toggle"
+                                    checked={model.vpn}
+                                    onChange={({ target }) => handleChange('vpn')(target.checked)}
+                                />
+                            }
+                            label={
+                                <label className="text-semibold" htmlFor="vpn-toggle">
+                                    {c('user_modal').t`VPN connections`}
+                                </label>
+                            }
+                        />
                     )}
 
                     {allowAIAssistantConfiguration && (
