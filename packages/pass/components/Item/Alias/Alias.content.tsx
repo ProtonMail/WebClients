@@ -7,13 +7,14 @@ import { c } from 'ttag';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
+import { AliasContact } from '@proton/pass/components/Item/Alias/Contact/AliasContact';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import { selectAliasDetails } from '@proton/pass/store/selectors';
+import { selectAliasMailboxes, selectCanManageAlias } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 import { AliasStatusToggle } from './AliasStatusToggle';
@@ -25,12 +26,13 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     actions = [],
 }) => {
     const dispatch = useDispatch();
+    const canManageAlias = useSelector(selectCanManageAlias);
 
     const { data: item, shareId, itemId } = revision;
 
     const aliasEmail = revision.aliasEmail!;
     const note = useDeobfuscatedValue(item.metadata.note);
-    const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
+    const mailboxesForAlias = useSelector(selectAliasMailboxes(aliasEmail!));
     const canToggleStatus = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
 
     const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
@@ -86,6 +88,12 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                         label={c('Label').t`Note`}
                         value={note}
                     />
+                </FieldsetCluster>
+            )}
+
+            {canManageAlias && (
+                <FieldsetCluster mode="read" as="div">
+                    <AliasContact aliasEmail={aliasEmail} shareId={shareId} itemId={itemId} />
                 </FieldsetCluster>
             )}
         </>

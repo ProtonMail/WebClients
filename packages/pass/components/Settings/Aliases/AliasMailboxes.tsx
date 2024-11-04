@@ -13,7 +13,7 @@ import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
 import { UpsellRef } from '@proton/pass/constants';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { getMailboxes } from '@proton/pass/store/actions';
-import { selectUserPlan } from '@proton/pass/store/selectors';
+import { selectCanManageAlias } from '@proton/pass/store/selectors';
 import type { MaybeNull, UserMailboxOutput } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
@@ -25,7 +25,7 @@ export const AliasMailboxes: FC = () => {
     const [mailboxes, setMailboxes] = useState<MaybeNull<UserMailboxOutput[]>>(null);
     const [action, setAction] = useState<MaybeNull<MailboxAction>>(null);
     const getAllMailboxes = useActionRequest(getMailboxes.intent, { onSuccess: ({ data }) => setMailboxes(data) });
-    const canManageAlias = useSelector(selectUserPlan)?.ManageAlias;
+    const canManageAlias = useSelector(selectCanManageAlias);
 
     const spotlight = useSpotlight();
 

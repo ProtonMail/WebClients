@@ -9,6 +9,7 @@ import { withNotification } from '@proton/pass/store/actions/enhancers/notificat
 import {
     aliasBlockContactRequest,
     aliasContactInfoRequest,
+    aliasContactListRequest,
     aliasDeleteContactRequest,
     aliasDetailsRequest,
     aliasOptionsRequest,
@@ -20,6 +21,7 @@ import type {
     AliasContactBlockDTO,
     AliasContactGetResponse,
     AliasContactInfoDTO,
+    AliasContactListResponse,
     AliasDetails,
     AliasMailbox,
     AliasOptions,
@@ -37,6 +39,7 @@ import type {
     SelectedItem,
     ShareId,
     SlSyncStatusOutput,
+    UniqueItem,
     UserAliasDomainOutput,
     UserAliasSettingsGetOutput,
     UserMailboxOutput,
@@ -465,8 +468,17 @@ export const updateCustomDomainMailboxes = requestActionsFactory<CustomDomainMai
     },
 });
 
-export const aliasFetchContactInfo = requestActionsFactory<AliasContactInfoDTO, AliasContactGetResponse>(
-    'alias::mailbox::create'
+export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasContactListResponse>(
+    'alias::contact::get-list'
+)({
+    key: ({ shareId, itemId }) => aliasContactListRequest(shareId, itemId),
+    success: {
+        config: { data: true },
+    },
+});
+
+export const aliasGetContactInfo = requestActionsFactory<AliasContactInfoDTO, AliasContactGetResponse>(
+    'alias::contact::get-info'
 )({
     key: ({ shareId, itemId }) => aliasContactInfoRequest(shareId, itemId),
     success: {
@@ -474,7 +486,7 @@ export const aliasFetchContactInfo = requestActionsFactory<AliasContactInfoDTO, 
     },
 });
 
-export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boolean>('alias::mailbox::create')({
+export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boolean>('alias::contact::delete')({
     key: ({ shareId, itemId }) => aliasDeleteContactRequest(shareId, itemId),
     success: {
         prepare: () =>
@@ -485,7 +497,7 @@ export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boo
     },
 });
 
-export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, boolean>('alias::mailbox::create')({
+export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, boolean>('alias::contact::block')({
     key: ({ shareId, itemId }) => aliasBlockContactRequest(shareId, itemId),
     success: {
         prepare: (blocked) =>
