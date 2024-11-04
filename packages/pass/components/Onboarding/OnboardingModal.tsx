@@ -12,6 +12,7 @@ import onboardingExtension from '@proton/pass/assets/desktop-onboarding/onboardi
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { LockSetup } from '@proton/pass/components/Settings/LockSetup';
 import { PASS_DOWNLOAD_URL } from '@proton/pass/constants';
+import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useOnboarding } from './OnboardingProvider';
@@ -36,9 +37,9 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
         {
             key: 'unlock',
             group: c('Label').t`Security`,
-            title: c('Label').t`How to unlock Pass`,
+            title: c('Label').t`How to unlock ${PASS_SHORT_APP_NAME}`,
             description: c('Label')
-                .t`For security reasons, Pass automatically locks itself after 10 minutes of inactivity.\n\nYou can choose between PIN code, biometrics, or your account password to unlock.`,
+                .t`For security reasons, ${PASS_SHORT_APP_NAME} automatically locks itself after 10 minutes of inactivity.\n\nYou can choose between PIN code, biometrics, or your account password to unlock.`,
             component: (
                 <div className="pass-onboarding-modal--lock">
                     <p className="text-bold">{c('Label').t`Unlock with:`}</p>
@@ -48,7 +49,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
         },
         {
             key: 'extension',
-            group: c('Label').t`BROWSE FASTER, SMARTER`,
+            group: c('Label').t`Browse faster, smarter`,
             title: c('Label').t`Your passwords. Everywhere.`,
             description: c('Label').t`Get the extension for your browser.`,
             actionText: c('Label').t`Install and continue`,
