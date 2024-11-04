@@ -29,6 +29,9 @@
       "Add new table row": [
         "ახალი ცხრილის მწკრივის დამატება"
       ],
+      "Add suggestion": [
+        "რჩევის დამატება"
+      ],
       "Adjust font size": [
         "ფონტის ზომის გასწორება"
       ],
@@ -109,9 +112,6 @@
       ],
       "Edit link": [
         "ბმულის ჩასწორება"
-      ],
-      "Exit Suggestion": [
-        "მინიშნებიდან გასვლა"
       ],
       "Fit table to page width": [
         "ცხრილის ჩატევა გვერდის სიგანეში"
@@ -214,9 +214,6 @@
       ],
       "Submit": [
         "დამტკიცება"
-      ],
-      "Suggestion Mode": [
-        "მინიშნების რეჟიმი"
       ],
       "Table options": [
         "ცხრილის მორგება"
@@ -410,6 +407,9 @@
       "Edit document directly": [
         "დოკუმენტის ჩასწორება პირდაპირ"
       ],
+      "Edits become suggestions": [
+        "ჩასწორებები მინიშნებები გახდება"
+      ],
       "Read or print final document": [
         "საბოლოო დოკუმენტის წაკითხვა ან დაბეჭდვა"
       ]
@@ -546,6 +546,9 @@
       "Add link": [
         "ბმულის დამატება"
       ],
+      "Align": [
+        "სწორება"
+      ],
       "Background colour": [
         "ფონის ფერი"
       ],
@@ -663,6 +666,11 @@
       ],
       "Language not supported": [
         "ენა მხარდაჭერილი არაა"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "კოდის ბლოკების შიგნით მინიშნებების შექმნა მხარდაჭერილი არაა"
       ]
     }
   }
