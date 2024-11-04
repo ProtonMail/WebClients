@@ -184,10 +184,18 @@ export const BoostTransactionModal = ({ transaction, onBoost, ...modalProps }: P
                 },
             });
 
-            await createNotification({
+            createNotification({
                 text: c('Wallet send').t`Transaction was successfully boosted`,
             });
         } catch (error: any) {
+            if (error?.kind === 'InsufficientFunds') {
+                createNotification({
+                    type: 'error',
+                    text: c('Wallet send')
+                        .t`You do not have enough funds. Please choose a lower network fee and try again`,
+                });
+                return;
+            }
             createNotification({
                 type: 'error',
                 text:
