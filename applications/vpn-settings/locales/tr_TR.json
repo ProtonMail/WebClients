@@ -55,6 +55,9 @@
       "Add domain": [
         "Etki alanı ekle"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "${ BRAND_NAME } Scribe koltuğu daha ekleyin"
+      ],
       "Add PayPal": [
         "PayPal ekle"
       ],
@@ -1091,8 +1094,15 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifreleme ile e-postalarınızı ve programınızı güvence altına alın. 15 e-posta adresi, özel e-posta alan adları için destek, sınırsız hide-my-email takma adları ve daha fazlasını içerir."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -2283,6 +2293,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Kapatıldığında yalnızca yöneticiler erişebilir."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Hayatınızın farklı bölümlerini ayrı tutun ve ek adreslerle gelen kutunuza düzen getirin."
       ],
@@ -3138,6 +3151,9 @@
     "fido2: Action": {
       "Delete key": [
         "Anahtarı sil"
+      ],
+      "New security key": [
+        "Yeni güvenlik anahtarı"
       ]
     },
     "fido2: Error": {
@@ -3191,6 +3207,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Güvenlik anahtarının olabileceği en uzun ${ maxSecurityKeyLength } değerine ulaştınız.",
+        "Güvenlik anahtarının olabileceği en uzun ${ maxSecurityKeyLength } değerine ulaştınız."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "İki adımlı doğrulama anahtarınız kullanılmaya hazır."
       ]
@@ -3218,6 +3238,9 @@
       ],
       "Security key registered": [
         "Güvenlik anahtarı kaydedildi"
+      ],
+      "Security keys": [
+        "Güvenlik anahtarları"
       ]
     },
     "file size format": {
@@ -5335,6 +5358,9 @@
       "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Kuruluşunuzdaki herkesin takvim davetlerine kolayca görüntülü görüşme bağlantıları eklemesini sağlar."
+      ],
       "Amount": [
         "Tutar"
       ],
@@ -5493,6 +5519,9 @@
       ],
       "Email or username": [
         "E-posta adresi ya da kullanıcı adı"
+      ],
+      "Enable video conferencing ": [
+        "Görüntülü görüşme kullanılsın "
       ],
       "Enter the code displayed on your TV": [
         "Televizyonunuzda görüntülenen kodu yazın"
@@ -7193,6 +7222,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "İki adımlı doğrulama artık zorunlu değil"
+      ],
+      "Video conferencing settings have been updated": [
+        "Görüntülü görüşme ayarları güncellendi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8067,6 +8099,12 @@
       "For security reasons, the token is hidden": [
         "Güvenlik nedeniyle kod gizlenmiştir"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Aşağıdaki verileri kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ appName } için SCIM yapılandırmasını tamamlayın."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Aşağıdaki kodu kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ appName } için SCIM bütünleştirmesini yeniden kullanıma alın."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "SCIM kodunuzu kaybettiyseniz ya da unuttuysanız yeni bir kod oluşturabilirsiniz. Ancak kimlik hizmeti sağlayıcı ayarlarınızı güncellemeniz gerekeceğini unutmayın."
       ],
@@ -8075,6 +8113,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Kuruluşunuzda SCIM kullanımdan kaldırıldığında, **kimlik hizmeti sağlayıcınız tarafından otomatik olarak sunulan tüm SCIM kullanıcıları tek oturum açma kullanıcılarına dönüştürülür** ve bunları doğrudan ${ BRAND_NAME } ayarlarından yönetebilirsiniz."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Farklı hizmetler arasında kullanıcıların yönetimini kolaylaştırır. Kimlik hizmeti sağlayıcınıza kullanıcı ekleyebilir, düzenleyebilir ve kaldırabilirsiniz. Bu değişiklikler otomatik olarak ${ appName } kuruluşunuza uygulanır."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Yeni SCIM kodunu kimlik hizmeti sağlayıcınızın ayarlarına yazıncaya kadar SCIM otomatik veri sağlama özelliği kullanım dışı kalır."
@@ -8789,6 +8830,9 @@
       "Share the confirmation code with your administrator": [
         "Doğrulama kodunu yöneticiniz ile paylaşın"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "Sign in to your organization": [
         "Kuruluşunuzda oturum açın"
       ],
@@ -8824,6 +8868,9 @@
       ],
       "User details:": [
         "Kullanıcı bilgileri:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
     "sso: auth device state": {
@@ -9461,6 +9508,9 @@
       "Administrator privileges restored": [
         "Yönetici yetkileri geri yüklendi"
       ],
+      "Backup password updated": [
+        "Yedek parola güncellendi"
+      ],
       "Catch-all address updated": [
         "Tümünü toplama adresi güncellendi"
       ],
@@ -9623,6 +9673,9 @@
       ],
       "Preferences updated": [
         "Ayarlar güncellendi"
+      ],
+      "Resent invitation": [
+        "Daveti yeniden gönder"
       ]
     },
     "Suffix": {
@@ -9732,6 +9785,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
@@ -10053,6 +10109,9 @@
       ],
       "Email subscriptions": [
         "E-posta abonelikleri"
+      ],
+      "Enable for all users": [
+        "Tüm kullanıcılar için aç"
       ],
       "Enter 2FA code": [
         "İki adımlı doğrulama kodunu yazın"
@@ -10377,6 +10436,9 @@
       "Verifying your payment...": [
         "Ödemeniz doğrulanıyor..."
       ],
+      "Video conference": [
+        "Görüntülü görüşme"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Değişikliği tamamlamak için yapmanız gereken işlemler e-postasını yeni adresinize göndereeceğiz."
       ],
@@ -10462,6 +10524,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Takvim davetlerinize kolayca görüntülü görüşme bağlantıları eklemenizi sağlar."
       ],
       "An approximate location of the IP address": [
         "IP adresinin yaklaşık konumu"
