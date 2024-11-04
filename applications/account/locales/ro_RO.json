@@ -124,6 +124,9 @@
       "Add label": [
         "Adăugare etichetă"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Adăugare licențe de ${ BRAND_NAME } Scribe"
+      ],
       "Add notification": [
         "Adăugare notificare"
       ],
@@ -805,11 +808,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Reject": [
         "Respingere"
@@ -1603,6 +1606,14 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1624,14 +1635,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1798,8 +1801,16 @@
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, asistență pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Securizați-vă fișierele cu stocare criptată în cloud. Include editor de documente online, conservare pentru fotografii, istoricul versiunilor, partajarea fișierelor criptate și multe altele."
@@ -3575,6 +3586,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Obțineți până la ${ credits } credite invitând persoane la ${ BRAND_NAME }."
+      ],
+      "If disabled, only admins will have access.": [
+        "Dacă e dezactivată, doar administratorii vor avea acces."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
@@ -5624,6 +5638,9 @@
     "fido2: Action": {
       "Delete key": [
         "Ștergere cheie"
+      ],
+      "New security key": [
+        "Cheie de securitate nouă"
       ]
     },
     "fido2: Error": {
@@ -5677,6 +5694,11 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vă verificați identitatea cu o cheie fizică U2F sau FIDO2."
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Ați atins maximul de ${ maxSecurityKeyLength } cheie de securitate.",
+        "Ați atins maximul de ${ maxSecurityKeyLength } chei de securitate.",
+        "Ați atins maximul de ${ maxSecurityKeyLength } de chei de securitate."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Cheia de autentificare cu doi factori este pregătită de utilizare."
       ]
@@ -5704,6 +5726,9 @@
       ],
       "Security key registered": [
         "Cheia de securitate înregistrată"
+      ],
+      "Security keys": [
+        "Chei de securitate"
       ]
     },
     "file size format": {
@@ -7291,11 +7316,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -7310,6 +7335,12 @@
         "Se șterge ${ deletedServerCount } server poartă de acces",
         "Se șterg ${ deletedServerCount } servere poartă de acces",
         "Se șterg ${ deletedServerCount } de servere poartă de acces"
+      ],
+      "Disable recovery by email address": [
+        "Dezactivare recuperare cu adresă de e-mail"
+      ],
+      "Disable recovery by phone number": [
+        "Dezactivare recuperare cu număr de telefon"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Dezactivat de la ${ formattedDateAndTime }"
@@ -8910,11 +8941,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "Username": [
-        "Nume de utilizator"
-      ],
       "username": [
         "utilizator"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -8948,6 +8979,12 @@
       ],
       "Verify domain": [
         "Verificare domeniu"
+      ],
+      "Verify email address": [
+        "Verificare adresă de e-mail"
+      ],
+      "Verify phone number": [
+        "Verificare număr de telefon"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Vă verificați identitatea cu o parolă unică temporară, generată de o aplicație de autentificare."
@@ -9979,6 +10016,9 @@
       "Allowed Domain": [
         "Domeniu permis"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Permite tuturor din organizație să adauge fără probleme legături web pentru conferințe video la invitațiile din calendar."
+      ],
       "Amount": [
         "Suma"
       ],
@@ -10302,6 +10342,9 @@
       ],
       "Emails (last month)": [
         "Mesaje (ultima lună)"
+      ],
+      "Enable video conferencing ": [
+        "Activare conferințe video"
       ],
       "End date": [
         "Data sfârșit"
@@ -11776,6 +11819,32 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Începând de la ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11803,32 +11872,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Începând de la ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12535,6 +12578,20 @@
         "Planul selectat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12553,20 +12610,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -12924,6 +12967,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Autentificarea cu doi factori nu mai este obligatorie."
+      ],
+      "Video conferencing settings have been updated": [
+        "Setările conferințelor video au fost actualizate."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13623,17 +13669,20 @@
       "Free forever": [
         "Gratuit întotdeauna"
       ],
-      "From the team that knows encryption": [
-        "De la echipa care cunoaște criptarea"
-      ],
       "Get ${ appName } for ${ browserName }": [
         "Luați ${ appName } pentru ${ browserName }"
       ],
       "Get in touch with our sales team": [
         "Luați legătura cu echipa noastră de vânzări"
       ],
+      "Get online privacy, for your whole family": [
+        "Obțineți confidențialitate online, pentru întreaga familie"
+      ],
       "Get the security and features your business needs": [
         "Obțineți securitatea și funcțiile de care aveți nevoie în afaceri"
+      ],
+      "Get unlimited privacy for two": [
+        "Obțineți intimitate nelimitată pentru doi utilizatori"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Înțeleg că, dacă îmi pierd detaliile de recuperare, este posibil să pierd definitiv accesul la contul meu."
@@ -13717,6 +13766,9 @@
         "Partajare securizată seifuri (${ n } seifuri) și legături web",
         "Partajare securizată seifuri (${ n } de seifuri) și legături web"
       ],
+      "Secure your family’s passwords and online identities": [
+        "Securizați parolele și identitățile online ale familiei"
+      ],
       "Secured by end-to-end encryption": [
         "Securizat prin criptare bilaterală"
       ],
@@ -13752,6 +13804,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Ați primit invitația să vă alăturați la ${ PASS_APP_NAME }"
+      ],
+      "Your ${ discount }% Black Friday discount has been applied": [
+        "Reducerea de ${ discount }% de Vinerea Neagră a fost aplicată."
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organizația are acces la ${ free }. Dacă doriți să accesați funcțiile premium ale ${ appName }, vă rugăm să solicitați administratorului organizației să modifice contul."
@@ -14746,6 +14801,12 @@
       "For security reasons, the token is hidden": [
         "Din motive de securitate, codul de acces este ascuns."
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Accesați-vă furnizorul de identitate, copiați și inserați datele de mai jos și finalizați configurarea SCIM pentru ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Accesați-vă furnizorul de identitate, copiați și inserați codul de acces de mai jos și reactivați SCIM pentru ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Dacă ați pierdut sau ați uitat codul de acces SCIM, puteți genera unul nou, dar rețineți că setările furnizorului dvs. de identitate vor trebui actualizate."
       ],
@@ -14754,6 +14815,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Odată ce SCIM este dezactivat pentru organizație, **toți utilizatorii SCIM furnizați automat de furnizorul dvs. de identitate vor fi convertiți în utilizatori SSO** și îi veți putea gestiona direct în setările ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Simplificați gestionarea utilizatorilor prin diferite servicii. Adăugați, editați și eliminați utilizatori din furnizorul de identitate, iar aceste modificări vor fi aplicate automat organizației proprii din ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Preluarea automată SCIM va fi dezactivată până când introduceți noul simbol SCIM în setările furnizorului dvs. de identitate."
@@ -15321,6 +15385,71 @@
         "Solicitați o încercare"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "Funcții avansate de securitate"
+      ],
+      "Advanced sharing security": [
+        "Securitate avansată pentru partajări"
+      ],
+      "Apps for all devices": [
+        "Aplicații pentru toate dispozitivele"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Situată în Elveția, în conformitate cu RGPD"
+      ],
+      "Built-in encryption": [
+        "Criptare inclusă"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Calendar, manager de parole, stocare fișiere și VPN incluse"
+      ],
+      "Email aliases": [
+        "Aliasuri e-mail"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "E-mail, calendar, manager de parole și VPN incluse"
+      ],
+      "End-to-end encrypted transactions": [
+        "Tranzacții criptate bilateral"
+      ],
+      "End-to-end encryption": [
+        "Criptare bilaterală"
+      ],
+      "From the team that knows encryption": [
+        "De la echipa care cunoaște criptarea"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "E-mail integrat, calendar, stocare fișiere, manager de parole și VPN"
+      ],
+      "ISO 27001 certified": [
+        "Certificată ISO 27001"
+      ],
+      "Open source and audited": [
+        "Cod sursă public și auditat"
+      ],
+      "Open source and verified": [
+        "Cu sursa publică și verificată"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protejat de legile elvețiene privind confidențialitatea"
+      ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Autocustodie — numai proprietarul are acces la cheile portofelului"
+      ],
+      "The only business solution that is:": [
+        "Singura soluție de afaceri care este:"
+      ],
+      "The only cloud storage with:": [
+        "Singura stocare în cloud cu:"
+      ],
+      "The only email service with:": [
+        "Singurul serviciu de e-mail cu:"
+      ],
+      "Works on all devices": [
+        "Funcționează pe toate dispozitivele"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Conform cu RGPD și HIPAA"
@@ -15691,6 +15820,9 @@
       "Share the confirmation code with your administrator": [
         "Partajați codul de confirmare cu administratorul"
       ],
+      "Sign in": [
+        "Conectare"
+      ],
       "Sign in to your organization": [
         "Autentificare în organizație"
       ],
@@ -15738,6 +15870,9 @@
       ],
       "Yes, it was me": [
         "Da, eu am fost"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ]
     },
     "sso: auth device state": {
@@ -16455,6 +16590,9 @@
       "Auto-reply updated": [
         "Autorăspuns actualizat."
       ],
+      "Backup password updated": [
+        "Parola de rezervă a fost actualizată."
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
       ],
@@ -16706,6 +16844,9 @@
       "Preferences updated": [
         "Preferințe actualizate"
       ],
+      "Resent invitation": [
+        "Invitație retrimisă."
+      ],
       "Status updated": [
         "Stare actualizată."
       ]
@@ -16878,6 +17019,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } gratuit"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
@@ -17076,10 +17220,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -17383,6 +17527,9 @@
       "Email subscriptions": [
         "Abonamente pe e-mail"
       ],
+      "Enable for all users": [
+        "Activare pentru toți utilizatorii"
+      ],
       "Encryption and keys": [
         "Criptare și chei"
       ],
@@ -17563,6 +17710,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Măriți-vă intimitatea cu adrese mai multe"
+      ],
+      "Integrations": [
+        "Integrări"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
@@ -18031,6 +18181,9 @@
       "Version history": [
         "Istoric versiuni"
       ],
+      "Video conference": [
+        "Conferință video"
+      ],
       "VPN apps": [
         "Aplicații VPN"
       ],
@@ -18207,6 +18360,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Permite adăugarea de legături web spre conferințe video la invitațiile din calendar."
       ],
       "An approximate location of the IP address": [
         "Un loc aproximativ al adresei IP."

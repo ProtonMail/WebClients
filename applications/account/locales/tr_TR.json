@@ -124,6 +124,9 @@
       "Add label": [
         "Etiket ekle"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "${ BRAND_NAME } Scribe koltuğu daha ekleyin"
+      ],
       "Add notification": [
         "Bildirim ekle"
       ],
@@ -805,11 +808,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reject": [
         "Reddet"
@@ -1599,6 +1602,14 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1620,14 +1631,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -1792,8 +1795,15 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifreleme ile e-postalarınızı ve programınızı güvence altına alın. 15 e-posta adresi, özel e-posta alan adları için destek, sınırsız hide-my-email takma adları ve daha fazlasını içerir."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -3562,6 +3572,9 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet ederek ${ credits } krediye kadar hediye kazanın."
       ],
+      "If disabled, only admins will have access.": [
+        "Kapatıldığında yalnızca yöneticiler erişebilir."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
@@ -5132,6 +5145,9 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "${ name } sertifikası bulunamadı ya da zaten geçersiz kılınmış"
+      ],
+      "Display name cannot be empty": [
+        "Görüntülenecek ad boş olamaz"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5594,6 +5610,9 @@
     "fido2: Action": {
       "Delete key": [
         "Anahtarı sil"
+      ],
+      "New security key": [
+        "Yeni güvenlik anahtarı"
       ]
     },
     "fido2: Error": {
@@ -5647,6 +5666,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Güvenlik anahtarının olabileceği en uzun ${ maxSecurityKeyLength } değerine ulaştınız.",
+        "Güvenlik anahtarının olabileceği en uzun ${ maxSecurityKeyLength } değerine ulaştınız."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "İki adımlı doğrulama anahtarınız kullanılmaya hazır."
       ]
@@ -5674,6 +5697,9 @@
       ],
       "Security key registered": [
         "Güvenlik anahtarı kaydedildi"
+      ],
+      "Security keys": [
+        "Güvenlik anahtarları"
       ]
     },
     "file size format": {
@@ -7219,11 +7245,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -7237,6 +7263,12 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor"
+      ],
+      "Disable recovery by email address": [
+        "E-posta ile kurtarmayı kapat"
+      ],
+      "Disable recovery by phone number": [
+        "Telefon numarası ile kurtarmayı kapat"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime } zamanında kapatıldı"
@@ -8822,11 +8854,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "Username": [
-        "Kullanıcı adı"
-      ],
       "username": [
         "kullanıcı adı"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -8860,6 +8892,12 @@
       ],
       "Verify domain": [
         "Etki alanını doğrula"
+      ],
+      "Verify email address": [
+        "E-posta adresini doğrula"
+      ],
+      "Verify phone number": [
+        "Telefon numarasını doğrula"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Kimliğinizi, kimlik doğrulama uygulamasından alacağınız zamana dayalı tek kullanımlık parola ile doğrulayın"
@@ -9875,6 +9913,9 @@
       "Allowed Domain": [
         "İzin verilen etki alanı"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Kuruluşunuzdaki herkesin takvim davetlerine kolayca görüntülü görüşme bağlantıları eklemesini sağlar."
+      ],
       "Amount": [
         "Tutar"
       ],
@@ -10198,6 +10239,9 @@
       ],
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
+      ],
+      "Enable video conferencing ": [
+        "Görüntülü görüşme kullanılsın "
       ],
       "End date": [
         "Bitiş tarihi"
@@ -11658,6 +11702,32 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Get started for ${ price }": [
+        "${ price } ile başlayın"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -11685,32 +11755,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Get started for ${ price }": [
-        "${ price } ile başlayın"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: feature": {
@@ -12392,6 +12436,20 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -12410,20 +12468,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price } ile Mail Plus edinin"
-      ],
-      "Starting from ${ price }": [
-        "${ price } tutarından başlayan fiyatlarla"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -12779,6 +12823,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "İki adımlı doğrulama artık zorunlu değil"
+      ],
+      "Video conferencing settings have been updated": [
+        "Görüntülü görüşme ayarları güncellendi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13449,17 +13496,20 @@
       "Free forever": [
         "Sonsuza kadar ücretsiz"
       ],
-      "From the team that knows encryption": [
-        "Şifrelemenin kitabını yazan ekipten"
-      ],
       "Get ${ appName } for ${ browserName }": [
         "${ browserName } için ${ appName } edinin"
       ],
       "Get in touch with our sales team": [
         "Satış ekibimizle görüşün"
       ],
+      "Get online privacy, for your whole family": [
+        "Tüm aileniz için çevrim içi gizlilik sağlayın"
+      ],
       "Get the security and features your business needs": [
         "Kuruluşunuza uygun güvenlik ve özellik düzeyini seçin"
+      ],
+      "Get unlimited privacy for two": [
+        "İki kişi için sınırsız gizlilik sağlayın"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Kurtarma bilgilerimi kaybedersem hesabıma erişimi kalıcı olarak kaybedeceğimi anladım."
@@ -13541,6 +13591,9 @@
         "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
         "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
       ],
+      "Secure your family’s passwords and online identities": [
+        "Ailenizin parolalarını ve çevrim içi kimliklerini koruyun"
+      ],
       "Secured by end-to-end encryption": [
         "Uçtan uca şifreleme koruması"
       ],
@@ -13576,6 +13629,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ailesine davet edildiniz"
+      ],
+      "Your ${ discount }% Black Friday discount has been applied": [
+        "%${ discount } Muhteşem Cuma indiriminiz uygulandı"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Kuruluşunuzun ${ free } erişimi var. Ücretli ${ appName } özelliklerine erişmek istiyorsanız, lütfen kuruluşunuzun yöneticisinden tarifeyi yükseltmesini isteyin."
@@ -14566,6 +14622,12 @@
       "For security reasons, the token is hidden": [
         "Güvenlik nedeniyle kod gizlenmiştir"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Aşağıdaki verileri kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ appName } için SCIM yapılandırmasını tamamlayın."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Aşağıdaki kodu kopyalayın, kimlik hizmeti sağlayıcınıza giderek yapıştırın ve ${ appName } için SCIM bütünleştirmesini yeniden kullanıma alın."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "SCIM kodunuzu kaybettiyseniz ya da unuttuysanız yeni bir kod oluşturabilirsiniz. Ancak kimlik hizmeti sağlayıcı ayarlarınızı güncellemeniz gerekeceğini unutmayın."
       ],
@@ -14574,6 +14636,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Kuruluşunuzda SCIM kullanımdan kaldırıldığında, **kimlik hizmeti sağlayıcınız tarafından otomatik olarak sunulan tüm SCIM kullanıcıları tek oturum açma kullanıcılarına dönüştürülür** ve bunları doğrudan ${ BRAND_NAME } ayarlarından yönetebilirsiniz."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Farklı hizmetler arasında kullanıcıların yönetimini kolaylaştırır. Kimlik hizmeti sağlayıcınıza kullanıcı ekleyebilir, düzenleyebilir ve kaldırabilirsiniz. Bu değişiklikler otomatik olarak ${ appName } kuruluşunuza uygulanır."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Yeni SCIM kodunu kimlik hizmeti sağlayıcınızın ayarlarına yazıncaya kadar SCIM otomatik veri sağlama özelliği kullanım dışı kalır."
@@ -15127,6 +15192,71 @@
         "Deneme isteğinde bulun"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "Gelişmiş güvenlik özellikleri"
+      ],
+      "Advanced sharing security": [
+        "Gelişmiş paylaşım güvenliği"
+      ],
+      "Apps for all devices": [
+        "Tüm aygıtlar için uygulamalar"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "İsviçre merkezli, GDPR uyumlu"
+      ],
+      "Built-in encryption": [
+        "Hazır şifreleme"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Takvim, parola yöneticisi, dosya depolama alanı ve VPN ile birlikte"
+      ],
+      "Email aliases": [
+        "E-posta takma adları"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "E-posta, takvim, parola yöneticisi ve VPN ile"
+      ],
+      "End-to-end encrypted transactions": [
+        "Uçtan uca şifrelenmiş hesap işlemleri"
+      ],
+      "End-to-end encryption": [
+        "Uçtan uca şifreleme"
+      ],
+      "From the team that knows encryption": [
+        "Şifrelemenin kitabını yazan ekipten"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Bütünleşik e-posta, takvim, dosya depolama alanı, parola yöneticisi ve VPN"
+      ],
+      "ISO 27001 certified": [
+        "ISO 27001 sertifikalı"
+      ],
+      "Open source and audited": [
+        "Açık kaynaklı ve denetlenmiş"
+      ],
+      "Open source and verified": [
+        "Açık kaynaklı ve doğrulanmış"
+      ],
+      "Protected by Swiss privacy laws": [
+        "İsviçre gizlilik yasaları tarafından korunur"
+      ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Kendinden korumalı. Cüzdanınızın anahtarlarına yalnızca siz erişebilirsiniz"
+      ],
+      "The only business solution that is:": [
+        "Şu özellikleri sunan tek iş çözümü:"
+      ],
+      "The only cloud storage with:": [
+        "Şu özellikleri sunan tek bulut depolama alanı:"
+      ],
+      "The only email service with:": [
+        "Şu özellikleri sunan tek e-posta hizmeti:"
+      ],
+      "Works on all devices": [
+        "Tüm aygıtlarda çalışır"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "GDPR ve HIPAA uyumlu"
@@ -15488,6 +15618,9 @@
       "Share the confirmation code with your administrator": [
         "Doğrulama kodunu yöneticiniz ile paylaşın"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "Sign in to your organization": [
         "Kuruluşunuzda oturum açın"
       ],
@@ -15535,6 +15668,9 @@
       ],
       "Yes, it was me": [
         "Evet, bendim"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
     "sso: auth device state": {
@@ -16231,6 +16367,9 @@
       "Auto-reply updated": [
         "Otomatik yanıt güncellendi"
       ],
+      "Backup password updated": [
+        "Yedek parola güncellendi"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Takvim eklendi. Eşitlenmesi birkaç dakika sürebilir."
       ],
@@ -16482,6 +16621,9 @@
       "Preferences updated": [
         "Ayarlar güncellendi"
       ],
+      "Resent invitation": [
+        "Daveti yeniden gönder"
+      ],
       "Status updated": [
         "Durum güncellendi"
       ]
@@ -16648,6 +16790,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
@@ -16845,10 +16990,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -17150,6 +17295,9 @@
       "Email subscriptions": [
         "E-posta abonelikleri"
       ],
+      "Enable for all users": [
+        "Tüm kullanıcılar için aç"
+      ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
       ],
@@ -17328,6 +17476,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Daha fazla adres kullanarak gizliliğinizi artırın"
+      ],
+      "Integrations": [
+        "Bütünleştirmeler"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
@@ -17795,6 +17946,9 @@
       "Version history": [
         "Sürüm geçmişi"
       ],
+      "Video conference": [
+        "Görüntülü görüşme"
+      ],
       "VPN apps": [
         "VPN uygulamaları"
       ],
@@ -17971,6 +18125,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Takvim davetlerinize kolayca görüntülü görüşme bağlantıları eklemenizi sağlar."
       ],
       "An approximate location of the IP address": [
         "IP adresinin yaklaşık konumu"
