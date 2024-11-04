@@ -260,6 +260,10 @@ export type IconName =
     | 'pass-laptop'
     | 'pass-leaf'
     | 'pass-lock'
+    | 'pass-lockmode-none'
+    | 'pass-lockmode-pin'
+    | 'pass-lockmode-password'
+    | 'pass-lockmode-biometrics'
     | 'pass-mushroom'
     | 'pass-shield-warning'
     | 'pass-shield-monitoring-warning'
@@ -630,6 +634,10 @@ export { IcPassJson } from './icons/IcPassJson';
 export { IcPassLaptop } from './icons/IcPassLaptop';
 export { IcPassLeaf } from './icons/IcPassLeaf';
 export { IcPassLock } from './icons/IcPassLock';
+export { IcPassLockmodeNone } from './icons/IcPassLockmodeNone';
+export { IcPassLockmodePin } from './icons/IcPassLockmodePin';
+export { IcPassLockmodePassword } from './icons/IcPassLockmodePassword';
+export { IcPassLockmodeBiometrics } from './icons/IcPassLockmodeBiometrics';
 export { IcPassMushroom } from './icons/IcPassMushroom';
 export { IcPassShieldWarning } from './icons/IcPassShieldWarning';
 export { IcPassShieldMonitoringWarning } from './icons/IcPassShieldMonitoringWarning';

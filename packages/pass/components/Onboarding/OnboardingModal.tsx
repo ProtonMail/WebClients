@@ -10,7 +10,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import { ModalTwoContent, ModalTwoHeader } from '@proton/components/index';
 import onboardingExtension from '@proton/pass/assets/desktop-onboarding/onboarding-extension.svg';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { LockSetup } from '@proton/pass/components/Settings/LockSetup';
+import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/OnboardingLockSetup';
 import { PASS_DOWNLOAD_URL } from '@proton/pass/constants';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -43,7 +43,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             component: (
                 <div className="pass-onboarding-modal--lock">
                     <p className="text-bold">{c('Label').t`Unlock with:`}</p>
-                    <LockSetup />
+                    <OnboardingLockSetup />
                 </div>
             ),
         },
