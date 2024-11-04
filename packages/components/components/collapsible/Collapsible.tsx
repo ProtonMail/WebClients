@@ -1,5 +1,5 @@
 import type { ElementType } from 'react';
-import { Children, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
 
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import generateUID from '@proton/utils/generateUID';
@@ -16,6 +16,10 @@ interface CollapsibleOwnProps {
      * Shows content by default if true.
      */
     expandByDefault?: boolean;
+    /**
+     * If true, the collapsible state can be controlled by the parent component and the expandedByDefault prop.
+     */
+    externallyControlled?: boolean;
 }
 
 type CollapsibleProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleOwnProps, E>;
@@ -26,11 +30,18 @@ const Collapsible = <E extends ElementType = typeof defaultElement>({
     disabled = false,
     expandByDefault = false,
     children: childrenProp,
+    externallyControlled = false,
     as,
     ...rest
 }: CollapsibleProps<E>) => {
     const [isExpanded, setIsExpanded] = useState(expandByDefault);
     const [header, content] = Children.toArray(childrenProp);
+
+    useEffect(() => {
+        if (externallyControlled) {
+            setIsExpanded(expandByDefault);
+        }
+    }, [expandByDefault]);
 
     const contentId = generateUID('collapsible');
     const headerId = generateUID('collapsible');
