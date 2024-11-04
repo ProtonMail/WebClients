@@ -263,6 +263,11 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
     view.webContents.setZoomFactor(getWindowBounds().zoom);
 
     if (viewID === currentViewID) {
+        if (!url) {
+            viewLogger(viewID).silly("already in current view");
+            return;
+        }
+
         viewLogger(viewID).info("showView loading in current view", url);
         await loadURL(viewID, url);
         return;
@@ -289,6 +294,11 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
 }
 
 export async function loadURL(viewID: ViewID, url: string, { force } = { force: false }) {
+    if (!url) {
+        viewLogger(viewID).warn("trying to load empty URL, skipping");
+        return;
+    }
+
     const view = browserViewMap[viewID]!;
     const viewURL = await getViewURL(viewID);
 
