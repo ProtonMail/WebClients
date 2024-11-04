@@ -9,6 +9,7 @@ import { $getElementBlockType, blockTypeToBlockName } from '../BlockTypePlugin'
 import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $findMatchingParent } from '@lexical/utils'
 import capitalize from '@proton/utils/capitalize'
+import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 
 export type SuggestionSummaryContent = { type: SuggestionSummaryType; content: string; replaceWith?: string }[]
 
@@ -93,9 +94,12 @@ export function generateSuggestionSummary(
       }
 
       if (currentType === 'block-type-change') {
-        const currentBlockType = $getElementBlockType(node.getTopLevelElementOrThrow())
-        if (currentBlockType) {
-          content = blockTypeToBlockName[currentBlockType]
+        const currentBlock = $findMatchingParent(node, $isNonInlineLeafElement)
+        if (currentBlock) {
+          const currentBlockType = $getElementBlockType(currentBlock)
+          if (currentBlockType) {
+            content = blockTypeToBlockName[currentBlockType]
+          }
         }
       }
 
