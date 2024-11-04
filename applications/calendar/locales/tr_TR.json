@@ -722,6 +722,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "${ BRAND_NAME } Unlimited tarifesine yükseltin"
       ],
+      "Upgrade to Mail Plus": [
+        "Mail Plus tarifesine yükselt"
+      ],
       "Upload picture": [
         "Fotoğraf yükle"
       ],
@@ -1112,8 +1115,15 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifreleme ile e-postalarınızı ve programınızı güvence altına alın. 15 e-posta adresi, özel e-posta alan adları için destek, sınırsız hide-my-email takma adları ve daha fazlasını içerir."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -2601,6 +2611,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Gününüzü daha kolay düzenlemek, zaman planınızı izlemek ve görevleri öncelik sırasına koymak için etkinliklere renk kodları verin."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Tek tıklamayla Zoom toplantısı oluşturun ve etkinliğinize katılım bilgilerini ekleyin."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresi çözülüyor… Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
       ],
@@ -3086,6 +3099,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Dizideki özgün yinelenme alınamadı"
+      ],
+      "Failed to load oauth modal.": [
+        "Oauth penceresi yüklenemedi."
       ],
       "First name is too long": [
         "Ad çok uzun"
@@ -3611,6 +3627,11 @@
       ],
       "You need an active personal calendar to import events": [
         "Etkinlikleri içe aktarabilmek için etkin bir takviminiz olmalı"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Görüntülenecek ad boş olamaz"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -8003,6 +8024,11 @@
         "Hesabınızın güvenliğini değerlendirin"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Oturum açılamadı."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Tüm takma adlar"
@@ -8547,6 +8573,17 @@
       ],
       "You can now collapse the navigation bar.": [
         "Şimdi gezinme çubuğunu daraltabilirsiniz."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sign in to your organization": [
+        "Kuruluşunuzda oturum açın"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
     "State": {
@@ -9613,6 +9650,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } uygulamalarını edinin"
       ],
+      "Get Zooming faster": [
+        "Daha hızlı Zoom görüşmeleri yapın"
+      ],
       "Gift": [
         "Hediye"
       ],
@@ -10443,6 +10483,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoom toplantısı ekle"
+      ],
+      "Adding conferencing details": [
+        "Toplantı bilgileri ekleniyor"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom yapılandırması yükleniyor"
       ]
     },
     "Zoom Meeting": {

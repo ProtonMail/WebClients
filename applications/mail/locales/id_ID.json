@@ -1771,8 +1771,14 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
@@ -4711,6 +4717,11 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Anda belum mempunyai kontak. Buat kontak baru sekarang"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Nama tampilan tidak boleh kosong"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10679,6 +10690,11 @@
         "Tinjau keamanan akun Anda"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil dirampungkan."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Tidak ada pesan yang ditemukan"
@@ -11305,6 +11321,17 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Kini Anda dapat menjadwalkan pengiriman pesan"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Masuk"
+      ],
+      "Sign in to your organization": [
+        "Masuk ke organisasi Anda"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     },
     "State": {

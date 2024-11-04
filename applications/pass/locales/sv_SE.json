@@ -1007,23 +1007,6 @@
         "Något gick fel"
       ]
     },
-    "FamilyPlanPromo2024": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Alla premiumfunktioner. 6 användare. 1 enkel prenumeration."
-      ],
-      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
-        "Exklusivt erbjudande för ${ PASS_APP_NAME } tidiga supportrar."
-      ],
-      "Get it for ${ price }/month": [
-        "Skaffa det för ${ price }/månad"
-      ],
-      "Introducing ${ planNameJSX }": [
-        "Introducerar ${ planNameJSX }"
-      ],
-      "Limited-time offer only.": [
-        "Endast tidsbegränsat erbjudande."
-      ]
-    },
     "Feature": {
       "Dark Web Monitoring": [
         "Övervakning mörka webben"
@@ -1830,8 +1813,15 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problem att synkronisera data till ditt lokala lagringsutrymme. Se till att du har tillräckligt med diskutrymme för att ${ PASS_SHORT_APP_NAME } ska fungera smidigt."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera det?",
+        "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera dem?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi har skickat en verifieringskod till ${ email }. Ange den nedan:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "När du skapar/redigerar en inloggning på ${ PASS_APP_NAME } kommer inmatning 'användarnamn' alltid vara synligt."
       ],
       "You are about to create:": [
         "Du är på väg att skapa:"
@@ -1841,6 +1831,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan inte ändra brevlådorna för detta alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera det?",
+        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera dem?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Du har ${ daysRemaining } dag kvar att prova dessa och andra premiumfunktioner.",

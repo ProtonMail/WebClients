@@ -793,6 +793,151 @@
         "Black Friday"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "Програма ${ MAIL_APP_NAME } для комп'ютера"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } сховища"
+      ],
+      "1 TB total": [
+        "1 ТБ всього"
+      ],
+      "1 user": [
+        "1 користувач"
+      ],
+      "1 user account": [
+        "1 обліковий запис користувача"
+      ],
+      "10 email addresses": [
+        "10 адрес електронної пошти"
+      ],
+      "2 users": [
+        "2 користувачі"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "6 user accounts": [
+        "6 облікових записів користувачів"
+      ],
+      "6 users": [
+        "6 користувачів"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ серверів у понад 110 країнах"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блокування реклами та захист від зловмисних програм"
+      ],
+      "Admin panel to manage your family": [
+        "Адміністративна панель для управління вашою сім'єю"
+      ],
+      "Advanced account protection": [
+        "Розширена програма захисту облікового запису"
+      ],
+      "Dark Web Monitoring": [
+        "Відстеження Dark Web"
+      ],
+      "Easily add or remove users": [
+        "Легко додавати або вилучати користувачів"
+      ],
+      "High speed streaming": [
+        "Високошвидкісний потокова трансляція"
+      ],
+      "Integrated 2FA authenticator": [
+        "Інтегрований автентифікатор 2FA"
+      ],
+      "Online document editor": [
+        "Онлайн редактор документів"
+      ],
+      "Password health alerts": [
+        "Оповіщення про якість пароля"
+      ],
+      "Private photo backup": [
+        "Приватне резервне копіювання фото"
+      ],
+      "Protect 10 devices at a time": [
+        "Захищайте 10 пристроїв одночасно"
+      ],
+      "Secure file storage & sharing": [
+        "Безпечне сховище файлів та обмін ними"
+      ],
+      "Secure vault and link sharing": [
+        "Безпечний спільний доступ до сховища та обмін посиланнями"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Необмежена кількість тек, міток і фільтрів"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Необмежена кількість псевдонімів hide-my-email"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Необмежена кількість записів входу, нотаток, банківських карток"
+      ],
+      "Use your own email domain": [
+        "Використовуйте свій власний домен електронної пошти"
+      ],
+      "Version history": [
+        "Історія версій"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша передплата автоматично поновиться за стандартною зниженою ставкою та тривалістю в кінці платіжного циклу."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Найпопулярніший"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "для ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Автоматично продовжується через 1 місяць за ${ regularAmount }."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Отримайте доступ до заблокованого вмісту та переглядайте сторінки приватно. Має понад 8 500 серверів у 110+ країнах, 10 пристроїв, високу швидкість потокової трансляції, блокувальник реклами і захист від зловмисних програм, VPN Accelerator та інше."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Отримуйте доступ до контенту на потокових сервісах, включаючи Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Безпечний вхід на всіх ваших пристроях. Підтримує необмежену кількість псевдонімів hide-my-email, спільний доступ, інтегрований 2FA, Відстеження Dark Web та інші можливості."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреса електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреси електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреси електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються ${ addresses } адреси електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Захистіть свої листи та розклад наскрізним шифруванням. Підтримуються 15 адрес електронної пошти, підтримка власних доменів електронної пошти, ${ BRAND_NAME } Scribe написання та необмежена кількість псевдонімів hide-my-email і більше."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Захистіть свої листи та розклад наскрізним шифруванням. Підтримка 15 адрес електронної пошти, власних доменів електронної пошти, необмеженої кількості псевдонімів hide-my-email та інших можливостей."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі. Підтримує онлайн-редактор документів, резервне копіювання фото, історію версій, спільний доступ до зашифрованих файлів та інше."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Спеціально розроблений NetShield захищає ваші пристрої та прискорює ваші перегляди, блокуючи рекламу, вистежувачів та зловмисні програми."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "Простір сховища є спільним для всіх сервісів ${ BRAND_NAME }."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } місяць",
@@ -6438,14 +6583,8 @@
       "External invitation's email was sent again": [
         "Зовнішній лист із запрошенням надіслано знову"
       ],
-      "Failed to accept share invitation": [
-        "Не вдалося прийняти запрошення на спільний доступ"
-      ],
       "Failed to download files: ${ err }": [
         "Не вдалося завантажити файли: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Не вдалося відхилити запрошення, яким поділилися"
       ],
       "Failed to upload files: ${ err }": [
         "Не вдалося вивантажити файли: ${ err }"
@@ -6470,12 +6609,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостатньо місця для вивантаження ${ formattedTotal }"
-      ],
-      "Share invitation accepted successfully": [
-        "Запрошення на спільний доступ прийнято"
-      ],
-      "Share invitation declined": [
-        "Запрошення, яким поділилися, відхилено"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не вдалося видалити посилання на \"${ name }\""

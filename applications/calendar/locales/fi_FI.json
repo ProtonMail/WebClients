@@ -722,6 +722,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Päivitä ${ BRAND_NAME } Unlimited -tilaukseen"
       ],
+      "Upgrade to Mail Plus": [
+        "Päivitä Mail Plus -tilaukseen"
+      ],
       "Upload picture": [
         "Lataa kuva"
       ],
@@ -1111,6 +1114,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen mukautetuille sähköpostin verkkotunnuksille, rajattoman määrän hide-my-email-aliaksia ja paljon muuta."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
@@ -3608,6 +3614,11 @@
       ],
       "You need an active personal calendar to import events": [
         "Tarvitset tapahtumien tuontiin aktiivisen henkilökohtaisen kalenterin"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Näyttönimi ei voi olla tyhjä"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7997,6 +8008,11 @@
         "Tarkista tilisi turvallisuus"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Sisäänkirjautumista ei suoritettu loppuun."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Kaikki aliakset"
@@ -8535,6 +8551,11 @@
       ],
       "You can now collapse the navigation bar.": [
         "Voit nyt supistaa navigointipalkin"
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Kirjaudu sisään organisaatioosi"
       ]
     },
     "State": {
@@ -10431,6 +10452,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Lisää Zoom-tapaaminen"
+      ],
+      "Loading Zoom configuration": [
+        "Ladataan Zoom-asetuksia"
       ]
     },
     "Zoom Meeting": {

@@ -1151,10 +1151,10 @@
         "Bescherm 10 apparaten tegelijkertijd"
       ],
       "Secure file storage & sharing": [
-        "Veilige bestandsopslag en delen"
+        "Veilig bestanden opslaan en delen"
       ],
       "Secure vault and link sharing": [
-        "Veilige kluis en het delen van links"
+        "Veilig delen van kluis en links"
       ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
@@ -1209,6 +1209,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief online documenteditor, foto back-up, versiegeschiedenis, versleuteld bestanden delen en meer."
@@ -2415,11 +2418,6 @@
         "Onbetaalde factuur"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gebruik de Easy Switch-importhulp"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met 24/7 monitoring van verdachte activiteiten - inclusief escalatie naar beveiligingsspecialisten."
@@ -2489,6 +2487,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gebruik de Easy Switch-importhulp"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3362,6 +3365,11 @@
       ],
       "You may also refresh the page or try again later.": [
         "Vernieuw de pagina of probeer het later opnieuw."
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Weergavenaam kan niet leeg zijn"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -6655,6 +6663,9 @@
       "Opus audio": [
         "Opus-geluidsbestand"
       ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
+      ],
       "RAR archive": [
         "RAR-archief"
       ],
@@ -7354,6 +7365,14 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Krijg Mail Plus voor ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Vanaf ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -7366,14 +7385,6 @@
       ],
       "Switch plans?": [
         "Van abonnement wisselen?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Krijg Mail Plus voor ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Vanaf ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7856,6 +7867,9 @@
       ],
       "Share invitation declined": [
         "Deel-uitnodiging afgewezen"
+      ],
+      "Stopping the sharing of this item has failed": [
+        "Het stoppen van het delen van dit item is mislukt"
       ],
       "Subfolder failed to be loaded": [
         "Submap kon niet geladen worden"
@@ -8550,6 +8564,11 @@
         "Controleer de veiligheid van uw account"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggen is niet gelukt."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Alle aliassen"
@@ -9033,6 +9052,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Aanmelden bij uw organisatie"
       ]
     },
     "State": {
@@ -10491,6 +10515,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
+      ],
+      "Shared with end-to-end encryption": [
+        "End-to-end versleuteld gedeeld"
       ],
       "Show side panel": [
         "Toon zijpaneel"

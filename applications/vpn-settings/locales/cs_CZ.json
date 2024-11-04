@@ -55,6 +55,9 @@
       "Add domain": [
         "Přidat doménu"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Přidat další licence ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Přidat PayPal"
       ],
@@ -1103,8 +1106,17 @@
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje online editor dokumentů, zálohování fotografií, historii verzí souborů, šifrované sdílení souborů a další funkce."
@@ -2301,6 +2313,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Pokud je deaktivováno, budou mít přístup pouze správci."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Oddělte různé části svého života a uspořádejte si doručenou poštu s dalšími adresami."
       ],
@@ -3168,6 +3183,9 @@
     "fido2: Action": {
       "Delete key": [
         "Odstranit klíč"
+      ],
+      "New security key": [
+        "Nový bezpečnostní klíč"
       ]
     },
     "fido2: Error": {
@@ -3248,6 +3266,9 @@
       ],
       "Security key registered": [
         "Bezpečnostní klíč registrován"
+      ],
+      "Security keys": [
+        "Bezpečnostní klíče"
       ]
     },
     "file size format": {
@@ -5456,6 +5477,9 @@
       "Allowed Domain": [
         "Povolená doména"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Umožňuje všem ve vaší organizaci snadno přidávat odkazy na videokonference do jejich pozvánek kalendáře."
+      ],
       "Amount": [
         "Částka"
       ],
@@ -5614,6 +5638,9 @@
       ],
       "Email or username": [
         "E-mail nebo uživatelské jméno"
+      ],
+      "Enable video conferencing ": [
+        "Povolit videokonference "
       ],
       "Enter the code displayed on your TV": [
         "Zadejte kód zobrazený na vašem televizoru"
@@ -7373,6 +7400,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Dvoufázové ověření již není vyžadováno"
+      ],
+      "Video conferencing settings have been updated": [
+        "Bylo aktualizováno nastavení videokonferencí"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8286,6 +8316,12 @@
       "For security reasons, the token is hidden": [
         "Z bezpečnostních důvodů je token skryt"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Jděte k vašemu poskytovateli identity, zkopírujte a vložte níže uvedená data a dokončete nastavení SCIM pro ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Jděte k vašemu poskytovateli identity, zkopírujte a vložte níže uvedený token a opět povolte SCIM pro ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Pokud jste ztratili nebo zapomněli token SCIM, můžete vygenerovat nový, budete ale muset aktualizovat nastavení vašeho poskytovatele identity."
       ],
@@ -8294,6 +8330,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Po vypnutí SCIM pro vaši organizaci budou **všichni uživatelé SCIM, kteří byli automaticky poskytnuti vaším poskytovatelem identit, převedeni na uživatele SSO** a budete je moci spravovat přímo v nastavení ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Zjednodušuje správu uživatelů v různých službách. Přidávejte, upravujte a odebírejte uživatele u svého poskytovatele identity a tyto změny se automaticky použijí na vaši organizaci ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatické zprovoznění SCIM bude deaktivováno do doby, kdy zadáte nový token SCIM do nastavení vašeho poskytovatele identity."
@@ -9052,6 +9091,9 @@
       "Share the confirmation code with your administrator": [
         "Sdílejte potvrzovací kód s vaším správcem"
       ],
+      "Sign in": [
+        "Přihlásit se"
+      ],
       "Sign in to your organization": [
         "Přihlaste se ke své organizaci"
       ],
@@ -9087,6 +9129,9 @@
       ],
       "User details:": [
         "Podrobnosti o uživateli:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     },
     "sso: auth device state": {
@@ -9766,6 +9811,9 @@
       "Administrator privileges restored": [
         "Oprávnění správce obnovena"
       ],
+      "Backup password updated": [
+        "Záložní heslo bylo aktualizováno"
+      ],
       "Catch-all address updated": [
         "Záchytná adresa aktualizována"
       ],
@@ -9928,6 +9976,9 @@
       ],
       "Preferences updated": [
         "Předvolby aktualizovány"
+      ],
+      "Resent invitation": [
+        "Pozvánka znovu odeslána"
       ]
     },
     "Suffix": {
@@ -10037,6 +10088,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
@@ -10365,6 +10419,9 @@
       "Email subscriptions": [
         "Zasílání pravidelných e-mailů"
       ],
+      "Enable for all users": [
+        "Povolit pro všechny uživatele"
+      ],
       "Enter 2FA code": [
         "Zadejte kód 2FA"
       ],
@@ -10692,6 +10749,9 @@
       "Verifying your payment...": [
         "Ověřování vaší platby..."
       ],
+      "Video conference": [
+        "Videokonference"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vaši novou adresu vám zašleme e-mail s pokyny pro dokončení změny."
       ],
@@ -10777,6 +10837,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správci mohou spravovat uživatelské účty a udělovat práva správce ostatním uživatelům. Tarif organizace může upravovat pouze hlavní správce."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Umožňuje snadno přidávat odkazy na videokonference do vašich pozvánek kalendáře."
       ],
       "An approximate location of the IP address": [
         "Přibližné umístění IP adresy"

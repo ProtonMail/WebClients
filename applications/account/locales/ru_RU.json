@@ -802,11 +802,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Reject": [
         "Отказать"
@@ -1601,6 +1601,14 @@
         "Выберите Новогоднее предложение"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1622,14 +1630,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1800,6 +1800,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адреса электронной почты, помощник по написанию ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и не только."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Защитите свои электронные письма и расписание сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адресов электронной почты, неограниченное количество псевдонимов hide-my-email и многое другое."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает онлайн-редактор документов, резервное копирование фотографий, историю версий, зашифрованный обмен файлами и многое другое."
@@ -5550,6 +5553,9 @@
     "fido2: Action": {
       "Delete key": [
         "Удалить ключ"
+      ],
+      "New security key": [
+        "Новый ключ безопасности"
       ]
     },
     "fido2: Error": {
@@ -5630,6 +5636,9 @@
       ],
       "Security key registered": [
         "Ключ безопасности зарегистрирован"
+      ],
+      "Security keys": [
+        "Ключи безопасности"
       ]
     },
     "file size format": {
@@ -6016,6 +6025,9 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "для ${ email }"
+      ],
       "Group invitation accepted": [
         "Приглашение в группу принято"
       ],
@@ -7233,11 +7245,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "Dedicated servers": [
-        "Выделенные серверы"
-      ],
       "dedicated servers": [
         "выделенные серверы"
+      ],
+      "Dedicated servers": [
+        "Выделенные серверы"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
@@ -8799,11 +8811,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "Username": [
-        "Имя пользователя"
-      ],
       "username": [
         "имя пользователя"
+      ],
+      "Username": [
+        "Имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -8837,6 +8849,12 @@
       ],
       "Verify domain": [
         "Проверить домен"
+      ],
+      "Verify email address": [
+        "Подтвердить адрес электронной почты"
+      ],
+      "Verify phone number": [
+        "Подтвердить номер телефона"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Проверьте свою личность с помощью временного одноразового пароля из приложения-аутентификаторв"
@@ -11641,6 +11659,26 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Начните с ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11668,26 +11706,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Начните с ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -12416,6 +12434,17 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -12434,17 +12463,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -13478,9 +13496,6 @@
       ],
       "Free forever": [
         "Бесплатно навсегда"
-      ],
-      "From the team that knows encryption": [
-        "От команды, знающей шифрование"
       ],
       "Get ${ appName } for ${ browserName }": [
         "Получить ${ appName } для ${ browserName }"
@@ -15141,6 +15156,11 @@
     "signup: Action": {
       "Request trial": [
         "Запросить пробную версию"
+      ]
+    },
+    "Signup: Info": {
+      "End-to-end encryption": [
+        "Сквозное шифрование"
       ]
     },
     "signup_2024: Feature": {
@@ -16878,10 +16898,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [

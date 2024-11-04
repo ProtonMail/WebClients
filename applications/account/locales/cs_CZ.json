@@ -124,6 +124,9 @@
       "Add label": [
         "Přidat štítek"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Přidat další licence ${ BRAND_NAME } Scribe"
+      ],
       "Add notification": [
         "Přidat upozornění"
       ],
@@ -805,11 +808,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reject": [
         "Odmítnout"
@@ -1607,6 +1610,14 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1628,14 +1639,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1804,8 +1807,17 @@
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje online editor dokumentů, zálohování fotografií, historii verzí souborů, šifrované sdílení souborů a další funkce."
@@ -3589,6 +3601,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Pozváním přátel do ${ BRAND_NAME } získáte až ${ credits } kreditů."
+      ],
+      "If disabled, only admins will have access.": [
+        "Pokud je deaktivováno, budou mít přístup pouze správci."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
@@ -5651,6 +5666,9 @@
     "fido2: Action": {
       "Delete key": [
         "Odstranit klíč"
+      ],
+      "New security key": [
+        "Nový bezpečnostní klíč"
       ]
     },
     "fido2: Error": {
@@ -5731,6 +5749,9 @@
       ],
       "Security key registered": [
         "Bezpečnostní klíč registrován"
+      ],
+      "Security keys": [
+        "Bezpečnostní klíče"
       ]
     },
     "file size format": {
@@ -7360,11 +7381,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -7380,6 +7401,12 @@
         "Mazání ${ deletedServerCount } serverů brány",
         "Mazání ${ deletedServerCount } serverů brány",
         "Mazání ${ deletedServerCount } serverů brány"
+      ],
+      "Disable recovery by email address": [
+        "Deaktivovat obnovení pomocí e-mailové adresy"
+      ],
+      "Disable recovery by phone number": [
+        "Deaktivovat obnovení pomocí telefonního čísla"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Deaktivováno ${ formattedDateAndTime }"
@@ -8992,11 +9019,11 @@
       "User activated": [
         "Uživatel aktivován"
       ],
-      "Username": [
-        "Uživatelské jméno"
-      ],
       "username": [
         "uživatelské jméno"
+      ],
+      "Username": [
+        "Uživatelské jméno"
       ],
       "Users": [
         "Uživatelé"
@@ -9030,6 +9057,12 @@
       ],
       "Verify domain": [
         "Ověřte doménu"
+      ],
+      "Verify email address": [
+        "Ověřit e-mailovou adresu"
+      ],
+      "Verify phone number": [
+        "Ověřit telefonní číslo"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Ověřte totožnost pomocí časově omezeného jednorázového hesla z autentizační aplikace"
@@ -10077,6 +10110,9 @@
       "Allowed Domain": [
         "Povolená doména"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Umožňuje všem ve vaší organizaci snadno přidávat odkazy na videokonference do jejich pozvánek kalendáře."
+      ],
       "Amount": [
         "Částka"
       ],
@@ -10400,6 +10436,9 @@
       ],
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
+      ],
+      "Enable video conferencing ": [
+        "Povolit videokonference "
       ],
       "End date": [
         "Datum ukončení"
@@ -11885,6 +11924,32 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Začněte za ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -11912,32 +11977,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Začněte za ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12669,6 +12708,20 @@
         "Váš vybraný tarif: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Získejte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -12687,20 +12740,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Získejte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -13060,6 +13099,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Dvoufázové ověření již není vyžadováno"
+      ],
+      "Video conferencing settings have been updated": [
+        "Bylo aktualizováno nastavení videokonferencí"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13767,17 +13809,20 @@
       "Free forever": [
         "Navždy zdarma"
       ],
-      "From the team that knows encryption": [
-        "Od týmu, který se vyzná v šifrování"
-      ],
       "Get ${ appName } for ${ browserName }": [
         "Získat ${ appName } pro ${ browserName }"
       ],
       "Get in touch with our sales team": [
         "Kontaktujte náš obchodní tým"
       ],
+      "Get online privacy, for your whole family": [
+        "Získejte online soukromí pro celou vaši rodinu"
+      ],
       "Get the security and features your business needs": [
         "Získejte zabezpečení a funkce, které vaše firma potřebuje"
+      ],
+      "Get unlimited privacy for two": [
+        "Získejte neomezené soukromí pro dva"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Beru na vědomí, že v případě ztráty údajů pro obnovení mohu trvale ztratit přístup ke svému účtu."
@@ -13863,6 +13908,9 @@
         "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu",
         "Bezpečné sdílení trezoru (${ n } trezorů) a sdílení odkazu"
       ],
+      "Secure your family’s passwords and online identities": [
+        "Zabezpečte hesla a online identity vaší rodiny"
+      ],
       "Secured by end-to-end encryption": [
         "Zabezpečeno koncovým šifrováním"
       ],
@@ -13898,6 +13946,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Byli jste pozváni do ${ PASS_APP_NAME }"
+      ],
+      "Your ${ discount }% Black Friday discount has been applied": [
+        "Vaše Black Friday sleva ${ discount }% byla uplatněna"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Vaše organizace má přístup k ${ free }. Pokud chcete mít přístup k prémiovým funkcím ${ appName }, požádejte správce své organizace o navýšení."
@@ -14896,6 +14947,12 @@
       "For security reasons, the token is hidden": [
         "Z bezpečnostních důvodů je token skryt"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Jděte k vašemu poskytovateli identity, zkopírujte a vložte níže uvedená data a dokončete nastavení SCIM pro ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Jděte k vašemu poskytovateli identity, zkopírujte a vložte níže uvedený token a opět povolte SCIM pro ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Pokud jste ztratili nebo zapomněli token SCIM, můžete vygenerovat nový, budete ale muset aktualizovat nastavení vašeho poskytovatele identity."
       ],
@@ -14904,6 +14961,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Po vypnutí SCIM pro vaši organizaci budou **všichni uživatelé SCIM, kteří byli automaticky poskytnuti vaším poskytovatelem identit, převedeni na uživatele SSO** a budete je moci spravovat přímo v nastavení ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Zjednodušuje správu uživatelů v různých službách. Přidávejte, upravujte a odebírejte uživatele u svého poskytovatele identity a tyto změny se automaticky použijí na vaši organizaci ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatické zprovoznění SCIM bude deaktivováno do doby, kdy zadáte nový token SCIM do nastavení vašeho poskytovatele identity."
@@ -15485,6 +15545,71 @@
         "Požádat o zkušební verzi"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "Pokročilé funkce zabezpečení"
+      ],
+      "Advanced sharing security": [
+        "Pokročilé zabezpečení sdílení"
+      ],
+      "Apps for all devices": [
+        "Aplikace pro všechna zařízení"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Se sídlem ve Švýcarsku, v souladu s GDPR"
+      ],
+      "Built-in encryption": [
+        "Vestavěné šifrování"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Součástí je kalendář, správce hesel, úložiště souborů a VPN"
+      ],
+      "Email aliases": [
+        "E-mailové aliasy"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "Součástí je e-mail, kalendář, správce hesel a VPN"
+      ],
+      "End-to-end encrypted transactions": [
+        "Koncově šifrované transakce"
+      ],
+      "End-to-end encryption": [
+        "Koncové šifrování"
+      ],
+      "From the team that knows encryption": [
+        "Od týmu, který se vyzná v šifrování"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Integrovaný e-mail, kalendář, úložiště souborů, správce hesel a VPN"
+      ],
+      "ISO 27001 certified": [
+        "Certifikát ISO 27001"
+      ],
+      "Open source and audited": [
+        "Otevřený zdrojový kód a audity"
+      ],
+      "Open source and verified": [
+        "Otevřený zdrojový kód a ověřeno"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chráněno švýcarskými zákony o ochraně soukromí"
+      ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Vlastní úschova — přístup ke klíčům Wallet máte jen vy"
+      ],
+      "The only business solution that is:": [
+        "Jediné firemní řešení, které je:"
+      ],
+      "The only cloud storage with:": [
+        "Jediné cloudové úložiště s:"
+      ],
+      "The only email service with:": [
+        "Jediná e-mailová služba s:"
+      ],
+      "Works on all devices": [
+        "Funguje na všech zařízeních"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "V souladu s GDPR a HIPAA"
@@ -15864,6 +15989,9 @@
       "Share the confirmation code with your administrator": [
         "Sdílejte potvrzovací kód s vaším správcem"
       ],
+      "Sign in": [
+        "Přihlásit se"
+      ],
       "Sign in to your organization": [
         "Přihlaste se ke své organizaci"
       ],
@@ -15911,6 +16039,9 @@
       ],
       "Yes, it was me": [
         "Ano, jde o mojí žádost"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     },
     "sso: auth device state": {
@@ -16649,6 +16780,9 @@
       "Auto-reply updated": [
         "Automatická odpověď aktualizována"
       ],
+      "Backup password updated": [
+        "Záložní heslo bylo aktualizováno"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalendář je vytvořen. Synchronizace zabere pár minut."
       ],
@@ -16900,6 +17034,9 @@
       "Preferences updated": [
         "Předvolby aktualizovány"
       ],
+      "Resent invitation": [
+        "Pozvánka znovu odeslána"
+      ],
       "Status updated": [
         "Stav byl aktualizován"
       ]
@@ -17078,6 +17215,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
@@ -17277,10 +17417,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -17586,6 +17726,9 @@
       "Email subscriptions": [
         "Zasílání pravidelných e-mailů"
       ],
+      "Enable for all users": [
+        "Povolit pro všechny uživatele"
+      ],
       "Encryption and keys": [
         "Šifrování a klíče"
       ],
@@ -17768,6 +17911,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Zvyšte své soukromí pomocí dalších adres"
+      ],
+      "Integrations": [
+        "Integrace"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
@@ -18237,6 +18383,9 @@
       "Version history": [
         "Historie verzí"
       ],
+      "Video conference": [
+        "Videokonference"
+      ],
       "VPN apps": [
         "VPN aplikace"
       ],
@@ -18413,6 +18562,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správci mohou spravovat uživatelské účty a udělovat práva správce ostatním uživatelům. Tarif organizace může upravovat pouze hlavní správce."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Umožňuje snadno přidávat odkazy na videokonference do vašich pozvánek kalendáře."
       ],
       "An approximate location of the IP address": [
         "Přibližné umístění IP adresy"
