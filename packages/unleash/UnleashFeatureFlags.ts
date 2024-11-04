@@ -83,15 +83,6 @@ enum DriveFeatureFlag {
     // Download
     DriveDownloadScan = 'DriveDownloadScan',
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
-    // Docs
-    DriveDocs = 'DriveDocs',
-    DriveDocsDisabled = 'DriveDocsDisabled',
-    DocsAppSwitcher = 'DocsAppSwitcher',
-    DriveDocsSuggestionModeEnabled = 'DriveDocsSuggestionModeEnabled',
-    DriveDocsLandingPageEnabled = 'DriveDocsLandingPageEnabled',
-    DriveDocsPublicSharing = 'DriveDocsPublicSharing',
-    DriveDocsPublicSharingDisabled = 'DriveDocsPublicSharingDisabled',
-    DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
     // Bookmarks
     DriveShareURLBookmarking = 'DriveShareURLBookmarking',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
@@ -100,6 +91,23 @@ enum DriveFeatureFlag {
     DriveWebOnboardingV2 = 'DriveWebOnboardingV2',
     // Temp
     DriveDecryptionErrorDebugging = 'DriveDecryptionErrorDebugging',
+}
+
+enum DocsFeatureFlag {
+    // General
+    DriveDocs = 'DriveDocs',
+    DriveDocsDisabled = 'DriveDocsDisabled',
+    DocsAppSwitcher = 'DocsAppSwitcher',
+    // Comments
+    DocsEnableNotificationsOnNewComment = 'DocsEnableNotificationsOnNewComment',
+    // Landing page
+    DriveDocsLandingPageEnabled = 'DriveDocsLandingPageEnabled',
+    // Public sharing
+    DriveDocsPublicSharing = 'DriveDocsPublicSharing',
+    DriveDocsPublicSharingDisabled = 'DriveDocsPublicSharingDisabled',
+    // Suggestions
+    DriveDocsSuggestionModeEnabled = 'DriveDocsSuggestionModeEnabled',
+    DocsSuggestionsDisabled = 'DocsSuggestionsDisabled',
 }
 
 enum MailFeatureFlag {
@@ -124,5 +132,6 @@ export type FeatureFlag =
     | `${PaymentsFlag}`
     | `${CalendarFeatureFlag}`
     | `${DriveFeatureFlag}`
+    | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
     | `${AdminFeatureFlag}`;
