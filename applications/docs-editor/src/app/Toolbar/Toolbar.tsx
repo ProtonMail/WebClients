@@ -929,7 +929,7 @@ export default function DocumentEditorToolbar({
                   <CheckListIcon className="h-4 w-4 fill-current" />
                 )
               }
-              disabled={!isEditable || isSuggestionMode}
+              disabled={!isEditable}
               contentProps={DropdownContentProps}
               data-testid="list-types-dropdown"
             >

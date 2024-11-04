@@ -1,5 +1,6 @@
-import { ListNode, type ListType } from '@lexical/list'
-import { type EditorConfig, type NodeKey } from 'lexical'
+import { $createListItemNode, $isListItemNode, $isListNode, ListNode, type ListType } from '@lexical/list'
+import type { LexicalNode } from 'lexical'
+import { $createTextNode, $isElementNode, type EditorConfig, type NodeKey } from 'lexical'
 import type { CustomListMarker, CustomListStyleType, SerializedCustomListNode } from './CustomListTypes'
 import { addClassNamesToElement, removeClassNamesFromElement } from '@lexical/utils'
 import { $createCustomListNode } from './$createCustomListNode'
@@ -98,5 +99,35 @@ export class CustomListNode extends ListNode {
       type: 'custom-list',
       version: 1,
     }
+  }
+
+  // The original ListNode implementation seems to only append
+  // text content for element nodes even if they're inline
+  append(...nodesToAppend: LexicalNode[]): this {
+    for (let index = 0; index < nodesToAppend.length; index++) {
+      const currentNode = nodesToAppend[index]
+
+      if ($isListItemNode(currentNode)) {
+        super.append(currentNode)
+      } else {
+        const listItemNode = $createListItemNode()
+
+        if ($isListNode(currentNode)) {
+          listItemNode.append(currentNode)
+        } else if ($isElementNode(currentNode)) {
+          if (currentNode.isInline()) {
+            listItemNode.append(currentNode)
+          } else {
+            const textNode = $createTextNode(currentNode.getTextContent())
+            listItemNode.append(textNode)
+          }
+        } else {
+          listItemNode.append(currentNode)
+        }
+
+        super.append(listItemNode)
+      }
+    }
+    return this
   }
 }
