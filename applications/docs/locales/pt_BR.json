@@ -564,6 +564,9 @@
       "Sign out": [
         "Encerrar sessão"
       ],
+      "Sign up": [
+        "Registre-se"
+      ],
       "Skip verification": [
         "Pular verificação"
       ],
@@ -944,8 +947,15 @@
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais.",
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais.",
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui editor de documento on-line, histórico de versões, compartilhamento de arquivo criptografado e muito mais."
@@ -3731,6 +3741,9 @@
         "${ contactsLength } contato",
         "${ contactsLength } contatos"
       ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } em"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
@@ -3922,6 +3935,9 @@
         "Criar ${ calendarsToBeCreatedCount } novo calendário",
         "Criar ${ calendarsToBeCreatedCount } novos calendários"
       ],
+      "Create a copy to edit": [
+        "Criar uma cópia para editar"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que deseja de importar."
       ],
@@ -3988,6 +4004,9 @@
       ],
       "Document moved to trash": [
         "Documento movido para a lixeira"
+      ],
+      "Document owner has the password": [
+        "O proprietário do documento tem a senha"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não aparece nada? Lembre-se de desativar os bloqueadores de pop-up."
@@ -6911,14 +6930,8 @@
       "External invitation's email was sent again": [
         "O e-mail do convite externo foi enviado novamente"
       ],
-      "Failed to accept share invitation": [
-        "Falha ao aceitar convite de compartilhamento"
-      ],
       "Failed to download files: ${ err }": [
         "Erro ao baixar arquivos: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Falha ao rejeitar convite de compartilhamento"
       ],
       "Failed to upload files: ${ err }": [
         "Erro ao enviar arquivos: ${ err }"
@@ -6941,12 +6954,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Não há espaço suficiente para fazer o envio de ${ formattedTotal }"
-      ],
-      "Share invitation accepted successfully": [
-        "Convite de compartilhamento aceito com sucesso"
-      ],
-      "Share invitation declined": [
-        "Convite para compartilhamento recusado"
       ],
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
@@ -7401,6 +7408,11 @@
     "Safety review": {
       "Review your account safety": [
         "Revise a segurança de sua conta"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "O início de sessão não foi concluído."
       ]
     },
     "Security Center": {
@@ -7880,6 +7892,14 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sessão"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sessão na sua organização."
       ]
     },
     "State": {
@@ -8788,6 +8808,9 @@
       ],
       "The link expired": [
         "O link expirou"
+      ],
+      "This document is password protected": [
+        "Este documento está protegido por senha"
       ],
       "Unlock contacts groups": [
         "Desbloquear grupos de contato"

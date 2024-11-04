@@ -946,6 +946,9 @@
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адреса электронной почты, помощник по написанию ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и не только."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Защитите свои электронные письма и расписание сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адресов электронной почты, неограниченное количество псевдонимов hide-my-email и многое другое."
+      ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает онлайн-редактор документов, резервное копирование фотографий, историю версий, зашифрованный обмен файлами и многое другое."
       ],
@@ -6902,14 +6905,8 @@
       "External invitation's email was sent again": [
         "Электронное письмо с внешним приглашением было отправлено еще раз"
       ],
-      "Failed to accept share invitation": [
-        "Не удалось принять приглашение на использование общего ресурса"
-      ],
       "Failed to download files: ${ err }": [
         "Не удалось скачать файлы: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Не удалось отклонить приглашение на использование общего ресурса"
       ],
       "Failed to upload files: ${ err }": [
         "Не удалось загрузить файлы: ${ err }"
@@ -6934,12 +6931,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостаточно места для загрузки ${ formattedTotal }"
-      ],
-      "Share invitation accepted successfully": [
-        "Приглашение на использование общего ресурса успешно принято"
-      ],
-      "Share invitation declined": [
-        "Приглашение поделиться отклонено"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Не удалось удалить ссылку на \"${ name }\""
@@ -7887,6 +7878,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Пригласите друзей в ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Войдите в свою организацию"
       ]
     },
     "State": {

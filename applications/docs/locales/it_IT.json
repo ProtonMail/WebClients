@@ -822,7 +822,7 @@
         "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "${ storageSize } storage": [
-        "${ storageSize } di archiviazione"
+        "${ storageSize } di spazio d'archiviazione"
       ],
       "1 TB total": [
         "1 TB"
@@ -849,10 +849,10 @@
         "6 utenti"
       ],
       "8500+ servers across 110+ countries": [
-        "Oltre 8500 server in più di 110 Paesi"
+        "Oltre 8500 server in più di 110 paesi"
       ],
       "Ad-blocker and malware protection": [
-        "Blocco degli annunci e protezione da malware"
+        "Ad-blocker e protezione da malware"
       ],
       "Admin panel to manage your family": [
         "Pannello di amministrazione per gestire la tua famiglia"
@@ -888,7 +888,7 @@
         "Archiviazione e condivisione sicura dei file"
       ],
       "Secure vault and link sharing": [
-        "Condivisione sicura di casseforti e link"
+        "Condivisione sicura tramite casseforti e link"
       ],
       "Unlimited folders, labels and filters": [
         "Cartelle, etichette e filtri illimitati"
@@ -897,7 +897,7 @@
         "Alias hide-my-email illimitati"
       ],
       "Unlimited logins, notes, credit cards": [
-        "Login, note e carte illimitati"
+        "Login, note e carte di credito illimitati"
       ],
       "Use your own email domain": [
         "Usa il tuo dominio di posta personalizzato"
@@ -929,23 +929,26 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accedi ai contenuti bloccati e naviga in privato. Include oltre 8.500 server in più di 110 paesi, 10 dispositivi, streaming ad alta velocità, blocco degli annunci, protezione da malware, VPN Accelerator e molto altro."
+        "Accedi ai contenuti bloccati e naviga in privato. Include oltre 8.500 server in più di 110 paesi, 10 dispositivi, streaming ad alta velocità, ad-blocker, protezione da malware, VPN Accelerator e molto altro."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, condivisione, autenticazione a due fattori, monitoraggio del dark web e molto altro."
+        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, monitoraggio del dark web e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
-        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteggi le email e la l'agenda con la crittografia end-to-end. Include 15 indirizzi email, supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+        "Proteggi le email e l'agenda con la crittografia end-to-end. Include 15 indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteggi le tue email e il tuo calendario con la crittografia end-to-end. Include 15 indirizzi email, supporto per domini email personalizzati, alias hide-my-email illimitati e molto altro."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Proteggi i file con l'archiviazione cloud crittografata. Include editor di documenti online, backup delle foto, cronologia delle versioni, condivisione di file crittografata e molto altro."
+        "Proteggi i file con l'archiviazione cloud crittografata. Include l'editor di documenti online, il backup delle foto, la cronologia delle versioni, la condivisione di file crittografata e molto altro."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield è progettato appositamente per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
@@ -6884,14 +6887,8 @@
       "External invitation's email was sent again": [
         "L'email di invito esterno è stata inviata nuovamente"
       ],
-      "Failed to accept share invitation": [
-        "Impossibile accettare l'invito alla condivisione"
-      ],
       "Failed to download files: ${ err }": [
         "Scaricamento dei file non riuscito: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Impossibile rifiutare l'invito alla condivisione"
       ],
       "Failed to upload files: ${ err }": [
         "Caricamento dei file non riuscito: ${ err }"
@@ -6914,12 +6911,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Spazio insufficiente per caricare ${ formattedTotal }"
-      ],
-      "Share invitation accepted successfully": [
-        "Invito alla condivisione accettato con successo"
-      ],
-      "Share invitation declined": [
-        "Invito alla condivisione rifiutato"
       ],
       "Stopping the sharing of this item has failed": [
         "L'interruzione della condivisione di questo elemento non è riuscita"
@@ -7368,6 +7359,11 @@
     "Safety review": {
       "Review your account safety": [
         "Controlla la sicurezza del tuo account"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "L'accesso non è stato completato correttamente."
       ]
     },
     "Security Center": {
@@ -7847,6 +7843,11 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita gli amici su ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Accedi alla tua organizzazione"
       ]
     },
     "State": {
