@@ -19,7 +19,7 @@ export const Carousel: FC<CarouselProps> = ({ steps, className, textClassName, t
     const [currentStep, setCurrentStep] = useState(0);
 
     const onStepChange = (offset: number) => {
-        const nextIndex = (((currentStep + offset) % steps.length) + steps.length) % steps.length;
+        const nextIndex = (currentStep + offset + steps.length) % steps.length;
         setCurrentStep(nextIndex);
     };
 
