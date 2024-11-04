@@ -2,8 +2,14 @@
 
 .pass-inline-field-box {
 	display: grid;
-	grid-template-columns: 1fr em(140);
 	align-items: center;
+
+
+	@each $size, $value in (sm: 140, md: 200, lg: 250) {
+		&.#{$size} {
+			grid-template-columns: 1fr em($value);
+		}
+	}
 
 	& + & {
 		// siblings
