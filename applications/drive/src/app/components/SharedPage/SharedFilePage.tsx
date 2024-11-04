@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { FileNameDisplay, FilePreviewContent, useActiveBreakpoint } from '@proton/components';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DecryptedLink } from '../../store';
 import { type useBookmarksPublicView, useDownloadScanFlag } from '../../store';
@@ -34,6 +35,7 @@ export default function SharedFilePage({
     const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
+    const isDocument = isProtonDocument(link?.mimeType || '');
 
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
@@ -86,7 +88,7 @@ export default function SharedFilePage({
                     imgThumbnailUrl={link?.cachedThumbnailUrl}
                     isPublic
                     isPublicDocsAvailable={isDocsPublicSharingEnabled}
-                    onOpenInDocs={link && openInDocs ? () => openInDocs(link.linkId) : undefined}
+                    onOpenInDocs={link && isDocument && openInDocs ? () => openInDocs(link.linkId) : undefined}
                 />
             </SharedPageLayout>
             <SharedPageTransferManager rootItem={link} />
