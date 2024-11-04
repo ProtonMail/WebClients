@@ -1636,6 +1636,139 @@
         "Black Friday"
       ]
     },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 桌面應用程式"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } 儲存空間"
+      ],
+      "1 TB total": [
+        "1 TB 總計"
+      ],
+      "1 user": [
+        "1 位使用者"
+      ],
+      "1 user account": [
+        "1 位使用者帳號"
+      ],
+      "10 email addresses": [
+        "10 個電子信箱"
+      ],
+      "2 users": [
+        "2 位使用者"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 位使用者帳號"
+      ],
+      "6 users": [
+        "6 位使用者"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ 伺服器遍布於 110+ 個國家"
+      ],
+      "Ad-blocker and malware protection": [
+        "廣告攔截與惡意程式保護"
+      ],
+      "Admin panel to manage your family": [
+        "管理您的家庭的管理員面板"
+      ],
+      "Advanced account protection": [
+        "高端的帳號保護"
+      ],
+      "Dark Web Monitoring": [
+        "黑暗網路監測"
+      ],
+      "Easily add or remove users": [
+        "輕鬆添加或移除使用者"
+      ],
+      "High speed streaming": [
+        "高速串流"
+      ],
+      "Integrated 2FA authenticator": [
+        "整合了雙重驗證的驗證器"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Password health alerts": [
+        "密碼堅固性警示"
+      ],
+      "Private photo backup": [
+        "私有照片備份"
+      ],
+      "Protect 10 devices at a time": [
+        "同時保護 10 台裝置"
+      ],
+      "Secure file storage & sharing": [
+        "安全檔案儲存與共享"
+      ],
+      "Secure vault and link sharing": [
+        "安全保管庫和共享連結"
+      ],
+      "Unlimited folders, labels and filters": [
+        "無上限資料夾、標籤與篩選器"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無上限 hide-my-email 別名"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "無限登入，筆記，信用卡"
+      ],
+      "Use your own email domain": [
+        "使用您自己的電子郵件網域"
+      ],
+      "Version history": [
+        "版本歷史紀錄"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "折扣是以每月標準價格為基礎。"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "您的訂閱將在您的繳款單週期結束時以標準折扣費率及期限自動續訂。"
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "最熱門"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "為了 ${ durationDeal }"
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "在世界各地暢享串流服務的影音內容，包含Netflix、Disney+、Prime Video等平台。"
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "在您所有的裝置安全登入。包含無限hide-my-email別名、共享、整合的2FA、黑暗網路監測等功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "透過端對端加密保護您的電子郵件。包含 ${ addresses } 電子郵件位址、支援自訂電子郵件網域、${ BRAND_NAME } Scribe 寫作助手、無限的 hide-my-email 別名等更多功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含線上文件編輯器、照片備份、版本歷史紀錄、加密的檔案共享等功能。"
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的NetShield保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "儲存空間於 ${ BRAND_NAME } 所有服務中共享。"
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n }個月"
@@ -4768,16 +4901,16 @@
         "位元組"
       ],
       "Gigabyte": [
-        "GB"
+        "Gigabytes"
       ],
       "Kilobyte": [
         "千位元組"
       ],
       "Megabyte": [
-        "MB"
+        "Megabytes"
       ],
       "Terabyte": [
-        "TB"
+        "Terabytes"
       ]
     },
     "Filter": {
@@ -10886,10 +11019,10 @@
         "12 個月的費用為${ amount }"
       ],
       "Billed at ${ amount } for 15 months": [
-        "為期 15 個月收費 ${ amount } "
+        "為期 15 個月收費 ${ amount }"
       ],
       "Billed at ${ amount } for 24 months": [
-        "為期 24 個月收費 ${ amount } "
+        "為期 24 個月收費 ${ amount }"
       ],
       "Billed at ${ amount } for 30 months": [
         "30 個月的費用為${ amount }"
@@ -10907,16 +11040,16 @@
         "省下 ${ discount }%"
       ],
       "Standard price ${ amount } for 1 month": [
-        "長達 1 個月的標準價 ${ amount } "
+        "長達 1 個月的標準價 ${ amount }"
       ],
       "Standard price ${ amount } for 12 months": [
-        "長達 12 個月的標準價 ${ amount } "
+        "長達 12 個月的標準價 ${ amount }"
       ],
       "Standard price ${ amount } for 15 months": [
         "15 個月的原價 ${ amount }"
       ],
       "Standard price ${ amount } for 24 months": [
-        "長達 24 個月的標準價 ${ amount } "
+        "長達 24 個月的標準價 ${ amount }"
       ],
       "Standard price ${ amount } for 30 months": [
         "30 個月的原價 ${ amount }"
@@ -10974,6 +11107,11 @@
       ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "登入"
       ]
     },
     "State": {

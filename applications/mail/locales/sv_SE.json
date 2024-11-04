@@ -1685,6 +1685,9 @@
       "8500+ servers across 110+ countries": [
         "8 500+ servrar i 110+ länder"
       ],
+      "Ad-blocker and malware protection": [
+        "Annonsblockerare och skydd mot skadlig kod"
+      ],
       "Admin panel to manage your family": [
         "Administratörspanel för att hantera din familj"
       ],
@@ -1706,8 +1709,14 @@
       "Online document editor": [
         "Dokumentredigerare online"
       ],
+      "Private photo backup": [
+        "Privat säkerhetskopiering av foto"
+      ],
       "Protect 10 devices at a time": [
         "Skydda 10 enheter åt gången"
+      ],
+      "Secure file storage & sharing": [
+        "Säker fillagring och delning"
       ],
       "Secure vault and link sharing": [
         "Säker delning av valv och länk"
@@ -1744,11 +1753,33 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Förnyas efter 1 månad till ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, hög hastighet streaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade hide-my-email-alias, delning, integrerad 2FA, övervakning av mörka webben och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Säkra dina filer med krypterad molnlagring. Inkluderar online dokumentredigerare, säkerhetskopiering av foto, versionshistorik, krypterad fildelning och mer."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
@@ -10114,6 +10145,9 @@
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Kryptering så stark att endast du och avsedda mottagare kan visa dina e-postmeddelanden. ${ kbLinkEncryption }"
       ],
+      "Fixed and focused": [
+        "Snabb och fokuserad"
+      ],
       "For your eyes only": [
         "Bara för dina ögon"
       ],
@@ -10783,6 +10817,11 @@
         "Granska din kontosäkerhet"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggning lyckades inte slutföras."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Inga meddelanden hittades"
@@ -11432,6 +11471,17 @@
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu schemalägga dina meddelanden för att skickas senare"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Logga in"
+      ],
+      "Sign in to your organization": [
+        "Logga in på din organisation"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ]
     },
     "State": {
