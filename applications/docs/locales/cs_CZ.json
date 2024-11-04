@@ -567,6 +567,9 @@
       "Sign out": [
         "Odhlásit se"
       ],
+      "Sign up": [
+        "Zaregistrovat se"
+      ],
       "Skip verification": [
         "Přeskočit ověření"
       ],
@@ -961,8 +964,17 @@
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje online editor dokumentů, zálohování fotografií, historii verzí souborů, šifrované sdílení souborů a další funkce."
@@ -3802,6 +3814,12 @@
         "${ contactsLength } kontaktů",
         "${ contactsLength } kontaktů"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } umožňuje spolupráci v reálném čase s koncovým šifrováním pro zajištění naprostého soukromí. Vytvořte kopii a začněte upravovat nebo požádejte vlastníka o přístup k úpravám."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } v(e)"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } skupina nalezena",
         "${ groupCounts } skupiny nalezeny",
@@ -4021,6 +4039,9 @@
         "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů",
         "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů"
       ],
+      "Create a copy to edit": [
+        "Vytvořte kopii pro úpravy"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a složky, které chcete importovat."
       ],
@@ -4089,6 +4110,9 @@
       ],
       "Document moved to trash": [
         "Dokument přesunut do koše"
+      ],
+      "Document owner has the password": [
+        "Vlastník dokumentu má heslo"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nic nevidíte? Nezapomeňte vypnout blokování vyskakovacích oken."
@@ -7050,14 +7074,8 @@
       "External invitation's email was sent again": [
         "E-mail externí pozvánky byl znovu odeslán"
       ],
-      "Failed to accept share invitation": [
-        "Přijetí pozvánky ke sdílení selhalo"
-      ],
       "Failed to download files: ${ err }": [
         "Nepodařilo se stáhnout soubory: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Odmítnutí pozvánky ke sdílení selhalo"
       ],
       "Failed to upload files: ${ err }": [
         "Nepodařilo se nahrát soubory: ${ err }"
@@ -7082,12 +7100,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Není dostatek místa pro nahrání ${ formattedTotal }"
-      ],
-      "Share invitation accepted successfully": [
-        "Pozvánka ke sdílení úspěšně přijata"
-      ],
-      "Share invitation declined": [
-        "Pozvánka sdílení byla odmítnuta"
       ],
       "Stopping the sharing of this item has failed": [
         "Ukončení sdílení této položky selhalo"
@@ -7552,6 +7564,11 @@
     "Safety review": {
       "Review your account safety": [
         "Zkontrolujte bezpečnost svého účtu"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Přihlášení nebylo úspěšně dokončeno."
       ]
     },
     "Security Center": {
@@ -8065,6 +8082,20 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvěte přátele do ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Chcete-li tento dokument upravit, vytvořte si kopii, kterou můžete upravit."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Přihlásit se"
+      ],
+      "Sign in to your organization": [
+        "Přihlaste se ke své organizaci"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     },
     "State": {
@@ -8859,6 +8890,9 @@
       "Link confirmation": [
         "Potvrzení před otevřením odkazu"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Vytvořte kopii do svého ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Spravovat zabezpečený odkaz"
       ],
@@ -9017,6 +9051,9 @@
       ],
       "The link expired": [
         "Platnost odkazu vypršela"
+      ],
+      "This document is password protected": [
+        "Tento dokument je chráněn heslem"
       ],
       "Unlock contacts groups": [
         "Odemknout skupiny kontaktů"

@@ -561,6 +561,9 @@
       "Sign out": [
         "Logga ut"
       ],
+      "Sign up": [
+        "Registrera"
+      ],
       "Skip verification": [
         "Hoppa över verifiering"
       ],
@@ -847,6 +850,9 @@
       "8500+ servers across 110+ countries": [
         "8 500+ servrar i 110+ länder"
       ],
+      "Ad-blocker and malware protection": [
+        "Annonsblockerare och skydd mot skadlig kod"
+      ],
       "Admin panel to manage your family": [
         "Administratörspanel för att hantera din familj"
       ],
@@ -868,8 +874,14 @@
       "Online document editor": [
         "Dokumentredigerare online"
       ],
+      "Private photo backup": [
+        "Privat säkerhetskopiering av foto"
+      ],
       "Protect 10 devices at a time": [
         "Skydda 10 enheter åt gången"
+      ],
+      "Secure file storage & sharing": [
+        "Säker fillagring och delning"
       ],
       "Secure vault and link sharing": [
         "Säker delning av valv och länk"
@@ -906,11 +918,33 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Förnyas efter 1 månad till ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, hög hastighet streaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade hide-my-email-alias, delning, integrerad 2FA, övervakning av mörka webben och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Säkra dina filer med krypterad molnlagring. Inkluderar online dokumentredigerare, säkerhetskopiering av foto, versionshistorik, krypterad fildelning och mer."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
@@ -3676,6 +3710,12 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } låter dig samarbeta i realtid med end-to-end-kryptering för fullständig integritet. Skapa en kopia för att börja redigera, eller be ägaren om redigeringsåtkomst."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } i"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
@@ -3867,6 +3907,9 @@
         "Skapa ${ calendarsToBeCreatedCount } ny kalender",
         "Skapa ${ calendarsToBeCreatedCount } nya kalendrar"
       ],
+      "Create a copy to edit": [
+        "Skapa en kopia för att redigera"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Skapa en etikett för de importerade meddelandena, ett tidsintervall för denna import och de mappar du vill importera."
       ],
@@ -3933,6 +3976,9 @@
       ],
       "Document moved to trash": [
         "Dokument flyttat till papperskorg"
+      ],
+      "Document owner has the password": [
+        "Dokumentägare har lösenordet"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du inget? Kom ihåg att stänga av popup-blockerare."
@@ -6844,14 +6890,8 @@
       "External invitation's email was sent again": [
         "Extern e-postinbjudan skickades igen"
       ],
-      "Failed to accept share invitation": [
-        "Misslyckades att acceptera delningsinbjudan"
-      ],
       "Failed to download files: ${ err }": [
         "Misslyckades att ladda ner filer: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "Misslyckades att avvisa delningsinbjudan"
       ],
       "Failed to upload files: ${ err }": [
         "Misslyckades att ladda upp filer: ${ err }"
@@ -6874,12 +6914,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Inte tillräckligt med utrymme för att ladda upp ${ formattedTotal }"
-      ],
-      "Share invitation accepted successfully": [
-        "Delningsinbjudan accepterades"
-      ],
-      "Share invitation declined": [
-        "Delningsinbjudan avböjd"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Länken till “${ name }“ misslyckades att tas bort"
@@ -7328,6 +7362,11 @@
     "Safety review": {
       "Review your account safety": [
         "Granska din kontosäkerhet"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggning lyckades inte slutföras."
       ]
     },
     "Security Center": {
@@ -7807,6 +7846,20 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Bjud in vänner till ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "För att redigera detta dokument, skapa en kopia som du kan ändra."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Logga in"
+      ],
+      "Sign in to your organization": [
+        "Logga in på din organisation"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ]
     },
     "State": {
@@ -8557,6 +8610,9 @@
       "Link confirmation": [
         "Länkbekräftelse"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Gör en kopia till din ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Hantera säker länk"
       ],
@@ -8715,6 +8771,9 @@
       ],
       "The link expired": [
         "Länken har löpt ut"
+      ],
+      "This document is password protected": [
+        "Detta dokument är lösenordsskyddat"
       ],
       "Unlock contacts groups": [
         "Lås upp kontaktgrupper"
