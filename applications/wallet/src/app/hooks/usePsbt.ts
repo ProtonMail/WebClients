@@ -123,6 +123,7 @@ export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelpe
             } catch (error: any) {
                 throw new Error(
                     error?.error ??
+                        error?.message ??
                         c('Wallet Send').t`Could not broadcast transaction. Please sync your wallet and try again`
                 );
             }
