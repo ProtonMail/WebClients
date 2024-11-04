@@ -29,6 +29,9 @@
       "Add new table row": [
         "Přidat nový řádek tabulky"
       ],
+      "Add suggestion": [
+        "Přidat návrh"
+      ],
       "Adjust font size": [
         "Upravit velikost písma"
       ],
@@ -109,9 +112,6 @@
       ],
       "Edit link": [
         "Upravit odkaz"
-      ],
-      "Exit Suggestion": [
-        "Ukončit návrhy"
       ],
       "Fit table to page width": [
         "Rozšířit tabulku na celou stránku"
@@ -214,9 +214,6 @@
       ],
       "Submit": [
         "Odeslat"
-      ],
-      "Suggestion Mode": [
-        "Režim návrhů"
       ],
       "Table options": [
         "Možnosti tabulky"
@@ -409,6 +406,9 @@
     "Description": {
       "Edit document directly": [
         "Přímá úprava dokumentu"
+      ],
+      "Edits become suggestions": [
+        "Úpravy se stávají návrhy"
       ],
       "Read or print final document": [
         "Čtení nebo tisk finálního dokumentu"
@@ -668,6 +668,11 @@
       ],
       "Language not supported": [
         "Jazyk není podporován"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Vytváření návrhů uvnitř bloků kódu není podporováno"
       ]
     }
   }

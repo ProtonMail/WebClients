@@ -110,9 +110,6 @@
       "Edit link": [
         "Link bewerken"
       ],
-      "Exit Suggestion": [
-        "Suggestie afsluiten"
-      ],
       "Fit table to page width": [
         "Pas tabel in breedte van de pagina"
       ],
@@ -214,9 +211,6 @@
       ],
       "Submit": [
         "Versturen"
-      ],
-      "Suggestion Mode": [
-        "Suggestiemodus"
       ],
       "Table options": [
         "Tabelopties"
@@ -499,6 +493,9 @@
       "Font size": [
         "Lettertypegrootte"
       ],
+      "Highlight": [
+        "Markeer"
+      ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
       ],
@@ -543,6 +540,9 @@
       "Add link": [
         "Link toevoegen"
       ],
+      "Align": [
+        "Uitlijnen"
+      ],
       "Background colour": [
         "Achtergrondkleur"
       ],
@@ -552,8 +552,14 @@
       "Change indent level": [
         "Wijzig inspringniveau"
       ],
+      "Clear formatting": [
+        "Opmaak wissen"
+      ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete divider": [
+        "Scheidingslijn verwijderen"
       ],
       "Delete image": [
         "Afbeelding verwijderen"
@@ -567,11 +573,26 @@
       "Delete table": [
         "Tabel verwijderen"
       ],
+      "Delete table column": [
+        "Tabelkolom verwijderen"
+      ],
+      "Delete table row": [
+        "Tabelrij verwijderen"
+      ],
+      "Duplicate table column": [
+        "Dubbele tabelkolom"
+      ],
+      "Duplicate table row": [
+        "Dubbele tabelrij"
+      ],
       "Format": [
         "Formaat"
       ],
       "Insert": [
         "Invoegen"
+      ],
+      "Insert divider": [
+        "Scheidingslijn invoegen"
       ],
       "Insert image": [
         "Afbeelding invoegen"
@@ -581,6 +602,12 @@
       ],
       "Insert table": [
         "Tabel invoegen"
+      ],
+      "Insert table column": [
+        "Tabelkolom invoegen"
+      ],
+      "Insert table row": [
+        "Tabelrij invoegen"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Toetsenbordsneltoets: ${ shortcut }"
