@@ -10,6 +10,7 @@ import type {
     AliasContactBlockDTO,
     AliasContactGetResponse,
     AliasContactInfoDTO,
+    AliasContactListResponse,
     AliasCreateFromPendingDTO,
     AliasDetails,
     AliasMailbox,
@@ -28,6 +29,7 @@ import type {
     MailboxDeleteDTO,
     RandomPrefixDTO,
     SlSyncStatusOutput,
+    UniqueItem,
 } from '@proton/pass/types';
 import chunk from '@proton/utils/chunk';
 
@@ -80,7 +82,13 @@ export const getAliasDetails = async (shareId: string, itemId: string): Promise<
     };
 };
 
-export const aliasFetchContactInfoApi = async ({
+export const aliasGetContactsListApi = ({ shareId, itemId }: UniqueItem): Promise<AliasContactListResponse> =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/contact`,
+        method: 'get',
+    });
+
+export const aliasGetContactInfoApi = async ({
     shareId,
     itemId,
     contactId,

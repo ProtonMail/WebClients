@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import type {
+    AliasContactValues,
     AliasFormValues,
     EditAliasFormValues,
     LoginItemFormValues,
@@ -68,6 +69,13 @@ export const validateNewAliasForm = (values: NewAliasFormValues): FormikErrors<N
     ...validateItemErrors(values),
     ...validateAliasForm(values),
 });
+
+export const validateAliasContactSenderName = ({ name }: AliasContactValues): FormikErrors<AliasContactValues> => {
+    const errors: FormikErrors<AliasContactValues> = {};
+    if (!name) errors.name = c('Warning').t`Name is required`;
+
+    return errors;
+};
 
 export const createEditAliasFormValidator =
     (aliasOwner: boolean) =>
