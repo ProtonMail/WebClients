@@ -1,5 +1,6 @@
 import { z } from 'zod';
 
+import type { HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson } from '@proton/metrics/types/desktop_inbox_heartbeat_total_v1.schema';
 import type { Environment } from '@proton/shared/lib/interfaces';
 
 import type { ColorScheme, ThemeSetting } from '../themes/themes';
@@ -28,7 +29,8 @@ export type IPCInboxDesktopFeature =
     | 'MailtoTelemetry'
     | 'ESUserChoice'
     | 'FullTheme'
-    | 'StoreVersion';
+    | 'StoreVersion'
+    | 'HeartbeatMetrics';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
@@ -55,7 +57,8 @@ export type IPCInboxClientUpdateMessage =
     | { type: 'defaultMailtoTelemetryReported'; payload: number }
     | { type: 'setESUserChoice'; payload: { userID: string; userChoice: boolean } }
     | { type: 'storeAppVersion'; payload: AppVersion }
-    | { type: 'triggerCrash'; payload?: undefined };
+    | { type: 'triggerCrash'; payload?: undefined }
+    | { type: 'metricsListenerChanged'; payload: 'ready' | 'removed' };
 export type IPCInboxClientUpdateMessageType = IPCInboxClientUpdateMessage['type'];
 
 export const IPCInboxHostUpdateMessageSchema = z.union([
@@ -71,6 +74,10 @@ export const IPCInboxHostUpdateMessageSchema = z.union([
     z.object({
         type: z.literal('defaultMailtoChecked'),
         payload: zDefaultProtocol,
+    }),
+    z.object({
+        type: z.literal('sentHeartbeatMetrics'),
+        payload: z.custom<HttpsProtonMeDesktopInboxHeartbeatTotalV1SchemaJson>(),
     }),
 ]);
 

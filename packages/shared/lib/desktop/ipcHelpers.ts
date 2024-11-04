@@ -43,6 +43,8 @@ export const hasInboxDesktopFeature = (feature: IPCInboxDesktopFeature) =>
     !!window.ipcInboxMessageBroker!.hasFeature &&
     window.ipcInboxMessageBroker!.hasFeature(feature);
 
+export const emptyListener: IPCInboxHostUpdateListenerRemover = { removeListener: () => {} };
+
 export function addIPCHostUpdateListener<T extends IPCInboxHostUpdateMessageType>(
     eventType: T,
     callback: (payload: PayloadOfHostUpdateType<T>) => void
