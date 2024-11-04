@@ -55,6 +55,9 @@
       "Add domain": [
         "Adăugare domeniu"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Adăugare licențe de ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Adăugare PayPal"
       ],
@@ -1097,8 +1100,16 @@
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, asistență pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Securizați-vă fișierele cu stocare criptată în cloud. Include editor de documente online, conservare pentru fotografii, istoricul versiunilor, partajarea fișierelor criptate și multe altele."
@@ -2292,6 +2303,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Dacă e dezactivată, doar administratorii vor avea acces."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Păstrați diferite părți ale vieții separate și contul de e-mail organizat cu adrese suplimentare."
       ],
@@ -3153,6 +3167,9 @@
     "fido2: Action": {
       "Delete key": [
         "Ștergere cheie"
+      ],
+      "New security key": [
+        "Cheie de securitate nouă"
       ]
     },
     "fido2: Error": {
@@ -3206,6 +3223,11 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vă verificați identitatea cu o cheie fizică U2F sau FIDO2."
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Ați atins maximul de ${ maxSecurityKeyLength } cheie de securitate.",
+        "Ați atins maximul de ${ maxSecurityKeyLength } chei de securitate.",
+        "Ați atins maximul de ${ maxSecurityKeyLength } de chei de securitate."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Cheia de autentificare cu doi factori este pregătită de utilizare."
       ]
@@ -3233,6 +3255,9 @@
       ],
       "Security key registered": [
         "Cheia de securitate înregistrată"
+      ],
+      "Security keys": [
+        "Chei de securitate"
       ]
     },
     "file size format": {
@@ -5397,6 +5422,9 @@
       "Allowed Domain": [
         "Domeniu permis"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Permite tuturor din organizație să adauge fără probleme legături web pentru conferințe video la invitațiile din calendar."
+      ],
       "Amount": [
         "Suma"
       ],
@@ -5555,6 +5583,9 @@
       ],
       "Email or username": [
         "E-mail sau utilizator"
+      ],
+      "Enable video conferencing ": [
+        "Activare conferințe video"
       ],
       "Enter the code displayed on your TV": [
         "Introduceți codul afișat pe TV"
@@ -7286,6 +7317,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Autentificarea cu doi factori nu mai este obligatorie."
+      ],
+      "Video conferencing settings have been updated": [
+        "Setările conferințelor video au fost actualizate."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8190,6 +8224,12 @@
       "For security reasons, the token is hidden": [
         "Din motive de securitate, codul de acces este ascuns."
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Accesați-vă furnizorul de identitate, copiați și inserați datele de mai jos și finalizați configurarea SCIM pentru ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Accesați-vă furnizorul de identitate, copiați și inserați codul de acces de mai jos și reactivați SCIM pentru ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Dacă ați pierdut sau ați uitat codul de acces SCIM, puteți genera unul nou, dar rețineți că setările furnizorului dvs. de identitate vor trebui actualizate."
       ],
@@ -8198,6 +8238,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Odată ce SCIM este dezactivat pentru organizație, **toți utilizatorii SCIM furnizați automat de furnizorul dvs. de identitate vor fi convertiți în utilizatori SSO** și îi veți putea gestiona direct în setările ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Simplificați gestionarea utilizatorilor prin diferite servicii. Adăugați, editați și eliminați utilizatori din furnizorul de identitate, iar aceste modificări vor fi aplicate automat organizației proprii din ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Preluarea automată SCIM va fi dezactivată până când introduceți noul simbol SCIM în setările furnizorului dvs. de identitate."
@@ -8934,6 +8977,9 @@
       "Share the confirmation code with your administrator": [
         "Partajați codul de confirmare cu administratorul"
       ],
+      "Sign in": [
+        "Conectare"
+      ],
       "Sign in to your organization": [
         "Autentificare în organizație"
       ],
@@ -8969,6 +9015,9 @@
       ],
       "User details:": [
         "Detalii utilizator:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ]
     },
     "sso: auth device state": {
@@ -9627,6 +9676,9 @@
       "Administrator privileges restored": [
         "Privilegiile de administrator s-au restaurat."
       ],
+      "Backup password updated": [
+        "Parola de rezervă a fost actualizată."
+      ],
       "Catch-all address updated": [
         "Adresă de agregare actualizată"
       ],
@@ -9789,6 +9841,9 @@
       ],
       "Preferences updated": [
         "Preferințe actualizate"
+      ],
+      "Resent invitation": [
+        "Invitație retrimisă."
       ]
     },
     "Suffix": {
@@ -9898,6 +9953,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } gratuit"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
@@ -10222,6 +10280,9 @@
       ],
       "Email subscriptions": [
         "Abonamente pe e-mail"
+      ],
+      "Enable for all users": [
+        "Activare pentru toți utilizatorii"
       ],
       "Enter 2FA code": [
         "Introduceți codul de A2F"
@@ -10548,6 +10609,9 @@
       "Verifying your payment...": [
         "Verificare plată..."
       ],
+      "Video conference": [
+        "Conferință video"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Veți primi un mesaj pe e-mail la noua adresă cu instrucțiuni pentru finalizarea modificării."
       ],
@@ -10633,6 +10697,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Permite adăugarea de legături web spre conferințe video la invitațiile din calendar."
       ],
       "An approximate location of the IP address": [
         "Un loc aproximativ al adresei IP."
