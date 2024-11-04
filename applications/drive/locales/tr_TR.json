@@ -1207,8 +1207,15 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifreleme ile e-postalarınızı ve programınızı güvence altına alın. 15 e-posta adresi, özel e-posta alan adları için destek, sınırsız hide-my-email takma adları ve daha fazlasını içerir."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -2415,11 +2422,6 @@
         "Süresi geçmiş fatura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch içe aktarma yardımcısını kullanın"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }, şüpheli etkinlikleri 7/24 izleyerek ve güvenlik uzmanlarına ileterek hesabınızı korur."
@@ -2489,6 +2491,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3362,6 +3369,11 @@
       ],
       "You may also refresh the page or try again later.": [
         "Ayrıca sayfayı yenileyebilir ya da bir süre sonra yeniden deneyebilirsiniz."
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Görüntülenecek ad boş olamaz"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7357,6 +7369,14 @@
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -7369,14 +7389,6 @@
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price } ile Mail Plus edinin"
-      ],
-      "Starting from ${ price }": [
-        "${ price } tutarından başlayan fiyatlarla"
       ]
     },
     "new_plans: tooltip": {
@@ -8556,6 +8568,11 @@
         "Hesabınızın güvenliğini değerlendirin"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Oturum açılamadı."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Tüm takma adlar"
@@ -9039,6 +9056,17 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sign in to your organization": [
+        "Kuruluşunuzda oturum açın"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
     "State": {

@@ -202,6 +202,9 @@
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
+      "Copy invite link": [
+        "Meghívó link másolása"
+      ],
       "Copy link": [
         "Hivatkozás másolása"
       ],
@@ -216,6 +219,9 @@
       ],
       "Create and copy alias": [
         "E-mail álnév létrehozása és másolása"
+      ],
+      "Create free account": [
+        "Ingyenes fiók létrehozása"
       ],
       "Create link": [
         "Hivatkozás létrehozása"
@@ -342,6 +348,9 @@
       "Expand folder": [
         "Mappa kinyitása"
       ],
+      "Explore on my own": [
+        "Felfedezés egyedül"
+      ],
       "Export": [
         "Exportálás"
       ],
@@ -377,6 +386,9 @@
       ],
       "Get verification code": [
         "Ellenőrző kód küldése"
+      ],
+      "Go back": [
+        "Vissza"
       ],
       "Go to ${ DRIVE_SHORT_APP_NAME }": [
         "Nyissa meg a ${ DRIVE_SHORT_APP_NAME }"
@@ -477,11 +489,17 @@
       "Manage link": [
         "Hivatkozás kezelése"
       ],
+      "Manage share": [
+        "Megosztás kezelése"
+      ],
       "Mark as resolved": [
         "Megjelölés megoldottként"
       ],
       "Mark for deletion": [
         "Törlésre jelöl"
+      ],
+      "Maximize": [
+        "Teljes méretű"
       ],
       "Maximize transfers": [
         "Le- és feltöltések megnyitása"
@@ -491,6 +509,9 @@
       ],
       "Merge contacts": [
         "Névjegyek egyesítése"
+      ],
+      "Minimize": [
+        "Kis méret"
       ],
       "Minimize transfers": [
         "Le- és feltöltések összecsukása"
@@ -795,6 +816,9 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
+      "Understood": [
+        "Értem"
+      ],
       "Undo": [
         "Visszavonás"
       ],
@@ -824,6 +848,9 @@
       ],
       "Upload file": [
         "Fájl feltöltése"
+      ],
+      "Upload files": [
+        "Fájlok feltöltése"
       ],
       "Upload folder": [
         "Mappa feltöltése"
@@ -873,6 +900,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
+      "Your 3 GB bonus": [
+        "A 3 GB bónusza"
       ],
       "Zoom in": [
         "Közelítés"
@@ -954,6 +984,11 @@
         "Nem támogatott esemény"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Meghívva"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 felhasználó"
@@ -990,6 +1025,146 @@
     "BF2024: Action (top button in header)": {
       "Black Friday": [
         "Black Friday"
+      ]
+    },
+    "BF2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } asztali alkalmazás"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus és ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } tárhely"
+      ],
+      "1 TB total": [
+        "1 TB összesen"
+      ],
+      "1 user": [
+        "1 felhasználó"
+      ],
+      "1 user account": [
+        "1 felhasználói fiók"
+      ],
+      "10 email addresses": [
+        "10 e-mail cím"
+      ],
+      "2 users": [
+        "2 felhasználó"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 user accounts": [
+        "6 felhasználói fiók"
+      ],
+      "6 users": [
+        "6 felhasználó"
+      ],
+      "8500+ servers across 110+ countries": [
+        "8500+ szerver több mint 110 országban"
+      ],
+      "Ad-blocker and malware protection": [
+        "Hirdetésblokkoló és rosszindulatú programok elleni védelem"
+      ],
+      "Admin panel to manage your family": [
+        "Admin panel a család kezelése érdekében"
+      ],
+      "Advanced account protection": [
+        "Fejlett fiókvédelmi program"
+      ],
+      "Dark Web Monitoring": [
+        "Dark Web Figyelés"
+      ],
+      "Easily add or remove users": [
+        "Felhasználók egyszerű hozzáadása vagy eltávolítása"
+      ],
+      "High speed streaming": [
+        "Nagy sebességű videózás"
+      ],
+      "Integrated 2FA authenticator": [
+        "Beépített kétlépcsős hitelesítés"
+      ],
+      "Online document editor": [
+        "Online dokumentum szerkesztő"
+      ],
+      "Password health alerts": [
+        "Jelszó egészségügyi figyelmeztetések"
+      ],
+      "Private photo backup": [
+        "Privát fotók biztonsági mentése"
+      ],
+      "Protect 10 devices at a time": [
+        "Védje meg egyszerre 10 eszközét"
+      ],
+      "Secure file storage & sharing": [
+        "Biztonságos fájl tárolás és megosztás"
+      ],
+      "Secure vault and link sharing": [
+        "Biztonságos tároló- és hivatkozásmegosztás"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Korlátlan számú mappa, címke és szűrő"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Korlátlan számú hide-my-email álnév"
+      ],
+      "Unlimited logins, notes, credit cards": [
+        "Korlátlan számú bejelentkezés, jegyzet, bankkártya"
+      ],
+      "Use your own email domain": [
+        "Használja a saját e-mail domain nevét"
+      ],
+      "Version history": [
+        "Verziótörténet"
+      ]
+    },
+    "BF2024: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "A kedvezmények a standard havi árazás alapján kerülnek kiszámításra."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Az előfizetése automatikusan megújul a kedvezményes előfizetési áron és időtartamon a számlázási ciklus végén."
+      ]
+    },
+    "BF2024: Info": {
+      "Most popular": [
+        "Legnépszerűbb"
+      ]
+    },
+    "BF2024: Offers": {
+      "for ${ durationDeal }": [
+        "${ durationDeal } áron"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Megújul 1 hónap elteltével a ${ regularAmount } áron."
+      ]
+    },
+    "BF2024: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Hozzáférjen videós szolgáltatásokhoz, mint Netflix, Disney+, Prime Video és továbbiak, akárhonnan."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Biztonságos bejelentkezések az összes eszközén. Korlátlan számú hide-my-email álnév, megosztás, beépített 2FA, Dark Web Figyelés és további lehetőségek."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket.",
+        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz 15 e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnév és további lehetőségeket."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. 15 e-mail címet, egyéni e-mail domain név támogatását, korlátlan számú hide-my-email e-mail álnév és további lehetőségeket tartalmaz."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Tartsa biztonságban fájljait titkosított felhőtárhelyen. Online dokumentum szerkesztő, fotók biztonsági mentése, verziótörténet, titkosított fájlmegosztás és további lehetőségek."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "A különleges kialakítású NetShield megvédi eszközeit és felgyorsítja a böngészést azáltal, hogy blokkolja a hirdetéseket, követőket és rosszindulatú szoftvereket."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } services.": [
+        "A tárhelye meg van osztva minden ${ BRAND_NAME } alkalmazás között."
       ]
     },
     "Billing cycle": {
@@ -2125,11 +2300,6 @@
         "Lejárt számla"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "használja az Easy Switch importálási asszisztenst"
-      ]
-    },
     "Description": {
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Névjegyek visszafejtése… Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
@@ -2160,6 +2330,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "használja az Easy Switch importálási asszisztenst"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2202,6 +2377,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Segítsen fejlődni"
+      ]
+    },
+    "drive:action": {
+      "Save for later": [
+        "Mentés későbbre"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3605,6 +3785,14 @@
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } titkosított fájl",
+        "${ nbFile } titkosított fájl"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } titkosított fájl...",
+        "${ nbFile } titkosított fájl..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } felfüggesztve",
         "${ pausedCount } felfüggesztve"
@@ -3639,6 +3827,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } címke kiválasztva",
         "${ selectedFoldersCountLocalized } címke kiválasztva"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } kihagyva",
+        "${ skippedCount } kihagyva"
       ],
       "${ speed }/s": [
         "${ speed }/mp"
@@ -3705,6 +3897,9 @@
         "Mind (${ totalFoldersCount } címke)",
         "Mind (${ totalFoldersCount } címke)"
       ],
+      "All encrypted files": [
+        "Minden titkosított fájl"
+      ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
       ],
@@ -3759,6 +3954,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Biztos, hogy véglegesen törli a kijelölt elemeket a lomtárból?"
+      ],
+      "Are you sure you want to proceed?": [
+        "Biztosan folytatja?"
       ],
       "Attention required": [
         "Figyelem szükséges"
@@ -3958,6 +4156,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "A letöltés szünetel kapcsolódási probléma miatt; folytatódni fog automatikusan"
       ],
+      "Download was canceled": [
+        "A letöltés leállítva"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
       ],
@@ -3966,6 +4167,9 @@
       ],
       "Downloading": [
         "Letöltés"
+      ],
+      "Downloading all encrypted files": [
+        "Minden titkosított fájl letöltése"
       ],
       "Drop file here to upload": [
         "Húzza ide a fájlokat a feltöltéshez"
@@ -4178,6 +4382,9 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "Invite link copied": [
+        "Meghívó link másolva"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Úgy tűnik, hogy nemrég megpróbálta feltölteni ezt a fájlt: ${ uploadName }. Ha feltöltés nem sikerült, ${ replaceFile }. Ha a feltöltés még folyamatban van, lecserélése törölni fogja a folyamatban lévő feltöltést."
@@ -4466,6 +4673,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privát keresés engedélyezve. Bezárhatja ezt a párbeszédet és kereshet fájlokat és mappákat."
       ],
+      "Public link": [
+        "Nyilvános hivatkozás"
+      ],
       "Public sharing of documents is not yet supported.": [
         "A dokumentum nyilvános megosztása még nem támogatott."
       ],
@@ -4487,6 +4697,9 @@
       "Report has been sent": [
         "A jelentés el lett küldve"
       ],
+      "Report link": [
+        "Hivatkozás jelentése"
+      ],
       "Request access, or switch to an account with access.": [
         "Kérjen hozzáférést vagy váltson egy hozzáféréssel rendelkező fiókra."
       ],
@@ -4502,6 +4715,9 @@
       "Restored files ${ formattedDate }": [
         "Helyreálíltott fájlok ${ formattedDate }"
       ],
+      "Retry now": [
+        "Újra"
+      ],
       "Saving...": [
         "Mentés..."
       ],
@@ -4510,6 +4726,13 @@
       ],
       "Search Enabled": [
         "Keresés engedélyezve"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } fájl biztonságosan letöltve",
+        "${ nbFile } fájl biztonságosan letöltve"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Minden titkosított biztonságosan letöltve"
       ],
       "Select a service provider to start": [
         "Válaszon ki egy szolgáltatót a kezdéshez"
@@ -4564,6 +4787,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Mivel ön a hűséges felhasználónk, fiókja extra funkciókat tartalmaz."
+      ],
+      "Skipped": [
+        "Kihagyva"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Néhány fájl letöltése nem sikerült. Próbálja meg újra."
@@ -4625,6 +4851,9 @@
       "There is nothing to see here": [
         "Nincs itt semmi látnivaló"
       ],
+      "This action will delete the link and revoke access for all users.": [
+        "Ez a cselekmény törölni fog minden hivatkozást és visszavonja minden felhasználó jogosultságait."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ez a cím le van tiltva. Ahhoz, hogy küldhessen erre a címre, a tulajdonosnak engedélyeznie kell."
       ],
@@ -4636,6 +4865,12 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "A fájlt törölték, áthelyezték vagy elérhetetlenné vált. Lépjen kapcsolatba a fájl tulajdonosával."
+      ],
+      "This folder is empty": [
+        "Ez a mappa üres"
+      ],
+      "This item already exists in your library": [
+        "Ez az elem már létezik a könyvtárban"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
@@ -4742,6 +4977,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sajnos úgy tűnik, hogy a fájl vagy egyes adatai nem fejthetők vissza."
+      ],
+      "Unknown date": [
+        "Ismeretlen dátum"
       ],
       "Unknown error": [
         "Ismeretlen hiba"
@@ -4912,6 +5150,10 @@
       ],
       "You cannot undo this action.": [
         "Ez a művelet nem vonható vissza."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Már csak ${ expiresInDays } napja maradt, hogy igénybe vegye az 3 GB-os üdvözlése bónuszát és ",
+        "Már csak ${ expiresInDays } napja maradt, hogy igénybe vegye az 3 GB-os üdvözlése bónuszát és "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Önnek próbaverziós ${ planTitle } előfizetése van. Ha szeretné megtartani az előfizetését a próbaidő után is, akkor kérjük adjon hozzá egy fizetési módot."
@@ -5126,6 +5368,12 @@
       "Address": [
         "Cím"
       ],
+      "Anyone on the Internet with the link can view": [
+        "Bárki az Interneten ezzel a hivatkozással megtudja nézni"
+      ],
+      "Anyone with the link": [
+        "Bárki ezzel a hivatkozással"
+      ],
       "App password": [
         "Jelszó hozzáadása"
       ],
@@ -5265,6 +5513,9 @@
       "Download anyway": [
         "Letöltés mindenképpen"
       ],
+      "Downloading ${ percentageValue }": [
+        "${ percentageValue } letöltése"
+      ],
       "Duplicate found": [
         "Duplikált elem található"
       ],
@@ -5361,6 +5612,9 @@
       "Import to:": [
         "Importálás ide:"
       ],
+      "Include message and file name in invite email": [
+        "Üzenet és fájl név beleírása a meghívó e-mailbe"
+      ],
       "Keep both": [
         "Mindkettő megtartása"
       ],
@@ -5387,6 +5641,9 @@
       ],
       "Location": [
         "Hely"
+      ],
+      "Log in or sign up ": [
+        "Bejelentkezés vagy regisztráció "
       ],
       "Mail Server (IMAP)": [
         "E-mail szerver (IMAP)"
@@ -5487,6 +5744,12 @@
       "Public keys": [
         "Nyilvános kulcsok"
       ],
+      "Public link expiration date": [
+        "Nyilvános hivatkozás lejárati dátum"
+      ],
+      "Public link password": [
+        "Nyilvános hivatkozás jelszó"
+      ],
       "Region": [
         "Régió"
       ],
@@ -5508,11 +5771,20 @@
       "Set expiration date": [
         "Lejárati dátum beállítása"
       ],
+      "Set link password": [
+        "Hivatkozás jelszavának beállítása"
+      ],
       "Set recovery method": [
         "Helyreállítási módszer beállítása"
       ],
       "Share a file": [
         "Fájl megosztása"
+      ],
+      "Shared by": [
+        "Megosztotta:"
+      ],
+      "Shared on": [
+        "Megosztás dátuma"
       ],
       "Show indexing progress of Encrypted Search": [
         "A Titkosított Kereső indexelési folyamatának megtekintése"
@@ -5555,6 +5827,9 @@
       ],
       "Theme": [
         "Téma"
+      ],
+      "This file is potentially infected": [
+        "Ez a fájl lehet vírust tartalmaz."
       ],
       "This will permanently delete all files in your locked drive.": [
         "Ez véglegesen törli a zárolt tárhelyen található összes fájlját."
@@ -5815,14 +6090,56 @@
       ]
     },
     "Mimetype": {
+      "7-zip archive": [
+        "7-zip archive"
+      ],
+      "AbiWord document": [
+        "AbiWord dokumentum"
+      ],
+      "Archive document": [
+        "Dokumentum archiválása"
+      ],
       "Audio file": [
         "Hangfájl"
+      ],
+      "Bourne shell script": [
+        "Bourne shell parancsfájl"
+      ],
+      "BZip archive": [
+        "BZip archive"
+      ],
+      "BZip2 archive": [
+        "BZip2 archive"
+      ],
+      "C-Shell script": [
+        "C-Shell parancsfájl"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Cascading Style Sheets (CSS)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Hypertext Preprocessor (Személyes Kezdő Oldal)"
       ],
       "iCalendar format": [
         "iCalendar formátum"
       ],
+      "Icon format": [
+        "Ikon formátum"
+      ],
       "Image": [
         "Kép"
+      ],
+      "Java Archive (JAR)": [
+        "Java Archive (JAR)"
+      ],
+      "JPEG image": [
+        "JPEG kép"
+      ],
+      "RAR archive": [
+        "RAR archive"
+      ],
+      "Tape Archive (TAR)": [
+        "Tape Archive (TAR)"
       ],
       "Text": [
         "Szöveg"
@@ -5832,6 +6149,12 @@
       ],
       "Video file": [
         "Videofájl"
+      ],
+      "WEBM video": [
+        "WEBM videó"
+      ],
+      "ZIP archive": [
+        "ZIP archive"
       ]
     },
     "Modal title": {
@@ -6669,8 +6992,14 @@
       "${ reason } has been enabled": [
         "${ reason } engedélyezésre került"
       ],
+      "Access updated": [
+        "Hozzáférés frissítve"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
+      ],
+      "An invitation has been sent": [
+        "Egy meghívás el küldve"
       ],
       "Cannot load link": [
         "A hivatkozást betöltése nem sikerült"
@@ -6705,6 +7034,12 @@
       "Failed to move, please try again": [
         "Nem sikerült áthelyezni, próbálja meg újra"
       ],
+      "Failed to open document": [
+        "A dokumentum megnyitása sikertelen"
+      ],
+      "Failed to remove the file": [
+        "A fájl eltávolítása sikertelen"
+      ],
       "Failed to upload files: ${ err }": [
         "Fájlok feltöltése nem sikerült: ${ err }"
       ],
@@ -6718,12 +7053,19 @@
       "File or folder is missing a name": [
         "A fájl vagy mappa neve hiányzik"
       ],
+      "File removed": [
+        "Fájl törölve"
+      ],
       "Link copied to clipboard": [
         "Hivatkozás a vágólapra másolva"
       ],
       "Move ${ n } file": [
         "${ n } fájl áthelyezése",
         "${ n } fájl áthelyezése"
+      ],
+      "Move ${ n } folder": [
+        "${ n } mappa áthelyezése",
+        "${ n } mappa áthelyezése"
       ],
       "Move ${ n } item": [
         "${ n } elem áthelyezése",
@@ -6784,19 +7126,82 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Tovább"
+      ],
+      "Install and continue": [
+        "Telepítés és következő"
+      ],
+      "Install later": [
+        "Telepítés később"
+      ],
+      "Invite members": [
+        "Tagok meghívása"
+      ],
+      "Maybe later": [
+        "Talán később"
+      ],
       "Next": [
         "Következő"
       ],
+      "Select theme": [
+        "Téma kiválasztása"
+      ],
+      "Skip": [
+        "Kihagyás"
+      ],
+      "Skip for now": [
+        "Egyelőre kihagyom"
+      ],
       "Start using ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } használatának megkezdése"
+      ],
+      "Try the app": [
+        "Alkalmazás kipróbálása"
+      ],
+      "Upload file": [
+        "Fájl feltöltése"
+      ],
+      "Upload folder": [
+        "Mappa feltöltése"
       ]
     },
     "Onboarding Info": {
+      "Final approval in progress": [
+        "Utolsó jóváhagyás folyamatban"
+      ],
+      "Final approval pending": [
+        "Utolsó jóváhagyás függőben"
+      ],
+      "Get the desktop app": [
+        "Töltse le az asztali alkalmazást"
+      ],
+      "Get the mobile app": [
+        "Mobilalkalmazás beszerzése"
+      ],
+      "Hang tight": [
+        "Tartson ki!"
+      ],
+      "Invitation accepted": [
+        "Meghívás elfogadva."
+      ],
+      "Invitation received": [
+        "Meghívás érkezett"
+      ],
+      "Invite team members": [
+        "Csapattagok meghívása"
+      ],
+      "Manage access": [
+        "Hozzáférés kezelése"
+      ],
       "Set a recovery method": [
         "Helyreállítási módszer beállítása"
       ],
       "Share a file": [
         "Fájl megosztása"
+      ],
+      "Share files & folders": [
+        "Fájlok és mappák megosztása"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Teljesítse az alábbit a következő ${ expiresInDays } napon belül:",
@@ -6804,6 +7209,15 @@
       ],
       "Upload a file": [
         "Fájl feltöltése"
+      ],
+      "Upload your first file": [
+        "Töltse fel az első fájlt"
+      ],
+      "Work faster, smarter": [
+        "Dolgozzon gyorsabban, okosabban"
+      ],
+      "Work together": [
+        "Együttműködés"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "A megbízható széfje a fontos dokumentumai és értékes emlékei számára."
@@ -6827,6 +7241,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Utolsó jóváhagyás folyamatban"
+      ],
+      "Hang tight!": [
+        "Tartson ki!"
+      ],
+      "Invite team members": [
+        "Csapattagok meghívása"
+      ],
       "Your welcome bonus": [
         "Indulási bónusz"
       ]
@@ -6912,6 +7335,9 @@
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "Az előfizetés automatikus megújulása jelenleg szünetel. Ha most módosítja az előfizetést, az automatikus megújulás ismét életbe lép."
       ],
+      "CVC": [
+        "Biztonsági kód"
+      ],
       "Got it": [
         "Rendben"
       ],
@@ -6967,8 +7393,14 @@
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség"
       ],
+      "Choose password": [
+        "Jelszó választása"
+      ],
       "E.g., ": [
         "Pl., "
+      ],
+      "Email": [
+        "E-mail"
       ],
       "Enter a new file name": [
         "Adjon meg egy új fájlnevet"
@@ -7029,6 +7461,9 @@
       ],
       "Select a reason": [
         "Válasszon egy indokot"
+      ],
+      "Set date": [
+        "Dátum beállítása"
       ],
       "Start typing an email address": [
         "Kezdjen el írni egy e-mail címet"
@@ -7589,6 +8024,9 @@
       ]
     },
     "Status": {
+      "Accepted": [
+        "Elfogadva"
+      ],
       "Pending": [
         "Függőben"
       ]
@@ -7913,6 +8351,10 @@
         "${ countMergeableContacts } névjegy azonosnak tűnik.",
         "${ countMergeableContacts } névjegy azonosnak tűnik."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } maradt",
+        "${ countOfUnrecoveredLinksLeft } maradt"
+      ],
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
       ],
@@ -8220,6 +8662,9 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } kedvezmények lemondásának megerősítése"
       ],
+      "Confirmation required?": [
+        "Megerősítés szükséges?"
+      ],
       "Contact Details": [
         "Névjegy részletei"
       ],
@@ -8416,6 +8861,9 @@
       "Item details": [
         "Elem adatai"
       ],
+      "Last edited by": [
+        "Utoljára szerkesztette:"
+      ],
       "Link confirmation": [
         "Hivatkozás jóváhagyása"
       ],
@@ -8575,6 +9023,9 @@
       "Settings": [
         "Beállítások"
       ],
+      "Share ${ name }": [
+        "${ name } megosztása"
+      ],
       "Share via link": [
         "Megosztás hivatkozással"
       ],
@@ -8691,6 +9142,9 @@
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Az ön ${ planName } ingyenes próbaidőszaka végett ér: ${ textDate }"
+      ],
+      "Your 3 GB bonus": [
+        "A 3 GB bónusza"
       ],
       "Your account is protected": [
         "A fiókja védve van"
