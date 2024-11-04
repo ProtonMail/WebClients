@@ -10,6 +10,8 @@ import {
     useModalStateObject,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import {
     CALENDAR_INPUT_ID,
@@ -88,6 +90,10 @@ const EventForm = ({
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
+
+    const [mailSettings] = useMailSettings();
+    const eventFormContentRef = useRef<HTMLDivElement>(null);
+    const { modal: linkModal } = useLinkHandler(eventFormContentRef, mailSettings);
 
     const isSingleEdit = !!model.rest?.['recurrence-id'];
 
@@ -340,7 +346,7 @@ const EventForm = ({
     );
 
     return (
-        <div className="mt-2" {...props}>
+        <div className="mt-2" {...props} ref={eventFormContentRef}>
             <RowTitle canEditSharedEventData={canEditSharedEventData} model={model} setModel={setModel} />
             {canEditSharedEventData && dateRow}
             {canEditSharedEventData && !isMinimal && frequencyRow}
@@ -360,6 +366,7 @@ const EventForm = ({
             {canEditSharedEventData && <RowVideoConference model={model} setModel={setModel} />}
             {!isMinimal && showNotifications && notificationsRow}
             <RowDescription canEditSharedEventData={canEditSharedEventData} model={model} setModel={setModel} />
+            {linkModal}
         </div>
     );
 };
