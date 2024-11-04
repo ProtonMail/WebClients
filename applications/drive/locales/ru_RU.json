@@ -1221,6 +1221,9 @@
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адреса электронной почты, помощник по написанию ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и не только."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Защитите свои электронные письма и расписание сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адресов электронной почты, неограниченное количество псевдонимов hide-my-email и многое другое."
+      ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает онлайн-редактор документов, резервное копирование фотографий, историю версий, зашифрованный обмен файлами и многое другое."
       ],
@@ -2385,11 +2388,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
@@ -2447,6 +2445,11 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ваш аккаунт и методы восстановления данных настроены."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7475,6 +7478,11 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7487,11 +7495,6 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -9205,6 +9208,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Теперь вы легко можете искать файлы в Хранилище, сохраняя защищенность своих данных."
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Войдите в свою организацию"
       ]
     },
     "State": {

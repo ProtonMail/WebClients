@@ -1122,7 +1122,7 @@
         "3 ТБ"
       ],
       "6 user accounts": [
-        "6 уліковых запісаў карыстальніка"
+        "6 уліковых запісаў карыстальнікаў"
       ],
       "6 users": [
         "6 карыстальнікаў"
@@ -1222,11 +1222,20 @@
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае 15 адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае воблачны рэдактар дакументаў, рэзерваванне фатаграфій, гісторыю версій, абагульванне зашыфраваных файлаў і іншыя функцыі."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак пры дапамозе блакіравання рэкламы, праграм сачэння і шкодных праграм."
@@ -2436,11 +2445,6 @@
         "Пратэрмінаваны рахунак"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "скарыстайцеся памочнікам імпартавання Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } абараняе ваш уліковы запіс з дапамогай адмысловага кругласутачнага назірання падазроных дзеянняў. Гэты сэрвіс таксама прадугледжвае перадачу спецыялістам па бяспецы."
@@ -2510,6 +2514,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7648,6 +7657,14 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -7660,14 +7677,6 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Атрымайце Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -8903,6 +8912,11 @@
         "Агляд бяспекі вашага ўліковага запісу"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Рэгістрацыя завяршылася з памылкай."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Усе псеўданімы"
@@ -9420,6 +9434,17 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Зараз вы можаце лёгка шукаць файлы ў Drive, захоўваючы бяспеку даных."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Уваход"
+      ],
+      "Sign in to your organization": [
+        "Увайсці ў сваю арганізацыю"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO"
       ]
     },
     "State": {

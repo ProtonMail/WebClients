@@ -1197,8 +1197,14 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, asisten penulisan ${ BRAND_NAME } Scribe, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi penyunting dokumen online, pencadangan foto, riwayat versi, pembagian berkas yang terenkripsi, dan masih banyak lagi."
@@ -2402,11 +2408,6 @@
         "Faktur yang tertunggak"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2476,6 +2477,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3340,6 +3346,11 @@
       ],
       "You may also refresh the page or try again later.": [
         "Muat ulang halaman ini atau coba lagi nanti."
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Nama tampilan tidak boleh kosong"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7294,6 +7305,14 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -7306,14 +7325,6 @@
       ],
       "Switch plans?": [
         "Ganti paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -8465,6 +8476,11 @@
         "Tinjau keamanan akun Anda"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil dirampungkan."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Semua alias"
@@ -8931,6 +8947,17 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Kini Anda dapat mencari berkas Drive dengan mudah seraya menjaga data Anda tetap aman."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Masuk"
+      ],
+      "Sign in to your organization": [
+        "Masuk ke organisasi Anda"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     },
     "State": {

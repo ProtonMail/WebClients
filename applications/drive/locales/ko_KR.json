@@ -1197,8 +1197,14 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "온라인 문서 편집기, 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -2402,11 +2408,6 @@
         "기한이 지난 청구서"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2476,6 +2477,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7242,6 +7248,14 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -7254,14 +7268,6 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
       ]
     },
     "new_plans: tooltip": {
@@ -8413,6 +8419,11 @@
         "내 계정 보안 검토하기"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "로그인이 성공적으로 완료되지 못했습니다."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "모든 별칭"
@@ -8879,6 +8890,17 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "이제 데이터를 안전하게 지키면서 쉽게 드라이브 파일을 검색할 수 있습니다."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "로그인"
+      ],
+      "Sign in to your organization": [
+        "조직에 로그인"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ]
     },
     "State": {
