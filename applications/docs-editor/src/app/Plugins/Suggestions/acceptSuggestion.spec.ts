@@ -1,11 +1,13 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import { $createSuggestionNode } from './ProtonNode'
-import type { ParagraphNode, ElementNode } from 'lexical'
+import type { ParagraphNode, ElementNode, TextNode } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot, $isParagraphNode, $isTextNode } from 'lexical'
 import { $acceptSuggestion } from './acceptSuggestion'
+import type { HeadingNode } from '@lexical/rich-text'
 import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
-import { $createListItemNode, $createListNode } from '@lexical/list'
+import type { ListItemNode, ListNode } from '@lexical/list'
+import { $createListItemNode, $createListNode, $isListItemNode, $isListNode } from '@lexical/list'
 import type { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { $createTableNodeWithDimensions } from '@lexical/table'
 
@@ -25,6 +27,12 @@ describe('$acceptSuggestion', () => {
       },
     )
   })
+
+  function testEditorState(name: string, fn: () => void) {
+    test(name, () => {
+      editor.read(fn)
+    })
+  }
 
   it('should unwrap "insert", "property-change", "style-change" suggestion nodes', () => {
     const suggestionID = Math.random().toString()
@@ -97,52 +105,187 @@ describe('$acceptSuggestion', () => {
     })
   })
 
-  it('should remove "join" suggestion nodes, and merge children from the next block element into the current one', () => {
+  describe('join', () => {
     const suggestionID = Math.random().toString()
 
-    editor.update(
-      () => {
-        const paragraph = $createParagraphNode().append(
-          $createTextNode('Paragraph 1'),
-          $createSuggestionNode(suggestionID, 'join'),
+    describe('Paragraph and paragraph', () => {
+      beforeEach(() => {
+        editor.update(
+          () => {
+            const paragraph = $createParagraphNode().append(
+              $createTextNode('1'),
+              $createSuggestionNode(suggestionID, 'join'),
+            )
+            const paragraph2 = $createParagraphNode().append($createTextNode('2'))
+            $getRoot().append(paragraph, paragraph2)
+            $acceptSuggestion(suggestionID)
+          },
+          { discrete: true },
         )
-        const paragraph2 = $createParagraphNode().append($createTextNode('Paragraph 2'))
+      })
 
-        const heading = $createHeadingNode('h1').append(
-          $createTextNode('Heading'),
-          $createSuggestionNode(suggestionID, 'join'),
+      testEditorState('root should have 1 child which is a paragraph', () => {
+        const root = $getRoot()
+        expect(root.getChildrenSize()).toBe(1)
+        expect($isParagraphNode(root.getFirstChild())).toBe(true)
+      })
+
+      testEditorState('paragraph should have 1 text node', () => {
+        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+        expect(paragraph.getChildrenSize()).toBe(1)
+        expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+      })
+
+      testEditorState('text node should have merged content', () => {
+        const text = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChildOrThrow<TextNode>()
+        expect(text.getTextContent()).toBe('12')
+      })
+    })
+
+    describe('Heading and paragraph', () => {
+      beforeEach(() => {
+        editor.update(
+          () => {
+            const heading = $createHeadingNode('h1').append(
+              $createTextNode('1'),
+              $createSuggestionNode(suggestionID, 'join'),
+            )
+            const paragraph3 = $createParagraphNode().append($createTextNode('2'))
+            $getRoot().append(heading, paragraph3)
+            $acceptSuggestion(suggestionID)
+          },
+          { discrete: true },
         )
-        const paragraph3 = $createParagraphNode().append($createTextNode('Paragraph 3'))
+      })
 
-        const paragraph4 = $createParagraphNode().append(
-          $createTextNode('Paragraph 4'),
-          $createSuggestionNode(suggestionID, 'join'),
+      testEditorState('root should have 1 child which is a heading', () => {
+        const root = $getRoot()
+        expect(root.getChildrenSize()).toBe(1)
+        expect($isHeadingNode(root.getFirstChild())).toBe(true)
+      })
+
+      testEditorState('heading should have 1 text node', () => {
+        const heading = $getRoot().getFirstChildOrThrow<HeadingNode>()
+        expect(heading.getChildrenSize()).toBe(1)
+        expect($isTextNode(heading.getFirstChild())).toBe(true)
+      })
+
+      testEditorState('text node should have merged content', () => {
+        const text = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChildOrThrow<TextNode>()
+        expect(text.getTextContent()).toBe('12')
+      })
+    })
+
+    describe('Paragraph and list item', () => {
+      beforeEach(() => {
+        editor.update(
+          () => {
+            const paragraph4 = $createParagraphNode().append(
+              $createTextNode('1'),
+              $createSuggestionNode(suggestionID, 'join'),
+            )
+            const listNode = $createListNode('bullet').append(
+              $createListItemNode().append($createTextNode('2')),
+              $createListItemNode().append($createTextNode('3')),
+            )
+            $getRoot().append(paragraph4, listNode)
+            $acceptSuggestion(suggestionID)
+          },
+          { discrete: true },
         )
-        const listNode = $createListNode('bullet').append(
-          $createListItemNode().append($createTextNode('ListItem1')),
-          $createListItemNode().append($createTextNode('ListItem2')),
+      })
+
+      testEditorState('root should have 2 children, paragraph and list', () => {
+        const root = $getRoot()
+        expect(root.getChildrenSize()).toBe(2)
+        const first = root.getChildAtIndex(0)
+        const second = root.getChildAtIndex(1)
+        expect($isParagraphNode(first)).toBe(true)
+        expect($isListNode(second)).toBe(true)
+      })
+
+      testEditorState('paragraph should have 1 text node', () => {
+        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+        expect(paragraph.getChildrenSize()).toBe(1)
+        expect($isTextNode(paragraph.getFirstChild())).toBe(true)
+      })
+
+      testEditorState('text node should have merged content', () => {
+        const text = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChildOrThrow<TextNode>()
+        expect(text.getTextContent()).toBe('12')
+      })
+    })
+
+    describe('Nested list item and paragraph', () => {
+      beforeEach(() => {
+        editor.update(
+          () => {
+            const listNode2 = $createListNode('bullet').append($createListItemNode().append($createTextNode('1')))
+            const nestedListItem = $createListItemNode().append(
+              $createTextNode('2'),
+              $createSuggestionNode(suggestionID, 'join'),
+            )
+            listNode2.append(nestedListItem)
+            const paragraph5 = $createParagraphNode().append($createTextNode('3'))
+            $getRoot().append(listNode2, paragraph5)
+            nestedListItem.setIndent(2)
+            $acceptSuggestion(suggestionID)
+          },
+          { discrete: true },
         )
+      })
 
-        $getRoot().append(paragraph, paragraph2, heading, paragraph3, paragraph4, listNode)
+      testEditorState('root should have 1 child which is a list', () => {
+        const root = $getRoot()
+        expect(root.getChildrenSize()).toBe(1)
+        expect($isListNode(root.getFirstChild())).toBe(true)
+      })
 
-        $acceptSuggestion(suggestionID)
-      },
-      {
-        discrete: true,
-      },
-    )
+      testEditorState('list should have 2 list items', () => {
+        const list = $getRoot().getFirstChildOrThrow<ListNode>()
+        expect(list.getChildrenSize()).toBe(2)
+        for (const item of list.getChildren()) {
+          expect($isListItemNode(item)).toBe(true)
+        }
+      })
 
-    editor.read(() => {
-      const root = $getRoot()
+      testEditorState('first list item should be non-nested', () => {
+        const list = $getRoot().getFirstChildOrThrow<ListNode>()
+        const first = list.getFirstChildOrThrow<ListItemNode>()
+        expect(first.getIndent()).toBe(0)
+        expect($isTextNode(first.getFirstChild())).toBe(true)
+      })
 
-      const paragraph = root.getChildAtIndex(0)
-      expect(paragraph?.getTextContent()).toBe('Paragraph 1Paragraph 2')
+      testEditorState('second list item should be nested by 2 levels', () => {
+        const list = $getRoot().getFirstChildOrThrow<ListNode>()
+        const second = list.getChildAtIndex<ListItemNode>(1)!
+        const firstNestedList = second.getFirstChildOrThrow<ListNode>()
+        expect($isListNode(firstNestedList)).toBe(true)
+        const firstNestedListItem = firstNestedList.getFirstChildOrThrow<ListItemNode>()
+        expect($isListItemNode(firstNestedListItem)).toBe(true)
+        const secondNestedList = firstNestedListItem.getFirstChildOrThrow<ListNode>()
+        expect($isListNode(secondNestedList)).toBe(true)
+        const secondNestedListItem = secondNestedList.getFirstChildOrThrow<ListItemNode>()
+        expect($isListItemNode(secondNestedListItem)).toBe(true)
+        expect(secondNestedListItem.getIndent()).toBe(2)
+      })
 
-      const heading = root.getChildAtIndex(1)
-      expect(heading?.getTextContent()).toBe('HeadingParagraph 3')
+      testEditorState('nested list item should have 1 text node', () => {
+        const list = $getRoot().getFirstChildOrThrow<ListNode>()
+        const second = list.getChildAtIndex<ListItemNode>(1)!
+        const descendant = second.getFirstDescendant()!
+        expect($isTextNode(descendant)).toBe(true)
+        const descendantParent = descendant.getParent<ListItemNode>()
+        expect($isListItemNode(descendantParent)).toBe(true)
+        expect(descendantParent?.getChildrenSize()).toBe(1)
+      })
 
-      const paragraph4 = root.getChildAtIndex(2)
-      expect(paragraph4?.getTextContent()).toBe('Paragraph 4ListItem1')
+      testEditorState('text node should have merged content', () => {
+        const list = $getRoot().getFirstChildOrThrow<ListNode>()
+        const second = list.getChildAtIndex<ListItemNode>(1)!
+        const text = second.getFirstDescendant()!
+        expect(text.getTextContent()).toBe('23')
+      })
     })
   })
 
