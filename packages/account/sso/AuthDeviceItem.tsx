@@ -50,8 +50,8 @@ export const IconItem = ({
         <div className={clsx('flex flex-nowrap items-center gap-4', padding && 'px-4 py-2')}>
             <div className="shrink-0">{icon}</div>
             <div className="flex flex-column">
-                <div className="text-bold">{title}</div>
-                {info && <div className="color-weak">{info}</div>}
+                <div className="text-bold text-break">{title}</div>
+                {info && <div className="color-weak text-break">{info}</div>}
             </div>
         </div>
     );
