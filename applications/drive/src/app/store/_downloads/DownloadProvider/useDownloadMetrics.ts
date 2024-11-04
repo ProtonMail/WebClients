@@ -11,7 +11,7 @@ import {
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
-import { isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
+import { isAbortError, isIgnoredErrorForReporting, sendErrorReport } from '../../../utils/errorHandling';
 import { is4xx, is5xx, isCryptoEnrichedError } from '../../../utils/errorHandling/apiErrors';
 import { getIsPublicContext } from '../../../utils/getIsPublicContext';
 import { UserAvailabilityTypes } from '../../../utils/metrics/types/userSuccessMetricsTypes';
@@ -114,6 +114,9 @@ export const useDownloadMetrics = (
      */
     const observe = (downloads: Download[]) => {
         for (const download of downloads) {
+            if (isAbortError(download.error)) {
+                continue;
+            }
             // shareType is infered from the download rootShareId (each links are LinkDownload type)
             const shareType = getShareIdType(download.links[0]?.shareId);
             const key = getKey(download.id, download.retries || 0);
@@ -131,6 +134,10 @@ export const useDownloadMetrics = (
      * For non-stateful downloads (Preview)
      */
     const report = (shareId: string, state: TransferState.Done | TransferState.Error, error?: Error) => {
+        if (isAbortError(error)) {
+            return;
+        }
+
         const shareType = getShareIdType(shareId);
         logDownloadMetrics(shareType, state, false, error);
     };

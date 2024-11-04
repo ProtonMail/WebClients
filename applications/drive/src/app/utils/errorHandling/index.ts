@@ -20,6 +20,10 @@ export function isIgnoredError(error: any) {
     return !error || IGNORED_ERRORS.includes(error.name);
 }
 
+export function isAbortError(error: any) {
+    return error && (error.name === 'AbortError' || error.name === 'TransferCancel');
+}
+
 /**
  * logErrors logs error to console if its not ignored error.
  */
