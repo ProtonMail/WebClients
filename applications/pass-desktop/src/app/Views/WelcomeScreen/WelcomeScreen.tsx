@@ -84,7 +84,7 @@ export const WelcomeScreen: FC = () => {
     ];
 
     return (
-        <div id="desktop-lobby" className="flex flex-column h-full items-center justify-center py-4">
+        <div id="desktop-lobby" className="flex flex-column h-full items-center justify-center py-4 flex-nowrap">
             <div className="flex items-center justify-center pb-7 w-full pointer-events-none">
                 <img src={protonPassIcon} className="w-custom" style={{ '--w-custom': '1.75rem' }} alt="" />
                 <img
