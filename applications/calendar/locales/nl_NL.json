@@ -722,6 +722,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Upgrade naar ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Upgrade naar Mail Plus"
+      ],
       "Upload picture": [
         "Afbeelding uploaden"
       ],
@@ -1056,10 +1059,10 @@
         "Bescherm 10 apparaten tegelijkertijd"
       ],
       "Secure file storage & sharing": [
-        "Veilige bestandsopslag en delen"
+        "Veilig bestanden opslaan en delen"
       ],
       "Secure vault and link sharing": [
-        "Veilige kluis en het delen van links"
+        "Veilig delen van kluis en links"
       ],
       "Unlimited folders, labels and filters": [
         "Onbeperkt aantal mappen, labels en filters"
@@ -1114,6 +1117,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief online documenteditor, foto back-up, versiegeschiedenis, versleuteld bestanden delen en meer."
@@ -2601,6 +2607,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Kleurcodering maakt het makkelijker om je dag in te delen, de tijd bij te houden en taken te prioriteren."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Maak een Zoom vergadering en voeg aansluitgegevens met één klik toe aan uw evenement."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
       ],
@@ -3086,6 +3095,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Oorspronkelijke herhalingen uit reeks ophalen mislukt"
+      ],
+      "Failed to load oauth modal.": [
+        "Fout bij het laden van oauth modal."
       ],
       "First name is too long": [
         "Voornaam is te lang"
@@ -3611,6 +3623,11 @@
       ],
       "You need an active personal calendar to import events": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Weergavenaam kan niet leeg zijn"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -8003,6 +8020,11 @@
         "Controleer de veiligheid van uw account"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggen is niet gelukt."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Alle aliassen"
@@ -8547,6 +8569,11 @@
       ],
       "You can now collapse the navigation bar.": [
         "U kunt nu de navigatiebalk inklappen."
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Aanmelden bij uw organisatie"
       ]
     },
     "State": {
@@ -9613,6 +9640,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Download de ${ appName[APP_NAME] }-apps"
       ],
+      "Get Zooming faster": [
+        "Sneller Zoomen"
+      ],
       "Gift": [
         "Geschenk"
       ],
@@ -10443,6 +10473,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoomvergadering toevoegen"
+      ],
+      "Adding conferencing details": [
+        "Conferentiedetails worden toegevoegd"
+      ],
+      "Loading Zoom configuration": [
+        "Zoomconfiguratie laden"
       ]
     },
     "Zoom Meeting": {
