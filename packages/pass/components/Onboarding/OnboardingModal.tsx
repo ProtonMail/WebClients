@@ -64,8 +64,8 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
         if (nextIx < 0) return;
         if (nextIx > steps.length - 1) {
             setLoading(true);
-            acknowledge();
             await wait(250);
+            acknowledge();
             return props.onClose?.();
         }
         setStepIx(nextIx);
