@@ -29,6 +29,9 @@
       "Add new table row": [
         "새로운 테이블 행 추가"
       ],
+      "Add suggestion": [
+        "제안 추가"
+      ],
       "Adjust font size": [
         "폰트 크기 조정"
       ],
@@ -109,9 +112,6 @@
       ],
       "Edit link": [
         "링크 편집"
-      ],
-      "Exit Suggestion": [
-        "제안 나가기"
       ],
       "Fit table to page width": [
         "표를 페이지 너비에 맞추기"
@@ -214,9 +214,6 @@
       ],
       "Submit": [
         "제출"
-      ],
-      "Suggestion Mode": [
-        "제안 모드"
       ],
       "Table options": [
         "테이블 옵션"
@@ -410,8 +407,11 @@
       "Edit document directly": [
         "즉시 문서 편집"
       ],
+      "Edits become suggestions": [
+        "편집이 수정 사안으로 변경됩니다."
+      ],
       "Read or print final document": [
-        "최종 문서 읽거나 프린트"
+        "최종 문서를 읽거나 프린트"
       ]
     },
     "Error": {
@@ -665,6 +665,11 @@
       ],
       "Language not supported": [
         "이 언어는 지원하지 않습니다"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "코드 블록 내에 제안 추가가 지원되지 않습니다."
       ]
     }
   }

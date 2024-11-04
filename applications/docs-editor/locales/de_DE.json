@@ -29,6 +29,9 @@
       "Add new table row": [
         "Neue Tabellenzeile hinzufügen"
       ],
+      "Add suggestion": [
+        "Vorschlag hinzufügen"
+      ],
       "Adjust font size": [
         "Schriftgröße anpassen"
       ],
@@ -211,9 +214,6 @@
       ],
       "Submit": [
         "Senden"
-      ],
-      "Suggestion Mode": [
-        "Vorschlagsmodus"
       ],
       "Table options": [
         "Tabellenoptionen"
@@ -621,6 +621,11 @@
       ],
       "Language not supported": [
         "Sprache wird nicht unterstützt"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Vorschläge innerhalb von Codeblöcken werden nicht unterstützt"
       ]
     }
   }
