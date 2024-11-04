@@ -14,7 +14,6 @@ type CarouselProps = ComponentPropsWithoutRef<'div'> & {
     textStyle?: CSSProperties;
 };
 
-// bem to dashes
 export const Carousel: FC<CarouselProps> = ({ steps, className, textClassName, textStyle, ...rest }) => {
     const [currentStep, setCurrentStep] = useState(0);
 
@@ -28,9 +27,9 @@ export const Carousel: FC<CarouselProps> = ({ steps, className, textClassName, t
             <img src={steps[currentStep].image} className="pass-carousel--image w-full mb-4" alt="" />
 
             <div className="pass-carousel--stepper mb-6">
-                {steps.map((s, i) => (
+                {steps.map((_, i) => (
                     <Button
-                        key={i}
+                        key={`step-${i}`}
                         shape="ghost"
                         className={clsx(i === currentStep && 'selected')}
                         onClick={() => onStepChange(i - currentStep)}
