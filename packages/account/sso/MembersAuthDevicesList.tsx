@@ -41,8 +41,8 @@ const MembersAuthDevicesList = ({
                             labels={[c('Title').t`User`, c('Title').t`Device`, c('Title').t`Actions`]}
                             cells={[
                                 <>
-                                    <div className="text-bold">{member.Name}</div>
-                                    <div className="color-weak">{memberAddress?.Email || member.Name}</div>
+                                    <div className="text-bold text-break">{member.Name}</div>
+                                    <div className="color-weak text-break">{memberAddress?.Email || member.Name}</div>
                                 </>,
                                 <AuthDeviceItem authDevice={memberAuthDevice} padding={false} />,
                                 <ButtonGroup size="small" individualButtonColor={true}>
