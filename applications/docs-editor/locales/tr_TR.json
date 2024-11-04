@@ -29,6 +29,9 @@
       "Add new table row": [
         "Tabloya satır ekle"
       ],
+      "Add suggestion": [
+        "Öneri ekle"
+      ],
       "Adjust font size": [
         "Yazı boyutunu ayarla"
       ],
@@ -109,9 +112,6 @@
       ],
       "Edit link": [
         "Bağlantıyı düzenle"
-      ],
-      "Exit Suggestion": [
-        "Öneriden çık"
       ],
       "Fit table to page width": [
         "Tabloyu sayfa genişliğine sığdır"
@@ -214,9 +214,6 @@
       ],
       "Submit": [
         "Gönder"
-      ],
-      "Suggestion Mode": [
-        "Öneri kipi"
       ],
       "Table options": [
         "Tablo seçenekleri"
@@ -410,6 +407,9 @@
       "Edit document directly": [
         "Belgeyi doğrudan düzenle"
       ],
+      "Edits become suggestions": [
+        "Düzenlemeler öneriye dönüştürülecek"
+      ],
       "Read or print final document": [
         "Belgenin son biçimini oku ya da yazdır"
       ]
@@ -546,6 +546,9 @@
       "Add link": [
         "Bağlantı ekle"
       ],
+      "Align": [
+        "Hizalama"
+      ],
       "Background colour": [
         "Arka plan rengi"
       ],
@@ -663,6 +666,11 @@
       ],
       "Language not supported": [
         "Dil desteklenmiyor"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Kod blokları içinde öneride bulunulamaz"
       ]
     }
   }

@@ -561,6 +561,9 @@
       "Sign out": [
         "გასვლა"
       ],
+      "Sign up": [
+        "რეგისტრაცია"
+      ],
       "Skip verification": [
         "შემოწმების გამოტოვება"
       ],
@@ -928,11 +931,24 @@
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
         "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ hide-my-email-ის ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს, Dark Web-ის მონიტორინგს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართებს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს დოკუმენტის რედაქტორს ბრაუზერისთვის, ფოტოების მარქაფს, ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -3062,6 +3078,11 @@
         "როცა დამატებითი პაროლი ჩართულია, ფსევდონიმების მართვა, მხოლოდ, ${ PASS_APP_NAME }-ში შეგიძლიათ."
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "საჩვენებელი სახელი ცარიელი ვერ იქნება"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "გამოსახულება არჩეული არაა"
@@ -3698,6 +3719,9 @@
         "${ contactsLength } კონტაქტი",
         "${ contactsLength } კონტაქტი"
       ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME }"
+      ],
       "${ groupCounts } group found": [
         "ნაპოვნია ${ groupCounts } ჯგუფი",
         "ნაპოვნია ${ groupCounts } ჯგუფი"
@@ -3889,6 +3913,9 @@
         "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი",
         "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი"
       ],
+      "Create a copy to edit": [
+        "ასლის შექმნა ჩასასწორებლად"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "შემოტანილი შეტყობინებების ჭდის შექმნა. შემოტანის დროის დიაპაზონი და საქაღალდეები, რომლის შემოტანაც გნებავთ."
       ],
@@ -3955,6 +3982,9 @@
       ],
       "Document moved to trash": [
         "დოკუმენტი გადატანილია ნაგვის ყუთში"
+      ],
+      "Document owner has the password": [
+        "პაროლი დოკუმენტის მფლობელს აქვს"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "ვერაფერს ხედავთ? არ დაგავიწყდეთ, მხტუნარა ფანჯრის დამბლოკველები გამორთოთ."
@@ -6809,14 +6839,8 @@
       "External invitation's email was sent again": [
         "გარე მოსაწვევის ელფოსტა კიდევ გაიგზავნა"
       ],
-      "Failed to accept share invitation": [
-        "ზიარის მოსაწვევზე დათანხმება ჩავარდა"
-      ],
       "Failed to download files: ${ err }": [
         "ფაილების გადმოწერის შეცდომა: ${ err }"
-      ],
-      "Failed to reject share invitation": [
-        "ზიარის მოსაწვეის უარყოფა ჩავარდა"
       ],
       "Failed to upload files: ${ err }": [
         "ფაილების ატვირთვის შეცდომა: ${ err }"
@@ -6839,12 +6863,6 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
-      ],
-      "Share invitation accepted successfully": [
-        "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
-      ],
-      "Share invitation declined": [
-        "გაზიარების მოსაწვევი უარყოფილია"
       ],
       "Stopping the sharing of this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"
@@ -7287,6 +7305,11 @@
     "Safety review": {
       "Review your account safety": [
         "თქვენი ანგარიშის უსაფრთხოების გადახედვა"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "შესვლა წარმატებით არ დასრულდა."
       ]
     },
     "Security Center": {
@@ -7766,6 +7789,20 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "ამ დოკუმენტის ჩასასწორებლად, შექმენით ასლი, რომლის შეცვლაც შეგიძლიათ."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "შესვლა"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ]
     },
     "State": {
@@ -8516,6 +8553,9 @@
       "Link confirmation": [
         "ბმულის დადასტურება"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "ასლის შექმნა თქვენს ${ DRIVE_APP_NAME }-ზე"
+      ],
       "Manage secure link": [
         "დაცული ბმულის მორგება"
       ],
@@ -8674,6 +8714,9 @@
       ],
       "The link expired": [
         "ბმული ვადაგასულია"
+      ],
+      "This document is password protected": [
+        "ეს დოკუმენტი პაროლითაა დაცული"
       ],
       "Unlock contacts groups": [
         "განბლოკეთ კონტაქტის ჯგუფები"

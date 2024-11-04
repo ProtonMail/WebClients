@@ -842,6 +842,9 @@
       ]
     },
     "Error": {
+      "Domain not available, try again later": [
+        "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
+      ],
       "Email is not valid": [
         "유효하지 않은 이메일"
       ],
@@ -1082,6 +1085,22 @@
     "Placeholder": {
       "Password": [
         "비밀번호"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "로그인이 성공적으로 완료되지 못했습니다."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "로그인"
+      ],
+      "Sign in to your organization": [
+        "조직에 로그인"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ]
     },
     "Success": {

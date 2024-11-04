@@ -997,6 +997,9 @@
       "8500+ servers across 110+ countries": [
         "8 500+ servrar i 110+ länder"
       ],
+      "Ad-blocker and malware protection": [
+        "Annonsblockerare och skydd mot skadlig kod"
+      ],
       "Admin panel to manage your family": [
         "Administratörspanel för att hantera din familj"
       ],
@@ -1018,8 +1021,14 @@
       "Online document editor": [
         "Dokumentredigerare online"
       ],
+      "Private photo backup": [
+        "Privat säkerhetskopiering av foto"
+      ],
       "Protect 10 devices at a time": [
         "Skydda 10 enheter åt gången"
+      ],
+      "Secure file storage & sharing": [
+        "Säker fillagring och delning"
       ],
       "Secure vault and link sharing": [
         "Säker delning av valv och länk"
@@ -1056,11 +1065,33 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "Förnyas efter 1 månad till ${ regularAmount }."
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 8 500+ servrar i över 110 länder, 10 enheter, hög hastighet streaming, annonsblockerare och skydd mot skadlig kod, VPN Accelerator och mer."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
+      ],
+      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
+        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade hide-my-email-alias, delning, integrerad 2FA, övervakning av mörka webben och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadress, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer.",
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar ${ addresses } e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, ${ BRAND_NAME } Scribe skrivassistent, obegränsade hide-my-email-alias och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar 15 e-postadresser, stöd för anpassade e-postdomäner, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
+        "Säkra dina filer med krypterad molnlagring. Inkluderar online dokumentredigerare, säkerhetskopiering av foto, versionshistorik, krypterad fildelning och mer."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
@@ -3095,6 +3126,9 @@
     "fido2: Action": {
       "Delete key": [
         "Ta bort nyckel"
+      ],
+      "New security key": [
+        "Ny säkerhetsnyckel"
       ]
     },
     "fido2: Error": {
@@ -3175,6 +3209,9 @@
       ],
       "Security key registered": [
         "Säkerhetsnyckel registrerad"
+      ],
+      "Security keys": [
+        "Säkerhetsnycklar"
       ]
     },
     "file size format": {
@@ -4196,6 +4233,9 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laddar kalender, vänta. Du kommer att omdirigeras till vår schemaläggningsplattform Calendly i en ny flik."
       ],
+      "Loading gateways monitoring current status.": [
+        "Laddar nuvarande övervakningsstatus av gateways."
+      ],
       "Loading preview": [
         "Laddar förhandsgranskning"
       ],
@@ -4729,6 +4769,9 @@
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Två-lösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera dina data. (Avancerat)"
       ],
+      "Unable to check gateways monitoring current status.": [
+        "Kan inte kontrollera nuvarande övervakningsstatus av gateways."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Det finns ingen återställningsmetod sparad för detta konto."
       ],
@@ -4893,6 +4936,9 @@
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att förnyas, men du kan fortfarande dra nytta av paketförmåner fram till slutet av prenumerationsperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "När du tar bort en server från en gateway går den in i en 10-dagars inaktiveringsperiod. Denna server kan läggas till i en ny gateway, men dess land kan inte ändras."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
@@ -5416,6 +5462,9 @@
       ],
       "Email or username": [
         "E-post eller användarnamn"
+      ],
+      "Enable video conferencing ": [
+        "Aktivera videokonferens "
       ],
       "Enter the code displayed on your TV": [
         "Ange koden som visas på din TV"
@@ -7113,6 +7162,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tvåfaktorsautentisering är inte längre obligatoriskt"
+      ],
+      "Video conferencing settings have been updated": [
+        "Inställningarna för videokonferenser har uppdaterats"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8691,6 +8743,9 @@
       "Share the confirmation code with your administrator": [
         "Dela bekräftelsekoden med din administratör"
       ],
+      "Sign in": [
+        "Logga in"
+      ],
       "Sign in to your organization": [
         "Logga in på din organisation"
       ],
@@ -8726,6 +8781,9 @@
       ],
       "User details:": [
         "Användardetaljer:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ]
     },
     "sso: auth device state": {
@@ -9513,6 +9571,9 @@
       ],
       "Preferences updated": [
         "Preferenser uppdaterade"
+      ],
+      "Resent invitation": [
+        "Skickat inbjudan igen"
       ]
     },
     "Suffix": {
@@ -9622,6 +9683,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
@@ -9944,6 +10008,9 @@
       "Email subscriptions": [
         "E-postprenumerationer"
       ],
+      "Enable for all users": [
+        "Aktivera för alla användare"
+      ],
       "Enter 2FA code": [
         "Ange 2FA-kod"
       ],
@@ -9977,6 +10044,9 @@
       ],
       "Gateway": [
         "Gateway"
+      ],
+      "Gateway monitor": [
+        "Övervakning av gateway"
       ],
       "Gateway monitor disabled": [
         "Övervakning av gateway inaktiverat"
@@ -10264,6 +10334,9 @@
       "Verifying your payment...": [
         "Verifierar din betalning..."
       ],
+      "Video conference": [
+        "Videokonferens"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi skickar ett e-postmeddelande till din nya adress med instruktioner om hur du slutför ändringen."
       ],
@@ -10349,6 +10422,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratörer kan hantera användarkonton och ge administratörsrättigheter till andra användare. Endast den primära administratören kan redigera paketet för organisationen."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Gör det möjligt att sömlöst lägga till videokonferenslänkar till dina kalenderinbjudningar."
       ],
       "An approximate location of the IP address": [
         "En ungefärlig plats för IP-adressen"

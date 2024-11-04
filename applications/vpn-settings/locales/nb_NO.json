@@ -55,6 +55,9 @@
       "Add domain": [
         "Legg til domene"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Legg til flere ${ BRAND_NAME } Scribe-lisenser"
+      ],
       "Add PayPal": [
         "Legg til PayPal"
       ],
@@ -1091,8 +1094,15 @@
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer dokumentredigering på nett, sikkerhetskopiering av bilder, versjonshistorikk, kryptert fildeling og mer."
@@ -2283,6 +2293,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Hvis deaktivert, vil bare administratorer ha tilgang."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Hold forskjellige deler av livet ditt atskilt og innboksen din organisert med flere adresser."
       ],
@@ -3138,6 +3151,9 @@
     "fido2: Action": {
       "Delete key": [
         "Slett nøkkel"
+      ],
+      "New security key": [
+        "Ny sikkerhetsnøkkel"
       ]
     },
     "fido2: Error": {
@@ -3191,6 +3207,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekreft din identitet med en fysisk U2F eller FIDO2-sikkerhetsnøkkel"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Du har nådd maksimalt ${ maxSecurityKeyLength } sikkerhetsnøkkel.",
+        "Du har nådd maksimalt ${ maxSecurityKeyLength } sikkerhetsnøkler."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Tofaktorautentiseringsnøkkelen er klar til bruk."
       ]
@@ -3218,6 +3238,9 @@
       ],
       "Security key registered": [
         "Sikkerhetsnøkkel registrert"
+      ],
+      "Security keys": [
+        "Sikkerhetsnøkler"
       ]
     },
     "file size format": {
@@ -5338,6 +5361,9 @@
       "Allowed Domain": [
         "Tillatt domene"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Gjør det mulig for alle i organisasjonen å sømløst legge til videokonferansekoblinger i kalenderinvitasjonene sine."
+      ],
       "Amount": [
         "Beløp"
       ],
@@ -5496,6 +5522,9 @@
       ],
       "Email or username": [
         "E-post eller brukernavn"
+      ],
+      "Enable video conferencing ": [
+        "Aktiver videokonferanser "
       ],
       "Enter the code displayed on your TV": [
         "Tast inn koden som vises på TV-en"
@@ -7199,6 +7228,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tofaktorautentisering kreves ikke lenger"
+      ],
+      "Video conferencing settings have been updated": [
+        "Innstillingene for videokonferanser er oppdatert"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8094,6 +8126,12 @@
       "For security reasons, the token is hidden": [
         "Av sikkerhetsgrunner er tokenet skjult"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Gå til identitetsleverandøren, kopier og lim inn dataene nedenfor og fullfør konfigureringen av SCIM for ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Gå til identitetsleverandøren, kopier og lim inn tokenet nedenfor, og aktiver SCIM på nytt for ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Hvis du har mistet eller glemt SCIM-tokenet, kan du generere et nytt, men vær oppmerksom på at innstillingene for identitetsleverandøren må oppdateres."
       ],
@@ -8102,6 +8140,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Når SCIM er deaktivert for organisasjonen, blir **alle SCIM-brukere som leveres automatisk av identitetsleverandøren, konvertert til SSO-brukere**, og du kan administrere dem direkte i ${ BRAND_NAME }-innstillingene."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Forenkler brukeradministrasjon på tvers av ulike tjenester. Legg til, rediger og fjern brukere i identitetsleverandøren, så brukes disse endringene automatisk på ${ appName }-organisasjonen."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Den automatiske klargjøringen av SCIM deaktiveres til du angir det nye SCIM-tokenet i identitetsleverandørens innstillinger."
@@ -8709,7 +8750,7 @@
         "Tilgang nektet"
       ],
       "Access granted": [
-        "Tilgang godkjent"
+        "Tilgang gitt"
       ],
       "added you to their ${ BRAND_NAME } organization": [
         "la deg til deres ${ BRAND_NAME }-organisasjon"
@@ -8816,6 +8857,9 @@
       "Share the confirmation code with your administrator": [
         "Del bekreftelseskoden med administratoren din"
       ],
+      "Sign in": [
+        "Logg på"
+      ],
       "Sign in to your organization": [
         "Logg på organisasjonen"
       ],
@@ -8851,6 +8895,9 @@
       ],
       "User details:": [
         "Brukerdetaljer:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du blir omdirigert til din tredjeparts SSO-leverandør."
       ]
     },
     "sso: auth device state": {
@@ -9488,6 +9535,9 @@
       "Administrator privileges restored": [
         "Administratorrettigheter gjenopprettet"
       ],
+      "Backup password updated": [
+        "Reservepassord oppdatert"
+      ],
       "Catch-all address updated": [
         "Catch-all-adresse oppdatert"
       ],
@@ -9650,6 +9700,9 @@
       ],
       "Preferences updated": [
         "Preferanser oppdatert"
+      ],
+      "Resent invitation": [
+        "Invitasjon sendt på nytt"
       ]
     },
     "Suffix": {
@@ -9757,6 +9810,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
@@ -10077,6 +10133,9 @@
       ],
       "Email subscriptions": [
         "E-post abonnementer"
+      ],
+      "Enable for all users": [
+        "Aktiver for alle brukere"
       ],
       "Enter 2FA code": [
         "Angi 2FA-kode"
@@ -10401,6 +10460,9 @@
       "Verifying your payment...": [
         "Verifiserer betalingen din..."
       ],
+      "Video conference": [
+        "Videokonferanse"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi vil sende deg en e-post til din nye adresse med instruksjoner om hvordan du fullfører endringen."
       ],
@@ -10486,6 +10548,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Gjør det mulig å sømløst legge til videokonferansekoblinger i kalenderinvitasjonene dine."
       ],
       "An approximate location of the IP address": [
         "En omtrentlig plassering til IP-adressen"

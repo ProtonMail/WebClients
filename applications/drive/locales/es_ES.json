@@ -1082,7 +1082,7 @@
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
+        "Aplicación para ordenador ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
@@ -1091,7 +1091,7 @@
         "${ storageSize } de almacenamiento"
       ],
       "1 TB total": [
-        "1 TB en total"
+        "1 TB en total"
       ],
       "1 user": [
         "1 usuario"
@@ -1106,7 +1106,7 @@
         "2 usuarios"
       ],
       "3 TB": [
-        "3 TB"
+        "3 TB"
       ],
       "6 user accounts": [
         "6 cuentas de usuario"
@@ -1130,7 +1130,7 @@
         "Monitoreo de la Dark Web"
       ],
       "Easily add or remove users": [
-        "Añadir o borrar usuarios fácilmente"
+        "Fácil adición y borrado de usuarios"
       ],
       "High speed streaming": [
         "Streaming de alta velocidad"
@@ -1148,22 +1148,22 @@
         "Copia de seguridad de fotos privadas"
       ],
       "Protect 10 devices at a time": [
-        "Protege 10 dispositivos a la vez"
+        "Protección de 10 dispositivos a la vez"
       ],
       "Secure file storage & sharing": [
-        "Almacenamiento y uso compartido seguro de archivos"
+        "Almacenamiento y uso compartido seguros de archivos"
       ],
       "Secure vault and link sharing": [
-        "Intercambio seguro de caja fuerte y enlaces"
+        "Intercambio seguro de bóveda y enlaces"
       ],
       "Unlimited folders, labels and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
+        "Número ilimitado de carpetas, etiquetas y filtros"
       ],
       "Unlimited hide-my-email aliases": [
         "Número ilimitado de alias de hide-my-email"
       ],
       "Unlimited logins, notes, credit cards": [
-        "Inicios de sesión, notas y tarjetas de crédito ilimitados"
+        "Número ilimitado de inicios de sesión, notas y tarjetas de crédito"
       ],
       "Use your own email domain": [
         "Usa tu propio dominio de correo electrónico"
@@ -1195,20 +1195,23 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accede a contenido bloqueado y navega de forma privada. Incluye más de 8500 servidores en más de 110 países, 10 dispositivos, streaming de alta velocidad, bloqueador de anuncios y protección contra malware, acelerador de VPN y más."
+        "Accede a contenido bloqueado y navega de forma privada. Incluye más de 8500 servidores en más de 110 países, 10 dispositivos, streaming de alta velocidad, bloqueador de anuncios, protección contra malware, VPN Accelerator y mucho más."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inicios de sesión seguros en todos tus dispositivos. Incluye alias ilimitados hide-my-email, uso compartido, autenticación de dos factores integrada, monitoreo de la Dark Web y más."
+        "Inicios de sesión seguros en todos tus dispositivos. Incluye un número ilimitado de alias de hide-my-email, uso compartido, 2FA integrada, monitoreo de la Dark Web y mucho más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo electrónico, el soporte de dominios de correo electrónico personalizados, el asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más.",
-        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo electrónico, el soporte de dominios de correo electrónico personalizados, el asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más."
+        "Protege tus correos electrónicos y tu agenda con el cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo electrónico, soporte para los dominios de correo electrónico personalizados, el asistente de escritura Scribe de ${ BRAND_NAME }, alias hide-my-email ilimitados y mucho más.",
+        "Protege tus correos electrónicos y tu agenda con el cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo electrónico, soporte para los dominios de correo electrónico personalizados, el asistente de escritura Scribe de ${ BRAND_NAME }, alias hide-my-email ilimitados y mucho más."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte de dominios de correo electrónico personalizados, asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte para dominios de correo electrónico personalizados, alias ilimitados hide-my-email y más."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Protege tus archivos con almacenamiento en la nube cifrado. Incluye editor de documentos en línea, copia de seguridad de fotos, historial de versiones, uso de intercambio de archivos cifrados y más."
@@ -2415,11 +2418,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2489,6 +2487,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7365,6 +7368,14 @@
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Disfruta de Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7377,14 +7388,6 @@
       ],
       "Switch plans?": [
         "¿Cambiar de plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Disfruta de Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -8564,6 +8567,11 @@
         "Comprueba la seguridad de la cuenta"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "No se ha completado el inicio de sesión."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Todos tus aliases"
@@ -9047,6 +9055,17 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ahora puedes buscar fácilmente archivos en tu unidad de almacenamiento mientras mantienes tus datos seguros."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sesión"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sesión en tu organización"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Serás redirigido a tu proveedor de SSO de terceros."
       ]
     },
     "State": {

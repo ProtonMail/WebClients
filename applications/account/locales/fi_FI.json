@@ -805,10 +805,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
       "Reject": [
@@ -1599,6 +1599,14 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1620,14 +1628,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1791,6 +1791,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen mukautetuille sähköpostin verkkotunnuksille, rajattoman määrän hide-my-email-aliaksia ja paljon muuta."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää verkkodokumenttieditorin, kuvien varmuuskopioinnin, versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
@@ -5124,6 +5127,9 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Varmennetta ${ name } ei löytynyt tai se on jo mitätöity"
+      ],
+      "Display name cannot be empty": [
+        "Näyttönimi ei voi olla tyhjä"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7202,11 +7208,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "Dedicated servers": [
-        "Omat palvelimet"
-      ],
       "dedicated servers": [
         "omia palvelimia"
+      ],
+      "Dedicated servers": [
+        "Omat palvelimet"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Poista kaikki muut MX-tietueet tai varmista, että ${ MAIL_APP_NAME }in painotus on pienin numero."
@@ -8796,11 +8802,11 @@
       "User activated": [
         "Käyttäjä aktivoitiin"
       ],
-      "Username": [
-        "Käyttäjätunnus"
-      ],
       "username": [
         "käyttäjätunnus"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ],
       "Users": [
         "Käyttäjät"
@@ -8963,6 +8969,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Linkkiä painettaessa tämä tietojenkalastelusuojaustoiminto pyytää vahvistamaan verkkosivuston URL-osoitteen."
+      ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Kun poistat palvelimen yhdyskäytävästä, se deaktivoidaan 10 päivän ajaksi. Tämä palvelin voidaan lisätä uuteen yhdyskäytävään, mutta sen maata ei voi muuttaa."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
@@ -11623,6 +11632,32 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Aloita hintaan ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Alkaen ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11650,32 +11685,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Aloita hintaan ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Alkaen ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
       ]
     },
     "new_plans: feature": {
@@ -12357,6 +12366,20 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -12375,20 +12398,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -13410,9 +13419,6 @@
       ],
       "Free forever": [
         "Pysyvästi ilmainen"
-      ],
-      "From the team that knows encryption": [
-        "Salauksen tuntevalta tiimiltä"
       ],
       "Get ${ appName } for ${ browserName }": [
         "Hanki ${ appName } selaimelle ${ browserName }"
@@ -15061,6 +15067,35 @@
         "Pyydä kokeiluversiota"
       ]
     },
+    "Signup: Info": {
+      "Based in Switzerland, GDPR compliant": [
+        "Sveitsissä sijaitseva, GDPR:n mukainen"
+      ],
+      "Built-in encryption": [
+        "Sisäänrakennettu salaus"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Sisältää kalenterin, salasananhallinnan, tallennustilan ja VPN:n"
+      ],
+      "Email aliases": [
+        "Sähköpostialiakset"
+      ],
+      "End-to-end encryption": [
+        "Päästä päähän ‐salaus"
+      ],
+      "From the team that knows encryption": [
+        "Salauksen tuntevalta tiimiltä"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Integroitu sähköposti, kalenteri, tallennustila, salasananhallinta ja VPN"
+      ],
+      "ISO 27001 certified": [
+        "ISO 27001 -sertifioitu"
+      ],
+      "Open source and audited": [
+        "Avoin lähdekoodi ja auditoitu"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "GDPR- ja HIPAA -vaatimusten mukainen"
@@ -15439,6 +15474,9 @@
       ],
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Tämä kirjaa sinut ulos muilta laitteiltasi, ja sinun on luotava uusi varasalasana."
+      ],
+      "Tried to sign in at": [
+        "Yritti kirjautua sisään"
       ],
       "Use backup password instead": [
         "Käytä varasalasanaa sen sijaan"
@@ -16758,10 +16796,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [

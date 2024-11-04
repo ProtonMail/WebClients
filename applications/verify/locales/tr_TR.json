@@ -842,6 +842,9 @@
       ]
     },
     "Error": {
+      "Domain not available, try again later": [
+        "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
+      ],
       "Email is not valid": [
         "E-posta geçersiz"
       ],
@@ -1082,6 +1085,22 @@
     "Placeholder": {
       "Password": [
         "Parola"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Oturum açılamadı."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sign in to your organization": [
+        "Kuruluşunuzda oturum açın"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ]
     },
     "Success": {

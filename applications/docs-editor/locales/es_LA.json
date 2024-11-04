@@ -29,6 +29,9 @@
       "Add new table row": [
         "Añadir fila a la tabla"
       ],
+      "Add suggestion": [
+        "Añadir sugerencia"
+      ],
       "Adjust font size": [
         "Ajustar tamaño de fuente"
       ],
@@ -109,9 +112,6 @@
       ],
       "Edit link": [
         "Editar el enlace"
-      ],
-      "Exit Suggestion": [
-        "Salir de la sugerencia"
       ],
       "Fit table to page width": [
         "Ajustar tabla al ancho de la página"
@@ -214,9 +214,6 @@
       ],
       "Submit": [
         "Enviar"
-      ],
-      "Suggestion Mode": [
-        "Modo Sugerencias"
       ],
       "Table options": [
         "Opciones de tabla"
@@ -409,6 +406,9 @@
     "Description": {
       "Edit document directly": [
         "Editar el documento directamente"
+      ],
+      "Edits become suggestions": [
+        "Las ediciones se convierten en sugerencias."
       ],
       "Read or print final document": [
         "Leer o imprimir el documento final"
@@ -666,6 +666,11 @@
       ],
       "Language not supported": [
         "Este idioma no está disponible."
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "No se admite hacer sugerencias dentro de bloques de código"
       ]
     }
   }

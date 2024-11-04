@@ -29,6 +29,9 @@
       "Add new table row": [
         "Dodaj nowy wiersz tabeli"
       ],
+      "Add suggestion": [
+        "Dodaj sugestię"
+      ],
       "Adjust font size": [
         "Dostosuj rozmiar czcionki"
       ],
@@ -109,9 +112,6 @@
       ],
       "Edit link": [
         "Edytuj link"
-      ],
-      "Exit Suggestion": [
-        "Wyjście z sugestii"
       ],
       "Fit table to page width": [
         "Dopasuj tabelę do szerokości strony"
@@ -214,9 +214,6 @@
       ],
       "Submit": [
         "Wyślij"
-      ],
-      "Suggestion Mode": [
-        "Tryb sugestii"
       ],
       "Table options": [
         "Opcje tabeli"
@@ -410,6 +407,9 @@
       "Edit document directly": [
         "Edytuj dokument bezpośrednio"
       ],
+      "Edits become suggestions": [
+        "Zmiany stają się sugestią"
+      ],
       "Read or print final document": [
         "Przeczytaj lub wydrukuj ostateczny dokument"
       ]
@@ -548,14 +548,26 @@
       "Add link": [
         "Dodaj link"
       ],
+      "Align": [
+        "Wyrównaj"
+      ],
       "Background colour": [
         "Kolor tła"
       ],
       "Change image size": [
         "Zmień rozmiar obrazu"
       ],
+      "Change indent level": [
+        "Zmień wcięcie"
+      ],
+      "Clear formatting": [
+        "Wyczyść formatowanie"
+      ],
       "Delete": [
         "Usuń"
+      ],
+      "Delete divider": [
+        "Usuń linię poziomą"
       ],
       "Delete image": [
         "Usuń obraz"
@@ -566,17 +578,44 @@
       "Delete paragraph": [
         "Usuń akapit"
       ],
+      "Delete table": [
+        "Usuń tabelę"
+      ],
+      "Delete table column": [
+        "Usuń kolumnę tabeli"
+      ],
+      "Delete table row": [
+        "Usuń wiersz tabeli"
+      ],
+      "Duplicate table column": [
+        "Zduplikuj kolumnę tabeli"
+      ],
+      "Duplicate table row": [
+        "Zduplikuj wiersz tabeli"
+      ],
       "Format": [
         "Format"
       ],
       "Insert": [
         "Wstaw"
       ],
+      "Insert divider": [
+        "Wstaw linię poziomą"
+      ],
       "Insert image": [
         "Wstaw obraz"
       ],
       "Insert paragraph": [
         "Wstaw akapit"
+      ],
+      "Insert table": [
+        "Wstaw tabelę"
+      ],
+      "Insert table column": [
+        "Wstaw kolumnę tabeli"
+      ],
+      "Insert table row": [
+        "Wstaw wiersz tabeli"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Skrót klawiszowy: ${ shortcut }"
@@ -628,7 +667,12 @@
         "Usuń wątek"
       ],
       "Language not supported": [
-        "Ten język nie jest obsługiwany"
+        "Język nie jest obsługiwany"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Tworzenie sugestii wewnątrz bloków kodu nie jest obsługiwane"
       ]
     }
   }

@@ -805,11 +805,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1599,6 +1599,14 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1620,14 +1628,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1792,8 +1792,15 @@
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais.",
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereço de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais.",
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui ${ addresses } endereços de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja seus e-mails e agenda com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, assistente de escritório da ${ BRAND_NAME } Scribe, aliases ide-my-email ilimitados e muito mais."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteja seus e-mails e agendamentos com criptografia de ponta a ponta. Inclui 15 endereços de e-mail, suporte para domínios de e-mail personalizados, aliases ide-my-email ilimitados e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui editor de documento on-line, histórico de versões, compartilhamento de arquivo criptografado e muito mais."
@@ -5603,6 +5610,9 @@
     "fido2: Action": {
       "Delete key": [
         "Excluir chave"
+      ],
+      "New security key": [
+        "Nova chave de segurança"
       ]
     },
     "fido2: Error": {
@@ -5683,6 +5693,9 @@
       ],
       "Security key registered": [
         "Chave de segurança registrada"
+      ],
+      "Security keys": [
+        "Chaves de segurança"
       ]
     },
     "file size format": {
@@ -7237,11 +7250,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino."
@@ -7255,6 +7268,12 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Deletando ${ deletedServerCount } servidor gateway",
         "Deletando ${ deletedServerCount } servidores gateway"
+      ],
+      "Disable recovery by email address": [
+        "Desativar recuperação por endereço de e-mail"
+      ],
+      "Disable recovery by phone number": [
+        "Desativar recuperação por número de telefone"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Desativado em ${ formattedDateAndTime }"
@@ -8843,10 +8862,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -8881,6 +8900,12 @@
       ],
       "Verify domain": [
         "Verificar domínio"
+      ],
+      "Verify email address": [
+        "Verificar endereço de e-mail"
+      ],
+      "Verify phone number": [
+        "Verificar o número de telefone"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifique sua identidade com a senha baseada em tempo em um aplicativo autenticador"
@@ -10219,6 +10244,9 @@
       ],
       "Emails (last month)": [
         "E-mails (último mês)"
+      ],
+      "Enable video conferencing ": [
+        "Ativar videoconferência "
       ],
       "End date": [
         "Data de término"
@@ -11685,6 +11713,32 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Iniciando a partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11712,32 +11766,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Iniciando a partir de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12419,6 +12447,23 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtenha Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -12437,23 +12482,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -12809,6 +12837,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "A autenticação de dois fatores não é mais necessária"
+      ],
+      "Video conferencing settings have been updated": [
+        "Configurações de videoconferência foram atualizadas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13500,17 +13531,20 @@
       "Free forever": [
         "Gratuito para sempre"
       ],
-      "From the team that knows encryption": [
-        "Da equipe que conhece a criptografia"
-      ],
       "Get ${ appName } for ${ browserName }": [
         "Obtenha ${ appName } para ${ browserName }"
       ],
       "Get in touch with our sales team": [
         "Entre em contato com nossa equipe de vendas"
       ],
+      "Get online privacy, for your whole family": [
+        "Aproveita a privacidade online para toda sua família"
+      ],
       "Get the security and features your business needs": [
         "Obtenha a segurança e os recursos que sua empresa precisa"
+      ],
+      "Get unlimited privacy for two": [
+        "Aproveita a privacidade ilimitada para duas pessoas"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Entendo que, se perder meus detalhes de recuperação, poderei perder permanentemente o acesso à minha conta."
@@ -13592,6 +13626,9 @@
         "Compartilhamento seguro de cofre (${ n } cofre) e compartilhamento de link.",
         "Compartilhamento seguro de cofre (${ n } cofres) e compartilhamento de link."
       ],
+      "Secure your family’s passwords and online identities": [
+        "Proteja as senha e identidades de on-line da sua família"
+      ],
       "Secured by end-to-end encryption": [
         "Seguro com criptografia de ponta a ponta"
       ],
@@ -13627,6 +13664,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Você foi convidado a participar de ${ PASS_APP_NAME }."
+      ],
+      "Your ${ discount }% Black Friday discount has been applied": [
+        "Seu desconto de ${ discount }% da Black Friday foi aplicado"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Sua organização tem acesso a ${ free }. Se você deseja acesso a recursos premium do ${ appName }, solicite a atualização ao administrador da sua organização."
@@ -14623,6 +14663,12 @@
       "For security reasons, the token is hidden": [
         "Por motivos de segurança, o token está oculto."
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Vá até seu provedor de identidade, copie e cole os dados abaixo e conclua a configuração do SCIM para ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Vá até o seu provedor de identidade, copie e cole o token abaixo e reabilite o SCIM para ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Se você perdeu ou se esqueceu do token SCIM, você pode gerar um novo, mas esteja ciente que as configurações do seu provedor de identidade deverão ser atualizadas."
       ],
@@ -14631,6 +14677,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Assim que o SCIM for desabilitado para sua organização, **todos os usuários SCIM fornecidos automaticamente pelo seu provedor de identidade serão convertidos para usuários SSO** e você poderá administrá-los diretamente através das configurações da ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Simplifica o gerenciamento de usuário entre diferentes serviços. Adicione, edite e remova usuários do seu provedor de identidade, e essas mudanças serão automaticamente aplicadas à sua organização ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "O provisionamento automático do SCIM será desabilitado até você inserir o novo token SCIM nas configurações do seu provedor de identidade."
@@ -15184,6 +15233,68 @@
         "Solicitar avaliação"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "Recursos avançados de segurança"
+      ],
+      "Advanced sharing security": [
+        "Segurança avançada de compartilhamento"
+      ],
+      "Apps for all devices": [
+        "Aplicativos para todos os dispositivos"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Localizado na Suíça, em conformidade com o regulamento RGPD"
+      ],
+      "Built-in encryption": [
+        "Criptografia integrada"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Calendário, gerenciador de senhas, armazenamento de arquivos e VPN incluídos"
+      ],
+      "Email aliases": [
+        "Aliases para o e-mail"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "E-mail, calendário gerenciador de senhas e VPN incluídos"
+      ],
+      "End-to-end encrypted transactions": [
+        "Transações com criptografia de ponta a ponta"
+      ],
+      "End-to-end encryption": [
+        "Criptografia de ponta a ponta"
+      ],
+      "From the team that knows encryption": [
+        "Da equipe que conhece a criptografia"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "E-mail integrado, calendário, armazenamento de arquivos, gerenciador de senhas, e VPN."
+      ],
+      "ISO 27001 certified": [
+        "Certificação ISO 27001"
+      ],
+      "Open source and audited": [
+        "Código aberto e auditado"
+      ],
+      "Open source and verified": [
+        "Código aberto e verificado"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido por leis de privacidade da Suíça"
+      ],
+      "The only business solution that is:": [
+        "A única solução comercial que existe:"
+      ],
+      "The only cloud storage with:": [
+        "O único armazenamento em nuvem com:"
+      ],
+      "The only email service with:": [
+        "O único e-mail em nuvem com:"
+      ],
+      "Works on all devices": [
+        "Funciona em todos os dispositivos"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Conformidade com GDPR e HIPAA"
@@ -15544,6 +15655,9 @@
       ],
       "Share the confirmation code with your administrator": [
         "Compartilhe o código de confirmação com seu administrador"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização."
@@ -16288,6 +16402,9 @@
       "Auto-reply updated": [
         "Resposta automática atualizada"
       ],
+      "Backup password updated": [
+        "Senha de backup atualizado"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendário adicionado. Pode levar alguns minutos para sincronizar."
       ],
@@ -16539,6 +16656,9 @@
       "Preferences updated": [
         "Preferências atualizadas"
       ],
+      "Resent invitation": [
+        "Reenviar convite"
+      ],
       "Status updated": [
         "Status atualizado"
       ]
@@ -16705,6 +16825,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
@@ -16905,11 +17028,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço catch-all"
-      ],
       "Catch-All address": [
         "Endereço Catch-All (captura tudo)"
+      ],
+      "Catch-all address": [
+        "Endereço catch-all"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -17210,6 +17333,9 @@
       "Email subscriptions": [
         "Inscrições de e-mail"
       ],
+      "Enable for all users": [
+        "Ativar para todos os usuários"
+      ],
       "Encryption and keys": [
         "Criptografia e chaves"
       ],
@@ -17391,6 +17517,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Aumente sua privacidade com mais endereços"
+      ],
+      "Integrations": [
+        "Integrações"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -17860,6 +17989,9 @@
       ],
       "Version history": [
         "Histórico de versões"
+      ],
+      "Video conference": [
+        "Vídeo conferência"
       ],
       "VPN apps": [
         "Aplicativos de VPN"
