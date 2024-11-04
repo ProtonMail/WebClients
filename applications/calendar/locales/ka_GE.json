@@ -722,6 +722,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Unlimited-ზე"
       ],
+      "Upgrade to Mail Plus": [
+        "აწევა Mail Plus-მდე"
+      ],
       "Upload picture": [
         "სურათის ატვრთვა"
       ],
@@ -1099,11 +1102,24 @@
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
         "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ hide-my-email-ის ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს, Dark Web-ის მონიტორინგს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართებს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს 15 ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს დოკუმენტის რედაქტორს ბრაუზერისთვის, ფოტოების მარქაფს, ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -2588,6 +2604,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "გააფერადეთ მოვლენები, რომ თქვენი დღე უკეთ დააორგანიზოთ, თვალყური ადევნოთ თქვენს დროს და ამოცანებს შესაბამისი პრიორიტეტი მიანიჭოთ."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "შექმენით Zoom-ის შეხვედრა და დაამატეთ შესვლის დეტალები თქვენს მოვლენას ერთი წკაპით."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "მიმდინარეობს კონტაქტების გაშიფვრა… ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, თქვენ შეგეძლებათ, გადმოწეროთ ფაილი ყველა თქვენი კონტაქტით."
       ],
@@ -3073,6 +3092,9 @@
       ],
       "Failed to get original occurrence in series": [
         "საწყისი მოხდენის სერიებად მიღების შეცდომა"
+      ],
+      "Failed to load oauth modal.": [
+        "შეუძლებელია Oauth-ის მოდალის ჩატვირთვა."
       ],
       "First name is too long": [
         "სახელი ძალიან გრძელია"
@@ -3598,6 +3620,11 @@
       ],
       "You need an active personal calendar to import events": [
         "მოვლენების შემოსატანად პირადი კალენდრების ქონაა საჭირო"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "საჩვენებელი სახელი ცარიელი ვერ იქნება"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -7981,6 +8008,11 @@
         "თქვენი ანგარიშის უსაფრთხოების გადახედვა"
       ]
     },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "შესვლა წარმატებით არ დასრულდა."
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "ყველა ფსევდონიმი"
@@ -8525,6 +8557,17 @@
       ],
       "You can now collapse the navigation bar.": [
         "შეგიძლიათ ჩამოშალოთ ნავიგაციის ზოლი."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "შესვლა"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ]
     },
     "State": {
@@ -9588,6 +9631,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "მიიღეთ ${ appName[APP_NAME] } აპები"
       ],
+      "Get Zooming faster": [
+        "Zoom-ის გასწრაფება"
+      ],
       "Gift": [
         "საჩუქარი"
       ],
@@ -10418,6 +10464,17 @@
       ],
       "Yearly, ${ untilString }": [
         "ყოველწლიურად, ${ untilString }-მდე"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoom-ის შეხვედრის დამატება"
+      ],
+      "Adding conferencing details": [
+        "კონფერენციის დეტალების დამატება"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom-ის კონფიგურაციის ჩატვირთვა"
       ]
     },
     "Zoom Meeting": {
