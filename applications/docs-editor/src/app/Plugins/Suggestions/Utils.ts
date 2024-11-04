@@ -1,6 +1,6 @@
 import type { ElementNode, LexicalNode, RangeSelection, TextNode } from 'lexical'
-import { $isDecoratorNode, $isElementNode, $isTextNode } from 'lexical'
-import type { SuggestionProperties } from './Types'
+import { $addUpdateTag, $isDecoratorNode, $isElementNode, $isRootOrShadowRoot, $isTextNode } from 'lexical'
+import { SuggestionTypesThatAffectWholeParent, SuggestionTypesThatCanBeEmpty, type SuggestionProperties } from './Types'
 import type { SuggestionType } from '@proton/docs-shared/lib/SuggestionType'
 import { $isImageNode } from '../Image/ImageNode'
 import type { ProtonNode } from './ProtonNode'
@@ -11,6 +11,8 @@ import type { TableCellNode, TableRowNode } from '@lexical/table'
 import { $isTableNode } from '@lexical/table'
 import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $isCodeNode } from '@lexical/code'
+import { ResolveSuggestionsUpdateTag } from './removeSuggestionNodeAndResolveIfNeeded'
+import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 
 /**
  * Wraps a given selection with suggestion node(s), splitting
@@ -321,4 +323,129 @@ export function $isAnyPartOfSelectionInCodeNode(selection: RangeSelection) {
 
   const isAnchorInCodeNode = !!$findMatchingParent(anchor, $isCodeNode)
   return isFocusInCodeNode || isAnchorInCodeNode
+}
+
+/**
+ * Joins two non-inline leaf elements. If the element about to be joined has block-level suggestions,
+ * those will be removed and the related suggestion resolved if necessary.
+ */
+export function $joinNonInlineLeafElements(element: ElementNode, elementToJoin: ElementNode) {
+  for (const child of elementToJoin.getChildren()) {
+    child.remove()
+    if ($isSuggestionNode(child)) {
+      const type = child.getSuggestionTypeOrThrow()
+      if (SuggestionTypesThatAffectWholeParent.includes(type)) {
+        $addUpdateTag(ResolveSuggestionsUpdateTag)
+        continue
+      }
+    }
+    element.append(child)
+  }
+  elementToJoin.remove()
+}
+
+function $getLastNonInlineLeafElementInElement(element: ElementNode): ElementNode | null {
+  let lastChild = element.getLastChild()
+  if (lastChild && $isNonInlineLeafElement(lastChild)) {
+    return lastChild
+  }
+  while ($isElementNode(lastChild)) {
+    lastChild = lastChild.getLastChild()
+    if (lastChild && $isNonInlineLeafElement(lastChild)) {
+      return lastChild
+    }
+  }
+  return null
+}
+
+/**
+ * Returns the previous non-inline leaf element, which might not
+ * always be just the previous sibling. For example, if the given
+ * element is a paragraph and the closest non-inline leaf element
+ * above it is a list item (which also might be nested)
+ */
+export function $getPreviousNonInlineLeafElement(element: ElementNode): ElementNode | null {
+  if (!$isNonInlineLeafElement(element)) {
+    return null
+  }
+
+  const parent = element.getParent()
+  if (!parent) {
+    return null
+  }
+
+  const prevSibling = element.getPreviousSibling()
+
+  if (prevSibling && $isNonInlineLeafElement(prevSibling)) {
+    return prevSibling
+  }
+
+  if ($isElementNode(prevSibling)) {
+    return $getLastNonInlineLeafElementInElement(prevSibling)
+  }
+
+  if (!prevSibling && !$isRootOrShadowRoot(parent)) {
+    const parentPrevSibling = parent.getPreviousSibling()
+    if (!parentPrevSibling) {
+      return null
+    }
+    if ($isNonInlineLeafElement(parentPrevSibling)) {
+      return parentPrevSibling
+    }
+    if ($isElementNode(prevSibling)) {
+      return $getLastNonInlineLeafElementInElement(prevSibling)
+    }
+  }
+
+  return null
+}
+
+export function $isSelectionCollapsedAtStartOfElement(selection: RangeSelection, element: ElementNode): boolean {
+  if (!selection.isCollapsed()) {
+    return false
+  }
+
+  if (selection.focus.offset !== 0) {
+    return false
+  }
+
+  const focusNode = selection.focus.getNode()
+  if (focusNode.is(element)) {
+    return true
+  }
+
+  const children = element.getChildren()
+  if (children.length === 1) {
+    const firstChild = children[0]
+    if (focusNode.is(firstChild)) {
+      return true
+    }
+    if ($isElementNode(firstChild)) {
+      return focusNode.is(firstChild.getFirstDescendant())
+    }
+    return false
+  }
+
+  let firstNonSuggestionDescendant: LexicalNode | null = null
+  for (let index = 0; index < children.length; index++) {
+    const child = children[index]
+    if ($isSuggestionNode(child) && SuggestionTypesThatCanBeEmpty.includes(child.getSuggestionTypeOrThrow())) {
+      continue
+    }
+    if ($isElementNode(child)) {
+      firstNonSuggestionDescendant = child.getFirstDescendant()
+      break
+    }
+    if ($isTextNode(child)) {
+      firstNonSuggestionDescendant = child
+      break
+    }
+    break
+  }
+
+  if (focusNode.is(firstNonSuggestionDescendant)) {
+    return true
+  }
+
+  return false
 }
