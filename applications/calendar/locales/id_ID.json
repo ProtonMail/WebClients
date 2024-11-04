@@ -778,6 +778,9 @@
       ],
       "Toggle Contacts app": [
         "Tampilkan/sembunyikan aplikasi Kontak"
+      ],
+      "Upgrade to Mail Plus": [
+        "Tingkatkan ke Mail Plus"
       ]
     },
     "Action subline": {
@@ -2560,6 +2563,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Untuk mengimpor melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ini, silakan pisahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Buat pertemuan Zoom dan tambah rincian gabung ke acara Anda hanya dengan satu kali klik."
       ]
     },
     "description": {
@@ -3307,6 +3313,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak untuk akun Anda"
+      ],
+      "Failed to load oauth modal.": [
+        "Modal OAuth gagal dimuat."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3521,6 +3530,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Nama depan dan nama belakang tidak boleh dikosongkan sekaligus"
+      ],
+      "Display name cannot be empty": [
+        "Nama tampilan tidak boleh kosong"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10323,6 +10335,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi ${ addresses } alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Amankan email dan jadwal Anda dengan enkripsi end-to-end. Meliputi 15 alamat email, dukungan untuk domain email khusus, alias hide-my-email tanpa batasan jumlah, dan masih banyak lagi."
       ]
     },
     "Oauth instructions video alternative": {
@@ -10354,6 +10372,28 @@
     "Zoom integration": {
       "Add Zoom meeting": [
         "Tambahkan rapat Zoom"
+      ],
+      "Adding conferencing details": [
+        "Menambahkan rincian pertemuan"
+      ],
+      "Loading Zoom configuration": [
+        "Memuat konfigurasi Zoom"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Entri masuk tidak berhasil dirampungkan."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Masuk"
+      ],
+      "Sign in to your organization": [
+        "Masuk ke organisasi Anda"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ]
     }
   }

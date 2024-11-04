@@ -782,6 +782,9 @@
       ],
       "Toggle Contacts app": [
         "Kytke Yhteystiedot-sovellus"
+      ],
+      "Upgrade to Mail Plus": [
+        "Päivitä Mail Plus -tilaukseen"
       ]
     },
     "Action subline": {
@@ -3555,6 +3558,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Etu- ja sukunimen valintoja ei voi poistaa samanaikaisesti"
+      ],
+      "Display name cannot be empty": [
+        "Näyttönimi ei voi olla tyhjä"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -10554,6 +10560,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen mukautetuille sähköpostin verkkotunnuksille, rajattoman määrän hide-my-email-aliaksia ja paljon muuta."
       ]
     },
     "Oauth instructions video alternative": {
@@ -10580,6 +10589,24 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Pääsy Secure Core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN ja muuta."
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Sisäänkirjautumista ei suoritettu loppuun."
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Kirjaudu sisään organisaatioosi"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Lisää Zoom-tapaaminen"
+      ],
+      "Loading Zoom configuration": [
+        "Ladataan Zoom-asetuksia"
       ]
     }
   }

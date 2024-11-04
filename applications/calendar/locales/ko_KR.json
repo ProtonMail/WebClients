@@ -10335,6 +10335,12 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 앱 전반적으로 공유됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
       ]
     },
     "Oauth instructions video alternative": {
@@ -10372,6 +10378,22 @@
       ],
       "Loading Zoom configuration": [
         "Zoom 미팅 구성을 불러오는 중"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "로그인이 성공적으로 완료되지 못했습니다."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "로그인"
+      ],
+      "Sign in to your organization": [
+        "조직에 로그인"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ]
     }
   }

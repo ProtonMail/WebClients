@@ -10601,6 +10601,13 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses }dirección de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye 15 direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
       ]
     },
     "Zoom integration": {
@@ -10612,6 +10619,22 @@
       ],
       "Loading Zoom configuration": [
         "Cargando la configuración de Zoom"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "No se completó el inicio de sesión."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sesión"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sesión en la organización"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se le redirigirá a su proveedor de SSO de terceros."
       ]
     }
   }

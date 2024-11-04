@@ -782,6 +782,9 @@
       ],
       "Toggle Contacts app": [
         "Contact app kiezen"
+      ],
+      "Upgrade to Mail Plus": [
+        "Upgrade naar Mail Plus"
       ]
     },
     "Action subline": {
@@ -2581,6 +2584,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Maak een Zoom vergadering en voeg aansluitgegevens met één klik toe aan uw evenement."
       ]
     },
     "description": {
@@ -3340,6 +3346,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "U heeft de limiet van het aantal contacten bereikt voor dit account"
+      ],
+      "Failed to load oauth modal.": [
+        "Fout bij het laden van oauth modal."
       ]
     },
     "Error accepting calendar invitation": {
@@ -3555,6 +3564,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Voornaam en achternaam kunnen niet tegelijkertijd worden uitgeschakeld"
+      ],
+      "Display name cannot be empty": [
+        "Weergavenaam kan niet leeg zijn"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -9843,6 +9855,9 @@
       ],
       "We're setting up calendar search": [
         "We stellen de agendazoekfunctie in."
+      ],
+      "Get Zooming faster": [
+        "Sneller Zoomen"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10557,6 +10572,9 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-diensten."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
       ]
     },
     "Oauth instructions video alternative": {
@@ -10583,6 +10601,27 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Inloggen is niet gelukt."
+      ]
+    },
+    "sso": {
+      "Sign in to your organization": [
+        "Aanmelden bij uw organisatie"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoomvergadering toevoegen"
+      ],
+      "Adding conferencing details": [
+        "Conferentiedetails worden toegevoegd"
+      ],
+      "Loading Zoom configuration": [
+        "Zoomconfiguratie laden"
       ]
     }
   }

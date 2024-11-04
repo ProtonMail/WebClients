@@ -11046,6 +11046,15 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
       ]
     },
     "Oauth instructions video alternative": {
@@ -11082,7 +11091,23 @@
         "Přidávání detailů o konferencích"
       ],
       "Loading Zoom configuration": [
-        "Načítání konfigurace Zoomu"
+        "Načítání nastavení Zoomu"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Přihlášení nebylo úspěšně dokončeno."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Přihlásit se"
+      ],
+      "Sign in to your organization": [
+        "Přihlaste se ke své organizaci"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ]
     }
   }
