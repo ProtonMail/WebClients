@@ -573,6 +573,9 @@
       ],
       "Write us on Twitter": [
         "Napisz do nas na Twitterze"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Nie ma Twojego menadżera haseł? Zgłoś to."
       ]
     },
     "App menu": {
@@ -598,14 +601,33 @@
         "Odinstaluj ${ PASS_APP_NAME }"
       ]
     },
+    "bf2024: Deal": {
+      "lifetime access": [
+        "dożywotni dostęp"
+      ]
+    },
     "bf2024: Info": {
       "All premium features. 6 users. 1 easy subscription.": [
         "Wszystkie funkcje premium. 6 użytkowników. Jedna prosta subskrypcja."
+      ],
+      "Limited-stock available!": [
+        "Ograniczona ilość na stanie!"
+      ]
+    },
+    "bf2024: Label": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
       ]
     },
     "bf2024: Title": {
       "Black Friday": [
         "Czarny Piątek"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
+        "Zapłać raz i zyskaj ${ lifetimeAccessJSX } do Pass Plus. Tylko ${ relativePrice }."
+      ],
+      "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
+        "Zapisz do ${ discountJSX } na Pass Family. Tylko ${ relativePrice }/miesiąc."
       ]
     },
     "Browser": {
@@ -1028,23 +1050,6 @@
         "Coś poszło nie tak"
       ]
     },
-    "FamilyPlanPromo2024": {
-      "All premium features. 6 users. 1 easy subscription.": [
-        "Wszystkie funkcje premium. 6 użytkowników. Jedna prosta subskrypcja."
-      ],
-      "Exclusive offer for ${ PASS_APP_NAME } early supporters.": [
-        "Specjalna oferta dla pierwszych użytkowników ${ PASS_APP_NAME }."
-      ],
-      "Get it for ${ price }/month": [
-        "Uzyskaj za ${ price } / miesiąc"
-      ],
-      "Introducing ${ planNameJSX }": [
-        "Przedstawiamy plan ${ planNameJSX }"
-      ],
-      "Limited-time offer only.": [
-        "Oferta ograniczona czasowo."
-      ]
-    },
     "Feature": {
       "Dark Web Monitoring": [
         "Monitoring dark web"
@@ -1208,6 +1213,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Dostęp do ${ PASS_APP_NAME } będzie wymagał odcisku palca lub kodu PIN."
+      ],
+      "Add your custom email address to monitor:": [
+        "Dodaj niestandardowy adres e-mail do monitoringu:"
       ],
       "Admin": [
         "Administrator"
@@ -1566,6 +1574,9 @@
       "Monitoring settings successfully updated": [
         "Ustawienia monitoringu zostały zaktualizowane"
       ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "To więcej niż menedżer haseł. ${ PASS_APP_NAME } chroni Twoje hasło i osobisty adres e-mail za pomocą aliasów. Dzięki tej samej technologii, która stoi za pocztą ${ MAIL_APP_NAME }, Twoje dane są zaszyfrowane end-to-end i są dostępne tylko dla Ciebie."
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
@@ -1616,6 +1627,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Dostęp online do ${ PASS_APP_NAME } będzie wymagał kodu PIN. Wylogowanie nastąpi po 3 nieudanych próbach."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Priorytetem naszych alertów jest bezpieczeństwo. Jeśli nie rozpoznajesz żadnej informacji, możesz bezpiecznie zignorować ten raport."
       ],
       "Owner": [
         "Właściciel"
@@ -1755,6 +1769,9 @@
       "Select vault to share": [
         "Wybierz sejf do udostępnienia"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Wybierz, gdzie chcesz zapisać zaimportowane sejfy."
+      ],
       "Selected items permanently deleted": [
         "Zaznaczone elementy zostały trwale usunięte"
       ],
@@ -1775,6 +1792,9 @@
       ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Udostępniaj dane logowania i bezpieczne notatki do 10 użytkownikom"
       ],
       "Sign in to your account": [
         "Zaloguj się"
@@ -1851,6 +1871,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Aby przenieść dane z innego menedżera haseł, przejdź do menedżera haseł, wyeksportuj dane, a następnie prześlij je do ${ PASS_APP_NAME }. Po zaimportowaniu danych usuń wyeksportowany plik."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Kliknij ikonę ${ PASS_APP_NAME } na pasku narzędzi przeglądarki, aby przejrzeć zaimportowane dane."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
       ],
@@ -1881,11 +1904,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Ulepsz konto, aby odblokować funkcje premium"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Ulepsz do płatnego planu, aby utworzyć wiele sejfów."
+      ],
       "Use vaults to share this item with others.": [
         "Aby udostępnić element, udostępnij cały sejf."
       ],
       "User's access removed": [
         "Uprawienia użytkownika zostały usunięte"
+      ],
+      "User's access successfully updated": [
+        "Uprawienia użytkownika zostały zaktualizowane"
       ],
       "username": [
         "nazwa użytkownika"
@@ -2898,6 +2927,52 @@
         "Twoje informacje zostały znalezione w co najmniej 1 wycieku danych. Włącz ${ DARK_WEB_MONITORING_NAME }, aby zobaczyć szczegóły. ${ link }"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "Potwierdź lub odrzuć"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Wpisz kod potwierdzający wysłany na inne urządzenie."
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Jeśli żądanie nie zostało wysłane przez Ciebie, anuluj je."
+      ],
+      "Invalid confirmation code": [
+        "Kod potwierdzający jest nieprawidłowy"
+      ],
+      "No, it wasn’t me": [
+        "Nie, to nie ja"
+      ],
+      "Sign-in confirmed": [
+        "Logowanie zostało potwierdzone"
+      ],
+      "Sign-in failed": [
+        "Logowanie nie powiodło się"
+      ],
+      "Sign-in rejected": [
+        "Logowanie zostało odrzucone"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Potwierdź logowanie na innym urządzeniu. To nie Ty?"
+      ],
+      "Yes, it was me": [
+        "Tak, to ja"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktywne"
+      ],
+      "Inactive": [
+        "Nieaktywne"
+      ],
+      "Rejected": [
+        "Odrzucone"
+      ],
+      "Signed out": [
+        "Wylogowano"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synchronizacja aliasów została włączona. Aliasy SimpleLogin mogą chwilę się synchronizować"
@@ -3096,6 +3171,9 @@
       "Recommended actions": [
         "Zalecane kroki"
       ],
+      "Reject device?": [
+        "Odrzucić urządzenie?"
+      ],
       "Remove email address?": [
         "Usunąć adres e-mail?"
       ],
@@ -3230,6 +3308,9 @@
       "Section name cannot be empty": [
         "Nazwa sekcji nie może być pusta"
       ],
+      "URL already exists": [
+        "Adres URL już istnieje"
+      ],
       "URL cannot be empty": [
         "Adres URL nie może być pusty"
       ],
@@ -3261,6 +3342,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nie można utworzyć sejfu \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Nie można wysłać zaproszeń na następujące adresy:"
       ],
       "Duplicate email addresses.": [
         "Adresy e-mail są zduplikowane."
@@ -3352,6 +3436,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Sprawdź, czy rozszerzenie jest poprawnie zainstalowane i włączone"
       ],
+      "Please contact us to investigate the issue": [
+        "Skontaktuj się z nami, aby zbadać problem"
+      ],
       "Please update the extension to its latest version": [
         "Zaktualizuj rozszerzenie do najnowszej wersji"
       ],
@@ -3429,6 +3516,9 @@
       ],
       "Your session was locked.": [
         "Sesja została zablokowana."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Nie możesz utworzyć więcej sejfów w swojej subskrypcji."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Ulepsz plan, aby importować do wielu sejfów."
