@@ -1418,6 +1418,9 @@
       ],
       "Zoom out": [
         "Pomniejsz"
+      ],
+      "Toggle Contacts app": [
+        "Przełącz aplikację kontaktów"
       ]
     },
     "action": {
@@ -2131,7 +2134,7 @@
         "${ maxSpaceTB } przestrzeni dyskowej"
       ],
       "${ planMaxSpace } email storage": [
-        "${ planMaxSpace } przestrzeń dyskowa na wiadomości e-mail"
+        "${ planMaxSpace } przestrzeni dyskowej poczty"
       ],
       "Advanced account protection": [
         "Zaawansowana ochrona konta"
@@ -2140,19 +2143,19 @@
         "Wszystkie aplikacje ${ BRAND_NAME } i ich funkcje premium"
       ],
       "Cancel and downgrade": [
-        "Anulowanie i obniżanie wersji"
+        "Anuluj i obniż plan"
       ],
       "Cloud storage and sharing for large files": [
         "Przechowywanie i udostępnianie dużych plików w chmurze"
       ],
       "Encrypted cloud storage for photos and documents": [
-        "Szyfrowane przechowywanie zdjęć i dokumentów w chmurze"
+        "Szyfrowana chmura dla zdjęć i dokumentów"
       ],
       "Encrypted password manager": [
         "Szyfrowany menadżer haseł"
       ],
       "Our basic, free plan with end-to-end encrypted email and storage. No premium features included.": [
-        "Nasz podstawowy, bezpłatny plan z szyfrowaną pocztą e-mail i pamięcią masową. Nie zawiera funkcji premium."
+        "Nasz podstawowy, darmowy plan z szyfrowaną pocztą i przestrzenią dyskową. Nie zawiera funkcji premium."
       ],
       "Save ${ upsellSavings }": [
         "Zaoszczędź ${ upsellSavings }"
@@ -2161,13 +2164,13 @@
         "Zaoszczędź z planem ${ upsellPlanName }"
       ],
       "Secure personal and shared calendar": [
-        "Bezpieczny kalendarz osobisty i udostępniony"
+        "Bezpieczny kalendarz osobisty i udostępnianie"
       ],
       "Try ${ planName }": [
-        "Wypróbuj ${ planName }"
+        "Wypróbuj plan ${ planName }"
       ],
       "Try ${ upsellPlanName } and retain access to all premium email and calendar features.": [
-        "Wypróbuj ${ upsellPlanName } i zachowaj dostęp do wszystkich funkcji premium poczty e-mail i kalendarza."
+        "Wypróbuj plan ${ upsellPlanName } i zachowaj dostęp do wszystkich funkcji premium poczty i kalendarza."
       ],
       "Ultra fast and private VPN": [
         "Bardzo szybka i prywatna usługa VPN"
@@ -3629,6 +3632,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4501,6 +4507,9 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Osiągnięto limit liczby kontaktów na koncie"
+      ],
+      "The amount due has changed. Please try again.": [
+        " Kwota uległa zmianie. Spróbuj ponownie."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4739,6 +4748,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Pola imienia i nazwiska nie mogą zostać jednocześnie odznaczone"
+      ],
+      "Display name cannot be empty": [
+        "Nazwa wyświetlana nie może być pusta"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4897,6 +4909,12 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Twoje konto wykorzystuje ${ usedSpace } przestrzeni dyskowej, co przekracza przypisany limit (${ inviteSpace }). Usuń dane lub skontaktuj się z administratorem planu, żeby zwiększyć przestrzeń dyskową."
+      ],
+      "Manage addresses": [
+        "Zarządzaj adresami"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Nie możesz zaakceptować zaproszenia w obecnym planie."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4924,6 +4942,9 @@
       ],
       "Set up your family account": [
         "Skonfiguruj konto rodzinne"
+      ],
+      "Configure your family account and invite users": [
+        "Skonfiguruj konto rodzinne i zaproś użytkowników"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5204,6 +5225,9 @@
       ],
       "Upgrade now": [
         "Ulepsz teraz"
+      ],
+      "Try the new desktop app": [
+        "Wypróbuj nową aplikację desktopową"
       ]
     },
     "Get started checklist instructions": {
@@ -7836,6 +7860,30 @@
       ],
       "Your private writing assistant": [
         "Twój prywatny asystent pisania"
+      ],
+      "(${ serverPrice }/month)": [
+        "(${ serverPrice } / miesiąc)"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Podfoldery również zostaną usunięte. Wiadomości w folderze ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Wiadomości oznaczone etykietą ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w odpowiednim folderze."
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "Numer IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Priorytetem naszych alertów jest bezpieczeństwo. Jeśli nie rozpoznajesz żadnej informacji, możesz bezpiecznie zignorować ten raport."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Odłożono: ${ dateString }, ${ formattedTime }"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Wyłącz, aby wyszukiwać tylko według daty, nazwy, adresu e-mail lub tematu. Aby wyłączyć wyszukiwanie zawartości wiadomości (i usunąć pobrane wiadomości), przejdź do ustawień."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Ulepsz konto, aby automatycznie usuwać wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
       ]
     },
     "info": {
@@ -8672,6 +8720,21 @@
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
+      ],
+      "Anderson": [
+        "Nowak"
+      ],
+      "Company name": [
+        "Nazwa firmy"
+      ],
+      "IBAN": [
+        "Numer IBAN"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Thomas": [
+        "Jan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9118,6 +9181,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "W celu ochrony prywatności obraz nie został załadowany."
+      ],
+      "Image could not be loaded.": [
+        "Obraz nie mógł zostać załadowany."
       ]
     },
     "Message notification": {
@@ -9853,6 +9919,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
+      ],
+      "TOR over VPN": [
+        "Tor przez VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -10203,6 +10272,15 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Możesz mieć więcej niż jednego administratora. Wszyscy administratorzy mogą dodawać i zarządzać użytkownikami, ale tylko główny administrator ma kontrolę nad płatnościami."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich"
+      ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Narzędzie do zarządzania organizacją, które pozwala administratorom dodawać, usuwać, zarządzać użytkownikami ${ BRAND_NAME } i wykonywać inne zadania."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10637,6 +10715,9 @@
       ],
       "New credit/debit card": [
         "Nowa karta płatnicza"
+      ],
+      "Bank transfer": [
+        "Przelew bankowy"
       ]
     },
     "Payments": {
@@ -11113,6 +11194,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "Użyj aliasu, zamiast adresu e-mail. Aliasy dostarcza ${ passLink }."
+      ],
+      "Used on Amazon for shopping, etc.": [
+        "Używany w Amazon do zakupów itp."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11987,6 +12071,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Plan został zakupiony przez aplikację na iOS. Aby zmienić lub zaktualizować szczegóły płatności, przejdź do sklepu App Store."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Zaloguj się do konta App Store, a następnik kliknij ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -12040,7 +12127,7 @@
         "Plan ${ planName } wykracza poza podstawy, aby pomóc Ci być bardziej produktywnym, zorganizowanym oraz kontrolować skrzynkę odbiorczą i tożsamość."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
-        "${ planName } pomaga zapewnić, że każdy członek rodziny - i jego dane - są chronione zawsze, gdy są online."
+        "Plan ${ planName } pomaga zapewnić, że każdy członek rodziny — i jego dane — są chronione zawsze, gdy są online."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "Plan ${ planName } oferuje ${ planMaxSpace } przestrzeni dyskowej na wiadomości, załączniki, wydarzenia, hasła i pliki. Dostępne są również roczne bonusowe przestrzenie dyskowe."
@@ -12160,10 +12247,10 @@
         "Jak wspieraliśmy lokalnych aktywistów, gdy prywatność i wolność słowa były zagrożone."
       ],
       "If you exceed free plan limits, you won't be able to:": [
-        "Jeśli przekroczysz limity bezpłatnego planu, nie będziesz mógł tego zrobić:"
+        "Jeśli przekroczysz limity darmowego planu, nie będziesz mógł tego zrobić:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
-        "Jeśli użytkownik przekroczy limity bezpłatnego planu, dostęp do funkcji oferowanych przez produkt i danych może być ograniczony."
+        "Jeśli użytkownik przekroczy limity darmowego planu, dostęp do funkcji oferowanych przez usługę i dane mogą być ograniczone."
       ],
       "Invited members will be removed from your organization": [
         "Zaproszeni użytkownicy zostaną usunięci z organizacji"
@@ -12259,7 +12346,7 @@
         "Po anulowaniu planu ${ planName } Twoje konto zostanie obniżone do planu ${ BRAND_NAME } Free, który oferuje 1 GB przestrzeni dyskowej Proton Mail i 5 GB przestrzeni dyskowej Proton Drive. Twój zespół doświadczy przerw w pracy, ponieważ darmowy plan nie obsługuje dodatkowych użytkowników."
       ],
       "When your ${ planName } subscription ends on ${ expiryDate }, you'll be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Gdy Twoja subskrypcja ${ planName } zakończy się w dniu ${ expiryDate }, zostaniesz przeniesiony do planu ${ BRAND_NAME } Free."
+        "Gdy subskrypcja ${ planName } zakończy się w dniu ${ expiryDate }, zostaniesz przeniesiony do planu ${ BRAND_NAME } Free."
       ],
       "Yearly free storage bonuses": [
         "Bonusowa przestrzeń dyskowa"
@@ -13792,6 +13879,9 @@
     "Tor out of date": {
       "stable release": [
         "wersji stabilnej"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Ta wersja przeglądarki Tor nie jest obsługiwana. Zaktualizuj ją do najnowszej ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -14502,6 +14592,57 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpiecz swoje wiadomości i harmonogram za pomocą szyfrowania end-to-end. Zawiera ${ addresses } adres e-mail, wsparcie dla niestandardowych domen, nieograniczoną liczbę aliasów hide-my-email i nie tylko.",
+        "Zabezpiecz swoje wiadomości i harmonogram za pomocą szyfrowania end-to-end. Zawiera ${ addresses } adresy e-mail, wsparcie dla niestandardowych domen, nieograniczoną liczbę aliasów hide-my-email i nie tylko.",
+        "Zabezpiecz swoje wiadomości i harmonogram za pomocą szyfrowania end-to-end. Zawiera ${ addresses } adresów e-mail, wsparcie dla niestandardowych domen, nieograniczoną liczbę aliasów hide-my-email i nie tylko.",
+        "Zabezpiecz swoje wiadomości i harmonogram za pomocą szyfrowania end-to-end. Zawiera ${ addresses } adresów e-mail, wsparcie dla niestandardowych domen, nieograniczoną liczbę aliasów hide-my-email i nie tylko."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpiecz swoje e-maile i kalendarz dzięki szyfrowaniu end-to-end. Obejmuje 15 adresów e-mail, wsparcie dla niestandardowych domen e-mail, nieograniczone aliasy hide-my-email i nie tylko."
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Użyj nazwy firmy"
+      ],
+      "Use personal name": [
+        "Użyj nazwy osobistej"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
+      ],
+      "Street address, postal code, and city": [
+        "Ulica, kod pocztowy i miejscowość"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Logowanie nie zostało zakończone."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Zaloguj się"
+      ],
+      "Sign in to your organization": [
+        "Zaloguj się do organizacji"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Nastąpi przekierowanie do zewnętrznego dostawcy SSO."
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Dostęp do serwerów Secure Core, szybkiego pobierania P2P / BitTorrent, Tor przez VPN i wiele więcej."
       ]
     }
   }
