@@ -122,7 +122,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
                             onClick={() => onStepChange(1)}
                             disabled={loading}
                         >
-                            Skip
+                            {c('Action').t`Skip`}
                         </Button>
                     )}
 
