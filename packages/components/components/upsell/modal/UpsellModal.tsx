@@ -111,7 +111,7 @@ const UpsellBox = ({
                     >
                         {featuresDescription}
                         <UpsellFeatureList
-                            className={submitPosition === 'inside' ? 'mb-4' : ''}
+                            className={submitPosition === 'inside' ? 'mb-4' : undefined}
                             features={features}
                             iconSize={iconSize}
                             hideInfo={hideInfo}
