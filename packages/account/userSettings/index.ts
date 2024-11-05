@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
@@ -38,6 +38,12 @@ const slice = createSlice({
     reducers: {
         set: (state, action: PayloadAction<{ UserSettings: UserSettings }>) => {
             state.value = action.payload.UserSettings;
+        },
+        update: (state, action: PayloadAction<{ UserSettings: Partial<UserSettings> }>) => {
+            if (!state.value) {
+                return;
+            }
+            state.value = { ...state.value, ...action.payload.UserSettings };
         },
     },
     extraReducers: (builder) => {
