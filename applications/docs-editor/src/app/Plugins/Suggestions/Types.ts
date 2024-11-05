@@ -68,3 +68,7 @@ export type BlockTypeChangeSuggestionProperties = {
 export type IndentChangeSuggestionProperties = {
   indent: number
 }
+
+export type PropertyChangeSuggestionProperties = {
+  __format: number
+}
