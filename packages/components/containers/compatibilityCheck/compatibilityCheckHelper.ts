@@ -1,4 +1,10 @@
-export type CompatibilityItem = { name: string; valid: boolean; text: string };
+import type { ReactNode } from 'react';
+
+export type CompatibilityItem = {
+    name: string;
+    valid: boolean;
+    text: ReactNode;
+};
 
 const isGoodPrngAvailable = () => {
     if (window.crypto && !!window.crypto.getRandomValues) {
