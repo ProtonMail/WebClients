@@ -19,6 +19,7 @@ import { unlockRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { isMac } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 type Props = { offlineEnabled?: boolean };
@@ -87,7 +88,7 @@ export const BiometricsUnlock: FC<Props> = ({ offlineEnabled }) => {
             disabled={disabled}
             onClick={onUnlock}
         >
-            <Icon name="fingerprint" className="mr-1" />
+            <Icon name={isMac() ? 'fingerprint' : 'pass-lockmode-biometrics'} className="mr-1" />
             {c('Action').t`Unlock`}
         </Button>
     );

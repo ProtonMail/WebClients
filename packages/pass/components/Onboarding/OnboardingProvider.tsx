@@ -1,72 +1,23 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { Fragment, useContext, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import type { OnboardingStatus } from '@proton/pass/store/selectors';
-import { selectOnboardingComplete, selectOnboardingEnabled, selectOnboardingState } from '@proton/pass/store/selectors';
-import { OnboardingMessage } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import noop from '@proton/utils/noop';
-
-type OnboardingContextValue = {
-    acknowledge: () => void;
-    complete: boolean;
-    enabled: boolean;
-    state: OnboardingStatus;
-    steps: { done: number; total: number };
-};
-
-const OnboardingContext = createContext<OnboardingContextValue>({
-    acknowledge: noop,
-    complete: false,
-    enabled: false,
-    state: {
-        vaultCreated: false,
-        vaultImported: false,
-        vaultShared: false,
-    },
-    steps: { done: 0, total: 0 },
-});
+import { B2BProvider } from '@proton/pass/components/Onboarding/Provider/B2BProvider';
+import { OnboardingContext } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
+import { WelcomeProvider } from '@proton/pass/components/Onboarding/Provider/WelcomeProvider';
+import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 
 export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { onboardingAcknowledge, onboardingCheck } = usePassCore();
-    const extension = usePassExtensionLink();
+    const plan = useSelector(selectPassPlan);
 
-    const state = useSelector(selectOnboardingState);
-    const complete = useSelector(selectOnboardingComplete(extension.installed));
-    const disabled = !useSelector(selectOnboardingEnabled(extension.installed));
+    const Provider = useMemo(() => {
+        if (isBusinessPlan(plan)) return B2BProvider;
+        else if (DESKTOP_BUILD) return WelcomeProvider;
+        return Fragment;
+    }, [plan]);
 
-    const [enabled, setEnabled] = useState(!disabled);
-
-    useEffect(() => {
-        if (disabled) return;
-
-        (async () => (await onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING)) ?? false)()
-            .then((res) => setEnabled(res))
-            .catch(noop);
-    }, []);
-
-    const context = useMemo<OnboardingContextValue>(() => {
-        const steps = Object.values(state).concat(extension.supportedBrowser ? [extension.installed] : []);
-
-        return {
-            acknowledge: () => {
-                setEnabled(false);
-                void onboardingAcknowledge?.(OnboardingMessage.B2B_ONBOARDING);
-            },
-            enabled,
-            complete,
-            state,
-            steps: {
-                done: steps.filter(truthy).length,
-                total: steps.length,
-            },
-        };
-    }, [complete, enabled, extension, state]);
-
-    return <OnboardingContext.Provider value={context}>{children}</OnboardingContext.Provider>;
+    return <Provider>{children}</Provider>;
 };
 
 export const useOnboarding = () => useContext(OnboardingContext);

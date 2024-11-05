@@ -191,7 +191,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         }
                                         icon="link"
                                         disabled={optimistic || !isOwnerOrAdmin}
-                                        extra={free && <PassPlusPromotionButton className="ml-2 button-xs" />}
+                                        extra={free && <PassPlusPromotionButton className="ml-2" />}
                                     />
                                 )}
                                 {!shared && (

@@ -124,7 +124,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             y: 18,
         },
         minWidth: 881,
-        minHeight: 480,
+        minHeight: 640,
     });
 
     setApplicationMenu(ctx.window);

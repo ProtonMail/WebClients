@@ -1,0 +1,36 @@
+#desktop-lobby {
+	/* TODO: Remove after Pass light theme lands.
+		Onboarding was designed with new theme in mind,
+		so we need to override a few colors to make it 
+		look nice on the old theme (< 1.25.0) */
+	--text-norm: white;
+	--text-weak: #bfb9d8;
+
+	color: var(--text-norm);
+	background:
+		linear-gradient(0deg, rgb(31 31 49 / 0.8), rgb(31 31 49 / 0.8)),
+		radial-gradient(
+				109.79% 67.19% at 28.13% 99.23%,
+				#ffd580 0%,
+				#f6c592 9.37%,
+				#ebb6a2 20.5%,
+				#dfa5af 32.45%,
+				#d397be 42.87%,
+				#c486cb 53.37%,
+				#b578d9 64.87%,
+				#a166e5 77.12%,
+				#8b57f2 89.12%,
+				#704cff 100%
+			)
+			rgb(234 234 234 / 0.84);
+
+	&::before {
+		content: ' ';
+		-webkit-app-region: drag;
+		block-size: 5rem;
+		inline-size: 100%;
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 0;
+	}
+}

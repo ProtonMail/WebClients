@@ -1,0 +1,61 @@
+.pass-onboarding-modal {
+	/* Hide elements we don't need */
+	.stepper-labels,
+	.stepper-item-connector,
+	.modal-two-header-actions .vr,
+	.radio-fakeradio {
+		display: none;
+	}
+
+	/* Customize stepper look */
+	.stepper {
+		position: absolute;
+		inset-block-start: 2.35rem;
+		pointer-events: none;
+
+		&-item {
+			max-inline-size: 2rem;
+
+			&-dot {
+				inline-size: 100%;
+				block-size: 0.25rem;
+				border-radius: 1.5rem;
+				background-color: var(--interaction-weak);
+			}
+
+			&--active .stepper-item-dot {
+				opacity: 1;
+				background-color: var(--interaction-norm);
+			}
+		}
+	}
+
+	/* Align modal header */
+	.modal-two-header-actions {
+		inline-size: 100%;
+		justify-content: end;
+	}
+
+	/* Customize lock selector radios */
+	&--lock {
+		:checked ~ .pass-lock-option,
+		.pass-lock-option:hover {
+			background-color: var(--interaction-norm-minor-1);
+		}
+
+		& > .field-two-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.field-two-label-container {
+				margin: 0;
+			}
+		}
+	}
+
+	&--group,
+	&--skip {
+		color: var(--interaction-norm);
+	}
+}

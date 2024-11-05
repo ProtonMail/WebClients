@@ -18,8 +18,10 @@ import type { ProxiedSettings } from './reducers/settings';
 
 export type State = ReturnType<typeof rootReducer>;
 export type Telemetry = { start: () => void; stop: () => void; push: (event: TelemetryEvent) => Promise<boolean> };
-
 export type PassSaga = (options: RootSagaOptions) => Generator;
+export type PassBootResult =
+    | { ok: true; fromCache: boolean; offline?: boolean; version?: string }
+    | { ok: false; clearCache: boolean };
 
 export interface RootSagaOptions {
     /** defines the current client type */
@@ -53,7 +55,7 @@ export interface RootSagaOptions {
 
     /** Callback with the result of the boot sequence. The `clearCache`
      * flag indicates if the boot failure should result in a cache wipe */
-    onBoot?: (result: { ok: true; fromCache: boolean; offline?: boolean } | { ok: false; clearCache: boolean }) => void;
+    onBoot?: (result: PassBootResult) => void;
 
     /** Callback used when account locale is updated */
     onLocaleUpdated?: (locale: string) => void;
