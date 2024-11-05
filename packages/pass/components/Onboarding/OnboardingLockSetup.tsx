@@ -1,4 +1,4 @@
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
@@ -79,7 +79,7 @@ export const OnboardingLockSetup: FC = () => {
                             {lock.mode === value && (
                                 <Icon name="checkmark-circle-filled" size={6} color="var(--interaction-norm)" />
                             )}
-                            {needsUpgrade && <PassPlusPromotionButton className="button-xs" />}
+                            {needsUpgrade && <PassPlusPromotionButton />}
                         </div>
                     ),
                 }))}
