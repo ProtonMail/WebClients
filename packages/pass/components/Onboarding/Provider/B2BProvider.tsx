@@ -12,7 +12,7 @@ import { OnboardingMessage } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import noop from '@proton/utils/noop';
 
-import { OnboardingContext, type OnboardingContextValue } from './OnboardingContext';
+import { OnboardingContext, type OnboardingContextValue, OnboardingType } from './OnboardingContext';
 
 export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
     const { onboardingAcknowledge, onboardingCheck } = usePassCore();
@@ -29,7 +29,7 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
     useEffect(() => {
         if (enabled) {
             (async () => (await onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING)) ?? false)()
-                .then((res) => setEnabled(res))
+                .then(setEnabled)
                 .catch(noop);
         }
     }, []);
@@ -48,6 +48,7 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
             isActive: Boolean(isActive),
             state,
             steps: { done: steps.filter(truthy).length, total: steps.length },
+            type: OnboardingType.B2B,
         };
     }, [complete, enabled, extension, state, isActive, navigate]);
 

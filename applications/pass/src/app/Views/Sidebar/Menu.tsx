@@ -19,6 +19,7 @@ import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
+import { OnboardingType } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
@@ -75,7 +76,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             </Scroll>
 
             <div className="flex flex-column flex-nowrap pb-2">
-                {onboarding.enabled && <OnboardingButton />}
+                {onboarding.type === OnboardingType.B2B && onboarding.enabled && <OnboardingButton />}
                 <SecureLinkButton
                     className="rounded"
                     activeClassName="color-primary bg-weak"
