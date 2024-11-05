@@ -1112,7 +1112,7 @@
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
+        "이메일과 일정을 종단간 암호화로 보호하세요. 15개 이메일 주소, 사용자 지정 도메인 지원, 무제한 hide-my-email 별칭 등이 포함되어 있습니다."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "온라인 문서 편집기, 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -2573,6 +2573,11 @@
         "기한이 지난 청구서"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2660,11 +2665,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4658,7 +4658,7 @@
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "취소시, 만료일인 ${ expiryDate }에 ${ planTitle } 구독이 더 이상 갱신되지 않습니다."
+        "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
@@ -5216,7 +5216,7 @@
         "이 초대에 거부되었습니다. 관리자에게 재초대를 요청하십시오"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "오늘 부터 ${ planTitle } 기능에 접근할 수 없습니다."
+        "해당 날짜부터 ${ planTitle }용 기능에 접근할 수 없게 됩니다."
       ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
@@ -5249,10 +5249,10 @@
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, 드라이브 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, 드라이브 공유 링크가 더 이상 활성화 되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
@@ -6487,7 +6487,7 @@
         "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+        "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
@@ -6915,14 +6915,6 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -6935,6 +6927,14 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
       ]
     },
     "new_plans: tooltip": {
@@ -8439,7 +8439,7 @@
         "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }에 의해 생성된 데이터를 위한 스토리지"
       ],
       "Up to ${ totalStorageSize } Drive storage": [
-        "최대 ${ totalStorageSize } 드라이브 저장 공간"
+        "최대 ${ totalStorageSize } Drive 저장 공간"
       ],
       "Up to ${ totalStorageSize } Mail storage": [
         "최대 ${ totalStorageSize } 메일 저장 공간"
@@ -8673,10 +8673,10 @@
         "새로운 파일을 추가할 수 없게 됩니다"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 메일 저장 공간과 최대 5 GB의 드라이브 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
+        "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 Mail 저장 공간과 최대 5 GB의 Drive 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "${ planName } 구독이 만료되면, 최대 1GB의 메일 스토리지와 최대 5GB의 드라이브 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
+        "${ planName } 구독이 만료되면, 최대 1GB의 Mail 스토리지와 최대 5GB의 Drive 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
       ],
       "All you need for your business": [
         "내 비즈니스를 위한 모든 것"
@@ -10265,9 +10265,6 @@
       ],
       "Meeting ID:": [
         "회의 ID:"
-      ],
-      "Passcode: ${ password }": [
-        "비밀번호: ${ password }"
       ]
     }
   }

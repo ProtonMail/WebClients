@@ -2580,6 +2580,11 @@
         "Försenad faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
@@ -2592,6 +2597,9 @@
       ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Färgkoda händelser för att göra det enklare att organisera din dag, spåra din tid och prioritera uppgifter."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Skapa ett Zoom-möte och lägg till anslutningsdetaljer till ditt evenemang med ett klick."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
@@ -2661,11 +2669,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3070,6 +3073,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Misslyckades att hämta den ursprungliga förekomsten i serien"
+      ],
+      "Failed to load oauth modal.": [
+        "Misslyckades att ladda oauth-modal."
       ],
       "First name is too long": [
         "Förnamn är för långt"
@@ -7000,17 +7006,6 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -7023,6 +7018,17 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -10453,9 +10459,6 @@
       ],
       "Meeting ID:": [
         "Mötes-ID:"
-      ],
-      "Passcode: ${ password }": [
-        "Lösenkod: ${ password }"
       ]
     }
   }
