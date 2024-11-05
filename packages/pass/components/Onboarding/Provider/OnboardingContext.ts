@@ -3,14 +3,20 @@ import { createContext } from 'react';
 import type { OnboardingStatus } from '@proton/pass/store/selectors';
 import noop from '@proton/utils/noop';
 
+export enum OnboardingType {
+    WELCOME = 'WELCOME',
+    B2B = 'B2B',
+}
+
 export type OnboardingContextValue = {
     acknowledge: () => void;
+    launch: () => void;
     complete: boolean;
     enabled: boolean;
+    isActive: boolean;
     state: OnboardingStatus;
     steps: { done: number; total: number };
-    launch: () => void;
-    isActive: boolean;
+    type: OnboardingType;
 };
 
 export const OnboardingContext = createContext<OnboardingContextValue>({
@@ -25,4 +31,5 @@ export const OnboardingContext = createContext<OnboardingContextValue>({
         vaultShared: false,
     },
     steps: { done: 0, total: 0 },
+    type: OnboardingType.WELCOME,
 });

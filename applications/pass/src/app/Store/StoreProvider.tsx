@@ -8,6 +8,7 @@ import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/Servi
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
+import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { settings } from 'proton-pass-web/lib/settings';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { c } from 'ttag';
@@ -33,6 +34,7 @@ import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
 import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
 
 import { sagaMiddleware, store } from './store';
@@ -73,6 +75,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         telemetry.start().catch(noop);
                         B2BEvents.start().catch(noop);
                         core.i18n.setLocale(selectLocale(state)).catch(noop);
+
+                        /** For desktop builds using cached versions older than 1.24.2:
+                         * Auto-acknowledge the `WELCOME` message to prevent showing the
+                         * onboarding modal to existing users after they update.  */
+                        if (DESKTOP_BUILD && res.version && semver(res.version) < semver('1.24.2')) {
+                            onboarding.acknowledge(OnboardingMessage.WELCOME);
+                        }
 
                         if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());
 
