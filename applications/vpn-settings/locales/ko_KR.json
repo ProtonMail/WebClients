@@ -1095,7 +1095,7 @@
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
+        "이메일과 일정을 종단간 암호화로 보호하세요. 15개 이메일 주소, 사용자 지정 도메인 지원, 무제한 hide-my-email 별칭 등이 포함되어 있습니다."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "온라인 문서 편집기, 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -3778,10 +3778,10 @@
         "클립보드에 복사됨"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사 및 붙여놓기 하십시오."
+        "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사해서 붙여넣어 주세요."
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사 후 붙여놓기 하세요."
+        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
       ],
       "Copy the suggested password to clipboard": [
         "클립보드로 비밀번호 제안을 복사하십시오"
@@ -4045,7 +4045,7 @@
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "취소시, 만료일인 ${ expiryDate }에 ${ planTitle } 구독이 더 이상 갱신되지 않습니다."
+        "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
@@ -4930,7 +4930,7 @@
         "지금의 유료 구독을 취소하신다면, 구독의 잔량이 계정 크레딧으로 반환되고 ${ BRAND_NAME } ${ PLANS.FREE } 요금제로 다운그레이드됩니다."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "취소시 사용자의 구독이 갱신되지 않지만 여전히 구독 종료 기간시 까지 플랜 혜택을 계속 누릴 수 있습니다. 기간 종료 후 ${ BRAND_NAME } 무료 플랜으로 자동 다운그레이드 될 예정입니다."
+        "취소하면 사용자의 구독이 갱신되지 않지만 여전히 구독 종료 기간까지 플랜 혜택을 계속 누릴 수 있습니다. 종료 이후부터는 ${ BRAND_NAME } 무료 플랜으로 자동 다운그레이드될 예정입니다."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "게이트웨이에서 서버를 제거하면 10일의 비활성화 기간에 돌입합니다. 서버들이 새 게이트웨이에 적용되지만 국가는 변경되지 않습니다."
@@ -5053,7 +5053,7 @@
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "오늘 부터 ${ planTitle } 기능에 접근할 수 없습니다."
+        "해당 날짜부터 ${ planTitle }용 기능에 접근할 수 없게 됩니다."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME } 을(를) 사용하려면 ${ BRAND_NAME } 주소가 필요합니다."
@@ -5065,10 +5065,10 @@
         "10일간 해당 서버를 다른 국가로 재할당할 수 없습니다."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, 드라이브 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, 드라이브 공유 링크가 더 이상 활성화 되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
       ],
       "Your ${ BRAND_NAME } password": [
         "사용자의 ${ BRAND_NAME } 비밀번호"
@@ -6306,7 +6306,7 @@
         "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+        "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
@@ -7446,7 +7446,7 @@
     },
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "모든 ${ BRAND_NAME } Plus 서비스. ${ br }쉬운 구독."
+        "모든 ${ BRAND_NAME } Plus 서비스. ${ br }한 번의 쉬운 구독으로."
       ]
     },
     "pass_signup_2024: Info": {
@@ -8617,9 +8617,6 @@
       "${ n } member requested your help to sign in.": [
         "${ n }명의 멤버가 로그인하는데 도움을 오청했습니다."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n }명의 사용자가 신원 제공자를 통해 당신의 조직에 들어왔습니다. 승인하거나 계정을 삭제하세요:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n }명의 사용자가 ${ BRAND_NAME } 계정에 SSO를 통해 로그인하는데 도움을 요청하고 있습니다."
       ],
@@ -8826,7 +8823,7 @@
         "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }에 의해 생성된 데이터를 위한 스토리지"
       ],
       "Up to ${ totalStorageSize } Drive storage": [
-        "최대 ${ totalStorageSize } 드라이브 저장 공간"
+        "최대 ${ totalStorageSize } Drive 저장 공간"
       ],
       "Up to ${ totalStorageSize } Mail storage": [
         "최대 ${ totalStorageSize } 메일 저장 공간"
@@ -9089,10 +9086,10 @@
         "새로운 파일을 추가할 수 없게 됩니다"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 메일 저장 공간과 최대 5 GB의 드라이브 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
+        "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 Mail 저장 공간과 최대 5 GB의 Drive 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "${ planName } 구독이 만료되면, 최대 1GB의 메일 스토리지와 최대 5GB의 드라이브 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
+        "${ planName } 구독이 만료되면, 최대 1GB의 Mail 스토리지와 최대 5GB의 Drive 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
       ],
       "All you need for your business": [
         "내 비즈니스를 위한 모든 것"
@@ -10416,10 +10413,10 @@
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사 및 붙여놓기 하십시오."
+        "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사해서 붙여넣어 주세요."
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사 후 붙여놓기 하세요."
+        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사해서 붙여넣어 주세요."
       ],
       "Device information such as operating system": [
         "운영체제와 같은 디바이스 정보"
@@ -10528,12 +10525,6 @@
       "Could not enable administrator access: ${ error }": [
         "관리자 권한 활성화 불가 : ${ error }"
       ],
-      "Delete request": [
-        "요청 삭제"
-      ],
-      "Delete request to access user data?": [
-        "사용자 데이터 접근 요청을 삭제합니까?"
-      ],
       "Enable manually": [
         "수동 활성화"
       ],
@@ -10542,9 +10533,6 @@
       ],
       "Organization key must be activated to request data access": [
         "데이터 접근을 요청하려면 조직 키가 반드시 활성화되어야 합니다."
-      ],
-      "Pending admin access": [
-        "관리자 권한 대기 중"
       ],
       "Private user": [
         "비공개 사용자"
@@ -10566,9 +10554,6 @@
       ],
       "The user must have an address to request data access": [
         "데이터 접근을 요청하려면 사용자가 주소를 소유해야 합니다."
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "이 작업은 사용자의 데이터 또는 비밀번호 재설정에 대한 관리자 접근 보류 중인 요청을 삭제합니다."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "이 작업은 사용자의 계정을 관리할 관리자 권한을 회수하게 됩니다."

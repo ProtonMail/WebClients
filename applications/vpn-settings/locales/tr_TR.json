@@ -8708,10 +8708,6 @@
         "${ n } üye oturum açmak için yardımınızı istedi.",
         "${ n } üye oturum açmak için yardımınızı istedi."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da silin:",
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları kabul edin ya da silin:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor.",
         "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
@@ -10651,12 +10647,6 @@
       "Could not enable administrator access: ${ error }": [
         "Yönetici yetkisi verilemedi: ${ error }"
       ],
-      "Delete request": [
-        "İsteği sil"
-      ],
-      "Delete request to access user data?": [
-        "Kullanıcı verilerine erişme isteği silinsin mi?"
-      ],
       "Enable manually": [
         "El ile kullanıma al"
       ],
@@ -10665,9 +10655,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
-      ],
-      "Pending admin access": [
-        "Yönetici erişimine onay verilmesi bekleniyor"
       ],
       "Private user": [
         "Gizli kullanıcı"
@@ -10689,9 +10676,6 @@
       ],
       "The user must have an address to request data access": [
         "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Bu işlem kullanıcı verilerine yönetici tarafından erişilmesi ya da kullanıcı parolasını sıfırlama isteğini silecek"
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Bu işlem yöneticinin bu kullanıcının hesabını yönetme iznini kaldıracak."

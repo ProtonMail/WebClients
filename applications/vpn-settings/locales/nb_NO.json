@@ -8735,10 +8735,6 @@
         "${ n } medlem ba om din hjelp til å logge på.",
         "${ n } medlemmer ba om din hjelp til å logge på."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } bruker har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller slett kontoene deres nå:",
-        "${ n } brukere har blitt med i organisasjonen via identitetsleverandøren. Godkjenn eller slett kontoene deres nå:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } bruker ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen sin med enkel pålogging.",
         "${ n } brukere ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen deres med enkel pålogging."
@@ -10675,12 +10671,6 @@
       "Could not enable administrator access: ${ error }": [
         "Kunne ikke aktivere administratortilgang: ${ error }"
       ],
-      "Delete request": [
-        "Slett forespørsel"
-      ],
-      "Delete request to access user data?": [
-        "Slette forespørsel om tilgang til brukerdata?"
-      ],
       "Enable manually": [
         "Aktiver manuelt"
       ],
@@ -10689,9 +10679,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Organisasjonsnøkkel må være aktivert for å be om datatilgang"
-      ],
-      "Pending admin access": [
-        "Venter på administratortilgang"
       ],
       "Private user": [
         "Privat bruker"
@@ -10713,9 +10700,6 @@
       ],
       "The user must have an address to request data access": [
         "Brukeren må ha en adresse for å be om datatilgang"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Dette vil slette den ventende forespørselen om administratortilgang til brukerens data eller tilbakestilling av passord."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Dette vil tilbakekalle administratortillatelsen til å administrere denne brukerens konto."
