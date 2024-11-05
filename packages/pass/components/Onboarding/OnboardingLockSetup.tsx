@@ -9,6 +9,7 @@ import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlus
 import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { isMac } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 type LockModeOption = {
@@ -26,12 +27,6 @@ export const OnboardingLockSetup: FC = () => {
     const lockModes = useMemo<LockModeOption[]>(() => {
         const options: LockModeOption[] = [
             {
-                value: LockMode.NONE,
-                label: c('Label').t`None`,
-                icon: 'pass-lockmode-none',
-                active: !lock.orgControlled,
-            },
-            {
                 value: LockMode.SESSION,
                 label: c('Label').t`PIN code`,
                 icon: 'pass-lockmode-pin',
@@ -46,7 +41,7 @@ export const OnboardingLockSetup: FC = () => {
             {
                 value: LockMode.BIOMETRICS,
                 label: c('Label').t`Biometrics`,
-                icon: 'pass-lockmode-biometrics',
+                icon: isMac() ? 'fingerprint' : 'pass-lockmode-biometrics',
                 needsUpgrade: biometrics.needsUpgrade,
                 active: DESKTOP_BUILD && password.enabled && biometrics.enabled,
             },
