@@ -18,6 +18,7 @@ import {
   DRAGSTART_COMMAND,
   DROP_COMMAND,
   PASTE_COMMAND,
+  SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
   createCommand,
 } from 'lexical'
 import { eventFiles } from '@lexical/rich-text'
@@ -44,6 +45,10 @@ export type SetImageSizePayload = {
 }
 
 export const SET_IMAGE_SIZE_COMMAND: LexicalCommand<SetImageSizePayload> = createCommand('SET_IMAGE_SIZE_COMMAND')
+
+function $isImageNodeWithBlobSrc(node: LexicalNode): node is ImageNode {
+  return $isImageNode(node) && node.getSrc().startsWith('blob:')
+}
 
 const dragImage = new Image()
 
@@ -219,6 +224,45 @@ export default function ImagesPlugin(): JSX.Element | null {
             return true
           }
           return false
+        },
+        COMMAND_PRIORITY_LOW,
+      ),
+      editor.registerCommand(
+        SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
+        ({ nodes, selection }) => {
+          const blobSrcImageNodes = nodes.filter($isImageNodeWithBlobSrc)
+          if (!blobSrcImageNodes.length) {
+            return false
+          }
+          selection.insertNodes(nodes)
+          async function convertSourcesAndInsertNodes() {
+            const convertedSources = new Map<NodeKey, string>()
+            for (const image of blobSrcImageNodes) {
+              const key = image.__key
+              const src = image.__src
+              if (!src.startsWith('blob:')) {
+                continue
+              }
+              const blob = await (await fetch(src)).blob()
+              const base64 = await toBase64(blob)
+              convertedSources.set(key, base64)
+            }
+            editor.update(() => {
+              const selection = $getSelection()
+              if (!selection) {
+                return
+              }
+              for (const [key, src] of convertedSources) {
+                const node = $getNodeByKey<ImageNode>(key)
+                if (!node) {
+                  continue
+                }
+                node.getWritable().__src = src
+              }
+            })
+          }
+          convertSourcesAndInsertNodes().catch(sendErrorMessage)
+          return true
         },
         COMMAND_PRIORITY_LOW,
       ),
