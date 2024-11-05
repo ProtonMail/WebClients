@@ -561,6 +561,9 @@
       "Sign out": [
         "Esci dall'account"
       ],
+      "Sign up": [
+        "Registrati"
+      ],
       "Skip verification": [
         "Salta la verifica"
       ],
@@ -940,6 +943,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include 15 indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
@@ -3719,6 +3726,12 @@
         "${ contactsLength } contatto",
         "${ contactsLength } contatti"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } ti consente di collaborare in tempo reale con la crittografia end-to-end per una privacy completa. Crea una copia per iniziare a modificare o chiedi al proprietario l'accesso in modifica."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } in"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
@@ -3910,6 +3923,9 @@
         "Crea ${ calendarsToBeCreatedCount } nuovo calendario",
         "Crea ${ calendarsToBeCreatedCount } nuovi calendari"
       ],
+      "Create a copy to edit": [
+        "Crea una copia da modificare"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le cartelle che desideri importare."
       ],
@@ -3976,6 +3992,9 @@
       ],
       "Document moved to trash": [
         "Documento spostato nel cestino"
+      ],
+      "Document owner has the password": [
+        "Il proprietario del documento ha la password"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "La finestra non si apre? Ricorda di disabilitare qualsiasi blocco pop-up."
@@ -7843,11 +7862,20 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita gli amici su ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Per modificare questo documento, crea una copia che puoi modificare."
       ]
     },
     "sso": {
+      "Sign in": [
+        "Accedi"
+      ],
       "Sign in to your organization": [
         "Accedi alla tua organizzazione"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Verrai reindirizzato al tuo provider SSO di terze parti."
       ]
     },
     "State": {
@@ -8598,6 +8626,9 @@
       "Link confirmation": [
         "Conferma il link"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Crea una copia sul tuo ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Gestisci link sicuri"
       ],
@@ -8756,6 +8787,9 @@
       ],
       "The link expired": [
         "Il link è scaduto"
+      ],
+      "This document is password protected": [
+        "Questo documento è protetto da password"
       ],
       "Unlock contacts groups": [
         "Sblocca i gruppi di contatti"
