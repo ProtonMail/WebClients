@@ -45,6 +45,7 @@ export const PASS_DESKTOP_CHANGELOG_URL =
     'https://github.com/ProtonMail/WebClients/blob/main/applications/pass-desktop/CHANGELOG.md';
 export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
 export const PASS_DOWNLOAD_URL = 'https://proton.me/pass/download';
+export const PASS_TROUBLESHOOT_URL = 'https://proton.me/support/pass-troubleshooting';
 
 export const WEBSITE_RULES_SUPPORTED_VERSION = '1';
 
