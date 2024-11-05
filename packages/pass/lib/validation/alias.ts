@@ -43,30 +43,14 @@ export const validateAliasForm = ({
 }: AliasFormValues): FormikErrors<AliasFormValues> => {
     const errors: FormikErrors<AliasFormValues> = {};
 
-    if (aliasPrefix === undefined || !validateAliasPrefix(aliasPrefix)) {
-        errors.aliasPrefix = c('Warning').t`Invalid alias prefix`;
-    }
-
-    if (aliasSuffix === undefined) {
-        errors.aliasSuffix = c('Warning').t`Missing alias suffix`;
-    }
-
-    if (mailboxes.length === 0) {
-        errors.mailboxes = c('Warning').t`You must select at least one mailbox`;
-    }
-
-    return errors;
-};
-
-export const validateNewAliasForm = (values: NewAliasFormValues): FormikErrors<NewAliasFormValues> => {
-    const errors: FormikErrors<NewAliasFormValues> = { ...validateItemErrors(values), ...validateAliasForm(values) };
-    const { aliasPrefix, aliasSuffix, mailboxes } = values;
-
     if (aliasPrefix === undefined || aliasPrefix.trim() === '') {
         errors.aliasPrefix = c('Warning').t`Missing alias prefix`;
     }
 
-    if (aliasPrefix && !validateLocalPart(aliasPrefix + (aliasSuffix?.value?.split('@')?.[0] ?? ''))) {
+    if (
+        !validateAliasPrefix(aliasPrefix) ||
+        (aliasPrefix && !validateLocalPart(aliasPrefix + (aliasSuffix?.value?.split('@')?.[0] ?? '')))
+    ) {
         errors.aliasPrefix = c('Warning').t`Invalid alias prefix`;
     }
 
@@ -88,6 +72,11 @@ export const validateNewAliasForm = (values: NewAliasFormValues): FormikErrors<N
 
     return errors;
 };
+
+export const validateNewAliasForm = (values: NewAliasFormValues): FormikErrors<NewAliasFormValues> => ({
+    ...validateItemErrors(values),
+    ...validateAliasForm(values),
+});
 
 export const createEditAliasFormValidator =
     (aliasOwner: boolean) =>

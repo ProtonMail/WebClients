@@ -16,6 +16,9 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { addCustomAddress } from '@proton/pass/store/actions';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+import { toLowerCase } from '@proton/pass/utils/string/to-lower-case';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 export const FORM_ID = 'custom-address-add';
@@ -39,7 +42,7 @@ export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
             else if (!PassCoreUI.is_email_valid(email)) errors.email = c('Warning').t`Invalid email`;
             return errors;
         },
-        onSubmit: ({ email }) => dispatch(email),
+        onSubmit: pipe(prop('email'), toLowerCase, dispatch),
     });
 
     return (
