@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Info from '@proton/components/components/link/Info';
 import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
@@ -45,13 +46,13 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
 
 const ToggleAssistantEnvironment = ({ aiFlag, onEnableLocal, onEnableServer }: Props) => {
     const api = useApi();
-    const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
+    const dispatch = useDispatch();
 
     const handleChange = async (value: AI_ASSISTANT_ACCESS) => {
+        dispatch(userSettingsActions.update({ UserSettings: { AIAssistantFlags: value } }));
         await api(updateAIAssistant(value));
-        void call();
 
         if (value === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
             onEnableLocal?.();

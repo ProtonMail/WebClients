@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useToggle from '@proton/components/hooks/useToggle';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
@@ -18,7 +19,7 @@ interface Props {
 const { OFF, SERVER_ONLY, CLIENT_ONLY } = AI_ASSISTANT_ACCESS;
 
 const ToggleAssistant = ({ id, aiFlag, onDisableSetting }: Props) => {
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
     const api = useApi();
     const [loading, withLoading] = useLoading();
@@ -26,8 +27,8 @@ const ToggleAssistant = ({ id, aiFlag, onDisableSetting }: Props) => {
     const { state, toggle } = useToggle(enabled);
 
     const handleChange = async (value: AI_ASSISTANT_ACCESS) => {
+        dispatch(userSettingsActions.update({ UserSettings: { AIAssistantFlags: value } }));
         await api(updateAIAssistant(value));
-        void call();
         toggle();
 
         if (value === OFF) {
