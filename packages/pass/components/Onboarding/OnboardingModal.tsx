@@ -61,6 +61,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
                             {c('Label')
                                 .t`For security reasons, ${PASS_SHORT_APP_NAME} automatically locks itself after 10 minutes of inactivity.`}
                             <br />
+                            <br />
                             {c('Label')
                                 .t`You can choose between PIN code, biometrics, or your account password to unlock.`}
                         </>
