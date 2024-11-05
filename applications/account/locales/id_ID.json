@@ -808,11 +808,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "Refresh the page": [
-        "Muat ulang halaman"
-      ],
       "refresh the page": [
         "muat ulang halaman"
+      ],
+      "Refresh the page": [
+        "Muat ulang halaman"
       ],
       "Reject": [
         "Tolak"
@@ -1598,14 +1598,6 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh **diskon ${ discountPercentage } untuk ${ plan.Title }** pada saat Anda berlangganan selama **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1627,6 +1619,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh **diskon ${ discountPercentage } untuk ${ plan.Title }** pada saat Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7171,11 +7171,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -8767,11 +8767,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "username": [
-        "nama pengguna"
-      ],
       "Username": [
         "Nama pengguna"
+      ],
+      "username": [
+        "nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -11579,32 +11579,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -11632,6 +11606,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12288,20 +12288,6 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -12320,6 +12306,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -15239,9 +15239,6 @@
       "${ n } member requested your help to sign in.": [
         "${ n } anggota meminta bantuan Anda untuk masuk."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } pengguna telah bergabung ke organisasi Anda melalui Penyedia Identitas Anda. Setujui atau tolak akun mereka sekarang juga:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } pengguna meminta bantuan Anda untuk masuk ke Akun ${ BRAND_NAME } mereka dengan single sign-on."
       ],
@@ -16730,11 +16727,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -18143,12 +18140,6 @@
       "Could not enable administrator access: ${ error }": [
         "Izin administrator tidak dapat diaktifkan: ${ error }"
       ],
-      "Delete request": [
-        "Hapus permintaan"
-      ],
-      "Delete request to access user data?": [
-        "Hapus permintaan mengakses data pengguna?"
-      ],
       "Enable admin access?": [
         "Aktifkan akses admin?"
       ],
@@ -18166,9 +18157,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Kunci organisasi harus diaktifkan untuk meminta pengaksesan data"
-      ],
-      "Pending admin access": [
-        "Menunggu akses admin"
       ],
       "Private user": [
         "Pengguna pribadi"
@@ -18193,9 +18181,6 @@
       ],
       "The user must have an address to request data access": [
         "Pengguna harus memiliki alamat untuk meminta pengaksesan data"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Ini akan menghapus permintaan tertunda untuk pengaksesan administrator pada data pengguna atau pengaturan ulang kata sandi."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tindakan ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."

@@ -808,11 +808,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "Împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Reject": [
         "Respingere"
@@ -1606,14 +1606,6 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1635,6 +1627,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7316,11 +7316,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -8941,11 +8941,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -11819,32 +11819,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Începând de la ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11872,6 +11846,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Începând de la ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12578,20 +12578,6 @@
         "Planul selectat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12610,6 +12596,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -15666,11 +15666,6 @@
         "${ n } membri vă solicită ajutorul pentru a se conecta.",
         "${ n } de membri vă solicită ajutorul pentru a se conecta."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "Organizației i s-a alăturat ${ n } utilizator prin furnizorul de identitate. Aprobați-i sau ștergeți-i contul acum:",
-        "Organizației i s-au alăturat ${ n } utilizatori prin furnizorul de identitate. Aprobați-le sau ștergeți-le contul acum:",
-        "Organizației i s-au alăturat ${ n } de utilizatori prin furnizorul de identitate. Aprobați-le sau ștergeți-le contul acum:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } utilizator vă solicită ajutorul să se conecteze la contul său ${ BRAND_NAME } folosind autentificarea unică (SSO).",
         "${ n } utilizatori vă solicită ajutorul să se conecteze la contul lor ${ BRAND_NAME } folosind autentificarea unică (SSO).",
@@ -17220,10 +17215,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -18648,12 +18643,6 @@
       "Could not enable administrator access: ${ error }": [
         "Nu s-a putut activa accesul de administrator: ${ error }"
       ],
-      "Delete request": [
-        "Anulare cerere"
-      ],
-      "Delete request to access user data?": [
-        "Anulați solicitarea de acces la datele utilizatorului?"
-      ],
       "Enable admin access?": [
         "Activați accesul administratorului?"
       ],
@@ -18671,9 +18660,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Cheia organizației trebuie activată pentru a solicita accesul la date."
-      ],
-      "Pending admin access": [
-        "Acces de administrare în așteptare"
       ],
       "Private user": [
         "Utilizator privat"
@@ -18698,9 +18684,6 @@
       ],
       "The user must have an address to request data access": [
         "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Aceasta va anula solicitarea în așteptare pentru accesul de administrare a datelor utilizatorului sau de resetare a parolei."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Aceasta va revoca permisiunea administratorului de a gestiona contul acestui utilizator."

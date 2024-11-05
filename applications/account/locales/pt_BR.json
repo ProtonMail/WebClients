@@ -805,11 +805,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1599,14 +1599,6 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1628,6 +1620,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7250,11 +7250,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino."
@@ -8862,10 +8862,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -11713,32 +11713,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Iniciando a partir de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11766,6 +11740,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Iniciando a partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12447,23 +12447,6 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -12482,6 +12465,23 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtenha Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -15504,10 +15504,6 @@
         "${ n } membro solicitou sua ajuda para fazer login.",
         "${ n } membro solicitaram sua ajuda para fazer login."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } usuário entrou na sua organização por meio do seu provedor de identidade. Aprove ou exclua a conta dele:",
-        "${ n } usuários entraram na sua organização por meio do seu provedor de identidade. Aprove ou exclua as contas deles:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } usuário está solicitando sua ajuda para iniciar sessão na conta ${ BRAND_NAME } dele com login único (SSO).",
         "${ n } usuários estão solicitando sua ajuda para iniciar sessão na conta ${ BRAND_NAME } deles com login único (SSO)."
@@ -17028,11 +17024,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -18456,12 +18452,6 @@
       "Could not enable administrator access: ${ error }": [
         "Não foi possível habilitar o acesso de administrador: ${ error }"
       ],
-      "Delete request": [
-        "Excluir solicitação"
-      ],
-      "Delete request to access user data?": [
-        "Excluir solicitação para acessar dados do usuário?"
-      ],
       "Enable admin access?": [
         "Ativar o acesso do administrador?"
       ],
@@ -18479,9 +18469,6 @@
       ],
       "Organization key must be activated to request data access": [
         "A chave da organização precisa ser ativada para solicitar o acesso aos dados"
-      ],
-      "Pending admin access": [
-        "Acesso administrador pendente"
       ],
       "Private user": [
         "Usuário privado"
@@ -18506,9 +18493,6 @@
       ],
       "The user must have an address to request data access": [
         "O usuário deve ter um endereço para solicitar o acesso aos dados"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Isso excluirá a solicitação pendente de acesso de administrador aos dados do usuário ou redefinição de senha."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Isso revogará a permissão do administrador para gerenciar a conta deste usuário."
