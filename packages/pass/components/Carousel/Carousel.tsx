@@ -8,8 +8,10 @@ import clsx from '@proton/utils/clsx';
 
 import './Carousel.scss';
 
+export type CarouselItem = { image: string; title: string; description: string };
+
 type CarouselProps = ComponentPropsWithoutRef<'div'> & {
-    steps: { image: string; title: string; description: string }[];
+    steps: CarouselItem[];
     textClassName?: string;
     textStyle?: CSSProperties;
 };
