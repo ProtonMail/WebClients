@@ -1,5 +1,4 @@
 import { type FC } from 'react';
-import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -7,26 +6,18 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import clsx from '@proton/utils/clsx';
 
 import './OnboardingButton.scss';
 
 export const OnboardingButton: FC = () => {
-    const { navigate } = useNavigation();
-    const { acknowledge } = useOnboarding();
+    const { acknowledge, launch, isActive } = useOnboarding();
 
     return (
         <div className="pass-onboarding-button relative shrink-0 mx-3">
-            <div
-                className={clsx(
-                    'pass-onboarding-button--gradient',
-                    useRouteMatch(getLocalPath('onboarding')) && 'pass-onboarding-button--active'
-                )}
-            >
-                <DropdownMenuButtonCore className="py-3" onClick={() => navigate(getLocalPath('onboarding'))}>
+            <div className={clsx('pass-onboarding-button--gradient', isActive && 'pass-onboarding-button--active')}>
+                <DropdownMenuButtonCore className="py-3" onClick={launch}>
                     <DropdownMenuButtonLabel icon="star" label={c('Action').t`Get Started`} />
                 </DropdownMenuButtonCore>
 
