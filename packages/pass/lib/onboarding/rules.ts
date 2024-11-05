@@ -36,6 +36,10 @@ export const createPendingShareAccessRule = (store: Store<State>) =>
 export const createWelcomeRule = () =>
     createOnboardingRule({
         message: OnboardingMessage.WELCOME,
+        when: (previous) => {
+            if (!DESKTOP_BUILD) return false;
+            return !previous;
+        },
     });
 
 export const createPermissionsRule = (checkPermissionsGranted: () => boolean) =>

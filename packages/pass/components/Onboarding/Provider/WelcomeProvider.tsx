@@ -6,17 +6,14 @@ import { OnboardingModal } from '@proton/pass/components/Onboarding/OnboardingMo
 import { OnboardingMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-import { OnboardingContext, type OnboardingContextValue } from './OnboardingContext';
+import { OnboardingContext, type OnboardingContextValue, OnboardingType } from './OnboardingContext';
 
 export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
     const { onboardingAcknowledge, onboardingCheck } = usePassCore();
     const [enabled, setEnabled] = useState(false);
-    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
-        (async () => (await onboardingCheck?.(OnboardingMessage.WELCOME)) ?? false)()
-            .then((res) => setEnabled(res))
-            .catch(noop);
+        (async () => (await onboardingCheck?.(OnboardingMessage.WELCOME)) ?? false)().then(setEnabled).catch(noop);
     }, []);
 
     const context = useMemo<OnboardingContextValue>(
@@ -25,20 +22,21 @@ export const WelcomeProvider: FC<PropsWithChildren> = ({ children }) => {
                 setEnabled(false);
                 void onboardingAcknowledge?.(OnboardingMessage.WELCOME);
             },
-            launch: () => setIsActive(true),
+            launch: () => setEnabled(true),
             complete: false,
             enabled,
-            isActive,
+            isActive: enabled,
             state: { vaultCreated: false, vaultImported: false, vaultShared: false },
             steps: { total: 0, done: 0 },
+            type: OnboardingType.WELCOME,
         }),
-        [isActive, enabled]
+        [enabled]
     );
 
     return (
         <OnboardingContext.Provider value={context}>
             {children}
-            <OnboardingModal open={enabled && isActive} onClose={() => setIsActive(false)} />
+            <OnboardingModal open={enabled} onClose={() => setEnabled(false)} />
         </OnboardingContext.Provider>
     );
 };
