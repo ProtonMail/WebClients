@@ -22,6 +22,7 @@ export const UnknownSenderModal = ({ hashedTxId, ...modalProps }: Props) => {
     const [loadingSenderUpdate, withLoadingSenderUpdate] = useLoading();
 
     const {
+        name,
         email,
         error,
         shouldSaveAsContact,
