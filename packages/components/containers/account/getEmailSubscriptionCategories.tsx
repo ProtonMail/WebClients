@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
+import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getEmailSubscriptionsMap } from './constants/email-subscriptions';
@@ -19,6 +19,6 @@ export const getEmailSubscriptionCategories = (news: NEWSLETTER_SUBSCRIPTIONS_BI
     const lastCategoryTitle = categoryTitles[categoryTitles.length - 1];
 
     return categoryTitles.length > 1
-        ? c('Email Unsubscribe Categories').t`${allCategoryTitlesExceptTheLastOne} and ${lastCategoryTitle}`
+        ? c('news').t`${allCategoryTitlesExceptTheLastOne} and ${lastCategoryTitle}`
         : lastCategoryTitle;
 };

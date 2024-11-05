@@ -1,59 +1,76 @@
-import { isBefore, sub } from 'date-fns';
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
-import { getEmailSubscriptions } from '@proton/components/containers/account/constants/email-subscriptions';
+import {
+    type EmailSubscription,
+    filterNews,
+    getEmailSubscriptions,
+} from '@proton/components/containers/account/constants/email-subscriptions';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
-import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
 import { patchNews } from '@proton/shared/lib/api/settings';
-import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
+import { type NewsletterSubscriptionUpdateData, getUpdatedNewsBitmap } from '@proton/shared/lib/helpers/newsletter';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 import { useNotifications, useUserSettings } from '../../hooks';
-import type { NewsletterSubscriptionUpdateData } from './EmailSubscriptionToggles';
-import EmailSubscriptionToggles from './EmailSubscriptionToggles';
+import { EmailSubscriptionToggleWithHeader } from './EmailSubscriptionToggles';
 
 const EditEmailSubscription = () => {
     const [user] = useUser();
-    const [{ News, EarlyAccess } = { News: 0, EarlyAccess: 0 }] = useUserSettings();
+    const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const api = useApi();
-    const [loading, withLoading] = useLoading();
+    const [loadingMap, setLoadingMap] = useState<{ [key: string]: boolean }>({});
 
-    const handleChange = (data: NewsletterSubscriptionUpdateData) =>
-        withLoading(async () => {
-            await api(patchNews(data));
-            await call();
-            createNotification({ text: c('Info').t`Emailing preference saved` });
+    const run = async (data: NewsletterSubscriptionUpdateData) => {
+        dispatch(userSettingsActions.update({ UserSettings: { News: getUpdatedNewsBitmap(userSettings.News, data) } }));
+        await api<{ UserSettings: UserSettings }>(patchNews(data));
+        createNotification({ text: c('Info').t`Emailing preference saved` });
+    };
+
+    const setLoadingMapDiff = (data: NewsletterSubscriptionUpdateData, value: boolean) => {
+        setLoadingMap((oldValue) => ({
+            ...oldValue,
+            ...Object.fromEntries(Object.entries(data).map(([key]) => [key, value])),
+        }));
+    };
+
+    const handleChange = async (data: NewsletterSubscriptionUpdateData) => {
+        setLoadingMapDiff(data, true);
+        run(data).finally(() => {
+            setLoadingMapDiff(data, false);
+        });
+    };
+
+    const filter = (emailSubscription: EmailSubscription) =>
+        filterNews({
+            emailSubscription,
+            user,
+            userSettings,
         });
 
-    const filteredEmailSubscription = getEmailSubscriptions().filter(({ flag }) => {
-        switch (flag) {
-            case NEWSLETTER_SUBSCRIPTIONS_BITS.NEW_EMAIL_NOTIF:
-                // Daily email notifications are currently in a separate setting. Should they be migrated?
-                return false;
-            case NEWSLETTER_SUBSCRIPTIONS_BITS.FEATURES:
-                // We don't want to display toggle for FEATURES news subscription as manual switch has been deprecated for this option.
-                // INBOX_NEWS, DRIVE_NEWS & VPN_NEWS should be used instead
-                return false;
-            case NEWSLETTER_SUBSCRIPTIONS_BITS.ONBOARDING:
-                // check if the user account was created more than 1 month ago
-                return isBefore(sub(new Date(), { months: 1 }), user.CreateTime * 1000);
-            case NEWSLETTER_SUBSCRIPTIONS_BITS.BETA:
-                return Boolean(EarlyAccess);
-            default:
-                return true;
-        }
-    });
+    const { general, product, notifications } = getEmailSubscriptions(filter);
+
+    const sharedProps = {
+        onChange: handleChange,
+        loadingMap,
+        News: userSettings.News,
+    };
 
     return (
-        <EmailSubscriptionToggles
-            News={News}
-            onChange={handleChange}
-            disabled={loading}
-            subscriptions={filteredEmailSubscription}
-        />
+        <div className="flex flex-column gap-4">
+            <EmailSubscriptionToggleWithHeader title={general.title} subscriptions={general.toggles} {...sharedProps} />
+            <EmailSubscriptionToggleWithHeader title={product.title} subscriptions={product.toggles} {...sharedProps} />
+            <EmailSubscriptionToggleWithHeader
+                title={notifications.title}
+                subscriptions={notifications.toggles}
+                {...sharedProps}
+            />
+        </div>
     );
 };
 
