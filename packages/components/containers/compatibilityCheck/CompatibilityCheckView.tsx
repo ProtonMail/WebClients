@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { Href } from '@proton/atoms';
+import type { CompatibilityItem } from '@proton/components/containers/compatibilityCheck/compatibilityCheckHelper';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -14,7 +15,7 @@ import useAppTitle from '../../hooks/useAppTitle';
 
 interface Props {
     appName: APP_NAMES;
-    incompatibilities: { name: string; text: string }[];
+    incompatibilities: CompatibilityItem[];
 }
 
 const key = 'compatibility-check.notified';
