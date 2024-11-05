@@ -808,10 +808,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reject": [
@@ -1610,14 +1610,6 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1639,6 +1631,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3615,7 +3615,7 @@
         "Skonfiguruj automatyczne przekierowanie, aby przekierowywać przychodzące wiadomości na inny adres e-mail."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
+        "Upewnij się, że plik CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING }, lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
@@ -4765,7 +4765,7 @@
         "Adres mógł zostać błędnie wpisany"
       ],
       "The amount due has changed. Please try again.": [
-        " Kwota uległa zmianie. Spróbuj ponownie."
+        "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
       ],
       "The email addresses do not match": [
         "Adresy e-mail nie pasują do siebie"
@@ -7358,11 +7358,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Usuń wszystkie inne rekordy MX lub upewnij się, że priorytet rekordu ${ MAIL_APP_NAME } posiada najniższy numer."
@@ -8552,6 +8552,9 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Subskrypcja odnowi się automatycznie po ${ cycle } miesiącach."
+      ],
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
       ],
@@ -8963,11 +8966,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -11847,32 +11850,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11900,6 +11877,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Od ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12631,20 +12634,6 @@
         "Wybrany plan: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -12663,6 +12652,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -14071,6 +14074,9 @@
       "Select billing country to pay": [
         "Wybierz kraj"
       ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Specjalna zniżka ${ priceWithDiscount } jest ważna przez pierwsze ${ months } miesiące. Kupon można użyć ${ couponRedemptions } raz/y. Potem usługa automatycznie się odnowi po cenie ${ price } za ${ months } miesięcy. Możesz anulować, kiedy chcesz."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
       ],
@@ -14112,7 +14118,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
+        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcę usług płatniczych) do obciążenia konta. Możesz otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem twojego banku."
       ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
@@ -15676,12 +15682,6 @@
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się.",
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } użytkownik dołączył do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub usuń ich konta:",
-        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub usuń ich konta:",
-        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub usuń ich konta:",
-        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Zatwierdź lub usuń ich konta:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } użytkownik poprosił o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO.",
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO.",
@@ -15740,7 +15740,7 @@
         "Odmów dostęp"
       ],
       "Devices available": [
-        " Dostępne urządzenia"
+        "Dostępne urządzenia"
       ],
       "Devices management": [
         "Zarządzanie urządzeniami"
@@ -17206,10 +17206,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -18064,6 +18064,9 @@
       "Start import process": [
         "Rozpocznij proces importowania"
       ],
+      "State": [
+        "Status"
+      ],
       "Status": [
         "Status"
       ],
@@ -18631,12 +18634,6 @@
       "Could not enable administrator access: ${ error }": [
         "Nie można włączyć dostępu administratora: ${ error }"
       ],
-      "Delete request": [
-        "Usuń żądanie"
-      ],
-      "Delete request to access user data?": [
-        "Usunąć żądanie dostępu do danych użytkownika?"
-      ],
       "Enable admin access?": [
         "Włączyć dostęp administratora?"
       ],
@@ -18654,9 +18651,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Musisz aktywować klucz organizacji, aby uzyskać dostęp do danych"
-      ],
-      "Pending admin access": [
-        "Oczekiwanie na dostęp administratora"
       ],
       "Private user": [
         "Prywatny użytkownik"
@@ -18681,9 +18675,6 @@
       ],
       "The user must have an address to request data access": [
         "Użytkownik musi mieć adres, aby żądać dostępu do danych"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Spowoduje to usunięcie oczekującego żądania dostępu administratora do danych użytkownika lub zresetowania hasła."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Spowoduje to unieważnienie dostępu administratora do zarządzania kontem użytkownika."
