@@ -571,6 +571,9 @@
       ],
       "Write us on Twitter": [
         "Skriv til os på Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Er din adgangskodeadministrator her ikke? Anmod om den."
       ]
     },
     "App menu": {
@@ -1184,6 +1187,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Brug af ${ PASS_APP_NAME } kræver dit fingeraftryk eller enhedens pinkode."
       ],
+      "Add your custom email address to monitor:": [
+        "Tilføj din brugerdefinerede e-mailadresse, som skal monitoreres:"
+      ],
       "Admin": [
         "Admin"
       ],
@@ -1379,6 +1385,12 @@
       "Expires in ${ remainingTime }": [
         "Udløber om ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Ekstra adgangskode oprettet"
+      ],
+      "Extra password successfully removed": [
+        "Ekstra adgangskode fjernet"
+      ],
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
       ],
@@ -1528,6 +1540,9 @@
       ],
       "Monitoring settings successfully updated": [
         "Indstillinger for monitorering opdateret"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mail-aliasser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
@@ -1716,6 +1731,9 @@
       "Select vault to share": [
         "Vælg boks til deling"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Vælg, hvor du vil gemme dine importerede bokse."
+      ],
       "Selected items permanently deleted": [
         "De valgte elementer blev slettet permanent"
       ],
@@ -1736,6 +1754,9 @@
       ],
       "Settings successfully updated": [
         "Indstillingerne blev opdateret"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Del dine logins og sikre noter med op til 10 personer"
       ],
       "Sign in to your account": [
         "Log ind på din konto"
@@ -1810,6 +1831,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "For at migrere data fra en anden adgangskodeadministrator skal du gå til adgangskodeadministratoren, eksportere dine data og derefter uploade dem til ${ PASS_APP_NAME }. Når dine data er blevet importeret, skal du slette den eksporterede fil."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "For at gennemgå dine importerede data skal du klikke på ${ PASS_APP_NAME } i din browsers værktøjslinje."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
       ],
@@ -1840,11 +1864,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Opgradér nu for at låse op for premium-funktioner"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Opgrader til et betalt abonnement for at oprette flere bokse."
+      ],
       "Use vaults to share this item with others.": [
         "Brug bokse til at dele dette element med andre."
       ],
       "User's access removed": [
         "Brugers adgang fjernet"
+      ],
+      "User's access successfully updated": [
+        "Brugers adgang opdateret"
       ],
       "username": [
         "brugernavn"
@@ -2080,6 +2110,9 @@
       "Capital letters (A-Z)": [
         "Store bogstaver (A-Z)"
       ],
+      "Capitalize": [
+        "Brug store bogstaver"
+      ],
       "Card": [
         "Kort"
       ],
@@ -2268,6 +2301,9 @@
       ],
       "Import passwords": [
         "Importér adgangskoder"
+      ],
+      "Imported from: ": [
+        "Importeret fra: "
       ],
       "Imported on : ": [
         "Importeret : "
@@ -2561,6 +2597,12 @@
       "Today": [
         "I dag"
       ],
+      "Total imported items: ": [
+        "Samlet antal importerede elementer: "
+      ],
+      "Total items: ": [
+        "Elementer i alt: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2827,6 +2869,17 @@
         "Dine oplysninger blev fundet i mindst én datalækage. Tænd for ${ DARK_WEB_MONITORING_NAME } for at se detaljer. ${ link }"
       ]
     },
+    "sso": {
+      "Sign-in failed": [
+        "Log-ind mislykkedes"
+      ],
+      "Sign-in rejection failure": [
+        "Fejl med afvisning af login"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Der blev anmodet om login på en anden enhed. Var det dig? "
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synkronisering af aliasser er aktiveret. SimpleLogin-alias kan tage lidt tid at synkronisere"
@@ -2891,6 +2944,9 @@
       "Dark Web Monitoring": [
         "Monitorering af det mørke net"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Slet boksen \"${ vaultName }\"?"
+      ],
       "Details": [
         "Detaljer"
       ],
@@ -2947,6 +3003,9 @@
       ],
       "Last modified": [
         "Sidst ændret"
+      ],
+      "Leave vault?": [
+        "Forlad boks?"
       ],
       "Loading breaches...": [
         "Indlæser databrud..."
@@ -3007,6 +3066,9 @@
       ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
+      ],
+      "Permanently remove all items?": [
+        "Fjern alle elementer permanent?"
       ],
       "Pinned (${ items.length })": [
         "Fastgjorte (${ items.length })"
@@ -3146,6 +3208,9 @@
       "Section name cannot be empty": [
         "Sektionsnavn kan ikke være tomt"
       ],
+      "URL already exists": [
+        "URL findes allerede"
+      ],
       "URL cannot be empty": [
         "URL må ikke være tom"
       ],
@@ -3177,6 +3242,9 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke oprette boksen \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Kunne ikke sende invitationer til følgende adresser:"
       ],
       "Duplicate email addresses.": [
         "Dubletter af e-mailadresser."
@@ -3266,6 +3334,9 @@
       "Please check that the extension is properly installed and enabled": [
         "Tjek venligst, om udvidelsen er korrekt installeret og aktiveret"
       ],
+      "Please contact us to investigate the issue": [
+        "Kontakt os, så vi kan undersøge problemet"
+      ],
       "Please update the extension to its latest version": [
         "Opdater venligst udvidelsen til den nyeste version"
       ],
@@ -3343,6 +3414,9 @@
       ],
       "Your session was locked.": [
         "Din session blev låst."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Du kan ikke oprette flere bokse, end dit abonnement tillader."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
