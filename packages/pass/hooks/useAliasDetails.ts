@@ -15,16 +15,21 @@ type UseAliasDetailsConfig = {
     aliasEmail: string;
     itemId: string;
     shareId: string;
-    onAliasDetailsLoaded?: (mailboxes: Maybe<AliasMailbox[]>) => void;
+    onAliasMailboxesLoaded?: (mailboxes: Maybe<AliasMailbox[]>) => void;
 };
 
-export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasDetailsLoaded }: UseAliasDetailsConfig) => {
+export const useAliasDetails = ({
+    aliasEmail,
+    itemId,
+    shareId,
+    onAliasMailboxesLoaded: onAliasDetailsLoaded,
+}: UseAliasDetailsConfig) => {
     const { createNotification } = useNotifications();
-    const aliasDetails = useSelector(selectAliasMailboxes(aliasEmail));
+    const mailboxes = useSelector(selectAliasMailboxes(aliasEmail));
 
     const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
         requestId: aliasDetailsRequest(aliasEmail),
-        onSuccess: () => onAliasDetailsLoaded?.(aliasDetails),
+        onSuccess: () => onAliasDetailsLoaded?.(mailboxes),
         onFailure: () => {
             createNotification({
                 type: 'warning',
@@ -38,7 +43,7 @@ export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasDetailsLoa
     }, [shareId, itemId, aliasEmail]);
 
     return useMemo(
-        () => ({ value: aliasDetails ?? [], loading: getAliasDetails.loading }),
-        [aliasDetails, getAliasDetails.loading]
+        () => ({ mailboxes: mailboxes ?? [], loading: getAliasDetails.loading }),
+        [mailboxes, getAliasDetails.loading]
     );
 };
