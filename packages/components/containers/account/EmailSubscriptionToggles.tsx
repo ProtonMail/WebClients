@@ -1,59 +1,57 @@
+import type { ReactNode } from 'react';
+
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
-import { NEWSLETTER_SUBSCRIPTIONS, NEWSLETTER_SUBSCRIPTIONS_BY_BITS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { isGlobalFeatureNewsEnabled } from '@proton/shared/lib/helpers/newsletter';
+import {
+    NEWSLETTER_SUBSCRIPTIONS_BY_BITS,
+    type NewsletterSubscriptionUpdateData,
+    getSubscriptionPatchUpdate,
+} from '@proton/shared/lib/helpers/newsletter';
 
-import type { EmailSubscription } from './constants/email-subscriptions';
-import { getEmailSubscriptions } from './constants/email-subscriptions';
+import { type EmailSubscription } from './constants/email-subscriptions';
 
-export type NewsletterSubscriptionUpdateData = Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>;
 export interface EmailSubscriptionCheckboxesProps {
-    disabled: boolean;
+    loadingMap: { [key: string]: boolean };
     News: number;
     onChange: (data: NewsletterSubscriptionUpdateData) => void;
-    subscriptions?: EmailSubscription[];
+    subscriptions: EmailSubscription[];
 }
 
-const EmailSubscriptionToggles = ({
-    disabled,
+export const EmailSubscriptionToggles = ({
+    loadingMap,
     News,
     onChange,
-    subscriptions = getEmailSubscriptions(),
+    subscriptions,
 }: EmailSubscriptionCheckboxesProps) => {
     return (
-        <ul className="unstyled relative">
+        <ul className="unstyled relative my-0 flex flex-column gap-2">
             {subscriptions.map(({ id, flag, title, frequency, tooltip }) => {
-                const isSubscribed = hasBit(News, flag);
-                const handleChange = (flag: NEWSLETTER_SUBSCRIPTIONS_BITS) => () => {
-                    const update = {
-                        [NEWSLETTER_SUBSCRIPTIONS_BY_BITS[flag]]: !isSubscribed,
-                    };
-
-                    onChange({
-                        ...update,
-                        [NEWSLETTER_SUBSCRIPTIONS.FEATURES]: isGlobalFeatureNewsEnabled(News, update),
-                    });
-                };
+                const checked = hasBit(News, flag);
+                const key = NEWSLETTER_SUBSCRIPTIONS_BY_BITS[flag];
 
                 return (
-                    <li key={id} className="mb-4 flex items-center flex-nowrap gap-4">
+                    <li key={id} className="flex items-center flex-nowrap gap-4">
                         <Toggle
                             id={id}
                             className="shrink-0"
-                            checked={isSubscribed}
-                            disabled={disabled}
-                            onChange={handleChange(flag)}
+                            checked={checked}
+                            loading={loadingMap[key]}
+                            onChange={() =>
+                                onChange(
+                                    getSubscriptionPatchUpdate({
+                                        currentNews: News,
+                                        diff: { [key]: !checked },
+                                    })
+                                )
+                            }
                         />
-                        <label htmlFor={id} className="flex flex-column md:flex-row">
-                            <span className="mr-1">{title}</span>
-                            {frequency && <span className="mr-1">{frequency}</span>}
-                            {tooltip && (
-                                <span className="text-left">
-                                    <Info title={tooltip} />
-                                </span>
-                            )}
+                        <label htmlFor={id} className="flex flex-column">
+                            <div className="flex items-center gap-1">
+                                <span>{title}</span>
+                                {tooltip && <Info title={tooltip} />}
+                            </div>
+                            {frequency && <span className="text-sm color-weak">{frequency}</span>}
                         </label>
                     </li>
                 );
@@ -62,4 +60,18 @@ const EmailSubscriptionToggles = ({
     );
 };
 
-export default EmailSubscriptionToggles;
+interface Props extends EmailSubscriptionCheckboxesProps {
+    title: ReactNode;
+}
+
+export const EmailSubscriptionToggleWithHeader = ({ subscriptions, title, ...rest }: Props) => {
+    if (!subscriptions.length) {
+        return null;
+    }
+    return (
+        <div>
+            <div className="text-semibold text-lg mb-2">{title}</div>
+            <EmailSubscriptionToggles subscriptions={subscriptions} {...rest} />
+        </div>
+    );
+};

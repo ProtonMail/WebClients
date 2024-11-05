@@ -5,17 +5,22 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import { GenericError, useApi, useErrorHandler, useNotifications } from '@proton/components';
-import type { NewsletterSubscriptionUpdateData } from '@proton/components/containers/account/EmailSubscriptionToggles';
 import { getEmailSubscriptionCategories } from '@proton/components/containers/account/getEmailSubscriptionCategories';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI, getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getNewsExternal, patchNewsExternal } from '@proton/shared/lib/api/settings';
-import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/constants';
-import { NEWSLETTER_SUBSCRIPTIONS, NEWSLETTER_SUBSCRIPTIONS_BY_BITS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getBits } from '@proton/shared/lib/helpers/bitset';
-import { isGlobalFeatureNewsEnabled } from '@proton/shared/lib/helpers/newsletter';
+import type { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
+import {
+    type NEWSLETTER_SUBSCRIPTIONS,
+    NEWSLETTER_SUBSCRIPTIONS_BY_BITS,
+    type NewsletterSubscriptionUpdateData,
+    getSubscriptionPatchUpdate,
+    getUpdatedNewsBitmap,
+} from '@proton/shared/lib/helpers/newsletter';
 import type { Api } from '@proton/shared/lib/interfaces';
 
 import EmailSubscriptionManagement from '../components/EmailSubscriptionManagement';
@@ -39,20 +44,11 @@ enum ErrorType {
     API,
 }
 
-const getUpdatedSubscription = (
-    currentSubscription: number,
-    subscriptionBits: NEWSLETTER_SUBSCRIPTIONS_BITS[],
-    isEnabled = false
-) => {
-    const updates = subscriptionBits.reduce<Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>>(
+const getDiff = (subscriptionBits: NEWSLETTER_SUBSCRIPTIONS_BITS[], isEnabled = false) => {
+    return subscriptionBits.reduce<Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>>(
         (acc, bit) => ({ ...acc, [NEWSLETTER_SUBSCRIPTIONS_BY_BITS[bit]]: isEnabled }),
         {}
     );
-
-    return {
-        ...updates,
-        [NEWSLETTER_SUBSCRIPTIONS.FEATURES]: isGlobalFeatureNewsEnabled(currentSubscription, updates),
-    };
 };
 
 const EmailUnsubscribeContainer = () => {
@@ -109,20 +105,19 @@ const EmailUnsubscribeContainer = () => {
             return;
         }
 
-        const {
-            UserSettings: { News },
-        } = await authApi<{ UserSettings: { News: number } }>(patchNewsExternal(data));
+        setNews(getUpdatedNewsBitmap(news ?? 0, data));
 
-        setNews(News);
+        await authApi<{ UserSettings: { News: number } }>(patchNewsExternal(data));
+
         createNotification({ text: c('Info').t`Emailing preference saved` });
     };
 
     const handleUnsubscribeClick = async () => {
-        return update(getUpdatedSubscription(news ?? 0, subscriptionBits, false));
+        return update(getSubscriptionPatchUpdate({ currentNews: news ?? 0, diff: getDiff(subscriptionBits, false) }));
     };
 
     const handleResubscribeClick = async () => {
-        return update(getUpdatedSubscription(news ?? 0, subscriptionBits, true));
+        return update(getSubscriptionPatchUpdate({ currentNews: news ?? 0, diff: getDiff(subscriptionBits, true) }));
     };
 
     const handleManageClick = () => {
