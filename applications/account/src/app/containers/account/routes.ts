@@ -142,7 +142,7 @@ export const getAccountAppRoutes = ({
                         available: canPay,
                     },
                     {
-                        text: c('Title').t`Email subscriptions`,
+                        text: c('Title').t`Notifications`,
                         id: 'email-subscription',
                         available: !isMember,
                     },
