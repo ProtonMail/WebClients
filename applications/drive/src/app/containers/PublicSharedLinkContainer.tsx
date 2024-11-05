@@ -9,6 +9,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import * as storage from '@proton/shared/lib/helpers/storage';
+import useFlag from '@proton/unleash/useFlag';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import { useSignupFlowModal } from '../components/modals/SignupFlowModal/SignupFlowModal';
@@ -17,7 +18,6 @@ import usePublicToken from '../hooks/drive/usePublicToken';
 import { usePartialPublicView } from '../hooks/util/usePartialPublicView';
 import type { DecryptedLink } from '../store';
 import { PublicDriveProvider, useBookmarksPublicView, useDownload, usePublicAuth, usePublicShare } from '../store';
-import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_bookmarks/useDriveShareURLBookmarking';
 import { useDriveWebShareURLSignupModal } from '../store/_bookmarks/useDriveWebShareURLSignupModal';
 import { useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
 import { sendErrorReport } from '../utils/errorHandling';
@@ -76,7 +76,7 @@ function PublicShareLinkInitContainer() {
         isPasswordNeeded,
         submitPassword,
     } = usePublicAuth(token, urlPassword);
-    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
+    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const isDriveWebShareUrlSignupModalEnabled = useDriveWebShareURLSignupModal();
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
     const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
@@ -191,7 +191,7 @@ function PublicShareLinkInitContainer() {
         const modalHasBeenShown = !!storage.getItem(PUBLIC_SHARE_SIGNUP_MODAL_KEY);
         /** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */
         if (
-            isDriveShareUrlBookmarkingEnabled &&
+            !bookmarksFeatureDisabled &&
             !isLoggedIn &&
             !isLoading &&
             !modalHasBeenShown &&
@@ -214,7 +214,7 @@ function PublicShareLinkInitContainer() {
         return <ErrorPage />;
     }
 
-    const showBookmarks = isDriveShareUrlBookmarkingEnabled || bookmarksPublicView.haveBookmarks;
+    const showBookmarks = !bookmarksFeatureDisabled || bookmarksPublicView.haveBookmarks;
     const props = {
         bookmarksPublicView,
         token,
@@ -226,7 +226,7 @@ function PublicShareLinkInitContainer() {
     return (
         <>
             {link.isFile ? <SharedFilePage {...props} link={link} /> : <SharedFolderPage {...props} rootLink={link} />}
-            {isDriveShareUrlBookmarkingEnabled && isDriveWebShareUrlSignupModalEnabled
+            {!bookmarksFeatureDisabled && isDriveWebShareUrlSignupModalEnabled
                 ? signUpFlowModal
                 : renderUpsellFloatingModal}
         </>
