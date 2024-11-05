@@ -34,7 +34,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 
-import { hydrate } from './hydrate.saga';
+import { type HydrationResult, hydrate } from './hydrate.saga';
 
 function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSagaOptions) {
     try {
@@ -51,7 +51,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
 
         /* merge the existing cache to preserve any state that may have been
          * mutated before the boot sequence (session lock data) */
-        const fromCache: boolean = yield hydrate(
+        const { fromCache, version }: HydrationResult = yield hydrate(
             {
                 allowFailure: online,
                 merge: (existing: State, incoming: State) => merge(existing, incoming, { excludeEmpty: true }),
@@ -89,7 +89,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         }
 
         options.setAppStatus(online ? AppStatus.READY : AppStatus.OFFLINE);
-        options.onBoot?.({ ok: true, fromCache, offline: payload?.offline });
+        options.onBoot?.({ ok: true, fromCache, offline: payload?.offline, version });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
