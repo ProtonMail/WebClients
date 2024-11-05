@@ -58,6 +58,9 @@
     --optional-email-item-read-text-color: #484E5B;
     --optional-email-item-read-background-color: #F7F8FA;
 
+    --optional-background-elevated: white;
+    --optional-background-lowered: #f3f4f6;
+
     /* Reset because prominent part overrides those colors */
     --optional-logo-text-proton-color: initial;
     --optional-logo-text-product-color: initial;
