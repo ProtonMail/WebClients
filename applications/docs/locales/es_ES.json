@@ -944,6 +944,10 @@
         "Protege tus correos electrónicos y tu agenda con el cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo electrónico, soporte para los dominios de correo electrónico personalizados, el asistente de escritura Scribe de ${ BRAND_NAME }, alias hide-my-email ilimitados y mucho más.",
         "Protege tus correos electrónicos y tu agenda con el cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo electrónico, soporte para los dominios de correo electrónico personalizados, el asistente de escritura Scribe de ${ BRAND_NAME }, alias hide-my-email ilimitados y mucho más."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Protege tus correos electrónicos y tu agenda con el cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo electrónico, soporte para los dominios de correo electrónico personalizados, alias hide-my-email ilimitados y mucho más.",
+        "Protege tus correos electrónicos y tu agenda con el cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo electrónico, soporte para los dominios de correo electrónico personalizados, alias hide-my-email ilimitados y mucho más."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye 15 direcciones de correo electrónico, soporte de dominios de correo electrónico personalizados, asistente de escritura ${ BRAND_NAME } Scribe, alias ilimitados hide-my-email y más."
       ],
@@ -3990,7 +3994,7 @@
         "Se ha movido el documento a la papelera."
       ],
       "Document owner has the password": [
-        "El dueño del documento tiene la contraseña"
+        "El propietario del documento tiene la contraseña"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvides desactivar los bloqueadores de ventanas emergentes."
@@ -6975,6 +6979,9 @@
         "${ n } cuenta de usuario",
         "${ n } cuentas de usuario"
       ],
+      "Activity log": [
+        "Registro de actividad"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel de administración para gestionar usuarios y suscripciones"
       ]
@@ -7817,7 +7824,7 @@
         "Iniciar sesión en tu organización"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Serás redirigido a tu proveedor de SSO de terceros."
+        "Se te redirigirá a tu proveedor de SSO de terceros."
       ]
     },
     "State": {

@@ -2591,6 +2591,11 @@
         "ინვოისი გადაცილებულია"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
@@ -2675,11 +2680,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "თქვენ უკვე შექმენით 10 ფსევდონიმი. მიიღეთ განუსაზღვრელი ფსევდონიმები და 500 გბ საცავი ${ BRAND_NAME } Unlimited-თან ერთად."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7025,14 +7025,6 @@
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "მიიღეთ Mail Plus ფასით ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "${ price }-დან"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -7045,6 +7037,14 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "მიიღეთ Mail Plus ფასით ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
       ]
     },
     "new_plans: tooltip": {
@@ -10483,9 +10483,6 @@
       ],
       "Meeting ID:": [
         "შეხვედრის ID:"
-      ],
-      "Passcode: ${ password }": [
-        "წვდომის კოდი: ${ password }"
       ]
     }
   }

@@ -85,6 +85,9 @@
       "Back": [
         "Zurück"
       ],
+      "Back to sign-in": [
+        "Zurück zur Anmeldung"
+      ],
       "Block": [
         "Sperren"
       ],
@@ -2659,6 +2662,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
       ],
+      "Please upload a square logo": [
+        "Bitte lade ein quadratisches Logo hoch."
+      ],
       "Please upload an xml file": [
         "Bitte lade eine XML-Datei hoch."
       ],
@@ -3120,6 +3126,9 @@
     "fido2: Action": {
       "Delete key": [
         "Schlüssel löschen"
+      ],
+      "New security key": [
+        "Neuer Sicherheitsschlüssel"
       ]
     },
     "fido2: Error": {
@@ -3200,6 +3209,9 @@
       ],
       "Security key registered": [
         "Sicherheitsschlüssel registriert"
+      ],
+      "Security keys": [
+        "Sicherheitsschlüssel"
       ]
     },
     "file size format": {
@@ -4804,6 +4816,9 @@
         "Benutzer aktiviert"
       ],
       "username": [
+        "Benutzername"
+      ],
+      "Username": [
         "Benutzername"
       ],
       "Users": [
@@ -7570,6 +7585,14 @@
         "Neue Kredit-/Debitkarte"
       ]
     },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Unternehmensname verwenden"
+      ],
+      "Use personal name": [
+        "Persönlichen Namen verwenden"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Rechnungsland"
@@ -8582,8 +8605,14 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Confirmation code": [
+        "Bestätigungscode"
+      ],
       "Contact administrator": [
         "Administrator kontaktieren"
+      ],
+      "Deny": [
+        "Verweigern"
       ],
       "Deny access": [
         "Zugriff verweigern"
@@ -8591,8 +8620,14 @@
       "Devices available": [
         "Verfügbare Geräte"
       ],
+      "Grant": [
+        "Zulassen"
+      ],
       "Grant access": [
         "Zugriff gewähren"
+      ],
+      "Grant access to users?": [
+        "Den Benutzern Zugriff gewähren?"
       ],
       "Invalid confirmation code": [
         "Ungültiger Bestätigungscode"
@@ -8602,6 +8637,9 @@
       ],
       "Sign in": [
         "Anmelden"
+      ],
+      "User details:": [
+        "Benutzerdetails:"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
@@ -9392,6 +9430,9 @@
       ],
       "Preferences updated": [
         "Einstellungen aktualisiert"
+      ],
+      "Resent invitation": [
+        "Einladung erneut versendet"
       ]
     },
     "Suffix": {
@@ -9502,6 +9543,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
@@ -9540,6 +9584,9 @@
       ],
       "Action": [
         "Aktion"
+      ],
+      "Actions": [
+        "Aktionen"
       ],
       "Activate organization key": [
         "Organisationsschlüssel aktivieren"
@@ -9745,6 +9792,12 @@
       "Delete user?": [
         "Benutzer löschen?"
       ],
+      "Deny access to user?": [
+        "Dem Benutzer den Zugriff verweigern?"
+      ],
+      "Device": [
+        "Gerät"
+      ],
       "Device connected!": [
         "Gerät verbunden!"
       ],
@@ -9813,6 +9866,9 @@
       ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
+      ],
+      "Enable for all users": [
+        "Für alle Benutzer aktivieren"
       ],
       "Enter 2FA code": [
         "2FA Code eingeben"
@@ -9967,6 +10023,9 @@
       ],
       "Processing...": [
         "Wird verarbeitet..."
+      ],
+      "QR Code": [
+        "QR-Code"
       ],
       "Recommended": [
         "Empfohlen"
@@ -10133,6 +10192,9 @@
       ],
       "Verifying your payment...": [
         "Deine Zahlung wird verifiziert..."
+      ],
+      "Video conference": [
+        "Videokonferenz"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Wir senden eine E-Mail an deine neue Adresse mit Anweisungen zum Abschluss der Änderung."
@@ -10333,12 +10395,6 @@
       "Could not enable administrator access: ${ error }": [
         "Fehler beim Aktivieren des Administratorzugriffs: ${ error }"
       ],
-      "Delete request": [
-        "Anfrage löschen"
-      ],
-      "Delete request to access user data?": [
-        "Anfrage zum Zugriff auf Benutzerdaten löschen?"
-      ],
       "Enable manually": [
         "Manuell aktivieren"
       ],
@@ -10347,9 +10403,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Der Organisationsschlüssel muss aktiviert werden, um den Datenzugang zu beantragen"
-      ],
-      "Pending admin access": [
-        "Admin-Zugriff ausstehend"
       ],
       "Private user": [
         "Privater Benutzer"
@@ -10371,9 +10424,6 @@
       ],
       "The user must have an address to request data access": [
         "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Dadurch wird die ausstehende Anfrage für den Administratorzugriff auf die Daten des Benutzers oder das Zurücksetzen des Passworts gelöscht."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Dadurch wird dem Administrator die Berechtigung entzogen, das Konto dieses Benutzers zu verwalten."

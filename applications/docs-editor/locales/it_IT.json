@@ -29,6 +29,9 @@
       "Add new table row": [
         "Aggiungi nuova riga nella tabella"
       ],
+      "Add suggestion": [
+        "Aggiungi un suggerimento"
+      ],
       "Adjust font size": [
         "Regola la dimensione del carattere"
       ],
@@ -404,6 +407,9 @@
       "Edit document directly": [
         "Modifica direttamente il documento"
       ],
+      "Edits become suggestions": [
+        "Le modifiche diventano suggerimenti"
+      ],
       "Read or print final document": [
         "Leggi o stampa il documento finale"
       ]
@@ -660,6 +666,11 @@
       ],
       "Language not supported": [
         "Lingua non supportata"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Non è supportato fornire suggerimenti all'interno di blocchi di codice"
       ]
     }
   }

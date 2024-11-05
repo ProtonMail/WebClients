@@ -55,6 +55,9 @@
       "Add domain": [
         "Aggiungi dominio"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Aggiungi altri posti ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Aggiungi PayPal"
       ],
@@ -1090,6 +1093,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include 15 indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
@@ -2286,6 +2293,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Se disabilitato, solo gli amministratori avranno accesso."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantieni separate le diverse parti della tua vita e organizza la tua casella di posta con indirizzi aggiuntivi."
       ],
@@ -3141,6 +3151,9 @@
     "fido2: Action": {
       "Delete key": [
         "Elimina la chiave"
+      ],
+      "New security key": [
+        "Nuova chiave di sicurezza"
       ]
     },
     "fido2: Error": {
@@ -3194,6 +3207,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifica la tua identità con una U2F fisica o una chiave di sicurezza FIDO2"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Hai raggunto il numero massimo di ${ maxSecurityKeyLength } chiave di sicurezza.",
+        "Hai raggunto il numero massimo di ${ maxSecurityKeyLength } chiavi di sicurezza."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "La tua chiave di autenticazione a due fattori è pronta all'uso."
       ]
@@ -3221,6 +3238,9 @@
       ],
       "Security key registered": [
         "Chiave di sicurezza registrata"
+      ],
+      "Security keys": [
+        "Chiavi di sicurezza"
       ]
     },
     "file size format": {
@@ -5341,6 +5361,9 @@
       "Allowed Domain": [
         "Dominio autorizzato"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Consente a tutti gli utenti dell'organizzazione di aggiungere facilmente collegamenti alle videoconferenze agli inviti del calendario."
+      ],
       "Amount": [
         "Importo"
       ],
@@ -5499,6 +5522,9 @@
       ],
       "Email or username": [
         "Email o nome utente"
+      ],
+      "Enable video conferencing ": [
+        "Abilita le videoconferenze "
       ],
       "Enter the code displayed on your TV": [
         "Inserisci il codice visualizzato sulla tua TV"
@@ -7205,6 +7231,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "L'autenticazione a due fattori non è più necessaria"
+      ],
+      "Video conferencing settings have been updated": [
+        "Le impostazioni della videoconferenza sono state aggiornate"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8100,6 +8129,12 @@
       "For security reasons, the token is hidden": [
         "Per motivi di sicurezza, il token è nascosto"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Accedi al tuo provider di identità, copia e incolla i dati seguenti e completa la configurazione di SCIM per ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Accedi al tuo provider di identità, copia e incolla il token seguente e riattiva SCIM per ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Se hai perso o dimenticato il token SCIM, puoi generarne uno nuovo, ma tieni presente che le impostazioni del tuo provider di identità dovranno essere aggiornate."
       ],
@@ -8108,6 +8143,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Una volta disabilitato SCIM per la tua organizzazione, **tutti gli utenti SCIM forniti automaticamente dal tuo provider di identità verranno convertiti in utenti SSO** e potrai gestirli direttamente nelle impostazioni di ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Semplifica la gestione degli utenti tra diversi servizi. Aggiungi, modifica e rimuovi utenti nel tuo provider di identità: queste modifiche verranno automaticamente applicate alla tua organizzazione ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Il provisioning automatico di SCIM sarà disabilitato finché non inserirai il nuovo token SCIM nelle impostazioni del tuo provider di identità."
@@ -8700,10 +8738,6 @@
         "${ n } ha richiesto il tuo aiuto per accedere.",
         "${ n } hanno richiesto il tuo aiuto per accedere."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } utente si è unito alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:",
-        "${ n } utenti si sono uniti alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } utente sta richiedendo il tuo aiuto per accedere al proprio account ${ BRAND_NAME } con Single Sign-On.",
         "${ n } utenti richiedono il tuo aiuto per accedere al proprio account ${ BRAND_NAME } con Single Sign-On."
@@ -8822,6 +8856,9 @@
       "Share the confirmation code with your administrator": [
         "Condividi il codice di conferma con il tuo amministratore"
       ],
+      "Sign in": [
+        "Accedi"
+      ],
       "Sign in to your organization": [
         "Accedi alla tua organizzazione"
       ],
@@ -8857,6 +8894,9 @@
       ],
       "User details:": [
         "Dettagli utente:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Verrai reindirizzato al tuo provider SSO di terze parti."
       ]
     },
     "sso: auth device state": {
@@ -9494,6 +9534,9 @@
       "Administrator privileges restored": [
         "Privilegi di amministratore ripristinati"
       ],
+      "Backup password updated": [
+        "Password di backup aggiornata"
+      ],
       "Catch-all address updated": [
         "Indirizzo catch-all aggiornato"
       ],
@@ -9656,6 +9699,9 @@
       ],
       "Preferences updated": [
         "Preferenze aggiornate"
+      ],
+      "Resent invitation": [
+        "Invito rinviato"
       ]
     },
     "Suffix": {
@@ -9765,6 +9811,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
@@ -10086,6 +10135,9 @@
       ],
       "Email subscriptions": [
         "Newsletter"
+      ],
+      "Enable for all users": [
+        "Abilita per tutti gli utenti"
       ],
       "Enter 2FA code": [
         "Inserisci il codice di autenticazione a due fattori"
@@ -10410,6 +10462,9 @@
       "Verifying your payment...": [
         "Verifica del pagamento..."
       ],
+      "Video conference": [
+        "Videoconferenza"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Invieremo un'email al tuo nuovo indirizzo con le istruzioni su come completare il cambio."
       ],
@@ -10495,6 +10550,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Gli amministratori possono gestire gli account utente e concedere privilegi di amministratore ad altri utenti. Solo l'amministratore principale può modificare il piano dell'organizzazione."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Consente di aggiungere facilmente collegamenti di videoconferenza agli inviti del tuo calendario."
       ],
       "An approximate location of the IP address": [
         "Una posizione approssimativa dell'indirizzo IP"
@@ -10619,12 +10677,6 @@
       "Could not enable administrator access: ${ error }": [
         "Impossibile abilitare l'accesso come amministratore: ${ error }"
       ],
-      "Delete request": [
-        "Elimina richiesta"
-      ],
-      "Delete request to access user data?": [
-        "Eliminare la richiesta di accesso ai dati utente?"
-      ],
       "Enable manually": [
         "Abilita manualmente"
       ],
@@ -10633,9 +10685,6 @@
       ],
       "Organization key must be activated to request data access": [
         "La chiave dell'organizzazione deve essere attivata per richiedere l'accesso ai dati"
-      ],
-      "Pending admin access": [
-        "Accesso amministratore in sospeso"
       ],
       "Private user": [
         "Utente privato"
@@ -10657,9 +10706,6 @@
       ],
       "The user must have an address to request data access": [
         "L'utente deve avere un indirizzo per richiedere l'accesso ai dati"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Ciò eliminerà la richiesta in sospeso di accesso amministratore ai dati dell'utente o di reimpostazione della password."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Ciò revocherà l'autorizzazione di amministratore per gestire l'account di questo utente."

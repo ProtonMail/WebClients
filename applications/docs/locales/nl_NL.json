@@ -561,6 +561,9 @@
       "Sign out": [
         "Uitloggen"
       ],
+      "Sign up": [
+        "Registreren"
+      ],
       "Skip verification": [
         "Verificatie overslaan"
       ],
@@ -940,6 +943,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en schema met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en schema met end-to-end versleuteling. Bevat ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
@@ -3719,6 +3726,12 @@
         "${ contactsLength } contact",
         "${ contactsLength } contacten"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } laat u real-time samenwerken met end-to-end versleuteling voor volledige privacy. Maak een kopie om te beginnen met bewerken of vraag de eigenaar toegang tot bewerken."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } in"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
@@ -3910,6 +3923,9 @@
         "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
         "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
       ],
+      "Create a copy to edit": [
+        "Maak een kopie om te bewerken"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
       ],
@@ -3976,6 +3992,9 @@
       ],
       "Document moved to trash": [
         "Document verplaatst naar prullenbak"
+      ],
+      "Document owner has the password": [
+        "De eigenaar van het document heeft het wachtwoord"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
@@ -7789,11 +7808,20 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Nodig vrienden uit voor ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Om dit document te bewerken, maak een kopie die u kunt wijzigen."
       ]
     },
     "sso": {
+      "Sign in": [
+        "Inloggen"
+      ],
       "Sign in to your organization": [
         "Aanmelden bij uw organisatie"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ]
     },
     "State": {
@@ -8544,6 +8572,9 @@
       "Link confirmation": [
         "Link bevestigen"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Maak een kopie naar uw ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Beveiligde link beheren"
       ],
@@ -8702,6 +8733,9 @@
       ],
       "The link expired": [
         "De koppeling is verlopen"
+      ],
+      "This document is password protected": [
+        "Dit document is beveiligd met een wachtwoord"
       ],
       "Unlock contacts groups": [
         "Ontgrendel contactgroepen"

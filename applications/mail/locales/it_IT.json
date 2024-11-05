@@ -1782,6 +1782,10 @@
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include 15 indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
       ],
@@ -11527,8 +11531,14 @@
       ]
     },
     "sso": {
+      "Sign in": [
+        "Accedi"
+      ],
       "Sign in to your organization": [
         "Accedi alla tua organizzazione"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Verrai reindirizzato al tuo provider SSO di terze parti."
       ]
     },
     "State": {
@@ -13928,9 +13938,6 @@
       ],
       "Meeting ID:": [
         "ID meeting:"
-      ],
-      "Passcode: ${ password }": [
-        "Codice di accesso: ${ password }"
       ]
     }
   }

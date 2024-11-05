@@ -2595,6 +2595,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege su cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2682,11 +2687,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7035,14 +7035,6 @@
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Obtenga Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7055,6 +7047,14 @@
       ],
       "Switch plans?": [
         "¿Quiere cambiar de plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtenga Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -10505,9 +10505,6 @@
       ],
       "Meeting ID:": [
         "Identificador de la reunión:"
-      ],
-      "Passcode: ${ password }": [
-        "Código de acceso: ${ password }"
       ]
     }
   }

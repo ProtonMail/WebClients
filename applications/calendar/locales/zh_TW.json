@@ -2549,6 +2549,11 @@
         "逾期帳單"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "雙重驗證可以增加一層安全保障，防止盜用。"
@@ -2621,11 +2626,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 匯入小幫手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6821,14 +6821,6 @@
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -6841,6 +6833,14 @@
       ],
       "Switch plans?": [
         "切換方案？"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
       ]
     },
     "new_plans: tooltip": {
@@ -9952,9 +9952,6 @@
       ],
       "Meeting ID:": [
         "會議識別碼:"
-      ],
-      "Passcode: ${ password }": [
-        "密碼數字：${ password }"
       ]
     }
   }
