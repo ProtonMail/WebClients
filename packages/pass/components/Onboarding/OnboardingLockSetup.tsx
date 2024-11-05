@@ -1,3 +1,4 @@
+import type { ReactNode} from 'react';
 import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
@@ -14,7 +15,7 @@ import clsx from '@proton/utils/clsx';
 
 type LockModeOption = {
     value: LockMode;
-    label: string;
+    label: ReactNode;
     icon: IconName;
     needsUpgrade?: boolean;
     active: boolean;
@@ -44,6 +45,17 @@ export const OnboardingLockSetup: FC = () => {
                 icon: isMac() ? 'fingerprint' : 'pass-lockmode-biometrics',
                 needsUpgrade: biometrics.needsUpgrade,
                 active: DESKTOP_BUILD && password.enabled && biometrics.enabled,
+            },
+            {
+                value: LockMode.NONE,
+                label: (
+                    <>
+                        <span className="mr-2">{c('Label').t`None`}</span>
+                        <span className="color-weak text-sm align-end">({c('Info').t`Not recommended`})</span>
+                    </>
+                ),
+                icon: 'pass-lockmode-none',
+                active: !lock.orgControlled,
             },
         ];
 
