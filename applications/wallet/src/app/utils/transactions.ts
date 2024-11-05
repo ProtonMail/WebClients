@@ -238,7 +238,8 @@ export const signAndBroadcastPsbt = async ({
             ? await encryptPgp(
                   message.content,
                   [senderAddressKey.publicKey, ...message.encryptionKeys],
-                  [senderAddressKey.privateKey]
+                  // We don't wanna sign the message if the send is anonymous
+                  isAnonymousSend ? [] : [senderAddressKey.privateKey]
               ).catch(() => null)
             : null,
     });
