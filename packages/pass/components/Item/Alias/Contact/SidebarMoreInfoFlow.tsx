@@ -4,12 +4,41 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, type ModalStateProps } from '@proton/components';
+import createContactImg from '@proton/pass/assets/alias/alias-contact-create.svg';
+import fromToImg from '@proton/pass/assets/alias/alias-contact-from-to.svg';
 import stampedLetter from '@proton/pass/assets/alias/alias-contact-stamped-letter.svg';
+import { SidebarMoreInfoFlowSection } from '@proton/pass/components/Item/Alias/Contact/SidebarMoreInfoFlowSection';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+const exampleEmail = (
+    <span key="alias-sender-example" style={{ color: 'var(--interaction-norm-major-2)' }}>
+        test.43jp2@simplelogin.com
+    </span>
+);
+
+const getSteps = () => [
+    {
+        description: c('Info').t`Enter the address you want to email.`,
+        img: createContactImg,
+        alt: c('Info').t`Create contact illustration`,
+    },
+    {
+        description: c('Info')
+            .t`${PASS_APP_NAME} will generate a forwarding address (also referred to as reverse alias).`,
+    },
+    {
+        description: c('Info').jt`Email this address and it will appear to be sent from ${exampleEmail} for example.`,
+        img: fromToImg,
+        alt: c('Info').t`Email headers illustration`,
+    },
+];
 
 export const SidebarMoreInfoFlow: FC<ModalStateProps> = ({ open, onClose }) => {
+    const steps = getSteps();
+
     return (
         <SidebarModal className="ui-teal" onClose={onClose} open={open}>
             <Panel
@@ -49,6 +78,15 @@ export const SidebarMoreInfoFlow: FC<ModalStateProps> = ({ open, onClose }) => {
                 <p className="text-lg">{c('Info')
                     .t`To keep your personal email address hidden, you can create an alias contact that masks your address.`}</p>
                 <p className="text-lg">{c('Info').t`Here's how it works:`}</p>
+                {steps.map(({ description, img, alt }, idx) => (
+                    <SidebarMoreInfoFlowSection
+                        key={`contact-step-${idx}`}
+                        index={`${idx + 1}`}
+                        description={description}
+                        img={img}
+                        alt={alt}
+                    />
+                ))}
             </Panel>
         </SidebarModal>
     );
