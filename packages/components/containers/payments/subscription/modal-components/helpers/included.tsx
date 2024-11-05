@@ -10,7 +10,6 @@ import {
     FAMILY_MAX_USERS,
     MAIL_SHORT_APP_NAME,
     VPN_SHORT_APP_NAME,
-    WALLET_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import type { Included } from '@proton/shared/lib/helpers/checkout';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
@@ -87,10 +86,6 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: getPremiumPasswordManagerText(),
-            },
-            {
-                type: 'text',
-                text: getPremium(WALLET_SHORT_APP_NAME),
             },
         ];
     }
@@ -245,10 +240,6 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: getPremiumPasswordManagerText(),
-            },
-            {
-                type: 'text',
-                text: getPremium(WALLET_SHORT_APP_NAME),
             },
             {
                 type: 'text',
