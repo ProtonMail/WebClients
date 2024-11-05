@@ -134,10 +134,10 @@ export const getEligibility = ({
                 },
                 result: okResult,
             },
-            // Plus plan -> bundle, duo, family OK
+            // Plus plan or free -> bundle, duo, family OK
             {
                 latest: {
-                    plan: [PLANS.VPN, PLANS.VPN2024, PLANS.MAIL, PLANS.PASS, PLANS.DRIVE],
+                    plan: [PLANS.FREE, PLANS.VPN, PLANS.VPN2024, PLANS.MAIL, PLANS.PASS, PLANS.DRIVE],
                     cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 },
                 target: {
