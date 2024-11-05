@@ -1,4 +1,5 @@
-import { type FC, useState } from 'react';
+import type { FC, ReactNode } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,6 +13,8 @@ import onboardingExtension from '@proton/pass/assets/desktop-onboarding/onboardi
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/OnboardingLockSetup';
 import { PASS_DOWNLOAD_URL } from '@proton/pass/constants';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { not } from '@proton/pass/utils/fp/predicates';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -19,79 +22,96 @@ import { useOnboarding } from './OnboardingProvider';
 
 import './OnboardingModal.scss';
 
+type OnboardingStep = {
+    action?: () => void;
+    actionText?: string;
+    component?: ReactNode;
+    description: ReactNode;
+    group: string;
+    hidden?: boolean;
+    key: string;
+    title: string;
+};
+
 export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) => {
-    const [loading, setLoading] = useState(false);
-    const [stepIx, setStepIx] = useState(0);
     const { acknowledge } = useOnboarding();
+    const [loading, setLoading] = useState(false);
+    const [step, setStep] = useState(0);
 
-    const steps = [
-        /*
-        {
-            key: 'look-and-feel',
-            group: c('Label').t`Personalize`,
-            title: c('Label').t`Make it your own.`,
-            description: c('Label').t`Choose your preferred look and feel.`,
-            actionText: c('Label').t`Select theme`,
-        },
-        */
-        {
-            key: 'unlock',
-            group: c('Label').t`Security`,
-            title: c('Label').t`How to unlock ${PASS_SHORT_APP_NAME}`,
-            description: c('Label')
-                .t`For security reasons, ${PASS_SHORT_APP_NAME} automatically locks itself after 10 minutes of inactivity.\n\nYou can choose between PIN code, biometrics, or your account password to unlock.`,
-            component: (
-                <div className="pass-onboarding-modal--lock">
-                    <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
-                    <OnboardingLockSetup />
-                </div>
-            ),
-        },
-        {
-            key: 'extension',
-            group: c('Label').t`Browse faster, smarter`,
-            title: c('Label').t`Your passwords. Everywhere.`,
-            description: c('Label').t`Get the extension for your browser.`,
-            actionText: c('Label').t`Install and continue`,
-            component: <img src={onboardingExtension} className="w-full" alt="" />,
-            action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
-            skippable: true,
-        },
-    ];
+    const steps = useMemo<OnboardingStep[]>(
+        () =>
+            [
+                {
+                    actionText: c('Label').t`Select theme`,
+                    description: c('Label').t`Choose your preferred look and feel.`,
+                    group: c('Label').t`Personalize`,
+                    hidden: true,
+                    key: 'look-and-feel',
+                    title: c('Label').t`Make it your own.`,
+                },
+                {
+                    component: (
+                        <div className="pass-onboarding-modal--lock">
+                            <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
+                            <OnboardingLockSetup />
+                        </div>
+                    ),
+                    description: (
+                        <>
+                            {c('Label')
+                                .t`For security reasons, ${PASS_SHORT_APP_NAME} automatically locks itself after 10 minutes of inactivity.`}
+                            <br />
+                            {c('Label')
+                                .t`You can choose between PIN code, biometrics, or your account password to unlock.`}
+                        </>
+                    ),
+                    group: c('Label').t`Security`,
+                    key: 'unlock',
+                    title: c('Label').t`How to unlock ${PASS_SHORT_APP_NAME}`,
+                },
+                {
+                    action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
+                    actionText: c('Label').t`Install and continue`,
+                    component: <img src={onboardingExtension} className="w-full" alt="" />,
+                    description: c('Label').t`Get the extension for your browser.`,
+                    group: c('Label').t`Browse faster, smarter`,
+                    key: 'extension',
+                    title: c('Label').t`Your passwords. Everywhere.`,
+                },
+            ].filter(not(prop('hidden'))),
+        []
+    );
 
-    const onStepChange = async (offset: number) => {
-        const nextIx = stepIx + offset;
-        if (nextIx < 0) return;
-        if (nextIx > steps.length - 1) {
-            setLoading(true);
-            await wait(250);
-            acknowledge();
-            return props.onClose?.();
-        }
-        setStepIx(nextIx);
+    const currentStep = steps[step];
+
+    const onComplete = () => {
+        setLoading(true);
+        acknowledge();
+        void wait(250).then(props.onClose);
     };
 
-    const currentStep = steps[stepIx];
+    const onStep = (offset: number) =>
+        step + offset < steps.length ? setStep(Math.max(0, step + offset)) : onComplete();
 
-    const onContinueClick = () => {
+    const onContinue = () => {
         currentStep.action?.();
-        void onStepChange(1);
+        onStep(1);
     };
 
     const backButton =
-        stepIx > 0 ? (
-            <Button className="mr-auto" icon pill shape="ghost" disabled={!stepIx} onClick={() => onStepChange(-1)}>
+        step > 0 ? (
+            <Button className="mr-auto" icon pill shape="ghost" onClick={() => onStep(-1)}>
                 <Icon name="arrow-left" />
             </Button>
         ) : undefined;
 
     return (
-        <PassModal {...props} size={size} className="pass-onboarding-modal">
+        <PassModal {...props} onClose={onComplete} size={size} className="pass-onboarding-modal">
             <ModalTwoHeader actions={backButton} closeButtonProps={{ pill: true, icon: true }} />
 
-            <Stepper activeStep={stepIx}>
-                {steps.map((step, ix) => (
-                    <Step key={step.key}>{'' + (ix + 1)}</Step>
+            <Stepper activeStep={step}>
+                {steps.map((step) => (
+                    <Step key={step.key} />
                 ))}
             </Stepper>
 
@@ -115,19 +135,17 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
             </ModalTwoContent>
             <ModalTwoFooter className="mt-0">
                 <div className="flex justify-end w-full">
-                    {currentStep.skippable && (
-                        <Button
-                            className="mr-auto pass-onboarding-modal--skip"
-                            pill
-                            shape="ghost"
-                            onClick={() => onStepChange(1)}
-                            disabled={loading}
-                        >
-                            {c('Action').t`Skip`}
-                        </Button>
-                    )}
+                    <Button
+                        className="mr-auto pass-onboarding-modal--skip"
+                        pill
+                        shape="ghost"
+                        onClick={() => onStep(1)}
+                        disabled={loading}
+                    >
+                        {c('Action').t`Skip`}
+                    </Button>
 
-                    <Button pill shape="solid" onClick={onContinueClick} disabled={loading}>
+                    <Button pill shape="solid" onClick={onContinue} disabled={loading}>
                         {currentStep.actionText ?? 'Continue'}
                     </Button>
                 </div>
