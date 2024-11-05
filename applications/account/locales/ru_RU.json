@@ -802,11 +802,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reject": [
         "Отказать"
@@ -1601,14 +1601,6 @@
         "Выберите Новогоднее предложение"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1630,6 +1622,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7245,11 +7245,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
@@ -8811,11 +8811,11 @@
       "User activated": [
         "Пользователь активирован"
       ],
-      "username": [
-        "имя пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "username": [
+        "имя пользователя"
       ],
       "Users": [
         "Пользователи"
@@ -11659,26 +11659,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Начните с ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11706,6 +11686,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Начните с ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -12434,17 +12434,6 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -12463,6 +12452,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -15386,12 +15386,6 @@
         "${ n } участников запросили вашу помощь для входа.",
         "${ n } участников запросили вашу помощь для входа."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } пользователь присоединился к вашей организации через поставщика личных данных. Одобрите или удалите их аккаунт сейчас:",
-        "${ n } пользователя присоединились к вашей организации через поставщика личных данных. Одобрите или удалите их аккаунты сейчас:",
-        "${ n } пользователей присоединились к вашей организации через поставщика личных данных. Одобрите или удалите их аккаунты сейчас:",
-        "${ n } пользователей присоединились к вашей организации через поставщика личных данных. Одобрите или удалите их аккаунты сейчас:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } пользователь просит вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом.",
         "${ n } пользователя просят вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом.",
@@ -16898,10 +16892,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -18284,12 +18278,6 @@
       "Could not enable administrator access: ${ error }": [
         "Не удалось включить доступ администратора: ${ error }"
       ],
-      "Delete request": [
-        "Удалить запрос"
-      ],
-      "Delete request to access user data?": [
-        "Удалить запрос на доступ к данным пользователя?"
-      ],
       "Enable admin access?": [
         "Включить доступ администратора?"
       ],
@@ -18307,9 +18295,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Для запроса доступа к данным необходимо активировать ключ организации"
-      ],
-      "Pending admin access": [
-        "Ожидание доступа администратора"
       ],
       "Private user": [
         "Частный пользователь"
@@ -18334,9 +18319,6 @@
       ],
       "The user must have an address to request data access": [
         "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Это приведет к удалению ожидающего запроса на доступ администратора к данным пользователя или сброс пароля."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Это отменит разрешение администратора на управление аккаунтом этого пользователя."

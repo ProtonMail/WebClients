@@ -124,6 +124,9 @@
       "Add label": [
         "Aggiungi un'etichetta"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Aggiungi altri posti ${ BRAND_NAME } Scribe"
+      ],
       "Add notification": [
         "Aggiungi notifica"
       ],
@@ -805,11 +808,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "Refresh the page": [
-        "Aggiorna la pagina"
-      ],
       "refresh the page": [
         "aggiorna la pagina"
+      ],
+      "Refresh the page": [
+        "Aggiorna la pagina"
       ],
       "Reject": [
         "Rifiuta"
@@ -1599,14 +1602,6 @@
         "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB di spazio di archiviazione (2 volte di più rispetto a qualsiasi altro piano)"
@@ -1628,6 +1623,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Il piano ${ plan } è tornato, ma solo per un periodo di tempo limitato"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1791,6 +1794,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
+        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Proteggi le email e l'agenda con la crittografia end-to-end. Include 15 indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
@@ -3564,6 +3571,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Ottieni fino a ${ credits } in crediti invitando amici su ${ BRAND_NAME }."
+      ],
+      "If disabled, only admins will have access.": [
+        "Se disabilitato, solo gli amministratori avranno accesso."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
@@ -5600,6 +5610,9 @@
     "fido2: Action": {
       "Delete key": [
         "Elimina la chiave"
+      ],
+      "New security key": [
+        "Nuova chiave di sicurezza"
       ]
     },
     "fido2: Error": {
@@ -5653,6 +5666,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifica la tua identità con una U2F fisica o una chiave di sicurezza FIDO2"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Hai raggunto il numero massimo di ${ maxSecurityKeyLength } chiave di sicurezza.",
+        "Hai raggunto il numero massimo di ${ maxSecurityKeyLength } chiavi di sicurezza."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "La tua chiave di autenticazione a due fattori è pronta all'uso."
       ]
@@ -5680,6 +5697,9 @@
       ],
       "Security key registered": [
         "Chiave di sicurezza registrata"
+      ],
+      "Security keys": [
+        "Chiavi di sicurezza"
       ]
     },
     "file size format": {
@@ -7225,11 +7245,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "dedicated servers": [
-        "server dedicati"
-      ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "dedicated servers": [
+        "server dedicati"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -7243,6 +7263,12 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Eliminazione di ${ deletedServerCount } server gateway",
         "Eliminazione di ${ deletedServerCount } server gateway"
+      ],
+      "Disable recovery by email address": [
+        "Disabilita il ripristino tramite indirizzo email"
+      ],
+      "Disable recovery by phone number": [
+        "Disabilita il ripristino tramite numero di telefono"
       ],
       "Disabled on ${ formattedDateAndTime }": [
         "Disabilitato il ${ formattedDateAndTime }"
@@ -8831,11 +8857,11 @@
       "User activated": [
         "Utente attivato"
       ],
-      "username": [
-        "nome utente"
-      ],
       "Username": [
         "Nome utente"
+      ],
+      "username": [
+        "nome utente"
       ],
       "Users": [
         "Utenti"
@@ -8869,6 +8895,12 @@
       ],
       "Verify domain": [
         "Verifica il dominio"
+      ],
+      "Verify email address": [
+        "Verifica l'indirizzo email"
+      ],
+      "Verify phone number": [
+        "Verifica il numero di telefono"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifica la tua identità con una password temporanea usa e getta da un'app di autenticazione"
@@ -9884,6 +9916,9 @@
       "Allowed Domain": [
         "Dominio autorizzato"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Consente a tutti gli utenti dell'organizzazione di aggiungere facilmente collegamenti alle videoconferenze agli inviti del calendario."
+      ],
       "Amount": [
         "Importo"
       ],
@@ -10207,6 +10242,9 @@
       ],
       "Emails (last month)": [
         "Email (ultimo mese)"
+      ],
+      "Enable video conferencing ": [
+        "Abilita le videoconferenze "
       ],
       "End date": [
         "Data di fine"
@@ -11670,32 +11708,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Inizia per ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "A partire da ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua Gratis"
@@ -11723,6 +11735,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Inizia per ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partire da ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12404,23 +12442,6 @@
         "Il tuo piano selezionato: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Ottieni Mail Plus per ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partire da ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -12439,6 +12460,23 @@
       ],
       "Unlock premium features by upgrading": [
         "Sblocca le funzionalità premium effettuando l'upgrade"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Ottieni Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partire da ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -12794,6 +12832,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "L'autenticazione a due fattori non è più necessaria"
+      ],
+      "Video conferencing settings have been updated": [
+        "Le impostazioni della videoconferenza sono state aggiornate"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13491,8 +13532,14 @@
       "Get in touch with our sales team": [
         "Contatta il nostro team di vendita"
       ],
+      "Get online privacy, for your whole family": [
+        "Ottieni la privacy online, per tutta la tua famiglia"
+      ],
       "Get the security and features your business needs": [
         "Ottieni la sicurezza e le funzionalità di cui la tua azienda ha bisogno"
+      ],
+      "Get unlimited privacy for two": [
+        "Ottieni privacy illimitata per due"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Comprendo che se perdessi i miei dati di recupero, potrei perdere definitivamente l'accesso al mio account."
@@ -13574,6 +13621,9 @@
         "Condivisione sicura della cassaforte (${ n } cassaforte) e condivisione dei collegamenti",
         "Condivisione sicura delle casseforti (${ n } casseforti) e condivisione dei collegamenti"
       ],
+      "Secure your family’s passwords and online identities": [
+        "Proteggi le password e le identità della tua famiglia online"
+      ],
       "Secured by end-to-end encryption": [
         "Protetta con crittografia end-to-end"
       ],
@@ -13609,6 +13659,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Sei stato invitato a unirti a ${ PASS_APP_NAME }"
+      ],
+      "Your ${ discount }% Black Friday discount has been applied": [
+        "Il tuo sconto del ${ discount }% per il Black Friday è stato applicato"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "La tua organizzazione ha accesso a ${ free }. Se desideri accedere alle funzionalità premium di ${ appName }, chiedi all'amministratore della tua organizzazione di eseguire l'upgrade."
@@ -13649,6 +13702,12 @@
       ],
       "Admin panel to manage users and subscription": [
         "Pannello di amministrazione per gestire utenti e abbonamenti"
+      ],
+      "Advanced account protection": [
+        "Protezione avanzata dell'account"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funzionalità alias avanzate (fornite da SimpleLogin)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -14599,6 +14658,12 @@
       "For security reasons, the token is hidden": [
         "Per motivi di sicurezza, il token è nascosto"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Accedi al tuo provider di identità, copia e incolla i dati seguenti e completa la configurazione di SCIM per ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Accedi al tuo provider di identità, copia e incolla il token seguente e riattiva SCIM per ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Se hai perso o dimenticato il token SCIM, puoi generarne uno nuovo, ma tieni presente che le impostazioni del tuo provider di identità dovranno essere aggiornate."
       ],
@@ -14607,6 +14672,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Una volta disabilitato SCIM per la tua organizzazione, **tutti gli utenti SCIM forniti automaticamente dal tuo provider di identità verranno convertiti in utenti SSO** e potrai gestirli direttamente nelle impostazioni di ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Semplifica la gestione degli utenti tra diversi servizi. Aggiungi, modifica e rimuovi utenti nel tuo provider di identità: queste modifiche verranno automaticamente applicate alla tua organizzazione ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Il provisioning automatico di SCIM sarà disabilitato finché non inserirai il nuovo token SCIM nelle impostazioni del tuo provider di identità."
@@ -15160,6 +15228,71 @@
         "Richiedi la prova gratuita"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "Funzionalità di sicurezza avanzate"
+      ],
+      "Advanced sharing security": [
+        "Sicurezza di condivisione avanzata"
+      ],
+      "Apps for all devices": [
+        "App per tutti i dispositivi"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Sede in Svizzera, conforme al GDPR"
+      ],
+      "Built-in encryption": [
+        "Crittografia integrata"
+      ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Calendario, gestore password, archiviazione file e VPN inclusi"
+      ],
+      "Email aliases": [
+        "Alias email"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "Email, calendario, gestore password e VPN inclusi"
+      ],
+      "End-to-end encrypted transactions": [
+        "Transazioni crittografate end-to-end"
+      ],
+      "End-to-end encryption": [
+        "Crittografia end-to-end"
+      ],
+      "From the team that knows encryption": [
+        "Dal team che conosce la crittografia"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Email, calendario, archiviazione file, gestore password e VPN integrati"
+      ],
+      "ISO 27001 certified": [
+        "Certificata ISO 27001"
+      ],
+      "Open source and audited": [
+        "Open source e verificato"
+      ],
+      "Open source and verified": [
+        "Open source e verificato"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protetto dalle leggi svizzere sulla privacy"
+      ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Autocustodia: solo tu hai accesso alle chiavi del tuo portafoglio"
+      ],
+      "The only business solution that is:": [
+        "L’unica soluzione aziendale che è:"
+      ],
+      "The only cloud storage with:": [
+        "L'unico spazio di archiviazione cloud con:"
+      ],
+      "The only email service with:": [
+        "L'unico servizio di posta elettronica con:"
+      ],
+      "Works on all devices": [
+        "Funziona su tutti i dispositivi"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Conforme a GDPR e HIPAA"
@@ -15369,10 +15502,6 @@
         "${ n } ha richiesto il tuo aiuto per accedere.",
         "${ n } hanno richiesto il tuo aiuto per accedere."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } utente si è unito alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:",
-        "${ n } utenti si sono uniti alla tua organizzazione tramite il tuo provider di identità. Approva o elimina i loro account ora:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } utente sta richiedendo il tuo aiuto per accedere al proprio account ${ BRAND_NAME } con Single Sign-On.",
         "${ n } utenti richiedono il tuo aiuto per accedere al proprio account ${ BRAND_NAME } con Single Sign-On."
@@ -15521,6 +15650,9 @@
       "Share the confirmation code with your administrator": [
         "Condividi il codice di conferma con il tuo amministratore"
       ],
+      "Sign in": [
+        "Accedi"
+      ],
       "Sign in to your organization": [
         "Accedi alla tua organizzazione"
       ],
@@ -15568,6 +15700,9 @@
       ],
       "Yes, it was me": [
         "Sì, ero io"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Verrai reindirizzato al tuo provider SSO di terze parti."
       ]
     },
     "sso: auth device state": {
@@ -16264,6 +16399,9 @@
       "Auto-reply updated": [
         "Risposta automatica aggiornata"
       ],
+      "Backup password updated": [
+        "Password di backup aggiornata"
+      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario aggiunto. Potrebbe volerci qualche minuto per sincronizzarlo."
       ],
@@ -16515,6 +16653,9 @@
       "Preferences updated": [
         "Preferenze aggiornate"
       ],
+      "Resent invitation": [
+        "Invito rinviato"
+      ],
       "Status updated": [
         "Stato aggiornato"
       ]
@@ -16681,6 +16822,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
@@ -16878,11 +17022,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-All address": [
-        "Indirizzi catch-all"
-      ],
       "Catch-all address": [
         "Indirizzi Catch-all"
+      ],
+      "Catch-All address": [
+        "Indirizzi catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
@@ -17183,6 +17327,9 @@
       "Email subscriptions": [
         "Newsletter"
       ],
+      "Enable for all users": [
+        "Abilita per tutti gli utenti"
+      ],
       "Encryption and keys": [
         "Crittografia e chiavi"
       ],
@@ -17361,6 +17508,9 @@
       ],
       "Increase your privacy with more addresses": [
         "Aumenta la tua privacy con più indirizzi"
+      ],
+      "Integrations": [
+        "Integrazioni"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
@@ -17828,6 +17978,9 @@
       "Version history": [
         "Cronologia delle versioni"
       ],
+      "Video conference": [
+        "Videoconferenza"
+      ],
       "VPN apps": [
         "App VPN"
       ],
@@ -18004,6 +18157,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Gli amministratori possono gestire gli account utente e concedere privilegi di amministratore ad altri utenti. Solo l'amministratore principale può modificare il piano dell'organizzazione."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Consente di aggiungere facilmente collegamenti di videoconferenza agli inviti del tuo calendario."
       ],
       "An approximate location of the IP address": [
         "Una posizione approssimativa dell'indirizzo IP"
@@ -18288,12 +18444,6 @@
       "Could not enable administrator access: ${ error }": [
         "Impossibile abilitare l'accesso come amministratore: ${ error }"
       ],
-      "Delete request": [
-        "Elimina richiesta"
-      ],
-      "Delete request to access user data?": [
-        "Eliminare la richiesta di accesso ai dati utente?"
-      ],
       "Enable admin access?": [
         "Abilitare l'accesso amministratore?"
       ],
@@ -18311,9 +18461,6 @@
       ],
       "Organization key must be activated to request data access": [
         "La chiave dell'organizzazione deve essere attivata per richiedere l'accesso ai dati"
-      ],
-      "Pending admin access": [
-        "Accesso amministratore in sospeso"
       ],
       "Private user": [
         "Utente privato"
@@ -18338,9 +18485,6 @@
       ],
       "The user must have an address to request data access": [
         "L'utente deve avere un indirizzo per richiedere l'accesso ai dati"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Ciò eliminerà la richiesta in sospeso di accesso amministratore ai dati dell'utente o di reimpostazione della password."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Ciò revocherà l'autorizzazione di amministratore per gestire l'account di questo utente."
