@@ -6,16 +6,7 @@ import { isAliasDisabled } from '@proton/pass/lib/items/item.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import {
-    aliasBlockContactRequest,
-    aliasContactInfoRequest,
-    aliasContactListRequest,
-    aliasCreateContactRequest,
-    aliasDeleteContactRequest,
-    aliasDetailsRequest,
-    aliasOptionsRequest,
-    selectedItemKey,
-} from '@proton/pass/store/actions/requests';
+import { aliasDetailsRequest, aliasOptionsRequest, selectedItemKey } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
@@ -473,7 +464,7 @@ export const updateCustomDomainMailboxes = requestActionsFactory<CustomDomainMai
 export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasContactListResponse>(
     'alias::contact::get-list'
 )({
-    key: ({ shareId, itemId }) => aliasContactListRequest(shareId, itemId),
+    key: selectedItemKey,
     success: {
         config: { data: true },
     },
@@ -482,14 +473,14 @@ export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasConta
 export const aliasGetContactInfo = requestActionsFactory<AliasContactInfoDTO, AliasContactGetResponse>(
     'alias::contact::get-info'
 )({
-    key: ({ shareId, itemId }) => aliasContactInfoRequest(shareId, itemId),
+    key: selectedItemKey,
     success: {
         config: { data: true },
     },
 });
 
 export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, boolean>('alias::contact::create')({
-    key: ({ shareId, itemId }) => aliasCreateContactRequest(shareId, itemId),
+    key: selectedItemKey,
     success: {
         prepare: () =>
             withNotification({
@@ -508,7 +499,7 @@ export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, bool
 });
 
 export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boolean>('alias::contact::delete')({
-    key: ({ shareId, itemId }) => aliasDeleteContactRequest(shareId, itemId),
+    key: selectedItemKey,
     success: {
         prepare: () =>
             withNotification({
@@ -527,7 +518,7 @@ export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boo
 });
 
 export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, boolean>('alias::contact::block')({
-    key: ({ shareId, itemId }) => aliasBlockContactRequest(shareId, itemId),
+    key: selectedItemKey,
     success: {
         prepare: (blocked) =>
             withNotification({
