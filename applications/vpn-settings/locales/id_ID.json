@@ -8566,9 +8566,6 @@
       "${ n } member requested your help to sign in.": [
         "${ n } anggota meminta bantuan Anda untuk masuk."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } pengguna telah bergabung ke organisasi Anda melalui Penyedia Identitas Anda. Setujui atau tolak akun mereka sekarang juga:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } pengguna meminta bantuan Anda untuk masuk ke Akun ${ BRAND_NAME } mereka dengan single sign-on."
       ],
@@ -10474,12 +10471,6 @@
       "Could not enable administrator access: ${ error }": [
         "Izin administrator tidak dapat diaktifkan: ${ error }"
       ],
-      "Delete request": [
-        "Hapus permintaan"
-      ],
-      "Delete request to access user data?": [
-        "Hapus permintaan mengakses data pengguna?"
-      ],
       "Enable manually": [
         "Aktifkan secara manual"
       ],
@@ -10488,9 +10479,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Kunci organisasi harus diaktifkan untuk meminta pengaksesan data"
-      ],
-      "Pending admin access": [
-        "Menunggu akses admin"
       ],
       "Private user": [
         "Pengguna pribadi"
@@ -10512,9 +10500,6 @@
       ],
       "The user must have an address to request data access": [
         "Pengguna harus memiliki alamat untuk meminta pengaksesan data"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Ini akan menghapus permintaan tertunda untuk pengaksesan administrator pada data pengguna atau pengaturan ulang kata sandi."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tindakan ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."

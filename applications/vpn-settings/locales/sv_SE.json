@@ -2279,6 +2279,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Om det är inaktiverat har endast administratörer åtkomst."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Håll olika delar av ditt liv åtskilda och din inkorg organiserad med ytterligare adresser."
       ],
@@ -3181,6 +3184,10 @@
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekräfta din identitet med en fysisk U2F eller FIDO2 säkerhetsnyckel"
+      ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Du har nått det maximala antalet av ${ maxSecurityKeyLength } säkerhetsnyckel.",
+        "Du har nått det maximala antalet av ${ maxSecurityKeyLength } säkerhetsnycklar."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Din tvåfaktorsautentiseringsnyckel är redo att användas."
@@ -8628,10 +8635,6 @@
         "${ n } medlem begärde din hjälp att logga in.",
         "${ n } medlemmar begärde din hjälp att logga in."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller ta bort deras konton nu:",
-        "${ n } användare har gått med i din organisation via din identitetsleverantör. Godkänn eller ta bort deras konton nu:"
-      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-användare (tillhandahållna av din identitetsleverantör) kommer att tas bort** och du måste skapa dem manuellt för att lägga till dem i din organisation igen."
       ],
@@ -10549,12 +10552,6 @@
       "Could not enable administrator access: ${ error }": [
         "Kunde inte aktivera administratörsåtkomst: ${ error }"
       ],
-      "Delete request": [
-        "Ta bort begäran"
-      ],
-      "Delete request to access user data?": [
-        "Ta bort begäran om åtkomst till användardata?"
-      ],
       "Enable manually": [
         "Aktivera manuellt"
       ],
@@ -10563,9 +10560,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Organisationsnyckel måste vara aktiverad för att begära dataåtkomst"
-      ],
-      "Pending admin access": [
-        "Väntande administratörsåtkomst"
       ],
       "Private user": [
         "Privat användare"
@@ -10587,9 +10581,6 @@
       ],
       "The user must have an address to request data access": [
         "Användaren måste ha en adress för att begära dataåtkomst"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Detta kommer ta bort den väntande begäran om administratörsåtkomst till användarens data eller lösenordsåterställning."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Detta kommer återkalla administratörsbehörigheten att hantera denna användares konto."
