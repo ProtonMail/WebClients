@@ -1,20 +1,21 @@
 import { c } from 'ttag';
 
+import { userSettingsActions } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useUserSettings from '@proton/components/hooks/useUserSettings';
+import { useDispatch } from '@proton/redux-shared-store';
 import { patchNews } from '@proton/shared/lib/api/settings';
+import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import {
-    APPS,
-    MAIL_APP_NAME,
     NEWSLETTER_SUBSCRIPTIONS,
     NEWSLETTER_SUBSCRIPTIONS_BITS,
-} from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
+    getUpdatedNewsBitmap,
+} from '@proton/shared/lib/helpers/newsletter';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 
@@ -30,7 +31,7 @@ const MessagesGeneralSection = () => {
     const [userSettings] = useUserSettings();
     const [user, userLoading] = useUser();
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const { createNotification } = useNotifications();
 
     const showRecoveryEmailInput = !user.isPrivate;
@@ -46,13 +47,11 @@ const MessagesGeneralSection = () => {
             });
             return;
         }
-
-        await api(
-            patchNews({
-                [NEWSLETTER_SUBSCRIPTIONS.NEW_EMAIL_NOTIF]: !isDailyEmailEnabled,
-            })
-        );
-        await call();
+        const data = {
+            [NEWSLETTER_SUBSCRIPTIONS.NEW_EMAIL_NOTIF]: !isDailyEmailEnabled,
+        };
+        dispatch(userSettingsActions.update({ UserSettings: { News: getUpdatedNewsBitmap(userSettings.News, data) } }));
+        await api(patchNews(data));
     };
 
     return (

@@ -1,4 +1,5 @@
-import type { DENSITY, NEWSLETTER_SUBSCRIPTIONS } from '@proton/shared/lib/constants';
+import type { DENSITY } from '@proton/shared/lib/constants';
+import type { NewsletterSubscriptionUpdateData } from '@proton/shared/lib/helpers/newsletter';
 import type {
     AI_ASSISTANT_ACCESS,
     DRAWER_VISIBILITY,
@@ -46,7 +47,7 @@ export const getNews = () => ({
     method: 'get',
 });
 
-export const patchNews = (data: Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>) => ({
+export const patchNews = (data: NewsletterSubscriptionUpdateData) => ({
     url: 'core/v4/settings/news',
     method: 'PATCH',
     data,
@@ -57,7 +58,7 @@ export const getNewsExternal = () => ({
     method: 'get',
 });
 
-export const patchNewsExternal = (data: Partial<Record<NEWSLETTER_SUBSCRIPTIONS, boolean>>) => ({
+export const patchNewsExternal = (data: NewsletterSubscriptionUpdateData) => ({
     url: 'core/v4/settings/news/external',
     method: 'PATCH',
     data,
