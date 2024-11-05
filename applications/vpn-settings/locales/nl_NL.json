@@ -1094,6 +1094,10 @@
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en schema met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en schema met end-to-end versleuteling. Bevat ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
       ],
@@ -8704,10 +8708,6 @@
         "${ n } lid heeft uw hulp gevraagd om in te loggen.",
         "${ n } leden hebben uw hulp gevraagd om in te loggen."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Nu hun accounts goedkeuren of verwijderen:",
-        "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Nu hun accounts goedkeuren of verwijderen:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal.",
         "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal."
@@ -8826,6 +8826,9 @@
       "Share the confirmation code with your administrator": [
         "Deel de bevestigingscode met uw beheerder"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Sign in to your organization": [
         "Aanmelden bij uw organisatie"
       ],
@@ -8861,6 +8864,9 @@
       ],
       "User details:": [
         "Gebruik details:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ]
     },
     "sso: auth device state": {
@@ -9497,6 +9503,9 @@
       ],
       "Administrator privileges restored": [
         "Beheerdersrechten hersteld"
+      ],
+      "Backup password updated": [
+        "Backup-wachtwoord bijgewerkt"
       ],
       "Catch-all address updated": [
         "Catch-all adres bijgewerkt"
@@ -10638,12 +10647,6 @@
       "Could not enable administrator access: ${ error }": [
         "Kan beheerderstoegang niet inschakelen: ${ error }"
       ],
-      "Delete request": [
-        "Verzoek verwijderen"
-      ],
-      "Delete request to access user data?": [
-        "Verzoek voor toegang tot gebruikersgegevens verwijderen?"
-      ],
       "Enable manually": [
         "Handmatig inschakelen"
       ],
@@ -10652,9 +10655,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Organisatiesleutel moet worden geactiveerd om gegevenstoegang te vragen"
-      ],
-      "Pending admin access": [
-        "In afwachting van beheerderstoegang"
       ],
       "Private user": [
         "Privégebruiker"
@@ -10676,9 +10676,6 @@
       ],
       "The user must have an address to request data access": [
         "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Hiermee wordt de aanvraag voor beheerderstoegang tot de gegevens van de gebruiker of voor het resetten van het wachtwoord verwijderd."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Hierdoor wordt de beheerder de toestemming ontnomen om de account van deze gebruiker te beheren."

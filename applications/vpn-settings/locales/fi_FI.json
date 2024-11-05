@@ -1088,6 +1088,10 @@
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
       ],
@@ -3138,6 +3142,9 @@
     "fido2: Action": {
       "Delete key": [
         "Poista avain"
+      ],
+      "New security key": [
+        "Uusi suojausavain"
       ]
     },
     "fido2: Error": {
@@ -3218,6 +3225,9 @@
       ],
       "Security key registered": [
         "Suojausavain rekisteröitiin"
+      ],
+      "Security keys": [
+        "Suojausavaimet"
       ]
     },
     "file size format": {
@@ -3890,7 +3900,7 @@
         "Valmis! Koodi lähetettiin kohteeseen ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
-        "Etkö tiedä palautuslausekettasi?"
+        "Etkö tiedä palautuslausettasi?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Etkö näe mitään? Muista sammuttaa pop-up estot."
@@ -5329,6 +5339,9 @@
       "Allowed Domain": [
         "Sallittu verkkotunnus"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Sallii videoneuvottelulinkkien saumattoman lisäämisen kalenterikutsuihin kaikille organisaatiosi jäsenille."
+      ],
       "Amount": [
         "Summa"
       ],
@@ -5487,6 +5500,9 @@
       ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
+      ],
+      "Enable video conferencing ": [
+        "Ota videoneuvottelu käyttöön "
       ],
       "Enter the code displayed on your TV": [
         "Syötä televisiossasi näkyvä koodi"
@@ -6046,7 +6062,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
+        "Hanki ${ planName }, nyt vain ${ planPrice }"
       ]
     },
     "Member action": {
@@ -6182,7 +6198,7 @@
         "Päivitä tilaus nyt"
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
       ]
     },
     "new_plans: action": {
@@ -7187,6 +7203,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Kaksivaiheista tunnistautumista ei enää vaadita"
+      ],
+      "Video conferencing settings have been updated": [
+        "Videoneuvotteluasetukset on päivitetty"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7220,6 +7239,9 @@
       ],
       "My reason isn't listed": [
         "Syytäni ei ole listattu"
+      ],
+      "No permission": [
+        "Ei käyttöoikeutta"
       ],
       "Organization only": [
         "Vain organisaatio"
@@ -7708,6 +7730,9 @@
       ]
     },
     "Permission": {
+      "No permission": [
+        "Ei käyttöoikeutta"
+      ],
       "Organization only": [
         "Vain organisaatio"
       ],
@@ -8630,10 +8655,6 @@
         "${ n } jäsen pyysi apuasi kirjautumisessa.",
         "${ n } jäsentä pyysi apuasi kirjautumisessa."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } käyttäjä on liittynyt organisaatioosi identiteetintarjoajan kautta. Hyväksy tai poista heidän tilinsä nyt:",
-        "${ n } käyttäjää on liittynyt organisaatioosi identiteetintarjoajan kautta. Hyväksy tai poista heidän tilinsä nyt:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } käyttäjä pyytää apuasi kirjautumaan heidän ${ BRAND_NAME }-tilillensä kertakirjautumisella.",
         "${ n } käyttäjää pyytää apuasi kirjautumaan heidän ${ BRAND_NAME }-tileillensä kertakirjautumisella."
@@ -8742,6 +8763,9 @@
       ],
       "Share the confirmation code with your administrator": [
         "Jaa vahvistuskoodi ylläpitäjäsi kanssa"
+      ],
+      "Sign in": [
+        "Kirjaudu sisään"
       ],
       "Sign in to your organization": [
         "Kirjaudu sisään organisaatioosi"
@@ -9406,6 +9430,9 @@
       "Administrator privileges restored": [
         "Ylläpitäjän oikeudet palautettiin"
       ],
+      "Backup password updated": [
+        "Varasalasana vaihdettiin"
+      ],
       "Catch-all address updated": [
         "Nappaa kaikki -osoite päivitettiin"
       ],
@@ -9568,6 +9595,9 @@
       ],
       "Preferences updated": [
         "Asetukset päivitetty"
+      ],
+      "Resent invitation": [
+        "Lähetä kutsu uudelleen"
       ]
     },
     "Suffix": {
@@ -9677,6 +9707,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
@@ -9998,6 +10031,9 @@
       ],
       "Email subscriptions": [
         "Sähköpostitilaukset"
+      ],
+      "Enable for all users": [
+        "Ota käyttöön kaikille käyttäjille"
       ],
       "Enter 2FA code": [
         "Syötä vahvistuskoodi"
@@ -10322,6 +10358,9 @@
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
       ],
+      "Video conference": [
+        "Videoneuvottelu"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Lähetämme uuteen osoitteeseesi sähköpostiviestin, jossa on ohjeet muutoksen tekemiseen."
       ],
@@ -10407,6 +10446,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Ylläpitäjät voivat hallita käyttäjätilejä ja antaa ylläpito-oikeuksia muille käyttäjille. Vain ensisijainen ylläpitäjä voi muokata organisaation tilausta."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Sallii videoneuvottelulinkkien saumattoman lisäämisen kalenterikutsuihin."
       ],
       "An approximate location of the IP address": [
         "IP-osoitteen arvioitu sijainti"
@@ -10531,12 +10573,6 @@
       "Could not enable administrator access: ${ error }": [
         "Ylläpitäjän käyttöoikeuksia ei voitu myöntää: ${ error }"
       ],
-      "Delete request": [
-        "Poista pyyntö"
-      ],
-      "Delete request to access user data?": [
-        "Poistetaanko käyttäjän tietojen käsittelyoikeuspyyntö?"
-      ],
       "Enable manually": [
         "Ota käyttöön manuaalisesti"
       ],
@@ -10545,9 +10581,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Organisaatioavain on aktivoitava tietojen käyttöoikeuden anomiseksi"
-      ],
-      "Pending admin access": [
-        "Odottaa ylläpitäjän oikeuksia"
       ],
       "Private user": [
         "Yksityinen käyttäjä"

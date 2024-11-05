@@ -8725,10 +8725,6 @@
         "${ n } membro solicitou sua ajuda para fazer login.",
         "${ n } membro solicitaram sua ajuda para fazer login."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } usuário entrou na sua organização por meio do seu provedor de identidade. Aprove ou exclua a conta dele:",
-        "${ n } usuários entraram na sua organização por meio do seu provedor de identidade. Aprove ou exclua as contas deles:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } usuário está solicitando sua ajuda para iniciar sessão na conta ${ BRAND_NAME } dele com login único (SSO).",
         "${ n } usuários estão solicitando sua ajuda para iniciar sessão na conta ${ BRAND_NAME } deles com login único (SSO)."
@@ -10662,12 +10658,6 @@
       "Could not enable administrator access: ${ error }": [
         "Não foi possível habilitar o acesso de administrador: ${ error }"
       ],
-      "Delete request": [
-        "Excluir solicitação"
-      ],
-      "Delete request to access user data?": [
-        "Excluir solicitação para acessar dados do usuário?"
-      ],
       "Enable manually": [
         "Ativar manualmente"
       ],
@@ -10676,9 +10666,6 @@
       ],
       "Organization key must be activated to request data access": [
         "A chave da organização precisa ser ativada para solicitar o acesso aos dados"
-      ],
-      "Pending admin access": [
-        "Acesso administrador pendente"
       ],
       "Private user": [
         "Usuário privado"
@@ -10700,9 +10687,6 @@
       ],
       "The user must have an address to request data access": [
         "O usuário deve ter um endereço para solicitar o acesso aos dados"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Isso excluirá a solicitação pendente de acesso de administrador aos dados do usuário ou redefinição de senha."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Isso revogará a permissão do administrador para gerenciar a conta deste usuário."
