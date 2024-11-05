@@ -12,7 +12,7 @@
         "check-electronegativity": "electronegativity -i src/",
         "check-types": "tsc",
         "config": "proton-pack config --no-api-proxy --api=https://pass.proton.me/api --sso=https://account.proton.me",
-        "config:dev": "proton-pack config --no-api-proxy --api=https://pass.proton.black/api --sso=https://account.proton.black",
+        "config:dev": "proton-pack config --no-api-proxy --api=https://pass.proton.black/api --sso=https://account.proton.black --version=\"$(node -e \"process.stdout.write(require('./package.json').version)\")-dev\"",
         "i18n:extract:desktop": "proton-i18n extract",
         "i18n:getlatest": "proton-i18n upgrade",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
