@@ -941,7 +941,7 @@
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
+        "이메일과 일정을 종단간 암호화로 보호하세요. 15개 이메일 주소, 사용자 지정 도메인 지원, 무제한 hide-my-email 별칭 등이 포함되어 있습니다."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "온라인 문서 편집기, 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -4016,7 +4016,7 @@
         "동기화 오류"
       ],
       "Every change you make is automatically and securely saved to Drive.": [
-        "변경한 모든 사항이 안전히 자동으로 드라이브에 저장되었습니다."
+        "변경한 모든 사항이 안전히 자동으로 Drive에 저장되었습니다."
       ],
       "Expired": [
         "만료됨"
@@ -4079,7 +4079,7 @@
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "취소시, 만료일인 ${ expiryDate }에 ${ planTitle } 구독이 더 이상 갱신되지 않습니다."
+        "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
@@ -4490,7 +4490,7 @@
         "이 링크는 호모그래프(homograph) 공격 일 수 있습니다. 방문하려는 링크가 정확한지 확인하거나 열지 마세요."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "이 링크는 이전 드라이브 버전으로 만들어졌으며 수정할 수 없습니다. 이 링크를 삭제하고 새 링크를 만들어 설정을 변경하십시오."
+        "이 링크는 이전 Drive 버전으로 만들어졌으며 수정할 수 없습니다. 이 링크를 삭제하고 새 링크를 만들어 설정을 변경하십시오."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "링크가 영구적으로 비활성화되었습니다. 아무도 이 링크를 통해 파일에 접근할 수 없습니다. 다시 파일을 공유하려면, 새로운 링크가 필요합니다."
@@ -4709,7 +4709,7 @@
         "PayPal 계정과 연결된 신용 카드 또는 은행 계좌가 있어야 합니다. PayPal 계정에 연결된 신용 카드나 은행 계좌가 없다면 아래 버튼을 클릭해 주세요."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "오늘 부터 ${ planTitle } 기능에 접근할 수 없습니다."
+        "해당 날짜부터 ${ planTitle }용 기능에 접근할 수 없게 됩니다."
       ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
@@ -4724,10 +4724,10 @@
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, 드라이브 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, 드라이브 공유 링크가 더 이상 활성화 되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
@@ -4742,7 +4742,7 @@
         "결제가 완료되면 계정이 업데이트될 것입니다."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
-        "현재 변경 사항이 드라이브에 동기화됩니다. 웹 페이지를 닫지 마세요."
+        "현재 변경 사항이 Drive에 동기화됩니다. 웹 페이지를 닫지 마세요."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "변경 사항 동기화에 실패했습니다. Drive가 자동으로 변경 사항을 저장할 수 있도록 시도할 예정입니다. 웹 페이지를 닫지 마십시오."
@@ -5896,7 +5896,7 @@
         "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+        "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
@@ -7715,7 +7715,7 @@
         "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }에 의해 생성된 데이터를 위한 스토리지"
       ],
       "Up to ${ totalStorageSize } Drive storage": [
-        "최대 ${ totalStorageSize } 드라이브 저장 공간"
+        "최대 ${ totalStorageSize } Drive 저장 공간"
       ],
       "Up to ${ totalStorageSize } Mail storage": [
         "최대 ${ totalStorageSize } 메일 저장 공간"
