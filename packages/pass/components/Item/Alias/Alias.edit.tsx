@@ -94,11 +94,11 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
         },
     });
 
-    const aliasDetails = useAliasDetails({
+    const aliasDetailsMailboxes = useAliasDetails({
         aliasEmail,
         itemId,
         shareId,
-        onAliasDetailsLoaded: (mailboxes) => {
+        onAliasMailboxesLoaded: (mailboxes) => {
             mailboxesForAlias.current = mailboxes ?? [];
             aliasOptions.request();
             aliasDetailsLoaded.resolve();
@@ -117,7 +117,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     });
 
     /* check for length in case request gets revalidated in the background */
-    const detailsLoading = aliasDetails.loading && aliasDetails.value.length === 0;
+    const detailsLoading = aliasDetailsMailboxes.loading && aliasDetailsMailboxes.mailboxes.length === 0;
     const optionsLoading = aliasOptions.loading;
     const loading = !reconciled.current || detailsLoading || optionsLoading;
 
