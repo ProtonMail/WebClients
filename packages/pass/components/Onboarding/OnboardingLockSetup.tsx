@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,57 +8,52 @@ import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { useLockSetup } from '@proton/pass/hooks/useLockSetup';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import clsx from '@proton/utils/clsx';
+
+type LockModeOption = {
+    value: LockMode;
+    label: string;
+    icon: IconName;
+    needsUpgrade?: boolean;
+    active: boolean;
+};
 
 export const OnboardingLockSetup: FC = () => {
     const online = useConnectivity();
     const { setLockMode, setLockTTL, lock, biometrics, password } = useLockSetup();
 
-    type LockModeOption = {
-        value: LockMode;
-        label: string;
-        icon: IconName;
-        needsUpgrade?: boolean;
-    };
+    const lockModes = useMemo<LockModeOption[]>(() => {
+        const options: LockModeOption[] = [
+            {
+                value: LockMode.NONE,
+                label: c('Label').t`None`,
+                icon: 'pass-lockmode-none',
+                active: !lock.orgControlled,
+            },
+            {
+                value: LockMode.SESSION,
+                label: c('Label').t`PIN code`,
+                icon: 'pass-lockmode-pin',
+                active: true,
+            },
+            {
+                value: LockMode.PASSWORD,
+                label: c('Label').t`Password`,
+                icon: 'pass-lockmode-password',
+                active: password.enabled,
+            },
+            {
+                value: LockMode.BIOMETRICS,
+                label: c('Label').t`Biometrics`,
+                icon: 'pass-lockmode-biometrics',
+                needsUpgrade: biometrics.needsUpgrade,
+                active: DESKTOP_BUILD && password.enabled && biometrics.enabled,
+            },
+        ];
 
-    const lockModes: LockModeOption[] = [
-        ...(!lock.orgControlled
-            ? ([
-                  {
-                      value: LockMode.NONE,
-                      label: c('Label').t`None`,
-                      icon: 'pass-lockmode-none',
-                  },
-              ] as const)
-            : []),
-
-        {
-            value: LockMode.SESSION,
-            label: c('Label').t`PIN code`,
-            icon: 'pass-lockmode-pin',
-        },
-
-        ...(password.enabled
-            ? ([
-                  {
-                      value: LockMode.PASSWORD,
-                      label: c('Label').t`Password`,
-                      icon: 'pass-lockmode-password',
-                  },
-              ] as const)
-            : []),
-
-        ...(DESKTOP_BUILD && password.enabled && biometrics.enabled
-            ? ([
-                  {
-                      value: LockMode.BIOMETRICS,
-                      label: c('Label').t`Biometrics`,
-                      icon: 'pass-lockmode-biometrics',
-                      needsUpgrade: biometrics.needsUpgrade,
-                  },
-              ] as const)
-            : []),
-    ];
+        return options.filter(prop('active'));
+    }, [lock, password, biometrics]);
 
     return (
         <>
@@ -71,18 +66,12 @@ export const OnboardingLockSetup: FC = () => {
                 options={lockModes.map(({ value, icon, label, needsUpgrade }) => ({
                     value,
                     label: (
-                        <div
-                            className="pass-lock-option rounded-xl flex items-center px-custom w-full py-3"
-                            style={{ '--px-custom': '0.875rem' }}
-                        >
+                        <div className="pass-lock-option rounded-xl flex items-center w-full py-3 px-4">
                             <Icon name={icon} size={6} />
                             <div className={clsx('flex-1 px-4', lock.mode === value && 'text-bold')}>{label}</div>
-                            <div
-                                style={{ '--my-custom': '2px' }}
-                                className={clsx('my-custom', lock.mode !== value && 'visibility-hidden')}
-                            >
+                            {lock.mode === value && (
                                 <Icon name="checkmark-circle-filled" size={6} color="var(--interaction-norm)" />
-                            </div>
+                            )}
                             {needsUpgrade && <PassPlusPromotionButton className="button-xs" />}
                         </div>
                     ),
