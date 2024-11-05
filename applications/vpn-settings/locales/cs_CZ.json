@@ -8965,12 +8965,6 @@
         "${ n } členů vás požádalo o pomoc s přihlášením.",
         "${ n } členů vás požádalo o pomoc s přihlášením."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } uživatel se připojil k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo smažte jeho účet nyní:",
-        "${ n } uživatelé se připojili k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo smažte jejich účty nyní:",
-        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo smažte jejich účty nyní:",
-        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím poskytovatele identit. Schvalte nebo smažte jejich účty nyní:"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } uživatel vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
         "${ n } uživatelé vás žádají o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
@@ -10966,12 +10960,6 @@
       "Could not enable administrator access: ${ error }": [
         "Nepodařilo se povolit přístup správce: ${ error }"
       ],
-      "Delete request": [
-        "Smazat žádost"
-      ],
-      "Delete request to access user data?": [
-        "Smazat žádost o přístup k datům uživatele?"
-      ],
       "Enable manually": [
         "Povolit ručně"
       ],
@@ -10980,9 +10968,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Pro žádost o přístup k datům musíte aktivovat klíč organizace"
-      ],
-      "Pending admin access": [
-        "Čeká se na vyřízení správcovského přístupu"
       ],
       "Private user": [
         "Soukromý uživatel"
@@ -11004,9 +10989,6 @@
       ],
       "The user must have an address to request data access": [
         "Uživatel musí mít adresu, aby mohlo být požádáno o přístup k datům"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Toto smaže nevyřízenou žádost o správcovský přístup k datům uživatele nebo o resetování hesla."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Toto zruší správcovské oprávnění ke správě účtu tohoto uživatele."

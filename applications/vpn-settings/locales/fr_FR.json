@@ -6372,6 +6372,9 @@
       "Administration Panel": [
         "Panneau d'administration"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Fonctionnalités avancées des alias (fournies par SimpleLogin)"
+      ],
       "Advanced network security": [
         "Sécurité avancée du réseau"
       ],
@@ -6945,6 +6948,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domaines personnalisés pour les alias, messageries supplémentaires, envois d'e-mails à partir d'alias, etc."
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -7521,8 +7527,14 @@
         "${ n } compte utilisateur",
         "${ n } comptes utilisateur"
       ],
+      "Activity log": [
+        "Journal d'activités"
+      ],
       "Admin panel to manage users and subscription": [
         "Panneau d'administration pour gérer l'abonnement et les utilisateurs"
+      ],
+      "Team policies": [
+        "Règles de l'équipe"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8708,10 +8720,6 @@
         "${ n } membre a sollicité votre aide pour se connecter.",
         "${ n } membres ont sollicité votre aide pour se connecter."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou supprimer ses comptes :",
-        "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou supprimer leurs comptes :"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } membre a sollicité votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO).",
         "${ n } membres ont sollicité votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO)."
@@ -8760,6 +8768,10 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Contactez votre administrateur si le problème persiste."
+      ],
+      "Delete ${ n } user": [
+        "Supprimer ${ n } utilisateur",
+        "Supprimer ${ n } utilisateurs"
       ],
       "Deny": [
         "Refuser"
@@ -8868,6 +8880,9 @@
       ],
       "User details:": [
         "Informations sur l’utilisateur :"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Vous allez être redirigé vers votre service d'authentification unique tiers."
       ]
     },
     "sso: auth device state": {
@@ -10641,6 +10656,9 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "En rendant l'utilisateur privé, vous ne pourrez pas l'aider à retrouver l'accès à ses données ou à son compte."
       ],
+      "Cancel request": [
+        "Annuler la demande"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateur car ses clés de chiffrement ont été entre-temps mises à jour :",
         "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateurs car leurs clés de chiffrement ont été entre-temps mises à jour :"
@@ -10648,23 +10666,17 @@
       "Could not enable administrator access: ${ error }": [
         "Une erreur s'est produite lors de l'activation de l'accès administrateur : ${ error }"
       ],
-      "Delete request": [
-        "Supprimer la demande"
-      ],
-      "Delete request to access user data?": [
-        "Voulez-vous supprimer la demande d'accès aux données de l'utilisateur ?"
-      ],
       "Enable manually": [
         "Activer manuellement"
+      ],
+      "Keep request": [
+        "Conserver la demande"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Une fois que l'utilisateur a donné son accord, vous pourrez l'aider à retrouver l'accès à son compte ou à gérer ses données."
       ],
       "Organization key must be activated to request data access": [
         "La clé de l'organisation doit être activée pour demander l'accès aux données."
-      ],
-      "Pending admin access": [
-        "Accès administrateur en attente"
       ],
       "Private user": [
         "Utilisateur privé"
@@ -10686,9 +10698,6 @@
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Cela supprimera la demande en attente pour l'accès en tant qu'administrateur aux données de l'utilisateur ou pour la réinitialisation du mot de passe."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Ceci révoquera l'autorisation administrateur pour gérer le compte de cet utilisateur."

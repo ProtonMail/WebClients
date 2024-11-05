@@ -2595,6 +2595,11 @@
         "Facture impayée"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2682,11 +2687,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3988,6 +3988,9 @@
       ],
       "Less details": [
         "Moins d’informations"
+      ],
+      "Meeting host:": [
+        "Hôte de la réunion :"
       ],
       "Meeting link:": [
         "Lien de la réunion :"
@@ -6593,6 +6596,9 @@
       "Administration Panel": [
         "Panneau d'administration"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Fonctionnalités avancées des alias (fournies par SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Tous les produits et fonctionnalités ${ BRAND_NAME }"
       ],
@@ -7032,14 +7038,6 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Profitez de Mail Plus pour ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "À partir de ${ price }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -7052,6 +7050,14 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -7103,6 +7109,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domaines personnalisés pour les alias, messageries supplémentaires, envois d'e-mails à partir d'alias, etc."
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -7649,8 +7658,14 @@
         "${ n } compte utilisateur",
         "${ n } comptes utilisateur"
       ],
+      "Activity log": [
+        "Journal d'activités"
+      ],
       "Admin panel to manage users and subscription": [
         "Panneau d'administration pour gérer l'abonnement et les utilisateurs"
+      ],
+      "Team policies": [
+        "Règles de l'équipe"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8581,6 +8596,9 @@
       ],
       "Sign in to your organization": [
         "Connectez-vous à votre organisation."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Vous allez être redirigé vers votre service d'authentification unique tiers."
       ]
     },
     "State": {
@@ -10500,8 +10518,8 @@
       "Meeting ID:": [
         "Identifiant de la réunion :"
       ],
-      "Passcode: ${ password }": [
-        "Code d’accès :${ password }"
+      "Passcode:": [
+        "Code d’accès :"
       ]
     }
   }

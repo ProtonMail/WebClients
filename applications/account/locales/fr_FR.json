@@ -808,11 +808,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "Refresh the page": [
-        "Actualiser la page"
-      ],
       "refresh the page": [
         "actualiser la page"
+      ],
+      "Refresh the page": [
+        "Actualiser la page"
       ],
       "Reject": [
         "Refuser"
@@ -1602,14 +1602,6 @@
         "Choisissez votre offre de fin d'année"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 To d'espace de stockage (2 fois plus que tout autre abonnement)"
@@ -1631,6 +1623,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "L'abonnement ${ plan } est de retour pour une durée limitée."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7248,11 +7248,11 @@
       "Data locked": [
         "Les données sont verrouillées."
       ],
-      "dedicated servers": [
-        "serveurs dédiés"
-      ],
       "Dedicated servers": [
         "Serveurs dédiés"
+      ],
+      "dedicated servers": [
+        "serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -8857,11 +8857,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "username": [
-        "nom d'utilisateur"
-      ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "username": [
+        "nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -11705,32 +11705,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Commencez pour ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "À partir de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuer avec Free"
@@ -11758,6 +11732,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Passer à ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Commencez pour ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "À partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11888,6 +11888,9 @@
       ],
       "Administration Panel": [
         "Panneau d'administration"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Fonctionnalités avancées des alias (fournies par SimpleLogin)"
       ],
       "Advanced network security": [
         "Sécurité avancée du réseau"
@@ -12439,20 +12442,6 @@
         "L'abonnement que vous avez sélectionné : ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Profitez de Mail Plus pour ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -12471,6 +12460,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -12522,6 +12525,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domaines personnalisés pour les alias, messageries supplémentaires, envois d'e-mails à partir d'alias, etc."
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -13673,11 +13679,20 @@
         "${ n } compte utilisateur",
         "${ n } comptes utilisateur"
       ],
+      "Activity log": [
+        "Journal d'activités"
+      ],
       "Admin panel to manage users and subscription": [
         "Panneau d'administration pour gérer l'abonnement et les utilisateurs"
       ],
       "Advanced account protection": [
         "Protection avancée des comptes"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Fonctionnalités avancées des alias (fournies par SimpleLogin)"
+      ],
+      "Team policies": [
+        "Règles de l'équipe"
       ]
     },
     "PassFamilyPlan2024": {
@@ -15472,10 +15487,6 @@
         "${ n } membre a sollicité votre aide pour se connecter.",
         "${ n } membres ont sollicité votre aide pour se connecter."
       ],
-      "${ n } user have joined your organization through your Identity Provider. Approve or delete their accounts now:": [
-        "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou supprimer ses comptes :",
-        "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez approuver ou supprimer leurs comptes :"
-      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } membre a sollicité votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO).",
         "${ n } membres ont sollicité votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO)."
@@ -15530,6 +15541,10 @@
       ],
       "Current device": [
         "Appareil actuel"
+      ],
+      "Delete ${ n } user": [
+        "Supprimer ${ n } utilisateur",
+        "Supprimer ${ n } utilisateurs"
       ],
       "Deny": [
         "Refuser"
@@ -15674,6 +15689,9 @@
       ],
       "Yes, it was me": [
         "Oui, c'était moi."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Vous allez être redirigé vers votre service d'authentification unique tiers."
       ]
     },
     "sso: auth device state": {
@@ -16993,10 +17011,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -18408,18 +18426,15 @@
       "Cancel": [
         "Annuler"
       ],
+      "Cancel request": [
+        "Annuler la demande"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateur car ses clés de chiffrement ont été entre-temps mises à jour :",
         "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateurs car leurs clés de chiffrement ont été entre-temps mises à jour :"
       ],
       "Could not enable administrator access: ${ error }": [
         "Une erreur s'est produite lors de l'activation de l'accès administrateur : ${ error }"
-      ],
-      "Delete request": [
-        "Supprimer la demande"
-      ],
-      "Delete request to access user data?": [
-        "Voulez-vous supprimer la demande d'accès aux données de l'utilisateur ?"
       ],
       "Enable admin access?": [
         "Voulez-vous activer l'accès administrateur ?"
@@ -18433,14 +18448,14 @@
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Si vous n'avez plus accès à vos identifiants, les administrateurs de votre organisation pourront réinitialiser votre mot de passe et rétablir l'accès à votre compte."
       ],
+      "Keep request": [
+        "Conserver la demande"
+      ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Une fois que l'utilisateur a donné son accord, vous pourrez l'aider à retrouver l'accès à son compte ou à gérer ses données."
       ],
       "Organization key must be activated to request data access": [
         "La clé de l'organisation doit être activée pour demander l'accès aux données."
-      ],
-      "Pending admin access": [
-        "Accès administrateur en attente"
       ],
       "Private user": [
         "Utilisateur privé"
@@ -18465,9 +18480,6 @@
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Cela supprimera la demande en attente pour l'accès en tant qu'administrateur aux données de l'utilisateur ou pour la réinitialisation du mot de passe."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Ceci révoquera l'autorisation administrateur pour gérer le compte de cet utilisateur."
