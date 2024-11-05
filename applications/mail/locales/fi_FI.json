@@ -1310,7 +1310,7 @@
         "Päivitä tilaus nyt"
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
-        "Päivitä ${ BRAND_NAME } Unlimited -tilaukseen"
+        "Päivitä ${ BRAND_NAME } Unlimitediin"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -1778,6 +1778,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
@@ -3627,7 +3631,7 @@
         "Jos haluat jatkaa kirjoitusavustajan käyttöä, pyydä käyttöoikeutta ylläpitäjältäsi."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
-        "Varmista tilillesi korkein mahdollinen suojaus asettamalla salauslauseke."
+        "Varmista tilillesi korkein mahdollinen suojaus asettamalla palautuslause."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
@@ -8925,7 +8929,7 @@
     },
     "mailtrial2024: Title": {
       "Get ${ planName } for only ${ planPrice }": [
-        "Hanki ${ planName } -tilaus, nyt vain ${ planPrice }"
+        "Hanki ${ planName }, nyt vain ${ planPrice }"
       ]
     },
     "Message": {
@@ -9170,7 +9174,7 @@
         "Päivitä tilaus nyt"
       ],
       "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Päivitä ${ MAIL_SHORT_APP_NAME } Plus -tilaukseen"
+        "Päivitä ${ MAIL_SHORT_APP_NAME } Plussaan"
       ]
     },
     "new_plans: action": {
@@ -11509,6 +11513,9 @@
       ]
     },
     "sso": {
+      "Sign in": [
+        "Kirjaudu sisään"
+      ],
       "Sign in to your organization": [
         "Kirjaudu sisään organisaatioosi"
       ]
@@ -13910,9 +13917,6 @@
       ],
       "Meeting ID:": [
         "Tapaamisen ID:"
-      ],
-      "Passcode: ${ password }": [
-        "Tunnuskoodi: ${ password }"
       ]
     }
   }

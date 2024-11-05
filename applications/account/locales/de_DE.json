@@ -181,6 +181,9 @@
       "Back": [
         "Zurück"
       ],
+      "Back to sign-in": [
+        "Zurück zur Anmeldung"
+      ],
       "Block": [
         "Sperren"
       ],
@@ -802,11 +805,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
-        "Seite aktualisieren"
-      ],
       "refresh the page": [
         "aktualisiere die Seite"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
       ],
       "Reject": [
         "Ablehnen"
@@ -1593,14 +1596,6 @@
         "Wähle dein Jahresendangebot"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1622,6 +1617,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -4328,6 +4331,12 @@
       "Account does not exist": [
         "Konto existiert nicht"
       ],
+      "Add at least one action": [
+        "Füge mindestens eine Aktion hinzu"
+      ],
+      "Add at least one condition": [
+        "Füge mindestens eine Bedingung hinzu"
+      ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
@@ -4631,6 +4640,9 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
+      ],
+      "Please upload a square logo": [
+        "Bitte lade ein quadratisches Logo hoch."
       ],
       "Please upload an xml file": [
         "Bitte lade eine XML-Datei hoch."
@@ -5561,6 +5573,9 @@
     "fido2: Action": {
       "Delete key": [
         "Schlüssel löschen"
+      ],
+      "New security key": [
+        "Neuer Sicherheitsschlüssel"
       ]
     },
     "fido2: Error": {
@@ -5641,6 +5656,9 @@
       ],
       "Security key registered": [
         "Sicherheitsschlüssel registriert"
+      ],
+      "Security keys": [
+        "Sicherheitsschlüssel"
       ]
     },
     "file size format": {
@@ -5851,6 +5869,9 @@
       "Back to sign in": [
         "Zurück zur Anmeldung"
       ],
+      "Continue to enjoy a fast, focused, and secure desktop experience. Upgrade to unlock unlimited access and other premium features.": [
+        "Genieße weiterhin ein schnelles, konzentriertes und sicheres Desktop-Erlebnis. Mit dem Upgrade erhältst du unbegrenzten Zugang und weitere Premiumfunktionen."
+      ],
       "Keep using the desktop app": [
         "Weiter die Desktop-App nutzen"
       ],
@@ -6013,6 +6034,9 @@
       ]
     },
     "group_invite_2024: Title": {
+      "for ${ email }": [
+        "für ${ email }"
+      ],
       "Group invitation accepted": [
         "Gruppeneinladung angenommen"
       ],
@@ -7166,11 +7190,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
@@ -8729,6 +8753,9 @@
       ],
       "User activated": [
         "Benutzer aktiviert"
+      ],
+      "Username": [
+        "Benutzername"
       ],
       "username": [
         "Benutzername"
@@ -11545,32 +11572,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Starte für ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Ab ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -11598,6 +11599,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Starte für ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ab ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Upgrade auf ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12279,20 +12306,6 @@
         "Das von dir ausgewählte Abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -12311,6 +12324,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -13614,6 +13641,14 @@
       ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Unternehmensname verwenden"
+      ],
+      "Use personal name": [
+        "Persönlichen Namen verwenden"
       ]
     },
     "Payments": {
@@ -14952,6 +14987,53 @@
         "Probeversion anfordern"
       ]
     },
+    "Signup: Info": {
+      "Advanced security features": [
+        "Erweiterte Sicherheitsfunktionen"
+      ],
+      "Advanced sharing security": [
+        "Erweiterte Sicherheit beim Teilen"
+      ],
+      "Apps for all devices": [
+        "Apps für alle Geräte"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Sitz in der Schweiz, DSGVO-konform"
+      ],
+      "Built-in encryption": [
+        "Integrierte Verschlüsselung"
+      ],
+      "Email aliases": [
+        "E-Mail-Aliasse"
+      ],
+      "End-to-end encryption": [
+        "Ende-zu-Ende-Verschlüsselung"
+      ],
+      "From the team that knows encryption": [
+        "Von dem Team, das sich mit Verschlüsselung auskennt"
+      ],
+      "ISO 27001 certified": [
+        "ISO 27001 zertifiziert"
+      ],
+      "Open source and audited": [
+        "Open Source und unabhängig geprüft"
+      ],
+      "Open source and verified": [
+        "Open Source und verifiziert"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Geschützt durch Schweizer Datenschutzgesetze"
+      ],
+      "The only cloud storage with:": [
+        "Der einzige Cloudspeicher mit:"
+      ],
+      "The only email service with:": [
+        "Der einzige E-Mail-Dienst mit:"
+      ],
+      "Works on all devices": [
+        "Funktioniert auf allen Geräten"
+      ]
+    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "DSGVO und HIPAA konform"
@@ -15160,11 +15242,23 @@
       "Access granted": [
         "Zugriff gewährt"
       ],
+      "Approve": [
+        "Genehmigen"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
+      "Confirmation code": [
+        "Bestätigungscode"
+      ],
       "Contact administrator": [
         "Administrator kontaktieren"
+      ],
+      "Current device": [
+        "Aktuelles Gerät"
+      ],
+      "Deny": [
+        "Verweigern"
       ],
       "Deny access": [
         "Zugriff verweigern"
@@ -15175,8 +15269,14 @@
       "Devices management": [
         "Geräteverwaltung"
       ],
+      "Grant": [
+        "Zulassen"
+      ],
       "Grant access": [
         "Zugriff gewähren"
+      ],
+      "Grant access to users?": [
+        "Den Benutzern Zugriff gewähren?"
       ],
       "Invalid confirmation code": [
         "Ungültiger Bestätigungscode"
@@ -15198,6 +15298,12 @@
       ],
       "Sign-in confirmed": [
         "Anmeldung bestätigt"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "Anmeldung auf einem anderen Gerät angefragt. Warst du das?"
+      ],
+      "User details:": [
+        "Benutzerdetails:"
       ],
       "Yes, it was me": [
         "Ja, das war ich"
@@ -15930,6 +16036,9 @@
       "Device deleted": [
         "Gerät gelöscht"
       ],
+      "Device rejected": [
+        "Gerät verweigert"
+      ],
       "Display name updated": [
         "Anzeigename aktualisiert"
       ],
@@ -16136,6 +16245,9 @@
       "Preferences updated": [
         "Einstellungen aktualisiert"
       ],
+      "Resent invitation": [
+        "Einladung erneut versendet"
+      ],
       "Status updated": [
         "Status aktualisiert"
       ]
@@ -16303,6 +16415,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
@@ -16359,6 +16474,9 @@
       ],
       "Action": [
         "Aktion"
+      ],
+      "Actions": [
+        "Aktionen"
       ],
       "Activate @pm.me": [
         "@pm.me aktivieren"
@@ -16496,11 +16614,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -16693,11 +16811,17 @@
       "Delete version history?": [
         "Versionsverlauf löschen?"
       ],
+      "Deny access to user?": [
+        "Dem Benutzer den Zugriff verweigern?"
+      ],
       "Description": [
         "Beschreibung"
       ],
       "Details": [
         "Details"
+      ],
+      "Device": [
+        "Gerät"
       ],
       "Device connected!": [
         "Gerät verbunden!"
@@ -16794,6 +16918,9 @@
       ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
+      ],
+      "Enable for all users": [
+        "Für alle Benutzer aktivieren"
       ],
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
@@ -16974,6 +17101,9 @@
       "Increase your privacy with more addresses": [
         "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
       ],
+      "Integrations": [
+        "Integrationen"
+      ],
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
@@ -17003,6 +17133,9 @@
       ],
       "Leave ${ organisationName }?": [
         "${ organisationName } verlassen?"
+      ],
+      "Leave group?": [
+        "Gruppe verlassen?"
       ],
       "Link confirmation": [
         "Linkbestätigung"
@@ -17136,6 +17269,9 @@
       "Profile": [
         "Profil"
       ],
+      "QR Code": [
+        "QR-Code"
+      ],
       "Ready, set, forward": [
         "Auf die Plätze, fertig, los"
       ],
@@ -17159,6 +17295,9 @@
       ],
       "Refer a friend": [
         "Wirb einen Freund"
+      ],
+      "Reject device?": [
+        "Gerät verweigern?"
       ],
       "Remove all members?": [
         "Alle Mitglieder entfernen?"
@@ -17325,6 +17464,9 @@
       "Start import process": [
         "Importvorgang starten"
       ],
+      "State": [
+        "Status"
+      ],
       "Status": [
         "Status"
       ],
@@ -17427,6 +17569,9 @@
       ],
       "Version history": [
         "Versionsverlauf"
+      ],
+      "Video conference": [
+        "Videokonferenz"
       ],
       "VPN apps": [
         "VPN-Apps"
@@ -17875,12 +18020,6 @@
       "Could not enable administrator access: ${ error }": [
         "Fehler beim Aktivieren des Administratorzugriffs: ${ error }"
       ],
-      "Delete request": [
-        "Anfrage löschen"
-      ],
-      "Delete request to access user data?": [
-        "Anfrage zum Zugriff auf Benutzerdaten löschen?"
-      ],
       "Enable admin access?": [
         "Admin-Zugriff aktivieren?"
       ],
@@ -17898,9 +18037,6 @@
       ],
       "Organization key must be activated to request data access": [
         "Der Organisationsschlüssel muss aktiviert werden, um den Datenzugang zu beantragen"
-      ],
-      "Pending admin access": [
-        "Admin-Zugriff ausstehend"
       ],
       "Private user": [
         "Privater Benutzer"
@@ -17925,9 +18061,6 @@
       ],
       "The user must have an address to request data access": [
         "Der Nutzer muss über eine Adresse verfügen, um den Datenzugang zu beantragen"
-      ],
-      "This will delete the pending request for administrator access to the user’s data or password reset.": [
-        "Dadurch wird die ausstehende Anfrage für den Administratorzugriff auf die Daten des Benutzers oder das Zurücksetzen des Passworts gelöscht."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Dadurch wird dem Administrator die Berechtigung entzogen, das Konto dieses Benutzers zu verwalten."
