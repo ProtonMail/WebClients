@@ -3977,6 +3977,12 @@
       "A problem occurred, please try again.": [
         "Es ist ein Problem aufgetreten, bitte versuche es erneut."
       ],
+      "Add at least one action": [
+        "Füge mindestens eine Aktion hinzu"
+      ],
+      "Add at least one condition": [
+        "Füge mindestens eine Bedingung hinzu"
+      ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
@@ -10366,6 +10372,14 @@
         "Neue Kredit-/Debitkarte"
       ]
     },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Unternehmensname verwenden"
+      ],
+      "Use personal name": [
+        "Persönlichen Namen verwenden"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Rechnungsland"
@@ -13826,9 +13840,6 @@
       ],
       "Meeting ID:": [
         "Meeting-ID:"
-      ],
-      "Passcode: ${ password }": [
-        "Passcode: ${ password }"
       ]
     }
   }
