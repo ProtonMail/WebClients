@@ -6930,6 +6930,9 @@
       "Administration Panel": [
         "Panneau d'administration"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Fonctionnalités avancées des alias (fournies par SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Tous les produits et fonctionnalités ${ BRAND_NAME }"
       ],
@@ -7440,6 +7443,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domaines personnalisés pour les alias, messageries supplémentaires, envois d'e-mails à partir d'alias, etc."
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -8203,8 +8209,14 @@
         "${ n } compte utilisateur",
         "${ n } comptes utilisateur"
       ],
+      "Activity log": [
+        "Journal d'activités"
+      ],
       "Admin panel to manage users and subscription": [
         "Panneau d'administration pour gérer l'abonnement et les utilisateurs"
+      ],
+      "Team policies": [
+        "Règles de l'équipe"
       ]
     },
     "PassFamilyPlan2024": {
@@ -9064,6 +9076,9 @@
       ],
       "Sign in to your organization": [
         "Connectez-vous à votre organisation."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Vous allez être redirigé vers votre service d'authentification unique tiers."
       ]
     },
     "State": {
