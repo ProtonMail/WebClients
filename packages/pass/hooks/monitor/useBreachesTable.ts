@@ -11,7 +11,9 @@ import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types
 import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
 import type { LoginItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { sortOn } from '@proton/pass/utils/fp/sort';
+import { toLowerCase } from '@proton/pass/utils/string/to-lower-case';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 export type MonitorTableRow<T extends AddressType = AddressType> = MonitorAddress<T> & { usageCount: number };
@@ -25,11 +27,11 @@ export type MonitorTable<T extends AddressType = AddressType> = {
 /** Given a list of login items candidates and already monitored
  * emails - returns a suggestion list of the top 5 most used logins */
 const getCustomSuggestions = (data: MonitorAddress[], items: LoginItem[]): MonitorTableRow<AddressType.CUSTOM>[] => {
-    const monitored = new Set<string>(data.map(prop('email')));
+    const monitored = new Set<string>(data.map(pipe(prop('email'), toLowerCase)));
 
     const suggestions = items.reduce<Map<string, number>>((acc, item) => {
         if (!item.data.content.itemEmail.v && !item.data.content.itemUsername.v) return acc;
-        const userIdentifier = intoUserIdentifier(item);
+        const userIdentifier = toLowerCase(intoUserIdentifier(item));
         if (monitored.has(userIdentifier)) return acc;
         if (PassCoreUI.is_email_valid(userIdentifier)) acc.set(userIdentifier, (acc.get(userIdentifier) ?? 0) + 1);
 
