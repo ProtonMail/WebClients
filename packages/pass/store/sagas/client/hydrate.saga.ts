@@ -30,9 +30,14 @@ type HydrateCacheOptions = {
     onError?: () => Generator;
 };
 
+export type HydrationResult = { fromCache: boolean; version?: string };
+
 /** Will try to decrypt the store cache and hydrate the store accordingly. Returns a
  * boolean flag indicating wether hydration happened from cache or not. */
-export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, getSettings }: RootSagaOptions) {
+export function* hydrate(
+    config: HydrateCacheOptions,
+    { getCache, getAuthStore, getSettings }: RootSagaOptions
+): Generator<any, HydrationResult> {
     try {
         const authStore = getAuthStore();
         const keyPassword = authStore.getPassword();
@@ -101,10 +106,14 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore, 
         if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, clear: true });
 
         yield put(stateHydrate(state));
-        return cache?.state !== undefined && cache?.snapshot !== undefined;
+
+        return {
+            fromCache: cache?.state !== undefined && cache?.snapshot !== undefined,
+            version: encryptedCache?.version,
+        };
     } catch (err) {
         logger.warn(`[Boot] Hydration error`, err);
         yield config.onError?.();
-        return false;
+        return { fromCache: false };
     }
 }
