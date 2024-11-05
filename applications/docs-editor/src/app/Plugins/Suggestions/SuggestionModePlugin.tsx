@@ -346,7 +346,7 @@ export function SuggestionModePlugin({
       editor.registerCommand(
         FORMAT_TEXT_COMMAND,
         (payload) => {
-          return $formatTextAsSuggestion(payload, addCreatedIDtoSet)
+          return $formatTextAsSuggestion(payload, addCreatedIDtoSet, suggestionModeLogger)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
