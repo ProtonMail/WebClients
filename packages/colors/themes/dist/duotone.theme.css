@@ -81,6 +81,7 @@
   --optional-scrollbar-thumb-color: #d1cfcd;
   --optional-main-border-width: 0;
   --optional-background-lowered: #f8f8f6;
+  --optional-background-elevated: white;
   --optional-email-item-read-text-color: #3d3c3c;
   --optional-email-item-selected-background-color: var(
     --interaction-norm-major-1
@@ -99,7 +100,6 @@
   --optional-promotion-interaction-hover: rgb(109 74 255 / 0.08);
   --optional-promotion-background-start: rgb(109 74 255 / 0.15);
   --optional-promotion-background-end: rgb(70 26 255 / 0.04);
-
   --optional-bg-promotion-bw-button: var(--background-invert);
   --optional-text-promotion-bw-button: var(--text-invert);
 }

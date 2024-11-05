@@ -77,7 +77,7 @@
   --shadow-norm-opacity: 0.5;
   --shadow-raised-opacity: 1;
   --shadow-lifted-opacity: 0.75;
-  --backdrop-norm: rgb(0 0 0 / 0.75);
+  --backdrop-norm: rgb(16 15 20 / 0.48);
   --optional-scrollbar-thumb-color: #999999;
   --optional-link-norm: var(--interaction-norm-major-1);
   --optional-link-hover: var(--interaction-norm-major-2);
@@ -86,7 +86,8 @@
   --optional-email-item-read-background-color: var(--background-norm);
   --optional-email-item-read-text-color: var(--text-weak);
   --optional-mini-calendar-today-color: white;
-  --optional-background-lowered: #08070a;
+  --optional-background-lowered: #040405;
+  --optional-background-elevated: #18161f;
   --optional-logo-text-proton-color: white;
   --optional-logo-text-product-color: white;
   --optional-promotion-text-color: white;
