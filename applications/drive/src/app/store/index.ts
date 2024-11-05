@@ -29,5 +29,5 @@ export * from './_views';
 export { useSearchLibrary } from './_search';
 export { usePhotos, usePhotosRecovery, isDecryptedLink } from './_photos';
 export * from './_photos/interface';
-export { useDriveShareURLBookmarkingFeatureFlag, useBookmarksActions } from './_bookmarks';
+export { useBookmarksActions } from './_bookmarks';
 export * from './_bookmarks/interface';

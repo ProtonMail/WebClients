@@ -12,6 +12,7 @@ import {
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useLoading } from '@proton/hooks';
+import useFlag from '@proton/unleash/useFlag';
 
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
@@ -25,7 +26,6 @@ import {
     useBookmarksActions,
     useDefaultShare,
     useDriveEventManager,
-    useDriveShareURLBookmarkingFeatureFlag,
     useSearchControl,
 } from '../store';
 // TODO: This should be removed after rollout phase
@@ -79,7 +79,7 @@ const InitContainer = () => {
     const driveEventManager = useDriveEventManager();
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
-    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
+    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     useActivePing();
@@ -92,7 +92,7 @@ const InitContainer = () => {
                 // In case the user Sign-up we just let him in the App (in /shared-with-me route)
                 // So we don't even load the app.
                 // See useSharedWithMeView.tsx for Sign-up logic
-                const token = isDriveShareUrlBookmarkingEnabled && getTokenFromSearchParams();
+                const token = !bookmarksFeatureDisabled && getTokenFromSearchParams();
                 if (token && redirectionReason) {
                     // In case of account switch we need to pass by the private app to set the latest active session
                     if (redirectionReason === 'signin') {
