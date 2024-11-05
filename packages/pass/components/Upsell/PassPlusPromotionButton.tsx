@@ -13,8 +13,9 @@ export const PassPlusPromotionButton: FC<Props> = ({ className, ...props }) => (
         icon
         size="small"
         shape="outline"
-        className={clsx(className, 'flex items-center')}
         as="span"
         {...props}
+        className={clsx(className, 'flex items-center button-xs')}
+        iconSize={3.5}
     />
 );

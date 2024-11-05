@@ -80,7 +80,7 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                                                             .t`This option is currently not available on your device.`}
                                               </span>
                                           </span>
-                                          {biometrics.needsUpgrade && <PassPlusPromotionButton className="button-xs" />}
+                                          {biometrics.needsUpgrade && <PassPlusPromotionButton />}
                                       </span>
                                   ),
                                   disabled: !biometrics.enabled,
