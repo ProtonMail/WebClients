@@ -144,6 +144,19 @@ function $handleDeleteInput(
       didModifySelection = true
     }
 
+    const willSelectDecoratorInInsertSuggestion =
+      $isSuggestionNode(previousSibling) &&
+      previousSibling.getSuggestionTypeOrThrow() === 'insert' &&
+      previousSibling.getChildrenSize() === 1 &&
+      $isDecoratorNode(previousSibling.getFirstChild())
+    if (willSelectDecoratorInInsertSuggestion) {
+      // If the select is about to delete a decorator node (e.g. divider)
+      // which is inside a "insert" suggestion node, we can delete and resolve
+      // the whole suggestion if it only contains the decorator node.
+      $removeSuggestionNodeAndResolveIfNeeded(previousSibling)
+      return true
+    }
+
     const previousBlock = $getPreviousNonInlineLeafElement(currentBlock)
     if (previousBlock) {
       if (previousBlock.isEmpty()) {
