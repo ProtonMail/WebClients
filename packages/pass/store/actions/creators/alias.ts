@@ -16,7 +16,6 @@ import type {
     AliasContactListResponse,
     AliasContactNewDTO,
     AliasDetails,
-    AliasMailbox,
     AliasOptions,
     AliasToggleStatusDTO,
     CatchAllDTO,
@@ -91,7 +90,7 @@ export const getAliasDetailsFailure = createAction(
 
 export const aliasDetailsSync = createAction(
     'alias::details::sync',
-    (payload: { aliasEmail: string; mailboxes: AliasMailbox[] }) => withCache({ payload })
+    (payload: { aliasEmail: string } & Partial<AliasDetails>) => withCache({ payload })
 );
 
 export const aliasSyncEnable = requestActionsFactory<ShareId, ShareId>('alias::sync::enable')({
