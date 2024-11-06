@@ -326,6 +326,8 @@ export const getSupportedEvent = ({
             'x-pm-proton-reply': protonReply,
             'x-yahoo-yid': xYahooID,
             'x-yahoo-user-status': xYahooUserStatus,
+            'x-pm-conference-id': xConferenceId,
+            'x-pm-conference-url': xConferenceUrl,
             color,
         } = vcalVeventComponent;
 
@@ -594,6 +596,16 @@ export const getSupportedEvent = ({
                     validated.color = { value: closestColor };
                 }
             }
+        }
+
+        // Zoom integration specific surgery
+        if (xConferenceId) {
+            // Needed to interpret non RFC-compliant Yahoo REPLY ics's
+            validated['x-pm-conference-id'] = { ...xConferenceId };
+        }
+        if (xConferenceUrl) {
+            // Needed to interpret non RFC-compliant Yahoo REPLY ics's
+            validated['x-pm-conference-url'] = { ...xConferenceUrl };
         }
 
         // invite-specific surgery

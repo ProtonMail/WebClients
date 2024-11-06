@@ -1,4 +1,5 @@
 import { getVideoConferencingData } from '@proton/calendar';
+import { removeZoomInfoFromDescription } from '@proton/calendar/components/videoConferencing/zoom/zoomHelpers';
 import { EVENT_VERIFICATION_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';
@@ -49,12 +50,14 @@ export const propertiesToModel = ({
     const { selfAttendeeIndex, selfAddress } = selfAddressData || {};
     const { meetingId, meetingUrl, password } = getVideoConferencingData(veventComponent);
 
+    const cleanDescription = removeZoomInfoFromDescription(description?.value ?? '');
+
     return {
         uid: uid ? uid.value : undefined,
         frequencyModel: propertiesToFrequencyModel(rrule, start),
         title: truncate((summary?.value ?? '').trim(), MAX_CHARS_API.TITLE),
         location: truncate((location?.value ?? '').trim(), MAX_CHARS_API.LOCATION),
-        description: truncate((description?.value ?? '').trim(), MAX_CHARS_API.EVENT_DESCRIPTION),
+        description: truncate(cleanDescription.trim(), MAX_CHARS_API.EVENT_DESCRIPTION),
         color: color?.value,
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
