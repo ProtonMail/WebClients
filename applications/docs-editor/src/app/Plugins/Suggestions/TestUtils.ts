@@ -218,3 +218,10 @@ export function polyfillSelectionRelatedThingsForTests() {
     }
   }
 }
+
+export function assert(cond: boolean, message?: string): asserts cond {
+  if (cond) {
+    return
+  }
+  throw new Error(message)
+}
