@@ -1338,11 +1338,26 @@ export default function DocumentEditorToolbar({
           }}
           caretClassName="-ml-1"
           content={
-            <>
-              {isEditMode && <Icon name="pencil" />}
-              {isSuggestionMode && <SpeechBubblePenIcon className="h-4 w-4" />}
-              {isPreviewMode && <Icon name="eye" />}
-            </>
+            <div className="flex items-center gap-2 text-sm">
+              {isEditMode && (
+                <>
+                  <Icon name="pencil" />
+                  {c('Info').t`Editing`}
+                </>
+              )}
+              {isSuggestionMode && (
+                <>
+                  <SpeechBubblePenIcon className="h-4 w-4" />
+                  {c('Info').t`Suggesting`}
+                </>
+              )}
+              {isPreviewMode && (
+                <>
+                  <Icon name="eye" />
+                  {c('Info').t`Viewing`}
+                </>
+              )}
+            </div>
           }
           hasCaret={!viewportWidth['<=small']}
           contentProps={DropdownContentProps}
