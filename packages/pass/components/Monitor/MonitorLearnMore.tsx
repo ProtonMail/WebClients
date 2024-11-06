@@ -7,7 +7,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import CollapsibleHeaderToggleButton from '@proton/pass/components/Layout/Button/CollapsibleHeaderToggleButton';
 import { LearnMoreCard, type LearnMoreProps } from '@proton/pass/components/Layout/Card/LearnMoreCard';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { type MaybeNull, OnboardingMessage } from '@proton/pass/types';
+import { type MaybeNull, SpotlightMessage } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -17,12 +17,12 @@ export const MonitorLearnMore: FC = () => {
     const [expanded, setExpanded] = useState<MaybeNull<boolean>>(null);
 
     const handleClick = () => {
-        void onboardingAcknowledge?.(OnboardingMessage.PASS_MONITOR_LEARN_MORE);
+        void onboardingAcknowledge?.(SpotlightMessage.PASS_MONITOR_LEARN_MORE);
         setTimeout(() => anchorRef?.current?.scrollIntoView({ behavior: 'smooth' }), 50);
     };
 
     useEffect(() => {
-        (async () => onboardingCheck?.(OnboardingMessage.PASS_MONITOR_LEARN_MORE))()
+        (async () => onboardingCheck?.(SpotlightMessage.PASS_MONITOR_LEARN_MORE))()
             .then((expanded) => setExpanded(expanded === undefined || expanded))
             .catch(noop);
     }, []);

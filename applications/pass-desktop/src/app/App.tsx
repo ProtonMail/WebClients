@@ -11,8 +11,8 @@ import { core } from 'proton-pass-web/lib/core';
 import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
-import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { settings } from 'proton-pass-web/lib/settings';
+import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getInitialTheme } from 'proton-pass-web/lib/theme';
 
@@ -108,8 +108,8 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     getTheme: getInitialTheme,
 
     onLink: (url) => window.open(url, '_blank'),
-    onboardingAcknowledge: onboarding.acknowledge,
-    onboardingCheck: pipe(onboarding.checkMessage, prop('enabled')),
+    onboardingAcknowledge: spotlight.acknowledge,
+    onboardingCheck: pipe(spotlight.checkMessage, prop('enabled')),
     onTelemetry: pipe(createTelemetryEvent, telemetry.push),
     onB2BEvent: B2BEvents.push,
 

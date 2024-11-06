@@ -139,11 +139,11 @@ const getPassCoreProviderProps = (
         promptForPermissions,
 
         onboardingAcknowledge: (message) => {
-            sendMessage(messageFactory({ type: WorkerMessageType.ONBOARDING_ACK, payload: { message } })).catch(noop);
+            sendMessage(messageFactory({ type: WorkerMessageType.SPOTLIGHT_ACK, payload: { message } })).catch(noop);
         },
 
         onboardingCheck: (message) =>
-            sendMessage(messageFactory({ type: WorkerMessageType.ONBOARDING_CHECK, payload: { message } }))
+            sendMessage(messageFactory({ type: WorkerMessageType.SPOTLIGHT_CHECK, payload: { message } }))
                 .then((res) => res.type === 'success' && res.enabled)
                 .catch(() => false),
 

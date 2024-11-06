@@ -14,11 +14,11 @@ import { createImportService } from 'proton-pass-extension/app/worker/services/i
 import { createInjectionService } from 'proton-pass-extension/app/worker/services/injection';
 import { createLoggerService } from 'proton-pass-extension/app/worker/services/logger';
 import { createMonitorService } from 'proton-pass-extension/app/worker/services/monitor';
-import { createOnboardingService } from 'proton-pass-extension/app/worker/services/onboarding';
 import { createOTPService } from 'proton-pass-extension/app/worker/services/otp';
 import { createPasskeyService } from 'proton-pass-extension/app/worker/services/passkey';
 import { createSentryService } from 'proton-pass-extension/app/worker/services/sentry';
 import { createSettingsService } from 'proton-pass-extension/app/worker/services/settings';
+import { createSpotlightService } from 'proton-pass-extension/app/worker/services/spotlight';
 import { createStorageService } from 'proton-pass-extension/app/worker/services/storage';
 import { createStoreService } from 'proton-pass-extension/app/worker/services/store';
 import { createTelemetryService } from 'proton-pass-extension/app/worker/services/telemetry';
@@ -86,11 +86,11 @@ export const createWorkerContext = (config: ProtonConfig) => {
             injection: createInjectionService(),
             logger: createLoggerService(storage.local),
             monitor: createMonitorService(core, store),
-            onboarding: createOnboardingService(storage.local, store),
             otp: createOTPService(),
             passkey: createPasskeyService(),
             sentry: createSentryService(),
             settings: createSettingsService(),
+            spotlight: createSpotlightService(storage.local, store),
             storage,
             store,
             telemetry: BUILD_TARGET !== 'firefox' ? createTelemetryService(storage.local) : null,
@@ -126,7 +126,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
         },
     });
 
-    context.service.onboarding.init().catch(noop);
+    context.service.spotlight.init().catch(noop);
     context.service.apiProxy.clean?.().catch(noop);
     context.service.i18n.init().catch(noop);
 

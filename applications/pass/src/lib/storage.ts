@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
 export const B2B_STORAGE_KEY = 'b2bEvents';
 export const SETTINGS_STORAGE_KEY = 'settings';
 export const TELEMETRY_STORAGE_KEY = 'telemetry';
-export const ONBOARDING_STORAGE_KEY = 'onboarding';
+export const SPOTLIGHT_STORAGE_KEY = 'onboarding';
 
 export const getStorageKey = (prefix: string) => (localID?: number) =>
     localID !== undefined ? `${prefix}::${localID}` : prefix;
@@ -17,9 +17,9 @@ export const getStorageKey = (prefix: string) => (localID?: number) =>
 export const getB2BEventsStorageKey = getStorageKey(B2B_STORAGE_KEY);
 export const getSettingsStorageKey = getStorageKey(SETTINGS_STORAGE_KEY);
 export const getTelemetryStorageKey = getStorageKey(TELEMETRY_STORAGE_KEY);
-export const getOnboardingStorageKey = getStorageKey(ONBOARDING_STORAGE_KEY);
+export const getSpotlightStorageKey = getStorageKey(SPOTLIGHT_STORAGE_KEY);
 
-const LOCALID_STORAGE_KEYS = [SETTINGS_STORAGE_KEY, TELEMETRY_STORAGE_KEY, B2B_STORAGE_KEY, ONBOARDING_STORAGE_KEY];
+const LOCALID_STORAGE_KEYS = [SETTINGS_STORAGE_KEY, TELEMETRY_STORAGE_KEY, B2B_STORAGE_KEY, SPOTLIGHT_STORAGE_KEY];
 const LOCALID_STORAGE_RE = new RegExp(`^(?:${LOCALID_STORAGE_KEYS.join('|')})::(\\d+)`);
 
 export const clearUserLocalData = (localID: number) => {
@@ -27,7 +27,7 @@ export const clearUserLocalData = (localID: number) => {
     localStorage.removeItem(getSettingsStorageKey(localID));
     localStorage.removeItem(getTelemetryStorageKey(localID));
     localStorage.removeItem(getB2BEventsStorageKey(localID));
-    localStorage.removeItem(getOnboardingStorageKey(localID));
+    localStorage.removeItem(getSpotlightStorageKey(localID));
 };
 
 export const localGarbageCollect = async (encryptedSessions: EncryptedAuthSession[]) => {

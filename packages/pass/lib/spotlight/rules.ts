@@ -13,18 +13,18 @@ import {
     selectUserState,
 } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import { type Maybe, type MaybeNull, OnboardingMessage, PlanType } from '@proton/pass/types';
+import { type Maybe, type MaybeNull, PlanType, SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
-import { createOnboardingRule } from './service';
+import { createSpotlightRule } from './service';
 
 export const createPendingShareAccessRule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.PENDING_SHARE_ACCESS,
+    createSpotlightRule({
+        message: SpotlightMessage.PENDING_SHARE_ACCESS,
         when: (previous) => {
             if (previous) return false;
             const state = store.getState();
@@ -34,8 +34,8 @@ export const createPendingShareAccessRule = (store: Store<State>) =>
     });
 
 export const createWelcomeRule = () =>
-    createOnboardingRule({
-        message: OnboardingMessage.WELCOME,
+    createSpotlightRule({
+        message: SpotlightMessage.WELCOME,
         when: (previous) => {
             if (!DESKTOP_BUILD) return false;
             return !previous;
@@ -43,20 +43,20 @@ export const createWelcomeRule = () =>
     });
 
 export const createPermissionsRule = (checkPermissionsGranted: () => boolean) =>
-    createOnboardingRule({
-        message: OnboardingMessage.PERMISSIONS_REQUIRED,
+    createSpotlightRule({
+        message: SpotlightMessage.PERMISSIONS_REQUIRED,
         when: () => !checkPermissionsGranted(),
     });
 
 export const createStorageIssueRule = (checkStorageFull: () => boolean) =>
-    createOnboardingRule({
-        message: OnboardingMessage.STORAGE_ISSUE,
+    createSpotlightRule({
+        message: SpotlightMessage.STORAGE_ISSUE,
         when: () => checkStorageFull(),
     });
 
 export const createUpdateRule = (getAvailableUpdate: () => MaybeNull<string>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.UPDATE_AVAILABLE,
+    createSpotlightRule({
+        message: SpotlightMessage.UPDATE_AVAILABLE,
         /* keep a reference to the current available update so as
          * not to re-prompt the user with this update if ignored */
         onAcknowledge: (ack) => merge(ack, { extraData: { version: getAvailableUpdate() } }),
@@ -70,8 +70,8 @@ export const createUpdateRule = (getAvailableUpdate: () => MaybeNull<string>) =>
     });
 
 export const createTrialRule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.TRIAL,
+    createSpotlightRule({
+        message: SpotlightMessage.TRIAL,
         when: (previous) => {
             const passPlan = selectPassPlan(store.getState());
             return !previous && passPlan === UserPassPlan.TRIAL;
@@ -79,8 +79,8 @@ export const createTrialRule = (store: Store<State>) =>
     });
 
 export const createB2BRule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.B2B_ONBOARDING,
+    createSpotlightRule({
+        message: SpotlightMessage.B2B_ONBOARDING,
         when: (previous) => {
             const passPlan = selectPassPlan(store.getState());
             return !previous && passPlan === UserPassPlan.BUSINESS;
@@ -88,8 +88,8 @@ export const createB2BRule = (store: Store<State>) =>
     });
 
 export const createSecurityRule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.SECURE_EXTENSION,
+    createSpotlightRule({
+        message: SpotlightMessage.SECURE_EXTENSION,
         when: (previous, { installedOn }) => {
             /* should prompt only if user has no extension lock AND
              * message was not previously acknowledged AND user has
@@ -103,8 +103,8 @@ export const createSecurityRule = (store: Store<State>) =>
     });
 
 export const createUserRatingRule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.USER_RATING,
+    createSpotlightRule({
+        message: SpotlightMessage.USER_RATING,
         when: (previous) => {
             const createdItemsCount = selectCreatedItemsCount(store.getState());
             return !previous && createdItemsCount >= ITEM_COUNT_RATING_PROMPT;
@@ -112,27 +112,27 @@ export const createUserRatingRule = (store: Store<State>) =>
     });
 
 export const createMonitorRule = () =>
-    createOnboardingRule({
-        message: OnboardingMessage.PASS_MONITOR,
+    createSpotlightRule({
+        message: SpotlightMessage.PASS_MONITOR,
         when: (previous) => !previous,
     });
 
 export const createMonitorLearnMoreRule = () =>
-    createOnboardingRule({
-        message: OnboardingMessage.PASS_MONITOR_LEARN_MORE,
+    createSpotlightRule({
+        message: SpotlightMessage.PASS_MONITOR_LEARN_MORE,
         onAcknowledge: (ack) => merge(ack, { extraData: { expanded: !ack.extraData?.expanded } }),
         when: (previous) => !previous || !previous.extraData?.expanded,
     });
 
 export const createAliasTrashConfirmRule = () =>
-    createOnboardingRule({
-        message: OnboardingMessage.ALIAS_TRASH_CONFIRM,
+    createSpotlightRule({
+        message: SpotlightMessage.ALIAS_TRASH_CONFIRM,
         when: (previous) => !previous,
     });
 
 export const createFamilyPlanPromo2024Rule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.FAMILY_PLAN_PROMO_2024,
+    createSpotlightRule({
+        message: SpotlightMessage.FAMILY_PLAN_PROMO_2024,
         when: (previous) => {
             if (previous) return false;
 
@@ -149,8 +149,8 @@ export const createFamilyPlanPromo2024Rule = (store: Store<State>) =>
     });
 
 export const createAliasSyncEnableRule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.ALIAS_SYNC_ENABLE,
+    createSpotlightRule({
+        message: SpotlightMessage.ALIAS_SYNC_ENABLE,
         when: (previous) => {
             const state = store.getState();
             const enabled = selectFeatureFlag(PassFeature.PassSimpleLoginAliasesSync)(state);
@@ -163,8 +163,8 @@ export const createAliasSyncEnableRule = (store: Store<State>) =>
 /* - Pass Family offer shown to pass2023 users
  * - Pass Lifetime offer shown to free users */
 export const createBlackFriday2024Rule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.BLACK_FRIDAY_2024,
+    createSpotlightRule({
+        message: SpotlightMessage.BLACK_FRIDAY_2024,
         when: (previous) => {
             const state = store.getState();
             if (!selectInAppNotificationsEnabled(state)) return false;
@@ -185,8 +185,8 @@ export const createBlackFriday2024Rule = (store: Store<State>) =>
     });
 
 export const createUserRenewalRule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.USER_RENEWAL,
+    createSpotlightRule({
+        message: SpotlightMessage.USER_RENEWAL,
         when: (previous) => {
             const plan = selectUserPlan(store.getState());
 

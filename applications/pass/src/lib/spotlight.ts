@@ -1,5 +1,5 @@
 import { store } from 'proton-pass-web/app/Store/store';
-import { ONBOARDING_STORAGE_KEY, getOnboardingStorageKey } from 'proton-pass-web/lib/storage';
+import { SPOTLIGHT_STORAGE_KEY, getSpotlightStorageKey } from 'proton-pass-web/lib/storage';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import {
@@ -13,25 +13,25 @@ import {
     createTrialRule,
     createUserRenewalRule,
     createWelcomeRule,
-} from '@proton/pass/lib/onboarding/rules';
-import { createOnboardingService } from '@proton/pass/lib/onboarding/service';
+} from '@proton/pass/lib/spotlight/rules';
+import { createSpotlightService } from '@proton/pass/lib/spotlight/service';
 import { logger } from '@proton/pass/utils/logger';
 
 export const migrate = (activeStorageKey: string) => {
-    if (activeStorageKey !== ONBOARDING_STORAGE_KEY) {
-        const legacy = localStorage.getItem(ONBOARDING_STORAGE_KEY);
+    if (activeStorageKey !== SPOTLIGHT_STORAGE_KEY) {
+        const legacy = localStorage.getItem(SPOTLIGHT_STORAGE_KEY);
         const active = localStorage.getItem(activeStorageKey);
 
         if (legacy) {
-            logger.info(`[Onboarding] Migrated onboarding data to "${activeStorageKey}"`);
-            localStorage.removeItem(ONBOARDING_STORAGE_KEY);
+            logger.info(`[Onboarding] Migrated spotlight data to "${activeStorageKey}"`);
+            localStorage.removeItem(SPOTLIGHT_STORAGE_KEY);
             if (!active) localStorage.setItem(activeStorageKey, legacy);
         }
     }
 };
 
-export const onboarding = createOnboardingService({
-    getStorageKey: () => getOnboardingStorageKey(authStore.getLocalID()),
+export const spotlight = createSpotlightService({
+    getStorageKey: () => getSpotlightStorageKey(authStore.getLocalID()),
     migrate,
     storage: localStorage,
     rules: [
