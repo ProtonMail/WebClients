@@ -1,5 +1,9 @@
 import { addDays, isSameDay } from 'date-fns';
 
+import {
+    addZoomInfoToDescription,
+    removeZoomInfoFromDescription,
+} from '@proton/calendar/components/videoConferencing/zoom/zoomHelpers';
 import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
 import { modelToValarmComponent } from '@proton/shared/lib/calendar/alarms/modelToValarm';
 import { ICAL_EVENT_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
@@ -55,7 +59,6 @@ export const modelToGeneralProperties = ({
     uid,
     title,
     location,
-    description,
     status,
     color,
     rest,
@@ -72,10 +75,6 @@ export const modelToGeneralProperties = ({
 
     if (location) {
         properties.location = { value: location.slice(0, MAX_CHARS_API.LOCATION) };
-    }
-
-    if (description) {
-        properties.description = { value: description.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) };
     }
 
     if (color) {
@@ -143,6 +142,36 @@ const modelToVideoConferenceProperties = ({
     };
 };
 
+const modelToDescriptionProperties = ({
+    description,
+    conferenceId,
+    conferencePasscode,
+    conferenceUrl,
+    conferenceHost,
+}: Partial<EventModel>) => {
+    // Return the description if there is no Zoom meeting
+    if (!conferenceUrl && !conferenceId && !conferencePasscode) {
+        const cleanedDescription = removeZoomInfoFromDescription(description ?? '');
+        return { description: { value: cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) } };
+    }
+
+    // We remove the Zoom info from the description to avoid saving it twice
+    const cleanedDescription = removeZoomInfoFromDescription(description ?? '');
+    // We slice the description smaller to avoid too long descriptions with the generated Zoom info
+    const slicedDescription = cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION);
+    const newDescription = addZoomInfoToDescription({
+        host: conferenceHost,
+        meedingURL: conferenceUrl,
+        password: conferencePasscode,
+        meetingId: conferenceId,
+        description: slicedDescription,
+    });
+
+    return {
+        description: { value: newDescription },
+    };
+};
+
 export const modelToValarmComponents = ({ isAllDay, fullDayNotifications, partDayNotifications }: EventModel) =>
     dedupeNotifications(isAllDay ? fullDayNotifications : partDayNotifications).map((notification) =>
         modelToValarmComponent(notification)
@@ -155,6 +184,7 @@ export const modelToVeventComponent = (model: EventModel) => {
     const attendeeProperties = modelToAttendeeProperties(model);
     const generalProperties = modelToGeneralProperties(model);
     const valarmComponents = modelToValarmComponents(model);
+    const descriptionProperties = modelToDescriptionProperties(model);
     const videoConferenceProperties = modelToVideoConferenceProperties(model);
 
     return withRequiredProperties({
@@ -164,6 +194,7 @@ export const modelToVeventComponent = (model: EventModel) => {
         ...organizerProperties,
         ...attendeeProperties,
         ...videoConferenceProperties,
+        ...descriptionProperties,
         component: 'vevent',
         components: [...valarmComponents],
     });

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { removeZoomInfoFromDescription } from '@proton/calendar/components/videoConferencing/zoom/zoomHelpers';
 import { IconRow, TextAreaTwo } from '@proton/components';
 import { DESCRIPTION_INPUT_ID, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
@@ -32,7 +33,12 @@ export const RowDescription = ({ canEditSharedEventData, model, setModel }: Prop
                 maxLength={MAX_CHARS_API.EVENT_DESCRIPTION}
                 className="max-h-custom"
                 title={c('Title').t`Add more information related to this event`}
-                {...createHandlers({ model, setModel, field: 'description' }).native}
+                {...createHandlers({
+                    // We need to remove the zoom info from the description to avoid displaying it to users editing the description
+                    model: { ...model, description: removeZoomInfoFromDescription(model.description) },
+                    setModel,
+                    field: 'description',
+                }).native}
             />
         </IconRow>
     );

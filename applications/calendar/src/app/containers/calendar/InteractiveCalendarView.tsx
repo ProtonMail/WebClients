@@ -2043,6 +2043,7 @@ const InteractiveCalendarView = ({
                                           delete tmpData.conferenceUrl;
                                           delete tmpData.conferencePasscode;
                                           delete tmpData.conferenceCreator;
+                                          delete tmpData.conferenceHost;
 
                                           tmpData.attendees.forEach((attendee) => {
                                               attendee.partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
