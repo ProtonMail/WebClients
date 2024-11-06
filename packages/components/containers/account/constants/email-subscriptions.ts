@@ -10,7 +10,10 @@ import {
     VPN_APP_NAME,
     WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
+import {
+    NEWSLETTER_SUBSCRIPTIONS_BITS,
+    type NewsletterSubscriptionUpdateData,
+} from '@proton/shared/lib/helpers/newsletter';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 
@@ -177,4 +180,11 @@ export const filterNews = ({
         default:
             return true;
     }
+};
+
+export const getUpdateNotification = (data: NewsletterSubscriptionUpdateData) => {
+    if (data.InAppNotifications) {
+        return c('Info').t`Preference saved`;
+    }
+    return c('Info').t`Emailing preference saved`;
 };

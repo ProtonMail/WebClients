@@ -1,13 +1,12 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
-
 import { userSettingsActions } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import {
     type EmailSubscription,
     filterNews,
     getEmailSubscriptions,
+    getUpdateNotification,
 } from '@proton/components/containers/account/constants/email-subscriptions';
 import useApi from '@proton/components/hooks/useApi';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -29,7 +28,7 @@ const EditEmailSubscription = () => {
     const run = async (data: NewsletterSubscriptionUpdateData) => {
         dispatch(userSettingsActions.update({ UserSettings: { News: getUpdatedNewsBitmap(userSettings.News, data) } }));
         await api<{ UserSettings: UserSettings }>(patchNews(data));
-        createNotification({ text: c('Info').t`Emailing preference saved` });
+        createNotification({ text: getUpdateNotification(data) });
     };
 
     const setLoadingMapDiff = (data: NewsletterSubscriptionUpdateData, value: boolean) => {
