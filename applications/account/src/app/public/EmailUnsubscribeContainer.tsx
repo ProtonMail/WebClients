@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import { GenericError, useApi, useErrorHandler, useNotifications } from '@proton/components';
+import { getUpdateNotification } from '@proton/components/containers/account/constants/email-subscriptions';
 import { getEmailSubscriptionCategories } from '@proton/components/containers/account/getEmailSubscriptionCategories';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -108,8 +109,7 @@ const EmailUnsubscribeContainer = () => {
         setNews(getUpdatedNewsBitmap(news ?? 0, data));
 
         await authApi<{ UserSettings: { News: number } }>(patchNewsExternal(data));
-
-        createNotification({ text: c('Info').t`Emailing preference saved` });
+        createNotification({ text: getUpdateNotification(data) });
     };
 
     const handleUnsubscribeClick = async () => {
