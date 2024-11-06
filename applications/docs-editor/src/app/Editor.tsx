@@ -143,6 +143,7 @@ export function Editor({
             clientInvoker={clientInvoker}
             userMode={userMode}
             onUserModeChange={onUserModeChange}
+            isEditorHidden={hidden}
           />
         )}
         <RichTextPlugin
