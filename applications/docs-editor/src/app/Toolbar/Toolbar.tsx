@@ -36,7 +36,14 @@ import {
 import { $isLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { Button } from '@proton/atoms'
-import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useActiveBreakpoint } from '@proton/components'
+import {
+  DropdownMenu,
+  DropdownMenuButton,
+  Icon,
+  SimpleDropdown,
+  Spotlight,
+  useActiveBreakpoint,
+} from '@proton/components'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
 import clsx from '@proton/utils/clsx'
@@ -83,8 +90,9 @@ import { INSERT_FILE_COMMAND } from '../Commands/Events'
 import { EditorUserMode } from '../EditorUserMode'
 import type { BlockType } from '../Plugins/BlockTypePlugin'
 import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTypePlugin'
-import { EditorEvent } from '@proton/docs-shared'
+import { EditorEvent, TooltipKey, useTooltipOnce } from '@proton/docs-shared'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
+import { SpotlightIllustration } from '../Icons/SpotlightIllustration'
 
 const stepFontSize = (currentFontSize: string, step: number): string => {
   const currentFontIndex = FontSizes.indexOf(parseFloat(currentFontSize))
@@ -104,12 +112,14 @@ export default function DocumentEditorToolbar({
   hasEditAccess,
   isPreviewModeToolbar = false,
   clientInvoker,
+  isEditorHidden,
 }: {
   userMode: EditorUserMode
   onUserModeChange: (mode: EditorUserMode) => void
   hasEditAccess: boolean
   isPreviewModeToolbar?: boolean
   clientInvoker?: EditorRequiresClientMethods
+  isEditorHidden?: boolean
 }) {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
@@ -641,6 +651,11 @@ export default function DocumentEditorToolbar({
   const isEditMode = userMode === EditorUserMode.Edit
   const isPreviewMode = userMode === EditorUserMode.Preview
   const isSuggestionMode = userMode === EditorUserMode.Suggest
+
+  const { shouldShowTooltip: shouldShowSuggestionModeSpotlight } = useTooltipOnce(
+    TooltipKey.DocsSuggestionModeSpotlight,
+    new Date('2024-11-22'),
+  )
 
   return (
     // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
@@ -1325,85 +1340,100 @@ export default function DocumentEditorToolbar({
             </DropdownMenuButton>
           </DropdownMenu>
         </SimpleDropdown>
-        <SimpleDropdown
-          as={Button}
-          shape="solid"
-          type="button"
-          disabled={!hasEditAccess}
-          className="ml-auto flex gap-2 py-2"
-          style={{
-            border: '0',
-            backgroundColor: isSuggestionMode ? 'var(--signal-success)' : undefined,
-            color: isSuggestionMode ? 'var(--signal-success-contrast)' : undefined,
-          }}
-          caretClassName="-ml-1"
+        <Spotlight
+          show={shouldShowSuggestionModeSpotlight && !isEditorHidden}
           content={
-            <div className="flex items-center gap-2 text-sm">
-              {isEditMode && (
-                <>
-                  <Icon name="pencil" />
-                  {c('Info').t`Editing`}
-                </>
-              )}
-              {isSuggestionMode && (
-                <>
-                  <SpeechBubblePenIcon className="h-4 w-4" />
-                  {c('Info').t`Suggesting`}
-                </>
-              )}
-              {isPreviewMode && (
-                <>
-                  <Icon name="eye" />
-                  {c('Info').t`Viewing`}
-                </>
-              )}
+            <div className="flex items-center gap-4 md:flex-nowrap">
+              <SpotlightIllustration className="h-12 w-12 shrink-0" />
+              <div className="flex flex-col gap-1">
+                <div className="text-sm font-bold">{c('Title').t`Explore the New Suggestion Mode`}</div>
+                <div className="text-sm">{c('Description')
+                  .t`Use the dropdown above to switch and start making suggestions.`}</div>
+              </div>
             </div>
           }
-          hasCaret={!viewportWidth['<=small']}
-          contentProps={DropdownContentProps}
-          data-testid="edit-options-dropdown"
-          data-interaction-mode={userMode}
+          originalPlacement="bottom-end"
         >
-          <DropdownMenu>
-            {hasEditAccess && (
-              <>
-                <InteractionDropdownButton
-                  isActive={isEditMode}
-                  onClick={() => {
-                    onUserModeChange(EditorUserMode.Edit)
-                  }}
-                  icon={<Icon name="pencil" size={4} />}
-                  label={c('Info').t`Editing`}
-                  description={c('Description').t`Edit document directly`}
-                  data-testid="edit-dropdown-button"
-                />
-                {canShowSuggestionsButton && (
-                  <InteractionDropdownButton
-                    isActive={isSuggestionMode}
-                    icon={<SpeechBubblePenIcon className="h-4 w-4" />}
-                    label={c('Info').t`Suggesting`}
-                    description={c('Description').t`Edits become suggestions`}
-                    onClick={() => {
-                      onUserModeChange(EditorUserMode.Suggest)
-                    }}
-                    data-testid="suggest-dropdown-button"
-                    disabled={isMobile()}
-                  />
+          <SimpleDropdown
+            as={Button}
+            shape="solid"
+            type="button"
+            disabled={!hasEditAccess}
+            className="ml-auto flex gap-2 py-2"
+            style={{
+              border: '0',
+              backgroundColor: isSuggestionMode ? 'var(--signal-success)' : undefined,
+              color: isSuggestionMode ? 'var(--signal-success-contrast)' : undefined,
+            }}
+            caretClassName="-ml-1"
+            content={
+              <div className="flex items-center gap-2 text-sm">
+                {isEditMode && (
+                  <>
+                    <Icon name="pencil" />
+                    {c('Info').t`Editing`}
+                  </>
                 )}
-              </>
-            )}
-            <InteractionDropdownButton
-              isActive={isPreviewMode}
-              label={c('Info').t`Viewing`}
-              icon={<Icon name="eye" size={4} />}
-              description={c('Description').t`Read or print final document`}
-              onClick={() => {
-                onUserModeChange(EditorUserMode.Preview)
-              }}
-              data-testid="view-dropdown-button"
-            />
-          </DropdownMenu>
-        </SimpleDropdown>
+                {isSuggestionMode && (
+                  <>
+                    <SpeechBubblePenIcon className="h-4 w-4" />
+                    {c('Info').t`Suggesting`}
+                  </>
+                )}
+                {isPreviewMode && (
+                  <>
+                    <Icon name="eye" />
+                    {c('Info').t`Viewing`}
+                  </>
+                )}
+              </div>
+            }
+            hasCaret={!viewportWidth['<=small']}
+            contentProps={DropdownContentProps}
+            data-testid="edit-options-dropdown"
+            data-interaction-mode={userMode}
+          >
+            <DropdownMenu>
+              {hasEditAccess && (
+                <>
+                  <InteractionDropdownButton
+                    isActive={isEditMode}
+                    onClick={() => {
+                      onUserModeChange(EditorUserMode.Edit)
+                    }}
+                    icon={<Icon name="pencil" size={4} />}
+                    label={c('Info').t`Editing`}
+                    description={c('Description').t`Edit document directly`}
+                    data-testid="edit-dropdown-button"
+                  />
+                  {canShowSuggestionsButton && (
+                    <InteractionDropdownButton
+                      isActive={isSuggestionMode}
+                      icon={<SpeechBubblePenIcon className="h-4 w-4" />}
+                      label={c('Info').t`Suggesting`}
+                      description={c('Description').t`Edits become suggestions`}
+                      onClick={() => {
+                        onUserModeChange(EditorUserMode.Suggest)
+                      }}
+                      data-testid="suggest-dropdown-button"
+                      disabled={isMobile()}
+                    />
+                  )}
+                </>
+              )}
+              <InteractionDropdownButton
+                isActive={isPreviewMode}
+                label={c('Info').t`Viewing`}
+                icon={<Icon name="eye" size={4} />}
+                description={c('Description').t`Read or print final document`}
+                onClick={() => {
+                  onUserModeChange(EditorUserMode.Preview)
+                }}
+                data-testid="view-dropdown-button"
+              />
+            </DropdownMenu>
+          </SimpleDropdown>
+        </Spotlight>
       </div>
     </div>
   )
