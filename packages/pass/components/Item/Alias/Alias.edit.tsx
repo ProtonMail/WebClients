@@ -1,4 +1,5 @@
 import { type FC, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -8,6 +9,7 @@ import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueCo
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
+import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
@@ -17,7 +19,9 @@ import { useAliasDetails } from '@proton/pass/hooks/useAliasDetails';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { formatDisplayNameWithEmail } from '@proton/pass/lib/items/item.utils';
 import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias';
+import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
 import { type MaybeNull } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
@@ -50,12 +54,20 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     const note = useDeobfuscatedValue(metadata.note);
     const validateEditAliasForm = createEditAliasFormValidator(aliasOwner);
 
+    const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
+
     const form = useFormik<EditAliasFormValues>({
-        initialValues: { name: metadata.name, note, mailboxes: [], shareId: vault.shareId },
-        onSubmit: ({ name, note, mailboxes, shareId }) => {
+        initialValues: {
+            name: metadata.name,
+            note,
+            mailboxes: [],
+            shareId: vault.shareId,
+            displayName: aliasDetails?.name ?? '',
+        },
+        onSubmit: ({ name, note, mailboxes, shareId, displayName }) => {
             onSubmit({
                 ...uneditable,
-                extraData: { aliasOwner, mailboxes, aliasEmail },
+                extraData: { aliasOwner, mailboxes, aliasEmail, displayName },
                 itemId,
                 lastRevision,
                 metadata: { ...metadata, name, note: obfuscate(note) },
@@ -66,6 +78,10 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
         validateOnChange: true,
         validateOnMount: true,
     });
+
+    const emailSender = (
+        <strong key="alias-edit-display-name">{formatDisplayNameWithEmail(form.values.displayName, aliasEmail)}</strong>
+    );
 
     const aliasOptions = useAliasOptions({
         shareId: vault.shareId,
@@ -192,6 +208,22 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                             />
                         </FieldsetCluster>
+
+                        <FieldsetCluster>
+                            <Field
+                                name="displayName"
+                                label={c('Label').t`Display name`}
+                                placeholder={c('Placeholder').t`Name to display when sending an email`}
+                                component={TextField}
+                                icon="card-identity"
+                                maxLength={MAX_ITEM_NAME_LENGTH}
+                            />
+                        </FieldsetCluster>
+
+                        {form.values.displayName && (
+                            <span className="color-weak mt-2">{c('Info')
+                                .jt`When sending an email from this alias, the email will display ${emailSender} as sender.`}</span>
+                        )}
                     </Form>
                 </FormikProvider>
             )}
