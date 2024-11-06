@@ -11,9 +11,9 @@ import onboarding4 from '@proton/pass/assets/desktop-onboarding/onboarding-4.png
 import onboarding5 from '@proton/pass/assets/desktop-onboarding/onboarding-5.png';
 import onboarding6 from '@proton/pass/assets/desktop-onboarding/onboarding-6.png';
 import onboarding7 from '@proton/pass/assets/desktop-onboarding/onboarding-7.png';
-import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { Carousel, type CarouselItem } from '@proton/pass/components/Carousel/Carousel';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
+import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -90,13 +90,10 @@ export const WelcomeScreen: FC = () => {
         <div id="desktop-lobby" className="flex flex-column h-full items-center justify-center py-4 flex-nowrap">
             <div className="flex items-center justify-center pb-7 w-full pointer-events-none">
                 <img src={protonPassIcon} className="w-custom" style={{ '--w-custom': '1.75rem' }} alt="" />
-                <img
-                    src={passBrandText}
-                    // we have margin on both sides because depending on the language this logo may be on the left or right
+                <PassTextLogo // we have margin on both sides because depending on the language this logo may be on the left or right
                     className="h-custom shrink-0 mx-2"
-                    style={{ '--h-custom': '1.05rem' }}
+                    style={{ '--h-custom': '1.2rem', fill: 'var(--text-norm)' }}
                     key="brand"
-                    alt=""
                 />
             </div>
 
