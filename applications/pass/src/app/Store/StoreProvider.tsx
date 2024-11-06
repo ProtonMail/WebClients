@@ -32,7 +32,7 @@ import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions'
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { DESKTOP_SAGAS } from '@proton/pass/store/sagas/desktop';
 import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
-import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
+import { selectB2BOnboardingEnabled, selectFeatureFlag, selectLocale } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { semver } from '@proton/pass/utils/string/semver';
@@ -93,9 +93,9 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                         /* redirect only if initial path is empty */
                         if (!removeLocalPath(history.location.pathname)) {
-                            const onboardingEnabled = selectOnboardingEnabled(installed)(state);
+                            const b2bOnboardingEnabled = selectB2BOnboardingEnabled(installed)(state);
                             const b2bOnboard = await core.spotlight.check(SpotlightMessage.B2B_ONBOARDING);
-                            if (onboardingEnabled && b2bOnboard) history.replace(getLocalPath('onboarding'));
+                            if (b2bOnboardingEnabled && b2bOnboard) history.replace(getLocalPath('onboarding'));
                         }
                     } else if (res.clearCache) void deletePassDB(userID);
                 },
