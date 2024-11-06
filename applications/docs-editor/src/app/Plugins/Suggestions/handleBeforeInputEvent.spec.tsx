@@ -31,6 +31,16 @@ import { $createListItemNode, $createListNode, $isListNode } from '@lexical/list
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
 import type { Logger } from '@proton/utils/logs'
 import { $createHorizontalRuleNode, $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
+import { assert } from './TestUtils'
+import type { TableCellNode, TableRowNode } from '@lexical/table'
+import {
+  $createTableCellNode,
+  $createTableNode,
+  $createTableNodeWithDimensions,
+  $createTableRowNode,
+  TableCellHeaderStates,
+} from '@lexical/table'
+import { $insertFirst } from '@lexical/utils'
 
 polyfillSelectionRelatedThingsForTests()
 
@@ -970,6 +980,137 @@ describe('$handleBeforeInputEvent', () => {
               expect(second?.getTextContent()).toBe(' ')
             })
           })
+        })
+      })
+    })
+
+    describe('Inside existing empty suggestion', () => {
+      describe('Existing suggestion is inside non-inline leaf element', () => {
+        beforeEach(async () => {
+          await update(() => {
+            const paragraph = $createParagraphNode()
+            const emptySuggestion = $createSuggestionNode('test', 'align-change')
+            paragraph.append(emptySuggestion)
+            $getRoot().append(paragraph)
+            paragraph.selectStart()
+          })
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertText',
+                data: 'foo',
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        testEditorState('paragraph should have 2 children', () => {
+          const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+          expect(paragraph.getChildrenSize()).toBe(2)
+        })
+
+        testEditorState('new suggestion should be inserted after existing', () => {
+          const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+          const newSuggestion = paragraph.getChildAtIndex(1)
+          assert($isSuggestionNode(newSuggestion))
+          expect(newSuggestion.getSuggestionTypeOrThrow()).toBe('insert')
+          expect(newSuggestion.getChildrenSize()).toBe(1)
+          const text = newSuggestion.getFirstChildOrThrow()
+          assert($isTextNode(text))
+          expect(text.getTextContent()).toBe('foo')
+        })
+      })
+
+      describe('Existing suggestion has non-inline leaf element sibling', () => {
+        beforeEach(async () => {
+          await update(() => {
+            const table = $createTableNodeWithDimensions(1, 1)
+            const cell = table.getFirstChildOrThrow<TableRowNode>().getFirstChildOrThrow<TableCellNode>()
+            const emptySuggestion = $createSuggestionNode('test', 'align-change')
+            $insertFirst(cell, emptySuggestion)
+            $getRoot().append(table)
+            cell.selectStart()
+          })
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertText',
+                data: 'foo',
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        testEditorState('paragraph should have 1 child', () => {
+          const paragraph = $getRoot().getFirstDescendant()!.getParentOrThrow<TableCellNode>().getChildAtIndex(1)
+          assert($isParagraphNode(paragraph))
+          expect(paragraph.getChildrenSize()).toBe(1)
+        })
+
+        testEditorState('new suggestion should be inserted in paragraph', () => {
+          const paragraph = $getRoot().getFirstDescendant()!.getParentOrThrow<TableCellNode>().getChildAtIndex(1)
+          assert($isParagraphNode(paragraph))
+          const newSuggestion = paragraph.getFirstChild()
+          assert($isSuggestionNode(newSuggestion))
+          expect(newSuggestion.getSuggestionTypeOrThrow()).toBe('insert')
+          expect(newSuggestion.getChildrenSize()).toBe(1)
+          const text = newSuggestion.getFirstChildOrThrow()
+          assert($isTextNode(text))
+          expect(text.getTextContent()).toBe('foo')
+        })
+      })
+
+      describe('Existing suggestion doesnt have non-inline leaf element sibling', () => {
+        beforeEach(async () => {
+          await update(() => {
+            const table = $createTableNode()
+            const row = $createTableRowNode()
+            const cell = $createTableCellNode(TableCellHeaderStates.NO_STATUS)
+            table.append(row.append(cell))
+            const emptySuggestion = $createSuggestionNode('test', 'align-change')
+            $insertFirst(cell, emptySuggestion)
+            $getRoot().append(table)
+            cell.selectStart()
+          })
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'insertText',
+                data: 'foo',
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+            )
+          })
+        })
+
+        testEditorState('paragraph should be created after existing suggestion', () => {
+          const existingSuggestion = $getRoot().getFirstDescendant()
+          assert(
+            $isSuggestionNode(existingSuggestion) && existingSuggestion.getSuggestionTypeOrThrow() === 'align-change',
+          )
+          const paragraph = existingSuggestion.getParentOrThrow<TableCellNode>().getChildAtIndex(1)
+          assert($isParagraphNode(paragraph))
+          expect(paragraph.getChildrenSize()).toBe(1)
+        })
+
+        testEditorState('new suggestion should be inserted in paragraph', () => {
+          const paragraph = $getRoot().getFirstDescendant()!.getParentOrThrow<TableCellNode>().getChildAtIndex(1)
+          assert($isParagraphNode(paragraph))
+          const newSuggestion = paragraph.getFirstChild()
+          assert($isSuggestionNode(newSuggestion))
+          expect(newSuggestion.getSuggestionTypeOrThrow()).toBe('insert')
+          expect(newSuggestion.getChildrenSize()).toBe(1)
+          const text = newSuggestion.getFirstChildOrThrow()
+          assert($isTextNode(text))
+          expect(text.getTextContent()).toBe('foo')
         })
       })
     })
