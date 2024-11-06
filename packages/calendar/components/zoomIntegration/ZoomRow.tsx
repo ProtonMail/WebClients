@@ -113,20 +113,6 @@ export const ZoomRow = ({ model, setModel }: Props) => {
         } else {
             await createVideoConferenceMeeting();
         }
-
-        setProcessState('loading');
-        const data = await withLoading(api<VideoConferenceMeetingCreation>(createZoomMeeting()));
-        const { URL, ID, Password } = data?.VideoConference || {};
-
-        setModel({
-            ...model,
-            conferenceId: ID,
-            conferenceUrl: URL,
-            conferencePasscode: Password,
-            conferenceCreator: user.ID,
-            conferenceHost: user.Email,
-        });
-        setProcessState('meeting-present');
     };
 
     if (processState === 'meeting-present') {
