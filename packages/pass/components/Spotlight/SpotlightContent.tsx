@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import type { OnboardingMessage } from '@proton/pass/types';
+import { SpotlightMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 
@@ -15,6 +15,7 @@ export type BaseSpotlightMessage = {
     className?: string;
     hidden?: boolean;
     id: string;
+    type: SpotlightMessage;
     weak?: boolean;
     onClose?: () => void;
 };
@@ -34,13 +35,12 @@ export type CustomSplotlightMessage = BaseSpotlightMessage & {
 };
 
 export type SpotlightMessageDefinition = DefaultSplotlightMessage | CustomSplotlightMessage;
-export type SpotlightMessage = SpotlightMessageDefinition & { onboardingMessageType?: OnboardingMessage };
 
-export const SpotlightContent: FC<SpotlightMessage> = (props) => {
+export const SpotlightContent: FC<SpotlightMessageDefinition> = (props) => {
     const { acknowledge } = useSpotlight();
 
     const onClose = useCallback(() => {
-        if (props.onboardingMessageType) acknowledge(props.onboardingMessageType);
+        if (props.type !== SpotlightMessage.NOOP) acknowledge(props.type);
         props.onClose?.();
     }, [props]);
 

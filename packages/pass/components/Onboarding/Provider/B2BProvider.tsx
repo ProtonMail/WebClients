@@ -8,7 +8,7 @@ import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtension
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { selectOnboardingComplete, selectOnboardingEnabled, selectOnboardingState } from '@proton/pass/store/selectors';
-import { OnboardingMessage } from '@proton/pass/types';
+import { SpotlightMessage } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import noop from '@proton/utils/noop';
 
@@ -28,7 +28,7 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useEffect(() => {
         if (enabled) {
-            (async () => (await onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING)) ?? false)()
+            (async () => (await onboardingCheck?.(SpotlightMessage.B2B_ONBOARDING)) ?? false)()
                 .then(setEnabled)
                 .catch(noop);
         }
@@ -40,7 +40,7 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
         return {
             acknowledge: () => {
                 setEnabled(false);
-                void onboardingAcknowledge?.(OnboardingMessage.B2B_ONBOARDING);
+                void onboardingAcknowledge?.(SpotlightMessage.B2B_ONBOARDING);
             },
             launch: () => navigate(getLocalPath('onboarding')),
             complete,

@@ -12,7 +12,7 @@ import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { isAliasDisabled, isAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { aliasSyncStatusToggle } from '@proton/pass/store/actions';
 import { selectLoginItemByEmail } from '@proton/pass/store/selectors';
-import { type ItemRevision, OnboardingMessage } from '@proton/pass/types';
+import { type ItemRevision, SpotlightMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 type Props = {
@@ -47,7 +47,7 @@ const ConfirmAliasAction: FC<Props> = ({
             fn?.();
             /** FIXME: ideally this should be moved away from spotlight
              * message state and be stored in the settings */
-            if (noRemind) void onboardingAcknowledge?.(OnboardingMessage.ALIAS_TRASH_CONFIRM);
+            if (noRemind) void onboardingAcknowledge?.(SpotlightMessage.ALIAS_TRASH_CONFIRM);
         };
 
     const doAction = withAcknowledge(onAction);

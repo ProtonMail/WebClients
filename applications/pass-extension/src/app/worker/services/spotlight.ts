@@ -16,8 +16,8 @@ import {
     createUpdateRule,
     createUserRatingRule,
     createUserRenewalRule,
-} from '@proton/pass/lib/onboarding/rules';
-import { createOnboardingService as createCoreOnboardingService } from '@proton/pass/lib/onboarding/service';
+} from '@proton/pass/lib/spotlight/rules';
+import { createSpotlightService as createCoreSpotlightService } from '@proton/pass/lib/spotlight/service';
 import type { State } from '@proton/pass/store/types';
 import type { ExtensionStorage, TabId } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -25,11 +25,11 @@ import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
-export const createOnboardingService = (
+export const createSpotlightService = (
     storage: ExtensionStorage<Record<'onboarding', string>>,
     store: Store<State>
 ) => {
-    const { acknowledge, init, setState, getMessage, checkMessage } = createCoreOnboardingService({
+    const { acknowledge, init, setState, getMessage, checkMessage } = createCoreSpotlightService({
         getStorageKey: () => 'onboarding',
         storage,
         rules: [
@@ -63,9 +63,9 @@ export const createOnboardingService = (
         return true;
     };
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_ACK, withPayloadLens('message', acknowledge));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_CHECK, withPayloadLens('message', checkMessage));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_REQUEST, getMessage);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.SPOTLIGHT_ACK, withPayloadLens('message', acknowledge));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.SPOTLIGHT_CHECK, withPayloadLens('message', checkMessage));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.SPOTLIGHT_REQUEST, getMessage);
 
     /* when reaching `account.proton.me/auth-ext` we want to
      * redirect the user to the welcome page iif user has logged in.
@@ -86,4 +86,4 @@ export const createOnboardingService = (
     return { init, reset, onInstall, onUpdate };
 };
 
-export type OnboardingService = ReturnType<typeof createOnboardingService>;
+export type SpotlightService = ReturnType<typeof createSpotlightService>;

@@ -8,8 +8,8 @@ import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/Servi
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
-import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { settings } from 'proton-pass-web/lib/settings';
+import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { c } from 'ttag';
 
@@ -33,7 +33,7 @@ import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { DESKTOP_SAGAS } from '@proton/pass/store/sagas/desktop';
 import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
 import { selectFeatureFlag, selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
-import { OnboardingMessage } from '@proton/pass/types';
+import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
@@ -76,7 +76,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     const state = store.getState();
 
                     if (res.ok) {
-                        await onboarding.init().catch(noop);
+                        await spotlight.init().catch(noop);
 
                         telemetry.start().catch(noop);
                         B2BEvents.start().catch(noop);
@@ -86,7 +86,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                          * Auto-acknowledge the `WELCOME` message to prevent showing the
                          * onboarding modal to existing users after they update.  */
                         if (DESKTOP_BUILD && res.version && semver(res.version) < semver('1.24.2')) {
-                            onboarding.acknowledge(OnboardingMessage.WELCOME);
+                            spotlight.acknowledge(SpotlightMessage.WELCOME);
                         }
 
                         if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());
@@ -94,7 +94,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         /* redirect only if initial path is empty */
                         if (!removeLocalPath(history.location.pathname)) {
                             const onboardingEnabled = selectOnboardingEnabled(installed)(state);
-                            const b2bOnboard = await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING);
+                            const b2bOnboard = await core.onboardingCheck?.(SpotlightMessage.B2B_ONBOARDING);
                             if (onboardingEnabled && b2bOnboard) history.replace(getLocalPath('onboarding'));
                         }
                     } else if (res.clearCache) void deletePassDB(userID);

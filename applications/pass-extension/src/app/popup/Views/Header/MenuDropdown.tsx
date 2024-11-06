@@ -46,7 +46,7 @@ import {
     selectUser,
 } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
-import { OnboardingMessage } from '@proton/pass/types';
+import { SpotlightMessage } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -84,7 +84,7 @@ export const MenuDropdown: FC = () => {
     const withClose = withTap(close);
 
     useEffect(() => {
-        (async () => onboardingCheck?.(OnboardingMessage.PASS_MONITOR))()
+        (async () => onboardingCheck?.(SpotlightMessage.PASS_MONITOR))()
             .then((show) => setNotifyMonitor(Boolean(show)))
             .catch(noop);
     }, []);
@@ -232,7 +232,7 @@ export const MenuDropdown: FC = () => {
 
                         <DropdownMenuButton
                             onClick={withClose(() => {
-                                void onboardingAcknowledge?.(OnboardingMessage.PASS_MONITOR);
+                                void onboardingAcknowledge?.(SpotlightMessage.PASS_MONITOR);
                                 onLink(getPassWebUrl(API_URL, 'monitor'));
                             })}
                             label={
