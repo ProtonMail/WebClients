@@ -1,4 +1,4 @@
-import type { MutableRefObject, ReactNode } from 'react';
+import type { MutableRefObject } from 'react';
 import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
@@ -6,12 +6,12 @@ import { c, msgid } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { getPrivatizeError } from '@proton/account/organizationKey/actions';
 import { useUser } from '@proton/account/user/hooks';
-import { Button, Card, Href } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { MemberListBanner, MembersList } from '@proton/components/containers/organization/MemberListBanner';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member } from '@proton/shared/lib/interfaces';
-import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 import {
     OrganizationKeyMode,
     OrganizationKeyState,
@@ -23,7 +23,6 @@ import {
 
 import { useMembers, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
 import ActivatePasswordlessOrganizationKey from './ActivatePasswordlessOrganizationKey';
-import AdministratorList from './AdministratorList';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
 import ChangeOrganizationKeysPasswordlessModal from './ChangeOrganizationKeysPasswordlessModal';
 import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
@@ -31,14 +30,6 @@ import InviteOrganizationKeysModal from './InviteOrganizationKeysModal';
 import ReactivateOrganizationKeysModal from './ReactivateOrganizationKeysModal';
 import ReactivatePasswordlessOrganizationKey from './ReactivatePasswordlessOrganizationKey';
 import { getActivationText, getReactivationText } from './helper';
-
-const Wrap = ({ children }: { children: ReactNode }) => {
-    return (
-        <Card rounded className="mb-4">
-            {children}
-        </Card>
-    );
-};
 
 const UserNeedsToInvite = ({
     onRestorePrivilegesClick,
@@ -49,9 +40,10 @@ const UserNeedsToInvite = ({
 }) => {
     const n = otherAdminsWithMissingOrgKeys.length;
     return (
-        <Wrap>
-            <div className="mb-4">
-                <div>
+        <MemberListBanner
+            icon="info-circle"
+            members={
+                <>
                     <div>
                         {c('Restore administrator panel').ngettext(
                             msgid`${n} administrator in your organization need access to the organization key.`,
@@ -62,73 +54,79 @@ const UserNeedsToInvite = ({
                     <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block">
                         {c('Link').t`Learn more`}
                     </Href>
-                    <div className="mt-4">
-                        <AdministratorList
-                            members={otherAdminsWithMissingOrgKeys.map((member) => ({
-                                member,
-                                email: getMemberEmailOrName(member),
-                            }))}
-                        />
-                    </div>
-                </div>
-            </div>
-            <Button color="norm" className="mr-4" onClick={onRestorePrivilegesClick}>
-                {c('Title').t`Restore administrator privileges`}
-            </Button>
-        </Wrap>
+                    <MembersList members={otherAdminsWithMissingOrgKeys} />
+                </>
+            }
+            action={
+                <Button size="small" color="norm" onClick={onRestorePrivilegesClick}>
+                    {c('Title').t`Restore administrator privileges`}
+                </Button>
+            }
+        />
     );
 };
 
 const UserNeedsToReactivatePasswordless = ({ onRestorePrivilegesClick }: { onRestorePrivilegesClick: () => void }) => {
     return (
-        <Wrap>
-            <div className="mb-4">
-                <div className="mb-4">
+        <MemberListBanner
+            icon="info-circle"
+            members={
+                <>
                     <div>{getReactivationText()}</div>
                     <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block">
                         {c('Link').t`Learn more`}
                     </Href>
-                </div>
-            </div>
-            <Button color="norm" className="mr-4" onClick={onRestorePrivilegesClick}>
-                {c('Title').t`Restore administrator privileges`}
-            </Button>
-        </Wrap>
+                </>
+            }
+            action={
+                <Button size="small" color="norm" onClick={onRestorePrivilegesClick}>
+                    {c('Title').t`Restore administrator privileges`}
+                </Button>
+            }
+        />
     );
 };
 
 const UserNeedsToReactivate = ({ onRestorePrivilegesClick }: { onRestorePrivilegesClick: () => void }) => {
     return (
-        <Wrap>
-            <div className="mb-4">
-                <div>
-                    {c('Restore administrator panel')
-                        .t`Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:`}
-                </div>
-                <ul className="mb-0">
-                    <li>{c('Restore administrator panel').t`Creating or accessing non-private user accounts`}</li>
-                    <li>{c('Restore administrator panel').t`Changing organization password`}</li>
-                    <li>{c('Restore administrator panel').t`Changing organization keys`}</li>
-                </ul>
-            </div>
-            <Button color="norm" className="mr-4" onClick={onRestorePrivilegesClick}>
-                {c('Title').t`Restore administrator privileges`}
-            </Button>
-            <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block">
-                {c('Link').t`Learn more`}
-            </Href>
-        </Wrap>
+        <MemberListBanner
+            icon="info-circle"
+            members={
+                <>
+                    <div>
+                        {c('Restore administrator panel')
+                            .t`Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:`}
+                    </div>
+                    <ul className="mb-0">
+                        <li>{c('Restore administrator panel').t`Creating or accessing non-private user accounts`}</li>
+                        <li>{c('Restore administrator panel').t`Changing organization password`}</li>
+                        <li>{c('Restore administrator panel').t`Changing organization keys`}</li>
+                    </ul>
+                    <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block">
+                        {c('Link').t`Learn more`}
+                    </Href>
+                </>
+            }
+            action={
+                <Button size="small" color="norm" onClick={onRestorePrivilegesClick}>
+                    {c('Title').t`Restore administrator privileges`}
+                </Button>
+            }
+        />
     );
 };
 
 const UserNeedsToActivate = ({ onActiveOrganizationKeyClick }: { onActiveOrganizationKeyClick: () => void }) => {
     return (
-        <Wrap>
-            <div className="mb-4">{getActivationText()}</div>
-            <Button color="norm" onClick={onActiveOrganizationKeyClick}>
-                {c('Action').t`Activate organization key`}
-            </Button>
-        </Wrap>
+        <MemberListBanner
+            icon="info-circle"
+            members={getActivationText()}
+            action={
+                <Button size="small" color="norm" onClick={onActiveOrganizationKeyClick}>
+                    {c('Action').t`Activate organization key`}
+                </Button>
+            }
+        />
     );
 };
 
