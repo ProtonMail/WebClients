@@ -373,15 +373,16 @@ export const usePaymentsApiWithCheckFallback = () => {
             return null;
         }
 
-        const plan = plansMap[planName];
+        const amount = plansMap[planName]?.Pricing?.[Cycle] ?? 0;
 
-        const result: SubscriptionCheckResponse = {
+        const result: SubscriptionCheckResponse & { __fallback: true } = {
             Cycle,
             Currency,
-            Amount: plan.Amount,
-            AmountDue: plan.Amount,
+            Amount: amount,
+            AmountDue: amount,
             Coupon: null,
-            PeriodEnd: +addMonths(new Date(), Cycle) / 1000,
+            PeriodEnd: Math.floor(+addMonths(new Date(), Cycle) / 1000),
+            __fallback: true,
         };
 
         return result;
