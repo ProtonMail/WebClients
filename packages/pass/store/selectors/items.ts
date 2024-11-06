@@ -373,3 +373,14 @@ export const selectSecureLinksByItems = (items: BulkSelectionDTO) =>
             return secureLinks[shareId]?.[itemId] ?? [];
         })
     );
+
+export const selectAliasCountByItems = (items: BulkSelectionDTO) =>
+    createSelector(
+        selectAliasItems,
+        (aliases): number =>
+            Object.entries(items).flatMap(([shareId, item]) =>
+                aliases.filter(
+                    (alias) => alias.shareId === shareId && Object.keys(item).some((itemId) => alias.itemId === itemId)
+                )
+            ).length
+    );
