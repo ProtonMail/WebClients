@@ -321,7 +321,14 @@ function $handleInsertInput(
   }
 
   if (data !== null && dataTransfer === null) {
-    return $handleInsertTextData(data, selection, existingParentSuggestion, onSuggestionCreation, suggestionID, logger)
+    return $handleInsertTextData(
+      data,
+      latestSelection,
+      existingParentSuggestion,
+      onSuggestionCreation,
+      suggestionID,
+      logger,
+    )
   }
 
   return true
@@ -486,7 +493,43 @@ function $handleInsertTextData(
 
   const canInsertTextDataDirectly = $canTextDataBeInsertedDirectlyIntoSuggestion(existingParentSuggestion)
 
-  const shouldSplitExistingSuggestionBeforeInserting = existingParentSuggestion && !canInsertTextDataDirectly
+  const isExistingSuggestionEmpty =
+    existingParentSuggestion &&
+    SuggestionTypesThatCanBeEmpty.includes(existingParentSuggestion.getSuggestionTypeOrThrow())
+  if (isExistingSuggestionEmpty) {
+    logger?.info('Selection is inside empty suggestion')
+
+    const suggestionNode = $createSuggestionNode(suggestionID, 'insert')
+    suggestionNode.append(textNode)
+
+    if ($isNonInlineLeafElement(existingParentSuggestion.getParentOrThrow())) {
+      logger?.info('Inserting suggestion node after existing suggestion')
+      existingParentSuggestion.insertAfter(suggestionNode)
+    } else {
+      logger?.info("Cannot insert suggestion in existing suggestion's parent")
+      const sibling = existingParentSuggestion.getNextSibling() || existingParentSuggestion.getPreviousSibling()
+      if (sibling && $isNonInlineLeafElement(sibling)) {
+        logger?.info('Inserting new suggestion into element sibling')
+        sibling.append(suggestionNode)
+      } else {
+        logger?.info('Creating new paragraph and inserting suggestion')
+        const paragraph = $createParagraphNode().append(suggestionNode)
+        existingParentSuggestion.insertAfter(paragraph)
+      }
+    }
+
+    if (selection.isBackward()) {
+      suggestionNode.selectStart()
+    } else {
+      suggestionNode.selectEnd()
+    }
+
+    onSuggestionCreation(suggestionID)
+    return true
+  }
+
+  const shouldSplitExistingSuggestionBeforeInserting =
+    existingParentSuggestion && !canInsertTextDataDirectly && !isExistingSuggestionEmpty
   if (shouldSplitExistingSuggestionBeforeInserting) {
     logger?.info('Will split existing non-insert suggestion and insert new insert suggestion')
     const focus = selection.focus
@@ -555,7 +598,7 @@ function $handleInsertTextData(
 
   const suggestionNode = $createSuggestionNode(suggestionID, 'insert')
   suggestionNode.append(textNode)
-  $insertNodes([suggestionNode])
+  selection.insertNodes([suggestionNode])
 
   logger?.info('Created and inserted new insert suggestion')
 
