@@ -171,6 +171,14 @@ export class ProtonNode extends ElementNode {
     }
     return props.suggestionType
   }
+
+  getSuggestionChangedProperties<T extends unknown = Record<string, any>>(): T | undefined {
+    const props = this.__properties
+    if (props.nodeType !== 'suggestion') {
+      throw new Error('Node is not suggestion node')
+    }
+    return props.nodePropertiesChanged as T | undefined
+  }
 }
 
 export function $createProtonNode(props: ProtonNodeProperties) {
