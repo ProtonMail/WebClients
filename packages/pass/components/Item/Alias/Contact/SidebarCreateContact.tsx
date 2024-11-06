@@ -18,12 +18,9 @@ import type { AliasCreateContactValues, UniqueItem } from '@proton/pass/types';
 
 const FORM_ID = 'create-contact-form';
 
-type Props = ModalStateProps &
-    UniqueItem & {
-        name: string;
-    };
+type Props = ModalStateProps & UniqueItem;
 
-export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, name, open, onClose }) => {
+export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, open, onClose }) => {
     const { loading, dispatch } = useRequest(aliasCreateContact, { onSuccess: onClose });
 
     const form = useFormik<AliasCreateContactValues>({
@@ -31,7 +28,7 @@ export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, name, open, o
         validateOnChange: true,
         validateOnMount: false,
         validate: validateEmailForm,
-        onSubmit: ({ email }) => dispatch({ itemId, shareId, name, email }),
+        onSubmit: ({ email }) => dispatch({ itemId, shareId, email }),
     });
 
     useEffect(() => {

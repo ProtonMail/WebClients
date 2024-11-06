@@ -8,11 +8,9 @@ import type { UniqueItem } from '@proton/pass/types';
 
 import { SidebarContactsView } from './SidebarContactsView';
 
-type Props = UniqueItem & {
-    aliasEmail: string;
-};
+type Props = UniqueItem;
 
-export const AliasContact: FC<Props> = ({ aliasEmail, shareId, itemId }) => {
+export const AliasContact: FC<Props> = ({ shareId, itemId }) => {
     const [viewContacts, openViewContactSidebar] = useModalState();
 
     return (
@@ -27,12 +25,7 @@ export const AliasContact: FC<Props> = ({ aliasEmail, shareId, itemId }) => {
             </FieldBox>
             {viewContacts.open && (
                 <>
-                    <SidebarContactsView
-                        onClose={viewContacts.onClose}
-                        aliasEmail={aliasEmail}
-                        shareId={shareId}
-                        itemId={itemId}
-                    />
+                    <SidebarContactsView onClose={viewContacts.onClose} shareId={shareId} itemId={itemId} />
                 </>
             )}
         </>
