@@ -3,13 +3,15 @@ import { c } from 'ttag';
 
 import { getPassPlan } from '@proton/pass/lib/user/user.plan';
 import type { State } from '@proton/pass/store/types';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { type Maybe, type MaybeNull } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { type Address, SETTINGS_STATUS, UserType } from '@proton/shared/lib/interfaces';
 import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 
@@ -89,4 +91,8 @@ export const selectPendingAuthDevices = createSelector([selectAuthDevices, selec
             )
         )
         .sort(sortOn('CreateTime'))
+);
+
+export const selectInAppNotificationsEnabled = createSelector(selectUserSettings, (userSettings): boolean =>
+    hasBit(userSettings?.News, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS)
 );
