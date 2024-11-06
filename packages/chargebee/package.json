@@ -16,6 +16,7 @@
     },
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^6.0.0",
+        "@proton/jest-env": "workspace:^",
         "eslint": "^8.57.1",
         "jest": "^29.7.0",
         "postcss": "^8.4.47",

@@ -21,6 +21,8 @@ class MyEnvironment extends JSDOMEnvironment {
                         ReadableStream,
                         Response,
                         Request,
+                        BroadcastChannel,
+                        TransformStream,
                         fetch,
                         structuredClone,
                     },

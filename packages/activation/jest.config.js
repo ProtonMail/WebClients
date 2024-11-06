@@ -10,7 +10,7 @@ module.exports = {
         '!src/tests/**/*',
     ],
     resolver: './jest.resolver.js',
-    testEnvironment: './jest.env.js',
+    testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
         'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|pmcrypto-v6-canary|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|@openpgp/noble-hashes|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs)/)',
     ],

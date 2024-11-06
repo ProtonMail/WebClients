@@ -36,6 +36,7 @@
     },
     "devDependencies": {
         "@proton/i18n": "workspace:^",
+        "@proton/jest-env": "workspace:^",
         "@proton/pack": "workspace:^",
         "@types/react-helmet": "^6.1.11",
         "@types/webextension-polyfill": "^0.12.1",
