@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
@@ -8,15 +8,15 @@ import Icon from '@proton/components/components/icon/Icon';
 
 export const AdministratorItem = ({ name, email }: { name: string; email: string }) => {
     return (
-        <div className="w-full flex flex-column gap-1">
-            <div className="w-full text-ellipsis">
-                <span className="text-bold" title={name}>
-                    {name}
+        <div className="w-full text-ellipsis">
+            <span className="text-bold" title={name}>
+                {name}
+            </span>{' '}
+            {email && email !== name && (
+                <span className="color-weak" title={email}>
+                    ({email})
                 </span>
-            </div>
-            <div className="w-full text-ellipsis text-sm" title={email}>
-                {email}
-            </div>
+            )}
         </div>
     );
 };
@@ -32,21 +32,25 @@ const AdministratorList = ({
         return null;
     }
 
+    const n = members.length;
+
     return (
         <Collapsible expandByDefault={expandByDefault}>
             <CollapsibleHeader
                 disableFullWidth
                 suffix={
-                    <CollapsibleHeaderIconButton size="small">
+                    <CollapsibleHeaderIconButton size="small" color="norm">
                         <Icon name="chevron-down" />
                     </CollapsibleHeaderIconButton>
                 }
             >
-                <label className="text-semibold">{c('Label').t`Administrators`}</label>
+                <label className="color-primary">
+                    {c('Label').ngettext(msgid`Show ${n} administrator`, `Show ${n} administrators`, n)}
+                </label>
             </CollapsibleHeader>
 
             <CollapsibleContent>
-                <div className="flex flex-column gap-2">
+                <div className="border border-weak rounded p-2 flex flex-column gap-1">
                     {members.map(({ member, email }) => {
                         return <AdministratorItem key={member.ID} name={member.Name} email={email} />;
                     })}
