@@ -42,9 +42,7 @@ export const AdaptiveModal: FC<PropsWithChildren<AdapativeModalProps>> = ({
         <PassModal {...props} size={size} className="text-center">
             {closable && <ModalTwoHeader closeButtonProps={{ pill: true, icon: true }} />}
             <ModalTwoContent className={clsx(!closable && 'pt-4')}>{children}</ModalTwoContent>
-            <ModalTwoFooter className="pass-onboarding-modal--actions flex flex-column justify-center">
-                {actions}
-            </ModalTwoFooter>
+            <ModalTwoFooter className="pass-modal--actions flex flex-column justify-center">{actions}</ModalTwoFooter>
         </PassModal>
     ) : (
         <SidebarModal {...props} className="text-center">
