@@ -7,7 +7,11 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { selectOnboardingComplete, selectOnboardingEnabled, selectOnboardingState } from '@proton/pass/store/selectors';
+import {
+    selectB2BOnboardingEnabled,
+    selectOnboardingComplete,
+    selectOnboardingState,
+} from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import noop from '@proton/utils/noop';
@@ -21,7 +25,7 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const state = useSelector(selectOnboardingState);
     const complete = useSelector(selectOnboardingComplete(extension.installed));
-    const disabled = !useSelector(selectOnboardingEnabled(extension.installed));
+    const disabled = !useSelector(selectB2BOnboardingEnabled(extension.installed));
     const isActive = useRouteMatch(getLocalPath('onboarding'));
 
     const [enabled, setEnabled] = useState(!disabled);
