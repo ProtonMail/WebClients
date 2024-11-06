@@ -170,7 +170,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     const relatedLogin = selectLoginItemByEmail(aliasEmail)(store.getState());
                     if (isAliasDisabled(item) && !relatedLogin) trashItem.call(item);
                     else {
-                        Promise.resolve(core.onboardingCheck?.(SpotlightMessage.ALIAS_TRASH_CONFIRM) ?? false)
+                        Promise.resolve(core.spotlight.check(SpotlightMessage.ALIAS_TRASH_CONFIRM))
                             .then((prompt) => (prompt ? trashItem.prompt(item) : trashItem.call(item)))
                             .catch(() => trashItem.call(item));
                     }

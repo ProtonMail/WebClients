@@ -15,7 +15,8 @@ import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
-import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, SpotlightMessage } from '@proton/pass/types';
+import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
+import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
@@ -38,6 +39,8 @@ export type PassCoreContextValue = {
     monitor: MonitorService;
     /** Settings service */
     settings: SettingsService;
+    /** Spotlight proxy service */
+    spotlight: SpotlightProxy;
     /** Resolves a users */
     exportData: (options: ExportOptions) => Promise<File>;
     /** In the extension: leverage worker communication to generate
@@ -72,10 +75,6 @@ export type PassCoreContextValue = {
     ) => void;
     /** Processes an event for B2B users only */
     onB2BEvent: (event: B2BEvent) => void;
-    /** Acknowledge an onboarding message*/
-    onboardingAcknowledge?: (type: SpotlightMessage) => MaybePromise<void | boolean>;
-    /** Returns true if an onboarding message should show */
-    onboardingCheck?: (type: SpotlightMessage) => MaybePromise<boolean>;
     /* Will get called when user tries to update a client manually */
     onForceUpdate?: () => void;
     /** Open the settings view at a particular page */

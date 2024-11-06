@@ -84,7 +84,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                         /** For desktop builds using cached versions older than 1.24.2:
                          * Auto-acknowledge the `WELCOME` message to prevent showing the
-                         * onboarding modal to existing users after they update.  */
+                         * spotlight modal to existing users after they update.  */
                         if (DESKTOP_BUILD && res.version && semver(res.version) < semver('1.24.2')) {
                             spotlight.acknowledge(SpotlightMessage.WELCOME);
                         }
@@ -94,7 +94,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         /* redirect only if initial path is empty */
                         if (!removeLocalPath(history.location.pathname)) {
                             const onboardingEnabled = selectOnboardingEnabled(installed)(state);
-                            const b2bOnboard = await core.onboardingCheck?.(SpotlightMessage.B2B_ONBOARDING);
+                            const b2bOnboard = await core.spotlight.check(SpotlightMessage.B2B_ONBOARDING);
                             if (onboardingEnabled && b2bOnboard) history.replace(getLocalPath('onboarding'));
                         }
                     } else if (res.clearCache) void deletePassDB(userID);

@@ -14,7 +14,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 export const useSpotlightListener = () => {
-    const { onboardingCheck } = usePassCore();
+    const core = usePassCore();
     const { setSpotlight, setPendingShareAccess } = useSpotlight();
     const { port } = useExtensionContext();
     const createdItemsCount = useSelector(selectCreatedItemsCount);
@@ -46,7 +46,7 @@ export const useSpotlightListener = () => {
     }, [port]);
 
     useEffect(() => {
-        const check = async () => (await onboardingCheck?.(SpotlightMessage.USER_RATING)) ?? false;
+        const check = async () => (await core.spotlight.check(SpotlightMessage.USER_RATING)) ?? false;
 
         check()
             .then((enabled) => enabled && setSpotlight(definitions[SpotlightMessage.USER_RATING] ?? null))
