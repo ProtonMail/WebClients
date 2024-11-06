@@ -72,6 +72,16 @@ const getPassCoreProviderProps = (
         }),
         monitor: createMonitorBridge(messageFactory),
         settings,
+        spotlight: {
+            acknowledge: (message) =>
+                sendMessage(messageFactory({ type: WorkerMessageType.SPOTLIGHT_ACK, payload: { message } }))
+                    .then((res) => res.type === 'success')
+                    .catch(() => false),
+            check: (message) =>
+                sendMessage(messageFactory({ type: WorkerMessageType.SPOTLIGHT_CHECK, payload: { message } }))
+                    .then((res) => res.type === 'success' && res.enabled)
+                    .catch(() => false),
+        },
 
         exportData: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {
@@ -137,15 +147,6 @@ const getPassCoreProviderProps = (
                 : payload,
 
         promptForPermissions,
-
-        onboardingAcknowledge: (message) => {
-            sendMessage(messageFactory({ type: WorkerMessageType.SPOTLIGHT_ACK, payload: { message } })).catch(noop);
-        },
-
-        onboardingCheck: (message) =>
-            sendMessage(messageFactory({ type: WorkerMessageType.SPOTLIGHT_CHECK, payload: { message } }))
-                .then((res) => res.type === 'success' && res.enabled)
-                .catch(() => false),
 
         onLink: (url) =>
             browser.tabs

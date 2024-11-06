@@ -12,17 +12,17 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 export const MonitorLearnMore: FC = () => {
-    const { onLink, onboardingCheck, onboardingAcknowledge } = usePassCore();
+    const { onLink, spotlight } = usePassCore();
     const anchorRef = useRef<HTMLDivElement>(null);
     const [expanded, setExpanded] = useState<MaybeNull<boolean>>(null);
 
     const handleClick = () => {
-        void onboardingAcknowledge?.(SpotlightMessage.PASS_MONITOR_LEARN_MORE);
+        void spotlight.acknowledge(SpotlightMessage.PASS_MONITOR_LEARN_MORE);
         setTimeout(() => anchorRef?.current?.scrollIntoView({ behavior: 'smooth' }), 50);
     };
 
     useEffect(() => {
-        (async () => onboardingCheck?.(SpotlightMessage.PASS_MONITOR_LEARN_MORE))()
+        (async () => spotlight.check(SpotlightMessage.PASS_MONITOR_LEARN_MORE))()
             .then((expanded) => setExpanded(expanded === undefined || expanded))
             .catch(noop);
     }, []);

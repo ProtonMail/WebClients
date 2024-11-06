@@ -38,7 +38,7 @@ const ConfirmAliasAction: FC<Props> = ({
     onClose,
     onDisable,
 }) => {
-    const { onboardingAcknowledge } = usePassCore();
+    const { spotlight } = usePassCore();
     const [noRemind, setNoRemind] = useState(false);
 
     const withAcknowledge =
@@ -47,7 +47,7 @@ const ConfirmAliasAction: FC<Props> = ({
             fn?.();
             /** FIXME: ideally this should be moved away from spotlight
              * message state and be stored in the settings */
-            if (noRemind) void onboardingAcknowledge?.(SpotlightMessage.ALIAS_TRASH_CONFIRM);
+            if (noRemind) void spotlight.acknowledge(SpotlightMessage.ALIAS_TRASH_CONFIRM);
         };
 
     const doAction = withAcknowledge(onAction);
