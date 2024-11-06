@@ -27,7 +27,7 @@
         "@scure/base": "^1.1.9",
         "@sentry/browser": "^7.119.2",
         "@types/dompurify": "^3.0.5",
-        "@types/node": "^20.16.13",
+        "@types/node": "^20.17.6",
         "@types/papaparse": "^5.3.15",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.5",
@@ -41,16 +41,16 @@
         "push.js": "^1.0.12",
         "ua-parser-js": "^1.0.39",
         "web-streams-polyfill": "^3.3.3",
-        "web-vitals": "^4.2.3",
+        "web-vitals": "^4.2.4",
         "zod": "^3.23.8"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.25.7",
+        "@babel/plugin-transform-runtime": "^7.25.9",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@types/jasmine": "^5.1.4",
         "@types/karma-junit-reporter": "^2.0.4",
-        "@webgpu/types": "^0.1.49",
+        "@webgpu/types": "^0.1.51",
         "eslint": "^8.57.1",
         "eslint-plugin-jasmine": "^4.2.2",
         "jasmine": "^5.4.0",
@@ -66,6 +66,6 @@
         "ts-loader": "^9.5.1",
         "ttag": "^1.8.7",
         "typescript": "^5.6.3",
-        "webpack": "^5.95.0"
+        "webpack": "^5.96.1"
     }
 }
