@@ -4,8 +4,10 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
+import { useModalState } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
+import { AliasDeleteConfirmModal } from '@proton/pass/components/Item/Alias/AliasDeleteConfirm.modal';
 import { AliasTrashConfirmModal } from '@proton/pass/components/Item/Alias/AliasTrashConfirm.modal';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -29,6 +31,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const { navigate } = useNavigation();
     const { onboardingCheck, onboardingAcknowledge } = usePassCore();
     const canToggleStatus = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
+    const [deleteModalState, openDeleteModal] = useModalState();
 
     const { revision, vault, handleHistoryClick } = itemViewProps;
     const { createTime, modifyTime, revision: revisionNumber, optimistic, itemId } = revision;
@@ -99,6 +102,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                   }
                 : {})}
             handleMoveToTrashClick={handleMoveToTrashClick}
+            handleDeleteClick={() => openDeleteModal(true)}
         >
             <AliasContent
                 revision={revision}
@@ -127,6 +131,20 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                     onClose={() => setConfirmTrash(false)}
                     onDisable={handleConfirmDisableClick}
                     onTrash={handleConfirmTrashClick}
+                    warning={
+                        relatedLogin &&
+                        c('Warning').t`This alias "${aliasEmail}" is currently used in the login "${relatedLoginName}".`
+                    }
+                />
+            )}
+
+            {deleteModalState.open && (
+                <AliasDeleteConfirmModal
+                    aliasEmail={revision.aliasEmail!}
+                    canDisable={canDisable}
+                    onClose={deleteModalState.onClose}
+                    onDisable={handleConfirmDisableClick}
+                    onDelete={itemViewProps.handleDeleteClick}
                     warning={
                         relatedLogin &&
                         c('Warning').t`This alias "${aliasEmail}" is currently used in the login "${relatedLoginName}".`

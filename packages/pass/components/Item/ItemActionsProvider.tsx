@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { ConfirmDeleteManyItems } from '@proton/pass/components/Item/Actions/ConfirmDeleteManyItems';
+import { ConfirmTrashManyItems } from '@proton/pass/components/Item/Actions/ConfirmTrashManyItems';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import {
@@ -57,19 +59,23 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         dispatch(itemTrashIntent({ itemId: item.itemId, shareId: item.shareId, item }));
     };
 
-    const trashManyItems = (selected: BulkSelectionDTO) => {
-        dispatch(itemBulkTrashIntent({ selected }));
+    const trashManyItems = (options: { selected: BulkSelectionDTO }) => {
+        dispatch(itemBulkTrashIntent(options));
         bulk.disable();
     };
+
+    const confirmTrashManyItems = useConfirm(trashManyItems);
 
     const deleteItem = (item: ItemRevision) => {
         dispatch(itemDeleteIntent({ itemId: item.itemId, shareId: item.shareId, item }));
     };
 
-    const deleteManyItems = (selected: BulkSelectionDTO) => {
-        dispatch(itemBulkDeleteIntent({ selected }));
+    const deleteManyItems = (options: { selected: BulkSelectionDTO }) => {
+        dispatch(itemBulkDeleteIntent(options));
         bulk.disable();
     };
+
+    const confirmDeleteManyItems = useConfirm(deleteManyItems);
 
     const restoreItem = (item: ItemRevision) => {
         dispatch(itemRestoreIntent({ itemId: item.itemId, shareId: item.shareId, item }));
@@ -101,13 +107,15 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     },
                 }),
             trash: trashItem,
-            trashMany: trashManyItems,
+            trashMany: (selected) =>
+                bulk.aliasCount ? confirmTrashManyItems.prompt({ selected }) : trashManyItems({ selected }),
             delete: deleteItem,
-            deleteMany: deleteManyItems,
+            deleteMany: (selected) =>
+                bulk.aliasCount ? confirmDeleteManyItems.prompt({ selected }) : deleteManyItems({ selected }),
             restore: restoreItem,
             restoreMany: restoreManyItems,
         };
-    }, []);
+    }, [bulk]);
 
     return (
         <ItemActionsContext.Provider value={context}>
@@ -136,6 +144,22 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     shareId={moveManyItems.param.shareId}
                     onConfirm={moveManyItems.confirm}
                     onCancel={moveManyItems.cancel}
+                />
+            )}
+
+            {confirmTrashManyItems.pending && (
+                <ConfirmTrashManyItems
+                    open
+                    onConfirm={confirmTrashManyItems.confirm}
+                    onCancel={confirmTrashManyItems.cancel}
+                />
+            )}
+
+            {confirmDeleteManyItems.pending && (
+                <ConfirmDeleteManyItems
+                    open
+                    onConfirm={confirmDeleteManyItems.confirm}
+                    onCancel={confirmDeleteManyItems.cancel}
                 />
             )}
         </ItemActionsContext.Provider>

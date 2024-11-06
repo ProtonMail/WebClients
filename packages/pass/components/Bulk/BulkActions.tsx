@@ -4,20 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { type BulkSelection, useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { bulkSelectionDTO, useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import type { BulkSelectionDTO } from '@proton/pass/types';
-
-const bulkSelectionDTO = (selection: BulkSelection): BulkSelectionDTO =>
-    Array.from(selection.keys()).reduce<BulkSelectionDTO>((dto, shareId) => {
-        dto[shareId] = {};
-        selection.get(shareId)?.forEach((itemId) => {
-            dto[shareId][itemId] = true;
-        });
-
-        return dto;
-    }, {});
 
 type Props = { disabled?: boolean };
 
