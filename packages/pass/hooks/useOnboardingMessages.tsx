@@ -158,17 +158,23 @@ export const useOnboardingMessages = () => {
             [OnboardingMessage.ALIAS_SYNC_ENABLE]: {
                 type: 'default',
                 id: 'alias-sync',
-                title: c('Title').t`Import your aliases from SimpleLogin`,
-                message: c('Info').ngettext(
-                    msgid`You have ${aliasCount} alias that is present in SimpleLogin but missing in ${PASS_APP_NAME}. Would you like to import it?`,
-                    `You have ${aliasCount} aliases that are present in SimpleLogin but missing in ${PASS_APP_NAME}. Would you like to import them?`,
-                    aliasCount
-                ),
+                title: c('Title').t`Sync your aliases from SimpleLogin`,
+                message: [
+                    c('Info').ngettext(
+                        msgid`You have ${aliasCount} alias that is present in SimpleLogin but missing in ${PASS_APP_NAME}. Would you like to sync it?`,
+                        `You have ${aliasCount} aliases that are present in SimpleLogin but missing in ${PASS_APP_NAME}. Would you like to sync them?`,
+                        aliasCount
+                    ),
+                    <span className="block text-sm" key="alias-sync-warning">
+                        {c('Warning')
+                            .t`Once synced, deleting aliases in ${PASS_SHORT_APP_NAME} will also delete them in SimpleLogin.`}
+                    </span>,
+                ],
                 className: 'ui-teal',
                 icon: AliasSyncIcon,
                 onClose: () => acknowledge(OnboardingMessage.ALIAS_SYNC_ENABLE),
                 action: {
-                    label: c('Action').ngettext(msgid`Import alias`, `Import aliases`, aliasCount),
+                    label: c('Action').ngettext(msgid`Sync alias`, `Sync aliases`, aliasCount),
                     type: 'button',
                     onClick: () => acknowledge(OnboardingMessage.ALIAS_SYNC_ENABLE, () => openSettings?.('aliases')),
                 },
