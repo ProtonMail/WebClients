@@ -38,13 +38,14 @@ export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
 export type UserSettingsState = {
     Email: { Status: SETTINGS_STATUS };
-    Password: { Mode: SETTINGS_PASSWORD_MODE };
-    Telemetry: BitField;
-    Locale?: string;
     HighSecurity: {
         Eligible: BitField;
         Value: SETTINGS_PROTON_SENTINEL_STATE;
     };
+    Locale?: string;
+    News: BitField;
+    Password: { Mode: SETTINGS_PASSWORD_MODE };
+    Telemetry: BitField;
 };
 
 export type UserData = {
@@ -108,10 +109,11 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
         const userSettings = UserSettings
             ? merge(state.userSettings ?? {}, {
                   Email: { Status: UserSettings.Email.Status },
+                  HighSecurity: UserSettings.HighSecurity,
+                  Locale: UserSettings.Locale,
+                  News: UserSettings.News,
                   Password: { Mode: UserSettings.Password.Mode },
                   Telemetry: UserSettings.Telemetry,
-                  Locale: UserSettings.Locale,
-                  HighSecurity: UserSettings.HighSecurity,
               })
             : state.userSettings;
 
@@ -163,10 +165,11 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
         return partialMerge(state, {
             userSettings: {
                 Email: { Status: settings.Email.Status },
+                HighSecurity: settings.HighSecurity,
+                Locale: settings.Locale,
+                News: settings.News,
                 Password: { Mode: settings.Password.Mode },
                 Telemetry: settings.Telemetry,
-                Locale: settings.Locale,
-                HighSecurity: settings.HighSecurity,
             },
         });
     }
