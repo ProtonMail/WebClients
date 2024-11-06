@@ -169,7 +169,7 @@ export const useLockSetup = (): LockSetup => {
                         confirmPin({
                             title: c('Title').t`Confirm PIN code`,
                             assistiveText: c('Info')
-                                .t`Please confirm your PIN code in order to unregister your current lock.`,
+                                .t`You will use this PIN to unlock ${PASS_APP_NAME} once it auto-locks after a period of inactivity.`,
                             onSubmit: (confirmed) => {
                                 if (confirmed === secret) createLock.dispatch({ mode, secret, ttl });
                                 else createNotification({ type: 'error', text: c('Error').t`PIN codes do not match` });
