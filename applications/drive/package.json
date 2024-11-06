@@ -49,7 +49,7 @@
         "@proton/utils": "workspace:^",
         "client-zip": "^2.4.5",
         "comlink": "^4.4.1",
-        "exifreader": "^4.23.7",
+        "exifreader": "^4.25.0",
         "mime-types": "^2.1.35",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
@@ -62,11 +62,11 @@
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/testing": "workspace:^",
-        "@testing-library/jest-dom": "^6.6.2",
+        "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/mime-types": "^2.1.4",
-        "@types/react": "^18.3.11",
+        "@types/react": "^18.3.12",
         "@types/react-dom": "^18.3.1",
         "@types/react-router-dom": "^5.3.3",
         "@types/react-window": "^1.8.8",
@@ -84,7 +84,7 @@
         "prettier": "^3.3.3",
         "pretty-format": "^29.7.0",
         "typescript": "^5.6.3",
-        "webpack": "^5.95.0"
+        "webpack": "^5.96.1"
     },
     "exifreader": {
         "exclude": {
