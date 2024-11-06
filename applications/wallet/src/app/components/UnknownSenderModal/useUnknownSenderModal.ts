@@ -146,6 +146,7 @@ export const useUnknownSenderModal = ({ hashedTxId, onClose }: { hashedTxId: str
     };
 
     return {
+        name,
         email,
         error,
         shouldSaveAsContact,
