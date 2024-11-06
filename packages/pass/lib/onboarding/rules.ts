@@ -5,6 +5,7 @@ import { api } from '@proton/pass/lib/api/api';
 import {
     selectCreatedItemsCount,
     selectFeatureFlag,
+    selectInAppNotificationsEnabled,
     selectLockEnabled,
     selectPassPlan,
     selectUserData,
@@ -137,6 +138,8 @@ export const createFamilyPlanPromo2024Rule = (store: Store<State>) =>
             if (previous) return false;
 
             const state = store.getState();
+            if (!selectInAppNotificationsEnabled(state)) return false;
+
             const enabled = selectFeatureFlag(PassFeature.PassFamilyPlanPromo2024)(state);
             const plan = selectUserPlan(state);
             const cohortPass2023 = plan?.InternalName === 'pass2023';
@@ -164,14 +167,14 @@ export const createBlackFriday2024Rule = (store: Store<State>) =>
     createOnboardingRule({
         message: OnboardingMessage.BLACK_FRIDAY_2024,
         when: (previous) => {
+            const state = store.getState();
+            if (!selectInAppNotificationsEnabled(state)) return false;
+
             /* sanity check in-case feature flags are unreliable */
             const now = api.getState().serverTime?.getTime() ?? Date.now();
             if (now > PASS_BF_2024_DATES[1]) return false;
 
-            const state = store.getState();
-            const plan = selectUserPlan(state);
-
-            switch (plan?.InternalName) {
+            switch (selectUserPlan(state)?.InternalName) {
                 case 'pass2023':
                     return !previous && selectFeatureFlag(PassFeature.PassBlackFriday2024Family)(state);
                 case 'free':
