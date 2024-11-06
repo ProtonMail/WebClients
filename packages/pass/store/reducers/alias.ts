@@ -7,13 +7,15 @@ import {
     itemCreationIntent,
     itemEditIntent,
 } from '@proton/pass/store/actions';
-import type { AliasDetails, MaybeNull } from '@proton/pass/types';
+import type { AliasDetails, Maybe, MaybeNull } from '@proton/pass/types';
 import type { AliasOptions } from '@proton/pass/types/data/alias';
 import { merge } from '@proton/pass/utils/object/merge';
 
+export type AliasDetailsState = Maybe<Omit<AliasDetails, 'aliasEmail'>>;
+
 export type AliasState = {
     aliasOptions: MaybeNull<AliasOptions>;
-    aliasDetails: { [aliasEmail: string]: Omit<AliasDetails, 'aliasEmail'> };
+    aliasDetails: { [aliasEmail: string]: AliasDetailsState };
 };
 
 const getInitialState = (): AliasState => ({ aliasOptions: null, aliasDetails: {} });
@@ -37,19 +39,12 @@ const reducer: Reducer<AliasState> = (state = getInitialState(), action) => {
         });
     }
 
-    if (getAliasDetailsSuccess.match(action)) {
+    if (getAliasDetailsSuccess.match(action) || aliasDetailsSync.match(action)) {
         const {
             payload: { aliasEmail, ...aliasDetails },
         } = action;
 
         return merge(state, { aliasDetails: { [aliasEmail]: aliasDetails } });
-    }
-
-    if (aliasDetailsSync.match(action)) {
-        const {
-            payload: { aliasEmail, mailboxes },
-        } = action;
-        return merge(state, { aliasDetails: { [aliasEmail]: { mailboxes } } });
     }
 
     if (

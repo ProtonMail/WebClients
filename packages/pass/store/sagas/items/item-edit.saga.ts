@@ -5,15 +5,15 @@ import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { editItem } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { aliasDetailsSync, itemEditFailure, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
-import type { AliasState } from '@proton/pass/store/reducers';
-import { selectAliasMailboxes, selectAliasOptions, selectItem } from '@proton/pass/store/selectors';
+import type { AliasDetailsState, AliasState } from '@proton/pass/store/reducers';
+import { selectAliasDetails, selectAliasMailboxes, selectAliasOptions, selectItem } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEqual } from '@proton/pass/utils/set/is-equal';
 
-function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
+function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
     if (!aliasEditIntent.extraData) return;
 
     const { itemId, shareId } = aliasEditIntent;
@@ -21,6 +21,7 @@ function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
     const item: ItemRevision<'alias'> = yield select(selectItem(shareId, itemId));
     const mailboxesForAlias: string[] = yield select(selectAliasMailboxes(item.aliasEmail!));
     const aliasOptions: AliasState['aliasOptions'] = yield select(selectAliasOptions);
+    const aliasDetails: AliasDetailsState = yield select(selectAliasDetails(item.aliasEmail!));
 
     const currentMailboxIds = new Set(
         mailboxesForAlias
@@ -28,10 +29,13 @@ function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
             .filter(Boolean) as number[]
     );
 
-    const nextMailboxIds = new Set(aliasEditIntent.extraData.mailboxes.map(({ id }) => id));
+    const nextMailboxes = aliasEditIntent.extraData.mailboxes;
+    const nextMailboxIds = new Set(nextMailboxes.map(({ id }) => id));
+
+    const mailboxesChanged = !isEqual(currentMailboxIds, nextMailboxIds);
 
     /* only update the mailboxes if there is a change */
-    if (!isEqual(currentMailboxIds, nextMailboxIds)) {
+    if (mailboxesChanged) {
         yield api({
             url: `pass/v1/share/${shareId}/alias/${itemId}/mailbox`,
             method: 'post',
@@ -39,15 +43,34 @@ function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
                 MailboxIDs: Array.from(nextMailboxIds.values()),
             },
         });
+    }
 
+    const currentDisplayName = aliasDetails?.name;
+    const nextDisplayName = aliasEditIntent.extraData.displayName;
+    const displayNameChanged = currentDisplayName !== nextDisplayName;
+
+    if (displayNameChanged) {
+        yield api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}/name`,
+            method: 'put',
+            data: {
+                Name: nextDisplayName,
+            },
+        });
+    }
+
+    if (mailboxesChanged || displayNameChanged) {
         yield put(
             aliasDetailsSync({
                 aliasEmail: item.aliasEmail!,
-                mailboxes: aliasEditIntent.extraData.mailboxes,
+                ...aliasDetails,
+                mailboxes: nextMailboxes,
+                name: nextDisplayName,
             })
         );
     }
 }
+
 function* itemEditWorker(
     { onItemsUpdated, getTelemetry }: RootSagaOptions,
     { payload: editIntent, meta: { callback: onItemEditIntentProcessed } }: ReturnType<typeof itemEditIntent>
@@ -57,7 +80,7 @@ function* itemEditWorker(
 
     try {
         if (editIntent.type === 'alias' && editIntent.extraData?.aliasOwner) {
-            yield call(editMailboxesWorker, editIntent);
+            yield call(aliasEditWorker, editIntent);
         }
 
         const encryptedItem: ItemRevisionContentsResponse = yield editItem(editIntent, lastRevision);

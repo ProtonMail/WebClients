@@ -30,7 +30,7 @@ type Props = UniqueItem & Pick<ModalStateProps, 'onClose'> & { aliasEmail: strin
 export const SidebarContactsView: FC<Props> = ({ aliasEmail, onClose, itemId, shareId }) => {
     const [createContact, openCreateContactSidebar] = useModalState();
     const [moreInfoFlow, openMoreInfoFlowSidebar] = useModalState();
-    const { data, loading, dispatch } = useRequest(aliasGetContactsList, {});
+    const { data, loading, dispatch } = useRequest(aliasGetContactsList, { initial: { shareId, itemId } });
     const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
     const hasContacts = (data?.Total ?? 0) > 0;
     const { contacts, blockedContacts } = useMemo(
@@ -39,7 +39,7 @@ export const SidebarContactsView: FC<Props> = ({ aliasEmail, onClose, itemId, sh
     );
 
     const form = useFormik<AliasContactValues>({
-        initialValues: { name: aliasDetails?.name },
+        initialValues: { name: aliasDetails?.name ?? '' },
         validateOnChange: true,
         validateOnMount: false,
         validate: validateAliasContactSenderName,
@@ -53,10 +53,6 @@ export const SidebarContactsView: FC<Props> = ({ aliasEmail, onClose, itemId, sh
     });
 
     useEffect(() => dispatch({ shareId, itemId }), []);
-
-    const emailSender = (
-        <b key="display-name">{`${!aliasDetails?.name && form.values.name + ' '}${aliasDetails?.displayName}`}</b>
-    );
 
     return (
         <>
@@ -112,10 +108,7 @@ export const SidebarContactsView: FC<Props> = ({ aliasEmail, onClose, itemId, sh
                                 </FieldsetCluster>
                             </Form>
                         </FormikProvider>
-                        {aliasDetails?.displayName && (
-                            <span className="color-weak mt-2">{c('Info')
-                                .jt`When sending an email from this alias, the email will have ${emailSender} as sender.`}</span>
-                        )}
+
                         {loading ? (
                             <>
                                 <div

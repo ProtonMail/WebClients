@@ -14,7 +14,7 @@ import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import { selectAliasMailboxes, selectCanManageAlias } from '@proton/pass/store/selectors';
+import { selectAliasDetails, selectAliasMailboxes, selectCanManageAlias } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 import { AliasStatusToggle } from './AliasStatusToggle';
@@ -47,6 +47,9 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
             );
         },
     });
+
+    const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
+    const displayName = aliasDetails?.name;
 
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
     const allowActions = canToggleStatus && !history;
@@ -91,10 +94,29 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 </FieldsetCluster>
             )}
 
+            {displayName && (
+                <>
+                    <FieldsetCluster mode="read" as="div">
+                        <ValueControl
+                            clickToCopy
+                            icon="card-identity"
+                            label={c('Label').t`Display name`}
+                            value={displayName}
+                        />
+                    </FieldsetCluster>
+                    <div className="color-weak mb-4">{c('Info')
+                        .t`The display name when sending an email from this alias.`}</div>
+                </>
+            )}
+
             {canManageAlias && (
-                <FieldsetCluster mode="read" as="div">
-                    <AliasContact aliasEmail={aliasEmail} shareId={shareId} itemId={itemId} />
-                </FieldsetCluster>
+                <>
+                    <FieldsetCluster mode="read" as="div">
+                        <AliasContact aliasEmail={aliasEmail} shareId={shareId} itemId={itemId} />
+                    </FieldsetCluster>
+                    <div className="color-weak mb-4">{c('Info')
+                        .t`Need to email someone but don’t want them to see your email address? Set up a contact alias.`}</div>
+                </>
             )}
         </>
     );

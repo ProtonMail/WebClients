@@ -212,3 +212,5 @@ export const intoBulkSelection = (items: UniqueItem[]): BulkSelectionDTO =>
 
 export const getBulkSelectionCount = (selected: BulkSelectionDTO) =>
     Object.values(selected).reduce((acc, items) => acc + Object.keys(items).length, 0);
+
+export const formatDisplayNameWithEmail = (name: string, email: string) => `${name} <${email}>`;
