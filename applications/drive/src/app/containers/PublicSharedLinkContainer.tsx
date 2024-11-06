@@ -97,6 +97,7 @@ function PublicShareLinkInitContainer() {
 
     const showLoadingPage = isLoading || isLoadingDecrypt;
     const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
+    const shouldRedirectToDocs = isDocsPublicSharingEnabled && link && link.isFile && isProtonDocument(link.mimeType);
 
     const openInDocs = useCallback(
         (linkId: string) => {
@@ -117,11 +118,7 @@ function PublicShareLinkInitContainer() {
 
     // This hook automatically redirects to Docs when opening a document.
     useEffect(() => {
-        if (!isDocsPublicSharingEnabled || !link || error) {
-            return;
-        }
-
-        if (isProtonDocument(link.mimeType)) {
+        if (shouldRedirectToDocs) {
             openInDocs(link.linkId);
         }
     }, [isDocsPublicSharingEnabled, error, link]);
@@ -222,6 +219,10 @@ function PublicShareLinkInitContainer() {
         openInDocs: isDocsPublicSharingEnabled ? openInDocs : undefined,
         partialView: isPartialView,
     };
+
+    if (shouldRedirectToDocs) {
+        return null;
+    }
 
     return (
         <>
