@@ -5,6 +5,8 @@ import { PromotionButton } from '@proton/components/components/button/PromotionB
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
 import clsx from '@proton/utils/clsx';
 
+import './PassPlusPromotionButton.scss';
+
 type Props = Omit<PromotionButtonProps<'span'>, 'size'>;
 
 export const PassPlusPromotionButton: FC<Props> = ({ className, ...props }) => (
@@ -15,7 +17,7 @@ export const PassPlusPromotionButton: FC<Props> = ({ className, ...props }) => (
         shape="outline"
         as="span"
         {...props}
-        className={clsx(className, 'flex items-center button-xs')}
+        className={clsx('pass-promo--button', className, 'flex items-center')}
         iconSize={3.5}
         style={{
             ...props.style,
@@ -23,6 +25,6 @@ export const PassPlusPromotionButton: FC<Props> = ({ className, ...props }) => (
             '--upgrade-color-stop-2': '#9834ff',
         }}
     >
-        <Icon name="plus" size={3} className="mb-0.5" />
+        <Icon name="plus" size={2.5} className="mb-0.5" />
     </PromotionButton>
 );
