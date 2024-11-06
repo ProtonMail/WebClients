@@ -15,7 +15,7 @@ import noop from '@proton/utils/noop';
 import { OnboardingContext, type OnboardingContextValue, OnboardingType } from './OnboardingContext';
 
 export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { onboardingAcknowledge, onboardingCheck } = usePassCore();
+    const { spotlight } = usePassCore();
     const extension = usePassExtensionLink();
     const { navigate } = useNavigation();
 
@@ -28,7 +28,7 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useEffect(() => {
         if (enabled) {
-            (async () => (await onboardingCheck?.(SpotlightMessage.B2B_ONBOARDING)) ?? false)()
+            (async () => (await spotlight.check(SpotlightMessage.B2B_ONBOARDING)) ?? false)()
                 .then(setEnabled)
                 .catch(noop);
         }
@@ -40,7 +40,7 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
         return {
             acknowledge: () => {
                 setEnabled(false);
-                void onboardingAcknowledge?.(SpotlightMessage.B2B_ONBOARDING);
+                void spotlight.acknowledge(SpotlightMessage.B2B_ONBOARDING);
             },
             launch: () => navigate(getLocalPath('onboarding')),
             complete,

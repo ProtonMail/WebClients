@@ -12,7 +12,7 @@ import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { settings } from 'proton-pass-web/lib/settings';
-import { spotlight } from 'proton-pass-web/lib/spotlight';
+import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getInitialTheme } from 'proton-pass-web/lib/theme';
 
@@ -48,7 +48,6 @@ import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectExportData } from '@proton/pass/store/selectors/export';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
@@ -78,6 +77,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     i18n: i18n(locales),
     monitor,
     settings,
+    spotlight,
 
     exportData: async (options) => {
         const state = store.getState();
@@ -108,8 +108,6 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     getTheme: getInitialTheme,
 
     onLink: (url) => window.open(url, '_blank'),
-    onboardingAcknowledge: spotlight.acknowledge,
-    onboardingCheck: pipe(spotlight.checkMessage, prop('enabled')),
     onTelemetry: pipe(createTelemetryEvent, telemetry.push),
     onB2BEvent: B2BEvents.push,
 

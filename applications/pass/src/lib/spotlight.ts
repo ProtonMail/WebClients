@@ -14,7 +14,10 @@ import {
     createUserRenewalRule,
     createWelcomeRule,
 } from '@proton/pass/lib/spotlight/rules';
+import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
 import { createSpotlightService } from '@proton/pass/lib/spotlight/service';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { logger } from '@proton/pass/utils/logger';
 
 export const migrate = (activeStorageKey: string) => {
@@ -52,3 +55,8 @@ export const spotlight = createSpotlightService({
         createAliasTrashConfirmRule(),
     ],
 });
+
+export const spotlightProxy: SpotlightProxy = {
+    check: pipe(spotlight.checkMessage, prop('enabled')),
+    acknowledge: spotlight.acknowledge,
+};

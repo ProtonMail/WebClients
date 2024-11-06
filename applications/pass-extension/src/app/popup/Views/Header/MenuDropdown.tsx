@@ -60,7 +60,7 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 };
 
 export const MenuDropdown: FC = () => {
-    const { onLink, onboardingAcknowledge, onboardingCheck } = usePassCore();
+    const { onLink, spotlight } = usePassCore();
     const { ready, expanded } = usePopupContext();
     const { lock, logout } = useExtensionClient();
     const { API_URL } = usePassConfig();
@@ -84,7 +84,7 @@ export const MenuDropdown: FC = () => {
     const withClose = withTap(close);
 
     useEffect(() => {
-        (async () => onboardingCheck?.(SpotlightMessage.PASS_MONITOR))()
+        (async () => spotlight.check(SpotlightMessage.PASS_MONITOR))()
             .then((show) => setNotifyMonitor(Boolean(show)))
             .catch(noop);
     }, []);
@@ -232,7 +232,7 @@ export const MenuDropdown: FC = () => {
 
                         <DropdownMenuButton
                             onClick={withClose(() => {
-                                void onboardingAcknowledge?.(SpotlightMessage.PASS_MONITOR);
+                                void spotlight.acknowledge(SpotlightMessage.PASS_MONITOR);
                                 onLink(getPassWebUrl(API_URL, 'monitor'));
                             })}
                             label={
