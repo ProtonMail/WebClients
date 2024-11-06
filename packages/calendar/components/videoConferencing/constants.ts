@@ -6,6 +6,9 @@ export enum VIDEO_CONF_SERVICES {
 export const SEPARATOR_GOOGLE_EVENTS =
     '-::~:~::~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~:~::~:~::-' as const;
 
+export const SEPARATOR_PROTON_EVENTS =
+    '~-~-~-~-~-~-~%~!~%~!~%~!~%~!~%~!~%~!~%~!~%~!~%~!~%~!~%~!~%~!~%~!~-~-~-~-~-~-~' as const;
+
 export interface BaseMeetingUrls {
     service: VIDEO_CONF_SERVICES;
     meetingUrl?: string;
@@ -13,4 +16,8 @@ export interface BaseMeetingUrls {
     joiningInstructions?: string;
     meetingHost?: string;
     password?: string; // This is used by Zoom meetings
+}
+
+export enum VIDEO_CONF_API_ERROR_CODES {
+    MEETING_PROVIDER_ERROR = 2904,
 }

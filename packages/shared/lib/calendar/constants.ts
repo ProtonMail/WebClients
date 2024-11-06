@@ -314,7 +314,16 @@ export const SHARED_SIGNED_FIELDS = [
     'sequence',
     'x-pm-conference-id',
 ] as const;
-export const SHARED_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'created', 'description', 'summary', 'location'] as const;
+
+export const SHARED_ENCRYPTED_FIELDS = [
+    'uid',
+    'dtstamp',
+    'created',
+    'description',
+    'summary',
+    'location',
+    'x-pm-conference-url',
+] as const;
 
 export const CALENDAR_SIGNED_FIELDS = ['uid', 'dtstamp', 'exdate', 'status', 'transp'] as const;
 export const CALENDAR_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'comment'] as const;
