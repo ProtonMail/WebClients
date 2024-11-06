@@ -27,7 +27,7 @@ import {
 } from '@proton/pass/store/actions';
 import { selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, OnboardingMessage } from '@proton/pass/types';
+import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, SpotlightMessage } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 /** Ongoing: move every item action definition to this
@@ -170,7 +170,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     const relatedLogin = selectLoginItemByEmail(aliasEmail)(store.getState());
                     if (isAliasDisabled(item) && !relatedLogin) trashItem.call(item);
                     else {
-                        Promise.resolve(core.onboardingCheck?.(OnboardingMessage.ALIAS_TRASH_CONFIRM) ?? false)
+                        Promise.resolve(core.onboardingCheck?.(SpotlightMessage.ALIAS_TRASH_CONFIRM) ?? false)
                             .then((prompt) => (prompt ? trashItem.prompt(item) : trashItem.call(item)))
                             .catch(() => trashItem.call(item));
                     }

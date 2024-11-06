@@ -8,8 +8,8 @@ import { PASS_CONFIG } from 'proton-pass-web/lib/env';
 import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
-import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { settings } from 'proton-pass-web/lib/settings';
+import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getInitialTheme } from 'proton-pass-web/lib/theme';
 
@@ -115,8 +115,8 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         getLogs: logStore.read,
         getTheme: getInitialTheme,
 
-        onboardingAcknowledge: onboarding.acknowledge,
-        onboardingCheck: pipe(onboarding.checkMessage, prop('enabled')),
+        onboardingAcknowledge: spotlight.acknowledge,
+        onboardingCheck: pipe(spotlight.checkMessage, prop('enabled')),
         onLink: (url, options) => window.open(url, options?.replace ? '_self' : '_blank'),
 
         onTelemetry: pipe(createTelemetryEvent, telemetry.push),

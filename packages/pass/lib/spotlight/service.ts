@@ -1,66 +1,66 @@
 import type { AnyStorage } from '@proton/pass/types';
-import { type Maybe, type OnboardingAcknowledgment, OnboardingMessage, type OnboardingState } from '@proton/pass/types';
+import { type Maybe, type SpotlightAcknowledgment, SpotlightMessage, type SpotlightState } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import identity from '@proton/utils/identity';
 
-type OnboardingServiceOptions<StorageKey extends string> = {
-    /** defines where onboarding data will be stored */
+type SpotlightServiceOptions<StorageKey extends string> = {
+    /** defines where spotlight data will be stored */
     storage: AnyStorage<Record<StorageKey, string>>;
-    /** defines which onboarding rule this service supports  */
-    rules: OnboardingRule[];
+    /** defines which spotlight rule this service supports  */
+    rules: SpotlightRule[];
     /** resolves the storage key for the current user */
     getStorageKey: () => StorageKey;
     /** triggered on OnboardingService::init before hydration */
     migrate?: (storageKey: StorageKey) => void;
 };
 
-export type OnboardingWhen = (previousAck: Maybe<OnboardingAcknowledgment>, state: OnboardingState) => boolean;
-export type OnboardingAck = (ack: OnboardingAcknowledgment) => OnboardingAcknowledgment;
-export type OnboardingRule = {
+export type SpotlightWhen = (previousAck: Maybe<SpotlightAcknowledgment>, state: SpotlightState) => boolean;
+export type SpotlightAck = (ack: SpotlightAcknowledgment) => SpotlightAcknowledgment;
+export type SpotlightRule = {
     /** Onboarding message type */
-    message: OnboardingMessage;
+    message: SpotlightMessage;
     /** Given any previous acknowledgments for this particular message and the
-     * current onboarding service state, should return a boolean flag indicating
+     * current spotlight service state, should return a boolean flag indicating
      * wether this rule should be triggered */
-    when?: OnboardingWhen;
-    /** Optional callback that will be executed when this particular onboarding
+    when?: SpotlightWhen;
+    /** Optional callback that will be executed when this particular spotlight
      * message is acknowledged */
-    onAcknowledge?: OnboardingAck;
+    onAcknowledge?: SpotlightAck;
 };
 
-export const INITIAL_ONBOARDING_STATE: OnboardingState = {
+export const INITIAL_SPOTLIGHT_STATE: SpotlightState = {
     installedOn: getEpoch(),
     updatedOn: -1,
     acknowledged: [],
 };
 
-export const createOnboardingRule = (options: OnboardingRule): OnboardingRule => ({
+export const createSpotlightRule = (options: SpotlightRule): SpotlightRule => ({
     message: options.message,
     onAcknowledge: options.onAcknowledge,
     when: (previousAck, state) =>
         options.when?.(previousAck, state) ?? !state.acknowledged.some((data) => data.message === options.message),
 });
 
-export const createOnboardingService = <StorageKey extends string>(options: OnboardingServiceOptions<StorageKey>) => {
-    const state: OnboardingState = { ...INITIAL_ONBOARDING_STATE };
+export const createSpotlightService = <StorageKey extends string>(options: SpotlightServiceOptions<StorageKey>) => {
+    const state: SpotlightState = { ...INITIAL_SPOTLIGHT_STATE };
 
-    /** Sets the onboarding service state and updates the storage */
-    const setState = (update: Partial<OnboardingState>) => {
+    /** Sets the spotlight service state and updates the storage */
+    const setState = (update: Partial<SpotlightState>) => {
         state.acknowledged = update.acknowledged ?? state.acknowledged;
         state.installedOn = update.installedOn ?? state.installedOn;
         state.updatedOn = update.updatedOn ?? state.updatedOn;
         void options.storage.setItem(options.getStorageKey(), JSON.stringify(state));
     };
 
-    const checkRule = (rule: OnboardingRule): boolean => {
+    const checkRule = (rule: SpotlightRule): boolean => {
         if (!rule.when) return true;
 
         const ack = state.acknowledged.find((ack) => rule.message === ack.message);
         return rule.when(ack, state);
     };
 
-    const checkMessage = (message: OnboardingMessage): { enabled: boolean } => {
+    const checkMessage = (message: SpotlightMessage): { enabled: boolean } => {
         const rule = options.rules.find((rule) => rule.message === message);
         return { enabled: rule ? checkRule(rule) : false };
     };
@@ -74,10 +74,10 @@ export const createOnboardingService = <StorageKey extends string>(options: Onbo
      * useful when logging out a user - preserves timestamps */
     const reset = () => setState({ acknowledged: [] });
 
-    /** Acknowledges the given onboarding message by either pushing
+    /** Acknowledges the given spotlight message by either pushing
      * it to the acknowledged messages list or updating the entry */
-    const acknowledge = (message: OnboardingMessage) => {
-        logger.info(`[Onboarding] Acknowledging "${OnboardingMessage[message]}"`);
+    const acknowledge = (message: SpotlightMessage) => {
+        logger.info(`[Onboarding] Acknowledging "${SpotlightMessage[message]}"`);
         const acknowledged = state.acknowledged.find((data) => data.message === message);
         const onAcknowledge = options.rules.find((rule) => rule.message === message)?.onAcknowledge ?? identity;
 
@@ -100,9 +100,9 @@ export const createOnboardingService = <StorageKey extends string>(options: Onbo
         try {
             const key = options.getStorageKey();
             options.migrate?.(key);
-            const onboarding = await options.storage.getItem(key);
-            if (typeof onboarding === 'string') setState(JSON.parse(onboarding));
-            else throw Error('Onboarding data not found');
+            const data = await options.storage.getItem(key);
+            if (typeof data === 'string') setState(JSON.parse(data));
+            else throw Error('Spotlight data not found');
         } catch {
             setState(state);
         }
@@ -111,4 +111,4 @@ export const createOnboardingService = <StorageKey extends string>(options: Onbo
     return { acknowledge, checkMessage, init, reset, setState, getMessage, state };
 };
 
-export type OnboardingService = ReturnType<typeof createOnboardingService>;
+export type SpotlightService = ReturnType<typeof createSpotlightService>;

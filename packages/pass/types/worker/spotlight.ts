@@ -1,7 +1,7 @@
 /** Note: Do not change the order of these enum
  * values as they are referenced by their respective
- * indexes in the onboarding state */
-export enum OnboardingMessage {
+ * indexes in the spotlight state */
+export enum SpotlightMessage {
     WELCOME /* welcome to Proton Pass */,
     TRIAL,
     SECURE_EXTENSION /* ask user to create a lock */,
@@ -20,17 +20,18 @@ export enum OnboardingMessage {
     ALIAS_SYNC_ENABLE /* shown if user has pending SL aliases to be sync */,
     BLACK_FRIDAY_2024,
     USER_RENEWAL,
+    NOOP /* Used for custom non-acknowledgable messages */,
 }
 
-export type OnboardingAcknowledgment = {
-    message: OnboardingMessage;
+export type SpotlightAcknowledgment = {
+    message: SpotlightMessage;
     acknowledgedOn: number /* UNIX timestamp for acknowledgment */;
     count: number /* number of acknowledgments for this message */;
     extraData?: any;
 };
 
-export type OnboardingState = {
+export type SpotlightState = {
     installedOn: number;
     updatedOn: number;
-    acknowledged: OnboardingAcknowledgment[];
+    acknowledged: SpotlightAcknowledgment[];
 };

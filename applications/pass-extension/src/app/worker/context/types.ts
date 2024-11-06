@@ -10,11 +10,11 @@ import type { I18NService } from 'proton-pass-extension/app/worker/services/i18n
 import type { ImportService } from 'proton-pass-extension/app/worker/services/import';
 import type { InjectionService } from 'proton-pass-extension/app/worker/services/injection';
 import type { LoggerService } from 'proton-pass-extension/app/worker/services/logger';
-import type { OnboardingService } from 'proton-pass-extension/app/worker/services/onboarding';
 import type { OTPService } from 'proton-pass-extension/app/worker/services/otp';
 import type { Passkeyservice } from 'proton-pass-extension/app/worker/services/passkey';
 import type { SentryService } from 'proton-pass-extension/app/worker/services/sentry';
 import type { SettingsService } from 'proton-pass-extension/app/worker/services/settings';
+import type { SpotlightService } from 'proton-pass-extension/app/worker/services/spotlight';
 import type { StorageService } from 'proton-pass-extension/app/worker/services/storage';
 import type { StoreService } from 'proton-pass-extension/app/worker/services/store';
 import type { TelemetryService } from 'proton-pass-extension/app/worker/services/telemetry';
@@ -50,11 +50,11 @@ export interface WorkerContextInterface {
         injection: InjectionService;
         logger: LoggerService;
         monitor: MonitorService;
-        onboarding: OnboardingService;
         otp: OTPService;
         passkey: Passkeyservice;
         sentry: SentryService;
         settings: SettingsService;
+        spotlight: SpotlightService;
         storage: StorageService;
         store: StoreService;
         telemetry: MaybeNull<TelemetryService>;

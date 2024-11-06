@@ -12,7 +12,7 @@ import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightCon
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
+import { SpotlightMessage, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
@@ -27,8 +27,8 @@ export const Welcome: FC = () => {
         useCallback(({ status }) => {
             if (clientReady(status)) {
                 void sendMessage.onSuccess(
-                    pageMessage({ type: WorkerMessageType.ONBOARDING_REQUEST }),
-                    async ({ message }) => setPendingAccess(message === OnboardingMessage.PENDING_SHARE_ACCESS)
+                    pageMessage({ type: WorkerMessageType.SPOTLIGHT_REQUEST }),
+                    async ({ message }) => setPendingAccess(message === SpotlightMessage.PENDING_SHARE_ACCESS)
                 );
             }
         }, [])
@@ -61,6 +61,7 @@ export const Welcome: FC = () => {
                         <div className={clsx('anime-reveal', !pendingAccess && 'anime-reveal--hidden')}>
                             {pendingAccess && (
                                 <SpotlightContent
+                                    type={SpotlightMessage.NOOP}
                                     mode="default"
                                     className="mb-6"
                                     id="pending"
