@@ -8,16 +8,19 @@ import { createToken } from '@proton/activation/src/api';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { OAuthProps } from '@proton/activation/src/interface';
 import { EASY_SWITCH_SOURCES, ImportType, OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { oauthTokenActions } from '@proton/activation/src/logic/oauthToken';
 import { Button, CircleLoader } from '@proton/atoms';
 import { Icon, IconRow, ZoomUpsellModal, useApi, useModalStateObject } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcVideoCamera } from '@proton/icons';
+import { useDispatch } from '@proton/redux-shared-store';
 import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { EventModel, VideoConferenceMeetingCreation } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingWidget';
-import { VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
+import { VIDEO_CONF_API_ERROR_CODES, VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
 
 type ZoomIntegrationState =
     | 'loadingConfig'
@@ -48,6 +51,8 @@ interface Props {
 
 export const ZoomRow = ({ model, setModel }: Props) => {
     const [user] = useUser();
+    const dispatch = useDispatch();
+
     const [oAuthToken, oauthTokenLoading] = useOAuthToken();
     const isUserConnectedToZoom = oAuthToken?.some(({ Provider }) => Provider === OAUTH_PROVIDER.ZOOM);
 
@@ -77,24 +82,10 @@ export const ZoomRow = ({ model, setModel }: Props) => {
         }
     }, [processState]);
 
-    const createVideoConferenceMeeting = async () => {
-        setProcessState('loading');
-        const data = await withLoading(api<VideoConferenceMeetingCreation>(createZoomMeeting()));
-
-        setModel({
-            ...model,
-            conferenceId: data?.VideoConference?.ID,
-            conferenceUrl: data?.VideoConference?.URL,
-            conferencePasscode: data?.VideoConference?.Password,
-            conferenceHost: user.Email,
-        });
-        setProcessState('meeting-present');
-    };
-
     const handleOAuthConnection = async (oAuthProps: OAuthProps) => {
         const { Code, Provider, RedirectUri } = oAuthProps;
 
-        await api(
+        const tokens = await api(
             createToken({
                 Provider,
                 Code,
@@ -103,7 +94,37 @@ export const ZoomRow = ({ model, setModel }: Props) => {
                 Products: [ImportType.CALENDAR],
             })
         );
-        await createVideoConferenceMeeting();
+
+        dispatch(oauthTokenActions.updateTokens(tokens.Tokens));
+    };
+
+    const createVideoConferenceMeeting = async () => {
+        try {
+            setProcessState('loading');
+            const data = await withLoading(api<VideoConferenceMeetingCreation>(createZoomMeeting()));
+
+            setModel({
+                ...model,
+                conferenceId: data?.VideoConference?.ID,
+                conferenceUrl: data?.VideoConference?.URL,
+                conferencePasscode: data?.VideoConference?.Password,
+                conferenceHost: user.Email,
+            });
+            setProcessState('meeting-present');
+        } catch (e) {
+            const { code } = getApiError(e);
+            if (code === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
+                setProcessState('disconnected');
+
+                triggerOAuthPopup({
+                    provider: OAUTH_PROVIDER.ZOOM,
+                    scope: '',
+                    callback: handleOAuthConnection,
+                });
+
+                return;
+            }
+        }
     };
 
     const handleClick = async () => {
@@ -116,7 +137,10 @@ export const ZoomRow = ({ model, setModel }: Props) => {
             triggerOAuthPopup({
                 provider: OAUTH_PROVIDER.ZOOM,
                 scope: '',
-                callback: handleOAuthConnection,
+                callback: async (oauthProps) => {
+                    await handleOAuthConnection(oauthProps);
+                    await createVideoConferenceMeeting();
+                },
             });
         } else if (model.conferenceUrl && model.isConferenceTmpDeleted) {
             setModel({
