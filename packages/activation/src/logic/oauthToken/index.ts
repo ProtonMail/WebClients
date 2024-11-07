@@ -1,3 +1,4 @@
+import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ModelState } from '@proton/account';
@@ -42,11 +43,16 @@ const modelThunk = createAsyncModelThunk<Model, OAuthTokenState, ProtonThunkArgu
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        updateTokens: (state, action: PayloadAction<OAuthToken[]>) => {
+            state.value = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
     },
 });
 
+export const oauthTokenActions = slice.actions;
 export const oauthTokenReducer = { [name]: slice.reducer };
 export const oauthTokenThunk = modelThunk.thunk;
