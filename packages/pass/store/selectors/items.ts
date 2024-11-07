@@ -80,6 +80,8 @@ export const selectNoteItems = selectItemsByType('note');
 export const selectCCItems = selectItemsByType('creditCard');
 export const selectIdentityItems = selectItemsByType('identity');
 
+export const selectTrashedAliasCount = createSelector(selectAliasItems, (items) => items.filter(isTrashed).length);
+
 /** Filters out all login items which were created from an alias item */
 export const selectNonAliasedLoginItems = createSelector([selectLoginItems, selectAliasItems], (logins, aliases) => {
     const aliasEmails = new Set<string>(aliases.map(prop('aliasEmail')).filter(isTruthy));
