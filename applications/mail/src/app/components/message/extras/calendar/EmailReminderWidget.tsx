@@ -409,7 +409,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                         )}
 
                         <div className="mb-4">
-                            <VideoConferencingWidgetConfig model={vevent} widgetLocation="mail-headers" />
+                            <VideoConferencingWidgetConfig model={vevent} widgetLocation="event-details" />
                         </div>
 
                         {!!participantsList.length && (
