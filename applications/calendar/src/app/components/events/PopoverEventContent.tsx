@@ -281,7 +281,7 @@ const PopoverEventContent = ({
                     <span className="text-break" dangerouslySetInnerHTML={{ __html: sanitizedLocation }} />
                 </IconRow>
             ) : null}
-            <VideoConferencingWidgetConfig model={model} widgetLocation="calendar" />
+            <VideoConferencingWidgetConfig model={model} widgetLocation="event-details" />
             {!!numberOfParticipants && organizer && (
                 <IconRow labelClassName={labelClassName} icon="user" title={c('Label').t`Participants`}>
                     <div className="w-full">

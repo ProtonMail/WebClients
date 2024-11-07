@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, Href } from '@proton/atoms';
+import { Button, ButtonLike, Href } from '@proton/atoms';
 import {
     Collapsible,
     CollapsibleContent,
@@ -15,28 +15,31 @@ import {
 } from '@proton/components';
 import { IcVideoCamera } from '@proton/icons';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
 
 import type { BaseMeetingUrls } from './constants';
 
 import './VideoConferencing.scss';
 
-export type VideoConferenceLocation = 'calendar' | 'mail-headers';
+export type VideoConferenceLocation = 'event-details' | 'event-form';
 
-// todo remove location is not required in the end.
 interface Props {
     location: VideoConferenceLocation;
     data: BaseMeetingUrls;
+    handleDelete?: () => void;
 }
 
 const EventDetailsRow = ({
     prefix,
     suffix,
     copySuccessText,
+    linkMode,
 }: {
     prefix: string;
     suffix: string;
     copySuccessText: string;
+    linkMode?: boolean;
 }) => {
     const { createNotification } = useNotifications();
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -47,18 +50,22 @@ const EventDetailsRow = ({
     };
 
     return (
-        <button type="button" className="flex flex-col gap-1" onClick={handleClick}>
+        <button type="button" className={clsx('flex gap-1', linkMode ? 'flex-row' : 'flex-col')} onClick={handleClick}>
             <p className="m-0">{prefix}</p>
-            <p className="m-0 text-ellipsis color-weak max-w-full" title={suffix}>
-                {suffix}
-            </p>
+            {linkMode ? (
+                <Button shape="underline" color="norm" size="small" className="p-0" onClick={handleClick}>
+                    {suffix}
+                </Button>
+            ) : (
+                <p className="m-0 text-ellipsis color-weak max-w-full" title={suffix}>
+                    {suffix}
+                </p>
+            )}
         </button>
     );
 };
 
-// TODO change the color of the dropdown header text to norm when hovering
-// TODO clicking anywhere should expend the dropdown
-export const VideoConferencingWidget = ({ data }: Props) => {
+export const VideoConferencingWidget = ({ data, location, handleDelete }: Props) => {
     const { createNotification } = useNotifications();
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -71,11 +78,13 @@ export const VideoConferencingWidget = ({ data }: Props) => {
     const joinText = service === 'zoom' ? c('Zoom Meeting').t`Join Zoom meeting` : c('Google Meet').t`Join Google Meet`;
 
     return (
-        <IconRow icon={<IcVideoCamera />} className="items-center w-full video-conferencing-widget cursor-pointer">
-            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/prefer-tag-over-role */}
+        <IconRow
+            icon={<IcVideoCamera />}
+            containerClassName="grow"
+            className="items-center w-full video-conferencing-widget cursor-pointer"
+        >
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
-                role="button"
-                tabIndex={0}
                 aria-label={c('Action').t`Expand video conferencing widget`}
                 aria-expanded={isExpanded}
                 className="group-hover-opacity-container"
@@ -85,16 +94,25 @@ export const VideoConferencingWidget = ({ data }: Props) => {
                     <ButtonLike as={Href} href={meetingUrl} shape="solid" color="norm">
                         {joinText}
                     </ButtonLike>
-                    <Copy
-                        value={meetingUrl}
-                        shape="ghost"
-                        className="group-hover:opacity-100 color-weak"
-                        onCopy={() => {
-                            createNotification({
-                                text: c('Notification').t`Link copied to clipboard`,
-                            });
-                        }}
-                    />
+
+                    <div className="flex gap-2">
+                        <Copy
+                            value={meetingUrl}
+                            shape="ghost"
+                            size="small"
+                            className="group-hover:opacity-100 color-weak"
+                            onCopy={() => {
+                                createNotification({
+                                    text: c('Notification').t`Link copied to clipboard`,
+                                });
+                            }}
+                        />
+                        {location === 'event-form' && (
+                            <Button icon shape="ghost" size="small" onClick={handleDelete}>
+                                <Icon name="cross-big" alt={c('Action').t`Remove zoom meeting`} />
+                            </Button>
+                        )}
+                    </div>
                 </div>
                 {meetingId && (
                     <EventDetailsRow
@@ -132,23 +150,21 @@ export const VideoConferencingWidget = ({ data }: Props) => {
                         </CollapsibleHeader>
                         <CollapsibleContent onClick={(e) => e.stopPropagation()}>
                             <section className="mt-2">
-                                <div>
+                                {meetingHost && validateEmailAddress(meetingHost) && (
+                                    <EventDetailsRow
+                                        linkMode
+                                        prefix={c('Google Meet').t`Meeting host:`}
+                                        suffix={meetingHost}
+                                        copySuccessText={c('Notification').t`Meeting host copied to clipboard`}
+                                    />
+                                )}
+
+                                <div className={clsx(meetingHost && 'mt-2')}>
                                     <p className="m-0">{c('Google Meet').t`Meeting link:`}</p>
                                     <Href className="block mb-2 text-ellipsis max-w-full" href={meetingUrl}>
                                         {meetingUrl}
                                     </Href>
                                 </div>
-                                {meetingHost && (
-                                    <div>
-                                        <p className="m-0">{c('Google Meet').t`Meeting host:`}</p>
-                                        <Href
-                                            className="block mb-2 text-ellipsis max-w-full"
-                                            href={`mailto:${meetingHost}`}
-                                        >
-                                            {meetingHost}
-                                        </Href>
-                                    </div>
-                                )}
 
                                 {joiningInstructions && (
                                     <Href href={joiningInstructions}>{c('Google Meet').t`Joining instructions`}</Href>
