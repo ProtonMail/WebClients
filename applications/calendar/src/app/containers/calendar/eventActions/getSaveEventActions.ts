@@ -33,6 +33,7 @@ import type {
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import getEditEventData from '../event/getEditEventData';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
+import { deleteConferenceData } from '../eventHelper';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import type { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
@@ -204,6 +205,9 @@ const getSaveEventActions = async ({
         isInvitation,
         selfAddress: existingSelfAddress,
     });
+    if (tmpData.isConferenceTmpDeleted) {
+        deleteConferenceData(tmpData);
+    }
     const selfAddress = addresses.find(({ ID }) => ID === newAddressID);
     if (!selfAddress) {
         throw new Error('Wrong member data');
