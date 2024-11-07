@@ -68,7 +68,7 @@ export const VideoConferencingWidget = ({ data }: Props) => {
     }
 
     const hasOnlyLink = meetingUrl && !joiningInstructions && !meetingId && !password;
-    const joinText = service === 'zoom' ? c('Zoom Meeting').t`Join Zoom Meeting` : c('Google Meet').t`Join Google Meet`;
+    const joinText = service === 'zoom' ? c('Zoom Meeting').t`Join Zoom meeting` : c('Google Meet').t`Join Google Meet`;
 
     return (
         <IconRow icon={<IcVideoCamera />} className="items-center w-full video-conferencing-widget cursor-pointer">
