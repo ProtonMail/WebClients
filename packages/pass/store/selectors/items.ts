@@ -6,6 +6,7 @@ import {
     hasOTP,
     hasUserIdentifier,
     isActive,
+    isAliasItem,
     isItemType,
     isPasskeyItem,
     isPinned,
@@ -90,6 +91,19 @@ export const selectBulkSelection = (dto: BulkSelectionDTO) =>
         Object.entries(dto).flatMap(([shareId, itemIds]) =>
             Object.keys(itemIds).map((itemId) => items[shareId][itemId])
         )
+    );
+
+export const selectBulkSelectionAliasCount = (dto: BulkSelectionDTO) =>
+    createSelector(selectItemsState, (items): number =>
+        Object.entries(dto).reduce<number>((aliasCount, [shareId, itemIds]) => {
+            return (
+                aliasCount +
+                Object.keys(itemIds).reduce<number>((shareAliasCount, itemId) => {
+                    const item = items?.[shareId]?.[itemId];
+                    return item && isAliasItem(item.data) ? shareAliasCount + 1 : shareAliasCount;
+                }, 0)
+            );
+        }, 0)
     );
 
 export const selectSelectedItems = (selection: SelectedItem[]) =>

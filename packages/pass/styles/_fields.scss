@@ -36,6 +36,14 @@
 	background-color: var(--background-weak);
 }
 
+.pass-checkbox {
+	&--unset {
+		span.checkbox-fakecheck {
+			margin-inline-start: 0 !important;
+		}
+	}
+}
+
 textarea {
 	margin: 0;
 	outline: none;
