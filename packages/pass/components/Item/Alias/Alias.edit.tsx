@@ -12,6 +12,8 @@ import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
+import { AliasSimpleLoginNoteModal } from '@proton/pass/components/Item/Alias/AliasSimpleLoginNote.modal';
+import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
@@ -51,6 +53,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
      * of `onAliasDetailsLoaded` with `onAliasOptionsLoading` effect */
     const mailboxesForAlias = useRef<AliasMailbox[]>([]);
 
+    const [openSlNoteModal, setOpenSlNoteModal] = useState(false);
+
     const note = useDeobfuscatedValue(metadata.note);
     const validateEditAliasForm = createEditAliasFormValidator(aliasOwner);
 
@@ -63,11 +67,12 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
             mailboxes: [],
             shareId: vault.shareId,
             displayName: aliasDetails?.name ?? '',
+            slNote: aliasDetails?.slNote ?? '',
         },
-        onSubmit: ({ name, note, mailboxes, shareId, displayName }) => {
+        onSubmit: ({ name, note, mailboxes, shareId, displayName, slNote }) => {
             onSubmit({
                 ...uneditable,
-                extraData: { aliasOwner, mailboxes, aliasEmail, displayName },
+                extraData: { aliasOwner, mailboxes, aliasEmail, displayName, slNote },
                 itemId,
                 lastRevision,
                 metadata: { ...metadata, name, note: obfuscate(note) },
@@ -208,6 +213,33 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
                                 maxLength={MAX_ITEM_NOTE_LENGTH}
                             />
                         </FieldsetCluster>
+
+                        {aliasDetails?.slNote && (
+                            <>
+                                <FieldsetCluster>
+                                    <Field
+                                        name="slNote"
+                                        label={
+                                            <span className="flex items-center flex-nowrap gap-1">
+                                                {c('Label').t`Note • SimpleLogin`}
+                                                <InfoButton onClick={() => setOpenSlNoteModal(true)} />
+                                            </span>
+                                        }
+                                        placeholder={c('Placeholder').t`Note from SimpleLogin`}
+                                        component={TextAreaField}
+                                        icon="note"
+                                        maxLength={MAX_ITEM_NOTE_LENGTH}
+                                    />
+                                </FieldsetCluster>
+
+                                {openSlNoteModal && (
+                                    <AliasSimpleLoginNoteModal
+                                        open={openSlNoteModal}
+                                        onClose={() => setOpenSlNoteModal(false)}
+                                    />
+                                )}
+                            </>
+                        )}
 
                         <FieldsetCluster>
                             <Field

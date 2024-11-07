@@ -31,7 +31,8 @@ export type AliasCreateContactValues = { email: string };
 export type NewAliasFormValues = BaseItemValues & AliasFormValues;
 export type EditAliasFormValues = BaseItemValues &
     Pick<AliasFormValues, 'mailboxes'> &
-    Pick<AliasDetails, 'displayName'>;
+    Pick<AliasDetails, 'displayName'> &
+    Pick<AliasDetails, 'slNote'>;
 
 export type IdentityValues = ItemContent<'identity'>;
 export type IdentityItemFormValues = { shareId: string } & BaseItemValues & IdentityValues;

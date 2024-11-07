@@ -59,13 +59,28 @@ function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
         });
     }
 
-    if (mailboxesChanged || displayNameChanged) {
+    const currentSlNote = aliasDetails?.slNote;
+    const nextSlNote = aliasEditIntent.extraData.slNote;
+    const slNoteChanged = currentSlNote !== nextSlNote;
+
+    if (slNoteChanged) {
+        yield api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}/note`,
+            method: 'put',
+            data: {
+                Note: nextSlNote,
+            },
+        });
+    }
+
+    if (mailboxesChanged || displayNameChanged || slNoteChanged) {
         yield put(
             aliasDetailsSync({
                 aliasEmail: item.aliasEmail!,
                 ...aliasDetails,
                 mailboxes: nextMailboxes,
                 name: nextDisplayName,
+                slNote: nextSlNote,
             })
         );
     }
