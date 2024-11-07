@@ -44,7 +44,7 @@
     --shadow-raised-opacity: 1;
     --shadow-lifted-opacity: 0.75;
 
-    --backdrop-norm: rgb(0 0 0 / 0.75);
+    --backdrop-norm: rgb(16 15 20 / 0.48);
 
     /* Optional colors */
 
@@ -61,7 +61,8 @@
 
     --optional-mini-calendar-today-color: white;
 
-    --optional-background-lowered      : #08070a;
+    --optional-background-lowered: #040405;
+    --optional-background-elevated: #18161f;
 
     --optional-logo-text-proton-color: white;
     --optional-logo-text-product-color: white;
