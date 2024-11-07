@@ -6,6 +6,7 @@ import { VideoConferencingWidget } from './VideoConferencingWidget';
 import { SEPARATOR_GOOGLE_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import { getGoogleMeetDataFromDescription, getGoogleMeetDataFromLocation } from './googleMeet/googleMeetHelpers';
 import { getVideoConferencingData } from './modelHelpers';
+import { VideoConferenceSource, useVideoConfTelemetry } from './useVideoConfTelemetry';
 import { getZoomDataFromLocation, getZoomFromDescription } from './zoom/zoomHelpers';
 
 interface Props {
@@ -17,6 +18,7 @@ interface Props {
 const separatorRegex = new RegExp(SEPARATOR_GOOGLE_EVENTS);
 
 export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) => {
+    const { sendEventVideoConfSource } = useVideoConfTelemetry();
     const videoConferenceWidget = useFlag('VideoConferenceWidget');
     if (!videoConferenceWidget) {
         return null;
@@ -26,6 +28,7 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
 
     // Native Zoom integration
     if (meetingId && meetingUrl) {
+        sendEventVideoConfSource(VideoConferenceSource.int_zoom);
         return (
             <VideoConferencingWidget
                 location={widgetLocation}
@@ -45,9 +48,11 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
     if (googleMeetingDescriptionSeparator && description) {
         if (description.includes('zoom.us')) {
             const data = getZoomFromDescription(description);
+            sendEventVideoConfSource(VideoConferenceSource.google_zoom_desc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         } else if (description.includes('meet.google.com')) {
             const data = getGoogleMeetDataFromDescription(description);
+            sendEventVideoConfSource(VideoConferenceSource.google_google_meet_desc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
     }
@@ -56,14 +61,17 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
     if (location) {
         if (location.includes('meet.google.com')) {
             const data = getGoogleMeetDataFromLocation(location);
+            sendEventVideoConfSource(VideoConferenceSource.google_google_meet_loc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
 
         if (location.includes('zoom.us')) {
             const data = getZoomDataFromLocation(location);
+            sendEventVideoConfSource(VideoConferenceSource.google_zoom_loc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
     }
 
+    sendEventVideoConfSource(VideoConferenceSource.no_video_conf);
     return null;
 };

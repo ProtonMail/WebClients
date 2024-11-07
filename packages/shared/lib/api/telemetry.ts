@@ -9,6 +9,7 @@ export enum TelemetryMeasurementGroups {
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
+    calendarVideoConferencing = 'calendar.web.video_conferencing',
     accountCancellation = 'account.web.cancellation',
     settingsHeartBeat = 'any.web.settings_heart_beat',
     /** Not only calendar scope because party crasher on mail and drawer */
@@ -66,6 +67,12 @@ export enum TelemetryCalendarEvents {
     change_temporary_time_zone = 'change_temporary_time_zone',
     enable_encrypted_search = 'enable_encrypted_search',
     answer_invite = 'answer_invite',
+}
+
+export enum TelemetryCalendarVideoConferencing {
+    video_conference_widget = 'video_conference_widget',
+    video_conference_settings_toggle = 'video_conference_settings_toggle',
+    video_conference_zoom_integration = 'video_conference_zoom_integration',
 }
 
 export enum TelemetryIcsSurgeryEvents {
@@ -252,7 +259,8 @@ export type TelemetryEvents =
     | TelemetrySmartBannerEvents
     | TelemetryDesktopEvents
     | TelemetryMailDefaultMailto
-    | TelemetryDocsEvents;
+    | TelemetryDocsEvents
+    | TelemetryCalendarVideoConferencing;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
