@@ -1803,7 +1803,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifreleme ile e-postalarınızı ve programınızı güvence altına alın. 15 e-posta adresi, özel e-posta alan adları için destek, sınırsız hide-my-email takma adları ve daha fazlasını içerir."
+        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -4056,11 +4056,6 @@
         "${ categories } e-postalarının aboneliğinden ayrıldınız. Artık ${ BRAND_NAME } tarafından bu türde e-postalar almayacaksınız."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } ve ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Doğrulama e-postası ${ address } alıcısına gönderildi"
@@ -5921,26 +5916,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Masaüstü uygulamasını ücretsiz deneme süreniz sona erdi"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(ayda 1 e-posta)"
-      ],
-      "(1 email per quarter)": [
-        "(üç ayda 1 e-posta)"
-      ],
-      "(1-2 emails per month)": [
-        "(ayda 1-2 e-posta)"
-      ],
-      "(2-4 emails per year)": [
-        "(1 yılda 2-4 e-posta)"
-      ],
-      "(4-6 emails per year)": [
-        "(1 yılda 4-6 e-posta)"
-      ],
-      "(during your first month)": [
-        "(ilk ayınız boyunca)"
       ]
     },
     "Get started checklist instructions": {
@@ -9880,9 +9855,6 @@
       "Addresses": [
         "Adresler"
       ],
-      "Administrators": [
-        "Yöneticiler"
-      ],
       "ALL": [
         "TÜMÜ"
       ],
@@ -10882,41 +10854,6 @@
       ],
       "VPN connections": [
         "VPN bağlantısı"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } ve ${ additionalApp } ürün güncellemeleri"
-      ],
-      "${ app } product updates": [
-        "${ app } ürün güncellemeleri"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } beta sürümü duyuruları"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business bülteni"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Önemli ${ BRAND_NAME } duyuruları"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } bülteni"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } teklif ve fırsatları"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } ürün duyuruları"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } kullanıcı anketi"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } karşılama e-postaları"
-      ],
-      "Daily email notifications": [
-        "Günlük e-posta bildirimleri"
       ]
     },
     "Label in domain modal": {
@@ -13672,6 +13609,12 @@
       ],
       "Admin panel to manage users and subscription": [
         "Kullanıcıları ve aboneliğinizi panonuzdan yönetin"
+      ],
+      "Advanced account protection": [
+        "Gelişmiş hesap koruması"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Gelişmiş takma ad özellikleri (SimpleLogin tarafından sağlanır)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -17288,9 +17231,6 @@
       "Email privacy": [
         "E-posta gizliliği"
       ],
-      "Email subscriptions": [
-        "E-posta abonelikleri"
-      ],
       "Enable for all users": [
         "Tüm kullanıcılar için aç"
       ],
@@ -18340,14 +18280,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "${ BRAND_NAME } kullanmayan PGP kullanıcılarıyla yazışırken iletileri imzalamak veya şifrelemek için kullanılacak varsayılan PGP ayarlarını seçin. Inline PGP için iletilerin düz metin biçiminde olması gerektiğini unutmayın."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Son gizlilik haberlerini alın ve ${ BRAND_NAME } evreninde neler olduğunu öğrenin"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "${ BRAND_NAME } hizmetlerini geliştirmek için anketlere katılın"
       ]
     },
     "Tooltip prompt to trust keys": {

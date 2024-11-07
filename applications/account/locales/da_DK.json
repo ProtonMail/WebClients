@@ -2032,6 +2032,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Rediger (vis, opret og rediger begivenhedsoplysninger)"
+      ],
       "View (see all event details)": [
         "Vis (se alle detaljer om begivenheden)"
       ]
@@ -3945,11 +3948,6 @@
         "Du gentegnede abonnement på ${ categoriesJsx } e-mails."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } og ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Bekræftelses e-mail afsendt til ${ address }"
@@ -5732,26 +5730,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Din desktop app's gratis prøveperiode er slut"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 e-mails pr. måned)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-mail pr. kvartal)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 e-mails pr. måned)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 e-mails pr. året)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 e-mails pr. året)"
-      ],
-      "(during your first month)": [
-        "(i løbet af din første måned)"
       ]
     },
     "Get started checklist instructions": {
@@ -9544,9 +9522,6 @@
       "Addresses": [
         "Adresser"
       ],
-      "Administrators": [
-        "Administratorer"
-      ],
       "ALL": [
         "ALLE"
       ],
@@ -10519,41 +10494,6 @@
       ],
       "VPN connections": [
         "VPN-forbindelser"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } og ${ additionalApp } produktopdateringer"
-      ],
-      "${ app } product updates": [
-        "${ app }-produktopdateringer"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } beta-annonceringer"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business nyhedsbrev"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } vigtige meddelelser"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME }-nyhedsbrev"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME }-tilbud og kampagner"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME }-produktannonceringer"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } brugerundersøgelse"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME }-velkomstmails"
-      ],
-      "Daily email notifications": [
-        "Daglige e-mailnotifikationer"
       ]
     },
     "Label in domain modal": {
@@ -16347,9 +16287,6 @@
       "Email privacy": [
         "E-mail-privatliv"
       ],
-      "Email subscriptions": [
-        "E-mail-abonnementer"
-      ],
       "Encryption and keys": [
         "Kryptering og nøgler"
       ],
@@ -17354,14 +17291,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Vælg de PGP-standardindstillinger, der bruges til at signere eller kryptere beskeder med brugere, som ikke benytter ${ BRAND_NAME }. Bemærk at Inline PGP fremtvinger almindelige tekstbeskeder."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Få de seneste nyheder om privatlivets fred, og hvad der foregår i ${ BRAND_NAME }-universet"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Deltag i undersøgelser for at forbedre ${ BRAND_NAME } tjenester"
       ]
     },
     "Tooltip prompt to trust keys": {

@@ -4052,11 +4052,6 @@
         "თქვენ გააუქმეთ გამოწერა ${ categories } ელფოსტებიდან და აღარ მიიღებთ ამ ტიპის ელფოსტას ${ BRAND_NAME }-სგან."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } და ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "გადამოწმების ელფოსტა გაგზავნილია ${ address }-თან"
@@ -5917,26 +5912,6 @@
       ],
       "Your desktop app free trial has ended": [
         "თქვენი კომპიუტერის აპის უფასო სატესტო ვერსია დასრულდა"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 ელფოსტა თვეში)"
-      ],
-      "(1 email per quarter)": [
-        "(1 ელფოსტა კვარტალში)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 ელფოსტა თვეში)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 ელფოსტა წელიწადში)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 ელფოსტა წელიწადში)"
-      ],
-      "(during your first month)": [
-        "(თქვენი პირველი თვისას)"
       ]
     },
     "Get started checklist instructions": {
@@ -9873,9 +9848,6 @@
       "Addresses": [
         "მისამართები"
       ],
-      "Administrators": [
-        "ადმინისტრატორები"
-      ],
       "ALL": [
         "ყველა"
       ],
@@ -10875,41 +10847,6 @@
       ],
       "VPN connections": [
         "VPN შეერთებები"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app }-ის და ${ additionalApp }-ის განახლებები"
-      ],
-      "${ app } product updates": [
-        "${ app }-ის პროდუქტის განახლებები"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME }-ის ბეტა განცხადებები"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME }-ის საქმიანი გაზეთი"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME }-ის მნიშვნელოვანი განცხადებები"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME }-ის სიახლეები"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME }-ის შეთავაზებები და ფასდაკლებები"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME }-ის პროდუქტის განცხადებები"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } მომხმარებლის მიმოხილვა"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME }-ის მისალმების ელფოსტები"
-      ],
-      "Daily email notifications": [
-        "ელფოსტის დღიური გაფრთხილებები"
       ]
     },
     "Label in domain modal": {
@@ -17257,9 +17194,6 @@
       "Email privacy": [
         "ელფოსტის კონფიდენციალობა"
       ],
-      "Email subscriptions": [
-        "ელფოსტის გამოწერები"
-      ],
       "Enable for all users": [
         "ჩართვა ყველა მომხმარებლისთვის"
       ],
@@ -18309,14 +18243,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "აირჩიეთ PGP-ის ნაგულისხმები პარამეტრები, რომლებიც არა-${ BRAND_NAME } PGP მომხმარებლებისთვის იქნება გამოყენებული. გაითვალისწინეთ, რომ ჩადგმული PGP-ის გამოყენების შემთხვევაში შეტყობინება უბრალო ტექსტური შეტყობინება იქნება."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "მიიღეთ უკანასკნელი კონფიდენციალობის სიახლეები და რა ხდება ${ BRAND_NAME }-ის სამყაროში"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "მიიღეთ მონაწილეობა გამოკითხვებში, რათა ${ BRAND_NAME }-ის სერვისები გააუმჯობესოთ"
       ]
     },
     "Tooltip prompt to trust keys": {

@@ -4021,11 +4021,6 @@
         "Du började prenumerera på e-post från kategorin ${ categoriesJsx } igen."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } och ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "E-postverifiering skickat till ${ address }"
@@ -5888,26 +5883,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Din gratis provperiod av din app för stationär dator har upphört"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 e-postmeddelande per månad)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-postmeddelande per kvartal)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 e-postmeddelanden per månad)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 e-postmeddelanden per år)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 e-postmeddelanden per år)"
-      ],
-      "(during your first month)": [
-        "(under din första månad)"
       ]
     },
     "Get started checklist instructions": {
@@ -9799,9 +9774,6 @@
       "Addresses": [
         "Adresser"
       ],
-      "Administrators": [
-        "Administratörer"
-      ],
       "ALL": [
         "ALLA"
       ],
@@ -10798,41 +10770,6 @@
       ],
       "VPN connections": [
         "VPN-anslutningar"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } och ${ additionalApp } produktuppdateringar"
-      ],
-      "${ app } product updates": [
-        "Produktuppdateringar för ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } meddelanden om beta-versioner"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business nyhetsbrev"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Viktiga meddelanden från ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } nyhetsbrev"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } erbjudanden och kampanjer"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } produktnyheter"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Användarundersökning för ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME }-välkomstmeddelande"
-      ],
-      "Daily email notifications": [
-        "Dagliga e-postaviseringar"
       ]
     },
     "Label in domain modal": {
@@ -15137,6 +15074,9 @@
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
       ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Självförvaring — bara du har åtkomst till dina plånboksnycklar"
+      ],
       "The only business solution that is:": [
         "Den enda företagslösningen som är:"
       ],
@@ -17159,9 +17099,6 @@
       "Email privacy": [
         "E-postintegritet"
       ],
-      "Email subscriptions": [
-        "E-postprenumerationer"
-      ],
       "Enable for all users": [
         "Aktivera för alla användare"
       ],
@@ -18220,14 +18157,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Välj standardinställningarna för PGP som används för att signera eller kryptera meddelanden med icke-${ BRAND_NAME } PGP-användare Observera att Inline PGP tvingar fram oformaterade textmeddelanden."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Få de senaste integritetsnyheterna och vad som händer i ${ BRAND_NAME }-universumet"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Delta i undersökningar för att förbättra ${ BRAND_NAME }-tjänsterna"
       ]
     },
     "Tooltip prompt to trust keys": {

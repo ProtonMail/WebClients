@@ -2605,11 +2605,6 @@
         "Ponovno ste se pretplatili na ${ categoriesJsx } e-poruke."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } i ${ lastCategoryTitle }"
-      ]
-    },
     "email_forwarding_2023: Action": {
       "Accept": [
         "Prihvati"
@@ -3481,26 +3476,6 @@
       ],
       "Very small": [
         "Jako malo"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 e-poruka mjesečno)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-poruka u tromjesečju)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 e-poruke mjesečno)"
-      ],
-      "(2-4 emails per year)": [
-        "(2 do 4 e-poruke godišnje)"
-      ],
-      "(4-6 emails per year)": [
-        "(4 do 6 e-pošta godišnje)"
-      ],
-      "(during your first month)": [
-        "(tijekom vašeg prvog mjeseca)"
       ]
     },
     "Get started checklist instructions": {
@@ -5833,11 +5808,6 @@
       ],
       "VPN connections": [
         "VPN veza"
-      ]
-    },
-    "Label for news": {
-      "Daily email notifications": [
-        "Dnevne obavijesti e-pošte"
       ]
     },
     "Label in domain modal": {
@@ -8252,9 +8222,6 @@
       ],
       "Email privacy": [
         "Privatnost e-pošte"
-      ],
-      "Email subscriptions": [
-        "Redovno slanje e-pošte"
       ],
       "Encryption and keys": [
         "Šifriranje i ključevi"

@@ -4071,11 +4071,6 @@
         "V-ați dezabonat de la mesajele pe tema ${ categories } și nu veți mai primi acest tip de mesaje de la ${ BRAND_NAME }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } și ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Mesajul de verificare a fost trimis la ${ address }"
@@ -5956,26 +5951,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Perioada de încercare a aplicației desktop s-a încheiat"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(un mesaj pe lună)"
-      ],
-      "(1 email per quarter)": [
-        "(un mesaj pe trimestru)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 mesaje pe lună)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 mesaje pe an)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 mesaje pe an)"
-      ],
-      "(during your first month)": [
-        "(pe durata primei luni)"
       ]
     },
     "Get started checklist instructions": {
@@ -9983,9 +9958,6 @@
       "Addresses": [
         "Adrese"
       ],
-      "Administrators": [
-        "Administratori"
-      ],
       "ALL": [
         "TOATE"
       ],
@@ -10988,41 +10960,6 @@
       ],
       "VPN connections": [
         "Conexiuni VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Actualizări produse ${ app } și ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Actualizări ale produsului ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Anunțuri beta ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Buletin informativ ${ BRAND_NAME } pentru afaceri"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Anunțuri importante ale ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Buletin informativ ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Oferte și promoții ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Anunțuri de produse ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Sondaj pentru utilizatorii ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Mesaje de bun venit ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Notificări zilnice pe e-mail"
       ]
     },
     "Label in domain modal": {
@@ -13848,6 +13785,12 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panou de administrare pentru a gestiona utilizatorii și abonamentul"
+      ],
+      "Advanced account protection": [
+        "Protecție avansată a contului"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcții avansate alias (furnizate de SimpleLogin)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -17519,9 +17462,6 @@
       "Email privacy": [
         "Confidențialitate mesaje"
       ],
-      "Email subscriptions": [
-        "Abonamente pe e-mail"
-      ],
       "Enable for all users": [
         "Activare pentru toți utilizatorii"
       ],
@@ -18574,14 +18514,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Selectați setările PGP implicite utilizate pentru a semna sau a cripta mesajele schimbate cu cei care nu folosesc ${ BRAND_NAME } dar folosesc PGP. Rețineți că PGP integrat forțează folosirea mesajelor cu text simplu."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Obțineți cele mai recente știri despre confidențialitate și ce se întâmplă în ecosistemul ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Participați la sondaje pentru a îmbunătăți serviciile ${ BRAND_NAME }"
       ]
     },
     "Tooltip prompt to trust keys": {
