@@ -50,6 +50,7 @@ import { getHas2024OfferCoupon, getPlanIDs, getPlanOffer } from '@proton/shared/
 import type { Api, Cycle, SubscriptionPlan, User, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { isFree } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -499,16 +500,18 @@ const Step1 = ({
 
     const boxWidth = { '--max-w-custom': planCards[audience].length === 4 && hasPlanSelector ? '74rem' : '57rem' };
 
-    const currencySelector = (
-        <CurrencySelector
-            currencies={availableCurrencies}
-            mode="select-two"
-            className="h-full ml-auto px-3 color-primary relative interactive-pseudo interactive--no-background"
-            currency={options.currency}
-            onSelect={handleChangeCurrency}
-            unstyled
-        />
-    );
+    const currencySelector =
+        // Paid users can't change the currency. Only new and free existing users can change it.
+        !model.session?.user || isFree(model.session.user) ? (
+            <CurrencySelector
+                currencies={availableCurrencies}
+                mode="select-two"
+                className="h-full ml-auto px-3 color-primary relative interactive-pseudo interactive--no-background"
+                currency={options.currency}
+                onSelect={handleChangeCurrency}
+                unstyled
+            />
+        ) : null;
 
     return (
         <Layout
