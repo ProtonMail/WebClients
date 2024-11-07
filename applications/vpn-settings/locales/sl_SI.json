@@ -3176,26 +3176,6 @@
         "Zelo majhno"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(eno sporočilo na mesec)"
-      ],
-      "(1 email per quarter)": [
-        "(eno sporočilo na četrtletje)"
-      ],
-      "(1-2 emails per month)": [
-        "(eno do dve sporočili na mesec)"
-      ],
-      "(2-4 emails per year)": [
-        "(dve do štiri sporočila na leto)"
-      ],
-      "(4-6 emails per year)": [
-        "(štiri do šest sporočil na leto)"
-      ],
-      "(during your first month)": [
-        "(med vašim prvim mesecem)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Že imate račun? ${ signIn }"
@@ -4967,9 +4947,6 @@
       "Addresses": [
         "Naslovi"
       ],
-      "Administrators": [
-        "Skrbniki"
-      ],
       "Allow": [
         "Dovoli"
       ],
@@ -5428,41 +5405,6 @@
       ],
       "VPN connections": [
         "VPN povezave"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Posodobitve storitev ${ app } in ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "${ app } posodobitve izdelkov"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Novosti beta za ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Glasilo ${ BRAND_NAME } for Business"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Pomembne novosti ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Glasilo ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Ponudbe in promocije ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Novosti o izdelkih ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Anketa za uporabnike ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Sporočila dobrodošlice ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Dnevna e-poštna obvestila"
       ]
     },
     "Label in domain modal": {
@@ -9542,14 +9484,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: varne prijave v vseh vaših napravah. Vključuje neomejeno število vzdevkov, skupno rabo, integriran 2FA in več"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Pridobite najnovejše novice o zasebnosti in o tem, kaj se dogaja v vesolju ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Sodelujte v anketah za izboljšanje storitev ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {

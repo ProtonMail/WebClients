@@ -3360,26 +3360,6 @@
         "Foarte mic"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(un mesaj pe lună)"
-      ],
-      "(1 email per quarter)": [
-        "(un mesaj pe trimestru)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 mesaje pe lună)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 mesaje pe an)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 mesaje pe an)"
-      ],
-      "(during your first month)": [
-        "(pe durata primei luni)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Aveți deja un cont? ${ signIn }"
@@ -5404,9 +5384,6 @@
       "Addresses": [
         "Adrese"
       ],
-      "Administrators": [
-        "Administratori"
-      ],
       "Allow": [
         "Adrese permise"
       ],
@@ -5907,41 +5884,6 @@
       ],
       "VPN connections": [
         "Conexiuni VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Actualizări produse ${ app } și ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Actualizări ale produsului ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Anunțuri beta ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Buletin informativ ${ BRAND_NAME } pentru afaceri"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Anunțuri importante ale ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Buletin informativ ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Oferte și promoții ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Anunțuri de produse ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Sondaj pentru utilizatorii ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Mesaje de bun venit ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Notificări zilnice pe e-mail"
       ]
     },
     "Label in domain modal": {
@@ -10784,14 +10726,6 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Obțineți cele mai recente știri despre confidențialitate și ce se întâmplă în ecosistemul ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Participați la sondaje pentru a îmbunătăți serviciile ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {

@@ -3337,26 +3337,6 @@
         "Très petit"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 message par mois)"
-      ],
-      "(1 email per quarter)": [
-        "(1 message par trimestre)"
-      ],
-      "(1-2 emails per month)": [
-        "(1 ou 2 messages par mois)"
-      ],
-      "(2-4 emails per year)": [
-        "(2 à 4 messages par an)"
-      ],
-      "(4-6 emails per year)": [
-        "(4 à 6 messages par an)"
-      ],
-      "(during your first month)": [
-        "(au cours de votre premier mois)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Vous avez déjà un compte ? ${ signIn }"
@@ -3694,6 +3674,9 @@
       "Affected user is on row": [
         "L'utilisateur affecté est sur la ligne.",
         "Les utilisateurs affectés sont sur les lignes."
+      ],
+      "All inactive members deleted": [
+        "Tous les membres inactifs ont été supprimés."
       ],
       "All members have been added.": [
         "Tous les membres ont été ajoutés."
@@ -4721,6 +4704,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci vous permettra d'utiliser PayPal pour payer votre abonnement ${ BRAND_NAME }. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Ceci supprimera définitivement les données et toutes les adresses électroniques associées à ces utilisateurs."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Ceci supprimera définitivement les données et toutes les adresses e-mail associées à cet utilisateur."
       ],
@@ -5340,9 +5326,6 @@
       "Addresses": [
         "Adresses"
       ],
-      "Administrators": [
-        "Administrateurs"
-      ],
       "Allow": [
         "Adresses autorisées"
       ],
@@ -5840,41 +5823,6 @@
       ],
       "VPN connections": [
         "Connexions VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Mises à jour des produits ${ app } et ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Mises à jour du produit ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Actualités des versions bêta ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter ${ BRAND_NAME } for Business"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Annonces importantes de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Newsletter ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Offres et promotions ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Actualités des produits ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Enquête utilisateurs de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Messages de bienvenue ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Notifications quotidiennes par e-mail"
       ]
     },
     "Label in domain modal": {
@@ -7178,6 +7126,80 @@
       ],
       "Support for ${ n } custom email domains": [
         "Prise en charge pour ${ n } domaines de messagerie personnalisés"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Mises à jour des produits ${ app } et ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Nouveautés sur les produits ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Newsletter ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Annonces importantes de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Newsletter ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Offres et promotions ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Actualités des produits ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Enquête utilisateurs ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Messages de bienvenue ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 message par mois"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 message par mois. Recevez les actualités sur la protection de la vie privée et découvrez ce qui se passe dans l'écosystème ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 message par trimestre"
+      ],
+      "1-2 emails per month": [
+        "1 ou 2 messages par mois"
+      ],
+      "2-4 emails per year": [
+        "2 à 4 messages par an"
+      ],
+      "4-6 emails per year": [
+        "4 à 6 messages par an"
+      ],
+      "Application notifications": [
+        "Notification des applications"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Les notifications importants concernant votre compte seront toujours envoyées."
+      ],
+      "Daily email notifications": [
+        "Notifications quotidiennes par e-mail"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "En désactivant cette option, vous ne recevrez plus de notifications dans les applications ${ BRAND_NAME }."
+      ],
+      "During your first month": [
+        "Au cours de votre premier mois"
+      ],
+      "Email subscriptions": [
+        "Newsletters"
+      ],
+      "In-app notifications": [
+        "Notifications dans l'application"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participez aux enquêtes pour améliorer les services ${ BRAND_NAME }."
+      ],
+      "Product updates": [
+        "Nouveautés produits"
       ]
     },
     "Notification": {
@@ -8720,6 +8742,14 @@
         "${ n } membre a sollicité votre aide pour se connecter.",
         "${ n } membres ont sollicité votre aide pour se connecter."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } utilisateur a rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez vérifier son compte :",
+        "${ n } utilisateurs ont rejoint votre organisation par le biais de votre fournisseur d'identité. Veuillez vérifier leurs comptes :"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } utilisateur est inactif. Vous pouvez supprimer cet utilisateur de votre organisation en toute sécurité.",
+        "${ n } utilisateurs sont inactifs. Vous pouvez supprimer ces utilisateurs de votre organisation en toute sécurité."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } membre a sollicité votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO).",
         "${ n } membres ont sollicité votre aide pour se connecter à leur compte ${ BRAND_NAME } avec l'authentification unique (SSO)."
@@ -8768,6 +8798,10 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Contactez votre administrateur si le problème persiste."
+      ],
+      "Delete ${ n } inactive user?": [
+        "Voulez-vous supprimer ${ n } utilisateur inactif ?",
+        "Voulez-vous supprimer ${ n } utilisateurs inactifs ?"
       ],
       "Delete ${ n } user": [
         "Supprimer ${ n } utilisateur",
@@ -10630,14 +10664,6 @@
         "En attente de l’acceptation de l’invitation par l’utilisateur"
       ]
     },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Recevez les actualités sur la protection de la vie privée et découvrez ce qui se passe dans l'écosystème ${ BRAND_NAME }."
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Participez aux enquêtes pour améliorer les services ${ BRAND_NAME }."
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "version stable"
@@ -10647,6 +10673,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Accès administrateur en attente :** Nous avons envoyé une demande à cet utilisateur pour permettre à un administrateur de gérer son compte."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
       ],
@@ -10658,6 +10687,9 @@
       ],
       "Cancel request": [
         "Annuler la demande"
+      ],
+      "Cancel request to access user data?": [
+        "Voulez-vous annuler la demande d'accès aux données de l'utilisateur ?"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "L'accès administrateur n'a pas pu être activé pour ${ n } utilisateur car ses clés de chiffrement ont été entre-temps mises à jour :",
@@ -10698,6 +10730,9 @@
       ],
       "The user must have an address to request data access": [
         "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Ceci annulera la demande en attente pour l'accès en tant qu'administrateur aux données de l'utilisateur ou pour la réinitialisation du mot de passe."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Ceci révoquera l'autorisation administrateur pour gérer le compte de cet utilisateur."
@@ -10790,6 +10825,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés."
+      ],
+      "Inactive": [
+        "Inactive"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "L'invitation a été envoyée. La réponse du membre invité est attendue."
