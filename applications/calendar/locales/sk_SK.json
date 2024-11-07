@@ -728,6 +728,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Navýšiť na ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Upgradovať na Mail Plus"
+      ],
       "Upload picture": [
         "Nahrať obrázok"
       ],
@@ -1121,13 +1124,13 @@
         "Bezpečné prihlásenie na všetkých vašich zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, monitorovanie Dark Webu a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou šifrovania end-to-end. Súčasťou sú 15 emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
@@ -2642,6 +2645,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Farebne označte udalosti, aby ste si ľahšie zorganizovali deň, sledovali čas a určovali priority úloh."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Vytvorte stretnutie v službe Zoom a jedným kliknutím pridajte podrobnosti o pripojení k udalosti."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrovanie kontaktov… Táto akcia môže trvať niekoľko minút. Akonáhle bude proces ukončený, budete si môcť stiahnuť súbor s vašimi exportovanými kontaktmi."
       ],
@@ -3134,6 +3140,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Nepodarilo sa získať pôvodný výskyt v sérii"
+      ],
+      "Failed to load oauth modal.": [
+        "Nepodarilo sa načítať oauth modal."
       ],
       "First name is too long": [
         "Meno je príliš dlhé"
@@ -8881,6 +8890,14 @@
         "Teraz môžete zbaliť navigačný panel."
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Prihlásiť sa"
+      ],
+      "Sign in to your organization": [
+        "Prihláste sa do svojej organizácie"
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Rušenie vášho predplatného, počkajte prosím"
@@ -9995,6 +10012,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Získať ${ appName[APP_NAME] } aplikácie"
       ],
+      "Get Zooming faster": [
+        "Získajte rýchlejší Zoom"
+      ],
       "Gift": [
         "Dar"
       ],
@@ -10909,6 +10929,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Pridať Zoom míting"
+      ],
+      "Adding conferencing details": [
+        "Pridávanie podrobností o konferencii"
+      ],
+      "Loading Zoom configuration": [
+        "Načítavanie nastavení Zoom"
       ]
     },
     "Zoom Meeting": {

@@ -677,6 +677,9 @@
       "Today": [
         "Σήμερα"
       ],
+      "Toggle Contacts app": [
+        "Εναλλαγή στο πρόγραμμα Επαφών"
+      ],
       "Toggle settings": [
         "Εναλλαγή ρυθμίσεων"
       ],
@@ -718,6 +721,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade to Mail Plus": [
+        "Αναβαθμίστε στο Mail Plus"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -893,6 +899,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Φεύγοντας τώρα, θα χάσετε την εκδήλωση σας."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Παρακαλούμε μην κλείσετε αυτήν την καρτέλα. Ορισμένα αιτήματα εξακολουθούν να υποβάλλονται σε επεξεργασία στο παρασκήνιο."
       ]
     },
     "Apps dropdown": {
@@ -1105,6 +1114,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονική διεύθυνση, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
@@ -1326,6 +1339,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Επεξεργασία (προβολή, δημιουργία ή τροποποίηση λεπτομερειών εκδήλωσης)"
+      ],
       "View (see all event details)": [
         "Προβολή (δείτε όλες τις λεπτομέρειες)"
       ]
@@ -2600,6 +2616,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Χρωματική κωδικοποίηση συμβάντων για ευκολότερη οργάνωση της ημέρας σας, παρακολούθηση του χρόνου σας και ιεράρχηση των εργασιών."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Δημιουργήστε μια σύσκεψη Zoom και προσθέστε λεπτομέρειες συμμετοχής στην εκδήλωσή σας με ένα κλικ."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Αποκρυπτογράφηση επαφών… Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, θα μπορείτε να κάνετε λήψη του αρχείου με όλες τις επαφές που έχουν εξαχθεί."
       ],
@@ -2633,8 +2652,14 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Ορίστε μια μέθοδο ανάκτησης, για να αποτρέψετε την απώλεια πρόσβασης στον λογαριασμό σας."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Αυτό μπορεί να διαρκέσει λίγα λεπτά. Εν τω μεταξύ, μπορείτε να συνεχίσετε να χρησιμοποιείτε το ${ CALENDAR_APP_NAME } ως συνήθως."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, ορίστε μια φράση ανάκτησης."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Για εισαγωγή μέσω αρχείου CSV και VCF, βεβαιωθείτε ότι το αρχείο δεν υπερβαίνει ${ MAX_IMPORT_FILE_SIZE_STRING } ή τις ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε χωρίστε το σε μικρότερα αρχεία. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Για να εισαγάγετε τις επαφές σας από την Google ή το Outlook, ${ easySwitchLink }."
@@ -3075,6 +3100,9 @@
       "Failed to get original occurrence in series": [
         "Αποτυχία λήψης αρχικού περιστατικού στη σειρά"
       ],
+      "Failed to load oauth modal.": [
+        "Αποτυχία φόρτωσης του παράθυρου OAuth."
+      ],
       "First name is too long": [
         "Το όνομα είναι πολύ μεγάλο"
       ],
@@ -3296,6 +3324,9 @@
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να είναι κακογραμμένη"
       ],
+      "The amount due has changed. Please try again.": [
+        "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
       ],
@@ -3377,6 +3408,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Έχετε φτάσει τον μέγιστο αριθμό ημερολογίων."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Έχετε συμπληρώσει το νούμερο ορίου επαφών για τον λογαριασμό σας"
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
@@ -3593,6 +3627,11 @@
       ],
       "You need an active personal calendar to import events": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Το εμφανιζόμενο όνομα δεν μπορεί να είναι κενό"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4586,6 +4625,10 @@
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
       ],
+      "Deleting event...": [
+        "Διαγραφή εκδήλωσης...",
+        "Διαγραφή εκδηλώσεων..."
+      ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
@@ -4682,6 +4725,9 @@
       ],
       "High Priority": [
         "Υψηλή προτεραιότητα"
+      ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
@@ -4861,6 +4907,9 @@
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Οι άλλοι χρήστες εντός του οργανισμού σας θα βλέπουν τις απασχολημένες υποδοχές σας. Δεν κοινοποιούνται λεπτομέρειες συμβάντος."
       ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
+      ],
       "password": [
         "κωδικός πρόσβασης"
       ],
@@ -4939,6 +4988,10 @@
       ],
       "Removed participants will be notified.": [
         "Οι συμμετέχοντες που αφαιρέθηκαν θα ειδοποιηθούν."
+      ],
+      "Saving event...": [
+        "Αποθήκευση εκδήλωσης...",
+        "Αποθήκευση εκδηλώσεων..."
       ],
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
@@ -5487,6 +5540,9 @@
       "All-day event notifications": [
         "Ειδοποιήσεις ολοήμερων εκδηλώσεων"
       ],
+      "Anderson": [
+        "Anderson"
+      ],
       "App password": [
         "Κωδικός πρόσβασης εφαρμογής"
       ],
@@ -5812,6 +5868,9 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Γενεύη"
+      ],
       "Secondary": [
         "Δευτερεύων"
       ],
@@ -5847,6 +5906,9 @@
       ],
       "Theme": [
         "Θέμα"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Time zone": [
         "Ζώνη ώρας"
@@ -7096,6 +7158,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Επιλογή προβολής εισερχομένων μην ιδιωτικού χρήστη όπως θα έκανε ο χρήστης, συμπεριλαμβανομένου του πλήρους μηνύματος και των στοιχείων επικοινωνίας"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Εργαλείο διαχείρισης οργανισμού που επιτρέπει στους διαχειριστές να προσθέτουν και να καταργούν χρήστες, να διαχειρίζονται την πρόσβασή τους σε υπηρεσίες ${ BRAND_NAME } και να εκτελούν άλλες εργασίες."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Η ισχυρή υποδομή μας διασφαλίζει ότι θα μπορείτε να έχετε πρόσβαση στον λογαριασμό σας όταν τον χρειάζεστε"
       ],
@@ -7436,6 +7501,11 @@
         "Για να ολοκληρωθεί η διαδικασία της εισαγωγής πρέπει να επιλέξετε όλα τα απαραίτητα στοιχεία, όπως φαίνεται στο GIF."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Επιλέξτε σε τι μπορεί να έχει πρόσβαση το ${ BRAND_NAME }: δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου και τις ρυθμίσεις σας, προβάλετε και κατεβάστε τις επαφές σας, προβάλετε και κατεβάστε όλες τις ατζέντες στις οποίες έχετε πρόσβαση από το Google Calendar."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Καλώς ήρθατε στο ${ appName }"
@@ -7628,6 +7698,14 @@
         "Νέα πιστωτική/χρεωστική κάρτα"
       ]
     },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Χρησιμοποιήστε το όνομα της εταιρείας"
+      ],
+      "Use personal name": [
+        "Χρησιμοποιήστε το προσωπικό όνομα"
+      ]
+    },
     "Payments": {
       "Billing Country": [
         "Χώρα χρέωσης"
@@ -7705,6 +7783,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Η κάρτα σας απορρίφθηκε. Παρακαλώ δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Επιβεβαιώνοντας αυτήν την πληρωμή, εξουσιοδοτείτε το ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να δώσουν εντολή στην τράπεζά σας να χρεώσει τον λογαριασμό σας και στην τράπεζά σας να χρεώσει ανάλογα τον λογαριασμό σας. Μπορείτε να λάβετε επιστροφή χρημάτων εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας."
+      ],
+      "Street address, postal code, and city": [
+        "Οδός, ταχυδρομικός κώδικας και πόλη"
       ]
     },
     "PGP key encryption warning": {
@@ -7936,6 +8022,11 @@
     "Safety review": {
       "Review your account safety": [
         "Ελέγξτε την ασφάλεια του λογαριασμού σας"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Η είσοδος δεν ολοκληρώθηκε με επιτυχία."
       ]
     },
     "Security Center": {
@@ -8484,6 +8575,17 @@
         "Τώρα μπορείτε να συμπτύξετε τη γραμμή περιήγησης."
       ]
     },
+    "sso": {
+      "Sign in": [
+        "Σύνδεση"
+      ],
+      "Sign in to your organization": [
+        "Συνδεθήτε στον οργανισμό σας"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
+      ]
+    },
     "State": {
       "Canceling your subscription, please wait": [
         "Η συνδρομή σας ακυρώνεται, παρακαλούμε περιμένετε"
@@ -8640,6 +8742,9 @@
     "Subscription change warning": {
       "Got it": [
         "Το κατάλαβα"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Απλώς συνδεθείτε στον λογαριασμό σας στο Apple App Store και, στη συνέχεια, επιλέξτε ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Απλώς συνδεθείτε στον λογαριασμό σας στο Play Store και, στη συνέχεια, πατήστε ${ subscriptions }."
@@ -9786,6 +9891,9 @@
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
+      "We're setting up calendar search": [
+        "Ρυθμίζουμε την αναζήτηση ημερολογίου"
+      ],
       "We've locked some calendars to protect your data": [
         "Έχουμε κλειδώσει κάποια από τα ημερολόγιά σας για να προστατεύσουμε τα δεδομένα σας"
       ],
@@ -10372,6 +10480,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Προσθήκη συνεδρίασης Zoom"
+      ],
+      "Adding conferencing details": [
+        "Προσθήκη λεπτομερειών διάσκεψης"
+      ],
+      "Loading Zoom configuration": [
+        "Φόρτωση παραμέτρων Zoom"
       ]
     },
     "Zoom Meeting": {

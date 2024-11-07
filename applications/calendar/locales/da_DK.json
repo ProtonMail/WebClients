@@ -719,6 +719,9 @@
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Opgrader til ${ BRAND_NAME } Unlimited"
       ],
+      "Upgrade to Mail Plus": [
+        "Opgrader til Mail Plus"
+      ],
       "Upload picture": [
         "Upload billede"
       ],
@@ -893,6 +896,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Ved at forlade nu, mister du din begivenhed."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Luk ikke denne fane. Nogle anmodninger behandles stadig i baggrunden."
       ]
     },
     "Apps dropdown": {
@@ -1326,6 +1332,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Rediger (vis, opret og rediger begivenhedsoplysninger)"
+      ],
       "View (see all event details)": [
         "Vis (se alle detaljer om begivenheden)"
       ]
@@ -2553,6 +2562,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Farvekod begivenheder for at gøre det lettere at organisere din dag, holde styr på din tid og prioritere opgaver."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Opret et Zoom-møde, og tilføj deltageroplysninger til din begivenhed med et enkelt klik."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
       ],
@@ -2585,6 +2597,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Indstil en gendannelsesmetode for at forhindre, at du mister adgang til din konto."
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Det kan tage et par minutter. I mellemtiden kan du fortsætte med at bruge ${ CALENDAR_APP_NAME } som normalt."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Opnå størst mulig sikkerhed for din konto ved at indstille en gendannelsessætning."
@@ -3027,6 +3042,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Kunne ikke hente original forekomst i serie"
+      ],
+      "Failed to load oauth modal.": [
+        "Kunne ikke indlæse oauth modal."
       ],
       "First name is too long": [
         "Fornavn er for langt"
@@ -4518,6 +4536,10 @@
       "Dedicated servers": [
         "Dedikerede servere"
       ],
+      "Deleting event...": [
+        "Sletter begivenhed...",
+        "Sletter begivenheder..."
+      ],
       "Discard changes?": [
         "Kassér ændringer?"
       ],
@@ -4871,6 +4893,10 @@
       ],
       "Removed participants will be notified.": [
         "Fjernede deltagere vil blive underrettet."
+      ],
+      "Saving event...": [
+        "Gemmer begivenhed...",
+        "Gemmer begivenheder..."
       ],
       "Select a service provider to start": [
         "Vælg en tjenesteudbyder for at starte"
@@ -9358,6 +9384,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "Hent ${ appName[APP_NAME] } apps"
       ],
+      "Get Zooming faster": [
+        "Kom hurtigt videre til Zoom"
+      ],
       "Gift": [
         "Gave"
       ],
@@ -9598,6 +9627,9 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
+      ],
+      "We're setting up calendar search": [
+        "Vi konfigurere kalender-søgning"
       ],
       "We've locked some calendars to protect your data": [
         "Vi har låst nogle kalendere for at beskytte dine data"
@@ -10180,6 +10212,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Tilføj Zoom-møde"
+      ],
+      "Adding conferencing details": [
+        "Tilføjer mødedetaljer"
+      ],
+      "Loading Zoom configuration": [
+        "Indlæser Zoom-konfiguration"
       ]
     },
     "Zoom Meeting": {
