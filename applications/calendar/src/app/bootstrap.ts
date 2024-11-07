@@ -1,6 +1,7 @@
 import {
     addressesThunk,
     initEvent,
+    organizationThunk,
     serverEvent,
     userSettingsThunk,
     userThunk,
@@ -129,6 +130,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const loadPreloadButIgnored = () => {
             loadAllowedTimeZones(silentApi).catch(noop);
             dispatch(holidaysDirectoryThunk()).catch(noop);
+            dispatch(organizationThunk()).catch(noop);
         };
 
         const userPromise = loadUser();
