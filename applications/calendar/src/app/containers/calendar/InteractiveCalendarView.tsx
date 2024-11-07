@@ -154,7 +154,13 @@ import getDeleteEventActions from './eventActions/getDeleteEventActions';
 import getSaveEventActions from './eventActions/getSaveEventActions';
 import { getSendIcsAction } from './eventActions/inviteActions';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
-import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getUpdatedDateTime } from './eventHelper';
+import {
+    deleteConferenceData,
+    getCreateTemporaryEvent,
+    getEditTemporaryEvent,
+    getTemporaryEvent,
+    getUpdatedDateTime,
+} from './eventHelper';
 import getComponentFromCalendarEventUnencryptedPart from './eventStore/cache/getComponentFromCalendarEventUnencryptedPart';
 import { getIsCalendarEvent } from './eventStore/cache/helper';
 import {
@@ -2029,21 +2035,10 @@ const InteractiveCalendarView = ({
                                               delete tmpData.rest['recurrence-id'];
                                           }
 
-                                          // Zoom data should be removed when duplicating an event
-                                          if (tmpData.rest['x-pm-conference-id']) {
-                                              delete tmpData.rest['x-pm-conference-id'];
-                                          }
-
-                                          if (tmpData.rest['x-pm-conference-url']) {
-                                              delete tmpData.rest['x-pm-conference-url'];
-                                          }
-
                                           delete tmpData.uid;
-                                          delete tmpData.conferenceId;
-                                          delete tmpData.conferenceUrl;
-                                          delete tmpData.conferencePasscode;
-                                          delete tmpData.conferenceCreator;
-                                          delete tmpData.conferenceHost;
+
+                                          // Zoom data should be removed when duplicating an event
+                                          deleteConferenceData(tmpData);
 
                                           tmpData.attendees.forEach((attendee) => {
                                               attendee.partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION;

@@ -15,8 +15,8 @@ export const RowVideoConference = ({ model, setModel }: Props) => {
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
     const hasAccessToZoomIntegration =
         isZoomIntegrationEnabled &&
-        // We want to upsell free users or only display the feature for mail subscribers
-        (user.isFree || (user.hasPaidMail && organization?.Settings.VideoConferencingEnabled));
+        // We want to upsell free Mail users or only display the feature for mail subscribers
+        (!user.hasPaidMail || (user.hasPaidMail && organization?.Settings.VideoConferencingEnabled));
 
     if (!hasAccessToZoomIntegration) {
         return null;
