@@ -11,6 +11,7 @@ export const SEPARATOR_PROTON_EVENTS =
 
 export interface BaseMeetingUrls {
     service: VIDEO_CONF_SERVICES;
+    meetingCreator?: string;
     meetingUrl?: string;
     meetingId?: string;
     joiningInstructions?: string;
