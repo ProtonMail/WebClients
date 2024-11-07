@@ -271,10 +271,6 @@
       "Import": [
         "Tuo"
       ],
-      "Import alias": [
-        "Tuo alias",
-        "Tuo aliakset"
-      ],
       "Importing": [
         "Tuodaan"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Monivalinta"
       ],
+      "Next": [
+        "Seuraava"
+      ],
       "No expired links": [
         "Erääntyneitä linkkejä ei ole"
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Yritä uudelleen"
+      ],
+      "Previous": [
+        "Edellinen"
       ],
       "Refresh the page": [
         "Päivitä sivu"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Kirjaudu ulos"
+      ],
+      "Skip": [
+        "Ohita"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Joku jakoi sinulle kohteen ${ PASS_APP_NAME }ista."
@@ -1922,10 +1927,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuva alias. Haluaisitko tuoda sen?",
-        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuvaa aliasta. Haluaisitko tuoda ne?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Sinulla on ${ daysRemaining } päivä jäljellä kokeilla näitä ja muita premium-ominaisuuksia.",
         "Sinulla on ${ daysRemaining } päivää jäljellä kokeilla näitä ja muita premium-ominaisuuksia."
@@ -2284,6 +2285,9 @@
       "Hide password": [
         "Piilota salasana"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliakset"
+      ],
       "https://example.com": [
         "https://example.com"
       ],
@@ -2319,6 +2323,9 @@
       ],
       "Instagram handle": [
         "Instagram-tunnus"
+      ],
+      "Integrated 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
       ],
       "Invitations": [
         "Kutsut"
@@ -3035,9 +3042,6 @@
       ],
       "Import to vault(s)": [
         "Tuo holviin/holveihin"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Tuo aliaksesi SimpleLoginista"
       ],
       "Import your data": [
         "Tuo tietosi"

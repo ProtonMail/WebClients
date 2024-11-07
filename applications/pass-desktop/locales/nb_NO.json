@@ -271,10 +271,6 @@
       "Import": [
         "Importer"
       ],
-      "Import alias": [
-        "Importer alias",
-        "Importer aliaser"
-      ],
       "Importing": [
         "Importerer"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Flere valg"
       ],
+      "Next": [
+        "Neste"
+      ],
       "No expired links": [
         "Ingen utløpte koblinger"
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Prøv igjen"
+      ],
+      "Previous": [
+        "Forrige"
       ],
       "Refresh the page": [
         "Oppdater siden"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Logg av"
+      ],
+      "Skip": [
+        "Hopp over"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Noen har delt et element med deg på ${ PASS_APP_NAME }."
@@ -1925,10 +1930,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke endre postboksene for dette aliaset."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere det?",
-        "Du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere dem?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Du har ${ daysRemaining } dag igjen til å prøve disse og andre premiumfunksjoner.",
         "Du har ${ daysRemaining } dager igjen til å prøve disse og andre premiumfunksjoner."
@@ -3041,9 +3042,6 @@
       ],
       "Import to vault(s)": [
         "Importer til hvelv"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importer aliasene fra SimpleLogin"
       ],
       "Import your data": [
         "Importer dine data"

@@ -271,9 +271,6 @@
       "Import": [
         "Impor"
       ],
-      "Import alias": [
-        "Impor alias"
-      ],
       "Importing": [
         "Mengimpor"
       ],
@@ -358,6 +355,9 @@
       "Multiple select": [
         "Pilih banyak berkas"
       ],
+      "Next": [
+        "Selanjutnya"
+      ],
       "No expired links": [
         "Tidak ada tautan yang kedaluwarsa"
       ],
@@ -384,6 +384,9 @@
       ],
       "Please retry": [
         "Silakan coba lagi"
+      ],
+      "Previous": [
+        "Sebelumnya"
       ],
       "Refresh the page": [
         "Muat ulang halaman"
@@ -499,6 +502,9 @@
       "Sign out": [
         "Keluar"
       ],
+      "Skip": [
+        "Lewati"
+      ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Seseorang telah membagikan item kepada Anda di ${ PASS_APP_NAME }"
       ],
@@ -613,7 +619,7 @@
     },
     "bf2024: Label": {
       "Get the deal": [
-        "Dapatkan penawaran"
+        "Dapatkan penawaran ini"
       ]
     },
     "bf2024: Title": {
@@ -1904,9 +1910,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun belum ada pada ${ PASS_APP_NAME }. Apakah Anda ingin mengimpornya?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
       ],
@@ -3008,9 +3011,6 @@
       ],
       "Import to vault(s)": [
         "Impor ke brankas"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Impor alias Anda dari SimpleLogin"
       ],
       "Import your data": [
         "Impor data Anda"
