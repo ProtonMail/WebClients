@@ -43,6 +43,7 @@ export enum FeatureCode {
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
     CalendarEncryptedSearch = 'CalendarEncryptedSearch',
     CalendarEventColorSpotlight = 'CalendarEventColorSpotlight',
+    CalendarVideoConferenceSpotlight = 'CalendarVideoConferenceSpotlight',
     CleanUTMTrackers = 'CleanUTMTrackers',
     ComposerAssistantSpotlight = 'ComposerAssistantSpotlight',
     ComposerAssistantInitialSetup = 'ComposerAssistantInitialSetup',
