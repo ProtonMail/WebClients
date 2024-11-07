@@ -1,5 +1,4 @@
 const DESIGN_SYSTEM_ICONS_SVG = 'sprite-icons.svg|mime-icons.svg|file-icons.svg';
-const DESIGN_SYSTEM_CSS_SVG = 'sprite-for-css-only.svg';
 
 module.exports = () => [
     {
@@ -29,14 +28,7 @@ module.exports = () => [
             },
             {
                 test: /\.(bmp|png|jpg|jpeg|gif|svg)$/,
-                type: 'asset',
-                exclude: new RegExp(`${DESIGN_SYSTEM_CSS_SVG}`),
-                parser: {
-                    dataUrlCondition: (source, { filename }) => {
-                        // Don't inline the asset into a data url if the filename includes favicon, or if the size is greater than 4 KB
-                        return filename.includes('favicon') ? false : Buffer.byteLength(source) <= 4 * 1024; // 4KB;
-                    },
-                },
+                type: 'asset/resource',
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf|mp4|webm|pdf|csv)$/,
