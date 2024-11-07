@@ -1,10 +1,9 @@
-import { type FC, type MouseEvent, useCallback, useEffect, useState } from 'react';
+import { type FC, type MouseEvent, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { useModalState } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { AliasDeleteConfirmModal } from '@proton/pass/components/Item/Alias/AliasDeleteConfirm.modal';
@@ -25,13 +24,11 @@ import { selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
-import noop from '@proton/utils/noop';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const { navigate } = useNavigation();
     const { onboardingCheck, onboardingAcknowledge } = usePassCore();
     const canToggleStatus = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
-    const [deleteModalState, openDeleteModal] = useModalState();
 
     const { revision, vault, handleHistoryClick } = itemViewProps;
     const { createTime, modifyTime, revision: revisionNumber, optimistic, itemId } = revision;
@@ -45,7 +42,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const relatedLoginName = relatedLogin?.data.metadata.name ?? '';
 
     const [confirmTrash, setConfirmTrash] = useState(false);
-    const [canDisable, setCanDisable] = useState(aliasEnabled);
+    const [confirmDelete, setConfirmDelete] = useState(false);
 
     const toggleStatus = useRequest(aliasSyncStatusToggle, {});
 
@@ -59,13 +56,18 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
         });
     };
 
-    const handleMoveToTrashClick = useCallback(() => {
+    const handleMoveToTrashClick = useCallback(async () => {
+        const shouldWarnOnTrash = async () =>
+            canToggleStatus &&
+            aliasEnabled &&
+            Boolean(await Promise.resolve(onboardingCheck?.(OnboardingMessage.ALIAS_TRASH_CONFIRM)));
+
         /* Show trash confirmation modal if:
         - alias is enabled and user didn't previously click "Don't remind me again"
         - or the alias is currently used in a login item */
-        if (canDisable || relatedLogin) setConfirmTrash(true);
+        if (relatedLogin || (await shouldWarnOnTrash())) setConfirmTrash(true);
         else itemViewProps.handleMoveToTrashClick();
-    }, [relatedLogin, itemViewProps.handleMoveToTrashClick, canDisable]);
+    }, [aliasEnabled, relatedLogin, canToggleStatus, itemViewProps.handleMoveToTrashClick]);
 
     const handleConfirmDisableClick = (noRemind: boolean) => {
         setConfirmTrash(false);
@@ -78,12 +80,6 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
         itemViewProps.handleMoveToTrashClick();
         if (noRemind) void onboardingAcknowledge?.(OnboardingMessage.ALIAS_TRASH_CONFIRM);
     };
-
-    useEffect(() => {
-        Promise.resolve(canToggleStatus && aliasEnabled && onboardingCheck?.(OnboardingMessage.ALIAS_TRASH_CONFIRM))
-            .then((show) => setCanDisable(Boolean(show)))
-            .catch(noop);
-    }, [aliasEnabled, canToggleStatus]);
 
     return (
         <ItemViewPanel
@@ -102,7 +98,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                   }
                 : {})}
             handleMoveToTrashClick={handleMoveToTrashClick}
-            handleDeleteClick={() => openDeleteModal(true)}
+            handleDeleteClick={() => setConfirmDelete(true)}
         >
             <AliasContent
                 revision={revision}
@@ -127,7 +123,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
 
             {confirmTrash && (
                 <AliasTrashConfirmModal
-                    canDisable={canDisable}
+                    canDisable={aliasEnabled}
                     onClose={() => setConfirmTrash(false)}
                     onDisable={handleConfirmDisableClick}
                     onTrash={handleConfirmTrashClick}
@@ -138,11 +134,11 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                 />
             )}
 
-            {deleteModalState.open && (
+            {confirmDelete && (
                 <AliasDeleteConfirmModal
                     aliasEmail={revision.aliasEmail!}
-                    canDisable={canDisable}
-                    onClose={deleteModalState.onClose}
+                    canDisable={aliasEnabled}
+                    onClose={() => setConfirmDelete(false)}
                     onDisable={handleConfirmDisableClick}
                     onDelete={itemViewProps.handleDeleteClick}
                     warning={
