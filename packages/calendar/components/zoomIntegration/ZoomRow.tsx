@@ -168,7 +168,10 @@ export const ZoomRow = ({ model, setModel }: Props) => {
     return (
         <>
             {zoomUpsellModal.render && <ZoomUpsellModal modalProps={zoomUpsellModal.modalProps} />}
-            <IconRow icon={getIcon(processState)} labelClassName={clsx(processState === 'loading' && 'my-auto p-0')}>
+            <IconRow
+                icon={getIcon(processState)}
+                labelClassName={clsx((processState === 'loadingConfig' || processState === 'loading') && 'my-auto p-0')}
+            >
                 {(processState === 'connected' ||
                     processState === 'disconnected' ||
                     processState === 'meeting-deleted') && (
