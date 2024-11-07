@@ -69,6 +69,7 @@ export interface Props {
     render?: Render;
     testflight?: 'vpn';
     externalRedirect?: string;
+    onPreSubmit?: () => Promise<void>;
 }
 
 const getDefaultUsername = (searchParams?: URLSearchParams) => {
@@ -97,6 +98,7 @@ const LoginContainer = ({
     render = defaultRender,
     testflight,
     externalRedirect,
+    onPreSubmit,
 }: Props) => {
     const { state } = useLocation<
         | {
@@ -268,6 +270,7 @@ const LoginContainer = ({
                                     }}
                                     onSubmit={async (data) => {
                                         try {
+                                            await onPreSubmit?.();
                                             const validateFlow = createFlow();
                                             const result = await handleNextLogin({
                                                 api: silentApi,

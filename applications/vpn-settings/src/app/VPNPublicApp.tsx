@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import type * as H from 'history';
 
-import { publicApp } from '@proton/account/bootstrap';
+import { loadLocalesPublicApp } from '@proton/account/bootstrap';
 import { StandardLoadErrorPage } from '@proton/components';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { APPS } from '@proton/shared/lib/constants';
@@ -16,16 +16,18 @@ interface Props {
     children: ReactNode;
     loader: ReactNode;
     pathLocale: string;
+    onPreload: () => void;
 }
 
-const VPNPublicApp = ({ pathLocale, loader, location, locales = {}, children }: Props) => {
+const VPNPublicApp = ({ pathLocale, loader, location, locales = {}, children, onPreload }: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const run = async () => {
+            onPreload();
             const searchParams = new URLSearchParams(location.search);
-            await publicApp({ app: APPS.PROTONVPN_SETTINGS, pathLocale, searchParams, locales });
+            await loadLocalesPublicApp({ app: APPS.PROTONVPN_SETTINGS, pathLocale, searchParams, locales });
             setLoading(false);
         };
 

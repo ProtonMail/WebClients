@@ -12,6 +12,7 @@ import AccountSignupInviteContainer from 'proton-account/src/app/signup/SignupIn
 import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/SingleSignupContainer';
 import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
 
+import { loadCrypto } from '@proton/account/bootstrap';
 import type { OnLoginCallbackResult, ProtonLoginCallback } from '@proton/components';
 import { NotificationsChildren, UnAuthenticated, UnAuthenticatedApiProvider, useApi } from '@proton/components';
 import { ModalsChildren } from '@proton/components';
@@ -65,6 +66,23 @@ const UnleashFlagProviderWrapper = ({ children }: { children: ReactNode }) => {
     return <UnleashFlagProvider api={api}>{children}</UnleashFlagProvider>;
 };
 
+let cryptoWorkerPromise: Promise<void> | undefined;
+
+const handlePreload = () => {
+    if (!cryptoWorkerPromise) {
+        cryptoWorkerPromise = loadCrypto({
+            appName: APPS.PROTONACCOUNT,
+            unleashClient: undefined,
+        });
+    }
+};
+
+const handlePreSubmit = async () => {
+    handlePreload();
+    // The crypto worked must be loaded when signup/login/reset are performed
+    await cryptoWorkerPromise;
+};
+
 const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
     const history = useHistory();
     const [, setState] = useState(1);
@@ -79,7 +97,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
             <ModalsChildren />
             <UnAuthenticatedApiProvider>
                 <UnleashFlagProviderWrapper>
-                    <PublicAppSetup loader={loader}>
+                    <PublicAppSetup>
                         <ForceRefreshContext.Provider value={refresh}>
                             <UnAuthenticated>
                                 <PaymentSwitcher loader={loader}>
@@ -91,6 +109,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 setupVPN={false}
                                                 toApp={APPS.PROTONVPN_SETTINGS}
                                                 productParam={APPS.PROTONVPN_SETTINGS}
+                                                onPreSubmit={handlePreSubmit}
                                                 onLogin={async (...args) => {
                                                     onLogin(...args);
                                                     return completeResult;
@@ -124,6 +143,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                 loader={loader}
                                                 productParam={APPS.PROTONVPN_SETTINGS}
                                                 clientType={CLIENT_TYPES.VPN}
+                                                onPreSubmit={handlePreSubmit}
                                                 onLogin={async (args) => {
                                                     onLogin({
                                                         ...args,
@@ -158,6 +178,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
                                                     onLogin(args);
                                                     return completeResult;
                                                 }}
+                                                onPreSubmit={handlePreSubmit}
                                                 paths={paths}
                                             />
                                         </Route>
@@ -192,7 +213,13 @@ const PublicApp = ({ onLogin, locales }: PublicAppProps) => {
     const loader = <AccountLoaderPage />;
 
     return (
-        <VPNPublicApp location={location} pathLocale={location.fullLocale} loader={loader} locales={locales}>
+        <VPNPublicApp
+            location={location}
+            pathLocale={location.fullLocale}
+            loader={loader}
+            locales={locales}
+            onPreload={handlePreload}
+        >
             <InnerPublicApp onLogin={onLogin} loader={loader} location={location} />
         </VPNPublicApp>
     );
