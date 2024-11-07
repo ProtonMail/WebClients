@@ -8,6 +8,7 @@ import { ConfirmationModal } from '@proton/pass/components/Confirmation/Confirma
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, getTrashRoute } from '@proton/pass/components/Navigation/routing';
+import { ConfirmTrashEmpty } from '@proton/pass/components/Vault/Actions/ConfirmTrashEmpty';
 import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';
 import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
@@ -128,17 +129,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                             />
                         );
                     case 'trash-empty':
-                        return (
-                            <ConfirmationModal
-                                open
-                                onClose={reset}
-                                onSubmit={pipe(onTrashEmpty, reset)}
-                                title={c('Title').t`Permanently remove all items?`}
-                                submitText={c('Action').t`Delete all`}
-                                alertText={c('Warning')
-                                    .t`All your trashed items will be permanently deleted. You cannot undo this action.`}
-                            />
-                        );
+                        return <ConfirmTrashEmpty open onCancel={reset} onConfirm={pipe(onTrashEmpty, reset)} />;
                 }
             })()}
         </VaultActionsContext.Provider>
