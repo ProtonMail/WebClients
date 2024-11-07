@@ -269,9 +269,6 @@
       "Import": [
         "불러오기"
       ],
-      "Import alias": [
-        "별칭 가져오기"
-      ],
       "Import your passwords": [
         "비밀번호 불러오기"
       ],
@@ -492,7 +489,7 @@
         "고급 옵션 표시"
       ],
       "Sign back in": [
-        "다시 로그인하세요"
+        "다시 로그인하기"
       ],
       "Sign in": [
         "로그인"
@@ -906,7 +903,7 @@
         "문제가 발생했습니다"
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "무언가가 잘못 되었습니다. ${ PASS_APP_NAME } 확장을 다시 로드하세요. 문제가 기록되었습니다."
+        "무언가가 잘못되었습니다. ${ PASS_APP_NAME } 확장을 다시 로드하세요. 문제가 기록되었습니다."
       ],
       "The file you are trying to import is empty": [
         "불러오기를 시도 중인 파일이 비어 있습니다."
@@ -1163,7 +1160,7 @@
         "자동 잠금이 성공적으로 비활성화 되었습니다."
       ],
       "Automatically copy the generated password to the clipboard": [
-        "자동으로 생성된 비밀번호를 클립보드로 복사"
+        "자동으로 생성된 비밀번호를 클립보드에 복사"
       ],
       "Autosaved on ${ url }": [
         "${ url }에서 자동 저장됨"
@@ -1196,7 +1193,7 @@
         "이 금고에서 항목을 확인 가능합니다."
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
-        "${ domain }에 로그인하려면 저장한 패스키 중 선택하세요."
+        "${ domain }에 로그인할 저장된 패스키를 선택하세요."
       ],
       "Click the icon to open it anytime.": [
         "언제든지 아이콘을 클릭해 여세요."
@@ -1828,9 +1825,6 @@
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "SimpleLogin에 ${ aliasCount }개의 별칭이 존재하지만 ${ PASS_APP_NAME }에는 누락된 별칭이 있음이 발견되었어요. 해당 별명을 불러오시겠어요?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
       ],
@@ -2461,7 +2455,7 @@
         "웹사이트 아이콘 표시"
       ],
       "Social security": [
-        "주민등록번호"
+        "사회 보장 번호"
       ],
       "Social security number": [
         "사회 보장 번호"
@@ -2735,7 +2729,7 @@
         "지금 수락 및 거부"
       ],
       "Enter the confirmation code we sent on your other device.": [
-        "나의 다른 기기로 전송한 확인 코드를 입력하세요."
+        "나의 다른 기기로 전송된 확인 코드를 입력하세요."
       ],
       "If you didn't make this request, cancel it now.": [
         "본인이 요청하지 않았다면, 즉시 취소하세요."
@@ -2756,7 +2750,7 @@
         "로그인 거부됨"
       ],
       "Sign-in rejection failure": [
-        "로그인 취소 시패"
+        "로그인 취소 실패"
       ],
       "Sign-in requested on another device. Was it you?": [
         "다른 기기에서 로그인이 요청되었습니다. 본인이 맞나요?"
@@ -2864,7 +2858,7 @@
         "권한 부여"
       ],
       "Hide my email": [
-        "내 이메일 주소 숨기기"
+        "Hide My Email"
       ],
       "History": [
         "기록"
@@ -2877,9 +2871,6 @@
       ],
       "Import to vault(s)": [
         "금고로 가져오기"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "SimpleLogin에서 별칭 가져오기"
       ],
       "Last autofill": [
         "마지막 자동 완성"

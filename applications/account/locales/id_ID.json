@@ -581,7 +581,7 @@
         "Dapatkan lebih banyak server"
       ],
       "Get the deal": [
-        "Dapatkan penawaran"
+        "Dapatkan penawaran ini"
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
@@ -4041,11 +4041,6 @@
         "Anda telah membatalkan langganan email ${ categories }, dan Anda tidak akan lagi menerima email dalam jenis ini dari ${ BRAND_NAME }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } dan ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Email verifikasi dikirim ke ${ address }"
@@ -5582,6 +5577,9 @@
     "fido2: Action": {
       "Delete key": [
         "Hapus kunci"
+      ],
+      "New security key": [
+        "Kunci keamanan baru"
       ]
     },
     "fido2: Error": {
@@ -5883,26 +5881,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Masa uji coba aplikasi desktop Anda telah berakhir"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 email per bulan)"
-      ],
-      "(1 email per quarter)": [
-        "(1 email per kuartal)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 email per bulan)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 email per tahun)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 email per tahun)"
-      ],
-      "(during your first month)": [
-        "(pada bulan pertama Anda)"
       ]
     },
     "Get started checklist instructions": {
@@ -9777,9 +9755,6 @@
       "Addresses": [
         "Alamat"
       ],
-      "Administrators": [
-        "Administrator"
-      ],
       "ALL": [
         "SEMUA"
       ],
@@ -9809,6 +9784,9 @@
       ],
       "Allowed Domain": [
         "Domain yang Diizinkan"
+      ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender dengan mudah."
       ],
       "Amount": [
         "Nominal"
@@ -10133,6 +10111,9 @@
       ],
       "Emails (last month)": [
         "Email (sebulan terakhir)"
+      ],
+      "Enable video conferencing ": [
+        "Akrifkan konferensi video "
       ],
       "End date": [
         "Tanggal berakhir"
@@ -10773,41 +10754,6 @@
       ],
       "VPN connections": [
         "Koneksi VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Pembaruan produk ${ app } dan ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Pembaruan produk ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Pengumuman ${ BRAND_NAME } versi Beta"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Buletin ${ BRAND_NAME } for Business"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Pengumuman penting ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Buletin ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Penawaran dan promosi ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Pengumuman produk ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Survei pengguna ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } email datang"
-      ],
-      "Daily email notifications": [
-        "Notifikasi email harian"
       ]
     },
     "Label in domain modal": {
@@ -12673,6 +12619,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Autentikasi dua faktor tidak lagi dibutuhkan"
+      ],
+      "Video conferencing settings have been updated": [
+        "Pengaturan konferensi video telah diperbarui"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13508,6 +13457,12 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel admin untuk mengelola pengguna dan langganan"
+      ],
+      "Advanced account protection": [
+        "Perlindungan akun bertingkat lanjut"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Fitur alias bertingkat lanjut (diberdayakan oleh SimpleLogin)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -14455,6 +14410,12 @@
       "For security reasons, the token is hidden": [
         "Demi alasan keamanan, token ini disembunyikan"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Pergi ke penyedia identitas Anda, salin dan tempelkan data di bawah dan selesaikan pengaturan SCIM untuk ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Pergi ke penyedia identitas Anda, salin dan tempelkan token di bawah dan aktifkan kembali SCIM untuk ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Apabila Anda kehilangan atau tidak lagi ingat token SCIM ini, Anda dapat menghasilkan token baru, namun dalam prosesnya Anda akan perlu untuk memperbarui pengaturan penyedia identitas Anda."
       ],
@@ -14463,6 +14424,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Setelah SCIM dinonaktifkan bagi organisasi Anda, **seluruh pengguna SCIM yang ditentukan secara otomatis oleh penyedia identitas Anda akan dialihkan menjadi pengguna SSO**, di mana Anda akan dapat mengelola para pengguna ini secara langsung dari dalam menu pengaturan ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Menyederhanakan pengelolaan pengguna pada berbagai layanan. Tambah, sunting, dan hapus pengguna pada penyedia identitas Anda, dan perubahan yang Anda buat akan langsung diterapkan pada organisasi ${ appName } milik Anda."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Penyediaan SCIM otomatis akan dinonaktifkan hingga Anda memasukkan token SCIM yang baru ke pengaturan penyedia identitas Anda."
@@ -15003,14 +14967,29 @@
       ]
     },
     "Signup: Info": {
+      "Advanced security features": [
+        "Fitur keamanan bertingkat lanjut"
+      ],
+      "Advanced sharing security": [
+        "Keamanan pembagian berkas bertingkat lanjut"
+      ],
+      "Apps for all devices": [
+        "Aplikasi untuk semua perangkat"
+      ],
       "Based in Switzerland, GDPR compliant": [
         "Berbasis di Swiss dan tunduk terhadap GDPR"
       ],
       "Built-in encryption": [
         "Enkripsi yang tertanam secara bawaan"
       ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Termasuk kalender, pengelola kata sandi, penyimpanan berkas, dan VPN"
+      ],
       "Email aliases": [
         "Alias email"
+      ],
+      "Email, calendar, password manager, and VPN included": [
+        "Termasuk email, kalender, pengelola kata sandi, dan VPN"
       ],
       "End-to-end encrypted transactions": [
         "Transaksi yang terenkripsi end-to-end"
@@ -15020,6 +14999,9 @@
       ],
       "From the team that knows encryption": [
         "Dari tangan tim yang memahami enkripsi"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Email, kalender, penyimpanan berkas, pengelola kata sandi, dan VPN terintegrasi"
       ],
       "ISO 27001 certified": [
         "Tersertifikasi ISO 27001"
@@ -15032,6 +15014,18 @@
       ],
       "Protected by Swiss privacy laws": [
         "Terlindung oleh undang-undang privasi Swiss"
+      ],
+      "Self-custody — only you have access to your wallet keys": [
+        "Penyimpanan sendiri — hanya Anda yang memiliki akses ke kunci dompet Anda"
+      ],
+      "The only business solution that is:": [
+        "Solusi bisnis satu-satunya yang:"
+      ],
+      "The only cloud storage with:": [
+        "Penyimpanan awan satu-satunya dengan:"
+      ],
+      "The only email service with:": [
+        "Layanan email satu-satunya dengan:"
       ],
       "Works on all devices": [
         "Dapat digunakan pada seluruh perangkat"
@@ -15169,7 +15163,7 @@
         "Tertagih dengan harga ${ amount } selama 30 bulan"
       ],
       "Get the deal": [
-        "Dapatkan penawaran"
+        "Dapatkan penawaran ini"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Diperbarui setelah 1 tahun dengan harga diskon ${ discountedAmount } daripada ${ regularAmount } (diskon ${ discount }%)"
@@ -16368,6 +16362,9 @@
       "Preferences updated": [
         "Preferensi diperbarui"
       ],
+      "Resent invitation": [
+        "Kirim ulang undangan"
+      ],
       "Status updated": [
         "Status diperbarui"
       ]
@@ -16854,10 +16851,10 @@
         "Kustomisasi"
       ],
       "Customize and confirm": [
-        "Konfirmasi penyesuaian"
+        "Sesuaikan dan konfirmasi"
       ],
       "Customize calendar import": [
-        "Sesuaikan proses impor kalender"
+        "Sesuaikan impor kalender"
       ],
       "Customize the number of IP addresses in your plan": [
         "Sesuaikan jumlah alamat IP dalam paket Anda"
@@ -17026,9 +17023,6 @@
       ],
       "Email privacy": [
         "Privasi email"
-      ],
-      "Email subscriptions": [
-        "Langganan email"
       ],
       "Enable for all users": [
         "Aktifkan untuk seluruh pengguna"
@@ -17858,6 +17852,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
       ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Memungkinkan untuk menambahkan tautan konferensi video dalam undangan kalender Anda."
+      ],
       "An approximate location of the IP address": [
         "Estimasi lokasi alamat IP"
       ],
@@ -18073,14 +18070,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Pilih pengaturan PGP bawaan yang akan digunakan untuk menandatangani atau mengenkripsi pesan bagi pengguna non-${ BRAND_NAME }. Mohon diperhatikan bahwa pengaturan PGP Inline akan mengubah pesan ke dalam bentuk teks polos secara paksa."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Dapatkan berita privasi terkini dan informasi seputar apa-apa saja yang terjadi di semesta ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Isi survei untuk meningkatkan layanan ${ BRAND_NAME }"
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -18633,7 +18622,7 @@
         "Anda harus ${ activateLink } kunci organisasi sebelum menambahkan alamat email kepada pengguna non-privat."
       ],
       "You will lose any customization you made so far.": [
-        "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
+        "Anda akan kehilangan segala penyesuaian yang telah Anda buat sejauh ini."
       ],
       "You will not see this import record in the list any more.": [
         "Anda tidak akan lagi melihat catatan impor ini dalam daftar."

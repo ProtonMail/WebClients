@@ -271,12 +271,6 @@
       "Import": [
         "Importovat"
       ],
-      "Import alias": [
-        "Importovat alias",
-        "Importovat aliasy",
-        "Importovat aliasy",
-        "Importovat aliasy"
-      ],
       "Importing": [
         "Importuji"
       ],
@@ -361,6 +355,9 @@
       "Multiple select": [
         "Vícenásobný výběr"
       ],
+      "Next": [
+        "Další"
+      ],
       "No expired links": [
         "Žádné prošlé odkazy"
       ],
@@ -387,6 +384,9 @@
       ],
       "Please retry": [
         "Zkuste to znovu"
+      ],
+      "Previous": [
+        "Předchozí"
       ],
       "Refresh the page": [
         "Obnovit stránku"
@@ -501,6 +501,9 @@
       ],
       "Sign out": [
         "Odhlásit se"
+      ],
+      "Skip": [
+        "Přeskočit"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Někdo s vámi sdílel položku ${ PASS_APP_NAME }."
@@ -1616,6 +1619,9 @@
       "None": [
         "Nic"
       ],
+      "Not recommended": [
+        "Nedoporučeno"
+      ],
       "Offline mode": [
         "Režim offline"
       ],
@@ -1967,12 +1973,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Máte ${ aliasCount } alias, který je přítomen v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete jej importovat?",
-        "Máte ${ aliasCount } aliasy, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?",
-        "Máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?",
-        "Máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } den.",
         "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývají ${ daysRemaining } dny.",
@@ -2067,6 +2067,9 @@
         "${ minutes } minuty",
         "${ minutes } minut",
         "${ minutes } minut"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } rozpozná webové stránky a aplikace, které používáte, a automaticky vyplní formuláře vašimi přihlašovacími údaji v jakémkoli prohlížeči nebo zařízení. Není třeba nic kopírovat a vkládat."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } verze"
@@ -2164,6 +2167,9 @@
       "Auto-lock after": [
         "Automaticky zamknout po"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Kromě ukládání přihlašovacích údajů chrání ${ PASS_APP_NAME } vaši identitu pomocí integrované funkce e-mailového aliasu. Při každé registraci nového online účtu, může ${ PASS_APP_NAME } automaticky vytvořit alias, aby vaše skutečná e-mailová adresa zůstala chráněná. "
+      ],
       "Beta Access": [
         "Beta přístup"
       ],
@@ -2172,6 +2178,9 @@
       ],
       "Birthdate": [
         "Datum narození"
+      ],
+      "Browse faster, smarter": [
+        "Procházejte internet rychleji a chytřeji"
       ],
       "Capital letters (A-Z)": [
         "Velká písmena (A-Z)"
@@ -2187,6 +2196,9 @@
       ],
       "Cards": [
         "Karty"
+      ],
+      "Choose your preferred look and feel.": [
+        "Vyberte si svůj oblíbený vzhled."
       ],
       "City": [
         "Město"
@@ -2245,6 +2257,9 @@
       "Custom text field": [
         "Vlastní textové pole"
       ],
+      "Dark Web Monitoring": [
+        "Sledování Dark webu"
+      ],
       "Date": [
         "Datum"
       ],
@@ -2262,6 +2277,9 @@
       ],
       "Download logs": [
         "Stáhnout logy"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Snadné sdílení citlivých informací s kýmkoli, i když nepoužívá ${ PASS_APP_NAME }. Můžete sdílet jedno heslo, poznámku nebo kreditní kartu nebo více položek ve stejné složce."
       ],
       "Email": [
         "E-mail"
@@ -2317,11 +2335,17 @@
       "Floor, apartment, building": [
         "Podlaží, byt, budova"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Z bezpečnostních důvodů se ${ PASS_SHORT_APP_NAME } po 10 minutách nečinnosti automaticky uzamkne."
+      ],
       "Forwards to": [
         "Přeposílá na"
       ],
       "Free forever": [
         "Navždy zdarma"
+      ],
+      "Free password manager with identity protection": [
+        "Bezplatný správce hesel s ochranou identity"
       ],
       "Full Name": [
         "Celé jméno"
@@ -2338,6 +2362,9 @@
       "Generic CSV": [
         "Obyčejný CSV"
       ],
+      "Get the extension for your browser.": [
+        "Získejte rozšíření pro svůj prohlížeč."
+      ],
       "Grant": [
         "Udělit"
       ],
@@ -2346,6 +2373,12 @@
       ],
       "Hide password": [
         "Skrýt heslo"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasy hide-my-email"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Jak odemknout ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2382,6 +2415,12 @@
       ],
       "Instagram handle": [
         "Uživatelské jméno Instagram"
+      ],
+      "Install and continue": [
+        "Nainstalovat a pokračovat"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrované ověřování 2FA"
       ],
       "Invitations": [
         "Pozvánky"
@@ -2445,6 +2484,9 @@
       ],
       "Make all viewers": [
         "Udělat ze všech prohlížející"
+      ],
+      "Make it your own.": [
+        "Přizpůsobte podle potřeby."
       ],
       "max views reached": [
         "max. zobrazení dosaženo"
@@ -2512,6 +2554,9 @@
       "Passkey": [
         "Přístupový klíč"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Přístupové klíče jsou snadnou a bezpečnou alternativou tradičních hesel, které zabraňují phishingovým útokům a usnadňují práci s internetem. ${ PASS_APP_NAME } podporuje hesla na všech platformách."
+      ],
       "Passphrase": [
         "Heslo"
       ],
@@ -2532,6 +2577,9 @@
       ],
       "Personal website": [
         "Osobní web"
+      ],
+      "Personalize": [
+        "Přizpůsobit"
       ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-šifrovaný JSON (doporučeno)"
@@ -2554,6 +2602,9 @@
       "Rate us": [
         "Ohodnoťte nás"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Dostávejte okamžitá upozornění, pokud dojde k úniku vašich osobních údajů při narušení bezpečnosti dat třetí stranou. Můžete sledovat více e-mailových adres nebo vlastní doménu."
+      ],
       "Recent": [
         "Nedávné"
       ],
@@ -2571,6 +2622,15 @@
       ],
       "Reveal password": [
         "Zobrazit heslo"
+      ],
+      "Secure password sharing": [
+        "Bezpečné sdílení hesel"
+      ],
+      "Securely log in with passkeys": [
+        "Bezpečné přihlášení pomocí přístupových klíčů"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Bezpečně sdílejte a ukládejte hesla a přihlašujte se ke svým účtům pomocí koncově šifrovaného ${ PASS_APP_NAME }, kterému důvěřují miliony lidí"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Bezpečně sdílejte a ukládejte hesla a přihlašujte se ke svým účtům pomocí koncově šifrovaného ${ PASS_APP_NAME }, kterému důvěřují miliony lidí."
@@ -2590,6 +2650,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Vyberte trezor, do kterého budou importovány aliasy SimpleLogin"
       ],
+      "Select theme": [
+        "Vybrat motiv"
+      ],
       "Select your password manager": [
         "Zvolte si svého správce hesel"
       ],
@@ -2607,6 +2670,9 @@
       ],
       "Show website favicons": [
         "Zobrazit ikony webových stránek"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Rychlejší přihlášení pomocí ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Rodné číslo (číslo sociálního pojištění)"
@@ -2677,6 +2743,9 @@
       "Trash": [
         "Koš"
       ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Dvoufázové ověřování (2FA) je jedním z nejlepších způsobů, jak chránit své účty online. ${ PASS_APP_NAME } usnadňuje 2FA pomocí integrovaného ověřování, které ukládá kódy 2FA a automaticky je zobrazuje a vyplňuje."
+      ],
       "Type": [
         "Typ"
       ],
@@ -2685,6 +2754,9 @@
       ],
       "Unlock with": [
         "Odemknout pomocí"
+      ],
+      "Unlock with:": [
+        "Odemknout pomocí:"
       ],
       "Unnamed Credit Card": [
         "Nepojmenovaná platební karta"
@@ -2751,6 +2823,12 @@
       ],
       "You are about to create": [
         "Chystáte se vytvořit"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Pro odemknutí si můžete vybrat mezi kódem PIN, biometrickými údaji nebo heslem účtu."
+      ],
+      "Your passwords. Everywhere.": [
+        "Vaše hesla. Kdekoliv."
       ],
       "ZIP or Postal code": [
         "PSČ"
@@ -3107,9 +3185,6 @@
       ],
       "Import to vault(s)": [
         "Importovat do trezoru(ů)"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importujte své aliasy ze SimpleLogin"
       ],
       "Import your data": [
         "Importovat vaše data"

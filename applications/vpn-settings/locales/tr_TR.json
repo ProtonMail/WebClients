@@ -1102,7 +1102,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifreleme ile e-postalarınızı ve programınızı güvence altına alın. 15 e-posta adresi, özel e-posta alan adları için destek, sınırsız hide-my-email takma adları ve daha fazlasını içerir."
+        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Çevrim içi belge düzenleyici, fotoğraf yedekleme, sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer şeyler."
@@ -3337,26 +3337,6 @@
         "Çok küçük"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(ayda 1 e-posta)"
-      ],
-      "(1 email per quarter)": [
-        "(üç ayda 1 e-posta)"
-      ],
-      "(1-2 emails per month)": [
-        "(ayda 1-2 e-posta)"
-      ],
-      "(2-4 emails per year)": [
-        "(1 yılda 2-4 e-posta)"
-      ],
-      "(4-6 emails per year)": [
-        "(1 yılda 4-6 e-posta)"
-      ],
-      "(during your first month)": [
-        "(ilk ayınız boyunca)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Zaten bir hesabınız var mı? ${ signIn }"
@@ -5340,9 +5320,6 @@
       "Addresses": [
         "Adresler"
       ],
-      "Administrators": [
-        "Yöneticiler"
-      ],
       "Allow": [
         "İzin verilen"
       ],
@@ -5840,41 +5817,6 @@
       ],
       "VPN connections": [
         "VPN bağlantısı"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } ve ${ additionalApp } ürün güncellemeleri"
-      ],
-      "${ app } product updates": [
-        "${ app } ürün güncellemeleri"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } beta sürümü duyuruları"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business bülteni"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Önemli ${ BRAND_NAME } duyuruları"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } bülteni"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } teklif ve fırsatları"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } ürün duyuruları"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } kullanıcı anketi"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } karşılama e-postaları"
-      ],
-      "Daily email notifications": [
-        "Günlük e-posta bildirimleri"
       ]
     },
     "Label in domain modal": {
@@ -10612,14 +10554,6 @@
       ],
       "Waiting for user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Son gizlilik haberlerini alın ve ${ BRAND_NAME } evreninde neler olduğunu öğrenin"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "${ BRAND_NAME } hizmetlerini geliştirmek için anketlere katılın"
       ]
     },
     "Tor out of date": {

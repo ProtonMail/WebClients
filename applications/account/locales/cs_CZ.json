@@ -4086,11 +4086,6 @@
         "Odhlásili jste se z odběru e-mailů ${ categories }. Tento typ e-mailů již nebudete od ${ BRAND_NAME } dostávat."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } a ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Ověřovací e-mail byl odeslán na ${ address }"
@@ -5722,6 +5717,12 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Ověřte svou identitu pomocí fyzického bezpečnostního klíče U2F nebo FIDO2"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Dosáhli jste maximální délky bezpečnostního klíče ${ maxSecurityKeyLength }.",
+        "Dosáhli jste maximální délky bezpečnostních klíčů ${ maxSecurityKeyLength }.",
+        "Dosáhli jste maximální délky bezpečnostních klíčů ${ maxSecurityKeyLength }.",
+        "Dosáhli jste maximální délky bezpečnostních klíčů ${ maxSecurityKeyLength }."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Váš dvoufázový ověřovací klíč je připraven k použití."
       ]
@@ -5985,26 +5986,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Vaše bezplatná zkušební verze desktopové aplikace skončila"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 e-mail měsíčně)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-mail čtvrtletně)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 e-maily měsíčně)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 e-maily za rok)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 e-mailů za rok)"
-      ],
-      "(during your first month)": [
-        "(během prvního měsíce)"
       ]
     },
     "Get started checklist instructions": {
@@ -10077,9 +10058,6 @@
       "Addresses": [
         "Adresy"
       ],
-      "Administrators": [
-        "Správci"
-      ],
       "ALL": [
         "VŠE"
       ],
@@ -11082,41 +11060,6 @@
       ],
       "VPN connections": [
         "VPN připojení"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "aktualizace produktu ${ app } a ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Aktualizace produktu ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Beta oznámení ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Novinky ${ BRAND_NAME } pro firmy"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Důležitá oznámení ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Novinky ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Akční nabídky ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Oznámení o produktech ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Uživatelský průzkum ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } uvítací e-maily"
-      ],
-      "Daily email notifications": [
-        "Denní e-mailová upozornění"
       ]
     },
     "Label in domain modal": {
@@ -12290,7 +12233,7 @@
         "HTML podpisy"
       ],
       "Integrated 2FA authenticator": [
-        "Integrovaný ověřovací modul 2FA"
+        "Integrované ověřování 2FA"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch/trvalá síť VPN"
@@ -17723,9 +17666,6 @@
       "Email privacy": [
         "Soukromí emailu"
       ],
-      "Email subscriptions": [
-        "Zasílání pravidelných e-mailů"
-      ],
       "Enable for all users": [
         "Povolit pro všechny uživatele"
       ],
@@ -18781,14 +18721,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Vyberte výchozí nastavení PGP používané pro podepisování nebo šifrování zpráv s uživateli, kteří nepoužívají ${ BRAND_NAME } PGP. Všimněte si, že Inline PGP vynucuje zasílání zpráv ve formě prostého textu."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Získejte nejnovější zprávy o ochraně soukromí a o dění v ekosystému ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Účastněte se průzkumů ke zlepšení služeb ${ BRAND_NAME }"
       ]
     },
     "Tooltip prompt to trust keys": {

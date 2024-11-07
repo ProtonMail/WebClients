@@ -271,10 +271,6 @@
       "Import": [
         "İçe aktar"
       ],
-      "Import alias": [
-        "Takma adı içe aktar",
-        "Takma adları içe aktar"
-      ],
       "Importing": [
         "İçe aktarılıyor"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Çoklu seçim"
       ],
+      "Next": [
+        "İleri"
+      ],
       "No expired links": [
         "Geçerlilik süresi geçmiş bir bağlantı yok"
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Lütfen yeniden deneyin"
+      ],
+      "Previous": [
+        "Önceki"
       ],
       "Refresh the page": [
         "Sayfayı yenile"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Oturumu kapat"
+      ],
+      "Skip": [
+        "Atla"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Birisi sizinle ${ PASS_APP_NAME } üzerinde bir öge paylaştı."
@@ -1580,6 +1585,9 @@
       "None": [
         "Yok"
       ],
+      "Not recommended": [
+        "Önerilmez"
+      ],
       "Offline mode": [
         "Çevrim dışı kip"
       ],
@@ -1925,10 +1933,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunu içe aktarmak ister misiniz?",
-        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunları içe aktarmak ister misiniz?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı.",
         "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı."
@@ -2009,6 +2013,9 @@
       "${ minutes } minute": [
         "${ minutes } dakika",
         "${ minutes } dakika"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } kullandığınız site ve uygulamaları tanıyarak herhangi bir tarayıcı ya da aygıt üzerindeki formları bilgilerinizle otomatik olarak doldurur. Herhangi bir şey kopyalayıp yapıştırmanız gerekmez."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } sürümü"
@@ -2104,6 +2111,9 @@
       "Auto-lock after": [
         "Otomatik kilitleme süresi"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Oturum açma bilgilerinizi saklamanın yanında ${ PASS_APP_NAME }, bütünleşik bir e-posta takma adı özelliği ile kimliğinizi korur. Yeni bir çevrim içi hesap açtığınızda, ${ PASS_APP_NAME } gerçek e-posta adresinizi korumak için otomatik olarak bir takma ad oluşturabilir. "
+      ],
       "Beta Access": [
         "Beta erişimi"
       ],
@@ -2112,6 +2122,9 @@
       ],
       "Birthdate": [
         "Doğum tarihi"
+      ],
+      "Browse faster, smarter": [
+        "Daha hızlı ve akıllıca gezinin"
       ],
       "Capital letters (A-Z)": [
         "Büyük harfler (A-Z)"
@@ -2127,6 +2140,9 @@
       ],
       "Cards": [
         "Kartlar"
+      ],
+      "Choose your preferred look and feel.": [
+        "Kullanmak istediğiniz görünüm ve duyguyu seçin."
       ],
       "City": [
         "İl"
@@ -2185,6 +2201,9 @@
       "Custom text field": [
         "Özel metin alanı"
       ],
+      "Dark Web Monitoring": [
+        "Karanlık ağ izleme"
+      ],
       "Date": [
         "Tarih"
       ],
@@ -2202,6 +2221,9 @@
       ],
       "Download logs": [
         "Günlüğü indir"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "${ PASS_APP_NAME } kullanmasalar bile önemli bilgileri istediğiniz kişilerle kolayca paylaşın. Tek bir parola, not veya kredi kartı kaydını veya aynı klasördeki birden fazla ögeyi paylaşabilirsiniz."
       ],
       "Email": [
         "E-posta"
@@ -2257,11 +2279,17 @@
       "Floor, apartment, building": [
         "Site, bina, kat"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Güvenlik nedeniyle, ${ PASS_SHORT_APP_NAME } üzerinde 10 dakika boyunca bir işlem yapılmazsa otomatik olarak kendini kilitler."
+      ],
       "Forwards to": [
         "Şuraya iletiyor"
       ],
       "Free forever": [
         "Sonsuza kadar ücretsiz"
+      ],
+      "Free password manager with identity protection": [
+        "Kimlik koruması sağlayan ücretsiz parola yöneticisi"
       ],
       "Full Name": [
         "Tam ad"
@@ -2278,6 +2306,9 @@
       "Generic CSV": [
         "CSV dosyası"
       ],
+      "Get the extension for your browser.": [
+        "Tarayıcınıza uygun eklentiyi edinin."
+      ],
       "Grant": [
         "İzin ver"
       ],
@@ -2286,6 +2317,12 @@
       ],
       "Hide password": [
         "Parolayı gizle"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME } kilidi nasıl açılır"
       ],
       "https://example.com": [
         "https://ornek.com"
@@ -2322,6 +2359,12 @@
       ],
       "Instagram handle": [
         "Instagram kullanıcı adı"
+      ],
+      "Install and continue": [
+        "Kur ve ilerle"
+      ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı kimlik doğrulayıcı"
       ],
       "Invitations": [
         "Davetler"
@@ -2385,6 +2428,9 @@
       ],
       "Make all viewers": [
         "Tümünü izleyici yap"
+      ],
+      "Make it your own.": [
+        "Size özel yapın."
       ],
       "max views reached": [
         "en fazla görüntülenme sayısına ulaşılmış"
@@ -2452,6 +2498,9 @@
       "Passkey": [
         "Geçiş anahtarı"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Geçiş anahtarları, kimlik avı saldırılarını önleyen ve çevrim içi deneyiminizi daha sorunsuz kılan geleneksel parolalara kolay ve güvenli bir alternatiftir. ${ PASS_APP_NAME } tüm platformlarda geçiş anahtarlarını destekler."
+      ],
       "Passphrase": [
         "Parola ifadesi"
       ],
@@ -2472,6 +2521,9 @@
       ],
       "Personal website": [
         "Kişisel site"
+      ],
+      "Personalize": [
+        "Kişiselleştir"
       ],
       "PGP-encrypted JSON (recommended)": [
         "PGP ile şifrelenmiş JSON (önerilir)"
@@ -2494,6 +2546,9 @@
       "Rate us": [
         "Bizi değerlendirin"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Kişisel bilgileriniz üçüncü tarafların verilerinin ele geçirilmesi olaylarında ortaya çıkarsa anında uyarı alın. Birden fazla e-posta adresini veya kendi etki alanı adınızı izleyebilirsiniz."
+      ],
       "Recent": [
         "Son"
       ],
@@ -2511,6 +2566,15 @@
       ],
       "Reveal password": [
         "Parolayı görüntüle"
+      ],
+      "Secure password sharing": [
+        "Güvenli parola paylaşımı"
+      ],
+      "Securely log in with passkeys": [
+        "Geçiş anahtarları ile güvenli oturum açın"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Milyonlarca kişi tarafından güvenilen uçtan uca şifrelemeyi kullanarak hesaplarınızı ${ PASS_APP_NAME } ile güvenli bir şekilde saklayın, paylaşın ve otomatik olarak oturum açın"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Milyonlarca kişi tarafından güvenilen uçtan uca şifrelemeyi kullanarak hesaplarınızı ${ PASS_APP_NAME } ile güvenli bir şekilde saklayın, paylaşın ve otomatik olarak oturum açın."
@@ -2530,6 +2594,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "SimpleLogin takma adlarının içe aktarılacağı kasayı seçin"
       ],
+      "Select theme": [
+        "Tema seçin"
+      ],
       "Select your password manager": [
         "Parola yöneticinizi seçin"
       ],
@@ -2547,6 +2614,9 @@
       ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } ile daha hızlı oturum açın"
       ],
       "Social security": [
         "Sosyal güvenlik"
@@ -2615,6 +2685,9 @@
       "Trash": [
         "Çöp kutusu"
       ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "İki adımlı doğrulama (2FA), hesaplarınızı çevrim içi olarak korumanın en iyi yollarından biridir. ${ PASS_APP_NAME }, iki adımlı doğrulama kodlarınızı kaydeden ve bunları otomatik olarak görüntüleyen ve dolduran bütünleşik bir kimlik doğrulayıcı ile iki adımlı doğrulama kullanmanızı kolaylaştırır."
+      ],
       "Type": [
         "Tür"
       ],
@@ -2622,6 +2695,9 @@
         "Bilinmiyor"
       ],
       "Unlock with": [
+        "Kilit şununla açılsın:"
+      ],
+      "Unlock with:": [
         "Kilit şununla açılsın:"
       ],
       "Unnamed Credit Card": [
@@ -2689,6 +2765,12 @@
       ],
       "You are about to create": [
         "Şunu oluşturmak üzeresiniz"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Kilidi açmak için PIN kodunuzu, biyometrik verilerinizi veya hesap parolanızı kullanmayı seçebilirsiniz."
+      ],
+      "Your passwords. Everywhere.": [
+        "Parolalarınız yalnızca sizin. Her yerde."
       ],
       "ZIP or Postal code": [
         "Posta kodu"
@@ -3041,9 +3123,6 @@
       ],
       "Import to vault(s)": [
         "Kasaların içine aktar"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "SimpleLogin üzerindeki takma adlarınızı içe aktarın"
       ],
       "Import your data": [
         "Verinizi içe aktarın"

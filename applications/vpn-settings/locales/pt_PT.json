@@ -2975,26 +2975,6 @@
         "Muito pequeno"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 e-mail por mês)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-mail por trimestre)"
-      ],
-      "(1-2 emails per month)": [
-        "(1 a 2 e-mails por mês)"
-      ],
-      "(2-4 emails per year)": [
-        "(2 a 4 e-mails por ano)"
-      ],
-      "(4-6 emails per year)": [
-        "(4 a 6 e-mails por ano)"
-      ],
-      "(during your first month)": [
-        "(durante o primeiro mês)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Já tem uma conta? ${ signIn }"
@@ -4647,9 +4627,6 @@
       "Addresses": [
         "Endereços"
       ],
-      "Administrators": [
-        "Administradores"
-      ],
       "Allow": [
         "Endereços permitidos"
       ],
@@ -5076,41 +5053,6 @@
       ],
       "VPN connections": [
         "Ligações VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Atualizações de produtos para ${ app } e ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Atualizações de produto do ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Comunicados das betas da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Boletim informativo ${ BRAND_NAME } para Business"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Anúncios importantes da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Newsletter da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Ofertas e promoções da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Anúncios de produtos da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Pesquisa de utilizador da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "E-mails de boas-vindas de ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Notificações diárias por e-mail"
       ]
     },
     "Label in domain modal": {
@@ -8624,14 +8566,6 @@
       ],
       "Your DKIM signing is working.": [
         "A sua assinatura DKIM está a funcionar."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Obtenha as últimas notícias sobre privacidade e o sobre o que se passa no universo ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Participe em questionários para melhorar os serviços ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {

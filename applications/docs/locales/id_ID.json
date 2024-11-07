@@ -2134,6 +2134,11 @@
         "Faktur yang tertunggak"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } melindungi akun Anda dengan pemantauan aktivitas mencurigakan yang aktif 24/7 — yang meliputi eskalasi dengan para ahli keamanan."
@@ -2203,11 +2208,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Anda telah membuat 10 alias. Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3685,6 +3685,9 @@
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } memungkinkan Anda untuk berkolaborasi secara real-time dengan enkripsi end-to-end untuk privasi yang menyeluruh. Untuk mulai menyunting, buat salinan dokumen ini atau minta akses sunting kepada pemilik dokumen."
       ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } dalam"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
       ],
@@ -3930,6 +3933,9 @@
       ],
       "Document moved to trash": [
         "Dokumen dipindahkan ke sampah"
+      ],
+      "Document owner has the password": [
+        "Pemilik dokumen memiliki kata sandinya"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
@@ -5797,23 +5803,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Hapus akun"
@@ -5835,6 +5824,23 @@
       ],
       "Switch plan": [
         "Ganti paket"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -7658,7 +7664,7 @@
         "Tertagih dengan harga ${ amount } selama 30 bulan"
       ],
       "Get the deal": [
-        "Dapatkan penawaran"
+        "Dapatkan penawaran ini"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Diperbarui setelah 1 tahun dengan harga diskon ${ discountedAmount } daripada ${ regularAmount } (diskon ${ discount }%)"
@@ -7722,6 +7728,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Untuk menyunting dokumen ini, buat salinan yang Anda dapat ubah."
       ]
     },
     "sso": {
@@ -8312,10 +8321,10 @@
         "Mata uang"
       ],
       "Customize and confirm": [
-        "Konfirmasi penyesuaian"
+        "Sesuaikan dan konfirmasi"
       ],
       "Customize calendar import": [
-        "Sesuaikan proses impor kalender"
+        "Sesuaikan impor kalender"
       ],
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
@@ -8460,6 +8469,9 @@
       ],
       "Link confirmation": [
         "Konfirmasi tautan"
+      ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Buat salinan ke ${ DRIVE_APP_NAME } Anda"
       ],
       "Manage secure link": [
         "Kelola tautan aman"
@@ -8619,6 +8631,9 @@
       ],
       "The link expired": [
         "Tautan telah kedaluwarsa"
+      ],
+      "This document is password protected": [
+        "Dokumen ini dilindungi kata sandi"
       ],
       "Unlock contacts groups": [
         "Buka kunci grup kontak"
@@ -8936,7 +8951,7 @@
         "Anda harus memilih setidaknya satu kotak surat"
       ],
       "You will lose any customization you made so far.": [
-        "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
+        "Anda akan kehilangan segala penyesuaian yang telah Anda buat sejauh ini."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"

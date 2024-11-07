@@ -3009,26 +3009,6 @@
         "極小"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(毎月 1 通のメール)"
-      ],
-      "(1 email per quarter)": [
-        "(毎四半期 1 通のメール)"
-      ],
-      "(1-2 emails per month)": [
-        "(毎月 1 〜 2 通のメール)"
-      ],
-      "(2-4 emails per year)": [
-        "(毎年 2～4 通のメール)"
-      ],
-      "(4-6 emails per year)": [
-        "(毎年 4～6 通のメール)"
-      ],
-      "(during your first month)": [
-        "(最初の1ヶ月間)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "既にアカウントを持っている場合: ${ signIn }"
@@ -4700,9 +4680,6 @@
       "Addresses": [
         "メールアドレス"
       ],
-      "Administrators": [
-        "管理者"
-      ],
       "Allow": [
         "許可"
       ],
@@ -5164,41 +5141,6 @@
       ],
       "VPN connections": [
         "VPN 接続"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } および ${ additionalApp } 製品のアップデート"
-      ],
-      "${ app } product updates": [
-        "${ app } 製品のアップデート"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } ベータのお知らせ"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business ニュースレター"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } の重要なお知らせ"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } ニュースレター"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } オファーとプロモーション"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } プロダクトのお知らせ"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } ユーザーアンケート"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } ウェルカムメール"
-      ],
-      "Daily email notifications": [
-        "毎日のメール通知"
       ]
     },
     "Label in domain modal": {
@@ -8882,14 +8824,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2FA などが含まれます。"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "最新のプライバシー ニュースと ${ BRAND_NAME } の世界で何が起こっているのかを入手してください"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "${ BRAND_NAME } サービスを改善するためのアンケートに参加してください"
       ]
     },
     "Tor out of date": {

@@ -268,10 +268,6 @@
       "Import": [
         "Tuo"
       ],
-      "Import alias": [
-        "Tuo alias",
-        "Tuo aliakset"
-      ],
       "Importing": [
         "Tuodaan"
       ],
@@ -1859,10 +1855,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuva alias. Haluaisitko tuoda sen?",
-        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuvaa aliasta. Haluaisitko tuoda ne?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Sinulla on ${ daysRemaining } päivä jäljellä kokeilla näitä ja muita premium-ominaisuuksia.",
         "Sinulla on ${ daysRemaining } päivää jäljellä kokeilla näitä ja muita premium-ominaisuuksia."
@@ -2958,9 +2950,6 @@
       ],
       "Import to vault(s)": [
         "Tuo holviin/holveihin"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Tuo aliaksesi SimpleLoginista"
       ],
       "Import your data": [
         "Tuo tietosi"

@@ -3603,11 +3603,6 @@
         "您已重新订阅 ${ categoriesJsx } 电子邮件。"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } 和 ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "验证邮件已发至 ${ address }"
@@ -5023,26 +5018,6 @@
     "Free trial desktop": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "（每月 1 封邮件）"
-      ],
-      "(1 email per quarter)": [
-        "（每个季度 1 封邮件）"
-      ],
-      "(1-2 emails per month)": [
-        "（每月 1 至 2 封邮件）"
-      ],
-      "(2-4 emails per year)": [
-        "（每年 2 至 4 封邮件）"
-      ],
-      "(4-6 emails per year)": [
-        "（每年 4 至 6 封邮件）"
-      ],
-      "(during your first month)": [
-        "（账户注册首月）"
       ]
     },
     "Get started checklist instructions": {
@@ -8373,9 +8348,6 @@
       "Addresses": [
         "地址"
       ],
-      "Administrators": [
-        "管理员"
-      ],
       "ALL": [
         "且"
       ],
@@ -9294,41 +9266,6 @@
       ],
       "VPN connections": [
         "VPN 连接数"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } 与 ${ additionalApp } 产品资讯"
-      ],
-      "${ app } product updates": [
-        "${ app } 产品资讯"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } 公测通知"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } 商业通讯"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } 重要公告"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } 通讯"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } 优惠与促销"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } 产品公告"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } 用户调查"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } 欢迎信"
-      ],
-      "Daily email notifications": [
-        "每日邮件提醒"
       ]
     },
     "Label in domain modal": {
@@ -13584,9 +13521,6 @@
       "Email privacy": [
         "电子邮件隐私"
       ],
-      "Email subscriptions": [
-        "邮件订阅"
-      ],
       "Encryption and keys": [
         "加密与密钥"
       ],
@@ -14454,14 +14388,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "选择面向非 ${ BRAND_NAME } 用户加密与数字签名的 PGP 格式。注意：PGP/Inline 只能用于发送纯文本邮件。"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "获取最新的隐私保护要闻与 ${ BRAND_NAME } 动态"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "参与用户调查，协助改进 ${ BRAND_NAME } 服务"
       ]
     },
     "Tooltip prompt to trust keys": {

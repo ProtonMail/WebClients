@@ -271,10 +271,6 @@
       "Import": [
         "Importeren"
       ],
-      "Import alias": [
-        "Importeer alias",
-        "Importeer aliassen"
-      ],
       "Importing": [
         "Importeren"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Meervoudige selectie"
       ],
+      "Next": [
+        "Volgende"
+      ],
       "No expired links": [
         "Geen verlopen koppelingen"
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Probeer het opnieuw"
+      ],
+      "Previous": [
+        "Vorige"
       ],
       "Refresh the page": [
         "Pagina vernieuwen"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Uitloggen"
+      ],
+      "Skip": [
+        "Overslaan"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Iemand heeft een item met u gedeeld op ${ PASS_APP_NAME }."
@@ -711,7 +716,7 @@
         "${ provider }-bestand kon niet worden verwerkt. ${ errorDetail }"
       ],
       "[Error] an item could not be parsed": [
-        "[Error] een item kon niet worden verwerkt"
+        "[Fout] een item kon niet worden verwerkt"
       ],
       "Alias could not be updated at the moment. Please try again later": [
         "Alias kon niet worden bijgewerkt. Probeer het later opnieuw"
@@ -1182,7 +1187,7 @@
         "Toegang succesvol bevestigd"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "Toegang tot ${ PASS_APP_NAME } vereist altijd uw ${ BRAND_NAME } wachtwoord."
+        "Toegang tot ${ PASS_APP_NAME } vereist altijd uw ${ BRAND_NAME }-wachtwoord."
       ],
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Toegang tot ${ PASS_APP_NAME } vereist uw vingerafdruk of apparaat pincode."
@@ -1542,7 +1547,7 @@
         "Monitoring instellingen succesvol bijgewerkt"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt je wachtwoord en je persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
+        "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt uw wachtwoord en uw persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
@@ -1579,6 +1584,9 @@
       ],
       "None": [
         "Geen"
+      ],
+      "Not recommended": [
+        "Niet aanbevolen"
       ],
       "Offline mode": [
         "Offline modus"
@@ -1925,10 +1933,6 @@
       "You cannot change the mailboxes for this alias.": [
         "U kan het postvak IN voor deze alias niet veranderen."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "U hebt ${ aliasCount } alias die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze importeren?",
-        "U hebt ${ aliasCount } aliassen die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u deze importeren?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "U hebt nog ${ daysRemaining } dag over om deze en andere premium kenmerken te proberen.",
         "U hebt nog ${ daysRemaining } dagen over om deze en andere premium kenmerken te proberen."
@@ -2009,6 +2013,9 @@
       "${ minutes } minute": [
         "${ minutes } minuut",
         "${ minutes } minuten"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } herkent de websites en apps die u gebruikt en automatisch vult formulieren met uw inloggegevens op elke browser of apparaat. Kopiëren en plakken is niet nodig."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } versie"
@@ -2104,6 +2111,9 @@
       "Auto-lock after": [
         "Automatisch vergrendelen na"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Naast het opslaan van uw logins beschermt ${ PASS_APP_NAME } uw identiteit met een geïntegreerde email alias-functie. Wanneer u zich registreert voor een nieuw online account, kan ${ PASS_APP_NAME } automatisch een alias maken om uw werkelijke e-mailadres te beschermen. "
+      ],
       "Beta Access": [
         "Bèta toegang"
       ],
@@ -2112,6 +2122,9 @@
       ],
       "Birthdate": [
         "Geboortedatum"
+      ],
+      "Browse faster, smarter": [
+        "Blader sneller, slimmer"
       ],
       "Capital letters (A-Z)": [
         "Hoofdletters (A-Z)"
@@ -2127,6 +2140,9 @@
       ],
       "Cards": [
         "Kaarten"
+      ],
+      "Choose your preferred look and feel.": [
+        "Kies uw favoriete look & feel."
       ],
       "City": [
         "Stad"
@@ -2185,6 +2201,9 @@
       "Custom text field": [
         "Tekst aangepast veld"
       ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
       "Date": [
         "Datum"
       ],
@@ -2202,6 +2221,9 @@
       ],
       "Download logs": [
         "Logboeken downloaden"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Deel gemakkelijk gevoelige informatie met iemand, zelfs als ze ${ PASS_APP_NAME }niet gebruiken. U kunt één wachtwoord, notitie of creditcard of meerdere items in dezelfde map delen."
       ],
       "Email": [
         "E-mailadres"
@@ -2257,11 +2279,17 @@
       "Floor, apartment, building": [
         "Vloer, appartement, gebouw"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Om veiligheidsredenen vergrendelt ${ PASS_SHORT_APP_NAME } zichzelf automatisch na 10 minuten inactiviteit."
+      ],
       "Forwards to": [
         "Stuurt door na"
       ],
       "Free forever": [
         "Voor altijd gratis"
+      ],
+      "Free password manager with identity protection": [
+        "Gratis wachtwoordbeheerder met identiteitsbeveiliging"
       ],
       "Full Name": [
         "Volledige naam"
@@ -2278,6 +2306,9 @@
       "Generic CSV": [
         "Generieke CSV"
       ],
+      "Get the extension for your browser.": [
+        "Download de extensie voor uw browser."
+      ],
       "Grant": [
         "Verlenen"
       ],
@@ -2286,6 +2317,12 @@
       ],
       "Hide password": [
         "Wachtwoord verbergen"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email aliassen"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Hoe ontgrendelt u ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://voorbeeld.com"
@@ -2322,6 +2359,12 @@
       ],
       "Instagram handle": [
         "Instagram gebruikersnaam"
+      ],
+      "Install and continue": [
+        "Installeren en doorgaan"
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde tweestapsverificatie"
       ],
       "Invitations": [
         "Uitnodigingen"
@@ -2385,6 +2428,9 @@
       ],
       "Make all viewers": [
         "Maak alle lezers"
+      ],
+      "Make it your own.": [
+        "Pas naar eigen wens aan."
       ],
       "max views reached": [
         "max weergaven bereikt"
@@ -2452,6 +2498,9 @@
       "Passkey": [
         "Toegangssleutel"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Passkeys zijn een eenvoudig en veilig alternatief voor traditionele wachtwoorden die phishingaanvallen voorkomen en uw online-ervaring soepeler maken.  ${ PASS_APP_NAME } ondersteunt toegangscodes op alle platformen."
+      ],
       "Passphrase": [
         "Wachtzin"
       ],
@@ -2472,6 +2521,9 @@
       ],
       "Personal website": [
         "Persoonlijke website"
+      ],
+      "Personalize": [
+        "Personaliseren"
       ],
       "PGP-encrypted JSON (recommended)": [
         "JSON PGP-versleuteld (aanbevolen)"
@@ -2494,6 +2546,9 @@
       "Rate us": [
         "Beoordeel ons"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Ontvang direct meldingen als uw persoonlijke gegevens zijn gelekt in gegevenslek van derden. U kunt meerdere e-mailadressen of uw eigen domeinnaam controleren."
+      ],
       "Recent": [
         "Recent"
       ],
@@ -2511,6 +2566,15 @@
       ],
       "Reveal password": [
         "Wachtwoord tonen"
+      ],
+      "Secure password sharing": [
+        "Veilig wachtwoorden delen"
+      ],
+      "Securely log in with passkeys": [
+        "Log veilig in met toegangscodes"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Uw accounts met ${ PASS_APP_NAME } worden veilig opgeslagen, gedeeld en automatisch ingelogd, met behulp van end-to-end versleuteling die door miljoenen wordt vertrouwd"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Uw accounts met ${ PASS_APP_NAME } worden veilig opgeslagen, gedeeld en automatisch ingelogd, met behulp van end-to-end versleuteling die door miljoenen wordt vertrouwd."
@@ -2530,6 +2594,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Selecteer de kluis waar SimpleLogin aliassen worden geïmporteerd in"
       ],
+      "Select theme": [
+        "Selecteer thema"
+      ],
       "Select your password manager": [
         "Selecteer uw wachtwoordbeheerder"
       ],
@@ -2547,6 +2614,9 @@
       ],
       "Show website favicons": [
         "Websitepictogrammen weergeven"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Log sneller in met ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Burgerservicenummer (rijksregisternummer)"
@@ -2615,6 +2685,9 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Tweestapsaanmelding (2FA) is een van de beste manieren om uw accounts online te beschermen. ${ PASS_APP_NAME } maakt 2FA makkelijker met een geïntegreerde authenticator die uw 2FA-codes opslaat en ze automatisch weergeeft en automatisch invult."
+      ],
       "Type": [
         "Soort"
       ],
@@ -2623,6 +2696,9 @@
       ],
       "Unlock with": [
         "Ontgrendelen met"
+      ],
+      "Unlock with:": [
+        "Ontgrendelen met:"
       ],
       "Unnamed Credit Card": [
         "Naamloze kredietkaart"
@@ -2689,6 +2765,12 @@
       ],
       "You are about to create": [
         "U staat op het punt volgende aan te maken"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "U kunt kiezen uit een pincode, biometrische gegevens of uw accountwachtwoord om te ontgrendelen."
+      ],
+      "Your passwords. Everywhere.": [
+        "Uw wachtwoorden. Overal."
       ],
       "ZIP or Postal code": [
         "Postcode"
@@ -2904,7 +2986,7 @@
         "Sign-in afwijzing mislukt"
       ],
       "Sign-in requested on another device. Was it you?": [
-        "Inloggen op een ander apparaat. Was jij het?"
+        "Inloggen op een ander apparaat. Was u het?"
       ],
       "Sign-in requested on another device. Was it you? ": [
         "Inloggen op een ander apparaat. Was u dit? "
@@ -3041,9 +3123,6 @@
       ],
       "Import to vault(s)": [
         "Importeren naar kluis/kluizen"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importeer uw aliassen vanuit SimpleLogin"
       ],
       "Import your data": [
         "Uw gegevens importeren"
