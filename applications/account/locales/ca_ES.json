@@ -3958,11 +3958,6 @@
         "T'has tornat a subscriure als correus de ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } i ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "S'ha enviat un correu electrònic de verificació a ${ address }."
@@ -5768,26 +5763,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Ha finalitzat la prova gratuïta de l'aplicació d'escriptori"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 correu electrònic al mes)"
-      ],
-      "(1 email per quarter)": [
-        "(1 correu electrònic al trimestre)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 correus electrònics al mes)"
-      ],
-      "(2-4 emails per year)": [
-        "(2 a 4 correus electrònics per any)"
-      ],
-      "(4-6 emails per year)": [
-        "(4 a 6 correus electrònics per any)"
-      ],
-      "(during your first month)": [
-        "(durant el vostre primer mes)"
       ]
     },
     "Get started checklist instructions": {
@@ -9588,9 +9563,6 @@
       "Addresses": [
         "Adreces"
       ],
-      "Administrators": [
-        "Administradors"
-      ],
       "ALL": [
         "TOT"
       ],
@@ -10581,41 +10553,6 @@
       ],
       "VPN connections": [
         "Connexions VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Actualitzacions del producte per a ${ app } i ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Actualitzacions del producte ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Anuncis de la versió beta de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Butlletí ${ BRAND_NAME } for Business"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Anuncis importants de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Butlletí ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Ofertes i promocions de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Anuncis de productes de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Enquesta als usuaris de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Missatges de benvinguda de ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Notificacions diàries per correu electrònic"
       ]
     },
     "Label in domain modal": {
@@ -16590,9 +16527,6 @@
       "Email privacy": [
         "Privacitat del correu"
       ],
-      "Email subscriptions": [
-        "Subscripcions per correu electrònic"
-      ],
       "Enable for all users": [
         "Activa per a tots els usuaris"
       ],
@@ -17615,14 +17549,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Seleccioneu les preferències PGP per defecte utilitzades per a signar o xifrar missatges amb usuaris PGP de fora de ${ BRAND_NAME }. Tingueu en compte que Inline PGP implica missatges de text sense format."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Rebeu les últimes notícies sobre privacitat i sobre el que passa a l'univers de ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Participeu en enquestes per millorar els serveis de ${ BRAND_NAME }"
       ]
     },
     "Tooltip prompt to trust keys": {

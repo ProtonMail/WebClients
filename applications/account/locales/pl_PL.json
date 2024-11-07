@@ -3599,6 +3599,9 @@
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Uzyskaj do ${ credits }, zapraszając znajomych do usługi ${ BRAND_NAME }."
       ],
+      "If disabled, only admins will have access.": [
+        "Tylko administratorzy będą mieli dostęp, jeżeli to ustawienie zostanie wyłączone."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
       ],
@@ -4078,11 +4081,6 @@
       ],
       "You unsubscribed from ${ categories } emails, and will no longer receive this type of email from ${ BRAND_NAME }.": [
         "Anulowano subskrypcję ${ categories }. Nie będziesz otrzymywać tego typu wiadomości od ${ BRAND_NAME }."
-      ]
-    },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } i ${ lastCategoryTitle }"
       ]
     },
     "Email verification": {
@@ -5981,26 +5979,6 @@
         "Darmowa wersja próbna aplikacji desktopowej zakończyła się"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 wiadomość miesięcznie)"
-      ],
-      "(1 email per quarter)": [
-        "(1 wiadomość kwartalnie)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 wiadomości miesięcznie)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 wiadomości rocznie)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 wiadomości rocznie)"
-      ],
-      "(during your first month)": [
-        "(w pierwszym miesiącu)"
-      ]
-    },
     "Get started checklist instructions": {
       "${ appName } on App Store": [
         "${ appName } w App Store"
@@ -6119,6 +6097,11 @@
       ],
       "Left group": [
         "Opuszczono grupę"
+      ]
+    },
+    "group_invite_2024": {
+      "You have no groups to manage": [
+        "Nie masz grup, którymi możesz zarządzać"
       ]
     },
     "group_invite_2024: Error message, recovery": {
@@ -6911,6 +6894,9 @@
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Numer telefonu może zostać użyty do weryfikacji tylko jednego konta ${ BRAND_NAME }"
       ],
+      "A recovery file lets you unlock and view your data after account recovery": [
+        "Plik odzyskiwania umożliwia odblokowanie i podgląd danych po uzyskaniu dostępu do konta"
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Jeśli zapomnisz hasła, to hasło odzyskiwania umożliwia odzyskanie dostępu do konta i zaszyfrowanych wiadomości"
       ],
@@ -7117,6 +7103,9 @@
       ],
       "Are you sure you want to give administrative privileges to this user?": [
         "Czy na pewno chcesz przyznać uprawnienia administratora temu użytkownikowi?"
+      ],
+      "Are you sure you want to leave this group? If you leave, you will need to be reinvited by the group administrator to join again.": [
+        "Czy na pewno chcesz opuścić tę grupę? Jeśli ją opuścisz, administrator grupy będzie Cię musiał ponownie zaprosić, żeby dołączyć z powrotem."
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Czy na pewno chcesz trwale usunąć wszystkie logi?"
@@ -7699,6 +7688,12 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Jeśli nigdy wcześniej nie korzystałeś z uwierzytelniania dwustopniowego, zdecydowanie zalecamy ${ guideButton }."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "Jeżeli zapomnisz hasła, ${ boldAccountRecovery } ${ boldImperative }, aby odzyskać dostęp do konta."
+      ],
+      "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "Jeżeli zapomnisz hasła, to ${ boldAccountAndRecovery } ${ boldImperative }, aby odzyskać dostęp do konta. W przeciwnym wypadku może nie być możliwości odblokowania dostępu do twoich wiadomości e-mail, kontaktów, czy plików."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jeśli zgubisz urządzenie z przypisanym uwierzytelnianiem dwustopniowym, możesz użyć poniższych kodów zapasowych, zamiast 6-cyfrowego kodu uwierzytelniającego, aby zalogować się na swoje konto. Każdy kod może zostać użyty tylko jeden raz."
@@ -10018,9 +10013,6 @@
       "Addresses": [
         "Adresy"
       ],
-      "Administrators": [
-        "Administratorzy"
-      ],
       "ALL": [
         "WSZYSTKIE"
       ],
@@ -10374,6 +10366,9 @@
       ],
       "Emails (last month)": [
         "Wiadomości (ostatni miesiąc)"
+      ],
+      "Enable video conferencing ": [
+        "Włącz konferencje wideo "
       ],
       "End date": [
         "Data zakończenia"
@@ -11014,41 +11009,6 @@
       ],
       "VPN connections": [
         "Połączenia VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Aktualizacje usług ${ app } i ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Aktualizacje usługi ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Ogłoszenia ${ BRAND_NAME } beta"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter ${ BRAND_NAME } for Business"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Ważne ogłoszenia ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Newsletter ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Oferty i promocje ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Ogłoszenia usługi ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Ankieta użytkownika ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Wiadomość powitalna ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Codzienne powiadomienia e-mail"
       ]
     },
     "Label in domain modal": {
@@ -13025,6 +12985,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Uwierzytelnianie dwustopniowe nie jest wymagane"
+      ],
+      "Video conferencing settings have been updated": [
+        "Ustawienia konferencji wideo zostały zaktualizowane"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13810,6 +13773,9 @@
         "Bezpieczne udostępnianie ${ n } sejfów i linków",
         "Bezpieczne udostępnianie ${ n } sejfów i linków"
       ],
+      "Secure your family’s passwords and online identities": [
+        "Zabezpiecz hasła i internetowe tożsamości twojej rodziny"
+      ],
       "Secured by end-to-end encryption": [
         "Zabezpieczone za pomocą szyfrowania end-to-end"
       ],
@@ -13890,6 +13856,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel administratora do zarządzania użytkownikami i subskrypcją"
+      ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
       ]
     },
     "PassFamilyPlan2024": {
@@ -13986,6 +13955,9 @@
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Aby przywrócić uprawnienia administratora, użyj metody odzyskiwania danych, skontaktuj się z innym administratorem lub zresetuj klucz organizacji."
+      ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Nie mogliśmy zweryfikować autentyczności tej tożsamości."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nie możemy zweryfikować klucza adresu nadawcy. Czasami występuje opóźnienie w aktualizacji informacji o nadawcy. Spróbuj ponownie później. Jeśli nie ufasz zaproszeniu lub nadawcy, skontaktuj się ze wsparciem klienta ${ BRAND_NAME }."
@@ -14703,6 +14675,9 @@
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Konto i dane mogą zostać odzyskane. Sprawdź, czy możesz uzyskać dostęp do metod odzyskiwania."
       ],
+      "Your account and data can be recovered. You have recommended actions to safeguard your account further.": [
+        "Twoje konto i dane mogą zostać odzyskane. Aby wzmocnić ochronę twojego konta, zapoznaj się z dostępnymi rekomendacjami."
+      ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Konto i dane mogą zostać odzyskane. Dostęp został zabezpieczony."
       ],
@@ -15196,6 +15171,9 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Skontaktujemy się z Tobą, kiedy zresetowanie hasła będzie dostępne."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "W każdym momencie możesz sprawdzić status wniosku w sekcji ${ accountAndPasswordSectionLink }."
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15440,6 +15418,9 @@
       "Built-in encryption": [
         "Wbudowane szyfrowanie"
       ],
+      "Calendar, password manager, file storage, and VPN included": [
+        "Kalendarz, menedżer haseł, przestrzeń dyskowa i VPN zawarte"
+      ],
       "Email aliases": [
         "Aliasy"
       ],
@@ -15448,6 +15429,9 @@
       ],
       "From the team that knows encryption": [
         "Od zespołu, który zna się na szyfrowaniu"
+      ],
+      "Integrated email, calendar, file storage, password manager, and VPN": [
+        "Zintegrowana poczta, kalendarz, przestrzeń dyskowa, menedżer haseł i VPN"
       ],
       "ISO 27001 certified": [
         "Certyfikat ISO 27001"
@@ -15745,6 +15729,9 @@
       "Devices management": [
         "Zarządzanie urządzeniami"
       ],
+      "Do you want to remove all other devices than the current one?": [
+        "Czy chcesz usunąć wszystkie urządzenia poza tym?"
+      ],
       "Enter the confirmation code we sent on your other device.": [
         "Wpisz kod potwierdzający wysłany na inne urządzenie."
       ],
@@ -15817,6 +15804,9 @@
       "Sign in to your organization": [
         "Zaloguj się do organizacji"
       ],
+      "Sign out and in again to change your backup password": [
+        "Wyloguj i zaloguj się ponownie, aby móc zmienić hasło odzyskiwania."
+      ],
       "Sign-in confirmed": [
         "Logowanie zostało potwierdzone"
       ],
@@ -15857,6 +15847,12 @@
       ],
       "Inactive": [
         "Nieaktywne"
+      ],
+      "Pending activation": [
+        "Oczekuje na aktywację"
+      ],
+      "Pending admin activation": [
+        "Oczekuje na aktywację przez administratora"
       ],
       "Rejected": [
         "Odrzucone"
@@ -16617,6 +16613,9 @@
       "Device deleted": [
         "Urządzenie zostało usunięte"
       ],
+      "Device rejected": [
+        "Urządzenie odrzucone"
+      ],
       "Display name updated": [
         "Nazwa wyświetlana została zaktualizowana"
       ],
@@ -16763,6 +16762,9 @@
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Jeżeli prawidłowy numer pomocniczy został wpisany, w ciągu minuty dostaniesz twoją nazwę użytkownika za pomocą wiadomości SMS."
       ]
     },
     "Success message": {
@@ -17511,9 +17513,6 @@
       ],
       "Email privacy": [
         "Prywatność wiadomości"
-      ],
-      "Email subscriptions": [
-        "Listy mailingowe"
       ],
       "Enable for all users": [
         "Włącz dla wszystkich użytkowników"
@@ -18566,14 +18565,6 @@
         "Wybierz ustawienia domyślne PGP, które będą używane do podpisywania i szyfrowania wiadomości dla użytkowników PGP spoza ${ BRAND_NAME }. Pamiętaj, że schemat PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu."
       ]
     },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Najnowsze wiadomości na temat prywatności i tego, co dzieje się w świecie ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Bierz udział w ankietach, aby ulepszać usługi ${ BRAND_NAME }"
-      ]
-    },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
         "Jeśli nadawca wiadomości od innego użytkownika ${ MAIL_APP_NAME } nie posiada zaufanego klucza w Twoich kontaktach, pokaż powiadomienie z pytaniem o włączenie zaufanych kluczy."
@@ -19173,6 +19164,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Darmowa wersja próbna zakończy się ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "Plik odzyskiwania jest nieaktualny. Jeżeli ponownie zresetujesz hasło, nie będzie można odzyskać nowych danych za jego pomocą."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "Fraza odzyskiwania jest nieaktualna. Jeżeli ponownie zresetujesz hasło, nie będzie można odzyskać nowych danych za jej pomocą."
       ]
     },
     "Warning for domain modal": {

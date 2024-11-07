@@ -4056,11 +4056,6 @@
         "Du avsluttet abonnementet på ${ categories }-e-poster, og vil ikke lenger motta denne typen e-post fra ${ BRAND_NAME }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } og ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Verifiserings-e-post sendt til ${ address }"
@@ -5921,26 +5916,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Den gratis prøveperioden for skrivebordsappen er avsluttet"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 e-post per måned)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-post per kvartal)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 e-poster per måned)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 e-poster per år)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 e-poster per år)"
-      ],
-      "(during your first month)": [
-        "(i løpet av første måneden)"
       ]
     },
     "Get started checklist instructions": {
@@ -9883,9 +9858,6 @@
       "Addresses": [
         "Adresser"
       ],
-      "Administrators": [
-        "Administratorer"
-      ],
       "ALL": [
         "ALLE"
       ],
@@ -10888,41 +10860,6 @@
       ],
       "VPN connections": [
         "VPN-tilkoblinger"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } og ${ additionalApp } produktoppdateringer"
-      ],
-      "${ app } product updates": [
-        "${ app } produktoppdateringer"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } testversjonkunngjøringer"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } nyhetsbrev for virksomheter"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } viktige kunngjøringer"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } nyhetsbrev"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } tilbud og kampanjer"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } produktkunngjøringer"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME }-brukerundersøkelse"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } velkommen e-post"
-      ],
-      "Daily email notifications": [
-        "Daglige e-postvarslinger"
       ]
     },
     "Label in domain modal": {
@@ -17318,9 +17255,6 @@
       "Email privacy": [
         "E-post personvern"
       ],
-      "Email subscriptions": [
-        "E-post abonnementer"
-      ],
       "Enable for all users": [
         "Aktiver for alle brukere"
       ],
@@ -18370,14 +18304,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Velg standard PGP-innstillinger som brukes til å signere eller kryptere meldinger med ikke-${ BRAND_NAME } PGP-brukere. Merk at innebygget PGP fremtvinger meldinger i ren tekst."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Få de siste personvernnyhetene og hva som skjer i ${ BRAND_NAME }-universet"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Delta i undersøkelser for å forbedre ${ BRAND_NAME }-tjenester"
       ]
     },
     "Tooltip prompt to trust keys": {
