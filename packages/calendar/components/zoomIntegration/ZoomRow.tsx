@@ -21,6 +21,7 @@ import clsx from '@proton/utils/clsx';
 
 import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingWidget';
 import { VIDEO_CONF_API_ERROR_CODES, VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
+import { VideoConferenceZoomIntegration, useVideoConfTelemetry } from '../videoConferencing/useVideoConfTelemetry';
 
 type ZoomIntegrationState =
     | 'loadingConfig'
@@ -57,6 +58,8 @@ export const ZoomRow = ({ model, setModel }: Props) => {
     const isUserConnectedToZoom = oAuthToken?.some(({ Provider }) => Provider === OAUTH_PROVIDER.ZOOM);
 
     const [processState, setProcessState] = useState<ZoomIntegrationState>('loading');
+
+    const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
 
     const api = useApi();
     const [, withLoading] = useLoading();
@@ -111,8 +114,11 @@ export const ZoomRow = ({ model, setModel }: Props) => {
                 conferenceHost: user.Email,
             });
             setProcessState('meeting-present');
+            sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.create_zoom_meeting);
         } catch (e) {
             const { code } = getApiError(e);
+            sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.create_zoom_meeting_failed, code);
+
             if (code === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
                 setProcessState('disconnected');
 
@@ -128,12 +134,16 @@ export const ZoomRow = ({ model, setModel }: Props) => {
     };
 
     const handleClick = async () => {
+        sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.add_zoom_meeting_button);
+
         if (!user.hasPaidMail) {
+            sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.free_mail_users_upsell);
             zoomUpsellModal.openModal(true);
             return;
         }
 
         if (processState === 'disconnected') {
+            sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.oauth_modal_displayed);
             triggerOAuthPopup({
                 provider: OAUTH_PROVIDER.ZOOM,
                 scope: '',
