@@ -271,12 +271,6 @@
       "Import": [
         "Импортировать"
       ],
-      "Import alias": [
-        "Импортировать псевдоним",
-        "Импортировать псевдонимы",
-        "Импортировать псевдонимы",
-        "Импортировать псевдонимы"
-      ],
       "Importing": [
         "Идёт импорт"
       ],
@@ -361,6 +355,9 @@
       "Multiple select": [
         "Множественный выбор"
       ],
+      "Next": [
+        "Далее"
+      ],
       "No expired links": [
         "Ссылок с испеченным срока действия нет"
       ],
@@ -387,6 +384,9 @@
       ],
       "Please retry": [
         "Повторите попытку"
+      ],
+      "Previous": [
+        "Предыдущий"
       ],
       "Refresh the page": [
         "Обновить страницу"
@@ -501,6 +501,9 @@
       ],
       "Sign out": [
         "Выйти"
+      ],
+      "Skip": [
+        "Пропустить"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Кто-то поделился с вами элементом в ${ PASS_APP_NAME }."
@@ -1934,12 +1937,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Вы не можете изменить почтовые ящики для этого псевдонима."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "У вас есть ${ aliasCount } псевдоним, который присутствует в SimpleLogin, но отсутствует в ${ PASS_APP_NAME }. Не хотите ли вы его импортировать?",
-        "У вас есть ${ aliasCount } псевдонима, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
-        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
-        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "У вас остался ${ daysRemaining } день, чтобы опробовать эти и другие платные функции.",
         "У вас осталось ${ daysRemaining } дня, чтобы опробовать эти и другие платные функции.",
@@ -3059,9 +3056,6 @@
       ],
       "Import to vault(s)": [
         "Импорт в хранилище"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Импортируйте псевдонимы из SimpleLogin"
       ],
       "Import your data": [
         "Импортируйте свои данные"

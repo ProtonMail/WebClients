@@ -271,10 +271,6 @@
       "Import": [
         "Importér"
       ],
-      "Import alias": [
-        "Importer alias",
-        "Importer aliasser"
-      ],
       "Importing": [
         "Importerer"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Markér flere"
       ],
+      "Next": [
+        "Næste"
+      ],
       "No expired links": [
         "Ingen udløbne links"
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Prøv igen"
+      ],
+      "Previous": [
+        "Forrige"
       ],
       "Refresh the page": [
         "Opdater siden"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Log ud"
+      ],
+      "Skip": [
+        "Spring over"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Nogen har delt et element med dig på ${ PASS_APP_NAME }."
@@ -1580,6 +1585,9 @@
       "None": [
         "Ingen"
       ],
+      "Not recommended": [
+        "Anbefales ikke"
+      ],
       "Offline mode": [
         "Offline-tilstand"
       ],
@@ -1919,10 +1927,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke ændre postkasserne for dette alias"
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Du har ${ aliasCount } alias, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere det?",
-        "Du har ${ aliasCount } aliasser, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere dem?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Du har ${ daysRemaining } dag tilbage til at prøve disse og andre premium-funktioner.",
         "Du har ${ daysRemaining } dage tilbage til at prøve disse og andre premium-funktioner."
@@ -2003,6 +2007,9 @@
       "${ minutes } minute": [
         "${ minutes } minut",
         "${ minutes } minutter"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } genkender de websites og apps, du bruger, og udfylder automatisk formularer med dine legitimationsoplysninger for dig i enhver browser eller enhed. Ingen grund til at kopiere og indsætte."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } version"
@@ -2098,6 +2105,9 @@
       "Auto-lock after": [
         "Lås automatisk efter"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Ud over at gemme dine logins beskytter ${ PASS_APP_NAME } din identitet med en integreret e-mailaliasfunktion. Når du tilmelder dig en ny onlinekonto, kan ${ PASS_APP_NAME } automatisk oprette et alias for at beskytte din faktiske e-mailadresse. "
+      ],
       "Beta Access": [
         "Beta-adgang"
       ],
@@ -2106,6 +2116,9 @@
       ],
       "Birthdate": [
         "Fødselsdato"
+      ],
+      "Browse faster, smarter": [
+        "Browse hurtigere og smartere"
       ],
       "Capital letters (A-Z)": [
         "Store bogstaver (A-Z)"
@@ -2121,6 +2134,9 @@
       ],
       "Cards": [
         "Kort"
+      ],
+      "Choose your preferred look and feel.": [
+        "Vælg dit foretrukne udseende og stil."
       ],
       "City": [
         "By"
@@ -2179,6 +2195,9 @@
       "Custom text field": [
         "Tilpasset tekstfelt"
       ],
+      "Dark Web Monitoring": [
+        "Overvågning af det mørke net"
+      ],
       "Date": [
         "Dato"
       ],
@@ -2196,6 +2215,9 @@
       ],
       "Download logs": [
         "Hent logfiler"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Del nemt følsomme oplysninger med alle, også selvom de ikke bruger ${ PASS_APP_NAME }. Du kan dele en enkelt adgangskode, en note eller et betalingskort eller flere elementer i samme mappe."
       ],
       "Email": [
         "E-mail"
@@ -2251,11 +2273,17 @@
       "Floor, apartment, building": [
         "Etage, lejlighed, bygning"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Af sikkerhedsmæssige årsager låser ${ PASS_SHORT_APP_NAME } automatisk sig selv efter 10 minutters inaktivitet."
+      ],
       "Forwards to": [
         "Videresender til"
       ],
       "Free forever": [
         "Gratis for evigt"
+      ],
+      "Free password manager with identity protection": [
+        "Gratis adgangskodeadministrator med identitetsbeskyttelse"
       ],
       "Full Name": [
         "Fulde navn"
@@ -2272,6 +2300,9 @@
       "Generic CSV": [
         "Generisk CSV"
       ],
+      "Get the extension for your browser.": [
+        "Hent udvidelsen til din browser."
+      ],
       "Grant": [
         "Tildel"
       ],
@@ -2280,6 +2311,12 @@
       ],
       "Hide password": [
         "Skjul adgangskode"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliasser"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Sådan låses ${ PASS_SHORT_APP_NAME } op"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2316,6 +2353,12 @@
       ],
       "Instagram handle": [
         "Instagram - brugernavn"
+      ],
+      "Install and continue": [
+        "Installér og fortsæt"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integreret 2FA-godkendelsesværktøj"
       ],
       "Invitations": [
         "Invitationer"
@@ -2379,6 +2422,9 @@
       ],
       "Make all viewers": [
         "Gør alle til seere"
+      ],
+      "Make it your own.": [
+        "Gør den til dit eget."
       ],
       "max views reached": [
         "maks. visninger opnået"
@@ -2446,6 +2492,9 @@
       "Passkey": [
         "Adgangsnøgle"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Adgangsnøgler er et nemt og sikkert alternativ til traditionelle adgangskoder, som forhindrer phishing-angreb og gør din onlineoplevelse mere smidig.  ${ PASS_APP_NAME } understøtter adgangsnøgler på alle platforme."
+      ],
       "Passphrase": [
         "Adgangssætning"
       ],
@@ -2466,6 +2515,9 @@
       ],
       "Personal website": [
         "Personligt websted"
+      ],
+      "Personalize": [
+        "Personliggør"
       ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-krypteret JSON (anbefales)"
@@ -2488,6 +2540,9 @@
       "Rate us": [
         "Bedøm os"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Modtag øjeblikkelige advarsler, hvis dine personlige oplysninger bliver lækket i en tredjeparts databrud. Du kan overvåge flere e-mailadresser eller dit eget domænenavn."
+      ],
       "Recent": [
         "Seneste"
       ],
@@ -2505,6 +2560,15 @@
       ],
       "Reveal password": [
         "Vis adgangskode"
+      ],
+      "Secure password sharing": [
+        "Sikker deling af adgangskoder"
+      ],
+      "Securely log in with passkeys": [
+        "Log sikkert ind med adgangsnøgler"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Gem, del og log automatisk dine konti ind sikkert med ${ PASS_APP_NAME } ved hjælp af end-to-end-kryptering, som millioner har tillid til."
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Gem, del og log automatisk ind på dine konti med ${ PASS_APP_NAME } ved hjælp af end-to-end-kryptering, som millioner har tillid til."
@@ -2524,6 +2588,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Vælg den boks, hvor SimpleLogin-alias skal importeres til"
       ],
+      "Select theme": [
+        "Vælg tema"
+      ],
       "Select your password manager": [
         "Vælg din adgangskodeadministrator"
       ],
@@ -2541,6 +2608,9 @@
       ],
       "Show website favicons": [
         "Vis websteders favicon"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Log hurtigere ind med ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Socialsikring"
@@ -2609,6 +2679,9 @@
       "Trash": [
         "Papirkurv"
       ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "To-faktor- godkendelse (2FA) er en af de bedste måder at beskytte dine konti på nettet. ${ PASS_APP_NAME } gør 2FA nemmere med et integreret godkendelsesværktøj, der gemmer dine 2FA-koder og automatisk viser og udfylder dem."
+      ],
       "Type": [
         "Type"
       ],
@@ -2617,6 +2690,9 @@
       ],
       "Unlock with": [
         "Lås op med"
+      ],
+      "Unlock with:": [
+        "Lås op med:"
       ],
       "Unnamed Credit Card": [
         "Unavngivet betalingskort"
@@ -2683,6 +2759,12 @@
       ],
       "You are about to create": [
         "Du er ved at oprette"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Du kan vælge mellem pinkode, biometri eller din kontoadgangskode for at låse op."
+      ],
+      "Your passwords. Everywhere.": [
+        "Dine adgangskoder. Overalt."
       ],
       "ZIP or Postal code": [
         "Postnummer"
@@ -2985,9 +3067,6 @@
       ],
       "Import to vault(s)": [
         "Importér til boks(e)"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importer dine aliasser fra SimpleLogin"
       ],
       "Import your data": [
         "Importér dine data"

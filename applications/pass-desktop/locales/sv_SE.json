@@ -271,10 +271,6 @@
       "Import": [
         "Importera"
       ],
-      "Import alias": [
-        "Importera alias",
-        "Importera alias"
-      ],
       "Importing": [
         "Importerar"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Välj flera"
       ],
+      "Next": [
+        "Nästa"
+      ],
       "No expired links": [
         "Inga utlöpta länkar"
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Försök igen"
+      ],
+      "Previous": [
+        "Föregående"
       ],
       "Refresh the page": [
         "Uppdatera sidan"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Logga ut"
+      ],
+      "Skip": [
+        "Hoppa över"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Någon delade ett objekt med dig på ${ PASS_APP_NAME }"
@@ -1565,6 +1570,9 @@
       "None": [
         "Ingen"
       ],
+      "Not recommended": [
+        "Rekommenderas inte"
+      ],
       "Offline mode": [
         "Offlineläge"
       ],
@@ -1895,10 +1903,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kan inte ändra brevlådorna för detta alias."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera det?",
-        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera dem?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Du har ${ daysRemaining } dag kvar att prova dessa och andra premiumfunktioner.",
         "Du har ${ daysRemaining } dagar kvar att prova dessa och andra premiumfunktioner."
@@ -2083,6 +2087,9 @@
       "Birthdate": [
         "Födelsedatum"
       ],
+      "Browse faster, smarter": [
+        "Surfa snabbare, smartare"
+      ],
       "Capital letters (A-Z)": [
         "Versaler (A–Ö)"
       ],
@@ -2097,6 +2104,9 @@
       ],
       "Cards": [
         "Kort"
+      ],
+      "Choose your preferred look and feel.": [
+        "Välj ditt föredragna utseende och känsla."
       ],
       "City": [
         "Ort"
@@ -2155,6 +2165,9 @@
       "Custom text field": [
         "Anpassat textfält"
       ],
+      "Dark Web Monitoring": [
+        "Övervakning mörka webben"
+      ],
       "Date": [
         "Datum"
       ],
@@ -2172,6 +2185,9 @@
       ],
       "Download logs": [
         "Ladda ner loggar"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Dela enkelt känslig information med vem som helst, även om de inte använder ${ PASS_APP_NAME }. Du kan dela ett enda lösenord, anteckning eller kreditkort eller flera objekt i samma mapp."
       ],
       "Email": [
         "E-post"
@@ -2233,6 +2249,9 @@
       "Free forever": [
         "Gratis för alltid"
       ],
+      "Free password manager with identity protection": [
+        "Gratis lösenordshanterare med identitetsskydd"
+      ],
       "Full Name": [
         "Fullständigt namn"
       ],
@@ -2256,6 +2275,12 @@
       ],
       "Hide password": [
         "Dölj lösenord"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-alias"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Hur man låser upp ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2292,6 +2317,12 @@
       ],
       "Instagram handle": [
         "Instagram-användarnamn"
+      ],
+      "Install and continue": [
+        "Installera och fortsätt"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrerad 2FA-autentisering"
       ],
       "Invitations": [
         "Inbjudningar"
@@ -2358,6 +2389,9 @@
       ],
       "Make all viewers": [
         "Gör alla till visare"
+      ],
+      "Make it your own.": [
+        "Gör den till din egen."
       ],
       "max views reached": [
         "maximalt antal visningar uppnått"
@@ -2446,6 +2480,9 @@
       "Personal website": [
         "Personlig webbplats"
       ],
+      "Personalize": [
+        "Personifiera"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-krypterad JSON (rekommenderas)"
       ],
@@ -2467,6 +2504,9 @@
       "Rate us": [
         "Betygsätt oss"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Få omedelbara varningar om din personliga information läcker i ett dataintrång från tredje part. Du kan övervaka flera e-postadresser eller ditt eget domännamn."
+      ],
       "Recent": [
         "Senaste"
       ],
@@ -2484,6 +2524,9 @@
       ],
       "Reveal password": [
         "Visa lösenord"
+      ],
+      "Secure password sharing": [
+        "Säker lösenordsdelning"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Lagra, dela och logga in automatiskt på dina konton med ${ PASS_APP_NAME } på ett säkert sätt med hjälp av end-to-end-kryptering som är betrodd av miljontals."
@@ -2503,6 +2546,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Välj valvet där SimpleLogin-alias kommer att importeras till"
       ],
+      "Select theme": [
+        "Välj tema"
+      ],
       "Select your password manager": [
         "Välj din lösenordshanterare"
       ],
@@ -2520,6 +2566,9 @@
       ],
       "Show website favicons": [
         "Visa webbplatsens favicon"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Logga in snabbare med ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Social säkerhet"
@@ -2597,6 +2646,9 @@
       "Unlock with": [
         "Lås upp med"
       ],
+      "Unlock with:": [
+        "Lås upp med:"
+      ],
       "Unnamed Credit Card": [
         "Namnlöst kreditkort"
       ],
@@ -2662,6 +2714,12 @@
       ],
       "You are about to create": [
         "Du är på väg att skapa"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Du kan välja mellan PIN-kod, biometri eller ditt kontolösenord för att låsa upp."
+      ],
+      "Your passwords. Everywhere.": [
+        "Dina lösenord. Överallt."
       ],
       "ZIP or Postal code": [
         "Postnummer"
@@ -3011,9 +3069,6 @@
       ],
       "Import to vault(s)": [
         "Importera till valv"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importera dina alias från SimpleLogin"
       ],
       "Import your data": [
         "Importera din data"
