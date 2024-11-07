@@ -677,6 +677,9 @@
       "Today": [
         "Heute"
       ],
+      "Toggle Contacts app": [
+        "Kontakte-App umschalten"
+      ],
       "Toggle settings": [
         "Einstellungen umschalten"
       ],
@@ -896,6 +899,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Wenn du jetzt beendest, wird dieser Termin verworfen."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Bitte schließ diese Registerkarte nicht. Einige Anfragen werden noch im Hintergrund bearbeitet."
       ]
     },
     "Apps dropdown": {
@@ -1329,6 +1335,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "Schreibzugriff (Termindetails anzeigen, erstellen und bearbeiten)"
+      ],
       "View (see all event details)": [
         "Lesezugriff (alle Termindetails anzeigen)"
       ]
@@ -2603,6 +2612,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Farbcodierung von Terminen, um die Organisation des Tages, die Zeiterfassung und die Priorisierung von Aufgaben zu erleichtern."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Erstelle ein Zoom-Meeting und füge deine Veranstaltung mit einem Klick Details zur Teilnahme hinzu."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, kannst du die Datei mit allen deinen exportierten Kontakten herunterladen."
       ],
@@ -2636,8 +2648,14 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Lege eine Wiederherstellungsmethode fest, um zu verhindern, dass du den Zugriff auf dein Konto verlierst."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Dies kann ein paar Minuten dauern. In der Zwischenzeit kannst du ${ CALENDAR_APP_NAME } wie gewohnt weiter verwenden."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, solltest du eine Wiederherstellungsphrase festlegen."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Wenn du über eine CSV- oder VCF-Datei importieren möchtest, stelle sicher, dass die Datei nicht größer ist als ${ MAX_IMPORT_FILE_SIZE_STRING } oder ${ MAX_IMPORT_CONTACTS_STRING } Kontakte. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
@@ -3078,6 +3096,9 @@
       "Failed to get original occurrence in series": [
         "Abrufen des ursprünglichen Serienelements fehlgeschlagen"
       ],
+      "Failed to load oauth modal.": [
+        "OAuth-Modal konnte nicht geladen werden."
+      ],
       "First name is too long": [
         "Der Vorname ist zu lang."
       ],
@@ -3299,6 +3320,9 @@
       "The address might be misspelled": [
         "Die E-Mail-Adresse könnte falsch geschrieben sein."
       ],
+      "The amount due has changed. Please try again.": [
+        "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
+      ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
       ],
@@ -3380,6 +3404,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Du hast die maximale Anzahl an Kalendern erreicht."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du hast die maximale Anzahl von Kontakten für dein Konto erreicht"
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
@@ -3598,6 +3625,11 @@
         "Du musst einen aktiven persönlichen Kalender nutzen, um deine Termine importieren zu können"
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "Anzeigename darf nicht leer sein"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Kein Bild ausgewählt"
@@ -3787,6 +3819,9 @@
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kannst nur drei Einladungen in einem Zeitraum von 6 Monaten annehmen. Bitte wende dich an ${ supportLink }, wenn du eine Ausnahme benötigst."
       ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kannst diese Einladung mit deinem aktuellen Plan nicht annehmen."
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du wurdest eingeladen, ${ bannerOrganization } beizutreten. ${ viewInviteButton }"
       ],
@@ -3823,6 +3858,9 @@
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
+      "Configure your family account and invite users": [
+        "Konfiguriere dein Family-Konto und lade andere Benutzer ein"
+      ],
       "Set up your family": [
         "Family einrichten"
       ],
@@ -4864,6 +4902,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andere Benutzer innerhalb deiner Organisation sehen deine belegten Zeitfenster. Es werden keine Termindetails geteilt."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "password": [
         "Passwort"
@@ -7059,6 +7100,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
       ],
@@ -7154,6 +7198,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Leite deinen Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
@@ -7450,6 +7497,11 @@
         "Damit der Import funktioniert, musst du alle gewünschten Elemente auswählen, wie im GIF gezeigt."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Wähle aus, worauf ${ BRAND_NAME } zugreifen kann: Deine E-Mail-Nachrichten und -Einstellungen ansehen, deine Kontakte ansehen und herunterladen, alle Termine ansehen und herunterladen, auf die du über Google Calendar zugreifst."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Willkommen bei ${ appName }"
@@ -7729,6 +7781,14 @@
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
       ]
     },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto zu belasten, und deine Bank, dein Konto entsprechend zu belasten. Du kannst innerhalb von 8 Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen, sofern du mit deiner Bank eine entsprechende Vereinbarung getroffen hast."
+      ],
+      "Street address, postal code, and city": [
+        "Straße, Postleitzahl und Ort"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Schlüssel kann nicht zur Verschlüsselung verwendet werden"
@@ -7958,6 +8018,11 @@
     "Safety review": {
       "Review your account safety": [
         "Überprüfe deine Kontosicherheit"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Die Anmeldung wurde nicht erfolgreich abgeschlossen."
       ]
     },
     "Security Center": {
@@ -8670,6 +8735,9 @@
     "Subscription change warning": {
       "Got it": [
         "Verstanden"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Melde dich einfach bei deinem Apple App Store-Konto an und wähle dann ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Melde dich einfach in deinem Play Store Konto an und klicke auf ${ subscriptions }."
@@ -9575,6 +9643,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] }-Apps herunterladen"
       ],
+      "Get Zooming faster": [
+        "Zoom schneller bekommen"
+      ],
       "Gift": [
         "Geschenk"
       ],
@@ -9816,6 +9887,9 @@
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
       ],
+      "We're setting up calendar search": [
+        "Wir richten die Kalendersuche ein"
+      ],
       "We've locked some calendars to protect your data": [
         "Wir haben einige Kalender gesperrt, um deine Daten zu schützen."
       ],
@@ -10021,6 +10095,11 @@
       ],
       "No ads": [
         "Keine Werbung"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
       ]
     },
     "wallet_signup_2024: Info": {
@@ -10397,6 +10476,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoom-Meeting hinzufügen"
+      ],
+      "Adding conferencing details": [
+        "Konferenzdetails werden hinzugefügt"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom-Konfiguration wird geladen"
       ]
     },
     "Zoom Meeting": {
