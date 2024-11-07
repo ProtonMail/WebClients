@@ -248,13 +248,14 @@ export enum PRODUCT {
     WALLET = 6,
 }
 
+// Should be synced with ProductGroup in API
 export enum PRODUCT_BIT {
     MAIL = 1,
     DRIVE = 2,
     VPN = 4,
     PASS = 8,
     WALLET = 16,
-    DOCS = 32,
+    NEUTRON = 32,
 }
 
 export type APP_KEYS = keyof typeof APPS;
