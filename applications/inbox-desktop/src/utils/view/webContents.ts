@@ -22,6 +22,7 @@ import {
     showView,
     showNetworkErrorPage,
     IGNORED_NET_ERROR_CODES,
+    getCurrentViewID,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, viewLogger } from "../log";
@@ -58,6 +59,10 @@ export function handleWebContents(contents: WebContents) {
 
         if (!isCurrentContent()) {
             return;
+        }
+
+        if (isCurrentContent() && getCurrentViewID() === "account" && isAccountSwitch(url)) {
+            resetHiddenViews({ toHomepage: false });
         }
 
         if (isHome(url)) {
