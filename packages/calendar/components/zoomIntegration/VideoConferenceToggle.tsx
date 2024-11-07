@@ -8,6 +8,8 @@ import { Info, SettingsLayoutLeft, SettingsLayoutRight } from '@proton/component
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 
+import { useVideoConfTelemetry } from '../videoConferencing/useVideoConfTelemetry';
+
 interface Props {
     withInfo?: boolean;
 }
@@ -16,11 +18,13 @@ export const VideoConferenceToggle = ({ withInfo }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
+    const { sendEventVideoConferenceSettingsToggle } = useVideoConfTelemetry();
     const [organization, loadingOrganization] = useOrganization();
     const { state } = useToggle(organization?.Settings.VideoConferencingEnabled);
 
     const handleToggle = async (checked: boolean) => {
         await dispatch(toggleZoomSettings({ checked }));
+        sendEventVideoConferenceSettingsToggle(checked);
         createNotification({ text: c('Notification').t`Video conferencing settings have been updated` });
     };
 
