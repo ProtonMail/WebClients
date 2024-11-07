@@ -4586,6 +4586,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
+      "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "I mellemtiden kan du tilmelde dig din egen ${ DRIVE_APP_NAME }-konto og beskytte dine data med end-to-end-kryptering og dele dem sikkert."
+      ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
       ],
@@ -5396,7 +5399,7 @@
         "Du har allerede en gratis konto"
       ],
       "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
-        "Du er ved at forlade det delte element. Du vil ikke kunne tilgå det igen, indtil ejeren deler det med dig."
+        "Du er ved at forlade det delte element. Du vil ikke kunne tilgå det igen, før ejeren deler det med dig."
       ],
       "You are about to open another browser tab and visit:": [
         "Du er ved at åbne en anden browserfane og besøge:"
@@ -6500,6 +6503,9 @@
       "Graphics Interchange Format (GIF)": [
         "Grafisk Udskiftningsformat (GIF)"
       ],
+      "GZip Archive": [
+        "GZip-arkiv"
+      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -6517,6 +6523,9 @@
       ],
       "Java Archive (JAR)": [
         "Java-arkiv (JAR)"
+      ],
+      "JPEG image": [
+        "JPEG-billede"
       ],
       "MP3 audio": [
         "MP3-lyd"
@@ -6553,6 +6562,9 @@
       ],
       "Opus audio": [
         "Opus audio"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "RAR-arkiv"
@@ -7673,6 +7685,9 @@
       "Failed to download files: ${ err }": [
         "Kunne ikke downloade filer: ${ err }"
       ],
+      "Failed to load invitation details": [
+        "Kunne ikke indlæse invitationsdetaljer"
+      ],
       "Failed to move, please try again": [
         "Flytning mislykkedes. Forsøg venligst igen"
       ],
@@ -7731,11 +7746,17 @@
       "Share invitation declined": [
         "Afvist invitation til at dele"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Det lykkedes ikke at stoppe delingen af dette element"
+      ],
       "Subfolder failed to be loaded": [
         "Undermappe kunne ikke indlæses"
       ],
       "The item was not added to your drive": [
         "Elementet blev ikke tilføjet dit drev"
+      ],
+      "The item was successfully added to your drive": [
+        "Elementet blev tilføjet dit drev"
       ],
       "The link to \"${ name }\" failed to be deleted": [
         "Linket til \"${ name }\" kunne ikke slettes"
@@ -10244,6 +10265,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
+      ],
+      "Shared with end-to-end encryption": [
+        "Delt med end-to-end-kryptering"
       ],
       "Show side panel": [
         "Vis sidepanel"
