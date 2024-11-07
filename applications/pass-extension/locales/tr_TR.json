@@ -269,10 +269,6 @@
       "Import": [
         "İçe aktar"
       ],
-      "Import alias": [
-        "Takma adı içe aktar",
-        "Takma adları içe aktar"
-      ],
       "Import your passwords": [
         "Parolalarınızı içe aktarın"
       ],
@@ -1849,10 +1845,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunu içe aktarmak ister misiniz?",
-        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunları içe aktarmak ister misiniz?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı.",
         "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı."
@@ -2909,9 +2901,6 @@
       ],
       "Import to vault(s)": [
         "Kasaların içine aktar"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "SimpleLogin üzerindeki takma adlarınızı içe aktarın"
       ],
       "Last autofill": [
         "Son otomatik doldurma"
