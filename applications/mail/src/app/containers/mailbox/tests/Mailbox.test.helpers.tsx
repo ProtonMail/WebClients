@@ -6,6 +6,8 @@ import loudRejection from 'loud-rejection';
 import { serverEvent } from '@proton/account';
 import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
+import { setBit } from '@proton/shared/lib/helpers/bitset';
+import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -144,6 +146,9 @@ export const setup = async ({
 
     const result = await render(<Component {...props} />, {
         preloadedState: {
+            userSettings: getModelState({
+                News: setBit(0, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS),
+            } as UserSettings),
             mailSettings: getModelState(props.mailSettings),
             categories: getModelState([...labels, ...folders]),
             messageCounts: getModelState([{ LabelID: props.labelID, Total: totalMessages, Unread: totalMessages }]),
