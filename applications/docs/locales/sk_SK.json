@@ -567,6 +567,9 @@
       "Sign out": [
         "Odhlásiť sa"
       ],
+      "Sign up": [
+        "Zaregistrujte sa"
+      ],
       "Skip verification": [
         "Preskočiť overenie"
       ],
@@ -950,13 +953,13 @@
         "Bezpečné prihlásenie na všetkých vašich zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, monitorovanie Dark Webu a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, ${ BRAND_NAME } Scribe písací asistent, neobmedzený počet hide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou šifrovania end-to-end. Súčasťou sú 15 emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
@@ -2158,6 +2161,11 @@
         "Faktúra po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chráni váš účet pomocou nepretržitého monitorovania podozrivých aktivít - vrátane eskalácie na bezpečnostných špecialistov."
@@ -2227,11 +2235,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3791,6 +3794,12 @@
         "${ contactsLength } kontaktov",
         "${ contactsLength } kontaktov"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } umožňuje spoluprácu v reálnom čase s end-to-end šifrovaním pre dokonalé súkromie. Vytvorte kópiu a začnite upravovať alebo požiadajte vlastníka o prístup k úpravám."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } v"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } nájdená skupina",
         "${ groupCounts } nájdené skupiny",
@@ -4010,6 +4019,9 @@
         "Vytvoriť ${ calendarsToBeCreatedCount } nových kalendárov",
         "Vytvoriť ${ calendarsToBeCreatedCount } nových kalendárov"
       ],
+      "Create a copy to edit": [
+        "Vytvorte kópiu na upravovanie"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvorte štítok pre importované správy, časový rozsah pre tento import a priečinky, ktoré chcete importovať."
       ],
@@ -4078,6 +4090,9 @@
       ],
       "Document moved to trash": [
         "Dokument bol presunutý do koša"
+      ],
+      "Document owner has the password": [
+        "Vlastník dokumentu má heslo"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nič nevidíte? Nezabudnite vypnúť blokovanie automaticky otváraných okien."
@@ -5933,23 +5948,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Začnite za ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Zmazať účet"
@@ -5971,6 +5969,23 @@
       ],
       "Switch plan": [
         "Zmeniť plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Začnite za ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -8042,6 +8057,17 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Pozvite priateľov do ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Ak chcete tento dokument upraviť, vytvorte si kópiu, ktorú môžete meniť."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Prihlásiť sa"
+      ],
+      "Sign in to your organization": [
+        "Prihláste sa do svojej organizácie"
       ]
     },
     "State": {
@@ -8836,6 +8862,9 @@
       "Link confirmation": [
         "Potvrdenie pred otvorením odkazu"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Vytvorte kópiu do svojho ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Spravovať zabezpečený odkaz"
       ],
@@ -8994,6 +9023,9 @@
       ],
       "The link expired": [
         "Platnosť odkazu vypršala"
+      ],
+      "This document is password protected": [
+        "Tento dokument je chránený heslom"
       ],
       "Unlock contacts groups": [
         "Odomknúť skupiny kontaktov"
