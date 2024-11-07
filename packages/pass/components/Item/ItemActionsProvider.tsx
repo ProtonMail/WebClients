@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { ConfirmDeleteAliases } from '@proton/pass/components/Item/Actions/ConfirmDeleteAliases';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import {
@@ -66,10 +67,12 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         dispatch(itemDeleteIntent({ itemId: item.itemId, shareId: item.shareId, item }));
     };
 
-    const deleteManyItems = (selected: BulkSelectionDTO) => {
-        dispatch(itemBulkDeleteIntent({ selected }));
+    const deleteManyItems = (options: { selected: BulkSelectionDTO }) => {
+        dispatch(itemBulkDeleteIntent(options));
         bulk.disable();
     };
+
+    const confirmDeleteAliases = useConfirm(deleteManyItems);
 
     const restoreItem = (item: ItemRevision) => {
         dispatch(itemRestoreIntent({ itemId: item.itemId, shareId: item.shareId, item }));
@@ -103,11 +106,12 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
             trash: trashItem,
             trashMany: trashManyItems,
             delete: deleteItem,
-            deleteMany: deleteManyItems,
+            deleteMany: (selected) =>
+                bulk.aliasCount ? confirmDeleteAliases.prompt({ selected }) : deleteManyItems({ selected }),
             restore: restoreItem,
             restoreMany: restoreManyItems,
         };
-    }, []);
+    }, [bulk]);
 
     return (
         <ItemActionsContext.Provider value={context}>
@@ -136,6 +140,14 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     shareId={moveManyItems.param.shareId}
                     onConfirm={moveManyItems.confirm}
                     onCancel={moveManyItems.cancel}
+                />
+            )}
+
+            {confirmDeleteAliases.pending && (
+                <ConfirmDeleteAliases
+                    open
+                    onConfirm={confirmDeleteAliases.confirm}
+                    onCancel={confirmDeleteAliases.cancel}
                 />
             )}
         </ItemActionsContext.Provider>
