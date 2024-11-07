@@ -91,13 +91,14 @@ export const getOrganizationAppRoutes = ({
         // The org must be setup to allow users to access this page
         (hasOrganizationKey || hasOrganization);
 
-    const canShowScribeSection =
+    const canShowScribeSection = Boolean(
         isScribeEnabled &&
-        // Some b2b accounts do not support scribe
-        isScribeSupported(organization, user) &&
-        // The user must have a plan that supports multi-user
-        hasMemberCapablePlan &&
-        hasSubUsers;
+            // Some b2b accounts do not support scribe
+            isScribeSupported(organization, user) &&
+            // The user must have a plan that supports multi-user
+            hasMemberCapablePlan &&
+            hasSubUsers
+    );
 
     // add test to only show if org is elligible for zoom
     const canShowVideoConferenceSection =
