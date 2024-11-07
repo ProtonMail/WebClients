@@ -183,3 +183,19 @@ export const getUpdatedDateTime = (
         frequencyModel: getFrequencyModelChange(oldModel.start, newStart, oldModel.frequencyModel),
     };
 };
+
+export const deleteConferenceData = (tmpData: EventModel) => {
+    if (tmpData.rest['x-pm-conference-id']) {
+        delete tmpData.rest['x-pm-conference-id'];
+    }
+
+    if (tmpData.rest['x-pm-conference-url']) {
+        delete tmpData.rest['x-pm-conference-url'];
+    }
+
+    delete tmpData.conferenceId;
+    delete tmpData.conferenceUrl;
+    delete tmpData.conferencePasscode;
+    delete tmpData.conferenceCreator;
+    delete tmpData.conferenceHost;
+};
