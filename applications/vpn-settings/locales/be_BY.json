@@ -3235,10 +3235,10 @@
         "Пацвердзіце сваю ідэнтычнасць пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Вы дасягнулі максімальнай колькасці з ${ maxSecurityKeyLength } ключа бяспекі.",
-        "Вы дасягнулі максімальнай колькасці з ${ maxSecurityKeyLength } ключоў бяспекі.",
-        "Вы дасягнулі максімальнай колькасці з ${ maxSecurityKeyLength } ключоў бяспекі.",
-        "Вы дасягнулі максімальнай колькасці з ${ maxSecurityKeyLength } ключоў бяспекі."
+        "Вы дасягнулі максімальнай колькасці ў ${ maxSecurityKeyLength } ключ бяспекі.",
+        "Вы дасягнулі максімальнай колькасці ў ${ maxSecurityKeyLength } ключы бяспекі.",
+        "Вы дасягнулі максімальнай колькасці ў ${ maxSecurityKeyLength } ключоў бяспекі.",
+        "Вы дасягнулі максімальнай колькасці ў ${ maxSecurityKeyLength } ключоў бяспекі."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш двухфактарны ключ аўтэнтыфікацыі гатовы да выкарыстання."
@@ -3376,26 +3376,6 @@
       ],
       "Very small": [
         "Вельмі маленькі"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 ліст у месяц)"
-      ],
-      "(1 email per quarter)": [
-        "(1 ліст у квартал)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 лісты ў месяц)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 паведамленні ў год)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 паведамленняў у год)"
-      ],
-      "(during your first month)": [
-        "(на працягу першага месяца)"
       ]
     },
     "Go to sign in": {
@@ -5457,9 +5437,6 @@
       "Addresses": [
         "Адрасы"
       ],
-      "Administrators": [
-        "Адміністратары"
-      ],
       "Allow": [
         "Дазволіць"
       ],
@@ -5957,41 +5934,6 @@
       ],
       "VPN connections": [
         "Падключэнні па VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Абнаўленні прадуктаў ${ app } і ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Абнаўленні прадукту ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Апавяшчэнні ${ BRAND_NAME } бэта-версій"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Навіны ${ BRAND_NAME } для бізнесу"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Важныя аб'явы ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Навіны ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Прапановы і рэкламныя акцыі ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Апавяшчэнні прадукту ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Апытанне карыстальнікаў ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Прывітальныя лісты ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Штодзённыя апавяшчэнні па электроннай пошце"
       ]
     },
     "Label in domain modal": {
@@ -9099,7 +9041,7 @@
         "Падрабязнасці карыстальніка:"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO"
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ]
     },
     "sso: auth device state": {
@@ -10897,14 +10839,6 @@
       ],
       "Waiting for user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Атрымлівайце апошнія навіны прыватнасці і падзеі, якія адбываюцца ў сусвеце ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Удзельнічайце ў апытанні, каб удасканаліць сэрвісы ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {

@@ -3795,11 +3795,6 @@
         "Ismét feliratkozott ezekre az e-mailekre: ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } és ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Az ellenőrző e-mailt elküldtük erre a címre: ${ address }"
@@ -5502,23 +5497,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 e-mail havonta)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-mail negyedévente)"
-      ],
-      "(1-2 emails per month)": [
-        "(havonta 1-2 e-mail)"
-      ],
-      "(2-4 emails per year)": [
-        "(évente 2-4 e-mail)"
-      ],
-      "(4-6 emails per year)": [
-        "(évente 4-6 e-mail)"
       ]
     },
     "Get started checklist instructions": {
@@ -9177,9 +9155,6 @@
       "Addresses": [
         "Címek"
       ],
-      "Administrators": [
-        "Adminisztrátorok"
-      ],
       "ALL": [
         "MIND"
       ],
@@ -10111,38 +10086,6 @@
       ],
       "VPN connections": [
         "VPN kapcsolat"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } és ${ additionalApp } hírek"
-      ],
-      "${ app } product updates": [
-        "${ app } hírek"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } béta verzió bejelentések"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } üzleti hírlevél"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Fontos ${ BRAND_NAME } bejelentések"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } hírlevél"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } ajánlatok és promóciók"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } termékekkel kapcsolatos hírek"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } felhasználói kérdőív"
-      ],
-      "Daily email notifications": [
-        "Napi e-mail értesítések"
       ]
     },
     "Label in domain modal": {
@@ -15493,9 +15436,6 @@
       ],
       "Email privacy": [
         "E-mail adatvédelem"
-      ],
-      "Email subscriptions": [
-        "E-mail feliratkozás"
       ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"

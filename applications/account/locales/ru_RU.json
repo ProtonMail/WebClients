@@ -4000,11 +4000,6 @@
         "Вы отписались от электронных писем ${ categories } и больше не будете получать подобные электронные письма от ${ BRAND_NAME }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } и ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Электронное письмо с подтверждением отправлено на ${ address }"
@@ -5869,26 +5864,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Бесплатный пробный период вашего приложения для настольных компьютеров закончился"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 письмо в месяц)"
-      ],
-      "(1 email per quarter)": [
-        "(1 письмо в квартал)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 письма в месяц)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 электронных письма в год)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 электронных писем в год)"
-      ],
-      "(during your first month)": [
-        "(в течение первого месяца)"
       ]
     },
     "Get started checklist instructions": {
@@ -9842,9 +9817,6 @@
       "Addresses": [
         "Адреса"
       ],
-      "Administrators": [
-        "Администраторы"
-      ],
       "ALL": [
         "ВСЁ"
       ],
@@ -10826,41 +10798,6 @@
       ],
       "VPN connections": [
         "Подключения к VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Обновления продуктов ${ app } и ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Обновления продукта от ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Бета-объявления ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Рассылка ${ BRAND_NAME } for Business"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Важные оповещения ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Рассылка ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Предложения и акции ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Объявления о продукции ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } user survey"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Приветственные письма ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Ежедневные уведомления по электронной почте"
       ]
     },
     "Label in domain modal": {
@@ -17198,9 +17135,6 @@
       "Email privacy": [
         "Конфиденциальность эл. почты"
       ],
-      "Email subscriptions": [
-        "Подписки на рассылки"
-      ],
       "Encryption and keys": [
         "Шифрование и ключи"
       ],
@@ -18211,14 +18145,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Выберите настройки PGP по умолчанию, используемые для подписи или шифрования сообщений для тех кто, не является пользователями ${ BRAND_NAME } PGP. Обратите внимание, что Inline PGP заставляет подписывать сообщения простым текстом."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Узнайте последние новости о приватности и о том, что происходит во Вселенной ${ BRAND_NAME }."
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Participate in surveys to improve ${ BRAND_NAME } services"
       ]
     },
     "Tooltip prompt to trust keys": {

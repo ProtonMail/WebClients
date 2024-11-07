@@ -271,10 +271,6 @@
       "Import": [
         "Importar"
       ],
-      "Import alias": [
-        "Importar el alias",
-        "Importar los alias"
-      ],
       "Importing": [
         "Importando"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Selección múltiple"
       ],
+      "Next": [
+        "Siguiente"
+      ],
       "No expired links": [
         "No hay enlaces expirados."
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Inténtalo de nuevo."
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Refresh the page": [
         "Actualizar la página"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Cerrar sesión"
+      ],
+      "Skip": [
+        "Omitir"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Alguien ha compartido un elemento contigo en ${ PASS_APP_NAME }."
@@ -1925,10 +1930,6 @@
       "You cannot change the mailboxes for this alias.": [
         "No puedes cambiar los buzones para este alias."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Tienes ${ aliasCount } alias en SimpleLogin pero no aparece en ${ PASS_APP_NAME }. ¿Quieres importarlo?",
-        "Tienes ${ aliasCount } alias en SimpleLogin pero no aparecen en ${ PASS_APP_NAME }. ¿Quieres importarlos?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Tienes ${ daysRemaining } día restante para probar esta y otras funciones premium.",
         "Tienes ${ daysRemaining } días restantes para probar esta y otras funciones premium."
@@ -3041,9 +3042,6 @@
       ],
       "Import to vault(s)": [
         "Importar a las cajas fuertes"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importa tus alias desde SimpleLogin"
       ],
       "Import your data": [
         "Importa los datos"

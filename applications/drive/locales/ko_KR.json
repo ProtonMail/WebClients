@@ -1103,7 +1103,7 @@
         "6개 사용자 계정"
       ],
       "6 users": [
-        "6명의 사용자"
+        "사용자 6명"
       ],
       "8500+ servers across 110+ countries": [
         "110개 국가에서 8500개 이상의 서버"
@@ -1139,7 +1139,7 @@
         "안전한 사진 백업"
       ],
       "Protect 10 devices at a time": [
-        "동시에 최대 개까지 장치 보호"
+        "동시에 최대 10개 장치 보호"
       ],
       "Secure file storage & sharing": [
         "안전한 파일 저장 공간 및 공유"
@@ -1168,7 +1168,7 @@
         "할인은 표준 월별 가격을 기본으로 합니다."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "구독은 결제일 주기가 끝날 때 표준 할인율 요금으로 자동 갱신됩니다."
+        "구독은 결제 주기가 끝날 때 표준 할인율을 적용한 요금으로 자동 갱신됩니다."
       ]
     },
     "BF2024: Info": {
@@ -1178,10 +1178,10 @@
     },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
-        "${ durationDeal }년간"
+        "${ durationDeal }간"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "${ regularAmount }(으)로 1개월마다 갱신됩니다."
+        "${ regularAmount }(으)로 1개월 후 갱신됩니다."
       ]
     },
     "BF2024: Tooltip": {
@@ -1201,19 +1201,19 @@
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "이메일과 일정을 종단간 암호화로 보호하세요. 15개 이메일 주소, 사용자 지정 도메인 지원, 무제한 hide-my-email 별칭 등이 포함되어 있습니다."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "온라인 문서 편집기, 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+        "온라인 문서 편집기, 사진 백업, 버전 기록, 암호화된 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "특별히 설계된 NetShield는 광고, 추적기 및 맬웨어를 차단하여 장치를 보호하고 브라우징 속도를 높입니다."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "스토리지 공간은 모든 ${ BRAND_NAME } 앱 전반적으로 공유됩니다."
+        "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
       ]
     },
     "Billing cycle": {
@@ -1353,19 +1353,19 @@
         "저장공간 ${ maxSpaceTB }"
       ],
       "${ planMaxSpace } email storage": [
-        "이메일 저장공간 ${ planMaxSpace }"
+        "${ planMaxSpace }의 이메일 저장 공간"
       ],
       "Advanced account protection": [
         "향상된 계정 보호"
       ],
       "All ${ BRAND_NAME } apps and premium features": [
-        "모든 ${ BRAND_NAME } 앱들과 해당 앱들의 프리미엄 기능들"
+        "모든 ${ BRAND_NAME } 앱들과 프리미엄 기능들"
       ],
       "Cancel and downgrade": [
         "취소 및 다운그레이드"
       ],
       "Cloud storage and sharing for large files": [
-        "큰 용량의 파일을 위한 클라우드 스토리지 및 공유"
+        "큰 용량의 파일 보관과 공유를 위한 클라우드 스토리지"
       ],
       "Encrypted cloud storage for photos and documents": [
         "사진 및 문서를 위한 암호화된 클라우드 스토리지"
@@ -1383,7 +1383,7 @@
         "${ upsellPlanName } 플랜으로 구독료 절약하기"
       ],
       "Secure personal and shared calendar": [
-        "사적이거나 공유된 캘린더 보호"
+        "안전한 개인용 캘린더 및 공유된 캘린더"
       ],
       "Try ${ planName }": [
         "${ planName } 체험하기"
@@ -3463,7 +3463,7 @@
         "고객 지원"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "햔재 가족 플랜은 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
+        "현재 가족 요금제는 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -3508,7 +3508,7 @@
         "결제되지 않은 청구서가 존재합니다. 가족 플랜에 참여하기 전에 결제해주세요."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "사용자가 ${ BRAND_NAME } 계정이 이 가족 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐기세요."
+        "${ BRAND_NAME } 계정이 이 가족 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐기세요."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "사용자의 계정이 사용자 요금제단에서 사용 가능한 이메일 주소 이상을 가지고 있습니다. ${ addressSettingsLink }"
@@ -3535,7 +3535,7 @@
     },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users": [
-        "가족 계정을 구성하고 사용자를 초대하세요. "
+        "가족 계정을 구성하고 사용자를 초대하세요"
       ],
       "Set up your family": [
         "가족 계정 설정"
@@ -4596,7 +4596,7 @@
         "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
       ],
       "In the meantime, sign up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
-        "그동안 자신의 ${ DRIVE_APP_NAME } 계정에 로그인하고 종단간 암호화로 데이터를 보호하고 안전하게 공유하세요."
+        "그동안 자신의 ${ DRIVE_APP_NAME } 계정을 생성하여 종단간 암호화로 데이터를 보호하고 안전하게 공유하세요."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
@@ -4806,7 +4806,7 @@
         "조직 크기"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "경고는 안전을 위해 나타납니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
+        "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
       "Owner": [
         "소유자"
@@ -5804,7 +5804,7 @@
         "드라이브를 삭제할까요?"
       ],
       "Delete recovery-related information.": [
-        "복구 관련 정보를 삭제합니다."
+        "복구 관련 정보 삭제하기"
       ],
       "Deleted": [
         "삭제됨"
@@ -7374,7 +7374,7 @@
         "비공개가 아닌 사용자의 수신함을 사용자가 볼 수 있는 옵션으로, 전체 메시지와 연락처 세부사항을 포함하여 볼 수 있습니다"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "관리자가 사용자를 추가 및 제거하고, 저장소를 할당하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, 수행할 수 있는 조직 관리 도구"
+        "관리자가 사용자를 추가 및 제거하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, \n 다른 작업을 수행할 수 있는 조직 관리 도구"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "우리의 강력한 인프라는 당신이 필요할 때 당신의 계정에 접근할 수 있도록 보장합니다."
@@ -7419,7 +7419,7 @@
         "사용자 암호 및 2단계 인증 재설정"
       ],
       "Route your internet traffic through the TOR network with a single click": [
-        "한번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
+        "한 번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
@@ -7678,7 +7678,7 @@
         "파일 다운로드 실패: ${ err }"
       ],
       "Failed to load invitation details": [
-        "초대 상세 사항 로드 실패"
+        "초대 상세 정보를 불러오지 못했습니다"
       ],
       "Failed to move, please try again": [
         "이동을 실패했습니다, 나중에 다시 시도해주세요."
@@ -7741,7 +7741,7 @@
         "하위 폴더를 불러오는 중 문제 발생"
       ],
       "The item was not added to your drive": [
-        "항목이 Drive에 생성되지 않았습니다."
+        "항목이 Drive에 추가되지 않았습니다."
       ],
       "The item was successfully added to your drive": [
         "항목이 Drive로 성공적으로 추가되었습니다."
@@ -7866,7 +7866,7 @@
         "문서에서 협동하기"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
-        "라이트 및 다크 모드에서의 ${ DRIVE_APP_NAME }를 선호하세요? 가장 영감을 주는 색상을 선택하세요."
+        "라이트 혹은 다크 모드 중 어떤 ${ DRIVE_APP_NAME }을 선호하세요? 가장 영감을 주는 색상을 선택하세요."
       ],
       "Drag and drop your files here": [
         "파일을 드래그하여 이곳에 놓으세요"
@@ -7911,7 +7911,7 @@
         "초대 수락됨"
       ],
       "Invitation received": [
-        "초대장 받음"
+        "초대장 수신됨"
       ],
       "Invite team members": [
         "팀 구성원 초대"
@@ -8099,7 +8099,7 @@
     },
     "Payment method option": {
       "Bank transfer": [
-        "게좌 이체"
+        "계좌 이체"
       ],
       "Credit/debit card": [
         "신용/체크카드"
@@ -8456,7 +8456,7 @@
         "${ PASS_APP_NAME } 체험"
       ],
       "Used on Amazon for shopping, etc.": [
-        "쇼핑을 위해 쿠팡에서 사용됨, 기타 등등"
+        "쇼핑을 위해 쿠팡에서 사용됨, 기타 등등."
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "이메일 주소를 누군가 물어본다면, 별칭을 대신 제공하세요. 별칭이 ${ passLink }에 의해 제공됩니다."
@@ -9143,7 +9143,7 @@
         "사용자 당 ${ planNumberOfCalendars }개 캘린더"
       ],
       "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }개 커스텀 이메일용 도메인"
+        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
       ],
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails }개 이메일 주소"
@@ -9224,13 +9224,13 @@
         "저희의 고객지원 팀이 사람들에게 VPN 앱을 어떻게 직접 전달했는지."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
-        "${ BRAND_NAME }이 공격적인 검열 캠페인의 표적이 되었을 때 어떻게 맞섰는지."
+        "${ BRAND_NAME }이 공격적인 검열 캠페인의 표적이 되었을 때 맞선 방법."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "저희가 프라이버시와 표현의 자유가 위협받을 때 현지 활동가들을 어떻게 지원했는지."
       ],
       "If you exceed free plan limits, you won't be able to:": [
-        "무료 플랜 제한을 초과하면, 다음 항목들을 사용 불가합니다:"
+        "무료 플랜 제한을 초과하면, 다음이 제한됩니다:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
         "만약 무료 플랜의 제한량을 초과한다면 제품 기능과 데이터 접근에 제약받을 수 있습니다."
@@ -10420,7 +10420,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
+        "Secure Core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
       ]
     },
     "wallet_signup_2024: Info": {

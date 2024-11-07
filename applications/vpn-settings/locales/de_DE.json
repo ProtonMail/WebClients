@@ -2283,6 +2283,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Wenn diese Funktion deaktiviert ist, haben nur Administratoren Zugriff."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Halte die verschiedenen Bereiche deines Lebens getrennt und organisiere deinen Posteingang mit zusätzlichen Adressen."
       ],
@@ -2689,6 +2692,9 @@
       "Tab closed": [
         "Tab geschlossen"
       ],
+      "The amount due has changed. Please try again.": [
+        "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
+      ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
       ],
@@ -2840,6 +2846,9 @@
       "Got it": [
         "Verstanden"
       ],
+      "Invite a user": [
+        "Benutzer einladen"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Lade einen bestehenden Benutzer von ${ BRAND_NAME } ein"
       ],
@@ -2934,6 +2943,9 @@
       "You can only accept 3 invitations in a 6-month period. Please contact ${ supportLink } if you require an exception.": [
         "Du kannst nur drei Einladungen in einem Zeitraum von 6 Monaten annehmen. Bitte wende dich an ${ supportLink }, wenn du eine Ausnahme benötigst."
       ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kannst diese Einladung mit deinem aktuellen Plan nicht annehmen."
+      ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Du wurdest eingeladen, ${ bannerOrganization } beizutreten. ${ viewInviteButton }"
       ],
@@ -2988,6 +3000,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Wenn der Benutzer bereits eine ${ MAIL_APP_NAME }-Adresse hat, gib sie hier ein. Andernfalls muss der Benutzer zuerst ein Konto erstellen."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Wenn der Benutzer bereits ein Konto bei ${ BRAND_NAME } hat, gib es hier ein. Andernfalls muss er zuerst ein Konto erstellen."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Die Einladung wird widerrufen und der Benutzer kann ${ organizationName } nicht beitreten."
@@ -3306,26 +3321,6 @@
       ],
       "Very small": [
         "Sehr klein"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(Eine E-Mail pro Monat)"
-      ],
-      "(1 email per quarter)": [
-        "(Eine E-Mail pro Quartal)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 E-Mails pro Monat)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 E-Mails pro Jahr)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 E-Mails pro Jahr)"
-      ],
-      "(during your first month)": [
-        "(während des ersten Monats)"
       ]
     },
     "Go to sign in": {
@@ -4213,6 +4208,12 @@
       "Learn more": [
         "Mehr erfahren"
       ],
+      "Learn more about Gateways": [
+        "Mehr über Gateways erfahren"
+      ],
+      "Learn more about single sign-on": [
+        "Erfahre mehr über Single Sign-on"
+      ],
       "Let's get started by pressing the New group button above": [
         "Fange an, indem du oben auf die Schaltfläche Neue Gruppe klickst"
       ],
@@ -4938,6 +4939,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Abonnementzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Wenn du einen Server von einem Gateway entfernst, wird er für 10 Tage deaktiviert. Dieser Server kann zu einem neuen Gateway hinzugefügt werden, aber sein Land kann nicht geändert werden."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
       ],
@@ -5296,9 +5300,6 @@
       "Addresses": [
         "E-Mail-Adressen"
       ],
-      "Administrators": [
-        "Administratoren"
-      ],
       "Allow": [
         "Zugelassen"
       ],
@@ -5313,6 +5314,9 @@
       ],
       "Allowed Domain": [
         "Erlaubte Domain"
+      ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Ermöglicht allen Mitarbeitern in deinem Unternehmen, nahtlos Links zu Videokonferenzen in ihre Kalendereinladungen einzufügen."
       ],
       "Amount": [
         "Betrag"
@@ -5331,6 +5335,9 @@
       ],
       "Authenticator app": [
         "Authenticator App"
+      ],
+      "Backup password": [
+        "Passwort sichern"
       ],
       "Billing address": [
         "Rechnungsadresse"
@@ -5469,6 +5476,9 @@
       ],
       "Email or username": [
         "E‐Mail‐Adresse oder Benutzername"
+      ],
+      "Enable video conferencing ": [
+        "Videokonferenzen aktivieren "
       ],
       "Enter the code displayed on your TV": [
         "Gib den auf deinem Fernseher angezeigten Code ein"
@@ -5653,6 +5663,9 @@
       "Recovery phrase": [
         "Wiederherstellungsphrase"
       ],
+      "Repeat backup password": [
+        "Wiederholung des Backup-Passworts"
+      ],
       "Reply (ACS) URL": [
         "Antwort-URL (ACS)"
       ],
@@ -5784,41 +5797,6 @@
       ],
       "VPN connections": [
         "VPN-Verbindungen"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Produktaktualisierungen zu ${ app } und ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "${ app }-Produktaktualisierungen"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } Beta-Ankündigungen"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business-Newsletter"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } Wichtige Ankündigungen"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } Newsletter"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } Angebote und Sonderaktionen"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } Produktankündigungen"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME }-Benutzerumfrage"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME }-Willkommens-E-Mails"
-      ],
-      "Daily email notifications": [
-        "Tägliche E-Mail-Benachrichtigungen"
       ]
     },
     "Label in domain modal": {
@@ -6890,6 +6868,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internet-Verkehr über mehrere Server geleitet wird."
       ],
@@ -6985,6 +6966,9 @@
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Setze Passwörter und die Zwei-Faktor-Authentifizierung für Benutzer zurück."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Leite deinen Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Inklusive automatischer Synchronisierung, verschlüsselter Dateifreigabe und mehr."
@@ -7160,6 +7144,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Die Zwei-Faktor-Authentifizierung ist nicht mehr erforderlich."
+      ],
+      "Video conferencing settings have been updated": [
+        "Die Einstellungen für Videokonferenzen wurden aktualisiert"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7555,6 +7542,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Verwende eine Datenwiederherstellungsmethode, kontaktiere einen anderen Administrator oder setze den Organisationsschlüssel zurück, um die Administratorrechte wiederherzustellen."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Wir konnten die Authentizität dieser Identität nicht überprüfen."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Wir konnten die Sicherheit des Adressschlüssels dieses Absenders nicht überprüfen. Manchmal kommt es zu einer Verzögerung bei der Aktualisierung der Absenderinformationen. Versuche es später noch einmal. Wenn du der Gültigkeit dieser Einladung oder dieses Absenders nicht traust, wende dich an den ${ BRAND_NAME }-Kundensupport."
       ],
@@ -7682,6 +7672,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto zu belasten, und deine Bank, dein Konto entsprechend zu belasten. Du kannst innerhalb von 8 Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen, sofern du mit deiner Bank eine entsprechende Vereinbarung getroffen hast."
+      ],
+      "Street address, postal code, and city": [
+        "Straße, Postleitzahl und Ort"
       ]
     },
     "Permission": {
@@ -7915,6 +7913,9 @@
       "Changing organization password": [
         "Passwort der Organisation ändern"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Erstellung von oder Zugriff auf nicht-private Benutzerkonten"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Aufgrund einer Passwortänderung wurden deine Organisations-Administrationsprivilegien eingeschränkt. Die folgenden Aktionen sind nicht länger erlaubt:"
       ]
@@ -7941,6 +7942,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Die Anmeldung wurde nicht erfolgreich abgeschlossen."
+      ],
       "Something went wrong": [
         "Etwas ist schiefgelaufen."
       ]
@@ -8002,6 +8006,12 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Voraussetzung:** Die SAML-Authentifizierung muss konfiguriert sein, um das SCIM-Provisioning zu ermöglichen."
       ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Voraussetzung:** Um die SCIM-Bereitstellung zu aktivieren, musst du die Eigentümerschaft der Domain **${ domainName }** verifizieren. Diese Verifizierung kann bis zu einer Stunde dauern."
+      ],
+      "Enter the token into your identity provider": [
+        "Gib den Token bei deinem Identitätsanbieter ein"
+      ],
       "Enter URL and token into your identity provider": [
         "Gib die URL und den Token bei deinem Identitätsanbieter ein"
       ],
@@ -8011,6 +8021,12 @@
       "For security reasons, the token is hidden": [
         "Der Token ist aus Sicherheitsgründen ausgeblendet."
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Gehe zu deinem Identitätsanbieter, kopiere die unten stehenden Daten und füge sie ein und beende die Konfiguration von SCIM für ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Gehe zu deinem Identitätsanbieter, kopiere das Token und füge es ein und aktiviere SCIM für ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Wenn du den SCIM-Token verloren oder vergessen hast, kannst du einen neuen generieren. Beachte aber, dass die Einstellungen deines Identitätsanbieters aktualisiert werden müssen."
       ],
@@ -8019,6 +8035,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Sobald SCIM für deine Organisation deaktiviert ist, werden **alle SCIM-Benutzer, die automatisch von deinem Identitätsanbieter bereitgestellt werden, in SSO-Benutzer** umgewandelt und du kannst sie direkt in den Einstellungen von ${ BRAND_NAME } verwalten."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Vereinfacht die Benutzerverwaltung über verschiedene Dienste hinweg. Füge Benutzer in deinem Identitätsanbieter hinzu, bearbeite und entferne sie, und diese Änderungen werden automatisch auf deine ${ appName } Organisation angewendet."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Das automatische SCIM-Provisioning wird deaktiviert, bis du den neuen SCIM-Token in die Einstellungen deines Identitätsanbieters eingibst."
@@ -8310,6 +8329,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Wir werden dich kontaktieren, sobald die Passwortzurücksetzung verfügbar ist."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Du kannst den Status deines Antrags jederzeit überprüfen ${ accountAndPasswordSectionLink } der Einstellungen."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "im Bereich Konto und Passwort"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8635,8 +8662,26 @@
       "Join ${ organizationName }": [
         "${ organizationName } beitreten"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Nicht-SSO-Benutzer (manuell erstellt, nicht von deinem Identitätsanbieter bereitgestellt) können sich weiterhin bei deiner Organisation anmelden."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Sobald Single Sign-on für deine Organisation deaktiviert ist:"
+      ],
+      "Remove single sign-on": [
+        "Single Sign-on entfernen"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Single Sign-on für deine Organisation entfernen?"
+      ],
       "Sign in": [
         "Anmelden"
+      ],
+      "Single sign-on removed": [
+        "Single Sign-on entfernt"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Die Zugangsdaten von deinem Identitätsanbieter werden gelöscht."
       ],
       "User details:": [
         "Benutzerdetails:"
@@ -8856,6 +8901,9 @@
     "Subscription change warning": {
       "Got it": [
         "Verstanden"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Melde dich einfach bei deinem Apple App Store-Konto an und wähle dann ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Melde dich einfach in deinem Play Store Konto an und klicke auf ${ subscriptions }."
@@ -9387,6 +9435,12 @@
       ],
       "You have successfully unsubscribed": [
         "Du hast das Abonnement erfolgreich gekündigt."
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Du erhältst deinen Benutzernamen innerhalb einer Minute per E-Mail, wenn du eine gültige E-Mail-Adresse für die Wiederherstellung eingegeben hast."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Du erhältst deinen Benutzernamen innerhalb einer Minute per SMS, wenn du eine gültige Rückrufnummer eingegeben hast."
       ]
     },
     "Success message": {
@@ -10282,6 +10336,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Admins können Benutzerkonten verwalten und anderen Benutzern Administratorrechte erteilen. Nur der Hauptadministrator kann das Abonnement der Organisation bearbeiten."
       ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Ermöglicht das nahtlose Hinzufügen von Links zu Videokonferenzen zu deinen Kalendereinladungen."
+      ],
       "An approximate location of the IP address": [
         "Eine ungefähre Lage der IP-Adresse."
       ],
@@ -10367,19 +10424,17 @@
       ],
       "User declined invitation": [
         "Der Benutzer hat die Einladung abgelehnt"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Erhalte die neuesten Nachrichten zum Thema Privatsphäre und was im ${ BRAND_NAME }-Universum vor sich geht."
       ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Nimm an Umfragen teil, um die Dienstleistungen von ${ BRAND_NAME } zu verbessern."
+      "Waiting for user to accept the invitation": [
+        "Warten auf die Annahme der Einladung durch den Benutzer"
       ]
     },
     "Tor out of date": {
       "stable release": [
         "stabile Version"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "unprivatization": {
@@ -10666,6 +10721,11 @@
       ],
       "Your ${ selected } plan": [
         "Dein ${ selected }-Abonnement"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
       ]
     },
     "wallet_signup_2024: Info": {

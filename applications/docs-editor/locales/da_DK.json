@@ -29,6 +29,9 @@
       "Add new table row": [
         "Tilføj ny tabelrække"
       ],
+      "Add suggestion": [
+        "Tilføj forslag"
+      ],
       "Adjust font size": [
         "Juster skriftstørrelse"
       ],
@@ -404,6 +407,9 @@
       "Edit document directly": [
         "Rediger dokument direkte"
       ],
+      "Edits become suggestions": [
+        "Redigeringer bliver til forslag"
+      ],
       "Read or print final document": [
         "Læs eller print det endelige dokument"
       ]
@@ -540,6 +546,9 @@
       "Add link": [
         "Tilføj link"
       ],
+      "Align": [
+        "Justér"
+      ],
       "Background colour": [
         "Baggrundsfarve"
       ],
@@ -549,8 +558,14 @@
       "Change indent level": [
         "Skift indrykningsniveau"
       ],
+      "Clear formatting": [
+        "Ryd formatering"
+      ],
       "Delete": [
         "Slet"
+      ],
+      "Delete divider": [
+        "Slet skiller"
       ],
       "Delete image": [
         "Slet billede"
@@ -561,17 +576,44 @@
       "Delete paragraph": [
         "Slet afsnit"
       ],
+      "Delete table": [
+        "Slet tabel"
+      ],
+      "Delete table column": [
+        "Slet tabelkolonne"
+      ],
+      "Delete table row": [
+        "Slet tabelrække"
+      ],
+      "Duplicate table column": [
+        "Dupliker tabelkolonne"
+      ],
+      "Duplicate table row": [
+        "Dupliker tabelrække"
+      ],
       "Format": [
         "Format"
       ],
       "Insert": [
         "Indsæt"
       ],
+      "Insert divider": [
+        "Indsæt skiller"
+      ],
       "Insert image": [
         "Indsæt billede"
       ],
       "Insert paragraph": [
         "Indsæt afsnit"
+      ],
+      "Insert table": [
+        "Indsæt tabel"
+      ],
+      "Insert table column": [
+        "Indsæt tabelkolonne"
+      ],
+      "Insert table row": [
+        "Indsæt tabelrække"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturgenvej: ${ shortcut }"
@@ -624,6 +666,11 @@
       ],
       "Language not supported": [
         "Sprog ikke understøttet"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Det er ikke muligt at komme med forslag inde i kodeblokke"
       ]
     }
   }
