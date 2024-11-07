@@ -33,6 +33,7 @@ interface Props {
     metaTags: MetaTags;
     paths: Paths;
     onBack?: () => void;
+    onPreSubmit?: () => Promise<void>;
 }
 
 // Always enabled for these apps
@@ -59,6 +60,7 @@ const SingleSignupSwitchContainer = ({
     metaTags,
     paths,
     onBack,
+    onPreSubmit,
 }: Props) => {
     const location = useLocation();
 
@@ -85,6 +87,7 @@ const SingleSignupSwitchContainer = ({
                 onLogin={onLogin}
                 fork={fork}
                 onBack={onBack}
+                onPreSubmit={onPreSubmit}
             />
         );
     }
@@ -100,6 +103,7 @@ const SingleSignupSwitchContainer = ({
                 toAppName={toAppName}
                 onLogin={onLogin}
                 onBack={onBack}
+                onPreSubmit={onPreSubmit}
             />
         </UnAuthenticated>
     );

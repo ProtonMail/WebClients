@@ -1,14 +1,16 @@
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 
-import { useFlagsReady } from '@proton/unleash';
+import useApi from '@proton/components/hooks/useApi';
+import { getInboxDesktopInfo, hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
+import { reportClientLaunch } from '@proton/shared/lib/desktop/reportClientLaunch';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 interface Props {
-    loader: ReactNode;
     children: ReactNode;
 }
 
-const PublicAppSetup = ({ loader, children }: Props) => {
+const PublicAppSetup = ({ children }: Props) => {
     const api = useApi();
 
     useEffect(() => {

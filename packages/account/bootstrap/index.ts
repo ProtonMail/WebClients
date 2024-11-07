@@ -319,10 +319,16 @@ export const eventManager = async ({
     return eventManager;
 };
 
-export const loadCrypto = ({ appName, unleashClient }: { unleashClient: UnleashClient; appName: APP_NAMES }) => {
+export const loadCrypto = ({
+    appName,
+    unleashClient,
+}: {
+    unleashClient: UnleashClient | undefined;
+    appName: APP_NAMES;
+}) => {
     return loadCryptoWorker(
         getCryptoWorkerOptions(appName, {
-            v6Canary: unleashClient.isEnabled('CryptoCanaryOpenPGPjsV6'),
+            v6Canary: unleashClient?.isEnabled('CryptoCanaryOpenPGPjsV6'),
         })
     );
 };
@@ -446,8 +452,7 @@ export const wrap = async <T>(
     return wrapUnloadError<T>(run());
 };
 
-export const publicApp = ({
-    app,
+export const loadLocalesPublicApp = ({
     locales,
     pathLocale,
     searchParams,
@@ -463,9 +468,22 @@ export const publicApp = ({
     const localeCode =
         getClosestLocaleMatch(pathLocale || languageParams || languageCookie || '', locales) ||
         getClosestLocaleCode(browserLocale, locales);
+    return Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)]);
+};
+
+export const publicApp = ({
+    app,
+    locales,
+    pathLocale,
+    searchParams,
+}: {
+    app: APP_NAMES;
+    locales: TtagLocaleMap;
+    pathLocale: string;
+    searchParams: URLSearchParams;
+}) => {
     return Promise.all([
-        loadCryptoWorker(getCryptoWorkerOptions(app, {})),
-        loadLocale(localeCode, locales),
-        loadDateLocale(localeCode, browserLocale),
+        loadCrypto({ appName: app, unleashClient: undefined }),
+        loadLocalesPublicApp({ locales, pathLocale, searchParams, app }),
     ]);
 };
