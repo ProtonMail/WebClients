@@ -269,10 +269,6 @@
       "Import": [
         "Importer"
       ],
-      "Import alias": [
-        "Importer l'alias",
-        "Importer les alias"
-      ],
       "Import your passwords": [
         "Importer vos mots de passe"
       ],
@@ -1849,10 +1845,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Vous ne pouvez pas modifier la véritable adresse e-mail associée à cet alias."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Vous avez ${ aliasCount } alias qui est présent dans SimpleLogin mais manquant dans ${ PASS_APP_NAME }. Souhaitez-vous l'importer ?",
-        "Vous avez ${ aliasCount } alias qui sont présents dans SimpleLogin mais manquants dans ${ PASS_APP_NAME }. Souhaitez-vous les importer ?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Il vous reste ${ daysRemaining } jour pour essayer ces fonctionnalités et d'autres de la version premium.",
         "Il vous reste ${ daysRemaining } jours pour essayer ces fonctionnalités et d'autres de la version premium."
@@ -2909,9 +2901,6 @@
       ],
       "Import to vault(s)": [
         "Importer dans les coffres-forts"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importez vos alias depuis SimpleLogin"
       ],
       "Last autofill": [
         "Dernier remplissage automatique"
