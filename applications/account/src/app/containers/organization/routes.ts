@@ -130,8 +130,8 @@ export const getOrganizationAppRoutes = ({
         header: sectionTitle,
         routes: {
             videoConf: <SectionConfig>{
-                text: c('Title').t`Video conference`,
-                to: '/video-conference',
+                text: c('Title').t`Video conferencing`,
+                to: '/video-conferencing',
                 icon: 'camera',
                 available: canShowVideoConferenceSection,
                 subsections: [
