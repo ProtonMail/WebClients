@@ -2313,6 +2313,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Tylko administratorzy będą mieli dostęp, jeżeli to ustawienie zostanie wyłączone."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Rozdziel różne części swojego życia i uporządkuj skrzynkę odbiorczą za pomocą dodatkowych adresów."
       ],
@@ -3375,26 +3378,6 @@
       ],
       "Very small": [
         "Bardzo mała"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 wiadomość miesięcznie)"
-      ],
-      "(1 email per quarter)": [
-        "(1 wiadomość kwartalnie)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 wiadomości miesięcznie)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 wiadomości rocznie)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 wiadomości rocznie)"
-      ],
-      "(during your first month)": [
-        "(w pierwszym miesiącu)"
       ]
     },
     "Go to sign in": {
@@ -5447,9 +5430,6 @@
       "Addresses": [
         "Adresy"
       ],
-      "Administrators": [
-        "Administratorzy"
-      ],
       "Allow": [
         "Dozwolone"
       ],
@@ -5623,6 +5603,9 @@
       ],
       "Email or username": [
         "Adres e-mail lub nazwa użytkownika"
+      ],
+      "Enable video conferencing ": [
+        "Włącz konferencje wideo "
       ],
       "Enter the code displayed on your TV": [
         "Wpisz kod wyświetlony na telewizorze"
@@ -5941,41 +5924,6 @@
       ],
       "VPN connections": [
         "Połączenia VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Aktualizacje usług ${ app } i ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Aktualizacje usługi ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Ogłoszenia ${ BRAND_NAME } beta"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter ${ BRAND_NAME } for Business"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Ważne ogłoszenia ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Newsletter ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Oferty i promocje ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Ogłoszenia usługi ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Ankieta użytkownika ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Wiadomość powitalna ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Codzienne powiadomienia e-mail"
       ]
     },
     "Label in domain modal": {
@@ -7379,6 +7327,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Uwierzytelnianie dwustopniowe nie jest wymagane"
+      ],
+      "Video conferencing settings have been updated": [
+        "Ustawienia konferencji wideo zostały zaktualizowane"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7785,6 +7736,9 @@
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Aby przywrócić uprawnienia administratora, użyj metody odzyskiwania danych, skontaktuj się z innym administratorem lub zresetuj klucz organizacji."
+      ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Nie mogliśmy zweryfikować autentyczności tej tożsamości."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nie możemy zweryfikować klucza adresu nadawcy. Czasami występuje opóźnienie w aktualizacji informacji o nadawcy. Spróbuj ponownie później. Jeśli nie ufasz zaproszeniu lub nadawcy, skontaktuj się ze wsparciem klienta ${ BRAND_NAME }."
@@ -8592,6 +8546,9 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Skontaktujemy się z Tobą, kiedy zresetowanie hasła będzie dostępne."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "W każdym momencie możesz sprawdzić status wniosku w sekcji ${ accountAndPasswordSectionLink }."
       ]
     },
     "session_recovery:initiation:notification": {
@@ -9008,6 +8965,9 @@
       "Sign in to your organization": [
         "Zaloguj się do organizacji"
       ],
+      "Sign out and in again to change your backup password": [
+        "Wyloguj i zaloguj się ponownie, aby móc zmienić hasło odzyskiwania."
+      ],
       "Single sign-on removed": [
         "Logowanie SSO zostało usunięte"
       ],
@@ -9036,6 +8996,12 @@
       ],
       "Inactive": [
         "Nieaktywne"
+      ],
+      "Pending activation": [
+        "Oczekuje na aktywację"
+      ],
+      "Pending admin activation": [
+        "Oczekuje na aktywację przez administratora"
       ],
       "Rejected": [
         "Odrzucone"
@@ -9814,6 +9780,9 @@
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Jeżeli prawidłowy numer pomocniczy został wpisany, w ciągu minuty dostaniesz twoją nazwę użytkownika za pomocą wiadomości SMS."
       ]
     },
     "Success message": {
@@ -10807,14 +10776,6 @@
       ],
       "Waiting for user to accept the invitation": [
         "Oczekiwanie na zaakceptowanie zaproszenia"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Najnowsze wiadomości na temat prywatności i tego, co dzieje się w świecie ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Bierz udział w ankietach, aby ulepszać usługi ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {

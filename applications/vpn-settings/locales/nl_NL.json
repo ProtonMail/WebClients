@@ -3337,26 +3337,6 @@
         "Zeer klein"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 email per maand)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-mail per kwartaal)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 e-mails per maand)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 e-mails per jaar)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 e-mails per jaar)"
-      ],
-      "(during your first month)": [
-        "(gedurende uw eerste maand)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Heeft u al een account? ${ signIn }"
@@ -5340,9 +5320,6 @@
       "Addresses": [
         "Adressen"
       ],
-      "Administrators": [
-        "Beheerders"
-      ],
       "Allow": [
         "Geautoriseerde adressen"
       ],
@@ -5840,41 +5817,6 @@
       ],
       "VPN connections": [
         "VPN-verbindingen"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } en ${ additionalApp } productupdates"
-      ],
-      "${ app } product updates": [
-        "${ app } productupdates"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME }-bèta-aankondigingen"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } voor Bedrijven-nieuwsbrief"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } belangrijke aankondigingen"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME }-nieuwsbrief"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } aanbiedingen en promoties"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME }-productaankondigingen"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } gebruikersbevraging"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } welkomst-e-mail"
-      ],
-      "Daily email notifications": [
-        "Dagelijkse e-mailmeldingen"
       ]
     },
     "Label in domain modal": {
@@ -7001,7 +6943,7 @@
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME } diensten kunnen beheren en andere taken kunnen uitvoeren."
+        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME }-diensten kunnen beheren en andere taken kunnen uitvoeren."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
@@ -8702,15 +8644,15 @@
     },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ boldedMemberAddress } vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal."
+        "${ boldedMemberAddress } vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
       ],
       "${ n } member requested your help to sign in.": [
         "${ n } lid heeft uw hulp gevraagd om in te loggen.",
         "${ n } leden hebben uw hulp gevraagd om in te loggen."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal.",
-        "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal."
+        "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal.",
+        "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-gebruikers (aangeboden door uw Identity Provider) worden verwijderd** en u moet ze handmatig aanmaken om ze weer toe te voegen aan uw organisatie."
@@ -8800,7 +8742,7 @@
         "Word lid van ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
-        "Zorg ervoor dat u het ergens veilig opslaat zodat u terug naar uw account kunt als u de toegang tot uw Identity Provider gegevens verliest."
+        "Zorg ervoor dat u het ergens veilig opslaat, zodat u terug naar uw account kunt als u de toegang tot uw Identity Provider gegevens verliest."
       ],
       "New backup password": [
         "Nieuw back-up wachtwoord"
@@ -8818,7 +8760,7 @@
         "Verwijder single sign-on voor uw organisatie?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
-        "Stel een back-upwachtwoord in om een extra laag bescherming toe te voegen. Het stelt je in staat om in te loggen als u buitengesloten bent, dus zorg ervoor dat u het ergens veilig houdt."
+        "Stel een back-upwachtwoord in om een extra laag bescherming toe te voegen. Het stelt u in staat om in te loggen als u buitengesloten bent, dus zorg ervoor dat u het ergens veilig houdt."
       ],
       "Set your backup password": [
         "Stel uw back-up wachtwoord in"
@@ -8863,7 +8805,7 @@
         "Gebruik in plaats daarvan back-upwachtwoord"
       ],
       "User details:": [
-        "Gebruik details:"
+        "Gebruikerdetails:"
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "U wordt doorgestuurd naar uw derde partij SSO-provider."
@@ -9835,7 +9777,7 @@
       ],
       "Add ${ totalServerCount } server?": [
         "${ totalServerCount } server toevoegen?",
-        "Toevoegen van ${ totalServerCount } servers?"
+        "${ totalServerCount } servers toevoegen?"
       ],
       "Add address": [
         "E-mailadres toevoegen"
@@ -10519,7 +10461,7 @@
     },
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
-        "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het plan van de organisatie bewerken."
+        "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het abonnement van de organisatie bewerken."
       ],
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Maakt het mogelijk om naadloos koppelingen voor videoconferenties toe te voegen aan uw agenda-uitnodigingen."
@@ -10612,14 +10554,6 @@
       ],
       "Waiting for user to accept the invitation": [
         "Wachten tot gebruiker de uitnodiging accepteert"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Ontvang het meest recente privacynieuws en wat er gaande is in het ${ BRAND_NAME }-universum"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Neem deel aan bevragingen om ${ BRAND_NAME }-diensten te verbeteren"
       ]
     },
     "Tor out of date": {
