@@ -268,12 +268,6 @@
       "Import": [
         "Імпартаваць"
       ],
-      "Import alias": [
-        "Імпартаваць псеўданім",
-        "Імпартаваць псеўданімы",
-        "Імпартаваць псеўданімы",
-        "Імпартаваць псеўданімы"
-      ],
       "Importing": [
         "Імпартаванне"
       ],
@@ -1904,12 +1898,6 @@
       "You cannot change the mailboxes for this alias.": [
         "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "У вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце імпартаваць яго?",
-        "У вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
-        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
-        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "У вас застаўся ${ daysRemaining } дзень паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
         "У вас засталося ${ daysRemaining } дні паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
@@ -2882,7 +2870,7 @@
         "Уваход пацверджаны"
       ],
       "Sign-in failed": [
-        "Абмыла ўваходу"
+        "Збой уваходу"
       ],
       "Sign-in rejected": [
         "Уваход адхілены"
@@ -3030,9 +3018,6 @@
       ],
       "Import to vault(s)": [
         "Імпартаванне ў сховішча(-ы)"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Імпартаваць свае псеўданімы з SimpleLogin"
       ],
       "Import your data": [
         "Імпартаванне вашых даных"
