@@ -1,4 +1,4 @@
-import { type FC, useEffect, useMemo } from 'react';
+import { type FC, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,11 +20,17 @@ type Props = UniqueItem & Pick<ModalStateProps, 'onClose'>;
 export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => {
     const [createContact, openCreateContactSidebar] = useModalState();
     const [moreInfoFlow, openMoreInfoFlowSidebar] = useModalState();
-    const { data, loading, dispatch } = useRequest(aliasGetContactsList, { initial: { shareId, itemId } });
-    const hasContacts = (data?.Total ?? 0) > 0;
+    const [allContacts, setAllContacts] = useState<AliasContactWithStatsGetResponse[]>([]);
+
+    const { loading, dispatch } = useRequest(aliasGetContactsList, {
+        initial: { shareId, itemId },
+        onSuccess: ({ data }) => setAllContacts(data),
+    });
+
+    const hasContacts = allContacts.length > 0;
     const { contacts, blockedContacts } = useMemo(
-        () => Object.groupBy(data?.Contacts ?? [], (contact) => (contact.Blocked ? 'blockedContacts' : 'contacts')),
-        [data]
+        () => Object.groupBy(allContacts ?? [], (contact) => (contact.Blocked ? 'blockedContacts' : 'contacts')),
+        [allContacts]
     );
 
     const getContactProps = (contact: AliasContactWithStatsGetResponse) => ({
