@@ -72,6 +72,7 @@ export const VideoConferencingWidget = ({ data }: Props) => {
 
     return (
         <IconRow icon={<IcVideoCamera />} className="items-center w-full video-conferencing-widget cursor-pointer">
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/prefer-tag-over-role */}
             <div
                 role="button"
                 tabIndex={0}
