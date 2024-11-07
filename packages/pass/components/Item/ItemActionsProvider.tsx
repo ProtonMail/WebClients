@@ -4,8 +4,7 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
-import { ConfirmDeleteManyItems } from '@proton/pass/components/Item/Actions/ConfirmDeleteManyItems';
-import { ConfirmTrashManyItems } from '@proton/pass/components/Item/Actions/ConfirmTrashManyItems';
+import { ConfirmDeleteAliases } from '@proton/pass/components/Item/Actions/ConfirmDeleteAliases';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import {
@@ -59,12 +58,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         dispatch(itemTrashIntent({ itemId: item.itemId, shareId: item.shareId, item }));
     };
 
-    const trashManyItems = (options: { selected: BulkSelectionDTO }) => {
-        dispatch(itemBulkTrashIntent(options));
+    const trashManyItems = (selected: BulkSelectionDTO) => {
+        dispatch(itemBulkTrashIntent({ selected }));
         bulk.disable();
     };
-
-    const confirmTrashManyItems = useConfirm(trashManyItems);
 
     const deleteItem = (item: ItemRevision) => {
         dispatch(itemDeleteIntent({ itemId: item.itemId, shareId: item.shareId, item }));
@@ -75,7 +72,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         bulk.disable();
     };
 
-    const confirmDeleteManyItems = useConfirm(deleteManyItems);
+    const confirmDeleteAliases = useConfirm(deleteManyItems);
 
     const restoreItem = (item: ItemRevision) => {
         dispatch(itemRestoreIntent({ itemId: item.itemId, shareId: item.shareId, item }));
@@ -107,11 +104,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     },
                 }),
             trash: trashItem,
-            trashMany: (selected) =>
-                bulk.aliasCount ? confirmTrashManyItems.prompt({ selected }) : trashManyItems({ selected }),
+            trashMany: trashManyItems,
             delete: deleteItem,
             deleteMany: (selected) =>
-                bulk.aliasCount ? confirmDeleteManyItems.prompt({ selected }) : deleteManyItems({ selected }),
+                bulk.aliasCount ? confirmDeleteAliases.prompt({ selected }) : deleteManyItems({ selected }),
             restore: restoreItem,
             restoreMany: restoreManyItems,
         };
@@ -147,19 +143,11 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                 />
             )}
 
-            {confirmTrashManyItems.pending && (
-                <ConfirmTrashManyItems
+            {confirmDeleteAliases.pending && (
+                <ConfirmDeleteAliases
                     open
-                    onConfirm={confirmTrashManyItems.confirm}
-                    onCancel={confirmTrashManyItems.cancel}
-                />
-            )}
-
-            {confirmDeleteManyItems.pending && (
-                <ConfirmDeleteManyItems
-                    open
-                    onConfirm={confirmDeleteManyItems.confirm}
-                    onCancel={confirmDeleteManyItems.cancel}
+                    onConfirm={confirmDeleteAliases.confirm}
+                    onCancel={confirmDeleteAliases.cancel}
                 />
             )}
         </ItemActionsContext.Provider>
