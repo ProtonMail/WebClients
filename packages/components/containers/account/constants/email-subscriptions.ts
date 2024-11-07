@@ -183,7 +183,7 @@ export const filterNews = ({
 };
 
 export const getUpdateNotification = (data: NewsletterSubscriptionUpdateData) => {
-    if (data.InAppNotifications) {
+    if (data.InAppNotifications !== undefined) {
         return c('Info').t`Preference saved`;
     }
     return c('Info').t`Emailing preference saved`;
