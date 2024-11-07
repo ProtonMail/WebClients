@@ -2,7 +2,7 @@ module.exports = {
     setupFilesAfterEnv: ['./jest.setup.js'],
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     collectCoverage: false,
-    testEnvironment: './jest.env.js',
+    testEnvironment: '@proton/jest-env',
     resolver: './jest.resolver.js',
     transformIgnorePatterns: [
         'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|pmcrypto-v6-canary|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|@openpgp/noble-hashes|jsmimeparser|@protontech/bip39|emoji-mart)/|client-zip)',

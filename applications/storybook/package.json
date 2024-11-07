@@ -24,7 +24,7 @@
         "@proton/pack": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/styles": "workspace:^",
-        "@types/react": "^18.3.11",
+        "@types/react": "^18.3.12",
         "@types/react-dom": "^18.3.1",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
@@ -37,10 +37,10 @@
         "react-router-dom": "^5.3.4",
         "ts-loader": "^9.5.1",
         "typescript": "^5.6.3",
-        "webpack": "^5.95.0"
+        "webpack": "^5.96.1"
     },
     "devDependencies": {
-        "@babel/core": "^7.25.8",
+        "@babel/core": "^7.26.0",
         "@proton/icons": "workspace:^",
         "@storybook/addon-actions": "^6.5.16",
         "@storybook/addon-essentials": "^6.5.16",
@@ -51,7 +51,7 @@
         "@storybook/react": "^6.5.16",
         "@storybook/source-loader": "^6.5.16",
         "babel-loader": "^9.2.1",
-        "eslint-plugin-storybook": "^0.10.1",
-        "netlify-cli": "17.37.1"
+        "eslint-plugin-storybook": "^0.11.0",
+        "netlify-cli": "17.37.2"
     }
 }
