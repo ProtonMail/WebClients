@@ -13,6 +13,7 @@ import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@pr
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import useFlag from '@proton/unleash/useFlag';
 
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import useCalendarFavicon from '../../hooks/useCalendarFavicon';
@@ -32,6 +33,9 @@ const MainContainer = () => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const { pathname } = useLocation();
+
+    // Make sure we have the data when opening the popover
+    useFlag('ZoomIntegration');
 
     const drawerView = useInstance(() => {
         const { view } = fromUrlParams(pathname);
