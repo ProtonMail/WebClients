@@ -3069,11 +3069,6 @@
         "Tulseḍ ajerred ɣer yimaylen ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } d ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Imayl n uselken yettwazen ɣer ${ address }"
@@ -4256,23 +4251,6 @@
       ],
       "Very small": [
         "Wezzil aṭas"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 yimayl i wayyur)"
-      ],
-      "(1 email per quarter)": [
-        "(1 yimayl i dduṛt)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 yimaylen i wayyur)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 n yimaylen i useggas)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 n yimaylen i useggas)"
       ]
     },
     "Get started checklist instructions": {
@@ -7414,29 +7392,6 @@
         "Tuqqniwin VPN"
       ]
     },
-    "Label for news": {
-      "${ BRAND_NAME } beta announcements": [
-        "Ilɣa biṭa n ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } i telɣut n umahil"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Ilɣa s wazal n ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Aɣmis ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Ilɣa n ufaris n ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Imaylen n unsuf ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Ilɣa imayl imezwar"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Tansiwin"
@@ -10513,9 +10468,6 @@
       ],
       "Email privacy": [
         "Tabaḍnit n imayl"
-      ],
-      "Email subscriptions": [
-        "Ijerriden s yimayl"
       ],
       "Encryption and keys": [
         "Awgelhen d tsura"

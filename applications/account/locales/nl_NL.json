@@ -4056,11 +4056,6 @@
         "U heeft zich afgemeld voor ${ categories } e-mails en ontvangt niet langer dit type e-mail van ${ BRAND_NAME }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } en ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Verificatiemail verzonden naar ${ address }"
@@ -5331,7 +5326,7 @@
         "Accounts met een eigen domein kunnen zich niet aansluiten bij een Family-abonnement."
       ],
       "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
-        "Na vertrek, zal u worden verplaatst naar een ${ BRAND_NAME } Gratis abonnement."
+        "Na vertrek, zal u worden verplaatst naar een ${ BRAND_NAME } Free abonnement."
       ],
       "customer support": [
         "klantondersteuning"
@@ -5349,7 +5344,7 @@
         "Uitgenodigd door: ${ inviteEmail }"
       ],
       "Leave ${ PASS_SHORT_APP_NAME } Family plan": [
-        "Verlaat ${ PASS_SHORT_APP_NAME } Familie-plan"
+        "Verlaat ${ PASS_SHORT_APP_NAME } Familie-abonnement"
       ],
       "Leave Duo plan": [
         "Verlaat Duo-abonnement"
@@ -5921,26 +5916,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Uw gratis proefversie van de desktop app is afgelopen."
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 email per maand)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-mail per kwartaal)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 e-mails per maand)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 e-mails per jaar)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 e-mails per jaar)"
-      ],
-      "(during your first month)": [
-        "(gedurende uw eerste maand)"
       ]
     },
     "Get started checklist instructions": {
@@ -8810,7 +8785,7 @@
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
       "Upgrade to ${ firstPlanNames }, or ${ lastPlanName } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Upgrade naar ${ firstPlanNames }of ${ lastPlanName } abonnement om toegang te krijgen tot ${ PROTON_SENTINEL_NAME }."
+        "Upgrade naar ${ firstPlanNames }- of ${ lastPlanName }-abonnement om toegang te krijgen tot ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgrade om een korter @pm.me-adres aan uw account toe te voegen dat gemakkelijker te delen is. Het staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me\"."
@@ -9880,9 +9855,6 @@
       "Addresses": [
         "Adressen"
       ],
-      "Administrators": [
-        "Beheerders"
-      ],
       "ALL": [
         "ALLES"
       ],
@@ -10882,41 +10854,6 @@
       ],
       "VPN connections": [
         "VPN-verbindingen"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } en ${ additionalApp } productupdates"
-      ],
-      "${ app } product updates": [
-        "${ app } productupdates"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME }-bèta-aankondigingen"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } voor Bedrijven-nieuwsbrief"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } belangrijke aankondigingen"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME }-nieuwsbrief"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } aanbiedingen en promoties"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME }-productaankondigingen"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } gebruikersbevraging"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } welkomst-e-mail"
-      ],
-      "Daily email notifications": [
-        "Dagelijkse e-mailmeldingen"
       ]
     },
     "Label in domain modal": {
@@ -12575,7 +12512,7 @@
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME } diensten kunnen beheren en andere taken kunnen uitvoeren."
+        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME }-diensten kunnen beheren en andere taken kunnen uitvoeren."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
@@ -14300,7 +14237,7 @@
         "${ BRAND_NAME } zal dit adres gebruiken om een reset code per e-mail te versturen wanneer u uw wachtwoord opnieuw instelt."
       ],
       "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
-        "${ BRAND_NAME } zal dit telefoonnummer gebruiken om een reset code via SMS te versturen wanneer u uw wachtwoord opnieuw instelt."
+        "${ BRAND_NAME } zal dit telefoonnummer gebruiken om een reset code via sms te versturen wanneer u uw wachtwoord opnieuw instelt."
       ],
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } om ervoor te zorgen dat uw gegevens kunnen worden hersteld."
@@ -14417,7 +14354,7 @@
         "Er is een fout opgetreden bij het verifiëren van uw hersteltelefoon"
       ],
       "to automatically recover your data when you log into a trusted device": [
-        "om je gegevens automatisch te herstellen wanneer je inlogt op een vertrouwd apparaat"
+        "om uw gegevens automatisch te herstellen wanneer u inlogt op een vertrouwd apparaat"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Om zeker te zijn dat het e-mailadres van u is, moet u de verificatiecode invoeren die naar ${ boldEmail } is verzonden."
@@ -14426,10 +14363,10 @@
         "Om zeker te zijn dat het uw telefoonnummer is, voer de verificatiecode in die naar ${ boldPhoneNumber } is verzonden."
       ],
       "to recover your account and data if you're ever locked out": [
-        "om je account en gegevens te herstellen als je ooit buitengesloten bent"
+        "om uw account en gegevens te herstellen als u ooit buitengesloten bent"
       ],
       "to recover your account if you're ever locked out": [
-        "om je account te herstellen als je ooit buitengesloten bent"
+        "om uw account te herstellen als u ooit buitengesloten bent"
       ],
       "Update your Recovery Kit": [
         "Update uw Recovery Kit"
@@ -14441,7 +14378,7 @@
         "Verifiëren"
       ],
       "Verify your recovery email address": [
-        "Verifieer je herstel-e-mailadres"
+        "Verifieer uw herstel-e-mailadres"
       ],
       "Verify your recovery phone number": [
         "Verifieer uw hersteltelefoonnummer"
@@ -15233,7 +15170,7 @@
         "Van het team dat alles weet van encryptie"
       ],
       "Integrated email, calendar, file storage, password manager, and VPN": [
-        "Geïntegreerde e-mail, kalender, bestandsopslag, wachtwoordbeheer en VPN"
+        "Geïntegreerde e-mail, agenda, bestandsopslag, wachtwoordbeheer en VPN"
       ],
       "ISO 27001 certified": [
         "ISO 27001 gecertificeerd"
@@ -15248,7 +15185,7 @@
         "Beschermd door Zwitserse privacywetten"
       ],
       "Self-custody — only you have access to your wallet keys": [
-        "Zelf custody - alleen u heeft toegang tot uw portemonnee sleutels"
+        "Zelfbehoud - alleen u heeft toegang tot uw portemonnee sleutels"
       ],
       "The only business solution that is:": [
         "De enige zakelijke oplossing die is:"
@@ -15466,15 +15403,15 @@
     },
     "sso": {
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ boldedMemberAddress } vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal."
+        "${ boldedMemberAddress } vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
       ],
       "${ n } member requested your help to sign in.": [
         "${ n } lid heeft uw hulp gevraagd om in te loggen.",
         "${ n } leden hebben uw hulp gevraagd om in te loggen."
       ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal.",
-        "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME } account met een enkel signaal."
+        "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal.",
+        "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
       ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-gebruikers (aangeboden door uw Identity Provider) worden verwijderd** en u moet ze handmatig aanmaken om ze weer toe te voegen aan uw organisatie."
@@ -15582,7 +15519,7 @@
         "Word lid van ${ organizationName }"
       ],
       "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
-        "Zorg ervoor dat u het ergens veilig opslaat zodat u terug naar uw account kunt als u de toegang tot uw Identity Provider gegevens verliest."
+        "Zorg ervoor dat u het ergens veilig opslaat, zodat u terug naar uw account kunt als u de toegang tot uw Identity Provider gegevens verliest."
       ],
       "New backup password": [
         "Nieuw back-up wachtwoord"
@@ -15612,7 +15549,7 @@
         "Verwijder single sign-on voor uw organisatie?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
-        "Stel een back-upwachtwoord in om een extra laag bescherming toe te voegen. Het stelt je in staat om in te loggen als u buitengesloten bent, dus zorg ervoor dat u het ergens veilig houdt."
+        "Stel een back-upwachtwoord in om een extra laag bescherming toe te voegen. Het stelt u in staat om in te loggen als u buitengesloten bent, dus zorg ervoor dat u het ergens veilig houdt."
       ],
       "Set your backup password": [
         "Stel uw back-up wachtwoord in"
@@ -15636,7 +15573,7 @@
         "Inloggen geweigerd"
       ],
       "Sign-in requested on another device. Was it you?": [
-        "Inloggen op een ander apparaat. Was jij het?"
+        "Inloggen op een ander apparaat. Was u het?"
       ],
       "Single sign-on removed": [
         "Single sign-on verwijderd"
@@ -15666,7 +15603,7 @@
         "Gebruik in plaats daarvan back-upwachtwoord"
       ],
       "User details:": [
-        "Gebruik details:"
+        "Gebruikerdetails:"
       ],
       "Yes, it was me": [
         "Ja, dat was ik"
@@ -16867,7 +16804,7 @@
       ],
       "Add ${ totalServerCount } server?": [
         "${ totalServerCount } server toevoegen?",
-        "Toevoegen van ${ totalServerCount } servers?"
+        "${ totalServerCount } servers toevoegen?"
       ],
       "Add a custom logo": [
         "Voeg een aangepast logo toe"
@@ -17293,9 +17230,6 @@
       ],
       "Email privacy": [
         "E-mail privacy"
-      ],
-      "Email subscriptions": [
-        "Nieuwsbrieven"
       ],
       "Enable for all users": [
         "Inschakelen voor alle gebruikers"
@@ -18126,7 +18060,7 @@
         "Account is verbroken"
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
-        "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het plan van de organisatie bewerken."
+        "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het abonnement van de organisatie bewerken."
       ],
       "Allows to seamlessly add video conferencing links to your calendar invitations.": [
         "Maakt het mogelijk om naadloos koppelingen voor videoconferenties toe te voegen aan uw agenda-uitnodigingen."
@@ -18346,14 +18280,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Selecteer de standaard PGP-instellingen die worden gebruikt voor het ondertekenen of versleutelen van berichten met niet-${ BRAND_NAME }-gebruikers. Merk op dat Inline PGP-gebruikers berichten zonder opmaak weergeven."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Ontvang het meest recente privacynieuws en wat er gaande is in het ${ BRAND_NAME }-universum"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Neem deel aan bevragingen om ${ BRAND_NAME }-diensten te verbeteren"
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -18821,7 +18747,7 @@
     },
     "wallet_signup_2024:Info": {
       "${ WALLET_APP_NAME } is in Early Access. You can download the iOS app through Apple TestFlight and the Android app through Google Open Testing.": [
-        "${ WALLET_APP_NAME } is in vroegtijdige toegang. U kunt de iOS app downloaden via Apple TestFlight en de Android app via Google open tests."
+        "${ WALLET_APP_NAME } is in vroegtijdige toegang. U kunt de iOS-app downloaden via Apple TestFlight en de Android-app via Google open tests."
       ],
       "Coming soon": [
         "Binnenkort beschikbaar"

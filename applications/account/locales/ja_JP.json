@@ -3686,11 +3686,6 @@
         "${ categoriesJsx } のメールを再購読しました"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } および ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "確認メールが ${ address } に送信されました"
@@ -5389,26 +5384,6 @@
       ],
       "Your desktop app free trial has ended": [
         "デスクトップ アプリの無料トライアルは終了しました"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(毎月 1 通のメール)"
-      ],
-      "(1 email per quarter)": [
-        "(毎四半期 1 通のメール)"
-      ],
-      "(1-2 emails per month)": [
-        "(毎月 1 〜 2 通のメール)"
-      ],
-      "(2-4 emails per year)": [
-        "(毎年 2～4 通のメール)"
-      ],
-      "(4-6 emails per year)": [
-        "(毎年 4～6 通のメール)"
-      ],
-      "(during your first month)": [
-        "(最初の1ヶ月間)"
       ]
     },
     "Get started checklist instructions": {
@@ -8839,9 +8814,6 @@
       "Addresses": [
         "メールアドレス"
       ],
-      "Administrators": [
-        "管理者"
-      ],
       "ALL": [
         "すべて"
       ],
@@ -9784,41 +9756,6 @@
       ],
       "VPN connections": [
         "VPN 接続"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } および ${ additionalApp } 製品のアップデート"
-      ],
-      "${ app } product updates": [
-        "${ app } 製品のアップデート"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } ベータのお知らせ"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } for Business ニュースレター"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } の重要なお知らせ"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } ニュースレター"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } オファーとプロモーション"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } プロダクトのお知らせ"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } ユーザーアンケート"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } ウェルカムメール"
-      ],
-      "Daily email notifications": [
-        "毎日のメール通知"
       ]
     },
     "Label in domain modal": {
@@ -14867,9 +14804,6 @@
       "Email privacy": [
         "メールのプライバシー"
       ],
-      "Email subscriptions": [
-        "メーリングリストの購読"
-      ],
       "Encryption and keys": [
         "暗号化と鍵"
       ],
@@ -15808,14 +15742,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "${ BRAND_NAME } 以外の PGP ユーザーによるメッセージの署名または暗号化に使用するデフォルトの PGP 設定を選択します。 インライン PGP ではプレーン テキスト メッセージが強制されることに注意してください。"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "最新のプライバシー ニュースと ${ BRAND_NAME } の世界で何が起こっているのかを入手してください"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "${ BRAND_NAME } サービスを改善するためのアンケートに参加してください"
       ]
     },
     "Tooltip prompt to trust keys": {

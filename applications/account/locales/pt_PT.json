@@ -3669,11 +3669,6 @@
         "Renovou a subscrição de ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } e ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "E-mail de verificação enviado para ${ address }"
@@ -5335,26 +5330,6 @@
       ],
       "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
         "Abrir ${ MAIL_APP_NAME } no ${ webAppMessage }"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 e-mail por mês)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-mail por trimestre)"
-      ],
-      "(1-2 emails per month)": [
-        "(1 a 2 e-mails por mês)"
-      ],
-      "(2-4 emails per year)": [
-        "(2 a 4 e-mails por ano)"
-      ],
-      "(4-6 emails per year)": [
-        "(4 a 6 e-mails por ano)"
-      ],
-      "(during your first month)": [
-        "(durante o primeiro mês)"
       ]
     },
     "Get started checklist instructions": {
@@ -8781,9 +8756,6 @@
       "Addresses": [
         "Endereços"
       ],
-      "Administrators": [
-        "Administradores"
-      ],
       "ALL": [
         "TUDO"
       ],
@@ -9691,41 +9663,6 @@
       ],
       "VPN connections": [
         "Ligações VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Atualizações de produtos para ${ app } e ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Atualizações de produto do ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Comunicados das betas da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Boletim informativo ${ BRAND_NAME } para Business"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Anúncios importantes da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Newsletter da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Ofertas e promoções da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Anúncios de produtos da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Pesquisa de utilizador da ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "E-mails de boas-vindas de ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Notificações diárias por e-mail"
       ]
     },
     "Label in domain modal": {
@@ -14450,9 +14387,6 @@
       "Email privacy": [
         "Privacidade dos e-mails"
       ],
-      "Email subscriptions": [
-        "Subscrições de e-mail"
-      ],
       "Encryption and keys": [
         "Encriptação e chaves"
       ],
@@ -15386,14 +15320,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Selecione as definições PGP padrão utilizadas para assinar ou encriptar mensagens com utilizadores PGP que não utilizam ${ BRAND_NAME }. Note que o PGP 'Inline' força mensagens em texto simples."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Obtenha as últimas notícias sobre privacidade e o sobre o que se passa no universo ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Participe em questionários para melhorar os serviços ${ BRAND_NAME }"
       ]
     },
     "Tooltip prompt to trust keys": {
