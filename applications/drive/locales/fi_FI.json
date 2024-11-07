@@ -8684,6 +8684,9 @@
         "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
         "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
+      "This permission expires soon": [
+        "Tämä käyttöoikeus vanhenee erääntyy pian."
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Voit nyt vapaasti vaihtaa salasanasi tilille ${ boldEmail } ${ boldDaysRemaining } ajan."
       ],
@@ -9049,6 +9052,9 @@
       ],
       "Sign in to your organization": [
         "Kirjaudu sisään organisaatioosi"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ]
     },
     "State": {
