@@ -28,7 +28,7 @@ export const VideoConferenceToggle = ({ withInfo }: Props) => {
         <SettingsLayout className="gap-4">
             <SettingsLayoutLeft>
                 <label htmlFor="zoomToggle" className="text-semibold">
-                    <span className="mr-2">{c('Label').t`Enable video conferencing `}</span>
+                    <span className="mr-2">{c('Label').t`Video conferencing with Zoom`}</span>
                     {withInfo && (
                         <Info
                             title={c('Tooltip')
