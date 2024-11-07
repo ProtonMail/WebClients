@@ -1,4 +1,4 @@
-import { MEMBER_PERMISSIONS, ORGANIZATION_FLAGS, ORGANIZATION_TWOFA_SETTING } from '../constants';
+import { ORGANIZATION_FLAGS, ORGANIZATION_TWOFA_SETTING } from '../constants';
 import type { Organization } from '../interfaces';
 import { hasBit } from './bitset';
 
@@ -34,6 +34,10 @@ export const hasToMigrateOrgKey = (organization: Partial<Organization> = {}) => 
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.TO_MIGRATE_ORG_KEY);
 };
 
+export const hasDeletionWhitelisted = (organization: Partial<Organization> = {}) => {
+    return hasBit(organization.Flags, ORGANIZATION_FLAGS.DELETION_WHITELISTED);
+};
+
 export const hasBonuses = (organization: Partial<Organization> = {}) => {
     return !!organization.Flags || !!organization.LoyaltyCounter;
 };
@@ -44,47 +48,6 @@ export const hasTwoFARequiredForAdminOnly = (organization: Partial<Organization>
 
 export const hasTwoFARequiredForAll = (organization: Partial<Organization> = {}) => {
     return organization.TwoFactorRequired === ORGANIZATION_TWOFA_SETTING.REQUIRED_ALL;
-};
-
-export const humanReadableFlags = (organization: Partial<Organization> = {}) => {
-    let flags = [];
-
-    if (isLoyal(organization)) {
-        flags.push('Loyal');
-    }
-    if (hasCovid(organization)) {
-        flags.push('Covid');
-    }
-    if (hasSMTPSubmission(organization)) {
-        flags.push('SMTP Submission');
-    }
-    if (isDissident(organization)) {
-        flags.push('Dissident');
-    }
-    if (hasNoCycleScheduled(organization)) {
-        flags.push('No Cycle Scheduled');
-    }
-    if (isProtoneer(organization)) {
-        flags.push('Proton');
-    }
-    if (hasPhoneSupport(organization)) {
-        flags.push('Phone Support');
-    }
-    if (hasToMigrateOrgKey(organization)) {
-        flags.push('Passwordless migration enabled');
-    }
-
-    return flags.length > 0 ? flags.join(', ') : '-';
-};
-
-export const humanReadablePermissions = (organization: Partial<Organization> = {}) => {
-    let permissions = [];
-
-    if (hasBit(organization.Permissions, MEMBER_PERMISSIONS.MANAGE_FORWARDING)) {
-        permissions.push('Forwarding');
-    }
-
-    return permissions.length > 0 ? permissions.join(', ') : '-';
 };
 
 export const hasFlag = (organization: Partial<Organization> = {}, mask: number) => {
