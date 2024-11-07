@@ -11,7 +11,6 @@ const localUrls = {
 };
 
 const store = new Store();
-const settings = getSettings();
 
 const urlValidators = (subdomain: string) => {
     return z
@@ -37,6 +36,7 @@ export const defaultAppURL: URLConfig = {
 };
 
 const validateURL = (override?: unknown): null | URLConfig => {
+    const settings = getSettings();
     saveSettings({ ...settings, overrideError: false });
     if (!override) {
         return null;
