@@ -67,7 +67,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
         /* Show trash confirmation modal if:
         - alias is enabled and user didn't previously click "Don't remind me again"
         - or the alias is currently used in a login item */
-        if (relatedLogin || (await shouldWarnOnTrash())) setConfirmTrash(true);
+        if (relatedLogin || (await shouldWarnOnTrash().catch(() => false))) setConfirmTrash(true);
         else itemViewProps.handleMoveToTrashClick();
     }, [aliasEnabled, relatedLogin, canToggleStatus, itemViewProps.handleMoveToTrashClick]);
 
