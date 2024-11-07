@@ -2176,6 +2176,11 @@
         "Faktura po splatnosti"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí nepřetržitého monitorování podezřelých aktivit — včetně eskalace na bezpečnostní specialisty."
@@ -2245,11 +2250,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5968,23 +5968,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Začněte za ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Smazat účet"
@@ -6006,6 +5989,23 @@
       ],
       "Switch plan": [
         "Změnit tarif"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Začněte za ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšit na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -6298,7 +6298,7 @@
         "HTML podpisy"
       ],
       "Integrated 2FA authenticator": [
-        "Integrovaný ověřovací modul 2FA"
+        "Integrované ověřování 2FA"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch/trvalá síť VPN"
@@ -8891,7 +8891,7 @@
         "Potvrzení před otevřením odkazu"
       ],
       "Make a copy to your ${ DRIVE_APP_NAME }": [
-        "Vytvořte kopii do svého ${ DRIVE_APP_NAME }"
+        "Vytvořte kopii na svém ${ DRIVE_APP_NAME }"
       ],
       "Manage secure link": [
         "Spravovat zabezpečený odkaz"

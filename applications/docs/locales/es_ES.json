@@ -2148,6 +2148,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2217,11 +2222,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5823,23 +5823,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Comienza por ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "A partir de ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -5861,6 +5844,23 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Comienza por ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {

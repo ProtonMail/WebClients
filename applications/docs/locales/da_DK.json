@@ -184,6 +184,9 @@
       "Copy link": [
         "Kopiér link"
       ],
+      "Create a copy": [
+        "Opret en kopi"
+      ],
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
@@ -560,6 +563,9 @@
       ],
       "Sign out": [
         "Log ud"
+      ],
+      "Sign up": [
+        "Tilmeld dig"
       ],
       "Skip verification": [
         "Spring e-mail-verifikation over"
@@ -2094,6 +2100,11 @@
         "Forfalden faktura"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } beskytter din konto med målrettet 24/7-overvågning af mistænkelig aktivitet - inklusive eskalering til sikkerhedsspecialister."
@@ -2160,11 +2171,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3649,6 +3655,12 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } giver dig mulighed for at samarbejde i realtid med end-to-end-kryptering, der giver komplet privatliv. Opret en kopi for at begynde at redigere, eller bed ejeren om redigeringsadgang."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } i"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
@@ -3837,6 +3849,9 @@
         "Opret ${ calendarsToBeCreatedCount } ny kalender",
         "Opret ${ calendarsToBeCreatedCount } nye kalendere"
       ],
+      "Create a copy to edit": [
+        "Opret en kopi til redigering"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Opret et mærkat til de importerede beskeder, et tidsinterval for importen og de mapper du gerne vil importere."
       ],
@@ -3903,6 +3918,9 @@
       ],
       "Document moved to trash": [
         "Dokument flyttet til papirkurven"
+      ],
+      "Document owner has the password": [
+        "Dokument-ejeren har adgangskoden"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du ikke noget? Husk at slå pop-up-blokkere fra."
@@ -4159,6 +4177,9 @@
       ],
       "Low Priority": [
         "Lav prioritet"
+      ],
+      "Making a copy...": [
+        "Laver en kopi..."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -5547,6 +5568,9 @@
       "Graphics Interchange Format (GIF)": [
         "Grafisk Udskiftningsformat (GIF)"
       ],
+      "GZip Archive": [
+        "GZip-arkiv"
+      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5564,6 +5588,9 @@
       ],
       "Java Archive (JAR)": [
         "Java-arkiv (JAR)"
+      ],
+      "JPEG image": [
+        "JPEG-billede"
       ],
       "MP3 audio": [
         "MP3-lyd"
@@ -5600,6 +5627,9 @@
       ],
       "Opus audio": [
         "Opus audio"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "RAR-arkiv"
@@ -5695,23 +5725,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Fra ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Slet konto"
@@ -5733,6 +5746,23 @@
       ],
       "Switch plan": [
         "Skift abonnement"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Fra ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Opgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -6730,6 +6760,9 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok plads til at uploade ${ formattedTotal }"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Det lykkedes ikke at stoppe delingen af dette element"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Linket til \"${ name }\" kunne ikke slettes"
       ],
@@ -7603,6 +7636,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Hvis du vil redigere dette dokument, skal du oprette en kopi, som du kan ændre."
       ]
     },
     "State": {
@@ -8339,6 +8375,9 @@
       "Link confirmation": [
         "Linkbekræftelse"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Lav en kopi til dit ${ DRIVE_APP_NAME }."
+      ],
       "Manage secure link": [
         "Administrer sikkert link"
       ],
@@ -8498,6 +8537,9 @@
       "The link expired": [
         "Linket er udløbet"
       ],
+      "This document is password protected": [
+        "Dette dokument er låst med et kodeord"
+      ],
       "Unlock contacts groups": [
         "Få adgang til kontaktgrupper"
       ],
@@ -8608,6 +8650,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"
+      ],
+      "Shared with end-to-end encryption": [
+        "Delt med end-to-end-kryptering"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
