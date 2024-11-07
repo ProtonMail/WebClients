@@ -56,13 +56,13 @@ export const ConfirmAliasAction: FC<Props> = ({
                     </Checkbox>
                 )}
 
-                <Button color="danger" onClick={() => onAction(noRemind)} shape="outline" size="large" pill>
+                <Button color="danger" onClick={() => onAction(noRemind)} shape="solid" size="large" pill>
                     {actionText}
                 </Button>
 
                 {onDisable && (
                     <Button
-                        color={'norm'}
+                        color="norm"
                         onClick={pipe(() => onDisable(noRemind), onClose)}
                         shape="solid"
                         size="large"
@@ -72,7 +72,7 @@ export const ConfirmAliasAction: FC<Props> = ({
                     </Button>
                 )}
 
-                <Button color={'weak'} onClick={onClose} shape="solid" size="large" pill>
+                <Button onClick={onClose} size="large" shape="outline" color="norm" pill>
                     {c('Action').t`Cancel`}
                 </Button>
             </ModalTwoFooter>
