@@ -3858,11 +3858,6 @@
         "您已重新訂閱 ${ categoriesJsx } 電郵。"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne }和${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "驗證電子郵件已傳送至 ${ address }"
@@ -5596,26 +5591,6 @@
       ],
       "Your desktop app free trial has ended": [
         "您的桌面應用程式試用已結束。"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(每月 1 封電郵)"
-      ],
-      "(1 email per quarter)": [
-        "(每季 1 封電郵)"
-      ],
-      "(1-2 emails per month)": [
-        "(每月 1-2 封電郵)"
-      ],
-      "(2-4 emails per year)": [
-        "(每年 2 - 4 封電子報電郵)"
-      ],
-      "(4-6 emails per year)": [
-        "(每年四至六封電子郵件)"
-      ],
-      "(during your first month)": [
-        "(您初來首個月內)"
       ]
     },
     "Get started checklist instructions": {
@@ -9150,9 +9125,6 @@
       "Addresses": [
         "電郵位址"
       ],
-      "Administrators": [
-        "管理員"
-      ],
       "ALL": [
         "全部"
       ],
@@ -10119,41 +10091,6 @@
       ],
       "VPN connections": [
         "VPN 連線"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } 與 ${ additionalApp } 的更新"
-      ],
-      "${ app } product updates": [
-        "${ app } 產品更新"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } Beta 公告"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } 商業通訊"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } 重要通知"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } 通訊"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } 促銷與優惠"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } 產品公告"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } 使用者問卷"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } 歡迎電子郵件"
-      ],
-      "Daily email notifications": [
-        "每日電子郵件通知"
       ]
     },
     "Label in domain modal": {
@@ -15414,9 +15351,6 @@
       "Email privacy": [
         "電郵隱私"
       ],
-      "Email subscriptions": [
-        "電子報訂閱"
-      ],
       "Encryption and keys": [
         "加密和金鑰"
       ],
@@ -16412,11 +16346,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "選擇與非 ${ BRAND_NAME } PGP 使用者簽署或加密郵件所使用的預設 PGP 設定。請注意：內嵌式 PGP 強制採用純文字郵件。"
-      ]
-    },
-    "Tooltip for news": {
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "參與調查以改進 ${ BRAND_NAME } 服務"
       ]
     },
     "Tooltip prompt to trust keys": {

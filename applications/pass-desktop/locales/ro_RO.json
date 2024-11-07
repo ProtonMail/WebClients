@@ -271,11 +271,6 @@
       "Import": [
         "Importare"
       ],
-      "Import alias": [
-        "Importare alias",
-        "Importare aliasuri",
-        "Importare aliasuri"
-      ],
       "Importing": [
         "Se importă"
       ],
@@ -360,6 +355,9 @@
       "Multiple select": [
         "Selectare multiplă"
       ],
+      "Next": [
+        "Înainte"
+      ],
       "No expired links": [
         "Nu există legături web expirate"
       ],
@@ -386,6 +384,9 @@
       ],
       "Please retry": [
         "Reîncercați"
+      ],
+      "Previous": [
+        "Anteriorul"
       ],
       "Refresh the page": [
         "Împrospătare pagină"
@@ -500,6 +501,9 @@
       ],
       "Sign out": [
         "Deconectare"
+      ],
+      "Skip": [
+        "Omitere"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Cineva v-a partajat un articol în ${ PASS_APP_NAME }."
@@ -1598,6 +1602,9 @@
       "None": [
         "Fără"
       ],
+      "Not recommended": [
+        "Nerecomandat"
+      ],
       "Offline mode": [
         "Mod deconectat"
       ],
@@ -1946,11 +1953,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Nu se poate modifica adresa reală pentru acest alias."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Aveți ${ aliasCount } alias care există în SimpleLogin, dar lipsește în ${ PASS_APP_NAME }. Doriți să-l importați?",
-        "Aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?",
-        "Aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Mai aveți ${ daysRemaining } zi rămasă pentru a încerca aceste funcții premium.",
         "Mai aveți ${ daysRemaining } zile rămase pentru a încerca aceste funcții premium.",
@@ -2038,6 +2040,9 @@
         "${ minutes } minut",
         "${ minutes } minute",
         "${ minutes } de minute"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } recunoaște site-urile web și aplicațiile pe care le utilizați și completează automat formularele din orice navigator web sau dispozitiv cu acreditările salvate. Nu este nevoie să copiați și să lipiți datele."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versiune ${ PASS_SHORT_APP_NAME }"
@@ -2134,6 +2139,9 @@
       "Auto-lock after": [
         "Autoblocare după"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Pe lângă stocarea autentificărilor, ${ PASS_APP_NAME } vă protejează identitatea cu o funcție integrată de alias pentru e-mail.\n\nOri de câte ori vă înscrieți pentru un nou cont online, ${ PASS_APP_NAME } poate crea automat un alias pentru a vă păstra adresa de e-mail reală protejată."
+      ],
       "Beta Access": [
         "Acces la Beta"
       ],
@@ -2142,6 +2150,9 @@
       ],
       "Birthdate": [
         "Data nașterii"
+      ],
+      "Browse faster, smarter": [
+        "Navigați pe web mai repede și mai inteligent"
       ],
       "Capital letters (A-Z)": [
         "Majuscule (A-Z)"
@@ -2157,6 +2168,9 @@
       ],
       "Cards": [
         "Carduri"
+      ],
+      "Choose your preferred look and feel.": [
+        "Alegeți stilul și aspectul preferat."
       ],
       "City": [
         "Oraş"
@@ -2215,6 +2229,9 @@
       "Custom text field": [
         "Câmp text personal"
       ],
+      "Dark Web Monitoring": [
+        "Monitorizare pe internetul ascuns"
+      ],
       "Date": [
         "Data"
       ],
@@ -2232,6 +2249,9 @@
       ],
       "Download logs": [
         "Descărcare jurnale"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Partajați oricui cu ușurință informații confidențiale, chiar dacă nu utilizează ${ PASS_APP_NAME }. Puteți partaja o singură parolă, notiță sau card de plată sau mai multe articole din același folder."
       ],
       "Email": [
         "E-mail"
@@ -2287,11 +2307,17 @@
       "Floor, apartment, building": [
         "Etaj, apartament, clădire"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Din motive de securitate, ${ PASS_SHORT_APP_NAME } se blochează automat după 10 minute de inactivitate."
+      ],
       "Forwards to": [
         "Redirecționare către"
       ],
       "Free forever": [
         "Gratuit întotdeauna"
+      ],
+      "Free password manager with identity protection": [
+        "Manager de parole gratuit cu protejarea identității"
       ],
       "Full Name": [
         "Nume complet"
@@ -2308,6 +2334,9 @@
       "Generic CSV": [
         "CSV generic"
       ],
+      "Get the extension for your browser.": [
+        "Luați extensia pentru navigatorul web."
+      ],
       "Grant": [
         "Permitere"
       ],
@@ -2316,6 +2345,12 @@
       ],
       "Hide password": [
         "Ascundere parolă"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Cum se deblochează ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2352,6 +2387,12 @@
       ],
       "Instagram handle": [
         "Nume utilizator Instagram"
+      ],
+      "Install and continue": [
+        "Instalare și continuare"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autentificator A2F integrat"
       ],
       "Invitations": [
         "Invitații"
@@ -2415,6 +2456,9 @@
       ],
       "Make all viewers": [
         "Setare toți ca utilizator"
+      ],
+      "Make it your own.": [
+        "Personalizați aplicația."
       ],
       "max views reached": [
         "vizualizări maxime depășite"
@@ -2482,6 +2526,9 @@
       "Passkey": [
         "Cheie de acces"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Cheile de acces sunt o alternativă ușoară și sigură la parolele tradiționale care previn atacurile de tip înșelăciune și vă fac experiența online mai ușoară. ${ PASS_APP_NAME } acceptă cheile de acces pe toate platformele."
+      ],
       "Passphrase": [
         "Frază de acces"
       ],
@@ -2502,6 +2549,9 @@
       ],
       "Personal website": [
         "Site web personal"
+      ],
+      "Personalize": [
+        "Personalizați"
       ],
       "PGP-encrypted JSON (recommended)": [
         "JSON cu criptare PGP (recomandat)"
@@ -2524,6 +2574,9 @@
       "Rate us": [
         "Evaluați-ne"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Primiți alerte imediate dacă informațiile personale vă sunt divulgate într-o încălcare a datelor unei terțe părți. Puteți monitoriza mai multe adrese de e-mail sau propriul nume de domeniu."
+      ],
       "Recent": [
         "Recente"
       ],
@@ -2541,6 +2594,15 @@
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Secure password sharing": [
+        "Partajare sigură a parolelor"
+      ],
+      "Securely log in with passkeys": [
+        "Conectați-vă securizat cu chei de acces"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Stocați în siguranță, partajați și autentificați-vă automat conturile cu ${ PASS_APP_NAME }, folosind criptarea bilaterală în care milioane de oameni au încredere"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Stocați în siguranță, partajați și autentificați-vă automat conturile cu ${ PASS_APP_NAME }, folosind criptarea bilaterală în care milioane de oameni au încredere."
@@ -2560,6 +2622,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Selectați seiful unde să fie importate aliasurile SimpleLogin"
       ],
+      "Select theme": [
+        "Selectați tema"
+      ],
       "Select your password manager": [
         "Selectare manager de parole"
       ],
@@ -2577,6 +2642,9 @@
       ],
       "Show website favicons": [
         "Afișare pictogramă site web"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Conectați-vă mai rapid cu ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Card de sănătate"
@@ -2646,6 +2714,9 @@
       "Trash": [
         "Gunoi"
       ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Autentificarea cu doi factori (A2F) este una dintre cele mai bune modalități de a vă proteja conturile online.\n\n${ PASS_APP_NAME } facilitează A2F cu un autentificator integrat care vă stochează codurile A2F, le afișează și le completează automat."
+      ],
       "Type": [
         "Tip"
       ],
@@ -2654,6 +2725,9 @@
       ],
       "Unlock with": [
         "Deblocare cu"
+      ],
+      "Unlock with:": [
+        "Deblocare cu:"
       ],
       "Unnamed Credit Card": [
         "Card de credit nedenumit"
@@ -2720,6 +2794,12 @@
       ],
       "You are about to create": [
         "Sunteți pe cale să creați"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Pentru deblocare puteți alege codul PIN, datele biometrice sau parola contului."
+      ],
+      "Your passwords. Everywhere.": [
+        "Parolele proprii. Oriunde."
       ],
       "ZIP or Postal code": [
         "Cod poștal"
@@ -3074,9 +3154,6 @@
       ],
       "Import to vault(s)": [
         "Importare în seif(uri)"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importați-vă aliasurile din SimpleLogin"
       ],
       "Import your data": [
         "Importați-vă datele"

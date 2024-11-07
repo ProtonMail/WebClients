@@ -4042,11 +4042,6 @@
         "Olet perunut ${ categories }-sähköpostien tilauksen, etkä enää saa tämäntyyppisiä sähköposteja ${ BRAND_NAME }ilta."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } ja ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Vahvistusviesti lähetettiin osoitteeseen ${ address }"
@@ -5900,26 +5895,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi on päättynyt"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 viesti kuukaudessa)"
-      ],
-      "(1 email per quarter)": [
-        "(1 viesti neljännesvuodessa)"
-      ],
-      "(1-2 emails per month)": [
-        "(1–2 viestiä kuukaudessa)"
-      ],
-      "(2-4 emails per year)": [
-        "(2–4 viestiä vuodessa)"
-      ],
-      "(4-6 emails per year)": [
-        "(4–6 viestiä vuodessa)"
-      ],
-      "(during your first month)": [
-        "(ensimmäisen kuukautesi aikana)"
       ]
     },
     "Get started checklist instructions": {
@@ -9841,9 +9816,6 @@
       "Addresses": [
         "Osoitteet"
       ],
-      "Administrators": [
-        "Ylläpitäjät"
-      ],
       "ALL": [
         "KAIKKI"
       ],
@@ -10843,41 +10815,6 @@
       ],
       "VPN connections": [
         "VPN-yhteydet"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } ja ${ additionalApp } -tuotepäivitykset"
-      ],
-      "${ app } product updates": [
-        "${ app } -tuotepäivitykset"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME }in beetajulkaisut"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME }in yritysuutiskirje"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME }in tärkeät ilmoitukset"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME }in uutiskirje"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME }in tarjoukset ja kampanjat"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME }in tuotejulkaisut"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME }in käyttäjäkyselyt"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME }in tervetuloviestit"
-      ],
-      "Daily email notifications": [
-        "Päivittäiset sähköposti-ilmoitukset"
       ]
     },
     "Label in domain modal": {
@@ -14724,6 +14661,9 @@
         "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
         "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
+      "This permission expires soon": [
+        "Tämä käyttöoikeus vanhenee erääntyy pian."
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Voit nyt vapaasti vaihtaa salasanasi tilille ${ boldEmail } ${ boldDaysRemaining } ajan."
       ],
@@ -15162,6 +15102,9 @@
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
       ],
+      "The only business solution that is:": [
+        "Ainoa yritysratkaisu, joka on:"
+      ],
       "Works on all devices": [
         "Toimii kaikilla laitteilla"
       ]
@@ -15555,6 +15498,9 @@
       ],
       "Yes, it was me": [
         "Kyllä, se olin minä"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ]
     },
     "sso: auth device state": {
@@ -17176,9 +17122,6 @@
       "Email privacy": [
         "Sähköpostin tietosuoja"
       ],
-      "Email subscriptions": [
-        "Sähköpostitilaukset"
-      ],
       "Enable for all users": [
         "Ota käyttöön kaikille käyttäjille"
       ],
@@ -18225,14 +18168,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Valitse oletusarvoiset PGP-asetukset, joita käytetään ${ BRAND_NAME }nin ulkopuolisille PGP-käytäjille lähetettävien viestien allekirjoitukseen tai salaukseen. Huomioi, että upotettu PGP pakottaa viestit pelkkä teksti -muotoon."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Vastaanota tuoreimmat tietosuojauutiset ja tietoa ${ BRAND_NAME }-universumin tapahtumista."
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Auta parantamaan ${ BRAND_NAME }in palveluita osallistumalla kyselyihin."
       ]
     },
     "Tooltip prompt to trust keys": {

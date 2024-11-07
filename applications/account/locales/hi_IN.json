@@ -3518,11 +3518,6 @@
         "आपने ${ categoriesJsx } ईमेल पर फिर से भेज दिया।"
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } और ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "सत्यापन ईमेल ${ address } पर भेजा गया"
@@ -5061,26 +5056,6 @@
     "Free trial desktop": {
       "Keep using the desktop app": [
         "डेस्कटॉप ऐप का उपयोग जारी रखें"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(प्रति माह 1- ईमेल)"
-      ],
-      "(1 email per quarter)": [
-        "(1 ईमेल प्रति तिमाही)"
-      ],
-      "(1-2 emails per month)": [
-        "(प्रति माह 1-2 ईमेल)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 ईमेल प्रति वर्ष)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 ईमेल प्रति वर्ष)"
-      ],
-      "(during your first month)": [
-        "(आपके पहले महीने में)"
       ]
     },
     "Get started checklist instructions": {
@@ -8463,9 +8438,6 @@
       "Addresses": [
         "पतों"
       ],
-      "Administrators": [
-        "प्रशासकों"
-      ],
       "ALL": [
         "सभी"
       ],
@@ -9390,29 +9362,6 @@
       ],
       "VPN connections": [
         "वीपीएन कनेक्शन"
-      ]
-    },
-    "Label for news": {
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } बीटा खबर"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } Business समाचार पत्रिका"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } खबरपत्र"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } ऑफर और प्रचार"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } प्रोडक्ट खबर"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } स्वागत ईमेल"
-      ],
-      "Daily email notifications": [
-        "दैनिक ईमेल सूचनाएं"
       ]
     },
     "Label in domain modal": {
@@ -13635,9 +13584,6 @@
       ],
       "Email privacy": [
         "ईमेल गोपनीयता"
-      ],
-      "Email subscriptions": [
-        "ईमेल सदस्यताएँ"
       ],
       "Encryption and keys": [
         "एन्क्रिप्शन और कुंजियाँ"

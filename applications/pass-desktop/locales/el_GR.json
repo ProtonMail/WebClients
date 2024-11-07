@@ -271,10 +271,6 @@
       "Import": [
         "Εισαγωγή"
       ],
-      "Import alias": [
-        "Εισαγωγή ψευδωνύμου",
-        "Εισαγωγή ψευδώνυμων"
-      ],
       "Importing": [
         "Εισαγωγή"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Πολλαπλή επιλογή"
       ],
+      "Next": [
+        "Επόμενο"
+      ],
       "No expired links": [
         "Δεν υπάρχουν σύνδεσμοι που έχουν λήξει"
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Παρακαλούμε προσπαθήστε ξανά"
+      ],
+      "Previous": [
+        "Προηγούμενο"
       ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Αποσύνδεση"
+      ],
+      "Skip": [
+        "Παράλειψη"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Κάποιος μοιράστηκε ένα στοιχείο μαζί σας στο ${ PASS_APP_NAME }."
@@ -1580,6 +1585,9 @@
       "None": [
         "Κανένα"
       ],
+      "Not recommended": [
+        "Δεν συνιστάται"
+      ],
       "Offline mode": [
         "Λειτουργία χωρίς σύνδεση"
       ],
@@ -1594,6 +1602,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -1918,10 +1929,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Δεν μπορείτε να αλλάξετε τα γραμματοκιβώτια για αυτό το ψευδώνυμο."
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;",
-        "Έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να τα εισαγάγετε;"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Σας απομένει ${ daysRemaining } ημέρα για να δοκιμάσετε αυτές και άλλες premium λειτουργίες.",
@@ -2280,6 +2287,9 @@
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2870,8 +2880,52 @@
       ]
     },
     "sso": {
+      "Approve or deny it now": [
+        "Εγκρίνετε ή απορρίψετε το τώρα"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "Εάν δεν υποβάλατε εσείς αυτό το αίτημα, ακυρώστε το τώρα."
+      ],
+      "Invalid confirmation code": [
+        "Άκυρος κωδικός επιβεβαίωσης"
+      ],
+      "No, it wasn’t me": [
+        "Όχι, δεν ήμουν εγώ"
+      ],
+      "Sign-in failed": [
+        "Σύνδεση ανεπιτυχής"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Η σύνδεση ζητήθηκε σε άλλη συσκευή. Ήσασταν εσείς;"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Η σύνδεση ζητήθηκε σε άλλη συσκευή. Ήσασταν εσείς; "
+      ],
+      "Yes, it was me": [
+        "Ναι, ήμουν εγώ"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Ενεργό"
+      ],
+      "Inactive": [
+        "Ανενεργό"
+      ],
+      "Pending activation": [
+        "Εν αναμονή της ενεργοποίησης"
+      ],
+      "Pending admin activation": [
+        "Εκκρεμεί ενεργοποίηση διαχειριστή"
+      ],
+      "Rejected": [
+        "Απορριφθέντες"
+      ],
+      "Signed out": [
+        "Αποσυνδεδεμένος"
+      ],
+      "Unknown": [
+        "Άγνωστος"
       ]
     },
     "Success": {
@@ -2980,9 +3034,6 @@
       "Import to vault(s)": [
         "Εισαγωγή στην(ις) κρύπτη(ες)"
       ],
-      "Import your aliases from SimpleLogin": [
-        "Εισαγάγετε τα ψευδώνυμά σας από το SimpleLogin"
-      ],
       "Import your data": [
         "Εισαγωγή των δεδομένων σας"
       ],
@@ -3069,6 +3120,9 @@
       ],
       "Recommended actions": [
         "Συνιστώμενες ενέργειες"
+      ],
+      "Reject device?": [
+        "Απόρριψη συσκευής;"
       ],
       "Remove email address?": [
         "Αφαίρεση διεύθυνσης ηλεκτρονικού ταχυδρομείου;"

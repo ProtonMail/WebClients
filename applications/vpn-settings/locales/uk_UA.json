@@ -3150,26 +3150,6 @@
         "Дуже маленький"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 електронний лист на місяць)"
-      ],
-      "(1 email per quarter)": [
-        "(1 електронний лист на квартал)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 електронні листи на місяць)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 листи на рік)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 листів на рік)"
-      ],
-      "(during your first month)": [
-        "(упродовж першого місяця)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Уже маєте обліковий запис? ${ signIn }"
@@ -5086,9 +5066,6 @@
       "Addresses": [
         "Адреси"
       ],
-      "Administrators": [
-        "Адміністратори"
-      ],
       "Allow": [
         "Дозволити"
       ],
@@ -5556,41 +5533,6 @@
       ],
       "VPN connections": [
         "VPN-з'єднання"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Оновлення продуктів ${ app } та ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Оновлення продукту ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Оголошення ${ BRAND_NAME } бета"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Новини ${ BRAND_NAME } для бізнесу"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Важливі оголошення ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Новини ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Пропозиції та акції ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Оголошення продукту ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Опитування користувачів ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Вітальні листи ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Щоденні сповіщення електронною поштою"
       ]
     },
     "Label in domain modal": {
@@ -9709,14 +9651,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: безпечний вхід на всіх ваших пристроях. Підтримується необмежена кількість псевдонімів, спільний доступ, інтегрована двоетапна перевірка та інші можливості."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Отримуйте останні новини про приватність і про те, що відбувається у всесвіті ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Беріть участь в опитуваннях для покращення послуг ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {

@@ -271,12 +271,6 @@
       "Import": [
         "Importuj"
       ],
-      "Import alias": [
-        "Importuj alias",
-        "Importuj aliasy",
-        "Importuj aliasy",
-        "Importuj aliasy"
-      ],
       "Importing": [
         "Importowanie"
       ],
@@ -361,6 +355,9 @@
       "Multiple select": [
         "Zaznacz"
       ],
+      "Next": [
+        "Dalej"
+      ],
       "No expired links": [
         "Brak wygaśniętych linków"
       ],
@@ -387,6 +384,9 @@
       ],
       "Please retry": [
         "Spróbuj ponownie"
+      ],
+      "Previous": [
+        "Wstecz"
       ],
       "Refresh the page": [
         "Odśwież stronę"
@@ -501,6 +501,9 @@
       ],
       "Sign out": [
         "Wyloguj"
+      ],
+      "Skip": [
+        "Pomiń"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Udostępniono Tobie element w ${ PASS_APP_NAME }"
@@ -1961,12 +1964,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Nie możesz zmienić skrzynek pocztowych dla tego aliasu."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Masz ${ aliasCount } alias SimpleLogin, który nie jest widoczny w ${ PASS_APP_NAME } Czy chcesz go zaimportować?",
-        "Masz ${ aliasCount } aliasy SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?",
-        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?",
-        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zaimportować?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Masz ${ daysRemaining } dzień, aby wypróbować funkcje premium.",
         "Masz ${ daysRemaining } dni, aby wypróbować funkcje premium.",
@@ -2966,6 +2963,12 @@
       "Inactive": [
         "Nieaktywne"
       ],
+      "Pending activation": [
+        "Oczekuje na aktywację"
+      ],
+      "Pending admin activation": [
+        "Oczekuje na aktywację przez administratora"
+      ],
       "Rejected": [
         "Odrzucone"
       ],
@@ -3080,9 +3083,6 @@
       ],
       "Import to vault(s)": [
         "Importuj do sejfów"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importuj aliasy z SimpleLogin"
       ],
       "Import your data": [
         "Importuj dane"

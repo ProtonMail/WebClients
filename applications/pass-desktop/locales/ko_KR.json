@@ -271,9 +271,6 @@
       "Import": [
         "불러오기"
       ],
-      "Import alias": [
-        "별칭 가져오기"
-      ],
       "Importing": [
         "가져오는 중"
       ],
@@ -358,6 +355,9 @@
       "Multiple select": [
         "다중 선택"
       ],
+      "Next": [
+        "다음"
+      ],
       "No expired links": [
         "만료된 링크 없음"
       ],
@@ -384,6 +384,9 @@
       ],
       "Please retry": [
         "다시 시도하세요"
+      ],
+      "Previous": [
+        "이전"
       ],
       "Refresh the page": [
         "페이지 새로 고침"
@@ -498,6 +501,9 @@
       ],
       "Sign out": [
         "로그아웃"
+      ],
+      "Skip": [
+        "건너뛰기"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }에서 사용자와 타인이 항목을 공유하고 있습니다."
@@ -1562,6 +1568,9 @@
       "None": [
         "없음"
       ],
+      "Not recommended": [
+        "추천하지 않음"
+      ],
       "Offline mode": [
         "오프라인 모드"
       ],
@@ -1578,7 +1587,7 @@
         "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "경고는 안전을 위해 나타납니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
+        "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
       "Owner": [
         "소유자"
@@ -1904,9 +1913,6 @@
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "SimpleLogin에 ${ aliasCount }개의 별칭이 존재하지만 ${ PASS_APP_NAME }에는 누락된 별칭이 있음이 발견되었어요. 해당 별명을 불러오시겠어요?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
       ],
@@ -1980,6 +1986,9 @@
       ],
       "${ minutes } minute": [
         "${ minutes }분"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME }는 어떤 브라우저나 기기에서도 당신이 이용하는 웹사이트와 앱을 인식하고 양식에 자격증명을 자동입력합니다. 더 이상 복사하고 붙여넣을 필요는 없습니다."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } 버전"
@@ -2074,6 +2083,9 @@
       "Auto-lock after": [
         "자동 잠금 시간"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "로그인을 보관하는것 뿐만 아니라 ${ PASS_APP_NAME }이 내장된 별칭 이메일 기능으로 신원을 보호합니다. 어디서든 새 계정을 만들 때, ${ PASS_APP_NAME }이 자동으로 별칭 주소를 만들어 실제 이메일 주소를 보호할 수 있습니다. "
+      ],
       "Beta Access": [
         "베타 참여"
       ],
@@ -2082,6 +2094,9 @@
       ],
       "Birthdate": [
         "생년월일"
+      ],
+      "Browse faster, smarter": [
+        "빠르고 스마트하게 브라우징"
       ],
       "Capital letters (A-Z)": [
         "대문자 알파벳 (A-Z)"
@@ -2097,6 +2112,9 @@
       ],
       "Cards": [
         "카드"
+      ],
+      "Choose your preferred look and feel.": [
+        "마음에 드는 모양과 느낌을 골라주세요."
       ],
       "City": [
         "시/군/구"
@@ -2155,6 +2173,9 @@
       "Custom text field": [
         "사용자 정의 필드"
       ],
+      "Dark Web Monitoring": [
+        "다크 웹 모니터링"
+      ],
       "Date": [
         "날짜"
       ],
@@ -2172,6 +2193,9 @@
       ],
       "Download logs": [
         "로그 다운로드"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "${ PASS_APP_NAME }을 사용하지 않는 사람과도 민감한 정보를 쉽게 공유하세요. 단일 암호, 메모, 신용 카드 또는 같은 폴더에 있는 여러 항목들을 공유할 수 있습니다."
       ],
       "Email": [
         "이메일"
@@ -2227,11 +2251,17 @@
       "Floor, apartment, building": [
         "층, 아파트, 빌딩"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "보안 상의 이유로 인해, 10분 동안 아무 행동이 없으면 ${ PASS_SHORT_APP_NAME }는 자동으로 잠깁니다"
+      ],
       "Forwards to": [
         "다음으로 전달:"
       ],
       "Free forever": [
         "영원히 무료"
+      ],
+      "Free password manager with identity protection": [
+        "정보 보호 기능이 포함된 무료 비밀번호 관리자"
       ],
       "Full Name": [
         "성명"
@@ -2248,6 +2278,9 @@
       "Generic CSV": [
         "일반 CSV"
       ],
+      "Get the extension for your browser.": [
+        "브라우저용 확장 프로그램을 다운로드하세요."
+      ],
       "Grant": [
         "허용"
       ],
@@ -2256,6 +2289,12 @@
       ],
       "Hide password": [
         "비밀번호 숨기기"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email 별칭"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }을 잠금 해제하는 방법"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2292,6 +2331,12 @@
       ],
       "Instagram handle": [
         "Instagram 핸들"
+      ],
+      "Install and continue": [
+        "설치 및 계속"
+      ],
+      "Integrated 2FA authenticator": [
+        "2단계 인증기 내장"
       ],
       "Invitations": [
         "초대"
@@ -2355,6 +2400,9 @@
       ],
       "Make all viewers": [
         "전체 구성원을 뷰어로 선택"
+      ],
+      "Make it your own.": [
+        "내 것으로 만들기."
       ],
       "max views reached": [
         "최대 보기 수 도달"
@@ -2422,6 +2470,9 @@
       "Passkey": [
         "패스키"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "패스키는 피싱 공격을 방지해 주고 온라인 경험을 부드럽게 만들어 줄 기존의 비밀번호에 대한 쉽고 안전한 대안입니다. ${ PASS_APP_NAME }는 모든 플랫폼에서 패스키를 지원합니다."
+      ],
       "Passphrase": [
         "암호"
       ],
@@ -2442,6 +2493,9 @@
       ],
       "Personal website": [
         "개인 웹사이트"
+      ],
+      "Personalize": [
+        "맞춤 설정"
       ],
       "PGP-encrypted JSON (recommended)": [
         "PGP 암호화된 JSON (권장)"
@@ -2464,6 +2518,9 @@
       "Rate us": [
         "평가해 주세요"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "타사의 데이터 유출로 인해 당신의 개인 정보가 유출된 경우 즉시 알림을 받습니다. 여러 이메일 주소나 당신의 도메인을 모니터링할 수 있습니다."
+      ],
       "Recent": [
         "최근"
       ],
@@ -2481,6 +2538,15 @@
       ],
       "Reveal password": [
         "비밀번호 표시"
+      ],
+      "Secure password sharing": [
+        "안전한 비밀번호 공유"
+      ],
+      "Securely log in with passkeys": [
+        "패스키로 안전하게 로그인하기"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "수백만명이 신뢰하는 ${ PASS_APP_NAME }으로 계정을 안전하게 보관, 공유하고 자동으로 로그인하세요"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "수백만명의 사용자에 의해 종단 간 암호화가 검증된 ${ PASS_APP_NAME }로 안전하게 계정을 저장, 공유하고 자동 입력하세요."
@@ -2500,6 +2566,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "SimpleLogin 별칭을 불러올 금고 위치를 선택하세요."
       ],
+      "Select theme": [
+        "테마 선택"
+      ],
       "Select your password manager": [
         "비밀 번호 관리자를 선택하세요"
       ],
@@ -2518,8 +2587,11 @@
       "Show website favicons": [
         "웹사이트 아이콘 표시"
       ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }로 더 빠르게 로그인"
+      ],
       "Social security": [
-        "주민등록번호"
+        "사회 보장 번호"
       ],
       "Social security number": [
         "사회 보장 번호"
@@ -2584,6 +2656,9 @@
       "Trash": [
         "휴지통"
       ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "2단계 인증 (2FA)는 온라인 계정을 보호하는 가장 좋은 방법 중 하나입니다. ${ PASS_APP_NAME }는 2FA 코드를 저장하고 자동으로 표시하고 채워주는 통합형 인증기가 있어 2FA를 더욱 쉽게 만들어 줍니다."
+      ],
       "Type": [
         "유형"
       ],
@@ -2592,6 +2667,9 @@
       ],
       "Unlock with": [
         "다음으로 잠금 해제:"
+      ],
+      "Unlock with:": [
+        "다음으로 해제:"
       ],
       "Unnamed Credit Card": [
         "이름 없는 신용카드"
@@ -2658,6 +2736,12 @@
       ],
       "You are about to create": [
         "생성하려고 하는 주소:"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "PIN 번호, 생체 인식, 계정 비밀번호 중 원하는 것을 사용하실 수 있습니다."
+      ],
+      "Your passwords. Everywhere.": [
+        "어디에서나 확인하는 나의 비밀번호."
       ],
       "ZIP or Postal code": [
         "우편번호"
@@ -2848,7 +2932,7 @@
         "지금 수락 및 거부"
       ],
       "Enter the confirmation code we sent on your other device.": [
-        "나의 다른 기기로 전송한 확인 코드를 입력하세요."
+        "나의 다른 기기로 전송된 확인 코드를 입력하세요."
       ],
       "If you didn't make this request, cancel it now.": [
         "본인이 요청하지 않았다면, 즉시 취소하세요."
@@ -2869,7 +2953,7 @@
         "로그인 거부됨"
       ],
       "Sign-in rejection failure": [
-        "로그인 취소 시패"
+        "로그인 취소 실패"
       ],
       "Sign-in requested on another device. Was it you?": [
         "다른 기기에서 로그인이 요청되었습니다. 본인이 맞나요?"
@@ -3008,9 +3092,6 @@
       ],
       "Import to vault(s)": [
         "금고로 가져오기"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "SimpleLogin에서 별칭 가져오기"
       ],
       "Import your data": [
         "나의 데이터 불러오기"

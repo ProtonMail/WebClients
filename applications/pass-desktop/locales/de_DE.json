@@ -271,10 +271,6 @@
       "Import": [
         "Importieren"
       ],
-      "Import alias": [
-        "Alias importieren",
-        "Aliasse importieren"
-      ],
       "Importing": [
         "Wird importiert"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Mehrfachauswahl"
       ],
+      "Next": [
+        "Weiter"
+      ],
       "No expired links": [
         "Keine abgelaufenen Links"
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Bitte versuche es erneut"
+      ],
+      "Previous": [
+        "Zurück"
       ],
       "Refresh the page": [
         "Seite aktualisieren"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Abmelden"
+      ],
+      "Skip": [
+        "Überspringen"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Jemand hat einen Eintrag über ${ PASS_APP_NAME } mit dir geteilt."
@@ -1576,6 +1581,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "Owner": [
         "Besitzer"
@@ -2815,6 +2823,9 @@
       ]
     },
     "sso": {
+      "If you didn't make this request, cancel it now.": [
+        "Wenn du diese Anfrage nicht gestellt hast, brich sie jetzt ab."
+      ],
       "Invalid confirmation code": [
         "Ungültiger Bestätigungscode"
       ],
@@ -2953,9 +2964,6 @@
       ],
       "Import to vault(s)": [
         "In Tresor(e) importieren"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importiere deine Aliasse von SimpleLogin"
       ],
       "Import your data": [
         "Importiere deine Daten"

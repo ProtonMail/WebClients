@@ -3855,11 +3855,6 @@
         "Ви підписалися на листи ${ categoriesJsx }."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
-        "${ allCategoryTitlesExceptTheLastOne } та ${ lastCategoryTitle }"
-      ]
-    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Лист із підтвердженням надіслано на ${ address }"
@@ -5626,26 +5621,6 @@
       ],
       "Your desktop app free trial has ended": [
         "Безплатний пробний період вашої програми для комп'ютера завершився"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 електронний лист на місяць)"
-      ],
-      "(1 email per quarter)": [
-        "(1 електронний лист на квартал)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 електронні листи на місяць)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 листи на рік)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 листів на рік)"
-      ],
-      "(during your first month)": [
-        "(упродовж першого місяця)"
       ]
     },
     "Get started checklist instructions": {
@@ -9474,9 +9449,6 @@
       "Addresses": [
         "Адреси"
       ],
-      "Administrators": [
-        "Адміністратори"
-      ],
       "ALL": [
         "ВСЕ"
       ],
@@ -10437,41 +10409,6 @@
       ],
       "VPN connections": [
         "VPN-з'єднання"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Оновлення продуктів ${ app } та ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Оновлення продукту ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Оголошення ${ BRAND_NAME } бета"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Новини ${ BRAND_NAME } для бізнесу"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Важливі оголошення ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Новини ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Пропозиції та акції ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Оголошення продукту ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Опитування користувачів ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Вітальні листи ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Щоденні сповіщення електронною поштою"
       ]
     },
     "Label in domain modal": {
@@ -15949,9 +15886,6 @@
       "Email privacy": [
         "Приватність"
       ],
-      "Email subscriptions": [
-        "Підписки електронної пошти"
-      ],
       "Encryption and keys": [
         "Шифрування та ключі"
       ],
@@ -16920,14 +16854,6 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Виберіть типові налаштування PGP, що використовуються для підписування чи шифрування повідомлень для отримувачів, які використовують PGP за межами ${ BRAND_NAME }. Зауважте, що вбудований PGP примусово перетворює вміст повідомлень у формат звичайного тексту."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Отримуйте останні новини про приватність і про те, що відбувається у всесвіті ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Беріть участь в опитуваннях для покращення послуг ${ BRAND_NAME }"
       ]
     },
     "Tooltip prompt to trust keys": {

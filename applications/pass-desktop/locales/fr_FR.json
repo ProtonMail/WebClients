@@ -271,10 +271,6 @@
       "Import": [
         "Importer"
       ],
-      "Import alias": [
-        "Importer l'alias",
-        "Importer les alias"
-      ],
       "Importing": [
         "Importer"
       ],
@@ -359,6 +355,9 @@
       "Multiple select": [
         "Sélection multiple"
       ],
+      "Next": [
+        "Suivant"
+      ],
       "No expired links": [
         "Aucun lien expiré"
       ],
@@ -385,6 +384,9 @@
       ],
       "Please retry": [
         "Veuillez réessayer."
+      ],
+      "Previous": [
+        "Précédent"
       ],
       "Refresh the page": [
         "Actualiser la page"
@@ -499,6 +501,9 @@
       ],
       "Sign out": [
         "Se déconnecter"
+      ],
+      "Skip": [
+        "Ignorer"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
         "Quelqu'un a partagé un élément avec vous sur ${ PASS_APP_NAME }."
@@ -1580,6 +1585,9 @@
       "None": [
         "Aucun"
       ],
+      "Not recommended": [
+        "Non recommandé"
+      ],
       "Offline mode": [
         "Mode hors ligne"
       ],
@@ -1925,10 +1933,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Vous ne pouvez pas modifier la véritable adresse e-mail associée à cet alias."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Vous avez ${ aliasCount } alias qui est présent dans SimpleLogin mais manquant dans ${ PASS_APP_NAME }. Souhaitez-vous l'importer ?",
-        "Vous avez ${ aliasCount } alias qui sont présents dans SimpleLogin mais manquants dans ${ PASS_APP_NAME }. Souhaitez-vous les importer ?"
-      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Il vous reste ${ daysRemaining } jour pour essayer ces fonctionnalités et d'autres de la version premium.",
         "Il vous reste ${ daysRemaining } jours pour essayer ces fonctionnalités et d'autres de la version premium."
@@ -2009,6 +2013,9 @@
       "${ minutes } minute": [
         "${ minutes } minute",
         "${ minutes } minutes"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } reconnaît les sites internet et les applications que vous utilisez et renseigne automatiquement vos identifiants, sur n'importe quel navigateur ou appareil. Fini les copier-coller."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Version de ${ PASS_SHORT_APP_NAME }"
@@ -2104,6 +2111,9 @@
       "Auto-lock after": [
         "Verrouillage automatique après"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "En plus de conserver vos identifiants, ${ PASS_APP_NAME } protège votre identité avec sa fonctionnalité intégrée d'alias d'adresse e-mail. Chaque fois que vous vous inscrivez à un nouveau compte en ligne, ${ PASS_APP_NAME } peut créer automatiquement un alias pour protéger votre véritable adresse e-mail. "
+      ],
       "Beta Access": [
         "Accès à la version bêta"
       ],
@@ -2112,6 +2122,9 @@
       ],
       "Birthdate": [
         "Date de naissance"
+      ],
+      "Browse faster, smarter": [
+        "Naviguez plus rapidement et plus efficacement"
       ],
       "Capital letters (A-Z)": [
         "Majuscules (A-Z)"
@@ -2127,6 +2140,9 @@
       ],
       "Cards": [
         "Cartes"
+      ],
+      "Choose your preferred look and feel.": [
+        "Choisissez l'apparence et le style que vous préférez."
       ],
       "City": [
         "Ville"
@@ -2185,6 +2201,9 @@
       "Custom text field": [
         "Champ personnalisé"
       ],
+      "Dark Web Monitoring": [
+        "Surveillance du dark web"
+      ],
       "Date": [
         "Date"
       ],
@@ -2202,6 +2221,9 @@
       ],
       "Download logs": [
         "Télécharger les journaux"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Partagez facilement des informations sensibles avec n'importe qui, même s'ils n'utilisent pas ${ PASS_APP_NAME }. Vous pouvez partager un seul mot de passe, une note ou une carte de paiement, ou plusieurs éléments dans le même dossier."
       ],
       "Email": [
         "Adresse e-mail"
@@ -2257,11 +2279,17 @@
       "Floor, apartment, building": [
         "Étage, appartement, immeuble"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Pour des raisons de sécurité, ${ PASS_SHORT_APP_NAME } se verrouille automatiquement après 10 minutes d'inactivité."
+      ],
       "Forwards to": [
         "Transfert vers"
       ],
       "Free forever": [
         "Gratuit pour toujours"
+      ],
+      "Free password manager with identity protection": [
+        "Gestionnaire de mots de passe gratuit avec protection d'identité"
       ],
       "Full Name": [
         "Nom complet"
@@ -2278,6 +2306,9 @@
       "Generic CSV": [
         "CSV générique"
       ],
+      "Get the extension for your browser.": [
+        "Obtenez l'extension pour votre navigateur."
+      ],
       "Grant": [
         "Autoriser"
       ],
@@ -2286,6 +2317,12 @@
       ],
       "Hide password": [
         "Masquer le mot de passe"
+      ],
+      "Hide-my-email aliases": [
+        "Alias « hide-my-email »"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Comment déverrouiller ${ PASS_SHORT_APP_NAME } ?"
       ],
       "https://example.com": [
         "https://exemple.fr"
@@ -2322,6 +2359,12 @@
       ],
       "Instagram handle": [
         "Nom d'utilisateur Instagram"
+      ],
+      "Install and continue": [
+        "Installer et continuer"
+      ],
+      "Integrated 2FA authenticator": [
+        "Authentification à deux facteurs (A2F) intégrée"
       ],
       "Invitations": [
         "Invitations"
@@ -2385,6 +2428,9 @@
       ],
       "Make all viewers": [
         "Les définir comme lecteur"
+      ],
+      "Make it your own.": [
+        "Personnalisez l'application."
       ],
       "max views reached": [
         "le nombre maximum de vues a été atteint."
@@ -2452,6 +2498,9 @@
       "Passkey": [
         "Clé d'accès"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Les clés d'accès sont une alternative simple et sécurisée aux mots de passe traditionnels. Elles évitent les attaques d'hameçonnage (phishing) et facilitent votre expérience en ligne. ${ PASS_APP_NAME } prend en charge les clés d'accès sur toutes les plateformes."
+      ],
       "Passphrase": [
         "Phrase secrète"
       ],
@@ -2472,6 +2521,9 @@
       ],
       "Personal website": [
         "Site internet personnel"
+      ],
+      "Personalize": [
+        "Personnaliser"
       ],
       "PGP-encrypted JSON (recommended)": [
         "JSON chiffré en PGP (recommandé)"
@@ -2494,6 +2546,9 @@
       "Rate us": [
         "Évaluez-nous"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Recevez des alertes immédiates si vos informations personnelles sont divulguées lors d'une fuite de données par un tiers. Vous pouvez surveiller plusieurs adresses e-mail ou votre propre nom de domaine."
+      ],
       "Recent": [
         "Le plus récent"
       ],
@@ -2511,6 +2566,15 @@
       ],
       "Reveal password": [
         "Afficher le mot de passe"
+      ],
+      "Secure password sharing": [
+        "Partage sécurisé des mots de passe"
+      ],
+      "Securely log in with passkeys": [
+        "Connectez-vous en toute sécurité grâce aux clés d'accès"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Stockez, partagez et connectez-vous automatiquement à vos comptes en toute sécurité avec ${ PASS_APP_NAME } à l'aide du chiffrement de bout en bout approuvé par des millions d'utilisateurs"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Stockez, partagez et connectez-vous automatiquement à vos comptes en toute sécurité avec ${ PASS_APP_NAME } à l'aide du chiffrement de bout en bout approuvé par des millions d'utilisateurs."
@@ -2530,6 +2594,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Sélectionnez le coffre-fort dans lequel les alias SimpleLogin seront importés."
       ],
+      "Select theme": [
+        "Sélectionnez un thème"
+      ],
       "Select your password manager": [
         "Sélectionnez votre gestionnaire de mots de passe"
       ],
@@ -2547,6 +2614,9 @@
       ],
       "Show website favicons": [
         "Afficher les favicônes des sites internet"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Connectez-vous plus rapidement avec ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Sécurité sociale"
@@ -2615,6 +2685,9 @@
       "Trash": [
         "Corbeille"
       ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "L'authentification à deux facteurs (A2F) est l'un des meilleurs moyens de protéger vos comptes en ligne. \n${ PASS_APP_NAME } facilite l'utilisation de l'authentification à deux facteurs en intégrant un système d'authentification qui enregistre vos codes A2F, les affiche et les renseigne automatiquement."
+      ],
       "Type": [
         "Type"
       ],
@@ -2623,6 +2696,9 @@
       ],
       "Unlock with": [
         "Déverrouiller avec"
+      ],
+      "Unlock with:": [
+        "Déverrouiller avec :"
       ],
       "Unnamed Credit Card": [
         "Carte de paiement sans nom"
@@ -2689,6 +2765,12 @@
       ],
       "You are about to create": [
         "Vous êtes sur le point de créer"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Vous pouvez choisir entre un code PIN, des données biométriques ou votre mot de passe de compte pour déverrouiller l'application."
+      ],
+      "Your passwords. Everywhere.": [
+        "Vos mots de passe, où que vous soyez."
       ],
       "ZIP or Postal code": [
         "Code postal"
@@ -3041,9 +3123,6 @@
       ],
       "Import to vault(s)": [
         "Importer dans les coffres-forts"
-      ],
-      "Import your aliases from SimpleLogin": [
-        "Importez vos alias depuis SimpleLogin"
       ],
       "Import your data": [
         "Importer vos données"

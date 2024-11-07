@@ -85,6 +85,9 @@
       "Back": [
         "Πίσω"
       ],
+      "Back to sign-in": [
+        "Επιστροφή στη σύνδεση"
+      ],
       "Block": [
         "Αποκλεισμός"
       ],
@@ -189,6 +192,9 @@
       ],
       "Delete your account": [
         "Διαγραφή του λογαριασμού σας"
+      ],
+      "Deny access": [
+        "Άρνηση πρόσβασης"
       ],
       "Details": [
         "Λεπτομέρειες"
@@ -1081,6 +1087,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονική διεύθυνση, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει 15 ηλεκτρονικές διευθύνσεις, υποστήριξη για προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ BRAND_NAME } Scribe βοηθό συγγραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
@@ -2680,6 +2690,9 @@
       "Tab closed": [
         "Κλειστή καρτέλα"
       ],
+      "The amount due has changed. Please try again.": [
+        "Το οφειλόμενο ποσό έχει αλλάξει. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
       ],
@@ -2830,6 +2843,9 @@
       ],
       "Got it": [
         "Το κατάλαβα"
+      ],
+      "Invite a user": [
+        "Πρόσκληση χρήστη"
       ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Πρόσκληση ενός υπάρχοντος χρήστη του ${ BRAND_NAME }"
@@ -3120,6 +3136,9 @@
     "fido2: Action": {
       "Delete key": [
         "Διαγραφή κλειδιού"
+      ],
+      "New security key": [
+        "Νέο κλειδί ασφαλείας"
       ]
     },
     "fido2: Error": {
@@ -3173,6 +3192,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Επαληθεύστε την ταυτότητά σας με ένα φυσικό κλειδί ασφαλείας U2F ή FIDO2"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Έχετε συμπληρώσει το μέγιστο ${ maxSecurityKeyLength } κλειδί ασφαλείας.",
+        "Έχετε συμπληρώσει το μέγιστο ${ maxSecurityKeyLength } κλειδιών ασφαλείας."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Το κλειδί ελέγχου ταυτότητας δύο παραγόντων είναι έτοιμο για χρήση."
       ]
@@ -3200,6 +3223,9 @@
       ],
       "Security key registered": [
         "Το κλειδί ασφαλείας καταχωρήθηκε"
+      ],
+      "Security keys": [
+        "Κλειδιά ασφαλείας"
       ]
     },
     "file size format": {
@@ -3294,26 +3320,6 @@
       ],
       "Very small": [
         "Πολύ μικρό"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 μήνυμα ανά μήνα)"
-      ],
-      "(1 email per quarter)": [
-        "(1 μήνυμα ανά τρίμηνο)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 μηνύματα ανά μήνα)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 μηνύματα ανά έτος)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 μηνύματα ανά έτος)"
-      ],
-      "(during your first month)": [
-        "(κατά τη διάρκεια του πρώτου μήνα σας)"
       ]
     },
     "Go to sign in": {
@@ -3827,6 +3833,9 @@
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
       ],
@@ -4021,6 +4030,9 @@
       "High Priority": [
         "Υψηλή προτεραιότητα"
       ],
+      "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
+        "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Δημόσιο κλειδί της υπηρεσίας παροχής ταυτότητας για την υπογραφή ισχυρισμών ελέγχου ταυτότητας. Θα πρέπει να υπάρχει ένα μέρος για τη λήψη ή την αντιγραφή του κατακερματισμού πιστοποιητικού από την υπηρεσία παροχής ταυτότητας. Απλώς επικολλήστε τον κατακερματισμό του πιστοποιητικού στο πεδίο περιοχής κειμένου."
       ],
@@ -4197,6 +4209,12 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Learn more about Gateways": [
+        "Μάθετε περισσότερα σχετικά με τις Πύλες"
+      ],
+      "Learn more about single sign-on": [
+        "Μάθετε περισσότερα σχετικά με την καθολική σύνδεση"
       ],
       "Let's get started by pressing the New group button above": [
         "Ας ξεκινήσουμε πατώντας το κουμπί Νέα ομάδα παραπάνω"
@@ -4923,6 +4941,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η συνδρομή σας δε θα ανανεωθεί, αλλά θα εξακολουθείτε να απολαμβάνετε προνόμια προγράμματος μέχρι το τέλος της περιόδου συνδρομής. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
       ],
+      "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
+        "Όταν καταργείτε έναν διακομιστή από μια πύλη, εισέρχεται σε περίοδο απενεργοποίησης 10 ημερών. Αυτός ο διακομιστής μπορεί να προστεθεί σε μια νέα πύλη, αλλά η χώρα του δεν μπορεί να αλλάξει."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
       ],
@@ -5281,9 +5302,6 @@
       "Addresses": [
         "Διευθύνσεις"
       ],
-      "Administrators": [
-        "Διαχειριστές"
-      ],
       "Allow": [
         "Αποδεκτή"
       ],
@@ -5299,11 +5317,17 @@
       "Allowed Domain": [
         "Επιτρεπόμενος Τομέας"
       ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
+      ],
       "Amount": [
         "Ποσό"
       ],
       "Amount due": [
         "Οφειλόμενο ποσό"
+      ],
+      "Anderson": [
+        "Anderson"
       ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
@@ -5451,6 +5475,9 @@
       ],
       "Email or username": [
         "Διεύθυνση ή όνομα χρήστη"
+      ],
+      "Enable video conferencing ": [
+        "Ενεργοποίηση τηλεδιάσκεψης "
       ],
       "Enter the code displayed on your TV": [
         "Εισάγετε τον κωδικό που εμφανίζεται στην τηλεόρασή σας"
@@ -5635,6 +5662,9 @@
       "Recovery phrase": [
         "Φράση ανάκτησης"
       ],
+      "Repeat backup password": [
+        "Επανάληψη εφεδρικού κωδικού πρόσβασης"
+      ],
       "Reply (ACS) URL": [
         "URL απάντησης (ACS)"
       ],
@@ -5646,6 +5676,9 @@
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Γενεύη"
       ],
       "Search": [
         "Αναζήτηση"
@@ -5679,6 +5712,9 @@
       ],
       "System information": [
         "Πληροφορίες Συστήματος"
+      ],
+      "Thomas": [
+        "Thomas"
       ],
       "Two-password mode": [
         "Λειτουργία δύο κωδικών"
@@ -5762,41 +5798,6 @@
         "Συνδέσεις VPN"
       ]
     },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } και ${ additionalApp } ενημερώσεις προϊόντων"
-      ],
-      "${ app } product updates": [
-        "${ app } ενημερώσεις προϊόντων"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Ανακοινώσεις beta της ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Ενημερωτικό δελτίο ${ BRAND_NAME } για επιχειρήσεις"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Σημαντικές ανακοινώσεις του ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Ενημερωτικό δελτίο ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Προσφορές και προωθήσεις της ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Ανακοινώσεις προϊόντων ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } έρευνα χρηστών"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Emails καλωσορίσματος ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Καθημερινές ειδοποιήσεις ηλεκτρονικού ταχυδρομείου"
-      ]
-    },
     "Label in domain modal": {
       "Addresses": [
         "Διευθύνσεις"
@@ -5875,6 +5876,9 @@
       ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
+      ],
+      "PayPal without credit card": [
+        "PayPal χωρίς πιστωτική κάρτα"
       ],
       "perform a password reset from your active session": [
         "εκτελέστε επαναφορά κωδικού πρόσβασης από την ενεργή περίοδο λειτουργίας σας"
@@ -6917,6 +6921,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Επιλογή προβολής εισερχομένων μην ιδιωτικού χρήστη όπως θα έκανε ο χρήστης, συμπεριλαμβανομένου του πλήρους μηνύματος και των στοιχείων επικοινωνίας"
       ],
+      "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
+        "Εργαλείο διαχείρισης οργανισμού που επιτρέπει στους διαχειριστές να προσθέτουν και να καταργούν χρήστες, να διαχειρίζονται την πρόσβασή τους σε υπηρεσίες ${ BRAND_NAME } και να εκτελούν άλλες εργασίες."
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Η ισχυρή υποδομή μας διασφαλίζει ότι θα μπορείτε να έχετε πρόσβαση στον λογαριασμό σας όταν τον χρειάζεστε"
       ],
@@ -7531,6 +7538,9 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Χρησιμοποιήστε μια μέθοδο ανάκτησης δεδομένων, επικοινωνήστε με έναν άλλο διαχειριστή ή επαναφέρετε το κλειδί οργανισμού για να επαναφέρετε δικαιώματα διαχειριστή."
       ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Δεν μπορέσαμε να επαληθεύσουμε την αυθεντικότητα αυτής της ταυτότητας."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Δεν ήταν δυνατή η επαλήθευση της ασφάλειας του κλειδιού διεύθυνσης αυτού του αποστολέα. Μερικές φορές υπάρχει καθυστέρηση στην ενημέρωση των πληροφοριών του αποστολέα. Δοκιμάστε ξανά αργότερα. Εάν δεν εμπιστεύεστε την εγκυρότητα αυτής της πρόσκλησης ή του αποστολέα, επικοινωνήστε με την υποστήριξη πελατών του ${ BRAND_NAME }."
       ],
@@ -7559,6 +7569,14 @@
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Χρησιμοποιήστε το όνομα της εταιρείας"
+      ],
+      "Use personal name": [
+        "Χρησιμοποιήστε το προσωπικό όνομα"
       ]
     },
     "Payments": {
@@ -7650,6 +7668,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Η κάρτα σας απορρίφθηκε. Παρακαλώ δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Επιβεβαιώνοντας αυτήν την πληρωμή, εξουσιοδοτείτε το ${ BRAND_NAME } και τη Stripe, τον πάροχο υπηρεσιών πληρωμών μας, να δώσουν εντολή στην τράπεζά σας να χρεώσει τον λογαριασμό σας και στην τράπεζά σας να χρεώσει ανάλογα τον λογαριασμό σας. Μπορείτε να λάβετε επιστροφή χρημάτων εντός 8 εβδομάδων από την ημερομηνία χρέωσης, σύμφωνα με τους όρους της συμφωνίας σας με την τράπεζά σας."
+      ],
+      "Street address, postal code, and city": [
+        "Οδός, ταχυδρομικός κώδικας και πόλη"
       ]
     },
     "Permission": {
@@ -7909,6 +7935,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Η είσοδος δεν ολοκληρώθηκε με επιτυχία."
+      ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
       ]
@@ -7970,6 +7999,12 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Προαπαιτούμενα:** Ο έλεγχος ταυτότητας SAML πρέπει να ρυθμιστεί ώστε να ενεργοποιεί την παροχή SCIM."
       ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Προαπαιτούμενο:** Για να ενεργοποιήσετε την παροχή SCIM, πρέπει να επαληθεύσετε την ιδιοκτησία του τομέα **${ domainName }**. Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα."
+      ],
+      "Enter the token into your identity provider": [
+        "Εισαγάγετε το διακριτικό στον πάροχο ταυτότητάς σας"
+      ],
       "Enter URL and token into your identity provider": [
         "Εισαγάγετε διεύθυνση URL και διακριτικό στον πάροχο ταυτότητάς σας"
       ],
@@ -7979,6 +8014,12 @@
       "For security reasons, the token is hidden": [
         "Για λόγους ασφαλείας, το διακριτικό είναι κρυμμένο"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε τα παρακάτω δεδομένα και ολοκληρώστε τη διαμόρφωση του SCIM για το ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Μεταβείτε στον πάροχο ταυτότητάς σας, αντιγράψτε και επικολλήστε το διακριτικό παρακάτω και ενεργοποιήστε ξανά το SCIM για το ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Εάν έχετε χάσει ή ξεχάσει το διακριτικό SCIM, μπορείτε να δημιουργήσετε ένα νέο, αλλά έχετε υπόψη ότι οι ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας θα πρέπει να ενημερωθούν."
       ],
@@ -7987,6 +8028,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Μόλις απενεργοποιηθεί το SCIM για τον οργανισμό σας, **όλοι οι χρήστες SCIM που παρέχονται αυτόματα από τον πάροχο ταυτότητάς σας θα μετατραπούν σε χρήστες SSO** και θα μπορείτε να τους διαχειριστείτε απευθείας από τις ρυθμίσεις του ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Απλοποιεί τη διαχείριση χρηστών σε διάφορες υπηρεσίες. Προσθέστε, επεξεργαστείτε και καταργήστε χρήστες στην υπηρεσία παροχής ταυτότητάς σας και αυτές οι αλλαγές θα εφαρμοστούν αυτόματα στον οργανισμό σας ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Η αυτόματη παροχή SCIM θα απενεργοποιηθεί μέχρι να εισαγάγετε το νέο διακριτικό SCIM στις ρυθμίσεις της υπηρεσίας παροχής ταυτότητάς σας."
@@ -8278,6 +8322,9 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Θα επικοινωνήσουμε ξανά μαζί σας όταν είναι διαθέσιμη η επαναφορά κωδικού πρόσβασης."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Μπορείτε να ελέγξετε την κατάσταση του αιτήματός σας ανά πάσα στιγμή στο ${ accountAndPasswordSectionLink } των ρυθμίσεων."
       ]
     },
     "session_recovery:initiation:notification": {
@@ -8564,8 +8611,58 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "Ο ${ boldedMemberAddress } ζητά τη βοήθειά σας για να συνδεθεί στον Λογαριασμό του ${ BRAND_NAME } με καθολική σύνδεση."
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } μέλος ζήτησε τη βοήθειά σας για να συνδεθεί.",
+        "${ n } μέλη ζήτησαν τη βοήθειά σας για να συνδεθούν."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } χρήστης ζητά τη βοήθειά σας για να συνδεθεί στον λογαριασμό του ${ BRAND_NAME } με καθολική σύνδεση.",
+        "${ n } χρήστες ζητούν τη βοήθειά σας για να συνδεθούν στον λογαριασμό τους ${ BRAND_NAME } με καθολική σύνδεση."
+      ],
+      "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
+        "**Οι χρήστες SSO (που παρέχονται από την υπηρεσία παροχής ταυτότητάς σας) θα διαγραφούν** και θα πρέπει να τους δημιουργήσετε με μη αυτόματο τρόπο για να τους προσθέσετε ξανά στον οργανισμό σας."
+      ],
+      "Access denied": [
+        "Δεν επιτρέπεται η πρόσβαση"
+      ],
+      "Access granted": [
+        "Πρόσβαση επετράπη"
+      ],
+      "Approve or deny it now": [
+        "Εγκρίνετε ή απορρίψετε το τώρα"
+      ],
+      "Approve the sign-in from another device": [
+        "Έγκριση της σύνδεσης από άλλη συσκευή"
+      ],
+      "Ask administrator for help": [
+        "Ζητήστε βοήθεια από το διαχειριστή"
+      ],
+      "Ask your administrator for access?": [
+        "Ζητήστε πρόσβαση από το διαχειριστή σας;"
+      ],
+      "Backup password": [
+        "Εφεδρικός κωδικός πρόσβασης"
+      ],
       "Cancel": [
         "Ακύρωση"
+      ],
+      "Change backup password": [
+        "Αλλαγή κωδικού πρόσβασης αντιγράφων ασφαλείας"
+      ],
+      "Confirm backup password": [
+        "Επιβεβαίωση εφεδρικού κωδικού πρόσβασης"
+      ],
+      "Confirmation code": [
+        "Κωδικός επιβεβαίωσης"
+      ],
+      "Contact administrator": [
+        "Επικοινωνήστε με το διαχειριστή"
+      ],
+      "Contact your administrator if the problem persists.": [
+        "Επικοινωνήστε με το διαχειριστή σας εάν το πρόβλημα παραμένει."
       ],
       "Deny": [
         "Άρνηση"
@@ -8573,11 +8670,115 @@
       "Deny access": [
         "Άρνηση πρόσβασης"
       ],
+      "Devices available": [
+        "Διαθέσιμες συσκευές"
+      ],
+      "Enter the confirmation code we sent to this user.": [
+        "Εισαγάγετε τον κωδικό επιβεβαίωσης που στείλαμε σε αυτόν τον χρήστη."
+      ],
+      "Enter your backup password": [
+        "Εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας"
+      ],
+      "For your security, you have been signed out of all your other active devices. Before accessing your account, you’ll need to enter a new backup password.": [
+        "Για την ασφάλειά σας, έχετε αποσυνδεθεί από όλες τις άλλες ενεργές συσκευές σας. Προτού αποκτήσετε πρόσβαση στον λογαριασμό σας, θα πρέπει να εισαγάγετε έναν νέο εφεδρικό κωδικό πρόσβασης σας."
+      ],
       "Grant": [
         "Παραχώρηση"
       ],
       "Grant access": [
         "Παραχώρηση πρόσβασης"
+      ],
+      "Grant access to user?": [
+        "Παραχώρηση πρόσβασης στον χρήστη;"
+      ],
+      "Grant access to users?": [
+        "Παραχώρηση πρόσβασης στους χρήστες;"
+      ],
+      "Invalid confirmation code": [
+        "Άκυρος κωδικός επιβεβαίωσης"
+      ],
+      "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
+        "Είναι ο μόνος τρόπος για να επαναφέρετε πλήρως τον λογαριασμό σας, οπότε βεβαιωθείτε να το διατηρήσετε κάπου ασφαλές."
+      ],
+      "Join ${ organizationName }": [
+        "Συμμετοχή ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Βεβαιωθείτε ότι το έχετε αποθηκεύσει κάπου ασφαλές, ώστε να μπορείτε να αποκτήσετε ξανά πρόσβαση στον λογαριασμό σας εάν χάσετε την πρόσβαση στα διαπιστευτήρια της υπηρεσίας παροχής ταυτότητας."
+      ],
+      "New backup password": [
+        "Νέος εφεδρικός κωδικός πρόσβασης"
+      ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization.": [
+        "Οι χρήστες που δεν έρχονται από το SSO (δημιουργούνται με μη αυτόματο τρόπο, δεν παρέχονται από την υπηρεσία παροχής ταυτότητάς σας) εξακολουθούν να μπορούν να συνδεθούν στον οργανισμό σας."
+      ],
+      "Once single sign-on is disabled for your organization:": [
+        "Μόλις απενεργοποιηθεί η καθολική σύνδεση για τον οργανισμό σας:"
+      ],
+      "Remove single sign-on": [
+        "Κατάργηση καθολικής σύνδεσης"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Κατάργηση καθολικής σύνδεσης για τον οργανισμό σας;"
+      ],
+      "Set your backup password": [
+        "Ορίστε τον εφεδρικό κωδικό πρόσβασης σας"
+      ],
+      "Share the confirmation code with your administrator": [
+        "Μοιραστείτε τον κωδικό επιβεβαίωσης με τον διαχειριστή σας"
+      ],
+      "Sign in": [
+        "Σύνδεση"
+      ],
+      "Sign in to your organization": [
+        "Συνδεθήτε στον οργανισμό σας"
+      ],
+      "Sign out and in again to change your backup password": [
+        "Αποσυνδεθείτε και συνδεθείτε ξανά για να αλλάξετε τον εφεδρικό κωδικό πρόσβασης"
+      ],
+      "Single sign-on removed": [
+        "Η καθολική σύνδεση καταργήθηκε"
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Τα διαπιστευτήρια από τον πάροχο ταυτότητάς σας θα διαγραφούν."
+      ],
+      "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
+        "Για να βεβαιωθείτε ότι προσπαθείτε πραγματικά να συνδεθείτε στον **${ email }**, ελέγξτε τον κωδικό επιβεβαίωσης και εγκρίνετε το αίτημα από άλλη συσκευή."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your backup password.": [
+        "Για να βεβαιωθείτε ότι προσπαθείτε πραγματικά να συνδεθείτε, εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας."
+      ],
+      "Use backup password instead": [
+        "Χρησιμοποιήστε εφεδρικό κωδικό πρόσβασης"
+      ],
+      "User details:": [
+        "Λεπτομέρειες χρήστη:"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Ενεργό"
+      ],
+      "Inactive": [
+        "Ανενεργό"
+      ],
+      "Pending activation": [
+        "Εν αναμονή της ενεργοποίησης"
+      ],
+      "Pending admin activation": [
+        "Εκκρεμεί ενεργοποίηση διαχειριστή"
+      ],
+      "Rejected": [
+        "Απορριφθέντες"
+      ],
+      "Signed out": [
+        "Αποσυνδεδεμένος"
+      ],
+      "Unknown": [
+        "Άγνωστος"
       ]
     },
     "State": {
@@ -8774,6 +8975,9 @@
     "Subscription change warning": {
       "Got it": [
         "Το κατάλαβα"
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Απλώς συνδεθείτε στον λογαριασμό σας στο Apple App Store και, στη συνέχεια, επιλέξτε ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Απλώς συνδεθείτε στον λογαριασμό σας στο Play Store και, στη συνέχεια, πατήστε ${ subscriptions }."
@@ -9189,6 +9393,9 @@
       "Administrator privileges restored": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
+      "Backup password updated": [
+        "Ο εφεδρικός κωδικός πρόσβασης ενημερώθηκε"
+      ],
       "Catch-all address updated": [
         "Έγινε ενημέρωση της διεύθυνσης catch-all"
       ],
@@ -9302,6 +9509,12 @@
       ],
       "You have successfully unsubscribed": [
         "Διαγραφήκατε με επιτυχία"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Θα λάβετε το όνομα χρήστη σας μέσω μηνύματος ηλεκτρονικού ταχυδρομείου εντός ενός λεπτού εάν εισαγάγατε μια έγκυρη διεύθυνση email ανάκτησης."
+      ],
+      "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
+        "Θα λάβετε το όνομα χρήστη σας μέσω SMS μέσα σε ένα λεπτό εάν εισαγάγατε έναν έγκυρο αριθμό τηλεφώνου ανάκτησης."
       ]
     },
     "Success message": {
@@ -9452,6 +9665,9 @@
       ]
     },
     "Title": {
+      "${ BRAND_NAME } Scribe": [
+        "${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
@@ -9698,6 +9914,9 @@
       "Delete user?": [
         "Διαγραφή χρήστη;"
       ],
+      "Deny access to user?": [
+        "Αρνηθείτε την πρόσβαση στο χρήστη;"
+      ],
       "Device": [
         "Συσκευή"
       ],
@@ -9769,6 +9988,9 @@
       ],
       "Email subscriptions": [
         "Λίστες Εγγραφής E-mail"
+      ],
+      "Enable for all users": [
+        "Ενεργοποίηση για όλους τους χρήστες"
       ],
       "Enter 2FA code": [
         "Εισαγωγή κωδικού 2FA"
@@ -10093,6 +10315,9 @@
       "Verifying your payment...": [
         "Γίνεται επαλήθευση της πληρωμής σας..."
       ],
+      "Video conference": [
+        "Τηλεδιάσκεψη"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Θα στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
       ],
@@ -10264,14 +10489,9 @@
       ],
       "User declined invitation": [
         "Ο χρήστης απέρριψε την πρόσκληση"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Λάβετε τα τελευταία νέα απορρήτου και τι συμβαίνει στον κόσμο του ${ BRAND_NAME }"
       ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Συμμετοχή σε έρευνες για τη βελτίωση των υπηρεσιών ${ BRAND_NAME }"
+      "Waiting for user to accept the invitation": [
+        "Αναμονή για αποδοχή της πρόσκλησης από τον χρήστη"
       ]
     },
     "Tor out of date": {
