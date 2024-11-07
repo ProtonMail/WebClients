@@ -1,7 +1,7 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ForwardRefRenderFunction } from 'react';
 import { forwardRef } from 'react';
 
-import QRCodeReact from 'qrcode.react';
+import { QRCodeSVG } from 'qrcode.react';
 
 import clsx from '@proton/utils/clsx';
 
@@ -12,17 +12,10 @@ interface Props extends ComponentPropsWithoutRef<'svg'> {
     value: string;
 }
 
-const QRCode = forwardRef<SVGElement, Props>(({ size = 200, className, ...rest }: Props, ref) => {
-    return (
-        <QRCodeReact
-            className={clsx(['qr-code', className])}
-            size={size}
-            includeMargin={false}
-            ref={ref as any}
-            {...rest}
-            renderAs="svg"
-        />
-    );
-});
+const BaseQRCode: ForwardRefRenderFunction<SVGSVGElement, Props> = ({ size = 200, className, ...rest }: Props, ref) => {
+    return <QRCodeSVG className={clsx(['qr-code', className])} size={size} ref={ref} {...rest} />;
+};
+
+const QRCode = forwardRef(BaseQRCode);
 
 export default QRCode;
