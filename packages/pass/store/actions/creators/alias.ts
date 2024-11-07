@@ -13,8 +13,8 @@ import type {
     AliasContactBlockDTO,
     AliasContactGetResponse,
     AliasContactInfoDTO,
-    AliasContactListResponse,
     AliasContactNewDTO,
+    AliasContactWithStatsGetResponse,
     AliasDetails,
     AliasOptions,
     AliasToggleStatusDTO,
@@ -460,7 +460,7 @@ export const updateCustomDomainMailboxes = requestActionsFactory<CustomDomainMai
     },
 });
 
-export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasContactListResponse>(
+export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasContactWithStatsGetResponse[]>(
     'alias::contact::get-list'
 )({
     key: selectedItemKey,

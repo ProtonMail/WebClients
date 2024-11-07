@@ -10,8 +10,8 @@ import type {
     AliasContactBlockDTO,
     AliasContactGetResponse,
     AliasContactInfoDTO,
-    AliasContactListResponse,
     AliasContactNewDTO,
+    AliasContactWithStatsGetResponse,
     AliasCreateFromPendingDTO,
     AliasDetails,
     AliasMailbox,
@@ -84,11 +84,19 @@ export const getAliasDetails = async (shareId: string, itemId: string): Promise<
     };
 };
 
-export const aliasGetContactsListApi = ({ shareId, itemId }: UniqueItem): Promise<AliasContactListResponse> =>
-    api({
-        url: `pass/v1/share/${shareId}/alias/${itemId}/contact`,
-        method: 'get',
-    });
+export const aliasGetContactsListApi = ({ shareId, itemId }: UniqueItem): Promise<AliasContactWithStatsGetResponse[]> =>
+    createPageIterator({
+        request: async (cursor) => {
+            const result = await api({
+                url: `pass/v1/share/${shareId}/alias/${itemId}/contact`,
+                method: 'get',
+                params: { Since: cursor },
+            });
+            const contacts = result.Contacts ?? [];
+
+            return { data: contacts, cursor: result.LastID === 0 ? null : result.LastID?.toString() };
+        },
+    })();
 
 export const aliasGetContactInfoApi = async ({
     shareId,
