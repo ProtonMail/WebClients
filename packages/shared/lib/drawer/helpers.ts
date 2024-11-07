@@ -177,3 +177,20 @@ export const getDisplayDrawerApp = (currentApp: APP_NAMES, toOpenApp: DrawerApp)
         return getDisplaySecurityCenterInDrawer(currentApp);
     }
 };
+
+export const getDrawerAppFromURL = (url: string) => {
+    if (!isAuthorizedDrawerUrl(url, window.location.hostname)) {
+        return;
+    }
+
+    const originURL = new URL(url);
+
+    // Get subdomain of the url => e.g. mail, calendar, drive
+    const subdomainFromUrl = originURL.hostname.split('.')[0];
+
+    const appName = Object.keys(APPS_CONFIGURATION).find((app) => {
+        return APPS_CONFIGURATION[app as APP_NAMES].subdomain === subdomainFromUrl;
+    });
+
+    return appName as DrawerApp;
+};

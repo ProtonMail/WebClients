@@ -13,7 +13,12 @@ import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { DAY, MINUTE } from '@proton/shared/lib/constants';
-import { getIsDrawerPostMessage, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
+import {
+    getDrawerAppFromURL,
+    getIsDrawerPostMessage,
+    getIsIframedDrawerApp,
+    postMessageToIframe,
+} from '@proton/shared/lib/drawer/helpers';
 import type { DrawerApp, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
@@ -188,12 +193,27 @@ export const DrawerProvider = ({
                     break;
                 case DRAWER_EVENTS.READY:
                     {
-                        if (!appInView) {
+                        const eventOriginAppName = getDrawerAppFromURL(event.origin);
+                        if (!eventOriginAppName) {
                             // Temporary sentry log to investigate MAILWEB-5949
-                            captureMessage('Drawer iframe session parent - no app in view', {
+                            captureMessage('Drawer iframe session parent - no origin found', {
                                 level: 'info',
                                 extra: {
                                     origin: event.origin,
+                                    eventOriginAppName,
+                                },
+                            });
+                            return;
+                        }
+
+                        const appInSrcMap = iframeSrcMap[eventOriginAppName];
+                        if (!appInSrcMap) {
+                            // Temporary sentry log to investigate MAILWEB-5949
+                            captureMessage('Drawer iframe session parent - no app found', {
+                                level: 'info',
+                                extra: {
+                                    origin: event.origin,
+                                    appInSrcMap,
                                 },
                             });
                             return;
@@ -215,13 +235,19 @@ export const DrawerProvider = ({
                                     tag: versionCookieAtLoad,
                                 },
                             },
-                            appInView
+                            eventOriginAppName
                         );
                     }
                     break;
                 case DRAWER_EVENTS.API_REQUEST:
                     {
-                        if (!appInView || !getIsIframedDrawerApp(appInView)) {
+                        const eventOriginAppName = getDrawerAppFromURL(event.origin);
+                        if (!eventOriginAppName) {
+                            return;
+                        }
+
+                        const appInSrcMap = iframeSrcMap[eventOriginAppName];
+                        if (!appInSrcMap || !getIsIframedDrawerApp(eventOriginAppName)) {
                             return;
                         }
 
@@ -247,7 +273,7 @@ export const DrawerProvider = ({
                                 ...updatedArgs,
                                 headers: {
                                     ...updatedArgs.headers,
-                                    ...getAppVersionHeaders(getClientID(appInView), appVersion),
+                                    ...getAppVersionHeaders(getClientID(eventOriginAppName), appVersion),
                                     'x-pm-source': 'drawer',
                                 },
                             });
@@ -277,7 +303,7 @@ export const DrawerProvider = ({
                                         output: updatedArgs.output,
                                     },
                                 },
-                                appInView
+                                eventOriginAppName
                             );
                         } catch (err: any) {
                             // If the request failed, remove the controller from the array
@@ -298,7 +324,7 @@ export const DrawerProvider = ({
                                         serverTime: serverTime(),
                                     },
                                 },
-                                appInView
+                                eventOriginAppName
                             );
                         }
                     }
@@ -335,7 +361,7 @@ export const DrawerProvider = ({
                     break;
             }
         },
-        [appInView]
+        [iframeSrcMap]
     );
 
     useEffect(() => {
