@@ -3239,6 +3239,12 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Ověřte svou identitu pomocí fyzického bezpečnostního klíče U2F nebo FIDO2"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Dosáhli jste maximální délky bezpečnostního klíče ${ maxSecurityKeyLength }.",
+        "Dosáhli jste maximální délky bezpečnostních klíčů ${ maxSecurityKeyLength }.",
+        "Dosáhli jste maximální délky bezpečnostních klíčů ${ maxSecurityKeyLength }.",
+        "Dosáhli jste maximální délky bezpečnostních klíčů ${ maxSecurityKeyLength }."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Váš dvoufázový ověřovací klíč je připraven k použití."
       ]
@@ -3375,26 +3381,6 @@
       ],
       "Very small": [
         "Velmi malé"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 e-mail měsíčně)"
-      ],
-      "(1 email per quarter)": [
-        "(1 e-mail čtvrtletně)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 e-maily měsíčně)"
-      ],
-      "(2-4 emails per year)": [
-        "(2-4 e-maily za rok)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 e-mailů za rok)"
-      ],
-      "(during your first month)": [
-        "(během prvního měsíce)"
       ]
     },
     "Go to sign in": {
@@ -5459,9 +5445,6 @@
       "Addresses": [
         "Adresy"
       ],
-      "Administrators": [
-        "Správci"
-      ],
       "Allow": [
         "Povolit"
       ],
@@ -5962,41 +5945,6 @@
       ],
       "VPN connections": [
         "VPN připojení"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "aktualizace produktu ${ app } a ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Aktualizace produktu ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Beta oznámení ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Novinky ${ BRAND_NAME } pro firmy"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Důležitá oznámení ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Novinky ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Akční nabídky ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Oznámení o produktech ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Uživatelský průzkum ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } uvítací e-maily"
-      ],
-      "Daily email notifications": [
-        "Denní e-mailová upozornění"
       ]
     },
     "Label in domain modal": {
@@ -6672,7 +6620,7 @@
         "HTML podpisy"
       ],
       "Integrated 2FA authenticator": [
-        "Integrovaný ověřovací modul 2FA"
+        "Integrované ověřování 2FA"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch/trvalá síť VPN"
@@ -10923,14 +10871,6 @@
       ],
       "Waiting for user to accept the invitation": [
         "Čekání na přijetí pozvánky uživatelem"
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Získejte nejnovější zprávy o ochraně soukromí a o dění v ekosystému ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Účastněte se průzkumů ke zlepšení služeb ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {

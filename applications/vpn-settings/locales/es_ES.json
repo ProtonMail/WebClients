@@ -3337,26 +3337,6 @@
         "Muy pequeño"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(1 correo al mes)"
-      ],
-      "(1 email per quarter)": [
-        "(1 correo al trimestre)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 correos al mes)"
-      ],
-      "(2-4 emails per year)": [
-        "(2 a 4 correos al año)"
-      ],
-      "(4-6 emails per year)": [
-        "(4-6 correos al año)"
-      ],
-      "(during your first month)": [
-        "(durante tu primer mes)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "¿Ya tienes una cuenta? ${ signIn }"
@@ -5340,9 +5320,6 @@
       "Addresses": [
         "Direcciones"
       ],
-      "Administrators": [
-        "Administradores"
-      ],
       "Allow": [
         "Direcciones permitidas"
       ],
@@ -5840,41 +5817,6 @@
       ],
       "VPN connections": [
         "Conexiones VPN"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "Actualizaciones del producto de ${ app } y ${ additionalApp }"
-      ],
-      "${ app } product updates": [
-        "Actualizaciones del producto ${ app }"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "Comunicados beta de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "Boletín comercial de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "Comunicados importantes de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "Boletín de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "Ofertas y promociones de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "Comunicados del producto ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "Encuesta a los usuarios de ${ BRAND_NAME }"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "Correos electrónicos de bienvenida ${ BRAND_NAME }"
-      ],
-      "Daily email notifications": [
-        "Notificaciones diarias por correo electrónico"
       ]
     },
     "Label in domain modal": {
@@ -10615,14 +10557,6 @@
       ],
       "Waiting for user to accept the invitation": [
         "Se está esperando que el usuario acepte la invitación."
-      ]
-    },
-    "Tooltip for news": {
-      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Obtén las últimas noticias de privacidad y lo que sucede en ${ BRAND_NAME }"
-      ],
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Participa en las encuestas para mejorar los servicios de ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {

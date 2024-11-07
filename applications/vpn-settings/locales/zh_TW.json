@@ -3175,26 +3175,6 @@
         "非常小"
       ]
     },
-    "Frequency of news": {
-      "(1 email per month)": [
-        "(每月 1 封電郵)"
-      ],
-      "(1 email per quarter)": [
-        "(每季 1 封電郵)"
-      ],
-      "(1-2 emails per month)": [
-        "(每月 1-2 封電郵)"
-      ],
-      "(2-4 emails per year)": [
-        "(每年 2 - 4 封電子報電郵)"
-      ],
-      "(4-6 emails per year)": [
-        "(每年四至六封電子郵件)"
-      ],
-      "(during your first month)": [
-        "(您初來首個月內)"
-      ]
-    },
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "已有一個帳號？${ signIn }"
@@ -4973,9 +4953,6 @@
       "Addresses": [
         "電郵位址"
       ],
-      "Administrators": [
-        "管理員"
-      ],
       "Allow": [
         "允許"
       ],
@@ -5455,41 +5432,6 @@
       ],
       "VPN connections": [
         "VPN 連線"
-      ]
-    },
-    "Label for news": {
-      "${ app } and ${ additionalApp } product updates": [
-        "${ app } 與 ${ additionalApp } 的更新"
-      ],
-      "${ app } product updates": [
-        "${ app } 產品更新"
-      ],
-      "${ BRAND_NAME } beta announcements": [
-        "${ BRAND_NAME } Beta 公告"
-      ],
-      "${ BRAND_NAME } for Business newsletter": [
-        "${ BRAND_NAME } 商業通訊"
-      ],
-      "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } 重要通知"
-      ],
-      "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } 通訊"
-      ],
-      "${ BRAND_NAME } offers and promotions": [
-        "${ BRAND_NAME } 促銷與優惠"
-      ],
-      "${ BRAND_NAME } product announcements": [
-        "${ BRAND_NAME } 產品公告"
-      ],
-      "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } 使用者問卷"
-      ],
-      "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME } 歡迎電子郵件"
-      ],
-      "Daily email notifications": [
-        "每日電子郵件通知"
       ]
     },
     "Label in domain modal": {
@@ -9453,11 +9395,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
-      ]
-    },
-    "Tooltip for news": {
-      "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "參與調查以改進 ${ BRAND_NAME } 服務"
       ]
     },
     "Tor out of date": {
