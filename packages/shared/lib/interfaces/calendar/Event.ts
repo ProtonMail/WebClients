@@ -182,7 +182,6 @@ export interface EventModelView {
     conferenceId?: string;
     conferenceUrl?: string;
     conferencePasscode?: string;
-    conferenceCreator?: string;
     conferenceHost?: string;
     isConferenceTmpDeleted?: boolean;
     rest?: any;

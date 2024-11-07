@@ -27,6 +27,11 @@ const saveWhitelistedFlagInCookies = (data: FeatureFlagToggle[], whitelistedFlag
     const enabledFlags = [];
 
     for (const flagName of whitelistedFlags) {
+        // There are cases where data is not an array, better prevent it
+        if (!Array.isArray(data)) {
+            return;
+        }
+
         // Map whitelisted flags to valid cookie entries
         const flagData = data.find((flag) => flag.name === flagName);
 

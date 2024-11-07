@@ -9,6 +9,7 @@ export const getVideoConferencingData = (model: EventModelReadView | VcalVeventC
             meetingId: (model as VcalVeventComponent)?.['x-pm-conference-id']?.value,
             meetingUrl: (model as VcalVeventComponent)?.['x-pm-conference-url']?.value,
             password: (model as VcalVeventComponent)?.['x-pm-conference-url']?.parameters?.passcode,
+            meetingHost: (model as VcalVeventComponent)?.['x-pm-conference-url']?.parameters?.host,
         };
     }
 
@@ -19,5 +20,6 @@ export const getVideoConferencingData = (model: EventModelReadView | VcalVeventC
         meetingId: (model as EventModelReadView).rest['x-pm-conference-id']?.value,
         meetingUrl: (model as EventModelReadView).rest['x-pm-conference-url']?.value,
         password: (model as EventModelReadView).rest['x-pm-conference-url']?.parameters?.passcode,
+        meetingHost: (model as EventModelReadView).rest['x-pm-conference-url']?.parameters?.host,
     };
 };
