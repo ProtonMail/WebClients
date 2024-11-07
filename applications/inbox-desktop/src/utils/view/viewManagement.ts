@@ -311,12 +311,9 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
             );
             await view.webContents.loadURL(defURL);
         }
-    } else if (isSameURL(viewURL, url)) {
-        if (!force) {
-            viewLogger(viewID).info("loadURL already in given url", url);
-            view.webContents.loadURL(url);
-            return;
-        }
+    } else if (isSameURL(viewURL, url) && !force) {
+        viewLogger(viewID).info("loadURL already in given url", url);
+        return;
     }
 
     viewLogger(viewID).info("loadURL from", viewURL, "to", url);
