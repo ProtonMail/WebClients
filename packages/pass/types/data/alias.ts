@@ -15,6 +15,7 @@ export type AliasDetails = {
     /** The display name including email, e.g `John <alias@domain>`.
      * The default BE value is `Hello <alias@domain>`, even if the name is empty */
     displayName: string;
+    slNote: string;
     stats: AliasStats;
 };
 export type AliasPending = { pendingAliasID: string; aliasEmail: string; aliasNote: string };

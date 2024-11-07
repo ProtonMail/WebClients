@@ -27,7 +27,7 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     hidden?: boolean;
     hiddenValue?: string;
     icon?: IconName;
-    label: string;
+    label: ReactNode;
     loading?: boolean;
     value?: string;
     valueClassName?: string;

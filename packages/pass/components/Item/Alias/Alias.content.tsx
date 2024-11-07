@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { type FC, useEffect } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -7,7 +7,9 @@ import { c } from 'ttag';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
+import { AliasSimpleLoginNoteModal } from '@proton/pass/components/Item/Alias/AliasSimpleLoginNote.modal';
 import { AliasContact } from '@proton/pass/components/Item/Alias/Contact/AliasContact';
+import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
@@ -27,6 +29,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
 }) => {
     const dispatch = useDispatch();
     const canManageAlias = useSelector(selectCanManageAlias);
+    const [openSlNoteModal, setOpenSlNoteModal] = useState(false);
 
     const { data: item, shareId, itemId } = revision;
 
@@ -50,6 +53,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
 
     const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
     const displayName = aliasDetails?.name;
+    const slNote = aliasDetails?.slNote;
 
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
     const allowActions = canToggleStatus && !history;
@@ -92,6 +96,34 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                         value={note}
                     />
                 </FieldsetCluster>
+            )}
+
+            {slNote && (
+                <>
+                    <FieldsetCluster mode="read" as="div">
+                        <ValueControl
+                            clickToCopy
+                            as={TextAreaReadonly}
+                            icon="note"
+                            label={
+                                <span className="flex items-center flex-nowrap gap-1">
+                                    {c('Label').t`Note • SimpleLogin`}
+                                    <InfoButton
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // Prevent copying note to clipboard
+                                            setOpenSlNoteModal(true);
+                                        }}
+                                    />
+                                </span>
+                            }
+                            value={slNote}
+                        />
+                    </FieldsetCluster>
+
+                    {openSlNoteModal && (
+                        <AliasSimpleLoginNoteModal open={openSlNoteModal} onClose={() => setOpenSlNoteModal(false)} />
+                    )}
+                </>
             )}
 
             {displayName && (
