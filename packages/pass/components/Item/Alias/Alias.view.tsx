@@ -1,12 +1,12 @@
-import { type FC, type MouseEvent, useCallback, useEffect, useState } from 'react';
+import { type FC, type MouseEvent, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { ConfirmAliasAction } from '@proton/pass/components/Item/Actions/ConfirmAliasAction';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
-import { AliasTrashConfirmModal } from '@proton/pass/components/Item/Alias/AliasTrashConfirm.modal';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
@@ -23,7 +23,6 @@ import { selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
-import noop from '@proton/utils/noop';
 
 export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const { navigate } = useNavigation();
@@ -40,9 +39,12 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
 
     const relatedLogin = useSelector(selectLoginItemByEmail(aliasEmail));
     const relatedLoginName = relatedLogin?.data.metadata.name ?? '';
+    const relatedWarning =
+        relatedLogin &&
+        c('Warning').t`This alias "${aliasEmail}" is currently used in the login "${relatedLoginName}".`;
 
     const [confirmTrash, setConfirmTrash] = useState(false);
-    const [canDisable, setCanDisable] = useState(aliasEnabled);
+    const [confirmDelete, setConfirmDelete] = useState(false);
 
     const toggleStatus = useRequest(aliasSyncStatusToggle, {});
 
@@ -56,19 +58,25 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
         });
     };
 
-    const handleMoveToTrashClick = useCallback(() => {
+    const handleMoveToTrashClick = useCallback(async () => {
+        const shouldWarnOnTrash = async () =>
+            canToggleStatus &&
+            aliasEnabled &&
+            Boolean(await Promise.resolve(onboardingCheck?.(OnboardingMessage.ALIAS_TRASH_CONFIRM)));
+
         /* Show trash confirmation modal if:
         - alias is enabled and user didn't previously click "Don't remind me again"
         - or the alias is currently used in a login item */
-        if (canDisable || relatedLogin) setConfirmTrash(true);
+        if (relatedLogin || (await shouldWarnOnTrash())) setConfirmTrash(true);
         else itemViewProps.handleMoveToTrashClick();
-    }, [relatedLogin, itemViewProps.handleMoveToTrashClick, canDisable]);
+    }, [aliasEnabled, relatedLogin, canToggleStatus, itemViewProps.handleMoveToTrashClick]);
 
-    const handleConfirmDisableClick = (noRemind: boolean) => {
-        setConfirmTrash(false);
-        toggleStatus.dispatch({ shareId, itemId, enabled: false });
-        if (noRemind) void onboardingAcknowledge?.(OnboardingMessage.ALIAS_TRASH_CONFIRM);
-    };
+    const handleConfirmDisableClick = aliasEnabled
+        ? (noRemind: boolean) => {
+              toggleStatus.dispatch({ shareId, itemId, enabled: false });
+              if (noRemind) void onboardingAcknowledge?.(OnboardingMessage.ALIAS_TRASH_CONFIRM);
+          }
+        : undefined;
 
     const handleConfirmTrashClick = (noRemind: boolean) => {
         setConfirmTrash(false);
@@ -76,11 +84,10 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
         if (noRemind) void onboardingAcknowledge?.(OnboardingMessage.ALIAS_TRASH_CONFIRM);
     };
 
-    useEffect(() => {
-        Promise.resolve(canToggleStatus && aliasEnabled && onboardingCheck?.(OnboardingMessage.ALIAS_TRASH_CONFIRM))
-            .then((show) => setCanDisable(Boolean(show)))
-            .catch(noop);
-    }, [aliasEnabled, canToggleStatus]);
+    const handleConfirmDeleteClick = () => {
+        setConfirmDelete(false);
+        itemViewProps.handleDeleteClick();
+    };
 
     return (
         <ItemViewPanel
@@ -99,6 +106,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                   }
                 : {})}
             handleMoveToTrashClick={handleMoveToTrashClick}
+            handleDeleteClick={() => setConfirmDelete(true)}
         >
             <AliasContent
                 revision={revision}
@@ -122,15 +130,40 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
             />
 
             {confirmTrash && (
-                <AliasTrashConfirmModal
-                    canDisable={canDisable}
+                <ConfirmAliasAction
+                    title={c('Warning').t`Move to trash`}
+                    actionText={c('Action').t`Move to trash`}
+                    disableText={c('Action').t`Disable instead`}
+                    message={
+                        aliasEnabled &&
+                        c('Info')
+                            .t`Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.`
+                    }
+                    warning={relatedWarning}
+                    remember={aliasEnabled}
                     onClose={() => setConfirmTrash(false)}
                     onDisable={handleConfirmDisableClick}
-                    onTrash={handleConfirmTrashClick}
-                    warning={
-                        relatedLogin &&
-                        c('Warning').t`This alias "${aliasEmail}" is currently used in the login "${relatedLoginName}".`
+                    onAction={handleConfirmTrashClick}
+                />
+            )}
+
+            {confirmDelete && (
+                <ConfirmAliasAction
+                    title={c('Warning').t`Delete alias`}
+                    actionText={c('Action').t`Delete it, I will never need it`}
+                    disableText={c('Action').t`Disable alias`}
+                    message={
+                        aliasEnabled
+                            ? c('Info')
+                                  .t`Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?`
+                            : c('Info')
+                                  .t`Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox`
                     }
+                    warning={relatedWarning}
+                    remember={false}
+                    onClose={() => setConfirmDelete(false)}
+                    onDisable={handleConfirmDisableClick}
+                    onAction={handleConfirmDeleteClick}
                 />
             )}
         </ItemViewPanel>

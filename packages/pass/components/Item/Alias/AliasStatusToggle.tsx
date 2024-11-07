@@ -6,6 +6,7 @@ import { Toggle, Tooltip } from '@proton/components';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { isAliasDisabled } from '@proton/pass/lib/items/item.predicates';
 import { aliasSyncStatusToggle } from '@proton/pass/store/actions';
+import { aliasSyncToggleStatusRequest } from '@proton/pass/store/actions/requests';
 import type { ItemRevision } from '@proton/pass/types';
 import { not } from '@proton/pass/utils/fp/predicates';
 
@@ -13,7 +14,9 @@ type Props = { disabled?: boolean; revision: ItemRevision };
 
 export const AliasStatusToggle: FC<Props> = ({ disabled, revision }) => {
     const aliasEnabled = not(isAliasDisabled)(revision);
-    const { dispatch, loading } = useRequest(aliasSyncStatusToggle, {});
+    const { dispatch, loading } = useRequest(aliasSyncStatusToggle, {
+        initialRequestId: aliasSyncToggleStatusRequest(revision.shareId, revision.itemId),
+    });
 
     return (
         <Tooltip
