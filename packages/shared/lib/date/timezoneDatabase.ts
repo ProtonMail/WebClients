@@ -785,6 +785,7 @@ export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
     'america mountain': 'America/Denver',
     'america pacific': 'America/Los_Angeles',
     'amsterdam, berlin, bern, rome, stockholm, vienna': 'Europe/Berlin',
+    'amsterdam, belgrade, berlin, brussels, budapest, madrid, paris, prague, stockholm': 'Europe/Berlin',
     anadyr: 'Asia/Anadyr',
     apia: 'Pacific/Apia',
     aqtau: 'Asia/Aqtau',
