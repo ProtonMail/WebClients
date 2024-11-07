@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -51,7 +50,7 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
     };
 
     return (
-        <ModalTwo size="large" as={Form} onSubmit={handleConfirm} {...modalProps}>
+        <ModalTwo size="large" {...modalProps}>
             <ModalTwoHeader
                 title={
                     isPhishingAttempt ? c('Title').t`Warning: suspected fake website` : c('Title').t`Link confirmation`
@@ -78,9 +77,10 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
                 <Button onClick={modalProps.onClose}>{c('Action').t`Cancel`}</Button>
                 {/* translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com */}
                 <Button
-                    color="norm"
-                    type="submit"
                     autoFocus
+                    color="norm"
+                    type="button"
+                    onClick={handleConfirm}
                     aria-label={c('Action').t`Confirm opening of link ${linkToShow}`}
                     disabled={isPhishingAttempt && !understandRisk}
                 >
