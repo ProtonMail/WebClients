@@ -6,7 +6,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
-import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
+import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 interface Props {
     app: APP_NAMES;
@@ -22,8 +22,9 @@ interface Props {
 export const getCalendarAppRoutes = ({ app, user, organization, isZoomIntegrationEnabled }: Props) => {
     const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';
+    const isVisionary = isOrganizationVisionary(organization);
 
-    const isMultiAccount = isB2BAudience || isFamilyOrg;
+    const isMultiAccount = isB2BAudience || isFamilyOrg || isVisionary;
     const baseAccess = user.isAdmin && !user.isMember && user.hasPaidMail;
 
     const canDisableZoomIntegration = isMultiAccount
