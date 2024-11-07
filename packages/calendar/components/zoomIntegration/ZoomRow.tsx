@@ -51,7 +51,7 @@ export const ZoomRow = ({ model, setModel }: Props) => {
     const [oAuthToken, oauthTokenLoading] = useOAuthToken();
     const isUserConnectedToZoom = oAuthToken?.some(({ Provider }) => Provider === OAUTH_PROVIDER.ZOOM);
 
-    const [processState, setProcessState] = useState<ZoomIntegrationState>('loadingConfig');
+    const [processState, setProcessState] = useState<ZoomIntegrationState>('loading');
 
     const api = useApi();
     const [, withLoading] = useLoading();
@@ -86,7 +86,6 @@ export const ZoomRow = ({ model, setModel }: Props) => {
             conferenceId: data?.VideoConference?.ID,
             conferenceUrl: data?.VideoConference?.URL,
             conferencePasscode: data?.VideoConference?.Password,
-            conferenceCreator: user.ID,
             conferenceHost: user.Email,
         });
         setProcessState('meeting-present');
@@ -142,25 +141,16 @@ export const ZoomRow = ({ model, setModel }: Props) => {
         return (
             <div className="flex flex-nowrap justify-space-between items-start">
                 <VideoConferencingWidget
-                    location="calendar"
+                    location="event-form"
+                    handleDelete={handleDelete}
                     data={{
                         service: VIDEO_CONF_SERVICES.ZOOM,
                         meetingId: model.conferenceId,
                         meetingUrl: model.conferenceUrl,
                         password: model.conferencePasscode,
+                        meetingHost: model.conferenceHost,
                     }}
                 />
-                {processState === 'meeting-present' && (
-                    <Button
-                        icon
-                        shape="ghost"
-                        size="small"
-                        className="flex items-start shrink-0"
-                        onClick={handleDelete}
-                    >
-                        <Icon name="cross-big" alt={c('Action').t`Remove zoom meeting`} />
-                    </Button>
-                )}
             </div>
         );
     }

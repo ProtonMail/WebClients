@@ -22,7 +22,7 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
         return null;
     }
 
-    const { description, location, meetingId, meetingUrl, password } = getVideoConferencingData(model);
+    const { description, location, meetingId, meetingUrl, password, meetingHost } = getVideoConferencingData(model);
 
     // Native Zoom integration
     if (meetingId && meetingUrl) {
@@ -34,6 +34,7 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
                     meetingId,
                     meetingUrl,
                     password,
+                    meetingHost,
                 }}
             />
         );

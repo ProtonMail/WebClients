@@ -12,8 +12,8 @@ export default class ProtonUnleashStorageProvider implements IStorageProvider {
 
         const key = `${this.prefix}:${name}`;
         try {
-            saveWhitelistedFlagInCookies(data, FLAGS_WITH_VARIANT);
             window.localStorage.setItem(key, repo);
+            saveWhitelistedFlagInCookies(data, FLAGS_WITH_VARIANT);
         } catch (e) {}
     }
 
