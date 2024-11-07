@@ -49,18 +49,29 @@ const EventDetailsRow = ({
         createNotification({ text: copySuccessText });
     };
 
-    return (
-        <button type="button" className={clsx('flex gap-1', linkMode ? 'flex-row' : 'flex-col')} onClick={handleClick}>
-            <p className="m-0">{prefix}</p>
-            {linkMode ? (
-                <Button shape="underline" color="norm" size="small" className="p-0" onClick={handleClick}>
+    if (linkMode) {
+        return (
+            <div className="flex flex-column items-start mb-2">
+                <p className="m-0">{prefix}</p>
+                <Button
+                    shape="underline"
+                    color="norm"
+                    size="small"
+                    className="p-0 block text-ellipsis max-w-full"
+                    onClick={handleClick}
+                >
                     {suffix}
                 </Button>
-            ) : (
-                <p className="m-0 text-ellipsis color-weak max-w-full" title={suffix}>
-                    {suffix}
-                </p>
-            )}
+            </div>
+        );
+    }
+
+    return (
+        <button type="button" className="flex gap-1" onClick={handleClick}>
+            <p className="m-0">{prefix}</p>
+            <p className="m-0 text-ellipsis color-weak max-w-full" title={suffix}>
+                {suffix}
+            </p>
         </button>
     );
 };
@@ -159,7 +170,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                                     />
                                 )}
 
-                                <div className={clsx(meetingHost && 'mt-2')}>
+                                <div>
                                     <p className="m-0">{c('Google Meet').t`Meeting link:`}</p>
                                     <Href className="block mb-2 text-ellipsis max-w-full" href={meetingUrl}>
                                         {meetingUrl}
