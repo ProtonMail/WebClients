@@ -4,9 +4,11 @@ import {
     type FreeSubscription,
     PLANS,
     type PlanIDs,
+    hasCycle,
     isRegionalCurrency,
 } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
+import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
@@ -110,13 +112,23 @@ export const getAllowedCycles = ({
     disableUpcomingCycleCheck?: boolean;
     allowDowncycling?: boolean;
 }): CYCLE[] => {
-    const isTrialSubscription = isTrial(subscription);
+    const plan = getPlanFromIDs(planIDs, plansMap);
+    if (!plan) {
+        return [];
+    }
+
     const sortedCycles = defaultCycles.sort((a, b) => b - a);
+    const availableCycles = sortedCycles.filter((cycle) => {
+        return hasCycle(plan, cycle);
+    });
+
+    const isTrialSubscription = isTrial(subscription);
+
     const isSamePlan = isSamePlanCheckout(subscription, planIDs);
 
     const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, currency, plansMap, subscription);
 
-    const result = sortedCycles.filter((cycle) => {
+    const result = availableCycles.filter((cycle) => {
         const isHigherThanCurrentSubscription: boolean = cycle >= (subscription?.Cycle ?? 0);
         // disableUpcomingCycleCheck is an escape hatch to allow the selection of the cycle which is **lower** than
         // upcoming one but higher than current one

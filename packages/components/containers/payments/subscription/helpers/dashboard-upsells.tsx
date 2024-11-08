@@ -3,9 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
-import { type FullPlansMap } from '@proton/payments';
-import { PLANS } from '@proton/payments';
-import { type Currency } from '@proton/payments';
+import { type Currency, type FullPlansMap, PLANS } from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -41,7 +39,14 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type { Cycle, FreePlanDefault, Plan, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type {
+    Cycle,
+    FreePlanDefault,
+    Plan,
+    Subscription,
+    UserModel,
+    VPNServersCountData,
+} from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -662,6 +667,7 @@ export const resolveUpsellsToDisplay = ({
     canPay,
     isFree,
     canAccessDuoPlan,
+    user,
     ...rest
 }: {
     app: APP_NAMES;
@@ -674,6 +680,7 @@ export const resolveUpsellsToDisplay = ({
     hasPaidMail?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
     canAccessDuoPlan?: boolean;
+    user: UserModel;
 }): Upsell[] => {
     const resolve = () => {
         if (!canPay || !subscription) {
@@ -691,7 +698,7 @@ export const resolveUpsellsToDisplay = ({
 
         const hasMailFree = isFree && app === APPS.PROTONMAIL;
         const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
-        const hasPassFree = isFree && app === APPS.PROTONPASS;
+        const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
         const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
 
         switch (true) {

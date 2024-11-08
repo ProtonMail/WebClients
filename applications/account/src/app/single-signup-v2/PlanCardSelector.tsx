@@ -13,7 +13,7 @@ import { type Currency } from '@proton/payments';
 import { BRAND_NAME, CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPlanFromCheckout, getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import type {
     FreePlanDefault,
@@ -297,7 +297,7 @@ export const PlanCardSelector = ({
                 const isFreePlan = planCard.plan === PLANS.FREE;
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
                 const pricing = getPricingFromPlanIDs(planIDs, plansMap);
-                const plan = getPlanFromCheckout(planIDs, plansMap);
+                const plan = getPlanFromPlanIDs(plansMap, planIDs);
                 const freePlanCurrency = Object.values(plansMap)[0]?.Currency ?? plan?.Currency ?? currency;
 
                 const planCurrency = isFreePlan ? freePlanCurrency : (plan?.Currency ?? currency);

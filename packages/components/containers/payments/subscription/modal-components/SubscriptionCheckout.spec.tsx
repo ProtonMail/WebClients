@@ -1,8 +1,11 @@
+import { screen } from '@testing-library/react';
+
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
+import { PLANS } from '@proton/payments/index';
 import { CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import { buildSubscription } from '@proton/testing/builders';
+import { buildSubscription, buildUser } from '@proton/testing/builders';
 
 import SubscriptionCheckout from './SubscriptionCheckout';
 
@@ -44,6 +47,7 @@ describe('SubscriptionCheckout', () => {
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
+                user={buildUser()}
                 onChangeCurrency={() => {}}
                 isProration={true}
                 isCustomBilling={false}
@@ -71,6 +75,7 @@ describe('SubscriptionCheckout', () => {
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
+                user={buildUser()}
                 onChangeCurrency={() => {}}
                 isProration={true}
                 isCustomBilling={false}
@@ -98,6 +103,7 @@ describe('SubscriptionCheckout', () => {
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
+                user={buildUser()}
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
@@ -125,6 +131,7 @@ describe('SubscriptionCheckout', () => {
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
+                user={buildUser()}
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
@@ -166,6 +173,7 @@ describe('SubscriptionCheckout', () => {
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
+                user={buildUser()}
                 onChangeCurrency={() => {}}
                 isProration={true}
                 isCustomBilling={false}
@@ -214,6 +222,7 @@ describe('SubscriptionCheckout', () => {
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
+                user={buildUser()}
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
@@ -262,6 +271,7 @@ describe('SubscriptionCheckout', () => {
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
                 planIDs={{}}
+                user={buildUser()}
                 onChangeCurrency={() => {}}
                 isProration={false}
                 isCustomBilling={false}
@@ -278,5 +288,160 @@ describe('SubscriptionCheckout', () => {
         expect(container).toHaveTextContent('Credit');
         expect(container).not.toHaveTextContent('-CHF 107.73');
         expect(container).toHaveTextContent('CHF 107.73');
+    });
+
+    it('should display correct billing cycle text for yearly subscription', () => {
+        const { container } = renderWithProviders(
+            <SubscriptionCheckout
+                freePlan={freePlan}
+                checkResult={checkResult}
+                plansMap={{} as any}
+                vpnServers={dummyServers}
+                currency="CHF"
+                cycle={CYCLE.YEARLY}
+                planIDs={{ [PLANS.MAIL]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription()}
+                paymentNeeded={true}
+                paymentMethods={{} as any}
+            />
+        );
+
+        expect(screen.getByTestId('billed-cycle-text')).toBeInTheDocument();
+        expect(container).toHaveTextContent('Billed yearly');
+    });
+
+    it('should not display <BillingCycleText> if a lifetime plan is selected', () => {
+        const { container } = renderWithProviders(
+            <SubscriptionCheckout
+                freePlan={freePlan}
+                checkResult={checkResult}
+                plansMap={{} as any}
+                vpnServers={dummyServers}
+                currency="CHF"
+                cycle={CYCLE.YEARLY}
+                planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription()}
+                paymentNeeded={true}
+                paymentMethods={{} as any}
+            />
+        );
+
+        expect(screen.queryAllByTestId('billed-cycle-text')).toHaveLength(0);
+        expect(container).not.toHaveTextContent('Billed yearly');
+    });
+
+    it('should display price row', () => {
+        const { container } = renderWithProviders(
+            <SubscriptionCheckout
+                freePlan={freePlan}
+                checkResult={checkResult}
+                plansMap={{} as any}
+                vpnServers={dummyServers}
+                currency="CHF"
+                cycle={CYCLE.YEARLY}
+                planIDs={{ [PLANS.MAIL]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription()}
+                paymentNeeded={true}
+                paymentMethods={{} as any}
+            />
+        );
+
+        expect(container).toHaveTextContent('Total for');
+        expect(container).toHaveTextContent('Total for 12 months');
+    });
+
+    it('should not display price row for lifetime plans', () => {
+        const { container } = renderWithProviders(
+            <SubscriptionCheckout
+                freePlan={freePlan}
+                checkResult={checkResult}
+                plansMap={{} as any}
+                vpnServers={dummyServers}
+                currency="CHF"
+                cycle={CYCLE.YEARLY}
+                planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription()}
+                paymentNeeded={true}
+                paymentMethods={{} as any}
+            />
+        );
+
+        expect(container).not.toHaveTextContent('Total for');
+        expect(container).not.toHaveTextContent('Total for 12 months');
+    });
+
+    it('should display member price per month', () => {
+        renderWithProviders(
+            <SubscriptionCheckout
+                freePlan={freePlan}
+                checkResult={checkResult}
+                plansMap={{} as any}
+                vpnServers={dummyServers}
+                currency="CHF"
+                cycle={CYCLE.YEARLY}
+                planIDs={{ [PLANS.MAIL]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription()}
+                paymentNeeded={true}
+                paymentMethods={{} as any}
+            />
+        );
+
+        expect(screen.getByTestId('members-price-per-month')).toBeInTheDocument();
+        expect(screen.getByTestId('members-price-per-month')).toHaveTextContent('4.99');
+    });
+
+    it('should not display member price per month for lifetime plans', () => {
+        renderWithProviders(
+            <SubscriptionCheckout
+                freePlan={freePlan}
+                checkResult={checkResult}
+                plansMap={{} as any}
+                vpnServers={dummyServers}
+                currency="CHF"
+                cycle={CYCLE.YEARLY}
+                planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+                user={buildUser()}
+                onChangeCurrency={() => {}}
+                isProration={false}
+                isCustomBilling={false}
+                isScheduledSubscription={false}
+                isAddonDowngrade={false}
+                subscription={buildSubscription()}
+                paymentNeeded={true}
+                paymentMethods={{} as any}
+            />
+        );
+
+        expect(screen.queryAllByTestId('members-price-per-month')).toHaveLength(0);
     });
 });

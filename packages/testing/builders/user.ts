@@ -1,4 +1,4 @@
-import { ChargebeeEnabled, Key, UserModel } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, type Key, type UserModel } from '@proton/shared/lib/interfaces';
 
 import { privateKeyA } from '../data';
 
@@ -57,6 +57,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
             'no-login': false,
             'no-proton-address': false,
             'recovery-attempt': false,
+            'pass-lifetime': false,
             sso: false,
         },
         isAdmin: true,
@@ -71,6 +72,7 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         hasPaidVpn: false,
         hasPaidDrive: false,
         hasPaidPass: false,
+        hasPassLifetime: false,
         canPay: true,
         AccountRecovery: null,
         ChargebeeUser: ChargebeeEnabled.INHOUSE_FORCED,

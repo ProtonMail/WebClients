@@ -9,7 +9,8 @@ import {
     getPlanByName,
 } from '@proton/payments';
 import { APPS, CYCLE } from '@proton/shared/lib/constants';
-import { Audience, type Plan, type User } from '@proton/shared/lib/interfaces';
+import { Audience, type Plan } from '@proton/shared/lib/interfaces';
+import { buildUser } from '@proton/testing/builders';
 import { PLANS_MAP, getLongTestPlans, getTestPlans } from '@proton/testing/data';
 import { useFlag } from '@proton/unleash';
 
@@ -83,7 +84,7 @@ describe('useAccessiblePlans', () => {
             plans,
             currency: 'USD',
             planIDs: {},
-            app: 'proton-mail',
+            app: APPS.PROTONMAIL,
             vpnServers: {
                 free: {
                     servers: 9,
@@ -98,9 +99,7 @@ describe('useAccessiblePlans', () => {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
-            user: {
-                Currency: 'CHF',
-            } as User,
+            user: buildUser({ Currency: 'CHF' }),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -156,7 +155,7 @@ describe('useAccessiblePlans', () => {
             plans,
             currency: 'USD',
             planIDs: {},
-            app: 'proton-mail',
+            app: APPS.PROTONMAIL,
             vpnServers: {
                 free: {
                     servers: 9,
@@ -171,9 +170,7 @@ describe('useAccessiblePlans', () => {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
-            user: {
-                Currency: 'CHF',
-            } as User,
+            user: buildUser({ Currency: 'CHF' }),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -224,7 +221,7 @@ describe('useAccessiblePlans', () => {
             plans,
             currency: 'BRL',
             planIDs: {},
-            app: 'proton-mail',
+            app: APPS.PROTONMAIL,
             vpnServers: {
                 free: {
                     servers: 9,
@@ -239,9 +236,7 @@ describe('useAccessiblePlans', () => {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             },
-            user: {
-                Currency: 'CHF',
-            } as User,
+            user: buildUser({ Currency: 'CHF' }),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -276,7 +271,7 @@ describe('useAccessiblePlans', () => {
             plans,
             currency: 'USD',
             planIDs: {},
-            app: 'proton-mail',
+            app: APPS.PROTONMAIL,
             vpnServers: {
                 free: {
                     servers: 9,
@@ -291,9 +286,7 @@ describe('useAccessiblePlans', () => {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             },
-            user: {
-                Currency: 'CHF',
-            } as User,
+            user: buildUser({ Currency: 'CHF' }),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -350,7 +343,7 @@ describe('useAccessiblePlans', () => {
             plans,
             currency: 'USD',
             planIDs: {},
-            app: 'proton-mail',
+            app: APPS.PROTONMAIL,
             vpnServers: {
                 free: {
                     servers: 9,
@@ -365,9 +358,7 @@ describe('useAccessiblePlans', () => {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
-            user: {
-                Currency: 'CHF',
-            } as User,
+            user: buildUser({ Currency: 'CHF' }),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -428,7 +419,7 @@ describe('useAccessiblePlans', () => {
             plans,
             currency: 'USD',
             planIDs: {},
-            app: 'proton-mail',
+            app: APPS.PROTONMAIL,
             vpnServers: {
                 free: {
                     servers: 9,
@@ -443,9 +434,9 @@ describe('useAccessiblePlans', () => {
                 CountryCode: 'BR',
                 VendorStates: {} as any,
             },
-            user: {
+            user: buildUser({
                 Currency: 'BRL',
-            } as User,
+            }),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -503,7 +494,7 @@ describe('useAccessiblePlans', () => {
             planIDs: {
                 [PLANS.BUNDLE_PRO]: 1,
             },
-            app: 'proton-mail',
+            app: APPS.PROTONMAIL,
             vpnServers: {
                 free: {
                     servers: 9,
@@ -518,9 +509,9 @@ describe('useAccessiblePlans', () => {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
-            user: {
+            user: buildUser({
                 Currency: 'USD',
-            } as User,
+            }),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -578,7 +569,7 @@ describe('useAccessiblePlans', () => {
             planIDs: {
                 [PLANS.BUNDLE_PRO_2024]: 1,
             },
-            app: 'proton-mail',
+            app: APPS.PROTONMAIL,
             vpnServers: {
                 free: {
                     servers: 9,
@@ -593,9 +584,9 @@ describe('useAccessiblePlans', () => {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
-            user: {
+            user: buildUser({
                 Currency: 'USD',
-            } as User,
+            }),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -647,7 +638,7 @@ describe('useAccessiblePlans', () => {
             plans,
             currency: 'USD',
             planIDs: {},
-            app: 'proton-mail',
+            app: APPS.PROTONMAIL,
             vpnServers: {
                 free: {
                     servers: 9,
@@ -662,9 +653,9 @@ describe('useAccessiblePlans', () => {
                 CountryCode: 'CH',
                 VendorStates: {} as any,
             },
-            user: {
+            user: buildUser({
                 Currency: 'USD',
-            } as User,
+            }),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -695,6 +686,90 @@ describe('useAccessiblePlans', () => {
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
         });
+    });
+
+    it('should hide Pass Plus if user has Pass Lifetime', () => {
+        const plans = [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR')];
+
+        const user = buildUser({
+            hasPassLifetime: true,
+        });
+        user.Flags['pass-lifetime'] = true;
+
+        const props: AccessiblePlansHookProps = {
+            selectedProductPlans: {
+                b2c: PLANS.MAIL,
+                b2b: PLANS.MAIL_PRO,
+                family: PLANS.FAMILY,
+            },
+            subscription: FREE_SUBSCRIPTION,
+            plans,
+            currency: 'USD',
+            planIDs: {},
+            app: APPS.PROTONMAIL,
+            vpnServers: {
+                free: {
+                    servers: 9,
+                    countries: 4,
+                },
+                paid: {
+                    servers: 400,
+                    countries: 50,
+                },
+            },
+            paymentsStatus: {
+                CountryCode: 'CH',
+                VendorStates: {} as any,
+            },
+            user,
+        };
+
+        const { result } = renderHook(() => useAccessiblePlans(props));
+
+        const passPlus = result.current.enabledProductB2CPlans.find((plan) => plan.Name === PLANS.PASS);
+        expect(passPlus).toBeUndefined();
+    });
+
+    it('should hide B2B plans for lifetime users when they open the pass dashboard', () => {
+        const plans = [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR')];
+
+        const user = buildUser({
+            hasPassLifetime: true,
+        });
+        user.Flags['pass-lifetime'] = true;
+
+        const props: AccessiblePlansHookProps = {
+            selectedProductPlans: {
+                b2c: PLANS.MAIL,
+                b2b: PLANS.MAIL_PRO,
+                family: PLANS.FAMILY,
+            },
+            subscription: FREE_SUBSCRIPTION,
+            plans,
+            currency: 'USD',
+            planIDs: {},
+            app: APPS.PROTONPASS,
+            vpnServers: {
+                free: {
+                    servers: 9,
+                    countries: 4,
+                },
+                paid: {
+                    servers: 400,
+                    countries: 50,
+                },
+            },
+            paymentsStatus: {
+                CountryCode: 'CH',
+                VendorStates: {} as any,
+            },
+            user,
+        };
+
+        const { result } = renderHook(() => useAccessiblePlans(props));
+
+        const b2bPlans = result.current.B2BPlans;
+        expect(b2bPlans).toHaveLength(0);
     });
 });
 

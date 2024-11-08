@@ -50,6 +50,8 @@ export enum INVOICE_TYPE {
     MODIFICATION = 8,
     ADDITION = 9,
     CURRENCY_CONVERSION = 10,
+    // Type 11 is an internal invoice type used for the migration. It's not supposed to be used by the frontend.
+    PRODUCT = 12,
 }
 
 export enum INVOICE_STATE {
@@ -251,8 +253,13 @@ export const PLAN_NAMES: { [key in PLANS]: string } = {
 };
 
 export enum PLAN_TYPES {
-    PLAN = 1,
     ADDON = 0,
+    PLAN = 1,
+    // Example of product: Pass Lifetime.
+    // Unlike Plans, buying products doesn't create subscription in the DB. Instead, user is charged one time.
+    // Still, GET subscription will pretend that the actual subscription exists, but the key detail will be an
+    // account-wide entitlement.
+    PRODUCT = 2,
 }
 
 export enum PLAN_SERVICES {

@@ -92,7 +92,6 @@ import SwitchModal from './SwitchModal';
 import { getDriveConfiguration } from './drive/configuration';
 import { getGenericConfiguration } from './generic/configuration';
 import {
-    type SubscriptionDataCycleMapping,
     getAccessiblePlans,
     getFreeSubscriptionData,
     getIsProductB2BPlan,
@@ -434,6 +433,7 @@ const SingleSignupContainerV2 = ({
                     PLANS.PASS_BUSINESS,
                     PLANS.PASS_PRO,
                     PLANS.PASS_FAMILY,
+                    PLANS.PASS_LIFETIME,
                 ].some((plan) => planIDs[plan]),
                 plan,
             });
@@ -619,7 +619,7 @@ const SingleSignupContainerV2 = ({
         return { ...b2b, ...b2c };
     };
 
-    const changeCurrency = async (newCurrency: Currency): Promise<SubscriptionDataCycleMapping> => {
+    const changeCurrency = async (newCurrency: Currency): Promise<FullPlansMap> => {
         const plansMap = getPlansMap(model.plans, newCurrency, false);
 
         // if there is session, then use auth api, if there is no, then use unauth
@@ -637,7 +637,7 @@ const SingleSignupContainerV2 = ({
             subscriptionDataCycleMapping,
         });
 
-        return subscriptionDataCycleMapping;
+        return plansMap;
     };
 
     useEffect(() => {
@@ -681,6 +681,7 @@ const SingleSignupContainerV2 = ({
                 status: paymentMethodStatus,
                 plans: getAccessiblePlans(planCards, audience, plans),
                 paramCurrency: signupParameters.currency,
+                paramPlanName: signupParameters.preSelectedPlan,
                 user: resumedSession?.User ? formatUser(resumedSession?.User) : undefined,
             });
 
