@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
+import type { IndexedDBRow } from '@proton/encrypted-search/lib/esIDB';
 
 import { defaultESIndexingState as defaultESIndexingProgressState } from './constants';
 import { estimateIndexingProgress } from './esHelpers';
@@ -27,16 +28,35 @@ const useEncryptedSearchIndexingProgress = () => {
      */
     const recordTimestampRef = useRef<number | null>(null);
 
+    /**
+     * Start fetching content step timestamp
+     */
+    const indexingStartTimestampRef = useRef<number | null>(null);
+
+    /**
+     * Ref of the previous DB row (metadata or content fetch)
+     */
+    const previousDBRowRef = useRef<IndexedDBRow | null>('metadata');
+
     const recordProgress: RecordProgress = async (newProgress, indexedDbRow) => {
+        const currentRecordTimestamp = performance.now();
+
+        // When switching from metadata fetch to the content fetch (which is the indexing step that needs to be displayed to the user),
+        // set the indexing start time, and reset the record timestamp
+        if (indexedDbRow && indexedDbRow !== previousDBRowRef.current) {
+            previousDBRowRef.current = indexedDbRow;
+            recordTimestampRef.current = currentRecordTimestamp;
+            indexingStartTimestampRef.current = currentRecordTimestamp;
+        }
         const [prevProgress, totalItems] = progressRecorderRef.current;
         const prevRecordTimestamp = recordTimestampRef.current;
-
-        const currentRecordTimestamp = performance.now();
 
         progressRecorderRef.current = Array.isArray(newProgress) ? newProgress : [newProgress, totalItems];
         recordTimestampRef.current = currentRecordTimestamp;
 
         const [currentProgress] = progressRecorderRef.current;
+        const startTimestamp = indexingStartTimestampRef.current || 0;
+        const elapsedTime = currentRecordTimestamp - startTimestamp;
 
         if (prevRecordTimestamp && prevProgress) {
             const estimationResult = await estimateIndexingProgress(
@@ -45,7 +65,7 @@ const useEncryptedSearchIndexingProgress = () => {
                 prevProgress,
                 prevRecordTimestamp,
                 currentProgress,
-                currentRecordTimestamp,
+                elapsedTime,
                 indexedDbRow
             );
 
