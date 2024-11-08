@@ -13,7 +13,7 @@ import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { aliasGetContactsList } from '@proton/pass/store/actions';
-import type { AliasContactWithStatsGetResponse, UniqueItem } from '@proton/pass/types';
+import type { AliasContactGetResponse, AliasContactWithStatsGetResponse, UniqueItem } from '@proton/pass/types';
 
 type Props = UniqueItem & Pick<ModalStateProps, 'onClose'>;
 
@@ -33,10 +33,27 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
         [allContacts]
     );
 
+    const handleContactCreated = (contact: AliasContactGetResponse) => {
+        const newContact = { ...contact, RepliedEmails: 0, ForwardedEmails: 0, BlockedEmails: 0 };
+        setAllContacts((prev) => [...prev, newContact]);
+    };
+
+    const handleContactDeleted = (ID: number) => {
+        setAllContacts((prev) => prev.filter((contact) => contact.ID !== ID));
+    };
+
+    const handleContactUpdated = (updatedContact: AliasContactGetResponse) => {
+        setAllContacts((prev) =>
+            prev.map((contact) => (contact.ID === updatedContact.ID ? { ...contact, ...updatedContact } : contact))
+        );
+    };
+
     const getContactProps = (contact: AliasContactWithStatsGetResponse) => ({
         shareId,
         itemId,
         ...contact,
+        onContactDeleted: handleContactDeleted,
+        onContactUpdated: handleContactUpdated,
     });
 
     useEffect(() => dispatch({ shareId, itemId }), []);
@@ -128,7 +145,12 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
                     )}
                 </Panel>
             </SidebarModal>
-            <SidebarCreateContact {...createContact} itemId={itemId} shareId={shareId} />
+            <SidebarCreateContact
+                {...createContact}
+                itemId={itemId}
+                shareId={shareId}
+                onContactCreated={handleContactCreated}
+            />
             <SidebarMoreInfoFlow {...moreInfoFlow} />
         </>
     );

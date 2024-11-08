@@ -14,14 +14,19 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateEmailForm } from '@proton/pass/lib/validation/email';
 import { aliasCreateContact } from '@proton/pass/store/actions';
-import type { AliasCreateContactValues, UniqueItem } from '@proton/pass/types';
+import type { AliasContactGetResponse, AliasCreateContactValues, UniqueItem } from '@proton/pass/types';
 
 const FORM_ID = 'create-contact-form';
 
-type Props = ModalStateProps & UniqueItem;
+type Props = ModalStateProps & UniqueItem & { onContactCreated: (contact: AliasContactGetResponse) => void };
 
-export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, open, onClose }) => {
-    const { loading, dispatch } = useRequest(aliasCreateContact, { onSuccess: onClose });
+export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, open, onClose, onContactCreated }) => {
+    const { loading, dispatch } = useRequest(aliasCreateContact, {
+        onSuccess: ({ data }) => {
+            onContactCreated(data);
+            onClose();
+        },
+    });
 
     const form = useFormik<AliasCreateContactValues>({
         initialValues: { email: '' },
