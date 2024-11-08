@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 import type { Location } from 'history';
 
 import { useDynamicFavicon } from '@proton/components';
-import { useMessageCounts } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
+import { useMessageCounts } from '@proton/mail/counts/messageCounts';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 

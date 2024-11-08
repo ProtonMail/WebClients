@@ -7,12 +7,11 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { removeSecurityKey } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import noop from '@proton/utils/noop';
-
-import { useNotifications } from '../../../hooks';
 
 interface Key {
     id: string;

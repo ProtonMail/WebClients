@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/react';
 import { addDays, format, set } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 
-import { useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 
@@ -10,7 +10,7 @@ import type { Element } from 'proton-mail/models/element';
 
 import SnoozeCustomTime from './SnoozeCustomTime';
 
-jest.mock('@proton/components/hooks/useUserSettings');
+jest.mock('@proton/account/userSettings/hooks');
 const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
 
 describe('SnoozeCustomTime', () => {

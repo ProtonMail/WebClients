@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
@@ -11,7 +12,6 @@ import {
     PrimaryButton,
     useApi,
     useEventManager,
-    useGetUserKeys,
     useNotifications,
 } from '@proton/components';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';

@@ -13,8 +13,7 @@ import { type NotificationActions } from 'proton-pass-extension/app/content/type
 import { c } from 'ttag';
 
 import { Button, Scroll } from '@proton/atoms';
-import { Icon } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
+import { Icon, useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';

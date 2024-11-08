@@ -3,10 +3,16 @@ import { useRef } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useWelcomeFlags } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms';
-import { Spotlight, useActiveBreakpoint, useBusySlotsAvailable, useSpotlightShow } from '@proton/components';
-import { useSpotlightOnFeature, useWelcomeFlags } from '@proton/components/hooks';
+import {
+    Spotlight,
+    useActiveBreakpoint,
+    useBusySlotsAvailable,
+    useSpotlightOnFeature,
+    useSpotlightShow,
+} from '@proton/components';
 import { FeatureCode } from '@proton/features';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

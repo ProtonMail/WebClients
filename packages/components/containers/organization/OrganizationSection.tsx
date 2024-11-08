@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
@@ -24,6 +27,7 @@ import AuthModal, { type AuthModalResult } from '@proton/components/containers/p
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -38,7 +42,6 @@ import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
-import { useCustomDomains, useNotifications, useOrganizationKey, useSubscription } from '../../hooks';
 import DomainModal from '../domains/DomainModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';

@@ -6,14 +6,13 @@ import { deleteMembers } from '@proton/account/members/actions';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { PLANS } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
-
-import { useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     member: Member | undefined;

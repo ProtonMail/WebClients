@@ -16,7 +16,7 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputField from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import { useNotifications } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import type { AliasMailbox, AliasOptions } from '@proton/pass/types';

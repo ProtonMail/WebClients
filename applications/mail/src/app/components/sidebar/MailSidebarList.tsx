@@ -14,10 +14,10 @@ import {
     Tooltip,
     useHotkeys,
     useLocalState,
-    useMessageCounts,
 } from '@proton/components';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail';
 import { useConversationCounts } from '@proton/mail/counts/conversationCounts';
+import { useMessageCounts } from '@proton/mail/counts/messageCounts';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SOURCE_EVENT } from '@proton/shared/lib/helpers/collapsibleSidebar';

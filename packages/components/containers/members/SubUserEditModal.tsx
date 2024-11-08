@@ -11,6 +11,8 @@ import {
     getPrivateAdminError,
     getPrivateText,
 } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button, Card } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -27,6 +29,8 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -39,7 +43,6 @@ import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton
 import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { useErrorHandler, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
 import Addresses from '../addresses/Addresses';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';

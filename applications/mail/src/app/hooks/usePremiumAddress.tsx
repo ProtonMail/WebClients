@@ -1,6 +1,7 @@
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import {
     AuthModal,
     type AuthModalResult,
@@ -10,7 +11,6 @@ import {
     useKTVerifier,
     useModalTwoPromise,
 } from '@proton/components';
-import { useGetUserKeys } from '@proton/components/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';

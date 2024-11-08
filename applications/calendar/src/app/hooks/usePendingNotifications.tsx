@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/index';
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import useFlag from '@proton/unleash/useFlag';
 

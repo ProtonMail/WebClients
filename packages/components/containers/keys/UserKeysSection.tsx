@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -9,18 +11,13 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useModals from '@proton/components/hooks/useModals';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
-import {
-    useGetOrganizationKey,
-    useIsDeviceRecoveryAvailable,
-    useIsDeviceRecoveryEnabled,
-    useModals,
-    useUserKeys,
-} from '../../hooks';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
 import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';

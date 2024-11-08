@@ -12,7 +12,8 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
-import { useErrorHandler, useNotifications } from '@proton/components/hooks';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useIsMounted from '@proton/hooks/useIsMounted';
 
 import type { HandleSpamListActionClick } from './Spams.helpers';

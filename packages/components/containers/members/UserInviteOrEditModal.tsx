@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -15,6 +16,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AssistantUpdateSubscriptionButton from '@proton/components/containers/payments/subscription/assistant/AssistantUpdateSubscriptionButton';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib/api/members';
 import { BRAND_NAME, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
@@ -24,7 +26,6 @@ import { hasDuo, hasFamily, hasPassFamily, hasVisionary } from '@proton/shared/l
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
-import { useNotifications, useSubscription } from '../../hooks';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import MemberToggleContainer from './MemberToggleContainer';
 

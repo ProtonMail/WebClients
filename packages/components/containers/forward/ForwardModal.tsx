@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
@@ -22,9 +23,11 @@ import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import type { SetupForwardingParameters } from '@proton/shared/lib/api/forwardings';
 import { setupForwarding, updateForwardingFilter } from '@proton/shared/lib/api/forwardings';
 import { ADDRESS_RECEIVE, KEYGEN_CONFIGS, KEYGEN_TYPES, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
@@ -37,7 +40,6 @@ import { addAddressKeysProcess, getEmailFromKey, splitKeys } from '@proton/share
 import illustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { useContactEmails, useGetUserKeys, useNotifications } from '../../hooks';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import type { Condition } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';

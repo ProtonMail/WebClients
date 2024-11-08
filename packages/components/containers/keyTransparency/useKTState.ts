@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import { getAuditResult, getKTLocalStorage, storeAuditResult } from '@proton/key-transparency/lib';
 import type { KeyTransparencyState } from '@proton/shared/lib/interfaces';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
-
-import { useGetUserKeys } from '../../hooks';
 
 const useKTState = (): [boolean, KeyTransparencyState, React.Dispatch<React.SetStateAction<KeyTransparencyState>>] => {
     const [ktState, setKTState] = useState<KeyTransparencyState>({

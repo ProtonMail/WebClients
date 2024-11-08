@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import type { AcceptOrganizationKeyInvitePayload } from '@proton/account';
 import { acceptOrganizationKeyInvite, prepareAcceptOrganizationKeyInvite } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button, Card, CircleLoader } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -14,13 +16,14 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { useErrorHandler, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 
 interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {

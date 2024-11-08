@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import type { QRCode } from 'jsqr';
 import jsQR from 'jsqr';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 
 interface Props {

@@ -15,6 +15,7 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { abortSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
@@ -22,7 +23,6 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { useNotifications } from '../../../hooks';
 import { useSessionRecoveryLocalStorage } from './SessionRecoveryLocalStorageManager';
 
 interface Props extends ModalProps {

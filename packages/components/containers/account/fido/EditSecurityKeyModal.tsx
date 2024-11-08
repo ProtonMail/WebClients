@@ -13,12 +13,13 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { renameSecurityKey } from '@proton/shared/lib/api/settings';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { useErrorHandler, useNotifications } from '../../../hooks';
 import { maxSecurityKeyNameLength } from './constants';
 
 interface Props extends ModalProps {

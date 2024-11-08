@@ -20,8 +20,8 @@ import {
 import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import Notifications from '@proton/components/containers/calendar/notifications/Notifications';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
-import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';

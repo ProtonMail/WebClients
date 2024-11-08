@@ -5,7 +5,9 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { CircleLoader } from '@proton/atoms';
 import SearchInput from '@proton/components/components/input/SearchInput';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useContactGroups } from '@proton/mail';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -13,7 +15,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useContactEmails, useNotifications } from '../../../hooks';
 import useItemsSelection from '../../items/useItemsSelection';
 import type { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';

@@ -5,6 +5,7 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -19,6 +20,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthSecurityKeyContent from '@proton/components/containers/account/fido/AuthSecurityKeyContent';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -31,7 +33,6 @@ import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { useErrorHandler, useUserSettings } from '../../hooks';
 import TotpInputs from '../account/totp/TotpInputs';
 import { getAuthTypes } from './getAuthTypes';
 import type { OwnAuthModalProps, SrpAuthModalResult } from './interface';

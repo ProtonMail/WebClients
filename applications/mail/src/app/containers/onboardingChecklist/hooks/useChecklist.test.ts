@@ -1,4 +1,4 @@
-import { useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 
 import { addApiMock, renderHook } from 'proton-mail/helpers/test/helper';
 
@@ -27,7 +27,7 @@ const defaultReturnValue = {
     Display: 'Hidden',
 };
 
-jest.mock('@proton/components/hooks/useUserSettings');
+jest.mock('@proton/account/userSettings/hooks');
 const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
 
 describe('useChecklist', () => {

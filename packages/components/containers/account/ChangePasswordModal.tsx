@@ -5,7 +5,9 @@ import { c } from 'ttag';
 import { signoutAction } from '@proton/account';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -22,6 +24,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
@@ -41,7 +44,6 @@ import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
 import GenericError from '../error/GenericError';
 import { handleChangeLoginPassword } from './changePasswordHelper';
 

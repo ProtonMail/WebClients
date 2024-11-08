@@ -1,18 +1,19 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
-import { usePlans, useSubscription, useVPNServersCount } from '@proton/components/hooks';
 import useCache from '@proton/components/hooks/useCache';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useOrganization } from '@proton/components/hooks/useOrganization';
+import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useFeature } from '@proton/features';
-import { type PaymentMethodStatusExtended } from '@proton/payments';
-import { PLANS } from '@proton/payments';
+import { PLANS, type PaymentMethodStatusExtended } from '@proton/payments';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getLongTestPlans } from '@proton/testing/data';
@@ -38,7 +39,7 @@ mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
 
-jest.mock('@proton/components/hooks/usePlans');
+jest.mock('@proton/account/plans/hooks');
 const mockUsePlans = usePlans as jest.MockedFunction<any>;
 mockUsePlans.mockReturnValue([{ plans: getLongTestPlans(), freePlan: FREE_PLAN }, false]);
 
@@ -60,11 +61,11 @@ jest.mock('@proton/calendar/calendars/hooks');
 const mockUseCalendars = useCalendars as jest.MockedFunction<any>;
 mockUseCalendars.mockReturnValue([calendars, false]);
 
-jest.mock('@proton/components/hooks/useSubscription');
+jest.mock('@proton/account/subscription/hooks');
 const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
 mockUseSubscription.mockReturnValue([subscriptionBundle, false]);
 
-jest.mock('@proton/components/hooks/useOrganization');
+jest.mock('@proton/account/organization/hooks');
 const mockUseOrganization = useOrganization as jest.MockedFunction<any>;
 mockUseOrganization.mockReturnValue([[], false]);
 

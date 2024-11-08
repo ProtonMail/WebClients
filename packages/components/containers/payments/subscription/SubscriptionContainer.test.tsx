@@ -25,6 +25,8 @@ import { SUBSCRIPTION_STEPS } from './constants';
 jest.mock('@proton/components/components/portal/Portal', () => ({
     __esModule: true,
     default: jest.fn(({ children }) => <>{children}</>),
+    useUser: jest.fn(() => [{}]),
+    useGetUser: jest.fn(() => ({})),
 }));
 
 jest.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled', () => ({

@@ -177,10 +177,17 @@ jest.mock('@proton/components/containers/calendar/hooks/useGetCalendarActions', 
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => () => ({}));
-jest.mock('@proton/components/hooks/useContactEmails', () => () => []);
+jest.mock('@proton/mail/contactEmails/hooks', () => ({
+    useContactEmails: () => () => {
+        call: jest.fn();
+    },
+}));
 jest.mock('@proton/features/useFeature', () => () => ({}));
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
-jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({ useWelcomeFlags: () => [{}] }));
+jest.mock('@proton/account/welcomeFlags/index', () => ({
+    __esModule: true,
+    useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
+}));
 jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => () => ({}));

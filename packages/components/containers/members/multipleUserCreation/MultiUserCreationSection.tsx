@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useMembers } from '@proton/account/members/hooks';
 import { Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
@@ -12,7 +14,6 @@ import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash';
 
-import { useCustomDomains, useMembers } from '../../../hooks';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';
 import type { CsvConfig } from './csv';

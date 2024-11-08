@@ -1,6 +1,6 @@
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ZoomRow } from '@proton/calendar';
-import { useOrganization } from '@proton/components';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { useFlag } from '@proton/unleash';
 

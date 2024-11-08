@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import type andromedaModule from '@proton/andromeda';
 import type {
     WasmApiWallet,
@@ -14,8 +16,6 @@ import type {
 } from '@proton/andromeda';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useGetOrganization } from '@proton/components/hooks/useOrganization';
-import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';

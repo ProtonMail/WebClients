@@ -141,7 +141,7 @@ beforeEach(() => {
 });
 
 jest.mock('@proton/components/hooks/useElementRect');
-jest.mock('@proton/components/hooks/usePlans', () => ({
+jest.mock('@proton/account/plans/hooks', () => ({
     __esModule: true,
     useGetPlans: jest.fn(),
 }));

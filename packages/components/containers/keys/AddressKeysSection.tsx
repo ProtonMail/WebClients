@@ -7,6 +7,7 @@ import { useInactiveKeys } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -16,6 +17,7 @@ import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVe
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useModals from '@proton/components/hooks/useModals';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
@@ -29,7 +31,6 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { useModals, useUserKeys } from '../../hooks';
 import useResignSKLWithPrimaryKey from '../keyTransparency/useResignSKLWithPrimaryKey';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';

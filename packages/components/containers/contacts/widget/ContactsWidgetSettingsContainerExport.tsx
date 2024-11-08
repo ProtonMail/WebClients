@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Label from '@proton/components/components/label/Label';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import { useContacts } from '@proton/components/hooks';
+import { useContacts } from '@proton/mail/contacts/hooks';
 
 interface ExportButtonProps {
     onClick?: () => void;

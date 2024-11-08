@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { ButtonLike, Href } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
@@ -8,8 +9,11 @@ import Loader from '@proton/components/components/loader/Loader';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
+import useIsSecurityCheckupAvailable from '@proton/components/hooks/securityCheckup/useIsSecurityCheckupAvailable';
+import useSecurityCheckup from '@proton/components/hooks/securityCheckup/useSecurityCheckup';
 import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
 import useIsDataRecoveryAvailable from '@proton/components/hooks/useIsDataRecoveryAvailable';
+import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import useRecoveryStatus from '@proton/components/hooks/useRecoveryStatus';
@@ -20,12 +24,6 @@ import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    useIsMnemonicAvailable,
-    useIsSecurityCheckupAvailable,
-    useSecurityCheckup,
-    useUserSettings,
-} from '../../hooks';
 import type { RecoveryCardStatusProps } from './RecoveryCardStatus';
 import RecoveryCardStatus from './RecoveryCardStatus';
 import getSentinelRecoveryProps from './getSentinelRecoveryProps';

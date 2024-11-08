@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { useGetPlans } from '@proton/account/plans/hooks';
 import type { OnLoginCallback } from '@proton/components';
 import {
     StandardLoadErrorPage,
@@ -11,7 +12,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useGetPlans,
     useKTActivation,
 } from '@proton/components';
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';

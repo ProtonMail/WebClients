@@ -24,7 +24,7 @@ jest.mock('../../../hooks/useApi', () => {
     return () => apiMock;
 });
 
-jest.mock('../../../hooks/useUserKeys', () => {
+jest.mock('@proton/account/userKeys/hooks', () => {
     return {
         useUserKeys: () => [[]],
     };

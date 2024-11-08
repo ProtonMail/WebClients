@@ -1,6 +1,7 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -13,7 +14,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
-import { useSubscription } from '@proton/components/hooks';
 import { FeatureCode, useFeature } from '@proton/features';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';
 

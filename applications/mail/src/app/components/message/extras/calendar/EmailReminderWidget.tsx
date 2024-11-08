@@ -15,13 +15,13 @@ import {
     Icon,
     IconRow,
     useApi,
-    useContactEmails,
     useGetCalendarEventRaw,
     useNotifications,
 } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { getEvent } from '@proton/shared/lib/api/calendars';
 import { getPaginatedEventsByUID } from '@proton/shared/lib/calendar/api';
 import {

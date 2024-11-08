@@ -1,11 +1,12 @@
 import { useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { useWelcomeFlags } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import { useSubscription, useWelcomeFlags } from '@proton/components';
-import { useDrawerParent } from '@proton/components/hooks';
+import { useDrawerParent } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { useInstance } from '@proton/hooks';

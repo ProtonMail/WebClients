@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 
 import useLinksState from '../_links/useLinksState';
 import { getSharedWithMeMembership, useShare, useShareMember } from '../_shares';

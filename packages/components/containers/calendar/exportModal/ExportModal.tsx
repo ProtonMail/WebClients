@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
@@ -21,7 +22,6 @@ import type {
 import { EXPORT_ERRORS, EXPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import { useUserSettings } from '../../../hooks';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import ExportSummaryModalContent from './ExportSummaryModalContent';
 import ExportingModalContent from './ExportingModalContent';

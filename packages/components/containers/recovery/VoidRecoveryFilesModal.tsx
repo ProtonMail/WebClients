@@ -5,10 +5,9 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
-
-import { useNotifications } from '../../hooks';
 
 interface Props extends Omit<ModalProps, 'children' | 'size'> {
     deviceRecoveryEnabled: boolean | undefined;

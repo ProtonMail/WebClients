@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useErrorHandler } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useErrorHandler } from '@proton/components/hooks';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';

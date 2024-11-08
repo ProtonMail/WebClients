@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
 
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
-
-import useContactEmails from './useContactEmails';
 
 const compareContactEmailByName = (a: ContactEmail, b: ContactEmail) => {
     return a.Name.localeCompare(b.Name);

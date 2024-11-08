@@ -4,8 +4,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, CircleLoader } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -22,6 +25,7 @@ import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVe
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
@@ -44,8 +48,6 @@ import {
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
-
-import { useCustomDomains, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
 
 const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
 

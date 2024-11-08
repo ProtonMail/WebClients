@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 
-import { default as defaultUserSettings } from '@proton/components/hooks/useUserSettings';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import { isCalendarMobileAppUser, isMailMobileAppUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 
 import SmartBanner from './SmartBanner';
 
-jest.mock('@proton/components/hooks/useUserSettings', () => ({
+jest.mock('@proton/account/userSettings/hooks', () => ({
     __esModule: true,
-    default: jest.fn(),
+    useUserSettings: jest.fn(),
 }));
 
 // These values are from USED_CLIENT_FLAGS in '@proton/shared/lib/interfaces'
@@ -19,7 +19,7 @@ const userSettings = {
 };
 
 const setMockUserSettings = (app: APP_NAMES = APPS.PROTONMAIL) => {
-    (defaultUserSettings as jest.Mock).mockReturnValue([
+    (useUserSettings as jest.Mock).mockReturnValue([
         { UsedClientFlags: userSettings[app as keyof typeof userSettings] },
     ]);
 };

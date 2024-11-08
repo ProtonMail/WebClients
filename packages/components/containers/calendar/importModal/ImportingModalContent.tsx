@@ -27,7 +27,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/calendar';
 
-import { useGetCalendarInfo } from '../../../hooks';
+import useGetCalendarInfo from '../../../hooks/useGetCalendarInfo';
 
 const getEventsWithoutDefaultNotifications = (events: VcalVeventComponent[]) => {
     return events.map((eventComponent) => ({ eventComponent, hasDefaultNotifications: false }));

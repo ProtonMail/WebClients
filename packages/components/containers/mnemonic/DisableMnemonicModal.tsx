@@ -6,9 +6,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-
-import { useNotifications } from '../../hooks';
 
 interface DisableMnemonicModalProps {
     onClose: ModalProps['onClose'];

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useUserSettings } from '@proton/components/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import type { AssistantCommonProps } from '@proton/llm/lib';

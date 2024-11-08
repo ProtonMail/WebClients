@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { useNotifications } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { mockNotifications } from '@proton/testing';
 
 import PassAliases from './PassAliases';
@@ -22,7 +22,7 @@ jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/account/addresses/hooks', () => jest.fn().mockImplementation(() => [[], false]));
 jest.mock('@proton/components/hooks/useAuthentication', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/account/user/hooks', () => jest.fn().mockImplementation(() => [{}, false]));
-jest.mock('@proton/components/hooks/useSubscription', () => jest.fn().mockImplementation(() => [{}, false]));
+jest.mock('@proton/account/subscription/hooks', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
 jest.mock('@proton/components/containers/app/ErrorBoundary', () => ({
     __esModule: true,

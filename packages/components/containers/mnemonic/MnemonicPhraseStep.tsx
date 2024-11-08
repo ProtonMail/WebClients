@@ -6,9 +6,8 @@ import { Button, Card } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-
-import { useNotifications } from '../../hooks';
 
 export const MnemonicPhraseStepContent = ({
     mnemonic,

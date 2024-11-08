@@ -15,6 +15,7 @@ import SearchInput from '@proton/components/components/input/SearchInput';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useContactGroups } from '@proton/mail';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     getContactGroupsDelayedSaveChanges,
@@ -28,7 +29,6 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import Mark from '../../components/text/Mark';
-import { useContactEmails } from '../../hooks';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
 import type { ContactGroupLimitReachedProps } from './modals/ContactGroupLimitReachedModal';

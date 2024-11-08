@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { useOrganization } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';

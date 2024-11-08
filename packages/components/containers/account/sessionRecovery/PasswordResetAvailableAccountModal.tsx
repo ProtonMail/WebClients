@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -17,7 +19,9 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import {
     useIsSessionRecoveryInitiatedByCurrentSession,
     useSessionRecoveryInsecureTimeRemaining,
@@ -37,7 +41,6 @@ import { getArmoredPrivateUserKeys, getEncryptedArmoredOrganizationKey } from '@
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { useErrorHandler, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import passwordResetIllustration from './password-reset-illustration.svg';
 

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -23,7 +24,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
 
-import { useUserSettings } from '../../../hooks';
 import type { ContactEditProps } from '../edit/ContactEditModal';
 import ContactSelectorEmptyContacts from './ContactSelectorEmptyContacts';
 import ContactSelectorEmptyResults from './ContactSelectorEmptyResults';

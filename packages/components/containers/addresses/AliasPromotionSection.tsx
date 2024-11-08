@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -7,8 +8,6 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-
-import { useSubscription } from '../../hooks/useSubscription';
 
 import './AliasPromotionSection.scss';
 

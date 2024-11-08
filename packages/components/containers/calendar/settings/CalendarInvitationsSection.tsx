@@ -8,13 +8,13 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
-import { useNotifications } from '../../../hooks';
 import InviteLocaleSelector from './InviteLocaleSelector';
 
 interface Props {

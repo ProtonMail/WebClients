@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
@@ -20,7 +21,6 @@ import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
 import useGetPublicKeysForInbox from './useGetPublicKeysForInbox';
-import { useGetUserKeys } from './useUserKeys';
 
 export const CACHE_KEY = 'ENCRYPTION_PREFERENCES';
 

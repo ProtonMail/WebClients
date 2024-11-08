@@ -5,11 +5,10 @@ import { c } from 'ttag';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateEnableFolderColor } from '@proton/shared/lib/api/mailSettings';
-
-import { useNotifications } from '../../hooks';
 
 interface Props {
     id?: string;

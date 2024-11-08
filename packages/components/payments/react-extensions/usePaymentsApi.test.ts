@@ -25,7 +25,7 @@ jest.mock('../client-extensions/useChargebeeKillSwitch', () => ({
     useChargebeeKillSwitch: jest.fn().mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(true) }),
 }));
 
-jest.mock('@proton/components/hooks/usePlans', () => ({
+jest.mock('@proton/account/plans/hooks', () => ({
     __esModule: true,
     useGetPlans: jest.fn(),
 }));

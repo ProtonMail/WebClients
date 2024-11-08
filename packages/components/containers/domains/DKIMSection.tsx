@@ -8,12 +8,11 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { DKIM_STATE } from '@proton/shared/lib/interfaces';
-
-import { useNotifications } from '../../hooks';
 
 interface Props {
     domain: Partial<Domain>;

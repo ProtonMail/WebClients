@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -17,7 +18,6 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
 
-import { useUserKeys } from '../../../hooks';
 import useVCardContact from '../hooks/useVCardContact';
 import ContactView from '../view/ContactView';
 

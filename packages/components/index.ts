@@ -1,8 +1,6 @@
 import './typings/css.d';
 import './typings/index.d';
 
-export * from './hooks';
-
 export { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
@@ -324,11 +322,11 @@ export { default as TreeViewItem } from './components/treeview/TreeViewItem';
 export type { UpsellFeature as UpsellFeatures } from './components/upsell/modal/interface';
 export { default as NewUpsellModal } from './components/upsell/modal/NewUpsellModal';
 export { default as AutoDeleteUpsellModal } from './components/upsell/modal/types/AutoDeleteUpsellModal';
-export { default as ZoomUpsellModal } from './components/upsell/modal/types/ZoomUpsellModal';
 export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modal/types/ComposerAssistantB2BUpsellModal';
 export { default as FiltersUpsellModal } from './components/upsell/modal/types/FiltersUpsellModal';
 export { default as LabelsUpsellModal } from './components/upsell/modal/types/LabelsUpsellModal';
 export { default as PmMeUpsellModal } from './components/upsell/modal/types/PmMeUpsellModal';
+export { default as ZoomUpsellModal } from './components/upsell/modal/types/ZoomUpsellModal';
 export { default as UpsellModal } from './components/upsell/modal/UpsellModal';
 export { default as useUpsellConfig } from './components/upsell/useUpsellConfig';
 export { default as AddressesAutocompleteTwo } from './components/v2/addressesAutocomplete/AddressesAutocomplete';
@@ -831,6 +829,18 @@ export { default as WireGuardConfigurationSection } from './containers/vpn/WireG
 export { getAppVersion } from './helpers/appVersion';
 export { getCustomSizingClasses } from './helpers/getCustomSizingClasses';
 export { getObjectKeys } from './helpers/getObjectKeys';
+export { DrawerProvider, default as useDrawer } from './hooks/drawer/useDrawer';
+export { default as useDrawerLocalStorage } from './hooks/drawer/useDrawerLocalStorage';
+export { default as useDrawerParent } from './hooks/drawer/useDrawerParent';
+export { default as useDrawerWidth } from './hooks/drawer/useDrawerWidth';
+export { default as useObserveDrawerIframeAppLocation } from './hooks/drawer/useObserveDrawerIframeAppLocation';
+export { default as useOpenDrawerOnLoad } from './hooks/drawer/useOpenDrawerOnLoad';
+export { default as useToggleDrawerApp } from './hooks/drawer/useToggleDrawerApp';
+export { useDriveB2BPhotosEnabledSetting } from './hooks/drive/useDriveB2BPhotosEnabledSetting';
+export { useDrivePlan } from './hooks/drive/useDrivePlan';
+export { useRevisionRetentionDays } from './hooks/drive/useRevisionRetentionDays';
+export { default as useIsSecurityCheckupAvailable } from './hooks/securityCheckup/useIsSecurityCheckupAvailable';
+export { default as useSecurityCheckup } from './hooks/securityCheckup/useSecurityCheckup';
 export { default as useActiveBreakpoint } from './hooks/useActiveBreakpoint';
 export type { Breakpoints } from './hooks/useActiveBreakpoint';
 export { default as useAddressFlags } from './hooks/useAddressFlags';
@@ -845,26 +855,64 @@ export { default as useCache } from './hooks/useCache';
 export { default as useCalendarShareInvitationActions } from './hooks/useCalendarShareInvitationActions';
 export { default as useCalendarShareInvitations } from './hooks/useCalendarShareInvitations';
 export { default as useConfig } from './hooks/useConfig';
+export { useDeviceRecovery, useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from './hooks/useDeviceRecovery';
 export { default as useDragMove } from './hooks/useDragMove';
 export { default as useDragOver } from './hooks/useDragOver';
 export { default as useDropdownArrowNavigation } from './hooks/useDropdownArrowNavigation';
 export { default as useDynamicFavicon } from './hooks/useDynamicFavicon';
 export { default as useEarlyAccess } from './hooks/useEarlyAccess';
 export { default as useElementBreakpoints } from './hooks/useElementBreakpoints';
+export { default as useElementRect } from './hooks/useElementRect';
+export { default as useErrorHandler } from './hooks/useErrorHandler';
 export { default as useEventManager } from './hooks/useEventManager';
 export { default as useFolderColor } from './hooks/useFolderColor';
 export { default as useForceRefresh } from './hooks/useForceRefresh';
+export { default as useGetCalendarEventRaw } from './hooks/useGetCalendarEventRaw';
+export { default as useGetCalendarInfo } from './hooks/useGetCalendarInfo';
+export { CACHE_KEY, default as useGetEncryptionPreferences } from './hooks/useGetEncryptionPreferences';
 export { default as useGetVerificationPreferences } from './hooks/useGetVerificationPreferences';
+export { useEventListener, useHandler, useInterval, useSubscribeEventManager } from './hooks/useHandler';
+export type { Cancellable } from './hooks/useHandler';
+export { default as useHasSuspendedCounter } from './hooks/useHasSuspendedCounter';
+export { useHotkeys, type HotkeyTuple } from './hooks/useHotkeys';
 export { default as useInboxDesktopBadgeCount } from './hooks/useInboxDesktopBadgeCount';
 export { default as useIsClosing } from './hooks/useIsClosing';
 export { default as useIsDataRecoveryAvailable } from './hooks/useIsDataRecoveryAvailable';
 export { default as useISESEnabledElectron } from './hooks/useISESEnabledElectron';
 export { default as useIsInboxElectronApp } from './hooks/useIsInboxElectronApp';
+export { default as useIsMnemonicAvailable } from './hooks/useIsMnemonicAvailable';
 export { default as useKeyPress } from './hooks/useKeyPress';
+export { default as useLocalState } from './hooks/useLocalState';
+export { default as useModals } from './hooks/useModals';
+export { default as useMyCountry } from './hooks/useMyCountry';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';
+export { default as useNotifications } from './hooks/useNotifications';
+export { getOnlineStatus, default as useOnline } from './hooks/useOnline';
+export { usePreferredPlansMap } from './hooks/usePreferredPlansMap';
+export { default as usePreventCloseTab } from './hooks/usePreventCloseTab';
+export { PreventLeaveProvider, default as usePreventLeave } from './hooks/usePreventLeave';
 export { default as useProgressiveRollout } from './hooks/useProgressiveRollout';
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
 export { default as useRelocalizeText } from './hooks/useRelocalizeText';
+export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';
+export {
+    useAvailableRecoveryMethods,
+    useIsSessionRecoveryAvailable,
+    useIsSessionRecoveryEnabled,
+    useIsSessionRecoveryInitiatedByCurrentSession,
+    useIsSessionRecoveryInitiationAvailable,
+    useSessionRecoveryGracePeriodHoursRemaining,
+    useSessionRecoveryInsecureTimeRemaining,
+    useSessionRecoveryState,
+    useShouldNotifyPasswordResetAvailable,
+    useShouldNotifySessionRecoveryCancelled,
+    useShouldNotifySessionRecoveryInProgress,
+} from './hooks/useSessionRecovery';
+export { default as useShowThemeSelection } from './hooks/useShowThemeSelection';
+export { useMultiSortedList, default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
+export type { SortConfig } from './hooks/useSortedList';
+export { default as useSpotlightOnFeature } from './hooks/useSpotlightOnFeature';
 export { default as useSubscribedCalendars } from './hooks/useSubscribedCalendars';
 export { default as useToggle } from './hooks/useToggle';
+export { default as useVPNServersCount } from './hooks/useVPNServersCount';
 export { default as useWindowSize } from './hooks/useWindowSize';

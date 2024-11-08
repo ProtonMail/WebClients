@@ -16,6 +16,7 @@ import { getNextDefaultCalendar } from '@proton/components/containers/calendar/s
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
@@ -25,8 +26,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-
-import { useNotifications } from '../../../hooks';
 
 type ModalsMap = {
     calendarModal: ModalWithProps<{

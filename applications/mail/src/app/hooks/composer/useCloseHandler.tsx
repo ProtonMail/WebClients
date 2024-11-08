@@ -2,8 +2,8 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { Cancellable } from '@proton/components';
 import { useHandler, useNotifications } from '@proton/components';
-import type { Cancellable } from '@proton/components/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { wait } from '@proton/shared/lib/helpers/promise';
 

@@ -2,8 +2,9 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
-import { useMyCountry, useSecurityCheckup, useUserSettings } from '@proton/components';
+import { useMyCountry, useSecurityCheckup } from '@proton/components';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 

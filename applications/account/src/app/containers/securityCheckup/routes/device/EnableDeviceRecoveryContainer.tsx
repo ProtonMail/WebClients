@@ -5,16 +5,10 @@ import { c } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
-import {
-    useApi,
-    useAuthentication,
-    useConfig,
-    useEventManager,
-    useGetUserKeys,
-    useSecurityCheckup,
-} from '@proton/components';
+import { useApi, useAuthentication, useConfig, useEventManager, useSecurityCheckup } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';

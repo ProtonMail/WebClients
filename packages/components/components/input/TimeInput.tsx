@@ -17,7 +17,7 @@ import generateUID from '@proton/utils/generateUID';
 import noop from '@proton/utils/noop';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
-import { useHotkeys } from '../../hooks';
+import { useHotkeys } from '../../hooks/useHotkeys';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'p', { locale });

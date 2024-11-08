@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useToggle from '@proton/components/hooks/useToggle';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';

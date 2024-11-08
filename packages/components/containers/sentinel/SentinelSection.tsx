@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -16,6 +17,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
@@ -27,7 +29,7 @@ import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSetting
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useNotifications, useSearchParamsEffect, useUserSettings } from '../../hooks';
+import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import { getDisabledString, getEnableString, getEnabledString } from '../credentialLeak/helpers';
 
 interface Props {
