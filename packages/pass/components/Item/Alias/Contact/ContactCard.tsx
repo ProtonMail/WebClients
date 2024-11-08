@@ -11,10 +11,14 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { aliasBlockContact, aliasDeleteContact } from '@proton/pass/store/actions';
-import type { AliasContactWithStatsGetResponse, UniqueItem } from '@proton/pass/types';
+import type { AliasContactGetResponse, AliasContactWithStatsGetResponse, UniqueItem } from '@proton/pass/types';
 import { epochToDateLabel } from '@proton/pass/utils/time/format';
 
-type Props = UniqueItem & AliasContactWithStatsGetResponse;
+type Props = UniqueItem &
+    AliasContactWithStatsGetResponse & {
+        onContactDeleted: (ID: number) => void;
+        onContactUpdated: (updatedContact: AliasContactGetResponse) => void;
+    };
 
 export const ContactCard: FC<Props> = ({
     shareId,
@@ -25,13 +29,15 @@ export const ContactCard: FC<Props> = ({
     ForwardedEmails,
     RepliedEmails,
     CreateTime,
+    onContactDeleted,
+    onContactUpdated,
 }) => {
     const { writeToClipboard } = usePassCore();
     const { createNotification } = useNotifications();
     const time = epochToDateLabel(CreateTime, { dateInThePast: true });
 
-    const blockContactRequest = useRequest(aliasBlockContact, {});
-    const deleteContactRequest = useRequest(aliasDeleteContact, {});
+    const blockContactRequest = useRequest(aliasBlockContact, { onSuccess: ({ data }) => onContactUpdated(data) });
+    const deleteContactRequest = useRequest(aliasDeleteContact, { onSuccess: ({ data }) => onContactDeleted(data) });
 
     const handleCopyAddress = async (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
