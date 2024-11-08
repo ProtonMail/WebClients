@@ -478,14 +478,17 @@ export const aliasGetContactInfo = requestActionsFactory<AliasContactInfoDTO, Al
     },
 });
 
-export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, boolean>('alias::contact::create')({
+export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, AliasContactGetResponse>(
+    'alias::contact::create'
+)({
     key: selectedItemKey,
     success: {
-        prepare: () =>
+        prepare: (payload) =>
             withNotification({
                 type: 'success',
                 text: c('Success').t`Contact successfully created`,
-            })({ payload: {} }),
+            })({ payload }),
+        config: { data: true },
     },
     failure: {
         prepare: (error) =>
@@ -497,14 +500,15 @@ export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, bool
     },
 });
 
-export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boolean>('alias::contact::delete')({
+export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, number>('alias::contact::delete')({
     key: selectedItemKey,
     success: {
-        prepare: () =>
+        prepare: (payload) =>
             withNotification({
                 type: 'success',
                 text: c('Success').t`Contact successfully deleted`,
-            })({ payload: {} }),
+            })({ payload }),
+        config: { data: true },
     },
     failure: {
         prepare: (error, payload) =>
@@ -516,16 +520,19 @@ export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, boo
     },
 });
 
-export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, boolean>('alias::contact::block')({
+export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, AliasContactGetResponse>(
+    'alias::contact::block'
+)({
     key: selectedItemKey,
     success: {
-        prepare: (blocked) =>
+        prepare: (payload) =>
             withNotification({
                 type: 'success',
-                text: blocked
+                text: payload.Blocked
                     ? c('Success').t`Contact successfully blocked`
                     : c('Success').t`Contact successfully unblocked`,
-            })({ payload: {} }),
+            })({ payload }),
+        config: { data: true },
     },
     failure: {
         prepare: (error) =>

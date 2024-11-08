@@ -110,25 +110,29 @@ export const aliasGetContactInfoApi = async ({
         })
     ).Contact!;
 
-export const aliasCreateContactApi = ({ shareId, itemId, name, email }: AliasContactNewDTO) =>
-    api({
-        url: `pass/v1/share/${shareId}/alias/${itemId}/contact`,
-        method: 'post',
-        data: { Name: name, Email: email },
-    }).then(() => true);
+export const aliasCreateContactApi = async ({ shareId, itemId, name, email }: AliasContactNewDTO) =>
+    (
+        await api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}/contact`,
+            method: 'post',
+            data: { Name: name, Email: email },
+        })
+    )?.Contact!;
 
 export const aliasDeleteContactApi = ({ shareId, itemId, contactId }: AliasContactInfoDTO) =>
     api({
         url: `pass/v1/share/${shareId}/alias/${itemId}/contact/${contactId}`,
         method: 'delete',
-    }).then(() => true);
+    }).then(() => contactId);
 
-export const aliasBlockContactApi = ({ shareId, itemId, contactId, blocked }: AliasContactBlockDTO) =>
-    api({
-        url: `pass/v1/share/${shareId}/alias/${itemId}/contact/${contactId}`,
-        method: 'put',
-        data: { Blocked: blocked },
-    }).then(() => blocked);
+export const aliasBlockContactApi = async ({ shareId, itemId, contactId, blocked }: AliasContactBlockDTO) =>
+    (
+        await api({
+            url: `pass/v1/share/${shareId}/alias/${itemId}/contact/${contactId}/blocked`,
+            method: 'put',
+            data: { Blocked: blocked },
+        })
+    )?.Contact!;
 
 export const getAliasCount = async (): Promise<number> =>
     (await api({ url: `pass/v1/user/alias/count`, method: 'get' }))?.AliasCount?.Total ?? 0;
