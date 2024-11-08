@@ -42,7 +42,7 @@ import {
 
 chaiUse(chaiAsPromised);
 
-export const runApiTests = (CryptoApiImplementation: CryptoApiInterface, v6Canary: boolean) => {
+export const runApiTests = (CryptoApiImplementation: CryptoApiInterface) => {
     it('decryptMessage - should decrypt message with correct password', async () => {
         const armoredMessage = `-----BEGIN PGP MESSAGE-----
 
@@ -1462,26 +1462,18 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
         it('compatibility - rejects importing a v6 public key', async () => {
             // Until we integrate OpenPGP.js, parsing the key will fail, regardless of `checkCompatibility`.
             // This test is mostly a placeholder to be updated once OpenPGP.js is updated.
-            if (v6Canary) {
-                const importedKeyRef = await CryptoApiImplementation.importPublicKey({
-                    armoredKey: v6KeyCurve25519,
-                    checkCompatibility: false,
-                });
-                expect(importedKeyRef.isPrivate()).to.be.false;
-                expect(importedKeyRef._getCompatibilityError()?.message).to.match(
-                    /Version 6 keys are currently not supported/
-                );
+            const importedKeyRef = await CryptoApiImplementation.importPublicKey({
+                armoredKey: v6KeyCurve25519,
+                checkCompatibility: false,
+            });
+            expect(importedKeyRef.isPrivate()).to.be.false;
+            expect(importedKeyRef._getCompatibilityError()?.message).to.match(
+                /Version 6 keys are currently not supported/
+            );
 
-                await expect(
-                    CryptoApiImplementation.importPublicKey({ armoredKey: v6KeyCurve25519, checkCompatibility: true })
-                ).to.be.rejectedWith(/Version 6 keys are currently not supported./);
-            } else {
-                await expect(
-                    CryptoApiImplementation.importPublicKey({
-                        armoredKey: v6KeyCurve25519,
-                    })
-                ).to.be.rejected;
-            }
+            await expect(
+                CryptoApiImplementation.importPublicKey({ armoredKey: v6KeyCurve25519, checkCompatibility: true })
+            ).to.be.rejectedWith(/Version 6 keys are currently not supported./);
         });
 
         it('allows importing a private key as long as it can be decrypted', async () => {

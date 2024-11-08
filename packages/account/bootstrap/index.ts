@@ -327,9 +327,7 @@ export const loadCrypto = ({
     appName: APP_NAMES;
 }) => {
     return loadCryptoWorker(
-        getCryptoWorkerOptions(appName, {
-            v6Canary: unleashClient?.isEnabled('CryptoCanaryOpenPGPjsV6'),
-        })
+        getCryptoWorkerOptions(appName, {})
     );
 };
 
