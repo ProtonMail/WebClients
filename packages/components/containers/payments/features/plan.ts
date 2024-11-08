@@ -251,6 +251,17 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
     };
 };
 
+export const getPassLifetimePlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.PASS_LIFETIME,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info').t`For next-level password management and identity protection.`,
+        cta: getCTA(plan.Title),
+        features: [...getPassPlan(plan).features],
+    };
+};
+
 export const getPassProPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.PASS_PRO,
@@ -778,6 +789,8 @@ export const getShortPlan = (
             return getDriveBusinessPlan({ plan: planData, boldStorageSize, freePlan });
         case PLANS.PASS:
             return getPassPlan(planData);
+        case PLANS.PASS_LIFETIME:
+            return getPassLifetimePlan(planData);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.MAIL_BUSINESS:

@@ -13,6 +13,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { User } from '@proton/shared/lib/interfaces';
+import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 interface App {
     name: APP_NAMES;
@@ -63,6 +64,7 @@ export const getExploreApps = ({
         {
             name: APPS.PROTONPASS,
             bit: PRODUCT_BIT.PASS,
+            condition: hasPassLifetime,
             description: () => {
                 return c('app-switcher').t`Protect your passwords and identity`;
             },
@@ -77,10 +79,16 @@ export const getExploreApps = ({
         },
     ]
         .sort((a, b) => {
-            if (hasBit(subscribed, a.bit) && !hasBit(subscribed, b.bit)) {
+            if (
+                (hasBit(subscribed, a.bit) && !hasBit(subscribed, b.bit)) ||
+                (user && a.condition?.(user) && !b.condition?.(user))
+            ) {
                 return -1;
             }
-            if (hasBit(subscribed, b.bit) && !hasBit(subscribed, a.bit)) {
+            if (
+                (hasBit(subscribed, b.bit) && !hasBit(subscribed, a.bit)) ||
+                (user && b.condition?.(user) && !a.condition?.(user))
+            ) {
                 return 1;
             }
             return 0;

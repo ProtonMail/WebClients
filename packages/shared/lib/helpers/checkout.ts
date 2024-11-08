@@ -5,7 +5,7 @@ import { ADDON_NAMES, type Currency, type MaxKeys, PLANS, PLAN_TYPES, type PlanI
 import { CYCLE, DEFAULT_CYCLE, VPN_PASS_PROMOTION_COUPONS } from '../constants';
 import type { Plan, PlansMap, Pricing, Subscription, SubscriptionCheckResponse } from '../interfaces';
 import { isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from './addons';
-import { getPlanFromCheckout } from './planIDs';
+import { getPlanFromPlanIDs } from './planIDs';
 import {
     INCLUDED_IP_PRICING,
     customCycles,
@@ -104,7 +104,7 @@ export type RequiredCheckResponse = Pick<
 >;
 
 export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
-    const plan = getPlanFromCheckout(planIDs, plansMap);
+    const plan = getPlanFromPlanIDs(plansMap, planIDs);
     const usersPricing = plan ? getPricingPerMember(plan) : null;
 
     const users = getMembersFromPlanIDs(planIDs, plansMap);

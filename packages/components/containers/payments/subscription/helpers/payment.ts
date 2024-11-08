@@ -9,7 +9,7 @@ import {
 } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS, COUPON_CODES, CYCLE, VPN_PASS_PROMOTION_COUPONS } from '@proton/shared/lib/constants';
-import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import type { PlansMap, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { Audience, Renew } from '@proton/shared/lib/interfaces';
 
@@ -187,12 +187,7 @@ export const getAutoCoupon = ({
 };
 
 export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: PlansMap, cycle: CYCLE): CYCLE {
-    const planID = getPlanFromIds(planIDs);
-    if (!planID) {
-        return cycle;
-    }
-
-    const plan = plansMap[planID];
+    const plan = getPlanFromIDs(planIDs, plansMap);
     if (!plan) {
         return cycle;
     }

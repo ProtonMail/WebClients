@@ -10,9 +10,11 @@ import InclusiveVatText from '@proton/components/containers/payments/InclusiveVa
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';
 import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
-import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
-import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
+import {
+    getBillingAddressStatus,
+    getTotalBillingText,
+} from '@proton/components/containers/payments/subscription/helpers';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
@@ -77,6 +79,7 @@ interface Props {
     onBillingAddressChange: OnBillingAddressChange;
     terms?: ReactNode;
     signupParameters: SignupParameters2;
+    showRenewalNotice: boolean;
 }
 
 const AccountStepPayment = ({
@@ -98,6 +101,7 @@ const AccountStepPayment = ({
     onBillingAddressChange,
     terms,
     signupParameters,
+    showRenewalNotice,
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -503,7 +507,7 @@ const AccountStepPayment = ({
                     <RightSummary variant="border" className="mx-auto md:mx-0 rounded-xl">
                         <RightPlanSummary
                             cycle={options.cycle}
-                            title={summaryPlan.title}
+                            summaryPlan={summaryPlan}
                             price={getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth)}
                             regularPrice={getSimplePriceString(
                                 options.currency,
@@ -516,9 +520,7 @@ const AccountStepPayment = ({
                                     currency={options.currency}
                                 />
                             }
-                            logo={summaryPlan.logo}
                             discount={currentCheckout.discountPercent}
-                            features={summaryPlan.features}
                             checkout={currentCheckout}
                             mode={isB2BPlan ? 'addons' : undefined}
                         >
@@ -543,7 +545,11 @@ const AccountStepPayment = ({
                                     return [
                                         {
                                             id: 'amount',
-                                            left: <span>{getTotalBillingText(options.cycle)}</span>,
+                                            left: (
+                                                <span>
+                                                    {getTotalBillingText(options.cycle, currentCheckout.planIDs)}
+                                                </span>
+                                            ),
                                             right: isBFOffer ? (
                                                 <>
                                                     {loadingPaymentDetails ? (
@@ -553,14 +559,14 @@ const AccountStepPayment = ({
                                                             <Price currency={subscriptionData.currency}>
                                                                 {currentCheckout.withDiscountPerCycle}
                                                             </Price>
-                                                            {!showAmountDue && '*'}
+                                                            {!showAmountDue && showRenewalNotice && '*'}
                                                         </>
                                                     )}
                                                 </>
                                             ) : (
                                                 <>
                                                     {getPrice(currentCheckout.withoutDiscountPerCycle)}
-                                                    {!showAmountDue && '*'}
+                                                    {!showAmountDue && showRenewalNotice && '*'}
                                                 </>
                                             ),
                                             bold: true,

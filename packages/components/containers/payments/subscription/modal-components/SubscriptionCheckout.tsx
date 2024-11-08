@@ -14,7 +14,12 @@ import { type Currency, PLANS, getAvailableCurrencies } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
-import { getPlanFromCheckout, hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
+import {
+    getPlanFromPlanIDs,
+    hasPlanIDs,
+    isLifetimePlanSelected,
+    planIDsPositiveDifference,
+} from '@proton/shared/lib/helpers/planIDs';
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getHas2024OfferCoupon, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -23,6 +28,7 @@ import type {
     FreePlanDefault,
     Plan,
     SubscriptionModel,
+    UserModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
@@ -31,10 +37,10 @@ import { getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import type { OnBillingAddressChange } from '../../TaxCountrySelector';
 import { WrappedTaxCountrySelector } from '../../TaxCountrySelector';
-import { getTotalBillingText } from '../../helper';
+import { getTotalBillingText } from '../helpers';
 import type { CheckoutModifiers } from '../useCheckoutModifiers';
 import { AddonTooltip } from './helpers/AddonTooltip';
-import { BilledText } from './helpers/BilledText';
+import { BilledCycleText } from './helpers/BilledCycleText';
 import CheckoutRow from './helpers/CheckoutRow';
 import { PlanDescription } from './helpers/PlanDescription';
 import { getWhatsIncluded } from './helpers/included';
@@ -58,9 +64,10 @@ type Props = {
     subscription: SubscriptionModel;
     paymentNeeded: boolean;
     paymentMethods: MethodsHook;
+    user: UserModel;
 } & CheckoutModifiers;
 
-export const useAvailableCurrenciesForPlan = (plan: Plan | null, subscription: SubscriptionModel) => {
+export const useAvailableCurrenciesForPlan = (plan: Plan | undefined, subscription: SubscriptionModel) => {
     const [user] = useUser();
     const [paymentStatus] = usePaymentStatus();
     const [plansResult] = usePlans();
@@ -98,6 +105,7 @@ const SubscriptionCheckout = ({
     isCustomBilling,
     paymentNeeded,
     paymentMethods,
+    user,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -124,7 +132,7 @@ const SubscriptionCheckout = ({
         withDiscountPerMonth,
     } = checkout;
 
-    const plan = getPlanFromCheckout(planIDs, plansMap);
+    const plan = getPlanFromPlanIDs(plansMap, planIDs);
     const currencies = useAvailableCurrenciesForPlan(plan, subscription);
 
     if (!checkResult) {
@@ -133,6 +141,7 @@ const SubscriptionCheckout = ({
 
     const isPaidPlanSelected = hasPlanIDs(planIDs);
     const isFreePlanSelected = !isPaidPlanSelected;
+    const lifetimePlan = isLifetimePlanSelected(planIDs);
 
     const hasGuarantee =
         !!planIDs?.[PLANS.VPN] ||
@@ -163,6 +172,8 @@ const SubscriptionCheckout = ({
             hasGuarantee={hasGuarantee}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
             paymentMethods={paymentMethods}
+            planIDs={planIDs}
+            user={user}
             renewNotice={
                 displayRenewNotice
                     ? getCheckoutRenewNoticeText({
@@ -191,20 +202,26 @@ const SubscriptionCheckout = ({
                     )}
                 </span>
 
-                {isPaidPlanSelected && !isSpecialRenewPlan(planIDs) && <BilledText cycle={cycle} />}
+                {isPaidPlanSelected && !isSpecialRenewPlan(planIDs) && !lifetimePlan && (
+                    <BilledCycleText cycle={cycle} />
+                )}
             </div>
-            <CheckoutRow
-                title={usersTitle}
-                // That a very naïve approach for the discounted number of members.
-                // It will NOT work for the actual member addons and it can break when/if we introduce B2C addons
-                // This is valid only for B2C plans without addons, so it should be good enough for the BF2024.
-                // Kill it with fire after the BF is done (revert it to be just amount={membersPerMonth})
-                amount={hasBFDiscount ? withDiscountPerMonth : membersPerMonth}
-                currency={currency}
-                suffix={perMonthSuffix}
-                loading={loading}
-                data-testid="price"
-            />
+            {lifetimePlan ? (
+                <div className="mb-4">{usersTitle}</div>
+            ) : (
+                <CheckoutRow
+                    title={usersTitle}
+                    // That a very naïve approach for the discounted number of members.
+                    // It will NOT work for the actual member addons and it can break when/if we introduce B2C addons
+                    // This is valid only for B2C plans without addons, so it should be good enough for the BF2024.
+                    // Kill it with fire after the BF is done (revert it to be just amount={membersPerMonth})
+                    amount={hasBFDiscount ? withDiscountPerMonth : membersPerMonth}
+                    currency={currency}
+                    suffix={perMonthSuffix}
+                    loading={loading}
+                    data-testid="members-price-per-month"
+                />
+            )}
             {addons.map((addon) => {
                 return (
                     <CheckoutRow
@@ -235,7 +252,7 @@ const SubscriptionCheckout = ({
                         className="text-semibold"
                         title={
                             <>
-                                <span className="mr-2">{getTotalBillingText(cycle)}</span>
+                                <span className="mr-2">{getTotalBillingText(cycle, planIDs)}</span>
                                 {/* Commented out until PAY-2179 is resolved */}
                                 {/* {isCustomBilling ? (
                                     <Info
