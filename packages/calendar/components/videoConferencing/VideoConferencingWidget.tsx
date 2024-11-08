@@ -11,8 +11,8 @@ import {
     Copy,
     Icon,
     IconRow,
-    useNotifications,
 } from '@proton/components';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcVideoCamera } from '@proton/icons';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
