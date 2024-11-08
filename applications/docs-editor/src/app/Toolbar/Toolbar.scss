@@ -2,10 +2,10 @@
 	border: 0.5px solid var(--border-weak);
 	box-shadow: 0 4px 10px 0 rgb(0 0 0 / 0.06);
 
-	> button,
-	> button:hover,
-	> button:focus,
-	> button[aria-expanded='true']:not([aria-controls]) {
+	button,
+	button:hover,
+	button:focus,
+	button[aria-expanded='true']:not([aria-controls]) {
 		color: var(--text-norm);
 	}
 
