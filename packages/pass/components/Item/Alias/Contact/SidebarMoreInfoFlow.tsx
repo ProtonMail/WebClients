@@ -27,7 +27,7 @@ const getSteps = () => [
     },
     {
         description: c('Info')
-            .t`${PASS_APP_NAME} will generate a forwarding address (also referred to as reverse alias).`,
+            .t`${PASS_APP_NAME} will generate a forwarding address (also referred to as reverse alias) that you can copy to the clipboard.`,
     },
     {
         description: c('Info').jt`Email this address and it will appear to be sent from ${exampleEmail} for example.`,
