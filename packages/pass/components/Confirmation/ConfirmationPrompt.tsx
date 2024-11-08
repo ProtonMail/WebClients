@@ -5,6 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Prompt } from '@proton/components';
 
+import './ConfirmationPrompt.scss';
+
 export type ConfirmationPromptHandles = {
     onCancel: () => void;
     onConfirm: () => void;
@@ -21,6 +23,7 @@ export const ConfirmationPrompt: FC<Props> = ({ confirmText, danger, message, ti
     return (
         <Prompt
             open
+            className="pass-prompt"
             title={<span className="text-break">{title}</span>}
             buttons={[
                 <Button onClick={onConfirm} color={danger ? 'danger' : 'norm'} pill>
