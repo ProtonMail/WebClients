@@ -2,6 +2,7 @@ import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { createContext, useContext } from 'react'
 import type { LexicalNode, NodeKey } from 'lexical'
 import type { UserState } from '@lexical/yjs'
+import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 
 type CommentsContextValue = {
   username: string
@@ -13,6 +14,7 @@ type CommentsContextValue = {
   threadToFocus: string | null
   setThreadToFocus: (id: string | null) => void
   awarenessStates: UserState[]
+  showConfirmModal: ReturnType<typeof useConfirmActionModal>[1]
 }
 
 const CommentsContext = createContext<CommentsContextValue | null>(null)

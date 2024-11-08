@@ -1,15 +1,7 @@
 import { Button } from '@proton/atoms'
 import type { MouseEventHandler } from 'react'
 import { useCallback, useState } from 'react'
-import {
-  DropdownMenu,
-  DropdownMenuButton,
-  Icon,
-  SimpleDropdown,
-  ToolbarButton,
-  Tooltip,
-  useConfirmActionModal,
-} from '@proton/components'
+import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, ToolbarButton, Tooltip } from '@proton/components'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import { CommentThreadState, UserAvatar } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
@@ -42,9 +34,7 @@ export function CommentsPanelListComment({
 
   const { application, isSuggestionsFeatureEnabled } = useApplication()
 
-  const { username, controller, markNodeMap, removeMarkNode, awarenessStates } = useCommentsContext()
-
-  const [confirmModal, showConfirmModal] = useConfirmActionModal()
+  const { username, controller, markNodeMap, removeMarkNode, awarenessStates, showConfirmModal } = useCommentsContext()
 
   const [isDeleting, setIsDeleting] = useState(false)
 
@@ -160,7 +150,6 @@ export function CommentsPanelListComment({
 
   return (
     <>
-      {confirmModal}
       <li
         className={clsx(
           'group/comment mb-3 text-sm',
