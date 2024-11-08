@@ -4,21 +4,13 @@ import { getLocaleTermsURL } from 'proton-account/src/app/content/helper';
 import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Href } from '@proton/atoms';
-import type { ModalStateProps } from '@proton/components';
 import { useConfig } from '@proton/components';
-import {
-    Option,
-    Price,
-    SUBSCRIPTION_STEPS,
-    SelectTwo,
-    SettingsLink,
-    usePlans,
-    useSubscription,
-    useUpsellConfig,
-} from '@proton/components';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import { Option, Price, SUBSCRIPTION_STEPS, SelectTwo, SettingsLink, useUpsellConfig } from '@proton/components';
+import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
@@ -26,6 +18,7 @@ import type { UpsellFeatureName } from '@proton/components/components/upsell/mod
 import { getPrice } from '@proton/components/containers/payments/subscription/PlanSelection';
 import useApi from '@proton/components/hooks/useApi';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
+import type { Currency } from '@proton/payments';
 import { PLANS, getPlansMap } from '@proton/payments';
 import { APPS, APP_UPSELL_REF_PATH, CYCLE, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/shared/lib/helpers/subscription';
@@ -35,90 +28,73 @@ import type { Plan } from '@proton/shared/lib/interfaces';
 import accountLockedImage from '@proton/styles/assets/img/illustrations/account-locked.svg';
 import isTruthy from '@proton/utils/isTruthy';
 
+interface PlanOption {
+    plan: Plan;
+    price: number;
+}
+
 const cycle = CYCLE.YEARLY;
-const PlanSelect = ({ onChange, value: plan }: { onChange: (plan: Plan) => void; value?: Plan }) => {
-    const [plansResult, planResultLoading] = usePlans();
-    const [user] = useUser();
-    const [paymentStatus] = usePaymentStatus();
-    const [subscription] = useSubscription();
-    const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
-    const { getPreferredCurrency } = useCurrencies();
-    const currency = getPreferredCurrency({
-        user,
-        status: paymentStatus,
-        subscription,
-        plans: plansResult?.plans,
-    });
-    const plansMap = getPlansMap(plansResult?.plans ?? [], currency);
-    const optionPlans = [
-        plansMap[PLANS.MAIL],
-        plansMap[PLANS.BUNDLE],
-        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
-        plansMap[PLANS.FAMILY],
-    ].filter(isTruthy);
-
-    useEffect(() => {
-        onChange(optionPlans[0]);
-    }, [plansResult]);
-
+const PlanSelect = ({
+    onChange,
+    options,
+    value: plan,
+    currency,
+    loading,
+}: {
+    options: PlanOption[];
+    onChange: (plan: Plan) => void;
+    value?: Plan;
+    currency: Currency;
+    loading: boolean;
+}) => {
     return (
-        <div className="py-2">
-            <SelectTwo
-                className="h-custom"
-                style={{ '--h-custom': '3.8rem' }}
-                value={plan?.Name}
-                onChange={({ value }) => onChange(plansMap[value])}
-                loading={planResultLoading}
-                renderSelected={(planName) => {
-                    const plan = plansMap[planName!];
-                    const price = getPrice(plan, cycle, plansMap);
-                    if (price === null) {
-                        return null;
-                    }
-                    return (
-                        <div>
-                            <div className="color-hint text-sm">Plan</div>
-                            <div className="flex justify-space-between text-bold text-lg pr-4">
-                                <span>{plan.Title}</span>
-                                <span>
-                                    <Price currency={currency}>{price / cycle}</Price>
-                                    {c('Label').t`/month`}
-                                </span>
-                            </div>
+        <SelectTwo
+            className="h-custom"
+            style={{ '--h-custom': '3.8rem' }}
+            value={plan}
+            onChange={({ value }) => onChange(value)}
+            loading={loading}
+            renderSelected={(plan) => {
+                const option = options.find((v) => v.plan.Name === plan?.Name);
+                if (!option) {
+                    return null;
+                }
+                return (
+                    <div>
+                        <div className="color-hint text-sm">Plan</div>
+                        <div className="flex justify-space-between text-bold text-lg pr-4">
+                            <span>{option.plan.Title}</span>
+                            <span>
+                                <Price currency={currency}>{option.price / cycle}</Price>
+                                {c('Label').t`/month`}
+                            </span>
                         </div>
-                    );
-                }}
-            >
-                {optionPlans
-                    .map((plan) => {
-                        const price = getPrice(plan, cycle, plansMap);
-                        if (price === null) {
-                            return null;
-                        }
-                        return (
-                            <Option value={plan.Name} title={plan.Title} key={plan.ID}>
-                                <div className="flex justify-space-between">
-                                    <span className="mr-4 text-bold">{plan.Title}</span>
-                                    <span>
-                                        <Price currency={currency}>{price / cycle}</Price>
-                                        {c('Label').t`/month`}
-                                    </span>
-                                </div>
-                            </Option>
-                        );
-                    })
-                    .filter(isTruthy)}
-            </SelectTwo>
-        </div>
+                    </div>
+                );
+            }}
+        >
+            {options.map(({ plan, price }) => {
+                return (
+                    <Option value={plan} title={plan.Title} key={plan.ID}>
+                        <div className="flex justify-space-between">
+                            <span className="mr-4 text-bold">{plan.Title}</span>
+                            <span>
+                                <Price currency={currency}>{price / cycle}</Price>
+                                {c('Label').t`/month`}
+                            </span>
+                        </div>
+                    </Option>
+                );
+            })}
+        </SelectTwo>
     );
 };
 
-type AccountLockedUpsellModalProps = {
-    modalProps: ModalStateProps;
+interface AccountLockedUpsellModalProps extends ModalProps {
     onSubscribed: () => void;
-};
+}
 
-const AccountLockedUpsellModal = ({ modalProps, onSubscribed }: AccountLockedUpsellModalProps) => {
+const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsellModalProps) => {
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,
@@ -129,7 +105,10 @@ const AccountLockedUpsellModal = ({ modalProps, onSubscribed }: AccountLockedUps
         upsellRef,
         planIDs: selectedPlan ? { [selectedPlan.Name]: 1 } : undefined,
         step: SUBSCRIPTION_STEPS.CHECKOUT,
-        onSubscribed,
+        onSubscribed: () => {
+            onSubscribed();
+            rest.onClose?.();
+        },
     });
 
     const { APP_NAME } = useConfig();
@@ -152,11 +131,51 @@ const AccountLockedUpsellModal = ({ modalProps, onSubscribed }: AccountLockedUps
         'address-by-plan',
     ];
 
-    const termsLink = <Href href={getLocaleTermsURL(APP_NAME)}>{c('Link').t`terms of service`}</Href>;
-    const contactLink = <Href href={getAbuseURL()}>{c('Link').t`contact us`}</Href>;
+    const termsLink = <Href key="locale" href={getLocaleTermsURL(APP_NAME)}>{c('Link').t`terms of service`}</Href>;
+    const contactLink = <Href key="contact" href={getAbuseURL()}>{c('Link').t`contact us`}</Href>;
+
+    const [plansResult, planResultLoading] = usePlans();
+    const [user] = useUser();
+    const [paymentStatus] = usePaymentStatus();
+    const [subscription] = useSubscription();
+    const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
+    const { getPreferredCurrency } = useCurrencies();
+    const currency = getPreferredCurrency({
+        user,
+        status: paymentStatus,
+        subscription,
+        plans: plansResult?.plans,
+    });
+    const plansMap = getPlansMap(plansResult?.plans ?? [], currency);
+    const planOptions = [
+        plansMap[PLANS.MAIL],
+        plansMap[PLANS.BUNDLE],
+        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        plansMap[PLANS.FAMILY],
+    ]
+        .map((plan) => {
+            if (!plan) {
+                return null;
+            }
+            const price = getPrice(plan, cycle, plansMap);
+            if (!price) {
+                return null;
+            }
+            return {
+                plan,
+                price,
+            };
+        })
+        .filter(isTruthy);
+
+    useEffect(() => {
+        if (selectedPlan === undefined && planOptions.length) {
+            setSelectedPlan(planOptions[0].plan);
+        }
+    }, [selectedPlan === undefined, planOptions.length]);
 
     return (
-        <ModalTwo {...modalProps}>
+        <ModalTwo {...rest}>
             <ModalTwoHeader hasClose={false} />
             <ModalTwoContent className="mb-8">
                 <div>
@@ -181,7 +200,15 @@ const AccountLockedUpsellModal = ({ modalProps, onSubscribed }: AccountLockedUps
                                 .t`We have plans designed specifically for users like you who need more than one email address.
                             To remove restrictions, you can upgrade to a paid plan.`}
                         </div>
-                        <PlanSelect value={selectedPlan} onChange={(plan) => setSelectedPlan(plan)} />
+                        <div className="py-2">
+                            <PlanSelect
+                                loading={planResultLoading}
+                                currency={currency}
+                                options={planOptions}
+                                value={selectedPlan}
+                                onChange={(plan) => setSelectedPlan(plan)}
+                            />
+                        </div>
                     </div>
                     {features.length && (
                         <>
