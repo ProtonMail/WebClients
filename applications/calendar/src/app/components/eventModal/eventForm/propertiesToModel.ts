@@ -73,7 +73,7 @@ export const propertiesToModel = ({
         end,
         conferenceId: meetingId,
         conferenceUrl: meetingUrl,
-        conferencePasscode: password,
+        conferencePassword: password,
         conferenceHost: meetingHost,
         rest,
     };

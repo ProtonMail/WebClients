@@ -117,7 +117,7 @@ const modelToAttendeeProperties = ({ attendees }: EventModel) => {
 
 const modelToVideoConferenceProperties = ({
     conferenceId,
-    conferencePasscode,
+    conferencePassword,
     conferenceUrl,
     conferenceHost,
 }: Partial<EventModel>) => {
@@ -135,7 +135,7 @@ const modelToVideoConferenceProperties = ({
         'x-pm-conference-url': {
             value: conferenceUrl,
             parameters: {
-                ...(conferencePasscode && { passcode: conferencePasscode }),
+                ...(conferencePassword && { password: conferencePassword }),
                 ...(conferenceHost && { host: conferenceHost }),
             },
         },
@@ -145,12 +145,12 @@ const modelToVideoConferenceProperties = ({
 const modelToDescriptionProperties = ({
     description,
     conferenceId,
-    conferencePasscode,
+    conferencePassword,
     conferenceUrl,
     conferenceHost,
 }: Partial<EventModel>) => {
     // Return the description if there is no Zoom meeting
-    if (!conferenceUrl && !conferenceId && !conferencePasscode) {
+    if (!conferenceUrl && !conferenceId && !conferencePassword) {
         const cleanedDescription = removeZoomInfoFromDescription(description ?? '');
         return { description: { value: cleanedDescription?.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) } };
     }
@@ -162,7 +162,7 @@ const modelToDescriptionProperties = ({
     const newDescription = addZoomInfoToDescription({
         host: conferenceHost,
         meedingURL: conferenceUrl,
-        password: conferencePasscode,
+        password: conferencePassword,
         meetingId: conferenceId,
         description: slicedDescription,
     });

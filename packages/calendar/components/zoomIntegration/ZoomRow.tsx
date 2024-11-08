@@ -122,7 +122,7 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
                 ...model,
                 conferenceId: data?.VideoConference?.ID,
                 conferenceUrl: data?.VideoConference?.URL,
-                conferencePasscode: data?.VideoConference?.Password,
+                conferencePassword: data?.VideoConference?.Password,
                 conferenceHost: user.Email,
             });
             setProcessState('meeting-present');
@@ -194,7 +194,7 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
                         service: VIDEO_CONF_SERVICES.ZOOM,
                         meetingId: model.conferenceId,
                         meetingUrl: model.conferenceUrl,
-                        password: model.conferencePasscode,
+                        password: model.conferencePassword,
                         meetingHost: model.conferenceHost,
                     }}
                 />

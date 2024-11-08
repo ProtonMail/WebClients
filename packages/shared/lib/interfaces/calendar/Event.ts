@@ -181,7 +181,7 @@ export interface EventModelView {
     verificationStatus: EVENT_VERIFICATION_STATUS;
     conferenceId?: string;
     conferenceUrl?: string;
-    conferencePasscode?: string;
+    conferencePassword?: string;
     conferenceHost?: string;
     isConferenceTmpDeleted?: boolean;
     rest?: any;
