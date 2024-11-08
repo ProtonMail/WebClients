@@ -72,6 +72,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     const state = store.getState();
 
                     if (res.ok) {
+                        await onboarding.init().catch(noop);
+
                         telemetry.start().catch(noop);
                         B2BEvents.start().catch(noop);
                         core.i18n.setLocale(selectLocale(state)).catch(noop);
