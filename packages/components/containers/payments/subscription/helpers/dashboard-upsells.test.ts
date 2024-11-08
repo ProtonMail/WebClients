@@ -2,6 +2,7 @@ import { PLANS, PLAN_TYPES, getPlansMap } from '@proton/payments';
 import { APPS, COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import type { Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { buildUser } from '@proton/testing/builders';
 import { getTestPlans } from '@proton/testing/data';
 
 import {
@@ -47,6 +48,7 @@ describe('resolveUpsellsToDisplay', () => {
             hasPaidMail: false,
             openSubscriptionModal: mockedOpenSubscriptionModal,
             plansMap: getPlansMap(getTestPlans('EUR'), 'EUR'),
+            user: buildUser(),
         };
     });
 

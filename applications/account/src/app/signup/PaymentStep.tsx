@@ -40,7 +40,7 @@ import { type Currency } from '@proton/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
-import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, Cycle, Plan } from '@proton/shared/lib/interfaces';
@@ -193,7 +193,7 @@ const PaymentStep = ({
         checkResult: subscriptionData.checkResult,
     });
 
-    const isB2bAudience = getIsB2BAudienceFromPlan(getPlanFromIds(subscriptionData.planIDs));
+    const isB2bAudience = getIsB2BAudienceFromPlan(getPlanNameFromIDs(subscriptionData.planIDs));
     const defaultCycles = isB2bAudience ? [CYCLE.YEARLY, CYCLE.MONTHLY] : undefined;
 
     const [optimisticPlanIDs, setOptimisticPlanIDs] = useState<PlanIDs | null>(null);

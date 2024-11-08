@@ -22,7 +22,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { getPlanFromCheckout, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import {
     getIsB2BAudienceFromPlan,
     getPlanIDs,
@@ -108,7 +108,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             CouponCode: couponCode,
         });
 
-        const plan = getPlanFromCheckout(newPlanIDs, plansMap);
+        const plan = getPlanFromPlanIDs(plansMap, newPlanIDs);
 
         open({
             defaultSelectedProductPlans: selectedProductPlans,

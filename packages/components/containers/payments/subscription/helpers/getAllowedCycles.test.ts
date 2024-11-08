@@ -1,7 +1,7 @@
 import { ADDON_NAMES, type Currency, DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS, type PlanIDs } from '@proton/payments';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
-import { PLANS_MAP, getSubscriptionMock } from '@proton/testing/data';
+import { PLANS_MAP, getSubscriptionMock, getTestPlansMap } from '@proton/testing/data';
 
 import { getAllowedCycles } from './getAllowedCycles';
 
@@ -10,7 +10,9 @@ describe('getAllowedCycles', () => {
         const subscription = undefined;
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.TWO_YEARS;
-        const planIDs: PlanIDs = {};
+        const planIDs: PlanIDs = {
+            [PLANS.MAIL]: 1,
+        };
 
         const result = getAllowedCycles({
             subscription,
@@ -433,6 +435,46 @@ describe('getAllowedCycles', () => {
         });
 
         expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
+
+    it('should not return 1m cycle if it does not exist on the backend', () => {
+        const customPlansMap = getTestPlansMap();
+        customPlansMap[PLANS.MAIL] = {
+            ...(customPlansMap[PLANS.MAIL] as Plan),
+            Pricing: {
+                [CYCLE.YEARLY]: customPlansMap[PLANS.MAIL]!.Pricing[CYCLE.YEARLY],
+            },
+            DefaultPricing: {
+                [CYCLE.YEARLY]: customPlansMap[PLANS.MAIL]!.DefaultPricing?.[CYCLE.YEARLY],
+            },
+        };
+
+        expect(Object.keys(customPlansMap[PLANS.MAIL]?.Pricing ?? {}).map((it) => +it)).toEqual([CYCLE.YEARLY]);
+        expect(Object.keys(customPlansMap[PLANS.MAIL]?.DefaultPricing ?? {}).map((it) => +it)).toEqual([CYCLE.YEARLY]);
+
+        const result = getAllowedCycles({
+            subscription: FREE_SUBSCRIPTION,
+            minimumCycle: CYCLE.MONTHLY,
+            maximumCycle: CYCLE.TWO_YEARS,
+            planIDs: { [PLANS.MAIL]: 1 },
+            plansMap: customPlansMap,
+            currency: DEFAULT_CURRENCY,
+        });
+
+        expect(result).toEqual([CYCLE.YEARLY]);
+    });
+
+    it('should return empty list if plan does not exist', () => {
+        const result = getAllowedCycles({
+            subscription: FREE_SUBSCRIPTION,
+            minimumCycle: CYCLE.MONTHLY,
+            maximumCycle: CYCLE.TWO_YEARS,
+            planIDs: { ['somerandomplan' as any]: 1 },
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
+
+        expect(result).toEqual([]);
     });
 
     describe('defaultCycles', () => {

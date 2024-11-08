@@ -3,17 +3,30 @@ import { c } from 'ttag';
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
 import type { BillingAddress, PAYMENT_METHOD_TYPES, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
-import { type ADDON_NAMES, PLANS, type PlanIDs } from '@proton/payments';
-import { type Currency, DEFAULT_CURRENCY, FREE_SUBSCRIPTION } from '@proton/payments';
+import {
+    type ADDON_NAMES,
+    type Currency,
+    DEFAULT_CURRENCY,
+    FREE_SUBSCRIPTION,
+    PLANS,
+    type PlanIDs,
+} from '@proton/payments';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import {
+    getPlanFromPlanIDs,
+    getPricingFromPlanIDs,
+    hasPlanIDs,
+    isLifetimePlanSelected,
+    switchPlan,
+} from '@proton/shared/lib/helpers/planIDs';
 import {
     getHas2024OfferCoupon,
+    getIsB2BAudienceFromPlan,
     getNormalCycleFromCustomCycle,
     getPlan,
     getPlanIDs,
@@ -233,6 +246,10 @@ const getUpsell = ({
     if (currentPlan && planParameters.defined) {
         if (planParameters.plan.Name === PLANS.VISIONARY) {
             return getUpsellData(planParameters.plan.Name);
+        }
+
+        if (isLifetimePlanSelected(options.planIDs ?? {}) && !getIsB2BAudienceFromPlan(currentPlan.Name)) {
+            return getBlackFridayUpsellData({ plan: getSafePlan(plansMap, PLANS.PASS_LIFETIME) });
         }
 
         if (getHas2024OfferCoupon(options.coupon)) {

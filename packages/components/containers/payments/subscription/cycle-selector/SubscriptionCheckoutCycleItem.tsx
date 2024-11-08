@@ -6,7 +6,7 @@ import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import type { PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
-import { getShortBillingText } from '../../helper';
+import { getShortBillingText } from '../helpers';
 import CycleItemView from './CycleItemView';
 
 const SubscriptionCheckoutCycleItem = ({
@@ -31,7 +31,7 @@ const SubscriptionCheckoutCycleItem = ({
         <div className="p-4 mb-4 border rounded bg-norm flex flex-nowrap items-stretch border-primary border-2">
             <CycleItemView
                 loading={loading}
-                text={getShortBillingText(replacementCycle)}
+                text={getShortBillingText(replacementCycle, planIDs)}
                 currency={currency}
                 discount={result.discountPerCycle}
                 monthlySuffix={c('Suffix').t`/month`}
@@ -39,6 +39,7 @@ const SubscriptionCheckoutCycleItem = ({
                 total={result.withDiscountPerCycle}
                 totalPerMonth={result.withDiscountPerMonth}
                 cycle={cycle}
+                planIDs={planIDs}
             />
         </div>
     );

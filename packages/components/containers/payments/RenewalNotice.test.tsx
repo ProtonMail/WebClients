@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { addMonths } from 'date-fns';
 
-import { ADDON_NAMES, PLANS, type PlanIDs } from '@proton/payments';
+import { ADDON_NAMES, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -730,5 +730,94 @@ describe('<RenewalNotice />', () => {
                 'The specially discounted price of CHF 1 is valid for the first month. Then it will automatically be renewed at CHF 4.99 every month. You can cancel at any time.'
             );
         });
+    });
+});
+
+describe('getPassLifetimeRenewNoticeText', () => {
+    it('should show basic lifetime message when no subscription exists', () => {
+        const { container } = render(
+            <RenewalNotice
+                {...getProps()}
+                cycle={CYCLE.YEARLY}
+                subscription={undefined}
+                planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+            />
+        );
+
+        expect(container).toHaveTextContent(
+            "Pass lifetime deal has no renewal price, it's a one-time payment for lifetime access to Pass."
+        );
+    });
+
+    it('should show basic lifetime message for free plan', () => {
+        const subscription = {
+            Plans: [
+                {
+                    Name: PLANS.FREE,
+                },
+            ],
+        } as Subscription;
+
+        const { container } = render(
+            <RenewalNotice
+                {...getProps()}
+                cycle={CYCLE.YEARLY}
+                subscription={subscription}
+                planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+            />
+        );
+
+        expect(container).toHaveTextContent(
+            "Pass lifetime deal has no renewal price, it's a one-time payment for lifetime access to Pass."
+        );
+    });
+
+    it('should show replacement message for Pass Plus subscribers', () => {
+        const subscription = {
+            Plans: [
+                {
+                    Type: PLAN_TYPES.PLAN,
+                    Name: PLANS.PASS,
+                },
+            ],
+        } as Subscription;
+
+        const { container } = render(
+            <RenewalNotice
+                {...getProps()}
+                cycle={CYCLE.YEARLY}
+                subscription={subscription}
+                planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+            />
+        );
+
+        expect(container).toHaveTextContent(
+            "Your Pass Plus subscription will be replaced with Pass Lifetime. The remaining balance of your subscription will be added to your account. Pass lifetime deal has no renewal price, it's a one-time payment for lifetime access to Pass."
+        );
+    });
+
+    it('should show unchanged subscription message for other plan subscribers', () => {
+        const subscription = {
+            Plans: [
+                {
+                    Type: PLAN_TYPES.PLAN,
+                    Name: PLANS.MAIL,
+                    Title: 'Mail Plus',
+                },
+            ],
+        } as Subscription;
+
+        const { container } = render(
+            <RenewalNotice
+                {...getProps()}
+                cycle={CYCLE.YEARLY}
+                subscription={subscription}
+                planIDs={{ [PLANS.PASS_LIFETIME]: 1 }}
+            />
+        );
+
+        expect(container).toHaveTextContent(
+            "Pass lifetime deal has no renewal price, it's a one-time payment for lifetime access to Pass. Your Mail Plus subscription renewal price and date remain unchanged."
+        );
     });
 });

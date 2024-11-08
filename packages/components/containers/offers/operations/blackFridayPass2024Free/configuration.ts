@@ -4,7 +4,11 @@ import { FeatureCode } from '@proton/features';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 
-import { getFamilyPassFeatures, getUnlimitedInboxFeaturesForPass } from '../../helpers/offerCopies';
+import {
+    getFamilyPassFeatures,
+    getLifetimePassFeatures,
+    getUnlimitedInboxFeaturesForPass,
+} from '../../helpers/offerCopies';
 import type { OfferConfig } from '../../interface';
 import Layout from './Layout';
 
@@ -31,12 +35,26 @@ const config: OfferConfig = {
                 [PLANS.PASS_FAMILY]: 1,
             },
             cycle: CYCLE.YEARLY,
+            popular: 2,
+            buttonSize: 'large',
+            mobileOrder: 2,
+            couponCode: COUPON_CODES.BLACK_FRIDAY_2024,
+            features: getFamilyPassFeatures,
+        },
+        {
+            ref: 'bf_24_pass-free-passlifetime12',
+            dealName: `${PLAN_NAMES[PLANS.PASS_LIFETIME]}`,
+            planIDs: {
+                [PLANS.PASS_LIFETIME]: 1,
+            },
+            cycle: CYCLE.YEARLY,
             popular: 1,
+            isLifeTime: true,
             buttonSize: 'large',
             mobileOrder: 1,
             couponCode: COUPON_CODES.BLACK_FRIDAY_2024,
-            features: getFamilyPassFeatures,
-            header: () => c('BF2024: Info').t`Most popular`,
+            features: getLifetimePassFeatures,
+            bubbleText: c('BF2024: info').t`Limited stock!`,
         },
         {
             ref: 'bf_24_pass-free-unlimited12',

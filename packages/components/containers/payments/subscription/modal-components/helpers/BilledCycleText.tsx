@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { CYCLE } from '@proton/shared/lib/constants';
 import type { Cycle } from '@proton/shared/lib/interfaces';
 
-export const BilledText = ({ cycle }: { cycle: Cycle }) => {
+export const BilledCycleText = ({ cycle }: { cycle: Cycle }) => {
     let text: string = useMemo(() => {
         switch (cycle) {
             case CYCLE.TWO_YEARS:
@@ -25,5 +25,9 @@ export const BilledText = ({ cycle }: { cycle: Cycle }) => {
         }
     }, [cycle]);
 
-    return <span className="color-weak text-sm">{text}</span>;
+    return (
+        <span className="color-weak text-sm" data-testid="billed-cycle-text">
+            {text}
+        </span>
+    );
 };

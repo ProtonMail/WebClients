@@ -14,8 +14,7 @@ import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/
 import type { PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { getShortBillingText } from '../../helper';
-import { getDiscountPrice } from '../helpers';
+import { getDiscountPrice, getShortBillingText } from '../helpers';
 import CycleItemView from './CycleItemView';
 
 const CycleItem = ({
@@ -24,19 +23,21 @@ const CycleItem = ({
     cycle,
     monthlySuffix,
     loading,
+    planIDs,
 }: {
     totals: TotalPricings;
     monthlySuffix: string;
     cycle: CYCLE;
     currency: Currency;
     loading: boolean;
+    planIDs: PlanIDs;
 }) => {
     const freeMonths = 0;
     const { discountedTotal, viewPricePerMonth, discount } = totals[cycle];
 
     return (
         <CycleItemView
-            text={getShortBillingText(cycle)}
+            text={getShortBillingText(cycle, planIDs)}
             currency={currency}
             discount={discount}
             monthlySuffix={monthlySuffix}
@@ -45,6 +46,7 @@ const CycleItem = ({
             totalPerMonth={viewPricePerMonth}
             cycle={cycle}
             loading={loading}
+            planIDs={planIDs}
         />
     );
 };
@@ -113,9 +115,9 @@ const SubscriptionCycleSelector = ({
                 >
                     {allowedCycles.map((cycle) => {
                         return (
-                            <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
+                            <Option value={cycle} title={getShortBillingText(cycle, planIDs)} key={cycle}>
                                 <div className="flex justify-space-between">
-                                    <span className="shrink-0">{getShortBillingText(cycle)}</span>
+                                    <span className="shrink-0">{getShortBillingText(cycle, planIDs)}</span>
                                     <span className={clsx(['shrink-0', cycle !== selectedCycle && 'color-success'])}>
                                         {getDiscountPrice(totals[cycle].discount, currency)}
                                     </span>
@@ -132,7 +134,7 @@ const SubscriptionCycleSelector = ({
         <ul className={clsx('unstyled m-0 plan-cycle-selector', fadedClasses)}>
             {allowedCycles.map((cycle) => {
                 const isSelected = cycle === selectedCycle;
-                const billingText = getShortBillingText(cycle);
+                const billingText = getShortBillingText(cycle, planIDs);
                 // translator: "Select billing cycle 1 month" or "Select billing cycle 2 months"
                 const ariaLabel = c('Action').t`Select billing cycle ${billingText}`;
 
@@ -165,6 +167,7 @@ const SubscriptionCycleSelector = ({
                                 currency={currency}
                                 cycle={cycle}
                                 loading={!!loading}
+                                planIDs={planIDs}
                             />
                         </button>
                     </li>

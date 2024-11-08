@@ -67,6 +67,7 @@ const YourPlanSection = ({ app }: Props) => {
         serversCount,
         openSubscriptionModal,
         canAccessDuoPlan,
+        user,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 

@@ -26,10 +26,11 @@ const isEligible = ({ subscription, protonConfig, user, lastSubscriptionEnd = 0,
     const hasValidApp =
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONPASS) ||
         protonConfig.APP_NAME === APPS.PROTONPASS;
-    const { canPay, isDelinquent } = user;
+    const { canPay, isDelinquent, hasPassLifetime } = user;
     const notDelinquent = !isDelinquent;
     const isNotExternal = !isManagedExternally(subscription);
     const hasBF2024Coupon = hasOneBF2024Coupon(subscription) || usedBfOffer;
+    const notLifetime = !hasPassLifetime;
 
     const isPreferredCurrencyEligible = hasEligibileCurrencyForBF(preferredCurrency);
 
@@ -40,6 +41,7 @@ const isEligible = ({ subscription, protonConfig, user, lastSubscriptionEnd = 0,
         notDelinquent &&
         isPreferredCurrencyEligible &&
         hasPlus &&
+        notLifetime &&
         !hasBF2024Coupon &&
         isBefore(fromUnixTime(lastSubscriptionEnd), FREE_DOWNGRADER_LIMIT)
     );
