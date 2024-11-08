@@ -1,4 +1,4 @@
-import { type InternalEventBus } from '@proton/docs-shared'
+import { InternalEventPublishStrategy, type InternalEventBus } from '@proton/docs-shared'
 import type { DecryptedNode, DriveCompat } from '@proton/drive-store'
 
 import type {
@@ -10,51 +10,92 @@ import type {
   RecentDocumentsSnapshotData,
 } from './types'
 import { RecentDocumentStateUpdatedEvent } from './types'
-import { RecentDocumentsLocalStorage } from './RecentDocumentsLocalStorage'
+import type { DocsApi } from '../../Api/DocsApi'
+import type { LoggerInterface } from '@proton/utils/logs'
 
-export class StubRecentDocumentsService implements RecentDocumentsInterface {
+type ResolvedItem = {
+  node: DecryptedNode
+  nodePath: string[]
+  isOwnedByOthers: boolean
+}
+
+export class RecentDocumentsService implements RecentDocumentsInterface {
   state: RecentDocumentServiceState = 'not_fetched'
-  recentDocuments?: RecentDocument[] = undefined
-  nodes?: DecryptedNode[] = undefined
-  nodePaths?: string[][] = undefined
-  isNodeAtIndexOwnedByOthers?: boolean[] = undefined
+  recentDocuments: RecentDocument[] = []
+  record: Map<string, ResolvedItem> = new Map()
 
   constructor(
     private eventBus: InternalEventBus,
     private driveCompat: DriveCompat,
+    private docsApi: DocsApi,
+    private logger: LoggerInterface,
   ) {}
 
-  setState(newState: RecentDocumentServiceState) {
-    this.state = newState
+  async notifyStateUpdated() {
     const event: EventRecentDocumentStateUpdated = {
       type: RecentDocumentStateUpdatedEvent,
-      payload: newState,
+      payload: undefined,
     }
-    this.eventBus.publish(event)
+
+    await this.eventBus.publishSync(event, InternalEventPublishStrategy.SEQUENCE)
+  }
+
+  async setStatusAndNotify(status: RecentDocumentServiceState) {
+    this.state = status
+    await this.notifyStateUpdated()
   }
 
   async fetch() {
-    this.setState('fetching')
-    this.recentDocuments = RecentDocumentsLocalStorage.load()
+    await this.setStatusAndNotify('fetching')
+
+    const response = await this.docsApi.fetchRecentDocuments()
+    if (response.isFailed()) {
+      await this.setStatusAndNotify('not_fetched')
+      return
+    }
+
+    this.recentDocuments = response.getValue().RecentDocuments.map((item) => ({
+      linkId: item.LinkID,
+      shareId: item.ContextShareID,
+      lastViewed: item.LastOpenTime,
+    }))
+
+    await this.setStatusAndNotify('resolving')
+
     const ids = this.recentDocuments.map((recentDocument) => ({
       linkId: recentDocument.linkId,
       shareId: recentDocument.shareId,
     }))
+
+    await Promise.all(ids.map((item) => this.resolveItem(item)))
+
+    await this.setStatusAndNotify('done')
+  }
+
+  async resolveItem(item: { linkId: string; shareId: string }) {
     try {
-      this.nodes = await this.driveCompat.getNodes(ids)
-      this.nodePaths = (await this.driveCompat.getNodePaths(ids)).map((pathItems) =>
-        pathItems.map((pathItem) => pathItem.name),
-      )
-      this.isNodeAtIndexOwnedByOthers = await this.driveCompat.getNodesAreShared(ids)
-    } catch (e) {
-      RecentDocumentsLocalStorage.clear()
-    } finally {
-      this.setState('fetched')
+      const [node, nodePath, isNodeAtIndexOwnedByOthers] = await Promise.all([
+        this.driveCompat.getNodes([item]).then((nodes) => nodes[0]),
+        this.driveCompat.getNodePaths([item]).then((paths) => paths[0]),
+        this.driveCompat.getNodesAreShared([item]).then((shared) => shared[0]),
+      ])
+
+      const record: ResolvedItem = {
+        node,
+        nodePath: nodePath.map((pathItem) => pathItem.name),
+        isOwnedByOthers: isNodeAtIndexOwnedByOthers,
+      }
+
+      this.record.set(item.linkId, record)
+
+      await this.notifyStateUpdated()
+    } catch (error) {
+      this.logger.error('Failed to resolve recent document', { error, item })
     }
   }
 
   async trashDocument(recentDocument: RecentDocumentsSnapshotData): Promise<void> {
-    this.setState('fetching')
+    await this.setStatusAndNotify('fetching')
 
     if (!recentDocument.parentLinkId) {
       throw new Error('Node does not have parent link ID')
@@ -65,27 +106,26 @@ export class StubRecentDocumentsService implements RecentDocumentsInterface {
       recentDocument.parentLinkId,
     )
 
-    this.setState('fetched')
+    await this.setStatusAndNotify('done')
   }
 
   getSnapshot(): RecentDocumentsSnapshot {
     const data: RecentDocumentsSnapshot['data'] = this.recentDocuments
-      ?.map((recentDocument, i) => {
-        const decryptedNode = this.nodes?.find((node) => node.nodeId === recentDocument.linkId)
-
-        if (!decryptedNode) {
+      .map((recentDocument) => {
+        const record = this.record.get(recentDocument.linkId)
+        if (!record) {
           return undefined
         }
 
         return {
-          name: decryptedNode.name,
+          name: record.node.name,
           linkId: recentDocument.linkId,
-          volumeId: decryptedNode.volumeId,
-          parentLinkId: decryptedNode.parentNodeId,
-          location: this.isNodeAtIndexOwnedByOthers?.[i] ? ['Shared with me'] : this.nodePaths?.[i],
-          isSharedWithMe: this.isNodeAtIndexOwnedByOthers?.[i],
+          volumeId: record.node.volumeId,
+          parentLinkId: record.node.parentNodeId,
+          location: record.isOwnedByOthers ? ['Shared with me'] : record.nodePath,
+          isSharedWithMe: record.isOwnedByOthers,
           lastViewed: recentDocument.lastViewed,
-          createdBy: decryptedNode.signatureAddress,
+          createdBy: record.node.signatureAddress,
         }
       })
       .filter((item) => !!item)

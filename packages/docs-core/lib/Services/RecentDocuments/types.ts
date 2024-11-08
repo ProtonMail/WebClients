@@ -1,5 +1,4 @@
-export type RecentDocumentServiceState = 'not_fetched' | 'fetching' | 'fetched'
-
+export type RecentDocumentServiceState = 'not_fetched' | 'fetching' | 'resolving' | 'done'
 export type RecentDocument = {
   linkId: string
   shareId: string
@@ -10,7 +9,7 @@ export const RecentDocumentStateUpdatedEvent = 'RecentDocumentStateUpdated'
 
 export type EventRecentDocumentStateUpdated = {
   type: typeof RecentDocumentStateUpdatedEvent
-  payload: RecentDocumentServiceState
+  payload: undefined
 }
 
 export type RecentDocumentsSnapshotData = {
@@ -25,13 +24,13 @@ export type RecentDocumentsSnapshotData = {
 }
 
 export type RecentDocumentsSnapshot = {
-  data?: RecentDocumentsSnapshotData[]
+  data: RecentDocumentsSnapshotData[]
   state: RecentDocumentServiceState
 }
 
 export interface RecentDocumentsInterface {
   state: RecentDocumentServiceState
-  recentDocuments?: RecentDocument[]
+  recentDocuments: RecentDocument[]
   getSnapshot(): RecentDocumentsSnapshot
   fetch(): Promise<void>
   trashDocument(recentDocument: RecentDocumentsSnapshotData): Promise<void>

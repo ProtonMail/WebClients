@@ -4,14 +4,13 @@ import { useContactEmails } from '@proton/mail/contactEmails/hooks'
 import {
   DateFormatter,
   type RecentDocumentServiceState,
-  type RecentDocumentsSnapshot,
   type RecentDocumentsSnapshotData,
   RecentDocumentStateUpdatedEvent,
 } from '@proton/docs-core'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
-import { createContext, type ReactNode, useContext, useEffect, useState } from 'react'
+import { createContext, type ReactNode, useCallback, useContext, useEffect, useState } from 'react'
 import { useApplication } from '../../Containers/ApplicationProvider'
 
 const dateFormatter = new DateFormatter()
@@ -62,53 +61,70 @@ export const getDisplayName = (recentDocument: RecentDocumentsSnapshotData, cont
 
 export const useRecentDocumentsValue = ({ searchText, filter }: { searchText?: string; filter?: string }) => {
   const application = useApplication()
-  const [state, setState] = useState<RecentDocumentsSnapshot>(application.recentDocumentsService.getSnapshot())
+  const [state, setState] = useState<RecentDocumentServiceState>(application.recentDocumentsService.state)
+  const [resolvedItems, setResolvedItems] = useState<RecentDocumentsSnapshotData[]>([])
   const [filteredItems, setFilteredItems] = useState<RecentDocumentsSnapshotData[]>([])
   const [contactEmails] = useContactEmails()
+  const { getLocalID } = useAuthentication()
 
   useEffect(() => {
-    return application.eventBus.addEventCallback((newState: RecentDocumentServiceState) => {
+    return application.eventBus.addEventCallback((_newState: RecentDocumentServiceState) => {
       const snapshot = application.recentDocumentsService.getSnapshot()
-      if (!snapshot) {
-        return
-      }
-      setState(snapshot)
+      setResolvedItems(snapshot.data)
+      setFilteredItems(filterItems(snapshot.data, searchText, filter))
+      setState(snapshot.state)
     }, RecentDocumentStateUpdatedEvent)
-  }, [application])
+  }, [application, filter, searchText])
 
   useEffect(() => {
-    setFilteredItems(filterItems(state.data, searchText, filter))
-  }, [searchText, filter, state.data])
+    setFilteredItems(filterItems(resolvedItems, searchText, filter))
+  }, [searchText, filter, resolvedItems])
 
   useEffect(() => {
     void application.recentDocumentsService.fetch()
-  }, [])
+  }, [application.recentDocumentsService])
 
-  const { getLocalID } = useAuthentication()
+  const handleOpenDocument = useCallback(
+    (recentDocument: RecentDocumentsSnapshotData) => {
+      const to = `/doc?mode=open&volumeId=${recentDocument.volumeId}&linkId=${recentDocument.linkId}`
+      window.open(getAppHref(to, APPS.PROTONDOCS, getLocalID()))
+    },
+    [getLocalID],
+  )
 
-  const handleOpenDocument = (recentDocument: RecentDocumentsSnapshotData) => {
-    const to = `/doc?mode=open&volumeId=${recentDocument.volumeId}&linkId=${recentDocument.linkId}`
-    window.open(getAppHref(to, APPS.PROTONDOCS, getLocalID()))
-  }
+  const handleOpenFolder = useCallback(
+    (recentDocument: RecentDocumentsSnapshotData) => {
+      const to = `/${recentDocument.volumeId}/folder/${recentDocument.parentLinkId}`
+      window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()))
+    },
+    [getLocalID],
+  )
 
-  const handleOpenFolder = (recentDocument: RecentDocumentsSnapshotData) => {
-    const to = `/${recentDocument.volumeId}/folder/${recentDocument.parentLinkId}`
-    window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()))
-  }
+  const handleTrashDocument = useCallback(
+    (recentDocument: RecentDocumentsSnapshotData) => {
+      void application.recentDocumentsService.trashDocument(recentDocument)
+    },
+    [application.recentDocumentsService],
+  )
+
+  const getDisplayNameForRecentDocument = useCallback(
+    (recentDocument: RecentDocumentsSnapshotData): string | undefined => getDisplayName(recentDocument, contactEmails),
+    [contactEmails],
+  )
+
+  const getDisplayDateForRecentDocument = useCallback(
+    (recentDocument: RecentDocumentsSnapshotData): string => dateFormatter.formatDate(recentDocument.lastViewed),
+    [],
+  )
 
   return {
     state,
     items: filteredItems,
-    handleTrashDocument: (recentDocument: RecentDocumentsSnapshotData) => {
-      void application.recentDocumentsService.trashDocument(recentDocument)
-    },
+    handleTrashDocument,
     handleOpenDocument,
     handleOpenFolder,
-    getDisplayName: (recentDocument: RecentDocumentsSnapshotData): string | undefined =>
-      getDisplayName(recentDocument, contactEmails),
-    getDisplayDate: (recentDocument: RecentDocumentsSnapshotData): string => {
-      return dateFormatter.formatDate(recentDocument.lastViewed)
-    },
+    getDisplayName: getDisplayNameForRecentDocument,
+    getDisplayDate: getDisplayDateForRecentDocument,
     getLocalID,
   }
 }
