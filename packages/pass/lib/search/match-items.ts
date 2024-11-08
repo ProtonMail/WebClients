@@ -2,7 +2,7 @@ import type { IdentityValues, ItemRevision, ItemType } from '@proton/pass/types'
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
-import { matchEvery } from './match-every';
+import { matchSome } from './match-some';
 import type { ItemMatchFunc, ItemMatchFuncMap } from './types';
 
 /** Matches a single field from the item using a getter function,
@@ -11,14 +11,14 @@ const matchField =
     <T extends ItemType>(getter: (item: ItemRevision<T>) => string): ItemMatchFunc<T> =>
     (item) =>
     (needles) =>
-        matchEvery(needles)(getter(item));
+        matchSome(needles)(getter(item));
 
 /** Matches any field from an array returned by the getter function. */
 const matchFields =
     <T extends ItemType>(getter: (item: ItemRevision<T>) => string[]): ItemMatchFunc<T> =>
     (item) =>
     (needles) =>
-        getter(item).some((field) => matchEvery(needles)(field));
+        getter(item).some((field) => matchSome(needles)(field));
 
 /** Matches fields from an `IterableIterator` returned by the getter function.
  * Uses lazy evaluation and early return for efficiency. */
@@ -26,7 +26,7 @@ const matchFieldsLazy =
     <T extends ItemType>(getter: (item: ItemRevision<T>) => IterableIterator<string>): ItemMatchFunc<T> =>
     (item) =>
     (needles) => {
-        for (const field of getter(item)) if (matchEvery(needles)(field)) return true;
+        for (const field of getter(item)) if (matchSome(needles)(field)) return true;
         return false;
     };
 
