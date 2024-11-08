@@ -1415,7 +1415,7 @@ export default function DocumentEditorToolbar({
               shape="solid"
               type="button"
               disabled={!hasEditAccess}
-              className="ml-auto flex-shrink-0 gap-2 py-2 text-sm"
+              className="ml-auto grid flex-shrink-0 grid-cols-2 grid-rows-1 justify-items-start gap-2 py-2 text-sm md:grid-cols-[1rem_1fr_1rem]"
               style={{
                 border: '0',
                 backgroundColor: isSuggestionMode ? 'var(--signal-success)' : undefined,
@@ -1424,27 +1424,25 @@ export default function DocumentEditorToolbar({
               caretClassName="!ml-0"
               content={
                 <>
-                  {isEditMode && (
-                    <>
-                      <Icon name="pencil" className="flex-shrink-0" />
-                      <span className="flex-shrink-0 [display:none] md:block">{c('Info').t`Editing`}</span>
-                    </>
-                  )}
-                  {isSuggestionMode && (
-                    <>
-                      <SpeechBubblePenIcon className="h-4 w-4 flex-shrink-0" />
-                      <span className="flex-shrink-0 [display:none] md:block">{c('Info').t`Suggesting`}</span>
-                    </>
-                  )}
-                  {isPreviewMode && (
-                    <>
-                      <Icon name="eye" className="flex-shrink-0" />
-                      <span className="flex-shrink-0 [display:none] md:block">{c('Info').t`Viewing`}</span>
-                    </>
-                  )}
+                  <div className={clsx('contents *:[grid-row:1]', isEditMode ? '*:opacity-100' : '*:[opacity:0]')}>
+                    <Icon name="pencil" className="flex-shrink-0 [grid-column:1]" />
+                    <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
+                      .t`Editing`}</span>
+                  </div>
+                  <div
+                    className={clsx('contents *:[grid-row:1]', isSuggestionMode ? '*:opacity-100' : '*:[opacity:0]')}
+                  >
+                    <SpeechBubblePenIcon className="h-4 w-4 flex-shrink-0 [grid-column:1]" />
+                    <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
+                      .t`Suggesting`}</span>
+                  </div>
+                  <div className={clsx('contents *:[grid-row:1]', isPreviewMode ? '*:opacity-100' : '*:[opacity:0]')}>
+                    <Icon name="eye" className="flex-shrink-0 [grid-column:1]" />
+                    <span className="flex-shrink-0 [display:none] [grid-column:2] md:block">{c('Info')
+                      .t`Viewing`}</span>
+                  </div>
                 </>
               }
-              // hasCaret={!viewportWidth['<=small']}
               contentProps={DropdownContentProps}
               data-testid="edit-options-dropdown"
               data-interaction-mode={userMode}
