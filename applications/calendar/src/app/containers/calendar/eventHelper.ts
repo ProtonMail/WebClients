@@ -1,5 +1,6 @@
 import { differenceInHours, fromUnixTime } from 'date-fns';
 
+import { TMP_UNIQUE_ID } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { addDays, max } from '@proton/shared/lib/date-fns-utc';
@@ -81,7 +82,7 @@ export const getCreateTemporaryEvent = (
     tzid: string
 ): CalendarViewEventTemporaryEvent => {
     return {
-        uniqueId: 'tmp',
+        uniqueId: TMP_UNIQUE_ID,
         data: {
             calendarData: Calendar,
         },
@@ -98,7 +99,7 @@ export const getEditTemporaryEvent = (
 ): CalendarViewEventTemporaryEvent => {
     const { uniqueId, data } = targetEvent;
     return {
-        uniqueId: 'tmp',
+        uniqueId: TMP_UNIQUE_ID,
         targetUniqueId: (targetEvent as CalendarViewEventTemporaryEvent).targetUniqueId || uniqueId,
         data,
         ...getCalendarViewEventProperties(model, tzid),
