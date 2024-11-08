@@ -509,6 +509,10 @@
       "Submitting report...": [
         "Invio della segnalazione..."
       ],
+      "Sync alias": [
+        "Sincronizza l'alias",
+        "Sincronizza gli alias"
+      ],
       "Sync aliases": [
         "Sincronizza gli alias"
       ],
@@ -1845,6 +1849,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Non puoi cambiare le caselle di posta associate a questo alias."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Hai un alias ${ aliasCount } presente in SimpleLogin ma mancante in ${ PASS_APP_NAME }. Desideri sincronizzarlo?",
+        "Hai alias ${ aliasCount } presenti in SimpleLogin ma mancanti in ${ PASS_APP_NAME }. Desideri sincronizzarli?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Hai ancora ${ daysRemaining } giorno per provare queste e le altre funzionalità premium.",
         "Hai ancora ${ daysRemaining } giorni per provare queste e le altre funzionalità premium."
@@ -3004,6 +3012,9 @@
       "Sync alias": [
         "Sincronizza l'alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Sincronizza i tuoi alias da SimpleLogin"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Grazie per aver installato ${ PASS_APP_NAME }"
       ],
@@ -3167,6 +3178,9 @@
       ],
       "No results": [
         "Nessun risultato"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Una volta sincronizzati, l'eliminazione degli alias in ${ PASS_SHORT_APP_NAME } li eliminerà anche in SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sono consentiti solo caratteri alfanumerici, punti, trattini e trattini bassi"

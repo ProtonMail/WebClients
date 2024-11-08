@@ -5375,6 +5375,9 @@
       "Less details": [
         "Menos detalles"
       ],
+      "Meeting host:": [
+        "Organizador de la reunión:"
+      ],
       "Meeting link:": [
         "Enlace de la reunión:"
       ],
@@ -10391,6 +10394,9 @@
         "${ n } cuenta de usuario",
         "${ n } cuentas de usuario"
       ],
+      "Activity log": [
+        "Registro de actividad"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel de administración para gestionar usuarios y suscripciones"
       ]
@@ -13930,11 +13936,11 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom Meeting": [
-        "Unirse a la reunión de Zoom"
-      ],
       "Meeting ID:": [
         "Identificador de la reunión:"
+      ],
+      "Passcode:": [
+        "Código de acceso:"
       ]
     }
   }

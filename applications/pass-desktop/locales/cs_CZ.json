@@ -172,6 +172,9 @@
       "Delete all": [
         "Smazat vše"
       ],
+      "Delete it, I will never need it": [
+        "Smazat, nikdy ho nebudu potřebovat"
+      ],
       "Delete password": [
         "Smazat heslo"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Zrušit výběr"
+      ],
+      "Disable alias": [
+        "Deaktivovat alias"
       ],
       "Disable instead": [
         "Místo toho deaktivovat"
@@ -517,6 +523,12 @@
       "Submitting report...": [
         "Odesílání hlášení..."
       ],
+      "Sync alias": [
+        "Synchronizovat alias",
+        "Synchronizovat aliasy",
+        "Synchronizovat aliasy",
+        "Synchronizovat aliasy"
+      ],
       "Sync aliases": [
         "Synchronizovat aliasy"
       ],
@@ -531,6 +543,12 @@
       ],
       "Try for free": [
         "Vyzkoušet zdarma"
+      ],
+      "Understood, I will never need it": [
+        "Rozumím, nikdy ho nebudu potřebovat",
+        "Rozumím, nikdy je nebudu potřebovat",
+        "Rozumím, nikdy je nebudu potřebovat",
+        "Rozumím, nikdy je nebudu potřebovat"
       ],
       "Unlock": [
         "Odemknout"
@@ -1730,6 +1748,12 @@
       "Please enter your current PIN code to continue": [
         "Pro pokračování zadejte svůj aktuální PIN kód"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Upozorňujeme, že jednou smazaný alias nelze obnovit. Nechcete alias raději deaktivovat?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Upozorňujeme, že jednou smazaný alias nelze obnovit. Alias je již deaktivován a nepřeposílá e-maily do vaší e-mailové schránky"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Pro předběžný přístup k webové aplikaci ${ PASS_APP_NAME } prosím navyšte svůj tarif"
       ],
@@ -1972,6 +1996,12 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Máte ${ aliasCount } alias, který je přítomen v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete jej synchronizovat?",
+        "Máte ${ aliasCount } aliasy, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je synchronizovat?",
+        "Máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je synchronizovat?",
+        "Máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je synchronizovat?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } den.",
@@ -3270,6 +3300,12 @@
       "Pinned (${ items.length })": [
         "Připnuto (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Upozorňujeme, že jednou smazaný alias nelze obnovit.",
+        "Upozorňujeme, že jednou smazané aliasy nelze obnovit.",
+        "Upozorňujeme, že jednou smazané aliasy nelze obnovit.",
+        "Upozorňujeme, že jednou smazané aliasy nelze obnovit."
+      ],
       "Recommended actions": [
         "Doporučené akce"
       ],
@@ -3342,6 +3378,9 @@
       "Sync alias": [
         "Synchronizovat alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Synchronizujte své aliasy ze SimpleLogin"
+      ],
       "Transfer ownership": [
         "Převod vlastnictví"
       ],
@@ -3392,6 +3431,12 @@
       ],
       "Your welcome gift": [
         "Váš dárek na uvítanou"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Chystáte se trvale smazat ${ aliasCount } alias",
+        "Chystáte se trvale smazat ${ aliasCount } aliasy",
+        "Chystáte se trvale smazat ${ aliasCount } aliasů",
+        "Chystáte se trvale smazat ${ aliasCount } aliasů"
       ]
     },
     "Validation": {
@@ -3447,6 +3492,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Nepodařilo se odeslat pozvánky těmto adresám:"
+      ],
+      "Delete alias": [
+        "Smazat alias"
       ],
       "Duplicate email addresses.": [
         "Duplicitní e-mailové adresy."
@@ -3522,6 +3570,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Po synchronizaci se smazáním aliasů v ${ PASS_SHORT_APP_NAME } smažou také aliasy v SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"

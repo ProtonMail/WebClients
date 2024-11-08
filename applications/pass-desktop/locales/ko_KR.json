@@ -517,6 +517,9 @@
       "Submitting report...": [
         "보고서 제출 중..."
       ],
+      "Sync alias": [
+        "별칭 동기화"
+      ],
       "Sync aliases": [
         "별칭 동기화"
       ],
@@ -1913,6 +1916,9 @@
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "SimpleLogin에는 존재하지만 ${ PASS_APP_NAME }에는 존재하지 않는 ${ aliasCount }개의 별칭이 있습니다. 연동하시겠어요?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
       ],
@@ -3246,6 +3252,9 @@
       "Sync alias": [
         "별칭 동기화"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "SimpleLogin에서 별칭 동기화"
+      ],
       "Transfer ownership": [
         "소유권 이전"
       ],
@@ -3423,6 +3432,9 @@
       ],
       "Offline": [
         "오프라인"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "한 번 연동하면, ${ PASS_SHORT_APP_NAME }에서 별칭 삭제 시 SimpleLogin에서도 삭제됩니다."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."

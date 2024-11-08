@@ -55,6 +55,9 @@
       "Add domain": [
         "Lisää verkkotunnus"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Lisää ${ BRAND_NAME } Scribe -lisenssejä"
+      ],
       "Add PayPal": [
         "Lisää PayPal"
       ],
@@ -3198,6 +3201,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-suojausavaimella"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Olet saavuttanut ${ maxSecurityKeyLength } suojausavaimen enimmäismäärän.",
+        "Olet saavuttanut ${ maxSecurityKeyLength } suojausavaimen enimmäismäärän."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Suojausavaimesi on valmis käyttöön."
       ]
@@ -3834,6 +3841,9 @@
       ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Poista kaikki muut MX-tietueet tai varmista, että ${ MAIL_APP_NAME }in painotus on pienin numero."
@@ -5477,9 +5487,6 @@
       ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
-      ],
-      "Enable video conferencing ": [
-        "Ota videoneuvottelu käyttöön "
       ],
       "Enter the code displayed on your TV": [
         "Syötä televisiossasi näkyvä koodi"
@@ -8345,6 +8352,9 @@
       "If you sign out before you reset your password, you could lose access to your account.": [
         "Jos kirjaudut ulos ennen kuin olet nollannut salasanasi, voit menettää tilisi käyttöoikeuden."
       ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Jos kirjaudut ulos nollaamatta salasanaasi, voit menettää pääsyn tilillesi."
+      ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Aikaa jäljellä kunnes voit nollata salasanasi: ${ boldTimeLeft }."
       ]
@@ -8680,7 +8690,7 @@
         "Virheellinen vahvistuskoodi"
       ],
       "It’s the only way to fully restore your account, so make sure to keep it somewhere safe.": [
-        "Se on ainoa tapa palauttaa tilisi kokonaan, joten muista tallentaa se turvalliseen paikkaan."
+        "Se on ainoa tapa palauttaa tilisi kokonaan, joten varmista, että säilytät sen jossakin turvallisessa paikassa."
       ],
       "Join ${ organizationName }": [
         "Liity organisaatioon ${ organizationName }"
@@ -8701,7 +8711,7 @@
         "Poistetaanko kertakirjautuminen organisaatioltasi?"
       ],
       "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
-        "Aseta varasalasana suojauksen parantamiseksi. Voit kirjautua sillä sisään, jos lukittaudut ulos, joten tallenna se turvalliseen paikkaan."
+        "Aseta varasalasana suojauksen parantamiseksi. Voit kirjautua sillä sisään, jos lukittaudut ulos. Varmista, että säilytät sen jossakin turvallisessa paikassa."
       ],
       "Set your backup password": [
         "Määritä varasalasanasi"
@@ -10305,9 +10315,6 @@
       ],
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
-      ],
-      "Video conference": [
-        "Videoneuvottelu"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Lähetämme uuteen osoitteeseesi sähköpostiviestin, jossa on ohjeet muutoksen tekemiseen."
