@@ -49,6 +49,10 @@ export const getWindowBounds = (): WindowBounds => {
 };
 
 export const saveWindowBounds = (browserWindow: BrowserWindow, overrides: Partial<WindowBounds> = {}) => {
+    if (browserWindow.isDestroyed()) {
+        return;
+    }
+
     const newBounds = {
         ...browserWindow.getBounds(),
         maximized: browserWindow.isMaximized(),
