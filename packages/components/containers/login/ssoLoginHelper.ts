@@ -235,6 +235,16 @@ export const getSSOSetupData = async ({
 }): Promise<SSOSetupData | null> => {
     const { api, verifyOutboundPublicKeys, appName } = cache;
 
+    // Temporary to get the feature flag in this user-context. Remove when fully enabled.
+    const { toggles } = await api<{ toggles: { name: string; enabled: boolean }[] }>({
+        url: `feature/v2/frontend`,
+        method: 'get',
+    });
+
+    if (!toggles.some((toggle) => toggle.name === 'GlobalSSO' && toggle.enabled)) {
+        return null;
+    }
+
     if (!verifyOutboundPublicKeys) {
         throw new Error('Invalid requirements');
     }
