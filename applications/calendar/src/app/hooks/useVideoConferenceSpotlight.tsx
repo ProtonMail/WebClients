@@ -37,7 +37,12 @@ const useVideoConferenceSpotlight = () => {
             <>
                 <div className="flex flex-nowrap items-start mb-1 gap-4">
                     <div className="shrink-0">
-                        <img src={spotlightVideoConfImg} alt="" />
+                        <img
+                            alt=""
+                            src={spotlightVideoConfImg}
+                            className="w-custom"
+                            style={{ '--w-custom': '2.75rem' }}
+                        />
                     </div>
                     <div className="flex flex-column flex-nowrap items-start">
                         <p className="text-lg text-bold m-0 mb-1">{c('Spotlight').t`Video conferencing is here!`}</p>
