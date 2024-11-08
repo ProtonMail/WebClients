@@ -172,6 +172,9 @@
       "Delete all": [
         "Zmazať všetko"
       ],
+      "Delete it, I will never need it": [
+        "Vymazať, nikdy ho nebudem potrebovať"
+      ],
       "Delete password": [
         "Odstrániť heslo"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Odznačiť"
+      ],
+      "Disable alias": [
+        "Vypnúť alias"
       ],
       "Disable instead": [
         "Namiesto toho vypnúť"
@@ -505,6 +511,12 @@
       "Submitting report...": [
         "Odosielanie hlásenia..."
       ],
+      "Sync alias": [
+        "Synchronizovať alias",
+        "Synchronizovať aliasy",
+        "Synchronizovať aliasy",
+        "Synchronizovať aliasy"
+      ],
       "Sync aliases": [
         "Synchronizovať aliasy"
       ],
@@ -519,6 +531,12 @@
       ],
       "Try for free": [
         "Vyskúšať zdarma"
+      ],
+      "Understood, I will never need it": [
+        "Rozumiem, nikdy ho nebudem potrebovať",
+        "Rozumiem, nikdy ich nebudem potrebovať",
+        "Rozumiem, nikdy ich nebudem potrebovať",
+        "Rozumiem, nikdy ich nebudem potrebovať"
       ],
       "Unlock": [
         "Odomknúť"
@@ -564,6 +582,9 @@
       ],
       "Write us on Twitter": [
         "Napíšte nam na Twitteri"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Chýba tu váš správca hesiel? Požiadajte oň."
       ]
     },
     "bf2024: Deal": {
@@ -1154,6 +1175,9 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
       ],
+      "Add your custom email address to monitor:": [
+        "Pridajte vašu vlastnú emailovú adresu na monitorovanie:"
+      ],
       "Admin": [
         "Správca"
       ],
@@ -1349,6 +1373,12 @@
       "Expires in ${ remainingTime }": [
         "Vyprší o ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Dodatočné heslo bolo úspešne vytvorené"
+      ],
+      "Extra password successfully removed": [
+        "Dodatočné heslo bolo úspešne odstránené"
+      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
       ],
@@ -1502,6 +1532,9 @@
       "Monitoring settings successfully updated": [
         "Nastavenia monitorovania boli úspešne aktualizované"
       ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Viac ako správca hesiel, ${ PASS_APP_NAME } chráni vaše heslo a vašu osobnú emailovú adresu prostredníctvom emailových aliasov. Vďaka rovnakej technológii, ktorá stojí za ${ MAIL_APP_NAME }, sú vaše údaje end-to-end šifrované a prístup k nim máte len vy."
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
@@ -1643,6 +1676,12 @@
       "Please enter your current PIN code to continue": [
         "Pre pokračovanie zadajte váš aktuálny PIN kód"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Upozorňujeme, že po vymazaní sa alias nedá obnoviť. Možno chcete alias namiesto toho vypnúť?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Upozorňujeme, že po vymazaní sa alias nedá obnoviť. Alias je už deaktivovaný a nebude preposielať emaily do vašej poštovej schránky"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Aktualizujte, aby ste získali skorší prístup k webovej aplikácii ${ PASS_APP_NAME }"
       ],
@@ -1691,6 +1730,9 @@
       "Select vault to share": [
         "Vyberte trezor na zdieľanie"
       ],
+      "Select where you want your imported vaults to be saved.": [
+        "Vyberte, kam sa majú importované trezory uložiť."
+      ],
       "Selected items permanently deleted": [
         "Vybrané položky boli natrvalo odstránené"
       ],
@@ -1711,6 +1753,9 @@
       ],
       "Settings successfully updated": [
         "Nastavenia boli úspešne aktualizované"
+      ],
+      "Share your logins and secure notes, with up to 10 people": [
+        "Zdieľajte vaše prihlasovacie údaje a zabezpečené poznámky až s 10 ľuďmi"
       ],
       "Sign in to your account": [
         "Prihláste sa do svojho účtu"
@@ -1787,6 +1832,9 @@
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Ak chcete migrovať údaje z iného správcu hesiel, prejdite do správcu hesiel, exportujte svoje údaje a potom ich nahrajte do ${ PASS_APP_NAME }. Po importovaní údajov odstráňte exportovaný súbor."
       ],
+      "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
+        "Ak chcete skontrolovať importované údaje, kliknite na ikonu ${ PASS_APP_NAME } v nástrojovom paneli prehliadača."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
@@ -1817,11 +1865,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Inovujte teraz pre odomknutie prémiových funkcií"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Pre vytvorenie viacerých trezorov prejdite na platený plán."
+      ],
       "Use vaults to share this item with others.": [
         "Pomocou trezorov môžete túto položku zdieľať s ostatnými."
       ],
       "User's access removed": [
         "Prístup používateľa bol odstránený"
+      ],
+      "User's access successfully updated": [
+        "Prístup používateľa bol úspešne aktualizovaný"
       ],
       "username": [
         "používateľské meno"
@@ -1867,6 +1921,12 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemôžete zmeniť schránku pre tento alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Máte ${ aliasCount } alias, ktorý sa nachádza v SimpleLogin, ale chýba v ${ PASS_APP_NAME }. Chcete ho synchronizovať?",
+        "Máte ${ aliasCount } aliasy, ktoré sa nachádzajú v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich synchronizovať?",
+        "Máte ${ aliasCount } aliasov, ktoré sa nachádzajú v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich synchronizovať?",
+        "Máte ${ aliasCount } aliasov, ktoré sa nachádzajú v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich synchronizovať?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Na vyskúšanie týchto a mnohých ďalších prémiových funkcií vám zostáva ${ daysRemaining } deň.",
@@ -2071,6 +2131,9 @@
       "Capital letters (A-Z)": [
         "Veľké písmená (A-Z)"
       ],
+      "Capitalize": [
+        "Veľkými písmenami"
+      ],
       "Card": [
         "Karta"
       ],
@@ -2259,6 +2322,9 @@
       ],
       "Import passwords": [
         "Importovať heslá"
+      ],
+      "Imported from: ": [
+        "Importované z: "
       ],
       "Imported on : ": [
         "Importované: "
@@ -2554,6 +2620,12 @@
       "Today": [
         "Dnes"
       ],
+      "Total imported items: ": [
+        "Celkový počet importovaných položiek: "
+      ],
+      "Total items: ": [
+        "Celkový počet položiek: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2833,6 +2905,9 @@
       "Sign-in rejected": [
         "Prihlásenie odmietnuté"
       ],
+      "Sign-in rejection failure": [
+        "Odmietnutie prihlásenia"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Požiadavka na prihlásenie na inom zariadení. Boli ste to vy?"
       ],
@@ -2841,6 +2916,29 @@
       ],
       "Yes, it was me": [
         "Áno, ide o moju žiadosť"
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktívne"
+      ],
+      "Inactive": [
+        "Neaktívne"
+      ],
+      "Pending activation": [
+        "Čaká sa na aktiváciu"
+      ],
+      "Pending admin activation": [
+        "Čaká sa na aktiváciu správcom"
+      ],
+      "Rejected": [
+        "Odmietnuté"
+      ],
+      "Signed out": [
+        "Odhlásené"
+      ],
+      "Unknown": [
+        "Neznáme"
       ]
     },
     "Success": {
@@ -2909,6 +3007,9 @@
       "Dark Web Monitoring": [
         "Monitorovanie Dark Webu"
       ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Vymazať trezor \"${ vaultName }\"?"
+      ],
       "Details": [
         "Podrobnosti"
       ],
@@ -2962,6 +3063,9 @@
       ],
       "Last modified": [
         "Posledná zmena"
+      ],
+      "Leave vault?": [
+        "Opustiť trezor?"
       ],
       "Loading breaches...": [
         "Načítavanie únikov..."
@@ -3023,8 +3127,17 @@
       "Pending access to the shared data": [
         "Čaká sa na prístup k zdieľaným údajom"
       ],
+      "Permanently remove all items?": [
+        "Trvalo odstrániť všetky položky?"
+      ],
       "Pinned (${ items.length })": [
         "Pripnuté (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Upozorňujeme, že vymazaný alias nie je možné obnoviť.",
+        "Upozorňujeme, že vymazané aliasy nie je možné obnoviť.",
+        "Upozorňujeme, že vymazané aliasy nie je možné obnoviť.",
+        "Upozorňujeme, že vymazané aliasy nie je možné obnoviť."
       ],
       "Recommended actions": [
         "Odporúčané opatrenia"
@@ -3098,6 +3211,9 @@
       "Sync alias": [
         "Synchronizovať alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Synchronizujte svoje aliasy z aplikácie SimpleLogin"
+      ],
       "Transfer ownership": [
         "Previesť vlastníctvo"
       ],
@@ -3148,6 +3264,12 @@
       ],
       "Your welcome gift": [
         "Váš darček na privítanie"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Chystáte sa natrvalo vymazať ${ aliasCount } alias",
+        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy",
+        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov",
+        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov"
       ]
     },
     "Validation": {
@@ -3165,6 +3287,9 @@
       ],
       "Section name cannot be empty": [
         "Názov sekcie nemôže byť prázdny"
+      ],
+      "URL already exists": [
+        "URL už existuje"
       ],
       "URL cannot be empty": [
         "URL adresa nemôže byť prázdna."
@@ -3197,6 +3322,12 @@
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nepodarilo sa vytvoriť trezor \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses:": [
+        "Nepodarilo sa odoslať pozvánky na nasledujúce adresy:"
+      ],
+      "Delete alias": [
+        "Vymazať alias"
       ],
       "Duplicate email addresses.": [
         "Duplicitné emailové adresy."
@@ -3273,6 +3404,9 @@
       "Offline": [
         "Offline"
       ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Po synchronizácii sa odstránením aliasov v ${ PASS_SHORT_APP_NAME } odstránia aj v SimpleLogin."
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povolené sú len alfanumerické znaky, bodky, pomlčky a podčiarkovníky"
       ],
@@ -3287,6 +3421,9 @@
       ],
       "Please check that the extension is properly installed and enabled": [
         "Skontrolujte prosím, či je rozšírenie správne nainštalované a povolené."
+      ],
+      "Please contact us to investigate the issue": [
+        "Kontaktujte nás pre prešetrenie problému"
       ],
       "Please update the extension to its latest version": [
         "Aktualizujte, prosím, rozšírenie na jeho najnovšiu verziu"
@@ -3365,6 +3502,9 @@
       ],
       "Your session was locked.": [
         "Vaša relácia bola uzamknutá."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Nemôžete vytvoriť viac trezorov, ako umožňuje vaše predplatné."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
