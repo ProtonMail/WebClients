@@ -36,7 +36,7 @@ import { LoadCommit } from '../../UseCase/LoadCommit'
 import { ExportAndDownload } from '../../UseCase/ExportAndDownload'
 import type { ImageProxyParams } from '../../Api/Types/ImageProxyParams'
 import { MetricService } from '../../Services/Metrics/MetricService'
-import { StubRecentDocumentsService } from '../../Services/RecentDocuments/RecentDocumentsService'
+import { RecentDocumentsService } from '../../Services/RecentDocuments/RecentDocumentsService'
 import { GetNode } from '../../UseCase/GetNode'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { PublicDocLoader } from '../../Services/DocumentLoader/PublicDocLoader'
@@ -288,7 +288,12 @@ export class AppDependencies extends DependencyContainer {
       if (!compatWrapper.userCompat) {
         throw new Error('User compat not available')
       }
-      return new StubRecentDocumentsService(this.get<InternalEventBus>(App_TYPES.EventBus), compatWrapper.userCompat)
+      return new RecentDocumentsService(
+        this.get<InternalEventBus>(App_TYPES.EventBus),
+        compatWrapper.userCompat,
+        this.get<DocsApi>(App_TYPES.DocsApi),
+        this.get<LoggerInterface>(App_TYPES.Logger),
+      )
     })
   }
 }

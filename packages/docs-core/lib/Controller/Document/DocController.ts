@@ -59,7 +59,6 @@ import type { SerializedEditorState } from 'lexical'
 import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpdateCount'
 import { MAX_DOC_SIZE } from '../../Models/Constants'
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from '@proton/metrics/types/docs_readonly_mode_documents_total_v1.schema'
-import { RecentDocumentsLocalStorage } from '../../Services/RecentDocuments/RecentDocumentsLocalStorage'
 import type { GetNode } from '../../UseCase/GetNode'
 
 /**
@@ -360,8 +359,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       payload: { title: this.docMeta.name },
     })
 
-    void this.addDocumentToRecentDocuments()
-
     const endTime = Date.now()
     const timeToLoadInSeconds = (endTime - startTime) / 1000
     metrics.docs_time_load_document_histogram.observe({
@@ -637,8 +634,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       return
     }
 
-    void this.addDocumentToRecentDocuments()
-
     const { node, refreshedDocMeta } = result.getValue()
     this.decryptedNode = node
     if (refreshedDocMeta) {
@@ -654,19 +649,6 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     this.eventBus.publish<DocControllerEventPayloads['DidLoadDocumentTitle']>({
       type: DocControllerEvent.DidLoadDocumentTitle,
       payload: { title: this.docMeta.name },
-    })
-  }
-
-  async addDocumentToRecentDocuments(): Promise<void> {
-    if (!this.docMeta) {
-      return
-    }
-
-    const shareId = await this.driveCompat.getShareId(this.nodeMeta)
-    RecentDocumentsLocalStorage.add({
-      linkId: this.docMeta.nodeMeta.linkId,
-      shareId,
-      lastViewed: Date.now(),
     })
   }
 

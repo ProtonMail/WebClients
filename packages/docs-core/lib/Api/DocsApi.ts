@@ -10,6 +10,7 @@ import {
   deleteCommentInThreadInDocument,
   deleteThreadInDocument,
   editCommentInThreadInDocument,
+  fetchRecentDocuments,
   getAllCommentThreadsInDocument,
   getCommentThreadInDocument,
   getCommitData,
@@ -43,6 +44,7 @@ import type { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiR
 import type { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
 import type { CommentThreadType, CommentType } from '@proton/docs-shared'
 import { isPublicNodeMeta } from '@proton/drive-store/lib/interface'
+import type { GetRecentsResponse } from './Types/GetRecentsResponse'
 
 export type HttpHeaders = { [key: string]: string }
 
@@ -106,6 +108,22 @@ export class DocsApi {
       )
       const buffer = await response.arrayBuffer()
       return Result.ok(new Uint8Array(buffer))
+    } catch (error) {
+      return Result.fail(getErrorString(error) || 'Unknown error')
+    } finally {
+      this.inflight--
+    }
+  }
+
+  async fetchRecentDocuments(): Promise<Result<GetRecentsResponse>> {
+    if (!this.protonApi) {
+      throw new Error('Proton API not set')
+    }
+
+    try {
+      this.inflight++
+      const response = await this.protonApi(fetchRecentDocuments())
+      return Result.ok(response)
     } catch (error) {
       return Result.fail(getErrorString(error) || 'Unknown error')
     } finally {
