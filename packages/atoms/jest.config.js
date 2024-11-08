@@ -3,7 +3,7 @@ module.exports = {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     testEnvironment: '@proton/jest-env',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|mutex-browser|pmcrypto|pmcrypto-v6-canary|bip39)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|mutex-browser|pmcrypto|bip39)/)',
     ],
     transform: {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',

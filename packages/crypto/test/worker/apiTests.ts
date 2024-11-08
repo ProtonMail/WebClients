@@ -1,7 +1,7 @@
 import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
-import { generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto-v6-canary';
-import type { CompressedDataPacket } from 'pmcrypto-v6-canary/lib/openpgp';
+import { generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto';
+import type { CompressedDataPacket } from 'pmcrypto/lib/openpgp';
 import {
     SymEncryptedIntegrityProtectedDataPacket,
     enums,
@@ -11,7 +11,7 @@ import {
     readMessage as openpgp_readMessage,
     readPrivateKey as openpgp_readPrivateKey,
     revokeKey as openpgp_revokeKey,
-} from 'pmcrypto-v6-canary/lib/openpgp';
+} from 'pmcrypto/lib/openpgp';
 
 import type { CryptoApiInterface, SessionKey } from '../../lib';
 import { ARGON2_PARAMS, S2kTypeForConfig, VERIFICATION_STATUS } from '../../lib';
