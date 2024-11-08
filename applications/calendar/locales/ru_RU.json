@@ -2574,11 +2574,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
@@ -2648,6 +2643,11 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ваш аккаунт и методы восстановления данных настроены."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7119,6 +7119,11 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7131,11 +7136,6 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
       ]
     },
     "new_plans: tooltip": {

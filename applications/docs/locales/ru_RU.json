@@ -2102,11 +2102,6 @@
         "Просроченный счёт"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "используйте помощник импорта Easy Switch"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
@@ -2164,6 +2159,11 @@
       ],
       "Your account and data recovery methods are set.": [
         "Ваш аккаунт и методы восстановления данных настроены."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5817,6 +5817,17 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Начните с ${ price }"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Удалить аккаунт"
@@ -5838,17 +5849,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Начните с ${ price }"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {

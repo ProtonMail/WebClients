@@ -172,6 +172,9 @@
       "Delete all": [
         "Ta bort alla"
       ],
+      "Delete it, I will never need it": [
+        "Ta bort det, jag kommer aldrig att behöva det"
+      ],
       "Delete password": [
         "Ta bort lösenord"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Avmarkera"
+      ],
+      "Disable alias": [
+        "Inaktivera alias"
       ],
       "Disable instead": [
         "Inaktivera istället"
@@ -517,6 +523,10 @@
       "Submitting report...": [
         "Skickar rapport..."
       ],
+      "Sync alias": [
+        "Synkronisera alias",
+        "Synkronisera alias"
+      ],
       "Sync aliases": [
         "Synkronisera alias"
       ],
@@ -531,6 +541,10 @@
       ],
       "Try for free": [
         "Prova gratis"
+      ],
+      "Understood, I will never need it": [
+        "Förstått, jag kommer aldrig att behöva det",
+        "Förstått, jag kommer aldrig att behöva dem"
       ],
       "Unlock": [
         "Lås upp"
@@ -1664,6 +1678,9 @@
       "Please enter your current PIN code to continue": [
         "Ange din nuvarande PIN-kod för att fortsätta"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Observera att när aliaset väl har tagits bort kan det inte återställas. Kanske vill du inaktivera aliaset istället?"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Uppgradera för att få förhandstillgång till webbappen ${ PASS_APP_NAME }"
       ],
@@ -1902,6 +1919,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan inte ändra brevlådorna för detta alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du synkronisera det?",
+        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du synkronisera dem?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Du har ${ daysRemaining } dag kvar att prova dessa och andra premiumfunktioner.",
@@ -3154,6 +3175,10 @@
       "Pinned (${ items.length })": [
         "Fäst (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Observera att när aliaset väl har tagits bort kan det inte återställas.",
+        "Observera att när alias väl har tagits bort kan de inte återställas."
+      ],
       "Recommended actions": [
         "Rekommenderade åtgärder"
       ],
@@ -3224,6 +3249,9 @@
       "Sync alias": [
         "Synkronisera alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Synkronisera dina alias från SimpleLogin"
+      ],
       "Transfer ownership": [
         "Överför ägarskap"
       ],
@@ -3274,6 +3302,10 @@
       ],
       "Your welcome gift": [
         "Din välkomstgåva"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Du håller på att ta bort ${ aliasCount } alias permanent",
+        "Du håller på att ta bort ${ aliasCount } alias permanent"
       ]
     },
     "Validation": {
@@ -3329,6 +3361,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Kunde inte skicka inbjudningar till följande adresser:"
+      ],
+      "Delete alias": [
+        "Ta bort alias"
       ],
       "Duplicate email addresses.": [
         "Dubbletter av e-postadresser."
