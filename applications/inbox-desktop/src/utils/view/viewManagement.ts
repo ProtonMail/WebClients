@@ -189,8 +189,7 @@ const createBrowserWindow = () => {
 };
 
 function updateViewBounds(view: BrowserView | undefined, viewID: ViewID | null = null) {
-    if (!mainWindow) {
-        viewLogger(viewID).warn("cannot adjust view bounds, mainWindow is null");
+    if (!mainWindow || mainWindow.isDestroyed()) {
         return;
     }
 
@@ -252,11 +251,11 @@ async function updateLocalID(urlString: string) {
 }
 
 export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "") {
-    const url = targetURL ? await updateLocalID(targetURL) : targetURL;
-
-    if (!mainWindow) {
-        throw new Error("mainWindow is undefined");
+    if (!mainWindow || mainWindow.isDestroyed()) {
+        return;
     }
+
+    const url = targetURL ? await updateLocalID(targetURL) : targetURL;
 
     const view = browserViewMap[viewID]!;
     updateViewBounds(view, viewID);
