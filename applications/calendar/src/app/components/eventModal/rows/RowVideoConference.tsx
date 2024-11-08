@@ -13,14 +13,24 @@ export const RowVideoConference = ({ model, setModel }: Props) => {
     const [user] = useUser();
     const [organization] = useOrganization();
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const isSettingEnabled = organization?.Settings.VideoConferencingEnabled;
+    const hasFullZoomAccess = user.hasPaidMail && isSettingEnabled;
+    const hasLimitedZoomAccess = user.hasPaidMail && !isSettingEnabled;
     const hasAccessToZoomIntegration =
         isZoomIntegrationEnabled &&
         // We want to upsell free Mail users or only display the feature for mail subscribers
-        (!user.hasPaidMail || (user.hasPaidMail && organization?.Settings.VideoConferencingEnabled));
+        (!user.hasPaidMail || hasFullZoomAccess || hasLimitedZoomAccess);
 
     if (!hasAccessToZoomIntegration) {
         return null;
     }
 
-    return <ZoomRow model={model} setModel={setModel} />;
+    const getAccessLevel = () => {
+        if (!user.hasPaidMail) {
+            return 'show-upsell';
+        }
+        return hasFullZoomAccess ? 'full-access' : 'limited-access';
+    };
+
+    return <ZoomRow model={model} setModel={setModel} accessLevel={getAccessLevel()} />;
 };
