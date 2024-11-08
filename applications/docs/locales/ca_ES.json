@@ -2118,11 +2118,6 @@
         "Factura vençuda"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
@@ -2177,6 +2172,11 @@
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5683,6 +5683,23 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Comenceu per ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Comenceu des de ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -5704,23 +5721,6 @@
       ],
       "Switch plan": [
         "Canvia de pla"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Comenceu per ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Comenceu des de ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {

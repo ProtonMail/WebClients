@@ -595,6 +595,9 @@
       "Show": [
         "Mostrar"
       ],
+      "Show all": [
+        "Mostrar todo"
+      ],
       "Show preview": [
         "Mostrar vista previa"
       ],
@@ -4701,6 +4704,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá que se utilice PayPal para pagar tu suscripción a ${ BRAND_NAME }. Te redirigiremos a PayPal en una nueva pestaña del navegador. Si utilizas algún bloqueador de ventanas emergentes, desactívalo para continuar."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Esto eliminará permanentemente los datos y todas las direcciones asociadas a estos usuarios."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Esto eliminará permanentemente los datos y todas las direcciones asociadas a este usuario."
       ],
@@ -5496,9 +5502,6 @@
       ],
       "Email or username": [
         "Dirección de correo electrónico o nombre de usuario"
-      ],
-      "Enable video conferencing ": [
-        "Activar la videoconferencia "
       ],
       "Enter the code displayed on your TV": [
         "Introduce el código mostrado en tu TV"
@@ -7114,6 +7117,44 @@
       ],
       "Support for ${ n } custom email domains": [
         "Soporte para ${ n } dominios de correo electrónico personalizado"
+      ]
+    },
+    "news": {
+      "${ BRAND_NAME } newsletter": [
+        "Boletín de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Correos electrónicos de bienvenida de ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 correo al mes"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 correo por mes. Obtén las últimas noticias de privacidad y lo que sucede en ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 correo por trimestre"
+      ],
+      "1-2 emails per month": [
+        "1 a 2 correos al mes"
+      ],
+      "2-4 emails per year": [
+        "2 a 4 correos al año"
+      ],
+      "4-6 emails per year": [
+        "4 a 6 correos al año"
+      ],
+      "Daily email notifications": [
+        "Notificaciones diarias por correo electrónico"
+      ],
+      "During your first month": [
+        "Durante el primer mes"
+      ],
+      "Email subscriptions": [
+        "Suscripciones de correo"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participa en las encuestas para mejorar los servicios de ${ BRAND_NAME }"
       ]
     },
     "Notification": {
@@ -10377,9 +10418,6 @@
       "Verifying your payment...": [
         "Verificando tu pago..."
       ],
-      "Video conference": [
-        "Videoconferencia"
-      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviaremos un correo a su dirección nueva con instrucciones para finalizar el cambio."
       ],
@@ -10577,6 +10615,9 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Al hacer privado al usuario, no podrás ayudarle a recuperar el acceso a sus datos o cuenta."
       ],
+      "Cancel request": [
+        "Cancelar la solicitud"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "No se ha podido activar automáticamente el acceso de administrador para ${ n } usuario porque sus claves de cifrado han sido actualizadas mientras tanto.",
         "No se ha podido activar automáticamente el acceso de administrador para ${ n } usuarios porque sus claves de cifrado han sido actualizadas mientras tanto."
@@ -10586,6 +10627,9 @@
       ],
       "Enable manually": [
         "Activar manualmente"
+      ],
+      "Keep request": [
+        "Mantener la solicitud"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Una vez que el usuario acepte, podrás ayudarle a recuperar el acceso a la cuenta o gestionar sus datos."
@@ -10613,6 +10657,9 @@
       ],
       "The user must have an address to request data access": [
         "El usuario debe tener una dirección para solicitar acceso a los datos"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Esto cancelará la solicitud pendiente para el acceso de administrador a los datos del usuario o restablecimiento de contraseña."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Esto revocará el permiso de administrador para gestionar la cuenta de este usuario."
@@ -10705,6 +10752,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Los administradores no pueden acceder a los datos de usuarios privados."
+      ],
+      "Inactive": [
+        "Inactiva"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "La invitación ha sido enviada. Se está esperando la respuesta del miembro invitado."

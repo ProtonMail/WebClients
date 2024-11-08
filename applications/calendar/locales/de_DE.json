@@ -2591,11 +2591,6 @@
         "Überfällige Rechnung"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "den Easy Switch-Importassistenten"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto mit spezieller 24/7-Überwachung verdächtiger Aktivitäten - einschließlich der Eskalation zu Sicherheitsspezialisten."
@@ -2683,6 +2678,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7028,6 +7028,14 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Hol dir Mail Plus für ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ab ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -7040,14 +7048,6 @@
       ],
       "Switch plans?": [
         "Abonnement wechseln?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hol dir Mail Plus für ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ab ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -10490,9 +10490,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom Meeting": [
-        "Am Zoom-Meeting teilnehmen"
-      ],
       "Meeting ID:": [
         "Meeting-ID:"
       ]

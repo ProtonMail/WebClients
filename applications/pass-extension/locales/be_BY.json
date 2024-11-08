@@ -509,6 +509,12 @@
       "Submitting report...": [
         "Адпраўка справаздачы..."
       ],
+      "Sync alias": [
+        "Сінхранізацыя псеўданіма",
+        "Сінхранізацыя псеўданімаў",
+        "Сінхранізацыя псеўданімаў",
+        "Сінхранізацыя псеўданімаў"
+      ],
       "Sync aliases": [
         "Сінхранізаваць псеўданімы"
       ],
@@ -1885,6 +1891,12 @@
       "You cannot change the mailboxes for this alias.": [
         "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "У вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце сінхранізаваць яго?",
+        "У вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?",
+        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?",
+        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "У вас застаўся ${ daysRemaining } дзень паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
         "У вас засталося ${ daysRemaining } дні паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
@@ -3064,6 +3076,9 @@
       "Sync alias": [
         "Сінхранізацыя псеўданімаў"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Сінхранізацыя вашых псеўданімаў з SimpleLogin"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Дзякуй, што ўсталявалі ${ PASS_APP_NAME }"
       ],
@@ -3229,6 +3244,9 @@
       ],
       "No results": [
         "Няма вынікаў"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Выдаленне псеўданімаў у ${ PASS_SHORT_APP_NAME } таксама выдаліць іх у SimpleLogin пасля сінхранізацыі."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"

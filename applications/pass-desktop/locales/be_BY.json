@@ -517,6 +517,12 @@
       "Submitting report...": [
         "Адпраўка справаздачы..."
       ],
+      "Sync alias": [
+        "Сінхранізацыя псеўданіма",
+        "Сінхранізацыя псеўданімаў",
+        "Сінхранізацыя псеўданімаў",
+        "Сінхранізацыя псеўданімаў"
+      ],
       "Sync aliases": [
         "Сінхранізаваць псеўданімы"
       ],
@@ -1619,6 +1625,9 @@
       "None": [
         "Няма"
       ],
+      "Not recommended": [
+        "Не рэкамендавана"
+      ],
       "Offline mode": [
         "Рэжым па-за сеткай"
       ],
@@ -1970,6 +1979,12 @@
       "You cannot change the mailboxes for this alias.": [
         "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "У вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце сінхранізаваць яго?",
+        "У вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?",
+        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?",
+        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "У вас застаўся ${ daysRemaining } дзень паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
         "У вас засталося ${ daysRemaining } дні паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
@@ -2164,6 +2179,9 @@
       "Auto-lock after": [
         "Аўтаблакіроўка пасля"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "${ PASS_APP_NAME } абараняе вашу ідэнтычнасць з дапамогай убудаванай функцыі псеўданіма электроннай пошты, а не толькі захоўвае вашы запісы ўваходу. Кожны раз, калі вы рэгіструеце новы ўліковы запіс у інтэрнэце, ${ PASS_APP_NAME } можа аўтаматычна ствараць псеўданім для захавання вашага сапраўднага адраса электроннай пошты ў абароненым стане. "
+      ],
       "Beta Access": [
         "Бэта-доступ"
       ],
@@ -2172,6 +2190,9 @@
       ],
       "Birthdate": [
         "Дата нараджэння"
+      ],
+      "Browse faster, smarter": [
+        "Праглядайце хутчэй і разумней"
       ],
       "Capital letters (A-Z)": [
         "Вялікія літары (A-Z)"
@@ -2187,6 +2208,9 @@
       ],
       "Cards": [
         "Карткі"
+      ],
+      "Choose your preferred look and feel.": [
+        "Выберыце пажаданы выгляд."
       ],
       "City": [
         "Горад"
@@ -2323,6 +2347,9 @@
       "Floor, apartment, building": [
         "Паверх, кватэра, будынак"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "У мэтах бяспекі ${ PASS_SHORT_APP_NAME } аўтаматычна заблакіруецца пасля 10 хвілін не актыўнасці."
+      ],
       "Forwards to": [
         "Перасылаць на"
       ],
@@ -2347,6 +2374,9 @@
       "Generic CSV": [
         "Агульны CSV"
       ],
+      "Get the extension for your browser.": [
+        "Атрымайце пашырэнні для свайго браўзера."
+      ],
       "Grant": [
         "Дазволіць"
       ],
@@ -2358,6 +2388,9 @@
       ],
       "Hide-my-email aliases": [
         "Псеўданімы Hide-my-email"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Як разблакіраваць ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://pryklad.com"
@@ -2394,6 +2427,9 @@
       ],
       "Instagram handle": [
         "Профіль Instagram"
+      ],
+      "Install and continue": [
+        "Усталяваць і працягнуць"
       ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
@@ -2461,6 +2497,9 @@
       "Make all viewers": [
         "Даць усім правы прагляду"
       ],
+      "Make it your own.": [
+        "Зрабіце гэта па-свойму."
+      ],
       "max views reached": [
         "дасягнута максімальная колькасць праглядаў"
       ],
@@ -2527,6 +2566,9 @@
       "Passkey": [
         "Ключ доступу"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Ключы доступу - гэта простая і бяспечная альтэрнатыва традыцыйным паролям, якая прадухіляе фішынгавыя атакі і палягчае працу ў інтэрнэце. ${ PASS_APP_NAME } падтрымлівае ключы доступу на ўсіх платформах."
+      ],
       "Passphrase": [
         "Парольная фраза"
       ],
@@ -2547,6 +2589,9 @@
       ],
       "Personal website": [
         "Асабісты вэб-сайт"
+      ],
+      "Personalize": [
+        "Персаналізацыя"
       ],
       "PGP-encrypted JSON (recommended)": [
         "JSON зашыфраваны PGP (рэкамендавана)"
@@ -2616,6 +2661,9 @@
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Выберыце сховішча ў якое будуць імпартаваны псеўданімы SimpleLogin"
+      ],
+      "Select theme": [
+        "Выбар тэмы"
       ],
       "Select your password manager": [
         "Выберыце менеджар пароляў"
@@ -2719,6 +2767,9 @@
       "Unlock with": [
         "Разблакіраваць з дапамогай"
       ],
+      "Unlock with:": [
+        "Разблакіраваць з дапамогай:"
+      ],
       "Unnamed Credit Card": [
         "Крэдытная картка без назвы"
       ],
@@ -2784,6 +2835,12 @@
       ],
       "You are about to create": [
         "Вы збіраецеся стварыць"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Вы можаце выбіраць паміж PIN-кодам, біяметрыяй або блакіроўкай уліковага запісу паролем."
+      ],
+      "Your passwords. Everywhere.": [
+        "Вашы паролі. У любым месцы."
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
@@ -3297,6 +3354,9 @@
       "Sync alias": [
         "Сінхранізацыя псеўданімаў"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Сінхранізацыя вашых псеўданімаў з SimpleLogin"
+      ],
       "Transfer ownership": [
         "Перадаць права ўласнасці"
       ],
@@ -3477,6 +3537,9 @@
       ],
       "Offline": [
         "Па-за сеткай"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Выдаленне псеўданімаў у ${ PASS_SHORT_APP_NAME } таксама выдаліць іх у SimpleLogin пасля сінхранізацыі."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"

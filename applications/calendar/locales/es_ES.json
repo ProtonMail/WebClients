@@ -2595,11 +2595,6 @@
         "Factura atrasada"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2687,6 +2682,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3988,6 +3988,9 @@
       ],
       "Less details": [
         "Menos detalles"
+      ],
+      "Meeting host:": [
+        "Organizador de la reunión:"
       ],
       "Meeting link:": [
         "Enlace de la reunión:"
@@ -7035,6 +7038,14 @@
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Disfruta de Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7047,14 +7058,6 @@
       ],
       "Switch plans?": [
         "¿Cambiar de plan?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Disfruta de Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -10503,11 +10506,11 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom Meeting": [
-        "Unirte a la reunión de Zoom"
-      ],
       "Meeting ID:": [
         "Identificador de la reunión:"
+      ],
+      "Passcode:": [
+        "Código de acceso:"
       ]
     }
   }

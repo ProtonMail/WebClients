@@ -172,6 +172,9 @@
       "Delete all": [
         "Eliminar todo"
       ],
+      "Delete it, I will never need it": [
+        "Elimínalo: no lo necesitaré."
+      ],
       "Delete password": [
         "Eliminar contraseña"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Anular la selección"
+      ],
+      "Disable alias": [
+        "Desactivar el alias"
       ],
       "Disable instead": [
         "Desactivar en su lugar"
@@ -517,6 +523,10 @@
       "Submitting report...": [
         "Enviando informe..."
       ],
+      "Sync alias": [
+        "Sincronizar el alias",
+        "Sincronizar los alias"
+      ],
       "Sync aliases": [
         "Sincronizar los alias"
       ],
@@ -531,6 +541,10 @@
       ],
       "Try for free": [
         "Pruébalo gratis"
+      ],
+      "Understood, I will never need it": [
+        "Entendido, ya no lo necesito.",
+        "Entendido, ya no los necesito."
       ],
       "Unlock": [
         "Desbloquear"
@@ -1585,6 +1599,9 @@
       "None": [
         "Ninguno"
       ],
+      "Not recommended": [
+        "No recomendado"
+      ],
       "Offline mode": [
         "Modo sin conexión"
       ],
@@ -1690,6 +1707,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "Introduce tu código PIN actual para continuar."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Una vez eliminado, el alias no puede ser restaurado. ¿Quizás deseas desactivarlo en su lugar?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Una vez eliminado, el alias no puede ser restaurado. El alias ya está desactivado y no reenviará correos a tu buzón"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Mejora tu plan para obtener un acceso anticipado a la aplicación web de ${ PASS_APP_NAME }."
@@ -1930,6 +1953,10 @@
       "You cannot change the mailboxes for this alias.": [
         "No puedes cambiar los buzones para este alias."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Tienes ${ aliasCount } alias en SimpleLogin pero no aparece en ${ PASS_APP_NAME }. ¿Deseas sincronizarlo?",
+        "Tienes ${ aliasCount } alias en SimpleLogin pero no aparecen en ${ PASS_APP_NAME }. ¿Deseas sincronizarlos?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Tienes ${ daysRemaining } día restante para probar esta y otras funciones premium.",
         "Tienes ${ daysRemaining } días restantes para probar esta y otras funciones premium."
@@ -2105,6 +2132,9 @@
       "Auto-lock after": [
         "Bloqueo automático después de"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Además de almacenar tus inicios de sesión, ${ PASS_APP_NAME } protege tu identidad con una función de alias de correo electrónico integrada. Cada vez que te registres para obtener una cuenta nueva en línea, ${ PASS_APP_NAME } puede crear automáticamente un alias para mantener protegida tu dirección de correo real. "
+      ],
       "Beta Access": [
         "Acceso beta"
       ],
@@ -2113,6 +2143,9 @@
       ],
       "Birthdate": [
         "Fecha de nacimiento"
+      ],
+      "Browse faster, smarter": [
+        "Navega más rápido y eficiente"
       ],
       "Capital letters (A-Z)": [
         "Letras mayúsculas (A-Z)"
@@ -2186,6 +2219,9 @@
       "Custom text field": [
         "Campo de texto personalizado"
       ],
+      "Dark Web Monitoring": [
+        "Monitoreo de la Dark Web"
+      ],
       "Date": [
         "Fecha"
       ],
@@ -2258,6 +2294,9 @@
       "Floor, apartment, building": [
         "Piso, apartamento, edificio"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Por motivos de seguridad, ${ PASS_SHORT_APP_NAME } se bloquea automáticamente después de 10 minutos de inactividad."
+      ],
       "Forwards to": [
         "Reenvía a"
       ],
@@ -2287,6 +2326,9 @@
       ],
       "Hide password": [
         "Ocultar contraseña"
+      ],
+      "Hide-my-email aliases": [
+        "Alias de hide-my-email"
       ],
       "https://example.com": [
         "https://ejemplo.es"
@@ -2323,6 +2365,12 @@
       ],
       "Instagram handle": [
         "Nombre de usuario de Instagram"
+      ],
+      "Install and continue": [
+        "Instalar y continuar"
+      ],
+      "Integrated 2FA authenticator": [
+        "Autenticador de 2FA integrado"
       ],
       "Invitations": [
         "Invitaciones"
@@ -2386,6 +2434,9 @@
       ],
       "Make all viewers": [
         "Promover a todos como lectores"
+      ],
+      "Make it your own.": [
+        "Personaliza la aplicación."
       ],
       "max views reached": [
         "se ha alcanzado el máximo de visualizaciones."
@@ -2474,6 +2525,9 @@
       "Personal website": [
         "Sitio web personal"
       ],
+      "Personalize": [
+        "Personalizar"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON cifrado con PGP (recomendado)"
       ],
@@ -2513,6 +2567,15 @@
       "Reveal password": [
         "Mostrar contraseña"
       ],
+      "Secure password sharing": [
+        "Intercambio de contraseñas seguro"
+      ],
+      "Securely log in with passkeys": [
+        "Inicia sesión de forma segura con claves de acceso"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Almacena, comparte e inicia sesión en tus cuentas con seguridad con ${ PASS_APP_NAME }, usando cifrado de extremo a extremo confiado por millones"
+      ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Almacena, comparte e inicia sesión en tus cuentas con seguridad con ${ PASS_APP_NAME }, usando cifrado de extremo a extremo confiado por millones."
       ],
@@ -2530,6 +2593,9 @@
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Selecciona la caja fuerte donde se importarán los alias de SimpleLogin"
+      ],
+      "Select theme": [
+        "Selecciona un tema"
       ],
       "Select your password manager": [
         "Selecciona tu gestor de contraseñas"
@@ -2616,6 +2682,9 @@
       "Trash": [
         "Papelera"
       ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "La autenticación de dos factores (2FA) es una de las mejores formas de proteger tus cuentas en línea. ${ PASS_APP_NAME } facilita la 2FA con un autenticador integrado que almacena tus códigos 2FA para mostrarlos y completarlos automáticamente."
+      ],
       "Type": [
         "Tipo"
       ],
@@ -2624,6 +2693,9 @@
       ],
       "Unlock with": [
         "Desbloquear con"
+      ],
+      "Unlock with:": [
+        "Desbloquear con:"
       ],
       "Unnamed Credit Card": [
         "Tarjeta de crédito sin nombre"
@@ -2690,6 +2762,12 @@
       ],
       "You are about to create": [
         "Estás a punto de crear"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Puedes elegir entre un código PIN, biométricas o la contraseña de tu cuenta para desbloquear la aplicación"
+      ],
+      "Your passwords. Everywhere.": [
+        "Tus contraseñas. En todo lugar."
       ],
       "ZIP or Postal code": [
         "Código postal"
@@ -3127,6 +3205,10 @@
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Una vez eliminados, el alias no se puede recuperar.",
+        "Una vez eliminados, los alias no se pueden recuperar."
+      ],
       "Recommended actions": [
         "Acciones recomendadas"
       ],
@@ -3197,6 +3279,9 @@
       "Sync alias": [
         "Sincronizar los alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Sincroniza tus alias desde SimpleLogin"
+      ],
       "Transfer ownership": [
         "Transferir la propiedad"
       ],
@@ -3247,6 +3332,10 @@
       ],
       "Your welcome gift": [
         "Tu regalo de bienvenida"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Estás a punto de eliminar definitivamente ${ aliasCount } alias.",
+        "Estás a punto de eliminar definitivamente ${ aliasCount } alias."
       ]
     },
     "Validation": {
@@ -3302,6 +3391,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "No se han podido enviar las invitaciones a las siguientes direcciones:"
+      ],
+      "Delete alias": [
+        "Eliminar el alias"
       ],
       "Duplicate email addresses.": [
         "Direcciones de correo duplicadas"

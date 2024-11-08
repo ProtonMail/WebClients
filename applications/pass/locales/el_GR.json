@@ -505,6 +505,10 @@
       "Submitting report...": [
         "Υποβολή αναφοράς..."
       ],
+      "Sync alias": [
+        "Συγχρονισμός ψευδώνυμου",
+        "Συγχρονισμός ψευδωνύμων"
+      ],
       "Sync aliases": [
         "Συγχρονισμός ψευδωνύμων"
       ],
@@ -1764,6 +1768,9 @@
       "This version will be added to the history as the newest version.": [
         "Αυτή η έκδοση θα προστεθεί στο ιστορικό ως η νεότερη έκδοση."
       ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Αυτό θα απορρίψει τη συσκευή **${ name }** που προσπάθησε να συνδεθεί στον λογαριασμό σας ${ BRAND_NAME } στις **${ date }**."
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Για να μεταφέρετε δεδομένα από έναν άλλο διαχειριστή κωδικών πρόσβασης, μεταβείτε στον διαχειριστή κωδικών πρόσβασης, εξαγάγετε τα δεδομένα σας και, στη συνέχεια, ανεβάστε τα στο ${ PASS_APP_NAME }. Μόλις εισαχθούν τα δεδομένα σας, διαγράψτε το εξαγόμενο αρχείο."
       ],
@@ -1854,6 +1861,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Δεν μπορείτε να αλλάξετε τα γραμματοκιβώτια για αυτό το ψευδώνυμο."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το συγχρονίσετε;",
+        "Έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να τα συγχρονίσετε;"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Σας απομένει ${ daysRemaining } ημέρα για να δοκιμάσετε αυτές και άλλες premium λειτουργίες.",
@@ -2791,6 +2802,9 @@
       "Approve or deny it now": [
         "Εγκρίνετε ή απορρίψετε το τώρα"
       ],
+      "Enter the confirmation code we sent on your other device.": [
+        "Εισαγάγετε τον κωδικό επιβεβαίωσης που στείλαμε στην άλλη συσκευή σας."
+      ],
       "If you didn't make this request, cancel it now.": [
         "Εάν δεν υποβάλατε εσείς αυτό το αίτημα, ακυρώστε το τώρα."
       ],
@@ -2800,8 +2814,14 @@
       "No, it wasn’t me": [
         "Όχι, δεν ήμουν εγώ"
       ],
+      "Sign-in confirmed": [
+        "Η σύνδεση επιβεβαιώθηκε"
+      ],
       "Sign-in failed": [
         "Σύνδεση ανεπιτυχής"
+      ],
+      "Sign-in rejected": [
+        "Η σύνδεση απορρίφθηκε"
       ],
       "Sign-in requested on another device. Was it you?": [
         "Η σύνδεση ζητήθηκε σε άλλη συσκευή. Ήσασταν εσείς;"
@@ -3096,6 +3116,9 @@
       "Sync alias": [
         "Συγχρονισμός ψευδώνυμου"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Συγχρονίστε τα ψευδώνυμά σας από το SimpleLogin"
+      ],
       "Transfer ownership": [
         "Μεταβίβαση κυριότητας"
       ],
@@ -3274,6 +3297,9 @@
       ],
       "Offline": [
         "Εκτός σύνδεσης"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Μόλις συγχρονιστούν, η διαγραφή ψευδωνύμων στο ${ PASS_SHORT_APP_NAME } θα τα διαγράψει επίσης στο SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"

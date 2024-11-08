@@ -509,6 +509,10 @@
       "Submitting report...": [
         "Rapor gönderiliyor..."
       ],
+      "Sync alias": [
+        "Takma adı eşitle",
+        "Takma adları eşitle"
+      ],
       "Sync aliases": [
         "Takma adları eşitle"
       ],
@@ -1845,6 +1849,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunu eşitlemek ister misiniz?",
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunları eşitlemek ister misiniz?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı.",
         "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı."
@@ -3004,6 +3012,9 @@
       "Sync alias": [
         "Takma adı eşitle"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Takma adlarınızı SimpleLogin ile eşitleyin"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını kurduğunuz için teşekkürler"
       ],
@@ -3167,6 +3178,9 @@
       ],
       "No results": [
         "Herhangi bir sonuç bulunamadı"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Eşitleme tamamlandıktan sonra, ${ PASS_SHORT_APP_NAME } içindeki takma adları silmek, bunların SimpleLogin üzerinden de silinmesine neden olur."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"

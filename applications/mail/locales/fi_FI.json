@@ -11224,6 +11224,9 @@
       "If you sign out before you reset your password, you could lose access to your account.": [
         "Jos kirjaudut ulos ennen kuin olet nollannut salasanasi, voit menettää tilisi käyttöoikeuden."
       ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Jos kirjaudut ulos nollaamatta salasanaasi, voit menettää pääsyn tilillesi."
+      ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Aikaa jäljellä kunnes voit nollata salasanasi: ${ boldTimeLeft }."
       ]
@@ -13918,9 +13921,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom Meeting": [
-        "Liity Zoom-tapaamiseen"
-      ],
       "Meeting ID:": [
         "Tapaamisen ID:"
       ]
