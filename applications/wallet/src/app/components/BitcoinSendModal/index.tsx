@@ -13,6 +13,7 @@ import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { useFeesInput } from '../../hooks/useFeesInput';
 import { useTxBuilder } from '../../hooks/useTxBuilder';
 import type { SubTheme } from '../../utils';
 import {
@@ -29,7 +30,6 @@ import { WalletAccountSelector } from '../WalletAccountSelector';
 import { AmountInputStep } from './AmountInputStep';
 import { RecipientsSelectionStep } from './RecipientsSelectionStep';
 import { TransactionReviewStep } from './TransactionReviewStep';
-import { useFeesInput } from './TransactionReviewStep/useFeesInput';
 import { TransactionSendConfirmationModal } from './TransactionSendConfirmationModal';
 import { useEmailAndBtcAddressesMaps } from './useEmailAndBtcAddressesMaps';
 

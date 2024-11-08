@@ -6,7 +6,12 @@ import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import type { IconName } from '@proton/components';
 import { Icon, Tooltip } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
-import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
+import {
+    COMPUTE_BITCOIN_UNIT,
+    HIGH_PRIORITY_TARGET_BLOCK,
+    LOW_PRIORITY_TARGET_BLOCK,
+    MEDIAN_PRIORITY_TARGET_BLOCK,
+} from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { Modal } from '../../../../atoms';
@@ -53,9 +58,9 @@ export const FeesModal = ({
     useEffect(() => {
         const run = async () => {
             const options = await Promise.allSettled([
-                getFeeOption('chevron-up', c('Wallet send').t`High priority`, 1),
-                getFeeOption('minus', c('Wallet send').t`Median priority`, 5),
-                getFeeOption('chevron-down', c('Wallet send').t`Low priority`, 10),
+                getFeeOption('chevron-up', c('Wallet send').t`High priority`, HIGH_PRIORITY_TARGET_BLOCK),
+                getFeeOption('minus', c('Wallet send').t`Median priority`, MEDIAN_PRIORITY_TARGET_BLOCK),
+                getFeeOption('chevron-down', c('Wallet send').t`Low priority`, LOW_PRIORITY_TARGET_BLOCK),
             ]).then((results) => results.filter((result) => 'value' in result).map((result) => result.value));
 
             setFeeOptions(options);

@@ -41,7 +41,9 @@ export const SCRIPT_TYPES = [
 
 export const MIN_FEE_RATE = 1;
 
-export const DEFAULT_TARGET_BLOCK = 5;
+export const HIGH_PRIORITY_TARGET_BLOCK = 1;
+export const MEDIAN_PRIORITY_TARGET_BLOCK = 3;
+export const LOW_PRIORITY_TARGET_BLOCK = 6;
 export const MAX_BLOCK_TARGET = 25;
 
 export const AVERAGE_TIMEGAP_BETWEEN_BLOCKS = 10;
