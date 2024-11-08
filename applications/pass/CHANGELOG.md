@@ -1,3 +1,8 @@
+### Version 1.24.2
+
+-   Show confirmation warning when deleting/trashing aliases
+-   Respect user in-app notification settings
+
 ### Version 1.24.1
 
 -   Add SSO device verification support
