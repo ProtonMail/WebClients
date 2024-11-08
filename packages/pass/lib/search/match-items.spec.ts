@@ -144,7 +144,7 @@ describe('searchItems', () => {
         { key: 'note', search: ['this is item'], expected: [items[0], items[1], items[2], items[3], items[4]] },
         {
             key: 'login item',
-            search: ['Login item', 'user1@example.com', 'user1', 'example.com', 'text label', 'text value'],
+            search: ['Login', 'user1@example.com', 'user1', 'example.com', 'text label', 'text value'],
             expected: [items[0]],
         },
         { key: 'card item', search: ['John Doe', '1234567890'], expected: [items[2]] },
