@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components/index';
 
 import { sendErrorReport } from '../../utils/errorHandling';

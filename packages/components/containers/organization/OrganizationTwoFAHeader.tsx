@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
+import { useMembers } from '@proton/account/members/hooks';
 import { Card } from '@proton/atoms';
 import Loader from '@proton/components/components/loader/Loader';
-import { useMembers } from '@proton/components/hooks/useMembers';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 

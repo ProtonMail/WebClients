@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
-import { useDrawer } from '@proton/components/hooks';
 import useDynamicMonthDay from '@proton/components/hooks/useDynamicMonthDay';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
+import useDrawer from '../../../hooks/drawer/useDrawer';
 import CalendarDrawerLogo from '../drawerIcons/CalendarDrawerLogo';
 
 const CalendarDrawerAppButton = ({

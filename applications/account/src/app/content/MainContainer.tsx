@@ -4,9 +4,14 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
+import { useGroups } from '@proton/account/groups/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     AppLink,
     CancellationReminderSection,
@@ -25,23 +30,19 @@ import {
     useConvertExternalAddresses,
     useDeviceRecovery,
     useDrivePlan,
-    useGroupMemberships,
-    useGroups,
     useIsDataRecoveryAvailable,
-    useOrganization,
+    useIsSessionRecoveryAvailable,
     useOrganizationTheme,
     useRecoveryNotification,
-    useSubscription,
+    useShowThemeSelection,
     useToggle,
     useUnprivatizeMembers,
-    useUserSettings,
 } from '@proton/components';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
-import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { FeatureCode, useFeatures } from '@proton/features';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';

@@ -2,6 +2,7 @@ import type { FormEvent } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
@@ -12,7 +13,6 @@ import {
     PrimaryButton,
     useApi,
     useNotifications,
-    useUserKeys,
 } from '@proton/components';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';

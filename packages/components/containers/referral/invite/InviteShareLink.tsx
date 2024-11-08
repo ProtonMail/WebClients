@@ -2,10 +2,10 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import TwitterButton from '@proton/components/components/button/TwitterButton';
 import Icon from '@proton/components/components/icon/Icon';
-import { useUserSettings } from '@proton/components/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import throttle from '@proton/utils/throttle';

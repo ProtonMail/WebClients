@@ -3,6 +3,9 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useCustomDomains, useGetCustomDomains } from '@proton/account/domains/hooks';
+import { useDomainsAddresses } from '@proton/account/domainsAddresses/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -33,7 +36,6 @@ import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useCustomDomains, useDomainsAddresses, useGetCustomDomains, useOrganization } from '../../hooks';
 import useOrganizationModals from '../organization/useOrganizationModals';
 import CatchAllModal from './CatchAllModal';
 import DeleteDomainModal from './DeleteDomainModal';

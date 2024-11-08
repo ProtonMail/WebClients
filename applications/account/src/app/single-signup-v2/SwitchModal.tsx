@@ -4,8 +4,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
-import { useErrorHandler } from '@proton/components/hooks';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader, useErrorHandler } from '@proton/components';
 import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { User } from '@proton/shared/lib/interfaces';

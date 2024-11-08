@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import { queryResolveContextShare } from '@proton/shared/lib/api/drive/share';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 

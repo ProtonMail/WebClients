@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import type { WasmPsbt, WasmTxBuilder } from '@proton/andromeda';
-import { useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
 import { useBitcoinBlockchainContext } from '../contexts';

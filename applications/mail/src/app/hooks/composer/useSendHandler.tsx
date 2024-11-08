@@ -2,9 +2,8 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import { useEventManager, useHandler, useNotifications } from '@proton/components';
-import type { Cancellable } from '@proton/components/hooks/useHandler';
-import { getOnlineStatus } from '@proton/components/hooks/useOnline';
+import type { Cancellable } from '@proton/components';
+import { getOnlineStatus, useEventManager, useHandler, useNotifications } from '@proton/components';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 

@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
-import { useNotifications } from '../../hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
+
 import { ConditionComparator, ConditionType, FilterStatement } from '../filters/interfaces';
 import ForwardConditions from './ForwardConditions';
 

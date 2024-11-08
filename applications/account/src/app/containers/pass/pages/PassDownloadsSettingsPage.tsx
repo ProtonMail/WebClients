@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Card } from '@proton/atoms';
 import { DownloadClientCard, SettingsLink, SettingsParagraph, SettingsSectionWide } from '@proton/components';
-import { usePlans } from '@proton/components/hooks';
 import { PLANS } from '@proton/payments';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { clients } from '@proton/shared/lib/pass/constants';

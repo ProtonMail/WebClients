@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -12,11 +13,10 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import useApi from '@proton/components/hooks/useApi';
+import { useContacts } from '@proton/mail/contacts/hooks';
 import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
-
-import { useContacts, useGetUserKeys } from '../../../hooks';
 
 const DOWNLOAD_FILENAME = 'protonContacts';
 

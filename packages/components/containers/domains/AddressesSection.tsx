@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { ButtonLike } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { APPS } from '@proton/shared/lib/constants';
-
-import { useOrganization } from '../../hooks';
 
 interface Props {
     onClose?: () => void;

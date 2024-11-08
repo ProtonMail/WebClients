@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { addDays, endOfToday, getUnixTime, isToday } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms';
-import { DateInputTwo, InputFieldTwo, TimeInput, useUserSettings } from '@proton/components';
+import { DateInputTwo, InputFieldTwo, TimeInput } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';

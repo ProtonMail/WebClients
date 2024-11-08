@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -24,7 +25,7 @@ import {
     getSpace,
 } from '@proton/shared/lib/user/storage';
 
-import { useLocalState, useSubscription } from '../../hooks';
+import useLocalState from '../../hooks/useLocalState';
 import LockedStateTopBanner from './LockedStateTopBanner';
 import TopBanner from './TopBanner';
 

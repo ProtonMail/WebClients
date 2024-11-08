@@ -6,7 +6,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Price from '@proton/components/components/price/Price';
-import { usePreferredPlansMap } from '@proton/components/hooks';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import type { AmountAndCurrency } from '@proton/payments';
 import { PLANS } from '@proton/payments';
 import { APPS, CYCLE } from '@proton/shared/lib/constants';

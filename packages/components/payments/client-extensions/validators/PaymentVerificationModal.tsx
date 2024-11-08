@@ -7,7 +7,7 @@ import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Loader from '@proton/components/components/loader/Loader';
 import FormModal from '@proton/components/components/modal/FormModal';
 import PaymentVerificationImage from '@proton/components/containers/payments/PaymentVerificationImage';
-import { useNotifications } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { type CardPayment, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 

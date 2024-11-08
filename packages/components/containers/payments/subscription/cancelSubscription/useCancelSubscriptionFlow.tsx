@@ -1,11 +1,17 @@
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
+import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwo, useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import {
     type PLANS,
     PLAN_SERVICES,
@@ -34,15 +40,6 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash';
 
-import {
-    useGetSubscription,
-    useNotifications,
-    useOrganization,
-    usePlans,
-    usePreferredPlansMap,
-    useSubscription,
-    useVPNServersCount,
-} from '../../../../hooks';
 import DowngradeModal from '../../DowngradeModal';
 import LossLoyaltyModal from '../../LossLoyaltyModal';
 import MemberDowngradeModal from '../../MemberDowngradeModal';

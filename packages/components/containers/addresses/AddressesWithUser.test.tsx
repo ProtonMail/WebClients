@@ -4,8 +4,9 @@ import { fireEvent, render } from '@testing-library/react';
 
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useApi, useKTVerifier, useNotifications, useOrganizationKey } from '@proton/components';
+import { useApi, useKTVerifier, useNotifications } from '@proton/components';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
@@ -57,7 +58,7 @@ const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVer
 jest.mock('@proton/unleash/useFlag');
 const mockedUseFlag = useFlag as jest.MockedFunction<any>;
 
-jest.mock('@proton/components/hooks/useOrganizationKey');
+jest.mock('@proton/account/organizationKey/hooks');
 const mockedUseOrganizationKey = useOrganizationKey as jest.MockedFunction<typeof useOrganizationKey>;
 
 jest.mock('@proton/redux-shared-store');

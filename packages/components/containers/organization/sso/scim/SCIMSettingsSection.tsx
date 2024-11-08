@@ -16,6 +16,7 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -24,7 +25,6 @@ import type { Domain } from '@proton/shared/lib/interfaces';
 import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
-import { useNotifications } from '../../../../hooks';
 import SubSettingsSection from '../../../layout/SubSettingsSection';
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
 import DisableSCIMModal from './DisableSCIMModal';

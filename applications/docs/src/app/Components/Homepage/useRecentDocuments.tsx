@@ -1,6 +1,6 @@
 import { c } from 'ttag'
 import { useAuthentication } from '@proton/components'
-import { useContactEmails } from '@proton/components/hooks'
+import { useContactEmails } from '@proton/mail/contactEmails/hooks'
 import {
   DateFormatter,
   type RecentDocumentServiceState,

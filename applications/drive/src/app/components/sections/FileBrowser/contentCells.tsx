@@ -1,14 +1,8 @@
 import { c } from 'ttag';
 
 import { Avatar, Button } from '@proton/atoms';
-import {
-    FileIcon,
-    Icon,
-    TableCell,
-    useActiveBreakpoint,
-    useConfirmActionModal,
-    useContactEmails,
-} from '@proton/components';
+import { FileIcon, Icon, TableCell, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 

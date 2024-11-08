@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 
-import { useCache, useContactEmails, useEventManager, useUserKeys } from '@proton/components';
+import { useUserKeys } from '@proton/account/userKeys/hooks';
+import { useCache, useEventManager } from '@proton/components';
 import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useContactGroups } from '@proton/mail';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { readSigned } from '@proton/shared/lib/contacts/decrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';

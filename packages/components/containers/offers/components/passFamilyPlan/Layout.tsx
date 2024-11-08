@@ -2,11 +2,12 @@ import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { Price } from '@proton/components';
 import type { Props as PriceProps } from '@proton/components/components/price/Price';
-import { usePreferredPlansMap, useSubscription } from '@proton/components/hooks';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { COUPON_CODES, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasPassLaunchOffer } from '@proton/shared/lib/helpers/subscription';

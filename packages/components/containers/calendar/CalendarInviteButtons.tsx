@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import useApi from '@proton/components/hooks/useApi';
-import { useSubscription } from '@proton/components/hooks/useSubscription';
 import { useLoading } from '@proton/hooks';
 import { PLANS } from '@proton/payments';
 import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';

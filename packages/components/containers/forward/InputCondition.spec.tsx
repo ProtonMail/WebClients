@@ -1,6 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { useNotifications } from '../../hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
+
 import type { Condition } from '../filters/interfaces';
 import InputCondition from './InputCondition';
 

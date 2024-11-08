@@ -6,7 +6,7 @@ import type { Color } from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
-import { useHotkeys } from '../../hooks';
+import { useHotkeys } from '../../hooks/useHotkeys';
 
 interface Props {
     onToggleDropdown: () => void;

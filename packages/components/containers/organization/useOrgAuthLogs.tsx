@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useErrorHandler } from '@proton/components/hooks';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { getOrgAuthLogs } from '@proton/shared/lib/api/b2bevents';
 

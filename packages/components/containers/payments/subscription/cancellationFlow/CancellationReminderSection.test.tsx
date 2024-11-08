@@ -1,8 +1,9 @@
 import { screen } from '@testing-library/react';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
-import { useSubscription, useVPNServersCount } from '@proton/components/hooks';
+import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { PLANS, PLAN_NAMES, PLAN_TYPES } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
@@ -12,7 +13,7 @@ import useCancellationFlow from './useCancellationFlow';
 
 jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.MockedFunction<any>;
-jest.mock('@proton/components/hooks/useSubscription');
+jest.mock('@proton/account/subscription/hooks');
 const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
 jest.mock('@proton/components/hooks/useVPNServersCount');
 const mockUseVPNServersCount = useVPNServersCount as jest.MockedFunction<any>;

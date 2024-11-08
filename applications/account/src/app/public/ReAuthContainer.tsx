@@ -12,11 +12,11 @@ import {
     InputFieldTwo,
     PasswordInputTwo,
     SimpleDropdown,
+    useErrorHandler,
     useFormErrors,
 } from '@proton/components';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import useApi from '@proton/components/hooks/useApi';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getKeySalts } from '@proton/shared/lib/api/keys';

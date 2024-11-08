@@ -4,16 +4,10 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Vr } from '@proton/atoms';
 import type { EditorMetadata } from '@proton/components';
-import {
-    Icon,
-    Tooltip,
-    useActiveBreakpoint,
-    useModalStateObject,
-    useSpotlightOnFeature,
-    useUserSettings,
-} from '@proton/components';
+import { Icon, Tooltip, useActiveBreakpoint, useModalStateObject, useSpotlightOnFeature } from '@proton/components';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { FeatureCode, useFeature } from '@proton/features';

@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID, useTheme } from '@proton/components';
-import { useDrawer } from '@proton/components/hooks';
+import { DRAWER_PASS_ALIASES_CREATE_ALIAS_MODAL_CTA_ID, useDrawer, useTheme } from '@proton/components';
 import { getPlaceholderSrc } from '@proton/mail';
 import noSpamSvgDark from '@proton/styles/assets/img/placeholders/auto-delete-cool-dark.svg';
 import noSpamSvgLight from '@proton/styles/assets/img/placeholders/auto-delete-cool-light.svg';

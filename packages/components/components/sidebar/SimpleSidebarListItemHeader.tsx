@@ -5,8 +5,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import type { HotkeyTuple } from '../../hooks';
-import { useHotkeys } from '../../hooks';
+import { type HotkeyTuple, useHotkeys } from '../../hooks/useHotkeys';
 import SidebarListItem from './SidebarListItem';
 
 interface Props {

@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms';
 import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -12,7 +13,6 @@ import { Autopay } from '@proton/payments';
 import { getHasConsumerVpnPlan } from '@proton/shared/lib/helpers/subscription';
 
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
-import { useSubscription } from '../../hooks';
 
 type DisableRenewModalOwnProps = { isVPNPlan: boolean };
 type DisableRenewModalPromiseProps = { onResolve: (result: boolean) => void; onReject: () => void };

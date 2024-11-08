@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -10,11 +11,12 @@ import SettingsSection from '@proton/components/containers/account/SettingsSecti
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import type { AuthModalResult } from '@proton/components/containers/password/interface';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useMyCountry from '@proton/components/hooks/useMyCountry';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 import noop from '@proton/utils/noop';
 
-import { useMyCountry, useNotifications, useUserSettings } from '../../hooks';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
 

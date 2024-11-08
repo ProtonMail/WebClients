@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { useMembers } from '@proton/account/members/hooks';
 import { Button } from '@proton/atoms';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
-import { useMembers } from '@proton/components/hooks';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { EnhancedMember, GroupMember, Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';

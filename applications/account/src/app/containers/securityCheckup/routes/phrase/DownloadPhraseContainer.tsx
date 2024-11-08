@@ -6,8 +6,9 @@ import { c } from 'ttag';
 
 import { useInactiveKeys } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
-import { Checkbox, Icon, Label, useApi, useEventManager, useGetUserKeys, useSecurityCheckup } from '@proton/components';
+import { Checkbox, Icon, Label, useApi, useEventManager, useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
 import { generatePDFKit } from '@proton/recovery-kit';

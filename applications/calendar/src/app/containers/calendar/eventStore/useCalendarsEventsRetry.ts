@@ -1,7 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useRef } from 'react';
 
-import { useOnline } from '@proton/components/hooks';
+import { useOnline } from '@proton/components';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { SECOND } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';

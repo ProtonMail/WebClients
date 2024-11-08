@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
+import useModals from '@proton/components/hooks/useModals';
 import type {
     ADDON_NAMES,
     BillingAddress,
@@ -25,7 +26,6 @@ import type { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists, User 
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import { useModals } from '../../hooks';
 import { useCbIframe } from '../chargebee/ChargebeeIframe';
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';

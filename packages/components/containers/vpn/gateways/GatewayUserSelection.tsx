@@ -10,7 +10,7 @@ import { SortingTableHeader } from '@proton/components/components/table/SortingT
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableRow from '@proton/components/components/table/TableRow';
-import { useSortedList } from '@proton/components/hooks';
+import useSortedList from '@proton/components/hooks/useSortedList';
 import { SERVER_FEATURES, SORT_DIRECTION, USER_ROLES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

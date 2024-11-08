@@ -2,13 +2,13 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { useSubscription } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { PLANS } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';
 
 interface Props extends ModalProps {

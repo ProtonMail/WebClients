@@ -3,8 +3,7 @@ import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon, useModalState } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
+import { Icon, useModalState, useNotifications } from '@proton/components';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';

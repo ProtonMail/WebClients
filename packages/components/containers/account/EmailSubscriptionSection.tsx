@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import { useSubscription } from '../../hooks';
 import EditEmailSubscription from './EditEmailSubscription';
 import MozillaInfoPanel from './MozillaInfoPanel';
 import SettingsParagraph from './SettingsParagraph';

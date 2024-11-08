@@ -3,8 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import ConfirmModal from '@proton/components/components/modal/Confirm';
-
-import { useModals } from '../../hooks';
+import useModals from '@proton/components/hooks/useModals';
 
 interface Props {
     onWipe: () => Promise<void>;

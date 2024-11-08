@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { IconName } from '@proton/components';
 import {
     DefaultQuickSettings,
@@ -25,9 +26,9 @@ import {
     useEventManager,
     useKeyTransparencyContext,
     useModalState,
+    useNotifications,
 } from '@proton/components';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
-import { useNotifications, useUserSettings } from '@proton/components/hooks';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';

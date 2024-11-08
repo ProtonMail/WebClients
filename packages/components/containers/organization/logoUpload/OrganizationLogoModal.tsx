@@ -16,6 +16,7 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
@@ -28,7 +29,6 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useNotifications } from '../../../hooks';
 import SidebarPreview from './SidebarPreview';
 import useOrgLogoUploadTelemetry from './useOrgLogoUploadTelemetry';
 

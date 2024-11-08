@@ -13,6 +13,7 @@ import LabelsUpsellModal from '@proton/components/components/upsell/modal/types/
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useLabels } from '@proton/mail';
 import { orderLabels } from '@proton/shared/lib/api/labels';
@@ -21,7 +22,6 @@ import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Label } from '@proton/shared/lib/interfaces';
 
-import { useNotifications } from '../../hooks';
 import LabelSortableList from './LabelSortableList';
 import EditLabelModal from './modals/EditLabelModal';
 

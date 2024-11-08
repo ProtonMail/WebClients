@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     getTargetEnvironment,
     getVersionCookieIsValid,
@@ -12,7 +13,6 @@ import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 
 import useApi from './useApi';
-import useUserSettings from './useUserSettings';
 
 const useEarlyAccess = () => {
     const api = useApi();

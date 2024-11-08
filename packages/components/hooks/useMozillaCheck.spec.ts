@@ -1,11 +1,11 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { FREE_SUBSCRIPTION } from '@proton/payments';
 
 import useMozillaCheck from './useMozillaCheck';
-import { useSubscription } from './useSubscription';
 
-jest.mock('./useSubscription');
+jest.mock('@proton/account/subscription/hooks');
 
 it('should return false if subscription is still loading', () => {
     jest.mocked(useSubscription).mockReturnValue([undefined as any, true]);

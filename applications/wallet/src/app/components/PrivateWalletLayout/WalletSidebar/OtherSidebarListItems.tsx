@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { signoutAction } from '@proton/account';
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { IconProps } from '@proton/components';
 import {
@@ -20,7 +21,6 @@ import {
     useSubscriptionModal,
     useToggle,
 } from '@proton/components';
-import { useOrganization } from '@proton/components/hooks';
 import { PLANS } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 

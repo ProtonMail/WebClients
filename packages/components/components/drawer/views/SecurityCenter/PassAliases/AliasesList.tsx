@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Card } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import Info from '@proton/components/components/link/Info';
-import { useNotifications } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 
 import DrawerAppHeadline from '../../shared/DrawerAppHeadline';
