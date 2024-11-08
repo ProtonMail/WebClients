@@ -17,7 +17,7 @@ import {
 } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
-import { getShortBillingText } from '@proton/components/containers/payments/helper';
+import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -25,6 +25,7 @@ import { useLoading } from '@proton/hooks';
 import {
     type BillingAddress,
     type Currency,
+    type FullPlansMap,
     PLANS,
     type PlanIDs,
     getFallbackCurrency,
@@ -46,7 +47,6 @@ import {
 } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import {
-    getPlanFromCheckout,
     getPlanFromPlanIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
@@ -82,7 +82,7 @@ import Guarantee from './Guarantee';
 import Layout from './Layout';
 import { PlanCardSelector } from './PlanCardSelector';
 import RightSummary from './RightSummary';
-import { type SubscriptionDataCycleMapping, getAccessiblePlans, getFreeSubscriptionData } from './helper';
+import { getAccessiblePlans, getFreeSubscriptionData } from './helper';
 import type {
     Measure,
     OnOpenLogin,
@@ -164,7 +164,7 @@ const Step1 = ({
     className?: string;
     step1Ref: MutableRefObject<Step1Rref | undefined>;
     activeSessions?: LocalSessionPersisted[];
-    onChangeCurrency: (newCurrency: Currency) => Promise<SubscriptionDataCycleMapping>;
+    onChangeCurrency: (newCurrency: Currency) => Promise<FullPlansMap>;
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
@@ -183,6 +183,7 @@ const Step1 = ({
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
     const theme = usePublicTheme();
     const { getAvailableCurrencies } = useCurrencies();
+    const [changingCurrency, withChangingCurrency] = useLoading();
 
     const availableCurrencies = getAvailableCurrencies({
         status: model.paymentMethodStatusExtended,
@@ -320,8 +321,8 @@ const Step1 = ({
     const handleChangeCurrency = async (currency: Currency): Promise<Currency> => {
         void measure({ event: TelemetryAccountSignupEvents.currencySelect, dimensions: { currency } });
 
-        const subscriptionDataCycleMapping = await onChangeCurrency(currency);
-        const hasCurrentPlanInNewCurrency = !!subscriptionDataCycleMapping[selectedPlan.Name];
+        const newPlansMap = await onChangeCurrency(currency);
+        const hasCurrentPlanInNewCurrency = !!newPlansMap[selectedPlan.Name];
 
         if (!hasCurrentPlanInNewCurrency) {
             handleOptimistic({ currency, planIDs: {} });
@@ -340,7 +341,7 @@ const Step1 = ({
     const handleChangePlan = (planIDs: PlanIDs, planName: PLANS, currencyOverride?: Currency) => {
         measure({ event: TelemetryAccountSignupEvents.planSelect, dimensions: { plan: planName } });
 
-        const currency = currencyOverride ?? getPlanFromCheckout(planIDs, model.plansMap)?.Currency;
+        const currency = currencyOverride ?? getPlanFromPlanIDs(model.plansMap, planIDs)?.Currency;
         const checkOptions: Partial<OptimisticOptions> = {
             planIDs,
         };
@@ -381,7 +382,7 @@ const Step1 = ({
     };
 
     const cycleOptions = cycles.map((cycle) => ({
-        text: getShortBillingText(cycle),
+        text: getShortBillingText(cycle, options.planIDs),
         value: cycle,
     }));
 
@@ -437,7 +438,8 @@ const Step1 = ({
         checkResult: options.checkResult,
     });
 
-    const renewalNotice = !hasSelectedFree && (
+    const showRenewalNotice = !hasSelectedFree;
+    const renewalNotice = showRenewalNotice && (
         <div className="w-full text-sm color-norm opacity-70">
             *
             {getCheckoutRenewNoticeText({
@@ -447,6 +449,7 @@ const Step1 = ({
                 planIDs: options.planIDs,
                 checkout,
                 currency: options.currency,
+                subscription: model.session?.subscription,
             })}
         </div>
     );
@@ -514,7 +517,10 @@ const Step1 = ({
                 mode="select-two"
                 className="h-full ml-auto px-3 color-primary relative interactive-pseudo interactive--no-background"
                 currency={options.currency}
-                onSelect={handleChangeCurrency}
+                loading={changingCurrency}
+                onSelect={(newCurrency) => {
+                    void withChangingCurrency(handleChangeCurrency(newCurrency));
+                }}
                 unstyled
             />
         ) : null;
@@ -1141,6 +1147,7 @@ const Step1 = ({
                                 loadingPaymentDetails={loadingPaymentDetails || loadingSignout}
                                 isDarkBg={isDarkBg}
                                 signupParameters={signupParameters}
+                                showRenewalNotice={showRenewalNotice}
                                 onPay={async (payment, type) => {
                                     if (payment === 'signup-token') {
                                         await handleCompletion(model.subscriptionData, 'signup-token');

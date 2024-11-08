@@ -1,14 +1,20 @@
+import { type ReactNode } from 'react';
+
 import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import Time from '@proton/components/components/time/Time';
-import { type PlanIDs } from '@proton/payments';
-import { type Currency } from '@proton/payments';
-import { CYCLE } from '@proton/shared/lib/constants';
+import { type Currency, PLANS, type PlanIDs } from '@proton/payments';
+import { CYCLE, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
-import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
 import { getOptimisticRenewCycleAndPrice, isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
-import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHas2024OfferCoupon,
+    getPlanName,
+    getPlanTitle,
+    isLifetimePlan,
+} from '@proton/shared/lib/helpers/subscription';
 import type { Coupon, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import Price from '../../components/price/Price';
@@ -198,6 +204,37 @@ const getRenewNoticeTextForLimitedCoupons = ({
         .jt`The specially discounted price of ${priceWithDiscount} is valid for the first ${months}. The coupon is valid for ${couponRedemptions} renewals. Then it will automatically be renewed at ${price} for ${months} months. You can cancel at any time.`;
 };
 
+export const getPassLifetimeRenewNoticeText = ({ subscription }: { subscription?: Subscription }) => {
+    const planName = getPlanName(subscription);
+    if (!planName || planName === PLANS.FREE) {
+        return c('Info')
+            .t`${PASS_SHORT_APP_NAME} lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${PASS_SHORT_APP_NAME}.`;
+    }
+
+    if (planName === PLANS.PASS) {
+        return c('Info')
+            .t`Your ${PASS_SHORT_APP_NAME} Plus subscription will be replaced with ${PASS_SHORT_APP_NAME} Lifetime. The remaining balance of your subscription will be added to your account. ${PASS_SHORT_APP_NAME} lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${PASS_SHORT_APP_NAME}.`;
+    }
+
+    const planTitle = getPlanTitle(subscription);
+    return c('Info')
+        .t`${PASS_SHORT_APP_NAME} lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${PASS_SHORT_APP_NAME}. Your ${planTitle} subscription renewal price and date remain unchanged.`;
+};
+
+export const getLifetimeRenewNoticeText = ({
+    subscription,
+    planIDs,
+}: {
+    planIDs: PlanIDs;
+    subscription?: Subscription;
+}) => {
+    const planName = getPlanNameFromIDs(planIDs);
+
+    if (isLifetimePlan(planName)) {
+        return getPassLifetimeRenewNoticeText({ subscription });
+    }
+};
+
 export const getCheckoutRenewNoticeText = ({
     coupon,
     cycle,
@@ -205,15 +242,19 @@ export const getCheckoutRenewNoticeText = ({
     plansMap,
     currency,
     checkout,
-    ...rest
+    ...renewalNoticeProps
 }: {
+    coupon: Coupon;
     cycle: CYCLE;
     planIDs: PlanIDs;
     plansMap: PlansMap;
-    checkout: SubscriptionCheckoutData;
     currency: Currency;
-    coupon: Coupon;
-} & RenewalNoticeProps) => {
+    checkout: SubscriptionCheckoutData;
+} & RenewalNoticeProps): ReactNode => {
+    if (isLifetimePlanSelected(planIDs)) {
+        return getLifetimeRenewNoticeText({ ...renewalNoticeProps, planIDs });
+    }
+
     if (getHas2024OfferCoupon(coupon?.Code)) {
         return getBlackFridayRenewalNoticeText({
             currency,
@@ -253,6 +294,6 @@ export const getCheckoutRenewNoticeText = ({
 
     return getRegularRenewalNoticeText({
         cycle,
-        ...rest,
+        ...renewalNoticeProps,
     });
 };

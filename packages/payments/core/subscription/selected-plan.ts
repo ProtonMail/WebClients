@@ -6,7 +6,7 @@ import {
     isMemberAddon,
     isScribeAddon,
 } from '@proton/shared/lib/helpers/addons';
-import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getIsB2BAudienceFromPlan, getMaxValue, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -152,7 +152,7 @@ export class SelectedPlan {
     }
 
     getPlanName(): PLANS {
-        return getPlanFromIds(this._planIDs) ?? PLANS.FREE;
+        return getPlanNameFromIDs(this._planIDs) ?? PLANS.FREE;
     }
 
     getPlan(): Plan {

@@ -1,4 +1,4 @@
-import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import type { Cycle, Plan, StrictPlan } from '@proton/shared/lib/interfaces';
 
 import { PLANS, PLAN_TYPES } from '../constants';
@@ -14,7 +14,7 @@ export function getPlanByName(
     currencyFallback = true,
     ignoreAddons = false
 ): Plan | undefined {
-    const planName = typeof plan === 'string' ? plan : getPlanFromIds(plan);
+    const planName = typeof plan === 'string' ? plan : getPlanNameFromIDs(plan);
     if (!planName) {
         return undefined;
     }

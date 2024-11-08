@@ -2,19 +2,21 @@ import { FREE_SUBSCRIPTION, type FullPlansMap, PLANS, type PlanIDs, getPlansMap 
 import { APPS, CYCLE } from '@proton/shared/lib/constants';
 import type { Plan, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
-import { getTestPlans } from '@proton/testing/data';
+import { getLongTestPlans, getTestPlans } from '@proton/testing/data';
 
 import { getInitialCycle } from './getInitialCycle';
 
 describe('getInitialCycle', () => {
-    const mockPlansMap: FullPlansMap = getPlansMap(getTestPlans(), 'USD', false);
+    const mockPlansMap: FullPlansMap = getPlansMap(getLongTestPlans(), 'USD', false);
 
     const mockSubscription = buildSubscription({
         Cycle: CYCLE.MONTHLY,
         Currency: 'USD',
     });
 
-    const defaultPlanIDs: PlanIDs = {};
+    const defaultPlanIDs: PlanIDs = {
+        [PLANS.MAIL]: 1,
+    };
 
     it('should return YEARLY for Proton Pass', () => {
         const result = getInitialCycle({

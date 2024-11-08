@@ -44,6 +44,7 @@ const UpgradeVpnSection = ({ app }: Props) => {
         freePlan,
         serversCount,
         openSubscriptionModal,
+        user,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 

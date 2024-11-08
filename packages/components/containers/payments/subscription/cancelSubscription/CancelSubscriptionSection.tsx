@@ -1,15 +1,17 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
 export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
+    const [user] = useUser();
     const { redirectToCancellationFlow, b2bAccess, b2cAccess } = useCancellationFlow();
     const { loadingCancelSubscription, cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
         app,
@@ -33,6 +35,12 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
             <SettingsSection>
                 <SettingsParagraph>{c('Info')
                     .t`When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${BRAND_NAME} Free plan.`}</SettingsParagraph>
+                {user.hasPassLifetime && (
+                    <SettingsParagraph>
+                        {c('Info')
+                            .t`You will keep lifetime access to ${PASS_APP_NAME} premium features if you cancel your subscription.`}
+                    </SettingsParagraph>
+                )}
                 <Button
                     onClick={handleContinueClick}
                     data-testid="CancelSubscriptionButton"

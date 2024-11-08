@@ -1,8 +1,11 @@
+import { type ReactNode } from 'react';
+
 import type { IconSize } from '@proton/components';
 import { DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';
+import { type PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
 import { getPassAppFeature } from '@proton/components/containers/payments/features/pass';
 import {
@@ -20,6 +23,7 @@ import {
     getPassBusinessSignupPlan,
     getPassEssentialsSignupPlan,
     getPassFamilyPlan,
+    getPassLifetimePlan,
     getPassPlan,
     getVPNPlan,
     getVisionaryPlan,
@@ -38,7 +42,21 @@ import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
 import bundleVpnPass from './bundle-vpn-pass.svg';
 import bundle from './bundle.svg';
-import { getCustomPassFamilyFeatures, getCustomPassFeatures } from './pass/configuration';
+import {
+    getCustomPassFamilyFeatures,
+    getCustomPassFeatures,
+    getCustomPassLifetimeFeatures,
+} from './pass/configuration';
+
+export type SummaryPlan =
+    | {
+          logo: ReactNode;
+          title: string;
+          features: PlanCardFeatureDefinition[];
+          isLifetime?: boolean;
+          plan: Plan;
+      }
+    | undefined;
 
 export const getSummaryPlan = ({
     plan,
@@ -48,7 +66,7 @@ export const getSummaryPlan = ({
     plan: Plan | undefined;
     vpnServersCountData: VPNServersCountData;
     freePlan: FreePlanDefault;
-}) => {
+}): SummaryPlan => {
     const iconSize: IconSize = 6;
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
 
@@ -69,6 +87,17 @@ export const getSummaryPlan = ({
             ...shortPlan,
             plan,
             features: getCustomPassFeatures(),
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.PASS_LIFETIME) {
+        const shortPlan = getPassLifetimePlan(plan);
+        return {
+            logo: <PassLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+            features: getCustomPassLifetimeFeatures(),
+            isLifetime: true,
         };
     }
 

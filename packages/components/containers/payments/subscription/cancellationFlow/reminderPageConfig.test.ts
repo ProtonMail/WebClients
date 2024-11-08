@@ -37,6 +37,7 @@ const user = {
     isPaid: true,
     isPrivate: false,
     isSubUser: false,
+    hasPassLifetime: false,
 };
 
 describe('getReminderPageConfig', () => {

@@ -20,6 +20,7 @@ import {
     type INVOICE_STATE,
     type INVOICE_TYPE,
     PAYMENT_METHOD_TYPES,
+    PLANS,
     isTokenPaymentMethod,
     isV5PaymentToken,
 } from '@proton/payments';
@@ -28,6 +29,7 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import type { ProductParam } from '../apps/product';
 import { getProductHeaders } from '../apps/product';
+import { getPlanNameFromIDs, isLifetimePlanSelected } from '../helpers/planIDs';
 import type { Api, Cycle, FreePlanDefault, Renew, Subscription } from '../interfaces';
 
 export type PaymentsVersion = 'v4' | 'v5';
@@ -150,8 +152,48 @@ function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
     return payload as SubscribeData;
 }
 
+function getPaymentTokenFromSubscribeData(data: SubscribeData): string | undefined {
+    return (data as any)?.PaymentToken ?? (data as any)?.Payment?.Details?.Token;
+}
+
+export function getLifetimeProductType(data: Pick<SubscribeData, 'Plans'>) {
+    const planName = getPlanNameFromIDs(data.Plans);
+    if (planName === PLANS.PASS_LIFETIME) {
+        return 'pass-lifetime' as const;
+    }
+}
+
+export const buyProduct = (rawData: SubscribeData, product: ProductParam) => {
+    const sanitizedData = prepareSubscribeDataPayload(rawData) as SubscribeDataV5;
+
+    const url = 'payments/v5/products';
+    const config = {
+        url,
+        method: 'post',
+        data: {
+            Quantity: 1,
+            PaymentToken: getPaymentTokenFromSubscribeData(sanitizedData),
+            ProductType: getLifetimeProductType(sanitizedData),
+            Amount: sanitizedData.Amount,
+            Currency: sanitizedData.Currency,
+            BillingAddress: sanitizedData.BillingAddress,
+        },
+        headers: getProductHeaders(product, {
+            endpoint: url,
+            product,
+        }),
+        timeout: 60000 * 2,
+    };
+
+    return config;
+};
+
 export const subscribe = (rawData: SubscribeData, product: ProductParam, version: PaymentsVersion) => {
     const sanitizedData = prepareSubscribeDataPayload(rawData);
+
+    if (isLifetimePlanSelected(sanitizedData.Plans)) {
+        return buyProduct(sanitizedData, product);
+    }
 
     let data: SubscribeData = sanitizedData;
     if (version === 'v5' && isSubscribeDataV4(sanitizedData)) {

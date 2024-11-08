@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { getDealDurationText } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { type Currency } from '@proton/payments';
 import type { CYCLE } from '@proton/shared/lib/constants';
@@ -14,17 +13,16 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import SaveLabel from './SaveLabel';
+import { type SummaryPlan } from './configuration';
 
 interface Props {
+    summaryPlan: SummaryPlan;
     cycle?: CYCLE;
-    title: string;
     price: ReactNode;
     regularPrice: ReactNode;
     addons?: ReactNode;
-    logo: ReactNode;
     children?: ReactNode;
     discount: number;
-    features: PlanCardFeatureDefinition[];
     free?: boolean;
     className?: string;
     checkout?: SubscriptionCheckoutData;
@@ -32,20 +30,20 @@ interface Props {
 }
 
 const RightPlanSummary = ({
+    summaryPlan,
     cycle,
-    title,
     price,
     addons,
     regularPrice,
-    logo,
     children,
     discount,
-    features,
     free,
     className,
     checkout,
     mode,
 }: Props) => {
+    const { title, logo, features = [], isLifetime } = summaryPlan ?? {};
+
     return (
         <div className={clsx('w-full p-6', className)}>
             <div className="text-rg text-bold mb-4">{c('Info').t`Summary`}</div>
@@ -59,7 +57,9 @@ const RightPlanSummary = ({
                         {mode !== 'addons' && <div className="text-rg text-bold">{price}</div>}
                     </div>
                     <div className="flex flex-1 items-center gap-1 text-sm">
-                        {!free && <div className="color-weak text-ellipsis">{getDealDurationText(cycle)}</div>}
+                        {!free && !isLifetime && (
+                            <div className="color-weak text-ellipsis">{getDealDurationText(cycle)}</div>
+                        )}
                         {(() => {
                             if (free) {
                                 return <div className="flex-auto color-weak">{c('Info').t`Free forever`}</div>;
