@@ -2,9 +2,11 @@ import { type ReactNode, useEffect, useState } from 'react'
 import '@testing-library/jest-dom'
 import { cleanup, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import type { RecentDocumentsSnapshot, RecentDocumentsSnapshotData } from '@proton/docs-core'
+import type { Application, RecentDocumentsSnapshot, RecentDocumentsSnapshotData } from '@proton/docs-core'
 import { HomepageContent } from './HomepageContent'
 import { RecentDocumentsContext } from './useRecentDocuments'
+import ApplicationProvider from '../../Containers/ApplicationProvider'
+import type { LoggerInterface } from '@proton/utils/logs'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
@@ -99,10 +101,10 @@ const RecentDocumentsMockProvider = ({
   handleOpenDocument: jest.Mock
   handleOpenFolder: jest.Mock
 }) => {
-  let [snapshot, setSnapshot] = useState<RecentDocumentsSnapshot>({ state: 'not_fetched' })
+  let [snapshot, setSnapshot] = useState<RecentDocumentsSnapshot>({ state: 'not_fetched', data: [] })
 
   let providerValue = {
-    state: snapshot,
+    state: snapshot.state,
     items: snapshot.data || [],
     handleTrashDocument,
     handleOpenDocument,
@@ -115,22 +117,22 @@ const RecentDocumentsMockProvider = ({
   useEffect(() => {
     if (flow === 'one_document') {
       setSnapshot({
-        state: 'fetched',
+        state: 'done',
         data: MOCK_DATA,
       })
     }
 
     if (flow === 'empty_recents') {
-      setSnapshot({ state: 'fetched', data: [] })
+      setSnapshot({ state: 'done', data: [] })
     }
 
     if (flow === 'delayed') {
-      setSnapshot({ state: 'fetching' })
+      setSnapshot({ state: 'fetching', data: [] })
       setTimeout(() => {
-        setSnapshot({ state: 'fetched', data: [] })
+        setSnapshot({ state: 'done', data: [] })
       }, 10)
     }
-  }, [])
+  }, [flow])
 
   return <RecentDocumentsContext.Provider value={providerValue}>{children}</RecentDocumentsContext.Provider>
 }
@@ -140,14 +142,18 @@ function renderWithProvider(node: ReactNode, flow: 'one_document' | 'empty_recen
   const mockHandleOpenDocument = jest.fn()
   const mockHandleOpenFolder = jest.fn()
   render(
-    <RecentDocumentsMockProvider
-      flow={flow}
-      handleOpenDocument={mockHandleOpenDocument}
-      handleOpenFolder={mockHandleOpenFolder}
-      handleTrashDocument={mockHandleTrashDocument}
+    <ApplicationProvider
+      application={{ logger: { debug: jest.fn() } as unknown as LoggerInterface } as unknown as Application}
     >
-      {node}
-    </RecentDocumentsMockProvider>,
+      <RecentDocumentsMockProvider
+        flow={flow}
+        handleOpenDocument={mockHandleOpenDocument}
+        handleOpenFolder={mockHandleOpenFolder}
+        handleTrashDocument={mockHandleTrashDocument}
+      >
+        {node}
+      </RecentDocumentsMockProvider>
+    </ApplicationProvider>,
   )
   return { mockHandleOpenDocument, mockHandleOpenFolder, mockHandleTrashDocument }
 }

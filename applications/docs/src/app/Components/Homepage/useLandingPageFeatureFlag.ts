@@ -1,6 +1,6 @@
 import { useFlag } from '@proton/unleash'
 
-export const useDriveDocsLandingPageFeatureFlag = () => {
+export const useLandingPageFeatureFlag = () => {
   const rollout = useFlag('DriveDocsLandingPageEnabled')
   return rollout
 }
