@@ -1,6 +1,7 @@
 import type { Ref } from 'react';
 import { useMemo } from 'react';
 
+import { TMP_UNIQUE_ID } from '@proton/shared/lib/calendar/constants';
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 
 import type { CalendarViewBusyEvent, CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
@@ -112,7 +113,7 @@ const DayEvents = ({
 
         const { style, height: eventHeight, size } = eventsLaidOut[i];
 
-        const isTemporary = event.uniqueId === 'tmp';
+        const isTemporary = event.uniqueId === TMP_UNIQUE_ID;
         const isSelected = targetEventData ? event.uniqueId === targetEventData.uniqueId : false;
         const isThisSelected =
             (isSelected && isTemporary) || (isSelected && targetEventData && dayIndex === targetEventData.idx);

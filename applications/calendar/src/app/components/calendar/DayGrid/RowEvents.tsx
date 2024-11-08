@@ -1,5 +1,6 @@
 import type { Ref } from 'react';
 
+import { TMP_UNIQUE_ID } from '@proton/shared/lib/calendar/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
 import type {
@@ -72,7 +73,7 @@ const RowEvents = ({
 
         const event = getEvent(idx, eventsInRow, events);
 
-        const isTemporary = event.uniqueId === 'tmp';
+        const isTemporary = event.uniqueId === TMP_UNIQUE_ID;
         const isSelected = targetEventData ? event.uniqueId === targetEventData.uniqueId : false;
         const isThisSelected =
             (isSelected && isTemporary) ||

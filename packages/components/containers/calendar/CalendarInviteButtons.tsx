@@ -7,10 +7,12 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useLoading } from '@proton/hooks';
 import { PLANS } from '@proton/payments';
 import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 import useFlag from '@proton/unleash/useFlag';
@@ -32,7 +34,9 @@ const CalendarInviteButtons = ({
     className = '',
 }: Props) => {
     const api = useApi();
-    const hasOptimisticRSVP = useFlag('CalendarReduxRSVP');
+    const { APP_NAME } = useConfig();
+    const isCalendarApp = APP_NAME === APPS.PROTONCALENDAR;
+    const hasReduxStore = useFlag('CalendarRedux');
     const [subscription] = useSubscription();
     const plan: PLANS = getPlan(subscription)?.Name || PLANS.FREE;
     const [loadingAccept, withLoadingAccept] = useLoading();
@@ -45,9 +49,6 @@ const CalendarInviteButtons = ({
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'yes', plan },
         });
-        if (hasOptimisticRSVP) {
-            return accept();
-        }
         return withLoadingAccept(accept());
     };
     const onTentative = () => {
@@ -55,9 +56,6 @@ const CalendarInviteButtons = ({
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'maybe', plan },
         });
-        if (hasOptimisticRSVP) {
-            return acceptTentatively();
-        }
         return withLoadingTentative(acceptTentatively());
     };
     const onDecline = () => {
@@ -65,9 +63,6 @@ const CalendarInviteButtons = ({
             event: TelemetryCalendarEvents.answer_invite,
             dimensions: { answer: 'no', plan },
         });
-        if (hasOptimisticRSVP) {
-            return decline();
-        }
         return withLoadingDecline(decline());
     };
 
@@ -83,7 +78,7 @@ const CalendarInviteButtons = ({
                 <Button
                     onClick={onAccept}
                     disabled={loadingAnswer || disabled}
-                    loading={loadingAccept}
+                    loading={hasReduxStore && isCalendarApp ? false : loadingAccept}
                     title={acceptText}
                 >
                     {c('Action').t`Yes`}
@@ -91,7 +86,7 @@ const CalendarInviteButtons = ({
                 <Button
                     onClick={onTentative}
                     disabled={loadingAnswer || disabled}
-                    loading={loadingTentative}
+                    loading={hasReduxStore && isCalendarApp ? false : loadingTentative}
                     title={tentativeText}
                 >
                     {c('Action').t`Maybe`}
@@ -99,7 +94,7 @@ const CalendarInviteButtons = ({
                 <Button
                     onClick={onDecline}
                     disabled={loadingAnswer || disabled}
-                    loading={loadingDecline}
+                    loading={hasReduxStore && isCalendarApp ? false : loadingDecline}
                     title={declineText}
                 >
                     {c('Action').t`No`}
