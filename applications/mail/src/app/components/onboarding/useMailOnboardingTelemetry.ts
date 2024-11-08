@@ -101,6 +101,22 @@ type Options =
           dimensions: Pick<Dimensions, 'plan' | 'variant'>;
       }
     | {
+          event: TelemetryMailOnboardingEvents.clicked_checklist_setting;
+          dimensions: Pick<Dimensions, 'plan' | 'variant' | 'is_checklist_completed'>;
+      }
+    | {
+          event: TelemetryMailOnboardingEvents.close_checklist;
+          dimensions: Pick<
+              Dimensions,
+              | 'plan'
+              | 'variant'
+              | 'checklist_step_privacy_completed'
+              | 'checklist_step_import_completed'
+              | 'checklist_step_update_login_completed'
+              | 'checklist_step_mobile_app_completed'
+          >;
+      }
+    | {
           event: TelemetryMailOnboardingEvents.premium_features;
           dimensions: Pick<
               Dimensions,
@@ -119,6 +135,11 @@ type Dimensions = {
     feature_short_domain: 'yes' | 'no';
     feature_dark_web_monitoring: 'yes' | 'no';
     feature_auto_delete: 'yes' | 'no';
+    checklist_step_privacy_completed: 'yes' | 'no';
+    checklist_step_import_completed: 'yes' | 'no';
+    checklist_step_update_login_completed: 'yes' | 'no';
+    checklist_step_mobile_app_completed: 'yes' | 'no';
+    is_checklist_completed: 'yes' | 'no';
 };
 
 type AllowedServices = Extract<
