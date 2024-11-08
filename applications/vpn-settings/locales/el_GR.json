@@ -55,6 +55,9 @@
       "Add domain": [
         "Προσθήκη domain"
       ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Προσθέστε περισσότερες θέσεις ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Προσθήκη PayPal"
       ],
@@ -711,6 +714,9 @@
       ],
       "Verify domain": [
         "Επαλήθευση τομέα"
+      ],
+      "Verify the domain ${ unverifiedSSODomain.DomainName }": [
+        "Επαληθεύστε τον τομέα ${ unverifiedSSODomain.DomainName }"
       ],
       "View": [
         "Προβολή"
@@ -2287,6 +2293,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Εάν είναι απενεργοποιημένο, μόνο οι διαχειριστές θα έχουν πρόσβαση."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Κρατήστε διαφορετικά μέρη της ζωής σας ξεχωριστά και τα εισερχόμενά σας οργανωμένα με πρόσθετες διευθύνσεις."
       ],
@@ -2666,6 +2675,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
       ],
+      "Please upload a square logo": [
+        "Παρακαλούμε ανεβάστε ένα τετράγωνο λογότυπο"
+      ],
       "Please upload an xml file": [
         "Παρακαλούμε ανεβάστε ένα αρχείο xml"
       ],
@@ -2998,6 +3010,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Εάν ο χρήστης έχει ήδη διεύθυνση ${ MAIL_APP_NAME }, πληκτρολογήστε την εδώ. Διαφορετικά, πρέπει πρώτα να δημιουργήσουν λογαριασμό."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Εάν ο χρήστης έχει ήδη λογαριασμό στο ${ BRAND_NAME }, πληκτρολογήστε τον εδώ. Διαφορετικά, πρέπει πρώτα να δημιουργήσουν λογαριασμό."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Η πρόσκληση θα ακυρωθεί και ο χρήστης δε θα μπορεί να συμμετάσχει στον οργανισμό ${ organizationName }."
@@ -4677,6 +4692,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα. Μετά την επιτυχή επαλήθευση, μην καταργήσετε την εγγραφή TXT, καθώς είναι απαραίτητη για να επιβεβαιώσετε ότι εξακολουθείτε να είστε κάτοχος του τομέα."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Αυτό θα αρνηθεί την πρόσβαση στο **${ email }**. Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Αυτό θα απενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων, συμπεριλαμβανομένων τόσο της εφαρμογής ελέγχου ταυτότητας όσο και των μεθόδων κλειδιού ασφαλείας."
       ],
@@ -5338,6 +5356,9 @@
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
       ],
+      "Backup password": [
+        "Εφεδρικός κωδικός πρόσβασης"
+      ],
       "Billing address": [
         "Διεύθυνση χρέωσης"
       ],
@@ -5475,9 +5496,6 @@
       ],
       "Email or username": [
         "Διεύθυνση ή όνομα χρήστη"
-      ],
-      "Enable video conferencing ": [
-        "Ενεργοποίηση τηλεδιάσκεψης "
       ],
       "Enter the code displayed on your TV": [
         "Εισάγετε τον κωδικό που εμφανίζεται στην τηλεόρασή σας"
@@ -7143,6 +7161,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Ο έλεγχος ταυτότητας δύο παραγόντων δεν απαιτείται πλέον"
+      ],
+      "Video conferencing settings have been updated": [
+        "Οι ρυθμίσεις τηλεδιάσκεψης έχουν ενημερωθεί"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7909,6 +7930,9 @@
       "Changing organization password": [
         "Γίνεται αλλαγή κωδικού πρόσβασης οργανισμού"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Δημιουργία ή πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Λόγω αλλαγής κωδικού πρόσβασης, τα προνόμια του διαχειριστή του οργανισμού σας έχουν περιοριστεί. Οι ακόλουθες ενέργειες δεν επιτρέπονται πλέον:"
       ]
@@ -8327,6 +8351,11 @@
         "Μπορείτε να ελέγξετε την κατάσταση του αιτήματός σας ανά πάσα στιγμή στο ${ accountAndPasswordSectionLink } των ρυθμίσεων."
       ]
     },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "στην ενότητα Λογαριασμός και κωδικός πρόσβασης"
+      ]
+    },
     "session_recovery:initiation:notification": {
       "Password reset confirmed": [
         "Επιβεβαιώθηκε η επαναφορά κωδικού πρόσβασης"
@@ -8631,6 +8660,9 @@
       "Access granted": [
         "Πρόσβαση επετράπη"
       ],
+      "added you to their ${ BRAND_NAME } organization": [
+        "σας πρόσθεσαν στον οργανισμό τους ${ BRAND_NAME }"
+      ],
       "Approve or deny it now": [
         "Εγκρίνετε ή απορρίψετε το τώρα"
       ],
@@ -8694,6 +8726,9 @@
       "Grant access to users?": [
         "Παραχώρηση πρόσβασης στους χρήστες;"
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your backup password will allow you to sign in and recover your data.": [
+        "Εάν κλειδωθείτε έξω από τον ${ BRAND_NAME } Λογαριασμό σας, ο εφεδρικός κωδικός πρόσβασης σας θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας."
+      ],
       "Invalid confirmation code": [
         "Άκυρος κωδικός επιβεβαίωσης"
       ],
@@ -8721,6 +8756,9 @@
       "Remove single sign-on for your organization?": [
         "Κατάργηση καθολικής σύνδεσης για τον οργανισμό σας;"
       ],
+      "Set a backup password to add an extra layer of protection. It will allow you to sign in if you get locked out, so make sure to keep it somewhere safe.": [
+        "Ορίστε έναν εφεδρικό κωδικό πρόσβασης για να προσθέσετε ένα επιπλέον επίπεδο προστασίας. Θα σας επιτρέψει να συνδεθείτε εάν κλειδωθείτε έξω, οπότε φροντίστε να το κρατήσετε κάπου ασφαλές."
+      ],
       "Set your backup password": [
         "Ορίστε τον εφεδρικό κωδικό πρόσβασης σας"
       ],
@@ -8742,11 +8780,23 @@
       "The credentials from your Identity Provider will be deleted.": [
         "Τα διαπιστευτήρια από τον πάροχο ταυτότητάς σας θα διαγραφούν."
       ],
+      "This will sign the user out of their other devices and they will have to create a new backup password.": [
+        "Αυτό θα αποσυνδέσει τον χρήστη από τις άλλες συσκευές του και θα πρέπει να δημιουργήσει έναν νέο εφεδρικό κωδικό πρόσβασης."
+      ],
+      "This will sign you out of your other devices and you will have to create a new backup password.": [
+        "Αυτό θα σας αποσυνδέσει από τις άλλες συσκευές σας και θα πρέπει να δημιουργήσετε έναν νέο εφεδρικό κωδικό πρόσβασης."
+      ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "Για να βεβαιωθείτε ότι προσπαθείτε πραγματικά να συνδεθείτε στον **${ email }**, ελέγξτε τον κωδικό επιβεβαίωσης και εγκρίνετε το αίτημα από άλλη συσκευή."
       ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Για να βεβαιωθείτε ότι προσπαθείτε πραγματικά να συνδεθείτε, εισαγάγετε τον εφεδρικό κωδικό πρόσβασης σας."
+      ],
+      "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
+        "Για να βεβαιωθείτε ότι προσπαθείτε πραγματικά να συνδεθείτε, μοιραστείτε τον κωδικό επιβεβαίωσης με τον διαχειριστή σας **${ adminEmail }**, ώστε να μπορέσει να εγκρίνει το αίτημα για το **${ email }**."
+      ],
+      "Tried to sign in at": [
+        "Προσπάθησε να συνδεθεί στις"
       ],
       "Use backup password instead": [
         "Χρησιμοποιήστε εφεδρικό κωδικό πρόσβασης"
@@ -9558,6 +9608,9 @@
       ],
       "Preferences updated": [
         "Οι προτιμήσεις ενημερώθηκαν"
+      ],
+      "Resent invitation": [
+        "Αποστάληκε η πρόσκληση"
       ]
     },
     "Suffix": {
@@ -10315,9 +10368,6 @@
       "Verifying your payment...": [
         "Γίνεται επαλήθευση της πληρωμής σας..."
       ],
-      "Video conference": [
-        "Τηλεδιάσκεψη"
-      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Θα στείλουμε ένα μήνυμα ηλεκτρονικού ταχυδρομείου στη νέα σας διεύθυνση με οδηγίες για την ολοκλήρωση της αλλαγής."
       ],
@@ -10403,6 +10453,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το σχέδιο του οργανισμού."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης στις προσκλήσεις ημερολογίου σας."
       ],
       "An approximate location of the IP address": [
         "Μια κατά προσέγγιση τοποθεσία της διεύθυνσης IP"
