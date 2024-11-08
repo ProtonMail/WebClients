@@ -1,3 +1,5 @@
+import { TMP_UNIQUE_ID } from '@proton/shared/lib/calendar/constants';
+
 import type { CalendarViewEventData } from '../../containers/calendar/interface';
 import { splitDayEventsInInterval } from './splitDayEventsInInterval';
 
@@ -12,7 +14,7 @@ describe('splitDayEventsInInterval()', () => {
         describe('for events displayed within range in view', () => {
             it('places in one column all-day events lasting one day', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: true,
                     isAllPartDay: false,
                     start: new Date(Date.UTC(2023, 10, 29)), // Wednesday 29/11/2023
@@ -37,7 +39,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('places in one column an all-day events on the last day of the range', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: true,
                     isAllPartDay: false,
                     start: new Date(Date.UTC(2023, 11, 3)), // Sunday 3/12/2023
@@ -62,7 +64,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('places in two columns all-day events lasting two days ', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: true,
                     isAllPartDay: false,
                     start: new Date(Date.UTC(2023, 10, 29)), // Wednesday 29/11/2023
@@ -87,7 +89,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('places in two columns part-day events lasting 24 hours not ending at midnight', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: true,
                     start: new Date(Date.UTC(2023, 10, 29, 12)), // Wednesday 29/11/2023 12:00
@@ -112,7 +114,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('places in one column part-day events lasting 24 hours on the last day of the range', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: true,
                     start: new Date(Date.UTC(2023, 11, 3, 0)), // Sunday 3/12/2023 0:00
@@ -137,7 +139,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('places in two columns part-day events lasting between 24 hours and 48 hours and ending at midnight ', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: true,
                     start: new Date(Date.UTC(2023, 10, 28, 12)), // Tuesday 28/11/2023 12:00
@@ -162,7 +164,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('places in one column part-day events starting at midnight and lasting 24 hours ', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: true,
                     start: new Date(Date.UTC(2023, 10, 29)), // Thursday 29/11/2023 0:00
@@ -187,7 +189,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('places in two columns part-day events starting at midnight and lasting 48 hours ', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: true,
                     start: new Date(Date.UTC(2023, 10, 29)), // Thursday 29/11/2023 0:00
@@ -214,7 +216,7 @@ describe('splitDayEventsInInterval()', () => {
         describe('for events partially or totally falling outside of range in view', () => {
             it('places in one column all-day events ending outside the range', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: true,
                     isAllPartDay: false,
                     start: new Date(Date.UTC(2023, 11, 3)), // Sunday 3/12/2023
@@ -239,7 +241,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('places in one column part-day events lasting 24 hours not ending at midnight and ending outside the range', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: true,
                     start: new Date(Date.UTC(2023, 11, 3, 12)), // Sunday 3/12/2023 19:00
@@ -264,7 +266,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('places in one column part-day events lasting more than 24 hours ending at midnight outside of the range', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: true,
                     start: new Date(Date.UTC(2023, 11, 3, 12)), // Sunday 3/12/2023 19:00
@@ -289,7 +291,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('skips part-day events lasting more than 24 hours which fall outside of range', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: true,
                     start: new Date(Date.UTC(2023, 11, 4, 0, 1)), // Wednesday 29/11/2023
@@ -308,7 +310,7 @@ describe('splitDayEventsInInterval()', () => {
 
             it('skips part-day events lasting more than 24 hours and ending on midnight which fall outside of range', () => {
                 const event = {
-                    uniqueId: 'tmp',
+                    uniqueId: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: true,
                     start: new Date(Date.UTC(2023, 11, 4, 0, 1)), // Wednesday 29/11/2023
@@ -336,7 +338,7 @@ describe('splitDayEventsInInterval()', () => {
 
         it('places in one column part-day events contained in one day ', () => {
             const event = {
-                uniqueId: 'tmp',
+                uniqueId: TMP_UNIQUE_ID,
                 isAllDay: false,
                 isAllPartDay: false,
                 start: new Date(Date.UTC(2023, 10, 29, 12)), // Wednesday 29/11/2023
@@ -361,7 +363,7 @@ describe('splitDayEventsInInterval()', () => {
 
         it('places in one column part-day events spread across two days but lasting less than 24 hours ', () => {
             const event = {
-                uniqueId: 'tmp',
+                uniqueId: TMP_UNIQUE_ID,
                 isAllDay: false,
                 isAllPartDay: false,
                 start: new Date(Date.UTC(2023, 10, 29, 12)), // Wednesday 29/11/2023
@@ -386,7 +388,7 @@ describe('splitDayEventsInInterval()', () => {
 
         it('skips part-day events spread across two rows lasting less than 24 hours', () => {
             const event = {
-                uniqueId: 'tmp',
+                uniqueId: TMP_UNIQUE_ID,
                 isAllDay: false,
                 isAllPartDay: false,
                 start: new Date(Date.UTC(2023, 10, 26, 23)), // Wednesday 29/11/2023
@@ -405,7 +407,7 @@ describe('splitDayEventsInInterval()', () => {
 
         it('skips part-day events lasting less than 24 hours which fall outside of range', () => {
             const event = {
-                uniqueId: 'tmp',
+                uniqueId: TMP_UNIQUE_ID,
                 isAllDay: false,
                 isAllPartDay: false,
                 start: new Date(Date.UTC(2023, 11, 4, 0, 1)), // Wednesday 29/11/2023
@@ -424,7 +426,7 @@ describe('splitDayEventsInInterval()', () => {
 
         it('skips part-day events lasting less than 24 hours and end on midnight which fall outside of range', () => {
             const event = {
-                uniqueId: 'tmp',
+                uniqueId: TMP_UNIQUE_ID,
                 isAllDay: false,
                 isAllPartDay: false,
                 start: new Date(Date.UTC(2023, 11, 4, 0, 1)), // Wednesday 29/11/2023

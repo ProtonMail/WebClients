@@ -1,3 +1,5 @@
+import { TMP_UNIQUE_ID } from '@proton/shared/lib/calendar/constants';
+
 import type { CalendarViewEvent, CalendarViewEventData } from '../../containers/calendar/interface';
 import { layout } from './layout';
 import { sortEvents } from './sortLayout';
@@ -6,7 +8,7 @@ const getDate = (minutes: number) => new Date(2000, 0, 1, 0, minutes);
 
 const getEvent = (startMinutes: number, endMinutes: number) =>
     ({
-        uniqueId: 'tmp',
+        uniqueId: TMP_UNIQUE_ID,
         start: getDate(startMinutes),
         end: getDate(endMinutes),
         isAllDay: false,
