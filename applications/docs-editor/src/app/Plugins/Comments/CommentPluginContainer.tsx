@@ -27,6 +27,7 @@ import { ContextualComments } from './ContextualComments'
 import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { useMarkNodesContext } from '../MarkNodesContext'
+import { useConfirmActionModal } from '@proton/components'
 
 export default function CommentPlugin({
   controller,
@@ -298,6 +299,8 @@ export default function CommentPlugin({
 
   const containerElement = editor.getRootElement()?.parentElement
 
+  const [confirmModal, showConfirmModal] = useConfirmActionModal()
+
   return (
     <CommentsProvider
       value={{
@@ -310,8 +313,10 @@ export default function CommentPlugin({
         setThreadToFocus,
         awarenessStates,
         getMarkNodes,
+        showConfirmModal,
       }}
     >
+      {confirmModal}
       {showCommentInput &&
         createPortal(
           <CommentInputBox editor={editor} cancelAddComment={cancelAddComment} />,
