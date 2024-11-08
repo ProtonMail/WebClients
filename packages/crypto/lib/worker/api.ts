@@ -40,11 +40,11 @@ import {
     unsafeSHA1,
     verifyCleartextMessage,
     verifyMessage,
-} from 'pmcrypto-v6-canary';
-import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v6-canary';
-import { ARGON2_PARAMS } from 'pmcrypto-v6-canary/lib/constants';
-import type { UserID } from 'pmcrypto-v6-canary/lib/openpgp';
-import { enums } from 'pmcrypto-v6-canary/lib/openpgp';
+} from 'pmcrypto';
+import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
+import { ARGON2_PARAMS } from 'pmcrypto/lib/constants';
+import type { UserID } from 'pmcrypto/lib/openpgp';
+import { enums } from 'pmcrypto/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import type {
