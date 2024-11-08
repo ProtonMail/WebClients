@@ -16,16 +16,15 @@ import type {
     WasmQuote,
 } from '@proton/andromeda';
 import type { IconName } from '@proton/components';
-import { DropdownSizeUnit, Icon, useModalState } from '@proton/components';
+import { DropdownSizeUnit, Icon, useModalState, useNotifications } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
-import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import banxaLogo from '@proton/styles/assets/img/brand/banxa.svg';
 import moonpayLogo from '@proton/styles/assets/img/brand/moonpay.svg';
 import rampLogo from '@proton/styles/assets/img/brand/ramp.svg';
-import { useCountriesByProvider, useFiatCurrenciesByProvider, useGetQuotesByProvider } from '@proton/wallet/store';
 import type { GetQuotesArgs } from '@proton/wallet/store';
+import { useCountriesByProvider, useFiatCurrenciesByProvider, useGetQuotesByProvider } from '@proton/wallet/store';
 
 import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, Input, SearchableSelect, Select } from '../../../atoms';

@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
@@ -16,20 +17,19 @@ import {
     useBeforeUnload,
     useCalendarModelEventManager,
     useConfig,
-    useContactEmails,
     useContactEmailsCache,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
     useNotifications,
     usePreventCloseTab,
     useRelocalizeText,
-    useUserSettings,
 } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from '@proton/crypto';
+import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { useGetMailSettings } from '@proton/mail/mailSettings/hooks';
 import {
     attendeeDeleteSingleEdit,

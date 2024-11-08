@@ -10,7 +10,7 @@ import Radio from '@proton/components/components/input/Radio';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import { useNotifications } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import clsx from '@proton/utils/clsx';
 
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet';

@@ -4,7 +4,8 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { useHandler, useLocalState, useSubscribeEventManager, useUserSettings } from '@proton/components';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useHandler, useLocalState, useSubscribeEventManager } from '@proton/components';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';

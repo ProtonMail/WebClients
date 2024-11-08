@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import {
@@ -16,17 +19,12 @@ import {
     SUBSCRIPTION_STEPS,
     Tooltip,
     VpnLogo,
-    useOrganization,
-    usePlans,
-    useSubscription,
 } from '@proton/components';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { type PaymentMethodStatusExtended } from '@proton/payments';
-import { PLANS, PLAN_TYPES } from '@proton/payments';
-import { CURRENCIES, type Currency } from '@proton/payments';
+import { CURRENCIES, type Currency, PLANS, PLAN_TYPES, type PaymentMethodStatusExtended } from '@proton/payments';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {

@@ -2,7 +2,7 @@ import type { ClipboardEventHandler } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 
 export const usePasteLengthLimiter = () => {
     const { createNotification } = useNotifications();

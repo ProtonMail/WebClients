@@ -2,6 +2,7 @@ import { useInactiveKeys } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useApi from '@proton/components/hooks/useApi';
@@ -12,7 +13,7 @@ import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
-import { useSearchParamsEffect, useUserKeys } from '../../hooks';
+import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
 import RecoverDataCard from './RecoverDataCard';
 import RecoverDataConfirmModal from './RecoverDataConfirmModal';

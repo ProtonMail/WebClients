@@ -6,6 +6,7 @@ import { Point, utils } from '@noble/ed25519';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, CircleLoader, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import ErrorButton from '@proton/components/components/button/ErrorButton';
@@ -27,6 +28,8 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/components/helpers/countries';
 import { getObjectKeys } from '@proton/components/helpers/getObjectKeys';
 import useApi from '@proton/components/hooks/useApi';
+import useModals from '@proton/components/hooks/useModals';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -34,7 +37,6 @@ import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shar
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import { useModals, useNotifications, useUserSettings } from '../../../hooks';
 import useApiResult from '../../../hooks/useApiResult';
 import type { Certificate } from '../Certificate';
 import { CATEGORY } from '../OpenVPNConfigurationSection/ConfigsTable';

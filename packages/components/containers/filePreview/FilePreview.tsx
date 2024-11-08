@@ -20,7 +20,7 @@ import {
 } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable, isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
 
-import { useHotkeys } from '../../hooks';
+import { useHotkeys } from '../../hooks/useHotkeys';
 import AudioPreview from './AudioPreview';
 import CloseModal from './CloseModal';
 import type { SharedStatus } from './Header';

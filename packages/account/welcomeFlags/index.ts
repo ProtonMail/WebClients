@@ -1,9 +1,10 @@
 import { useCallback } from 'react';
 
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
-import { UserSettings } from '@proton/shared/lib/interfaces';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 const name = 'welcomeFlags' as const;
 

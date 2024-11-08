@@ -55,7 +55,7 @@ jest.mock('@proton/account/user/hooks', () => ({
     ]),
 }));
 
-jest.mock('@proton/components/hooks/useFeature', () => () => {
+jest.mock('@proton/features/useFeature', () => () => {
     return {
         feature: {
             Code: 'EasySwitch',

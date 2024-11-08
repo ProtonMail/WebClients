@@ -1,4 +1,4 @@
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
 import { API_CODES } from '@proton/shared/lib/constants';
@@ -8,7 +8,7 @@ import range from '@proton/utils/range';
 import { clearAll, getCard, mockedCryptoApi, renderWithProviders } from '../tests/render';
 import ContactImportModal from './ContactImportModal';
 
-jest.mock('../../../hooks/useFeature', () => () => ({ feature: {}, update: jest.fn() }));
+jest.mock('@proton/features/useFeature', () => jest.fn(() => ({ feature: {}, update: jest.fn() })));
 
 describe('ContactImportModal', () => {
     beforeAll(() => {
@@ -39,7 +39,7 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
             return { Responses };
         });
 
-        const { getByText } = renderWithProviders(<ContactImportModal open={true} />);
+        const { getByText, findByText } = renderWithProviders(<ContactImportModal open={true} />);
 
         const input = document.querySelector('input[type="file"]') as HTMLInputElement;
         fireEvent.change(input, { target: { files: [file] } });
@@ -47,12 +47,12 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
         let importButton = getByText('Import', { selector: 'button' });
         fireEvent.click(importButton);
 
-        await waitFor(() => getByText('We have detected', { exact: false }));
+        await findByText('We have detected', { exact: false });
 
         importButton = getByText('Import', { selector: 'button' });
         fireEvent.click(importButton);
 
-        await waitFor(() => getByText('4/4', { exact: false }));
+        await findByText('4/4', { exact: false });
 
         const sentData = saveRequestSpy.mock.calls[0][0];
         const contact0Cards = sentData.Contacts[0].Cards;

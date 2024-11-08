@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { userSettingsActions } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import {
     type EmailSubscription,
     filterNews,
@@ -9,12 +10,12 @@ import {
     getUpdateNotification,
 } from '@proton/components/containers/account/constants/email-subscriptions';
 import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { type NewsletterSubscriptionUpdateData, getUpdatedNewsBitmap } from '@proton/shared/lib/helpers/newsletter';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 
-import { useNotifications, useUserSettings } from '../../hooks';
 import { EmailSubscriptionToggleWithHeader } from './EmailSubscriptionToggles';
 
 const EditEmailSubscription = () => {

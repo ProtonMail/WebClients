@@ -6,8 +6,7 @@ import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms';
-import { type IconName } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
+import { type IconName, useNotifications } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';

@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo } from 'react';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateTheme } from '@proton/shared/lib/api/settings';
@@ -17,7 +18,7 @@ import { electronAppTheme as defaultElectronAppTheme, getDefaultThemeSetting } f
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-import { useDrawer, useUserSettings } from '../../hooks';
+import useDrawer from '../../hooks/drawer/useDrawer';
 import { useTheme } from './ThemeProvider';
 
 export const DrawerThemeInjector = () => {

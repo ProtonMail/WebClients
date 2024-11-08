@@ -3,6 +3,7 @@ import { useMemo, useRef, useState } from 'react';
 import { addDays, endOfDay, endOfToday, isBefore, isToday, startOfToday } from 'date-fns';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
@@ -13,7 +14,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     TimeInput,
-    useUserSettings,
 } from '@proton/components';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 

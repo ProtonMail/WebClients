@@ -1,13 +1,9 @@
 import { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import {
-    ContactEmailsProvider,
-    useActiveBreakpoint,
-    useCalendarsInfoListener,
-    useUserSettings,
-} from '@proton/components';
+import { ContactEmailsProvider, useActiveBreakpoint, useCalendarsInfoListener } from '@proton/components';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getPreferredActiveWritableCalendar,

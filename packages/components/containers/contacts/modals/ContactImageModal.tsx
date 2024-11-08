@@ -15,12 +15,11 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import ErrorZone from '@proton/components/components/text/ErrorZone';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
-
-import { useNotifications } from '../../../hooks';
 
 export interface ContactImageProps extends Omit<ModalProps<typeof Form>, 'onSubmit'> {
     url?: string;

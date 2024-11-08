@@ -11,7 +11,7 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { PassLockSelector } from '@proton/components/containers/pass/PassLockSelector';
-import { useErrorHandler } from '@proton/components/hooks';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { OrganizationGetResponse } from '@proton/pass/types';

@@ -4,9 +4,8 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href, Scroll } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Icon, Tooltip, useNotifications } from '@proton/components';
 import Copy from '@proton/components/components/button/Copy';
-import { useNotifications } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';

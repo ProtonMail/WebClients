@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
+import { useMembers } from '@proton/account/members/hooks';
 import { Button } from '@proton/atoms';
 import Row from '@proton/components/components/container/Row';
 import Label from '@proton/components/components/label/Label';
@@ -9,7 +10,6 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useMembers } from '@proton/components/hooks/useMembers';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';

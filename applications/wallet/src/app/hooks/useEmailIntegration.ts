@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { useNotifications } from '@proton/components/hooks';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { useWalletApiClients } from '@proton/wallet';

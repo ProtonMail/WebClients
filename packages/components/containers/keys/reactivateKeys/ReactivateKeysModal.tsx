@@ -17,6 +17,8 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import AuthModal, { type AuthModalResult } from '@proton/components/containers/password/AuthModal';
 import useApi from '@proton/components/hooks/useApi';
+import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
@@ -39,7 +41,6 @@ import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { computeKeyPassword } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useIsMnemonicAvailable, useNotifications } from '../../../hooks';
 import MnemonicInputField, { useMnemonicInputValidation } from '../../mnemonic/MnemonicInputField';
 import RecoveryFileTabContent from './RecoveryFileTabContent';
 import { getReactivatedKeys } from './reactivateHelper';

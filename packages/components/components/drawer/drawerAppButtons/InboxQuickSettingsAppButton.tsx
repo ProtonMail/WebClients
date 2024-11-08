@@ -4,10 +4,11 @@ import { ThemeColor } from '@proton/colors/types';
 import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import Icon from '@proton/components/components/icon/Icon';
-import { useDrawer } from '@proton/components/hooks';
 import useQuickSettingsReminders from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Optional } from '@proton/shared/lib/interfaces';
+
+import useDrawer from '../../../hooks/drawer/useDrawer';
 
 // Required to avoid showing desktop app spotlight on other apps
 const InboxQuickSettingsAppButton = ({

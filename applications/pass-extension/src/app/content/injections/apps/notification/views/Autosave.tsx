@@ -11,7 +11,7 @@ import type { NotificationAction, NotificationActions } from 'proton-pass-extens
 import { c } from 'ttag';
 
 import { Button, Scroll } from '@proton/atoms';
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';

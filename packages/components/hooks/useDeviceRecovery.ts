@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
+import { useGetUserKeys, useUserKeys } from '@proton/account/userKeys/hooks';
+import { useGetUserSettings, useUserSettings } from '@proton/account/userSettings/hooks';
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -10,8 +12,6 @@ import noop from '@proton/utils/noop';
 
 import useApi from './useApi';
 import useConfig from './useConfig';
-import { useGetUserKeys, useUserKeys } from './useUserKeys';
-import useUserSettings, { useGetUserSettings } from './useUserSettings';
 
 export const useIsDeviceRecoveryEnabled = () => {
     const [userSettings] = useUserSettings();

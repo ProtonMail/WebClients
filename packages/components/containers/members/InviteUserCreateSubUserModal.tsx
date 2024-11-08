@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -12,7 +13,6 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { isOrganizationFamily, isOrganizationPassFamily } from '@proton/shared/lib/organization/helper';
 
-import { useCustomDomains } from '../../hooks';
 import SubUserCreateModal from './SubUserCreateModal';
 
 interface Props extends ModalStateProps {

@@ -2,9 +2,8 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { AuthModal, useModalState } from '@proton/components';
+import { AuthModal, useErrorHandler, useModalState } from '@proton/components';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
-import { useErrorHandler } from '@proton/components/hooks';
 import { queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';

@@ -6,13 +6,13 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useContactGroups } from '@proton/mail';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { deleteLabels } from '@proton/shared/lib/api/labels';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
-import { useNotifications } from '../../../hooks';
 import { getDeleteText } from '../../general/helper';
 
 export interface ContactGroupDeleteProps {

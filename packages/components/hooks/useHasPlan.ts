@@ -1,6 +1,5 @@
+import { usePlans } from '@proton/account/plans/hooks';
 import { PLANS } from '@proton/payments';
-
-import usePlans from './usePlans';
 
 export const useHasPlan = (planName: PLANS) => {
     const [plansResult] = usePlans();

@@ -4,7 +4,10 @@ import { c, msgid } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useMembers } from '@proton/account/members/hooks';
 import { getDomainAddressError } from '@proton/account/members/validateAddUser';
+import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
@@ -13,13 +16,13 @@ import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import GenericError from '@proton/components/containers/error/GenericError';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
-import { useCustomDomains, useMembers, useNotifications, useOrganizationKey } from '../../hooks';
 import AddressModal from './AddressModal';
 import AddressesTable from './AddressesTable';
 import AddressesWithUser from './AddressesWithUser';

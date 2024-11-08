@@ -1,4 +1,7 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
@@ -7,6 +10,8 @@ import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoP
 import SettingsSectionExtraWide from '@proton/components/containers/account/SettingsSectionExtraWide';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useLoad from '@proton/components/hooks/useLoad';
+import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
+import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -14,7 +19,6 @@ import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, isTrial } from '@pro
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
-import { useOrganization, usePlans, usePreferredPlansMap, useSubscription, useVPNServersCount } from '../../../hooks';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import { resolveUpsellsToDisplay } from './helpers';
 import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';

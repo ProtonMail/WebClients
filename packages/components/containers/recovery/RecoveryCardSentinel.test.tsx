@@ -8,7 +8,10 @@ jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn(() => [{ MnemonicStatus: 3, Flags: { sso: false } }, false]),
     useGetUser: jest.fn(() => [{ MnemonicStatus: 3, Flags: { sso: false } }, false]),
 }));
-jest.mock('../../hooks/useUserSettings', () => jest.fn());
+jest.mock('@proton/account/userSettings/hooks', () => ({
+    __esModule: true,
+    useUserSettings: jest.fn(() => []),
+}));
 jest.mock('../../hooks/useRecoveryStatus', () => jest.fn());
 jest.mock('@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable', () => jest.fn());
 jest.mock('../../hooks/useIsMnemonicAvailable', () => jest.fn());
@@ -21,14 +24,18 @@ jest.mock('./RecoveryCardStatus', () => {
     return jest.fn(() => <div data-testid="mocked-recovery-card-status"></div>);
 });
 
+jest.mock('@proton/account/userSettings/hooks', () => ({
+    __esModule: true,
+    useUserSettings: jest.fn(() => [
+        { Email: { Value: '', Status: 0, Notify: 0, Reset: 0 }, Phone: { Value: '', Status: 0, Notify: 0, Reset: 0 } },
+        false,
+    ]),
+}));
+
 const canDisplayNewSentinelSettings = true; //for feature flag
 
 const setupMocks = (isSentinelUser: boolean) => {
     require('../../hooks/useIsSentinelUser').mockReturnValue([{ isSentinelUser }, false]);
-    require('../../hooks/useUserSettings').mockReturnValue([
-        { Email: { Value: '', Status: 0, Notify: 0, Reset: 0 }, Phone: { Value: '', Status: 0, Notify: 0, Reset: 0 } },
-        false,
-    ]);
     require('../../hooks/useRecoveryStatus').mockReturnValue([
         { accountRecoveryStatus: 'complete', dataRecoveryStatus: 'complete' },
         false,

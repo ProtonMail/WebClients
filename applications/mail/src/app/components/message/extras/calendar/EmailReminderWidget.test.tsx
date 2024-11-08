@@ -8,10 +8,9 @@ import { setupServer } from 'msw/node';
 
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
 import { getModelState } from '@proton/account/test';
-import { AuthenticationProvider, CacheProvider, useUserSettings } from '@proton/components';
-import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { AuthenticationProvider, CacheProvider, DrawerProvider, useGetCalendarEventRaw } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
-import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
@@ -44,7 +43,7 @@ jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/components/hooks/useApi');
 jest.mock('@proton/components/hooks/useGetCalendarEventRaw');
-jest.mock('@proton/components/hooks/useUserSettings');
+jest.mock('@proton/account/userSettings/hooks');
 
 jest.mock('@proton/account/addresses/hooks');
 

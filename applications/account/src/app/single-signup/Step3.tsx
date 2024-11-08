@@ -15,8 +15,8 @@ import {
     PasswordInputTwo,
     useFormErrors,
     useModalState,
+    useNotifications,
 } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';

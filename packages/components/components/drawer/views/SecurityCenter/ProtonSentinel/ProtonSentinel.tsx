@@ -2,15 +2,16 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button, Href } from '@proton/atoms';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { getDisabledString, getEnabledString } from '@proton/components/containers/credentialLeak/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useNotifications, useUserSettings } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';

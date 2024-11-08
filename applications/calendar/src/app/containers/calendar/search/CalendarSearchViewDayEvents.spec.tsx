@@ -15,16 +15,14 @@ jest.mock('@proton/account/user/hooks', () => ({
     ],
 }));
 
-jest.mock('@proton/components/hooks/useUserSettings.ts', () => ({
+jest.mock('@proton/account/userSettings/hooks', () => ({
     __esModule: true,
-    useUserSettings: function () {
-        return [
-            {
-                TimeFormat: 2,
-            },
-            false,
-        ];
-    },
+    useUserSettings: jest.fn(() => [
+        {
+            TimeFormat: 2,
+        },
+        false,
+    ]),
 }));
 
 const dailyEvents = [

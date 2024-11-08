@@ -2,10 +2,10 @@ import { Fragment, useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useApi from '@proton/components/hooks/useApi';
-import useUserSettings from '@proton/components/hooks/useUserSettings';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';

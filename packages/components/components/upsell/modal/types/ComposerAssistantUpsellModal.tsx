@@ -1,9 +1,11 @@
+import { useMember } from '@proton/account/member/hook';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import ComposerAssistantB2BUpsellModal from '@proton/components/components/upsell/modal/types/ComposerAssistantB2BUpsellModal';
 import ComposerAssistantB2CUpsellModal from '@proton/components/components/upsell/modal/types/ComposerAssistantB2CUpsellModal';
 import { getIsB2CUserAbleToRunScribe } from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal.helpers';
-import { useMember, useOrganization, useSubscription } from '@proton/components/hooks';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
 interface Props {

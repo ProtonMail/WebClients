@@ -5,9 +5,14 @@ import { c, msgid } from 'ttag';
 
 import { getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useMembers } from '@proton/account/members/hooks';
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
 import { getDomainError } from '@proton/account/members/validateAddUser';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useGetOrganizationKey, useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar, Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -29,6 +34,7 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
@@ -62,15 +68,6 @@ import {
 import clsx from '@proton/utils/clsx';
 
 import Tooltip from '../../../components/tooltip/Tooltip';
-import {
-    useCustomDomains,
-    useGetOrganizationKey,
-    useMembers,
-    useNotifications,
-    useOrganization,
-    useOrganizationKey,
-    useSubscription,
-} from '../../../hooks';
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import AddressModal from '../../addresses/AddressModal';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';

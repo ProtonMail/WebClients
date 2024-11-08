@@ -1,4 +1,6 @@
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import {
     type Currency,
@@ -8,8 +10,6 @@ import {
 } from '@proton/payments';
 
 import { useCurrencies } from '../payments/client-extensions/useCurrencies';
-import usePlans from './usePlans';
-import useSubscription from './useSubscription';
 
 type PreferredPlansMapHook = {
     plansMapLoading: boolean;

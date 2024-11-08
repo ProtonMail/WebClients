@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import MozillaInfoPanel from '@proton/components/containers/account/MozillaInfoPanel';
 import { FREE_SUBSCRIPTION, MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { applyHOCs, mockUseUser, withEventManager } from '@proton/testing';
 
-import { useSubscription } from '../../../hooks';
 import useModals from '../../../hooks/__mocks__/useModals';
 import PaymentMethodsSection from './PaymentMethodsSection';
 import PaymentMethodsTable from './PaymentMethodsTable';
@@ -16,7 +16,7 @@ jest.mock('../../../hooks/useConfig', () => () => ({
 }));
 
 jest.mock('@proton/account/paymentMethods/hooks');
-jest.mock('../../../hooks/useSubscription');
+jest.mock('@proton/account/subscription/hooks');
 jest.mock('../../../hooks/useModals');
 
 jest.mock('../../../components/loader/Loader');

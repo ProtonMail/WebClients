@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import type { OnLoginCallbackResult } from '@proton/components/containers/app/interface';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import useApi from '@proton/components/hooks/useApi';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { OAuthClientInfo } from '@proton/shared/lib/api/oauth';
@@ -24,7 +25,6 @@ import {
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 
-import { useErrorHandler } from '../../hooks';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
 
 const getProduceOAuthForkParameters = () => {

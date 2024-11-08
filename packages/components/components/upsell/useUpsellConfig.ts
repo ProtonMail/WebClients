@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { useSubscription } from '@proton/components/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { CYCLE } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

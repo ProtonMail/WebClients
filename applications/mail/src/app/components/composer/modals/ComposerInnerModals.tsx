@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import type { Cancellable } from '@proton/components';
 import { Alert, Checkbox, ErrorButton, useLocalState } from '@proton/components';
-import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';

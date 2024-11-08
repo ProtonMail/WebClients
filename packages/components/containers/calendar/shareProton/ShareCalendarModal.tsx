@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { Button, Href } from '@proton/atoms';
 import { useGetDecryptedPassphraseAndCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
+import { useGetEncryptionPreferences } from '@proton/components';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
@@ -19,8 +20,8 @@ import AddressesAutocompleteTwo from '@proton/components/components/v2/addresses
 import InputField from '@proton/components/components/v2/field/InputField';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
-import { useGetEncryptionPreferences, useNotifications } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { addMember } from '@proton/shared/lib/api/calendars';
@@ -484,10 +485,10 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     const maxReachedError =
         remainingSpots < 0
             ? c('Share calendar max shares reached error').ngettext(
-                  msgid`You have exceeded the maximum of ${MAX_CALENDAR_MEMBERS} member per calendar`,
-                  `You have exceeded the maximum of ${MAX_CALENDAR_MEMBERS} members per calendar`,
-                  MAX_CALENDAR_MEMBERS
-              )
+                msgid`You have exceeded the maximum of ${MAX_CALENDAR_MEMBERS} member per calendar`,
+                `You have exceeded the maximum of ${MAX_CALENDAR_MEMBERS} members per calendar`,
+                MAX_CALENDAR_MEMBERS
+            )
             : null;
     const hint = (
         <span className={clsx([remainingSpots < 0 && 'color-danger'])}>
@@ -593,7 +594,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                     recipients.length
                                         ? ''
                                         : c('Share calendar modal input placeholder')
-                                              .t`Enter an email address or group name`
+                                            .t`Enter an email address or group name`
                                 }
                             />
                         }

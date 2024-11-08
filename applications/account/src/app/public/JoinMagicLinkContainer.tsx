@@ -10,13 +10,14 @@ import {
     PasswordInputTwo,
     useApi,
     useConfig,
+    useErrorHandler,
     useFormErrors,
     useKTActivation,
+    useNotifications,
 } from '@proton/components';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
-import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

@@ -8,6 +8,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useGetPublicKeysForInbox from '@proton/components/hooks/useGetPublicKeysForInbox';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import {
     deleteForwarding,
     pauseForwarding,
@@ -18,7 +19,6 @@ import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shar
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useNotifications } from '../../hooks';
 import useAddressFlags from '../../hooks/useAddressFlags';
 import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
 import ForwardModal from './ForwardModal';

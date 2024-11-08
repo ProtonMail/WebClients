@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -8,11 +9,11 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import type { DENSITY } from '@proton/shared/lib/constants';
 
-import { useNotifications, useUserSettings } from '../../hooks';
 import DensityRadiosCards from '../layouts/DensityRadiosCards';
 
 import './ModalSettingsLayoutCards.scss';

@@ -3,9 +3,8 @@ import type { HTMLAttributes } from 'react';
 import { c } from 'ttag';
 
 import Copy from '@proton/components/components/button/Copy';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import clsx from '@proton/utils/clsx';
-
-import { useNotifications } from '../../..';
 
 export interface Props {
     amount: number;

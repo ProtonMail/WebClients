@@ -17,7 +17,7 @@ import {
     useShouldNotifyPasswordResetAvailable,
     useShouldNotifySessionRecoveryCancelled,
     useShouldNotifySessionRecoveryInProgress,
-} from '../../hooks';
+} from '../../hooks/useSessionRecovery';
 import TopBanner from './TopBanner';
 
 const SessionRecoveryInProgressBanner = () => {

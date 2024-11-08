@@ -22,8 +22,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import useElementRect from '../../hooks/useElementRect';
-import type { HotkeyTuple } from '../../hooks/useHotkeys';
-import { useHotkeys } from '../../hooks/useHotkeys';
+import { type HotkeyTuple, useHotkeys } from '../../hooks/useHotkeys';
 import Portal from '../portal/Portal';
 import type { DropdownSize } from './utils';
 import { DropdownSizeUnit, getHeightValue, getMaxSizeValue, getProp, getWidthValue } from './utils';

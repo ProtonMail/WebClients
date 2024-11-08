@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { Button } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Form from '@proton/components/components/form/Form';
@@ -17,6 +18,7 @@ import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import useStep from '@proton/components/hooks/useStep';
 import { useLoading } from '@proton/hooks';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
@@ -32,7 +34,6 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useCustomDomains, useNotifications } from '../../hooks';
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';
 import DMARCSection from './DMARCSection';

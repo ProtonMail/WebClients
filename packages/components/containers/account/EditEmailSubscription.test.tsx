@@ -2,12 +2,12 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { sub } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useDispatch } from '@proton/redux-shared-store';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import { useUserSettings } from '../../hooks';
 import EditEmailSubscription from './EditEmailSubscription';
 
 jest.mock('@proton/components/hooks/useApi');
@@ -26,7 +26,7 @@ jest.mock('../../hooks/useNotifications', () => () => ({ createNotification: jes
 jest.mock('@proton/account/user/hooks');
 const mockedUseUser = useUser as jest.MockedFunction<any>;
 
-jest.mock('../../hooks/useUserSettings');
+jest.mock('@proton/account/userSettings/hooks');
 const mockedUseUserSettings = useUserSettings as jest.MockedFunction<any>;
 
 const user: Partial<UserModel> = {

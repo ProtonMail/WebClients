@@ -11,12 +11,12 @@ import Label from '@proton/components/components/label/Label';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useNow } from '@proton/components/hooks/useNow';
 import { MAX_IPS_ADDON } from '@proton/payments';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
-import { useNotifications } from '../../../hooks';
 import { ButtonNumberInput } from './ButtonNumberInput';
 import { CountryFlagAndName } from './CountryFlagAndName';
 import type { DeletedDedicatedIp } from './DeletedDedicatedIp';

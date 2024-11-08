@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -12,10 +13,9 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { useContacts } from '@proton/mail/contacts/hooks';
 import { dropDataEncryptedWithAKey } from '@proton/shared/lib/contacts/globalOperations';
 import type { Key } from '@proton/shared/lib/interfaces';
-
-import { useContacts, useGetUserKeys } from '../../../hooks';
 
 export interface ContactClearDataExecutionProps {
     errorKey: Key;

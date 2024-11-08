@@ -21,6 +21,7 @@ import CalendarBadge from '@proton/components/containers/calendar/settings/Calen
 import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 import useCalendarShareInvitationActions from '@proton/components/hooks/useCalendarShareInvitationActions';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -42,8 +43,6 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-
-import { useNotifications } from '../../../hooks';
 
 const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalendar; displayEmail: boolean }) => {
     const {

@@ -9,7 +9,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SECOND } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-import { useOnline } from '../../hooks';
+import useOnline from '../../hooks/useOnline';
 import type { KTContext } from './ktContext';
 import useKTState from './useKTState';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';

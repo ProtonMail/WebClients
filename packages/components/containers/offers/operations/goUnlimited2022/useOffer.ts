@@ -1,5 +1,5 @@
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useSubscription } from '@proton/components/hooks';
 import useConfig from '@proton/components/hooks/useConfig';
 
 import useOfferFlags from '../../hooks/useOfferFlags';

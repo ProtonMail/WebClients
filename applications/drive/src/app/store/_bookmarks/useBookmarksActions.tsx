@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
-import { useNotifications } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { partialPublicViewKey } from '../../hooks/util/usePartialPublicView';

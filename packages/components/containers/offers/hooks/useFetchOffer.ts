@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { usePlans } from '@proton/components/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
 import { usePaymentsApiWithCheckFallback } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { type Currency } from '@proton/payments';

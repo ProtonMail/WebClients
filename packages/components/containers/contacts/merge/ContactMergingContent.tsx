@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -25,8 +26,6 @@ import type { Contact as ContactType, SimpleEncryptedContact } from '@proton/sha
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import chunk from '@proton/utils/chunk';
-
-import { useUserKeys } from '../../../hooks';
 
 const { OVERWRITE_CONTACT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;
