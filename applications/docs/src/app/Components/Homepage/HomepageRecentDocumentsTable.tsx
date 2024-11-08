@@ -4,6 +4,7 @@ import { useRecentDocuments } from './useRecentDocuments'
 
 export function HomepageRecentDocumentsTable() {
   const { items } = useRecentDocuments()
+
   return (
     <table className="w-full text-base" style={{ borderSpacing: 0 }}>
       <thead className="bg-norm sticky left-0 top-0">
