@@ -2592,11 +2592,6 @@
         "Erääntynyt lasku"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch -tuontiapurilla"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } suojaa käyttäjätilisi 24/7 epäilyttävän toiminnan tarkkailulla - sisältäen eskaloinnin tietoturva-asiantuntijoille."
@@ -2612,6 +2607,9 @@
       ],
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Värikoodaa tapahtumat, jotta sinun on helpompi suunnitella päiväsi, seurata ajankäyttöäsi ja laittaa tehtäväsi tärkeysjärjestykseen."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Luo Zoom-kokous ja lisää liittymistiedot tapahtumaan yhdellä klikkauksella."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
@@ -2681,6 +2679,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3093,6 +3096,9 @@
       ],
       "Failed to get original occurrence in series": [
         "Ketjun alkuperäisen tapahtuman nouto epäonnistui"
+      ],
+      "Failed to load oauth modal.": [
+        "OAuth-modaalin lataaminen epäonnistui"
       ],
       "First name is too long": [
         "Etunimi on liian pitkä"
@@ -7023,6 +7029,14 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Alkaen ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -7035,14 +7049,6 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Alkaen ${ price }"
       ]
     },
     "new_plans: tooltip": {
@@ -8269,6 +8275,9 @@
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
         "Jos kirjaudut ulos ennen kuin olet nollannut salasanasi, voit menettää tilisi käyttöoikeuden."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Jos kirjaudut ulos nollaamatta salasanaasi, voit menettää pääsyn tilillesi."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Aikaa jäljellä kunnes voit nollata salasanasi: ${ boldTimeLeft }."
@@ -10474,14 +10483,14 @@
       "Add Zoom meeting": [
         "Lisää Zoom-tapaaminen"
       ],
+      "Adding conferencing details": [
+        "Lisätään neuvottelutietoja"
+      ],
       "Loading Zoom configuration": [
         "Ladataan Zoom-asetuksia"
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom Meeting": [
-        "Liity Zoom-tapaamiseen"
-      ],
       "Meeting ID:": [
         "Tapaamisen ID:"
       ]
