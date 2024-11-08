@@ -21,6 +21,7 @@ import { Button, Modal } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
+import { findNearestBlockTargetFeeRate, findQuickestBlock } from '../../hooks/useFeesInput';
 import { useGetRecipientVerifiedAddressKey } from '../../hooks/useGetRecipientVerifiedAddressKey';
 import {
     convertAmountStr,
@@ -28,10 +29,6 @@ import {
     getLabelByUnit,
     signAndBroadcastPsbt,
 } from '../../utils';
-import {
-    findNearestBlockTargetFeeRate,
-    findQuickestBlock,
-} from '../BitcoinSendModal/TransactionReviewStep/useFeesInput';
 
 interface Props extends ModalStateProps {
     transaction: TransactionData;
