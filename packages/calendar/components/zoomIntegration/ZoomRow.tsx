@@ -108,10 +108,15 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
         return;
     }
 
-    const createVideoConferenceMeeting = async () => {
+    const createVideoConferenceMeeting = async (silentCall = false) => {
         try {
             setProcessState('loading');
-            const data = await withLoading(api<VideoConferenceMeetingCreation>(createZoomMeeting()));
+
+            // We make the call silent when we assume the user should be able to create a meeting
+            // This way we don't show an error if the request fails and open the oauth modal without the user knowing
+            const data = await withLoading(
+                api<VideoConferenceMeetingCreation>({ ...createZoomMeeting(), silence: silentCall })
+            );
 
             setModel({
                 ...model,
@@ -166,7 +171,8 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
             });
             setProcessState('meeting-present');
         } else {
-            await createVideoConferenceMeeting();
+            // We assume the user can create a meeting so we make a silent API call
+            await createVideoConferenceMeeting(true);
         }
     };
 
