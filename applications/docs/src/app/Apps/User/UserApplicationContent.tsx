@@ -14,7 +14,7 @@ import { c } from 'ttag'
 import { SharedLayout } from '../SharedLayout'
 import { DocumentConverter } from '../../Components/DocumentConverter'
 import { DocumentViewer } from '../../Components/DocumentViewer'
-import { useDriveDocsLandingPageFeatureFlag } from '../../Components/Homepage/useDriveDocsLandingPageFeatureFlag'
+import { useLandingPageFeatureFlag } from '../../Components/Homepage/useLandingPageFeatureFlag'
 import { WordCountContextProvider } from '../../Components/WordCount/WordCountProvider'
 import { APP_VERSION } from '../../config'
 import ApplicationProvider, { useApplication } from '../../Containers/ApplicationProvider'
@@ -32,7 +32,7 @@ function UserApplicationContent() {
   const driveCompat = useDriveCompat()
   const { API_URL } = useConfig()
   const { UID } = useAuthentication()
-  const isLandingPageEnabled = useDriveDocsLandingPageFeatureFlag()
+  const isLandingPageEnabled = useLandingPageFeatureFlag()
 
   const unleashClient = useUnleashClient()
 

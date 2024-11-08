@@ -19,6 +19,7 @@ export function HomepageRecentDocumentsTableRow({ recentDocument }: { recentDocu
       ? recentDocument.location?.slice(0, -1)
       : recentDocument.location
   return (
+    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
     <tr
       role="button"
       aria-label={c('Action').t`Open`}
