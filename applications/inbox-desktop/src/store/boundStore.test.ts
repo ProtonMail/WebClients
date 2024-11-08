@@ -122,8 +122,19 @@ describe("boundStore", () => {
     });
 
     describe("saveWindowBounds", () => {
+        it("does nothing if window is destroyed", () => {
+            saveWindowBounds({
+                isDestroyed: () => true,
+                getBounds: () => ({ x: 123, y: 456, width: 1000, height: 100 }),
+                isMaximized: () => true,
+            } as BrowserWindow);
+
+            expect(MockedStore.INSTANCE.set).not.toHaveBeenCalled();
+        });
+
         it("stores given window bounds", () => {
             saveWindowBounds({
+                isDestroyed: () => false,
                 getBounds: () => ({ x: 123, y: 456, width: 1000, height: 100 }),
                 isMaximized: () => true,
             } as BrowserWindow);
@@ -141,6 +152,7 @@ describe("boundStore", () => {
         it("allows overriding window properties", () => {
             saveWindowBounds(
                 {
+                    isDestroyed: () => false,
                     getBounds: () => ({ x: 123, y: 456, width: 1000, height: 100 }),
                     isMaximized: () => true,
                 } as BrowserWindow,
