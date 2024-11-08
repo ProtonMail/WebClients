@@ -1,6 +1,4 @@
-import { ARGON2_PARAMS } from 'pmcrypto-v6-canary/lib/constants';
-
-import { CryptoProxy } from '@proton/crypto/lib';
+import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto';
 import { decryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { PassEncryptionTag } from '@proton/pass/types';
