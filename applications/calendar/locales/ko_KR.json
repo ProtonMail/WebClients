@@ -2573,11 +2573,6 @@
         "기한이 지난 청구서"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2665,6 +2660,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4912,9 +4912,6 @@
       "Removed participants will be notified.": [
         "삭제된 참가자들에게 알림이 전송됩니다."
       ],
-      "Saving event...": [
-        "이벤트 저장 중..."
-      ],
       "Select a service provider to start": [
         "서비스 제공자를 선택해 시작하기"
       ],
@@ -6915,6 +6912,14 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -6927,14 +6932,6 @@
       ],
       "Switch plans?": [
         "요금제를 변경할까요?"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Starting from ${ price }": [
-        "${ price }부터 시작"
       ]
     },
     "new_plans: tooltip": {
@@ -10260,9 +10257,6 @@
       ]
     },
     "Zoom Meeting": {
-      "Join Zoom Meeting": [
-        "Zoom 회의 참여"
-      ],
       "Meeting ID:": [
         "회의 ID:"
       ]
