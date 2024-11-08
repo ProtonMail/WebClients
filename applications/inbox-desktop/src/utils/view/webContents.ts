@@ -61,7 +61,7 @@ export function handleWebContents(contents: WebContents) {
             return;
         }
 
-        if (isCurrentContent() && getCurrentViewID() === "account" && isAccountSwitch(url)) {
+        if (getCurrentViewID() === "account" && isAccountSwitch(url)) {
             resetHiddenViews({ toHomepage: false });
         }
 
