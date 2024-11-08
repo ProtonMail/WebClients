@@ -22,8 +22,14 @@ import {
     isPaymentMethodStatusExtended,
     queryPaymentMethodStatus,
 } from '@proton/payments';
-import { type CheckSubscriptionData, type PaymentsVersion, getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import {
+    type CheckSubscriptionData,
+    type PaymentsVersion,
+    getLifetimeProductType,
+    getPaymentsVersion,
+} from '@proton/shared/lib/api/payments';
 import { APPS } from '@proton/shared/lib/constants';
+import { isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 import { type Api, ChargebeeEnabled, type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
@@ -36,6 +42,22 @@ const checkSubscription = (data: CheckSubscriptionData, version: PaymentsVersion
     method: 'post',
     data,
 });
+
+const checkProduct = (data: CheckSubscriptionData) => {
+    return {
+        url: 'payments/v5/products/check',
+        method: 'post',
+        data: {
+            Quantity: 1,
+            Currency: data.Currency,
+            ProductType: getLifetimeProductType(data),
+            BillingAddress: data.BillingAddress ?? {
+                CountryCode: 'CH',
+                State: null,
+            },
+        },
+    };
+};
 
 export const useReportRoutingError = () => {
     const errorsToReport: string[] = [
@@ -252,6 +274,10 @@ export const usePaymentsApi = (
             requestOptions: RequestOptions = {},
             options?: CheckWithAutomaticOptions
         ): Promise<SubscriptionCheckResponse> => {
+            if (isLifetimePlanSelected(data.Plans)) {
+                return api(checkProduct(data));
+            }
+
             const chargebeeEnabled = getChargebeeEnabled();
             if (chargebeeEnabled === ChargebeeEnabled.INHOUSE_FORCED) {
                 return checkV4(data, requestOptions, { system: 'inhouse', reason: 'forced' });

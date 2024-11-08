@@ -4,8 +4,10 @@ import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
 import { type MethodsHook } from '@proton/components/payments/react-extensions';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, type PlanIDs } from '@proton/payments';
 import { type Currency } from '@proton/payments';
+import { isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import CurrencySelector from './CurrencySelector';
 
@@ -19,6 +21,8 @@ export interface Props {
     description?: ReactNode;
     renewNotice: ReactNode;
     paymentMethods: MethodsHook;
+    user: UserModel;
+    planIDs: PlanIDs;
 }
 
 const Checkout = ({
@@ -31,9 +35,13 @@ const Checkout = ({
     description,
     renewNotice,
     paymentMethods,
+    user,
+    planIDs,
 }: Props) => {
-    const disableCurrencySelector =
-        paymentMethods.selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+    const isSepaDirectDebit = paymentMethods.selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
+    const isLifetimeWithCredits = user.Credit > 0 && isLifetimePlanSelected(planIDs);
+
+    const disableCurrencySelector = isSepaDirectDebit || isLifetimeWithCredits || loading;
 
     return (
         <div className="p-6">
@@ -45,7 +53,7 @@ const Checkout = ({
                         currency={currency}
                         onSelect={onChangeCurrency}
                         mode="select-two"
-                        disabled={loading || disableCurrencySelector}
+                        disabled={disableCurrencySelector}
                     />
                 </span>
             </div>

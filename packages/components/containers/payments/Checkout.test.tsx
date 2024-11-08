@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { type AvailablePaymentMethod, PAYMENT_METHOD_TYPES } from '@proton/payments';
+import { buildUser } from '@proton/testing/builders';
 
 import { type MethodsHook } from '../../payments/react-extensions';
 import Checkout, { type Props } from './Checkout';
@@ -13,6 +14,8 @@ beforeEach(() => {
         onChangeCurrency: jest.fn(),
         children: <div>children</div>,
         renewNotice: <div>renewNotice</div>,
+        user: buildUser(),
+        planIDs: {},
         paymentMethods: {
             selectedMethod: undefined,
             allMethods: [],

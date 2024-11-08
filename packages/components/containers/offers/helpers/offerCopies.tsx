@@ -18,6 +18,7 @@ import {
     DRIVE_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
+    PASS_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
@@ -193,6 +194,23 @@ export const getMailPlus2024InboxFeatures = (): { name: string }[] => {
 export const getPassPlusFeatures = () => {
     return [
         { name: c('BF2024: Deal details').t`1 user account` },
+        { name: c('BF2024: Deal details').t`Unlimited logins, notes, credit cards` },
+        { name: c('BF2024: Deal details').t`Secure vault and link sharing` },
+        { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
+        { name: c('BF2024: Deal details').t`Integrated 2FA authenticator` },
+        { name: c('BF2024: Deal details').t`Password health alerts` },
+        { name: getDarkWebMonitoringText() },
+        { name: c('BF2024: Deal details').t`Advanced account protection` },
+    ];
+};
+
+export const getLifetimePassFeatures = () => {
+    return [
+        { name: c('BF2024: Deal details').t`1 user account` },
+        {
+            name: c('BF2024: Deal details').t`One-time payment, lifetime deal`,
+            tooltip: c('new_plans: tooltip').t`Lifetime access to ${PASS_APP_NAME} premium features.`,
+        },
         { name: c('BF2024: Deal details').t`Unlimited logins, notes, credit cards` },
         { name: c('BF2024: Deal details').t`Secure vault and link sharing` },
         { name: c('BF2024: Deal details').t`Unlimited hide-my-email aliases` },
@@ -384,7 +402,14 @@ export const getFamilyFeatures = () => [
     },
 ];
 
-export const getDealBilledDescription = (cycle: CYCLE, amount: ReactElement): string | string[] | null => {
+export const getDealBilledDescription = (
+    cycle: CYCLE,
+    amount: ReactElement,
+    isLifeTime?: boolean
+): string | string[] | null => {
+    if (isLifeTime === true) {
+        return c('BF2024: Offers').jt`Billed at ${amount} once`;
+    }
     switch (cycle) {
         case CYCLE.MONTHLY:
             return c('specialoffer: Offers').jt`Billed at ${amount} for 1 month`;

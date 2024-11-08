@@ -62,6 +62,7 @@ export interface ShortPlan {
         | PLANS.DRIVE
         | PLANS.DRIVE_BUSINESS
         | PLANS.PASS
+        | PLANS.PASS_LIFETIME
         | PLANS.PASS_PRO
         | PLANS.PASS_FAMILY
         | PLANS.PASS_BUSINESS

@@ -5,7 +5,7 @@ import Price from '@proton/components/components/price/Price';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
-import { type PLANS, PLAN_NAMES } from '@proton/payments';
+import { PLANS, PLAN_NAMES } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -31,13 +31,8 @@ import {
     hasWallet,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
-import type {
-    Address,
-    Organization,
-    SubscriptionModel,
-    UserModel,
-    VPNServersCountData,
-} from '@proton/shared/lib/interfaces';
+import type { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { type Organization, type SubscriptionModel, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
@@ -93,10 +88,29 @@ interface Props {
     upsells: Upsell[];
 }
 
+function extractSubscriptionData(user: UserModel, subscription?: SubscriptionModel) {
+    const primaryPlan = (() => {
+        if (user.isPaid) {
+            return getPrimaryPlan(subscription) ?? FREE_PLAN;
+        } else if (user.hasPassLifetime) {
+            return {
+                Title: PLAN_NAMES[PLANS.PASS_LIFETIME],
+                Name: PLANS.PASS_LIFETIME,
+            };
+        } else if (user.isFree) {
+            return FREE_PLAN;
+        }
+    })();
+
+    return {
+        planTitle: primaryPlan?.Title,
+        planName: primaryPlan?.Name,
+    };
+}
+
 const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, addresses, upsells }: Props) => {
-    const primaryPlan = getPrimaryPlan(subscription);
-    const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
-    const isPassB2bPlan = getIsPassB2BPlan(primaryPlan?.Name);
+    const { planTitle, planName } = extractSubscriptionData(user, subscription);
+    const isPassB2bPlan = getIsPassB2BPlan(planName);
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;
@@ -158,7 +172,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
         return (
             <StripedList alternate="odd">
-                <SubscriptionItems items={items} />
+                <SubscriptionItems user={user} items={items} />
             </StripedList>
         );
     };
@@ -208,7 +222,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
         return (
             <StripedList alternate="odd">
-                <SubscriptionItems items={items} />
+                <SubscriptionItems user={user} items={items} />
             </StripedList>
         );
     };
@@ -217,7 +231,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         const items = getVpnPlusItems();
         return (
             <StripedList alternate="odd">
-                <SubscriptionItems items={items} />
+                <SubscriptionItems user={user} items={items} />
             </StripedList>
         );
     };
@@ -234,7 +248,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         return (
             <StripedList alternate={alternate}>
                 {storageItem}
-                <SubscriptionItems items={items} />
+                <SubscriptionItems user={user} items={items} />
             </StripedList>
         );
     };
@@ -255,7 +269,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
         return (
             <StripedList>
-                <SubscriptionItems items={items} />
+                <SubscriptionItems user={user} items={items} />
             </StripedList>
         );
     };
@@ -284,7 +298,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
         return (
             <StripedList>
-                <SubscriptionItems items={items.filter(isTruthy)} />
+                <SubscriptionItems user={user} items={items.filter(isTruthy)} />
             </StripedList>
         );
     };
@@ -300,7 +314,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         return (
             <StripedList alternate={alternate}>
                 {storageItem}
-                <SubscriptionItems items={items} />
+                <SubscriptionItems user={user} items={items} />
             </StripedList>
         );
     };
@@ -321,7 +335,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         return (
             <StripedList alternate={alternate}>
                 {storageItem}
-                <SubscriptionItems items={items.filter(isTruthy)} />
+                <SubscriptionItems user={user} items={items.filter(isTruthy)} />
             </StripedList>
         );
     };
@@ -351,7 +365,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
 
         return (
             <StripedList alternate="odd">
-                <SubscriptionItems items={items} />
+                <SubscriptionItems user={user} items={items} />
             </StripedList>
         );
     };
@@ -386,18 +400,26 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
             },
             getProtonPassFeature(user.hasPaidPass ? 'unlimited' : FREE_PASS_ALIASES),
             getIsSentinelPlan(organization?.PlanName) ? getSentinel(true) : false,
-            MaxAI > 0 &&
-                !!writingAssistantText && {
+            (() => {
+                if (MaxAI <= 0 || !writingAssistantText) {
+                    return false;
+                }
+
+                const showGetMoreButton = MaxAI !== MaxMembers && getIsB2BAudienceFromSubscription(subscription);
+                const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
+
+                return {
                     icon: 'pen-sparks',
                     text: writingAssistantText,
-                    actionElement: MaxAI !== MaxMembers && <GetMoreButton metricsSource="upsells" />,
-                },
+                    actionElement,
+                };
+            })(),
         ];
 
         return (
             <StripedList alternate={alternate}>
                 {storageItem}
-                <SubscriptionItems items={items.filter(isTruthy)} />
+                <SubscriptionItems user={user} items={items.filter(isTruthy)} />
             </StripedList>
         );
     };
@@ -448,11 +470,11 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 if (hasVPNPassBundle(subscription)) {
                     return getVpnPass();
                 }
+                if (hasPass(subscription) || (user.isFree && user.hasPassLifetime)) {
+                    return getPassAppPassPlus();
+                }
                 if (user.isFree && app === APPS.PROTONPASS) {
                     return getPassAppFree();
-                }
-                if (hasPass(subscription)) {
-                    return getPassAppPassPlus();
                 }
                 if (hasPassFamily(subscription)) {
                     return getPassAppPassFamily();

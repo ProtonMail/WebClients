@@ -74,6 +74,15 @@ export function getInitialCycle({
     }
     cycle = notHigherThanAvailableOnBackend(planIDs, plansMap, cycle);
 
+    // Respect the minimum cycle
+    if (minimumCycle && cycle < minimumCycle) {
+        cycle = minimumCycle;
+    }
+    // Respect the maximum cycle
+    if (maximumCycle && cycle > maximumCycle) {
+        cycle = maximumCycle;
+    }
+
     const allowedCycles = getAllowedCycles({
         subscription,
         minimumCycle,
@@ -84,17 +93,6 @@ export function getInitialCycle({
         plansMap,
         allowDowncycling,
     });
-
-    // Respect the minimum cycle
-    if (minimumCycle && cycle < minimumCycle) {
-        cycle = minimumCycle;
-    }
-
-    // Respect the maximum cycle
-    if (maximumCycle && cycle > maximumCycle) {
-        cycle = maximumCycle;
-    }
-
     if (!allowedCycles.includes(cycle)) {
         cycle = allowedCycles.at(0) ?? DEFAULT_CYCLE;
     }

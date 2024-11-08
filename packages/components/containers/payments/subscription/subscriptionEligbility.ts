@@ -1,6 +1,10 @@
 import { type ADDON_NAMES, PLANS, isFreeSubscription } from '@proton/payments';
 import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
-import { getHas2024OfferCoupon, getPlan } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHas2024OfferCoupon,
+    getIsB2BAudienceFromSubscription,
+    getPlan,
+} from '@proton/shared/lib/helpers/subscription';
 import type { Plan, PlansMap, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../../offers/interface';
@@ -84,7 +88,7 @@ export const getEligibility = ({
     eligibleBlackFridayConfigs,
 }: {
     user: UserModel;
-    subscription: SubscriptionModel | null | undefined;
+    subscription: SubscriptionModel | undefined;
     offer: { plan: Plan; cycle: CYCLE; coupon?: string };
     plansMap: PlansMap;
     eligibleBlackFridayConfigs: OfferConfig[];
@@ -225,6 +229,16 @@ export const getEligibility = ({
 
         if (combination) {
             return combination.result();
+        }
+
+        return { type: 'not-eligible' };
+    }
+
+    if (offer.plan.Name === PLANS.PASS_LIFETIME) {
+        const isEligibilePlan = !getIsB2BAudienceFromSubscription(subscription) && !user.hasPassLifetime;
+
+        if (isEligibilePlan) {
+            return okResult();
         }
 
         return { type: 'not-eligible' };

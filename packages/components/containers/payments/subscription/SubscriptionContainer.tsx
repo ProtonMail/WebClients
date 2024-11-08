@@ -1172,6 +1172,7 @@ const SubscriptionContainer = ({
                                 onBillingAddressChange={handleBillingAddressChange}
                                 showPlanDescription={!hasPlanCustomizer}
                                 paymentNeeded={!model.noPaymentNeeded}
+                                user={user}
                                 {...checkoutModifiers}
                             />
                         </div>
