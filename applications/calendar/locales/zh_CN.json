@@ -2500,11 +2500,6 @@
         "逾期账单"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "使用 Easy Switch 导入助手"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "双重验证能为您再增添一道安全防线，将试图盗取账户者拒之门外。"
@@ -2577,6 +2572,11 @@
       ],
       "Your account and data recovery methods are set.": [
         "您的账户恢复方式已设置。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4644,9 +4644,6 @@
       ],
       "Removed participants will be notified.": [
         "移除的参与者将收到通知"
-      ],
-      "Saving event...": [
-        "正在保存事件..."
       ],
       "Select a service provider to start": [
         "请选择一个服务提供商并开始导入"
