@@ -281,6 +281,7 @@ interface SerializedAuthDeviceData {
     id: string;
     token: string;
     secret: string;
+    persistedAt: number;
 }
 
 const serializeAuthDeviceData = (deviceData: DeviceData): string => {
@@ -288,6 +289,7 @@ const serializeAuthDeviceData = (deviceData: DeviceData): string => {
         id: deviceData.deviceOutput.ID,
         token: deviceData.deviceOutput.DeviceToken,
         secret: deviceData.deviceSecretData.serializedData,
+        persistedAt: Date.now(),
     };
     return JSON.stringify(serializedData);
 };
@@ -303,6 +305,7 @@ const deserializeAuthDeviceData = (data: string | null | undefined): SerializedA
                 id: parsedJson.id,
                 token: parsedJson.token,
                 secret: parsedJson.secret,
+                persistedAt: Number(parsedJson.persistedAt),
             };
         }
     } catch {}
