@@ -1,4 +1,4 @@
-import type { ComponentType, ElementType } from 'react';
+import type { ComponentType, ElementType, ReactElement } from 'react';
 import { type ReactNode, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
@@ -26,7 +26,7 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     extra?: ReactNode;
     hidden?: boolean;
     hiddenValue?: string;
-    icon?: IconName;
+    icon?: IconName | ReactElement;
     label: ReactNode;
     loading?: boolean;
     value?: string;
