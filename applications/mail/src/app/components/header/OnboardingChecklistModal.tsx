@@ -1,14 +1,14 @@
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 
-import UsersOnboardingChecklist from '../onboarding/checklist/UsersOnboardingChecklist';
+import OldOnboardingChecklistPlaceholder from '../onboarding/checklist/messageListPlaceholder/variants/old/OldOnboardingChecklistPlaceholder';
 
 const OnboardingChecklistModal = (rest: ModalProps) => {
     return (
         <ModalTwo {...rest}>
             <ModalTwoHeader />
             <ModalTwoContent>
-                <UsersOnboardingChecklist hideDismissButton />
+                <OldOnboardingChecklistPlaceholder hideDismissButton />
             </ModalTwoContent>
         </ModalTwo>
     );
