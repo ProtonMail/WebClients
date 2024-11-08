@@ -17,8 +17,8 @@ import type {
     VerifyCleartextOptionsPmcrypto,
     VerifyMessageResult,
     VerifyOptionsPmcrypto,
-} from 'pmcrypto-v6-canary';
-import type { PartialConfig, enums } from 'pmcrypto-v6-canary/lib/openpgp';
+} from 'pmcrypto';
+import type { PartialConfig, enums } from 'pmcrypto/lib/openpgp';
 
 export type MaybeArray<T> = T[] | T;
 export type { enums, SessionKey, AlgorithmInfo, MIMEAttachment };
