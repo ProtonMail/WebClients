@@ -36,14 +36,7 @@ import {
 import { $isLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { Button } from '@proton/atoms'
-import {
-  DropdownMenu,
-  DropdownMenuButton,
-  Icon,
-  SimpleDropdown,
-  Spotlight,
-  useActiveBreakpoint,
-} from '@proton/components'
+import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, Spotlight } from '@proton/components'
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace'
 import { rootFontSize } from '@proton/shared/lib/helpers/dom'
 import clsx from '@proton/utils/clsx'
@@ -628,16 +621,6 @@ export default function DocumentEditorToolbar({
     [activeEditor],
   )
 
-  const { viewportWidth } = useActiveBreakpoint()
-  const viewportMoreThanLarge = viewportWidth['2xlarge'] || viewportWidth.xlarge
-
-  const showUndoRedoInToolbar = !viewportWidth['<=medium']
-  const showTextFormattingOptionsInToolbar = !viewportWidth['<=small']
-  const showAlignmentOptionsInToolbar = !viewportWidth['<=medium']
-  const showListTypeOptionsInToolbar = !viewportWidth['<=medium']
-  const showCodeAndQuoteOptionsInToolbar = !viewportWidth['<=medium']
-  const showInsertOptionsInToolbar = viewportMoreThanLarge
-
   const DropdownContentProps = {
     onClosed: () => {
       const activeElement = document.activeElement
@@ -662,6 +645,50 @@ export default function DocumentEditorToolbar({
     new Date('2024-11-22'),
   )
 
+  const buttonsContainerRef = useRef<HTMLDivElement | null>(null)
+  const [visibleButtons, setVisibleButtons] = useState<Record<string, boolean>>({})
+  useEffect(() => {
+    const buttonsContainer = buttonsContainerRef.current
+    if (!buttonsContainer) {
+      return
+    }
+
+    const handler = (entries: IntersectionObserverEntry[]) => {
+      const updatedMap: Record<string, boolean> = {}
+      for (const entry of entries) {
+        if (!(entry.target instanceof HTMLElement)) {
+          continue
+        }
+        const testid = entry.target.dataset.testid
+        if (!testid) {
+          continue
+        }
+        if (entry.isIntersecting && entry.intersectionRatio === 1) {
+          updatedMap[testid] = true
+        } else {
+          updatedMap[testid] = false
+        }
+      }
+      setVisibleButtons((prev) => ({
+        ...prev,
+        ...updatedMap,
+      }))
+    }
+
+    const observer = new IntersectionObserver(handler, {
+      root: buttonsContainer,
+      threshold: 1,
+    })
+
+    for (const child of buttonsContainer.children) {
+      observer.observe(child)
+    }
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   return (
     // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
     <div
@@ -675,11 +702,14 @@ export default function DocumentEditorToolbar({
       role="presentation"
     >
       <div
-        className="DocumentEditorToolbar bg-norm flex w-full flex-nowrap items-center gap-1.5 overflow-auto px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
+        className="DocumentEditorToolbar bg-norm flex w-full flex-nowrap items-center gap-1.5 px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
         data-testid={isPreviewModeToolbar ? 'preview-mode-toolbar' : 'main-toolbar'}
       >
-        {showUndoRedoInToolbar && (
-          <>
+        <div
+          className="flex flex-nowrap items-center gap-1.5 overflow-hidden [&>*]:flex-shrink-0"
+          ref={buttonsContainerRef}
+        >
+          <div className="hidden items-center gap-1.5 md:flex" data-testid="undo-redo-options">
             <ToolbarButton
               label={<ShortcutLabel shortcut="UNDO_SHORTCUT" label={c('Action').t`Undo`} />}
               onClick={undo}
@@ -697,121 +727,125 @@ export default function DocumentEditorToolbar({
               <RedoIcon className="h-4 w-4 fill-current" />
             </ToolbarButton>
             <ToolbarSeparator />
-          </>
-        )}
-        <SimpleDropdown
-          as={Button}
-          shape="ghost"
-          type="button"
-          color="norm"
-          className="px-2 text-left text-sm"
-          content={
-            <span
-              className="w-custom line-clamp-1 break-all"
-              style={{
-                '--w-custom': '9ch',
-              }}
-            >
-              {blockTypeToBlockName[blockType]}
-            </span>
-          }
-          disabled={!isEditable}
-          contentProps={DropdownContentProps}
-          data-testid="headings-options"
-        >
-          <DropdownMenu>
-            {blockTypes.map(({ type, name, onClick, tooltip }) => (
-              <ToolbarTooltip key={type} title={tooltip} originalPlacement="right">
-                <DropdownMenuButton className="text-left text-sm" onClick={onClick} disabled={!isEditable}>
-                  {name}
-                </DropdownMenuButton>
-              </ToolbarTooltip>
-            ))}
-          </DropdownMenu>
-        </SimpleDropdown>
-        <SimpleDropdown
-          as={Button}
-          shape="ghost"
-          type="button"
-          color="norm"
-          className="px-2 text-left text-sm"
-          content={
-            <span
-              className="w-custom line-clamp-1 break-all"
-              style={{
-                '--w-custom': '7ch',
-              }}
-            >
-              {fontFamilyLabel}
-            </span>
-          }
-          disabled={!isEditable}
-          contentProps={DropdownContentProps}
-          data-testid="font-family"
-        >
-          <DropdownMenu>
-            {FontOptions.map(({ id, label, value }) => (
-              <DropdownMenuButton
-                key={id}
-                className="text-left text-sm"
-                style={{
-                  fontFamily: value,
-                }}
-                onClick={() => {
-                  setFontFamilyForSelection(id)
-                }}
-                disabled={!isEditable}
-                data-testid="font-family-options"
-              >
-                {label}
-              </DropdownMenuButton>
-            ))}
-          </DropdownMenu>
-        </SimpleDropdown>
-        <ToolbarSeparator />
-        <ToolbarTooltip
-          originalPlacement="bottom"
-          title={
-            <ShortcutLabelContainer>
-              <ShortcutLabelText>{c('Action').t`Adjust font size`}</ShortcutLabelText>
-              <ModifierKbd /> <ShortcutKbd shortcut="Shift" />
-              <ShortcutKbd shortcut="." /> <ShortcutLabelText>{c('Action').t`and`}</ShortcutLabelText>
-              <ShortcutKbd shortcut="," />
-            </ShortcutLabelContainer>
-          }
-        >
+          </div>
           <SimpleDropdown
             as={Button}
             shape="ghost"
             type="button"
             color="norm"
             className="px-2 text-left text-sm"
-            content={fontSize}
+            content={
+              <span
+                className="w-custom line-clamp-1 break-all"
+                style={{
+                  '--w-custom': '9ch',
+                }}
+              >
+                {blockTypeToBlockName[blockType]}
+              </span>
+            }
             disabled={!isEditable}
             contentProps={DropdownContentProps}
-            data-testid="font-size"
+            data-testid="headings-options"
           >
             <DropdownMenu>
-              {FontSizes.map((size) => (
+              {blockTypes.map(({ type, name, onClick, tooltip }) => (
+                <ToolbarTooltip key={type} title={tooltip} originalPlacement="right">
+                  <DropdownMenuButton className="text-left text-sm" onClick={onClick} disabled={!isEditable}>
+                    {name}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+              ))}
+            </DropdownMenu>
+          </SimpleDropdown>
+          <SimpleDropdown
+            as={Button}
+            shape="ghost"
+            type="button"
+            color="norm"
+            className="px-2 text-left text-sm"
+            content={
+              <span
+                className="w-custom line-clamp-1 break-all"
+                style={{
+                  '--w-custom': '7ch',
+                }}
+              >
+                {fontFamilyLabel}
+              </span>
+            }
+            disabled={!isEditable}
+            contentProps={DropdownContentProps}
+            data-testid="font-family"
+          >
+            <DropdownMenu>
+              {FontOptions.map(({ id, label, value }) => (
                 <DropdownMenuButton
-                  key={size}
+                  key={id}
                   className="text-left text-sm"
+                  style={{
+                    fontFamily: value,
+                  }}
                   onClick={() => {
-                    const clampedValue = Math.min(100, Math.max(4, size))
-                    setFontSizeForSelection(`${clampedValue}px`)
+                    setFontFamilyForSelection(id)
                   }}
                   disabled={!isEditable}
-                  data-testid="font-size-options"
+                  data-testid="font-family-options"
                 >
-                  {size}px
+                  {label}
                 </DropdownMenuButton>
               ))}
             </DropdownMenu>
           </SimpleDropdown>
-        </ToolbarTooltip>
-        <ToolbarSeparator />
-        {showTextFormattingOptionsInToolbar && (
-          <>
+          <ToolbarSeparator />
+          <ToolbarTooltip
+            originalPlacement="bottom"
+            title={
+              <ShortcutLabelContainer>
+                <ShortcutLabelText>{c('Action').t`Adjust font size`}</ShortcutLabelText>
+                <ModifierKbd /> <ShortcutKbd shortcut="Shift" />
+                <ShortcutKbd shortcut="." /> <ShortcutLabelText>{c('Action').t`and`}</ShortcutLabelText>
+                <ShortcutKbd shortcut="," />
+              </ShortcutLabelContainer>
+            }
+          >
+            <SimpleDropdown
+              as={Button}
+              shape="ghost"
+              type="button"
+              color="norm"
+              className="px-2 text-left text-sm"
+              content={fontSize}
+              disabled={!isEditable}
+              contentProps={DropdownContentProps}
+              data-testid="font-size"
+            >
+              <DropdownMenu>
+                {FontSizes.map((size) => (
+                  <DropdownMenuButton
+                    key={size}
+                    className="text-left text-sm"
+                    onClick={() => {
+                      const clampedValue = Math.min(100, Math.max(4, size))
+                      setFontSizeForSelection(`${clampedValue}px`)
+                    }}
+                    disabled={!isEditable}
+                    data-testid="font-size-options"
+                  >
+                    {size}px
+                  </DropdownMenuButton>
+                ))}
+              </DropdownMenu>
+            </SimpleDropdown>
+          </ToolbarTooltip>
+          <ToolbarSeparator />
+          <div
+            className={clsx(
+              'hidden items-center gap-1.5 md:flex',
+              !visibleButtons['formatting-options'] && 'visibility-hidden',
+            )}
+            data-testid="formatting-options"
+          >
             <ToolbarButton
               label={<ShortcutLabel shortcut="BOLD_SHORTCUT" label={c('Action').t`Bold`} />}
               disabled={!isEditable}
@@ -866,10 +900,14 @@ export default function DocumentEditorToolbar({
               />
             </SimpleDropdown>
             <ToolbarSeparator />
-          </>
-        )}
-        {showInsertOptionsInToolbar && (
-          <>
+          </div>
+          <div
+            className={clsx(
+              'hidden items-center gap-1.5 md:flex',
+              !visibleButtons['insert-options'] && 'visibility-hidden',
+            )}
+            data-testid="insert-options"
+          >
             <ToolbarButton
               label={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" label={c('Action').t`Insert link`} />}
               disabled={!isEditable}
@@ -908,10 +946,40 @@ export default function DocumentEditorToolbar({
               <AddCommentIcon className="h-4 w-4 fill-current" />
             </ToolbarButton>
             <ToolbarSeparator />
-          </>
-        )}
-        {showAlignmentOptionsInToolbar && (
-          <>
+          </div>
+          <input
+            ref={imageInputRef}
+            className="absolute left-0 top-0 h-px w-px opacity-0"
+            type="file"
+            accept="image/*"
+            onChange={async (event: React.ChangeEvent<HTMLInputElement>) => {
+              try {
+                if (!event.target.files || event.target.files.length !== 1) {
+                  return
+                }
+
+                if (!isEditable) {
+                  return
+                }
+
+                const file = event.target.files[0]
+                activeEditor.dispatchCommand(INSERT_FILE_COMMAND, file)
+              } catch (error: unknown) {
+                sendErrorMessage(error)
+              } finally {
+                imageInputRef.current!.value = ''
+              }
+            }}
+            data-testid="image-input"
+            tabIndex={-1}
+          />
+          <div
+            className={clsx(
+              'hidden items-center gap-1.5 md:flex',
+              !visibleButtons['alignment-options'] && 'visibility-hidden',
+            )}
+            data-testid="alignment-options"
+          >
             <SimpleDropdown
               as={ToolbarButton}
               active={elementFormat !== 'left'}
@@ -934,10 +1002,14 @@ export default function DocumentEditorToolbar({
               </DropdownMenu>
             </SimpleDropdown>
             <ToolbarSeparator />
-          </>
-        )}
-        {showListTypeOptionsInToolbar && (
-          <>
+          </div>
+          <div
+            className={clsx(
+              'hidden items-center gap-1.5 md:flex',
+              !visibleButtons['list-options'] && 'visibility-hidden',
+            )}
+            data-testid="list-options"
+          >
             <SimpleDropdown
               as={ToolbarButton}
               active={listTypes.some(({ type }) => type === listType)}
@@ -1056,35 +1128,14 @@ export default function DocumentEditorToolbar({
               </DropdownMenu>
             </SimpleDropdown>
             <ToolbarSeparator />
-          </>
-        )}
-        <input
-          ref={imageInputRef}
-          className="absolute left-0 top-0 h-px w-px opacity-0"
-          type="file"
-          accept="image/*"
-          onChange={async (event: React.ChangeEvent<HTMLInputElement>) => {
-            try {
-              if (!event.target.files || event.target.files.length !== 1) {
-                return
-              }
-
-              if (!isEditable) {
-                return
-              }
-
-              const file = event.target.files[0]
-              activeEditor.dispatchCommand(INSERT_FILE_COMMAND, file)
-            } catch (error: unknown) {
-              sendErrorMessage(error)
-            } finally {
-              imageInputRef.current!.value = ''
-            }
-          }}
-          data-testid="image-input"
-        />
-        {showCodeAndQuoteOptionsInToolbar && (
-          <>
+          </div>
+          <div
+            className={clsx(
+              'hidden items-center gap-1.5 md:flex',
+              !visibleButtons['code-quote-options'] && 'visibility-hidden',
+            )}
+            data-testid="code-quote-options"
+          >
             <ToolbarButton
               label={<ShortcutLabel shortcut="CODE_BLOCK_TOGGLE_SHORTCUT" label={c('Action').t`Code block`} />}
               active={isCodeBlock}
@@ -1104,13 +1155,13 @@ export default function DocumentEditorToolbar({
               <Icon name="text-quote" />
             </ToolbarButton>
             <ToolbarSeparator />
-          </>
-        )}
+          </div>
+        </div>
         <SimpleDropdown
           as={ToolbarButton}
           shape="ghost"
           type="button"
-          className="text-[--text-norm]"
+          className="flex-shrink-0 text-[--text-norm]"
           content={<Icon name="three-dots-vertical" />}
           disabled={!isEditable}
           hasCaret={false}
@@ -1118,50 +1169,8 @@ export default function DocumentEditorToolbar({
           data-testid="content-properties-button"
         >
           <DropdownMenu className="[&>li>hr]:min-h-px">
-            {!showInsertOptionsInToolbar && (
+            {!visibleButtons['undo-redo-options'] && (
               <>
-                <ToolbarTooltip
-                  originalPlacement="right"
-                  title={
-                    <ShortcutLabelContainer>
-                      <ShortcutLabelText>Insert image</ShortcutLabelText>
-                    </ShortcutLabelContainer>
-                  }
-                >
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={insertImage}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="image" />
-                    {c('Action').t`Insert image`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={editLink}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="link" />
-                    {c('Action').t`Link`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={insertTable}
-                    disabled={!isEditable}
-                  >
-                    <TableIcon className="h-4 w-4 fill-current" />
-                    {c('Action').t`Insert table`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-              </>
-            )}
-            {!showUndoRedoInToolbar && (
-              <>
-                <hr className="my-1" />
                 <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="UNDO_SHORTCUT" />}>
                   <DropdownMenuButton
                     className="flex items-center gap-2 text-left text-sm"
@@ -1217,7 +1226,6 @@ export default function DocumentEditorToolbar({
                 {c('Action').t`Outdent`}
               </DropdownMenuButton>
             </ToolbarTooltip>
-
             <DropdownMenuButton
               className="flex items-center gap-2 text-left text-sm"
               disabled={!isEditable}
@@ -1227,39 +1235,9 @@ export default function DocumentEditorToolbar({
               <DividerIcon className="h-4 w-4 fill-current" />
               {c('Action').t`Divider`}
             </DropdownMenuButton>
-            {!showAlignmentOptionsInToolbar && (
+            <hr className="my-1" />
+            {!visibleButtons['formatting-options'] && (
               <>
-                <hr className="my-1" />
-                <AlignmentMenuOptions
-                  activeEditor={activeEditor}
-                  elementFormat={elementFormat}
-                  isEditable={isEditable}
-                />
-              </>
-            )}
-            {!showListTypeOptionsInToolbar && (
-              <>
-                <hr className="my-1" />
-                {listTypes.map(({ type, icon, tooltip, name, onClick }) => (
-                  <ToolbarTooltip originalPlacement="right" key={type} title={tooltip}>
-                    <DropdownMenuButton
-                      className={clsx(
-                        'flex items-center gap-2 text-left text-sm',
-                        type === listType && 'active font-bold',
-                      )}
-                      onClick={onClick}
-                      disabled={!isEditable}
-                    >
-                      {icon}
-                      {name}
-                    </DropdownMenuButton>
-                  </ToolbarTooltip>
-                ))}
-              </>
-            )}
-            {!showTextFormattingOptionsInToolbar && (
-              <>
-                <hr className="my-1" />
                 <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="BOLD_SHORTCUT" />}>
                   <DropdownMenuButton
                     className="flex items-center gap-2 text-left text-sm"
@@ -1303,11 +1281,83 @@ export default function DocumentEditorToolbar({
                     {c('Action').t`Strikethrough`}
                   </DropdownMenuButton>
                 </ToolbarTooltip>
+                <hr className="my-1" />
               </>
             )}
-            {!showCodeAndQuoteOptionsInToolbar && (
+            {!visibleButtons['alignment-options'] && (
               <>
+                <AlignmentMenuOptions
+                  activeEditor={activeEditor}
+                  elementFormat={elementFormat}
+                  isEditable={isEditable}
+                />
                 <hr className="my-1" />
+              </>
+            )}
+            {!visibleButtons['list-options'] && (
+              <>
+                {listTypes.map(({ type, icon, tooltip, name, onClick }) => (
+                  <ToolbarTooltip originalPlacement="right" key={type} title={tooltip}>
+                    <DropdownMenuButton
+                      className={clsx(
+                        'flex items-center gap-2 text-left text-sm',
+                        type === listType && 'active font-bold',
+                      )}
+                      onClick={onClick}
+                      disabled={!isEditable}
+                    >
+                      {icon}
+                      {name}
+                    </DropdownMenuButton>
+                  </ToolbarTooltip>
+                ))}
+                <hr className="my-1" />
+              </>
+            )}
+            {!visibleButtons['insert-options'] && (
+              <>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={editLink}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="link" />
+                    {c('Action').t`Link`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip
+                  originalPlacement="right"
+                  title={
+                    <ShortcutLabelContainer>
+                      <ShortcutLabelText>Insert image</ShortcutLabelText>
+                    </ShortcutLabelContainer>
+                  }
+                >
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={insertImage}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="image" />
+                    {c('Action').t`Insert image`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={insertTable}
+                    disabled={!isEditable}
+                  >
+                    <TableIcon className="h-4 w-4 fill-current" />
+                    {c('Action').t`Insert table`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <hr className="my-1" />
+              </>
+            )}
+            {!visibleButtons['code-quote-options'] && (
+              <>
                 <ToolbarTooltip
                   originalPlacement="right"
                   title={<ShortcutLabel shortcut="CODE_BLOCK_TOGGLE_SHORTCUT" />}
@@ -1331,9 +1381,9 @@ export default function DocumentEditorToolbar({
                     {c('Action').t`Quote`}
                   </DropdownMenuButton>
                 </ToolbarTooltip>
+                <hr className="my-1" />
               </>
             )}
-            <hr className="my-1" />
             <DropdownMenuButton
               className="flex items-center gap-2 text-left text-sm"
               disabled={!isEditable}
@@ -1377,20 +1427,19 @@ export default function DocumentEditorToolbar({
                   {isEditMode && (
                     <>
                       <Icon name="pencil" className="flex-shrink-0" />
-                      <span className="flex-shrink-0" hidden={viewportWidth['<=medium']}>{c('Info').t`Editing`}</span>
+                      <span className="flex-shrink-0 [display:none] md:block">{c('Info').t`Editing`}</span>
                     </>
                   )}
                   {isSuggestionMode && (
                     <>
                       <SpeechBubblePenIcon className="h-4 w-4 flex-shrink-0" />
-                      <span className="flex-shrink-0" hidden={viewportWidth['<=medium']}>{c('Info')
-                        .t`Suggesting`}</span>
+                      <span className="flex-shrink-0 [display:none] md:block">{c('Info').t`Suggesting`}</span>
                     </>
                   )}
                   {isPreviewMode && (
                     <>
                       <Icon name="eye" className="flex-shrink-0" />
-                      <span className="flex-shrink-0" hidden={viewportWidth['<=medium']}>{c('Info').t`Viewing`}</span>
+                      <span className="flex-shrink-0 [display:none] md:block">{c('Info').t`Viewing`}</span>
                     </>
                   )}
                 </>
