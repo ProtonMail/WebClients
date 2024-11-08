@@ -1,9 +1,9 @@
-import type { FC, MouseEvent } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon, useNotifications } from '@proton/components/index';
+import { Icon, Tooltip, useNotifications } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -29,6 +29,7 @@ export const ContactCard: FC<Props> = ({
     ForwardedEmails,
     RepliedEmails,
     CreateTime,
+    ReverseAlias,
     onContactDeleted,
     onContactUpdated,
 }) => {
@@ -39,10 +40,12 @@ export const ContactCard: FC<Props> = ({
     const blockContactRequest = useRequest(aliasBlockContact, { onSuccess: ({ data }) => onContactUpdated(data) });
     const deleteContactRequest = useRequest(aliasDeleteContact, { onSuccess: ({ data }) => onContactDeleted(data) });
 
-    const handleCopyAddress = async (e: MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
-        await writeToClipboard(Email);
-        createNotification({ text: c('Info').t`Address copied to clipboard` });
+    const handleCopyAddress = async () => {
+        await writeToClipboard(ReverseAlias);
+        createNotification({
+            text: c('Info')
+                .t`Reverse alias address copied to clipboard. Send an email to this address and ${Email} will receive it.`,
+        });
     };
 
     return (
@@ -71,18 +74,20 @@ export const ContactCard: FC<Props> = ({
                         </Button>
                     </div>
                     <div className="flex flex-nowrap items-start shrink-0">
-                        <Button
-                            icon
-                            pill
-                            shape="ghost"
-                            className="color-weak"
-                            onClick={handleCopyAddress}
-                            title={c('Action').t`Share`}
-                        >
-                            <Icon name="paper-plane" alt={c('Action').t`Share`} />
-                        </Button>
+                        <Tooltip openDelay={500} originalPlacement="top" title={c('Action').t`Copy alias address`}>
+                            <Button
+                                icon
+                                pill
+                                shape="ghost"
+                                className="color-weak"
+                                onClick={handleCopyAddress}
+                                title={c('Action').t`Copy alias address`}
+                            >
+                                <Icon name="paper-plane" />
+                            </Button>
+                        </Tooltip>
                         <QuickActionsDropdown className="color-weak" shape="ghost" iconSize={4}>
-                            <DropdownMenuButton label={c('Action').t`Copy address`} onClick={handleCopyAddress} />
+                            <DropdownMenuButton label={c('Action').t`Copy alias address`} onClick={handleCopyAddress} />
                             <DropdownMenuButton
                                 label={Blocked ? c('Action').t`Unblock contact` : c('Action').t`Block contact`}
                                 onClick={() =>
