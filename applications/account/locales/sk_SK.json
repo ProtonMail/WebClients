@@ -808,11 +808,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "refresh the page": [
-        "obnoviť stránku"
-      ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "refresh the page": [
+        "obnoviť stránku"
       ],
       "Reject": [
         "Odmietnuť"
@@ -1610,6 +1610,14 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1631,14 +1639,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plán ${ plan } je späť len na obmedzený čas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1800,6 +1800,12 @@
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
@@ -5167,6 +5173,9 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Certifikát ${ name } sa nenašiel, alebo bol zrušený"
+      ],
+      "Display name cannot be empty": [
+        "Zobrazovaný názov nemôže byť prázdny"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5305,6 +5314,9 @@
       ],
       "Got it": [
         "Rozumiem"
+      ],
+      "Invite a user": [
+        "Pozvať používateľa"
       ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Pozvať existujúceho ${ BRAND_NAME } používateľa"
@@ -5490,6 +5502,9 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Ak používateľ už má adresu ${ MAIL_APP_NAME }, zadajte ju sem. V opačnom prípade si musí najprv vytvoriť účet."
+      ],
+      "If the user already has an account with ${ BRAND_NAME }, enter it here. Otherwise they need to create an account first.": [
+        "Ak používateľ už má účet ${ BRAND_NAME }, zadajte ho sem. V opačnom prípade si musí najprv vytvoriť účet."
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Pozvánka bude zrušená a používateľ sa nebude môcť pripojiť k ${ organizationName }."
@@ -7338,11 +7353,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -8973,11 +8988,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "Username": [
-        "Používateľské meno"
-      ],
       "username": [
         "používateľské meno"
+      ],
+      "Username": [
+        "Používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -10387,9 +10402,6 @@
       ],
       "Emails (last month)": [
         "Emaily (posledný mesiac)"
-      ],
-      "Enable video conferencing ": [
-        "Povoliť videokonferencie "
       ],
       "End date": [
         "Dátum ukončenia"
@@ -11837,6 +11849,32 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Začnite za ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
@@ -11864,32 +11902,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Začnite za ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12621,6 +12633,20 @@
         "Váš zvolený plán: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -12639,20 +12665,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Získajte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -13012,6 +13024,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Dvojstupňové overovanie sa už nevyžaduje"
+      ],
+      "Video conferencing settings have been updated": [
+        "Nastavenia videokonferencií boli aktualizované"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13883,6 +13898,9 @@
       ],
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Pokročilé funkcie aliasov (založené na SimpleLogin)"
       ]
     },
     "PassFamilyPlan2024": {
@@ -13979,6 +13997,9 @@
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Použite metódu obnovenia údajov, obráťte sa na iného správcu alebo obnovte kľúč organizácie pre obnovenie oprávnení správcu."
+      ],
+      "We couldn't verify the authenticity of this identity.": [
+        "Pravosť tejto identity sa nepodarilo overiť."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nepodarilo sa overiť zabezpečenie kľúča adresy tohto odosielateľa. Niekedy dochádza k oneskoreniu pri aktualizácii informácií o odosielateľovi. Skúste to znova neskôr. Ak nedôverujete platnosti tejto pozvánky alebo odosielateľovi, kontaktujte zákaznícku podporu ${ BRAND_NAME }."
@@ -14482,6 +14503,9 @@
       "Changing organization password": [
         "Zmena hesla organizácie"
       ],
+      "Creating or accessing non-private user accounts": [
+        "Vytváranie alebo prístup k nesúkromným používateľským účtom"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Z dôvodu zmeny hesla boli obmedzené vaše oprávnenia správcu organizácie. Nasledujúce akcie už nie sú povolené:"
       ]
@@ -14754,6 +14778,9 @@
       ]
     },
     "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Registrácia nebola úspešne dokončená."
+      ],
       "Something went wrong": [
         "Niečo sa pokazilo"
       ]
@@ -14815,6 +14842,12 @@
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Predpoklad:** Na umožnenie poskytovania SCIM musí byť nakonfigurované overovanie SAML."
       ],
+      "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
+        "**Predpoklad:** Ak chcete povoliť poskytovanie SCIM, musíte overiť vlastníctvo domény **${ domainName }**. Toto overenie môže trvať až jednu hodinu."
+      ],
+      "Enter the token into your identity provider": [
+        "Zadajte token do vášho poskytovateľa identity"
+      ],
       "Enter URL and token into your identity provider": [
         "Zadajte URL a token do vášho poskytovateľa identity"
       ],
@@ -14824,6 +14857,12 @@
       "For security reasons, the token is hidden": [
         "Z bezpečnostných dôvodov je token skrytý"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Prejdite k poskytovateľovi identity, skopírujte a vložte nižšie uvedené údaje a dokončite konfiguráciu SCIM pre ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Prejdite k poskytovateľovi identity, skopírujte a vložte nižšie uvedený token a znovu povoľte SCIM pre ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Ak ste SCIM token stratili alebo zabudli, môžete si vygenerovať nový, ale upozorňujeme, že bude potrebné aktualizovať nastavenia poskytovateľa identity."
       ],
@@ -14832,6 +14871,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "Po vypnutí SCIM pre vašu organizáciu sa **všetci používatelia SCIM, ktorých automaticky poskytuje poskytovateľ identity, zmenia na používateľov SSO** a budete ich môcť spravovať priamo v rámci nastavení ${ BRAND_NAME }."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Zjednodušuje správu používateľov v rôznych službách. Pridávajte, upravujte a odstraňujte používateľov vo svojom poskytovateľovi identity a tieto zmeny sa automaticky aplikujú na vašu organizáciu ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Automatické poskytovanie SCIM bude vypnuté, až kým nezadáte nový SCIM token do nastavení poskytovateľa identity."
@@ -15177,6 +15219,14 @@
       ],
       "We will contact you again when the password reset is available.": [
         "Keď bude obnovovanie hesla k dispozícii, budeme vás opäť kontaktovať."
+      ],
+      "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings.": [
+        "Stav svojej žiadosti môžete kedykoľvek skontrolovať v nastaveniach v ${ accountAndPasswordSectionLink } ."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "in the Account and password section": [
+        "v sekcii Účet a heslo"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15893,6 +15943,32 @@
       ],
       "Yes, it was me": [
         "Áno, ide o moju žiadosť"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Presmerujeme vás na poskytovateľa SSO tretej strany."
+      ]
+    },
+    "sso: auth device state": {
+      "Active": [
+        "Aktívne"
+      ],
+      "Inactive": [
+        "Neaktívne"
+      ],
+      "Pending activation": [
+        "Čaká sa na aktiváciu"
+      ],
+      "Pending admin activation": [
+        "Čaká sa na aktiváciu správcom"
+      ],
+      "Rejected": [
+        "Odmietnuté"
+      ],
+      "Signed out": [
+        "Odhlásené"
+      ],
+      "Unknown": [
+        "Neznáme"
       ]
     },
     "State": {
@@ -16862,6 +16938,9 @@
       "Preferences updated": [
         "Predvoľby aktualizované"
       ],
+      "Resent invitation": [
+        "Znovu poslať pozvánku"
+      ],
       "Status updated": [
         "Stav bol aktualizovaný"
       ]
@@ -17242,10 +17321,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -18205,9 +18284,6 @@
       "Version history": [
         "História verzií"
       ],
-      "Video conference": [
-        "Videokonferencia"
-      ],
       "VPN apps": [
         "VPN aplikácie"
       ],
@@ -18384,6 +18460,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správcovia môžu spravovať používateľské účty a udeľovať oprávnenia správcu iným používateľom. Plán organizácie môže upravovať iba primárny správca."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie do pozvánok v kalendári."
       ],
       "An approximate location of the IP address": [
         "Približná poloha IP adresy"
@@ -18587,6 +18666,9 @@
       ],
       "User declined invitation": [
         "Používateľ odmietol pozvánku"
+      ],
+      "Waiting for user to accept the invitation": [
+        "Čakanie na prijatie pozvania zo strany používateľa"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -19198,6 +19280,12 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná skúšobná verzia končí ${ textDate }. ${ action }"
+      ],
+      "Your recovery file is outdated. It can't recover new data if you reset your password again.": [
+        "Váš obnovovací súbor je zastaraný. Ak znova obnovíte heslo, nebude možné obnoviť nové údaje."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your password again.": [
+        "Vaša obnovovacia fráza je zastaraná. Ak znova obnovíte heslo, nebude možné obnoviť nové údaje."
       ]
     },
     "Warning for domain modal": {
