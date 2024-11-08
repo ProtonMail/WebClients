@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
-import { DEFAULT_TARGET_BLOCK } from '@proton/wallet';
+import { MEDIAN_PRIORITY_TARGET_BLOCK, MIN_FEE_RATE } from '@proton/wallet';
 import { useNetworkFees } from '@proton/wallet/store';
 
-import { type TxBuilderHelper } from '../../../hooks/useTxBuilder';
+import { type TxBuilderHelper } from './useTxBuilder';
 
 export const findNearestBlockTargetFeeRate = (
     blockEstimate: number,
@@ -40,13 +40,17 @@ export const useFeesInput = (txBuilderHelpers: TxBuilderHelper) => {
         return findNearestBlockTargetFeeRate(blockTarget, fees?.feesList ?? [], fees?.minimumBroadcastFee);
     };
 
-    const feeRate = Number(txBuilder.getFeeRate() ?? 1);
+    const feeRate = Number(txBuilder.getFeeRate() ?? MIN_FEE_RATE);
 
     useEffect(() => {
         if (fees) {
             const { feesList, minimumBroadcastFee } = fees;
 
-            const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feesList, minimumBroadcastFee);
+            const defaultFeeRate = findNearestBlockTargetFeeRate(
+                MEDIAN_PRIORITY_TARGET_BLOCK,
+                feesList,
+                minimumBroadcastFee
+            );
             if (defaultFeeRate && !txBuilder.getFeeRate()) {
                 updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(Math.round(defaultFeeRate))));
             }
