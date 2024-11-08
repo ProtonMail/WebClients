@@ -509,6 +509,10 @@
       "Submitting report...": [
         "Sender inn rapport..."
       ],
+      "Sync alias": [
+        "Synkroniser alias",
+        "Synkroniser aliaser"
+      ],
       "Sync aliases": [
         "Synkroniser aliaser"
       ],
@@ -1845,6 +1849,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke endre postboksene for dette aliaset."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du synkronisere det?",
+        "Du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du synkronisere dem?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Du har ${ daysRemaining } dag igjen til å prøve disse og andre premiumfunksjoner.",
         "Du har ${ daysRemaining } dager igjen til å prøve disse og andre premiumfunksjoner."
@@ -3004,6 +3012,9 @@
       "Sync alias": [
         "Synkroniser alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Synkroniser aliasene dine fra SimpleLogin"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Takk for at du installerte ${ PASS_APP_NAME }"
       ],
@@ -3167,6 +3178,9 @@
       ],
       "No results": [
         "Ingen resultater"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Når de er synkronisert, vil sletting av aliaser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
