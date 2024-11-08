@@ -1,15 +1,15 @@
-import { ADDON_NAMES, DEFAULT_CURRENCY, PLANS, PLAN_TYPES, type PlanIDs, SelectedPlan, type Currency } from '@proton/payments';
+import {
+    ADDON_NAMES,
+    type Currency,
+    DEFAULT_CURRENCY,
+    PLANS,
+    PLAN_TYPES,
+    type PlanIDs,
+    SelectedPlan,
+} from '@proton/payments';
 
 import { CYCLE } from '../constants';
-import type {
-    BasePlansMap,
-    Organization,
-    Plan,
-    PlansMap,
-    StrictPlan,
-    SubscriptionCheckResponse,
-    User,
-} from '../interfaces';
+import type { Organization, Plan, PlansMap, StrictPlan, SubscriptionCheckResponse, User } from '../interfaces';
 import { ChargebeeEnabled } from '../interfaces';
 import {
     getSupportedAddons,
@@ -20,7 +20,14 @@ import {
     isScribeAddon,
 } from './addons';
 import type { AggregatedPricing, PricingForCycles } from './subscription';
-import { allCycles, getMaxValue, getPlanMembers, getPricePerCycle, getPricePerMember } from './subscription';
+import {
+    allCycles,
+    getMaxValue,
+    getPlanMembers,
+    getPricePerCycle,
+    getPricePerMember,
+    isLifetimePlan,
+} from './subscription';
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 
@@ -32,18 +39,6 @@ export const clearPlanIDs = (planIDs: PlanIDs): PlanIDs => {
         acc[planName as keyof PlanIDs] = quantity;
         return acc;
     }, {});
-};
-
-export const getPlanFromCheckout = <T extends Plan>(planIDs: PlanIDs, plansMap: Partial<BasePlansMap<T>>): T | null => {
-    const planNames = Object.keys(planIDs) as (keyof PlanIDs)[];
-    for (const planName of planNames) {
-        const plan = plansMap[planName];
-        if (plan?.Type === PLAN_TYPES.PLAN) {
-            return plan;
-        }
-    }
-
-    return null;
 };
 
 /**
@@ -212,7 +207,8 @@ export const supportB2BAddons = (planIDs: PlanIDs) => {
 
 export const getPlanFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}): StrictPlan | undefined => {
     const planID = Object.keys(planIDs).find((planID): planID is keyof PlansMap => {
-        return plansMap[planID as keyof PlansMap]?.Type === PLAN_TYPES.PLAN;
+        const type = plansMap[planID as keyof PlansMap]?.Type;
+        return type === PLAN_TYPES.PLAN || type === PLAN_TYPES.PRODUCT;
     });
     if (planID) {
         return plansMap[planID] as StrictPlan;
@@ -225,17 +221,17 @@ export const getPlanCurrencyFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs 
 };
 
 export function getPlanNameFromIDs(planIDs: PlanIDs): PLANS | undefined {
-    const availableKeys = Object.keys(planIDs);
-    return Object.values(PLANS).find((value) => availableKeys.includes(value));
-}
-
-export function getPlanFromIds(planIDs: PlanIDs): PLANS | undefined {
     return Object.values(PLANS).find((key) => {
         // If the planIDs object has non-zero value for the plan, then it exists.
         // There can be at most 1 plan, and others are addons.
         const planNumber = planIDs[key as PLANS] ?? 0;
         return planNumber > 0;
     });
+}
+
+export function getPlanFromIDs(planIDs: PlanIDs, plansMap: PlansMap): Plan | undefined {
+    const planName = getPlanNameFromIDs(planIDs);
+    return planName ? plansMap[planName] : undefined;
 }
 
 export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): AggregatedPricing => {
@@ -420,4 +416,9 @@ export function planIDsPositiveDifference(oldPlanIDs: PlanIDs, newPlanIDs: PlanI
     }
 
     return increasedPlanIDs;
+}
+
+export function isLifetimePlanSelected(planIDs: PlanIDs): boolean {
+    const planName = getPlanNameFromIDs(planIDs);
+    return isLifetimePlan(planName);
 }

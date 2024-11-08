@@ -1,4 +1,4 @@
-import { type Currency, DEFAULT_CURRENCY, PLANS, PLAN_SERVICES, PLAN_TYPES } from '@proton/payments';
+import { type Currency, DEFAULT_CURRENCY, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '@proton/payments';
 
 import { CYCLE, DEFAULT_CYCLE } from '../constants';
 import type { Cycle, FreePlanDefault, SubscriptionCheckResponse } from '../interfaces';
@@ -12,7 +12,7 @@ export const FREE_PLAN: FreePlanDefault = {
         '24': 1763415936,
     },
     ParentMetaPlanID: '',
-    Title: `Proton Free`,
+    Title: PLAN_NAMES[PLANS.FREE],
     Type: PLAN_TYPES.PLAN,
     Currency: DEFAULT_CURRENCY,
     Cycle: DEFAULT_CYCLE,

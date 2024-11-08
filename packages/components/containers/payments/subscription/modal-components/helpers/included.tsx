@@ -24,6 +24,7 @@ import {
     getAdvancedAliasFeaturesText,
     getLoginsAndNotesText,
     getPassUsersText,
+    getProtonPassFeatureTooltipText,
     getSecureSharingTextEmpty,
     getUnlimitedHideMyEmailAliasesText,
 } from '../../../features/pass';
@@ -111,29 +112,43 @@ export const getWhatsIncluded = ({
             },
         ];
     }
+
+    const passFeatures: Included[] = [
+        {
+            type: 'text',
+            text: getLoginsAndNotesText('paid'),
+        },
+        {
+            type: 'text',
+            text: getUnlimitedHideMyEmailAliasesText(),
+        },
+        {
+            type: 'text',
+            text: getAdvancedAliasFeaturesText(),
+        },
+        {
+            type: 'text',
+            text: getSecureSharingTextEmpty(),
+        },
+        {
+            type: 'text',
+            text: get2FAAuthenticatorText(),
+        },
+    ];
+
     const passPremium = planIDs[PLANS.PASS];
     if (passPremium !== undefined && passPremium > 0) {
+        return passFeatures;
+    }
+
+    const passLifetime = planIDs[PLANS.PASS_LIFETIME];
+    if (passLifetime !== undefined && passLifetime > 0) {
         return [
             {
                 type: 'text',
-                text: getLoginsAndNotesText('paid'),
+                text: getProtonPassFeatureTooltipText(),
             },
-            {
-                type: 'text',
-                text: getUnlimitedHideMyEmailAliasesText(),
-            },
-            {
-                type: 'text',
-                text: getAdvancedAliasFeaturesText(),
-            },
-            {
-                type: 'text',
-                text: getSecureSharingTextEmpty(),
-            },
-            {
-                type: 'text',
-                text: get2FAAuthenticatorText(),
-            },
+            ...passFeatures,
         ];
     }
 

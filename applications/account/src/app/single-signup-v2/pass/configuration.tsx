@@ -363,6 +363,17 @@ export const getCustomPassFeatures = () => {
     ];
 };
 
+export const getCustomPassLifetimeFeatures = () => {
+    return [
+        {
+            key: 'pass-lifetime-one-time-payment',
+            text: c('pass_signup_2024: Info').t`One-time payment, lifetime deal`,
+            included: true,
+        },
+        ...getCustomPassFeatures(),
+    ];
+};
+
 export const getCustomPassFamilyFeatures = () => {
     return [
         getPassUsers(FAMILY_MAX_USERS),

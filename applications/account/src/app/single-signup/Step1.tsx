@@ -51,8 +51,10 @@ import {
     getVPNAppFeature,
     getVPNSpeed,
 } from '@proton/components/containers/payments/features/vpn';
-import { getTotalBillingText } from '@proton/components/containers/payments/helper';
-import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
+import {
+    getBillingAddressStatus,
+    getTotalBillingText,
+} from '@proton/components/containers/payments/subscription/helpers';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -1789,7 +1791,9 @@ const Step1 = ({
                                             {isB2bPlan && (
                                                 <>
                                                     <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
-                                                        <span>{getTotalBillingText(options.cycle)}</span>
+                                                        <span>
+                                                            {getTotalBillingText(options.cycle, options.planIDs)}
+                                                        </span>
                                                         <span>
                                                             <Price currency={options.currency}>
                                                                 {options.checkResult.Amount}
@@ -1870,7 +1874,7 @@ const Step1 = ({
                                                     <span>
                                                         {isB2bPlan
                                                             ? c('Info').t`Amount due`
-                                                            : getTotalBillingText(options.cycle)}
+                                                            : getTotalBillingText(options.cycle, options.planIDs)}
                                                     </span>
                                                     <span>
                                                         {loadingPaymentDetails ? (

@@ -53,7 +53,7 @@ import {
     Renew,
     type SubscriptionModel,
     type SubscriptionPlan,
-    type User,
+    type UserModel,
     type VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -192,7 +192,7 @@ function excludingTheOnlyFreePlan(plan: Plan | ShortPlanLike, _: number, allPlan
 }
 
 export type AccessiblePlansHookProps = {
-    user: User;
+    user: UserModel;
 } & Pick<
     Props,
     | 'app'
@@ -228,7 +228,7 @@ export function useAccessiblePlans({
         PLANS.MAIL,
         getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
         PLANS.DRIVE,
-        PLANS.PASS,
+        !user.hasPassLifetime && PLANS.PASS,
         canAccessWalletPlan && PLANS.WALLET,
     ].filter(isTruthy);
 
@@ -301,7 +301,10 @@ export function useAccessiblePlans({
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
     } else if (isPassB2bPlans) {
-        B2BPlans = passB2BPlans;
+        // Lifetime users shouldn't see Pass B2B plans
+        if (!user.hasPassLifetime) {
+            B2BPlans = passB2BPlans;
+        }
     } else if (isDriveB2bPlans) {
         B2BPlans = driveB2BPlans;
     } else {

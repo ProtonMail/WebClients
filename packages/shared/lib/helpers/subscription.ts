@@ -57,6 +57,7 @@ const {
     PASS_PRO,
     PASS_FAMILY,
     PASS_BUSINESS,
+    PASS_LIFETIME,
 } = PLANS;
 
 const {
@@ -356,6 +357,15 @@ export const getIsSentinelPlan = (planName: PLANS | ADDON_NAMES | undefined) => 
         return false;
     }
     return getIsSentinelPlanCondition.has(planName);
+};
+
+const lifetimePlans: Set<PLANS | ADDON_NAMES> = new Set([PASS_LIFETIME]);
+export const isLifetimePlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    if (!planName) {
+        return false;
+    }
+
+    return lifetimePlans.has(planName);
 };
 
 export const getIsB2BAudienceFromSubscription = (subscription: Subscription | undefined) => {

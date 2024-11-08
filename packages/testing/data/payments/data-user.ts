@@ -47,6 +47,7 @@ const user: User = {
         'recovery-attempt': false,
         sso: false,
         'no-proton-address': false,
+        'pass-lifetime': false,
     },
     ChargebeeUser: 0,
     ChargebeeUserExists: 0,

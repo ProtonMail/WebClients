@@ -91,6 +91,7 @@ export interface User {
         'no-login': boolean;
         'no-proton-address': boolean;
         'recovery-attempt': boolean;
+        'pass-lifetime': boolean;
         sso: boolean;
     };
     AccountRecovery: {
@@ -127,5 +128,6 @@ export interface UserModel extends User {
     hasPaidVpn: boolean;
     hasPaidDrive: boolean;
     hasPaidPass: boolean;
+    hasPassLifetime: boolean;
     canPay: boolean;
 }

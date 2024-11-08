@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { PassLogo, Radio } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { getShortBillingText } from '@proton/components/containers/payments/helper';
+import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import { PLANS, type PlanIDs } from '@proton/payments';
 import { type Currency } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
@@ -220,7 +220,7 @@ const CycleSelector = ({
                         }}
                         highlightPrice={bestOffer}
                         selected={cycle === cycleItem}
-                        text={getShortBillingText(cycleItem)}
+                        text={getShortBillingText(cycleItem, currentCheckout.planIDs)}
                         billedText={getBilledAtPerMonthText(
                             getSimplePriceString(currency, currentCheckout.withDiscountPerCycle),
                             cycleItem

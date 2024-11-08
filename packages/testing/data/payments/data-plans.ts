@@ -2581,14 +2581,57 @@ const plans: Plan[] = deepFreeze([
             },
         },
     },
+    {
+        ID: 'hV3hqRbJT90DTSp8-3EGxaYWEoszOmA365hv4ZU1KGefKKTihjhCy1OQRCUovbgjPUmk-A-iOorkge2g2GdowA==',
+        ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
+        Type: 1,
+        Name: 'passlifetime2024',
+        Title: 'Pass Lifetime',
+        MaxDomains: 0,
+        MaxAddresses: 0,
+        MaxCalendars: 0,
+        MaxSpace: 0,
+        MaxMembers: 0,
+        MaxVPN: 0,
+        MaxTier: 0,
+        Services: 0,
+        Features: 0,
+        State: 1,
+        Pricing: {
+            '12': 19900,
+        },
+        DefaultPricing: {
+            '12': 19900,
+        },
+        PeriodEnd: {
+            '12': 1761741890,
+        },
+        Currency: 'CHF',
+        Quantity: 1,
+        Offers: [],
+        Cycle: 12,
+        Amount: 19900,
+        Vendors: {
+            Google: {
+                Plans: {},
+                CustomerID: 'cus_google_2Y-5Vja6hxf6rblbi6Ht',
+            },
+            Apple: {
+                Plans: {},
+                CustomerID: '',
+            },
+        },
+    },
 ]);
 
-export const PLANS_MAP: PlansMap = deepFreeze(
-    plans.reduce((acc, plan) => {
+export function getTestPlansMap() {
+    return plans.reduce((acc, plan) => {
         acc[plan.Name] = plan;
         return acc;
-    }, {} as PlansMap)
-);
+    }, {} as PlansMap);
+}
+
+export const PLANS_MAP: PlansMap = deepFreeze(getTestPlansMap());
 
 function multiplyPricing(pricing: Pricing, factor: number): Pricing {
     return Object.keys(pricing).reduce((acc, key) => {
