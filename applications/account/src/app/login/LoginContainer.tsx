@@ -273,8 +273,7 @@ const LoginContainer = ({
                                                 api: silentApi,
                                                 appName: APP_NAME,
                                                 toApp,
-                                                ignoreUnlock:
-                                                    data.authType === AuthType.ExternalSSO && !globalSSOEnabled,
+                                                ignoreUnlock: false,
                                                 setupVPN,
                                                 ktActivation,
                                                 verifyOutboundPublicKeys,
