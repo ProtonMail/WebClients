@@ -3,7 +3,6 @@
 /* eslint-disable max-classes-per-file */
 
 /* eslint-disable no-underscore-dangle */
-import type { AlgorithmInfo as AlgorithmInfoV5, Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
 import {
     SHA256,
     SHA512,
@@ -41,14 +40,14 @@ import {
     unsafeSHA1,
     verifyCleartextMessage,
     verifyMessage,
-} from 'pmcrypto';
-import type { SubkeyOptions, UserID } from 'pmcrypto/lib/openpgp';
-import { enums } from 'pmcrypto/lib/openpgp';
+} from 'pmcrypto-v6-canary';
+import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v6-canary';
+import { ARGON2_PARAMS } from 'pmcrypto-v6-canary/lib/constants';
+import type { UserID } from 'pmcrypto-v6-canary/lib/openpgp';
+import { enums } from 'pmcrypto-v6-canary/lib/openpgp';
 
-import { ARGON2_PARAMS } from '../constants';
 import { arrayToHexString } from '../utils';
 import type {
-    AlgorithmInfo,
     ComputeHashStreamOptions,
     KeyInfo,
     KeyReference,
@@ -56,7 +55,6 @@ import type {
     MessageInfo,
     PrivateKeyReference,
     PublicKeyReference,
-    SessionKey as SessionKeyWithoutPlaintextAlgo, // OpenPGP.js v5 has a 'plaintext' algo value for historical reasons.
     SignatureInfo,
     WorkerDecryptionOptions,
     WorkerEncryptOptions,
@@ -113,45 +111,6 @@ const toArray = <T>(maybeArray: MaybeArray<T>) => (Array.isArray(maybeArray) ? m
 
 const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promise<PublicKeyReference> => {
     const publicKey = key.isPrivate() ? key.toPublic() : key; // We don't throw on private key since we allow importing an (encrypted) private key using 'importPublicKey'
-    const v5Tov6AlgorithmInfo = (algorithmInfo: AlgorithmInfoV5): AlgorithmInfo => {
-        const v5ToV6Curve = (curveName: AlgorithmInfoV5['curve']): AlgorithmInfo['curve'] => {
-            switch (curveName) {
-                case 'curve25519':
-                    return 'curve25519Legacy';
-                case 'ed25519':
-                    return 'ed25519Legacy';
-                case 'p256':
-                    return 'nistP256';
-                case 'p384':
-                    return 'nistP384';
-                case 'p521':
-                    return 'nistP521';
-                default:
-                    return curveName;
-            }
-        };
-        switch (algorithmInfo.algorithm) {
-            case 'eddsa':
-                return {
-                    algorithm: 'eddsaLegacy',
-                    curve: 'ed25519Legacy',
-                };
-            case 'ecdh':
-                return {
-                    algorithm: 'ecdh',
-                    curve: v5ToV6Curve(algorithmInfo.curve),
-                };
-            default:
-                const result: AlgorithmInfo = { algorithm: algorithmInfo.algorithm };
-                if (algorithmInfo.curve !== undefined) {
-                    result.curve = v5ToV6Curve(algorithmInfo.curve);
-                }
-                if (algorithmInfo.bits !== undefined) {
-                    result.bits = algorithmInfo.bits;
-                }
-                return result;
-        }
-    };
 
     const fingerprint = publicKey.getFingerprint();
     const hexKeyID = publicKey.getKeyID().toHex();
@@ -196,7 +155,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
         getFingerprint: () => fingerprint,
         getKeyID: () => hexKeyID,
         getKeyIDs: () => hexKeyIDs,
-        getAlgorithmInfo: () => v5Tov6AlgorithmInfo(algorithmInfo),
+        getAlgorithmInfo: () => algorithmInfo,
         getCreationTime: () => creationTime,
         getExpirationTime: () => expirationTime,
         getUserIDs: () => userIDs,
@@ -206,7 +165,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
                 ? otherKey._keyContentHash[1] === keyContentHashNoCerts
                 : otherKey._keyContentHash[0] === keyContentHash,
         subkeys: publicKey.getSubkeys().map((subkey) => {
-            const subkeyAlgoInfo = v5Tov6AlgorithmInfo(subkey.getAlgorithmInfo());
+            const subkeyAlgoInfo = subkey.getAlgorithmInfo();
             const subkeyKeyID = subkey.getKeyID().toHex();
             return {
                 getAlgorithmInfo: () => subkeyAlgoInfo,
@@ -322,29 +281,8 @@ class KeyManagementApi {
      * @returns reference to the generated private key
      */
     async generateKey(options: WorkerGenerateKeyOptions) {
-        const v6Tov5CurveOption = (curve: WorkerGenerateKeyOptions['curve']) => {
-            switch (curve) {
-                case 'ed25519Legacy':
-                case 'curve25519Legacy':
-                    return 'ed25519';
-                case 'nistP256':
-                    return 'p256';
-                case 'nistP384':
-                    return 'p384';
-                case 'nistP521':
-                    return 'p521';
-                default:
-                    return curve;
-            }
-        };
-
         const { privateKey } = await generateKey({
             ...options,
-            curve: v6Tov5CurveOption(options.curve),
-            subkeys: options.subkeys?.map<SubkeyOptions>((subkeyOptions) => ({
-                ...subkeyOptions,
-                curve: v6Tov5CurveOption(subkeyOptions.curve),
-            })),
             format: 'object',
         });
         // Typescript guards against a passphrase input, but it's best to ensure the option wasn't given since for API simplicity we assume any PrivateKeyReference points to a decrypted key.
@@ -542,8 +480,6 @@ export class Api extends KeyManagementApi {
 
         const encryptionResult = await encryptMessage<DataType, FormatType, DetachedType>({
             ...options,
-            // @ts-ignore probably issue with mismatching underlying stream definitions
-            textData: options.textData,
             encryptionKeys,
             signingKeys,
             signature: inputSignature,
@@ -578,8 +514,6 @@ export class Api extends KeyManagementApi {
         );
         const signResult = await signMessage<DataType, FormatType, boolean>({
             ...options,
-            // @ts-ignore probably issue with mismatching underlying stream definitions
-            textData: options.textData,
             signingKeys,
         });
 
@@ -807,7 +741,7 @@ export class Api extends KeyManagementApi {
     async generateSessionKey({ recipientKeys: recipientKeyRefs = [], ...options }: WorkerGenerateSessionKeyOptions) {
         const recipientKeys = toArray(recipientKeyRefs).map((keyReference) => this.keyStore.get(keyReference._idx));
         const sessionKey = await generateSessionKey({ recipientKeys, ...options });
-        return sessionKey as SessionKeyWithoutPlaintextAlgo;
+        return sessionKey;
     }
 
     /**
@@ -861,7 +795,7 @@ export class Api extends KeyManagementApi {
             decryptionKeys,
         });
 
-        return sessionKey as SessionKeyWithoutPlaintextAlgo;
+        return sessionKey;
     }
 
     async processMIME({ verificationKeys: verificationKeyRefs = [], ...options }: WorkerProcessMIMEOptions) {
@@ -1024,7 +958,7 @@ export class Api extends KeyManagementApi {
     }
 
     /**
-     * Compute argon2 key derivation of the given `password`
+     * Compute argon2 hash of the given `password`
      */
     async computeArgon2({ password, salt, params = ARGON2_PARAMS.RECOMMENDED }: Argon2Options) {
         const result = await argon2({ password, salt, params });

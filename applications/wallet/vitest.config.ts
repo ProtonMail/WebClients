@@ -26,5 +26,6 @@ export default defineConfig({
         alias: {
             'proton-wallet': path.resolve(__dirname, './src/app'),
         },
+        conditions: ['browser'],
     },
 });
