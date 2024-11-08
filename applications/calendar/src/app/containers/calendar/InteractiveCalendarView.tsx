@@ -51,6 +51,8 @@ import {
     MAXIMUM_DATE_UTC,
     MINIMUM_DATE_UTC,
     SAVE_CONFIRMATION_TYPES,
+    TMP_UID,
+    TMP_UNIQUE_ID,
     VIEWS,
 } from '@proton/shared/lib/calendar/constants';
 import { getSharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
@@ -139,8 +141,9 @@ import type {
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
 import { getCurrentPartstat } from '../../store/events/eventsCache';
+import { isTmpEventSavingSelector, pendingUniqueIdsSelector } from '../../store/events/eventsSelectors';
 import { type CalendarViewEventStore, eventsActions } from '../../store/events/eventsSlice';
-import { useCalendarDispatch } from '../../store/hooks';
+import { useCalendarDispatch, useCalendarSelector } from '../../store/hooks';
 import CalendarView from './CalendarView';
 import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -317,10 +320,11 @@ const InteractiveCalendarView = ({
 }: Props) => {
     const api = useApi();
     const [userSettings] = useUserSettings();
+    const isTmpEventSaving = useCalendarSelector(isTmpEventSavingSelector);
+    const pendingUniqueIds = useCalendarSelector(pendingUniqueIdsSelector);
     const hasPendingEvents = useMemo(() => {
-        const pendingEvents = events.filter((event: CalendarViewEventStore) => event.isSaving || event.isDeleting);
-        return pendingEvents.length > 0;
-    }, [events]);
+        return pendingUniqueIds.length > 0;
+    }, [pendingUniqueIds]);
     usePreventCloseTab(hasPendingEvents);
     usePauseCalendarEventLoop(activeCalendars, hasPendingEvents);
     usePendingNotifications();
@@ -337,7 +341,6 @@ const InteractiveCalendarView = ({
     const isSavingEvent = useRef(false);
     const isEditSingleOccurrenceEnabled = useFlag('EditSingleOccurrenceWeb');
     const hasReduxStore = useFlag('CalendarRedux');
-    const hasOptimisticRSVP = useFlag('CalendarReduxRSVP');
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const isSearchView = view === VIEWS.SEARCH;
@@ -434,7 +437,6 @@ const InteractiveCalendarView = ({
     );
 
     const { temporaryEvent, targetEventData, targetMoreData, searchData } = interactiveData || {};
-
     const { tmpData, tmpDataOriginal, data } = temporaryEvent || {};
     const tmpEvent = data?.eventData;
 
@@ -461,6 +463,9 @@ const InteractiveCalendarView = ({
     const isProcessing = useCallback(
         (uniqueId: string) => {
             if (hasReduxStore) {
+                if (isTmpEventSaving) {
+                    return true;
+                }
                 const selectedEvent: CalendarViewEventStore | undefined = events.find(
                     (event) => event.uniqueId === uniqueId
                 );
@@ -487,7 +492,7 @@ const InteractiveCalendarView = ({
                 return isSavingEvent.current;
             }
         },
-        [events, hasReduxStore]
+        [events, hasReduxStore, isTmpEventSaving]
     );
 
     const sortedEventsWithTemporary = useMemo(() => {
@@ -693,7 +698,8 @@ const InteractiveCalendarView = ({
             const { event, type } = mouseDownAction.payload;
 
             // If already creating something in blocking mode and not touching on the temporary event.
-            if (temporaryEvent && event.uniqueId !== 'tmp' && isInTemporaryBlocking) {
+            // Perform this check only when the redux feature flag is off. If ON, we should be able to open other events.
+            if (!hasReduxStore && temporaryEvent && event.uniqueId !== TMP_UNIQUE_ID && isInTemporaryBlocking) {
                 return;
             }
 
@@ -721,8 +727,9 @@ const InteractiveCalendarView = ({
                 return;
             }
 
-            let newTemporaryModel = temporaryEvent && event.uniqueId === 'tmp' ? temporaryEvent.tmpData : undefined;
-            let newTemporaryEvent = temporaryEvent && event.uniqueId === 'tmp' ? temporaryEvent : undefined;
+            let newTemporaryModel =
+                temporaryEvent && event.uniqueId === TMP_UNIQUE_ID ? temporaryEvent.tmpData : undefined;
+            let newTemporaryEvent = temporaryEvent && event.uniqueId === TMP_UNIQUE_ID ? temporaryEvent : undefined;
             let initialModel = newTemporaryModel;
 
             return (mouseUpAction: MouseUpAction) => {
@@ -730,7 +737,7 @@ const InteractiveCalendarView = ({
                     const { idx } = mouseUpAction.payload;
 
                     setInteractiveData({
-                        temporaryEvent: temporaryEvent && event.uniqueId === 'tmp' ? temporaryEvent : undefined,
+                        temporaryEvent: temporaryEvent && event.uniqueId === TMP_UNIQUE_ID ? temporaryEvent : undefined,
                         targetEventData: { uniqueId: event.uniqueId, idx, type },
                     });
                     return;
@@ -802,7 +809,7 @@ const InteractiveCalendarView = ({
 
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
-                        targetEventData: { uniqueId: 'tmp', idx, type },
+                        targetEventData: { uniqueId: TMP_UNIQUE_ID, idx, type },
                     });
                 }
             };
@@ -896,7 +903,7 @@ const InteractiveCalendarView = ({
                 if (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP) {
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
-                        targetEventData: { uniqueId: 'tmp', idx, type },
+                        targetEventData: { uniqueId: TMP_UNIQUE_ID, idx, type },
                     });
                 }
             };
@@ -1410,15 +1417,16 @@ const InteractiveCalendarView = ({
     ) => {
         let hasStartChanged;
         // uid is not defined when we create a new event
-        const UID = temporaryEvent.tmpData.uid || 'tmp';
+        const UID = temporaryEvent.tmpData.uid || TMP_UID;
         const ID = (temporaryEvent.data?.eventData as CalendarEvent)?.ID;
         const selfEmail = inviteActions.selfAddress?.Email;
         let oldPartstat: string | undefined;
+        let successNotification: { success: string } | undefined;
 
         try {
             isSavingEvent.current = true;
-            if (isChangePartstat && selfEmail && inviteActions.partstat && hasOptimisticRSVP) {
-                oldPartstat = getCurrentPartstat(temporaryEvent.uniqueId, selfEmail);
+            if (hasReduxStore && isChangePartstat && selfEmail && inviteActions.partstat) {
+                oldPartstat = getCurrentPartstat(temporaryEvent.tmpOriginalTarget?.uniqueId || '', selfEmail);
                 dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: inviteActions.partstat }));
             }
             const {
@@ -1435,11 +1443,7 @@ const InteractiveCalendarView = ({
                 inviteActions,
                 isDuplicatingEvent,
                 api,
-                onSaveConfirmation: async (params) => {
-                    const result = await handleSaveConfirmation(params);
-                    dispatch(eventsActions.markEventAsSaving({ UID, isSaving: true }));
-                    return result;
-                },
+                onSaveConfirmation: handleSaveConfirmation,
                 onEquivalentAttendees: handleEquivalentAttendees,
                 getEventDecrypted,
                 getCalendarBootstrap,
@@ -1454,6 +1458,15 @@ const InteractiveCalendarView = ({
                 isEditSingleOccurrenceEnabled,
             });
 
+            if (hasReduxStore) {
+                if (isChangePartstat) {
+                    closeAllPopovers();
+                }
+                closeModal('createEventModal');
+                dispatch(eventsActions.markEventAsSaving({ UID, isSaving: true }));
+            }
+
+            successNotification = texts;
             hasStartChanged = hasStartChangedProp;
             const [syncResponses, updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
                 handleSyncActions(syncActions),
@@ -1503,31 +1516,31 @@ const InteractiveCalendarView = ({
                 changeDate(newStartDate, hasChanged);
             }
 
-            handleCreateNotification(texts);
+            handleCreateNotification(successNotification);
         } catch (e: any) {
-            if (isChangePartstat && selfEmail && oldPartstat && hasOptimisticRSVP) {
-                dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: oldPartstat }));
-            }
             if (e instanceof EscapeTryBlockError) {
+                handleCreateNotification(successNotification);
+
                 if (e.recursive) {
                     // we need to escape the outer block
                     throw new EscapeTryBlockError();
                 }
                 // else we ignore the error as its only purpose is to escape the try block
             } else {
+                if (hasReduxStore && isChangePartstat && selfEmail && oldPartstat) {
+                    dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: oldPartstat }));
+                }
                 createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
             }
         } finally {
             isSavingEvent.current = false;
-            dispatch(eventsActions.markEventAsSaving({ UID, isSaving: false }));
+            if (hasReduxStore) {
+                dispatch(eventsActions.markEventAsSaving({ UID, isSaving: false }));
+            }
         }
     };
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions) => {
-        const eventData = targetEvent.data?.eventData as CalendarEvent;
-        const { RRule, UID } = eventData || {};
-        const isRecurring = !!RRule;
-
         let recurringType: RECURRING_TYPES | undefined;
 
         try {
@@ -1543,9 +1556,19 @@ const InteractiveCalendarView = ({
                 onDeleteConfirmation: async (params) => {
                     const result = await handleDeleteConfirmation(params);
                     recurringType = result.type;
-                    dispatch(eventsActions.markEventAsDeleting({ UID, isDeleting: true }));
-                    dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: true, isRecurring, recurringType }));
-                    closeModal('createEventModal');
+
+                    if (hasReduxStore) {
+                        dispatch(
+                            eventsActions.markEventAsDeleting({
+                                targetEvent,
+                                isDeleting: true,
+                                recurringType,
+                            })
+                        );
+                        dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: true, recurringType }));
+                        closeModal('createEventModal');
+                    }
+
                     return result;
                 },
                 api,
@@ -1601,7 +1624,9 @@ const InteractiveCalendarView = ({
             // call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the events you just deleted)
             void calendarCall(uniqueCalendarIDs);
         } catch (e: any) {
-            dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: false, isRecurring, recurringType }));
+            if (hasReduxStore) {
+                dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: false, recurringType }));
+            }
             if (e instanceof EscapeTryBlockError) {
                 if (e.recursive) {
                     // we need to escape the outer block
@@ -1612,7 +1637,9 @@ const InteractiveCalendarView = ({
                 createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
             }
         } finally {
-            dispatch(eventsActions.markEventAsDeleting({ UID, isDeleting: false }));
+            if (hasReduxStore) {
+                dispatch(eventsActions.markEventAsDeleting({ targetEvent, isDeleting: false, recurringType }));
+            }
         }
     };
 
@@ -1622,8 +1649,9 @@ const InteractiveCalendarView = ({
         },
     }));
 
-    const [targetEventRef, setTargetEventRef] = useState<HTMLElement | null>(null);
-    const [targetMoreRef, setTargetMoreRef] = useState<HTMLDivElement | null>(null);
+    const [targetEventElement, setTargetEventElement] = useState<HTMLElement | null>(null);
+    const [targetMoreElement, setTargetMoreElement] = useState<HTMLDivElement | null>(null);
+    const eventInPopoverUniqueIdRef = useRef<string | undefined>(undefined);
 
     const targetEvent = useMemo(() => {
         if (searchData) {
@@ -1632,7 +1660,11 @@ const InteractiveCalendarView = ({
         if (!targetEventData) {
             return;
         }
-        return sortedEventsWithTemporary.find(({ uniqueId }) => uniqueId === targetEventData.uniqueId);
+        const event = sortedEventsWithTemporary.find(({ uniqueId }) => uniqueId === targetEventData.uniqueId);
+        // We need to keep a ref of the currently opened event in the popover,
+        // so that we can compare currently opened event id with saving event id, and decide whether we need to close the popover or not
+        eventInPopoverUniqueIdRef.current = event?.uniqueId;
+        return event;
     }, [targetEventData, sortedEventsWithTemporary, searchData]);
 
     const autoCloseRef = useRef<({ ask }: { ask: boolean }) => void>();
@@ -1890,10 +1922,10 @@ const InteractiveCalendarView = ({
                     secondaryTimezone={secondaryTimezone}
                     secondaryTimezoneOffset={secondaryTimezoneOffset}
                     targetEventData={targetEventData}
-                    setTargetEventRef={setTargetEventRef}
+                    setTargetEventRef={setTargetEventElement}
                     setInteractiveData={setInteractiveData}
                     getOpenedMailEvents={getOpenedMailEvents}
-                    targetMoreRef={setTargetMoreRef}
+                    targetMoreRef={setTargetMoreElement}
                     targetMoreData={targetMoreData}
                     displayWeekNumbers={displayWeekNumbers}
                     displaySecondaryTimezone={displaySecondaryTimezone}
@@ -1915,16 +1947,21 @@ const InteractiveCalendarView = ({
             </Dropzone>
             <Popover
                 containerEl={document.body}
-                targetEl={targetEventRef}
+                targetEl={targetEventElement}
                 isOpen={!!targetEvent}
                 once
                 when={targetEvent ? targetEvent.start : undefined}
             >
                 {({ style, ref }: PopoverRenderData) => {
-                    if (!targetEvent || targetEventData?.preventPopover) {
+                    if (
+                        !targetEvent ||
+                        targetEventData?.preventPopover ||
+                        // Force to close the popover when saving a tmp event (update/create an event)
+                        pendingUniqueIds.includes(temporaryEvent?.tmpOriginalTarget?.uniqueId || targetEvent.uniqueId)
+                    ) {
                         return null;
                     }
-                    if (targetEvent.uniqueId === 'tmp' && tmpData) {
+                    if (targetEvent.uniqueId === TMP_UNIQUE_ID && tmpData) {
                         return (
                             <CreateEventPopover
                                 isDraggingDisabled={isSmallViewport || isDrawerApp}
@@ -1945,7 +1982,14 @@ const InteractiveCalendarView = ({
                                     try {
                                         await handleSaveEvent(temporaryEvent, inviteActions);
 
-                                        return closeAllPopovers();
+                                        // If event in popover is still the saving event, close the popover
+                                        if (eventInPopoverUniqueIdRef.current === targetEvent?.uniqueId) {
+                                            // Check if opened event is same event
+                                            return closeAllPopovers();
+                                        }
+
+                                        // Else, the user has opened another event manually during save, so we want to keep the popover opened
+                                        return noop();
                                     } catch (error) {
                                         return noop();
                                     }
@@ -2086,7 +2130,7 @@ const InteractiveCalendarView = ({
                                 occurrence?: { localStart: Date; occurrenceNumber: number }
                             ) => {
                                 setIsSearching(false);
-                                setTargetEventRef(null);
+                                setTargetEventElement(null);
                                 setSearchInput('');
                                 if (!occurrence) {
                                     return goToEvent(eventData, eventComponent);
@@ -2097,7 +2141,7 @@ const InteractiveCalendarView = ({
                     );
                 }}
             </Popover>
-            <Popover containerEl={document.body} targetEl={targetMoreRef} isOpen={!!targetMoreData} once>
+            <Popover containerEl={document.body} targetEl={targetMoreElement} isOpen={!!targetMoreData} once>
                 {({ style, ref }: PopoverRenderData) => {
                     if (!targetMoreData) {
                         return null;
@@ -2111,7 +2155,7 @@ const InteractiveCalendarView = ({
                             now={now}
                             date={targetMoreData.date}
                             events={targetMoreEvents}
-                            targetEventRef={setTargetEventRef}
+                            targetEventRef={setTargetEventElement}
                             targetEventData={targetEventData}
                             formatTime={formatTime}
                             onClickEvent={handleClickEvent}

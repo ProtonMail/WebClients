@@ -1,7 +1,7 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 import cloneDeep from 'lodash/cloneDeep';
 
-import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES, TMP_UID } from '@proton/shared/lib/calendar/constants';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
@@ -17,10 +17,12 @@ export interface CalendarViewEventStore extends CalendarViewEvent {
 
 interface EventsState {
     events: CalendarViewEventStore[];
+    isTmpEventSaving: boolean;
 }
 
 const initialState: EventsState = {
     events: [],
+    isTmpEventSaving: false,
 };
 
 export const eventsSliceName = 'events';
@@ -69,7 +71,6 @@ const slice = createSlice({
             action: PayloadAction<{
                 targetEvent: CalendarViewEvent;
                 isDeleted: boolean;
-                isRecurring: boolean;
                 recurringType?: RECURRING_TYPES;
             }>
         ) {
@@ -139,19 +140,60 @@ const slice = createSlice({
                 });
             }
         },
-        markEventAsDeleting(state, action: PayloadAction<{ UID: string; isDeleting: boolean }>) {
+        markEventAsDeleting(
+            state,
+            action: PayloadAction<{
+                isDeleting: boolean;
+                targetEvent: CalendarViewEvent;
+                recurringType?: RECURRING_TYPES;
+            }>
+        ) {
+            const { isDeleting, targetEvent, recurringType } = action.payload;
+            const { uniqueId: targetUniqueId } = targetEvent;
+            const targetUID = (targetEvent.data?.eventData as CalendarEvent)?.UID;
+
             state.events.forEach((event) => {
                 const UID = (event.data?.eventData as CalendarEvent)?.UID;
 
-                if (UID === action.payload.UID) {
-                    event.isDeleting = action.payload.isDeleting;
+                if (UID === targetUID) {
+                    /**
+                     * Mark the events that actually needs to be deleted as deleting
+                     */
+                    if (recurringType === RECURRING_TYPES.SINGLE) {
+                        if (event.uniqueId === targetUniqueId) {
+                            event.isDeleting = isDeleting;
+                        }
+                    } else if (recurringType === RECURRING_TYPES.ALL) {
+                        const eventReadResult = getEventReadResult(event.uniqueId);
+                        const { isAttendee } = eventReadResult?.result?.[0]?.selfAddressData || {};
+                        const isSingleEdit = getHasRecurrenceId(eventReadResult?.result?.[0]?.veventComponent);
+
+                        // Single edits are not deleted, but we will reset their partstat
+                        if (isAttendee && isSingleEdit) {
+                            return;
+                        }
+
+                        event.isDeleting = isDeleting;
+                    } else if (recurringType === RECURRING_TYPES.FUTURE) {
+                        if (event.start >= targetEvent.start) {
+                            const UID = (event.data?.eventData as CalendarEvent)?.UID;
+
+                            if (UID && UID === targetUID) {
+                                event.isDeleting = isDeleting;
+                            }
+                        }
+                    }
                 }
             });
         },
         markEventAsSaving(state, action: PayloadAction<{ UID: string; isSaving: boolean }>) {
+            // tmp event doesn't not exist in events, so we need to handle it separately
+            if (action.payload.UID === TMP_UID) {
+                state.isTmpEventSaving = action.payload.isSaving;
+                return;
+            }
             state.events.forEach((event) => {
                 const UID = (event.data?.eventData as CalendarEvent)?.UID;
-
                 if (UID === action.payload.UID) {
                     event.isSaving = action.payload.isSaving;
                 }
