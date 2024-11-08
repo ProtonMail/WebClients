@@ -176,6 +176,9 @@
       "Deselect": [
         "Anular la selección"
       ],
+      "Disable alias": [
+        "Desactivar el alias"
+      ],
       "Disable autosave on this website": [
         "Desactivar el autoguardado en este sitio web"
       ],
@@ -508,6 +511,10 @@
       ],
       "Submitting report...": [
         "Enviando informe..."
+      ],
+      "Sync alias": [
+        "Sincronizar el alias",
+        "Sincronizar los alias"
       ],
       "Sync aliases": [
         "Sincronizar alias"
@@ -1594,6 +1601,12 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Ingrese su contraseña adicional para empezar a usar ${ PASS_SHORT_APP_NAME }."
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Una vez eliminado, el alias no puede ser restaurado. ¿Quizás desea desactivarlo en su lugar?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Una vez eliminado, el alias no puede ser restaurado. El alias ya está desactivado y no reenviará correos a su buzón"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Mejore el plan para obtener acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
       ],
@@ -1844,6 +1857,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "No puede cambiar los buzones para este alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Tiene ${ aliasCount } alias en SimpleLogin pero no aparece en ${ PASS_APP_NAME }. ¿Desea sincronizarlo?",
+        "Tiene ${ aliasCount } alias en SimpleLogin pero no aparecen en ${ PASS_APP_NAME }. ¿Desea sincronizarlos?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Tiene ${ daysRemaining } día restante para probar esta y otras funciones premium.",
@@ -3004,6 +3021,9 @@
       "Sync alias": [
         "Sincronizar alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Sincronice sus alias desde SimpleLogin"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Gracias por instalar ${ PASS_APP_NAME }"
       ],
@@ -3110,6 +3130,9 @@
       "Could not send invitations to the following addresses:": [
         "No se pudieron enviar las invitaciones a las siguientes direcciones:"
       ],
+      "Delete alias": [
+        "Eliminar el alias"
+      ],
       "Duplicate email addresses.": [
         "Direcciones de correo duplicadas."
       ],
@@ -3167,6 +3190,9 @@
       ],
       "No results": [
         "Sin resultados"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Una vez sincronizado, al eliminar los alias en ${ PASS_SHORT_APP_NAME } también se eliminarán en SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos"

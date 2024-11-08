@@ -164,6 +164,9 @@
       "Delete all": [
         "Tout supprimer"
       ],
+      "Delete it, I will never need it": [
+        "Supprimez-le : je n'en aurai jamais besoin."
+      ],
       "Delete password": [
         "Supprimer le mot de passe"
       ],
@@ -175,6 +178,9 @@
       ],
       "Deselect": [
         "Annuler la sélection"
+      ],
+      "Disable alias": [
+        "Désactiver l'alias"
       ],
       "Disable autosave on this website": [
         "Désactiver l'enregistrement automatique sur ce site internet"
@@ -509,6 +515,10 @@
       "Submitting report...": [
         "Envoyer le rapport"
       ],
+      "Sync alias": [
+        "Synchroniser l'alias",
+        "Synchroniser les alias"
+      ],
       "Sync aliases": [
         "Synchroniser les alias"
       ],
@@ -520,6 +530,10 @@
       ],
       "Try again": [
         "Réessayer"
+      ],
+      "Understood, I will never need it": [
+        "J'ai compris et je n'en aurai jamais besoin.",
+        "J'ai compris et je n'en aurai jamais besoin."
       ],
       "Unlock": [
         "Déverrouiller"
@@ -1594,6 +1608,12 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Saisissez votre mot de passe supplémentaire pour commencer à utiliser ${ PASS_SHORT_APP_NAME }."
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Une fois supprimé, l'alias ne pourra pas être restauré. Voulez-vous plutôt le désactiver ?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Une fois supprimé, l'alias ne pourra pas être restauré. Cet alias est déjà désactivé et ne transfèrera plus d'e-mails dans votre messagerie"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Changez d'abonnement pour bénéficier d'un accès en avant-première à l'application web de ${ PASS_APP_NAME }."
       ],
@@ -1844,6 +1864,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Vous ne pouvez pas modifier la véritable adresse e-mail associée à cet alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Vous avez ${ aliasCount } alias dans SimpleLogin mais absent de ${ PASS_APP_NAME }. Souhaitez-vous le synchroniser ?",
+        "Vous avez ${ aliasCount } alias dans SimpleLogin mais absents de ${ PASS_APP_NAME }. Souhaitez-vous les synchroniser ?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Il vous reste ${ daysRemaining } jour pour essayer ces fonctionnalités et d'autres de la version premium.",
@@ -2962,6 +2986,10 @@
       "Pinned (${ items.length })": [
         "Épinglés (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Une fois supprimé, l'alias ne peut pas être restauré.",
+        "Une fois supprimés, les alias ne peuvent pas être restaurés."
+      ],
       "Reject device?": [
         "Voulez-vous rejeter l'appareil ?"
       ],
@@ -3003,6 +3031,9 @@
       ],
       "Sync alias": [
         "Synchroniser les alias"
+      ],
+      "Sync your aliases from SimpleLogin": [
+        "Synchronisez vos alias depuis SimpleLogin"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Merci d'avoir installé ${ PASS_APP_NAME }."
@@ -3051,6 +3082,10 @@
       ],
       "Your welcome gift": [
         "Votre cadeau de bienvenue"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
+        "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
       ]
     },
     "Validation": {
@@ -3110,6 +3145,9 @@
       "Could not send invitations to the following addresses:": [
         "Les invitations n'ont pu être envoyées aux adresses suivantes :"
       ],
+      "Delete alias": [
+        "Supprimer l'alias"
+      ],
       "Duplicate email addresses.": [
         "Adresses e-mail en double"
       ],
@@ -3167,6 +3205,9 @@
       ],
       "No results": [
         "Aucun résultat"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Une fois synchronisés, la suppression d'alias dans ${ PASS_SHORT_APP_NAME } les supprimera également dans SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
