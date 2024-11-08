@@ -9,6 +9,7 @@ import {
     useActiveBreakpoint,
     useConfig,
 } from '@proton/components';
+import ApiModalsHVUpsell from '@proton/components/containers/api/ApiModalsHVUpsell';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInboxDesktopMessageForward } from '@proton/components/hooks/useInboxDesktopMessageForward';
 import { FeatureCode, useFeatures } from '@proton/features';
@@ -25,6 +26,7 @@ import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import PageContainer from './containers/PageContainer';
 import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
+import { extraThunkArguments } from './store/thunk';
 
 const MainContainer: FunctionComponent = () => {
     const breakpoints = useActiveBreakpoint();
@@ -99,6 +101,7 @@ const MainContainer: FunctionComponent = () => {
                                 <ComposerContainer breakpoints={breakpoints}>
                                     <CheckAllRefProvider>
                                         <ModalsChildren />
+                                        <ApiModalsHVUpsell api={extraThunkArguments.api} />
                                         <Switch>
                                             <Route
                                                 path={MAIN_ROUTE_PATH}

@@ -34,17 +34,24 @@ export const listenFreeTrialSessionExpiration = (
     authentication: AuthenticationStore,
     api: ReturnType<typeof createApi>
 ) => {
-    api.addEventListener(async (event) => {
+    const runEffect = async () => {
+        try {
+            await handleLogout({ appName, authentication, clearDeviceRecoveryData: true, type: 'full' });
+        } finally {
+            endOfTrialIPCCall();
+        }
+    };
+
+    api.addEventListener((event) => {
         if (event.type === 'logout' && event.payload.error) {
             const { code } = getApiError(event.payload.error?.originalError);
 
             if (code === API_CUSTOM_ERROR_CODES.INBOX_DESKTOP_TRIAL_END) {
-                try {
-                    await handleLogout({ appName, authentication, clearDeviceRecoveryData: true, type: 'full' });
-                } finally {
-                    endOfTrialIPCCall();
-                }
+                runEffect();
+                return true;
             }
         }
+
+        return false;
     });
 };
