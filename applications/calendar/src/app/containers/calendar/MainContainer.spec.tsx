@@ -7,7 +7,13 @@ import { createMemoryHistory } from 'history';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { CacheProvider, useContactEmailsCache } from '@proton/components';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { CALENDAR_DISPLAY, CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
+import {
+    CALENDAR_DISPLAY,
+    CALENDAR_FLAGS,
+    CALENDAR_TYPE,
+    MAX_CHARS_API,
+    TMP_UNIQUE_ID,
+} from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
@@ -646,7 +652,7 @@ describe.skip('MainContainer', () => {
                         },
                     },
                     end: new Date(Date.UTC(2021, 0, 1, 1, 0, 0)),
-                    id: 'tmp',
+                    id: TMP_UNIQUE_ID,
                     isAllDay: false,
                     isAllPartDay: false,
                     isRecurring: false,
