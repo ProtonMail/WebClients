@@ -199,7 +199,6 @@ export const createAuthService = ({
         onLoginComplete: async (_, localID) => {
             app.setAuthorized(true);
             setSentryUID(authStore.getUID());
-            onboarding.init().catch(noop);
 
             /** Repersist the session if sufficient time has elapsed since last use */
             if (getEpoch() - authStore.getLastUsedAt() > UNIX_MINUTE) {
