@@ -22,3 +22,5 @@ export interface BaseMeetingUrls {
 export enum VIDEO_CONF_API_ERROR_CODES {
     MEETING_PROVIDER_ERROR = 2904,
 }
+
+export type ZoomAccessLevel = 'show-upsell' | 'limited-access' | 'full-access';

@@ -20,6 +20,7 @@ import type { EventModel, VideoConferenceMeetingCreation } from '@proton/shared/
 import clsx from '@proton/utils/clsx';
 
 import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingWidget';
+import type { ZoomAccessLevel } from '../videoConferencing/constants';
 import { VIDEO_CONF_API_ERROR_CODES, VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
 import { VideoConferenceZoomIntegration, useVideoConfTelemetry } from '../videoConferencing/useVideoConfTelemetry';
 
@@ -48,9 +49,10 @@ const getIcon = (state: ZoomIntegrationState) => {
 interface Props {
     model: EventModel;
     setModel: (value: EventModel) => void;
+    accessLevel: ZoomAccessLevel;
 }
 
-export const ZoomRow = ({ model, setModel }: Props) => {
+export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
     const [user] = useUser();
     const dispatch = useDispatch();
 
@@ -100,6 +102,11 @@ export const ZoomRow = ({ model, setModel }: Props) => {
 
         dispatch(oauthTokenActions.updateTokens(tokens.Tokens));
     };
+
+    if (accessLevel === 'limited-access' && processState !== 'meeting-present') {
+        // Paid MAIL users with setting disabled will have limited access only if meeting present
+        return;
+    }
 
     const createVideoConferenceMeeting = async () => {
         try {
@@ -200,17 +207,19 @@ export const ZoomRow = ({ model, setModel }: Props) => {
                     processState === 'disconnected' ||
                     processState === 'meeting-deleted') && (
                     <div className="flex items-center gap-1">
-                        <Button
-                            onClick={handleClick}
-                            disabled={loadingConfig || oauthTokenLoading}
-                            loading={loadingConfig || oauthTokenLoading}
-                            shape="underline"
-                            className="p-0"
-                            color="norm"
-                            size="small"
-                        >
-                            {c('Zoom integration').t`Add Zoom meeting`}
-                        </Button>
+                        {(accessLevel === 'show-upsell' || accessLevel === 'full-access') && (
+                            <Button
+                                onClick={handleClick}
+                                disabled={loadingConfig || oauthTokenLoading}
+                                loading={loadingConfig || oauthTokenLoading}
+                                shape="underline"
+                                className="p-0"
+                                color="norm"
+                                size="small"
+                            >
+                                {c('Zoom integration').t`Add Zoom meeting`}
+                            </Button>
+                        )}
                         {!user.hasPaidMail && <Icon name="upgrade" className="color-primary" />}
                     </div>
                 )}
