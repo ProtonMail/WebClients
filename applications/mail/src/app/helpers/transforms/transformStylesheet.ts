@@ -10,6 +10,16 @@ const replaceAbsolutePositionOnFirstElement = (document: Element) => {
     if (firstElement && /absolute/.test(firstElement.style.position)) {
         firstElement.style.position = 'inherit';
     }
+
+    const styleTags = document.querySelectorAll('style');
+    const fixedPositionRegex = /position[\s\:]fixed/gim;
+
+    styleTags.forEach((styleTag) => {
+        const styleContent = styleTag.textContent;
+        if (styleContent && fixedPositionRegex.test(styleContent)) {
+            styleTag.textContent = styleContent.replace(fixedPositionRegex, 'position: inherit !important;');
+        }
+    });
 };
 
 /**

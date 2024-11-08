@@ -50,6 +50,8 @@ export enum TelemetryMailOnboardingEvents {
     finish_change_login = 'finish_change_login',
     download_desktop_app = 'download_desktop_app',
     premium_features = 'premium_features',
+    close_checklist = 'close_checklist',
+    clicked_checklist_setting = 'clicked_checklist_setting',
 }
 
 export enum TelemetrySubscriptionModalEvents {

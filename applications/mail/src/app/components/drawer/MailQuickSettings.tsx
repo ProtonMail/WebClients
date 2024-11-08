@@ -35,6 +35,7 @@ import { useLoading } from '@proton/hooks';
 import { useAssistant } from '@proton/llm/lib';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
+import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
@@ -51,6 +52,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
+import { useMailOnboardingTelemetry } from '../onboarding/useMailOnboardingTelemetry';
 
 const { OFF, UNSET, SERVER_ONLY } = AI_ASSISTANT_ACCESS;
 
@@ -93,6 +95,7 @@ const MailQuickSettings = () => {
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
     const [keyTransparencyDetailsModalProps, setKeyTransparencyDetailsModalOpen] = useModalState();
     const [onboardingChecklistProps, setOnboardingChecklistProps] = useModalState();
+    const [sendChecklistTelemetryEvent] = useMailOnboardingTelemetry();
 
     const viewLayoutOptions: QuickSettingsSelectOption[] = [
         {
@@ -375,7 +378,12 @@ const MailQuickSettings = () => {
             <QuickSettingsButtonSection>
                 {canDisplayChecklist && (
                     <QuickSettingsButton
-                        onClick={() => setOnboardingChecklistProps(true)}
+                        onClick={() => {
+                            setOnboardingChecklistProps(true);
+                            void sendChecklistTelemetryEvent(TelemetryMailOnboardingEvents.clicked_checklist_setting, {
+                                is_checklist_completed: isChecklistFinished ? 'yes' : 'no',
+                            });
+                        }}
                         data-testid="mail-quick-settings:started-checklist-button"
                     >
                         {isChecklistFinished

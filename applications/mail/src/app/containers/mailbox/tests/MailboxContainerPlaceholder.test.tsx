@@ -3,7 +3,7 @@ import { addDays } from 'date-fns';
 
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
-import type { ContextState } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import type { OnboardingChecklistContext } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { render } from '../../../helpers/test/helper';
 import MailboxContainerPlaceholder from '../MailboxContainerPlaceholder';
@@ -29,7 +29,7 @@ describe('MailboxContainerPlaceholder', () => {
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
             canDisplayChecklist: true,
-        } as ContextState);
+        } as OnboardingChecklistContext);
 
         await render(
             <MailboxContainerPlaceholder
@@ -49,7 +49,7 @@ describe('MailboxContainerPlaceholder', () => {
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
             canDisplayChecklist: true,
-        } as ContextState);
+        } as OnboardingChecklistContext);
 
         await render(
             <MailboxContainerPlaceholder
@@ -69,7 +69,7 @@ describe('MailboxContainerPlaceholder', () => {
             items: new Set(),
             expiresAt: addDays(new Date(), 10),
             canDisplayChecklist: true,
-        } as ContextState);
+        } as OnboardingChecklistContext);
 
         await render(
             <MailboxContainerPlaceholder

@@ -38,7 +38,7 @@ import { useGetStartedChecklist } from '../../containers/onboardingChecklist/pro
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
-import UsersOnboardingChecklist from '../onboarding/checklist/UsersOnboardingChecklist';
+import OnboardingChecklistSidebar from '../onboarding/checklist/sidebar/OnboardingChecklistSidebar';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 
@@ -56,7 +56,7 @@ const MailSidebar = ({ labelID }: Props) => {
     const onCompose = useOnCompose();
     const dispatch = useMailDispatch();
     const expanded = useMailSelector(selectLayoutIsExpanded);
-    const { displayState, canDisplayChecklist } = useGetStartedChecklist();
+    const { displayState } = useGetStartedChecklist();
     const handleCompose = useCallback(() => {
         void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
@@ -101,21 +101,23 @@ const MailSidebar = ({ labelID }: Props) => {
                 <MailSidebarList
                     labelID={labelID}
                     postItems={
-                        displayContactsInHeader && (
-                            <SidebarDrawerItems
-                                toggleHeaderDropdown={() => {
-                                    dispatch(layoutActions.setSidebarExpanded(false));
-                                }}
-                            />
-                        )
+                        <>
+                            {displayContactsInHeader && (
+                                <SidebarDrawerItems
+                                    toggleHeaderDropdown={() => {
+                                        dispatch(layoutActions.setSidebarExpanded(false));
+                                    }}
+                                />
+                            )}
+                            {displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && !collapsed && (
+                                <OnboardingChecklistSidebar />
+                            )}
+                        </>
                     }
                     collapsed={collapsed}
                     onClickExpandNav={onClickExpandNav}
                 />
 
-                {canDisplayChecklist && displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && !collapsed && (
-                    <UsersOnboardingChecklist smallVariant />
-                )}
                 {!isElectronApp && (
                     <span
                         className={clsx(

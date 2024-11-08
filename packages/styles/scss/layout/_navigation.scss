@@ -24,6 +24,11 @@ $padding-inline-end-link: var(--space-2) !default;
 	h3 {
 		font-size: inherit;
 	}
+
+	&.navigation-link-header-group--force-min-block-size {
+		block-size: auto;
+		min-block-size: rem(36);
+	}
 }
 
 // specificity...
@@ -168,6 +173,11 @@ label.navigation-link {
 
 	.navigation-icon--expand {
 		color: var(--text-weak);
+	}
+
+	&.navigation-link-header-group-link--force-min-block-size {
+		block-size: auto;
+		min-block-size: rem(36);
 	}
 }
 
