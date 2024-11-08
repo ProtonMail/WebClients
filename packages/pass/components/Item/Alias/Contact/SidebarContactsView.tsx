@@ -1,9 +1,10 @@
 import { type FC, useEffect, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Info, type ModalStateProps, useModalState } from '@proton/components';
+import { Icon, type ModalStateProps, useModalState } from '@proton/components';
 import stamp from '@proton/pass/assets/alias/alias-contact-stamp.svg';
 import { ContactCard } from '@proton/pass/components/Item/Alias/Contact/ContactCard';
 import { SidebarCreateContact } from '@proton/pass/components/Item/Alias/Contact/SidebarCreateContact';
@@ -13,6 +14,7 @@ import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { aliasGetContactsList } from '@proton/pass/store/actions';
+import { selectItem } from '@proton/pass/store/selectors';
 import type { AliasContactGetResponse, AliasContactWithStatsGetResponse, UniqueItem } from '@proton/pass/types';
 
 type Props = UniqueItem & Pick<ModalStateProps, 'onClose'>;
@@ -20,6 +22,8 @@ type Props = UniqueItem & Pick<ModalStateProps, 'onClose'>;
 export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => {
     const [createContact, openCreateContactSidebar] = useModalState();
     const [moreInfoFlow, openMoreInfoFlowSidebar] = useModalState();
+    const aliasEmail = useSelector(selectItem<'alias'>(shareId, itemId))?.aliasEmail;
+
     const [allContacts, setAllContacts] = useState<AliasContactWithStatsGetResponse[]>([]);
 
     const { loading, dispatch } = useRequest(aliasGetContactsList, {
@@ -90,16 +94,23 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
                     }
                 >
                     <div className="flex items-center mb-4">
-                        <h2 className="text-xl text-bold mr-1">{c('Title').t`Contacts`}</h2>
-                        <Info
-                            title={c('Info').t`See more info`}
-                            className="color-norm"
-                            questionMark
-                            filled
+                        <h2 className="text-xl text-bold mr-2">{c('Title').t`Contacts`}</h2>
+                        <Button
+                            icon
+                            pill
+                            shape="solid"
+                            color="weak"
                             onClick={() => openMoreInfoFlowSidebar(true)}
-                            size={5}
-                        />
+                            title={c('Info').t`See more info`}
+                            size="small"
+                            className="button-xs"
+                        >
+                            <span className="text-bold">?</span>
+                        </Button>
                     </div>
+
+                    <div className="mb-6">{c('Info')
+                        .t`A contact is created for every email address that sends emails to or receives emails from ${aliasEmail}.`}</div>
 
                     {loading ? (
                         <>
@@ -116,8 +127,6 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
                         <>
                             {hasContacts ? (
                                 <>
-                                    <h2 className="text-xl text-bold mt-4 mb-3">{c('Title')
-                                        .t`Forwarding addresses`}</h2>
                                     {contacts?.map((c) => <ContactCard {...getContactProps(c)} key={c.ID} />)}
                                     {blockedContacts && (
                                         <p className="color-weak mt-2 mb-5">{c('Title').t`Blocked addresses`}</p>
@@ -131,11 +140,10 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
                                     <div className="text-lg text-center mt-1 mb-5">{c('Info')
                                         .t`To keep your personal email address hidden, you can create an alias contact that masks your address.`}</div>
                                     <Button
-                                        color="norm"
-                                        shape="outline"
+                                        color="weak"
+                                        shape="solid"
                                         pill
                                         onClick={() => openMoreInfoFlowSidebar(true)}
-                                        style={{ width: 'fit-content' }}
                                     >
                                         {c('Action').t`Learn more`}
                                     </Button>
