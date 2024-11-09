@@ -4,7 +4,6 @@ import { SPOTLIGHT_STORAGE_KEY, getSpotlightStorageKey } from 'proton-pass-web/l
 import { authStore } from '@proton/pass/lib/auth/store';
 import {
     createAliasSyncEnableRule,
-    createAliasTrashConfirmRule,
     createB2BRule,
     createBlackFriday2024Rule,
     createMonitorLearnMoreRule,
@@ -52,7 +51,6 @@ export const spotlight = createSpotlightService({
         createWelcomeRule(),
         createB2BRule(store),
         createMonitorLearnMoreRule(),
-        createAliasTrashConfirmRule(),
     ],
 });
 

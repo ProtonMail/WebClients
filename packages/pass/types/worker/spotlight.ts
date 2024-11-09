@@ -15,7 +15,7 @@ export enum SpotlightMessage {
     EARLY_ACCESS,
     PASS_MONITOR,
     PASS_MONITOR_LEARN_MORE,
-    ALIAS_TRASH_CONFIRM /* confirm moving an alias to trash and suggest to disable it instead */,
+    ALIAS_TRASH_CONFIRM,
     FAMILY_PLAN_PROMO_2024,
     ALIAS_SYNC_ENABLE /* shown if user has pending SL aliases to be sync */,
     BLACK_FRIDAY_2024,

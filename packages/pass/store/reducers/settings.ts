@@ -29,6 +29,7 @@ import { or } from '@proton/pass/utils/fp/predicates';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 export type SettingsState = {
+    aliasTrashAcknowledged?: boolean;
     autofill: AutoFillSettings;
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;

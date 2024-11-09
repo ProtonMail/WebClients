@@ -4,7 +4,6 @@ import { useDispatch, useStore } from 'react-redux';
 import { c } from 'ttag';
 
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ConfirmTrashAlias } from '@proton/pass/components/Item/Actions/ConfirmAliasActions';
 import {
     ConfirmDeleteManyItems,
@@ -25,9 +24,9 @@ import {
     itemRestoreIntent,
     itemTrashIntent,
 } from '@proton/pass/store/actions';
-import { selectLoginItemByEmail } from '@proton/pass/store/selectors';
+import { selectAliasTrashAcknowledged, selectLoginItemByEmail } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, SpotlightMessage } from '@proton/pass/types';
+import { type BulkSelectionDTO, type ItemRevision, type MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 /** Ongoing: move every item action definition to this
@@ -46,7 +45,6 @@ type ItemActionsContextType = {
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
 
 export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
-    const core = usePassCore();
     const bulk = useBulkSelect();
     const dispatch = useDispatch();
     const store = useStore<State>();
@@ -166,14 +164,12 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                       }),
             trash: (item) => {
                 if (isAliasItem(item.data)) {
+                    const state = store.getState();
                     const aliasEmail = item.aliasEmail!;
-                    const relatedLogin = selectLoginItemByEmail(aliasEmail)(store.getState());
-                    if (isAliasDisabled(item) && !relatedLogin) trashItem.call(item);
-                    else {
-                        Promise.resolve(core.spotlight.check(SpotlightMessage.ALIAS_TRASH_CONFIRM))
-                            .then((prompt) => (prompt ? trashItem.prompt(item) : trashItem.call(item)))
-                            .catch(() => trashItem.call(item));
-                    }
+                    const relatedLogin = selectLoginItemByEmail(aliasEmail)(state);
+                    const ack = selectAliasTrashAcknowledged(state);
+                    if ((isAliasDisabled(item) || ack) && !relatedLogin) trashItem.call(item);
+                    else trashItem.prompt(item);
                 } else trashItem.call(item);
             },
             trashMany: trashManyItems.prompt,
