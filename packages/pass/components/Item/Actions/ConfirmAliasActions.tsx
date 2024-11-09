@@ -7,47 +7,43 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Alert, Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { type ConfirmationPromptHandles } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { isAliasDisabled, isAliasItem } from '@proton/pass/lib/items/item.predicates';
-import { aliasSyncStatusToggle } from '@proton/pass/store/actions';
-import { selectLoginItemByEmail } from '@proton/pass/store/selectors';
-import { type ItemRevision, SpotlightMessage } from '@proton/pass/types';
+import { aliasSyncStatusToggle, settingsEditIntent } from '@proton/pass/store/actions';
+import { selectAliasTrashAcknowledged, selectLoginItemByEmail } from '@proton/pass/store/selectors';
+import { type ItemRevision } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 type Props = {
     actionText: string;
     disableText?: string;
     message: ReactNode;
-    remember: boolean;
     title: string;
     warning?: ReactNode;
     onAction: () => void;
     onClose: () => void;
     onDisable?: () => void;
+    onRemember?: (checked: boolean) => void;
 };
 
 const ConfirmAliasAction: FC<Props> = ({
     actionText,
     disableText,
     message,
-    remember,
     title,
     warning,
     onAction,
     onClose,
     onDisable,
+    onRemember,
 }) => {
-    const { spotlight } = usePassCore();
     const [noRemind, setNoRemind] = useState(false);
 
     const withAcknowledge =
         (fn?: () => void) =>
-        (noRemind: boolean): void => {
+        (checked: boolean): void => {
             fn?.();
-            /** FIXME: ideally this should be moved away from spotlight
-             * message state and be stored in the settings */
-            if (noRemind) void spotlight.acknowledge(SpotlightMessage.ALIAS_TRASH_CONFIRM);
+            onRemember?.(checked);
         };
 
     const doAction = withAcknowledge(onAction);
@@ -66,7 +62,7 @@ const ConfirmAliasAction: FC<Props> = ({
                 {message && <div>{message}</div>}
             </ModalTwoContent>
             <ModalTwoFooter className="flex flex-column items-stretch text-center">
-                {remember && (
+                {onRemember && (
                     <Checkbox
                         className="pass-checkbox--unset gap-0 mb-4"
                         checked={noRemind}
@@ -126,8 +122,16 @@ export const ConfirmTrashAlias: FC<ConfirmationPromptHandles & { item: ItemRevis
     onCancel,
     onConfirm,
 }) => {
+    const dispatch = useDispatch();
+
     const { aliasEnabled, aliasEmail, relatedLogin, disableAlias } = useAliasActions(item);
     const relatedLoginName = relatedLogin?.data.metadata.name ?? '';
+    const ack = useSelector(selectAliasTrashAcknowledged);
+
+    const onRemember =
+        aliasEnabled && !ack
+            ? (checked: boolean) => checked && dispatch(settingsEditIntent('ack', { aliasTrashAcknowledged: checked }))
+            : undefined;
 
     return isAliasItem(item.data) ? (
         <ConfirmAliasAction
@@ -143,10 +147,10 @@ export const ConfirmTrashAlias: FC<ConfirmationPromptHandles & { item: ItemRevis
                 relatedLogin &&
                 c('Warning').t`This alias "${aliasEmail}" is currently used in the login "${relatedLoginName}".`
             }
-            remember={aliasEnabled}
+            onAction={onConfirm}
             onClose={onCancel}
             onDisable={disableAlias}
-            onAction={onConfirm}
+            onRemember={onRemember}
         />
     ) : null;
 };
@@ -175,7 +179,6 @@ export const ConfirmDeleteAlias: FC<ConfirmationPromptHandles & { item: ItemRevi
                 relatedLogin &&
                 c('Warning').t`This alias "${aliasEmail}" is currently used in the login "${relatedLoginName}".`
             }
-            remember={false}
             onClose={onCancel}
             onDisable={disableAlias}
             onAction={onConfirm}

@@ -124,12 +124,6 @@ export const createMonitorLearnMoreRule = () =>
         when: (previous) => !previous || !previous.extraData?.expanded,
     });
 
-export const createAliasTrashConfirmRule = () =>
-    createSpotlightRule({
-        message: SpotlightMessage.ALIAS_TRASH_CONFIRM,
-        when: (previous) => !previous,
-    });
-
 export const createFamilyPlanPromo2024Rule = (store: Store<State>) =>
     createSpotlightRule({
         message: SpotlightMessage.FAMILY_PLAN_PROMO_2024,

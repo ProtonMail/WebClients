@@ -5,7 +5,6 @@ import type { Store } from 'redux';
 import browser from '@proton/pass/lib/globals/browser';
 import {
     createAliasSyncEnableRule,
-    createAliasTrashConfirmRule,
     createBlackFriday2024Rule,
     createMonitorRule,
     createPendingShareAccessRule,
@@ -49,7 +48,6 @@ export const createSpotlightService = (
 
             /* "Invisible" rules not displayed as spotlight should be defined at the bottom */
             createMonitorRule(),
-            createAliasTrashConfirmRule(),
         ],
     });
 
