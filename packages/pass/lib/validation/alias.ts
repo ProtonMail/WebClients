@@ -7,10 +7,10 @@ import type {
     AliasFormValues,
     EditAliasFormValues,
     LoginItemFormValues,
+    Maybe,
     MaybeNull,
     NewAliasFormValues,
 } from '@proton/pass/types';
-import { validateLocalPart } from '@proton/shared/lib/helpers/email';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
 import { validateItemErrors } from './item';
@@ -27,12 +27,24 @@ export const deriveAliasPrefix = (name: string) => {
     return prefix.replace(/\.*$/, '').replace(/^\.+/, '');
 };
 
-export const validateAliasPrefix = (prefix: string) => {
+export const validateAliasPrefix = (prefix: string = ''): Maybe<string> => {
     try {
         PassCoreUI.validate_alias_prefix(prefix);
-        return true;
-    } catch {
-        return false;
+        return;
+    } catch (err) {
+        switch (err instanceof Error && err.message) {
+            case 'PrefixEmpty':
+                return c('Warning').t`Missing alias prefix`;
+            case 'PrefixTooLong':
+                return c('Warning').t`The alias prefix cannot be longer than 40 characters`;
+            case 'InvalidCharacter':
+                return c('Warning').t`Only alphanumeric characters, dots, hyphens and underscores are allowed`;
+            case 'TwoConsecutiveDots':
+            case 'DotAtTheBeginning':
+            case 'DotAtTheEnd':
+            default:
+                return c('Warning').t`Invalid alias prefix`;
+        }
     }
 };
 
@@ -43,32 +55,11 @@ export const validateAliasForm = ({
 }: AliasFormValues): FormikErrors<AliasFormValues> => {
     const errors: FormikErrors<AliasFormValues> = {};
 
-    if (aliasPrefix === undefined || aliasPrefix.trim() === '') {
-        errors.aliasPrefix = c('Warning').t`Missing alias prefix`;
-    }
+    const aliasPrefixError = validateAliasPrefix(aliasPrefix);
+    if (aliasPrefixError) errors.aliasPrefix = aliasPrefixError;
 
-    if (
-        !validateAliasPrefix(aliasPrefix) ||
-        (aliasPrefix && !validateLocalPart(aliasPrefix + (aliasSuffix?.value?.split('@')?.[0] ?? '')))
-    ) {
-        errors.aliasPrefix = c('Warning').t`Invalid alias prefix`;
-    }
-
-    if (aliasPrefix && !/^[a-z0-9\-\_.]*$/.test(aliasPrefix)) {
-        errors.aliasPrefix = c('Warning').t`Only alphanumeric characters, dots, hyphens and underscores are allowed`;
-    }
-
-    if (aliasPrefix && aliasPrefix.length > 40) {
-        errors.aliasPrefix = c('Warning').t`The alias prefix cannot be longer than 40 characters`;
-    }
-
-    if (aliasSuffix === undefined) {
-        errors.aliasSuffix = c('Warning').t`Missing alias suffix`;
-    }
-
-    if (mailboxes.length === 0) {
-        errors.mailboxes = c('Warning').t`You must select at least one mailbox`;
-    }
+    if (!aliasSuffix) errors.aliasSuffix = c('Warning').t`Missing alias suffix`;
+    if (mailboxes.length === 0) errors.mailboxes = c('Warning').t`You must select at least one mailbox`;
 
     return errors;
 };
