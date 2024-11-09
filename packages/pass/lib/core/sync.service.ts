@@ -1,3 +1,4 @@
+import { isNativeJSError } from '@proton/pass/lib/core/utils';
 import browser from '@proton/pass/lib/globals/browser';
 import type { MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -28,7 +29,7 @@ export const createPassCoreSyncService = (): PassCoreService => {
                 const core = await loadWASM();
                 return (core[method] as any)(...args);
             } catch (err) {
-                logger.warn(`[PassCoreWorker] Failed executing ${method}`, err);
+                if (isNativeJSError(err)) logger.warn(`[PassCoreWorker] Failed executing ${method}`, err);
                 throw err;
             }
         },
