@@ -1,6 +1,7 @@
 import { type FC, useEffect, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
+import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
@@ -53,20 +54,21 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
     /* set initial `aliasPrefix` to an empty string to avoid a
      * form error state if `aliasOptions` have not loaded yet */
-    const initialValues: NewAliasFormValues = useMemo(
-        () => ({
+    const [initialValues, initialErrors] = useMemo<[NewAliasFormValues, FormikErrors<NewAliasFormValues>]>(() => {
+        const initial: NewAliasFormValues = {
             shareId,
             aliasPrefix: '',
             aliasSuffix: undefined,
             mailboxes: [],
             ...defaults,
-        }),
-        []
-    );
+        };
+
+        return [initial, validateNewAliasForm(initial)];
+    }, []);
 
     const form = useFormik<NewAliasFormValues>({
         initialValues,
-        initialErrors: validateNewAliasForm(initialValues),
+        initialErrors,
         onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes }) => {
             if (needsUpgrade) return;
 
@@ -126,7 +128,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                 await form.setValues(values, true);
                 await form.setTouched({ aliasPrefix: deriveAliasPrefix(draft.name) !== draft.aliasPrefix });
                 form.setErrors(errors);
-            } else form.resetForm({ values, errors, touched: { aliasPrefix: false } });
+            } else form.resetForm({ values, errors, touched: {} });
 
             reconciled.current = true;
         },
