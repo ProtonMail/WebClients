@@ -1,9 +1,9 @@
 import type { FormSubmission, ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 
-export type ItemMatchFuncMap = { [T in ItemType]: ItemMatchFunc<T> };
-
-export type ItemMatchFunc<T extends ItemType = ItemType> = (item: ItemRevision<T>) => (needles: string[]) => boolean;
+export type FieldMatch<T extends ItemType = ItemType> = (item: ItemRevision<T>) => (needle: string) => boolean;
+export type ItemMatch<T extends ItemType = ItemType> = (item: ItemRevision<T>) => (needles: string[]) => boolean;
+export type ItemMatchMap = { [T in ItemType]: ItemMatch<T> };
 
 export type SelectItemsOptions = {
     search?: string;
