@@ -28,3 +28,39 @@ export const maxAgeMemoize = <F extends AsyncCallback>(fn: F) => {
         }
     }) as MaxAgeMemoizedFn<F>;
 };
+
+type DynamicMemo<T> = T & {
+    /** Clears the cached results */
+    clear: () => void;
+    /** Toggles memoisation */
+    memo: boolean;
+};
+
+export const dynMemo = <Arg extends string | number | symbol | object, Res>(
+    fn: (first: Arg) => Res
+): DynamicMemo<(arg: Arg) => Res> => {
+    const cache = new Map<Arg, Res>();
+    let memo = true;
+
+    const memoized = ((arg: Arg): Res => {
+        if (!memo) return fn(arg);
+
+        const cached = cache.get(arg);
+        if (cached !== undefined) return cached;
+
+        const result = fn(arg);
+        cache.set(arg, result);
+        return result;
+    }) as DynamicMemo<(arg: Arg) => Res>;
+
+    return Object.defineProperties(memoized, {
+        clear: { value: () => cache.clear() },
+        memo: {
+            get: () => memo,
+            set: (enabled: boolean) => {
+                if (!enabled) memoized.clear();
+                memo = enabled;
+            },
+        },
+    });
+};
