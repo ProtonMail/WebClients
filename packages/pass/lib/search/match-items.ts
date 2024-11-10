@@ -1,77 +1,109 @@
 import type { IdentityValues, ItemRevision, ItemType } from '@proton/pass/types';
+import { dynMemo } from '@proton/pass/utils/fp/memo';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
-import { matchSome } from './match-some';
-import type { ItemMatchFunc, ItemMatchFuncMap } from './types';
+import type { FieldMatch, ItemMatch, ItemMatchMap } from './types';
+
+const memoNormalize = dynMemo((str: string) => normalize(str, true));
+const memoDeobfuscate = dynMemo(deobfuscate);
+
+const matchStr =
+    (needle: string) =>
+    (haystack: string): boolean => {
+        if (needle.length === 0) return false;
+        const normalizedHaystack = memoNormalize(haystack);
+        return normalizedHaystack.includes(needle);
+    };
 
 /** Matches a single field from the item using a getter function,
  * enabling lazy evaluation when used with `combineMatchers`. */
 const matchField =
-    <T extends ItemType>(getter: (item: ItemRevision<T>) => string): ItemMatchFunc<T> =>
+    <T extends ItemType>(getter: (item: ItemRevision<T>) => string): FieldMatch<T> =>
     (item) =>
-    (needles) =>
-        matchSome(needles)(getter(item));
+    (needle) =>
+        matchStr(needle)(getter(item));
 
 /** Matches any field from an array returned by the getter function. */
 const matchFields =
-    <T extends ItemType>(getter: (item: ItemRevision<T>) => string[]): ItemMatchFunc<T> =>
+    <T extends ItemType>(getter: (item: ItemRevision<T>) => string[]): FieldMatch<T> =>
     (item) =>
-    (needles) =>
-        getter(item).some((field) => matchSome(needles)(field));
+    (needle) =>
+        getter(item).some((field) => matchStr(needle)(field));
 
 /** Matches fields from an `IterableIterator` returned by the getter function.
  * Uses lazy evaluation and early return for efficiency. */
 const matchFieldsLazy =
-    <T extends ItemType>(getter: (item: ItemRevision<T>) => IterableIterator<string>): ItemMatchFunc<T> =>
+    <T extends ItemType>(getter: (item: ItemRevision<T>) => IterableIterator<string>): FieldMatch<T> =>
     (item) =>
-    (needles) => {
-        for (const field of getter(item)) if (matchSome(needles)(field)) return true;
+    (needle) => {
+        for (const field of getter(item)) if (matchStr(needle)(field)) return true;
         return false;
     };
 
 /** Combines multiple matchers and checks if any of them match the needles.
- * Uses lazy evaluation and early return via `some` for efficiency. */
+ * Uses lazy evaluation and early return via `some` for efficiency.
+ * Normalization and deobfuscation are memoized only for multiple needles
+ * since searching a single needle has no field reuse across iterations.
+ * For multiple needles we iterate over needles first (every) then matchers
+ * (some) - meaning fields get normalized/deobfuscated multiple times.
+ * Cache is cleared per item to avoid memory leaks */
 const combineMatchers =
-    <T extends ItemType>(...matchers: ItemMatchFunc<T>[]): ItemMatchFunc<T> =>
+    <T extends ItemType>(...matchers: FieldMatch<T>[]): ItemMatch<T> =>
     (item) =>
-    (needles) =>
-        matchers.some((matcher) => matcher(item)(needles));
+    (needles) => {
+        const shouldMemo = needles.length > 1;
 
-const matchesNoteItem: ItemMatchFunc<'note'> = combineMatchers<'note'>(
+        memoNormalize.memo = shouldMemo;
+        memoDeobfuscate.memo = shouldMemo;
+
+        const matched = needles.every((needle) => matchers.some((matcher) => matcher(item)(needle)));
+
+        if (shouldMemo) {
+            memoNormalize.clear();
+            memoDeobfuscate.clear();
+        }
+
+        return matched;
+    };
+
+const matchesNoteItem: ItemMatch<'note'> = combineMatchers<'note'>(
     matchField((item) => item.data.metadata.name),
-    matchField((item) => deobfuscate(item.data.metadata.note))
+    matchField((item) => memoDeobfuscate(item.data.metadata.note))
 );
 
-const matchesLoginItem: ItemMatchFunc<'login'> = combineMatchers<'login'>(
+const matchesLoginItem: ItemMatch<'login'> = combineMatchers<'login'>(
     matchField((item) => item.data.metadata.name),
-    matchField((item) => deobfuscate(item.data.metadata.note)),
-    matchField((item) => deobfuscate(item.data.content.itemEmail)),
-    matchField((item) => deobfuscate(item.data.content.itemUsername)),
+    matchField((item) => memoDeobfuscate(item.data.content.itemEmail)),
+    matchField((item) => memoDeobfuscate(item.data.content.itemUsername)),
+    matchField((item) => memoDeobfuscate(item.data.metadata.note)),
     matchFields((item) => item.data.content.urls),
     matchFieldsLazy(function* matchExtraFields(item): IterableIterator<string> {
         for (const field of item.data.extraFields) {
-            if (field.type !== 'totp') yield `${field.fieldName} ${deobfuscate(field.data.content)}`;
+            if (field.type !== 'totp') {
+                yield field.fieldName;
+                yield memoDeobfuscate(field.data.content);
+            }
         }
     })
 );
 
-const matchesAliasItem: ItemMatchFunc<'alias'> = combineMatchers<'alias'>(
+const matchesAliasItem: ItemMatch<'alias'> = combineMatchers<'alias'>(
     matchField((item) => item.data.metadata.name),
-    matchField((item) => deobfuscate(item.data.metadata.note)),
-    matchField((item) => item.aliasEmail ?? '')
+    matchField((item) => item.aliasEmail ?? ''),
+    matchField((item) => memoDeobfuscate(item.data.metadata.note))
 );
 
-const matchesCreditCardItem: ItemMatchFunc<'creditCard'> = combineMatchers<'creditCard'>(
+const matchesCreditCardItem: ItemMatch<'creditCard'> = combineMatchers<'creditCard'>(
     matchField((item) => item.data.metadata.name),
-    matchField((item) => deobfuscate(item.data.metadata.note)),
     matchField((item) => item.data.content.cardholderName),
-    matchField((item) => deobfuscate(item.data.content.number))
+    matchField((item) => memoDeobfuscate(item.data.content.number)),
+    matchField((item) => memoDeobfuscate(item.data.metadata.note))
 );
 
-const matchesIdentityItem: ItemMatchFunc<'identity'> = combineMatchers<'identity'>(
+const matchesIdentityItem: ItemMatch<'identity'> = combineMatchers<'identity'>(
     matchField((item) => item.data.metadata.name),
-    matchField((item) => deobfuscate(item.data.metadata.note)),
+    matchField((item) => memoDeobfuscate(item.data.metadata.note)),
     matchFieldsLazy(function* matchIdentityFields(item): IterableIterator<string> {
         for (const key of Object.keys(item.data.content) as (keyof IdentityValues)[]) {
             const value = item.data.content[key];
@@ -105,7 +137,7 @@ const matchesIdentityItem: ItemMatchFunc<'identity'> = combineMatchers<'identity
 /* Each item should expose its own searching mechanism :
  * we may include/exclude certain fields or add extra criteria
  * depending on the type of item we're targeting */
-const itemMatchers: ItemMatchFuncMap = {
+const itemMatchers: ItemMatchMap = {
     login: matchesLoginItem,
     note: matchesNoteItem,
     alias: matchesAliasItem,
@@ -113,12 +145,12 @@ const itemMatchers: ItemMatchFuncMap = {
     identity: matchesIdentityItem,
 };
 
-const matchItem: ItemMatchFunc = <T extends ItemType>(item: ItemRevision<T>) => itemMatchers[item.data.type](item);
+const matchItem: ItemMatch = <T extends ItemType>(item: ItemRevision<T>) => itemMatchers[item.data.type](item);
 
 export const searchItems = <T extends ItemRevision>(items: T[], search?: string) => {
     if (!search || search.trim() === '') return items;
 
     /** split the search term into multiple normalized needles */
-    const needles = normalize(search, true).split(' ');
+    const needles = Array.from(new Set(normalize(search, true).split(' ')));
     return items.filter((item) => matchItem(item)(needles));
 };
