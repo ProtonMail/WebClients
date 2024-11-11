@@ -8,7 +8,7 @@ fi
 
 PLATFORM="$PASS_RELEASE_PLATFORM"
 CHANNEL="$PASS_RELEASE_CHANNEL"
-VERSION=$(grep version applications/pass-desktop/package.json | sed 's/.*"version": "\(.*\)".*/\1/')
+VERSION=$(grep '"version":' -m 1 applications/pass-desktop/package.json | sed 's/.*"version": "\(.*\)".*/\1/')
 CWD=$(pwd)
 GIT_COMMIT_AUTHOR="${GITLAB_USER_NAME}"
 GIT_COMMIT_EMAIL="${GITLAB_USER_EMAIL}"
