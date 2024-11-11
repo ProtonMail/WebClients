@@ -595,6 +595,9 @@
       "Show": [
         "Görüntüle"
       ],
+      "Show all": [
+        "Tümünü görüntüle"
+      ],
       "Show preview": [
         "Ön izlemeyi görüntüle"
       ],
@@ -1025,6 +1028,9 @@
       "Integrated 2FA authenticator": [
         "Bütünleşik 2 adımlı kimlik doğrulayıcı"
       ],
+      "One-time payment, lifetime deal": [
+        "Bir kez ödemeli ömür boyu kullanım fırsatı"
+      ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
@@ -1060,8 +1066,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus ömür boyu fırsatının yenileme ücreti yoktur. Pass Plus hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "İndirimler, standart aylık fiyatlara uygulanır"
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pass Family veya Unlimited tarifesi satın aldığınızda, aboneliğiniz fatura döneminizin sonunda otomatik olarak standart indirimli fiyat ve süre üzerinden yenilenir."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Aboneliğiniz, fatura döneminizin sonunda standart indirimli oranla ve süreyle otomatik olarak yenilenir."
@@ -1072,9 +1084,20 @@
         "En çok kullanılan"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Sınırlı stok!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Bir kez ${ amount } olarak faturalanır"
+      ],
       "for ${ durationDeal }": [
         "${ durationDeal } için"
+      ],
+      "forever": [
+        "sonsuza dek"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "1 ay sonra ${ regularAmount } tutarla yenilenir."
@@ -3675,6 +3698,9 @@
         "Etkilenen kullanıcı şu satırda",
         "Etkilenen kullanıcılar şu satırlarda"
       ],
+      "All inactive members deleted": [
+        "Etkin olmayan tüm üyeler silindi"
+      ],
       "All members have been added.": [
         "Tüm üyeler eklendi."
       ],
@@ -4445,6 +4471,9 @@
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
       ],
+      "Preference saved": [
+        "Ayar kaydedildi"
+      ],
       "Preview": [
         "Ön izleme"
       ],
@@ -4700,6 +4729,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için onu kapatın."
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Bu işlem bu kullanıcılarla ilişkili tüm e-postaları ve verileri kalıcı olarak silecek."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Bu kullanıcı ile ilişkili tüm e-posta ve veriler kalıcı olarak silinecek."
@@ -5710,6 +5742,10 @@
       "Security code (${ codeName })": [
         "Güvenlik kodu (${ codeName })"
       ],
+      "Show ${ n } administrator": [
+        "${ n } yöneticiyi görüntüle",
+        "${ n } yöneticiyi görüntüle"
+      ],
       "Single sign-on entity ID": [
         "Tek oturum açma varlık kimliği"
       ],
@@ -5757,6 +5793,9 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Video conferencing with Zoom": [
+        "Zoom ile görüntülü görüşme"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
@@ -7111,6 +7150,80 @@
       ],
       "Support for ${ n } custom email domains": [
         "${ n } özel e-posta etki alanı desteği"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } ve ${ additionalApp } ürün güncellemeleri"
+      ],
+      "${ app } product updates": [
+        "${ app } ürün güncellemeleri"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business bülteni"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Önemli ${ BRAND_NAME } duyuruları"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } bülteni"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } teklifleri ve fırsatları"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } ürün duyuruları"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } kullanıcı anketi"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } karşılama e-postaları"
+      ],
+      "1 email per month": [
+        "Ayda 1 e-posta"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Ayda 1 e-posta. Son gizlilik haberlerini alın ve ${ BRAND_NAME } evreninde neler olduğunu öğrenin."
+      ],
+      "1 email per quarter": [
+        "Üç ayda 1 e-posta"
+      ],
+      "1-2 emails per month": [
+        "Ayda 1-2 e-posta"
+      ],
+      "2-4 emails per year": [
+        "1 yılda 2-4 e-posta"
+      ],
+      "4-6 emails per year": [
+        "1 yılda 4-6 e-posta"
+      ],
+      "Application notifications": [
+        "Uygulama bildirimleri"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Önemli hesap bildirimleri yine de iletilir"
+      ],
+      "Daily email notifications": [
+        "Günlük e-posta bildirimleri"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Bu seçenek kapatıldığında, ${ BRAND_NAME } uygulamalarının bildirim alma yeteneğini kaldırır"
+      ],
+      "During your first month": [
+        "Ilk ayınız boyunca"
+      ],
+      "Email subscriptions": [
+        "E-posta abonelikleri"
+      ],
+      "In-app notifications": [
+        "Uygulama içi bildirimler"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "${ BRAND_NAME } hizmetlerini geliştirmek için anketlere katılın"
+      ],
+      "Product updates": [
+        "Ürün güncellemeleri"
       ]
     },
     "Notification": {
@@ -8647,6 +8760,14 @@
         "${ n } üye oturum açmak için yardımınızı istedi.",
         "${ n } üye oturum açmak için yardımınızı istedi."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesabı gözden geçirin:",
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları gözden geçirin:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıyı kuruluşunuzdan kaldırabilirsiniz.",
+        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıları kuruluşunuzdan kaldırabilirsiniz."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor.",
         "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
@@ -8695,6 +8816,14 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Sorun sürerse yöneticiniz ile görüşün."
+      ],
+      "Delete ${ n } inactive user?": [
+        "${ n } etkin olmayan kullanıcı silinsin mi?",
+        "${ n } etkin olmayan kullanıcı silinsin mi?"
+      ],
+      "Delete ${ n } user": [
+        "${ n } kullanıcıyı sil",
+        "${ n } kullanıcıyı sil"
       ],
       "Deny": [
         "İzin verme"
@@ -10371,6 +10500,9 @@
       "Verifying your payment...": [
         "Ödemeniz doğrulanıyor..."
       ],
+      "Video conferencing": [
+        "Görüntülü görüşme"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Değişikliği tamamlamak için yapmanız gereken işlemler e-postasını yeni adresinize göndereeceğiz."
       ],
@@ -10559,6 +10691,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Yönetici erişimi bekleniyor:** Bu kullanıcıya, hesabını herhangi bir yöneticinin yönetmesine izin vermesi için bir istek gönderdik."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
       ],
@@ -10567,6 +10702,12 @@
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Kullanıcıyı gizli kullanıcıya dönüştürdüğünüzde, verilerine veya hesabına erişerek yardımcı olamayacaksınız."
+      ],
+      "Cancel request": [
+        "İsteği iptal et"
+      ],
+      "Cancel request to access user data?": [
+        "Kullanıcı verilerine erişme isteği iptal edilsin mi?"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:",
@@ -10577,6 +10718,9 @@
       ],
       "Enable manually": [
         "El ile kullanıma al"
+      ],
+      "Keep request": [
+        "İsteği iptal etme"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kullanıcı onay verdiğinde kullanıcının hesabına yeniden erişebilecek ya da verilerini yönetebileceksiniz."
@@ -10604,6 +10748,9 @@
       ],
       "The user must have an address to request data access": [
         "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Bu işlem kullanıcı verilerine yönetici tarafından erişilmesi ya da kullanıcı parolasını sıfırlama isteğini iptal edecek"
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Bu işlem yöneticinin bu kullanıcının hesabını yönetme iznini kaldıracak."
@@ -10696,6 +10843,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Yöneticiler korunan kullanıcıların verilerine erişemez"
+      ],
+      "Inactive": [
+        "Etkin değil"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Davet gönderildi. Davet edilen üyenin yanıt vermesi bekleniyor"
