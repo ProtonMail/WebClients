@@ -20,7 +20,10 @@ export type { DataWithMatches } from './components/autocomplete/useAutocomplete'
 export { default as Badge } from './components/badge/Badge';
 export type { BadgeType } from './components/badge/Badge';
 export { default as BetaBadge } from './components/badge/BetaBadge';
-export { default as Banner, BannerBackgroundColor } from './components/banner/Banner';
+export {
+    default as DeprecatedBanner,
+    DeprecatedBannerBackgroundColor,
+} from './components/deprecatedBanner/DeprecatedBanner';
 export { default as Breadcrumb } from './components/breadcrumb/Breadcrumb';
 export { default as ButtonGroup } from './components/button/ButtonGroup';
 export { default as Copy } from './components/button/Copy';

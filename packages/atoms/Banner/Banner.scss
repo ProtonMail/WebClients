@@ -1,0 +1,114 @@
+.banner {
+	--banner-background-color: var(--background-norm);
+	--banner-accent-color: var(--text-norm);
+	--banner-text-color: var(--text-norm);
+	--banner-text-color-mix: color-mix(in srgb, var(--background-invert) 10%, var(--banner-text-color));
+	--banner-text-color-fallback: var(--banner-text-color-mix, --banner-text-color);
+	--link-norm: var(--banner-accent-color);
+
+	container-type: inline-size;
+	background-color: var(--banner-background-color);
+	color: var(--banner-text-color-fallback);
+
+	&--no-border {
+		border-color: color-mix(in srgb, var(--background-invert) 4%, var(--banner-background-color));
+	}
+
+	&-inner {
+		display: grid;
+		grid-template-columns: auto max-content max-content;
+		grid-template-rows: unset;
+	}
+
+	&-dismiss {
+		order: 3;
+
+		&:not(:empty) {
+			margin-inline-start: var(--space-0-5);
+		}
+	}
+
+	&-action {
+		order: 2;
+		grid-column: unset;
+		padding-inline-start: var(--space-1);
+
+		> * {
+			inline-size: auto;
+		}
+	}
+
+	@container (max-width: 25rem) {
+		&-inner {
+			display: grid;
+			grid-template-columns: 1fr max-content;
+			grid-template-rows: max-content max-content;
+		}
+
+		&-main {
+			order: 1;
+		}
+
+		&-dismiss {
+			order: 2;
+		}
+
+		&-action {
+			order: 3;
+			grid-column: 1 / span 2;
+			padding-inline-start: 0;
+
+			> * {
+				inline-size: 100%;
+			}
+		}
+	}
+
+	&-dismiss,
+	&-icon {
+		color: var(--banner-accent-color);
+	}
+
+	&--norm {
+		--banner-background-color: var(--background-weak);
+	}
+
+	&--info {
+		--banner-background-color: var(--signal-info-minor-2);
+		--banner-accent-color: var(--signal-info-major-2);
+		--banner-text-color: var(--signal-info-major-2);
+	}
+
+	&--info-outline {
+		--banner-accent-color: var(--signal-info);
+	}
+
+	&--success {
+		--banner-background-color: var(--signal-success-minor-2);
+		--banner-accent-color: var(--signal-success-major-2);
+		--banner-text-color: var(--signal-success-major-2);
+	}
+
+	&--success-outline {
+		--banner-accent-color: var(--signal-success);
+	}
+
+	&--warning {
+		--banner-background-color: var(--signal-warning-minor-1);
+		--banner-accent-color: var(--signal-warning-major-2);
+		--banner-text-color: var(--signal-warning-major-2);
+	}
+
+	&--warning-outline {
+		--banner-accent-color: var(--signal-warning);
+	}
+
+	&--danger {
+		--banner-background-color: var(--signal-danger-minor-1);
+		--banner-accent-color: var(--signal-danger);
+	}
+
+	&--danger-outline {
+		--banner-accent-color: var(--signal-danger);
+	}
+}
