@@ -1055,7 +1055,7 @@
         "첫 달"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "이 특별 할인가 (${ discountedPrice })는 ${ discountedMonths }개월에 한합니다. 그 이후로는 ${ nextMonths }개월 동안 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
+        "이 특별 할인가 (${ discountedPrice })는 ${ discountedMonths }에 한합니다. 그 이후로는 ${ nextMonths } 동안 ${ nextPrice }(으)로 갱신됩니다. 언제든지 취소 가능합니다."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
@@ -1129,6 +1129,9 @@
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
       ],
+      "One-time payment, lifetime deal": [
+        "일회성 결제, 평생 이용"
+      ],
       "Online document editor": [
         "온라인 문서 편집기"
       ],
@@ -1164,8 +1167,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus 평생 딜은 갱신 가격이 없으며, Pass Plus의 평생 이용권의 일회성 결제입니다."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "할인은 표준 월별 가격을 기본으로 합니다."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pass Family나 Unlimited를 구매하면 구독이 결제일에 표준 할인율로 자동 갱신됩니다."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "구독은 결제 주기가 끝날 때 표준 할인율을 적용한 요금으로 자동 갱신됩니다."
@@ -1176,9 +1185,20 @@
         "가장 인기"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "한정 수량!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "${ amount } 1회 청구"
+      ],
       "for ${ durationDeal }": [
         "${ durationDeal }간"
+      ],
+      "forever": [
+        "평생"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }(으)로 1개월 후 갱신됩니다."
@@ -1397,7 +1417,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } 사용자"
+        "${ users }명 사용자"
       ],
       "Total for ${ n } month": [
         "${ n }개월의 합계"
@@ -10396,7 +10416,7 @@
         "${ n }개 VPN 연결"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+        "${ numberOfCountries }개 국가 중 ${ numberOfServers }개"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
