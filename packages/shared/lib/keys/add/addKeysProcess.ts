@@ -16,6 +16,7 @@ import type {
     CachedOrganizationKey,
     DecryptedKey,
     KeyGenConfig,
+    KeyGenConfigV6,
     KeyTransparencyVerify,
     UserModel,
 } from '../../interfaces';
@@ -73,7 +74,7 @@ export const addAddressKeysProcess = async ({
 
 interface AddUserKeysProcessArguments {
     api: Api;
-    keyGenConfig?: KeyGenConfig;
+    keyGenConfig?: KeyGenConfig | KeyGenConfigV6;
     user: UserModel;
     userKeys: DecryptedKey[];
     addresses: Address[];
