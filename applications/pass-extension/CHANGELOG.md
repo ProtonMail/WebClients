@@ -1,3 +1,9 @@
+### Version 1.24.3
+
+-   Fix alias trash acknowledgment for aliases with related logins
+-   Fix line-break issues on price tags
+-   Sync missing translations
+
 ### Version 1.24.2
 
 -   Show confirmation warning when deleting/trashing aliases
