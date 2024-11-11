@@ -147,6 +147,8 @@ const ContactEditModal = ({
                         Name,
                     };
                     delete newModelContactEmails[oldEmail];
+                } else {
+                    existingModel.Name = Name;
                 }
                 return;
             }
@@ -174,7 +176,7 @@ const ContactEditModal = ({
         });
 
         setModelContactEmails(newModelContactEmails);
-    }, [loadingContactEmails, vCardContact.email]);
+    }, [loadingContactEmails, vCardContact.email, vCardContact.n]);
 
     // The condition defining if the form is valid is different if we are editing an existing contact or creating a new one
     // In all cases we want to make sure that all emails are correct
