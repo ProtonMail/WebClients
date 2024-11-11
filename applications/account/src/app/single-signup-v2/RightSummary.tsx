@@ -14,13 +14,12 @@ const RightSummary = ({ children, className, variant = 'border', style, ...rest 
     return (
         <div
             className={clsx(
-                'right-summary w-full md:max-w-custom',
+                'right-summary w-full md:w-4/10 lg:w-1/3',
                 className,
                 variant === 'gradient' && 'right-summary--gradient',
                 variant === 'gradientBorder' && 'right-summary--gradient-border',
                 variant === 'border' && 'right-summary--border'
             )}
-            style={{ '--md-max-w-custom': '20rem', ...style }}
             {...rest}
         >
             {children}
