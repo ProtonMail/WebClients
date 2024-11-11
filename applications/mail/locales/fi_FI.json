@@ -235,9 +235,6 @@
       "Close navigation": [
         "Sulje navigaatio"
       ],
-      "Close the checklist": [
-        "Sulje tarkistuslista"
-      ],
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
@@ -1713,6 +1710,9 @@
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
       ],
+      "One-time payment, lifetime deal": [
+        "Kertamaksu, elinikäinen tarjous"
+      ],
       "Online document editor": [
         "Verkkodokumenttieditori"
       ],
@@ -1729,7 +1729,7 @@
         "Suojattu tiedoston tallennus ja jako"
       ],
       "Secure vault and link sharing": [
-        "Holvien ja linkkien turvallinen jakaminen"
+        "Turvallinen holvi- ja linkkijako"
       ],
       "Unlimited folders, labels and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
@@ -1748,8 +1748,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME } Plus -tarjouksella ei ole uudistushintaa, koska se on elinikäinen Pass Plus -käyttöoikeus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Alennukset perustuvat normaaliin kuukausihintaan."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Jos tilaat Pass Familyn tai Unlimitedin, tilauksesi uudistuu automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tilauksesi uusitaan automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
@@ -1760,9 +1766,20 @@
         "Suosituin"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Rajoitettu varasto!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "${ amount } kertaveloitus"
+      ],
       "for ${ durationDeal }": [
         "hintaan ${ durationDeal }"
+      ],
+      "forever": [
+        "ikuisesti"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
@@ -3976,7 +3993,7 @@
         "${ error.message } osoitteelle <${ email }>. Voit ratkaista ongelman lisäämällä eri avaimen tai poistamalla salauksen käytöstä tältä yhteystiedolta."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
+        "${ errorMessage }. Lisäksi voit tarkastaa ${ statusPageLink }."
       ],
       "A group with this name already exists": [
         "Tämän niminen ryhmä on jo olemassa"
@@ -3994,7 +4011,7 @@
         "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
       ],
       "Alias is not valid": [
-        "Virheellinen alias"
+        "Alias ei kelpaa"
       ],
       "Alias is required": [
         "Alias vaaditaan"
@@ -4012,10 +4029,10 @@
         "Summa on vähimmäismäärää pienempi (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Virhe aliasvaihtoehtoja ladatessa"
+        "Virhe ladattaessa aliasvalintoja"
       ],
       "An error occurred while saving your alias": [
-        "Virhe aliasta tallentaessa"
+        "Virhe tallennettaessa aliastasi"
       ],
       "Attachments are limited to 25 MB": [
         "Liitteiden enimmäiskoko on 25 Mt"
@@ -4090,7 +4107,7 @@
         "Luonnosta ei voitu tallentaa. Yritä uudelleen."
       ],
       "Due to an error, text generation couldn't be canceled": [
-        "Tekstin luomista ei voitu peruuttaa virheen takia"
+        "Tekstin luontia ei voitu virheen vuoksi perua"
       ],
       "Email address disabled": [
         "Sähköpostiosoite ei ole käytössä"
@@ -4138,7 +4155,7 @@
         "Kansion nimi ei voi olla tyhjä."
       ],
       "Forward address is required": [
-        "Väitysosoite vaaditaan"
+        "Välitysosoite vaaditaan"
       ],
       "Image upload failed": [
         "Kuvan lataus epäonnistui"
@@ -4214,7 +4231,7 @@
         "Allekirjoitus puuttuu"
       ],
       "Name is required": [
-        "Nimi on pakollinen"
+        "Nimi vaaditaan"
       ],
       "Network error: Please check your connection and try again.": [
         "Verkkovirhe: tarkista yhteytesi ja yritä uudelleen."
@@ -4229,10 +4246,10 @@
         "Tuotavia yhteystietoja ei löytynyt"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Tuotavia sähköpostiviestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
+        "Tuotavia viestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Mikään käyttäjälle saaduista avaimista ei kelpaa lähettämiseen"
+        "Mikään käyttäjälle noudetuista ulkoisista avaimista ei kelpaa lähetykseen"
       ],
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
@@ -4267,14 +4284,14 @@
         "Maksutapahtumaa ei tueta"
       ],
       "Please activate your search again": [
-        "Aktivoi sisältöhakusi uudelleen"
+        "Aktivoi hakusi uudelleen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Jatka korjaamalla korostettu ristiriita.",
         "Jatka korjaamalla korostetut ristiriidat."
       ],
       "Please provide either a first name, a last name or a display name": [
-        "Syötä ainakin etunimi, sukunimi tai näyttönimi"
+        "Syötä joko etu-, suku- tai näyttönimi"
       ],
       "Please select a category and what went wrong with the generated text": [
         "Valitse kategoria ja mikä meni pieleen luodussa tekstissä"
@@ -4283,7 +4300,7 @@
         "Yritä uudelleen tai päivitä sivu."
       ],
       "Please try generating the text again": [
-        "Yritä luoda tekstiä uudelleen"
+        "Yritä luoda teksti uudelleen"
       ],
       "Port is required": [
         "Portti vaaditaan"
@@ -4301,16 +4318,16 @@
         "${ BRAND_NAME }-käyttäjälle noudettu ensisijainen avain ei kelpaa lähetykseen"
       ],
       "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
-        "Ongelma kirjoitusavustajaa ladattaessa. Jos käytät yksityistä tilaa, kokeile normaalia selaustilaa tai suorita kirjoitusavustaja palvelimilla."
+        "Ongelma ladattaessa kirjoitusavustajaa. Jos käytät yksityistä tilaa, kokeile normaalia selaustilaa tai suorita kirjoitusavustaja palvelimilla."
       ],
       "Problem downloading the writing assistant. Please try again.": [
-        "Ongelma kirjoitusavustajan lataamisessa. Yritä uudelleen."
+        "Ongelma ladattaessa kirjoitusavustajaa. Yritä uudelleen."
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
-        "Ongelma kirjoitusavustajan lataamisessa laitteellesi. Yritä uudelleen."
+        "Ongelma ladattaessa kirjoitusavustajaa laitteellesi. Yritä uudelleen."
       ],
       "Problem unloading data not needed when the writing assistant is inactive": [
-        "Virhe purkaessa tietoja, jotka ovat tarpeettomia kirjoitusavustajan ollessa pois käytöstä"
+        "Virhe tyhjennettäessä tietoja, jotka ovat tarpeettomia kun kirjoitusavustaja ei ole aktiivinen."
       ],
       "Process aborted": [
         "Tapahtuma keskeytettiin"
@@ -4371,7 +4388,7 @@
         "Valitettavasti ${ BRAND_NAME } ei voi purkaa viestin salausta. Tarkista, että kaikki avaimesi ovat aktiivisia."
       ],
       "status page": [
-        "tilasivu"
+        "tilasivumme"
       ],
       "Tab closed": [
         "Välilehti suljettiin"
@@ -4383,7 +4400,7 @@
         "Kiitos palautteesta!"
       ],
       "The amount due has changed. Please try again.": [
-        "Maksettava määrä on muuttunut. Yritä uudelleen."
+        "Erääntyvä summa on muuttunut. Yritä uudelleen."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Liitteen salausta ei voitu purkaa. Jos sinulla on vastaava yksityinen avain, voit silti purkaa tiedoston salauksen GnuPG:n kaltaisella sovelluksella.",
@@ -4420,7 +4437,7 @@
         "Lähetysavain ei kelpaa"
       ],
       "The system is busy at the moment. Please try again in a few minutes.": [
-        "Järjestelmä on tällä hetkellä kiireinen. Yritä uudelleen muutaman minuutin kuluttua."
+        "Järjestelmä on tällä hetkellä varattu. Yritä uudelleen muutaman minuutin kuluttua."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "Kirjoitusavustaja ei voi käsitellä pyyntöäsi. Kokeile toista kehotetta."
@@ -4456,7 +4473,7 @@
         "Viesti on jo lähetetty. Tallennettiin uusi luonnos."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Viesti saattaa sisältää joitakin URL-linkkejä, joita nykyinen selaimesi ei voi avata oikein."
+        "Viesti saattaa sisältää joitakin URL-linkkejä, joita käyttämäsi selain ei voi avata oikein."
       ],
       "Trusted keys are not valid for sending": [
         "Luotetut avaimet eivät kelpaa lähetykseen"
@@ -5260,17 +5277,8 @@
       "Close": [
         "Sulje"
       ],
-      "Closing this means giving up the free storage bonus.": [
-        "Menetät ilmaisen tallennustilakorotuksesi jos suljet tämän."
-      ],
       "Congratulations, you completed all the steps!": [
         "Onnittelut, olet suorittanut kaikki vaiheet!"
-      ],
-      "Congratulations, you finished!": [
-        "Onnittelut, olet valmis!"
-      ],
-      "Continue setting up your email": [
-        "Jatka sähköpostisi määrittämistä"
       ],
       "Discover how our ${ strongText } protect you": [
         "Tutustu, kuinka ${ strongText } suojaa sinua"
@@ -6526,7 +6534,7 @@
         "Tuo postilaatikko"
       ],
       "Important note": [
-        "Tärkeä muistiinpano"
+        "Tärkeä huomautus"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
@@ -6848,7 +6856,7 @@
         "Kerro, mitä odotit"
       ],
       "Please try again in a few moments": [
-        "Yritä uudelleen hetken kuluttua"
+        "Yritä hetken kuluttua uudelleen"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
@@ -7296,7 +7304,7 @@
         "Seurantoja estetty:"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
+        "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Poista käytöstä etsiäksesi vain päiväyksen, nimen, sähköpostiosoitteen tai aiheen perusteella. Poistaaksesi viestien sisältöhaun käytöstä (ja poistaaksesi sitä varten ladatut viestit), mene asetuksiin."
@@ -7551,8 +7559,8 @@
         "Kansio sisältää **${ count } keskustelua**"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Sinulla on **${ count } keskustelu** tällä tunnisteella",
-        "Sinulla on **${ count } keskustelua** tällä tunnisteella"
+        "Olet merkinnyt **${ count } keskustelun** tällä tunnisteella",
+        "Olet merkinnyt **${ count } keskustelua** tällä tunnisteella"
       ],
       "You have **${ count } message** stored in this folder": [
         "Kansio sisältää **${ count } viestin**",
@@ -9650,7 +9658,7 @@
     "new_plans: feature highlight": {
       "${ admins } admin": [
         "${ admins } ylläpitäjä",
-        "${ admins }ylläpitäjää"
+        "${ admins } ylläpitäjää"
       ],
       "${ users } user": [
         "${ users } käyttäjä",
@@ -10520,7 +10528,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Vahvistamalla tämän maksun valtuutat ${ BRAND_NAME }in ja maksupalveluntarjoajamme Stripen ohjeistamaan pankkiasi veloittamaan tiliäsi asianmukaisesti. Voit pyytää hyvitystä 8 viikon kuluessa veloituspäivästä, pankkisi kanssa tekemäsi sopimuksen ehtojen mukaisesti."
+        "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
       ],
       "Street address, postal code, and city": [
         "Katuosoite, postinumero ja kaupunki"
@@ -11340,8 +11348,8 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } ILMAINEN kuukausi",
-        "${ n } ILMAISTA kuukautta"
+        "${ n } kuukausi ILMAISEKSI",
+        "${ n } kuukautta ILMAISEKSI"
       ]
     },
     "specialoffer: Deal details": {

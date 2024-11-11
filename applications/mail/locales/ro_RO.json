@@ -236,9 +236,6 @@
       "Close navigation": [
         "Închidere navigare"
       ],
-      "Close the checklist": [
-        "Închidere listă de sarcini"
-      ],
       "Close this banner": [
         "Închidere norificare"
       ],
@@ -1723,6 +1720,9 @@
       "Integrated 2FA authenticator": [
         "Autentificator A2F integrat"
       ],
+      "One-time payment, lifetime deal": [
+        "O singură plată, ofertă pe viață"
+      ],
       "Online document editor": [
         "Editor online de documente"
       ],
@@ -1758,8 +1758,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Oferta pe viață ${ PASS_SHORT_APP_NAME } Plus nu are preț de reînnoire, este o plată unică pentru acces pe viață la Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Reducerile sunt bazate pe prețul standard lunar."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Dacă achiziționați Pass Family sau Unlimited, abonamentul se va reînnoi automat la sfârșitul ciclului de facturare cu tariful redus și durata standard."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "* Abonamentul se va reînnoi automat la aceeași sumă redusă și durată la sfârșitul ciclului de facturare."
@@ -1770,9 +1776,20 @@
         "Cel mai popular"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Stoc limitat!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Facturat cu ${ amount } o singură dată"
+      ],
       "for ${ durationDeal }": [
         "pentru ${ durationDeal }"
+      ],
+      "forever": [
+        "pentru totdeauna"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se reînnoiește lunar cu ${ regularAmount }."
@@ -5303,17 +5320,8 @@
       "Close": [
         "Închidere"
       ],
-      "Closing this means giving up the free storage bonus.": [
-        "Dacă închideți renunțați la bonusul de stocare gratuită."
-      ],
       "Congratulations, you completed all the steps!": [
         "Felicitări, ați completat toți pașii!"
-      ],
-      "Congratulations, you finished!": [
-        "Felicitări, ați terminat!"
-      ],
-      "Continue setting up your email": [
-        "Continuați setarea contului"
       ],
       "Discover how our ${ strongText } protect you": [
         "Descoperiți cum ${ strongText } vă protejează"

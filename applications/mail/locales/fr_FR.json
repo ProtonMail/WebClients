@@ -235,9 +235,6 @@
       "Close navigation": [
         "Fermer la navigation"
       ],
-      "Close the checklist": [
-        "Fermer la checklist"
-      ],
       "Close this banner": [
         "Fermer cette bannière"
       ],
@@ -960,6 +957,9 @@
       ],
       "Remove this label": [
         "Retirer ce label"
+      ],
+      "Remove zoom meeting": [
+        "Retirer la réunion Zoom"
       ],
       "Replace": [
         "Remplacer"
@@ -1716,6 +1716,9 @@
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
       ],
+      "One-time payment, lifetime deal": [
+        "Paiement unique, offre à vie"
+      ],
       "Online document editor": [
         "Éditeur de documents en ligne"
       ],
@@ -1763,9 +1766,20 @@
         "Le plus populaire"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Quantité limitée !"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Facturé ${ amount } en une fois"
+      ],
       "for ${ durationDeal }": [
         "pour ${ durationDeal }"
+      ],
+      "forever": [
+        "pour toujours"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renouvellement après 1 mois à ${ regularAmount }"
@@ -2260,6 +2274,9 @@
       "${ users } user": [
         "${ users } utilisateur",
         "${ users } utilisateurs"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total pour ${ n } mois",
@@ -5236,6 +5253,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } sur Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } jour",
+        "${ remainingDaysCount } jours"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } jour restant",
+        "${ remainingDaysCount } jours restants"
+      ],
       "account logins": [
         "identifiants du compte"
       ],
@@ -5266,17 +5291,11 @@
       "Close": [
         "Fermer"
       ],
-      "Closing this means giving up the free storage bonus.": [
-        "En fermant, vous renoncez au bonus d'espace de stockage gratuit."
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Terminez cette liste dans ${ daysCount } pour doubler gratuitement votre espace de stockage."
       ],
       "Congratulations, you completed all the steps!": [
         "Félicitations ! Vous avez terminé toutes les étapes."
-      ],
-      "Congratulations, you finished!": [
-        "Félicitations ! Vous avez terminé."
-      ],
-      "Continue setting up your email": [
-        "Continuez la configuration de votre messagerie"
       ],
       "Discover how our ${ strongText } protect you": [
         "Découvrez comment nos ${ strongText } vous protègent."
@@ -5290,8 +5309,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Un chiffrement si puissant que personne d'autre que vous et vos destinataires ne peut consulter vos messages."
       ],
+      "Finish setup": [
+        "Terminer la configuration"
+      ],
       "For your eyes only": [
         "Strictement confidentiel"
+      ],
+      "Get more storage": [
+        "Obtenez plus d'espace de stockage."
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obtenir l'application mobile ${ MAIL_APP_NAME }"
@@ -9280,6 +9305,9 @@
         "Historique des versions de fichiers datant d'${ options } jour",
         "Historique des versions de fichiers datant de ${ options } jours"
       ],
+      "${ PASS_APP_NAME } lifetime": [
+        "${ PASS_APP_NAME } à vie"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »"
@@ -9888,6 +9916,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Vous pouvez ajouter des labels à vos messages pour les retrouver plus facilement ou pour y appliquer des filtres."
       ],
+      "Lifetime access to ${ PASS_APP_NAME } premium features.": [
+        "Accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME }"
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments."
       ],
@@ -10093,6 +10124,9 @@
       ],
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
+      ],
+      "Meeting host copied to clipboard": [
+        "L'hôte de la réunion a été copié dans le presse-papiers."
       ],
       "Meeting ID copied to clipboard": [
         "L'ID de la réunion a été copié dans le presse-papiers."
@@ -11767,6 +11801,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Vous passerez à un abonnement inférieur à la fin du cycle de facturation."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "À vie"
       ]
     },
     "Subscription price": {
@@ -13948,6 +13987,9 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Rejoindre la réunion Zoom"
+      ],
       "Meeting ID:": [
         "Identifiant de la réunion :"
       ],
