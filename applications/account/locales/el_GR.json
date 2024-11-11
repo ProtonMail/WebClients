@@ -808,11 +808,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
       ],
       "Reject": [
         "Απόρριψη"
@@ -1032,6 +1032,9 @@
       ],
       "Show": [
         "Εμφάνιση"
+      ],
+      "Show all": [
+        "Εμφάνιση όλων"
       ],
       "Show less": [
         "Εμφάνιση λιγότερων"
@@ -1602,14 +1605,6 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πρόγραμμα)"
@@ -1631,6 +1626,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -1771,6 +1774,11 @@
     "BF2024: Info": {
       "Most popular": [
         "Δημοφιλέστερα"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Περιορισμένος στοκ!"
       ]
     },
     "BF2024: Offers": {
@@ -6889,6 +6897,9 @@
         "Όλες (${ totalFoldersCount } ετικέτα)",
         "Όλες (${ totalFoldersCount } ετικέτες)"
       ],
+      "All inactive members deleted": [
+        "Όλα τα ανενεργά μέλη διαγράφηκαν"
+      ],
       "All keys successfully reactivated": [
         "Όλα τα κλειδιά ενεργοποιήθηκαν εκ νέου επιτυχώς"
       ],
@@ -7220,11 +7231,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -8150,6 +8161,9 @@
       "Plus or Visionary subscription required": [
         "Απαιτείται συνδρομή Plus ή Visionary"
       ],
+      "Preference saved": [
+        "Η προτίμηση αποθηκεύτηκε"
+      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -8610,6 +8624,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο ${ BRAND_NAME }. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Αυτό θα διαγράψει μόνιμα τα δεδομένα και όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου που σχετίζονται με αυτούς τους χρήστες."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Αυτό θα διαγράψει μόνιμα τα δεδομένα και όλες τις διευθύνσεις ηλεκτρονικού ταχυδρομείου που σχετίζονται με αυτόν τον χρήστη."
       ],
@@ -8829,11 +8846,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "username": [
-        "όνομα χρήστη"
-      ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "username": [
+        "όνομα χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -10620,6 +10637,10 @@
       "Send in": [
         "Αποστολή στα"
       ],
+      "Show ${ n } administrator": [
+        "Εμφάνιση ${ n } διαχειριστή",
+        "Εμφάνιση ${ n } διαχειριστών"
+      ],
       "Show others when I'm busy": [
         "Εμφάνιση σε άλλους όταν είμαι απασχολημένος"
       ],
@@ -10760,6 +10781,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Επαλήθευση κλειδιών με το Key Transparency"
+      ],
+      "Video conferencing with Zoom": [
+        "Τηλεδιάσκεψη με Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Λυπούμαστε που φεύγετε. Παρακαλούμε εξηγήστε τον λόγο, για να μας βοηθήσετε να βελτιωθούμε."
@@ -11636,32 +11660,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Ξεκινήστε με ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Ξεκινώντας από ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
@@ -11689,6 +11687,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Ξεκινήστε με ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ξεκινώντας από ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12370,20 +12394,6 @@
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Αποκτήστε το Mail Plus για ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ξεκινώντας από ${ price }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -12402,6 +12412,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium χαρακτηριστικά με αναβάθμιση"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ξεκινώντας από ${ price }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -12683,6 +12707,83 @@
       ],
       "Support for ${ n } custom email domains": [
         "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } και ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } και ${ additionalApp } ενημερώσεις προϊόντων"
+      ],
+      "${ app } product updates": [
+        "${ app } ενημερώσεις προϊόντων"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Ενημερωτικό δελτίο ${ BRAND_NAME } για επιχειρήσεις"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Σημαντικές ανακοινώσεις του ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Ενημερωτικό δελτίο ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Προσφορές και προωθήσεις της ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Ανακοινώσεις προϊόντων ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } έρευνα χρηστών"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Μηνύματα καλωσορίσματος ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 μήνυμα ανά μήνα"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 μήνυμα ανά μήνα. Λάβετε τα τελευταία νέα απορρήτου και τι συμβαίνει στον κόσμο του ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 μήνυμα ανά τρίμηνο"
+      ],
+      "1-2 emails per month": [
+        "1-2 μηνύματα ανά μήνα"
+      ],
+      "2-4 emails per year": [
+        "2-4 μηνύματα ανά έτος"
+      ],
+      "4-6 emails per year": [
+        "4-6 μηνύματα ανά έτος"
+      ],
+      "Application notifications": [
+        "Ειδοποιήσεις εφαρμογής"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Οι κρίσιμες ειδοποιήσεις λογαριασμού θα εξακολουθούν να παραδίδονται"
+      ],
+      "Daily email notifications": [
+        "Καθημερινές ειδοποιήσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Η απενεργοποίηση αυτού θα καταργήσει τη δυνατότητα λήψης ειδοποιήσεων σε ${ BRAND_NAME } εφαρμογές"
+      ],
+      "During your first month": [
+        "Κατά τη διάρκεια του πρώτου μήνα σας"
+      ],
+      "Email subscriptions": [
+        "Συνδρομές Email"
+      ],
+      "In-app notifications": [
+        "Ειδοποιήσεις εντός εφαρμογής"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Συμμετοχή σε έρευνες για τη βελτίωση των υπηρεσιών ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Ενημερώσεις προϊόντων"
       ]
     },
     "Notification": {
@@ -15406,6 +15507,14 @@
         "${ n } μέλος ζήτησε τη βοήθειά σας για να συνδεθεί.",
         "${ n } μέλη ζήτησαν τη βοήθειά σας για να συνδεθούν."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } χρήστης έχει ενταχθεί στον οργανισμό σας μέσω της Υπηρεσίας Παροχής Ταυτότητάς σας. Ελέγξτε τον λογαριασμό του τώρα:",
+        "${ n } χρήστες έχουν ενταχθεί στον οργανισμό σας μέσω της Υπηρεσίας Παροχής Ταυτότητάς σας. Ελέγξτε τους λογαριασμούς τους τώρα:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } χρήστης είναι ανενεργός. Μπορείτε να καταργήσετε με ασφάλεια αυτόν τον χρήστη από τον οργανισμό σας.",
+        "${ n } χρήστες είναι ανενεργοί. Μπορείτε να καταργήσετε με ασφάλεια αυτούς τους χρήστες από τον οργανισμό σας."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } χρήστης ζητά τη βοήθειά σας για να συνδεθεί στον λογαριασμό του ${ BRAND_NAME } με καθολική σύνδεση.",
         "${ n } χρήστες ζητούν τη βοήθειά σας για να συνδεθούν στον λογαριασμό τους ${ BRAND_NAME } με καθολική σύνδεση."
@@ -15460,6 +15569,14 @@
       ],
       "Current device": [
         "Τρέχουσα συσκευή"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Διαγραφή ${ n } ανενεργού χρήστη;",
+        "Διαγραφή ${ n } ανενεργών χρηστών;"
+      ],
+      "Delete ${ n } user": [
+        "Διαγραφή ${ n } χρήστη",
+        "Διαγραφή ${ n } χρηστών"
       ],
       "Deny": [
         "Άρνηση"
@@ -16923,10 +17040,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -17491,6 +17608,9 @@
       "No recovery method": [
         "Χωρίς μέθοδο ανάκτησης"
       ],
+      "Notifications": [
+        "Ειδοποιήσεις"
+      ],
       "Open": [
         "Άνοιγμα"
       ],
@@ -17875,6 +17995,9 @@
       ],
       "Version history": [
         "Ιστορικό εκδόσεων"
+      ],
+      "Video conferencing": [
+        "Τηλεδιάσκεψη"
       ],
       "VPN apps": [
         "Εφαρμογές VPN"
@@ -18300,6 +18423,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Εκκρεμής πρόσβαση διαχειριστή:** Στείλαμε ένα αίτημα σε αυτόν τον χρήστη για να επιτρέψουμε σε οποιονδήποτε διαχειριστή να διαχειριστεί τον λογαριασμό του."
+      ],
       "Administrator access enabled": [
         "Η πρόσβαση διαχειριστή ενεργοποιήθηκε"
       ],
@@ -18324,6 +18450,12 @@
       "Cancel": [
         "Ακύρωση"
       ],
+      "Cancel request": [
+        "Ακύρωση αιτήματος"
+      ],
+      "Cancel request to access user data?": [
+        "Ακύρωση αιτήματος πρόσβασης στα δεδομένα χρήστη;"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τον ${ n } χρήστη, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:",
         "Δεν ήταν δυνατή η αυτόματη ενεργοποίηση της πρόσβασης διαχειριστή για τους ${ n } χρήστες, επειδή τα κλειδιά κρυπτογράφησης έχουν ενημερωθεί στο μεταξύ:"
@@ -18342,6 +18474,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Εάν χάσετε ποτέ την πρόσβαση στα διαπιστευτήριά σας, οι διαχειριστές του οργανισμού σας θα μπορούν να επαναφέρουν τον κωδικό πρόσβασής σας και να επαναφέρουν την πρόσβαση στον λογαριασμό σας."
+      ],
+      "Keep request": [
+        "Διατήρηση αιτήματος"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Μόλις ο χρήστης συναινέσει, θα μπορείτε να τον βοηθήσετε να ανακτήσει την πρόσβαση στον λογαριασμό του ή να διαχειριστεί τα δεδομένα του."
@@ -18372,6 +18507,9 @@
       ],
       "The user must have an address to request data access": [
         "Ο χρήστης πρέπει να έχει μια διεύθυνση για να ζητήσει πρόσβαση στα δεδομένα"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Αυτό θα ακυρώσει το εκκρεμές αίτημα για πρόσβαση διαχειριστή στα δεδομένα του χρήστη ή επαναφορά κωδικού πρόσβασης."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Αυτό θα ανακαλέσει την άδεια διαχειριστή για τη διαχείριση του λογαριασμού αυτού του χρήστη."
@@ -18505,6 +18643,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Οι διαχειριστές δεν έχουν πρόσβαση στα δεδομένα ιδιωτικών χρηστών"
+      ],
+      "Inactive": [
+        "Ανενεργό"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Η πρόσκληση στάλθηκε, εν αναμονή απάντησης από το προσκεκλημένο μέλος"

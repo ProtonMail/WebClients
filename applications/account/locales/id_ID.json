@@ -808,11 +808,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "Refresh the page": [
-        "Muat ulang halaman"
-      ],
       "refresh the page": [
         "muat ulang halaman"
+      ],
+      "Refresh the page": [
+        "Muat ulang halaman"
       ],
       "Reject": [
         "Tolak"
@@ -1032,6 +1032,9 @@
       ],
       "Show": [
         "Tampilkan"
+      ],
+      "Show all": [
+        "Tampilkan semua"
       ],
       "Show less": [
         "Tampilkan lebih sedikit"
@@ -1598,14 +1601,6 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh **diskon ${ discountPercentage } untuk ${ plan.Title }** pada saat Anda berlangganan selama **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1627,6 +1622,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh **diskon ${ discountPercentage } untuk ${ plan.Title }** pada saat Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1721,6 +1724,9 @@
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
       ],
+      "One-time payment, lifetime deal": [
+        "Satu kali pembayaran, untuk selamanya"
+      ],
       "Online document editor": [
         "Penyunting dokumen daring"
       ],
@@ -1756,8 +1762,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Penawaran ${ PASS_SHORT_APP_NAME } Plus seumur hidup tidak memiliki biaya pembaruan. Cukup satu kali pembayaran untuk akses selama-lamanya ke Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Diskon berdasar pada harga bulanan standar."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Apabila Anda membeli Pass Family atau Unlimited, langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir siklus tagihan Anda."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir masa tagihan Anda."
@@ -1768,9 +1780,20 @@
         "Terpopuler"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Persediaan terbatas!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Tertagih dengan harga ${ amount } untuk satu kali pembayaran"
+      ],
       "for ${ durationDeal }": [
         "untuk ${ durationDeal }"
+      ],
+      "forever": [
+        "selamanya"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Diperbarui setelah 1 bulan dengan ${ regularAmount }."
@@ -6822,6 +6845,9 @@
       "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
       ],
+      "All inactive members deleted": [
+        "Seluruh pengguna yang tidak aktif dihapus"
+      ],
       "All keys successfully reactivated": [
         "Seluruh kunci berhasil diaktifkan ulang"
       ],
@@ -7149,11 +7175,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -8070,6 +8096,9 @@
       "Plus or Visionary subscription required": [
         "Dibutuhkan langganan Plus atau Visionary"
       ],
+      "Preference saved": [
+        "Preferensi disimpan"
+      ],
       "Preview": [
         "Pratinjau"
       ],
@@ -8526,6 +8555,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tindakan ini akan memungkinkan Anda untuk membayar langganan ${ BRAND_NAME } Anda melalui PayPal. Kami akan membuka PayPal di tab baru. Apabila Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Tindakan ini akan menghapus seluruh data dan alamat email yang terhubung dengan pengguna ini secara permanen."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Tindakan ini akan menghapus seluruh data dan alamat email yang terhubung dengan pengguna ini secara permanen."
       ],
@@ -8745,11 +8777,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "username": [
-        "nama pengguna"
-      ],
       "Username": [
         "Nama pengguna"
+      ],
+      "username": [
+        "nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -10520,6 +10552,9 @@
       "Send in": [
         "Kirim dalam Bahasa"
       ],
+      "Show ${ n } administrator": [
+        "Tampilkan ${ n } administrator"
+      ],
       "Show others when I'm busy": [
         "Tampilkan ketika saya sedang sibuk"
       ],
@@ -10660,6 +10695,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Verifikasi kunci dengan Key Transparency"
+      ],
+      "Video conferencing with Zoom": [
+        "Pertemuan video dengan Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Kami menyayangkan kepergian Anda dari layanan kami. Mohon jelaskan alasan kepergian Anda untuk membantu kami berkembang."
@@ -11522,32 +11560,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -11575,6 +11587,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12231,20 +12269,6 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -12263,6 +12287,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -12542,6 +12580,83 @@
       ],
       "Support for ${ n } custom email domains": [
         "Dukungan untuk ${ n } domain email khusus"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } dan ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "Pembaruan produk ${ app } dan ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Pembaruan produk ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Buletin ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Pengumuman penting ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Buletin ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Penawaran dan promosi ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Pengumuman produk ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Survei pengguna ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Email selamat datang ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 email per bulan"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 email per bulan. Dapatkan kabar privasi terkini dan informasi seputar apa-apa saja yang terjadi pada semesta ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 email per kuartal"
+      ],
+      "1-2 emails per month": [
+        "1-2 email per bulan"
+      ],
+      "2-4 emails per year": [
+        "2-4 email per tahun"
+      ],
+      "4-6 emails per year": [
+        "4-6 email per tahun"
+      ],
+      "Application notifications": [
+        "Notifikasi aplikasi"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Notifikasi akun yang bersifat kritis akan tetap dikirimkan"
+      ],
+      "Daily email notifications": [
+        "Notifikasi email harian"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Menonaktifkan hal ini akan menghilangkan kemampuan untuk menerima notifikasi pada aplikasi ${ BRAND_NAME }"
+      ],
+      "During your first month": [
+        "Pada bulan pertama Anda"
+      ],
+      "Email subscriptions": [
+        "Langganan email"
+      ],
+      "In-app notifications": [
+        "Notifikasi dalam aplikasi"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Ikut serta dalam survei untuk meningkatkan layanan ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Pembaruan produk"
       ]
     },
     "Notification": {
@@ -15230,6 +15345,12 @@
       "${ n } member requested your help to sign in.": [
         "${ n } anggota meminta bantuan Anda untuk masuk."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } pengguna telah bergabung ke organisasi Anda melalui Penyedia Identitas Anda. Tinjau akun mereka sekarang juga:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } pengguna tidak aktif. Anda dapat menghapus rangkaian pengguna ini dari organisasi Anda secara aman."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } pengguna meminta bantuan Anda untuk masuk ke Akun ${ BRAND_NAME } mereka dengan single sign-on."
       ],
@@ -15283,6 +15404,12 @@
       ],
       "Current device": [
         "Perangkat saat ini"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Hapus ${ n } pengguna yang tidak aktif?"
+      ],
+      "Delete ${ n } user": [
+        "Hapus ${ n } pengguna"
       ],
       "Deny": [
         "Tolak"
@@ -16721,11 +16848,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -17285,6 +17412,9 @@
       "No recovery method": [
         "Tidak ada metode pemulihan"
       ],
+      "Notifications": [
+        "Notifikasi"
+      ],
       "Open": [
         "Terbuka"
       ],
@@ -17668,6 +17798,9 @@
       ],
       "Version history": [
         "Riwayat versi"
+      ],
+      "Video conferencing": [
+        "Konferensi video"
       ],
       "VPN apps": [
         "Aplikasi VPN"
@@ -18093,6 +18226,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Menunggu akses admin:** Kami telah mengirimkan permintaan kepada pengguna ini untuk mengizinkan para administrator untuk mengelola akun mereka."
+      ],
       "Administrator access enabled": [
         "Akses administrator diterima"
       ],
@@ -18117,6 +18253,12 @@
       "Cancel": [
         "Batalkan"
       ],
+      "Cancel request": [
+        "Batalkan permintaan"
+      ],
+      "Cancel request to access user data?": [
+        "Batalkan permintaan untuk mengakses data pengguna?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Akses administrator untuk ${ n } pengguna tidak dapat diaktifkan secara otomatis karena kunci enkripsi para pengguna berikut telah diperbarui:"
       ],
@@ -18134,6 +18276,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Apabila Anda kehilangan akses ke kredensial Anda, para administrator organisasi Anda akan dapat mengatur ulang kata sandi dan memulihkan akses ke akun Anda."
+      ],
+      "Keep request": [
+        "Pertahankan permintaan"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Setelah pengguna menyetujui, Anda akan dapat membantunya mendapatkan kembali akses akun atau mengelola datanya."
@@ -18164,6 +18309,9 @@
       ],
       "The user must have an address to request data access": [
         "Pengguna harus memiliki alamat untuk meminta pengaksesan data"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Tindakan ini akan membatalkan permintaan akses administrator bagi data pengguna ini atau pengaturan ulang kata sandi yang masih tertunda."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tindakan ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."
@@ -18296,6 +18444,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administrator tidak dapat mengakses data pengguna privat"
+      ],
+      "Inactive": [
+        "Tidak aktif"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Undangan terkirim, menunggu balasan dari anggota yang diundang"
