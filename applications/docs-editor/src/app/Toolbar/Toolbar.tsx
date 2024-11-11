@@ -1444,7 +1444,7 @@ export default function DocumentEditorToolbar({
                 </>
               }
               contentProps={DropdownContentProps}
-              data-testid="edit-options-dropdown"
+              data-testid="user-mode-dropdown"
               data-interaction-mode={userMode}
             >
               <DropdownMenu>
