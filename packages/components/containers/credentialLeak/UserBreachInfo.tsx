@@ -36,14 +36,13 @@ const UserBreachInfo = ({ inModal = false, exposedData }: UserBreachInfoProps) =
             )}
             <div className="mb-4">
                 {personalExposedData.map(({ name, values }) => {
+                    const valuesStr = values ? values.join(', ') : '';
                     return (
                         <div className="flex flex-nowrap flex-column sm:flex-row w-full text-sm mb-2">
                             <span className="sm:w-1/3 color-weak">{name}</span>
-                            {values && (
-                                <span className="sm:flex-1 pl-2 sm:pl-O text-ellipsis" title={values[0]}>
-                                    {values[0]}
-                                </span>
-                            )}
+                            <span className="sm:flex-1 pl-2 sm:pl-O text-ellipsis" title={valuesStr}>
+                                {valuesStr}
+                            </span>
                         </div>
                     );
                 })}
