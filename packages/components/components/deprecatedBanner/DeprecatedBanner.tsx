@@ -3,7 +3,7 @@ import React from 'react';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
-export enum BannerBackgroundColor {
+export enum DeprecatedBannerBackgroundColor {
     NORM = 'norm',
     WEAK = 'weak',
     STRONG = 'strong',
@@ -18,15 +18,24 @@ enum IconColor {
     DANGER = 'danger',
 }
 
-interface BannerProps {
-    backgroundColor?: BannerBackgroundColor;
+interface DeprecatedBannerProps {
+    backgroundColor?: DeprecatedBannerBackgroundColor;
     iconColor?: IconColor;
     icon?: IconName;
     action?: React.ReactNode;
     children: React.ReactNode;
 }
 
-const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor, action, children }: BannerProps) => {
+/**
+ * @deprecated please use Banner from @proton/atoms
+ */
+const DeprecatedBanner = ({
+    backgroundColor = DeprecatedBannerBackgroundColor.NORM,
+    icon,
+    iconColor,
+    action,
+    children,
+}: DeprecatedBannerProps) => {
     const getIcon = () => {
         if (!icon) {
             return null;
@@ -36,10 +45,10 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
     };
 
     const borderColor =
-        backgroundColor === BannerBackgroundColor.INFO ||
-        backgroundColor === BannerBackgroundColor.WARNING ||
-        backgroundColor === BannerBackgroundColor.DANGER ||
-        backgroundColor === BannerBackgroundColor.SUCCESS
+        backgroundColor === DeprecatedBannerBackgroundColor.INFO ||
+        backgroundColor === DeprecatedBannerBackgroundColor.WARNING ||
+        backgroundColor === DeprecatedBannerBackgroundColor.DANGER ||
+        backgroundColor === DeprecatedBannerBackgroundColor.SUCCESS
             ? `border-${backgroundColor}`
             : null;
 
@@ -54,4 +63,4 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
     );
 };
 
-export default Banner;
+export default DeprecatedBanner;

@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
 import {
-    Banner,
-    BannerBackgroundColor,
     CalendarInviteButtons,
+    DeprecatedBanner,
+    DeprecatedBannerBackgroundColor,
     Loader,
     useDrawer,
     useNotifications,
@@ -263,8 +263,8 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
         }
 
         return (
-            <Banner
-                backgroundColor={BannerBackgroundColor.DANGER}
+            <DeprecatedBanner
+                backgroundColor={DeprecatedBannerBackgroundColor.DANGER}
                 icon="exclamation-circle"
                 action={
                     <span className="shrink-0 flex">
@@ -275,7 +275,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
                 }
             >
                 {message}
-            </Banner>
+            </DeprecatedBanner>
         );
     }
 

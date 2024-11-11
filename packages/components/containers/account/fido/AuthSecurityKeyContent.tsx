@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import DeprecatedBanner, {
+    DeprecatedBannerBackgroundColor,
+} from '@proton/components/components/deprecatedBanner/DeprecatedBanner';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
@@ -19,10 +21,10 @@ const AuthSecurityKeyContent = ({ error }: { error?: boolean }) => {
             </div>
             {error && (
                 <div className="mt-4">
-                    <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.WEAK}>
+                    <DeprecatedBanner icon="exclamation-circle" backgroundColor={DeprecatedBannerBackgroundColor.WEAK}>
                         {c('fido2: Error')
                             .t`Something went wrong authenticating with your security key. Please try again.`}
-                    </Banner>
+                    </DeprecatedBanner>
                 </div>
             )}
         </>

@@ -21,6 +21,9 @@ interface AlertProps {
     style?: React.CSSProperties;
 }
 
+/**
+ * @deprecated please use Banner from @proton/atoms
+ */
 const Alert = ({ type = 'info', children, className, 'data-testid': dataTestId, ...rest }: AlertProps) => {
     return (
         <div className={clsx(classesMap[type], className)} data-testid={dataTestId} {...rest}>
