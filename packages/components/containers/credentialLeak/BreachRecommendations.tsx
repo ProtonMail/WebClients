@@ -52,6 +52,9 @@ const getIcon = (code: string) => {
     if (code === 'passwords_all') {
         return 'key';
     }
+    if (code === 'clean_devices') {
+        return 'pass-laptop';
+    }
 };
 
 interface ActionProps {
