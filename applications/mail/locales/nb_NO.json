@@ -235,9 +235,6 @@
       "Close navigation": [
         "Lukk navigasjonsmeny"
       ],
-      "Close the checklist": [
-        "Lukk sjekklisten"
-      ],
       "Close this banner": [
         "Lukk dette banneret"
       ],
@@ -1713,6 +1710,9 @@
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
       ],
+      "One-time payment, lifetime deal": [
+        "Engangsbetaling, livstidsavtale"
+      ],
       "Online document editor": [
         "Dokumentredigering på nett"
       ],
@@ -1748,8 +1748,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Livsvarig tilbud for ${ PASS_SHORT_APP_NAME } Plus har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabatter er basert på standard månedspris."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Hvis du kjøper Pass Family eller Unlimited, blir abonnementet ditt fornyet automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Abonnementet ditt fornyes automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
@@ -1760,9 +1766,20 @@
         "Mest populær"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Begrenset lager!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Faktureres til ${ amount } én gang"
+      ],
       "for ${ durationDeal }": [
         "for ${ durationDeal }"
+      ],
+      "forever": [
+        "for alltid"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
@@ -5263,17 +5280,8 @@
       "Close": [
         "Lukk"
       ],
-      "Closing this means giving up the free storage bonus.": [
-        "Å lukke dette betyr å si fra deg den gratis lagringsbonusen."
-      ],
       "Congratulations, you completed all the steps!": [
         "Gratulerer, du fullførte alle trinnene!"
-      ],
-      "Congratulations, you finished!": [
-        "Gratulerer, du er ferdig!"
-      ],
-      "Continue setting up your email": [
-        "Fortsett å konfigurere e-posten"
       ],
       "Discover how our ${ strongText } protect you": [
         "Oppdag hvordan våre ${ strongText } beskytter deg"
