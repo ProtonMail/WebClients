@@ -235,9 +235,6 @@
       "Close navigation": [
         "Gezinmeyi kapat"
       ],
-      "Close the checklist": [
-        "Kontrol listesini kapat"
-      ],
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
@@ -1713,6 +1710,9 @@
       "Integrated 2FA authenticator": [
         "Bütünleşik 2 adımlı kimlik doğrulayıcı"
       ],
+      "One-time payment, lifetime deal": [
+        "Bir kez ödemeli ömür boyu kullanım fırsatı"
+      ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
@@ -1748,8 +1748,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus ömür boyu fırsatının yenileme ücreti yoktur. Pass Plus hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "İndirimler, standart aylık fiyatlara uygulanır"
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pass Family veya Unlimited tarifesi satın aldığınızda, aboneliğiniz fatura döneminizin sonunda otomatik olarak standart indirimli fiyat ve süre üzerinden yenilenir."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Aboneliğiniz, fatura döneminizin sonunda standart indirimli oranla ve süreyle otomatik olarak yenilenir."
@@ -1760,9 +1766,20 @@
         "En çok kullanılan"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Sınırlı stok!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Bir kez ${ amount } olarak faturalanır"
+      ],
       "for ${ durationDeal }": [
         "${ durationDeal } için"
+      ],
+      "forever": [
+        "sonsuza dek"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "1 ay sonra ${ regularAmount } tutarla yenilenir."
@@ -5263,17 +5280,8 @@
       "Close": [
         "Kapat"
       ],
-      "Closing this means giving up the free storage bonus.": [
-        "Bunu kapatırsanız ücretsiz depolama alanı hediyenizden vazgeçmiş olursunuz."
-      ],
       "Congratulations, you completed all the steps!": [
         "Tebrikler, tüm adımları tamamladınız!"
-      ],
-      "Congratulations, you finished!": [
-        "Tebrikler, işlemleri tamamladınız!"
-      ],
-      "Continue setting up your email": [
-        "E-postanızı kurmayı sürdürün"
       ],
       "Discover how our ${ strongText } protect you": [
         "${ strongText } hizmetimizin sizi nasıl koruduğunu öğrenin"

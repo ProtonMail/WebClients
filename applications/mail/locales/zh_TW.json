@@ -234,9 +234,6 @@
       "Close navigation": [
         "關閉導覽"
       ],
-      "Close the checklist": [
-        "關閉清單"
-      ],
       "Close this banner": [
         "關閉此橫幅"
       ],
@@ -1683,7 +1680,7 @@
         "高端的帳號保護"
       ],
       "Dark Web Monitoring": [
-        "黑暗網路監測"
+        "暗網監測"
       ],
       "Easily add or remove users": [
         "輕鬆添加或移除使用者"
@@ -1741,12 +1738,23 @@
         "最熱門"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "數量有限！"
+      ]
+    },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "為了 ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "首月免費，之後每月續訂 ${ regularAmount }。"
       ]
     },
     "BF2024: Tooltip": {
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "暢遊網路，保護隱私。提供 110 多個國家 8,500 多台伺服器、10 個裝置、高速串流、廣告阻擋和惡意軟體防護、VPN 加速器等功能。"
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "在世界各地暢享串流服務的影音內容，包含Netflix、Disney+、Prime Video等平台。"
       ],
@@ -3986,7 +3994,7 @@
         "請與您的組織管理員聯絡以解決此事"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其它瀏覽器。"
+        "內容搜尋無法在此瀏覽器中啟用。請退出無痕模式或使用其它瀏覽器。"
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
@@ -5147,17 +5155,8 @@
       "Close": [
         "關閉"
       ],
-      "Closing this means giving up the free storage bonus.": [
-        "關閉此視同放棄免費的額外儲存空間。"
-      ],
       "Congratulations, you completed all the steps!": [
         "恭喜，你完成所有指示了！"
-      ],
-      "Congratulations, you finished!": [
-        "恭喜，你完成所有指示了！"
-      ],
-      "Continue setting up your email": [
-        "繼續設定您的電子郵件"
       ],
       "Discover how our ${ strongText } protect you": [
         "了解${ strongText }如何保護您。"
@@ -6335,7 +6334,7 @@
         "匯入進行中"
       ],
       "Import mailbox": [
-        "匯入信箱"
+        "匯入郵箱"
       ],
       "Important note": [
         "重要提示"
@@ -7343,7 +7342,7 @@
         "您有 **${ count } 則往來對話** 儲存於此資料夾"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "您選取有此標籤的 **${ count } 則往來對話**"
+        "您選取了有此標籤的 **${ count } 個交談**"
       ],
       "You have **${ count } message** stored in this folder": [
         "您有 **${ count } 則訊息** 儲存於此資料夾"

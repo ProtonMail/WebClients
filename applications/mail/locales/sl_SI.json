@@ -231,9 +231,6 @@
       "Close navigation": [
         "Zapri krmarjenje"
       ],
-      "Close the checklist": [
-        "Zapri kontrolni seznam"
-      ],
       "Close this banner": [
         "Zapri to pasico"
       ],
@@ -1709,6 +1706,11 @@
         "Najbolj priljubljeno"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Omejena zaloga!"
+      ]
+    },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
@@ -1737,7 +1739,7 @@
         "Zavarujte svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zavarujte svojo e-pošto in urnik s end-to-end šifriranjem. Vključuje 15 e-poštnih naslovov, podporo za prilagojene e-poštne domene, neomejeno število vzdevkov hide-my-email in drugo."
+        "Zavarujte svojo e-pošto in urnik s celovitim šifriranjem. Vključuje 15 e-poštnih naslovov, podporo za prilagojene e-poštne domene, neomejeno število vzdevkov hide-my-email in drugo."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zaščitite svoje datoteke s šifrirano shrambo v oblaku. Vključuje spletni urejevalnik dokumentov, varnostno kopijo fotografij, zgodovino različic, šifrirano delitev datotek in še več."
@@ -2782,7 +2784,7 @@
         "Falklandski otoki"
       ],
       "Falkland Islands (Malvinas)": [
-        "Falklandski otoki (Malvinas)"
+        "Falklandski otoki (Malvini)"
       ],
       "Faroe Islands": [
         "Ferski otoki"
@@ -3581,25 +3583,25 @@
         "Hrošči ali težave s kakovostjo"
       ],
       "I do not wish to share": [
-        "Ne želim deliti"
+        "Ne želim deliti."
       ],
       "I found a cheaper VPN": [
-        "Našel sem cenejši VPN"
+        "Našel sem cenejši VPN."
       ],
       "I found a VPN with better features": [
-        "Našel sem VPN z boljšimi funkcijami"
+        "Našel sem VPN z boljšimi funkcijami."
       ],
       "I have not managed to connect": [
-        "Ni mi uspelo vzpostaviti povezave"
+        "Ni mi uspelo vzpostaviti povezave."
       ],
       "I only needed a VPN short-term": [
-        "VPN sem potreboval le začasno"
+        "VPN sem potreboval le začasno."
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Uporabljam drug račun ${ BRAND_NAME }."
       ],
       "It doesn't do what I need": [
-        "Ne počne tistega, kar potrebujem"
+        "Ne počne tistega, kar potrebujem."
       ],
       "Missing feature(s)": [
         "Manjkajoče funkcije"
@@ -3617,7 +3619,7 @@
         "Začasna potreba, se lahko vrnem v prihodnosti."
       ],
       "The VPN is too slow": [
-        "VPN je prepočasen"
+        "VPN je prepočasen."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3918,7 +3920,7 @@
         "Osnutka ni bilo mogoče shraniti. Poskusite znova."
       ],
       "Due to an error, text generation couldn't be canceled": [
-        "Zaradi napake generiranja besedila ni bilo mogoče preklicati."
+        "Zaradi napake ni bilo mogoče preklicati ustvarjanja besedila."
       ],
       "Email address disabled": [
         "E-poštni naslov je onemogočen"
@@ -5059,17 +5061,8 @@
       "Close": [
         "Zapri"
       ],
-      "Closing this means giving up the free storage bonus.": [
-        "Če to zaprete, se odpoveste bonusu za brezplačno shranjevanje."
-      ],
       "Congratulations, you completed all the steps!": [
         "Čestitamo, opravili ste vse korake!"
-      ],
-      "Congratulations, you finished!": [
-        "Čestitamo, končali ste!"
-      ],
-      "Continue setting up your email": [
-        "Nadaljujte z nastavljanjem e-pošte"
       ],
       "Discover how our ${ strongText } protect you": [
         "Odkrijte, kako vas naše ${ strongText } varujejo."
@@ -5909,7 +5902,7 @@
         "in"
       ],
       "Another tip will be displayed next time you open Mail": [
-        "Naslednjič, ko odprete aplikacijo Mail, se prikaže še en nasvet"
+        "Naslednjič, ko odprete aplikacijo Mail, se bo prikazal še en nasvet."
       ],
       "Any scheduled or snoozed messages will be canceled.": [
         "Vsa načrtovana ali preložena sporočila bodo preklicana."
@@ -6170,7 +6163,7 @@
         "Prenesite svojo najljubšo aplikacijo in uživajte v svoji zasebnosti povsod."
       ],
       "Downloading assistant… ${ progressDisplay } GB": [
-        "Pomočnik za prenos ... ${ progressDisplay } GB"
+        "Prenašanje pomočnika pri pisanju ... ${ progressDisplay } GB"
       ],
       "Downloading paused": [
         "Prekinitev prenosa."
@@ -6323,7 +6316,7 @@
         "Ustvari besedilo"
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
-        "Prihodnim računom dajte barvno kodirano oznako, na primer »${ suggestedLabelName }«. Ko so plačani, spremenite oznako v “${ suggestedPaidLabelName }“."
+        "Prihodnjim računom dajte barvno kodirano oznako, na primer »${ suggestedLabelName }«. Ko so plačani, spremenite oznako v “${ suggestedPaidLabelName }“."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Vsebuje ${ numAttachments } priponko (${ numAttachmentsSize })",
@@ -6767,7 +6760,7 @@
         "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
-        "Odstrani vse podatke, povezane z aplikacijo (vključno s prenesenimi sporočili…)"
+        "Odstrani vse podatke, povezane z aplikacijo (vključno s prenesenimi sporočili)"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "S prijavo lažnega predstavljanja nam boste poslali sporočilo v analizo, s katero bomo izboljšali svoje filtre. To pomeni, da nam bo vsebina sporočila v celoti vidna."
@@ -6905,7 +6898,7 @@
         "Predložite polog s pomočjo naslednjega naslova ali optično preberite QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Naročnina se samodejno podaljša vsak(ih) ${ cycle } mesec(ev)."
+        "Naročnina se samodejno podaljša vsakih ${ cycle } mesecev."
       ],
       "Subscription auto-renews every month.": [
         "Naročnina se samodejno podaljša vsak mesec."
@@ -7085,7 +7078,7 @@
         "To sporočilo bo poteklo jutri ob ${ value }"
       ],
       "This only needs to be done once.": [
-        "To je potrebno storiti le enkrat."
+        "To je treba storiti le enkrat."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Ta javni ključ se bo privzeto uporabil za šifriranje pošte, poslane na ta naslov."
@@ -9440,7 +9433,7 @@
         "Upravljanje seje uporabnikov"
       ],
       "User storage management": [
-        "Upravljanje shrambe uporabnikov"
+        "Upravljanje shrambe uporabnika"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Delitev trezorja (z do ${ n } osebo)",
@@ -9893,7 +9886,7 @@
         "Čestitamo za izbiro zasebnosti"
       ],
       "Dark Web Monitoring": [
-        "Spremljanje Dark Web"
+        "Spremljanje temnega spleta"
       ],
       "Download the desktop app": [
         "Prenesi namizno aplikacijo"
@@ -9908,7 +9901,7 @@
         "Posredujte sporočila Gmail v svoj nabiralnik."
       ],
       "Get the desktop app": [
-        "Prenesite program za namizja"
+        "Prenesite program za namizje"
       ],
       "Google Play": [
         "Google Play"
@@ -10255,7 +10248,7 @@
         "Besedilo"
       ],
       "To": [
-        "Do"
+        "Za"
       ],
       "Type a command…": [
         "Vnesite ukaz ..."
@@ -10496,13 +10489,13 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } in ${ remainingCount } drugih možnih uhajanj. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznani ${ name } in ${ remainingCount } drugih možnih uhajanj podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznano je bilo ${ name } in 1 drugo potencialno uhajanje podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Zaznano je bilo morebitno puščanje ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznano je bilo morebitno uhajanje podatkov ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe. ${ learnMoreLink }"
@@ -10514,7 +10507,7 @@
         "Sentinel je **aktiven** in varuje vaš račun."
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Vaši osebni podatki so bili najdeni v vsaj enem primeru uhajanja podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ]
     },
     "Select files": {
@@ -11367,7 +11360,7 @@
         "Dodajati novih datotek"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Ko se vaša naročnina ${ planName } zaključi, preidete na brezplačno naročnino ${ BRAND_NAME }. Ta naročnina vključuje le do 1 GB prostora za shranjevanje za pošto in 5 GB prostora za shranjevanje za disk. Prav tako izgubite vse predhodno dodeljene bonuse za shranjevanje."
+        "Ko se vaša naročnina ${ planName } zaključi, preidete na brezplačno naročnino ${ BRAND_NAME }. Ta naročnina vključuje le do 1 GB prostora za shranjevanje za pošto in 5 GB prostora za shranjevanje za Drive. Prav tako izgubite vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "All you need for your business": [
         "Vse, kar potrebujete za vaš posel"
