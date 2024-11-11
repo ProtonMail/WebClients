@@ -202,7 +202,18 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
           initialBlockTypeNode.setMarker(listMarker)
         }
       }
-      block.replace(initialBlockTypeNode, true)
+      if ($isListItemNode(block) && $isCustomListNode(initialBlockTypeNode)) {
+        const blockChildren = block.getChildren()
+        const listItem = $createListItemNode(block.getChecked())
+        for (const child of blockChildren) {
+          child.remove()
+          listItem.append(child)
+        }
+        block.replace(initialBlockTypeNode)
+        initialBlockTypeNode.append(listItem)
+      } else {
+        block.replace(initialBlockTypeNode, true)
+      }
       if ($isCustomListNode(initialBlockTypeNode)) {
         if (initialBlockTypeNode.getChildrenSize() === 0) {
           const emptyListItem = $createListItemNode()
