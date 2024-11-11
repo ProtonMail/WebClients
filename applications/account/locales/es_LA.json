@@ -808,11 +808,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Refrescar la página"
-      ],
       "refresh the page": [
         "refresque la página"
+      ],
+      "Refresh the page": [
+        "Refrescar la página"
       ],
       "Reject": [
         "Rechazar"
@@ -1605,14 +1605,6 @@
         "Seleccione la oferta de fin de año"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Lo sentimos, esta oferta no está disponible con el plan actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Lo sentimos, esta oferta no está disponible con el plan actual. Pero puede obtener **${ discountPercentage } de ${ plan.Title }** al suscribirse durante **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de almacenamiento (el doble que cualquier otro plan)"
@@ -1634,6 +1626,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "El plan ${ plan } está de nuevo disponible por tiempo limitado."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con el plan actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Lo sentimos, esta oferta no está disponible con el plan actual. Pero puede obtener **${ discountPercentage } de ${ plan.Title }** al suscribirse durante **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1774,6 +1774,11 @@
     "BF2024: Info": {
       "Most popular": [
         "Más popular"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "¡Stock limitado!"
       ]
     },
     "BF2024: Offers": {
@@ -6895,6 +6900,9 @@
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
       ],
+      "All inactive members deleted": [
+        "Se eliminaron todos los miembros inactivos"
+      ],
       "All keys successfully reactivated": [
         "Todas las claves reactivadas"
       ],
@@ -7226,11 +7234,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -8156,6 +8164,9 @@
       "Plus or Visionary subscription required": [
         "Se requiere suscripción Plus o Visionary"
       ],
+      "Preference saved": [
+        "Preferencia guardada"
+      ],
       "Preview": [
         "Vista previa"
       ],
@@ -8838,11 +8849,11 @@
       "User activated": [
         "El usuario fue activado."
       ],
-      "username": [
-        "nombre de usuario"
-      ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "username": [
+        "nombre de usuario"
       ],
       "Users": [
         "Usuarios"
@@ -10629,6 +10640,10 @@
       "Send in": [
         "Enviar en"
       ],
+      "Show ${ n } administrator": [
+        "Mostrar ${ n } administrador",
+        "Mostrar ${ n } administradores"
+      ],
       "Show others when I'm busy": [
         "Mostrar a otros cuando estoy ocupado"
       ],
@@ -10769,6 +10784,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Verificar las claves con el sistema Key Transparency"
+      ],
+      "Video conferencing with Zoom": [
+        "Videoconferencia por Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos que se vaya. Indíquenos por qué se va para ayudarnos a mejorar."
@@ -11645,32 +11663,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Empiece por ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "A partir de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -11698,6 +11690,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Actualizar a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Empiece por ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12379,20 +12397,6 @@
         "El plan seleccionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Obtenga Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -12411,6 +12415,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtenga Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -12698,6 +12716,33 @@
       "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
         "${ allCategoryTitlesExceptTheLastOne } y ${ lastCategoryTitle }"
       ],
+      "${ app } and ${ additionalApp } product updates": [
+        "Actualizaciones de producto para ${ app } y ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Actualizaciones de producto para ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Boletín de ${ BRAND_NAME } para Empresas"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Avisos importantes de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Boletín de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Ofertas y promociones de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Anuncios de producto de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Encuesta a los usuarios de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Correos electrónicos de bienvenida de ${ BRAND_NAME }"
+      ],
       "1 email per month": [
         "1 correo al mes"
       ],
@@ -12716,14 +12761,32 @@
       "4-6 emails per year": [
         "4 a 6 correos al año"
       ],
+      "Application notifications": [
+        "Notificaciones de aplicaciones"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Las notificaciones críticas de la cuenta seguirán llegando"
+      ],
       "Daily email notifications": [
         "Notificaciones diarias por correo electrónico"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Desactivarlo impedirá que reciba notificaciones de las aplicaciones de ${ BRAND_NAME }"
       ],
       "During your first month": [
         "Durante el primer mes"
       ],
       "Email subscriptions": [
         "Suscripciones de correo"
+      ],
+      "In-app notifications": [
+        "Notificaciones dentro de la aplicación"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participe en las encuestas para mejorar los servicios de ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Actualizaciones de productos"
       ]
     },
     "Notification": {
@@ -15450,6 +15513,14 @@
         "${ n } miembro solicitó su ayuda para iniciar sesión.",
         "${ n } miembros solicitaron su ayuda para iniciar sesión."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } usuario se unió a su organización a través de su Proveedor de Identidad. Consulte la cuenta ahora:",
+        "${ n } usuarios se unieron a su organización a través de su Proveedor de Identidad. Consulte las cuentas ahora:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } usuario está inactivo. Puede eliminarlo con seguridad de su organización.",
+        "${ n } usuarios están inactivos. Puede eliminarlos con seguridad de su organización."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } usuario está solicitando su ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único.",
         "${ n } usuarios están solicitando su ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único."
@@ -15504,6 +15575,14 @@
       ],
       "Current device": [
         "Dispositivo actual"
+      ],
+      "Delete ${ n } inactive user?": [
+        "¿Eliminar ${ n } usuario inactivo?",
+        "¿Eliminar ${ n } usuarios inactivos?"
+      ],
+      "Delete ${ n } user": [
+        "Eliminar ${ n } usuario",
+        "Eliminar ${ n } usuarios"
       ],
       "Deny": [
         "Denegar"
@@ -16970,10 +17049,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -17926,6 +18005,9 @@
       "Version history": [
         "Historial de versiones"
       ],
+      "Video conferencing": [
+        "Videoconferencia"
+      ],
       "VPN apps": [
         "Aplicaciones VPN"
       ],
@@ -18350,6 +18432,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Aadministradorcceso de administrador pendiente:** Enviamos una petición a este usuario para que cualquier administrador gestione su cuenta."
+      ],
       "Administrator access enabled": [
         "Se activó el acceso de administrador."
       ],
@@ -18376,6 +18461,9 @@
       ],
       "Cancel request": [
         "Cancelar la solicitud"
+      ],
+      "Cancel request to access user data?": [
+        "¿Cancelar la solicitud de acceso a los datos del usuario?"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "No se pudo activar automáticamente el acceso de administrador para ${ n } usuario porque sus claves de cifrado han sido actualizadas mientras tanto.",

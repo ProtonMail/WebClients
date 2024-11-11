@@ -805,11 +805,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reject": [
         "Rebutja"
@@ -1596,14 +1596,6 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1625,6 +1617,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1760,6 +1760,11 @@
     "BF2024: Info": {
       "Most popular": [
         "Més populars"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Oferta per temps limitat!"
       ]
     },
     "BF2024: Offers": {
@@ -7042,11 +7047,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimineu qualsevol altre registre MX o assegureu-vos que la prioritat de ${ MAIL_APP_NAME } és el número més baix."
@@ -8568,11 +8573,11 @@
       "User activated": [
         "S'ha activat l'usuari."
       ],
-      "username": [
-        "nom d'usuari"
-      ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "username": [
+        "nom d'usuari"
       ],
       "Users": [
         "Usuaris"
@@ -11332,32 +11337,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comenceu per ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Comenceu des de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11385,6 +11364,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comenceu per ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Comenceu des de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12047,20 +12052,6 @@
         "El vostre pla seleccionat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Obtingueu el Mail Plus per ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Comenceu des de ${ price }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -12079,6 +12070,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtingueu el Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Comenceu des de ${ price }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -16228,10 +16233,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [

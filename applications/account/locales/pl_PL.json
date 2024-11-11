@@ -808,10 +808,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reject": [
@@ -1032,6 +1032,9 @@
       ],
       "Show": [
         "Pokaż"
+      ],
+      "Show all": [
+        "Pokaż wszystkich"
       ],
       "Show less": [
         "Pokaż mniej"
@@ -1610,14 +1613,6 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1639,6 +1634,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1736,6 +1739,9 @@
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
       ],
+      "One-time payment, lifetime deal": [
+        "Płatność jednorazowa, dożywotni dostęp"
+      ],
       "Online document editor": [
         "Edytor dokumentów online"
       ],
@@ -1783,9 +1789,20 @@
         "Najpopularniejsze"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Ograniczone zapasy!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Płatne ${ amount } jednorazowo"
+      ],
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
+      ],
+      "forever": [
+        "na zawsze"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Odnawia się po 1 miesiącu za ${ regularAmount }."
@@ -7347,11 +7364,14 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
+      ],
       "dedicated servers": [
         "dedykowane serwery"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Usuń wszystkie inne rekordy MX lub upewnij się, że priorytet rekordu ${ MAIL_APP_NAME } posiada najniższy numer."
@@ -7553,6 +7573,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Wpisz hasło odzyskiwania, aby zmienić hasło."
+      ],
+      "Event invitations and responses will be sent in this language.": [
+        "Zaproszenia do wydarzeń oraz odpowiedzi zostaną wysłane w tym języku:"
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logi obejmują próby uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają danych logowań ${ BRAND_NAME_TWO }."
@@ -8250,6 +8273,9 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Zachowaj to hasło. Jeśli zresetujesz hasło, będziesz go potrzebować do odzyskania dostępu do konta i odszyfrowania danych."
       ],
+      "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Pamiętaj, że jeśli usuniesz filtr ${ nameDeleted } przestaniemy przetwarzać wszystkie automatyczne akcje, które on wywołuje."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
         "Po kliknięciu przycisku Potwierdź na Twoim koncie pozostaną środki w wysokości ${ remainingCreditsFormatted }."
       ],
@@ -8285,6 +8311,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Subskrypcja planu Plus lub Visionary jest wymagana"
+      ],
+      "Preference saved": [
+        "Ustawienia zostały zapisane"
       ],
       "Preview": [
         "Podgląd"
@@ -8736,6 +8765,9 @@
       "This will delete all previous versions of your files.": [
         "Spowoduje to usunięcie poprzednich wersji plików."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Odmówi to dostępu do **${ email }**. Czy na pewno chcesz kontynuować?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Spowoduje to wyłączenie uwierzytelniania dwustopniowego, w tym aplikacji uwierzytelniającej i kluczy bezpieczeństwa."
       ],
@@ -8748,11 +8780,17 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję ${ BRAND_NAME }. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Usunie to bezpowrotnie dane oraz adresy e-mail powiązane z tymi użytkownikami."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Spowoduje to trwałe usunięcie danych i wszystkich adresów skojarzonych z użytkownikiem."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ta czynność spowoduje trwałe usunięcie konta. Nie będziesz mógł reaktywować tego konta."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Odrzuci to urządzenie **${ name }**, które próbowało zalogować się na konto ${ BRAND_NAME } **${ date }**."
       ],
       "This will remove any enabled 2FA methods.": [
         "Spowoduje to usunięcie metod uwierzytelniania dwustopniowego."
@@ -8961,11 +8999,11 @@
       "User activated": [
         "Użytkownik został aktywowany"
       ],
-      "username": [
-        "nazwa użytkownika"
-      ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "username": [
+        "nazwa użytkownika"
       ],
       "Users": [
         "Użytkownicy"
@@ -10042,6 +10080,9 @@
       ],
       "Allowed Domain": [
         "Dozwolona domena"
+      ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Zezwala wszystkim w twojej organizacji na dodawanie linków do wideokonferencji w zaproszeniach."
       ],
       "Amount": [
         "Kwota"
@@ -11807,32 +11848,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Od ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11860,6 +11875,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Od ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Ulepsz plan do wersji ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12591,20 +12632,6 @@
         "Wybrany plan: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Wybierz plan Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Od ${ price }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -12623,6 +12650,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Od ${ price }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -12908,6 +12949,56 @@
       ],
       "Support for ${ n } custom email domains": [
         "Wsparcie dla ${ n } niestandardowych domen"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } i ${ lastCategoryTitle }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Newsletter ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Ważne ogłoszenia ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Newsletter ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Oferty i promocje ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Ogłoszenia usługi ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Ankieta użytkownika ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Wiadomość powitalna ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 wiadomość miesięcznie"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 wiadomość miesięcznie. Najnowsze wiadomości na temat prywatności i tego, co dzieje się w świecie ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 wiadomość kwartalnie"
+      ],
+      "1-2 emails per month": [
+        "1-2 wiadomości miesięcznie"
+      ],
+      "2-4 emails per year": [
+        "2-4 wiadomości rocznie"
+      ],
+      "4-6 emails per year": [
+        "4-6 wiadomości rocznie"
+      ],
+      "Daily email notifications": [
+        "Codzienne powiadomienia e-mail"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Bierz udział w ankietach, aby ulepszać usługi ${ BRAND_NAME }"
       ]
     },
     "Notification": {
@@ -14812,6 +14903,12 @@
       "For security reasons, the token is hidden": [
         "Ze względów bezpieczeństwa token jest ukryty"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Przejdź do dostawcy tożsamości, a następnie skopiuj i wklej poniższe dane, aby zakończyć konfigurację SCIM dla ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Przejdź do dostawcy tożsamości, a następnie skopiuj i wklej poniższy token, aby ponownie włączyć konfigurację SCIM dla ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Jeśli stracisz lub zapomnisz token SCIM, możesz wygenerować nowy. Pamiętaj, że w ustawieniach dostawcy tożsamości będzie wtedy konieczna jego aktualizacja."
       ],
@@ -15657,6 +15754,9 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } prosi o twoją pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } przy użyciu SSO."
+      ],
       "${ n } member requested your help to sign in.": [
         "${ n } użytkownik poprosił o pomoc w zalogowaniu się.",
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się.",
@@ -15764,6 +15864,9 @@
       ],
       "Join ${ organizationName }": [
         "Dołącz do organizacji ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Upewnij się, że masz je zapisane w bezpiecznym miejscu, żeby można było się zalogować na konto, jeśli utracisz dostęp do swojego dostawcy tożsamości."
       ],
       "New backup password": [
         "Nowe hasło kopii zapasowej"
@@ -16760,6 +16863,9 @@
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
       ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Za chwilę otrzymasz swoją nazwę użytkownika na pocztę e-mail, o ile podany adres odzyskiwania jest prawidłowy."
+      ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Jeżeli prawidłowy numer pomocniczy został wpisany, w ciągu minuty dostaniesz twoją nazwę użytkownika za pomocą wiadomości SMS."
       ]
@@ -17205,10 +17311,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -17780,6 +17886,9 @@
       ],
       "No recovery method": [
         "Brak metody odzyskiwania"
+      ],
+      "Notifications": [
+        "Powiadomienia"
       ],
       "Open": [
         "Nierozwiązane"
@@ -18610,6 +18719,12 @@
       "Cancel": [
         "Anuluj"
       ],
+      "Cancel request": [
+        "Anuluj żądanie"
+      ],
+      "Cancel request to access user data?": [
+        "Anulować żądanie dostępu do danych użytkownika?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkownika, ponieważ jego klucze szyfrowania zostały w międzyczasie zaktualizowane:",
         "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkowników, ponieważ ich klucze szyfrowania zostały w międzyczasie zaktualizowane:",
@@ -18630,6 +18745,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Jeśli stracisz dostęp do danych logowania, administrator organizacji będzie mógł zresetować Twoje hasło i przywrócić dostęp do konta."
+      ],
+      "Keep request": [
+        "Zachowaj żądanie"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Jeśli użytkownik wyrazi zgodę, uzyskasz dostęp do konta użytkownika i zarządzania jego danymi."
@@ -18660,6 +18778,9 @@
       ],
       "The user must have an address to request data access": [
         "Użytkownik musi mieć adres, aby żądać dostępu do danych"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Spowoduje to anulowanie oczekującego żądania dostępu administratora do danych użytkownika lub zresetowania hasła."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Spowoduje to unieważnienie dostępu administratora do zarządzania kontem użytkownika."
