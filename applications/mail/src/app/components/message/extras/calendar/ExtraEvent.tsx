@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { Banner, BannerBackgroundColor, useApi, useDrawer } from '@proton/components';
+import { DeprecatedBanner, DeprecatedBannerBackgroundColor, useApi, useDrawer } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import {
@@ -337,8 +337,8 @@ const ExtraEvent = ({
         });
 
         return (
-            <Banner
-                backgroundColor={BannerBackgroundColor.DANGER}
+            <DeprecatedBanner
+                backgroundColor={DeprecatedBannerBackgroundColor.DANGER}
                 icon="exclamation-circle"
                 action={
                     canTryAgain && (
@@ -349,7 +349,7 @@ const ExtraEvent = ({
                 }
             >
                 {message}
-            </Banner>
+            </DeprecatedBanner>
         );
     }
 
