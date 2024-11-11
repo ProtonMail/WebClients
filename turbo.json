@@ -16,11 +16,16 @@
         "SENTRY_AUTH_TOKEN"
     ],
     "tasks": {
+        "transit": {
+            "dependsOn": ["^transit"]
+        },
         "@proton/i18n#build": {},
         "build:web": {
             "outputs": ["dist/**", "webapp-bundle.tar.gz"]
         },
-        "test:ci": {},
+        "test:ci": {
+            "dependsOn": ["transit"]
+        },
         "test:coverage": {
             "outputs": ["coverage/**"]
         },
@@ -31,7 +36,9 @@
             "outputs": ["po/**"]
         },
         "i18n:validate:context:web": {},
-        "check-types": {},
+        "check-types": {
+            "dependsOn": ["transit"]
+        },
         "dev": {
             "cache": false,
             "persistent": true
