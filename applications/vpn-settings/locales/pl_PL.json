@@ -595,6 +595,9 @@
       "Show": [
         "Pokaż"
       ],
+      "Show all": [
+        "Pokaż wszystkich"
+      ],
       "Show preview": [
         "Pokaż podgląd"
       ],
@@ -1035,6 +1038,9 @@
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
       ],
+      "One-time payment, lifetime deal": [
+        "Płatność jednorazowa, dożywotni dostęp"
+      ],
       "Online document editor": [
         "Edytor dokumentów online"
       ],
@@ -1082,9 +1088,20 @@
         "Najpopularniejsze"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Ograniczone zapasy!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Płatne ${ amount } jednorazowo"
+      ],
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
+      ],
+      "forever": [
+        "na zawsze"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Odnawia się po 1 miesiącu za ${ regularAmount }."
@@ -3925,6 +3942,9 @@
       "Dedicated servers": [
         "Dedykowane serwery"
       ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
+        "Dedykowane serwery z dedykowanymi adresami IP mogą zostać dodane do prywatnych bram, aby umożliwić precyzyjną kontrolę nad nimi."
+      ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Usuń wszystkie inne rekordy MX lub upewnij się, że priorytet rekordu ${ MAIL_APP_NAME } posiada najniższy numer."
       ],
@@ -4531,6 +4551,9 @@
       "Plus or Visionary subscription required": [
         "Subskrypcja planu Plus lub Visionary jest wymagana"
       ],
+      "Preference saved": [
+        "Ustawienia zostały zapisane"
+      ],
       "Preview": [
         "Podgląd"
       ],
@@ -4786,11 +4809,17 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Weryfikacja może potrwać do godziny. Nie usuwaj rekordu TXT nawet po pomyślnej weryfikacji, ponieważ jest on potrzebny do potwierdzenia, że nadal jesteś właścicielem domeny."
       ],
+      "This will deny access to **${ email }**. Are you sure you want to continue?": [
+        "Odmówi to dostępu do **${ email }**. Czy na pewno chcesz kontynuować?"
+      ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
         "Spowoduje to wyłączenie uwierzytelniania dwustopniowego, w tym aplikacji uwierzytelniającej i kluczy bezpieczeństwa."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję ${ BRAND_NAME }. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Usunie to bezpowrotnie dane oraz adresy e-mail powiązane z tymi użytkownikami."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Spowoduje to trwałe usunięcie danych i wszystkich adresów skojarzonych z użytkownikiem."
@@ -5444,6 +5473,9 @@
       ],
       "Allowed Domain": [
         "Dozwolona domena"
+      ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Zezwala wszystkim w twojej organizacji na dodawanie linków do wideokonferencji w zaproszeniach."
       ],
       "Amount": [
         "Kwota"
@@ -7276,6 +7308,53 @@
         "Wsparcie dla ${ n } niestandardowych domen"
       ]
     },
+    "news": {
+      "${ BRAND_NAME } for Business newsletter": [
+        "Newsletter ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Ważne ogłoszenia ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Newsletter ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Oferty i promocje ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Ogłoszenia usługi ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Ankieta użytkownika ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Wiadomość powitalna ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 wiadomość miesięcznie"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 wiadomość miesięcznie. Najnowsze wiadomości na temat prywatności i tego, co dzieje się w świecie ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 wiadomość kwartalnie"
+      ],
+      "1-2 emails per month": [
+        "1-2 wiadomości miesięcznie"
+      ],
+      "2-4 emails per year": [
+        "2-4 wiadomości rocznie"
+      ],
+      "4-6 emails per year": [
+        "4-6 wiadomości rocznie"
+      ],
+      "Daily email notifications": [
+        "Codzienne powiadomienia e-mail"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Bierz udział w ankietach, aby ulepszać usługi ${ BRAND_NAME }"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } został wyłączony"
@@ -8219,6 +8298,12 @@
       "For security reasons, the token is hidden": [
         "Ze względów bezpieczeństwa token jest ukryty"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Przejdź do dostawcy tożsamości, a następnie skopiuj i wklej poniższe dane, aby zakończyć konfigurację SCIM dla ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Przejdź do dostawcy tożsamości, a następnie skopiuj i wklej poniższy token, aby ponownie włączyć konfigurację SCIM dla ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Jeśli stracisz lub zapomnisz token SCIM, możesz wygenerować nowy. Pamiętaj, że w ustawieniach dostawcy tożsamości będzie wtedy konieczna jego aktualizacja."
       ],
@@ -8848,6 +8933,9 @@
       ]
     },
     "sso": {
+      "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ boldedMemberAddress } prosi o twoją pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } przy użyciu SSO."
+      ],
       "${ n } member requested your help to sign in.": [
         "${ n } użytkownik poprosił o pomoc w zalogowaniu się.",
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się.",
@@ -8937,6 +9025,9 @@
       ],
       "Join ${ organizationName }": [
         "Dołącz do organizacji ${ organizationName }"
+      ],
+      "Make sure you save it somewhere safe so that you can get back into your account if you lose access to your Identity Provider credentials.": [
+        "Upewnij się, że masz je zapisane w bezpiecznym miejscu, żeby można było się zalogować na konto, jeśli utracisz dostęp do swojego dostawcy tożsamości."
       ],
       "New backup password": [
         "Nowe hasło kopii zapasowej"
@@ -9777,6 +9868,9 @@
       ],
       "You have successfully unsubscribed": [
         "Subskrypcja została anulowana"
+      ],
+      "You will receive your username via email within a minute if you entered a valid recovery email address.": [
+        "Za chwilę otrzymasz swoją nazwę użytkownika na pocztę e-mail, o ile podany adres odzyskiwania jest prawidłowy."
       ],
       "You will receive your username via SMS within a minute if you entered a valid recovery phone number.": [
         "Jeżeli prawidłowy numer pomocniczy został wpisany, w ciągu minuty dostaniesz twoją nazwę użytkownika za pomocą wiadomości SMS."
@@ -10790,6 +10884,12 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ustawiając użytkownika jako prywatnego, nie będziesz w stanie pomóc mu odzyskać dostępu do jego danych lub konta."
       ],
+      "Cancel request": [
+        "Anuluj żądanie"
+      ],
+      "Cancel request to access user data?": [
+        "Anulować żądanie dostępu do danych użytkownika?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkownika, ponieważ jego klucze szyfrowania zostały w międzyczasie zaktualizowane:",
         "Nie można automatycznie włączyć dostępu administratora dla ${ n } użytkowników, ponieważ ich klucze szyfrowania zostały w międzyczasie zaktualizowane:",
@@ -10801,6 +10901,9 @@
       ],
       "Enable manually": [
         "Włącz ręcznie"
+      ],
+      "Keep request": [
+        "Zachowaj żądanie"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Jeśli użytkownik wyrazi zgodę, uzyskasz dostęp do konta użytkownika i zarządzania jego danymi."
@@ -10828,6 +10931,9 @@
       ],
       "The user must have an address to request data access": [
         "Użytkownik musi mieć adres, aby żądać dostępu do danych"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Spowoduje to anulowanie oczekującego żądania dostępu administratora do danych użytkownika lub zresetowania hasła."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Spowoduje to unieważnienie dostępu administratora do zarządzania kontem użytkownika."

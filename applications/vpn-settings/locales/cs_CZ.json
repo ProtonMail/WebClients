@@ -595,6 +595,9 @@
       "Show": [
         "Zobrazit"
       ],
+      "Show all": [
+        "Zobrazit všechny"
+      ],
       "Show preview": [
         "Zobrazit náhled"
       ],
@@ -1035,6 +1038,9 @@
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"
       ],
+      "One-time payment, lifetime deal": [
+        "Jednorázová platba, doživotní přístup"
+      ],
       "Online document editor": [
         "Online editor dokumentů"
       ],
@@ -1070,8 +1076,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Doživotní nabídka ${ PASS_SHORT_APP_NAME } Plus nemá cenu za obnovení, jde o jednorázovou platbu za doživotní přístup k Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Slevy se vztahují na standardní měsíční ceny."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pokud si zakoupíte Pass Family nebo Unlimited, vaše předplatné se automaticky obnoví za standardní zvýhodněnou sazbu a dobu trvání na konci vašeho fakturačního cyklu."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Vaše předplatné se automaticky obnoví za standardní zvýhodněnou sazbu a dobu trvání na konci vašeho fakturačního cyklu."
@@ -1082,9 +1094,20 @@
         "Nejoblíbenější"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Omezený počet kusů!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Účtováno ${ amount } jednorázově"
+      ],
       "for ${ durationDeal }": [
         "na ${ durationDeal }"
+      ],
+      "forever": [
+        "navždy"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovení po 1 měsíci za ${ regularAmount }."
@@ -3751,6 +3774,9 @@
         "Dotčení uživatelé jsou na řádcích",
         "Dotčení uživatelé jsou na řádcích"
       ],
+      "All inactive members deleted": [
+        "Všichni neaktivní členové smazáni"
+      ],
       "All members have been added.": [
         "Všichni členové byli přidáni"
       ],
@@ -4540,6 +4566,9 @@
       "Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Plus nebo Visionary"
       ],
+      "Preference saved": [
+        "Nastavení uloženo"
+      ],
       "Preview": [
         "Náhled"
       ],
@@ -4803,6 +4832,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní použít Paypal pro platby ${ BRAND_NAME } předplatného. Přesměrujeme vás na váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím než budete pokračovat."
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Tímto trvale smažete data a všechny e-mailové adresy spojené s těmito uživateli."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Tímto trvale smažete data a všechny e-mailové adresy spojené s tímto uživatelem."
@@ -5835,6 +5867,12 @@
       "Security code (${ codeName })": [
         "Kód zabezpečení (${ codeName })"
       ],
+      "Show ${ n } administrator": [
+        "Zobrazit ${ n } správce",
+        "Zobrazit ${ n } správce",
+        "Zobrazit ${ n } správců",
+        "Zobrazit ${ n } správců"
+      ],
       "Single sign-on entity ID": [
         "ID subjektu jednotného přihlášení"
       ],
@@ -5882,6 +5920,9 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "Video conferencing with Zoom": [
+        "Videokonference s aplikací Zoom"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -7295,6 +7336,80 @@
       ],
       "Support for ${ n } custom email domains": [
         "Podpora ${ n } vlastních e-mailových domén"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Aktualizace produktu ${ app } a ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Aktualizace produktu ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Novinky ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Důležitá oznámení ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Novinky ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Akční nabídky ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Oznámení o produktech ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Uživatelský průzkum ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Uvítací e-maily ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 e-mail za měsíc"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 e-mail za měsíc. Získejte nejnovější zprávy o ochraně soukromí a o dění v ekosystému ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 e-mail čtvrtletně"
+      ],
+      "1-2 emails per month": [
+        "1-2 e-maily za měsíc"
+      ],
+      "2-4 emails per year": [
+        "2-4 e-maily za rok"
+      ],
+      "4-6 emails per year": [
+        "4-6 e-mailů za rok"
+      ],
+      "Application notifications": [
+        "Upozornění aplikace"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Kritická upozornění účtu budou stále doručována"
+      ],
+      "Daily email notifications": [
+        "Denní e-mailová upozornění"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Deaktivací této funkce se zruší možnost přijímat upozornění v aplikacích ${ BRAND_NAME }."
+      ],
+      "During your first month": [
+        "Během prvního měsíce"
+      ],
+      "Email subscriptions": [
+        "E-mailové odběry"
+      ],
+      "In-app notifications": [
+        "Upozornění v aplikaci"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Účastněte se průzkumů ke zlepšení služeb ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Aktualizace produktu"
       ]
     },
     "Notification": {
@@ -8910,6 +9025,18 @@
         "${ n } členů vás požádalo o pomoc s přihlášením.",
         "${ n } členů vás požádalo o pomoc s přihlášením."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } uživatel se připojil k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účet:",
+        "${ n } uživatelé se připojili k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:",
+        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:",
+        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } uživatel je neaktivní. Tohoto uživatele můžete bezpečně odebrat z organizace.",
+        "${ n } uživatelé jsou neaktivní. Tyto uživatele můžete bezpečně odebrat z organizace.",
+        "${ n } uživatelů je neaktivních. Tyto uživatele můžete bezpečně odebrat z organizace.",
+        "${ n } uživatelů je neaktivních. Tyto uživatele můžete bezpečně odebrat z organizace."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } uživatel vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
         "${ n } uživatelé vás žádají o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
@@ -8960,6 +9087,18 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Pokud problém přetrvává, kontaktujte správce."
+      ],
+      "Delete ${ n } inactive user?": [
+        "Smazat ${ n } neaktivního uživatele?",
+        "Smazat ${ n } neaktivní uživatele?",
+        "Smazat ${ n } neaktivních uživatelů?",
+        "Smazat ${ n } neaktivních uživatelů?"
+      ],
+      "Delete ${ n } user": [
+        "Smazat ${ n } uživatele",
+        "Smazat ${ n } uživatele",
+        "Smazat ${ n } uživatelů",
+        "Smazat ${ n } uživatelů"
       ],
       "Deny": [
         "Zamítnout"
@@ -10688,6 +10827,9 @@
       "Verifying your payment...": [
         "Ověřování vaší platby..."
       ],
+      "Video conferencing": [
+        "Videokonference"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Na vaši novou adresu vám zašleme e-mail s pokyny pro dokončení změny."
       ],
@@ -10876,6 +11018,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Čekání na přístup správce:** Tomuto uživateli jsme odeslali žádost o správu jeho účtu libovolným správcem."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
       ],
@@ -10884,6 +11029,12 @@
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Tím, že nastavíte uživatele jako soukromého, mu nebudete moci pomoci získat zpět přístup k jeho datům nebo účtu."
+      ],
+      "Cancel request": [
+        "Zrušit žádost"
+      ],
+      "Cancel request to access user data?": [
+        "Zrušit žádost o přístup k datům uživatele?"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatele, protože jeho šifrovací klíč byl mezitím aktualizován:",
@@ -10896,6 +11047,9 @@
       ],
       "Enable manually": [
         "Povolit ručně"
+      ],
+      "Keep request": [
+        "Ponechat žádost"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Jakmile uživatel udělí souhlas, můžete mu pomoci obnovit přístup k účtu nebo spravovat jeho data."
@@ -10923,6 +11077,9 @@
       ],
       "The user must have an address to request data access": [
         "Uživatel musí mít adresu, aby mohlo být požádáno o přístup k datům"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Toto zruší nevyřízenou žádost o správcovský přístup k datům uživatele nebo o resetování hesla."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Toto zruší správcovské oprávnění ke správě účtu tohoto uživatele."
@@ -11015,6 +11172,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Správci nemají přístup k datům soukromých uživatelů"
+      ],
+      "Inactive": [
+        "Neaktivní"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Pozvánka odeslána, čeká se na odpověď od pozvaného uživatele"
