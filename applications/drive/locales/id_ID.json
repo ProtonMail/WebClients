@@ -1129,6 +1129,9 @@
       "Integrated 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
       ],
+      "One-time payment, lifetime deal": [
+        "Satu kali pembayaran, untuk selamanya"
+      ],
       "Online document editor": [
         "Penyunting dokumen daring"
       ],
@@ -1164,8 +1167,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Penawaran ${ PASS_SHORT_APP_NAME } Plus seumur hidup tidak memiliki biaya pembaruan. Cukup satu kali pembayaran untuk akses selama-lamanya ke Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Diskon berdasar pada harga bulanan standar."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Apabila Anda membeli Pass Family atau Unlimited, langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir siklus tagihan Anda."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir masa tagihan Anda."
@@ -1176,9 +1185,20 @@
         "Terpopuler"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Persediaan terbatas!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Tertagih dengan harga ${ amount } untuk satu kali pembayaran"
+      ],
       "for ${ durationDeal }": [
         "untuk ${ durationDeal }"
+      ],
+      "forever": [
+        "selamanya"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Diperbarui setelah 1 bulan dengan ${ regularAmount }."
