@@ -202,6 +202,7 @@ export interface KeyReference {
      */
     _getCompatibilityError(): Error | null;
 
+    getVersion(): number;
     getFingerprint(): string;
     /**
      * Key ID of primary key in hex format.

@@ -112,6 +112,7 @@ const toArray = <T>(maybeArray: MaybeArray<T>) => (Array.isArray(maybeArray) ? m
 const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promise<PublicKeyReference> => {
     const publicKey = key.isPrivate() ? key.toPublic() : key; // We don't throw on private key since we allow importing an (encrypted) private key using 'importPublicKey'
 
+    const version = publicKey.keyPacket.version;
     const fingerprint = publicKey.getFingerprint();
     const hexKeyID = publicKey.getKeyID().toHex();
     const hexKeyIDs = publicKey.getKeyIDs().map((id) => id.toHex());
@@ -152,6 +153,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
         _keyContentHash: [keyContentHash, keyContentHashNoCerts],
         _getCompatibilityError: () => compatibilityError,
         isPrivate: () => false,
+        getVersion: () => version,
         getFingerprint: () => fingerprint,
         getKeyID: () => hexKeyID,
         getKeyIDs: () => hexKeyIDs,
