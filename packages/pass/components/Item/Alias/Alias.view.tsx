@@ -142,7 +142,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                             .t`Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.`
                     }
                     warning={relatedWarning}
-                    remember={!aliasTrashConfirmed}
+                    remember={!relatedLogin && !aliasTrashConfirmed}
                     onClose={() => setConfirmTrash(false)}
                     onDisable={handleConfirmDisableClick}
                     onAction={handleConfirmTrashClick}
