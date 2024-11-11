@@ -1470,6 +1470,7 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
             expect(importedKeyRef._getCompatibilityError()?.message).to.match(
                 /Version 6 keys are currently not supported/
             );
+            expect(importedKeyRef.getVersion()).to.equal(6);
 
             await expect(
                 CryptoApiImplementation.importPublicKey({ armoredKey: v6KeyCurve25519, checkCompatibility: true })
