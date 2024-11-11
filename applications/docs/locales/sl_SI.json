@@ -159,6 +159,9 @@
       "Contact group": [
         "Skupina stikov"
       ],
+      "Context menu": [
+        "Kontekstni meni"
+      ],
       "Continue": [
         "Nadaljuj"
       ],
@@ -182,6 +185,9 @@
       ],
       "Copy link": [
         "Kopiraj povezavo"
+      ],
+      "Create a copy": [
+        "Ustvari kopijo"
       ],
       "Create a new contact group": [
         "Ustvari novo skupino stikov"
@@ -423,6 +429,9 @@
       "Open ${ DRIVE_APP_NAME }": [
         "Odpri ${ DRIVE_APP_NAME }"
       ],
+      "Open folder": [
+        "Odpri mapo"
+      ],
       "Open navigation": [
         "Odpri krmarjenje"
       ],
@@ -519,6 +528,9 @@
       "Search countries": [
         "Iskanje držav"
       ],
+      "Search docs": [
+        "Išči dokumente"
+      ],
       "See how": [
         "Poglejte, kako"
       ],
@@ -554,6 +566,9 @@
       ],
       "Sign out": [
         "Odjava"
+      ],
+      "Sign up": [
+        "Prijavite se"
       ],
       "Skip verification": [
         "Preskoči preverjanje"
@@ -913,6 +928,11 @@
         "Najbolj priljubljeno"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Omejena zaloga!"
+      ]
+    },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
@@ -941,7 +961,7 @@
         "Zavarujte svoje e-pošte in urnike s šifriranjem od konca do konca. Vključuje 15 e-poštnih naslovov, podporo za e-poštne domene po meri, ${ BRAND_NAME } Scribe pisni asistent, neomejeno število vzdevkov hide-my-email in še več."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zavarujte svojo e-pošto in urnik s end-to-end šifriranjem. Vključuje 15 e-poštnih naslovov, podporo za prilagojene e-poštne domene, neomejeno število vzdevkov hide-my-email in drugo."
+        "Zavarujte svojo e-pošto in urnik s celovitim šifriranjem. Vključuje 15 e-poštnih naslovov, podporo za prilagojene e-poštne domene, neomejeno število vzdevkov hide-my-email in drugo."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zaščitite svoje datoteke s šifrirano shrambo v oblaku. Vključuje spletni urejevalnik dokumentov, varnostno kopijo fotografij, zgodovino različic, šifrirano delitev datotek in še več."
@@ -1492,7 +1512,7 @@
         "Falklandski otoki"
       ],
       "Falkland Islands (Malvinas)": [
-        "Falklandski otoki (Malvinas)"
+        "Falklandski otoki (Malvini)"
       ],
       "Faroe Islands": [
         "Ferski otoki"
@@ -2164,25 +2184,25 @@
         "Hrošči ali težave s kakovostjo"
       ],
       "I do not wish to share": [
-        "Ne želim deliti"
+        "Ne želim deliti."
       ],
       "I found a cheaper VPN": [
-        "Našel sem cenejši VPN"
+        "Našel sem cenejši VPN."
       ],
       "I found a VPN with better features": [
-        "Našel sem VPN z boljšimi funkcijami"
+        "Našel sem VPN z boljšimi funkcijami."
       ],
       "I have not managed to connect": [
-        "Ni mi uspelo vzpostaviti povezave"
+        "Ni mi uspelo vzpostaviti povezave."
       ],
       "I only needed a VPN short-term": [
-        "VPN sem potreboval le začasno"
+        "VPN sem potreboval le začasno."
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Uporabljam drug račun ${ BRAND_NAME }."
       ],
       "It doesn't do what I need": [
-        "Ne počne tistega, kar potrebujem"
+        "Ne počne tistega, kar potrebujem."
       ],
       "Missing feature(s)": [
         "Manjkajoče funkcije"
@@ -2200,7 +2220,7 @@
         "Začasna potreba, se lahko vrnem v prihodnosti."
       ],
       "The VPN is too slow": [
-        "VPN je prepočasen"
+        "VPN je prepočasen."
       ]
     },
     "Downgrade modal exit survey title": {
@@ -3628,6 +3648,12 @@
         "${ contactsLength } stiki",
         "${ contactsLength } stikov"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } vam omogoča sodelovanje v realnem času s celovitim šifriranjem za popolno zasebnost. Ustvarite kopijo in začnite urejati ali se obrnite na lastnika za dostop za urejanje."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } v"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } najdena skupina",
         "${ groupCounts } najdeni skupini",
@@ -3841,6 +3867,9 @@
         "Ustvari ${ calendarsToBeCreatedCount } nove koledarje",
         "Ustvari ${ calendarsToBeCreatedCount } novih koledarjev"
       ],
+      "Create a copy to edit": [
+        "Ustvari kopijo za urejanje"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Ustvarite oznako za uvožena sporočila, določite časovni obseg uvoza in mape, ki jih želite uvoziti."
       ],
@@ -3855,6 +3884,9 @@
       ],
       "Create public link": [
         "Ustvari javno povezavo"
+      ],
+      "Create your end-to-end encrypted document": [
+        "Ustvarite vaš celovito šifriran dokument"
       ],
       "Creating link to file": [
         "Ustvarjanje povezave do datoteke"
@@ -3900,6 +3932,9 @@
       ],
       "Document moved to trash": [
         "Dokument premaknjen v smetnjak"
+      ],
+      "Document owner has the password": [
+        "Lastnik dokumenta ima geslo."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ne vidite ničesar? Ne pozabite izklopiti prepovedi pojavnih oken."
@@ -4150,6 +4185,9 @@
       "Low Priority": [
         "Nizka pomembnost"
       ],
+      "Making a copy...": [
+        "Ustvarjam kopijo ..."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logotip"
       ],
@@ -4158,6 +4196,9 @@
         "Največ ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaka",
         "Največ ${ MAX_SHARED_URL_PASSWORD_LENGTH } znake",
         "Največ ${ MAX_SHARED_URL_PASSWORD_LENGTH } znakov"
+      ],
+      "Me": [
+        "Jaz"
       ],
       "Medium Priority": [
         "Srednja pomembnost"
@@ -4191,6 +4232,9 @@
       ],
       "No payment is required at this time.": [
         "Plačilo ni potrebno."
+      ],
+      "No recent documents": [
+        "Ni nedavnih dokumentov"
       ],
       "No results found": [
         "Ni najdenih rezultatov"
@@ -4315,6 +4359,9 @@
       "Primary": [
         "Glavni"
       ],
+      "Public documents are not yet enabled for your organization.": [
+        "Javni dokumenti še niso omogočeni za vašo organizacijo."
+      ],
       "recommended browser": [
         "priporočeni brskalnik"
       ],
@@ -4376,7 +4423,7 @@
         "Predložite polog s pomočjo naslednjega naslova ali skenirajte QR kodo. Vaš polog bo prikazan na vašem računu po potrditvi."
       ],
       "Subscription auto-renews every ${ cycle } months.": [
-        "Naročnina se samodejno podaljša vsak(ih) ${ cycle } mesec(ev)."
+        "Naročnina se samodejno podaljša vsakih ${ cycle } mesecev."
       ],
       "Subscription auto-renews every month.": [
         "Naročnina se samodejno podaljša vsak mesec."
@@ -4446,6 +4493,9 @@
       ],
       "This message will be presented again later": [
         "To sporočilo bo prikazano znova kasneje."
+      ],
+      "This public document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Ta javni dokument morda ne obstaja ali pa morda nimate dovoljenja za njegov ogled. Poskusite znova naložiti stran."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "S tem boste izbrisali povezavo in onemogočili dostop do vaše datoteke ali mape vsem, ki imajo povezavo.",
@@ -4602,6 +4652,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Trenutno ste prijavljeni kot ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
+        "Trenutno gledate dokument v načinu samo za ogled. Obrnite se na lastnika dokumenta za ureditev dostopa za urejanje in komentiranje dokumenta."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Uporabljate več prostora za shranjevanje, kot je vključenega v paketu ${ downgradedPlanName }. Za spremembo paketa izbrišite ali odstranite podatke."
@@ -5527,6 +5580,9 @@
       "Graphics Interchange Format (GIF)": [
         "Graphics Interchange Format (GIF)"
       ],
+      "GZip Archive": [
+        "GZip arhiv"
+      ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
       ],
@@ -5544,6 +5600,9 @@
       ],
       "Java Archive (JAR)": [
         "Java arhiv (JAR)"
+      ],
+      "JPEG image": [
+        "JPEG slika"
       ],
       "MP3 audio": [
         "MP3 zvočna datoteka"
@@ -5580,6 +5639,9 @@
       ],
       "Opus audio": [
         "Opus zvočna datoteka"
+      ],
+      "Portable Network Graphics (PNG)": [
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "RAR arhiv"
@@ -6098,7 +6160,7 @@
         "Upravljanje seje uporabnikov"
       ],
       "User storage management": [
-        "Upravljanje shrambe uporabnikov"
+        "Upravljanje shrambe uporabnika"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Delitev trezorja (z do ${ n } osebo)",
@@ -6654,6 +6716,9 @@
       "Not enough space to upload ${ formattedTotal }": [
         "Ni dovolj prostora za nalaganje ${ formattedTotal }"
       ],
+      "Stopping the sharing of this item has failed": [
+        "Preklic deljenja za ta predmet ni uspel"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Povezave do »${ name }« ni bilo mogoče izbrisati"
       ],
@@ -7062,13 +7127,13 @@
     },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "${ name } in ${ remainingCount } drugih možnih uhajanj. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznani ${ name } in ${ remainingCount } drugih možnih uhajanj podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "${ name } and 1 other potential leak detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Zaznano je bilo ${ name } in 1 drugo potencialno puščanje. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznano je bilo ${ name } in 1 drugo potencialno uhajanje podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "A potential ${ name } leak was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Zaznano je bilo morebitno puščanje ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Zaznano je bilo morebitno uhajanje podatkov ${ name }. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
         "Prejmite obvestilo, če so vaše geslo ali drugi podatki ušli iz storitve tretje osebe. ${ learnMoreLink }"
@@ -7080,7 +7145,7 @@
         "Sentinel je **aktiven** in varuje vaš račun."
       ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
-        "Vaši podatki so bili najdeni v vsaj enem odtekanju podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
+        "Vaši osebni podatki so bili najdeni v vsaj enem primeru uhajanja podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
       ]
     },
     "Select files": {
@@ -7520,6 +7585,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Povabite prijatelje, naj preskusijo ${ BRAND_NAME }"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Za urejanje tega dokumenta najprej ustvarite kopijo, ki jo lahko spreminjate."
       ]
     },
     "State": {
@@ -8279,6 +8347,9 @@
       "Link confirmation": [
         "Potrditvena povezava"
       ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Ustvari kopijo v vaš ${ DRIVE_APP_NAME }"
+      ],
       "Manage secure link": [
         "Upravljanje varne povezave"
       ],
@@ -8432,6 +8503,9 @@
       "The link expired": [
         "Povezava je potekla"
       ],
+      "This document is password protected": [
+        "Ta dokument je zaščiten z geslom."
+      ],
       "Unlock contacts groups": [
         "Odkleni skupine stikov."
       ],
@@ -8533,6 +8607,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Izberite shemo PGP, ki bo uporabljena pri podpisovanju ali šifriranju uporabnika. Upoštevajte, da PGP/Inline prisili v navadna besedilna sporočila"
+      ],
+      "Shared with end-to-end encryption": [
+        "V skupni rabi s šifriranjem od konca do konca"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistemske podmape bodo v ${ MAIL_APP_NAME }u prikazane kot ločene mape"

@@ -875,6 +875,9 @@
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
       ],
+      "One-time payment, lifetime deal": [
+        "Kertamaksu, elinikäinen tarjous"
+      ],
       "Online document editor": [
         "Verkkodokumenttieditori"
       ],
@@ -891,7 +894,7 @@
         "Suojattu tiedoston tallennus ja jako"
       ],
       "Secure vault and link sharing": [
-        "Holvien ja linkkien turvallinen jakaminen"
+        "Turvallinen holvi- ja linkkijako"
       ],
       "Unlimited folders, labels and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
@@ -910,8 +913,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME } Plus -tarjouksella ei ole uudistushintaa, koska se on elinikäinen Pass Plus -käyttöoikeus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Alennukset perustuvat normaaliin kuukausihintaan."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Jos tilaat Pass Familyn tai Unlimitedin, tilauksesi uudistuu automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tilauksesi uusitaan automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
@@ -922,9 +931,20 @@
         "Suosituin"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Rajoitettu varasto!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "${ amount } kertaveloitus"
+      ],
       "for ${ durationDeal }": [
         "hintaan ${ durationDeal }"
+      ],
+      "forever": [
+        "ikuisesti"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
@@ -2445,7 +2465,7 @@
         "${ DRIVE_APP_NAME } on päivittynyt. Päivitä sivu."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
+        "${ errorMessage }. Lisäksi voit tarkastaa ${ statusPageLink }."
       ],
       "A group with this name already exists": [
         "Tämän niminen ryhmä on jo olemassa"
@@ -2457,7 +2477,7 @@
         "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
       ],
       "Alias is not valid": [
-        "Virheellinen alias"
+        "Alias ei kelpaa"
       ],
       "Alias is required": [
         "Alias vaaditaan"
@@ -2493,10 +2513,10 @@
         "Virhe luotaessa uuttaa dokumenttia. Yritä uudelleen."
       ],
       "An error occurred while loading alias options": [
-        "Virhe aliasvaihtoehtoja ladatessa"
+        "Virhe ladattaessa aliasvalintoja"
       ],
       "An error occurred while saving your alias": [
-        "Virhe aliasta tallentaessa"
+        "Virhe tallennettaessa aliastasi"
       ],
       "Authentication canceled.": [
         "Todennus peruttiin."
@@ -2588,7 +2608,7 @@
         "Kansion nimi ei voi olla tyhjä."
       ],
       "Forward address is required": [
-        "Väitysosoite vaaditaan"
+        "Välitysosoite vaaditaan"
       ],
       "Image upload failed": [
         "Kuvan lataus epäonnistui"
@@ -2652,7 +2672,7 @@
         "Allekirjoitus puuttuu"
       ],
       "Name is required": [
-        "Nimi on pakollinen"
+        "Nimi vaaditaan"
       ],
       "No calendars found to import": [
         "Tuotavia kalentereita ei löytynyt"
@@ -2661,7 +2681,7 @@
         "Tuotavia yhteystietoja ei löytynyt"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Tuotavia sähköpostiviestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
+        "Tuotavia viestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
       ],
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
@@ -2703,7 +2723,7 @@
         "Jatka korjaamalla korostetut ristiriidat."
       ],
       "Please provide either a first name, a last name or a display name": [
-        "Syötä ainakin etunimi, sukunimi tai näyttönimi"
+        "Syötä joko etu-, suku- tai näyttönimi"
       ],
       "Port is required": [
         "Portti vaaditaan"
@@ -2755,7 +2775,7 @@
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
       ],
       "status page": [
-        "tilasivu"
+        "tilasivumme"
       ],
       "Tab closed": [
         "Välilehti suljettiin"
@@ -2764,7 +2784,7 @@
         "Osoite on ehkä kirjoitettu väärin"
       ],
       "The amount due has changed. Please try again.": [
-        "Maksettava määrä on muuttunut. Yritä uudelleen."
+        "Erääntyvä summa on muuttunut. Yritä uudelleen."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
         "Muunnettava dokumentti on liian suuri. Näin voi käydä, jos dokumentissa on paljon kuvia tai muuta mediaa. Yritä uudelleen pienemmällä dokumentilla."
@@ -2839,7 +2859,7 @@
         "Tunnisteen nimi ei ole käytettävissä. Valitse eri nimi."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Viesti saattaa sisältää joitakin URL-linkkejä, joita nykyinen selaimesi ei voi avata oikein."
+        "Viesti saattaa sisältää joitakin URL-linkkejä, joita käyttämäsi selain ei voi avata oikein."
       ],
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
@@ -3723,6 +3743,12 @@
         "${ contactsLength } yhteystieto",
         "${ contactsLength } yhteystietoa"
       ],
+      "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
+        "${ DOCS_APP_NAME } mahdollistaa tosiaikaisen yhteyistyön päästä päähän salauksella täydellistä yksityisyyttä varten. Aloita muokkaus luomalla kopio tai pyydä muokkausoikeutta tiedoston omistajalta."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } palvelussa"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
@@ -3913,6 +3939,9 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Luo ${ calendarsToBeCreatedCount } uusi kalenteri",
         "Luo ${ calendarsToBeCreatedCount } uutta kalenteria"
+      ],
+      "Create a copy to edit": [
+        "Luo muokatava kopio"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja kansiot, jotka haluat tuoda."
@@ -4157,7 +4186,7 @@
         "Tuo postilaatikko"
       ],
       "Important note": [
-        "Tärkeä muistiinpano"
+        "Tärkeä huomautus"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
@@ -4394,7 +4423,7 @@
         "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
       ],
       "Please try again in a few moments": [
-        "Yritä uudelleen hetken kuluttua"
+        "Yritä hetken kuluttua uudelleen"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
@@ -4617,7 +4646,7 @@
         "Kansion \"${ folderName }\" siirto ohitettiin"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
+        "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Valitettavasti näyttää siltä, että tiedoston tai joidenkin sen tietojen salausta ei voida purkaa."
@@ -6298,7 +6327,7 @@
     "new_plans: feature highlight": {
       "${ admins } admin": [
         "${ admins } ylläpitäjä",
-        "${ admins }ylläpitäjää"
+        "${ admins } ylläpitäjää"
       ],
       "${ users } user": [
         "${ users } käyttäjä",
@@ -7099,7 +7128,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Vahvistamalla tämän maksun valtuutat ${ BRAND_NAME }in ja maksupalveluntarjoajamme Stripen ohjeistamaan pankkiasi veloittamaan tiliäsi asianmukaisesti. Voit pyytää hyvitystä 8 viikon kuluessa veloituspäivästä, pankkisi kanssa tekemäsi sopimuksen ehtojen mukaisesti."
+        "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
       ],
       "Street address, postal code, and city": [
         "Katuosoite, postinumero ja kaupunki"
@@ -7632,8 +7661,8 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } ILMAINEN kuukausi",
-        "${ n } ILMAISTA kuukautta"
+        "${ n } kuukausi ILMAISEKSI",
+        "${ n } kuukautta ILMAISEKSI"
       ]
     },
     "specialoffer: Deal details": {
@@ -7793,6 +7822,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Kutsu kavereita ${ BRAND_NAME }iin"
+      ],
+      "To edit this document, create a copy that you can modify.": [
+        "Muokataksesi tiedostoa, luo siitä omaan Driveesi kopio, jota sinulla on oikeus muokata."
       ]
     },
     "sso": {
@@ -8553,6 +8585,9 @@
       ],
       "Link confirmation": [
         "Linkin vahvistus"
+      ],
+      "Make a copy to your ${ DRIVE_APP_NAME }": [
+        "Luo kopio ${ DRIVE_APP_NAME }esi"
       ],
       "Manage secure link": [
         "Hallitse suojattua linkkiä"
