@@ -22,6 +22,7 @@ import {
     showView,
     showNetworkErrorPage,
     IGNORED_NET_ERROR_CODES,
+    getCurrentViewID,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, viewLogger } from "../log";
@@ -58,6 +59,20 @@ export function handleWebContents(contents: WebContents) {
 
         if (!isCurrentContent()) {
             return;
+        }
+
+        // There is a big issue with view.webContents.getURL(): if a view is displaying x and you
+        // tell it to load y, if you ask which is the current URL, it will return x until y is
+        // fully loaded. That's why there is a weird getViewURL function in viewManagement.ts.
+        //
+        // That is causing the race condition, because during the login process the mail view
+        // says that it is displaying the home page (that was showing before the logout event)
+        // but it is actually loading the loading page in background.
+        //
+        // So the fix is basically reset all views when user reaches account switch, so none of
+        // them is in the previous user home page after login.
+        if (getCurrentViewID() === "account" && isAccountSwitch(url)) {
+            resetHiddenViews({ toHomepage: false });
         }
 
         if (isHome(url)) {
