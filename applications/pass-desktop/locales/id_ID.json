@@ -172,6 +172,9 @@
       "Delete all": [
         "Hapus semua"
       ],
+      "Delete it, I will never need it": [
+        "Lanjut hapus, saya tidak akan butuh alias ini lagi"
+      ],
       "Delete password": [
         "Hapus kata sandi"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Lepas pilihan"
+      ],
+      "Disable alias": [
+        "Nonaktifkan alias"
       ],
       "Disable instead": [
         "Nonaktifkan saja"
@@ -517,6 +523,9 @@
       "Submitting report...": [
         "Mengirim laporan..."
       ],
+      "Sync alias": [
+        "Sinkronkan alias"
+      ],
       "Sync aliases": [
         "Sinkronkan alias"
       ],
@@ -531,6 +540,9 @@
       ],
       "Try for free": [
         "Coba gratis"
+      ],
+      "Understood, I will never need it": [
+        "Saya mengerti, saya tidak akan butuh alias ini lagi"
       ],
       "Unlock": [
         "Membuka"
@@ -1676,6 +1688,12 @@
       "Please enter your current PIN code to continue": [
         "Silakan masukkan kode PIN Anda saat ini untuk melanjutkan"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Apakah Anda ingin sekadar menonaktifkan alias ini?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Alias ini telah dinonaktifkan dan tidak akan lagi meneruskan email ke kotak surat Anda"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Tingkatkan akun untuk memperoleh akses dini ke aplikasi web ${ PASS_APP_NAME }"
       ],
@@ -1913,6 +1931,9 @@
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Anda memiliki ${ aliasCount } alias yang saat ini terdapat pada SimpleLogin namun belum ada pada ${ PASS_APP_NAME }. Apakah Anda ingin menyinkronkan alias ini?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
       ],
@@ -1986,6 +2007,9 @@
       ],
       "${ minutes } minute": [
         "${ minutes } menit"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } mengenali situs web dan aplikasi yang Anda gunakan serta mengisi berbagai formulir dengan kredensial Anda pada browser atau perangkat apa pun secara otomatis. Anda tidak perlu lagi menyalin dan menempel."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versi ${ PASS_SHORT_APP_NAME }"
@@ -2079,6 +2103,9 @@
       ],
       "Auto-lock after": [
         "Kunci Pass secara otomatis setelah"
+      ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Di samping menyimpan entri masuk Anda, ${ PASS_APP_NAME } juga melindungi identitas Anda dengan fitur alias email yang terintegrasi. Pada saat Anda mendaftar akun online baru, ${ PASS_APP_NAME } dapat menghasilkan alias secara otomatis untuk melindungi alamat email asli Anda. "
       ],
       "Beta Access": [
         "Akses Beta"
@@ -2188,6 +2215,9 @@
       "Download logs": [
         "Unduh log"
       ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Bagikan informasi yang sensitif dengan mudah kepada siapa pun, bahkan apabila mereka tidak menggunakan ${ PASS_APP_NAME } sekalipun. Anda dapat membagikan kata sandi, catatan, kartu kredit, atau berbagai item secara sekaligus dalam folder yang sama."
+      ],
       "Email": [
         "Email"
       ],
@@ -2280,6 +2310,9 @@
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
+      ],
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
       ],
       "How to unlock ${ PASS_SHORT_APP_NAME }": [
         "Cara membuka ${ PASS_SHORT_APP_NAME }"
@@ -2506,6 +2539,9 @@
       "Rate us": [
         "Beri kami nilai"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Dapatkan notifikasi dengan segera apabila informasi pribadi Anda terpapar dalam insiden kebocoran data pihak ketiga. Anda dapat memonitor berbagai alamat email atau nama domain milik Anda sendiri."
+      ],
       "Recent": [
         "Baru digunakan"
       ],
@@ -2523,6 +2559,9 @@
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
+      ],
+      "Secure password sharing": [
+        "Pembagian kata sandi aman"
       ],
       "Securely log in with passkeys": [
         "Masuk dengan aman menggunakan passkey"
@@ -3159,6 +3198,9 @@
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan."
+      ],
       "Recommended actions": [
         "Tindakan yang direkomendasikan"
       ],
@@ -3228,6 +3270,9 @@
       "Sync alias": [
         "Sinkronkan alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Sinkronkan alias Anda dari SimpleLogin"
+      ],
       "Transfer ownership": [
         "Transfer kepemilikan"
       ],
@@ -3278,6 +3323,9 @@
       ],
       "Your welcome gift": [
         "Hadiah selamat datang Anda"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Anda akan menghapus ${ aliasCount } alias secara permanen"
       ]
     },
     "Validation": {
@@ -3333,6 +3381,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Undangan tidak dapat dikirimkan ke alamat berikut:"
+      ],
+      "Delete alias": [
+        "Hapus alias"
       ],
       "Duplicate email addresses.": [
         "Terdapat alamat email duplikat."
@@ -3405,6 +3456,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Setelah data tersinkron, menghapus alias di ${ PASS_SHORT_APP_NAME } akan turut menghapus alias yang sama pada SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kolom ini hanya dapat diisi dengan karakter alfanumerik, titik, tanda hubung, dan garis bawah"

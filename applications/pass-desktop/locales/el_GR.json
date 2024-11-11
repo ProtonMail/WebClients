@@ -172,6 +172,9 @@
       "Delete all": [
         "Διαγραφή όλων"
       ],
+      "Delete it, I will never need it": [
+        "Διαγράψτε το, δε θα το χρειαστώ ποτέ"
+      ],
       "Delete password": [
         "Διαγραφή κωδικού"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Αποεπιλογή"
+      ],
+      "Disable alias": [
+        "Απενεργοποίηση ψευδωνύμου"
       ],
       "Disable instead": [
         "Απενεργοποιήστε αντ 'αυτού"
@@ -535,6 +541,10 @@
       ],
       "Try for free": [
         "Δοκιμάστε δωρεάν"
+      ],
+      "Understood, I will never need it": [
+        "Κατανοητό, δε θα το χρειαστώ ποτέ",
+        "Κατανοητό, δεν θα τα χρειαστώ ποτέ"
       ],
       "Unlock": [
         "Ξεκλείδωμα"
@@ -1698,6 +1708,12 @@
       "Please enter your current PIN code to continue": [
         "Παρακαλούμε εισάγετε τον τρέχον κωδικό PIN σας για να συνεχίσετε"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Ίσως θέλετε να απενεργοποιήσετε το ψευδώνυμο;"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Το ψευδώνυμο είναι ήδη απενεργοποιημένο και δεν προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στο γραμματοκιβώτιό σας"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Αναβαθμίστε για να έχετε πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
       ],
@@ -2125,6 +2141,9 @@
       "Birthdate": [
         "Ημερομηνία γέννησης"
       ],
+      "Browse faster, smarter": [
+        "Ταχύτερη και εξυπνότερη περιήγηση"
+      ],
       "Capital letters (A-Z)": [
         "Κεφαλαία γράμματα (A-Z)"
       ],
@@ -2269,6 +2288,9 @@
       "Floor, apartment, building": [
         "Όροφος, διαμέρισμα, κτίριο"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Για λόγους ασφαλείας, το ${ PASS_SHORT_APP_NAME } κλειδώνει αυτόματα μετά από 10 λεπτά αδράνειας."
+      ],
       "Forwards to": [
         "Προώθηση σε"
       ],
@@ -2290,6 +2312,9 @@
       "Generic CSV": [
         "Γενικό CSV"
       ],
+      "Get the extension for your browser.": [
+        "Αποκτήστε την επέκταση για το πρόγραμμα περιήγησής σας."
+      ],
       "Grant": [
         "Παραχώρηση"
       ],
@@ -2301,6 +2326,9 @@
       ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Πώς να ξεκλειδώσετε το ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://example.com"
@@ -2337,6 +2365,9 @@
       ],
       "Instagram handle": [
         "Όνομα χρήστη Instagram"
+      ],
+      "Install and continue": [
+        "Εγκατάσταση και συνέχεια"
       ],
       "Invitations": [
         "Προσκλήσεις"
@@ -2639,6 +2670,9 @@
       "Unlock with": [
         "Ξεκλείδωμα με"
       ],
+      "Unlock with:": [
+        "Ξεκλείδωμα με:"
+      ],
       "Unnamed Credit Card": [
         "Πιστωτική κάρτα χωρίς όνομα"
       ],
@@ -2704,6 +2738,9 @@
       ],
       "You are about to create": [
         "Είστε έτοιμοι να δημιουργήσετε"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Μπορείτε να επιλέξετε μεταξύ κωδικού PIN, βιομετρικών στοιχείων ή κωδικού πρόσβασης του λογαριασμού σας για ξεκλείδωμα."
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
@@ -3316,6 +3353,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Δεν ήταν δυνατή η αποστολή προσκλήσεων στις ακόλουθες διευθύνσεις:"
+      ],
+      "Delete alias": [
+        "Διαγραφή ψευδώνυμου"
       ],
       "Duplicate email addresses.": [
         "Διπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
