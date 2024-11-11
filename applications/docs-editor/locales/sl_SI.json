@@ -17,6 +17,9 @@
       "a. b. c. d.": [
         "abc"
       ],
+      "Accept suggestion": [
+        "Sprejmi predlog"
+      ],
       "Add comment": [
         "Dodaj komentar"
       ],
@@ -25,6 +28,9 @@
       ],
       "Add new table row": [
         "Dodaj novo vrstico v tabelo"
+      ],
+      "Add suggestion": [
+        "Dodaj predlog"
       ],
       "Adjust font size": [
         "Prilagodi velikost pisave"
@@ -76,6 +82,9 @@
       ],
       "Copy link": [
         "Kopiraj povezavo"
+      ],
+      "Decline suggestion": [
+        "Zavrni predlog"
       ],
       "Delete": [
         "Izbriši"
@@ -394,6 +403,17 @@
         "Zavrzi komentar?"
       ]
     },
+    "Description": {
+      "Edit document directly": [
+        "Uredi dokument neposredno"
+      ],
+      "Edits become suggestions": [
+        "Urejanja postanejo predlogi"
+      ],
+      "Read or print final document": [
+        "Beri ali natisni končni dokument"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
         "Pri nalaganju dokumenta je prišlo do napake. Urejevalnik je bil zaklenjen, da ne bi prišlo do okvare dokumenta. Ponovno naložite stran in poskusite znova."
@@ -481,6 +501,9 @@
       "Font size": [
         "Velikost pisave"
       ],
+      "Highlight": [
+        "Poudarjeno"
+      ],
       "Internet connection lost": [
         "Internetna povezava je prekinjena"
       ],
@@ -502,11 +525,17 @@
       "Something went wrong:": [
         "Nekaj je šlo narobe:"
       ],
+      "Suggesting": [
+        "Predlaganje"
+      ],
       "Text color": [
         "Barva besedila"
       ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Vsebina, ki jo poskušate prilepiti, je prevelika. Poskusite znova tako, da prilepite manjše dele."
+      ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "Jezik, ki ga uporabljate, trenutno ni podprt v načinu ustvarjanja predlogov. Zamenjajte način urejanja ali jezik."
       ],
       "Viewing": [
         "Ogled"
@@ -516,17 +545,77 @@
       ]
     },
     "Label": {
+      "Add link": [
+        "Dodaj povezavo"
+      ],
+      "Align": [
+        "Poravnaj"
+      ],
       "Background colour": [
         "Barva ozadja"
+      ],
+      "Change image size": [
+        "Spremeni velikost slike"
+      ],
+      "Change indent level": [
+        "Spremeni stopnjo zamika"
+      ],
+      "Clear formatting": [
+        "Odstrani oblikovanje"
       ],
       "Delete": [
         "Izbriši"
       ],
+      "Delete divider": [
+        "Izbriši ločilnik"
+      ],
+      "Delete image": [
+        "Izbriši sliko"
+      ],
       "Delete link": [
         "Izbriši povezavo"
       ],
+      "Delete paragraph": [
+        "Izbriši odstavek"
+      ],
+      "Delete table": [
+        "Izbriši tabelo"
+      ],
+      "Delete table column": [
+        "Izbriši stolpec v tabeli"
+      ],
+      "Delete table row": [
+        "Izbriši vrstico v tabeli"
+      ],
+      "Duplicate table column": [
+        "Podvoji stolpec v tabeli"
+      ],
+      "Duplicate table row": [
+        "Podvoji vrstico v tabeli"
+      ],
+      "Format": [
+        "Oblika"
+      ],
       "Insert": [
         "Vstavi"
+      ],
+      "Insert divider": [
+        "Vstavi ločilnik"
+      ],
+      "Insert image": [
+        "Vstavi sliko"
+      ],
+      "Insert paragraph": [
+        "Vstavi odstavek"
+      ],
+      "Insert table": [
+        "Vstavi tabelo"
+      ],
+      "Insert table column": [
+        "Vstavi stolpec v tabelo"
+      ],
+      "Insert table row": [
+        "Vstavi vrstico v tabeli"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Bližnjica na tipkovnici: ${ shortcut }"
@@ -543,8 +632,14 @@
       "Replace": [
         "Zamenjaj"
       ],
+      "Replace link": [
+        "Zamenjaj povezavo"
+      ],
       "Text colour": [
         "Barva besedila"
+      ],
+      "with \"${ replaceWith }\"": [
+        "z \"${ replaceWith }\""
       ]
     },
     "Placeholder": {
@@ -570,6 +665,14 @@
       ],
       "Delete thread": [
         "Izbriši pogovore"
+      ],
+      "Language not supported": [
+        "Jezik ni podprt"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Ustvarjanje predlogov znotraj delov kode ni podprto."
       ]
     }
   }
