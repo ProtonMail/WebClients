@@ -318,7 +318,7 @@ const AccountStepPayment = ({
     const showAlert3ds = selectedMethodCard && !isSignupPass;
 
     return (
-        <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-14">
+        <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-10 lg:gap-20">
             <div className="shrink-0 md:flex-1 order-1 md:order-0">
                 <form
                     ref={formRef}
