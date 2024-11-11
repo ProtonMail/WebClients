@@ -805,11 +805,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1029,6 +1029,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Show all": [
+        "Mostrar todos"
       ],
       "Show less": [
         "Mostrar menos"
@@ -1599,14 +1602,6 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1628,6 +1623,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1723,6 +1726,9 @@
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
       ],
+      "One-time payment, lifetime deal": [
+        "Pagamento único, contrato vitalício"
+      ],
       "Online document editor": [
         "Editor de documentos on-line"
       ],
@@ -1758,8 +1764,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Os descontos são baseados no preço mensal padrão."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Se comprar o Pass Family ou Unlimited ,sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
@@ -1770,9 +1782,20 @@
         "Mais popular"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Estoque limitado!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Com o preço único de ${ amount }"
+      ],
       "for ${ durationDeal }": [
         "por ${ durationDeal }"
+      ],
+      "forever": [
+        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
@@ -3571,6 +3594,9 @@
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Receba até ${ credits } em créditos convidando amigos para a ${ BRAND_NAME }."
+      ],
+      "If disabled, only admins will have access.": [
+        "Se desativado, apenas os administradores poderão acessar."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
@@ -7225,11 +7251,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino."
@@ -8158,6 +8184,9 @@
       "Plus or Visionary subscription required": [
         "É necessária a assinatura Plus ou Visionária"
       ],
+      "Preference saved": [
+        "Preferências salvas"
+      ],
       "Preview": [
         "Pré-visualização"
       ],
@@ -8618,6 +8647,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura da ${ BRAND_NAME }. Iremos redirecioná-lo para o PayPal em uma nova guia do navegador. Se você usar bloqueadores de pop-up, desative-os para continuar."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Isto irá excluir permanentemente os dados e todos os endereços de e-mail associados a estes usuários."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Isto irá excluir permanentemente os dados e todos os endereços de e-mail associados a este usuário."
       ],
@@ -8837,10 +8869,10 @@
       "User activated": [
         "Usuário ativado"
       ],
-      "username": [
+      "Username": [
         "Nome de usuário"
       ],
-      "Username": [
+      "username": [
         "Nome de usuário"
       ],
       "Users": [
@@ -10625,6 +10657,10 @@
       "Send in": [
         "Enviar"
       ],
+      "Show ${ n } administrator": [
+        "Mostrar ${ n } administrador",
+        "Mostrar ${ n } administradores"
+      ],
       "Show others when I'm busy": [
         "Mostrar aos outros quando estou ocupado"
       ],
@@ -11647,32 +11683,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Iniciando a partir de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11700,6 +11710,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Iniciando a partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Faça upgrade para ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12381,23 +12417,6 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -12416,6 +12435,23 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtenha Mail Plus por ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -12697,6 +12733,74 @@
       ],
       "Support for ${ n } custom email domains": [
         "Suporte para ${ n } domínios de e-mail personalizados"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } e ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "Atualizações de produto para ${ app } e ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Atualizações de produto do ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Boletim da ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Comunicados importantes da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Boletim da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Ofertas e promoções da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Comunicados de produto da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Pesquisa de usuário da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "E-mails de boas-vindas da ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 e-mail por mês"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 e-mail por mês. Receba as notícias mais recentes sobre privacidade e o que está acontecendo no universo ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 e-mail por trimestre"
+      ],
+      "1-2 emails per month": [
+        "1-2 e-mails por mês"
+      ],
+      "2-4 emails per year": [
+        "2-4 e-mails por ano"
+      ],
+      "4-6 emails per year": [
+        "4-6 e-mails por ano"
+      ],
+      "Application notifications": [
+        "Notificações de aplicativos"
+      ],
+      "Daily email notifications": [
+        "Notificações diárias por e-mail"
+      ],
+      "During your first month": [
+        "Durante o primeiro mês"
+      ],
+      "In-app notifications": [
+        "Notificações dentro do aplicativo"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participe de pesquisas para melhorar os serviços da ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Atualizações de produtos"
       ]
     },
     "Notification": {
@@ -15496,6 +15600,10 @@
       "Current device": [
         "Dispositivo atual"
       ],
+      "Delete ${ n } user": [
+        "Excluir ${ n } usuário",
+        "Excluir ${ n } usuários"
+      ],
       "Deny": [
         "Negar"
       ],
@@ -16961,11 +17069,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -17532,6 +17640,9 @@
       "No recovery method": [
         "Nenhum método de recuperação"
       ],
+      "Notifications": [
+        "Notificações"
+      ],
       "Open": [
         "Aberto"
       ],
@@ -17919,6 +18030,9 @@
       ],
       "Version history": [
         "Histórico de versões"
+      ],
+      "Video conferencing": [
+        "Videoconferência"
       ],
       "VPN apps": [
         "Aplicativos de VPN"
@@ -18368,6 +18482,12 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel request": [
+        "Cancelar solicitação"
+      ],
+      "Cancel request to access user data?": [
+        "Cancelar solicitação para acessar dados do usuário?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Não foi possível habilitar automaticamente o acesso de administrador para ${ n } usuário, porque as chaves de criptografia dele foram atualizadas nesse meio tempo:",
         "Não foi possível habilitar automaticamente o acesso de administrador para ${ n } usuários, porque as chaves de criptografia deles foram atualizadas nesse meio tempo:"
@@ -18386,6 +18506,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Se você perder o acesso às suas credenciais, o administrador da sua organização conseguirá redefinir a sua senha e reestabelecer o acesso à sua conta."
+      ],
+      "Keep request": [
+        "Manter solicitação"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Após o consentimento do usuário, você poderá ajudá-lo a recuperar o acesso à conta ou gerenciar seus dados."
@@ -18549,6 +18672,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Os administradores não podem acessar os dados de usuários privados"
+      ],
+      "Inactive": [
+        "Inativa"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Convite enviado, aguardando resposta do membro convidado"

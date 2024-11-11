@@ -595,6 +595,9 @@
       "Show": [
         "ჩვენება"
       ],
+      "Show all": [
+        "ყველაფრის ჩვენება"
+      ],
       "Show preview": [
         "გადახედვის ჩვენება"
       ],
@@ -1025,6 +1028,9 @@
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
+      "One-time payment, lifetime deal": [
+        "ერთჯერადი გადართვა,  სამუდამო შეთანხმება"
+      ],
       "Online document editor": [
         "დოკუმენტების რედაქტორი ინტერნეტში"
       ],
@@ -1072,9 +1078,20 @@
         "ყველაზე პოპულარული"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "შეზღუდული მარაგი!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "გადაიხადეთ ${ amount } ერთხელ"
+      ],
       "for ${ durationDeal }": [
         "${ durationDeal }-სთვის"
+      ],
+      "forever": [
+        "სამუდამოდ"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "განახლდება 1 თვეში ფასად ${ regularAmount }."
@@ -3671,6 +3688,9 @@
         "შეცვლადი მომხმარებელი არის ხაზზე",
         "შეცვლადი მომხმარებლები არიან ხაზზე"
       ],
+      "All inactive members deleted": [
+        "ყველა არააქტიური მომხმარებელი წაიშალა"
+      ],
       "All members have been added.": [
         "ყველა წევრი დამატებულია."
       ],
@@ -4440,6 +4460,9 @@
       ],
       "Plus or Visionary subscription required": [
         "საჭიროა Plus ან Visionary გამოწერა"
+      ],
+      "Preference saved": [
+        "პარამეტრები შენახულია"
       ],
       "Preview": [
         "გადახედვა"
@@ -5703,6 +5726,10 @@
       "Security code (${ codeName })": [
         "უსაფრთხოების კოდი (${ codeName })"
       ],
+      "Show ${ n } administrator": [
+        "${ n } ადმინისტრატორის ჩვენება",
+        "${ n } ადმინისტრატორის ჩვენება"
+      ],
       "Single sign-on entity ID": [
         "SSO-ის ერთეულის ID"
       ],
@@ -5750,6 +5777,9 @@
       ],
       "Verification code": [
         "შემოწმების კოდი"
+      ],
+      "Video conferencing with Zoom": [
+        "ვიდეოკონფერენციები Zoom-ით"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "ვწუხვართ, რომ მიდიხართ. აგვიხსენით, რატომ გვტოვებთ, რომ უკეთესები გავხდეთ."
@@ -7101,6 +7131,53 @@
       ],
       "Support for ${ n } custom email domains": [
         "${ n } მომხმარებლის დომენის მხარდაჭერა"
+      ]
+    },
+    "news": {
+      "${ app } product updates": [
+        "${ app }-ის პროდუქტის განახლებები"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME }-ის სიახლეები"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } მომხმარებლის მიმოხილვა"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME }-ის მისალმების ელფოსტები"
+      ],
+      "1 email per month": [
+        "1 ელფოსტა თვეში"
+      ],
+      "1 email per quarter": [
+        "1 ელფოსტა კვარტალში"
+      ],
+      "1-2 emails per month": [
+        "1-2 ელფოსტა თვეში"
+      ],
+      "2-4 emails per year": [
+        "2-4 ელფოსტა წელიწადში"
+      ],
+      "4-6 emails per year": [
+        "4-6 ელფოსტა წელიწადში"
+      ],
+      "Application notifications": [
+        "აპლიკაციის გაფრთხილებები"
+      ],
+      "Daily email notifications": [
+        "ელფოსტის დღიური გაფრთხილებები"
+      ],
+      "During your first month": [
+        "თქვენი პირველი თვის განმავლობაში"
+      ],
+      "Email subscriptions": [
+        "ელფოსტის გამოწერები"
+      ],
+      "In-app notifications": [
+        "აპის შეტყობინებები"
+      ],
+      "Product updates": [
+        "პროდუქტის განახლებები"
       ]
     },
     "Notification": {
@@ -8673,6 +8750,14 @@
       ],
       "Contact your administrator if the problem persists.": [
         "დაუკავშირდით თქვენს ადმინისტრატორს, თუ პაროლი არ გაქრება."
+      ],
+      "Delete ${ n } inactive user?": [
+        "წავშალო ${ n } არააქტიური მომხმარებელი?",
+        "წავშალო ${ n } არააქტიური მომხმარებელი?"
+      ],
+      "Delete ${ n } user": [
+        "${ n } მომხმარებლის წაშლა",
+        "${ n } მომხმარებლის წაშლა"
       ],
       "Deny": [
         "უარყოფა"
@@ -10340,6 +10425,9 @@
       "Verifying your payment...": [
         "თქვენი გადახდის გადამოწმება..."
       ],
+      "Video conferencing": [
+        "ვიდეოკონფერენცია"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "ჩვენ გამოგიგზავნით ელფოსტას ახალ მისამართზე, ინსტრუქციებით, როგორ დაასრულოთ ცვლილება."
       ],
@@ -10537,6 +10625,9 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "მომხმარებლის კონფიდენციალურად გამოცხადებით მათ თავის ანგარიშზე არსებულ მონაცემების აღდგენაში ვეღარ დაეხმარებით."
       ],
+      "Cancel request": [
+        "მოთხოვნის გაუქმება"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:",
         "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:"
@@ -10546,6 +10637,9 @@
       ],
       "Enable manually": [
         "ხელით ჩართვა"
+      ],
+      "Keep request": [
+        "მოთხოვნის შენარჩუნება"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "მომხმარებლის თანხმობის შემდეგ საშუალება გექნებათ, დაეხმაროთ მათ, დაიბრუნონ წვდომა ან მართონ თავიანთი მონაცემები"
@@ -10665,6 +10759,9 @@
       ],
       "Administrators can't access the data of private users": [
         "ადმინისტრატორებს კონფიდენციალური მომხმარებლების მონაცემებთან წვდომა არ აქვთ"
+      ],
+      "Inactive": [
+        "არააქტიური"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "მოსაწვევი გაგზავნილია. ველოდები პასუხს მოწვეული წევრისგან"

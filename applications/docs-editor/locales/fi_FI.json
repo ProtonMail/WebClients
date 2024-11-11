@@ -499,6 +499,9 @@
       "Font size": [
         "Fonttikoko"
       ],
+      "Highlight": [
+        "Korosta"
+      ],
       "Internet connection lost": [
         "Internet-yhteys katkesi"
       ],
@@ -542,6 +545,9 @@
     "Label": {
       "Add link": [
         "Lisää linkki"
+      ],
+      "Align": [
+        "Tasaa"
       ],
       "Background colour": [
         "Taustan väri"
@@ -629,6 +635,9 @@
       ],
       "Text colour": [
         "Tekstin väri"
+      ],
+      "with \"${ replaceWith }\"": [
+        "tekstillä \"${ replaceWith }\""
       ]
     },
     "Placeholder": {
@@ -657,6 +666,11 @@
       ],
       "Language not supported": [
         "Kieltä ei tueta"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Koodilohkojen sisälle ei ole mahdollista tehdä ehdotuksia"
       ]
     }
   }

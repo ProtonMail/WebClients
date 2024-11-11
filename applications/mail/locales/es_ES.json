@@ -235,9 +235,6 @@
       "Close navigation": [
         "Cerrar la navegación"
       ],
-      "Close the checklist": [
-        "Cerrar la lista de verificación"
-      ],
       "Close this banner": [
         "Cerrar este banner"
       ],
@@ -1713,6 +1710,9 @@
       "Integrated 2FA authenticator": [
         "Autenticador 2FA integrado"
       ],
+      "One-time payment, lifetime deal": [
+        "Un solo pago, contrato de por vida"
+      ],
       "Online document editor": [
         "Editor de documentos online"
       ],
@@ -1748,8 +1748,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus lifetime no tiene precio de renovación, es un pago único por el acceso de por vida a Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Los descuentos se basan en la cuota estándar mensual."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Si adquieres el Pase familiar o Ilimitado, tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final de tu ciclo de facturación."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
@@ -1760,9 +1766,20 @@
         "Más popular"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "¡Stock limitado!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Un solo pago de ${ amount }"
+      ],
       "for ${ durationDeal }": [
         "por ${ durationDeal }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -2257,6 +2274,9 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mes",
@@ -5263,17 +5283,8 @@
       "Close": [
         "Cerrar"
       ],
-      "Closing this means giving up the free storage bonus.": [
-        "Al cerrar esto renuncias al bono de almacenamiento gratuito."
-      ],
       "Congratulations, you completed all the steps!": [
         "¡Felicidades! Has terminado todos los pasos."
-      ],
-      "Congratulations, you finished!": [
-        "¡Felicidades! Has terminado."
-      ],
-      "Continue setting up your email": [
-        "Continúa configurando tu correo"
       ],
       "Discover how our ${ strongText } protect you": [
         "Descubre cómo nuestras ${ strongText } te protegen"
@@ -9334,6 +9345,9 @@
       ],
       "Administration Panel": [
         "Panel de administración"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcionalidades avanzadas de alias (potenciado por SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Todos los productos y funciones de ${ BRAND_NAME }"
@@ -13936,6 +13950,9 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Unirte a la reunión de Zoom"
+      ],
       "Meeting ID:": [
         "Identificador de la reunión:"
       ],

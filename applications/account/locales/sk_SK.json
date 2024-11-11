@@ -808,11 +808,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "Refresh the page": [
-        "Obnoviť stránku"
-      ],
       "refresh the page": [
         "obnoviť stránku"
+      ],
+      "Refresh the page": [
+        "Obnoviť stránku"
       ],
       "Reject": [
         "Odmietnuť"
@@ -1032,6 +1032,9 @@
       ],
       "Show": [
         "Zobraziť"
+      ],
+      "Show all": [
+        "Zobraziť všetko"
       ],
       "Show less": [
         "Zobraziť menej"
@@ -1610,14 +1613,6 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1639,6 +1634,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plán ${ plan } je späť len na obmedzený čas"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1736,6 +1739,9 @@
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
       ],
+      "One-time payment, lifetime deal": [
+        "Jednorazová platba, doživotný prístup"
+      ],
       "Online document editor": [
         "Online editor dokumentov"
       ],
@@ -1771,8 +1777,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Doživotná služba ${ PASS_SHORT_APP_NAME } Plus nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k službe Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Zľavy sú tvorené na základe štandardných mesačných cien."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ak si zakúpite službu Pass Family alebo Unlimited, vaše predplatné sa na konci fakturačného cyklu automaticky obnoví za štandardnú zľavnenú cenu a so štandardným trvaním."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Vaše predplatné sa automaticky obnoví so štandardnou zľavnenou sadzbou a trvaním na konci vášho fakturačného cyklu."
@@ -1783,9 +1795,20 @@
         "Najpopulárnejšie"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Časovo obmedzené!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Účtovaná suma ${ amount } jednorazovo"
+      ],
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
+      ],
+      "forever": [
+        "navždy"
       ]
     },
     "BF2024: Tooltip": {
@@ -2175,7 +2198,7 @@
         "${ planMaxSpace } úložisko pre emaily"
       ],
       "Advanced account protection": [
-        "Advanced account protection"
+        "Pokročilá ochrana účtu"
       ],
       "All ${ BRAND_NAME } apps and premium features": [
         "Všetky ${ BRAND_NAME } aplikácie a prémiové funkcie"
@@ -5358,7 +5381,7 @@
         "*Na jedného používateľa sa vzťahuje len jedna bezplatná skúšobná verzia. Potom platí bežný cenník."
       ],
       "Accounts with custom domains cannot join a family plan.": [
-        "Účty s vlastnými doménami sa nemôžu pripojiť k rodinnému tarifu."
+        "Účty s vlastnými doménami sa nemôžu pripojiť k rodinnému plánu."
       ],
       "After leaving, you will be moved to a ${ BRAND_NAME } Free plan.": [
         "Po odchode dôjde k presunu na tarif ${ BRAND_NAME } Free."
@@ -5367,7 +5390,7 @@
         "zákaznícka podpora"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Rodinné tarify v súčasnej dobe nepodporujú externé účty. Pred pripojením si vytvorte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
+        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -5391,7 +5414,7 @@
         "Opustiť plán Visionary"
       ],
       "Lifetime accounts cannot join a family plan.": [
-        "Doživotné účty nemôžu byť pripojené k rodinnému tarifu."
+        "Doživotné účty nemôžu byť pripojené k rodinnému plánu."
       ],
       "Manage addresses": [
         "Spravovať adresy"
@@ -5406,7 +5429,7 @@
         "Počas 6 mesiacov je povolené prijať iba ${ n } pozvánok."
       ],
       "Owners of a plan with members cannot join another family plan.": [
-        "Vlastníci tarify s členmi, sa nemôžu pripojiť k inej rodinnej tarife."
+        "Vlastníci plánu s členmi sa nemôžu pripojiť k inému rodinnému plánu."
       ],
       "Pending": [
         "Čakajúce"
@@ -5460,7 +5483,7 @@
         "Úspešne ste sa pripojili do rodinnej skupiny"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "Máte nezaplatené faktúry. Pred pripojením k rodinnému tarifu ich prosím uhraďte."
+        "Máte nezaplatené faktúry. Pred pripojením k rodinnému plánu ich uhraďte, prosím."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred pridaním viacerých používateľov, musíte nakonfigurovať vlastnú doménu."
@@ -5472,7 +5495,7 @@
         "Stratíte prístup ku všetkým prémiovým funkciám, ktoré sú súčasťou ${ plan }."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Môžete prepojiť svoj účet ${ BRAND_NAME } s týmto rodinným tarifom a spoločne využívať všetky prémiové funkcie ${ brandOrAppName }."
+        "Ste pozvaní prepojiť svoj ${ BRAND_NAME } účet s týmto rodinným plánom a spoločne využívať všetky prémiové funkcie ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má viac emailových adries než koľko máte k dispozícii v tomto pláne. ${ addressSettingsLink }"
@@ -7014,6 +7037,9 @@
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
       ],
+      "All inactive members deleted": [
+        "Všetci neaktívni používatelia boli vymazaní"
+      ],
       "All keys successfully reactivated": [
         "Všetky kľúče boli úspešne reaktivované"
       ],
@@ -7353,11 +7379,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -8301,6 +8327,9 @@
       "Plus or Visionary subscription required": [
         "Je vyžadované predplatné Plus alebo Visionary"
       ],
+      "Preference saved": [
+        "Nastavenie uložené"
+      ],
       "Preview": [
         "Ukážka"
       ],
@@ -8769,6 +8798,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní, aby sa PayPal použil na zaplatenie vášho predplatného ${ BRAND_NAME }. Na novej karte prehliadača vás presmerujeme na PayPal. Ak používate nejaké blokovanie automaticky otváraných okien, deaktivujte ho, aby ste mohli pokračovať."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Týmto natrvalo vymažete dáta a všetky emailové adresy spojené s týmito používateľmi."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Týmto natrvalo vymažete dáta a všetky emailové adresy spojené s týmto používateľom."
       ],
@@ -8988,11 +9020,11 @@
       "User activated": [
         "Používateľ aktivovaný"
       ],
-      "username": [
-        "používateľské meno"
-      ],
       "Username": [
         "Používateľské meno"
+      ],
+      "username": [
+        "používateľské meno"
       ],
       "Users": [
         "Používatelia"
@@ -10811,6 +10843,12 @@
       "Send in": [
         "Odoslať v"
       ],
+      "Show ${ n } administrator": [
+        "Zobraziť ${ n } správcu",
+        "Zobraziť ${ n } správcov",
+        "Zobraziť ${ n } správcov",
+        "Zobraziť ${ n } správcov"
+      ],
       "Show others when I'm busy": [
         "Zobraziť ostatným, kedy som zaneprázdnený"
       ],
@@ -10951,6 +10989,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Overenie kľúčov cez funkciu Transparentnosť kľúčov"
+      ],
+      "Video conferencing with Zoom": [
+        "Videokonferencie s aplikáciou Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám ľúto, že odchádzate. Napíšte nám svoj dôvod, prečo odchádzate, aby sme mohli zlepšiť naše služby."
@@ -11849,32 +11890,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Začnite za ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Cena od ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
@@ -11902,6 +11917,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Začnite za ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Cena od ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Navýšte na ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12544,7 +12585,7 @@
         "Chráňte citlivé obchodné informácie a bezpečne spolupracujte."
       ],
       "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ PASS_SHORT_APP_NAME } Plus pre 6 užívateľov."
+        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ PASS_SHORT_APP_NAME } Plus pre 6 používateľov."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
@@ -12633,20 +12674,6 @@
         "Váš zvolený plán: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Získajte Mail Plus za ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Cena od ${ price }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -12665,6 +12692,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Získajte Mail Plus za ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -12950,6 +12991,83 @@
       ],
       "Support for ${ n } custom email domains": [
         "Podpora pre ${ n } vlastné emailové domény"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } a ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "Aktualizácia ${ app } a ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Aktualizácie produktu ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } novinky pre firmy"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Dôležité oznámenia ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } novinky"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } akčné ponuky"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Oznámenia o produktoch ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Používateľský prieskum ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } uvítacie emaily"
+      ],
+      "1 email per month": [
+        "1 email mesačne"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 email mesačne. Získajte najnovšie správy o ochrane osobných údajov a dianí vo svete ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 email štvrťročne"
+      ],
+      "1-2 emails per month": [
+        "1-2 emaily mesačne"
+      ],
+      "2-4 emails per year": [
+        "2-4 emaily za rok"
+      ],
+      "4-6 emails per year": [
+        "4-6 emailov za rok"
+      ],
+      "Application notifications": [
+        "Notifikácie aplikácie"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Kritické notifikácie o účtoch budú naďalej doručované"
+      ],
+      "Daily email notifications": [
+        "Denné emailové notifikácie"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Deaktiváciou tejto funkcie odstránite možnosť prijímať notifikácie v aplikáciách ${ BRAND_NAME }"
+      ],
+      "During your first month": [
+        "Počas vášho prvého mesiaca"
+      ],
+      "Email subscriptions": [
+        "Zasielanie pravidelných emailov"
+      ],
+      "In-app notifications": [
+        "Oznámenia v aplikácii"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Zapojte sa do prieskumov s cieľom zlepšiť služby ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Aktualizácie produktu"
       ]
     },
     "Notification": {
@@ -15743,6 +15861,18 @@
         "${ n } členov vás požiadalo o pomoc s prihlasovaním.",
         "${ n } členov vás požiadalo o pomoc s prihlasovaním."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } používateľ sa pripojil k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účet:",
+        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
+        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:",
+        "${ n } používatelia sa pripojili k vašej organizácii prostredníctvom poskytovateľa identity. Teraz skontrolujte účty:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } používateľ je neaktívny. Tohto používateľa môžete bezpečne odstrániť z organizácie.",
+        "${ n } používatelia sú neaktívni. Týchto používateľov môžete bezpečne odstrániť z organizácie.",
+        "${ n } používatelia sú neaktívni. Týchto používateľov môžete bezpečne odstrániť z organizácie.",
+        "${ n } používatelia sú neaktívni. Týchto používateľov môžete bezpečne odstrániť z organizácie."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } používateľ vás žiada o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením.",
         "${ n } používatelia vás žiadajú o pomoc s prihlásením do svojho účtu ${ BRAND_NAME }. Účet s jednotným prihlásením.",
@@ -15799,6 +15929,18 @@
       ],
       "Current device": [
         "Aktuálne zariadenie"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Vymazať ${ n } neaktívneho používateľa?",
+        "Vymazať ${ n } neaktívnych používateľov?",
+        "Vymazať ${ n } neaktívnych používateľov?",
+        "Vymazať ${ n } neaktívnych používateľov?"
+      ],
+      "Delete ${ n } user": [
+        "Vymazať ${ n } používateľa",
+        "Vymazať ${ n } používateľov?",
+        "Vymazať ${ n } používateľov?",
+        "Vymazať ${ n } používateľov?"
       ],
       "Deny": [
         "Zamietnuť"
@@ -16424,10 +16566,10 @@
         "Dodatočný úložný priestor a používatelia"
       ],
       "Folders, labels and filters": [
-        "Zložky, štítky a filtre"
+        "Priečinky, štítky a filtre"
       ],
       "Folders, labels, and custom filters": [
-        "Zložky, štítky a vlastné filtre"
+        "Priečinky, štítky a vlastné filtre"
       ],
       "Got it": [
         "Rozumiem"
@@ -17321,10 +17463,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -17897,6 +18039,9 @@
       "No recovery method": [
         "Žiadna metóda pre obnovenie"
       ],
+      "Notifications": [
+        "Notifikácie"
+      ],
       "Open": [
         "Otvoriť"
       ],
@@ -18283,6 +18428,9 @@
       ],
       "Version history": [
         "História verzií"
+      ],
+      "Video conferencing": [
+        "Videokonferencie"
       ],
       "VPN apps": [
         "VPN aplikácie"
@@ -18704,10 +18852,13 @@
         "stabilná verzia"
       ],
       "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Táto verzia TOR prehliadača nie je podporovaná. Aktualizujte, prosím, na poslednú ${ stableRelease }"
+        "Táto verzia prehliadača TOR nie je podporovaná. Prosím, aktualizujte na najnovšiu ${ stableRelease }"
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Čaká sa na prístup správcu:** Tomuto používateľovi sme odoslali žiadosť, aby mohol jeho účet spravovať akýkoľvek správca."
+      ],
       "Administrator access enabled": [
         "Prístup správcu povolený"
       ],
@@ -18732,6 +18883,12 @@
       "Cancel": [
         "Zrušiť"
       ],
+      "Cancel request": [
+        "Zrušiť žiadosť"
+      ],
+      "Cancel request to access user data?": [
+        "Zrušiť žiadosť na prístup k dátam používateľa?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľa, pretože jeho šifrovacie kľúče boli medzitým aktualizované:",
         "Nepodarilo sa automaticky povoliť prístup správcu pre ${ n } používateľov, pretože ich šifrovacie kľúče boli medzitým aktualizované:",
@@ -18752,6 +18909,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Ak niekedy stratíte prístup k svojim povereniam, správcovia vašej organizácie budú môcť obnoviť vaše heslo a obnoviť prístup k vášmu účtu."
+      ],
+      "Keep request": [
+        "Ponechať žiadosť"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Akonáhle používateľ súhlasí, budete mu môcť pomôcť obnoviť prístup k účtu alebo spravovať jeho údaje."
@@ -18782,6 +18942,9 @@
       ],
       "The user must have an address to request data access": [
         "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Tento krok zruší čakajúcu požiadavku na prístup správcu k údajom používateľa alebo na resetovanie hesla."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Týmto zrušíte oprávnenie správcu spravovať tento používateľský účet."
@@ -18917,6 +19080,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administrátori nemajú prístup k údajom súkromných používateľov"
+      ],
+      "Inactive": [
+        "Neaktívni"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Pozvánka odoslaná, čaká sa na odpoveď od pozvaného člena"

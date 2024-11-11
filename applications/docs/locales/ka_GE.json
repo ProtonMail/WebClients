@@ -875,6 +875,9 @@
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
+      "One-time payment, lifetime deal": [
+        "ერთჯერადი გადართვა,  სამუდამო შეთანხმება"
+      ],
       "Online document editor": [
         "დოკუმენტების რედაქტორი ინტერნეტში"
       ],
@@ -922,9 +925,20 @@
         "ყველაზე პოპულარული"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "შეზღუდული მარაგი!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "გადაიხადეთ ${ amount } ერთხელ"
+      ],
       "for ${ durationDeal }": [
         "${ durationDeal }-სთვის"
+      ],
+      "forever": [
+        "სამუდამოდ"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "განახლდება 1 თვეში ფასად ${ regularAmount }."

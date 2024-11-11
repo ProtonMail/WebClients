@@ -172,6 +172,9 @@
       "Delete all": [
         "전체 삭제"
       ],
+      "Delete it, I will never need it": [
+        "삭제할게요, 필요하지 않아요."
+      ],
       "Delete password": [
         "비밀번호 삭제"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "선택 해제"
+      ],
+      "Disable alias": [
+        "별칭 비활성화"
       ],
       "Disable instead": [
         "대신 비활성화"
@@ -534,6 +540,9 @@
       ],
       "Try for free": [
         "무료 체험하기"
+      ],
+      "Understood, I will never need it": [
+        "이해했어요, 더 이상 필요하지 않습니다."
       ],
       "Unlock": [
         "잠금 해제"
@@ -1678,6 +1687,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "계속하려면 현재 PIN을 입력하세요."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "별칭이 한 번 삭제되면 복구할 수 없습니다. 혹시 비활성화를 원하시나요?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "별칭을 삭제하면 복원할 수 없습니다. 별칭이 이미 비활성화되었기에 내 메일함으로 이메일이 포워딩되지 않습니다"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "${ PASS_APP_NAME } 웹 앱 얼리 엑세스 특전을 얻기 위해선 업그레이드 하세요."
@@ -3183,6 +3198,9 @@
       "Pinned (${ items.length })": [
         "고정됨 (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "별칭이 한 번 삭제되면 복구 될 수 없습니다."
+      ],
       "Recommended actions": [
         "권장하는 조치"
       ],
@@ -3305,6 +3323,9 @@
       ],
       "Your welcome gift": [
         "무료 체험을 즐겨보세요"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "${ aliasCount }개 별칭을 영구적으로 삭제하려고 합니다."
       ]
     },
     "Validation": {
@@ -3360,6 +3381,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "아래의 주소로 초대장을 보내지 못했습니다:"
+      ],
+      "Delete alias": [
+        "별칭 삭제"
       ],
       "Duplicate email addresses.": [
         "중복된 이메일 주소들입니다."

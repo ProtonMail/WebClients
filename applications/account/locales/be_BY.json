@@ -808,11 +808,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Reject": [
         "Адхіліць"
@@ -1032,6 +1032,9 @@
       ],
       "Show": [
         "Паказаць"
+      ],
+      "Show all": [
+        "Паказаць усё"
       ],
       "Show less": [
         "Паказаць менш"
@@ -1610,14 +1613,6 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1639,6 +1634,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1731,6 +1734,9 @@
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
       ],
+      "One-time payment, lifetime deal": [
+        "Аднаразовая аплата, пажыццёвы доступ"
+      ],
       "Online document editor": [
         "Воблачны рэдактар дакументаў"
       ],
@@ -1766,8 +1772,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } Plus не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты, калі вы купіце Pass Family або Unlimited."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
@@ -1778,9 +1790,20 @@
         "Найбольш папулярны"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Limited stock!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Аплачваецца ${ amount } адінаразова"
+      ],
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
+      ],
+      "forever": [
+        "назаўсёды"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
@@ -7018,6 +7041,9 @@
         "Усе (${ totalFoldersCount } метак)",
         "Усе (${ totalFoldersCount } меткі)"
       ],
+      "All inactive members deleted": [
+        "Усе неактыўныя ўдзельнікі выдалены"
+      ],
       "All keys successfully reactivated": [
         "Усе ключы паспяхова паўторна актываваны"
       ],
@@ -7357,11 +7383,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -8305,6 +8331,9 @@
       "Plus or Visionary subscription required": [
         "Патрабуецца падпіска Plus або Visionary"
       ],
+      "Preference saved": [
+        "Параметр захаваны"
+      ],
       "Preview": [
         "Папярэдні прагляд"
       ],
@@ -8773,6 +8802,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Гэта дазволіць вам аплачваць падпіску ${ BRAND_NAME } праз PayPal. Мы перанакіруем вас на сайт PayPal, які адкрыецца ў новай укладцы браўзера. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Гэта незваротна выдаліць даныя і ўсе адрасы электроннай пошты, якія звязаны з гэтымі карыстальнікамі."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Гэта незваротна выдаліць даныя і ўсе адрасы электроннай пошты, якія звязаны з гэтым карыстальнікам."
       ],
@@ -8992,11 +9024,11 @@
       "User activated": [
         "Карыстальнік актываваны"
       ],
-      "username": [
-        "імя карыстальніка"
-      ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "username": [
+        "імя карыстальніка"
       ],
       "Users": [
         "Карыстальнікі"
@@ -10815,6 +10847,12 @@
       "Send in": [
         "Адправіць у"
       ],
+      "Show ${ n } administrator": [
+        "Паказаць ${ n } адміністратара",
+        "Паказаць ${ n } адміністратары",
+        "Паказаць ${ n } адміністратараў",
+        "Паказаць ${ n } адміністратараў"
+      ],
       "Show others when I'm busy": [
         "Паказваць іншым, калі я заняты"
       ],
@@ -10955,6 +10993,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Праверка ключоў пры дапамозе Key Transparency"
+      ],
+      "Video conferencing with Zoom": [
+        "Відэаканферэнцыя з Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа нам палепшыць наш сэрвіс"
@@ -11853,32 +11894,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Пачніце з коштам у памеры ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Пачатковы кошт ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11906,6 +11921,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Пачніце з коштам у памеры ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Пачатковы кошт ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Палепшыць да ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12637,20 +12678,6 @@
         "Выбраны тарыфны план: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Атрымайце Mail Plus за ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Пачатковы кошт ${ price }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -12669,6 +12696,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -12954,6 +12995,83 @@
       ],
       "Support for ${ n } custom email domains": [
         "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } і ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "Абнаўленні прадуктаў ${ app } і ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Абнаўленні прадукту ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Навіны ${ BRAND_NAME } для бізнесу"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Важныя аб'явы ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Навіны ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Прапановы і рэкламныя акцыі ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Апавяшчэнні прадукту ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Апытанне карыстальнікаў ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Прывітальныя лісты ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 ліст у месяц"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 ліст у месяц. Атрымлівайце апошнія навіны прыватнасці і падзеі, якія адбываюцца ў сусвеце ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 ліст у квартал"
+      ],
+      "1-2 emails per month": [
+        "1-2 лісты ў месяц"
+      ],
+      "2-4 emails per year": [
+        "2-4 лісты ў год"
+      ],
+      "4-6 emails per year": [
+        "4-6 лісты ў год"
+      ],
+      "Application notifications": [
+        "Апавяшчэнні праграмы"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Крытычныя апавяшчэнні ўліковага запісу ўсё яшчэ будуць дастаўляцца"
+      ],
+      "Daily email notifications": [
+        "Штодзённыя апавяшчэнні па электроннай пошце"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Адключэнне гэтага параметра правядзе да выдалення магчымасці атрымліваць апавяшчэнні ў праграме ${ BRAND_NAME }"
+      ],
+      "During your first month": [
+        "На працягу першага месяца"
+      ],
+      "Email subscriptions": [
+        "Падпіскі электроннай пошты"
+      ],
+      "In-app notifications": [
+        "Апавяшчэнні ў праграме"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Удзельнічайце ў апытанні, каб удасканаліць сэрвісы ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Абнаўленні прадукту"
       ]
     },
     "Notification": {
@@ -15747,6 +15865,18 @@
         "${ n } удзельнікаў запыталі вашу дапамогу з уваходам.",
         "${ n } удзельнікаў запыталі вашу дапамогу з уваходам."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } карыстальнік далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Праверце яго ўліковы запіс:",
+        "${ n } карыстальнікі далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Праверце іх уліковыя запісы:",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Праверце іх уліковыя запісы:",
+        "${ n } карыстальнікаў далучаны да вашай арганізацыі праз вашага пастаўшчыка пасведчанняў. Праверце іх уліковыя запісы:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } карыстальнік неактыўны. Вы можаце бяспечна выдаліць гэтага карыстальніка з вашай арганізацыі.",
+        "${ n } карыстальнікі неактыўныя. Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі.",
+        "${ n } карыстальнікаў неактыўныя. Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі.",
+        "${ n } карыстальнікаў неактыўныя. Вы можаце бяспечна выдаліць гэтых карыстальнікаў з вашай арганізацыі."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } карыстальнік запытвае вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу.",
         "${ n } карыстальнікі запытваюць вашу дапамогу для ўваходу ў свой уліковы запіс ${ BRAND_NAME } з дапамогай адзінага ўваходу.",
@@ -15803,6 +15933,18 @@
       ],
       "Current device": [
         "Бягучая прылада"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Выдаліць ${ n } неактыўнага карыстальніка?",
+        "Выдаліць ${ n } неактыўных карыстальнікаў?",
+        "Выдаліць ${ n } неактыўных карыстальнікаў?",
+        "Выдаліць ${ n } неактыўных карыстальнікаў?"
+      ],
+      "Delete ${ n } user": [
+        "Выдаліць ${ n } карыстальніка",
+        "Выдаліць ${ n } карыстальнікаў",
+        "Выдаліць ${ n } карыстальнікаў",
+        "Выдаліць ${ n } карыстальнікаў"
       ],
       "Deny": [
         "Забараніць"
@@ -17325,10 +17467,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -17901,6 +18043,9 @@
       "No recovery method": [
         "Адсутнічае спосаб аднаўлення"
       ],
+      "Notifications": [
+        "Апавяшчэнні"
+      ],
       "Open": [
         "Адкрыць"
       ],
@@ -18287,6 +18432,9 @@
       ],
       "Version history": [
         "Гісторыя версій"
+      ],
+      "Video conferencing": [
+        "Відэаканферэнцыя"
       ],
       "VPN apps": [
         "Праграмы VPN"
@@ -18712,6 +18860,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Чаканне доступу адміністратара:** Мы адправілі запыт гэтаму карыстальніку, каб дазволіць любому карыстальніку кіраваць яго ўліковым запісам."
+      ],
       "Administrator access enabled": [
         "Доступ для адміністратара ўключаны"
       ],
@@ -18736,6 +18887,12 @@
       "Cancel": [
         "Скасаваць"
       ],
+      "Cancel request": [
+        "Скасаваць запыт"
+      ],
+      "Cancel request to access user data?": [
+        "Скасаваць запыт на доступ да даных карыстальніка?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальніка, бо яго/іх ключы шыфравання ў гэты час былі абноўлены:",
         "Немагчыма аўтаматычна ўключыць доступ адміністратара для ${ n } карыстальнікаў, бо іх ключы шыфравання ў гэты час былі абноўлены:",
@@ -18756,6 +18913,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "У вашага адміністратара арганізацыі будзе магчымасць скінуць ваш пароль і аднавіць доступ да вашага ўліковага запісу ў выпадку, калі вы згубіце доступ да яго."
+      ],
+      "Keep request": [
+        "Пакінуць запыт"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Як толькі карыстальнік пагадзіцца, вы зможаце дапамагчы яму аднавіць доступ да ўліковага запісу або кіраваць яго данымі."
@@ -18786,6 +18946,9 @@
       ],
       "The user must have an address to request data access": [
         "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Гэта дзеянне скасуе незавершаны запыт правоў адміністратара да даных карыстальніка або скіданне пароля."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Гэта дзеянне адклікае правы адміністратара для кіравання гэтым уліковым запісам карыстальніка."
@@ -18921,6 +19084,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў"
+      ],
+      "Inactive": [
+        "Неактыўны"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Запрашэнне адпраўлена. Чаканне адказу ад запрошанага ўдзельніка"
