@@ -492,8 +492,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
         });
     }
 
-    // Website variations
-    if (['website', 'web', 'url', 'webpage'].includes(property)) {
+    if (property.includes('web')) {
         return (value: ContactValue) => ({
             header,
             value,
