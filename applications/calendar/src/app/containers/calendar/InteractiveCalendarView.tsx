@@ -341,7 +341,9 @@ const InteractiveCalendarView = ({
     const isSavingEvent = useRef(false);
     const isEditSingleOccurrenceEnabled = useFlag('EditSingleOccurrenceWeb');
     const hasReduxStore = useFlag('CalendarRedux');
-
+    const [targetEventElement, setTargetEventElement] = useState<HTMLElement | null>(null);
+    const [targetMoreElement, setTargetMoreElement] = useState<HTMLDivElement | null>(null);
+    const eventInPopoverUniqueIdRef = useRef<string | undefined>(undefined);
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const isSearchView = view === VIEWS.SEARCH;
     const cancelClosePopoverRef = useRef(false);
@@ -696,7 +698,6 @@ const InteractiveCalendarView = ({
 
         if (isEventDownAction(mouseDownAction)) {
             const { event, type } = mouseDownAction.payload;
-
             // If already creating something in blocking mode and not touching on the temporary event.
             // Perform this check only when the redux feature flag is off. If ON, we should be able to open other events.
             if (!hasReduxStore && temporaryEvent && event.uniqueId !== TMP_UNIQUE_ID && isInTemporaryBlocking) {
@@ -727,9 +728,8 @@ const InteractiveCalendarView = ({
                 return;
             }
 
-            let newTemporaryModel =
-                temporaryEvent && event.uniqueId === TMP_UNIQUE_ID ? temporaryEvent.tmpData : undefined;
-            let newTemporaryEvent = temporaryEvent && event.uniqueId === TMP_UNIQUE_ID ? temporaryEvent : undefined;
+            let newTemporaryModel = temporaryEvent && event.isTemporary ? temporaryEvent.tmpData : undefined;
+            let newTemporaryEvent = temporaryEvent && event.isTemporary ? temporaryEvent : undefined;
             let initialModel = newTemporaryModel;
 
             return (mouseUpAction: MouseUpAction) => {
@@ -737,7 +737,7 @@ const InteractiveCalendarView = ({
                     const { idx } = mouseUpAction.payload;
 
                     setInteractiveData({
-                        temporaryEvent: temporaryEvent && event.uniqueId === TMP_UNIQUE_ID ? temporaryEvent : undefined,
+                        temporaryEvent: temporaryEvent && event.isTemporary ? temporaryEvent : undefined,
                         targetEventData: { uniqueId: event.uniqueId, idx, type },
                     });
                     return;
@@ -809,7 +809,7 @@ const InteractiveCalendarView = ({
 
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
-                        targetEventData: { uniqueId: TMP_UNIQUE_ID, idx, type },
+                        targetEventData: { uniqueId: event.uniqueId, idx, type },
                     });
                 }
             };
@@ -823,9 +823,7 @@ const InteractiveCalendarView = ({
             const { type } = mouseDownAction.payload;
             const isFromAllDay = type === TYPE.DAYGRID;
 
-            // If there is any popover or temporary event
-            if (interactiveData && !isInTemporaryBlocking) {
-                setInteractiveData(undefined);
+            if (isProcessing(TMP_UNIQUE_ID)) {
                 return;
             }
 
@@ -1138,18 +1136,41 @@ const InteractiveCalendarView = ({
 
     const { setOpenedSearchItem, setIsSearching, setSearchInput } = useCalendarSearch();
 
-    const closeAllPopovers = () => {
+    const resetInteractiveData = () => {
         setInteractiveData(undefined);
         setOpenedSearchItem(undefined);
     };
 
+    // Close modal and popover
+    const closeProcessingPortal = (uniqueId: string = TMP_UNIQUE_ID) => {
+        if (eventInPopoverUniqueIdRef.current === uniqueId) {
+            setInteractiveData((prev) => ({
+                ...prev,
+                targetEventData: prev?.targetEventData
+                    ? {
+                          ...prev?.targetEventData,
+                          preventPopover: true, // close the popover
+                      }
+                    : undefined,
+            }));
+
+            closeModal('createEventModal');
+        }
+    };
+
+    const removeTemporaryEvent = (uniqueId?: string) => {
+        if (temporaryEvent?.uniqueId === uniqueId) {
+            resetInteractiveData();
+        }
+    };
+
     useEffect(() => {
         if (isSearchView) {
-            closeAllPopovers();
+            resetInteractiveData();
         }
     }, [isSearchView]);
 
-    const handleCloseMorePopover = closeAllPopovers;
+    const handleCloseMorePopover = resetInteractiveData;
 
     const handleCloseEventPopover = () => {
         // If both a more popover and an event is open, first close the event
@@ -1157,7 +1178,7 @@ const InteractiveCalendarView = ({
             setInteractiveData(omit(interactiveData, ['targetEventData']));
             return;
         }
-        closeAllPopovers();
+        resetInteractiveData();
     };
 
     const handleConfirmDeleteTemporary = async ({ ask = false } = {}) => {
@@ -1419,6 +1440,7 @@ const InteractiveCalendarView = ({
         // uid is not defined when we create a new event
         const UID = temporaryEvent.tmpData.uid || TMP_UID;
         const ID = (temporaryEvent.data?.eventData as CalendarEvent)?.ID;
+        const uniqueId = temporaryEvent.uniqueId;
         const selfEmail = inviteActions.selfAddress?.Email;
         let oldPartstat: string | undefined;
         let successNotification: { success: string } | undefined;
@@ -1426,7 +1448,7 @@ const InteractiveCalendarView = ({
         try {
             isSavingEvent.current = true;
             if (hasReduxStore && isChangePartstat && selfEmail && inviteActions.partstat) {
-                oldPartstat = getCurrentPartstat(temporaryEvent.tmpOriginalTarget?.uniqueId || '', selfEmail);
+                oldPartstat = getCurrentPartstat(uniqueId, selfEmail);
                 dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: inviteActions.partstat }));
             }
             const {
@@ -1459,10 +1481,7 @@ const InteractiveCalendarView = ({
             });
 
             if (hasReduxStore) {
-                if (isChangePartstat) {
-                    closeAllPopovers();
-                }
-                closeModal('createEventModal');
+                closeProcessingPortal(uniqueId);
                 dispatch(eventsActions.markEventAsSaving({ UID, isSaving: true }));
             }
 
@@ -1516,6 +1535,7 @@ const InteractiveCalendarView = ({
                 changeDate(newStartDate, hasChanged);
             }
 
+            removeTemporaryEvent(uniqueId);
             handleCreateNotification(successNotification);
         } catch (e: any) {
             if (e instanceof EscapeTryBlockError) {
@@ -1566,7 +1586,7 @@ const InteractiveCalendarView = ({
                             })
                         );
                         dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: true, recurringType }));
-                        closeModal('createEventModal');
+                        closeProcessingPortal(targetEvent.uniqueId);
                     }
 
                     return result;
@@ -1649,10 +1669,6 @@ const InteractiveCalendarView = ({
         },
     }));
 
-    const [targetEventElement, setTargetEventElement] = useState<HTMLElement | null>(null);
-    const [targetMoreElement, setTargetMoreElement] = useState<HTMLDivElement | null>(null);
-    const eventInPopoverUniqueIdRef = useRef<string | undefined>(undefined);
-
     const targetEvent = useMemo(() => {
         if (searchData) {
             return searchData;
@@ -1660,16 +1676,18 @@ const InteractiveCalendarView = ({
         if (!targetEventData) {
             return;
         }
-        const event = sortedEventsWithTemporary.find(({ uniqueId }) => uniqueId === targetEventData.uniqueId);
+        return sortedEventsWithTemporary.find(({ uniqueId }) => uniqueId === targetEventData.uniqueId);
+    }, [targetEventData, temporaryEvent, sortedEventsWithTemporary, searchData]);
+
+    useEffect(() => {
         // We need to keep a ref of the currently opened event in the popover,
         // so that we can compare currently opened event id with saving event id, and decide whether we need to close the popover or not
-        eventInPopoverUniqueIdRef.current = event?.uniqueId;
-        return event;
-    }, [targetEventData, sortedEventsWithTemporary, searchData]);
+        eventInPopoverUniqueIdRef.current = temporaryEvent?.uniqueId || targetEvent?.uniqueId;
+    }, [targetEvent, temporaryEvent]);
 
     const autoCloseRef = useRef<({ ask }: { ask: boolean }) => void>();
     autoCloseRef.current = ({ ask }) => {
-        handleConfirmDeleteTemporary({ ask }).then(closeAllPopovers).catch(noop);
+        handleConfirmDeleteTemporary({ ask }).then(resetInteractiveData).catch(noop);
     };
 
     useEffect(() => {
@@ -1693,11 +1711,11 @@ const InteractiveCalendarView = ({
             autoCloseRef?.current?.({ ask: true });
         };
         containerRef.addEventListener('click', handler);
-        document.addEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, closeAllPopovers);
+        document.addEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, resetInteractiveData);
 
         return () => {
             containerRef.removeEventListener('click', handler);
-            document.removeEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, closeAllPopovers);
+            document.removeEventListener(ADVANCED_SEARCH_OVERLAY_OPEN_EVENT, resetInteractiveData);
         };
     }, [containerRef]);
 
@@ -1957,11 +1975,11 @@ const InteractiveCalendarView = ({
                         !targetEvent ||
                         targetEventData?.preventPopover ||
                         // Force to close the popover when saving a tmp event (update/create an event)
-                        pendingUniqueIds.includes(temporaryEvent?.tmpOriginalTarget?.uniqueId || targetEvent.uniqueId)
+                        pendingUniqueIds.includes(targetEvent.uniqueId)
                     ) {
                         return null;
                     }
-                    if (targetEvent.uniqueId === TMP_UNIQUE_ID && tmpData) {
+                    if (targetEvent.isTemporary && tmpData) {
                         return (
                             <CreateEventPopover
                                 isDraggingDisabled={isSmallViewport || isDrawerApp}
@@ -1981,15 +1999,7 @@ const InteractiveCalendarView = ({
                                     }
                                     try {
                                         await handleSaveEvent(temporaryEvent, inviteActions);
-
-                                        // If event in popover is still the saving event, close the popover
-                                        if (eventInPopoverUniqueIdRef.current === targetEvent?.uniqueId) {
-                                            // Check if opened event is same event
-                                            return closeAllPopovers();
-                                        }
-
-                                        // Else, the user has opened another event manually during save, so we want to keep the popover opened
-                                        return noop();
+                                        return closeProcessingPortal(temporaryEvent.uniqueId);
                                     } catch (error) {
                                         return noop();
                                     }
@@ -2003,8 +2013,7 @@ const InteractiveCalendarView = ({
                                 onClose={async () => {
                                     try {
                                         await handleConfirmDeleteTemporary({ ask: true });
-
-                                        return closeAllPopovers();
+                                        return resetInteractiveData();
                                     } catch (error) {
                                         return noop();
                                     }
@@ -2029,7 +2038,7 @@ const InteractiveCalendarView = ({
                                 return (
                                     handleDeleteEvent(targetEvent, inviteActions)
                                         // Also close the more popover to avoid this event showing there
-                                        .then(closeAllPopovers)
+                                        .then(() => closeProcessingPortal(targetEvent.uniqueId))
                                         .catch(noop)
                                 );
                             }}
@@ -2167,7 +2176,7 @@ const InteractiveCalendarView = ({
             <Prompt
                 message={(location) => {
                     if (isInTemporaryBlocking && location.pathname.includes('settings')) {
-                        handleConfirmDeleteTemporary({ ask: true }).then(closeAllPopovers).catch(noop);
+                        handleConfirmDeleteTemporary({ ask: true }).then(resetInteractiveData).catch(noop);
                         return false;
                     }
                     return true;
@@ -2231,7 +2240,7 @@ const InteractiveCalendarView = ({
                             cancelClosePopoverRef.current = false;
                             return;
                         }
-                        closeAllPopovers();
+                        resetInteractiveData();
                     }}
                     view={view}
                 />

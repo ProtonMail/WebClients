@@ -35,6 +35,7 @@ export interface CalendarViewEvent {
     uniqueId: string;
     isAllDay: boolean;
     isAllPartDay: boolean;
+    isTemporary?: boolean;
     start: Date;
     end: Date;
     data: CalendarViewEventData;
@@ -68,14 +69,13 @@ export interface InteractiveRef {
 }
 
 export interface CalendarViewEventTemporaryEvent extends CalendarViewEvent {
-    targetUniqueId?: string;
     tmpData: EventModel;
     tmpDataOriginal: EventModel;
     tmpOriginalTarget?: CalendarViewEvent | CalendarViewEventTemporaryEvent;
 }
 
 export interface CalendarViewBusyEvent
-    extends Pick<CalendarViewEvent, 'start' | 'end' | 'isAllDay' | 'isAllPartDay' | 'uniqueId'> {
+    extends Pick<CalendarViewEvent, 'start' | 'end' | 'isAllDay' | 'isAllPartDay' | 'uniqueId' | 'isTemporary'> {
     type: 'busy';
     color: string;
     email: string;

@@ -83,6 +83,7 @@ export const getCreateTemporaryEvent = (
 ): CalendarViewEventTemporaryEvent => {
     return {
         uniqueId: TMP_UNIQUE_ID,
+        isTemporary: true,
         data: {
             calendarData: Calendar,
         },
@@ -99,8 +100,8 @@ export const getEditTemporaryEvent = (
 ): CalendarViewEventTemporaryEvent => {
     const { uniqueId, data } = targetEvent;
     return {
-        uniqueId: TMP_UNIQUE_ID,
-        targetUniqueId: (targetEvent as CalendarViewEventTemporaryEvent).targetUniqueId || uniqueId,
+        uniqueId,
+        isTemporary: true,
         data,
         ...getCalendarViewEventProperties(model, tzid),
         tmpData: model,
