@@ -1,4 +1,5 @@
 import type { LexicalEditor, ParagraphNode } from 'lexical'
+import { $isParagraphNode, $isTextNode } from 'lexical'
 import { $createRangeSelection, $setSelection, TextNode } from 'lexical'
 import { $nodesOfType } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot } from 'lexical'
@@ -13,11 +14,12 @@ import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditab
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../Utils/react-test-utils'
 import type { Logger } from '@proton/utils/logs'
-import { ProtonNode } from './ProtonNode'
+import { $createSuggestionNode, ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { $patchStyleAsSuggestion } from './patchStyleAsSuggestion'
 import { getStyleObjectFromCSS } from '@lexical/selection'
+import { assertCondition } from './TestUtils'
 
 describe('$patchStyleAsSuggestion', () => {
   let container: HTMLElement
@@ -195,6 +197,59 @@ describe('$patchStyleAsSuggestion', () => {
         const text2 = $nodesOfType(TextNode)[2]
         const style2 = getStyleObjectFromCSS(text2.getStyle())
         expect(style2['font-size']).toBe('12px')
+      })
+    })
+  })
+
+  describe('Existing suggestion', () => {
+    beforeEach(async () => {
+      await update(() => {
+        const root = $getRoot()
+        root.clear()
+        const paragraph = $createParagraphNode()
+        const existingSuggestion = $createSuggestionNode('test', 'style-change', {
+          'font-size': '12px',
+        })
+        const text = $createTextNode('Hello').setStyle('font-size: 14px;')
+        paragraph.append(existingSuggestion.append(text))
+        root.append(paragraph)
+        text.select(0, 5)
+
+        $patchStyleAsSuggestion('font-size', '16px', onSuggestionCreation, logger)
+        $patchStyleAsSuggestion('color', '#ffffff', onSuggestionCreation, logger)
+      })
+    })
+
+    test('no extra suggestion should be created', () => {
+      editor!.read(() => {
+        const paragraph = $getRoot().getFirstChild()
+        assertCondition($isParagraphNode(paragraph))
+        const suggestion = paragraph.getFirstChild()
+        assertCondition($isSuggestionNode(suggestion))
+        expect(suggestion.getSuggestionTypeOrThrow()).toBe('style-change')
+        const text = suggestion.getFirstChild()
+        assertCondition($isTextNode(text))
+      })
+    })
+
+    test('style should be updated', () => {
+      editor!.read(() => {
+        const text = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChildOrThrow<ProtonNode>().getFirstChild()
+        assertCondition($isTextNode(text))
+        const style = getStyleObjectFromCSS(text.getStyle())
+        expect(style['font-size']).toBe('16px')
+        expect(style.color).toBe('#ffffff')
+      })
+    })
+
+    test('suggestion should be updated to include new changed property', () => {
+      editor!.read(() => {
+        const suggestion = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChild()
+        assertCondition($isSuggestionNode(suggestion))
+        const props = suggestion.getSuggestionChangedProperties()
+        assertCondition(props !== undefined)
+        expect(props['font-size']).toBe('12px')
+        expect(props.color).toBe(null)
       })
     })
   })
