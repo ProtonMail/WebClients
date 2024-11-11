@@ -15,6 +15,7 @@ import type {
     DecryptedAddressKey,
     DecryptedKey,
     KeyGenConfig,
+    KeyGenConfigV6,
     KeyPair,
     KeysPair,
     AddressKey as tsAddressKey,
@@ -305,7 +306,7 @@ export interface GenerateAddressKeyArguments {
     email: string;
     name?: string;
     passphrase: string;
-    keyGenConfig?: KeyGenConfig;
+    keyGenConfig?: KeyGenConfig | KeyGenConfigV6;
 }
 
 export const generateAddressKey = async ({
