@@ -89,18 +89,25 @@ export const standarize = ({ headers, contacts }: ParsedCsvContacts) => {
         return;
     }
 
+    // Normalize headers to handle case variations including camelCase, snake_case, and kebab-case
+    const normalizedHeaders = headers.map((header) => {
+        return header
+            .toLowerCase()
+            .replace(/([A-Z])/g, ' $1')
+            .replace(/[_-]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    });
+
     // Vcard model does not allow multiple instances of these headers
     const uniqueHeaders = ['birthday', 'anniversary', 'gender'];
     const uniqueHeadersEncounteredStatusMap = new Map();
     uniqueHeaders.forEach((header) => uniqueHeadersEncounteredStatusMap.set(header, false));
 
-    // do a first simple formatting of headers
-    const formattedHeaders = headers.map((header) => header.replace('_', ' ').toLowerCase());
-
     // change name of certain headers into outlook equivalents
     // remove headers we are not interested in
     // merge headers 'xxx - type' and 'xxx - value' into one header
-    const { beRemoved, beChanged } = formattedHeaders.reduce<{
+    const { beRemoved, beChanged } = normalizedHeaders.reduce<{
         beRemoved: { [key: number]: boolean };
         beChanged: { [key: number]: string };
     }>(
@@ -211,7 +218,7 @@ export const standarize = ({ headers, contacts }: ParsedCsvContacts) => {
         { beRemoved: {}, beChanged: {} }
     );
 
-    const enrichedHeaders = formattedHeaders
+    const enrichedHeaders = normalizedHeaders
         .map((header, index) => {
             const original = headers[index];
             return { original, standard: beChanged[index] ? beChanged[index] : header };
@@ -220,7 +227,10 @@ export const standarize = ({ headers, contacts }: ParsedCsvContacts) => {
 
     const standardContacts = contacts.map((values) => values.filter((_value, j) => !beRemoved[j]));
 
-    return { headers: enrichedHeaders, contacts: standardContacts };
+    return {
+        headers: enrichedHeaders,
+        contacts: standardContacts,
+    };
 };
 
 interface TemplateArgs {
@@ -359,21 +369,25 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
     const postalCodeMatch = property.match(/^(\w*)\s?postal code\s?(\d*)$/);
     const countryMatch = property.match(/^(\w*)\s?country\s?(\d*)$/);
 
-    if (['display name', 'name'].includes(property)) {
-        return (value: ContactValue) => [templates.fn({ header, value, index: 1 })];
+    if (['display name', 'display-name', 'displayname'].includes(property)) {
+        return () => [];
     }
-    if (['last name', 'family name'].includes(property)) {
+
+    // Name field variations
+    if (['last name', 'family name', 'family_name', 'lastname', 'surname'].includes(property)) {
         return (value: ContactValue) => [
-            templates.n({ header, value, index: 0 }), //N field value
-            templates.fn({ header, value, index: 3 }), //FN field value
+            templates.n({ header, value, index: 0 }),
+            templates.fn({ header, value, index: 3 }),
         ];
     }
-    if (['first name', 'given name'].includes(property)) {
+
+    if (['first name', 'given name', 'given_name', 'firstname'].includes(property)) {
         return (value: ContactValue) => [
-            templates.n({ header, value, index: 1 }), //N field value
-            templates.fn({ header, value, index: 1 }), //FN field value
+            templates.n({ header, value, index: 1 }),
+            templates.fn({ header, value, index: 1 }),
         ];
     }
+
     if (['title', 'name prefix'].includes(property)) {
         return (value: ContactValue) => [templates.fn({ header, value, index: 0 })];
     }
@@ -458,7 +472,9 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
         const pref = countryMatch?.[2] ? +countryMatch[2] : undefined;
         return (value: ContactValue) => templates.adr({ pref, header, type: toVcardType(type), value, index: 6 });
     }
-    if (property === 'job title') {
+
+    // Job variations
+    if (['job title', 'job_title', 'jobtitle', 'title'].includes(property)) {
         return (value: ContactValue) => ({
             header,
             value,
@@ -466,6 +482,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'title',
         });
     }
+
     if (property === 'role') {
         return (value: ContactValue) => ({
             header,
@@ -474,27 +491,9 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'role',
         });
     }
-    if (property === 'birthday') {
-        return (value: ContactValue) => {
-            return {
-                header,
-                value,
-                checked: true,
-                field: 'bday',
-            };
-        };
-    }
-    if (property === 'anniversary') {
-        return (value: ContactValue) => {
-            return {
-                header,
-                value,
-                checked: true,
-                field: 'anniversary',
-            };
-        };
-    }
-    if (property.includes('web')) {
+
+    // Website variations
+    if (['website', 'web', 'url', 'webpage'].includes(property)) {
         return (value: ContactValue) => ({
             header,
             value,
@@ -502,6 +501,27 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'url',
         });
     }
+
+    // Birthday variations
+    if (['birthday', 'birth_date', 'birthdate', 'birth date', 'bday'].includes(property)) {
+        return (value: ContactValue) => ({
+            header,
+            value,
+            checked: true,
+            field: 'bday',
+        });
+    }
+
+    // Anniversary variations
+    if (['anniversary', 'anniversary_date', 'anniversarydate', 'anniversary date'].includes(property)) {
+        return (value: ContactValue) => ({
+            header,
+            value,
+            checked: true,
+            field: 'anniversary',
+        });
+    }
+
     if (property === 'photo') {
         return (value: ContactValue) => ({
             header,
@@ -518,15 +538,9 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'logo',
         });
     }
-    if (property === 'gender') {
-        return (value: ContactValue) => ({
-            header,
-            value,
-            checked: true,
-            field: 'gender',
-        });
-    }
-    if (property === 'timezone') {
+
+    // Additional fields with variations
+    if (['timezone', 'tz', 'time_zone'].includes(property)) {
         return (value: ContactValue) => ({
             header,
             value,
@@ -534,14 +548,21 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'tz',
         });
     }
-    if (property === 'organization') {
+
+    if (['sex', 'gender'].includes(property)) {
         return (value: ContactValue) => ({
             header,
             value,
             checked: true,
-            field: 'org',
+            field: 'gender',
         });
     }
+
+    // Organization variations
+    if (['company', 'organization', 'organisation', 'org'].includes(property)) {
+        return (value: ContactValue) => templates.org({ header, value, index: 0 });
+    }
+
     if (property === 'language') {
         return (value: ContactValue) => ({
             header,
@@ -558,7 +579,9 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'member',
         });
     }
-    if (property === 'notes' || property === 'note' || property.includes('custom field')) {
+
+    // Notes variations
+    if (['notes', 'note', 'comments', 'comment', 'custom field'].includes(property)) {
         return (value: ContactValue) => ({
             header,
             value,
@@ -566,6 +589,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'note',
         });
     }
+
     if (property === 'categories') {
         return (value: ContactValue) => ({
             header,
@@ -599,7 +623,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
 /**
  * When there is only one pre-vCard property in a pre-vCards property, get the property
  */
-const getFirstValue = (preVcards: PreVcardProperty[]): string =>
+export const getFirstValue = (preVcards: PreVcardProperty[]): string =>
     getStringContactValue(preVcards[0].checked ? preVcards[0].value : '').trim();
 
 const getDateValue = (preVcards: PreVcardProperty[]) => {
@@ -614,7 +638,14 @@ const getDateValue = (preVcards: PreVcardProperty[]) => {
  */
 export const combine: Combine = {
     fn(preVcards: PreVcardsProperty) {
-        return preVcards.reduce((acc, { value, checked }) => (value && checked ? `${acc} ${value}` : acc), '').trim();
+        // Filter out empty/unchecked values and sort by index
+        const validValues = preVcards
+            .filter(({ checked, value }) => checked && value)
+            .sort((a, b) => (a.combineIndex || 0) - (b.combineIndex || 0))
+            .map(({ value }) => value);
+
+        // Combine the values with a space
+        return validValues.join(' ').trim();
     },
     // N field follow the following format lastName;firstName;additionalName;prefix;suffix
     n(preVcards: PreVcardsProperty) {
