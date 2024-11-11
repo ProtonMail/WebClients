@@ -14,7 +14,7 @@ import type {
 } from '../../interfaces/contacts/Import';
 import type { VCardContact, VCardKey, VCardProperty } from '../../interfaces/contacts/VCard';
 import { createContactPropertyUid, fromVCardProperties, generateNewGroupName } from '../properties';
-import { combine, standarize, toPreVcard } from './csvFormat';
+import { combine, getFirstValue, standarize, toPreVcard } from './csvFormat';
 
 interface PapaParseOnCompleteArgs {
     data?: string[][];
@@ -166,30 +166,41 @@ export const prepare = ({ headers = [], contacts = [] }: ParsedCsvContacts) => {
  * @param preVCards     Array of pre-vCards properties
  * @return               vCard property
  */
-export const toVCard = (preVCards: PreVcardProperty[]): VCardProperty<any> | undefined => {
+// In csv.ts
+export const toVCard = (preVCards: PreVcardProperty[]): VCardProperty | undefined => {
     if (!preVCards.length) {
         return;
     }
 
-    const types = getAllTypes();
-
     const { pref, field, type, custom } = preVCards[0];
-
+    const types = getAllTypes();
     // Need to get the default type if the field has a second dropdown to be displayed
     const defaultType = types[field]?.[0]?.value as VCardKey | undefined;
-
     const params: { [key: string]: string } = {};
 
     if (type !== undefined || defaultType !== undefined) {
         params.type = (type || defaultType) as string;
     }
+
     if (pref !== undefined) {
         params.pref = String(pref);
     }
 
+    // Check if combine has the field method before calling it
+    const combineMethod = combine[field as keyof typeof combine];
+    if (!combineMethod) {
+        // Handle unknown fields as custom notes
+        return {
+            field: 'note',
+            value: custom ? combine.custom(preVCards) : getFirstValue(preVCards),
+            params,
+            uid: createContactPropertyUid(),
+        };
+    }
+
     return {
         field,
-        value: custom ? combine.custom(preVCards) : combine[field](preVCards),
+        value: custom ? combine.custom(preVCards) : combineMethod(preVCards),
         params,
         uid: createContactPropertyUid(),
     };
