@@ -2,7 +2,7 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import { AllNodes } from '../../AllNodes'
 import type { ProtonNode } from './ProtonNode'
-import { $createSuggestionNode } from './ProtonNode'
+import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import type { ElementNode, ParagraphNode, TextNode } from 'lexical'
 import { $createRangeSelection, $isParagraphNode, $isTextNode, $setSelection } from 'lexical'
 import { $createParagraphNode, $createTextNode, $getRoot } from 'lexical'
@@ -19,6 +19,8 @@ import type { TableRowNode, TableCellNode, TableNode } from '@lexical/table'
 import { $createTableNodeWithDimensions } from '@lexical/table'
 import { $clearFormattingAsSuggestion } from './clearFormattingAsSuggestion'
 import type { CustomListNode } from '../CustomList/CustomListNode'
+import { assertCondition } from './TestUtils'
+import { $isCustomListNode } from '../CustomList/$isCustomListNode'
 
 describe('$rejectSuggestion', () => {
   const editor = createHeadlessEditor({
@@ -36,6 +38,12 @@ describe('$rejectSuggestion', () => {
       },
     )
   })
+
+  function testEditorState(name: string, fn: () => void) {
+    test(name, () => {
+      editor.read(fn)
+    })
+  }
 
   it('should remove "insert" suggestion nodes along with their children', () => {
     const suggestionID = Math.random().toString()
@@ -758,106 +766,176 @@ describe('$rejectSuggestion', () => {
   })
 
   describe('block-type-change', () => {
-    beforeEach(() => {
-      const suggestionID = Math.random().toString()
+    describe('Current block is list item, reverting to other list type', () => {
+      beforeEach(() => {
+        const suggestionID = Math.random().toString()
 
-      editor.update(
-        () => {
-          $getRoot().append(
-            $createHeadingNode('h2').append(
-              $createSuggestionNode(suggestionID, 'block-type-change', {
-                initialBlockType: 'paragraph',
-              }),
-            ),
-            $createHeadingNode('h2')
-              .setFormat('right')
-              .setIndent(1)
-              .append(
+        editor.update(
+          () => {
+            $getRoot().append(
+              $createListNode('bullet').append(
+                $createListItemNode().append(
+                  $createSuggestionNode(suggestionID, 'block-type-change', {
+                    initialBlockType: 'number',
+                    listInfo: {
+                      listType: 'number',
+                      listMarker: 'bracket',
+                      listStyleType: 'upper-roman',
+                    },
+                  }),
+                  $createTextNode('Hello').toggleFormat('bold'),
+                  $createTextNode('World'),
+                ),
+              ),
+            )
+            $rejectSuggestion(suggestionID)
+          },
+          {
+            discrete: true,
+          },
+        )
+      })
+
+      testEditorState('list should be converted back to numbered', () => {
+        const list = $getRoot().getFirstChild()
+        assertCondition($isCustomListNode(list))
+        expect(list.getListType()).toBe('number')
+      })
+
+      testEditorState('custom list props should be correctly applied', () => {
+        const list = $getRoot().getFirstChild()
+        assertCondition($isCustomListNode(list))
+        expect(list.getListStyleType()).toBe('upper-roman')
+        expect(list.getListMarker()).toBe('bracket')
+      })
+
+      testEditorState('suggestion should be removed', () => {
+        const listItem = $getRoot().getFirstChildOrThrow<ListNode>().getFirstChild()
+        assertCondition($isListItemNode(listItem))
+        expect(listItem.getChildrenSize()).toBe(2)
+        const suggestion = listItem
+          .getChildren()
+          .find((n) => $isSuggestionNode(n) && n.getSuggestionTypeOrThrow() === 'block-type-change')
+        expect(suggestion).toBeFalsy()
+      })
+
+      testEditorState('list item content should be intact', () => {
+        const listItem = $getRoot().getFirstChildOrThrow<ListNode>().getFirstChild()
+        assertCondition($isListItemNode(listItem))
+        expect(listItem.getChildrenSize()).toBe(2)
+        const first = listItem.getChildAtIndex(0)
+        assertCondition($isTextNode(first))
+        expect(first.getTextContent()).toBe('Hello')
+        expect(first.hasFormat('bold')).toBe(true)
+        const second = listItem.getChildAtIndex(1)
+        assertCondition($isTextNode(second))
+        expect(second.getTextContent()).toBe('World')
+        expect(second.hasFormat('bold')).toBe(false)
+      })
+    })
+
+    describe('Others', () => {
+      beforeEach(() => {
+        const suggestionID = Math.random().toString()
+
+        editor.update(
+          () => {
+            $getRoot().append(
+              $createHeadingNode('h2').append(
                 $createSuggestionNode(suggestionID, 'block-type-change', {
-                  initialBlockType: 'h1',
+                  initialBlockType: 'paragraph',
                 }),
               ),
-            $createHeadingNode('h2')
-              .setIndent(1)
-              .append(
-                $createSuggestionNode(suggestionID, 'block-type-change', {
-                  initialBlockType: 'number',
-                  listInfo: {
-                    listType: 'number',
-                    listMarker: 'bracket',
-                    listStyleType: 'upper-roman',
-                  },
-                }),
-                $createTextNode('List item'),
-              ),
-          )
-          $rejectSuggestion(suggestionID)
-        },
-        {
-          discrete: true,
-        },
-      )
-    })
-
-    it('should revert first to paragraph', () => {
-      editor.read(() => {
-        const first = $getRoot().getChildAtIndex<ElementNode>(0)
-        expect($isParagraphNode(first)).toBe(true)
+              $createHeadingNode('h2')
+                .setFormat('right')
+                .setIndent(1)
+                .append(
+                  $createSuggestionNode(suggestionID, 'block-type-change', {
+                    initialBlockType: 'h1',
+                  }),
+                ),
+              $createHeadingNode('h2')
+                .setIndent(1)
+                .append(
+                  $createSuggestionNode(suggestionID, 'block-type-change', {
+                    initialBlockType: 'number',
+                    listInfo: {
+                      listType: 'number',
+                      listMarker: 'bracket',
+                      listStyleType: 'upper-roman',
+                    },
+                  }),
+                  $createTextNode('List item'),
+                ),
+            )
+            $rejectSuggestion(suggestionID)
+          },
+          {
+            discrete: true,
+          },
+        )
       })
-    })
 
-    it('should revert second to h1', () => {
-      editor.read(() => {
-        const second = $getRoot().getChildAtIndex<HeadingNode>(1)
-        expect($isHeadingNode(second)).toBe(true)
-        expect(second?.getTag()).toBe('h1')
+      it('should revert first to paragraph', () => {
+        editor.read(() => {
+          const first = $getRoot().getChildAtIndex<ElementNode>(0)
+          expect($isParagraphNode(first)).toBe(true)
+        })
       })
-    })
 
-    it('should revert third to list', () => {
-      editor.read(() => {
-        const third = $getRoot().getChildAtIndex<CustomListNode>(2)
-        expect($isListNode(third)).toBe(true)
-        expect(third?.getListType()).toBe('number')
-        expect(third?.getListStyleType()).toBe('upper-roman')
-        expect(third?.getListMarker()).toBe('bracket')
+      it('should revert second to h1', () => {
+        editor.read(() => {
+          const second = $getRoot().getChildAtIndex<HeadingNode>(1)
+          expect($isHeadingNode(second)).toBe(true)
+          expect(second?.getTag()).toBe('h1')
+        })
       })
-    })
 
-    it('should remove suggestion nodes', () => {
-      editor.read(() => {
-        const root = $getRoot()
-        const first = root.getFirstChildOrThrow<ElementNode>()
-        expect(first.getChildrenSize()).toBe(0)
-        const second = root.getChildAtIndex<HeadingNode>(1)!
-        expect(second.getChildrenSize()).toBe(0)
-        const third = root.getChildAtIndex<ListNode>(2)!
-        expect(third.getChildrenSize()).toBe(1)
+      it('should revert third to list', () => {
+        editor.read(() => {
+          const third = $getRoot().getChildAtIndex<CustomListNode>(2)
+          expect($isListNode(third)).toBe(true)
+          expect(third?.getListType()).toBe('number')
+          expect(third?.getListStyleType()).toBe('upper-roman')
+          expect(third?.getListMarker()).toBe('bracket')
+        })
       })
-    })
 
-    it('should keep element format and indent', () => {
-      editor.read(() => {
-        const second = $getRoot().getChildAtIndex<HeadingNode>(1)!
-        expect(second.getFormatType()).toBe('right')
-        expect(second.getIndent()).toBe(1)
+      it('should remove suggestion nodes', () => {
+        editor.read(() => {
+          const root = $getRoot()
+          const first = root.getFirstChildOrThrow<ElementNode>()
+          expect(first.getChildrenSize()).toBe(0)
+          const second = root.getChildAtIndex<HeadingNode>(1)!
+          expect(second.getChildrenSize()).toBe(0)
+          const third = root.getChildAtIndex<ListNode>(2)!
+          expect(third.getChildrenSize()).toBe(1)
+        })
       })
-    })
 
-    it('should recover list nesting', () => {
-      editor.read(() => {
-        const third = $getRoot().getChildAtIndex<ListNode>(2)!
-        expect(third.getChildrenSize()).toBe(1)
-        const firstLI = third.getFirstChildOrThrow<ListItemNode>()
-        expect($isListItemNode(firstLI)).toBe(true)
-        expect(firstLI.getChildrenSize()).toBe(1)
-        const nestedList = firstLI.getFirstChildOrThrow<ListNode>()
-        expect($isListNode(nestedList)).toBe(true)
-        expect(nestedList.getChildrenSize()).toBe(1)
-        const nestedLI = nestedList.getFirstChildOrThrow<ListItemNode>()
-        expect($isListItemNode(nestedLI)).toBe(true)
-        expect(nestedLI.getIndent()).toBe(1)
-        expect(nestedLI.getChildrenSize()).toBe(1)
+      it('should keep element format and indent', () => {
+        editor.read(() => {
+          const second = $getRoot().getChildAtIndex<HeadingNode>(1)!
+          expect(second.getFormatType()).toBe('right')
+          expect(second.getIndent()).toBe(1)
+        })
+      })
+
+      it('should recover list nesting', () => {
+        editor.read(() => {
+          const third = $getRoot().getChildAtIndex<ListNode>(2)!
+          expect(third.getChildrenSize()).toBe(1)
+          const firstLI = third.getFirstChildOrThrow<ListItemNode>()
+          expect($isListItemNode(firstLI)).toBe(true)
+          expect(firstLI.getChildrenSize()).toBe(1)
+          const nestedList = firstLI.getFirstChildOrThrow<ListNode>()
+          expect($isListNode(nestedList)).toBe(true)
+          expect(nestedList.getChildrenSize()).toBe(1)
+          const nestedLI = nestedList.getFirstChildOrThrow<ListItemNode>()
+          expect($isListItemNode(nestedLI)).toBe(true)
+          expect(nestedLI.getIndent()).toBe(1)
+          expect(nestedLI.getChildrenSize()).toBe(1)
+        })
       })
     })
   })
