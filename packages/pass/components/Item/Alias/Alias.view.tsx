@@ -43,6 +43,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
         relatedLogin &&
         c('Warning').t`This alias "${aliasEmail}" is currently used in the login "${relatedLoginName}".`;
 
+    const [aliasTrashConfirmed, setAliasTrashConfirmed] = useState(false);
     const [confirmTrash, setConfirmTrash] = useState(false);
     const [confirmDelete, setConfirmDelete] = useState(false);
 
@@ -59,15 +60,16 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     };
 
     const handleMoveToTrashClick = useCallback(async () => {
-        const shouldWarnOnTrash = async () =>
-            canToggleStatus &&
-            aliasEnabled &&
-            Boolean(await Promise.resolve(onboardingCheck?.(OnboardingMessage.ALIAS_TRASH_CONFIRM)));
+        const shouldPrompt = Boolean(
+            await Promise.resolve(onboardingCheck?.(OnboardingMessage.ALIAS_TRASH_CONFIRM)).catch(() => false)
+        );
+
+        setAliasTrashConfirmed(!shouldPrompt);
 
         /* Show trash confirmation modal if:
         - alias is enabled and user didn't previously click "Don't remind me again"
         - or the alias is currently used in a login item */
-        if (relatedLogin || (await shouldWarnOnTrash().catch(() => false))) setConfirmTrash(true);
+        if (relatedLogin || (canToggleStatus && aliasEnabled && shouldPrompt)) setConfirmTrash(true);
         else itemViewProps.handleMoveToTrashClick();
     }, [aliasEnabled, relatedLogin, canToggleStatus, itemViewProps.handleMoveToTrashClick]);
 
@@ -140,7 +142,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
                             .t`Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.`
                     }
                     warning={relatedWarning}
-                    remember={aliasEnabled}
+                    remember={!aliasTrashConfirmed}
                     onClose={() => setConfirmTrash(false)}
                     onDisable={handleConfirmDisableClick}
                     onAction={handleConfirmTrashClick}
