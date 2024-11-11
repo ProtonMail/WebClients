@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Banner, BannerBackgroundColor } from '@proton/components';
+import { DeprecatedBanner, DeprecatedBannerBackgroundColor } from '@proton/components';
 
 import EventReminderText from './EventReminderText';
 
@@ -14,17 +14,17 @@ interface Props {
 const EventReminderBanner = ({ isAllDay, startDate, endDate, isOutdated, isCanceled }: Props) => {
     if (isCanceled) {
         return (
-            <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.WARNING}>
+            <DeprecatedBanner icon="exclamation-circle" backgroundColor={DeprecatedBannerBackgroundColor.WARNING}>
                 {c('Email reminder out of date alert').t`Event was canceled`}
-            </Banner>
+            </DeprecatedBanner>
         );
     }
 
     if (isOutdated) {
         return (
-            <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.DANGER}>
+            <DeprecatedBanner icon="exclamation-circle" backgroundColor={DeprecatedBannerBackgroundColor.DANGER}>
                 {c('Email reminder out of date alert').t`Event was updated. This reminder is out-of-date.`}
-            </Banner>
+            </DeprecatedBanner>
         );
     }
 
