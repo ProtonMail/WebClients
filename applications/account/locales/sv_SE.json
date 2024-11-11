@@ -805,11 +805,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Reject": [
         "Avvisa"
@@ -1029,6 +1029,9 @@
       ],
       "Show": [
         "Visa"
+      ],
+      "Show all": [
+        "Visa alla"
       ],
       "Show less": [
         "Visa mindre"
@@ -1595,14 +1598,6 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1624,6 +1619,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1719,6 +1722,9 @@
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
       ],
+      "One-time payment, lifetime deal": [
+        "Engångsbetalning, livstidserbjudande"
+      ],
       "Online document editor": [
         "Dokumentredigerare online"
       ],
@@ -1751,6 +1757,9 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabatterna är baserade på ordinarie månadspriser."
       ],
@@ -1763,9 +1772,17 @@
         "Mest populär"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Begränsat lager!"
+      ]
+    },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
+      ],
+      "forever": [
+        "för alltid"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Förnyas efter 1 månad till ${ regularAmount }."
@@ -6862,6 +6879,9 @@
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
       ],
+      "All inactive members deleted": [
+        "Alla inaktiva medlemmar borttagna"
+      ],
       "All keys successfully reactivated": [
         "Alla nycklar har återaktiverats"
       ],
@@ -7190,11 +7210,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -8096,6 +8116,9 @@
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary-prenumeration krävs"
       ],
+      "Preference saved": [
+        "Preferens sparad"
+      ],
       "Preview": [
         "Förhandsgranska"
       ],
@@ -8556,6 +8579,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Detta gör att PayPal kan användas för att betala för din ${ BRAND_NAME }-prenumeration. Vi kommer omdirigera dig till PayPal i en ny webbläsarflik. Om du använder popup-blockerare, inaktivera dem för att fortsätta."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Detta kommer ta bort data och alla e-postadresser permanent som är associerade med dessa användare."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Detta kommer ta bort data och alla e-postadresser permanent som är associerad med denna användare."
       ],
@@ -8769,11 +8795,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "username": [
-        "användarnamn"
-      ],
       "Username": [
         "Användarnamn"
+      ],
+      "username": [
+        "användarnamn"
       ],
       "Users": [
         "Användare"
@@ -10536,6 +10562,10 @@
       "Send in": [
         "Skicka på"
       ],
+      "Show ${ n } administrator": [
+        "Visa ${ n } administratör",
+        "Visa ${ n } administratörer"
+      ],
       "Show others when I'm busy": [
         "Visa andra när jag är upptagen"
       ],
@@ -10673,6 +10703,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Verifiera nycklar med Key Transparency"
+      ],
+      "Video conferencing with Zoom": [
+        "Videokonferenser med Zoom"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -11555,32 +11588,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom igång för ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Startar från ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11608,6 +11615,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom igång för ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12283,23 +12316,6 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -12318,6 +12334,23 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -12599,6 +12632,71 @@
       ],
       "Support for ${ n } custom email domains": [
         "Stöd för ${ n } anpassade e-postdomäner"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } och ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "Produktuppdateringar för ${ app } och ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Produktuppdateringar för ${ app }"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Viktiga meddelanden från ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Nyhetsbrev för ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Erbjudande och kampanjer för ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Produktnyheter för ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Användarundersökning för ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 e-postmeddelande per månad"
+      ],
+      "1 email per quarter": [
+        "1 e-postmeddelande per kvartal"
+      ],
+      "1-2 emails per month": [
+        "1-2 e-postmeddelanden per månad"
+      ],
+      "2-4 emails per year": [
+        "2-4 e-postmeddelanden per år"
+      ],
+      "4-6 emails per year": [
+        "4-6 e-postmeddelanden per år"
+      ],
+      "Application notifications": [
+        "Applikationsaviseringar"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Kritiska kontoaviseringar kommer fortfarande att levereras"
+      ],
+      "Daily email notifications": [
+        "Dagliga e-postaviseringar"
+      ],
+      "During your first month": [
+        "Under din första månad"
+      ],
+      "Email subscriptions": [
+        "E-postprenumerationer"
+      ],
+      "In-app notifications": [
+        "Aviseringar i app"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Delta i undersökningar för att förbättra ${ BRAND_NAME }-tjänsterna"
+      ],
+      "Product updates": [
+        "Produktuppdateringar"
       ]
     },
     "Notification": {
@@ -15293,6 +15391,10 @@
         "${ n } medlem begärde din hjälp att logga in.",
         "${ n } medlemmar begärde din hjälp att logga in."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska kontot nu:",
+        "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska deras konton nu:"
+      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-användare (tillhandahållna av din identitetsleverantör) kommer att tas bort** och du måste skapa dem manuellt för att lägga till dem i din organisation igen."
       ],
@@ -15343,6 +15445,14 @@
       ],
       "Current device": [
         "Nuvarande enhet"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Ta bort ${ n } aktiv användare?",
+        "Ta bort ${ n } aktiva användare?"
+      ],
+      "Delete ${ n } user": [
+        "Ta bort ${ n } användare",
+        "Ta bort ${ n } användare"
       ],
       "Deny": [
         "Neka"
@@ -16794,10 +16904,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -17365,6 +17475,9 @@
       "No recovery method": [
         "Ingen återställningsmetod"
       ],
+      "Notifications": [
+        "Aviseringar"
+      ],
       "Open": [
         "Öppen"
       ],
@@ -17752,6 +17865,9 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "Video conferencing": [
+        "Videokonferenser"
       ],
       "VPN apps": [
         "VPN-appar"
@@ -18180,6 +18296,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Väntande administratörsåtkomst:** Vi skickade en begäran till denna användare om att tillåta vilken administratör som helst att hantera sitt konto."
+      ],
       "Administrator access enabled": [
         "Administratörsåtkomst aktiverad"
       ],
@@ -18204,6 +18323,12 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel request": [
+        "Avbryt begäran"
+      ],
+      "Cancel request to access user data?": [
+        "Avbryt begäran om åtkomst till användardata?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:",
         "Kunde inte aktivera administratörsåtkomst automatiskt för ${ n } användare eftersom deras krypteringsnycklar har uppdaterats under tiden:"
@@ -18222,6 +18347,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Om du någon gång förlorar åtkomsten till dina inloggningsuppgifter kan din organisations administratörer återställa ditt lösenord och återställa åtkomst till ditt konto."
+      ],
+      "Keep request": [
+        "Behåll begäran"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "När användaren samtycker kommer du att kunna hjälpa dem att återfå kontoåtkomst eller hantera deras data."
@@ -18252,6 +18380,9 @@
       ],
       "The user must have an address to request data access": [
         "Användaren måste ha en adress för att begära dataåtkomst"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Detta kommer avbryta den väntande begäran om administratörsåtkomst till användarens data eller lösenordsåterställning."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Detta kommer återkalla administratörsbehörigheten att hantera denna användares konto."
@@ -18385,6 +18516,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administratörer kan inte komma åt privata användares data"
+      ],
+      "Inactive": [
+        "Inaktiva"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Inbjudan skickad, inväntar svar från den inbjudna medlemmen"

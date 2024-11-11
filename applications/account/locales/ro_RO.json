@@ -808,11 +808,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "Împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Reject": [
         "Respingere"
@@ -1032,6 +1032,9 @@
       ],
       "Show": [
         "Afișare"
+      ],
+      "Show all": [
+        "Arată tot"
       ],
       "Show less": [
         "Afișare mai puțin"
@@ -1606,14 +1609,6 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1635,6 +1630,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1731,6 +1734,9 @@
       "Integrated 2FA authenticator": [
         "Autentificator A2F integrat"
       ],
+      "One-time payment, lifetime deal": [
+        "O singură plată, ofertă pe viață"
+      ],
       "Online document editor": [
         "Editor online de documente"
       ],
@@ -1766,8 +1772,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Oferta pe viață ${ PASS_SHORT_APP_NAME } Plus nu are preț de reînnoire, este o plată unică pentru acces pe viață la Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Reducerile sunt bazate pe prețul standard lunar."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Dacă achiziționați Pass Family sau Unlimited, abonamentul se va reînnoi automat la sfârșitul ciclului de facturare cu tariful redus și durata standard."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "* Abonamentul se va reînnoi automat la aceeași sumă redusă și durată la sfârșitul ciclului de facturare."
@@ -1778,9 +1790,20 @@
         "Cel mai popular"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Stoc limitat!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Facturat cu ${ amount } o singură dată"
+      ],
       "for ${ durationDeal }": [
         "pentru ${ durationDeal }"
+      ],
+      "forever": [
+        "pentru totdeauna"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se reînnoiește lunar cu ${ regularAmount }."
@@ -6956,6 +6979,9 @@
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
+      "All inactive members deleted": [
+        "Toți membrii inactivi au fost șterși."
+      ],
       "All keys successfully reactivated": [
         "Toate cheile au fost reactivate"
       ],
@@ -7291,11 +7317,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -8233,6 +8259,9 @@
       "Plus or Visionary subscription required": [
         "Este necesar abonamentul „Plus” sau „Visionary”"
       ],
+      "Preference saved": [
+        "Preferință salvată"
+      ],
       "Preview": [
         "Examinare"
       ],
@@ -8697,6 +8726,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Aceasta va activa PayPal ca metodă de plată pentru abonarea la ${ BRAND_NAME }. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Acest lucru va șterge definitiv datele și toate adresele de e-mail asociate cu acești utilizatori."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Acest lucru va şterge definitiv datele şi toate adresele de e-mail asociate cu acest utilizator."
       ],
@@ -8916,11 +8948,11 @@
       "User activated": [
         "Utilizator activat"
       ],
-      "username": [
-        "utilizator"
-      ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "username": [
+        "utilizator"
       ],
       "Users": [
         "Utilizatori"
@@ -10723,6 +10755,11 @@
       "Send in": [
         "Trimitere în"
       ],
+      "Show ${ n } administrator": [
+        "Afișare ${ n } administrator",
+        "Afișare ${ n } administratori",
+        "Afișare ${ n } de administratori"
+      ],
       "Show others when I'm busy": [
         "Afișare celorlalți când sunt ocupat(ă)"
       ],
@@ -10863,6 +10900,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Verificare chei cu Key Transparency"
+      ],
+      "Video conferencing with Zoom": [
+        "Conferință video cu Zoom"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -11753,32 +11793,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Începând de la ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11806,6 +11820,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Începând de la ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Treceți la ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12512,20 +12552,6 @@
         "Planul selectat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Începând de la ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12544,6 +12570,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -12827,6 +12867,83 @@
       ],
       "Support for ${ n } custom email domains": [
         "Suport pentru ${ n } domenii de e-mail personale"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } și ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "Actualizări ale ${ app } și ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Actualizări ale ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Buletin informativ ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Anunțuri importante ale ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Buletin informativ ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Oferte și promoții ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Anunțuri ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Sondaj pentru utilizatorii ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Mesaje de bun venit ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "Un mesaj pe lună"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Un mesaj pe lună. Obțineți cele mai recente știri despre confidențialitate și ce se întâmplă în universul ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "Un mesaj pe trimestru"
+      ],
+      "1-2 emails per month": [
+        "1-2 mesaje pe lună"
+      ],
+      "2-4 emails per year": [
+        "2-4 mesaje pe an"
+      ],
+      "4-6 emails per year": [
+        "4-6 mesaje pe an"
+      ],
+      "Application notifications": [
+        "Notificări aplicații"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Notificările de cont critice vor fi în continuare livrate."
+      ],
+      "Daily email notifications": [
+        "Notificări zilnice pe e-mail"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Dezactivarea acestei opțiuni va elimina posibilitatea de a primi notificări în aplicațiile ${ BRAND_NAME }."
+      ],
+      "During your first month": [
+        "Pe durata primei luni"
+      ],
+      "Email subscriptions": [
+        "Abonamente prin e-mail"
+      ],
+      "In-app notifications": [
+        "Notificări în aplicație"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participați la sondaje pentru a îmbunătăți serviciile ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Actualizări produs"
       ]
     },
     "Notification": {
@@ -15606,6 +15723,16 @@
         "${ n } membri vă solicită ajutorul pentru a se conecta.",
         "${ n } de membri vă solicită ajutorul pentru a se conecta."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "S-a alăturat organizației ${ n } utilizator prin furnizorul de identitate. Revizuiți-i contul acum:",
+        "S-au alăturat organizației ${ n } utilizatori prin furnizorul de identitate. Revizuiți-le contul acum:",
+        "S-au alăturat organizației ${ n } de utilizatori prin furnizorul de identitate. Revizuiți-le contul acum:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } utilizator nu este activ. Puteți să-l ștergeți în siguranță din organizație.",
+        "${ n } utilizatori nu sunt activi. Puteți să-i ștergeți în siguranță din organizație.",
+        "${ n } de utilizatori nu sunt activi. Puteți să-i ștergeți în siguranță din organizație."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } utilizator vă solicită ajutorul să se conecteze la contul său ${ BRAND_NAME } folosind autentificarea unică (SSO).",
         "${ n } utilizatori vă solicită ajutorul să se conecteze la contul lor ${ BRAND_NAME } folosind autentificarea unică (SSO).",
@@ -15661,6 +15788,16 @@
       ],
       "Current device": [
         "Dispozitiv actual"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Ștergeți ${ n } utilizator inactiv?",
+        "Ștergeți ${ n } utilizatori inactivi?",
+        "Ștergeți ${ n } de utilizatori inactivi?"
+      ],
+      "Delete ${ n } user": [
+        "Ștergere ${ n } utilizator",
+        "Ștergere ${ n } utilizatori",
+        "Ștergere ${ n } de utilizatori"
       ],
       "Deny": [
         "Refuzare"
@@ -17155,10 +17292,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -17727,6 +17864,9 @@
       "No recovery method": [
         "Nu există metodă de recuperare"
       ],
+      "Notifications": [
+        "Notificări"
+      ],
       "Open": [
         "Active"
       ],
@@ -18112,6 +18252,9 @@
       ],
       "Version history": [
         "Istoric versiuni"
+      ],
+      "Video conferencing": [
+        "Conferință video"
       ],
       "VPN apps": [
         "Aplicații VPN"
@@ -18537,6 +18680,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Acces administrator în așteptare:** Acestui utilizator i s-a trimis o solicitare pentru a permite oricărui administrator să-i gestioneze contul."
+      ],
       "Administrator access enabled": [
         "Accesul de administrator s-a activat."
       ],
@@ -18561,6 +18707,12 @@
       "Cancel": [
         "Anulare"
       ],
+      "Cancel request": [
+        "Anulare solicitare"
+      ],
+      "Cancel request to access user data?": [
+        "Anulați solicitarea de acces la datele utilizatorului?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizator, deoarece cheile sale de criptare au fost actualizate între timp:",
         "Nu s-a putut activa automat accesul de administrator pentru ${ n } utilizatori, deoarece cheile lor de criptare au fost actualizate între timp:",
@@ -18580,6 +18732,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Dacă vreodată vă veți pierdeți accesul la datele de autentificare, administratorii organizației vor putea să vă reseteze parola și să vă restabilească accesul la cont."
+      ],
+      "Keep request": [
+        "Păstrare solicitare"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "După ce utilizatorul își dă acordul, îl veți putea ajuta să recâștige accesul la cont sau să-și gestioneze datele."
@@ -18610,6 +18765,9 @@
       ],
       "The user must have an address to request data access": [
         "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Aceasta va anula solicitarea în așteptare pentru accesul de administrare a datelor utilizatorului sau de resetare a parolei."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Aceasta va revoca permisiunea administratorului de a gestiona contul acestui utilizator."
@@ -18744,6 +18902,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administratorii nu pot accesa datele utilizatorilor privați."
+      ],
+      "Inactive": [
+        "Inactiv"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitația s-a trimis. Se așteaptă răspunsul de la membrul invitat."

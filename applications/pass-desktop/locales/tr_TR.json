@@ -172,6 +172,9 @@
       "Delete all": [
         "Tümünü sil"
       ],
+      "Delete it, I will never need it": [
+        "Silebilirsin, onu asla kullanmayacağım"
+      ],
       "Delete password": [
         "Parolayı sil"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Bırak"
+      ],
+      "Disable alias": [
+        "Takma adı kullanımdan kaldır"
       ],
       "Disable instead": [
         "Onun yerine kullanımdan kaldırın"
@@ -535,6 +541,10 @@
       ],
       "Try for free": [
         "Ücretsiz deneyin"
+      ],
+      "Understood, I will never need it": [
+        "Anladım. Onu asla kullanmayacağım",
+        "Anladım. Onları asla kullanmayacağım"
       ],
       "Unlock": [
         "Kilidi aç"
@@ -1697,6 +1707,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Takma adın silindikten sonra geri alınamayacağını unutmayın. Silmek yerine takma adı kullanımdan kaldırmak ister misiniz?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Takma adın silindikten sonra geri alınamayacağını unutmayın. Takma ad zaten kullanımdan kaldırılmış ve e-posta kutunuza herhangi bir ileti iletmiyor."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "${ PASS_APP_NAME } internet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
@@ -3216,6 +3232,10 @@
       "Pinned (${ items.length })": [
         "Sabitlenmiş (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Takma adın silindikten sonra geri alınamayacağını unutmayın",
+        "Takma adın silindikten sonra geri alınamayacağını unutmayın"
+      ],
       "Recommended actions": [
         "Önerilen işlemler"
       ],
@@ -3339,6 +3359,10 @@
       ],
       "Your welcome gift": [
         "Karşılama hediyeniz"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz",
+        "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz"
       ]
     },
     "Validation": {
@@ -3394,6 +3418,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Şu adreslere davetler gönderilemedi:"
+      ],
+      "Delete alias": [
+        "Takma adı sil"
       ],
       "Duplicate email addresses.": [
         "E-posta adresleri yineleniyor."

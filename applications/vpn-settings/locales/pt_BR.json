@@ -592,6 +592,9 @@
       "Show": [
         "Mostrar"
       ],
+      "Show all": [
+        "Mostrar todos"
+      ],
       "Show preview": [
         "Mostrar pré-visualização"
       ],
@@ -1022,6 +1025,9 @@
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
       ],
+      "One-time payment, lifetime deal": [
+        "Pagamento único, contrato vitalício"
+      ],
       "Online document editor": [
         "Editor de documentos on-line"
       ],
@@ -1057,8 +1063,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Os descontos são baseados no preço mensal padrão."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Se comprar o Pass Family ou Unlimited ,sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
@@ -1069,9 +1081,20 @@
         "Mais popular"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Estoque limitado!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Com o preço único de ${ amount }"
+      ],
       "for ${ durationDeal }": [
         "por ${ durationDeal }"
+      ],
+      "forever": [
+        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
@@ -2290,6 +2313,9 @@
       ]
     },
     "Description": {
+      "If disabled, only admins will have access.": [
+        "Se desativado, apenas os administradores poderão acessar."
+      ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantenha as diferentes partes de sua vida separadas e sua caixa de entrada organizada com endereços adicionais."
       ],
@@ -4444,6 +4470,9 @@
       "Plus or Visionary subscription required": [
         "É necessária a assinatura Plus ou Visionária"
       ],
+      "Preference saved": [
+        "Preferências salvas"
+      ],
       "Preview": [
         "Pré-visualização"
       ],
@@ -4699,6 +4728,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura da ${ BRAND_NAME }. Iremos redirecioná-lo para o PayPal em uma nova guia do navegador. Se você usar bloqueadores de pop-up, desative-os para continuar."
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Isto irá excluir permanentemente os dados e todos os endereços de e-mail associados a estes usuários."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Isto irá excluir permanentemente os dados e todos os endereços de e-mail associados a este usuário."
@@ -5705,6 +5737,10 @@
       ],
       "Security code (${ codeName })": [
         "Código de segurança (${ codeName })"
+      ],
+      "Show ${ n } administrator": [
+        "Mostrar ${ n } administrador",
+        "Mostrar ${ n } administradores"
       ],
       "Single sign-on entity ID": [
         "ID da entidade de autenticação única"
@@ -7113,6 +7149,71 @@
       ],
       "Support for ${ n } custom email domains": [
         "Suporte para ${ n } domínios de e-mail personalizados"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Atualizações de produto para ${ app } e ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Atualizações de produto do ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Boletim da ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Comunicados importantes da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Boletim da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Ofertas e promoções da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Comunicados de produto da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Pesquisa de usuário da ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "E-mails de boas-vindas da ${ BRAND_NAME }"
+      ],
+      "1 email per month": [
+        "1 e-mail por mês"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 e-mail por mês. Receba as notícias mais recentes sobre privacidade e o que está acontecendo no universo ${ BRAND_NAME }."
+      ],
+      "1 email per quarter": [
+        "1 e-mail por trimestre"
+      ],
+      "1-2 emails per month": [
+        "1-2 e-mails por mês"
+      ],
+      "2-4 emails per year": [
+        "2-4 e-mails por ano"
+      ],
+      "4-6 emails per year": [
+        "4-6 e-mails por ano"
+      ],
+      "Application notifications": [
+        "Notificações de aplicativos"
+      ],
+      "Daily email notifications": [
+        "Notificações diárias por e-mail"
+      ],
+      "During your first month": [
+        "Durante o primeiro mês"
+      ],
+      "In-app notifications": [
+        "Notificações dentro do aplicativo"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participe de pesquisas para melhorar os serviços da ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Atualizações de produtos"
       ]
     },
     "Notification": {
@@ -8712,6 +8813,10 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Entre em contato com o administrador se o problema persistir."
+      ],
+      "Delete ${ n } user": [
+        "Excluir ${ n } usuário",
+        "Excluir ${ n } usuários"
       ],
       "Deny": [
         "Negar"
@@ -10385,6 +10490,9 @@
       "Verifying your payment...": [
         "Verificando seu pagamento..."
       ],
+      "Video conferencing": [
+        "Videoconferência"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviamos um e-mail para o seu novo endereço com as instruções para completar a mudança."
       ],
@@ -10579,6 +10687,12 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ao tornar o usuário privado, você não poderá ajudá-lo a recuperar o acesso aos seus dados ou conta."
       ],
+      "Cancel request": [
+        "Cancelar solicitação"
+      ],
+      "Cancel request to access user data?": [
+        "Cancelar solicitação para acessar dados do usuário?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Não foi possível habilitar automaticamente o acesso de administrador para ${ n } usuário, porque as chaves de criptografia dele foram atualizadas nesse meio tempo:",
         "Não foi possível habilitar automaticamente o acesso de administrador para ${ n } usuários, porque as chaves de criptografia deles foram atualizadas nesse meio tempo:"
@@ -10588,6 +10702,9 @@
       ],
       "Enable manually": [
         "Ativar manualmente"
+      ],
+      "Keep request": [
+        "Manter solicitação"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Após o consentimento do usuário, você poderá ajudá-lo a recuperar o acesso à conta ou gerenciar seus dados."
@@ -10707,6 +10824,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Os administradores não podem acessar os dados de usuários privados"
+      ],
+      "Inactive": [
+        "Inativa"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Convite enviado, aguardando resposta do membro convidado"

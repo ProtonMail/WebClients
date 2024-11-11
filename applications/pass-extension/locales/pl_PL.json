@@ -176,6 +176,9 @@
       "Deselect": [
         "Odznacz"
       ],
+      "Disable alias": [
+        "Wyłącz alias"
+      ],
       "Disable autosave on this website": [
         "Wyłącz automatyczne zapisywanie na tej stronie"
       ],
@@ -508,6 +511,12 @@
       ],
       "Submitting report...": [
         "Wysyłanie raportu..."
+      ],
+      "Sync alias": [
+        "Synchronizuj alias",
+        "Synchronizuj aliasy",
+        "Synchronizuj aliasy",
+        "Synchronizuj aliasy"
       ],
       "Sync aliases": [
         "Synchronizuj aliasy"
@@ -1779,6 +1788,9 @@
       ],
       "This version will be added to the history as the newest version.": [
         "Ta wersja zostanie dodana do historii jako najnowsza wersja."
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "Odrzuci to urządzenie **${ name }**, które próbowało zalogować się na konto ${ BRAND_NAME } **${ date }**."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Aby przenieść dane z innego menedżera haseł, przejdź do menedżera haseł, wyeksportuj dane, a następnie prześlij je do ${ PASS_APP_NAME }. Po zaimportowaniu danych usuń wyeksportowany plik."
@@ -3148,6 +3160,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Nie można wysłać zaproszeń na następujące adresy:"
+      ],
+      "Delete alias": [
+        "Usuń alias"
       ],
       "Duplicate email addresses.": [
         "Adresy e-mail są zduplikowane."

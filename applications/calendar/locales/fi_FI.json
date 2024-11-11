@@ -1046,6 +1046,9 @@
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
       ],
+      "One-time payment, lifetime deal": [
+        "Kertamaksu, elinikäinen tarjous"
+      ],
       "Online document editor": [
         "Verkkodokumenttieditori"
       ],
@@ -1062,7 +1065,7 @@
         "Suojattu tiedoston tallennus ja jako"
       ],
       "Secure vault and link sharing": [
-        "Holvien ja linkkien turvallinen jakaminen"
+        "Turvallinen holvi- ja linkkijako"
       ],
       "Unlimited folders, labels and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
@@ -1081,8 +1084,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME } Plus -tarjouksella ei ole uudistushintaa, koska se on elinikäinen Pass Plus -käyttöoikeus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Alennukset perustuvat normaaliin kuukausihintaan."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Jos tilaat Pass Familyn tai Unlimitedin, tilauksesi uudistuu automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tilauksesi uusitaan automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
@@ -1093,9 +1102,20 @@
         "Suosituin"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Rajoitettu varasto!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "${ amount } kertaveloitus"
+      ],
       "for ${ durationDeal }": [
         "hintaan ${ durationDeal }"
+      ],
+      "forever": [
+        "ikuisesti"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
@@ -2945,7 +2965,7 @@
         "${ BRAND_NAME } ei voi yhdistää ulkoiseen tiliisi"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
+        "${ errorMessage }. Lisäksi voit tarkastaa ${ statusPageLink }."
       ],
       "${ list } doesn't have a valid email address": [
         "${ list } ei sisällä kelvollista sähköpostiosoitetta",
@@ -2976,7 +2996,7 @@
         "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
       ],
       "Alias is not valid": [
-        "Virheellinen alias"
+        "Alias ei kelpaa"
       ],
       "Alias is required": [
         "Alias vaaditaan"
@@ -2997,10 +3017,10 @@
         "Summa on vähimmäismäärää pienempi (${ minimumAmount })."
       ],
       "An error occurred while loading alias options": [
-        "Virhe aliasvaihtoehtoja ladatessa"
+        "Virhe ladattaessa aliasvalintoja"
       ],
       "An error occurred while saving your alias": [
-        "Virhe aliasta tallentaessa"
+        "Virhe tallennettaessa aliastasi"
       ],
       "Answer failed to be sent": [
         "Vastauksen lähetys epäonnistui"
@@ -3107,7 +3127,7 @@
         "Kansion nimi ei voi olla tyhjä."
       ],
       "Forward address is required": [
-        "Väitysosoite vaaditaan"
+        "Välitysosoite vaaditaan"
       ],
       "Image upload failed": [
         "Kuvan lataus epäonnistui"
@@ -3186,7 +3206,7 @@
         "Allekirjoitus puuttuu"
       ],
       "Name is required": [
-        "Nimi on pakollinen"
+        "Nimi vaaditaan"
       ],
       "Name required": [
         "Nimi vaaditaan"
@@ -3198,10 +3218,10 @@
         "Tuotavia yhteystietoja ei löytynyt"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Tuotavia sähköpostiviestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
+        "Tuotavia viestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Mikään käyttäjälle saaduista avaimista ei kelpaa lähettämiseen"
+        "Mikään käyttäjälle noudetuista ulkoisista avaimista ei kelpaa lähetykseen"
       ],
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
@@ -3242,7 +3262,7 @@
         "Maksutapahtumaa ei tueta"
       ],
       "Please activate your search again": [
-        "Aktivoi sisältöhakusi uudelleen"
+        "Aktivoi hakusi uudelleen"
       ],
       "Please create an address first.": [
         "Luo ensin sähköpostiosoite."
@@ -3252,7 +3272,7 @@
         "Jatka korjaamalla korostetut ristiriidat."
       ],
       "Please provide either a first name, a last name or a display name": [
-        "Syötä ainakin etunimi, sukunimi tai näyttönimi"
+        "Syötä joko etu-, suku- tai näyttönimi"
       ],
       "Port is required": [
         "Portti vaaditaan"
@@ -3313,7 +3333,7 @@
         "Aloitusajan on oltava ennen päätösaikaa"
       ],
       "status page": [
-        "tilasivu"
+        "tilasivumme"
       ],
       "Tab closed": [
         "Välilehti suljettiin"
@@ -3322,7 +3342,7 @@
         "Osoite on ehkä kirjoitettu väärin"
       ],
       "The amount due has changed. Please try again.": [
-        "Maksettava määrä on muuttunut. Yritä uudelleen."
+        "Erääntyvä summa on muuttunut. Yritä uudelleen."
       ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
@@ -3370,7 +3390,7 @@
         "Tunnisteen nimi ei ole käytettävissä. Valitse eri nimi."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Viesti saattaa sisältää joitakin URL-linkkejä, joita nykyinen selaimesi ei voi avata oikein."
+        "Viesti saattaa sisältää joitakin URL-linkkejä, joita käyttämäsi selain ei voi avata oikein."
       ],
       "Trusted keys are not valid for sending": [
         "Luotetut avaimet eivät kelpaa lähetykseen"
@@ -4758,7 +4778,7 @@
         "Tuo postilaatikko"
       ],
       "Important note": [
-        "Tärkeä muistiinpano"
+        "Tärkeä huomautus"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
@@ -4954,7 +4974,7 @@
         "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
       ],
       "Please try again in a few moments": [
-        "Yritä uudelleen hetken kuluttua"
+        "Yritä hetken kuluttua uudelleen"
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Yritä uudelleen eri maksutavalla tai ota yhteyttä pankkiisi."
@@ -4985,10 +5005,6 @@
       ],
       "Removed participants will be notified.": [
         "Poistetuille osallistujille ilmoitetaan."
-      ],
-      "Saving event...": [
-        "Tallennetaan tapahtumaa...",
-        "Tallennetaan tapahtumia..."
       ],
       "Select a service provider to start": [
         "Aloita valitsemalla palveluntarjoaja"
@@ -5126,7 +5142,7 @@
         "VPN-yhteyksiä yhteensä"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
+        "Kokeile uusia ${ BRAND_NAME }-ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
@@ -6914,7 +6930,7 @@
     "new_plans: feature highlight": {
       "${ admins } admin": [
         "${ admins } ylläpitäjä",
-        "${ admins }ylläpitäjää"
+        "${ admins } ylläpitäjää"
       ],
       "${ users } user": [
         "${ users } käyttäjä",
@@ -7781,7 +7797,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Vahvistamalla tämän maksun valtuutat ${ BRAND_NAME }in ja maksupalveluntarjoajamme Stripen ohjeistamaan pankkiasi veloittamaan tiliäsi asianmukaisesti. Voit pyytää hyvitystä 8 viikon kuluessa veloituspäivästä, pankkisi kanssa tekemäsi sopimuksen ehtojen mukaisesti."
+        "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
       ],
       "Street address, postal code, and city": [
         "Katuosoite, postinumero ja kaupunki"

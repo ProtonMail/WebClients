@@ -595,6 +595,9 @@
       "Show": [
         "보기"
       ],
+      "Show all": [
+        "모두 보기"
+      ],
       "Show preview": [
         "미리보기 표시"
       ],
@@ -941,7 +944,7 @@
         "첫 달"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "이 특별 할인가 (${ discountedPrice })는 ${ discountedMonths }개월에 한합니다. 그 이후로는 ${ nextMonths }개월 동안 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
+        "이 특별 할인가 (${ discountedPrice })는 ${ discountedMonths }에 한합니다. 그 이후로는 ${ nextMonths } 동안 ${ nextPrice }(으)로 갱신됩니다. 언제든지 취소 가능합니다."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
@@ -1020,6 +1023,9 @@
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
       ],
+      "One-time payment, lifetime deal": [
+        "일회성 결제, 평생 이용"
+      ],
       "Online document editor": [
         "온라인 문서 편집기"
       ],
@@ -1055,8 +1061,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus 평생 딜은 갱신 가격이 없으며, Pass Plus의 평생 이용권의 일회성 결제입니다."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "할인은 표준 월별 가격을 기본으로 합니다."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pass Family나 Unlimited를 구매하면 구독이 결제일에 표준 할인율로 자동 갱신됩니다."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "구독은 결제 주기가 끝날 때 표준 할인율을 적용한 요금으로 자동 갱신됩니다."
@@ -1067,9 +1079,20 @@
         "가장 인기"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "한정 수량!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "${ amount } 1회 청구"
+      ],
       "for ${ durationDeal }": [
         "${ durationDeal }간"
+      ],
+      "forever": [
+        "평생"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "${ regularAmount }(으)로 1개월 후 갱신됩니다."
@@ -1277,7 +1300,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } 사용자"
+        "${ users }명 사용자"
       ],
       "Total for ${ n } month": [
         "${ n }개월의 합계"
@@ -3637,6 +3660,9 @@
       "Affected user is on row": [
         "영향받는 사용자 목록"
       ],
+      "All inactive members deleted": [
+        "모든 비활성 상태의 구성원이 삭제되었습니다."
+      ],
       "All members have been added.": [
         "모든 구성원이 추가되었습니다"
       ],
@@ -4402,6 +4428,9 @@
       "Plus or Visionary subscription required": [
         "Plus 또는 Visionary 구독 필요함"
       ],
+      "Preference saved": [
+        "설정이 저장되었습니다."
+      ],
       "Preview": [
         "미리보기"
       ],
@@ -4653,6 +4682,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "PayPal을 사용하여 Proton 구독 비용을 지불할 수 있습니다. 새 브라우저 탭에서 ${ BRAND_NAME } 로 리디렉션합니다. 팝업 차단기를 사용하는 경우 계속하려면 팝업 차단기를 비활성화하십시오."
+      ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "이 사용자와 관련된 데이터와 모든 이메일 주소가 영구적으로 삭제됩니다."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "이 사용자와 관련된 데이터와 모든 이메일 주소가 영구적으로 삭제됩니다."
@@ -5652,6 +5684,9 @@
       "Security code (${ codeName })": [
         "보안 코드 (${ codeName })"
       ],
+      "Show ${ n } administrator": [
+        "${ n }명 관리자 보기"
+      ],
       "Single sign-on entity ID": [
         "싱글 사인 온 엔티티 ID"
       ],
@@ -5699,6 +5734,9 @@
       ],
       "Verification code": [
         "인증 코드"
+      ],
+      "Video conferencing with Zoom": [
+        "Zoom 화상 회의"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -6368,7 +6406,7 @@
         "고속 스트리밍"
       ],
       "High-speed Swiss VPN that protects your privacy": [
-        "고속 스위스 기반 VPN이 당신의 개인정보를 지켜줍니다"
+        "나의 프라이버시를 보호하는 빠른 속도의 스위스 기반 VPN"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } 기기에서 고속 VPN"
@@ -7028,6 +7066,80 @@
       ],
       "Support for ${ n } custom email domains": [
         "${ n }개의 지정 이메일 도메인 지원"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } 및 ${ additionalApp }의 새로운 기능"
+      ],
+      "${ app } product updates": [
+        "${ app } 제품 업데이트"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business 뉴스레터"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } 중요 발표"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } 뉴스레터"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } 할인 및 프로모션"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } 제품 소개"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } 사용자 설문"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } 환영 이메일"
+      ],
+      "1 email per month": [
+        "매월 1개 이메일"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "매월 1개 이메일. ${ BRAND_NAME } 생태계의 새 기능 및 제품과 따끈따끈한 프라이버시 뉴스를 받아보세요."
+      ],
+      "1 email per quarter": [
+        "분기 당 1개 이메일"
+      ],
+      "1-2 emails per month": [
+        "매월 1-2개 이메일"
+      ],
+      "2-4 emails per year": [
+        "연간 2-4개 이메일"
+      ],
+      "4-6 emails per year": [
+        "연간 4-6개 이메일"
+      ],
+      "Application notifications": [
+        "앱 알림"
+      ],
+      "Critical account notifications will still be delivered": [
+        "중요 계정 알림은 여전히 전달됩니다."
+      ],
+      "Daily email notifications": [
+        "일일 이메일 알림"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "비활성화하면 ${ BRAND_NAME } 애플리케이션 내의 알림 수신 기능이 제거됩니다."
+      ],
+      "During your first month": [
+        "첫 달 동안"
+      ],
+      "Email subscriptions": [
+        "이메일 구독"
+      ],
+      "In-app notifications": [
+        "앱 내 알림"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "${ BRAND_NAME } 서비스 개선을 위한 설문 조사 참여"
+      ],
+      "Product updates": [
+        "제품 업데이트"
       ]
     },
     "Notification": {
@@ -8556,6 +8668,12 @@
       "${ n } member requested your help to sign in.": [
         "${ n }명의 멤버가 로그인하는데 도움을 요청했습니다."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n }명의 사용자가 신원 제공자를 통해 나의 조직에 들어왔습니다. 계정을 검토하세요:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n }명 사용자가 비활성 상태입니다. 조직에서 안전하게 이 사용자를 삭제할 수 있습니다."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n }명의 사용자가 ${ BRAND_NAME } 계정에 SSO를 통해 로그인하는데 도움을 요청하고 있습니다."
       ],
@@ -8603,6 +8721,12 @@
       ],
       "Contact your administrator if the problem persists.": [
         "문제가 발생한다면 관리자에게 연락하세요."
+      ],
+      "Delete ${ n } inactive user?": [
+        "${ n }명의 비활성 사용자를 삭제할까요?"
+      ],
+      "Delete ${ n } user": [
+        "${ n }명 사용자 삭제"
       ],
       "Deny": [
         "거부"
@@ -8864,7 +8988,7 @@
         "${ ipAddresses }개 전용 서버"
       ],
       "${ n } calendar per user": [
-        "사용자 당 ${ n } 캘린더"
+        "사용자 당 ${ n }개 캘린더"
       ],
       "${ n } free VPN connection per user": [
         "사용자 당 ${ n }개 무료 VPN 연결"
@@ -10250,6 +10374,9 @@
       "Verifying your payment...": [
         "결제 수단을 인증하는 중..."
       ],
+      "Video conferencing": [
+        "화상 회의"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "주소 변경에 대한 지침과 함께 새 주소로 이메일을 보내드립니다."
       ],
@@ -10438,6 +10565,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**관리자 접근 대기 중:** 해당 계정을 관리할 수 있도록 해당 사용자에게 관리자 접근 수락 요청을 전송했습니다."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
       ],
@@ -10447,6 +10577,12 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "사용자를 비공개로 전환하면 해당 사용자가 데이터나 계정에 접근할 수 없을 때 도울 수 없게 됩니다."
       ],
+      "Cancel request": [
+        "요청 취소"
+      ],
+      "Cancel request to access user data?": [
+        "사용자 데이터 접근 요청을 취소합니까?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "${ n }명 사용자에 대한 관리자 접근 자동 활성화가 불가능합니다. 해당 사용자들의 암호화 키가 다음 도중에 업데이트되었습니다:"
       ],
@@ -10455,6 +10591,9 @@
       ],
       "Enable manually": [
         "수동 활성화"
+      ],
+      "Keep request": [
+        "요청 유지"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "사용자가 동의하면, 해당 사용자가 계정에 다시 접근하도록 하거나 데이터를 관리할 수 있도록 도울 수 있습니다."
@@ -10482,6 +10621,9 @@
       ],
       "The user must have an address to request data access": [
         "데이터 접근을 요청하려면 사용자가 주소를 소유해야 합니다."
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "이 작업은 사용자의 데이터 또는 비밀번호 재설정에 대한 관리자 접근 보류 중인 요청을 취소합니다."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "이 작업은 사용자의 계정을 관리할 관리자 권한을 회수하게 됩니다."
@@ -10575,6 +10717,9 @@
       "Administrators can't access the data of private users": [
         "관리자가 개인 사용자의 데이터에 접근할 수 없습니다."
       ],
+      "Inactive": [
+        "비활성"
+      ],
       "Invitation sent, awaiting reply from the invited member": [
         "초대장을 보냈습니다. 초대받은 구성원의 응답을 기다리고 있습니다."
       ],
@@ -10635,7 +10780,7 @@
         "${ n }개 VPN 연결"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+        "${ numberOfCountries }개 국가 중 ${ numberOfServers }개"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
