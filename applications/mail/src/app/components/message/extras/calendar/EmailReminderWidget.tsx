@@ -10,15 +10,15 @@ import { VideoConferencingWidgetConfig } from '@proton/calendar';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
 import {
     AppLink,
-    Banner,
     CalendarEventDateHeader,
+    DeprecatedBanner,
     Icon,
     IconRow,
     useApi,
     useGetCalendarEventRaw,
     useNotifications,
 } from '@proton/components';
-import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import { DeprecatedBannerBackgroundColor } from '@proton/components/components/deprecatedBanner/DeprecatedBanner';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
@@ -255,7 +255,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                         );
 
                         setError(
-                            <Banner
+                            <DeprecatedBanner
                                 icon="key"
                                 action={
                                     <ButtonLike
@@ -274,7 +274,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             >
                                 {c('Email reminder decryption error')
                                     .jt`Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${learnMoreLink}`}
-                            </Banner>
+                            </DeprecatedBanner>
                         );
 
                         return;
@@ -287,9 +287,12 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     );
 
                     setError(
-                        <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.DANGER}>
+                        <DeprecatedBanner
+                            icon="exclamation-circle"
+                            backgroundColor={DeprecatedBannerBackgroundColor.DANGER}
+                        >
                             {c('Email reminder decryption error').jt`Event details cannot be decrypted. ${whyNotLink}`}
-                        </Banner>
+                        </DeprecatedBanner>
                     );
 
                     return;
@@ -297,9 +300,12 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
                 if (error.message === EVENT_NOT_FOUND_ERROR) {
                     setError(
-                        <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.DANGER}>
+                        <DeprecatedBanner
+                            icon="exclamation-circle"
+                            backgroundColor={DeprecatedBannerBackgroundColor.DANGER}
+                        >
                             {c('Email reminder error').t`Event is no longer in your calendar`}
-                        </Banner>
+                        </DeprecatedBanner>
                     );
 
                     return;
