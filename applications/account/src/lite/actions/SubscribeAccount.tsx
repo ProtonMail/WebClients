@@ -144,9 +144,10 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
     const plan =
         maybeType === 'upgrade'
             ? getUpgradedPlan(subscription, app)
-            : (plans.find(({ Name, Type }) => Name === maybePlanName && Type === PLAN_TYPES.PLAN)?.Name as
-                  | PLANS
-                  | undefined);
+            : (plans.find(
+                  ({ Name, Type }) =>
+                      Name === maybePlanName && (Type === PLAN_TYPES.PLAN || Type === PLAN_TYPES.PRODUCT)
+              )?.Name as PLANS | undefined);
 
     const { bgClassName, logo } = (() => {
         if ([PLANS.VPN, PLANS.VPN2024].includes(plan as any)) {
