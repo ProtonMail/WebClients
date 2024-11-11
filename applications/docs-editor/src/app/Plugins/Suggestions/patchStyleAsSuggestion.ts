@@ -5,8 +5,8 @@ import type { TextNode } from 'lexical'
 import { $getSelection, $isElementNode, $isRangeSelection, $isTextNode, $setSelection } from 'lexical'
 import { GenerateUUID } from '@proton/docs-core'
 import type { ProtonNode } from './ProtonNode'
-import { $createSuggestionNode } from './ProtonNode'
-import { $wrapNodeInElement } from '@lexical/utils'
+import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
+import { $findMatchingParent, $wrapNodeInElement } from '@lexical/utils'
 
 export function $patchStyleAsSuggestion(
   property: string,
@@ -99,16 +99,29 @@ export function $patchStyleAsSuggestion(
       lastCreatedMarkNode = null
     }
 
+    const styleSuggestionParent = $findMatchingParent(
+      targetNode,
+      (n): n is ProtonNode => $isSuggestionNode(n) && n.getSuggestionTypeOrThrow() === 'style-change',
+    )
+
     currentNodeParent = parentNode
 
     const styleObj = getStyleObjectFromCSS(targetNode.getStyle())
     const existingValue = styleObj[property] || null
 
-    lastCreatedMarkNode = $wrapNodeInElement(targetNode, () =>
-      $createSuggestionNode(suggestionID, 'style-change', {
-        [property]: existingValue,
-      }),
-    ) as ProtonNode
+    if (!styleSuggestionParent) {
+      lastCreatedMarkNode = $wrapNodeInElement(targetNode, () =>
+        $createSuggestionNode(suggestionID, 'style-change', {
+          [property]: existingValue,
+        }),
+      ) as ProtonNode
+    } else {
+      const props = styleSuggestionParent.getSuggestionChangedProperties()
+      if (props && props[property] === undefined) {
+        const writable = styleSuggestionParent.getWritable()
+        writable.__properties.nodePropertiesChanged![property] = existingValue
+      }
+    }
 
     const selectionToPatch = targetNode.select(0, targetNode.getTextContentSize())
     $patchStyleText(selectionToPatch, patch)
