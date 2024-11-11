@@ -881,6 +881,9 @@
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
       ],
+      "One-time payment, lifetime deal": [
+        "Płatność jednorazowa, dożywotni dostęp"
+      ],
       "Online document editor": [
         "Edytor dokumentów online"
       ],
@@ -928,9 +931,20 @@
         "Najpopularniejsze"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Ograniczone zapasy!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Płatne ${ amount } jednorazowo"
+      ],
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
+      ],
+      "forever": [
+        "na zawsze"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Odnawia się po 1 miesiącu za ${ regularAmount }."
@@ -3804,6 +3818,9 @@
       ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } umożliwia współpracę w czasie rzeczywistym z szyfrowaniem end-to-end zapewniającym prywatność. Utwórz kopię, aby rozpocząć edycję lub poproś właściciela o dostęp do edycji."
+      ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } w"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } znaleziona grupa",
