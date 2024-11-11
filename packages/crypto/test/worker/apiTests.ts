@@ -1449,7 +1449,6 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
                 checkCompatibility: false,
             });
             expect(importedKeyRef.isPrivate()).to.be.false;
-            expect(importedKeyRef._getCompatibilityError()?.message).to.match(expectedError);
 
             await expect(
                 CryptoApiImplementation.importPublicKey({
@@ -1460,17 +1459,19 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
         });
 
         it('compatibility - rejects importing a v6 public key', async () => {
-            // Until we integrate OpenPGP.js, parsing the key will fail, regardless of `checkCompatibility`.
-            // This test is mostly a placeholder to be updated once OpenPGP.js is updated.
             const importedKeyRef = await CryptoApiImplementation.importPublicKey({
                 armoredKey: v6KeyCurve25519,
                 checkCompatibility: false,
             });
             expect(importedKeyRef.isPrivate()).to.be.false;
-            expect(importedKeyRef._getCompatibilityError()?.message).to.match(
-                /Version 6 keys are currently not supported/
-            );
             expect(importedKeyRef.getVersion()).to.equal(6);
+
+            await expect(
+                CryptoApiImplementation.importPublicKey({
+                    armoredKey: v6KeyCurve25519,
+                    checkCompatibility: true,
+                })
+            ).to.be.rejectedWith(/Version 6 keys are currently not supported./);
 
             await expect(
                 CryptoApiImplementation.importPublicKey({ armoredKey: v6KeyCurve25519, checkCompatibility: true })

@@ -22,7 +22,6 @@ const KeyReferenceSerializer = {
     serialize: (keyReference: KeyReference): SerializedKeyReference => ({
         // store values directly, convert back to function when deserialising
         ...keyReference,
-        _getCompatibilityError: keyReference._getCompatibilityError(),
         isPrivate: keyReference.isPrivate(),
         getVersion: keyReference.getVersion(),
         getFingerprint: keyReference.getFingerprint(),
@@ -43,7 +42,6 @@ const KeyReferenceSerializer = {
     deserialize: (serialized: SerializedKeyReference): KeyReference =>
         ({
             ...serialized,
-            _getCompatibilityError: () => serialized._getCompatibilityError,
             isPrivate: () => serialized.isPrivate,
             getVersion: () => serialized.getVersion,
             getFingerprint: () => serialized.getFingerprint,
