@@ -234,6 +234,10 @@ function main({
             if (event.request && event.request.url) {
                 [event.request.url] = event.request.url.split('#');
             }
+            // keys/all endpoint accepts Email as parameter which is PII.
+            if (event.request && event.request.url) {
+                [event.request.url] = event.request.url.toLowerCase().split('email');
+            }
             if (event.breadcrumbs) {
                 event.breadcrumbs = event.breadcrumbs.map((breadcrumb) => {
                     if (breadcrumb.category === 'navigation' && breadcrumb.data) {

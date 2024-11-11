@@ -43,6 +43,10 @@ const getImpactedElement = (attribution: CLSAttribution | INPAttribution | LCPAt
     return '';
 };
 
+const hasURLFragment = (url?: string): boolean => {
+    return url ? url.includes('#') : false;
+};
+
 /*
  * Observability: you can access the main dashboard on Graphana /d/dd4d3306-9ce3-4c23-a447-a64017c1cc9a/web-vitals?orgId=1&from=now-7d&to=now
  * Attribution: our goal is to first reduce amount of "poor" ratings for all 3 main Web Vitals, so we log the attribution details in Sentry
@@ -68,8 +72,14 @@ export const reportWebVitals = (context: 'public' | 'private' = 'private') => {
             context,
         });
 
-        // Only log attribution if rating is poor
-        if (metric.rating === 'poor') {
+        // Fragment is considered private as that is part of URL not sending to the server.
+        // For public sharing, we depend on not sharing this part with the server.
+        // We rather ignore such reports as navigation entry cannot be modified.
+        const reportIncludesPIIInfo =
+            // @ts-ignore
+            hasURLFragment(metric.attribution?.url) || hasURLFragment(metric.attribution?.navigationEntry?.name);
+
+        if (!reportIncludesPIIInfo && metric.rating === 'poor') {
             captureMessage(`${metric.name} has poor rating`, {
                 level: 'info',
                 tags: {
