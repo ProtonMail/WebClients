@@ -1046,6 +1046,9 @@
       "Integrated 2FA authenticator": [
         "Autenticatore 2FA integrato"
       ],
+      "One-time payment, lifetime deal": [
+        "Pagamento una tantum, promo per sempre"
+      ],
       "Online document editor": [
         "Editor di documenti online"
       ],
@@ -1081,8 +1084,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "L'offerta a vita ${ PASS_SHORT_APP_NAME } Plus non prevede alcun prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Gli sconti si riferiscono al prezzo mensile standard."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Se acquisti Pass Family o Unlimited, il tuo abbonamento si rinnoverà automaticamente alla tariffa scontata e alla durata standard alla fine del ciclo di fatturazione."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Al termine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente al prezzo scontato e alla durata standard."
@@ -1093,9 +1102,20 @@
         "Più popolare"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Scorte limitate!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Addebito di ${ amount } una volta"
+      ],
       "for ${ durationDeal }": [
         "per ${ durationDeal }"
+      ],
+      "forever": [
+        "per sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Si rinnova dopo 1 mese a ${ regularAmount }."
@@ -4988,10 +5008,6 @@
       ],
       "Removed participants will be notified.": [
         "I partecipanti rimossi saranno notificati."
-      ],
-      "Saving event...": [
-        "Salvataggio evento...",
-        "Salvataggio eventi..."
       ],
       "Select a service provider to start": [
         "Seleziona un fornitore di servizi per iniziare"

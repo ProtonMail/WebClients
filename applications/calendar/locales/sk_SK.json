@@ -1064,6 +1064,9 @@
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
       ],
+      "One-time payment, lifetime deal": [
+        "Jednorazová platba, doživotný prístup"
+      ],
       "Online document editor": [
         "Online editor dokumentov"
       ],
@@ -1099,8 +1102,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Doživotná služba ${ PASS_SHORT_APP_NAME } Plus nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k službe Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Zľavy sú tvorené na základe štandardných mesačných cien."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ak si zakúpite službu Pass Family alebo Unlimited, vaše predplatné sa na konci fakturačného cyklu automaticky obnoví za štandardnú zľavnenú cenu a so štandardným trvaním."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Vaše predplatné sa automaticky obnoví so štandardnou zľavnenou sadzbou a trvaním na konci vášho fakturačného cyklu."
@@ -1111,9 +1120,20 @@
         "Najpopulárnejšie"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Časovo obmedzené!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Účtovaná suma ${ amount } jednorazovo"
+      ],
       "for ${ durationDeal }": [
         "za ${ durationDeal }"
+      ],
+      "forever": [
+        "navždy"
       ]
     },
     "BF2024: Tooltip": {
@@ -1475,7 +1495,7 @@
         "${ planMaxSpace } úložisko pre emaily"
       ],
       "Advanced account protection": [
-        "Advanced account protection"
+        "Pokročilá ochrana účtu"
       ],
       "All ${ BRAND_NAME } apps and premium features": [
         "Všetky ${ BRAND_NAME } aplikácie a prémiové funkcie"
@@ -2647,7 +2667,7 @@
         "Farebne označte udalosti, aby ste si ľahšie zorganizovali deň, sledovali čas a určovali priority úloh."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
-        "Vytvorte stretnutie v službe Zoom a jedným kliknutím pridajte podrobnosti o pripojení k udalosti."
+        "Vytvorte Zoom stretnutie a jedným kliknutím pridajte podrobnosti o pripojení k udalosti."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrovanie kontaktov… Táto akcia môže trvať niekoľko minút. Akonáhle bude proces ukončený, budete si môcť stiahnuť súbor s vašimi exportovanými kontaktmi."
@@ -3148,7 +3168,7 @@
         "Nepodarilo sa získať pôvodný výskyt v sérii"
       ],
       "Failed to load oauth modal.": [
-        "Nepodarilo sa načítať oauth modal."
+        "Nepodarilo sa načítať OAuth modal."
       ],
       "First name is too long": [
         "Meno je príliš dlhé"
@@ -3850,13 +3870,13 @@
         "${ BRAND_NAME } skupiny"
       ],
       "Accounts with custom domains cannot join a family plan.": [
-        "Účty s vlastnými doménami sa nemôžu pripojiť k rodinnému tarifu."
+        "Účty s vlastnými doménami sa nemôžu pripojiť k rodinnému plánu."
       ],
       "customer support": [
         "zákaznícka podpora"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Rodinné tarify v súčasnej dobe nepodporujú externé účty. Pred pripojením si vytvorte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
+        "Rodinné plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -3865,13 +3885,13 @@
         "Pozvánka od: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a family plan.": [
-        "Doživotné účty nemôžu byť pripojené k rodinnému tarifu."
+        "Doživotné účty nemôžu byť pripojené k rodinnému plánu."
       ],
       "Manage addresses": [
         "Spravovať adresy"
       ],
       "Owners of a plan with members cannot join another family plan.": [
-        "Vlastníci tarify s členmi, sa nemôžu pripojiť k inej rodinnej tarife."
+        "Vlastníci plánu s členmi sa nemôžu pripojiť k inému rodinnému plánu."
       ],
       "Sorry, you can't switch plans at this time.": [
         "Ľutujeme, momentálne nemôžete zmeniť plány."
@@ -3898,10 +3918,10 @@
         "Úspešne ste sa pripojili do rodinnej skupiny"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
-        "Máte nezaplatené faktúry. Pred pripojením k rodinnému tarifu ich prosím uhraďte."
+        "Máte nezaplatené faktúry. Pred pripojením k rodinnému plánu ich uhraďte, prosím."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "Môžete prepojiť svoj účet ${ BRAND_NAME } s týmto rodinným tarifom a spoločne využívať všetky prémiové funkcie ${ brandOrAppName }."
+        "Ste pozvaní prepojiť svoj ${ BRAND_NAME } účet s týmto rodinným plánom a spoločne využívať všetky prémiové funkcie ${ brandOrAppName }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Váš účet má viac emailových adries než koľko máte k dispozícii v tomto pláne. ${ addressSettingsLink }"
@@ -5133,12 +5153,6 @@
       ],
       "Removed participants will be notified.": [
         "Odobraní účastníci budú oboznámení."
-      ],
-      "Saving event...": [
-        "Ukladanie udalosti...",
-        "Ukladanie udalostí...",
-        "Ukladanie udalostí...",
-        "Ukladanie udalostí..."
       ],
       "Select a service provider to start": [
         "Vyberte poskytovateľa služieb a začnite"
@@ -7224,7 +7238,7 @@
         "Chráňte citlivé obchodné informácie a bezpečne spolupracujte."
       ],
       "Protect your family with all premium features of ${ PASS_SHORT_APP_NAME } Plus for 6 users.": [
-        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ PASS_SHORT_APP_NAME } Plus pre 6 užívateľov."
+        "Chráňte svoju rodinu pomocou všetkých prémiových funkcií ${ PASS_SHORT_APP_NAME } Plus pre 6 používateľov."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
@@ -9258,10 +9272,10 @@
         "Dodatočný úložný priestor a používatelia"
       ],
       "Folders, labels and filters": [
-        "Zložky, štítky a filtre"
+        "Priečinky, štítky a filtre"
       ],
       "Folders, labels, and custom filters": [
-        "Zložky, štítky a vlastné filtre"
+        "Priečinky, štítky a vlastné filtre"
       ],
       "Helping activists in Hong Kong": [
         "Pomáhame aktivistom v Hongkongu"
@@ -10032,7 +10046,7 @@
         "Získať ${ appName[APP_NAME] } aplikácie"
       ],
       "Get Zooming faster": [
-        "Získajte rýchlejší Zoom"
+        "Zoomujte rýchlejšie"
       ],
       "Gift": [
         "Dar"
@@ -10952,13 +10966,13 @@
     },
     "Zoom integration": {
       "Add Zoom meeting": [
-        "Pridať Zoom míting"
+        "Pridať Zoom stretnutie"
       ],
       "Adding conferencing details": [
         "Pridávanie podrobností o konferencii"
       ],
       "Loading Zoom configuration": [
-        "Načítavanie nastavení Zoom"
+        "Načítavanie Zoom konfigurácie"
       ]
     },
     "Zoom Meeting": {
