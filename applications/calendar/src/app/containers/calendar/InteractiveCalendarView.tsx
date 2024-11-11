@@ -1546,7 +1546,6 @@ const InteractiveCalendarView = ({
                 changeDate(newStartDate, hasChanged);
             }
 
-            removeTemporaryEvent(uniqueId);
             handleCreateNotification(successNotification);
         } catch (e: any) {
             if (e instanceof EscapeTryBlockError) {
@@ -1565,6 +1564,8 @@ const InteractiveCalendarView = ({
             }
         } finally {
             isSavingEvent.current = false;
+            removeTemporaryEvent(uniqueId);
+
             if (hasReduxStore) {
                 if (isSingleEdit) {
                     dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: false }));
