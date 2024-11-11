@@ -1,0 +1,65 @@
+import { ArgsTable, Canvas, PRIMARY_STORY, Primary, Story } from '@storybook/addon-docs';
+
+import { Banner } from '@proton/atoms';
+
+# Banner
+
+```js
+import { Banner } from '@proton/atoms';
+```
+
+<Canvas withSource="open">
+    <Story id="components-banner--basic" />
+</Canvas>
+
+<Story id="components-banner--sandbox" />
+
+## Examples
+
+<Story id="components-banner--all" />
+
+## Text content
+
+Text text can be styled using regular html and utility classes
+
+<Canvas withSource="open">
+    <Story id="components-banner--text-content" />
+</Canvas>
+
+## Icons
+
+The default icons are `info-circle` for `norm` and `info` variants, `exclamation-triangle-filled` for `warning` and `danger` variants. Any icon can be used.
+
+<Canvas withSource="open">
+    <Story id="components-banner--icons" />
+</Canvas>
+
+## Action
+
+A `Button` component can be added as an action. The appropriate `color` and `style` props are automatically applied.
+
+<Canvas withSource="open">
+    <Story id="components-banner--action" />
+</Canvas>
+
+If needed, a `ButtonGroup` is also possible to use.
+
+<Canvas withSource="open">
+    <Story id="components-banner--double-action" />
+</Canvas>
+
+## Link
+
+An `Href` component can be added as an additional link.
+
+<Canvas withSource="open">
+    <Story id="components-banner--link" />
+</Canvas>
+
+## Dismissable
+
+The dismiss icon appears automatically when the `onDismiss` prop is provided.
+
+<Canvas withSource="open">
+    <Story id="components-banner--dismissable" />
+</Canvas>

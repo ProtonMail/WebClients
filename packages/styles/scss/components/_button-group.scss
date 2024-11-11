@@ -4,6 +4,7 @@
 	display: inline-flex;
 	flex-wrap: nowrap;
 	align-items: stretch;
+	justify-content: center;
 	border-radius: var(--border-radius-md);
 	background-color: var(--background-norm);
 	vertical-align: middle;
@@ -202,7 +203,7 @@
 		}
 	}
 
-	.button-group-outline-#{$color} {
+	[class*='button-group-outline-'] {
 		--button-group-border-color: var(--#{dash-join($group, $color, 'major-1')});
 
 		@supports not selector(:focus-visible) {
