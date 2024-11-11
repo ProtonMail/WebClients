@@ -172,6 +172,9 @@
       "Delete all": [
         "Ștergere toate"
       ],
+      "Delete it, I will never need it": [
+        "Ștergere, nu mai am nevoie de el"
+      ],
       "Delete password": [
         "Ștergere parolă"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Deselectare"
+      ],
+      "Disable alias": [
+        "Dezactivare alias"
       ],
       "Disable instead": [
         "Dezactivare"
@@ -517,6 +523,11 @@
       "Submitting report...": [
         "Se trimite raportul…"
       ],
+      "Sync alias": [
+        "Sincronizare alias",
+        "Sincronizare aliasuri",
+        "Sincronizare aliasuri"
+      ],
       "Sync aliases": [
         "Sincronizare aliasuri"
       ],
@@ -531,6 +542,11 @@
       ],
       "Try for free": [
         "Încercați gratis"
+      ],
+      "Understood, I will never need it": [
+        "Am înțeles, nu mai nevoie de el",
+        "Am înțeles, nu mai nevoie de ele",
+        "Am înțeles, nu mai nevoie de ele"
       ],
       "Unlock": [
         "Deblocare"
@@ -1712,6 +1728,12 @@
       "Please enter your current PIN code to continue": [
         "Introduceți codul PIN curent pentru a continua"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "După ștergere, aliasul nu mai poate fi restaurat. Doriți să-l dezactivați în schimb?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "După ștergere, aliasul nu poate fi restaurat. Aliasul este deja dezactivat și nu va redirecționa mesajele către adresa de e-mail."
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Treceți la un plan superior pentru a avea acces timpuriu la aplicația web ${ PASS_APP_NAME }."
       ],
@@ -1952,6 +1974,11 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nu se poate modifica adresa reală pentru acest alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Aveți ${ aliasCount } alias care există în SimpleLogin, dar lipsește în ${ PASS_APP_NAME }. Doriți să-l sincronizați?",
+        "Aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le sincronizați?",
+        "Aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le sincronizați?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Mai aveți ${ daysRemaining } zi rămasă pentru a încerca aceste funcții premium.",
@@ -3239,6 +3266,11 @@
       "Pinned (${ items.length })": [
         "Fixate (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "După ștergere, aliasul nu mai poate fi restaurat.",
+        "După ștergere, aliasurile nu mai pot fi restaurate.",
+        "După ștergere, aliasurile nu mai pot fi restaurate."
+      ],
       "Recommended actions": [
         "Acțiuni recomandate"
       ],
@@ -3310,6 +3342,9 @@
       "Sync alias": [
         "Sincronizare alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Sincronizați-vă aliasurile din SimpleLogin"
+      ],
       "Transfer ownership": [
         "Transfer proprietar"
       ],
@@ -3360,6 +3395,11 @@
       ],
       "Your welcome gift": [
         "Bucurați-vă de versiunea de încercare"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Urmează să ștergeți definitiv ${ aliasCount } alias",
+        "Urmează să ștergeți definitiv ${ aliasCount } aliasuri",
+        "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri"
       ]
     },
     "Validation": {
@@ -3415,6 +3455,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Nu s-au putut trimite invitații la următoarele adrese:"
+      ],
+      "Delete alias": [
+        "Ștergere alias"
       ],
       "Duplicate email addresses.": [
         "Adrese de e-mail duplicate."
@@ -3489,6 +3532,9 @@
       ],
       "Offline": [
         "Deconectat"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "După sincronizare, aliasurile șterse din ${ PASS_SHORT_APP_NAME } vor fi șterse și din SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."

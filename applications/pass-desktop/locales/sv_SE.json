@@ -1648,6 +1648,9 @@
       "Please confirm your extra password in order to unregister your current lock.": [
         "Bekräfta ditt extra lösenord för att avregistrera ditt nuvarande lås."
       ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Bekräfta ditt extra lösenord för att uppdatera tiden för automatisk låsning."
+      ],
       "Please confirm your password": [
         "Bekräfta ditt lösenord"
       ],
@@ -1680,6 +1683,9 @@
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Observera att när aliaset väl har tagits bort kan det inte återställas. Kanske vill du inaktivera aliaset istället?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Observera att när aliaset väl har tagits bort kan det inte återställas. Alias är redan inaktiverat och kommer inte vidarebefordra e-post till din brevlåda"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Uppgradera för att få förhandstillgång till webbappen ${ PASS_APP_NAME }"
@@ -2099,6 +2105,9 @@
       "Auto-lock after": [
         "Lås automatiskt efter"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Förutom att lagra dina inloggningar skyddar ${ PASS_APP_NAME } din identitet med en integrerad funktion för e-postalias. När du registrerar dig för ett nytt konto online kan ${ PASS_APP_NAME } automatiskt skapa ett alias för att hålla din faktiska e-postadress skyddad. "
+      ],
       "Beta Access": [
         "Beta-åtkomst"
       ],
@@ -2287,6 +2296,9 @@
       ],
       "Generic CSV": [
         "Generisk CSV"
+      ],
+      "Get the extension for your browser.": [
+        "Skaffa utökningen för din webbläsare."
       ],
       "Grant": [
         "Bevilja"
