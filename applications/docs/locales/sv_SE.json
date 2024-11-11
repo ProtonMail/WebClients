@@ -871,6 +871,9 @@
       "Integrated 2FA authenticator": [
         "Integrerad 2FA-autentisering"
       ],
+      "One-time payment, lifetime deal": [
+        "Engångsbetalning, livstidserbjudande"
+      ],
       "Online document editor": [
         "Dokumentredigerare online"
       ],
@@ -903,6 +906,9 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabatterna är baserade på ordinarie månadspriser."
       ],
@@ -915,9 +921,17 @@
         "Mest populär"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Begränsat lager!"
+      ]
+    },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
+      ],
+      "forever": [
+        "för alltid"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Förnyas efter 1 månad till ${ regularAmount }."
