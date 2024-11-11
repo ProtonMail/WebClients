@@ -1025,6 +1025,9 @@
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
       ],
+      "One-time payment, lifetime deal": [
+        "Kertamaksu, elinikäinen tarjous"
+      ],
       "Online document editor": [
         "Verkkodokumenttieditori"
       ],
@@ -1041,7 +1044,7 @@
         "Suojattu tiedoston tallennus ja jako"
       ],
       "Secure vault and link sharing": [
-        "Holvien ja linkkien turvallinen jakaminen"
+        "Turvallinen holvi- ja linkkijako"
       ],
       "Unlimited folders, labels and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
@@ -1060,8 +1063,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME } Plus -tarjouksella ei ole uudistushintaa, koska se on elinikäinen Pass Plus -käyttöoikeus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Alennukset perustuvat normaaliin kuukausihintaan."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Jos tilaat Pass Familyn tai Unlimitedin, tilauksesi uudistuu automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tilauksesi uusitaan automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
@@ -1072,9 +1081,20 @@
         "Suosituin"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Rajoitettu varasto!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "${ amount } kertaveloitus"
+      ],
       "for ${ durationDeal }": [
         "hintaan ${ durationDeal }"
+      ],
+      "forever": [
+        "ikuisesti"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Uusitaan kuukauden jälkeen hintaan ${ regularAmount }."
@@ -2502,7 +2522,7 @@
     },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
+        "${ errorMessage }. Lisäksi voit tarkastaa ${ statusPageLink }."
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Viestit ja kirjoitus > Lyhytosoite (pm.me)"
@@ -2661,7 +2681,7 @@
         "Määritä palautuspuhelin ensin"
       ],
       "Please try again in a few moments.": [
-        "Yritä uudelleen hetken kuluttua."
+        "Yritä hetken kuluttua uudelleen."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Saadaksesi usean käyttäjän tuen, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
@@ -2691,13 +2711,13 @@
         "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
       ],
       "status page": [
-        "tilasivu"
+        "tilasivumme"
       ],
       "Tab closed": [
         "Välilehti suljettiin"
       ],
       "The amount due has changed. Please try again.": [
-        "Maksettava määrä on muuttunut. Yritä uudelleen."
+        "Erääntyvä summa on muuttunut. Yritä uudelleen."
       ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
@@ -6651,7 +6671,7 @@
     "new_plans: feature highlight": {
       "${ admins } admin": [
         "${ admins } ylläpitäjä",
-        "${ admins }ylläpitäjää"
+        "${ admins } ylläpitäjää"
       ],
       "${ users } user": [
         "${ users } käyttäjä",
@@ -7672,7 +7692,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Vahvistamalla tämän maksun valtuutat ${ BRAND_NAME }in ja maksupalveluntarjoajamme Stripen ohjeistamaan pankkiasi veloittamaan tiliäsi asianmukaisesti. Voit pyytää hyvitystä 8 viikon kuluessa veloituspäivästä, pankkisi kanssa tekemäsi sopimuksen ehtojen mukaisesti."
+        "Vahvistamalla maksun valtuutat ${ BRAND_NAME }in ja maksuvälittäjämme Stripen ohjeistamaan pankkiasi veloittamaan kyseisen summan tililtäsi. Voit kahdeksan viikon kuluessa veloituspäivästä pyytää hyvitystä, pankkisi sopimusehdot huomioiden."
       ],
       "Street address, postal code, and city": [
         "Katuosoite, postinumero ja kaupunki"
@@ -8442,8 +8462,8 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } ILMAINEN kuukausi",
-        "${ n } ILMAISTA kuukautta"
+        "${ n } kuukausi ILMAISEKSI",
+        "${ n } kuukautta ILMAISEKSI"
       ]
     },
     "specialoffer: Deal details": {

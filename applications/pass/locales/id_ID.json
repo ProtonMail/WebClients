@@ -172,6 +172,9 @@
       "Delete all": [
         "Hapus semua"
       ],
+      "Delete it, I will never need it": [
+        "Lanjut hapus, saya tidak akan butuh alias ini lagi"
+      ],
       "Delete password": [
         "Hapus kata sandi"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Lepas pilihan"
+      ],
+      "Disable alias": [
+        "Nonaktifkan alias"
       ],
       "Disable instead": [
         "Nonaktifkan saja"
@@ -505,6 +511,9 @@
       "Submitting report...": [
         "Mengirim laporan..."
       ],
+      "Sync alias": [
+        "Sinkronkan alias"
+      ],
       "Sync aliases": [
         "Sinkronkan alias"
       ],
@@ -519,6 +528,9 @@
       ],
       "Try for free": [
         "Coba gratis"
+      ],
+      "Understood, I will never need it": [
+        "Saya mengerti, saya tidak akan butuh alias ini lagi"
       ],
       "Unlock": [
         "Membuka"
@@ -1604,6 +1616,12 @@
       "Please enter your current PIN code to continue": [
         "Silakan masukkan kode PIN Anda saat ini untuk melanjutkan"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Apakah Anda ingin sekadar menonaktifkan alias ini?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan. Alias ini telah dinonaktifkan dan tidak akan lagi meneruskan email ke kotak surat Anda"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Tingkatkan akun untuk memperoleh akses dini ke aplikasi web ${ PASS_APP_NAME }"
       ],
@@ -1837,6 +1855,9 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Anda memiliki ${ aliasCount } alias yang saat ini terdapat pada SimpleLogin namun belum ada pada ${ PASS_APP_NAME }. Apakah Anda ingin menyinkronkan alias ini?"
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
@@ -3010,6 +3031,9 @@
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan."
+      ],
       "Recommended actions": [
         "Tindakan yang direkomendasikan"
       ],
@@ -3079,6 +3103,9 @@
       "Sync alias": [
         "Sinkronkan alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Sinkronkan alias Anda dari SimpleLogin"
+      ],
       "Transfer ownership": [
         "Transfer kepemilikan"
       ],
@@ -3129,6 +3156,9 @@
       ],
       "Your welcome gift": [
         "Hadiah selamat datang Anda"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Anda akan menghapus ${ aliasCount } alias secara permanen"
       ]
     },
     "Validation": {
@@ -3184,6 +3214,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Undangan tidak dapat dikirimkan ke alamat berikut:"
+      ],
+      "Delete alias": [
+        "Hapus alias"
       ],
       "Duplicate email addresses.": [
         "Terdapat alamat email duplikat."
@@ -3256,6 +3289,9 @@
       ],
       "Offline": [
         "Offline"
+      ],
+      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
+        "Setelah data tersinkron, menghapus alias di ${ PASS_SHORT_APP_NAME } akan turut menghapus alias yang sama pada SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kolom ini hanya dapat diisi dengan karakter alfanumerik, titik, tanda hubung, dan garis bawah"

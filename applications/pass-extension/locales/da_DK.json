@@ -164,6 +164,9 @@
       "Delete all": [
         "Slet alle"
       ],
+      "Delete it, I will never need it": [
+        "Slet det, jeg får aldrig brug for det"
+      ],
       "Delete password": [
         "Slet adgangskode"
       ],
@@ -175,6 +178,9 @@
       ],
       "Deselect": [
         "Fravælg"
+      ],
+      "Disable alias": [
+        "Deaktiver alias"
       ],
       "Disable autosave on this website": [
         "Deaktivér autogem på dette websted"
@@ -524,6 +530,10 @@
       ],
       "Try again": [
         "Prøv igen"
+      ],
+      "Understood, I will never need it": [
+        "Forstået, jeg får aldrig brug for det",
+        "Forstået, jeg får aldrig brug for dem"
       ],
       "Unlock": [
         "Lås op"
@@ -1597,6 +1607,12 @@
       ],
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Indtast din ekstra adgangskode for at begynde at bruge ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Bemærk, at aliasset ikke kan gendannes, når først det er slettet. Måske vil du hellere deaktivere aliasset?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Bemærk, at aliasset ikke kan gendannes, når det er slettet. Aliasset er allerede deaktiveret og videresender ikke e-mails til din postkasse"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Opgrader for at få tidlig adgang ${ PASS_APP_NAME } webapp"
@@ -2917,6 +2933,10 @@
       "Pinned (${ items.length })": [
         "Fastgjorte (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Bemærk, at aliasset ikke kan gendannes, når det er slettet.",
+        "Bemærk, at aliasserne ikke kan gendannes, når de er slettet."
+      ],
       "Remove extra password": [
         "Fjern ekstra adgangskode"
       ],
@@ -3006,6 +3026,10 @@
       ],
       "Your welcome gift": [
         "Din velkomstgave"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Du er ved at slette ${ aliasCount } alias permanent",
+        "Du er ved at slette ${ aliasCount } aliasser permanent"
       ]
     },
     "Validation": {
@@ -3064,6 +3088,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Kunne ikke sende invitationer til følgende adresser:"
+      ],
+      "Delete alias": [
+        "Slet alias"
       ],
       "Duplicate email addresses.": [
         "Dubletter af e-mailadresser."

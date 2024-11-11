@@ -891,6 +891,9 @@
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
       ],
+      "One-time payment, lifetime deal": [
+        "Аднаразовая аплата, пажыццёвы доступ"
+      ],
       "Online document editor": [
         "Воблачны рэдактар дакументаў"
       ],
@@ -926,8 +929,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } Plus не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты, калі вы купіце Pass Family або Unlimited."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
@@ -938,9 +947,20 @@
         "Найбольш папулярны"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Limited stock!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Аплачваецца ${ amount } адінаразова"
+      ],
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
+      ],
+      "forever": [
+        "назаўсёды"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."

@@ -164,6 +164,9 @@
       "Delete all": [
         "Slett alle"
       ],
+      "Delete it, I will never need it": [
+        "Slett det, jeg kommer aldri til å trenge det"
+      ],
       "Delete password": [
         "Slett passord"
       ],
@@ -175,6 +178,9 @@
       ],
       "Deselect": [
         "Fjern markeringen"
+      ],
+      "Disable alias": [
+        "Deaktiver alias"
       ],
       "Disable autosave on this website": [
         "Deaktiver automatisk lagring på dette nettstedet"
@@ -524,6 +530,10 @@
       ],
       "Try again": [
         "Prøv igjen"
+      ],
+      "Understood, I will never need it": [
+        "Forstått, jeg kommer aldri til å trenge det",
+        "Forstått, jeg kommer aldri til å trenge dem"
       ],
       "Unlock": [
         "Lås opp"
@@ -1597,6 +1607,12 @@
       ],
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Vennligst skriv inn ditt ekstra passord for å begynne å bruke ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Kanskje du vil deaktivere aliaset i stedet?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Aliaset er allerede deaktivert og videresender ikke e-post til postboksen din"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
@@ -2970,6 +2986,10 @@
       "Pinned (${ items.length })": [
         "Festet (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet.",
+        "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet."
+      ],
       "Reject device?": [
         "Avvise enhet?"
       ],
@@ -3062,6 +3082,10 @@
       ],
       "Your welcome gift": [
         "Din velkomstgave"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Du er i ferd med å slette permanent ${ aliasCount } alias",
+        "Du er i ferd med å slette permanent ${ aliasCount } aliaser"
       ]
     },
     "Validation": {
@@ -3120,6 +3144,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Kunne ikke sende invitasjoner til følgende adresser:"
+      ],
+      "Delete alias": [
+        "Slett alias"
       ],
       "Duplicate email addresses.": [
         "Dupliserte e-postadresser."

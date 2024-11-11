@@ -808,11 +808,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "Refresh the page": [
-        "Sayfayı yenile"
-      ],
       "refresh the page": [
         "sayfayı yenile"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
       ],
       "Reject": [
         "Reddet"
@@ -1032,6 +1032,9 @@
       ],
       "Show": [
         "Görüntüle"
+      ],
+      "Show all": [
+        "Tümünü görüntüle"
       ],
       "Show less": [
         "Daha az görüntüle"
@@ -1602,14 +1605,6 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1631,6 +1626,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -1726,6 +1729,9 @@
       "Integrated 2FA authenticator": [
         "Bütünleşik 2 adımlı kimlik doğrulayıcı"
       ],
+      "One-time payment, lifetime deal": [
+        "Bir kez ödemeli ömür boyu kullanım fırsatı"
+      ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
@@ -1761,8 +1767,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus ömür boyu fırsatının yenileme ücreti yoktur. Pass Plus hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "İndirimler, standart aylık fiyatlara uygulanır"
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pass Family veya Unlimited tarifesi satın aldığınızda, aboneliğiniz fatura döneminizin sonunda otomatik olarak standart indirimli fiyat ve süre üzerinden yenilenir."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Aboneliğiniz, fatura döneminizin sonunda standart indirimli oranla ve süreyle otomatik olarak yenilenir."
@@ -1773,9 +1785,20 @@
         "En çok kullanılan"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Sınırlı stok!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Bir kez ${ amount } olarak faturalanır"
+      ],
       "for ${ durationDeal }": [
         "${ durationDeal } için"
+      ],
+      "forever": [
+        "sonsuza dek"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "1 ay sonra ${ regularAmount } tutarla yenilenir."
@@ -6889,6 +6912,9 @@
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
       ],
+      "All inactive members deleted": [
+        "Etkin olmayan tüm üyeler silindi"
+      ],
       "All keys successfully reactivated": [
         "Tüm anahtarlar yeniden kullanıma alındı"
       ],
@@ -7220,11 +7246,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -8150,6 +8176,9 @@
       "Plus or Visionary subscription required": [
         "Plus veya Visionary aboneliği gerekli"
       ],
+      "Preference saved": [
+        "Ayar kaydedildi"
+      ],
       "Preview": [
         "Ön izleme"
       ],
@@ -8610,6 +8639,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için onu kapatın."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Bu işlem bu kullanıcılarla ilişkili tüm e-postaları ve verileri kalıcı olarak silecek."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Bu kullanıcı ile ilişkili tüm e-posta ve veriler kalıcı olarak silinecek."
       ],
@@ -8829,11 +8861,11 @@
       "User activated": [
         "Kullanıcı ektinleştirildi"
       ],
-      "username": [
-        "kullanıcı adı"
-      ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "username": [
+        "kullanıcı adı"
       ],
       "Users": [
         "Kullanıcılar"
@@ -10620,6 +10652,10 @@
       "Send in": [
         "Şu zamanda gönderilsin"
       ],
+      "Show ${ n } administrator": [
+        "${ n } yöneticiyi görüntüle",
+        "${ n } yöneticiyi görüntüle"
+      ],
       "Show others when I'm busy": [
         "Meşgul olduğum zamanlar başkalarına görüntülensin"
       ],
@@ -10760,6 +10796,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Anahtarlar anahtar saydamlığı ile doğrulansın"
+      ],
+      "Video conferencing with Zoom": [
+        "Zoom ile görüntülü görüşme"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
@@ -11636,32 +11675,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Get started for ${ price }": [
-        "${ price } ile başlayın"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus } tutarından başlayan fiyatlarla"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -11689,6 +11702,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Get started for ${ price }": [
+        "${ price } ile başlayın"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus } tutarından başlayan fiyatlarla"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus tarifesine yükseltin"
       ]
     },
     "new_plans: feature": {
@@ -12370,20 +12409,6 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price } ile Mail Plus edinin"
-      ],
-      "Starting from ${ price }": [
-        "${ price } tutarından başlayan fiyatlarla"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -12402,6 +12427,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price } ile Mail Plus edinin"
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -12683,6 +12722,83 @@
       ],
       "Support for ${ n } custom email domains": [
         "${ n } özel e-posta etki alanı desteği"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } ve ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } ve ${ additionalApp } ürün güncellemeleri"
+      ],
+      "${ app } product updates": [
+        "${ app } ürün güncellemeleri"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business bülteni"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Önemli ${ BRAND_NAME } duyuruları"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } bülteni"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } teklifleri ve fırsatları"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } ürün duyuruları"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } kullanıcı anketi"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } karşılama e-postaları"
+      ],
+      "1 email per month": [
+        "Ayda 1 e-posta"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "Ayda 1 e-posta. Son gizlilik haberlerini alın ve ${ BRAND_NAME } evreninde neler olduğunu öğrenin."
+      ],
+      "1 email per quarter": [
+        "Üç ayda 1 e-posta"
+      ],
+      "1-2 emails per month": [
+        "Ayda 1-2 e-posta"
+      ],
+      "2-4 emails per year": [
+        "1 yılda 2-4 e-posta"
+      ],
+      "4-6 emails per year": [
+        "1 yılda 4-6 e-posta"
+      ],
+      "Application notifications": [
+        "Uygulama bildirimleri"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Önemli hesap bildirimleri yine de iletilir"
+      ],
+      "Daily email notifications": [
+        "Günlük e-posta bildirimleri"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Bu seçenek kapatıldığında, ${ BRAND_NAME } uygulamalarının bildirim alma yeteneğini kaldırır"
+      ],
+      "During your first month": [
+        "Ilk ayınız boyunca"
+      ],
+      "Email subscriptions": [
+        "E-posta abonelikleri"
+      ],
+      "In-app notifications": [
+        "Uygulama içi bildirimler"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "${ BRAND_NAME } hizmetlerini geliştirmek için anketlere katılın"
+      ],
+      "Product updates": [
+        "Ürün güncellemeleri"
       ]
     },
     "Notification": {
@@ -15406,6 +15522,14 @@
         "${ n } üye oturum açmak için yardımınızı istedi.",
         "${ n } üye oturum açmak için yardımınızı istedi."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesabı gözden geçirin:",
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları gözden geçirin:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıyı kuruluşunuzdan kaldırabilirsiniz.",
+        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıları kuruluşunuzdan kaldırabilirsiniz."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor.",
         "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
@@ -15460,6 +15584,14 @@
       ],
       "Current device": [
         "Bu aygıt"
+      ],
+      "Delete ${ n } inactive user?": [
+        "${ n } etkin olmayan kullanıcı silinsin mi?",
+        "${ n } etkin olmayan kullanıcı silinsin mi?"
+      ],
+      "Delete ${ n } user": [
+        "${ n } kullanıcıyı sil",
+        "${ n } kullanıcıyı sil"
       ],
       "Deny": [
         "İzin verme"
@@ -16926,10 +17058,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -17494,6 +17626,9 @@
       "No recovery method": [
         "Herhangi bir kurtarma yöntemi yok"
       ],
+      "Notifications": [
+        "Bildirimler"
+      ],
       "Open": [
         "Açık"
       ],
@@ -17878,6 +18013,9 @@
       ],
       "Version history": [
         "Sürüm geçmişi"
+      ],
+      "Video conferencing": [
+        "Görüntülü görüşme"
       ],
       "VPN apps": [
         "VPN uygulamaları"
@@ -18303,6 +18441,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Yönetici erişimi bekleniyor:** Bu kullanıcıya, hesabını herhangi bir yöneticinin yönetmesine izin vermesi için bir istek gönderdik."
+      ],
       "Administrator access enabled": [
         "Yönetici yetkisi verildi"
       ],
@@ -18327,6 +18468,12 @@
       "Cancel": [
         "İptal"
       ],
+      "Cancel request": [
+        "İsteği iptal et"
+      ],
+      "Cancel request to access user data?": [
+        "Kullanıcı verilerine erişme isteği iptal edilsin mi?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:",
         "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:"
@@ -18345,6 +18492,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Kimlik bilgilerinize erişiminizi kaybederseniz kuruluşunuzun yöneticileri parolanızı sıfırlayabilir ve hesabınıza yeniden erişmenizi sağlayabilir."
+      ],
+      "Keep request": [
+        "İsteği iptal etme"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kullanıcı onay verdiğinde kullanıcının hesabına yeniden erişebilecek ya da verilerini yönetebileceksiniz."
@@ -18375,6 +18525,9 @@
       ],
       "The user must have an address to request data access": [
         "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Bu işlem kullanıcı verilerine yönetici tarafından erişilmesi ya da kullanıcı parolasını sıfırlama isteğini iptal edecek"
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Bu işlem yöneticinin bu kullanıcının hesabını yönetme iznini kaldıracak."
@@ -18508,6 +18661,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Yöneticiler korunan kullanıcıların verilerine erişemez"
+      ],
+      "Inactive": [
+        "Etkin değil"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Davet gönderildi. Davet edilen üyenin yanıt vermesi bekleniyor"

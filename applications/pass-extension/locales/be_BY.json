@@ -164,6 +164,9 @@
       "Delete all": [
         "Выдаліць усе"
       ],
+      "Delete it, I will never need it": [
+        "Выдаліць яго. Ён мне больш непатрэбны"
+      ],
       "Delete password": [
         "Выдаліць пароль"
       ],
@@ -175,6 +178,9 @@
       ],
       "Deselect": [
         "Зняць выбар"
+      ],
+      "Disable alias": [
+        "Адключыць псеўданім"
       ],
       "Disable autosave on this website": [
         "Адключыць аўтазахаванне на гэтым сайце"
@@ -526,6 +532,12 @@
       ],
       "Try again": [
         "Паспрабуйце яшчэ раз"
+      ],
+      "Understood, I will never need it": [
+        "Я ўсведамляю гэта. Ён мне больш не спатрэбяцца",
+        "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца",
+        "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца",
+        "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца"
       ],
       "Unlock": [
         "Разблакіраваць"
@@ -1635,6 +1647,12 @@
       ],
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Увядзіце свой дадатковы пароль, каб пачаць выкарыстоўваць ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Звярніце ўвагу, што выдалены псеўданім нельга аднавіць. Магчыма, што вы захочаце адключыць яго замест таго, каб выдаляць незваротна?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Звярніце ўвагу, што выдалены псеўданім нельга аднавіць. Псеўданім ужо адключаны і ён не будзе перасылаць электронныя лісты ў вашу паштовую скрыню"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Палепшыце, каб мець ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
@@ -3034,6 +3052,12 @@
       "Pinned (${ items.length })": [
         "Замацавана (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Звярніце ўвагу, што псеўданім немагчыма аднавіць пасля яго выдалення.",
+        "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення.",
+        "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення.",
+        "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення."
+      ],
       "Reject device?": [
         "Адхіліць прыладу?"
       ],
@@ -3126,6 +3150,12 @@
       ],
       "Your welcome gift": [
         "Ваш прывітальны падарунак"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданім",
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы",
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў",
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў"
       ]
     },
     "Validation": {
@@ -3184,6 +3214,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Немагчыма адправіць запрашэнні на наступныя адрасы:"
+      ],
+      "Delete alias": [
+        "Выдаліць псеўданім"
       ],
       "Duplicate email addresses.": [
         "Дубліраваныя адрасы электроннай пошты."

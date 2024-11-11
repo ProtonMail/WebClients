@@ -172,6 +172,9 @@
       "Delete all": [
         "Slett alle"
       ],
+      "Delete it, I will never need it": [
+        "Slett det, jeg kommer aldri til å trenge det"
+      ],
       "Delete password": [
         "Slett passord"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Fjern markeringen"
+      ],
+      "Disable alias": [
+        "Deaktiver alias"
       ],
       "Disable instead": [
         "Deaktiver i stedet"
@@ -535,6 +541,10 @@
       ],
       "Try for free": [
         "Prøv gratis"
+      ],
+      "Understood, I will never need it": [
+        "Forstått, jeg kommer aldri til å trenge det",
+        "Forstått, jeg kommer aldri til å trenge dem"
       ],
       "Unlock": [
         "Lås opp"
@@ -1589,6 +1599,9 @@
       "None": [
         "Ingen"
       ],
+      "Not recommended": [
+        "Ikke anbefalt"
+      ],
       "Offline mode": [
         "Frakoblet modus"
       ],
@@ -1694,6 +1707,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "Vennligst skriv inn din nåværende PIN-kode for å fortsette."
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Kanskje du vil deaktivere aliaset i stedet?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Aliaset er allerede deaktivert og videresender ikke e-post til postboksen din"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
@@ -2019,6 +2038,9 @@
         "${ minutes } minutt",
         "${ minutes } minutter"
       ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } gjenkjenner nettstedene og appene du bruker, og fyller ut skjemaer automatisk med legitimasjonen din for deg i en hvilken som helst nettleser eller enhet. Du trenger ikke å kopiere og lime inn."
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versjon"
       ],
@@ -2113,6 +2135,9 @@
       "Auto-lock after": [
         "Autolås etter"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "I tillegg til å lagre påloggingene dine, beskytter ${ PASS_APP_NAME } identiteten din med en integrert e-postaliasfunksjon. Hver gang du registrerer deg for en ny nettkonto, kan ${ PASS_APP_NAME } automatisk opprette et alias for å holde din faktiske e-postadresse beskyttet. "
+      ],
       "Beta Access": [
         "Beta-tilgang"
       ],
@@ -2121,6 +2146,9 @@
       ],
       "Birthdate": [
         "Fødselsdato"
+      ],
+      "Browse faster, smarter": [
+        "Surf raskere, smartere"
       ],
       "Capital letters (A-Z)": [
         "Store bokstaver (A–Å)"
@@ -2136,6 +2164,9 @@
       ],
       "Cards": [
         "Kort"
+      ],
+      "Choose your preferred look and feel.": [
+        "Velg ditt foretrukne utseende og følelse."
       ],
       "City": [
         "Poststed"
@@ -2194,6 +2225,9 @@
       "Custom text field": [
         "Tilpasset tekstfelt"
       ],
+      "Dark Web Monitoring": [
+        "Overvåking av det mørke nettet"
+      ],
       "Date": [
         "Dato"
       ],
@@ -2211,6 +2245,9 @@
       ],
       "Download logs": [
         "Last ned logger"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Del sensitiv informasjon enkelt med hvem som helst, selv om de ikke bruker ${ PASS_APP_NAME }. Du kan dele ett passord, et notat eller et kredittkort, eller flere elementer i samme mappe."
       ],
       "Email": [
         "E-post"
@@ -2266,11 +2303,17 @@
       "Floor, apartment, building": [
         "Etasje, leilighet, bygning"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Av sikkerhetsgrunner låser ${ PASS_SHORT_APP_NAME } seg automatisk etter 10 minutter med inaktivitet."
+      ],
       "Forwards to": [
         "Videresendes til"
       ],
       "Free forever": [
         "Gratis for alltid"
+      ],
+      "Free password manager with identity protection": [
+        "Gratis passordbehandling med identitetsbeskyttelse"
       ],
       "Full Name": [
         "Fullt navn"
@@ -2287,6 +2330,9 @@
       "Generic CSV": [
         "Generisk CSV"
       ],
+      "Get the extension for your browser.": [
+        "Skaff utvidelsen for nettleseren din."
+      ],
       "Grant": [
         "Gi"
       ],
@@ -2295,6 +2341,12 @@
       ],
       "Hide password": [
         "Skjul passord"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliaser"
+      ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Hvordan låse opp ${ PASS_SHORT_APP_NAME }"
       ],
       "https://example.com": [
         "https://eksempel.com"
@@ -2331,6 +2383,12 @@
       ],
       "Instagram handle": [
         "Instagram-brukernavn"
+      ],
+      "Install and continue": [
+        "Installer og fortsett"
+      ],
+      "Integrated 2FA authenticator": [
+        "Integrert 2FA-autentisering"
       ],
       "Invitations": [
         "Invitasjoner"
@@ -2394,6 +2452,9 @@
       ],
       "Make all viewers": [
         "Gjør alle seere"
+      ],
+      "Make it your own.": [
+        "Gjør det til ditt eget."
       ],
       "max views reached": [
         "maks antall visninger nådd"
@@ -2461,6 +2522,9 @@
       "Passkey": [
         "Tilgangsnøkkel"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Tilgangsnøkler er et enkelt og sikkert alternativ til tradisjonelle passord som forhindrer angrep via nettfisking og gjør nettopplevelsen din jevnere.  ${ PASS_APP_NAME } støtter tilgangsnøkler på alle plattformer."
+      ],
       "Passphrase": [
         "Passfrase"
       ],
@@ -2481,6 +2545,9 @@
       ],
       "Personal website": [
         "Personlig nettside"
+      ],
+      "Personalize": [
+        "Personliggjør"
       ],
       "PGP-encrypted JSON (recommended)": [
         "PGP-kryptert JSON (anbefalt)"
@@ -2503,6 +2570,9 @@
       "Rate us": [
         "Vurder oss"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Motta umiddelbare varsler hvis din personlige informasjon lekkes i et tredjeparts datainnbrudd. Du kan overvåke flere e-postadresser eller ditt eget domenenavn."
+      ],
       "Recent": [
         "Nylig"
       ],
@@ -2520,6 +2590,15 @@
       ],
       "Reveal password": [
         "Avslør passord"
+      ],
+      "Secure password sharing": [
+        "Sikker passorddeling"
+      ],
+      "Securely log in with passkeys": [
+        "Logg på sikkert med tilgangsnøkler"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Lagre sikkert, dele og logg inn automatisk på kontoene dine med ${ PASS_APP_NAME }, ved hjelp av ende-til-ende-kryptering klarert av millioner"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Lagre sikkert, dele og logg inn automatisk på kontoene dine med ${ PASS_APP_NAME }, ved hjelp av ende-til-ende-kryptering klarert av millioner."
@@ -2539,6 +2618,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Velg hvelvet der SimpleLogin-aliaser skal importeres til"
       ],
+      "Select theme": [
+        "Velg tema"
+      ],
       "Select your password manager": [
         "Velg passordbehandleren din"
       ],
@@ -2556,6 +2638,9 @@
       ],
       "Show website favicons": [
         "Vis favorittikon for nettsteder"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Logg på raskere med ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Trygd"
@@ -2624,6 +2709,9 @@
       "Trash": [
         "Papirkurv"
       ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Tofaktorautentisering (2FA) er en av de beste måtene å beskytte kontoene dine på nettet. ${ PASS_APP_NAME } gjør 2FA enklere med en integrert autentisering som lagrer 2FA-kodene dine og automatisk viser og fyller dem ut."
+      ],
       "Type": [
         "Type"
       ],
@@ -2632,6 +2720,9 @@
       ],
       "Unlock with": [
         "Lås opp med"
+      ],
+      "Unlock with:": [
+        "Lås opp med:"
       ],
       "Unnamed Credit Card": [
         "Ikke navngitt kredittkort"
@@ -2698,6 +2789,12 @@
       ],
       "You are about to create": [
         "Du er i ferd med å opprette"
+      ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Du kan velge mellom PIN-kode, biometri eller kontopassordet ditt for å låse opp."
+      ],
+      "Your passwords. Everywhere.": [
+        "Dine passord. Overalt."
       ],
       "ZIP or Postal code": [
         "Postnummer"
@@ -3135,6 +3232,10 @@
       "Pinned (${ items.length })": [
         "Festet (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet.",
+        "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet."
+      ],
       "Recommended actions": [
         "Anbefalte tiltak"
       ],
@@ -3258,6 +3359,10 @@
       ],
       "Your welcome gift": [
         "Din velkomstgave"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Du er i ferd med å slette permanent ${ aliasCount } alias",
+        "Du er i ferd med å slette permanent ${ aliasCount } aliaser"
       ]
     },
     "Validation": {
@@ -3313,6 +3418,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Kunne ikke sende invitasjoner til følgende adresser:"
+      ],
+      "Delete alias": [
+        "Slett alias"
       ],
       "Duplicate email addresses.": [
         "Dupliserte e-postadresser."

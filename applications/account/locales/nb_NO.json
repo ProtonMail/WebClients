@@ -808,11 +808,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "Refresh the page": [
-        "Oppdater siden"
-      ],
       "refresh the page": [
         "oppdater siden"
+      ],
+      "Refresh the page": [
+        "Oppdater siden"
       ],
       "Reject": [
         "Avvis"
@@ -1032,6 +1032,9 @@
       ],
       "Show": [
         "Vis"
+      ],
+      "Show all": [
+        "Vis alle"
       ],
       "Show less": [
         "Vis mindre"
@@ -1602,14 +1605,6 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1631,6 +1626,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1726,6 +1729,9 @@
       "Integrated 2FA authenticator": [
         "Integrert 2FA-autentisering"
       ],
+      "One-time payment, lifetime deal": [
+        "Engangsbetaling, livstidsavtale"
+      ],
       "Online document editor": [
         "Dokumentredigering på nett"
       ],
@@ -1761,8 +1767,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Livsvarig tilbud for ${ PASS_SHORT_APP_NAME } Plus har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabatter er basert på standard månedspris."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Hvis du kjøper Pass Family eller Unlimited, blir abonnementet ditt fornyet automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Abonnementet ditt fornyes automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
@@ -1773,9 +1785,20 @@
         "Mest populær"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Begrenset lager!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Faktureres til ${ amount } én gang"
+      ],
       "for ${ durationDeal }": [
         "for ${ durationDeal }"
+      ],
+      "forever": [
+        "for alltid"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
@@ -6889,6 +6912,9 @@
         "(${ totalFoldersCount } etikett)",
         "Alle (${ totalFoldersCount } etiketter)"
       ],
+      "All inactive members deleted": [
+        "Alle inaktive medlemmer slettet"
+      ],
       "All keys successfully reactivated": [
         "Alle nøkler aktivert på nytt"
       ],
@@ -7220,11 +7246,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerte tjenere"
-      ],
       "Dedicated servers": [
         "Dedikerte tjenere"
+      ],
+      "dedicated servers": [
+        "dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -8153,6 +8179,9 @@
       "Plus or Visionary subscription required": [
         "Plus eller Visionary-abonnement kreves"
       ],
+      "Preference saved": [
+        "Preferanse lagret"
+      ],
       "Preview": [
         "Forhåndsvis"
       ],
@@ -8613,6 +8642,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette vil aktivere at PayPal skal brukes til å betale for ditt ${ BRAND_NAME }-abonnement. Vi vil omdirigere deg til PayPal i en ny nettleserfane. Hvis du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Dette vil permanent slette all data og alle e-postadresser tilknyttet disse brukerene."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Dette vil permanent slette all data og alle e-postadresser tilknyttet denne brukeren."
       ],
@@ -8832,11 +8864,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "username": [
-        "brukernavn"
-      ],
       "Username": [
         "Brukernavn"
+      ],
+      "username": [
+        "brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -10623,6 +10655,10 @@
       "Send in": [
         "Send på"
       ],
+      "Show ${ n } administrator": [
+        "Vis ${ n } administrator",
+        "Vis ${ n } administratorer"
+      ],
       "Show others when I'm busy": [
         "Vis andre når jeg er opptatt"
       ],
@@ -10763,6 +10799,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Verifiser nøkler med Key Transparency"
+      ],
+      "Video conferencing with Zoom": [
+        "Videokonferanser med Zoom"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -11642,32 +11681,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Starter fra ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11695,6 +11708,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12376,20 +12415,6 @@
         "Planen du har valgt: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Starter fra ${ price }"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -12408,6 +12433,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -12689,6 +12728,83 @@
       ],
       "Support for ${ n } custom email domains": [
         "Støtte for ${ n } egendefinerte e-postdomener"
+      ]
+    },
+    "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } og ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } og ${ additionalApp } produktoppdateringer"
+      ],
+      "${ app } product updates": [
+        "${ app } produktoppdateringer"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } nyhetsbrev for virksomheter"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } viktige kunngjøringer"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME } nyhetsbrev"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } tilbud og kampanjer"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } produktkunngjøringer"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME }-brukerundersøkelse"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } velkommen e-post"
+      ],
+      "1 email per month": [
+        "1 e-post per måned"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 e-post per måned. Få de siste personvernnyhetene og hva som skjer i ${ BRAND_NAME }-universet."
+      ],
+      "1 email per quarter": [
+        "1 e-post per kvartal"
+      ],
+      "1-2 emails per month": [
+        "1-2 e-poster per måned"
+      ],
+      "2-4 emails per year": [
+        "2-4 e-poster per år"
+      ],
+      "4-6 emails per year": [
+        "4-6 e-poster per år"
+      ],
+      "Application notifications": [
+        "Programvarsler"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Kritiske kontovarsler vil fortsatt bli levert"
+      ],
+      "Daily email notifications": [
+        "Daglige e-postvarslinger"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Deaktivering av dette vil fjerne muligheten til å motta varsler i ${ BRAND_NAME }-applikasjoner"
+      ],
+      "During your first month": [
+        "I løpet av første måneden"
+      ],
+      "Email subscriptions": [
+        "E-post-abonnementer"
+      ],
+      "In-app notifications": [
+        "Varslinger i appen"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Delta i undersøkelser for å forbedre ${ BRAND_NAME }-tjenester"
+      ],
+      "Product updates": [
+        "Produktoppdateringer"
       ]
     },
     "Notification": {
@@ -15433,6 +15549,14 @@
         "${ n } medlem ba om din hjelp til å logge på.",
         "${ n } medlemmer ba om din hjelp til å logge på."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } bruker har blitt med i organisasjonen via identitetsleverandøren din. Gjennomgå kontoen nå:",
+        "${ n } brukere har blitt med i organisasjonen via identitetsleverandøren din. Gjennomgå kontoene deres nå:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } bruker er inaktiv. Du kan trygt fjerne denne brukeren fra organisasjonen.",
+        "${ n } brukere er inaktiv. Du kan trygt fjerne dem fra organisasjonen."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } bruker ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen sin med enkel pålogging.",
         "${ n } brukere ber om din hjelp til å logge på ${ BRAND_NAME }-kontoen deres med enkel pålogging."
@@ -15487,6 +15611,14 @@
       ],
       "Current device": [
         "Gjeldende enhet"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Vil du slette ${ n } inaktiv bruker?",
+        "Vil du slette ${ n } inaktive brukere?"
+      ],
+      "Delete ${ n } user": [
+        "Slett ${ n } bruker",
+        "Slett ${ n } brukere"
       ],
       "Deny": [
         "Avslå"
@@ -16950,10 +17082,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -17518,6 +17650,9 @@
       "No recovery method": [
         "Ingen gjenopprettingsmetode"
       ],
+      "Notifications": [
+        "Varsler"
+      ],
       "Open": [
         "Åpen"
       ],
@@ -17902,6 +18037,9 @@
       ],
       "Version history": [
         "Versjonshistorikk"
+      ],
+      "Video conferencing": [
+        "Videokonferanse"
       ],
       "VPN apps": [
         "VPN-apper"
@@ -18327,6 +18465,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Venter på administratortilgang:** Vi sendte en forespørsel til denne brukeren om å la alle administratorer administrere kontoen deres."
+      ],
       "Administrator access enabled": [
         "Administratortilgang aktivert"
       ],
@@ -18351,6 +18492,12 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Cancel request": [
+        "Avbryt forespørsel"
+      ],
+      "Cancel request to access user data?": [
+        "Avbryte forespørsel om tilgang til brukerdata?"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Kunne ikke automatisk aktivere administratortilgang for ${ n } bruker, fordi krypteringsnøklene deres har blitt oppdatert i mellomtiden:",
         "Kunne ikke automatisk aktivere administratortilgang for ${ n } brukere, fordi krypteringsnøklene deres har blitt oppdatert i mellomtiden:"
@@ -18369,6 +18516,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Hvis du mister tilgangen til legitimasjonen din, kan organisasjonens administratorer tilbakestille passordet og gjenopprette tilgangen til kontoen din."
+      ],
+      "Keep request": [
+        "Behold forespørsel"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Når brukeren samtykker, vil du kunne hjelpe dem med å få kontotilgang eller administrere dataene deres."
@@ -18399,6 +18549,9 @@
       ],
       "The user must have an address to request data access": [
         "Brukeren må ha en adresse for å be om datatilgang"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Dette vil avbryte den ventende forespørselen om administratortilgang til brukerens data eller tilbakestilling av passord."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Dette vil tilbakekalle administratortillatelsen til å administrere denne brukerens konto."
@@ -18532,6 +18685,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administratorer har ikke tilgang til dataene til private brukere"
+      ],
+      "Inactive": [
+        "Inaktiv"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Invitasjon sendt, venter på svar fra det inviterte medlemmet"
