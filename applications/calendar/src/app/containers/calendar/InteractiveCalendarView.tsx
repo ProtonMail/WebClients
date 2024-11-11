@@ -44,7 +44,7 @@ import {
     getIsCalendarWritable,
     getIsOwnedCalendar,
 } from '@proton/shared/lib/calendar/calendar';
-import type { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
+import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import {
     DELETE_CONFIRMATION_TYPES,
     ICAL_ATTENDEE_STATUS,
@@ -1444,6 +1444,7 @@ const InteractiveCalendarView = ({
         const selfEmail = inviteActions.selfAddress?.Email;
         let oldPartstat: string | undefined;
         let successNotification: { success: string } | undefined;
+        let isSingleEdit = false;
 
         try {
             isSavingEvent.current = true;
@@ -1465,7 +1466,13 @@ const InteractiveCalendarView = ({
                 inviteActions,
                 isDuplicatingEvent,
                 api,
-                onSaveConfirmation: handleSaveConfirmation,
+                onSaveConfirmation: async (params) => {
+                    const result = await handleSaveConfirmation(params);
+                    if (result.type === RECURRING_TYPES.SINGLE) {
+                        isSingleEdit = true;
+                    }
+                    return result;
+                },
                 onEquivalentAttendees: handleEquivalentAttendees,
                 getEventDecrypted,
                 getCalendarBootstrap,
@@ -1482,7 +1489,11 @@ const InteractiveCalendarView = ({
 
             if (hasReduxStore) {
                 closeProcessingPortal(uniqueId);
-                dispatch(eventsActions.markEventAsSaving({ UID, isSaving: true }));
+                if (isSingleEdit) {
+                    dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: true }));
+                } else {
+                    dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: true }));
+                }
             }
 
             successNotification = texts;
@@ -1555,7 +1566,11 @@ const InteractiveCalendarView = ({
         } finally {
             isSavingEvent.current = false;
             if (hasReduxStore) {
-                dispatch(eventsActions.markEventAsSaving({ UID, isSaving: false }));
+                if (isSingleEdit) {
+                    dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: false }));
+                } else {
+                    dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: false }));
+                }
             }
         }
     };

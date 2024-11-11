@@ -1,7 +1,7 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 import cloneDeep from 'lodash/cloneDeep';
 
-import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES, TMP_UID } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES, TMP_UID, TMP_UNIQUE_ID } from '@proton/shared/lib/calendar/constants';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 
@@ -186,7 +186,19 @@ const slice = createSlice({
                 }
             });
         },
-        markEventAsSaving(state, action: PayloadAction<{ UID: string; isSaving: boolean }>) {
+        markEventAsSaving(state, action: PayloadAction<{ uniqueId: string; isSaving: boolean }>) {
+            // tmp event doesn't not exist in events, so we need to handle it separately
+            if (action.payload.uniqueId === TMP_UNIQUE_ID) {
+                state.isTmpEventSaving = action.payload.isSaving;
+                return;
+            }
+            state.events.forEach((event) => {
+                if (event.uniqueId === action.payload.uniqueId) {
+                    event.isSaving = action.payload.isSaving;
+                }
+            });
+        },
+        markEventsAsSaving(state, action: PayloadAction<{ UID: string; isSaving: boolean }>) {
             // tmp event doesn't not exist in events, so we need to handle it separately
             if (action.payload.UID === TMP_UID) {
                 state.isTmpEventSaving = action.payload.isSaving;
