@@ -45,8 +45,8 @@ export const sortWithTemporaryEvent = (
     }
 
     // When dragging an event, remove the original event
-    if (temporaryEvent.targetUniqueId) {
-        removeById(eventsCopy, temporaryEvent.targetUniqueId);
+    if (temporaryEvent.uniqueId) {
+        removeById(eventsCopy, temporaryEvent.uniqueId);
     }
 
     if (!temporaryEvent.isAllDay) {
