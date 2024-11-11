@@ -8,7 +8,7 @@ import { $formatTextAsSuggestion } from './formatTextAsSuggestion'
 import type { ProtonNode } from './ProtonNode'
 import { $isSuggestionNode } from './ProtonNode'
 import type { PropertyChangeSuggestionProperties } from './Types'
-import { assert } from './TestUtils'
+import { assertCondition } from './TestUtils'
 
 const onSuggestionCreation = jest.fn()
 const logger = {
@@ -78,9 +78,9 @@ describe('$formatTextAsSuggestion', () => {
 
       testEditorState('selection should be intact', () => {
         const selection = $getSelection()
-        assert($isRangeSelection(selection), 'Expected range selection')
+        assertCondition($isRangeSelection(selection), 'Expected range selection')
         const text = $getRoot().getFirstDescendant()
-        assert($isTextNode(text), 'Expected text node')
+        assertCondition($isTextNode(text), 'Expected text node')
         const anchor = selection.anchor
         const focus = selection.focus
         expect(anchor).toMatchObject({
@@ -149,12 +149,12 @@ describe('$formatTextAsSuggestion', () => {
 
       testEditorState('selection should be intact', () => {
         const selection = $getSelection()
-        assert($isRangeSelection(selection), 'Expected range selection')
+        assertCondition($isRangeSelection(selection), 'Expected range selection')
         const text = $getRoot()
           .getFirstChildOrThrow<ParagraphNode>()
           .getChildAtIndex<ProtonNode>(1)!
           .getFirstChildOrThrow<TextNode>()
-        assert($isTextNode(text), 'Expected text node')
+        assertCondition($isTextNode(text), 'Expected text node')
         const anchor = selection.anchor
         const focus = selection.focus
         expect(anchor).toMatchObject({
@@ -200,9 +200,9 @@ describe('$formatTextAsSuggestion', () => {
 
       testEditorState('selection should be intact', () => {
         const selection = $getSelection()
-        assert($isRangeSelection(selection), 'Expected range selection')
+        assertCondition($isRangeSelection(selection), 'Expected range selection')
         const text = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChildOrThrow<TextNode>()
-        assert($isTextNode(text), 'Expected text node')
+        assertCondition($isTextNode(text), 'Expected text node')
         const anchor = selection.anchor
         const focus = selection.focus
         expect(anchor).toMatchObject({
@@ -246,9 +246,9 @@ describe('$formatTextAsSuggestion', () => {
 
       testEditorState('selection should be intact', () => {
         const selection = $getSelection()
-        assert($isRangeSelection(selection), 'Expected range selection')
+        assertCondition($isRangeSelection(selection), 'Expected range selection')
         const text = $getRoot().getFirstChildOrThrow<ParagraphNode>().getFirstChildOrThrow<TextNode>()
-        assert($isTextNode(text), 'Expected text node')
+        assertCondition($isTextNode(text), 'Expected text node')
         const anchor = selection.anchor
         const focus = selection.focus
         expect(anchor).toMatchObject({
@@ -304,9 +304,9 @@ describe('$formatTextAsSuggestion', () => {
 
       testEditorState('selection should be intact', () => {
         const selection = $getSelection()
-        assert($isRangeSelection(selection), 'Expected range selection')
+        assertCondition($isRangeSelection(selection), 'Expected range selection')
         const text = $getRoot().getFirstDescendant()
-        assert($isTextNode(text), 'Expected text node')
+        assertCondition($isTextNode(text), 'Expected text node')
         const anchor = selection.anchor
         const focus = selection.focus
         expect(anchor).toMatchObject({
@@ -362,12 +362,12 @@ describe('$formatTextAsSuggestion', () => {
 
       testEditorState('selection should be intact', () => {
         const selection = $getSelection()
-        assert($isRangeSelection(selection), 'Expected range selection')
+        assertCondition($isRangeSelection(selection), 'Expected range selection')
         const text = $getRoot()
           .getFirstChildOrThrow<ParagraphNode>()
           .getChildAtIndex<ProtonNode>(1)!
           .getFirstChildOrThrow<TextNode>()
-        assert($isTextNode(text), 'Expected text node')
+        assertCondition($isTextNode(text), 'Expected text node')
         const anchor = selection.anchor
         const focus = selection.focus
         expect(anchor).toMatchObject({
@@ -442,7 +442,7 @@ describe('$formatTextAsSuggestion', () => {
 
       testEditorState('selection should be intact', () => {
         const selection = $getSelection()
-        assert($isRangeSelection(selection), 'Expected range selection')
+        assertCondition($isRangeSelection(selection), 'Expected range selection')
         const anchor = selection.anchor
         const anchorText = $getRoot()
           .getFirstChildOrThrow<ParagraphNode>()
@@ -523,7 +523,7 @@ describe('$formatTextAsSuggestion', () => {
 
       testEditorState('selection should be intact', () => {
         const selection = $getSelection()
-        assert($isRangeSelection(selection), 'Expected range selection')
+        assertCondition($isRangeSelection(selection), 'Expected range selection')
         const anchor = selection.anchor
         const anchorText = $getRoot()
           .getFirstChildOrThrow<ParagraphNode>()

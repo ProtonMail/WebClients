@@ -31,7 +31,7 @@ import { $createListItemNode, $createListNode, $isListNode } from '@lexical/list
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
 import type { Logger } from '@proton/utils/logs'
 import { $createHorizontalRuleNode, $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
-import { assert } from './TestUtils'
+import { assertCondition } from './TestUtils'
 import type { TableCellNode, TableRowNode } from '@lexical/table'
 import {
   $createTableCellNode,
@@ -1015,11 +1015,11 @@ describe('$handleBeforeInputEvent', () => {
         testEditorState('new suggestion should be inserted after existing', () => {
           const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
           const newSuggestion = paragraph.getChildAtIndex(1)
-          assert($isSuggestionNode(newSuggestion))
+          assertCondition($isSuggestionNode(newSuggestion))
           expect(newSuggestion.getSuggestionTypeOrThrow()).toBe('insert')
           expect(newSuggestion.getChildrenSize()).toBe(1)
           const text = newSuggestion.getFirstChildOrThrow()
-          assert($isTextNode(text))
+          assertCondition($isTextNode(text))
           expect(text.getTextContent()).toBe('foo')
         })
       })
@@ -1049,19 +1049,19 @@ describe('$handleBeforeInputEvent', () => {
 
         testEditorState('paragraph should have 1 child', () => {
           const paragraph = $getRoot().getFirstDescendant()!.getParentOrThrow<TableCellNode>().getChildAtIndex(1)
-          assert($isParagraphNode(paragraph))
+          assertCondition($isParagraphNode(paragraph))
           expect(paragraph.getChildrenSize()).toBe(1)
         })
 
         testEditorState('new suggestion should be inserted in paragraph', () => {
           const paragraph = $getRoot().getFirstDescendant()!.getParentOrThrow<TableCellNode>().getChildAtIndex(1)
-          assert($isParagraphNode(paragraph))
+          assertCondition($isParagraphNode(paragraph))
           const newSuggestion = paragraph.getFirstChild()
-          assert($isSuggestionNode(newSuggestion))
+          assertCondition($isSuggestionNode(newSuggestion))
           expect(newSuggestion.getSuggestionTypeOrThrow()).toBe('insert')
           expect(newSuggestion.getChildrenSize()).toBe(1)
           const text = newSuggestion.getFirstChildOrThrow()
-          assert($isTextNode(text))
+          assertCondition($isTextNode(text))
           expect(text.getTextContent()).toBe('foo')
         })
       })
@@ -1093,23 +1093,23 @@ describe('$handleBeforeInputEvent', () => {
 
         testEditorState('paragraph should be created after existing suggestion', () => {
           const existingSuggestion = $getRoot().getFirstDescendant()
-          assert(
+          assertCondition(
             $isSuggestionNode(existingSuggestion) && existingSuggestion.getSuggestionTypeOrThrow() === 'align-change',
           )
           const paragraph = existingSuggestion.getParentOrThrow<TableCellNode>().getChildAtIndex(1)
-          assert($isParagraphNode(paragraph))
+          assertCondition($isParagraphNode(paragraph))
           expect(paragraph.getChildrenSize()).toBe(1)
         })
 
         testEditorState('new suggestion should be inserted in paragraph', () => {
           const paragraph = $getRoot().getFirstDescendant()!.getParentOrThrow<TableCellNode>().getChildAtIndex(1)
-          assert($isParagraphNode(paragraph))
+          assertCondition($isParagraphNode(paragraph))
           const newSuggestion = paragraph.getFirstChild()
-          assert($isSuggestionNode(newSuggestion))
+          assertCondition($isSuggestionNode(newSuggestion))
           expect(newSuggestion.getSuggestionTypeOrThrow()).toBe('insert')
           expect(newSuggestion.getChildrenSize()).toBe(1)
           const text = newSuggestion.getFirstChildOrThrow()
-          assert($isTextNode(text))
+          assertCondition($isTextNode(text))
           expect(text.getTextContent()).toBe('foo')
         })
       })

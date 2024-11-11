@@ -1,4 +1,5 @@
 import { createHeadlessEditor } from '@lexical/headless'
+import type { TextNode } from 'lexical'
 import {
   $createParagraphNode,
   $createRangeSelection,
@@ -11,13 +12,14 @@ import type { Logger } from '@proton/utils/logs'
 import { AllNodes } from '../../AllNodes'
 import { $insertListAsSuggestion } from './insertListAsSuggestion'
 import type { ListItemNode, ListNode } from '@lexical/list'
-import { $createListItemNode, $createListNode, $isListNode } from '@lexical/list'
+import { $createListItemNode, $createListNode, $isListItemNode, $isListNode } from '@lexical/list'
 import type { ProtonNode } from './ProtonNode'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import type { CustomListNode } from '../CustomList/CustomListNode'
 import type { BlockTypeChangeSuggestionProperties } from './Types'
 import { $createCustomListNode } from '../CustomList/$createCustomListNode'
 import { $createHeadingNode } from '@lexical/rich-text'
+import { assertCondition } from './TestUtils'
 
 const onSuggestionCreation = jest.fn()
 const logger = {
@@ -437,6 +439,89 @@ describe('$insertListAsSuggestion', () => {
         expect(props.initialBlockType).toBe('number')
         expect(props.listInfo?.listStyleType).toBe('upper-alpha')
         expect(props.listInfo?.listMarker).toBe('bracket')
+      })
+    })
+
+    describe('List with existing suggestion', () => {
+      beforeEach(() => {
+        update(() => {
+          const list = $createCustomListNode('number', undefined, 'upper-alpha', 'bracket')
+          const listItem = $createListItemNode().append(
+            $createTextNode('Foo').toggleFormat('bold'),
+            $createTextNode('Bar'),
+          )
+          const listItem2 = $createListItemNode().append(
+            $createTextNode('Bar'),
+            $createTextNode('Foo').toggleFormat('bold'),
+          )
+          list.append(listItem, listItem2)
+          $getRoot().append(list)
+          const selection = $createRangeSelection()
+          selection.anchor.set(listItem.getFirstDescendant<TextNode>()!.__key, 0, 'text')
+          selection.focus.set(listItem2.getLastDescendant<TextNode>()!.__key, 3, 'text')
+          $setSelection(selection)
+          $insertListAsSuggestion(editor, 'bullet', onSuggestionCreation, logger)
+          $insertListAsSuggestion(editor, 'check', onSuggestionCreation, logger)
+        })
+      })
+
+      testEditorState('should have one list after changing both blocks', () => {
+        const root = $getRoot()
+        expect(root.getChildrenSize()).toBe(1)
+        const list = root.getChildAtIndex<ListNode>(0)!
+        expect($isListNode(list)).toBe(true)
+        expect(list.getListType()).toBe('check')
+        expect(list.getChildrenSize()).toBe(2)
+      })
+
+      testEditorState('both items should have only 1 list suggestion', () => {
+        const list = $getRoot().getChildAtIndex<ListNode>(0)!
+        for (const listItem of list.getChildren()) {
+          assertCondition($isListItemNode(listItem))
+          const suggestions = listItem
+            .getChildren()
+            .filter((n) => $isSuggestionNode(n) && n.getSuggestionTypeOrThrow() === 'block-type-change')
+          expect(suggestions.length).toBe(1)
+          const suggestion = suggestions[0]
+          assertCondition($isSuggestionNode(suggestion))
+          expect(suggestion.getSuggestionTypeOrThrow()).toBe('block-type-change')
+          const props = suggestion.getSuggestionChangedProperties<BlockTypeChangeSuggestionProperties>()
+          expect(props!.initialBlockType).toBe('number')
+          expect(props!.listInfo?.listStyleType).toBe('upper-alpha')
+          expect(props!.listInfo?.listMarker).toBe('bracket')
+        }
+      })
+
+      testEditorState('first item content should be correct', () => {
+        const listItem = $getRoot().getChildAtIndex<ListNode>(0)!.getChildAtIndex(0)
+        assertCondition($isListItemNode(listItem))
+        expect(listItem.getChildrenSize()).toBe(3)
+        const first = listItem.getFirstChild()
+        expect($isSuggestionNode(first)).toBe(true)
+        const second = listItem.getChildAtIndex(1)
+        assertCondition($isTextNode(second))
+        expect(second.getTextContent()).toBe('Foo')
+        expect(second.hasFormat('bold')).toBe(true)
+        const third = listItem.getChildAtIndex(2)
+        assertCondition($isTextNode(third))
+        expect(third.getTextContent()).toBe('Bar')
+        expect(third.hasFormat('bold')).toBe(false)
+      })
+
+      testEditorState('second item content should be correct', () => {
+        const listItem = $getRoot().getChildAtIndex<ListNode>(0)!.getChildAtIndex(1)
+        assertCondition($isListItemNode(listItem))
+        expect(listItem.getChildrenSize()).toBe(3)
+        const first = listItem.getFirstChild()
+        expect($isSuggestionNode(first)).toBe(true)
+        const second = listItem.getChildAtIndex(1)
+        assertCondition($isTextNode(second))
+        expect(second.getTextContent()).toBe('Bar')
+        expect(second.hasFormat('bold')).toBe(false)
+        const third = listItem.getChildAtIndex(2)
+        assertCondition($isTextNode(third))
+        expect(third.getTextContent()).toBe('Foo')
+        expect(third.hasFormat('bold')).toBe(true)
       })
     })
   })

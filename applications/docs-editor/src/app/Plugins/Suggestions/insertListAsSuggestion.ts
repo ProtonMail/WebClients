@@ -16,7 +16,8 @@ import type { CustomListMarker, CustomListStyleType } from '../CustomList/Custom
 import { $createCustomListNode } from '../CustomList/$createCustomListNode'
 import { $getListInfo } from '../CustomList/$getListInfo'
 import { $insertFirst } from '@lexical/utils'
-import { $createSuggestionNode } from './ProtonNode'
+import type { ProtonNode } from './ProtonNode'
+import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { GenerateUUID } from '@proton/docs-core'
 import { $getElementBlockType } from '../BlockTypePlugin'
 import { $isEmptyListItemExceptForSuggestions } from './Utils'
@@ -88,8 +89,11 @@ export function $insertListAsSuggestion(
   for (const node of nodes) {
     const isEmptyElementNode = $isElementNode(node) && node.isEmpty()
     const nodeHasBeenHandled = handled.has(node.getKey())
+    const isSuggestionNode = $isSuggestionNode(node)
 
-    if (isEmptyElementNode && !$isListItemNode(node) && !nodeHasBeenHandled) {
+    logger.info(`Node: ${node.__type} (${node.__key})`, { isEmptyElementNode, nodeHasBeenHandled, isSuggestionNode })
+
+    if (isEmptyElementNode && !$isListItemNode(node) && !nodeHasBeenHandled && !isSuggestionNode) {
       logger.info('Is empty element node that has not been handled')
       $changeBlockTypeToList(node, listType, suggestionID, logger, incrementSuggestionCounter, styleType, marker)
       continue
@@ -182,15 +186,21 @@ function $changeBlockTypeToList(
   newList.append(listItem)
   node.replace(newList)
 
-  $insertFirst(
-    listItem,
-    $createSuggestionNode(suggestionID, 'block-type-change', {
-      initialBlockType: blockType,
-      initialFormatType: formatType,
-      initialIndent: indent,
-    }),
-  )
-  onSuggestionCreation(suggestionID)
+  const existingSuggestion = node
+    .getChildren()
+    .find((n): n is ProtonNode => $isSuggestionNode(n) && n.getSuggestionTypeOrThrow() === 'block-type-change')
+
+  if (!existingSuggestion) {
+    $insertFirst(
+      listItem,
+      $createSuggestionNode(suggestionID, 'block-type-change', {
+        initialBlockType: blockType,
+        initialFormatType: formatType,
+        initialIndent: indent,
+      }),
+    )
+    onSuggestionCreation(suggestionID)
+  }
 
   listItem.setFormat(formatType)
   listItem.setIndent(indent)
@@ -220,18 +230,24 @@ function $replaceList(
 
     const formatType = child.getFormatType()
     const indent = child.getIndent()
-    $insertFirst(
-      child,
-      $createSuggestionNode(suggestionID, 'block-type-change', {
-        initialBlockType: listInfo.listType,
-        initialFormatType: formatType,
-        initialIndent: indent,
-        listInfo,
-      }),
-    )
 
-    logger.info('Inserted block-type-change suggestion to child')
-    onSuggestionCreation(suggestionID)
+    const existingSuggestion = child
+      .getChildren()
+      .find((n): n is ProtonNode => $isSuggestionNode(n) && n.getSuggestionTypeOrThrow() === 'block-type-change')
+
+    if (!existingSuggestion) {
+      $insertFirst(
+        child,
+        $createSuggestionNode(suggestionID, 'block-type-change', {
+          initialBlockType: listInfo.listType,
+          initialFormatType: formatType,
+          initialIndent: indent,
+          listInfo,
+        }),
+      )
+      logger.info('Inserted block-type-change suggestion to child')
+      onSuggestionCreation(suggestionID)
+    }
   }
 
   list.append(...children)
