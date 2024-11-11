@@ -53,7 +53,7 @@ export const BlackFriday2024Offer: FC<BaseSpotlightMessage> = ({ onClose = noop 
         switch (offer) {
             case PassFeature.PassBlackFriday2024Family: {
                 const relativePrice = (
-                    <span className="text-nowrap">
+                    <span className="text-nowrap" key="family-price">
                         {getSimplePriceString(currency, PASS_FAMILY_BF_2024_MONTHLY_PRICE)}
                     </span>
                 );
@@ -72,7 +72,7 @@ export const BlackFriday2024Offer: FC<BaseSpotlightMessage> = ({ onClose = noop 
 
             case PassFeature.PassBlackFriday2024Lifetime: {
                 const relativePrice = (
-                    <span className="text-nowrap">
+                    <span className="text-nowrap" key="lifetime-price">
                         {getSimplePriceString(currency, PASS_LIFETIME_BF_2024_YEARLY_PRICE)}
                     </span>
                 );
