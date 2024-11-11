@@ -164,6 +164,9 @@
       "Delete all": [
         "Eliminar todo"
       ],
+      "Delete it, I will never need it": [
+        "Eliminarlo, nunca lo necesitaré"
+      ],
       "Delete password": [
         "Eliminar contraseña"
       ],
@@ -527,6 +530,10 @@
       ],
       "Try again": [
         "Volver a intentar"
+      ],
+      "Understood, I will never need it": [
+        "Entendido, nunca lo necesitaré",
+        "Entendido, nunca los necesitaré"
       ],
       "Unlock": [
         "Desbloquear"
@@ -2979,6 +2986,10 @@
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Una vez eliminado, el alias no se puede recuperar.",
+        "Una vez eliminados, los alias no se pueden recuperar."
+      ],
       "Reject device?": [
         "¿Rechazar el dispositivo?"
       ],
@@ -3071,6 +3082,10 @@
       ],
       "Your welcome gift": [
         "Su regalo de bienvenida"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
+        "Está a punto de eliminar definitivamente ${ aliasCount } alias."
       ]
     },
     "Validation": {
