@@ -4,16 +4,11 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useOAuthToken } from '@proton/activation';
-import { createToken } from '@proton/activation/src/api';
-import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import type { OAuthProps } from '@proton/activation/src/interface';
-import { EASY_SWITCH_SOURCES, ImportType, OAUTH_PROVIDER } from '@proton/activation/src/interface';
-import { oauthTokenActions } from '@proton/activation/src/logic/oauthToken';
+import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button, CircleLoader } from '@proton/atoms';
 import { Icon, IconRow, ZoomUpsellModal, useApi, useModalStateObject } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { IcVideoCamera } from '@proton/icons';
-import { useDispatch } from '@proton/redux-shared-store';
 import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { EventModel, VideoConferenceMeetingCreation } from '@proton/shared/lib/interfaces/calendar';
@@ -23,6 +18,7 @@ import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingW
 import type { ZoomAccessLevel } from '../videoConferencing/constants';
 import { VIDEO_CONF_API_ERROR_CODES, VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
 import { VideoConferenceZoomIntegration, useVideoConfTelemetry } from '../videoConferencing/useVideoConfTelemetry';
+import { useZoomOAuth } from './useZoomOAuth';
 
 type ZoomIntegrationState =
     | 'loadingConfig'
@@ -54,7 +50,6 @@ interface Props {
 
 export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
     const [user] = useUser();
-    const dispatch = useDispatch();
 
     const [oAuthToken, oauthTokenLoading] = useOAuthToken();
     const isUserConnectedToZoom = oAuthToken?.some(({ Provider }) => Provider === OAUTH_PROVIDER.ZOOM);
@@ -65,9 +60,8 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
 
     const api = useApi();
     const [, withLoading] = useLoading();
-    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
-        errorMessage: c('Error').t`Failed to load oauth modal.`,
-    });
+
+    const { loadingConfig, triggerZoomOAuth } = useZoomOAuth();
 
     const zoomUpsellModal = useModalStateObject();
 
@@ -89,22 +83,6 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
             setProcessState('meeting-present');
         }
     }, [processState]);
-
-    const handleOAuthConnection = async (oAuthProps: OAuthProps) => {
-        const { Code, Provider, RedirectUri } = oAuthProps;
-
-        const tokens = await api(
-            createToken({
-                Provider,
-                Code,
-                RedirectUri,
-                Source: EASY_SWITCH_SOURCES.CALENDAR_WEB_CREATE_EVENT,
-                Products: [ImportType.CALENDAR],
-            })
-        );
-
-        dispatch(oauthTokenActions.updateTokens(tokens.Tokens));
-    };
 
     if (accessLevel === 'limited-access' && processState !== 'meeting-present') {
         // Paid MAIL users with setting disabled will have limited access only if meeting present
@@ -138,15 +116,7 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
             );
 
             if (code === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
-                triggerOAuthPopup({
-                    provider: OAUTH_PROVIDER.ZOOM,
-                    scope: '',
-                    callback: async (oauthProps) => {
-                        await handleOAuthConnection(oauthProps);
-                        await createVideoConferenceMeeting();
-                    },
-                });
-
+                void triggerZoomOAuth(() => createVideoConferenceMeeting());
                 return;
             }
 
@@ -166,14 +136,7 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
 
         if (processState === 'disconnected') {
             sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.oauth_modal_displayed);
-            triggerOAuthPopup({
-                provider: OAUTH_PROVIDER.ZOOM,
-                scope: '',
-                callback: async (oauthProps) => {
-                    await handleOAuthConnection(oauthProps);
-                    await createVideoConferenceMeeting();
-                },
-            });
+            void triggerZoomOAuth(() => createVideoConferenceMeeting());
         } else if (model.conferenceUrl && model.isConferenceTmpDeleted) {
             setModel({
                 ...model,
