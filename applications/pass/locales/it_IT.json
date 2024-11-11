@@ -172,6 +172,9 @@
       "Delete all": [
         "Elimina tutto"
       ],
+      "Delete it, I will never need it": [
+        "Cancellalo, non ne avrò mai bisogno"
+      ],
       "Delete password": [
         "Cancella la password"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Deseleziona"
+      ],
+      "Disable alias": [
+        "Disabilita l'alias"
       ],
       "Disable instead": [
         "Disabilita invece"
@@ -523,6 +529,10 @@
       ],
       "Try for free": [
         "Prova gratis"
+      ],
+      "Understood, I will never need it": [
+        "Capito, non ne avrò mai bisogno",
+        "Capito, non ne avrò mai bisogno"
       ],
       "Unlock": [
         "Sblocca"
@@ -1625,6 +1635,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "Inserisci il tuo PIN attuale per continuare"
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato. Magari preferisci disabilitare l'alias?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato. L'alias è già disabilitato e non inoltrerà le email alla tua casella di posta"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Effettua l'upgrade per avere l'accesso anticipato all'app web di ${ PASS_APP_NAME }"
@@ -3049,6 +3065,10 @@
       "Pinned (${ items.length })": [
         "Fissati (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato.",
+        "Tieni presente che una volta eliminati, gli alias non potranno essere ripristinati."
+      ],
       "Recommended actions": [
         "Azioni consigliate"
       ],
@@ -3172,6 +3192,10 @@
       ],
       "Your welcome gift": [
         "Il tuo regalo di benvenuto"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "Stai per eliminare definitivamente ${ aliasCount } alias",
+        "Stai per eliminare definitivamente ${ aliasCount } alias"
       ]
     },
     "Validation": {
@@ -3227,6 +3251,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Impossibile spedire gli inviti ai seguenti indirizzi:"
+      ],
+      "Delete alias": [
+        "Elimina alias"
       ],
       "Duplicate email addresses.": [
         "Indirizzi email duplicati."

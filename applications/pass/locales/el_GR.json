@@ -172,6 +172,9 @@
       "Delete all": [
         "Διαγραφή όλων"
       ],
+      "Delete it, I will never need it": [
+        "Διαγράψτε το, δε θα το χρειαστώ ποτέ"
+      ],
       "Delete password": [
         "Διαγραφή κωδικού"
       ],
@@ -183,6 +186,9 @@
       ],
       "Deselect": [
         "Αποεπιλογή"
+      ],
+      "Disable alias": [
+        "Απενεργοποίηση ψευδωνύμου"
       ],
       "Disable instead": [
         "Απενεργοποιήστε αντ 'αυτού"
@@ -523,6 +529,10 @@
       ],
       "Try for free": [
         "Δοκιμάστε δωρεάν"
+      ],
+      "Understood, I will never need it": [
+        "Κατανοητό, δε θα το χρειαστώ ποτέ",
+        "Κατανοητό, δεν θα τα χρειαστώ ποτέ"
       ],
       "Unlock": [
         "Ξεκλείδωμα"
@@ -1625,6 +1635,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "Παρακαλούμε εισάγετε τον τρέχον κωδικό PIN σας για να συνεχίσετε"
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Ίσως θέλετε να απενεργοποιήσετε το ψευδώνυμο;"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Το ψευδώνυμο είναι ήδη απενεργοποιημένο και δεν προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στο γραμματοκιβώτιό σας"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Αναβαθμίστε για να έχετε πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
@@ -3224,6 +3240,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Δεν ήταν δυνατή η αποστολή προσκλήσεων στις ακόλουθες διευθύνσεις:"
+      ],
+      "Delete alias": [
+        "Διαγραφή ψευδώνυμου"
       ],
       "Duplicate email addresses.": [
         "Διπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
