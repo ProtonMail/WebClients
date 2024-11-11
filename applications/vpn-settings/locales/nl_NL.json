@@ -595,6 +595,9 @@
       "Show": [
         "Tonen"
       ],
+      "Show all": [
+        "Alles weergeven"
+      ],
       "Show preview": [
         "Voorbeeld tonen"
       ],
@@ -1025,6 +1028,9 @@
       "Integrated 2FA authenticator": [
         "Geïntegreerde 2FA-authenticator"
       ],
+      "One-time payment, lifetime deal": [
+        "Eenmalige betaling, levenslange deal"
+      ],
       "Online document editor": [
         "Online documenteditor"
       ],
@@ -1072,9 +1078,17 @@
         "Populairste keuze"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Beperkte voorraad!"
+      ]
+    },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "voor ${ durationDeal }"
+      ],
+      "forever": [
+        "voor altijd"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
@@ -4445,6 +4459,9 @@
       "Plus or Visionary subscription required": [
         "Plus- of Visionary-abonnement vereist"
       ],
+      "Preference saved": [
+        "Voorkeur opgeslagen"
+      ],
       "Preview": [
         "Voorbeeld"
       ],
@@ -5709,6 +5726,10 @@
       ],
       "Security code (${ codeName })": [
         "Beveiligingscode (${ codeName })"
+      ],
+      "Show ${ n } administrator": [
+        "Toon ${ n } beheerder",
+        "Toon ${ n } beheerders"
       ],
       "Single sign-on entity ID": [
         "Single sign-on entiteit-ID"
@@ -7111,6 +7132,26 @@
       ],
       "Support for ${ n } custom email domains": [
         "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
+      ]
+    },
+    "news": {
+      "1 email per month": [
+        "1 e-mail per maand"
+      ],
+      "1 email per quarter": [
+        "1 e-mail per kwartaal"
+      ],
+      "1-2 emails per month": [
+        "1-2 e-mails per maand"
+      ],
+      "2-4 emails per year": [
+        "2-4 e-mails per jaar"
+      ],
+      "4-6 emails per year": [
+        "4-6 e-mails per jaar"
+      ],
+      "Daily email notifications": [
+        "Dagelijkse e-mailmeldingen"
       ]
     },
     "Notification": {
@@ -8695,6 +8736,14 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Neem contact op met de beheerder als het probleem aanhoudt."
+      ],
+      "Delete ${ n } inactive user?": [
+        "Verwijder ${ n } inactieve gebruiker?",
+        "Verwijder ${ n } inactieve gebruikers?"
+      ],
+      "Delete ${ n } user": [
+        "Verwijder ${ n } gebruiker",
+        "Verwijder ${ n } gebruikers"
       ],
       "Deny": [
         "Weigeren"
@@ -10696,6 +10745,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administrators hebben geen toegang tot de gegevens van privégebruikers"
+      ],
+      "Inactive": [
+        "Inactief"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Uitnodiging verzonden, wachtend op antwoord van het uitgenodigde lid"

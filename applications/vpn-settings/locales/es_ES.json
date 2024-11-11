@@ -1028,6 +1028,9 @@
       "Integrated 2FA authenticator": [
         "Autenticador 2FA integrado"
       ],
+      "One-time payment, lifetime deal": [
+        "Un solo pago, contrato de por vida"
+      ],
       "Online document editor": [
         "Editor de documentos online"
       ],
@@ -1063,8 +1066,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus lifetime no tiene precio de renovación, es un pago único por el acceso de por vida a Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Los descuentos se basan en la cuota estándar mensual."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Si adquieres el Pase familiar o Ilimitado, tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final de tu ciclo de facturación."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
@@ -1075,9 +1084,20 @@
         "Más popular"
       ]
     },
+    "BF2024: info": {
+      "Limited stock!": [
+        "¡Stock limitado!"
+      ]
+    },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Un solo pago de ${ amount }"
+      ],
       "for ${ durationDeal }": [
         "por ${ durationDeal }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -1290,6 +1310,9 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mes",
@@ -3211,7 +3234,7 @@
         "Verifica tu identidad con una llave física de seguridad U2F o FIDO2."
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Has alcanzado el número máximo de ${ maxSecurityKeyLength } clave de seguridad.",
+        "Has alcanzado el máximo ${ maxSecurityKeyLength } de tu llave de seguridad.",
         "Has alcanzado el número máximo de ${ maxSecurityKeyLength } claves de seguridad."
       ],
       "Your two-factor authentication key is ready to use.": [
@@ -3677,6 +3700,9 @@
       "Affected user is on row": [
         "El usuario afectado está en la fila.",
         "Los usuarios afectados están en las filas."
+      ],
+      "All inactive members deleted": [
+        "Todos los miembros inactivos han sido eliminados"
       ],
       "All members have been added.": [
         "Se han agregado todos los miembros."
@@ -4447,6 +4473,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Se requiere una suscripción Plus o Visionary"
+      ],
+      "Preference saved": [
+        "Se ha guardado la preferencia."
       ],
       "Preview": [
         "Vista previa"
@@ -5276,6 +5305,9 @@
       "Other": [
         "Otro"
       ],
+      "Product": [
+        "Producto"
+      ],
       "Refund": [
         "Reembolso"
       ],
@@ -5716,6 +5748,10 @@
       "Security code (${ codeName })": [
         "Código de seguridad (${ codeName })"
       ],
+      "Show ${ n } administrator": [
+        "Mostrar ${ n } administrador",
+        "Mostrar ${ n } administradores"
+      ],
       "Single sign-on entity ID": [
         "ID de entidad de inicio de sesión único"
       ],
@@ -5763,6 +5799,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Video conferencing with Zoom": [
+        "Conferencia de vídeo con Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos que te vayas. Explica por qué te vas para ayudarnos a mejorar."
@@ -6316,6 +6355,9 @@
       ],
       "Administration Panel": [
         "Panel de administración"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcionalidades avanzadas de alias (potenciado por SimpleLogin)"
       ],
       "Advanced network security": [
         "Seguridad de red avanzada"
@@ -7120,8 +7162,29 @@
       ]
     },
     "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Actualizaciones de producto para ${ app } y ${ additionalApp }"
+      ],
+      "${ app } product updates": [
+        "Actualizaciones de producto para ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Boletín de Business de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Avisos importantes de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Boletín de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Ofertas y promociones de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Anuncios de productos de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Encuesta a los usuarios de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
         "Correos electrónicos de bienvenida de ${ BRAND_NAME }"
@@ -7144,8 +7207,17 @@
       "4-6 emails per year": [
         "4 a 6 correos al año"
       ],
+      "Application notifications": [
+        "Notificaciones de aplicaciones"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Las notificaciones críticas de la cuenta seguirán llegando"
+      ],
       "Daily email notifications": [
         "Notificaciones diarias por correo electrónico"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Deshabilitar esto eliminará la habilidad de recibir notificaciones en las aplicaciones de ${ BRAND_NAME }"
       ],
       "During your first month": [
         "Durante el primer mes"
@@ -7153,8 +7225,14 @@
       "Email subscriptions": [
         "Suscripciones de correo"
       ],
+      "In-app notifications": [
+        "Notificaciones dentro de la aplicación"
+      ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Participa en las encuestas para mejorar los servicios de ${ BRAND_NAME }"
+      ],
+      "Product updates": [
+        "Actualizaciones de productos"
       ]
     },
     "Notification": {
@@ -8694,6 +8772,14 @@
         "el miembro de ${ n } solicitó tu ayuda para iniciar sesión.",
         "los miembros de ${ n } solicitaron tu ayuda para iniciar sesión."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } usuario se ha unido a tu organización a través de tu Proveedor de Identidad. Revisa la cuenta ahora:",
+        "${ n } usuarios se han unido a tu organización a través de tu Proveedor de Identidad. Revisa las cuentas ahora:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } usuario está inactivo. Puedes eliminarlo de forma segura de tu organización.",
+        "${ n } usuarios están inactivos. Puedes eliminarlos de forma segura de tu organización."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } está solicitando tu ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único.",
         "${ n } están solicitando tu ayuda para iniciar la sesión en su cuenta de ${ BRAND_NAME } con inicio de sesión único."
@@ -8742,6 +8828,14 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Contacta con tu administrador si el problema persiste."
+      ],
+      "Delete ${ n } inactive user?": [
+        "¿Eliminar ${ n } usuario inactivo?",
+        "¿Eliminar ${ n } usuarios inactivos?"
+      ],
+      "Delete ${ n } user": [
+        "Eliminar ${ n } usuario",
+        "Eliminar ${ n } usuarios"
       ],
       "Deny": [
         "Denegar"
@@ -10418,6 +10512,9 @@
       "Verifying your payment...": [
         "Verificando tu pago..."
       ],
+      "Video conferencing": [
+        "Videoconferencia"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviaremos un correo a su dirección nueva con instrucciones para finalizar el cambio."
       ],
@@ -10606,6 +10703,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**Acceso de administrador pendiente:** Hemos enviado una petición a este usuario para que cualquier administrador gestione su cuenta."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
       ],
@@ -10617,6 +10717,9 @@
       ],
       "Cancel request": [
         "Cancelar la solicitud"
+      ],
+      "Cancel request to access user data?": [
+        "¿Cancelar la solicitud de acceso a los datos del usuario?"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "No se ha podido activar automáticamente el acceso de administrador para ${ n } usuario porque sus claves de cifrado han sido actualizadas mientras tanto.",
