@@ -142,16 +142,9 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
     } catch {
         isWeak = true;
     }
-    let compatibilityError: Error;
-    try {
-        checkKeyCompatibility(publicKey);
-    } catch (err: any) {
-        compatibilityError = err;
-    }
     return {
         _idx: keyStoreID,
         _keyContentHash: [keyContentHash, keyContentHashNoCerts],
-        _getCompatibilityError: () => compatibilityError,
         isPrivate: () => false,
         getVersion: () => version,
         getFingerprint: () => fingerprint,
@@ -252,6 +245,8 @@ type SerialisedOutputTypeFromFormat<F extends SerialisedOutputFormat> = F extend
       : never;
 
 class KeyManagementApi {
+    static test = 1;
+
     protected keyStore = new KeyStore();
 
     /**
