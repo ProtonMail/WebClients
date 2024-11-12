@@ -554,6 +554,9 @@
       "Remove this participant": [
         "Borrar a este participante"
       ],
+      "Remove zoom meeting": [
+        "Quitar la reunión de Zoom"
+      ],
       "Report a problem": [
         "Notificar un problema"
       ],
@@ -1047,7 +1050,7 @@
         "Autenticador 2FA integrado"
       ],
       "One-time payment, lifetime deal": [
-        "Un solo pago, contrato de por vida"
+        "Un solo pago y una oferta de por vida"
       ],
       "Online document editor": [
         "Editor de documentos online"
@@ -1085,13 +1088,13 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus lifetime no tiene precio de renovación, es un pago único por el acceso de por vida a Pass Plus."
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Los descuentos se basan en la cuota estándar mensual."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si adquieres el Pase familiar o Ilimitado, tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final de tu ciclo de facturación."
+        "Si compras Pass Family o Unlimited, tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
@@ -4394,6 +4397,9 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -6563,6 +6569,9 @@
         "Historial de ${ options } día de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
       ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de por vida de ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email"
@@ -7368,6 +7377,12 @@
       "Link copied to clipboard": [
         "Se ha copiado el enlace al portapapeles."
       ],
+      "Meeting host copied to clipboard": [
+        "Se ha copiado el organizador de la reunión al portapapeles."
+      ],
+      "Meeting ID copied to clipboard": [
+        "Se ha copiado el ID de la reunión al portapapeles."
+      ],
       "Passcode copied to clipboard": [
         "Se ha copiado el código de acceso al portapapeles."
       ]
@@ -7682,6 +7697,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel de administración para gestionar usuarios y suscripciones"
+      ],
+      "Team policies": [
+        "Políticas de equipo"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8602,6 +8620,9 @@
       "Now you can see when participants are free to attend your meeting.": [
         "Ahora puedes ver cuando los participantes están disponibles para atender tu reunión."
       ],
+      "Video conferencing is here!": [
+        "¡La videoconferencia ya está aquí!"
+      ],
       "You can now collapse the navigation bar.": [
         "Ahora puedes contraer la barra de navegación."
       ]
@@ -8796,6 +8817,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Pasarás a un plan inferior al finalizar el ciclo de facturación."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de por vida"
       ]
     },
     "Subscription price": {
