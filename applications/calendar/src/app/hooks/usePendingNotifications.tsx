@@ -61,19 +61,18 @@ const usePendingNotifications = () => {
 
             // Count the events for each UID that are in the specified key state (saving or deleting).
             events.forEach(({ data, isSaving, isDeleting }) => {
-                const UID = (data?.eventData as CalendarEvent)?.UID;
+                const { UID, RRule } = (data?.eventData as CalendarEvent) || {};
 
                 if (!UID) {
                     return; // Skip if UID is missing or invalid
                 }
 
-                const shouldIncrement = (key === 'isSaving' && isSaving) || (key === 'isDeleting' && isDeleting);
+                const isProcessing = (key === 'isSaving' && isSaving) || (key === 'isDeleting' && isDeleting);
 
-                if (shouldIncrement) {
-                    // Increment count for events with matching UID
-                    map.set(UID, (map.get(UID) || 0) + 1);
+                if (isProcessing) {
+                    const isRecurring = !!RRule;
+                    map.set(UID, isRecurring ? 2 : 1); // Use plural form for recurring events (not for single event)
                 } else if (!map.has(UID)) {
-                    // Set default count to 0 to remove the notification if it exists
                     map.set(UID, 0);
                 }
             });
