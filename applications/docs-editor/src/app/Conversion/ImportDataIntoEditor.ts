@@ -3,7 +3,7 @@ import { $generateNodesFromDOM } from '@lexical/html'
 import type { LexicalNode } from 'lexical'
 import { $createParagraphNode, $getRoot, $insertNodes } from 'lexical'
 import { $importNodesFromDocx } from './Docx/DocxToLexical/ImportNodesFromDocx'
-import { $convertFromMarkdownString } from '../Utils/MarkdownImport'
+import { $convertFromMarkdownString } from '@lexical/markdown'
 import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
 import type { ConvertibleDataType } from '@proton/docs-shared'
 import { TranslatedResult } from '@proton/docs-shared'
@@ -115,7 +115,7 @@ export async function $importDataIntoEditor(
     try {
       editor.update(
         () => {
-          $convertFromMarkdownString(otherFormatString, MarkdownTransformers, undefined, false)
+          $convertFromMarkdownString(otherFormatString, MarkdownTransformers, undefined, true)
         },
         {
           discrete: true,
