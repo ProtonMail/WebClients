@@ -85,7 +85,7 @@ export const BlackFriday2024Offer: FC<BaseSpotlightMessage> = ({ onClose = noop 
 
                 return {
                     title: c('bf2024: Title')
-                        .jt`Pay once and get ${lifetimeAccessJSX} to Pass Plus. Only ${relativePrice}.`,
+                        .jt`Pay once and get ${lifetimeAccessJSX} to Pass Plus and SimpleLogin. Only ${relativePrice}.`,
                     subtitle: c('bf2024: Info').t`Limited-stock available!`,
                 };
             }
