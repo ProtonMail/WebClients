@@ -23,7 +23,7 @@ const CollapsibleSidebarSpotlight = ({ children, app, isAskUpdateTimezoneModalOp
     const anchorRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
     const { viewportWidth } = useActiveBreakpoint();
-    const [{ isDone }] = useWelcomeFlags();
+    const { welcomeFlags: { isDone } } = useWelcomeFlags();
     const userAccountHasMoreThanTwoDays = new Date() > addDays(fromUnixTime(user.CreateTime), 2);
     const feature =
         app === APPS.PROTONCALENDAR
