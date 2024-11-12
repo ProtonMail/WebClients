@@ -1554,6 +1554,7 @@ const InteractiveCalendarView = ({
                 changeDate(newStartDate, hasChanged);
             }
 
+            removeTemporaryEvent(uniqueId);
             handleCreateNotification(successNotification);
         } catch (e: any) {
             if (e instanceof EscapeTryBlockError) {
@@ -1564,6 +1565,7 @@ const InteractiveCalendarView = ({
                 }
                 // else we ignore the error as its only purpose is to escape the try block
             } else {
+                removeTemporaryEvent(uniqueId);
                 // Reset partstat if error detected
                 if (hasReduxStore && isChangePartstat && selfEmail && oldPartstat) {
                     dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: oldPartstat }));
@@ -1572,7 +1574,6 @@ const InteractiveCalendarView = ({
             }
         } finally {
             isSavingEvent.current = false;
-            removeTemporaryEvent(uniqueId);
 
             if (hasReduxStore) {
                 if (isSingleEdit) {
