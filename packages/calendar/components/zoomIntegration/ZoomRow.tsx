@@ -77,7 +77,10 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
         } else if (model.conferenceUrl && !model.isConferenceTmpDeleted) {
             setProcessState('meeting-present');
         } else {
-            setProcessState(isUserConnectedToZoom ? 'connected' : 'disconnected');
+            // We don't want to change the state while something is loading
+            if (processState !== 'loading') {
+                setProcessState(isUserConnectedToZoom ? 'connected' : 'disconnected');
+            }
         }
     }, [loadingConfig, oauthTokenLoading]);
 
@@ -135,12 +138,13 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
             );
 
             if (code === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
-                setProcessState('disconnected');
-
                 triggerOAuthPopup({
                     provider: OAUTH_PROVIDER.ZOOM,
                     scope: '',
-                    callback: handleOAuthConnection,
+                    callback: async (oauthProps) => {
+                        await handleOAuthConnection(oauthProps);
+                        await createVideoConferenceMeeting();
+                    },
                 });
 
                 return;
