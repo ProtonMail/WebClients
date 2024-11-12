@@ -1,4 +1,4 @@
-import { type FC, useEffect } from 'react';
+import { type FC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -18,9 +18,10 @@ import type { AliasContactGetResponse, AliasCreateContactValues, UniqueItem } fr
 
 const FORM_ID = 'create-contact-form';
 
-type Props = ModalStateProps & UniqueItem & { onContactCreated: (contact: AliasContactGetResponse) => void };
+type Props = Pick<ModalStateProps, 'onClose'> &
+    UniqueItem & { onContactCreated: (contact: AliasContactGetResponse) => void };
 
-export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, open, onClose, onContactCreated }) => {
+export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, onClose, onContactCreated }) => {
     const { loading, dispatch } = useRequest(aliasCreateContact, {
         onSuccess: ({ data }) => {
             onContactCreated(data);
@@ -36,12 +37,8 @@ export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, open, onClose
         onSubmit: ({ email }) => dispatch({ itemId, shareId, email }),
     });
 
-    useEffect(() => {
-        if (open) form.resetForm();
-    }, [open]);
-
     return (
-        <SidebarModal className="ui-teal" onClose={onClose} open={open}>
+        <SidebarModal className="ui-teal" onClose={onClose} open>
             {(didEnter) => (
                 <Panel
                     className="pass-panel--full"
