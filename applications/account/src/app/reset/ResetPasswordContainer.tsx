@@ -61,9 +61,10 @@ interface Props {
     loginUrl: string;
     metaTags: MetaTags;
     productParam: ProductParam;
+    onPreSubmit?: () => Promise<void>;
 }
 
-const ResetPasswordContainer = ({ toApp, metaTags, onLogin, setupVPN, loginUrl, productParam }: Props) => {
+const ResetPasswordContainer = ({ onPreSubmit, toApp, metaTags, onLogin, setupVPN, loginUrl, productParam }: Props) => {
     const { APP_NAME } = useConfig();
 
     useMetaTags(metaTags);
@@ -310,6 +311,7 @@ const ResetPasswordContainer = ({ toApp, metaTags, onLogin, setupVPN, loginUrl, 
                             onSubmit={async (username) => {
                                 try {
                                     const validateFlow = createFlow();
+                                    await onPreSubmit?.();
                                     await startUnAuthFlow();
                                     const result = await handleRequestRecoveryMethods({
                                         setupVPN,

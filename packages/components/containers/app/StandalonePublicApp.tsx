@@ -24,7 +24,7 @@ const StandalonePublicApp = ({ onLogin, locales }: Props) => {
     const loaderPage = <LoaderPage />;
     return (
         <StandardPublicApp loader={loaderPage} locales={locales}>
-            <UnAuthenticatedApiProvider loader={loaderPage}>
+            <UnAuthenticatedApiProvider>
                 <UnleashFlagProviderWrapper>
                     <div className="h-full flex justify-center items-center">
                         <div className="w-custom" style={{ '--w-custom': '20em' }}>

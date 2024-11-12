@@ -64,9 +64,11 @@ interface Props {
     productParam: ProductParam;
     toAppName?: string;
     toApp?: APP_NAMES;
+    onPreSubmit?: () => Promise<void>;
+    onPreload?: () => void;
 }
 
-const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props) => {
+const JoinMagicLinkContainer = ({ onPreload, onPreSubmit, onLogin, onUsed, toApp, productParam }: Props) => {
     const api = useApi();
     const silentApi = getSilentApi(api);
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
@@ -94,6 +96,7 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
             const fragmentParams = location.hash.substring(1);
             const params = new URLSearchParams(fragmentParams);
             const token = stripQueryParams(params.get('token'));
+            onPreload?.();
 
             if (!token) {
                 setError({ type: ErrorType.API });
@@ -105,6 +108,8 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
                 AccessToken: string;
             }>(authJwt({ Token: token }));
             const authApi = getAuthAPI(UID, AccessToken, silentApi);
+
+            await onPreSubmit?.();
 
             const prepareData = async () => {
                 const [
