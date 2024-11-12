@@ -1,5 +1,5 @@
 import { nativeTheme } from "electron";
-import { getSettings, saveSettings } from "../store/settingsStore";
+import { getSettings, updateSettings } from "../store/settingsStore";
 import {
     ColorScheme,
     DESKTOP_THEME_TYPES,
@@ -116,8 +116,7 @@ export function setTheme(theme: ThemeSetting) {
     const lightTheme = isDesktopThemeType(theme.LightTheme) ? theme.LightTheme : electronAppTheme.LightTheme;
     const darkTheme = isDesktopThemeType(theme.DarkTheme) ? theme.DarkTheme : electronAppTheme.DarkTheme;
 
-    saveSettings({
-        ...getSettings(),
+    updateSettings({
         theme: {
             LightTheme: lightTheme,
             DarkTheme: darkTheme,

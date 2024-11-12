@@ -1,7 +1,7 @@
 import { BrowserView, BrowserWindow, Event, Input, Rectangle, WebContents, app, nativeTheme } from "electron";
 import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
-import { getSettings, saveSettings } from "../../store/settingsStore";
+import { getSettings, updateSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
@@ -472,7 +472,7 @@ export function getSpellCheckStatus() {
 }
 
 export function toggleSpellCheck(enabled: boolean) {
-    saveSettings({ ...getSettings(), spellChecker: enabled });
+    updateSettings({ spellChecker: enabled });
     mainWindow?.webContents?.session?.setSpellCheckerEnabled(enabled);
 }
 
