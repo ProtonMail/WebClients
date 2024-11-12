@@ -2,14 +2,17 @@
 
 @import 'animation';
 @import 'button';
+@import 'dropdown';
 @import 'fields';
 @import 'lobby';
-@import 'scroll';
-@import 'skeletons';
-@import 'text';
 @import 'password';
-@import 'utils';
+@import 'scroll';
+@import 'sidebar';
+@import 'skeletons';
 @import 'table';
+@import 'text';
+@import 'themes';
+@import 'utils';
 
 :root {
 	--pass-sidebar-size: 22.5em;
@@ -42,4 +45,8 @@ $endpoints: 'extension', 'web', 'desktop';
 
 .ratio-2\/1 {
 	aspect-ratio: 2/1;
+}
+
+.\*\:shrink-0 > * {
+	flex-shrink: 0;
 }

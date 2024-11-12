@@ -42,13 +42,14 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
         <>
             {!secureLinkItem &&
                 (passkeys ?? []).map((passkey) => (
-                    <FieldsetCluster mode="read" key={passkey.keyId} className="pass-fieldset-cluster--standout">
+                    <FieldsetCluster mode="read" key={passkey.keyId}>
                         <ValueControl
                             icon={'pass-passkey'}
                             label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
                             value={passkey.userName}
                             onClick={() => setPasskey(passkey)}
                             actions={[<Icon className="mt-3" name="chevron-right" size={3} />]}
+                            className="pass-value-control--standout"
                         />
                     </FieldsetCluster>
                 ))}

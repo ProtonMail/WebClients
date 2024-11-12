@@ -3,7 +3,6 @@ import { select } from 'redux-saga/effects';
 import { WEBSITE_RULES_URL } from '@proton/pass/constants';
 import { validateRules } from '@proton/pass/lib/extension/utils/website-rules';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
-import { websiteRulesRequest } from '@proton/pass/store/actions/requests';
 import { createRequestSaga } from '@proton/pass/store/request/sagas';
 import type { RequestEntry, RequestStatus } from '@proton/pass/store/request/types';
 import { selectRequest } from '@proton/pass/store/selectors';
@@ -23,7 +22,9 @@ const revalidateWebsiteRules = async (lastRequestedAt: number): Promise<boolean>
 export default createRequestSaga({
     actions: resolveWebsiteRules,
     call: function* (_, { getStorage }) {
-        const lastRequest: Maybe<RequestEntry<RequestStatus>> = yield select(selectRequest(websiteRulesRequest()));
+        const lastRequest: Maybe<RequestEntry<RequestStatus>> = yield select(
+            selectRequest(resolveWebsiteRules.requestID())
+        );
         const lastRequestedAt = lastRequest?.status === 'success' ? lastRequest.requestedAt : 0;
 
         if (yield revalidateWebsiteRules(lastRequestedAt)) {

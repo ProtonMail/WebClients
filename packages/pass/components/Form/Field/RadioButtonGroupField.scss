@@ -33,7 +33,7 @@
 .pass-radio-group--labelled-button {
 	input[type='radio'] {
 		+ div {
-			border-block-end: 1px solid var(--border-norm);
+			border-block-end: 1px solid var(--border-weak);
 		}
 
 		&:focus-visible {

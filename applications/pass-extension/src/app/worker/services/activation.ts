@@ -118,7 +118,7 @@ export const createActivationService = () => {
             }
 
             void ctx.service.injection.updateInjections();
-            ctx.service.onboarding.onUpdate();
+            ctx.service.spotlight.onUpdate();
 
             return ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: true });
         }
@@ -132,7 +132,7 @@ export const createActivationService = () => {
                 const url = browser.runtime.getURL('/onboarding.html#/success');
                 await browser.tabs.create({ url }).catch(noop);
                 void ctx.service.settings.onInstall();
-                void ctx.service.onboarding.onInstall();
+                void ctx.service.spotlight.onInstall();
             }
 
             void ctx.service.injection.updateInjections();

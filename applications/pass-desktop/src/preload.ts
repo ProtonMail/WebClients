@@ -5,6 +5,8 @@ import type { ContextBridgeApi } from '@proton/pass/types';
 const contextBridgeApi: ContextBridgeApi = {
     /* clipboard */
     writeToClipboard: (text) => ipcRenderer.invoke('clipboard:writeText', text),
+    setClipboardConfig: (config) => ipcRenderer.invoke('clipboard:setConfig', config),
+    getClipboardConfig: () => ipcRenderer.invoke('clipboard:getConfig'),
 
     /* routing */
     navigate: (href) => ipcRenderer.invoke('router:navigate', href),

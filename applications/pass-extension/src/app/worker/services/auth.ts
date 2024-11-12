@@ -113,7 +113,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             setSentryUID(undefined);
 
             ctx.service.formTracker.clear();
-            ctx.service.onboarding.reset();
+            ctx.service.spotlight.reset();
             ctx.service.telemetry?.stop();
             ctx.service.autofill.clear();
             ctx.service.apiProxy.clear?.().catch(noop);

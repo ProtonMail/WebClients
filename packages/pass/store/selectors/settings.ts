@@ -1,5 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import { type PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { EXCLUDED_SETTINGS_KEYS } from '@proton/pass/store/reducers/settings';
 import type { State } from '@proton/pass/store/types';
@@ -27,3 +28,6 @@ export const selectBetaEnabled = ({ settings }: State) => settings.beta ?? false
 export const selectLockMode = ({ settings }: State) => settings.lockMode ?? LockMode.NONE;
 export const selectLockEnabled = pipe(selectLockMode, (mode) => mode !== LockMode.NONE);
 export const selectShowUsernameField = ({ settings }: State) => settings.showUsernameField ?? false;
+export const selectTheme = ({ settings }: State): Maybe<PassThemeOption> => settings?.theme;
+export const selectClipboardTTL = ({ settings }: State) => settings.clipboard?.timeoutMs;
+export const selectAliasTrashAcknowledged = ({ settings }: State) => settings.aliasTrashAcknowledged;

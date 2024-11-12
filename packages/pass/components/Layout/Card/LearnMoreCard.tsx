@@ -14,7 +14,10 @@ export type LearnMoreProps = {
 };
 
 export const LearnMoreCard: FC<LearnMoreProps> = ({ icon, iconClassName, title, description, ctaLabel, ctaAction }) => (
-    <Card rounded className="text-lg overflow-hidden flex gap-4 md:gap-4 flex-nowrap md:flex-wrap items-center">
+    <Card
+        rounded
+        className="text-lg overflow-hidden flex gap-4 md:gap-4 flex-nowrap md:flex-wrap items-center border-weak"
+    >
         <Icon name={icon} size={8} color="var(--interaction-norm)" className={clsx('shrink-0', iconClassName)} />
         <div className="flex flex-column w-full gap-4">
             <span className="text-left text-rg color-strong text-bold">{title}</span>

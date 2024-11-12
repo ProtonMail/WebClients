@@ -46,7 +46,7 @@ import {
     selectUser,
 } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
-import { OnboardingMessage } from '@proton/pass/types';
+import { SpotlightMessage } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -60,7 +60,7 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 };
 
 export const MenuDropdown: FC = () => {
-    const { onLink, onboardingAcknowledge, onboardingCheck } = usePassCore();
+    const { onLink, spotlight } = usePassCore();
     const { ready, expanded } = usePopupContext();
     const { lock, logout } = useExtensionClient();
     const { API_URL } = usePassConfig();
@@ -84,7 +84,7 @@ export const MenuDropdown: FC = () => {
     const withClose = withTap(close);
 
     useEffect(() => {
-        (async () => onboardingCheck?.(OnboardingMessage.PASS_MONITOR))()
+        (async () => spotlight.check(SpotlightMessage.PASS_MONITOR))()
             .then((show) => setNotifyMonitor(Boolean(show)))
             .catch(noop);
     }, []);
@@ -178,7 +178,7 @@ export const MenuDropdown: FC = () => {
                             </div>
                         )}
 
-                        <hr className="dropdown-item-hr mb-2 mx-4" aria-hidden="true" />
+                        <hr className="mb-2 mx-4" aria-hidden="true" />
 
                         <VaultMenu
                             dense
@@ -207,7 +207,7 @@ export const MenuDropdown: FC = () => {
                                         </span>
                                     </CollapsibleHeader>
                                     <CollapsibleContent as="ul" className="unstyled mx-2">
-                                        <hr className="dropdown-item-hr my-2 mx-2" aria-hidden="true" />
+                                        <hr className="my-2 mx-2" aria-hidden="true" />
                                         {menu}
                                         <div className="mt-2 mb-4 w-full">
                                             <Button
@@ -230,11 +230,9 @@ export const MenuDropdown: FC = () => {
                             onClick={withClose(() => navigate(getLocalPath('secure-links')))}
                         />
 
-                        <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-
                         <DropdownMenuButton
                             onClick={withClose(() => {
-                                void onboardingAcknowledge?.(OnboardingMessage.PASS_MONITOR);
+                                void spotlight.acknowledge(SpotlightMessage.PASS_MONITOR);
                                 onLink(getPassWebUrl(API_URL, 'monitor'));
                             })}
                             label={
@@ -251,6 +249,8 @@ export const MenuDropdown: FC = () => {
                             icon={'pass-shield-warning'}
                             className="pt-1.5 pb-1.5"
                         />
+
+                        <hr className="my-2 mx-4" aria-hidden="true" />
 
                         <DropdownMenuButton
                             onClick={withClose(() => openSettings())}
@@ -277,7 +277,7 @@ export const MenuDropdown: FC = () => {
                         />
 
                         <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={menu.advanced} />
-                        <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+                        <hr className="my-2 mx-4" aria-hidden="true" />
                         <Submenu icon="bug" label={c('Action').t`Feedback & Help`} items={menu.feedback} />
                         <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
                         <Submenu icon="user" label={c('Action').t`Account`} items={accountMenuItems} />

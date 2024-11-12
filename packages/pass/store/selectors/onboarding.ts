@@ -25,7 +25,7 @@ export const selectOnboardingState = createSelector(
 export const selectOnboardingComplete = (extensionInstalled: boolean) =>
     createSelector(selectOnboardingState, (state): boolean => extensionInstalled && Object.values(state).every(truthy));
 
-export const selectOnboardingEnabled = (extensionInstalled: boolean) =>
+export const selectB2BOnboardingEnabled = (extensionInstalled: boolean) =>
     createSelector(
         [selectUser, selectPassPlan, selectOnboardingComplete(extensionInstalled)],
         (user, plan, complete) => user && isAdmin(user) && plan === UserPassPlan.BUSINESS && !complete

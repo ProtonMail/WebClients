@@ -22,7 +22,7 @@ import { presentListItem } from './utils';
 import './ItemsListItem.scss';
 
 type Props = Partial<LinkProps> &
-    ButtonLikeProps<any> & {
+    Partial<ButtonLikeProps<Link>> & {
         item: ItemRevision;
         active?: boolean;
         failed?: boolean;
@@ -98,12 +98,7 @@ const ItemsListItemRaw: FC<Props> = ({
                                         )}
                                         style={{ '--bottom-custom': '-6px', '--right-custom': '-6px' }}
                                     >
-                                        <Icon
-                                            name="pin-angled-filled"
-                                            size={2.75}
-                                            className="absolute inset-center"
-                                            color="black"
-                                        />
+                                        <Icon name="pin-angled-filled" size={2.75} className="absolute inset-center" />
                                     </IconBox>
                                 )}
                             </>

@@ -2,7 +2,7 @@ import type { Action, Reducer } from 'redux';
 
 import {
     bootSuccess,
-    getShareAccessOptionsSuccess,
+    getShareAccessOptions,
     inviteAcceptSuccess,
     inviteBatchCreateSuccess,
     inviteRemoveSuccess,
@@ -24,7 +24,7 @@ import {
     vaultTransferOwnershipSuccess,
 } from '@proton/pass/store/actions';
 import type { Share } from '@proton/pass/types';
-import { ShareRole, type ShareType } from '@proton/pass/types';
+import { NewUserInviteState, ShareRole, type ShareType } from '@proton/pass/types';
 import type { NewUserPendingInvite, PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -96,7 +96,14 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
 
     if (newUserInvitePromoteSuccess.match(action)) {
         const { shareId, invites, newUserInvites } = action.payload;
-        return partialMerge(state, { [shareId]: { newUserInvites, invites } });
+        const { newUserInvitesReady } = state[shareId];
+        return partialMerge(state, {
+            [shareId]: {
+                invites,
+                newUserInvites,
+                newUserInvitesReady: Math.max(newUserInvitesReady - 1, 0),
+            },
+        });
     }
 
     if (inviteRemoveSuccess.match(action)) {
@@ -111,12 +118,18 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
 
     if (newUserInviteRemoveSuccess.match(action)) {
         const { shareId, newUserInviteId } = action.payload;
-        const { members = [], invites = [], newUserInvites = [] } = state[shareId];
+        const { members = [], invites = [], newUserInvites = [], newUserInvitesReady } = state[shareId];
 
         const update = newUserInvites.filter((invite) => invite.newUserInviteId !== newUserInviteId);
         const shared = members.length > 1 || invites.length > 0 || update.length > 0;
 
-        return partialMerge(state, { [shareId]: { newUserInvites: update, shared } });
+        return partialMerge(state, {
+            [shareId]: {
+                newUserInvites: update,
+                newUserInvitesReady: Math.max(newUserInvitesReady - 1, 0),
+                shared,
+            },
+        });
     }
 
     if (shareAccessChange.match(action)) {
@@ -124,10 +137,20 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         return partialMerge(state, { [shareId]: shareAccessOptions });
     }
 
-    if (getShareAccessOptionsSuccess.match(action)) {
-        const { shareId, invites, newUserInvites, members } = action.payload;
-        const shared = (invites?.length ?? 0) > 0 || (newUserInvites?.length ?? 0) > 0 || members.length > 1;
-        return partialMerge(state, { [shareId]: { invites, members, newUserInvites, shared } });
+    if (getShareAccessOptions.success.match(action)) {
+        const { shareId, invites = [], newUserInvites = [], members } = action.payload;
+        const shared = invites.length > 0 || newUserInvites.length > 0 || members.length > 1;
+        const newUserInvitesReady = newUserInvites.filter((invite) => invite.state === NewUserInviteState.READY).length;
+
+        return partialMerge(state, {
+            [shareId]: {
+                invites,
+                members,
+                newUserInvites,
+                shared,
+                newUserInvitesReady,
+            },
+        });
     }
 
     if (shareEditMemberAccessSuccess.match(action)) {

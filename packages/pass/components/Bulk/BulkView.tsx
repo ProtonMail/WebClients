@@ -1,13 +1,15 @@
-import { type VFC } from 'react';
+import { type FC } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useCanDragItems } from '@proton/pass/hooks/useItemDrag';
 
 import { useBulkSelect } from './BulkSelectProvider';
 
-export const BulkView: VFC = () => {
+export const BulkView: FC = () => {
     const { count, clear } = useBulkSelect();
+    const draggable = useCanDragItems();
 
     const semiboldText = (
         <span className="text-semibold" key="bulk-count">
@@ -28,12 +30,23 @@ export const BulkView: VFC = () => {
                     }</p>
                 ) : (
                     <>
-                        <p key="bulk-items">
-                            {
-                                // Translator: full sentence is: You selected <number> item/s in this vault; where semiboldText=<number> item/s
-                                c('Message').jt`You selected ${semiboldText} in this vault`
-                            }
-                        </p>
+                        <div className="mb-4">
+                            <div>
+                                {
+                                    // Translator: full sentence is: You selected <number> item/s in this vault; where semiboldText=<number> item/s
+                                    c('Message').jt`You selected ${semiboldText} in this vault.`
+                                }
+                            </div>
+                            {draggable && (
+                                <div className="color-weak">
+                                    {c('Message').ngettext(
+                                        msgid`You can drag and drop the selected item to another vault`,
+                                        `You can drag and drop the selected items to another vault`,
+                                        count
+                                    )}
+                                </div>
+                            )}
+                        </div>
                         <Button shape="solid" size="small" color="weak" onClick={clear}>{
                             // Translator: this is button action for deselecting all of the items in bulk select action
                             c('Action').t`Deselect`

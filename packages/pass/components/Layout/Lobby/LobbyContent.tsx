@@ -3,11 +3,11 @@ import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { BiometricsUnlock } from '@proton/pass/components/Lock/BiometricsUnlock';
 import { PasswordConfirm } from '@proton/pass/components/Lock/PasswordConfirm';
 import { PasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlock';
@@ -95,16 +95,7 @@ export const LobbyContent: FC<Props> = ({
         })().catch(noop);
     }, [online, localID]);
 
-    const brandNameJSX = (
-        <img
-            src={passBrandText}
-            // we have margin on both sides because depending on the language this logo may be on the left or right
-            className="pass-lobby--brand-text h-custom shrink-0 mx-2"
-            style={{ '--h-custom': '1.5rem' }}
-            key="brand"
-            alt=""
-        />
-    );
+    const brandNameJSX = <PassTextLogo key="pass-text-logo" className="pass-lobby--brand-text ml-1.5 shrink-0 logo" />;
 
     if (criticalError) return renderError(criticalError);
 

@@ -5,14 +5,15 @@ import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
+import { PendingNewUsersApprovalModal } from '@proton/pass/components/Share/PendingNewUsersApprovalModal';
 import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
+import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
-import { UpsellRef } from '@proton/pass/constants';
-import type { Callback, MaybeNull, OnboardingMessage } from '@proton/pass/types';
+import type { UpsellRef } from '@proton/pass/constants';
+import { type MaybeNull, SpotlightMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-import type { SpotlightMessageDefinition } from './SpotlightContent';
 import { InviteIcon } from './SpotlightIcon';
 
 type UpsellingState = { type: UpsellType; upsellRef: UpsellRef };
@@ -25,15 +26,15 @@ type SpotlightState = {
 };
 
 export type SpotlightContextValue = {
-    /** acknowledges the provided message type and executed the optional callback.
-     * Will reset the SpotlightContext's current message to `null` */
-    acknowledge: (messageType: OnboardingMessage, cb?: Callback) => void;
+    /** Acknowledges the provided spotlight message type.
+     * Resets the SpotlightContext's current message to `null` */
+    acknowledge: (messageType: SpotlightMessage) => void;
     /** Controls the Pending Share Access modal */
     setPendingShareAccess: (value: boolean) => void;
     /** Controls the Upselling modal */
     setUpselling: (value: MaybeNull<UpsellingState>) => void;
     /** Sets the current message - if an invite  */
-    setOnboardingMessage: (message: MaybeNull<SpotlightMessageDefinition>) => void;
+    setSpotlight: (message: MaybeNull<SpotlightMessageDefinition>) => void;
     state: SpotlightState;
 };
 
@@ -43,16 +44,16 @@ export const SpotlightContext = createContext<SpotlightContextValue>({
     acknowledge: noop,
     setUpselling: noop,
     setPendingShareAccess: noop,
-    setOnboardingMessage: noop,
+    setSpotlight: noop,
     state: INITIAL_STATE,
 });
 
 export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { onboardingAcknowledge } = usePassCore();
+    const { spotlight } = usePassCore();
     const { latestInvite, respondToInvite } = useInviteContext();
 
     const [state, setState] = useState<SpotlightState>(INITIAL_STATE);
-    const [onboardingMessage, setOnboardingMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
+    const [spotlightMessage, setSpotlightMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
 
     const timer = useRef<NodeJS.Timeout>();
     const messageRef = useRef(state.message);
@@ -78,10 +79,9 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         }
     }, []);
 
-    const acknowledge = useCallback((messageType: OnboardingMessage, cb: Callback = noop) => {
-        void onboardingAcknowledge?.(messageType);
-        cb();
-        setOnboardingMessage(null);
+    const acknowledge = useCallback((spotlightMessageType: SpotlightMessage) => {
+        void spotlight.acknowledge(spotlightMessageType);
+        setSpotlightMessage(null);
     }, []);
 
     const ctx = useMemo<SpotlightContextValue>(
@@ -89,7 +89,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
             acknowledge,
             setPendingShareAccess: (pendingShareAccess) => setState((prev) => ({ ...prev, pendingShareAccess })),
             setUpselling: (upselling) => setState((prev) => ({ ...prev, upselling })),
-            setOnboardingMessage,
+            setSpotlight: setSpotlightMessage,
             state,
         }),
         [state]
@@ -99,7 +99,8 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
         () =>
             latestInvite && !latestInvite.fromNewUser
                 ? {
-                      type: 'default',
+                      type: SpotlightMessage.NOOP,
+                      mode: 'default',
                       id: latestInvite.token,
                       weak: true,
                       dense: false,
@@ -119,23 +120,26 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     useEffect(() => () => clearTimeout(timer.current), []);
 
     useEffect(() => {
-        /** For now, always prioritize invites over onboarding message */
-        const activeMessage = inviteMessage ?? onboardingMessage;
+        /** For now, always prioritize invites over spotlight messages */
+        const activeMessage = inviteMessage ?? spotlightMessage;
         setMessage(activeMessage);
-    }, [inviteMessage, onboardingMessage]);
+    }, [inviteMessage, spotlightMessage]);
 
     return (
         <SpotlightContext.Provider value={ctx}>
             {children}
 
-            <UpsellingModal
-                onClose={closeUpselling}
-                open={state.upselling !== null}
-                upsellType={state.upselling?.type ?? 'free-trial'}
-                upsellRef={state.upselling?.upsellRef ?? UpsellRef.DEFAULT}
-            />
+            {state.upselling && (
+                <UpsellingModal
+                    open
+                    onClose={closeUpselling}
+                    upsellType={state.upselling.type}
+                    upsellRef={state.upselling.upsellRef}
+                />
+            )}
 
             <PendingShareAccessModal open={state.pendingShareAccess} onClose={closePendingShareAccess} />
+            <PendingNewUsersApprovalModal />
         </SpotlightContext.Provider>
     );
 };

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { WasmPasswordScore } from '@protontech/pass-rust-core';
+import type { WasmPasswordScore } from '@protontech/pass-rust-core/worker';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/components';

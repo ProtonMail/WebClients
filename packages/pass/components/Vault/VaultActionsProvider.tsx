@@ -129,7 +129,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                             />
                         );
                     case 'trash-empty':
-                        return <ConfirmTrashEmpty open onCancel={reset} onConfirm={pipe(onTrashEmpty, reset)} />;
+                        return <ConfirmTrashEmpty onCancel={reset} onConfirm={pipe(onTrashEmpty, reset)} />;
                 }
             })()}
         </VaultActionsContext.Provider>

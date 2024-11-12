@@ -5,6 +5,7 @@ import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 type UseConfirmResult<P, R> = {
+    call: (param: P) => R;
     cancel: () => void;
     confirm: () => Maybe<R>;
     prompt: Dispatch<SetStateAction<MaybeNull<P>>>;
@@ -37,6 +38,7 @@ export const useConfirm = <P extends any, R extends any>(action: (param: P) => R
     return {
         param,
         pending: param !== null,
+        call: action,
         cancel,
         confirm,
         prompt: setParam,

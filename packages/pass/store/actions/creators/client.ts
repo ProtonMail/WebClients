@@ -5,7 +5,7 @@ import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/
 import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import { bootRequest, offlineResumeRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
+import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
@@ -89,6 +89,4 @@ export const syncFailure = createAction('sync::failure', (error: unknown) =>
     )({ payload: {} })
 );
 
-export const offlineResume = requestActionsFactory<{ localID?: number }, void>('offline::resume')({
-    requestId: offlineResumeRequest,
-});
+export const offlineResume = requestActionsFactory<{ localID?: number }, void>('offline::resume')();

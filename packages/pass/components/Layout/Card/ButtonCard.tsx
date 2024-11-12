@@ -30,7 +30,7 @@ export const ButtonCard: FC<ButtonCardProps> = ({ actions, disabled, title, subt
             fullWidth
             size="medium"
             className={clsx(
-                'border-norm flex justify-space-between flex-nowrap items-center rounded-lg button-fluid',
+                'border-weak flex justify-space-between flex-nowrap items-center rounded-lg button-fluid',
                 !onClick && 'cursor-default',
                 !type && 'bg-weak'
             )}

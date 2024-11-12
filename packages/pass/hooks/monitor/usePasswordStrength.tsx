@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import type { WasmPasswordScore } from '@protontech/pass-rust-core';
+import type { WasmPasswordScore } from '@protontech/pass-rust-core/worker';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { MaybeNull } from '@proton/pass/types';

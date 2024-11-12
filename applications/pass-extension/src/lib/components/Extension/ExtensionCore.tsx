@@ -13,6 +13,7 @@ import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
+import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
@@ -36,7 +37,17 @@ import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
 
-const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): PassCoreProviderProps => {
+export type ExtensionCoreProps = {
+    endpoint: ClientEndpoint;
+    theme?: PassThemeOption;
+    wasm?: boolean;
+};
+
+const getPassCoreProviderProps = (
+    endpoint: ClientEndpoint,
+    config: PassConfig,
+    theme?: PassThemeOption
+): PassCoreProviderProps => {
     const messageFactory = resolveMessageFactory(endpoint);
 
     /** Read-only settings service */
@@ -61,6 +72,16 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
         }),
         monitor: createMonitorBridge(messageFactory),
         settings,
+        spotlight: {
+            acknowledge: (message) =>
+                sendMessage(messageFactory({ type: WorkerMessageType.SPOTLIGHT_ACK, payload: { message } }))
+                    .then((res) => res.type === 'success')
+                    .catch(() => false),
+            check: (message) =>
+                sendMessage(messageFactory({ type: WorkerMessageType.SPOTLIGHT_CHECK, payload: { message } }))
+                    .then((res) => res.type === 'success' && res.enabled)
+                    .catch(() => false),
+        },
 
         exportData: (payload) =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {
@@ -104,6 +125,8 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
             return fetch(requestUrl, { signal, headers }).then(imageResponsetoDataURL);
         },
 
+        getTheme: async () => theme ?? (await settings.resolve().catch(noop))?.theme,
+
         getLogs: () =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.LOG_REQUEST }), (res) =>
                 res.type === 'success' ? res.logs : []
@@ -124,15 +147,6 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
                 : payload,
 
         promptForPermissions,
-
-        onboardingAcknowledge: (message) => {
-            sendMessage(messageFactory({ type: WorkerMessageType.ONBOARDING_ACK, payload: { message } })).catch(noop);
-        },
-
-        onboardingCheck: (message) =>
-            sendMessage(messageFactory({ type: WorkerMessageType.ONBOARDING_CHECK, payload: { message } }))
-                .then((res) => res.type === 'success' && res.enabled)
-                .catch(() => false),
 
         onLink: (url) =>
             browser.tabs
@@ -179,9 +193,9 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
     };
 };
 
-export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> = ({ children, endpoint }) => {
+export const ExtensionCore: FC<PropsWithChildren<ExtensionCoreProps>> = ({ children, endpoint, theme, wasm }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
-    const coreProps = useMemo(() => getExtensionCoreProps(endpoint, config), []);
+    const coreProps = useMemo(() => getPassCoreProviderProps(endpoint, config, theme), []);
     const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
     const message = resolveMessageFactory(endpoint);
 
@@ -199,6 +213,7 @@ export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> 
             {...coreProps}
             getCurrentTabUrl={() => currentTabUrl.current}
             setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
+            wasm={wasm}
         >
             <AuthStoreProvider store={authStore}>
                 <UnlockProvider unlock={unlock}>{children}</UnlockProvider>

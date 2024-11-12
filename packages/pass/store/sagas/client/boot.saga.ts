@@ -20,6 +20,7 @@ import {
     startEventPolling,
     stateDestroy,
     stopEventPolling,
+    syncDesktopSettings,
 } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
@@ -66,6 +67,7 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         yield put(bootSuccess(fromCache ? undefined : yield synchronize(SyncType.FULL)));
         yield put(draftsGarbageCollect());
         yield put(passwordHistoryGarbageCollect());
+        if (DESKTOP_BUILD) yield put(syncDesktopSettings.intent());
 
         if (online) {
             yield put(startEventPolling());

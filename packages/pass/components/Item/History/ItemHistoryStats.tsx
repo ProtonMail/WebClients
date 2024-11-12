@@ -21,10 +21,11 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
     const passPlan = useSelector(selectPassPlan);
 
     return (
-        <div className="flex flex-column border rounded-xl px-4 py-3 gap-3">
+        <div className="flex flex-column border border-weak rounded-xl px-4 py-3 gap-3">
             {lastUseTime !== undefined && (
                 <CardContent
                     icon="magic-wand"
+                    iconProps={{ size: 4 }}
                     ellipsis
                     title={c('Title').t`Last autofill`}
                     subtitle={
@@ -36,6 +37,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
 
             <CardContent
                 icon="pencil"
+                iconProps={{ size: 4 }}
                 title={c('Title').t`Last modified`}
                 subtitle={epochToRelativeDate(modifyTime)}
                 ellipsis
@@ -43,6 +45,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
 
             <CardContent
                 icon="bolt"
+                iconProps={{ size: 4 }}
                 title={c('Title').t`Created`}
                 subtitle={epochToRelativeDate(createTime)}
                 ellipsis
