@@ -144,6 +144,7 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
 
     const termsLink = <Href key="locale" href={getLocaleTermsURL(APP_NAME)}>{c('Link').t`terms of service`}</Href>;
     const contactLink = <Href key="contact" href={getAbuseURL()}>{c('Link').t`contact us`}</Href>;
+    const planTitle = selectedPlan?.Title ?? 'Plan';
 
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const currency = getPreferredCurrency({
@@ -238,9 +239,7 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
                                 fullWidth
                                 className="mt-2"
                             >
-                                {selectedPlan
-                                    ? c('new_plans: Action').t`Get ${selectedPlan.Title}`
-                                    : c('new_plans: Action').t`Get plan`}
+                                {c('new_plans: Action').t`Get ${planTitle}`}
                             </ButtonLike>
                             <div className="mt-4 color-weak text-center">
                                 {c('Info').jt`If you believe we made a mistake, please ${contactLink}.`}
