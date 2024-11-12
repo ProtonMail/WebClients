@@ -592,6 +592,9 @@
       "Show": [
         "Mostra"
       ],
+      "Show all": [
+        "Mostra tot"
+      ],
       "Show preview": [
         "Mostra visualització prèvia"
       ],
@@ -1070,6 +1073,9 @@
       "for ${ durationDeal }": [
         "durant ${ durationDeal }"
       ],
+      "forever": [
+        "per sempre"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
       ]
@@ -1259,6 +1265,9 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total per ${ n } mes",
@@ -3073,6 +3082,9 @@
     "fido2: Action": {
       "Delete key": [
         "Elimina la clau"
+      ],
+      "New security key": [
+        "Nova clau de seguretat"
       ]
     },
     "fido2: Error": {
@@ -3153,6 +3165,9 @@
       ],
       "Security key registered": [
         "S'ha registrat la clau de seguretat"
+      ],
+      "Security keys": [
+        "Claus de seguretat"
       ]
     },
     "file size format": {
@@ -4318,6 +4333,9 @@
       "Plus or Visionary subscription required": [
         "Es requereix una subscripció Plus o Visionary."
       ],
+      "Preference saved": [
+        "S'ha desat la preferència."
+      ],
       "Preview": [
         "Vista prèvia"
       ],
@@ -5105,6 +5123,9 @@
       ],
       "Other": [
         "Altres"
+      ],
+      "Product": [
+        "Producte"
       ],
       "Refund": [
         "Reemborsament"
@@ -6079,6 +6100,9 @@
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
       ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de per vida de ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
@@ -6912,6 +6936,59 @@
         "Suport per a ${ n } dominis de correu personalitzats"
       ]
     },
+    "news": {
+      "${ app } product updates": [
+        "Actualitzacions de producte per a ${ app }"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "Butlletí ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Anuncis importants de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "Butlletí de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "Ofertes i promocions de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "Anuncis de productes de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "Enquesta als usuaris de ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Missatges de benvinguda de ${ BRAND_NAME }"
+      ],
+      "1 email per quarter": [
+        "1 correu electrònic per trimestre"
+      ],
+      "1-2 emails per month": [
+        "1-2 correus electrònics per mes"
+      ],
+      "2-4 emails per year": [
+        "2 a 4 correus electrònics per any"
+      ],
+      "4-6 emails per year": [
+        "4 a 6 correus electrònics per any"
+      ],
+      "Daily email notifications": [
+        "Notificacions diàries per correu electrònic"
+      ],
+      "During your first month": [
+        "Durant el vostre primer mes"
+      ],
+      "Email subscriptions": [
+        "Subscripcions per correu electrònic"
+      ],
+      "In-app notifications": [
+        "Notificacions dins l'aplicació"
+      ],
+      "Product updates": [
+        "Actualitzacions de productes"
+      ]
+    },
     "Notification": {
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
@@ -7252,6 +7329,9 @@
       "${ n } user account": [
         "${ n } compte d'usuari",
         "${ n } comptes d'usuari"
+      ],
+      "Activity log": [
+        "Registre d'activitats"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8400,6 +8480,14 @@
       "Contact administrator": [
         "Contacteu amb l'administrador"
       ],
+      "Delete ${ n } inactive user?": [
+        "Voleu eliminar ${ n } usuari inactiu?",
+        "Voleu eliminar ${ n } usuaris inactius?"
+      ],
+      "Delete ${ n } user": [
+        "Elimina ${ n } usuari",
+        "Elimina ${ n } usuaris"
+      ],
       "Deny": [
         "Denega"
       ],
@@ -8441,6 +8529,9 @@
       ],
       "Set your backup password": [
         "Configureu la vostra contrasenya de recuperació"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
       ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
@@ -8695,6 +8786,11 @@
         "El vostre pla es va comprar mitjançant una aplicació d'iOS. Per a fer-hi canvis o actualitzar els detalls del pagament, cal que aneu a l'App Store d'Apple."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de per vida"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
@@ -8835,6 +8931,9 @@
       ],
       "Folders, labels and filters": [
         "Carpetes, etiquetes i filtres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
       ],
       "Got it": [
         "Entesos"
@@ -9058,6 +9157,9 @@
       ],
       "Administrator privileges restored": [
         "S'han restaurat els privilegis de l'administrador"
+      ],
+      "Backup password updated": [
+        "S'ha actualitzat la contrasenya de recuperació."
       ],
       "Catch-all address updated": [
         "S'ha actualitzat l'adreça d'arreplega"
@@ -9975,6 +10077,9 @@
       "Verifying your payment...": [
         "S'està verificant el pagament..."
       ],
+      "Video conferencing": [
+        "Videoconferència"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Enviarem un correu electrònic a la vostra nova adreça amb instruccions per completar el canvi."
       ],
@@ -10151,6 +10256,12 @@
       "Approve all": [
         "Aprovar-ho tot"
       ],
+      "Cancel request": [
+        "Cancel·la la sol·licitud"
+      ],
+      "Cancel request to access user data?": [
+        "Voleu cancel·lar la sol·licitud d'accés a les dades de l'usuari?"
+      ],
       "Enable manually": [
         "Activa manualment"
       ],
@@ -10257,6 +10368,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Els administradors no poden accedir a les dades dels usuaris privats"
+      ],
+      "Inactive": [
+        "Inactiva"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "S'ha enviat la invitació. S'està esperant la resposta del membre convidat."
