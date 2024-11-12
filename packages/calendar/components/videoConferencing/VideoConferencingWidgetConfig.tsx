@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import type { EventModelReadView, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -18,8 +20,19 @@ interface Props {
 const separatorRegex = new RegExp(SEPARATOR_GOOGLE_EVENTS);
 
 export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) => {
+    const hasReported = useRef(false);
+
     const { sendEventVideoConfSource } = useVideoConfTelemetry();
     const videoConferenceWidget = useFlag('VideoConferenceWidget');
+
+    // This is required to avoid sending multiple requests for the same event
+    const sendTelemetryReport = (source: VideoConferenceSource) => {
+        if (!hasReported.current) {
+            sendEventVideoConfSource(source);
+            hasReported.current = true;
+        }
+    };
+
     if (!videoConferenceWidget) {
         return null;
     }
@@ -28,7 +41,7 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
 
     // Native Zoom integration
     if (meetingId && meetingUrl) {
-        sendEventVideoConfSource(VideoConferenceSource.int_zoom);
+        sendTelemetryReport(VideoConferenceSource.int_zoom);
         return (
             <VideoConferencingWidget
                 location={widgetLocation}
@@ -48,11 +61,11 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
     if (googleMeetingDescriptionSeparator && description) {
         if (description.includes('zoom.us')) {
             const data = getZoomFromDescription(description);
-            sendEventVideoConfSource(VideoConferenceSource.google_zoom_desc);
+            sendTelemetryReport(VideoConferenceSource.google_zoom_desc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         } else if (description.includes('meet.google.com')) {
             const data = getGoogleMeetDataFromDescription(description);
-            sendEventVideoConfSource(VideoConferenceSource.google_google_meet_desc);
+            sendTelemetryReport(VideoConferenceSource.google_google_meet_desc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
     }
@@ -61,17 +74,17 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
     if (location) {
         if (location.includes('meet.google.com')) {
             const data = getGoogleMeetDataFromLocation(location);
-            sendEventVideoConfSource(VideoConferenceSource.google_google_meet_loc);
+            sendTelemetryReport(VideoConferenceSource.google_google_meet_loc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
 
         if (location.includes('zoom.us')) {
             const data = getZoomDataFromLocation(location);
-            sendEventVideoConfSource(VideoConferenceSource.google_zoom_loc);
+            sendTelemetryReport(VideoConferenceSource.google_zoom_loc);
             return <VideoConferencingWidget location={widgetLocation} data={data} />;
         }
     }
 
-    sendEventVideoConfSource(VideoConferenceSource.no_video_conf);
+    sendTelemetryReport(VideoConferenceSource.no_video_conf);
     return null;
 };
