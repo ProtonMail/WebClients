@@ -16,6 +16,7 @@ export class EditorYjsExporter extends EditorExporter {
         off: () => {},
         on: () => {},
         setLocalState: () => {},
+        setLocalStateField: () => {},
       },
       off: () => {},
       on: () => {},
