@@ -10816,6 +10816,12 @@
       "Send in": [
         "Język zaproszenia"
       ],
+      "Show ${ n } administrator": [
+        "Pokaż ${ n } administratora",
+        "Pokaż ${ n } administratorów",
+        "Pokaż ${ n } administratorów",
+        "Pokaż ${ n } administratorów"
+      ],
       "Show others when I'm busy": [
         "Pokaż, kiedy jestem zajęty"
       ],
@@ -15763,6 +15769,18 @@
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się.",
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } użytkownik dołączył do organizacji przy pomocy dostawcy tożsamości. Sprawdź konto:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Sprawdź konta:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Sprawdź konta:",
+        "${ n } użytkowników dołączyło do organizacji przy pomocy dostawcy tożsamości. Sprawdź konta:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } użytkownik jest nieaktywny. Możesz bezpiecznie usunąć tego użytkownika z organizacji.",
+        "${ n } użytkowników jest nieaktywnych. Możesz bezpiecznie usunąć tych użytkowników z organizacji.",
+        "${ n } użytkowników jest nieaktywnych. Możesz bezpiecznie usunąć tych użytkowników z organizacji.",
+        "${ n } użytkowników jest nieaktywnych. Możesz bezpiecznie usunąć tych użytkowników z organizacji."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } użytkownik poprosił o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO.",
         "${ n } użytkowników poprosiło o pomoc w zalogowaniu się na swoje konto ${ BRAND_NAME } za pomocą logowania SSO.",
@@ -15813,6 +15831,18 @@
       ],
       "Current device": [
         "Obecne urządzenie"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Usunąć ${ n } nieaktywnego użytkownika?",
+        "Usunąć ${ n } nieaktywnych użytkowników?",
+        "Usunąć ${ n } nieaktywnych użytkowników?",
+        "Usunąć ${ n } nieaktywnych użytkowników?"
+      ],
+      "Delete ${ n } user": [
+        "Usuń ${ n } użytkownika",
+        "Usuń ${ n } użytkowników",
+        "Usuń ${ n } użytkowników",
+        "Usuń ${ n } użytkowników"
       ],
       "Deny": [
         "Odmów"

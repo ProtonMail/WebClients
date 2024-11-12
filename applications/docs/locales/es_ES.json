@@ -876,7 +876,7 @@
         "Autenticador 2FA integrado"
       ],
       "One-time payment, lifetime deal": [
-        "Un solo pago, contrato de por vida"
+        "Un solo pago y una oferta de por vida"
       ],
       "Online document editor": [
         "Editor de documentos online"
@@ -914,13 +914,13 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus lifetime no tiene precio de renovación, es un pago único por el acceso de por vida a Pass Plus."
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Los descuentos se basan en la cuota estándar mensual."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si adquieres el Pase familiar o Ilimitado, tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final de tu ciclo de facturación."
+        "Si compras Pass Family o Unlimited, tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
@@ -2171,6 +2171,11 @@
         "Factura atrasada"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
+      ]
+    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protege tu cuenta con monitoreo dedicado 24/7 de actividades sospechosas, incluyendo la intervención de especialistas en seguridad."
@@ -2240,11 +2245,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3759,6 +3759,9 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -4303,6 +4306,9 @@
       "Monitor accounts": [
         "Monitoreo de cuentas"
       ],
+      "Most recent": [
+        "Más reciente"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
       ],
@@ -4369,6 +4375,12 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Nuestras alertas ponen la seguridad en primer lugar. Si no reconoces la información vulnerada, puedes ignorar este informe."
+      ],
+      "Owned by me": [
+        "Me pertenece"
+      ],
+      "Owned by others": [
+        "Pertenece a otros"
       ],
       "Owner": [
         "Propietario"
@@ -5846,23 +5858,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Comienza por ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "A partir de ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Eliminar cuenta"
@@ -5884,6 +5879,23 @@
       ],
       "Switch plan": [
         "Cambiar plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Comienza por ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partir de ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Mejora a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -5956,6 +5968,9 @@
       "${ options }-day file version history": [
         "Historial de ${ options } día de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
+      ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de por vida de ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
@@ -7010,6 +7025,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel de administración para gestionar usuarios y suscripciones"
+      ],
+      "Team policies": [
+        "Políticas de equipo"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8030,6 +8048,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Pasarás a un plan inferior al finalizar el ciclo de facturación."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de por vida"
       ]
     },
     "Subscription price": {

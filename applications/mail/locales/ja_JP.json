@@ -10313,6 +10313,11 @@
         "メッセージの送信を予約できます"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "サインイン"
+      ]
+    },
     "Status": {
       "This message is from a mailing list.": [
         "これはメーリングリストからのメッセージです。"
@@ -10477,6 +10482,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } の高度なアカウント保護"
       ],
       "2 users": [
         "2 ユーザー"

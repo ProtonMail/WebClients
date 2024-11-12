@@ -7903,6 +7903,11 @@
         "データの安全性を保ったまま、Drive内のファイルを検索できるようになりました。"
       ]
     },
+    "sso": {
+      "Sign in": [
+        "サインイン"
+      ]
+    },
     "Status": {
       "Pending": [
         "保留中"
@@ -8050,6 +8055,9 @@
       ],
       "${ planMaxSpace } total storage": [
         "合計 ${ planMaxSpace } のストレージ"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } の高度なアカウント保護"
       ],
       "2 users": [
         "2 ユーザー"
