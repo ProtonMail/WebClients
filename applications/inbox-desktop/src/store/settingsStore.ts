@@ -23,9 +23,18 @@ const defaultSettings = {
     rolloutProportion: 1 - Math.random(),
 } as const satisfies SettingsStore;
 
-export const saveSettings = (settings: SettingsStore) => {
+export const updateSettings = (settings: Partial<SettingsStore>) => {
+    const oldSettings = getSettings();
+    const settingsChanged = Array.from(Object.keys(settings) as Array<keyof SettingsStore>).some(
+        (key) => settings[key] !== oldSettings[key],
+    );
+
+    if (!settingsChanged) {
+        return;
+    }
+
     settingsLogger.info("Settings saved", JSON.stringify(settings));
-    store.set("settings", settings);
+    store.set("settings", { ...oldSettings, ...settings });
 };
 
 export const getSettings = (): SettingsStore => {
@@ -45,7 +54,7 @@ export const getSettings = (): SettingsStore => {
 
         if (saveDefaults) {
             settingsLogger.info("Some default values were missing, saving settings.");
-            saveSettings(settings);
+            updateSettings(settings);
         }
 
         return settings;
@@ -57,16 +66,16 @@ export const getSettings = (): SettingsStore => {
 
 export function setReleaseCategory(targetEnv: Environment | undefined) {
     settingsLogger.info("Updating release category", targetEnv);
-    const settings = getSettings();
+    let releaseCategory = RELEASE_CATEGORIES.STABLE;
     switch (targetEnv) {
         case "alpha":
-            settings.releaseCategory = RELEASE_CATEGORIES.ALPHA;
+            releaseCategory = RELEASE_CATEGORIES.ALPHA;
             break;
         case "beta":
-            settings.releaseCategory = RELEASE_CATEGORIES.EARLY_ACCESS;
+            releaseCategory = RELEASE_CATEGORIES.EARLY_ACCESS;
             break;
         default:
-            settings.releaseCategory = RELEASE_CATEGORIES.STABLE;
+            releaseCategory = RELEASE_CATEGORIES.STABLE;
     }
-    saveSettings(settings);
+    updateSettings({ releaseCategory });
 }
