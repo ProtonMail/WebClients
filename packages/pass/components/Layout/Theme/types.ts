@@ -1,4 +1,4 @@
-import type { ItemMap } from '@proton/pass/types';
+import type { DesktopTheme, ItemMap } from '@proton/pass/types';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 export enum SubTheme {
@@ -23,3 +23,9 @@ export enum PassThemeOption {
     PassLight = ThemeTypes.PassLight,
     OS = 'OS',
 }
+
+export const desktopThemeToOption: Record<DesktopTheme, PassThemeOption> = {
+    dark: PassThemeOption.PassDark,
+    light: PassThemeOption.PassLight,
+    system: PassThemeOption.OS,
+};

@@ -36,13 +36,16 @@
 		justify-content: end;
 	}
 
-	/* Customize lock selector radios */
-	&--lock {
-		:checked ~ .pass-lock-option,
-		.pass-lock-option:hover {
-			background-color: var(--interaction-norm-minor-1);
+	/* Customize radio selectors */
+	&--radio {
+		:checked ~ .pass-onboarding-modal--option,
+		.pass-onboarding-modal--option:hover {
+			background-color: var(--interaction-norm-minor-2);
 		}
+	}
 
+	/* Style auto-lock control */
+	&--lock {
 		& > .field-two-container {
 			display: flex;
 			justify-content: space-between;

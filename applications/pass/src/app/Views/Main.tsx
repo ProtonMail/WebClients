@@ -103,7 +103,7 @@ const MainSwitch: FC = () => {
                                             <Route component={Items} />
                                         </Switch>
                                     )}
-                                    <ThemeOnboardingModal />
+                                    {!DESKTOP_BUILD && <ThemeOnboardingModal />}
                                 </div>
                             </div>
                         </main>
