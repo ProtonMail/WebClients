@@ -8,7 +8,7 @@ import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { epochToRelativeDate } from '@proton/pass/utils/time/format';
+import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 type Props = {
     handleHistoryClick: () => void;
@@ -30,7 +30,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
                     title={c('Title').t`Last autofill`}
                     subtitle={
                         // translator: when this login was last used
-                        lastUseTime ? epochToRelativeDate(lastUseTime) : c('Info').t`Never`
+                        lastUseTime ? epochToRelativeDaysAgo(lastUseTime) : c('Info').t`Never`
                     }
                 />
             )}
@@ -39,7 +39,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
                 icon="pencil"
                 iconProps={{ size: 4 }}
                 title={c('Title').t`Last modified`}
-                subtitle={epochToRelativeDate(modifyTime)}
+                subtitle={epochToRelativeDaysAgo(modifyTime)}
                 ellipsis
             />
 
@@ -47,7 +47,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
                 icon="bolt"
                 iconProps={{ size: 4 }}
                 title={c('Title').t`Created`}
-                subtitle={epochToRelativeDate(createTime)}
+                subtitle={epochToRelativeDaysAgo(createTime)}
                 ellipsis
             />
 

@@ -12,7 +12,7 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { aliasBlockContact, aliasDeleteContact } from '@proton/pass/store/actions';
 import type { AliasContactGetResponse, AliasContactWithStatsGetResponse, UniqueItem } from '@proton/pass/types';
-import { epochToDateLabel } from '@proton/pass/utils/time/format';
+import { epochToRelativeDateUntil } from '@proton/pass/utils/time/format';
 
 type Props = UniqueItem &
     AliasContactWithStatsGetResponse & {
@@ -35,7 +35,7 @@ export const ContactCard: FC<Props> = ({
 }) => {
     const { writeToClipboard } = usePassCore();
     const { createNotification } = useNotifications();
-    const time = epochToDateLabel(CreateTime, { dateInThePast: true });
+    const time = epochToRelativeDateUntil(CreateTime, { dateInThePast: true });
 
     const blockContactRequest = useRequest(aliasBlockContact, { onSuccess: ({ data }) => onContactUpdated(data) });
     const deleteContactRequest = useRequest(aliasDeleteContact, { onSuccess: ({ data }) => onContactDeleted(data) });

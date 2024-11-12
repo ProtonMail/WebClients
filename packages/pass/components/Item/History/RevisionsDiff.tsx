@@ -21,7 +21,7 @@ import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { itemEditIntent } from '@proton/pass/store/actions';
 import type { ItemEditIntent, ItemRevision, ItemType } from '@proton/pass/types';
-import { epochToRelativeDate } from '@proton/pass/utils/time/format';
+import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 import { useItemHistory } from './ItemHistoryContext';
 
@@ -107,7 +107,7 @@ export const RevisionDiff: FC = () => {
             footer={
                 <ButtonBar className="text-semibold text-sm md:text-rg">
                     <Button onClick={() => setSelected(previous)} selected={selected === previous} fullWidth>
-                        {epochToRelativeDate(previousItem.revisionTime)}
+                        {epochToRelativeDaysAgo(previousItem.revisionTime)}
                     </Button>
                     <Button onClick={() => setSelected(current)} selected={selected === current} fullWidth>{c('Info')
                         .t`Current version`}</Button>
