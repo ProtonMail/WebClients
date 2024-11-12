@@ -129,7 +129,10 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
             sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.create_zoom_meeting);
         } catch (e) {
             const { code } = getApiError(e);
-            sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.create_zoom_meeting_failed, code);
+            sendEventVideoConferenceZoomIntegration(
+                VideoConferenceZoomIntegration.create_zoom_meeting_failed,
+                String(code)
+            );
 
             if (code === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
                 setProcessState('disconnected');
