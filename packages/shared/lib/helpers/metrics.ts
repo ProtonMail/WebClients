@@ -123,7 +123,7 @@ export const sendTelemetryReportWithBaseDimensions = async ({
             // Base dimensions used to help get basic knowledge about the user
             account_age: getAccountAgeForDimension(user),
             user_locale: userSettings?.Locale ?? 'undefined',
-            subscription: subscriptionName,
+            subscription: String(subscriptionName),
             audience,
             is_free: subscriptionName === 'free' ? 'true' : 'false',
         },
