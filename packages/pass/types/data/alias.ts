@@ -16,7 +16,7 @@ export type AliasDetails = {
      * The default BE value is `Hello <alias@domain>`, even if the name is empty */
     displayName: string;
     slNote: string;
-    stats: AliasStats;
+    stats?: AliasStats;
 };
 export type AliasPending = { pendingAliasID: string; aliasEmail: string; aliasNote: string };
 export type AliasContactNewDTO = UniqueItem & { email: string; name?: string };

@@ -2,9 +2,10 @@ import type { ReactNode } from 'react';
 import { type FC, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
+import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { AliasSimpleLoginNoteModal } from '@proton/pass/components/Item/Alias/AliasSimpleLoginNote.modal';
@@ -54,6 +55,13 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
     const displayName = aliasDetails?.name;
     const slNote = aliasDetails?.slNote;
+    const forwardCount = aliasDetails?.stats?.forwardedEmails ?? 0;
+    const repliedCount = aliasDetails?.stats?.repliedEmails ?? 0;
+    const blockedCount = aliasDetails?.stats?.blockedEmails ?? 0;
+
+    const forwardText = c('Label').ngettext(msgid`${forwardCount} forward`, `${forwardCount} forwards`, forwardCount);
+    const replyText = c('Label').ngettext(msgid`${repliedCount} reply`, `${repliedCount} replies`, repliedCount);
+    const blockedText = c('Label').ngettext(msgid`${blockedCount} block`, `${blockedCount} blocks`, blockedCount);
 
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
     const allowActions = canToggleStatus && !history;
@@ -150,6 +158,13 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                         .t`Need to email someone but don’t want them to see your email address? Set up a contact alias.`}</div>
                 </>
             )}
+
+            <FieldsetCluster mode="read" as="div">
+                <FieldBox icon="chart-line">
+                    <div className="color-weak text-sm">{c('Title').t`Activity`}</div>
+                    <div>{`${forwardText} • ${replyText} • ${blockedText}`}</div>
+                </FieldBox>
+            </FieldsetCluster>
         </>
     );
 };
