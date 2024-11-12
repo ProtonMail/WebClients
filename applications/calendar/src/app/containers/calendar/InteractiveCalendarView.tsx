@@ -1141,7 +1141,7 @@ const InteractiveCalendarView = ({
         setOpenedSearchItem(undefined);
     };
 
-    // Close modal and popover
+    // Close modal and popover for a given uniqueId
     const closeProcessingPortal = (uniqueId: string = TMP_UNIQUE_ID) => {
         if (eventInPopoverUniqueIdRef.current === uniqueId) {
             setInteractiveData((prev) => ({
@@ -2265,7 +2265,7 @@ const InteractiveCalendarView = ({
                             cancelClosePopoverRef.current = false;
                             return;
                         }
-                        resetInteractiveData();
+                        closeProcessingPortal(temporaryEvent?.uniqueId);
                     }}
                     view={view}
                 />
