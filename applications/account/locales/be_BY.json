@@ -1797,7 +1797,7 @@
     },
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
-        "Аплачваецца ${ amount } адінаразова"
+        "Аплачваецца ${ amount } аднаразова"
       ],
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
@@ -9423,6 +9423,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Пасля ўваходу ў ${ destination } вы будзеце пералакіраваны"
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } premium features if you cancel your subscription.": [
+        "Вы захаваеце пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME }, калі скасуеце сваю падпіску."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Вы страціце доступ да ${ planTitle } функцыі пасля гэтай даты."
       ],
@@ -9698,6 +9701,9 @@
       ],
       "Other": [
         "Іншае"
+      ],
+      "Product": [
+        "Прадукт"
       ],
       "Refund": [
         "Вяртанне"
@@ -13002,7 +13008,7 @@
         "${ allCategoryTitlesExceptTheLastOne } і ${ lastCategoryTitle }"
       ],
       "${ app } and ${ additionalApp } product updates": [
-        "Абнаўленні прадуктаў ${ app } і ${ additionalApp }"
+        "Абнаўленні прадукту ${ app } і ${ additionalApp }"
       ],
       "${ app } product updates": [
         "Абнаўленні прадукту ${ app }"
@@ -13011,7 +13017,7 @@
         "Навіны ${ BRAND_NAME } для бізнесу"
       ],
       "${ BRAND_NAME } important announcements": [
-        "Важныя аб'явы ${ BRAND_NAME }"
+        "Важныя абвяшчэнні ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
         "Навіны ${ BRAND_NAME }"
@@ -13020,10 +13026,10 @@
         "Прапановы і рэкламныя акцыі ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
-        "Апавяшчэнні прадукту ${ BRAND_NAME }"
+        "Абвяшчэнні прадукту ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } user survey": [
-        "Апытанне карыстальнікаў ${ BRAND_NAME }"
+        "Апытанне карыстальніка ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
         "Прывітальныя лісты ${ BRAND_NAME }"
@@ -13044,7 +13050,7 @@
         "2-4 лісты ў год"
       ],
       "4-6 emails per year": [
-        "4-6 лісты ў год"
+        "4-6 лістоў у год"
       ],
       "Application notifications": [
         "Апавяшчэнні праграмы"
@@ -13056,7 +13062,7 @@
         "Штодзённыя апавяшчэнні па электроннай пошце"
       ],
       "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Адключэнне гэтага параметра правядзе да выдалення магчымасці атрымліваць апавяшчэнні ў праграме ${ BRAND_NAME }"
+        "Адключэнне гэтага параметра правядзе да выдалення магчымасці атрымліваць апавяшчэнні ў праграмах ${ BRAND_NAME }"
       ],
       "During your first month": [
         "На працягу першага месяца"
@@ -14023,6 +14029,9 @@
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Пашыраныя функцыі псеўданіма (на платформе SimpleLogin)"
+      ],
+      "One-time payment, lifetime deal": [
+        "Аднаразовая аплата, пажыццёвы доступ"
       ]
     },
     "PassFamilyPlan2024": {
@@ -15348,7 +15357,7 @@
     },
     "session_recovery:initiation:link": {
       "in the Account and password section": [
-        "раздзела Ўліковы запіс і пароль"
+        "раздзела ўліковы запіс і пароль"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -15942,7 +15951,7 @@
       ],
       "Delete ${ n } user": [
         "Выдаліць ${ n } карыстальніка",
-        "Выдаліць ${ n } карыстальнікаў",
+        "Выдаліць ${ n } карыстальнікі",
         "Выдаліць ${ n } карыстальнікаў",
         "Выдаліць ${ n } карыстальнікаў"
       ],
@@ -17085,7 +17094,7 @@
         "Параметры абноўлены"
       ],
       "Resent invitation": [
-        "Нядаўняе запрашэнне"
+        "Паўторна адправіць запрашэнне"
       ],
       "Status updated": [
         "Статус абноўлены"
@@ -18861,7 +18870,7 @@
     },
     "unprivatization": {
       "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
-        "**Чаканне доступу адміністратара:** Мы адправілі запыт гэтаму карыстальніку, каб дазволіць любому карыстальніку кіраваць яго ўліковым запісам."
+        "**Чаканне доступу адміністратара:** Мы адправілі запыт гэтаму карыстальніку, каб любы адміністратара меў дазвол кіраваць яго ўліковым запісам."
       ],
       "Administrator access enabled": [
         "Доступ для адміністратара ўключаны"
@@ -18948,7 +18957,7 @@
         "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
       ],
       "This will cancel the pending request for administrator access to the user’s data or password reset.": [
-        "Гэта дзеянне скасуе незавершаны запыт правоў адміністратара да даных карыстальніка або скіданне пароля."
+        "Гэта дзеянне скасуе незавершаны запыт для доступу адміністратара да даных карыстальніка або скіданне пароля."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Гэта дзеянне адклікае правы адміністратара для кіравання гэтым уліковым запісам карыстальніка."
