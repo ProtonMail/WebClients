@@ -955,6 +955,9 @@
       "Remove this label": [
         "Esborra aquesta etiqueta"
       ],
+      "Remove zoom meeting": [
+        "Elimina la reunió de Zoom"
+      ],
       "Replace": [
         "Reemplaça"
       ],
@@ -1752,6 +1755,9 @@
       "for ${ durationDeal }": [
         "durant ${ durationDeal }"
       ],
+      "forever": [
+        "per sempre"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
       ]
@@ -2223,6 +2229,9 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total per ${ n } mes",
@@ -4642,6 +4651,11 @@
         "No ha creat cap contacte encara. Comença creant un nou contacte"
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "El nom a mostrar no pot estar buit."
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "No s'ha seleccionat cap imatge"
@@ -5102,6 +5116,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } a Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dia",
+        "${ remainingDaysCount } dies"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Queda ${ remainingDaysCount } dia.",
+        "Queden ${ remainingDaysCount } dies."
+      ],
       "account logins": [
         "inicis de sessió al compte"
       ],
@@ -5147,8 +5169,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Xifratge tan fort que només vós i els destinataris escollits poden veure els vostres correus electrònics."
       ],
+      "Finish setup": [
+        "Finalitza la configuració"
+      ],
       "For your eyes only": [
         "Només per als vostres ulls"
+      ],
+      "Get more storage": [
+        "Aconseguiu més emmagatzematge"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obteniu l'aplicació mòbil de ${ MAIL_APP_NAME }"
@@ -5234,6 +5262,9 @@
       ],
       "Less details": [
         "Menys detalls"
+      ],
+      "Meeting host:": [
+        "Organitzador de la reunió:"
       ],
       "Meeting link:": [
         "Enllaç de la reunió:"
@@ -9105,6 +9136,9 @@
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
       ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de per vida de ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
@@ -10140,6 +10174,9 @@
       "${ n } user account": [
         "${ n } compte d'usuari",
         "${ n } comptes d'usuari"
+      ],
+      "Activity log": [
+        "Registre d'activitats"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11233,6 +11270,9 @@
       ]
     },
     "sso": {
+      "Sign in": [
+        "Inicia la sessió"
+      ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
       ]
@@ -11439,6 +11479,11 @@
         "El vostre pla es va comprar mitjançant una aplicació d'iOS. Per a fer-hi canvis o actualitzar els detalls del pagament, cal que aneu a l'App Store d'Apple."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de per vida"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
@@ -11573,6 +11618,9 @@
       ],
       "Folders, labels and filters": [
         "Carpetes, etiquetes i filtres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
       ],
       "Helping activists in Hong Kong": [
         "Ajuda per als activistes a Hong Kong"
@@ -13575,8 +13623,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Uniu-vos a la reunió de Zoom"
+      ],
       "Meeting ID:": [
         "Identificador de la reunió:"
+      ],
+      "Passcode:": [
+        "Codi d'accés:"
       ]
     }
   }

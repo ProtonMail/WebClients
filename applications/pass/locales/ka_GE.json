@@ -1636,6 +1636,9 @@
       "Please enter your current PIN code to continue": [
         "გასაგრძელებლად შეიყვანეთ სწორი PIN კოდი"
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "დაიმახსოვრეთ, რომ ფსევდონიმის აღდგენა შეუქცევადია. შეიძლება, მისი, უბრალოდ გათიშვა გნებავთ?"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის ვებაპთან ადრეული წვდომის მისაღებად"
       ],
@@ -3178,6 +3181,10 @@
       ],
       "Your welcome gift": [
         "ისიამოვნეთ თქვენი უფასო სატესტო ვერსიით"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias": [
+        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი",
+        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი"
       ]
     },
     "Validation": {
