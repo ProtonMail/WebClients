@@ -12,12 +12,14 @@ export interface WelcomeFlagsState {
     hasGenericWelcomeStep: boolean;
     isWelcomeFlow: boolean;
     isDone: boolean;
+    isReplay: boolean;
 }
 
 const initialState: WelcomeFlagsState = {
     hasGenericWelcomeStep: false,
     isWelcomeFlow: false,
     isDone: true,
+    isReplay: false,
 };
 
 export const getWelcomeFlagsValue = (userSettings: Pick<UserSettings, 'WelcomeFlag' | 'Flags'>): WelcomeFlagsState => {
@@ -28,8 +30,10 @@ export const getWelcomeFlagsValue = (userSettings: Pick<UserSettings, 'WelcomeFl
         hasGenericWelcomeStep,
         isWelcomeFlow,
         isDone: !isWelcomeFlow,
+        isReplay: false,
     };
 };
+
 const slice = createSlice({
     name,
     initialState,
@@ -40,6 +44,12 @@ const slice = createSlice({
         done: (state) => {
             return { ...state, isDone: true };
         },
+        replayed: (state) => {
+            return { ...state, isReplay: false };
+        },
+        replaying: (state) => {
+            return { ...state, isReplay: true };
+        },
     },
 });
 
@@ -47,11 +57,30 @@ export const welcomeFlagsReducer = { [name]: slice.reducer };
 export const welcomeFlagsActions = slice.actions;
 export const selectWelcomeFlags = (state: { [name]: WelcomeFlagsState }) => state[name];
 
-export const useWelcomeFlags = (): [WelcomeFlagsState, () => void] => {
+interface WelcomeFlagsOutput {
+    endReplay: () => void;
+    setDone: () => void;
+    startReplay: () => void;
+    welcomeFlags: WelcomeFlagsState;
+}
+
+export const useWelcomeFlags = (): WelcomeFlagsOutput => {
     const value = baseUseSelector(selectWelcomeFlags);
     const dispatch = baseUseDispatch();
     const setDone = useCallback(() => {
         dispatch(slice.actions.done());
     }, []);
-    return [value, setDone];
+    const endReplay = useCallback(() => {
+        dispatch(slice.actions.replayed());
+    }, []);
+    const startReplay = useCallback(() => {
+        dispatch(slice.actions.replaying());
+    }, []);
+
+    return {
+        endReplay,
+        setDone,
+        startReplay,
+        welcomeFlags: value,
+    };
 };

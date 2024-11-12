@@ -119,6 +119,7 @@ enum MailFeatureFlag {
     WalletRightSidebarLink = 'WalletRightSidebarLink',
     ProtonTips = 'ProtonTips',
     MailOnboarding = 'MailOnboarding',
+    ReplayOnboardingModal = 'ReplayOnboardingModal',
 }
 
 enum AdminFeatureFlag {

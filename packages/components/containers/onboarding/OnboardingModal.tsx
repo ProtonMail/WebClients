@@ -52,7 +52,9 @@ const OnboardingModal = ({
 }: Props) => {
     const [userSettings] = useUserSettings();
     const api = useApi();
-    const [welcomeFlags] = useWelcomeFlags();
+    const { welcomeFlags } = useWelcomeFlags();
+    // Using useState so that isReplay is only updated when the modal closes, not when welcomeFlags change.
+    const [isReplay] = useState(welcomeFlags.isReplay);
     let isLastStep = false;
 
     const [step, setStep] = useState(0);
@@ -78,7 +80,7 @@ const OnboardingModal = ({
         setStep((step) => step - 1);
     };
 
-    const displayGenericSteps = welcomeFlags?.hasGenericWelcomeStep || showGenericSteps;
+    const displayGenericSteps = welcomeFlags.hasGenericWelcomeStep || isReplay || showGenericSteps;
     const genericStepsComponents = useGenericSteps({
         onNext: handleNext,
         onBack: handleBack,

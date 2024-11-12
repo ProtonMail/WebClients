@@ -18,6 +18,7 @@ import OldMailOnboardingModal from './variants/old/OldMailOnboardingVariant';
 export interface MailOnboardingProps {
     hideDiscoverApps?: boolean;
     showGenericSteps?: boolean;
+    onClose?: () => void;
     onDone?: () => void;
     onExit?: () => void;
     open?: boolean;
@@ -26,7 +27,7 @@ export interface MailOnboardingProps {
 const MailOnboardingModal = (props: MailOnboardingProps) => {
     const api = useApi();
     const { changeChecklistDisplay } = useGetStartedChecklist();
-    const [welcomeFlags] = useWelcomeFlags();
+    const { welcomeFlags, endReplay } = useWelcomeFlags();
     const [userSettings] = useUserSettings();
     const { variant, isEnabled } = useMailOnboardingVariant();
     const [sendMailOnboardingTelemetry, loadingTelemetryDeps] = useMailOnboardingTelemetry();
@@ -66,11 +67,25 @@ const MailOnboardingModal = (props: MailOnboardingProps) => {
     }, []);
 
     if (variant === 'new') {
-        return <NewMailOnboardingModalVariant {...props} onDone={handleDone} data-testid="new-onboarding-variant" />;
+        return (
+            <NewMailOnboardingModalVariant
+                {...props}
+                onClose={endReplay}
+                onDone={handleDone}
+                data-testid="new-onboarding-variant"
+            />
+        );
     }
 
     if (variant === 'old') {
-        return <OldMailOnboardingModal {...props} onDone={handleDone} data-testid="old-onboarding-variant" />;
+        return (
+            <OldMailOnboardingModal
+                {...props}
+                onClose={endReplay}
+                onDone={handleDone}
+                data-testid="old-onboarding-variant"
+            />
+        );
     }
 
     // Render nothing if variant is none

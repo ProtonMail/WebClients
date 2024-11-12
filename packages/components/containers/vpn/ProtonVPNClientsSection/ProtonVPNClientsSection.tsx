@@ -55,7 +55,7 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
 const ProtonVPNClientsSection = () => {
     const history = useHistory();
     const location = useLocation();
-    const [, setDone] = useWelcomeFlags();
+    const { setDone } = useWelcomeFlags();
     const { createNotification } = useNotifications();
 
     const androidLinks = [
