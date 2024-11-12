@@ -212,19 +212,25 @@ const slice = createSlice({
             });
         },
         updateInvite(state, action: PayloadAction<{ ID: string; selfEmail: string; partstat: string }>) {
+            let needRefresh = false;
+
             state.events.forEach((event) => {
                 const ID = (event.data?.eventData as CalendarEvent)?.ID;
                 // We use the event ID instead of the event UID since single edit must not change for invite.
                 if (ID && ID === action.payload.ID) {
-                    const needRefresh = setPartstat(event.uniqueId, action.payload.selfEmail, action.payload.partstat);
+                    const result = setPartstat(event.uniqueId, action.payload.selfEmail, action.payload.partstat);
 
-                    if (needRefresh) {
-                        // Force refresh since changes are saved in a different cache than the Redux store
-                        // However, the interface calculates events to display from both caches
-                        state.events = [...state.events];
+                    if (!needRefresh && result) {
+                        needRefresh = true;
                     }
                 }
             });
+
+            if (needRefresh) {
+                // Force refresh since changes are saved in a different cache than the Redux store
+                // However, the interface calculates events to display from both caches
+                state.events = [...state.events];
+            }
         },
     },
 });

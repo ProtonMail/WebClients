@@ -1467,11 +1467,19 @@ const InteractiveCalendarView = ({
                 isDuplicatingEvent,
                 api,
                 onSaveConfirmation: async (params) => {
-                    const result = await handleSaveConfirmation(params);
-                    if (result.type === RECURRING_TYPES.SINGLE) {
-                        isSingleEdit = true;
+                    try {
+                        const result = await handleSaveConfirmation(params);
+                        if (result.type === RECURRING_TYPES.SINGLE) {
+                            isSingleEdit = true;
+                        }
+                        return result;
+                    } catch (e) {
+                        // Reset partstat if the user cancels the confirmation modal
+                        if (hasReduxStore && isChangePartstat && selfEmail && oldPartstat) {
+                            dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: oldPartstat }));
+                        }
+                        throw e;
                     }
-                    return result;
                 },
                 onEquivalentAttendees: handleEquivalentAttendees,
                 getEventDecrypted,
@@ -1550,13 +1558,13 @@ const InteractiveCalendarView = ({
         } catch (e: any) {
             if (e instanceof EscapeTryBlockError) {
                 handleCreateNotification(successNotification);
-
                 if (e.recursive) {
                     // we need to escape the outer block
                     throw new EscapeTryBlockError();
                 }
                 // else we ignore the error as its only purpose is to escape the try block
             } else {
+                // Reset partstat if error detected
                 if (hasReduxStore && isChangePartstat && selfEmail && oldPartstat) {
                     dispatch(eventsActions.updateInvite({ ID, selfEmail, partstat: oldPartstat }));
                 }
