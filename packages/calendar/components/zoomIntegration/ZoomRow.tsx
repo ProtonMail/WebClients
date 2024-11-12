@@ -149,6 +149,9 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
 
                 return;
             }
+
+            // In case of error, we reset the state of the button to connected
+            setProcessState('connected');
         }
     };
 
