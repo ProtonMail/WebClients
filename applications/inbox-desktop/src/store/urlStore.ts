@@ -1,6 +1,6 @@
 import Store from "electron-store";
 import { z } from "zod";
-import { getSettings, saveSettings } from "./settingsStore";
+import { updateSettings } from "./settingsStore";
 import { mainLogger } from "../utils/log";
 
 const BASE_LOCAL_URL = process.env.BASE_LOCAL_URL || "proton.local";
@@ -36,8 +36,7 @@ export const defaultAppURL: URLConfig = {
 };
 
 const validateURL = (override?: unknown): null | URLConfig => {
-    const settings = getSettings();
-    saveSettings({ ...settings, overrideError: false });
+    updateSettings({ overrideError: false });
     if (!override) {
         return null;
     }
@@ -46,7 +45,7 @@ const validateURL = (override?: unknown): null | URLConfig => {
         return urlSchema.parse(override);
     } catch (error) {
         mainLogger.error("Invalid URL override", error);
-        saveSettings({ ...settings, overrideError: true });
+        updateSettings({ overrideError: true });
 
         return null;
     }
