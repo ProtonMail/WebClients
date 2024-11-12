@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, type ModalStateProps, useModalState } from '@proton/components';
+import { Icon, type ModalStateProps } from '@proton/components';
 import stamp from '@proton/pass/assets/alias/alias-contact-stamp.svg';
 import { ContactCard } from '@proton/pass/components/Item/Alias/Contact/ContactCard';
 import { SidebarCreateContact } from '@proton/pass/components/Item/Alias/Contact/SidebarCreateContact';
@@ -20,8 +20,8 @@ import type { AliasContactGetResponse, AliasContactWithStatsGetResponse, UniqueI
 type Props = UniqueItem & Pick<ModalStateProps, 'onClose'>;
 
 export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => {
-    const [createContact, openCreateContactSidebar] = useModalState();
-    const [moreInfoFlow, openMoreInfoFlowSidebar] = useModalState();
+    const [openCreate, setOpenCreate] = useState(false);
+    const [openMoreInfo, setOpenMoreInfo] = useState(false);
     const aliasEmail = useSelector(selectItem<'alias'>(shareId, itemId))?.aliasEmail;
 
     const [allContacts, setAllContacts] = useState<AliasContactWithStatsGetResponse[]>([]);
@@ -81,12 +81,7 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
                                 >
                                     <Icon name="cross" alt={c('Action').t`Cancel`} />
                                 </Button>,
-                                <Button
-                                    color="norm"
-                                    key="modal-submit-button"
-                                    pill
-                                    onClick={() => openCreateContactSidebar(true)}
-                                >
+                                <Button color="norm" key="modal-submit-button" pill onClick={() => setOpenCreate(true)}>
                                     {c('Action').t`Create contact`}
                                 </Button>,
                             ]}
@@ -100,7 +95,7 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
                             pill
                             shape="solid"
                             color="weak"
-                            onClick={() => openMoreInfoFlowSidebar(true)}
+                            onClick={() => setOpenMoreInfo(true)}
                             title={c('Info').t`See more info`}
                             size="small"
                             className="button-xs"
@@ -139,12 +134,7 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
                                     <h2 className="text-xl text-bold">{c('Title').t`Alias contacts`}</h2>
                                     <div className="text-lg text-center mt-1 mb-5">{c('Info')
                                         .t`To keep your personal email address hidden, you can create an alias contact that masks your address.`}</div>
-                                    <Button
-                                        color="weak"
-                                        shape="solid"
-                                        pill
-                                        onClick={() => openMoreInfoFlowSidebar(true)}
-                                    >
+                                    <Button color="weak" shape="solid" pill onClick={() => setOpenMoreInfo(true)}>
                                         {c('Action').t`Learn more`}
                                     </Button>
                                 </div>
@@ -153,13 +143,15 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
                     )}
                 </Panel>
             </SidebarModal>
-            <SidebarCreateContact
-                {...createContact}
-                itemId={itemId}
-                shareId={shareId}
-                onContactCreated={handleContactCreated}
-            />
-            <SidebarMoreInfoFlow {...moreInfoFlow} />
+            {openCreate && (
+                <SidebarCreateContact
+                    itemId={itemId}
+                    shareId={shareId}
+                    onContactCreated={handleContactCreated}
+                    onClose={() => setOpenCreate(false)}
+                />
+            )}
+            {openMoreInfo && <SidebarMoreInfoFlow onClose={() => setOpenMoreInfo(false)} />}
         </>
     );
 };
