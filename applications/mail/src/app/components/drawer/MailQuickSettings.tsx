@@ -28,6 +28,7 @@ import {
     useModalState,
     useNotifications,
 } from '@proton/components';
+import { DrawerReplayOnboarding } from '@proton/components/components/drawer/views/quickSettings/DrawerReplayOnboarding';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
@@ -48,6 +49,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import OnboardingChecklistModal from 'proton-mail/components/header/OnboardingChecklistModal';
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { useCanReplayOnboarding } from 'proton-mail/hooks/useCanReplayOnboarding';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
@@ -208,10 +210,14 @@ const MailQuickSettings = () => {
 
     const aiFlag = AIAssistantFlags === UNSET ? SERVER_ONLY : AIAssistantFlags;
 
+    const showOnboardingModalTrigger = useCanReplayOnboarding();
+
     return (
         <DrawerAppScrollContainer>
             <DrawerAllSettingsView />
             <DrawerDownloadApps />
+
+            {showOnboardingModalTrigger ? <DrawerReplayOnboarding /> : null}
 
             <DrawerAppSection>
                 <QuickSettingsSectionRow

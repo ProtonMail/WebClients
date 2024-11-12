@@ -28,7 +28,7 @@ const BusySlotsSpotlight = ({ children, view, isDisplayedInPopover }: Props) => 
     const anchorRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
     const { viewportWidth } = useActiveBreakpoint();
-    const [{ isDone }] = useWelcomeFlags();
+    const { welcomeFlags: { isDone } } = useWelcomeFlags();
     const userAccountHasMoreThanTwoDays = new Date() > addDays(fromUnixTime(user.CreateTime), 2);
     const isBusySlotsAvailable = useBusySlotsAvailable(view);
 
