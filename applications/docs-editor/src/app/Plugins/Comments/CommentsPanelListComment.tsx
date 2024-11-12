@@ -223,7 +223,7 @@ export function CommentsPanelListComment({
               hasCaret={false}
               onToggle={setIsOptionsMenuOpen}
             >
-              <DropdownMenu>
+              <DropdownMenu data-testid="comment-options-menu">
                 {showEditButton && (
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
