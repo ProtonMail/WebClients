@@ -26,6 +26,7 @@ jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
 }));
 
 jest.mock('loglevel');
+jest.mock('@proton/pass/lib/core/core.ui');
 
 // JSDom does not include webcrypto
 const crypto = require('crypto').webcrypto;

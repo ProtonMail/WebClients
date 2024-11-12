@@ -2,16 +2,21 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import ConfigProvider from '@proton/components/containers/config/Provider';
+import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
 import { type AuthStore } from '@proton/pass/lib/auth/store';
+import { preloadPassCoreUI } from '@proton/pass/lib/core/core.ui';
 import type { PassCoreProxy } from '@proton/pass/lib/core/types';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import type { SettingsService } from '@proton/pass/lib/settings/service';
-import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise, OnboardingMessage } from '@proton/pass/types';
+import type { SpotlightProxy } from '@proton/pass/lib/spotlight/service';
+import type { ApiState, ClientEndpoint, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
@@ -34,6 +39,8 @@ export type PassCoreContextValue = {
     monitor: MonitorService;
     /** Settings service */
     settings: SettingsService;
+    /** Spotlight proxy service */
+    spotlight: SpotlightProxy;
     /** Resolves a users */
     exportData: (options: ExportOptions) => Promise<File>;
     /** In the extension: leverage worker communication to generate
@@ -51,6 +58,10 @@ export type PassCoreContextValue = {
     getLogs: () => Promise<string[]>;
     /** Returns the URL that should be opened when prompting for rating */
     getRatingURL?: () => string;
+    /** Resolves the initial theme. This is required in order to resolve
+     * the proxied theme setting stored locally before state hydration */
+    getTheme: () => Promise<Maybe<PassThemeOption>>;
+    setTheme?: (theme: PassThemeOption) => void;
     /** defines how a client handles external links.
      * In extension, this will leverage the `browser.tabs` API
      * whereas in the web-app, we can use `window.location` */
@@ -64,10 +75,6 @@ export type PassCoreContextValue = {
     ) => void;
     /** Processes an event for B2B users only */
     onB2BEvent: (event: B2BEvent) => void;
-    /** Acknowledge an onboarding message*/
-    onboardingAcknowledge?: (type: OnboardingMessage) => MaybePromise<void | boolean>;
-    /** Returns true if an onboarding message should show */
-    onboardingCheck?: (type: OnboardingMessage) => MaybePromise<boolean>;
     /* Will get called when user tries to update a client manually */
     onForceUpdate?: () => void;
     /** Open the settings view at a particular page */
@@ -87,18 +94,26 @@ export type PassCoreContextValue = {
     isFirstLaunch?: () => boolean;
 };
 
-export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale'>;
+export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale'> & { wasm?: boolean };
 
 const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
 
 /** The `PassCoreProvider` must be made available on all pass
  * clients : it provides implementations for processes that are
  * dependent on the platform. */
-export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, ...core }) => {
+export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, wasm, ...core }) => {
     const [appLocale, setAppLocale] = useState(DEFAULT_LOCALE);
-    const context = useMemo<PassCoreContextValue>(() => ({ ...core, locale: appLocale }), [appLocale]);
+    const [theme, setTheme] = useState<PassThemeOption>(PASS_DEFAULT_THEME);
+    const context = useMemo<PassCoreContextValue>(() => ({ ...core, setTheme, locale: appLocale }), [appLocale]);
 
     useEffect(() => {
+        if (wasm) preloadPassCoreUI()?.catch(noop);
+
+        core
+            .getTheme?.()
+            .then((initial) => setTheme(initial ?? PASS_DEFAULT_THEME))
+            .catch(noop);
+
         core.i18n.setLocale().catch(noop);
         core.i18n.subscribe(({ locale }) => setAppLocale(locale));
 
@@ -109,6 +124,7 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
     return (
         <ConfigProvider config={core.config}>
             <PassCoreContext.Provider value={context}>
+                <ThemeProvider theme={theme} />
                 <AppStateProvider>{children}</AppStateProvider>
             </PassCoreContext.Provider>
         </ConfigProvider>

@@ -14,12 +14,12 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
+import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type LoginItemFormValues } from '@proton/pass/types';
 import { merge, withMerge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { intoCleanHostname } from '@proton/pass/utils/url/utils';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 import './Login.edit.credentials.scss';
 
@@ -56,7 +56,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
         form.setValues(
             withMerge<LoginItemFormValues>({
                 withUsername: true,
-                ...(!validateEmailAddress(itemEmail)
+                ...(!PassCoreUI.is_email_valid(itemEmail)
                     ? {
                           itemEmail: '',
                           itemUsername: itemEmail,
@@ -104,7 +104,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                     <>
                         <Icon
                             name={aliasModal.usernameIsAlias ? 'alias' : itemEmailFieldIcon}
-                            size={5}
+                            size={4}
                             className="mt-2"
                         />
                         {!withUsername && (

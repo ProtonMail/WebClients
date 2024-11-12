@@ -119,7 +119,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 <QuickActionsDropdown
                                     key="item-quick-actions-dropdown"
                                     color="weak"
-                                    shape="solid"
+                                    shape="ghost"
                                     disabled={optimistic}
                                 >
                                     <DropdownMenuButton
@@ -147,7 +147,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                 key="edit-item-button"
                                 pill
                                 shape="solid"
-                                color="norm"
+                                color="weak"
                                 onClick={handleEditClick}
                                 disabled={optimistic || readOnly}
                             >
@@ -159,8 +159,8 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                             <QuickActionsDropdown
                                 key="share-item-button"
-                                color="weak"
-                                shape="solid"
+                                color="norm"
+                                shape="ghost"
                                 icon="users-plus"
                                 menuClassName="flex flex-column gap-2"
                                 dropdownHeader={c('Label').t`Share`}
@@ -237,9 +237,9 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
 
                             <QuickActionsDropdown
                                 key="item-quick-actions-dropdown"
-                                color="weak"
+                                color="norm"
                                 disabled={optimistic}
-                                shape="solid"
+                                shape="ghost"
                             >
                                 {hasMultipleVaults && (
                                     <DropdownMenuButton

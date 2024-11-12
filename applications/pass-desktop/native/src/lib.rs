@@ -1,4 +1,5 @@
 mod biometrics;
+mod clipboards;
 
 #[macro_use]
 extern crate napi_derive;
@@ -40,5 +41,20 @@ pub mod biometric {
     #[napi]
     pub async fn delete_secret(key: String) -> napi::Result<()> {
         Biometrics::delete_secret(key).map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+}
+
+#[napi]
+pub mod clipboard {
+    use super::clipboards::*;
+
+    #[napi]
+    pub async fn write_text(text: String, sensitive: bool) -> napi::Result<()> {
+        Clipboard::write(&text, sensitive).map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn read() -> napi::Result<String> {
+        Clipboard::read().map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }

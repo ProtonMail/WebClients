@@ -17,13 +17,14 @@ type AutosaveCreateDTO = AutosaveCreate<SelectedShare>;
 type AutosaveUpdateDTO = AutosaveUpdate<SelectedItem>;
 type AutosaveRequestData = FormCredentials & { name: string; passkey?: SanitizedPasskey };
 export type AutosaveRequest = (AutosaveCreateDTO | AutosaveUpdateDTO) & AutosaveRequestData;
+export type AutosaveFormValues = AutosaveRequest & { step: 'select' | 'edit' };
 
 /** `submittedAt` is used to infer if the autosave payload
  * resulted from an actual form submission. */
 
-type AutosaveCreatePayload = AutosaveCreate;
-type AutosaveUpdatePayload = AutosaveUpdate<AutosaveCandidates>;
-type AutosavePayloadData = FormCredentials & { submittedAt: MaybeNull<number> };
+export type AutosaveCreatePayload = AutosaveCreate<AutosavePayloadData>;
+export type AutosaveUpdatePayload = AutosaveUpdate<AutosaveCandidates>;
+export type AutosavePayloadData = FormCredentials & { submittedAt: MaybeNull<number> };
 export type AutosavePayload = (AutosaveCreatePayload | AutosaveUpdatePayload) & AutosavePayloadData;
 
 type AutosavePromptData = AutosaveCreate | AutosaveUpdate<AutosaveCandidates>;

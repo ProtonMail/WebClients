@@ -51,7 +51,6 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
 
             {vaultMove.pending && (
                 <ConfirmVaultMove
-                    open
                     destinationShareId={vaultMove.param.destinationShareId}
                     shareId={vault.shareId}
                     onConfirm={onConfirm}

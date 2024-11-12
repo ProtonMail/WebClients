@@ -32,10 +32,10 @@ import type { Maybe, MaybeNull } from '../utils';
 import type { AutofillIdentityResult, AutofillLoginResult, AutofillOptions } from './autofill';
 import type { AutosaveRequest } from './autosave';
 import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitPayload } from './form';
-import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
 import type { ExclusionRules } from './rules';
 import type { TabId, TabInfo } from './runtime';
+import type { SpotlightMessage } from './spotlight';
 import type { AppState, PopupInitialState } from './state';
 
 export type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
@@ -99,9 +99,6 @@ export enum WorkerMessageType {
     MONITOR_2FAS = 'MONITOR_2FAS',
     MONITOR_WEAK_PASSWORDS = 'MONITOR_WEAK_PASSWORDS',
     NOTIFICATION = 'NOTIFICATION',
-    ONBOARDING_ACK = 'ONBOARDING_ACK',
-    ONBOARDING_CHECK = 'ONBOARDING_CHECK',
-    ONBOARDING_REQUEST = 'ONBOARDING_REQUEST',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
     PASS_CORE_RPC = 'PASS_CORE_RPC',
     PASSKEY_CREATE = 'PASSKEY_CREATE',
@@ -119,6 +116,9 @@ export enum WorkerMessageType {
     RESOLVE_USER = 'RESOLVE_USER',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
+    SPOTLIGHT_ACK = 'SPOTLIGHT_ACK',
+    SPOTLIGHT_CHECK = 'SPOTLIGHT_CHECK',
+    SPOTLIGHT_REQUEST = 'SPOTLIGHT_REQUEST',
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
     STORE_DISPATCH = 'STORE_DISPATCH',
     TABS_QUERY = 'TABS_QUERY',
@@ -171,9 +171,9 @@ export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
 export type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
-export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK, { message: OnboardingMessage }>;
-export type OnboardingCheckMessage = WithPayload<WorkerMessageType.ONBOARDING_CHECK, { message: OnboardingMessage }>;
-export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQUEST };
+export type SpotlightAckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_ACK, { message: SpotlightMessage }>;
+export type SpotlightCheckMessage = WithPayload<WorkerMessageType.SPOTLIGHT_CHECK, { message: SpotlightMessage }>;
+export type SpotlightRequestMessage = { type: WorkerMessageType.SPOTLIGHT_REQUEST };
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type PassCoreRPCMessage = WithPayload<WorkerMessageType.PASS_CORE_RPC, PassCoreRPC<PassCoreMethod>>;
 export type PasskeyCreateMessage = WithPayload<WorkerMessageType.PASSKEY_CREATE, PasskeyCreatePayload>;
@@ -242,9 +242,9 @@ export type WorkerMessage =
     | Monitor2FAsMessage
     | MonitorWeakPasswordsMessage
     | NotificationMessage
-    | OnboardingAckMessage
-    | OnboardingCheckMessage
-    | OnboardingRequestMessage
+    | SpotlightAckMessage
+    | SpotlightCheckMessage
+    | SpotlightRequestMessage
     | OTPCodeGenerateMessage
     | PassCoreRPCMessage
     | PasskeyCreateMessage
@@ -303,8 +303,8 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
-    [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
-    [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
+    [WorkerMessageType.SPOTLIGHT_CHECK]: { enabled: boolean };
+    [WorkerMessageType.SPOTLIGHT_REQUEST]: { message: MaybeNull<SpotlightMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.PASS_CORE_RPC]: { result: PassCoreResult<PassCoreMethod> };
     [WorkerMessageType.PASSKEY_CREATE]: PasskeyCreateResponse;

@@ -1,6 +1,12 @@
 @import '~@proton/styles/scss/lib';
 
 .pass-value-control {
+	background-color: var(--field-background-color);
+
+	&--standout {
+		background: linear-gradient(180deg, var(--interaction-norm-major-2) -850%, transparent 150%);
+	}
+
 	&--value {
 		min-block-size: rem(20);
 
@@ -13,14 +19,11 @@
 		transition: background-color 250ms;
 
 		&:hover {
-			background-color: var(--background-weak);
+			background-color: var(--interaction-default-hover);
 		}
 
-		/*
-		* remove hard coded color value -> consider 'interactive background` colors in theme
-		*/
 		&:active {
-			background-color: #27273d;
+			background-color: var(--interaction-default-active);
 		}
 
 		&:focus-visible {

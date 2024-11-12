@@ -1,6 +1,6 @@
-import type * as PassRustCore from '@protontech/pass-rust-core';
+import type * as PassRustWorker from '@protontech/pass-rust-core/worker';
 
-export type PassCore = typeof PassRustCore;
+export type PassCore = typeof PassRustWorker;
 export type PassCoreMethod = keyof { [K in keyof PassCore]: PassCore[K] extends Function ? K : never };
 export type PassCoreParams<T extends PassCoreMethod> = Parameters<PassCore[T]>;
 export type PassCoreResult<T extends PassCoreMethod> = ReturnType<PassCore[T]>;

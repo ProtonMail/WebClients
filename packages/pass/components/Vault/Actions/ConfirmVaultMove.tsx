@@ -12,14 +12,13 @@ import { selectSecureLinksByShareId } from '@proton/pass/store/selectors';
 
 type Props = ConfirmationPromptHandles & { destinationShareId: string; shareId: string };
 
-export const ConfirmVaultMove: FC<Props> = ({ destinationShareId, open, shareId, onCancel, onConfirm }) => {
+export const ConfirmVaultMove: FC<Props> = ({ destinationShareId, shareId, onCancel, onConfirm }) => {
     const hasLinks = Boolean(useSelector(selectSecureLinksByShareId(shareId)).length);
 
     return (
         <WithVault shareId={destinationShareId} onFallback={onCancel}>
             {({ content: { name: vaultName } }) => (
                 <ConfirmationPrompt
-                    open={open}
                     onCancel={onCancel}
                     onConfirm={onConfirm}
                     title={c('Title').t`Move all items to "${vaultName}"?`}

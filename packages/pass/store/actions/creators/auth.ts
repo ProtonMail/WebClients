@@ -6,12 +6,7 @@ import type { ExtraPasswordDTO, PasswordConfirmDTO } from '@proton/pass/lib/auth
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
-import {
-    extraPasswordToggleRequest,
-    lockCreateRequest,
-    passwordConfirmRequest,
-    unlockRequest,
-} from '@proton/pass/store/actions/requests';
+import { lockCreateRequest } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ClientEndpoint } from '@proton/pass/types';
@@ -103,7 +98,6 @@ export const lockCreateSuccess = createAction(
 );
 
 export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth::unlock')({
-    requestId: unlockRequest,
     failure: {
         prepare: (error, mode) =>
             withNotification({
@@ -123,12 +117,11 @@ export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth
                     }
                 })(),
                 error,
-            })({ payload: null, error }),
+            })({ payload: mode, error }),
     },
 });
 
 export const passwordConfirm = requestActionsFactory<PasswordConfirmDTO, boolean>('auth::password::confirm')({
-    requestId: passwordConfirmRequest,
     failure: {
         prepare: (error, payload) =>
             withNotification({
@@ -140,7 +133,6 @@ export const passwordConfirm = requestActionsFactory<PasswordConfirmDTO, boolean
 });
 
 export const extraPasswordToggle = requestActionsFactory<ExtraPasswordDTO, boolean>('auth::extra-password::toggle')({
-    requestId: extraPasswordToggleRequest,
     intent: {
         prepare: (payload) =>
             withNotification({

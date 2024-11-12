@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
-import { useOnboardingListener } from 'proton-pass-extension/lib/hooks/useOnboardingListener';
+import { useSpotlightListener } from 'proton-pass-extension/lib/hooks/useSpotlightListener';
 
 import { Header as CoreHeader } from '@proton/components';
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
@@ -25,12 +25,12 @@ export const Header: FC = () => {
     const { navigate } = useNavigation();
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
-    useOnboardingListener();
+    useSpotlightListener();
 
     return (
         <VaultActionsProvider>
             <AuthDeviceTopBanner />
-            <CoreHeader className="border-bottom h-auto p-2">
+            <CoreHeader className="border-bottom border-weak h-auto p-2">
                 <div className="flex items-center gap-x-2 w-full">
                     <MenuDropdown />
                     <SearchBar disabled={!ready} initial={initial.search} />

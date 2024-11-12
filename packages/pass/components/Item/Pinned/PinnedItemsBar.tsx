@@ -43,8 +43,8 @@ export const PinnedItemsBar: FC = () => {
         };
 
     return items.length === 0 ? null : (
-        <div className="pass-pinned-items-list flex flex-auto w-full shrink-0 flex-1 items-center flex-nowrap py-1 px-3 border-bottom border-norm">
-            <span className="flex items-center justify-center flex-nowrap text-sm text-no-wrap shrink-0 pr-4 border-right border-norm mr-2">
+        <div className="pass-pinned-items-list flex flex-auto w-full shrink-0 flex-1 items-center flex-nowrap py-1 px-3 border-bottom border-weak">
+            <span className="flex items-center justify-center flex-nowrap text-sm text-no-wrap shrink-0 pr-4 border-right border-weak mr-2">
                 <Icon name="pin-angled" className="ml-1 mr-2" />
                 {
                     // translator: "Pinned" is followed by the number of pinned items

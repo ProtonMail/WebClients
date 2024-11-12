@@ -14,21 +14,7 @@ import type {
 } from '@proton/pass/lib/monitor/types';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import {
-    addCustomAddressRequest,
-    aliasBreachRequest,
-    breachesRequest,
-    customBreachRequest,
-    deleteCustomAddressRequest,
-    itemUpdateFlagsRequest,
-    protonBreachRequest,
-    resendCustomAddressCodeRequest,
-    resolveAddressMonitorRequest,
-    sentinelToggleRequest,
-    toggleAddressMonitorRequest,
-    toggleMonitorRequest,
-    verifyCustomAddressRequest,
-} from '@proton/pass/store/actions/requests';
+import { selectedItemKey } from '@proton/pass/store/actions/requests';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ItemRevision, SelectedItem } from '@proton/pass/types';
 import type {
@@ -36,16 +22,17 @@ import type {
     BreachesGetResponse,
     UpdateUserMonitorStateRequest,
 } from '@proton/pass/types/api/pass';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
+import identity from '@proton/utils/identity';
 
 export type SentinelState = SETTINGS_PROTON_SENTINEL_STATE;
 
 export const sentinelToggle = requestActionsFactory<SentinelState, SentinelState>('monitor::sentinel::toggle')({
-    requestId: sentinelToggleRequest,
     success: {
         prepare: (value) =>
             withNotification({
@@ -68,7 +55,6 @@ export const sentinelToggle = requestActionsFactory<SentinelState, SentinelState
 export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest, UpdateUserMonitorStateRequest>(
     'monitor::all:addresses:toggle'
 )({
-    requestId: toggleMonitorRequest,
     success: {
         prepare: ({ ProtonAddress, Aliases }) =>
             pipe(
@@ -90,14 +76,13 @@ export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest
 });
 
 export const getBreaches = requestActionsFactory<void, BreachesGetResponse>('monitor::breaches::get')({
-    requestId: breachesRequest,
     success: { config: { maxAge: UNIX_MINUTE } },
 });
 
 export const getProtonBreach = requestActionsFactory<ProtonAddressID, FetchedBreaches[]>(
     'monitor::breaches::proton::get'
 )({
-    requestId: protonBreachRequest,
+    key: identity,
     success: { config: { data: true } },
     failure: {
         prepare: (error) =>
@@ -112,7 +97,7 @@ export const getProtonBreach = requestActionsFactory<ProtonAddressID, FetchedBre
 export const getCustomBreach = requestActionsFactory<CustomAddressID, FetchedBreaches[]>(
     'monitor::breaches::custom::get'
 )({
-    requestId: customBreachRequest,
+    key: identity,
     success: { config: { data: true } },
     failure: {
         prepare: (error) =>
@@ -125,7 +110,7 @@ export const getCustomBreach = requestActionsFactory<CustomAddressID, FetchedBre
 });
 
 export const getAliasBreach = requestActionsFactory<SelectedItem, FetchedBreaches[]>('monitor::breaches::alias::get')({
-    requestId: ({ shareId, itemId }) => aliasBreachRequest(shareId, itemId),
+    key: selectedItemKey,
     success: { config: { data: true } },
     failure: {
         prepare: (error) =>
@@ -140,7 +125,7 @@ export const getAliasBreach = requestActionsFactory<SelectedItem, FetchedBreache
 export const addCustomAddress = requestActionsFactory<string, BreachCustomEmailGetResponse>(
     'monitor::breaches::custom::add'
 )({
-    requestId: addCustomAddressRequest,
+    key: identity,
     success: { config: { data: true } },
     failure: {
         prepare: (error) =>
@@ -155,7 +140,7 @@ export const addCustomAddress = requestActionsFactory<string, BreachCustomEmailG
 export const deleteCustomAddress = requestActionsFactory<CustomAddressID, CustomAddressID>(
     'monitor::breaches::custom::delete'
 )({
-    requestId: deleteCustomAddressRequest,
+    key: identity,
     success: {
         prepare: (addressId) =>
             withNotification({
@@ -176,7 +161,7 @@ export const deleteCustomAddress = requestActionsFactory<CustomAddressID, Custom
 export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, MonitorAddress<AddressType.CUSTOM>>(
     'monitor::breaches::custom::verify'
 )({
-    requestId: ({ addressId }) => verifyCustomAddressRequest(addressId),
+    key: prop('addressId'),
     failure: {
         config: { data: true },
         prepare: (error) =>
@@ -191,7 +176,7 @@ export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, Monit
 export const toggleAddressMonitor = requestActionsFactory<MonitorToggleDTO, MonitorAddress>(
     'monitor::breaches::address::toggle'
 )({
-    requestId: (dto) => toggleAddressMonitorRequest(getAddressId(dto)),
+    key: getAddressId,
     success: {
         prepare: (payload) =>
             withNotification({
@@ -214,7 +199,7 @@ export const toggleAddressMonitor = requestActionsFactory<MonitorToggleDTO, Moni
 export const resolveAddressMonitor = requestActionsFactory<AddressBreachDTO, AddressBreachDTO>(
     'monitor::breaches::address::resolve'
 )({
-    requestId: (dto) => resolveAddressMonitorRequest(getAddressId(dto)),
+    key: getAddressId,
     success: {
         prepare: (payload) =>
             withNotification({
@@ -236,7 +221,7 @@ export const setItemFlags = requestActionsFactory<
     SelectedItem & { SkipHealthCheck: boolean },
     SelectedItem & { item: ItemRevision }
 >('monitor::toggle::item')({
-    requestId: ({ shareId, itemId }) => itemUpdateFlagsRequest(shareId, itemId),
+    key: selectedItemKey,
     success: {
         prepare: ({ shareId, itemId, item }) =>
             withNotification({
@@ -259,7 +244,7 @@ export const setItemFlags = requestActionsFactory<
 export const resendVerificationCode = requestActionsFactory<CustomAddressID, boolean>(
     'monitor::breaches::custom::resend::verification'
 )({
-    requestId: resendCustomAddressCodeRequest,
+    key: identity,
     failure: {
         prepare: (error) =>
             withNotification({

@@ -10,7 +10,6 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import { monitorToggle } from '@proton/pass/store/actions';
-import { toggleMonitorRequest } from '@proton/pass/store/actions/requests';
 import { selectMonitorSettings } from '@proton/pass/store/selectors';
 
 type Props = { type: AddressType.ALIAS | AddressType.PROTON };
@@ -25,7 +24,7 @@ export const BreachGroupToggleButton: FC<Props> = ({ type }) => {
     const settings = useSelector(selectMonitorSettings);
     const monitored = settings?.[key];
 
-    const { dispatch, loading } = useRequest(monitorToggle, { initialRequestId: toggleMonitorRequest() });
+    const { dispatch, loading } = useRequest(monitorToggle, { initial: true });
     const toggleMonitor = useConfirm(() => dispatch({ [key]: !monitored }));
 
     return (

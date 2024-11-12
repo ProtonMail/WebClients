@@ -12,7 +12,6 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { PasswordCredentials } from '@proton/pass/lib/auth/password';
 import { validateCurrentPassword, validateExtraPassword } from '@proton/pass/lib/validation/auth';
 import { unlock } from '@proton/pass/store/actions';
-import { unlockRequest } from '@proton/pass/store/actions/requests';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -25,7 +24,7 @@ export const PasswordUnlock: FC<Props> = ({ extraPassword, offlineEnabled }) => 
     const online = useConnectivity();
     const authStore = useAuthStore();
     const history = useHistory();
-    const passwordUnlock = useRequest(unlock, { initialRequestId: unlockRequest() });
+    const passwordUnlock = useRequest(unlock, { initial: true });
     const disabled = !online && !offlineEnabled;
     const [key, rerender] = useRerender();
 

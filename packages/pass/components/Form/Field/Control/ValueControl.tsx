@@ -18,6 +18,7 @@ const isIntrinsicElement = <E extends ElementType>(c: E) => typeof c === 'string
 export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon'> & {
     as?: E;
     children?: E extends ComponentType<infer U> ? (U extends { children?: infer C } ? C : never) : ReactNode;
+    className?: string;
     clickToCopy?: boolean;
     clipboardValue?: string;
     error?: boolean;
@@ -36,10 +37,10 @@ const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void 
     <Button
         icon
         pill
-        color="weak"
+        color="norm"
         onClick={onClick}
         size="medium"
-        shape="solid"
+        shape="ghost"
         title={hidden ? c('Action').t`Show` : c('Action').t`Hide`}
     >
         <Icon size={5} name={hidden ? 'eye' : 'eye-slash'} />
@@ -54,6 +55,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     actionsContainerClassName,
     as,
     children,
+    className,
     clickToCopy = false,
     clipboardValue,
     ellipsis = true,
@@ -102,8 +104,10 @@ export const ValueControl = <E extends ElementType = 'div'>({
     return (
         <MaybeClickToCopy
             className={clsx(
+                'pass-value-control',
                 interactive && 'pass-value-control--interactive cursor-pointer',
-                !loading && error && 'border-danger'
+                !loading && error && 'border-danger',
+                className
             )}
             {...(canCopy ? { value: clipboardValue ?? value } : { onClick })}
         >

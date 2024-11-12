@@ -1,0 +1,24 @@
+hr {
+	background-color: var(--border-weak);
+}
+
+.ui-lime,
+.ui-orange,
+.ui-red,
+.ui-teal,
+.ui-violet {
+	--focus-outline: var(--interaction-norm-major-2);
+	--focus-ring: var(--interaction-norm-minor-1);
+	--interaction-norm-hover: var(--interaction-norm-major-1);
+	--interaction-norm-active: var(--interaction-norm-major-2);
+	--interaction-weak-hover: var(--interaction-weak-major-1);
+	--interaction-weak-active: var(--interaction-weak-major-2);
+}
+
+.ui-lime,
+.ui-teal,
+.ui-violet {
+	--link-norm: var(--interaction-norm);
+	--link-hover: var(--interaction-norm-hover);
+	--link-active: var(--interaction-norm-active);
+}

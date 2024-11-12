@@ -5,6 +5,7 @@ import { Scroll } from '@proton/atoms';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
+import { useItemDrag } from '@proton/pass/hooks/useItemDrag';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey, interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
 import type { ItemFilters, ItemRevision, ItemRevisionWithOptimistic, SelectedItem } from '@proton/pass/types';
@@ -25,6 +26,7 @@ type Props = {
 export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelect, placeholder }) => {
     const listRef = useRef<List>(null);
     const bulk = useBulkSelect();
+    const { draggable, handleDragStart, handleDragEnd } = useItemDrag();
 
     useEffect(() => listRef.current?.scrollToRow(0), [filters.type, filters.sort]);
 
@@ -54,6 +56,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                             case 'entry': {
                                 const item = row.entry;
                                 const id = getItemKey(item);
+
                                 return (
                                     <div style={style} key={key}>
                                         <ItemsListItem
@@ -64,6 +67,9 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                             item={item}
                                             key={id}
                                             search={filters.search}
+                                            draggable={draggable}
+                                            onDragStart={(event) => handleDragStart?.(event, { ID: id })}
+                                            onDragEnd={handleDragEnd}
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 onSelect(item, e.ctrlKey || e.metaKey);

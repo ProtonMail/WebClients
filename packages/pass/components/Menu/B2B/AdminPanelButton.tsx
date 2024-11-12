@@ -16,7 +16,7 @@ export const AdminPanelButton: FC<Organization> = ({ Name, UsedMembers, MaxMembe
     return (
         <DropdownMenuButton
             icon="users"
-            className={clsx('rounded', configured ? 'py-4' : 'py-3')}
+            className={clsx('rounded', configured ? 'py-3' : 'py-2')}
             ellipsis
             label={
                 <div className="flex flex-column flex-nowrap">

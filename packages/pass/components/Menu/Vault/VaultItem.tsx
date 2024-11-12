@@ -1,25 +1,25 @@
-import { type FC } from 'react';
+import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
+import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import { VAULT_COLOR_MAP } from '@proton/pass/components/Vault/constants';
+import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { UpsellRef } from '@proton/pass/constants';
+import { useItemDrop } from '@proton/pass/hooks/useItemDrag';
+import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
 import { isVaultMemberLimitReached, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { type ShareItem } from '@proton/pass/store/reducers';
 import { selectPassPlan } from '@proton/pass/store/selectors';
-import type { ShareType } from '@proton/pass/types';
+import type { ShareType, UniqueItem } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
-
-import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
-import { VaultIcon } from '../../Vault/VaultIcon';
 
 type Props = {
     count: number;
@@ -56,12 +56,23 @@ export const VaultItem: FC<Props> = ({
     onMove,
     onSelect,
 }) => {
+    const { moveMany } = useItemsActions();
+    const spotlight = useSpotlight();
+    const plan = useSelector(selectPassPlan);
+
     const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
     const allowSharing = vault !== undefined;
     const shared = vault?.shared ?? false;
+    const shareId = vault?.shareId;
     const notification = (vault?.newUserInvitesReady ?? 0) > 0;
-    const spotlight = useSpotlight();
-    const plan = useSelector(selectPassPlan);
+
+    const dropParams = useMemo(() => {
+        const onDrop = (items: UniqueItem[]) => shareId && moveMany(intoBulkSelection(items), shareId);
+        const dragFilter = () => Boolean(vault && isWritableVault(vault));
+        return [onDrop, dragFilter] as const;
+    }, [vault]);
+
+    const { dragOver, dragProps } = useItemDrop(...dropParams);
 
     return (
         <DropdownMenuButton
@@ -69,14 +80,10 @@ export const VaultItem: FC<Props> = ({
             label={<span className="block text-ellipsis">{label}</span>}
             parentClassName={clsx(
                 'pass-vault-submenu-vault-item w-full',
-                selected && 'selected',
                 !withActions && 'pass-vault-submenu-vault-item--no-actions'
             )}
-            className={clsx(!dense && 'py-3')}
-            style={{
-                '--vault-icon-color': VAULT_COLOR_MAP[vault?.content.display.color ?? VaultColor.COLOR1],
-                '--max-h-custom': '1.25rem',
-            }}
+            className={clsx((selected || dragOver) && 'is-selected', !dense && 'py-3')}
+            style={{ '--max-h-custom': '1.25rem' }}
             extra={
                 <>
                     {shared && (
@@ -191,6 +198,7 @@ export const VaultItem: FC<Props> = ({
                       ].filter(truthy)
                     : undefined
             }
+            {...dragProps}
         />
     );
 };

@@ -1,11 +1,7 @@
 import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import {
-    NOTIFICATION_HEIGHT,
-    NOTIFICATION_HEIGHT_SM,
-    NOTIFICATION_WIDTH,
-} from 'proton-pass-extension/app/content/constants.static';
+import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { Notification } from 'proton-pass-extension/app/content/injections/apps/notification/Notification';
 import { NotificationAction } from 'proton-pass-extension/app/content/types';
 
@@ -25,14 +21,13 @@ export const NotificationDebug: FC = () => {
                 <MockIFrameContainer
                     appState={{ authorized: false, status: AppStatus.IDLE }}
                     width={NOTIFICATION_WIDTH}
-                    height={NOTIFICATION_HEIGHT}
+                    height={NOTIFICATION_MIN_HEIGHT}
                 >
                     <Notification />
                 </MockIFrameContainer>
 
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
-                    height={NOTIFICATION_HEIGHT}
                     domain="proton.me"
                     payload={{
                         action: NotificationAction.AUTOSAVE,
@@ -49,7 +44,6 @@ export const NotificationDebug: FC = () => {
 
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
-                    height={NOTIFICATION_HEIGHT}
                     domain="netflix.com"
                     payload={{
                         action: NotificationAction.AUTOSAVE,
@@ -74,7 +68,6 @@ export const NotificationDebug: FC = () => {
 
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
-                    height={NOTIFICATION_HEIGHT}
                     domain="netflix.com"
                     payload={{
                         action: NotificationAction.AUTOSAVE,
@@ -107,7 +100,6 @@ export const NotificationDebug: FC = () => {
 
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
-                    height={NOTIFICATION_HEIGHT}
                     domain="webauthn.io"
                     payload={{
                         action: NotificationAction.PASSKEY_GET,
@@ -122,7 +114,6 @@ export const NotificationDebug: FC = () => {
 
                 <MockIFrameContainer
                     width={NOTIFICATION_WIDTH}
-                    height={NOTIFICATION_HEIGHT}
                     domain="webauthn.io"
                     payload={{
                         action: NotificationAction.PASSKEY_CREATE,
@@ -153,7 +144,7 @@ export const NotificationDebug: FC = () => {
                 {otpItem && (
                     <MockIFrameContainer
                         width={NOTIFICATION_WIDTH}
-                        height={NOTIFICATION_HEIGHT_SM}
+                        height={NOTIFICATION_MIN_HEIGHT}
                         domain="proton.me"
                         payload={{
                             action: NotificationAction.OTP,

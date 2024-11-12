@@ -1,5 +1,5 @@
 .pass-lobby {
 	block-size: 100%;
 	inline-size: 100%;
-	background: radial-gradient(61.86% 61.86% at 50% 0%, rgb(255 255 255 / 0.16) 0%, rgb(255 255 255 / 0) 100%), #191927;
+	background: var(--pass-lobby-background-color);
 }

@@ -57,7 +57,7 @@ type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string>
  * forwarding messages to the content-script's ports. We retrieve
  * the content-script's parent port name through postMessaging */
 export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
-    const { i18n, endpoint } = usePassCore();
+    const { i18n, endpoint, setTheme } = usePassCore();
     const app = useAppState();
     const authStore = useAuthStore();
 
@@ -165,6 +165,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                         case WorkerMessageType.FEATURE_FLAGS_UPDATE:
                             return setFeatures(message.payload);
                         case WorkerMessageType.SETTINGS_UPDATE:
+                            if (message.payload.theme) setTheme?.(message.payload.theme);
                             return setSettings(message.payload);
                         case WorkerMessageType.LOCALE_UPDATED:
                             return i18n.setLocale(settings.locale).catch(noop);

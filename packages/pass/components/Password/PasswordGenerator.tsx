@@ -26,10 +26,10 @@ export const PasswordGenerator: FC<UsePasswordGeneratorResult> = (props) => {
         <div className="flex-column flex gap-y-2">
             <div className="my-4 px-4 py-2 pb-4 flex flex-column items-center">
                 <span
-                    className="text-2xl text-center text-break-all text-monospace m-auto"
-                    style={{ '--min-h-custom': '4.5rem' }}
+                    className="text-2xl text-center text-break-all text-monospace m-auto min-h-custom lg:max-w-custom flex items-end user-select"
+                    style={{ '--min-h-custom': '5.5rem', '--lg-max-w-custom': '75%' }}
                 >
-                    {getCharsGroupedByColor(props.password)}
+                    <span>{getCharsGroupedByColor(props.password)}</span>
                 </span>
 
                 {passwordStrength && <PasswordStrength className="mt-4" strength={passwordStrength} />}

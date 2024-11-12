@@ -90,7 +90,7 @@ export const useLockSetup = (): LockSetup => {
     const unlock = useUnlock((err) => createNotification({ type: 'error', text: err.message }));
 
     const createLock = useActionRequest(lockCreateIntent, {
-        initialRequestId: lockCreateRequest(),
+        requestId: lockCreateRequest(),
         onStart: ({ data }) => setNextLock({ ttl: data.lock.ttl, mode: data.lock.mode }),
         onFailure: () => setNextLock(null),
         onSuccess: () => setNextLock(null),

@@ -55,7 +55,6 @@ export const MockIFrameContainer: FC<{
             height,
             maxWidth: width,
             overflow: 'hidden',
-            background: '#191927',
             boxShadow: '0 2px 10px rgb(0 0 0 / 0.3)',
             borderRadius: 12,
             marginBottom: 12,

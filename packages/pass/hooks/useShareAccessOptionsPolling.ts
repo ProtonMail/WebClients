@@ -2,21 +2,21 @@ import { useEffect, useRef, useState } from 'react';
 
 import usePrevious from '@proton/hooks/usePrevious';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
-import { getShareAccessOptionsIntent } from '@proton/pass/store/actions';
+import { getShareAccessOptions } from '@proton/pass/store/actions';
 import { type Maybe } from '@proton/pass/types';
 
-import { useActionRequest } from './useActionRequest';
+import { useRequest } from './useActionRequest';
 
 export const useShareAccessOptionsPolling = (shareId: string) => {
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
-    const { loading, dispatch, revalidate } = useActionRequest(getShareAccessOptionsIntent);
+    const { loading, dispatch, revalidate } = useRequest(getShareAccessOptions, { initial: { shareId } });
 
     const wasLoading = usePrevious(loading);
     const [didLoad, setDidLoad] = useState(false);
 
     useEffect(() => {
-        timer.current = setInterval(() => dispatch(shareId), ACTIVE_POLLING_TIMEOUT);
-        revalidate(shareId);
+        timer.current = setInterval(() => dispatch({ shareId }), ACTIVE_POLLING_TIMEOUT);
+        revalidate({ shareId });
 
         return () => clearInterval(timer.current);
     }, [shareId]);

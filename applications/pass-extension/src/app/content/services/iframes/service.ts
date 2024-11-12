@@ -1,9 +1,11 @@
 import { PASS_ROOT_REMOVED_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { PASS_ELEMENT_THEME } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassElement';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIframeRoot } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-root';
 import type { IFrameAppService, InjectedDropdown, InjectedNotification } from 'proton-pass-extension/app/content/types';
 
+import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { MaybeNull } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -25,6 +27,7 @@ export interface IFrameService {
     attachNotification: () => MaybeNull<InjectedNotification>;
     destroy: () => void;
     init: () => ProtonPassRoot;
+    setTheme: (theme?: PassThemeOption) => void;
 }
 
 export const createIFrameService = (elements: PassElementsConfig) => {
@@ -123,6 +126,22 @@ export const createIFrameService = (elements: PassElementsConfig) => {
 
             return state.apps.notification;
         }),
+
+        setTheme: (theme = PassThemeOption.PassDark) => {
+            state.root?.setAttribute(
+                PASS_ELEMENT_THEME,
+                ((): string => {
+                    switch (theme) {
+                        case PassThemeOption.PassDark:
+                            return 'dark';
+                        case PassThemeOption.PassLight:
+                            return 'light';
+                        case PassThemeOption.OS:
+                            return 'os';
+                    }
+                })()
+            );
+        },
     };
 
     return service;

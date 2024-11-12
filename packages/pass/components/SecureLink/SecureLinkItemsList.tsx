@@ -16,7 +16,6 @@ import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
 import { secureLinksGet } from '@proton/pass/store/actions';
-import { secureLinksGetRequest } from '@proton/pass/store/actions/requests';
 import { selectAllSecureLinks, selectOptimisticItemsWithSecureLink } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
 
@@ -27,7 +26,7 @@ export const SecureLinkItemsList: FC = () => {
     const listRef = useRef<List>(null);
     const selectItem = useSelectItemAction();
 
-    const { loading, dispatch } = useRequest(secureLinksGet, { initialRequestId: secureLinksGetRequest() });
+    const { loading, dispatch } = useRequest(secureLinksGet, { initial: true });
     const secureLinkCount = useSelector(selectAllSecureLinks).length;
     const items = useSelector(selectOptimisticItemsWithSecureLink);
     const itemRoute = getItemRoute(':shareId', ':itemId', { prefix: 'secure-links' });
