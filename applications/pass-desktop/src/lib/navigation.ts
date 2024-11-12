@@ -3,7 +3,7 @@ import { ipcMain } from 'electron';
 
 import type { MaybeNull } from '@proton/pass/types';
 
-export default (getWindow: () => MaybeNull<BrowserWindow>) => {
+export const setupIpcHandlers = (getWindow: () => MaybeNull<BrowserWindow>) => {
     ipcMain.handle('router:navigate', async (_, href: string) => {
         const window = getWindow();
         await window?.loadURL(`${MAIN_WINDOW_WEBPACK_ENTRY}?#${href}`);

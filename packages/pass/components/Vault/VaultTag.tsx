@@ -25,7 +25,7 @@ export const VaultTag: FC<Props> = ({ title, shared = false, icon, color, count,
                 'pass-vault-tag flex items-center text-sm gap-x-1 flex-nowrap lh100',
                 shared && 'pass-vault-tag--shared'
             )}
-            style={shared ? { '--vault-icon-color': VAULT_COLOR_MAP[color ?? VaultColor.COLOR1] } : undefined}
+            style={shared ? { '--vault-icon-color': `rgb(${VAULT_COLOR_MAP[color ?? VaultColor.COLOR1]})` } : undefined}
         >
             {<Icon className="shrink-0 mr-1" name={icon} size={iconSize} />}
             <span className="text-ellipsis">{title}</span>

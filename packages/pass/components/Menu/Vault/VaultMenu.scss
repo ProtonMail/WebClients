@@ -1,29 +1,9 @@
 .pass-vault-submenu-vault-item {
 	&--no-actions > button {
-		padding-inline-end: 0.5em !important;
+		padding-inline-end: 0.5em;
 	}
 
 	> button {
 		border-radius: var(--border-radius-md);
-	}
-
-	&.selected {
-		> button {
-			background-color: rgb(var(--vault-icon-color) / 1) !important;
-			color: var(--interaction-norm-contrast);
-
-			&:hover {
-				color: var(--interaction-norm-contrast);
-			}
-
-			.pass-vault-icon {
-				--vault-icon-color: var(--interaction-norm-contrast) !important;
-			}
-		}
-
-		svg,
-		.pass-vault--count {
-			color: var(--interaction-norm-contrast) !important;
-		}
 	}
 }

@@ -80,7 +80,7 @@ export const UpsellFeatures: FC<Props> = ({ upsellType }) => {
                     <div
                         className={clsx(
                             'flex justify-start items-center py-3 gap-3',
-                            idx < features.length - 1 && 'border-bottom',
+                            idx < features.length - 1 && 'border-bottom border-weak',
                             className
                         )}
                         key={key}

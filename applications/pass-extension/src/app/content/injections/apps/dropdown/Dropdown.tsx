@@ -1,10 +1,11 @@
 import { type FC, useEffect, useRef, useState } from 'react';
 
+import { DROPDOWN_MIN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
 import {
     useIFrameContext,
     useRegisterMessageHandler,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
-import { LIST_ITEM_HEIGHT, ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
+import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { ListItemIcon } from 'proton-pass-extension/app/content/injections/apps/components/ListItemIcon';
 import { PinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
 import { DropdownAction, type DropdownActions, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
@@ -44,15 +45,13 @@ export const Dropdown: FC = () => {
     useRegisterMessageHandler(IFramePortMessageType.DROPDOWN_ACTION, ({ payload }) => setState(payload));
 
     useEffect(() => {
+        if (!visible) setState(null);
+
         if (ref.current) {
             const obs = new ResizeObserver(([entry]) => resize(entry.contentRect.height));
             obs.observe(ref.current);
             return () => obs.disconnect();
         }
-    });
-
-    useEffect(() => {
-        if (!visible) setState(null);
     }, [visible]);
 
     return (
@@ -60,7 +59,7 @@ export const Dropdown: FC = () => {
             <div
                 ref={ref}
                 className="min-h-custom bg-norm relative"
-                style={{ '--min-h-custom': `${LIST_ITEM_HEIGHT}rem` }}
+                style={{ '--min-h-custom': `${DROPDOWN_MIN_HEIGHT}px` }}
             >
                 {(() => {
                     if (loading) return <CircleLoader className="absolute inset-center m-auto" />;

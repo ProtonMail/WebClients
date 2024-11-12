@@ -17,6 +17,7 @@ import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvide
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Items } from '@proton/pass/components/Item/Items';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
+import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
@@ -27,7 +28,6 @@ import { FirstChild } from '@proton/pass/components/Utils/FirstChild';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
-import { offlineResumeRequest } from '@proton/pass/store/actions/requests';
 import { selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
@@ -45,7 +45,7 @@ const MainSwitch: FC = () => {
     const authStore = useAuthStore();
     const localID = authStore?.getLocalID();
     const offline = clientOffline(app.state.status);
-    const offlineResuming = useSelector(selectRequestInFlight(offlineResumeRequest()));
+    const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
 
     const { state: expanded, toggle } = useToggle();
 
@@ -103,6 +103,7 @@ const MainSwitch: FC = () => {
                                             <Route component={Items} />
                                         </Switch>
                                     )}
+                                    <ThemeOnboardingModal />
                                 </div>
                             </div>
                         </main>

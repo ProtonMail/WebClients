@@ -3,7 +3,12 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { isActive } from '@proton/pass/lib/items/item.predicates';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { isOwnVault, isSharedVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import {
+    hasNewUserInvitesReady,
+    isOwnVault,
+    isSharedVault,
+    isWritableVault,
+} from '@proton/pass/lib/vaults/vault.predicates';
 import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -101,4 +106,8 @@ export const selectMostRecentVaultShareID = createSelector(
             defaultVault?.shareId
         );
     }
+);
+
+export const selectVaultsWithNewUserInvites = createSelector([selectOwnWritableVaults], (vaults) =>
+    vaults.filter(hasNewUserInvitesReady)
 );

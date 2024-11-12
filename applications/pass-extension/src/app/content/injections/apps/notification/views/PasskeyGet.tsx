@@ -4,12 +4,12 @@ import { createBridgeResponse } from 'proton-pass-extension/app/content/bridge/m
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
+import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import type { NotificationAction } from 'proton-pass-extension/app/content/types';
 import { type NotificationActions } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
 import { Icon, useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -70,11 +70,11 @@ const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDo
     }, [token]);
 
     return (
-        <Scroll>
+        <ScrollableItemsList increaseSurface>
             {passkeys.map((passkey, idx) => (
                 <ListItem
                     key={`${passkey.credentialId}-${idx}`}
-                    className="rounded-xl"
+                    className="rounded-none"
                     icon="pass-passkey"
                     title={passkey.name}
                     subTitle={passkey.username}
@@ -82,7 +82,7 @@ const PasskeyGetView: FC<Props> = ({ request, token, passkeys, domain: passkeyDo
                     onClick={() => authenticate(passkey)}
                 />
             ))}
-        </Scroll>
+        </ScrollableItemsList>
     );
 };
 
@@ -90,7 +90,7 @@ export const PasskeyGet: FC<Props> = (props) => {
     const { postMessage, domain } = useIFrameContext();
 
     return (
-        <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2 anime-fade-in">
+        <div className="ui-violet flex flex-column flex-nowrap *:shrink-0 justify-space-between h-full gap-2 anime-fade-in">
             <NotificationHeader
                 title={c('Info').t`Passkey sign-in`}
                 onClose={() =>
@@ -103,9 +103,10 @@ export const PasskeyGet: FC<Props> = (props) => {
                 }
             />
 
-            <div className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
-                <div className="shrink-0 px-1 text-sm">{c('Info')
-                    .t`Choose a saved passkey to sign-in to ${domain}`}</div>
+            <div className="max-w-full flex flex-auto flex-column flex-nowrap gap-2">
+                <div className="shrink-0 px-1 text-sm">
+                    {c('Info').t`Choose a saved passkey to sign-in to ${domain}`}
+                </div>
                 <WithPinUnlock>
                     {(locked, input) =>
                         locked ? (
@@ -126,8 +127,9 @@ export const PasskeyGet: FC<Props> = (props) => {
                 </WithPinUnlock>
             </div>
 
-            <div className="shrink-0 p-1 text-xs color-weak">{c('Info')
-                .t`Close this window in order to use a security key or another passkey.`}</div>
+            <div className="shrink-0 px-1 text-xs color-weak">
+                {c('Info').t`Close this window in order to use a security key or another passkey.`}
+            </div>
         </div>
     );
 };

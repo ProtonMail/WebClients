@@ -1,7 +1,8 @@
 import type { Reducer } from 'redux';
 
+import { type PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
-import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
     extraPasswordToggle,
@@ -9,12 +10,14 @@ import {
     lockCreateSuccess,
     lockSync,
     offlineToggle,
+    setDesktopSettings,
     settingsEditSuccess,
+    syncDesktopSettings,
     updatePauseListItem,
     userEvent,
 } from '@proton/pass/store/actions';
 import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
-import type { MaybeNull, Unpack } from '@proton/pass/types';
+import type { ClipboardStoreProperties, MaybeNull, Unpack } from '@proton/pass/types';
 import type {
     AutoFillSettings,
     AutoSaveSettings,
@@ -26,10 +29,12 @@ import { or } from '@proton/pass/utils/fp/predicates';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 export type SettingsState = {
+    aliasTrashAcknowledged?: boolean;
     autofill: AutoFillSettings;
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
     beta?: boolean;
+    clipboard?: ClipboardStoreProperties;
     createdItemsCount: number /* explicitly created, not including import */;
     disallowedDomains: DomainCriterias;
     extraPassword?: boolean;
@@ -41,6 +46,7 @@ export type SettingsState = {
     passkeys: PasskeySettings;
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     showUsernameField?: boolean;
+    theme?: PassThemeOption;
 };
 
 export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
@@ -60,6 +66,10 @@ export const getInitialSettings = (): ProxiedSettings => ({
     passkeys: { get: true, create: true },
     passwordOptions: null,
     showUsernameField: false,
+    /* Theme is set to undefined so we can prompt <ThemeOnboardingModal> for discovery.
+     * Once we decide to no longer display that modal (e.g theme feature is not considered new anymore)
+     * then change value to PassThemeOption.OS */
+    theme: undefined,
 });
 
 const getInitialState = (): SettingsState => ({
@@ -110,6 +120,10 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
 
     if (extraPasswordToggle.success.match(action)) {
         return partialMerge<SettingsState>(state, { extraPassword: action.payload });
+    }
+
+    if (DESKTOP_BUILD && or(setDesktopSettings.success.match, syncDesktopSettings.success.match)(action)) {
+        return partialMerge<SettingsState>(state, action.payload);
     }
 
     return state;

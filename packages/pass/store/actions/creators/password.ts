@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { type GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
 import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';

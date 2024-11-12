@@ -1,0 +1,10 @@
+#pass-sidebar {
+	.is-selected {
+		&,
+		&:active,
+		&:focus,
+		&:hover {
+			background-color: var(--navigation-current-item-background-color);
+		}
+	}
+}

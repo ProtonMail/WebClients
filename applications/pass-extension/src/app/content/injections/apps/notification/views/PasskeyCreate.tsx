@@ -7,12 +7,13 @@ import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injection
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { WithPinUnlock } from 'proton-pass-extension/app/content/injections/apps/components/PinUnlock';
+import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import type { NotificationAction } from 'proton-pass-extension/app/content/types';
 import { type NotificationActions } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
-import { Button, Scroll } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { Icon, useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -71,17 +72,17 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
         <>
             {form.values.step === 'select' && (
                 <>
-                    <div className="shrink-0 py-1 px-2">
+                    <div className="px-2">
                         {`${c('Label').t`Passkey`} • ${domain}`}
                         <span className="block text-xs color-weak">{c('Info')
                             .t`Select an existing login or create a new one.`}</span>
                     </div>
 
-                    <Scroll>
+                    <ScrollableItemsList increaseSurface>
                         {items.map(({ itemId, shareId, url, userIdentifier, name }) => (
                             <ListItem
                                 key={`${shareId}-${itemId}`}
-                                className="rounded-xl"
+                                className="rounded-none"
                                 icon="pass-passkey"
                                 title={name}
                                 subTitle={userIdentifier}
@@ -93,7 +94,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
                                 }
                             />
                         ))}
-                    </Scroll>
+                    </ScrollableItemsList>
                 </>
             )}
 
@@ -133,7 +134,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ form, loading, username
                 </>
             )}
 
-            <div className="shrink-0 flex justify-space-between">
+            <div className="flex justify-space-between">
                 <Button
                     pill
                     color="norm"
@@ -241,7 +242,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
     return (
         <div className="ui-violet flex flex-column flex-nowrap justify-space-between h-full gap-2 anime-fade-in">
             <FormikProvider value={form}>
-                <Form id={formId} className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
+                <Form id={formId} className="max-w-full flex flex-auto flex-column flex-nowrap *:shrink-0 gap-2">
                     <NotificationHeader
                         title={(() => {
                             switch (form.values.step) {
@@ -267,7 +268,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                         }
                     />
 
-                    <div className="max-w-full overflow-hidden flex flex-auto flex-column flex-nowrap gap-2">
+                    <div className="max-w-full flex flex-auto flex-column flex-nowrap gap-2">
                         <WithPinUnlock>
                             {(locked, input) =>
                                 locked ? (
@@ -285,7 +286,7 @@ export const PasskeyCreate: FC<Props> = ({ request, token, domain: passkeyDomain
                                             {input}
                                         </Card>
 
-                                        <div className="shrink-0 p-1 text-xs color-weak">{c('Info')
+                                        <div className="shrink-0 px-1 text-xs color-weak">{c('Info')
                                             .t`Close this window in order to use another passkey manager.`}</div>
                                     </div>
                                 ) : (

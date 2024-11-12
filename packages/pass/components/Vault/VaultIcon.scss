@@ -1,9 +1,18 @@
 @import '~@proton/styles/scss/lib';
 
 .pass-vault-icon {
-	color: rgb(var(--vault-icon-color));
+	color: var(--vault-icon-color);
 
 	&.background {
-		background-color: rgb(var(--vault-icon-color) / 0.16);
+		position: relative;
+	}
+
+	&.background::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-color: var(--vault-icon-color);
+		opacity: 0.16;
+		border-radius: 50%;
 	}
 }

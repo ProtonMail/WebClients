@@ -1,4 +1,4 @@
-import type { GeneratePasswordConfig } from './generator';
+import { type GeneratePasswordConfig, SeperatorOptions } from './types';
 
 /* We've removed the characters `i, o, l, I ,O ,L`  to minimize
  * the chance of confusion. For symbols we'd like to avoid those
@@ -11,16 +11,6 @@ export const digitChars = '0123456789';
 export const specialChars = '!#$%&()*+.:;<=>?@[]^';
 
 export const DEFAULT_PASSWORD_LENGTH = 20;
-
-export enum SeperatorOptions {
-    HYPHEN = '-',
-    SPACE = ' ',
-    PERIOD = '.',
-    COMMA = ',',
-    UNDERSCORE = '_',
-    NUMBER = 'NUMBER',
-    NUMBER_OR_SYMBOL = 'NUMBER_OR_SYMBOL',
-}
 
 export const DEFAULT_MEMORABLE_PW_OPTIONS: GeneratePasswordConfig<'memorable'> = {
     type: 'memorable',

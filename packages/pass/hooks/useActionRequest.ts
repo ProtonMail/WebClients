@@ -15,8 +15,8 @@ export type UseActionRequestOptions<
     SuccessAction extends WithRequest<Action, 'success', any> = any,
     FailureAction extends WithRequest<Action, 'failure', any> = any,
 > = {
-    initialLoading?: boolean;
-    initialRequestId?: string;
+    loading?: boolean;
+    requestId?: string;
     onStart?: (request: ActionRequestEntry<IntentAction>) => MaybePromise<void>;
     onSuccess?: (request: ActionRequestEntry<SuccessAction>) => MaybePromise<void>;
     onFailure?: (request: ActionRequestEntry<FailureAction>) => MaybePromise<void>;
@@ -34,8 +34,9 @@ export const useActionRequest = <
     options?: UseActionRequestOptions<ReturnType<IntentAction>, ReturnType<SuccessAction>, ReturnType<FailureAction>>
 ) => {
     const dispatch = useDispatch();
-    const [loading, setLoading] = useState(options?.initialLoading ?? false);
-    const [requestId, setRequestId] = useState<string>(options?.initialRequestId ?? '');
+    const [loading, setLoading] = useState(options?.loading ?? false);
+    const [error, setError] = useState(false);
+    const [requestId, setRequestId] = useState<string>(options?.requestId ?? '');
     const request = useSelector(selectRequest(requestId));
 
     const optionsRef = useRef(options);
@@ -43,7 +44,7 @@ export const useActionRequest = <
 
     const progress = (() => {
         if (!request) return 0;
-        return request?.status === 'start' ? request.progress ?? 0 : 100;
+        return request?.status === 'start' ? (request.progress ?? 0) : 100;
     })();
 
     useEffect(() => {
@@ -52,14 +53,17 @@ export const useActionRequest = <
         switch (request.status) {
             case 'start':
                 setLoading(true);
+                setError(false);
                 void optionsRef.current?.onStart?.(request as any);
                 break;
             case 'success':
                 setLoading(false);
+                setError(false);
                 void optionsRef.current?.onSuccess?.(request as any);
                 break;
             case 'failure':
                 setLoading(false);
+                setError(true);
                 void optionsRef.current?.onFailure?.(request as any);
                 break;
         }
@@ -81,23 +85,41 @@ export const useActionRequest = <
             },
             progress,
             loading,
+            error,
         };
     }, [request, progress, loading]);
 };
 
 type UseRequestOptions<T extends RequestFlow<any, any, any>> = {
-    initialLoading?: boolean;
-    initialRequestId?: string;
+    /** Initial loading state */
+    loading?: boolean;
+    /** Initial request parameters
+     * - Pass `IntentDTO` if request key preparator requires parameters
+     * - Pass true to start tracking immediately if no parameters needed
+     * - Omit to skip initial tracking */
+    initial?: Parameters<T['requestID']>[0] extends infer U ? (U extends void ? true : U) : never;
+    /** Called when request is initiated. Receives intent action request metadata */
     onStart?: (request: ActionRequestEntry<ReturnType<T['intent']>>) => MaybePromise<void>;
+    /** Called when request fails. Receives failure action request metadata */
     onFailure?: (request: ActionRequestEntry<ReturnType<T['failure']>>) => MaybePromise<void>;
+    /** Called when request succeeds. Receives success action request metadata */
     onSuccess?: (request: ActionRequestEntry<ReturnType<T['success']>>) => MaybePromise<void>;
 };
 
-export const useRequest = <T extends RequestFlow<any, any, any>>(actions: T, options: UseRequestOptions<T>) => {
+export const useRequest = <T extends RequestFlow<any, any, any>>(
+    actions: T,
+    { initial, ...options }: UseRequestOptions<T> = {}
+) => {
     const [data, setData] = useState<Maybe<ActionRequestEntry<ReturnType<T['success']>>['data']>>();
+
+    const requestId = (() => {
+        if (!initial) return;
+        return actions.requestID(initial === true ? undefined : initial);
+    })();
 
     const req = useActionRequest<T['intent'], T['success'], T['failure']>(actions.intent, {
         ...options,
+        requestId,
         onSuccess: (req) => {
             if (req.data) setData(req.data);
             return options?.onSuccess?.(req);

@@ -93,7 +93,13 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 });
             } else {
                 await checkConnectivity?.();
-                return authService.init({ forceLock: true, forcePersist: true });
+
+                /** Force lock only if we don't have a valid session
+                 * in-memory. When refreshing a page, the authentication
+                 * store will be re-hydrated. */
+                const session = authStore.getSession();
+                const forceLock = !authStore.validSession(session);
+                return authService.init({ forceLock, forcePersist: true });
             }
         };
 

@@ -7,6 +7,14 @@ export type MaybeArray<T> = T | T[];
 export type MaybePromise<T> = T | Promise<T>;
 export type Unpack<T> = T extends (infer U)[] ? U : T extends readonly (infer U)[] ? U : never;
 
+/** Adds a phantom type tag to a base type without affecting its runtime structure.
+ * This allows for type-level discrimination and specialization while maintaining
+ * the original type's shape */
+export type Tagged<Base, TagType> = Base & { readonly __tag__?: TagType };
+/** Conditional type that resolves to different types based on whether the input type
+ * has a specific tag. This enables type-level branching based on phantom types. */
+export type TagMatch<T, Tag, WhenTagged, WhenUntagged> = T extends { __tag__?: Tag } ? WhenTagged : WhenUntagged;
+
 export type RequiredNonNull<T, K extends keyof T = keyof T> = Omit<T, K> & {
     [P in K]-?: P extends K ? NonNullable<T[P]> : T[P];
 };

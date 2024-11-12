@@ -34,7 +34,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const canToggleStatus = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
 
     const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
-        initialRequestId: aliasDetailsRequest(aliasEmail),
+        requestId: aliasDetailsRequest(aliasEmail),
         onFailure: () => {
             dispatch(
                 notification({

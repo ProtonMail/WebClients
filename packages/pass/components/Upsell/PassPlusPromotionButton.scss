@@ -1,0 +1,9 @@
+.pass-promo--button {
+	padding-block: 0.2rem !important;
+	padding-inline: 0.3rem !important;
+	block-size: auto !important;
+
+	> span {
+		gap: 0.125rem !important;
+	}
+}

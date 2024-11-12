@@ -42,7 +42,7 @@ export const VaultIcon: FC<Props> = ({
         style={{
             '--vault-icon-color': highlighted
                 ? 'var(--interaction-norm-contrast)'
-                : VAULT_COLOR_MAP[color ?? VaultColorEnum.COLOR1],
+                : `rgb(${VAULT_COLOR_MAP[color ?? VaultColorEnum.COLOR1]})`,
             '--w-custom': rem(getIconSizePx(background ? size * 2 : size)),
             '--h-custom': rem(getIconSizePx(background ? size * 2 : size)),
         }}

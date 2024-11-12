@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
+import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import type { Draft } from '@proton/pass/store/reducers';
 import type {
+    BulkSelectionDTO,
     IdentityItemPreview,
     ItemRevision,
     ItemRevisionID,
@@ -20,20 +22,29 @@ import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import chunk from '@proton/utils/chunk';
 
 import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
 
-export const getItemKeyRevision = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
-export const getItemKey = ({ shareId, itemId }: ItemRevision) => `item-${shareId}-${itemId}`;
+const SEPERATOR = '::';
+const toKey = (...args: (string | number)[]) => args.join(SEPERATOR);
+
+export const getItemKeyRevision = ({ shareId, itemId, revision }: ItemRevision) => toKey(shareId, itemId, revision);
+
+export const getItemKey = <T extends UniqueItem>({ shareId, itemId }: T) => toKey(shareId, itemId);
+
+export const fromItemKey = (key: string): UniqueItem => {
+    const [shareId, itemId] = key.split(SEPERATOR);
+    return { itemId, shareId };
+};
+
 export const intoSelectedItem = ({ shareId, itemId }: ItemRevision): SelectedItem => ({ shareId, itemId });
 
 export const getItemActionId = (
     payload:
         | { optimisticId: string; itemId?: string; shareId: string }
         | { optimisticId?: string; itemId: string; shareId: string }
-) => `${payload.shareId}-${payload?.optimisticId ?? payload.itemId!}`;
+) => toKey(payload.shareId, payload?.optimisticId ?? payload.itemId!);
 
 export const flattenItemsByShareId = (itemsByShareId: {
     [shareId: string]: { [itemId: string]: ItemRevision };
@@ -176,8 +187,8 @@ export const getSanitizedUserIdentifiers = ({
     itemEmail,
     itemUsername,
 }: Pick<UnsafeItem<'login'>['content'], 'itemEmail' | 'itemUsername'>) => {
-    const validEmail = validateEmailAddress(itemEmail);
-    const emailUsername = validateEmailAddress(itemUsername);
+    const validEmail = PassCoreUI.is_email_valid(itemEmail);
+    const emailUsername = PassCoreUI.is_email_valid(itemUsername);
 
     if (itemUsername) {
         /* `itemEmail` is empty and `itemUsername` is a valid email: Move username to email field */
@@ -191,3 +202,13 @@ export const getSanitizedUserIdentifiers = ({
     /* If `itemEmail` is valid, keep it; otherwise, move it to username field */
     return validEmail ? { email: itemEmail, username: '' } : { email: '', username: itemEmail };
 };
+
+export const intoBulkSelection = (items: UniqueItem[]): BulkSelectionDTO =>
+    items.reduce<BulkSelectionDTO>((dto, { shareId, itemId }) => {
+        dto[shareId] = dto[shareId] ?? {};
+        dto[shareId][itemId] = true;
+        return dto;
+    }, {});
+
+export const getBulkSelectionCount = (selected: BulkSelectionDTO) =>
+    Object.values(selected).reduce((acc, items) => acc + Object.keys(items).length, 0);

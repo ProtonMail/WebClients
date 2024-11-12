@@ -54,11 +54,6 @@ const sanitizeWebpackConfig = (config) => {
         }
     });
 
-    /**
-     * TODO: verify everything works correctly when
-     * activating the getPlugins() helper from the parent
-     * webpack.config.js
-     */
     config.plugins = [new ReactRefreshWebpackPlugin({ overlay: false }), ...config.plugins];
     return config;
 };

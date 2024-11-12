@@ -1,8 +1,8 @@
-import { maxAgeMemoize } from './memo';
+import { dynMemo, maxAgeMemoize } from './memo';
 
 const asyncFn = jest.fn((value: number) => Promise.resolve(value * Math.random()));
 
-describe('maxAgeMemoize', () => {
+describe('`maxAgeMemoize`', () => {
     beforeEach(() => {
         jest.useFakeTimers();
         asyncFn.mockClear();
@@ -10,7 +10,7 @@ describe('maxAgeMemoize', () => {
 
     afterEach(() => jest.clearAllTimers());
 
-    it('should cache the result for the specified maximum age', async () => {
+    test('should cache the result for the specified maximum age', async () => {
         const memoizedFunction = maxAgeMemoize(asyncFn);
 
         const result1 = await memoizedFunction(1, { maxAge: 10 }); /* 10 seconds */
@@ -27,7 +27,7 @@ describe('maxAgeMemoize', () => {
         expect(asyncFn).toHaveBeenCalledTimes(2);
     });
 
-    it('should cache results separately for different arguments', async () => {
+    test('should cache results separately for different arguments', async () => {
         const memoizedFunction = maxAgeMemoize(asyncFn);
 
         await memoizedFunction(1, { maxAge: 10 });
@@ -47,7 +47,7 @@ describe('maxAgeMemoize', () => {
         expect(asyncFn).toHaveBeenCalledTimes(4);
     });
 
-    it('should handle multiple calls with different maxAge options', async () => {
+    test('should handle multiple calls with different maxAge options', async () => {
         const memoizedFunction = maxAgeMemoize(asyncFn);
 
         await memoizedFunction(1, { maxAge: 10 });
@@ -61,7 +61,7 @@ describe('maxAgeMemoize', () => {
         expect(asyncFn).toHaveBeenCalledTimes(2);
     });
 
-    it('should not cache a result who throwed error', async () => {
+    test('should not cache a result who throwed error', async () => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const asyncFn = jest.fn((value: number) => Promise.resolve(value * Math.random()));
         const memoizedFunction = maxAgeMemoize(asyncFn);
@@ -81,5 +81,62 @@ describe('maxAgeMemoize', () => {
         jest.advanceTimersByTime(6_000); /* advance timer below maxAge */
         await memoizedFunction(1, { maxAge: 10 });
         expect(asyncFn).toHaveBeenCalledTimes(2);
+    });
+});
+
+describe('`dynMemo`', () => {
+    const spy = jest.fn((str: string) => str.toUpperCase());
+    const memoized = dynMemo(spy);
+
+    beforeEach(() => {
+        spy.mockClear();
+        memoized.clear();
+        memoized.memo = true;
+    });
+
+    test('should memoize when `memo=true`', () => {
+        expect(memoized('test')).toBe('TEST'); // MISS
+        expect(memoized('test')).toBe('TEST'); // HIT
+
+        expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    test('should bypass cache when `memo=false`', () => {
+        memoized.memo = false;
+        expect(memoized('test')).toBe('TEST'); // MISS
+        expect(memoized('test')).toBe('TEST'); // MISS
+
+        expect(spy).toHaveBeenCalledTimes(2);
+    });
+
+    test('should clear cache when requested', () => {
+        expect(memoized('test')).toBe('TEST'); // MISS
+        memoized.clear(); // CACHE RESET
+        expect(memoized('test')).toBe('TEST'); // MISS
+
+        expect(spy).toHaveBeenCalledTimes(2);
+    });
+
+    test('should handle different inputs independently', () => {
+        expect(memoized('test1')).toBe('TEST1'); // MISS
+        expect(memoized('test2')).toBe('TEST2'); // MISS
+        expect(memoized('test1')).toBe('TEST1'); // HIT
+
+        expect(spy).toHaveBeenCalledTimes(2);
+    });
+
+    test('should respect memo flag changes', () => {
+        expect(memoized('test')).toBe('TEST'); // MISS
+        expect(memoized('test')).toBe('TEST'); // HIT
+
+        memoized.memo = false; // CACHE RESET
+        expect(memoized('test')).toBe('TEST'); // MISS
+        expect(memoized('test')).toBe('TEST'); // MISS
+
+        memoized.memo = true;
+        expect(memoized('test')).toBe('TEST'); // MISS
+        expect(memoized('test')).toBe('TEST'); // HIT
+
+        expect(spy).toHaveBeenCalledTimes(4);
     });
 });

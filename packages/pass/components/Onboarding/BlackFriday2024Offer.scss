@@ -1,0 +1,63 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-bf2024-banner {
+	--banner-background-color: #08031f;
+	--banner-ornament-size: #{em(375)};
+	--offer-background-color: rgb(250 204 21 / 1);
+	--offer-text-color: var(--text-invert);
+	--interaction-norm-contrast: white !important; /* close button */
+
+	background: var(--banner-background-color) !important;
+	color: var(--text-norm);
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-block-start: calc(-0.825 * var(--banner-ornament-size));
+		inset-inline-start: calc(65% - var(--banner-ornament-size) / 2);
+		inline-size: var(--banner-ornament-size);
+		block-size: var(--banner-ornament-size);
+		border-radius: 50%;
+		background-color: var(--primary);
+	}
+
+	&--badge {
+		background-color: var(--primary);
+	}
+
+	&--offer {
+		background-color: var(--offer-background-color);
+		color: var(--offer-text-color);
+		margin-block: 0;
+		margin-inline: 0.15em;
+	}
+
+	&--btn {
+		--btn-text-color: #08031f;
+		--btn-background-color: white;
+
+		&--deal {
+			--text-norm: var(--offer-text-color);
+			--btn-background-color: var(--offer-background-color);
+		}
+
+		&#{&} {
+			&,
+			&:hover,
+			&:focus {
+				background: var(--btn-background-color) !important;
+				border: 0;
+				color: var(--btn-text-color) !important;
+				outline: 2px solid rgb(255 255 255 / 0.3) !important;
+			}
+		}
+	}
+}
+
+.pass-light {
+	.pass-bf2024-banner {
+		--banner-background-color: #5817d1;
+
+		color: var(--text-invert);
+	}
+}

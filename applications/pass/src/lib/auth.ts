@@ -5,9 +5,10 @@ import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/clie
 import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB } from 'proton-pass-web/lib/database';
-import { onboarding } from 'proton-pass-web/lib/onboarding';
+import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { clearUserLocalData, localGarbageCollect } from 'proton-pass-web/lib/storage';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
+import { getThemeForLocalID } from 'proton-pass-web/lib/theme';
 
 import type { CreateNotificationOptions } from '@proton/components';
 import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
@@ -122,7 +123,10 @@ export const createAuthService = ({
                 /** Configure the authentication store partially in order to
                  * hydrate the userID and offline salts before resuming session. */
                 authStore.setSession(persistedSession);
+
+                /** Apply user preferences early */
                 core.i18n.setLocale().catch(noop);
+                core.setTheme?.(await getThemeForLocalID(persistedSession.LocalID));
 
                 const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
                 const onlineAndSessionReady = getOnline() && !cookieUpgrade;
@@ -219,7 +223,7 @@ export const createAuthService = ({
              * to index their storage keys in the web-app. We must trigger
              * their clean-up functions before the auth store is cleared
              * in the `onLogoutComplete` hook. */
-            onboarding.reset();
+            spotlight.reset();
             telemetry.stop();
             B2BEvents.stop();
 

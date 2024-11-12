@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { type ActivityProbe, useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
-import { offlineResumeRequest } from '@proton/pass/store/actions/requests';
+import { offlineResume } from '@proton/pass/store/actions';
 import { selectLockTTL, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { Callback, MaybeNull } from '@proton/pass/types';
 import { epochToMs } from '@proton/pass/utils/time/epoch';
@@ -21,7 +21,7 @@ type Props = { onProbe: Callback };
 export const LockProbeProvider: FC<PropsWithChildren<Props>> = ({ onProbe, children }) => {
     const probe = useActivityProbe();
     const lockTTL = useSelector(selectLockTTL);
-    const offlineResuming = useSelector(selectRequestInFlight(offlineResumeRequest()));
+    const offlineResuming = useSelector(selectRequestInFlight(offlineResume.requestID()));
     const online = useConnectivity();
 
     useVisibleEffect(

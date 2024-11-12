@@ -30,7 +30,7 @@ export const OnboardingCard: FC<OnboardingCardProps> = ({
         color="weak"
         onClick={onClick}
         className={clsx(
-            'flex items-center flex-nowrap onboarding-card relative border border-norm rounded-xl w-full',
+            'flex items-center flex-nowrap onboarding-card relative border border-weak rounded-xl w-full',
             className
         )}
     >

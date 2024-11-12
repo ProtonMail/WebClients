@@ -1,14 +1,15 @@
-import { type FC } from 'react';
+import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { VAULT_COLOR_MAP } from '@proton/pass/components/Vault/constants';
+import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
+import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { useItemDrop } from '@proton/pass/hooks/useItemDrag';
+import { intoBulkSelection } from '@proton/pass/lib/items/item.utils';
 import { selectTrashedItems } from '@proton/pass/store/selectors';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
+import type { UniqueItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
-
-import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 
 type Props = {
     dense?: boolean;
@@ -20,17 +21,18 @@ type Props = {
 
 export const TrashItem: FC<Props> = ({ dense, selected, handleTrashRestore, handleTrashEmpty, onSelect }) => {
     const count = useSelector(selectTrashedItems).length;
+    const { trashMany } = useItemsActions();
+
+    const onDrop = useCallback((items: UniqueItem[]) => trashMany(intoBulkSelection(items)), []);
+    const { dragOver, dragProps } = useItemDrop(onDrop);
 
     return (
         <DropdownMenuButton
             label={c('Label').t`Trash`}
             icon="trash"
             onClick={onSelect}
-            className={clsx(!dense && 'py-3')}
-            parentClassName={clsx('pass-vault-submenu-vault-item w-full', selected && 'selected')}
-            style={{
-                '--vault-icon-color': VAULT_COLOR_MAP[VaultColor.COLOR_UNSPECIFIED],
-            }}
+            className={clsx((selected || dragOver) && 'is-selected', !dense && 'py-3')}
+            parentClassName="pass-vault-submenu-vault-item w-full"
             quickActions={[
                 <DropdownMenuButton
                     key="trash-restore"
@@ -48,6 +50,7 @@ export const TrashItem: FC<Props> = ({ dense, selected, handleTrashRestore, hand
                 />,
             ]}
             extra={<span className="pass-vault--count shrink-0 color-weak mx-1">{count}</span>}
+            {...dragProps}
         />
     );
 };

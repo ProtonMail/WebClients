@@ -5,19 +5,20 @@ import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import {
-    shareAccessOptionsRequest,
     shareEditMemberRoleRequest,
     shareLeaveRequest,
     shareRemoveMemberRequest,
 } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
+import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
-import type { Share, ShareAccessKeys, ShareRole } from '@proton/pass/types';
+import type { SelectedShare, Share, ShareAccessKeys, ShareRole } from '@proton/pass/types';
 import type {
     ShareAccessOptions,
     ShareEditMemberAccessIntent,
     ShareRemoveMemberAccessIntent,
 } from '@proton/pass/types/data/shares.dto';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const shareEditSync = createAction('share::edit:sync', (payload: { id: string; share: Share }) =>
@@ -131,25 +132,18 @@ export const shareLeaveFailure = createAction(
     )
 );
 
-export const getShareAccessOptionsIntent = createAction('share::access-options::intent', (shareId: string) =>
-    withRequest({ status: 'start', id: shareAccessOptionsRequest(shareId) })({ payload: { shareId } })
-);
-
-export const getShareAccessOptionsSuccess = createAction(
-    'share::access-options::success',
-    withRequestSuccess((payload: ShareAccessOptions) => ({ payload }), { maxAge: 15 })
-);
-
-export const getShareAccessOptionsFailure = createAction(
-    'share::access-options::failure',
-    withRequestFailure((error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Could not resolve share members`,
-            error,
-        })({ payload: {}, error })
-    )
-);
+export const getShareAccessOptions = requestActionsFactory<SelectedShare, ShareAccessOptions>('share::access-options')({
+    key: prop('shareId'),
+    success: { config: { maxAge: 15 } },
+    failure: {
+        prepare: (error: unknown, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Could not resolve share members`,
+                error,
+            })({ payload, error }),
+    },
+});
 
 export const shareAccessChange = createAction('share::access::change', (payload: Pick<Share, ShareAccessKeys>) =>
     withCache({ payload })

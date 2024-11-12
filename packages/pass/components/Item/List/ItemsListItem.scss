@@ -41,9 +41,10 @@
 }
 
 .button.is-active.pass-item-list--item {
-	background-color: var(--interaction-norm-minor-1);
+	background-color: var(--interaction-weak);
 }
 
 .pass-item-list--item--pin {
 	background-color: var(--interaction-norm-major-1);
+	color: var(--interaction-weak);
 }

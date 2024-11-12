@@ -9,18 +9,32 @@ import { ListItemIcon, type ListItemIconProps } from './ListItemIcon';
 import './ListItem.scss';
 
 export const LIST_ITEM_HEIGHT = 3.75; /* rem */
+export const LIST_MAX_VISIBLE_ITEMS = 3;
+export const LIST_MAX_HEIGHT = LIST_MAX_VISIBLE_ITEMS * LIST_ITEM_HEIGHT;
 
-export const ListItem: FC<
-    {
-        autogrow?: boolean;
-        className?: string;
-        disabled?: boolean;
-        subTheme?: SubTheme;
-        subTitle: ReactNode;
-        title?: ReactNode;
-        onClick?: () => void;
-    } & ListItemIconProps
-> = ({ onClick, className, title, subTitle, icon, url, disabled, autogrow, subTheme = SubTheme.VIOLET }) => (
+type Props = {
+    action?: ReactNode;
+    autogrow?: boolean;
+    className?: string;
+    disabled?: boolean;
+    subTheme?: SubTheme;
+    subTitle: ReactNode;
+    title?: ReactNode;
+    onClick?: () => void;
+} & ListItemIconProps;
+
+export const ListItem: FC<Props> = ({
+    action,
+    onClick,
+    className,
+    title,
+    subTitle,
+    icon,
+    url,
+    disabled,
+    autogrow,
+    subTheme = SubTheme.VIOLET,
+}) => (
     <DropdownMenuButton
         className={clsx(
             'pass-injected-dropdown--item text-left',
@@ -45,6 +59,7 @@ export const ListItem: FC<
                     {subTitle}
                 </span>
             </div>
+            {action && <div>{action}</div>}
         </div>
     </DropdownMenuButton>
 );

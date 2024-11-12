@@ -6,23 +6,19 @@ import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
 import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
-import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
+import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
+import { SpotlightMessage, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
 import clsx from '@proton/utils/clsx';
 
 import './Welcome.scss';
-
-const brandNameJSX = (
-    <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '1.75rem' }} key="brand" alt="" />
-);
 
 export const Welcome: FC = () => {
     const [pendingAccess, setPendingAccess] = useState(false);
@@ -31,8 +27,8 @@ export const Welcome: FC = () => {
         useCallback(({ status }) => {
             if (clientReady(status)) {
                 void sendMessage.onSuccess(
-                    pageMessage({ type: WorkerMessageType.ONBOARDING_REQUEST }),
-                    async ({ message }) => setPendingAccess(message === OnboardingMessage.PENDING_SHARE_ACCESS)
+                    pageMessage({ type: WorkerMessageType.SPOTLIGHT_REQUEST }),
+                    async ({ message }) => setPendingAccess(message === SpotlightMessage.PENDING_SHARE_ACCESS)
                 );
             }
         }, [])
@@ -54,13 +50,19 @@ export const Welcome: FC = () => {
                                     alt={PASS_APP_NAME}
                                 />
                             }
-                            <span>{brandNameJSX}</span>
+                            <span>
+                                <PassTextLogo
+                                    key="pass-text-logo"
+                                    className="pass-lobby--brand-text ml-2 shrink-0 logo"
+                                />
+                            </span>
                         </div>
 
                         <div className={clsx('anime-reveal', !pendingAccess && 'anime-reveal--hidden')}>
                             {pendingAccess && (
                                 <SpotlightContent
-                                    type="default"
+                                    type={SpotlightMessage.NOOP}
+                                    mode="default"
                                     className="mb-6"
                                     id="pending"
                                     icon={() => (

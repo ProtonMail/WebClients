@@ -1,0 +1,66 @@
+:root,
+.ui-standard {
+    --primary: #8a6eff;
+    --primary-contrast: #191927;
+
+    --signal-danger: #cc2d4f;
+    --signal-warning: #e65200;
+    --signal-success: #007b58;
+    --signal-info: #00afe6;
+
+    --text-norm: #2b2442;
+    --text-weak: #52527a;
+    --text-hint: #999999;
+    --text-disabled: #adadad;
+    --text-invert: #ffffff;
+
+    --field-norm: #ffffff;
+    --field-disabled: #d0d3da;
+
+    --border-norm: #9994d1;
+    --border-weak: #e3dffa;
+
+    --background-norm: #fbf9fe;
+    --background-weak: #ffffff;
+    --background-strong: #f4f0fe;
+    --background-invert: black;
+
+    --interaction-norm: #5817d1;
+    --interaction-weak: #ece5ff;
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(194 194 194 / 0.2);
+    --interaction-default-active: rgb(194 194 194 / 0.4);
+
+    --shadow-norm-opacity: 0.16;
+    --shadow-raised-opacity: 0.18;
+    --shadow-lifted-opacity: 0.2;
+
+    --backdrop-norm: rgb(0 0 0 / 0.15);
+
+    --optional-field-placeholder-color: var(--text-weak);
+    --optional-field-background-color: #ffffff;
+    --optional-navigation-current-item-background-color: #ffffff;
+
+    --focus-outline: var(--interaction-norm-major-2);
+    --focus-ring: var(--interaction-norm-minor-1);
+
+    --search-field-focus-background: #ffffff;
+
+    /* Vault colors */
+    --vault-unspecified: 140 140 147;
+    --vault-custom: 136 73 255;
+    --vault-heliotrope: 136 73 255;
+    --vault-mauvelous: 255 73 73;
+    --vault-marigold-yellow: 204 98 0;
+    --vault-de-york: 0 102 120;
+    --vault-jordy-blue: 59 136 252;
+    --vault-lavender-magenta: 221 17 176;
+    --vault-chestnut-rose: 203 1 38;
+    --vault-porsche: 255 122 0;
+    --vault-mercury: 117 117 117;
+    --vault-water-leaf: 20 154 161;
+
+    --pass-scroll-shadow-color: rgb(14 14 14 / 0.1);
+    --pass-lobby-background-color: radial-gradient(61.86% 61.86% at 50% 0%, #f6f5f8 0%, #f3eeff 100%), #f6f5f8;
+}

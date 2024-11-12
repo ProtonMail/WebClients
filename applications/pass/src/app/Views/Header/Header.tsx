@@ -1,6 +1,7 @@
 import { type FC, type ReactElement, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { spotlight as spotlightService } from 'proton-pass-web/lib/spotlight';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -13,10 +14,8 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import { useOnboardingMessages } from '@proton/pass/hooks/useOnboardingMessages';
-import { type ItemType, OnboardingMessage } from '@proton/pass/types';
-
-import { onboarding } from '../../../lib/onboarding';
+import { useSpotlightMessages } from '@proton/pass/hooks/useSpotlightMessages';
+import { type ItemType, SpotlightMessage } from '@proton/pass/types';
 
 type Props = { hamburger?: ReactElement; searchable?: boolean; title?: string };
 
@@ -25,19 +24,29 @@ export const Header: FC<Props> = ({ hamburger }) => {
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
     const spotlight = useSpotlight();
-    const definitions = useOnboardingMessages();
+    const definitions = useSpotlightMessages();
 
     useEffect(() => {
-        const messageType = onboarding.getMessage().message;
-        if (messageType === OnboardingMessage.PENDING_SHARE_ACCESS) spotlight.setPendingShareAccess(true);
-        else if (messageType) spotlight.setOnboardingMessage(definitions[messageType] ?? null);
+        const type = spotlightService.getMessage().message;
+
+        switch (type) {
+            case null:
+                break;
+            case SpotlightMessage.PENDING_SHARE_ACCESS:
+                spotlight.setPendingShareAccess(true);
+                break;
+            default:
+                const definition = definitions[type];
+                if (definition) spotlight.setSpotlight(definition);
+                break;
+        }
     }, []);
 
     return (
         <Switch>
             <Route path={getLocalPath('monitor')}>
                 {(subRoute) => (
-                    <CoreHeader className="border-bottom h-auto p-2">
+                    <CoreHeader className="border-bottom border-weak h-auto p-2">
                         <div className="flex items-center gap-2">
                             {hamburger}
                             <MonitorHeader {...subRoute} />
@@ -47,7 +56,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
             </Route>
 
             <Route path={getLocalPath('settings')}>
-                <CoreHeader className="border-bottom h-auto p-2">
+                <CoreHeader className="border-bottom border-weak h-auto p-2">
                     <div className="flex items-center gap-2">
                         {hamburger}
                         <Button
@@ -72,7 +81,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
 
             <Route>
                 <>
-                    <CoreHeader className="border-bottom h-auto p-2">
+                    <CoreHeader className="border-bottom border-weak h-auto p-2">
                         <div className="flex items-center gap-x-2 w-full">
                             {hamburger}
                             <SearchBar initial={filters.search} disabled={matchOnboarding} />

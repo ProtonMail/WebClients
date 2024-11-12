@@ -15,18 +15,12 @@ import clsx from '@proton/utils/clsx';
 
 type SecureLinkButtonProps = {
     className?: string;
-    activeClassName?: string;
     parentClassName?: string;
     onClick: () => void;
 };
 
-export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
-    className,
-    activeClassName,
-    parentClassName,
-    onClick,
-}) => {
-    const isActive = useRouteMatch(getLocalPath('secure-links'));
+export const SecureLinkButton: FC<SecureLinkButtonProps> = ({ className, parentClassName, onClick }) => {
+    const isSelected = useRouteMatch(getLocalPath('secure-links'));
     const spotlight = useSpotlight();
     const passPlan = useSelector(selectPassPlan);
     const free = passPlan === UserPassPlan.FREE;
@@ -34,7 +28,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
     return (
         <DropdownMenuButton
             icon="link"
-            className={clsx(className, isActive && activeClassName)}
+            className={clsx(className, isSelected && 'is-selected')}
             label={c('Action').t`Secure links`}
             onClick={
                 free
@@ -46,7 +40,7 @@ export const SecureLinkButton: FC<SecureLinkButtonProps> = ({
                     : onClick
             }
             parentClassName={parentClassName}
-            extra={free && <PassPlusPromotionButton />}
+            extra={free && <PassPlusPromotionButton style={{ '--background-norm': 'var(--background-strong)' }} />}
         />
     );
 };

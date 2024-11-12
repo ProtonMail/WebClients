@@ -1,5 +1,5 @@
 import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
-import { DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
+import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
@@ -63,7 +63,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
                 left: boxLeft + width - DROPDOWN_WIDTH,
             };
         },
-        dimensions: () => ({ width: DROPDOWN_WIDTH, height: MIN_DROPDOWN_HEIGHT }),
+        dimensions: () => ({ width: DROPDOWN_WIDTH, height: DROPDOWN_MIN_HEIGHT }),
     });
 
     /* if the dropdown is opened while the field is being animated
@@ -122,7 +122,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
      * re-injecting for each field - opening the dropdown involves
      * passing the actual field handle to attach it to
      * Dropdown opening may be automatically triggered on initial
-     * page load with a positive ifion : ensure the iframe is
+     * page load with a positive detection : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
     const open = (request: DropdownRequest): Promise<void> =>
         iframe
