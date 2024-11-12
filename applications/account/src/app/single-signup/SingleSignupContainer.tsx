@@ -82,9 +82,10 @@ interface Props {
     onBack?: () => void;
     clientType: CLIENT_TYPES;
     metaTags: MetaTags;
+    onPreSubmit?: () => Promise<void>;
 }
 
-const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productParam }: Props) => {
+const SingleSignupContainer = ({ onPreSubmit, metaTags, clientType, loader, onLogin, productParam }: Props) => {
     const ktActivation = useKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
@@ -583,6 +584,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                     ktActivation,
                                 };
 
+                                await onPreSubmit?.();
                                 const result = await handleCreateUser({
                                     cache,
                                     api: silentApi,

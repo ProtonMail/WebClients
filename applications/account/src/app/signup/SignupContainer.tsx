@@ -122,6 +122,7 @@ interface Props {
     clientType: CLIENT_TYPES;
     loginUrl: string;
     metaTags: MetaTags;
+    onPreSubmit?: () => Promise<void>;
 }
 
 const SignupContainer = ({
@@ -134,6 +135,7 @@ const SignupContainer = ({
     clientType,
     productParam,
     loginUrl,
+    onPreSubmit,
 }: Props) => {
     const { APP_NAME } = useConfig();
 
@@ -688,6 +690,7 @@ const SignupContainer = ({
 
                         try {
                             const validateFlow = createFlow();
+                            await onPreSubmit?.();
                             await startUnAuthFlow();
                             const signupActionResponse = await handleCreateAccount({
                                 cache,

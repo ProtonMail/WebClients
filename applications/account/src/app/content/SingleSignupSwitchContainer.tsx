@@ -10,7 +10,6 @@ import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/pe
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getHas2024OfferCoupon } from '@proton/shared/lib/helpers/subscription';
-import { useFlag } from '@proton/unleash';
 
 import SignupContainer from '../signup/SignupContainer';
 import { getSignupMeta } from '../signup/signupPagesJson';
@@ -34,6 +33,7 @@ interface Props {
     metaTags: MetaTags;
     paths: Paths;
     onBack?: () => void;
+    onPreSubmit?: () => Promise<void>;
 }
 
 // Always enabled for these apps
@@ -60,8 +60,8 @@ const SingleSignupSwitchContainer = ({
     metaTags,
     paths,
     onBack,
+    onPreSubmit,
 }: Props) => {
-    const singleSignupEnabled = useFlag('SingleSignup');
     const location = useLocation();
 
     const renderSingleSignup =
@@ -70,8 +70,7 @@ const SingleSignupSwitchContainer = ({
         singlePageSignupPaths.has(location.pathname as any) ||
         singlePageSignupPlans.has(searchParams.get('plan') as any) ||
         getHas2024OfferCoupon(searchParams.get('coupon')) ||
-        searchParams.get('mode') === 'sps' ||
-        singleSignupEnabled;
+        searchParams.get('mode') === 'sps';
 
     if (renderSingleSignup) {
         return (
@@ -88,6 +87,7 @@ const SingleSignupSwitchContainer = ({
                 onLogin={onLogin}
                 fork={fork}
                 onBack={onBack}
+                onPreSubmit={onPreSubmit}
             />
         );
     }
@@ -103,6 +103,7 @@ const SingleSignupSwitchContainer = ({
                 toAppName={toAppName}
                 onLogin={onLogin}
                 onBack={onBack}
+                onPreSubmit={onPreSubmit}
             />
         </UnAuthenticated>
     );
