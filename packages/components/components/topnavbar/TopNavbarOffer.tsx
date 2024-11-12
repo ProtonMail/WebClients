@@ -28,7 +28,7 @@ interface Props {
 }
 
 const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: Props) => {
-    const [welcomeFlags] = useWelcomeFlags();
+    const { welcomeFlags } = useWelcomeFlags();
     const onceRef = useRef(false);
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();

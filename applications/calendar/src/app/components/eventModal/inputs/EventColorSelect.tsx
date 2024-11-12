@@ -32,7 +32,7 @@ interface Props {
 const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Props) => {
     const [user] = useUser();
     const hasPaidMail = user.hasPaidMail;
-    const [{ isWelcomeFlow }] = useWelcomeFlags();
+    const { welcomeFlags: { isWelcomeFlow } } = useWelcomeFlags();
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const color = useMemo(() => {
         // If free user, we always display the calendar color, otherwise we display the event color if set

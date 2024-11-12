@@ -54,7 +54,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const getUserKeys = useGetUserKeys();
     const getMessageCounts = useGetMessageCounts();
     const api = useApi();
-    const [welcomeFlags] = useWelcomeFlags();
+    const { welcomeFlags } = useWelcomeFlags();
     const { isESEnabledInbox } = useISESEnabledElectron();
     const { feature: esAutomaticBackgroundIndexingFeature } = useFeature(FeatureCode.ESAutomaticBackgroundIndexing);
     const { isSearch, page } = parseSearchParams(history.location);

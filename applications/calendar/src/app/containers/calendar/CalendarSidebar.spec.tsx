@@ -78,7 +78,7 @@ jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({
 
 jest.mock('@proton/account/welcomeFlags/index', () => ({
     __esModule: true,
-    useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
+    useWelcomeFlags: jest.fn(() => ({ welcomeFlags: { isWelcomeFlow: false } })),
 }));
 
 jest.mock('@proton/account/userSettings/hooks', () => ({

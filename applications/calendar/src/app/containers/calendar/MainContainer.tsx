@@ -57,7 +57,7 @@ const MainContainer = () => {
     }, [memoedCalendars]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);
 
-    const [{ isWelcomeFlow, isDone }, setWelcomeFlagsDone] = useWelcomeFlags();
+    const { welcomeFlags: { isDone, isWelcomeFlow }, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
 
     const [hasCalendarToGenerate, setHasCalendarToGenerate] = useState(() => {
         return ownedPersonalCalendars.length === 0;
