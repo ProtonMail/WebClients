@@ -1729,6 +1729,9 @@
       "Integrated 2FA authenticator": [
         "Autenticador 2FA integrado"
       ],
+      "One-time payment, lifetime deal": [
+        "Un solo pago y una oferta de por vida"
+      ],
       "Online document editor": [
         "Editor de documentos en línea"
       ],
@@ -1764,8 +1767,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Los descuentos se basan en los precios mensuales estándar."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Si compra Pass Family o Unlimited, su suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
@@ -1782,8 +1791,14 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Un solo pago de ${ amount }"
+      ],
       "for ${ durationDeal }": [
         "durante ${ durationDeal }"
+      ],
+      "forever": [
+        "para siempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
@@ -2217,6 +2232,9 @@
       "${ users } user": [
         "${ users } usuario",
         "${ users } usuarios"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mes",
@@ -6670,6 +6688,9 @@
         "${ numberOfNonPrivateKeys } archivo cargado es una clave privada inválida. Verifique e intente de nuevo.",
         "${ numberOfNonPrivateKeys } archivos cargados son claves privadas inválidas. Verifique e intente de nuevo."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -9230,6 +9251,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Le redirigiremos a ${ destination } después de iniciar sesión."
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } premium features if you cancel your subscription.": [
+        "Mantendrá el acceso lifetime a las funciones premium de ${ PASS_APP_NAME } si cancela la suscripción."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderá el acceso a las funciones de ${ planTitle } en esta fecha."
       ],
@@ -9499,6 +9523,9 @@
       ],
       "Other": [
         "Otro"
+      ],
+      "Product": [
+        "Producto"
       ],
       "Refund": [
         "Reembolso"
@@ -11789,6 +11816,9 @@
         "Historial de ${ options } día de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
       ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de por vida de ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email"
@@ -11846,6 +11876,9 @@
       ],
       "Administration Panel": [
         "Panel de administración"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcionalidades avanzadas de alias (potenciado por SimpleLogin)"
       ],
       "Advanced network security": [
         "Seguridad de red avanzada"
@@ -13719,6 +13752,12 @@
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Funciones de alias avanzadas (desarrollado por SimpleLogin)"
+      ],
+      "One-time payment, lifetime deal": [
+        "Un solo pago y una oferta de por vida"
+      ],
+      "Team policies": [
+        "Políticas de equipo"
       ]
     },
     "PassFamilyPlan2024": {
@@ -16022,6 +16061,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Pasará a un plan inferior al finalizar el ciclo de facturación."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de por vida"
       ]
     },
     "Subscription price": {
@@ -18433,7 +18477,7 @@
     },
     "unprivatization": {
       "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
-        "**Aadministradorcceso de administrador pendiente:** Enviamos una petición a este usuario para que cualquier administrador gestione su cuenta."
+        "**Acceso de administrador pendiente:** Enviamos una petición a este usuario para que cualquier administrador gestione su cuenta."
       ],
       "Administrator access enabled": [
         "Se activó el acceso de administrador."

@@ -554,6 +554,9 @@
       "Remove this participant": [
         "Esborra aquest participant"
       ],
+      "Remove zoom meeting": [
+        "Elimina la reunió de Zoom"
+      ],
       "Report a problem": [
         "Notifica un problema"
       ],
@@ -721,6 +724,9 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Milloreu a ${ BRAND_NAME } Unlimited"
+      ],
+      "Upgrade to Mail Plus": [
+        "Millora al pla Mail Plus"
       ],
       "Upload picture": [
         "Carrega la imatge"
@@ -1093,6 +1099,9 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "durant ${ durationDeal }"
+      ],
+      "forever": [
+        "per sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
@@ -1472,6 +1481,9 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total per ${ n } mes",
@@ -2583,6 +2595,9 @@
       "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
         "Codifiqueu els esdeveniments per colors per a facilitar l'organització diària, controlar el temps i la priorització de tasques."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Creeu una reunió Zoom i afegiu les informacions de participació al vostre esdeveniment en un clic."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "S'estan desxifrant els contactes… Això pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
       ],
@@ -3042,6 +3057,9 @@
       ],
       "Failed to get original occurrence in series": [
         "No s'ha pogut obtenir l'ocurrència d'origen de la sèrie."
+      ],
+      "Failed to load oauth modal.": [
+        "Error en carregar la finestra OAuth"
       ],
       "First name is too long": [
         "El nom és massa llarg."
@@ -3560,6 +3578,11 @@
         "Necessiteu tenir un calendari personal actiu per importar esdeveniments"
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "El nom a mostrar no pot estar buit."
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "No s'ha seleccionat cap imatge"
@@ -3902,6 +3925,9 @@
       ],
       "Less details": [
         "Menys detalls"
+      ],
+      "Meeting host:": [
+        "Organitzador de la reunió:"
       ],
       "Meeting link:": [
         "Enllaç de la reunió:"
@@ -6431,6 +6457,9 @@
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
       ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de per vida de ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
@@ -7514,6 +7543,9 @@
       "${ n } user account": [
         "${ n } compte d'usuari",
         "${ n } comptes d'usuari"
+      ],
+      "Activity log": [
+        "Registre d'activitats"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8412,9 +8444,18 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Ara podeu veure quan estan lliures els participants per assistir a la vostra reunió."
+      ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Creeu i afegiu fàcilment enllaços de videotrucades als vostres esdeveniments."
+      ],
+      "Video conferencing is here!": [
+        "La videoconferència és aquí!"
       ]
     },
     "sso": {
+      "Sign in": [
+        "Inicia la sessió"
+      ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
       ]
@@ -8595,6 +8636,11 @@
         "El vostre pla es va comprar mitjançant una aplicació d'iOS. Per a fer-hi canvis o actualitzar els detalls del pagament, cal que aneu a l'App Store d'Apple."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de per vida"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
@@ -8729,6 +8775,9 @@
       ],
       "Folders, labels and filters": [
         "Carpetes, etiquetes i filtres"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
       ],
       "Helping activists in Hong Kong": [
         "Ajuda per als activistes a Hong Kong"
@@ -9456,6 +9505,9 @@
       ],
       "Get the ${ appName[APP_NAME] } apps": [
         "Obteniu les aplicacions ${ appName[APP_NAME] }"
+      ],
+      "Get Zooming faster": [
+        "Obteniu Zoom més ràpidament"
       ],
       "Gift": [
         "Regal"
@@ -10276,9 +10328,26 @@
         "Cada any, ${ untilString }"
       ]
     },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Afegeix una reunió de Zoom"
+      ],
+      "Adding conferencing details": [
+        "Afegint els detalls de la conferència"
+      ],
+      "Loading Zoom configuration": [
+        "Càrrec de la configuració de Zoom"
+      ]
+    },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Uniu-vos a la reunió de Zoom"
+      ],
       "Meeting ID:": [
         "Identificador de la reunió:"
+      ],
+      "Passcode:": [
+        "Codi d'accés:"
       ]
     }
   }

@@ -561,6 +561,9 @@
       "Sign out": [
         "Tanca la sessió"
       ],
+      "Sign up": [
+        "Crea un compte"
+      ],
       "Skip verification": [
         "Omet la verificació"
       ],
@@ -923,6 +926,9 @@
       "for ${ durationDeal }": [
         "durant ${ durationDeal }"
       ],
+      "forever": [
+        "per sempre"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
       ]
@@ -1112,6 +1118,9 @@
       "${ users } user": [
         "${ users } usuari",
         "${ users } usuaris"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total per ${ n } mes",
@@ -2123,6 +2132,11 @@
         "Factura vençuda"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
+      ]
+    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "El 2FA afegeix una capa de seguretat extra, impedint l'accés no autoritzat."
@@ -2177,11 +2191,6 @@
       ],
       "Your account and data recovery methods are set.": [
         "El compte i els mètodes de recuperació de dades estan definits."
-      ]
-    },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3022,6 +3031,11 @@
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "El nom a mostrar no pot estar buit."
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "No s'ha seleccionat cap imatge"
@@ -3640,6 +3654,9 @@
         "${ contactsLength } contacte",
         "${ contactsLength } contactes"
       ],
+      "${ DOCS_SHORT_APP_NAME } in": [
+        "${ DOCS_SHORT_APP_NAME } a"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
@@ -3831,6 +3848,9 @@
         "Crea ${ calendarsToBeCreatedCount } calendari",
         "Crea ${ calendarsToBeCreatedCount } calendaris"
       ],
+      "Create a copy to edit": [
+        "Crea una còpia per editar"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
       ],
@@ -3890,6 +3910,9 @@
       ],
       "Document moved to trash": [
         "S'ha mogut el document a la paperera."
+      ],
+      "Document owner has the password": [
+        "El propietari del document té la contrasenya."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "No veieu res? Recordeu desactivar els bloquejadors de finestres emergents."
@@ -4166,6 +4189,9 @@
       "Monitor accounts": [
         "Supervisar els comptes"
       ],
+      "Most recent": [
+        "Més recent"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
@@ -4229,6 +4255,12 @@
       ],
       "Organization size": [
         "Mida de l'organització"
+      ],
+      "Owned by me": [
+        "Em pertany"
+      ],
+      "Owned by others": [
+        "Pertany a altres"
       ],
       "Owner": [
         "Propietari"
@@ -5688,23 +5720,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Comenceu per ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Comenceu des de ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Elimina el compte"
@@ -5726,6 +5741,23 @@
       ],
       "Switch plan": [
         "Canvia de pla"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Comenceu per ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Comenceu des de ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Milloreu a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -5794,6 +5826,9 @@
       "${ numberOfUsers } user": [
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
+      ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de per vida de ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
@@ -6809,6 +6844,9 @@
       "${ n } user account": [
         "${ n } compte d'usuari",
         "${ n } comptes d'usuari"
+      ],
+      "Activity log": [
+        "Registre d'activitats"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7618,6 +7656,9 @@
       ]
     },
     "sso": {
+      "Sign in": [
+        "Inicia la sessió"
+      ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
       ]
@@ -7793,6 +7834,11 @@
         "El vostre pla es va comprar mitjançant una aplicació d'iOS. Per a fer-hi canvis o actualitzar els detalls del pagament, cal que aneu a l'App Store d'Apple."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de per vida"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Per ${ totalPrice }"
@@ -7853,6 +7899,9 @@
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails } adreça de correu electrònic",
         "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
       ]
     },
     "Subscription renewal state": {
@@ -8514,6 +8563,9 @@
       ],
       "The link expired": [
         "L'enllaç ha caducat"
+      ],
+      "This document is password protected": [
+        "El document està protegit per contrasenya."
       ],
       "Unlock contacts groups": [
         "Desbloqueja grups de contactes"
