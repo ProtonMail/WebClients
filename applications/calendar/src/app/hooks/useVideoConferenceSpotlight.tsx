@@ -14,7 +14,7 @@ const useVideoConferenceSpotlight = () => {
     const { viewportWidth } = useActiveBreakpoint();
     const [organization] = useOrganization();
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
-    const [{ isDone: hasUserFinishedWelcomeFlow }] = useWelcomeFlags();
+    const { welcomeFlags: { isDone: hasUserFinishedWelcomeFlow } } = useWelcomeFlags();
     const userAccountHasMoreThanTwoDays = new Date() > addDays(fromUnixTime(user.CreateTime), 2);
     const hasAccessToZoomIntegration =
         isZoomIntegrationEnabled && user.hasPaidMail && organization?.Settings.VideoConferencingEnabled;

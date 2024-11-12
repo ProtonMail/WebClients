@@ -30,7 +30,7 @@ import { WelcomeStep, WelcomeStepButtons } from './steps/WelcomeStep';
 
 export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
     const api = useApi();
-    const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+    const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
     const [userSettings] = useUserSettings();
 
     const { isLoading: isOnboardingLoading, hasPendingExternalInvitations } = useOnboarding();

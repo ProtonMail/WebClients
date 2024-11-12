@@ -19,7 +19,7 @@ import { DriveOnboardingModal } from './DriveOnboardingModal';
 import { DriveOnboardingV2Modal } from './DriveOnboardingV2Modal';
 
 const DriveStartupModals = () => {
-    const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+    const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
     const isOnboardingV2 = useFlag('DriveWebOnboardingV2');
 
     // Drive onboarding V2

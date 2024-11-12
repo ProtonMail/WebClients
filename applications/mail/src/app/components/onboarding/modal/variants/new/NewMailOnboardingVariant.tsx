@@ -17,6 +17,7 @@ import OnboardingWelcomeStep from './steps/OnboardingWelcomeStep';
 interface Props {
     hideDiscoverApps?: boolean;
     showGenericSteps?: boolean;
+    onClose?: () => void;
     onDone?: () => void;
     onExit?: () => void;
     open?: boolean;
