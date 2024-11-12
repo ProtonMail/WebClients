@@ -194,6 +194,7 @@ interface Props {
     fork: boolean;
     metaTags: MetaTags;
     paths: Paths;
+    onPreSubmit?: () => Promise<void>;
 }
 
 let ranPreload = false;
@@ -209,6 +210,7 @@ const SingleSignupContainerV2 = ({
     onLogin,
     productParam,
     clientType,
+    onPreSubmit,
 }: Props) => {
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
@@ -1366,6 +1368,7 @@ const SingleSignupContainerV2 = ({
                             try {
                                 const { accountData, subscriptionData } = data;
 
+                                await onPreSubmit?.();
                                 await startUnAuthFlow().catch(noop);
 
                                 const cache: SignupCacheResult = {
