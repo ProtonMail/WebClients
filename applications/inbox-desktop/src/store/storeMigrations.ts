@@ -1,5 +1,5 @@
 import Store from "electron-store";
-import { getSettings, saveSettings } from "./settingsStore";
+import { getSettings, updateSettings } from "./settingsStore";
 import { SERIALIZED_THEME_MODE } from "../utils/themes";
 import { electronAppTheme, ThemeModeSetting } from "@proton/shared/lib/themes/themes";
 
@@ -37,8 +37,7 @@ const deleteSerializedThemeMode = () => {
             Mode = ThemeModeSetting.Dark;
         }
 
-        saveSettings({
-            ...settings,
+        updateSettings({
             theme: {
                 DarkTheme: settings.theme.DarkTheme,
                 LightTheme: settings.theme.LightTheme,
