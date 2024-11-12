@@ -1,4 +1,4 @@
-import type { DragEvent } from 'react';
+import type { DragEvent, MouseEventHandler } from 'react';
 import { useCallback, useMemo } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
@@ -111,7 +111,9 @@ const ComposerFrame = ({
         }
     }, [windowHeight]);
 
-    const handleClose = () => {
+    const handleClose: MouseEventHandler<HTMLButtonElement> = (e) => {
+        // Propagation triggers click events on the parent div
+        e.stopPropagation();
         closeAssistant(composerID);
         composerRef?.current?.close();
     };
