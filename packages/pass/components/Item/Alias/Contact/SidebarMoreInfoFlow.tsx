@@ -36,11 +36,11 @@ const getSteps = () => [
     },
 ];
 
-export const SidebarMoreInfoFlow: FC<ModalStateProps> = ({ open, onClose }) => {
+export const SidebarMoreInfoFlow: FC<Pick<ModalStateProps, 'onClose'>> = ({ onClose }) => {
     const steps = getSteps();
 
     return (
-        <SidebarModal className="ui-teal" onClose={onClose} open={open}>
+        <SidebarModal className="ui-teal" onClose={onClose} open>
             <Panel
                 className="pass-panel--full"
                 header={
