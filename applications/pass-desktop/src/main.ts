@@ -12,6 +12,7 @@ import * as config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
+import { getTheme } from './lib/theming';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
@@ -194,8 +195,8 @@ app.addListener('ready', async () => {
     const secureSession = createSession();
     const handleActivate = onActivate(secureSession);
 
-    // Use dark title bar
-    nativeTheme.themeSource = 'dark';
+    // Match title bar with the saved (or default) theme
+    nativeTheme.themeSource = getTheme();
 
     // Create tray icon
     createTrayIcon(secureSession);

@@ -12,6 +12,7 @@ import { ModalTwoContent, ModalTwoHeader } from '@proton/components/index';
 import onboardingExtension from '@proton/pass/assets/desktop-onboarding/onboarding-extension.svg';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/OnboardingLockSetup';
+import { OnboardingThemeSelect } from '@proton/pass/components/Onboarding/OnboardingThemeSelect';
 import { PASS_DOWNLOAD_URL } from '@proton/pass/constants';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { not } from '@proton/pass/utils/fp/predicates';
@@ -25,7 +26,7 @@ import './OnboardingModal.scss';
 type OnboardingStep = {
     action?: () => void;
     actionText?: string;
-    component?: ReactNode;
+    component: ReactNode;
     description: ReactNode;
     group: string;
     hidden?: boolean;
@@ -45,9 +46,9 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
                     actionText: c('Label').t`Select theme`,
                     description: c('Label').t`Choose your preferred look and feel.`,
                     group: c('Label').t`Personalize`,
-                    hidden: true,
                     key: 'look-and-feel',
                     title: c('Label').t`Make it your own.`,
+                    component: <OnboardingThemeSelect />,
                 },
                 {
                     component: (
