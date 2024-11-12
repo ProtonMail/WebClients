@@ -8,15 +8,20 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike, Href } from '@proton/atoms';
-import { useConfig } from '@proton/components';
-import { Option, Price, SUBSCRIPTION_STEPS, SelectTwo, SettingsLink, useUpsellConfig } from '@proton/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ModalTwo, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Option from '@proton/components/components/option/Option';
+import Price from '@proton/components/components/price/Price';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import UpsellFeatureList from '@proton/components/components/upsell/modal/UpsellFeatureList';
 import type { UpsellFeatureName } from '@proton/components/components/upsell/modal/constants';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { getPrice } from '@proton/components/containers/payments/subscription/PlanSelection';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useApi from '@proton/components/hooks/useApi';
+import useConfig from '@proton/components/hooks/useConfig';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import type { Currency } from '@proton/payments';
 import { PLANS, getPlansMap } from '@proton/payments';
@@ -215,7 +220,7 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
                         <>
                             <div className="pt-4">
                                 <UpsellFeatureList
-                                    className={'mb-4'}
+                                    className="mb-4"
                                     features={features}
                                     iconSize={5}
                                     plan={selectedPlan}
