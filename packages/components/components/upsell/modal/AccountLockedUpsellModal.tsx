@@ -94,13 +94,29 @@ interface AccountLockedUpsellModalProps extends ModalProps {
     onSubscribed: () => void;
 }
 
+const features: UpsellFeatureName[] = [
+    'breach-alerts',
+    'password-health',
+    'account-protection',
+    'storage-by-plan',
+    'address-by-plan',
+];
+
 const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsellModalProps) => {
+    const { APP_NAME } = useConfig();
+    const api = useApi();
+    const [selectedPlan, setSelectedPlan] = useState<Plan | undefined>();
+    const [plansResult, planResultLoading] = usePlans();
+    const [user] = useUser();
+    const [paymentStatus] = usePaymentStatus();
+    const [subscription] = useSubscription();
+    const { getPreferredCurrency } = useCurrencies();
+
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.ACCOUNT_LOCKED,
     });
-    const [selectedPlan, setSelectedPlan] = useState<Plan | undefined>();
     const upsellConfig = useUpsellConfig({
         upsellRef,
         planIDs: selectedPlan ? { [selectedPlan.Name]: 1 } : undefined,
@@ -111,8 +127,6 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
         },
     });
 
-    const { APP_NAME } = useConfig();
-    const api = useApi();
     const handleUpgrade = () => {
         sendRequestUpsellModalReport({
             api,
@@ -123,23 +137,10 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
         upsellConfig.onUpgrade?.();
     };
 
-    const features: UpsellFeatureName[] = [
-        'breach-alerts',
-        'password-health',
-        'account-protection',
-        'storage-by-plan',
-        'address-by-plan',
-    ];
-
     const termsLink = <Href key="locale" href={getLocaleTermsURL(APP_NAME)}>{c('Link').t`terms of service`}</Href>;
     const contactLink = <Href key="contact" href={getAbuseURL()}>{c('Link').t`contact us`}</Href>;
 
-    const [plansResult, planResultLoading] = usePlans();
-    const [user] = useUser();
-    const [paymentStatus] = usePaymentStatus();
-    const [subscription] = useSubscription();
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
-    const { getPreferredCurrency } = useCurrencies();
     const currency = getPreferredCurrency({
         user,
         status: paymentStatus,
