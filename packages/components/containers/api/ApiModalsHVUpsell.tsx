@@ -1,11 +1,21 @@
-import { useEffect, useState } from 'react';
+import { Suspense, lazy, useEffect, useState } from 'react';
 
-import AccountLockedUpsellModal from '@proton/components/components/upsell/modal/AccountLockedUpsellModal';
 import type { ApiListenerCallback, ApiVerificationEvent, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import remove from '@proton/utils/remove';
 import replace from '@proton/utils/replace';
 
 import type { ApiModalPayload } from './ApiModals.interface';
+
+const AccountLockedUpsellModal = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "auth-modal" */
+            /* webpackMode: "lazy" */
+            /* webpackFetchPriority: "low" */
+            /* webpackPrefetch: true */
+            '@proton/components/components/upsell/modal/AccountLockedUpsellModal'
+        )
+);
 
 const ApiModalsHVUpsell = ({ api }: { api: ApiWithListener }) => {
     const [verificationModals, setVerificationModals] = useState<ApiModalPayload<ApiVerificationEvent['payload']>[]>(
@@ -31,25 +41,27 @@ const ApiModalsHVUpsell = ({ api }: { api: ApiWithListener }) => {
     return (
         <>
             {verification && (
-                <AccountLockedUpsellModal
-                    open={verification.open}
-                    onSubscribed={() => {
-                        verification.payload.resolve(null);
-                    }}
-                    onClose={() => {
-                        verification.payload.error.cancel = true;
-                        verification.payload.reject(verification.payload.error);
-                        setVerificationModals((arr) =>
-                            replace(arr, verification, {
-                                ...verification,
-                                open: false,
-                            })
-                        );
-                    }}
-                    onExit={() => {
-                        setVerificationModals((arr) => remove(arr, verification));
-                    }}
-                />
+                <Suspense fallback={null}>
+                    <AccountLockedUpsellModal
+                        open={verification.open}
+                        onSubscribed={() => {
+                            verification.payload.resolve(null);
+                        }}
+                        onClose={() => {
+                            verification.payload.error.cancel = true;
+                            verification.payload.reject(verification.payload.error);
+                            setVerificationModals((arr) =>
+                                replace(arr, verification, {
+                                    ...verification,
+                                    open: false,
+                                })
+                            );
+                        }}
+                        onExit={() => {
+                            setVerificationModals((arr) => remove(arr, verification));
+                        }}
+                    />
+                </Suspense>
             )}
         </>
     );
