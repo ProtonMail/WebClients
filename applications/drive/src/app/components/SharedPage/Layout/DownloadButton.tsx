@@ -117,6 +117,7 @@ export function DownloadButton({ items, rootItem, isScanAndDownload, disabled }:
                     </Button>
                     <DropdownButton
                         hasCaret
+                        icon
                         isOpen={isOpen}
                         onClick={toggle}
                         disabled={isDownloading || disabled}
