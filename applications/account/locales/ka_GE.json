@@ -8629,6 +8629,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "მოგცემთ ${ BRAND_NAME }-ის გამოწერის გადასახდელად PayPal-ის გამოყენების საშუალებას. მოხდება თქვენი გადამისამართება PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "ამ მომხმარებლის მონაცემები და ყველა ელფოსტის მისამართი სამუდამოდ წაიშლება."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "ამ მომხმარებლის მონაცემები და ყველა ელფოსტის მისამართი სამუდამოდ წაიშლება."
       ],
@@ -12706,11 +12709,29 @@
       ]
     },
     "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } და ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app }-ის და ${ additionalApp }-ის განახლებები"
+      ],
       "${ app } product updates": [
         "${ app }-ის პროდუქტის განახლებები"
       ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME }-ის საქმიანი გაზეთი"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME }-ის მნიშვნელოვანი განცხადებები"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME }-ის სიახლეები"
+      ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME }-ის შეთავაზებები და ფასდაკლებები"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME }-ის პროდუქტის განცხადებები"
       ],
       "${ BRAND_NAME } user survey": [
         "${ BRAND_NAME } მომხმარებლის მიმოხილვა"
@@ -12720,6 +12741,9 @@
       ],
       "1 email per month": [
         "1 ელფოსტა თვეში"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 ელფოსტა თვეში. მიიღეთ უკანასკნელი კონფიდენციალობის სიახლეები და რა ხდება ${ BRAND_NAME }-ის სამყაროში."
       ],
       "1 email per quarter": [
         "1 ელფოსტა კვარტალში"
@@ -12747,6 +12771,9 @@
       ],
       "In-app notifications": [
         "აპის შეტყობინებები"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "მიიღეთ მონაწილეობა გამოკითხვებში, რათა ${ BRAND_NAME }-ის სერვისები გააუმჯობესოთ"
       ],
       "Product updates": [
         "პროდუქტის განახლებები"
@@ -18389,6 +18416,9 @@
       ],
       "Cancel request": [
         "მოთხოვნის გაუქმება"
+      ],
+      "Cancel request to access user data?": [
+        "გავაუქმო მოთხოვნა მომხმარებლის მონაცემებთან წვდომაზე?"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "ავტომატურად ვერ ჩავრთე ადმინისტრატორის წვდომა ${ n } მომხმარებელზე, რადგან ამავე დროს შეიცვლა მათი დაშიფვრის გასაღებებები:",
