@@ -36,8 +36,8 @@ const MailStartupModals = () => {
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
     const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
 
-    const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
-    const onboardingOpen = !welcomeFlags.isDone;
+    const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
+    const onboardingOpen = !welcomeFlags.isDone || welcomeFlags.isReplay;
 
     const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
     const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
@@ -45,7 +45,7 @@ const MailStartupModals = () => {
 
     const onceRef = useRef(false);
     useEffect(() => {
-        if (onceRef.current || isElectronMail) {
+        if ((onceRef.current && !onboardingOpen) || isElectronMail) {
             return;
         }
 

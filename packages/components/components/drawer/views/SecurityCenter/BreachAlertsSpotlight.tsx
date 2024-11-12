@@ -26,7 +26,7 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
     const [user] = useUser();
     const [organization] = useOrganization();
     const { viewportWidth } = useActiveBreakpoint();
-    const [{ isDone }] = useWelcomeFlags();
+    const { welcomeFlags: { isDone } } = useWelcomeFlags();
 
     /**
      * Display conditions:

@@ -16,7 +16,7 @@ export const useShowLightLabellingFeatureModal = () => {
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const organizationTheme = useOrganizationTheme();
-    const [welcomeFlags] = useWelcomeFlags();
+    const { welcomeFlags } = useWelcomeFlags();
 
     const seenLightLabellingFeatureModal = useFeature<boolean>(FeatureCode.SeenLightLabellingFeatureModal);
 
