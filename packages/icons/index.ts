@@ -7,6 +7,7 @@ export * from './types';
 
 export type IconName =
     | 'alias'
+    | 'alias-slash'
     | 'app-switch'
     | 'archive-box'
     | 'arrow-down'
@@ -382,6 +383,7 @@ export type IconName =
     | 'wrench';
 
 export { IcAlias } from './icons/IcAlias';
+export { IcAliasSlash } from './icons/IcAliasSlash';
 export { IcAppSwitch } from './icons/IcAppSwitch';
 export { IcArchiveBox } from './icons/IcArchiveBox';
 export { IcArrowDown } from './icons/IcArrowDown';
