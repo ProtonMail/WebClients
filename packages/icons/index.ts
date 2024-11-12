@@ -7,6 +7,7 @@ export * from './types';
 
 export type IconName =
     | 'alias'
+    | 'alias-slash'
     | 'app-switch'
     | 'archive-box'
     | 'arrow-down'
@@ -102,6 +103,7 @@ export type IconName =
     | 'column-one'
     | 'column-two'
     | 'checkmark'
+    | 'chart-line'
     | 'checkmark-circle'
     | 'checkmark-circle-filled'
     | 'checkmark-triple'
@@ -381,6 +383,7 @@ export type IconName =
     | 'wrench';
 
 export { IcAlias } from './icons/IcAlias';
+export { IcAliasSlash } from './icons/IcAliasSlash';
 export { IcAppSwitch } from './icons/IcAppSwitch';
 export { IcArchiveBox } from './icons/IcArchiveBox';
 export { IcArrowDown } from './icons/IcArrowDown';
@@ -476,6 +479,7 @@ export { IcCardIdentity } from './icons/IcCardIdentity';
 export { IcColumnOne } from './icons/IcColumnOne';
 export { IcColumnTwo } from './icons/IcColumnTwo';
 export { IcCheckmark } from './icons/IcCheckmark';
+export { IcChartLine } from './icons/IcChartLine';
 export { IcCheckmarkCircle } from './icons/IcCheckmarkCircle';
 export { IcCheckmarkCircleFilled } from './icons/IcCheckmarkCircleFilled';
 export { IcCheckmarkTriple } from './icons/IcCheckmarkTriple';
