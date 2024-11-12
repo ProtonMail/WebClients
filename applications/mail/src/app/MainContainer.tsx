@@ -3,13 +3,13 @@ import { useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import {
+    ApiModalsHVUpsell,
     DrawerThemeInjector,
     ModalsChildren,
     SubscriptionModalProvider,
     useActiveBreakpoint,
     useConfig,
 } from '@proton/components';
-import ApiModalsHVUpsell from '@proton/components/containers/api/ApiModalsHVUpsell';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInboxDesktopMessageForward } from '@proton/components/hooks/useInboxDesktopMessageForward';
 import { FeatureCode, useFeatures } from '@proton/features';
