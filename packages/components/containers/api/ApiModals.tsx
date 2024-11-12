@@ -12,7 +12,17 @@ import remove from '@proton/utils/remove';
 import replace from '@proton/utils/replace';
 
 import type { ApiModalPayload } from './ApiModals.interface';
-import DelinquentModal from './DelinquentModal';
+
+const DelinquentModal = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "delinquent-modal" */
+            /* webpackMode: "lazy" */
+            /* webpackFetchPriority: "low" */
+            /* webpackPrefetch: true */
+            './DelinquentModal'
+        )
+);
 
 const HumanVerificationModal = lazy(
     () =>
@@ -87,19 +97,21 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
     return (
         <>
             {delinquent && (
-                <DelinquentModal
-                    open={delinquent.open}
-                    // When the API returns a nondelinquent scope the user is in the NO_RECEIVE variant
-                    delinquent={UNPAID_STATE.NO_RECEIVE}
-                    onClose={() => {
-                        delinquent.payload.error.cancel = true;
-                        delinquent.payload.reject(delinquent.payload.error);
-                        setDelinquentModals((arr) => replace(arr, delinquent, { ...delinquent, open: false }));
-                    }}
-                    onExit={() => {
-                        setDelinquentModals((arr) => remove(arr, delinquent));
-                    }}
-                />
+                <Suspense fallback={null}>
+                    <DelinquentModal
+                        open={delinquent.open}
+                        // When the API returns a nondelinquent scope the user is in the NO_RECEIVE variant
+                        delinquent={UNPAID_STATE.NO_RECEIVE}
+                        onClose={() => {
+                            delinquent.payload.error.cancel = true;
+                            delinquent.payload.reject(delinquent.payload.error);
+                            setDelinquentModals((arr) => replace(arr, delinquent, { ...delinquent, open: false }));
+                        }}
+                        onExit={() => {
+                            setDelinquentModals((arr) => remove(arr, delinquent));
+                        }}
+                    />
+                </Suspense>
             )}
             {unlock && (
                 <Suspense fallback={null}>
