@@ -11,7 +11,7 @@ describe('EditorMarkdownExporter', () => {
     const plaintext = await exporter.export()
 
     expect(utf8ArrayToString(plaintext)).toBe(
-      '# Heading 1\n\n## Heading 2\n\n**Bold** *italic* underline [link](https://test.com) color background\n\n1. Numbered\n2. list\n\n- Bulleted\n- list\n\n- [ ] Check\n- [ ] list\n\n| Basic | table | with |\n| --- | --- | --- |\n| three | columns | and |\n| content | in | each |\n\n',
+      '# Heading 1\n\n## Heading 2\n\n**Bold** *italic* underline [link](https://test.com) color background\n\n1. Numbered\n2. list\n\n- Bulleted\n- list\n\n- [ ] Check\n- [ ] list\n\n| Basic | table | with |\n| --- | --- | --- |\n| three | columns | and |\n| content | in | each |\n',
     )
   })
 })

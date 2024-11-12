@@ -1,6 +1,6 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils'
 import { EditorExporter } from './EditorExporter'
-import { $convertToMarkdownString } from '../../Utils/MarkdownExport'
+import { $convertToMarkdownString } from '@lexical/markdown'
 import { MarkdownTransformers } from '../../Tools/MarkdownTransformers'
 
 export class EditorMarkdownExporter extends EditorExporter {
