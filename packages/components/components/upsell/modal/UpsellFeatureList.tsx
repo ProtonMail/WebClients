@@ -8,14 +8,14 @@ import isFunction from '@proton/utils/isFunction';
 import type { UpsellFeatureName } from './constants';
 import { upsellFeatures } from './constants';
 
-type UpsellFeatureListProps = {
+interface UpsellFeatureListProps {
     className?: string;
     features: UpsellFeatureName[];
     iconSize: IconSize;
     hideInfo?: boolean;
     plan?: Plan;
     odd?: boolean;
-};
+}
 
 const UpsellFeatureList = ({ className, features, iconSize, hideInfo, plan, odd = false }: UpsellFeatureListProps) => {
     return (
