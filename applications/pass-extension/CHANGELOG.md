@@ -1,3 +1,7 @@
+### Version 1.24.4
+
+-   Adjust copy in spotlight section
+
 ### Version 1.24.3
 
 -   Fix alias trash acknowledgment for aliases with related logins
