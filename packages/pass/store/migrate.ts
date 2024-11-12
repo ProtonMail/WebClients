@@ -91,5 +91,13 @@ export const migrate = (state: State) => {
         state.filters = filters;
     }
 
+    /** v1.26.0 migration */
+    if (state.alias.aliasDetails) {
+        const isOldFormat = Object.values(state.alias.aliasDetails).some(Array.isArray);
+        if (isOldFormat) {
+            state.alias.aliasDetails = {};
+        }
+    }
+
     return state;
 };
