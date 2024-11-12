@@ -6,7 +6,7 @@ import { DomainDetailsDNS } from '@proton/pass/components/Settings/Aliases/Domai
 import { DomainDetailsInfo } from '@proton/pass/components/Settings/Aliases/DomainDetailsInfo';
 import { type CustomDomainInfo } from '@proton/pass/components/Settings/Aliases/Domains';
 import type { CustomDomainOutput } from '@proton/pass/types';
-import { epochToRelativeDate } from '@proton/pass/utils/time/format';
+import { epochToRelativeDaysAgo } from '@proton/pass/utils/time/format';
 
 export enum DomainTab {
     INFO = 'INFO',
@@ -27,7 +27,7 @@ export type Props = {
 };
 
 export const DomainDetailsModal = ({ onClose, onVerify, tab, changeTab, domain }: Props) => {
-    const time = epochToRelativeDate(domain.CreateTime);
+    const time = epochToRelativeDaysAgo(domain.CreateTime);
     const aliasCount = domain.AliasCount ?? 0;
 
     const tabs = Object.values(DOMAIN_TABS_ORDER_MAP).map((tab) => {

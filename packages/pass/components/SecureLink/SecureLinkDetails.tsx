@@ -9,7 +9,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
 import type { SecureLink } from '@proton/pass/types';
-import { epochToDateLabel } from '@proton/pass/utils/time/format';
+import { epochToRelativeDateUntil } from '@proton/pass/utils/time/format';
 import clsx from '@proton/utils/clsx';
 
 type SecureLinkCard = { title: string; subtitle: string; icon: IconName; className?: string };
@@ -31,7 +31,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCoun
         const cards: SecureLinkCard[] = [
             {
                 title: c('Info').t`Expires in`,
-                subtitle: epochToDateLabel(expirationDate),
+                subtitle: epochToRelativeDateUntil(expirationDate),
                 icon: 'clock',
             },
         ];

@@ -20,7 +20,7 @@ type RelativeDaysAgoOptions = {
     formatDays?: (value: string) => string;
 };
 
-export const epochToRelativeDate = (epoch: number, options?: RelativeDaysAgoOptions) => {
+export const epochToRelativeDaysAgo = (epoch: number, options?: RelativeDaysAgoOptions) => {
     const date = new Date(epochToMs(epoch));
 
     return isThisWeek(date)
@@ -34,7 +34,7 @@ type TimeRemainingOptions = {
     dateInThePast?: boolean;
 };
 
-export const epochToDateLabel = (epoch: number, options?: TimeRemainingOptions): string => {
+export const epochToRelativeDateUntil = (epoch: number, options?: TimeRemainingOptions): string => {
     const start = Date.now();
     const end = new Date(epochToMs(epoch));
     const format = options?.format ?? identity;
