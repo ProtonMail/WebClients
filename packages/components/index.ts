@@ -382,6 +382,7 @@ export { default as DelinquentModal } from './containers/api/DelinquentModal';
 export { default as HumanVerificationForm } from './containers/api/humanVerification/HumanVerificationForm';
 export type { HumanVerificationFormProps } from './containers/api/humanVerification/HumanVerificationForm';
 export { default as HumanVerificationModal } from './containers/api/humanVerification/HumanVerificationModal';
+export { default as ApiModalsHVUpsell } from './containers/api/ApiModalsHVUpsell';
 export { HumanVerificationSteps, type HumanVerificationResult } from './containers/api/humanVerification/interface';
 export type {
     VerificationDataResult,

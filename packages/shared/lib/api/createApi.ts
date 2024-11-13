@@ -80,7 +80,7 @@ export type ApiEvent =
     | ApiLogoutEvent
     | ApiMissingScopeEvent
     | ApiVerificationEvent;
-export type ApiListenerCallback = (event: ApiEvent) => void;
+export type ApiListenerCallback = (event: ApiEvent) => boolean;
 
 export type ApiWithListener = Api & {
     UID: string | undefined;
@@ -108,7 +108,8 @@ const createApi = ({
 
     const listeners: ApiListenerCallback[] = [];
     const notify = (event: ApiEvent) => {
-        listeners.forEach((listener) => listener(event));
+        const result = listeners.map((listener) => listener(event));
+        return result.some((value) => value === true);
     };
 
     const handleMissingScopes = (data: any) => {
@@ -116,7 +117,7 @@ const createApi = ({
             return Promise.reject(data.error);
         }
         return new Promise((resolve, reject) => {
-            notify({
+            const handled = notify({
                 type: 'missing-scopes',
                 payload: {
                     ...data,
@@ -124,6 +125,10 @@ const createApi = ({
                     reject,
                 },
             });
+            if (handled) {
+                return;
+            }
+            return reject(data.error);
         });
     };
 
@@ -132,7 +137,7 @@ const createApi = ({
             return Promise.reject(data.error);
         }
         return new Promise((resolve, reject) => {
-            notify({
+            const handled = notify({
                 type: 'handle-verification',
                 payload: {
                     ...data,
@@ -140,6 +145,10 @@ const createApi = ({
                     reject,
                 },
             });
+            if (handled) {
+                return;
+            }
+            return reject(data.error);
         });
     };
 
