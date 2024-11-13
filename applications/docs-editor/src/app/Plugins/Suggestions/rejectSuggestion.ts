@@ -1,5 +1,5 @@
 import { $createListItemNode, $isListItemNode, $isListNode } from '@lexical/list'
-import type { ElementFormatType, ElementNode } from 'lexical'
+import type { ElementNode } from 'lexical'
 import { $nodesOfType, $isElementNode, $isTextNode } from 'lexical'
 import { $unwrapSuggestionNode } from './Utils'
 import { ProtonNode, $isSuggestionNode } from './ProtonNode'
@@ -8,10 +8,15 @@ import { $patchStyleText } from '@lexical/selection'
 import { $isImageNode } from '../Image/ImageNode'
 import { $findMatchingParent } from '@lexical/utils'
 import { $deleteTableColumn, $isTableCellNode, $isTableNode, $isTableRowNode } from '@lexical/table'
-import type { BlockType } from '../BlockTypePlugin'
 import { blockTypeToCreateElementFn } from '../BlockTypePlugin'
 import { $isCustomListNode } from '../CustomList/$isCustomListNode'
-import type { BlockTypeChangeSuggestionProperties, IndentChangeSuggestionProperties } from './Types'
+import type {
+  PropertyChangeSuggestionProperties,
+  AlignChangeSuggestionProperties,
+  LinkChangeSuggestionProperties,
+  BlockTypeChangeSuggestionProperties,
+  IndentChangeSuggestionProperties,
+} from './Types'
 import type { Logger } from '@proton/utils/logs'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 
@@ -33,7 +38,7 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
     } else if (suggestionType === 'style-change') {
       const children = node.getChildren()
       $unwrapSuggestionNode(node)
-      const changedProperties = node.__properties.nodePropertiesChanged
+      const changedProperties = node.getSuggestionChangedProperties()
       if (!changedProperties) {
         continue
       }
@@ -49,7 +54,7 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
       }
     } else if (suggestionType === 'property-change') {
       const children = node.getChildren()
-      const changedProperties = node.__properties.nodePropertiesChanged
+      const changedProperties = node.getSuggestionChangedProperties<PropertyChangeSuggestionProperties>()
       if (!changedProperties) {
         $unwrapSuggestionNode(node)
         continue
@@ -80,7 +85,7 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
     } else if (suggestionType === 'join') {
       node.remove()
     } else if (suggestionType === 'link-change') {
-      const changedProperties = node.__properties.nodePropertiesChanged
+      const changedProperties = node.getSuggestionChangedProperties<LinkChangeSuggestionProperties>()
       if (!changedProperties) {
         node.remove()
         continue
@@ -114,7 +119,7 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
         continue
       }
     } else if (suggestionType === 'image-change') {
-      const changedProperties = node.__properties.nodePropertiesChanged
+      const changedProperties = node.getSuggestionChangedProperties()
       if (!changedProperties) {
         node.remove()
         continue
@@ -128,7 +133,7 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
       }
       imageNode.setWidthAndHeight(initialWidth, initialHeight)
     } else if (suggestionType === 'indent-change') {
-      const changedProperties = node.__properties.nodePropertiesChanged as IndentChangeSuggestionProperties | undefined
+      const changedProperties = node.getSuggestionChangedProperties<IndentChangeSuggestionProperties>()
       if (!changedProperties) {
         node.remove()
         continue
@@ -176,13 +181,11 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
         continue
       }
       node.remove()
-      const changedProperties = node.__properties.nodePropertiesChanged as
-        | BlockTypeChangeSuggestionProperties
-        | undefined
+      const changedProperties = node.getSuggestionChangedProperties<BlockTypeChangeSuggestionProperties>()
       if (!changedProperties || !block) {
         continue
       }
-      const initialBlockType = changedProperties.initialBlockType as BlockType
+      const initialBlockType = changedProperties.initialBlockType
       const createInitialBlockTypeElement = blockTypeToCreateElementFn[initialBlockType]
       const formatType = changedProperties.initialFormatType || block.getFormatType()
       const indent = changedProperties.initialIndent || block.getIndent()
@@ -234,15 +237,15 @@ export function $rejectSuggestion(suggestionID: string, logger?: Logger): boolea
       if (!elementParent) {
         continue
       }
-      const changedProperties = node.__properties.nodePropertiesChanged
+      const changedProperties = node.getSuggestionChangedProperties<AlignChangeSuggestionProperties>()
       if (!changedProperties) {
         continue
       }
-      const initialFormatType = changedProperties.initialFormatType as ElementFormatType
+      const initialFormatType = changedProperties.initialFormatType
       elementParent.setFormat(initialFormatType)
     } else if (suggestionType === 'clear-formatting') {
       const children = node.getChildren()
-      const changedProperties = node.__properties.nodePropertiesChanged
+      const changedProperties = node.getSuggestionChangedProperties()
       if (!changedProperties) {
         $unwrapSuggestionNode(node)
         continue

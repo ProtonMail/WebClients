@@ -72,3 +72,11 @@ export type IndentChangeSuggestionProperties = {
 export type PropertyChangeSuggestionProperties = {
   __format: number
 }
+
+export type LinkChangeSuggestionProperties = {
+  __url: string | null
+}
+
+export type AlignChangeSuggestionProperties = {
+  initialFormatType: ElementFormatType
+}
