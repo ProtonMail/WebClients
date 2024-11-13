@@ -196,8 +196,8 @@ export const Price = ({
 
     const time = unit.ExchangeRateTime;
 
-    // If input amount is a string, we replace it by 0 for formatting purpose, then we'll use the string in the jsx template
-    const amount = isStringAmount ? 0 : convertAmount(_amount, COMPUTE_BITCOIN_UNIT, unit);
+    // If input amount is a string, we replace it by 1.1 (decimals) for formatting purpose, then we'll use the string in the jsx template
+    const amount = isStringAmount ? 1.1 : convertAmount(_amount, COMPUTE_BITCOIN_UNIT, unit);
 
     const currency = unit.FiatCurrency;
     const formatter =
@@ -224,7 +224,7 @@ export const Price = ({
 
     const jsxParts = partsToJsx({
         parts,
-        amount,
+        amount: _amount,
         withPositiveSign,
         signClassName,
         amountClassName,

@@ -8,15 +8,20 @@ import { Button, CircleLoader } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
-import type { QuoteWithProvider } from '../Amount';
+import type { QuoteWithProvider } from '../AmountStep';
 
 import './Checkout.scss';
+
+enum StripeWidgetEventTypes {
+    CHECKOUT_COMPLETED = 'CheckoutCompleted',
+}
 
 interface Props {
     quote: QuoteWithProvider;
     btcAddress: string;
     onBack: () => void;
-    onDone: () => void;
+    onPurchaseComplete: () => void;
+    clientSecret: string | null;
 }
 
 const buildUrl = (
@@ -24,7 +29,8 @@ const buildUrl = (
     bitcoinAddress: string,
     currency: string,
     paymentMethod: WasmPaymentMethod,
-    provider: WasmGatewayProvider
+    provider: WasmGatewayProvider,
+    checkoutId: string | null
 ) => {
     const wasmPaymentMethodToNumber: Record<WasmPaymentMethod, number> = {
         ApplePay: 1,
@@ -44,16 +50,24 @@ const buildUrl = (
     url.searchParams.set('PaymentMethod', wasmPaymentMethodToNumber[paymentMethod].toString());
     url.searchParams.set('Provider', provider);
 
+    if (checkoutId) {
+        url.searchParams.set('ClientSecret', checkoutId);
+    }
+
     return url.toString();
 };
 
-export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
+export const Checkout = ({ quote, btcAddress, clientSecret, onBack, onPurchaseComplete }: Props) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const handleEvent = (event?: MessageEvent<any>) => {
             if ([RampInstantEventTypes.WIDGET_CLOSE, 'onCloseOverlay'].includes(event?.data.type)) {
                 onBack();
+            }
+
+            if (event?.data.type === StripeWidgetEventTypes.CHECKOUT_COMPLETED) {
+                onPurchaseComplete();
             }
         };
 
@@ -62,7 +76,7 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
         return () => {
             window.removeEventListener('message', handleEvent);
         };
-    }, [onBack, onDone]);
+    }, [onBack, onPurchaseComplete]);
 
     return (
         <div className="flex flex-column max-w-full justify-center items-center">
@@ -89,7 +103,8 @@ export const Checkout = ({ quote, btcAddress, onBack, onDone }: Props) => {
                         btcAddress,
                         quote.FiatCurrencySymbol,
                         quote.PaymentMethod,
-                        quote.provider
+                        quote.provider,
+                        clientSecret
                     )}
                     title={c('Bitcoin buy').t`${quote.provider} checkout`}
                     onLoad={() => {
