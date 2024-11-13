@@ -7,9 +7,11 @@ import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useZoomOAuth } from '@proton/calendar';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
+import { VIDEO_CONF_API_ERROR_CODES } from '@proton/calendar/components/videoConferencing/constants';
 import {
     Dropzone,
     ImportModal,
@@ -44,12 +46,12 @@ import {
     getIsCalendarWritable,
     getIsOwnedCalendar,
 } from '@proton/shared/lib/calendar/calendar';
-import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import {
     DELETE_CONFIRMATION_TYPES,
     ICAL_ATTENDEE_STATUS,
     MAXIMUM_DATE_UTC,
     MINIMUM_DATE_UTC,
+    RECURRING_TYPES,
     SAVE_CONFIRMATION_TYPES,
     TMP_UID,
     TMP_UNIQUE_ID,
@@ -347,6 +349,8 @@ const InteractiveCalendarView = ({
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const isSearchView = view === VIEWS.SEARCH;
     const cancelClosePopoverRef = useRef(false);
+
+    const { triggerZoomOAuth } = useZoomOAuth();
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         createEventModal: { isOpen: false },
@@ -1296,13 +1300,21 @@ const InteractiveCalendarView = ({
                 getCalendarKeys,
                 sync: actions,
             });
+
             const result = await api<SyncMultipleApiResponse>({ ...payload, silence: true });
             const { Responses: responses } = result;
             const errorResponses = responses.filter(({ Response }) => {
                 return 'Error' in Response || Response.Code !== API_CODES.SINGLE_SUCCESS;
             });
+
             if (errorResponses.length > 0) {
                 const firstError = errorResponses[0].Response;
+
+                // Done to catch video conference errors
+                if (firstError.Code === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
+                    throw new Error(firstError.Error, { cause: VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR });
+                }
+
                 throw new Error(firstError.Error || 'Unknown error');
             }
             multiResponses.push(result);
@@ -1557,6 +1569,12 @@ const InteractiveCalendarView = ({
             removeTemporaryEvent(uniqueId);
             handleCreateNotification(successNotification);
         } catch (e: any) {
+            // If the error is a video conference error, we open the oauth modal and try again
+            if (e?.cause === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
+                await triggerZoomOAuth(() => handleSaveEvent(temporaryEvent, inviteActions));
+                return;
+            }
+
             if (e instanceof EscapeTryBlockError) {
                 handleCreateNotification(successNotification);
                 if (e.recursive) {
