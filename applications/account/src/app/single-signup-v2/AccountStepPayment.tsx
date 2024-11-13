@@ -170,6 +170,8 @@ const AccountStepPayment = ({
         theme: publicTheme,
         billingAddress,
         user,
+        subscription: model.session?.subscription,
+        planIDs: model.subscriptionData.planIDs,
         onChargeable: (_, { chargeablePaymentParameters, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
                 const extendedTokenPayment: ExtendedTokenPayment = {
