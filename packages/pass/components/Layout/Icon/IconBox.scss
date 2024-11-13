@@ -5,4 +5,9 @@
 	&--has-image {
 		background: white;
 	}
+
+	&--disabled {
+		background: none;
+		border: 1px solid var(--interaction-norm-minor-1);
+	}
 }
