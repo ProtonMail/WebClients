@@ -31,7 +31,7 @@ export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCoun
         const cards: SecureLinkCard[] = [
             {
                 title: c('Info').t`Expires in`,
-                subtitle: epochToRelativeDateUntil(expirationDate),
+                subtitle: epochToRelativeDateUntil(expirationDate, { showExpiredLabel: true }),
                 icon: 'clock',
             },
         ];

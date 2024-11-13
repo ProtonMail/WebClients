@@ -35,7 +35,7 @@ export const ContactCard: FC<Props> = ({
 }) => {
     const { writeToClipboard } = usePassCore();
     const { createNotification } = useNotifications();
-    const time = epochToRelativeDateUntil(CreateTime, { dateInThePast: true });
+    const time = epochToRelativeDateUntil(CreateTime);
 
     const blockContactRequest = useRequest(aliasBlockContact, { onSuccess: ({ data }) => onContactUpdated(data) });
     const deleteContactRequest = useRequest(aliasDeleteContact, { onSuccess: ({ data }) => onContactDeleted(data) });
