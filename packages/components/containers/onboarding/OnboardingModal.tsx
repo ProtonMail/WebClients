@@ -135,6 +135,7 @@ const OnboardingModal = ({
                         <StepDots value={step} ulClassName={clsx('mb-0', stepDotClassName)}>
                             {range(0, steps.length).map((index) => (
                                 <StepDot
+                                    active={index === step}
                                     key={index}
                                     index={index}
                                     aria-controls={`onboarding-${index}`}
