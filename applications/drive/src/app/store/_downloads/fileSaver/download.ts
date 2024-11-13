@@ -15,8 +15,17 @@ let workerWakeupInterval: ReturnType<typeof setInterval>;
  * IOS - forces all browsers to use webkit, so same problems as safari in all browsers.
  * For them download is done in-memory using blob response.
  */
-export const isUnsupported = () =>
-    !('serviceWorker' in navigator) || isSafari() || (isEdge() && !isEdgeChromium()) || isIos();
+export const isUnsupported = () => {
+    /* TODO: To be removed after test DRVWEB-4375 */
+    if (typeof window !== 'undefined') {
+        const isSWForSafariEnabled = 'isSWForSafariEnabled' in window && window.isSWForSafariEnabled;
+        if (isSWForSafariEnabled) {
+            return !('serviceWorker' in navigator);
+        }
+    }
+    // Original
+    return !('serviceWorker' in navigator) || isSafari() || (isEdge() && !isEdgeChromium()) || isIos();
+};
 
 // createDownloadIframe opens download URL created in service worker to
 // initialize the download in the browser. The response has headers to
