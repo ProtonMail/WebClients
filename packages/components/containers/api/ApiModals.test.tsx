@@ -10,7 +10,7 @@ import { ConfigProvider, NotificationsProvider } from '@proton/components';
 import type { ApiEvent, ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 
 import type { AuthModalProps } from '../password/AuthModal';
-import ApiProvider from './ApiProvider';
+import ApiModals from './ApiModals';
 import type { HumanVerificationModalProps } from './humanVerification/HumanVerificationModal';
 
 const Wrap = ({ children }: { children: ReactNode }) => {
@@ -110,13 +110,13 @@ const createApi = () => {
     };
 };
 
-describe('ApiProvider', () => {
+describe('ApiModals', () => {
     test('should display a missing scopes modal and resolve a promise', async () => {
         const { api, notify } = createApi();
 
         render(
             <Wrap>
-                <ApiProvider api={api}>{null}</ApiProvider>
+                <ApiModals api={api} />
             </Wrap>
         );
 
@@ -145,7 +145,7 @@ describe('ApiProvider', () => {
 
         render(
             <Wrap>
-                <ApiProvider api={api}>{null}</ApiProvider>
+                <ApiModals api={api} />
             </Wrap>
         );
 
@@ -173,7 +173,7 @@ describe('ApiProvider', () => {
 
         render(
             <Wrap>
-                <ApiProvider api={api}>{null}</ApiProvider>
+                <ApiModals api={api} />
             </Wrap>
         );
 
@@ -218,7 +218,7 @@ describe('ApiProvider', () => {
 
         render(
             <Wrap>
-                <ApiProvider api={api}>{null}</ApiProvider>
+                <ApiModals api={api} />
             </Wrap>
         );
 

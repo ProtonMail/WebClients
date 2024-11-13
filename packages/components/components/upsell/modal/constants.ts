@@ -1,10 +1,16 @@
+import { isArray } from 'card-validator/dist/lib/is-array';
 import { c } from 'ttag';
 
+import { getStorageFeature } from '@proton/components/containers/payments/features/drive';
+import { getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
+import { PLANS } from '@proton/payments';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { getNCalendarsText } from '../../../containers/payments/features/calendar';
-import type { UpsellFeature } from './interface';
+import type { UpsellFeature, UpsellFeatureGetter } from './interface';
 
 export type UpsellFeatureName =
     | 'auto-delete-trash-and-spam'
@@ -24,7 +30,12 @@ export type UpsellFeatureName =
     | 'proton-scribe'
     | '2-users-support' // proton duo specific
     | '1-tb-secure-storage' // proton duo specific
-    | 'all-proton-products';
+    | 'all-proton-products'
+    | 'address-by-plan'
+    | 'storage-by-plan'
+    | 'breach-alerts'
+    | 'password-health'
+    | 'account-protection';
 
 const domain = 'proton.me';
 // Dirty fix because we cannot add twice the same variable in a string with ttag
@@ -33,7 +44,7 @@ const domain2 = 'proton.me';
 /**
  * Default upsell features
  */
-export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
+export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature | UpsellFeatureGetter> = {
     'auto-delete-trash-and-spam': {
         icon: 'trash-clock',
         getText: () => c('new_plans: feature').t`Auto-delete spam and trashed messages`,
@@ -115,5 +126,47 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
     'all-proton-products': {
         icon: 'brand-proton',
         getText: () => c('new_plans: feature').t`All ${BRAND_NAME} products and features`,
+    },
+    'address-by-plan': (plan?: Plan) => {
+        if (!plan) {
+            return null;
+        }
+        const feature = getNAddressesFeature({
+            n: plan.MaxAddresses,
+            duo: plan.Name === PLANS.DUO,
+            family: plan.Name === PLANS.FAMILY,
+        });
+        return {
+            icon: 'envelopes',
+            getText: () => (isArray(feature.text) ? feature.text.join(' ') : feature.text),
+            getTooltip: () => feature.tooltip ?? '',
+        };
+    },
+    'storage-by-plan': (plan?: Plan) => {
+        if (!plan) {
+            return null;
+        }
+        const feature = getStorageFeature(plan.MaxSpace, {
+            freePlan: FREE_PLAN,
+            duo: plan.Name === PLANS.DUO,
+            family: plan.Name === PLANS.FAMILY,
+        });
+        return {
+            icon: 'storage',
+            getText: () => (isArray(feature.text) ? feature.text.join(' ') : feature.text),
+            getTooltip: () => feature.tooltip ?? '',
+        };
+    },
+    'breach-alerts': {
+        icon: 'shield-2-bolt',
+        getText: () => c('new_plans: feature').t`Breach alerts`,
+    },
+    'password-health': {
+        icon: 'lock',
+        getText: () => c('new_plans: feature').t`Password health`,
+    },
+    'account-protection': {
+        icon: 'user',
+        getText: () => c('new_plans: feature').t`Advanced account protection`,
     },
 };
