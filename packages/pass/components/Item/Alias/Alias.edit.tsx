@@ -12,8 +12,6 @@ import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { AliasSLNoteModal } from '@proton/pass/components/Item/Alias/AliasSLNoteModal';
-import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
@@ -28,6 +26,8 @@ import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
 import { type MaybeNull } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
+
+import { AliasSLNoteLabel } from './AliasSLNoteLabel';
 
 const FORM_ID = 'edit-alias';
 
@@ -52,8 +52,6 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     /* Keeping a ref to the alias details for composing the result
      * of `onAliasDetailsLoaded` with `onAliasOptionsLoading` effect */
     const mailboxesForAlias = useRef<AliasMailbox[]>([]);
-
-    const [openSlNoteModal, setOpenSlNoteModal] = useState(false);
 
     const note = useDeobfuscatedValue(metadata.note);
     const validateEditAliasForm = createEditAliasFormValidator(aliasOwner);
@@ -215,30 +213,16 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
                         </FieldsetCluster>
 
                         {aliasDetails?.slNote && (
-                            <>
-                                <FieldsetCluster>
-                                    <Field
-                                        name="slNote"
-                                        label={
-                                            <span className="flex items-center flex-nowrap gap-1">
-                                                {c('Label').t`Note • SimpleLogin`}
-                                                <InfoButton onClick={() => setOpenSlNoteModal(true)} />
-                                            </span>
-                                        }
-                                        placeholder={c('Placeholder').t`Note from SimpleLogin`}
-                                        component={TextAreaField}
-                                        icon="note"
-                                        maxLength={MAX_ITEM_NOTE_LENGTH}
-                                    />
-                                </FieldsetCluster>
-
-                                {openSlNoteModal && (
-                                    <AliasSLNoteModal
-                                        open={openSlNoteModal}
-                                        onClose={() => setOpenSlNoteModal(false)}
-                                    />
-                                )}
-                            </>
+                            <FieldsetCluster>
+                                <Field
+                                    name="slNote"
+                                    label={<AliasSLNoteLabel />}
+                                    placeholder={c('Placeholder').t`Note from SimpleLogin`}
+                                    component={TextAreaField}
+                                    icon="note"
+                                    maxLength={MAX_ITEM_NOTE_LENGTH}
+                                />
+                            </FieldsetCluster>
                         )}
 
                         <FieldsetCluster>
