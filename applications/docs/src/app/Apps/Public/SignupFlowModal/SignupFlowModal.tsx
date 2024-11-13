@@ -22,7 +22,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators'
 
-import { useDocsPublicToken } from '@proton/drive-store/hooks/drive/useDocsPublicToken'
+import { useDocsUrlPublicToken } from '@proton/drive-store/hooks/drive/useDocsUrlPublicToken'
 import { Actions, countActionWithTelemetry } from '@proton/drive-store/utils/telemetry'
 import { openNewTabToSignIn } from '../Utils/Redirection'
 import { openNewTabToSignUp } from '../Utils/Redirection'
@@ -37,7 +37,7 @@ export const SignupFlowModal = ({ urlPassword, onClose, redirectAction, ...modal
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const api = useApi()
-  const { token, linkId } = useDocsPublicToken()
+  const { token, linkId } = useDocsUrlPublicToken()
 
   useEffect(() => {
     countActionWithTelemetry(Actions.ViewSignUpFlowModal)
