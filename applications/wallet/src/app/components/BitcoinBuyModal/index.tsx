@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import type { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import { Loader, type ModalOwnProps } from '@proton/components';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { ApiWalletWithPassphraseInput, IWasmApiWalletData } from '@proton/wallet';
 import { toWalletAccountSelectorOptions } from '@proton/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
@@ -14,8 +14,9 @@ import { isWalletAccountSet } from '../../utils';
 import type { Steps } from '../ModalHeaderWithStepper';
 import { ModalHeaderWithStepper } from '../ModalHeaderWithStepper';
 import { WalletAccountSelector } from '../WalletAccountSelector';
-import type { QuoteWithProvider } from './Amount';
-import { Amount } from './Amount';
+import type { QuoteWithProvider } from './AmountStep';
+import { AmountStep } from './AmountStep';
+import { BitcoinBuyConfirmModal } from './BitcoinBuyConfirmModal';
 import { Checkout } from './Checkout';
 import { Location } from './Location';
 
@@ -23,7 +24,6 @@ interface Props {
     wallet: IWasmApiWalletData;
     account?: WasmApiWalletAccount;
     modal: ModalOwnProps;
-    onDone?: () => void;
 }
 
 enum StepKey {
@@ -38,16 +38,22 @@ const getSteps = (): Steps<StepKey> => [
     { key: StepKey.Onramp, label: c('bitcoin buy').t`Buy` },
 ];
 
-export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
+export const BitcoinBuyModal = ({ wallet, account, modal }: Props) => {
     const [stepKey, setStepKey] = useState<StepKey>(StepKey.Location);
     const [country, setCountry] = useState<WasmApiCountry>();
     const [quote, setQuote] = useState<QuoteWithProvider>();
+    const [clientSecret, setClientSecret] = useState<string | null>(null);
+
+    const [openedModal, setOpenedModal] = useState<'buy' | 'confirm'>('buy');
 
     const defaultWalletAccount = first(wallet.WalletAccounts);
-    const [selectedWalletAccount, setSelectedWalletAccount] = useState<[WasmApiWallet, WasmApiWalletAccount?]>([
+    const defaultSelected: [ApiWalletWithPassphraseInput, WasmApiWalletAccount | undefined] = [
         wallet.Wallet,
         account ?? defaultWalletAccount,
-    ]);
+    ];
+
+    const [selectedWalletAccount, setSelectedWalletAccount] =
+        useState<[WasmApiWallet, WasmApiWalletAccount?]>(defaultSelected);
 
     const { bitcoinAddressHelperByWalletAccountId, apiWalletsData } = useBitcoinBlockchainContext();
 
@@ -59,108 +65,132 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
         ? bitcoinAddressHelperByWalletAccountId[selectedWalletAccount[1].ID]
         : undefined;
 
+    const reset = () => {
+        setCountry(undefined);
+        setQuote(undefined);
+        setSelectedWalletAccount(defaultSelected);
+        setOpenedModal('buy');
+        setStepKey(StepKey.Location);
+    };
+
+    const handleClose = () => {
+        modal.onClose?.();
+        reset();
+    };
+
     return (
-        <FullscreenModal
-            header={
-                <ModalHeaderWithStepper
-                    onClose={() => {
-                        modal.onClose?.();
-                        onDone?.();
-                    }}
-                    onClickStep={(key) => {
-                        setStepKey(key);
-                    }}
-                    currentStep={stepKey}
-                    steps={getSteps()}
-                />
-            }
-            {...modal}
-        >
-            {!bitcoinAddressHelper?.receiveBitcoinAddress ? (
-                <Loader />
-            ) : (
-                <>
-                    <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
-                        <div className="sticky top-0 w-full">
-                            <WalletAccountSelector
-                                disabled={stepKey === StepKey.Onramp}
-                                value={selectedWalletAccount}
-                                onSelect={(selected) => {
-                                    setSelectedWalletAccount(selected);
-                                }}
-                                options={toWalletAccountSelectorOptions(apiWalletsData ?? [])}
-                            />
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className="wallet-fullscreen-modal-main">
-                            {stepKey === StepKey.Location && (
-                                <Location
-                                    onConfirm={(country) => {
-                                        setCountry(country);
-                                        setStepKey(StepKey.Amount);
+        <>
+            <FullscreenModal
+                open={modal.open && openedModal === 'buy'}
+                header={
+                    <ModalHeaderWithStepper
+                        onClose={handleClose}
+                        onClickStep={(key) => {
+                            setStepKey(key);
+                        }}
+                        currentStep={stepKey}
+                        steps={getSteps()}
+                    />
+                }
+            >
+                {!bitcoinAddressHelper?.receiveBitcoinAddress ? (
+                    <Loader />
+                ) : (
+                    <>
+                        <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
+                            <div className="sticky top-0 w-full">
+                                <WalletAccountSelector
+                                    disabled={stepKey === StepKey.Onramp}
+                                    value={selectedWalletAccount}
+                                    onSelect={(selected) => {
+                                        setSelectedWalletAccount(selected);
                                     }}
+                                    options={toWalletAccountSelectorOptions(apiWalletsData ?? [])}
                                 />
-                            )}
-
-                            {stepKey === StepKey.Amount &&
-                                (() => {
-                                    if (!country) {
-                                        return (
-                                            <div className="color-danger text-center">{c('Wallet buy')
-                                                .t`Missing country. Please refresh and try again or contact support`}</div>
-                                        );
-                                    }
-
-                                    return (
-                                        <Amount
-                                            country={country}
-                                            preselectedQuote={quote}
-                                            onConfirm={(quote) => {
-                                                setQuote(quote);
-                                                setStepKey(StepKey.Onramp);
-                                            }}
-                                        />
-                                    );
-                                })()}
-
-                            {stepKey === StepKey.Onramp &&
-                                (() => {
-                                    if (!quote) {
-                                        return (
-                                            <div className="color-danger text-center">{c('Wallet buy')
-                                                .t`Missing quote. Please refresh and try again or contact support`}</div>
-                                        );
-                                    }
-
-                                    if (!bitcoinAddressHelper.receiveBitcoinAddress) {
-                                        return (
-                                            <div className="color-danger text-center">{c('Wallet buy')
-                                                .t`Missing bitcoin address. Please refresh and try again or contact support`}</div>
-                                        );
-                                    }
-
-                                    return (
-                                        <Checkout
-                                            quote={quote}
-                                            btcAddress={bitcoinAddressHelper.receiveBitcoinAddress.address}
-                                            onDone={() => {
-                                                onDone?.();
-                                            }}
-                                            onBack={() => {
-                                                setStepKey(StepKey.Amount);
-                                            }}
-                                        />
-                                    );
-                                })()}
+                            </div>
                         </div>
-                    </div>
 
-                    {/* empty div for grid centering */}
-                    <div className="wallet-fullscreen-modal-right" />
-                </>
-            )}
-        </FullscreenModal>
+                        <div>
+                            <div className="wallet-fullscreen-modal-main">
+                                {stepKey === StepKey.Location && (
+                                    <Location
+                                        onConfirm={(country) => {
+                                            setCountry(country);
+                                            setStepKey(StepKey.Amount);
+                                        }}
+                                    />
+                                )}
+
+                                {stepKey === StepKey.Amount &&
+                                    (() => {
+                                        if (!country) {
+                                            return (
+                                                <div className="color-danger text-center">{c('Wallet buy')
+                                                    .t`Missing country. Please refresh and try again or contact support`}</div>
+                                            );
+                                        }
+
+                                        return (
+                                            <AmountStep
+                                                country={country}
+                                                preselectedQuote={quote}
+                                                btcAddress={bitcoinAddressHelper.receiveBitcoinAddress.address}
+                                                onConfirm={(quote, clientSecret) => {
+                                                    setQuote(quote);
+                                                    setClientSecret(clientSecret);
+                                                    setStepKey(StepKey.Onramp);
+                                                }}
+                                            />
+                                        );
+                                    })()}
+
+                                {stepKey === StepKey.Onramp &&
+                                    (() => {
+                                        if (!quote) {
+                                            return (
+                                                <div className="color-danger text-center">{c('Wallet buy')
+                                                    .t`Missing quote. Please refresh and try again or contact support`}</div>
+                                            );
+                                        }
+
+                                        if (!bitcoinAddressHelper.receiveBitcoinAddress) {
+                                            return (
+                                                <div className="color-danger text-center">{c('Wallet buy')
+                                                    .t`Missing bitcoin address. Please refresh and try again or contact support`}</div>
+                                            );
+                                        }
+
+                                        return (
+                                            <Checkout
+                                                quote={quote}
+                                                btcAddress={bitcoinAddressHelper.receiveBitcoinAddress.address}
+                                                clientSecret={clientSecret}
+                                                onPurchaseComplete={() => {
+                                                    reset();
+                                                    setOpenedModal('confirm');
+                                                }}
+                                                onBack={() => {
+                                                    setStepKey(StepKey.Amount);
+                                                }}
+                                            />
+                                        );
+                                    })()}
+                            </div>
+                        </div>
+
+                        {/* empty div for grid centering */}
+                        <div className="wallet-fullscreen-modal-right" />
+                    </>
+                )}
+            </FullscreenModal>
+
+            <BitcoinBuyConfirmModal
+                open={Boolean(modal.open && openedModal === 'confirm')}
+                onDone={handleClose}
+                onBuyMoreBitcoin={() => {
+                    setOpenedModal('buy');
+                }}
+            />
+        </>
     );
 };
