@@ -95,6 +95,7 @@ import type {
 import { SignupMode, UpsellTypes } from './interface';
 import DriveTrial2024UpsellModal from './modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from './modals/MailTrial2024UpsellModal';
+import { type CheckTrialPriceParams, type CheckTrialPriceResult, checkTrialPrice } from './modals/Trial2024UpsellModal';
 
 export interface Step1Rref {
     scrollIntoPayment: () => void;
@@ -173,7 +174,11 @@ const Step1 = ({
     const { getPaymentsApi } = usePaymentsApi();
     const handleError = useErrorHandler();
     const isChargebeeEnabled = useIsChargebeeEnabled();
+
     const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
+    const [checkTrialResult, setCheckTrialResult] = useState<CheckTrialPriceResult | undefined>();
+    const [checkingTrial, withCheckingTrial] = useLoading();
+
     const [upsellDriveTrialModal, setUpsellDriveTrialModal, renderUpsellDriveTrialModal] = useModalState();
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
@@ -212,6 +217,16 @@ const Step1 = ({
 
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, options.planIDs) || FREE_PLAN;
 
+    const getSilentPaymentApi = async () => {
+        let chargebeeEnabled = undefined;
+        if (model.session?.UID && model.session?.user) {
+            const user: User = model.session.user;
+            chargebeeEnabled = await isChargebeeEnabled(model.session.UID, async () => user);
+        }
+
+        return getPaymentsApi(silentApi, chargebeeEnabled?.result);
+    };
+
     const latestRef = useRef<any>();
     const check = async (values: {
         currency: Currency;
@@ -220,13 +235,9 @@ const Step1 = ({
         billingAddress: BillingAddress;
         coupon?: string;
     }) => {
-        let chargebeeEnabled = undefined;
-        if (model.session?.UID && model.session?.user) {
-            const user: User = model.session.user;
-            chargebeeEnabled = await isChargebeeEnabled(model.session.UID, async () => user);
-        }
+        const paymentsApi = await getSilentPaymentApi();
         return getSubscriptionPrices(
-            getPaymentsApi(silentApi, chargebeeEnabled?.result),
+            paymentsApi,
             values.planIDs,
             values.currency,
             values.cycle,
@@ -525,6 +536,26 @@ const Step1 = ({
             />
         ) : null;
 
+    const fetchTrialPrice = async (planName: CheckTrialPriceParams['planName']) => {
+        const run = async () => {
+            const paymentsApi = await getSilentPaymentApi();
+            const checkTrialResult = await checkTrialPrice({
+                paymentsApi,
+                plansMap: model.plansMap,
+                currency: options.currency,
+                planName,
+            });
+
+            return checkTrialResult;
+        };
+
+        const resultPromise = run();
+        withCheckingTrial(resultPromise).catch(noop);
+        const result = await resultPromise;
+
+        setCheckTrialResult(result);
+    };
+
     return (
         <Layout
             afterLogo={audienceTabs}
@@ -538,14 +569,8 @@ const Step1 = ({
             {renderUpsellMailTrialModal && (
                 <MailTrial2024UpsellModal
                     {...upsellMailTrialModal}
-                    currency={options.currency}
-                    onConfirm={async () => {
-                        return handleOptimistic({
-                            coupon: COUPON_CODES.MAILPLUSINTRO,
-                            planIDs: { [PLANS.MAIL]: 1 },
-                            cycle: CYCLE.MONTHLY,
-                        });
-                    }}
+                    checkTrialResult={checkTrialResult as CheckTrialPriceResult}
+                    onConfirm={async (data) => handleOptimistic(data)}
                     onContinue={async () => {
                         withLoadingSignup(handleCompletion(getFreeSubscriptionData(model.subscriptionData))).catch(
                             noop
@@ -556,14 +581,8 @@ const Step1 = ({
             {renderUpsellDriveTrialModal && (
                 <DriveTrial2024UpsellModal
                     {...upsellDriveTrialModal}
-                    currency={options.currency}
-                    onConfirm={async () => {
-                        await handleOptimistic({
-                            coupon: COUPON_CODES.TRYDRIVEPLUS2024,
-                            planIDs: { [PLANS.DRIVE]: 1 },
-                            cycle: CYCLE.MONTHLY,
-                        });
-                    }}
+                    checkTrialResult={checkTrialResult as CheckTrialPriceResult}
+                    onConfirm={async (data) => handleOptimistic(data)}
                     onContinue={async () => {
                         withLoadingSignup(handleCompletion(getFreeSubscriptionData(model.subscriptionData))).catch(
                             noop
@@ -985,7 +1004,7 @@ const Step1 = ({
                                                 disableChange={loadingSignup}
                                                 onSubmit={
                                                     hasSelectedFree
-                                                        ? () => {
+                                                        ? async () => {
                                                               if (
                                                                   selectedPlan.Name === PLANS.FREE &&
                                                                   !signupParameters.noPromo
@@ -994,15 +1013,25 @@ const Step1 = ({
                                                                       app === APPS.PROTONMAIL &&
                                                                       mailTrialOfferEnabled
                                                                   ) {
-                                                                      setUpsellMailTrialModal(true);
-                                                                      return;
+                                                                      try {
+                                                                          await fetchTrialPrice(PLANS.MAIL);
+
+                                                                          setUpsellMailTrialModal(true);
+
+                                                                          return;
+                                                                      } catch {}
                                                                   }
                                                                   if (
                                                                       app === APPS.PROTONDRIVE &&
                                                                       driveTrialOfferEnabled
                                                                   ) {
-                                                                      setUpsellDriveTrialModal(true);
-                                                                      return;
+                                                                      try {
+                                                                          await fetchTrialPrice(PLANS.DRIVE);
+
+                                                                          setUpsellDriveTrialModal(true);
+
+                                                                          return;
+                                                                      } catch {}
                                                                   }
                                                               }
 
@@ -1033,7 +1062,7 @@ const Step1 = ({
                                                                     <Button
                                                                         type="submit"
                                                                         size="large"
-                                                                        loading={loadingSignup}
+                                                                        loading={loadingSignup || checkingTrial}
                                                                         color="norm"
                                                                         className="block mx-auto"
                                                                         pill
