@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { CircleLoader } from '@proton/atoms';
 import type { IconName, IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
-import { isAliasAndDisabled } from '@proton/pass/lib/items/item.predicates';
+import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import type { ItemMap, ItemRevision, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
@@ -22,7 +22,7 @@ export const itemTypeToIconName: ItemMap<IconName> = {
 };
 
 export const presentItemIcon = (item: ItemRevision): IconName =>
-    isAliasAndDisabled(item) ? 'alias-slash' : itemTypeToIconName[item.data.type];
+    isDisabledAliasItem(item) ? 'alias-slash' : itemTypeToIconName[item.data.type];
 
 type BaseItemIconProps = {
     alt: string;
