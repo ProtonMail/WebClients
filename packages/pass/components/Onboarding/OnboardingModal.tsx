@@ -1,5 +1,5 @@
-import type { FC, ReactNode } from 'react';
-import { useMemo, useState } from 'react';
+import type { FC } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,80 +9,17 @@ import Stepper from '@proton/atoms/Stepper/Stepper';
 import { type ModalProps, ModalTwoFooter } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import { ModalTwoContent, ModalTwoHeader } from '@proton/components/index';
-import onboardingExtension from '@proton/pass/assets/desktop-onboarding/onboarding-extension.svg';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { OnboardingLockSetup } from '@proton/pass/components/Onboarding/OnboardingLockSetup';
-import { OnboardingThemeSelect } from '@proton/pass/components/Onboarding/OnboardingThemeSelect';
-import { PASS_DOWNLOAD_URL } from '@proton/pass/constants';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { not } from '@proton/pass/utils/fp/predicates';
-import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useOnboarding } from './OnboardingProvider';
 
 import './OnboardingModal.scss';
 
-type OnboardingStep = {
-    action?: () => void;
-    actionText?: string;
-    component: ReactNode;
-    description: ReactNode;
-    group: string;
-    hidden?: boolean;
-    key: string;
-    title: string;
-};
-
 export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) => {
-    const { acknowledge } = useOnboarding();
+    const { acknowledge, steps, markCompleted } = useOnboarding();
     const [loading, setLoading] = useState(false);
     const [step, setStep] = useState(0);
-
-    const steps = useMemo<OnboardingStep[]>(
-        () =>
-            [
-                {
-                    actionText: c('Label').t`Select theme`,
-                    description: c('Label').t`Choose your preferred look and feel.`,
-                    group: c('Label').t`Personalize`,
-                    key: 'look-and-feel',
-                    title: c('Label').t`Make it your own.`,
-                    component: <OnboardingThemeSelect />,
-                },
-                {
-                    component: (
-                        <div className="pass-onboarding-modal--lock">
-                            <p className="text-bold mt-0">{c('Label').t`Unlock with:`}</p>
-                            <OnboardingLockSetup />
-                        </div>
-                    ),
-                    description: (
-                        <>
-                            {c('Label')
-                                .t`For security reasons, ${PASS_SHORT_APP_NAME} automatically locks itself after 10 minutes of inactivity.`}
-                            <br />
-                            <br />
-                            {c('Label')
-                                .t`You can choose between PIN code, biometrics, or your account password to unlock.`}
-                        </>
-                    ),
-                    group: c('Label').t`Security`,
-                    key: 'unlock',
-                    title: c('Label').t`How to unlock ${PASS_SHORT_APP_NAME}`,
-                },
-                {
-                    action: () => window.open(PASS_DOWNLOAD_URL, '_blank'),
-                    actionText: c('Label').t`Install and continue`,
-                    component: <img src={onboardingExtension} className="w-full" alt="" />,
-                    description: c('Label').t`Get the extension for your browser.`,
-                    group: c('Label').t`Browse faster, smarter`,
-                    key: 'extension',
-                    title: c('Label').t`Your passwords. Everywhere.`,
-                },
-            ].filter(not(prop('hidden'))),
-        []
-    );
 
     const currentStep = steps[step];
 
@@ -92,8 +29,16 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
         void wait(250).then(props.onClose);
     };
 
-    const onStep = (offset: number) =>
-        step + offset < steps.length ? setStep(Math.max(0, step + offset)) : onComplete();
+    const onStep = (offset: number) => {
+        markCompleted(steps[step].key);
+
+        const nextStep = step + offset;
+        if (nextStep < steps.length) {
+            setStep(Math.max(0, nextStep));
+        } else {
+            onComplete();
+        }
+    };
 
     const onContinue = () => {
         currentStep.action?.();
@@ -108,7 +53,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
         ) : undefined;
 
     return (
-        <PassModal {...props} onClose={onComplete} size={size} className="pass-onboarding-modal">
+        <PassModal {...props} onClose={props.onClose} size={size} className="pass-onboarding-modal">
             <ModalTwoHeader actions={backButton} closeButtonProps={{ pill: true, icon: true }} />
 
             <Stepper activeStep={step}>

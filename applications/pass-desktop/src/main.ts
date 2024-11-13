@@ -107,7 +107,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
     ctx.window = new BrowserWindow({
         show: false,
         width: 960,
-        height: 640,
+        height: 680,
         opacity: 1,
         autoHideMenuBar: true,
         webPreferences: {
@@ -125,7 +125,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             y: 18,
         },
         minWidth: 881,
-        minHeight: 640,
+        minHeight: 680,
     });
 
     setApplicationMenu(ctx.window);
