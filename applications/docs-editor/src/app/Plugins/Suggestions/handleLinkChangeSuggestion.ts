@@ -8,6 +8,7 @@ import type { LinkChangePayload } from '../Link/LinkPlugin'
 import { $createSuggestionNode, $isSuggestionNode } from './ProtonNode'
 import { $wrapSelectionInSuggestionNode } from './Utils'
 import type { Logger } from '@proton/utils/logs'
+import type { LinkChangeSuggestionProperties } from './Types'
 
 export function $handleLinkChangeSuggestion(
   editor: LexicalEditor,
@@ -79,12 +80,12 @@ export function $handleLinkChangeSuggestion(
       $wrapNodeInElement(currentLinkNode, () =>
         $createSuggestionNode(suggestionID, 'link-change', {
           __url: initialURL,
-        }),
+        } satisfies LinkChangeSuggestionProperties),
       )
     } else {
       $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'link-change', logger, {
         __url: null,
-      })
+      } satisfies LinkChangeSuggestionProperties)
     }
     onSuggestionCreation(suggestionID)
   }
