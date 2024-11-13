@@ -8,20 +8,21 @@ import { Icon, type ModalStateProps } from '@proton/components';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
+import { useAliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContactsContext';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateEmailForm } from '@proton/pass/lib/validation/email';
 import { aliasCreateContact } from '@proton/pass/store/actions';
-import type { AliasContactGetResponse, AliasCreateContactValues, UniqueItem } from '@proton/pass/types';
+import type { AliasContactGetResponse, AliasCreateContactValues } from '@proton/pass/types';
 
 const FORM_ID = 'create-contact-form';
 
-type Props = Pick<ModalStateProps, 'onClose'> &
-    UniqueItem & { onContactCreated: (contact: AliasContactGetResponse) => void };
+type Props = Pick<ModalStateProps, 'onClose'> & { onContactCreated: (contact: AliasContactGetResponse) => void };
 
-export const SidebarCreateContact: FC<Props> = ({ itemId, shareId, onClose, onContactCreated }) => {
+export const SidebarCreateContact: FC<Props> = ({ onClose, onContactCreated }) => {
+    const { itemId, shareId } = useAliasContacts();
     const { loading, dispatch } = useRequest(aliasCreateContact, {
         onSuccess: ({ data }) => {
             onContactCreated(data);

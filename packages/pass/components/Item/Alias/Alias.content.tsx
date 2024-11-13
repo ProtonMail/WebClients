@@ -154,7 +154,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
             {canManageAlias && (
                 <>
                     <FieldsetCluster mode="read" as="div">
-                        <AliasContact shareId={shareId} itemId={itemId} />
+                        <AliasContact />
                     </FieldsetCluster>
                     <div className="color-weak mb-4">{c('Info')
                         .t`Need to email someone but don’t want them to see your email address? Set up a contact alias.`}</div>
