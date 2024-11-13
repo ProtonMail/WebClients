@@ -9,6 +9,7 @@ import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { useEffect, useRef } from 'react'
 import PasswordPage from './PasswordPage/PasswordPage'
 import { UnAuthenticated } from '@proton/components'
+import { PublicCompatProvider } from '@proton/drive-store/lib/usePublicDriveCompat'
 
 const PublicAppRootContainer = () => {
   void import('../../tailwind.scss')
@@ -17,7 +18,9 @@ const PublicAppRootContainer = () => {
     <LocationErrorBoundary>
       <PublicDriveStoreProvider>
         <UnAuthenticated>
-          <RenderApplicationWhenReady />
+          <PublicCompatProvider>
+            <RenderApplicationWhenReady />
+          </PublicCompatProvider>
         </UnAuthenticated>
       </PublicDriveStoreProvider>
     </LocationErrorBoundary>
