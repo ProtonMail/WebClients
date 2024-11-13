@@ -7,7 +7,7 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
-export type OnboardingStatus = {
+type B2BOnboardingStatus = {
     vaultCreated: boolean;
     vaultImported: boolean;
     vaultShared: boolean;
@@ -15,7 +15,7 @@ export type OnboardingStatus = {
 
 export const selectOnboardingState = createSelector(
     [selectWritableVaults, selectWritableSharedVaults, selectLatestImport],
-    (vaults, sharedVaults, lastImport): OnboardingStatus => ({
+    (vaults, sharedVaults, lastImport): B2BOnboardingStatus => ({
         vaultCreated: vaults.length > 1,
         vaultImported: lastImport !== null,
         vaultShared: sharedVaults.length > 0,

@@ -1,6 +1,5 @@
-import { createContext } from 'react';
+import { type ReactNode, createContext } from 'react';
 
-import type { OnboardingStatus } from '@proton/pass/store/selectors';
 import noop from '@proton/utils/noop';
 
 export enum OnboardingType {
@@ -8,28 +7,36 @@ export enum OnboardingType {
     B2B = 'B2B',
 }
 
+export type OnboardingStep = {
+    action?: () => void;
+    actionText?: string;
+    component: ReactNode;
+    description: ReactNode;
+    group: string;
+    hidden?: boolean;
+    key: string;
+    title: string;
+    shortTitle: string;
+};
+
 export type OnboardingContextValue = {
     acknowledge: () => void;
     launch: () => void;
-    complete: boolean;
+    markCompleted: (step: string) => void;
     enabled: boolean;
     isActive: boolean;
-    state: OnboardingStatus;
-    steps: { done: number; total: number };
     type: OnboardingType;
+    steps: OnboardingStep[];
+    completed: string[];
 };
 
 export const OnboardingContext = createContext<OnboardingContextValue>({
     acknowledge: noop,
     launch: noop,
-    complete: false,
+    markCompleted: noop,
     enabled: false,
     isActive: false,
-    state: {
-        vaultCreated: false,
-        vaultImported: false,
-        vaultShared: false,
-    },
-    steps: { done: 0, total: 0 },
     type: OnboardingType.WELCOME,
+    steps: [],
+    completed: [],
 });

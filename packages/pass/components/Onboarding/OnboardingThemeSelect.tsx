@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Info, RadioGroup } from '@proton/components';
+import { Icon, Info, RadioGroup } from '@proton/components';
 import automaticThemeImg from '@proton/pass/assets/settings/theme-automatic.svg';
 import darkThemeImg from '@proton/pass/assets/settings/theme-dark.svg';
 import lightThemeImg from '@proton/pass/assets/settings/theme-light.svg';
@@ -57,8 +57,18 @@ export const OnboardingThemeSelect: FC = () => {
                     label: (
                         <div className="pass-onboarding-modal--option rounded-xl flex items-center w-full py-3 px-4">
                             <img src={src} alt="" />
-                            <div className={clsx('flex-1 px-4', theme === currentTheme && 'text-bold')}>{label}</div>
-                            {info}
+                            <div
+                                className={clsx(
+                                    'flex-1 px-4 flex items-center flex-nowrap gap-1',
+                                    theme === currentTheme && 'text-bold'
+                                )}
+                            >
+                                {label}
+                                {info}
+                            </div>
+                            {theme === currentTheme && (
+                                <Icon name="checkmark-circle-filled" size={6} color="var(--interaction-norm)" />
+                            )}
                         </div>
                     ),
                 }))}
