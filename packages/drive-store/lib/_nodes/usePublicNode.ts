@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import type { SessionKey } from 'packages/crypto/lib';
 
-import useLoading from '@proton/hooks/useLoading';
 import { querySharedURLMetadata, querySharedURLPath } from '@proton/shared/lib/api/drive/sharing';
 import type { LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 
@@ -21,7 +20,7 @@ import { decryptedLinkToNode } from './utils';
  */
 const getCacheKey = ({ linkId }: { linkId: string }) => linkId;
 
-export const usePublicNode = () => {
+export const usePublicNode = ({ isDocsTokenReady, linkId }: { isDocsTokenReady: boolean; linkId: string }) => {
     const abortSignal = useAbortSignal([]);
 
     const cache = useRef(new Map<string, DecryptedLink>());
@@ -32,66 +31,104 @@ export const usePublicNode = () => {
     const { request } = usePublicSession();
     const { cacheLoadedLinks } = useLinksListingHelpers();
     const { getLinkSessionKey } = useLink();
-    const [isNodeLoading, withNodeLoading] = useLoading();
-    const { loadChildren } = usePublicLinksListing();
+    const { loadChildren: publicLinksLoadChildren } = usePublicLinksListing();
+    const [didLoadChildren, setDidLoadChildren] = useState(false);
+    const [didPreloadNode, setDidPreloadNode] = useState(false);
 
-    const rootLinkId = rootLink?.linkId;
-    const rootLinkIsFile = rootLink?.isFile;
+    const loadRootLink = useCallback(async () => {
+        const { link, token } = await loadPublicShare(abortSignal);
+        return { link, token };
+    }, [loadPublicShare, abortSignal]);
 
-    useEffect(() => {
-        if (!token || !rootLinkId || rootLinkIsFile) {
-            return;
-        }
-        const loading = () =>
-            withNodeLoading(async () => {
-                await loadChildren(abortSignal, token, rootLinkId, false);
-            });
-        void loading();
-    }, [token, rootLinkId, rootLinkIsFile]);
+    const loadChildren = useCallback(
+        async (rootLink: DecryptedLink) => {
+            try {
+                void publicLinksLoadChildren(abortSignal, token, rootLink.linkId, false);
+            } catch (error) {
+                console.error('Error during initial setup', error);
+            }
+        },
+        [publicLinksLoadChildren, abortSignal, token]
+    );
 
-    const getNode = async (nodeMeta: PublicNodeMeta, force?: boolean): Promise<DecryptedNode> => {
+    const preloadNode = useCallback(async (nodeMeta: PublicNodeMeta, rootLink: DecryptedLink) => {
         const cached = cache.current.get(getCacheKey(nodeMeta));
-        if (cached && !force) {
+        if (cached) {
             return decryptedLinkToNode(cached);
         }
 
-        let latestToken = token;
+        try {
+            if (nodeMeta.linkId === rootLink.linkId) {
+                return decryptedLinkToNode(rootLink);
+            }
+        } catch (e) {
+            throw new EnrichedError('Unable to load public share', {
+                tags: {
+                    token: nodeMeta.token,
+                    linkId: nodeMeta.linkId,
+                },
+                extra: { e },
+            });
+        }
+    }, []);
 
-        if (!rootLink || !token || force) {
-            try {
-                const { link, token } = await loadPublicShare(abortSignal);
+    useEffect(() => {
+        if (linkId && rootLink) {
+            void preloadNode({ linkId, token }, rootLink).then(() => {
+                setDidPreloadNode(true);
+            });
+        }
+    }, [linkId, rootLink, preloadNode, token]);
 
+    useEffect(() => {
+        if (rootLink || !isDocsTokenReady) {
+            return;
+        }
+
+        void loadRootLink()
+            .then(({ link, token }) => {
                 cache.current.set(getCacheKey(link), link);
                 setRootLink(link);
                 setToken(token);
+            })
+            .catch(console.error);
+    }, [loadRootLink, rootLink, loadChildren, isDocsTokenReady]);
 
-                latestToken = token;
+    useEffect(() => {
+        if (didLoadChildren || !rootLink) {
+            return;
+        }
 
-                if (nodeMeta.linkId === link.linkId) {
-                    return decryptedLinkToNode(link);
-                }
-            } catch (e) {
-                throw new EnrichedError('Unable to load public share', {
-                    tags: {
-                        token: nodeMeta.token,
-                        linkId: nodeMeta.linkId,
-                    },
-                    extra: { e },
-                });
-            }
+        if (rootLink.isFile) {
+            setDidLoadChildren(true);
+            return;
+        }
+
+        if (rootLink && token) {
+            void loadChildren(rootLink)
+                .then(() => {
+                    setDidLoadChildren(true);
+                })
+                .catch(console.error);
+        }
+    }, [didLoadChildren, loadChildren, rootLink, token]);
+
+    const getNode = async (nodeMeta: PublicNodeMeta): Promise<DecryptedNode> => {
+        if (!didLoadChildren || !rootLink || !token) {
+            throw new Error('Attempting to get node before children have loaded');
         }
 
         try {
             const { ParentLinkIDs } = await request<{ ParentLinkIDs: string[] }>(
-                querySharedURLPath(latestToken, nodeMeta.linkId)
+                querySharedURLPath(token, nodeMeta.linkId)
             );
 
             const { Links } = await request<LinkMetaBatchPayload>(
-                querySharedURLMetadata(latestToken, [nodeMeta.linkId, ...ParentLinkIDs])
+                querySharedURLMetadata(token, [nodeMeta.linkId, ...ParentLinkIDs])
             );
 
             const encryptedLinks = Links.map((linkMeta) => {
-                const encryptedLink = linkMetaToEncryptedLink(linkMeta, latestToken);
+                const encryptedLink = linkMetaToEncryptedLink(linkMeta, token);
 
                 // Backend should not return signature address,
                 // as it is not supported in a public context
@@ -101,7 +138,7 @@ export const usePublicNode = () => {
                 return encryptedLink;
             });
 
-            const { links, errors } = await cacheLoadedLinks(abortSignal, latestToken, encryptedLinks, []);
+            const { links, errors } = await cacheLoadedLinks(abortSignal, token, encryptedLinks, []);
 
             if (errors && errors.length > 0) {
                 throw new Error(`Error while caching links: ${errors}`);
@@ -144,5 +181,10 @@ export const usePublicNode = () => {
         return contentKey;
     };
 
-    return { isNodeLoading, getNode, getNodeContentKey };
+    return {
+        getNode,
+        getNodeContentKey,
+        performInitialSetup: loadChildren,
+        didCompleteInitialSetup: didLoadChildren && didPreloadNode,
+    };
 };
