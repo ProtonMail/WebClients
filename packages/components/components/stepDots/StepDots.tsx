@@ -1,5 +1,4 @@
 import type { HTMLProps, ReactElement } from 'react';
-import { Children, cloneElement } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
@@ -12,22 +11,12 @@ interface Props extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
     children: ReactElement<StepDotProps>[];
 }
 
-const StepDots = ({ value, onChange, children, className, ulClassName, ...rest }: Props) => {
-    const clonedChildren = Children.map(children, (child, index) =>
-        cloneElement(child, {
-            active: index === value,
-            index,
-            onChange,
-        })
-    );
-
-    return (
-        <nav {...rest} className={clsx([className, 'step-dots-container'])}>
-            <ul className={clsx(['step-dots-list unstyled inline-flex flex-row', ulClassName])} role="tablist">
-                {clonedChildren}
-            </ul>
-        </nav>
-    );
-};
+const StepDots = ({ value, onChange, children, className, ulClassName, ...rest }: Props) => (
+    <nav {...rest} className={clsx([className, 'step-dots-container'])}>
+        <ul className={clsx(['step-dots-list unstyled inline-flex flex-row', ulClassName])} role="tablist">
+            {children}
+        </ul>
+    </nav>
+);
 
 export default StepDots;
