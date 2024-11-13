@@ -5,8 +5,9 @@ import { useSelector } from 'react-redux';
 import { CircleLoader } from '@proton/atoms';
 import type { IconName, IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
+import { isAliasAndDisabled } from '@proton/pass/lib/items/item.predicates';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
-import type { Item, ItemMap, ItemRevision, MaybeNull } from '@proton/pass/types';
+import type { ItemMap, ItemRevision, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import { DomainIcon, ImageStatus } from './DomainIcon';
@@ -20,7 +21,8 @@ export const itemTypeToIconName: ItemMap<IconName> = {
     identity: 'card-identity',
 };
 
-export const presentItemIcon = (item: Item) => itemTypeToIconName[item.type];
+export const presentItemIcon = (item: ItemRevision): IconName =>
+    isAliasAndDisabled(item) ? 'alias-slash' : itemTypeToIconName[item.data.type];
 
 type BaseItemIconProps = {
     alt: string;
@@ -105,7 +107,7 @@ export const SafeItemIcon: FC<ItemIconProps> = ({ className, iconClassName, item
         <ItemIcon
             alt={data.type}
             className={className}
-            icon={presentItemIcon(data)}
+            icon={presentItemIcon(item)}
             iconClassName={iconClassName}
             loadImage={loadDomainImages}
             pill={pill}
