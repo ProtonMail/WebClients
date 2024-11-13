@@ -1,6 +1,6 @@
 import { getUrlPassword } from '../../utils/url/password';
 
-export function useDocsPublicToken() {
+export function useDocsUrlPublicToken() {
     const searchParams = new URLSearchParams(window.location.search);
 
     const token = searchParams.get('token');
