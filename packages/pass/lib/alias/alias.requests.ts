@@ -263,6 +263,27 @@ export const getAliasDomainsApi = async () =>
         })
     ).Domains!;
 
+export const syncAliasMailboxes = ({ shareId, itemId }: UniqueItem, MailboxIDs: number[]) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/mailbox`,
+        method: 'post',
+        data: { MailboxIDs },
+    });
+
+export const syncAliasName = ({ shareId, itemId }: UniqueItem, Name: string) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/name`,
+        method: 'put',
+        data: { Name },
+    });
+
+export const syncAliasSLNote = ({ shareId, itemId }: UniqueItem, Note: string) =>
+    api({
+        url: `pass/v1/share/${shareId}/alias/${itemId}/note`,
+        method: 'put',
+        data: { Note },
+    });
+
 export const setDefaultAliasDomainApi = async (domain: string) =>
     (
         await api({
@@ -274,21 +295,24 @@ export const setDefaultAliasDomainApi = async (domain: string) =>
 
 export const getCustomDomainsApi = async (): Promise<CustomDomainOutput[]> =>
     createPageIterator({
-        request: async (cursor) => {
+        request: async (LastID) => {
             const result = await api({
                 url: `pass/v1/user/alias/custom_domain`,
                 method: 'get',
-                params: { LastID: cursor },
+                params: { LastID },
             });
-            const pending = result.CustomDomains?.Domains ?? [];
+
+            const domains = result.CustomDomains?.Domains ?? [];
+            const cursor = result.CustomDomains?.LastID;
             const total = result.CustomDomains?.Total ?? 0;
 
-            // BE may return a non-null LastID even if there is no next page, so we set the cursor to null in that case
-            if (pending.length >= total) {
-                return { data: pending, cursor: null };
+            /* BE may return a non-null LastID even if there is no
+             * next page, so we set the cursor to null in that case */
+            if (domains.length >= total) {
+                return { data: domains, cursor: null };
             }
 
-            return { data: pending, cursor: result.CustomDomains?.LastID?.toString() };
+            return { data: domains, cursor: cursor?.toString() };
         },
     })();
 
