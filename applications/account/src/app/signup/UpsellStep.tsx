@@ -16,13 +16,13 @@ import {
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import type { PaymentMethodStatusExtended } from '@proton/payments';
-import { PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
-import { type Currency } from '@proton/payments';
-import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import type { PaymentMethodStatusExtended, PaymentsApi } from '@proton/payments';
+import { type Currency, PLANS, type PlanIDs, getPlansMap } from '@proton/payments';
+import { CYCLE } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Cycle, FreePlanDefault, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
@@ -30,6 +30,11 @@ import Main from '../public/Main';
 import Text from '../public/Text';
 import DriveTrial2024UpsellModal from '../single-signup-v2/modals/DriveTrial2024UpsellModal';
 import MailTrial2024UpsellModal from '../single-signup-v2/modals/MailTrial2024UpsellModal';
+import {
+    type CheckTrialPriceParams,
+    type CheckTrialPriceResult,
+    checkTrialPrice,
+} from '../single-signup-v2/modals/Trial2024UpsellModal';
 import UpsellPlanCard from './UpsellPlanCard';
 import { getSignupApplication } from './helper';
 
@@ -48,6 +53,7 @@ interface Props {
     upsellPlanName: PLANS;
     currencySignupParam: Currency | undefined;
     paymentStatus: PaymentMethodStatusExtended;
+    paymentsApi: PaymentsApi;
 }
 
 const getFooterNotes = (planName: PLANS, cycle: Cycle): string => {
@@ -91,6 +97,7 @@ const UpsellStep = ({
     onBack,
     currencySignupParam,
     paymentStatus,
+    paymentsApi,
 }: Props) => {
     const { APP_NAME } = useConfig();
 
@@ -98,6 +105,7 @@ const UpsellStep = ({
     const [type, setType] = useState('free');
     const [upsellMailTrialModal, setUpsellMailTrialModal, renderUpsellMailTrialModal] = useModalState();
     const [upsellDriveTrialModal, setUpsellDriveTrialModal, renderUpsellDriveTrialModal] = useModalState();
+    const [checkTrialResult, setCheckTrialResult] = useState<CheckTrialPriceResult | undefined>();
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -145,6 +153,20 @@ const UpsellStep = ({
         plans,
         paramCurrency: currencySignupParam,
     });
+
+    const fetchTrialPrice = async (planName: CheckTrialPriceParams['planName']) => {
+        const checkTrialResultPromise = checkTrialPrice({
+            paymentsApi,
+            plansMap,
+            currency,
+            planName,
+        });
+
+        withLoading(checkTrialResultPromise).catch(noop);
+
+        const checkTrialResult = await checkTrialResultPromise;
+        setCheckTrialResult(checkTrialResult);
+    };
 
     const mostPopularPlan = (() => {
         if (!mostPopularPlanName) {
@@ -218,16 +240,10 @@ const UpsellStep = ({
             {renderUpsellMailTrialModal && (
                 <MailTrial2024UpsellModal
                     {...upsellMailTrialModal}
-                    currency={currency}
-                    onConfirm={async () => {
+                    checkTrialResult={checkTrialResult as CheckTrialPriceResult}
+                    onConfirm={async (data) => {
                         setType('mailtrial');
-                        await withLoading(
-                            onPlan({
-                                planIDs: { [PLANS.MAIL]: 1 },
-                                cycle: CYCLE.MONTHLY,
-                                coupon: COUPON_CODES.MAILPLUSINTRO,
-                            })
-                        );
+                        await withLoading(onPlan(data));
                     }}
                     onContinue={async () => {
                         setType('free');
@@ -238,16 +254,10 @@ const UpsellStep = ({
             {renderUpsellDriveTrialModal && (
                 <DriveTrial2024UpsellModal
                     {...upsellDriveTrialModal}
-                    currency={currency}
-                    onConfirm={async () => {
+                    checkTrialResult={checkTrialResult as CheckTrialPriceResult}
+                    onConfirm={async (data) => {
                         setType('drivetrial');
-                        await withLoading(
-                            onPlan({
-                                planIDs: { [PLANS.DRIVE]: 1 },
-                                cycle: CYCLE.MONTHLY,
-                                coupon: COUPON_CODES.TRYDRIVEPLUS2024,
-                            })
-                        );
+                        await withLoading(onPlan(data));
                     }}
                     onContinue={async () => {
                         setType('free');
@@ -272,14 +282,22 @@ const UpsellStep = ({
                                     size="large"
                                     loading={loading && type === 'free'}
                                     disabled={loading}
-                                    onClick={() => {
+                                    onClick={async () => {
                                         if (hasMailTrialUpsell) {
-                                            setUpsellMailTrialModal(true);
-                                            return;
+                                            try {
+                                                await fetchTrialPrice(PLANS.MAIL);
+
+                                                setUpsellMailTrialModal(true);
+                                                return;
+                                            } catch {}
                                         }
                                         if (hasDriveTrialUpsell) {
-                                            setUpsellDriveTrialModal(true);
-                                            return;
+                                            try {
+                                                await fetchTrialPrice(PLANS.DRIVE);
+
+                                                setUpsellDriveTrialModal(true);
+                                                return;
+                                            } catch {}
                                         }
                                         setType('free');
                                         void withLoading(onPlan({ planIDs: {} }));
