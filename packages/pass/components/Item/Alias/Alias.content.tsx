@@ -8,8 +8,8 @@ import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueCo
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
-import { AliasSimpleLoginNoteModal } from '@proton/pass/components/Item/Alias/AliasSimpleLoginNote.modal';
-import { AliasContact } from '@proton/pass/components/Item/Alias/Contact/AliasContact';
+import { AliasSLNoteModal } from '@proton/pass/components/Item/Alias/AliasSLNoteModal';
+import { AliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContacts';
 import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
@@ -131,7 +131,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     </FieldsetCluster>
 
                     {openSlNoteModal && (
-                        <AliasSimpleLoginNoteModal open={openSlNoteModal} onClose={() => setOpenSlNoteModal(false)} />
+                        <AliasSLNoteModal open={openSlNoteModal} onClose={() => setOpenSlNoteModal(false)} />
                     )}
                 </>
             )}
@@ -154,7 +154,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
             {canManageAlias && (
                 <>
                     <FieldsetCluster mode="read" as="div">
-                        <AliasContact />
+                        <AliasContacts shareId={shareId} itemId={itemId} />
                     </FieldsetCluster>
                     <div className="color-weak mb-4">{c('Info')
                         .t`Need to email someone but don’t want them to see your email address? Set up a contact alias.`}</div>
