@@ -90,6 +90,8 @@ enum DriveFeatureFlag {
     DriveWebOnboardingV2 = 'DriveWebOnboardingV2',
     // Temp
     DriveDecryptionErrorDebugging = 'DriveDecryptionErrorDebugging',
+    // B2B
+    DriveB2BPhotosUpload = 'DriveB2BPhotosUpload',
 }
 
 enum DocsFeatureFlag {

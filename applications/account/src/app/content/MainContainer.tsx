@@ -154,6 +154,7 @@ const MainContainer = () => {
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -195,6 +196,7 @@ const MainContainer = () => {
         memberships,
         groups,
         isUserGroupsMembershipFeatureEnabled,
+        canB2BHidePhotos,
         isB2BDrive,
         isB2BAuthLogsEnabled,
         isGlobalSSOEnabled,
