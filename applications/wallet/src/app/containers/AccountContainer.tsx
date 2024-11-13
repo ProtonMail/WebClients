@@ -23,9 +23,6 @@ import { useWalletDrawerContext } from '../contexts/WalletDrawerContext';
 import { useWalletPassphrase } from '../hooks/useWalletPassphrase';
 import { getThemeForWallet } from '../utils';
 
-// Used to reset bitcoin buy modal at the end of the process
-const generateBitcoinBuyKey = () => generateUID(`bitcoin-buy`);
-
 // Used to reset bitcoin send modal at the end of the process
 const generateBitcoinSendKey = () => generateUID(`bitcoin-send`);
 
@@ -36,15 +33,12 @@ export const AccountContainer = () => {
 
     const [bitcoinSendKey, setBitcoinSendKey] = useState(generateBitcoinSendKey());
 
-    const [bitcoinBuyKey, setBitcoinBuyKey] = useState(generateBitcoinBuyKey());
-
     useEffect(() => {
         setBitcoinSendKey(generateBitcoinSendKey());
-        setBitcoinBuyKey(generateBitcoinBuyKey());
     }, [walletId, accountId]);
 
-    const [walletSendModal, setWalletSendModal] = useModalState();
-    const [walletBuyModal, setWalletBuyModal] = useModalState();
+    const [walletSendModal, setWalletSendModal, renderWalletSendModal] = useModalState();
+    const [walletBuyModal, setWalletBuyModal, renderWalletBuyModal] = useModalState();
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
 
@@ -163,26 +157,19 @@ export const AccountContainer = () => {
 
                     {!isSyncing && (
                         <>
-                            <BitcoinSendModal
-                                key={bitcoinSendKey}
-                                wallet={wallet}
-                                account={walletAccount}
-                                theme={theme}
-                                modal={walletSendModal}
-                                onDone={() => {
-                                    setBitcoinSendKey(generateBitcoinSendKey());
-                                }}
-                            />
+                            {renderWalletSendModal && (
+                                <BitcoinSendModal
+                                    key={bitcoinSendKey}
+                                    wallet={wallet}
+                                    account={walletAccount}
+                                    theme={theme}
+                                    modal={walletSendModal}
+                                />
+                            )}
 
-                            <BitcoinBuyModal
-                                key={bitcoinBuyKey}
-                                wallet={wallet}
-                                modal={walletBuyModal}
-                                account={walletAccount}
-                                onDone={() => {
-                                    setBitcoinBuyKey(generateBitcoinBuyKey());
-                                }}
-                            />
+                            {renderWalletBuyModal && (
+                                <BitcoinBuyModal wallet={wallet} modal={walletBuyModal} account={walletAccount} />
+                            )}
                         </>
                     )}
                 </div>
