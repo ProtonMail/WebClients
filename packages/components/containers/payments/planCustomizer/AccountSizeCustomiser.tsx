@@ -88,8 +88,7 @@ export const AccountSizeCustomiser = ({
             <div className="flex *:min-size-auto md:flex-nowrap items-center mb-4">
                 <label
                     htmlFor={addon.Name}
-                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2"
-                    style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
+                    className="w-full md:w-auto flex-1 plan-customiser-addon-label text-bold pr-2"
                 >
                     {config[mode].label}
                     {showTooltip && config[mode]?.tooltip && <Info buttonClass="ml-2" title={config[mode].tooltip} />}
