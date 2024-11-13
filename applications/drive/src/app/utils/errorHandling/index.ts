@@ -60,7 +60,7 @@ export function sendErrorReport(error: Error | EnrichedError | unknown, addition
 
     const context = Object.assign({}, isEnrichedError(error) ? error.context || {} : {}, additionalContext || {});
 
-    if (isProduction(window.location.host)) {
+    if (typeof window !== 'undefined' && isProduction(window.location.host)) {
         const cookieTag = getCookie('Tag') || 'prod';
         if (cookieTag) {
             if (context.tags) {
