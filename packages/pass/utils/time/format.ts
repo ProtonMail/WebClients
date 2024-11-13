@@ -31,15 +31,25 @@ export const epochToRelativeDaysAgo = (epoch: number, options?: RelativeDaysAgoO
 type TimeRemainingOptions = {
     format?: (remaining: string) => string;
     expiredLabel?: string;
-    dateInThePast?: boolean;
+    /** If true, will return `{expiredLabel}` if set, else `Expired` */
+    showExpiredLabel?: boolean;
+};
+
+const isExpired = (epoch: number): boolean => {
+    const start = Date.now();
+    const end = new Date(epochToMs(epoch));
+    return start > end.getTime();
 };
 
 export const epochToRelativeDateUntil = (epoch: number, options?: TimeRemainingOptions): string => {
     const start = Date.now();
     const end = new Date(epochToMs(epoch));
     const format = options?.format ?? identity;
+    const showExpiredLabel = options?.showExpiredLabel ?? Boolean(options?.expiredLabel);
 
-    if (!options?.dateInThePast && start > end.getTime()) return options?.expiredLabel ?? c('Label').t`Expired`;
+    if (showExpiredLabel && isExpired(epoch)) {
+        return options?.expiredLabel ?? c('Label').t`Expired`;
+    }
 
     let { years = 0, months = 0, days = 0, hours = 0, minutes = 0 } = intervalToDuration({ start, end });
 
