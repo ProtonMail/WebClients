@@ -32,6 +32,7 @@ enum CommonFeatureFlag {
     WalletRbf = 'WalletRbf',
     WalletAddressList = 'WalletAddressList',
     WalletMinFee = 'WalletMinFee',
+    WalletAztecoWeb = 'WalletAztecoWeb',
 }
 
 enum AccountFlag {
