@@ -3,25 +3,46 @@ import { isSEPACountry } from 'ibantools';
 import { MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/payments';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { getHas2024OfferCoupon, getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Api, BillingPlatform, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
+import type { Api, BillingPlatform, ChargebeeUserExists, Subscription, User } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { type BillingAddress } from './billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
-import type { ADDON_NAMES, PLANS } from './constants';
+import { type ADDON_NAMES, PLANS } from './constants';
 import { MethodStorage, PAYMENT_METHOD_TYPES } from './constants';
 import { extendStatus, isSignupFlow } from './helpers';
 import type {
     AvailablePaymentMethod,
+    Currency,
     PaymentMethodFlows,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
     PaymentsApi,
     PlainPaymentMethodType,
+    PlanIDs,
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
 } from './interface';
 import { isOnSessionMigration, isSplittedUser } from './utils';
+
+export interface PaymentMethodsParameters {
+    paymentMethodStatus: PaymentMethodStatusExtended | PaymentMethodStatus;
+    paymentMethods: SavedPaymentMethod[];
+    chargebeeEnabled: ChargebeeEnabled;
+    amount: number;
+    currency: Currency;
+    coupon: string;
+    flow: PaymentMethodFlows;
+    selectedPlanName: PLANS | ADDON_NAMES | undefined;
+    billingPlatform?: BillingPlatform;
+    chargebeeUserExists?: ChargebeeUserExists;
+    disableNewPaymentMethods?: boolean;
+    billingAddress?: BillingAddress;
+    enableSepa?: boolean;
+    user?: User;
+    planIDs?: PlanIDs;
+    subscription?: Subscription;
+}
 
 export class PaymentMethods {
     public get amount(): number {
@@ -62,21 +83,71 @@ export class PaymentMethods {
         return this._statusExtended;
     }
 
-    constructor(
-        paymentMethodStatus: PaymentMethodStatus | PaymentMethodStatusExtended,
-        public paymentMethods: SavedPaymentMethod[],
-        public chargebeeEnabled: ChargebeeEnabled,
-        private _amount: number,
-        private _coupon: string,
-        private _flow: PaymentMethodFlows,
-        private _selectedPlanName: PLANS | ADDON_NAMES | undefined,
-        public billingPlatform: BillingPlatform | undefined,
-        public chargebeeUserExists: ChargebeeUserExists | undefined,
-        public disableNewPaymentMethods: boolean,
-        public billingAddress: BillingAddress | undefined,
-        public enableSepa: boolean
-    ) {
+    public paymentMethods: SavedPaymentMethod[];
+
+    public chargebeeEnabled: ChargebeeEnabled;
+
+    private _amount: number;
+
+    public currency: Currency;
+
+    private _coupon: string;
+
+    private _flow: PaymentMethodFlows;
+
+    private _selectedPlanName: PLANS | ADDON_NAMES | undefined;
+
+    public billingPlatform: BillingPlatform | undefined;
+
+    public chargebeeUserExists: ChargebeeUserExists | undefined;
+
+    public disableNewPaymentMethods: boolean;
+
+    public billingAddress: BillingAddress | undefined;
+
+    public enableSepa: boolean;
+
+    public user: User | undefined;
+
+    public planIDs: PlanIDs | undefined;
+
+    public subscription: Subscription | undefined;
+
+    constructor({
+        paymentMethodStatus,
+        paymentMethods,
+        chargebeeEnabled,
+        amount,
+        currency,
+        coupon,
+        flow,
+        selectedPlanName,
+        billingPlatform,
+        chargebeeUserExists,
+        disableNewPaymentMethods,
+        billingAddress,
+        enableSepa,
+        user,
+        planIDs,
+        subscription,
+    }: PaymentMethodsParameters) {
         this._statusExtended = extendStatus(paymentMethodStatus);
+
+        this.paymentMethods = paymentMethods;
+        this.chargebeeEnabled = chargebeeEnabled;
+        this._amount = amount;
+        this.currency = currency;
+        this._coupon = coupon;
+        this._flow = flow;
+        this._selectedPlanName = selectedPlanName;
+        this.billingPlatform = billingPlatform;
+        this.chargebeeUserExists = chargebeeUserExists;
+        this.disableNewPaymentMethods = !!disableNewPaymentMethods;
+        this.billingAddress = billingAddress;
+        this.enableSepa = !!enableSepa;
+        this.user = user;
+        this.planIDs = planIDs;
+        this.subscription = subscription;
     }
 
     getAvailablePaymentMethods(): { usedMethods: AvailablePaymentMethod[]; methods: AvailablePaymentMethod[] } {
@@ -223,7 +294,7 @@ export class PaymentMethods {
     }
 
     private isCashAvailable(): boolean {
-        return this.statusExtended.VendorStates.Cash && !isSignupFlow(this.flow) && !getHas2024OfferCoupon(this.coupon);
+        return this.statusExtended.VendorStates.Cash && !isSignupFlow(this.flow) && !this.isBF2024Offer();
     }
 
     private isSEPADirectDebitAvailable(): boolean {
@@ -241,7 +312,7 @@ export class PaymentMethods {
 
         const cbUser = this.chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED;
 
-        return flowSupportsDirectDebit && billingCountrySupportsSEPA && cbUser && !getHas2024OfferCoupon(this.coupon);
+        return flowSupportsDirectDebit && billingCountrySupportsSEPA && cbUser && !this.isBF2024Offer();
     }
 
     private isBitcoinAvailable(): boolean {
@@ -261,11 +332,17 @@ export class PaymentMethods {
 
         const flowSupportsBtc = btcEnabledFlows.includes(this.flow);
 
+        const passLifetimeBuyerWithCreditBalance = (this.user?.Credit ?? 0) > 0 && this.buysPassLifetime();
+        const passLifetimeBuyerWithActiveSubscription =
+            !!this.subscription && this.subscription.Currency !== this.currency && this.buysPassLifetime();
+        const btcDisabledSpecialCases = passLifetimeBuyerWithCreditBalance || passLifetimeBuyerWithActiveSubscription;
+
         return (
             this.statusExtended.VendorStates.Bitcoin &&
             flowSupportsBtc &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
-            !this.isB2BPlan()
+            !this.isB2BPlan() &&
+            !btcDisabledSpecialCases
         );
     }
 
@@ -352,6 +429,14 @@ export class PaymentMethods {
         const isCredit = this.flow === 'credit';
         return (isAddCard || isCredit) && this.isOnSessionMigration() && !this.isSplittedUser();
     }
+
+    private buysPassLifetime() {
+        return !!this.planIDs?.[PLANS.PASS_LIFETIME];
+    }
+
+    private isBF2024Offer() {
+        return getHas2024OfferCoupon(this.coupon) || this.buysPassLifetime();
+    }
 }
 
 async function getPaymentMethods(api: Api): Promise<SavedPaymentMethod[]> {
@@ -362,23 +447,47 @@ async function getPaymentMethods(api: Api): Promise<SavedPaymentMethod[]> {
 /**
  * Initialize payment methods object. If user is authenticated, fetches saved payment methods.
  **/
-export async function initializePaymentMethods(
-    api: Api,
-    maybePaymentMethodStatus: PaymentMethodStatusExtended | undefined,
-    maybePaymentMethods: SavedPaymentMethod[] | undefined,
-    isAuthenticated: boolean,
-    amount: number,
-    coupon: string,
-    flow: PaymentMethodFlows,
-    chargebeeEnabled: ChargebeeEnabled,
-    paymentsApi: PaymentsApi,
-    selectedPlanName: PLANS | ADDON_NAMES | undefined,
-    billingPlatform?: BillingPlatform,
-    chargebeeUserExists?: ChargebeeUserExists,
-    disableNewPaymentMethods?: boolean,
-    billingAddress?: BillingAddress,
-    enableSepa?: boolean
-) {
+export async function initializePaymentMethods({
+    api,
+    maybePaymentMethodStatus,
+    maybePaymentMethods,
+    isAuthenticated,
+    amount,
+    currency,
+    coupon,
+    flow,
+    chargebeeEnabled,
+    paymentsApi,
+    selectedPlanName,
+    billingPlatform,
+    chargebeeUserExists,
+    disableNewPaymentMethods,
+    billingAddress,
+    enableSepa,
+    user,
+    planIDs,
+    subscription,
+}: {
+    api: Api;
+    maybePaymentMethodStatus: PaymentMethodStatusExtended | undefined;
+    maybePaymentMethods: SavedPaymentMethod[] | undefined;
+    isAuthenticated: boolean;
+    amount: number;
+    currency: Currency;
+    coupon: string;
+    flow: PaymentMethodFlows;
+    chargebeeEnabled: ChargebeeEnabled;
+    paymentsApi: PaymentsApi;
+    selectedPlanName: PLANS | ADDON_NAMES | undefined;
+    billingPlatform?: BillingPlatform;
+    chargebeeUserExists?: ChargebeeUserExists;
+    disableNewPaymentMethods?: boolean;
+    billingAddress?: BillingAddress;
+    enableSepa?: boolean;
+    user?: User;
+    planIDs?: PlanIDs;
+    subscription?: Subscription;
+}) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? paymentsApi.statusExtendedAutomatic();
     const paymentMethodsPromise = (() => {
         if (maybePaymentMethods) {
@@ -415,18 +524,22 @@ export async function initializePaymentMethods(
         } as SavedPaymentMethodExternal;
     });
 
-    return new PaymentMethods(
+    return new PaymentMethods({
         paymentMethodStatus,
-        mappedMethods,
+        paymentMethods: mappedMethods,
         chargebeeEnabled,
         amount,
+        currency,
         coupon,
         flow,
         selectedPlanName,
         billingPlatform,
         chargebeeUserExists,
-        !!disableNewPaymentMethods,
+        disableNewPaymentMethods,
         billingAddress,
-        !!enableSepa
-    );
+        enableSepa,
+        user,
+        planIDs,
+        subscription,
+    });
 }
