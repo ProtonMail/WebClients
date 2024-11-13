@@ -6,11 +6,11 @@ import { useUser } from '@proton/account/user/hooks';
 import { useOAuthToken } from '@proton/activation';
 import { OAUTH_PROVIDER } from '@proton/activation/src/interface';
 import { Button, CircleLoader } from '@proton/atoms';
-import { Icon, IconRow, ZoomUpsellModal, useApi, useModalStateObject } from '@proton/components';
-import { useLoading } from '@proton/hooks';
+import { Icon, IconRow, ZoomUpsellModal, useApi, useModalStateObject, useNotifications } from '@proton/components';
 import { IcVideoCamera } from '@proton/icons';
 import { createZoomMeeting } from '@proton/shared/lib/api/calendars';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { EventModel, VideoConferenceMeetingCreation } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
@@ -58,10 +58,11 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
 
     const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
 
-    const api = useApi();
-    const [, withLoading] = useLoading();
-
     const { loadingConfig, triggerZoomOAuth } = useZoomOAuth();
+    const { createNotification } = useNotifications();
+
+    const api = useApi();
+    const silentApi = getSilentApi(api);
 
     const zoomUpsellModal = useModalStateObject();
 
@@ -89,15 +90,11 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
         return;
     }
 
-    const createVideoConferenceMeeting = async (silentCall = false) => {
+    const createVideoConferenceMeeting = async () => {
         try {
             setProcessState('loading');
 
-            // We make the call silent when we assume the user should be able to create a meeting
-            // This way we don't show an error if the request fails and open the oauth modal without the user knowing
-            const data = await withLoading(
-                api<VideoConferenceMeetingCreation>({ ...createZoomMeeting(), silence: silentCall })
-            );
+            const data = await silentApi<VideoConferenceMeetingCreation>(createZoomMeeting());
 
             setModel({
                 ...model,
@@ -119,6 +116,11 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
                 void triggerZoomOAuth(() => createVideoConferenceMeeting());
                 return;
             }
+
+            createNotification({
+                text: getApiErrorMessage(e) || c('Error').t`Failed to create meeting`,
+                type: 'error',
+            });
 
             // In case of error, we reset the state of the button to connected
             setProcessState('connected');
@@ -144,8 +146,7 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
             });
             setProcessState('meeting-present');
         } else {
-            // We assume the user can create a meeting so we make a silent API call
-            await createVideoConferenceMeeting(true);
+            await createVideoConferenceMeeting();
         }
     };
 
