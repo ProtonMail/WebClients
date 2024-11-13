@@ -56,6 +56,10 @@ export enum Actions {
     OnboardingV2UploadFile = 'onboardingV2UploadFile',
     OnboardingV2UploadFolder = 'onboardingV2UploadFolder',
     OnboardingV2UploadSkip = 'onboardingV2UploadSkip',
+
+    // Download info on what system will be used for file with size above MEMORY_DOWNLOAD_LIMIT
+    DownloadUsingSW = 'downloadUsingSW',
+    DownloadFallback = 'downloadFallback',
 }
 
 type PerformanceTelemetryAdditionalValues = {
