@@ -249,7 +249,7 @@ export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.PASS_PRO]: 'Pass Essentials',
     [PLANS.PASS_BUSINESS]: 'Pass Professional',
     [PLANS.PASS_FAMILY]: 'Pass Family',
-    [PLANS.PASS_LIFETIME]: 'Pass Lifetime',
+    [PLANS.PASS_LIFETIME]: 'Pass + SimpleLogin Lifetime',
 };
 
 export enum PLAN_TYPES {
