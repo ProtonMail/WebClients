@@ -93,10 +93,8 @@ export const migrate = (state: State) => {
 
     /** v1.26.0 migration */
     if (state.alias.aliasDetails) {
-        const isOldFormat = Object.values(state.alias.aliasDetails).some(Array.isArray);
-        if (isOldFormat) {
-            state.alias.aliasDetails = {};
-        }
+        const legacy = Object.values(state.alias.aliasDetails).some(Array.isArray);
+        if (legacy) state.alias.aliasDetails = {};
     }
 
     return state;

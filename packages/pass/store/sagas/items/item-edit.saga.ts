@@ -1,6 +1,6 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
-import { api } from '@proton/pass/lib/api/api';
+import { syncAliasMailboxes, syncAliasName, syncAliasSLNote } from '@proton/pass/lib/alias/alias.requests';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { editItem } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
@@ -8,8 +8,10 @@ import { aliasDetailsSync, itemEditFailure, itemEditIntent, itemEditSuccess } fr
 import type { AliasDetailsState, AliasState } from '@proton/pass/store/reducers';
 import { selectAliasDetails, selectAliasMailboxes, selectAliasOptions, selectItem } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
+import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEqual } from '@proton/pass/utils/set/is-equal';
 
@@ -18,65 +20,36 @@ function* aliasEditWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
 
     const { itemId, shareId } = aliasEditIntent;
 
-    const item: ItemRevision<'alias'> = yield select(selectItem(shareId, itemId));
-    const mailboxesForAlias: string[] = yield select(selectAliasMailboxes(item.aliasEmail!));
+    const item: Maybe<ItemRevision<'alias'>> = yield select(selectItem(shareId, itemId));
+    if (!item || !item.aliasEmail) throw new Error('Invalid item');
+
+    const mailboxesForAlias: string[] = yield select(selectAliasMailboxes(item.aliasEmail));
     const aliasOptions: AliasState['aliasOptions'] = yield select(selectAliasOptions);
-    const aliasDetails: AliasDetailsState = yield select(selectAliasDetails(item.aliasEmail!));
+    const aliasDetails: Maybe<AliasDetailsState> = yield select(selectAliasDetails(item.aliasEmail));
 
     const currentMailboxIds = new Set(
         mailboxesForAlias
             .map((mailbox) => aliasOptions?.mailboxes.find(({ email }) => email === mailbox)?.id)
-            .filter(Boolean) as number[]
+            .filter(truthy)
     );
 
-    const nextMailboxes = aliasEditIntent.extraData.mailboxes;
-    const nextMailboxIds = new Set(nextMailboxes.map(({ id }) => id));
-
-    const mailboxesChanged = !isEqual(currentMailboxIds, nextMailboxIds);
-
-    /* only update the mailboxes if there is a change */
-    if (mailboxesChanged) {
-        yield api({
-            url: `pass/v1/share/${shareId}/alias/${itemId}/mailbox`,
-            method: 'post',
-            data: {
-                MailboxIDs: Array.from(nextMailboxIds.values()),
-            },
-        });
-    }
-
-    const currentDisplayName = aliasDetails?.name;
-    const nextDisplayName = aliasEditIntent.extraData.displayName;
-    const displayNameChanged = currentDisplayName !== nextDisplayName;
-
-    if (displayNameChanged) {
-        yield api({
-            url: `pass/v1/share/${shareId}/alias/${itemId}/name`,
-            method: 'put',
-            data: {
-                Name: nextDisplayName,
-            },
-        });
-    }
-
-    const currentSlNote = aliasDetails?.slNote;
     const nextSlNote = aliasEditIntent.extraData.slNote;
-    const slNoteChanged = currentSlNote !== nextSlNote;
+    const nextMailboxes = aliasEditIntent.extraData.mailboxes;
+    const nextMailboxIds = new Set(nextMailboxes.map(prop('id')));
+    const nextDisplayName = aliasEditIntent.extraData.displayName;
 
-    if (slNoteChanged) {
-        yield api({
-            url: `pass/v1/share/${shareId}/alias/${itemId}/note`,
-            method: 'put',
-            data: {
-                Note: nextSlNote,
-            },
-        });
-    }
+    const nameChanged = aliasDetails?.name !== nextDisplayName;
+    const mailboxesChanged = !isEqual(currentMailboxIds, nextMailboxIds);
+    const slNoteChanged = aliasDetails?.slNote !== nextSlNote;
 
-    if (mailboxesChanged || displayNameChanged || slNoteChanged) {
+    if (mailboxesChanged) yield syncAliasMailboxes(item, Array.from(nextMailboxIds.values()));
+    if (nameChanged) yield syncAliasName(item, nextDisplayName);
+    if (slNoteChanged) yield syncAliasSLNote(item, nextDisplayName);
+
+    if (mailboxesChanged || nameChanged || slNoteChanged) {
         yield put(
             aliasDetailsSync({
-                aliasEmail: item.aliasEmail!,
+                aliasEmail: item.aliasEmail,
                 ...aliasDetails,
                 mailboxes: nextMailboxes,
                 name: nextDisplayName,
