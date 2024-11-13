@@ -13,7 +13,7 @@ import {
 import { ConfirmDeleteItem, ConfirmMoveItem } from '@proton/pass/components/Item/Actions/ConfirmItemActions';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
-import { isAliasDisabled, isAliasItem } from '@proton/pass/lib/items/item.predicates';
+import { isAliasItem, isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import {
     itemBulkDeleteIntent,
     itemBulkMoveIntent,
@@ -168,7 +168,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     const aliasEmail = item.aliasEmail!;
                     const relatedLogin = selectLoginItemByEmail(aliasEmail)(state);
                     const ack = selectAliasTrashAcknowledged(state);
-                    if ((isAliasDisabled(item) || ack) && !relatedLogin) trashItem.call(item);
+                    if ((isDisabledAlias(item) || ack) && !relatedLogin) trashItem.call(item);
                     else trashItem.prompt(item);
                 } else trashItem.call(item);
             },
