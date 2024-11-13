@@ -56,9 +56,18 @@ export const AztecoPaymentDetailsModal = ({
 
                     <div className="flex flex-row justify-space-between">
                         <div>
+                            {selectedQuote.PaymentMethod === 'BankTransfer'
+                                ? c('bitcoin buy').t`1% bank transfer fee`
+                                : c('bitcoin buy').t`4% credit card fee`}
+                        </div>
+                        {selectedQuote.PaymentProcessingFee} {selectedQuote.FiatCurrencySymbol}
+                    </div>
+
+                    <div className="flex flex-row justify-space-between">
+                        <div>
                             {
-                                // translator: 4% service fee
-                                c('bitcoin buy').t`${serviceFeePercentage}% service fee`
+                                // translator: 4% Azteco service fee
+                                c('bitcoin buy').t`${serviceFeePercentage}% Azteco service fee`
                             }
                         </div>
                         <div>
@@ -69,15 +78,6 @@ export const AztecoPaymentDetailsModal = ({
                             )}
                             {selectedQuote.PaymentGatewayFee} {selectedQuote.FiatCurrencySymbol}
                         </div>
-                    </div>
-
-                    <div className="flex flex-row justify-space-between">
-                        <div>
-                            {selectedQuote.PaymentMethod === 'BankTransfer'
-                                ? c('bitcoin buy').t`1% bank transfer fee`
-                                : c('bitcoin buy').t`4% credit card fee`}
-                        </div>
-                        {selectedQuote.PaymentProcessingFee} {selectedQuote.FiatCurrencySymbol}
                     </div>
 
                     <div className="flex flex-row justify-space-between">
@@ -105,7 +105,7 @@ export const AztecoPaymentDetailsModal = ({
                             ? // translator: you are saving 5 USD on Azteco service fee!
                               c('bitcoin buy')
                                   .t`As a paid user, you are saving ${serviceFeeAmount} ${selectedQuote.FiatCurrencySymbol} on Azteco service fee!`
-                            : c('bitcoin buy').t`Upgrade to Visionary plan to reduce service fee to 3%`}
+                            : c('bitcoin buy').t`Upgrade to Visionary plan to reduce Azteco service fee to 3%`}
                     </div>
                     {!hasWalletPaidPlans && (
                         <div className="w-1/3 text-right">
