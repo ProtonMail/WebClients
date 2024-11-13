@@ -5,14 +5,15 @@ import { c } from 'ttag';
 import { Icon, useModalState } from '@proton/components';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { AliasContactsProvider } from '@proton/pass/components/Item/Alias/Contact/AliasContactsProvider';
+import type { SelectedItem } from '@proton/pass/types';
 
-import { SidebarContactsView } from './SidebarContactsView';
+import { AliasContactsView } from './AliasContactsView';
 
-export const AliasContact: FC = () => {
+export const AliasContacts: FC<SelectedItem> = ({ shareId, itemId }) => {
     const [viewContacts, openViewContactSidebar] = useModalState();
 
     return (
-        <>
+        <AliasContactsProvider shareId={shareId} itemId={itemId}>
             <ValueControl
                 actions={<Icon name="chevron-right" size={4} />}
                 icon={<Icon name="filing-cabinet" className="mt-0.5" size={4} />}
@@ -20,11 +21,7 @@ export const AliasContact: FC = () => {
                 value={c('Label').t`Contacts`}
                 label=""
             />
-            {viewContacts.open && (
-                <AliasContactsProvider>
-                    <SidebarContactsView onClose={viewContacts.onClose} />
-                </AliasContactsProvider>
-            )}
-        </>
+            {viewContacts.open && <AliasContactsView onClose={viewContacts.onClose} />}
+        </AliasContactsProvider>
     );
 };
