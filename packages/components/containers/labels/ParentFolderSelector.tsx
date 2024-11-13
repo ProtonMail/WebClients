@@ -20,9 +20,10 @@ interface Props {
     label: string;
     onChange?: (parentID: string | number) => void;
     disableOptions: string[];
+    maxLevel: number;
 }
 
-const ParentFolderSelector = ({ id, value, label, onChange, className, disableOptions = [] }: Props) => {
+const ParentFolderSelector = ({ id, value, label, onChange, className, disableOptions = [], maxLevel }: Props) => {
     const [folders, loading] = useFolders();
 
     const options = useMemo(() => {
@@ -54,6 +55,9 @@ const ParentFolderSelector = ({ id, value, label, onChange, className, disableOp
         });
 
         const reducer = (acc: OptionProps[] = [], folder: FolderWithSubFolders, level = 0) => {
+            if (level >= maxLevel) {
+                return acc;
+            }
             acc.push(formatOption(folder, level));
 
             if (Array.isArray(folder.subfolders)) {

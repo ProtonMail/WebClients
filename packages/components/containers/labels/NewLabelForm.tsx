@@ -7,7 +7,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { getColorName } from '@proton/shared/lib/colors';
-import { LABEL_TYPE } from '@proton/shared/lib/constants';
+import { LABEL_TYPE, MAX_FOLDER_LEVEL } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
@@ -69,6 +69,7 @@ function NewLabelForm({
             <>
                 <div>
                     <ParentFolderSelector
+                        maxLevel={MAX_FOLDER_LEVEL}
                         id="parentID"
                         label={c('Label').t`Folder location`}
                         value={folder.ParentID || 0}

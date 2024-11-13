@@ -1080,3 +1080,5 @@ export const CALENDAR_MOBILE_APP_LINKS = {
     appStore: 'https://apps.apple.com/app/apple-store/id1514709943',
     playStore: 'https://play.google.com/store/apps/details?id=me.proton.android.calendar',
 };
+
+export const MAX_FOLDER_LEVEL = 2;
