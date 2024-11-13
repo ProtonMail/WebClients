@@ -38,6 +38,7 @@ interface Arguments {
     memberships: GroupMembershipReturn[] | undefined;
     groups: Group[] | undefined;
     isUserGroupsMembershipFeatureEnabled: boolean;
+    canB2BHidePhotos: boolean;
     isB2BDrive: boolean;
     isB2BAuthLogsEnabled: boolean;
     isGlobalSSOEnabled: boolean;
@@ -64,6 +65,7 @@ export const getRoutes = ({
     memberships,
     groups,
     isUserGroupsMembershipFeatureEnabled,
+    canB2BHidePhotos,
     isB2BDrive,
     isB2BAuthLogsEnabled,
     isGlobalSSOEnabled,
@@ -94,7 +96,7 @@ export const getRoutes = ({
             organization,
         }),
         calendar: getCalendarAppRoutes({ app, user, organization, isZoomIntegrationEnabled }),
-        drive: getDriveAppRoutes({ app, isB2BDrive }),
+        drive: getDriveAppRoutes({ app, isB2BDrive, canB2BHidePhotos }),
         docs: getDocsAppRoutes(),
         pass: getPassAppRoutes({ app, user, organization, subscription, canDisplayB2BLogsPass }),
         organization: getOrganizationAppRoutes({
