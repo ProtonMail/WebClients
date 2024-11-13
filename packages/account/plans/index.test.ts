@@ -23,6 +23,9 @@ describe('plans', () => {
             EUR: [],
             CHF: [],
             BRL: [],
+            AUD: [],
+            CAD: [],
+            GBP: [],
         };
         mockDefaultCurrency = 'USD';
     });

@@ -62,7 +62,7 @@ describe('SubscriptionPanel', () => {
                 user={buildUser({ isFree: true, isPaid: false, hasPassLifetime: true })}
             />
         );
-        expect(screen.getByTestId('plan-name')).toHaveTextContent('Pass Lifetime');
+        expect(screen.getByTestId('plan-name')).toHaveTextContent('Pass + SimpleLogin Lifetime');
     });
 
     it('should render subscription plan name if user has pass lifetime and some subscription', () => {
