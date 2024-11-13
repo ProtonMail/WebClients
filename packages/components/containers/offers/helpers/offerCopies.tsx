@@ -18,12 +18,13 @@ import {
     DRIVE_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
-    PASS_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
+
+import { getProtonPassFeatureTooltipText } from '../../payments/features/pass';
 
 export const getMonthFreeText = (n: number) => {
     return c('specialoffer: Deal').ngettext(msgid`${n} month FREE`, `${n} months FREE`, n);
@@ -209,7 +210,7 @@ export const getLifetimePassFeatures = () => {
         { name: c('BF2024: Deal details').t`1 user account` },
         {
             name: c('BF2024: Deal details').t`One-time payment, lifetime deal`,
-            tooltip: c('new_plans: tooltip').t`Lifetime access to ${PASS_APP_NAME} premium features.`,
+            tooltip: getProtonPassFeatureTooltipText(),
         },
         { name: c('BF2024: Deal details').t`Unlimited logins, notes, credit cards` },
         { name: c('BF2024: Deal details').t`Secure vault and link sharing` },
