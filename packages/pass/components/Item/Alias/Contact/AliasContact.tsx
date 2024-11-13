@@ -4,13 +4,11 @@ import { c } from 'ttag';
 
 import { Icon, useModalState } from '@proton/components';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
-import type { UniqueItem } from '@proton/pass/types';
+import { AliasContactsProvider } from '@proton/pass/components/Item/Alias/Contact/AliasContactsProvider';
 
 import { SidebarContactsView } from './SidebarContactsView';
 
-type Props = UniqueItem;
-
-export const AliasContact: FC<Props> = ({ shareId, itemId }) => {
+export const AliasContact: FC = () => {
     const [viewContacts, openViewContactSidebar] = useModalState();
 
     return (
@@ -23,9 +21,9 @@ export const AliasContact: FC<Props> = ({ shareId, itemId }) => {
                 label=""
             />
             {viewContacts.open && (
-                <>
-                    <SidebarContactsView onClose={viewContacts.onClose} shareId={shareId} itemId={itemId} />
-                </>
+                <AliasContactsProvider>
+                    <SidebarContactsView onClose={viewContacts.onClose} />
+                </AliasContactsProvider>
             )}
         </>
     );
