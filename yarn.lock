@@ -14985,18 +14985,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asn1.js@npm:^5.0.0":
-  version: 5.4.1
-  resolution: "asn1.js@npm:5.4.1"
-  dependencies:
-    bn.js: "npm:^4.0.0"
-    inherits: "npm:^2.0.1"
-    minimalistic-assert: "npm:^1.0.0"
-    safer-buffer: "npm:^2.1.0"
-  checksum: 10c0/b577232fa6069cc52bb128e564002c62b2b1fe47f7137bdcd709c0b8495aa79cee0f8cc458a831b2d8675900eea0d05781b006be5e1aa4f0ae3577a73ec20324
-  languageName: node
-  linkType: hard
-
 "asn1js@npm:^3.0.2, asn1js@npm:^3.0.5":
   version: 3.0.5
   resolution: "asn1js@npm:3.0.5"
@@ -32897,15 +32885,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@^5.11.1":
-  version: 5.11.1
-  resolution: "@protontech/openpgp@npm:5.11.1"
-  dependencies:
-    asn1.js: "npm:^5.0.0"
-  checksum: 10c0/863a1743fa1b250f4647531c4e32683f6b28259d15a94cb038d906284aa5b420c1014f1140db827e3301443ae14f55b7c192a063f4d68a25c610a3d815d4259d
-  languageName: node
-  linkType: hard
-
 "openpgp@npm:@protontech/openpgp@~6.0.0":
   version: 6.0.0
   resolution: "@protontech/openpgp@npm:6.0.0"
@@ -35859,7 +35838,6 @@ __metadata:
     node-stream-zip: "npm:^1.15.0"
     nodemailer: "npm:^6.9.16"
     nodemailer-smtp-transport: "npm:^2.7.4"
-    openpgp: "npm:@protontech/openpgp@^5.11.1"
     pdf-parse: "npm:^1.1.1"
     prettier: "npm:^3.3.3"
     proxy-agent: "npm:^6.4.0"
@@ -35869,6 +35847,8 @@ __metadata:
     typescript: "npm:^5.6.3"
     vcf: "npm:^2.1.2"
     zod: "npm:^3.23.8"
+  peerDependencies:
+    openpgp: ^6.0.0
   languageName: unknown
   linkType: soft
 
@@ -39240,7 +39220,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.1.0":
+"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0":
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: 10c0/7e3c8b2e88a1841c9671094bbaeebd94448111dd90a81a1f606f3f67708a6ec57763b3b47f06da09fc6054193e0e6709e77325415dc8422b04497a8070fa02d4
