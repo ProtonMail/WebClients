@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { ALIAS_DETAILS_MAX_AGE, ALIAS_OPTIONS_MAX_AGE } from '@proton/pass/constants';
-import { isAliasDisabled } from '@proton/pass/lib/items/item.predicates';
+import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
@@ -129,7 +129,7 @@ export const aliasSyncStatusToggle = requestActionsFactory<AliasToggleStatusDTO,
                 withCache,
                 withNotification({
                     type: 'info',
-                    text: isAliasDisabled(item)
+                    text: isDisabledAlias(item)
                         ? c('Info')
                               .t`Alias succcessfully disabled. You will no longer receive emails sent to ${item.aliasEmail}`
                         : c('Info')
@@ -265,12 +265,12 @@ export const setDefaultAliasDomain = requestActionsFactory<string, UserAliasSett
         config: { data: true },
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to update default domain`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
@@ -285,12 +285,12 @@ export const createCustomDomain = requestActionsFactory<string, CustomDomainOutp
     key: identity,
     success: { config: { data: true } },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to create domain`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
@@ -325,12 +325,12 @@ export const verifyCustomDomain = requestActionsFactory<number, CustomDomainVali
         config: { data: true },
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to verify domain`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
@@ -344,12 +344,12 @@ export const deleteCustomDomain = requestActionsFactory<number, Boolean>('alias:
             })({ payload: {} }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to delete domain`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
@@ -359,12 +359,12 @@ export const getCustomDomainSettings = requestActionsFactory<number, CustomDomai
     key: String,
     success: { config: { data: true } },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to load domain settings.`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
@@ -383,12 +383,12 @@ export const updateCatchAll = requestActionsFactory<CatchAllDTO, CustomDomainSet
             })({ payload: data }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to update catch-all setting.`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
@@ -405,12 +405,12 @@ export const updateCustomDomainDisplayName = requestActionsFactory<CustomDomainN
             })({ payload: data }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to update domain name.`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
@@ -429,12 +429,12 @@ export const updateRandomPrefix = requestActionsFactory<RandomPrefixDTO, CustomD
             })({ payload: data }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to update random prefix generation setting.`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
@@ -451,12 +451,12 @@ export const updateCustomDomainMailboxes = requestActionsFactory<CustomDomainMai
             })({ payload: data }),
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to update domain mailboxes.`,
                 type: 'error',
                 error,
-            })({ payload: null }),
+            })({ payload }),
     },
 });
 
@@ -464,18 +464,14 @@ export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasConta
     'alias::contact::get-list'
 )({
     key: selectedItemKey,
-    success: {
-        config: { data: true },
-    },
+    success: { config: { data: true } },
 });
 
 export const aliasGetContactInfo = requestActionsFactory<AliasContactInfoDTO, AliasContactGetResponse>(
     'alias::contact::get-info'
 )({
     key: selectedItemKey,
-    success: {
-        config: { data: true },
-    },
+    success: { config: { data: true } },
 });
 
 export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, AliasContactGetResponse>(
@@ -491,12 +487,12 @@ export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, Alia
         config: { data: true },
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to create the contact`,
                 type: 'error',
                 error,
-            })({ payload: {} }),
+            })({ payload }),
     },
 });
 
@@ -535,11 +531,11 @@ export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, Ali
         config: { data: true },
     },
     failure: {
-        prepare: (error) =>
+        prepare: (error, payload) =>
             withNotification({
                 text: c('Error').t`Failed to block the contact`,
                 type: 'error',
                 error,
-            })({ payload: {} }),
+            })({ payload }),
     },
 });
