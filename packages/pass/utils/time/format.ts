@@ -13,12 +13,17 @@ export const formatEpoch = (dateFormat: string) => (epoch: number) =>
 export const epochToDateTime = formatEpoch('dd MMM yyyy, HH:mm');
 export const epochToDate = formatEpoch('dd MMM yyyy');
 
-export const epochToRelativeDate = (epoch: number) => {
+type RelativeDaysAgoOptions = {
+    formatDate?: (value: string) => string;
+    formatDays?: (value: string) => string;
+};
+
+export const epochToRelativeDate = (epoch: number, options?: RelativeDaysAgoOptions) => {
     const date = new Date(epochToMs(epoch));
 
     return isThisWeek(date)
-        ? `${capitalize(formatRelative(date, new Date(), { locale: dateLocale }))}`
-        : epochToDateTime(epoch);
+        ? (options?.formatDays ?? capitalize)(formatRelative(date, new Date(), { locale: dateLocale }))
+        : (options?.formatDate ?? identity)(epochToDateTime(epoch));
 };
 
 type TimeRemainingOptions = {
