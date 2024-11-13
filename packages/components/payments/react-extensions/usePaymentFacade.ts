@@ -37,6 +37,7 @@ import type {
     ChargebeeEnabled,
     ChargebeeUserExists,
     Cycle,
+    Subscription,
     User,
 } from '@proton/shared/lib/interfaces';
 
@@ -195,6 +196,8 @@ export const usePaymentFacade = (
         user,
         enableSepa,
         onBeforeSepaPayment,
+        planIDs,
+        subscription,
     }: {
         amount: number;
         currency: Currency;
@@ -234,6 +237,8 @@ export const usePaymentFacade = (
         user: User | undefined;
         enableSepa?: boolean;
         onBeforeSepaPayment?: () => Promise<boolean>;
+        planIDs?: PlanIDs;
+        subscription?: Subscription;
     },
     {
         api,
@@ -269,6 +274,7 @@ export const usePaymentFacade = (
     const methods = useMethods(
         {
             amount,
+            currency,
             coupon: coupon ?? '',
             flow,
             onMethodChanged,
@@ -283,6 +289,9 @@ export const usePaymentFacade = (
             disableNewPaymentMethods,
             onCurrencyChange,
             enableSepa,
+            user,
+            planIDs,
+            subscription,
         },
         {
             api,

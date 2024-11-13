@@ -10,6 +10,7 @@ import type {
     PaymentMethods,
     PaymentsApi,
     PlainPaymentMethodType,
+    PlanIDs,
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
@@ -25,12 +26,20 @@ import {
     isSavedPaymentMethodInternal,
 } from '@proton/payments';
 import { type Currency } from '@proton/payments';
-import type { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
+import type {
+    Api,
+    BillingPlatform,
+    ChargebeeEnabled,
+    ChargebeeUserExists,
+    Subscription,
+    User,
+} from '@proton/shared/lib/interfaces';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
 
 export interface Props {
     amount: number;
+    currency: Currency;
     coupon?: string | null;
     flow: PaymentMethodFlows;
     paymentMethodStatusExtended?: PaymentMethodStatusExtended;
@@ -50,6 +59,9 @@ export interface Props {
         }
     ) => void;
     enableSepa?: boolean;
+    user?: User;
+    planIDs?: PlanIDs;
+    subscription?: Subscription;
 }
 
 interface Dependencies {
@@ -156,11 +168,13 @@ const useInhouseToChargebeeSwitch = ({
     }, [selectedMethod, availableMethods]);
 };
 
+// todo: refactor this component and potentially get rid of the binding to a PaymentMethods class
 export const useMethods = (
     {
         paymentMethodStatusExtended,
         paymentMethods,
         amount,
+        currency,
         coupon,
         flow,
         onMethodChanged,
@@ -173,12 +187,16 @@ export const useMethods = (
         disableNewPaymentMethods,
         onCurrencyChange,
         enableSepa,
+        user,
+        planIDs,
+        subscription,
     }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
     const paymentMethodsRef = useRef<PaymentMethods>();
     const pendingDataRef = useRef<{
         pendingAmount?: number;
+        pendingCurrency?: Currency;
         pendingCoupon?: string | null;
         pendingFlow?: PaymentMethodFlows;
         pendingChargebee?: ChargebeeEnabled;
@@ -188,6 +206,9 @@ export const useMethods = (
         pendingChargebeeUserExists?: ChargebeeUserExists;
         pendingDisableNewPaymentMethods?: boolean;
         pendingEnableSepa?: boolean;
+        pendingUser?: User;
+        pendingPlanIDs?: PlanIDs;
+        pendingSubscription?: Subscription;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -232,23 +253,27 @@ export const useMethods = (
         async function run() {
             const paymentStatus = paymentMethodStatusExtended ?? (await getPaymentStatus({ api }));
 
-            paymentMethodsRef.current = await initializePaymentMethods(
+            paymentMethodsRef.current = await initializePaymentMethods({
                 api,
-                paymentStatus,
-                paymentMethods,
+                maybePaymentMethodStatus: paymentStatus,
+                maybePaymentMethods: paymentMethods,
                 isAuthenticated,
                 amount,
-                coupon ?? '',
+                currency,
+                coupon: coupon ?? '',
                 flow,
-                isChargebeeEnabled(),
+                chargebeeEnabled: isChargebeeEnabled(),
                 paymentsApi,
                 selectedPlanName,
                 billingPlatform,
-                overrideChargebeeUserExists ?? chargebeeUserExists,
-                !!disableNewPaymentMethods,
+                chargebeeUserExists: overrideChargebeeUserExists ?? chargebeeUserExists,
+                disableNewPaymentMethods: !!disableNewPaymentMethods,
                 billingAddress,
-                enableSepa
-            );
+                enableSepa,
+                user,
+                planIDs,
+                subscription,
+            });
 
             // Initialization might take some time, so we need to check if there is any pending data
             // If for example the amount changes before initialization is done, then it won't be updated by the usual
@@ -258,6 +283,7 @@ export const useMethods = (
                 // Getting the saved values and clearing the pending right away, because this is a one-time thing
                 const {
                     pendingAmount,
+                    pendingCurrency,
                     pendingCoupon,
                     pendingFlow,
                     pendingChargebee,
@@ -267,6 +293,9 @@ export const useMethods = (
                     pendingChargebeeUserExists,
                     pendingDisableNewPaymentMethods,
                     pendingEnableSepa,
+                    pendingUser,
+                    pendingPlanIDs,
+                    pendingSubscription,
                 } = pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
@@ -276,6 +305,11 @@ export const useMethods = (
                 // Updating the amount
                 if (typeof pendingAmount === 'number') {
                     paymentMethodsRef.current.amount = pendingAmount;
+                }
+
+                // Updating the currency
+                if (pendingCurrency) {
+                    paymentMethodsRef.current.currency = pendingCurrency;
                 }
 
                 // Updating the flow
@@ -311,6 +345,18 @@ export const useMethods = (
                 if (pendingDisableNewPaymentMethods !== undefined) {
                     paymentMethodsRef.current.disableNewPaymentMethods = pendingDisableNewPaymentMethods;
                 }
+
+                if (pendingUser !== undefined) {
+                    paymentMethodsRef.current.user = pendingUser;
+                }
+
+                if (pendingPlanIDs !== undefined) {
+                    paymentMethodsRef.current.planIDs = pendingPlanIDs;
+                }
+
+                if (pendingSubscription !== undefined) {
+                    paymentMethodsRef.current.subscription = pendingSubscription;
+                }
             }
 
             setStatus(paymentMethodsRef.current.statusExtended);
@@ -330,6 +376,7 @@ export const useMethods = (
         if (!paymentMethodsRef.current) {
             pendingDataRef.current = {
                 pendingAmount: amount,
+                pendingCurrency: currency,
                 pendingCoupon: coupon,
                 pendingFlow: flow,
                 pendingChargebee: isChargebeeEnabled(),
@@ -339,11 +386,15 @@ export const useMethods = (
                 pendingBillingPlatform: billingPlatform,
                 pendingChargebeeUserExists: chargebeeUserExists,
                 pendingDisableNewPaymentMethods: disableNewPaymentMethods,
+                pendingUser: user,
+                pendingPlanIDs: planIDs,
+                pendingSubscription: subscription,
             };
             return;
         }
 
         paymentMethodsRef.current.amount = amount;
+        paymentMethodsRef.current.currency = currency;
         paymentMethodsRef.current.coupon = coupon ?? '';
         paymentMethodsRef.current.flow = flow;
         paymentMethodsRef.current.chargebeeEnabled = isChargebeeEnabled();
@@ -353,10 +404,13 @@ export const useMethods = (
         paymentMethodsRef.current.billingPlatform = billingPlatform;
         paymentMethodsRef.current.chargebeeUserExists = overrideChargebeeUserExists ?? chargebeeUserExists;
         paymentMethodsRef.current.disableNewPaymentMethods = !!disableNewPaymentMethods;
-
+        paymentMethodsRef.current.user = user;
+        paymentMethodsRef.current.planIDs = planIDs;
+        paymentMethodsRef.current.subscription = subscription;
         updateMethods();
     }, [
         amount,
+        currency,
         coupon,
         flow,
         isChargebeeEnabled(),

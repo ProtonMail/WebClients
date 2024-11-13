@@ -539,6 +539,8 @@ const SubscriptionContainer = ({
         onCurrencyChange: (currency, context) => handleChangeCurrency(currency, context),
         flow: 'subscription',
         user,
+        subscription,
+        planIDs: model.planIDs,
         coupon: couponCode,
         onBeforeSepaPayment: async () => {
             if (checkResult.ProrationMode === ProrationMode.Exact) {
