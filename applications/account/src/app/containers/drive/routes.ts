@@ -4,7 +4,15 @@ import type { SectionConfig } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
-export const getDriveAppRoutes = ({ app /*, isB2BDrive */ }: { app: APP_NAMES; isB2BDrive: boolean }) => {
+export const getDriveAppRoutes = ({
+    app,
+    isB2BDrive,
+    canB2BHidePhotos,
+}: {
+    app: APP_NAMES;
+    isB2BDrive: boolean;
+    canB2BHidePhotos: boolean;
+}) => {
     return <const>{
         available: app === APPS.PROTONDRIVE,
         header: DRIVE_APP_NAME,
@@ -22,8 +30,7 @@ export const getDriveAppRoutes = ({ app /*, isB2BDrive */ }: { app: APP_NAMES; i
                 ],
             },
             photos: <SectionConfig>{
-                // Temporarily forced to false - needs BE to enable the feature
-                available: false, // isB2BDrive,
+                available: isB2BDrive && canB2BHidePhotos,
                 text: c('Title').t`Photos`,
                 to: '/photos',
                 icon: 'image',
