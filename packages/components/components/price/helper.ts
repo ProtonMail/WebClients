@@ -9,6 +9,11 @@ export const humanPrice = (amount: number = 0, divisor: number = 100) => {
     return fixedValue.replace('.00', '').replace('-', '');
 };
 
+export function isCurrencyWithSpace(currency: Currency | string) {
+    const currenciesWithoutSpace = ['USD', 'GBP', 'AUD', 'CAD'];
+    return !currenciesWithoutSpace.includes(currency);
+}
+
 export const getSimplePriceString = (currency: Currency, rawPrice: number, suffix: string = '') => {
     const price = humanPrice(rawPrice, 100);
     const isNegative = rawPrice < 0;
@@ -17,8 +22,8 @@ export const getSimplePriceString = (currency: Currency, rawPrice: number, suffi
     if (currency === 'EUR') {
         return `${optionalNegative}${price} ${CurrencySymbols.EUR}${suffix}`;
     }
-    if (currency === 'USD') {
-        return `${optionalNegative}${CurrencySymbols.USD}${price}${suffix}`;
+    if (!isCurrencyWithSpace(currency)) {
+        return `${optionalNegative}${CurrencySymbols[currency]}${price}${suffix}`;
     }
 
     return `${optionalNegative}${currency} ${price}${suffix}`;

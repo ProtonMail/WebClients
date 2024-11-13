@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { type Currency, CurrencySymbols } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
-import { humanPrice } from './helper';
+import { humanPrice, isCurrencyWithSpace } from './helper';
 
 import './Price.scss';
 
@@ -69,7 +69,7 @@ const Price = ({
             );
         }
 
-        const hasSpace = currency !== 'USD';
+        const hasSpace = isCurrencyWithSpace(currency);
         return (
             <>
                 <span className={clsx(['currency', currencyClassName])}>
