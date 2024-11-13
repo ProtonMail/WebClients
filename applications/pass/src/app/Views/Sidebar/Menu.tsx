@@ -19,6 +19,7 @@ import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
+import { OnboardingState } from '@proton/pass/components/Onboarding/OnboardingState';
 import { OnboardingType } from '@proton/pass/components/Onboarding/Provider/OnboardingContext';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
@@ -82,6 +83,14 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         <hr className="my-2 mx-4" aria-hidden="true" />
                     </>
                 )}
+
+                {onboarding.type === OnboardingType.WELCOME && onboarding.enabled && (
+                    <>
+                        <OnboardingState />
+                        <hr className="my-2 mx-4" aria-hidden="true" />
+                    </>
+                )}
+
                 <SecureLinkButton
                     className="rounded"
                     parentClassName="mx-3"

@@ -13,7 +13,6 @@ import {
     selectOnboardingState,
 } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import noop from '@proton/utils/noop';
 
 import { OnboardingContext, type OnboardingContextValue, OnboardingType } from './OnboardingContext';
@@ -39,19 +38,18 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     const context = useMemo<OnboardingContextValue>(() => {
-        const steps = Object.values(state).concat(extension.supportedBrowser ? [extension.installed] : []);
-
         return {
             acknowledge: () => {
                 setEnabled(false);
                 void spotlight.acknowledge(SpotlightMessage.B2B_ONBOARDING);
             },
             launch: () => navigate(getLocalPath('onboarding')),
+            markCompleted: noop,
             complete,
             enabled,
             isActive: Boolean(isActive),
-            state,
-            steps: { done: steps.filter(truthy).length, total: steps.length },
+            steps: [],
+            completed: [],
             type: OnboardingType.B2B,
         };
     }, [complete, enabled, extension, state, isActive, navigate]);
