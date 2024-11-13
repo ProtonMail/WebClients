@@ -18,13 +18,19 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
     const { SSO_URL } = usePassConfig();
     const plan = useSelector(selectUserPlan);
     const planName = useSelector(selectPlanDisplayName);
-    const endDate = epochToRelativeDate(plan?.SubscriptionEnd!);
+
+    if (!(plan && plan.SubscriptionEnd)) return;
+
+    const title = epochToRelativeDate(plan.SubscriptionEnd, {
+        formatDate: (endDate) => c('Title').t`Your ${planName} subscription will end on ${endDate}`,
+        formatDays: (daysLeft) => c('Title').t`Your ${planName} subscription will end in ${daysLeft}`,
+    });
+
     const upgrade = () => onLink(`${SSO_URL}/pass/dashboard?source=banner#your-subscriptions`);
 
     return (
         <div className="flex-1">
-            <strong className="block color-invert">{c('Title')
-                .t`Your ${planName} subscription will end on ${endDate}`}</strong>
+            <strong className="block color-invert">{title}</strong>
             <span className="block text-sm color-invert">
                 {c('Info')
                     .t`You will no longer have access to sharing, 2FA, credit card and other advanced features in ${PASS_APP_NAME}`}
