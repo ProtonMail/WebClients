@@ -883,7 +883,7 @@ const Step1 = ({
                                             .t`Continue with your ${BRAND_NAME} account`}
                                     />
                                     <BoxContent>
-                                        <div className="flex justify-space-between gap-14">
+                                        <div className="flex justify-space-between gap-10 lg:gap-20">
                                             <div className="flex-1 w-0">
                                                 <AccountSwitcherItem
                                                     user={user}
@@ -964,7 +964,7 @@ const Step1 = ({
                                     })()}
                                 />
                                 <BoxContent>
-                                    <div className="flex items-start justify-space-between gap-14">
+                                    <div className="flex md:flex-nowrap items-start justify-space-between gap-10 lg:gap-20">
                                         <div className="flex-1 w-0 relative">
                                             <AccountStepDetails
                                                 signupTypes={signupTypes}
