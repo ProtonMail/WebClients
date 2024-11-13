@@ -1226,7 +1226,7 @@ const InteractiveCalendarView = ({
         }
 
         cancelClosePopoverRef.current = true;
-        updateModal('createEventModal', { isOpen: false });
+        closeModal('createEventModal');
 
         // Close the popover only
         setInteractiveData({
@@ -2229,11 +2229,7 @@ const InteractiveCalendarView = ({
 
                         try {
                             await handleSaveEvent(temporaryEvent, inviteActions, isDuplicatingEvent);
-
-                            // close modal clearing props
-                            updateModal('createEventModal', {
-                                isOpen: false,
-                            });
+                            closeModal('createEventModal');
                         } catch (error) {
                             return noop();
                         }
@@ -2253,6 +2249,7 @@ const InteractiveCalendarView = ({
                         try {
                             await handleConfirmDeleteTemporary({ ask: true });
                             closeModal('createEventModal');
+                            resetInteractiveData();
                         } catch (error) {
                             return noop();
                         }
