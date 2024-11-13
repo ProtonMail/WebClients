@@ -7,38 +7,25 @@ import { Icon, Tooltip, useNotifications } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
+import { useAliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContactsContext';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { aliasBlockContact, aliasDeleteContact } from '@proton/pass/store/actions';
-import type { AliasContactGetResponse, AliasContactWithStatsGetResponse, UniqueItem } from '@proton/pass/types';
+import type { AliasContactWithStatsGetResponse } from '@proton/pass/types';
 import { epochToRelativeDuration } from '@proton/pass/utils/time/format';
 
-type Props = UniqueItem &
-    AliasContactWithStatsGetResponse & {
-        onContactDeleted: (ID: number) => void;
-        onContactUpdated: (updatedContact: AliasContactGetResponse) => void;
-    };
+type Props = { contact: AliasContactWithStatsGetResponse };
 
-export const ContactCard: FC<Props> = ({
-    shareId,
-    itemId,
-    ID,
-    Email,
-    Blocked,
-    ForwardedEmails,
-    RepliedEmails,
-    CreateTime,
-    ReverseAlias,
-    onContactDeleted,
-    onContactUpdated,
-}) => {
+export const AliasContactCard: FC<Props> = ({ contact }) => {
+    const { onUpdate, onDelete, shareId, itemId } = useAliasContacts();
     const { writeToClipboard } = usePassCore();
     const { createNotification } = useNotifications();
-    const time = epochToRelativeDuration(CreateTime);
 
-    const blockContactRequest = useRequest(aliasBlockContact, { onSuccess: ({ data }) => onContactUpdated(data) });
-    const deleteContactRequest = useRequest(aliasDeleteContact, { onSuccess: ({ data }) => onContactDeleted(data) });
+    const { CreateTime, ReverseAlias, Email, ForwardedEmails, RepliedEmails, Blocked, ID } = contact;
+    const time = epochToRelativeDuration(CreateTime);
+    const blockContact = useRequest(aliasBlockContact, { onSuccess: ({ data }) => onUpdate(data) });
+    const deleteContact = useRequest(aliasDeleteContact, { onSuccess: ({ data }) => onDelete(data) });
 
     const handleCopyAddress = async () => {
         await writeToClipboard(ReverseAlias);
@@ -66,9 +53,14 @@ export const ContactCard: FC<Props> = ({
                             shape="solid"
                             color="weak"
                             onClick={() =>
-                                blockContactRequest.dispatch({ shareId, itemId, contactId: ID, blocked: !Blocked })
+                                blockContact.dispatch({
+                                    shareId,
+                                    itemId,
+                                    contactId: ID,
+                                    blocked: !Blocked,
+                                })
                             }
-                            loading={blockContactRequest.loading}
+                            loading={blockContact.loading}
                         >
                             {Blocked ? c('Action').t`Unblock contact` : c('Action').t`Block contact`}
                         </Button>
@@ -91,14 +83,14 @@ export const ContactCard: FC<Props> = ({
                             <DropdownMenuButton
                                 label={Blocked ? c('Action').t`Unblock contact` : c('Action').t`Block contact`}
                                 onClick={() =>
-                                    blockContactRequest.dispatch({ shareId, itemId, contactId: ID, blocked: !Blocked })
+                                    blockContact.dispatch({ shareId, itemId, contactId: ID, blocked: !Blocked })
                                 }
                             />
                             <DropdownMenuButton
                                 label={c('Action').t`Delete`}
                                 danger
-                                onClick={() => deleteContactRequest.dispatch({ shareId, itemId, contactId: ID })}
-                                loading={deleteContactRequest.loading}
+                                onClick={() => deleteContact.dispatch({ shareId, itemId, contactId: ID })}
+                                loading={deleteContact.loading}
                             />
                         </QuickActionsDropdown>
                     </div>
