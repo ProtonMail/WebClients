@@ -62,6 +62,7 @@ it('should render', () => {
             {
                 paymentMethodStatusExtended,
                 amount: 100,
+                currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
@@ -85,6 +86,7 @@ it('should initialize payment methods (no chargebee)', async () => {
             {
                 paymentMethodStatusExtended,
                 amount: 1000,
+                currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
@@ -179,6 +181,7 @@ it('should initialize payment methods (with chargebee)', async () => {
             {
                 paymentMethodStatusExtended,
                 amount: 1000,
+                currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.CHARGEBEE_FORCED,
                 paymentsApi: {
@@ -302,6 +305,7 @@ it('should filter out external payment methods', async () => {
             {
                 paymentMethodStatusExtended,
                 amount: 1000,
+                currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
@@ -408,6 +412,7 @@ it('should consider methods without External property internal', async () => {
             {
                 paymentMethodStatusExtended,
                 amount: 1000,
+                currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
@@ -512,6 +517,7 @@ it('should filter out internal payment methods', async () => {
             {
                 paymentMethodStatusExtended,
                 amount: 1000,
+                currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.CHARGEBEE_FORCED,
                 paymentsApi: {
@@ -596,6 +602,7 @@ it('should update methods when amount changes', async () => {
                 {
                     paymentMethodStatusExtended,
                     amount,
+                    currency: 'USD',
                     flow: 'credit',
                     isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                     paymentsApi: {
@@ -647,6 +654,7 @@ it('should get saved method by its ID', async () => {
             {
                 paymentMethodStatusExtended,
                 amount: 1000,
+                currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
@@ -687,6 +695,7 @@ it('should set selected method', async () => {
             {
                 paymentMethodStatusExtended,
                 amount: 1000,
+                currency: 'USD',
                 flow: 'credit',
                 isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                 paymentsApi: {
@@ -753,6 +762,7 @@ it('should update amount correctly even if the initialization is slow', async ()
                 {
                     paymentMethodStatusExtended,
                     amount,
+                    currency: 'USD',
                     flow: 'credit',
                     isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
                     paymentsApi: {
