@@ -7,6 +7,7 @@ import { GenerateUUID } from '@proton/docs-core'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
 import type { Logger } from '@proton/utils/logs'
 import { $isListNode } from '@lexical/list'
+import type { AlignChangeSuggestionProperties } from './Types'
 
 export function $setElementAlignmentAsSuggestion(
   formatType: ElementFormatType,
@@ -78,7 +79,7 @@ export function $setElementAlignmentAsSuggestion(
         element,
         $createSuggestionNode(suggestionID, 'align-change', {
           initialFormatType,
-        }),
+        } satisfies AlignChangeSuggestionProperties),
       )
       didCreateSuggestion = true
     }
