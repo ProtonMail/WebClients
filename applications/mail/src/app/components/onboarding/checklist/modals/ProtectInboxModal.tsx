@@ -108,6 +108,7 @@ const ProtectInboxModal = (props: ModalStateProps) => {
                     <StepDots value={step}>
                         {range(0, protectedItems.length).map((index) => (
                             <StepDot
+                                active={index === step}
                                 key={index}
                                 index={index}
                                 aria-controls={`onboarding-${index}`}
