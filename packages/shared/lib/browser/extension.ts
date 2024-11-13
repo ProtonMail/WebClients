@@ -95,7 +95,7 @@ export const sendExtensionMessage = async <R = any>(
     message: ExtensionMessage,
     options: { app: ExtensionApp; maxTimeout?: number }
 ): Promise<ExtensionMessageResponse<R>> => {
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout> | undefined;
     const extension = EXTENSIONS[options.app];
     const token = getRandomString(16);
 
