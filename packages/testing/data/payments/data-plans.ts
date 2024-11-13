@@ -1,7 +1,6 @@
-import { isRegionalCurrency, type Currency } from '@proton/payments';
+import { type Currency, isRegionalCurrency } from '@proton/payments';
 import { type CYCLE } from '@proton/shared/lib/constants';
 import type { Plan, PlansMap, Pricing } from '@proton/shared/lib/interfaces';
-
 
 // borrowed from:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
@@ -2586,7 +2585,7 @@ const plans: Plan[] = deepFreeze([
         ParentMetaPlanID: 'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
         Type: 1,
         Name: 'passlifetime2024',
-        Title: 'Pass Lifetime',
+        Title: 'Pass + SimpleLogin Lifetime',
         MaxDomains: 0,
         MaxAddresses: 0,
         MaxCalendars: 0,

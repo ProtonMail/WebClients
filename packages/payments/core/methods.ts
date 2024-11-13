@@ -10,10 +10,11 @@ import { type BillingAddress } from './billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
 import { type ADDON_NAMES, PLANS } from './constants';
 import { MethodStorage, PAYMENT_METHOD_TYPES } from './constants';
-import { extendStatus, isSignupFlow } from './helpers';
+import { extendStatus, isFreeSubscription, isSignupFlow } from './helpers';
 import type {
     AvailablePaymentMethod,
     Currency,
+    FreeSubscription,
     PaymentMethodFlows,
     PaymentMethodStatus,
     PaymentMethodStatusExtended,
@@ -41,7 +42,7 @@ export interface PaymentMethodsParameters {
     enableSepa?: boolean;
     user?: User;
     planIDs?: PlanIDs;
-    subscription?: Subscription;
+    subscription?: Subscription | FreeSubscription;
 }
 
 export class PaymentMethods {
@@ -111,7 +112,7 @@ export class PaymentMethods {
 
     public planIDs: PlanIDs | undefined;
 
-    public subscription: Subscription | undefined;
+    public subscription: Subscription | FreeSubscription | undefined;
 
     constructor({
         paymentMethodStatus,
@@ -334,7 +335,10 @@ export class PaymentMethods {
 
         const passLifetimeBuyerWithCreditBalance = (this.user?.Credit ?? 0) > 0 && this.buysPassLifetime();
         const passLifetimeBuyerWithActiveSubscription =
-            !!this.subscription && this.subscription.Currency !== this.currency && this.buysPassLifetime();
+            !!this.subscription &&
+            !isFreeSubscription(this.subscription) &&
+            this.subscription.Currency !== this.currency &&
+            this.buysPassLifetime();
         const btcDisabledSpecialCases = passLifetimeBuyerWithCreditBalance || passLifetimeBuyerWithActiveSubscription;
 
         return (

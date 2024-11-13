@@ -1,6 +1,14 @@
 import { c, msgid } from 'ttag';
 
-import { ADDON_NAMES, type Currency, type MaxKeys, PLANS, PLAN_TYPES, type PlanIDs } from '@proton/payments';
+import {
+    ADDON_NAMES,
+    type Currency,
+    type MaxKeys,
+    PLANS,
+    PLAN_NAMES,
+    PLAN_TYPES,
+    type PlanIDs,
+} from '@proton/payments';
 
 import { CYCLE, DEFAULT_CYCLE, VPN_PASS_PROMOTION_COUPONS } from '../constants';
 import type { Plan, PlansMap, Pricing, Subscription, SubscriptionCheckResponse } from '../interfaces';
@@ -154,7 +162,8 @@ export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
     const addons: AddonDescription[] = Object.values(addonsMap).sort((a, b) => a.name.localeCompare(b.name));
 
     const planName = (plan?.Name as PLANS) ?? null;
-    const planTitle = plan?.Title ?? '';
+
+    const planTitle = planName === PLANS.PASS_LIFETIME ? PLAN_NAMES[PLANS.PASS_LIFETIME] : (plan?.Title ?? '');
 
     return {
         planName,

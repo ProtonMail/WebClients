@@ -3,7 +3,7 @@ import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
-import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES, PLANS, signupFlows } from './constants';
+import { Autopay, FREE_SUBSCRIPTION, MethodStorage, PAYMENT_METHOD_TYPES, PLANS, signupFlows } from './constants';
 import {
     type PaymentMethodFlows,
     type PaymentMethodStatus,
@@ -1188,6 +1188,60 @@ describe('Chargebee Bitcoin', () => {
             subscription: buildSubscription({
                 Currency: TEST_CURRENCY,
             }),
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
+    });
+
+    it('should allow bitcoin if user has free subscription and buys pass lifetime', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefinedBillingAddress,
+            enableSepa: enableSepaTrue,
+            user: buildUser(),
+            planIDs: {
+                [PLANS.PASS_LIFETIME]: 1,
+            },
+            subscription: FREE_SUBSCRIPTION,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
+    });
+
+    it('should allow bitcoin if user has free subscription and buys regular plan', () => {
+        const flow: PaymentMethodFlows = 'subscription';
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: flow,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefinedBillingAddress,
+            enableSepa: enableSepaTrue,
+            user: buildUser(),
+            planIDs: {
+                [PLANS.MAIL]: 1,
+            },
+            subscription: FREE_SUBSCRIPTION,
         });
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
