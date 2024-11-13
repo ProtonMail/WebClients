@@ -820,6 +820,7 @@ const SignupContainer = ({
                     onChangeCurrency={handleChangeCurrency}
                     vpnServers={vpnServers}
                     currencySignupParam={signupParameters.currency}
+                    paymentsApi={paymentsSilentApi}
                     onPlan={async ({ planIDs, cycle, coupon }) => {
                         try {
                             const validateFlow = createFlow();
