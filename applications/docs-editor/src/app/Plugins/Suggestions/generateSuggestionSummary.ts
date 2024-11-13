@@ -10,6 +10,7 @@ import { $isHorizontalRuleNode } from '@lexical/react/LexicalHorizontalRuleNode'
 import { $findMatchingParent } from '@lexical/utils'
 import capitalize from '@proton/utils/capitalize'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
+import type { PropertyChangeSuggestionProperties } from './Types'
 
 export type SuggestionSummaryContent = { type: SuggestionSummaryType; content: string; replaceWith?: string }[]
 
@@ -69,8 +70,21 @@ export function generateSuggestionSummary(
 
       if (currentType === 'property-change') {
         const firstChild = node.getFirstChild()
-        const currentFormat = $isTextNode(firstChild) ? firstChild.getFormat() : 0
-        content = getFormatsForFlag(currentFormat).join(', ')
+        const currentFormatFlag = $isTextNode(firstChild) ? firstChild.getFormat() : 0
+        const initialFormatFlag = node.getSuggestionChangedProperties<PropertyChangeSuggestionProperties>()?.__format
+        if (initialFormatFlag !== undefined) {
+          const currentFormats = getFormatsForFlag(currentFormatFlag)
+          const initialFormats = getFormatsForFlag(initialFormatFlag)
+          const difference: string[] = []
+          for (const format of currentFormats) {
+            if (!initialFormats.includes(format)) {
+              difference.push(format)
+            }
+          }
+          content = difference.join(', ')
+        } else {
+          content = ''
+        }
       }
 
       if (currentType === 'link-change') {
