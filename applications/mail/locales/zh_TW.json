@@ -3925,7 +3925,7 @@
         "請與您的組織管理員聯絡以解決此事"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其它瀏覽器。"
+        "內容搜尋無法在此瀏覽器中啟用。請退出無痕模式或使用其它瀏覽器。"
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
@@ -6279,7 +6279,7 @@
         "匯入進行中"
       ],
       "Import mailbox": [
-        "匯入信箱"
+        "匯入郵箱"
       ],
       "Important note": [
         "重要提示"
@@ -7287,7 +7287,7 @@
         "您有 **${ count } 則往來對話** 儲存於此資料夾"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "您選取有此標籤的 **${ count } 則往來對話**"
+        "您選取了有此標籤的 **${ count } 個交談**"
       ],
       "You have **${ count } message** stored in this folder": [
         "您有 **${ count } 則訊息** 儲存於此資料夾"
@@ -11449,6 +11449,18 @@
       ],
       "Your own short @pm.me email alias": [
         "您自己短@pm.me電子郵件別名"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } 進階帳戶保護"
+      ],
+      "If you exceed free plan limits, you won't be able to:": [
+        "若你碰到使用免費帳戶使用限制，你將不能："
+      ],
+      "Support your compliance objectives": [
+        "支援您的合歸目標"
+      ],
+      "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
+        "您的 ${ planName } 計畫不但能保護您的企業通訊與資料安全。還能協助您保持合規使您的業務脫穎而出，還能讓您的團隊保持聯繫。"
       ]
     },
     "subscription reminder": {
@@ -12725,6 +12737,9 @@
       ],
       "Your free trial has ended": [
         "您的免費試用已結束"
+      ],
+      "Bad time for this email?": [
+        "這封信來的不是時候？"
       ]
     },
     "Title subscription": {
@@ -13335,7 +13350,7 @@
         "高端的帳號保護"
       ],
       "Dark Web Monitoring": [
-        "黑暗網路監測"
+        "暗網監測"
       ],
       "Easily add or remove users": [
         "輕鬆添加或移除使用者"
@@ -13396,6 +13411,9 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "為了 ${ durationDeal }"
+      ],
+      "Renews after 1 month at ${ regularAmount }.": [
+        "首月免費，之後每月續訂 ${ regularAmount }。"
       ]
     },
     "BF2024: Tooltip": {
@@ -13419,11 +13437,19 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "儲存空間於 ${ BRAND_NAME } 所有服務中共享。"
+      ],
+      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
+        "暢遊網路，保護隱私。提供 110 多個國家 8,500 多台伺服器、10 個裝置、高速串流、廣告阻擋和惡意軟體防護、VPN 加速器等功能。"
       ]
     },
     "sso": {
       "Sign in": [
         "登入"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "數量有限！"
       ]
     }
   }

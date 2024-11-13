@@ -955,10 +955,10 @@
         "라벨 삭제"
       ],
       "Replace": [
-        "대체"
+        "바꾸기"
       ],
       "Replaces the selected text in your message": [
-        "메시지 내의 선택된 문장을 대체하기"
+        "메시지 내에서 선택된 문장을 바꾸기"
       ],
       "Reply": [
         "답장"
@@ -1234,7 +1234,7 @@
         "내일"
       ],
       "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
-        "로딩 도중 추적기 보호가 일부 이미지에 적용되었습니다. 해당 발송자를 신뢰한다면 이를 해제 후 로드하십시오."
+        "로딩 도중 트래커 보호가 일부 이미지에 적용되었습니다. 해당 발송자를 신뢰한다면 이를 해제 후 로드하십시오."
       ],
       "Trust": [
         "신뢰"
@@ -1655,7 +1655,7 @@
         "첫 달"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "이 특별 할인가 (${ discountedPrice })는 ${ discountedMonths }개월에 한합니다. 그 이후로는 ${ nextMonths }개월 동안 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
+        "이 특별 할인가 (${ discountedPrice })는 ${ discountedMonths }에 한합니다. 그 이후로는 ${ nextMonths } 동안 ${ nextPrice }(으)로 갱신됩니다. 언제든지 취소 가능합니다."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "이 특별 할인가 (${ discountedPrice })는 첫 달에 한합니다. 자동으로 다음 달 부터는 ${ nextPrice }으로 갱신됩니다. 언제든지 취소 가능합니다."
@@ -2104,19 +2104,19 @@
         "저장공간 ${ maxSpaceTB }"
       ],
       "${ planMaxSpace } email storage": [
-        "이메일 저장공간 ${ planMaxSpace }"
+        "${ planMaxSpace }의 이메일 저장 공간"
       ],
       "Advanced account protection": [
         "향상된 계정 보호"
       ],
       "All ${ BRAND_NAME } apps and premium features": [
-        "모든 ${ BRAND_NAME } 앱들과 해당 앱들의 프리미엄 기능들"
+        "모든 ${ BRAND_NAME } 앱들과 프리미엄 기능들"
       ],
       "Cancel and downgrade": [
         "취소 및 다운그레이드"
       ],
       "Cloud storage and sharing for large files": [
-        "큰 용량의 파일을 위한 클라우드 스토리지 및 공유"
+        "큰 용량의 파일 보관과 공유를 위한 클라우드 스토리지"
       ],
       "Encrypted cloud storage for photos and documents": [
         "사진 및 문서를 위한 암호화된 클라우드 스토리지"
@@ -2134,7 +2134,7 @@
         "${ upsellPlanName } 플랜으로 구독료 절약하기"
       ],
       "Secure personal and shared calendar": [
-        "사적이거나 공유된 캘린더 보호"
+        "안전한 개인용 캘린더 및 공유된 캘린더"
       ],
       "Try ${ planName }": [
         "${ planName } 체험하기"
@@ -2148,7 +2148,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } 사용자"
+        "${ users }명 사용자"
       ],
       "Total for ${ n } month": [
         "${ n }개월의 합계"
@@ -3451,13 +3451,13 @@
         "업그레이드시 스펨 메일함과 휴지통 내 메시지를 자동으로 삭제하며 더 많은 프리미엄 기능이 해제됩니다."
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
-        "30일 이상 전에 휴지통 및 스팸으로 이동한 이메일을 자동으로 삭제합니다."
+        "30일 혹은 그 전에 휴지통 및 스팸으로 이동한 이메일을 자동으로 삭제합니다."
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "받은 편지함에 도착하기 전에 수신 메시지를 자동으로 정렬합니다."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
-        "받은 편지함을 깔끔하게 유지하기 위해 라벨이나 폴더를 필요한 만큼 만드세요."
+        "받은 편지함을 깔끔하게 유지하기 위해 원하는 만큼 라벨이나 폴더를 만드세요."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
@@ -4407,7 +4407,7 @@
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
       ],
       "Add at least one action": [
-        "하나 이상의 옵션을 추가하십시오"
+        "하나 이상의 옵션을 추가하세요"
       ],
       "Add at least one condition": [
         "하나 이상의 조건을 추가하세요"
@@ -4770,7 +4770,7 @@
         "고객 지원"
       ],
       "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "햔재 가족 플랜은 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
+        "현재 가족 요금제는 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -4809,7 +4809,7 @@
         "결제되지 않은 청구서가 존재합니다. 가족 플랜에 참여하기 전에 결제해주세요."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this family plan and together enjoy all ${ brandOrAppName } premium features.": [
-        "사용자가 ${ BRAND_NAME } 계정이 이 가족 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐기세요."
+        "${ BRAND_NAME } 계정이 이 가족 요금제에 합류하도록 초대되었습니다. 함께 모든 ${ brandOrAppName } 프리미엄 기능들을 즐기세요."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "사용자의 계정이 사용자 요금제단에서 사용 가능한 이메일 주소 이상을 가지고 있습니다. ${ addressSettingsLink }"
@@ -4851,7 +4851,7 @@
         "가족 계정을 설정하세요"
       ],
       "Configure your family account and invite users": [
-        "가족 계정을 구성하고 사용자를 초대하세요. "
+        "가족 계정을 구성하고 사용자를 초대하세요"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5142,7 +5142,7 @@
         "사기꾼으로부터의 이메일의 수발신을 영구적으로 차단합니다."
       ],
       "Block unsavory senders": [
-        "보낸 사람을 차단하기."
+        "보낸 사람을 차단하기"
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "이메일을 더욱 안전하고 편리하며 관련성 있게 만들어냈다니 대단합니다! 무료 저장공간을 총 1GB로 늘려드렸습니다."
@@ -5184,7 +5184,7 @@
         "강력한 암호화로, 이메일은 오직 당신과 주고 받는 사람간에서만 볼 수 있습니다."
       ],
       "For your eyes only": [
-        "눈으로만 보세요"
+        "눈으로만 보기"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } 모바일 앱을 다운로드 하세요"
@@ -5702,7 +5702,7 @@
         "${ elementsCount }개 메시지가 라벨 해제됩니다:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } 삽입된 이미지"
+        "${ embeddedAttachmentsCount }개의 삽입된 이미지"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: 최대 크기 이미지"
@@ -6302,7 +6302,7 @@
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "취소시, 만료일인 ${ expiryDate }에 ${ planTitle } 구독이 더 이상 갱신되지 않습니다."
+        "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
@@ -7283,7 +7283,7 @@
         "글쓰기 도우미 iframe"
       ],
       "Yearly": [
-        "년간"
+        "연간"
       ],
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
@@ -7406,7 +7406,7 @@
         "**${ elementsCount }개 메시지**를 선택했습니다."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "오늘 부터 ${ planTitle } 기능에 접근할 수 없습니다."
+        "해당 날짜부터 ${ planTitle }용 기능에 접근할 수 없게 됩니다."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
@@ -7421,10 +7421,10 @@
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, 드라이브 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, 드라이브 공유 링크가 더 이상 활성화 되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
@@ -7499,13 +7499,13 @@
         "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "경고는 안전을 위해 나타납니다. 만약 정보가 침해되었음에도 불구하고 미친 영향이 없다면, 이 보고서를 무시할 수 있습니다."
+        "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
       ],
       "Snoozed until ${ dateString } at ${ formattedTime }": [
         "${ formattedTime } ${ dateString }까지 방해 금지됨"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "날짜, 이름, 이메일 주소, 제목만을 검색하기 위해서는 설정을 꺼주세요. 메시지 콘탠츠 비활성화(와 이 기능을 활성화하기 위해 다운로드한 메시지를 삭제)하기 위해 설정으로 이동하세요."
+        "날짜, 이름, 이메일 주소, 제목으로만 검색하려면 설정을 끄세요. 메시지 콘텐츠 검색을 비활성화(와 이 기능을 활성화하기 위해 다운로드한 메시지를 삭제)하기 위해 설정으로 이동하세요."
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
         "휴지통 및 스팸함에 30일 이상 방치된 메시지들을 자동으로 삭제하려면 업그레이드 하세요."
@@ -7954,7 +7954,7 @@
         "삭제"
       ],
       "Delete recovery-related information.": [
-        "복구 관련 정보를 삭제합니다."
+        "복구 관련 정보 삭제하기"
       ],
       "Density": [
         "형식"
@@ -9129,7 +9129,7 @@
         "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+        "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
@@ -9785,10 +9785,10 @@
         "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "관리자가 사용자를 추가 및 제거하고, 저장소를 할당하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, 수행할 수 있는 조직 관리 도구"
+        "관리자가 사용자를 추가 및 제거하고, ${ BRAND_NAME } 서비스로의 접근을 관리하고, \n 다른 작업을 수행할 수 있는 조직 관리 도구"
       ],
       "Route your internet traffic through the TOR network with a single click": [
-        "한번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
+        "한 번의 클릭으로 Tor 네트워크로 인터넷 트래픽을 라우팅하세요"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -9920,7 +9920,7 @@
         "소셜 미디어"
       ],
       "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "추적 및 프로파일화를 방지하기 위해 온라인 서비스 로그인시 ${ MAIL_APP_NAME }을 이용해 보세요. 지금 바로 인기 있는 서비스에서 이메일 주소를 변경하세요. ${ learnMoreLink }"
+        "추적 및 프로파일화를 방지하기 위해 온라인 서비스 로그인 시 ${ MAIL_APP_NAME }을 이용해 보세요. 지금 바로 인기 있는 서비스에서 이메일 주소를 변경하세요. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -9958,7 +9958,7 @@
         "사기꾼으로부터의 이메일의 수발신을 영구적으로 차단합니다. ${ kbLinkSender }"
       ],
       "Block unsavory senders": [
-        "보낸 사람을 차단하기."
+        "보낸 사람을 차단하기"
       ],
       "Clear out deleted and spam emails after 30 days.": [
         "30일 뒤 삭제되거나 스팸인 이메일을 제거합니다."
@@ -9982,7 +9982,7 @@
         "고정되고 집중되게"
       ],
       "For your eyes only": [
-        "눈으로만 보세요"
+        "눈으로만 보기"
       ],
       "Forward Gmail messages to your inbox.": [
         "메시지를 가져오세요."
@@ -9994,7 +9994,7 @@
         "데스크톱 앱 다운로드"
       ],
       "Get the mobile app from the ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink }.": [
-        "${ mobileAppAppStoreLink } 및 ${ mobileAppGooglePlayLink }에서 모바일 앱을 다운로드하세요."
+        "${ mobileAppAppStoreLink } 또는 ${ mobileAppGooglePlayLink }에서 모바일 앱을 다운로드하세요."
       ],
       "Google Play": [
         "Google Play"
@@ -10030,7 +10030,7 @@
         "${ BRAND_NAME } 사용 시작하기"
       ],
       "Start using the shorter, catchier version of your email address.": [
-        "더 짧고 설득력 있는 버전의 이메일 주소 사용을 시작하세요."
+        "더 짧고 매력있는 이메일 주소를 사용하세요."
       ],
       "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
         "사용자를 프로파일링하는 광고주와 데이터 수집자들을 차단합니다. ${ kbLinkPrivacy }"
@@ -10053,7 +10053,7 @@
         "모든 ${ BRAND_NAME } 서비스를 둘러보기"
       ],
       "Link your domain name and create accounts for all members of your organization.": [
-        "조직의 모든 구성원을 위해 도메인 이름을 연걸하고 계정을 생성하세요"
+        "도메인 이름을 연결하고 조직의 모든 구성원을 위해 계정을 생성하세요."
       ],
       "Make it your own": [
         "내 것으로 만들기"
@@ -10213,7 +10213,7 @@
         "신용/체크카드 추가"
       ],
       "Bank transfer": [
-        "게좌 이체"
+        "계좌 이체"
       ]
     },
     "Payments": {
@@ -10677,7 +10677,7 @@
         "이메일 주소를 누군가 물어본다면, 별칭을 대신 제공하세요. 별칭이 ${ passLink }에 의해 제공됩니다."
       ],
       "Used on Amazon for shopping, etc.": [
-        "쇼핑을 위해 쿠팡에서 사용됨, 기타 등등"
+        "쇼핑을 위해 쿠팡에서 사용됨, 기타 등등."
       ]
     },
     "Security Center (link to Pass App)": {
@@ -11283,10 +11283,10 @@
     },
     "Step": {
       "Enter your ${ MAIL_APP_NAME } address as the new address, and save, confirm, or verify the change": [
-        "${ MAIL_APP_NAME } 새 이메일 주소를 입력하고 저장, 확인 후 변경 사항을 인증합니다."
+        "${ MAIL_APP_NAME }을 새 이메일 주소를 입력하고 저장, 확인 후 변경 사항을 인증합니다."
       ],
       "In the account settings, look for the option to edit or change your email address ": [
-        "이메일 주소를 편집 및 변경하려면 계정 설정내에서 옵션을 확인하십시오 "
+        "이메일 주소를 편집 및 변경하려면 계정 설정 내에서 옵션을 확인하십시오 "
       ],
       "Select service to update": [
         "업데이트할 서비스 선택"
@@ -11330,7 +11330,7 @@
         "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }에 의해 생성된 데이터를 위한 스토리지"
       ],
       "Up to ${ totalStorageSize } Drive storage": [
-        "최대 ${ totalStorageSize } 드라이브 저장 공간"
+        "최대 ${ totalStorageSize } Drive 저장 공간"
       ],
       "Up to ${ totalStorageSize } Mail storage": [
         "최대 ${ totalStorageSize } 메일 저장 공간"
@@ -11536,7 +11536,7 @@
         "사용자 당 ${ planNumberOfCalendars }개 캘린더"
       ],
       "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains }개 커스텀 이메일용 도메인"
+        "${ planNumberOfDomains }개 커스텀 이메일 도메인"
       ],
       "${ planNumberOfEmails } email address": [
         "${ planNumberOfEmails }개 이메일 주소"
@@ -11557,10 +11557,10 @@
         "새로운 파일을 추가할 수 없게 됩니다"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 메일 저장 공간과 최대 5 GB의 드라이브 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
+        "${ planName } 구독이 만료된 이후, 사용자의 플랜이 ${ BRAND_NAME } Free으로 다운그레이드되며, 1 GB의 Mail 저장 공간과 최대 5 GB의 Drive 저장 공간이 제공됩니다. 이전에 수령한 스토리지 보너스 또한 상실하게 됩니다."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "${ planName } 구독이 만료되면, 최대 1GB의 메일 스토리지와 최대 5GB의 드라이브 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
+        "${ planName } 구독이 만료되면, 최대 1GB의 Mail 스토리지와 최대 5GB의 Drive 스토리지만 제공하는 ${ BRAND_NAME } Free로 다운그레이드됩니다. 추가 사용자가 무료 요금제에서 지원되지 않기 때문에 사용자의 팀의 업무가 중단될 수 있습니다."
       ],
       "All you need for your business": [
         "내 비즈니스를 위한 모든 것"
@@ -11617,13 +11617,13 @@
         "저희의 고객지원 팀이 사람들에게 VPN 앱을 어떻게 직접 전달했는지."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
-        "${ BRAND_NAME }이 공격적인 검열 캠페인의 표적이 되었을 때 어떻게 맞섰는지."
+        "${ BRAND_NAME }이 공격적인 검열 캠페인의 표적이 되었을 때 맞선 방법."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "저희가 프라이버시와 표현의 자유가 위협받을 때 현지 활동가들을 어떻게 지원했는지."
       ],
       "If you exceed free plan limits, you won't be able to:": [
-        "무료 플랜 제한을 초과하면, 다음 항목들을 사용 불가합니다:"
+        "무료 플랜 제한을 초과하면, 다음이 제한됩니다:"
       ],
       "If your usage exceeds free plan limits, you may experience restricted access to product features and your data.": [
         "만약 무료 플랜의 제한량을 초과한다면 제품 기능과 데이터 접근에 제약받을 수 있습니다."
@@ -12758,7 +12758,7 @@
         "트래커를 찾을 수 없음"
       ],
       "No-reply address detected": [
-        "회신된 주소 감지되지 않음"
+        "회신 불가 주소 감지됨"
       ],
       "Notes": [
         "메모"
@@ -13166,7 +13166,7 @@
         "${ n }개 VPN 연결"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
+        "${ numberOfCountries }개 국가 중 ${ numberOfServers }개"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfCountries }개 국가 중 ${ numberOfServers }개 서버"
@@ -13605,7 +13605,7 @@
         "6개 사용자 계정"
       ],
       "6 users": [
-        "6명의 사용자"
+        "사용자 6명"
       ],
       "8500+ servers across 110+ countries": [
         "110개 국가에서 8500개 이상의 서버"
@@ -13641,7 +13641,7 @@
         "안전한 사진 백업"
       ],
       "Protect 10 devices at a time": [
-        "동시에 최대 개까지 장치 보호"
+        "동시에 최대 10개 장치 보호"
       ],
       "Secure file storage & sharing": [
         "안전한 파일 저장 공간 및 공유"
@@ -13663,6 +13663,9 @@
       ],
       "Version history": [
         "버전 기록"
+      ],
+      "One-time payment, lifetime deal": [
+        "일회성 결제, 평생 이용"
       ]
     },
     "BF2024: Footer": {
@@ -13670,7 +13673,13 @@
         "할인은 표준 월별 가격을 기본으로 합니다."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "구독은 결제일 주기가 끝날 때 표준 할인율 요금으로 자동 갱신됩니다."
+        "구독은 결제 주기가 끝날 때 표준 할인율을 적용한 요금으로 자동 갱신됩니다."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus 평생 딜은 갱신 가격이 없으며, Pass Plus의 평생 이용권의 일회성 결제입니다."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pass Family나 Unlimited를 구매하면 구독이 결제일에 표준 할인율로 자동 갱신됩니다."
       ]
     },
     "BF2024: Info": {
@@ -13680,10 +13689,16 @@
     },
     "BF2024: Offers": {
       "for ${ durationDeal }": [
-        "${ durationDeal }년간"
+        "${ durationDeal }간"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
-        "${ regularAmount }(으)로 1개월마다 갱신됩니다."
+        "${ regularAmount }(으)로 1개월 후 갱신됩니다."
+      ],
+      "Billed at ${ amount } once": [
+        "${ amount } 1회 청구"
+      ],
+      "forever": [
+        "평생"
       ]
     },
     "BF2024: Tooltip": {
@@ -13700,27 +13715,27 @@
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
+        "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. 15개 이메일 주소, 커스텀 이메일 도메인 지원, ${ BRAND_NAME } Scribe 글쓰기 도우미, 무제한 hide-my-email 별칭 등이 포함됩니다."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "온라인 문서 편집기, 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+        "온라인 문서 편집기, 사진 백업, 버전 기록, 암호화된 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "특별히 설계된 NetShield는 광고, 추적기 및 맬웨어를 차단하여 장치를 보호하고 브라우징 속도를 높입니다."
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "스토리지 공간은 모든 ${ BRAND_NAME } 앱 전반적으로 공유됩니다."
+        "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "종단간 암호화로 내 이메일과 스케쥴을 보호하세요. ${ addresses }개 이메일 주소, 커스텀 이메일 도메인 지원, 무제한 hide-my-email 별칭 등 기능이 포함됩니다."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more."
+        "이메일과 일정을 종단간 암호화로 보호하세요. 15개 이메일 주소, 사용자 지정 도메인 지원, 무제한 hide-my-email 별칭 등이 포함되어 있습니다."
       ]
     },
     "Filter option to only show message with attachments": {
       "Has attachments": [
-        "첨부파일"
+        "첨부 파일이 있음"
       ]
     },
     "Oauth instructions video alternative": {
@@ -13746,7 +13761,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
+        "Secure Core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
       ]
     },
     "saml: Error": {
@@ -13763,6 +13778,11 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "서드 파티 SSO 제공자로 리다이렉트됩니다."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "한정 수량!"
       ]
     }
   }

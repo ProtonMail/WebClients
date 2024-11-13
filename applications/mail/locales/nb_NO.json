@@ -13960,6 +13960,9 @@
       ],
       "Version history": [
         "Versjonshistorikk"
+      ],
+      "One-time payment, lifetime deal": [
+        "Engangsbetaling, livstidsavtale"
       ]
     },
     "BF2024: Footer": {
@@ -13968,6 +13971,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Abonnementet ditt fornyes automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Livsvarig tilbud for ${ PASS_SHORT_APP_NAME } Plus har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Hvis du kjøper Pass Family eller Unlimited, blir abonnementet ditt fornyet automatisk med standard rabattert pris og varighet på slutten av faktureringssyklusen din."
       ]
     },
     "BF2024: Info": {
@@ -13981,6 +13990,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Fornyes etter 1 måned til ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Faktureres til ${ amount } én gang"
+      ],
+      "forever": [
+        "for alltid"
       ]
     },
     "BF2024: Tooltip": {
@@ -14062,6 +14077,11 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du blir omdirigert til din tredjeparts SSO-leverandør."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Begrenset lager!"
       ]
     }
   }

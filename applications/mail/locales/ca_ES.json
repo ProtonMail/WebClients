@@ -1408,6 +1408,9 @@
       ],
       "Toggle Contacts app": [
         "Alterna l'aplicació Contactes"
+      ],
+      "Remove zoom meeting": [
+        "Elimina la reunió de Zoom"
       ]
     },
     "action": {
@@ -2139,6 +2142,9 @@
       "Total for ${ n } month": [
         "Total per ${ n } mes",
         "Total per ${ n } mesos"
+      ],
+      "Total": [
+        "Total"
       ]
     },
     "Collapsible tooltip": {
@@ -4579,6 +4585,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "El nom i els cognoms no es poden desmarcar a la vegada"
+      ],
+      "Display name cannot be empty": [
+        "El nom a mostrar no pot estar buit."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5165,6 +5174,20 @@
       ],
       "You've unlocked 1 GB": [
         "Heu desbloquejat 1 GB"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dia",
+        "${ remainingDaysCount } dies"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Queda ${ remainingDaysCount } dia.",
+        "Queden ${ remainingDaysCount } dies."
+      ],
+      "Finish setup": [
+        "Finalitza la configuració"
+      ],
+      "Get more storage": [
+        "Aconseguiu més emmagatzematge"
       ]
     },
     "Gmail forwarding": {
@@ -5193,6 +5216,9 @@
       ],
       "More details": [
         "Més detalls"
+      ],
+      "Meeting host:": [
+        "Organitzador de la reunió:"
       ]
     },
     "Group": {
@@ -9446,6 +9472,9 @@
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
         "Nombre il·limitat de caixes fortes de ${ PASS_SHORT_APP_NAME } compartides per usuari"
+      ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de per vida de ${ PASS_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -9985,6 +10014,9 @@
       ],
       "Download the desktop app and continue": [
         "Descarregueu l'aplicació d'escriptori i continueu"
+      ],
+      "Replay introduction": [
+        "Veure de nou la introducció"
       ]
     },
     "Onboarding Proton": {
@@ -10108,6 +10140,9 @@
       "${ n } user account": [
         "${ n } compte d'usuari",
         "${ n } comptes d'usuari"
+      ],
+      "Activity log": [
+        "Registre d'activitats"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11644,6 +11679,9 @@
       ],
       "Upload any new files": [
         "Carregueu qualsevol fitxer nou"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
       ]
     },
     "subscription reminder": {
@@ -13543,6 +13581,12 @@
       ],
       "Passcode: ${ password }": [
         "Codi d'accés: ${ password }"
+      ],
+      "Join Zoom meeting": [
+        "Uniu-vos a la reunió de Zoom"
+      ],
+      "Passcode:": [
+        "Codi d'accés:"
       ]
     },
     "BF2024: Deal details": {
@@ -13656,6 +13700,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
+      ],
+      "Billed at ${ amount } once": [
+        "Facturat a ${ amount } una vegada"
+      ],
+      "forever": [
+        "per sempre"
       ]
     },
     "BF2024: Tooltip": {
@@ -13719,6 +13769,19 @@
     "sso": {
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Oferta per temps limitat!"
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de per vida"
       ]
     }
   }

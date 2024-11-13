@@ -208,7 +208,7 @@
         "bersihkan"
       ],
       "Clear query": [
-        "Bersihkan kueri"
+        "Hapus kueri"
       ],
       "Clear search": [
         "Hapus pencarian"
@@ -5975,7 +5975,7 @@
         "Panel samping kalender"
       ],
       "Can't find what you're looking for? ${ displayAllMailButton }": [
-        "Tidak menemukan apa yang Anda cari? ${ displayAllMailButton }"
+        "Tidak dapat menemukan apa yang Anda cari? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
@@ -11175,7 +11175,7 @@
         "Tertagih dengan harga ${ amount } selama 30 bulan"
       ],
       "Get the deal": [
-        "Dapatkan penawaran"
+        "Dapatkan penawaran ini"
       ],
       "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
         "Diperbarui setelah 1 tahun dengan harga diskon ${ discountedAmount } daripada ${ regularAmount } (diskon ${ discount }%)"
@@ -12437,10 +12437,10 @@
         "Mata uang"
       ],
       "Customize and confirm": [
-        "Konfirmasi penyesuaian"
+        "Sesuaikan dan konfirmasi"
       ],
       "Customize calendar import": [
-        "Sesuaikan proses impor kalender"
+        "Sesuaikan impor kalender"
       ],
       "Customize your mail import": [
         "Sesuaikan impor email Anda"
@@ -13325,7 +13325,7 @@
         "Anda harus memilih setidaknya satu kotak surat"
       ],
       "You will lose any customization you made so far.": [
-        "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
+        "Anda akan kehilangan segala penyesuaian yang telah Anda buat sejauh ini."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"
@@ -13663,6 +13663,9 @@
       ],
       "Version history": [
         "Riwayat versi"
+      ],
+      "One-time payment, lifetime deal": [
+        "Satu kali pembayaran, untuk selamanya"
       ]
     },
     "BF2024: Footer": {
@@ -13671,6 +13674,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir masa tagihan Anda."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Penawaran ${ PASS_SHORT_APP_NAME } Plus seumur hidup tidak memiliki biaya pembaruan. Cukup satu kali pembayaran untuk akses selama-lamanya ke Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Apabila Anda membeli Pass Family atau Unlimited, langganan Anda akan diperbarui secara otomatis pada harga dan durasi diskon standar di akhir siklus tagihan Anda."
       ]
     },
     "BF2024: Info": {
@@ -13684,6 +13693,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Diperbarui setelah 1 bulan dengan ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Tertagih dengan harga ${ amount } untuk satu kali pembayaran"
+      ],
+      "forever": [
+        "selamanya"
       ]
     },
     "BF2024: Tooltip": {
@@ -13763,6 +13778,11 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Persediaan terbatas!"
       ]
     }
   }

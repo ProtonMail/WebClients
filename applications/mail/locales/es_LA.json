@@ -1411,6 +1411,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Expand video conferencing widget": [
+        "Expandir el widget de videoconferencia"
+      ],
+      "Remove zoom meeting": [
+        "Quitar la reunión de Zoom"
       ]
     },
     "action": {
@@ -2166,6 +2172,9 @@
       "Total for ${ n } month": [
         "Total por ${ n } mes",
         "Total por ${ n } meses"
+      ],
+      "Total": [
+        "Total"
       ]
     },
     "Collapsible tooltip": {
@@ -5292,6 +5301,26 @@
       ],
       "You've unlocked 1 GB": [
         "Ha desbloqueado 1 GB"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } día",
+        "${ remainingDaysCount } días"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } día restante",
+        "${ remainingDaysCount } días restantes"
+      ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Complete esta lista de tareas en ${ daysCount } días para duplicar su almacenamiento gratis."
+      ],
+      "Finish setup": [
+        "Finalizar la configuración"
+      ],
+      "Get more storage": [
+        "Obtener más almacenamiento"
+      ],
+      "Tasks to complete count": [
+        "Tareas pendientes"
       ]
     },
     "Gmail forwarding": {
@@ -5320,6 +5349,9 @@
       ],
       "More details": [
         "Más detalles"
+      ],
+      "Meeting host:": [
+        "Organizador de la reunión:"
       ]
     },
     "Group": {
@@ -7642,6 +7674,15 @@
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
         "Desactívela para buscar solo por fecha, nombre, dirección de correo o asunto. Para desactivar la búsqueda en el contenido del mensaje (y eliminar los mensajes descargados para activar esta función), vaya a los ajustes."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de su suscripción ${ planTitle } se mantienen sin cambios."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Su suscripción ${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de su suscripción se añadirá a tu cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -9611,6 +9652,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de por vida de ${ PASS_APP_NAME }"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcionalidades avanzadas de alias (potenciado por SimpleLogin)"
       ]
     },
     "new_plans: feature highlight": {
@@ -9964,6 +10011,12 @@
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
         "Herramienta de gestión de la organización que permite a los administradores añadir y eliminar usuarios, gestionar su acceso a los servicios de ${ BRAND_NAME } y realizar otras tareas."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Dominios personalizados para los alias, buzones adicionales, posibilidad de enviar correos desde alias y más"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } premium features.": [
+        "Acceso de por vida a las funciones premium de ${ PASS_APP_NAME }."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10062,6 +10115,12 @@
       ],
       "Trial started": [
         "Prueba iniciada"
+      ],
+      "Meeting host copied to clipboard": [
+        "Se copió el organizador de la reunión al portapapeles."
+      ],
+      "Meeting ID copied to clipboard": [
+        "Se copió el ID de la reunión al portapapeles."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10221,6 +10280,9 @@
       ],
       "Where privacy is default.": [
         "Donde la privacidad es por defecto."
+      ],
+      "Replay introduction": [
+        "Volver a ver la introducción"
       ]
     },
     "Onboarding Proton": {
@@ -10353,6 +10415,12 @@
       ],
       "Admin panel to manage users and subscription": [
         "Panel de administración para gestionar usuarios y suscripciones"
+      ],
+      "Activity log": [
+        "Registro de actividad"
+      ],
+      "Team policies": [
+        "Políticas de equipo"
       ]
     },
     "PassFamilyPlan2024": {
@@ -13897,6 +13965,12 @@
       ],
       "Passcode: ${ password }": [
         "Código de acceso: ${ password }"
+      ],
+      "Join Zoom meeting": [
+        "Unirse a la reunión de Zoom"
+      ],
+      "Passcode:": [
+        "Código de acceso:"
       ]
     },
     "BF2024: Action (top button in header)": {
@@ -13994,6 +14068,9 @@
       ],
       "Version history": [
         "Historial de versiones"
+      ],
+      "One-time payment, lifetime deal": [
+        "Un solo pago y una oferta de por vida"
       ]
     },
     "BF2024: Footer": {
@@ -14002,6 +14079,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Si compra Pass Family o Unlimited, su suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
       ]
     },
     "BF2024: Info": {
@@ -14015,6 +14098,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Se renueva después de 1 mes por ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Un solo pago de ${ amount }"
+      ],
+      "forever": [
+        "para siempre"
       ]
     },
     "BF2024: Tooltip": {
@@ -14065,6 +14154,16 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Se le redirigirá a su proveedor de SSO de terceros."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "¡Stock limitado!"
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de por vida"
       ]
     }
   }

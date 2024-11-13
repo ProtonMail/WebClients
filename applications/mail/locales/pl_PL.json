@@ -3634,7 +3634,7 @@
         "Utworzono 10 aliasów. Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ BRAND_NAME } Unlimited."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
+        "Upewnij się, że plik CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING }, lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4509,7 +4509,7 @@
         "Osiągnięto limit liczby kontaktów na koncie"
       ],
       "The amount due has changed. Please try again.": [
-        " Kwota uległa zmianie. Spróbuj ponownie."
+        "Kwota do spłaty uległa zmianie. Spróbuj ponownie."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -7884,6 +7884,9 @@
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
         "Ulepsz konto, aby automatycznie usuwać wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Subskrypcja odnowi się automatycznie po ${ cycle } miesiącach."
       ]
     },
     "info": {
@@ -10774,6 +10777,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Przetwarzamy płatność za fakturę. Przed zmianą planu lub zaktualizowaniem szczegółów płatności poczekaj na zakończenie płatności. Dziękujemy za cierpliwość."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "Specjalna zniżka ${ priceWithDiscount } jest ważna przez pierwsze ${ months } miesiące. Kupon można użyć ${ couponRedemptions } raz/y. Potem usługa automatycznie się odnowi po cenie ${ price } za ${ months } miesięcy. Możesz anulować, kiedy chcesz."
       ]
     },
     "Payments.Error": {
@@ -14542,6 +14548,9 @@
       ],
       "Version history": [
         "Historia wersji"
+      ],
+      "One-time payment, lifetime deal": [
+        "Płatność jednorazowa, dożywotni dostęp"
       ]
     },
     "BF2024: Footer": {
@@ -14550,6 +14559,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus oferta na całe życie nie ma ceny odnawiania, to jednorazowa płatność za dożywotni dostęp do Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Jeśli zakupisz Pass Family lub Unlimited, Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres na koniec cyklu rozliczeniowego."
       ]
     },
     "BF2024: Info": {
@@ -14563,6 +14578,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Odnawia się po 1 miesiącu za ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Płatne ${ amount } jednorazowo"
+      ],
+      "forever": [
+        "na zawsze"
       ]
     },
     "BF2024: Tooltip": {
@@ -14618,7 +14639,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
+        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcę usług płatniczych) do obciążenia konta. Możesz otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem twojego banku."
       ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
@@ -14643,6 +14664,16 @@
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Dostęp do serwerów Secure Core, szybkiego pobierania P2P / BitTorrent, Tor przez VPN i wiele więcej."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Ograniczone zapasy!"
+      ]
+    },
+    "Filter option to only show message with attachments": {
+      "Has attachments": [
+        "Zawiera załącznik"
       ]
     }
   }

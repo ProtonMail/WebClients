@@ -1408,6 +1408,9 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Toggle Contacts app": [
+        "Kontakte-App umschalten"
       ]
     },
     "action": {
@@ -3597,6 +3600,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Wenn du über eine CSV- oder VCF-Datei importieren möchtest, stelle sicher, dass die Datei nicht größer ist als ${ MAX_IMPORT_FILE_SIZE_STRING } oder ${ MAX_IMPORT_CONTACTS_STRING } Kontakte. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -4433,6 +4439,21 @@
       ],
       "Invalid IBAN": [
         "Ungültige IBAN"
+      ],
+      "Add at least one action": [
+        "Füge mindestens eine Aktion hinzu"
+      ],
+      "Add at least one condition": [
+        "Füge mindestens eine Bedingung hinzu"
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Der Versand von Anhängen ist eingeschränkt, solange du die Grenzen deines Tarifs überschreitest oder bis du deinen Tarif aktualisiert hast."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du hast die maximale Anzahl von Kontakten für dein Konto erreicht"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -4667,6 +4688,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Vor- und Nachname können nicht gleichzeitig deaktiviert werden"
+      ],
+      "Display name cannot be empty": [
+        "Anzeigename darf nicht leer sein"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4828,6 +4852,9 @@
       ],
       "Manage addresses": [
         "Adressen verwalten"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kannst diese Einladung mit deinem aktuellen Plan nicht annehmen."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4855,6 +4882,9 @@
       ],
       "Set up your family account": [
         "Richte dein Family-Konto ein"
+      ],
+      "Configure your family account and invite users": [
+        "Konfiguriere dein Family-Konto und lade andere Benutzer ein"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5123,6 +5153,9 @@
       ],
       "Upgrade now": [
         "Jetzt upgraden"
+      ],
+      "Try the new desktop app": [
+        "Probiere die neue Desktop-App aus"
       ]
     },
     "Get started checklist instructions": {
@@ -7586,6 +7619,24 @@
       ],
       "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }": [
         "IBAN${ NBSP_HTML }${ Country }${ NBSP_HTML }••••${ NBSP_HTML }${ Last4 }"
+      ],
+      "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner Alle Nachrichten gefunden werden."
+      ],
+      "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-Mails, die mit dem Label ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
+      ],
+      "Snoozed until ${ dateString } at ${ formattedTime }": [
+        "Aufgeschoben bis zum ${ dateString } um ${ formattedTime }"
+      ],
+      "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
+        "Schalte diese Funktion aus, um nur nach Datum, Name, E-Mail-Adresse oder Betreffzeile zu suchen. Um die Suche nach Nachrichteninhalten zu deaktivieren (und heruntergeladene Nachrichten zu löschen, um diese Funktion zu aktivieren), gehe zu Einstellungen."
+      ],
+      "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
+        "Upgrade zum automatischen Löschen von Nachrichten, die sich seit mehr als 30 Tagen im Papierkorb oder Spam befinden."
       ]
     },
     "info": {
@@ -8861,6 +8912,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Zum Schutz deiner Privatsphäre wurde das Bild nicht geladen."
+      ],
+      "Image could not be loaded.": [
+        "Das Bild konnte nicht geladen werden"
       ]
     },
     "Message notification": {
@@ -9896,6 +9950,12 @@
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
         "Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und entfernen, ihren Zugriff auf ${ BRAND_NAME }-Dienste verwalten und andere Aufgaben durchführen können."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Leite deinen Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11611,6 +11671,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Melde dich einfach bei deinem Apple App Store-Konto an und wähle dann ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -13318,6 +13381,9 @@
     "Tor out of date": {
       "stable release": [
         "stabile Version"
+      ],
+      "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -13894,6 +13960,9 @@
       ],
       "Version history": [
         "Versionsverlauf"
+      ],
+      "One-time payment, lifetime deal": [
+        "Einmalzahlung, lebenslanges Angebot"
       ]
     },
     "BF2024: Info": {
@@ -13907,6 +13976,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlängert sich nach 1 Monat zum ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Zum Preis von ${ amount } einmal"
+      ],
+      "forever": [
+        "dauerhaft"
       ]
     },
     "Filter option to only show message with attachments": {
@@ -13920,6 +13995,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus lebenslanges Angebot hat keinen Erneuerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Wenn du Pass Family oder Unlimited kaufst, verlängert sich dein Abonnement am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
       ]
     },
     "BF2024: Tooltip": {
@@ -13958,6 +14039,42 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Begrenzter Bestand!"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Wähle aus, worauf ${ BRAND_NAME } zugreifen kann: Deine E-Mail-Nachrichten und -Einstellungen ansehen, deine Kontakte ansehen und herunterladen, alle Termine ansehen und herunterladen, auf die du über Google Calendar zugreifst."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Unternehmensname verwenden"
+      ],
+      "Use personal name": [
+        "Persönlichen Namen verwenden"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto zu belasten, und deine Bank, dein Konto entsprechend zu belasten. Du kannst innerhalb von 8 Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen, sofern du mit deiner Bank eine entsprechende Vereinbarung getroffen hast."
+      ],
+      "Street address, postal code, and city": [
+        "Straße, Postleitzahl und Ort"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Die Anmeldung wurde nicht erfolgreich abgeschlossen."
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
       ]
     }
   }

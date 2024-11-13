@@ -9952,7 +9952,7 @@
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME } diensten kunnen beheren en andere taken kunnen uitvoeren."
+        "Organisatiebeheertool waarmee beheerders gebruikers kunnen toevoegen en verwijderen, hun toegang tot ${ BRAND_NAME }-diensten kunnen beheren en andere taken kunnen uitvoeren."
       ],
       "Route your internet traffic through the TOR network with a single click": [
         "Routeer uw internetverkeer door het TOR-netwerk met een enkele klik"
@@ -13960,6 +13960,9 @@
       ],
       "Admin panel to manage your family": [
         "Beheerderpaneel om uw gezin te beheren"
+      ],
+      "One-time payment, lifetime deal": [
+        "Eenmalige betaling, levenslange deal"
       ]
     },
     "BF2024: Footer": {
@@ -13968,6 +13971,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus levenslange aanbieding heeft geen vernieuwingsprijs, het is een eenmalige betaling voor levenslang toegang tot Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Als u Pass Family of Unlimited aanschaft, wordt uw abonnement aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
       ]
     },
     "BF2024: Info": {
@@ -13981,6 +13990,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "U betaalt ${ amount } eenmaal"
+      ],
+      "forever": [
+        "voor altijd"
       ]
     },
     "BF2024: Tooltip": {
@@ -14011,6 +14026,10 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en schema met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en schema met end-to-end versleuteling. Bevat ${ addresses } e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
       ]
     },
     "Filter option to only show message with attachments": {
@@ -14052,6 +14071,17 @@
     "sso": {
       "Sign in to your organization": [
         "Aanmelden bij uw organisatie"
+      ],
+      "Sign in": [
+        "Inloggen"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Beperkte voorraad!"
       ]
     }
   }

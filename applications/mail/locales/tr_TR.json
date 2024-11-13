@@ -13960,6 +13960,9 @@
       ],
       "Version history": [
         "Sürüm geçmişi"
+      ],
+      "One-time payment, lifetime deal": [
+        "Bir kez ödemeli ömür boyu kullanım fırsatı"
       ]
     },
     "BF2024: Footer": {
@@ -13968,6 +13971,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Aboneliğiniz, fatura döneminizin sonunda standart indirimli oranla ve süreyle otomatik olarak yenilenir."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus ömür boyu fırsatının yenileme ücreti yoktur. Pass Plus hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pass Family veya Unlimited tarifesi satın aldığınızda, aboneliğiniz fatura döneminizin sonunda otomatik olarak standart indirimli fiyat ve süre üzerinden yenilenir."
       ]
     },
     "BF2024: Info": {
@@ -13981,6 +13990,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "1 ay sonra ${ regularAmount } tutarla yenilenir."
+      ],
+      "Billed at ${ amount } once": [
+        "Bir kez ${ amount } olarak faturalanır"
+      ],
+      "forever": [
+        "sonsuza dek"
       ]
     },
     "BF2024: Tooltip": {
@@ -14014,7 +14029,7 @@
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifreleme ile e-postalarınızı ve programınızı güvence altına alın. 15 e-posta adresi, özel e-posta alan adları için destek, sınırsız hide-my-email takma adları ve daha fazlasını içerir."
+        "E-postalarınızı ve zaman planınızı uçtan uca şifreleme ile koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ]
     },
     "Filter option to only show message with attachments": {
@@ -14062,6 +14077,11 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Sınırlı stok!"
       ]
     }
   }

@@ -9732,7 +9732,7 @@
         "HTML podpisy"
       ],
       "Integrated 2FA authenticator": [
-        "Integrovaný ověřovací modul 2FA"
+        "Integrované ověřování 2FA"
       ],
       "Kill switch/always-on VPN": [
         "Kill Switch/trvalá síť VPN"
@@ -14554,6 +14554,9 @@
       ],
       "Version history": [
         "Historie verzí"
+      ],
+      "One-time payment, lifetime deal": [
+        "Jednorázová platba, doživotní přístup"
       ]
     },
     "BF2024: Footer": {
@@ -14562,6 +14565,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Vaše předplatné se automaticky obnoví za standardní zvýhodněnou sazbu a dobu trvání na konci vašeho fakturačního cyklu."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Doživotní nabídka ${ PASS_SHORT_APP_NAME } Plus nemá cenu za obnovení, jde o jednorázovou platbu za doživotní přístup k Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Pokud si zakoupíte Pass Family nebo Unlimited, vaše předplatné se automaticky obnoví za standardní zvýhodněnou sazbu a dobu trvání na konci vašeho fakturačního cyklu."
       ]
     },
     "BF2024: Info": {
@@ -14575,6 +14584,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Obnovení po 1 měsíci za ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Účtováno ${ amount } jednorázově"
+      ],
+      "forever": [
+        "navždy"
       ]
     },
     "BF2024: Tooltip": {
@@ -14660,6 +14675,11 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Budete přesměrováni na poskytovatele SSO třetí strany."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Omezený počet kusů!"
       ]
     }
   }
