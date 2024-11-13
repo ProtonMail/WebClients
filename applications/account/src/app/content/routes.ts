@@ -97,7 +97,7 @@ export const getRoutes = ({
         }),
         calendar: getCalendarAppRoutes({ app, user, organization, isZoomIntegrationEnabled }),
         drive: getDriveAppRoutes({ app, isB2BDrive, canB2BHidePhotos }),
-        docs: getDocsAppRoutes(),
+        docs: getDocsAppRoutes({ app }),
         pass: getPassAppRoutes({ app, user, organization, subscription, canDisplayB2BLogsPass }),
         organization: getOrganizationAppRoutes({
             app,
