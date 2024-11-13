@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, type ModalStateProps } from '@proton/components';
 import stamp from '@proton/pass/assets/alias/alias-contact-stamp.svg';
+import { useAliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContactsContext';
 import { ContactCard } from '@proton/pass/components/Item/Alias/Contact/ContactCard';
 import { SidebarCreateContact } from '@proton/pass/components/Item/Alias/Contact/SidebarCreateContact';
 import { SidebarMoreInfoFlow } from '@proton/pass/components/Item/Alias/Contact/SidebarMoreInfoFlow';
@@ -15,11 +16,12 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { aliasGetContactsList } from '@proton/pass/store/actions';
 import { selectItem } from '@proton/pass/store/selectors';
-import type { AliasContactGetResponse, AliasContactWithStatsGetResponse, UniqueItem } from '@proton/pass/types';
+import type { AliasContactGetResponse, AliasContactWithStatsGetResponse } from '@proton/pass/types';
 
-type Props = UniqueItem & Pick<ModalStateProps, 'onClose'>;
+type Props = Pick<ModalStateProps, 'onClose'>;
 
-export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => {
+export const SidebarContactsView: FC<Props> = ({ onClose }) => {
+    const { itemId, shareId } = useAliasContacts();
     const [openCreate, setOpenCreate] = useState(false);
     const [openMoreInfo, setOpenMoreInfo] = useState(false);
     const aliasEmail = useSelector(selectItem<'alias'>(shareId, itemId))?.aliasEmail;
@@ -144,12 +146,7 @@ export const SidebarContactsView: FC<Props> = ({ onClose, itemId, shareId }) => 
                 </Panel>
             </SidebarModal>
             {openCreate && (
-                <SidebarCreateContact
-                    itemId={itemId}
-                    shareId={shareId}
-                    onContactCreated={handleContactCreated}
-                    onClose={() => setOpenCreate(false)}
-                />
+                <SidebarCreateContact onContactCreated={handleContactCreated} onClose={() => setOpenCreate(false)} />
             )}
             {openMoreInfo && <SidebarMoreInfoFlow onClose={() => setOpenMoreInfo(false)} />}
         </>
