@@ -15,7 +15,7 @@ import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import { isAliasDisabled } from '@proton/pass/lib/items/item.predicates';
+import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails, selectAliasMailboxes, selectCanManageAlias } from '@proton/pass/store/selectors';
@@ -67,7 +67,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
     const allowActions = canToggleStatus && !history;
     const aliasActions = allowActions ? <AliasStatusToggle disabled={optimistic} revision={revision} /> : undefined;
-    const aliasDisabled = isAliasDisabled(revision);
+    const aliasDisabled = isDisabledAlias(revision);
 
     useEffect(() => {
         if (!optimistic) getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
