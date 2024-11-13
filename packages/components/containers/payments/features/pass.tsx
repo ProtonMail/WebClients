@@ -39,12 +39,12 @@ export const getProtonPassFeature = (n: 'unlimited' | number = 'unlimited'): Pla
 };
 
 export const getProtonPassFeatureTooltipText = () => {
-    return c('new_plans: tooltip').t`Lifetime access to ${PASS_APP_NAME} premium features.`;
+    return c('new_plans: tooltip').t`Lifetime access to ${PASS_APP_NAME} + SimpleLogin premium features.`;
 };
 
 export const getProtonPassFeatureLifetime = (): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`${PASS_APP_NAME} lifetime`,
+        text: c('new_plans: feature').t`${PASS_APP_NAME} + SimpleLogin lifetime`,
         icon: 'brand-proton-pass',
         included: true,
         tooltip: getProtonPassFeatureTooltipText(),
