@@ -1057,7 +1057,7 @@ describe('payments core helpers', () => {
 
         it('should not duplicated regional currencies', () => {
             const status = {
-                CountryCode: 'AR',
+                CountryCode: 'GB',
                 VendorStates: {} as any,
             };
 
@@ -1066,7 +1066,7 @@ describe('payments core helpers', () => {
                     Currency: 'BRL',
                 },
                 {
-                    Currency: 'ARS',
+                    Currency: 'GBP',
                 },
                 {
                     Currency: 'USD',
@@ -1094,7 +1094,7 @@ describe('payments core helpers', () => {
                     subscription,
                     plans,
                 })
-            ).toEqual(['ARS', 'BRL']);
+            ).toEqual(['GBP', 'BRL']);
         });
     });
 });

@@ -54,9 +54,12 @@ export function mapCountryToRegionalCurrency(countryCode: string): Currency | un
     switch (countryCode) {
         case 'BR':
             return 'BRL';
-        // placeholder for testing
-        case 'AR':
-            return 'ARS' as any; // todo: remove as any when/if ARS is supported
+        case 'GB':
+            return 'GBP';
+        case 'AU':
+            return 'AUD';
+        case 'CA':
+            return 'CAD';
     }
 }
 

@@ -30,6 +30,7 @@ import {
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
     type PaymentMethodStatusExtended,
+    type PlainPaymentMethodType,
     isFreeSubscription,
 } from '@proton/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
@@ -52,6 +53,9 @@ const getCurrenciesI18N = () => ({
     CHF: c('Monetary unit').t`Swiss franc`,
     USD: c('Monetary unit').t`US Dollar`,
     BRL: c('Monetary unit').t`Brazilian real`,
+    GBP: c('Monetary unit').t`British pound`,
+    AUD: c('Monetary unit').t`Australian dollar`,
+    CAD: c('Monetary unit').t`Canadian dollar`,
 });
 
 type Props = {
@@ -59,6 +63,12 @@ type Props = {
 } & ModalProps;
 
 export const DEFAULT_CREDITS_AMOUNT = 5000;
+
+const nonChargeableMethods = new Set<PlainPaymentMethodType | undefined>([
+    PAYMENT_METHOD_TYPES.BITCOIN,
+    PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+    PAYMENT_METHOD_TYPES.CASH,
+]);
 
 const CreditsModal = ({ status, ...props }: Props) => {
     const { APP_NAME } = useConfig();
@@ -228,7 +238,10 @@ const CreditsModal = ({ status, ...props }: Props) => {
         chargebeeContext.enableChargebeeRef.current !== ChargebeeEnabled.INHOUSE_FORCED &&
         !isFreeSubscription(subscription);
 
-    const amountToCharge = amountLoading ? null : <Price currency={currency}>{debouncedAmount}</Price>;
+    const amountToCharge =
+        amountLoading || nonChargeableMethods.has(paymentFacade.selectedMethodType) ? null : (
+            <Price currency={currency}>{debouncedAmount}</Price>
+        );
 
     return (
         <ModalTwo
