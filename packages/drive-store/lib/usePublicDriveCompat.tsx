@@ -1,3 +1,6 @@
+import type { ReactNode } from 'react';
+import { createContext, useContext } from 'react';
+
 import { useDriveDocsFeatureFlag, useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
 import { type DocumentKeys } from './_documents';
 import { usePublicNode } from './_nodes';
@@ -59,7 +62,7 @@ export interface PublicDriveCompat {
     /**
      * Gets a node, either from cache or fetched.
      */
-    getNode: (meta: PublicNodeMeta) => Promise<DecryptedNode>;
+    getNode: (meta: PublicNodeMeta, forceFetch?: boolean) => Promise<DecryptedNode>;
 
     /**
      * Redirects to the authed document.
@@ -77,7 +80,7 @@ export interface PublicDriveCompat {
     getPublicAuthHeaders: () => { [key: string]: string };
 }
 
-export const usePublicDriveCompat = (): PublicDriveCompat => {
+export const usePublicDriveCompatValue = (): PublicDriveCompat => {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
@@ -91,9 +94,10 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
         urlPassword,
         isPasswordNeeded,
         submitPassword,
+        linkId,
     } = usePublicDocsToken();
 
-    const { getNode, getNodeContentKey } = usePublicNode();
+    const { getNode, getNodeContentKey, didCompleteInitialSetup } = usePublicNode({ isDocsTokenReady, linkId });
     const { openDocumentWindow } = useOpenDocument();
 
     const redirectToAuthedDocument = (meta: NodeMeta) => openDocumentWindow({ ...meta, mode: 'open', window: window });
@@ -105,7 +109,7 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
         submitPassword,
         token,
         urlPassword,
-        isReady: isDocsTokenReady,
+        isReady: isDocsTokenReady && didCompleteInitialSetup,
         isError,
         error,
         redirectToAuthedDocument: redirectToAuthedDocument,
@@ -116,4 +120,20 @@ export const usePublicDriveCompat = (): PublicDriveCompat => {
         getNode,
         getPublicAuthHeaders,
     };
+};
+
+export const PublicCompatContext = createContext<PublicDriveCompat | null>(null);
+
+export const usePublicDriveCompat = () => {
+    const context = useContext(PublicCompatContext);
+    if (!context) {
+        throw new Error('No provider for PublicCompatContext');
+    }
+    return context;
+};
+
+export const PublicCompatProvider = ({ children }: { children: ReactNode }) => {
+    const value = usePublicDriveCompatValue();
+
+    return <PublicCompatContext.Provider value={value}>{children}</PublicCompatContext.Provider>;
 };

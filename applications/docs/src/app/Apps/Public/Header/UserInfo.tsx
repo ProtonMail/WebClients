@@ -3,7 +3,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 
 import './UserInfo.scss'
-import { useDocsPublicToken } from '@proton/drive-store/hooks/drive/useDocsPublicToken'
+import { useDocsUrlPublicToken } from '@proton/drive-store/hooks/drive/useDocsUrlPublicToken'
 import { redirectToAccountSwitcher } from '../Utils/Redirection'
 
 export interface Props {
@@ -16,7 +16,7 @@ export const UserInfo = ({ user }: Props) => {
   const { Email, DisplayName, Name } = user || {}
   const nameToDisplay = DisplayName || Name || '' // nameToDisplay can be falsy for external account
   const initials = getInitials(nameToDisplay || Email || '')
-  const { token, urlPassword, linkId } = useDocsPublicToken()
+  const { token, urlPassword, linkId } = useDocsUrlPublicToken()
 
   return (
     <Button
