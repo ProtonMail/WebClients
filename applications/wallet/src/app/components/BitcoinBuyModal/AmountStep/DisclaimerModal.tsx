@@ -58,19 +58,23 @@ export const DisclaimerModal = ({ provider, onConfirm, onClose, loading, ...moda
                 </Href>
             );
 
-            const supportEmailLink = (
-                <a key="email-link" href={`mailto:https://proton.me/support/contact`}>
-                    https://proton.me/support/contact
+            const support = (
+                <a key="email-link" href={`https://proton.me/support/contact`}>
+                    {
+                        // translator: Proton Wallet support
+                        c('Gateway disclaimer').jt`${WALLET_APP_NAME} support`
+                    }
                 </a>
             );
 
             return [
                 c('Gateway disclaimer')
                     .jt`You will now buy an Azteco bitcoin voucher with ${WALLET_APP_NAME}. This works similar to a gift card and is one of the easiest and most private way to obtain BTC.`,
+                // translator: As soon as your payment is received, Proton Wallet will redeem the voucher according to the market price of BTC and network fee at that time. The redeemed BTC will then be sent by Azteco (https://azte.co/) to your wallet. For any questions related to Azteco bitcoin vouchers, please contact Proton Wallet support.
                 c('Gateway disclaimer')
                     .jt`As soon as your payment is received, ${WALLET_APP_NAME} will redeem the voucher according to the market price of BTC and network fee at that time.
                     The redeemed BTC will then be sent by Azteco (${websiteLink}) to your wallet.
-                    For any questions related to Azteco bitcoin vouchers, please contact ${WALLET_APP_NAME} at ${supportEmailLink}.`,
+                    For any questions related to Azteco bitcoin vouchers, please contact ${support}.`,
             ];
         }
 
