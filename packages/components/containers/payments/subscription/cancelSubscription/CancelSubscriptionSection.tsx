@@ -38,7 +38,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
                 {user.hasPassLifetime && (
                     <SettingsParagraph>
                         {c('Info')
-                            .t`You will keep lifetime access to ${PASS_APP_NAME} premium features if you cancel your subscription.`}
+                            .t`You will keep lifetime access to ${PASS_APP_NAME} + SimpleLogin premium features if you cancel your subscription.`}
                     </SettingsParagraph>
                 )}
                 <Button
