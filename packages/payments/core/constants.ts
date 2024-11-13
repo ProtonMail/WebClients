@@ -271,7 +271,10 @@ export enum PLAN_SERVICES {
 
 export enum CurrencySymbols {
     USD = 'US$',
+    AUD = 'AU$',
+    CAD = 'CA$',
     EUR = '€',
+    GBP = '£',
     CHF = 'CHF',
     BRL = 'BRL',
 }
