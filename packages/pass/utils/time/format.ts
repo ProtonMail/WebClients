@@ -28,48 +28,41 @@ export const epochToRelativeDaysAgo = (epoch: number, options?: RelativeDaysAgoO
         : (options?.formatDate ?? identity)(epochToDateTime(epoch));
 };
 
-type TimeRemainingOptions = {
-    format?: (remaining: string) => string;
-    expiredLabel?: string;
-    /** If true, will return `{expiredLabel}` if set, else `Expired` */
-    showExpiredLabel?: boolean;
-};
-
 const isExpired = (epoch: number): boolean => {
     const start = Date.now();
     const end = new Date(epochToMs(epoch));
     return start > end.getTime();
 };
 
-export const epochToRelativeDateUntil = (epoch: number, options?: TimeRemainingOptions): string => {
+export const epochToRelativeDuration = (epoch: number): string => {
     const start = Date.now();
     const end = new Date(epochToMs(epoch));
-    const format = options?.format ?? identity;
-    const showExpiredLabel = options?.showExpiredLabel ?? Boolean(options?.expiredLabel);
-
-    if (showExpiredLabel && isExpired(epoch)) {
-        return options?.expiredLabel ?? c('Label').t`Expired`;
-    }
 
     let { years = 0, months = 0, days = 0, hours = 0, minutes = 0 } = intervalToDuration({ start, end });
 
-    if (years) {
-        return format(c('Label').ngettext(msgid`${years} year`, `${years} years`, years));
-    }
-
-    if (months) {
-        return format(c('Label').ngettext(msgid`${months} month`, `${months} months`, months));
-    }
+    if (years) return c('Label').ngettext(msgid`${years} year`, `${years} years`, years);
+    if (months) return c('Label').ngettext(msgid`${months} month`, `${months} months`, months);
 
     if (days) {
         if (hours >= 23) days++;
-        return format(c('Label').ngettext(msgid`${days} day`, `${days} days`, days));
+        return c('Label').ngettext(msgid`${days} day`, `${days} days`, days);
     }
 
     if (hours) {
         if (minutes >= 59) hours++;
-        return format(c('Label').ngettext(msgid`${hours} hour`, `${hours} hours`, hours));
+        return c('Label').ngettext(msgid`${hours} hour`, `${hours} hours`, hours);
     }
 
-    return format(c('Label').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes));
+    return c('Label').ngettext(msgid`${minutes} minute`, `${minutes} minutes`, minutes);
+};
+
+type RemainingDurationOptions = {
+    format?: (remaining: string) => string;
+    expiredLabel?: string;
+};
+
+export const epochToRemainingDuration = (epoch: number, options?: RemainingDurationOptions): string => {
+    if (isExpired(epoch)) return options?.expiredLabel ?? c('Label').t`Expired`;
+    const format = options?.format ?? identity;
+    return format(epochToRelativeDuration(epoch));
 };
