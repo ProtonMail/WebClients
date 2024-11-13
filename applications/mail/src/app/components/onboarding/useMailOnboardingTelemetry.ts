@@ -17,9 +17,20 @@ type SendTelemetryCallback = <TEvent extends TelemetryMailOnboardingEvents>(
     dimensionsParam: Omit<Extract<Options, { event: TEvent }>['dimensions'], 'variant' | 'plan'>
 ) => Promise<void>;
 
+const eventShouldNotBeSent = (variant: MailOnboardingVariant, event: TelemetryMailOnboardingEvents) => {
+    if (variant === 'none') {
+        // Those events are not sent when variant is `none`
+        return [
+            TelemetryMailOnboardingEvents.start_onboarding_modals,
+            TelemetryMailOnboardingEvents.finish_onboarding_modals,
+        ].includes(event);
+    }
+    return false;
+};
+
 export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallback, loadingDeps: boolean] => {
     const api = useApi();
-    const { variant, isEnabled } = useMailOnboardingVariant();
+    const { variant, isEnabled: isOnboardingVariantsFeatureEnabled } = useMailOnboardingVariant();
     const [organization, loadingOrg] = useOrganization();
     const userPlan = organization?.PlanName || PLANS.FREE;
 
@@ -29,21 +40,12 @@ export const useMailOnboardingTelemetry = (): [sendTelemetry: SendTelemetryCallb
             /** No need to send variant and plan in the dimensions they're fetched at hook instanciation level */
             dimensionsParam
         ) => {
-            if (loadingOrg) {
-                captureMessage('useTelemetryOnboarding: Data is still loading, failled to send ' + event);
+            if (!isOnboardingVariantsFeatureEnabled || eventShouldNotBeSent(variant, event)) {
                 return Promise.resolve();
             }
 
-            if (
-                // We don't want to send telemetry for those events if the variant is "none"
-                ([
-                    TelemetryMailOnboardingEvents.start_onboarding_modals,
-                    TelemetryMailOnboardingEvents.finish_onboarding_modals,
-                ].includes(event) &&
-                    variant === 'none') ||
-                // We don't want to send telemetry if the feature is disabled
-                !isEnabled
-            ) {
+            if (loadingOrg) {
+                captureMessage('useTelemetryOnboarding: Data is still loading, failled to send ' + event);
                 return Promise.resolve();
             }
 

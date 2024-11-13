@@ -52,7 +52,7 @@ interface Props {
     maximized: boolean;
     toggleMinimized: () => void;
     toggleMaximized: () => void;
-    onClose: () => void;
+    onClose: MouseEventHandler<HTMLButtonElement>;
     handleStartDragging: React.MouseEventHandler<HTMLElement>;
     minimizeButtonRef: RefObject<HTMLButtonElement>;
 }
