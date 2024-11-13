@@ -15,20 +15,17 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateEmailForm } from '@proton/pass/lib/validation/email';
 import { aliasCreateContact } from '@proton/pass/store/actions';
-import type { AliasContactGetResponse, AliasCreateContactValues } from '@proton/pass/types';
+import type { AliasCreateContactValues } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 const FORM_ID = 'create-contact-form';
 
-type Props = Pick<ModalStateProps, 'onClose'> & { onContactCreated: (contact: AliasContactGetResponse) => void };
+type Props = Pick<ModalStateProps, 'onClose'>;
 
-export const SidebarCreateContact: FC<Props> = ({ onClose, onContactCreated }) => {
-    const { itemId, shareId } = useAliasContacts();
-    const { loading, dispatch } = useRequest(aliasCreateContact, {
-        onSuccess: ({ data }) => {
-            onContactCreated(data);
-            onClose();
-        },
-    });
+export const AliasContactCreate: FC<Props> = ({ onClose }) => {
+    const { itemId, shareId, onCreate } = useAliasContacts();
+    const { loading, dispatch } = useRequest(aliasCreateContact, { onSuccess: pipe(prop('data'), onCreate, onClose) });
 
     const form = useFormik<AliasCreateContactValues>({
         initialValues: { email: '' },

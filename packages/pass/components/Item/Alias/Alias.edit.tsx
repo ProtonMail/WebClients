@@ -12,7 +12,7 @@ import { SelectField } from '@proton/pass/components/Form/Field/SelectField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { AliasSimpleLoginNoteModal } from '@proton/pass/components/Item/Alias/AliasSimpleLoginNote.modal';
+import { AliasSLNoteModal } from '@proton/pass/components/Item/Alias/AliasSLNoteModal';
 import { InfoButton } from '@proton/pass/components/Layout/Button/InfoButton';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
@@ -233,7 +233,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
                                 </FieldsetCluster>
 
                                 {openSlNoteModal && (
-                                    <AliasSimpleLoginNoteModal
+                                    <AliasSLNoteModal
                                         open={openSlNoteModal}
                                         onClose={() => setOpenSlNoteModal(false)}
                                     />
