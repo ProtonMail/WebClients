@@ -1408,6 +1408,9 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Remove zoom meeting": [
+        "Elimina la reunió de Zoom"
       ]
     },
     "action": {
@@ -1752,6 +1755,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Es renova al cap d'1 mes a ${ regularAmount }"
+      ],
+      "Billed at ${ amount } once": [
+        "Facturat a ${ amount } una vegada"
+      ],
+      "forever": [
+        "per sempre"
       ]
     },
     "BF2024: Tooltip": {
@@ -2225,6 +2234,9 @@
       "Total for ${ n } month": [
         "Total per ${ n } mes",
         "Total per ${ n } mesos"
+      ],
+      "Total": [
+        "Total"
       ]
     },
     "Collapsible tooltip": {
@@ -5219,6 +5231,20 @@
       ],
       "You've unlocked 1 GB": [
         "Heu desbloquejat 1 GB"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dia",
+        "${ remainingDaysCount } dies"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Queda ${ remainingDaysCount } dia.",
+        "Queden ${ remainingDaysCount } dies."
+      ],
+      "Finish setup": [
+        "Finalitza la configuració"
+      ],
+      "Get more storage": [
+        "Aconseguiu més emmagatzematge"
       ]
     },
     "Gmail forwarding": {
@@ -5247,6 +5273,9 @@
       ],
       "More details": [
         "Més detalls"
+      ],
+      "Meeting host:": [
+        "Organitzador de la reunió:"
       ]
     },
     "Group": {
@@ -9480,6 +9509,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "${ PASS_APP_NAME } lifetime": [
+        "Oferta de per vida de ${ PASS_APP_NAME }"
       ]
     },
     "new_plans: feature highlight": {
@@ -10024,6 +10056,9 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Us donem la benvinguda a ${ MAIL_APP_NAME }"
+      ],
+      "Replay introduction": [
+        "Veure de nou la introducció"
       ]
     },
     "Onboarding Proton": {
@@ -10147,6 +10182,9 @@
       "${ n } user account": [
         "${ n } compte d'usuari",
         "${ n } comptes d'usuari"
+      ],
+      "Activity log": [
+        "Registre d'activitats"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11242,6 +11280,9 @@
     "sso": {
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
       ]
     },
     "State": {
@@ -11691,6 +11732,9 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
+      ],
+      "Folders, labels, and custom filters": [
+        "Carpetes, etiquetes i filtres personalitzats"
       ]
     },
     "subscription reminder": {
@@ -13587,6 +13631,27 @@
       ],
       "Meeting ID:": [
         "Identificador de la reunió:"
+      ],
+      "Join Zoom meeting": [
+        "Uniu-vos a la reunió de Zoom"
+      ],
+      "Passcode:": [
+        "Codi d'accés:"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Oferta per temps limitat!"
+      ]
+    },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "El nom a mostrar no pot estar buit."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Oferta de per vida"
       ]
     }
   }

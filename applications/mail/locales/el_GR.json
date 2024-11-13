@@ -1745,6 +1745,9 @@
       ],
       "Version history": [
         "Ιστορικό εκδόσεων"
+      ],
+      "One-time payment, lifetime deal": [
+        "Εφάπαξ πληρωμή, συμφωνία εφ' όρου ζωής"
       ]
     },
     "BF2024: Footer": {
@@ -1753,6 +1756,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή και διάρκεια στο τέλος του κύκλου χρέωσης."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Η προσφορά διάρκειας ζωής ${ PASS_SHORT_APP_NAME } Plus δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Αν αγοράσετε Pass Family ή Unlimited, η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή και διάρκεια στο τέλος του κύκλου χρέωσης."
       ]
     },
     "BF2024: Info": {
@@ -1766,6 +1775,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Ανανεώνεται μετά από 1 μήνα στα ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Χρεώνεται σε ${ amount } μία φορά"
+      ],
+      "forever": [
+        "για πάντα"
       ]
     },
     "BF2024: Tooltip": {
@@ -13932,6 +13947,11 @@
       ],
       "Meeting ID:": [
         "ID συνάντησης:"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Περιορισμένος στοκ!"
       ]
     }
   }

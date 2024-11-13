@@ -27,6 +27,9 @@
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "あなたの情報が少なくとも1件のデータ漏洩で見つかりました。詳細を確認し、対策を講じるために${ DARK_WEB_MONITORING_NAME }をオンにしてください。${ link }"
       ]
     },
     "Action": {
@@ -1830,6 +1833,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } を使って続行します。"
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }を使い続ける"
+      ],
+      "Continue your subscription": [
+        "サブスクリプションを継続する"
       ]
     },
     "Calendar attachment tooltip": {
@@ -8786,6 +8795,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、あなたの ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Unlimited devices and aliases": [
+        "無制限のデバイスとエイリアス"
       ]
     },
     "new_plans: feature highlight": {
@@ -9796,6 +9808,9 @@
       ],
       "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
         "メールアドレスを求められた場合、このエイリアスを代わりに入力してください。エイリアスは${ passLink } によって提供されます。"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "フライでエイリアスを生成し、エイリアスとパスワードを簡単に管理します。"
       ]
     },
     "Security Center (link to Pass App)": {
@@ -10547,6 +10562,9 @@
       ],
       "Your own short @pm.me email alias": [
         "独自の短い @pm.me メール エイリアス"
+      ],
+      "${ PROTON_SENTINEL_NAME } advanced account protection": [
+        "${ PROTON_SENTINEL_NAME } の高度なアカウント保護"
       ]
     },
     "subscription reminder": {
@@ -12237,6 +12255,31 @@
       ],
       "Meeting ID:": [
         "ミーティング ID:"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "限定在庫！"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "パスワードリセットはキャンセルされました"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "パスワードリセットのリクエストがキャンセルされました(${ user.Email })。このリクエストを行っていない場合は、${ changePasswordLink }をご確認ください。"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "サインイン"
       ]
     }
   }
