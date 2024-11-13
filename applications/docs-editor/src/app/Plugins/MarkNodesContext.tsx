@@ -9,8 +9,10 @@ import { $getSuggestionID } from './Suggestions/Utils'
 import type { ProtonNode } from './Suggestions/ProtonNode'
 import { $isSuggestionThatAffectsWholeParent } from './Suggestions/Types'
 
+export type MarkNodeMap = Map<string, Set<NodeKey>>
+
 type MarkNodesContextValue = {
-  markNodeMap: Map<string, Set<NodeKey>>
+  markNodeMap: MarkNodeMap
   activeAnchorKey: NodeKey | null
   activeIDs: string[]
 }
