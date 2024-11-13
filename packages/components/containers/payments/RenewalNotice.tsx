@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import Time from '@proton/components/components/time/Time';
 import { type Currency, PLANS, type PlanIDs } from '@proton/payments';
 import { CYCLE, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import { type SubscriptionCheckoutData, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPlanFromPlanIDs, getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
 import { getOptimisticRenewCycleAndPrice, isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import {
@@ -15,7 +15,7 @@ import {
     getPlanTitle,
     isLifetimePlan,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Coupon, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import type { Coupon, PlansMap, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import Price from '../../components/price/Price';
 import { getMonths } from './SubscriptionsSection';
@@ -161,6 +161,7 @@ const getRenewNoticeTextForLimitedCoupons = ({
     plansMap,
     currency,
     checkout,
+    short,
 }: {
     cycle: CYCLE;
     planIDs: PlanIDs;
@@ -168,6 +169,7 @@ const getRenewNoticeTextForLimitedCoupons = ({
     currency: Currency;
     coupon: Coupon;
     checkout: SubscriptionCheckoutData;
+    short?: boolean;
 }) => {
     if (!coupon || !coupon.MaximumRedemptionsPerUser) {
         return;
@@ -191,6 +193,10 @@ const getRenewNoticeTextForLimitedCoupons = ({
     );
 
     if (couponRedemptions === 1) {
+        if (short) {
+            return c('Payments').jt`Renews at ${price}, cancel anytime.`;
+        }
+
         if (cycle === CYCLE.MONTHLY) {
             return c('Payments')
                 .jt`The specially discounted price of ${priceWithDiscount} is valid for the first month. Then it will automatically be renewed at ${price} every month. You can cancel at any time.`;
@@ -242,6 +248,7 @@ export const getCheckoutRenewNoticeText = ({
     plansMap,
     currency,
     checkout,
+    short,
     ...renewalNoticeProps
 }: {
     coupon: Coupon;
@@ -250,6 +257,7 @@ export const getCheckoutRenewNoticeText = ({
     plansMap: PlansMap;
     currency: Currency;
     checkout: SubscriptionCheckoutData;
+    short?: boolean;
 } & RenewalNoticeProps): ReactNode => {
     if (isLifetimePlanSelected(planIDs)) {
         return getLifetimeRenewNoticeText({ ...renewalNoticeProps, planIDs });
@@ -286,6 +294,7 @@ export const getCheckoutRenewNoticeText = ({
         plansMap,
         currency,
         checkout,
+        short,
     });
 
     if (limitedCouponsNotice) {
@@ -295,5 +304,31 @@ export const getCheckoutRenewNoticeText = ({
     return getRegularRenewalNoticeText({
         cycle,
         ...renewalNoticeProps,
+    });
+};
+
+export const getCheckoutRenewNoticeTextFromCheckResult = ({
+    checkResult,
+    plansMap,
+    planIDs,
+    short,
+}: {
+    checkResult: SubscriptionCheckResponse;
+    plansMap: PlansMap;
+    planIDs: PlanIDs;
+    short?: boolean;
+}) => {
+    return getCheckoutRenewNoticeText({
+        plansMap,
+        planIDs,
+        cycle: checkResult.Cycle,
+        checkout: getCheckout({
+            planIDs,
+            checkResult,
+            plansMap,
+        }),
+        currency: checkResult.Currency,
+        coupon: checkResult.Coupon,
+        short,
     });
 };

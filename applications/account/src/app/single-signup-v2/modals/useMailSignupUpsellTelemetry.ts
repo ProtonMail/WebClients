@@ -3,7 +3,13 @@ import { TelemetryMailTrial2024UpsellModal, TelemetryMeasurementGroups } from '@
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import noop from '@proton/utils/noop';
 
-const useMailSignupUpsellTelemetry = () => {
+export type SignupUpsellTelemetryHook = {
+    noThanks: () => Promise<void>;
+    upsell: () => Promise<void>;
+    close: () => Promise<void>;
+};
+
+const useMailSignupUpsellTelemetry = (): SignupUpsellTelemetryHook => {
     const unauthApi = useApi();
     const sendTelemetry = (event: TelemetryMailTrial2024UpsellModal) => {
         return sendTelemetryReport({
