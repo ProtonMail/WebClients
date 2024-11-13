@@ -1078,6 +1078,9 @@
       ],
       "Version history": [
         "Versiegeschiedenis"
+      ],
+      "One-time payment, lifetime deal": [
+        "Eenmalige betaling, levenslange deal"
       ]
     },
     "BF2024: Footer": {
@@ -1086,6 +1089,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus levenslange aanbieding heeft geen vernieuwingsprijs, het is een eenmalige betaling voor levenslang toegang tot Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Als u Pass Family of Unlimited aanschaft, wordt uw abonnement aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
       ]
     },
     "BF2024: Info": {
@@ -1099,6 +1108,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlenging na 1 maand voor ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "U betaalt ${ amount } eenmaal"
+      ],
+      "forever": [
+        "voor altijd"
       ]
     },
     "BF2024: Tooltip": {
@@ -10502,6 +10517,11 @@
       ],
       "Meeting ID:": [
         "Meeting ID:"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Beperkte voorraad!"
       ]
     }
   }

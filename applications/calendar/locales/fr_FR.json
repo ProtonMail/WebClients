@@ -788,6 +788,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Remove zoom meeting": [
+        "Retirer la réunion Zoom"
       ]
     },
     "Action subline": {
@@ -1081,6 +1084,9 @@
       ],
       "Version history": [
         "Historique des versions"
+      ],
+      "One-time payment, lifetime deal": [
+        "Paiement unique, offre à vie"
       ]
     },
     "BF2024: Footer": {
@@ -1089,6 +1095,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "L'offre à vie de ${ PASS_SHORT_APP_NAME } Plus n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Si vous achetez Pass Family ou Unlimited, votre abonnement sera automatiquement renouvelé au tarif et à la durée standard à la fin de votre cycle de facturation."
       ]
     },
     "BF2024: Info": {
@@ -1102,6 +1114,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renouvellement après 1 mois à ${ regularAmount }"
+      ],
+      "Billed at ${ amount } once": [
+        "Facturé ${ amount } en une fois"
+      ],
+      "forever": [
+        "pour toujours"
       ]
     },
     "BF2024: Tooltip": {
@@ -1504,6 +1522,9 @@
       "Total for ${ n } month": [
         "Total pour ${ n } mois",
         "Total pour ${ n } mois"
+      ],
+      "Total": [
+        "Total"
       ]
     },
     "Collapsible tooltip": {
@@ -5393,6 +5414,15 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Le fuseau horaire de votre système semble avoir changé pour ${ timezone }. Voulez-vous mettre à jour votre préférence de fuseau horaire ?"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'offre à vie de ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "L'offre à vie de ${ PASS_SHORT_APP_NAME } n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }. Le prix et la date de renouvellement de votre abonnement ${ planTitle } restent inchangés."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Votre abonnement ${ PASS_SHORT_APP_NAME } Plus sera remplacé par ${ PASS_SHORT_APP_NAME } Lifetime. Le solde de votre abonnement sera ajouté à votre compte. L'offre ${ PASS_SHORT_APP_NAME } Lifetime n'a pas de prix de renouvellement. Il s'agit d'un paiement unique pour un accès à vie à ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "info": {
@@ -6921,6 +6951,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "${ PASS_APP_NAME } lifetime": [
+        "${ PASS_APP_NAME } à vie"
       ]
     },
     "new_plans: feature highlight": {
@@ -7277,6 +7310,9 @@
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Vous pouvez avoir plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } premium features.": [
+        "Accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME }"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -7357,6 +7393,9 @@
       ],
       "Passcode copied to clipboard": [
         "Le code d’accès a été copié dans le presse-papiers."
+      ],
+      "Meeting host copied to clipboard": [
+        "L'hôte de la réunion a été copié dans le presse-papiers."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7671,7 +7710,7 @@
         "Panneau d'administration pour gérer l'abonnement et les utilisateurs"
       ],
       "Team policies": [
-        "Règles de l'équipe"
+        "Règles d'équipe"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8594,6 +8633,12 @@
       ],
       "You can now collapse the navigation bar.": [
         "Vous pouvez maintenant réduire la barre de navigation."
+      ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Créez et ajoutez facilement des liens de réunion vidéo à vos événements."
+      ],
+      "Video conferencing is here!": [
+        "La vidéoconférence est disponible !"
       ]
     },
     "sso": {
@@ -10526,6 +10571,19 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ],
+      "Join Zoom meeting": [
+        "Rejoindre la réunion Zoom"
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Quantité limitée !"
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "À vie"
       ]
     }
   }
