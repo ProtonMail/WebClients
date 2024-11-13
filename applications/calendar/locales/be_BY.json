@@ -8324,7 +8324,7 @@
         "Выяўлена патэнцыяльная ўцечка ${ name }. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці. ${ link }"
       ],
       "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
-        "Атрымаць апавяшчэнне, калі адбылася ўцечка вашага пароля або іншых даных са старонняга сэрвісу. ${ learnMoreLink }"
+        "Апавяшчаць, калі адбудзецца ўцечка вашага пароля або іншых даных са старонняга сэрвісу. ${ learnMoreLink }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту распрацавана для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
@@ -10991,6 +10991,9 @@
       ],
       "Version history": [
         "Гісторыя версій"
+      ],
+      "One-time payment, lifetime deal": [
+        "Аднаразовая аплата, пажыццёвы доступ"
       ]
     },
     "BF2024: Footer": {
@@ -10999,6 +11002,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } Plus не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты, калі вы купіце Pass Family або Unlimited."
       ]
     },
     "BF2024: Info": {
@@ -11012,6 +11021,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Падоўжыцца пасля 1 месяца за ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Аплачваецца ${ amount } аднаразова"
+      ],
+      "forever": [
+        "назаўсёды"
       ]
     },
     "BF2024: Tooltip": {
@@ -11083,7 +11098,7 @@
         "Дадаць сустрэчу ў Zoom"
       ],
       "Adding conferencing details": [
-        "Дадаванне падрабязнасцяў канферэнцыі"
+        "Дадаванне падрабязнасцяў аб канферэнцыі"
       ],
       "Loading Zoom configuration": [
         "Загрузка канфігурацыі Zoom"
@@ -11102,7 +11117,12 @@
         "Увайсці ў сваю арганізацыю"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO"
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Абмежаваная колькасць тавараў!"
       ]
     }
   }

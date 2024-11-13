@@ -779,6 +779,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "Upgrade to Mail Plus": [
+        "Opgrader til Mail Plus"
       ]
     },
     "Action subline": {
@@ -893,6 +896,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Ved at forlade nu, mister du din begivenhed."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Luk ikke denne fane. Nogle anmodninger behandles stadig i baggrunden."
       ]
     },
     "Apps dropdown": {
@@ -1237,6 +1243,9 @@
     "Calendar sharing access option label": {
       "View (see all event details)": [
         "Vis (se alle detaljer om begivenheden)"
+      ],
+      "Edit (view, create or edit event details)": [
+        "Rediger (vis, opret og rediger begivenhedsoplysninger)"
       ]
     },
     "Calendar sharing error": {
@@ -2519,6 +2528,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Opret et Zoom-møde, og tilføj deltageroplysninger til din begivenhed med et enkelt klik."
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Det kan tage et par minutter. I mellemtiden kan du fortsætte med at bruge ${ CALENDAR_APP_NAME } som normalt."
       ]
     },
     "description": {
@@ -3269,6 +3284,9 @@
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
+      ],
+      "Failed to load oauth modal.": [
+        "Kunne ikke indlæse oauth modal."
       ]
     },
     "Error accepting calendar invitation": {
@@ -5212,6 +5230,10 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszone ser ud til at være ændret til ${ timezone }. Vil du opdatere din tidszone præferencer?"
+      ],
+      "Deleting event...": [
+        "Sletter begivenhed...",
+        "Sletter begivenheder..."
       ]
     },
     "info": {
@@ -9603,6 +9625,12 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Get Zooming faster": [
+        "Kom hurtigt videre til Zoom"
+      ],
+      "We're setting up calendar search": [
+        "Vi konfigurere kalender-søgning"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10317,6 +10345,22 @@
       ],
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagerplads er delt mellem alle ${ BRAND_NAME }-tjenester."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Begrænset lager!"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Tilføj Zoom-møde"
+      ],
+      "Adding conferencing details": [
+        "Tilføjer mødedetaljer"
+      ],
+      "Loading Zoom configuration": [
+        "Indlæser Zoom-konfiguration"
       ]
     }
   }

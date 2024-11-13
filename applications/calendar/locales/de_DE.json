@@ -779,6 +779,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Toggle Contacts app": [
+        "Kontakte-App umschalten"
+      ],
+      "Upgrade to Mail Plus": [
+        "Auf Mail Plus upgraden"
       ]
     },
     "Action subline": {
@@ -893,6 +899,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "Wenn du jetzt beendest, wird dieser Termin verworfen."
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "Bitte schließ diese Registerkarte nicht. Einige Anfragen werden noch im Hintergrund bearbeitet."
       ]
     },
     "Apps dropdown": {
@@ -1237,6 +1246,9 @@
     "Calendar sharing access option label": {
       "View (see all event details)": [
         "Lesezugriff (alle Termindetails anzeigen)"
+      ],
+      "Edit (view, create or edit event details)": [
+        "Schreibzugriff (Termindetails anzeigen, erstellen und bearbeiten)"
       ]
     },
     "Calendar sharing error": {
@@ -2566,6 +2578,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Erstelle ein Zoom-Meeting und füge deine Veranstaltung mit einem Klick Details zur Teilnahme hinzu."
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Dies kann ein paar Minuten dauern. In der Zwischenzeit kannst du ${ CALENDAR_APP_NAME } wie gewohnt weiter verwenden."
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Wenn du über eine CSV- oder VCF-Datei importieren möchtest, stelle sicher, dass die Datei nicht größer ist als ${ MAX_IMPORT_FILE_SIZE_STRING } oder ${ MAX_IMPORT_CONTACTS_STRING } Kontakte. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
       ]
     },
     "description": {
@@ -3319,6 +3340,15 @@
       ],
       "Invalid IBAN": [
         "Ungültige IBAN"
+      ],
+      "Failed to load oauth modal.": [
+        "OAuth-Modal konnte nicht geladen werden."
+      ],
+      "The amount due has changed. Please try again.": [
+        "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du hast die maximale Anzahl von Kontakten für dein Konto erreicht"
       ]
     },
     "Error accepting calendar invitation": {
@@ -3534,6 +3564,9 @@
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "Vor- und Nachname können nicht gleichzeitig deaktiviert werden"
+      ],
+      "Display name cannot be empty": [
+        "Anzeigename darf nicht leer sein"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3742,6 +3775,9 @@
       ],
       "Manage addresses": [
         "Adressen verwalten"
+      ],
+      "You cannot accept this invitation with your current plan.": [
+        "Du kannst diese Einladung mit deinem aktuellen Plan nicht annehmen."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3766,6 +3802,9 @@
       ],
       "Set up your family account": [
         "Richte dein Family-Konto ein"
+      ],
+      "Configure your family account and invite users": [
+        "Konfiguriere dein Family-Konto und lade andere Benutzer ein"
       ]
     },
     "familyOffer_2023:Title": {
@@ -5285,6 +5324,9 @@
       "Saving event...": [
         "Termin wird gespeichert...",
         "Termine werden gespeichert..."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ]
     },
     "info": {
@@ -7177,6 +7219,12 @@
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
         "Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und entfernen, ihren Zugriff auf ${ BRAND_NAME }-Dienste verwalten und andere Aufgaben durchführen können."
+      ],
+      "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
+        "Dedizierte Server mit dedizierten IP-Adressen können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
+      ],
+      "Route your internet traffic through the TOR network with a single click": [
+        "Leite deinen Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8647,6 +8695,9 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Dein Abonnement wurde über eine iOS App gekauft. Um Änderungen an deinem Abonnement oder deinen Zahlungsdetails durchführen zu können, musst du zum Apple App Store gehen."
+      ],
+      "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
+        "Melde dich einfach bei deinem Apple App Store-Konto an und wähle dann ${ subscriptions }."
       ]
     },
     "subscription downgrading info": {
@@ -9801,6 +9852,12 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Get Zooming faster": [
+        "Zoom schneller bekommen"
+      ],
+      "We're setting up calendar search": [
+        "Wir richten die Kalendersuche ein"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10467,6 +10524,9 @@
       ],
       "Version history": [
         "Versionsverlauf"
+      ],
+      "One-time payment, lifetime deal": [
+        "Einmalzahlung, lebenslanges Angebot"
       ]
     },
     "BF2024: Info": {
@@ -10480,6 +10540,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlängert sich nach 1 Monat zum ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Zum Preis von ${ amount } einmal"
+      ],
+      "forever": [
+        "dauerhaft"
       ]
     },
     "BF2024: Footer": {
@@ -10488,6 +10554,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus lebenslanges Angebot hat keinen Erneuerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Wenn du Pass Family oder Unlimited kaufst, verlängert sich dein Abonnement am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
       ]
     },
     "BF2024: Tooltip": {
@@ -10526,6 +10598,53 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du wirst zu deinem SSO-Anbieter weitergeleitet."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Begrenzter Bestand!"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
+        "Wähle aus, worauf ${ BRAND_NAME } zugreifen kann: Deine E-Mail-Nachrichten und -Einstellungen ansehen, deine Kontakte ansehen und herunterladen, alle Termine ansehen und herunterladen, auf die du über Google Calendar zugreifst."
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Unternehmensname verwenden"
+      ],
+      "Use personal name": [
+        "Persönlichen Namen verwenden"
+      ]
+    },
+    "Payments.Sepa": {
+      "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
+        "Indem du diese Zahlung bestätigst, ermächtigst du ${ BRAND_NAME } und Stripe, unseren Zahlungsdienstleister, deine Bank anzuweisen, dein Konto zu belasten, und deine Bank, dein Konto entsprechend zu belasten. Du kannst innerhalb von 8 Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen, sofern du mit deiner Bank eine entsprechende Vereinbarung getroffen hast."
+      ],
+      "Street address, postal code, and city": [
+        "Straße, Postleitzahl und Ort"
+      ]
+    },
+    "saml: Error": {
+      "Sign in wasn't successfully completed.": [
+        "Die Anmeldung wurde nicht erfolgreich abgeschlossen."
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoom-Meeting hinzufügen"
+      ],
+      "Adding conferencing details": [
+        "Konferenzdetails werden hinzugefügt"
+      ],
+      "Loading Zoom configuration": [
+        "Zoom-Konfiguration wird geladen"
       ]
     }
   }

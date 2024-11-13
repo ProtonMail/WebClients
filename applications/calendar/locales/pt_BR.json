@@ -10551,6 +10551,9 @@
       ],
       "Version history": [
         "Histórico de versões"
+      ],
+      "One-time payment, lifetime deal": [
+        "Pagamento único, contrato vitalício"
       ]
     },
     "BF2024: Footer": {
@@ -10559,6 +10562,12 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao Pass Plus."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Se comprar o Pass Family ou Unlimited ,sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
       ]
     },
     "BF2024: Info": {
@@ -10572,6 +10581,12 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }."
+      ],
+      "Billed at ${ amount } once": [
+        "Com o preço único de ${ amount }"
+      ],
+      "forever": [
+        "para sempre"
       ]
     },
     "BF2024: Tooltip": {
@@ -10656,6 +10671,11 @@
       ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Estoque limitado!"
       ]
     }
   }

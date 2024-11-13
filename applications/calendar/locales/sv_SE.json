@@ -2573,6 +2573,9 @@
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Skapa ett Zoom-möte och lägg till anslutningsdetaljer till ditt evenemang med ett klick."
       ]
     },
     "description": {
@@ -3321,6 +3324,9 @@
       ],
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
+      ],
+      "Failed to load oauth modal.": [
+        "Misslyckades att ladda oauth-modal."
       ]
     },
     "Error accepting calendar invitation": {
@@ -10476,6 +10482,9 @@
       ],
       "Secure file storage & sharing": [
         "Säker fillagring och delning"
+      ],
+      "One-time payment, lifetime deal": [
+        "Engångsbetalning, livstidserbjudande"
       ]
     },
     "BF2024: Footer": {
@@ -10484,6 +10493,9 @@
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
+      ],
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till Pass Plus."
       ]
     },
     "BF2024: Info": {
@@ -10497,6 +10509,9 @@
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Förnyas efter 1 månad till ${ regularAmount }."
+      ],
+      "forever": [
+        "för alltid"
       ]
     },
     "BF2024: Tooltip": {
@@ -10580,6 +10595,11 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
+      ]
+    },
+    "BF2024: info": {
+      "Limited stock!": [
+        "Begränsat lager!"
       ]
     }
   }
