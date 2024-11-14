@@ -12,6 +12,7 @@ import {
 
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { MaybeNull } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -44,17 +45,23 @@ export const createIFrameService = (elements: PassElementsConfig) => {
         root: null,
     };
 
+    const getIFrameTheme = (theme: PassThemeOption = PASS_DEFAULT_THEME) =>
+        theme === PassThemeOption.OS ? PassThemeOption[matchDarkTheme().matches ? 'PassDark' : 'PassLight'] : theme;
+
     /* only re-init the iframe sub-apps if the extension context port has changed */
     const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContext((ctx, app) => {
         const port = ctx?.getExtensionContext().port;
         const url = ctx?.getExtensionContext()?.url;
 
         if (url && port && app.getState().port !== port) {
+            const settings = ctx.getSettings();
+
             app.init(port, {
                 appState: ctx.getState(),
                 domain: resolveDomain(url) ?? '',
                 features: ctx.getFeatureFlags(),
                 settings: ctx.getSettings(),
+                theme: getIFrameTheme(settings.theme),
             });
         }
     });
@@ -90,20 +97,14 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                 else service.destroy();
             });
 
-            const handleThemeChange = withContext((ctx) => {
-                const theme = ctx?.getSettings().theme;
-                if (theme === PassThemeOption.OS) {
-                    const payload = window.matchMedia('(prefers-color-scheme: dark)').matches
-                        ? PassThemeOption.PassDark
-                        : PassThemeOption.PassLight;
-
-                    state.apps.dropdown?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
-                    state.apps.notification?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
-                }
+            const handleColorSchemeChange = withContext((ctx) => {
+                const settings = ctx?.getSettings();
+                if (settings?.theme === PassThemeOption.OS) service.setTheme(settings.theme);
             });
 
             listeners.addListener(state.root, PASS_ROOT_REMOVED_EVENT as any, handleRootRemoval, { once: true });
-            listeners.addListener(matchDarkTheme(), 'change', handleThemeChange);
+            listeners.addListener(matchDarkTheme(), 'change', handleColorSchemeChange);
+
             return state.root;
         },
 
@@ -146,7 +147,7 @@ export const createIFrameService = (elements: PassElementsConfig) => {
             return state.apps.notification;
         }),
 
-        setTheme: (theme = PassThemeOption.PassDark) => {
+        setTheme: (theme = PASS_DEFAULT_THEME) => {
             state.root?.setAttribute(
                 PASS_ELEMENT_THEME,
                 ((): string => {
@@ -160,6 +161,12 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                     }
                 })()
             );
+
+            if (theme === PassThemeOption.OS) {
+                const payload = matchDarkTheme().matches ? PassThemeOption.PassDark : PassThemeOption.PassLight;
+                state.apps.dropdown?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
+                state.apps.notification?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
+            }
         },
     };
 

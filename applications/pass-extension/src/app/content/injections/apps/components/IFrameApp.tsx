@@ -150,6 +150,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                     switch (message?.type) {
                         case IFramePortMessageType.IFRAME_INIT:
                             app.setState(message.payload.appState);
+                            setTheme(message.payload.theme);
                             setSettings(message.payload.settings);
                             setFeatures(message.payload.features);
                             setDomain(message.payload.domain);
@@ -167,7 +168,6 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                         case WorkerMessageType.FEATURE_FLAGS_UPDATE:
                             return setFeatures(message.payload);
                         case WorkerMessageType.SETTINGS_UPDATE:
-                            if (message.payload.theme) setTheme(message.payload.theme);
                             return setSettings(message.payload);
                         case WorkerMessageType.LOCALE_UPDATED:
                             return i18n.setLocale(settings.locale).catch(noop);

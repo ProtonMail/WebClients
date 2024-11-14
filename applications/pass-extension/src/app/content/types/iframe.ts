@@ -30,6 +30,7 @@ export type IFrameInitPayload = {
     features: FeatureFlagState;
     settings: ProxiedSettings;
     appState: AppState;
+    theme: PassThemeOption.PassDark | PassThemeOption.PassLight;
 };
 
 export type IFrameState<A> = {
