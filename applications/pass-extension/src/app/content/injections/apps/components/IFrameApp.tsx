@@ -162,6 +162,8 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                             return setVisible(false);
                         case IFramePortMessageType.IFRAME_OPEN:
                             return setVisible(true);
+                        case IFramePortMessageType.IFRAME_THEME:
+                            return setTheme(message.payload);
                         case WorkerMessageType.FEATURE_FLAGS_UPDATE:
                             return setFeatures(message.payload);
                         case WorkerMessageType.SETTINGS_UPDATE:
