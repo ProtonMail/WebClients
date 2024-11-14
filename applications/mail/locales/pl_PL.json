@@ -468,6 +468,9 @@
       "Expand URL": [
         "Rozwiń adres URL"
       ],
+      "Expand video conferencing widget": [
+        "Rozwiń widżet wideokonferencji"
+      ],
       "Expiration time": [
         "Czas wygaśnięcia"
       ],
@@ -963,6 +966,9 @@
       "Remove this label": [
         "Usuń etykietę"
       ],
+      "Remove zoom meeting": [
+        "Usuń spotkanie Zoom"
+      ],
       "Replace": [
         "Zastąp"
       ],
@@ -1062,10 +1068,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -1768,8 +1774,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus oferta na całe życie nie ma ceny odnawiania, to jednorazowa płatność za dożywotni dostęp do Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Jeśli zakupisz Pass Family lub Unlimited, Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres na koniec cyklu rozliczeniowego."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
@@ -2296,6 +2308,9 @@
         "${ users } użytkowników",
         "${ users } użytkowników",
         "${ users } użytkowników"
+      ],
+      "Total": [
+        "Razem"
       ],
       "Total for ${ n } month": [
         "Łącznie za ${ n } miesiąc",
@@ -5324,6 +5339,18 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } w Google Play"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dzień",
+        "${ remainingDaysCount } dni",
+        "${ remainingDaysCount } dni",
+        "${ remainingDaysCount } dnia"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Pozostał ${ remainingDaysCount } dzień",
+        "Pozostały ${ remainingDaysCount } dni",
+        "Pozostało ${ remainingDaysCount } dni",
+        "Pozostało ${ remainingDaysCount } dnia"
+      ],
       "account logins": [
         "dane logowania kont"
       ],
@@ -6773,7 +6800,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"

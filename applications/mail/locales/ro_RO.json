@@ -1058,10 +1058,10 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Selectare toate"
       ],
-      "Select All": [
+      "Select all": [
         "Selectare toate"
       ],
       "Select all messages": [
@@ -5290,6 +5290,16 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } din Magazinul Play"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } zi",
+        "${ remainingDaysCount } zile",
+        "${ remainingDaysCount } de zile"
+      ],
+      "${ remainingDaysCount } day left": [
+        "A mai rămas ${ remainingDaysCount } zi",
+        "Au mai rămas ${ remainingDaysCount } zile",
+        "Au mai rămas ${ remainingDaysCount } de zile"
+      ],
       "account logins": [
         "autentificarea în cont"
       ],
@@ -5970,6 +5980,9 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } oferă o modalitate simplă de a crea date de conectare pe site-uri terțe care nu sunt de încredere, unde nu doriți să vă expuneți adresa de e-mail reală."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
@@ -6670,7 +6683,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
