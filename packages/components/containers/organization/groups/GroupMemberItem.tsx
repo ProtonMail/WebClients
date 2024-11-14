@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import Badge from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
@@ -36,23 +35,21 @@ interface Props {
 
 export const GroupMemberItem = ({
     groupMember,
-    groupMember: { Email, State, AddressID },
+    groupMember: { Email, State },
     memberName,
     group,
     canOnlyDelete,
 }: Props) => {
-    const hasKeys = !!AddressID;
     const badge = getInvitationBadgeMap()[State];
 
     return (
         <>
-            <GroupMemberItemWrapper memberEmail={Email} memberName={memberName ?? Email}>
+            <GroupMemberItemWrapper
+                memberEmail={Email}
+                memberName={memberName ?? Email}
+                groupMemberType={groupMember.Type}
+            >
                 <div className="flex flex-row gap-2 flex-nowrap self-center">
-                    {hasKeys && (
-                        <span className="shrink-0 flex mt-0.5">
-                            <Icon name="lock" alt={c('Info').t`Internal user`} />
-                        </span>
-                    )}
                     {badge && (
                         <span>
                             <Badge type="origin" className="rounded-sm color-weak" tooltip={badge.tooltip}>
