@@ -4,7 +4,7 @@ import DocumentEditorTheme from '../../Theme/Theme'
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { SafeLexicalComposer } from '../../Tools/SafeLexicalComposer'
 
 interface CommentViewerProps {
@@ -17,7 +17,7 @@ export const CommentViewer: React.FC<CommentViewerProps> = ({ content, className
     namespace: 'CommentViewer',
     nodes: [],
     onError: (error: Error) => {
-      sendErrorMessage(error)
+      reportErrorToSentry(error)
     },
     theme: DocumentEditorTheme,
     editorState: content,

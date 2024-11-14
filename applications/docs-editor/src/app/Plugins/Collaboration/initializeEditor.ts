@@ -6,7 +6,7 @@ import { DocWillInitializeWithEmptyNodeEvent } from '@proton/docs-shared'
 import { $importDataIntoEditor } from '../../Conversion/ImportDataIntoEditor'
 import type { Binding } from '@lexical/yjs'
 import { CLEAR_HISTORY_COMMAND } from './useYjsHistory'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { c } from 'ttag'
 
 /**
@@ -63,7 +63,7 @@ export async function initializeEditorAccordingToConfigIfRootIsEmpty(
         },
       )
     } catch (error) {
-      sendErrorMessage(error)
+      reportErrorToSentry(error)
       return TranslatedResult.failWithTranslatedError<void>(
         c('Error').t`Failed to initialize editor due to unknown error.`,
       )

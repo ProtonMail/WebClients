@@ -7,7 +7,7 @@ import { CommentThreadState, UserAvatar } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
 import { c } from 'ttag'
 import { useApplication } from '../../ApplicationProvider'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { CommentsComposer } from './CommentsComposer'
 import { useCommentsContext } from './CommentsContext'
 import { CommentTime } from './CommentTime'
@@ -60,7 +60,7 @@ export function CommentsPanelListComment({
       return
     }
     application.logger.info('Accepting suggestion thread', thread.id)
-    controller.acceptSuggestion(thread.id, summary).catch(sendErrorMessage)
+    controller.acceptSuggestion(thread.id, summary).catch(reportErrorToSentry)
     editor.focus()
   }
 
@@ -76,7 +76,7 @@ export function CommentsPanelListComment({
       return
     }
     application.logger.info('Rejecting suggestion thread', thread.id)
-    controller.rejectSuggestion(thread.id, summary).catch(sendErrorMessage)
+    controller.rejectSuggestion(thread.id, summary).catch(reportErrorToSentry)
     editor.focus()
   }
 
@@ -95,7 +95,7 @@ export function CommentsPanelListComment({
               removeMarkNode(thread.markID)
             }
           })
-          .catch(sendErrorMessage)
+          .catch(reportErrorToSentry)
           .finally(() => {
             setIsDeleting(false)
             setIsDeletingThread(false)
@@ -113,7 +113,7 @@ export function CommentsPanelListComment({
         setIsDeleting(true)
         controller
           .deleteComment(thread.id, comment.id)
-          .catch(sendErrorMessage)
+          .catch(reportErrorToSentry)
           .finally(() => {
             setIsDeleting(false)
           })
@@ -240,7 +240,7 @@ export function CommentsPanelListComment({
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
                     onClick={() => {
-                      controller.resolveThread(thread.id).catch(sendErrorMessage)
+                      controller.resolveThread(thread.id).catch(reportErrorToSentry)
                     }}
                     data-testid="resolve-button"
                   >
@@ -252,7 +252,7 @@ export function CommentsPanelListComment({
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm"
                     onClick={() => {
-                      controller.unresolveThread(thread.id).catch(sendErrorMessage)
+                      controller.unresolveThread(thread.id).catch(reportErrorToSentry)
                     }}
                     data-testid="reopen-button"
                   >
@@ -264,7 +264,7 @@ export function CommentsPanelListComment({
                     className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
                     onClick={() => {
                       if (isFirstComment) {
-                        deleteThread().catch(sendErrorMessage)
+                        deleteThread().catch(reportErrorToSentry)
                         return
                       }
 
@@ -288,7 +288,7 @@ export function CommentsPanelListComment({
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={c('Placeholder').t`Edit comment...`}
             onSubmit={(content) => {
-              controller.editComment(thread.id, comment.id, content).catch(sendErrorMessage)
+              controller.editComment(thread.id, comment.id, content).catch(reportErrorToSentry)
               setIsEditing(false)
               void controller.stoppedTypingInThread(thread.id)
             }}
