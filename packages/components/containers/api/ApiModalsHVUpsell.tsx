@@ -1,21 +1,11 @@
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 import type { ApiListenerCallback, ApiVerificationEvent, ApiWithListener } from '@proton/shared/lib/api/createApi';
 import remove from '@proton/utils/remove';
 import replace from '@proton/utils/replace';
 
+import AccountLockedUpsellModal from '../../components/upsell/modal/AccountLockedUpsellModal';
 import type { ApiModalPayload } from './ApiModals.interface';
-
-const AccountLockedUpsellModal = lazy(
-    () =>
-        import(
-            /* webpackChunkName: "auth-modal" */
-            /* webpackMode: "lazy" */
-            /* webpackFetchPriority: "low" */
-            /* webpackPrefetch: true */
-            '@proton/components/components/upsell/modal/AccountLockedUpsellModal'
-        )
-);
 
 const ApiModalsHVUpsell = ({ api }: { api: ApiWithListener }) => {
     const [verificationModals, setVerificationModals] = useState<ApiModalPayload<ApiVerificationEvent['payload']>[]>(

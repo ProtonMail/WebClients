@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { getLocaleTermsURL } from 'proton-account/src/app/content/helper';
 import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
@@ -28,7 +27,7 @@ import { PLANS, getPlansMap } from '@proton/payments';
 import { APPS, APP_UPSELL_REF_PATH, CYCLE, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/shared/lib/helpers/subscription';
 import { UPSELL_MODALS_TYPE, getUpsellRef, sendRequestUpsellModalReport } from '@proton/shared/lib/helpers/upsell';
-import { getAbuseURL } from '@proton/shared/lib/helpers/url';
+import { getAbuseURL, getTermsURL } from '@proton/shared/lib/helpers/url';
 import type { Plan } from '@proton/shared/lib/interfaces';
 import accountLockedImage from '@proton/styles/assets/img/illustrations/account-locked.svg';
 import isTruthy from '@proton/utils/isTruthy';
@@ -142,7 +141,7 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
         upsellConfig.onUpgrade?.();
     };
 
-    const termsLink = <Href key="locale" href={getLocaleTermsURL(APP_NAME)}>{c('Link').t`terms of service`}</Href>;
+    const termsLink = <Href key="locale" href={getTermsURL(APP_NAME)}>{c('Link').t`terms of service`}</Href>;
     const contactLink = <Href key="contact" href={getAbuseURL()}>{c('Link').t`contact us`}</Href>;
     const planTitle = selectedPlan?.Title ?? 'Plan';
 
