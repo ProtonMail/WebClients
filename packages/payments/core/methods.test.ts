@@ -1,4 +1,4 @@
-import { MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE } from '@proton/payments';
+import { MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT_CHARGEBEE, UNPAID_STATE } from '@proton/payments';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
@@ -1246,6 +1246,56 @@ describe('Chargebee Bitcoin', () => {
 
         expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
     });
+
+    it('should not display bitcoin if user has unpaid invoices', () => {
+        const user = buildUser({
+            Delinquent: UNPAID_STATE.AVAILABLE,
+        });
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            user,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefinedBillingAddress,
+            enableSepa: enableSepaTrue,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(false);
+    });
+
+    it('should display bitcoin if user is not delinquent', () => {
+        const user = buildUser({
+            Delinquent: UNPAID_STATE.NOT_UNPAID,
+        });
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.CHARGEBEE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            user,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefinedBillingAddress,
+            enableSepa: enableSepaTrue,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'chargebee-bitcoin')).toBe(true);
+    });
 });
 
 describe('Bitcoin', () => {
@@ -1413,6 +1463,106 @@ describe('Bitcoin', () => {
             expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
         }
     );
+
+    it('should not display bitcoin if user has unpaid invoices', () => {
+        const user = buildUser({
+            Delinquent: UNPAID_STATE.AVAILABLE,
+        });
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            user,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefinedBillingAddress,
+            enableSepa: enableSepaTrue,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+    });
+
+    it('should display bitcoin if user is not delinquent', () => {
+        const user = buildUser({
+            Delinquent: UNPAID_STATE.NOT_UNPAID,
+        });
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            user,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefinedBillingAddress,
+            enableSepa: enableSepaTrue,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
+    });
+
+    it('should not display bitcoin if user has unpaid invoices', () => {
+        const user = buildUser({
+            Delinquent: UNPAID_STATE.AVAILABLE,
+        });
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            user,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefinedBillingAddress,
+            enableSepa: enableSepaTrue,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
+    });
+
+    it('should display bitcoin if user is not delinquent', () => {
+        const user = buildUser({
+            Delinquent: UNPAID_STATE.NOT_UNPAID,
+        });
+
+        const methods = new PaymentMethods({
+            paymentMethodStatus: status,
+            paymentMethods: [],
+            chargebeeEnabled: ChargebeeEnabled.INHOUSE_FORCED,
+            amount: 500,
+            currency: TEST_CURRENCY,
+            coupon: '',
+            flow: 'subscription',
+            user,
+            selectedPlanName: undefined,
+            billingPlatform: undefined,
+            chargebeeUserExists: undefined,
+            disableNewPaymentMethods: false,
+            billingAddress: undefinedBillingAddress,
+            enableSepa: enableSepaTrue,
+        });
+
+        expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
+    });
 });
 
 describe('Chargebee card', () => {

@@ -1,4 +1,4 @@
-import type { Currency } from '@proton/payments';
+import type { Currency, UNPAID_STATE } from '@proton/payments';
 
 import type { USER_ROLES } from '../constants';
 import type { Key } from './Key';
@@ -65,7 +65,7 @@ export interface User {
     Type: UserType;
     Subscribed: number;
     Services: number;
-    Delinquent: number;
+    Delinquent: UNPAID_STATE;
     Email: string;
     DisplayName: string;
     OrganizationPrivateKey?: string;
