@@ -29,6 +29,9 @@
       "Add new table row": [
         "Προσθήκη νέας γραμμής πίνακα"
       ],
+      "Add suggestion": [
+        "Προσθήκη πρότασης"
+      ],
       "Adjust font size": [
         "Προσαρμογή μεγέθους γραμματοσειράς"
       ],
@@ -404,8 +407,14 @@
       "Edit document directly": [
         "Επεξεργασία εγγράφου απευθείας"
       ],
+      "Edits become suggestions": [
+        "Οι αλλαγές γίνονται προτάσεις"
+      ],
       "Read or print final document": [
         "Ανάγνωση ή εκτύπωση τελικού εγγράφου"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Χρησιμοποιήστε το αναπτυσσόμενο μενού παραπάνω για να αλλάξετε και να αρχίσετε να κάνετε προτάσεις."
       ]
     },
     "Error": {
@@ -552,8 +561,14 @@
       "Change indent level": [
         "Αλλαγή επιπέδου εσοχής"
       ],
+      "Clear formatting": [
+        "Εκκαθάριση μορφοποίησης"
+      ],
       "Delete": [
         "Διαγραφή"
+      ],
+      "Delete divider": [
+        "Διαγραφή διαχωριστικού"
       ],
       "Delete image": [
         "Διαγραφή εικόνας"
@@ -570,11 +585,23 @@
       "Delete table column": [
         "Διαγραφή στήλης πίνακα"
       ],
+      "Delete table row": [
+        "Διαγραφή γραμμής πίνακα"
+      ],
+      "Duplicate table column": [
+        "Διπλασιασμός στήλης πίνακα"
+      ],
+      "Duplicate table row": [
+        "Διπλασιασμός γραμμής πίνακα"
+      ],
       "Format": [
         "Μορφή"
       ],
       "Insert": [
         "Εισαγωγή"
+      ],
+      "Insert divider": [
+        "Εισαγωγή διαχωριστικού"
       ],
       "Insert image": [
         "Εισαγωγή εικόνας"
@@ -587,6 +614,9 @@
       ],
       "Insert table column": [
         "Εισαγωγή στήλης πίνακα"
+      ],
+      "Insert table row": [
+        "Εισαγωγή γραμμής πίνακα"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Συντόμευση πληκτρολογίου: ${ shortcut }"
@@ -639,6 +669,11 @@
       ],
       "Language not supported": [
         "H γλώσσα δεν υποστηρίζεται"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Η υποβολή προτάσεων μέσα σε μπλοκ κώδικα δεν υποστηρίζεται"
       ]
     }
   }
