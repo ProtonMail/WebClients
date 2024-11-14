@@ -22,8 +22,3 @@ export type DesktopTheme = 'dark' | 'light' | 'system';
 export type ClipboardStoreProperties = {
     timeoutMs: number;
 };
-
-export type DesktopSettingsDTO = {
-    clipboard?: ClipboardStoreProperties;
-    theme?: DesktopTheme;
-};
