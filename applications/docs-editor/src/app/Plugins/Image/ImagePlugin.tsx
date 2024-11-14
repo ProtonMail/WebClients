@@ -27,7 +27,7 @@ import { $createImageNode, $isImageNode, ImageNode } from './ImageNode'
 
 import { toBase64 } from '@proton/shared/lib/helpers/file'
 import { downSize } from '@proton/shared/lib/helpers/image'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { isImage } from '@proton/shared/lib/helpers/mimetype'
 import { $canDropImage, $getImageNodeInSelection, getDragImageData, getDragSelection } from './ImageUtils'
 import { INSERT_FILE_COMMAND } from '../../Commands/Events'
@@ -117,7 +117,7 @@ export default function ImagesPlugin(): JSX.Element | null {
             createAndInsertImageNode(downsizedImage)
           }
 
-          handleDownsizingAndInsert().catch(sendErrorMessage)
+          handleDownsizingAndInsert().catch(reportErrorToSentry)
           return true
         },
         COMMAND_PRIORITY_EDITOR,
@@ -261,7 +261,7 @@ export default function ImagesPlugin(): JSX.Element | null {
               }
             })
           }
-          convertSourcesAndInsertNodes().catch(sendErrorMessage)
+          convertSourcesAndInsertNodes().catch(reportErrorToSentry)
           return true
         },
         COMMAND_PRIORITY_LOW,

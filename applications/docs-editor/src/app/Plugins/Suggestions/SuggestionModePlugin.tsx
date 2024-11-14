@@ -27,7 +27,7 @@ import { ProtonNode, $isSuggestionNode } from './ProtonNode'
 import { SuggestionTypesThatCanBeEmpty, type SuggestionID } from './Types'
 import { BEFOREINPUT_EVENT_COMMAND, COMPOSITION_START_EVENT_COMMAND, INSERT_FILE_COMMAND } from '../../Commands/Events'
 import { type EditorRequiresClientMethods } from '@proton/docs-shared'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useMarkNodesContext } from '../MarkNodesContext'
 import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND, TOGGLE_SUGGESTION_MODE_COMMAND } from './Commands'
 import debounce from '@proton/utils/debounce'
@@ -190,7 +190,7 @@ export function SuggestionModePlugin({
               createdSuggestionIDs.delete(id)
               suggestionModeLogger.info(`Removed id ${id} from set ${[...createdSuggestionIDs]}`)
             })
-            .catch(sendErrorMessage)
+            .catch(reportErrorToSentry)
         }
       }),
     )
@@ -208,7 +208,7 @@ export function SuggestionModePlugin({
               continue
             }
             suggestionModeLogger.info(`Reopening thread ${thread.id} for suggestion ${suggestionID} after undo/redo`)
-            controller.reopenSuggestion(thread.id).catch(sendErrorMessage)
+            controller.reopenSuggestion(thread.id).catch(reportErrorToSentry)
           }
           for (const removed of removedNodes) {
             const suggestionID = removed.getSuggestionIdOrThrow()
@@ -217,10 +217,10 @@ export function SuggestionModePlugin({
               continue
             }
             suggestionModeLogger.info(`Rejecting thread ${thread.id} for suggestion ${suggestionID} after undo/redo`)
-            controller.rejectSuggestion(thread.id).catch(sendErrorMessage)
+            controller.rejectSuggestion(thread.id).catch(reportErrorToSentry)
           }
         })
-        .catch(sendErrorMessage)
+        .catch(reportErrorToSentry)
     }
 
     const debouncedHandle = debounce(resolveOrUnresolveThreadsWhereRequired, 250)

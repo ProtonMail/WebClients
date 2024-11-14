@@ -19,7 +19,7 @@ import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin'
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
 import { ClearEditorPlugin } from '@lexical/react/LexicalClearEditorPlugin'
 import clsx from '@proton/utils/clsx'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { SafeLexicalComposer } from '../../Tools/SafeLexicalComposer'
 
 type Props = {
@@ -89,7 +89,7 @@ export const CommentEditor = forwardRef<CommentEditorHandle, Props>(
         initialConfig={{
           namespace: 'CommentEditor',
           nodes: [],
-          onError: (e: Error) => sendErrorMessage(e),
+          onError: (e: Error) => reportErrorToSentry(e),
           theme: DocumentEditorTheme,
           editorState: initialContent ? initialContent : undefined,
         }}

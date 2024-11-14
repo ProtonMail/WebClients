@@ -53,7 +53,7 @@ import { EDIT_LINK_COMMAND } from '../Plugins/Link/LinkInfoPlugin'
 import { INSERT_TABLE_COMMAND } from '../Plugins/Table/Commands'
 import { BackgroundColors, TextColors } from '../Shared/Color'
 import { DefaultFont, FontOptions, FontSizes } from '../Shared/Fonts'
-import { sendErrorMessage } from '../Utils/errorMessage'
+import { reportErrorToSentry } from '../Utils/errorMessage'
 import { getHTMLElementFontSize } from '../Utils/getHTMLElementFontSize'
 import { getSelectedNode } from '../Utils/getSelectedNode'
 import AlignmentMenuOptions, { AlignmentOptions } from './AlignmentMenuOptions'
@@ -965,7 +965,7 @@ export default function DocumentEditorToolbar({
                 const file = event.target.files[0]
                 activeEditor.dispatchCommand(INSERT_FILE_COMMAND, file)
               } catch (error: unknown) {
-                sendErrorMessage(error)
+                reportErrorToSentry(error)
               } finally {
                 imageInputRef.current!.value = ''
               }
