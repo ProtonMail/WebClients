@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "activate": [
-        "включить"
-      ],
       "Activate": [
         "Активировать"
+      ],
+      "activate": [
+        "включить"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -1727,6 +1727,9 @@
       "Integrated 2FA authenticator": [
         "Интегрированная двухфакторная аутентификация"
       ],
+      "One-time payment, lifetime deal": [
+        "Единовременная оплата, пожизненное предложение"
+      ],
       "Online document editor": [
         "Онлайн-редактор документов"
       ],
@@ -1762,8 +1765,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus пожизненное предложение не имеет цены за продление, это единовременная оплата за пожизненный доступ к Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Скидки рассчитываются исходя из стандартной платы за месяц."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Если вы приобретете Pass Family или Unlimited, ваша подписка будет автоматически продлена по стандартной цене со скидкой и сроку в конце вашего платежного цикла."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Ваша подписка будет автоматически продлена по стандартной цене со скидкой и сроку в конце вашего платежного цикла."
@@ -1780,8 +1789,14 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Оплата ${ amount } единовременно"
+      ],
       "for ${ durationDeal }": [
         "за ${ durationDeal }"
+      ],
+      "forever": [
+        "навсегда"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Продлится через 1 месяц по цене ${ regularAmount }."
@@ -11218,9 +11233,6 @@
       ],
       "for your first month": [
         "за ваш первый месяц"
-      ],
-      "Get ${ planName } for ${ price }": [
-        "Получить ${ planName } для ${ price }"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Срок действия ограниченного предложения истекает 2 апреля 2024 г."

@@ -296,6 +296,9 @@
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
       ],
+      "Expand video conferencing widget": [
+        "Laajenna videoneuvotteluwidgetti"
+      ],
       "Export": [
         "Vie"
       ],
@@ -553,6 +556,9 @@
       ],
       "Remove this participant": [
         "Poista tämä osallistuja"
+      ],
+      "Remove zoom meeting": [
+        "Poista Zoom-kokous"
       ],
       "Report a problem": [
         "Ilmoita ongelmasta"
@@ -4006,8 +4012,11 @@
       "Less details": [
         "Vähemmän tietoja"
       ],
+      "Meeting host:": [
+        "Kokouksen järjestäjä:"
+      ],
       "Meeting link:": [
-        "Tapaamislinkki:"
+        "Kokouslinkki:"
       ],
       "More details": [
         "Enemmän tietoja"
@@ -6606,6 +6615,9 @@
       "Administration Panel": [
         "Hallintapaneeli"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Edistyneet aliastoiminnot (SimpleLoginin tarjoama)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Kaikki ${ BRAND_NAME } tuotteet ja ominaisuudet"
       ],
@@ -7352,6 +7364,9 @@
       ],
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
+      ],
+      "Meeting ID copied to clipboard": [
+        "Kokouksen ID kopioitiin leikepöydälle"
       ],
       "Passcode copied to clipboard": [
         "Tunnuskoodi kopioitiin leikepöydälle"
@@ -8580,6 +8595,9 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Nyt voit nähdä milloin osallistujat ovat vapaita osallistumaan kokoukseesi."
+      ],
+      "Video conferencing is here!": [
+        "Videoneuvottelut ovat täällä!"
       ],
       "You can now collapse the navigation bar.": [
         "Voit nyt supistaa navigointipalkin"
@@ -10497,7 +10515,7 @@
     },
     "Zoom integration": {
       "Add Zoom meeting": [
-        "Lisää Zoom-tapaaminen"
+        "Lisää Zoom-kokous"
       ],
       "Adding conferencing details": [
         "Lisätään neuvottelutietoja"
@@ -10507,8 +10525,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Liity Zoom-kokoukseen"
+      ],
       "Meeting ID:": [
-        "Tapaamisen ID:"
+        "Kokouksen ID:"
+      ],
+      "Passcode:": [
+        "Tunnuskoodi:"
       ]
     }
   }

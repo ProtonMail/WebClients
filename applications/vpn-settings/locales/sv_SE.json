@@ -1291,6 +1291,9 @@
         "${ users } användare",
         "${ users } användare"
       ],
+      "Total": [
+        "Totalt"
+      ],
       "Total for ${ n } month": [
         "Total för ${ n } månad",
         "Total för ${ n } månader"
@@ -3544,6 +3547,9 @@
       "${ number } server": [
         "${ number } server",
         "${ number } servrar"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
@@ -6294,6 +6300,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avancerade funktioner för alias (drivs av SimpleLogin)"
+      ],
       "Advanced network security": [
         "Avancerad nätverkssäkerhet"
       ],
@@ -6868,6 +6877,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Skapa upp till ${ n } e-postadresser/alias som du kan tilldela familjemedlemmar. Använd dem för onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Anpassade domäner för alias, ytterligare brevlådor, möjligheten att skicka e-post från alias och mer"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll"
       ],
@@ -7117,6 +7129,9 @@
       ],
       "${ BRAND_NAME } user survey": [
         "Användarundersökning för ${ BRAND_NAME }"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "Välkomstmeddelande för ${ BRAND_NAME }"
       ],
       "1 email per month": [
         "1 e-postmeddelande per månad"
@@ -7525,6 +7540,9 @@
       "${ n } user account": [
         "${ n } användarkonto",
         "${ n } användarkonton"
+      ],
+      "Activity log": [
+        "Aktivitetslogg"
       ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
@@ -8101,11 +8119,20 @@
       "For security reasons, the token is hidden": [
         "Token är dold av säkerhetsskäl"
       ],
+      "Go to your identity provider, copy and paste the data below and finish configuring SCIM for ${ appName }.": [
+        "Gå till din identitetsleverantör, kopiera och klistra in data nedan och slutför konfigureringen av SCIM för ${ appName }."
+      ],
+      "Go to your identity provider, copy and paste the token below and re-enable SCIM for ${ appName }.": [
+        "Gå till din identitetsleverantör, kopiera och klistra in token nedan och återaktivera SCIM för ${ appName }."
+      ],
       "If you've lost or forgotten the SCIM token, you can generate a new one, but be aware that your identity provider settings will need to be updated.": [
         "Om du har förlorat eller glömt SCIM-token kan du skapa en ny, men tänk på att inställningarna för din identitetsleverantör måste uppdateras."
       ],
       "Make sure you copy the above SCIM token now.": [
         "Se till att du kopierar SCIM-token ovan nu."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "Förenklar användarhantering över olika tjänster. Lägg till, redigera och ta bort användare i din identitetsleverantör, så kommer dessa ändringar automatiskt att tillämpas på din ${ appName }-organisation."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "För att återaktivera synkronisering med din identitetsleverantör måste du slutföra SCIM-integreringen igen."
@@ -9080,6 +9107,11 @@
         "Prenumerationen kommer att nedgraderas i slutet av faktureringsperioden."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "För ${ totalPrice }"
@@ -9460,6 +9492,9 @@
       ],
       "Administrator privileges restored": [
         "Administratörsrättigheter återställda"
+      ],
+      "Backup password updated": [
+        "Säkerhetslösenord uppdaterat"
       ],
       "Catch-all address updated": [
         "Catch-all-adress uppdaterad"

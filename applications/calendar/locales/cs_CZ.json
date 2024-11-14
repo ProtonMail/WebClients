@@ -302,6 +302,9 @@
       "enable desktop notifications": [
         "povolit upozornění"
       ],
+      "Expand video conferencing widget": [
+        "Rozšířit widget pro videokonference"
+      ],
       "Export": [
         "Exportovat"
       ],
@@ -559,6 +562,9 @@
       ],
       "Remove this participant": [
         "Odstranit tohoto účastníka"
+      ],
+      "Remove zoom meeting": [
+        "Odebrat chůzku Zoom"
       ],
       "Report a problem": [
         "Nahlásit problém"
@@ -1549,6 +1555,9 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "Total": [
+        "Celkem"
       ],
       "Total for ${ n } month": [
         "Celkem za ${ n } měsíc",
@@ -4095,6 +4104,9 @@
       "Less details": [
         "Méně detailů"
       ],
+      "Meeting host:": [
+        "Hostitel schůzky:"
+      ],
       "Meeting link:": [
         "Odkaz na schůzku:"
       ],
@@ -4505,6 +4517,12 @@
         "${ groupCounts } skupiny nalezeny",
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }. Cena a datum obnovení vašeho předplatného ${ planTitle } se nemění."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
@@ -5507,6 +5525,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. E-maily již nejsou doručovány do vaší schránky. Vaše odkazy na sdílení na Disku již nejsou aktivní a nemůžete nahrávat nové soubory. Chcete-li svůj účet nadále používat, zaplaťte všechny faktury po splatnosti."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Vaše ${ PASS_SHORT_APP_NAME } Plus bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
@@ -6827,6 +6848,9 @@
       "Administration Panel": [
         "Panel správce"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Pokročilé funkce aliasů (založeno na SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Všechny ${ BRAND_NAME } produkty a funkce"
       ],
@@ -7354,6 +7378,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Vlastní domény pro aliasy, další poštovní schránky, možnost odesílání e-mailů z aliasů a další."
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu"
       ],
@@ -7591,6 +7618,12 @@
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
+      ],
+      "Meeting host copied to clipboard": [
+        "Hostitel schůzky zkopírován do schránky"
+      ],
+      "Meeting ID copied to clipboard": [
+        "ID schůzky zkopírováno do schránky"
       ],
       "Passcode copied to clipboard": [
         "Přístupový kód zkopírován do schránky"
@@ -7957,8 +7990,14 @@
         "${ n } uživatelských účtů",
         "${ n } uživatelských účtů"
       ],
+      "Activity log": [
+        "Log aktivity"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel správce pro správu uživatelů a předplatného"
+      ],
+      "Team policies": [
+        "Týmové zásady"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8928,6 +8967,12 @@
       "Now you can see when participants are free to attend your meeting.": [
         "Nyní můžete vidět, kdy se mohou ostatní zúčastnit vašeho setkání."
       ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Snadné vytváření a přidávání odkazů na videokonference k událostem."
+      ],
+      "Video conferencing is here!": [
+        "Videokonference jsou tady!"
+      ],
       "You can now collapse the navigation bar.": [
         "Nyní můžete sbalit navigační panel."
       ]
@@ -9134,6 +9179,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Na konci fakturačního cyklu bude předplatné sníženo."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Doživotní"
       ]
     },
     "Subscription price": {
@@ -10988,8 +11038,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Připojit ke schůzce Zoom"
+      ],
       "Meeting ID:": [
         "ID schůzky:"
+      ],
+      "Passcode:": [
+        "Přístupový kód:"
       ]
     }
   }

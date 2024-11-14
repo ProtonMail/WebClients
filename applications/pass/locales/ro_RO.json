@@ -557,6 +557,9 @@
       "Upgrade now to share with more people": [
         "Schimbați planul acum pentru a partaja cu mai mulți oameni"
       ],
+      "Use ${ label } theme": [
+        "Folosire tema ${ label }"
+      ],
       "Verify": [
         "Verifică"
       ],
@@ -606,9 +609,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Vinerea Neagră"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Plătiți o dată și primiți ${ lifetimeAccessJSX } la Pass Plus. Doar ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Economisiți până la ${ discountJSX } cu Pass Family. Doar ${ relativePrice }/lună."
@@ -1088,6 +1088,31 @@
         "Terabaiți"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Implicit din sistem"
+      ],
+      "Theme font": [
+        "Font temă"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Mare"
+      ],
+      "Medium (recommended)": [
+        "Mediu (recomandat)"
+      ],
+      "Small": [
+        "Mic"
+      ],
+      "Very large": [
+        "Foarte mare"
+      ],
+      "Very small": [
+        "Foarte mic"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Articolul „${ payload.item.data.metadata.name }” a fost respins."
@@ -1519,12 +1544,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Mutarea unui articol într-un alt seif va șterge istoricul acestuia și toate legăturile web securizate."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Mutarea unui articol în alt seif îi va șterge istoricul."
-      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -1667,9 +1686,6 @@
       ],
       "Press Enter to copy": [
         "Apăsați Enter pentru copiere"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Confidențialitatea este o mare preocupare pentru noi. Aflați de ce ${ PASS_APP_NAME } este diferit."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
@@ -2579,6 +2595,9 @@
       "The URL has been copied to the clipboard": [
         "Legătura web a fost copiată în memorie"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Acest articol va rămâne accesibil până la ${ remaining }"
       ],
@@ -2697,9 +2716,6 @@
         "${ count } element",
         "${ count } articole",
         "${ count } de articole"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Articole selectate în acest seif: ${ semiboldText }"
       ]
     },
     "new_plans: feature": {
@@ -3054,12 +3070,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "Mutați toate articolele în „${ vaultName }”?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Mutați articolul în „${ vaultName }”?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Mutați articolele în „${ vaultName }”?"
-      ],
       "No excluded items": [
         "Nu sunt articole excluse"
       ],
@@ -3217,9 +3227,6 @@
       "What is the dark web?": [
         "Ce este internetul ascuns?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "De ce ${ PASS_APP_NAME }?"
-      ],
       "Your exposed information": [
         "Informațiile expuse"
       ],
@@ -3228,11 +3235,6 @@
       ],
       "Your welcome gift": [
         "Bucurați-vă de versiunea de încercare"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "Urmează să ștergeți definitiv ${ aliasCount } alias",
-        "Urmează să ștergeți definitiv ${ aliasCount } aliasuri",
-        "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri"
       ]
     },
     "Validation": {
@@ -3365,9 +3367,6 @@
       ],
       "Offline": [
         "Deconectat"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "După sincronizare, aliasurile șterse din ${ PASS_SHORT_APP_NAME } vor fi șterse și din SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."

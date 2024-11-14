@@ -106,6 +106,9 @@
       "Confirm access": [
         "Potvrdit přístup"
       ],
+      "Confirm all": [
+        "Potvrdit vše"
+      ],
       "Continue": [
         "Pokračovat"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Vytvořit identitu"
+      ],
+      "Create item": [
+        "Vytvořit položku"
       ],
       "Create login": [
         "Vytvořit přihlášení"
@@ -385,6 +391,9 @@
       "Please retry": [
         "Zkuste to znovu"
       ],
+      "Reactivate now": [
+        "Znovu aktivovat"
+      ],
       "Refresh the page": [
         "Obnovit stránku"
       ],
@@ -462,6 +471,9 @@
       ],
       "See members": [
         "Zobrazit členy"
+      ],
+      "Select": [
+        "Vybrat"
       ],
       "Send invite": [
         "Odeslat pozvánku"
@@ -559,6 +571,9 @@
       "Upgrade now to share with more people": [
         "Navyšte nyní a sdílejte s více lidmi"
       ],
+      "Use ${ label } theme": [
+        "Použít ${ label } motiv"
+      ],
       "Verify": [
         "Ověřit"
       ],
@@ -609,8 +624,8 @@
       "Black Friday": [
         "Black Friday"
       ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Zaplaťte jednou a získejte ${ lifetimeAccessJSX } do Pass Plus. Pouze za ${ relativePrice }."
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Zaplaťte jednou a získejte ${ lifetimeAccessJSX } do Pass Plus a SimpleLogin. Pouze za ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Ušetřete až ${ discountJSX } na Pass Family. Pouze za ${ relativePrice }/měsíc."
@@ -747,6 +762,9 @@
       ],
       "Could not resolve share members": [
         "Nepodařilo se vyřešit členy sdílení"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Nepodařilo se načíst pozvánky uživatelů pro trezor „${ vaultName }“"
       ],
       "Could not validate addresses at the moment.": [
         "V daném okamžiku se nepodařilo ověřit adresy."
@@ -1099,6 +1117,31 @@
         "Terabajtů"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systémové výchozí"
+      ],
+      "Theme font": [
+        "Písmo motivu"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Velký"
+      ],
+      "Medium (recommended)": [
+        "Střední (doporučeno)"
+      ],
+      "Small": [
+        "Malý"
+      ],
+      "Very large": [
+        "Velmi velké"
+      ],
+      "Very small": [
+        "Velmi malé"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Položka \"${ payload.item.data.metadata.name }\" byla odmítnuta"
@@ -1141,6 +1184,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } se bude řídit tématem systému."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky, platební karty a identity."
@@ -1271,6 +1317,9 @@
       "Change your password": [
         "Změňte své heslo"
       ],
+      "Choose your preferred look and feel.": [
+        "Vyberte si svůj oblíbený vzhled."
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Potvrďte své dodatečné heslo pro pokračování v jeho odebrání."
       ],
@@ -1387,6 +1436,12 @@
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Postupujte podle těchto kroků pro import vašich dat pomocí obecného CSV:"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Z bezpečnostních důvodů je třeba potvrdit přístup k tomuto sdílenému trezoru",
+        "Z bezpečnostních důvodů je třeba potvrdit přístup k těmto sdíleným trezorům",
+        "Z bezpečnostních důvodů je třeba potvrdit přístup k těmto sdíleným trezorům",
+        "Z bezpečnostních důvodů je třeba potvrdit přístup k těmto sdíleným trezorům"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostních důvodů musí být váš přístup potvrzen"
@@ -1520,6 +1575,9 @@
       "Low Priority": [
         "Nízká priorita"
       ],
+      "Make it your own": [
+        "Přizpůsobte podle potřeby"
+      ],
       "me": [
         "já"
       ],
@@ -1535,14 +1593,26 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } není obyčejný správce hesel. Chrání vaše heslo a osobní e-mailovou adresu pomocí e-mailových aliasů. Funguje na stejné technologii jako ${ MAIL_APP_NAME }, vaše data jsou koncově šifrována a dostupná jen vám."
       ],
+      "Move ${ count } item": [
+        "Přesunout ${ count } položku",
+        "Přesunout ${ count } položky",
+        "Přesunout ${ count } položek",
+        "Přesunout ${ count } položek"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Přesunutím položky do jiného trezoru se smaže její historie a všechny bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smaže její historie a všechny bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smaže jejich historie a všechny bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smaže jejich historie a všechny bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smaže jejich historie a všechny bezpečné odkazy."
       ],
       "Moving an item to another vault will erase its history.": [
-        "Přesunutím položky do jiného trezoru se smaže její historie."
+        "Přesunutím položky do jiného trezoru se smaže její historie.",
+        "Přesunutím položek do jiného trezoru se smaže jejich historie.",
+        "Přesunutím položek do jiného trezoru se smaže jejich historie.",
+        "Přesunutím položek do jiného trezoru se smaže jejich historie."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -1687,9 +1757,6 @@
       ],
       "Press Enter to copy": [
         "Pro kopírování stiskněte Enter"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Velmi nám záleží na ochraně soukromí. Přečtěte si, v čem se ${ PASS_APP_NAME } liší."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chráněno naším pokročilým programem na ochranu účtů ${ PROTON_SENTINEL_LINK }"
@@ -1966,6 +2033,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Nebudete již upozorněni na úniky informací této e-mailové adresy."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Již nebudete mít přístup ke sdílení, dvoufázovému ověřování, kreditní kartě a dalším pokročilým funkcím. ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tento PIN použijete k odemknutí ${ PASS_APP_NAME }, jakmile se po určité době nečinnosti automaticky zamkne."
@@ -2611,6 +2681,9 @@
       "The URL has been copied to the clipboard": [
         "Odkaz byl zkopírován do schránky"
       ],
+      "Theme": [
+        "Motiv"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Tato položka bude dostupná do ${ remaining }"
       ],
@@ -2731,8 +2804,14 @@
         "${ count } položek",
         "${ count } položek"
       ],
-      "You selected ${ semiboldText } in this vault": [
-        "V tomto trezoru jste vybrali ${ semiboldText }"
+      "You can drag and drop the selected item to another vault": [
+        "Vybranou položku můžete přetáhnout do jiného trezoru",
+        "Vybrané položky můžete přetáhnout do jiného trezoru",
+        "Vybrané položky můžete přetáhnout do jiného trezoru",
+        "Vybrané položky můžete přetáhnout do jiného trezoru"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "V tomto trezoru jste vybrali ${ semiboldText }."
       ]
     },
     "new_plans: feature": {
@@ -2952,6 +3031,17 @@
         "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automatický"
+      ],
+      "Dark": [
+        "Tmavý"
+      ],
+      "Light": [
+        "Světlý"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } adresy"
@@ -3006,6 +3096,15 @@
       ],
       "Dark Web Monitoring": [
         "Sledování Dark webu"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Smazat ${ deletedItemsCount } položku?",
+        "Smazat ${ deletedItemsCount } položky?",
+        "Smazat ${ deletedItemsCount } položek?",
+        "Smazat ${ deletedItemsCount } položek?"
+      ],
+      "Delete this item?": [
+        "Smazat tuto položku?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Smazat trezor \"${ vaultName }\"?"
@@ -3085,14 +3184,23 @@
       "Modified": [
         "Upraveno"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Přesunout ${ count } položku do ${ vaultName }",
+        "Přesunout ${ count } položky do ${ vaultName }",
+        "Přesunout ${ count } položek do ${ vaultName }",
+        "Přesunout ${ count } položek do ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Přesunout do koše ${ trashedItemsCount } položku?",
+        "Přesunout do koše ${ trashedItemsCount } položky?",
+        "Přesunout do koše ${ trashedItemsCount } položek?",
+        "Přesunout do koše ${ trashedItemsCount } položek?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Přesunout všechny položky do \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Přesunout položku do \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Přesunout položky do \"${ vaultName }\"?"
+      "Move item to \"${ vaultName }\"": [
+        "Přesunout položku do \"${ vaultName }\""
       ],
       "No excluded items": [
         "Žádné vyloučené položky"
@@ -3123,6 +3231,9 @@
       ],
       "Pause monitoring?": [
         "Pozastavit sledování?"
+      ],
+      "Pending access confirmation": [
+        "Čeká se na potvrzení přístupu"
       ],
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
@@ -3253,8 +3364,8 @@
       "What is the dark web?": [
         "Co je dark web?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Proč ${ PASS_APP_NAME }?"
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Vaše předplatné ${ planName } skončí ${ endDate }"
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
@@ -3265,11 +3376,11 @@
       "Your welcome gift": [
         "Váš dárek na uvítanou"
       ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "Chystáte se trvale smazat ${ aliasCount } alias",
-        "Chystáte se trvale smazat ${ aliasCount } aliasy",
-        "Chystáte se trvale smazat ${ aliasCount } aliasů",
-        "Chystáte se trvale smazat ${ aliasCount } aliasů"
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Chystáte se trvale smazat ${ aliasCount } alias.",
+        "Chystáte se trvale smazat ${ aliasCount } aliasy.",
+        "Chystáte se trvale smazat ${ aliasCount } aliasů.",
+        "Chystáte se trvale smazat ${ aliasCount } aliasů."
       ]
     },
     "Validation": {
@@ -3305,11 +3416,29 @@
       "A description of the problem is required": [
         "Je vyžadován popis problému"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Aliasy v koši budou i nadále přeposílat e-maily."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Všechny položky v koši budou trvale smazány. Tuto akci nelze vrátit zpět."
       ],
       "An error occurred while exporting your data": [
         "Při exportu vašich dat došlo k chybě"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Opravdu chcete přesunout ${ trashedItemsCount } položku do koše?",
+        "Opravdu chcete přesunout ${ trashedItemsCount } položky do koše?",
+        "Opravdu chcete přesunout ${ trashedItemsCount } položek do koše?",
+        "Opravdu chcete přesunout ${ trashedItemsCount } položek do koše?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Jste si jistí, že chcete trvale odstranit ${ deletedItemsCount } položku?",
+        "Jste si jistí, že chcete trvale odstranit ${ deletedItemsCount } položky?",
+        "Jste si jistí, že chcete trvale odstranit ${ deletedItemsCount } položek?",
+        "Jste si jistí, že chcete trvale odstranit ${ deletedItemsCount } položek?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Opravdu chcete tuto položku trvale smazat?"
       ],
       "At least one email address is required": [
         "Je vyžadována alespoň jedna e-mailová adresa"
@@ -3403,9 +3532,6 @@
       ],
       "Offline": [
         "Offline"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Po synchronizaci se smazáním aliasů v ${ PASS_SHORT_APP_NAME } smažou také aliasy v SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"

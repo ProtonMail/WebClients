@@ -536,6 +536,9 @@
       "Upgrade now to share with more people": [
         "今すぐアップグレードしてより多くの人と共有しましょう"
       ],
+      "Use ${ label } theme": [
+        "${ label } テーマを使用"
+      ],
       "Via secure link": [
         "セキュアリンク経由で"
       ],
@@ -579,9 +582,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "ブラックフライデー"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month."
@@ -999,6 +999,31 @@
         "テラバイト"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
+      "Theme font": [
+        "テーマ フォント"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "極大"
+      ],
+      "Very small": [
+        "極小"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "「${ payload.item.data.metadata.name }」アイテムは無視されました"
@@ -1399,12 +1424,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべての項目を移動します"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "アイテムを別の保管庫に移動すると、その履歴とすべてのセキュアリンクが消去されます。"
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "アイテムを別の保管庫に移動すると、その履歴が消去されます."
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -1528,9 +1547,6 @@
       "Press Enter to copy": [
         "Enterキーを押してコピーする"
       ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "プライバシーは私たちにとって大きな懸念事項です。 ${ PASS_APP_NAME } が異なる理由をご覧ください。"
-      ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "高度なアカウント保護プログラムである ${ PROTON_SENTINEL_LINK } によって保護されています"
       ],
@@ -1572,9 +1588,6 @@
       ],
       "Secure links": [
         "セキュアリンク"
-      ],
-      "Select an existing login item to update.": [
-        "更新する既存のログイン項目を選択します。"
       ],
       "Select an existing login or create a new one.": [
         "既存のログインを選択するか、新しいログインを作成します。"
@@ -2388,6 +2401,9 @@
       "The URL has been copied to the clipboard": [
         "URLをクリップボードにコピーしました"
       ],
+      "Theme": [
+        "テーマ"
+      ],
       "Title": [
         "タイトル"
       ],
@@ -2479,9 +2495,6 @@
     "Message": {
       "${ count } item": [
         "${ count } 件のアイテム"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "この保管庫で ${ semiboldText } を選択しました"
       ]
     },
     "Onboarding": {
@@ -2706,12 +2719,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "すべてのアイテムを \"${ vaultName }\" に移動しますか？"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "アイテムを \"${ vaultName }\" に移動しますか？"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "アイテムを \"${ vaultName }\" に移動しますか？"
-      ],
       "No items selected": [
         "項目が選択されていません"
       ],
@@ -2813,9 +2820,6 @@
       ],
       "Welcome to your new password manager!": [
         "新しいパスワード マネージャーへようこそ!"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "${ PASS_APP_NAME } を使用する理由"
       ],
       "Your vault is empty": [
         "保管庫は空です"

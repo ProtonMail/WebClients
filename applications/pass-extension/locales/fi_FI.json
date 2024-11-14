@@ -164,6 +164,9 @@
       "Delete all": [
         "Poista kaikki"
       ],
+      "Delete it, I will never need it": [
+        "Poista se, en koskaan tarvitse sitä"
+      ],
       "Delete password": [
         "Poista salasana"
       ],
@@ -175,6 +178,9 @@
       ],
       "Deselect": [
         "Tyhjennä valinnat"
+      ],
+      "Disable alias": [
+        "Poista alias käytöstä"
       ],
       "Disable autosave on this website": [
         "Poista automaattitallennus käytöstä tällä verkkosivustolla"
@@ -525,6 +531,10 @@
       "Try again": [
         "Yritä uudelleen"
       ],
+      "Understood, I will never need it": [
+        "Ymmärrän, en koskaan tarvitse sitä",
+        "Ymmärrän, en koskaan tarvitse niitä"
+      ],
       "Unlock": [
         "Avaa"
       ],
@@ -536,6 +546,9 @@
       ],
       "Update": [
         "Päivitä"
+      ],
+      "Update this login": [
+        "Päivitä tämä kirjautumistieto"
       ],
       "Update vault": [
         "Päivitä holvi"
@@ -551,6 +564,9 @@
       ],
       "Upgrade now to share with more people": [
         "Jaa useammalle henkilölle päivittämällä tilauksesi"
+      ],
+      "Use ${ label } theme": [
+        "Käytä ${ label }-teemaa"
       ],
       "Via secure link": [
         "Suojatun linkin välityksellä"
@@ -598,9 +614,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Maksa kerran, ja saat ${ lifetimeAccessJSX } Pass Plussaan. Vain ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Säästä jopa ${ discountJSX } Pass Familyllä. Vain ${ relativePrice }/kuukausi."
@@ -1039,6 +1052,31 @@
         "Teratavua"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Seuraa järjestelmää"
+      ],
+      "Theme font": [
+        "Teeman fontti"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Suuri"
+      ],
+      "Medium (recommended)": [
+        "Keskikokoinen (suositus)"
+      ],
+      "Small": [
+        "Pieni"
+      ],
+      "Very large": [
+        "Erittäin suuri"
+      ],
+      "Very small": [
+        "Erittäin pieni"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Kohde \"${ payload.item.data.metadata.name }\" hylättiin"
@@ -1456,14 +1494,12 @@
       "Monitoring settings successfully updated": [
         "Valvonnan asetukset päivitettiin"
       ],
+      "Move ${ count } item": [
+        "Siirrä ${ count } kohde",
+        "Siirrä ${ count } kohdetta"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen historiatiedot ja suojatut linkit."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Kohteen historia poistetaan, kun se siirretään toiseen holviin"
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -1595,14 +1631,17 @@
       "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
         "Aloita ${ PASS_SHORT_APP_NAME }n käyttäminen syöttämällä lisäsalasanasi."
       ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Huomaa, että poistettua aliasta ei voi palauttaa. Haluatko sen sijaan poistaa aliaksen käytöstä?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Huomaa, että poistettua aliasta ei voi palauttaa. Alias on jo poistettu käytöstä, eikä se välitä sähköposteja postilaatikkoosi"
+      ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Päivitä tilauksesi saadaksesi varhaisen pääsyn ${ PASS_APP_NAME } -verkkosovellukseen"
       ],
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Yksityisyys on meille suuri huolenaihe. Katso, mikä tekee ${ PASS_APP_NAME }ista erilaisen."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Sen suojaa ${ PROTON_SENTINEL_LINK }, edistynyt tilinsuojausohjelmamme"
@@ -1645,9 +1684,6 @@
       ],
       "Secure links": [
         "Suojatut linkit"
-      ],
-      "Select an existing login item to update.": [
-        "Valitse päivitettävä olemassa oleva kirjautumistieto."
       ],
       "Select an existing login or create a new one.": [
         "Valitse olemassa oleva kirjautumistieto tai luo uusi."
@@ -2525,6 +2561,9 @@
       "The URL has been copied to the clipboard": [
         "URL-osoite kopioitiin leikepöydälle"
       ],
+      "Theme": [
+        "Teema"
+      ],
       "Title": [
         "Nimi"
       ],
@@ -2632,9 +2671,6 @@
       "${ count } item": [
         "${ count } kohde",
         "${ count } kohdetta"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Olet valinnut holvista ${ semiboldText } kohdetta"
       ]
     },
     "Onboarding": {
@@ -2821,6 +2857,14 @@
         "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsentä."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automaattinen"
+      ],
+      "Light": [
+        "Vaalea"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } -asetukset"
@@ -2848,6 +2892,10 @@
       ],
       "Current version": [
         "Nykyinen versio"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Poistetaanko ${ deletedItemsCount } kohde?",
+        "Poistetaanko ${ deletedItemsCount } kohdetta?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Poistetaanko holvi \"${ vaultName }\"?"
@@ -2924,14 +2972,16 @@
       "Modified": [
         "Muokattu"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Siirrä ${ count } kohde holviin ${ vaultName }",
+        "Siirrä ${ count } kohdetta holviin ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Siirretäänkö ${ trashedItemsCount } kohde roskakoriin?",
+        "Siirretäänkö ${ trashedItemsCount } kohdetta roskakoriin?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Siirrä kaikki kohteet holviin \"${ vaultName }\"?"
-      ],
-      "Move item to \"${ vaultName }\"?": [
-        "Siirrä kohde holviin \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Siirrä kohteet holviin \"${ vaultName }\"?"
       ],
       "No items selected": [
         "Kohteita ei ole valittu"
@@ -2959,6 +3009,10 @@
       ],
       "Pinned (${ items.length })": [
         "Kiinnitykset (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Huomaa, että poistettua aliasta ei voi palauttaa.",
+        "Huomaa, että poistettuja aliaksia ei voi palauttaa."
       ],
       "Reject device?": [
         "Hylätäänkö laite?"
@@ -3044,14 +3098,15 @@
       "Welcome to your new password manager!": [
         "Tervetuloa uuteen salasanahallintaasi!"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Miksi ${ PASS_APP_NAME }?"
-      ],
       "Your vault is empty": [
         "Holvisi on tyhjä"
       ],
       "Your welcome gift": [
         "Tervetuliaislahjasi"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
+        "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
       ]
     },
     "Validation": {
@@ -3096,6 +3151,14 @@
       "An error occurred while resuming your session": [
         "Virhe istuntosi jatkamisessa"
       ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Haluatko varmasti siirtää ${ trashedItemsCount } kohteen roskakoriin?",
+        "Haluatko varmasti siirtää ${ trashedItemsCount } kohdetta roskakoriin?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Haluatko varmasti poistaa ${ deletedItemsCount } kohteen pysyvästi?",
+        "Haluatko varmasti poistaa ${ deletedItemsCount } kohdetta pysyvästi?"
+      ],
       "At least one email address is required": [
         "Ainakin yksi sähköpostiosoite vaaditaan"
       ],
@@ -3110,6 +3173,9 @@
       ],
       "Could not send invitations to the following addresses:": [
         "Kutsuja ei voitu lähettää seuraaviin osoitteisiin:"
+      ],
+      "Delete alias": [
+        "Poista alias"
       ],
       "Duplicate email addresses.": [
         "Sähköpostiosoitteiden kaksoiskappaleita."

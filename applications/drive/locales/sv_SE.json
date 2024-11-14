@@ -1412,6 +1412,9 @@
         "${ users } användare",
         "${ users } användare"
       ],
+      "Total": [
+        "Totalt"
+      ],
       "Total for ${ n } month": [
         "Total för ${ n } månad",
         "Total för ${ n } månader"
@@ -4084,6 +4087,9 @@
       "${ nbFile } encrypted file...": [
         "${ nbFile } krypterad fil...",
         "${ nbFile } krypterade filer..."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausad",
@@ -6972,6 +6978,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avancerade funktioner för alias (drivs av SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Alla ${ BRAND_NAME } produkter och funktioner"
       ],
@@ -7482,6 +7491,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Skapa upp till ${ n } e-postadresser/alias som du kan tilldela familjemedlemmar. Använd dem för onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Anpassade domäner för alias, ytterligare brevlådor, möjligheten att skicka e-post från alias och mer"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll"
@@ -8235,6 +8247,9 @@
       "${ n } user account": [
         "${ n } användarkonto",
         "${ n } användarkonton"
+      ],
+      "Activity log": [
+        "Aktivitetslogg"
       ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
@@ -9288,6 +9303,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Prenumerationen kommer att nedgraderas i slutet av faktureringsperioden."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
       ]
     },
     "Subscription price": {

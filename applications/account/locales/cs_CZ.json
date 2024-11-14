@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -2252,6 +2252,9 @@
         "${ users } uživatelé",
         "${ users } uživatelů",
         "${ users } uživatelů"
+      ],
+      "Total": [
+        "Celkem"
       ],
       "Total for ${ n } month": [
         "Celkem za ${ n } měsíc",
@@ -6782,6 +6785,12 @@
         "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu.",
         "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }. Cena a datum obnovení vašeho předplatného ${ planTitle } se nemění."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
@@ -9431,9 +9440,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po přihlášení budete přesměrováni na adresu ${ destination }."
       ],
-      "You will keep lifetime access to ${ PASS_APP_NAME } premium features if you cancel your subscription.": [
-        "Pokud předplatné zrušíte, zachováte si doživotní přístup k prémiovým funkcím ${ PASS_APP_NAME }."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "K tomuto datu ztratíte přístup k funkcím ${ planTitle }."
       ],
@@ -9466,6 +9472,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Vaše ${ BRAND_NAME } heslo"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Vaše ${ PASS_SHORT_APP_NAME } Plus bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } jsou propojeny. Chcete-li je odstranit, přihlaste se prosím na ${ loginLink } a smažte tam svůj účet."
@@ -11526,9 +11535,6 @@
       "for your first month": [
         "za váš první měsíc"
       ],
-      "Get ${ planName } for ${ price }": [
-        "Získat ${ planName } za ${ price }"
-      ],
       "Limited-time offer, expires April 2 2024": [
         "Omezená nabídka, vyprší 2. dubna 2024"
       ]
@@ -12128,6 +12134,9 @@
       ],
       "Administration Panel": [
         "Panel správce"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Pokročilé funkce aliasů (založeno na SimpleLogin)"
       ],
       "Advanced network security": [
         "Pokročilé zabezpečení sítě"
@@ -12780,6 +12789,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Vlastní domény pro aliasy, další poštovní schránky, možnost odesílání e-mailů z aliasů a další."
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu"
@@ -14053,6 +14065,9 @@
         "${ n } uživatelských účtů",
         "${ n } uživatelských účtů"
       ],
+      "Activity log": [
+        "Log aktivity"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel správce pro správu uživatelů a předplatného"
       ],
@@ -14064,6 +14079,9 @@
       ],
       "One-time payment, lifetime deal": [
         "Jednorázová platba, doživotní přístup"
+      ],
+      "Team policies": [
+        "Týmové zásady"
       ]
     },
     "PassFamilyPlan2024": {
@@ -16455,6 +16473,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Na konci fakturačního cyklu bude předplatné sníženo."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Doživotní"
       ]
     },
     "Subscription price": {

@@ -462,6 +462,9 @@
       "Expand URL": [
         "Laajenna URL"
       ],
+      "Expand video conferencing widget": [
+        "Laajenna videoneuvotteluwidgetti"
+      ],
       "Expiration time": [
         "Tuhoutumisaika"
       ],
@@ -955,6 +958,9 @@
       "Remove this label": [
         "Poista tunniste"
       ],
+      "Remove zoom meeting": [
+        "Poista Zoom-kokous"
+      ],
       "Replace": [
         "Korvaa"
       ],
@@ -1054,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Valitse kaikki"
       ],
-      "Select All": [
+      "Select all": [
         "Valitse kaikki"
       ],
       "Select all messages": [
@@ -5247,6 +5253,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } Play Kaupassa"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } päivä",
+        "${ remainingDaysCount } päivää"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } päivä jäljellä",
+        "${ remainingDaysCount } päivää jäljellä"
+      ],
       "account logins": [
         "tilin kirjautumiset"
       ],
@@ -5292,8 +5306,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Salaus on niin vahva, että vain sinä ja tarkoitetut vastaanottajat näkevät viestisi."
       ],
+      "Finish setup": [
+        "Viimeistele määritys"
+      ],
       "For your eyes only": [
         "Vain silmillesi"
+      ],
+      "Get more storage": [
+        "Hanki lisää tallennustilaa"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Hanki ${ MAIL_APP_NAME } -mobiilisovellus"
@@ -5343,6 +5363,9 @@
       "Storage unlocked": [
         "Tallennustila avattu"
       ],
+      "Tasks to complete count": [
+        "Suoritettavien tehtävien määrä"
+      ],
       "This feature is currently unavailable": [
         "Ominaisuus ei ole tällä hetkellä käytettävissä"
       ],
@@ -5380,8 +5403,11 @@
       "Less details": [
         "Vähemmän tietoja"
       ],
+      "Meeting host:": [
+        "Kokouksen järjestäjä:"
+      ],
       "Meeting link:": [
-        "Tapaamislinkki:"
+        "Kokouslinkki:"
       ],
       "More details": [
         "Enemmän tietoja"
@@ -6558,7 +6584,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -9334,6 +9361,9 @@
       "Administration Panel": [
         "Hallintapaneeli"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Edistyneet aliastoiminnot (SimpleLoginin tarjoama)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Kaikki ${ BRAND_NAME } tuotteet ja ominaisuudet"
       ],
@@ -10087,6 +10117,9 @@
       "Link copied to clipboard": [
         "Linkki kopioitiin leikepöydälle"
       ],
+      "Meeting ID copied to clipboard": [
+        "Kokouksen ID kopioitiin leikepöydälle"
+      ],
       "Passcode copied to clipboard": [
         "Tunnuskoodi kopioitiin leikepöydälle"
       ],
@@ -10245,6 +10278,9 @@
       ],
       "Protection from trackers": [
         "Suojaus jäljittäjiltä"
+      ],
+      "Replay introduction": [
+        "Toista esittely uudelleen"
       ],
       "Skip": [
         "Ohita"
@@ -13929,8 +13965,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Liity Zoom-kokoukseen"
+      ],
       "Meeting ID:": [
-        "Tapaamisen ID:"
+        "Kokouksen ID:"
+      ],
+      "Passcode:": [
+        "Tunnuskoodi:"
       ]
     }
   }
