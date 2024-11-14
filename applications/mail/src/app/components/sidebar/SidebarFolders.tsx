@@ -43,6 +43,7 @@ const SidebarFolders = ({
             <SidebarFolder
                 key={folder.ID}
                 currentLabelID={currentLabelID}
+                folders={folders}
                 folder={folder}
                 level={level}
                 onToggle={handleToggleFolder}
