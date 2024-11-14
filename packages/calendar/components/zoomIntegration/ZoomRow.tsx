@@ -151,6 +151,8 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
     };
 
     const handleDelete = async () => {
+        sendEventVideoConferenceZoomIntegration(VideoConferenceZoomIntegration.remove_zoom_meeting_button);
+
         setModel({
             ...model,
             isConferenceTmpDeleted: true,
