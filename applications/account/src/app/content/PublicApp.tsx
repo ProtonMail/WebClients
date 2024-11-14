@@ -699,28 +699,6 @@ const BasePublicApp = ({ onLogin }: Props) => {
                     </UnAuthenticated>
                 </Route>
 
-                <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
-                    <UnAuthenticatedApiProvider>
-                        <UnleashFlagProviderWrapper>
-                            <UnAuthenticated>
-                                <JoinMagicLinkContainer
-                                    onPreload={handlePreload}
-                                    onPreSubmit={handlePreSubmit}
-                                    onLogin={handleLogin}
-                                    productParam={productParam}
-                                    toAppName={toAppName}
-                                    toApp={maybePreAppIntent}
-                                    onUsed={() => {
-                                        history.replace(
-                                            (activeSessions || []).length >= 1 ? SSO_PATHS.SWITCH : paths.login
-                                        );
-                                    }}
-                                />
-                            </UnAuthenticated>
-                        </UnleashFlagProviderWrapper>
-                    </UnAuthenticatedApiProvider>
-                </Route>
-
                 <Route path="*">
                     <AccountPublicApp
                         pathLocale={location.fullLocale}
@@ -736,6 +714,25 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                 <PaymentSwitcher loader={loader}>
                                     <ForceRefreshContext.Provider value={refresh}>
                                         <Switch location={location}>
+                                            <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
+                                                <UnAuthenticated>
+                                                    <JoinMagicLinkContainer
+                                                        onPreload={handlePreload}
+                                                        onPreSubmit={handlePreSubmit}
+                                                        onLogin={handleLogin}
+                                                        productParam={productParam}
+                                                        toAppName={toAppName}
+                                                        toApp={maybePreAppIntent}
+                                                        onUsed={() => {
+                                                            history.replace(
+                                                                (activeSessions || []).length >= 1
+                                                                    ? SSO_PATHS.SWITCH
+                                                                    : paths.login
+                                                            );
+                                                        }}
+                                                    />
+                                                </UnAuthenticated>
+                                            </Route>
                                             {confirmForkData && toAppName && (
                                                 <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
                                                     <UnAuthenticated>
