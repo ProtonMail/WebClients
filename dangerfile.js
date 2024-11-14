@@ -70,6 +70,13 @@ const warnIfSquashing = ({ disabled = false }) => {
     }
 };
 
+const warnIfWIP = ({ disabled = false }) => {
+    if (disabled) return;
+    if (danger.gitlab.mr.title.includes('WIP') || danger.gitlab.mr.title.startsWith('Draft:')) {
+        warn('PR is considered WIP');
+    }
+};
+
 if (driveFilesTouched) {
     const expectedSection = [];
 
@@ -99,11 +106,8 @@ if (driveFilesTouched) {
 
 failIfNoDescription({ disabled: inboxFilesTouched || driveFilesTouched });
 failIfNoAssignees({ disabled: inboxFilesTouched || docsFilesTouched });
-warnIfSquashing({ disabled: docsFilesTouched });
-
-if (danger.gitlab.mr.title.includes('WIP') || danger.gitlab.mr.title.startsWith('Draft:')) {
-    warn('PR is considered WIP');
-}
+warnIfSquashing({ disabled: docsFilesTouched || driveFilesMatch });
+warnIfWIP({ disabled: driveFilesMatch });
 
 const fileThresholdForLargePR = 200;
 if (
