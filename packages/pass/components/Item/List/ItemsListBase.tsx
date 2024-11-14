@@ -1,4 +1,5 @@
-import { type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
+import { type DragEvent, type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
+import { useStore } from 'react-redux';
 import type { List } from 'react-virtualized';
 
 import { Scroll } from '@proton/atoms';
@@ -8,6 +9,9 @@ import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useItemDrag } from '@proton/pass/hooks/useItemDrag';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey, interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { selectShare } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import type { ItemFilters, ItemRevision, ItemRevisionWithOptimistic, SelectedItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
@@ -24,6 +28,7 @@ type Props = {
 };
 
 export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelect, placeholder }) => {
+    const store = useStore<State>();
     const listRef = useRef<List>(null);
     const bulk = useBulkSelect();
     const { draggable, handleDragStart, handleDragEnd } = useItemDrag();
@@ -57,6 +62,14 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                 const item = row.entry;
                                 const id = getItemKey(item);
 
+                                const onDragStart = (evt: DragEvent) => {
+                                    if (handleDragStart && draggable) {
+                                        const share = selectShare(item.shareId)(store.getState());
+                                        if (share && !isWritableVault(share)) return false;
+                                        else handleDragStart?.(evt, { ID: id });
+                                    }
+                                };
+
                                 return (
                                     <div style={style} key={key}>
                                         <ItemsListItem
@@ -68,7 +81,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                             key={id}
                                             search={filters.search}
                                             draggable={draggable}
-                                            onDragStart={(event) => handleDragStart?.(event, { ID: id })}
+                                            onDragStart={onDragStart}
                                             onDragEnd={handleDragEnd}
                                             onClick={(e) => {
                                                 e.preventDefault();
