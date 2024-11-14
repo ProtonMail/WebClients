@@ -12,17 +12,8 @@ import remove from '@proton/utils/remove';
 import replace from '@proton/utils/replace';
 
 import type { ApiModalPayload } from './ApiModals.interface';
-
-const DelinquentModal = lazy(
-    () =>
-        import(
-            /* webpackChunkName: "delinquent-modal" */
-            /* webpackMode: "lazy" */
-            /* webpackFetchPriority: "low" */
-            /* webpackPrefetch: true */
-            './DelinquentModal'
-        )
-);
+// Should not be lazily imported, it's already imported early in DelinquentContainer
+import DelinquentModal from './DelinquentModal';
 
 const HumanVerificationModal = lazy(
     () =>
