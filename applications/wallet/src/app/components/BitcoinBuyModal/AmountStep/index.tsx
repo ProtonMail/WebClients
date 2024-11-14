@@ -388,9 +388,9 @@ export const AmountStep = ({ onConfirm, country: inputCountry, preselectedQuote,
                     onConfirm={() =>
                         withLoadingConfirm(
                             (async () => {
-                                if (selectedQuote && selectedQuote.OrderID) {
+                                if (selectedQuote) {
                                     const clientSecret =
-                                        selectedQuote?.provider === 'Azteco'
+                                        selectedQuote.OrderID && selectedQuote?.provider === 'Azteco'
                                             ? await walletApi.payment_gateway.createOnRampCheckout(
                                                   selectedQuote.FiatAmount,
                                                   btcAddress,
