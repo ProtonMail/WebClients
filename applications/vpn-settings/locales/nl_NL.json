@@ -1066,8 +1066,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus levenslange aanbieding heeft geen vernieuwingsprijs, het is een eenmalige betaling voor levenslang toegang tot Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Kortingen zijn gebaseerd op standaardprijzen per maand."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Als u Pass Family of Unlimited aanschaft, wordt uw abonnement aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
@@ -1084,6 +1090,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "U betaalt ${ amount } eenmaal"
+      ],
       "for ${ durationDeal }": [
         "voor ${ durationDeal }"
       ],
@@ -1301,6 +1310,9 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ],
+      "Total": [
+        "Totaal"
       ],
       "Total for ${ n } month": [
         "Totaal voor ${ n } maand",
@@ -3553,6 +3565,12 @@
         "${ number } server",
         "${ number } servers"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } Lifetime deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }. De prijs en datum voor de verlenging van uw ${ planTitle } blijft ongewijzigd."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
@@ -3688,6 +3706,9 @@
       "Affected user is on row": [
         "Deze gebruiker staat op rij",
         "Deze gebruikers staan op rijen"
+      ],
+      "All inactive members deleted": [
+        "Alle inactieve leden verwijderd"
       ],
       "All members have been added.": [
         "Alle leden zijn toegevoegd."
@@ -4718,6 +4739,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dit zal PayPal inschakelen om te betalen voor uw ${ BRAND_NAME } abonnement. We zullen u doorverwijzen naar PayPal in een nieuw browsertabblad. Als u een pop-up blockers gebruikt, schakel deze uit om door te gaan."
       ],
+      "This will permanently delete the data and all email addresses associated with these users.": [
+        "Dit verwijdert permanent de gegevens en alle e-mailadressen die aan deze gebruikers zijn gekoppeld."
+      ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Dit verwijdert permanent alle gegevens en e-mailadressen die aan deze gebruiker zijn gekoppeld."
       ],
@@ -5124,6 +5148,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Uw wachtwoord voor ${ BRAND_NAME }"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Uw ${ PASS_SHORT_APP_NAME } Plus-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
@@ -5779,6 +5806,9 @@
       "Verification code": [
         "Verificatiecode"
       ],
+      "Video conferencing with Zoom": [
+        "Videovergadering met Zoom"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "We vinden het jammer u te zien gaan. Leg uit waarom u vertrekt om ons te helpen te verbeteren."
       ],
@@ -6331,6 +6361,9 @@
       ],
       "Administration Panel": [
         "Beheerderspaneel"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Geavanceerde alias functies (mogelijk gemaakt door SimpleLogin)"
       ],
       "Advanced network security": [
         "Geavanceerde netwerkbeveiliging"
@@ -6906,6 +6939,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Eigen domeinen voor aliassen, extra postbussen, de mogelijkheid om e-mails van aliassen te versturen en meer"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
       ],
@@ -7135,6 +7171,24 @@
       ]
     },
     "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } en ${ additionalApp } productupdates"
+      ],
+      "${ app } product updates": [
+        "${ app } productupdates"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } voor Bedrijven-nieuwsbrief"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } belangrijke aankondigingen"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME }-nieuwsbrief"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME }-productaankondigingen"
+      ],
       "1 email per month": [
         "1 e-mail per maand"
       ],
@@ -7501,8 +7555,14 @@
         "${ n } gebruikersaccount",
         "${ n } gebruikersaccounts"
       ],
+      "Activity log": [
+        "Activiteitenlog"
+      ],
       "Admin panel to manage users and subscription": [
         "Beheerpaneel om gebruikers en abonnement te beheren"
+      ],
+      "Team policies": [
+        "Team beleid"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8688,6 +8748,14 @@
         "${ n } lid heeft uw hulp gevraagd om in te loggen.",
         "${ n } leden hebben uw hulp gevraagd om in te loggen."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } gebruiker heeft zich aangesloten bij je organisatie via uw Identity Provider. Controleer het account nu:",
+        "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Controleer hun accounts nu:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } gebruiker is inactief. U kunt deze gebruiker veilig verwijderen uit uw organisatie.",
+        "${ n } gebruikers zijn inactief. U kunt ze veilig verwijderen uit uw organisatie."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal.",
         "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
@@ -9097,6 +9165,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Lifetime"
       ]
     },
     "Subscription price": {
@@ -10419,6 +10492,9 @@
       ],
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
+      ],
+      "Video conferencing": [
+        "Video conferentie"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "We zullen een e-mail naar uw nieuwe e-mailadres sturen met instructies voor het voltooien van de wijziging."

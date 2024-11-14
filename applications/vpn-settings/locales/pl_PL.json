@@ -1076,8 +1076,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus oferta na całe życie nie ma ceny odnawiania, to jednorazowa płatność za dożywotni dostęp do Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Jeśli zakupisz Pass Family lub Unlimited, Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres na koniec cyklu rozliczeniowego."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
@@ -1322,6 +1328,9 @@
         "${ users } użytkowników",
         "${ users } użytkowników",
         "${ users } użytkowników"
+      ],
+      "Total": [
+        "Razem"
       ],
       "Total for ${ n } month": [
         "Łącznie za ${ n } miesiąc",
@@ -5403,6 +5412,9 @@
       "Other": [
         "Inne"
       ],
+      "Product": [
+        "Usługa"
+      ],
       "Refund": [
         "Zwrot"
       ],
@@ -5475,7 +5487,7 @@
         "Dozwolona domena"
       ],
       "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Zezwala wszystkim w twojej organizacji na dodawanie linków do wideokonferencji w zaproszeniach."
+        "Zezwalaj wszystkim w organizacji na dodawanie linków do wideokonferencji w zaproszeniach."
       ],
       "Amount": [
         "Kwota"
@@ -5902,6 +5914,9 @@
       ],
       "Verification code": [
         "Kod weryfikacyjny"
+      ],
+      "Video conferencing with Zoom": [
+        "Wideokonferencje w Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Przykro nam, że odchodzisz. Wyjaśnij nam, dlaczego nas opuszczasz, aby pomóc ulepszać nasze usługi."
@@ -7411,7 +7426,7 @@
         "Uwierzytelnianie dwustopniowe nie jest wymagane"
       ],
       "Video conferencing settings have been updated": [
-        "Ustawienia konferencji wideo zostały zaktualizowane"
+        "Ustawienia wideokonferencji zostały zaktualizowane"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9126,6 +9141,9 @@
       ],
       "Signed out": [
         "Wylogowano"
+      ],
+      "Unknown": [
+        "Nieznane"
       ]
     },
     "State": {
@@ -10720,6 +10738,9 @@
       "Verifying your payment...": [
         "Weryfikowanie płatności..."
       ],
+      "Video conferencing": [
+        "Wideokonferencje"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Wyślemy na nowy adres wiadomość z instrukcjami zmiany adresu."
       ],
@@ -10805,6 +10826,9 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorzy mogą zarządzać kontami użytkowników i nadawać uprawnienia administratora innym użytkownikom. Tylko główny administrator może edytować plan organizacji."
+      ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Zezwalaj na dodawanie linków do wideokonferencji w zaproszeniach."
       ],
       "An approximate location of the IP address": [
         "Przybliżona lokalizacja adresu IP"
@@ -11056,6 +11080,9 @@
       ],
       "Administrators can't access the data of private users": [
         "Administratorzy nie mogą uzyskać dostępu do danych prywatnych użytkowników"
+      ],
+      "Inactive": [
+        "Nieaktywny"
       ],
       "Invitation sent, awaiting reply from the invited member": [
         "Zaproszenie zostało wysłane. Oczekiwanie na odpowiedź"
