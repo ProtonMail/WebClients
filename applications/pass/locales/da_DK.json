@@ -555,6 +555,9 @@
       "Upgrade now to share with more people": [
         "Opgradér nu for at dele med flere"
       ],
+      "Use ${ label } theme": [
+        "Brug ${ label } tema"
+      ],
       "Verify": [
         "Bekræft"
       ],
@@ -604,9 +607,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Betal én gang og få ${ lifetimeAccessJSX } til Pass Plus. Kun ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Gem op til ${ discountJSX } på Pass Family. Kun ${ relativePrice }/måned."
@@ -1077,6 +1077,31 @@
         "Terabyte"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme font": [
+        "Temaskrifttype"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Mellem (anbefalet)"
+      ],
+      "Small": [
+        "Lille"
+      ],
+      "Very large": [
+        "Meget stor"
+      ],
+      "Very small": [
+        "Meget lille"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" element blev afvist"
@@ -1500,12 +1525,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Ved at flytte et element til en anden boks, slettes dets historik og alle sikre links."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Ved at flytte et element til en anden boks, slettes dets historik."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -1644,9 +1663,6 @@
       ],
       "Press Enter to copy": [
         "Tryk Enter for at kopiere"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Vi bekymrer os om dit privatliv. Få mere at vide om, hvorfor ${ PASS_APP_NAME } er anderledes."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beskyttet af ${ PROTON_SENTINEL_LINK }, vores avancerede program til kontobeskyttelse"
@@ -2541,6 +2557,9 @@
       "The URL has been copied to the clipboard": [
         "URL'en blev kopieret til udklipsholderen"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Dette element forbliver tilgængeligt indtil ${ remaining }."
       ],
@@ -2658,9 +2677,6 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elementer"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Du valgte ${ semiboldText } i denne boks"
       ]
     },
     "new_plans: feature": {
@@ -2964,12 +2980,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "Flyt alle elementer til \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Flyt element til \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Flyt elementer til \"${ vaultName }\"?"
-      ],
       "No excluded items": [
         "Ingen ekskluderede elementer"
       ],
@@ -3122,9 +3132,6 @@
       "What is the dark web?": [
         "Hvad er det mørke net?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Hvorfor ${ PASS_APP_NAME }?"
-      ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
       ],
@@ -3133,10 +3140,6 @@
       ],
       "Your welcome gift": [
         "Din velkomstgave"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "Du er ved at slette ${ aliasCount } alias permanent",
-        "Du er ved at slette ${ aliasCount } aliasser permanent"
       ]
     },
     "Validation": {
@@ -3268,9 +3271,6 @@
       ],
       "Offline": [
         "Offline"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Når de er synkroniseret, vil sletning af aliasser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"

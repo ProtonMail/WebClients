@@ -555,6 +555,9 @@
       "Upgrade now to share with more people": [
         "Oppgrader nå for å dele med flere"
       ],
+      "Use ${ label } theme": [
+        "Bruk ${ label }-temaet"
+      ],
       "Verify": [
         "Verifiser"
       ],
@@ -604,9 +607,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Betal én gang og få ${ lifetimeAccessJSX } til Pass Plus. Kun ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Spar opptil ${ discountJSX } på Pass Family. Kun ${ relativePrice }/måned."
@@ -1077,6 +1077,31 @@
         "Terabytes"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme font": [
+        "Temaskrifttype"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Medium (anbefalt)"
+      ],
+      "Small": [
+        "Liten"
+      ],
+      "Very large": [
+        "Veldig stor"
+      ],
+      "Very small": [
+        "Veldig liten"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\"-element ble avvist"
@@ -1356,6 +1381,10 @@
       "Follow those steps to import your data with a generic CSV :": [
         "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil :"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Av sikkerhetsgrunner må du bekrefte tilgangen til dette delte hvelvet",
+        "Av sikkerhetsgrunner må du bekrefte tilgang til disse delte hvelvene"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Av sikkerhetsgrunner må tilgangen din bekreftes"
       ],
@@ -1497,14 +1526,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Mer enn en passordbehandler, ${ PASS_APP_NAME } beskytter passordet ditt og din personlige e-postadresse via e-postaliaser. Drevet av den samme teknologien bak ${ MAIL_APP_NAME }, er dataene dine kryptert fra ende til ende og er bare tilgjengelige for deg."
       ],
+      "Move ${ count } item": [
+        "Flytt ${ count } element",
+        "Flytt ${ count } elementer"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes historikken og alle sikre koblinger."
+        "Flytting av et element til et annet hvelv vil slette historikken og alle sikre koblinger.",
+        "Flytting av elementer til et annet hvelv vil slette historikken og alle sikre koblinger."
       ],
       "Moving an item to another vault will erase its history.": [
-        "Flytting av et element til et annet hvelv vil slette historikken."
+        "Flytting av et element til et annet hvelv vil slette historikken.",
+        "Flytting av elementer til et annet hvelv vil slette historikken deres."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -1647,9 +1682,6 @@
       ],
       "Press Enter to copy": [
         "Trykk Enter for å kopiere"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Personvern er en stor bekymring for oss. Finn ut hvorfor ${ PASS_APP_NAME } er annerledes."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beskyttet av ${ PROTON_SENTINEL_LINK }, vårt avanserte kontobeskyttelsesprogram"
@@ -2547,6 +2579,9 @@
       "The URL has been copied to the clipboard": [
         "Nettadressen er kopiert til utklippstavlen"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Dette elementet vil forbli tilgjengelig til ${ remaining }"
       ],
@@ -2664,9 +2699,6 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elementer"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Du valgte ${ semiboldText } i dette hvelvet"
       ]
     },
     "new_plans: feature": {
@@ -2939,6 +2971,10 @@
       "Dark Web Monitoring": [
         "Overvåking av det mørke nettet"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Slette ${ deletedItemsCount } element?",
+        "Slette ${ deletedItemsCount } elementer?"
+      ],
       "Delete vault \"${ vaultName }\"?": [
         "Slette hvelv \"${ vaultName }\"?"
       ],
@@ -3017,14 +3053,16 @@
       "Modified": [
         "Endret"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Flytt ${ count } element til ${ vaultName }",
+        "Flytt ${ count } elementer til ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Flytte ${ trashedItemsCount } element til papirkurven?",
+        "Flytte ${ trashedItemsCount } elementer til papirkurven?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Flytte alle elementer til \"${ vaultName }\"?"
-      ],
-      "Move item to \"${ vaultName }\"?": [
-        "Flytte element til \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Flytte elementer til \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Ingen ekskluderte elementer"
@@ -3181,9 +3219,6 @@
       "What is the dark web?": [
         "Hva er det mørke nettet?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Hvorfor ${ PASS_APP_NAME }?"
-      ],
       "Your exposed information": [
         "Din eksponerte informasjon"
       ],
@@ -3193,9 +3228,9 @@
       "Your welcome gift": [
         "Din velkomstgave"
       ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "Du er i ferd med å slette permanent ${ aliasCount } alias",
-        "Du er i ferd med å slette permanent ${ aliasCount } aliaser"
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Du er i ferd med å slette permanent ${ aliasCount } alias.",
+        "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
       ]
     },
     "Validation": {
@@ -3236,6 +3271,14 @@
       ],
       "An error occurred while exporting your data": [
         "Det oppstod en feil under eksport av dataene dine"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Er du sikker på at du ønsker å flytte ${ trashedItemsCount } element til papirkurven?",
+        "Er du sikker på at du ønsker å flytte ${ trashedItemsCount } elementer til papirkurven?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Er du sikker på at du vil slette ${ deletedItemsCount } element permanent?",
+        "Er du sikker på at du vil slette ${ deletedItemsCount } elementer permanent?"
       ],
       "At least one email address is required": [
         "Minst én e-postadresse kreves"
@@ -3327,9 +3370,6 @@
       ],
       "Offline": [
         "Frakoblet"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Når de er synkronisert, vil sletting av aliaser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
