@@ -595,6 +595,9 @@
       "Show": [
         "Näytä"
       ],
+      "Show all": [
+        "Näytä kaikki"
+      ],
       "Show preview": [
         "Näytä esikatselu"
       ],
@@ -5168,7 +5171,7 @@
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
       ],
       "Zoom meeting": [
-        "Zoom-tapaamista"
+        "Zoom-kokousta"
       ]
     },
     "Info for cash payment method": {
@@ -5280,6 +5283,9 @@
       ],
       "Other": [
         "Muu"
+      ],
+      "Product": [
+        "Tuote"
       ],
       "Refund": [
         "Hyvitys"
@@ -5721,6 +5727,10 @@
       "Security code (${ codeName })": [
         "Turvakoodi (${ codeName })"
       ],
+      "Show ${ n } administrator": [
+        "Näytä ${ n } ylläpitäjä",
+        "Näytä ${ n } ylläpitäjää"
+      ],
       "Single sign-on entity ID": [
         "Kertakirjautumisen entiteetin ID (SSO entity ID)"
       ],
@@ -5768,6 +5778,9 @@
       ],
       "Verification code": [
         "Vahvistuskoodi"
+      ],
+      "Video conferencing with Zoom": [
+        "Videoneuvotteu Zoomilla"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Olemme pahoillamme kun lähdet. Kertoisitko meille miksi, jotta voimme parantaa toimintaamme, kiitos."
@@ -6321,6 +6334,9 @@
       ],
       "Administration Panel": [
         "Hallintapaneeli"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Edistyneet aliastoiminnot (SimpleLoginin tarjoama)"
       ],
       "Advanced network security": [
         "Edistynyt verkon suojaus"
@@ -7122,6 +7138,53 @@
       ],
       "Support for ${ n } custom email domains": [
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } ja ${ additionalApp } -tuotepäivitykset"
+      ],
+      "${ app } product updates": [
+        "${ app } -tuotepäivitykset"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business -uutiskirje"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Tärkeät ${ BRAND_NAME } -ilmoitukset"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME }-uutiskirje"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } -tuotejulkaisut"
+      ],
+      "1 email per month": [
+        "1 sähköposti kuukaudessa"
+      ],
+      "1-2 emails per month": [
+        "1 - 2 sähköpostiä kuukaudessa"
+      ],
+      "2-4 emails per year": [
+        "2 - 4 sähköpostia vuodessa"
+      ],
+      "4-6 emails per year": [
+        "4 - 6 sähköpostia vuodessa"
+      ],
+      "Application notifications": [
+        "Sovellusilmoitukset"
+      ],
+      "Daily email notifications": [
+        "Päivittäiset sähköposti-ilmoitukset"
+      ],
+      "During your first month": [
+        "Ensimmäisen kuukautesi ajan"
+      ],
+      "Email subscriptions": [
+        "Sähköpostitilaukset"
+      ],
+      "In-app notifications": [
+        "Sovelluksensisäiset ilmoitukset"
       ]
     },
     "Notification": {
@@ -8675,6 +8738,10 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Ota yhteyttä ylläpitäjääsi, jos ongelma jatkuu."
+      ],
+      "Delete ${ n } user": [
+        "Poista ${ n } käyttäjä",
+        "Poista ${ n } käyttäjää"
       ],
       "Deny": [
         "Kiellä"
@@ -10336,6 +10403,9 @@
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
       ],
+      "Video conferencing": [
+        "Videoneuvottelu"
+      ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Lähetämme uuteen osoitteeseesi sähköpostiviestin, jossa on ohjeet muutoksen tekemiseen."
       ],
@@ -10533,6 +10603,9 @@
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Jos teet käyttäjästä yksityisen, et voi enää auttaa häntä tietojen tai käyttäjätilin palautuksessa."
       ],
+      "Cancel request": [
+        "Peru pyyntö"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "${ n } käyttäjän ylläpitäjän oikeuksia ei voitu ottaa automaattisesti käyttöön, koska heidän salausavaimensa on päivitetty sillä välin:",
         "${ n } käyttäjän ylläpitäjän oikeuksia ei voitu ottaa automaattisesti käyttöön, koska heidän salausavaimensa on päivitetty sillä välin:"
@@ -10542,6 +10615,9 @@
       ],
       "Enable manually": [
         "Ota käyttöön manuaalisesti"
+      ],
+      "Keep request": [
+        "Säilytä pyyntö"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kun käyttäjä on antanyt suostumuksen, voit auttaa heitä samaan takaisin tilinkäyttöoikeuden tai hallinnoimaan heidän tietojaan."
