@@ -277,7 +277,7 @@ function $handleInsertInput(
     logger?.info('Wrapping non-collapsed selection in a delete suggestion')
     const isInsideExistingSelection = $isWholeSelectionInsideSuggestion(selection)
     const nodes = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete', logger)
-    if (isInsideExistingSelection) {
+    if (isInsideExistingSelection && existingParentSuggestion?.getSuggestionTypeOrThrow() === 'insert') {
       logger?.info('Removing the wrapped suggestion as it is inside an existing one')
       for (const node of nodes) {
         node.remove()
