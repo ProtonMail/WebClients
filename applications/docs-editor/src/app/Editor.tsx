@@ -30,7 +30,7 @@ import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
 import { DefaultFont } from './Shared/Fonts'
 import type { LexicalEditor } from 'lexical'
 import { EditorRefPlugin } from '@lexical/react/LexicalEditorRefPlugin'
-import { sendErrorMessage } from './Utils/errorMessage'
+import { reportErrorToSentry } from './Utils/errorMessage'
 import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin'
 import { TablePlugin } from './Plugins/Table/TablePlugin'
 import { SafeLexicalComposer } from './Tools/SafeLexicalComposer'
@@ -103,7 +103,7 @@ export function Editor({
 
   const openLink = useCallback(
     (url: string) => {
-      clientInvoker.openLink(url).catch(sendErrorMessage)
+      clientInvoker.openLink(url).catch(reportErrorToSentry)
     },
     [clientInvoker],
   )

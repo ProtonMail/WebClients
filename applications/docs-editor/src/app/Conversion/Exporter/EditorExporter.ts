@@ -1,7 +1,7 @@
 import { createHeadlessEditor } from '@lexical/headless'
 import { type LexicalEditor, type SerializedEditorState } from 'lexical'
 import { AllNodes } from '../../AllNodes'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import type { DocxExportContext } from './DocxExport/LexicalToDocx/Context'
 import { removeCommentThreadMarks } from '../../Tools/removeCommentThreadMarks'
 import { rejectAllSuggestions } from '../../Plugins/Suggestions/rejectAllSuggestions'
@@ -28,7 +28,7 @@ export abstract class EditorExporter {
       namespace: 'export-editor',
       nodes: AllNodes,
       onError: (error) => {
-        sendErrorMessage(error)
+        reportErrorToSentry(error)
       },
     })
 

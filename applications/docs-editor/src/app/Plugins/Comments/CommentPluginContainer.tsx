@@ -21,7 +21,7 @@ import { INSERT_INLINE_COMMENT_COMMAND, SHOW_ALL_COMMENTS_COMMAND } from '../../
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { useApplication } from '../../ApplicationProvider'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { CommentsProvider } from './CommentsContext'
 import { ContextualComments } from './ContextualComments'
 import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
@@ -47,7 +47,7 @@ export default function CommentPlugin({
   const awarenessStates = useLatestAwarenessStates(application)
 
   useEffect(() => {
-    controller.getAllThreads().then(setThreads).catch(sendErrorMessage)
+    controller.getAllThreads().then(setThreads).catch(reportErrorToSentry)
   }, [controller])
 
   const { markNodeMap, activeIDs, activeAnchorKey } = useMarkNodesContext()
@@ -276,7 +276,7 @@ export default function CommentPlugin({
   useEffect(() => {
     return mergeRegister(
       application.eventBus.addEventCallback(() => {
-        controller.getAllThreads().then(setThreads).catch(sendErrorMessage)
+        controller.getAllThreads().then(setThreads).catch(reportErrorToSentry)
       }, CommentsEvent.CommentsChanged),
       application.eventBus.addEventCallback((data: CommentMarkNodeChangeData) => {
         const { markID } = data
