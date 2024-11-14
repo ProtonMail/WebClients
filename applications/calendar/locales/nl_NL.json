@@ -296,6 +296,9 @@
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
+      "Expand video conferencing widget": [
+        "Videoconferentie widget uitbreiden"
+      ],
       "Export": [
         "Exporteren"
       ],
@@ -553,6 +556,9 @@
       ],
       "Remove this participant": [
         "Deze deelnemer verwijderen"
+      ],
+      "Remove zoom meeting": [
+        "Zoomvergadering verwijderen"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -1084,8 +1090,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus levenslange aanbieding heeft geen vernieuwingsprijs, het is een eenmalige betaling voor levenslang toegang tot Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Kortingen zijn gebaseerd op standaardprijzen per maand."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Als u Pass Family of Unlimited aanschaft, wordt uw abonnement aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
@@ -1102,6 +1114,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "U betaalt ${ amount } eenmaal"
+      ],
       "for ${ durationDeal }": [
         "voor ${ durationDeal }"
       ],
@@ -1508,6 +1523,9 @@
       "${ users } user": [
         "${ users } gebruiker",
         "${ users } gebruikers"
+      ],
+      "Total": [
+        "Totaal"
       ],
       "Total for ${ n } month": [
         "Totaal voor ${ n } maand",
@@ -4000,6 +4018,9 @@
       "Less details": [
         "Minder details"
       ],
+      "Meeting host:": [
+        "Gastheer van de vergadering:"
+      ],
       "Meeting link:": [
         "Meeting link:"
       ],
@@ -4378,6 +4399,12 @@
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } Lifetime deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }. De prijs en datum voor de verlenging van uw ${ planTitle } blijft ongewijzigd."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
@@ -5340,6 +5367,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Uw ${ PASS_SHORT_APP_NAME } Plus-abonnement zal worden vervangen door ${ PASS_SHORT_APP_NAME } Lifetime. Het resterende saldo van uw abonnement zal aan uw account worden toegevoegd. ${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslange toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
@@ -6600,6 +6630,9 @@
       "Administration Panel": [
         "Beheerderspaneel"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Geavanceerde alias functies (mogelijk gemaakt door SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME } producten en functies"
       ],
@@ -7111,6 +7144,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Eigen domeinen voor aliassen, extra postbussen, de mogelijkheid om e-mails van aliassen te versturen en meer"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Toegewijde servers met toegewijde IP-adressen kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
       ],
@@ -7346,6 +7382,12 @@
       ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
+      ],
+      "Meeting host copied to clipboard": [
+        "Vergaderhost gekopieerd naar klembord"
+      ],
+      "Meeting ID copied to clipboard": [
+        "Vergadering ID gekopieerd naar klembord"
       ],
       "Passcode copied to clipboard": [
         "Passcode gekopieerd naar klembord"
@@ -7656,8 +7698,14 @@
         "${ n } gebruikersaccount",
         "${ n } gebruikersaccounts"
       ],
+      "Activity log": [
+        "Activiteitenlog"
+      ],
       "Admin panel to manage users and subscription": [
         "Beheerpaneel om gebruikers en abonnement te beheren"
+      ],
+      "Team policies": [
+        "Team beleid"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8578,6 +8626,12 @@
       "Now you can see when participants are free to attend your meeting.": [
         "U kunt nu zien wanneer deelnemers vrij zijn om ana uw vergadering deel te nemen."
       ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Maak naadloos videobijeenkomsten en voeg links toe aan uw evenementen."
+      ],
+      "Video conferencing is here!": [
+        "Videoconferentie is hier!"
+      ],
       "You can now collapse the navigation bar.": [
         "U kunt nu de navigatiebalk inklappen."
       ]
@@ -8772,6 +8826,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Het abonnement zal worden gedowngradet aan het einde van de factureringscyclus."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Lifetime"
       ]
     },
     "Subscription price": {
@@ -10504,8 +10563,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Deelnemen aan Zoom vergadering"
+      ],
       "Meeting ID:": [
         "Meeting ID:"
+      ],
+      "Passcode:": [
+        "Toegangscode:"
       ]
     }
   }

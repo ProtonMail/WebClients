@@ -35,6 +35,9 @@
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "あなたの情報が少なくとも1件のデータ漏洩で見つかりました。詳細を確認し、対策を講じるために${ DARK_WEB_MONITORING_NAME }をオンにしてください。${ link }"
       ]
     },
     "Action": {
@@ -698,6 +701,9 @@
       "Upgrade now": [
         "今すぐアップグレード"
       ],
+      "Upgrade to Mail Plus": [
+        "メールプラスへアップグレード"
+      ],
       "Upload picture": [
         "写真をアップロード"
       ],
@@ -864,6 +870,9 @@
       ],
       "By leaving now, you will lose your event.": [
         "今終了すると、予定は削除されます。"
+      ],
+      "Please do not close this tab. Some requests are still being processed in the background.": [
+        "このタブを閉じないでください。バックグラウンドで処理中のリクエストがあります。"
       ]
     },
     "Apps dropdown": {
@@ -1204,6 +1213,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } を使って続行します。"
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }を使い続ける"
+      ],
+      "Continue your subscription": [
+        "サブスクリプションを継続する"
       ]
     },
     "Calendar access select label": {
@@ -1286,6 +1301,9 @@
       ]
     },
     "Calendar sharing access option label": {
+      "Edit (view, create or edit event details)": [
+        "編集(表示、イベントの作成または詳細の編集)"
+      ],
       "View (see all event details)": [
         "閲覧 (すべての予定詳細を閲覧できます)"
       ]
@@ -2356,6 +2374,9 @@
       ]
     },
     "Custom frequency option": {
+      "After…": [
+        "後"
+      ],
       "Never": [
         "繰り返し続ける"
       ],
@@ -2456,6 +2477,18 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
       ],
+      "Availability unknown": [
+        "利用可能状況は不明"
+      ],
+      "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
+        "あなたの一日をより良く整理し、時間を追跡し、タスクに優先順位を付けましょう。カスタムイベントの色でカレンダーを色分けしてください。"
+      ],
+      "Color-code events to make it easier to organize your day, track your time, and prioritize tasks.": [
+        "イベントを色分けして、一日の整理をしやすくし、時間を管理し、タスクの優先順位を付けましょう。"
+      ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "ワンクリックでZoomミーティングを作成し、参加詳細をイベントに追加します。"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "連絡先を復号しています… これには数分かかります。完了するとエクスポートされたすべての連絡先がダウンロードできるようになります。"
       ],
@@ -2468,6 +2501,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
+      "Loading availability": [
+        "利用可能状況を読み込んでいます"
+      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
@@ -2476,6 +2512,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "アカウントへのアクセスが失われないように回復手段を設定してください。"
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "これは数分かかる場合があります。その間、通常通り ${ CALENDAR_APP_NAME }を使用し続けることができます。"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
         "アカウントをアップグレードして、24時間年中無休の専門家によるサポート付きの最先端のAI駆動セキュリティソリューション${ PROTON_SENTINEL_NAME }を有効にしましょう。"
@@ -2816,6 +2855,9 @@
       ],
       "Failed to get original occurrence in series": [
         "元の行事の取得に失敗しました"
+      ],
+      "Failed to load oauth modal.": [
+        "Oauth認証の読み込みに失敗しました。"
       ],
       "First name is too long": [
         "名前が長すぎます。"
@@ -3663,6 +3705,9 @@
       "Contacts": [
         "連絡先"
       ],
+      "Custom recurrence": [
+        "繰り返しのカスタム"
+      ],
       "Name": [
         "名前"
       ],
@@ -4225,6 +4270,9 @@
       ],
       "Dedicated servers": [
         "専用サーバー"
+      ],
+      "Deleting event...": [
+        "イベントを削除しています..."
       ],
       "Discard changes?": [
         "変更を破棄してよろしいですか？"
@@ -5024,6 +5072,11 @@
       ],
       "Creating invites in a shared calendar is not allowed": [
         "共有カレンダーで招待を作成することはできません"
+      ]
+    },
+    "Input label": {
+      "Link label (optional)": [
+        "リンクラベル(オプション)"
       ]
     },
     "Input placeholder": {
@@ -6255,6 +6308,9 @@
       "Unlimited devices": [
         "無制限のデバイス"
       ],
+      "Unlimited devices and aliases": [
+        "無制限のデバイスとエイリアス"
+      ],
       "Unlimited filters": [
         "フィルター制限なし"
       ],
@@ -7239,6 +7295,9 @@
       "Create an alias": [
         "エイリアスを作成"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "フライでエイリアスを生成し、エイリアスとパスワードを簡単に管理します。"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -7375,9 +7434,19 @@
         "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "パスワードリセットはキャンセルされました"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "パスワードリセットを取り消しますか？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "パスワードリセットのリクエストがキャンセルされました(${ user.Email })。このリクエストを行っていない場合は、${ changePasswordLink }をご確認ください。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7587,6 +7656,11 @@
         "オンラインプライバシーをサポート"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "サブスクリプションプランへ移動"
@@ -7697,6 +7771,12 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "友達を ${ BRAND_NAME } に招待"
+      ],
+      "No more scheduling conflicts": [
+        "もうスケジュールの重複はありません"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "参加者が会議に出席可能な時間を確認できるようになりました。"
       ]
     },
     "sso": {
@@ -8490,6 +8570,9 @@
       "Get the ${ appName[APP_NAME] } apps": [
         "${ appName[APP_NAME] } アプリを入手"
       ],
+      "Get Zooming faster": [
+        "ズームの速度を上げる。"
+      ],
       "Gift": [
         "ギフト"
       ],
@@ -8721,6 +8804,9 @@
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"
       ],
+      "We're setting up calendar search": [
+        "カレンダー検索を設定しています。"
+      ],
       "We've locked some calendars to protect your data": [
         "データを保護するためにいくつかのカレンダーをロックしました"
       ],
@@ -8780,6 +8866,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
+      ],
+      "Change start date to unselect": [
+        "開始日を未選択に変更"
       ],
       "Customize import to reduce the number of folders": [
         "フォルダー数を減らすためにインポートをカスタマイズします"
@@ -9255,6 +9344,17 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Zoomミーティングを追加する"
+      ],
+      "Adding conferencing details": [
+        "会議の詳細を追加しています"
+      ],
+      "Loading Zoom configuration": [
+        "Zoomの設定を読み込んでいます"
       ]
     },
     "Zoom Meeting": {

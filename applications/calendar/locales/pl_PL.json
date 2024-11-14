@@ -302,6 +302,9 @@
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
       ],
+      "Expand video conferencing widget": [
+        "Rozwiń widżet wideokonferencji"
+      ],
       "Export": [
         "Eksportuj"
       ],
@@ -559,6 +562,9 @@
       ],
       "Remove this participant": [
         "Usuń uczestnika"
+      ],
+      "Remove zoom meeting": [
+        "Usuń spotkanie Zoom"
       ],
       "Report a problem": [
         "Zgłoś problem"
@@ -1102,8 +1108,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus oferta na całe życie nie ma ceny odnawiania, to jednorazowa płatność za dożywotni dostęp do Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Jeśli zakupisz Pass Family lub Unlimited, Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres na koniec cyklu rozliczeniowego."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
@@ -1543,6 +1555,9 @@
         "${ users } użytkowników",
         "${ users } użytkowników",
         "${ users } użytkowników"
+      ],
+      "Total": [
+        "Razem"
       ],
       "Total for ${ n } month": [
         "Łącznie za ${ n } miesiąc",
@@ -8919,6 +8934,12 @@
       "Now you can see when participants are free to attend your meeting.": [
         "Możesz zobaczyć, kiedy uczestnicy mogą wziąć udział w spotkaniu."
       ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Twórz i dodawaj linki do wideokonferencji w wydarzeniach."
+      ],
+      "Video conferencing is here!": [
+        "Wideokonferencje są dostępne!"
+      ],
       "You can now collapse the navigation bar.": [
         "Możesz zwinąć pasek nawigacji."
       ]
@@ -10972,7 +10993,7 @@
         "Dodaj spotkanie Zoom"
       ],
       "Adding conferencing details": [
-        "Dodawanie szczegółów konferencji"
+        "Dodawanie szczegółów wideokonferencji"
       ],
       "Loading Zoom configuration": [
         "Ładowanie konfiguracji Zoom"

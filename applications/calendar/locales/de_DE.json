@@ -1046,6 +1046,9 @@
       "Integrated 2FA authenticator": [
         "Integrierter 2FA-Authentifikator"
       ],
+      "One-time payment, lifetime deal": [
+        "Einmalzahlung, lebenslanges Angebot"
+      ],
       "Online document editor": [
         "Editor für Onlinedokumente"
       ],
@@ -1081,8 +1084,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus lebenslanges Angebot hat keinen Erneuerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Wenn du Pass Family oder Unlimited kaufst, verlängert sich dein Abonnement am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
@@ -1099,8 +1108,14 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Zum Preis von ${ amount } einmal"
+      ],
       "for ${ durationDeal }": [
         "für ${ durationDeal }"
+      ],
+      "forever": [
+        "dauerhaft"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Verlängert sich nach 1 Monat zum ${ regularAmount }."

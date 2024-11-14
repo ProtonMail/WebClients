@@ -296,6 +296,9 @@
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
       ],
+      "Expand video conferencing widget": [
+        "Espandi il widget della videoconferenza"
+      ],
       "Export": [
         "Esporta"
       ],
@@ -553,6 +556,9 @@
       ],
       "Remove this participant": [
         "Rimuovi questo partecipante"
+      ],
+      "Remove zoom meeting": [
+        "Rimuovi riunione zoom"
       ],
       "Report a problem": [
         "Segnala un problema"
@@ -1517,6 +1523,9 @@
       "${ users } user": [
         "${ users } utente",
         "${ users } utenti"
+      ],
+      "Total": [
+        "Totale"
       ],
       "Total for ${ n } month": [
         "Totale per ${ n } mese",
@@ -4009,6 +4018,9 @@
       "Less details": [
         "Meno dettagli"
       ],
+      "Meeting host:": [
+        "Ospite della riunione:"
+      ],
       "Meeting link:": [
         "Collegamento alla riunione:"
       ],
@@ -4387,6 +4399,12 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }. Il prezzo e la data di rinnovo dell'abbonamento ${ planTitle } rimangono invariati."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
@@ -6612,6 +6630,9 @@
       "Administration Panel": [
         "Pannello di controllo"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funzionalità alias avanzate (fornite da SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Tutti i prodotti e le funzionalità di ${ BRAND_NAME }"
       ],
@@ -7126,6 +7147,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domini personalizzati per alias, caselle di posta aggiuntive, possibilità di inviare email da alias e altro ancora"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato"
       ],
@@ -7361,6 +7385,12 @@
       ],
       "Link copied to clipboard": [
         "Link copiato negli appunti"
+      ],
+      "Meeting host copied to clipboard": [
+        "Ospite della riunione copiato negli appunti"
+      ],
+      "Meeting ID copied to clipboard": [
+        "ID riunione copiato negli appunti"
       ],
       "Passcode copied to clipboard": [
         "Codice copiato negli appunti"
@@ -7671,8 +7701,14 @@
         "${ n } account utente",
         "${ n } account utente"
       ],
+      "Activity log": [
+        "Registro delle attività"
+      ],
       "Admin panel to manage users and subscription": [
         "Pannello di amministrazione per gestire utenti e abbonamenti"
+      ],
+      "Team policies": [
+        "Politiche del Team"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8593,6 +8629,12 @@
       "Now you can see when participants are free to attend your meeting.": [
         "Ora puoi vedere quando i partecipanti sono liberi di partecipare alla tua riunione."
       ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Crea e aggiungi facilmente collegamenti a riunioni video ai tuoi eventi."
+      ],
+      "Video conferencing is here!": [
+        "La videoconferenza è qui!"
+      ],
       "You can now collapse the navigation bar.": [
         "Ora puoi comprimere la barra di navigazione."
       ]
@@ -8787,6 +8829,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "L'abbonamento verrà declassato alla fine del ciclo di fatturazione."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "A vita"
       ]
     },
     "Subscription price": {
@@ -10519,8 +10566,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Partecipa alla riunione su Zoom"
+      ],
       "Meeting ID:": [
         "ID meeting:"
+      ],
+      "Passcode:": [
+        "Codice di accesso:"
       ]
     }
   }
