@@ -44,5 +44,5 @@ export interface MetricSharedWorkerInterface {
      * Disconnects a specific connection.
      * @param connectionId - The unique identifier for the SharedWorker connection to be disconnected.
      */
-    disconnect: (connectionId: string) => void;
+    disconnect: (connectionId: string) => Promise<void>;
 }
