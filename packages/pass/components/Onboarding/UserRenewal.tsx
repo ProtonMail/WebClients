@@ -23,7 +23,10 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
 
     const title = epochToRelativeDate(plan.SubscriptionEnd, {
         formatDate: (endDate) => c('Title').t`Your ${planName} subscription will end on ${endDate}`,
-        formatDays: (daysLeft) => c('Title').t`Your ${planName} subscription will end in ${daysLeft}`,
+        formatDays: (relativeDay) => {
+            // translator: {relativeDay} can be "today", "tomorrow", or a day of the week ("Monday")
+            return c('Title').t`Your ${planName} subscription will end ${relativeDay}`;
+        },
     });
 
     const upgrade = () => onLink(`${SSO_URL}/pass/dashboard?source=banner#your-subscriptions`);
