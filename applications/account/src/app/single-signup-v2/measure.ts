@@ -125,16 +125,6 @@ export type TelemetryMeasurementData =
           };
       }
     | UserCheckoutEvents
-    | {
-          event: TelemetryAccountSignupEvents.loadPaymentBtc;
-          dimensions: {};
-      }
-    | {
-          event: TelemetryAccountSignupEvents.hvNeeded;
-          dimensions: {
-              api_call: string;
-          };
-      }
     | SignupFinishEvents
     | {
           event: TelemetryAccountSignupEvents.onboardingStart;

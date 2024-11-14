@@ -95,12 +95,6 @@ export type TelemetryMeasurementData =
               currency: Currency;
           };
       }
-    | {
-          event: TelemetryAccountSignupEvents.hvNeeded;
-          dimensions: {
-              api_call: string;
-          };
-      }
     | SignupFinishEvents
     | {
           event: TelemetryAccountSignupEvents.interactUpsell;
