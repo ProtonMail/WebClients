@@ -562,6 +562,9 @@
       "Upgrade now to share with more people": [
         "ასწიეთ ტარიფი ახლა და გაუზიარეთ მეტ ხალხს"
       ],
+      "Use ${ label } theme": [
+        "${ label }-ის გამოყენება"
+      ],
       "Via secure link": [
         "დაცული ბმულით"
       ],
@@ -608,9 +611,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "შავი პარასკევი"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "გადაიხადეთ ერთხელ და მიიღეთ ${ lifetimeAccessJSX } Pass Plus-ზე. მხოლოდ ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "დაზოეთ ${ discountJSX }-მდე Pass Family-ზე. მხოლოდ ${ relativePrice }/თვეში."
@@ -1049,6 +1049,31 @@
         "ტერაბაიტი"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "სისტემის ნაგულისხმები"
+      ],
+      "Theme font": [
+        "თემის ფონტი"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "დიდი"
+      ],
+      "Medium (recommended)": [
+        "საშუალო (რეკომენდებული)"
+      ],
+      "Small": [
+        "პატარა"
+      ],
+      "Very large": [
+        "ძალიან დიდი"
+      ],
+      "Very small": [
+        "ძალიან პატარა"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" ელემენტი წაიშალა"
@@ -1472,12 +1497,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის ისტორიას და ყველა დაცულ ბმულს წაშლის."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის."
-      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -1617,9 +1636,6 @@
       "Press Enter to copy": [
         "დასაკოპირებლად დააჭირეთ Enter-ს"
       ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "კონფიდენციალობა ჩვენი ძირითადი საზრუნავია. გაიგეთ, რატომაა ${ PASS_APP_NAME } განსხვავებული."
-      ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
       ],
@@ -1661,9 +1677,6 @@
       ],
       "Secure links": [
         "დაცული ბმულები"
-      ],
-      "Select an existing login item to update.": [
-        "აირჩიეთ არსებული შესვლის ელემენტი, გასაახლებლად"
       ],
       "Select an existing login or create a new one.": [
         "აირჩიეთ არსებული შესვლის დეტალი ან შექმენით ახალი."
@@ -2541,6 +2554,9 @@
       "The URL has been copied to the clipboard": [
         "ბმული დაკოპირდა ბუფერში"
       ],
+      "Theme": [
+        "თემა"
+      ],
       "Title": [
         "სათაური"
       ],
@@ -2648,9 +2664,6 @@
       "${ count } item": [
         "${ count } ელემენტი",
         "${ count } ელემენტი"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "აირჩიეთ ${ semiboldText } ამ საცავში"
       ]
     },
     "Onboarding": {
@@ -2946,12 +2959,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "გადავიტანო ყველა ელემენტი საცავში \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "გადავიტანო ელემენტი საცავში \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "გადავიტანო ელემენტები საცავში \"${ vaultName }\"?"
-      ],
       "No items selected": [
         "ელემენტები მონიშნული არაა"
       ],
@@ -2978,6 +2985,10 @@
       ],
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმს წაშლით, მას ვერ აღადგენთ.",
+        "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმებს წაშლით, მას ვერ აღადგენთ."
       ],
       "Reject device?": [
         "უარვყო მოწყობილობა?"
@@ -3063,18 +3074,11 @@
       "Welcome to your new password manager!": [
         "მოგესალმებით თქვენი ახალ პაროლების მმართველში!"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "რატომ ${ PASS_APP_NAME }?"
-      ],
       "Your vault is empty": [
         "თქვენი საცავი ცარიელია"
       ],
       "Your welcome gift": [
         "ისიამოვნეთ თქვენი უფასო სატესტო ვერსიით"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი",
-        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი"
       ]
     },
     "Validation": {

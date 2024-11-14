@@ -89,6 +89,9 @@
       "Confirm access": [
         "Conferma l'accesso"
       ],
+      "Confirm all": [
+        "Conferma tutti"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Connetti il tuo account ${ BRAND_NAME }"
       ],
@@ -133,6 +136,9 @@
       ],
       "Create identity": [
         "Crea identità"
+      ],
+      "Create item": [
+        "Crea elemento"
       ],
       "Create login": [
         "Crea login"
@@ -386,6 +392,9 @@
       "Please retry": [
         "Per favore riprova"
       ],
+      "Reactivate now": [
+        "Riattiva"
+      ],
       "Refresh the page": [
         "Aggiorna la pagina"
       ],
@@ -460,6 +469,9 @@
       ],
       "See members": [
         "Visualizza membri"
+      ],
+      "Select": [
+        "Seleziona"
       ],
       "Send invite": [
         "Manda invito"
@@ -547,6 +559,9 @@
       "Update": [
         "Aggiorna"
       ],
+      "Update this login": [
+        "Aggiorna questo accesso"
+      ],
       "Update vault": [
         "Aggiorna la cassaforte"
       ],
@@ -561,6 +576,9 @@
       ],
       "Upgrade now to share with more people": [
         "Effettua l'upgrade ora per condividere con più persone"
+      ],
+      "Use ${ label } theme": [
+        "Usa il tema ${ label }"
       ],
       "Via secure link": [
         "Tramite link sicuro"
@@ -608,9 +626,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Paga una volta e ricevi ${ lifetimeAccessJSX } per Pass Plus. Solo ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Risparmia fino a ${ discountJSX } su Pass Family. Solo ${ relativePrice }/mese."
@@ -1049,6 +1064,31 @@
         "Terabyte"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Predefinito di sistema"
+      ],
+      "Theme font": [
+        "Carattere del tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Grande"
+      ],
+      "Medium (recommended)": [
+        "Medio (consigliato)"
+      ],
+      "Small": [
+        "Piccolo"
+      ],
+      "Very large": [
+        "Molto grande"
+      ],
+      "Very small": [
+        "Molto piccolo"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "L'elemento \"${ payload.item.data.metadata.name }\" è stato rimosso"
@@ -1083,6 +1123,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrerà la favicon dell'elemento tramite il proxy per le immagini anonimizzato di ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } seguirà il tema del tuo sistema."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importerà solo login, note, carte di credito e identità."
@@ -1223,6 +1266,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Scegli una passkey salvata per accedere a ${ domain }"
       ],
+      "Choose your preferred look and feel.": [
+        "Scegli l'aspetto che preferisci."
+      ],
       "Click the icon to open it anytime.": [
         "Clicca sull'icona per aprirlo in qualsiasi momento."
       ],
@@ -1355,6 +1401,10 @@
       "For security reason, your access needs to be confirmed": [
         "Per motivi di sicurezza, il tuo accesso deve essere confermato"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Per motivi di sicurezza, è necessario confermare l'accesso a questa cassaforte condivisa",
+        "Per motivi di sicurezza, è necessario confermare l'accesso a queste casseforti condivise"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Per motivi di sicurezza, il tuo accesso deve essere confermato"
       ],
@@ -1460,6 +1510,9 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
+      "Make it your own": [
+        "Fallo tuo"
+      ],
       "me": [
         "me"
       ],
@@ -1469,14 +1522,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Molto più che un gestore di password, ${ PASS_APP_NAME } protegge le tue password e i tuoi indirizzi email tramite gli alias. Grazie alla tecnologia che sta alla base di ${ MAIL_APP_NAME }, i tuoi dati sono crittografati end-to-end e rimangono accessibili solo a te."
       ],
+      "Move ${ count } item": [
+        "Sposta ${ count } elemento",
+        "Sposta ${ count } elementi"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà la sua cronologia e tutti i collegamenti sicuri."
+        "Spostare di un elemento in un'altra cassaforte cancellerà la sua cronologia e tutti i collegamenti sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà la loro cronologia e tutti i collegamenti sicuri."
       ],
       "Moving an item to another vault will erase its history.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà la sua cronologia."
+        "Spostare un elemento in un'altra cassaforte cancellerà la sua cronologia.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà la loro cronologia."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -1620,9 +1679,6 @@
       "Press Enter to copy": [
         "Premi Invio per copiare"
       ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "La privacy è una delle nostre preoccupazioni principali. Scopri perché ${ PASS_APP_NAME } è diverso."
-      ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protetto da ${ PROTON_SENTINEL_LINK }, il nostro programma avanzato di protezione dell'account."
       ],
@@ -1664,9 +1720,6 @@
       ],
       "Secure links": [
         "Link sicuri"
-      ],
-      "Select an existing login item to update.": [
-        "Seleziona un elemento di login esistente da aggiornare."
       ],
       "Select an existing login or create a new one.": [
         "Seleziona un login esistente o creane uno nuovo."
@@ -2548,6 +2601,9 @@
       "The URL has been copied to the clipboard": [
         "L'URL è stato copiato negli appunti"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "Title": [
         "Titolo"
       ],
@@ -2656,8 +2712,12 @@
         "${ count } elemento",
         "${ count } elementi"
       ],
-      "You selected ${ semiboldText } in this vault": [
-        "Hai selezionato ${ semiboldText } in questa cassaforte"
+      "You can drag and drop the selected item to another vault": [
+        "Puoi trascinare e rilasciare l'elemento selezionato in un altra cassaforte",
+        "Puoi trascinare e rilasciare gli elementi selezionati in un altra cassaforte"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Hai selezionato ${ semiboldText } in questa cassaforte."
       ]
     },
     "Onboarding": {
@@ -2847,6 +2907,17 @@
         "Le casseforti non possono contenere più di ${ vault.targetMaxMembers } utenti."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automatico"
+      ],
+      "Dark": [
+        "Scuro"
+      ],
+      "Light": [
+        "Chiaro"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Impostazioni ${ PASS_APP_NAME }"
@@ -2874,6 +2945,13 @@
       ],
       "Current version": [
         "Versione attuale"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Eliminare ${ deletedItemsCount } elemento?",
+        "Eliminare ${ deletedItemsCount } elementi?"
+      ],
+      "Delete this item?": [
+        "Eliminare questo elemento?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Eliminare cassaforte \"${ vaultName }\"?"
@@ -2950,14 +3028,19 @@
       "Modified": [
         "Modificato"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Spostare ${ count } elemento in ${ vaultName }",
+        "Spostare ${ count } elementi in ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Spostare ${ trashedItemsCount } elemento nel cestino?",
+        "Spostare ${ trashedItemsCount } elementi nel cestino?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Vuoi spostare tutti gli elementi in \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Vuoi spostare l'elemento in \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Vuoi spostare gli elementi in \"${ vaultName }\"?"
+      "Move item to \"${ vaultName }\"": [
+        "Vuoi spostare l'elemento in \"${ vaultName }\""
       ],
       "No items selected": [
         "Nessun elemento selezionato"
@@ -2973,6 +3056,9 @@
       ],
       "Password": [
         "Password"
+      ],
+      "Pending access confirmation": [
+        "In attesa della conferma di accesso"
       ],
       "Pending access to the shared data": [
         "In attesa dell'accesso ai dati condivisi"
@@ -3074,8 +3160,8 @@
       "Welcome to your new password manager!": [
         "Benvenuto nel tuo nuovo gestore di password!"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Perché ${ PASS_APP_NAME }?"
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Il tuo abbonamento a ${ planName } terminerà il ${ endDate }"
       ],
       "Your vault is empty": [
         "La tua cassaforte è vuota."
@@ -3083,9 +3169,9 @@
       "Your welcome gift": [
         "Il tuo regalo di benvenuto"
       ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "Stai per eliminare definitivamente ${ aliasCount } alias",
-        "Stai per eliminare definitivamente ${ aliasCount } alias"
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Stai per eliminare definitivamente ${ aliasCount } alias.",
+        "Stai per eliminare definitivamente ${ aliasCount } alias."
       ]
     },
     "Validation": {
@@ -3121,6 +3207,9 @@
       "A description of the problem is required": [
         "È richiesta una descrizione del problema"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Gli alias nel cestino continueranno a inoltrare le email."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tutti gli elementi nel cestino verranno eliminati definitivamente. Non puoi annullare questa azione."
       ],
@@ -3129,6 +3218,13 @@
       ],
       "An error occurred while resuming your session": [
         "Si è verificato un errore durante la ripresa della sessione"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Sei sicuro di voler eliminare definitivamente ${ deletedItemsCount } elemento?",
+        "Sei sicuro di voler eliminare definitivamente ${ deletedItemsCount } elementi?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Sei sicuro di voler eliminare definitivamente questo elemento?"
       ],
       "At least one email address is required": [
         "È richiesto almeno un indirizzo email"
@@ -3205,9 +3301,6 @@
       ],
       "No results": [
         "Nessun risultato"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Una volta sincronizzati, l'eliminazione degli alias in ${ PASS_SHORT_APP_NAME } li eliminerà anche in SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sono consentiti solo caratteri alfanumerici, punti, trattini e trattini bassi"

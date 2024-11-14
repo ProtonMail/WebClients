@@ -866,6 +866,19 @@
         "Terabytes"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Mặc định hệ thống"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Lớn"
+      ],
+      "Small": [
+        "Nhỏ"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Nội dung \"${ payload.item.data.metadata.name }\" đã bỏ qua"
@@ -1218,12 +1231,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả nội dung từ \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Chuyển một nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó và các đường dẫn an toàn."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Chuyển một nội dung tới kho lưu trữ khác sẽ xóa lịch sử của nó."
-      ],
       "Moving items": [
         "Đang chuyển nội dung"
       ],
@@ -1338,9 +1345,6 @@
       "Press Enter to copy": [
         "Nhấn Enter để sao chép"
       ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Quyền riêng tư là một vấn đề lớn với chúng tôi. Tìm hiểu xem ${ PASS_APP_NAME } khác biệt ở đâu."
-      ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Được bảo vệ bởi ${ PROTON_SENTINEL_LINK }, phần mềm bảo vệ tài khoản nâng cao của chúng tôi"
       ],
@@ -1367,9 +1371,6 @@
       ],
       "Secure links": [
         "Các liên kết bảo mật"
-      ],
-      "Select an existing login item to update.": [
-        "Chọn một nội dung đăng nhập hiện có để cập nhật."
       ],
       "Select an existing login or create a new one.": [
         "Chọn một đăng nhập có sẵn hoặc tạo một cái mới."
@@ -2099,6 +2100,9 @@
       "The item's vault is currently shared with ${ targetMembers } person": [
         "Kho lưu trữ của nội dung hiện được chia sẽ với ${ targetMembers } người dùng"
       ],
+      "Theme": [
+        "Chủ đề"
+      ],
       "Title": [
         "Tiêu đề"
       ],
@@ -2181,9 +2185,6 @@
     "Message": {
       "${ count } item": [
         "${ count } nội dung"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Bạn đã chọn ${ semiboldText } trong kho lưu trữ này"
       ]
     },
     "Onboarding": {
@@ -2494,9 +2495,6 @@
       ],
       "Welcome to your new password manager!": [
         "Chào mừng đến trình quản lý mật khẩu mới của bạn!"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Lý do chọn ${ PASS_APP_NAME }?"
       ],
       "Your vault is empty": [
         "Kho lưu trữ của bạn trống"

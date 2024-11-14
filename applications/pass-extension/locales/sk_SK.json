@@ -89,6 +89,9 @@
       "Confirm access": [
         "Potvrďte prístup"
       ],
+      "Confirm all": [
+        "Potvrdiť všetko"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Pripojte svoj ${ BRAND_NAME } účet"
       ],
@@ -133,6 +136,9 @@
       ],
       "Create identity": [
         "Vytvoriť identitu"
+      ],
+      "Create item": [
+        "Vytvoriť položku"
       ],
       "Create login": [
         "Vytvoriť prihlásenie"
@@ -386,6 +392,9 @@
       "Please retry": [
         "Skúste to znova, prosím"
       ],
+      "Reactivate now": [
+        "Znovu aktivovať teraz"
+      ],
       "Refresh the page": [
         "Obnoviť stránku"
       ],
@@ -460,6 +469,9 @@
       ],
       "See members": [
         "Zobraziť členov"
+      ],
+      "Select": [
+        "Vyberte"
       ],
       "Send invite": [
         "Odoslať pozvánku"
@@ -551,6 +563,9 @@
       "Update": [
         "Aktualizovať"
       ],
+      "Update this login": [
+        "Aktualizovať toto prihlásenie"
+      ],
       "Update vault": [
         "Aktualizovať trezor"
       ],
@@ -565,6 +580,9 @@
       ],
       "Upgrade now to share with more people": [
         "Aktualizujte teraz, aby ste sa mohli podeliť s viacerými ľuďmi"
+      ],
+      "Use ${ label } theme": [
+        "Použiť motív ${ label }"
       ],
       "Via secure link": [
         "Cez bezpečný odkaz"
@@ -613,8 +631,8 @@
       "Black Friday": [
         "Black Friday"
       ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Zaplaťte raz a získajte ${ lifetimeAccessJSX } na Pass Plus. Iba ${ relativePrice }."
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Zaplaťte raz a získajte ${ lifetimeAccessJSX } na Pass Plus a SimpleLogin. Len za ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Uložte až do ${ discountJSX } na Pass Family. Iba ${ relativePrice }/mesiac."
@@ -1071,6 +1089,31 @@
         "terabajtov"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Podľa systému"
+      ],
+      "Theme font": [
+        "Písmo motívu"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Veľké"
+      ],
+      "Medium (recommended)": [
+        "Stredné (odporúčané)"
+      ],
+      "Small": [
+        "Malé"
+      ],
+      "Very large": [
+        "Veľmi veľké"
+      ],
+      "Very small": [
+        "Veľmi malé"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Položka \"${ payload.item.data.metadata.name }\" bola zamietnutá"
@@ -1113,6 +1156,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí webové ikony položiek prostredníctvom anonymizovaného ${ BRAND_NAME } proxy servera."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } sa bude prispôsobovať vzhľadu systému."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky, platobné karty a identity."
@@ -1254,6 +1300,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený prístupový kľúč na prihlásenie do ${ domain }"
+      ],
+      "Choose your preferred look and feel.": [
+        "Vyberte si svoj obľúbený vzhľad."
       ],
       "Click the icon to open it anytime.": [
         "Kliknutím na ikonu ju kedykoľvek otvoríte."
@@ -1498,6 +1547,9 @@
       "Loading...": [
         "Načítavanie..."
       ],
+      "Make it your own": [
+        "Prispôsobte si to podľa seba"
+      ],
       "me": [
         "ja"
       ],
@@ -1507,14 +1559,14 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Viac ako správca hesiel, ${ PASS_APP_NAME } chráni vaše heslo a vašu osobnú emailovú adresu prostredníctvom emailových aliasov. Vďaka rovnakej technológii, ktorá stojí za ${ MAIL_APP_NAME }, sú vaše údaje end-to-end šifrované a prístup k nim máte len vy."
       ],
+      "Move ${ count } item": [
+        "Presunúť ${ count } položku",
+        "Presunúť ${ count } položky",
+        "Presunúť ${ count } položiek",
+        "Presunúť ${ count } položiek"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Presunutím položky do iného trezora sa vymaže jej história a všetky bezpečné odkazy."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Presunutím položky do iného trezora sa vymaže jej história."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -1660,9 +1712,6 @@
       "Press Enter to copy": [
         "Pre skopírovanie stlačte Enter"
       ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Súkromie berieme veľmi vážne. Prečítajte si, prečo je ${ PASS_APP_NAME } iný."
-      ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
       ],
@@ -1704,9 +1753,6 @@
       ],
       "Secure links": [
         "Bezpečné odkazy"
-      ],
-      "Select an existing login item to update.": [
-        "Vyberte existujúcu položku prihlásenia, ktorú chcete aktualizovať."
       ],
       "Select an existing login or create a new one.": [
         "Vyberte existujúce prihlásenie alebo vytvorte nové."
@@ -1941,6 +1987,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Dôjde k odhláseniu a budete sa musieť znova prihlásiť na všetkých ďalších zariadeniach."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "V aplikácii ${ PASS_APP_NAME } už nebudete mať prístup k zdieľaniu, 2FA, kreditnej karte a ďalším pokročilým funkciám."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tento PIN kód použijete na odomknutie aplikácie ${ PASS_APP_NAME } , keď sa po určitom čase nečinnosti automaticky uzamkne."
@@ -2610,6 +2659,9 @@
       "The URL has been copied to the clipboard": [
         "URL adresa bola skopírovaná do schránky"
       ],
+      "Theme": [
+        "Motív"
+      ],
       "Title": [
         "Názov"
       ],
@@ -2720,8 +2772,8 @@
         "${ count } položiek",
         "${ count } položiek"
       ],
-      "You selected ${ semiboldText } in this vault": [
-        "Vybrali ste ${ semiboldText } v tomto trezore"
+      "You selected ${ semiboldText } in this vault.": [
+        "Vybrali ste ${ semiboldText } v tomto trezore."
       ]
     },
     "Onboarding": {
@@ -2913,6 +2965,17 @@
         "Trezory nemôžu obsahovať viac než ${ vault.targetMaxMembers } používateľov."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automatická"
+      ],
+      "Dark": [
+        "Tmavá"
+      ],
+      "Light": [
+        "Svetlá"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Nastavenia ${ PASS_APP_NAME }"
@@ -2940,6 +3003,15 @@
       ],
       "Current version": [
         "Súčasná verzia"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Vymazať ${ deletedItemsCount } položku?",
+        "Vymazať ${ deletedItemsCount } položky?",
+        "Vymazať ${ deletedItemsCount } položiek?",
+        "Vymazať ${ deletedItemsCount } položiek?"
+      ],
+      "Delete this item?": [
+        "Vymazať túto položku?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Vymazať trezor \"${ vaultName }\"?"
@@ -3016,14 +3088,23 @@
       "Modified": [
         "Upravené"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Presunúť ${ count } položku do ${ vaultName }",
+        "Presunúť ${ count } položky do ${ vaultName }",
+        "Presunúť ${ count } položiek do ${ vaultName }",
+        "Presunúť ${ count } položiek do ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Presunúť ${ trashedItemsCount } položku do koša?",
+        "Presunúť ${ trashedItemsCount } položky do koša?",
+        "Presunúť ${ trashedItemsCount } položiek do koša?",
+        "Presunúť ${ trashedItemsCount } položiek do koša?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Presunúť všetky položky do trezora \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Presunúť položku do trezora \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Presunúť položky do trezora \"${ vaultName }\"?"
+      "Move item to \"${ vaultName }\"": [
+        "Presunúť položku do trezora \"${ vaultName }\""
       ],
       "No items selected": [
         "Žiadne vybrané položky"
@@ -3039,6 +3120,9 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "Pending access confirmation": [
+        "Čaká sa na potvrdenie prístupu"
       ],
       "Pending access to the shared data": [
         "Čaká sa na prístup k zdieľaným údajom"
@@ -3142,8 +3226,8 @@
       "Welcome to your new password manager!": [
         "Vitajte vo svojom novom správcovi hesiel!"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Prečo ${ PASS_APP_NAME }?"
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Vaše predplatné ${ planName } skončí dňa ${ endDate }"
       ],
       "Your vault is empty": [
         "Váš trezor je prázdny"
@@ -3151,11 +3235,11 @@
       "Your welcome gift": [
         "Váš darček na privítanie"
       ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "Chystáte sa natrvalo vymazať ${ aliasCount } alias",
-        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy",
-        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov",
-        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov"
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Chystáte sa natrvalo vymazať ${ aliasCount } alias.",
+        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
+        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
+        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
       ]
     },
     "Validation": {
@@ -3191,6 +3275,9 @@
       "A description of the problem is required": [
         "Vyžaduje sa opis problému"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Aliasy v koši budú naďalej preposielať emaily."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Všetky položky v koši budú natrvalo odstránené. Túto akciu nie je možné vrátiť späť."
       ],
@@ -3199,6 +3286,21 @@
       ],
       "An error occurred while resuming your session": [
         "Pri obnovení vašej relácie došlo k chybe"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Skutočne chcete presunúť ${ trashedItemsCount } položku do koša?",
+        "Skutočne chcete presunúť ${ trashedItemsCount } položky do koša?",
+        "Skutočne chcete presunúť ${ trashedItemsCount } položiek do koša?",
+        "Skutočne chcete presunúť ${ trashedItemsCount } položiek do koša?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položku?",
+        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položky?",
+        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položiek?",
+        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položiek?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Naozaj chcete narvalo odstrániť túto položku?"
       ],
       "At least one email address is required": [
         "Vyžaduje sa aspoň jedna emailová adresa"
@@ -3277,9 +3379,6 @@
       ],
       "No results": [
         "Žiadne výsledky"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Po synchronizácii sa odstránením aliasov v ${ PASS_SHORT_APP_NAME } odstránia aj v SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povolené sú len alfanumerické znaky, bodky, pomlčky a podčiarkovníky"
