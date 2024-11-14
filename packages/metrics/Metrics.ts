@@ -77,6 +77,12 @@ import type { WebCoreSignupRecoveryStepSetRecoveryMethodTotal } from './types/we
 import type { WebCoreSignupReferralStepPlanSelectionTotal } from './types/web_core_signup_referralStep_planSelection_total_v2.schema';
 import type { WebCoreSignupUpsellStepPlanSelectionTotal } from './types/web_core_signup_upsellStep_planSelection_total_v2.schema';
 import type { WebCoreSignupVerificationStepVerificationTotal } from './types/web_core_signup_verificationStep_verification_total_v2.schema';
+import type { WebCoreSingleSignupCompleteTotal } from './types/web_core_single_signup_complete_total_v1.schema';
+import type { WebCoreSingleSignupFetchDependenciesTotal } from './types/web_core_single_signup_fetchDependencies_total_v1.schema';
+import type { WebCoreSingleSignupPageLoadTotal } from './types/web_core_single_signup_pageLoad_total_v1.schema';
+import type { WebCoreSingleSignupSetupTotal } from './types/web_core_single_signup_setup_total_v1.schema';
+import type { WebCoreSingleSignupSignedInSessionTotal } from './types/web_core_single_signup_signedInSession_total_v1.schema';
+import type { WebCoreSingleSignupSwitchSessionTotal } from './types/web_core_single_signup_switchSession_total_v1.schema';
 import type { WebCoreSSORemoveDomainModalLoadTotal } from './types/web_core_sso_remove_domain_modal_load_total_v1.schema';
 import type { WebCoreSSORemoveDomainTotal } from './types/web_core_sso_remove_domain_total_v1.schema';
 import type { WebCoreSSOSamlInfoSectionLoadTotal } from './types/web_core_sso_saml_info_page_load_total_v1.schema';
@@ -260,6 +266,18 @@ class Metrics extends MetricsBase {
     public core_signup_upsellStep_planSelection_total: Counter<WebCoreSignupUpsellStepPlanSelectionTotal>;
 
     public core_signup_verificationStep_verification_total: Counter<WebCoreSignupVerificationStepVerificationTotal>;
+
+    public core_single_signup_complete_total: Counter<WebCoreSingleSignupCompleteTotal>;
+
+    public core_single_signup_fetchDependencies_total: Counter<WebCoreSingleSignupFetchDependenciesTotal>;
+
+    public core_single_signup_pageLoad_total: Counter<WebCoreSingleSignupPageLoadTotal>;
+
+    public core_single_signup_setup_total: Counter<WebCoreSingleSignupSetupTotal>;
+
+    public core_single_signup_signedInSession_total: Counter<WebCoreSingleSignupSignedInSessionTotal>;
+
+    public core_single_signup_switchSession_total: Counter<WebCoreSingleSignupSwitchSessionTotal>;
 
     public core_sso_remove_domain_modal_load_total: Counter<WebCoreSSORemoveDomainModalLoadTotal>;
 
@@ -719,6 +737,36 @@ class Metrics extends MetricsBase {
                 { name: 'web_core_signup_verificationStep_verification_total', version: 2 },
                 this.requestService
             );
+
+        this.core_single_signup_complete_total = new Counter<WebCoreSingleSignupCompleteTotal>(
+            { name: 'web_core_single_signup_complete_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_single_signup_fetchDependencies_total = new Counter<WebCoreSingleSignupFetchDependenciesTotal>(
+            { name: 'web_core_single_signup_fetchDependencies_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_single_signup_pageLoad_total = new Counter<WebCoreSingleSignupPageLoadTotal>(
+            { name: 'web_core_single_signup_pageLoad_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_single_signup_setup_total = new Counter<WebCoreSingleSignupSetupTotal>(
+            { name: 'web_core_single_signup_setup_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_single_signup_signedInSession_total = new Counter<WebCoreSingleSignupSignedInSessionTotal>(
+            { name: 'web_core_single_signup_signedInSession_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_single_signup_switchSession_total = new Counter<WebCoreSingleSignupSwitchSessionTotal>(
+            { name: 'web_core_single_signup_switchSession_total', version: 1 },
+            this.requestService
+        );
 
         this.core_sso_remove_domain_modal_load_total = new Counter<WebCoreSSORemoveDomainModalLoadTotal>(
             { name: 'web_core_sso_remove_domain_modal_load_total', version: 1 },
