@@ -106,6 +106,9 @@
       "Confirm access": [
         "Επιβεβαιώστε την πρόσβαση"
       ],
+      "Confirm all": [
+        "Επιβεβαίωση όλων"
+      ],
       "Continue": [
         "Συνέχεια"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Δημιουργία ταυτότητας"
+      ],
+      "Create item": [
+        "Δημιουργία στοιχείου"
       ],
       "Create login": [
         "Δημιουργία σύνδεσης"
@@ -394,6 +400,9 @@
       "Previous": [
         "Προηγούμενο"
       ],
+      "Reactivate now": [
+        "Επανενεργοποίηση τώρα"
+      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
@@ -471,6 +480,9 @@
       ],
       "See members": [
         "Προβολή μελών"
+      ],
+      "Select": [
+        "Επιλέξτε"
       ],
       "Send invite": [
         "Αποστολή πρόσκλησης"
@@ -567,6 +579,9 @@
       "Upgrade now to share with more people": [
         "Κάντε αναβάθμιση τώρα για κοινή χρήση με περισσότερα άτομα"
       ],
+      "Use ${ label } theme": [
+        "Χρήση ${ label } θέματος"
+      ],
       "Verify": [
         "Επαλήθευση"
       ],
@@ -639,9 +654,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Πληρώστε μία φορά και αποκτήστε ${ lifetimeAccessJSX } στην Pass Plus. Μόνο ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Αποθηκεύστε έως ${ discountJSX } στην οικογένεια Pass. Μόνο ${ relativePrice }/μήνα."
@@ -1563,14 +1575,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Περισσότερο από έναν διαχειριστή κωδικών πρόσβασης, το ${ PASS_APP_NAME } προστατεύει τον κωδικό πρόσβασής σας και την προσωπική σας διεύθυνση email μέσω ψευδωνύμων email. Με την ίδια τεχνολογία πίσω από το ${ MAIL_APP_NAME }, τα δεδομένα σας είναι κρυπτογραφημένα από άκρο σε άκρο και είναι προσβάσιμα μόνο από εσάς."
       ],
+      "Move ${ count } item": [
+        "Μετακίνηση ${ count } στοιχείου",
+        "Μετακίνηση ${ count } στοιχείων"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του και όλους τους ασφαλείς συνδέσμους."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του και όλους τους ασφαλείς συνδέσμους.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους και όλους τους ασφαλείς συνδέσμους."
       ],
       "Moving an item to another vault will erase its history.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -1719,9 +1737,6 @@
       ],
       "Press Enter to copy": [
         "Πατήστε Enter για αντιγραφή"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Το απόρρητο είναι μια μεγάλη ανησυχία για εμάς. Μάθετε γιατί το ${ PASS_APP_NAME } είναι διαφορετικό."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
@@ -2038,6 +2053,9 @@
         "${ minutes } λεπτό",
         "${ minutes } λεπτά"
       ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "Το ${ PASS_APP_NAME } αναγνωρίζει τους ιστότοπους και τις εφαρμογές που χρησιμοποιείτε και συμπληρώνει αυτόματα φόρμες με τα διαπιστευτήριά σας για εσάς σε οποιοδήποτε πρόγραμμα περιήγησης ή συσκευή. Δε χρειάζεται αντιγραφή και επικόλληση."
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } έκδοση"
       ],
@@ -2059,6 +2077,9 @@
       ],
       "15 minutes": [
         "15 λεπτά"
+      ],
+      "15 seconds": [
+        "15 δευτερόλεπτα"
       ],
       "2 minutes": [
         "2 λεπτά"
@@ -2132,6 +2153,9 @@
       "Auto-lock after": [
         "Αυτόματο-κλείδωμα μετά"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Εκτός από την αποθήκευση των συνδέσεών σας, το ${ PASS_APP_NAME } προστατεύει την ταυτότητά σας με μια ενσωματωμένη λειτουργία ψευδωνύμου διεύθυνσης ηλεκτρονικού ταχυδρομείου. Κάθε φορά που εγγράφεστε για έναν νέο ηλεκτρονικό λογαριασμό, το ${ PASS_APP_NAME } μπορεί να δημιουργήσει αυτόματα ένα ψευδώνυμο για να διατηρήσει την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου σας προστατευμένη. "
+      ],
       "Beta Access": [
         "Πρόσβαση Beta"
       ],
@@ -2158,6 +2182,9 @@
       ],
       "Cards": [
         "Κάρτες"
+      ],
+      "Choose your preferred look and feel.": [
+        "Επιλέξτε την εμφάνιση και την αίσθηση που προτιμάτε."
       ],
       "City": [
         "Πόλη"
@@ -2216,6 +2243,9 @@
       "Custom text field": [
         "Προσαρμοσμένο πεδίο κειμένου"
       ],
+      "Dark Web Monitoring": [
+        "Dark Web Monitoring"
+      ],
       "Date": [
         "Ημερομηνία"
       ],
@@ -2233,6 +2263,9 @@
       ],
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
+      ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Μοιραστείτε εύκολα ευαίσθητες πληροφορίες με οποιονδήποτε, ακόμα και αν δε χρησιμοποιεί ${ PASS_APP_NAME }. Μπορείτε να κάνετε κοινή χρήση ενός κωδικού πρόσβασης, μιας σημείωσης ή μιας πιστωτικής κάρτας ή πολλών στοιχείων στον ίδιο φάκελο."
       ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -2296,6 +2329,9 @@
       ],
       "Free forever": [
         "Δωρεάν για πάντα"
+      ],
+      "Free password manager with identity protection": [
+        "Δωρεάν διαχειριστής κωδικών πρόσβασης με προστασία ταυτότητας"
       ],
       "Full Name": [
         "Ονοματεπώνυμο"
@@ -2369,6 +2405,9 @@
       "Install and continue": [
         "Εγκατάσταση και συνέχεια"
       ],
+      "Integrated 2FA authenticator": [
+        "Ενσωματωμένος ελεγκτής 2FA"
+      ],
       "Invitations": [
         "Προσκλήσεις"
       ],
@@ -2432,6 +2471,9 @@
       "Make all viewers": [
         "Κάντε τους όλους θεατές"
       ],
+      "Make it your own.": [
+        "Κάντε το δικό σας."
+      ],
       "max views reached": [
         "μέγιστος αριθμός προβολών που επιτεύχθηκε"
       ],
@@ -2458,6 +2500,9 @@
       ],
       "Need help?": [
         "Χρειάζεστε βοήθεια;"
+      ],
+      "Never": [
+        "Ποτέ"
       ],
       "New vault": [
         "Νέα κρύπτη"
@@ -2498,6 +2543,9 @@
       "Passkey": [
         "Κλειδί πρόσβασης"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Τα κλειδιά πρόσβασης είναι μια εύκολη και ασφαλής εναλλακτική λύση στους παραδοσιακούς κωδικούς πρόσβασης που αποτρέπουν επιθέσεις ηλεκτρονικού ψαρέματος (phishing) και κάνουν την εμπειρία σας στο διαδίκτυο πιο ομαλή. Το ${ PASS_APP_NAME } υποστηρίζει κλειδιά πρόσβασης σε όλες τις πλατφόρμες."
+      ],
       "Passphrase": [
         "Συνθηματικό"
       ],
@@ -2518,6 +2566,9 @@
       ],
       "Personal website": [
         "Προσωπικός ιστότοπος"
+      ],
+      "Personalize": [
+        "Προσωποποιήστε"
       ],
       "PGP-encrypted JSON (recommended)": [
         "JSON με κρυπτογράφηση PGP (συνιστάται)"
@@ -2540,6 +2591,9 @@
       "Rate us": [
         "Βαθμολογήστε μας"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Λάβετε άμεσες ειδοποιήσεις εάν τα προσωπικά σας στοιχεία διαρρεύσουν σε παραβίαση δεδομένων τρίτου μέρους. Μπορείτε να παρακολουθείτε πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου ή το δικό σας όνομα τομέα."
+      ],
       "Recent": [
         "Πρόσφατα"
       ],
@@ -2557,6 +2611,15 @@
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
+      ],
+      "Secure password sharing": [
+        "Ασφαλής κοινή χρήση κωδικού πρόσβασης"
+      ],
+      "Securely log in with passkeys": [
+        "Ασφαλής σύνδεση με κλειδιά πρόσβασης"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Αποθηκεύστε, μοιραστείτε και συνδεθείτε αυτόματα με ασφάλεια τους λογαριασμούς σας με ${ PASS_APP_NAME }, χρησιμοποιώντας κρυπτογράφηση από άκρο σε άκρο που εμπιστεύονται εκατομμύρια"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Αποθηκεύστε, μοιραστείτε και συνδεθείτε αυτόματα με ασφάλεια τους λογαριασμούς σας με ${ PASS_APP_NAME }, χρησιμοποιώντας κρυπτογράφηση από άκρο σε άκρο που εμπιστεύονται εκατομμύρια."
@@ -2576,6 +2639,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Επιλέξτε την κρύπτη στην οποία θα εισαχθούν τα ψευδώνυμα SimpleLogin"
       ],
+      "Select theme": [
+        "Επιλογή θέματος"
+      ],
       "Select your password manager": [
         "Επιλέξτε τον διαχειριστή κωδικών πρόσβασης"
       ],
@@ -2593,6 +2659,9 @@
       ],
       "Show website favicons": [
         "Εμφάνιση favicons ιστότοπου"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Συνδεθείτε πιο γρήγορα με το ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Α.Φ.Μ."
@@ -2640,6 +2709,9 @@
       "The URL has been copied to the clipboard": [
         "Αυτός το URL αντιγράφτηκε στο πρόχειρο"
       ],
+      "Theme": [
+        "Θέμα"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Αυτό το στοιχείο θα παραμείνει προσβάσιμο μέχρι τις ${ remaining }"
       ],
@@ -2660,6 +2732,9 @@
       ],
       "Trash": [
         "Διαγραμμένα"
+      ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Ο έλεγχος ταυτότητας δύο παραγόντων (2FA) είναι ένας από τους καλύτερους τρόπους προστασίας των λογαριασμών σας στο διαδίκτυο. Το ${ PASS_APP_NAME } διευκολύνει το 2FA με έναν ενσωματωμένο έλεγχο ταυτότητας που αποθηκεύει τους κωδικούς 2FA και τους εμφανίζει και τους συμπληρώνει αυτόματα."
       ],
       "Type": [
         "Τύπος"
@@ -2742,6 +2817,9 @@
       "You can choose between PIN code, biometrics, or your account password to unlock.": [
         "Μπορείτε να επιλέξετε μεταξύ κωδικού PIN, βιομετρικών στοιχείων ή κωδικού πρόσβασης του λογαριασμού σας για ξεκλείδωμα."
       ],
+      "Your passwords. Everywhere.": [
+        "Οι κωδικοί πρόσβασής σας. Παντού."
+      ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
       ]
@@ -2778,8 +2856,8 @@
         "${ count } στοιχείο",
         "${ count } στοιχεία"
       ],
-      "You selected ${ semiboldText } in this vault": [
-        "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη"
+      "You selected ${ semiboldText } in this vault.": [
+        "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη."
       ]
     },
     "new_plans: feature": {
@@ -2952,6 +3030,9 @@
       "Sign-in rejected": [
         "Η σύνδεση απορρίφθηκε"
       ],
+      "Sign-in rejection failure": [
+        "Αποτυχία απόρριψης εισόδου"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Η σύνδεση ζητήθηκε σε άλλη συσκευή. Ήσασταν εσείς;"
       ],
@@ -2992,6 +3073,17 @@
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστη.",
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστες."
+      ]
+    },
+    "Theme": {
+      "Automatic": [
+        "Αυτόματο"
+      ],
+      "Dark": [
+        "Σκοτεινό"
+      ],
+      "Light": [
+        "Φωτεινό"
       ]
     },
     "Title": {
@@ -3048,6 +3140,9 @@
       ],
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
+      ],
+      "Delete this item?": [
+        "Διαγραφή αυτού του στοιχείου;"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Διαγραφή κρύπτης \"${ vaultName }\";"
@@ -3127,14 +3222,15 @@
       "Modified": [
         "Τροποποιήθηκε"
       ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχείο;",
+        "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Μετακίνηση όλων των στοιχείων στο \"${ vaultName }\";"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Μετακίνηση στοιχείου στο \"${ vaultName }\";"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Μετακίνηση στοιχείων στο \"${ vaultName }\";"
+      "Move item to \"${ vaultName }\"": [
+        "Μετακίνηση στοιχείου στο \"${ vaultName }\""
       ],
       "No excluded items": [
         "Δεν υπάρχουν εξαιρούμενα στοιχεία"
@@ -3174,6 +3270,10 @@
       ],
       "Pinned (${ items.length })": [
         "Καρφιτσώθηκαν (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδώνυμου.",
+        "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά των ψευδωνύμων."
       ],
       "Recommended actions": [
         "Συνιστώμενες ενέργειες"
@@ -3287,9 +3387,6 @@
       "What is the dark web?": [
         "Τι είναι ο σκοτεινός ιστός;"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Γιατί ${ PASS_APP_NAME };"
-      ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
       ],
@@ -3338,6 +3435,14 @@
       ],
       "An error occurred while exporting your data": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή των δεδομένων σας"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχείο στον κάδο απορριμμάτων;",
+        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχεία στον κάδο απορριμμάτων;"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχείο;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχεία;"
       ],
       "At least one email address is required": [
         "Απαιτείται τουλάχιστον μία διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -3429,9 +3534,6 @@
       ],
       "Offline": [
         "Εκτός σύνδεσης"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Μόλις συγχρονιστούν, η διαγραφή ψευδωνύμων στο ${ PASS_SHORT_APP_NAME } θα τα διαγράψει επίσης στο SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"

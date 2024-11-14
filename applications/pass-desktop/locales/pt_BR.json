@@ -106,6 +106,9 @@
       "Confirm access": [
         "Confirmar acesso"
       ],
+      "Confirm all": [
+        "Confirmar todos"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Criar identidade"
+      ],
+      "Create item": [
+        "Criar item"
       ],
       "Create login": [
         "Criar login"
@@ -391,6 +397,9 @@
       "Previous": [
         "Anterior"
       ],
+      "Reactivate now": [
+        "Reativar agora"
+      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
@@ -468,6 +477,9 @@
       ],
       "See members": [
         "Ver membros"
+      ],
+      "Select": [
+        "Selecionar"
       ],
       "Send invite": [
         "Enviar convite"
@@ -560,6 +572,9 @@
       "Upgrade now to share with more people": [
         "Faça upgrade agora para compartilhar com mais pessoas"
       ],
+      "Use ${ label } theme": [
+        "Usar o tema ${ label }"
+      ],
       "Verify": [
         "Verificar"
       ],
@@ -632,9 +647,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Pague uma vez e obtenha o ${ lifetimeAccessJSX } para Pass Plus. Apenas por ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Economize até ${ discountJSX } no Pass Family. Apenas ${ relativePrice }/mês."
@@ -1559,12 +1571,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Movendo um item para outro cofre apagará seu histórico e todos os links seguros."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Movendo um item para outro cofre apagará seu histórico."
-      ],
       "Moving items": [
         "Movendo itens"
       ],
@@ -1706,9 +1712,6 @@
       ],
       "Press Enter to copy": [
         "Pressione Enter para copiar"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "A privacidade é uma grande preocupação para nós. Saiba por que o ${ PASS_APP_NAME } é diferente."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
@@ -2042,6 +2045,9 @@
       ],
       "15 minutes": [
         "15 minutos"
+      ],
+      "15 seconds": [
+        "15 segundos"
       ],
       "2 minutes": [
         "2 minutos"
@@ -2454,6 +2460,9 @@
       "Need help?": [
         "Precisa de ajuda?"
       ],
+      "Never": [
+        "Nunca"
+      ],
       "New vault": [
         "Novo cofre"
       ],
@@ -2647,6 +2656,9 @@
       "The URL has been copied to the clipboard": [
         "O link foi copiado para a área de transferência"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Este item permanecerá acessível até ${ remaining }"
       ],
@@ -2784,9 +2796,6 @@
       "${ count } item": [
         "${ count } item",
         "${ count } itens"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Você selecionou ${ semiboldText } neste cofre"
       ]
     },
     "new_plans: feature": {
@@ -3001,6 +3010,17 @@
         "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automático"
+      ],
+      "Dark": [
+        "Escuro"
+      ],
+      "Light": [
+        "Claro"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Endereços da ${ BRAND_NAME }"
@@ -3055,6 +3075,9 @@
       ],
       "Dark Web Monitoring": [
         "Monitoramento da Dark Web"
+      ],
+      "Delete this item?": [
+        "Excluir este item?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Excluir cofre \"${ vaultName }\"?"
@@ -3137,11 +3160,8 @@
       "Move all items to \"${ vaultName }\"?": [
         "Mover todos os itens para \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Mover item para \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Mover itens para \"${ vaultName }\"?"
+      "Move item to \"${ vaultName }\"": [
+        "Mover item para \"${ vaultName }\""
       ],
       "No excluded items": [
         "Sem itens excluídos"
@@ -3293,9 +3313,6 @@
       ],
       "What is the dark web?": [
         "O que é a dark web?"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Por que escolher o ${ PASS_APP_NAME }?"
       ],
       "Your exposed information": [
         "Sua informação exposta"
