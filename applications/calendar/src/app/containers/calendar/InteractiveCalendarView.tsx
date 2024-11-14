@@ -905,7 +905,7 @@ const InteractiveCalendarView = ({
                 if (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP) {
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
-                        targetEventData: { uniqueId: TMP_UNIQUE_ID, idx, type },
+                        targetEventData: { uniqueId: newTemporaryEvent.uniqueId, idx, type },
                     });
                 }
             };

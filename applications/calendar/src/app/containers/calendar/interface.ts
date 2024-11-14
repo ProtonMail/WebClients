@@ -97,8 +97,8 @@ export interface TargetMoreData {
 }
 
 export interface InteractiveState {
-    temporaryEvent?: CalendarViewEventTemporaryEvent;
-    targetEventData?: TargetEventData;
+    temporaryEvent?: CalendarViewEventTemporaryEvent; // Temporary event displayed in the interface, not saved yet
+    targetEventData?: TargetEventData; // Data of existing event selected
     targetMoreData?: TargetMoreData;
     searchData?: CalendarViewEvent;
 }
