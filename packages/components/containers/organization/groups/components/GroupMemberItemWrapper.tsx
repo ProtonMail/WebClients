@@ -2,14 +2,19 @@ import type { ReactNode } from 'react';
 
 import { Avatar } from '@proton/atoms';
 import { getInitials } from '@proton/shared/lib/helpers/string';
+import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
+
+import UserIsExternalIcon from '../../UserIsExternalIcon';
 
 interface Props {
     memberEmail: string;
     memberName: string;
+    groupMemberType: GROUP_MEMBER_TYPE;
     children?: ReactNode;
 }
 
-export const GroupMemberItemWrapper = ({ memberEmail, memberName, children }: Props) => {
+export const GroupMemberItemWrapper = ({ memberEmail, memberName, groupMemberType, children }: Props) => {
+    const mailE2EEDisabled = groupMemberType !== GROUP_MEMBER_TYPE.INTERNAL;
     return (
         <>
             <div className="flex gap-3 items-center">
@@ -26,6 +31,7 @@ export const GroupMemberItemWrapper = ({ memberEmail, memberName, children }: Pr
                         </span>
                     )}
                 </span>
+                {mailE2EEDisabled && <UserIsExternalIcon groupMemberType={groupMemberType} />}
                 {children}
             </div>
         </>

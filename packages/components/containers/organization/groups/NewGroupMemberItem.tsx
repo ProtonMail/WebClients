@@ -14,11 +14,11 @@ interface Props {
 }
 
 export const NewGroupMemberItem = ({ member, handleRemoveNewMember, submitting }: Props) => {
-    const { Name, Address } = member;
+    const { Name, Address, GroupMemberType } = member;
 
     return (
         <>
-            <GroupMemberItemWrapper memberEmail={Address} memberName={Name}>
+            <GroupMemberItemWrapper memberEmail={Address} memberName={Name} groupMemberType={GroupMemberType}>
                 {!submitting ? (
                     <Button
                         shape="ghost"
