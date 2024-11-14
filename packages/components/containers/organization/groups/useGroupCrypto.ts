@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
+import { setNoEncryptFlag } from '@proton/account';
 import { useGetUser } from '@proton/account/user/hooks';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { setAddressFlags } from '@proton/components/hooks/helpers/addressFlagsHelper';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
+import { baseUseDispatch } from '@proton/react-redux-store';
 import { expectSignatureDisabled } from '@proton/shared/lib/helpers/address';
 import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
@@ -19,8 +20,8 @@ const useGroupCrypto = () => {
     const getUser = useGetUser();
     const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
     const { keyTransparencyVerify } = useKTVerifier(silentApi, getUser);
-    const { call } = useEventManager();
     const { getGroupAddressKey } = useGroupKeys();
+    const dispatch = baseUseDispatch();
 
     const signMemberEmail = async (memberEmail: string, groupKey: PrivateKeyReference) => {
         return CryptoProxy.signMessage({
@@ -54,8 +55,12 @@ const useGroupCrypto = () => {
             keyTransparencyVerify,
             api,
         });
-        await call();
-        createNotification({ text: c('Success notification').t`Preferences updated` });
+
+        if (flagState) {
+            createNotification({ text: c('Success notification').t`Group end-to-end email encryption disabled` });
+        } else {
+            createNotification({ text: c('Success notification').t`Group end-to-end email encryption enabled` });
+        }
     };
 
     const disableEncryption = async (
@@ -63,6 +68,12 @@ const useGroupCrypto = () => {
         forwarderKey: DecryptedAddressKey | undefined = undefined
     ) => {
         await setDisableE2EEFlagState(true, forwarderAddress, forwarderKey);
+        dispatch(
+            setNoEncryptFlag({
+                addressID: forwarderAddress.ID,
+                noEncryptFlag: true,
+            })
+        );
     };
 
     const enableEncryption = async (
@@ -70,6 +81,12 @@ const useGroupCrypto = () => {
         forwarderKey: DecryptedAddressKey | undefined = undefined
     ) => {
         await setDisableE2EEFlagState(false, forwarderAddress, forwarderKey);
+        dispatch(
+            setNoEncryptFlag({
+                addressID: forwarderAddress.ID,
+                noEncryptFlag: false,
+            })
+        );
     };
 
     return {

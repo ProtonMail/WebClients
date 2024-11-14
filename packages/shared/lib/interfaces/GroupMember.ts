@@ -9,6 +9,7 @@ export enum GROUP_MEMBER_STATE {
 export enum GROUP_MEMBER_TYPE {
     INTERNAL = 0,
     EXTERNAL = 1,
+    INTERNAL_TYPE_EXTERNAL = 2,
 }
 
 export enum GROUP_MEMBER_PERMISSIONS {
