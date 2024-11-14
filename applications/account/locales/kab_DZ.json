@@ -44,11 +44,11 @@
       "Accept": [
         "Qbel"
       ],
-      "activate": [
-        "rmed"
-      ],
       "Activate": [
         "Rmed"
+      ],
+      "activate": [
+        "rmed"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
@@ -7660,11 +7660,6 @@
     "mailtrial2024: Action": {
       "Get the deal": [
         "Faṛes tagnit"
-      ]
-    },
-    "mailtrial2024: Info": {
-      "Get ${ planName } for ${ price }": [
-        "Awi ${ planName } i ${ price }"
       ]
     },
     "Maximum calendar links reached warning": {
