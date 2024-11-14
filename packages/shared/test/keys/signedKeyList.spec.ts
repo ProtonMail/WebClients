@@ -1,4 +1,4 @@
-import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
 import { getSignedKeyList } from '../../lib/keys';
@@ -243,6 +243,106 @@ describe('active keys', () => {
             {
                 ID: 'b',
                 primary: 0,
+                flags: 3,
+                privateKey: jasmine.any(Object),
+                publicKey: jasmine.any(Object),
+                fingerprint: jasmine.any(String),
+                sha256Fingerprints: jasmine.any(Array),
+            },
+            {
+                ID: 'c',
+                primary: 0,
+                flags: 3,
+                privateKey: jasmine.any(Object),
+                publicKey: jasmine.any(Object),
+                fingerprint: jasmine.any(String),
+                sha256Fingerprints: jasmine.any(Array),
+            },
+        ]);
+    });
+
+    it('should support two primary keys as long as they are v4 and v6', async () => {
+        const keyPassword = '123';
+        const userKey = await getUserKey('123', keyPassword, undefined, KEYGEN_CONFIGS[KEYGEN_TYPES.PQC]);
+        const addressKeysFull = await Promise.all([
+            getAddressKey('a', userKey.key.privateKey, 'a@a.com'),
+            getAddressKey('b', userKey.key.privateKey, 'a@a.com', undefined, KEYGEN_CONFIGS[KEYGEN_TYPES.PQC]),
+            getAddressKey('c', userKey.key.privateKey, 'a@a.com'),
+        ]);
+        const addressKeys = addressKeysFull.map(({ Key }) => Key);
+        const decryptedAddressKeys = addressKeysFull.map(({ key }) => key);
+        const address = { Email: 'a@a.com', Type: ADDRESS_TYPE.TYPE_ORIGINAL } as Address;
+
+        // guard against multiple primary keys with the same version (v4)
+        await expectAsync(
+            getSignedKeyList(
+                await Promise.all([
+                    getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', primary: 1, flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', primary: 1, flags: 3 }),
+                ]),
+                address,
+                async () => {}
+            )
+        ).toBeRejectedWithError(/Unexpected primary key versions/);
+
+        // guard against more than two primary keys
+        await expectAsync(
+            getSignedKeyList(
+                await Promise.all([
+                    getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', primary: 1, flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', primary: 1, flags: 3 }),
+                ]),
+                address,
+                async () => {}
+            )
+        ).toBeRejectedWithError(/Unexpected number of primary keys/);
+
+        // guard against standalone primary v6 key
+        await expectAsync(
+            getSignedKeyList(
+                await Promise.all([
+                    getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', flags: 3 }),
+                    getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 3 }),
+                ]),
+                address,
+                async () => {}
+            )
+        ).toBeRejectedWithError(/Unexpected primary key versions/);
+
+        // v4 and v6 primary address keys in this order are allowed
+        const signedKeyList = await getSignedKeyList(
+            await Promise.all([
+                getActiveKeyObject(addressKeysFull[0].key.privateKey, { ID: 'a', primary: 1, flags: 3 }),
+                getActiveKeyObject(addressKeysFull[1].key.privateKey, { ID: 'b', primary: 1, flags: 3 }),
+                getActiveKeyObject(addressKeysFull[2].key.privateKey, { ID: 'c', flags: 3 }),
+            ]),
+            address,
+            async () => {}
+        );
+
+        const signedKeys = JSON.parse(signedKeyList.Data);
+        expect(signedKeys.length).toEqual(3);
+        expect(signedKeys[0].Fingerprint).toEqual(addressKeysFull[0].key.privateKey.getFingerprint());
+        expect(signedKeys[1].Fingerprint).toEqual(addressKeysFull[1].key.privateKey.getFingerprint());
+        expect(signedKeys[2].Fingerprint).toEqual(addressKeysFull[2].key.privateKey.getFingerprint());
+
+        const activeKeys = await getActiveKeys(address, signedKeyList, addressKeys, decryptedAddressKeys);
+        expect(activeKeys).toEqual([
+            {
+                ID: 'a',
+                primary: 1,
+                flags: 3,
+                privateKey: jasmine.any(Object),
+                publicKey: jasmine.any(Object),
+                fingerprint: jasmine.any(String),
+                sha256Fingerprints: jasmine.any(Array),
+            },
+            {
+                ID: 'b',
+                primary: 1,
                 flags: 3,
                 privateKey: jasmine.any(Object),
                 publicKey: jasmine.any(Object),
