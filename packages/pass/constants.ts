@@ -122,4 +122,4 @@ export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
 export const RUNTIME_RELOAD_TIMEOUT = 2_000; /* ms */
 export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 
-export const PASS_DEFAULT_THEME = PassThemeOption.OS;
+export const PASS_DEFAULT_THEME = PassThemeOption.PassDark;
