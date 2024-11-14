@@ -468,6 +468,9 @@
       "Expand URL": [
         "Разгарнуць URL-адрас"
       ],
+      "Expand video conferencing widget": [
+        "Разгарнуць віджэт відэаканферэнцыі"
+      ],
       "Expiration time": [
         "Тэрмін дзеяння"
       ],
@@ -963,6 +966,9 @@
       "Remove this label": [
         "Выдаліць гэту метку"
       ],
+      "Remove zoom meeting": [
+        "Выдаліць сустрэчу Zoom"
+      ],
       "Replace": [
         "Замяніць"
       ],
@@ -1062,10 +1068,10 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Выбраць усе"
       ],
-      "Select All": [
+      "Select all": [
         "Выбраць усе"
       ],
       "Select all messages": [
@@ -1783,7 +1789,7 @@
     },
     "BF2024: info": {
       "Limited stock!": [
-        "Limited stock!"
+        "Абмежаваная колькасць тавараў!"
       ]
     },
     "BF2024: Offers": {
@@ -2297,6 +2303,9 @@
         "${ users } карыстальнікі",
         "${ users } карыстальнікаў",
         "${ users } карыстальнікі"
+      ],
+      "Total": [
+        "Агулам"
       ],
       "Total for ${ n } month": [
         "Усяго за ${ n } месяц",
@@ -5325,6 +5334,18 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } у Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } дзень",
+        "${ remainingDaysCount } дні",
+        "${ remainingDaysCount } дзён",
+        "${ remainingDaysCount } дзён"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Застаўся ${ remainingDaysCount } дзень",
+        "Засталося ${ remainingDaysCount } дні",
+        "Засталося ${ remainingDaysCount } дзён",
+        "Засталося ${ remainingDaysCount } дзён"
+      ],
       "account logins": [
         "даныя ўваходу ўліковага запісу"
       ],
@@ -5355,6 +5376,9 @@
       "Close": [
         "Закрыць"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Завяршыце гэты кантрольны спіс за ${ daysCount }, каб падвоіць сваё сховішча бясплатна."
+      ],
       "Congratulations, you completed all the steps!": [
         "Віншуем, вы выканалі ўсе крокі!"
       ],
@@ -5370,8 +5394,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "У нас настолькі надзейнае шыфраванне, што толькі вы і прызначаныя атрымальнікі змогуць прачытаць вашы лісты."
       ],
+      "Finish setup": [
+        "Завяршыць наладжванне"
+      ],
       "For your eyes only": [
         "Толькі для вашых вачэй"
+      ],
+      "Get more storage": [
+        "Атрымаць больш месца ў сховішчы"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Атрымаць мабільную праграму ${ MAIL_APP_NAME }"
@@ -5421,6 +5451,9 @@
       "Storage unlocked": [
         "Сховішча разблакіравана"
       ],
+      "Tasks to complete count": [
+        "Колькасць заданняў для выканання"
+      ],
       "This feature is currently unavailable": [
         "Гэта функцыя зараз недаступна"
       ],
@@ -5457,6 +5490,9 @@
       ],
       "Less details": [
         "Менш падрабязна"
+      ],
+      "Meeting host:": [
+        "Вузел сустрэчы:"
       ],
       "Meeting link:": [
         "Спасылка на сустрэчу:"
@@ -6043,6 +6079,12 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } забяспечвае просты спосаб стварэння запісаў уваходу на старонніх сайтах, якім вы не надта давяраеце і не хочаце раскрываць свой сапраўдны адрас электроннай пошты."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }. Кошт і дата падаўжэння вашай падпіскі ${ planTitle } застануцца нязменнымі."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
@@ -6774,7 +6816,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7900,6 +7945,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астача балансу вашай падпіскі будзе дададзена на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
@@ -9652,6 +9700,9 @@
       "Administration Panel": [
         "Панэль адміністратара"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Пашыраныя функцыі псеўданіма (на платформе SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Усе прадукты і функцыі ${ BRAND_NAME }"
       ],
@@ -10179,6 +10230,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтыфікацыі ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Карыстальніцкія дамены для псеўданімаў, дадатковыя паштовыя скрыні, магчымасць адпраўляць лісты з псеўданімаў і многае іншае"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Вылучаныя серверы з вылучанымі IP-адрасамі могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу"
       ],
@@ -10423,6 +10477,12 @@
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
+      "Meeting host copied to clipboard": [
+        "Вузел сустрэчы скапіяваны ў буфер абмену"
+      ],
+      "Meeting ID copied to clipboard": [
+        "Ідэнтыфікатар сустрэчы скапіяваны ў буфер абмену"
+      ],
       "Passcode copied to clipboard": [
         "Код доступу скапіяваны ў буфер абмену"
       ],
@@ -10582,6 +10642,9 @@
       "Protection from trackers": [
         "Абарона ад праграм сачэння"
       ],
+      "Replay introduction": [
+        "Паўтарыць уводзіны"
+      ],
       "Skip": [
         "Прапусціць"
       ],
@@ -10735,8 +10798,14 @@
         "${ n } уліковых запісаў карыстальніка",
         "${ n } уліковых запісаў карыстальніка"
       ],
+      "Activity log": [
+        "Журнал актыўнасці"
+      ],
       "Admin panel to manage users and subscription": [
         "Панэль адміністратара для кіравання карыстальнікамі і падпіскай"
+      ],
+      "Team policies": [
+        "Палітыка каманды"
       ]
     },
     "PassFamilyPlan2024": {
@@ -12163,6 +12232,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Падпіска будзе паніжана ў канцы перыяду аплаты."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Пажыццёвая"
       ]
     },
     "Subscription price": {
@@ -14526,8 +14600,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Далучыцца да сустрэчы ў Zoom"
+      ],
       "Meeting ID:": [
         "Ідэнт. сустрэчы:"
+      ],
+      "Passcode:": [
+        "Код доступу:"
       ]
     }
   }

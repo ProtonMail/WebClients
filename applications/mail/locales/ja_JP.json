@@ -27,6 +27,9 @@
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "あなたの情報が少なくとも1件のデータ漏洩で見つかりました。詳細を確認し、対策を講じるために${ DARK_WEB_MONITORING_NAME }をオンにしてください。${ link }"
       ]
     },
     "Action": {
@@ -1017,10 +1020,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
       ],
-      "Select all": [
+      "Select All": [
         "すべて選択"
       ],
-      "Select All": [
+      "Select all": [
         "すべて選択"
       ],
       "Select all messages": [
@@ -1832,6 +1835,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } を使って続行します。"
+      ],
+      "Continue using ${ planTitle }": [
+        "${ planTitle }を使い続ける"
+      ],
+      "Continue your subscription": [
+        "サブスクリプションを継続する"
       ]
     },
     "Calendar attachment tooltip": {
@@ -5972,9 +5981,6 @@
       "Initializing…": [
         "初期化中…"
       ],
-      "Insert image": [
-        "画像の挿入"
-      ],
       "Insert link": [
         "リンクを挿入"
       ],
@@ -8729,6 +8735,9 @@
       "Unlimited devices": [
         "無制限のデバイス"
       ],
+      "Unlimited devices and aliases": [
+        "無制限のデバイスとエイリアス"
+      ],
       "Unlimited filters": [
         "フィルター制限なし"
       ],
@@ -9772,6 +9781,9 @@
       "Create an alias": [
         "エイリアスを作成"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "フライでエイリアスを生成し、エイリアスとパスワードを簡単に管理します。"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -9984,9 +9996,19 @@
         "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset canceled": [
+        "パスワードリセットはキャンセルされました"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "パスワードリセットを取り消しますか？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "パスワードリセットのリクエストがキャンセルされました(${ user.Email })。このリクエストを行っていない場合は、${ changePasswordLink }をご確認ください。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -10193,6 +10215,11 @@
       ],
       "Support online privacy": [
         "オンラインプライバシーをサポート"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "このサブスクリプションは、キャンセルされるまで 2 年ごとに同じ料金で自動更新されます。"
       ]
     },
     "specialoffer: Link": {

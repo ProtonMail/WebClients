@@ -1057,10 +1057,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1752,6 +1752,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Facturat a ${ amount } una vegada"
+      ],
       "for ${ durationDeal }": [
         "durant ${ durationDeal }"
       ],
@@ -6437,7 +6440,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -7862,6 +7866,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
+      "/month": [
+        "/mes"
+      ],
       "Actions": [
         "Accions"
       ],
@@ -8519,6 +8526,9 @@
       "click here": [
         "feu clic aquí"
       ],
+      "contact us": [
+        "contacteu amb nosaltres"
+      ],
       "Create a calendar linked to an active email address.": [
         "Crear un calendari enllaçat a una adreça de correu electrònic activa."
       ],
@@ -9033,6 +9043,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Obtingueu ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Comenceu per ${ price }"
       ],
@@ -9135,9 +9148,6 @@
       "${ numberOfUsers } user": [
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
-      ],
-      "${ PASS_APP_NAME } lifetime": [
-        "Oferta de per vida de ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
@@ -10039,6 +10049,9 @@
       ],
       "Protection from trackers": [
         "Protecció contra els rastrejadors"
+      ],
+      "Replay introduction": [
+        "Veure de nou la introducció"
       ],
       "Skip": [
         "Omet"
