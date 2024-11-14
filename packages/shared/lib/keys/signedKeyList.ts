@@ -16,12 +16,13 @@ import type {
 } from '../interfaces';
 import type { SimpleMap } from '../interfaces/utils';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
+import { getPrimaryAddressKeysForSigning } from './getPrimaryKey';
 
-export const getSignedKeyListSignature = async (data: string, signingKey: PrivateKeyReference, date?: Date) => {
+export const getSignedKeyListSignature = async (data: string, signingKeys: PrivateKeyReference[], date?: Date) => {
     const signature = await CryptoProxy.signMessage({
         textData: data,
         stripTrailingSpaces: true,
-        signingKeys: [signingKey],
+        signingKeys,
         detached: true,
         context: KT_SKL_SIGNING_CONTEXT,
         date,
@@ -60,8 +61,8 @@ export const getSignedKeyListWithDeferredPublish = async (
         )
     ).filter(isTruthy);
     const data = JSON.stringify(transformedKeys);
-    const signingKey = keys[0]?.privateKey;
-    if (!signingKey) {
+    const signingKeys = getPrimaryAddressKeysForSigning(keys).map(({ privateKey }) => privateKey);
+    if (!signingKeys) {
         throw new Error('Missing primary signing key');
     }
 
@@ -70,7 +71,7 @@ export const getSignedKeyListWithDeferredPublish = async (
 
     const signedKeyList: SignedKeyList = {
         Data: data,
-        Signature: await getSignedKeyListSignature(data, signingKey),
+        Signature: await getSignedKeyListSignature(data, signingKeys),
     };
     const onSKLPublish = async () => {
         if (!getIsAddressDisabled(address)) {
