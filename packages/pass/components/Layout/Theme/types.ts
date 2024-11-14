@@ -24,8 +24,8 @@ export enum PassThemeOption {
     OS = 'OS',
 }
 
-export const desktopThemeToOption: Record<DesktopTheme, PassThemeOption> = {
-    dark: PassThemeOption.PassDark,
-    light: PassThemeOption.PassLight,
-    system: PassThemeOption.OS,
+export const themeOptionToDesktop: Record<PassThemeOption, DesktopTheme> = {
+    [PassThemeOption.PassDark]: 'dark',
+    [PassThemeOption.PassLight]: 'light',
+    [PassThemeOption.OS]: 'system',
 };
