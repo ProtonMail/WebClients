@@ -1308,6 +1308,9 @@
         "${ users } usuário",
         "${ users } usuários"
       ],
+      "Total": [
+        "Total"
+      ],
       "Total for ${ n } month": [
         "Total por ${ n } mês",
         "Total por ${ n } meses"
@@ -3561,6 +3564,9 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -5301,6 +5307,9 @@
       "Other": [
         "Outros"
       ],
+      "Product": [
+        "Produto"
+      ],
       "Refund": [
         "Reembolso"
       ],
@@ -6345,6 +6354,9 @@
       ],
       "Administration Panel": [
         "Painel de Administração"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Recursos avançados de alias (Com tecnologia do SimpleLogin)"
       ],
       "Advanced network security": [
         "Segurança de rede avançada"
@@ -7571,6 +7583,9 @@
       "${ n } user account": [
         "${ n } conta de usuário",
         "${ n } contas de usuário"
+      ],
+      "Activity log": [
+        "Registro de atividade"
       ],
       "Admin panel to manage users and subscription": [
         "Painel administrativo para gerenciar usuários e assinaturas"
@@ -9167,6 +9182,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "A assinatura será rebaixada ao final do ciclo de cobrança."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Acesso vitalício"
       ]
     },
     "Subscription price": {

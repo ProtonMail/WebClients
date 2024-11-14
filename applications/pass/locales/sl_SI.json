@@ -505,6 +505,9 @@
       "Upgrade now to share with more people": [
         "Nadgradite zdaj za skupno rabo z več ljudmi"
       ],
+      "Use ${ label } theme": [
+        "Uporabi temo ${ label }"
+      ],
       "Verify": [
         "Preveri"
       ],
@@ -548,9 +551,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Plačajte enkrat in pridobite ${ lifetimeAccessJSX } do Pass Plus. Le ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Prihranite do ${ discountJSX } na Pass Family. Le ${ relativePrice }/mesec."
@@ -1000,6 +1000,31 @@
         "Terabajtov"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Sistemsko privzeto"
+      ],
+      "Theme font": [
+        "Pisava teme"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Veliko"
+      ],
+      "Medium (recommended)": [
+        "Srednje (priporočeno)"
+      ],
+      "Small": [
+        "Majhno"
+      ],
+      "Very large": [
+        "Zelo veliko"
+      ],
+      "Very small": [
+        "Zelo majhno"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Predmet »${ payload.item.data.metadata.name }« je bil opuščen"
@@ -1438,9 +1463,6 @@
       ],
       "Press Enter to copy": [
         "Pritisnite Enter za kopiranje"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Zasebnost je za nas velika skrb. Preberite, zakaj je ${ PASS_APP_NAME } drugačna."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Račun varuje ${ PROTON_SENTINEL_LINK }, naš napredni zaščitni program."
@@ -2218,6 +2240,9 @@
       "Text": [
         "Besedilo"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "Title": [
         "Naslov"
       ],
@@ -2325,9 +2350,6 @@
         "${ count } predmeta",
         "${ count } predmeti",
         "${ count } predmetov"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "V tem trezorju ste izbrali ${ semiboldText }"
       ]
     },
     "new_plans: feature": {
@@ -2738,9 +2760,6 @@
       ],
       "What is the dark web?": [
         "Kaj je temni splet (Dark Web)?"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Zakaj ${ PASS_APP_NAME }?"
       ],
       "Your exposed information": [
         "Vaša razkrita informacija"

@@ -462,6 +462,9 @@
       "Expand URL": [
         "Expandir la URL"
       ],
+      "Expand video conferencing widget": [
+        "Expandir el widget de videoconferencia"
+      ],
       "Expiration time": [
         "Tiempo de expiración"
       ],
@@ -1057,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar todo"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar todo"
       ],
       "Select all messages": [
@@ -5294,6 +5297,9 @@
       "Close": [
         "Cerrar"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Completa esta lista de tareas en ${ daysCount } días para duplicar tu almacenamiento gratis."
+      ],
       "Congratulations, you completed all the steps!": [
         "¡Felicidades! Has terminado todos los pasos."
       ],
@@ -5921,6 +5927,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -6590,7 +6599,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7679,6 +7689,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
       ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Tu suscripción ${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de tu suscripción se añadirá a tu cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
       ],
@@ -8032,6 +8045,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
+      ],
+      "/month": [
+        "/mes"
       ],
       "Actions": [
         "Acciones"
@@ -8693,6 +8709,9 @@
       "click here": [
         "haz clic aquí"
       ],
+      "contact us": [
+        "contáctanos"
+      ],
       "Create a calendar linked to an active email address.": [
         "Crear un calendario vinculado a una dirección de correo electrónico activada."
       ],
@@ -8806,6 +8825,9 @@
       ],
       "Terms": [
         "Términos"
+      ],
+      "terms of service": [
+        "términos de servicio"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Este archivo ICS contiene más de un evento. Descárgalo e importa los eventos en ${ CALENDAR_APP_NAME }."
@@ -9207,6 +9229,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Pasar a ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Obtén ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Comienza por ${ price }"
       ],
@@ -9314,9 +9339,6 @@
         "Historial de ${ options } día de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
       ],
-      "${ PASS_APP_NAME } lifetime": [
-        "Oferta de por vida de ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email"
@@ -9372,6 +9394,9 @@
       "Administration Panel": [
         "Panel de administración"
       ],
+      "Advanced account protection": [
+        "Protección de cuentas avanzada"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Funcionalidades avanzadas de alias (potenciado por SimpleLogin)"
       ],
@@ -9401,6 +9426,9 @@
       ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
+      ],
+      "Breach alerts": [
+        "Alertas de vulneraciones"
       ],
       "Calendar sharing": [
         "Compartir calendario"
@@ -9886,6 +9914,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea hasta ${ n } direcciones de correo o alias que puedes asignar a tus familiares. Utilízalos para las identidades online, p. ej., JuanCompras@${ domain } para cuentas de compras."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Dominios personalizados para los alias, buzones adicionales, posibilidad de enviar correos desde alias y más"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
       ],
@@ -10293,6 +10324,9 @@
       "Protection from trackers": [
         "Protección contra rastreadores"
       ],
+      "Replay introduction": [
+        "Volver a ver la introducción"
+      ],
       "Skip": [
         "Omitir"
       ],
@@ -10542,6 +10576,9 @@
       ],
       "Please select your billing state first.": [
         "Selecciona primero tu estado de facturación"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Se renueva por ${ price } y cancela cuando quieras."
       ],
       "Select billing country to pay": [
         "Selecciona el país de facturación para pagar"
@@ -12652,6 +12689,9 @@
       ],
       "A filter with this name already exists": [
         "Ya existe un filtro con este nombre."
+      ],
+      "Account locked": [
+        "Se ha bloqueado la cuenta."
       ],
       "Account recovery": [
         "Recuperación de cuenta"

@@ -89,6 +89,9 @@
       "Confirm access": [
         "Επιβεβαιώστε την πρόσβαση"
       ],
+      "Confirm all": [
+        "Επιβεβαίωση όλων"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Συνδέστε τον ${ BRAND_NAME } Λογαριασμό σας"
       ],
@@ -133,6 +136,9 @@
       ],
       "Create identity": [
         "Δημιουργία ταυτότητας"
+      ],
+      "Create item": [
+        "Δημιουργία στοιχείου"
       ],
       "Create login": [
         "Δημιουργία σύνδεσης"
@@ -386,6 +392,9 @@
       "Please retry": [
         "Παρακαλούμε προσπαθήστε ξανά"
       ],
+      "Reactivate now": [
+        "Επανενεργοποίηση τώρα"
+      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
@@ -460,6 +469,9 @@
       ],
       "See members": [
         "Προβολή μελών"
+      ],
+      "Select": [
+        "Επιλέξτε"
       ],
       "Send invite": [
         "Αποστολή πρόσκλησης"
@@ -547,6 +559,9 @@
       "Update": [
         "Ενημέρωση"
       ],
+      "Update this login": [
+        "Ενημέρωση αυτής της σύνδεσης"
+      ],
       "Update vault": [
         "Ενημέρωση κρύπτης"
       ],
@@ -561,6 +576,9 @@
       ],
       "Upgrade now to share with more people": [
         "Κάντε αναβάθμιση τώρα για κοινή χρήση με περισσότερα άτομα"
+      ],
+      "Use ${ label } theme": [
+        "Χρήση ${ label } θέματος"
       ],
       "Via secure link": [
         "Μέσω ασφαλούς συνδέσμου"
@@ -608,9 +626,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Πληρώστε μία φορά και αποκτήστε ${ lifetimeAccessJSX } στην Pass Plus. Μόνο ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Αποθηκεύστε έως ${ discountJSX } στην οικογένεια Pass. Μόνο ${ relativePrice }/μήνα."
@@ -1049,6 +1064,31 @@
         "Terabytes"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Προεπιλογή συστήματος"
+      ],
+      "Theme font": [
+        "Γραμματοσειρά εμφάνισης"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Μεγάλο"
+      ],
+      "Medium (recommended)": [
+        "Μεσαίο (συνιστάται)"
+      ],
+      "Small": [
+        "Μικρό"
+      ],
+      "Very large": [
+        "Πολύ μεγάλο"
+      ],
+      "Very small": [
+        "Πολύ μικρό"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Το στοιχείο \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
@@ -1469,14 +1509,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Περισσότερο από έναν διαχειριστή κωδικών πρόσβασης, το ${ PASS_APP_NAME } προστατεύει τον κωδικό πρόσβασής σας και την προσωπική σας διεύθυνση email μέσω ψευδωνύμων email. Με την ίδια τεχνολογία πίσω από το ${ MAIL_APP_NAME }, τα δεδομένα σας είναι κρυπτογραφημένα από άκρο σε άκρο και είναι προσβάσιμα μόνο από εσάς."
       ],
+      "Move ${ count } item": [
+        "Μετακίνηση ${ count } στοιχείου",
+        "Μετακίνηση ${ count } στοιχείων"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του και όλους τους ασφαλείς συνδέσμους."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του και όλους τους ασφαλείς συνδέσμους.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους και όλους τους ασφαλείς συνδέσμους."
       ],
       "Moving an item to another vault will erase its history.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει το ιστορικό του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει το ιστορικό τους."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -1620,9 +1666,6 @@
       "Press Enter to copy": [
         "Πατήστε Enter για αντιγραφή"
       ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Το απόρρητο είναι μια μεγάλη ανησυχία για εμάς. Μάθετε γιατί το ${ PASS_APP_NAME } είναι διαφορετικό."
-      ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
       ],
@@ -1664,9 +1707,6 @@
       ],
       "Secure links": [
         "Ασφαλής σύνδεσμοι"
-      ],
-      "Select an existing login item to update.": [
-        "Επιλέξτε ένα υπάρχον στοιχείο σύνδεσης για ενημέρωση."
       ],
       "Select an existing login or create a new one.": [
         "Επιλέξτε μια υπάρχουσα σύνδεση ή δημιουργήστε μια νέα."
@@ -2548,6 +2588,9 @@
       "The URL has been copied to the clipboard": [
         "Αυτός το URL αντιγράφτηκε στο πρόχειρο"
       ],
+      "Theme": [
+        "Θέμα"
+      ],
       "Title": [
         "Τίτλος"
       ],
@@ -2656,8 +2699,8 @@
         "${ count } στοιχείο",
         "${ count } στοιχεία"
       ],
-      "You selected ${ semiboldText } in this vault": [
-        "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη"
+      "You selected ${ semiboldText } in this vault.": [
+        "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη."
       ]
     },
     "Onboarding": {
@@ -2802,6 +2845,9 @@
       "Sign-in rejected": [
         "Η σύνδεση απορρίφθηκε"
       ],
+      "Sign-in rejection failure": [
+        "Αποτυχία απόρριψης εισόδου"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Η σύνδεση ζητήθηκε σε άλλη συσκευή. Ήσασταν εσείς;"
       ],
@@ -2844,6 +2890,17 @@
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστες."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Αυτόματο"
+      ],
+      "Dark": [
+        "Σκοτεινό"
+      ],
+      "Light": [
+        "Φωτεινό"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Ρυθμίσεις ${ PASS_APP_NAME }"
@@ -2871,6 +2928,9 @@
       ],
       "Current version": [
         "Τρέχουσα έκδοση"
+      ],
+      "Delete this item?": [
+        "Διαγραφή αυτού του στοιχείου;"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Διαγραφή κρύπτης \"${ vaultName }\";"
@@ -2947,14 +3007,15 @@
       "Modified": [
         "Τροποποιήθηκε"
       ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχείο;",
+        "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Μετακίνηση όλων των στοιχείων στο \"${ vaultName }\";"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Μετακίνηση στοιχείου στο \"${ vaultName }\";"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Μετακίνηση στοιχείων στο \"${ vaultName }\";"
+      "Move item to \"${ vaultName }\"": [
+        "Μετακίνηση στοιχείου στο \"${ vaultName }\""
       ],
       "No items selected": [
         "Δεν επιλέχθηκαν αντικείμενα"
@@ -2982,6 +3043,10 @@
       ],
       "Pinned (${ items.length })": [
         "Καρφιτσώθηκαν (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδώνυμου.",
+        "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά των ψευδωνύμων."
       ],
       "Reject device?": [
         "Απόρριψη συσκευής;"
@@ -3067,9 +3132,6 @@
       "Welcome to your new password manager!": [
         "Καλώς ήρθατε στον νέο σας διαχειριστή κωδικών πρόσβασης!"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Γιατί ${ PASS_APP_NAME };"
-      ],
       "Your vault is empty": [
         "Η κρύπτη σας είναι άδεια"
       ],
@@ -3118,6 +3180,14 @@
       ],
       "An error occurred while resuming your session": [
         "Παρουσιάστηκε σφάλμα κατά τη συνέχιση της συνεδρίας σας"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχείο στον κάδο απορριμμάτων;",
+        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχεία στον κάδο απορριμμάτων;"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχείο;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχεία;"
       ],
       "At least one email address is required": [
         "Απαιτείται τουλάχιστον μία διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -3194,9 +3264,6 @@
       ],
       "No results": [
         "Δεν υπάρχουν αποτελέσματα"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Μόλις συγχρονιστούν, η διαγραφή ψευδωνύμων στο ${ PASS_SHORT_APP_NAME } θα τα διαγράψει επίσης στο SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"

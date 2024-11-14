@@ -545,6 +545,9 @@
       "Update": [
         "업데이트"
       ],
+      "Update this login": [
+        "이 로그인 업데이트"
+      ],
       "Update vault": [
         "금고 업데이트"
       ],
@@ -559,6 +562,9 @@
       ],
       "Upgrade now to share with more people": [
         "더 많은 사람들과 공유하려면 업그레이드"
+      ],
+      "Use ${ label } theme": [
+        "${ label } 테마 사용"
       ],
       "Via secure link": [
         "안전한 링크를 통해 공유"
@@ -606,9 +612,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "블랙 프라이데이"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "한 번 결제하고 Pass Plus ${ lifetimeAccessJSX }을 얻으세요. 단돈 ${ relativePrice } 입니다."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Pass Family로 최대 ${ discountJSX }을 절약하세요. 오직 ${ relativePrice }달 입니다."
@@ -1038,6 +1041,31 @@
         "테라바이트"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "시스템 기본값"
+      ],
+      "Theme font": [
+        "테마 폰트"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "크게"
+      ],
+      "Medium (recommended)": [
+        "중간 (권장)"
+      ],
+      "Small": [
+        "적게"
+      ],
+      "Very large": [
+        "매우 크게"
+      ],
+      "Very small": [
+        "매우 작게"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 항목이 무시되었습니다."
@@ -1453,12 +1481,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "타 금고로의 항목을 이동하면 기록 및 안전한 링크가 삭제됩니다."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "항목을 다른 금고로 이동하면 그 기록이 지워집니다."
-      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -1600,9 +1622,6 @@
       "Press Enter to copy": [
         "복사하기 위해 엔터 키를 누르세요"
       ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "프라이버시는 우리에게 큰 관심사입니다. 왜 ${ PASS_APP_NAME }가 다른지 알아보세요."
-      ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "향상된 계정 보안 프로그램인 ${ PROTON_SENTINEL_LINK }으로 보호되었습니다."
       ],
@@ -1644,9 +1663,6 @@
       ],
       "Secure links": [
         "안전한 링크"
-      ],
-      "Select an existing login item to update.": [
-        "업데이트할 기존의 로그인 항목을 선택하십시오."
       ],
       "Select an existing login or create a new one.": [
         "기존의 로그인을 선택하거나 새 로그인을 만드십시오."
@@ -2517,6 +2533,9 @@
       "The URL has been copied to the clipboard": [
         "URL이 클립보드로 복사되었습니다."
       ],
+      "Theme": [
+        "테마"
+      ],
       "Title": [
         "제목"
       ],
@@ -2623,9 +2642,6 @@
     "Message": {
       "${ count } item": [
         "${ count }개 항목"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "이 금고애서 ${ semiboldText }개 선택했습니다."
       ]
     },
     "Onboarding": {
@@ -2920,12 +2936,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "\"${ vaultName }\"(으)로 모든 항목을 이동할까요?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "\"${ vaultName }\"(으)로 항목을 이동할까요?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "\"${ vaultName }\"(으)로 항목을 이동할까요?"
-      ],
       "No items selected": [
         "선택된 항목 없음"
       ],
@@ -3040,17 +3050,11 @@
       "Welcome to your new password manager!": [
         "새로운 패스워드 관리자에 오신 것을 환영합니다!"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "왜 ${ PASS_APP_NAME }인가?"
-      ],
       "Your vault is empty": [
         "금고가 비어있음"
       ],
       "Your welcome gift": [
         "무료 체험을 즐겨보세요"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "${ aliasCount }개 별칭을 영구적으로 삭제하려고 합니다."
       ]
     },
     "Validation": {
@@ -3169,9 +3173,6 @@
       ],
       "No results": [
         "결과 없음"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "한 번 연동하면, ${ PASS_SHORT_APP_NAME }에서 별칭 삭제 시 SimpleLogin에서도 삭제됩니다."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."

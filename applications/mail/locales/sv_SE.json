@@ -1054,11 +1054,11 @@
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
       ],
-      "Select all": [
-        "Markera alla"
-      ],
       "Select All": [
         "Välj alla"
+      ],
+      "Select all": [
+        "Markera alla"
       ],
       "Select all messages": [
         "Markera alla meddelanden"
@@ -2254,6 +2254,9 @@
       "${ users } user": [
         "${ users } användare",
         "${ users } användare"
+      ],
+      "Total": [
+        "Totalt"
       ],
       "Total for ${ n } month": [
         "Total för ${ n } månad",
@@ -5202,6 +5205,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } på Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dag",
+        "${ remainingDaysCount } dagar"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } dag kvar",
+        "${ remainingDaysCount } dagar kvar"
+      ],
       "account logins": [
         "kontoinloggningar"
       ],
@@ -5232,6 +5243,9 @@
       "Close": [
         "Stäng"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Fyll i denna checklista inom ${ daysCount } för att dubbla ditt lagringsutrymme gratis."
+      ],
       "Congratulations, you completed all the steps!": [
         "Grattis, du har slutfört alla steg!"
       ],
@@ -5247,8 +5261,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Kryptering så stark att bara du och avsedda mottagare kan se dina e-postmeddelanden."
       ],
+      "Finish setup": [
+        "Slutför inställning"
+      ],
       "For your eyes only": [
         "Bara för dina ögon"
+      ],
+      "Get more storage": [
+        "Skaffa mer lagringsutrymme"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Skaffa mobilappen för ${ MAIL_APP_NAME }"
@@ -5334,6 +5354,9 @@
       ],
       "Less details": [
         "Mindre detaljer"
+      ],
+      "Meeting host:": [
+        "Mötesvärd:"
       ],
       "Meeting link:": [
         "Möteslänk:"
@@ -5853,6 +5876,9 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } tillhandahåller ett enkelt sätt att skapa inloggningar på opålitliga tredjepartswebbplatser där du inte vill avslöja din faktiska e-postadress."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
@@ -6519,7 +6545,8 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9286,6 +9313,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avancerade funktioner för alias (drivs av SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Alla ${ BRAND_NAME } produkter och funktioner"
       ],
@@ -9797,6 +9827,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Skapa upp till ${ n } e-postadresser/alias som du kan tilldela familjemedlemmar. Använd dem för onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Anpassade domäner för alias, ytterligare brevlådor, möjligheten att skicka e-post från alias och mer"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll"
       ],
@@ -10039,6 +10072,9 @@
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
       ],
+      "Meeting ID copied to clipboard": [
+        "Mötes-ID kopierat till urklipp"
+      ],
       "Passcode copied to clipboard": [
         "Lösenkod kopierat till urklipp"
       ],
@@ -10189,6 +10225,9 @@
       "Protection from trackers": [
         "Skydd från spårare"
       ],
+      "Replay introduction": [
+        "Spela introduktion igen"
+      ],
       "Skip": [
         "Hoppa över"
       ],
@@ -10335,6 +10374,9 @@
       "${ n } user account": [
         "${ n } användarkonto",
         "${ n } användarkonton"
+      ],
+      "Activity log": [
+        "Aktivitetslogg"
       ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
@@ -11697,6 +11739,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Prenumerationen kommer att nedgraderas i slutet av faktureringsperioden."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
       ]
     },
     "Subscription price": {
@@ -13858,6 +13905,9 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Gå med i Zoom-möte"
+      ],
       "Meeting ID:": [
         "Mötes-ID:"
       ]

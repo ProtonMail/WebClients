@@ -955,6 +955,9 @@
       "Remove this label": [
         "Αφαίρεση αυτής της ετικέτας"
       ],
+      "Remove zoom meeting": [
+        "Κατάργηση σύσκεψης Zoom"
+      ],
       "Replace": [
         "Αντικατάσταση"
       ],
@@ -1054,11 +1057,11 @@
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
       ],
-      "Select all": [
-        "Επιλογή όλων"
-      ],
       "Select All": [
         "Επιλογή Όλων"
+      ],
+      "Select all": [
+        "Επιλογή όλων"
       ],
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
@@ -1710,6 +1713,9 @@
       "Integrated 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής 2FA"
       ],
+      "One-time payment, lifetime deal": [
+        "Εφάπαξ πληρωμή, συμφωνία εφ' όρου ζωής"
+      ],
       "Online document editor": [
         "Ηλεκτρονικός επεξεργαστής εγγράφων"
       ],
@@ -1745,8 +1751,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "Η προσφορά διάρκειας ζωής ${ PASS_SHORT_APP_NAME } Plus δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο Pass Plus."
+      ],
       "Discounts are based on standard monthly pricing.": [
         "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Αν αγοράσετε Pass Family ή Unlimited, η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή και διάρκεια στο τέλος του κύκλου χρέωσης."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή και διάρκεια στο τέλος του κύκλου χρέωσης."
@@ -1763,8 +1775,14 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Χρεώνεται σε ${ amount } μία φορά"
+      ],
       "for ${ durationDeal }": [
         "για ${ durationDeal }"
+      ],
+      "forever": [
+        "για πάντα"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Ανανεώνεται μετά από 1 μήνα στα ${ regularAmount }."
@@ -2259,6 +2277,9 @@
       "${ users } user": [
         "${ users } χρήστης",
         "${ users } χρήστες"
+      ],
+      "Total": [
+        "Σύνολο"
       ],
       "Total for ${ n } month": [
         "Σύνολο για ${ n } μήνα",
@@ -5235,6 +5256,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } στο Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } ημέρα",
+        "${ remainingDaysCount } ημέρες"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } ημέρα απομένει",
+        "${ remainingDaysCount } ημέρες απομένουν"
+      ],
       "account logins": [
         "συνδέσεις λογαριασμού"
       ],
@@ -5265,6 +5294,9 @@
       "Close": [
         "Κλείσιμο"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Συμπληρώστε αυτήν τη λίστα ελέγχου εντός ${ daysCount } για να διπλασιάσετε τον αποθηκευτικό σας χώρο δωρεάν."
+      ],
       "Congratulations, you completed all the steps!": [
         "Συγχαρητήρια, ολοκληρώσατε όλα τα βήματα!"
       ],
@@ -5280,8 +5312,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Τόσο ισχυρή κρυπτογράφηση, που μόνο εσείς και οι παραλήπτες για τους οποίους προορίζεστε μπορείτε να δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας."
       ],
+      "Finish setup": [
+        "Ολοκλήρωση εγκατάστασης"
+      ],
       "For your eyes only": [
         "Μόνο για τα μάτια σας"
+      ],
+      "Get more storage": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Αποκτήστε την εφαρμογή ${ MAIL_APP_NAME } για κινητά"
@@ -5331,6 +5369,9 @@
       "Storage unlocked": [
         "Χώρος αποθήκευσης ξεκλειδώθηκε"
       ],
+      "Tasks to complete count": [
+        "Πλήθος εργασιών για ολοκλήρωση"
+      ],
       "This feature is currently unavailable": [
         "Αυτή η δυνατότητα δεν είναι διαθέσιμη αυτήν τη στιγμή"
       ],
@@ -5367,6 +5408,9 @@
       ],
       "Less details": [
         "Λιγότερο λεπτομέρειες"
+      ],
+      "Meeting host:": [
+        "Διοργανωτής σύσκεψης:"
       ],
       "Meeting link:": [
         "Σύνδεσμος συνάντησης:"
@@ -5877,6 +5921,12 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "Το ${ PASS_APP_NAME } προσφέρει έναν απλό τρόπο για να δημιουργήσετε όνομα και κωδικό χρήστη σε αναξιόπιστες σελίδες όπου δε θέλετε να εκθέσετε την πραγματική σας ηλεκτρονική διεύθυνση."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Η προσφορά διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }. Η τιμή και η ημερομηνία ανανέωσης της συνδρομής ${ planTitle } σας παραμένουν αμετάβλητες."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -6546,7 +6596,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -7634,6 +7685,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Δεν μπορείτε πλέον να λάβετε μηνύματα στα εισερχόμενα σας. Οι σύνδεσμοι στο Drive έχουν απενεργοποιηθεί, και δεν μπορείτε να ανεβάσετε νέα αρχεία. Για να συνεχίσετε τις υπηρεσίες του λογαριασμού σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Η συνδρομή σας ${ PASS_SHORT_APP_NAME } Plus θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
@@ -9322,6 +9376,9 @@
       "Administration Panel": [
         "Πίνακας Διαχείρισης"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Προηγμένες λειτουργίες ψευδωνύμων (υποστηρίζεται από την SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Όλα τα προϊόντα και χαρακτηριστικά ${ BRAND_NAME }"
       ],
@@ -9833,6 +9890,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Δημιουργήστε έως και ${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα που μπορείτε να αντιστοιχίσετε σε μέλη της οικογένειας. Χρησιμοποιήστε τα για διαδικτυακές ταυτότητες, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Προσαρμοσμένοι τομείς για ψευδώνυμα, πρόσθετα γραμματοκιβώτια, δυνατότητα αποστολής μηνυμάτων ηλεκτρονικού ταχυδρομείου από ψευδώνυμα και πολλά άλλα"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης"
       ],
@@ -10075,6 +10135,12 @@
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
+      "Meeting host copied to clipboard": [
+        "Ο οικοδεσπότης της σύσκεψης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Meeting ID copied to clipboard": [
+        "Το αναγνωριστικό σύσκεψης αντιγράφηκε στο πρόχειρο"
+      ],
       "Passcode copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
       ],
@@ -10234,6 +10300,9 @@
       "Protection from trackers": [
         "Προστασία από ιχνηλάτες"
       ],
+      "Replay introduction": [
+        "Επανάληψη Εισαγωγής"
+      ],
       "Skip": [
         "Παράλειψη"
       ],
@@ -10381,8 +10450,14 @@
         "${ n } λογαριασμός χρήστη",
         "${ n } λογαριασμοί χρηστών"
       ],
+      "Activity log": [
+        "Αρχείο δραστηριοτήτων"
+      ],
       "Admin panel to manage users and subscription": [
         "Πίνακας διαχείρισης για τη διαχείριση χρηστών και συνδρομών"
+      ],
+      "Team policies": [
+        "Πολιτικές ομάδας"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11739,6 +11814,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Η συνδρομή θα υποβαθμιστεί στο τέλος του κύκλου χρέωσης."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Εφ' όρου ζωής"
       ]
     },
     "Subscription price": {
@@ -13920,8 +14000,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Συνδεθήτε στη σύσκεψη Zoom"
+      ],
       "Meeting ID:": [
         "ID συνάντησης:"
+      ],
+      "Passcode:": [
+        "Κωδικός πρόσβασης:"
       ]
     }
   }

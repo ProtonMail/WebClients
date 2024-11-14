@@ -1311,6 +1311,9 @@
         "${ users } bruker",
         "${ users } brukere"
       ],
+      "Total": [
+        "Totalt"
+      ],
       "Total for ${ n } month": [
         "Totalt for ${ n } måned",
         "Totalt for ${ n } måneder"
@@ -3562,6 +3565,12 @@
         "${ number } tjener",
         "${ number } tjenere"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Livsvarig avtale for ${ PASS_SHORT_APP_NAME } har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Livstidsavtale for ${ PASS_SHORT_APP_NAME } har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }. Fornyelsesprisen og datoen for ${ planTitle }-abonnementet forblir uendret."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
       ],
@@ -5122,9 +5131,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil bli videresendt til ${ destination } etter pålogging."
       ],
-      "You will keep lifetime access to ${ PASS_APP_NAME } premium features if you cancel your subscription.": [
-        "Du beholder livslang tilgang til ${ PASS_APP_NAME } premium-funksjoner hvis du kansellerer abonnementet."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
       ],
@@ -5145,6 +5151,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Ditt ${ BRAND_NAME }-passord"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ditt ${ PASS_SHORT_APP_NAME } Plus-abonnement vil bli erstattet med livsvarig avtale for ${ PASS_SHORT_APP_NAME }. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } livstidsavtale har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dine ${ VPN_APP_NAME }- og ${ MAIL_APP_NAME }-kontoer er koblet. For å slette de begge, logg på ${ loginLink } og slett din konto der."
@@ -6362,6 +6371,9 @@
       "Administration Panel": [
         "Administrasjonspanel"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avanserte aliasfunksjoner (drevet av SimpleLogin)"
+      ],
       "Advanced network security": [
         "Avansert nettverkssikkerhet"
       ],
@@ -6935,6 +6947,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Egendefinerte domener for aliaser, ekstra postbokser, muligheten til å sende e-post fra aliaser og mer"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
@@ -7606,8 +7621,14 @@
         "${ n } brukerkonto",
         "${ n } brukerkontoer"
       ],
+      "Activity log": [
+        "Aktivitetslogg"
+      ],
       "Admin panel to manage users and subscription": [
         "Administrasjonspanel for å administrere brukere og abonnement"
+      ],
+      "Team policies": [
+        "Retningslinjer for teamet"
       ]
     },
     "PassFamilyPlan2024": {
@@ -9210,6 +9231,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Abonnementet vil bli nedgradert på slutten av faktureringssyklusen."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
       ]
     },
     "Subscription price": {

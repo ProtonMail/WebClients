@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "activate": [
-        "ota käyttöön"
-      ],
       "Activate": [
         "Ota käyttöön"
+      ],
+      "activate": [
+        "ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -1032,6 +1032,9 @@
       ],
       "Show": [
         "Näytä"
+      ],
+      "Show all": [
+        "Näytä kaikki"
       ],
       "Show less": [
         "Näytä vähemmän"
@@ -9320,7 +9323,7 @@
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
       ],
       "Zoom meeting": [
-        "Zoom-tapaamista"
+        "Zoom-kokousta"
       ]
     },
     "info": {
@@ -9473,6 +9476,9 @@
       ],
       "Other": [
         "Muu"
+      ],
+      "Product": [
+        "Tuote"
       ],
       "Refund": [
         "Hyvitys"
@@ -10614,6 +10620,10 @@
       "Send in": [
         "Lähetetään"
       ],
+      "Show ${ n } administrator": [
+        "Näytä ${ n } ylläpitäjä",
+        "Näytä ${ n } ylläpitäjää"
+      ],
       "Show others when I'm busy": [
         "Näytä muille koska olen varattu"
       ],
@@ -10754,6 +10764,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Vahvista avaimet Key Transparencyllä"
+      ],
+      "Video conferencing with Zoom": [
+        "Videoneuvotteu Zoomilla"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Olemme pahoillamme kun lähdet. Kertoisitko meille miksi, jotta voimme parantaa toimintaamme, kiitos."
@@ -11254,9 +11267,6 @@
       ],
       "for your first month": [
         "ensimmäisen kuukautesi ajan"
-      ],
-      "Get ${ planName } for ${ price }": [
-        "Hanki ${ planName } hintaan ${ price }"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Rajoitetun ajan tarjous, päättyy 2. huhtikuuta 2024"
@@ -11813,6 +11823,9 @@
       ],
       "Administration Panel": [
         "Hallintapaneeli"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Edistyneet aliastoiminnot (SimpleLoginin tarjoama)"
       ],
       "Advanced network security": [
         "Edistynyt verkon suojaus"
@@ -12677,6 +12690,53 @@
       ],
       "Support for ${ n } custom email domains": [
         "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
+      ]
+    },
+    "news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } ja ${ additionalApp } -tuotepäivitykset"
+      ],
+      "${ app } product updates": [
+        "${ app } -tuotepäivitykset"
+      ],
+      "${ BRAND_NAME } for Business newsletter": [
+        "${ BRAND_NAME } for Business -uutiskirje"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Tärkeät ${ BRAND_NAME } -ilmoitukset"
+      ],
+      "${ BRAND_NAME } newsletter": [
+        "${ BRAND_NAME }-uutiskirje"
+      ],
+      "${ BRAND_NAME } product announcements": [
+        "${ BRAND_NAME } -tuotejulkaisut"
+      ],
+      "1 email per month": [
+        "1 sähköposti kuukaudessa"
+      ],
+      "1-2 emails per month": [
+        "1 - 2 sähköpostiä kuukaudessa"
+      ],
+      "2-4 emails per year": [
+        "2 - 4 sähköpostia vuodessa"
+      ],
+      "4-6 emails per year": [
+        "4 - 6 sähköpostia vuodessa"
+      ],
+      "Application notifications": [
+        "Sovellusilmoitukset"
+      ],
+      "Daily email notifications": [
+        "Päivittäiset sähköposti-ilmoitukset"
+      ],
+      "During your first month": [
+        "Ensimmäisen kuukautesi ajan"
+      ],
+      "Email subscriptions": [
+        "Sähköpostitilaukset"
+      ],
+      "In-app notifications": [
+        "Sovelluksensisäiset ilmoitukset"
       ]
     },
     "Notification": {
@@ -13600,6 +13660,9 @@
       ],
       "Advanced account protection": [
         "Edistynyt tilin suojaus"
+      ],
+      "One-time payment, lifetime deal": [
+        "Kertamaksu, elinikäinen tarjous"
       ]
     },
     "PassFamilyPlan2024": {
@@ -15402,6 +15465,10 @@
       ],
       "Current device": [
         "Nykyinen laite"
+      ],
+      "Delete ${ n } user": [
+        "Poista ${ n } käyttäjä",
+        "Poista ${ n } käyttäjää"
       ],
       "Deny": [
         "Kiellä"
@@ -17421,6 +17488,9 @@
       "No recovery method": [
         "Palautustapoja ei ole"
       ],
+      "Notifications": [
+        "Ilmoitukset"
+      ],
       "Open": [
         "Avoin"
       ],
@@ -17805,6 +17875,9 @@
       ],
       "Version history": [
         "Versiohistoria"
+      ],
+      "Video conferencing": [
+        "Videoneuvottelu"
       ],
       "VPN apps": [
         "VPN-sovellukset"
@@ -18251,6 +18324,9 @@
       "Cancel": [
         "Peruuta"
       ],
+      "Cancel request": [
+        "Peru pyyntö"
+      ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "${ n } käyttäjän ylläpitäjän oikeuksia ei voitu ottaa automaattisesti käyttöön, koska heidän salausavaimensa on päivitetty sillä välin:",
         "${ n } käyttäjän ylläpitäjän oikeuksia ei voitu ottaa automaattisesti käyttöön, koska heidän salausavaimensa on päivitetty sillä välin:"
@@ -18269,6 +18345,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Jos menetät kirjautumistietosi, organisaatiosi ylläpitäjä voi nollata salasanasi ja palauttaa pääsysi tilillesi."
+      ],
+      "Keep request": [
+        "Säilytä pyyntö"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Kun käyttäjä on antanyt suostumuksen, voit auttaa heitä samaan takaisin tilinkäyttöoikeuden tai hallinnoimaan heidän tietojaan."

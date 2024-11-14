@@ -106,6 +106,9 @@
       "Confirm access": [
         "Confirmar acceso"
       ],
+      "Confirm all": [
+        "Confirmar todo"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Crear una identidad"
+      ],
+      "Create item": [
+        "Crear un elemento"
       ],
       "Create login": [
         "Crear inicio de sesión"
@@ -394,6 +400,9 @@
       "Previous": [
         "Anterior"
       ],
+      "Reactivate now": [
+        "Reactivar"
+      ],
       "Refresh the page": [
         "Refrescar la página"
       ],
@@ -471,6 +480,9 @@
       ],
       "See members": [
         "Ver miembros"
+      ],
+      "Select": [
+        "Seleccionar"
       ],
       "Send invite": [
         "Enviar invitación"
@@ -567,6 +579,9 @@
       "Upgrade now to share with more people": [
         "Mejore ahora para compartir con más personas."
       ],
+      "Use ${ label } theme": [
+        "Usar tema ${ label }"
+      ],
       "Verify": [
         "Verificar"
       ],
@@ -640,8 +655,8 @@
       "Black Friday": [
         "Black Friday"
       ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Pague una vez y obtenga ${ lifetimeAccessJSX } a Pass Plus. Solo por ${ relativePrice }."
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Pague una vez y obtén ${ lifetimeAccessJSX } a Pass Plus y SimpleLogin. Solo por ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Ahorre hasta un ${ discountJSX } con Pass Family. Solo por ${ relativePrice }/mes."
@@ -777,6 +792,12 @@
       ],
       "Could not resolve share members": [
         "No se pudieron determinar los destinatarios del recurso compartido"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "No se pudieron recuperar las invitaciones de usuario para labóveda «${ vaultName }»."
+      ],
+      "Could not update settings at the moment. Please try again later.": [
+        "No se pudieron actualizar las configuraciones en este momento. Inténtelo de nuevo más tarde."
       ],
       "Could not validate addresses at the moment.": [
         "No se pudieron validar las direcciones por el momento."
@@ -1175,6 +1196,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } aplicará el mismo tema que el del sistema."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas, tarjetas de crédito e identidades."
       ],
@@ -1302,6 +1326,9 @@
       "Change your password": [
         "Cambie la contraseña"
       ],
+      "Choose your preferred look and feel.": [
+        "Elija su aspecto preferido."
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme su contraseña adicional para proceder con la eliminación."
       ],
@@ -1418,6 +1445,10 @@
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Siga estos pasos para importar los datos con un CSV genérico:"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Por razones de seguridad, necesita confirmar el acceso a esta bóveda compartida.",
+        "Por razones de seguridad, necesita confirmar el acceso a estas bóvedas compartidas."
       ],
       "For security reasons, your access needs to be confirmed": [
         "Por razones de seguridad, es necesario confirmar su acceso"
@@ -1548,6 +1579,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Make it your own": [
+        "Personalice la aplicación"
+      ],
       "me": [
         "conmigo"
       ],
@@ -1563,14 +1597,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege la contraseña y la dirección de correo personal a través de alias de correo electrónico. Desarrollado por la misma tecnología detrás de ${ MAIL_APP_NAME }, los datos están cifrados de extremo a extremo y solo usted puede acceder a ellos."
       ],
+      "Move ${ count } item": [
+        "Mover ${ count } elemento",
+        "Mover ${ count } elementos"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Mover un elemento a otra bóveda eliminará el historial y todos los enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará el historial y todos los enlaces seguros.",
+        "Mover los elementos a otra bóveda eliminará el historial y todos los enlaces seguros."
       ],
       "Moving an item to another vault will erase its history.": [
-        "Mover un elemento a otra bóveda eliminará el historial."
+        "Mover un elemento a otra bóveda eliminará su historial.",
+        "Mover los elementos a otra bóveda eliminará el historial."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -1719,9 +1759,6 @@
       ],
       "Press Enter to copy": [
         "Presione Enter para copiar"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "La privacidad es una gran preocupación para nosotros. Descubra por qué ${ PASS_APP_NAME } es diferente."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
@@ -1994,6 +2031,9 @@
       "You will no longer be notified of data breaches for this email address.": [
         "No se le notificará las vulneraciones de datos para esta dirección de correo electrónico."
       ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Ya no tendrá acceso a la compartición, autenticación de 2 factores (2FA), tarjetas de débito o crédito y otras funciones avanzadas en ${ PASS_APP_NAME }."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Usará este PIN para desbloquear ${ PASS_APP_NAME } automáticamente una vez que pase el tiempo de inactividad."
       ],
@@ -2062,6 +2102,9 @@
       ],
       "15 minutes": [
         "15 minutos"
+      ],
+      "15 seconds": [
+        "15 segundos"
       ],
       "2 minutes": [
         "2 minutos"
@@ -2170,6 +2213,9 @@
       ],
       "City": [
         "Ciudad"
+      ],
+      "Clear clipboard after": [
+        "Borrar el portapapeles después de"
       ],
       "Code": [
         "Código"
@@ -2483,6 +2529,9 @@
       "Need help?": [
         "¿Necesita ayuda?"
       ],
+      "Never": [
+        "Nunca"
+      ],
       "New vault": [
         "Bóveda nueva"
       ],
@@ -2688,6 +2737,9 @@
       "The URL has been copied to the clipboard": [
         "URL copiada al portapapeles"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Este elemento seguirá accesible hasta ${ remaining }"
       ],
@@ -2832,7 +2884,11 @@
         "${ count } elemento",
         "${ count } elementos"
       ],
-      "You selected ${ semiboldText } in this vault": [
+      "You can drag and drop the selected item to another vault": [
+        "Puede arrastrar y soltar el elemento seleccionado en otra bóveda.",
+        "Puedes arrastrar y soltar los elementos seleccionados en otra bóveda."
+      ],
+      "You selected ${ semiboldText } in this vault.": [
         "Seleccionó ${ semiboldText } en esta bóveda."
       ]
     },
@@ -3051,6 +3107,17 @@
         "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuarios."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automático"
+      ],
+      "Dark": [
+        "Oscuro"
+      ],
+      "Light": [
+        "Claro"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Direcciones de ${ BRAND_NAME }"
@@ -3105,6 +3172,13 @@
       ],
       "Dark Web Monitoring": [
         "Monitoreo de la Dark Web"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "¿Eliminar ${ deletedItemsCount } elemento?",
+        "¿Eliminar ${ deletedItemsCount } elementos?"
+      ],
+      "Delete this item?": [
+        "¿Eliminar este elemento?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "¿Eliminar la bóveda «${ vaultName }»?"
@@ -3184,14 +3258,19 @@
       "Modified": [
         "Modificado"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Mover ${ count } elemento a ${ vaultName }",
+        "Mover ${ count } elementos a ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "¿Mover ${ trashedItemsCount } elemento a la papelera?",
+        "¿Mover ${ trashedItemsCount } elementos a la papelera?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "¿Mover todos los elementos a «${ vaultName }»?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "¿Mover elemento a «${ vaultName }»?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "¿Mover elementos a «${ vaultName }»?"
+      "Move item to \"${ vaultName }\"": [
+        "Mover el elemento a «${ vaultName }»"
       ],
       "No excluded items": [
         "No hay elementos excluidos"
@@ -3222,6 +3301,9 @@
       ],
       "Pause monitoring?": [
         "¿Pausar el monitoreo?"
+      ],
+      "Pending access confirmation": [
+        "Confirmación de acceso pendiente"
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
@@ -3348,8 +3430,8 @@
       "What is the dark web?": [
         "¿Qué es la dark web?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "¿Por qué elegir ${ PASS_APP_NAME }?"
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Su suscripción a ${ planName } finalizará el ${ endDate }."
       ],
       "Your exposed information": [
         "Sus datos expuestos"
@@ -3360,7 +3442,7 @@
       "Your welcome gift": [
         "Su regalo de bienvenida"
       ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
+      "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
       ]
@@ -3398,11 +3480,25 @@
       "A description of the problem is required": [
         "Se requiere una descripción del problema"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Los alias en la papelera seguirán reenviando correos electrónicos."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Todos sus elementos en papelera serán eliminados permanentemente. No puede deshacer esta acción."
       ],
       "An error occurred while exporting your data": [
         "Ocurrió un error al exportar sus datos"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "¿En verdad desea mover ${ trashedItemsCount } elemento a la papelera?",
+        "¿En verdad desea mover ${ trashedItemsCount } elementos a la papelera?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "¿Está seguro de que quiere eliminar permanentemente ${ deletedItemsCount } elemento?",
+        "¿Está seguro de que quiere eliminar permanentemente ${ deletedItemsCount } elementos?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "¿Estás seguro de querer eliminar permanentemente este elemento?"
       ],
       "At least one email address is required": [
         "Al menos se requiere una dirección de correo electrónico"
@@ -3494,9 +3590,6 @@
       ],
       "Offline": [
         "Sin conexión"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Una vez sincronizado, al eliminar los alias en ${ PASS_SHORT_APP_NAME } también se eliminarán en SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos"
