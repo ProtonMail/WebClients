@@ -2,11 +2,12 @@ import type { Dispatch, MutableRefObject, RefObject, SetStateAction } from 'reac
 import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Prompt } from 'react-router';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { CircleLoader } from '@proton/atoms/index';
 import { useZoomOAuth } from '@proton/calendar';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
@@ -131,7 +132,6 @@ import type { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import usePauseCalendarEventLoop from '../../hooks/usePauseCalendarEventLoop';
-import usePendingNotifications from '../../hooks/usePendingNotifications';
 import type {
     AttendeeDeleteSingleEditOperation,
     InviteActions,
@@ -329,10 +329,9 @@ const InteractiveCalendarView = ({
     }, [pendingUniqueIds]);
     usePreventCloseTab(hasPendingEvents);
     usePauseCalendarEventLoop(activeCalendars, hasPendingEvents);
-    usePendingNotifications();
     const dispatch = useCalendarDispatch();
     const { call: calendarCall } = useCalendarModelEventManager();
-    const { createNotification } = useNotifications();
+    const { createNotification, removeNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
     const sendIcs = useSendIcs();
     const getVTimezonesMap = useGetVtimezonesMap();
@@ -1456,7 +1455,8 @@ const InteractiveCalendarView = ({
         const selfEmail = inviteActions.selfAddress?.Email;
         let oldPartstat: string | undefined;
         let successNotification: { success: string } | undefined;
-        let isSingleEdit = false;
+        let isSingleEventUpdate = true;
+        let notificationId = 0; // 0 is an invalid notification ID
 
         try {
             isSavingEvent.current = true;
@@ -1481,8 +1481,8 @@ const InteractiveCalendarView = ({
                 onSaveConfirmation: async (params) => {
                     try {
                         const result = await handleSaveConfirmation(params);
-                        if (result.type === RECURRING_TYPES.SINGLE) {
-                            isSingleEdit = true;
+                        if (result.type === RECURRING_TYPES.ALL || result.type === RECURRING_TYPES.FUTURE) {
+                            isSingleEventUpdate = false;
                         }
                         return result;
                     } catch (e) {
@@ -1508,12 +1508,23 @@ const InteractiveCalendarView = ({
             });
 
             if (hasReduxStore) {
-                closeProcessingPortal(uniqueId);
-                if (isSingleEdit) {
+                if (isSingleEventUpdate) {
                     dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: true }));
                 } else {
                     dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: true }));
                 }
+                closeProcessingPortal(uniqueId);
+                const count = isSingleEventUpdate ? 1 : 3;
+                notificationId = createNotification({
+                    text: (
+                        <>
+                            {c('Info').ngettext(msgid`Saving event...`, `Saving events...`, count)} <CircleLoader />
+                        </>
+                    ),
+                    type: 'info',
+                    expiration: -1, // Keeps the notification visible until manually removed
+                    showCloseButton: false,
+                });
             }
 
             successNotification = texts;
@@ -1567,8 +1578,14 @@ const InteractiveCalendarView = ({
             }
 
             removeTemporaryEvent(uniqueId);
+            if (notificationId) {
+                removeNotification(notificationId);
+            }
             handleCreateNotification(successNotification);
         } catch (e: any) {
+            if (notificationId) {
+                removeNotification(notificationId);
+            }
             // If the error is a video conference error, we open the oauth modal and try again
             if (e?.cause === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
                 await triggerZoomOAuth(() => handleSaveEvent(temporaryEvent, inviteActions));
@@ -1594,7 +1611,7 @@ const InteractiveCalendarView = ({
             isSavingEvent.current = false;
 
             if (hasReduxStore) {
-                if (isSingleEdit) {
+                if (isSingleEventUpdate) {
                     dispatch(eventsActions.markEventAsSaving({ uniqueId, isSaving: false }));
                 } else {
                     dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: false }));
@@ -1605,6 +1622,8 @@ const InteractiveCalendarView = ({
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions) => {
         let recurringType: RECURRING_TYPES | undefined;
+        let notificationId = 0; // 0 is an invalid notification ID
+        let isSingleEventUpdate = true;
 
         try {
             const {
@@ -1619,6 +1638,9 @@ const InteractiveCalendarView = ({
                 onDeleteConfirmation: async (params) => {
                     const result = await handleDeleteConfirmation(params);
                     recurringType = result.type;
+                    if (result.type === RECURRING_TYPES.ALL || result.type === RECURRING_TYPES.FUTURE) {
+                        isSingleEventUpdate = false;
+                    }
 
                     if (hasReduxStore) {
                         dispatch(
@@ -1630,6 +1652,18 @@ const InteractiveCalendarView = ({
                         );
                         dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: true, recurringType }));
                         closeProcessingPortal(targetEvent.uniqueId);
+                        const count = isSingleEventUpdate ? 1 : 3;
+                        notificationId = createNotification({
+                            text: (
+                                <>
+                                    {c('Info').ngettext(msgid`Deleting event...`, `Deleting events...`, count)}{' '}
+                                    <CircleLoader />
+                                </>
+                            ),
+                            type: 'info',
+                            expiration: -1, // Keeps the notification visible until manually removed
+                            showCloseButton: false,
+                        });
                     }
 
                     return result;
@@ -1676,7 +1710,9 @@ const InteractiveCalendarView = ({
                 upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache, getOpenedMailEvents);
             }
             calendarsEventCache.rerender?.();
-
+            if (notificationId) {
+                removeNotification(notificationId);
+            }
             handleCreateNotification(texts);
 
             const uniqueCalendarIDs = unique([
@@ -1687,6 +1723,9 @@ const InteractiveCalendarView = ({
             // call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the events you just deleted)
             void calendarCall(uniqueCalendarIDs);
         } catch (e: any) {
+            if (notificationId) {
+                removeNotification(notificationId);
+            }
             if (hasReduxStore) {
                 dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: false, recurringType }));
             }
