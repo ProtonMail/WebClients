@@ -9,7 +9,7 @@ export const ThemeConnect = () => {
     const selectedTheme = useSelector(selectTheme);
 
     useEffect(() => {
-        if (selectedTheme) setTheme?.(selectedTheme);
+        if (selectedTheme) setTheme(selectedTheme);
     }, [selectedTheme]);
 
     return null;
