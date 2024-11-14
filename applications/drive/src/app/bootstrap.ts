@@ -24,7 +24,6 @@ import locales from './locales';
 import { extendStore, setupStore } from './redux-store/store';
 import { sendErrorReport } from './utils/errorHandling';
 import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackChunkFailedToLoadError';
-import { initDriveWorker } from './utils/initDriveWorker';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 
 const getAppContainer = () =>
@@ -56,7 +55,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const appName = config.APP_NAME;
 
     initSafariFontFixClassnames();
-    initDriveWorker();
 
     const run = async () => {
         const appContainerPromise = getAppContainer();
