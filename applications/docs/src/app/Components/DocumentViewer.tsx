@@ -270,11 +270,9 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
     (frame: HTMLIFrameElement) => {
       setEditorFrame(frame)
 
-      if (docOrchestrator && !bridge) {
-        createBridge(docOrchestrator, frame)
-      }
+      application.logger.info('Editor frame ready')
     },
-    [docOrchestrator, createBridge, bridge],
+    [application.logger],
   )
 
   useEffect(() => {
@@ -286,10 +284,6 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
       onSuccess: (orchestrator) => {
         setDocOrchestrator(orchestrator)
         setReady(true)
-
-        if (editorFrame && !bridge) {
-          createBridge(orchestrator, editorFrame)
-        }
       },
       onError: (errorMessage) => {
         setError({ message: errorMessage, userUnderstandableMessage: false })
@@ -304,7 +298,13 @@ export function DocumentViewer({ nodeMeta, editorInitializationConfig, action }:
     }
 
     return disposer
-  }, [application, nodeMeta, docOrchestrator, editorFrame, createBridge, initializing, bridge])
+  }, [application.docLoader, application.metrics, docOrchestrator, initializing, nodeMeta])
+
+  useEffect(() => {
+    if (docOrchestrator && editorFrame && !bridge) {
+      createBridge(docOrchestrator, editorFrame)
+    }
+  }, [docOrchestrator, editorFrame, createBridge, bridge])
 
   if (error) {
     return (
