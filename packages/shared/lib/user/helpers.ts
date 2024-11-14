@@ -1,6 +1,8 @@
 import { addMinutes, fromUnixTime } from 'date-fns';
 
-import { PRODUCT_BIT, UNPAID_STATE, USER_ROLES } from '../constants';
+import { UNPAID_STATE } from '@proton/payments';
+
+import { PRODUCT_BIT, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { decodeBase64URL } from '../helpers/encoding';
 import type { User } from '../interfaces';

@@ -388,14 +388,6 @@ export enum INVOICE_OWNER {
     ORGANIZATION = 1,
 }
 
-export enum UNPAID_STATE {
-    NOT_UNPAID = 0,
-    AVAILABLE = 1,
-    OVERDUE = 2,
-    DELINQUENT = 3,
-    NO_RECEIVE = 4,
-}
-
 export enum MEMBER_TYPE {
     PROTON = 0,
     MANAGED = 1,

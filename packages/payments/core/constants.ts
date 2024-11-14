@@ -62,6 +62,14 @@ export enum INVOICE_STATE {
     WRITEOFF = 4,
 }
 
+export enum UNPAID_STATE {
+    NOT_UNPAID = 0,
+    AVAILABLE = 1,
+    OVERDUE = 2,
+    DELINQUENT = 3,
+    NO_RECEIVE = 4,
+}
+
 export const MEMBER_ADDON_PREFIX = '1member';
 export const DOMAIN_ADDON_PREFIX = '1domain';
 export const IP_ADDON_PREFIX = '1ip';
