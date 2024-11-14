@@ -11,6 +11,7 @@ import type { YDocMap } from '@proton/docs-shared/lib/YDocMap'
 import type { Doc as YDoc } from 'yjs'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import type { EditorInitializationConfig } from '@proton/docs-shared/lib/EditorInitializationConfig'
+import { reportErrorToSentry } from './Utils/errorMessage'
 
 export type EditorConfig = {
   editorInitializationConfig?: EditorInitializationConfig
@@ -67,7 +68,7 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
             .getClientInvoker()
             .editorRequestsPropagationOfUpdate(message, debugSource)
             .catch((e: Error) => {
-              void bridge.getClientInvoker().reportError(e, 'devops-only')
+              void reportErrorToSentry(e)
             })
         },
         handleAwarenessStateUpdate: (states) => {
@@ -89,7 +90,7 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
             .getClientInvoker()
             .handleAwarenessStateUpdate(states)
             .catch((e: Error) => {
-              void bridge.getClientInvoker().reportError(e, 'devops-only')
+              void reportErrorToSentry(e)
             })
 
           application.eventBus.publish<DocsAwarenessStateChangeData>({

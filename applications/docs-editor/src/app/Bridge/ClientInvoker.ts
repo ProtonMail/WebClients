@@ -115,12 +115,11 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('openLink', [url])
   }
 
-  async reportError(
+  async reportUserInterfaceError(
     error: Error,
-    audience: 'user-and-devops' | 'devops-only' | 'user-only',
     extraInfo: { irrecoverable?: boolean; errorInfo?: ErrorInfo; lockEditor?: boolean },
   ): Promise<void> {
-    return this.invokeClientMethod('reportError', [error, audience, extraInfo])
+    return this.invokeClientMethod('reportUserInterfaceError', [error, extraInfo])
   }
 
   async reportWordCount(wordCountInfo: WordCountInfoCollection): Promise<void> {

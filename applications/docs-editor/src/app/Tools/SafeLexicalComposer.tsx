@@ -4,7 +4,7 @@ import { ErrorBoundary } from '@proton/components'
 import type { ReactNode } from 'react'
 import React from 'react'
 import { c } from 'ttag'
-import { sendErrorMessage } from '../Utils/errorMessage'
+import { reportErrorToSentry } from '../Utils/errorMessage'
 
 export const SafeLexicalComposer: React.FC<{
   initialConfig: InitialConfigType
@@ -13,7 +13,7 @@ export const SafeLexicalComposer: React.FC<{
   return (
     <ErrorBoundary
       onError={(error) => {
-        sendErrorMessage(error)
+        reportErrorToSentry(error)
       }}
       renderFunction={(error) => (
         <div role="alert">
