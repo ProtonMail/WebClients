@@ -1145,6 +1145,9 @@
       "${ users } user": [
         "${ users }명 사용자"
       ],
+      "Total": [
+        "합계"
+      ],
       "Total for ${ n } month": [
         "${ n }개월의 합계"
       ]
@@ -2154,11 +2157,6 @@
         "기한이 지난 청구서"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "Easy Switch 불러오기 마법사를 사용하세요."
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME }이 보안 전문가로 확대되는 등 의심스러운 활동에 대한 24시간 전담 모니터링을 통해 계정을 보호합니다."
@@ -2228,6 +2226,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch 불러오기 마법사를 사용하세요."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3708,6 +3711,12 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 그룹 찾음"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
       ],
@@ -4102,7 +4111,7 @@
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
+        "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ MAIL_APP_NAME } 과 ${ VPN_APP_NAME } 의 유료 기능을 사용할 수 없습니다."
@@ -4236,6 +4245,9 @@
       "Monitor accounts": [
         "계정 모니터링"
       ],
+      "Most recent": [
+        "가장 최근순"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
       ],
@@ -4301,6 +4313,12 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "당사의 알림은 안전을 최우선으로 합니다. 만약 유출된 정보에 대해 아는 것이 없다면, 이 보고서를 무시할 수 있습니다."
+      ],
+      "Owned by me": [
+        "내가 소유함"
+      ],
+      "Owned by others": [
+        "다른 사람이 소유함"
       ],
       "Owner": [
         "소유자"
@@ -4748,6 +4766,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Plus 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 계정 크레딧에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 딜은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
@@ -5763,6 +5784,23 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Get started for ${ price }": [
+        "${ price }로 시작하세요."
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "${ priceMailPlus }부터 시작"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "계정 삭제"
@@ -5784,23 +5822,6 @@
       ],
       "Switch plan": [
         "플랜 변경"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Get started for ${ price }": [
-        "${ price }로 시작하세요."
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "${ priceMailPlus }부터 시작"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "${ MAIL_SHORT_APP_NAME } Plus로 업그레이드하기"
       ]
     },
     "new_plans: feature": {
@@ -5911,6 +5932,9 @@
       ],
       "Administration Panel": [
         "관리 패널"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "고급 별칭 기능 (SimpleLogin 제공)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "모든 ${ BRAND_NAME } 제품 및 기능"
@@ -6332,7 +6356,7 @@
         "인터넷에 안전하고 제한 없이 고속으로 접속할 수 있는 전용 VPN 솔루션입니다."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "모든 사람에게 개인 정보를 제공하도록 설계된 무료 스타터 계정."
+        "모두에게 프라이버시 보호를 제공하도록 설계된 무료 스타터 계정."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "최대 두 사람까지 무제한 프라이버시 및 더 많은 저장공간을 제공합니다."
@@ -6414,6 +6438,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "가족 구성원에게 할당할 수 있는 최대 ${ n }개의 이메일 주소/별명을 생성하세요. 이를 온라인 신원으로 사용하세요. 예를 들면, 쇼핑 계정에는 JohnShopper@${ domain }을 사용할 수 있습니다."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "별칭을 위한 커스텀 도메인, 추가 메일함, 별칭으로부터의 이메일 전송 기능 등"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다"
@@ -6878,8 +6905,14 @@
       "${ n } user account": [
         "${ n }개 사용자 계정"
       ],
+      "Activity log": [
+        "활동 로그"
+      ],
       "Admin panel to manage users and subscription": [
         "사용자 및 구독을 관리할 수 있는 관리자 패널"
+      ],
+      "Team policies": [
+        "팀 정책"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7872,6 +7905,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "결제 주기 종료일에 구독이 다운그레이드됩니다."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "평생"
       ]
     },
     "Subscription price": {
