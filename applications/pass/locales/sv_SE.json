@@ -106,6 +106,9 @@
       "Confirm access": [
         "Bekräfta åtkomst"
       ],
+      "Confirm all": [
+        "Bekräfta alla"
+      ],
       "Continue": [
         "Fortsätt"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Skapa identitet"
+      ],
+      "Create item": [
+        "Skapa objekt"
       ],
       "Create login": [
         "Skapa inloggning"
@@ -385,6 +391,9 @@
       "Please retry": [
         "Försök igen"
       ],
+      "Reactivate now": [
+        "Återaktivera nu"
+      ],
       "Refresh the page": [
         "Uppdatera sidan"
       ],
@@ -462,6 +471,9 @@
       ],
       "See members": [
         "Se medlemmar"
+      ],
+      "Select": [
+        "Välj"
       ],
       "Send invite": [
         "Skicka inbjudan"
@@ -555,6 +567,9 @@
       "Upgrade now to share with more people": [
         "Uppgradera nu för att dela med fler personer"
       ],
+      "Use ${ label } theme": [
+        "Använd ${ label }-temat"
+      ],
       "Verify": [
         "Verifiera"
       ],
@@ -605,8 +620,8 @@
       "Black Friday": [
         "Black Friday"
       ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Betala en gång och få ${ lifetimeAccessJSX } till Pass Plus. Endast ${ relativePrice }."
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Betala en gång och få ${ lifetimeAccessJSX } till Pass Plus och SimpleLogin. Endast ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Spara upp till ${ discountJSX } på Pass Family. Endast ${ relativePrice }/månad."
@@ -1071,6 +1086,31 @@
         "Terabyte"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme font": [
+        "Temats typsnitt"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Medium (rekommenderas)"
+      ],
+      "Small": [
+        "Liten"
+      ],
+      "Very large": [
+        "Mycket stor"
+      ],
+      "Very small": [
+        "Väldigt liten"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Objekt ”${ payload.item.data.metadata.name }” avfärdades"
@@ -1105,6 +1145,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserade bildproxy."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } kommer följa ditt systemtema."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar, kreditkort och identiteter."
@@ -1232,6 +1275,9 @@
       ],
       "Change your password": [
         "Ändra ditt lösenord"
+      ],
+      "Choose your preferred look and feel.": [
+        "Välj ditt föredragna utseende och känsla."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekräfta ditt extra lösenord för att fortsätta med att ta bort det."
@@ -1467,6 +1513,9 @@
       "Low Priority": [
         "Låg prioritet"
       ],
+      "Make it your own": [
+        "Gör den till din egen"
+      ],
       "me": [
         "jag"
       ],
@@ -1482,14 +1531,12 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är end-to-end-krypterad och är endast åtkomlig för dig."
       ],
+      "Move ${ count } item": [
+        "Flytta ${ count } objekt",
+        "Flytta ${ count } objekt"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Att flytta ett objekt till annat valv kommer att radera dess historik och alla säkra länkar."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Att flytta ett objekt till annat valv kommer radera dess historik."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -1620,9 +1667,6 @@
       ],
       "Press Enter to copy": [
         "Tryck på Enter för att kopiera"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Integritet är en stor angelägenhet för oss. Lär dig varför ${ PASS_APP_NAME } är annorlunda."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Skyddad av ${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
@@ -1891,6 +1935,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Du kommer inte längre att aviseras om dataintrång för denna e-postadress."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Du kommer inte längre att ha åtkomst till delning, 2FA, kreditkort och andra avancerade funktioner i ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du kommer använda denna PIN-kod för att låsa upp ${ PASS_APP_NAME } när den låses automatiskt efter en period av inaktivitet."
@@ -2523,6 +2570,9 @@
       "The URL has been copied to the clipboard": [
         "URL:en har kopierats till urklipp"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Detta objekt kommer förbli tillgängligt till ${ remaining }"
       ],
@@ -2641,8 +2691,8 @@
         "${ count } objekt",
         "${ count } objekt"
       ],
-      "You selected ${ semiboldText } in this vault": [
-        "Du markerade ${ semiboldText } i detta valv"
+      "You selected ${ semiboldText } in this vault.": [
+        "Du valde ${ semiboldText } i detta valv."
       ]
     },
     "new_plans: feature": {
@@ -2857,6 +2907,17 @@
         "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automatisk"
+      ],
+      "Dark": [
+        "Mörk"
+      ],
+      "Light": [
+        "Ljus"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME }-adresser"
@@ -2911,6 +2972,13 @@
       ],
       "Dark Web Monitoring": [
         "Övervakning mörka webben"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Ta bort ${ deletedItemsCount } objekt?",
+        "Ta bort ${ deletedItemsCount } objekt?"
+      ],
+      "Delete this item?": [
+        "Ta bort detta objekt?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Ta bort valv ”${ vaultName }”?"
@@ -2990,13 +3058,14 @@
       "Modified": [
         "Ändrad"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Flytta ${ count } objekt till ${ vaultName }",
+        "Flytta ${ count } objekt till ${ vaultName }"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Flytta alla objekt till ”${ vaultName }”?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Flytta objekt till ”${ vaultName }”?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
+      "Move item to \"${ vaultName }\"": [
         "Flytta objekt till ”${ vaultName }”?"
       ],
       "No excluded items": [
@@ -3154,9 +3223,6 @@
       "What is the dark web?": [
         "Vad är mörka webben?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Varför ${ PASS_APP_NAME }?"
-      ],
       "Your exposed information": [
         "Din exponerade information"
       ],
@@ -3166,9 +3232,9 @@
       "Your welcome gift": [
         "Din välkomstgåva"
       ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "Du håller på att ta bort ${ aliasCount } alias permanent",
-        "Du håller på att ta bort ${ aliasCount } alias permanent"
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Du håller på att ta bort ${ aliasCount } alias permanent.",
+        "Du håller på att ta bort ${ aliasCount } alias permanent."
       ]
     },
     "Validation": {
@@ -3209,6 +3275,13 @@
       ],
       "An error occurred while exporting your data": [
         "Ett fel uppstod när dina data exporterades"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Är du säker på att du vill ta bort ${ deletedItemsCount } objekt permanent?",
+        "Är du säker på att du vill ta bort ${ deletedItemsCount } objekt permanent?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Är du säker på att du vill ta bort detta objekt permanent?"
       ],
       "At least one email address is required": [
         "Minst en e-postadress är obligatoriskt"

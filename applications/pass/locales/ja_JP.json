@@ -19,6 +19,9 @@
       ],
       "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } からの漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
+      ],
+      "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "あなたの情報が少なくとも1件のデータ漏洩で見つかりました。詳細を確認し、対策を講じるために${ DARK_WEB_MONITORING_NAME }をオンにしてください。${ link }"
       ]
     },
     "Action": {
@@ -529,6 +532,9 @@
       "Upgrade now to share with more people": [
         "今すぐアップグレードしてより多くの人と共有しましょう"
       ],
+      "Use ${ label } theme": [
+        "${ label } テーマを使用"
+      ],
       "Verify": [
         "検証"
       ],
@@ -575,9 +581,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "ブラックフライデー"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month."
@@ -1033,6 +1036,31 @@
         "テラバイト"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "システムのデフォルト"
+      ],
+      "Theme font": [
+        "テーマ フォント"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "大"
+      ],
+      "Medium (recommended)": [
+        "中 (推奨)"
+      ],
+      "Small": [
+        "小"
+      ],
+      "Very large": [
+        "極大"
+      ],
+      "Very small": [
+        "極小"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "「${ payload.item.data.metadata.name }」アイテムは無視されました"
@@ -1430,12 +1458,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべての項目を移動します"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "アイテムを別の保管庫に移動すると、その履歴とすべてのセキュアリンクが消去されます。"
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "アイテムを別の保管庫に移動すると、その履歴が消去されます."
-      ],
       "Moving items": [
         "アイテムの移動"
       ],
@@ -1558,9 +1580,6 @@
       ],
       "Press Enter to copy": [
         "Enterキーを押してコピーする"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "プライバシーは私たちにとって大きな懸念事項です。 ${ PASS_APP_NAME } が異なる理由をご覧ください。"
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "高度なアカウント保護プログラムである ${ PROTON_SENTINEL_LINK } によって保護されています"
@@ -2401,6 +2420,9 @@
       "The URL has been copied to the clipboard": [
         "URLをクリップボードにコピーしました"
       ],
+      "Theme": [
+        "テーマ"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "このアイテムは ${ remaining }までアクセス可能です"
       ],
@@ -2511,9 +2533,6 @@
     "Message": {
       "${ count } item": [
         "${ count } 件のアイテム"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "この保管庫で ${ semiboldText } を選択しました"
       ]
     },
     "new_plans: feature": {
@@ -2796,12 +2815,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "すべてのアイテムを \"${ vaultName }\" に移動しますか？"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "アイテムを \"${ vaultName }\" に移動しますか？"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "アイテムを \"${ vaultName }\" に移動しますか？"
-      ],
       "No excluded items": [
         "除外項目なし"
       ],
@@ -2942,9 +2955,6 @@
       ],
       "What is the dark web?": [
         "ダークウェブとは？"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "${ PASS_APP_NAME } を使用する理由"
       ],
       "Your exposed information": [
         "あなたの暴露された情報"

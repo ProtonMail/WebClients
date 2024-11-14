@@ -541,6 +541,9 @@
       "Upgrade now to share with more people": [
         "Улучшите тарифы сейчас, чтобы поделиться с большим количеством людей"
       ],
+      "Use ${ label } theme": [
+        "Использовать тему ${ label }"
+      ],
       "Verify": [
         "Подтвердить"
       ],
@@ -587,9 +590,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Черная пятница"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Заплатите один раз и получите ${ lifetimeAccessJSX } к Pass Plus. Всего ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Сэкономьте до ${ discountJSX } на Pass Family. Всего ${ relativePrice }/месяц."
@@ -1078,6 +1078,31 @@
         "Терабайтов"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Системный по умолчанию"
+      ],
+      "Theme font": [
+        "Шрифт темы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Большой"
+      ],
+      "Medium (recommended)": [
+        "Средний (Рекомендуется)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Очень большой"
+      ],
+      "Very small": [
+        "Очень маленький"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Элемент \"${ payload.item.data.metadata.name }\" был отклонен"
@@ -1505,12 +1530,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Перемещение элемента в другое хранилище приведет к стиранию его истории и всех защищенных ссылок."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Перемещение элемента в другое хранилище удалит его историю."
-      ],
       "Moving items": [
         "Перемещение элементов"
       ],
@@ -1645,9 +1664,6 @@
       ],
       "Press Enter to copy": [
         "Нажмите Enter, чтобы скопировать"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Конфиденциальность является нашей большой заботой. Узнайте, почему ${ PASS_APP_NAME } отличается."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Защищено ${ PROTON_SENTINEL_LINK }, нашей передовой программой защиты аккаунтов"
@@ -2542,6 +2558,9 @@
       "The URL has been copied to the clipboard": [
         "URL был скопирован в буфер обмена"
       ],
+      "Theme": [
+        "Тема"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Этот элемент останется доступным до ${ remaining }"
       ],
@@ -2655,9 +2674,6 @@
         "${ count } элемента",
         "${ count } элементов",
         "${ count } элементов"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Вы выбрали ${ semiboldText } в этом хранилище"
       ]
     },
     "new_plans: feature": {
@@ -3007,12 +3023,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "Переместить все элементы в \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Переместить элемент в \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Переместить элементы в \"${ vaultName }\"?"
-      ],
       "No excluded items": [
         "Нет исключенных элементов"
       ],
@@ -3159,9 +3169,6 @@
       ],
       "What is the dark web?": [
         "Что такое Dark Web?"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Почему ${ PASS_APP_NAME }?"
       ],
       "Your exposed information": [
         "Ваша раскрытая информация"
