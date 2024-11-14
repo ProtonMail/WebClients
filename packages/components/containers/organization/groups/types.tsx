@@ -1,4 +1,4 @@
-import type { Domain, Group, GroupMember } from '@proton/shared/lib/interfaces';
+import type { Domain, EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
 
 import type { GROUPS_STATE } from './useGroupsManagement';
 
@@ -11,7 +11,7 @@ interface DomainData {
 
 export interface GroupsManagementReturn {
     groups: Group[];
-    members: any;
+    members: EnhancedMember[];
     selectedGroup: Group | undefined;
     uiState: string;
     form: any;

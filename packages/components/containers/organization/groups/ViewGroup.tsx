@@ -6,6 +6,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { Group } from '@proton/shared/lib/interfaces';
 
+import E2EEDisabledWarning from './E2EEDisabledWarning';
 import GroupMemberList from './GroupMemberList';
 import type { GroupsManagementReturn } from './types';
 
@@ -23,6 +24,7 @@ const ViewGroup = ({
         loadingGroupMembers,
         form: { resetForm },
     },
+    groupsManagement,
     groupData,
     canOnlyDelete,
 }: Props) => {
@@ -69,7 +71,13 @@ const ViewGroup = ({
                 />
             }
         >
-            <div className="flex-col text-left">
+            <E2EEDisabledWarning
+                groupMembers={groupMembers}
+                loadingGroupMembers={loadingGroupMembers}
+                group={groupData}
+                groupsManagement={groupsManagement}
+            />
+            <div className="flex-col text-left p-1">
                 {groupData.Name && (
                     <div className="mb-6">
                         <h3 className="text-bold">{groupData.Name}</h3>
@@ -91,14 +99,12 @@ const ViewGroup = ({
                         </div>
                     </div>
                 )}
-                <div className="gap-2">
-                    <GroupMemberList
-                        groupMembers={groupMembers}
-                        loading={loadingGroupMembers}
-                        group={selectedGroup}
-                        canOnlyDelete={canOnlyDelete}
-                    />
-                </div>
+                <GroupMemberList
+                    groupMembers={groupMembers}
+                    loading={loadingGroupMembers}
+                    group={selectedGroup}
+                    canOnlyDelete={canOnlyDelete}
+                />
             </div>
         </Panel>
     );

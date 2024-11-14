@@ -5,11 +5,19 @@ import { Button } from '@proton/atoms';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
+import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { EnhancedMember, GroupMember, Recipient } from '@proton/shared/lib/interfaces';
+import {
+    type ApiKeysConfig,
+    type EnhancedMember,
+    GROUP_MEMBER_TYPE,
+    type GroupMember,
+    type Recipient,
+} from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import type { NewGroupMember } from './EditGroup';
+import useGroupKeys from './useGroupKeys';
 
 export const convertEnhancedMembersToContactEmails = (members: EnhancedMember[]): ContactEmail[] => {
     return members.flatMap(
@@ -44,18 +52,42 @@ interface Props {
     onAddAllOrgMembers: () => void;
 }
 
+const getEmailProperties = async (
+    email: string,
+    getMemberPublicKeys: (email: string) => Promise<ApiKeysConfig>
+): Promise<{ isExternal: boolean; hasKeys: boolean }> => {
+    const forwardeeKeysConfig = await getMemberPublicKeys(email);
+    const isExternal = forwardeeKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_EXTERNAL;
+    const hasKeys = (forwardeeKeysConfig as any).Address.Keys.length > 0;
+
+    return { isExternal, hasKeys };
+};
+
 export const NewGroupMemberInput = ({
     newGroupMembers,
     onAddNewGroupMembers,
     groupMembers,
     onAddAllOrgMembers,
 }: Props) => {
+    const { getMemberPublicKeys } = useGroupKeys();
+
     const [members] = useMembers();
     const existingGroupMembers = convertGroupMemberToRecipient(groupMembers);
     const recipients = [...existingGroupMembers, ...newGroupMembers];
 
-    const handleAddRecipients = (newRecipients: Recipient[]) => {
-        onAddNewGroupMembers(newRecipients);
+    const handleAddRecipients = async (newRecipients: Recipient[]) => {
+        const recipients = [];
+        for (const newRecipient of newRecipients) {
+            const { isExternal, hasKeys } = await getEmailProperties(newRecipient.Address, getMemberPublicKeys);
+
+            let GroupMemberType = GROUP_MEMBER_TYPE.INTERNAL;
+            if (isExternal) {
+                GroupMemberType = hasKeys ? GROUP_MEMBER_TYPE.INTERNAL_TYPE_EXTERNAL : GROUP_MEMBER_TYPE.EXTERNAL;
+            }
+
+            recipients.push({ ...newRecipient, GroupMemberType });
+        }
+        onAddNewGroupMembers(recipients);
     };
 
     return (
@@ -79,7 +111,7 @@ export const NewGroupMemberInput = ({
                     />
                 </InputFieldStacked>
             </InputFieldStackedGroup>
-            <Button color="norm" shape="ghost" size="small" className="mt-2" onClick={onAddAllOrgMembers}>
+            <Button color="norm" shape="ghost" size="small" className="p-1 mt-1" onClick={onAddAllOrgMembers}>
                 {c('Label').t`Add all organization members`}
             </Button>
         </>

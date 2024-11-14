@@ -13,15 +13,20 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { ADDRESS_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Address, EnhancedMember, Group } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
+import E2EEDisabledWarning from './E2EEDisabledWarning';
 import GroupAddressDomainSelect from './GroupAddressDomainSelect';
 import GroupMemberList from './GroupMemberList';
 import { NewGroupMemberInput } from './NewGroupMemberInput';
 import { NewGroupMemberItem } from './NewGroupMemberItem';
+import WillDisableE2eePrompt from './WillDisableE2eePrompt';
 import E2EEToggle from './components/E2EEToggle';
 import { getAddressSuggestedLocalPart } from './helpers';
 import useTriggerDiscardModal from './hooks/useTriggerDiscardModal';
@@ -35,6 +40,7 @@ interface Props {
 export interface NewGroupMember {
     Name: string;
     Address: string;
+    GroupMemberType: GROUP_MEMBER_TYPE;
 }
 
 const getMemberAddressMap = (members: EnhancedMember[]) => {
@@ -45,6 +51,15 @@ const getMemberAddressMap = (members: EnhancedMember[]) => {
         }
     });
     return addressMap;
+};
+
+const getEmailIsExternalMap = (members: EnhancedMember[]): Record<string, boolean> => {
+    return members.reduce<Record<string, boolean>>((acc, member) => {
+        (member?.Addresses ?? []).forEach((address) => {
+            acc[address.Email] = address.Type === ADDRESS_TYPE.TYPE_EXTERNAL;
+        });
+        return acc;
+    }, {});
 };
 
 const EditGroup = ({ groupsManagement, groupData }: Props) => {
@@ -68,11 +83,22 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
 
     const { resetForm, dirty, values: formValues, setFieldValue, isValid, errors } = form;
     const { loadingCustomDomains, selectedDomain, setSelectedDomain, customDomains } = domainData;
+
+    const [willDisableE2eeModalProps, setWillDisableE2eeModal, renderWillDisableE2eeModal] = useModalState();
+    const [e2eeWillBeDisabled, setE2eeWillBeDisabled] = useState(false);
     const [discardChangesModalProps, setDiscardChangesModal, renderDiscardChangesModal] = useModalState();
+
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const [newGroupMembers, setNewGroupMembers] = useState<NewGroupMember[]>([]);
+    const handleWillNotDisableE2ee = () => {
+        setWillDisableE2eeModal(false);
+
+        // remove external group members
+        setNewGroupMembers((prev) => prev.filter((member) => member.GroupMemberType === GROUP_MEMBER_TYPE.INTERNAL));
+    };
     const memberAddressMap = getMemberAddressMap(members);
+    const emailIsExternalMap = getEmailIsExternalMap(members);
     const verifiedCustomDomains = customDomains?.filter(getIsDomainActive);
     const panelRef = useRef<HTMLElement>(null);
 
@@ -96,6 +122,16 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         }
     }, [uiState]);
 
+    const updatedGroupAddress = groupsManagement.groups.find(({ Address: { ID } }) => ID === groupData.Address.ID)
+        ?.Address as Address;
+    const updatedGroupAddressKey = updatedGroupAddress?.Keys[0];
+    const updatedGroupAddressFlags = updatedGroupAddressKey?.Flags ?? 0;
+
+    useEffect(() => {
+        const initialIsE2EEEnabled = !hasBit(updatedGroupAddressFlags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
+        setE2eeWillBeDisabled(!initialIsE2EEEnabled);
+    }, [updatedGroupAddressFlags]);
+
     const onDiscardChanges = () => {
         setUiState(groups.length === 0 ? 'empty' : 'view');
         resetForm({
@@ -109,8 +145,17 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         });
     };
 
-    const handleAddNewMembers = (newMembers: NewGroupMember[]) => {
+    const handleAddNewMembers = async (newMembers: NewGroupMember[]) => {
+        const willDisableE2ee = newMembers.some((member) => member.GroupMemberType !== GROUP_MEMBER_TYPE.INTERNAL);
+        if (willDisableE2ee && !e2eeWillBeDisabled) {
+            setWillDisableE2eeModal(true);
+        }
         setNewGroupMembers((prev) => [...prev, ...newMembers]);
+    };
+
+    const handleWillDisableE2ee = () => {
+        setE2eeWillBeDisabled(true);
+        setWillDisableE2eeModal(false);
     };
 
     const handleRemoveNewGroupMember = (memberToRemove: NewGroupMember) => {
@@ -118,7 +163,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         setNewGroupMembers(updatedNewMembersList);
     };
 
-    const handleAddAllOrganizationMembers = () => {
+    const handleAddAllOrganizationMembers = async () => {
         const exisitingEmails = new Set([
             ...groupMembers?.map((member) => member?.Email),
             ...newGroupMembers.map((newMember) => newMember.Address),
@@ -126,16 +171,31 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
 
         const newMembersToAdd = Object.keys(memberAddressMap)
             .filter((email) => !exisitingEmails.has(email))
-            .map((email) => ({
-                Name: email,
-                Address: email,
-            }));
+            .map((email) => {
+                const isExternal = emailIsExternalMap[email];
+                const hasKeys = !!memberAddressMap[email];
+
+                let GroupMemberType = GROUP_MEMBER_TYPE.INTERNAL;
+                if (isExternal) {
+                    GroupMemberType = hasKeys ? GROUP_MEMBER_TYPE.INTERNAL_TYPE_EXTERNAL : GROUP_MEMBER_TYPE.EXTERNAL;
+                }
+
+                return {
+                    Name: email,
+                    Address: email,
+                    GroupMemberType,
+                };
+            });
 
         if (newMembersToAdd.length === 0) {
             createNotification({ text: c('Info').t`All members have been added.` });
             return;
         }
 
+        const willDisableE2ee = newMembersToAdd.some((member) => member.GroupMemberType !== GROUP_MEMBER_TYPE.INTERNAL);
+        if (willDisableE2ee && !e2eeWillBeDisabled) {
+            setWillDisableE2eeModal(true);
+        }
         setNewGroupMembers((prev) => [...prev, ...newMembersToAdd]);
     };
 
@@ -179,6 +239,13 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                     />
                 }
             >
+                <E2EEDisabledWarning
+                    groupMembers={groupMembers}
+                    loadingGroupMembers={loadingGroupMembers}
+                    newGroupMembers={newGroupMembers}
+                    group={groupData}
+                    groupsManagement={groupsManagement}
+                />
                 <FormikProvider value={form}>
                     <Form id="groups" className="flex flex-column gap-4">
                         <InputFieldStackedGroup>
@@ -281,7 +348,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                         </InputFieldStackedGroup>
                     </Form>
                 </FormikProvider>
-                {uiState === 'edit' && <E2EEToggle address={groupData.Address as Address} />}
+                {uiState === 'edit' && <E2EEToggle group={groupData} groupsManagement={groupsManagement} />}
                 <NewGroupMemberInput
                     newGroupMembers={newGroupMembers}
                     onAddNewGroupMembers={handleAddNewMembers}
@@ -312,6 +379,13 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
             </Panel>
             {renderDiscardChangesModal && (
                 <DiscardGroupChangesPrompt onConfirm={onDiscardChanges} {...discardChangesModalProps} />
+            )}
+            {renderWillDisableE2eeModal && (
+                <WillDisableE2eePrompt
+                    onConfirm={handleWillDisableE2ee}
+                    onCancel={handleWillNotDisableE2ee}
+                    {...willDisableE2eeModalProps}
+                />
             )}
         </>
     );
