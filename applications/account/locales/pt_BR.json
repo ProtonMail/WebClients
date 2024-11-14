@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -2229,6 +2229,9 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mês",
@@ -6690,6 +6693,9 @@
         "${ numberOfNonPrivateKeys } arquivo enviado não é uma chave privada válida. Verifique e tente novamente.",
         "${ numberOfNonPrivateKeys } arquivos enviados não são chaves privadas válidas. Verifique e tente novamente."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -9520,6 +9526,9 @@
       "Other": [
         "Outros"
       ],
+      "Product": [
+        "Produto"
+      ],
       "Refund": [
         "Reembolso"
       ],
@@ -11305,9 +11314,6 @@
       "for your first month": [
         "no seu primeiro mês"
       ],
-      "Get ${ planName } for ${ price }": [
-        "Obtenha ${ planName } por ${ price }"
-      ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tempo limitado, expira em 2 de abril de 2024"
       ]
@@ -11866,6 +11872,9 @@
       ],
       "Administration Panel": [
         "Painel de Administração"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Recursos avançados de alias (Com tecnologia do SimpleLogin)"
       ],
       "Advanced network security": [
         "Segurança de rede avançada"
@@ -13742,6 +13751,9 @@
       "${ n } user account": [
         "${ n } conta de usuário",
         "${ n } contas de usuário"
+      ],
+      "Activity log": [
+        "Registro de atividade"
       ],
       "Admin panel to manage users and subscription": [
         "Painel administrativo para gerenciar usuários e assinaturas"
@@ -16039,6 +16051,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "A assinatura será rebaixada ao final do ciclo de cobrança."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Acesso vitalício"
       ]
     },
     "Subscription price": {

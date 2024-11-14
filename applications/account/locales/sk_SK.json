@@ -70,11 +70,11 @@
       "Accept": [
         "Prijať"
       ],
-      "activate": [
-        "aktivovať"
-      ],
       "Activate": [
         "Aktivovať"
+      ],
+      "activate": [
+        "aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -9419,9 +9419,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
       ],
-      "You will keep lifetime access to ${ PASS_APP_NAME } premium features if you cancel your subscription.": [
-        "Ak zrušíte predplatné, zachováte si doživotný prístup k prémiovým funkciám ${ PASS_APP_NAME }."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "V tento deň stratíte prístup k funkciám ${ planTitle }."
       ],
@@ -11510,9 +11507,6 @@
       ],
       "for your first month": [
         "za váš prvý mesiac"
-      ],
-      "Get ${ planName } for ${ price }": [
-        "Získajte ${ planName } za ${ price }"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Časovo obmedzená ponuka, končí 2. apríla 2024"

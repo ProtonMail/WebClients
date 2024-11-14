@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activa"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -1771,6 +1771,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Facturat a ${ amount } una vegada"
+      ],
       "for ${ durationDeal }": [
         "durant ${ durationDeal }"
       ],
@@ -10351,6 +10354,10 @@
       "Send in": [
         "Envia en"
       ],
+      "Show ${ n } administrator": [
+        "Mostra ${ n } administrador",
+        "Mostra ${ n } administradors"
+      ],
       "Show others when I'm busy": [
         "Mostra als altres quan estic ocupat"
       ],
@@ -10491,6 +10498,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Verifica les claus amb Key Transparency"
+      ],
+      "Video conferencing with Zoom": [
+        "Videoconferència amb Zoom"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ens sap greu que marxeu. Expliqueu perquè us n'aneu per ajudar-nos a millorar."
@@ -10986,9 +10996,6 @@
       "for your first month": [
         "el primer mes"
       ],
-      "Get ${ planName } for ${ price }": [
-        "Obteniu ${ planName } per ${ price }."
-      ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta limitada, caduca el 2 d'abril de 2024"
       ]
@@ -11145,8 +11152,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Dòlar australià"
+      ],
       "Brazilian real": [
         "Real brasiler"
+      ],
+      "British pound": [
+        "Lliura esterlina"
+      ],
+      "Canadian dollar": [
+        "Dòlar canadenc"
       ],
       "Euro": [
         "Euro"
@@ -11482,9 +11498,6 @@
       "${ numberOfUsers } user": [
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
-      ],
-      "${ PASS_APP_NAME } lifetime": [
-        "Oferta de per vida de ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
@@ -12383,6 +12396,12 @@
       ]
     },
     "news": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } i ${ lastCategoryTitle }"
+      ],
+      "${ app } and ${ additionalApp } product updates": [
+        "Actualitzacions del producte per a ${ app } i ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Actualitzacions de producte per a ${ app }"
       ],
@@ -12407,6 +12426,12 @@
       "${ BRAND_NAME } welcome emails": [
         "Missatges de benvinguda de ${ BRAND_NAME }"
       ],
+      "1 email per month": [
+        "1 correu electrònic al mes"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 correu electrònic al mes. Rebeu les últimes notícies sobre privacitat i sobre el que passa a l'univers de ${ BRAND_NAME }."
+      ],
       "1 email per quarter": [
         "1 correu electrònic per trimestre"
       ],
@@ -12419,6 +12444,9 @@
       "4-6 emails per year": [
         "4 a 6 correus electrònics per any"
       ],
+      "Application notifications": [
+        "Notificacions de l'aplicació"
+      ],
       "Daily email notifications": [
         "Notificacions diàries per correu electrònic"
       ],
@@ -12430,6 +12458,9 @@
       ],
       "In-app notifications": [
         "Notificacions dins l'aplicació"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participeu en enquestes per millorar els serveis de ${ BRAND_NAME }"
       ],
       "Product updates": [
         "Actualitzacions de productes"
@@ -13182,6 +13213,9 @@
       ],
       "Get the security and features your business needs": [
         "Obteniu la seguretat i les característiques que la vostra empresa necessita"
+      ],
+      "Get unlimited privacy for two": [
+        "Obtingueu una privadesa il·limitada per a dos"
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Entenc que si perdo els detalls de recuperació, podria perdre permanentment l'accés al meu compte."
@@ -17735,6 +17769,9 @@
       ],
       "Enable manually": [
         "Activa manualment"
+      ],
+      "Keep request": [
+        "Manté la sol·licitud"
       ],
       "Private user": [
         "Usuari privat"

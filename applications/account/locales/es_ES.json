@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -6691,6 +6691,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -9284,6 +9287,9 @@
       "Your ${ BRAND_NAME } password": [
         "Tu contraseña de ${ BRAND_NAME }"
       ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Tu suscripción ${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de tu suscripción se añadirá a tu cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Tus cuentas ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminar ambas, inicia sesión en ${ loginLink } y elimina tu cuenta allí."
       ],
@@ -11312,8 +11318,8 @@
       "for your first month": [
         "por tu primer mes"
       ],
-      "Get ${ planName } for ${ price }": [
-        "Obtén ${ planName } por ${ price }"
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Obtén ${ planTitle } por ${ discountedPriceElement }"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Oferta por tiempo limitado, expira el 2 de abril de 2024"
@@ -11471,8 +11477,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Dólar australiano"
+      ],
       "Brazilian real": [
         "Real brasileño"
+      ],
+      "British pound": [
+        "Libra esterlina"
+      ],
+      "Canadian dollar": [
+        "Dólar canadiense"
       ],
       "Euro": [
         "Euro"
@@ -11813,9 +11828,6 @@
         "Historial de ${ options } día de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
       ],
-      "${ PASS_APP_NAME } lifetime": [
-        "Oferta de por vida de ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email"
@@ -11874,6 +11886,9 @@
       "Administration Panel": [
         "Panel de administración"
       ],
+      "Advanced account protection": [
+        "Protección de cuentas avanzada"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Funcionalidades avanzadas de alias (potenciado por SimpleLogin)"
       ],
@@ -11909,6 +11924,9 @@
       ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
+      ],
+      "Breach alerts": [
+        "Alertas de vulneraciones"
       ],
       "Calendar sharing": [
         "Compartir calendario"
@@ -12511,6 +12529,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea hasta ${ n } direcciones de correo o alias que puedes asignar a tus familiares. Utilízalos para las identidades online, p. ej., JuanCompras@${ domain } para cuentas de compras."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Dominios personalizados para los alias, buzones adicionales, posibilidad de enviar correos desde alias y más"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
       ],
@@ -12792,7 +12813,7 @@
         "4 a 6 correos al año"
       ],
       "Application notifications": [
-        "Notificaciones de aplicaciones"
+        "Notificaciones de l'aplicación"
       ],
       "Critical account notifications will still be delivered": [
         "Las notificaciones críticas de la cuenta seguirán llegando"
@@ -13938,6 +13959,9 @@
       ],
       "Processing payment": [
         "Procesando el pago"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Se renueva por ${ price } y cancela cuando quieras."
       ],
       "Select billing country to pay": [
         "Selecciona el país de facturación para pagar"

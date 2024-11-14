@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "activate": [
-        "activare"
-      ],
       "Activate": [
         "Activare"
+      ],
+      "activate": [
+        "activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -6732,6 +6732,9 @@
         "${ numberOfNonPrivateKeys } fișiere încărcate nu sunt chei private valide. Verificați și reîncercați.",
         "${ numberOfNonPrivateKeys } de fișiere încărcate nu sunt chei private valide. Verificați și reîncercați."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
@@ -9338,9 +9341,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
-      "You will keep lifetime access to ${ PASS_APP_NAME } premium features if you cancel your subscription.": [
-        "Vă veți păstra accesul pe viață la funcțiile premium din ${ PASS_APP_NAME } dacă anulați abonamentul."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
       ],
@@ -11418,9 +11418,6 @@
       ],
       "for your first month": [
         "pentru prima lună"
-      ],
-      "Get ${ planName } for ${ price }": [
-        "Luați ${ planName } cu ${ price }"
       ],
       "Limited-time offer, expires April 2 2024": [
         "Ofertă limitată, expiră la 2 aprilie 2024"
