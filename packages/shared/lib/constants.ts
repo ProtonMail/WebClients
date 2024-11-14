@@ -1073,4 +1073,4 @@ export const CALENDAR_MOBILE_APP_LINKS = {
     playStore: 'https://play.google.com/store/apps/details?id=me.proton.android.calendar',
 };
 
-export const MAX_FOLDER_LEVEL = 2;
+export const MAX_FOLDER_NESTING_LEVEL = 2;
