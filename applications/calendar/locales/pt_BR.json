@@ -554,6 +554,9 @@
       "Remove this participant": [
         "Remover este participante"
       ],
+      "Remove zoom meeting": [
+        "Remover reunião do Zoom"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -1517,6 +1520,9 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mês",
@@ -4012,6 +4018,9 @@
       "Less details": [
         "Menos detalhes"
       ],
+      "Meeting host:": [
+        "Host da reunião:"
+      ],
       "Meeting link:": [
         "Link da reunião:"
       ],
@@ -4399,6 +4408,9 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -6627,6 +6639,9 @@
       "Administration Panel": [
         "Painel de Administração"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Recursos avançados de alias (Com tecnologia do SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Todos os produtos e recursos da ${ BRAND_NAME }"
       ],
@@ -7377,6 +7392,12 @@
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
+      "Meeting host copied to clipboard": [
+        "O host da reunião foi copiado para área de transferência"
+      ],
+      "Meeting ID copied to clipboard": [
+        "O ID da reunião foi copiado para área de transferência"
+      ],
       "Passcode copied to clipboard": [
         "Código de acesso copiado para a área de transferência"
       ]
@@ -7685,6 +7706,9 @@
       "${ n } user account": [
         "${ n } conta de usuário",
         "${ n } contas de usuário"
+      ],
+      "Activity log": [
+        "Registro de atividade"
       ],
       "Admin panel to manage users and subscription": [
         "Painel administrativo para gerenciar usuários e assinaturas"
@@ -8805,6 +8829,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "A assinatura será rebaixada ao final do ciclo de cobrança."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Acesso vitalício"
       ]
     },
     "Subscription price": {
@@ -10539,6 +10568,9 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID da reunião:"
+      ],
+      "Passcode:": [
+        "Código de acesso:"
       ]
     }
   }
