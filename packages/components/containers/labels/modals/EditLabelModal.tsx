@@ -37,6 +37,7 @@ export interface LabelModel extends Pick<Folder | Label, 'Name' | 'Color' | 'Typ
 interface Props extends ModalProps {
     type?: 'label' | 'folder';
     label?: LabelModel;
+    parentFolderId?: string;
     mode?: 'create' | 'edition' | 'checkAvailable';
     onAdd?: (label: LabelModel) => void;
     onEdit?: (label: LabelModel) => void;
@@ -51,17 +52,18 @@ const prepareLabel = (label: LabelModel) => {
     return label;
 };
 
-const getDefaultLabel = (type: 'label' | 'folder') => ({
+const getDefaultLabel = (type: 'label' | 'folder', parentFolderId?: string) => ({
     Name: '',
     Color: getRandomAccentColor(),
     Type: type === 'folder' ? LABEL_TYPE.MESSAGE_FOLDER : LABEL_TYPE.MESSAGE_LABEL,
-    ParentID: type === 'folder' ? ROOT_FOLDER : undefined,
+    ParentID: type === 'folder' ? parentFolderId || ROOT_FOLDER : undefined,
     Notify: type === 'folder' ? 1 : 0,
 });
 
 const EditLabelModal = ({
     label,
     mode = 'create',
+    parentFolderId,
     onAdd = noop,
     onEdit = noop,
     onCheckAvailable = noop,
@@ -75,7 +77,19 @@ const EditLabelModal = ({
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
     const { onClose } = rest;
-    const [model, setModel] = useState<LabelModel>(label || getDefaultLabel(type));
+
+    const [model, setModel] = useState<LabelModel>(() => {
+        if (label) {
+            return label;
+        }
+        if (mode === 'create' && type === 'folder' && parentFolderId) {
+            return {
+                ...getDefaultLabel(type),
+                ParentID: parentFolderId,
+            };
+        }
+        return getDefaultLabel(type);
+    });
 
     const handleClose = () => {
         onCloseCustomAction?.();

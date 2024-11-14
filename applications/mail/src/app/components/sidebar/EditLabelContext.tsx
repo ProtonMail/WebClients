@@ -11,7 +11,7 @@ import { getStandardFolders } from '../../helpers/labels';
 type LabelType = 'label' | 'folder';
 
 interface LabelActionsContext {
-    createLabel: (type: LabelType) => void;
+    createLabel: (type: LabelType, parentFolderId?: string) => void;
     editLabel: (type: LabelType, label: Label) => void;
     deleteLabel: (type: LabelType, label: Label) => void;
 }
@@ -32,10 +32,11 @@ type State = {
     type: LabelType | undefined;
     label: Label | undefined;
     action: 'create' | 'edit' | 'delete' | undefined;
+    parentFolderId?: string;
 };
 
 type Action =
-    | { type: 'create'; payload: Pick<State, 'type'> }
+    | { type: 'create'; payload: Pick<State, 'type' | 'parentFolderId'> }
     | { type: 'edit'; payload: Pick<State, 'label' | 'type'> }
     | { type: 'delete'; payload: Pick<State, 'label' | 'type'> }
     | { type: 'reset' };
@@ -43,23 +44,29 @@ type Action =
 const reducer = (state: State, action: Action) => {
     switch (action.type) {
         case 'create':
-            return { action: action.type, type: action.payload.type, label: undefined };
+            return {
+                action: action.type,
+                type: action.payload.type,
+                label: undefined,
+                parentFolderId: action.payload.parentFolderId,
+            };
         case 'edit':
             return { action: action.type, ...action.payload };
         case 'delete':
             return { action: action.type, ...action.payload };
         case 'reset':
-            return { action: undefined, label: undefined, type: undefined };
+            return { action: undefined, label: undefined, type: undefined, parentFolderId: undefined };
     }
 };
 
 export const LabelActionsContextProvider = ({ children }: { children: React.ReactNode }) => {
     const location = useLocation();
     const history = useHistory();
-    const [{ type, label, action }, dispatch] = useReducer<Reducer<State, Action>>(reducer, {
+    const [{ type, label, action, parentFolderId }, dispatch] = useReducer<Reducer<State, Action>>(reducer, {
         type: undefined,
         label: undefined,
         action: undefined,
+        parentFolderId: undefined,
     });
     const [modalProps, openModal, renderModal] = useModalState();
 
@@ -70,8 +77,8 @@ export const LabelActionsContextProvider = ({ children }: { children: React.Reac
 
     const contextProviderValue = useMemo(
         () => ({
-            createLabel: (type: LabelType) => {
-                dispatch({ type: 'create', payload: { type } });
+            createLabel: (type: LabelType, parentFolderId?: string) => {
+                dispatch({ type: 'create', payload: { type, parentFolderId } });
                 openModal(true);
             },
             editLabel: (type: LabelType, label: Label) => {
@@ -101,6 +108,7 @@ export const LabelActionsContextProvider = ({ children }: { children: React.Reac
                     {...modalProps}
                     type={type}
                     mode="create"
+                    parentFolderId={parentFolderId}
                     onCloseCustomAction={resetContextAndCloseModal}
                 />
             )}
