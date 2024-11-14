@@ -32,6 +32,7 @@ import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitc
 import useApi from '@proton/components/hooks/useApi';
 import { initMainHost } from '@proton/cross-storage/lib';
 import useInstance from '@proton/hooks/useInstance';
+import { UNPAID_STATE } from '@proton/payments';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -64,7 +65,7 @@ import type {
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { GetActiveSessionType } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, CLIENT_TYPES, SETUP_ADDRESS_PATH, SSO_PATHS, UNPAID_STATE } from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';

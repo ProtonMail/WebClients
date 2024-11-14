@@ -5,6 +5,7 @@ import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { getHas2024OfferCoupon, getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Api, BillingPlatform, ChargebeeUserExists, Subscription, User } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { isDelinquent } from '@proton/shared/lib/user/helpers';
 
 import { type BillingAddress } from './billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
@@ -341,12 +342,15 @@ export class PaymentMethods {
             this.buysPassLifetime();
         const btcDisabledSpecialCases = passLifetimeBuyerWithCreditBalance || passLifetimeBuyerWithActiveSubscription;
 
+        const notDelinquent = !this.user || !isDelinquent(this.user);
+
         return (
             this.statusExtended.VendorStates.Bitcoin &&
             flowSupportsBtc &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
             !this.isB2BPlan() &&
-            !btcDisabledSpecialCases
+            !btcDisabledSpecialCases &&
+            notDelinquent
         );
     }
 
