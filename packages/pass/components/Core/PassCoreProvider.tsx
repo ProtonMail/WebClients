@@ -41,6 +41,8 @@ export type PassCoreContextValue = {
     settings: SettingsService;
     /** Spotlight proxy service */
     spotlight: SpotlightProxy;
+    /** Current theme */
+    theme: PassThemeOption;
     /** Resolves a users */
     exportData: (options: ExportOptions) => Promise<File>;
     /** In the extension: leverage worker communication to generate
@@ -61,7 +63,7 @@ export type PassCoreContextValue = {
     /** Resolves the initial theme. This is required in order to resolve
      * the proxied theme setting stored locally before state hydration */
     getTheme: () => Promise<Maybe<PassThemeOption>>;
-    setTheme?: (theme: PassThemeOption) => void;
+    setTheme: (theme: PassThemeOption) => void;
     /** defines how a client handles external links.
      * In extension, this will leverage the `browser.tabs` API
      * whereas in the web-app, we can use `window.location` */
@@ -94,7 +96,7 @@ export type PassCoreContextValue = {
     isFirstLaunch?: () => boolean;
 };
 
-export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale'> & { wasm?: boolean };
+export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale' | 'theme' | 'setTheme'> & { wasm?: boolean };
 
 const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
 
@@ -104,7 +106,11 @@ const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
 export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, wasm, ...core }) => {
     const [appLocale, setAppLocale] = useState(DEFAULT_LOCALE);
     const [theme, setTheme] = useState<PassThemeOption>(PASS_DEFAULT_THEME);
-    const context = useMemo<PassCoreContextValue>(() => ({ ...core, setTheme, locale: appLocale }), [appLocale]);
+
+    const context = useMemo<PassCoreContextValue>(
+        () => ({ ...core, theme, setTheme, locale: appLocale }),
+        [appLocale, theme]
+    );
 
     useEffect(() => {
         if (wasm) preloadPassCoreUI()?.catch(noop);
