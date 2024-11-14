@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
@@ -11,7 +11,6 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { getMonths } from '@proton/components/containers/payments/SubscriptionsSection';
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
@@ -167,7 +166,6 @@ const UnavailablePrompt = (rest: ModalProps) => {
 };
 
 const UpsellPrompt = ({ discount, planCombination: { plan, cycle }, onConfirm, ...rest }: Props) => {
-    const months = getMonths(cycle);
     const discountPercentage = `${discount}%`;
     return (
         <Prompt
@@ -186,9 +184,10 @@ const UpsellPrompt = ({ discount, planCombination: { plan, cycle }, onConfirm, .
             ]}
             {...rest}
         >
-            {getBoldFormattedText(
-                c('bf2023: info')
-                    .t`Sorry, this offer is not available with your current plan. But you can get **${discountPercentage} off ${plan.Title}** when you subscribe for **${months}**.`
+            {c('bf2023: info').ngettext(
+                msgid `Sorry, this offer is not available with your current plan. But you can get ${discountPercentage} off ${plan.Title} when you subscribe for ${cycle} month.`,
+                `Sorry, this offer is not available with your current plan. But you can get ${discountPercentage} off ${plan.Title} when you subscribe for ${cycle} months.`,
+                cycle
             )}
         </Prompt>
     );
