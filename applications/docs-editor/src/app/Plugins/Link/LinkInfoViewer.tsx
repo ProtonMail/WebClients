@@ -11,7 +11,7 @@ import { Button } from '@proton/atoms'
 import { createPortal } from 'react-dom'
 import { c } from 'ttag'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { LINK_CHANGE_COMMAND } from './LinkPlugin'
@@ -139,7 +139,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
             size="small"
             shape="ghost"
             onClick={() => {
-              navigator.clipboard.writeText(linkUrl).catch(sendErrorMessage)
+              navigator.clipboard.writeText(linkUrl).catch(reportErrorToSentry)
             }}
             data-testid="hyperlink-copy-link-button"
           >

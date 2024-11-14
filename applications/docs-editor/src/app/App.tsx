@@ -17,7 +17,7 @@ import {
 import { ApplicationProvider } from './ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import locales from './locales'
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
+
 import type { EditorState } from 'lexical'
 import { type LexicalEditor, type SerializedEditorState } from 'lexical'
 import { SHOW_ALL_COMMENTS_COMMAND } from './Commands'
@@ -35,6 +35,10 @@ import { removeCommentThreadMarks } from './Tools/removeCommentThreadMarks'
 import { rejectAllSuggestions } from './Plugins/Suggestions/rejectAllSuggestions'
 import { PreviewModeEditor } from './PreviewModeEditor'
 import { NotificationsChildren, NotificationsProvider } from '@proton/components'
+import { reportErrorToSentry } from './Utils/errorMessage'
+import * as config from './config'
+import { bootstrapEditorApp } from './Bootstrap'
+import noop from '@proton/utils/noop'
 
 type Props = {
   systemMode: EditorSystemMode
@@ -61,7 +65,9 @@ export function App({ systemMode }: Props) {
   const [showTreeView, setShowTreeView] = useState(false)
 
   useEffectOnce(() => {
-    setTtagLocales(locales)
+    ;(async () => {
+      await bootstrapEditorApp({ config })
+    })().catch(noop)
   })
 
   const editorRef = useRef<LexicalEditor | null>(null)
@@ -317,9 +323,12 @@ export function App({ systemMode }: Props) {
   const onEditorLoadResult = useCallback(
     (result: TranslatedResult<void>) => {
       if (result.isFailed()) {
-        void bridge
-          .getClientInvoker()
-          .reportError(new Error(result.getTranslatedError()), 'user-and-devops', { irrecoverable: true })
+        const error = new Error(result.getTranslatedError())
+
+        void bridge.getClientInvoker().reportUserInterfaceError(error, { irrecoverable: true })
+
+        reportErrorToSentry(error)
+
         return
       }
 
@@ -341,10 +350,10 @@ export function App({ systemMode }: Props) {
         .t`An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.`
       void bridge
         .getClientInvoker()
-        .reportError(new Error(message), 'user-only', { irrecoverable: false, lockEditor: true })
+        .reportUserInterfaceError(new Error(message), { irrecoverable: false, lockEditor: true })
 
       /** Report the underlying error */
-      void bridge.getClientInvoker().reportError(error, 'devops-only')
+      reportErrorToSentry(error)
 
       application.logger.error('A lexical error occurred', error)
     },

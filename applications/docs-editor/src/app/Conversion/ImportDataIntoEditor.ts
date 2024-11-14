@@ -8,7 +8,7 @@ import { MarkdownTransformers } from '../Tools/MarkdownTransformers'
 import type { ConvertibleDataType } from '@proton/docs-shared'
 import { TranslatedResult } from '@proton/docs-shared'
 import { utf8ArrayToString } from '@proton/crypto/lib/utils'
-import { sendErrorMessage } from '../Utils/errorMessage'
+import { reportErrorToSentry } from '../Utils/errorMessage'
 import { c } from 'ttag'
 
 export function isValidSuperString(editor: LexicalEditor, superString: string): boolean {
@@ -54,7 +54,7 @@ export async function $importDataIntoEditor(
         },
       )
     }).catch((error) => {
-      sendErrorMessage(error)
+      reportErrorToSentry(error)
       return TranslatedResult.failWithTranslatedError<void>(
         c('Error').t`Failed to import Word document due to unknown error.`,
       )
@@ -106,7 +106,7 @@ export async function $importDataIntoEditor(
         { discrete: true },
       )
     } catch (error) {
-      sendErrorMessage(error)
+      reportErrorToSentry(error)
       return TranslatedResult.failWithTranslatedError<void>(c('Error').t`Failed to import HTML due to unknown error.`)
     }
 
@@ -122,7 +122,7 @@ export async function $importDataIntoEditor(
         },
       )
     } catch (error) {
-      sendErrorMessage(error)
+      reportErrorToSentry(error)
       return TranslatedResult.failWithTranslatedError<void>(
         c('Error').t`Failed to import Markdown due to unknown error.`,
       )

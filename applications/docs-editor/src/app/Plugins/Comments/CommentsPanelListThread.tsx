@@ -8,7 +8,7 @@ import { CommentThreadState, CommentThreadType, CommentType, LiveCommentsEvent }
 import { Icon, ToolbarButton } from '@proton/components'
 import { useApplication } from '../../ApplicationProvider'
 import { c, msgid } from 'ttag'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $getNodeByKey, $getSelection, $isRangeSelection } from 'lexical'
@@ -61,12 +61,12 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   }, [element])
 
   useEffect(() => {
-    controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(sendErrorMessage)
+    controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(reportErrorToSentry)
     return application.eventBus.addEventCallback((data) => {
       const eventData = data as LiveCommentsTypeStatusChangeData
       const { threadId } = eventData
       if (threadId === thread.id) {
-        controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(sendErrorMessage)
+        controller.getTypersExcludingSelf(thread.id).then(setTypers).catch(reportErrorToSentry)
       }
     }, LiveCommentsEvent.TypingStatusChange)
   }, [controller, application, thread.id])
@@ -131,7 +131,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   }
 
   const handleClickThread: MouseEventHandler = (event) => {
-    controller.markThreadAsRead(thread.id).catch(sendErrorMessage)
+    controller.markThreadAsRead(thread.id).catch(reportErrorToSentry)
 
     const target = event.target
     if (!(target instanceof Element)) {
@@ -255,7 +255,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
             placeholder={c('Placeholder').t`Reply...`}
             data-testid="reply-in-thread-input"
             onSubmit={(content) => {
-              controller.createComment(content, thread.id).catch(sendErrorMessage)
+              controller.createComment(content, thread.id).catch(reportErrorToSentry)
             }}
             onTextContentChange={(textContent) => {
               if (textContent.length > 0) {
@@ -290,7 +290,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
           <button
             className="rounded border border-[--border-weak] px-2.5 py-1.5 text-sm hover:bg-[--background-weak] disabled:opacity-50"
             onClick={() => {
-              controller.unresolveThread(thread.id).catch(sendErrorMessage)
+              controller.unresolveThread(thread.id).catch(reportErrorToSentry)
             }}
             data-testid="reopen-thread-button"
           >

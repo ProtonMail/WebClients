@@ -5,7 +5,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { CommentsComposer } from './CommentsComposer'
 import { c } from 'ttag'
 import { Icon, ToolbarButton } from '@proton/components'
-import { sendErrorMessage } from '../../Utils/errorMessage'
+import { reportErrorToSentry } from '../../Utils/errorMessage'
 import { useCommentsContext } from './CommentsContext'
 
 export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalEditor; cancelAddComment: () => void }) {
@@ -122,7 +122,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
               setThreadToFocus(thread.id)
             }
           })
-          .catch(sendErrorMessage)
+          .catch(reportErrorToSentry)
         selectionRef.current = null
         textContentRef.current = ''
         cancelAddComment()
