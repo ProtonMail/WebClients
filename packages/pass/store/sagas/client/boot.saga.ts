@@ -17,10 +17,10 @@ import {
     getUserSettings,
     passwordHistoryGarbageCollect,
     secureLinksGet,
+    setDesktopSettings,
     startEventPolling,
     stateDestroy,
     stopEventPolling,
-    syncDesktopSettings,
 } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
@@ -67,7 +67,6 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         yield put(bootSuccess(fromCache ? undefined : yield synchronize(SyncType.FULL)));
         yield put(draftsGarbageCollect());
         yield put(passwordHistoryGarbageCollect());
-        if (DESKTOP_BUILD) yield put(syncDesktopSettings.intent());
 
         if (online) {
             yield put(startEventPolling());
@@ -89,6 +88,9 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
                 yield put(withRevalidate(getOrganizationSettings.intent()));
             }
         }
+
+        /** Electron might need to apply or store certain settings, forward them */
+        if (DESKTOP_BUILD) yield put(setDesktopSettings.intent(settings));
 
         options.setAppStatus(online ? AppStatus.READY : AppStatus.OFFLINE);
         options.onBoot?.({ ok: true, fromCache, offline: payload?.offline, version });
