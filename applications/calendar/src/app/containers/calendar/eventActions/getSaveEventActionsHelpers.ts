@@ -271,6 +271,14 @@ export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, o
         result.dtend = newVevent.dtend;
     }
 
+    if (newVevent['x-pm-conference-id'] !== oldVevent['x-pm-conference-id']) {
+        result['x-pm-conference-id'] = newVevent['x-pm-conference-id'];
+    }
+
+    if (newVevent['x-pm-conference-url'] !== oldVevent['x-pm-conference-url']) {
+        result['x-pm-conference-url'] = newVevent['x-pm-conference-url'];
+    }
+
     return result;
 };
 
@@ -349,6 +357,15 @@ export const getHasMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Part
             return true;
         }
     }
+
+    if (vevent['x-pm-conference-id'] !== mergeVevent['x-pm-conference-id']) {
+        return true;
+    }
+
+    if (vevent['x-pm-conference-url'] !== mergeVevent['x-pm-conference-url']) {
+        return true;
+    }
+
     if (getHasPersonalMergeUpdate(vevent, mergeVevent)) {
         return true;
     }
@@ -388,4 +405,15 @@ export const getUpdateMergeVeventWithoutMaybeNotifications = ({
     mergeVevent: Partial<VcalVeventComponent>;
 }) => {
     return getIsAllDay(newVevent) !== getIsAllDay(oldVevent) ? omit(mergeVevent, ['components']) : { ...mergeVevent };
+};
+
+export const handleConferenceDataInMergedVeventIfNeeded = (mergedVevent: VcalVeventComponent) => {
+    // In some cases conference data is explicitly set to undefined in the mergedVevent to reflect deletion
+    // We want to delete it before sending the ICS file
+    if (!mergedVevent['x-pm-conference-id']) {
+        delete mergedVevent['x-pm-conference-id'];
+    }
+    if (!mergedVevent['x-pm-conference-url']) {
+        delete mergedVevent['x-pm-conference-url'];
+    }
 };
