@@ -24,16 +24,15 @@ export const ThemePicker = ({ list, themeIdentifier, onChange }: Props) => {
                 const size = 'small';
 
                 return (
-                    <li key={label} className={clsx(selected && 'border border-primary border-2', 'rounded')}>
+                    <li key={label}>
                         <Button
                             name="themeCard"
                             color="norm"
                             id={id}
                             className={clsx(
-                                'p-2 flex flex-nowrap flex-column gap-1 items-start w-full',
-                                selected && 'is-active pointer-events-none text-bold',
-                                'interactive-pseudo interactive--no-background',
-                                'border-none'
+                                'p-2 flex flex-nowrap flex-column gap-1 items-start w-full rounded-lg border-2',
+                                'relative interactive interactive--no-background',
+                                selected ? 'border-primary pointer-events-none text-bold' : 'border-transparent'
                             )}
                             aria-pressed={selected}
                             onClick={() => onChange(identifier)}
