@@ -26,6 +26,7 @@ import { usePaymentsTelemetry } from '@proton/components/payments/client-extensi
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
+import metrics, { observeApiError } from '@proton/metrics';
 import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/payments';
 import {
     type Currency,
@@ -826,9 +827,21 @@ const SingleSignupContainerV2 = ({
         };
 
         void withLoadingDependencies(
-            fetchDependencies().catch((error) => {
-                setError(error);
-            })
+            fetchDependencies()
+                .then(() => {
+                    metrics.core_single_signup_fetchDependencies_total.increment({
+                        status: 'success',
+                    });
+                })
+                .catch((error) => {
+                    setError(error);
+
+                    observeApiError(error, (status) =>
+                        metrics.core_single_signup_fetchDependencies_total.increment({
+                            status,
+                        })
+                    );
+                })
         );
 
         return () => {};
@@ -987,6 +1000,16 @@ const SingleSignupContainerV2 = ({
                 event: TelemetryAccountSignupEvents.beSignInSuccess,
                 dimensions: { plan: getPlanNameFromSession(session) },
             });
+
+            metrics.core_single_signup_signedInSession_total.increment({
+                status: 'success',
+            });
+        } catch (error) {
+            observeApiError(error, (status) =>
+                metrics.core_single_signup_signedInSession_total.increment({
+                    status,
+                })
+            );
         } finally {
             accountRef.current.signingIn = false;
         }
@@ -1036,7 +1059,16 @@ const SingleSignupContainerV2 = ({
                 clientKey: cache.session.clientKey,
                 offlineKey: cache.session.offlineKey,
             });
+
+            metrics.core_single_signup_complete_total.increment({
+                status: 'success',
+            });
         } catch (error) {
+            observeApiError(error, (status) =>
+                metrics.core_single_signup_complete_total.increment({
+                    status,
+                })
+            );
             handleError(error);
         }
     };
@@ -1362,6 +1394,10 @@ const SingleSignupContainerV2 = ({
                                     cache: userCacheResult,
                                     step: Steps.Loading,
                                 });
+
+                                metrics.core_single_signup_setup_total.increment({
+                                    status: 'success',
+                                });
                                 return;
                             }
 
@@ -1428,7 +1464,17 @@ const SingleSignupContainerV2 = ({
                                         step: Steps.Loading,
                                     });
                                 }
+
+                                metrics.core_single_signup_setup_total.increment({
+                                    status: 'success',
+                                });
                             } catch (error: any) {
+                                observeApiError(error, (status) =>
+                                    metrics.core_single_signup_setup_total.increment({
+                                        status,
+                                    })
+                                );
+
                                 handleError(error);
                                 if (error?.config?.url?.endsWith?.('keys/setup')) {
                                     captureMessage(`Signup setup failure`);
@@ -1492,7 +1538,17 @@ const SingleSignupContainerV2 = ({
                                             throw new Error('Not implemented');
                                         }
                                     }
+
+                                    metrics.core_single_signup_setup_total.increment({
+                                        status: 'success',
+                                    });
                                 } catch (error) {
+                                    observeApiError(error, (status) =>
+                                        metrics.core_single_signup_setup_total.increment({
+                                            status,
+                                        })
+                                    );
+
                                     await startUnAuthFlow().catch(noop);
                                     handleError(error);
                                     setModelDiff({
@@ -1523,7 +1579,16 @@ const SingleSignupContainerV2 = ({
                             if (result.type === 'signup') {
                                 try {
                                     await onLogin(result.payload.session);
+
+                                    metrics.core_single_signup_complete_total.increment({
+                                        status: 'success',
+                                    });
                                 } catch (error) {
+                                    observeApiError(error, (status) =>
+                                        metrics.core_single_signup_complete_total.increment({
+                                            status,
+                                        })
+                                    );
                                     handleError(error);
                                 }
                             }
