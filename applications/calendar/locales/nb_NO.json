@@ -296,6 +296,9 @@
       "enable desktop notifications": [
         "aktivere skrivebordsvarsler"
       ],
+      "Expand video conferencing widget": [
+        "Utvid widget for videokonferanser"
+      ],
       "Export": [
         "Eksport"
       ],
@@ -553,6 +556,9 @@
       ],
       "Remove this participant": [
         "Fjern denne deltakeren"
+      ],
+      "Remove zoom meeting": [
+        "Fjern Zoom-møte"
       ],
       "Report a problem": [
         "Rapporter et problem"
@@ -1517,6 +1523,9 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Total": [
+        "Totalt"
       ],
       "Total for ${ n } month": [
         "Totalt for ${ n } måned",
@@ -4009,6 +4018,9 @@
       "Less details": [
         "Mindre informasjon"
       ],
+      "Meeting host:": [
+        "Møtevert:"
+      ],
       "Meeting link:": [
         "Møtekobling:"
       ],
@@ -4387,6 +4399,12 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe funnet",
         "${ groupCounts } grupper funnet"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Livsvarig avtale for ${ PASS_SHORT_APP_NAME } har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Livstidsavtale for ${ PASS_SHORT_APP_NAME } har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }. Fornyelsesprisen og datoen for ${ planTitle }-abonnementet forblir uendret."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
@@ -5349,6 +5367,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, vennligst betal eventuelle forfalte fakturaer."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ditt ${ PASS_SHORT_APP_NAME } Plus-abonnement vil bli erstattet med livsvarig avtale for ${ PASS_SHORT_APP_NAME }. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } livstidsavtale har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
@@ -6609,6 +6630,9 @@
       "Administration Panel": [
         "Administrasjonspanel"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avanserte aliasfunksjoner (drevet av SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME }-produkter og tjenester"
       ],
@@ -7120,6 +7144,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Egendefinerte domener for aliaser, ekstra postbokser, muligheten til å sende e-post fra aliaser og mer"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
       ],
@@ -7355,6 +7382,12 @@
       ],
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
+      ],
+      "Meeting host copied to clipboard": [
+        "Møtevert kopiert til utklippstavlen"
+      ],
+      "Meeting ID copied to clipboard": [
+        "Møte-ID kopiert til utklippstavlen"
       ],
       "Passcode copied to clipboard": [
         "Passkode kopiert til utklippstavlen"
@@ -7665,8 +7698,14 @@
         "${ n } brukerkonto",
         "${ n } brukerkontoer"
       ],
+      "Activity log": [
+        "Aktivitetslogg"
+      ],
       "Admin panel to manage users and subscription": [
         "Administrasjonspanel for å administrere brukere og abonnement"
+      ],
+      "Team policies": [
+        "Retningslinjer for teamet"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8587,6 +8626,12 @@
       "Now you can see when participants are free to attend your meeting.": [
         "Nå kan du se når deltakerne er frie til å delta på møtet ditt."
       ],
+      "Seamlessly create and add video meeting links to your events.": [
+        "Opprett og legg til videomøtelenker sømløst til hendelsene dine."
+      ],
+      "Video conferencing is here!": [
+        "Videokonferanser er her!"
+      ],
       "You can now collapse the navigation bar.": [
         "Du kan nå skjule navigasjonslinjen."
       ]
@@ -8781,6 +8826,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Abonnementet vil bli nedgradert på slutten av faktureringssyklusen."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
       ]
     },
     "Subscription price": {
@@ -10513,8 +10563,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Bli med på Zoom-møte"
+      ],
       "Meeting ID:": [
         "Møte-ID:"
+      ],
+      "Passcode:": [
+        "Adgangskode:"
       ]
     }
   }
