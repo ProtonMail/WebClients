@@ -106,6 +106,9 @@
       "Confirm access": [
         "Confirma l'accés"
       ],
+      "Confirm all": [
+        "Confirma tot"
+      ],
       "Continue": [
         "Continua"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Crea una identitat"
+      ],
+      "Create item": [
+        "Crea un element"
       ],
       "Create login": [
         "Crea un inici de sessió"
@@ -385,6 +391,9 @@
       "Previous": [
         "Anterior"
       ],
+      "Reactivate now": [
+        "Reactiva ara"
+      ],
       "Refresh the page": [
         "Refresca la pàgina"
       ],
@@ -462,6 +471,9 @@
       ],
       "See members": [
         "Mostra els membres"
+      ],
+      "Select": [
+        "Selecciona"
       ],
       "Send invite": [
         "Envia l'invitació"
@@ -554,6 +566,9 @@
       "Upgrade now to share with more people": [
         "Milloreu el pla ara per a compartir-ho amb més persones"
       ],
+      "Use ${ label } theme": [
+        "Utilitzar el tema ${ label }"
+      ],
       "Verify": [
         "Verifica"
       ],
@@ -621,8 +636,8 @@
       "Black Friday": [
         "Black Friday"
       ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Pagueu una vegada i obteniu ${ lifetimeAccessJSX } per Pass Plus. Només ${ relativePrice }."
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Pagueu una vegada i obteniu ${ lifetimeAccessJSX } per Pass Plus i SimpleLogin. Només ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Estalvieu fins a ${ discountJSX } a Pass Family. Només ${ relativePrice }/mes."
@@ -749,6 +764,9 @@
       ],
       "Could not resolve share members": [
         "No es poden definir els membres de la compartició."
+      ],
+      "Could not update settings at the moment. Please try again later.": [
+        "\"No s'han pogut actualitzar la configuració en aquest moment. Proveu de nou més tard."
       ],
       "Could not validate addresses at the moment.": [
         "No s'han pogut validar les adreces en aquest moment."
@@ -1481,6 +1499,9 @@
       "Low Priority": [
         "Prioritat baixa"
       ],
+      "Make it your own": [
+        "Personalitzeu l'aplicació"
+      ],
       "me": [
         "jo"
       ],
@@ -1493,11 +1514,12 @@
       "Monitoring settings successfully updated": [
         "Les preferències de seguiment s'han actualitzat correctament"
       ],
+      "Move ${ count } item": [
+        "Mou ${ count } element",
+        "Mou ${ count } elements"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -1613,9 +1635,6 @@
       ],
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "La privacitat és una gran preocupació per a nosaltres. Apreneu per què ${ PASS_APP_NAME } és diferent."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
@@ -1916,6 +1935,9 @@
       "15 minutes": [
         "15 minuts"
       ],
+      "15 seconds": [
+        "15 segons"
+      ],
       "2 minutes": [
         "2 minuts"
       ],
@@ -2017,6 +2039,9 @@
       ],
       "City": [
         "Ciutat"
+      ],
+      "Clear clipboard after": [
+        "Neteja el porta-retalls després"
       ],
       "Code": [
         "Codi"
@@ -2216,6 +2241,9 @@
       "Install and continue": [
         "Insta-la i continua"
       ],
+      "Integrated 2FA authenticator": [
+        "Autenticador de doble factor (2FA) integrat"
+      ],
       "Invitations": [
         "Invitacions"
       ],
@@ -2308,6 +2336,9 @@
       ],
       "Need help?": [
         "Necessiteu ajuda?"
+      ],
+      "Never": [
+        "Mai"
       ],
       "New vault": [
         "Nova caixa forta"
@@ -2493,6 +2524,9 @@
       "The URL has been copied to the clipboard": [
         "S'ha copiat l'URL al porta-retalls."
       ],
+      "Theme": [
+        "Tema"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Aquest element romandrà accessible fins a ${ remaining }"
       ],
@@ -2627,9 +2661,6 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elements"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Heu seleccionat ${ semiboldText } en aquesta caixa forta"
       ]
     },
     "new_plans: feature": {
@@ -2832,6 +2863,17 @@
         "Les caixes fortes no poden contenir més de ${ vault.targetMaxMembers } usuaris."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automàtic"
+      ],
+      "Dark": [
+        "Fosc"
+      ],
+      "Light": [
+        "Clar"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Adreces de ${ BRAND_NAME }"
@@ -2886,6 +2928,9 @@
       ],
       "Dark Web Monitoring": [
         "Monitoratge de la web fosca"
+      ],
+      "Delete this item?": [
+        "Voleu eliminar aquest element?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Voleu eliminar la caixa forta «${ vaultName }»?"
@@ -3115,9 +3160,6 @@
       ],
       "What is the dark web?": [
         "Què és el web fosc?"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Per què ${ PASS_APP_NAME }?"
       ],
       "Your exposed information": [
         "La vostra informació exposada"

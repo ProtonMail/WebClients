@@ -565,6 +565,9 @@
       "Upgrade now to share with more people": [
         "더 많은 사람들과 공유하려면 업그레이드"
       ],
+      "Use ${ label } theme": [
+        "${ label } 테마 사용"
+      ],
       "Verify": [
         "인증"
       ],
@@ -637,9 +640,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "블랙 프라이데이"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "한 번 결제하고 Pass Plus ${ lifetimeAccessJSX }을 얻으세요. 단돈 ${ relativePrice } 입니다."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Pass Family로 최대 ${ discountJSX }을 절약하세요. 오직 ${ relativePrice }달 입니다."
@@ -1547,12 +1547,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "타 금고로의 항목을 이동하면 기록 및 안전한 링크가 삭제됩니다."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "항목을 다른 금고로 이동하면 그 기록이 지워집니다."
-      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -1699,9 +1693,6 @@
       ],
       "Press Enter to copy": [
         "복사하기 위해 엔터 키를 누르세요"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "프라이버시는 우리에게 큰 관심사입니다. 왜 ${ PASS_APP_NAME }가 다른지 알아보세요."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "향상된 계정 보안 프로그램인 ${ PROTON_SENTINEL_LINK }으로 보호되었습니다."
@@ -2452,6 +2443,9 @@
       "Need help?": [
         "도움이 필요한가요?"
       ],
+      "Never": [
+        "절대"
+      ],
       "New vault": [
         "새 금고"
       ],
@@ -2656,6 +2650,9 @@
       "The URL has been copied to the clipboard": [
         "URL이 클립보드로 복사되었습니다."
       ],
+      "Theme": [
+        "테마"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "이 항목은 ${ remaining }까지 접근 가능 상태로 유지됩니다."
       ],
@@ -2798,9 +2795,6 @@
     "Message": {
       "${ count } item": [
         "${ count }개 항목"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "이 금고애서 ${ semiboldText }개 선택했습니다."
       ]
     },
     "new_plans: feature": {
@@ -3153,12 +3147,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "\"${ vaultName }\"(으)로 모든 항목을 이동할까요?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "\"${ vaultName }\"(으)로 항목을 이동할까요?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "\"${ vaultName }\"(으)로 항목을 이동할까요?"
-      ],
       "No excluded items": [
         "제외된 항목 없음"
       ],
@@ -3312,9 +3300,6 @@
       "What is the dark web?": [
         "다크 웹이란?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "왜 ${ PASS_APP_NAME }인가?"
-      ],
       "Your exposed information": [
         "사용자의 노출된 정보"
       ],
@@ -3323,9 +3308,6 @@
       ],
       "Your welcome gift": [
         "무료 체험을 즐겨보세요"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "${ aliasCount }개 별칭을 영구적으로 삭제하려고 합니다."
       ]
     },
     "Validation": {
@@ -3456,9 +3438,6 @@
       ],
       "Offline": [
         "오프라인"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "한 번 연동하면, ${ PASS_SHORT_APP_NAME }에서 별칭 삭제 시 SimpleLogin에서도 삭제됩니다."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."

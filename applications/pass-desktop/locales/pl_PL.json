@@ -562,6 +562,9 @@
       "Upgrade now to share with more people": [
         "Ulepsz konto, aby udostępnić elementy użytkownikom"
       ],
+      "Use ${ label } theme": [
+        "Użyj motywu ${ label }"
+      ],
       "Verify": [
         "Zweryfikuj"
       ],
@@ -634,9 +637,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Czarny Piątek"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Zapłać raz i zyskaj ${ lifetimeAccessJSX } do Pass Plus. Tylko ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Zapisz do ${ discountJSX } na Pass Family. Tylko ${ relativePrice }/miesiąc."
@@ -1592,12 +1592,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii i linków."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii."
-      ],
       "Moving items": [
         "Przenoszenie elementów"
       ],
@@ -1738,9 +1732,6 @@
       ],
       "Press Enter to copy": [
         "Kliknij Enter, aby skopiować"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Prywatność jest dla nas bardzo ważna. Dowiedz się, dlaczego ${ PASS_APP_NAME } jest inny."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chroniony przez ${ PROTON_SENTINEL_LINK } — zaawansowany program ochrony konta"
@@ -2071,6 +2062,9 @@
         "${ minutes } minut",
         "${ minutes } minuty"
       ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } rozpoznaje strony i aplikacje, których używasz do autouzupełniania formularzy Twoimi danymi logowania niezależnie od przeglądarki czy urządzenia. Bez potrzeby kopiowania i wklejania."
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Wersja ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2094,6 +2088,9 @@
       ],
       "15 minutes": [
         "15 minut"
+      ],
+      "15 seconds": [
+        "15 sekundach"
       ],
       "2 minutes": [
         "2 minuty"
@@ -2167,6 +2164,9 @@
       "Auto-lock after": [
         "Automatyczna blokada"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Poza przechowywaniem loginów ${ PASS_APP_NAME } chroni Twoją tożsamość dzięki zintegrowanej funkcji aliasów e-mail. Za każdym razem, gdy tworzysz nowe konto online, ${ PASS_APP_NAME } może automatycznie utworzyć alias, aby chronić Twój rzeczywisty adres e-mail. "
+      ],
       "Beta Access": [
         "Dostęp beta"
       ],
@@ -2175,6 +2175,9 @@
       ],
       "Birthdate": [
         "Urodziny"
+      ],
+      "Browse faster, smarter": [
+        "Przeglądaj szybciej, mądrzej"
       ],
       "Capital letters (A-Z)": [
         "Wielkie litery (A-Z)"
@@ -2193,6 +2196,9 @@
       ],
       "City": [
         "Miasto"
+      ],
+      "Clear clipboard after": [
+        "Wyczyść schowek po"
       ],
       "Code": [
         "Kod"
@@ -2247,6 +2253,9 @@
       ],
       "Custom text field": [
         "Tekstowe pole niestandardowe"
+      ],
+      "Dark Web Monitoring": [
+        "Monitoring dark web"
       ],
       "Date": [
         "Data"
@@ -2320,11 +2329,17 @@
       "Floor, apartment, building": [
         "Piętro, mieszkanie, budynek"
       ],
+      "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
+        "Ze względów bezpieczeństwa, ${ PASS_SHORT_APP_NAME } automatycznie się blokuje po 10 minutach nieaktywności."
+      ],
       "Forwards to": [
         "Przekaż do"
       ],
       "Free forever": [
         "Darmowy na zawsze"
+      ],
+      "Free password manager with identity protection": [
+        "Darmowy menedżer haseł z ochroną tożsamości"
       ],
       "Full Name": [
         "Imię i nazwisko"
@@ -2341,6 +2356,9 @@
       "Generic CSV": [
         "Ogólny plik CSV"
       ],
+      "Get the extension for your browser.": [
+        "Pobierz rozszerzenie do przeglądarki"
+      ],
       "Grant": [
         "Przyznaj"
       ],
@@ -2349,6 +2367,9 @@
       ],
       "Hide password": [
         "Ukryj hasło"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasy hide-my-email"
       ],
       "https://example.com": [
         "https://przyklad.pl"
@@ -2385,6 +2406,9 @@
       ],
       "Instagram handle": [
         "Profil Instagram"
+      ],
+      "Integrated 2FA authenticator": [
+        "Zintegrowana aplikacja uwierzytelniająca 2FA"
       ],
       "Invitations": [
         "Zaproszenia"
@@ -2475,6 +2499,9 @@
       ],
       "Need help?": [
         "Potrzebujesz pomocy?"
+      ],
+      "Never": [
+        "Nigdy"
       ],
       "New vault": [
         "Nowy sejf"
@@ -2575,6 +2602,12 @@
       "Reveal password": [
         "Pokaż hasło"
       ],
+      "Secure password sharing": [
+        "Bezpieczne udostępnianie haseł"
+      ],
+      "Securely log in with passkeys": [
+        "Loguj się bezpiecznie przy pomocy kluczy dostępu"
+      ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Bezpieczne przechowywanie, udostępnianie i automatyczne uzupełnianie kont w ${ PASS_APP_NAME } za pomocą szyfrowania end-to-end, któremu zaufały miliony użytkowników."
       ],
@@ -2593,6 +2626,9 @@
       "Select the vault where SimpleLogin aliases will be imported into": [
         "Wybierz sejf do zaimportowania aliasów SimpleLogin"
       ],
+      "Select theme": [
+        "Wybierz motyw"
+      ],
       "Select your password manager": [
         "Wybierz menadżer haseł"
       ],
@@ -2610,6 +2646,9 @@
       ],
       "Show website favicons": [
         "Pokaż ikony stron internetowych"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Loguj się szybciej z ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Numer ubezpieczenia społecznego"
@@ -2658,6 +2697,9 @@
       ],
       "The URL has been copied to the clipboard": [
         "Link został skopiowany do schowka"
+      ],
+      "Theme": [
+        "Motyw"
       ],
       "This item will remain accessible until ${ remaining }": [
         "Element będzie dostępny do ${ remaining }"
@@ -2749,6 +2791,9 @@
       "You are about to create": [
         "Utworzysz"
       ],
+      "Your passwords. Everywhere.": [
+        "Twoje hasła. Wszędzie."
+      ],
       "ZIP or Postal code": [
         "Kod pocztowy"
       ]
@@ -2786,9 +2831,6 @@
         "${ count } elementy",
         "${ count } elementów",
         "${ count } elementów"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Zaznaczono ${ semiboldText } w sejfie"
       ]
     },
     "new_plans: feature": {
@@ -2986,6 +3028,9 @@
       ],
       "Signed out": [
         "Wylogowano"
+      ],
+      "Unknown": [
+        "Nieznane"
       ]
     },
     "Success": {
@@ -2997,6 +3042,17 @@
         "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
         "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
         "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników."
+      ]
+    },
+    "Theme": {
+      "Automatic": [
+        "Automatyczny"
+      ],
+      "Dark": [
+        "Ciemny"
+      ],
+      "Light": [
+        "Jasny"
       ]
     },
     "Title": {
@@ -3053,6 +3109,9 @@
       ],
       "Dark Web Monitoring": [
         "Monitoring dark web"
+      ],
+      "Delete this item?": [
+        "Usunąć ten element?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Usunąć sejf \"${ vaultName }\"?"
@@ -3134,12 +3193,6 @@
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Przenieść wszystkie elementy do sejfu \"${ vaultName }\"?"
-      ],
-      "Move item to \"${ vaultName }\"?": [
-        "Przenieść element do sejfu \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Przenieść elementy do sejfu \"${ vaultName }\"?"
       ],
       "No excluded items": [
         "Brak wykluczonych elementów"
@@ -3290,9 +3343,6 @@
       ],
       "What is the dark web?": [
         "Co to jest dark web?"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Dlaczego ${ PASS_APP_NAME }?"
       ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"

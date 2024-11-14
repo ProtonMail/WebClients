@@ -451,6 +451,9 @@
       "Upgrade now to share with more people": [
         "立即升級即可分享給更多人"
       ],
+      "Use ${ label } theme": [
+        "使用 ${ label } 布景主題"
+      ],
       "Verify": [
         "驗證"
       ],
@@ -511,9 +514,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "黑色星期五"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "一次性支付並獲得 ${ lifetimeAccessJSX } 至 Pass Plus。僅需 ${ relativePrice }。"
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "節省高達 ${ discountJSX } 在 Pass Family。每月僅 ${ relativePrice }。"
@@ -1106,9 +1106,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
-      "Moving an item to another vault will erase its history.": [
-        "移動項目至其他保管庫將消除紀錄."
-      ],
       "Moving items": [
         "正在移動檔案"
       ],
@@ -1165,9 +1162,6 @@
       ],
       "Press Enter to copy": [
         "按 Enter 以複製"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "隱私是我們最大的擔心。了解與${ PASS_APP_NAME }的不同。"
       ],
       "Reconnect": [
         "重新連線"
@@ -1636,6 +1630,9 @@
       "Need help?": [
         "需要協助嗎？"
       ],
+      "Never": [
+        "永不"
+      ],
       "New vault": [
         "新的保管庫"
       ],
@@ -1765,6 +1762,9 @@
       "Text": [
         "文字"
       ],
+      "Theme": [
+        "主題"
+      ],
       "Title": [
         "標題"
       ],
@@ -1862,9 +1862,6 @@
     "Message": {
       "${ count } item": [
         "${ count } 個項目"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "您選取於保管庫的${ semiboldText }"
       ]
     },
     "new_plans: feature": {
@@ -2254,9 +2251,6 @@
       ],
       "What is the dark web?": [
         "甚麼是暗網?"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "為甚麼 ${ PASS_APP_NAME }?"
       ],
       "Your exposed information": [
         "你的外﻿﻿﻿洩資料"
