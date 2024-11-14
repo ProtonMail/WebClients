@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { HotkeyTuple } from '@proton/components';
 import { FolderIcon, Icon } from '@proton/components';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
-import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
 import type { ApplyLabelsParams } from '../../hooks/actions/label/useApplyLabels';
@@ -15,6 +15,7 @@ import SidebarLabelActions from './SidebarLabelActions';
 
 interface Props {
     currentLabelID: string;
+    folders: Folder[];
     folder: FolderWithSubFolders;
     level: number;
     onToggle: (folder: FolderWithSubFolders, expanded: boolean) => void;
@@ -30,6 +31,7 @@ interface Props {
 const SidebarFolder = ({
     currentLabelID,
     folder,
+    folders,
     level,
     onToggle,
     unreadCount,
@@ -41,6 +43,7 @@ const SidebarFolder = ({
     applyLabels,
 }: Props) => {
     const [isOptionDropdownOpened, setIsOptionDropdownOpened] = useState(false);
+
     const shortcutHandlers: HotkeyTuple[] = [
         [
             'ArrowRight',
@@ -105,7 +108,13 @@ const SidebarFolder = ({
                 </div>
             }
             itemOptions={
-                <SidebarLabelActions type={'folder'} element={folder} onToggleDropdown={setIsOptionDropdownOpened} />
+                <SidebarLabelActions
+                    type="folder"
+                    level={level}
+                    folders={folders}
+                    element={folder}
+                    onToggleDropdown={setIsOptionDropdownOpened}
+                />
             }
         />
     );
