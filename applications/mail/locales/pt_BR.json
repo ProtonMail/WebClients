@@ -958,6 +958,9 @@
       "Remove this label": [
         "Remover este marcador"
       ],
+      "Remove zoom meeting": [
+        "Remover reunião do Zoom"
+      ],
       "Replace": [
         "Substituir"
       ],
@@ -1057,11 +1060,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select all": [
-        "Selecionar tudo"
-      ],
       "Select All": [
         "Selecionar todos"
+      ],
+      "Select all": [
+        "Selecionar tudo"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -2277,6 +2280,9 @@
       "${ users } user": [
         "${ users } usuário",
         "${ users } usuários"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mês",
@@ -5256,6 +5262,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } na Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dia",
+        "${ remainingDaysCount } dias"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } dia restante",
+        "${ remainingDaysCount } dias restantes"
+      ],
       "account logins": [
         "acessos da conta"
       ],
@@ -5301,8 +5315,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Criptografia tão robusta, que somente você e seus destinatários reais podem visualizar os e-mails."
       ],
+      "Finish setup": [
+        "Concluir configuração"
+      ],
       "For your eyes only": [
         "Só para você"
+      ],
+      "Get more storage": [
+        "Obter mais armazenamento"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obter o aplicativo móvel do ${ MAIL_APP_NAME }"
@@ -5388,6 +5408,9 @@
       ],
       "Less details": [
         "Menos detalhes"
+      ],
+      "Meeting host:": [
+        "Host da reunião:"
       ],
       "Meeting link:": [
         "Link da reunião:"
@@ -5907,6 +5930,9 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "O ${ PASS_APP_NAME } fornece uma maneira simples de se cadastrar em sites de terceiros não confiáveis, onde você não deseja expor seu endereço de e-mail real."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -6576,7 +6602,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -9358,6 +9385,9 @@
       "Administration Panel": [
         "Painel de Administração"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Recursos avançados de alias (Com tecnologia do SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Todos os produtos e recursos da ${ BRAND_NAME }"
       ],
@@ -10114,6 +10144,12 @@
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
+      "Meeting host copied to clipboard": [
+        "O host da reunião foi copiado para área de transferência"
+      ],
+      "Meeting ID copied to clipboard": [
+        "O ID da reunião foi copiado para área de transferência"
+      ],
       "Passcode copied to clipboard": [
         "Código de acesso copiado para a área de transferência"
       ],
@@ -10273,6 +10309,9 @@
       "Protection from trackers": [
         "Proteção contra rastreadores"
       ],
+      "Replay introduction": [
+        "Repetir introdução"
+      ],
       "Skip": [
         "Pular"
       ],
@@ -10419,6 +10458,9 @@
       "${ n } user account": [
         "${ n } conta de usuário",
         "${ n } contas de usuário"
+      ],
+      "Activity log": [
+        "Registro de atividade"
       ],
       "Admin panel to manage users and subscription": [
         "Painel administrativo para gerenciar usuários e assinaturas"
@@ -11781,6 +11823,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "A assinatura será rebaixada ao final do ciclo de cobrança."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Acesso vitalício"
       ]
     },
     "Subscription price": {
@@ -13964,6 +14011,9 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID da reunião:"
+      ],
+      "Passcode:": [
+        "Código de acesso:"
       ]
     }
   }

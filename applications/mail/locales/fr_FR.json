@@ -1060,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Tout sélectionner"
       ],
-      "Select All": [
+      "Select all": [
         "Tout sélectionner"
       ],
       "Select all messages": [
@@ -6531,6 +6531,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Si vous pensez que nous avons commis une erreur, ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si vous annulez, votre abonnement ${ planTitle } ne sera pas renouvelé quand il arrivera à sa date de fin de validité le ${ expiryDate }."
       ],
@@ -6599,7 +6602,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -7467,6 +7471,12 @@
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Nous avons détecté la création de plusieurs comptes gratuits, ce qui constitue une violation de nos ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Nous proposons des offres spécialement conçues pour les utilisateurs comme vous, qui ont besoin de plus d'une adresse e-mail.\nPour lever ces restrictions, vous pouvez passer à une offre payante."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Nous devons authentifier votre moyen de paiement auprès de votre banque."
       ],
@@ -8041,6 +8051,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
+      ],
+      "/month": [
+        "/mois"
       ],
       "Actions": [
         "Actions"
@@ -8702,6 +8715,9 @@
       "click here": [
         "cliquez ici"
       ],
+      "contact us": [
+        "contactez-nous"
+      ],
       "Create a calendar linked to an active email address.": [
         "Créez un calendrier lié à une adresse e-mail active."
       ],
@@ -8815,6 +8831,9 @@
       ],
       "Terms": [
         "Conditions générales d'utilisation"
+      ],
+      "terms of service": [
+        "conditions d’utilisation du service"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Ce fichier ICS contient plus d'un événement. Téléchargez-le et importez les événements dans ${ CALENDAR_APP_NAME }."
@@ -9216,6 +9235,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Je choisis ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Commencez pour ${ price }"
       ],
@@ -9323,8 +9345,8 @@
         "Historique des versions de fichiers datant d'${ options } jour",
         "Historique des versions de fichiers datant de ${ options } jours"
       ],
-      "${ PASS_APP_NAME } lifetime": [
-        "${ PASS_APP_NAME } à vie"
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Accès à vie aux fonctions ${ PASS_APP_NAME } et SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
@@ -9381,6 +9403,9 @@
       "Administration Panel": [
         "Panneau d'administration"
       ],
+      "Advanced account protection": [
+        "Protection avancée des comptes"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Fonctionnalités avancées des alias (fournies par SimpleLogin)"
       ],
@@ -9410,6 +9435,9 @@
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
+      ],
+      "Breach alerts": [
+        "Alertes de fuites de données"
       ],
       "Calendar sharing": [
         "Partage de calendrier"
@@ -9934,8 +9962,8 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Vous pouvez ajouter des labels à vos messages pour les retrouver plus facilement ou pour y appliquer des filtres."
       ],
-      "Lifetime access to ${ PASS_APP_NAME } premium features.": [
-        "Accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME }"
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME } et SimpleLogin"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments."
@@ -10308,6 +10336,9 @@
       "Protection from trackers": [
         "Protection contre les traqueurs"
       ],
+      "Replay introduction": [
+        "Revoir l'introduction"
+      ],
       "Skip": [
         "Ignorer"
       ],
@@ -10557,6 +10588,9 @@
       ],
       "Please select your billing state first.": [
         "Veuillez d'abord sélectionner votre état pour la facturation."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Renouvellement au prix de ${ price } avec possibilité de résiliation à tout moment."
       ],
       "Select billing country to pay": [
         "Veuillez sélectionner l'état pour la facture à payer."
@@ -12667,6 +12701,9 @@
       ],
       "A filter with this name already exists": [
         "Un filtre portant ce nom existe déjà."
+      ],
+      "Account locked": [
+        "Le compte est verrouillé."
       ],
       "Account recovery": [
         "Récupération du compte"
