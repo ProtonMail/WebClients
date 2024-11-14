@@ -3,7 +3,6 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces';
 // Reminder: both auth & un-auth measurement groups need to be whitelisted by the back-end. Make sure to specify it to the back-end or your measurement will be silently ignored.
 export enum TelemetryMeasurementGroups {
     accountSignup = 'account.any.signup',
-    accountSignupBasic = 'account.any.signup_basic',
     accountOrgLogoUpload = 'account.web.org_logo_upload',
     accountSecurityCheckup = 'account.web.security_checkup',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
@@ -107,8 +106,6 @@ export enum TelemetryAccountSignupEvents {
     beSignOutSuccess = 'be.sign_out_success',
     bePaymentMethods = 'be.payments_available',
     checkoutError = 'be.checkout_error',
-    hvNeeded = 'be.hv_needed',
-    loadPaymentBtc = 'fe.load_payment_btc',
     onboardingStart = 'fe.onboarding_start',
     onboardShown = 'fe.onboarding_shown',
     onboardFinish = 'fe.onboarding_finish',
