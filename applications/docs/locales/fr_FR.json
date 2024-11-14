@@ -2171,11 +2171,6 @@
         "Facture impayée"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "utilisez l'assistant d'importation Easy Switch"
-      ]
-    },
     "Description": {
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
         "${ PROTON_SENTINEL_NAME } protège votre compte grâce à une surveillance dédiée 24h/24 et 7j/7 des activités suspectes, incluant l'intervention de spécialistes en sécurité."
@@ -2245,6 +2240,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5861,6 +5861,23 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Commencez pour ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "À partir de ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Supprimer le compte"
@@ -5882,23 +5899,6 @@
       ],
       "Switch plan": [
         "Changer d'abonnement"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Commencez pour ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "À partir de ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -5972,8 +5972,8 @@
         "Historique des versions de fichiers datant d'${ options } jour",
         "Historique des versions de fichiers datant de ${ options } jours"
       ],
-      "${ PASS_APP_NAME } lifetime": [
-        "${ PASS_APP_NAME } à vie"
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Accès à vie aux fonctions ${ PASS_APP_NAME } et SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
@@ -6030,6 +6030,9 @@
       "Administration Panel": [
         "Panneau d'administration"
       ],
+      "Advanced account protection": [
+        "Protection avancée des comptes"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Fonctionnalités avancées des alias (fournies par SimpleLogin)"
       ],
@@ -6059,6 +6062,9 @@
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
+      ],
+      "Breach alerts": [
+        "Alertes de fuites de données"
       ],
       "Calendar sharing": [
         "Partage de calendrier"
@@ -6583,8 +6589,8 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Vous pouvez ajouter des labels à vos messages pour les retrouver plus facilement ou pour y appliquer des filtres."
       ],
-      "Lifetime access to ${ PASS_APP_NAME } premium features.": [
-        "Accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME }"
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME } et SimpleLogin"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments."
@@ -7131,6 +7137,9 @@
       ],
       "Please select your billing state first.": [
         "Veuillez d'abord sélectionner votre état pour la facturation."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Renouvellement au prix de ${ price } avec possibilité de résiliation à tout moment."
       ],
       "Select billing country to pay": [
         "Veuillez sélectionner l'état pour la facture à payer."

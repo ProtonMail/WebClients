@@ -1141,6 +1141,9 @@
         "${ users } användare",
         "${ users } användare"
       ],
+      "Total": [
+        "Totalt"
+      ],
       "Total for ${ n } month": [
         "Total för ${ n } månad",
         "Total för ${ n } månader"
@@ -2154,11 +2157,6 @@
         "Försenad faktura"
       ]
     },
-    "description": {
-      "use the Easy Switch import assistant": [
-        "använd importassistenten Easy Switch"
-      ]
-    },
     "Description": {
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
@@ -2225,6 +2223,11 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3734,6 +3737,9 @@
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
@@ -4278,6 +4284,9 @@
       "Monitor accounts": [
         "Övervaka konton"
       ],
+      "Most recent": [
+        "Senaste"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
       ],
@@ -4341,6 +4350,12 @@
       ],
       "Organization size": [
         "Organisationens storlek"
+      ],
+      "Owned by me": [
+        "Ägs av mig"
+      ],
+      "Owned by others": [
+        "Ägs av andra"
       ],
       "Owner": [
         "Ägare"
@@ -5875,6 +5890,23 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Get started for ${ price }": [
+        "Kom igång för ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ta bort konto"
@@ -5896,23 +5928,6 @@
       ],
       "Switch plan": [
         "Byt paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Get started for ${ price }": [
-        "Kom igång för ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Startar från ${ priceMailPlus }"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -6037,6 +6052,9 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avancerade funktioner för alias (drivs av SimpleLogin)"
       ],
       "All ${ BRAND_NAME } products and features": [
         "Alla ${ BRAND_NAME } produkter och funktioner"
@@ -6549,6 +6567,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Skapa upp till ${ n } e-postadresser/alias som du kan tilldela familjemedlemmar. Använd dem för onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Anpassade domäner för alias, ytterligare brevlådor, möjligheten att skicka e-post från alias och mer"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll"
       ],
@@ -7024,6 +7045,9 @@
       "${ n } user account": [
         "${ n } användarkonto",
         "${ n } användarkonton"
+      ],
+      "Activity log": [
+        "Aktivitetslogg"
       ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
@@ -8050,6 +8074,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Prenumerationen kommer att nedgraderas i slutet av faktureringsperioden."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
       ]
     },
     "Subscription price": {
