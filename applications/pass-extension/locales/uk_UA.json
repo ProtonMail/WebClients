@@ -530,6 +530,9 @@
       "Upgrade now to share with more people": [
         "Оновіться зараз, щоб поділитися з більшою кількістю людей"
       ],
+      "Use ${ label } theme": [
+        "Використовувати тему ${ label }"
+      ],
       "Via secure link": [
         "Через безпечне посилання"
       ],
@@ -573,9 +576,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Чорна П'ятниця"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Сплатіть один раз і отримайте ${ lifetimeAccessJSX } на Pass Plus. Лише ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Збережіть до ${ discountJSX } на Pass Family. Лише ${ relativePrice }/місяць."
@@ -1005,6 +1005,31 @@
         "Терабайтів"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Системна"
+      ],
+      "Theme font": [
+        "Шрифт теми"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Великий"
+      ],
+      "Medium (recommended)": [
+        "Середній (рекомендовано)"
+      ],
+      "Small": [
+        "Маленький"
+      ],
+      "Very large": [
+        "Дуже великий"
+      ],
+      "Very small": [
+        "Дуже маленький"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" елемент було відхилено"
@@ -1387,12 +1412,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Переміщення елемента до іншого сховища зітре його історію та всі захищені посилання."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Переміщення предмета до іншого сховища призведе до стирання його історії."
-      ],
       "Moving items": [
         "Переміщення елементів"
       ],
@@ -1495,9 +1514,6 @@
       "Press Enter to copy": [
         "Натисніть Enter, щоб скопіювати"
       ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Захист вашої приватності — це наш пріоритет. Дізнайтеся, що відрізняє ${ PASS_APP_NAME } від інших."
-      ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Захищений ${ PROTON_SENTINEL_LINK }, нашою вдосконаленою програмою захисту облікового запису"
       ],
@@ -1518,9 +1534,6 @@
       ],
       "Secure links": [
         "Безпечні посилання"
-      ],
-      "Select an existing login item to update.": [
-        "Оберіть чинний елемент входу для оновлення."
       ],
       "Select an existing login or create a new one.": [
         "Оберіть чинний вхід або створіть новий."
@@ -2262,6 +2275,9 @@
         "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами",
         "Сховище елемента наразі знаходиться у спільному доступі з ${ targetMembers } особами"
       ],
+      "Theme": [
+        "Тема"
+      ],
       "Title": [
         "Назва"
       ],
@@ -2344,9 +2360,6 @@
         "${ count } елементи",
         "${ count } елементи",
         "${ count } елементів"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Ви вибрали ${ semiboldText } у цьому сховищі"
       ]
     },
     "Onboarding": {
@@ -2666,9 +2679,6 @@
       ],
       "Welcome to your new password manager!": [
         "Ласкаво просимо до нового менеджера паролів!"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Чому ${ PASS_APP_NAME }?"
       ],
       "Your vault is empty": [
         "Ваше сховище порожнє"
