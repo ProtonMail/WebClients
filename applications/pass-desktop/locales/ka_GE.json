@@ -567,6 +567,9 @@
       "Upgrade now to share with more people": [
         "ასწიეთ ტარიფი ახლა და გაუზიარეთ მეტ ხალხს"
       ],
+      "Use ${ label } theme": [
+        "${ label }-ის გამოყენება"
+      ],
       "Verify": [
         "გადამოწმება"
       ],
@@ -639,9 +642,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "შავი პარასკევი"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "გადაიხადეთ ერთხელ და მიიღეთ ${ lifetimeAccessJSX } Pass Plus-ზე. მხოლოდ ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "დაზოეთ ${ discountJSX }-მდე Pass Family-ზე. მხოლოდ ${ relativePrice }/თვეში."
@@ -1566,12 +1566,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის ისტორიას და ყველა დაცულ ბმულს წაშლის."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის."
-      ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
       ],
@@ -1716,9 +1710,6 @@
       ],
       "Press Enter to copy": [
         "დასაკოპირებლად დააჭირეთ Enter-ს"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "კონფიდენციალობა ჩვენი ძირითადი საზრუნავია. გაიგეთ, რატომაა ${ PASS_APP_NAME } განსხვავებული."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
@@ -2464,6 +2455,9 @@
       "Need help?": [
         "დახმარება გჭირდებათ?"
       ],
+      "Never": [
+        "არასოდეს"
+      ],
       "New vault": [
         "ახალი საცავი"
       ],
@@ -2663,6 +2657,9 @@
       "The URL has been copied to the clipboard": [
         "ბმული დაკოპირდა ბუფერში"
       ],
+      "Theme": [
+        "თემა"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "ეს ელემენტი ხელმისაწვდომი იქნება თარიღამდე ${ remaining }"
       ],
@@ -2800,9 +2797,6 @@
       "${ count } item": [
         "${ count } ელემენტი",
         "${ count } ელემენტი"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "აირჩიეთ ${ semiboldText } ამ საცავში"
       ]
     },
     "new_plans: feature": {
@@ -3156,12 +3150,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "გადავიტანო ყველა ელემენტი საცავში \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "გადავიტანო ელემენტი საცავში \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "გადავიტანო ელემენტები საცავში \"${ vaultName }\"?"
-      ],
       "No excluded items": [
         "ამოღებული ელემენტების გარეშე"
       ],
@@ -3200,6 +3188,10 @@
       ],
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმს წაშლით, მას ვერ აღადგენთ.",
+        "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმებს წაშლით, მას ვერ აღადგენთ."
       ],
       "Recommended actions": [
         "რეკომენდებული ქმედებები"
@@ -3313,9 +3305,6 @@
       "What is the dark web?": [
         "რა არს ბნელი ვები?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "რატომ ${ PASS_APP_NAME }?"
-      ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
       ],
@@ -3324,10 +3313,6 @@
       ],
       "Your welcome gift": [
         "ისიამოვნეთ თქვენი უფასო სატესტო ვერსიით"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი",
-        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი"
       ]
     },
     "Validation": {
