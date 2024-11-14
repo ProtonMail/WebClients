@@ -129,7 +129,7 @@ export const ConfirmTrashAlias: FC<ConfirmationPromptHandles & { item: ItemRevis
     const ack = useSelector(selectAliasTrashAcknowledged);
 
     const onRemember =
-        aliasEnabled && !ack
+        aliasEnabled && !ack && !relatedLogin
             ? (checked: boolean) => checked && dispatch(settingsEditIntent('ack', { aliasTrashAcknowledged: checked }))
             : undefined;
 

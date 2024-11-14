@@ -162,10 +162,12 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                             return setVisible(false);
                         case IFramePortMessageType.IFRAME_OPEN:
                             return setVisible(true);
+                        case IFramePortMessageType.IFRAME_THEME:
+                            return setTheme(message.payload);
                         case WorkerMessageType.FEATURE_FLAGS_UPDATE:
                             return setFeatures(message.payload);
                         case WorkerMessageType.SETTINGS_UPDATE:
-                            if (message.payload.theme) setTheme?.(message.payload.theme);
+                            if (message.payload.theme) setTheme(message.payload.theme);
                             return setSettings(message.payload);
                         case WorkerMessageType.LOCALE_UPDATED:
                             return i18n.setLocale(settings.locale).catch(noop);

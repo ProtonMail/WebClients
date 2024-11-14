@@ -5,6 +5,7 @@ import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';
 // @ts-ignore
 import passLightTheme from '@proton/colors/themes/dist/pass-light.theme.css';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 
 export const THEME_ID = 'pass-theme';
 
@@ -12,8 +13,6 @@ type ThemeConfig = {
     className: string;
     styles: string;
 };
-
-const matchDarkTheme = () => window.matchMedia('(prefers-color-scheme: dark)');
 
 const getThemeConfig = (theme: PassThemeOption): ThemeConfig => {
     switch (theme) {
@@ -34,7 +33,8 @@ export const ThemeProvider: FC<Props> = ({ theme }) => {
     useLayoutEffect(() => {
         setConfig(getThemeConfig(theme));
 
-        if (theme === PassThemeOption.OS) {
+        /** Match media events don't propagate well to iframes */
+        if (theme === PassThemeOption.OS && window.self === window.top) {
             const media = matchDarkTheme();
             const listener = () => setConfig(getThemeConfig(theme));
             media?.addEventListener('change', listener);

@@ -3,9 +3,15 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { PASS_ELEMENT_THEME } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassElement';
 import type { ProtonPassRoot } from 'proton-pass-extension/app/content/injections/custom-elements/ProtonPassRoot';
 import { createIframeRoot } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-root';
-import type { IFrameAppService, InjectedDropdown, InjectedNotification } from 'proton-pass-extension/app/content/types';
+import {
+    type IFrameAppService,
+    IFramePortMessageType,
+    type InjectedDropdown,
+    type InjectedNotification,
+} from 'proton-pass-extension/app/content/types';
 
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
+import { matchDarkTheme } from '@proton/pass/components/Layout/Theme/utils';
 import type { MaybeNull } from '@proton/pass/types';
 import type { PassElementsConfig } from '@proton/pass/types/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -84,7 +90,20 @@ export const createIFrameService = (elements: PassElementsConfig) => {
                 else service.destroy();
             });
 
+            const handleThemeChange = withContext((ctx) => {
+                const theme = ctx?.getSettings().theme;
+                if (theme === PassThemeOption.OS) {
+                    const payload = window.matchMedia('(prefers-color-scheme: dark)').matches
+                        ? PassThemeOption.PassDark
+                        : PassThemeOption.PassLight;
+
+                    state.apps.dropdown?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
+                    state.apps.notification?.sendMessage({ type: IFramePortMessageType.IFRAME_THEME, payload });
+                }
+            });
+
             listeners.addListener(state.root, PASS_ROOT_REMOVED_EVENT as any, handleRootRemoval, { once: true });
+            listeners.addListener(matchDarkTheme(), 'change', handleThemeChange);
             return state.root;
         },
 
