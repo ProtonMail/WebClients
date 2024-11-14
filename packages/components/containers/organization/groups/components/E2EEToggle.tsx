@@ -1,31 +1,32 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useLoading from '@proton/hooks/useLoading';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address, Group } from '@proton/shared/lib/interfaces';
 
+import type { GroupsManagementReturn } from '../types';
 import useGroupCrypto from '../useGroupCrypto';
 
 interface Props {
-    address: Address;
+    group: Group;
+    groupsManagement: GroupsManagementReturn;
 }
 
-const E2EEToggle = ({ address }: Props) => {
+const E2EEToggle = ({ group, groupsManagement }: Props) => {
+    const groupAddressID = group.Address.ID;
+    const address = groupsManagement.groups.find(({ Address: { ID } }) => ID === groupAddressID)?.Address as Address;
+    const [groupAddressKey] = address.Keys;
+    const isE2EEEnabled = !hasBit(groupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
+
     const { disableEncryption, enableEncryption } = useGroupCrypto();
     const [toggleLoading, withToggleLoading] = useLoading();
-    const initialIsE2EEEnabled =
-        address?.Keys?.length > 0 && !hasBit(address.Keys[0].Flags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
-    const [groupAddressE2EEEnabled, setGroupAddressE2EEEnabled] = useState<boolean>(initialIsE2EEEnabled);
 
     const handleE2EEToggle = async () => {
         try {
-            const toggleAction = groupAddressE2EEEnabled ? disableEncryption : enableEncryption;
+            const toggleAction = isE2EEEnabled ? disableEncryption : enableEncryption;
             await withToggleLoading(toggleAction(address));
-            setGroupAddressE2EEEnabled(!groupAddressE2EEEnabled);
         } catch (error) {
             console.error(error);
         }
@@ -36,7 +37,7 @@ const E2EEToggle = ({ address }: Props) => {
             <Toggle
                 id="group-e2ee-toggle"
                 onChange={handleE2EEToggle}
-                checked={groupAddressE2EEEnabled}
+                checked={isE2EEEnabled}
                 loading={toggleLoading}
             />
             <h3 className="flex-1 text-rg ml-2">

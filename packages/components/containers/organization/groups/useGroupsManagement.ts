@@ -125,11 +125,6 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             return errors;
         },
     });
-    /*
-    useEffect(() => {
-        void withLoadingGroupMembers(fetchGroupMembers(selectedGroup?.ID));
-    }, [selectedGroup]);
-    */
 
     const { resetForm, values: formValues } = form;
 
@@ -192,6 +187,12 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             })
         );
 
+        if (isNewGroup) {
+            dispatch(addGroup(Group));
+        } else {
+            dispatch(updateGroup(Group));
+        }
+
         const addMembersPromises = newEmails.map((email) =>
             addGroupMember({ ID: Group.ID, Address: Group.Address as Address }, email).catch((error) => {
                 console.error(`Failed to add recipient ${email}:`, error);
@@ -199,14 +200,11 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         );
         await Promise.all(addMembersPromises);
 
-        if (isNewGroup) {
-            setUiState('view');
-            dispatch(addGroup(Group));
-        } else {
-            dispatch(updateGroup(Group));
+        if (!isNewGroup) {
             dispatch(updateMembersAfterEdit({ groupId: Group.ID }));
-            setUiState('view');
         }
+
+        setUiState('view');
 
         resetForm();
         setSelectedGroup(Group);
