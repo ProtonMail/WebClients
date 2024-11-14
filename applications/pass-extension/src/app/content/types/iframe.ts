@@ -1,5 +1,6 @@
 import type { Runtime } from 'webextension-polyfill';
 
+import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type {
@@ -83,6 +84,7 @@ export enum IFramePortMessageType {
     IFRAME_INIT = 'IFRAME_INIT',
     IFRAME_INJECT_PORT = 'IFRAME_INJECT_PORT',
     IFRAME_OPEN = 'IFRAME_OPEN',
+    IFRAME_THEME = 'IFRAME_THEME',
     NOTIFICATION_ACTION = 'NOTIFICATION_ACTION',
     NOTIFICATION_AUTOFILL_OTP = 'NOTIFICATION_AUTOFILL_OTP',
     NOTIFICATION_AUTOSAVE_FAILURE = 'NOTIFICATION_AUTOSAVE_FAILURE',
@@ -117,6 +119,7 @@ export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Ext
     | { type: IFramePortMessageType.IFRAME_INIT; payload: IFrameInitPayload }
     | { type: IFramePortMessageType.IFRAME_INJECT_PORT; payload: { port: string } }
     | { type: IFramePortMessageType.IFRAME_OPEN }
+    | { type: IFramePortMessageType.IFRAME_THEME; payload: PassThemeOption.PassLight | PassThemeOption.PassDark }
     | { type: IFramePortMessageType.NOTIFICATION_ACTION; payload: NotificationActions }
     | { type: IFramePortMessageType.NOTIFICATION_AUTOFILL_OTP; payload: { code: string } },
     { type: T }

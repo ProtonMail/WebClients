@@ -14,7 +14,9 @@ export const epochToDateTime = formatEpoch('dd MMM yyyy, HH:mm');
 export const epochToDate = formatEpoch('dd MMM yyyy');
 
 type RelativeDaysAgoOptions = {
+    /** format value is 'dd MMM yyyy, HH:mm' */
     formatDate?: (value: string) => string;
+    /** format value is "Today/Tomorrow/Monday-Sunday at 10:30AM" */
     formatDays?: (value: string) => string;
 };
 
