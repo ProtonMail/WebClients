@@ -1183,6 +1183,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Facturat a ${ amount } una vegada"
+      ],
       "for ${ durationDeal }": [
         "durant ${ durationDeal }"
       ],
@@ -6766,9 +6769,6 @@
       "${ numberOfUsers } user": [
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
-      ],
-      "${ PASS_APP_NAME } lifetime": [
-        "Oferta de per vida de ${ PASS_APP_NAME }"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",

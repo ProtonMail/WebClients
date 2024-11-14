@@ -1432,6 +1432,9 @@
         "${ users } utente",
         "${ users } utenti"
       ],
+      "Total": [
+        "Totale"
+      ],
       "Total for ${ n } month": [
         "Totale per ${ n } mese",
         "Totale per ${ n } mesi"
@@ -4110,6 +4113,12 @@
       "${ nbFile } encrypted file...": [
         "${ nbFile } file crittografato...",
         "${ nbFile } file crittografati..."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }. Il prezzo e la data di rinnovo dell'abbonamento ${ planTitle } rimangono invariati."
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } in pausa",
@@ -7001,6 +7010,9 @@
       "Administration Panel": [
         "Pannello di controllo"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funzionalità alias avanzate (fornite da SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Tutti i prodotti e le funzionalità di ${ BRAND_NAME }"
       ],
@@ -7514,6 +7526,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domini personalizzati per alias, caselle di posta aggiuntive, possibilità di inviare email da alias e altro ancora"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato"
@@ -8277,8 +8292,14 @@
         "${ n } account utente",
         "${ n } account utente"
       ],
+      "Activity log": [
+        "Registro delle attività"
+      ],
       "Admin panel to manage users and subscription": [
         "Pannello di amministrazione per gestire utenti e abbonamenti"
+      ],
+      "Team policies": [
+        "Politiche del Team"
       ]
     },
     "PassFamilyPlan2024": {
@@ -9326,6 +9347,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "L'abbonamento verrà declassato alla fine del ciclo di fatturazione."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "A vita"
       ]
     },
     "Subscription price": {
