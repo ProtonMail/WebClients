@@ -303,15 +303,8 @@ export function $isWholeSelectionInsideSuggestion(selection: RangeSelection): bo
   }
 
   const anchorNode = selection.anchor.getNode()
-  const anchorSuggestionParent = $findMatchingParent(anchorNode, $isSuggestionNode)
-  if (!anchorSuggestionParent) {
-    return false
-  }
 
-  const isSameSuggestion =
-    focusSuggestionParent.getSuggestionIdOrThrow() === anchorSuggestionParent.getSuggestionIdOrThrow()
-
-  return isSameSuggestion
+  return focusSuggestionParent.isParentOf(anchorNode) && focusSuggestionParent.isParentOf(focusNode)
 }
 
 export function $isAnyPartOfSelectionInCodeNode(selection: RangeSelection) {
