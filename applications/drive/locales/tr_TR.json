@@ -1432,6 +1432,9 @@
         "${ users } kullanıcı",
         "${ users } kullanıcı"
       ],
+      "Total": [
+        "Toplam"
+      ],
       "Total for ${ n } month": [
         "${ n } aylık toplam",
         "${ n } aylık toplam"
@@ -4111,6 +4114,12 @@
         "${ nbFile } şifrelenmiş dosya...",
         "${ nbFile } şifrelenmiş dosya..."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } Lifetime forsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir. ${ planTitle } aboneliğinizin yenileme \nücreti ve tarihi değişmeden kalır."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } duraklatıldı",
         "${ pausedCount } duraklatıldı"
@@ -5598,6 +5607,9 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Plus aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime forsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
@@ -6950,6 +6962,9 @@
       "Administration Panel": [
         "Yönetim panosu"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Gelişmiş takma ad özellikleri (SimpleLogin tarafından sağlanır)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Tüm ${ BRAND_NAME } ürünleri ve özellikleri"
       ],
@@ -7461,6 +7476,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Takma adlar için özel etki alanları, ek e-posta kutuları, takma adlardan e-posta gönderme özelliği ve diğer şeyler"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir"
       ],
@@ -7573,7 +7591,7 @@
         "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Toplantı katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
+        "Görüşme katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
@@ -8223,8 +8241,14 @@
         "${ n } kullanıcı hesabı",
         "${ n } kullanıcı hesabı"
       ],
+      "Activity log": [
+        "İşlem günlüğü"
+      ],
       "Admin panel to manage users and subscription": [
         "Kullanıcıları ve aboneliğinizi panonuzdan yönetin"
+      ],
+      "Team policies": [
+        "Ekip ilkeleri"
       ]
     },
     "PassFamilyPlan2024": {
@@ -9272,6 +9296,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Abonelik tarifeniz fatura döneminin sonunda düşürülecek."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Lifetime"
       ]
     },
     "Subscription price": {

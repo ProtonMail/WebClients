@@ -462,6 +462,9 @@
       "Expand URL": [
         "Espandi URL"
       ],
+      "Expand video conferencing widget": [
+        "Espandi il widget della videoconferenza"
+      ],
       "Expiration time": [
         "Data di scadenza"
       ],
@@ -955,6 +958,9 @@
       "Remove this label": [
         "Rimuovi questa etichetta"
       ],
+      "Remove zoom meeting": [
+        "Rimuovi riunione zoom"
+      ],
       "Replace": [
         "Sostituisci"
       ],
@@ -1054,11 +1060,11 @@
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
       ],
-      "Select all": [
-        "Seleziona tutti"
-      ],
       "Select All": [
         "Seleziona tutto"
+      ],
+      "Select all": [
+        "Seleziona tutti"
       ],
       "Select all messages": [
         "Seleziona tutti i messaggi"
@@ -2274,6 +2280,9 @@
       "${ users } user": [
         "${ users } utente",
         "${ users } utenti"
+      ],
+      "Total": [
+        "Totale"
       ],
       "Total for ${ n } month": [
         "Totale per ${ n } mese",
@@ -5250,6 +5259,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } su Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } giorno",
+        "${ remainingDaysCount } giorni"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } giorno rimasto",
+        "${ remainingDaysCount } giorni rimasti"
+      ],
       "account logins": [
         "login degli account"
       ],
@@ -5280,6 +5297,9 @@
       "Close": [
         "Chiudi"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Completa questo elenco di controllo entro ${ daysCount } per raddoppiare gratuitamente il tuo spazio di archiviazione."
+      ],
       "Congratulations, you completed all the steps!": [
         "Congratulazioni, hai completato tutti i passaggi!"
       ],
@@ -5295,8 +5315,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Una crittografia così resistente che solo tu e i destinatari previsti potete visualizzare le email."
       ],
+      "Finish setup": [
+        "Termina la configurazione"
+      ],
       "For your eyes only": [
         "Solo per i tuoi occhi"
+      ],
+      "Get more storage": [
+        "Ottieni più spazio"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Ottieni l'app mobile di ${ MAIL_APP_NAME }"
@@ -5382,6 +5408,9 @@
       ],
       "Less details": [
         "Meno dettagli"
+      ],
+      "Meeting host:": [
+        "Ospite della riunione:"
       ],
       "Meeting link:": [
         "Collegamento alla riunione:"
@@ -5892,6 +5921,12 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } fornisce un modo semplice per creare accessi a siti di terze parti non attendibili in cui non si desidera esporre il proprio indirizzo email."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }. Il prezzo e la data di rinnovo dell'abbonamento ${ planTitle } rimangono invariati."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
@@ -6561,7 +6596,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9340,6 +9376,9 @@
       "Administration Panel": [
         "Pannello di controllo"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funzionalità alias avanzate (fornite da SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Tutti i prodotti e le funzionalità di ${ BRAND_NAME }"
       ],
@@ -9854,6 +9893,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domini personalizzati per alias, caselle di posta aggiuntive, possibilità di inviare email da alias e altro ancora"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato"
       ],
@@ -10096,6 +10138,12 @@
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
+      "Meeting host copied to clipboard": [
+        "Ospite della riunione copiato negli appunti"
+      ],
+      "Meeting ID copied to clipboard": [
+        "ID riunione copiato negli appunti"
+      ],
       "Passcode copied to clipboard": [
         "Codice copiato negli appunti"
       ],
@@ -10255,6 +10303,9 @@
       "Protection from trackers": [
         "Protezione dai tracker"
       ],
+      "Replay introduction": [
+        "Riesegui introduzione"
+      ],
       "Skip": [
         "Salta"
       ],
@@ -10402,8 +10453,14 @@
         "${ n } account utente",
         "${ n } account utente"
       ],
+      "Activity log": [
+        "Registro delle attività"
+      ],
       "Admin panel to manage users and subscription": [
         "Pannello di amministrazione per gestire utenti e abbonamenti"
+      ],
+      "Team policies": [
+        "Politiche del Team"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11760,6 +11817,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "L'abbonamento verrà declassato alla fine del ciclo di fatturazione."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "A vita"
       ]
     },
     "Subscription price": {
@@ -13941,8 +14003,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Partecipa alla riunione su Zoom"
+      ],
       "Meeting ID:": [
         "ID meeting:"
+      ],
+      "Passcode:": [
+        "Codice di accesso:"
       ]
     }
   }

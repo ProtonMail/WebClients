@@ -106,6 +106,9 @@
       "Confirm access": [
         "Пацвердзіць доступ"
       ],
+      "Confirm all": [
+        "Пацвердзіць усе"
+      ],
       "Continue": [
         "Працягнуць"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Стварыць ідэнтычнасць"
+      ],
+      "Create item": [
+        "Стварыць элемент"
       ],
       "Create login": [
         "Стварыць запіс уваходу"
@@ -385,6 +391,9 @@
       "Please retry": [
         "Паспрабуйце яшчэ раз"
       ],
+      "Reactivate now": [
+        "Актываваць паўторна"
+      ],
       "Refresh the page": [
         "Абнавіць старонку"
       ],
@@ -463,6 +472,9 @@
       "See members": [
         "Паглядзець удзельнікаў"
       ],
+      "Select": [
+        "Выбраць"
+      ],
       "Send invite": [
         "Адправіць запрашэнне"
       ],
@@ -533,7 +545,7 @@
         "Паспрабуйце бясплатна"
       ],
       "Understood, I will never need it": [
-        "Я ўсведамляю гэта. Ён мне больш не спатрэбяцца",
+        "Я ўсведамляю гэта. Ён мне больш не спатрэбіцца",
         "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца",
         "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца",
         "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца"
@@ -558,6 +570,9 @@
       ],
       "Upgrade now to share with more people": [
         "Палепшыце, каб абагульваць з большай колькасцю карыстальнікаў"
+      ],
+      "Use ${ label } theme": [
+        "Выкарыстоўваць тэму ${ label }"
       ],
       "Verify": [
         "Праверка"
@@ -609,8 +624,8 @@
       "Black Friday": [
         "Чорная пятніца"
       ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Заплаціце адзін раз і атрымайце ${ lifetimeAccessJSX } да Pass Plus. Усяго за ${ relativePrice }."
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Заплаціце адзін раз і атрымайце ${ lifetimeAccessJSX } да Pass Plus і SimpleLogin. Усяго за ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Зэканомце да ${ discountJSX } з Pass Family. Толькі ${ relativePrice }/месяц."
@@ -747,6 +762,9 @@
       ],
       "Could not resolve share members": [
         "Немагчыма вырашыць абагульванне ўдзельнікаў"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Немагчыма атрымаць запрашэнні карыстальніка для сховішча \"${ vaultName }\""
       ],
       "Could not validate addresses at the moment.": [
         "Немагчыма праверыць адрасы ў дадзены момант."
@@ -1099,6 +1117,31 @@
         "тэрабайтаў"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Адпаведна сістэме"
+      ],
+      "Theme font": [
+        "Шрыфт тэмы"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Вялікі"
+      ],
+      "Medium (recommended)": [
+        "Сярэдні (рэкамендуецца)"
+      ],
+      "Small": [
+        "Маленькі"
+      ],
+      "Very large": [
+        "Вельмі вялікі"
+      ],
+      "Very small": [
+        "Вельмі маленькі"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Элемент \"${ payload.item.data.metadata.name }\" быў праігнараваны"
@@ -1141,6 +1184,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } будзе адпавядаць сістэмнай тэме."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і асабістыя звесткі."
@@ -1271,6 +1317,9 @@
       "Change your password": [
         "Змяніць свой пароль"
       ],
+      "Choose your preferred look and feel.": [
+        "Выберыце пажаданы выгляд."
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Пацвердзіце свой дадатковы пароль, каб працягнуць яго выдаленне."
       ],
@@ -1387,6 +1436,12 @@
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "У мэтах бяспекі, вам неабходна пацвердзіць доступ да гэтага абагуленага сховішча",
+        "У мэтах бяспекі, вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
+        "У мэтах бяспекі, вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
+        "У мэтах бяспекі, вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў"
       ],
       "For security reasons, your access needs to be confirmed": [
         "У мэтах бяспекі, вам неабходна пацвердзіць свой доступ"
@@ -1520,6 +1575,9 @@
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
+      "Make it your own": [
+        "Зрабіце гэта па-свойму"
+      ],
       "me": [
         "я"
       ],
@@ -1535,14 +1593,26 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
       ],
+      "Move ${ count } item": [
+        "Перамясціць ${ count } элемент",
+        "Перамясціць ${ count } элементы",
+        "Перамясціць ${ count } элементаў",
+        "Перамясціць ${ count } элементаў"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю і ўсе бяспечныя спасылкі."
+        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю і ўсе бяспечныя спасылкі.",
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю і ўсе бяспечныя спасылкі.",
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю і ўсе бяспечныя спасылкі.",
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю і ўсе бяспечныя спасылкі."
       ],
       "Moving an item to another vault will erase its history.": [
-        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю."
+        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю.",
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю.",
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю.",
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -1687,9 +1757,6 @@
       ],
       "Press Enter to copy": [
         "Націсніце Enter, каб скапіяваць"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Прыватнасць для нас выклікае вялікую заклапочанасць. Даведайцеся чым ${ PASS_APP_NAME } адрозніваецца ад іншых праграм такога тыпу."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK } — нашай перадавой праграмы абароны ўліковых запісаў"
@@ -1966,6 +2033,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Вы больш не будзеце атрымліваць апавяшчэнні ўцечкі даных для гэтага адраса электроннай пошты."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "У вас больш не будзе доступу да абагульвання, 2ФА, крэдытнай карткі і іншых пашыраных функцый у ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Вы будзеце выкарыстоўваць гэты PIN для разблакіроўкі ${ PASS_APP_NAME }, калі ён будзе не актыўны пэўны перыяд часу."
@@ -2611,6 +2681,9 @@
       "The URL has been copied to the clipboard": [
         "URL-адрас скапіяваны ў буфер абмену"
       ],
+      "Theme": [
+        "Тэма"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Гэты элемент будзе заставацца даступным да ${ remaining }"
       ],
@@ -2731,8 +2804,14 @@
         "${ count } элементаў",
         "${ count } элементаў"
       ],
-      "You selected ${ semiboldText } in this vault": [
-        "Вы выбралі ${ semiboldText } у гэтым сховішчы"
+      "You can drag and drop the selected item to another vault": [
+        "Вы можаце перацягваць выбраны элемент у іншае сховішча",
+        "Вы можаце перацягваць выбраныя элементы ў іншае сховішча",
+        "Вы можаце перацягваць выбраныя элементы ў іншае сховішча",
+        "Вы можаце перацягваць выбраныя элементы ў іншае сховішча"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Вы выбралі ${ semiboldText } у гэтым сховішчы."
       ]
     },
     "new_plans: feature": {
@@ -2952,6 +3031,17 @@
         "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Аўтаматычна"
+      ],
+      "Dark": [
+        "Цёмная"
+      ],
+      "Light": [
+        "Светлая"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Адрасы ${ BRAND_NAME }"
@@ -3006,6 +3096,15 @@
       ],
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Выдаліць ${ deletedItemsCount } элемент?",
+        "Выдаліць ${ deletedItemsCount } элементы?",
+        "Выдаліць ${ deletedItemsCount } элементаў?",
+        "Выдаліць ${ deletedItemsCount } элементаў?"
+      ],
+      "Delete this item?": [
+        "Выдаліць гэты элемент?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Выдаліць сховішча \"${ vaultName }\"?"
@@ -3085,14 +3184,23 @@
       "Modified": [
         "Зменена"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Перамясціць ${ count } элемент у ${ vaultName }",
+        "Перамясціць ${ count } элементы ў ${ vaultName }",
+        "Перамясціць ${ count } элементаў у ${ vaultName }",
+        "Перамясціць ${ count } элементаў у ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Перамясціць ${ trashedItemsCount } элемент у сметніцу?",
+        "Перамясціць ${ trashedItemsCount } элементы ў сметніцу?",
+        "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?",
+        "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Перамясціць усе элементы ў \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Перамясціць элемент у \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Перамясціць элементы ў \"${ vaultName }\"?"
+      "Move item to \"${ vaultName }\"": [
+        "Перамясціць элемент у \"${ vaultName }\""
       ],
       "No excluded items": [
         "Няма выключаных элементаў"
@@ -3123,6 +3231,9 @@
       ],
       "Pause monitoring?": [
         "Прыпыніць назіранне?"
+      ],
+      "Pending access confirmation": [
+        "Чакаецца пацвярджэнне доступу"
       ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
@@ -3253,8 +3364,8 @@
       "What is the dark web?": [
         "Што такое цёмная сетка?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Чаму менавіта ${ PASS_APP_NAME }?"
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Ваша падпіска ${ planName } завершыцца ${ endDate }"
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
@@ -3265,11 +3376,11 @@
       "Your welcome gift": [
         "Ваш прывітальны падарунак"
       ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
-        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданім",
-        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы",
-        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў",
-        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў"
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданім.",
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
       ]
     },
     "Validation": {
@@ -3305,11 +3416,29 @@
       "A description of the problem is required": [
         "Патрабуецца апісанне праблемы"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Псеўданімы ў сметніцы працягваюць перасылаць лісты."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Усе элементы са сметніцы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
       ],
       "An error occurred while exporting your data": [
         "Падчас экспартавання вашых даных адбылася памылка"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элемент у сметніцу?",
+        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементы ў сметніцу?",
+        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементаў у сметніцу?",
+        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементаў у сметніцу?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элемент?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элементы?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элементаў?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элементаў?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Вы сапраўды хочаце незваротна выдаліць гэты элемент?"
       ],
       "At least one email address is required": [
         "Патрабуецца прынамсі адзін адрас электроннай пошты"
@@ -3403,9 +3532,6 @@
       ],
       "Offline": [
         "Па-за сеткай"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Выдаленне псеўданімаў у ${ PASS_SHORT_APP_NAME } таксама выдаліць іх у SimpleLogin пасля сінхранізацыі."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"

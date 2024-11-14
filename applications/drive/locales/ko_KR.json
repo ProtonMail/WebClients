@@ -1419,6 +1419,9 @@
       "${ users } user": [
         "${ users }명 사용자"
       ],
+      "Total": [
+        "합계"
+      ],
       "Total for ${ n } month": [
         "${ n }개월의 합계"
       ]
@@ -4054,6 +4057,12 @@
       "${ nbFile } encrypted file...": [
         "${ nbFile } 암호화된 파일..."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount }개 일시 정지됨"
       ],
@@ -4583,7 +4592,7 @@
         "취소하면 ${ planTitle } 구독이 만료일인 ${ expiryDate }에 갱신되지 않습니다."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
+        "받은 편지함에서 이메일을 찾지 못하셨다면 스팸 폴더를 확인하세요."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "만약 이들 중 하나를 가지고 있다면, ${ BRAND_NAME } 계정 설정에서 차단 해제 절차를 계속하세요."
@@ -5511,6 +5520,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, Drive 공유 링크가 더 이상 활성화되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Plus 구독이 ${ PASS_SHORT_APP_NAME } 평생 플랜으로 대체됩니다. 구독의 잔여분이 계정 크레딧에 추가됩니다. ${ PASS_SHORT_APP_NAME } 평생 딜은 갱신가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }에 평생 접근할 수 있는 일회성 결제입니다."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "계정에 기한이 지난 청구서가 하나 이상 있습니다. 회원님의 계정 접근이 곧 제한됩니다. ${ payInvoiceLink }"
@@ -6836,6 +6848,9 @@
       "Administration Panel": [
         "관리 패널"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "고급 별칭 기능 (SimpleLogin 제공)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
@@ -7256,7 +7271,7 @@
         "인터넷에 안전하고 제한 없이 고속으로 접속할 수 있는 전용 VPN 솔루션입니다."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "모든 사람에게 개인 정보를 제공하도록 설계된 무료 스타터 계정."
+        "모두에게 프라이버시 보호를 제공하도록 설계된 무료 스타터 계정."
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "최대 두 사람까지 무제한 프라이버시 및 더 많은 저장공간을 제공합니다."
@@ -7338,6 +7353,9 @@
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "가족 구성원에게 할당할 수 있는 최대 ${ n }개의 이메일 주소/별명을 생성하세요. 이를 온라인 신원으로 사용하세요. 예를 들면, 쇼핑 계정에는 JohnShopper@${ domain }을 사용할 수 있습니다."
+      ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "별칭을 위한 커스텀 도메인, 추가 메일함, 별칭으로부터의 이메일 전송 기능 등"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다"
@@ -8079,8 +8097,14 @@
       "${ n } user account": [
         "${ n }개 사용자 계정"
       ],
+      "Activity log": [
+        "활동 로그"
+      ],
       "Admin panel to manage users and subscription": [
         "사용자 및 구독을 관리할 수 있는 관리자 패널"
+      ],
+      "Team policies": [
+        "팀 정책"
       ]
     },
     "PassFamilyPlan2024": {
@@ -9100,6 +9124,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "결제 주기 종료일에 구독이 다운그레이드됩니다."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "평생"
       ]
     },
     "Subscription price": {

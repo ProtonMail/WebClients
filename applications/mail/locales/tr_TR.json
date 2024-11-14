@@ -462,6 +462,9 @@
       "Expand URL": [
         "Bağlantıyı genişlet"
       ],
+      "Expand video conferencing widget": [
+        "Görüntülü görüşme aracını büyüt"
+      ],
       "Expiration time": [
         "Geçerlilik süresi"
       ],
@@ -955,6 +958,9 @@
       "Remove this label": [
         "Bu etiketi sil"
       ],
+      "Remove zoom meeting": [
+        "Zoom görüşmesini kaldır"
+      ],
       "Replace": [
         "Değiştir"
       ],
@@ -1054,10 +1060,10 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
-      "Select all": [
+      "Select All": [
         "Tümünü seç"
       ],
-      "Select All": [
+      "Select all": [
         "Tümünü seç"
       ],
       "Select all messages": [
@@ -2274,6 +2280,9 @@
       "${ users } user": [
         "${ users } kullanıcı",
         "${ users } kullanıcı"
+      ],
+      "Total": [
+        "Toplam"
       ],
       "Total for ${ n } month": [
         "${ n } aylık toplam",
@@ -5250,6 +5259,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "Play Store üzerinde ${ MAIL_APP_NAME }"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } gün",
+        "${ remainingDaysCount } gün"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } gün kaldı",
+        "${ remainingDaysCount } gün kaldı"
+      ],
       "account logins": [
         "Oturum açma bilgileri"
       ],
@@ -5280,6 +5297,9 @@
       "Close": [
         "Kapat"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Depolama alanınızı ücretsiz olarak iki katına çıkarmak için bu görev listesini ${ daysCount } içinde tamamlayın."
+      ],
       "Congratulations, you completed all the steps!": [
         "Tebrikler, tüm adımları tamamladınız!"
       ],
@@ -5295,8 +5315,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Kullanılan şifreleme o kadar güçlü ki e-postalarınızı yalnızca siz ve hedeflediğiniz alıcılar görebilir."
       ],
+      "Finish setup": [
+        "Kurulumu bitir"
+      ],
       "For your eyes only": [
         "Yalnızca sizin gözleriniz için"
+      ],
+      "Get more storage": [
+        "Daha fazla depolama alanı edinin"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } mobil uygulamasını edinin"
@@ -5346,6 +5372,9 @@
       "Storage unlocked": [
         "Depolama alanı kazandınız"
       ],
+      "Tasks to complete count": [
+        "Tamamlanması gereken görev sayısı"
+      ],
       "This feature is currently unavailable": [
         "Bu özellik şu anda kullanılamıyor"
       ],
@@ -5382,6 +5411,9 @@
       ],
       "Less details": [
         "Ayrıntıları gizle"
+      ],
+      "Meeting host:": [
+        "Görüşme sahibi:"
       ],
       "Meeting link:": [
         "Toplantı bağlantısı"
@@ -5892,6 +5924,12 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME }; gerçek e-posta adresinizi açıklamak istemediğiniz, güvenilmez üçüncü taraf sitelerinde oturum açmak için basit bir yol sunar."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } Lifetime forsatının yenileme ücreti yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir. ${ planTitle } aboneliğinizin yenileme \nücreti ve tarihi değişmeden kalır."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
@@ -6561,7 +6599,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7649,6 +7688,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Plus aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime forsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik bir ödemedir."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
@@ -9337,6 +9379,9 @@
       "Administration Panel": [
         "Yönetim panosu"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Gelişmiş takma ad özellikleri (SimpleLogin tarafından sağlanır)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Tüm ${ BRAND_NAME } ürünleri ve özellikleri"
       ],
@@ -9848,6 +9893,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Takma adlar için özel etki alanları, ek e-posta kutuları, takma adlardan e-posta gönderme özelliği ve diğer şeyler"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir"
       ],
@@ -9960,7 +10008,7 @@
         "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Toplantı katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
+        "Görüşme katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
@@ -10089,6 +10137,12 @@
       ],
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
+      ],
+      "Meeting host copied to clipboard": [
+        "Görüşme sahibi panoya kopyalandı"
+      ],
+      "Meeting ID copied to clipboard": [
+        "Görüşme kimliği panoya kopyalandı"
       ],
       "Passcode copied to clipboard": [
         "Geçiş kodu panoya kopyalandı"
@@ -10249,6 +10303,9 @@
       "Protection from trackers": [
         "İzleyicilere karşı koruma"
       ],
+      "Replay introduction": [
+        "Tanıtımı yeniden oynat"
+      ],
       "Skip": [
         "Atla"
       ],
@@ -10396,8 +10453,14 @@
         "${ n } kullanıcı hesabı",
         "${ n } kullanıcı hesabı"
       ],
+      "Activity log": [
+        "İşlem günlüğü"
+      ],
       "Admin panel to manage users and subscription": [
         "Kullanıcıları ve aboneliğinizi panonuzdan yönetin"
+      ],
+      "Team policies": [
+        "Ekip ilkeleri"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11754,6 +11817,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Abonelik tarifeniz fatura döneminin sonunda düşürülecek."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Lifetime"
       ]
     },
     "Subscription price": {
@@ -13935,8 +14003,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Zoom görüşmesine katıl"
+      ],
       "Meeting ID:": [
-        "Toplantı kimliği:"
+        "Görüşme kimliği:"
+      ],
+      "Passcode:": [
+        "Parola:"
       ]
     }
   }

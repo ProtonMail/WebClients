@@ -541,6 +541,9 @@
       "Upgrade now to share with more people": [
         "Upgrade nu om met meer mensen te delen"
       ],
+      "Use ${ label } theme": [
+        "Gebruik ${ label } thema"
+      ],
       "Verify": [
         "Verifiëren"
       ],
@@ -590,9 +593,6 @@
     "bf2024: Title": {
       "Black Friday": [
         "Black Friday"
-      ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Betaal eenmalig en ontvang ${ lifetimeAccessJSX } om over Plus te gaan. Alleen ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Bespaar tot ${ discountJSX } op Pass Familie. Alleen ${ relativePrice }/maand."
@@ -1063,6 +1063,31 @@
         "Terabytes"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Systeem standaard"
+      ],
+      "Theme font": [
+        "Thema lettertype"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Groot"
+      ],
+      "Medium (recommended)": [
+        "Gemiddeld (aanbevolen)"
+      ],
+      "Small": [
+        "Klein"
+      ],
+      "Very large": [
+        "Zeer groot"
+      ],
+      "Very small": [
+        "Zeer klein"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\"-item werd genegeerd"
@@ -1486,12 +1511,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Bij het verplaatsen van een item naar een andere kluis worden de geschiedenis en alle beveiligde koppelingen gewist."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis."
-      ],
       "Moving items": [
         "Items verplaatsen"
       ],
@@ -1627,9 +1646,6 @@
       ],
       "Press Enter to copy": [
         "Druk op Enter om te kopiëren"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Privacy is van groot belang voor ons. Ontdek waarom ${ PASS_APP_NAME } anders is."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beschermd door ${ PROTON_SENTINEL_LINK }, ons geavanceerde accountbeveiligingsprogramma"
@@ -2523,6 +2539,9 @@
       "The URL has been copied to the clipboard": [
         "De URL is naar het klembord gekopieerd."
       ],
+      "Theme": [
+        "Thema"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Dit item blijft toegankelijk tot ${ remaining }"
       ],
@@ -2640,9 +2659,6 @@
       "${ count } item": [
         "${ count } item",
         "${ count } items"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "U heeft ${ semiboldText } geselecteerd in deze kluis"
       ]
     },
     "new_plans: feature": {
@@ -2996,12 +3012,6 @@
       "Move all items to \"${ vaultName }\"?": [
         "Alle items verplaatsen naar \"${ vaultName }\"?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Item verplaatsen naar \"${ vaultName }\"?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Items verplaatsen naar \"${ vaultName }\"?"
-      ],
       "No excluded items": [
         "Geen uitgesloten onderdelen"
       ],
@@ -3152,9 +3162,6 @@
       ],
       "What is the dark web?": [
         "Wat is het dark web?"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Waarom ${ PASS_APP_NAME }?"
       ],
       "Your exposed information": [
         "Uw blootgestelde informatie"

@@ -5128,8 +5128,8 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Après la connexion, vous serez redirigé vers ${ destination }."
       ],
-      "You will keep lifetime access to ${ PASS_APP_NAME } premium features if you cancel your subscription.": [
-        "Vous conserverez un accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME } si vous annulez votre abonnement."
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Vous conserverez un accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME } et SimpleLogin si vous annulez votre abonnement."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "À cette date, vous n'aurez plus accès aux fonctionnalités de ${ planTitle }."
@@ -6152,8 +6152,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Dollar australien"
+      ],
       "Brazilian real": [
         "Real brésilien (BRL)"
+      ],
+      "British pound": [
+        "Livre sterling"
+      ],
+      "Canadian dollar": [
+        "Dollar canadien"
       ],
       "Euro": [
         "Euro"
@@ -6310,8 +6319,8 @@
         "Historique des versions de fichiers datant d'${ options } jour",
         "Historique des versions de fichiers datant de ${ options } jours"
       ],
-      "${ PASS_APP_NAME } lifetime": [
-        "${ PASS_APP_NAME } à vie"
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Accès à vie aux fonctions ${ PASS_APP_NAME } et SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
@@ -6371,6 +6380,9 @@
       "Administration Panel": [
         "Panneau d'administration"
       ],
+      "Advanced account protection": [
+        "Protection avancée des comptes"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Fonctionnalités avancées des alias (fournies par SimpleLogin)"
       ],
@@ -6403,6 +6415,9 @@
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
+      ],
+      "Breach alerts": [
+        "Alertes de fuites de données"
       ],
       "Calendar sharing": [
         "Partage de calendrier"
@@ -6987,8 +7002,8 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Vous pouvez ajouter des labels à vos messages pour les retrouver plus facilement ou pour y appliquer des filtres."
       ],
-      "Lifetime access to ${ PASS_APP_NAME } premium features.": [
-        "Accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME }"
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Accès à vie aux fonctionnalités premium de ${ PASS_APP_NAME } et SimpleLogin"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Comme un dossier, un coffre-fort est un moyen pratique d'organiser vos éléments."
@@ -7229,7 +7244,7 @@
         "4 à 6 messages par an"
       ],
       "Application notifications": [
-        "Notification des applications"
+        "Notification de l'application"
       ],
       "Critical account notifications will still be delivered": [
         "Les notifications importantes concernant votre compte seront toujours envoyées."
@@ -7794,6 +7809,9 @@
       ],
       "Processing payment": [
         "Traitement du paiement"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Renouvellement au prix de ${ price } avec possibilité de résiliation à tout moment."
       ],
       "Select billing country to pay": [
         "Veuillez sélectionner l'état pour la facture à payer."

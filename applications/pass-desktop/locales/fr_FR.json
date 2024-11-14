@@ -106,6 +106,9 @@
       "Confirm access": [
         "Confirmer l'accès"
       ],
+      "Confirm all": [
+        "Confirmer tout"
+      ],
       "Continue": [
         "Continuer"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Créer une identité"
+      ],
+      "Create item": [
+        "Créer un élément"
       ],
       "Create login": [
         "Créer un identifiant"
@@ -394,6 +400,9 @@
       "Previous": [
         "Précédent"
       ],
+      "Reactivate now": [
+        "Réactiver maintenant"
+      ],
       "Refresh the page": [
         "Actualiser la page"
       ],
@@ -471,6 +480,9 @@
       ],
       "See members": [
         "Afficher les membres"
+      ],
+      "Select": [
+        "Sélectionner"
       ],
       "Send invite": [
         "Envoyer l'invitation"
@@ -567,6 +579,9 @@
       "Upgrade now to share with more people": [
         "Changez d'abonnement maintenant pour partager avec plus de personnes."
       ],
+      "Use ${ label } theme": [
+        "Utiliser le thème ${ label }"
+      ],
       "Verify": [
         "Vérifier"
       ],
@@ -640,8 +655,8 @@
       "Black Friday": [
         "Black Friday"
       ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Payez une seule fois et obtenez ${ lifetimeAccessJSX } à Pass Plus pour seulement ${ relativePrice }."
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Payez une seule fois et obtenez ${ lifetimeAccessJSX } à Pass Plus et SimpleLogin pour seulement ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Économisez jusqu'à ${ discountJSX } sur Pass Family pour seulement ${ relativePrice }/mois."
@@ -777,6 +792,12 @@
       ],
       "Could not resolve share members": [
         "Impossible de définir les membres du partage"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Les invitations utilisateur pour le coffre « ${ vaultName } » n'ont pas pu être récupérées."
+      ],
+      "Could not update settings at the moment. Please try again later.": [
+        "Les paramètres n'ont pas pu être mis à jour pour le moment. Nous vous invitons à réessayer plus tard."
       ],
       "Could not validate addresses at the moment.": [
         "Les adresses ne peuvent être validées pour le moment."
@@ -1175,6 +1196,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } affichera la vignette de l'élément en utilisant le proxy d'image anonyme ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } appliquera le même thème que celui de votre système."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } importera uniquement les identifiants, notes, cartes de paiement et identités."
       ],
@@ -1302,6 +1326,9 @@
       "Change your password": [
         "Modifier votre mot de passe"
       ],
+      "Choose your preferred look and feel.": [
+        "Choisissez l'apparence et le style que vous préférez."
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmez votre mot de passe supplémentaire pour le retirer."
       ],
@@ -1418,6 +1445,10 @@
       ],
       "Follow those steps to import your data with a generic CSV :": [
         "Suivez ces étapes pour importer vos données à l'aide d'un fichier CSV générique :"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Pour des raisons de sécurité, vous devez confirmer l'accès à ce coffre-fort partagé.",
+        "Pour des raisons de sécurité, vous devez confirmer l'accès à ces coffres-forts partagés."
       ],
       "For security reasons, your access needs to be confirmed": [
         "Pour des raisons de sécurité, votre accès doit être confirmé."
@@ -1548,6 +1579,9 @@
       "Low Priority": [
         "Priorité basse"
       ],
+      "Make it your own": [
+        "Personnalisez l'application"
+      ],
       "me": [
         "moi"
       ],
@@ -1563,14 +1597,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } est plus qu'un gestionnaire de mots de passe : il protège vos mots de passe ainsi que votre adresse e-mail personnelle grâce à des alias d'adresses e-mail. Bénéficiant de la même technologie que ${ MAIL_APP_NAME }, vos données sont chiffrées de bout en bout et personne d'autre que vous ne peut y accéder."
       ],
+      "Move ${ count } item": [
+        "Déplacer ${ count } élément",
+        "Déplacer ${ count } éléments"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Le déplacement d'un élément vers un autre coffre-fort effacera son historique et tous les liens sécurisés."
+        "Le déplacement d'un élément vers un autre coffre-fort effacera son historique et tous les liens sécurisés.",
+        "Le déplacement d'éléments vers un autre coffre-fort effacera leur historique et tous les liens sécurisés."
       ],
       "Moving an item to another vault will erase its history.": [
-        "Le déplacement d'un élément vers un autre coffre-fort effacera son historique."
+        "Le déplacement d'un élément vers un autre coffre-fort effacera son historique.",
+        "Le déplacement d'éléments vers un autre coffre-fort effacera leur historique."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -1719,9 +1759,6 @@
       ],
       "Press Enter to copy": [
         "Appuyez sur Entrée pour copier."
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "La protection de la vie privée est notre priorité. Découvrez ce qui différencie ${ PASS_APP_NAME } des autres."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection de compte"
@@ -1994,6 +2031,9 @@
       "You will no longer be notified of data breaches for this email address.": [
         "Vous ne serez plus informé en cas de fuites de données pour cette adresse e-mail."
       ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Vous n'aurez plus accès aux fonctionnalités avancées dans ${ PASS_APP_NAME } comme entre autres le partage, l'authentification à deux facteurs, la carte de paiement."
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Vous utiliserez ce code PIN pour déverrouiller ${ PASS_APP_NAME } quand il se verrouille automatiquement après une période d'inactivité."
       ],
@@ -2062,6 +2102,9 @@
       ],
       "15 minutes": [
         "15 minutes"
+      ],
+      "15 seconds": [
+        "15 secondes"
       ],
       "2 minutes": [
         "2 minutes"
@@ -2170,6 +2213,9 @@
       ],
       "City": [
         "Ville"
+      ],
+      "Clear clipboard after": [
+        "Effacer le presse-papiers après"
       ],
       "Code": [
         "Code"
@@ -2483,6 +2529,9 @@
       "Need help?": [
         "Besoin d'aide ?"
       ],
+      "Never": [
+        "Jamais"
+      ],
       "New vault": [
         "Nouveau coffre-fort"
       ],
@@ -2688,6 +2737,9 @@
       "The URL has been copied to the clipboard": [
         "L'URL a été copiée dans le presse-papiers."
       ],
+      "Theme": [
+        "Thème"
+      ],
       "This item will remain accessible until ${ remaining }": [
         "Cet élément restera accessible jusqu'à ${ remaining }."
       ],
@@ -2832,7 +2884,11 @@
         "${ count } élément",
         "${ count } éléments"
       ],
-      "You selected ${ semiboldText } in this vault": [
+      "You can drag and drop the selected item to another vault": [
+        "Vous pouvez glisser et déposer l'élément sélectionné dans un autre coffre-fort.",
+        "Vous pouvez glisser et déposer les éléments sélectionnés dans un autre coffre-fort."
+      ],
+      "You selected ${ semiboldText } in this vault.": [
         "Vous avez sélectionné ${ semiboldText } dans ce coffre-fort."
       ]
     },
@@ -3051,6 +3107,17 @@
         "Les coffres-forts ne peuvent pas compter plus de ${ vault.targetMaxMembers } utilisateurs."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automatique"
+      ],
+      "Dark": [
+        "Sombre"
+      ],
+      "Light": [
+        "Clair"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "Adresses ${ BRAND_NAME }"
@@ -3105,6 +3172,13 @@
       ],
       "Dark Web Monitoring": [
         "Surveillance du dark web"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Voulez-vous supprimer ${ deletedItemsCount } élément ?",
+        "Voulez-vous supprimer ${ deletedItemsCount } éléments ?"
+      ],
+      "Delete this item?": [
+        "Voulez-vous supprimer cet élément ?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Voulez-vous supprimer le coffre-fort « ${ vaultName } » ?"
@@ -3184,14 +3258,19 @@
       "Modified": [
         "Modifié"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Déplacer ${ count } élément vers ${ vaultName }",
+        "Déplacer ${ count } éléments vers ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Voulez-vous mettre ${ trashedItemsCount } élément à la corbeille ?",
+        "Voulez-vous mettre ${ trashedItemsCount } éléments à la corbeille ?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Déplacer tous les éléments vers « ${ vaultName } » ?"
       ],
-      "Move item to \"${ vaultName }\"?": [
-        "Déplacer l'élément vers « ${ vaultName } » ?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "Déplacer les éléments vers « ${ vaultName } » ?"
+      "Move item to \"${ vaultName }\"": [
+        "Déplacer l'élément vers « ${ vaultName } »"
       ],
       "No excluded items": [
         "Aucun élément exclu"
@@ -3222,6 +3301,9 @@
       ],
       "Pause monitoring?": [
         "Suspendre la surveillance ?"
+      ],
+      "Pending access confirmation": [
+        "En attente de la confirmation d'accès"
       ],
       "Pending access to the shared data": [
         "En attente d'accès aux données partagées"
@@ -3348,8 +3430,8 @@
       "What is the dark web?": [
         "Qu'est-ce que le dark web ?"
       ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Pourquoi choisir ${ PASS_APP_NAME } ?"
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Votre abonnement ${ planName } se terminera le ${ endDate }."
       ],
       "Your exposed information": [
         "Vos informations exposées"
@@ -3360,7 +3442,7 @@
       "Your welcome gift": [
         "Votre cadeau de bienvenue"
       ],
-      "You’re about to permanently delete ${ aliasCount } alias": [
+      "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
       ]
@@ -3398,11 +3480,25 @@
       "A description of the problem is required": [
         "Une description du problème est nécessaire."
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Les alias dans la corbeille continueront de rediriger les e-mails."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tous les éléments dans la corbeille seront définitivement supprimés. Vous ne pouvez pas annuler cette action."
       ],
       "An error occurred while exporting your data": [
         "Une erreur s'est produite pendant l'exportation de vos données."
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Voulez-vous vraiment envoyer ${ trashedItemsCount } élément à la corbeille ?",
+        "Voulez-vous vraiment envoyer ${ trashedItemsCount } éléments à la corbeille ?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Voulez-vous vraiment supprimer définitivement ${ deletedItemsCount } élément ?",
+        "Voulez-vous vraiment supprimer définitivement ${ deletedItemsCount } éléments ?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Êtes-vous sûr de vouloir supprimer définitivement cet élément ?"
       ],
       "At least one email address is required": [
         "Au moins une adresse e-mail est nécessaire."
@@ -3494,9 +3590,6 @@
       ],
       "Offline": [
         "Hors ligne"
-      ],
-      "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
-        "Une fois synchronisés, la suppression d'alias dans ${ PASS_SHORT_APP_NAME } les supprimera également dans SimpleLogin."
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."

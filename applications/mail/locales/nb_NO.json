@@ -462,6 +462,9 @@
       "Expand URL": [
         "Utvid nettadresse"
       ],
+      "Expand video conferencing widget": [
+        "Utvid widget for videokonferanser"
+      ],
       "Expiration time": [
         "Utløpstid"
       ],
@@ -955,6 +958,9 @@
       "Remove this label": [
         "Fjern denne etiketten"
       ],
+      "Remove zoom meeting": [
+        "Fjern Zoom-møte"
+      ],
       "Replace": [
         "Erstatt"
       ],
@@ -1054,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
       ],
-      "Select all": [
+      "Select All": [
         "Velg alle"
       ],
-      "Select All": [
+      "Select all": [
         "Velg alle"
       ],
       "Select all messages": [
@@ -2274,6 +2280,9 @@
       "${ users } user": [
         "${ users } bruker",
         "${ users } brukere"
+      ],
+      "Total": [
+        "Totalt"
       ],
       "Total for ${ n } month": [
         "Totalt for ${ n } måned",
@@ -5250,6 +5259,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } på Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dag",
+        "${ remainingDaysCount } dager"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } dag igjen",
+        "${ remainingDaysCount } dager igjen"
+      ],
       "account logins": [
         "kontopålogginger"
       ],
@@ -5280,6 +5297,9 @@
       "Close": [
         "Lukk"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Fullfør denne sjekklisten innen ${ daysCount } for å doble lagringsplassen din gratis."
+      ],
       "Congratulations, you completed all the steps!": [
         "Gratulerer, du fullførte alle trinnene!"
       ],
@@ -5295,8 +5315,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Kryptering så sterk, bare du og tiltenkte mottakere kan se e-postene dine."
       ],
+      "Finish setup": [
+        "Fullfør oppsettet"
+      ],
       "For your eyes only": [
         "Kun for dine øyne"
+      ],
+      "Get more storage": [
+        "Skaff deg mer lagringskapasitet"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Skaff deg ${ MAIL_APP_NAME }-mobilappen"
@@ -5346,6 +5372,9 @@
       "Storage unlocked": [
         "Lagringsplass låst opp"
       ],
+      "Tasks to complete count": [
+        "Ventende oppgaver"
+      ],
       "This feature is currently unavailable": [
         "Denne funksjonen er utilgjengelig for øyeblikket."
       ],
@@ -5382,6 +5411,9 @@
       ],
       "Less details": [
         "Mindre informasjon"
+      ],
+      "Meeting host:": [
+        "Møtevert:"
       ],
       "Meeting link:": [
         "Møtekobling:"
@@ -5892,6 +5924,12 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } gir en enkel måte å opprette pålogginger på ikke-klarerte tredjepartssider der du ikke vil avsløre din faktiske e-postadresse."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Livsvarig avtale for ${ PASS_SHORT_APP_NAME } har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Livstidsavtale for ${ PASS_SHORT_APP_NAME } har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }. Fornyelsesprisen og datoen for ${ planTitle }-abonnementet forblir uendret."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
@@ -6561,7 +6599,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7649,6 +7688,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, vennligst betal eventuelle forfalte fakturaer."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Ditt ${ PASS_SHORT_APP_NAME } Plus-abonnement vil bli erstattet med livsvarig avtale for ${ PASS_SHORT_APP_NAME }. Den gjenværende saldoen på abonnementet ditt vil bli lagt til kontoen din. ${ PASS_SHORT_APP_NAME } livstidsavtale har ingen fornyelsespris, det er en engangsbetaling for livstidstilgang til ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Kontoen din har minst en forfalt faktura. Din tilgang vil snart bli begrenset. ${ payInvoiceLink }"
@@ -9337,6 +9379,9 @@
       "Administration Panel": [
         "Administrasjonspanel"
       ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Avanserte aliasfunksjoner (drevet av SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Alle ${ BRAND_NAME }-produkter og tjenester"
       ],
@@ -9848,6 +9893,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Egendefinerte domener for aliaser, ekstra postbokser, muligheten til å sende e-post fra aliaser og mer"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
       ],
@@ -10090,6 +10138,12 @@
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
       ],
+      "Meeting host copied to clipboard": [
+        "Møtevert kopiert til utklippstavlen"
+      ],
+      "Meeting ID copied to clipboard": [
+        "Møte-ID kopiert til utklippstavlen"
+      ],
       "Passcode copied to clipboard": [
         "Passkode kopiert til utklippstavlen"
       ],
@@ -10249,6 +10303,9 @@
       "Protection from trackers": [
         "Beskyttelse mot sporere"
       ],
+      "Replay introduction": [
+        "Spill av introduksjon på nytt"
+      ],
       "Skip": [
         "Hopp over"
       ],
@@ -10396,8 +10453,14 @@
         "${ n } brukerkonto",
         "${ n } brukerkontoer"
       ],
+      "Activity log": [
+        "Aktivitetslogg"
+      ],
       "Admin panel to manage users and subscription": [
         "Administrasjonspanel for å administrere brukere og abonnement"
+      ],
+      "Team policies": [
+        "Retningslinjer for teamet"
       ]
     },
     "PassFamilyPlan2024": {
@@ -11754,6 +11817,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Abonnementet vil bli nedgradert på slutten av faktureringssyklusen."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Livstid"
       ]
     },
     "Subscription price": {
@@ -13935,8 +14003,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Bli med på Zoom-møte"
+      ],
       "Meeting ID:": [
         "Møte-ID:"
+      ],
+      "Passcode:": [
+        "Adgangskode:"
       ]
     }
   }

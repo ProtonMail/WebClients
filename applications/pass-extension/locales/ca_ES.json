@@ -89,6 +89,9 @@
       "Confirm access": [
         "Confirma l'accés"
       ],
+      "Confirm all": [
+        "Confirma tot"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Connecteu el vostre compte de ${ BRAND_NAME }"
       ],
@@ -133,6 +136,9 @@
       ],
       "Create identity": [
         "Crea una identitat"
+      ],
+      "Create item": [
+        "Crea un element"
       ],
       "Create login": [
         "Crea un inici de sessió"
@@ -377,6 +383,9 @@
       "Please retry": [
         "Reintenta"
       ],
+      "Reactivate now": [
+        "Reactiva ara"
+      ],
       "Refresh the page": [
         "Refresca la pàgina"
       ],
@@ -451,6 +460,9 @@
       ],
       "See members": [
         "Mostra els membres"
+      ],
+      "Select": [
+        "Selecciona"
       ],
       "Send invite": [
         "Envia l'invitació"
@@ -549,6 +561,9 @@
       "Upgrade now to share with more people": [
         "Milloreu el pla ara per a compartir-ho amb més persones"
       ],
+      "Use ${ label } theme": [
+        "Utilitzar el tema ${ label }"
+      ],
       "Via secure link": [
         "Mitjançant un enllaç segur"
       ],
@@ -593,8 +608,8 @@
       "Black Friday": [
         "Black Friday"
       ],
-      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus. Only ${ relativePrice }.": [
-        "Pagueu una vegada i obteniu ${ lifetimeAccessJSX } per Pass Plus. Només ${ relativePrice }."
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Pagueu una vegada i obteniu ${ lifetimeAccessJSX } per Pass Plus i SimpleLogin. Només ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Estalvieu fins a ${ discountJSX } a Pass Family. Només ${ relativePrice }/mes."
@@ -1021,6 +1036,31 @@
         "Terabytes"
       ]
     },
+    "Font face option": {
+      "System default": [
+        "Valor per defecte del sistema"
+      ],
+      "Theme font": [
+        "Família tipogràfica del tema"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Gran"
+      ],
+      "Medium (recommended)": [
+        "Mitjà (recomanat)"
+      ],
+      "Small": [
+        "Petit"
+      ],
+      "Very large": [
+        "Molt gran"
+      ],
+      "Very small": [
+        "Molt petit"
+      ]
+    },
     "Info": {
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "S'ha descartat l'element \"${ payload.item.data.metadata.name }\""
@@ -1390,17 +1430,21 @@
       "Loading...": [
         "S'està carregant..."
       ],
+      "Make it your own": [
+        "Personalitzeu l'aplicació"
+      ],
       "me": [
         "jo"
       ],
       "Monitoring settings successfully updated": [
         "Les preferències de seguiment s'han actualitzat correctament"
       ],
+      "Move ${ count } item": [
+        "Mou ${ count } element",
+        "Mou ${ count } elements"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -1514,9 +1558,6 @@
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
       ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "La privacitat és una gran preocupació per a nosaltres. Apreneu per què ${ PASS_APP_NAME } és diferent."
-      ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
       ],
@@ -1552,9 +1593,6 @@
       ],
       "Secure links": [
         "Enllaços segurs"
-      ],
-      "Select an existing login item to update.": [
-        "Seleccioneu un element d'inici de sessió existent per actualitzar."
       ],
       "Select an existing login or create a new one.": [
         "Seleccioneu un inici de sessió existent o creeu-ne un de nou."
@@ -2392,6 +2430,9 @@
       "The URL has been copied to the clipboard": [
         "S'ha copiat l'URL al porta-retalls."
       ],
+      "Theme": [
+        "Tema"
+      ],
       "Title": [
         "Títol"
       ],
@@ -2493,9 +2534,6 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elements"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Heu seleccionat ${ semiboldText } en aquesta caixa forta"
       ]
     },
     "Onboarding": {
@@ -2670,6 +2708,17 @@
         "Les caixes fortes no poden contenir més de ${ vault.targetMaxMembers } usuaris."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automàtic"
+      ],
+      "Dark": [
+        "Fosc"
+      ],
+      "Light": [
+        "Clar"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Preferències de ${ PASS_APP_NAME }"
@@ -2697,6 +2746,9 @@
       ],
       "Current version": [
         "Versió actual"
+      ],
+      "Delete this item?": [
+        "Voleu eliminar aquest element?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Voleu eliminar la caixa forta «${ vaultName }»?"
@@ -2883,9 +2935,6 @@
       ],
       "Welcome to your new password manager!": [
         "Us donem la benvinguda al vostre nou gestor de contrasenyes!"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "Per què ${ PASS_APP_NAME }?"
       ],
       "Your vault is empty": [
         "La caixa forta està buida"
