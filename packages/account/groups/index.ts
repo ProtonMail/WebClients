@@ -4,6 +4,8 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getGroups } from '@proton/shared/lib/api/groups';
+import { KEY_FLAG } from '@proton/shared/lib/constants';
+import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Group, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -77,6 +79,51 @@ const slice = createSlice({
                 state.value = updatedGroups;
             }
         },
+        setNoEncryptFlag: (state, action: PayloadAction<{ addressID: string; noEncryptFlag: boolean }>) => {
+            const addressID = action.payload.addressID;
+            const noEncryptFlag = action.payload.noEncryptFlag;
+            if (!state.value) {
+                return;
+            }
+
+            const index = state.value.findIndex((group) => group.Address.ID === addressID);
+            if (index === -1) {
+                return;
+            }
+
+            const group = state.value[index];
+
+            const groupAddress = group.Address;
+
+            if (!('Keys' in groupAddress)) {
+                return;
+            }
+
+            const groupAddressKeys = groupAddress.Keys;
+            const flags = groupAddressKeys[0].Flags;
+            const bit = KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT;
+
+            let newFlags;
+
+            if (noEncryptFlag) {
+                newFlags = setBit(flags, bit);
+            } else {
+                newFlags = clearBit(flags, bit);
+            }
+
+            state.value[index] = {
+                ...group,
+                Address: {
+                    ...groupAddress,
+                    Keys: [
+                        {
+                            ...groupAddressKeys[0],
+                            Flags: newFlags,
+                        },
+                    ],
+                },
+            };
+        },
     },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
@@ -95,6 +142,6 @@ const slice = createSlice({
         });
     },
 });
-export const { addGroup, updateGroup, removeGroup } = slice.actions;
+export const { addGroup, updateGroup, removeGroup, setNoEncryptFlag } = slice.actions;
 export const groupsReducer = { [name]: slice.reducer };
 export const groupThunk = modelThunk.thunk;
