@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { findTimeZone } from '@protontech/timezone-support';
-
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getLocation } from '@proton/shared/lib/api/vpn';
 import { singleCountryTimezoneDatabase } from '@proton/shared/lib/date/singleCountryTimezoneDatabase';
@@ -19,7 +17,7 @@ const getCountryFromTimezone = () => {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
         if (timezone) {
-            return tryTimezone(timezone) || tryTimezone(manualFindTimeZone(timezone) || findTimeZone(timezone).name);
+            return tryTimezone(timezone) || tryTimezone(manualFindTimeZone(timezone));
         }
     } catch (e) {
         // undefined
