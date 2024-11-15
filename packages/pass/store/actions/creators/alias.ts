@@ -6,7 +6,13 @@ import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
-import { aliasDetailsRequest, aliasOptionsRequest, selectedItemKey } from '@proton/pass/store/actions/requests';
+import {
+    aliasDetailsRequest,
+    aliasOptionsRequest,
+    intKey,
+    selectedItemKey,
+    withKey,
+} from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
@@ -188,7 +194,7 @@ export const validateMailbox = requestActionsFactory<{ mailboxID: number; code: 
 });
 
 export const resendVerifyMailbox = requestActionsFactory<number, UserMailboxOutput>('alias::mailboxes::resend-verify')({
-    key: String,
+    key: intKey,
     success: {
         prepare: (data) =>
             withNotification({
@@ -295,7 +301,7 @@ export const createCustomDomain = requestActionsFactory<string, CustomDomainOutp
 });
 
 export const getCustomDomainInfo = requestActionsFactory<number, CustomDomainOutput>('alias::custom-domain::info')({
-    key: String,
+    key: intKey,
     success: {
         prepare: (payload) => withCache({ payload }),
         config: { data: true },
@@ -305,7 +311,7 @@ export const getCustomDomainInfo = requestActionsFactory<number, CustomDomainOut
 export const verifyCustomDomain = requestActionsFactory<number, CustomDomainValidationOutput>(
     'alias::custom-domain::validate'
 )({
-    key: String,
+    key: intKey,
     success: {
         prepare: (payload) =>
             withNotification({
@@ -335,7 +341,7 @@ export const verifyCustomDomain = requestActionsFactory<number, CustomDomainVali
 });
 
 export const deleteCustomDomain = requestActionsFactory<number, Boolean>('alias::custom-domain::delete')({
-    key: String,
+    key: intKey,
     success: {
         prepare: () =>
             withNotification({
@@ -356,7 +362,7 @@ export const deleteCustomDomain = requestActionsFactory<number, Boolean>('alias:
 export const getCustomDomainSettings = requestActionsFactory<number, CustomDomainSettingsOutput>(
     'alias::custom-domain::settings'
 )({
-    key: String,
+    key: intKey,
     success: { config: { data: true } },
     failure: {
         prepare: (error, payload) =>
@@ -470,14 +476,14 @@ export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasConta
 export const aliasGetContactInfo = requestActionsFactory<AliasContactInfoDTO, AliasContactGetResponse>(
     'alias::contact::get-info'
 )({
-    key: selectedItemKey,
+    key: (dto) => withKey(selectedItemKey(dto))(dto.contactId),
     success: { config: { data: true } },
 });
 
 export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, AliasContactGetResponse>(
     'alias::contact::create'
 )({
-    key: selectedItemKey,
+    key: (dto) => withKey(selectedItemKey(dto))(dto.email),
     success: {
         prepare: (payload) =>
             withNotification({
@@ -497,7 +503,7 @@ export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, Alia
 });
 
 export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, number>('alias::contact::delete')({
-    key: selectedItemKey,
+    key: (dto) => withKey(selectedItemKey(dto))(dto.contactId),
     success: {
         prepare: (payload) =>
             withNotification({
@@ -519,7 +525,7 @@ export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, num
 export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, AliasContactGetResponse>(
     'alias::contact::block'
 )({
-    key: selectedItemKey,
+    key: (dto) => withKey(selectedItemKey(dto))(dto.contactId),
     success: {
         prepare: (payload) =>
             withNotification({
