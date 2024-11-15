@@ -12,7 +12,7 @@ export const verifyEpoch = async (epoch: Epoch) => {
     const { ChainHash, PrevChainHash, TreeHash, Certificate, EpochID, CertificateIssuer, CertificateTime } = epoch;
 
     // 1. Validate the certificate
-    const certChain = parseCertChain(Certificate);
+    const certChain = await parseCertChain(Certificate);
     await verifyCertChain(certChain, CertificateIssuer, serverTime());
     const [epochCert, issuerCert] = certChain;
     await verifySCT(epochCert, issuerCert);
@@ -32,7 +32,7 @@ export const verifyEpoch = async (epoch: Epoch) => {
             EpochID,
         });
     }
-    verifyAltName(epochCert, ChainHash, EpochID, CertificateTime);
+    await verifyAltName(epochCert, ChainHash, EpochID, CertificateTime);
 
     return parseCertTime(epochCert);
 };

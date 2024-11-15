@@ -14,10 +14,10 @@ import { letsEncryptCertificateChain, zeroSSLCertificateChain } from './verifyCe
 import { epoch } from './verifyKeys.data';
 
 describe('certificate transparency', () => {
-    it('should fail to parse with corrupt certificate', () => {
+    it('should fail to parse with corrupt certificate', async () => {
         let errorThrown = true;
         try {
-            parseCertificate('corrupt');
+            await parseCertificate('corrupt');
             errorThrown = false;
         } catch (err) {
             expect(err.message).toEqual("Object's schema was not verified against input data for Certificate");
@@ -25,14 +25,14 @@ describe('certificate transparency', () => {
         expect(errorThrown).toEqual(true);
     });
 
-    it('should fail in verifyAltName with missing extensions', () => {
+    it('should fail in verifyAltName with missing extensions', async () => {
         const { Certificate, ChainHash, EpochID, CertificateTime } = epoch;
-        const [cert] = parseCertChain(Certificate);
+        const [cert] = await parseCertChain(Certificate);
         const { extensions, ...certNoExt } = cert;
 
         let errorThrown = true;
         try {
-            verifyAltName(certNoExt, ChainHash, EpochID, CertificateTime);
+            await verifyAltName(certNoExt, ChainHash, EpochID, CertificateTime);
             errorThrown = false;
         } catch (err) {
             expect(err.message).toEqual('Epoch certificate does not have extensions');
@@ -40,14 +40,14 @@ describe('certificate transparency', () => {
         expect(errorThrown).toEqual(true);
     });
 
-    it('should fail in verifyAltName with missing AltName extension', () => {
+    it('should fail in verifyAltName with missing AltName extension', async () => {
         const { Certificate, ChainHash, EpochID, CertificateTime } = epoch;
-        const [cert] = parseCertChain(Certificate);
+        const [cert] = await parseCertChain(Certificate);
         const corruptExt = cert.extensions.filter((ext) => ext.extnID !== '2.5.29.17');
 
         let errorThrown = true;
         try {
-            verifyAltName({ ...cert, extensions: corruptExt }, ChainHash, EpochID, CertificateTime);
+            await verifyAltName({ ...cert, extensions: corruptExt }, ChainHash, EpochID, CertificateTime);
             errorThrown = false;
         } catch (err) {
             expect(err.message).toEqual('Epoch certificate does not have AltName extension');
@@ -57,7 +57,7 @@ describe('certificate transparency', () => {
 
     it('should fail in verifySCT with corrupt certificate', async () => {
         const { Certificate } = epoch;
-        const certChain = parseCertChain(Certificate);
+        const certChain = await parseCertChain(Certificate);
         const epochCert = certChain[0];
         const issuerCert = certChain[1];
         epochCert.serialNumber = new asn1jsInteger();
@@ -78,7 +78,7 @@ describe('certificate chain verification', () => {
         const now = new Date(1709515033 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
-            await verifyCertChain(parseCertChain(zeroSSLCertificateChain), KT_CERTIFICATE_ISSUER.ZEROSSL, now);
+            await verifyCertChain(await parseCertChain(zeroSSLCertificateChain), KT_CERTIFICATE_ISSUER.ZEROSSL, now);
         } catch (err) {
             error = err;
         }
@@ -88,7 +88,11 @@ describe('certificate chain verification', () => {
         const now = new Date(1709529634 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
-            await verifyCertChain(parseCertChain(letsEncryptCertificateChain), KT_CERTIFICATE_ISSUER.LETSENCRYPT, now);
+            await verifyCertChain(
+                await parseCertChain(letsEncryptCertificateChain),
+                KT_CERTIFICATE_ISSUER.LETSENCRYPT,
+                now
+            );
         } catch (err) {
             error = err;
         }
@@ -98,7 +102,11 @@ describe('certificate chain verification', () => {
         const now = new Date(1709529634 * SECOND + 1 * YEAR); // 1year after epoch was published.
         let error;
         try {
-            await verifyCertChain(parseCertChain(letsEncryptCertificateChain), KT_CERTIFICATE_ISSUER.LETSENCRYPT, now);
+            await verifyCertChain(
+                await parseCertChain(letsEncryptCertificateChain),
+                KT_CERTIFICATE_ISSUER.LETSENCRYPT,
+                now
+            );
         } catch (err) {
             error = err;
         }
@@ -109,7 +117,11 @@ describe('certificate chain verification', () => {
         const now = new Date(1709529634 * SECOND - 1 * YEAR); // 1year before epoch was published.
         let error;
         try {
-            await verifyCertChain(parseCertChain(letsEncryptCertificateChain), KT_CERTIFICATE_ISSUER.LETSENCRYPT, now);
+            await verifyCertChain(
+                await parseCertChain(letsEncryptCertificateChain),
+                KT_CERTIFICATE_ISSUER.LETSENCRYPT,
+                now
+            );
         } catch (err) {
             error = err;
         }
@@ -120,8 +132,8 @@ describe('certificate chain verification', () => {
         const now = new Date(1709529634 * SECOND + 24 * HOUR); // 24h after epoch was published.
         let error;
         try {
-            const zeroSSLChain = parseCertChain(zeroSSLCertificateChain);
-            const letsEncryptChain = parseCertChain(letsEncryptCertificateChain);
+            const zeroSSLChain = await parseCertChain(zeroSSLCertificateChain);
+            const letsEncryptChain = await parseCertChain(letsEncryptCertificateChain);
             const chain = [letsEncryptChain[0], ...zeroSSLChain.slice(1)];
             await verifyCertChain(chain, KT_CERTIFICATE_ISSUER.LETSENCRYPT, now);
         } catch (err) {
