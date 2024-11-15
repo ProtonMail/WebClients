@@ -24,7 +24,7 @@ import { createStoreService } from 'proton-pass-extension/app/worker/services/st
 import { createTelemetryService } from 'proton-pass-extension/app/worker/services/telemetry';
 import { createVaultsService } from 'proton-pass-extension/app/worker/services/vaults';
 import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup-icon';
-import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
+import { EXTENSION_BUILD_VERSION } from 'proton-pass-extension/lib/utils/version';
 
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { exposeApi } from '@proton/pass/lib/api/api';
@@ -141,7 +141,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     context.service.storage.getState().storageFull = true;
                     return true;
                 case 'update_trigger':
-                    void context.service.activation.onUpdateAvailable({ version: getExtensionVersion() });
+                    void context.service.activation.onUpdateAvailable({ version: EXTENSION_BUILD_VERSION });
                     return true;
             }
 
