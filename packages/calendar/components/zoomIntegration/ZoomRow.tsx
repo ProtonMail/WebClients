@@ -28,7 +28,7 @@ type ZoomIntegrationState =
     | 'meeting-present'
     | 'meeting-deleted';
 
-const getIcon = (state: ZoomIntegrationState) => {
+const getIcon = (state?: ZoomIntegrationState) => {
     switch (state) {
         case 'disconnected':
         case 'connected':
@@ -40,6 +40,8 @@ const getIcon = (state: ZoomIntegrationState) => {
         case 'loadingConfig':
             return <CircleLoader className="color-primary h-4 w-4" />;
     }
+
+    return <span />;
 };
 
 interface Props {
@@ -54,7 +56,7 @@ export const ZoomRow = ({ model, setModel, accessLevel }: Props) => {
     const [oAuthToken, oauthTokenLoading] = useOAuthToken();
     const isUserConnectedToZoom = oAuthToken?.some(({ Provider }) => Provider === OAUTH_PROVIDER.ZOOM);
 
-    const [processState, setProcessState] = useState<ZoomIntegrationState>('loading');
+    const [processState, setProcessState] = useState<ZoomIntegrationState | undefined>(undefined);
 
     const { sendEventVideoConferenceZoomIntegration } = useVideoConfTelemetry();
 
