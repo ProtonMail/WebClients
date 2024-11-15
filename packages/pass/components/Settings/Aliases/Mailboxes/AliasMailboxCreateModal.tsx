@@ -11,39 +11,32 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import type { MailboxActionVerify } from '@proton/pass/components/Settings/Aliases/AliasMailboxes';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { type EmailFormValues, validateEmailForm } from '@proton/pass/lib/validation/email';
 import { createMailbox } from '@proton/pass/store/actions';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+
+import { useAliasMailboxes } from './AliasMailboxesProvider';
 
 export const FORM_ID = 'custom-address-add';
-type Props = {
-    onClose: () => void;
-    onSubmit: (mailboxAction: MailboxActionVerify) => void;
-};
+type Props = { onClose: () => void };
 
-/** TODO: maybe edit and reuse packages/pass/components/Monitor/Address/CustomAddressAddModal.tsx instead? */
-export const MailboxAddModal: FC<Props> = ({ onClose, onSubmit }) => {
-    const { loading, dispatch } = useRequest(createMailbox, {
-        onSuccess: ({ data }) => {
-            onSubmit({ ...data, sentAt: getEpoch() });
-        },
-    });
+export const AliasMailboxCreateModal: FC<Props> = ({ onClose }) => {
+    const aliasMailboxes = useAliasMailboxes();
+    const create = useRequest(createMailbox, { onSuccess: ({ data }) => aliasMailboxes.onCreate(data) });
 
     const form = useFormik<EmailFormValues>({
         initialValues: { email: '' },
         validateOnChange: true,
         validateOnMount: false,
         validate: validateEmailForm,
-        onSubmit: ({ email }) => dispatch(email),
+        onSubmit: ({ email }) => create.dispatch(email),
     });
 
     return (
         <SidebarModal onClose={onClose} open>
             {(didEnter) => (
                 <Panel
-                    loading={loading}
+                    loading={create.loading}
                     className="pass-panel--full"
                     header={
                         <PanelHeader
@@ -61,10 +54,10 @@ export const MailboxAddModal: FC<Props> = ({ onClose, onSubmit }) => {
                                 </Button>,
                                 <Button
                                     color="norm"
-                                    disabled={loading || !form.isValid}
+                                    disabled={create.loading || !form.isValid}
                                     form={FORM_ID}
                                     key="modal-submit-button"
-                                    loading={loading}
+                                    loading={create.loading}
                                     pill
                                     type="submit"
                                 >
