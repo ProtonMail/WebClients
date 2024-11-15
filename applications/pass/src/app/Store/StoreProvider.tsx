@@ -29,6 +29,7 @@ import { clientBooted, clientOffline, clientReady } from '@proton/pass/lib/clien
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import { startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
+import { cacheGuard } from '@proton/pass/store/migrate';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
 import { DESKTOP_SAGAS } from '@proton/pass/store/sagas/desktop';
 import { WEB_SAGAS } from '@proton/pass/store/sagas/web';
@@ -64,7 +65,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 setAppStatus: app.setStatus,
                 getAuthService: () => authService,
                 getAuthStore: () => authStore,
-                getCache: () => getDBCache(authStore.getUserID()),
+                getCache: async () => cacheGuard(await getDBCache(authStore.getUserID()), config.APP_VERSION),
                 getPollingInterval: () => ACTIVE_POLLING_TIMEOUT,
                 getSettings: () => settings.resolve(authStore.getLocalID()),
                 getTelemetry: () => telemetry,

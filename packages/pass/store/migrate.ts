@@ -1,8 +1,10 @@
 import { isB2BAdmin } from '@proton/pass/lib/organization/helpers';
 import { type MaybeNull } from '@proton/pass/types';
+import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { type XorObfuscation, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { objectMap } from '@proton/pass/utils/object/map';
+import { semver } from '@proton/pass/utils/string/semver';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { unwrapOptimisticState } from './optimistic/utils/transformers';
@@ -10,6 +12,19 @@ import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';
 import { INITIAL_HIGHSECURITY_SETTINGS } from './reducers/user';
 import { selectLoginItems, selectPassPlan, selectUser } from './selectors';
 import type { State } from './types';
+
+/** Ensures cache compatibility during rollbacks by ignoring cached state
+ * if it was created by a newer app version than the one currently running.
+ * This prevents potential data structure mismatches or incompatibilities
+ * in the event of an application rollback. */
+export const cacheGuard = (
+    encryptedCache: Partial<EncryptedPassCache>,
+    appVersion: string
+): Partial<EncryptedPassCache> => {
+    const { version } = encryptedCache;
+    if (version && semver(version) <= semver(appVersion)) return encryptedCache;
+    return {};
+};
 
 export const migrate = (state: State) => {
     const user = selectUser(state);
