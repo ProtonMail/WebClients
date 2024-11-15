@@ -1,5 +1,5 @@
 import { type FC, useEffect } from 'react';
-import { useStore } from 'react-redux';
+import { useDispatch, useStore } from 'react-redux';
 
 import { BulkActions } from '@proton/pass/components/Bulk/BulkActions';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
@@ -11,6 +11,7 @@ import { ItemsListBase } from '@proton/pass/components/Item/List/ItemsListBase';
 import { ItemsListPlaceholder } from '@proton/pass/components/Item/List/ItemsListPlaceholder';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
+import { saveFilters } from '@proton/pass/store/actions/creators/filters';
 import { selectIsWritableShare } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import { type ItemRevision } from '@proton/pass/types';
@@ -18,6 +19,7 @@ import { type ItemRevision } from '@proton/pass/types';
 export const ItemsList: FC = () => {
     const store = useStore<State>();
     const { filters, matchTrash, selectedItem, setFilters } = useNavigation();
+    const dispatch = useDispatch();
     const items = useItems();
     const selectItem = useSelectItemAction();
     const bulk = useBulkSelect();
@@ -48,7 +50,15 @@ export const ItemsList: FC = () => {
                                     value={filters.type}
                                     onChange={(type) => setFilters({ type })}
                                 />
-                                <SortFilter value={filters.sort} onChange={(sort) => setFilters({ sort })} />
+                                <SortFilter
+                                    value={filters.sort}
+                                    onChange={(sort) => {
+                                        /** Extension leverages `usePopupStateEffects` to keep track
+                                         * of filters for each individual tab */
+                                        if (!EXTENSION_BUILD) dispatch(saveFilters({ ...filters, sort }));
+                                        setFilters({ sort });
+                                    }}
+                                />
                             </>
                         )}
                         {bulk.enabled && <BulkActions disabled={disabled} />}
