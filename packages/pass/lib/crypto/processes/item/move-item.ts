@@ -21,5 +21,8 @@ export const moveItem = async ({
     return {
         Item: await createItem({ vaultKey: destinationVaultKey, content }),
         ShareID: destinationShareId,
+        /* TODO: support adding an array of revisions to not lose history
+         * after moving an item to another vault */
+        History: [],
     };
 };
