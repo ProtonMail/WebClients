@@ -1145,7 +1145,7 @@ const InteractiveCalendarView = ({
     };
 
     // Close modal and popover for a given uniqueId
-    const closeProcessingPortal = (uniqueId: string = TMP_UNIQUE_ID) => {
+    const closeProcessingPopover = (uniqueId: string = TMP_UNIQUE_ID) => {
         if (eventInPopoverUniqueIdRef.current === uniqueId) {
             setInteractiveData((prev) => ({
                 ...prev,
@@ -1156,7 +1156,11 @@ const InteractiveCalendarView = ({
                       }
                     : undefined,
             }));
+        }
+    };
 
+    const closeProcessingModal = (uniqueId: string = TMP_UNIQUE_ID) => {
+        if (eventInPopoverUniqueIdRef.current === uniqueId) {
             closeModal('createEventModal');
         }
     };
@@ -1445,7 +1449,8 @@ const InteractiveCalendarView = ({
         temporaryEvent: CalendarViewEventTemporaryEvent,
         inviteActions: InviteActions,
         isDuplicatingEvent = false,
-        isChangePartstat = false
+        isChangePartstat = false,
+        isModal = false
     ) => {
         let hasStartChanged;
         // uid is not defined when we create a new event
@@ -1513,7 +1518,11 @@ const InteractiveCalendarView = ({
                 } else {
                     dispatch(eventsActions.markEventsAsSaving({ UID, isSaving: true }));
                 }
-                closeProcessingPortal(uniqueId);
+                if (isModal) {
+                    closeProcessingModal(uniqueId);
+                } else {
+                    closeProcessingPopover(uniqueId);
+                }
                 const count = isSingleEventUpdate ? 1 : 3;
                 notificationId = createNotification({
                     text: (
@@ -1620,7 +1629,7 @@ const InteractiveCalendarView = ({
         }
     };
 
-    const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions) => {
+    const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions, isModal = false) => {
         let recurringType: RECURRING_TYPES | undefined;
         let notificationId = 0; // 0 is an invalid notification ID
         let isSingleEventUpdate = true;
@@ -1650,8 +1659,16 @@ const InteractiveCalendarView = ({
                                 recurringType,
                             })
                         );
+                        // Hide the event from the view immediately
                         dispatch(eventsActions.markAsDeleted({ targetEvent, isDeleted: true, recurringType }));
-                        closeProcessingPortal(targetEvent.uniqueId);
+
+                        if (isModal) {
+                            closeProcessingModal(targetEvent.uniqueId);
+                            removeTemporaryEvent(targetEvent.uniqueId);
+                        } else {
+                            closeProcessingPopover(targetEvent.uniqueId);
+                        }
+
                         const count = isSingleEventUpdate ? 1 : 3;
                         notificationId = createNotification({
                             text: (
@@ -2081,7 +2098,7 @@ const InteractiveCalendarView = ({
                                     }
                                     try {
                                         await handleSaveEvent(temporaryEvent, inviteActions);
-                                        return closeProcessingPortal(temporaryEvent.uniqueId);
+                                        return closeProcessingPopover(temporaryEvent.uniqueId);
                                     } catch (error) {
                                         return noop();
                                     }
@@ -2120,7 +2137,7 @@ const InteractiveCalendarView = ({
                                 return (
                                     handleDeleteEvent(targetEvent, inviteActions)
                                         // Also close the more popover to avoid this event showing there
-                                        .then(() => closeProcessingPortal(targetEvent.uniqueId))
+                                        .then(() => closeProcessingPopover(targetEvent.uniqueId))
                                         .catch(noop)
                                 );
                             }}
@@ -2285,7 +2302,7 @@ const InteractiveCalendarView = ({
                         }
 
                         try {
-                            await handleSaveEvent(temporaryEvent, inviteActions, isDuplicatingEvent);
+                            await handleSaveEvent(temporaryEvent, inviteActions, isDuplicatingEvent, false, true);
                             closeModal('createEventModal');
                         } catch (error) {
                             return noop();
@@ -2297,7 +2314,7 @@ const InteractiveCalendarView = ({
                         }
 
                         try {
-                            await handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions);
+                            await handleDeleteEvent(temporaryEvent.tmpOriginalTarget, inviteActions, true);
                         } catch (error) {
                             return noop();
                         }
@@ -2319,7 +2336,7 @@ const InteractiveCalendarView = ({
                             cancelClosePopoverRef.current = false;
                             return;
                         }
-                        closeProcessingPortal(temporaryEvent?.uniqueId);
+                        closeProcessingModal(temporaryEvent?.uniqueId);
                     }}
                     view={view}
                 />
