@@ -27,7 +27,7 @@ export type AliasContactBlockDTO = AliasContactInfoDTO & { blocked: boolean };
 export type AliasCreateFromPendingDTO = { shareId: string; pendingAliases: AliasPending[] };
 export type AliasToggleStatusDTO = UniqueItem & { enabled: boolean };
 
-export type MailboxDeleteDTO = { mailboxID: number; transferMailboxID: MaybeNull<number> };
+export type MailboxDeleteDTO = { mailboxID: number; transferMailboxID?: MaybeNull<number> };
 export type MailboxDefaultDTO = { defaultMailboxID: number };
 
 export type CatchAllDTO = { domainID: number; catchAll: boolean };
