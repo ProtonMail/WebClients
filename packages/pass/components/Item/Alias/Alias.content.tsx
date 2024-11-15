@@ -17,7 +17,7 @@ import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import { selectAliasDetails, selectAliasMailboxes, selectCanManageAlias } from '@proton/pass/store/selectors';
+import { selectAliasDetails, selectAliasMailboxes } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 import { AliasStatusToggle } from './AliasStatusToggle';
@@ -29,7 +29,6 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     actions = [],
 }) => {
     const dispatch = useDispatch();
-    const canManageAlias = useSelector(selectCanManageAlias);
 
     const { data: item, shareId, itemId } = revision;
 
@@ -57,13 +56,14 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const forwardCount = aliasDetails?.stats?.forwardedEmails ?? 0;
     const repliedCount = aliasDetails?.stats?.repliedEmails ?? 0;
     const blockedCount = aliasDetails?.stats?.blockedEmails ?? 0;
+    const canModify = aliasDetails?.modify;
 
     const forwardText = c('Label').ngettext(msgid`${forwardCount} forward`, `${forwardCount} forwards`, forwardCount);
     const replyText = c('Label').ngettext(msgid`${repliedCount} reply`, `${repliedCount} replies`, repliedCount);
     const blockedText = c('Label').ngettext(msgid`${blockedCount} block`, `${blockedCount} blocks`, blockedCount);
 
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
-    const allowActions = canToggleStatus && !history;
+    const allowActions = canToggleStatus && !history && canModify;
     const aliasActions = allowActions ? <AliasStatusToggle disabled={optimistic} revision={revision} /> : undefined;
     const aliasDisabled = isDisabledAlias(revision);
 
@@ -85,13 +85,20 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     actionsContainerClassName="self-center"
                 />
 
-                <ValueControl as="ul" loading={!ready} icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
-                    {mailboxesForAlias?.map(({ email }) => (
-                        <li key={email} className="text-ellipsis">
-                            {email}
-                        </li>
-                    ))}
-                </ValueControl>
+                {mailboxesForAlias && mailboxesForAlias.length > 0 && (
+                    <ValueControl
+                        as="ul"
+                        loading={!ready}
+                        icon="arrow-up-and-right-big"
+                        label={c('Label').t`Forwards to`}
+                    >
+                        {mailboxesForAlias.map(({ email }) => (
+                            <li key={email} className="text-ellipsis">
+                                {email}
+                            </li>
+                        ))}
+                    </ValueControl>
+                )}
             </FieldsetCluster>
 
             {note && (
@@ -133,22 +140,22 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 </>
             )}
 
-            {canManageAlias && (
+            {canModify && (
                 <>
                     <FieldsetCluster mode="read" as="div">
                         <AliasContacts shareId={shareId} itemId={itemId} />
                     </FieldsetCluster>
                     <div className="color-weak mb-4">{c('Info')
                         .t`Need to email someone but don’t want them to see your email address? Set up a contact alias.`}</div>
+
+                    <FieldsetCluster mode="read" as="div">
+                        <FieldBox icon="chart-line">
+                            <div className="color-weak text-sm">{c('Title').t`Activity`}</div>
+                            <div>{`${forwardText} • ${replyText} • ${blockedText}`}</div>
+                        </FieldBox>
+                    </FieldsetCluster>
                 </>
             )}
-
-            <FieldsetCluster mode="read" as="div">
-                <FieldBox icon="chart-line">
-                    <div className="color-weak text-sm">{c('Title').t`Activity`}</div>
-                    <div>{`${forwardText} • ${replyText} • ${blockedText}`}</div>
-                </FieldBox>
-            </FieldsetCluster>
         </>
     );
 };
