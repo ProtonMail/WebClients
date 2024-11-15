@@ -70,7 +70,6 @@ export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId,
             {(didEnter): ReactNode => (
                 <Panel
                     loading={verify.loading}
-                    className="pass-panel--full"
                     header={
                         <PanelHeader
                             actions={[
