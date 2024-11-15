@@ -1,7 +1,4 @@
-import { fromBER } from 'asn1js';
-import type { GeneralName } from 'pkijs';
-import { Certificate, CertificateChainValidationEngine, verifySCTsForCertificate } from 'pkijs';
-import { getParametersValue } from 'pvutils';
+import type { Certificate, GeneralName } from 'pkijs';
 
 import { hexStringToArray } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
@@ -10,6 +7,25 @@ import type { KT_CERTIFICATE_ISSUER } from '../constants';
 import { SCT_THRESHOLD, epochChainVersion } from '../constants';
 import { ctLogs, rootCertificates } from '../constants/certificates';
 import { getBaseDomain, throwKTError } from '../helpers/utils';
+
+const importPkijs = () =>
+    import(
+        /* webpackChunkName: "pkijs" */
+        /* webpackPrefetch: true */
+        'pkijs'
+    );
+const importPvUtils = () =>
+    import(
+        /* webpackChunkName: "pvutils" */
+        /* webpackPrefetch: true */
+        'pvutils'
+    );
+const importAsn1js = () =>
+    import(
+        /* webpackChunkName: "asn1js" */
+        /* webpackPrefetch: true */
+        'asn1js'
+    );
 
 /**
  * Extract the content of a string Certificate
@@ -34,7 +50,8 @@ export const pemToString = (cert: string) => {
 /**
  * Parse a string certificate into a Certificate object
  */
-export const parseCertificate = (cert: string) => {
+export const parseCertificate = async (cert: string) => {
+    const [{ fromBER }, { Certificate }] = await Promise.all([importAsn1js(), importPkijs()]);
     const asn1Certificate = fromBER(base64StringToUint8Array(pemToString(cert)).buffer);
     return new Certificate({ schema: asn1Certificate.result });
 };
@@ -59,13 +76,13 @@ export const parseCertChain = (certChain: string) => {
         }
     }
 
-    return certArr.map((cert) => parseCertificate(cert));
+    return Promise.all(certArr.map((cert) => parseCertificate(cert)));
 };
 
 /**
  * Check the alternative name inside a certificate matches the one given by the server
  */
-export const verifyAltName = (
+export const verifyAltName = async (
     certificate: Certificate,
     ChainHash: string,
     EpochID: number,
@@ -83,6 +100,7 @@ export const verifyAltName = (
             altNamesExt: JSON.stringify(altNamesExt),
         });
     }
+    const { getParametersValue } = await importPvUtils();
 
     altNamesExt.parsedValue.altNames.sort((firstEl: GeneralName, secondEl: GeneralName) => {
         const firstLenght = getParametersValue<string>(firstEl, 'value', '').length;
@@ -134,12 +152,14 @@ export const verifyCertChain = async (
     CertificateIssuer: KT_CERTIFICATE_ISSUER,
     now: Date
 ): Promise<void> => {
-    const rootCerts = rootCertificates.get(CertificateIssuer)?.map((cert) => parseCertificate(cert));
+    const list = rootCertificates.get(CertificateIssuer) || [];
+    const rootCerts = await Promise.all(list.map((cert) => parseCertificate(cert)));
     if (!rootCerts?.length) {
         return throwKTError('Unknown issuer', {
             CertificateIssuer,
         });
     }
+    const { CertificateChainValidationEngine } = await importPkijs();
     const chainEngine = new CertificateChainValidationEngine({
         certs: certChain.slice().reverse(), // the engine expects the root cert first and the leaf cert last
         checkDate: now,
@@ -199,6 +219,7 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
 
     const logs = ctLogs.operators.map(({ logs }) => logs.map(({ log_id, key }) => ({ log_id, key }))).flat();
     const verified: boolean[] = [];
+    const { verifySCTsForCertificate } = await importPkijs();
     try {
         verified.push(...(await verifySCTsForCertificate(certificate, issuerCert, logs)));
     } catch (error: any) {
