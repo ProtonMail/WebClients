@@ -1,0 +1,11 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+.revision-preview {
+	position: relative;
+	z-index: map.get($z-indexes, 'modals');
+
+	&--behind {
+		z-index: map.get($z-indexes, 'modals') - 1;
+	}
+}

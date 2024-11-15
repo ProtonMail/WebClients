@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS} from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 import generateUID from '@proton/utils/generateUID';
 
@@ -33,7 +33,7 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
     const isEditor = useMemo(() => getCanWrite(permissions), [permissions]);
     const isAdmin = useMemo(() => getCanAdmin(permissions), [permissions]);
 
-    const { trashLinks } = useActions();
+    const { trashLinks, renameLink } = useActions();
 
     const hasFoldersSelected = selectedLinks.some((item) => !item.isFile);
     const isMultiSelect = selectedLinks.length > 1;
@@ -65,7 +65,7 @@ const ActionsDropdown = ({ shareId, selectedLinks, permissions }: Props) => {
             name: c('Action').t`Rename`,
             icon: 'pen-square',
             testId: 'actions-dropdown-rename',
-            action: () => showRenameModal({ item: selectedLinks[0] }),
+            action: () => showRenameModal({ item: selectedLinks[0], renameLink }),
         },
         {
             hidden: isMultiSelect,

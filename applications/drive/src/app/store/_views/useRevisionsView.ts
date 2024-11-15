@@ -6,7 +6,7 @@ import {
     queryFileRevisions,
     queryRestoreFileRevision,
 } from '@proton/shared/lib/api/drive/files';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type {
     DriveFileRestoreRevisionResult,
     DriveFileRevisionPayload,
@@ -34,7 +34,7 @@ export default function useRevisionsView(shareId: string, linkId: string) {
     const [isLoading, withLoading] = useLoading(true);
     const [revisions, setRevisions] = useState<DriveFileRevision[]>([]);
     const { getSharePermissions } = useDirectSharingInfo();
-    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.OWNER);
+    const [permissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.EDITOR);
 
     const loadRevisions = useCallback(
         (abortSignal: AbortSignal) => {

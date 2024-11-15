@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import { SHARE_MEMBER_PERMISSIONS, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
@@ -96,7 +97,7 @@ export function usePublicFileView(
     }, [error]);
 
     return {
-        permissions: SHARE_MEMBER_PERMISSIONS.READ,
+        permissions: SHARE_MEMBER_PERMISSIONS.VIEWER,
         navigation,
         isLinkLoading,
         isContentLoading,

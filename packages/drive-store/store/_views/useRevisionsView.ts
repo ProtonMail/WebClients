@@ -6,7 +6,7 @@ import {
     queryFileRevisions,
     queryRestoreFileRevision,
 } from '@proton/shared/lib/api/drive/files';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import type {
     DriveFileRestoreRevisionResult,
     DriveFileRevisionPayload,

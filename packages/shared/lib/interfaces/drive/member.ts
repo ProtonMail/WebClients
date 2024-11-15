@@ -1,4 +1,5 @@
-import type { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '../../drive/constants';
+import type { SHARE_MEMBER_STATE } from '../../drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '../../drive/permissions';
 
 export interface ShareMemberPayload {
     MemberID: string;
