@@ -13,7 +13,7 @@ export const useZoomOAuth = () => {
     const dispatch = useDispatch();
 
     const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
-        errorMessage: c('Error').t`Failed to load oauth modal.`,
+        errorMessage: c('Error').t`Failed to load OAuth modal.`,
     });
 
     const handleOAuthConnection = async (oAuthProps: OAuthProps) => {
