@@ -13,7 +13,6 @@ enum CommonFeatureFlag {
     BreachesSecurityCenter = 'BreachesSecurityCenter',
     InboxUpsellFlow = 'InboxUpsellFlow',
     ABTestInboxUpsellStep = 'ABTestInboxUpsellStep',
-    ABTestInboxUpsellOneDollar = 'ABTestInboxUpsellOneDollar',
     ABTestSubscriptionReminder = 'ABTestSubscriptionReminder',
     CalendarBusyTimeSlots = 'CalendarBusyTimeSlots',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
