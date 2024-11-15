@@ -10,6 +10,8 @@ export type AliasDetails = {
     aliasEmail: string;
     availableMailboxes: AliasMailbox[];
     mailboxes: AliasMailbox[];
+    /** If user can modify alias details (mailboxes, displayName etc...) */
+    modify: boolean;
     /** The display name, e.g `John`. The default BE value for a new alias is an empty string */
     name: string;
     /** The display name including email, e.g `John <alias@domain>`.
