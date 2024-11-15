@@ -7,9 +7,9 @@ import { Alert, Icon } from '@proton/components/index';
 import proxyScreenshot from '@proton/pass/assets/alias/proxy-screenshot.png';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { DomainDetailsDNSSection } from '@proton/pass/components/Settings/Aliases/DomainDetailsDNSSection';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { verifyCustomDomain } from '@proton/pass/store/actions';
-import type { CustomDomainOutput, CustomDomainValidationOutput, Maybe } from '@proton/pass/types';
+import type { CustomDomainOutput, CustomDomainValidationOutput } from '@proton/pass/types';
 
 const wikipediaLinkSPF = (
     <Href href="https://wikipedia.org/wiki/Sender_Policy_Framework" key="wikipedia-spf">
@@ -31,7 +31,7 @@ const getDomainValueMessage = (domain: ReactNode) =>
     c('Description')
         .jt`Some DNS registrar might require a full record path, in this case please use ${domain} as domain value instead.`;
 
-const getSections = (domain: CustomDomainOutput & Maybe<CustomDomainValidationOutput>) => {
+const getSections = (domain: CustomDomainOutput & Partial<CustomDomainValidationOutput>) => {
     const domainPath = domain.Domain;
 
     const domainKey = (
@@ -223,8 +223,8 @@ type Props = {
 };
 
 export const DomainDetailsDNS = ({ domain, onVerify }: Props) => {
-    const verify = useActionRequest(verifyCustomDomain.intent, {
-        onSuccess: ({ data }: { data: CustomDomainValidationOutput }) => {
+    const verify = useRequest(verifyCustomDomain, {
+        onSuccess: ({ data }) => {
             onVerify({ ...domain, ...data });
         },
     });
