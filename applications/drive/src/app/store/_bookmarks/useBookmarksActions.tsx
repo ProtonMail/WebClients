@@ -112,8 +112,8 @@ export const useBookmarksActions = () => {
             createNotification({
                 type: 'success',
                 text: c('Notification').ngettext(
-                    msgid`This item was succefully removed from your list`,
-                    `All items were succefully removed from your list`,
+                    msgid`This item was successfully removed from your list`,
+                    `All items were successfully removed from your list`,
                     tokensWithLinkId.length
                 ),
             });
@@ -143,7 +143,7 @@ export const useBookmarksActions = () => {
             ),
             message: c('Info').ngettext(
                 msgid`You will need to save it again from the public link page.`,
-                `You will need to save them again from the public link page`,
+                `You will need to save them again from the public link page.`,
                 tokensWithLinkId.length
             ),
             submitText: c('Action').t`Confirm`,
