@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { AddressesAutocompleteTwo, AddressesInput, InputFieldTwo } from '@proton/components';
 import { useContactGroups } from '@proton/mail';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import clsx from '@proton/utils/clsx';
 
 import type { ShareInvitee } from '../../../../store';

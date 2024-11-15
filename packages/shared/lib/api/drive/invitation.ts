@@ -1,4 +1,4 @@
-import type { SHARE_MEMBER_PERMISSIONS } from '../../drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '../../drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import type { InviteExternalUserPayload, InviteProtonUserPayload } from '../../interfaces/drive/invitation';
 

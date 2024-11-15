@@ -16,6 +16,7 @@ import {
     RESPONSE_CODE,
     SHARE_GENERATED_PASSWORD_LENGTH,
 } from '@proton/shared/lib/drive/constants';
+import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import {
     base64StringToUint8Array,
     stringToUint8Array,
@@ -239,7 +240,7 @@ export default function useShareUrl() {
             debouncedRequest<{ ShareURL: ShareURLPayload }>(
                 queryCreateSharedLink(linkShareId, {
                     Flags: SharedURLFlags.GeneratedPasswordIncluded,
-                    Permissions: 4,
+                    Permissions: SHARE_URL_PERMISSIONS.VIEWER,
                     MaxAccesses: DEFAULT_SHARE_MAX_ACCESSES,
                     CreatorEmail,
                     ExpirationDuration: null,
