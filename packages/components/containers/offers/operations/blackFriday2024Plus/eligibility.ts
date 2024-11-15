@@ -33,7 +33,8 @@ const isEligible = ({ subscription, user, protonConfig, lastSubscriptionEnd = 0,
         plan?.Name === PLANS.MAIL ||
         plan?.Name === PLANS.DRIVE ||
         plan?.Name === PLANS.VPN ||
-        plan?.Name === PLANS.VPN2024;
+        plan?.Name === PLANS.VPN2024 ||
+        plan?.Name === PLANS.PASS;
     const hasVPNPlus = plan?.Name === PLANS.VPN || plan?.Name === PLANS.VPN2024;
     const hasVPNPlus1month = isMonthly && hasVPNPlus;
 
