@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, type ModalStateProps } from '@proton/components';
 import createContactImg from '@proton/pass/assets/alias/alias-contact-create.svg';
-import fromToImg from '@proton/pass/assets/alias/alias-contact-from-to.svg';
+import fromToImg from '@proton/pass/assets/alias/alias-contact-from-to.png';
 import stampedLetter from '@proton/pass/assets/alias/alias-contact-stamped-letter.svg';
 import { Counter } from '@proton/pass/components/Layout/Badge/Counter';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
@@ -68,7 +68,7 @@ export const AliasContactsMoreInfo: FC<Pick<ModalStateProps, 'onClose'>> = ({ on
                         <div
                             key="image-stamped-letter"
                             className="w-full max-h-custom overflow-hidden"
-                            style={{ '--max-h-custom': '18rem', backgroundImage: stampedLetter }}
+                            style={{ '--max-h-custom': '15rem' }}
                         >
                             <img className="w-full" src={stampedLetter} alt="" />
                         </div>,
