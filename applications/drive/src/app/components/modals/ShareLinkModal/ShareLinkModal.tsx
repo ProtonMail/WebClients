@@ -16,8 +16,7 @@ import {
     useModalTwoStatic,
     useToggle,
 } from '@proton/components';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
-import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import type { ShareMember } from '../../../store';
 import { useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
@@ -82,7 +81,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
 
     const [settingsModal, showSettingsModal] = useLinkSharingSettingsModal();
 
-    const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(MEMBER_PERMISSIONS.EDITOR);
+    const [selectedPermissions, setPermissions] = useState<SHARE_MEMBER_PERMISSIONS>(SHARE_MEMBER_PERMISSIONS.EDITOR);
     const [inviteMessage, setInviteMessage] = useState('');
     const {
         state: includeInviteMessage,

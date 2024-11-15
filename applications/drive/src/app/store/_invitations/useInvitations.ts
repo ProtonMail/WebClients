@@ -19,8 +19,8 @@ import {
     queryUpdateExternalInvitationPermissions,
     queryUpdateInvitationPermissions,
 } from '@proton/shared/lib/api/drive/invitation';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { DRIVE_SIGNATURE_CONTEXT, SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type {

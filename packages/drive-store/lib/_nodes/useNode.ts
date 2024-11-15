@@ -1,4 +1,4 @@
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { useLinkPath } from '../../store';

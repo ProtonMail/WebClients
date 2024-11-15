@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react';
 import * as React from 'react';
 
 import { ContextMenu, ContextSeparator } from '@proton/components';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';

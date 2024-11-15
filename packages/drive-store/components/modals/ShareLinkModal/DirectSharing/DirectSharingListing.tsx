@@ -8,7 +8,7 @@ import useSortedList from '@proton/components/hooks/useSortedList';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
