@@ -3,12 +3,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
-import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
+import { EXTENSION_MANIFEST_VERSION } from 'proton-pass-extension/lib/utils/version';
 import createSagaMiddleware from 'redux-saga';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
+import { cacheGuard } from '@proton/pass/store/migrate';
 import reducer from '@proton/pass/store/reducers';
 import { requestMiddleware } from '@proton/pass/store/request/middleware';
 import { rootSagaFactory } from '@proton/pass/store/sagas';
@@ -53,9 +54,8 @@ const options: RootSagaOptions = {
     getAuthStore: withContext((ctx) => ctx.authStore),
     getAuthService: withContext((ctx) => ctx.service.auth),
     getCache: withContext(async (ctx) => {
-        /* cache is considered valid if versions match */
         const cache = await ctx.service.storage.local.getItems(['state', 'snapshot', 'salt', 'version']);
-        return cache.version === getExtensionVersion() ? cache : {};
+        return cacheGuard(cache, EXTENSION_MANIFEST_VERSION);
     }),
 
     /* adapt event polling interval based on popup activity :
@@ -72,7 +72,7 @@ const options: RootSagaOptions = {
     setCache: withContext((ctx, encryptedCache) =>
         ctx.service.storage.local.setItems({
             ...encryptedCache,
-            version: getExtensionVersion(),
+            version: EXTENSION_MANIFEST_VERSION,
         })
     ),
 
