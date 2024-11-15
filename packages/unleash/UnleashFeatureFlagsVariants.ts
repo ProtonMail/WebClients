@@ -5,11 +5,7 @@ import { type FeatureFlag } from './UnleashFeatureFlags';
 /**
  * List of feature flags with a variant.
  */
-export const FLAGS_WITH_VARIANT = [
-    'MailOnboarding',
-    'ABTestInboxUpsellOneDollar',
-    'InboxNewUpsellModals',
-] satisfies FeatureFlag[];
+export const FLAGS_WITH_VARIANT = ['MailOnboarding', 'InboxNewUpsellModals'] satisfies FeatureFlag[];
 
 /**
  * Flags with variants variants.
