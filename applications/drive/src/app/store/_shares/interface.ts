@@ -1,9 +1,6 @@
 import type { PublicKeyReference, SessionKey } from '@proton/crypto';
-import type {
-    SHARE_EXTERNAL_INVITATION_STATE,
-    SHARE_MEMBER_PERMISSIONS,
-    SHARE_MEMBER_STATE,
-} from '@proton/shared/lib/drive/constants';
+import type { SHARE_EXTERNAL_INVITATION_STATE, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 type WithSRPPayload<T extends any> = T & {
     srpModulusID: string;

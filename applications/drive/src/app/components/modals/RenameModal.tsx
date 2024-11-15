@@ -21,15 +21,15 @@ import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
 import type { DecryptedLink } from '../../store';
-import { formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../../store';
+import { formatLinkName, splitLinkName, validateLinkNameField } from '../../store';
 
 interface Props {
     onClose?: () => void;
+    renameLink: (abortSignal: AbortSignal, shareId: string, linkId: string, newName: string) => Promise<void>;
     item: DecryptedLink;
 }
 
-const RenameModal = ({ item, onClose, ...modalProps }: Props & ModalStateProps) => {
-    const { renameLink } = useActions();
+const RenameModal = ({ item, onClose, renameLink, ...modalProps }: Props & ModalStateProps) => {
     const [name, setName] = useState(item.name);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);

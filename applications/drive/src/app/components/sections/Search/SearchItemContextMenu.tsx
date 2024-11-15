@@ -1,5 +1,5 @@
 import { ContextSeparator } from '@proton/components';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import type { DecryptedLink } from '../../../store';
 import type { ContextMenuProps } from '../../FileBrowser/interface';

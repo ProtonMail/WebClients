@@ -178,14 +178,6 @@ export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
     jxl: 'image/jxl',
 };
 
-export enum SHARE_MEMBER_PERMISSIONS {
-    READ = 4,
-    WRITE = 2,
-    ADMIN = 16,
-    SUPER_ADMIN = 32,
-    OWNER = 55,
-}
-
 export enum SHARE_MEMBER_STATE {
     PENDING = 1,
     REJECTED = 2,
