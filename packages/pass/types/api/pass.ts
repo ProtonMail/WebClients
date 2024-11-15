@@ -280,7 +280,7 @@ export type PublicLinkCreateRequest = {
     /** Expiration time for the link in seconds. Minimum 3600 (1h), at maximum 30 days in the future */
     ExpirationTime: number;
     /** Maximum amount of times that the item can be read. Unlimited reads if omitted */
-    MaxReadCount: number;
+    MaxReadCount?: number /* FIX OPENAPI */;
     /** Encrypted item key encoded in base64 */
     EncryptedItemKey: string;
     /** Link key encrypted with the share key encoded in base64 */
