@@ -50,7 +50,6 @@ export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
             {(didEnter) => (
                 <Panel
                     loading={loading}
-                    className="pass-panel--full"
                     header={
                         <PanelHeader
                             actions={[

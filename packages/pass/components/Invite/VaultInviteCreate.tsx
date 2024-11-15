@@ -159,7 +159,6 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
             {(didEnter): ReactNode => (
                 <Panel
                     loading={createInvite.loading}
-                    className="pass-panel--full"
                     header={
                         <PanelHeader
                             actions={[
