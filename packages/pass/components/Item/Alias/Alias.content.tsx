@@ -36,6 +36,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const note = useDeobfuscatedValue(item.metadata.note);
     const mailboxesForAlias = useSelector(selectAliasMailboxes(aliasEmail!));
     const canToggleStatus = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
+    const aliasManagementEnabled = useFeatureFlag(PassFeature.PassAdvancedAliasManagementV1);
 
     const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
         requestId: aliasDetailsRequest(aliasEmail),
@@ -113,7 +114,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 </FieldsetCluster>
             )}
 
-            {slNote && (
+            {aliasManagementEnabled && slNote && (
                 <FieldsetCluster mode="read" as="div">
                     <ValueControl
                         clickToCopy
@@ -125,7 +126,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 </FieldsetCluster>
             )}
 
-            {displayName && (
+            {aliasManagementEnabled && displayName && (
                 <>
                     <FieldsetCluster mode="read" as="div">
                         <ValueControl
@@ -140,7 +141,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                 </>
             )}
 
-            {canModify && (
+            {aliasManagementEnabled && canModify && (
                 <>
                     <FieldsetCluster mode="read" as="div">
                         <AliasContacts shareId={shareId} itemId={itemId} />
