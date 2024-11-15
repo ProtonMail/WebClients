@@ -1,3 +1,16 @@
+# October 2024
+
+-   Invitation Counter in Sidebar
+    -   A new invitation counter has been added to the sidebar, providing a clear view of new invites at a glance.
+-   Account Switching on Public Page
+    -   Now, you can seamlessly switch accounts when viewing a publicly shared file or folder page to allow you to save the file to the account you want.
+-   Enhanced Invitation Acceptance
+    -   Invitations are now automatically accepted when visiting shared links.
+-   Improved Link Redirection
+    -   Enhanced redirection when opening links, ensuring you’re taken to the correct page.
+-   Recovery of Trashed Photos
+    -   Resolved an issue with recovering photos from the trash, making it easier to restore deleted content.
+
 # September 2024
 
 -   Improved Performance on "Shared with Me" Page
