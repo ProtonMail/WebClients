@@ -41,29 +41,39 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
                 <div className="flex flex-nowrap justify-space-between">
                     <div>
                         <h2 className="text-lg mb-2 text-ellipsis">{Email.toLowerCase()}</h2>
-                        {!ForwardedEmails && !RepliedEmails && (
-                            <div className="text-sm color-weak">{c('Label').t`No Activity in the last 14 days.`}</div>
+                        {deleteContact.loading ? (
+                            <div
+                                className="pass-skeleton pass-skeleton--box mt-2"
+                                style={{ '--skeleton-height': '4rem' }}
+                            />
+                        ) : (
+                            <>
+                                {!ForwardedEmails && !RepliedEmails && (
+                                    <div className="text-sm color-weak">{c('Label')
+                                        .t`No Activity in the last 14 days.`}</div>
+                                )}
+                                <div className="text-sm color-weak">{c('Label').t`Contact created ${time} ago.`}</div>
+                                <div className="text-sm color-weak">{c('Label')
+                                    .t`${ForwardedEmails} forwarded, ${RepliedEmails} sent in the last 14 days.`}</div>
+                                <Button
+                                    className="mt-2"
+                                    pill
+                                    shape="solid"
+                                    color="weak"
+                                    onClick={() =>
+                                        blockContact.dispatch({
+                                            shareId,
+                                            itemId,
+                                            contactId: ID,
+                                            blocked: !Blocked,
+                                        })
+                                    }
+                                    loading={blockContact.loading}
+                                >
+                                    {Blocked ? c('Action').t`Unblock contact` : c('Action').t`Block contact`}
+                                </Button>
+                            </>
                         )}
-                        <div className="text-sm color-weak">{c('Label').t`Contact created ${time} ago.`}</div>
-                        <div className="text-sm color-weak">{c('Label')
-                            .t`${ForwardedEmails} forwarded, ${RepliedEmails} sent in the last 14 days.`}</div>
-                        <Button
-                            className="mt-2"
-                            pill
-                            shape="solid"
-                            color="weak"
-                            onClick={() =>
-                                blockContact.dispatch({
-                                    shareId,
-                                    itemId,
-                                    contactId: ID,
-                                    blocked: !Blocked,
-                                })
-                            }
-                            loading={blockContact.loading}
-                        >
-                            {Blocked ? c('Action').t`Unblock contact` : c('Action').t`Block contact`}
-                        </Button>
                     </div>
                     <div className="flex flex-nowrap items-start shrink-0">
                         <Tooltip openDelay={500} originalPlacement="top" title={c('Action').t`Copy alias address`}>
@@ -78,7 +88,12 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
                                 <Icon name="paper-plane" />
                             </Button>
                         </Tooltip>
-                        <QuickActionsDropdown className="color-weak" shape="ghost" iconSize={4}>
+                        <QuickActionsDropdown
+                            className="color-weak"
+                            shape="ghost"
+                            iconSize={4}
+                            disabled={deleteContact.loading}
+                        >
                             <DropdownMenuButton label={c('Action').t`Copy alias address`} onClick={handleCopyAddress} />
                             <DropdownMenuButton
                                 label={Blocked ? c('Action').t`Unblock contact` : c('Action').t`Block contact`}
