@@ -1,9 +1,25 @@
-import type { SidebarConfig } from '@proton/components';
-import { DOCS_APP_NAME } from '@proton/shared/lib/constants';
+import { c } from 'ttag';
 
-export const getDocsAppRoutes = (): SidebarConfig => {
-    return {
+import type { SectionConfig } from '@proton/components';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, DOCS_APP_NAME } from '@proton/shared/lib/constants';
+
+export const getDocsAppRoutes = ({ app }: { app: APP_NAMES }) => {
+    return <const>{
+        available: app === APPS.PROTONDOCS,
         header: DOCS_APP_NAME,
-        routes: {},
+        routes: {
+            comments: <SectionConfig>{
+                text: c('Title').t`Email notifications`,
+                to: '/email-notifications',
+                icon: 'envelope',
+                description: c('Info').t`Manage your email notification preferences for ${DOCS_APP_NAME}.`,
+                subsections: [
+                    {
+                        id: 'emails',
+                    },
+                ],
+            },
+        },
     };
 };
