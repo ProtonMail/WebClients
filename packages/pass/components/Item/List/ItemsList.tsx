@@ -1,4 +1,5 @@
 import { type FC, useEffect } from 'react';
+import { useStore } from 'react-redux';
 
 import { BulkActions } from '@proton/pass/components/Bulk/BulkActions';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
@@ -10,19 +11,24 @@ import { ItemsListBase } from '@proton/pass/components/Item/List/ItemsListBase';
 import { ItemsListPlaceholder } from '@proton/pass/components/Item/List/ItemsListPlaceholder';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
+import { selectIsWritableShare } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import { type ItemRevision } from '@proton/pass/types';
 
 export const ItemsList: FC = () => {
+    const store = useStore<State>();
     const { filters, matchTrash, selectedItem, setFilters } = useNavigation();
     const items = useItems();
     const selectItem = useSelectItemAction();
     const bulk = useBulkSelect();
 
     const handleSelect = (item: ItemRevision, metaKey: boolean) => {
-        const bulkAction = metaKey && !bulk.enabled;
-        if (bulkAction) bulk.enable();
-        if (bulk.enabled || bulkAction) bulk[bulk.isSelected(item) ? 'unselect' : 'select'](item);
-        else selectItem(item, { inTrash: matchTrash });
+        if (metaKey || bulk.enabled) {
+            if (selectIsWritableShare(item.shareId)(store.getState())) {
+                if (!bulk.enabled) bulk.enable();
+                bulk[bulk.isSelected(item) ? 'unselect' : 'select'](item);
+            }
+        } else selectItem(item, { inTrash: matchTrash });
     };
 
     const disabled = items.filtered.length === 0;
