@@ -7,6 +7,7 @@ import { Button, Input } from '@proton/atoms';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';
+import Info from '@proton/components/components/link/Info';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -14,6 +15,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { useMailSettings } from '@proton/mail/mailSettings/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
@@ -121,7 +123,11 @@ const EditAddressesSection = ({ address }: Props) => {
                 <SettingsLayoutLeft>
                     {/* eslint-disable-next-line */}
                     <label htmlFor="editor" className="text-semibold" onClick={() => editorRef.current?.focus()}>
-                        {c('Label').t`Signature`}
+                        <span className="mr-2">{c('Label').t`Signature`}</span>
+                        <Info
+                            url={getKnowledgeBaseUrl('/display-name-email-signature')}
+                            title={c('Tooltip').t`Click here to learn how to create a customized signature with HTML.`}
+                        />
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
