@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
-import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
+import { EXTENSION_MANIFEST_VERSION } from 'proton-pass-extension/lib/utils/version';
 import createSagaMiddleware from 'redux-saga';
 
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -55,7 +55,7 @@ const options: RootSagaOptions = {
     getAuthService: withContext((ctx) => ctx.service.auth),
     getCache: withContext(async (ctx) => {
         const cache = await ctx.service.storage.local.getItems(['state', 'snapshot', 'salt', 'version']);
-        return cacheGuard(cache, getExtensionVersion());
+        return cacheGuard(cache, EXTENSION_MANIFEST_VERSION);
     }),
 
     /* adapt event polling interval based on popup activity :
@@ -72,7 +72,7 @@ const options: RootSagaOptions = {
     setCache: withContext((ctx, encryptedCache) =>
         ctx.service.storage.local.setItems({
             ...encryptedCache,
-            version: getExtensionVersion(),
+            version: EXTENSION_MANIFEST_VERSION,
         })
     ),
 
