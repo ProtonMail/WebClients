@@ -11,6 +11,7 @@ import type { ListInfo } from '../CustomList/$getListInfo'
 import { $getListInfo } from '../CustomList/$getListInfo'
 import { $isNonInlineLeafElement } from '../../Utils/isNonInlineLeafElement'
 import type { BlockTypeChangeSuggestionProperties } from './Types'
+import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
 
 export function $setBlocksTypeAsSuggestion(
   blockType: BlockType,
@@ -105,12 +106,13 @@ export function $setBlocksTypeAsSuggestion(
           $isSuggestionNode(node) && node.getSuggestionTypeOrThrow() === 'block-type-change',
       )
     if (existingSuggestion) {
-      const initialBlockType = existingSuggestion.__properties.nodePropertiesChanged?.initialBlockType
+      const initialBlockType =
+        existingSuggestion.getSuggestionChangedProperties<BlockTypeChangeSuggestionProperties>()?.initialBlockType
       if (!initialBlockType) {
         throw new Error("Existing block-type-change suggestion doesn't have initialBlockType")
       }
       if (initialBlockType === blockType) {
-        existingSuggestion.remove()
+        $removeSuggestionNodeAndResolveIfNeeded(existingSuggestion)
       }
     } else {
       const properties = {
