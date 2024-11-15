@@ -9,8 +9,7 @@ import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useItemDrag } from '@proton/pass/hooks/useItemDrag';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey, interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
-import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectShare } from '@proton/pass/store/selectors';
+import { selectShareWritable } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import type { ItemFilters, ItemRevision, ItemRevisionWithOptimistic, SelectedItem } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
@@ -64,9 +63,9 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
 
                                 const onDragStart = (evt: DragEvent) => {
                                     if (handleDragStart && draggable) {
-                                        const share = selectShare(item.shareId)(store.getState());
-                                        if (share && !isWritableVault(share)) return false;
-                                        else handleDragStart?.(evt, { ID: id });
+                                        const writable = selectShareWritable(item.shareId)(store.getState());
+                                        if (writable) handleDragStart?.(evt, { ID: id });
+                                        else return false;
                                     }
                                 };
 
