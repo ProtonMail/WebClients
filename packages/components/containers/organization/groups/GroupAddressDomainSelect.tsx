@@ -36,7 +36,9 @@ const Option = ({
             key={option.value}
             onClick={handleClick}
         >
-            <span className="overflow-x-auto">{option.label}</span>
+            <span className="text-ellipsis inline-block" title={option.label}>
+                {option.label}
+            </span>
             {isSelected ? (
                 <Icon className="color-primary shrink-0" name="checkmark" data-testid="selected-domain" />
             ) : null}
@@ -101,7 +103,7 @@ const GroupAddressDomainSelect = ({
                 size="small"
                 disabled={disabled}
             >
-                {`@${selectedDomain}`}
+                <span className="inline-block text-ellipsis" title={`@${selectedDomain}`}>{`@${selectedDomain}`}</span>
             </DropdownButton>
             <Dropdown
                 isOpen={isOpen}
