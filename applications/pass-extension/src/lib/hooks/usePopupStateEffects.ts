@@ -8,7 +8,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
-import { popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
+import { saveTabState } from '@proton/pass/store/actions/creators/filters';
 import { selectLatestDraft } from '@proton/pass/store/selectors';
 import { intoDomainWithPort } from '@proton/pass/utils/url/utils';
 
@@ -66,6 +66,6 @@ export const usePopupStateEffects = () => {
 
     useEffect(() => {
         if (!savePopupState.current) savePopupState.current = true;
-        else dispatch(popupTabStateSave(popupTabState));
+        else dispatch(saveTabState(popupTabState));
     }, [popupTabState]);
 };

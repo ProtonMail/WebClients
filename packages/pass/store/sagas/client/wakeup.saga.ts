@@ -9,11 +9,11 @@ import {
     wakeupIntent,
     wakeupSuccess,
 } from '@proton/pass/store/actions';
+import { garbageCollectTabState } from '@proton/pass/store/actions/creators/filters';
 import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
-import { popupTabStateGarbageCollect } from '@proton/pass/store/actions/creators/popup';
 import type { WithReceiverAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectPopupStateTabIds } from '@proton/pass/store/selectors';
+import { selectTabIDs } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { TabId } from '@proton/pass/types';
 import identity from '@proton/utils/identity';
@@ -40,9 +40,9 @@ function* wakeupWorker(
             yield put(passwordHistoryGarbageCollect());
 
             yield fork(function* () {
-                const tabIds: TabId[] = yield select(selectPopupStateTabIds);
+                const tabIds: TabId[] = yield select(selectTabIDs);
                 const deletedTabIds: TabId[] = yield filterDeletedTabIds(tabIds);
-                yield put(popupTabStateGarbageCollect({ tabIds: deletedTabIds }));
+                yield put(garbageCollectTabState({ tabIds: deletedTabIds }));
             });
         }
     }

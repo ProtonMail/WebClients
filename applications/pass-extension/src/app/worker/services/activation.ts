@@ -14,7 +14,7 @@ import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/
 import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
-import { selectFeatureFlags, selectItem, selectPopupFilters, selectPopupTabState } from '@proton/pass/store/selectors';
+import { selectFeatureFlags, selectFilters, selectItem, selectTabState } from '@proton/pass/store/selectors';
 import type { MaybeNull, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
@@ -240,8 +240,8 @@ export const createActivationService = () => {
         const hasAutofillCandidates = items.length > 0;
 
         const state = ctx.service.store.getState();
-        const tabState = selectPopupTabState(tabId)(state);
-        const filters = selectPopupFilters(state);
+        const tabState = selectTabState(tabId)(state);
+        const filters = selectFilters(state);
         const pushTabState = tabState !== undefined && [subdomain, domain].includes(tabState.domain);
         const searchForAutofill =
             hasAutofillCandidates && domain ? (intoDomainWithPort({ domain, port, protocol, as: 'host' }) ?? '') : '';
