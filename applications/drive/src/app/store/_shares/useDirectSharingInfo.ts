@@ -1,4 +1,4 @@
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import useDefaultShare from './useDefaultShare';
 import { useDriveSharingFlags } from './useDriveSharingFlags';
@@ -33,7 +33,7 @@ export const useDirectSharingInfo = () => {
         }
         // Kill switch to disable all editing/modifications actions
         if (isReadOnlyMode) {
-            return SHARE_MEMBER_PERMISSIONS.READ;
+            return SHARE_MEMBER_PERMISSIONS.VIEWER;
         }
         const share = await getShareWithKey(abortSignal, shareId);
         const membership = getSharedWithMeMembership(share.shareId, share.memberships);

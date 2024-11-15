@@ -3,7 +3,7 @@ import { useLocation } from 'react-router';
 
 import { c, msgid } from 'ttag';
 
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 // TODO: handle with container
 import useActiveShare from '../../../hooks/drive/useActiveShare';

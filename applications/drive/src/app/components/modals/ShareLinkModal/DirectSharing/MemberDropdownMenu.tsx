@@ -10,9 +10,8 @@ import {
     Tooltip,
     usePopperAnchor,
 } from '@proton/components';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { SHARE_EXTERNAL_INVITATION_STATE } from '@proton/shared/lib/drive/constants';
-import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
+import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import { useDriveSharingFlags } from '../../../../store';
 
@@ -36,7 +35,7 @@ export const MenuItem = ({
     </DropdownMenuButton>
 );
 
-export const permissionsOptions = [MEMBER_PERMISSIONS.VIEWER, MEMBER_PERMISSIONS.EDITOR];
+export const permissionsOptions = [SHARE_MEMBER_PERMISSIONS.VIEWER, SHARE_MEMBER_PERMISSIONS.EDITOR];
 
 interface Props {
     selectedPermissions: SHARE_MEMBER_PERMISSIONS;
@@ -70,18 +69,18 @@ export const MemberDropdownMenu = ({
     };
 
     const memberPermissionsLabels = {
-        [MEMBER_PERMISSIONS.VIEWER]: c('Label').t`Viewer`,
-        [MEMBER_PERMISSIONS.EDITOR]: c('Label').t`Editor`,
+        [SHARE_MEMBER_PERMISSIONS.VIEWER]: c('Label').t`Viewer`,
+        [SHARE_MEMBER_PERMISSIONS.EDITOR]: c('Label').t`Editor`,
     };
 
     const memberPermissionsIcons: { [key in number]: IconName } = {
-        [MEMBER_PERMISSIONS.VIEWER]: 'eye',
-        [MEMBER_PERMISSIONS.EDITOR]: 'pencil',
+        [SHARE_MEMBER_PERMISSIONS.VIEWER]: 'eye',
+        [SHARE_MEMBER_PERMISSIONS.EDITOR]: 'pencil',
     };
 
     const memberChangePermissionsLabels = {
-        [MEMBER_PERMISSIONS.VIEWER]: c('Label').t`Make viewer`,
-        [MEMBER_PERMISSIONS.EDITOR]: c('Label').t`Make editor`,
+        [SHARE_MEMBER_PERMISSIONS.VIEWER]: c('Label').t`Make viewer`,
+        [SHARE_MEMBER_PERMISSIONS.EDITOR]: c('Label').t`Make editor`,
     };
 
     const getPermissionsOptionLabel = (permissions: number) => {

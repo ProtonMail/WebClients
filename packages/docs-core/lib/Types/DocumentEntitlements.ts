@@ -1,6 +1,6 @@
 import { getCanWrite, getCanAdmin, getIsOwner } from '@proton/shared/lib/drive/permissions'
 import type { DocumentKeys } from '@proton/drive-store'
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants'
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { DocumentRole } from '@proton/docs-shared'
 
 export type DocumentEntitlements = {

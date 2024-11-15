@@ -1,7 +1,8 @@
 import type { SessionKey } from '@proton/crypto';
-import type { SHARE_MEMBER_PERMISSIONS, SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants';
 
 import type { AuthVersion } from '../../authentication/interface';
+import type { SHARE_MEMBER_STATE } from '../../drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '../../drive/permissions';
 import type { DriveFileBlock, ScanResultItem, Thumbnail } from './file';
 import type { LinkType } from './link';
 
@@ -37,7 +38,7 @@ export type ShareURL = WithSRPPayload<{
     MaxAccesses: number;
     NumAccesses: number;
     Password: string;
-    Permissions: number;
+    Permissions: SHARE_URL_PERMISSIONS;
     ShareID: string;
     SharePassphraseKeyPacket: string;
     SharePasswordSalt: string;
@@ -52,7 +53,7 @@ export type UpdateSharedURL = WithSRPPayload<{
     Flags: number; // Unused in first iteration
     MaxAccesses: number;
     Password: string;
-    Permissions: number; // Only read (4) in first iteration
+    Permissions: SHARE_URL_PERMISSIONS; // Only read (4) in first iteration
     SharePassphraseKeyPacket: string;
     SharePasswordSalt: string;
 }>;
@@ -68,6 +69,7 @@ export interface SharedURLInfo {
     Name: string;
     NodeKey: string;
     NodePassphrase: string;
+    Permissions: SHARE_URL_PERMISSIONS;
     ShareKey: string;
     SharePassphrase: string;
     SharePasswordSalt: string;
@@ -153,7 +155,7 @@ export interface ShareMemberPayloadLEGACY {
     Inviter: string;
     CreateTime: number;
     ModifyTime: number;
-    Permissions: number;
+    Permissions: SHARE_MEMBER_PERMISSIONS;
     KeyPacket: string;
     KeyPacketSignature: string | null;
     SessionKeySignature: string | null;
