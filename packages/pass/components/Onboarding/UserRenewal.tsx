@@ -9,7 +9,7 @@ import type { BaseSpotlightMessage } from '@proton/pass/components/Spotlight/Spo
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { selectPlanDisplayName, selectUserPlan } from '@proton/pass/store/selectors';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { epochToRelativeDate } from '@proton/pass/utils/time/format';
+import { epochToDate } from '@proton/pass/utils/time/format';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -21,13 +21,8 @@ export const UserRenewal: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
 
     if (!(plan && plan.SubscriptionEnd)) return;
 
-    const title = epochToRelativeDate(plan.SubscriptionEnd, {
-        formatDate: (endDate) => c('Title').t`Your ${planName} subscription will end on ${endDate}`,
-        formatDays: (relativeDay) => {
-            // translator: {relativeDay} can be "today", "tomorrow", or a day of the week ("Monday")
-            return c('Title').t`Your ${planName} subscription will end ${relativeDay}`;
-        },
-    });
+    const endDate = epochToDate(plan.SubscriptionEnd);
+    const title = c('Title').t`Your ${planName} subscription will end on ${endDate}`;
 
     const upgrade = () => onLink(`${SSO_URL}/pass/dashboard?source=banner#your-subscriptions`);
 
