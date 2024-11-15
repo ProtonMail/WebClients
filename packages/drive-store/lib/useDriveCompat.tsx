@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { PublicKeyReference } from '@proton/crypto/lib';
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';

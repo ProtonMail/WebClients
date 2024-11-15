@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { FilePreview, NavigationControl } from '@proton/components';
+import type { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DecryptedLink } from '../../../store';
@@ -26,6 +27,7 @@ interface Props {
     token: string;
     rootLink: DecryptedLink;
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
+    permissions: SHARE_URL_PERMISSIONS;
     hideSaveToDrive?: boolean;
     partialView?: boolean;
     openInDocs?: (linkId: string) => void;
@@ -100,6 +102,7 @@ export default function SharedFolder({
     bookmarksPublicView,
     token,
     rootLink,
+    permissions,
     hideSaveToDrive = false,
     partialView = false,
     openInDocs,
@@ -265,8 +268,14 @@ export default function SharedFolder({
                         openInDocs={openInDocs}
                     />
                 )}
-                <SharedFileBrowser {...folderView} onItemOpen={onItemOpen} items={fileBrowserItems} />
                 <SharedPageTransferManager rootItem={rootLink} />
+                <SharedFileBrowser
+                    {...folderView}
+                    permissions={permissions}
+                    onItemOpen={onItemOpen}
+                    openInDocs={openInDocs}
+                    items={fileBrowserItems}
+                />
             </SharedPageLayout>
         </FileBrowserStateProvider>
     );

@@ -7,6 +7,7 @@ import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import * as storage from '@proton/shared/lib/helpers/storage';
 import useFlag from '@proton/unleash/useFlag';
@@ -81,6 +82,7 @@ function PublicShareLinkInitContainer() {
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
     const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
     const [link, setLink] = useState<DecryptedLink>();
+    const [permissions, setPermissions] = useState<SHARE_URL_PERMISSIONS>(SHARE_URL_PERMISSIONS.VIEWER);
     const { loadPublicShare, user } = usePublicShare();
     const bookmarksPublicView = useBookmarksPublicView({ customPassword });
     const [signUpFlowModal, showSignUpFlowModal] = useSignupFlowModal();
@@ -161,8 +163,9 @@ function PublicShareLinkInitContainer() {
         if (token && !isLoading && !authErrorMessage && !isPasswordNeeded) {
             void withLoading(
                 loadPublicShare(abortController.signal)
-                    .then(({ link }) => {
+                    .then(({ link, permissions }) => {
                         setLink(link);
+                        setPermissions(permissions);
                         metrics.drive_public_share_load_success_total.increment({
                             type: link.isFile ? 'file' : 'folder',
                             plan: user?.isPaid ? 'paid' : user?.isFree ? 'free' : 'not_recognized',
@@ -226,7 +229,11 @@ function PublicShareLinkInitContainer() {
 
     return (
         <>
-            {link.isFile ? <SharedFilePage {...props} link={link} /> : <SharedFolderPage {...props} rootLink={link} />}
+            {link.isFile ? (
+                <SharedFilePage {...props} link={link} />
+            ) : (
+                <SharedFolderPage {...props} permissions={permissions} rootLink={link} />
+            )}
             {!bookmarksFeatureDisabled && isDriveWebShareUrlSignupModalEnabled
                 ? signUpFlowModal
                 : renderUpsellFloatingModal}
