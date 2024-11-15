@@ -158,7 +158,7 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
                         />
                     </FieldsetCluster>
 
-                    <div className="flex flex-nowrap flex-column flex-1 gap-2 mt-3">
+                    <div className="flex flex-nowrap flex-column gap-2 my-3">
                         <InviteRecommendations
                             autocomplete={autocomplete}
                             selected={selected}
