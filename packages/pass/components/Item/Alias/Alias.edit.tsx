@@ -1,4 +1,4 @@
-import { type FC, useRef, useState } from 'react';
+import { type FC, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -45,9 +45,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     const { current: aliasDetailsLoaded } = useRef(awaiter<void>());
     const reconciled = useRef(false);
 
-    /* If vault is not shared, we can safely assume the user is
-     * the owner of the alias and can edit the mailboxes */
-    const [aliasOwner, setAliasOwner] = useState(!vault.shared);
+    const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
+    const aliasOwner = aliasDetails?.modify ?? false;
 
     /* Keeping a ref to the alias details for composing the result
      * of `onAliasDetailsLoaded` with `onAliasOptionsLoading` effect */
@@ -55,8 +54,6 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
 
     const note = useDeobfuscatedValue(metadata.note);
     const validateEditAliasForm = createEditAliasFormValidator(aliasOwner);
-
-    const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
 
     const form = useFormik<EditAliasFormValues>({
         initialValues: {
@@ -96,10 +93,6 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
             const formValues = draft ?? form.values;
             const prevMailboxes = draft?.mailboxes ?? mailboxesForAlias.current;
             const sanitizedMailboxes = mailboxes.filter((mailbox) => prevMailboxes.some(({ id }) => id === mailbox.id));
-
-            /* if the mailboxes do not match the user's alias options and the
-             * vault is shared, then the user cannot manage its mailboxes */
-            if (vault.shared) setAliasOwner(sanitizedMailboxes.length > 0);
 
             const values = { ...formValues, mailboxes: sanitizedMailboxes };
             const errors = validateEditAliasForm(values);
@@ -212,33 +205,37 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
                             />
                         </FieldsetCluster>
 
-                        {aliasDetails?.slNote && (
-                            <FieldsetCluster>
-                                <Field
-                                    name="slNote"
-                                    label={<AliasSLNoteLabel />}
-                                    placeholder={c('Placeholder').t`Note from SimpleLogin`}
-                                    component={TextAreaField}
-                                    icon="note"
-                                    maxLength={MAX_ITEM_NOTE_LENGTH}
-                                />
-                            </FieldsetCluster>
-                        )}
+                        {aliasOwner && (
+                            <>
+                                {aliasDetails?.slNote && (
+                                    <FieldsetCluster>
+                                        <Field
+                                            name="slNote"
+                                            label={<AliasSLNoteLabel />}
+                                            placeholder={c('Placeholder').t`Note from SimpleLogin`}
+                                            component={TextAreaField}
+                                            icon="note"
+                                            maxLength={MAX_ITEM_NOTE_LENGTH}
+                                        />
+                                    </FieldsetCluster>
+                                )}
 
-                        <FieldsetCluster>
-                            <Field
-                                name="displayName"
-                                label={c('Label').t`Display name`}
-                                placeholder={c('Placeholder').t`Name to display when sending an email`}
-                                component={TextField}
-                                icon="card-identity"
-                                maxLength={MAX_ITEM_NAME_LENGTH}
-                            />
-                        </FieldsetCluster>
+                                <FieldsetCluster>
+                                    <Field
+                                        name="displayName"
+                                        label={c('Label').t`Display name`}
+                                        placeholder={c('Placeholder').t`Name to display when sending an email`}
+                                        component={TextField}
+                                        icon="card-identity"
+                                        maxLength={MAX_ITEM_NAME_LENGTH}
+                                    />
+                                </FieldsetCluster>
 
-                        {form.values.displayName && (
-                            <span className="color-weak mt-2">{c('Info')
-                                .jt`When sending an email from this alias, the email will display ${emailSender} as sender.`}</span>
+                                {form.values.displayName && (
+                                    <span className="color-weak mt-2">{c('Info')
+                                        .jt`When sending an email from this alias, the email will display ${emailSender} as sender.`}</span>
+                                )}
+                            </>
                         )}
                     </Form>
                 </FormikProvider>

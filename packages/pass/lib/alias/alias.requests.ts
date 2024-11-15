@@ -73,6 +73,7 @@ export const getAliasDetails = async (shareId: string, itemId: string): Promise<
         aliasEmail: result.Email,
         availableMailboxes: result.AvailableMailboxes?.map(intoMailbox) ?? [],
         mailboxes: result.Mailboxes?.map(intoMailbox) ?? [],
+        modify: result.Modify,
         name: result.Name ?? '',
         displayName: result.DisplayName,
         slNote: result.Note ?? '',
