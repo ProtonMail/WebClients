@@ -11,7 +11,7 @@ import { ItemsListBase } from '@proton/pass/components/Item/List/ItemsListBase';
 import { ItemsListPlaceholder } from '@proton/pass/components/Item/List/ItemsListPlaceholder';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
-import { selectShareWritable } from '@proton/pass/store/selectors';
+import { selectIsWritableShare } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import { type ItemRevision } from '@proton/pass/types';
 
@@ -24,7 +24,7 @@ export const ItemsList: FC = () => {
 
     const handleSelect = (item: ItemRevision, metaKey: boolean) => {
         if (metaKey || bulk.enabled) {
-            if (selectShareWritable(item.shareId)(store.getState())) {
+            if (selectIsWritableShare(item.shareId)(store.getState())) {
                 if (!bulk.enabled) bulk.enable();
                 bulk[bulk.isSelected(item) ? 'unselect' : 'select'](item);
             }
