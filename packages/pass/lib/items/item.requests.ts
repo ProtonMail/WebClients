@@ -168,6 +168,9 @@ export const moveItems = async (
                             return {
                                 ItemID: item.itemId,
                                 Item: (await PassCrypto.moveItem({ destinationShareId, content })).Item,
+                                /* TODO: add array of revisions to not lose history
+                                 * after moving an item to another vault */
+                                History: [],
                             };
                         })
                     ),
