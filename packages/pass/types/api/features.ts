@@ -8,6 +8,7 @@ export enum PassFeature {
     PassSimpleLoginAliasesSync = 'PassSimpleLoginAliasesSync',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebOfflineMode = 'PassWebOfflineMode',
+    PassAdvancedAliasManagementV1 = 'PassAdvancedAliasManagementV1',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
