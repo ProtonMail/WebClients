@@ -42,6 +42,7 @@ import {
   TableCellHeaderStates,
 } from '@lexical/table'
 import { $insertFirst } from '@lexical/utils'
+import type { BlockTypeChangeSuggestionProperties } from './Types'
 
 polyfillSelectionRelatedThingsForTests()
 
@@ -137,6 +138,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -173,6 +175,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -216,6 +219,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
             $handleBeforeInputEvent(
               editor!,
@@ -225,6 +229,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
             $handleBeforeInputEvent(
               editor!,
@@ -234,6 +239,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -282,6 +288,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -314,6 +321,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -347,6 +355,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -390,6 +399,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -435,6 +445,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -480,6 +491,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -518,6 +530,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
 
@@ -541,6 +554,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
 
@@ -575,6 +589,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -624,6 +639,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -672,6 +688,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -740,6 +757,7 @@ describe('$handleBeforeInputEvent', () => {
               dataTransfer,
             } as InputEvent,
             onSuggestionCreation,
+            logger,
           )
         })
       })
@@ -809,6 +827,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -852,6 +871,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -909,6 +929,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -951,6 +972,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -1004,6 +1026,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -1044,6 +1067,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -1088,6 +1112,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -1133,6 +1158,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -1162,6 +1188,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       await update(() => {
@@ -1176,6 +1203,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -1209,6 +1237,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       await update(() => {
@@ -1223,6 +1252,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -1257,6 +1287,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -1308,6 +1339,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -1338,6 +1370,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -1383,6 +1416,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -1427,6 +1461,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -1478,6 +1513,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -1535,6 +1571,7 @@ describe('$handleBeforeInputEvent', () => {
                   dataTransfer: null,
                 } as InputEvent,
                 onSuggestionCreation,
+                logger,
               )
             })
           })
@@ -1604,6 +1641,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
         $getRoot().getFirstChild<ParagraphNode>()?.getChildAtIndex(1)?.selectStart()
       })
@@ -1616,6 +1654,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
         $getRoot().getFirstChild<ParagraphNode>()?.getChildAtIndex(1)?.selectEnd()
       })
@@ -1628,6 +1667,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -1659,6 +1699,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -1700,6 +1741,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -1734,6 +1776,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -1779,6 +1822,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -1830,6 +1874,7 @@ describe('$handleBeforeInputEvent', () => {
                 dataTransfer: null,
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -1854,6 +1899,85 @@ describe('$handleBeforeInputEvent', () => {
         })
       })
     })
+
+    describe('Start of block', () => {
+      describe('Indented block', () => {
+        beforeEach(async () => {
+          await update(() => {
+            const paragraph = $createParagraphNode().append($createTextNode('Hello')).setIndent(2)
+            $getRoot().append(paragraph)
+            paragraph.selectStart()
+          })
+          await update(() => {
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'deleteContentBackward',
+                data: null,
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+              logger,
+            )
+            $handleBeforeInputEvent(
+              editor!,
+              {
+                inputType: 'deleteContentBackward',
+                data: null,
+                dataTransfer: null,
+              } as InputEvent,
+              onSuggestionCreation,
+              logger,
+            )
+          })
+        })
+
+        test('OUTDENT_CONTENT_COMMAND should be dispatched twice', () => {
+          expect(dispatchCommandSpy).toHaveBeenCalledWith(OUTDENT_CONTENT_COMMAND, undefined)
+          expect(dispatchCommandSpy).toHaveBeenCalledTimes(2)
+        })
+      })
+
+      describe('Non-indented empty list item', () => {
+        describe('Actually empty', () => {
+          beforeEach(async () => {
+            await update(() => {
+              const list = $createListNode('bullet')
+              const li = $createListItemNode()
+              $getRoot().append(list.append(li))
+              li.selectStart()
+            })
+            await update(() => {
+              $handleBeforeInputEvent(
+                editor!,
+                {
+                  inputType: 'deleteContentBackward',
+                  data: null,
+                  dataTransfer: null,
+                } as InputEvent,
+                onSuggestionCreation,
+                logger,
+              )
+            })
+          })
+
+          testEditorState('list item should be changed to paragraph', () => {
+            const paragraph = $getRoot().getFirstChild()
+            expect($isParagraphNode(paragraph)).toBe(true)
+          })
+
+          testEditorState('paragraph should have block-type-change suggestion', () => {
+            const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
+            const firstChild = paragraph.getFirstChild()
+            assertCondition($isSuggestionNode(firstChild))
+            expect(firstChild.getSuggestionTypeOrThrow()).toBe('block-type-change')
+            const props = firstChild.getSuggestionChangedProperties<BlockTypeChangeSuggestionProperties>()
+            assertCondition(props !== undefined)
+            expect(props.initialBlockType).toBe('bullet')
+          })
+        })
+      })
+    })
   })
 
   describe('Replace', () => {
@@ -1872,6 +1996,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer: null,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -1920,6 +2045,7 @@ describe('$handleBeforeInputEvent', () => {
             dataTransfer,
           } as InputEvent,
           onSuggestionCreation,
+          logger,
         )
       })
       editor!.read(() => {
@@ -1967,6 +2093,7 @@ describe('$handleBeforeInputEvent', () => {
                 },
               } as InputEvent,
               onSuggestionCreation,
+              logger,
             )
           })
         })
@@ -2015,6 +2142,7 @@ describe('$handleBeforeInputEvent', () => {
               dataTransfer: null,
             } as InputEvent,
             onSuggestionCreation,
+            logger,
           )
         })
       })

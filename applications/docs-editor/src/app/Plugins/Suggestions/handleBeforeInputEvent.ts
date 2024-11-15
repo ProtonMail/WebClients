@@ -44,6 +44,7 @@ import { $getListInfo } from '../CustomList/$getListInfo'
 import type { CreateNotificationOptions } from '@proton/components'
 import { c } from 'ttag'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
+import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
 
 /**
  * This is the main core of suggestion mode. It handles input events,
@@ -54,12 +55,12 @@ export function $handleBeforeInputEvent(
   editor: LexicalEditor,
   event: InputEvent,
   onSuggestionCreation: (id: string) => void,
-  logger?: Logger,
+  logger: Logger,
   createNotification?: (options: CreateNotificationOptions) => number,
 ): boolean {
   const inputType = event.inputType
 
-  logger?.info('handleBeforeInput', inputType)
+  logger.info('handleBeforeInput', inputType)
 
   if (inputType === 'historyUndo') {
     editor.dispatchCommand(UNDO_COMMAND, undefined)
@@ -73,14 +74,14 @@ export function $handleBeforeInputEvent(
 
   const selection = $getSelection()
   if (!$isRangeSelection(selection)) {
-    logger?.info('Current selection is not a range selection')
+    logger.info('Current selection is not a range selection')
     return true
   }
 
   const suggestionID = GenerateUUID()
 
   if ($isAnyPartOfSelectionInCodeNode(selection)) {
-    logger?.info('Aborting beforeinput because selection is inside a code-block')
+    logger.info('Aborting beforeinput because selection is inside a code-block')
     createNotification?.({
       text: c('Warning').t`Making suggestions inside code blocks is not supported`,
       type: 'warning',
@@ -105,7 +106,7 @@ function $handleDeleteInput(
   selection: RangeSelection,
   suggestionID: string,
   onSuggestionCreation: (id: string) => void,
-  logger?: Logger,
+  logger: Logger,
 ): boolean {
   const [boundary, isBackward] = getBoundaryForDeletion(inputType)
 
@@ -113,7 +114,7 @@ function $handleDeleteInput(
 
   const isSelectionCollapsed = selection.isCollapsed()
 
-  logger?.info(
+  logger.info(
     'Handling delete: ',
     `boundary: ${boundary} `,
     `isBackward: ${isBackward} `,
@@ -124,7 +125,7 @@ function $handleDeleteInput(
 
   const currentBlock = $findMatchingParent(focusNode, $isNonInlineLeafElement)
   if (!currentBlock) {
-    logger?.info('Could not find block parent')
+    logger.info('Could not find block parent')
     return true
   }
 
@@ -133,11 +134,21 @@ function $handleDeleteInput(
   let didModifySelection = false
 
   if (isAtStartOfBlock) {
-    logger?.info('Selection is collapsed at start of block')
+    logger.info('Selection is collapsed at start of block')
+
+    if (currentBlock.getIndent() > 0) {
+      editor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
+      return true
+    }
+
+    if ($isEmptyListItemExceptForSuggestions(currentBlock)) {
+      $setBlocksTypeAsSuggestion('paragraph', onSuggestionCreation, logger)
+      return true
+    }
 
     const previousSibling = currentBlock?.getPreviousSibling()
     if ($isDecoratorNode(previousSibling)) {
-      logger?.info('Previous sibling is decorator node')
+      logger.info('Previous sibling is decorator node')
       const key = previousSibling.getKey()
       selection.anchor.set(key, 0, 'element')
       selection.focus.set(key, 0, 'element')
@@ -160,7 +171,7 @@ function $handleDeleteInput(
     const previousBlock = $getPreviousNonInlineLeafElement(currentBlock)
     if (previousBlock) {
       if (previousBlock.isEmpty()) {
-        logger?.info('Previous non-inline leaf element is empty')
+        logger.info('Previous non-inline leaf element is empty')
         const suggestion = $createSuggestionNode(suggestionID, 'join')
         previousBlock.append(suggestion)
         suggestion.selectStart()
@@ -172,7 +183,7 @@ function $handleDeleteInput(
         .getChildren()
         .find((node): node is ProtonNode => $isSuggestionNode(node) && node.getSuggestionTypeOrThrow() === 'split')
       if (splitSuggestion) {
-        logger?.info('Previous non-inline leaf element has split suggestion')
+        logger.info('Previous non-inline leaf element has split suggestion')
         $removeSuggestionNodeAndResolveIfNeeded(splitSuggestion)
         previousBlock.selectEnd()
         if (currentBlock.isEmpty()) {
@@ -182,11 +193,6 @@ function $handleDeleteInput(
         }
         return true
       }
-    }
-
-    if ($isListItemNode(currentBlock) && currentBlock.getIndent() > 0) {
-      editor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined)
-      return true
     }
   }
 
@@ -204,7 +210,7 @@ function $handleDeleteInput(
   }
 
   if (!suggestionNodes.length) {
-    logger?.info('No suggestion nodes were created')
+    logger.info('No suggestion nodes were created')
     return true
   }
 
@@ -231,10 +237,10 @@ function $handleDeleteInput(
     const nextSibling = node.getNextSibling()
     if ($isSuggestionNode(prevSibling) && prevSibling.getSuggestionTypeOrThrow() === 'delete') {
       $mergeWithExistingSuggestionNode(node, prevSibling, false)
-      logger?.info('Merged delete suggestion with prev delete sibling')
+      logger.info('Merged delete suggestion with prev delete sibling')
     } else if ($isSuggestionNode(nextSibling) && nextSibling.getSuggestionTypeOrThrow() === 'delete') {
       $mergeWithExistingSuggestionNode(node, nextSibling, true)
-      logger?.info('Merged delete suggestion with next delete sibling')
+      logger.info('Merged delete suggestion with next delete sibling')
     } else {
       onSuggestionCreation(suggestionID)
     }
@@ -252,7 +258,7 @@ function $handleInsertInput(
   selection: RangeSelection,
   suggestionID: string,
   onSuggestionCreation: (id: string) => void,
-  logger?: Logger,
+  logger: Logger,
 ): boolean {
   const focusNode = selection.focus.getNode()
   const existingParentSuggestion = $findMatchingParent(focusNode, $isSuggestionNode)
@@ -261,7 +267,7 @@ function $handleInsertInput(
   const dataTransfer = event.dataTransfer
   const targetRange = getTargetRangeFromInputEvent(event)
 
-  logger?.info(
+  logger.info(
     'Handling insert input type: ',
     `Has data: ${data} `,
     `Has data transfer: ${!!dataTransfer} `,
@@ -274,11 +280,11 @@ function $handleInsertInput(
    * here which will collapse the selection and make it difficult to create a selection of the inserted nodes.
    */
   if (!selection.isCollapsed() && data !== null && dataTransfer === null) {
-    logger?.info('Wrapping non-collapsed selection in a delete suggestion')
+    logger.info('Wrapping non-collapsed selection in a delete suggestion')
     const isInsideExistingSelection = $isWholeSelectionInsideSuggestion(selection)
     const nodes = $wrapSelectionInSuggestionNode(selection, selection.isBackward(), suggestionID, 'delete', logger)
     if (isInsideExistingSelection && existingParentSuggestion?.getSuggestionTypeOrThrow() === 'insert') {
-      logger?.info('Removing the wrapped suggestion as it is inside an existing one')
+      logger.info('Removing the wrapped suggestion as it is inside an existing one')
       for (const node of nodes) {
         node.remove()
       }
@@ -289,7 +295,7 @@ function $handleInsertInput(
 
   const latestSelection = $getSelection()
   if (!$isRangeSelection(latestSelection)) {
-    logger?.info('Latest selection is not range selection')
+    logger.info('Latest selection is not range selection')
     return true
   }
 
@@ -305,7 +311,7 @@ function $handleInsertInput(
     !$isRootNode(latestSelection.anchor.getNode()) &&
     targetRange
   ) {
-    logger?.info('Applying targetRange to current selection')
+    logger.info('Applying targetRange to current selection')
     latestSelection.applyDOMRange(targetRange)
   }
 
@@ -315,7 +321,7 @@ function $handleInsertInput(
 
   if (data === null && dataTransfer !== null) {
     const types = dataTransfer.types
-    logger?.info('Inserting data transfer', types)
+    logger.info('Inserting data transfer', types)
     $insertDataTransferAsSuggestion(dataTransfer, latestSelection, editor)
     return true
   }
@@ -338,7 +344,7 @@ function $handleInsertParagraph(
   selection: RangeSelection,
   suggestionID: string,
   onSuggestionCreation: (id: string) => void,
-  logger?: Logger,
+  logger: Logger,
 ): boolean {
   const focus = selection.focus.getNode()
 
@@ -382,7 +388,7 @@ function $handleInsertParagraph(
     }
   }
 
-  logger?.info('Created new paragraph by splitting existing one and added split suggestion to the previous')
+  logger.info('Created new paragraph by splitting existing one and added split suggestion to the previous')
   onSuggestionCreation(splitNode.getSuggestionIdOrThrow())
 
   return true
@@ -392,9 +398,9 @@ function $handleInsertParagraphOnEmptyListItem(
   listItem: ListItemNode,
   suggestionID: string,
   onSuggestionCreation: (id: string) => void,
-  logger?: Logger,
+  logger: Logger,
 ): boolean {
-  logger?.info('Inserting paragraph on empty list item')
+  logger.info('Inserting paragraph on empty list item')
 
   const initialIndent = listItem.getIndent()
   const initialFormatType = listItem.getFormatType()
@@ -423,7 +429,7 @@ function $handleInsertParagraphOnEmptyListItem(
 
   const didInsert = $handleListInsertParagraph()
   if (!didInsert) {
-    logger?.info('Did not insert paragraph')
+    logger.info('Did not insert paragraph')
     reAddChildren(listItem)
     return true
   }
@@ -481,9 +487,9 @@ function $handleInsertTextData(
   existingParentSuggestion: ProtonNode | null,
   onSuggestionCreation: (id: string) => void,
   suggestionID: string,
-  logger?: Logger,
+  logger: Logger,
 ): boolean {
-  logger?.info('Inserting text data: ', data)
+  logger.info('Inserting text data: ', data)
 
   const focusNode = selection.focus.getNode()
 
@@ -497,22 +503,22 @@ function $handleInsertTextData(
     existingParentSuggestion &&
     SuggestionTypesThatCanBeEmpty.includes(existingParentSuggestion.getSuggestionTypeOrThrow())
   if (isExistingSuggestionEmpty) {
-    logger?.info('Selection is inside empty suggestion')
+    logger.info('Selection is inside empty suggestion')
 
     const suggestionNode = $createSuggestionNode(suggestionID, 'insert')
     suggestionNode.append(textNode)
 
     if ($isNonInlineLeafElement(existingParentSuggestion.getParentOrThrow())) {
-      logger?.info('Inserting suggestion node after existing suggestion')
+      logger.info('Inserting suggestion node after existing suggestion')
       existingParentSuggestion.insertAfter(suggestionNode)
     } else {
-      logger?.info("Cannot insert suggestion in existing suggestion's parent")
+      logger.info("Cannot insert suggestion in existing suggestion's parent")
       const sibling = existingParentSuggestion.getNextSibling() || existingParentSuggestion.getPreviousSibling()
       if (sibling && $isNonInlineLeafElement(sibling)) {
-        logger?.info('Inserting new suggestion into element sibling')
+        logger.info('Inserting new suggestion into element sibling')
         sibling.append(suggestionNode)
       } else {
-        logger?.info('Creating new paragraph and inserting suggestion')
+        logger.info('Creating new paragraph and inserting suggestion')
         const paragraph = $createParagraphNode().append(suggestionNode)
         existingParentSuggestion.insertAfter(paragraph)
       }
@@ -531,7 +537,7 @@ function $handleInsertTextData(
   const shouldSplitExistingSuggestionBeforeInserting =
     existingParentSuggestion && !canInsertTextDataDirectly && !isExistingSuggestionEmpty
   if (shouldSplitExistingSuggestionBeforeInserting) {
-    logger?.info('Will split existing non-insert suggestion and insert new insert suggestion')
+    logger.info('Will split existing non-insert suggestion and insert new insert suggestion')
     const focus = selection.focus
     let node = focus.getNode()
     let offset = focus.offset
@@ -555,7 +561,7 @@ function $handleInsertTextData(
     if (nodeToInsertBefore) {
       nodeToInsertBefore.insertBefore(suggestionNode)
     } else {
-      logger?.info('Could not find node to insert before')
+      logger.info('Could not find node to insert before')
       $insertNodes([suggestionNode])
     }
 
@@ -584,7 +590,7 @@ function $handleInsertTextData(
   }
 
   if (existingParentSuggestion && canInsertTextDataDirectly) {
-    logger?.info('Will just insert text as already inside insert suggestion')
+    logger.info('Will just insert text as already inside insert suggestion')
     if (isFocusNodeText) {
       const latestFocusOffset = selection.focus.offset
       focusNode.spliceText(latestFocusOffset, 0, data)
@@ -600,7 +606,7 @@ function $handleInsertTextData(
   suggestionNode.append(textNode)
   selection.insertNodes([suggestionNode])
 
-  logger?.info('Created and inserted new insert suggestion')
+  logger.info('Created and inserted new insert suggestion')
 
   const prevSibling = suggestionNode.getPreviousSibling()
 
@@ -626,9 +632,9 @@ function $handleInsertTextData(
 
     if (shouldMergeWithSibling) {
       $mergeWithExistingSuggestionNode(suggestionNode, suggestionSibling, isNextSiblingSuggestion)
-      logger?.info('Merged with existing insert suggestion sibling')
+      logger.info('Merged with existing insert suggestion sibling')
       if (isNextSiblingSuggestion) {
-        logger?.info('Updating cursor position after merging')
+        logger.info('Updating cursor position after merging')
         const selection = suggestionSibling.selectStart()
         if (!$isRangeSelection(selection) || !selection.isCollapsed()) {
           throw new Error('Latest selection is not correct')
@@ -733,7 +739,7 @@ function $handleReplacementTextInsideInsertSuggestion(
   selection: RangeSelection,
   data: string | null,
   dataTransfer: DataTransfer | null,
-  logger?: Logger,
+  logger: Logger,
 ): boolean {
   let newText = ''
   if (data) {
@@ -744,14 +750,14 @@ function $handleReplacementTextInsideInsertSuggestion(
   if (!newText) {
     return true
   }
-  logger?.info('Will insert replacement text', newText)
+  logger.info('Will insert replacement text', newText)
   const anchor = selection.anchor
   const focusOffset = selection.focus.offset
   const toDelete = focusOffset - anchor.offset
   selection.focus.set(anchor.key, anchor.offset, anchor.type)
   const node = anchor.getNode()
   if (!$isTextNode(node)) {
-    logger?.info('Current anchor node is not text node', node)
+    logger.info('Current anchor node is not text node', node)
     return true
   }
   node.spliceText(anchor.offset, toDelete, newText)
