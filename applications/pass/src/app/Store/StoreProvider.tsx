@@ -19,12 +19,7 @@ import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvid
 import { PassCoreContext } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
-import {
-    decodeFilters,
-    encodeFilters,
-    getLocalPath,
-    removeLocalPath,
-} from '@proton/pass/components/Navigation/routing';
+import { encodeFilters, getLocalPath, removeLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
