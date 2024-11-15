@@ -8,18 +8,4 @@
 	&--content {
 		transition: opacity 250ms ease-in-out;
 	}
-
-	&--full {
-		.scroll-inner {
-			.scroll-child {
-				block-size: 100%;
-
-				> div {
-					block-size: 100%;
-					display: flex;
-					flex-direction: column;
-				}
-			}
-		}
-	}
 }
