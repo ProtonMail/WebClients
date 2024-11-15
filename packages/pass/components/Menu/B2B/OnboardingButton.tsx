@@ -21,7 +21,10 @@ export const OnboardingButton: FC = () => {
                     <DropdownMenuButtonLabel icon="star" label={c('Action').t`Get Started`} />
                 </DropdownMenuButtonCore>
 
-                <div className="absolute flex items-center h-full right-0 top-0 flex items-center shrink-0 flex-nowrap color-weak">
+                <div
+                    className="absolute flex items-center h-full right-custom top-0 flex items-center shrink-0 flex-nowrap color-weak"
+                    style={{ '--right-custom': '0.35rem' }}
+                >
                     <Button
                         icon
                         pill
