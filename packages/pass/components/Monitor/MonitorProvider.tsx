@@ -2,6 +2,9 @@ import type { FC, PropsWithChildren } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/components/index';
 import { useInsecurePasswords } from '@proton/pass/hooks/monitor/useInsecurePasswords';
 import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
@@ -28,6 +31,7 @@ type MonitorAction =
 
 export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
+    const { createNotification } = useNotifications();
 
     const didLoad = useSelector(selectMonitorState) !== null;
 
@@ -44,7 +48,17 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const [action, setAction] = useState<MaybeNull<MonitorAction>>(null);
     const onClose = () => setAction(null);
 
-    const breaches = useRequest(getBreaches, { loading: true, initial: true });
+    const breaches = useRequest(getBreaches, {
+        loading: true,
+        initial: true,
+        onFailure: () => {
+            createNotification({
+                type: 'error',
+                text: c('Warning').t`Failed to load breaches.`,
+            });
+        },
+    });
+
     useEffect(() => breaches.dispatch(), []);
 
     const context = useMemo<MonitorContextValue>(
