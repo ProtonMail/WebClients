@@ -8,6 +8,10 @@ import type { PassCoreProxy, PassCoreService } from './types';
 export const createPassCoreProxy = (service: PassCoreService): PassCoreProxy =>
     new Proxy<PassCoreProxy>({} as any, {
         get(_, property) {
+            /* In case the object gets serialized during error reporting */
+            if (property === 'toJSON') return () => ({ __type: 'PassCoreProxy' });
+            if (property === Symbol.toStringTag) return 'PassCoreProxy';
+
             return (...args: any[]) => service.exec(property as any, ...args);
         },
     });
