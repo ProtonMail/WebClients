@@ -18,7 +18,7 @@ export const createPassCoreWorkerService = (): PassCoreService => {
 
         return new Promise<PassCoreResult<T>>((resolve, reject) => {
             const timer = setTimeout(
-                () => reject(new Error('[PassCoreWorker] Procedure timed out')),
+                () => reject(new Error(`[PassCoreWorker] Procedure timed out [${message.method}]`)),
                 WASM_PROCEDURE_TIMEOUT
             );
 

@@ -10,6 +10,7 @@ import { Breaches } from './Breaches';
 
 export const DarkWebMonitoring: FC<RouteChildrenProps> = ({ match, history }) => {
     const { didLoad, breaches, sync } = useMonitor();
+    const error = !breaches.loading && !didLoad;
 
     const scrollRef = useRef<HTMLElement>(null);
     useLayoutEffect(() => scrollRef.current?.scrollTo({ top: 0 }), [history.location.pathname]);
@@ -17,8 +18,8 @@ export const DarkWebMonitoring: FC<RouteChildrenProps> = ({ match, history }) =>
     useEffect(() => {
         /** if the monitor data wasn't loaded - try to
          * revalidate when mounting this route */
-        if (!didLoad && !breaches.loading) sync();
-    }, [didLoad, breaches.loading]);
+        if (error) sync();
+    }, []);
 
     return match ? (
         <Scroll className="flex-1 w-full" customContainerRef={scrollRef}>
