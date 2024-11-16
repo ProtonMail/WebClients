@@ -21,13 +21,17 @@ export const preloadPassCoreUI = () => {
 };
 
 export default new Proxy<PassUI>({} as any, {
-    get(_, method: keyof PassUI) {
+    get(_, property) {
+        /* In case the object gets serialized during error reporting */
+        if (property === 'toJSON') return () => ({ __type: 'PassUIProxy' });
+        if (property === Symbol.toStringTag) return 'PassUIProxy';
+
         return (...args: any[]) => {
             try {
                 if (!service) throw new Error('Module not initialized');
-                return (service[method] as any)(...args);
+                return (service[property as keyof PassUI] as any)(...args);
             } catch (err) {
-                if (isNativeJSError(err)) logger.warn(`[PassCoreUI] Failed executing ${method}`, err);
+                if (isNativeJSError(err)) logger.warn(`[PassCoreUI] Failed executing ${property.toString()}`, err);
                 throw err;
             }
         };

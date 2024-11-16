@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader, InlineLinkButton } from '@proton/atoms';
+import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
 import shieldDanger from '@proton/pass/assets/monitor/shield-bolt-danger.svg';
 import { ButtonCard, type ButtonCardProps } from '@proton/pass/components/Layout/Card/ButtonCard';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -37,7 +37,7 @@ export const BreachSummaryCard: FC<Props> = ({ className, onClick }) => {
                     subtitle: (
                         <span>
                             {c('Warning').t`Failed to load breaches.`}{' '}
-                            <InlineLinkButton onClick={sync}>{c('Action').t`Try again.`}</InlineLinkButton>
+                            <ButtonLike onClick={sync} shape="underline" as="a">{c('Action').t`Try again.`}</ButtonLike>
                         </span>
                     ),
                 };
