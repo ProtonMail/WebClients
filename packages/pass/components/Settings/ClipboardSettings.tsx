@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components/index';
-import { setDesktopSettings } from '@proton/pass/store/actions/creators/desktop';
+import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
 
 import { SettingsPanel } from './SettingsPanel';
@@ -22,7 +22,7 @@ export const ClipboardSettings: FC = () => {
 
     const value = useMemo(() => options.find(([value]) => value === storedValue)?.[0] ?? options[0][0], [storedValue]);
 
-    const onValue = (timeoutMs: number) => dispatch(setDesktopSettings.intent({ clipboard: { timeoutMs } }));
+    const onValue = (timeoutMs: number) => dispatch(settingsEditIntent('behaviors', { clipboard: { timeoutMs } }));
 
     return (
         <SettingsPanel title={c('Label').t`Clear clipboard after`}>

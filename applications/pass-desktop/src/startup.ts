@@ -2,6 +2,7 @@ import biometrics from './lib/biometrics';
 import { setupIpcHandlers as clipboard } from './lib/clipboard';
 import { setupIpcHandlers as info } from './lib/install-info';
 import { setupIpcHandlers as navigation } from './lib/navigation';
+import { setupIpcHandlers as theming } from './lib/theming';
 import type { PassElectronContext } from './types';
 import { handleSquirrelEvents } from './utils/squirrel';
 
@@ -14,4 +15,5 @@ export const startup = async (ctx: PassElectronContext) => {
     navigation(() => ctx.window);
     clipboard();
     info();
+    theming();
 };

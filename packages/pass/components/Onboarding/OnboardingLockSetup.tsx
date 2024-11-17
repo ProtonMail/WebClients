@@ -68,12 +68,12 @@ export const OnboardingLockSetup: FC = () => {
                 name="lock-mode"
                 onChange={setLockMode}
                 value={lock.mode}
-                className={clsx('w-full', !online && 'opacity-70 pointer-events-none')}
+                className={clsx('pass-onboarding-modal--radio w-full', !online && 'opacity-70 pointer-events-none')}
                 disableChange={!online || lock.loading}
                 options={lockModes.map(({ value, icon, label, needsUpgrade }) => ({
                     value,
                     label: (
-                        <div className="pass-lock-option rounded-xl flex items-center w-full py-3 px-4">
+                        <div className="pass-onboarding-modal--option rounded-xl flex items-center w-full py-3 px-4">
                             <Icon name={icon} size={6} />
                             <div className={clsx('flex-1 px-4', lock.mode === value && 'text-bold')}>{label}</div>
                             {lock.mode === value && (

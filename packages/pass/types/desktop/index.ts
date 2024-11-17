@@ -13,7 +13,12 @@ export type ContextBridgeApi = {
     setInstallSourceReported: () => Promise<void>;
     setClipboardConfig: (config: ClipboardStoreProperties) => Promise<void>;
     getClipboardConfig: () => Promise<Maybe<ClipboardStoreProperties>>;
+    getTheme: () => Promise<Maybe<DesktopTheme>>;
+    setTheme: (theme: DesktopTheme) => Promise<void>;
 };
 
-export type ClipboardStoreProperties = { timeoutMs: number };
-export type DesktopSettingsDTO = { clipboard?: ClipboardStoreProperties };
+export type DesktopTheme = 'dark' | 'light' | 'system';
+
+export type ClipboardStoreProperties = {
+    timeoutMs: number;
+};

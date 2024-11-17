@@ -12,6 +12,7 @@ import * as config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
+import { getTheme } from './lib/theming';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
@@ -106,7 +107,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
     ctx.window = new BrowserWindow({
         show: false,
         width: 960,
-        height: 640,
+        height: 680,
         opacity: 1,
         autoHideMenuBar: true,
         webPreferences: {
@@ -124,7 +125,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             y: 18,
         },
         minWidth: 881,
-        minHeight: 640,
+        minHeight: 680,
     });
 
     setApplicationMenu(ctx.window);
@@ -194,8 +195,8 @@ app.addListener('ready', async () => {
     const secureSession = createSession();
     const handleActivate = onActivate(secureSession);
 
-    // Use dark title bar
-    nativeTheme.themeSource = 'dark';
+    // Match title bar with the saved (or default) theme
+    nativeTheme.themeSource = getTheme();
 
     // Create tray icon
     createTrayIcon(secureSession);

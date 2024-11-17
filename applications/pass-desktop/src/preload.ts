@@ -8,6 +8,10 @@ const contextBridgeApi: ContextBridgeApi = {
     setClipboardConfig: (config) => ipcRenderer.invoke('clipboard:setConfig', config),
     getClipboardConfig: () => ipcRenderer.invoke('clipboard:getConfig'),
 
+    /* theming */
+    getTheme: () => ipcRenderer.invoke('theming:getTheme'),
+    setTheme: (theme) => ipcRenderer.invoke('theming:setTheme', theme),
+
     /* routing */
     navigate: (href) => ipcRenderer.invoke('router:navigate', href),
 
