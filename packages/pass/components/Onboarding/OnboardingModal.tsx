@@ -29,15 +29,12 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
         void wait(250).then(props.onClose);
     };
 
-    const onStep = (offset: number) => {
-        markCompleted(steps[step].key);
+    const onStep = (offset: 1 | -1) => {
+        if (offset === 1) markCompleted(steps[step].key);
 
         const nextStep = step + offset;
-        if (nextStep < steps.length) {
-            setStep(Math.max(0, nextStep));
-        } else {
-            onComplete();
-        }
+        if (nextStep < steps.length) setStep(Math.max(0, nextStep));
+        else onComplete();
     };
 
     const onContinue = () => {
