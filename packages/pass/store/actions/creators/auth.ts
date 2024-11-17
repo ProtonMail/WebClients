@@ -23,7 +23,7 @@ export const lockSync = createAction('auth::lock::sync', (lock: Lock) => ({ payl
 
 export const lockCreateIntent = createAction('auth::lock::create::intent', (lock: LockCreateDTO) =>
     pipe(
-        withRequest({ status: 'start', id: lockCreateRequest(), data: true }),
+        withRequest({ status: 'start', id: lockCreateRequest() }),
         withNotification({
             key: NotificationKey.LOCK,
             loading: true,

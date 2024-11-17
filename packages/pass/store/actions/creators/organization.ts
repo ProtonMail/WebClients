@@ -8,7 +8,7 @@ export const getOrganizationSettings = requestActionsFactory<void, OrganizationG
 )({
     success: {
         prepare: (payload) => withCache({ payload }),
-        config: { maxAge: 15 * UNIX_MINUTE },
+        config: { maxAge: 15 * UNIX_MINUTE, data: null },
     },
-    failure: { prepare: (error) => ({ payload: {}, error }) },
+    failure: { prepare: (error, payload) => ({ payload, error }) },
 });

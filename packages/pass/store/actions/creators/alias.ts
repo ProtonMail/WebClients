@@ -122,7 +122,7 @@ export const aliasSyncPending = requestActionsFactory<void, { items: ItemRevisio
 )({});
 
 export const aliasSyncStatus = requestActionsFactory<void, SlSyncStatusOutput, void>('alias::sync::status')({
-    success: { config: { maxAge: UNIX_MINUTE } },
+    success: { config: { maxAge: UNIX_MINUTE, data: null } },
 });
 
 export const aliasSyncStatusToggle = requestActionsFactory<AliasToggleStatusDTO, SelectedItem & { item: ItemRevision }>(
@@ -153,13 +153,10 @@ export const aliasSyncStatusToggle = requestActionsFactory<AliasToggleStatusDTO,
     },
 });
 
-export const getMailboxes = requestActionsFactory<void, UserMailboxOutput[]>('alias::mailboxes')({
-    success: { config: { data: true } },
-});
+export const getMailboxes = requestActionsFactory<void, UserMailboxOutput[]>('alias::mailboxes')();
 
 export const createMailbox = requestActionsFactory<string, UserMailboxOutput>('alias::mailbox::create')({
     key: identity,
-    success: { config: { data: true } },
     failure: {
         prepare: (error) =>
             withNotification({
@@ -180,7 +177,6 @@ export const validateMailbox = requestActionsFactory<{ mailboxID: number; code: 
                 type: 'success',
                 text: c('Success').t`Mailbox successfully verified`,
             })({ payload }),
-        config: { data: true },
     },
     failure: {
         prepare: (error) =>
@@ -189,7 +185,6 @@ export const validateMailbox = requestActionsFactory<{ mailboxID: number; code: 
                 type: 'error',
                 error,
             })({ payload: getApiError(error) }),
-        config: { data: true },
     },
 });
 
@@ -201,7 +196,6 @@ export const resendVerifyMailbox = requestActionsFactory<number, UserMailboxOutp
                 type: 'success',
                 text: c('Success').t`Verification email sent. Please check your inbox to verify your mailbox`,
             })({ payload: data }),
-        config: { data: true },
     },
     failure: {
         prepare: (error, payload) =>
@@ -242,7 +236,6 @@ export const setDefaultMailbox = requestActionsFactory<MailboxDefaultDTO, UserAl
                 type: 'success',
                 text: c('Success').t`Default mailbox successfully updated`,
             })({ payload: data }),
-        config: { data: true },
     },
     failure: {
         prepare: (error, payload) =>
@@ -254,9 +247,7 @@ export const setDefaultMailbox = requestActionsFactory<MailboxDefaultDTO, UserAl
     },
 });
 
-export const getAliasDomains = requestActionsFactory<void, UserAliasDomainOutput[]>('alias::domains')({
-    success: { config: { data: true } },
-});
+export const getAliasDomains = requestActionsFactory<void, UserAliasDomainOutput[]>('alias::domains')();
 
 export const setDefaultAliasDomain = requestActionsFactory<string, UserAliasSettingsGetOutput>(
     'alias::domain::set-default'
@@ -268,7 +259,6 @@ export const setDefaultAliasDomain = requestActionsFactory<string, UserAliasSett
                 type: 'success',
                 text: c('Success').t`Default domain successfully updated`,
             })({ payload }),
-        config: { data: true },
     },
     failure: {
         prepare: (error, payload) =>
@@ -280,16 +270,10 @@ export const setDefaultAliasDomain = requestActionsFactory<string, UserAliasSett
     },
 });
 
-export const getCustomDomains = requestActionsFactory<void, CustomDomainOutput[]>('alias::custom-domains')({
-    success: {
-        prepare: (payload) => withCache({ payload }),
-        config: { data: true },
-    },
-});
+export const getCustomDomains = requestActionsFactory<void, CustomDomainOutput[]>('alias::custom-domains')();
 
 export const createCustomDomain = requestActionsFactory<string, CustomDomainOutput>('alias::custom-domain::create')({
     key: identity,
-    success: { config: { data: true } },
     failure: {
         prepare: (error, payload) =>
             withNotification({
@@ -302,10 +286,6 @@ export const createCustomDomain = requestActionsFactory<string, CustomDomainOutp
 
 export const getCustomDomainInfo = requestActionsFactory<number, CustomDomainOutput>('alias::custom-domain::info')({
     key: intKey,
-    success: {
-        prepare: (payload) => withCache({ payload }),
-        config: { data: true },
-    },
 });
 
 export const verifyCustomDomain = requestActionsFactory<number, CustomDomainValidationOutput>(
@@ -328,7 +308,6 @@ export const verifyCustomDomain = requestActionsFactory<number, CustomDomainVali
                     }
                 })(),
             })({ payload }),
-        config: { data: true },
     },
     failure: {
         prepare: (error, payload) =>
@@ -363,7 +342,7 @@ export const getCustomDomainSettings = requestActionsFactory<number, CustomDomai
     'alias::custom-domain::settings'
 )({
     key: intKey,
-    success: { config: { data: true } },
+
     failure: {
         prepare: (error, payload) =>
             withNotification({
@@ -379,7 +358,6 @@ export const updateCatchAll = requestActionsFactory<CatchAllDTO, CustomDomainSet
 )({
     key: ({ domainID }) => String(domainID),
     success: {
-        config: { data: true },
         prepare: (data) =>
             withNotification({
                 type: 'success',
@@ -403,7 +381,6 @@ export const updateCustomDomainDisplayName = requestActionsFactory<CustomDomainN
 )({
     key: ({ domainID }) => String(domainID),
     success: {
-        config: { data: true },
         prepare: (data) =>
             withNotification({
                 type: 'success',
@@ -425,7 +402,6 @@ export const updateRandomPrefix = requestActionsFactory<RandomPrefixDTO, CustomD
 )({
     key: ({ domainID }) => String(domainID),
     success: {
-        config: { data: true },
         prepare: (data) =>
             withNotification({
                 type: 'success',
@@ -449,7 +425,6 @@ export const updateCustomDomainMailboxes = requestActionsFactory<CustomDomainMai
 )({
     key: ({ domainID }) => String(domainID),
     success: {
-        config: { data: true },
         prepare: (data) =>
             withNotification({
                 type: 'success',
@@ -470,14 +445,12 @@ export const aliasGetContactsList = requestActionsFactory<UniqueItem, AliasConta
     'alias::contact::get-list'
 )({
     key: selectedItemKey,
-    success: { config: { data: true } },
 });
 
 export const aliasGetContactInfo = requestActionsFactory<AliasContactInfoDTO, AliasContactGetResponse>(
     'alias::contact::get-info'
 )({
     key: (dto) => withKey(selectedItemKey(dto))(dto.contactId),
-    success: { config: { data: true } },
 });
 
 export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, AliasContactGetResponse>(
@@ -490,7 +463,6 @@ export const aliasCreateContact = requestActionsFactory<AliasContactNewDTO, Alia
                 type: 'success',
                 text: c('Success').t`Contact successfully created`,
             })({ payload }),
-        config: { data: true },
     },
     failure: {
         prepare: (error, payload) =>
@@ -510,7 +482,6 @@ export const aliasDeleteContact = requestActionsFactory<AliasContactInfoDTO, num
                 type: 'success',
                 text: c('Success').t`Contact successfully deleted`,
             })({ payload }),
-        config: { data: true },
     },
     failure: {
         prepare: (error, payload) =>
@@ -534,7 +505,6 @@ export const aliasBlockContact = requestActionsFactory<AliasContactBlockDTO, Ali
                     ? c('Success').t`Contact successfully blocked`
                     : c('Success').t`Contact successfully unblocked`,
             })({ payload }),
-        config: { data: true },
     },
     failure: {
         prepare: (error, payload) =>
