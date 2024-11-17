@@ -175,7 +175,7 @@ export const itemBulkMoveIntent = createAction(
     'item::bulk::move::intent',
     (payload: { selected: BulkSelectionDTO; shareId: string }) =>
         pipe(
-            withRequest({ status: 'start', id: itemsBulkMoveRequest() }),
+            withRequest({ status: 'start', id: itemsBulkMoveRequest(), data: true }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -251,7 +251,7 @@ export const itemBulkTrashIntent = createAction(
     'item::bulk::trash::intent',
     (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ status: 'start', id: itemsBulkTrashRequest() }),
+            withRequest({ status: 'start', id: itemsBulkTrashRequest(), data: true }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -324,7 +324,7 @@ export const itemBulkDeleteIntent = createAction(
     'item::bulk::delete::intent',
     (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ status: 'start', id: itemsBulkDeleteRequest() }),
+            withRequest({ status: 'start', id: itemsBulkDeleteRequest(), data: true }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -401,7 +401,7 @@ export const itemBulkRestoreIntent = createAction(
     'item::bulk:restore::intent',
     (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ status: 'start', id: itemsBulkRestoreRequest() }),
+            withRequest({ status: 'start', id: itemsBulkRestoreRequest(), data: true }),
             withNotification({
                 expiration: -1,
                 type: 'info',
