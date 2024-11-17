@@ -83,7 +83,6 @@ export const getProtonBreach = requestActionsFactory<ProtonAddressID, FetchedBre
     'monitor::breaches::proton::get'
 )({
     key: identity,
-    success: { config: { data: true } },
     failure: {
         prepare: (error) =>
             withNotification({
@@ -98,7 +97,6 @@ export const getCustomBreach = requestActionsFactory<CustomAddressID, FetchedBre
     'monitor::breaches::custom::get'
 )({
     key: identity,
-    success: { config: { data: true } },
     failure: {
         prepare: (error) =>
             withNotification({
@@ -111,7 +109,6 @@ export const getCustomBreach = requestActionsFactory<CustomAddressID, FetchedBre
 
 export const getAliasBreach = requestActionsFactory<SelectedItem, FetchedBreaches[]>('monitor::breaches::alias::get')({
     key: selectedItemKey,
-    success: { config: { data: true } },
     failure: {
         prepare: (error) =>
             withNotification({
@@ -126,7 +123,6 @@ export const addCustomAddress = requestActionsFactory<string, BreachCustomEmailG
     'monitor::breaches::custom::add'
 )({
     key: identity,
-    success: { config: { data: true } },
     failure: {
         prepare: (error) =>
             withNotification({
@@ -163,7 +159,6 @@ export const verifyCustomAddress = requestActionsFactory<MonitorVerifyDTO, Monit
 )({
     key: prop('addressId'),
     failure: {
-        config: { data: true },
         prepare: (error) =>
             withNotification({
                 text: c('Error').t`Failed to verify email address`,

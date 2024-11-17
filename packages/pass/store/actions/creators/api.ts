@@ -17,5 +17,5 @@ export const userEvent = createAction('api::event::user', (payload: UserEvent) =
 
 export const channelAcknowledge = createAction(
     'api::channel::ack',
-    withRequestSuccess(() => ({ payload: {} }), { maxAge: -1 })
+    withRequestSuccess(() => ({ payload: {} }), { maxAge: -1, data: null })
 );

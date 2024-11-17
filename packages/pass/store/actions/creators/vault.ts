@@ -47,16 +47,14 @@ export const vaultCreationFailure = createAction(
  * the appropriate event loop channel upon successful creation */
 export const vaultCreationSuccess = createAction(
     'vault::creation::success',
-    withRequestSuccess(
-        (payload: { share: Share<ShareType.Vault> }) =>
-            pipe(
-                withCache,
-                withNotification({
-                    type: 'success',
-                    text: c('Info').t`Vault "${payload.share.content.name}" successfully created`,
-                })
-            )({ payload }),
-        { data: true }
+    withRequestSuccess((payload: { share: Share<ShareType.Vault> }) =>
+        pipe(
+            withCache,
+            withNotification({
+                type: 'success',
+                text: c('Info').t`Vault "${payload.share.content.name}" successfully created`,
+            })
+        )({ payload })
     )
 );
 
