@@ -39,20 +39,18 @@ export const inviteBatchCreateIntent = createAction('invite::batch::create::inte
 
 export const inviteBatchCreateSuccess = createAction(
     'invite::batch::create::success',
-    withRequestSuccess(
-        (payload: InviteBatchCreateSuccess, count: number) =>
-            pipe(
-                withCache,
-                withNotification({
-                    type: 'info',
-                    text: c('Info').ngettext(
-                        msgid`${count} invite successfully sent`,
-                        `${count} invites successfully sent`,
-                        count
-                    ),
-                })
-            )({ payload }),
-        { data: true }
+    withRequestSuccess((payload: InviteBatchCreateSuccess, count: number) =>
+        pipe(
+            withCache,
+            withNotification({
+                type: 'info',
+                text: c('Info').ngettext(
+                    msgid`${count} invite successfully sent`,
+                    `${count} invites successfully sent`,
+                    count
+                ),
+            })
+        )({ payload })
     )
 );
 
@@ -241,7 +239,7 @@ export const inviteRecommendationsIntent = createAction(
 
 export const inviteRecommendationsSuccess = createAction(
     'invite::recommendations::success',
-    withRequestSuccess((payload: InviteRecommendationsSuccess) => ({ payload }), { data: true })
+    withRequestSuccess((payload: InviteRecommendationsSuccess) => ({ payload }))
 );
 
 export const inviteRecommendationsFailure = createAction(
@@ -263,7 +261,7 @@ export const inviteAddressesValidateIntent = createAction(
 
 export const inviteAddressesValidateSuccess = createAction(
     'invite::addresses::validate::success',
-    withRequestSuccess((payload: Record<string, boolean>) => ({ payload }), { data: true })
+    withRequestSuccess((payload: Record<string, boolean>) => ({ payload }))
 );
 
 export const inviteAddressesValidateFailure = createAction(
