@@ -8,9 +8,9 @@ import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtension
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import {
+    selectB2BOnboardingComplete,
     selectB2BOnboardingEnabled,
-    selectOnboardingComplete,
-    selectOnboardingState,
+    selectB2BOnboardingState,
 } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -22,8 +22,8 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
     const extension = usePassExtensionLink();
     const { navigate } = useNavigation();
 
-    const state = useSelector(selectOnboardingState);
-    const complete = useSelector(selectOnboardingComplete(extension.installed));
+    const state = useSelector(selectB2BOnboardingState);
+    const complete = useSelector(selectB2BOnboardingComplete(extension.installed));
     const disabled = !useSelector(selectB2BOnboardingEnabled(extension.installed));
     const isActive = useRouteMatch(getLocalPath('onboarding'));
 

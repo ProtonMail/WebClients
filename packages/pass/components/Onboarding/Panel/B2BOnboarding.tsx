@@ -16,7 +16,7 @@ import type { OnboardingCardProps } from '@proton/pass/components/Onboarding/Pan
 import { OnboardingCard } from '@proton/pass/components/Onboarding/Panel/OnboardingCard';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultSelect, VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
-import { selectOnboardingState, selectWritableVaults } from '@proton/pass/store/selectors';
+import { selectB2BOnboardingState, selectWritableVaults } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { clients } from '@proton/shared/lib/pass/constants';
 
@@ -30,7 +30,7 @@ export const B2BOnboarding: FC = () => {
     const vaultActions = useVaultActions();
     const inviteContext = useInviteContext();
 
-    const { vaultCreated, vaultImported, vaultShared } = useSelector(selectOnboardingState);
+    const { vaultCreated, vaultImported, vaultShared } = useSelector(selectB2BOnboardingState);
     const { installed, supportedBrowser } = usePassExtensionLink();
     const browser = supportedBrowser ? clients[supportedBrowser] : null;
 
