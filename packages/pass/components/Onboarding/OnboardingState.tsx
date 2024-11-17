@@ -32,14 +32,14 @@ export const OnboardingState: FC<{ className?: string }> = ({ className }) => {
                 <div className="flex justify-space-between items-center">
                     <div className="text-lg text-semibold">{c('Label').t`Get Started`}</div>
                 </div>
-                {steps.map((s) => (
-                    <div key={s.key} className="w-full text-left flex gap-2 items-center mt-2">
-                        {completed.includes(s.key) ? (
+                {steps.map(({ key, shortTitle }) => (
+                    <div key={key} className="w-full text-left flex gap-2 items-center mt-2">
+                        {completed.includes(key) ? (
                             <Icon name="checkmark-circle-filled" color="var(--signal-success)" />
                         ) : (
                             <Icon name="circle" />
                         )}
-                        {s.shortTitle}
+                        {shortTitle}
                     </div>
                 ))}
             </Button>

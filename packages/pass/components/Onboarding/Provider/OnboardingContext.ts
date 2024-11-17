@@ -13,30 +13,29 @@ export type OnboardingStep = {
     component: ReactNode;
     description: ReactNode;
     group: string;
-    hidden?: boolean;
     key: string;
-    title: string;
     shortTitle: string;
+    title: string;
 };
 
 export type OnboardingContextValue = {
     acknowledge: () => void;
     launch: () => void;
     markCompleted: (step: string) => void;
+    completed: string[];
     enabled: boolean;
     isActive: boolean;
-    type: OnboardingType;
     steps: OnboardingStep[];
-    completed: string[];
+    type: OnboardingType;
 };
 
 export const OnboardingContext = createContext<OnboardingContextValue>({
     acknowledge: noop,
     launch: noop,
     markCompleted: noop,
+    completed: [],
     enabled: false,
     isActive: false,
-    type: OnboardingType.WELCOME,
     steps: [],
-    completed: [],
+    type: OnboardingType.WELCOME,
 });
