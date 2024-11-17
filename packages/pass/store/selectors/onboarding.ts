@@ -13,7 +13,7 @@ type B2BOnboardingStatus = {
     vaultShared: boolean;
 };
 
-export const selectOnboardingState = createSelector(
+export const selectB2BOnboardingState = createSelector(
     [selectWritableVaults, selectWritableSharedVaults, selectLatestImport],
     (vaults, sharedVaults, lastImport): B2BOnboardingStatus => ({
         vaultCreated: vaults.length > 1,
@@ -22,11 +22,14 @@ export const selectOnboardingState = createSelector(
     })
 );
 
-export const selectOnboardingComplete = (extensionInstalled: boolean) =>
-    createSelector(selectOnboardingState, (state): boolean => extensionInstalled && Object.values(state).every(truthy));
+export const selectB2BOnboardingComplete = (extensionInstalled: boolean) =>
+    createSelector(
+        selectB2BOnboardingState,
+        (state): boolean => extensionInstalled && Object.values(state).every(truthy)
+    );
 
 export const selectB2BOnboardingEnabled = (extensionInstalled: boolean) =>
     createSelector(
-        [selectUser, selectPassPlan, selectOnboardingComplete(extensionInstalled)],
+        [selectUser, selectPassPlan, selectB2BOnboardingComplete(extensionInstalled)],
         (user, plan, complete) => user && isAdmin(user) && plan === UserPassPlan.BUSINESS && !complete
     );
