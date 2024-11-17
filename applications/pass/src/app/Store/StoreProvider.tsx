@@ -75,7 +75,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         const runner = sagaMiddleware.run(
             rootSagaFactory(SAGAS).bind(null, {
                 endpoint: 'web',
-
+                getConfig: () => config,
                 getAppState: () => app.state,
                 setAppStatus: app.setStatus,
                 getAuthService: () => authService,
