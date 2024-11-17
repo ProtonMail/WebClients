@@ -36,18 +36,19 @@ describe('`requestActionsFactory`', () => {
             expect(intent.payload).toStrictEqual({ value: 42, extra });
         });
 
-        test('should default to `config.data = false`', () => {
+        test('should not include any request data by default', () => {
             const action = testActionFactory();
             const intent = action.intent({ value: 42 });
-            expect(intent.meta.request.data).toEqual(false);
+            expect(intent.meta.request.data).toEqual(undefined);
             expect(intent.meta.request.id).toEqual('action::test');
             expect(intent.meta.request.status).toEqual('start');
         });
 
-        test('should include request data when `config.data` is true', () => {
-            const action = testActionFactory({ intent: { config: { data: true } } });
+        test('should include request data when `config.data` is set', () => {
+            const data = Math.random();
+            const action = testActionFactory({ intent: { config: { data } } });
             const intent = action.intent({ value: 42 });
-            expect(intent.meta.request.data).toEqual(true);
+            expect(intent.meta.request.data).toEqual(data);
             expect(intent.meta.request.id).toEqual('action::test');
             expect(intent.meta.request.status).toEqual('start');
         });
@@ -78,22 +79,6 @@ describe('`requestActionsFactory`', () => {
             const success = action.success(requestID, { ok: true });
             expect(success.payload).toStrictEqual({ ok: true, extra });
         });
-
-        test('should default to `config.data = false`', () => {
-            const action = testActionFactory();
-            const success = action.success(requestID, { ok: true });
-            expect(success.meta.request.data).toEqual(false);
-            expect(success.meta.request.id).toEqual(requestID);
-            expect(success.meta.request.status).toEqual('success');
-        });
-
-        test('should include request data when `config.data` is true', () => {
-            const action = testActionFactory({ success: { config: { data: true } } });
-            const success = action.success(requestID, { ok: true });
-            expect(success.meta.request.data).toEqual(true);
-            expect(success.meta.request.id).toEqual(requestID);
-            expect(success.meta.request.status).toEqual('success');
-        });
     });
 
     describe('failure action creator', () => {
@@ -113,22 +98,6 @@ describe('`requestActionsFactory`', () => {
             const failure = action.failure(requestID, error, { ok: false });
             expect(failure.payload).toStrictEqual({ ok: false, extra });
             expect(failure.error).toEqual(error);
-        });
-
-        test('should default to `config.data = false`', () => {
-            const action = testActionFactory();
-            const failure = action.failure(requestID, error, { ok: false });
-            expect(failure.meta.request.data).toEqual(false);
-            expect(failure.meta.request.id).toEqual(requestID);
-            expect(failure.meta.request.status).toEqual('failure');
-        });
-
-        test('should include request data when `config.data` is true', () => {
-            const action = testActionFactory({ failure: { config: { data: true } } });
-            const failure = action.failure(requestID, error, { ok: false });
-            expect(failure.meta.request.data).toEqual(true);
-            expect(failure.meta.request.id).toEqual(requestID);
-            expect(failure.meta.request.status).toEqual('failure');
         });
     });
 });
