@@ -27,7 +27,7 @@ export const cacheGuard = (
     return {};
 };
 
-export const migrate = (state: State) => {
+export const migrate = (state: State, versions: { from?: string; to: string }) => {
     const user = selectUser(state);
     const plan = selectPassPlan(state);
 
@@ -96,6 +96,9 @@ export const migrate = (state: State) => {
         const legacy = Object.values(state.alias.aliasDetails).some(Array.isArray);
         if (legacy) state.alias.aliasDetails = {};
     }
+
+    /** Clear request cache on update */
+    if (!versions.from || semver(versions.from) < semver(versions.to)) state.request = {};
 
     return state;
 };
