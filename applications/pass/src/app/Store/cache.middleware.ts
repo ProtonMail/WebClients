@@ -29,5 +29,5 @@ export const cacheMiddleware: Middleware<{}, State> = () => (next) => (action: u
         if (ServiceWorkerEnabled) navigator.serviceWorker.controller?.postMessage(message);
     }
 
-    next(action);
+    return next(action);
 };
