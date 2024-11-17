@@ -23,7 +23,12 @@ export const isActionWithSender = <T extends Action>(action?: T): action is With
     return meta?.sender !== undefined;
 };
 
-export const acceptActionWithReceiver = (action: Action, endpoint: ClientEndpoint, tabId?: TabId) => {
+export const isActionFrom =
+    (endpoint: ClientEndpoint) =>
+    <T extends Action>(action?: T): action is WithSenderAction<T> =>
+        isActionWithSender(action) && action.meta.sender?.endpoint === endpoint;
+
+export const isActionFor = (action: Action, endpoint: ClientEndpoint, tabId?: TabId) => {
     if (isActionWithReceiver(action)) {
         const { meta } = action;
         return (
