@@ -6,6 +6,7 @@ export type MaybeNull<T> = T | null;
 export type MaybeArray<T> = T | T[];
 export type MaybePromise<T> = T | Promise<T>;
 export type Unpack<T> = T extends (infer U)[] ? U : T extends readonly (infer U)[] ? U : never;
+export type IsNever<T> = [T] extends [never] ? true : false;
 
 /** Adds a phantom type tag to a base type without affecting its runtime structure.
  * This allows for type-level discrimination and specialization while maintaining
