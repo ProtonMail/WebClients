@@ -1,12 +1,7 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/lib/api/api';
-import {
-    setDesktopSettings,
-    settingsEditFailure,
-    settingsEditIntent,
-    settingsEditSuccess,
-} from '@proton/pass/store/actions';
+import { settingsEditFailure, settingsEditIntent, settingsEditSuccess } from '@proton/pass/store/actions';
 import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import { isSettingsAction } from '@proton/pass/store/actions/enhancers/settings';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -30,7 +25,6 @@ function* settingsEditWorker(
 
         yield put(settingsEditSuccess(meta.request.id, payload, meta.silent, meta.sender?.endpoint));
         if ('beta' in payload) yield onBetaUpdated?.(payload.beta ?? false);
-        if (DESKTOP_BUILD) yield put(setDesktopSettings.intent(payload));
     } catch (e) {
         yield put(settingsEditFailure(meta.request.id, e, meta.sender?.endpoint));
     }
