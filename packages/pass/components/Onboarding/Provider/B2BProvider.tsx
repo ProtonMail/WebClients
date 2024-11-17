@@ -8,12 +8,11 @@ import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtension
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import {
+    selectB2BOnboardingComplete,
     selectB2BOnboardingEnabled,
-    selectOnboardingComplete,
-    selectOnboardingState,
+    selectB2BOnboardingState,
 } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import noop from '@proton/utils/noop';
 
 import { OnboardingContext, type OnboardingContextValue, OnboardingType } from './OnboardingContext';
@@ -23,8 +22,8 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
     const extension = usePassExtensionLink();
     const { navigate } = useNavigation();
 
-    const state = useSelector(selectOnboardingState);
-    const complete = useSelector(selectOnboardingComplete(extension.installed));
+    const state = useSelector(selectB2BOnboardingState);
+    const complete = useSelector(selectB2BOnboardingComplete(extension.installed));
     const disabled = !useSelector(selectB2BOnboardingEnabled(extension.installed));
     const isActive = useRouteMatch(getLocalPath('onboarding'));
 
@@ -39,19 +38,18 @@ export const B2BProvider: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     const context = useMemo<OnboardingContextValue>(() => {
-        const steps = Object.values(state).concat(extension.supportedBrowser ? [extension.installed] : []);
-
         return {
             acknowledge: () => {
                 setEnabled(false);
                 void spotlight.acknowledge(SpotlightMessage.B2B_ONBOARDING);
             },
             launch: () => navigate(getLocalPath('onboarding')),
+            markCompleted: noop,
             complete,
             enabled,
             isActive: Boolean(isActive),
-            state,
-            steps: { done: steps.filter(truthy).length, total: steps.length },
+            steps: [],
+            completed: [],
             type: OnboardingType.B2B,
         };
     }, [complete, enabled, extension, state, isActive, navigate]);
