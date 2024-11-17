@@ -10,9 +10,7 @@ import {
     lockCreateSuccess,
     lockSync,
     offlineToggle,
-    setDesktopSettings,
     settingsEditSuccess,
-    syncDesktopSettings,
     updatePauseListItem,
     userEvent,
 } from '@proton/pass/store/actions';
@@ -120,10 +118,6 @@ const reducer: Reducer<SettingsState> = (state = getInitialState(), action) => {
 
     if (extraPasswordToggle.success.match(action)) {
         return partialMerge<SettingsState>(state, { extraPassword: action.payload });
-    }
-
-    if (DESKTOP_BUILD && or(setDesktopSettings.success.match, syncDesktopSettings.success.match)(action)) {
-        return partialMerge<SettingsState>(state, action.payload);
     }
 
     return state;
