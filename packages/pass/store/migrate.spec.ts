@@ -24,7 +24,7 @@ describe('`migrate`', () => {
             [note.itemId]: note,
         } as any;
 
-        const migration = migrate(state);
+        const migration = migrate(state, { from: '1.0.0', to: '2.0.0 ' });
 
         expect(migration.items.byShareId[shareId]).toStrictEqual({ [note.itemId]: note });
         expect(migration.items.byShareId[login.shareId]).toStrictEqual({ [login.itemId]: login });
@@ -34,7 +34,7 @@ describe('`migrate`', () => {
         const state = rootReducer(undefined, { type: '__TEST__' });
         const organization = { ID: uniqueId(), Name: 'ProtonB2B' };
         state.user = { organization } as any;
-        const migration = migrate(state);
+        const migration = migrate(state, { from: '1.0.0', to: '2.0.0 ' });
 
         expect('organization' in migration.user).toBe(false);
 
@@ -48,7 +48,7 @@ describe('`migrate`', () => {
     test('should hydrate initial `HighSecurity` settings if empty', () => {
         const state = rootReducer(undefined, { type: '__TEST__' });
         state.user.userSettings = {} as any;
-        const migration = migrate(state);
+        const migration = migrate(state, { from: '1.0.0', to: '2.0.0 ' });
 
         expect(migration.user.userSettings!.HighSecurity).toStrictEqual(INITIAL_HIGHSECURITY_SETTINGS);
     });
