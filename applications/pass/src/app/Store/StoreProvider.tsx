@@ -18,6 +18,7 @@ import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
+import { themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
 import { getLocalPath, removeLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
@@ -128,7 +129,17 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     if (!checkAuthSwitch() && features.PassAccountSwitchV1) enableAuthSwitch();
                 },
 
-                onSettingsUpdated: (update) => settings.sync(update, authStore.getLocalID()),
+                onSettingsUpdated: async (update) => {
+                    void settings.sync(update, authStore.getLocalID());
+                    if (DESKTOP_BUILD) {
+                        /** Electron might need to apply or store certain settings, forward them */
+                        const desktopBridge = window.ctxBridge;
+                        const { clipboard, theme } = update;
+
+                        if (theme) desktopBridge?.setTheme(themeOptionToDesktop[theme]).catch(noop);
+                        if (clipboard?.timeoutMs) desktopBridge?.setClipboardConfig(clipboard).catch(noop);
+                    }
+                },
 
                 setCache: async (encryptedCache) => {
                     const userID = authStore.getUserID();

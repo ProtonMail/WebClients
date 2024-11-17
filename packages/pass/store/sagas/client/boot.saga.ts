@@ -17,7 +17,6 @@ import {
     getUserSettings,
     passwordHistoryGarbageCollect,
     secureLinksGet,
-    setDesktopSettings,
     startEventPolling,
     stateDestroy,
     stopEventPolling,
@@ -88,9 +87,6 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
                 yield put(withRevalidate(getOrganizationSettings.intent()));
             }
         }
-
-        /** Electron might need to apply or store certain settings, forward them */
-        if (DESKTOP_BUILD) yield put(setDesktopSettings.intent(settings));
 
         options.setAppStatus(online ? AppStatus.READY : AppStatus.OFFLINE);
         options.onBoot?.({ ok: true, fromCache, offline: payload?.offline, version });
