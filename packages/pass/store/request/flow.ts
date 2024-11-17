@@ -21,13 +21,13 @@ export type RequestSuccess<T extends RequestFlow<any, any, any>> = T extends Req
 type CreateRequestActionsOptions<
     IntentDTO,
     IntentPrepared extends Payload,
-    IntentData extends boolean,
+    IntentData extends any,
     SuccessDTO,
     SuccessPrepared extends Payload,
-    SuccessData extends boolean,
+    SuccessData extends any,
     FailureDTO,
     FailurePrepared extends Payload,
-    FailureData extends boolean,
+    FailureData extends any,
     RequestKey extends RequestKeyPrepator<IntentDTO>,
 > = {
     /** Key option determines requestID generation:
@@ -72,9 +72,9 @@ export const requestActionsFactory =
         IntentPrepared extends Payload = Payload<IntentDTO>,
         SuccessPrepared extends Payload = Payload<SuccessDTO>,
         FailurePrepared extends Payload = Payload<FailureDTO>,
-        IntentData extends boolean = false,
-        SuccessData extends boolean = false,
-        FailureData extends boolean = false,
+        IntentData extends any = never,
+        SuccessData extends any = never,
+        FailureData extends any = never,
         /* Tags default key preparator with 'fallback' for type discrimination
          * while preserving RequestKey type parameter constraints. */
         RequestKey extends RequestKeyPrepator<IntentDTO> = Tagged<RequestKeyPreparators<IntentDTO>, 'fallback'>,
@@ -113,7 +113,7 @@ export const requestActionsFactory =
                     withRequest({
                         status: 'start',
                         id: requestID(dto),
-                        ...(options.intent?.config ?? { data: false as IntentData }),
+                        ...(options.intent?.config ?? {}),
                     }),
                     withCallback(callback)
                 )(intentPA(dto))
