@@ -2,7 +2,6 @@ export * from './creators/alias';
 export * from './creators/api';
 export * from './creators/auth';
 export * from './creators/client';
-export * from './creators/desktop';
 export * from './creators/import';
 export * from './creators/invite';
 export * from './creators/item';
