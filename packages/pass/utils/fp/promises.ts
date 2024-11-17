@@ -9,13 +9,22 @@ export type UnwrapPromise<T> = T extends any[]
 export type Awaiter<T> = Promise<T> & { resolve: (value: T | PromiseLike<T>) => void; reject: (err: unknown) => void };
 export type AsyncResult<F extends (...args: any[]) => Promise<any>> = Promise<Awaited<ReturnType<F>>>;
 
-export const awaiter = <T>(): Awaiter<T> => {
+export const awaiter = <T>(options?: {
+    onResolve?: (value: T | PromiseLike<T>) => void;
+    onReject?: (err: unknown) => void;
+}): Awaiter<T> => {
     let resolver: (value: T | PromiseLike<T>) => void = noop;
     let rejector: (err: unknown) => void = noop;
 
     const promise = new Promise<T>((resolve, reject) => {
-        resolver = resolve;
-        rejector = reject;
+        resolver = (value) => {
+            resolve(value);
+            options?.onResolve?.(value);
+        };
+        rejector = (err) => {
+            reject(err);
+            options?.onReject?.(err);
+        };
     }) as Awaiter<T>;
 
     promise.resolve = resolver;
