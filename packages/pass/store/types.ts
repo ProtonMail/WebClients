@@ -1,3 +1,4 @@
+import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type {
@@ -28,6 +29,7 @@ export interface RootSagaOptions {
     /** defines the current client type */
     endpoint: ClientEndpoint;
 
+    getConfig: () => PassConfig;
     getAppState: () => AppState;
     getAuthService: () => AuthService;
     getAuthStore: () => AuthStore;

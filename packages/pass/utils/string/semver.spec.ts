@@ -46,6 +46,8 @@ describe('semver', () => {
         expect(semver('1.0.0') < semver('1.0.1')).toBe(true);
         expect(semver('1.0.0.1') > semver('1.0.0')).toBe(true);
         expect(semver('1.0.0') === semver('1.0.0')).toBe(true);
+        expect(semver('1.0.0-rc3') === semver('1.0.0')).toBe(true);
+        expect(semver('1.0.0-rc3') < semver('1.0.0.1')).toBe(true);
         expect(semver('1.2.3') > semver('1.2.2')).toBe(true);
         expect(semver('1.2.3.4') > semver('1.2.3')).toBe(true);
         expect(semver('1.2.3.999') > semver('1.2.3')).toBe(true);
