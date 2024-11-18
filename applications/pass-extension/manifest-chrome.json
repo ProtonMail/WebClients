@@ -84,9 +84,8 @@
             "matches": ["https://*/*", "http://*/*"]
         },
         {
-            "resources": [".wasm"],
-            "matches": ["<all_urls>"],
-            "type": "application/wasm"
+            "resources": ["*.wasm"],
+            "matches": ["<all_urls>"]
         }
     ]
 }
