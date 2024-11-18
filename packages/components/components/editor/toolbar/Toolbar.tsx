@@ -23,7 +23,7 @@ import ToolbarFontSizeDropdown from './ToolbarFontSizeDropdown';
 import ToolbarMoreDropdown from './ToolbarMoreDropdown';
 
 const ToolbarEmojiDropdown = lazy(
-    () => import(/* webpackChunkName: "ToolbarEmojiDropdown", webpackPreload: true */ './ToolbarEmojiDropdown')
+    () => import(/* webpackChunkName: "ToolbarEmojiDropdown", webpackPrefetch: true */ './ToolbarEmojiDropdown')
 );
 
 interface ToolbarProps {
