@@ -20,6 +20,10 @@ const CRITICAL_OFFLINE_ASSETS = [
     'core.worker.js',
     'crypto-worker.js',
 
+    /* icons */
+    'sprite-icons.svg',
+    'file-icons.svg',
+
     /* wasm */
     'wasm',
     'node_modules_pmcrypto_node_modules_openpgp_dist_lightweight_argon2id_min_mjs',
