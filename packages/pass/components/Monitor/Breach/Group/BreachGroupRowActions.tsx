@@ -13,7 +13,7 @@ import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getAddressId, intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import { addCustomAddress, deleteCustomAddress } from '@proton/pass/store/actions';
@@ -27,7 +27,7 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
 
     const add = useRequest(addCustomAddress, {
         initial: row.email,
-        onSuccess: ({ data }) => verifyAddress(intoCustomMonitorAddress(data)),
+        onSuccess: (address) => verifyAddress(intoCustomMonitorAddress(address)),
     });
 
     const deleting = useSelector(selectRequestInFlight(deleteCustomAddress.requestID(email)));

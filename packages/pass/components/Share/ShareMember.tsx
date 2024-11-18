@@ -7,8 +7,8 @@ import { Info } from '@proton/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import {
     shareEditMemberAccessIntent,
     shareRemoveMemberAccessIntent,

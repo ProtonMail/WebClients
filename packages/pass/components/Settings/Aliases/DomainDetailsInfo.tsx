@@ -8,7 +8,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { DomainMailboxesSelector } from '@proton/pass/components/Settings/Aliases/DomainMailboxesSelector';
 import { type CustomDomainInfo } from '@proton/pass/components/Settings/Aliases/Domains';
 import { SIMPLELOGIN_DOMAIN_SETTINGS_URL } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import {
     getCustomDomainSettings,
     updateCatchAll,
@@ -29,14 +29,10 @@ export const DomainDetailsInfo = ({ domain }: Props) => {
     const [selectedMailboxIDs, setSelectedMailboxIDs] = useState<number[]>([]);
     const [displayName, setDisplayName] = useState('');
 
-    const onSuccess = ({ data }: { data: CustomDomainSettingsOutput }) => {
-        setDomainSettings(data);
-    };
-
-    const toggleCatchAll = useRequest(updateCatchAll, { onSuccess });
-    const updateMailboxes = useRequest(updateCustomDomainMailboxes, { onSuccess });
-    const updateDisplayName = useRequest(updateCustomDomainDisplayName, { onSuccess });
-    const toggleRandomPrefix = useRequest(updateRandomPrefix, { onSuccess });
+    const toggleCatchAll = useRequest(updateCatchAll, { onSuccess: setDomainSettings });
+    const updateMailboxes = useRequest(updateCustomDomainMailboxes, { onSuccess: setDomainSettings });
+    const updateDisplayName = useRequest(updateCustomDomainDisplayName, { onSuccess: setDomainSettings });
+    const toggleRandomPrefix = useRequest(updateRandomPrefix, { onSuccess: setDomainSettings });
 
     const handleToggleCatchAll = (enabled: boolean) => {
         toggleCatchAll.dispatch({ domainID: domain.ID, catchAll: enabled });
@@ -55,7 +51,7 @@ export const DomainDetailsInfo = ({ domain }: Props) => {
     };
 
     const getDomainSettings = useRequest(getCustomDomainSettings, {
-        onSuccess: ({ data }) => {
+        onSuccess: (data) => {
             setDomainSettings(data);
             setDisplayName(data.DefaultDisplayName ?? '');
             if (data?.Mailboxes) setSelectedMailboxIDs(data.Mailboxes.map(({ ID }) => ID));

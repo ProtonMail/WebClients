@@ -9,7 +9,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getViewCountString } from '@proton/pass/lib/i18n/helpers';
 import { secureLinkRemove } from '@proton/pass/store/actions';
 import type { SecureLink } from '@proton/pass/types';

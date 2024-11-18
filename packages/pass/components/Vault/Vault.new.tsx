@@ -12,7 +12,7 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { UpsellRef } from '@proton/pass/constants';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { validateVaultValues } from '@proton/pass/lib/validation/vault';
 import { type vaultCreationFailure, vaultCreationIntent, type vaultCreationSuccess } from '@proton/pass/store/actions';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
@@ -33,9 +33,7 @@ export const VaultNew: FC<Props> = ({ onSuccess, ...modalProps }) => {
         typeof vaultCreationIntent,
         typeof vaultCreationSuccess,
         typeof vaultCreationFailure
-    >(vaultCreationIntent, {
-        onSuccess: ({ data }) => onSuccess?.(data.share.shareId),
-    });
+    >(vaultCreationIntent, { onSuccess: ({ share }) => onSuccess?.(share.shareId) });
 
     const form = useFormik<VaultFormValues>({
         initialValues: {

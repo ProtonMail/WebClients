@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FetchedBreaches } from '@proton/components';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { type AddressBreachDTO, AddressType } from '@proton/pass/lib/monitor/types';
 import { getAliasBreach, getCustomBreach, getProtonBreach } from '@proton/pass/store/actions';
 import { selectLoginsByUserIdentifier } from '@proton/pass/store/selectors';

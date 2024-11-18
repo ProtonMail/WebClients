@@ -9,8 +9,8 @@ import { ConfirmationModal } from '@proton/pass/components/Confirmation/Confirma
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { deleteCustomAddress, resolveAddressMonitor, toggleAddressMonitor } from '@proton/pass/store/actions';

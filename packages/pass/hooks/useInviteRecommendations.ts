@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { inviteRecommendationsFailure, inviteRecommendationsSuccess } from '@proton/pass/store/actions';
 import { getShareAccessOptions, inviteRecommendationsIntent } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
@@ -33,7 +33,7 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
         typeof inviteRecommendationsSuccess,
         typeof inviteRecommendationsFailure
     >(inviteRecommendationsIntent, {
-        onSuccess: ({ data }) => {
+        onSuccess: (data) => {
             didLoad.current = true;
             const empty = data.emails.length + (data.organization?.emails.length ?? 0) === 0;
             emptyBoundary.current = empty ? startsWith : null;

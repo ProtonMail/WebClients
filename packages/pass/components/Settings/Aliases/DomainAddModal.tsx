@@ -7,7 +7,7 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { validateAliasDomain } from '@proton/pass/lib/validation/domain';
 import { createCustomDomain } from '@proton/pass/store/actions';
 import type { CustomDomainOutput } from '@proton/pass/types';
@@ -24,11 +24,7 @@ export type ConfirmationModalProps = {
 };
 
 export const DomainAddModal = ({ onClose, onSubmit }: ConfirmationModalProps) => {
-    const { loading, dispatch } = useRequest(createCustomDomain, {
-        onSuccess: ({ data }) => {
-            onSubmit(data);
-        },
-    });
+    const { loading, dispatch } = useRequest(createCustomDomain, { onSuccess: onSubmit });
 
     const form = useFormik<DomainFormValues>({
         initialValues: { domain: '' },

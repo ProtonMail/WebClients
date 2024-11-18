@@ -9,7 +9,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { getItemsText } from '@proton/pass/components/Settings/helper';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
 import { selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { Invite } from '@proton/pass/types/data/invites';

@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { type PasswordVerification } from '@proton/pass/lib/auth/password';
 import { validateCurrentPassword } from '@proton/pass/lib/validation/auth';
 import { passwordConfirm } from '@proton/pass/store/actions';

@@ -10,7 +10,7 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { useValidateInviteAddresses } from '@proton/pass/hooks/useValidateInviteAddress';
 import { validateShareInviteValues } from '@proton/pass/lib/validation/vault-invite';
 import {
@@ -51,8 +51,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
         typeof inviteBatchCreateSuccess,
         typeof inviteBatchCreateFailure
     >(inviteBatchCreateIntent, {
-        onSuccess: (req) => {
-            const { shareId } = req.data;
+        onSuccess: ({ shareId }) => {
             if (props.withVaultCreation) props.onVaultCreated?.(shareId);
             manageAccess(shareId);
         },

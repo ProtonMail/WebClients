@@ -8,7 +8,7 @@ import { Button, Card } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Option, SelectTwo } from '@proton/components';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { aliasSyncEnable } from '@proton/pass/store/actions';
 import { selectDefaultVault, selectWritableVaults } from '@proton/pass/store/selectors';
 import { truthy } from '@proton/pass/utils/fp/predicates';

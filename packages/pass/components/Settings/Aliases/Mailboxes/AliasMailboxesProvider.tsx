@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { UpsellRef } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getMailboxes } from '@proton/pass/store/actions';
 import { selectCanManageAlias } from '@proton/pass/store/selectors';
 import type { MaybeNull, UserMailboxOutput } from '@proton/pass/types';
@@ -48,7 +48,7 @@ export const AliasMailboxesProvider: FC<{ children: (ctx: AliasMailboxesContextV
     const resetAction = () => setAction(null);
 
     const [mailboxes, setMailboxes] = useState<Record<number, UserMailboxOutput>>({});
-    const sync = useRequest(getMailboxes, { onSuccess: ({ data }) => setMailboxes(toMap(data, 'MailboxID')) });
+    const sync = useRequest(getMailboxes, { onSuccess: (mailboxes) => setMailboxes(toMap(mailboxes, 'MailboxID')) });
 
     const context = useMemo<AliasMailboxesContextValue>(
         () => ({

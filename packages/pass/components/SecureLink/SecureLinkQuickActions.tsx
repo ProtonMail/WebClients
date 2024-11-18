@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { secureLinksRemoveInactive } from '@proton/pass/store/actions';
 import { selectInactiveSecureLinks } from '@proton/pass/store/selectors';
 

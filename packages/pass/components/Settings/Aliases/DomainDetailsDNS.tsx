@@ -7,7 +7,7 @@ import { Alert, Icon } from '@proton/components/index';
 import proxyScreenshot from '@proton/pass/assets/alias/proxy-screenshot.png';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { DomainDetailsDNSSection } from '@proton/pass/components/Settings/Aliases/DomainDetailsDNSSection';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { verifyCustomDomain } from '@proton/pass/store/actions';
 import type { CustomDomainOutput, CustomDomainValidationOutput } from '@proton/pass/types';
 
@@ -224,9 +224,7 @@ type Props = {
 
 export const DomainDetailsDNS = ({ domain, onVerify }: Props) => {
     const verify = useRequest(verifyCustomDomain, {
-        onSuccess: ({ data }) => {
-            onVerify({ ...domain, ...data });
-        },
+        onSuccess: (data) => onVerify({ ...domain, ...data }),
     });
 
     const handleVerifyClick = () => {
