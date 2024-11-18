@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useActiveShare from '../../../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../../../hooks/drive/useActiveShare';
 import { useFolderTree } from '../../../../../store';
 import type { Device } from '../../../../../store/_devices';
 import ExpandButton from '../DriveSidebarFolders/DriveExpandButton';

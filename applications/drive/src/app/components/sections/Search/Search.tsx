@@ -20,7 +20,7 @@ import { getSelectedItems } from '../helpers';
 import { NoSearchResultsView } from './NoSearchResultsView';
 import { SearchItemContextMenu } from './SearchItemContextMenu';
 
-export interface SearchItem extends FileBrowserBaseItem {
+interface SearchItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];
     cachedThumbnailUrl?: string;
     hasThumbnail: boolean;

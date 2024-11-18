@@ -2,10 +2,10 @@ import { useEffect, useMemo } from 'react';
 import * as React from 'react';
 
 import { ContextMenu, ContextSeparator } from '@proton/components';
-import type { SHARE_MEMBER_PERMISSIONS} from '@proton/shared/lib/drive/permissions';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
-import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useDriveSharingFlags, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';

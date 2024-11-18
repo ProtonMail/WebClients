@@ -68,7 +68,7 @@ export interface ParsedExtendedAttributes {
     };
 }
 
-export type MaybeExtendedAttributes = DeepPartial<ExtendedAttributes>;
+type MaybeExtendedAttributes = DeepPartial<ExtendedAttributes>;
 
 export async function encryptFolderExtendedAttributes(
     modificationTime: Date,

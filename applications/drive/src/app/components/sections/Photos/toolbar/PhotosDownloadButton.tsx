@@ -33,5 +33,3 @@ export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks
         />
     );
 };
-
-export default PhotosDownloadButton;

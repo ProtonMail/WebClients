@@ -5,11 +5,8 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
-export type DecryptAndCacheLink = (
-    linkMeta: ShareMapLink,
-    parentPrivateKey: PrivateKeyReference
-) => Promise<{ name: string }>;
-export type GetCachedParentPrivateKey = (linkId: string | null) => PrivateKeyReference | undefined;
+type DecryptAndCacheLink = (linkMeta: ShareMapLink, parentPrivateKey: PrivateKeyReference) => Promise<{ name: string }>;
+type GetCachedParentPrivateKey = (linkId: string | null) => PrivateKeyReference | undefined;
 
 export const LINK_KEYS_NOT_FOUND_MESSAGE = "ES Indexing: parent link key wasn't not found.";
 

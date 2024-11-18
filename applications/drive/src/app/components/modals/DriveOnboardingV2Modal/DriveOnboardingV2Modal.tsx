@@ -3,20 +3,13 @@ import { type FC, useEffect, useMemo, useState } from 'react';
 
 import { useUserSettings, useWelcomeFlags } from '@proton/account';
 import type { ModalStateProps } from '@proton/components';
-import {
-    Loader,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    useApi,
-    useDrivePlan
-} from '@proton/components';
+import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, useApi, useDrivePlan } from '@proton/components';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import useDesktopDownloads from '../../../hooks/drive/useDesktopDownloads';
+import { useDesktopDownloads } from '../../../hooks/drive/useDesktopDownloads';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useOnboarding } from '../../onboarding/useOnboarding';
 import { Header } from './Header';
