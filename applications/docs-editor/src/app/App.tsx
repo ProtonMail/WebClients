@@ -155,6 +155,15 @@ export function App({ systemMode }: Props) {
         return docState.getDocState()
       },
 
+      async replaceEditorState(state: SerializedEditorState) {
+        const editorState = editorRef.current?.parseEditorState(state)
+        if (!editorState) {
+          return
+        }
+
+        editorRef.current?.setEditorState(editorState)
+      },
+
       async handleCommentsChange() {
         application.eventBus.publish({
           type: CommentsEvent.CommentsChanged,

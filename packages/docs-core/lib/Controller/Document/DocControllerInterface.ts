@@ -6,6 +6,7 @@ import type {
   DataTypesThatDocumentCanBeExportedAs,
   DocumentRole,
   DocTrashState,
+  YjsState,
 } from '@proton/docs-shared'
 import type { PrivateDocLoadSuccessResult } from './DocLoadSuccessResult'
 import type { UserState } from '@lexical/yjs'
@@ -27,23 +28,25 @@ export interface DocControllerInterface extends AnyDocControllerInterface {
   destroy(): void
   duplicateDocument(): Promise<void>
   editorIsReadyToReceiveInvocations(editorInvoker: ClientRequiresEditorMethods): Promise<void>
-  editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   editorIsRequestingToLockAfterRenderingIssue(): void
-  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
+  editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
+  exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
   getDocumentClientId(): Promise<number | undefined>
   getEditorJSON(): Promise<SerializedEditorState | undefined>
   getSureDocument(): DocumentMetaInterface
-  getVersionHistory(): NativeVersionHistory | undefined
   getTrashState(): DocTrashState | undefined
+  getVersionHistory(): NativeVersionHistory | undefined
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
   initialize(): Promise<Result<PrivateDocLoadSuccessResult>>
   openDocumentSharingModal(): void
   printAsPDF(): Promise<void>
   renameDocument(newName: string): Promise<TranslatedResult<void>>
-  trashDocument(): Promise<void>
   restoreDocument(): Promise<void>
+  restoreRevisionAsCopy(yjsContent: YjsState): Promise<void>
+  restoreRevisionByReplacing(lexicalState: SerializedEditorState): Promise<void>
   showCommentsPanel(): void
   squashDocument(): Promise<void>
   toggleDebugTreeView(): Promise<void>
+  trashDocument(): Promise<void>
 }

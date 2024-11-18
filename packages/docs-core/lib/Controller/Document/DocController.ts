@@ -19,6 +19,7 @@ import type {
   DocTrashState,
   EditorEventData,
   EditorEvent,
+  YjsState,
 } from '@proton/docs-shared'
 import {
   DocAwarenessEvent,
@@ -37,6 +38,7 @@ import type { PrivateDocLoadSuccessResult } from './DocLoadSuccessResult'
 import type { UserState } from '@lexical/yjs'
 import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import { getErrorString } from '../../Util/GetErrorString'
+import type { VersionHistoryUpdate } from '../../VersionHistory'
 import { NativeVersionHistory } from '../../VersionHistory'
 import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
 import type { DocControllerEventPayloads } from './DocControllerEvent'
@@ -97,6 +99,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   isDestroyed = false
   trashState?: DocTrashState
   didTrashDocInCurrentSession = false
+  receivedOrSentDUs: VersionHistoryUpdate[] = []
 
   public userAddress?: string
   readonly participantTracker = new DocParticipantTracker(this.eventBus)
@@ -613,11 +616,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   public getVersionHistory(): NativeVersionHistory | undefined {
-    if (!this.initialCommit) {
-      return
-    }
-
-    return new NativeVersionHistory(this.initialCommit)
+    const updates = [...(this.initialCommit?.updates ?? []), ...this.receivedOrSentDUs]
+    return updates.length > 0 ? new NativeVersionHistory(updates) : undefined
   }
 
   /**
@@ -694,6 +694,10 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       } else {
         this.sizeTracker.incrementSize(message.content.byteLength)
         void this.websocketService.sendDocumentUpdateMessage(this.nodeMeta, message.content, debugSource)
+        this.receivedOrSentDUs.push({
+          content: message.content,
+          timestamp: Date.now(),
+        })
       }
     } else if (message.type.wrapper === 'events') {
       void this.websocketService.sendEventMessage(this.nodeMeta, message.content, message.type.eventType, debugSource)
@@ -830,6 +834,39 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     const shell = result.getValue()
 
     void this.driveCompat.openDocument(shell)
+  }
+
+  public async restoreRevisionAsCopy(yjsContent: YjsState): Promise<void> {
+    if (!this.docMeta) {
+      throw new Error('Attempting to restore revision as copy before document is initialized')
+    }
+
+    if (!this.editorInvoker) {
+      throw new Error('Editor invoker not initialized when restoring revision as copy')
+    }
+
+    const result = await this._duplicateDocument.executePrivate(this.docMeta, yjsContent)
+
+    if (result.isFailed()) {
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error').t`An error occurred while attempting to restore the document. Please try again.`,
+      })
+
+      this.logger.error('Failed to restore document as copy', result.getError())
+      return
+    }
+
+    const shell = result.getValue()
+
+    void this.driveCompat.openDocument(shell)
+  }
+
+  public async restoreRevisionByReplacing(lexicalState: SerializedEditorState): Promise<void> {
+    if (!this.editorInvoker) {
+      throw new Error('Attempting to restore revision by replacing before editor invoker is initialized')
+    }
+
+    await this.editorInvoker.replaceEditorState(lexicalState)
   }
 
   public async createNewDocument(): Promise<void> {
@@ -1020,6 +1057,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
       return
     }
+
+    this.receivedOrSentDUs.push(message)
 
     this.sizeTracker.incrementSize(message.byteSize())
 

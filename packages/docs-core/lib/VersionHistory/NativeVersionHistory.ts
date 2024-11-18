@@ -1,7 +1,6 @@
 import { BatchDocumentUpdates } from './BatchDocumentUpdates'
 import { mergeUpdates } from 'yjs'
-import type { DecryptedCommit } from '../Models/DecryptedCommit'
-import type { VersionHistoryBatch } from './VersionHistoryBatch'
+import type { VersionHistoryBatch, VersionHistoryUpdate } from './VersionHistoryBatch'
 import { DateFormatter } from './DateFormatter'
 
 /**
@@ -15,8 +14,8 @@ export class NativeVersionHistory {
   private _batchDocumentUpdates = new BatchDocumentUpdates()
   private dateFormatter = new DateFormatter()
 
-  constructor(commit: DecryptedCommit) {
-    this.versionHistoryBatches = this._batchDocumentUpdates.execute(commit.updates, BatchThreshold).getValue()
+  constructor(updates: VersionHistoryUpdate[]) {
+    this.versionHistoryBatches = this._batchDocumentUpdates.execute(updates, BatchThreshold).getValue()
   }
 
   get batches() {
@@ -32,6 +31,18 @@ export class NativeVersionHistory {
     const timestamp = this.getTimestampForBatch(batch)
     const date = new Date(timestamp)
     return date.toLocaleString()
+  }
+
+  public getShortFormattedDateAndTimeForBatch(batch: VersionHistoryBatch) {
+    const timestamp = this.getTimestampForBatch(batch)
+    const date = new Date(timestamp)
+    return date.toLocaleString('en-US', {
+      year: '2-digit',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    })
   }
 
   public getFormattedDateForBatch(batch: VersionHistoryBatch) {

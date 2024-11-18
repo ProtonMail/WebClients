@@ -18,6 +18,7 @@ import type { HttpHeaders } from '../Api/DocsApi'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { UnleashClient } from '@proton/unleash'
 import type { AnyDocControllerInterface } from '../Controller/Document/AnyDocControllerInterface'
+import type { DocControllerInterface } from '../Controller/Document/DocControllerInterface'
 
 declare const window: CustomWindow
 
@@ -64,6 +65,14 @@ export class Application implements ApplicationInterface {
 
   public get docController(): AnyDocControllerInterface {
     return this.docLoader.getDocController()
+  }
+
+  public get privateDocController(): DocControllerInterface {
+    if (this.compatWrapper.publicCompat) {
+      throw new Error('Attempting to access private doc controller in public mode')
+    }
+
+    return this.docController as DocControllerInterface
   }
 
   public get docLoader(): DocLoaderInterface {
