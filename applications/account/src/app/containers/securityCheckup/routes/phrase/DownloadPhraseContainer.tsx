@@ -11,7 +11,6 @@ import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
 import { Checkbox, Icon, Label, useApi, useEventManager, useSecurityCheckup } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
-import { generatePDFKit } from '@proton/recovery-kit';
 import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { BRAND_NAME, RECOVERY_KIT_FILE_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -28,6 +27,11 @@ import SecurityCheckupMainIcon from '../../components/SecurityCheckupMainIcon';
 import SecurityCheckupMainTitle from '../../components/SecurityCheckupMainTitle';
 import { phraseIcon } from '../../methodIcons';
 import recoveryKitSrc from './recovery-kit.svg';
+
+const getRecoveryKit = async () => {
+    // Note: This chunkName is important as it's used in the chunk plugin to avoid splitting it into multiple files
+    return import(/* webpackChunkName: "recovery-kit" */ '@proton/recovery-kit');
+};
 
 type Payload = Awaited<ReturnType<typeof generateMnemonicPayload>>;
 
@@ -227,6 +231,8 @@ const DownloadPhraseContainer = () => {
 
     const generatePdfBlob = async (recoveryPhrase: string) => {
         const emailAddress = Email || Name || '';
+
+        const { generatePDFKit } = await getRecoveryKit();
 
         const pdf = await generatePDFKit({
             date: `Created on ${format(new Date(), 'PPP')}`,
