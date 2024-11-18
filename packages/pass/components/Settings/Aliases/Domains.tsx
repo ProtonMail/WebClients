@@ -17,7 +17,7 @@ import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusIcon } from '@proton/pass/components/Upsell/PassPlusIcon';
 import { UpsellRef } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getCustomDomains } from '@proton/pass/store/actions';
 import { selectUserPlan } from '@proton/pass/store/selectors';
 import type { CustomDomainOutput, CustomDomainSettingsOutput, Maybe, MaybeNull } from '@proton/pass/types';
@@ -37,11 +37,7 @@ export const Domains: FC = () => {
 
     const spotlight = useSpotlight();
 
-    const getAllDomains = useRequest(getCustomDomains, {
-        onSuccess: ({ data }) => {
-            setDomains(data);
-        },
-    });
+    const getAllDomains = useRequest(getCustomDomains, { onSuccess: setDomains });
 
     const handleOpenModalDNS = (domain: CustomDomainOutput) => {
         setAction({ type: DomainTab.DNS, ...domain });

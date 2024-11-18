@@ -8,7 +8,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import sentinel from '@proton/pass/assets/monitor/sentinel.svg';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { sentinelToggle } from '@proton/pass/store/actions';
 import { selectPassPlan, selectSentinelEligible, selectSentinelEnabled } from '@proton/pass/store/selectors';

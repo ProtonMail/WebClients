@@ -11,7 +11,7 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { type EmailFormValues, validateEmailForm } from '@proton/pass/lib/validation/email';
 import { createMailbox } from '@proton/pass/store/actions';
 
@@ -22,7 +22,7 @@ type Props = { onClose: () => void };
 
 export const AliasMailboxCreateModal: FC<Props> = ({ onClose }) => {
     const aliasMailboxes = useAliasMailboxes();
-    const create = useRequest(createMailbox, { onSuccess: ({ data }) => aliasMailboxes.onCreate(data) });
+    const create = useRequest(createMailbox, { onSuccess: aliasMailboxes.onCreate });
 
     const form = useFormik<EmailFormValues>({
         initialValues: { email: '' },
