@@ -7,7 +7,7 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import { usePublicSessionUser } from '../../../store';
 
-export interface Props {
+interface Props {
     className?: string;
 }
 export const ClosePartialPublicViewButton = ({ className }: Props) => {

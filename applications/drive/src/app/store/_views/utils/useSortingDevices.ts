@@ -84,7 +84,7 @@ function sortParamsToSortConfig({ sortField, sortOrder: direction }: SortParams)
 
 function getNameSortConfig(direction = SORT_DIRECTION.ASC) {
     return {
-        key: 'name' as SortField,
+        key: 'name' as unknown as SortField,
         direction,
         compare: (a: string, b: string) => a.localeCompare(b, undefined, { numeric: true }),
     };

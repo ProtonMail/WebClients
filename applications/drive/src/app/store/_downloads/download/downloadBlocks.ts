@@ -22,7 +22,7 @@ import { MAX_DOWNLOADING_BLOCKS, MAX_RETRIES_BEFORE_FAIL, TIME_TO_RESET_RETRIES 
 import type { DownloadCallbacks, DownloadStreamControls, LogCallback } from '../interface';
 import downloadBlock from './downloadBlock';
 
-export type DownloadBlocksCallbacks = Omit<
+type DownloadBlocksCallbacks = Omit<
     DownloadCallbacks,
     'getBlocks' | 'onInit' | 'onSignatureIssue' | 'getChildren' | 'getKeys' | 'onProgress'
 > & {

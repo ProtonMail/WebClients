@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { createContext, useContext, useMemo, useRef } from 'react';
 
 import { useApi, useEventManager } from '@proton/components';
@@ -316,10 +315,4 @@ export const useDriveEventManager = () => {
         return DRIVE_EVENT_MANAGER_FUNCTIONS_STUB;
     }
     return state;
-};
-
-export type DriveEventManagerProviderProps = {
-    api: Api;
-    generalEventManager: EventManager;
-    children: ReactNode;
 };

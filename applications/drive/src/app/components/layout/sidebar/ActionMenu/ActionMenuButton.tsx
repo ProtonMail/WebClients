@@ -15,7 +15,7 @@ import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
-import useActiveShare from '../../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
 import { useFileUploadInput, useFolderUploadInput, useFolderView } from '../../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../../store/_documents';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
@@ -92,5 +92,3 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
         </>
     );
 };
-
-export default ActionMenuButton;

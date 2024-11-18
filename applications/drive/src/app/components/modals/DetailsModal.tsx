@@ -33,7 +33,7 @@ import ModalContentLoader from './ModalContentLoader';
 
 const { UserNameCell, LocationCell, TimeCell, DescriptiveTypeCell, MimeTypeCell } = Cells;
 
-export interface Props {
+interface Props {
     shareId: string;
     linkId: string;
     onClose?: () => void;

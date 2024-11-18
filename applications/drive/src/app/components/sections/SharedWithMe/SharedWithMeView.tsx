@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useAppTitle } from '@proton/components';
 
-import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useDriveSharingFlags, useSharedWithMeView } from '../../../store';
 import { Actions, traceTelemetry } from '../../../utils/telemetry';
 import { FileBrowserStateProvider } from '../../FileBrowser';

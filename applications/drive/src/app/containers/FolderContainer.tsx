@@ -12,7 +12,7 @@ import DriveStartupModals from '../components/modals/DriveStartupModals';
 import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
 import DriveView from '../components/sections/Drive/DriveView';
 import type { DriveFolder } from '../hooks/drive/useActiveShare';
-import useActiveShare from '../hooks/drive/useActiveShare';
+import { useActiveShare } from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useNavigate from '../hooks/drive/useNavigate';
 import { useContextShareHandler, useDefaultShare, useDriveEventManager } from '../store';

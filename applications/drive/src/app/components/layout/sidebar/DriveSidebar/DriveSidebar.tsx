@@ -7,7 +7,7 @@ import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContact
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { APPS } from '@proton/shared/lib/constants';
 
-import useActiveShare from '../../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
 import { useDebug } from '../../../../hooks/drive/useDebug';
 import type { ShareWithKey } from '../../../../store';
 import { useDefaultShare } from '../../../../store';

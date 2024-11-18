@@ -86,7 +86,7 @@ export interface LinkShareUrl {
     numAccesses?: number;
 }
 
-export interface LinkSharingDetails {
+interface LinkSharingDetails {
     shareUrl?: LinkShareUrl;
     shareId: string;
 }

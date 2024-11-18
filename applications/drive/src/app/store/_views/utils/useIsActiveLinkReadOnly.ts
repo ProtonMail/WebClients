@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { ShareType } from '../..';
-import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { isIgnoredError, sendErrorReport } from '../../../utils/errorHandling';
 import type { DecryptedLink } from '../../_links';
 import { useLink } from '../../_links';
