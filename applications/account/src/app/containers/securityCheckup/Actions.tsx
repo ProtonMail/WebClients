@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useSecurityCheckup } from '@proton/components';
-import { getFormattedValue } from '@proton/components/components/v2/phone/helper';
+import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import {
     getIsPerfectEmailState,
@@ -123,7 +123,7 @@ const PhoneAction = () => {
         );
     }
 
-    const formattedPhoneNumber = getFormattedValue(phone.value);
+    const formattedPhoneNumber = <FormattedPhoneValue value={phone.value} />;
 
     if (!phone.isEnabled) {
         return (
