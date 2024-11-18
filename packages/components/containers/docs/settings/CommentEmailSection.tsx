@@ -27,8 +27,7 @@ export const CommentEmailSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="text-semibold" htmlFor="emails-enabled-toggle">
-                        <span className="mr-2">{c('Setting')
-                            .t`Enable email notifications for comments and suggestions`}</span>
+                        <span className="mr-2">{c('Setting').t`Get updates about comments via email`}</span>
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
@@ -47,7 +46,7 @@ export const CommentEmailSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="text-semibold" htmlFor="document-name-toggle">
-                        <span className="mr-2">{c('Setting').t`Include document name in comment emails`}</span>
+                        <span className="mr-2">{c('Setting').t`Include document name in email notifications`}</span>
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
