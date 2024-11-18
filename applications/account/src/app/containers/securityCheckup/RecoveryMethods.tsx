@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useSecurityCheckup } from '@proton/components';
-import { getFormattedValue } from '@proton/components/components/v2/phone/helper';
+import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import {
@@ -79,7 +79,7 @@ const Phone = () => {
         return;
     }
 
-    const formattedPhoneNumber = getFormattedValue(phone.value);
+    const formattedPhoneNumber = <FormattedPhoneValue value={phone.value} />;
 
     return (
         <SecurityCheckupCard>
