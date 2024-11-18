@@ -39,7 +39,6 @@ export const AliasContactCreate: FC<Props> = ({ onClose }) => {
         <SidebarModal className="ui-teal" onClose={onClose} open>
             {(didEnter) => (
                 <Panel
-                    className="pass-panel--full"
                     header={
                         <PanelHeader
                             actions={[
@@ -53,7 +52,7 @@ export const AliasContactCreate: FC<Props> = ({ onClose }) => {
                                     onClick={onClose}
                                     title={c('Action').t`Cancel`}
                                 >
-                                    <Icon name="cross" alt={c('Action').t`Cancel`} />
+                                    <Icon name="chevron-left" alt={c('Action').t`Cancel`} />
                                 </Button>,
                                 <Button
                                     color="norm"
