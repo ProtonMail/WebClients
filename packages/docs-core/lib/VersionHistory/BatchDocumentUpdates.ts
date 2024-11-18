@@ -1,4 +1,4 @@
-import type { DecryptedMessage } from '@proton/docs-shared'
+import type { VersionHistoryUpdate } from './VersionHistoryBatch'
 import type { VersionHistoryBatch } from './VersionHistoryBatch'
 import { Result } from '../Domain/Result/Result'
 import type { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
@@ -10,7 +10,7 @@ import type { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterfac
  * two batches of 100 updates each.
  */
 export class BatchDocumentUpdates implements SyncUseCaseInterface<VersionHistoryBatch[]> {
-  execute(updates: DecryptedMessage[], batchThreshold: number): Result<VersionHistoryBatch[]> {
+  execute(updates: VersionHistoryUpdate[], batchThreshold: number): Result<VersionHistoryBatch[]> {
     if (!updates.length) {
       return Result.ok([])
     }

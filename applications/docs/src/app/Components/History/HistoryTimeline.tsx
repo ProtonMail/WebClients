@@ -20,7 +20,7 @@ function HistoryTimeline({
     <>
       {formattedBatchGroups.map(({ formattedDate, batchIndexes }, index) => {
         return (
-          <div className="pl-7">
+          <div className="pl-7" key={formattedDate}>
             <div className="flex items-stretch border-l border-[--border-norm]">
               <div className="inline-flex flex-col">
                 <span
@@ -37,9 +37,8 @@ function HistoryTimeline({
             <div className="border-l border-[--border-norm] px-4">
               {batchIndexes.map(({ formattedTime, batchIndex }) => {
                 return (
-                  <div className="pt-2">
+                  <div key={batchIndex} className="pt-2">
                     <button
-                      key={batchIndex}
                       className={clsx(
                         'flex w-full items-center justify-between rounded-lg px-2 py-2.5',
                         batchIndex === selectedBatchIndex && 'bg-[--signal-success] text-[--signal-success-contrast]',

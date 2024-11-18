@@ -22,6 +22,7 @@ type ProviderProps = {
   application: Application
 } & ChildrenProps
 
+// eslint-disable-next-line react/display-name
 const MemoizedChildren = memo(({ children }: ChildrenProps) => <>{children}</>)
 
 const ApplicationProvider = ({ application, children }: ProviderProps) => {
