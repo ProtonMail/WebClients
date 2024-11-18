@@ -2,7 +2,7 @@
     "compilerOptions": {
         "noImplicitAny": true,
         "module": "commonjs",
-        "target": "es5",
+        "target": "es2015",
         "esModuleInterop": true
     }
 }

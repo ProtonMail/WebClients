@@ -1,5 +1,5 @@
 import { ModalsChildren, ModalsProvider, NotificationsProvider } from '@proton/components';
-import Icons from '@proton/icons/Icons';
+import InlineIcons from '@proton/icons/InlineIcons';
 
 import './prismjs.js';
 import theme from './theme';
@@ -9,7 +9,7 @@ import './index.scss';
 export const decorators = [
     (Story) => (
         <>
-            <Icons />
+            <InlineIcons />
             <NotificationsProvider>
                 <ModalsProvider>
                     <ModalsChildren />
