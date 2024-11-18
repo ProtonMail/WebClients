@@ -1,7 +1,6 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getPlanTitle, isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
@@ -26,7 +25,6 @@ export const NoPaymentRequiredNote = ({ checkResult, subscription, hasPaymentMet
         return null;
     }
 
-    const remainingCreditsFormatted = getSimplePriceString(checkResult.Currency, creditsRemaining);
     const showReaminingCredits = checkResult?.Credit && creditsRemaining && !currencyConversion && false;
 
     return (
@@ -35,8 +33,13 @@ export const NoPaymentRequiredNote = ({ checkResult, subscription, hasPaymentMet
                 <>
                     <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
                     {showReaminingCredits ? (
-                        <div className="mb-4">{c('Info')
-                            .t`Please note that upon clicking the Confirm button, your account will have ${remainingCreditsFormatted} credits remaining.`}</div>
+                        <div className="mb-4">
+                            {c('Info').ngettext(
+                                msgid`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credit remaining.`,
+                                `Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`,
+                                creditsRemaining
+                            )}
+                        </div>
                     ) : null}
                 </>
             )}
