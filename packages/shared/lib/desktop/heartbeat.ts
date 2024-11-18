@@ -22,6 +22,15 @@ const getDefaultMailto = () => getInboxDesktopInfo('defaultMailto');
 const checkDefaultMailto = () => invokeInboxDesktopIPC({ type: 'checkDefaultMailtoAndSignal' });
 const defaultMailtoTelemetryReported = (timestamp: number) =>
     invokeInboxDesktopIPC({ type: 'defaultMailtoTelemetryReported', payload: timestamp });
+const getUnixTimeNow = () => {
+    return getUnixTime(new Date());
+};
+
+const isAtLeastDayAgo = (lastUnixTime: number) => {
+    const nowMs = getUnixTimeNow() * 1000;
+    const lastMs = lastUnixTime * 1000;
+    return differenceInDays(nowMs, lastMs) > 0;
+};
 
 function checkMailtoTelemetryIsNeeded() {
     if (!hasInboxDesktopFeature('MailtoTelemetry')) {
@@ -29,9 +38,7 @@ function checkMailtoTelemetryIsNeeded() {
     }
 
     const data = getDefaultMailto();
-    const now = getUnixTime(new Date());
-    const days = differenceInDays(now, data.lastReport.timestamp);
-    if (days == 0) {
+    if (!isAtLeastDayAgo(data.lastReport.timestamp)) {
         return;
     }
 
@@ -67,7 +74,7 @@ function sendMailtoTelemetry(api: Api, data: DefaultProtocol) {
         dimensions,
     });
 
-    defaultMailtoTelemetryReported(getUnixTime(new Date()));
+    defaultMailtoTelemetryReported(getUnixTimeNow());
 }
 
 export function useInboxDesktopHeartbeat() {
@@ -89,3 +96,6 @@ export function useInboxDesktopHeartbeat() {
         };
     }, [api]);
 }
+
+export const getUnixTimeNowTestOnly = getUnixTimeNow;
+export const isAtLeastDayAgoTestOnly = isAtLeastDayAgo;
