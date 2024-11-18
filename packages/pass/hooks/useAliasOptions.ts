@@ -8,7 +8,7 @@ import type { MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { AliasMailbox } from '@proton/pass/types/data/alias';
 import noop from '@proton/utils/noop';
 
-import { useActionRequest } from './useActionRequest';
+import { useActionRequest } from './useRequest';
 
 export type SanitizedAliasOptions = {
     suffixes: { value: string; signature: string }[];

@@ -7,7 +7,7 @@ import { Button, CircleLoader } from '@proton/atoms';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { AliasSyncModal } from '@proton/pass/components/Settings/AliasSyncModal';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { aliasSyncStatus } from '@proton/pass/store/actions';
 import { selectUserData } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

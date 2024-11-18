@@ -7,7 +7,7 @@ import { Option, SelectTwo } from '@proton/components';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';
 import { UpsellRef } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getAliasDomains, setDefaultAliasDomain } from '@proton/pass/store/actions';
 import { selectUserPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull, UserAliasDomainOutput } from '@proton/pass/types';
@@ -33,7 +33,7 @@ export const DefaultDomainSelector: FC<Props> = ({ className }) => {
     const canManageAlias = useSelector(selectUserPlan)?.ManageAlias;
 
     const getAllDomains = useRequest(getAliasDomains, {
-        onSuccess: ({ data }) => {
+        onSuccess: (data) => {
             setDomains(data);
             const defaultDomain = data.find(({ IsDefault }) => IsDefault)?.Domain;
             if (defaultDomain) setDefaultDomain(defaultDomain);
@@ -41,7 +41,7 @@ export const DefaultDomainSelector: FC<Props> = ({ className }) => {
     });
 
     const setDomain = useRequest(setDefaultAliasDomain, {
-        onSuccess: ({ data }) => setDefaultDomain(data.DefaultAliasDomain ?? null),
+        onSuccess: ({ DefaultAliasDomain }) => setDefaultDomain(DefaultAliasDomain ?? null),
     });
 
     const handleChange = (value: MaybeNull<string>) => {

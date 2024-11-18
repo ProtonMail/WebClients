@@ -8,7 +8,7 @@ import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';
 import { UpsellRef } from '@proton/pass/constants';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { offlineToggle } from '@proton/pass/store/actions';
 import { selectOfflineEnabled, selectPassPlan, selectUserSettings } from '@proton/pass/store/selectors';

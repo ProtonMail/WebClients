@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import warningIcon from '@proton/pass/assets/secure-link/secure-link-warning.svg';
 import { ItemContentView } from '@proton/pass/components/Item/Containers/ItemContentView';
 import { DateBadge } from '@proton/pass/components/Layout/Badge/DateBadge';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { intoSecureLinkItemRevision } from '@proton/pass/lib/secure-links/secure-links.utils';
 import { secureLinkOpen } from '@proton/pass/store/actions';
 import type { Maybe, MaybeNull, SecureLinkItem } from '@proton/pass/types';
@@ -23,8 +23,8 @@ const SecureLinkView: FC = () => {
     const { dispatch, loading } = useRequest(secureLinkOpen, {
         initial: { token, linkKey: '' },
         onStart: () => setError(null),
-        onSuccess: ({ data }) => setResponse(data),
-        onFailure: ({ data }) => setError(data.error),
+        onSuccess: setResponse,
+        onFailure: ({ error }) => setError(error),
     });
 
     useEffect(() => dispatch({ token, linkKey: hash.replaceAll('#', '') }), []);

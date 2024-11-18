@@ -6,7 +6,7 @@ import { Button, CircleLoader } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
