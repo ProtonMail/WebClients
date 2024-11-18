@@ -69,7 +69,7 @@ const thunk = ({
 } = {}): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
         const getRegionalCurrencies: () => Promise<Currency[]> = async () => {
-            const user = selectUser(getState()).value;
+            const user = selectUser(getState())?.value;
 
             const [status, subscription] = await Promise.all([
                 dispatch(paymentStatusThunk({ api: apiOverride ? apiOverride : undefined })),
