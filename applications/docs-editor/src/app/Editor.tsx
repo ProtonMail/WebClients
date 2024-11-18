@@ -171,7 +171,7 @@ export function Editor({
                   justifySelf: 'center',
                 }}
                 isSuggestionMode={isSuggestionMode}
-                data-testid="main-editor"
+                data-testid={systemMode === EditorSystemMode.Revision ? 'main-editor-revision' : 'main-editor'}
               />
             </div>
           }
@@ -214,7 +214,7 @@ export function Editor({
         />
         {showTreeView && <TreeViewPlugin />}
         <MarkNodesProvider>
-          <CommentPlugin controller={clientInvoker} username={username} />
+          {systemMode !== EditorSystemMode.Revision && <CommentPlugin controller={clientInvoker} username={username} />}
           {isSuggestionsFeatureEnabled && (
             <SuggestionModePlugin
               isSuggestionMode={isSuggestionMode}

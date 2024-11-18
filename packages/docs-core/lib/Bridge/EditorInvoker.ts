@@ -8,6 +8,7 @@ import type {
   DataTypesThatDocumentCanBeExportedAs,
   DocumentRoleType,
   EditorInitializationConfig,
+  YjsState,
 } from '@proton/docs-shared'
 import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shared'
 import type { LoggerInterface } from '@proton/utils/logs'
@@ -48,8 +49,12 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('receiveMessage', [message])
   }
 
-  async getDocumentState(): Promise<Uint8Array> {
+  async getDocumentState(): Promise<YjsState> {
     return this.invokeEditorMethod('getDocumentState', [])
+  }
+
+  async replaceEditorState(state: SerializedEditorState): Promise<void> {
+    return this.invokeEditorMethod('replaceEditorState', [state])
   }
 
   async handleCommentsChange(): Promise<void> {

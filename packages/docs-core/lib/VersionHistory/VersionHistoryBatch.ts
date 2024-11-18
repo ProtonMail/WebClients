@@ -1,3 +1,6 @@
-import type { DecryptedMessage } from '@proton/docs-shared'
+export interface VersionHistoryUpdate {
+  content: Uint8Array
+  timestamp: number
+}
 
-export type VersionHistoryBatch = DecryptedMessage[]
+export type VersionHistoryBatch = VersionHistoryUpdate[]
