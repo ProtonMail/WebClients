@@ -31,6 +31,7 @@ const addGlobalOptions = (program) => {
         .option('--api <api>', '', (api) => getApi(api), getApi(''))
         .option('--sso <sso>', '')
         .option('--no-api-proxy', '')
+        .option('--inline-icons', false)
         .option('--webpackOnCaffeine', '', false)
         .option('--logical', '', false)
         .option(
@@ -54,6 +55,7 @@ const getWebpackArgs = (options, env, { appData, buildData }) => {
         publicPath: options.publicPath === '/' ? undefined : options.publicPath,
         featureFlags: options.featureFlags,
         writeSri: options.sri ? undefined : options.sri,
+        inlineIcons: options.inlineIcons,
         warningLogs: options.warningLogs,
         errorLogs: options.errorLogs,
         overlayWarnings: options.overlayWarnings,

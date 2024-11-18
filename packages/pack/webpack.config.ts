@@ -1,5 +1,5 @@
 import path from 'path';
-import { Configuration } from 'webpack';
+import type { Configuration } from 'webpack';
 import 'webpack-dev-server';
 // @ts-ignore
 import { parseResource } from 'webpack/lib/util/identifier';
@@ -34,6 +34,7 @@ const getConfig = (env: any): Configuration => {
         webpackOnCaffeine: env.webpackOnCaffeine,
         featureFlags: env.featureFlags || '',
         writeSRI: env.writeSri !== 'false',
+        inlineIcons: env.inlineIcons === 'true',
         browserslist: env.browserslist ?? defaultBrowsersList,
         buildData: {
             version: env.version,
@@ -111,7 +112,7 @@ const getConfig = (env: any): Configuration => {
         },
         module: {
             strictExportPresence: true, // Make missing exports an error instead of warning
-            rules: [...getJsLoaders(options), ...getCssLoaders(options), ...getAssetsLoaders()],
+            rules: [...getJsLoaders(options), ...getCssLoaders(options), ...getAssetsLoaders(options)],
         },
         plugins: getPlugins({
             ...options,
