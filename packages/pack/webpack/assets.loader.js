@@ -1,6 +1,6 @@
-const DESIGN_SYSTEM_ICONS_SVG = 'sprite-icons.svg|mime-icons.svg|file-icons.svg';
+const DESIGN_SYSTEM_ICONS_SVG = 'sprite-icons.svg|file-icons.svg';
 
-module.exports = () => [
+module.exports = ({ inlineIcons } = { inlineIcons: false }) => [
     {
         /**
          * oneOf allows to take the first match instead of all matches, .e.g
@@ -20,10 +20,10 @@ module.exports = () => [
         oneOf: [
             {
                 test: new RegExp(`${DESIGN_SYSTEM_ICONS_SVG}$`),
-                type: 'asset/source',
+                type: inlineIcons ? 'asset/source' : 'asset/resource',
                 loader: 'svgo-loader',
                 options: {
-                    plugins: [],
+                    plugins: ['removeComments'],
                 },
             },
             {

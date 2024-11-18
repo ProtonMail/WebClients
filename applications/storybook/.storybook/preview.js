@@ -7,7 +7,7 @@ import {
     NotificationsProvider,
     ThemeProvider,
 } from '@proton/components';
-import Icons from '@proton/icons/Icons';
+import InlineIcons from '@proton/icons/InlineIcons';
 import { APPS } from '@proton/shared/lib/constants';
 import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';
 
@@ -57,7 +57,7 @@ export const decorators = [
         return (
             <Router>
                 <ThemeProvider initial={initialTheme} appName={APPS.PROTONMAIL}>
-                    <Icons />
+                    <InlineIcons />
                     <NotificationsProvider>
                         <ModalsProvider>
                             <NotificationsChildren />

@@ -48,6 +48,7 @@ module.exports = {
         const options = {
             isProduction,
             hasReactRefresh: false,
+            inlineIcons: true,
         };
 
         const optimization = getOptimization(options);
