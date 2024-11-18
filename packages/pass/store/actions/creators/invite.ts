@@ -45,11 +45,11 @@ export const inviteBatchCreateSuccess = createAction(
                 withCache,
                 withNotification({
                     type: 'info',
-                    text:
-                        count > 1
-                            ? // Translator : count will always be greater than 1
-                              c('Info').t`${count} invites successfully sent`
-                            : c('Info').t`Invite successfully sent`,
+                    text: c('Info').ngettext(
+                        msgid`${count} invite successfully sent`,
+                        `${count} invites successfully sent`,
+                        count
+                    ),
                 })
             )({ payload }),
         { data: true }
