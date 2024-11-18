@@ -19,7 +19,12 @@ import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvid
 import { PassCoreContext } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
-import { encodeFilters, getLocalPath, removeLocalPath } from '@proton/pass/components/Navigation/routing';
+import {
+    decodeFilters,
+    encodeFilters,
+    getLocalPath,
+    removeLocalPath,
+} from '@proton/pass/components/Navigation/routing';
 import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -111,36 +116,28 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                         if (isDocumentVisible() && !res.offline) store.dispatch(startEventPolling());
 
-                        /* redirect only if initial path is empty */
                         const emptyPath = !removeLocalPath(history.location.pathname);
 
+                        const searchParams = new URLSearchParams(history.location.search);
+                        const searchFilters = searchParams.get('filters');
+                        const currentFilters = decodeFilters(searchFilters);
+                        const cachedFilters = selectFilters(state);
+
+                        /* if no search filters are in the URL - apply the last seen sort order */
+                        if (searchFilters === null && cachedFilters?.sort) currentFilters.sort = cachedFilters.sort;
+
+                        searchParams.set('filters', encodeFilters(currentFilters));
+                        const search = searchParams.toString();
+
                         if (emptyPath) {
-                            const filters = selectFilters(state);
-                            const searchParams = new URLSearchParams(history.location.search);
-
-                            if (filters) {
-                                /** preserve the last seen sorting option
-                                 * if the initial path was empty */
-                                searchParams.set(
-                                    'filters',
-                                    encodeFilters({
-                                        selectedShareId: null,
-                                        search: '',
-                                        type: '*',
-                                        sort: filters.sort,
-                                    })
-                                );
-                            }
-
-                            const search = searchParams.toString();
-
                             const b2bOnboardingEnabled = selectB2BOnboardingEnabled(installed)(state);
                             const b2bOnboard = await core.spotlight.check(SpotlightMessage.B2B_ONBOARDING);
                             const b2bRedirect = b2bOnboardingEnabled && b2bOnboard;
 
-                            if (b2bRedirect) history.replace({ pathname: getLocalPath('onboarding'), search });
-                            else history.replace({ ...history.location, search });
+                            if (b2bRedirect) return history.replace({ pathname: getLocalPath('onboarding'), search });
                         }
+
+                        history.replace({ ...history.location, search });
                     } else if (res.clearCache) void deletePassDB(userID);
                 },
 
