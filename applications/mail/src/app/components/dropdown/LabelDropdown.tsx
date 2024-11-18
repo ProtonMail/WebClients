@@ -354,10 +354,10 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, sel
     return (
         <form className="flex flex-column flex-nowrap justify-start items-stretch flex-auto" onSubmit={handleSubmit}>
             <div className="flex shrink-0 justify-space-between items-center m-4 mb-0">
-                <span className="text-bold" tabIndex={-2}>
+                <span className="text-bold" tabIndex={-1}>
                     {c('Label').t`Label as`}
                 </span>
-                <Tooltip title={c('Title').t`Create label`}>
+                <Tooltip title={c('Action').t`Create label`}>
                     <Button
                         icon
                         color="norm"
@@ -367,7 +367,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, sel
                         data-testid="label-dropdown:add-label"
                         data-prevent-arrow-navigation
                     >
-                        <Icon name="tag" /> +
+                        <Icon name="tag" alt={c('Action').t`Create label`} /> <span aria-hidden="true">+</span>
                     </Button>
                 </Tooltip>
             </div>
