@@ -18,7 +18,7 @@ import {
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
 
-import useActiveShare from '../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { formatLinkName, useActions, validateLinkNameField } from '../../store';
 
 interface Props {

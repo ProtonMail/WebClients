@@ -28,7 +28,7 @@ import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import DriveQuickSettings from '../drawer/DriveQuickSettings';
 import { DriveHeaderPrivate } from './DriveHeader';
 import { getDriveDrawerPermissions } from './drawerPermissions';
-import ActionMenuButton from './sidebar/ActionMenu/ActionMenuButton';
+import { ActionMenuButton } from './sidebar/ActionMenu/ActionMenuButton';
 import DriveSidebar from './sidebar/DriveSidebar';
 
 interface Props {

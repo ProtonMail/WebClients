@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useAppTitle } from '@proton/components';
 
-import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useSharedLinksView } from '../../../store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';

@@ -26,7 +26,7 @@ export const getGroupLinkIds = <T extends SelectionItem>(data: (T | SelectionGro
     return items;
 };
 
-export type HandleSelectionArgs = {
+type HandleSelectionArgs = {
     isSelected: boolean;
     isMultiSelect?: boolean;
 };
@@ -138,5 +138,3 @@ export const usePhotosSelection = <T extends SelectionItem>(
         isItemSelected,
     };
 };
-
-export default usePhotosSelection;
