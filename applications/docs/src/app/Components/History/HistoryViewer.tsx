@@ -9,15 +9,24 @@ import {
   ModalTwoHeader,
   Tooltip,
   useModalTwoStatic,
+  useNotifications,
+  NotificationButton,
+  NOTIFICATION_DEFAULT_EXPIRATION_TIME,
 } from '@proton/components'
 import type { NativeVersionHistory } from '@proton/docs-core'
-import { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
-import { DOCS_DEBUG_KEY, EditorSystemMode } from '@proton/docs-shared'
-import { Logger } from '@proton/utils/logs'
+import type { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
-import { EditorFrame } from '../EditorFrame'
 import HistoryTimeline from './HistoryTimeline'
+import { useApplication } from '../../Containers/ApplicationProvider'
+import { SingleRevisionViewer } from './SingleRevisionViewer'
+import { useLoading } from '@proton/hooks/index'
+import { type SerializedEditorState } from 'lexical'
+
+enum RestoreType {
+  Replace = 'replace',
+  AsCopy = 'as-copy',
+}
 
 function HistoryViewerModalContent({
   versionHistory,
@@ -27,40 +36,24 @@ function HistoryViewerModalContent({
   onClose: () => void
 }) {
   const [selectedBatchIndex, setSelectedBatchIndex] = useState(() => versionHistory.batches.length - 1)
+  const [editorInvoker, setEditorInvoker] = useState<EditorInvoker | undefined>()
+  const application = useApplication()
+  const { createNotification, hideNotification } = useNotifications()
+
+  const [isRestoring, withRestoring] = useLoading()
+  const [isRestoringAsCopy, withRestoringAsCopy] = useLoading()
+
+  const isSelectedRevisionCurrentDocument = useMemo(() => {
+    return versionHistory.isCurrentBatchIndex(selectedBatchIndex)
+  }, [selectedBatchIndex, versionHistory])
 
   const selectedBatch = useMemo(() => {
     return versionHistory.batches[selectedBatchIndex]
   }, [versionHistory.batches, selectedBatchIndex])
 
-  const mergedUpdate = useMemo(() => {
+  const selectedYjsState = useMemo(() => {
     return versionHistory.getMergedUpdateForBatchIndex(selectedBatchIndex)
   }, [selectedBatchIndex, versionHistory])
-
-  const onFrameReady = useCallback(
-    async (frame: HTMLIFrameElement) => {
-      /**
-       * Note that as is, the invoker only invokes and cannot hear back from the editor. This is because
-       * we are instantiating an EditorInvoker which is one way. This means that we cannot `await` any invocations
-       * because we will never receive a resolution. For now this is not a problem, but if it does become one in the future,
-       * instantiate a ClientToEditorBridge instead (which contains an EditorInvoker).
-       */
-      const editorInvoker = new EditorInvoker(frame, new Logger('ViewOnlyEditorInvoker', DOCS_DEBUG_KEY))
-
-      editorInvoker.initializeEditor('DummyDocumentId', 'DummyUsername', 'Viewer').catch(console.error)
-
-      editorInvoker
-        .receiveMessage({
-          content: mergedUpdate,
-          type: {
-            wrapper: 'du',
-          },
-        })
-        .catch(console.error)
-
-      editorInvoker.showEditor().catch(console.error)
-    },
-    [mergedUpdate],
-  )
 
   const selectedBatchTimestamp = useMemo(() => {
     if (!selectedBatch) {
@@ -69,16 +62,90 @@ function HistoryViewerModalContent({
     return versionHistory.getFormattedDateAndTimeForBatch(selectedBatch)
   }, [selectedBatch, versionHistory])
 
+  const showSuccessfulUndoNotification = useCallback(() => {
+    createNotification({
+      type: 'success',
+      text: c('Info').t`Undo successful`,
+    })
+  }, [createNotification])
+
+  const showSuccessfullRestoreNotification = useCallback(
+    (editorStateBeforeReplacing: SerializedEditorState) => {
+      const shortDate = versionHistory.getShortFormattedDateAndTimeForBatch(selectedBatch)
+      const notificationId = createNotification({
+        type: 'success',
+        expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME * 1.5,
+        text: (
+          <>
+            <span>
+              {/*
+               * Translator: This is a notification that appears after restoring a version of the document from history.
+               * It is followed by a timestamp. Example: Restored version to 12/01/2024, 12:00
+               */}
+              {c('Info').t`Restored version to`} {` ${shortDate}`}
+            </span>
+            <NotificationButton
+              onClick={() => {
+                hideNotification(notificationId)
+                void withRestoring(
+                  application.privateDocController
+                    .restoreRevisionByReplacing(editorStateBeforeReplacing)
+                    .then(showSuccessfulUndoNotification),
+                )
+              }}
+            >{c('Action').t`Undo`}</NotificationButton>
+          </>
+        ),
+      })
+    },
+    [
+      versionHistory,
+      selectedBatch,
+      createNotification,
+      hideNotification,
+      withRestoring,
+      application.privateDocController,
+      showSuccessfulUndoNotification,
+    ],
+  )
+
+  const onRestore = useCallback(
+    async (restoreType: RestoreType) => {
+      if (!editorInvoker) {
+        return
+      }
+
+      if (restoreType === RestoreType.Replace) {
+        const editorStateBeforeReplacing = await application.privateDocController.getEditorJSON()
+        const lexicalState = await editorInvoker.getCurrentEditorState()
+        if (!lexicalState || !editorStateBeforeReplacing) {
+          return
+        }
+        await application.privateDocController.restoreRevisionByReplacing(lexicalState)
+        onClose()
+        showSuccessfullRestoreNotification(editorStateBeforeReplacing)
+      } else {
+        const yjsState = await editorInvoker.getDocumentState()
+        if (!yjsState) {
+          return
+        }
+        await application.privateDocController.restoreRevisionAsCopy(yjsState)
+      }
+    },
+    [application.privateDocController, editorInvoker, onClose, showSuccessfullRestoreNotification],
+  )
+
   if (!versionHistory.batches.length) {
     return (
       <div className="flex-column flex h-full w-full items-center justify-center">
-        {c('Info').t`No version history batches available`}
+        {c('Info').t`No version history available`}
       </div>
     )
   }
 
   return (
     <div className="grid h-full grid-cols-[2fr,_minmax(18.75rem,_auto)]">
+      {/* Left column */}
       <div className="flex flex-col">
         <div className="flex items-center gap-3 px-3 py-2.5">
           <Icon name="clock-rotate-left" size={5} />
@@ -89,33 +156,67 @@ function HistoryViewerModalContent({
           </div>
         </div>
         <div className="min-h-0 flex-grow overflow-scroll">
-          <EditorFrame
-            key={selectedBatchTimestamp + `${Math.random()}`}
-            systemMode={EditorSystemMode.Revision}
-            onFrameReady={onFrameReady}
+          <SingleRevisionViewer
+            key={selectedBatchIndex}
+            state={selectedYjsState}
+            onEditorInvokerRef={setEditorInvoker}
           />
         </div>
       </div>
-      <div className="overflow-scroll border-l border-[--border-weak] bg-[--optional-background-lowered]">
-        <div className="sticky top-0 flex items-center justify-between gap-2 bg-[--optional-background-lowered] px-3.5 py-1.5">
-          <div className="text-bold text-base">Document History</div>
-          <Tooltip title={c('Action').t`Close`}>
-            <Button className="shrink-0" icon shape="ghost" onClick={onClose}>
-              <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
-            </Button>
-          </Tooltip>
-        </div>
+
+      {/* Right column */}
+      <div className="flex h-full flex-col justify-between overflow-scroll border-l border-[--border-weak] bg-[--optional-background-lowered]">
+        {/* Upper content */}
         <div className="flex flex-col">
-          <HistoryTimeline
-            versionHistory={versionHistory}
-            selectedBatchIndex={selectedBatchIndex}
-            onSelectedBatchIndexChange={setSelectedBatchIndex}
-          />
-          <div className="flex items-center gap-2 px-5 pb-3 pt-5">
-            <MimeIcon name="proton-doc" size={4} />
-            <span>{c('Info').t`The Beginning`}</span>
+          <div className="sticky top-0 flex items-center justify-between gap-2 bg-[--optional-background-lowered] px-3.5 py-1.5">
+            <div className="text-bold text-base">Document History</div>
+            <Tooltip title={c('Action').t`Close`}>
+              <Button className="shrink-0" icon shape="ghost" onClick={onClose}>
+                <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+              </Button>
+            </Tooltip>
+          </div>
+          <div className="flex flex-col">
+            <HistoryTimeline
+              versionHistory={versionHistory}
+              selectedBatchIndex={selectedBatchIndex}
+              onSelectedBatchIndexChange={setSelectedBatchIndex}
+            />
+
+            <div className="flex items-center gap-2 px-5 pb-3 pt-5">
+              <MimeIcon name="proton-doc" size={4} />
+              <span>{c('Info').t`The Beginning`}</span>
+            </div>
           </div>
         </div>
+
+        {/* Bottom-anchored content */}
+        {selectedBatchIndex >= 0 && !isSelectedRevisionCurrentDocument && (
+          <div className="mt-auto flex flex-col items-stretch justify-end px-5 pb-3 pt-5">
+            <Button
+              className="mb-2 w-full"
+              data-testid="restore-revision-by-replace"
+              color="norm"
+              loading={isRestoring}
+              onClick={() => {
+                void withRestoring(onRestore(RestoreType.Replace))
+              }}
+            >
+              {c('Action').t`Restore version`}
+            </Button>
+
+            <Button
+              className="w-full"
+              data-testid="restore-revision-by-copy"
+              loading={isRestoringAsCopy}
+              onClick={() => {
+                void withRestoringAsCopy(onRestore(RestoreType.AsCopy))
+              }}
+            >
+              {c('Action').t`Restore as copy`}
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -133,6 +234,7 @@ function HistoryViewerModal({ versionHistory, onClose, ...rest }: HistoryViewerM
       rootClassName={isVersionHistoryAvailable ? 'p-8 pb-0' : ''}
       className="!rounded-t-xl"
       onClose={onClose}
+      data-testid="history-modal"
       {...rest}
     >
       {versionHistory ? (

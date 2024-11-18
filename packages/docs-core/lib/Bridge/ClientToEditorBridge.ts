@@ -13,7 +13,7 @@ import { Logger } from '@proton/utils/logs'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 
 export class ClientToEditorBridge {
-  private logger = new Logger('DocsClient', DOCS_EDITOR_DEBUG_KEY)
+  public readonly logger = new Logger('DocsClient', DOCS_EDITOR_DEBUG_KEY)
   public readonly editorInvoker = new EditorInvoker(this.editorFrame, this.logger)
   private editorRequestHandler: EditorToClientRequestHandler
 
