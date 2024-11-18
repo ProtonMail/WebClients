@@ -122,7 +122,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     });
 
     const mailboxes = aliasOptions.value?.mailboxes ?? [];
-    const disabledMailboxes = aliasOptions.loading || !aliasOptions;
+    const disabledMailboxes = !aliasOptions;
 
     useItemDraft<EditAliasFormValues>(form, {
         mode: 'edit',
