@@ -4,15 +4,21 @@ import type { EditorInitializationConfig } from '../EditorInitializationConfig'
 import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
 import type { SerializedEditorState } from 'lexical'
 import type { UserSettings } from '@proton/shared/lib/interfaces'
+import type { YjsState } from '../YjsState'
 
 export interface ClientRequiresEditorMethods {
   receiveMessage(message: RtsMessagePayload): Promise<void>
   performOpeningCeremony(): Promise<void>
   performClosingCeremony(): Promise<void>
   /** Returns the document Yjs state */
-  getDocumentState(): Promise<Uint8Array>
+  getDocumentState(): Promise<YjsState>
   /** Returns the Lexical state of the editor, unrelated to the Yjs state */
   getCurrentEditorState(): Promise<SerializedEditorState | undefined>
+  /**
+   * A destructive operation that replaces the current editor state with the given state,
+   * used when restoring a document from history
+   */
+  replaceEditorState(state: SerializedEditorState): Promise<void>
   getClientId(): Promise<number>
   showEditor(): Promise<void>
   showCommentsPanel(): Promise<void>
