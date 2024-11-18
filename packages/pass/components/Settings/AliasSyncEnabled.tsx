@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { VaultPickerField } from '@proton/pass/components/Form/Field/VaultPickerField';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { aliasSyncEnable } from '@proton/pass/store/actions';
 import { selectUserDefaultShareID } from '@proton/pass/store/selectors';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

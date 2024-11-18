@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { ModalTwoContent, ModalTwoFooter } from '@proton/components';
 import { ExpirationTimeSelect, ExpireTime } from '@proton/pass/components/Form/Field/Custom/ExpirationTimeSelect';
 import { MaxReadsToggleInput } from '@proton/pass/components/Form/Field/Custom/MaxReadsToggleInput';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { secureLinkCreate } from '@proton/pass/store/actions';
 import type { SecureLink, SecureLinkOptions, UniqueItem } from '@proton/pass/types';
 
@@ -20,7 +20,7 @@ export const SecureLinkGenerate: FC<Props> = ({ shareId, itemId, onLinkGenerated
 
     const { dispatch, loading } = useRequest(secureLinkCreate, {
         initial: { shareId, itemId },
-        onSuccess: ({ data }) => onLinkGenerated(data),
+        onSuccess: onLinkGenerated,
     });
 
     const generateSecureLink = () => dispatch({ itemId, shareId, expirationTime, maxReadCount });

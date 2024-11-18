@@ -10,7 +10,7 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { useAliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContactsContext';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { aliasBlockContact, aliasDeleteContact } from '@proton/pass/store/actions';
 import type { AliasContactWithStatsGetResponse } from '@proton/pass/types';
 import { epochToRelativeDuration } from '@proton/pass/utils/time/format';
@@ -25,8 +25,8 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
 
     const { CreateTime, ReverseAlias, Email, ForwardedEmails, RepliedEmails, Blocked, ID } = contact;
     const time = epochToRelativeDuration(CreateTime);
-    const blockContact = useRequest(aliasBlockContact, { onSuccess: ({ data }) => onUpdate(data) });
-    const deleteContact = useRequest(aliasDeleteContact, { onSuccess: ({ data }) => onDelete(data) });
+    const blockContact = useRequest(aliasBlockContact, { onSuccess: onUpdate });
+    const deleteContact = useRequest(aliasDeleteContact, { onSuccess: onDelete });
 
     const handleCopyAddress = async () => {
         await writeToClipboard(ReverseAlias);

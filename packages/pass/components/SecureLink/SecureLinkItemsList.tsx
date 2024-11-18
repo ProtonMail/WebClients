@@ -11,7 +11,7 @@ import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';

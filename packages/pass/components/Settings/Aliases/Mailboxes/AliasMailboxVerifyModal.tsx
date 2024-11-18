@@ -8,11 +8,10 @@ import {
     SECONDS_BEFORE_RESEND,
     getInitialCountdown,
 } from '@proton/pass/components/Layout/Modal/EmailVerifyModal';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useCountdown } from '@proton/pass/hooks/useCountdown';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { resendVerifyMailbox, validateMailbox } from '@proton/pass/store/actions';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { useAliasMailboxes } from './AliasMailboxesProvider';
@@ -27,9 +26,9 @@ export const MailboxVerifyModal: FC<Props> = ({ onClose, mailboxID, sentAt }) =>
     const { createNotification } = useNotifications();
 
     const verify = useRequest(validateMailbox, {
-        onSuccess: pipe(prop('data'), onVerify, onClose),
-        onFailure: ({ data }) => {
-            if (data.code === PassErrorCode.NOT_ALLOWED) {
+        onSuccess: pipe(onVerify, onClose),
+        onFailure: ({ code }) => {
+            if (code === PassErrorCode.NOT_ALLOWED) {
                 onDelete(mailboxID);
                 onClose();
             }

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { PendingNewUser } from '@proton/pass/components/Share/PendingNewUser';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getShareAccessOptions } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { NewUserInviteState } from '@proton/pass/types';

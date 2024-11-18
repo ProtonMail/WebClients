@@ -9,7 +9,7 @@ import { c } from 'ttag';
 import type { Dropzone, FileInput } from '@proton/components';
 import { useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { extractFileExtension, fileReader } from '@proton/pass/lib/import/reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';

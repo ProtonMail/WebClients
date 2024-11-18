@@ -7,7 +7,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/index';
 import { useInsecurePasswords } from '@proton/pass/hooks/monitor/useInsecurePasswords';
 import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
 import {

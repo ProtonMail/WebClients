@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Info } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import {
     inviteRemoveIntent,
     inviteResendIntent,

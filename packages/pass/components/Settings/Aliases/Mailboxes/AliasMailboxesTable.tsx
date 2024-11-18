@@ -9,7 +9,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 import { AliasMailboxLoading } from '@proton/pass/components/Settings/Aliases/Mailboxes/AliasMailboxLoading';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { resendVerifyMailbox, setDefaultMailbox } from '@proton/pass/store/actions';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import clsx from '@proton/utils/clsx';
@@ -19,13 +19,15 @@ import { useAliasMailboxes } from './AliasMailboxesProvider';
 export const AliasMailboxesTable: FC = () => {
     const { canManage, mailboxes, loading, onSetDefault, setAction } = useAliasMailboxes();
 
-    const setDefault = useRequest(setDefaultMailbox, { onSuccess: ({ data }) => onSetDefault(data.DefaultMailboxID) });
+    const setDefault = useRequest(setDefaultMailbox, {
+        onSuccess: ({ DefaultMailboxID }) => onSetDefault(DefaultMailboxID),
+    });
 
     const resend = useRequest(resendVerifyMailbox, {
-        onSuccess: ({ data }) =>
+        onSuccess: ({ MailboxID }) =>
             setAction({
                 type: 'verify',
-                mailboxID: data.MailboxID,
+                mailboxID: MailboxID,
                 sentAt: getEpoch(),
             }),
     });

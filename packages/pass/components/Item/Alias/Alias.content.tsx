@@ -11,9 +11,9 @@ import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaRe
 import { AliasSLNoteLabel } from '@proton/pass/components/Item/Alias/AliasSLNoteLabel';
 import { AliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContacts';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';

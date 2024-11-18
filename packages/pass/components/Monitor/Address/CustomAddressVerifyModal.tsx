@@ -8,8 +8,8 @@ import {
     SECONDS_BEFORE_RESEND,
     getInitialCountdown,
 } from '@proton/pass/components/Layout/Modal/EmailVerifyModal';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { useCountdown } from '@proton/pass/hooks/useCountdown';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { resendVerificationCode, verifyCustomAddress } from '@proton/pass/store/actions';
@@ -24,8 +24,8 @@ export const CustomAddressVerifyModal: FC<Props> = ({ onClose, email, addressId,
 
     const verify = useRequest(verifyCustomAddress, {
         onSuccess: onClose,
-        onFailure: ({ data }) => {
-            if (data.code === PassErrorCode.NOT_ALLOWED) onClose();
+        onFailure: ({ code }) => {
+            if (code === PassErrorCode.NOT_ALLOWED) onClose();
         },
     });
 

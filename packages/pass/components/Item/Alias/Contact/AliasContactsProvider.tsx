@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { useMemo, useState } from 'react';
 
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { aliasGetContactsList } from '@proton/pass/store/actions';
 import type { AliasContactWithStatsGetResponse, SelectedItem } from '@proton/pass/types';
 import { partition } from '@proton/pass/utils/array/partition';
@@ -19,7 +19,7 @@ export const AliasContactsProvider: FC<PropsWithChildren<SelectedItem>> = ({ chi
     const sync = useRequest(aliasGetContactsList, {
         initial: { shareId, itemId },
         loading: true,
-        onSuccess: ({ data }) => setContacts(toMap(data, 'ID')),
+        onSuccess: (contacts) => setContacts(toMap(contacts, 'ID')),
     });
 
     const [blocked, active] = useMemo(() => {

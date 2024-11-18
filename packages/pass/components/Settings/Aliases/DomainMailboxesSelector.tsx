@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { getMailboxes } from '@proton/pass/store/actions';
 import type { CustomDomainMailboxOutput, MaybeNull, UserMailboxOutput } from '@proton/pass/types';
 
@@ -24,7 +24,7 @@ export const DomainMailboxesSelector = ({ onChange, values, disabled }: Props) =
     const [mailboxes, setMailboxes] = useState<MaybeNull<CustomDomainMailboxOutput[]>>(null);
 
     const getAllMailboxes = useRequest(getMailboxes, {
-        onSuccess: ({ data }) => setMailboxes(data.filter(({ Verified }) => Verified).map(intoCustomDomainMailbox)),
+        onSuccess: (domains) => setMailboxes(domains.filter(({ Verified }) => Verified).map(intoCustomDomainMailbox)),
     });
 
     useEffect(getAllMailboxes.dispatch, []);

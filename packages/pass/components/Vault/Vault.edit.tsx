@@ -8,7 +8,7 @@ import { Icon, type ModalProps } from '@proton/components';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import { validateVaultValues } from '@proton/pass/lib/validation/vault';
 import { vaultEditIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
@@ -33,12 +33,11 @@ export const VaultEdit: FC<Props> = ({ vault, onSuccess, ...modalProps }) => {
         },
         validateOnChange: true,
         validate: validateVaultValues,
-        onSubmit: async ({ name, description, color, icon }) => {
+        onSubmit: ({ name, description, color, icon }) =>
             editVault.dispatch({
                 shareId: vault.shareId,
                 content: { name, description, display: { color, icon } },
-            });
-        },
+            }),
     });
 
     return (

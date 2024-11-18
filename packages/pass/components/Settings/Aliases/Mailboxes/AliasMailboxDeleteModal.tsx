@@ -6,7 +6,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import { DropdownSizeUnit, Option, SelectTwo } from '@proton/components/index';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { InlineFieldBox } from '@proton/pass/components/Form/Field/Layout/InlineFieldBox';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { deleteMailbox } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';

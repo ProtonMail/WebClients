@@ -12,7 +12,7 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import PassCoreUI from '@proton/pass/lib/core/core.ui';
 import { intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { addCustomAddress } from '@proton/pass/store/actions';
@@ -29,7 +29,7 @@ export const CustomAddressAddModal: FC<Props> = ({ onClose }) => {
     const { verifyAddress } = useMonitor();
 
     const { loading, dispatch } = useRequest(addCustomAddress, {
-        onSuccess: ({ data }) => verifyAddress(intoCustomMonitorAddress(data), getEpoch()),
+        onSuccess: (address) => verifyAddress(intoCustomMonitorAddress(address), getEpoch()),
     });
 
     const form = useFormik<FormValues>({

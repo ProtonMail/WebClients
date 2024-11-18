@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { c } from 'ttag';
 
 import { Toggle, Tooltip } from '@proton/components';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { aliasSyncStatusToggle } from '@proton/pass/store/actions';
 import type { ItemRevision } from '@proton/pass/types';
