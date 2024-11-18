@@ -1,5 +1,4 @@
 import type { FC, ReactNode } from 'react';
-import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
@@ -45,7 +44,6 @@ const getSteps = (): AliasContactStep[] => {
 export const AliasContactsMoreInfo: FC<Pick<ModalStateProps, 'onClose'>> = ({ onClose }) => (
     <SidebarModal className="ui-teal" onClose={onClose} open>
         <Panel
-            className="pass-panel--full"
             header={
                 <PanelHeader
                     actions={[
@@ -77,22 +75,33 @@ export const AliasContactsMoreInfo: FC<Pick<ModalStateProps, 'onClose'>> = ({ on
             }
             unstyled
         >
-            <h2 className="text-xl text-bold mt-3">{c('Title').t`Alias contacts`}</h2>
-            <p className="text-lg">
-                {c('Info')
-                    .t`To keep your personal email address hidden, you can create an alias contact that masks your address.`}
-            </p>
-            <p className="text-lg">{c('Info').t`Here's how it works:`}</p>
-            {getSteps().map(({ description, img, alt }, idx) => (
-                <Fragment key={`contact-step-${idx}`}>
-                    <div className="flex items-center justify-center flex-nowrap gap-2">
-                        <Counter>{idx + 1}</Counter>
-                        <hr className="w-full mt-4" />
+            <div>
+                <h2 className="text-xl text-bold mt-3">{c('Title').t`Alias contacts`}</h2>
+                <p className="text-lg">
+                    {c('Info')
+                        .t`To keep your personal email address hidden, you can create an alias contact that masks your address.`}
+                </p>
+                <p className="text-lg">{c('Info').t`Here's how it works:`}</p>
+                {getSteps().map(({ description, img, alt }, idx) => (
+                    <div key={`contact-step-${idx}`} className="mb-6">
+                        <div className="flex items-center justify-center flex-nowrap gap-2">
+                            <Counter>{idx + 1}</Counter>
+                            <hr className="w-full mt-4" />
+                        </div>
+                        <div className="px-3">
+                            <p className="mb-3">{description}</p>
+                            {img && (
+                                <img
+                                    src={img}
+                                    alt={alt}
+                                    className="w-full max-w-custom"
+                                    style={{ '--max-w-custom': '20rem' }}
+                                />
+                            )}
+                        </div>
                     </div>
-                    <p>{description}</p>
-                    {img && <img src={img} alt={alt} className="pb-4" />}
-                </Fragment>
-            ))}
+                ))}
+            </div>
         </Panel>
     </SidebarModal>
 );
