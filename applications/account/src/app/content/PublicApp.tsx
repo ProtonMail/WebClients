@@ -110,7 +110,7 @@ import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { getProductParams, getThemeFromLocation } from '../signup/searchParams';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
-import { extendStore, setupStore } from '../store/store';
+import { extendStore, setupStore } from '../store/public-store';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
@@ -130,7 +130,7 @@ const bootstrapApp = () => {
     initElectronClassnames();
     initSafariFontFixClassnames();
     extendStore({ config, api, authentication });
-    const store = setupStore({ mode: 'public' });
+    const store = setupStore();
     return {
         authentication,
         store,

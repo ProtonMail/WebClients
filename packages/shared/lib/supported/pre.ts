@@ -1,11 +1,10 @@
 import { SupportedBrowserValue } from './interface';
 
-const preScriptNode = document.querySelector<HTMLScriptElement>('script[src*="/pre"]');
-// The tag that we're interested in is the main script file. Normally that's index.js but there's also lite and eo take
-// into account and we fallback to the nextSibling in those scenarios since pre.js is supposed to be first.
 const scriptNode =
+    // The tag that we're interested in is the main script file. Normally that's index.js.
     document.querySelector<HTMLScriptElement>('script[src*="/index"]') ||
-    (preScriptNode?.nextSibling as HTMLScriptElement);
+    // but there's also lite, eo, private, and public script files. So we suffix them with -index.
+    document.querySelector<HTMLScriptElement>('script[src*="-index"]');
 
 if (scriptNode) {
     scriptNode.onerror = () => {

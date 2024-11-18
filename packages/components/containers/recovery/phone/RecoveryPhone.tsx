@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { FormEvent, ReactNode } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import PhoneInput from '@proton/components/components/v2/phone/PhoneInput';
+import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -24,7 +24,7 @@ import VerifyRecoveryPhoneModal from './VerifyRecoveryPhoneModal';
 
 interface RenderFormProps {
     className?: string;
-    onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+    onSubmit: (e: FormEvent<HTMLFormElement>) => void;
     input: ReactNode;
     submitButtonProps: {
         type: 'submit';

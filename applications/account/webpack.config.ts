@@ -62,7 +62,7 @@ const result = async (env: any): Promise<webpack.Configuration> => {
     if (env.appMode === 'standalone') {
         config.entry = {
             pre,
-            private: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
+            ['private-index']: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
             unsupported,
         };
 
@@ -74,7 +74,7 @@ const result = async (env: any): Promise<webpack.Configuration> => {
                 template: path.resolve('./src/private.ejs'),
                 templateParameters: originalTemplateParameters,
                 scriptLoading: 'defer' as const,
-                chunks: getIndexChunks('private'),
+                chunks: getIndexChunks('private-index'),
                 inject: 'body' as const,
             })
         );
@@ -86,9 +86,9 @@ const result = async (env: any): Promise<webpack.Configuration> => {
 
     config.entry = {
         pre,
-        private: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
-        public: [path.resolve('./src/app/public.tsx'), getSupportedEntry()],
-        lite: [path.resolve('./src/lite/index.tsx'), getSupportedEntry()],
+        ['private-index']: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
+        ['public-index']: [path.resolve('./src/app/public.tsx'), getSupportedEntry()],
+        ['lite-index']: [path.resolve('./src/lite/index.tsx'), getSupportedEntry()],
         storage: path.resolve('./src/app/storage.ts'),
         unsupported,
     };
@@ -106,7 +106,7 @@ const result = async (env: any): Promise<webpack.Configuration> => {
             template: path.resolve('./src/private.ejs'),
             templateParameters: originalTemplateParameters,
             scriptLoading: 'defer' as const,
-            chunks: getIndexChunks('private'),
+            chunks: getIndexChunks('private-index'),
             inject: 'body' as const,
         })
     );
@@ -120,7 +120,7 @@ const result = async (env: any): Promise<webpack.Configuration> => {
             template: path.resolve('./src/public.ejs'),
             templateParameters: originalTemplateParameters,
             scriptLoading: 'defer',
-            chunks: getIndexChunks('public'),
+            chunks: getIndexChunks('public-index'),
             inject: 'body',
         })
     );
@@ -147,7 +147,7 @@ const result = async (env: any): Promise<webpack.Configuration> => {
             template: path.resolve('./src/lite.ejs'),
             templateParameters: originalTemplateParameters,
             scriptLoading: 'defer',
-            chunks: getIndexChunks('lite'),
+            chunks: getIndexChunks('lite-index'),
             inject: 'body',
         })
     );

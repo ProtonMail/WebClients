@@ -5,7 +5,7 @@ import clsx from '@proton/utils/clsx';
 
 export interface SecurityCheckupCardInnerProps {
     title: string;
-    subTitle?: string;
+    subTitle?: ReactNode;
     prefix?: ReactNode;
     suffix?: ReactNode;
     className?: string;
