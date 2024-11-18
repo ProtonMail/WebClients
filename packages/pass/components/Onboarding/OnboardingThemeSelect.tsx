@@ -7,9 +7,9 @@ import { Icon, Info, RadioGroup } from '@proton/components';
 import automaticThemeImg from '@proton/pass/assets/settings/theme-automatic.svg';
 import darkThemeImg from '@proton/pass/assets/settings/theme-dark.svg';
 import lightThemeImg from '@proton/pass/assets/settings/theme-light.svg';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { PassThemeCardProps } from '@proton/pass/components/Settings/PassThemeCard';
-import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectTheme } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -41,8 +41,9 @@ const getThemeCards = (): PassThemeCardProps[] => [
 ];
 
 export const OnboardingThemeSelect: FC = () => {
+    const core = usePassCore();
     const dispatch = useDispatch();
-    const currentTheme = useSelector(selectTheme) ?? PASS_DEFAULT_THEME;
+    const currentTheme = useSelector(selectTheme) ?? core.theme;
     const onChange = (theme: PassThemeOption) => dispatch(settingsEditIntent('theme', { theme }, true));
 
     return (
