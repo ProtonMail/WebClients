@@ -37,7 +37,6 @@ export const AliasMailboxCreateModal: FC<Props> = ({ onClose }) => {
             {(didEnter) => (
                 <Panel
                     loading={create.loading}
-                    className="pass-panel--full"
                     header={
                         <PanelHeader
                             actions={[

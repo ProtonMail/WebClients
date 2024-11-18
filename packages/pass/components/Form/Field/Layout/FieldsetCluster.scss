@@ -1,6 +1,8 @@
 .pass-fieldset-cluster {
 	--fieldset-cluster-icon-color: var(--interaction-norm);
 
+	transition: opacity 0.2s ease-in-out;
+
 	// Set min-width: 0 on the parent of the flexbox to enable text-ellipsis
 	// and prevent content overflow. This allows the flex item to shrink to its
 	// content size, which is especially helpful when the item has a fixed or
