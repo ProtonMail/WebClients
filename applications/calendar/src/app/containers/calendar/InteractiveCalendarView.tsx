@@ -819,7 +819,12 @@ const InteractiveCalendarView = ({
         }
 
         if (isCreateDownAction(mouseDownAction)) {
-            if (!createEventCalendar || !createEventCalendarBootstrap || isSavingEvent.current) {
+            if (
+                !createEventCalendar ||
+                !createEventCalendarBootstrap ||
+                (targetEventData && !tmpData) || // Prevent creating a new event when an event is already selected
+                isSavingEvent.current
+            ) {
                 return;
             }
 
