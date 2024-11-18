@@ -1,12 +1,11 @@
-import { useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
+import type { getAliasDetailsFailure, getAliasDetailsSuccess } from '@proton/pass/store/actions';
 import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
-import { selectAliasMailboxes } from '@proton/pass/store/selectors';
 import type { AliasMailbox, Maybe } from '@proton/pass/types';
 
 import { useActionRequest } from './useRequest';
@@ -25,11 +24,18 @@ export const useAliasDetails = ({
     onAliasMailboxesLoaded: onAliasDetailsLoaded,
 }: UseAliasDetailsConfig) => {
     const { createNotification } = useNotifications();
-    const mailboxes = useSelector(selectAliasMailboxes(aliasEmail));
+    const [mailboxes, setMailboxes] = useState<Maybe<AliasMailbox[]>>();
 
-    const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
+    const getAliasDetails = useActionRequest<
+        typeof getAliasDetailsIntent,
+        typeof getAliasDetailsSuccess,
+        typeof getAliasDetailsFailure
+    >(getAliasDetailsIntent, {
         requestId: aliasDetailsRequest(aliasEmail),
-        onSuccess: () => onAliasDetailsLoaded?.(mailboxes),
+        onSuccess: ({ mailboxes }) => {
+            setMailboxes(mailboxes);
+            onAliasDetailsLoaded?.(mailboxes);
+        },
         onFailure: () => {
             createNotification({
                 type: 'warning',

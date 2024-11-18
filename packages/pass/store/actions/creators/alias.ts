@@ -1,7 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { ALIAS_DETAILS_MAX_AGE, ALIAS_OPTIONS_MAX_AGE } from '@proton/pass/constants';
 import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
@@ -61,9 +60,7 @@ export const getAliasOptionsIntent = createAction(
 
 export const getAliasOptionsSuccess = createAction(
     'alias::options::get::success',
-    withRequestSuccess((payload: { options: AliasOptions }) => withCache({ payload }), {
-        maxAge: ALIAS_OPTIONS_MAX_AGE,
-    })
+    withRequestSuccess((payload: { options: AliasOptions }) => withCache({ payload }))
 );
 
 export const getAliasOptionsFailure = createAction(
@@ -84,9 +81,7 @@ export const getAliasDetailsIntent = createAction(
 
 export const getAliasDetailsSuccess = createAction(
     'alias::details::get::success',
-    withRequestSuccess((payload: AliasDetails) => withCache({ payload }), {
-        maxAge: ALIAS_DETAILS_MAX_AGE,
-    })
+    withRequestSuccess((payload: AliasDetails) => withCache({ payload }))
 );
 
 export const getAliasDetailsFailure = createAction(
