@@ -57,7 +57,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         setDirection,
         createLink,
         ImageEdit,
-    } = await import(/* webpackChunkName: "roosterjs", webpackPreload: true */ 'roosterjs');
+    } = await import(/* webpackChunkName: "roosterjs", webpackPrefetch: true */ 'roosterjs');
 
     const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--primary');
     const plugins: EditorPlugin[] = [

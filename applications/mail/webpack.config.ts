@@ -1,7 +1,8 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { produce, setAutoFreeze } from 'immer';
 import path from 'path';
-import { Configuration, ProvidePlugin } from 'webpack';
+import type { Configuration} from 'webpack';
+import { ProvidePlugin } from 'webpack';
 import { InjectManifest } from 'workbox-webpack-plugin';
 
 import getConfig from '@proton/pack/webpack.config';
@@ -43,7 +44,7 @@ const result = (env: any): Configuration => {
 
         // The order is important so that the unsupported file is loaded after
         config.entry = mergeEntry(config.entry, {
-            eo: [path.resolve('./src/app/eo.tsx'), getSupportedEntry()],
+            ['eo-index']: [path.resolve('./src/app/eo.tsx'), getSupportedEntry()],
         });
 
         // @ts-ignore
@@ -84,7 +85,7 @@ const result = (env: any): Configuration => {
                 template: path.resolve('./src/eo.ejs'),
                 templateParameters: htmlPlugin.userOptions.templateParameters,
                 scriptLoading: 'defer',
-                chunks: getIndexChunks('eo'),
+                chunks: getIndexChunks('eo-index'),
                 inject: 'body',
             })
         );

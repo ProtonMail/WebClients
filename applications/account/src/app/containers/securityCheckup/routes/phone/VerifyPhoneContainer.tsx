@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { useSecurityCheckup } from '@proton/components';
-import { getFormattedValue } from '@proton/components/components/v2/phone/helper';
+import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
 import methodErrorSrc from '../../assets/method-error.svg';
@@ -26,7 +26,7 @@ const VerifyPhoneContainer = () => {
     const { securityState } = useSecurityCheckup();
     const { phone } = securityState;
 
-    const formattedPhoneNumber = getFormattedValue(phone?.value || '');
+    const formattedPhoneNumber = <FormattedPhoneValue value={phone?.value || ''} />;
 
     const [step, setStep] = useState(STEPS.CODE);
 

@@ -106,7 +106,7 @@ export interface CountryOptionData {
 
 export const getCountries = (): CountryOptionData[] => {
     const countryMap = getCountryMap();
-    return Object.keys(metadata.countries)
+    return Object.keys(countryMap)
         .map((countryCode): CountryOptionData | undefined => {
             const countryCallingCode = getSafeCountryCallingCode(countryCode as CountryCode);
             const countryName = countryMap[countryCode];

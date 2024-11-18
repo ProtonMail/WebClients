@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,7 +21,7 @@ import type { VerificationMethod } from './verification';
 import { initiateVerification, sendNewCode, verifyCode } from './verification';
 
 interface Props {
-    value: string;
+    value: ReactNode;
     onSuccess: () => void;
     onError: () => void;
     method: VerificationMethod;
