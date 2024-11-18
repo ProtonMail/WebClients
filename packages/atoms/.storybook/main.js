@@ -44,6 +44,7 @@ module.exports = {
         const options = {
             isProduction,
             hasReactRefresh: false,
+            inlineIcons: true,
         };
 
         return {
