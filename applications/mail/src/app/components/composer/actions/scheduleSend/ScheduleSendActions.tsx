@@ -224,7 +224,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                     ref={ref}
                     title={c('Title').t`Open actions dropdown`}
                     dropdownStyle={{ '--min-width': '23em', '--custom-max-width': '95vw' }}
-                    forceOpen={composer.forceOpenScheduleSend}
+                    forceOpen={composer?.forceOpenScheduleSend}
                     // contains buttonGroup props
                     {...rest}
                 >
