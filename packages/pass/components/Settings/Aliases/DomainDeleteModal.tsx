@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { c } from 'ttag';
 
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { deleteCustomDomain } from '@proton/pass/store/actions';
 import type { CustomDomainOutput } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';

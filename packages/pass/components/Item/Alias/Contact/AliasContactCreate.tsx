@@ -12,11 +12,10 @@ import { useAliasContacts } from '@proton/pass/components/Item/Alias/Contact/Ali
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useRequest } from '@proton/pass/hooks/useActionRequest';
+import { useRequest } from '@proton/pass/hooks/useRequest';
 import { validateEmailForm } from '@proton/pass/lib/validation/email';
 import { aliasCreateContact } from '@proton/pass/store/actions';
 import type { AliasCreateContactValues } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 const FORM_ID = 'create-contact-form';
@@ -25,7 +24,7 @@ type Props = Pick<ModalStateProps, 'onClose'>;
 
 export const AliasContactCreate: FC<Props> = ({ onClose }) => {
     const { itemId, shareId, onCreate } = useAliasContacts();
-    const { loading, dispatch } = useRequest(aliasCreateContact, { onSuccess: pipe(prop('data'), onCreate, onClose) });
+    const { loading, dispatch } = useRequest(aliasCreateContact, { onSuccess: pipe(onCreate, onClose) });
 
     const form = useFormik<AliasCreateContactValues>({
         initialValues: { email: '' },

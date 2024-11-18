@@ -9,7 +9,7 @@ import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasMailboxes } from '@proton/pass/store/selectors';
 import type { AliasMailbox, Maybe } from '@proton/pass/types';
 
-import { useActionRequest } from './useActionRequest';
+import { useActionRequest } from './useRequest';
 
 type UseAliasDetailsConfig = {
     aliasEmail: string;
