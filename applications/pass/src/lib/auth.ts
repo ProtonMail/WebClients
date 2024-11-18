@@ -115,7 +115,7 @@ export const createAuthService = ({
                 app.setStatus(AppStatus.ERROR);
                 history.replace({ search: '', pathname, state: { error } });
                 return false;
-            } else history.replace({ state: null });
+            } else history.replace({ ...history.location, state: null });
 
             const persistedSession = await auth.config.getPersistedSession(localID);
 
@@ -213,7 +213,7 @@ export const createAuthService = ({
             if (app.state.booted) app.setStatus(AppStatus.READY);
             else {
                 const redirect = stripLocalBasenameFromPathname(route.get('redirectPath'));
-                history.replace((getBasename(localID) ?? '/') + redirect);
+                history.replace({ ...history.location, pathname: (getBasename(localID) ?? '/') + redirect });
                 app.setStatus(AppStatus.AUTHORIZED);
                 store.dispatch(bootIntent());
             }
