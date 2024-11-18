@@ -1,3 +1,4 @@
+const EMAIL_DESIGN_SYSTEM_ICONS_SVG = 'email-sprite-icons.svg';
 const DESIGN_SYSTEM_ICONS_SVG = 'sprite-icons.svg|file-icons.svg';
 
 module.exports = ({ inlineIcons } = { inlineIcons: false }) => [
@@ -18,6 +19,15 @@ module.exports = ({ inlineIcons } = { inlineIcons: false }) => [
          * design-system-icon.svg -> file loader
          */
         oneOf: [
+            {
+                test: new RegExp(`${EMAIL_DESIGN_SYSTEM_ICONS_SVG}$`),
+                // Special case for the email sprite icons which is injected into the MessageBodyIframe.tsx from getIframeHtml
+                type: 'asset/source',
+                loader: 'svgo-loader',
+                options: {
+                    plugins: ['removeComments'],
+                },
+            },
             {
                 test: new RegExp(`${DESIGN_SYSTEM_ICONS_SVG}$`),
                 type: inlineIcons ? 'asset/source' : 'asset/resource',
