@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { Icon, useModalState, useNotifications } from '@proton/components';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-import generateUID from '@proton/utils/generateUID';
 
 import { Button, CoreButton } from '../atoms';
 import { LayoutViewLoader } from '../atoms/LayoutViewLoader';
@@ -29,14 +28,10 @@ export const WalletContainer = () => {
 
     const { isNarrow } = useResponsiveContainerContext();
 
-    // Used to reset bitcoin send modal at the end of the process
-    const generateBitcoinSendKey = () => generateUID('bitcoin-send');
-    const [bitcoinSendKey, setBitcoinSendKey] = useState(generateBitcoinSendKey());
-
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
-    const [walletSendModal, setWalletSendModal, renderWalletSendModal] = useModalState();
-    const [walletBuyModal, setWalletBuyModal, renderWalletBuyModal] = useModalState();
+    const [walletSendModal, setWalletSendModal, renderBitcoinSendModal] = useModalState();
+    const [walletBuyModal, setWalletBuyModal, renderBitcoinBuyModal] = useModalState();
 
     const { apiWalletsData, getSyncingData } = useBitcoinBlockchainContext();
 
@@ -169,19 +164,8 @@ export const WalletContainer = () => {
                 </div>
             </div>
 
-            {renderWalletSendModal && (
-                <BitcoinSendModal
-                    key={bitcoinSendKey}
-                    wallet={wallet}
-                    theme={theme}
-                    modal={walletSendModal}
-                    onDone={() => {
-                        setBitcoinSendKey(generateBitcoinSendKey());
-                    }}
-                />
-            )}
-
-            {renderWalletBuyModal && <BitcoinBuyModal wallet={wallet} modal={walletBuyModal} />}
+            {renderBitcoinSendModal && <BitcoinSendModal wallet={wallet} theme={theme} modal={walletSendModal} />}
+            {renderBitcoinBuyModal && <BitcoinBuyModal wallet={wallet} modal={walletBuyModal} />}
         </>
     );
 };

@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import type { ModalOwnProps } from '@proton/components';
-import { useModalState, useModalStateWithData } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { toWalletAccountSelectorOptions } from '@proton/wallet';
@@ -48,6 +47,8 @@ enum StepKey {
     Send = 'Send',
 }
 
+type OpenedModal = { kind: 'send' } | { kind: 'confirm' } | { kind: 'invite' } | { kind: 'inviteSent'; email: string };
+
 const getSteps = (): Steps<StepKey> => [
     { key: StepKey.RecipientsSelection, label: c('bitcoin buy').t`Recipients` },
     { key: StepKey.AmountInput, label: c('bitcoin buy').t`Amount` },
@@ -60,9 +61,8 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
     const [settings] = useUserWalletSettings();
     const [exchangeRate, setUnit] = useState<WasmApiExchangeRate>(getExchangeRateFromBitcoinUnit(settings.BitcoinUnit));
     const recipientHelpers = useEmailAndBtcAddressesMaps();
-    const [sendConfirmModal, setSendConfirmModal] = useModalState();
-    const [inviteModal, setInviteModal] = useModalState();
-    const [sentInviteConfirmModal, setSentInviteConfirmModal] = useModalStateWithData<{ email: string }>();
+
+    const [openedModal, setOpenedModal] = useState<OpenedModal>({ kind: 'send' });
 
     const defaultWalletAccount = first(wallet.WalletAccounts);
     const [selectedWalletAccount, setSelectedWalletAccount] = useState<[WasmApiWallet, WasmApiWalletAccount?]>([
@@ -101,6 +101,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
     return (
         <>
             <FullscreenModal
+                open={modal.open && openedModal.kind === 'send'}
                 header={
                     <ModalHeaderWithStepper
                         onClose={() => {
@@ -114,7 +115,6 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                         steps={getSteps()}
                     />
                 }
-                {...modal}
             >
                 <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
                     <div className="sticky top-0 w-full">
@@ -172,8 +172,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                                 getFeesByBlockTarget={getFeesByBlockTarget}
                                 onSent={() => {
                                     setStepKey(StepKey.Send);
-                                    modal.onClose?.();
-                                    setSendConfirmModal(true);
+                                    setOpenedModal({ kind: 'confirm' });
                                 }}
                                 onBackToEditRecipients={() => setStepKey(StepKey.RecipientsSelection)}
                             />
@@ -186,38 +185,34 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
             </FullscreenModal>
 
             <TransactionSendConfirmationModal
-                {...sendConfirmModal}
+                open={modal.open && openedModal.kind === 'confirm'}
                 theme={theme}
                 onClickDone={() => {
-                    sendConfirmModal.onClose?.();
+                    modal.onClose?.();
                     onDone?.();
                 }}
                 onClickInviteAFriend={() => {
-                    sendConfirmModal.onClose();
-                    setInviteModal(true);
+                    setOpenedModal({ kind: 'invite' });
                 }}
             />
 
             <InviteModal
                 defaultInviterAddressID={walletAccount?.Addresses?.[0]?.ID}
-                {...inviteModal}
+                open={modal.open && openedModal.kind === 'invite'}
                 onInviteSent={(email) => {
-                    inviteModal.onClose();
-                    setSentInviteConfirmModal({ email });
+                    setOpenedModal({ kind: 'inviteSent', email });
                 }}
                 onClose={() => {
-                    inviteModal.onClose();
-                    setSendConfirmModal(true);
+                    modal.onClose?.();
                 }}
             />
 
-            {sentInviteConfirmModal.data && (
+            {openedModal.kind === 'inviteSent' && (
                 <InviteSentConfirmModal
-                    {...sentInviteConfirmModal}
-                    email={sentInviteConfirmModal.data.email}
+                    open={modal.open && openedModal.kind === 'inviteSent'}
+                    email={openedModal.email}
                     onClose={() => {
-                        sentInviteConfirmModal.onClose();
-                        setSendConfirmModal(true);
+                        modal.onClose?.();
                     }}
                 />
             )}
