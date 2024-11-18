@@ -8316,7 +8316,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
-    "@unleash/proxy-client-react": "npm:^4.3.1"
+    "@unleash/proxy-client-react": "npm:^4.4.0"
     eslint: "npm:^8.57.1"
     jest: "npm:^29.7.0"
     prettier: "npm:^3.3.3"
@@ -13278,12 +13278,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unleash/proxy-client-react@npm:^4.3.1":
-  version: 4.3.1
-  resolution: "@unleash/proxy-client-react@npm:4.3.1"
+"@unleash/proxy-client-react@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "@unleash/proxy-client-react@npm:4.4.0"
   peerDependencies:
     unleash-proxy-client: ^3.5.2
-  checksum: 10c0/559cb333b51d100598bd1c84d006a2aab38cc753a1498d8ec90e85a05a87e87b38e5ba94257e61cbeab261e84d1350903953e3be259b6c4ca74dc93cf5e5e6bc
+  checksum: 10c0/66679423863790be59a7aee99d4c0527b5205eecfaaab0a37c0a542773113e150ab7927ace1f5a07097c46ae811733456c81dad2d8e8d918faa78914e6bbe936
   languageName: node
   linkType: hard
 
