@@ -87,6 +87,7 @@ module.exports = {
                 ...config.optimization,
                 minimizer: optimization.minimizer,
             },
+            experiments: { ...config.experiments, asyncWebAssembly: true },
             plugins: [
                 ...config.plugins,
                 new MiniCssExtractPlugin({
