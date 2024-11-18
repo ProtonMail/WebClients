@@ -110,7 +110,7 @@ module.exports = {
                 use: require.resolve('babel-loader'),
             },
             ...getCssLoaders({ browserslist: undefined, logical: false }),
-            ...getAssetsLoaders(),
+            ...getAssetsLoaders({ inlineIcons: true }),
         ],
     },
     optimization: {
