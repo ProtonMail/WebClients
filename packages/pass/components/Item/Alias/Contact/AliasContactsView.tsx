@@ -22,15 +22,15 @@ export const AliasContactsView: FC<Props> = ({ onClose }) => {
     const [openCreate, setOpenCreate] = useState(false);
     const [openMoreInfo, setOpenMoreInfo] = useState(false);
     const aliasEmail = useSelector(selectItem<'alias'>(shareId, itemId))?.aliasEmail;
+    const empty = !loading && contacts.active.length + contacts.blocked.length === 0;
 
-    const hasContacts = contacts.active.length + contacts.blocked.length > 0;
     useEffect(sync, []);
 
     return (
         <>
             <SidebarModal className="ui-teal" onClose={onClose} open>
                 <Panel
-                    className="pass-panel--full"
+                    loading={loading}
                     header={
                         <PanelHeader
                             actions={[
@@ -71,47 +71,35 @@ export const AliasContactsView: FC<Props> = ({ onClose }) => {
                     <div className="mb-6">{c('Info')
                         .t`A contact is created for every email address that sends emails to or receives emails from ${aliasEmail}.`}</div>
 
-                    {loading ? (
-                        <>
-                            <div
-                                className="pass-skeleton pass-skeleton--box mt-2"
-                                style={{ '--skeleton-height': '2rem' }}
-                            />
-                            <div
-                                className="pass-skeleton pass-skeleton--box mt-2"
-                                style={{ '--skeleton-height': '8rem' }}
-                            />
-                        </>
-                    ) : (
-                        <>
-                            {hasContacts ? (
-                                <>
-                                    {contacts.active.map((contact) => (
-                                        <AliasContactCard contact={contact} key={contact.ID} />
-                                    ))}
+                    <>
+                        {contacts.active.map((contact) => (
+                            <AliasContactCard contact={contact} key={contact.ID} />
+                        ))}
 
-                                    {contacts.blocked.length > 0 && (
-                                        <>
-                                            <p className="color-weak mt-2 mb-5">{c('Title').t`Blocked addresses`}</p>
-                                            {contacts.blocked.map((contact) => (
-                                                <AliasContactCard contact={contact} key={contact.ID} />
-                                            ))}
-                                        </>
-                                    )}
-                                </>
-                            ) : (
-                                <div className="flex flex-column items-center mt-8">
-                                    <img src={stamp} alt="stamp icon" />
-                                    <h2 className="text-xl text-bold">{c('Title').t`Alias contacts`}</h2>
-                                    <div className="text-lg text-center mt-1 mb-5">{c('Info')
-                                        .t`To keep your personal email address hidden, you can create an alias contact that masks your address.`}</div>
-                                    <Button color="weak" shape="solid" pill onClick={() => setOpenMoreInfo(true)}>
-                                        {c('Action').t`Learn more`}
-                                    </Button>
-                                </div>
-                            )}
-                        </>
-                    )}
+                        {contacts.blocked.length > 0 && (
+                            <>
+                                <p className="color-weak mt-2 mb-5">{c('Title').t`Blocked addresses`}</p>
+                                {contacts.blocked.map((contact) => (
+                                    <AliasContactCard contact={contact} key={contact.ID} />
+                                ))}
+                            </>
+                        )}
+
+                        {empty && (
+                            <div
+                                className="flex flex-column items-center mt-16 max-w-custom mx-auto anime-fade-in"
+                                style={{ '--max-w-custom': '30em' }}
+                            >
+                                <img src={stamp} alt="stamp icon" />
+                                <h2 className="text-xl text-bold">{c('Title').t`Alias contacts`}</h2>
+                                <div className="text-lg text-center mt-1 mb-5">{c('Info')
+                                    .t`To keep your personal email address hidden, you can create an alias contact that masks your address.`}</div>
+                                <Button color="weak" shape="solid" pill onClick={() => setOpenMoreInfo(true)}>
+                                    {c('Action').t`Learn more`}
+                                </Button>
+                            </div>
+                        )}
+                    </>
                 </Panel>
             </SidebarModal>
             {openCreate && <AliasContactCreate onClose={() => setOpenCreate(false)} />}

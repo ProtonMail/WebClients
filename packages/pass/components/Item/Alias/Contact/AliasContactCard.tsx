@@ -14,6 +14,7 @@ import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { aliasBlockContact, aliasDeleteContact } from '@proton/pass/store/actions';
 import type { AliasContactWithStatsGetResponse } from '@proton/pass/types';
 import { epochToRelativeDuration } from '@proton/pass/utils/time/format';
+import clsx from '@proton/utils/clsx';
 
 type Props = { contact: AliasContactWithStatsGetResponse };
 
@@ -36,44 +37,34 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
     };
 
     return (
-        <FieldsetCluster className="mb-3">
+        <FieldsetCluster className={clsx('mb-3', deleteContact.loading && 'opacity-30 pointer-events-none')}>
             <FieldBox>
                 <div className="flex flex-nowrap justify-space-between">
                     <div>
                         <h2 className="text-lg mb-2 text-ellipsis">{Email.toLowerCase()}</h2>
-                        {deleteContact.loading ? (
-                            <div
-                                className="pass-skeleton pass-skeleton--box mt-2"
-                                style={{ '--skeleton-height': '4rem' }}
-                            />
-                        ) : (
-                            <>
-                                {!ForwardedEmails && !RepliedEmails && (
-                                    <div className="text-sm color-weak">{c('Label')
-                                        .t`No Activity in the last 14 days.`}</div>
-                                )}
-                                <div className="text-sm color-weak">{c('Label').t`Contact created ${time} ago.`}</div>
-                                <div className="text-sm color-weak">{c('Label')
-                                    .t`${ForwardedEmails} forwarded, ${RepliedEmails} sent in the last 14 days.`}</div>
-                                <Button
-                                    className="mt-2"
-                                    pill
-                                    shape="solid"
-                                    color="weak"
-                                    onClick={() =>
-                                        blockContact.dispatch({
-                                            shareId,
-                                            itemId,
-                                            contactId: ID,
-                                            blocked: !Blocked,
-                                        })
-                                    }
-                                    loading={blockContact.loading}
-                                >
-                                    {Blocked ? c('Action').t`Unblock contact` : c('Action').t`Block contact`}
-                                </Button>
-                            </>
+                        {!ForwardedEmails && !RepliedEmails && (
+                            <div className="text-sm color-weak">{c('Label').t`No Activity in the last 14 days.`}</div>
                         )}
+                        <div className="text-sm color-weak">{c('Label').t`Contact created ${time} ago.`}</div>
+                        <div className="text-sm color-weak">{c('Label')
+                            .t`${ForwardedEmails} forwarded, ${RepliedEmails} sent in the last 14 days.`}</div>
+                        <Button
+                            className="mt-2"
+                            pill
+                            shape="solid"
+                            color="weak"
+                            onClick={() =>
+                                blockContact.dispatch({
+                                    shareId,
+                                    itemId,
+                                    contactId: ID,
+                                    blocked: !Blocked,
+                                })
+                            }
+                            loading={blockContact.loading}
+                        >
+                            {Blocked ? c('Action').t`Unblock contact` : c('Action').t`Block contact`}
+                        </Button>
                     </div>
                     <div className="flex flex-nowrap items-start shrink-0">
                         <Tooltip openDelay={500} originalPlacement="top" title={c('Action').t`Copy alias address`}>
