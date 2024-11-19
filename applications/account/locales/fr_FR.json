@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -114,6 +114,9 @@
       ],
       "Add email address": [
         "Ajouter une adresse e-mail"
+      ],
+      "Add external address": [
+        "Ajouter une adresse externe"
       ],
       "Add filter": [
         "Ajouter un filtre"
@@ -811,11 +814,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Reject": [
         "Refuser"
@@ -1608,6 +1611,15 @@
         "Choisissez votre offre de fin d'année"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Cette offre n'est malheureusement pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de ${ discountPercentage } de réduction sur ${ plan.Title } en vous abonnant pour ${ cycle } mois.",
+        "Cette offre n'est malheureusement pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de ${ discountPercentage } de réduction sur ${ plan.Title } en vous abonnant pour ${ cycle } mois."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 To d'espace de stockage (2 fois plus que tout autre abonnement)"
@@ -1629,14 +1641,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "L'abonnement ${ plan } est de retour pour une durée limitée."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3575,7 +3579,7 @@
         "Effacez automatiquement les e-mails déplacés dans la corbeille et le dossier Indésirables/spam de plus de 30 jours."
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
-        "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boite de réception."
+        "Triez automatiquement vos messages entrants avant qu'ils n'arrivent dans votre boîte de réception."
       ],
       "Available with ${ BRAND_NAME } Mail Plus": [
         "Disponible avec ${ BRAND_NAME } Mail Plus"
@@ -3584,7 +3588,7 @@
         "Bravo ! Vous avez gagné le maximum de ${ rewardsLimit } mois gratuits de ${ plusPlanName }."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
-        "Créez autant de labels et de dossiers dont vous avez besoin pour garder votre boite de réception organisée."
+        "Créez autant de labels et de dossiers dont vous avez besoin pour garder votre boîte de réception organisée."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activez ${ PROTON_SENTINEL_NAME } pour accéder à ces fonctionnalités."
@@ -3620,7 +3624,7 @@
         "Configurez le transfert automatique pour rediriger les e-mails entrants vers une autre adresse e-mail."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -4375,10 +4379,10 @@
         "Ce compte n'existe pas."
       ],
       "Add at least one action": [
-        "Ajouter au moins une action"
+        "Ajoutez au moins une action"
       ],
       "Add at least one condition": [
-        "Ajouter au moins une condition"
+        "Ajoutez au moins une condition"
       ],
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
@@ -6896,6 +6900,9 @@
         "Ajout de ${ addedServerCount } serveur de Passerelle",
         "Ajout de ${ addedServerCount } serveurs de Passerelle"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "L'ajout d'une adresse e-mail externe désactivera le chiffrement de bout en bout pour toutes les communications par e-mail au sein de ce groupe. Voulez-vous continuer ?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Ajout d'un serveur de Passerelle : ${ serverNumber } sur ${ total }",
         "Ajout de serveurs de Passerelle : ${ serverNumber } sur ${ total }"
@@ -6980,7 +6987,7 @@
         "et"
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Tous les sous-dossiers seront également supprimés. Les messages conservés dans le dossier ${ nameDeleted } ne seront toutefois pas supprimés et pourront toujours être retrouvés dans le dossier Tous les messages."
+        "Tous les sous-dossiers seront également supprimés. Les messages conservés dans le dossier ${ nameDeleted } ne seront toutefois pas supprimés et pourront toujours être retrouvés dans le dossier « Tous les messages »."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Toute personne ayant ce lien peut voir toutes les informations des événements de ce calendrier, comme le titre, le lieu ou les participants."
@@ -7261,11 +7268,11 @@
       "Data locked": [
         "Les données sont verrouillées."
       ],
-      "Dedicated servers": [
-        "Serveurs dédiés"
-      ],
       "dedicated servers": [
         "serveurs dédiés"
+      ],
+      "Dedicated servers": [
+        "Serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec des adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -7393,7 +7400,7 @@
         "Votre sélection est enregistrée."
       ],
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Les messages marqués avec le label ${ nameDeleted } ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
+        "Les messages marqués avec le label « ${ nameDeleted } » ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
       ],
       "Enable email notifications": [
         "Activer les notifications par e-mail"
@@ -7415,6 +7422,15 @@
       ],
       "Encryption setting updated": [
         "Le paramètre de chiffrement a été mis à jour."
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Le chiffrement de bout en bout des e-mails est désactivé pour ce groupe en raison d'adresses externes."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Le chiffrement de bout en bout des e-mails du groupe est désactivé pour ce groupe. Il peut être activé."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Le chiffrement de bout en bout des e-mails du groupe est activé pour ce groupe."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "L'URL des points de terminaison reçue de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)."
@@ -7705,9 +7721,6 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installez un fichier de configuration serveur pour vous connecter à un serveur spécifique du pays de votre choix."
       ],
-      "Internal user": [
-        "Utilisateur Interne"
-      ],
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
@@ -7746,7 +7759,7 @@
         "Il semble que certaines de vos données soient chiffrées et verrouillées."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
-        "Cela prend 10 jours pour modifier le pays d'un serveur. Assurez-vous que votre sélection est correcte."
+        "Cela prend 10 jours pour modifier le pays d'un serveur. Assurez-vous que votre sélection soit correcte."
       ],
       "Item autofilled in ${ vaultLink }": [
         "L'élément a été rempli automatiquement dans ${ vaultLink }."
@@ -7907,6 +7920,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assurez-vous d'${ addARecoveryMethod } pour pouvoir vous reconnecter à votre compte si vous oubliez votre mot de passe."
       ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "Gérez vos préférences de notifications par e-mail pour ${ DOCS_APP_NAME }."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Saisissez manuellement cette information dans votre dispositif d'authentification à deux facteurs pour configurer votre compte. ${ switchButton }."
       ],
@@ -7962,7 +7978,7 @@
         "Le nouvel utilisateur a été invité à rejoindre l'organisation."
       ],
       "New VPN connection data will stop being collected and shown.": [
-        "Les nouvelles données de connexion du VPN ne seront plus collectées et affichées."
+        "Les nouvelles données de connexion du VPN ne seront plus collectées ni affichées."
       ],
       "No account keys exist": [
         "Il n'existe aucune clé de compte."
@@ -8155,8 +8171,9 @@
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Notez que si vous supprimez le filtre ${ nameDeleted }, nous ne traiterons plus toutes les actions automatisées qu'il déclenche."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Après avoir cliqué sur le bouton Confirmer, il restera ${ remainingCreditsFormatted } crédits sur votre compte."
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédit restant.",
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
       ],
       "please open a support ticket": [
         "ouvrez un ticket de support"
@@ -8876,11 +8893,11 @@
       "User activated": [
         "L'utilisateur a été activé."
       ],
-      "Username": [
-        "Nom d'utilisateur"
-      ],
       "username": [
         "nom d'utilisateur"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ],
       "Users": [
         "Utilisateurs"
@@ -10335,7 +10352,7 @@
         "Code-cadeau"
       ],
       "Group address": [
-        "Groupe d'adresses"
+        "Adresse du groupe"
       ],
       "Group members": [
         "Membres du groupe"
@@ -10762,7 +10779,7 @@
         "Alors"
       ],
       "Thomas": [
-        "Andréa"
+        "Jean"
       ],
       "Time format": [
         "Format de l'heure"
@@ -11708,6 +11725,32 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Commencez pour ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "À partir de ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuer avec Free"
@@ -11735,32 +11778,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Passer à ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Commencez pour ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "À partir de ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Je passe à ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -12454,6 +12471,20 @@
         "L'abonnement que vous avez sélectionné : ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -12472,20 +12503,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Profitez de Mail Plus pour ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -15173,6 +15190,12 @@
     "Setting": {
       "Enable Photos section": [
         "Activer la section Photos"
+      ],
+      "Get updates about comments via email": [
+        "Recevoir les mises à jour des commentaires par e-mail"
+      ],
+      "Include document name in email notifications": [
+        "Inclure le nom du document dans les notifications par e-mail"
       ]
     },
     "Settings description": {
@@ -15801,7 +15824,7 @@
         "Oui, c'était moi."
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Vous allez être redirigé vers votre service d'authentification unique tiers."
+        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ]
     },
     "sso: auth device state": {
@@ -16363,7 +16386,7 @@
         "Les utilisateurs ne pourront plus envoyer de messages."
       ],
       "Users won’t be able to upload files on their devices": [
-        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils."
+        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils"
       ],
       "Version history": [
         "Historique des versions"
@@ -16751,6 +16774,12 @@
       "Filter removed": [
         "Le filtre a été retiré."
       ],
+      "Group end-to-end email encryption disabled": [
+        "Le chiffrement de bout en bout des e-mails du groupe est désactivé."
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Le chiffrement de bout en bout des e-mails du groupe est activé."
+      ],
       "Preference updated": [
         "La préférence a été mise à jour."
       ],
@@ -17027,6 +17056,9 @@
       "Add domain": [
         "Ajouter un domaine"
       ],
+      "Add external address?": [
+        "Voulez-vous ajouter une adresse externe ?"
+      ],
       "Add filter": [
         "Ajouter un filtre"
       ],
@@ -17126,10 +17158,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -17424,6 +17456,9 @@
       ],
       "Email encryption keys": [
         "Clés de chiffrement des messages"
+      ],
+      "Email notifications": [
+        "Notifications par e-mail"
       ],
       "Email privacy": [
         "Confidentialité des messages"
@@ -18274,6 +18309,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Basculez automatiquement entre vos thèmes préférés pour le jour et la nuit, en synchronisation avec les modes jour et nuit de votre système."
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Cliquez ici pour apprendre à créer une signature personnalisée au format HTML."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copiez et coller cette URL dans le champ URL ACS (Assertion Consumer Service) de votre fournisseur d'identité."
       ],
@@ -18458,6 +18496,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Adresse externe - désactive le chiffrement de bout en bout des e-mails pour ce groupe."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Adresse externe - désactive le chiffrement de bout en bout des e-mails pour ce groupe et aucune ressource chiffrée ne sera partagée avec cet utilisateur."
       ],
       "Group membership paused": [
         "L'adhésion au groupe a été suspendue."

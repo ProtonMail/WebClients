@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -114,6 +114,9 @@
       ],
       "Add email address": [
         "Lägg till e-postadress"
+      ],
+      "Add external address": [
+        "Lägg till extern adress"
       ],
       "Add filter": [
         "Lägg till filter"
@@ -556,6 +559,9 @@
       "Get in touch": [
         "Kontakta oss"
       ],
+      "Get limited-time offer": [
+        "Skaffa tidsbegränsat erbjudande"
+      ],
       "Get more": [
         "Skaffa fler"
       ],
@@ -805,11 +811,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Reject": [
         "Avvisa"
@@ -1598,6 +1604,11 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1619,14 +1630,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1778,6 +1781,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Fakturerad med ${ amount } en gång"
+      ],
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
       ],
@@ -4827,6 +4833,9 @@
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
       ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nått gränsen för antalet kontakter för ditt konto"
+      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress."
       ],
@@ -6658,6 +6667,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för livstidsåtkomst till ${ PASS_SHORT_APP_NAME }. Priset och datumet för förnyelse av din prenumeration på ${ planTitle } förblir oförändrade."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
@@ -6853,6 +6865,9 @@
       "Adding ${ addedServerCount } gateway server": [
         "Lägger till ${ addedServerCount } gatewayserver",
         "Lägger till ${ addedServerCount } gatewayservrar"
+      ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Att lägga till en extern e-postadress kommer inaktivera end-to-end-kryptering för all e-postkommunikation inom denna grupp. Vill du fortsätta?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Lägger till gatewayserver: ${ serverNumber }/${ total }",
@@ -7216,11 +7231,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -7370,6 +7385,15 @@
       ],
       "Encryption setting updated": [
         "Krypteringsinställning uppdaterad"
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "End-to-end-krypterad e-post är inaktiverat för denna grupp på grund av externa adresser."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "End-to-end-krypterad e-post är inaktiverat för denna grupp. Det kan aktiveras."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "End-to-end-krypterad e-post är aktiverat för denna grupp."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Ändpunkts-URL mottagen från din identitetsleverantör (t.ex. https://idp.example.com/sso/saml)."
@@ -7651,9 +7675,6 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installera en serverkonfigurationsfil för att ansluta till en specifik server i det land du väljer."
       ],
-      "Internal user": [
-        "Intern användare"
-      ],
       "Internet connection lost": [
         "Internetanslutning förlorades"
       ],
@@ -7841,6 +7862,9 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Säkerställ att du ${ addARecoveryMethod } så du kan komma åt ditt konto ifall du glömmer ditt lösenord."
       ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "Hantera dina preferenser för e-postavisering för ${ DOCS_APP_NAME }."
+      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att ställa in ditt konto. ${ switchButton }."
       ],
@@ -7992,6 +8016,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Andra användare inom din organisation kommer att se dina upptagna tidsluckor. Inga händelsedetaljer delas."
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Föråldrad återställningsfil, uppdatera för att säkerställa åtkomst till dina data"
@@ -8801,11 +8828,11 @@
       "User activated": [
         "Användare aktiverad"
       ],
-      "Username": [
-        "Användarnamn"
-      ],
       "username": [
         "användarnamn"
+      ],
+      "Username": [
+        "Användarnamn"
       ],
       "Users": [
         "Användare"
@@ -9160,6 +9187,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du kommer att omdirigeras till ${ destination } efter inloggning."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Du kommer behålla livstidsåtkomst till ${ PASS_APP_NAME } + SimpleLogin premiumfunktioner om du avbryter din prenumeration."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du kommer förlora åtkomst till ${ planTitle }-funktioner på detta datum."
@@ -9838,6 +9868,9 @@
       ],
       "Allowed Domain": [
         "Tillåten domän"
+      ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Tillåter alla i din organisation att sömlöst lägga till videokonferenslänkar till sina kalenderinbjudningar."
       ],
       "Amount": [
         "Belopp"
@@ -11219,6 +11252,9 @@
       "for your first month": [
         "för din första månad"
       ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Skaffa ${ planTitle } för ${ discountedPriceElement }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Tidsbegränsat erbjudande, löper ut 2 april 2024"
       ]
@@ -11375,8 +11411,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Australisk dollar"
+      ],
       "Brazilian real": [
         "Brasiliansk real"
+      ],
+      "British pound": [
+        "Brittiskt pund"
+      ],
+      "Canadian dollar": [
+        "Kanadensisk dollar"
       ],
       "Euro": [
         "Euro"
@@ -11594,6 +11639,32 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom igång för ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Startar från ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11621,32 +11692,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom igång för ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Startar från ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Uppgradera till ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11720,6 +11765,9 @@
         "${ options }-dags filversionshistorik",
         "${ options }-dagars filversionshistorik"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin livstid"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias"
@@ -11775,6 +11823,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Avancerade funktioner för alias (drivs av SimpleLogin)"
       ],
@@ -11810,6 +11861,9 @@
       ],
       "Available on all platforms": [
         "Tillgängligt på alla plattformar"
+      ],
+      "Breach alerts": [
+        "Intrångsvarningar"
       ],
       "Calendar sharing": [
         "Kalenderdelning"
@@ -12325,6 +12379,23 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -12343,23 +12414,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Startar från ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -12450,6 +12504,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter är enkla märken som du kan lägga till i meddelanden för att göra dem lättare att hitta eller att tillämpa filter på"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Livstidsåtkomst till premiumfunktioner för ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Liksom en mapp är ett valv ett bekvämt sätt att organisera dina objekt"
@@ -13668,6 +13725,9 @@
       ],
       "One-time payment, lifetime deal": [
         "Engångsbetalning, livstidserbjudande"
+      ],
+      "Team policies": [
+        "Policy för team"
       ]
     },
     "PassFamilyPlan2024": {
@@ -13857,6 +13917,9 @@
       ],
       "Processing payment": [
         "Bearbetar betalning"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Förnyas med ${ price }, avbryt när som helst."
       ],
       "Select billing country to pay": [
         "Välj faktureringsland att betala"
@@ -15425,6 +15488,10 @@
         "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska kontot nu:",
         "${ n } användare har gått med i din organisation via din identitetsleverantör. Granska deras konton nu:"
       ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } användare är inaktiv. Du kan säkert ta bort denna användare från din organisation.",
+        "${ n } användare är inaktiva. Du kan säkert ta bort dem från din organisation."
+      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-användare (tillhandahållna av din identitetsleverantör) kommer att tas bort** och du måste skapa dem manuellt för att lägga till dem i din organisation igen."
       ],
@@ -16175,6 +16242,9 @@
       "Upload any new files": [
         "Ladda upp alla nya filer"
       ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Användarprenumerationer är ${ BRAND_NAME }s enda inkomst. Ditt stöd håller oss oberoende, främjar vårt uppdrag för integritet online och hjälper aktivister och organisationer som kämpar för frihet."
+      ],
       "Users won’t be able to manage their calendars": [
         "Användare kommer inte att kunna hantera sina kalendrar"
       ],
@@ -16564,6 +16634,12 @@
       "Filter removed": [
         "Filter borttaget"
       ],
+      "Group end-to-end email encryption disabled": [
+        "End-to-end-kryptering av e-post för grupp inaktiverat"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "End-to-end-kryptering av e-post för grupp aktiverat"
+      ],
       "Preference updated": [
         "Preferenser uppdaterade"
       ],
@@ -16843,6 +16919,9 @@
       "Add domain": [
         "Lägg till domän"
       ],
+      "Add external address?": [
+        "Lägg till extern adress?"
+      ],
       "Add filter": [
         "Lägg till filter"
       ],
@@ -16942,10 +17021,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -17240,6 +17319,9 @@
       ],
       "Email encryption keys": [
         "Krypteringsnycklar för e-postmeddelanden"
+      ],
+      "Email notifications": [
+        "E-postaviseringar"
       ],
       "Email privacy": [
         "E-postintegritet"
@@ -18099,6 +18181,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Klicka här för att lära dig hur man skapar en anpassad signatur med HTML."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
       ],
@@ -18283,6 +18368,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adress - inaktiverar end-to-end-kryptering för e-post för denna grupp och inga krypterade resurser kommer att delas med denna användare."
       ],
       "Group membership paused": [
         "Gruppmedlemskap pausad"

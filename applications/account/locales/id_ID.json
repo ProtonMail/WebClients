@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -114,6 +114,9 @@
       ],
       "Add email address": [
         "Tambah alamat email"
+      ],
+      "Add external address": [
+        "Tambah alamat eksternal"
       ],
       "Add filter": [
         "Tambah filter"
@@ -559,6 +562,9 @@
       "Get in touch": [
         "Hubungi kami"
       ],
+      "Get limited-time offer": [
+        "Dapatkan penawaran terbatas ini"
+      ],
       "Get more": [
         "Dapatkan lebih banyak"
       ],
@@ -808,11 +814,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reject": [
         "Tolak"
@@ -1601,6 +1607,14 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh diskon ${ discountPercentage } untuk ${ plan.Title } pada saat Anda berlangganan selama ${ cycle } bulan."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1622,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh **diskon ${ discountPercentage } untuk ${ plan.Title }** pada saat Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -2222,6 +2228,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } pengguna"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total untuk ${ n } bulan"
@@ -6818,6 +6827,9 @@
       "Adding ${ addedServerCount } gateway server": [
         "Menambahkan ${ addedServerCount } server gateway"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Menambahkan alamat emal eksternal ke grup ini akan menonaktifkan enkripsi end-to-end untuk seluruh komunikasi email di dalam grup. Apakah Anda ingin melanjutkan?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Menambahkan server gateway: ${ serverNumber } / ${ total }"
       ],
@@ -7175,11 +7187,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Server khusus dengan alamat IP khusus dapat ditambahkan ke gateway pribadi untuk memungkinkan kontrol akses yang lebih terperinci."
@@ -7272,7 +7284,7 @@
         "Lepaskan untuk mengimpor"
       ],
       "Each code can only be used once": [
-        "Masing-masing kode hanya dapat digunakan sekali"
+        "Masing-masing kode hanya dapat digunakan satu kali"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Masing-masing domain hanya dapat memiliki satu rekaman SPF (TXT). Apabila Anda ingin mempertahankan rekaman SPF (TXT) yang telah ada, Anda dapat menambahkan ${ spf } ke rekaman Anda saat ini (tempatkan rekaman ini setelah ${ spfValue })."
@@ -7327,6 +7339,15 @@
       ],
       "Encryption setting updated": [
         "Pengaturan enkripsi diperbarui"
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Enkripsi email end-to-end dinonaktifkan untuk grup ini karena terdapatnya alamat eksternal."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Enkripsi email end-to-end dinonaktifkan untuk grup ini. Enkripsi ini dapat diaktifkan."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Enkripsi email end-to-end diaktifkan untuk grup ini."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL endpoint yang diperoleh dari penyedia identitas Anda (mis. https://idp.contoh.com/sso/saml)."
@@ -7575,7 +7596,7 @@
         "PENTING: Apabila konsol DNS Anda tidak mengizinkan nilai CNAME yang diakhiri dengan tanda titik, Anda dapat menghapus tanda titik terakhir pada nilai CNAME yang bersangkutan."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat autentikasi dua faktor Anda."
+        "Penting: Pastikan Anda menyimpan kode pemulihan ini. Apabila tidak, Anda dapat kehilangan akses ke akun Anda secara permanen apabila Anda sampai kehilangan perangkat autentikasi dua faktor Anda."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
@@ -7615,9 +7636,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instal berkas konfigurasi Server untuk tersambung ke server tertentu di negara yang Anda pilih."
-      ],
-      "Internal user": [
-        "Pengguna internal"
       ],
       "Internet connection lost": [
         "Koneksi internet terputus"
@@ -7816,6 +7834,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Pastikan Anda ${ addARecoveryMethod } agar Anda dapat kembali mengakses akun apabila Anda lupa kata sandi."
+      ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "Kelola preferensi notifikasi email Anda untuk ${ DOCS_APP_NAME }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
@@ -8059,9 +8080,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Harap dicatat bahwa jika Anda menghapus filter ${ nameDeleted }, kami akan menghentikan pemrosesan semua tindakan otomatis yang dipicu olehnya."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo yang tersisa pada akun Anda akan menjadi ${ remainingCreditsFormatted }."
       ],
       "please open a support ticket": [
         "silakan buka tiket layanan dukungan"
@@ -8777,11 +8795,11 @@
       "User activated": [
         "Pengguna diaktifkan"
       ],
-      "Username": [
-        "Nama pengguna"
-      ],
       "username": [
         "nama pengguna"
+      ],
+      "Username": [
+        "Nama pengguna"
       ],
       "Users": [
         "Pengguna"
@@ -9148,6 +9166,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Anda akan dialihkan ke ${ destination } setelah masuk."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Anda akan tetap mempertahankan akses ke ${ PASS_APP_NAME } + berbagai fitur premium SimpleLogin untuk seumur hidup apabila Anda membatalkan langganan."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Anda akan kehilangan akses fitur ${ planTitle } pada tanggal ini."
@@ -11347,8 +11368,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Dolar Australia"
+      ],
       "Brazilian real": [
         "Real Brazil"
+      ],
+      "British pound": [
+        "Pound Inggris"
+      ],
+      "Canadian dollar": [
+        "Dolar Kanada"
       ],
       "Euro": [
         "Euro"
@@ -11560,6 +11590,32 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Mulai dari ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -11587,32 +11643,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Mulai dengan harga ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Mulai dari ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Tingkatkan ke ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11726,6 +11756,12 @@
       ],
       "Administration Panel": [
         "Panel Administrasi"
+      ],
+      "Advanced account protection": [
+        "Perlindungan akun tingkat lanjut"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Fitur alias bertingkat lanjut (diberdayakan oleh SimpleLogin)"
       ],
       "Advanced network security": [
         "Keamanan jaringan lanjutan"
@@ -12092,7 +12128,7 @@
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
       "Snooze messages and get reminded when you want": [
-        "Tunda pesan dan ingatkan saat Anda mau"
+        "Tunda pesan dan dapatkan peringatan di waktu yang Anda inginkan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
@@ -12269,6 +12305,20 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -12287,20 +12337,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Dapatkan Mail Plus dengan harga ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Mulai dari ${ price }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -12387,6 +12423,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Label merupakan penanda yang dapat Anda sematkan kepada pesan tertentu agar mereka dapat dicari atau difilter dengan mudah"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Akses seumur hidup ke ${ PASS_APP_NAME } + berbagai fitur premium SimpleLogin"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Layaknya folder, brankas merupakan cara yang praktis untuk mengelola item Anda"
@@ -12700,7 +12739,7 @@
         "Alamat IP disalin ke papan klip"
       ],
       "Key copied to the clipboard": [
-        "Kunci tersalin ke papan klip"
+        "Kunci disalin ke papan klip"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Kunci dengan kode sidik jari ${ fp } telah dihapus."
@@ -13567,6 +13606,9 @@
       "${ n } user account": [
         "${ n } akun pengguna"
       ],
+      "Activity log": [
+        "Log aktivitas"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel admin untuk mengelola pengguna dan langganan"
       ],
@@ -13578,6 +13620,9 @@
       ],
       "One-time payment, lifetime deal": [
         "Satu kali pembayaran, untuk selamanya"
+      ],
+      "Team policies": [
+        "Kebijakan tim"
       ]
     },
     "PassFamilyPlan2024": {
@@ -13761,6 +13806,9 @@
       ],
       "Processing payment": [
         "Memproses pembayaran"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Terbarui dengan harga ${ price }, batalkan kapan saja."
       ],
       "Select billing country to pay": [
         "Pilih negara bagian penagihan untuk membayar"
@@ -15839,6 +15887,11 @@
         "Langganan akan diturunkan pada akhir siklus tagihan."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Seumur hidup"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Untuk ${ totalPrice }"
@@ -15927,7 +15980,7 @@
         "Setelah langganan ${ planName } Anda berakhir, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Tim Anda akan mengalami gangguan dalam pekerjaan mereka karena pengguna tambahan tidak didukung pada paket gratis ini."
       ],
       "All you need for your business": [
-        "Semua yang Anda perlukan untuk bisnis Anda"
+        "Semua yang Anda butuhkan untuk bisnis Anda"
       ],
       "Any custom email domains will be disabled": [
         "Domain email khusus apa pun akan dinonaktifkan"
@@ -15993,7 +16046,7 @@
         "Bagaimana tim layanan dukungan kami menghadirkan aplikasi VPN kami secara langsung ke tangan masyarakat."
       ],
       "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
-        "Bagaimana kami melawan balik pada saat ${ BRAND_NAME } ditargetkan dalam kampanye yang agresif."
+        "Bagaimana kami melawan balik pada saat ${ BRAND_NAME } diblokir dalam kampanye yang agresif."
       ],
       "How we supported local activists when privacy and free speech were threatened.": [
         "Bagaimana kami mendukung para aktivis lokal ketika privasi dan kebebasan berbicara sedang diancam."
@@ -16026,7 +16079,7 @@
         "Batasan paket gratis"
       ],
       "Make your business stand out": [
-        "Buat bisnis Anda menonjol"
+        "Buat bisnis Anda terlihat menonjol"
       ],
       "Manage your calendar": [
         "Kelola kalender Anda"
@@ -16089,7 +16142,7 @@
         "Langganan pengguna merupakan sumber pemasukan ${ BRAND_NAME } satu-satunya. Dukungan Anda menjaga kami agar tetap independen, mendorong misi kami dalam mewujudkan privasi online, serta melindungi para aktivis dan organisasi yang berjuang demi kebebasan."
       ],
       "Users won’t be able to manage their calendars": [
-        "Pengguna tidak akan dapat mengelola kalendernya"
+        "Pengguna tidak akan dapat mengelola kalender mereka"
       ],
       "Users won’t be able to send emails": [
         "Pengguna tidak akan dapat mengirim email"
@@ -16125,7 +16178,7 @@
         "Anda masih memiliki ${ expiryDate } pada paket ${ planName } Anda. Kami akan menambahkan saldo yang senilai dengan waktu langganan yang tersisa ke Akun ${ BRAND_NAME } Anda. Pastikan Anda tidak melebihi batasan paket gratis sebelum membatalkan langganan. ${ learnMoreLink }"
       ],
       "Your ${ planName } plan doesn’t just keep your business data and communications safe. It supports your compliance objectives, makes your business stand out, and keeps your team connected.": [
-        "Paket ${ planName } Anda tidak hanya menjaga data dan komunikasi bisnis aman. Ini juga mendukung sasaran kepatuhan Anda, membuat bisnis Anda menonjol, dan membuat tim Anda selalu terhubung."
+        "Paket ${ planName } Anda tidak hanya menjaga keamanan data dan komunikasi bisnis Anda. Paket ini juga mendukung sasaran kepatuhan bisnis Anda, membuat bisnis Anda tampil menonjol, serta membuat tim Anda selalu terhubung."
       ],
       "Your own short @pm.me email alias": [
         "Alias email pendek @pm.me milik Anda"
@@ -16851,11 +16904,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
