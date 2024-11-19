@@ -2,7 +2,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
 import { BuildInitialEditorConfig, ShouldBootstrap } from './InitialEditorConfig'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useRef } from 'react'
 import type { Provider } from '@lexical/yjs'
 import { CollaborationContext } from '@lexical/react/LexicalCollaborationContext'
 import type {
@@ -88,11 +88,21 @@ export function Editor({
   userMode,
   systemMode,
   onUserModeChange,
-  setEditorRef,
+  setEditorRef: passEditorRefToParent,
   username,
   showTreeView,
   isSuggestionsFeatureEnabled,
 }: Props) {
+  const editorRef = useRef<LexicalEditor | null>(null)
+
+  const setEditorRef = useCallback(
+    (instance: LexicalEditor | null) => {
+      editorRef.current = instance
+      passEditorRefToParent(instance)
+    },
+    [passEditorRefToParent],
+  )
+
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
       return new LexicalDocProvider(docState)
@@ -103,7 +113,7 @@ export function Editor({
 
   const openLink = useCallback(
     (url: string) => {
-      clientInvoker.openLink(url).catch(reportErrorToSentry)
+      void clientInvoker.openLink(url).catch(reportErrorToSentry)
     },
     [clientInvoker],
   )
@@ -161,7 +171,7 @@ export function Editor({
             >
               <ProtonContentEditable
                 className={clsx(
-                  'DocumentEditor w-[80%] max-w-[80%] lg:w-[816px] lg:max-w-[816px] print:w-full print:max-w-full',
+                  'DocumentEditor w-full max-w-full px-[10%] lg:w-full lg:max-w-full lg:px-[calc((100%-816px)/2)] print:w-full print:max-w-full',
                   isSuggestionMode && 'suggestion-mode',
                 )}
                 style={{
