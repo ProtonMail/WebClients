@@ -3,12 +3,11 @@ import { type ReactNode } from 'react';
 import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Time from '@proton/components/components/time/Time';
 import { type Currency, PLANS, type PlanIDs } from '@proton/payments';
 import { CYCLE, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { type SubscriptionCheckoutData, getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/helpers/planIDs';
 import { getOptimisticRenewCycleAndPrice, isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import {
     getHas2024OfferCoupon,
@@ -18,6 +17,8 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import type { Coupon, PlansMap, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
+import Price from '../../components/price/Price';
+import { getMonths } from './SubscriptionsSection';
 import type { CheckoutModifiers } from './subscription/useCheckoutModifiers';
 
 type RenewalNoticeProps = {
@@ -45,18 +46,38 @@ export const getBlackFridayRenewalNoticeText = ({
         currency,
     });
 
-    const discountedPrice = getSimplePriceString(currency, price);
-    const nextPrice = getSimplePriceString(currency, renewAmount);
+    const plan = getPlanFromPlanIDs(plansMap, planIDs);
+    const discountedPrice = (
+        <Price key="a" currency={currency}>
+            {price}
+        </Price>
+    );
+    const nextPrice = plan ? (
+        <Price key="b" currency={currency}>
+            {renewAmount}
+        </Price>
+    ) : null;
 
     if (renewalLength === CYCLE.MONTHLY) {
-        // translator: The specially discounted price of US$8.99 is valid for the first month. Then it will automatically be renewed at US$9.99 every month. You can cancel at any time.
+        // translator: The specially discounted price of $8.99 is valid for the first month. Then it will automatically be renewed at $9.99 every month. You can cancel at any time.
         return c('bf2023: renew')
-            .t`The specially discounted price of ${discountedPrice} is valid for the first month. Then it will automatically be renewed at ${nextPrice} every month. You can cancel at any time.`;
+            .jt`The specially discounted price of ${discountedPrice} is valid for the first month. Then it will automatically be renewed at ${nextPrice} every month. You can cancel at any time.`;
     }
 
-    // translator: Note - renewalLength is greater than 1. Full string is "The specially discounted price of US$8.99 is valid for the first 12 months. Then it will automatically be renewed at US$9.99 for 12 months. You can cancel at any time."
+    const discountedMonths = ((n: number) => {
+        if (n === CYCLE.MONTHLY) {
+            // translator: This string is a special case for 1 month billing cycle, together with the string "The specially discounted price of ... is valid for the first 'month' ..."
+            return c('bf2023: renew').t`the first month`;
+        }
+        // translator: The singular is not handled in this string. The month part of the string "The specially discounted price of EUR XX is valid for the first 30 months. Then it will automatically be renewed at the discounted price of EUR XX for 24 months. You can cancel at any time."
+        return c('bf2023: renew').ngettext(msgid`${n} month`, `the first ${n} months`, n);
+    })(cycle);
+
+    const nextMonths = getMonths(renewalLength);
+
+    // translator: The specially discounted price of EUR XX is valid for the first 30 months. Then it will automatically be renewed at the discounted price of EUR XX for 24 months. You can cancel at any time.
     return c('bf2023: renew')
-        .t`The specially discounted price of ${discountedPrice} is valid for the first ${cycle} months. Then it will automatically be renewed at the discounted price of ${nextPrice} for ${renewalLength} months. You can cancel at any time.`;
+        .jt`The specially discounted price of ${discountedPrice} is valid for ${discountedMonths}. Then it will automatically be renewed at the discounted price of ${nextPrice} for ${nextMonths}. You can cancel at any time.`;
 };
 
 const getRegularRenewalNoticeText = ({
@@ -88,11 +109,10 @@ const getRegularRenewalNoticeText = ({
         </Time>
     );
 
-    const start = c('Info').ngettext(
-        msgid`Subscription auto-renews every month.`,
-        `Subscription auto-renews every ${cycle} months.`,
-        cycle
-    );
+    const start =
+        cycle === CYCLE.MONTHLY
+            ? c('Info').t`Subscription auto-renews every month.`
+            : c('Info').t`Subscription auto-renews every ${cycle} months.`;
 
     return [start, ' ', c('Info').jt`Your next billing date is ${renewalTime}.`];
 };
@@ -122,7 +142,11 @@ const getSpecialLengthRenewNoticeText = ({
             cycle
         );
 
-        const renewPrice = getSimplePriceString(currency, renewAmount);
+        const renewPrice = (
+            <Price key="renewal-price" currency={currency}>
+                {renewAmount}
+            </Price>
+        );
 
         const second = c('vpn_2024: renew').jt`You'll then be billed every 12 months at ${renewPrice}.`;
 
@@ -132,7 +156,7 @@ const getSpecialLengthRenewNoticeText = ({
 
 const getRenewNoticeTextForLimitedCoupons = ({
     coupon,
-    cycle: subscriptionLength, // Elaborate name of the variable to help the translators
+    cycle,
     planIDs,
     plansMap,
     currency,
@@ -153,33 +177,37 @@ const getRenewNoticeTextForLimitedCoupons = ({
 
     const couponRedemptions = coupon.MaximumRedemptionsPerUser;
 
-    const priceWithDiscount = getSimplePriceString(currency, checkout.withDiscountPerCycle);
+    const priceWithDiscount = (
+        <Price key="price-with-discount" currency={currency}>
+            {checkout.withDiscountPerCycle}
+        </Price>
+    );
 
-    const renewPrice = getSimplePriceString(
-        currency,
-        getOptimisticRenewCycleAndPrice({ planIDs, plansMap, cycle: subscriptionLength, currency }).renewPrice
+    const { renewPrice } = getOptimisticRenewCycleAndPrice({ planIDs, plansMap, cycle, currency });
+    const months = getMonths(cycle);
+
+    const price = (
+        <Price key="price" currency={currency}>
+            {renewPrice}
+        </Price>
     );
 
     if (couponRedemptions === 1) {
         if (short) {
-            return c('Payments').jt`Renews at ${renewPrice}, cancel anytime.`;
+            return c('Payments').jt`Renews at ${price}, cancel anytime.`;
         }
 
-        const subscriptionLengthCopy = subscriptionLength;
-
-        return c('Payments').ngettext(
-            msgid`The specially discounted price of ${priceWithDiscount} is valid for the first month. Then it will automatically be renewed at ${renewPrice} every month. You can cancel at any time.`,
-            msgid`The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} months. Then it will automatically be renewed at ${renewPrice} for ${subscriptionLengthCopy} months. You can cancel at any time.`,
-            subscriptionLength
-        );
+        if (cycle === CYCLE.MONTHLY) {
+            return c('Payments')
+                .jt`The specially discounted price of ${priceWithDiscount} is valid for the first month. Then it will automatically be renewed at ${price} every month. You can cancel at any time.`;
+        } else {
+            return c('Payments')
+                .jt`The specially discounted price of ${priceWithDiscount} is valid for the first ${months}. Then it will automatically be renewed at ${price} for ${months}. You can cancel at any time.`;
+        }
     }
 
-    // translator: couponRedemptions is greater than 1 in this case
-    return c('Payments').ngettext(
-        msgid`The specially discounted price of ${priceWithDiscount} is valid for the first month. The coupon is valid for ${couponRedemptions} renewals. Then it will automatically be renewed at ${renewPrice} for ${subscriptionLength} months. You can cancel at any time.`,
-        msgid`The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} months. The coupon is valid for ${couponRedemptions} renewals. Then it will automatically be renewed at ${renewPrice} for ${subscriptionLength} months. You can cancel at any time.`,
-        subscriptionLength
-    );
+    return c('Payments')
+        .jt`The specially discounted price of ${priceWithDiscount} is valid for the first ${months}. The coupon is valid for ${couponRedemptions} renewals. Then it will automatically be renewed at ${price} for ${months} months. You can cancel at any time.`;
 };
 
 export const getPassLifetimeRenewNoticeText = ({ subscription }: { subscription?: Subscription }) => {
