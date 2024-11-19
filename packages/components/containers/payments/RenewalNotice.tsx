@@ -165,9 +165,11 @@ const getRenewNoticeTextForLimitedCoupons = ({
             return c('Payments').jt`Renews at ${renewPrice}, cancel anytime.`;
         }
 
+        const subscriptionLengthCopy = subscriptionLength;
+
         return c('Payments').ngettext(
             msgid`The specially discounted price of ${priceWithDiscount} is valid for the first month. Then it will automatically be renewed at ${renewPrice} every month. You can cancel at any time.`,
-            msgid`The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} months. Then it will automatically be renewed at ${renewPrice} for ${subscriptionLength} months. You can cancel at any time.`,
+            msgid`The specially discounted price of ${priceWithDiscount} is valid for the first ${subscriptionLength} months. Then it will automatically be renewed at ${renewPrice} for ${subscriptionLengthCopy} months. You can cancel at any time.`,
             subscriptionLength
         );
     }
