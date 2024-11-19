@@ -1,5 +1,5 @@
 import type { Dispatch, MutableRefObject, ReactNode, SetStateAction } from 'react';
-import { Fragment, useImperativeHandle, useRef, useState } from 'react';
+import { Fragment, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -22,6 +22,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
+import metrics from '@proton/metrics';
 import {
     type BillingAddress,
     type Currency,
@@ -189,6 +190,10 @@ const Step1 = ({
     const theme = usePublicTheme();
     const { getAvailableCurrencies } = useCurrencies();
     const [changingCurrency, withChangingCurrency] = useLoading();
+
+    useEffect(() => {
+        metrics.core_single_signup_pageLoad_total.increment({});
+    }, []);
 
     const availableCurrencies = getAvailableCurrencies({
         status: model.paymentMethodStatusExtended,
