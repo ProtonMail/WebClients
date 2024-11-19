@@ -166,11 +166,9 @@ export const handleSetupSSOUserKeys = async ({
         deviceSecretData: deviceData.deviceSecretData,
     });
 
-    const loginPassword = '';
-
     await setupKeysWithUnprivatization({
         api,
-        password: loginPassword,
+        password: newPassword,
         parsedUnprivatizationData,
         payload: {
             ...resetPayload,
@@ -186,7 +184,7 @@ export const handleSetupSSOUserKeys = async ({
 
     return finalizeLogin({
         cache,
-        loginPassword,
+        loginPassword: '',
         keyPassword: passphrase,
         clearKeyPassword: newPassword,
     });
