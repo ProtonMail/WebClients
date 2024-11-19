@@ -481,9 +481,6 @@
       "See members": [
         "Паглядзець удзельнікаў"
       ],
-      "Select": [
-        "Выбраць"
-      ],
       "Send invite": [
         "Адправіць запрашэнне"
       ],
@@ -803,9 +800,6 @@
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
         "Немагчыма атрымаць запрашэнні карыстальніка для сховішча \"${ vaultName }\""
-      ],
-      "Could not update settings at the moment. Please try again later.": [
-        "Немагчыма абнавіць налады ў цяперашні момант. Паспрабуйце яшчэ раз пазней."
       ],
       "Could not validate addresses at the moment.": [
         "Немагчыма праверыць адрасы ў дадзены момант."
@@ -1190,9 +1184,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
-      "${ count } invites successfully sent": [
-        "Паспяхова адпраўлена наступная колькасць запрашэнняў: ${ count }"
-      ],
       "${ count } time": [
         "${ count } раз",
         "${ count } разы",
@@ -1269,7 +1260,7 @@
         "Адміністратар"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Вы можаце выдаліць файл CSV, які змяшчае вашы паролі ў мэтах бяспекі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
+        "У мэтах бяспекі вы можаце выдаліць файл CSV, які змяшчае вашы паролі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
       ],
       "Alias management features from SimpleLogin are coming soon!": [
         "Неўзабаве з'явіцца функцыя кіравання псеўданімамі з SimpleLogin!"
@@ -1357,9 +1348,6 @@
       ],
       "Change your password": [
         "Змяніць свой пароль"
-      ],
-      "Choose your preferred look and feel.": [
-        "Выберыце пажаданы выгляд."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Пацвердзіце свой дадатковы пароль, каб працягнуць яго выдаленне."
@@ -1479,13 +1467,13 @@
         "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
       ],
       "For security reasons, you need to confirm access to this shared vault": [
-        "У мэтах бяспекі, вам неабходна пацвердзіць доступ да гэтага абагуленага сховішча",
-        "У мэтах бяспекі, вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
-        "У мэтах бяспекі, вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
-        "У мэтах бяспекі, вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў"
+        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтага абагуленага сховішча",
+        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
+        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
+        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў"
       ],
       "For security reasons, your access needs to be confirmed": [
-        "У мэтах бяспекі, вам неабходна пацвердзіць свой доступ"
+        "У мэтах бяспекі вам неабходна пацвердзіць свой доступ"
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдня.",
@@ -1549,9 +1537,6 @@
       ],
       "Invite successfully resent": [
         "Запрашэнне адпраўлена паўторна"
-      ],
-      "Invite successfully sent": [
-        "Запрашэнне паспяхова адпраўлена"
       ],
       "invites you to access items in": [
         "запрасіў(-ла) вас атрымаць доступ да элементаў у"
@@ -1618,9 +1603,6 @@
       ],
       "Low Priority": [
         "Нізкі прыярытэт"
-      ],
-      "Make it your own": [
-        "Зрабіце гэта па-свойму"
       ],
       "me": [
         "я"
@@ -2278,6 +2260,9 @@
       "Cards": [
         "Карткі"
       ],
+      "Choose unlock method": [
+        "Выберыце спосаб разблакіроўкі"
+      ],
       "Choose your preferred look and feel.": [
         "Выберыце пажаданы выгляд."
       ],
@@ -2446,6 +2431,9 @@
       "Generic CSV": [
         "Агульны CSV"
       ],
+      "Get Started": [
+        "Пачаць працу"
+      ],
       "Get the extension for your browser.": [
         "Атрымайце пашырэнні для свайго браўзера."
       ],
@@ -2502,6 +2490,9 @@
       ],
       "Install and continue": [
         "Усталяваць і працягнуць"
+      ],
+      "Install extension": [
+        "Усталяваць пашырэнне"
       ],
       "Integrated 2FA authenticator": [
         "Інтэграваны аўтэнтыфікатар 2ФА"
@@ -2742,6 +2733,9 @@
       ],
       "Select your password manager": [
         "Выберыце менеджар пароляў"
+      ],
+      "Select your theme": [
+        "Выберыце тэму"
       ],
       "Selected": [
         "Выбрана"

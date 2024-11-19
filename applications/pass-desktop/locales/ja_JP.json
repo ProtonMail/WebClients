@@ -1097,9 +1097,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "「${ payload.item.data.metadata.name }」更新が却下されました"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } へ正常に招待状が送られました"
-      ],
       "${ count } time": [
         "${ count } 回"
       ],
@@ -1408,9 +1405,6 @@
       ],
       "Invite successfully resent": [
         "招待を正常に再送しました。"
-      ],
-      "Invite successfully sent": [
-        "招待が正常に送信されました。"
       ],
       "invites you to access items in": [
         "あなたにアイテムへのアクセスを招待しています。"
@@ -1744,6 +1738,9 @@
       ],
       "This version will be added to the history as the newest version.": [
         "このバージョンは最新バージョンとして履歴に追加されます。"
+      ],
+      "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
+        "この操作により、**${ date } **にあなたの ${ BRAND_NAME } アカウントにサインインしようとしたデバイス **${ name }** が拒否されます。"
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "別のパスワード マネージャーからデータを移行するには、パスワード マネージャーに移動し、データをエクスポートして、${ PASS_APP_NAME } にアップロードします。 データがインポートされたら、エクスポートされたファイルを削除します。"
@@ -2735,6 +2732,35 @@
         "あなたの情報の漏洩が見つかりました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示してください。${ link }"
       ]
     },
+    "sso": {
+      "Approve or deny it now": [
+        "承認するか否認するか決めてください"
+      ],
+      "Enter the confirmation code we sent on your other device.": [
+        "他のデバイスに送った確認コードを入力してください。"
+      ],
+      "If you didn't make this request, cancel it now.": [
+        "あなたがこのリクエストをしていない場合、今すぐキャンセルしてください。"
+      ],
+      "Invalid confirmation code": [
+        "無効な確認コード"
+      ],
+      "No, it wasn’t me": [
+        "いいえ、私ではありません"
+      ],
+      "Sign-in confirmed": [
+        "サインイン確認"
+      ],
+      "Sign-in rejected": [
+        "サインイン拒否"
+      ],
+      "Sign-in requested on another device. Was it you?": [
+        "他のデバイスからサインインが要求されました。あなたですか？"
+      ],
+      "Yes, it was me": [
+        "はい、私です"
+      ]
+    },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "エイリアスの同期が有効になりました。シンプルログインのエイリアスは同期に時間がかかることがあります"
@@ -2908,6 +2934,9 @@
       ],
       "Recommended actions": [
         "推奨されるアクション"
+      ],
+      "Reject device?": [
+        "デバイスを拒否しますか？"
       ],
       "Remove email address?": [
         "メールアドレスを削除しますか?"
@@ -3146,6 +3175,12 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP暗号化エクスポートファイルにはパスフレーズが必要です。"
+      ],
+      "Please check that the extension is properly installed and enabled": [
+        "拡張機能が正しくインストールされ、有効になっていることを確認してください。"
+      ],
+      "Please update the extension to its latest version": [
+        "拡張機能を最新のバージョンに更新してください"
       ],
       "Please verify your email address in order to use email aliases": [
         "メールアドレスを使用するためにメールアドレスの認証を行ってください"

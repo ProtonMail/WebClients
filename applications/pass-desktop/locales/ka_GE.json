@@ -106,6 +106,9 @@
       "Confirm access": [
         "წვდომის დადასტურება"
       ],
+      "Confirm all": [
+        "ყველას დადასტურება"
+      ],
       "Continue": [
         "გაგრძელება"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "იდენტიფიკატორის შექმნა"
+      ],
+      "Create item": [
+        "ელემენტის შექმნა"
       ],
       "Create login": [
         "შესვლის ჩანაწერის შექმნა"
@@ -394,6 +400,9 @@
       "Previous": [
         "წინა"
       ],
+      "Reactivate now": [
+        "რეაქტივაცია ახლავე"
+      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
@@ -643,6 +652,9 @@
       "Black Friday": [
         "შავი პარასკევი"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "გადაიხადეთ ერთხელ და მიიღეთ ${ lifetimeAccessJSX } Pass Plus-ზე და SimlleLogin-ზე. მხოლოდ ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "დაზოეთ ${ discountJSX }-მდე Pass Family-ზე. მხოლოდ ${ relativePrice }/თვეში."
       ]
@@ -777,6 +789,9 @@
       ],
       "Could not resolve share members": [
         "გაზიარებულის წევრების ამოხსნა შეუძლებელია"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "ვერ მივიღე მომხამრებლის მოსაწვევები საცავისთვის \"${ vaultName }\""
       ],
       "Could not validate addresses at the moment.": [
         "მისამართების გადამოწმება, ამჟამად, შეუძლებელია."
@@ -1147,9 +1162,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
       ],
-      "${ count } invites successfully sent": [
-        "წარმატებით გაგზავნილია ${ count } მოსაწვევი"
-      ],
       "${ count } time": [
         "${ count }-ჯერ",
         "${ count }-ჯერ"
@@ -1174,6 +1186,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } ელემენტის favicon-ს ${ BRAND_NAME }-ს ანონიმიზებული გამოსახულებების პროქსით გაჩვენებთ."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } თქვენი სისტემის თემას გაჰყვება."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს, საკრედიტო ბარათებს და იდენტიფიკატორებს შემოიტანს."
@@ -1481,9 +1496,6 @@
       "Invite successfully resent": [
         "მოსაწვევი წარმატებით გაიგზავნა თავიდან"
       ],
-      "Invite successfully sent": [
-        "მოსაწვევი წარმატებით გაიგზავნა"
-      ],
       "invites you to access items in": [
         "გიწვევთ ელემენტებზე წვდომისთვის"
       ],
@@ -1563,8 +1575,20 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "წარმოადგენს რა მეტს, ვიდრე პაროლების მმართველი, ${ PASS_APP_NAME } თქვენს პაროლებს და პირადი ელფოსტის მისამართებს ფსევდონიებით იცავს. დაფუძნებული იგივე ტექნოლოგიაზე, რაზეც ${ MAIL_APP_NAME }, თქვენი მონაცემები გამჭოლადაა დაშიფრული და წვდომადი, მხოლოდ, თქვენთვსაა."
       ],
+      "Move ${ count } item": [
+        "${ count } ელემენტის გადატანა",
+        "${ count } ელემენტის გადატანა"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "ელემენტების გადატანა სხვა საცავში მის ისტორიას და ყველა დაცულ ბმულს წაშლის.",
+        "ელემენტების გადატანა სხვა საცავში მის ისტორიას და ყველა დაცულ ბმულს წაშლის."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "ელემენტის გადატანა სხვა საცავში მის ისტორიას წაშლის.",
+        "ელემენტების გადატანა სხვა საცავში მათ ისტორიას წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2044,6 +2068,9 @@
       "15 minutes": [
         "15 წუთი"
       ],
+      "15 seconds": [
+        "15 წამი"
+      ],
       "2 minutes": [
         "2 წუთი"
       ],
@@ -2148,6 +2175,9 @@
       ],
       "City": [
         "ქალაქი"
+      ],
+      "Clear clipboard after": [
+        "ბუფერის გასუფთავება შემდეგ"
       ],
       "Code": [
         "კოდი"
@@ -2797,6 +2827,13 @@
       "${ count } item": [
         "${ count } ელემენტი",
         "${ count } ელემენტი"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "შეგიძლიათ გადაათრიოთ და დააგდოთ მონიშნული ელემენტი სხვა საცავში",
+        "შეგიძლიათ გადაათრიოთ და დაყაროთ მონიშნული ელემენტები სხვა საცავში"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "აირჩიეთ ${ semiboldText } ამ საცავში."
       ]
     },
     "new_plans: feature": {
@@ -3014,6 +3051,17 @@
         "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "ავტომატური"
+      ],
+      "Dark": [
+        "მუქი"
+      ],
+      "Light": [
+        "ღია"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } addresses": [
         "${ BRAND_NAME } მისამართი"
@@ -3068,6 +3116,13 @@
       ],
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "წავშალო ${ deletedItemsCount } ელემენტი?",
+        "წავშალო ${ deletedItemsCount } ელემენტი?"
+      ],
+      "Delete this item?": [
+        "წავშალო ეს ელემენტი?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "წავშალო საცავი \"${ vaultName }\"?"
@@ -3147,8 +3202,19 @@
       "Modified": [
         "შეცვლილია"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "${ count } ელემენტის გადატანა ${ vaultName }-ში",
+        "${ count } ელემენტის გადატანა ${ vaultName }-ში"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "გადავიტანო სანაგვე ყუთში ${ trashedItemsCount } ელემენტი?",
+        "გადავიტანო სანაგვე ყუთში ${ trashedItemsCount } ელემენტი?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "გადავიტანო ყველა ელემენტი საცავში \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "გადავიტანო ელემენტი საცავში \"${ vaultName }\""
       ],
       "No excluded items": [
         "ამოღებული ელემენტების გარეშე"
@@ -3179,6 +3245,9 @@
       ],
       "Pause monitoring?": [
         "მონიტორინგის შეჩერება?"
+      ],
+      "Pending access confirmation": [
+        "დარჩენილი წვდომის დადასტურება"
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
@@ -3305,6 +3374,9 @@
       "What is the dark web?": [
         "რა არს ბნელი ვები?"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "თქვვენი ${ planName } გამოწერის დასრულების თარიღია ${ endDate }"
+      ],
       "Your exposed information": [
         "თქვენი გაჟონილი ინფორმაცია"
       ],
@@ -3313,6 +3385,10 @@
       ],
       "Your welcome gift": [
         "ისიამოვნეთ თქვენი უფასო სატესტო ვერსიით"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
+        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
       ]
     },
     "Validation": {
@@ -3348,11 +3424,17 @@
       "A description of the problem is required": [
         "პრობლემის აღწერა აუცილებელია"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "ფსევდონიმები ნაგვის ყუთში გააგრძელებენ ელფოსტების გადაგზავნას."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "ყველა თქვენი ნაგვის ყუთში გადაყრილი ელემენტი სამუდამოდ წაიშლება. ეს ქმედება შეუქცევადია."
       ],
       "An error occurred while exporting your data": [
         "შეცდომა თქვენი მონაცემების გატანისას"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "ნამდვილად გსურთ, სამუდამოდ წაიშალოს ეს ელემენტი?"
       ],
       "At least one email address is required": [
         "აუცილებელია, სულ ცოტა, ერთი ელფოსტის მისამართი"

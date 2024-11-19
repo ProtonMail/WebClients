@@ -481,9 +481,6 @@
       "See members": [
         "Προβολή μελών"
       ],
-      "Select": [
-        "Επιλέξτε"
-      ],
       "Send invite": [
         "Αποστολή πρόσκλησης"
       ],
@@ -655,6 +652,9 @@
       "Black Friday": [
         "Black Friday"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Πληρώστε μία φορά και λάβετε ${ lifetimeAccessJSX } στο Pass Plus και SimpleLogin. Μόνο ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Αποθηκεύστε έως ${ discountJSX } στην οικογένεια Pass. Μόνο ${ relativePrice }/μήνα."
       ]
@@ -789,6 +789,9 @@
       ],
       "Could not resolve share members": [
         "Δεν ήταν δυνατή η επίλυση μελών κοινής χρήσης"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Δεν ήταν δυνατή η ανάκτηση προσκλήσεων χρηστών για την κρύπτη \"${ vaultName }\""
       ],
       "Could not validate addresses at the moment.": [
         "Δεν ήταν δυνατή η επικύρωση διευθύνσεων αυτήν τη στιγμή."
@@ -1159,9 +1162,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Η ενημερωμένη έκδοση του \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } προσκλήσεις στάλθηκαν με επιτυχία"
-      ],
       "${ count } time": [
         "${ count } φορά",
         "${ count } φορές"
@@ -1186,6 +1186,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } θα ακολουθήσει το θέμα του συστήματός σας."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις, πιστωτικές κάρτες και ταυτότητες."
@@ -1431,6 +1434,10 @@
       "Follow those steps to import your data with a generic CSV :": [
         "Ακολουθήστε αυτά τα βήματα για να εισαγάγετε τα δεδομένα σας με ένα γενικό αρχείο CSV:"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Για λόγους ασφαλείας, πρέπει να επιβεβαιώσετε την πρόσβαση σε αυτήν την κοινόχρηστη κρύπτη",
+        "Για λόγους ασφαλείας, πρέπει να επιβεβαιώσετε την πρόσβαση σε αυτές τις κοινόχρηστες κρύπτες"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
       ],
@@ -1492,9 +1499,6 @@
       ],
       "Invite successfully resent": [
         "Επιτυχής αποστολή πρόσκλησης εκ νέου"
-      ],
-      "Invite successfully sent": [
-        "Επιτυχής αποστολή πρόσκλησης"
       ],
       "invites you to access items in": [
         "σας προσκαλεί να αποκτήσετε πρόσβαση σε στοιχεία στη"
@@ -2009,6 +2013,9 @@
       "You will no longer be notified of data breaches for this email address.": [
         "Δε θα ειδοποιείστε πλέον για παραβιάσεις δεδομένων για αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Δε θα έχετε πλέον πρόσβαση σε κοινή χρήση, 2FA, πιστωτική κάρτα και άλλες προηγμένες λειτουργίες της ${ PASS_APP_NAME }"
+      ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Θα χρησιμοποιήσετε αυτό το PIN για να ξεκλειδώσετε το ${ PASS_APP_NAME } όταν κλειδώσει αυτόματα μετά από μια περίοδο αδράνειας."
       ],
@@ -2183,11 +2190,17 @@
       "Cards": [
         "Κάρτες"
       ],
+      "Choose unlock method": [
+        "Επιλέξτε μέθοδο ξεκλειδώματος"
+      ],
       "Choose your preferred look and feel.": [
         "Επιλέξτε την εμφάνιση και την αίσθηση που προτιμάτε."
       ],
       "City": [
         "Πόλη"
+      ],
+      "Clear clipboard after": [
+        "Εκκαθάριση προχείρου μετά"
       ],
       "Code": [
         "Κωδικός"
@@ -2348,6 +2361,9 @@
       "Generic CSV": [
         "Γενικό CSV"
       ],
+      "Get Started": [
+        "Ξεκινήστε"
+      ],
       "Get the extension for your browser.": [
         "Αποκτήστε την επέκταση για το πρόγραμμα περιήγησής σας."
       ],
@@ -2404,6 +2420,9 @@
       ],
       "Install and continue": [
         "Εγκατάσταση και συνέχεια"
+      ],
+      "Install extension": [
+        "Εγκατάσταση επέκτασης"
       ],
       "Integrated 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής 2FA"
@@ -2645,6 +2664,9 @@
       "Select your password manager": [
         "Επιλέξτε τον διαχειριστή κωδικών πρόσβασης"
       ],
+      "Select your theme": [
+        "Επιλέξτε το θέμα σας"
+      ],
       "Selected": [
         "Επιλεγμένα"
       ],
@@ -2855,6 +2877,10 @@
       "${ count } item": [
         "${ count } στοιχείο",
         "${ count } στοιχεία"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Μπορείτε να σύρετε και αποθέσετε το επιλεγμένο στοιχείο σε άλλη κρύπτη",
+        "Μπορείτε να σύρετε και αποθέσετε τα επιλεγμένα στοιχεία σε άλλη κρύπτη"
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη."
@@ -3141,6 +3167,10 @@
       "Dark Web Monitoring": [
         "Dark Web Monitoring"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Διαγραφή ${ deletedItemsCount } στοιχείου;",
+        "Μεταγραφή ${ deletedItemsCount } στοιχείων;"
+      ],
       "Delete this item?": [
         "Διαγραφή αυτού του στοιχείου;"
       ],
@@ -3222,6 +3252,10 @@
       "Modified": [
         "Τροποποιήθηκε"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Μετακίνηση ${ count } στοιχείου στο ${ vaultName }",
+        "Μετακίνηση ${ count } στοιχείων στο ${ vaultName }"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχείο;",
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
@@ -3261,6 +3295,9 @@
       ],
       "Pause monitoring?": [
         "Παύση παρακολούθησης;"
+      ],
+      "Pending access confirmation": [
+        "Εκκρεμεί επιβεβαίωση πρόσβασης"
       ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
@@ -3387,6 +3424,9 @@
       "What is the dark web?": [
         "Τι είναι ο σκοτεινός ιστός;"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Η ${ planName } συνδρομή σας θα λήξει στις ${ endDate }"
+      ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
       ],
@@ -3395,6 +3435,10 @@
       ],
       "Your welcome gift": [
         "Απολαύστε τη δωρεάν δοκιμή σας"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
+        "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
       ]
     },
     "Validation": {
@@ -3430,6 +3474,9 @@
       "A description of the problem is required": [
         "Απαιτείται περιγραφή του προβλήματος"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Τα ψευδώνυμα στον κάδο απορριμμάτων θα συνεχίσουν να προωθούν μηνύματα ηλεκτρονικού ταχυδρομείου."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Όλα τα απορριφθέντα στοιχεία σας θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
       ],
@@ -3443,6 +3490,9 @@
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχείο;",
         "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχεία;"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα αυτό το στοιχείο;"
       ],
       "At least one email address is required": [
         "Απαιτείται τουλάχιστον μία διεύθυνση ηλεκτρονικού ταχυδρομείου"

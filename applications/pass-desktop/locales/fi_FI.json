@@ -106,6 +106,9 @@
       "Confirm access": [
         "Vahvista käyttöoikeus"
       ],
+      "Confirm all": [
+        "Vahvista kaikki"
+      ],
       "Continue": [
         "Jatka"
       ],
@@ -141,6 +144,9 @@
       ],
       "Create identity": [
         "Luo identiteetti"
+      ],
+      "Create item": [
+        "Luo kohde"
       ],
       "Create login": [
         "Luo kirjautumistieto"
@@ -394,6 +400,9 @@
       "Previous": [
         "Edellinen"
       ],
+      "Reactivate now": [
+        "Uudelleenaktivoi nyt"
+      ],
       "Refresh the page": [
         "Päivitä sivu"
       ],
@@ -643,6 +652,9 @@
       "Black Friday": [
         "Black Friday"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Maksa kerran, ja saat ${ lifetimeAccessJSX } Pass Plussaan ja SimpleLoginiin. Vain ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Säästä jopa ${ discountJSX } Pass Familyllä. Vain ${ relativePrice }/kuukausi."
       ]
@@ -777,6 +789,9 @@
       ],
       "Could not resolve share members": [
         "Jaon jäseniä ei voitu selvittää"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Holvin \"${ vaultName }\" käyttäjäkutsuja ei voitu noutaa"
       ],
       "Could not validate addresses at the moment.": [
         "Osoitteita ei voitu juuri nyt vahvistaa."
@@ -1147,9 +1162,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } kutsua lähetettiin"
-      ],
       "${ count } time": [
         "${ count } kerran",
         "${ count } kertaa"
@@ -1174,6 +1186,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } noudattaa järjestelmäsi teemaa."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot, maksukortit ja identiteetit."
@@ -1419,6 +1434,10 @@
       "Follow those steps to import your data with a generic CSV :": [
         "Tuo tietosi yleisenä CSV -tiedostona noudattamalla ohjeita"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Turvallisuussyistä sinun on vahvistettava pääsy tähän jaettuun holviin",
+        "Turvallisuussyistä sinun on vahvistettava pääsy näihin jaettuihin holveihin"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
       ],
@@ -1480,9 +1499,6 @@
       ],
       "Invite successfully resent": [
         "Kutsu lähetettiin uudelleen"
-      ],
-      "Invite successfully sent": [
-        "Kutsu lähetettiin"
       ],
       "invites you to access items in": [
         "kutsui sinut käyttämään sisältöä holvista"
@@ -1566,6 +1582,14 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen historiatiedot ja suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden historiatiedot ja suojatut linkit."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Kohteen siirtäminen toiseen holviin poistaa sen historian.",
+        "Kohteiden siirtäminen toiseen holviin poistaa niiden historian."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -1945,6 +1969,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuva alias. Haluatko tuoda sen?",
+        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuvaa aliasta. Haluatko tuoda ne?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Sinulla on ${ daysRemaining } päivä jäljellä kokeilla näitä ja muita premium-ominaisuuksia.",
         "Sinulla on ${ daysRemaining } päivää jäljellä kokeilla näitä ja muita premium-ominaisuuksia."
@@ -1981,6 +2009,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Et enää saa ilmoitusta tähän sähköpostiosoitteeseen liittyvistä tietomurroista."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Et voi enää käyttää jakamista, 2FA:ta, maksukortteja ja muita ${ PASS_APP_NAME }in edistyneitä ominaisuuksia"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tällä PIN-koodilla voit avata ${ PASS_APP_NAME }in sen lukkiuduttua toimettomuuden seuraksena automaattisesti."
@@ -2025,6 +2056,9 @@
       "${ minutes } minute": [
         "${ minutes } minuutti",
         "${ minutes } minuuttia"
+      ],
+      "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
+        "${ PASS_APP_NAME } tunnistaa käyttämäsi verkkosivustot ja sovellukset ja täyttää lomakkeet automaattisesti tunnuksillasi, millä tahansa selaimella tai laitteella. Ei enää kopiointia ja liittämistä."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versio"
@@ -2123,6 +2157,9 @@
       "Auto-lock after": [
         "Lukitse automaattisesti"
       ],
+      "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
+        "Kirjautumistietojesi tallentamisen lisäksi ${ PASS_APP_NAME } suojaa identiteettisi sisäänrakennetulla sähköpostialiasominaisuudella. Aina kun luot uuden tilin verkossa, ${ PASS_APP_NAME } voi automaattisesti luoda aliaksen, jotta todellinen sähköpostiosoitteesi pysyy suojattuna. "
+      ],
       "Beta Access": [
         "Käytä beetaversiota"
       ],
@@ -2149,6 +2186,9 @@
       ],
       "Cards": [
         "Kortit"
+      ],
+      "Choose your preferred look and feel.": [
+        "Valitse haluamasi ulkoasu ja tunnelma."
       ],
       "City": [
         "Kaupunki"
@@ -2228,6 +2268,9 @@
       "Download logs": [
         "Lataa lokitiedot"
       ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Jaa arkaluonteisia tietoja helposti kenelle tahansa, vaikka he eivät käyttäisikään ${ PASS_APP_NAME }ia. Voit jakaa yksittäisen salasanan, muistiinpanon tai maksukortin, tai useita samassa kansiossa olevia kohteita."
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -2287,6 +2330,9 @@
       ],
       "Free forever": [
         "Ikuisesti ilmainen"
+      ],
+      "Free password manager with identity protection": [
+        "Ilmainen salasanahallinta identiteettisuojauksella"
       ],
       "Full Name": [
         "Koko nimi"
@@ -2495,6 +2541,9 @@
       "Passkey": [
         "Pääsyavain"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Pääsyavaimet ovat helppo ja turvallinen vaihtoehto perinteisille salasanoille, jotka estävät tietojenkalasteluhyökkäyksiä ja tekevät verkkokokemuksestasi sujuvamman.  ${ PASS_APP_NAME } tukee pääsyavaimia kaikilla alustoilla."
+      ],
       "Passphrase": [
         "Salalause"
       ],
@@ -2540,6 +2589,9 @@
       "Rate us": [
         "Arvostele meidät"
       ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Vastaanota välittömästi hälytyksen, jos henkilötietojasi vuotaa kolmannen osapuolen tietomurron yhteydessä. Voit valvoa useita sähköpostiosoitteita tai omaa verkkotunnusta."
+      ],
       "Recent": [
         "Käytön mukaan"
       ],
@@ -2557,6 +2609,15 @@
       ],
       "Reveal password": [
         "Näytä salasana"
+      ],
+      "Secure password sharing": [
+        "Suojattu salasanojen jakaminen"
+      ],
+      "Securely log in with passkeys": [
+        "Kirjaudu turvallisestti pääsyavaimilla"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "${ PASS_APP_NAME }illa pidät kirjautumistietosi tallessa, jaat niitä muille ja kirjaudut tileillesi automaattisesti, miljoonien käyttäjien luottaman päästä päähän -salauksen suojaamana"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "${ PASS_APP_NAME }illa pidät kirjautumistietosi tallessa, jaat niitä muille ja kirjaudut tileillesi automaattisesti, miljoonien käyttäjien luottaman päästä päähän -salauksen suojaamana."
@@ -2596,6 +2657,9 @@
       ],
       "Show website favicons": [
         "Näytä sivustokuvakkeet"
+      ],
+      "Sign in faster with ${ PASS_APP_NAME }": [
+        "Kirjaudu nopeammin ${ PASS_APP_NAME }illa"
       ],
       "Social security": [
         "Sosialliturva"
@@ -2666,6 +2730,9 @@
       ],
       "Trash": [
         "Roskakori"
+      ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Kaksivaiheinen tunnistautuminen (2FA) on yksi parhaista tavoista suojata tilejäsi verkossa. ${ PASS_APP_NAME } tekee siitä helpompaa sisäänrakennetulla todentajalla, joka tallentaa 2FA-koodisi sekä näyttää ja täyttää ne automaattisesti."
       ],
       "Type": [
         "Tyyppi"
@@ -2742,6 +2809,9 @@
       "You are about to create": [
         "Luot aliasta"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Voit käyttää avaamiseen PIN-koodia, biometriaa tai tilisi salasanaa."
+      ],
       "Your passwords. Everywhere.": [
         "Sinun salasanasi. Kaikkialla."
       ],
@@ -2780,6 +2850,13 @@
       "${ count } item": [
         "${ count } kohde",
         "${ count } kohdetta"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Voit vetää ja pudottaa valitun kohteen toiseen holviin",
+        "Voit vetää ja pudottaa valitut kohteet toiseen holviin"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Olet valinnut holvista ${ semiboldText }."
       ]
     },
     "new_plans: feature": {
@@ -2952,6 +3029,9 @@
       "Sign-in rejected": [
         "Kirjautuminen hylätty"
       ],
+      "Sign-in rejection failure": [
+        "Kirjautumisen hylkäämisen epäonnistuminn"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Kirjautumista pyydettiin toisella laitteella. Olitko se sinä?"
       ],
@@ -2967,7 +3047,7 @@
         "Aktiivinen"
       ],
       "Inactive": [
-        "Ei-aktiivinen"
+        "Ei käytössä"
       ],
       "Pending activation": [
         "Odottaa aktivointia"
@@ -2997,6 +3077,9 @@
     "Theme": {
       "Automatic": [
         "Automaattinen"
+      ],
+      "Dark": [
+        "Tumma"
       ],
       "Light": [
         "Vaalea"
@@ -3060,6 +3143,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "Poistetaanko ${ deletedItemsCount } kohde?",
         "Poistetaanko ${ deletedItemsCount } kohdetta?"
+      ],
+      "Delete this item?": [
+        "Poistetaanko tämä kohde?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Poistetaanko holvi \"${ vaultName }\"?"
@@ -3149,6 +3235,9 @@
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Siirrä kaikki kohteet holviin \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Siirrä kohde holviin \"${ vaultName }\""
       ],
       "No excluded items": [
         "Poissuljettuja kohteita ei ole"
@@ -3305,6 +3394,9 @@
       "What is the dark web?": [
         "Mikä on pimeä verkko?"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "${ planName } -tilauksesi päättyy ${ endDate }"
+      ],
       "Your exposed information": [
         "Paljastuneet tietosi"
       ],
@@ -3352,6 +3444,9 @@
       "A description of the problem is required": [
         "Ongelman kuvaus vaaditaan"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Roskakorissa olevat aliakset jatkavat sähköpostien välitystä."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Kaikki roskakorin kohteet poistetaan pysyvästi. Et voi kumota toimintoa."
       ],
@@ -3365,6 +3460,9 @@
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
         "Haluatko varmasti poistaa ${ deletedItemsCount } kohteen pysyvästi?",
         "Haluatko varmasti poistaa ${ deletedItemsCount } kohdetta pysyvästi?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Haluatko varmasti poistaa tämän kohteen pysyvästi?"
       ],
       "At least one email address is required": [
         "Ainakin yksi sähköpostiosoite vaaditaan"

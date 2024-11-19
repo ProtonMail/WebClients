@@ -106,6 +106,9 @@
       "Confirm access": [
         "Potwierdź dostęp"
       ],
+      "Confirm all": [
+        "Potwierdź wszystko"
+      ],
       "Continue": [
         "Kontynuuj"
       ],
@@ -142,6 +145,9 @@
       "Create identity": [
         "Utwórz tożsamość"
       ],
+      "Create item": [
+        "Utwórz element"
+      ],
       "Create login": [
         "Utwórz dane logowania"
       ],
@@ -171,6 +177,9 @@
       ],
       "Delete all": [
         "Usuń wszystko"
+      ],
+      "Delete it, I will never need it": [
+        "Usuń go. Nigdy nie będę go potrzebować"
       ],
       "Delete password": [
         "Usuń hasło"
@@ -391,6 +400,9 @@
       "Previous": [
         "Wstecz"
       ],
+      "Reactivate now": [
+        "Reaktywuj"
+      ],
       "Refresh the page": [
         "Odśwież stronę"
       ],
@@ -541,6 +553,12 @@
       "Try for free": [
         "Wypróbuj za darmo"
       ],
+      "Understood, I will never need it": [
+        "Zrozumiałem. Nigdy nie będę go potrzebować",
+        "Zrozumiałem. Nigdy nie będę ich potrzebować",
+        "Zrozumiałem. Nigdy nie będę ich potrzebować",
+        "Zrozumiałem. Nigdy nie będę ich potrzebować"
+      ],
       "Unlock": [
         "Odblokuj"
       ],
@@ -637,6 +655,9 @@
     "bf2024: Title": {
       "Black Friday": [
         "Czarny Piątek"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Zapłać raz i uzyskaj ${ lifetimeAccessJSX } do planu Pass Plus i usługi SimpleLogin. Tylko ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Zapisz do ${ discountJSX } na Pass Family. Tylko ${ relativePrice }/miesiąc."
@@ -776,6 +797,9 @@
       ],
       "Could not resolve share members": [
         "Nie można załadować użytkowników sejfu"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Nie można pobrać zaproszeń użytkowników do sejfu \"${ vaultName }\""
       ],
       "Could not validate addresses at the moment.": [
         "Nie można zweryfikować adresów."
@@ -1193,6 +1217,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } będzie zgodny z motywem systemowym."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania, notatek, kart płatniczych i tożsamości."
       ],
@@ -1439,6 +1466,12 @@
       "Follow those steps to import your data with a generic CSV :": [
         "Wykonaj te kroki, aby zaimportować dane za pomocą ogólnego pliku CSV:"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfu",
+        "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfów",
+        "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfów",
+        "Ze względów bezpieczeństwa, musisz potwierdzić dostęp do sejfów"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
       ],
@@ -1504,9 +1537,6 @@
       ],
       "Invite successfully resent": [
         "Zaproszenie zostało ponownie wysłane"
-      ],
-      "Invite successfully sent": [
-        "Zaproszenie zostało wysłane"
       ],
       "invites you to access items in": [
         "udostępnia Ci sejf"
@@ -1589,8 +1619,26 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "To więcej niż menedżer haseł. ${ PASS_APP_NAME } chroni Twoje hasło i osobisty adres e-mail za pomocą aliasów. Dzięki tej samej technologii, która stoi za pocztą ${ MAIL_APP_NAME }, Twoje dane są zaszyfrowane end-to-end i są dostępne tylko dla Ciebie."
       ],
+      "Move ${ count } item": [
+        "Przenieś ${ count } element",
+        "Przenieś ${ count } elementy",
+        "Przenieś ${ count } elementów",
+        "Przenieś ${ count } elementów"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii i wszystkich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii i wszystkich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii i wszystkich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii i wszystkich linków."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii"
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -1618,6 +1666,9 @@
       ],
       "None": [
         "Brak"
+      ],
+      "Not recommended": [
+        "Niezalecane"
       ],
       "Offline mode": [
         "Tryb offline"
@@ -1726,6 +1777,12 @@
       ],
       "Please enter your current PIN code to continue": [
         "Wpisz kod PIN, aby kontynuować"
+      ],
+      "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
+        "Pamiętaj, że usuniętego aliasu nie można przywrócić. Czy chcesz, zamiast tego wyłączyć alias?"
+      ],
+      "Please note that once deleted, the alias can't be restored. The alias is already disabled and won’t forward emails to your mailbox": [
+        "Pamiętaj, że usuniętego aliasu nie można przywrócić. Alias jest wyłączony i nie przekierowuje wiadomości do skrzynki odbiorczej."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
         "Ulepsz konto, aby uzyskać wcześniejszy dostęp do aplikacji internetowej ${ PASS_APP_NAME }"
@@ -1967,6 +2024,12 @@
       "You cannot change the mailboxes for this alias.": [
         "Nie możesz zmienić skrzynek pocztowych dla tego aliasu."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Masz ${ aliasCount } alias, który jest w SimpleLogin, ale nie jest widoczny w ${ PASS_APP_NAME }. Czy chcesz go zsynchronizować?",
+        "Masz ${ aliasCount } aliasy, które są w SimpleLogin, ale nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zsynchronizować?",
+        "Masz ${ aliasCount } aliasów, które są w SimpleLogin, ale nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zsynchronizować?",
+        "Masz ${ aliasCount } aliasów, które są w SimpleLogin, ale nie są widoczne w ${ PASS_APP_NAME }. Czy chcesz je zsynchronizować?"
+      ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Masz ${ daysRemaining } dzień, aby wypróbować funkcje premium.",
         "Masz ${ daysRemaining } dni, aby wypróbować funkcje premium.",
@@ -2005,6 +2068,9 @@
       ],
       "You will no longer be notified of data breaches for this email address.": [
         "Nie będziesz powiadamiany o przyszłych wyciekach danych dla tego adresu e-mail."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Stracisz dostęp do udostępniania, uwierzytelniania dwustopniowego, kart płatniczych i innych zaawansowanych funkcji ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Będziesz używać tego kodu PIN, aby odblokować ${ PASS_APP_NAME } po automatycznej blokadzie aplikacji."
@@ -2063,7 +2129,7 @@
         "${ minutes } minuty"
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
-        "${ PASS_APP_NAME } rozpoznaje strony i aplikacje, których używasz do autouzupełniania formularzy Twoimi danymi logowania niezależnie od przeglądarki czy urządzenia. Bez potrzeby kopiowania i wklejania."
+        "${ PASS_APP_NAME } rozpoznaje strony internetowe oraz aplikacje i automatycznie uzupełnia formularze Twoimi danymi logowania, niezależnie od przeglądarki i urządzenia. Nie musisz niczego kopiować i wklejać."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Wersja ${ PASS_SHORT_APP_NAME }"
@@ -2165,7 +2231,7 @@
         "Automatyczna blokada"
       ],
       "Besides storing your logins, ${ PASS_APP_NAME } protects your identity with an integrated email alias feature. Whenever you sign up for a new online account, ${ PASS_APP_NAME } can automatically create an alias to keep your actual email address protected. ": [
-        "Poza przechowywaniem loginów ${ PASS_APP_NAME } chroni Twoją tożsamość dzięki zintegrowanej funkcji aliasów e-mail. Za każdym razem, gdy tworzysz nowe konto online, ${ PASS_APP_NAME } może automatycznie utworzyć alias, aby chronić Twój rzeczywisty adres e-mail. "
+        "Poza przechowywaniem loginów ${ PASS_APP_NAME } chroni Twoją tożsamość dzięki zintegrowanej funkcji aliasów e-mail. Za każdym razem, gdy rejestrujesz nowe konto online, ${ PASS_APP_NAME } może automatycznie utworzyć alias, aby chronić Twój rzeczywisty adres e-mail."
       ],
       "Beta Access": [
         "Dostęp beta"
@@ -2177,7 +2243,7 @@
         "Urodziny"
       ],
       "Browse faster, smarter": [
-        "Przeglądaj szybciej, mądrzej"
+        "Przeglądaj szybciej i mądrzej"
       ],
       "Capital letters (A-Z)": [
         "Wielkie litery (A-Z)"
@@ -2193,6 +2259,9 @@
       ],
       "Cards": [
         "Karty"
+      ],
+      "Choose your preferred look and feel.": [
+        "Wybierz preferowany wygląd i styl."
       ],
       "City": [
         "Miasto"
@@ -2275,6 +2344,9 @@
       "Download logs": [
         "Pobierz logi"
       ],
+      "Easily share sensitive information with anyone, even if they don't use ${ PASS_APP_NAME }. You can share a single password, note, or credit card, or multiple items in the same folder.": [
+        "Łatwe udostępnianie poufnych danych każdemu, nawet jeśli nie korzysta z ${ PASS_APP_NAME }. Możesz udostępnić pojedyncze hasło, notatkę, kartę płatniczą, lub wiele elementów w tym samym folderze."
+      ],
       "Email": [
         "E-mail"
       ],
@@ -2330,7 +2402,7 @@
         "Piętro, mieszkanie, budynek"
       ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
-        "Ze względów bezpieczeństwa, ${ PASS_SHORT_APP_NAME } automatycznie się blokuje po 10 minutach nieaktywności."
+        "Ze względów bezpieczeństwa, aplikacja ${ PASS_SHORT_APP_NAME } zostanie automatycznie zablokowana po 10 minutach nieaktywności."
       ],
       "Forwards to": [
         "Przekaż do"
@@ -2371,6 +2443,9 @@
       "Hide-my-email aliases": [
         "Aliasy hide-my-email"
       ],
+      "How to unlock ${ PASS_SHORT_APP_NAME }": [
+        "Jak odblokować ${ PASS_SHORT_APP_NAME }"
+      ],
       "https://example.com": [
         "https://przyklad.pl"
       ],
@@ -2406,6 +2481,9 @@
       ],
       "Instagram handle": [
         "Profil Instagram"
+      ],
+      "Install and continue": [
+        "Zainstaluj i kontynuuj"
       ],
       "Integrated 2FA authenticator": [
         "Zintegrowana aplikacja uwierzytelniająca 2FA"
@@ -2472,6 +2550,9 @@
       ],
       "Make all viewers": [
         "Ustaw uprawnienie odczytu wszystkim"
+      ],
+      "Make it your own.": [
+        "Stwórz własny."
       ],
       "max views reached": [
         "maksymalna liczba dostępów została osiągnięta"
@@ -2542,6 +2623,9 @@
       "Passkey": [
         "Klucz dostępu"
       ],
+      "Passkeys are an easy and secure alternative to traditional passwords that prevent phishing attacks and make your online experience smoother.  ${ PASS_APP_NAME } supports passkeys on all platforms.": [
+        "Klucze dostępu to łatwa i bezpieczna alternatywa dla tradycyjnych haseł, która zapobiega atakom phishingowym i ułatwia korzystanie z Internetu. ${ PASS_APP_NAME } obsługuje klucze dostępu na wszystkich platformach."
+      ],
       "Passphrase": [
         "Hasło"
       ],
@@ -2563,6 +2647,9 @@
       "Personal website": [
         "Osobista strona internetowa"
       ],
+      "Personalize": [
+        "Personalizuj"
+      ],
       "PGP-encrypted JSON (recommended)": [
         "JSON zaszyfrowany PGP (zalecany)"
       ],
@@ -2583,6 +2670,9 @@
       ],
       "Rate us": [
         "Oceń nas"
+      ],
+      "Receive immediate alerts if your personal information is leaked in a third-party data breach. You can monitor multiple email addresses or your own domain name.": [
+        "Odbieraj natychmiastowe powiadomienia, jeśli Twoje dane zostaną ujawnione w wycieku danych. Możesz monitorować wiele adresów e-mail lub własną nazwę domeny."
       ],
       "Recent": [
         "Ostatnie"
@@ -2606,7 +2696,10 @@
         "Bezpieczne udostępnianie haseł"
       ],
       "Securely log in with passkeys": [
-        "Loguj się bezpiecznie przy pomocy kluczy dostępu"
+        "Bezpieczne logowanie za pomocą kluczy dostępu"
+      ],
+      "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions": [
+        "Bezpieczne przechowywanie, udostępnianie i automatyczne uzupełnianie kont w ${ PASS_APP_NAME } za pomocą szyfrowania end-to-end, któremu zaufały miliony użytkowników"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
         "Bezpieczne przechowywanie, udostępnianie i automatyczne uzupełnianie kont w ${ PASS_APP_NAME } za pomocą szyfrowania end-to-end, któremu zaufały miliony użytkowników."
@@ -2648,7 +2741,7 @@
         "Pokaż ikony stron internetowych"
       ],
       "Sign in faster with ${ PASS_APP_NAME }": [
-        "Loguj się szybciej z ${ PASS_APP_NAME }"
+        "Szybsze logowanie z ${ PASS_APP_NAME }"
       ],
       "Social security": [
         "Numer ubezpieczenia społecznego"
@@ -2710,11 +2803,20 @@
       "Today": [
         "Dzisiaj"
       ],
+      "Total imported items: ": [
+        "Zaimportowane elementy: "
+      ],
+      "Total items: ": [
+        "Elementy: "
+      ],
       "TOTP": [
         "TOTP"
       ],
       "Trash": [
         "Kosz"
+      ],
+      "Two-factor authentication (2FA) is one of the best ways to protect your accounts online. ${ PASS_APP_NAME } makes 2FA easier with an integrated authenticator that stores your 2FA codes and automatically displays and autofills them.": [
+        "Uwierzytelnianie dwustopniowe (2FA) jest jednym z najlepszych sposobów na ochronę kont online. ${ PASS_APP_NAME } ułatwia uwierzytelnianie dwustopniowe dzięki zintegrowanej aplikacji uwierzytelniającej, które przechowuje kody uwierzytelniające i automatycznie je wyświetla oraz uzupełnia."
       ],
       "Type": [
         "Typ"
@@ -2724,6 +2826,9 @@
       ],
       "Unlock with": [
         "Odblokuj za pomocą"
+      ],
+      "Unlock with:": [
+        "Odblokuj za pomocą:"
       ],
       "Unnamed Credit Card": [
         "Karta płatnicza bez nazwy"
@@ -2791,6 +2896,9 @@
       "You are about to create": [
         "Utworzysz"
       ],
+      "You can choose between PIN code, biometrics, or your account password to unlock.": [
+        "Wybierz kod PIN, dane biometryczne lub hasło konta do odblokowania aplikacji."
+      ],
       "Your passwords. Everywhere.": [
         "Twoje hasła. Wszędzie."
       ],
@@ -2831,6 +2939,15 @@
         "${ count } elementy",
         "${ count } elementów",
         "${ count } elementów"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Element możesz przeciągnąć i upuszczać w innym sejfie",
+        "Elementy możesz przeciągnąć i upuszczać w innym sejfie",
+        "Elementy możesz przeciągnąć i upuszczać w innym sejfie",
+        "Elementy możesz przeciągnąć i upuszczać w innym sejfie"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Zaznaczono ${ semiboldText } w sejfie."
       ]
     },
     "new_plans: feature": {
@@ -3003,8 +3120,14 @@
       "Sign-in rejected": [
         "Logowanie zostało odrzucone"
       ],
+      "Sign-in rejection failure": [
+        "Odrzucenie logowania nie powiodło się"
+      ],
       "Sign-in requested on another device. Was it you?": [
         "Potwierdź logowanie na innym urządzeniu. To nie Ty?"
+      ],
+      "Sign-in requested on another device. Was it you? ": [
+        "Potwierdź logowanie na innym urządzeniu. To nie Ty? "
       ],
       "Yes, it was me": [
         "Tak, to ja"
@@ -3110,8 +3233,14 @@
       "Dark Web Monitoring": [
         "Monitoring dark web"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Usunąć ${ deletedItemsCount } element?",
+        "Usunąć ${ deletedItemsCount } elementy?",
+        "Usunąć ${ deletedItemsCount } elementów?",
+        "Usunąć ${ deletedItemsCount } elementów?"
+      ],
       "Delete this item?": [
-        "Usunąć ten element?"
+        "Usunąć element?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Usunąć sejf \"${ vaultName }\"?"
@@ -3191,8 +3320,23 @@
       "Modified": [
         "Zmodyfikowano"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Przenieś ${ count } element do sejfu ${ vaultName }",
+        "Przenieś ${ count } elementy do sejfu ${ vaultName }",
+        "Przenieś ${ count } elementów do sejfu ${ vaultName }",
+        "Przenieś ${ count } elementów do sejfu ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Przenieść ${ trashedItemsCount } element do Kosza?",
+        "Przenieść ${ trashedItemsCount } elementy do Kosza?",
+        "Przenieść ${ trashedItemsCount } elementów do Kosza?",
+        "Przenieść ${ trashedItemsCount } elementów do Kosza?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Przenieść wszystkie elementy do sejfu \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Przenieś element do sejfu \"${ vaultName }\""
       ],
       "No excluded items": [
         "Brak wykluczonych elementów"
@@ -3224,6 +3368,9 @@
       "Pause monitoring?": [
         "Wstrzymać monitoring?"
       ],
+      "Pending access confirmation": [
+        "Oczekiwanie na potwierdzenie dostępu"
+      ],
       "Pending access to the shared data": [
         "Oczekujący dostęp do udostępnionych danych"
       ],
@@ -3232,6 +3379,12 @@
       ],
       "Pinned (${ items.length })": [
         "Przypięte (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Pamiętaj, że raz usunięty alias nie może zostać przywrócony.",
+        "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone.",
+        "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone.",
+        "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone."
       ],
       "Recommended actions": [
         "Zalecane kroki"
@@ -3305,6 +3458,9 @@
       "Sync alias": [
         "Synchronizuj alias"
       ],
+      "Sync your aliases from SimpleLogin": [
+        "Synchronizuj aliasy z SimpleLogin"
+      ],
       "Transfer ownership": [
         "Zmień właściciela"
       ],
@@ -3344,6 +3500,9 @@
       "What is the dark web?": [
         "Co to jest dark web?"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Subskrypcja ${ planName } wygasa ${ endDate }"
+      ],
       "Your exposed information": [
         "Twoje ujawnione informacje:"
       ],
@@ -3352,6 +3511,12 @@
       ],
       "Your welcome gift": [
         "Twój prezent powitalny"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Zamierzasz trwale usunąć ${ aliasCount } alias.",
+        "Zamierzasz trwale usunąć ${ aliasCount } aliasy.",
+        "Zamierzasz trwale usunąć ${ aliasCount } aliasów.",
+        "Zamierzasz trwale usunąć ${ aliasCount } aliasów."
       ]
     },
     "Validation": {
@@ -3387,11 +3552,29 @@
       "A description of the problem is required": [
         "Opis problemu jest wymagany"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Aliasy w Koszu nadal będą przekierowywać wiadomości."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Wszystkie elementy zostaną trwale usunięte. Tej akcji nie można cofnąć."
       ],
       "An error occurred while exporting your data": [
         "Wystąpił błąd podczas eksportowania danych"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } element do Kosza?",
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementy do Kosza?",
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementów do Kosza?",
+        "Czy na pewno chcesz przenieść ${ trashedItemsCount } elementów do Kosza?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Czy na pewno chcesz trwale usunąć ${ deletedItemsCount } element?",
+        "Czy na pewno chcesz trwale usunąć ${ deletedItemsCount } elementy?",
+        "Czy na pewno chcesz trwale usunąć ${ deletedItemsCount } elementów?",
+        "Czy na pewno chcesz trwale usunąć ${ deletedItemsCount } elementów?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Czy na pewno chcesz trwale usunąć element?"
       ],
       "At least one email address is required": [
         "Co najmniej jeden adres e-mail jest wymagany"

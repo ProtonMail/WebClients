@@ -481,9 +481,6 @@
       "See members": [
         "Afficher les membres"
       ],
-      "Select": [
-        "Sélectionner"
-      ],
       "Send invite": [
         "Envoyer l'invitation"
       ],
@@ -795,9 +792,6 @@
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
         "Les invitations utilisateur pour le coffre « ${ vaultName } » n'ont pas pu être récupérées."
-      ],
-      "Could not update settings at the moment. Please try again later.": [
-        "Les paramètres n'ont pas pu être mis à jour pour le moment. Nous vous invitons à réessayer plus tard."
       ],
       "Could not validate addresses at the moment.": [
         "Les adresses ne peuvent être validées pour le moment."
@@ -1168,7 +1162,8 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
       ],
-      "${ count } invites successfully sent": [
+      "${ count } invite successfully sent": [
+        "${ count } invitation a été envoyée.",
         "${ count } invitations ont été envoyées."
       ],
       "${ count } time": [
@@ -1326,9 +1321,6 @@
       "Change your password": [
         "Modifier votre mot de passe"
       ],
-      "Choose your preferred look and feel.": [
-        "Choisissez l'apparence et le style que vous préférez."
-      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmez votre mot de passe supplémentaire pour le retirer."
       ],
@@ -1402,7 +1394,7 @@
         "Activation du verrouillage automatique biométrique"
       ],
       "Enabling biometrics lock failed": [
-        "L'activation du verrouillage avec la biométrie n'a pas abouti"
+        "L'activation du verrouillage avec la biométrie n'a pas abouti."
       ],
       "Enabling offline mode...": [
         "Activation du mode hors-ligne..."
@@ -1512,9 +1504,6 @@
       "Invite successfully resent": [
         "L'invitation a été renvoyée."
       ],
-      "Invite successfully sent": [
-        "L'invitation a été envoyée."
-      ],
       "invites you to access items in": [
         "vous invite à accéder à des éléments dans"
       ],
@@ -1578,9 +1567,6 @@
       ],
       "Low Priority": [
         "Priorité basse"
-      ],
-      "Make it your own": [
-        "Personnalisez l'application"
       ],
       "me": [
         "moi"
@@ -2208,6 +2194,9 @@
       "Cards": [
         "Cartes"
       ],
+      "Choose unlock method": [
+        "Choisissez la méthode de déverrouillage"
+      ],
       "Choose your preferred look and feel.": [
         "Choisissez l'apparence et le style que vous préférez."
       ],
@@ -2376,6 +2365,9 @@
       "Generic CSV": [
         "CSV générique"
       ],
+      "Get Started": [
+        "Commencer"
+      ],
       "Get the extension for your browser.": [
         "Obtenez l'extension pour votre navigateur."
       ],
@@ -2432,6 +2424,9 @@
       ],
       "Install and continue": [
         "Installer et continuer"
+      ],
+      "Install extension": [
+        "Installez l'extension"
       ],
       "Integrated 2FA authenticator": [
         "Authentification à deux facteurs (A2F) intégrée"
@@ -2673,6 +2668,9 @@
       "Select your password manager": [
         "Sélectionnez votre gestionnaire de mots de passe"
       ],
+      "Select your theme": [
+        "Sélectionnez votre thème"
+      ],
       "Selected": [
         "Sélectionné"
       ],
@@ -2846,7 +2844,7 @@
         "Vous pouvez choisir entre un code PIN, des données biométriques ou votre mot de passe de compte pour déverrouiller l'application."
       ],
       "Your passwords. Everywhere.": [
-        "Vos mots de passe, où que vous soyez."
+        "Vos mots de passe où que vous soyez."
       ],
       "ZIP or Postal code": [
         "Code postal"
