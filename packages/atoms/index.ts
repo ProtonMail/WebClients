@@ -22,6 +22,7 @@ export { default as Banner } from './Banner/Banner';
 export { default as ButtonLike } from './Button/ButtonLike';
 export { default as Card, type CardProps } from './Card/Card';
 export { default as CircleLoader } from './CircleLoader/CircleLoader';
+export { default as ProtonLoader } from './ProtonLoader/ProtonLoader';
 export { default as Donut } from './Donut/Donut';
 export { default as DualPaneContent } from './DualPane/DualPaneContent';
 export { default as DualPaneSidebar } from './DualPane/DualPaneSidebar';
