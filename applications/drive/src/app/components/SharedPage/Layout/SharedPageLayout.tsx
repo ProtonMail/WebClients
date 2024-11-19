@@ -41,7 +41,7 @@ export default function SharedPageLayout({ FooterComponent, children, className,
                         <div className="logo-container p-0 md:p-4 flex justify-space-between items-center flex-nowrap w-auto">
                             <MainLogo to="/" reloadDocument />
                             <div className="hidden md:block">
-                                <UnAuthenticatedAppsDropdown reloadDocument />
+                                <UnAuthenticatedAppsDropdown reloadDocument user={user} />
                             </div>
                         </div>
 
