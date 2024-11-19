@@ -55,6 +55,12 @@
       "Add domain": [
         "Adicionar domínio"
       ],
+      "Add external address": [
+        "Adicionar endereço externo"
+      ],
+      "Add more ${ BRAND_NAME } Scribe seats": [
+        "Adicionar mais assentos do ${ BRAND_NAME } Scribe"
+      ],
       "Add PayPal": [
         "Adicionar PayPal"
       ],
@@ -928,8 +934,9 @@
       "Sorry, this offer is not available with your current plan.": [
         "Desculpe, mas essa oferta não está disponível com seu plano atual."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Desculpe, esta oferta não está disponível no seu plano atual. Mas você pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao assinar por ${ cycle } mês.",
+        "Desculpe, esta oferta não está disponível no seu plano atual. Mas você pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao assinar por ${ cycle } meses."
       ]
     },
     "bf2023: Offers": {
@@ -1026,7 +1033,7 @@
         "Autenticador A2F integrado"
       ],
       "One-time payment, lifetime deal": [
-        "Pagamento único, contrato vitalício"
+        "Pagamento único, "
       ],
       "Online document editor": [
         "Editor de documentos on-line"
@@ -3230,6 +3237,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique a sua identidade com chave de segurança física U2F ou FIDO2"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Você atingiu o limite máximo de ${ maxSecurityKeyLength } chave de segurança.",
+        "Você atingiu o limite máximo de ${ maxSecurityKeyLength } chaves de segurança."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "Sua chave de autenticação de dois fatores está pronta para o uso."
       ]
@@ -3567,6 +3578,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço e a data de renovação da sua assinatura ${ planTitle } permanecem inalterados."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -3689,6 +3703,9 @@
         "Adicionando ${ addedServerCount } servidor gateway",
         "Adicionando ${ addedServerCount } servidores gateway"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Adicionar um endereço de e-mail externo desativará a criptografia de ponta a ponta para toda a comunicação por e-mail dentro desse grupo. Você deseja continuar?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Adicionando servidor gateway: ${ serverNumber } / ${ total }",
         "Adicionando servidores gateway: ${ serverNumber } / ${ total }"
@@ -3702,6 +3719,9 @@
       "Affected user is on row": [
         "O usuário afetado está na fila",
         "Os usuários afetados estão na fila"
+      ],
+      "All inactive members deleted": [
+        "Todos os membros inativos foram excluídos"
       ],
       "All members have been added.": [
         "Todos os membros foram adicionados"
@@ -3974,6 +3994,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Ativado em ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "A criptografia de e-mail de ponta a ponta está desativada para este grupo devido a endereços externos."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "A criptografia de e-mail de ponta a ponta está desativada para este grupo. Ela pode ser ativada."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "A criptografia de e-mail de ponta a ponta está ativada para este grupo."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL do endpoint recebido do seu provedor de identidade (por exemplo, https://idp.example.com/sso/saml)."
       ],
@@ -4159,9 +4188,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instale um arquivo de configuração do servidor para se conectar a um servidor específico no país de sua escolha."
-      ],
-      "Internal user": [
-        "Usuário interno"
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
@@ -4448,9 +4474,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Digite a frase de recuperação de 12 palavras associada à sua conta."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Note que ao clicar no botão Confirmar a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "please open a support ticket": [
         "abra um ticket de suporte"
@@ -5124,6 +5147,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Você será redirecionado para ${ destination } depois de iniciar sessão."
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Você manterá o acesso vitalício aos recursos premium do ${ PASS_APP_NAME } + SimpleLogin se cancelar sua assinatura."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Você perderá o acesso aos recursos do ${ planTitle } nessa data."
       ],
@@ -5144,6 +5170,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "Sua senha da ${ BRAND_NAME }"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Sua assinatura do ${ PASS_SHORT_APP_NAME } Plus será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
@@ -5374,6 +5403,9 @@
       ],
       "Allowed Domain": [
         "Domínio permitido"
+      ],
+      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
+        "Permite que todos em sua organização adicionem links de videoconferência de forma simples aos convites de calendário."
       ],
       "Amount": [
         "Valor"
@@ -5799,6 +5831,9 @@
       "Verification code": [
         "Código de verificação"
       ],
+      "Video conferencing with Zoom": [
+        "Videoconferência com o Zoom"
+      ],
       "VPN Accelerator": [
         "VPN Accelerator"
       ],
@@ -6139,8 +6174,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Dólar australiano"
+      ],
       "Brazilian real": [
         "Real brasileiro"
+      ],
+      "British pound": [
+        "Libra britânica"
+      ],
+      "Canadian dollar": [
+        "Dólar canadense"
       ],
       "Euro": [
         "Euro"
@@ -6297,6 +6341,9 @@
         "Histórico de versões do arquivo de ${ options } dia",
         "Histórico de versões do arquivo de ${ options } dias"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin vitalícios"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } com ${ n } alias de hide-my-email",
         "${ PASS_APP_NAME } com ${ n } aliases de hide-my-email"
@@ -6355,6 +6402,9 @@
       "Administration Panel": [
         "Painel de Administração"
       ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Recursos avançados de alias (Com tecnologia do SimpleLogin)"
       ],
@@ -6387,6 +6437,9 @@
       ],
       "Available on all platforms": [
         "Disponível em todas plataformas"
+      ],
+      "Breach alerts": [
+        "Alertas de violação"
       ],
       "Calendar sharing": [
         "Compartilhar o calendário"
@@ -6935,6 +6988,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crie até ${ n } endereços de e-mail ou aliases que você pode atribuir aos membros da sua família. Utilize-os como identidades digitais como, por exemplo, JoaoDasCompras@${ domain } para contas em e-commerce."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domínios personalizados para aliases, caixas de correio adicionais, a capacidade de enviar e-mails de aliases e mais."
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino"
       ],
@@ -6970,6 +7026,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Marcadores são tags simples que podem ser adicionadas a mensagens para que fique mais fácil encontrá-las ou aplicar filtros a elas"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Acesso vitalício aos recursos premium do ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Como uma pasta, um cofre é uma maneira conveniente de organizar seus itens"
@@ -7215,8 +7274,14 @@
       "Daily email notifications": [
         "Notificações diárias por e-mail"
       ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Desabilitar isso removerá a capacidade de receber notificações nos aplicativos ${ BRAND_NAME }"
+      ],
       "During your first month": [
         "Durante o primeiro mês"
+      ],
+      "Email subscriptions": [
+        "Inscrições de e-mail"
       ],
       "In-app notifications": [
         "Notificações dentro do aplicativo"
@@ -7589,6 +7654,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Painel administrativo para gerenciar usuários e assinaturas"
+      ],
+      "Team policies": [
+        "Políticas da equipe"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7778,6 +7846,9 @@
       ],
       "Processing payment": [
         "Processando pagamento"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Renova por ${ price }, cancele a qualquer momento."
       ],
       "Select billing country to pay": [
         "Selecione o país de cobrança para pagar"
@@ -8780,6 +8851,14 @@
         "${ n } membro solicitou sua ajuda para fazer login.",
         "${ n } membro solicitaram sua ajuda para fazer login."
       ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } usuário entrou em sua organização através do seu Provedor de Identidade. Revise a conta dele agora:",
+        "${ n } usuários entraram em sua organização através do seu Provedor de Identidade. Revise as contas deles agora:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } usuário está inativo. Você pode remover este usuário com segurança da sua organização.",
+        "${ n } usuários estão inativos. Você pode remover estes usuários com segurança da sua organização."
+      ],
       "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ n } usuário está solicitando sua ajuda para iniciar sessão na conta ${ BRAND_NAME } dele com login único (SSO).",
         "${ n } usuários estão solicitando sua ajuda para iniciar sessão na conta ${ BRAND_NAME } deles com login único (SSO)."
@@ -8828,6 +8907,10 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Entre em contato com o administrador se o problema persistir."
+      ],
+      "Delete ${ n } inactive user?": [
+        "Excluir ${ n } usuário inativo?",
+        "Excluir ${ n } usuários inativos?"
       ],
       "Delete ${ n } user": [
         "Excluir ${ n } usuário",
@@ -8940,6 +9023,9 @@
       ],
       "User details:": [
         "Detalhes do usuário"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ]
     },
     "sso: auth device state": {
@@ -9233,7 +9319,7 @@
         "${ planName } vai além do básico para ajudar você a ter mais produtividade, organização e controle sobre sua caixa de entrada, identidade de e-mail e mais."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
-        "${ planName } ajuda você a garantir que cada um dos membros da sua família - e os dados deles - estejam protegidos sempre que estiverem on-line."
+        "${ planName } ajuda você a garantir que cada um dos membros da sua família e os dados deles estejam protegidos sempre que estiverem on-line."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento para os seus e-mails, anexos, eventos, senhas e arquivos. Você também tem direito a bônus anuais de armazenamento."
@@ -9268,7 +9354,7 @@
         "${ planNumberOfUsers } usuários"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
-        "Proteção avançada de conta ${ PROTON_SENTINEL_NAME }"
+        "Proteção avançada de conta com ${ PROTON_SENTINEL_NAME }"
       ],
       "2 users": [
         "2 usuários"
@@ -9742,6 +9828,12 @@
       "Creating config file for ${ serverName }": [
         "Criando arquivo de configuração para ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "A criptografia de e-mail de ponta a ponta do grupo está desativada"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "A criptografia de e-mail de ponta a ponta do grupo está ativada"
+      ],
       "Preference updated": [
         "Preferência atualizada"
       ],
@@ -9929,6 +10021,9 @@
       ],
       "Add domain": [
         "Adicionar domínio"
+      ],
+      "Add external address?": [
+        "Adicionar endereço externo?"
       ],
       "Add PayPal payment method": [
         "Adicionar o Paypal como método de pagamento"
@@ -10599,6 +10694,9 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Os administradores podem gerenciar contas de usuários e conceder privilégios de administrador a outros usuários. Somente o administrador principal pode editar o plano da organização."
       ],
+      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+        "Permite adicionar links de videoconferência de forma simples aos seus convites de calendário."
+      ],
       "An approximate location of the IP address": [
         "Uma localização aproximada do endereço de IP"
       ],
@@ -10676,6 +10774,12 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Endereço externo - desativa e-mail criptografado de ponta a ponta para esse grupo"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Endereço externo - desativa e-mail criptografado de ponta a ponta para esse grupo, e nenhum recurso criptografado será compartilhado com esse usuário."
+      ],
       "Group membership paused": [
         "Associação ao grupo pausada"
       ],
@@ -10752,6 +10856,9 @@
       ],
       "The user must have an address to request data access": [
         "O usuário deve ter um endereço para solicitar o acesso aos dados"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Isso cancelará a solicitação pendente de acesso de administrador aos dados do usuário ou redefinição de senha."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Isso revogará a permissão do administrador para gerenciar a conta deste usuário."

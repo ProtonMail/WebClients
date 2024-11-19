@@ -55,6 +55,9 @@
       "Add domain": [
         "დომენის დამატება"
       ],
+      "Add external address": [
+        "გარე მისამართის დამატება"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "მეტი ${ BRAND_NAME } Scribe ადგილების დამატება"
       ],
@@ -930,9 +933,6 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -1300,6 +1300,9 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Total": [
+        "ჯამი"
       ],
       "Total for ${ n } month": [
         "ჯამში ${ n } თვის",
@@ -3962,6 +3965,9 @@
       "Enabled on ${ formattedDateAndTime }": [
         "ჩართვის თარიღი ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is enabled for this group.": [
+        "გამჭოლი ელფოსტოს დაშიფვრა ჩართულია ამ ჯგუფისთვის."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "ბოლოწერტილის ბმული, რომელიც თქვენი იდენტიფიკატორის მომწოდებლისგან მივიღეთ (მაგ: https://idp.example.com/sso/saml)."
       ],
@@ -4147,9 +4153,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "არჩეულ ქვეყანაში სპეციფიკურ სერვერთან დასაკავშირებლად საჭიროა ამ სერვერის კონფიგურაციის ფაილის დაყენება."
-      ],
-      "Internal user": [
-        "შიდა მომხმარებელი"
       ],
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
@@ -4433,9 +4436,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "შეიყვანეთ 12-სიტყვიანი აღსადგენი ფრაზა."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
       ],
       "please open a support ticket": [
         "გახსენით მხარდაჭერის ბილეთი"
@@ -6124,8 +6124,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "ავსტრალიური დოლარი"
+      ],
       "Brazilian real": [
         "ბრაზილიური რეალი"
+      ],
+      "British pound": [
+        "ბრიტანული ფუნტი"
+      ],
+      "Canadian dollar": [
+        "კანადური დოლარი"
       ],
       "Euro": [
         "ევრო"
@@ -6282,6 +6291,9 @@
         "${ options }-დღიანი ფაილის ვერსიის ისტორია",
         "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin სამუდამოდ"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით",
         "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით"
@@ -6340,6 +6352,12 @@
       "Administration Panel": [
         "ადმინისტრატორის პანელი"
       ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვა"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "დამატებითი ფსევდონიმის ფუნქციები (SimpleLogin-ით)"
+      ],
       "Advanced network security": [
         "დამატებითი ქსელის უსაფრთხოება"
       ],
@@ -6369,6 +6387,9 @@
       ],
       "Available on all platforms": [
         "ხელმისაწვდომია ყველა პლატფორმაზე"
+      ],
+      "Breach alerts": [
+        "გაჟონვის განგაშები"
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -7188,6 +7209,9 @@
       "Application notifications": [
         "აპლიკაციის გაფრთხილებები"
       ],
+      "Critical account notifications will still be delivered": [
+        "კრიტიკული ანგარიშის გაფრთხილებები ჯერ კიდევ მოგივათ"
+      ],
       "Daily email notifications": [
         "ელფოსტის დღიური გაფრთხილებები"
       ],
@@ -7554,8 +7578,14 @@
         "${ n } მომხმარებლის ანგარიში",
         "${ n } მომხმარებლის ანგარიში"
       ],
+      "Activity log": [
+        "აქტივობის ჟურნალი"
+      ],
       "Admin panel to manage users and subscription": [
         "ადმინის პანელ მომხმარებლებისა და გამოწერების სამართავად"
+      ],
+      "Team policies": [
+        "გუნდის პოლიტიკა"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7736,6 +7766,9 @@
       ],
       "Processing payment": [
         "გადახდის დამუშავება"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "განახლების დრო ${ price }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
@@ -8140,6 +8173,9 @@
       ],
       "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
         "როცა თქვენს ორგანიზაციაზე SCIM-ს გამორთავთ, **ყველა SCIM-ის მომხმარებლები, რომლებიც ავტომატურადაა მოწოდებული თქვენი იდენტიფიკატორების მომწოდებლის მიერ, ავტომატურად იქნება გადაყვანილი SSO-ის მომხმარებლებში** და საშუალება გექნებათ, ისინი პირდაპირ ${ BRAND_NAME }-ის მორგების ფანჯრიდან მართოთ."
+      ],
+      "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
+        "ამარტივებს მომხმარებლის მართვას სხვადასხვა სერვისისთვი. დაამატეთ, ჩაასწორეთ და წაშალეთ მომხმარებლები თქვენს იდენტიფიკატორის მომწოდებელში და ის ცვლილებები თქვენს ${ appName } ორგანიზაციაზე ავტომატურად გადატარდა."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "SCIM-ის ავტომატური გაშლა გაითიშება, სანამ არ შეიყვანთ ახალ SCIM-ის კოდს თქვენი იდენტიფიკატორის მომწოდებლის პარამეტრებში."
@@ -9134,6 +9170,11 @@
         "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "სიცოცხლის დრო"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
@@ -9684,6 +9725,12 @@
       "Creating config file for ${ serverName }": [
         "${ serverName }-სთვის კონფიგურაციის შექმნა"
       ],
+      "Group end-to-end email encryption disabled": [
+        "ჯგუფის გამჭოლად დაშიფრული დაშიფვრა გამორთულია"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "ჯგუფის გამჭოლად დაშიფრული დაშიფვრა ჩართულია"
+      ],
       "Preference updated": [
         "პარამეტრები განახლდა"
       ],
@@ -9871,6 +9918,9 @@
       ],
       "Add domain": [
         "დომენის დამატება"
+      ],
+      "Add external address?": [
+        "გარე მისამართის დამატება?"
       ],
       "Add PayPal payment method": [
         "გადახდის მეთოდად PayPal-ის დამატება"
@@ -10697,6 +10747,9 @@
       ],
       "The user must have an address to request data access": [
         "მომხმარებელს მონაცემებზე წვდომის მოსათხოვად მისამართი უნდა გააჩნდეს"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "ეს გააუქმებს ყველა დარჩენილ მოთხოვნას ადმინის წვდომისთვის მომხმარებლის მონაცემებზე ან მისი პაროლი ჩამოყრაზე წვდომისთვის."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "ეს გააუქმებს ადმინისტრატორის წვდომებს, რომ ეს მომხმრებლის ანგარიში მართონ"

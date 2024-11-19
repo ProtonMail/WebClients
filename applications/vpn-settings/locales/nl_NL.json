@@ -55,6 +55,9 @@
       "Add domain": [
         "Domein toevoegen"
       ],
+      "Add external address": [
+        "Extern adres toevoegen"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "Voeg meer ${ BRAND_NAME } Scribe plaatsen toe"
       ],
@@ -931,8 +934,9 @@
       "Sorry, this offer is not available with your current plan.": [
         "Sorry, deze aanbieding is niet beschikbaar met je huidige abonnement."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Sorry, deze aanbieding is niet beschikbaar met je huidige abonnement. Maar je kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als je je inschrijft voor **${ months }**."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting ${ plan.Title } krijgen wanneer u zich voor ${ cycle } maand abonneert.",
+        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting krijgen ${ plan.Title } wanneer u zich voor ${ cycle } maanden abonneert."
       ]
     },
     "bf2023: Offers": {
@@ -3693,6 +3697,9 @@
         "${ addedServerCount } gatewayserver wordt toegevoegd",
         "${ addedServerCount } gatewayservers worden toegevoegd"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Het toevoegen van een extern e-mailadres zal end-to-end versleuteling voor alle e-mailcommunicatie binnen die groep uitschakelen. Wilt u doorgaan?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Gatewayserver wordt toegevoegd: ${ serverNumber } / ${ total }",
         "Gatewayservers worden toegevoegd: ${ serverNumber } / ${ total }"
@@ -3981,6 +3988,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Ingeschakeld op ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "End-to-end e-mailversleuteling is uitgeschakeld door externe adressen."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "End-to-end e-mailversleuteling is uitgeschakeld voor deze groep. Het kan worden ingeschakeld."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "End-to-end e-mail encryptie is ingeschakeld voor deze groep."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL ontvangen van uw identiteitsprovider (bv. https://idp.example.com/sso/saml)."
       ],
@@ -4166,9 +4182,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installeer een serverconfiguratie bestand om te verbinden met een specifieke server in het land van uw keuze."
-      ],
-      "Internal user": [
-        "Interne gebruiker"
       ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
@@ -4452,9 +4465,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Voer de herstelzin van 12 woorden in die bij uw account hoort."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Houd er rekening mee dat, wanneer u op de knop Bevestigen klikt, uw account nog ${ remainingCreditsFormatted } credits over heeft."
       ],
       "please open a support ticket": [
         "open een support ticket"
@@ -5128,6 +5138,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "U wordt doorverwezen naar ${ destination } nadat u inlogt."
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "U houdt levenslange toegang tot ${ PASS_APP_NAME } + SimpleLogin premium-functies als u uw abonnement opzegt."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "U verliest toegang tot ${ planTitle } functies op deze datum."
       ],
@@ -5168,7 +5181,7 @@
         "Uw account werd succesvol bijgewerkt met deze promotie."
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Uw account zal worden bijgewerkt zodra de betaling is gewist."
+        "Uw account wordt bijgewerkt zodra de betaling is verwerkt."
       ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -5206,7 +5219,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Neem contact met ons op via ${ email } voor instructies over hoe we ons met contant geld kunnen betalen."
+        "Neem contact met ons op via ${ email } voor instructies hoe u ons met contant geld kunt betalen."
       ]
     },
     "Info for domain modal": {
@@ -5313,6 +5326,9 @@
       ],
       "Other": [
         "Anders"
+      ],
+      "Product": [
+        "Product"
       ],
       "Refund": [
         "Terugbetalen"
@@ -6146,8 +6162,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Australische dollar"
+      ],
       "Brazilian real": [
         "Braziliaanse real"
+      ],
+      "British pound": [
+        "Britse pond"
+      ],
+      "Canadian dollar": [
+        "Canadese dollar"
       ],
       "Euro": [
         "Euro"
@@ -6361,6 +6386,9 @@
       ],
       "Administration Panel": [
         "Beheerderspaneel"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Geavanceerde alias functies (mogelijk gemaakt door SimpleLogin)"
@@ -7186,11 +7214,23 @@
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME }-nieuwsbrief"
       ],
+      "${ BRAND_NAME } offers and promotions": [
+        "${ BRAND_NAME } aanbiedingen en promoties"
+      ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME }-productaankondigingen"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } gebruikersbevraging"
+      ],
+      "${ BRAND_NAME } welcome emails": [
+        "${ BRAND_NAME } welkomst-e-mail"
+      ],
       "1 email per month": [
         "1 e-mail per maand"
+      ],
+      "1 email per month. Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe.": [
+        "1 e-mail per maand. Ontvang het laatste privacynieuws en wat er gebeurt in het universele ${ BRAND_NAME }."
       ],
       "1 email per quarter": [
         "1 e-mail per kwartaal"
@@ -7204,8 +7244,32 @@
       "4-6 emails per year": [
         "4-6 e-mails per jaar"
       ],
+      "Application notifications": [
+        "Applicatiemeldingen"
+      ],
+      "Critical account notifications will still be delivered": [
+        "Kritische accountmeldingen zullen nog steeds worden afgeleverd"
+      ],
       "Daily email notifications": [
         "Dagelijkse e-mailmeldingen"
+      ],
+      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
+        "Dit uitschakelen zal de mogelijkheid om meldingen in ${ BRAND_NAME } applicaties te ontvangen verwijderen"
+      ],
+      "During your first month": [
+        "Gedurende uw eerste maand"
+      ],
+      "Email subscriptions": [
+        "Nieuwsbrieven"
+      ],
+      "In-app notifications": [
+        "In-app-notificaties"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Neem deel aan bevragingen om ${ BRAND_NAME }-diensten te verbeteren"
+      ],
+      "Product updates": [
+        "Productupdates"
       ]
     },
     "Notification": {
@@ -8749,7 +8813,7 @@
         "${ n } leden hebben uw hulp gevraagd om in te loggen."
       ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } gebruiker heeft zich aangesloten bij je organisatie via uw Identity Provider. Controleer het account nu:",
+        "${ n } gebruiker heeft zich aangesloten bij uw organisatie via uw Identity Provider. Controleer het account nu:",
         "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Controleer hun accounts nu:"
       ],
       "${ n } user is inactive. You can safely remove this user from your organization.": [
@@ -9725,6 +9789,12 @@
       "Creating config file for ${ serverName }": [
         "Configuratiebestand aanmaken voor ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Groep end-to-end e-mailversleuteling uitgeschakeld"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Groep end-to-end e-mail encryptie is ingeschakeld"
+      ],
       "Preference updated": [
         "Voorkeur bijgewerkt"
       ],
@@ -9912,6 +9982,9 @@
       ],
       "Add domain": [
         "Domein toevoegen"
+      ],
+      "Add external address?": [
+        "Extern adres toevoegen?"
       ],
       "Add PayPal payment method": [
         "Voeg PayPal als betalingsmethode toe"
@@ -10662,6 +10735,12 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Extern adres - schakelt end-to-end e-mailversleuteling voor deze groep uit en er worden geen versleutelde bronnen met deze gebruiker gedeeld."
+      ],
       "Group membership paused": [
         "Groepslidmaatschap gepauzeerd"
       ],
@@ -10684,6 +10763,9 @@
       ]
     },
     "unprivatization": {
+      "**Pending admin access:** We sent a request to this user to allow any administrator to manage their account.": [
+        "**In afwachting van admin toegang:** We hebben een verzoek naar deze gebruiker verzonden om elke beheerder zijn account te laten beheren."
+      ],
       "Admins can't access the data of private users and can't reset their password.": [
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
       ],
@@ -10692,6 +10774,12 @@
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Door de gebruiker privé te maken, zult u hem niet kunnen helpen om toegang te krijgen tot zijn gegevens of account."
+      ],
+      "Cancel request": [
+        "Aanvraag annuleren"
+      ],
+      "Cancel request to access user data?": [
+        "Verzoek voor toegang tot gebruikersgegevens annuleren?"
       ],
       "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
         "Kon de beheerderstoegang voor ${ n } -gebruiker niet automatisch inschakelen, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:",
@@ -10702,6 +10790,9 @@
       ],
       "Enable manually": [
         "Handmatig inschakelen"
+      ],
+      "Keep request": [
+        "Verzoek bewaren"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Zodra de gebruiker zijn toestemming geeft, kunt u hen helpen de toegang tot hun account te heroveren of hun gegevens te beheren."
@@ -10729,6 +10820,9 @@
       ],
       "The user must have an address to request data access": [
         "De gebruiker moet een adres hebben om gegevenstoegang aan te vragen"
+      ],
+      "This will cancel the pending request for administrator access to the user’s data or password reset.": [
+        "Dit zal het lopende verzoek voor toegang tot de gegevens of wachtwoord resetten van de beheerder annuleren."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Hierdoor wordt de beheerder de toestemming ontnomen om de account van deze gebruiker te beheren."
@@ -11031,7 +11125,7 @@
         "Door dit telefoonnummer te verwijderen, kunt u uw account niet meer herstellen."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet onmiddellijk kan worden bijgewerkt. We zullen uw account bijwerken zodra de betaling is gewist."
+        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
