@@ -15,7 +15,7 @@ import type {
 } from '@proton/andromeda';
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import type { GetQuotesArgs } from '@proton/wallet/store';
+import { type GetQuotesArgs, resetQuotesByProvider, useWalletDispatch } from '@proton/wallet/store';
 import {
     useCountriesByProvider,
     useExchangeRate,
@@ -65,6 +65,7 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
     const [fiatCurrenciesByProvider, loadingCurrencies] = useFiatCurrenciesByProvider();
 
     const getQuotesByProviders = useGetQuotesByProvider();
+    const dispatch = useWalletDispatch();
 
     const allCountries = useMemo(
         () => uniqBy(Object.values(countriesByProviders ?? {}).flat(), (country) => country.Code),
@@ -106,41 +107,41 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
         setSelectedCurrency((selectedCountry.FiatCurrency ?? 'USD') as WasmFiatCurrencySymbol);
     }, [selectedCountry.FiatCurrency]);
 
-    useDebounceEffect(() => {
-        const run = async () => {
-            if (selectedCurrency && amount) {
-                const args: GetQuotesArgs = [amount, selectedCurrency];
+    const run = async () => {
+        if (selectedCurrency && amount) {
+            const args: GetQuotesArgs = [amount, selectedCurrency];
 
-                const quotes = await getQuotesByProviders(args);
-                const sortedQuotes = Object.entries(quotes ?? {})
-                    .flatMap(([provider, quotes]) =>
-                        quotes.map((quote) => ({
-                            provider: provider as WasmGatewayProvider,
-                            ...quote,
-                        }))
-                    )
-                    .sort((quoteA, quoteB) => (quoteA.BitcoinAmount < quoteB.BitcoinAmount ? 1 : -1));
+            const quotes = await getQuotesByProviders(args);
+            const sortedQuotes = Object.entries(quotes ?? {})
+                .flatMap(([provider, quotes]) =>
+                    quotes.map((quote) => ({
+                        provider: provider as WasmGatewayProvider,
+                        ...quote,
+                    }))
+                )
+                .sort((quoteA, quoteB) => (quoteA.BitcoinAmount < quoteB.BitcoinAmount ? 1 : -1));
 
-                if (sortedQuotes.length) {
-                    setSortedQuotes(sortedQuotes);
+            if (sortedQuotes.length) {
+                setSortedQuotes(sortedQuotes);
 
-                    const [bestQuote] = sortedQuotes;
-                    setSelectedPaymentProvider(bestQuote.provider);
-                    setSelectedPaymentMethod(bestQuote.PaymentMethod);
-                } else {
-                    setSortedQuotes([]);
-                    setSelectedPaymentProvider(undefined);
-                    setSelectedPaymentMethod(undefined);
+                const [bestQuote] = sortedQuotes;
+                setSelectedPaymentProvider(bestQuote.provider);
+                setSelectedPaymentMethod(bestQuote.PaymentMethod);
+            } else {
+                setSortedQuotes([]);
+                setSelectedPaymentProvider(undefined);
+                setSelectedPaymentMethod(undefined);
 
-                    createNotification({
-                        type: 'warning',
-                        text: c('Bitcoin buy')
-                            .t`The selected currency is not supported in your country or the requested amount is too low`,
-                    });
-                }
+                createNotification({
+                    type: 'warning',
+                    text: c('Bitcoin buy')
+                        .t`The selected currency is not supported in your country or the requested amount is too low`,
+                });
             }
-        };
+        }
+    };
 
+    useDebounceEffect(() => {
         void withLoadingQuotes(run());
     }, [createNotification, amount, getQuotesByProviders, selectedCurrency, withLoadingQuotes]);
 
@@ -153,6 +154,11 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
     }, [selectedPaymentProvider, sortedQuotes]);
 
     const providerName = getGatewayNameByGatewayProvider(selectedPaymentProvider);
+
+    const resetQuoteByProvider = () => {
+        dispatch(resetQuotesByProvider());
+        void withLoadingQuotes(run());
+    };
 
     return {
         // Amount
@@ -187,5 +193,8 @@ export const useAmountStep = ({ country: inputCountry, preselectedQuote }: Props
         // Quote
         loadingQuotes,
         selectedQuote,
+
+        // Reset redux store
+        resetQuoteByProvider,
     };
 };
