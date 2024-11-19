@@ -89,6 +89,9 @@
       "Confirm access": [
         "Bekreft tilgang"
       ],
+      "Confirm all": [
+        "Bekreft alle"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "Koble til ${ BRAND_NAME }-kontoen din"
       ],
@@ -133,6 +136,9 @@
       ],
       "Create identity": [
         "Opprett identitet"
+      ],
+      "Create item": [
+        "Opprett element"
       ],
       "Create login": [
         "Opprett pålogging"
@@ -386,6 +392,9 @@
       "Please retry": [
         "Prøv igjen"
       ],
+      "Reactivate now": [
+        "Aktiver på nytt nå"
+      ],
       "Refresh the page": [
         "Oppdater siden"
       ],
@@ -460,6 +469,9 @@
       ],
       "See members": [
         "Vis medlemmer"
+      ],
+      "Select": [
+        "Velg"
       ],
       "Send invite": [
         "Send invitasjon"
@@ -615,6 +627,9 @@
       "Black Friday": [
         "Black Friday"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Betal én gang og få ${ lifetimeAccessJSX } til Pass Plus og SimpleLogin. Kun ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Spar opptil ${ discountJSX } på Pass Family. Kun ${ relativePrice }/måned."
       ]
@@ -713,6 +728,9 @@
       ],
       "Could not resolve share members": [
         "Kunne ikke nøste opp medlemmene av delt ressurs."
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Kan ikke hente brukerinvitasjoner for \"${ vaultName }\"-hvelvet"
       ],
       "Could not validate addresses at the moment.": [
         "Kunne ikke validere adresser for øyeblikket."
@@ -1084,9 +1102,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" oppdatering ble avvist"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } invitasjoner sendt"
-      ],
       "${ count } time": [
         "${ count } gang",
         "${ count } ganger"
@@ -1111,6 +1126,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } vil vise elementfavorittikonet via ${ BRAND_NAME }s anonymiserte bildeproxy."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } vil følge systemtemaet ditt."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } vil bare importere pålogginger, notater, kredittkort og identiteter."
@@ -1250,6 +1268,9 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Velg en lagret tilgangsnøkkel for å logge på ${ domain }"
+      ],
+      "Choose your preferred look and feel.": [
+        "Velg ditt foretrukne utseende og følelse."
       ],
       "Click the icon to open it anytime.": [
         "Klikk på ikonet for å åpne det når som helst."
@@ -1434,9 +1455,6 @@
       "Invite successfully resent": [
         "Invitasjon sendt på nytt"
       ],
-      "Invite successfully sent": [
-        "Invitasjon sendt"
-      ],
       "invites you to access items in": [
         "inviterer deg til å få tilgang til elementer i"
       ],
@@ -1491,6 +1509,9 @@
       ],
       "Loading...": [
         "Laster..."
+      ],
+      "Make it your own": [
+        "Gjør det til ditt eget"
       ],
       "me": [
         "meg"
@@ -1925,6 +1946,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Du blir logget ut og må logge på igjen på alle de andre enhetene dine."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Du vil ikke lenger ha tilgang til deling, 2FA, kredittkort og andre avanserte funksjoner i ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Du vil bruke denne PIN-koden til å låse opp ${ PASS_APP_NAME } når den låses automatisk etter en periode med inaktivitet."
@@ -2690,6 +2714,13 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elementer"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Du kan dra og slippe det valgte elementet til et annet hvelv",
+        "Du kan dra og slippe de valgte elementene til et annet hvelv"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Du valgte ${ semiboldText } i dette hvelvet."
       ]
     },
     "Onboarding": {
@@ -2879,6 +2910,17 @@
         "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } brukere."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Automatisk"
+      ],
+      "Dark": [
+        "Mørk"
+      ],
+      "Light": [
+        "Lys"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Innstillinger for ${ PASS_APP_NAME }"
@@ -2910,6 +2952,9 @@
       "Delete ${ deletedItemsCount } item?": [
         "Slette ${ deletedItemsCount } element?",
         "Slette ${ deletedItemsCount } elementer?"
+      ],
+      "Delete this item?": [
+        "Slette dette elementet?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "Slette hvelv \"${ vaultName }\"?"
@@ -2997,6 +3042,9 @@
       "Move all items to \"${ vaultName }\"?": [
         "Flytte alle elementer til \"${ vaultName }\"?"
       ],
+      "Move item to \"${ vaultName }\"": [
+        "Flytte element til \"${ vaultName }\"?"
+      ],
       "No items selected": [
         "Ingen elementer valgt"
       ],
@@ -3011,6 +3059,9 @@
       ],
       "Password": [
         "Passord"
+      ],
+      "Pending access confirmation": [
+        "Venter på tilgangsbekreftelse"
       ],
       "Pending access to the shared data": [
         "Venter på tilgang til de delte dataene"
@@ -3112,6 +3163,9 @@
       "Welcome to your new password manager!": [
         "Velkommen til din nye passordbehandler!"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "${ planName }-abonnementet avsluttes den ${ endDate }"
+      ],
       "Your vault is empty": [
         "Hvelvet ditt er tomt"
       ],
@@ -3156,6 +3210,9 @@
       "A description of the problem is required": [
         "En beskrivelse av problemet er nødvendig"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Aliaser i papirkurven fortsetter å videresende e-poster."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle dine elementer i papirkurven blir slettet permanent. Du kan ikke angre denne handlingen."
       ],
@@ -3172,6 +3229,9 @@
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
         "Er du sikker på at du vil slette ${ deletedItemsCount } element permanent?",
         "Er du sikker på at du vil slette ${ deletedItemsCount } elementer permanent?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Er du sikker på at du vil slette dette elementet permanent?"
       ],
       "At least one email address is required": [
         "Minst én e-postadresse kreves"

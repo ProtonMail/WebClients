@@ -1061,9 +1061,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
       ],
-      "${ count } invites successfully sent": [
-        "${ count } Einladung erfolgreich gesendet"
-      ],
       "${ count } time": [
         "${ count } Mal",
         "${ count } Mal"
@@ -1400,9 +1397,6 @@
       ],
       "Invite successfully resent": [
         "Einladung erfolgreich erneut versendet."
-      ],
-      "Invite successfully sent": [
-        "Einladung erfolgreich versendet"
       ],
       "invites you to access items in": [
         "hat dich eingeladen auf Elemente in folgenden Tresor zuzugreifen:"

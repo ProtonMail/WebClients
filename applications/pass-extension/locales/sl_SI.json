@@ -1007,9 +1007,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Posodobitev »${ payload.item.data.metadata.name }« je bila opuščena"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } povabil je bilo poslanih."
-      ],
       "${ count } time": [
         "${ count }-krat",
         "${ count }-krat",
@@ -1273,9 +1270,6 @@
       ],
       "Invite successfully resent": [
         "Povabilo ponovno poslano"
-      ],
-      "Invite successfully sent": [
-        "Vabilo poslano"
       ],
       "invites you to access items in": [
         "vas vabi k dostopu do predmetov v"
