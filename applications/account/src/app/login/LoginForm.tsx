@@ -64,6 +64,7 @@ interface Props {
         payload: ChallengeResult;
         path?: string;
     }) => Promise<void>;
+    onPreSubmit?: () => Promise<void>;
     signInText?: string;
     externalSSO: {
         enabled?: boolean;
@@ -91,6 +92,7 @@ const LoginForm = ({
     authType,
     onChangeAuthType,
     onSubmit,
+    onPreSubmit,
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
@@ -190,6 +192,7 @@ const LoginForm = ({
 
         let ssoInfoResponse: SSOInfoResponse | undefined;
         try {
+            await onPreSubmit?.();
             await startUnAuthFlow();
             ssoInfoResponse = await api<SSOInfoResponse>(getInfo({ username, intent: 'SSO' }));
         } catch (e) {
@@ -242,6 +245,7 @@ const LoginForm = ({
         let result: Unwrap<ReturnType<typeof handleLogin>>;
 
         try {
+            await onPreSubmit?.();
             await startUnAuthFlow();
             result = await handleLogin({
                 username,
