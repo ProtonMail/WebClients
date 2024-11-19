@@ -25,6 +25,7 @@ export const getName = () => {
 
 export const getExtraResource = () => {
     const commonResources = [
+        "./assets/proton-spinner.svg",
         "./assets/loading.html",
         "./assets/error-network.html",
         "../../packages/styles/assets/img/errors/error-network.svg",
