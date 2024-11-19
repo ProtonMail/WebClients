@@ -19,7 +19,7 @@ describe('usePartialPublicView', () => {
             writable: true,
             value: {
                 ...originalWindowHistory,
-                pushState: jest.fn(),
+                replaceState: jest.fn(),
             },
         });
     });
@@ -57,6 +57,6 @@ describe('usePartialPublicView', () => {
     it('should clean up the URL after checking', () => {
         window.location.search = `?other=param&${partialPublicViewKey}=true`;
         renderHook(() => usePartialPublicView());
-        expect(window.history.pushState).toHaveBeenCalledWith({}, '', '/test?other=param');
+        expect(window.history.replaceState).toHaveBeenCalledWith({}, '', '/test?other=param');
     });
 });
