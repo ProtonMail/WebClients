@@ -507,6 +507,9 @@
       "Reset to default": [
         "ნაგულისხმებზე დაბრუნება"
       ],
+      "Restore version": [
+        "ვერსიის აღდგენა"
+      ],
       "Retry": [
         "თავიდან"
       ],
@@ -1147,6 +1150,9 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Total": [
+        "ჯამი"
       ],
       "Total for ${ n } month": [
         "ჯამში ${ n } თვის",
@@ -4284,6 +4290,9 @@
       "Monitor accounts": [
         "ანგარიშების მონიტორი"
       ],
+      "Most recent": [
+        "უახლესი"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "შეიყვანეთ ახალი საქაღალდის სახელი და აირჩიეთ საქაღალდე, რომელშიც ის უნდა შეიქმნას. თუ არ აირჩევთ, ახალი საქაღალდე ყველაზე მაღალ დონეზე შეიქმნება."
       ],
@@ -4313,9 +4322,6 @@
       ],
       "No version history available": [
         "ვერსიის ისტორია ხელმისაწვდომი არაა"
-      ],
-      "No version history batches available": [
-        "ვერსიის ისტორიის პაკეტები ხელმისაწვდომი არაა"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "ატვირთული გასაღებებიდან დასაშიფრად ვერც ერთს ვერ გამოვიყენებთ. ამ მისამართზე შეტყობინებების გასაგზავნად ატვირთეთ სწორი გასაღები ან გამორთეთ \"ელფოსტების დაშიფვრა\"."
@@ -4350,6 +4356,12 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "ჩვენი გაფრთხილებები უსაფრთხოებაზეა კონცენტრირებული. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
+      ],
+      "Owned by me": [
+        "ჩემი საკუთრება"
+      ],
+      "Owned by others": [
+        "მფლობელი სხვაა"
       ],
       "Owner": [
         "მფლობელი"
@@ -4392,9 +4404,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
       ],
       "Please provide a name and an email address for creating a group.": [
         "ჯგუფის შესაქმნელად შეიყვანეთ სახელი და ელფოსტის მისამართი."
@@ -5935,6 +5944,9 @@
         "${ options }-დღიანი ფაილის ვერსიის ისტორია",
         "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin სამუდამოდ"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით",
         "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით"
@@ -5990,6 +6002,12 @@
       "Administration Panel": [
         "ადმინისტრატორის პანელი"
       ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვა"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "დამატებითი ფსევდონიმის ფუნქციები (SimpleLogin-ით)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "${ BRAND_NAME }-ის ყველა პროდუქტი და ფუნქცია"
       ],
@@ -6016,6 +6034,9 @@
       ],
       "Available on all platforms": [
         "ხელმისაწვდომია ყველა პლატფორმაზე"
+      ],
+      "Breach alerts": [
+        "გაჟონვის განგაშები"
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -6977,8 +6998,14 @@
         "${ n } მომხმარებლის ანგარიში",
         "${ n } მომხმარებლის ანგარიში"
       ],
+      "Activity log": [
+        "აქტივობის ჟურნალი"
+      ],
       "Admin panel to manage users and subscription": [
         "ადმინის პანელ მომხმარებლებისა და გამოწერების სამართავად"
+      ],
+      "Team policies": [
+        "გუნდის პოლიტიკა"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7070,6 +7097,9 @@
       ],
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "განახლების დრო ${ price }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
@@ -7993,6 +8023,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "სიცოცხლის დრო"
       ]
     },
     "Subscription price": {

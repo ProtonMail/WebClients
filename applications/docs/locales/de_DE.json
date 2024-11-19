@@ -504,6 +504,9 @@
       "Reset to default": [
         "Auf Standardwert zurücksetzen"
       ],
+      "Restore version": [
+        "Version wiederherstellen"
+      ],
       "Retry": [
         "Erneut versuchen"
       ],
@@ -870,7 +873,7 @@
         "Integrierter 2FA-Authentifikator"
       ],
       "One-time payment, lifetime deal": [
-        "Einmalzahlung, lebenslanges Angebot"
+        "Einmalige Zahlung, lebenslanges Angebot"
       ],
       "Online document editor": [
         "Editor für Onlinedokumente"
@@ -908,7 +911,7 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus lebenslanges Angebot hat keinen Erneuerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
+        "Beim lebenslangen ${ PASS_SHORT_APP_NAME } Plus-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
@@ -957,6 +960,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
+        "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -4302,9 +4309,6 @@
       "No version history available": [
         "Kein Versionsverlauf verfügbar."
       ],
-      "No version history batches available": [
-        "Kein Versionsverlauf verfügbar."
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung gültig. Um Nachrichten an diese Adresse senden zu können, lade bitte einen gültigen Schlüssel hoch oder deaktiviere „E-Mails verschlüsseln“."
       ],
@@ -4380,9 +4384,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ remainingCreditsFormatted } Guthaben auf deinem Konto verbleiben."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bitte gib einen Namen und eine E-Mail-Adresse an, um eine Gruppe zu erstellen."

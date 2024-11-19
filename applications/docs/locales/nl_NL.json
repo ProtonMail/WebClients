@@ -507,6 +507,9 @@
       "Reset to default": [
         "Terugzetten naar standaard"
       ],
+      "Restore version": [
+        "Versie herstellen"
+      ],
       "Retry": [
         "Opnieuw proberen"
       ],
@@ -2221,7 +2224,7 @@
         "Upgrade uw account om ${ PROTON_SENTINEL_NAME } te activeren, onze geavanceerde AI-gedreven beveiligingsoplossing met toegewijde 24/7 deskundige ondersteuning."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
+        "Versleep de contactpersonen die u wilt samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Met contactgroepen kunt u met één klik e-mails verzenden naar iedereen in de groep."
@@ -3959,7 +3962,7 @@
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die je wilt importeren."
+        "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die u wilt importeren."
       ],
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
@@ -4309,6 +4312,9 @@
       "Monitor accounts": [
         "Accounts monitoren"
       ],
+      "Most recent": [
+        "Meest recent"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
@@ -4337,9 +4343,6 @@
         "Geen resultaten gevonden"
       ],
       "No version history available": [
-        "Geen versiegeschiedenis beschikbaar"
-      ],
-      "No version history batches available": [
         "Geen versiegeschiedenis beschikbaar"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
@@ -4375,6 +4378,12 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Onze waarschuwingen geven prioriteit aan veiligheid. Als u de geschonden informatie niet herkent, kunt u dit rapport gerust negeren."
+      ],
+      "Owned by me": [
+        "Waarvan ik eigenaar ben"
+      ],
+      "Owned by others": [
+        "Eigendom van anderen"
       ],
       "Owner": [
         "Eigenaar"
@@ -4417,9 +4426,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Houd er rekening mee dat, wanneer u op de knop Bevestigen klikt, uw account nog ${ remainingCreditsFormatted } credits over heeft."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Voorzie een naam en een e-mailadres voor het aanmaken van een groep"
@@ -4712,7 +4718,7 @@
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
       "We'll email you once import is complete.": [
-        "We sturen je een e-mail zodra de import voltooid is."
+        "We sturen u een e-mail zodra de import voltooid is."
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -4840,7 +4846,7 @@
         "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt. Verdere niet-betaling zal leiden tot het blokkeren van uw e-mails een deel-links. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Uw account zal worden bijgewerkt zodra de betaling is gewist."
+        "Uw account wordt bijgewerkt zodra de betaling is verwerkt."
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Uw wijzigingen worden gesynchroniseerd met Drive. Sluit de webpagina niet."
@@ -4889,7 +4895,7 @@
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Neem contact met ons op via ${ email } voor instructies over hoe we ons met contant geld kunnen betalen."
+        "Neem contact met ons op via ${ email } voor instructies hoe u ons met contant geld kunt betalen."
       ]
     },
     "Info on errors": {
@@ -6017,6 +6023,9 @@
       ],
       "Administration Panel": [
         "Beheerderspaneel"
+      ],
+      "Advanced account protection": [
+        "Geavanceerde accountbeveiliging"
       ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Geavanceerde alias functies (mogelijk gemaakt door SimpleLogin)"
@@ -9069,7 +9078,7 @@
         "Alleen alfanumerieke tekens, punten, koppeltekens en underscores zijn toegestaan"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet onmiddellijk kan worden bijgewerkt. We zullen uw account bijwerken zodra de betaling is gewist."
+        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet direct kan worden geüpgraded. We zullen uw account bijwerken zodra de betaling verwerkt is."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
