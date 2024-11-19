@@ -63,7 +63,7 @@ export const ShareMember: FC<ShareMemberProps> = ({
     const loading = transferOwnership.loading || removeAccess.loading || editAccess.loading;
 
     return (
-        <div className="flex flex-nowrap items-center border rounded-xl px-4 py-3 w-full">
+        <div className="flex flex-nowrap items-center border border-weak rounded-xl px-4 py-3 w-full">
             <ShareMemberAvatar value={initials} loading={loading} />
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
