@@ -57,7 +57,6 @@ describe('Performance Telemetry', () => {
             Dimensions: {
                 experimentGroup: ExperimentGroup.control,
                 featureName: feature,
-                isLoggedIn: 'true',
             },
         });
     });
@@ -85,7 +84,6 @@ describe('Performance Telemetry', () => {
             Dimensions: {
                 experimentGroup: ExperimentGroup.treatment,
                 featureName: feature,
-                isLoggedIn: 'true',
             },
         });
     });
@@ -108,7 +106,6 @@ describe('Performance Telemetry', () => {
             Dimensions: {
                 experimentGroup: ExperimentGroup.control,
                 featureName: Features.mountToFirstItemRendered,
-                isLoggedIn: 'true',
             },
         });
     });
@@ -134,7 +131,6 @@ describe('countActionWithTelemetry', () => {
             },
             Dimensions: {
                 name: Actions.PublicDownload,
-                isLoggedIn: 'true',
             },
         });
     });
@@ -150,7 +146,6 @@ describe('countActionWithTelemetry', () => {
             },
             Dimensions: {
                 name: Actions.PublicDownload,
-                isLoggedIn: 'true',
             },
         });
     });
