@@ -34,6 +34,8 @@ const MembersAuthDevicesList = ({
                         return memberAddress?.ID === memberAuthDevice.ActivationAddressID;
                     });
                     const memberAddress = activationMemberAddress || member.Addresses?.[0];
+                    const memberName = member.Name;
+                    const memberEmail = memberAddress?.Email || memberName;
 
                     return (
                         <TableRow
@@ -41,8 +43,12 @@ const MembersAuthDevicesList = ({
                             labels={[c('Title').t`User`, c('Title').t`Device`, c('Title').t`Actions`]}
                             cells={[
                                 <>
-                                    <div className="text-bold text-break">{member.Name}</div>
-                                    <div className="color-weak text-break">{memberAddress?.Email || member.Name}</div>
+                                    <div className="text-bold text-break">{memberName}</div>
+                                    {memberEmail !== memberName && (
+                                        <div className="color-weak text-break" title={memberEmail}>
+                                            {memberEmail}
+                                        </div>
+                                    )}
                                 </>,
                                 <AuthDeviceItem authDevice={memberAuthDevice} padding={false} />,
                                 <ButtonGroup size="small" individualButtonColor={true}>
