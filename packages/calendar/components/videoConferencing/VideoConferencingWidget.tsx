@@ -120,7 +120,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete }: Props)
                         />
                         {location === 'event-form' && (
                             <Button icon shape="ghost" size="small" onClick={handleDelete}>
-                                <Icon name="cross-big" alt={c('Action').t`Remove zoom meeting`} />
+                                <Icon name="cross-big" alt={c('Action').t`Remove Zoom meeting`} />
                             </Button>
                         )}
                     </div>
