@@ -1,4 +1,5 @@
 import { addHours, getUnixTime } from 'date-fns';
+import { createMemoryHistory } from 'history';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -42,6 +43,7 @@ describe('busySlotsListener', () => {
     beforeEach(() => {
         store = setupStore();
         extendStore({
+            history: createMemoryHistory(),
             authentication: {
                 getPassword: () => '',
             } as any,
