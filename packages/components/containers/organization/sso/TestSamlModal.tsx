@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,7 +23,8 @@ import type {
     RefreshSessionResponse,
     SSOInfoResponse,
 } from '@proton/shared/lib/authentication/interface';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getVpnAccountUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Domain } from '@proton/shared/lib/interfaces';
@@ -39,6 +40,7 @@ type State =
     | {
           type: 'error';
           error: any;
+          code?: number;
           extra?: string;
       }
     | {
@@ -85,11 +87,11 @@ const handleTestSaml = async ({
         return { type: 'success' };
     } catch (error) {
         if (error instanceof ExternalSSOError) {
-            return { type: 'error', error, extra: c('saml: Error').t`Sign in wasn't successfully completed.` };
+            return { type: 'error', error };
         }
         const apiError = getApiError(error);
         if (apiError.message) {
-            return { type: 'error', error, extra: apiError.message };
+            return { type: 'error', error, code: apiError.code, extra: apiError.message };
         }
         throw error;
     } finally {
@@ -99,6 +101,15 @@ const handleTestSaml = async ({
 };
 
 const initialState = { type: 'init' } as const;
+
+const WrapError = ({ children }: { children: ReactNode }) => {
+    return (
+        <div>
+            <div className="text-semibold">{c('saml: Info').t`Details`}</div>
+            <div className="rounded border bg-weak p-2 text-break">{children}</div>
+        </div>
+    );
+};
 
 const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
     const normalApi = useApi();
@@ -159,12 +170,29 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                                     <img src={errorSvg} alt="" />
                                 </div>
                                 <div>{c('saml: Info').t`An error occurred while testing your SSO configuration.`}</div>
-                                {state.extra && (
-                                    <div>
-                                        <div className="text-semibold">{c('saml: Info').t`Details`}</div>
-                                        <div className="rounded border bg-weak p-4 text-break-all">{state.extra}</div>
-                                    </div>
-                                )}
+                                {(() => {
+                                    if (state.error instanceof ExternalSSOError) {
+                                        return (
+                                            <WrapError>
+                                                {c('saml: Error').t`Sign in wasn't successfully completed.`}
+                                            </WrapError>
+                                        );
+                                    }
+                                    if (state.code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP) {
+                                        return (
+                                            <WrapError>
+                                                {getBoldFormattedText(
+                                                    c('saml: Error')
+                                                        .t`The email address **${email}** already exists as a ${BRAND_NAME} user. Please enter the email address of a user from your identity provider.`
+                                                )}
+                                            </WrapError>
+                                        );
+                                    }
+                                    if (state.extra) {
+                                        return <WrapError>{state.extra}</WrapError>;
+                                    }
+                                    return null;
+                                })()}
                             </div>
                         );
                     }
@@ -222,7 +250,7 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                             <div className="color-weak mb-4">
                                 {getBoldFormattedText(
                                     c('saml: Info')
-                                        .t`To test this SAML configuration, please enter the login credentials for a user associated with **${domainName}**`
+                                        .t`Enter the email address of a user provided by your identity provider for **${domainName}**`
                                 )}
                             </div>
                             <InputFieldTwo

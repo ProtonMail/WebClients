@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
+import type { getSSODomainsSet } from '@proton/account/samlSSO/helper';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { useLoading } from '@proton/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type {
     CachedOrganizationKey,
@@ -58,13 +60,17 @@ export const MagicLinkMemberActions = ({
 
 export const getMemberPermissions = ({
     appName,
+    attachSSOEnabled,
     user,
     addresses,
     member,
     organization,
     organizationKey,
     disableMemberSignIn,
+    ssoDomainsSet,
 }: {
+    ssoDomainsSet: ReturnType<typeof getSSODomainsSet>;
+    attachSSOEnabled: boolean;
     addresses: PartialMemberAddress[] | undefined;
     appName: APP_NAMES;
     user: UserModel;
@@ -89,13 +95,16 @@ export const getMemberPermissions = ({
         getShouldSetupMemberKeys(member) &&
         addresses?.length;
 
+    const isNonPrivate = member.Private === MEMBER_PRIVATE.READABLE;
+    const hasKeysSetup = member.Keys.length > 0;
+
     const canLogin =
         !disableMemberSignIn &&
         appName !== APPS.PROTONVPN_SETTINGS &&
         hasSetupOrganizationWithKeys &&
         !member.Self &&
-        member.Private === MEMBER_PRIVATE.READABLE &&
-        member.Keys.length > 0 &&
+        isNonPrivate &&
+        hasKeysSetup &&
         !!organizationKey?.privateKey &&
         addresses &&
         addresses?.length > 0;
@@ -103,13 +112,29 @@ export const getMemberPermissions = ({
     const canChangePassword =
         hasSetupOrganizationWithKeys &&
         !member.Self &&
-        member.Private === MEMBER_PRIVATE.READABLE &&
-        member.Keys.length > 0 &&
+        isNonPrivate &&
+        hasKeysSetup &&
         !!organizationKey?.privateKey &&
         addresses &&
         addresses.length > 0;
 
-    const canAddAddress = !member.SSO && addresses && addresses.length === 0;
+    const isMemberSSO = Boolean(member.SSO);
+    const canAddAddress = !isMemberSSO && addresses && addresses.length === 0;
+
+    const canDetachSSO = attachSSOEnabled && isMemberSSO;
+    const canAttachSSO =
+        attachSSOEnabled &&
+        Boolean(
+            ssoDomainsSet.size &&
+                !isMemberSSO &&
+                hasKeysSetup &&
+                isNonPrivate &&
+                addresses?.length &&
+                addresses.some((address) => {
+                    const [, domain] = getEmailParts(address.Email);
+                    return ssoDomainsSet.has(domain.toLowerCase());
+                })
+        );
 
     return {
         canAddAddress,
@@ -120,6 +145,8 @@ export const getMemberPermissions = ({
         canLogin,
         canChangePassword,
         isOrganizationDelinquent,
+        canDetachSSO,
+        canAttachSSO,
     };
 };
 
@@ -132,6 +159,8 @@ interface Props {
     onDelete: (member: EnhancedMember) => void;
     onRevoke: (member: EnhancedMember) => Promise<void>;
     onSetup: (member: EnhancedMember) => void;
+    onAttachSSO: (member: EnhancedMember) => Promise<void>;
+    onDetachSSO: (member: EnhancedMember) => Promise<void>;
     permissions: ReturnType<typeof getMemberPermissions>;
     disableEdit: boolean;
 }
@@ -145,6 +174,8 @@ const MemberActions = ({
     onSetup,
     onChangePassword,
     onRevoke,
+    onAttachSSO,
+    onDetachSSO,
     disableEdit,
     permissions: {
         canEdit,
@@ -154,6 +185,8 @@ const MemberActions = ({
         canSetupMember,
         canChangePassword,
         canDelete,
+        canDetachSSO,
+        canAttachSSO,
         isOrganizationDelinquent,
     },
 }: Props) => {
@@ -200,6 +233,20 @@ const MemberActions = ({
             disabled: isOrganizationDelinquent,
             onClick: () => {
                 void withLoading(onRevoke(member));
+            },
+        },
+        canAttachSSO && {
+            text: c('Member action').t`Convert to SSO`,
+            disabled: isOrganizationDelinquent,
+            onClick: () => {
+                void withLoading(onAttachSSO(member));
+            },
+        },
+        canDetachSSO && {
+            text: c('Member action').t`Detach from SSO`,
+            disabled: isOrganizationDelinquent,
+            onClick: () => {
+                void withLoading(onDetachSSO(member));
             },
         },
         canDelete &&

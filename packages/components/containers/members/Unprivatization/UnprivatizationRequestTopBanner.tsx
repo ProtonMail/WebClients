@@ -27,11 +27,16 @@ const UnprivatizationRequestTopBanner = () => {
     const [modalProps, setModal, renderModal] = useModalState();
 
     useEffect(() => {
+        const initialSearchParams = new URLSearchParams(window.location.search);
         const run = async () => {
             const result = await dispatch(getPendingUnprivatizationRequest({ verifyOutboundPublicKeys }));
             if (result) {
                 const { member, organization, parsedUnprivatizationData } = result;
                 setData({ member, orgName: organization.Name || '', parsedUnprivatizationData });
+
+                if (initialSearchParams.get('action') === 'enable-admin-access') {
+                    setModal(true);
+                }
             }
         };
         if (unprivatizeMemberEnabled) {
