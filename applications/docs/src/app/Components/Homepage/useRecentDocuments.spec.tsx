@@ -1,6 +1,7 @@
 import type { RecentDocumentsSnapshotData } from '@proton/docs-core'
 import { filterItems, getDisplayName } from './useRecentDocuments'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts'
+import { ServerTime } from '@proton/docs-shared'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
@@ -11,20 +12,20 @@ describe('filterItems', () => {
         name: 'name 1',
         linkId: 'link 1',
         volumeId: 'volume 1',
-        lastViewed: 1,
+        lastViewed: new ServerTime(1),
         isSharedWithMe: false,
       },
       {
         name: 'name 2',
         linkId: 'link 2',
         volumeId: 'volume 2',
-        lastViewed: 2,
+        lastViewed: new ServerTime(2),
       },
       {
         name: 'name 3',
         linkId: 'link 3',
         volumeId: 'volume 3',
-        lastViewed: 3,
+        lastViewed: new ServerTime(3),
         isSharedWithMe: true,
       },
     ]
@@ -36,20 +37,20 @@ describe('filterItems', () => {
         name: 'name 1',
         linkId: 'link 1',
         volumeId: 'volume 1',
-        lastViewed: 1,
+        lastViewed: new ServerTime(1),
         isSharedWithMe: false,
       },
       {
         name: 'name 2',
         linkId: 'link 2',
         volumeId: 'volume 2',
-        lastViewed: 2,
+        lastViewed: new ServerTime(2),
       },
       {
         name: 'name 3',
         linkId: 'link 3',
         volumeId: 'volume 3',
-        lastViewed: 3,
+        lastViewed: new ServerTime(3),
         isSharedWithMe: true,
       },
     ]
@@ -61,20 +62,20 @@ describe('filterItems', () => {
         name: 'name 1',
         linkId: 'link 1',
         volumeId: 'volume 1',
-        lastViewed: 1,
+        lastViewed: new ServerTime(1),
         isSharedWithMe: false,
       },
       {
         name: 'name 2',
         linkId: 'link 2',
         volumeId: 'volume 2',
-        lastViewed: 2,
+        lastViewed: new ServerTime(2),
       },
       {
         name: 'name 3',
         linkId: 'link 3',
         volumeId: 'volume 3',
-        lastViewed: 3,
+        lastViewed: new ServerTime(3),
         isSharedWithMe: true,
       },
     ]
@@ -86,20 +87,20 @@ describe('filterItems', () => {
         name: '1',
         linkId: 'link 1',
         volumeId: 'volume 1',
-        lastViewed: 1,
+        lastViewed: new ServerTime(1),
         isSharedWithMe: false,
       },
       {
         name: 'name 2',
         linkId: 'link 2',
         volumeId: 'volume 2',
-        lastViewed: 2,
+        lastViewed: new ServerTime(2),
       },
       {
         name: 'name 3',
         linkId: 'link 3',
         volumeId: 'volume 3',
-        lastViewed: 3,
+        lastViewed: new ServerTime(3),
         isSharedWithMe: true,
       },
     ]
@@ -111,20 +112,20 @@ describe('filterItems', () => {
         name: 'doc 2',
         linkId: 'link 1',
         volumeId: 'volume 1',
-        lastViewed: 1,
+        lastViewed: new ServerTime(1),
         isSharedWithMe: false,
       },
       {
         name: 'name 2',
         linkId: 'link 2',
         volumeId: 'volume 2',
-        lastViewed: 2,
+        lastViewed: new ServerTime(2),
       },
       {
         name: 'name 3',
         linkId: 'link 3',
         volumeId: 'volume 3',
-        lastViewed: 3,
+        lastViewed: new ServerTime(3),
         isSharedWithMe: true,
       },
     ]
@@ -137,20 +138,20 @@ describe('filterItems', () => {
         name: 'doc 2',
         linkId: 'link 1',
         volumeId: 'volume 1',
-        lastViewed: 1,
+        lastViewed: new ServerTime(1),
         isSharedWithMe: false,
       },
       {
         name: 'name 2',
         linkId: 'link 2',
         volumeId: 'volume 2',
-        lastViewed: 2,
+        lastViewed: new ServerTime(2),
       },
       {
         name: 'name 3',
         linkId: 'link 3',
         volumeId: 'volume 3',
-        lastViewed: 3,
+        lastViewed: new ServerTime(3),
         isSharedWithMe: true,
       },
     ]
@@ -164,7 +165,7 @@ describe('getDisplayName', () => {
       name: 'doc 2',
       linkId: 'link 1',
       volumeId: 'volume 1',
-      lastViewed: 1,
+      lastViewed: new ServerTime(1),
       isSharedWithMe: false,
     }
     expect(getDisplayName(recentDocument)).toBe('Me')
@@ -174,7 +175,7 @@ describe('getDisplayName', () => {
       name: 'doc 2',
       linkId: 'link 1',
       volumeId: 'volume 1',
-      lastViewed: 1,
+      lastViewed: new ServerTime(1),
       isSharedWithMe: false,
     }
     expect(getDisplayName(recentDocument)).toBe('Me')
@@ -185,7 +186,7 @@ describe('getDisplayName', () => {
       name: 'doc 2',
       linkId: 'link 1',
       volumeId: 'volume 1',
-      lastViewed: 1,
+      lastViewed: new ServerTime(1),
       isSharedWithMe: true,
       createdBy: 'joe@proton.ch',
     }
@@ -197,7 +198,7 @@ describe('getDisplayName', () => {
       name: 'doc 2',
       linkId: 'link 1',
       volumeId: 'volume 1',
-      lastViewed: 1,
+      lastViewed: new ServerTime(1),
       isSharedWithMe: true,
       createdBy: 'joe@proton.ch',
     }
