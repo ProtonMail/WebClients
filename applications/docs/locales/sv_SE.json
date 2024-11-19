@@ -507,6 +507,9 @@
       "Reset to default": [
         "Återställ till standard"
       ],
+      "Restore version": [
+        "Återställ version"
+      ],
       "Retry": [
         "Försök igen"
       ],
@@ -927,6 +930,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Fakturerad med ${ amount } en gång"
+      ],
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
       ],
@@ -2158,6 +2164,9 @@
       ]
     },
     "Description": {
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
       ],
@@ -2875,6 +2884,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nått gränsen för antalet kontakter för ditt konto"
       ],
       "You must set a name": [
         "Du måste ange ett namn"
@@ -3740,6 +3752,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för livstidsåtkomst till ${ PASS_SHORT_APP_NAME }. Priset och datumet för förnyelse av din prenumeration på ${ planTitle } förblir oförändrade."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
@@ -4317,9 +4332,6 @@
       "No version history available": [
         "Ingen versionshistorik tillgänglig"
       ],
-      "No version history batches available": [
-        "Inga grupper av versionshistorik tillgängliga"
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ingen av de uppladdade nycklarna är giltiga för kryptering. För att kunna skicka meddelanden till denna adress, ladda upp en giltig nyckel eller inaktivera “Kryptera e-post“."
       ],
@@ -4350,6 +4362,9 @@
       ],
       "Organization size": [
         "Organisationens storlek"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
       ],
       "Owned by me": [
         "Ägs av mig"
@@ -6001,6 +6016,9 @@
         "${ options }-dags filversionshistorik",
         "${ options }-dagars filversionshistorik"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin livstid"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias"
@@ -6053,6 +6071,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Avancerade funktioner för alias (drivs av SimpleLogin)"
       ],
@@ -6082,6 +6103,9 @@
       ],
       "Available on all platforms": [
         "Tillgängligt på alla plattformar"
+      ],
+      "Breach alerts": [
+        "Intrångsvarningar"
       ],
       "Calendar sharing": [
         "Kalenderdelning"
@@ -6606,6 +6630,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter är enkla märken som du kan lägga till i meddelanden för att göra dem lättare att hitta eller att tillämpa filter på"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Livstidsåtkomst till premiumfunktioner för ${ PASS_APP_NAME } + SimpleLogin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Liksom en mapp är ett valv ett bekvämt sätt att organisera dina objekt"
       ],
@@ -7051,6 +7078,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
+      ],
+      "Team policies": [
+        "Policy för team"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7151,6 +7181,9 @@
       ],
       "Please select your billing state first.": [
         "Välj din delstat för fakturering först."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Förnyas med ${ price }, avbryt när som helst."
       ],
       "Select billing country to pay": [
         "Välj faktureringsland att betala"
