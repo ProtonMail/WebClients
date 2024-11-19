@@ -972,7 +972,7 @@ const InteractiveCalendarView = ({
             emails.map(async (email) => {
                 const encryptionPreferences = await getEncryptionPreferences({
                     email,
-                    lifetime: 0,
+                    lifetime: 10 * SECOND, // Increase encryption preference lifetime to 10s so that requests are cached when saving events (call is done twice)
                     contactEmailsMap,
                 });
                 const sendPreferences = getSendPreferences(encryptionPreferences, getIcsMessageWithPreferences(Sign));
