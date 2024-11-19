@@ -296,6 +296,9 @@
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
+      "Expand video conferencing widget": [
+        "Ανάπτυξη γραφικού στοιχείου τηλεδιάσκεψης"
+      ],
       "Export": [
         "Εξαγωγή"
       ],
@@ -724,9 +727,6 @@
       ],
       "Upgrade to ${ BRAND_NAME } Unlimited": [
         "Αναβάθμιση σε ${ BRAND_NAME } Unlimited"
-      ],
-      "Upgrade to Mail Plus": [
-        "Αναβαθμίστε στο Mail Plus"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -3120,14 +3120,14 @@
       "Event not found": [
         "Η εκδήλωση δε βρέθηκε"
       ],
+      "Failed to create meeting": [
+        "Αποτυχία δημιουργίας εκδήλωσης"
+      ],
       "Failed to get event": [
         "Αποτυχία λήψης εκδήλωσης"
       ],
       "Failed to get original occurrence in series": [
         "Αποτυχία λήψης αρχικού περιστατικού στη σειρά"
-      ],
-      "Failed to load oauth modal.": [
-        "Αποτυχία φόρτωσης του παράθυρου OAuth."
       ],
       "First name is too long": [
         "Το όνομα είναι πολύ μεγάλο"
@@ -4972,9 +4972,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ remainingCreditsFormatted }."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Παρακαλούμε δώστε ένα όνομα και μια διεύθυνση ηλεκτρονικού ταχυδρομείου για τη δημιουργία μιας ομάδας."
       ],
@@ -5023,6 +5020,10 @@
       ],
       "Removed participants will be notified.": [
         "Οι συμμετέχοντες που αφαιρέθηκαν θα ειδοποιηθούν."
+      ],
+      "Saving event...": [
+        "Αποθήκευση εκδήλωσης...",
+        "Αποθήκευση εκδηλώσεων..."
       ],
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
@@ -6572,6 +6573,9 @@
         "${ options }-ημέρα ιστορικό εκδόσεων αρχείου",
         "${ options }-ημέρες ιστορικό εκδόσεων αρχείου"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμο",
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμα"
@@ -6627,6 +6631,9 @@
       "Administration Panel": [
         "Πίνακας Διαχείρισης"
       ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Προηγμένες λειτουργίες ψευδωνύμων (υποστηρίζεται από την SimpleLogin)"
       ],
@@ -6656,6 +6663,9 @@
       ],
       "Available on all platforms": [
         "Διαθέσιμο σε όλες τις πλατφόρμες"
+      ],
+      "Breach alerts": [
+        "Ειδοποιήσεις Παραβίασης"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -7179,6 +7189,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Οι ετικέτες είναι απλό κείμενο που μπορείτε να προσθέσετε στα μηνύματα για να διευκολύνετε την εύρεση ή την εφαρμογή φίλτρων"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Ισόβια πρόσβαση σε ${ PASS_APP_NAME } + premium χαρακτηριστικά SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Όπως ένας φάκελος, μια θυρίδα αποθήκευσης είναι ένας βολικός τρόπος για να οργανώσετε τα στοιχεία σας"
@@ -7797,6 +7810,9 @@
       ],
       "Please select your billing state first.": [
         "Παρακαλούμε επιλέξτε πρώτα την κατάσταση χρέωσής σας."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Ανανεώνει σε ${ price }, ακυρώστε ανά πάσα στιγμή."
       ],
       "Select billing country to pay": [
         "Επιλέξτε χώρα χρέωσης για πληρωμή"

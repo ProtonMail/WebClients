@@ -707,9 +707,6 @@
       "Upgrade now": [
         "立即升级账户"
       ],
-      "Upgrade to Mail Plus": [
-        "升级至 Mail Plus"
-      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -824,6 +821,9 @@
       ],
       "${ price } per user": [
         "${ price } 每位用户"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } 个写作助手许可证"
       ],
       "${ users } user": [
         "${ users } 位用户"
@@ -2913,9 +2913,6 @@
       "Failed to get original occurrence in series": [
         "无法获取序列中的原始事件"
       ],
-      "Failed to load oauth modal.": [
-        "无法加载 oauth 模式。"
-      ],
       "First name is too long": [
         "名字太长。"
       ],
@@ -4649,6 +4646,9 @@
       ],
       "Removed participants will be notified.": [
         "移除的参与者将收到通知"
+      ],
+      "Saving event...": [
+        "正在保存事件..."
       ],
       "Select a service provider to start": [
         "请选择一个服务提供商并开始导入"
@@ -6938,6 +6938,9 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全保险库共享"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "安全保险库共享 (${ n } 个保险库) 和链接共享"
       ]
     },
     "passwordless": {

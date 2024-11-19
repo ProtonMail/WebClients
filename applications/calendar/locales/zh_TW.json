@@ -551,6 +551,9 @@
       "Remove this participant": [
         "移除此參與者"
       ],
+      "Remove zoom meeting": [
+        "移除Zoom會議"
+      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -673,6 +676,9 @@
       ],
       "Today": [
         "今天"
+      ],
+      "Toggle Contacts app": [
+        "切換聯絡人應用程式"
       ],
       "Toggle settings": [
         "切換設定"
@@ -1028,6 +1034,9 @@
       "Integrated 2FA authenticator": [
         "整合了雙重驗證的驗證器"
       ],
+      "One-time payment, lifetime deal": [
+        "一次付款，終身方案"
+      ],
       "Online document editor": [
         "線上文件編輯器"
       ],
@@ -1063,8 +1072,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus 終身方案無續約費，他是單次付費終身存取Pass Plus。"
+      ],
       "Discounts are based on standard monthly pricing.": [
         "折扣是以每月標準價格為基礎。"
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "若您訂閱Pass Family或Unlimited，您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "您的訂閱將在您的繳款單週期結束時以標準折扣費率及期限自動續訂。"
@@ -1081,8 +1096,14 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "單次收費 ${ amount }"
+      ],
       "for ${ durationDeal }": [
-        "為了 ${ durationDeal }"
+        "為期 ${ durationDeal }"
+      ],
+      "forever": [
+        "永久"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "首月免費，之後每月續訂 ${ regularAmount }。"
@@ -1468,6 +1489,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 個使用者"
+      ],
+      "Total": [
+        "總共"
       ],
       "Total for ${ n } month": [
         "總額可用 ${ n } 個月"
@@ -3549,6 +3573,11 @@
         "您需要一個使用中的個人行事曆以便匯入事件"
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "顯示名稱不能為空"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "沒有選擇圖像"
@@ -4799,9 +4828,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "請注意，當您點擊確認時，您的帳號將剩${ remainingCreditsFormatted }可用額度。"
-      ],
       "Please provide a name and an email address for creating a group.": [
         "請提供一個名子和電子郵件位址以創建群組。"
       ],
@@ -4849,6 +4875,9 @@
       ],
       "Removed participants will be notified.": [
         "已移除的參與者將獲通知。"
+      ],
+      "Saving event...": [
+        "正在儲存活動..."
       ],
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
@@ -5717,6 +5746,9 @@
       ],
       "Reveal password": [
         "顯示密碼"
+      ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Secondary": [
         "次要"
@@ -7366,8 +7398,14 @@
       "${ n } user account": [
         "${ n }使用者帳號"
       ],
+      "Activity log": [
+        "活動記錄"
+      ],
       "Admin panel to manage users and subscription": [
         "管理員面板以管理使用者及訂閱"
+      ],
+      "Team policies": [
+        "團隊政策"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7450,6 +7488,9 @@
       ],
       "Please select your billing state first.": [
         "請先選擇您的計費狀態。"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "更新價 ${ price }，任何時間都可取消."
       ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
@@ -8396,6 +8437,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "您的方案乃購自 iOS 應用程式。若要更改您的方案或更新您的付款詳情，請移至 Apple App Store。"
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "終身"
       ]
     },
     "Subscription price": {
@@ -9627,6 +9673,11 @@
         "零廣告"
       ]
     },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "直達 Secure Core 伺服器、極速 P2P/BitTorrent 下載、匿名連接 VPN、Tor路由以及其它更多功能。"
+      ]
+    },
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
         "${ n }錢包每個帳號"
@@ -9964,6 +10015,17 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "加入 Zoom 會議"
+      ],
+      "Adding conferencing details": [
+        "添加會議詳細資料"
+      ],
+      "Loading Zoom configuration": [
+        "載入 Zoom 設置"
       ]
     },
     "Zoom Meeting": {
