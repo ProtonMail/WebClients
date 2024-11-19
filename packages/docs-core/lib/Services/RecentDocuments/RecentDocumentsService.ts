@@ -1,4 +1,4 @@
-import { InternalEventPublishStrategy, type InternalEventBus } from '@proton/docs-shared'
+import { InternalEventPublishStrategy, ServerTime, type InternalEventBus } from '@proton/docs-shared'
 import type { DecryptedNode, DriveCompat } from '@proton/drive-store'
 
 import type {
@@ -57,7 +57,7 @@ export class RecentDocumentsService implements RecentDocumentsInterface {
     this.recentDocuments = response.getValue().RecentDocuments.map((item) => ({
       linkId: item.LinkID,
       shareId: item.ContextShareID,
-      lastViewed: item.LastOpenTime,
+      lastViewed: new ServerTime(item.LastOpenTime),
     }))
 
     await this.setStatusAndNotify('resolving')
