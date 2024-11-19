@@ -64,6 +64,10 @@ const getFilteredEmail = (email: string) => {
     return "__EMAIL_NONPROTON__";
 };
 
+const isEmailDomain = (key: string, value: string) => {
+    return ["identifier"].includes(key.toLowerCase()) && /^@\S+\.\S+$/i.test(value);
+};
+
 const getFilteredHomePath = (somePath: string) => {
     const normalizedPath = somePath.replaceAll("\\", "/");
     const basePath = app.getPath("home").replaceAll("\\", "/");
@@ -73,7 +77,7 @@ const getFilteredHomePath = (somePath: string) => {
         return somePath;
     }
 
-    const hasNotASCII = /[^a-z0-9\s-_\\/]+/i.test(basePath);
+    const hasNotASCII = /[^A-Za-z0-9\s-_\\/:.]+/.test(basePath);
     const hash = createHash("sha1").update(basePath).digest("hex");
     const replacement = hasNotASCII ? `/__HOME_NONASCII_${hash}__` : `/__HOME_ASCII_${hash}__`;
     return normalizedPath.replaceAll(basePathRegExp, replacement);
@@ -133,7 +137,7 @@ const filterSensitiveString = (data: string): string => {
         }
 
         if (url.protocol === "file:") {
-            url.pathname = getFilteredHomePath(url.pathname);
+            url.pathname = encodeURI(getFilteredHomePath(decodeURI(url.pathname)));
         }
 
         filteredData = url.toString();
@@ -163,6 +167,8 @@ function filterSearchParams(params: URLSearchParams) {
         }
 
         if (isEmail(filteredValue)) {
+            params.set(key, getFilteredEmail(filteredValue));
+        } else if (isEmailDomain(key, filteredValue)) {
             params.set(key, getFilteredEmail(filteredValue));
         } else if (isIDKey(key)) {
             params.set(key, "__ID__");
