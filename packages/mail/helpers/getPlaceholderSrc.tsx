@@ -1,4 +1,13 @@
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import conversationFullSvgDark from '@proton/styles/assets/img/placeholders/inbox-cool-dark.svg';
+import conversationFullSvgLight from '@proton/styles/assets/img/placeholders/inbox-cool-light.svg';
+import conversationEmptySvgDark from '@proton/styles/assets/img/placeholders/inbox-empty-cool-dark.svg';
+import conversationEmptySvgLight from '@proton/styles/assets/img/placeholders/inbox-empty-cool-light.svg';
+import conversationEmptySvgWarm from '@proton/styles/assets/img/placeholders/inbox-empty-warm-light.svg';
+import conversationSemiSvgDark from '@proton/styles/assets/img/placeholders/inbox-semi-cool-dark.svg';
+import conversationSemiSvgLight from '@proton/styles/assets/img/placeholders/inbox-semi-cool-light.svg';
+import conversationSemiSvgWarm from '@proton/styles/assets/img/placeholders/inbox-semi-warm-light.svg';
+import conversationFullSvgWarm from '@proton/styles/assets/img/placeholders/inbox-warm-light.svg';
 
 interface Params {
     theme: ThemeTypes;
@@ -27,4 +36,36 @@ export const getPlaceholderSrc = ({ theme, warmLight, coolLight, coolDark }: Par
     }
 
     return warmLight;
+};
+
+interface Temp {
+    size: number;
+    theme: ThemeTypes;
+}
+
+export const getInboxEmptyPlaceholder = ({ size, theme }: Temp) => {
+    if (size === 0) {
+        return getPlaceholderSrc({
+            theme,
+            coolDark: conversationEmptySvgDark,
+            coolLight: conversationEmptySvgLight,
+            warmLight: conversationEmptySvgWarm,
+        });
+    }
+
+    if (size < 10) {
+        return getPlaceholderSrc({
+            theme,
+            coolDark: conversationSemiSvgDark,
+            coolLight: conversationSemiSvgLight,
+            warmLight: conversationSemiSvgWarm,
+        });
+    }
+
+    return getPlaceholderSrc({
+        theme,
+        coolDark: conversationFullSvgDark,
+        coolLight: conversationFullSvgLight,
+        warmLight: conversationFullSvgWarm,
+    });
 };
