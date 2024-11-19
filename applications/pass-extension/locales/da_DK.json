@@ -1081,9 +1081,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } invitationer sendt"
-      ],
       "${ count } time": [
         "${ count } gang",
         "${ count } gange"
@@ -1426,9 +1423,6 @@
       ],
       "Invite successfully resent": [
         "Invitation sendt igen"
-      ],
-      "Invite successfully sent": [
-        "Invitation sendt"
       ],
       "invites you to access items in": [
         "inviterer dig til at tilgå elementer i"

@@ -627,6 +627,9 @@
       "Black Friday": [
         "Black Friday"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Πληρώστε μία φορά και λάβετε ${ lifetimeAccessJSX } στο Pass Plus και SimpleLogin. Μόνο ${ relativePrice }."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Αποθηκεύστε έως ${ discountJSX } στην οικογένεια Pass. Μόνο ${ relativePrice }/μήνα."
       ]
@@ -725,6 +728,9 @@
       ],
       "Could not resolve share members": [
         "Δεν ήταν δυνατή η επίλυση μελών κοινής χρήσης"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Δεν ήταν δυνατή η ανάκτηση προσκλήσεων χρηστών για την κρύπτη \"${ vaultName }\""
       ],
       "Could not validate addresses at the moment.": [
         "Δεν ήταν δυνατή η επικύρωση διευθύνσεων αυτήν τη στιγμή."
@@ -1096,9 +1102,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Η ενημερωμένη έκδοση του \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } προσκλήσεις στάλθηκαν με επιτυχία"
-      ],
       "${ count } time": [
         "${ count } φορά",
         "${ count } φορές"
@@ -1123,6 +1126,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME } θα ακολουθήσει το θέμα του συστήματός σας."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις, πιστωτικές κάρτες και ταυτότητες."
@@ -1263,6 +1269,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Επιλέξτε ένα αποθηκευμένο κλειδί πρόσβασης για είσοδο στο ${ domain }"
       ],
+      "Choose your preferred look and feel.": [
+        "Επιλέξτε την εμφάνιση και την αίσθηση που προτιμάτε."
+      ],
       "Click the icon to open it anytime.": [
         "Κάντε κλικ στο εικονίδιο για να το ανοίξετε ανά πάσα στιγμή."
       ],
@@ -1395,6 +1404,10 @@
       "For security reason, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Για λόγους ασφαλείας, πρέπει να επιβεβαιώσετε την πρόσβαση σε αυτήν την κοινόχρηστη κρύπτη",
+        "Για λόγους ασφαλείας, πρέπει να επιβεβαιώσετε την πρόσβαση σε αυτές τις κοινόχρηστες κρύπτες"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
       ],
@@ -1441,9 +1454,6 @@
       ],
       "Invite successfully resent": [
         "Επιτυχής αποστολή πρόσκλησης εκ νέου"
-      ],
-      "Invite successfully sent": [
-        "Επιτυχής αποστολή πρόσκλησης"
       ],
       "invites you to access items in": [
         "σας προσκαλεί να αποκτήσετε πρόσβαση σε στοιχεία στη"
@@ -1499,6 +1509,9 @@
       ],
       "Loading...": [
         "Φόρτωση..."
+      ],
+      "Make it your own": [
+        "Κάντε το δικό σας"
       ],
       "me": [
         "εγώ"
@@ -1933,6 +1946,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "Θα αποσυνδεθείτε και θα πρέπει να συνδεθείτε ξανά σε όλες τις άλλες συσκευές σας."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "Δε θα έχετε πλέον πρόσβαση σε κοινή χρήση, 2FA, πιστωτική κάρτα και άλλες προηγμένες λειτουργίες της ${ PASS_APP_NAME }"
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Θα χρησιμοποιήσετε αυτό το PIN για να ξεκλειδώσετε το ${ PASS_APP_NAME } όταν κλειδώσει αυτόματα μετά από μια περίοδο αδράνειας."
@@ -2699,6 +2715,10 @@
         "${ count } στοιχείο",
         "${ count } στοιχεία"
       ],
+      "You can drag and drop the selected item to another vault": [
+        "Μπορείτε να σύρετε και αποθέσετε το επιλεγμένο στοιχείο σε άλλη κρύπτη",
+        "Μπορείτε να σύρετε και αποθέσετε τα επιλεγμένα στοιχεία σε άλλη κρύπτη"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη."
       ]
@@ -2929,6 +2949,10 @@
       "Current version": [
         "Τρέχουσα έκδοση"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Διαγραφή ${ deletedItemsCount } στοιχείου;",
+        "Μεταγραφή ${ deletedItemsCount } στοιχείων;"
+      ],
       "Delete this item?": [
         "Διαγραφή αυτού του στοιχείου;"
       ],
@@ -3007,6 +3031,10 @@
       "Modified": [
         "Τροποποιήθηκε"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Μετακίνηση ${ count } στοιχείου στο ${ vaultName }",
+        "Μετακίνηση ${ count } στοιχείων στο ${ vaultName }"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχείο;",
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
@@ -3031,6 +3059,9 @@
       ],
       "Password": [
         "Κωδικός"
+      ],
+      "Pending access confirmation": [
+        "Εκκρεμεί επιβεβαίωση πρόσβασης"
       ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
@@ -3132,11 +3163,18 @@
       "Welcome to your new password manager!": [
         "Καλώς ήρθατε στον νέο σας διαχειριστή κωδικών πρόσβασης!"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Η ${ planName } συνδρομή σας θα λήξει στις ${ endDate }"
+      ],
       "Your vault is empty": [
         "Η κρύπτη σας είναι άδεια"
       ],
       "Your welcome gift": [
         "Απολαύστε τη δωρεάν δοκιμή σας"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
+        "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
       ]
     },
     "Validation": {
@@ -3172,6 +3210,9 @@
       "A description of the problem is required": [
         "Απαιτείται περιγραφή του προβλήματος"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Τα ψευδώνυμα στον κάδο απορριμμάτων θα συνεχίσουν να προωθούν μηνύματα ηλεκτρονικού ταχυδρομείου."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Όλα τα απορριφθέντα στοιχεία σας θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
       ],
@@ -3188,6 +3229,9 @@
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχείο;",
         "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχεία;"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα αυτό το στοιχείο;"
       ],
       "At least one email address is required": [
         "Απαιτείται τουλάχιστον μία διεύθυνση ηλεκτρονικού ταχυδρομείου"

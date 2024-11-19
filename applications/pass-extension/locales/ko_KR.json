@@ -89,6 +89,9 @@
       "Confirm access": [
         "접근 허용"
       ],
+      "Confirm all": [
+        "일괄 허가"
+      ],
       "Connect your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정에 연결"
       ],
@@ -133,6 +136,9 @@
       ],
       "Create identity": [
         "신원 추가"
+      ],
+      "Create item": [
+        "항목 생성"
       ],
       "Create login": [
         "로그인 생성"
@@ -386,6 +392,9 @@
       "Please retry": [
         "다시 시도하세요"
       ],
+      "Reactivate now": [
+        "지금 재활성화"
+      ],
       "Refresh the page": [
         "페이지 새로 고침"
       ],
@@ -460,6 +469,9 @@
       ],
       "See members": [
         "회원 보기"
+      ],
+      "Select": [
+        "선택"
       ],
       "Send invite": [
         "초대장 보내기"
@@ -613,6 +625,9 @@
       "Black Friday": [
         "블랙 프라이데이"
       ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "한 번 결제하고 Pass Plus과 SimpleLogin의 ${ lifetimeAccessJSX }을 얻으세요. 단돈 ${ relativePrice } 입니다."
+      ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Pass Family로 최대 ${ discountJSX }을 절약하세요. 오직 ${ relativePrice }달 입니다."
       ]
@@ -709,6 +724,9 @@
       ],
       "Could not resolve share members": [
         "회원에게 공유를 해결할 수 없음"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "\"${ vaultName }\" 금고에 대한 사용자 초대를 찾을 수 없습니다."
       ],
       "Could not validate addresses at the moment.": [
         "현재 주소를 확인할 수 없습니다."
@@ -1073,9 +1091,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
       ],
-      "${ count } invites successfully sent": [
-        "초대 ${ count }개를 잘 보냈습니다"
-      ],
       "${ count } time": [
         "${ count }번"
       ],
@@ -1096,6 +1111,9 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
+      ],
+      "${ PASS_APP_NAME } will follow your system theme.": [
+        "${ PASS_APP_NAME }가 시스템 테마를 따릅니다."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME }가 오직 로그인, 메모, 신용 카드 및 신원 정보에 한해 불러옵니다."
@@ -1235,6 +1253,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain }에 로그인할 저장된 패스키를 선택하세요."
       ],
+      "Choose your preferred look and feel.": [
+        "마음에 드는 모양과 느낌을 골라주세요."
+      ],
       "Click the icon to open it anytime.": [
         "언제든지 아이콘을 클릭해 여세요."
       ],
@@ -1367,6 +1388,9 @@
       "For security reason, your access needs to be confirmed": [
         "보안 상의 이유로, 접근이 확인되어야 합니다."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "보안상의 이유로 이 공유 금고 접근을 수락해야합니다."
+      ],
       "For security reasons, your access needs to be confirmed": [
         "보안 상의 이유로, 접근이 수락되어야 합니다."
       ],
@@ -1411,9 +1435,6 @@
       ],
       "Invite successfully resent": [
         "초대장을 성공적으로 보냄"
-      ],
-      "Invite successfully sent": [
-        "초대를 성공적으로 보냈습니다."
       ],
       "invites you to access items in": [
         "님이 항목 공유를 초대합니다:"
@@ -1469,6 +1490,9 @@
       "Loading...": [
         "불러오는 중..."
       ],
+      "Make it your own": [
+        "내 것으로 만들기"
+      ],
       "me": [
         "나"
       ],
@@ -1478,8 +1502,17 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "단순한 비밀번호 관리자가 아닌 ${ PASS_APP_NAME }는 비밀번호 뿐만 아니라 별칭으로 개인 이메일 주소도 보호합니다. ${ MAIL_APP_NAME }과 동일한 기술로 종단간 암호화하여 오직 당신만 데이터에 접근할 수 있습니다."
       ],
+      "Move ${ count } item": [
+        "항목 ${ count }개 이동"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "타 금고로 항목을 이동하면 아이템의 기록 및 안전한 링크가 삭제됩니다."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "항목들을 다른 금고로 이동하면 그 기록이 지워집니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -1885,6 +1918,9 @@
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
         "사용자가 로그아웃되고 다른 모든 장치에서 다시 로그인해야 합니다."
+      ],
+      "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
+        "더 이상 ${ PASS_APP_NAME }에서 항목 공유, 2단계 인증, 신용 카드 및 다른 향상된 기능을 사용할 수 없게됩니다."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "비활성 기간 후 자동으로 잠기면 PIN을 ${ PASS_APP_NAME }를 잠금해제 하는데 사용할 수 있습니다."
@@ -2642,6 +2678,12 @@
     "Message": {
       "${ count } item": [
         "${ count }개 항목"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "항목을 선택하고 드래그 앤 드롭하여 다른 금고로 이동시킬 수 있습니다."
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "이 금고애서 ${ semiboldText }개 선택했습니다."
       ]
     },
     "Onboarding": {
@@ -2830,6 +2872,17 @@
         "금고에 ${ vault.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "자동"
+      ],
+      "Dark": [
+        "다크"
+      ],
+      "Light": [
+        "라이트"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 설정"
@@ -2857,6 +2910,12 @@
       ],
       "Current version": [
         "현재 버전"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "${ deletedItemsCount }개의 항목을 삭제 하시겠습니까?"
+      ],
+      "Delete this item?": [
+        "이 항목을 삭제하시겠습니까?"
       ],
       "Delete vault \"${ vaultName }\"?": [
         "금고 \"${ vaultName }\"을(를) 삭제할까요?"
@@ -2933,8 +2992,17 @@
       "Modified": [
         "수정됨"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "${ count }개의 항목을 ${ vaultName }(으)로 이동"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount }개의 항목을 휴지통으로 이동시키시겠습니까?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "\"${ vaultName }\"(으)로 모든 항목을 이동할까요?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "\"${ vaultName }\"(으)로 항목 이동"
       ],
       "No items selected": [
         "선택된 항목 없음"
@@ -2951,6 +3019,9 @@
       "Password": [
         "비밀번호"
       ],
+      "Pending access confirmation": [
+        "액세스 확인 대기 중"
+      ],
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
       ],
@@ -2964,7 +3035,7 @@
         "고정됨 (${ items.length })"
       ],
       "Please note that once deleted, the alias can't be restored.": [
-        "별칭이 한 번 삭제되면 복구 될 수 없습니다."
+        "별칭이 삭제되면 복구할 수 없습니다."
       ],
       "Reject device?": [
         "기기를 거절할까요?"
@@ -3050,11 +3121,17 @@
       "Welcome to your new password manager!": [
         "새로운 패스워드 관리자에 오신 것을 환영합니다!"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "${ planName } 구독이 ${ endDate }에 종료됩니다."
+      ],
       "Your vault is empty": [
         "금고가 비어있음"
       ],
       "Your welcome gift": [
         "무료 체험을 즐겨보세요"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "${ aliasCount }개 별칭을 영구적으로 삭제하려고 합니다."
       ]
     },
     "Validation": {
@@ -3090,6 +3167,9 @@
       "A description of the problem is required": [
         "문제의 셜명이 필요합니다."
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "휴지통 내 별칭이 계속 이메일 가져오기를 진행합니다."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "모든 휴지통에 있는 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
       ],
@@ -3098,6 +3178,15 @@
       ],
       "An error occurred while resuming your session": [
         "세션 재개 중 오류 발생"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount }개의 파일을 휴지통으로 이동시키시겠습니까?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "정말로 ${ deletedItemsCount }개의 파일을 영구적으로 삭제하시겠습니까?"
+      ],
+      "Are you sure you want to permanently delete this item?": [
+        "이 항목을 영구적으로 삭제하시겠습니까?"
       ],
       "At least one email address is required": [
         "적어도 하나의 이메일 주소가 필요합니다"
