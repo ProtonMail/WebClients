@@ -211,10 +211,10 @@ const MoveDropdown = ({
     return (
         <form className="flex flex-column flex-nowrap justify-start items-stretch flex-auto" onSubmit={handleSubmit}>
             <div className="flex shrink-0 justify-space-between items-center m-4 mb-0">
-                <span className="text-bold" tabIndex={-2}>
+                <span className="text-bold" tabIndex={-1}>
                     {c('Label').t`Move to`}
                 </span>
-                <Tooltip title={c('Title').t`Create folder`}>
+                <Tooltip title={c('Action').t`Create folder`}>
                     <Button
                         icon
                         color="norm"
@@ -224,7 +224,7 @@ const MoveDropdown = ({
                         data-testid="folder-dropdown:add-folder"
                         data-prevent-arrow-navigation
                     >
-                        <Icon name="folder" /> +
+                        <Icon name="folder" alt={c('Action').t`Create folder`} /> <span aria-hidden="true">+</span>
                     </Button>
                 </Tooltip>
             </div>
