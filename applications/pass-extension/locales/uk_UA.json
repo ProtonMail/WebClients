@@ -1037,9 +1037,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Оновлення \"${ payload.item.data.metadata.name }\" було відхилено"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } запрошень успішно відправлено"
-      ],
       "${ count } time": [
         "${ count } раз",
         "${ count } разів",
@@ -1341,9 +1338,6 @@
         "Запрошення успішно вилучено"
       ],
       "Invite successfully resent": [
-        "Запрошення успішно надіслано"
-      ],
-      "Invite successfully sent": [
         "Запрошення успішно надіслано"
       ],
       "invites you to access items in": [
