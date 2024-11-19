@@ -151,48 +151,58 @@ export function handleWebContents(contents: WebContents) {
 
     contents.setWindowOpenHandler((details) => {
         const { url } = details;
+        const logWindowOpen = (status: "allowed" | "denied", description: string, level: "debug" | "error" = "debug") =>
+            logger()[level](`Window open (${status}) ${description}`);
 
         if (isCalendar(url)) {
-            logger().debug("Calendar link", url);
+            logWindowOpen("denied", `calendar link in calendar view ${url}`);
             showView("calendar", url);
             return { action: "deny" };
         }
 
         if (isMail(url)) {
-            logger().debug("Mail link", url);
+            logWindowOpen("denied", `mail link in mail view ${url}`);
             showView("mail", url);
             return { action: "deny" };
         }
 
         if (isAccount(url)) {
-            // Upsell links should be opened in browser to avoid 3D secure issues
-            if (isAccoutLite(url) || isUpsellURL(url)) {
-                logger().debug("Account lite or upsell in browser", url);
+            if (isAccoutLite(url)) {
+                logWindowOpen("denied", `account lite in browser ${url}`);
                 shell.openExternal(url);
-            } else {
-                logger().debug("Account link", url);
-                showView("account", url);
+                return { action: "deny" };
             }
 
+            if (isUpsellURL(url)) {
+                logWindowOpen("denied", `upsell in browser ${url}`);
+                shell.openExternal(url);
+                return { action: "deny" };
+            }
+
+            logWindowOpen("denied", `account link in account view ${url}`);
+            showView("account", url);
             return { action: "deny" };
         }
 
         if (isHostAllowed(url)) {
-            logger().debug("Allowed host", url);
+            // We probably want to disable this case, this will only happen with proton URLs
+            // that are not calendar/mail/account domains and should be handled as a regular
+            // unknown link. We are keeping it enabled for now to detect error cases.
+            logWindowOpen("allowed", `host not caught by any electron view ${url}`, "error");
             return { action: "allow" };
         }
 
         if (global.oauthProcess) {
-            logger().debug("OAuth link in app", url);
+            logWindowOpen("allowed", `oauth process enabled ${url}`);
             return { action: "allow" };
         }
 
         if (global.subscriptionProcess) {
-            logger().debug("Subscription link in modal", url);
+            logWindowOpen("allowed", `subscription process enabled ${url}`);
             return { action: "allow" };
         }
 
-        logger().debug("Other link in browser", url);
+        logWindowOpen("denied", `unknown link open in browser ${url}`);
         shell.openExternal(url);
         return { action: "deny" };
     });
