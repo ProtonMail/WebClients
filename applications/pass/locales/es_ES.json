@@ -1127,7 +1127,8 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
-      "${ count } invites successfully sent": [
+      "${ count } invite successfully sent": [
+        "${ count } invitación enviada",
         "${ count } invitaciones enviadas"
       ],
       "${ count } time": [
@@ -1467,9 +1468,6 @@
       ],
       "Invite successfully resent": [
         "La invitación ha sido enviada."
-      ],
-      "Invite successfully sent": [
-        "Se ha enviado la invitación."
       ],
       "invites you to access items in": [
         "te invita a acceder a elementos de"
@@ -2292,6 +2290,9 @@
       ],
       "Generic CSV": [
         "CSV genérico"
+      ],
+      "Get Started": [
+        "Comenzar"
       ],
       "Grant": [
         "Conceder"
