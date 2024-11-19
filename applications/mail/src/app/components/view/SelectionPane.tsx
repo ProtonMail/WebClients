@@ -7,14 +7,12 @@ import { c, msgid } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { useModalState, useTheme } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { getPlaceholderSrc, useFolders, useLabels } from '@proton/mail';
+import { useFolders, useLabels } from '@proton/mail';
+import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import conversationSvgDark from '@proton/styles/assets/img/placeholders/inbox-cool-dark.svg';
-import conversationSvgLight from '@proton/styles/assets/img/placeholders/inbox-cool-light.svg';
-import conversationSvgWarm from '@proton/styles/assets/img/placeholders/inbox-warm-light.svg';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -219,12 +217,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                     </div>
                     <div className="mb-2">
                         <img
-                            src={getPlaceholderSrc({
-                                theme: theme.information.theme,
-                                warmLight: conversationSvgWarm,
-                                coolLight: conversationSvgLight,
-                                coolDark: conversationSvgDark,
-                            })}
+                            src={getInboxEmptyPlaceholder({ size: count, theme: theme.information.theme })}
                             className="w-auto"
                             height={128}
                             alt=""
