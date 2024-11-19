@@ -1,47 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="none" viewBox="0 0 128 128">
-    <g filter="url(#a)">
-        <ellipse cx="64" cy="111" fill="#7A7F99" fill-opacity=".2" rx="52" ry="4" />
+    <g filter="url(#a)" opacity=".8">
+        <ellipse cx="64" cy="102" fill="#7A7F99" fill-opacity=".2" rx="52" ry="4" />
     </g>
     <path
-        fill="#7A7F99"
-        d="M87.95 45.5H38.19a6 6 0 0 0-4.48 2.009L11 73v1a2 2 0 0 0 2 2h30v9h42v-9h30a2 2 0 0 0 2-2v-1L92.27 47.337a6 6 0 0 0-4.32-1.837Z"
+        fill="url(#b)"
+        d="M87.95 38.5H38.19a6 6 0 0 0-4.48 2.009L11 66v1a2 2 0 0 0 2 2h30v9h42v-9h30a2 2 0 0 0 2-2v-1L92.27 40.337a6 6 0 0 0-4.32-1.837Z"
     />
-    <path fill="url(#b)" d="M21 27h86v59H21V27Z" />
+    <path fill="url(#c)" d="M21 25h86v54H21V25Z" />
+    <path fill="url(#d)" d="m84 16 23 9H21l23-9h40Z" />
+    <path fill="#B8BBCC" d="M21 53h86v2H21v-2Z" opacity=".25" />
+    <path fill="#B8BBCC" d="M21 52h86v1H21v-1Z" opacity=".5" />
+    <path fill="#B8BBCC" d="M21 40h86v1H21v-1Z" opacity=".2" />
+    <path fill="#B8BBCC" d="M21 59h86v1H21v-1Z" opacity=".5" />
+    <path fill="#B8BBCC" d="M21 64h86v1H21v-1Z" opacity=".6" />
+    <path fill="#B8BBCC" d="M21 72h86v1H21v-1Z" opacity=".7" />
+    <path fill="#B8BBCC" d="M21 32h86v1H21v-1Zm0-7h86v1H21v-1Z" opacity=".3" />
+    <path fill="#B8BBCC" d="M21 60h86v2H21v-2Z" opacity=".25" />
+    <path fill="#B8BBCC" d="M21 65h86v2H21v-2Zm0 8h86v2H21v-2Z" opacity=".3" />
+    <path fill="#B8BBCC" d="M21 33h86v2H21v-2Z" opacity=".1" />
+    <path fill="#B8BBCC" d="M21 26h86v2H21v-2Z" opacity=".15" />
     <path
-        fill="url(#c)"
+        fill="url(#e)"
         fill-rule="evenodd"
-        d="m21 59.68-9.984 11.182A4 4 0 0 0 10 73.526V105a6 6 0 0 0 6 6h96a6 6 0 0 0 6-6V73.614a4 4 0 0 0-1.121-2.776L107 60.592v3.335l7.298 7.697c1.209 1.274.306 3.376-1.451 3.376H84.141a4 4 0 0 0-3.329 1.78l-3.624 5.439a4 4 0 0 1-3.329 1.78H54.141a4 4 0 0 1-3.328-1.78l-3.626-5.438A4 4 0 0 0 43.86 75H14.922c-1.72 0-2.638-2.029-1.502-3.321l7.58-8.62v-3.38Z"
+        d="m21 52.68-9.984 11.18A4 4 0 0 0 10 66.526V98a6 6 0 0 0 6 6h96a6 6 0 0 0 6-6V66.614a4 4 0 0 0-1.121-2.776L107 53.592v3.335l7.298 7.697c1.209 1.274.306 3.376-1.451 3.376H84.141a4 4 0 0 0-3.329 1.78l-3.624 5.439a4 4 0 0 1-3.329 1.78H54.141a4 4 0 0 1-3.328-1.78l-3.626-5.438A4 4 0 0 0 43.86 68H14.922c-1.72 0-2.638-2.029-1.502-3.321l7.58-8.62v-3.38Z"
         clip-rule="evenodd"
     />
-    <path
-        fill="#B8BBCC"
-        d="m21 31 19.5-4H44l63 2v9.5s-26.207-3.707-43-4C47.208 34.207 21 37 21 37v-6Zm64 20c-3.6 0-14-1-14-1s10.295-1 14-1 18 1 18 1-14.4 1-18 1ZM53 65c-3.6 0-14-1-14-1s10.295-1 14-1 18 1 18 1-14.4 1-18 1Zm-16-7c-3.6 0-14-1-14-1s10.295-1 14-1 18 1 18 1-14.4 1-18 1Zm45 13c-3.6 0-14-1-14-1s10.295-1 14-1 18 1 18 1-14.4 1-18 1ZM21 53.5V49l67-5-67 9.5Z"
-        opacity=".6"
-    />
-    <path fill="#B8BBCC" d="M21 74.5V73l33-3-33 4.5Z" opacity=".8" />
-    <path fill="#EDEFF7" d="m15 50.5 6-12V44h67l-73 6.5ZM55 70l-36 3 2-3h34Z" />
-    <path fill="#B8BBCC" d="M107 70V58.5L74.5 56 107 70Z" opacity=".6" />
-    <path fill="#EDEFF7" d="m115 63-8-7H74l41 7Z" />
-    <path fill="url(#d)" d="M27 19.5c-3.551 2.425-12 15-12 15s15.75-1.04 53 0 47 2.5 47 2.5l-13-15.5s-20-3.499-75-2Z" />
+    <path fill="#B8BBCC" d="M21 46v-3l37-1-37 8.5V46Zm86 11v-3l-34-1.5 34 9V57Z" opacity=".4" />
+    <path fill="#EDEFF7" d="m15.5 44 5.5-5v2h86l-91.5 3Z" />
+    <path fill="#B8BBCC" d="M21 47h86v2H21v-2Z" opacity=".15" />
+    <path fill="#B8BBCC" d="M21 46h86v1H21v-1Z" opacity=".3" />
+    <path fill="#EDEFF7" d="m113.5 55-6.5-5v2H58.5l55 3Z" />
     <defs>
-        <linearGradient id="b" x1="85" x2="53" y1="28" y2="105" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#EDEFF7" />
-            <stop offset="1" stop-color="#D3D6E5" />
+        <linearGradient id="b" x1="64" x2="64" y1="54" y2="78" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#B8BBCC" />
+            <stop offset="1" stop-color="#7A7F99" />
         </linearGradient>
-        <linearGradient id="c" x1="118" x2="57.294" y1="44" y2="155.401" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#E6E8F2" />
+        <linearGradient id="c" x1="64" x2="38.332" y1="25" y2="103.945" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#EDEFF7" />
             <stop offset="1" stop-color="#B8BBCC" />
         </linearGradient>
-        <linearGradient id="d" x1="15" x2="143.5" y1="37" y2="-10.5" gradientUnits="userSpaceOnUse">
+        <linearGradient id="d" x1="4" x2="86.5" y1="28.5" y2="16" gradientUnits="userSpaceOnUse">
             <stop stop-color="#EDEFF7" />
             <stop offset="1" stop-color="#F5F6FC" />
+        </linearGradient>
+        <linearGradient id="e" x1="15.5" x2="10" y1="44" y2="104" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#F5F6FC" />
+            <stop offset="1" stop-color="#D3D6E5" />
         </linearGradient>
         <filter
             id="a"
             width="128"
             height="32"
             x="0"
-            y="95"
+            y="86"
             color-interpolation-filters="sRGB"
             filterUnits="userSpaceOnUse"
         >
