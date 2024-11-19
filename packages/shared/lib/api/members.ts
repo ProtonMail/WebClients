@@ -193,11 +193,6 @@ export const resendUnprivatizationLink = (memberID: string) => ({
     url: `core/v4/members/${memberID}/unprivatize/resend`,
 });
 
-export const removeMember = (memberID: string) => ({
-    method: 'delete',
-    url: `core/v4/members/${memberID}`,
-});
-
 export const privatizeMember = (memberID: string) => ({
     method: 'put',
     url: `core/v4/members/${memberID}/privatize`,
@@ -221,6 +216,16 @@ export const inviteMember = (email: string, maxSpace: number) => ({
 export const deleteMember = (memberId: string) => ({
     url: `core/v4/members/${memberId}`,
     method: 'delete',
+});
+
+export const removeSSOSamlMember = (memberID: string) => ({
+    url: `core/v4/members/${memberID}/saml`,
+    method: 'delete',
+});
+
+export const addSSOSamlMember = (memberID: string) => ({
+    url: `core/v4/members/${memberID}/saml`,
+    method: 'post',
 });
 
 export const editMemberInvitation = (memberID: string, maxSpace: number) => ({

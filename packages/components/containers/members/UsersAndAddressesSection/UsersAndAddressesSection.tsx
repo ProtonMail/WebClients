@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { getDomainAddressError, useMemberAddresses } from '@proton/account';
+import { attachMemberSSO, deleteMember, getDomainAddressError, useMemberAddresses } from '@proton/account';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useMembers } from '@proton/account/members/hooks';
@@ -12,6 +12,8 @@ import { getDomainError } from '@proton/account/members/validateAddUser';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetOrganizationKey, useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
+import { getSSODomainsSet } from '@proton/account/samlSSO/helper';
+import { useSamlSSO } from '@proton/account/samlSSO/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Avatar, Button } from '@proton/atoms';
@@ -33,13 +35,13 @@ import {
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { baseUseSelector } from '@proton/react-redux-store';
+import { useDispatch } from '@proton/redux-shared-store';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
-import { removeMember, resendUnprivatizationLink, updateRole } from '@proton/shared/lib/api/members';
+import { resendUnprivatizationLink } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
@@ -65,6 +67,7 @@ import {
     getOrganizationKeyInfo,
     validateOrganizationKey,
 } from '@proton/shared/lib/organization/helper';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import Tooltip from '../../../components/tooltip/Tooltip';
@@ -92,9 +95,11 @@ import UserTableBadge from './UsersTableBadge';
 
 const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: MutableRefObject<boolean> }) => {
     const { APP_NAME } = useConfig();
+    const attachSSOEnabled = useFlag('AttachSSO');
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
     const getOrganizationKey = useGetOrganizationKey();
+    const [samlSSO] = useSamlSSO();
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [{ protonDomains, premiumDomains }] = useProtonDomains();
     const [members, loadingMembers] = useMembers();
@@ -105,7 +110,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const [keywords, setKeywords] = useState('');
     const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
     const api = useApi();
-    const { call } = useEventManager();
+    const dispatch = useDispatch();
     const accessToAssistant = useAssistantFeatureEnabled();
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
 
@@ -163,7 +168,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const [userInviteOrEditModalProps, setUserInviteOrEditModalOpen, renderUserInviteOrEditModal] =
         useModalState(cleanOption);
 
-    const verifiedDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
+    const verifiedMailDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
+    const ssoDomainsSet = useMemo(() => {
+        return getSSODomainsSet({ domains: customDomains, ssoConfigs: samlSSO?.configs });
+    }, [customDomains, samlSSO?.configs]);
 
     const handleSearch = (value: string) => setKeywords(value);
 
@@ -208,11 +216,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     })();
 
     const handleDeleteUserConfirm = async (member: Member) => {
-        if (member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
-        }
-        await api(removeMember(member.ID));
-        await call();
+        await dispatch(deleteMember({ api, member }));
         createNotification({ text: c('Success message').t`User deleted` });
     };
 
@@ -238,9 +242,24 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         }
     };
 
+    const handleAttachSSO = async (member: EnhancedMember) => {
+        await dispatch(attachMemberSSO({ api, member, type: 'attach' }));
+        const n = 1;
+        createNotification({
+            text: c('sso').ngettext(msgid`${n} user converted to SSO`, `${n} users converted to SSO`, n),
+        });
+    };
+
+    const handleDetachSSO = async (member: EnhancedMember) => {
+        await dispatch(attachMemberSSO({ api, member, type: 'detach' }));
+        const n = 1;
+        createNotification({
+            text: c('sso').ngettext(msgid`${n} user detached from SSO`, `${n} users detached from SSO`, n),
+        });
+    };
+
     const handleRevokeUserSessions = async (member: EnhancedMember) => {
         await api(revokeSessions(member.ID));
-        await call();
         createNotification({ text: c('Success message').t`Sessions revoked` });
     };
 
@@ -310,7 +329,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             return;
         }
 
-        if (!useEmail && !verifiedDomains.length) {
+        if (!useEmail && !verifiedMailDomains.length) {
             createNotification({ text: getDomainError(), type: 'error' });
             return;
         }
@@ -412,7 +431,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 {renderSubUserCreateModal && (
                     <SubUserCreateModal
                         organization={organization}
-                        verifiedDomains={verifiedDomains}
+                        verifiedDomains={verifiedMailDomains}
                         app={app}
                         onSuccess={setupOrgSpotlight.close}
                         useEmail={useEmail}
@@ -476,7 +495,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         members={members}
                         organization={organization}
                         aiSeatsRemaining={aiSeatsRemaining}
-                        verifiedDomains={verifiedDomains}
+                        verifiedDomains={verifiedMailDomains}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
                         onInviteUser={handleInviteUser}
                         app={app}
@@ -571,6 +590,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         const hasFeaturesColumn = !hasPendingMagicLinkInvite;
 
                         const memberPermissions = getMemberPermissions({
+                            ssoDomainsSet,
+                            attachSSOEnabled,
                             appName: APP_NAME,
                             user,
                             member,
@@ -756,6 +777,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                 onDelete={handleDeleteUser}
                                                 onSetup={handleSetupUser}
                                                 onRevoke={handleRevokeUserSessions}
+                                                onAttachSSO={handleAttachSSO}
+                                                onDetachSSO={handleDetachSSO}
                                                 onLogin={handleLoginUser}
                                                 onChangePassword={handleChangeMemberPassword}
                                                 member={member}
