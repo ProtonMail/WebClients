@@ -196,7 +196,7 @@ export const createUserRenewalRule = (store: Store<State>) =>
 
             // Prevent showing the banner if the plan type has not been
             // updated to 'Free' after the subscription date has passed
-            if (subscriptionEnd > now) return false;
+            if (subscriptionEnd < now) return false;
 
             return subscriptionEnd - now < UNIX_MONTH;
         },
