@@ -86,7 +86,7 @@ const useOrganizationUnprivatizationModals = () => {
                             dispatch(unprivatizeApprovalMembers({ membersToUnprivatize }));
                         }}
                     >
-                        {c('unprivatization').t`Approve all`}
+                        {c('unprivatization').t`Confirm all`}
                     </Button>
                 }
             />
