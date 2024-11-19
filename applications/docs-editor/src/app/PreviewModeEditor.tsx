@@ -5,7 +5,7 @@ import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
 import clsx from '@proton/utils/clsx'
 import { ProtonContentEditable } from './ContentEditable/ProtonContentEditable'
 import { DefaultFont } from './Shared/Fonts'
-import type { DocumentRole } from '@proton/docs-shared'
+import { EditorSystemMode, type DocumentRole } from '@proton/docs-shared'
 import { useEffect } from 'react'
 import Toolbar from './Toolbar/Toolbar'
 import { EditorUserMode } from './EditorUserMode'
@@ -36,6 +36,7 @@ export function PreviewModeEditor({
         userMode={EditorUserMode.Preview}
         onUserModeChange={onUserModeChange}
         isPreviewModeToolbar
+        systemMode={EditorSystemMode.PublicView}
       />
       <RichTextPlugin
         contentEditable={
