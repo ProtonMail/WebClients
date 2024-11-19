@@ -17,6 +17,8 @@ const PromptTitle = ({ children }: { children: ReactNode }) => (
 );
 
 export interface PromptProps extends Omit<ModalProps, 'children' | 'size' | 'title'> {
+    disableCloseWhenClickOutside?: boolean;
+    allowClickPropagation?: boolean;
     title?: string | JSX.Element;
     subline?: string;
     footnote?: string | any[]; //need footnote to accept any[] for ttag with link as variable
@@ -37,6 +39,7 @@ const Prompt = ({
     children,
     ModalContentProps,
     'data-testid': dataTestId,
+    disableCloseWhenClickOutside = false,
     ...rest
 }: PromptProps) => {
     const buttonArray = Array.isArray(buttons) ? buttons : [buttons];
@@ -51,7 +54,6 @@ const Prompt = ({
         }
 
         const actionsArray = Array.isArray(actions) ? actions : [actions];
-
         const [firstAction, secondAction] = actionsArray.map((child) => cloneElement(child as ReactElement));
 
         return (
@@ -65,7 +67,12 @@ const Prompt = ({
     })();
 
     return (
-        <ModalTwo size="small" {...rest} className={clsx([className, 'prompt'])}>
+        <ModalTwo
+            size="small"
+            {...rest}
+            enableCloseWhenClickOutside={!disableCloseWhenClickOutside}
+            className={clsx([className, 'prompt'])}
+        >
             <div className="prompt-header" data-testid={dataTestId}>
                 <PromptTitle>{title}</PromptTitle>
                 {subline && <div className="color-weak text-break">{subline}</div>}

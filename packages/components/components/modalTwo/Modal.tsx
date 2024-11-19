@@ -122,10 +122,6 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         rootRef: dialogRef,
     });
 
-    const handleClose = () => {
-        onClose?.();
-    };
-
     const handleExit = () => {
         setKey(generateUID());
         onExit?.();
@@ -159,7 +155,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                         return;
                     }
                     e.stopPropagation();
-                    handleClose();
+                    onClose?.();
                 },
             ],
         ],
@@ -173,24 +169,31 @@ const Modal = <E extends ElementType = typeof defaultElement>({
      * - `mousedown` will trigger before the `click` event and we
      * may lose focus on any child field currently focused */
     useEffect(() => {
-        if (!active) {
+        const backdrop = backdropRef.current;
+        if (!active || !backdrop) {
             return;
         }
         const handleBackdropMouseDown = (mouseDownEvt: MouseEvent) => {
             /* prevents focus loss when mouse down on backdrop */
-            if (mouseDownEvt.target === backdropRef.current) {
+            if (mouseDownEvt.target === backdrop) {
                 mouseDownEvt.preventDefault();
-                backdropRef.current?.addEventListener(
+                backdrop.addEventListener(
                     'mouseup',
-                    (mouseUpEvt) => mouseUpEvt.target === backdropRef.current && onBackdropClick?.(),
+                    (mouseUpEvt) => {
+                        if (mouseUpEvt.target === backdrop) {
+                            mouseUpEvt.preventDefault();
+                            mouseUpEvt.stopPropagation();
+                            onBackdropClick?.();
+                        }
+                    },
                     { once: true }
                 );
             }
         };
 
-        backdropRef.current?.addEventListener('mousedown', handleBackdropMouseDown);
+        backdrop.addEventListener('mousedown', handleBackdropMouseDown);
 
-        return () => backdropRef.current?.removeEventListener('mousedown', handleBackdropMouseDown);
+        return () => backdrop.removeEventListener('mousedown', handleBackdropMouseDown);
     }, [onBackdropClick, active]);
 
     if (!active) {
@@ -223,8 +226,11 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     }
                 }}
                 onClick={(e) => {
+                    // Handle React's synthetic event
+                    e.stopPropagation();
+
                     if (enableCloseWhenClickOutside && e.target === e.currentTarget) {
-                        handleClose();
+                        onClose?.();
                     }
                 }}
             >
