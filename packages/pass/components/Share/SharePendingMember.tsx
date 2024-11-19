@@ -23,7 +23,7 @@ type PendingNewMemberProps = PendingMemberBase & { newUserInviteId: string; stat
 type SharePendingMemberProps = { actions?: ReactNode[]; email: string; extra?: ReactNode; loading: boolean };
 
 export const SharePendingMember: FC<SharePendingMemberProps> = ({ actions, email, extra, loading }) => (
-    <div className="border rounded-xl px-4 py-3 max-w-full">
+    <div className="border border-weak rounded-xl px-4 py-3 max-w-full">
         <div className="flex flex-nowrap items-center w-full">
             <ShareMemberAvatar value={email.toUpperCase().slice(0, 2) ?? ''} loading={loading} />
             <div className="flex-1">
