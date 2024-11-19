@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader, useErrorHandler } from '@proton/components';
+import metrics, { observeApiError } from '@proton/metrics';
 import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { User } from '@proton/shared/lib/interfaces';
@@ -46,8 +47,16 @@ const SwitchModal = ({ onSwitchSession, user, sessions = [], ...rest }: Props) =
                                             setTmpUser(session.remote);
                                             try {
                                                 await onSwitchSession(session);
-                                            } catch (e) {
-                                                errorHandler(e);
+                                                metrics.core_single_signup_switchSession_total.increment({
+                                                    status: 'success',
+                                                });
+                                            } catch (error) {
+                                                errorHandler(error);
+                                                observeApiError(error, (status) =>
+                                                    metrics.core_single_signup_switchSession_total.increment({
+                                                        status,
+                                                    })
+                                                );
                                             } finally {
                                                 setTmpUser(null);
                                             }
