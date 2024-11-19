@@ -6,7 +6,7 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Ohjaus alkaa pian ja uudet viestit saapuvat postilaatikkoosi."
+        "Välitys alkaa pian ja uudet viestit saapuvat postilaatikkoosi."
       ],
       "Mail forward stopped": [
         "Postin edelleenlähetys pysäytettiin"
@@ -507,6 +507,9 @@
       "Reset to default": [
         "Palauta oletukset"
       ],
+      "Restore version": [
+        "Palauta versio"
+      ],
       "Retry": [
         "Yritä uudelleen"
       ],
@@ -914,7 +917,7 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "Elinikäisellä ${ PASS_SHORT_APP_NAME } Plus -tarjouksella ei ole uudistushintaa, koska se on elinikäinen Pass Plus -käyttöoikeus."
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu Pass Plussan elinikäisestä käyttöoikeudesta."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Alennukset perustuvat normaaliin kuukausihintaan."
@@ -1154,6 +1157,9 @@
       "${ users } user": [
         "${ users } käyttäjä",
         "${ users } käyttäjää"
+      ],
+      "Total": [
+        "Summa"
       ],
       "Total for ${ n } month": [
         "Summa ${ n } kuukaudelle",
@@ -3753,6 +3759,12 @@
         "${ groupCounts } ryhmä löytyi",
         "${ groupCounts } ryhmää löytyi"
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta. ${ planTitle }-tilauksesi uusimishinta ja -päivä pysyvät ennallaan."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
       ],
@@ -4297,6 +4309,9 @@
       "Monitor accounts": [
         "Valvo tilejä"
       ],
+      "Most recent": [
+        "Viimeisin"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nimeä uusi kansio ja valitse mihin kansioon haluat sijoittaa sen. Jos et valitse yläkansiota, luodaan uusi kansio juuritason kansiona."
       ],
@@ -4326,9 +4341,6 @@
       ],
       "No version history available": [
         "Versiohistoriaa ei ole käytettävissä"
-      ],
-      "No version history batches available": [
-        "Versiohistorian eriä ei ole käytettävissä"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Mikään tallennetuista avaimista ei kelpaa salaukseen. Viestien lähettämiseksi tähän osoitteeseen, lataa kelvollinen avain tai poista \"Salaa viestit\" käytöstä."
@@ -4363,6 +4375,12 @@
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Turvallisuus on hälytyksissämme etusijalla. Jos et tunnista tietomurron kohteeksi joutuneita tietoja, voit huoletta jättää tämän raportin huomiotta."
+      ],
+      "Owned by me": [
+        "Minun omistamani"
+      ],
+      "Owned by others": [
+        "Muiden omistamat"
       ],
       "Owner": [
         "Omistaja"
@@ -4406,9 +4424,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Huomioithan, että painettuasi \"Vahvista\"-painiketta, tilillesi jää ${ remainingCreditsFormatted } saldoa."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
       ],
@@ -4435,7 +4450,7 @@
         "Odota kun etsitään yhteystietoja, jotka voidaan allekirjoittaa uudelleen ensisijaisella salausavaimella."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Odota, kun etsimme toimettomalla avaimella salattuja tietoja sisältäviä yhteystietoja."
+        "Odota, kun etsimme inaktiivisella avaimella salattuja tietoja sisältäviä yhteystietoja."
       ],
       "Preparing link to file": [
         "Valmistellaan linkkiä tiedostoon"
@@ -4814,6 +4829,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, eikä postilaatikkosi enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } Plus -tilauksesi korvataan elinikäisellä ${ PASS_SHORT_APP_NAME }illa. Tilauksesi jäljellä oleva saldo lisätään tilillesi. Elinikäisellä ${ PASS_SHORT_APP_NAME }-tarjouksella ei ole uusimishintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku. Pääsyäsi rajoitetaan pian. ${ payInvoiceLink }"
@@ -5488,7 +5506,7 @@
         "Kelentereita luotu: ${ createdCalendarCount }/${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
-        "Yhdistetään sähköpostipalveluusi"
+        "Yhdistetään sähköpostipalveluntarjoajaasi"
       ],
       "Creating new calendars": [
         "Luodaan uusia kalentereita"
@@ -5948,6 +5966,9 @@
         "${ options } päivän tiedostojen versiohistoria",
         "${ options } päivän tiedostojen versiohistoria"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin elinikäisesti"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-alias",
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-aliasta"
@@ -6003,6 +6024,9 @@
       "Administration Panel": [
         "Hallintapaneeli"
       ],
+      "Advanced account protection": [
+        "Edistynyt tilin suojaus"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Edistyneet aliastoiminnot (SimpleLoginin tarjoama)"
       ],
@@ -6032,6 +6056,9 @@
       ],
       "Available on all platforms": [
         "Saatavilla kaikilla alustoilla"
+      ],
+      "Breach alerts": [
+        "Tietomurtohälytykset"
       ],
       "Calendar sharing": [
         "Kalenterien jakaminen"
@@ -6164,7 +6191,7 @@
         "Salasanasuojatut sähköpostiviestit"
       ],
       "Phone support (20+ users)": [
-        "Puhelinasiakaspalvelu (20+ käyttäjää)"
+        "Puhelintuki (20+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -6517,6 +6544,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille ja käytä niitä verkkoidentiteeteillesi, kuten esim. MikkoOstaja@${ domain } ostostileille."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Omat verkkotunnukset aliaksille, lisäpostilaatikkoja, sähköpostien lähettäminen aliaksilla, ja paljon muuta"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Omia kiinteää IP-osoitetta käyttäviä palvelimia voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten"
       ],
@@ -6553,6 +6583,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Voit merkitä viestejä tunnisteilla helpottaaksesi niiden etsintää ja suodatusta."
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Elinikäinen käyttöoikeus ${ PASS_APP_NAME } + SimpleLoginin premium-ominaisuuksiin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Kuten kansio, holvi on kätevä tapa järjestellä kohteitasi."
       ],
@@ -6563,7 +6596,7 @@
         "Hallitse tilaustasi ja mukauta tilaamaasi palvelukokonaisuutta. Hyväksytyt maksutavat ovat maksukortti, PayPal, kryptovaluutta ja pankkisiirto."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "Arkipäivisin ${ BRAND_NAME }in asiakaspalvelu vastaa pyyntöihin 24 tunnin kuluessa"
+        "Arkipäivisin ${ BRAND_NAME }in asiakastuki vastaa pyyntöihin 24 tunnin kuluessa"
       ],
       "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
         "Yksi VPN-yhteys mahdollistaa yhden laitteen ${ VPN_APP_NAME } VPN-yhteyden kerrallaan. Esimerkiksi puhelimen ja tietokoneen samanaikainen ${ VPN_APP_NAME } -käyttö vaatii kaksi VPN-yhteyttä."
@@ -6599,7 +6632,7 @@
         "Suojaa perhettäsi haitallisilta verkkosivustoilta ja käytä nopeita VPN-palvelimia suoratoistaaksesi suosikkisisältöäsi"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Suojaa todellinen sähköpostiosoitteesi paljastumiselta tai vuotamiselta aliaksilla (satunnaisesti luotu sähköpostiosoite, joka ohjaa sähköpostit pääpostilaatikkoosi)."
+        "Suojaa todellinen sähköpostiosoitteesi paljastumiselta tai vuotamiselta aliaksilla (satunnaisesti luotu sähköpostiosoite, joka välittää sähköpostit pääpostilaatikkoosi)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Tarjoaa korkeimman tason tilin suojauksen ja asiantuntijatuen"
@@ -6682,7 +6715,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "24/7-asiakaspalvelu"
+        "24/7-tuki"
       ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
@@ -6996,8 +7029,14 @@
         "${ n } käyttäjätili",
         "${ n } käyttäjätiliä"
       ],
+      "Activity log": [
+        "Tapahtumaloki"
+      ],
       "Admin panel to manage users and subscription": [
         "Ylläpitopaneeli käyttäjien ja tilauksen hallintaan"
+      ],
+      "Team policies": [
+        "Ryhmäkäytännöt"
       ]
     },
     "PassFamilyPlan2024": {
@@ -7029,6 +7068,9 @@
       ],
       "The organization key must be activated first.": [
         "Organisaation avain on ensin aktivoitava."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Sinun tulee voida käsitellä organisaation avainta suorittaaksesi tämä toiminnon."
       ]
     },
     "Payment method option": {
@@ -7089,6 +7131,9 @@
       ],
       "Please select your billing state first.": [
         "Valitse laskutusosavaltiosi ensin."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Uusitaan hintaan ${ price }, peruuta milloin tahansa."
       ],
       "Select billing country to pay": [
         "Valitse laskutusmaa maksaaksesi"
@@ -8017,6 +8062,11 @@
         "Tilaus alennetaan laskutusjakson päättyessä."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Elinikäinen"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Hintaan ${ totalPrice }"
@@ -8030,7 +8080,7 @@
         "sekä 15 muuta premium-ominaisuutta"
       ],
       "Automatic email forwarding ${ strongText }": [
-        "Automaattinen sähköpostiohjaus ${ strongText }"
+        "Automaattinen sähköpostivälitys ${ strongText }"
       ],
       "Data breach alerts ${ strongArgument }": [
         "Tietomurtohälytykset ${ strongArgument }"

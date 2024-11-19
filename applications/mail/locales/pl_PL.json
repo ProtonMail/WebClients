@@ -1068,10 +1068,10 @@
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Zaznacz wszystkie"
       ],
-      "Select all": [
+      "Select All": [
         "Zaznacz wszystkie"
       ],
       "Select all messages": [
@@ -1775,13 +1775,13 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus oferta na całe życie nie ma ceny odnawiania, to jednorazowa płatność za dożywotni dostęp do Pass Plus."
+        "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do planu Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Jeśli zakupisz Pass Family lub Unlimited, Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres na koniec cyklu rozliczeniowego."
+        "Jeśli zakupisz plan Pass Family lub Unlimited, Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie, na standardowy okres na koniec cyklu rozliczeniowego."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
@@ -3703,7 +3703,7 @@
         "Ustaw hasło odzyskiwania, aby zapewnić najwyższe bezpieczeństwo konta."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Upewnij się, że plik CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING }, lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
+        "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
@@ -5381,6 +5381,9 @@
       "Close": [
         "Zamknij"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Zakończ listę kontrolną w ciągu ${ daysCount }, aby podwoić przestrzeń dyskową za darmo."
+      ],
       "Congratulations, you completed all the steps!": [
         "Gratulacje. Zakończono wszystkie kroki!"
       ],
@@ -5396,8 +5399,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Szyfrowanie tak silne, że tylko Ty i odbiorcy mogę odczytać treść wiadomości."
       ],
+      "Finish setup": [
+        "Zakończ konfigurację"
+      ],
       "For your eyes only": [
         "Tylko dla Twoich oczu"
+      ],
+      "Get more storage": [
+        "Uzyskaj więcej przestrzeni dyskowej"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Pobierz aplikację mobilną ${ MAIL_APP_NAME }"
@@ -5447,6 +5456,9 @@
       "Storage unlocked": [
         "Przestrzeń dyskowa została odblokowana"
       ],
+      "Tasks to complete count": [
+        "Liczba zadań do wykonania"
+      ],
       "This feature is currently unavailable": [
         "Funkcja jest obecnie niedostępna"
       ],
@@ -5483,6 +5495,9 @@
       ],
       "Less details": [
         "Mniej szczegółów"
+      ],
+      "Meeting host:": [
+        "Właściciel spotkania:"
       ],
       "Meeting link:": [
         "Link spotkania:"
@@ -6069,6 +6084,12 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Dożywotnia subskrypcja ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }. Cena i data odnowienia subskrypcji ${ planTitle } pozostaje niezmienna."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
@@ -6730,6 +6751,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Jeśli uważasz, że popełniliśmy błąd, ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Jeśli anulujesz subskrypcję ${ planTitle }, nie zostanie ona odnowiona po terminie wygaśnięcia ${ expiryDate }."
       ],
@@ -6800,10 +6824,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -7072,9 +7093,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Po kliknięciu przycisku Potwierdź na Twoim koncie pozostaną środki w wysokości ${ remainingCreditsFormatted }."
-      ],
       "Please open the document to view it.": [
         "Otwórz dokument, aby go zobaczyć."
       ],
@@ -7311,9 +7329,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
-      ],
-      "Subscription auto-renews every ${ cycle } months.": [
-        "Subskrypcja odnowi się automatycznie po ${ cycle } miesiącach."
       ],
       "Subscription auto-renews every month.": [
         "Subskrypcja odnowi się automatycznie co miesięc."
@@ -7681,6 +7696,12 @@
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Wykryliśmy utworzenie wielu darmowych kont, co narusza nasz ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Mamy plany zaprojektowane specjalnie dla użytkowników takich jak Ty, którzy potrzebują więcej niż jednego adresu e-mail.\nAby usunąć ograniczenia, ulepsz konto do płatnego planu."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Musimy zweryfikować metodę płatności z Twoim bankiem."
       ],
@@ -7929,6 +7950,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Wiadomości nie są dostarczane do skrzynki odbiorczej. Linki dysku nie są aktywne, a możliwość przesyłania nowych plików została wstrzymana. Aby wznowić działanie konta, ureguluj zobowiązania."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Subskrypcja ${ PASS_SHORT_APP_NAME } Plus zostanie zastąpiona subskrypcją ${ PASS_SHORT_APP_NAME } Lifetime. Pozostałe saldo subskrypcji zostanie dodane do konta. Dożywotnia oferta ${ PASS_SHORT_APP_NAME } nie ma ceny odnowienia. Jest to jednorazowa płatność za dożywotni dostęp do ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Twoje konto posiada zaległe faktury. Dostęp do konta zostanie wkrótce ograniczony. ${ payInvoiceLink }"
@@ -8294,6 +8318,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
+      ],
+      "/month": [
+        "/ miesiąc"
       ],
       "Actions": [
         "Akcje"
@@ -8955,6 +8982,9 @@
       "click here": [
         "kliknij tutaj"
       ],
+      "contact us": [
+        "skontaktuj się z nami"
+      ],
       "Create a calendar linked to an active email address.": [
         "Utwórz kalendarz powiązany z aktywnym adresem e-mail."
       ],
@@ -9068,6 +9098,9 @@
       ],
       "Terms": [
         "Regulamin"
+      ],
+      "terms of service": [
+        "regulamin"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Plik ICS zawiera wiele wydarzeń. Pobierz i zaimportuj wydarzenia w aplikacji ${ CALENDAR_APP_NAME }"
@@ -9485,6 +9518,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Wybierz plan ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Od ${ price }"
       ],
@@ -9624,6 +9660,9 @@
         "${ options }-dniowa historia wersji plików",
         "${ options }-dniowa historia wersji plików"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Dożywotni ${ PASS_APP_NAME } + SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } z ${ n } aliasem hide-my-email",
         "${ PASS_APP_NAME } z ${ n } aliasami hide-my-email",
@@ -9681,6 +9720,12 @@
       "Administration Panel": [
         "Panel administratora"
       ],
+      "Advanced account protection": [
+        "Zaawansowana ochrona konta"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Zaawansowane funkcje aliasów (technologia SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Wszystkie usługi i funkcje ${ BRAND_NAME }"
       ],
@@ -9707,6 +9752,9 @@
       ],
       "Available on all platforms": [
         "Dostępny na wszystkie platformy"
+      ],
+      "Breach alerts": [
+        "Alerty wycieków"
       ],
       "Calendar sharing": [
         "Udostępnianie kalendarza"
@@ -10208,6 +10256,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Utwórz do ${ n } adresów e-mail lub aliasów, które możesz przypisać do członków rodziny. Używaj ich do tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Niestandardowe domeny dla aliasów, dodatkowe skrzynki pocztowe, możliwość wysyłania wiadomości z aliasów i wiele więcej"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich"
       ],
@@ -10243,6 +10294,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etykiety to proste znaczniki, które możesz dodawać do wiadomości, aby ułatwić ich wyszukiwanie lub filtrowanie"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Dożywotni dostęp do ${ PASS_APP_NAME } + funkcje premium SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Sejf, podobnie jak folder, jest wygodnym sposobem na organizowanie elementów"
@@ -10452,6 +10506,12 @@
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
       ],
+      "Meeting host copied to clipboard": [
+        "Właściciel spotkania został skopiowany do schowka"
+      ],
+      "Meeting ID copied to clipboard": [
+        "Identyfikator spotkania został skopiowany do schowka"
+      ],
       "Passcode copied to clipboard": [
         "Kod został skopiowany do schowka"
       ],
@@ -10611,6 +10671,9 @@
       "Protection from trackers": [
         "Ochrona przed elementami śledzącymi"
       ],
+      "Replay introduction": [
+        "Wprowadzenie do powtórki"
+      ],
       "Skip": [
         "Pomiń"
       ],
@@ -10764,8 +10827,14 @@
         "${ n } kont użytkowników",
         "${ n } kont użytkowników"
       ],
+      "Activity log": [
+        "Logi"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel administratora do zarządzania użytkownikami i subskrypcją"
+      ],
+      "Team policies": [
+        "Zasady zespołu"
       ]
     },
     "PassFamilyPlan2024": {
@@ -10861,11 +10930,11 @@
       "Please select your billing state first.": [
         "Najpierw wybierz stan rozliczeniowy"
       ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Odnowienie za ${ price }. Anuluj w dowolnym momencie."
+      ],
       "Select billing country to pay": [
         "Wybierz kraj"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
-        "Specjalna zniżka ${ priceWithDiscount } jest ważna przez pierwsze ${ months } miesiące. Kupon można użyć ${ couponRedemptions } raz/y. Potem usługa automatycznie się odnowi po cenie ${ price } za ${ months } miesięcy. Możesz anulować, kiedy chcesz."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
         "Specjalna obniżona cena ${ priceWithDiscount } ważna przez ${ months }. Odnowienie nastąpi w cenie ${ price } za ${ months }. Możesz anulować w dowolnym momencie."
@@ -10902,7 +10971,7 @@
     },
     "Payments.Sepa": {
       "By confirming this payment, you authorize ${ BRAND_NAME } and Stripe, our payment service provider, to instruct your bank to debit your account, and your bank to debit your account accordingly. You can get a refund within 8 weeks from the debit date, under the conditions of your agreement with your bank.": [
-        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcę usług płatniczych) do obciążenia konta. Możesz otrzymać zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem twojego banku."
+        "Potwierdzając płatność, upoważniasz ${ BRAND_NAME } i firmę Stripe (naszego dostawcy usług płatniczych) do obciążenia konta. Otrzymasz zwrot pieniędzy w ciągu 8 tygodni od daty obciążenia konta, zgodnie z regulaminem banku."
       ],
       "Street address, postal code, and city": [
         "Ulica, kod pocztowy i miejscowość"
@@ -12194,6 +12263,11 @@
         "Subskrypcja zostanie obniżona na koniec cyklu rozliczeniowego."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Dożywotnia"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
@@ -13115,6 +13189,9 @@
       ],
       "A filter with this name already exists": [
         "Filtr o tej nazwie już istnieje"
+      ],
+      "Account locked": [
+        "Konto zostało zablokowane"
       ],
       "Account recovery": [
         "Odzyskiwanie konta"
@@ -14555,8 +14632,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Dołącz do spotkania Zoom"
+      ],
       "Meeting ID:": [
         "Identyfikator spotkania:"
+      ],
+      "Passcode:": [
+        "Kod dostępu:"
       ]
     }
   }

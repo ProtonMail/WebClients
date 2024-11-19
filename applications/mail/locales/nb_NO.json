@@ -1060,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Velg alle"
       ],
-      "Select all": [
+      "Select All": [
         "Velg alle"
       ],
       "Select all messages": [
@@ -6531,6 +6531,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, kan du be om en invitasjon, så svarer vi innen én virkedag."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Hvis du tror vi har gjort en feil, kan du ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Hvis du avbryter, vil ditt ${ planTitle }-abonnement ikke bli fornyet når det utløper den ${ expiryDate }."
       ],
@@ -6599,8 +6602,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -6868,9 +6870,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Legg merke til at denne oppgaven kan ta litt tid avhengig av størrelsen på adresseboken din."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ remainingCreditsFormatted } kreditter igjen."
       ],
       "Please open the document to view it.": [
         "Åpne dokumentet for å se det."
@@ -7468,6 +7467,12 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Vi har oppdaget at du har opprettet flere gratiskontoer, som er et brudd på ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Vi har planer som er utviklet for brukere som deg, som trenger mer enn én e-postadresse.\nHvis du vil fjerne begrensningene, kan du oppgradere til en betalt plan."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi trenger å autentisere betalingsmåten med banken din."
       ],
@@ -8042,6 +8047,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
+      ],
+      "/month": [
+        "/måned"
       ],
       "Actions": [
         "Handlinger"
@@ -8703,6 +8711,9 @@
       "click here": [
         "klikk her"
       ],
+      "contact us": [
+        "kontakt oss"
+      ],
       "Create a calendar linked to an active email address.": [
         "Opprett en kalender tilknyttet en aktiv e-postadresse."
       ],
@@ -8816,6 +8827,9 @@
       ],
       "Terms": [
         "Vilkår"
+      ],
+      "terms of service": [
+        "brukervilkår"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Denne ICS-filen inneholder mer enn en hendelse. Last den ned og importer hendelsene i ${ CALENDAR_APP_NAME }."
@@ -9217,6 +9231,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Skaff deg ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Kom i gang for ${ price }"
       ],
@@ -9324,6 +9341,9 @@
         "${ options }-dag filversjonshistorikk",
         "${ options }-dager filversjonshistorikk"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin livstid"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliaser"
@@ -9379,6 +9399,9 @@
       "Administration Panel": [
         "Administrasjonspanel"
       ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Avanserte aliasfunksjoner (drevet av SimpleLogin)"
       ],
@@ -9408,6 +9431,9 @@
       ],
       "Available on all platforms": [
         "Tilgjengelig på alle plattformer"
+      ],
+      "Breach alerts": [
+        "Varsler om datainnbrudd"
       ],
       "Calendar sharing": [
         "Kalenderdeling"
@@ -9931,6 +9957,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Livstids tilgang til ${ PASS_APP_NAME } + SimpleLogin premium-funksjoner."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
@@ -10555,6 +10584,9 @@
       ],
       "Please select your billing state first.": [
         "Velg faktureringsstaten din først."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Fornyes til ${ price }, avbryt når som helst."
       ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
@@ -12161,7 +12193,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Lagre"
+        "Spar"
       ]
     },
     "Subscription status": {
@@ -12665,6 +12697,9 @@
       ],
       "A filter with this name already exists": [
         "Et filter med dette navnet eksisterer allerede"
+      ],
+      "Account locked": [
+        "Konto låst"
       ],
       "Account recovery": [
         "Kontogjenoppretting"

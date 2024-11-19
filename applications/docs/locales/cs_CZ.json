@@ -513,6 +513,9 @@
       "Reset to default": [
         "Obnovit výchozí nastavení"
       ],
+      "Restore version": [
+        "Obnovit verzi"
+      ],
       "Retry": [
         "Opakovat"
       ],
@@ -4464,9 +4467,6 @@
       "No version history available": [
         "Není k dispozici historie verzí"
       ],
-      "No version history batches available": [
-        "Nejsou k dispozici žádné sady historie verzí"
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Žádný z nahraných klíčů není platný pro šifrování. Chcete-li na tuto adresu posílat zprávy, nahrajte platný klíč nebo vypněte funkci \"Šifrovat e-maily\"."
       ],
@@ -4550,9 +4550,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ remainingCreditsFormatted } kreditů."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Pro vytvoření skupiny uveďte jméno a e-mailovou adresu."
@@ -6152,6 +6149,9 @@
         "${ options }denní historie verzí souborů",
         "${ options }denní historie verzí souborů"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin, doživotně"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
         "${ PASS_APP_NAME } se ${ n } aliasy hide-my-email",
@@ -6209,6 +6209,9 @@
       "Administration Panel": [
         "Panel správce"
       ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Pokročilé funkce aliasů (založeno na SimpleLogin)"
       ],
@@ -6238,6 +6241,9 @@
       ],
       "Available on all platforms": [
         "Dostupné na všech platformách"
+      ],
+      "Breach alerts": [
+        "Upozornění na úniky informací"
       ],
       "Calendar sharing": [
         "Sdílení kalendáře"
@@ -6777,6 +6783,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Doživotní přístup k prémiovým funkcím ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Podobně jako složka je trezor praktickým nástrojem k organizaci vašich položek"
@@ -7355,6 +7364,9 @@
       ],
       "Please select your billing state first.": [
         "Vyberte prosím nejprve váš stát platby."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Obnovuje se za ${ price }, zrušit lze kdykoli."
       ],
       "Select billing country to pay": [
         "Vyberte zemi platby"

@@ -1102,7 +1102,8 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
       ],
-      "${ count } invites successfully sent": [
+      "${ count } invite successfully sent": [
+        "${ count } invitation a été envoyée.",
         "${ count } invitations ont été envoyées."
       ],
       "${ count } time": [
@@ -1360,7 +1361,7 @@
         "Activation du verrouillage automatique biométrique"
       ],
       "Enabling biometrics lock failed": [
-        "L'activation du verrouillage avec la biométrie n'a pas abouti"
+        "L'activation du verrouillage avec la biométrie n'a pas abouti."
       ],
       "Enabling offline mode...": [
         "Activation du mode hors-ligne..."
@@ -1457,9 +1458,6 @@
       ],
       "Invite successfully resent": [
         "L'invitation a été renvoyée."
-      ],
-      "Invite successfully sent": [
-        "L'invitation a été envoyée."
       ],
       "invites you to access items in": [
         "vous invite à accéder à des éléments dans"

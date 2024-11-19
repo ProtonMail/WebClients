@@ -951,6 +951,9 @@
       "Remove this label": [
         "移除此標籤"
       ],
+      "Remove zoom meeting": [
+        "移除Zoom會議"
+      ],
       "Replace": [
         "取代"
       ],
@@ -1050,11 +1053,11 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select All": [
-        "選擇全部"
-      ],
       "Select all": [
         "全選"
+      ],
+      "Select All": [
+        "選擇全部"
       ],
       "Select all messages": [
         "選取所有郵件"
@@ -1220,6 +1223,9 @@
       ],
       "Toggle Calendar app": [
         "切換行事曆應用程式"
+      ],
+      "Toggle Contacts app": [
+        "切換聯絡人應用程式"
       ],
       "Toggle security center app": [
         "切換安全中心應用程式"
@@ -1691,6 +1697,9 @@
       "Integrated 2FA authenticator": [
         "整合了雙重驗證的驗證器"
       ],
+      "One-time payment, lifetime deal": [
+        "一次付款，終身方案"
+      ],
       "Online document editor": [
         "線上文件編輯器"
       ],
@@ -1726,8 +1735,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus 終身方案無續約費，他是單次付費終身存取Pass Plus。"
+      ],
       "Discounts are based on standard monthly pricing.": [
         "折扣是以每月標準價格為基礎。"
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "若您訂閱Pass Family或Unlimited，您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "您的訂閱將在您的繳款單週期結束時以標準折扣費率及期限自動續訂。"
@@ -1744,8 +1759,14 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "單次收費 ${ amount }"
+      ],
       "for ${ durationDeal }": [
-        "為了 ${ durationDeal }"
+        "為期 ${ durationDeal }"
+      ],
+      "forever": [
+        "永久"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "首月免費，之後每月續訂 ${ regularAmount }。"
@@ -2227,6 +2248,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 個使用者"
+      ],
+      "Total": [
+        "總共"
       ],
       "Total for ${ n } month": [
         "總額可用 ${ n } 個月"
@@ -3525,6 +3549,9 @@
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "當您升級以自動刪除垃圾郵件和垃圾訊息及解鎖更多頂級功能"
       ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "自動清除電子郵件移除超過三十天垃圾桶和垃圾郵件。"
+      ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在您的來信訊息到達收件匣前會自動排列"
       ],
@@ -4668,6 +4695,11 @@
         "您尚未有任何聯絡人。立即開始創建一個新的聯絡人"
       ]
     },
+    "Error notification": {
+      "Display name cannot be empty": [
+        "顯示名稱不能為空"
+      ]
+    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "沒有選擇圖像"
@@ -5125,6 +5157,12 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "Play 商店的${ MAIL_APP_NAME }"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount }天"
+      ],
+      "${ remainingDaysCount } day left": [
+        "剩下${ remainingDaysCount }天"
+      ],
       "account logins": [
         "帳號登錄"
       ],
@@ -5171,7 +5209,7 @@
         "強式加密，只有您及其他收件者可查看內容。"
       ],
       "For your eyes only": [
-        "只為了您的眼睛"
+        "自己看好了，別人不好看"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "免費下載 ${ MAIL_APP_NAME } 行動裝置程式"
@@ -6361,7 +6399,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -6626,9 +6664,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "請注意，當您點擊確認時，您的帳號將剩${ remainingCreditsFormatted }可用額度。"
       ],
       "Please open the document to view it.": [
         "請開啟文件以瀏覽。"
@@ -7763,6 +7798,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
+      "/month": [
+        "/月"
+      ],
       "Actions": [
         "操作"
       ],
@@ -8207,6 +8245,9 @@
       "Reveal password": [
         "顯示密碼"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Search in": [
         "搜尋於"
       ],
@@ -8420,6 +8461,9 @@
       "click here": [
         "按一下此處"
       ],
+      "contact us": [
+        "聯絡我們"
+      ],
       "Create a calendar linked to an active email address.": [
         "創建一個連結到一個使用中電郵位址的行事曆。"
       ],
@@ -8533,6 +8577,9 @@
       ],
       "Terms": [
         "條款"
+      ],
+      "terms of service": [
+        "服務條款"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "此 ICS 檔案包含超過一個以上的事件。請下載後並在 ${ CALENDAR_APP_NAME } 中匯入事件"
@@ -8721,7 +8768,7 @@
         "無法載入圖片。"
       ],
       "Image has not been loaded in order to protect your privacy.": [
-        "為了保護您的隱私，不會載入圖像."
+        "圖片未有載入，以保護您的隱私。"
       ]
     },
     "Message notification": {
@@ -8925,6 +8972,9 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Get ${ planTitle }": [
+        "選用 ${ planTitle }"
       ],
       "Get started for ${ price }": [
         "使用${ price }取得"
@@ -9853,7 +9903,7 @@
         "已修復與關注"
       ],
       "For your eyes only": [
-        "只為了您的眼睛"
+        "自己看好了，別人不好看"
       ],
       "Forward Gmail messages to your inbox.": [
         "將 Gmail 電郵轉寄到您的信箱"
@@ -10035,8 +10085,14 @@
       "${ n } user account": [
         "${ n }使用者帳號"
       ],
+      "Activity log": [
+        "活動記錄"
+      ],
       "Admin panel to manage users and subscription": [
         "管理員面板以管理使用者及訂閱"
+      ],
+      "Team policies": [
+        "團隊政策"
       ]
     },
     "PassFamilyPlan2024": {
@@ -10119,6 +10175,9 @@
       ],
       "Please select your billing state first.": [
         "請先選擇您的計費狀態。"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "更新價 ${ price }，任何時間都可取消."
       ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
@@ -11300,6 +11359,11 @@
         "您的方案乃購自 iOS 應用程式。若要更改您的方案或更新您的付款詳情，請移至 Apple App Store。"
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "終身"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } 版"
@@ -12029,6 +12093,9 @@
       ],
       "A filter with this name already exists": [
         "該篩選名稱已經存在"
+      ],
+      "Account locked": [
+        "帳號已鎖定"
       ],
       "Account recovery": [
         "帳號救援"
@@ -12933,6 +13000,11 @@
       ],
       "No ads": [
         "零廣告"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "直達 Secure Core 伺服器、極速 P2P/BitTorrent 下載、匿名連接 VPN、Tor路由以及其它更多功能。"
       ]
     },
     "wallet_signup_2024: Info": {

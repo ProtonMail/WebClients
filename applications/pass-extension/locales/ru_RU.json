@@ -176,6 +176,9 @@
       "Deselect": [
         "Снять выделение"
       ],
+      "Disable alias": [
+        "Отключить псевдоним"
+      ],
       "Disable autosave on this website": [
         "Отключить автосохранение на этом веб-сайте"
       ],
@@ -380,6 +383,9 @@
       "Please retry": [
         "Повторите попытку"
       ],
+      "Reactivate now": [
+        "Восстановить подписку"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
@@ -455,6 +461,9 @@
       "See members": [
         "Просмотреть участников"
       ],
+      "Select": [
+        "Выбрать"
+      ],
       "Send invite": [
         "Отправить приглашение"
       ],
@@ -508,6 +517,12 @@
       ],
       "Submitting report...": [
         "Отправка отчёта..."
+      ],
+      "Sync alias": [
+        "Синхронизировать псевдонимы",
+        "Синхронизировать псевдонимы",
+        "Синхронизировать псевдонимы",
+        "Синхронизировать псевдонимы"
       ],
       "Sync aliases": [
         "Синхронизировать псевдонимы"
@@ -571,6 +586,9 @@
       ],
       "Write us on Twitter": [
         "Написать нам в Twitter"
+      ],
+      "Your password manager is not here? Request it.": [
+        "Вашего менеджера паролей здесь нет? Запросите его."
       ]
     },
     "bf2024: Deal": {
@@ -594,6 +612,9 @@
     "bf2024: Title": {
       "Black Friday": [
         "Черная пятница"
+      ],
+      "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
+        "Заплатите один раз и получите ${ lifetimeAccessJSX } к Pass Plus и SimpleLogin. Всего ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Сэкономьте до ${ discountJSX } на Pass Family. Всего ${ relativePrice }/месяц."
@@ -1082,9 +1103,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Обновление \"${ payload.item.data.metadata.name }\" было отклонено"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } приглашения успешно отправлены"
-      ],
       "${ count } time": [
         "${ count } раз",
         "${ count } раза",
@@ -1259,6 +1277,9 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выберите сохраненный passkey для входа в ${ domain }"
       ],
+      "Choose your preferred look and feel.": [
+        "Выбирайте предпочтительный внешний вид и настроение."
+      ],
       "Click the icon to open it anytime.": [
         "Нажмите на значок, чтобы открыть его в любое время."
       ],
@@ -1373,6 +1394,12 @@
       "Expires in ${ remainingTime }": [
         "Истекает через ${ remainingTime }"
       ],
+      "Extra password successfully created": [
+        "Дополнительный пароль успешно создан"
+      ],
+      "Extra password successfully removed": [
+        "Дополнительный пароль успешно удален"
+      ],
       "Fill in the CSV with your data": [
         "Заполните CSV данными"
       ],
@@ -1436,9 +1463,6 @@
       "Invite successfully resent": [
         "Приглашение успешно переотправлено"
       ],
-      "Invite successfully sent": [
-        "Приглашение успешно отправлено"
-      ],
       "invites you to access items in": [
         "приглашает вас получить доступ к элементам в"
       ],
@@ -1496,11 +1520,23 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Make it your own": [
+        "Сделайте всё по-своему"
+      ],
       "me": [
         "я"
       ],
       "Monitoring settings successfully updated": [
         "Настройки мониторинга успешно обновлены"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
+        "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
+      ],
+      "Move ${ count } item": [
+        "Переместить ${ count } элемент",
+        "Переместить ${ count } элемента",
+        "Переместить ${ count } элементов",
+        "Переместить ${ count } элементов"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
@@ -1826,11 +1862,17 @@
       "Upgrade Now to Unlock Premium Features": [
         "Улучшите сейчас, чтобы получить платне функции"
       ],
+      "Upgrade to a paid plan to create multiple vaults.": [
+        "Перейдите на платный план, чтобы создать несколько хранилищ."
+      ],
       "Use vaults to share this item with others.": [
         "Используйте хранилища, чтобы поделиться этим элементом с другими."
       ],
       "User's access removed": [
         "Доступ пользователя удален"
+      ],
+      "User's access successfully updated": [
+        "Доступ пользователя обновлен"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Хранилище \"${ payload.content.name }\" успешно удалено"
@@ -2080,6 +2122,9 @@
       "Capital letters (A-Z)": [
         "Заглавные буквы (A-Z)"
       ],
+      "Capitalize": [
+        "Прописные"
+      ],
       "Card": [
         "Карта"
       ],
@@ -2265,6 +2310,9 @@
       ],
       "Import passwords": [
         "Импортировать пароли"
+      ],
+      "Imported from: ": [
+        "Импортировано из: "
       ],
       "Imported on : ": [
         "Дата импорта : "
@@ -2569,6 +2617,12 @@
       "Today": [
         "Сегодня"
       ],
+      "Total imported items: ": [
+        "Всего импортировано элементов: "
+      ],
+      "Total items: ": [
+        "Всего элементов: "
+      ],
       "TOTP": [
         "TOTP"
       ],
@@ -2666,6 +2720,9 @@
         "${ count } элемента",
         "${ count } элементов",
         "${ count } элементов"
+      ],
+      "You selected ${ semiboldText } in this vault.": [
+        "Вы выбрали ${ semiboldText } в этом хранилище."
       ]
     },
     "Onboarding": {
@@ -2857,6 +2914,17 @@
         "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей."
       ]
     },
+    "Theme": {
+      "Automatic": [
+        "Автоматический"
+      ],
+      "Dark": [
+        "Тёмная"
+      ],
+      "Light": [
+        "Светлая"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Настройки ${ PASS_APP_NAME }"
@@ -2884,6 +2952,9 @@
       ],
       "Current version": [
         "Текущая версия"
+      ],
+      "Delete vault \"${ vaultName }\"?": [
+        "Удалить хранилище \"${ vaultName }\"?"
       ],
       "Discard changes?": [
         "Сбросить изменения?"
@@ -2939,6 +3010,9 @@
       "Last modified": [
         "Дата последнего изменения"
       ],
+      "Leave vault?": [
+        "Покинуть хранилище?"
+      ],
       "Log in as...": [
         "Войдите как..."
       ],
@@ -2956,6 +3030,9 @@
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Переместить все элементы в \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"": [
+        "Переместить элемент в \"${ vaultName }\""
       ],
       "No items selected": [
         "Элементы не выбраны"
@@ -3120,6 +3197,12 @@
       "Could not create vault \"${ vaultName }\"": [
         "Не могу создать хранилище \"${ vaultName }\""
       ],
+      "Could not send invitations to the following addresses:": [
+        "Не удалось отправить приглашения на следующие адреса:"
+      ],
+      "Delete alias": [
+        "Удалить псевдоним"
+      ],
       "Duplicate email addresses.": [
         "Дублирование адресов электронной почты."
       ],
@@ -3191,6 +3274,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Для файла экспорта с шифрованием в PGP требуется парольная фраза"
+      ],
+      "Please contact us to investigate the issue": [
+        "Пожалуйста, свяжитесь с нами для изучения проблемы"
       ],
       "Please verify your email address in order to use email aliases": [
         "Пожалуйста, подтвердите свой адрес электронной почты, чтобы использовать псевдонимы электронной почты"
@@ -3266,6 +3352,9 @@
       ],
       "Your session was locked.": [
         "Ваш сеанс заблокирован."
+      ],
+      "Your subscription does not allow you to create more vaults.": [
+        "Вы не можете создавать больше хранилищ, чем разрешает ваша подписка."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."

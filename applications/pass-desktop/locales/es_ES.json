@@ -481,9 +481,6 @@
       "See members": [
         "Ver los miembros"
       ],
-      "Select": [
-        "Seleccionar"
-      ],
       "Send invite": [
         "Enviar una invitación"
       ],
@@ -795,9 +792,6 @@
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
         "No se han podido recuperar las invitaciones de usuario para la caja fuerte «${ vaultName }»."
-      ],
-      "Could not update settings at the moment. Please try again later.": [
-        "No se han podido actualizar las configuraciones en este momento. Inténtalo de nuevo más tarde."
       ],
       "Could not validate addresses at the moment.": [
         "No se han podido validar las direcciones por el momento."
@@ -1168,7 +1162,8 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
-      "${ count } invites successfully sent": [
+      "${ count } invite successfully sent": [
+        "${ count } invitación enviada",
         "${ count } invitaciones enviadas"
       ],
       "${ count } time": [
@@ -1325,9 +1320,6 @@
       ],
       "Change your password": [
         "Cambia tu contraseña"
-      ],
-      "Choose your preferred look and feel.": [
-        "Elige tu aspecto preferido."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirma tu contraseña adicional para proceder con la eliminación."
@@ -1512,9 +1504,6 @@
       "Invite successfully resent": [
         "La invitación ha sido enviada."
       ],
-      "Invite successfully sent": [
-        "Se ha enviado la invitación."
-      ],
       "invites you to access items in": [
         "te invita a acceder a elementos de"
       ],
@@ -1578,9 +1567,6 @@
       ],
       "Low Priority": [
         "Prioridad baja"
-      ],
-      "Make it your own": [
-        "Personaliza la aplicación"
       ],
       "me": [
         "conmigo"
@@ -2208,6 +2194,9 @@
       "Cards": [
         "Tarjetas"
       ],
+      "Choose unlock method": [
+        "Elige el método de desbloqueo"
+      ],
       "Choose your preferred look and feel.": [
         "Elige tu aspecto preferido."
       ],
@@ -2376,6 +2365,9 @@
       "Generic CSV": [
         "CSV genérico"
       ],
+      "Get Started": [
+        "Comenzar"
+      ],
       "Get the extension for your browser.": [
         "Obtén la extensión para tu navegador."
       ],
@@ -2432,6 +2424,9 @@
       ],
       "Install and continue": [
         "Instalar y continuar"
+      ],
+      "Install extension": [
+        "Instala la extensión"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -2672,6 +2667,9 @@
       ],
       "Select your password manager": [
         "Selecciona tu gestor de contraseñas"
+      ],
+      "Select your theme": [
+        "Selecciona tu tema"
       ],
       "Selected": [
         "Seleccionado"

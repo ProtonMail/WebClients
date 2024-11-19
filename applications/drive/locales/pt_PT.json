@@ -384,6 +384,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Go back": [
+        "Voltar"
+      ],
       "Go to label": [
         "Ir para a etiqueta"
       ],
@@ -996,6 +999,11 @@
         "Evento não suportado"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Convidado"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 utilizador"
@@ -1147,6 +1155,9 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "por ${ durationDeal }"
+      ],
+      "forever": [
+        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }. "
@@ -1304,6 +1315,9 @@
       "${ users } user": [
         "${ users } utilizador",
         "${ users } utilizadores"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mês",
@@ -1676,6 +1690,9 @@
       ],
       "Dominican Republic": [
         "República Dominicana"
+      ],
+      "East Timor": [
+        "Timor Leste"
       ],
       "Ecuador": [
         "Equador"
@@ -2145,6 +2162,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard e Jan Mayen"
       ],
+      "Swaziland": [
+        "Suazilândia"
+      ],
       "Sweden": [
         "Suécia"
       ],
@@ -2403,6 +2423,16 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Remover o desconto"
+      ]
+    },
+    "drive:action": {
+      "Save for later": [
+        "Guardar para mais tarde"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Histórico de versão estendido"
@@ -2411,9 +2441,17 @@
         "Apoio ao cliente prioritário"
       ]
     },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de armazenamento"
+      ],
+      "2 users": [
+        "2 utilizadores"
+      ]
+    },
     "duoplan2024: SubTitle": {
       "Double your storage": [
-        "Duplicar o seu armazenamento"
+        "Duplique o seu armazenamento"
       ]
     },
     "Email body for description (description part)": {
@@ -3237,6 +3275,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
+      ],
+      "Manage addresses": [
+        "Gerir endereços"
       ],
       "Sorry, you can't switch plans at this time.": [
         "Lamentamos, mas não é possível mudar de plano neste momento."
@@ -4593,9 +4634,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Tenha em atenção que, ao clicar no botão Confirmar, a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
-      ],
       "Please open the document to view it.": [
         "Por favor, abra o documento para o visualizar."
       ],
@@ -4665,6 +4703,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "A pesquisa privada está ativada. Pode agora fechar esta caixa de diálogo e pesquisar ficheiros e pastas."
+      ],
+      "Public link": [
+        "Ligação pública"
       ],
       "Public sharing of documents is not yet supported.": [
         "A partilha pública de documentos ainda não é suportada."
@@ -5358,6 +5399,9 @@
       "Address": [
         "Endereço"
       ],
+      "Anderson": [
+        "Ferreira"
+      ],
       "Anyone with the link": [
         "Qualquer pessoa com a ligação"
       ],
@@ -5587,6 +5631,9 @@
       "I understand the risk": [
         "Eu compreendo o risco."
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Import all messages": [
         "Importar todas as mensagens"
       ],
@@ -5811,6 +5858,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Isto irá eliminar permanentemente todos os ficheiros da unidade bloqueada."
+      ],
+      "Thomas": [
+        "Andrea"
       ],
       "Title": [
         "Título"
@@ -6114,6 +6164,9 @@
       "Flash Video": [
         "Flash Video"
       ],
+      "GZip Archive": [
+        "Arquivo comprimido GZip"
+      ],
       "iCalendar format": [
         "Formato iCalendar"
       ],
@@ -6125,6 +6178,9 @@
       ],
       "Java Archive (JAR)": [
         "Arquivo Java (JAR)"
+      ],
+      "JPEG image": [
+        "Imagem JPEG"
       ],
       "MP3 audio": [
         "Áudio MP3"
@@ -6358,6 +6414,9 @@
       "1 user": [
         "1 utilizador"
       ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
@@ -6390,6 +6449,9 @@
       ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
+      ],
+      "Breach alerts": [
+        "Alertas de violação"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -6435,6 +6497,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suporte a clientes de e-mail (por IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupos de e-mails"
       ],
       "Enables HIPAA compliance": [
         "Permite a conformidade com a HIPAA"
@@ -6500,6 +6565,9 @@
       "Password health": [
         "Estado da palavras-passe"
       ],
+      "Password manager": [
+        "Gestor de palavras-passe"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
@@ -6557,6 +6625,9 @@
       ],
       "Support for up to 2 users": [
         "Suporte para até 2 usuários"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticação em dois fatores"
@@ -7137,14 +7208,47 @@
       ]
     },
     "Onboarding Action": {
+      "Continue": [
+        "Continuar"
+      ],
+      "Get started": [
+        "Começar"
+      ],
+      "Install later": [
+        "Instalar mais tarde"
+      ],
+      "Invite members": [
+        "Convidar membros"
+      ],
+      "Maybe later": [
+        "Talvez mais tarde"
+      ],
       "Next": [
         "Seguinte"
       ],
+      "Select theme": [
+        "Selecione um tema"
+      ],
+      "Skip": [
+        "Ignorar"
+      ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Comece a utilizar o ${ DRIVE_APP_NAME }"
+      ],
+      "Upload file": [
+        "Enviar um ficheiro"
+      ],
+      "Upload folder": [
+        "Enviar a pasta"
       ]
     },
     "Onboarding Info": {
+      "Manage access": [
+        "Gerir o acesso"
+      ],
+      "Secure your files": [
+        "Proteja os seus ficheiros"
+      ],
       "Set a recovery method": [
         "Definir um método de recuperação"
       ],
@@ -7157,6 +7261,9 @@
       ],
       "Upload a file": [
         "Enviar um ficheiro"
+      ],
+      "Work together": [
+        "Trabalhar em conjunto"
       ],
       "Your trusty online vault for vital documents and precious memories.": [
         "O seu cofre em linha de confiança para os seus documentos vitais e as suas memórias preciosas."
@@ -7231,6 +7338,9 @@
       "${ n } user account": [
         "${ n } conta de utilizador",
         "${ n } contas de utilizador"
+      ],
+      "Activity log": [
+        "Registo de atividades"
       ]
     },
     "passwordless": {
@@ -7242,11 +7352,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferência bancária"
+      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilizar o nome da empresa"
+      ],
+      "Use personal name": [
+        "Utilizar um nome pessoal"
       ]
     },
     "Payments": {
@@ -7531,6 +7652,11 @@
     "Security Center (link to Pass App)": {
       "(will open ${ PASS_APP_NAME })": [
         "(abrirá ${ PASS_APP_NAME })"
+      ]
+    },
+    "Security Center - Action": {
+      "View events": [
+        "Ver os eventos"
       ]
     },
     "Security Center - Info": {
@@ -7864,6 +7990,9 @@
       "/ month": [
         "/ mês"
       ],
+      "/month": [
+        "/mês"
+      ],
       "1 year": [
         "1 ano"
       ],
@@ -7959,6 +8088,11 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Agora pode pesquisar facilmente ficheiros na unidade, mantendo os seus dados seguros."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sessão"
       ]
     },
     "Status": {
@@ -8095,6 +8229,11 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Acesso vitalício"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -8133,6 +8272,9 @@
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } utilizador",
         "${ planNumberOfUsers } utilizadores"
+      ],
+      "2 users": [
+        "2 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
@@ -9246,6 +9388,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema com a carteira"
       ]
     },
     "Warning": {

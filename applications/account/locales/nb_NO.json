@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -114,6 +114,9 @@
       ],
       "Add email address": [
         "Legg til e-postadresse"
+      ],
+      "Add external address": [
+        "Legg til ekstern adresse"
       ],
       "Add filter": [
         "Legg til filter"
@@ -559,6 +562,9 @@
       "Get in touch": [
         "Ta kontakt"
       ],
+      "Get limited-time offer": [
+        "Skaff deg tidsbegrenset tilbud"
+      ],
       "Get more": [
         "Få mer"
       ],
@@ -808,11 +814,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "refresh the page": [
-        "oppdater siden"
-      ],
       "Refresh the page": [
         "Oppdater siden"
+      ],
+      "refresh the page": [
+        "oppdater siden"
       ],
       "Reject": [
         "Avvis"
@@ -1605,6 +1611,15 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måned.",
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måneder."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1626,14 +1641,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6890,6 +6897,9 @@
         "Legger til ${ addedServerCount } porttjener",
         "Legger til ${ addedServerCount } porttjenere"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Å legge til en ekstern e-postadresse vil deaktivere ende-til-ende-kryptering for all e-postkommunikasjon innenfor den gruppen. Vil du fortsette?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Legger til porttjener: ${ serverNumber } / ${ total }",
         "Legger til porttjenere: ${ serverNumber } / ${ total }"
@@ -7255,11 +7265,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
-      ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
@@ -7409,6 +7419,15 @@
       ],
       "Encryption setting updated": [
         "Krypteringsinnstilling oppdatert"
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Ende-til-ende-kryptering av e-post er deaktivert for denne gruppen på grunn av eksterne adresser."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Ende-til-ende-kryptering av e-post er deaktivert for denne gruppen. Det kan aktiveres."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Ende-til-ende-kryptering av e-post er aktivert for denne gruppen."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Nettadresse for endepunkt mottatt fra identitetsleverandøren din (f.eks. https://idp.example.com/sso/saml)."
@@ -7699,9 +7718,6 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installer en tjenerkonfigureringsfil for å koble til en spesifikk tjener i det landet du ønsker."
       ],
-      "Internal user": [
-        "Intern bruker"
-      ],
       "Internet connection lost": [
         "Mistet internettilkobling"
       ],
@@ -7900,6 +7916,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for at du ${ addARecoveryMethod } slik at du kan få komme inn på kontoen din igjen hvis du glemmer passordet."
+      ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "Administrer innstillingene for e-postvarsler for ${ DOCS_APP_NAME }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Angi denne informasjonen manuelt i tofaktorautentiseringsenheten for å konfigurere kontoen din. ${ switchButton }."
@@ -8151,9 +8170,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Vær oppmerksom på at hvis du sletter filteret, ${ nameDeleted }, slutter vi å behandle alle de automatiserte handlingene det utløser."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ remainingCreditsFormatted } kreditter igjen."
       ],
       "please open a support ticket": [
         "vennligst åpne en støtteforespørsel"
@@ -8873,11 +8889,11 @@
       "User activated": [
         "Bruker aktivert"
       ],
-      "Username": [
-        "Brukernavn"
-      ],
       "username": [
         "brukernavn"
+      ],
+      "Username": [
+        "Brukernavn"
       ],
       "Users": [
         "Brukere"
@@ -9253,6 +9269,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil bli videresendt til ${ destination } etter pålogging."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Du beholder livslang tilgang til ${ PASS_APP_NAME } + SimpleLogin premium-funksjoner hvis du kansellerer abonnementet."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
@@ -11321,6 +11340,9 @@
       "for your first month": [
         "for din første måned"
       ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Skaff deg ${ planTitle } for ${ discountedPriceElement }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Begrenset tidstilbud, utløper 2. april 2024"
       ]
@@ -11477,8 +11499,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Australsk dollar"
+      ],
       "Brazilian real": [
         "Brasiliansk real"
+      ],
+      "British pound": [
+        "Britisk pund"
+      ],
+      "Canadian dollar": [
+        "Kanadiske Dollar"
       ],
       "Euro": [
         "Euro"
@@ -11693,6 +11724,32 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Starter fra ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11720,32 +11777,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom i gang for ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Starter fra ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Oppgrader til ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11819,6 +11850,9 @@
         "${ options }-dag filversjonshistorikk",
         "${ options }-dager filversjonshistorikk"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin livstid"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliaser"
@@ -11877,6 +11911,9 @@
       "Administration Panel": [
         "Administrasjonspanel"
       ],
+      "Advanced account protection": [
+        "Avansert kontobeskyttelse"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Avanserte aliasfunksjoner (drevet av SimpleLogin)"
       ],
@@ -11912,6 +11949,9 @@
       ],
       "Available on all platforms": [
         "Tilgjengelig på alle plattformer"
+      ],
+      "Breach alerts": [
+        "Varsler om datainnbrudd"
       ],
       "Calendar sharing": [
         "Kalenderdeling"
@@ -12430,6 +12470,20 @@
         "Planen du har valgt: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -12448,20 +12502,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Få Mail Plus for ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Starter fra ${ price }"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -12552,6 +12592,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter er enkle merker du kan legge til i meldinger for å gjøre dem enklere å finne eller bruke filtre på."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Livstids tilgang til ${ PASS_APP_NAME } + SimpleLogin premium-funksjoner."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
@@ -13965,6 +14008,9 @@
       ],
       "Processing payment": [
         "Behandler betaling"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Fornyes til ${ price }, avbryt når som helst."
       ],
       "Select billing country to pay": [
         "Velg faktureringsland for å betale"
@@ -16459,7 +16505,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Lagre"
+        "Spar"
       ]
     },
     "Subscription status": {
@@ -16742,6 +16788,12 @@
       "Filter removed": [
         "Filter fjernet"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Ende-til-ende-kryptering av e-post for grupper deaktivert"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Ende-til-ende-kryptering av e-post for grupper aktivert"
+      ],
       "Preference updated": [
         "Preferanse oppdatert"
       ],
@@ -17015,6 +17067,9 @@
       "Add domain": [
         "Legg til domene"
       ],
+      "Add external address?": [
+        "Legge til ekstern adresse?"
+      ],
       "Add filter": [
         "Legg til filter"
       ],
@@ -17114,10 +17169,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -17412,6 +17467,9 @@
       ],
       "Email encryption keys": [
         "Krypteringsnøkler for e-post"
+      ],
+      "Email notifications": [
+        "E-postvarsler"
       ],
       "Email privacy": [
         "E-post personvern"
@@ -18262,6 +18320,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Bytt automatisk mellom foretrukket tema for dag og natt synkronisert med systemets dag- og nattmodus."
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Klikk her for å lære hvordan du lager en tilpasset signatur med HTML."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Kopier og lim inn denne URL-adressen i ACS (Assertion Consumer Service) URL-feltet til identitetsleverandøren din."
       ],
@@ -18446,6 +18507,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Ekstern adresse – deaktiverer ende-til-ende-kryptering av e-post for denne gruppen"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Ekstern adresse – deaktiverer ende-til-ende-e-postkryptering for denne gruppen, og ingen krypterte ressurser deles med denne brukeren."
       ],
       "Group membership paused": [
         "Gruppemedlemskap satt på pause"

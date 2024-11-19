@@ -1060,11 +1060,11 @@
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
       ],
-      "Select All": [
-        "Seleziona tutto"
-      ],
       "Select all": [
         "Seleziona tutti"
+      ],
+      "Select All": [
+        "Seleziona tutto"
       ],
       "Select all messages": [
         "Seleziona tutti i messaggi"
@@ -5372,6 +5372,9 @@
       "Storage unlocked": [
         "Spazio sbloccato"
       ],
+      "Tasks to complete count": [
+        "Passaggi per completare il conto"
+      ],
       "This feature is currently unavailable": [
         "Questa funzionalità non è attualmente disponibile"
       ],
@@ -6528,6 +6531,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Se ritieni che abbiamo commesso un errore, ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se annulli, il tuo abbonamento ${ planTitle } non verrà rinnovato alla scadenza del ${ expiryDate }."
       ],
@@ -6596,8 +6602,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -6865,9 +6870,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ remainingCreditsFormatted } crediti rimanenti."
       ],
       "Please open the document to view it.": [
         "Apri il documento per visualizzarlo."
@@ -7465,6 +7467,12 @@
       "We couldn’t process your payment.": [
         "Il pagamento non può essere completato."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Abbiamo rilevato la creazione di più account gratuiti, il che viola i nostri ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Abbiamo piani progettati appositamente per utenti come te che necessitano di più di un indirizzo email.\nPer rimuovere le restrizioni, puoi passare a un piano a pagamento."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Abbiamo bisogno di verificare il tuo metodo di pagamento con la tua banca."
       ],
@@ -7685,6 +7693,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Le email non vengono più consegnate alla tua posta in arrivo. I tuoi link di condivisione di Drive non sono più attivi e non puoi caricare nuovi file. Per continuare ad usare il tuo account, paga tutte le fatture scadute."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Il tuo abbonamento a ${ PASS_SHORT_APP_NAME } Plus verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -8039,6 +8050,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
+      ],
+      "/month": [
+        "/mese"
       ],
       "Actions": [
         "Azioni"
@@ -8700,6 +8714,9 @@
       "click here": [
         "clicca qui"
       ],
+      "contact us": [
+        "contattaci"
+      ],
       "Create a calendar linked to an active email address.": [
         "Crea un calendario collegato a un indirizzo email attivo."
       ],
@@ -8813,6 +8830,9 @@
       ],
       "Terms": [
         "Termini"
+      ],
+      "terms of service": [
+        "termini di servizio"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Questo file ICS contiene più di un evento. Sei pregato di scaricarlo e importare gli eventi in ${ CALENDAR_APP_NAME }"
@@ -9214,6 +9234,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Esegui il downgrade a ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Passa a ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Inizia per ${ price }"
       ],
@@ -9321,6 +9344,9 @@
         "Cronologia delle versioni dei file per ${ options } giorno",
         "Cronologia delle versioni dei file per ${ options } giorni"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin a vita"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias Hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias Hide-my-email"
@@ -9376,6 +9402,9 @@
       "Administration Panel": [
         "Pannello di controllo"
       ],
+      "Advanced account protection": [
+        "Protezione avanzata dell'account"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Funzionalità alias avanzate (fornite da SimpleLogin)"
       ],
@@ -9405,6 +9434,9 @@
       ],
       "Available on all platforms": [
         "Disponibile su tutte le piattaforme"
+      ],
+      "Breach alerts": [
+        "Avvisi sulle violazioni di dati"
       ],
       "Calendar sharing": [
         "Condivisione del calendario"
@@ -9931,6 +9963,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Le etichette sono semplici tag che puoi aggiungere ai messaggi per renderli più facili da trovare o per applicare filtri"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Accesso illimitato a ${ PASS_APP_NAME } + funzionalità premium di SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi"
@@ -10555,6 +10590,9 @@
       ],
       "Please select your billing state first.": [
         "Seleziona prima lo stato di fatturazione."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Rinnova a ${ price }, annulla in qualsiasi momento."
       ],
       "Select billing country to pay": [
         "Seleziona il paese di fatturazione per il pagamento"
@@ -12665,6 +12703,9 @@
       ],
       "A filter with this name already exists": [
         "Esiste già un filtro con questo nome"
+      ],
+      "Account locked": [
+        "Account bloccato"
       ],
       "Account recovery": [
         "Recupero dell'account"

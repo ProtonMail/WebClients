@@ -392,7 +392,7 @@
         "Skúste to znova, prosím"
       ],
       "Reactivate now": [
-        "Znovu aktivovať teraz"
+        "Znovu aktivovať"
       ],
       "Refresh the page": [
         "Obnoviť stránku"
@@ -628,7 +628,7 @@
         "Zaplaťte raz a získajte ${ lifetimeAccessJSX } na Pass Plus a SimpleLogin. Len za ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
-        "Uložte až do ${ discountJSX } na Pass Family. Iba ${ relativePrice }/mesiac."
+        "Ušetrite až ${ discountJSX } na Pass Family. Iba za ${ relativePrice }/mesiac."
       ]
     },
     "Browser": {
@@ -762,6 +762,9 @@
       ],
       "Could not resolve share members": [
         "Nepodarilo sa vyriešiť členov zdieľania"
+      ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Nepodarilo sa načítať pozvánky používateľov pre trezor „${ vaultName }“"
       ],
       "Could not validate addresses at the moment.": [
         "Adresy v tejto chvíli nebolo možné overiť."
@@ -1146,9 +1149,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizácia \"${ payload.item.data.metadata.name }\" bola zamietnutá"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } pozvánok úspešne odoslaných"
-      ],
       "${ count } time": [
         "${ count } krát",
         "${ count } krát",
@@ -1434,6 +1434,12 @@
       "Follow those steps to import your data with a generic CSV :": [
         "Pre importovanie údajov pomocou všeobecného CSV súboru, postupujte nasledovne:"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k tomuto zdieľanému trezoru",
+        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k týmto zdieľaným trezorom",
+        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k týmto zdieľaným trezorom",
+        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k týmto zdieľaným trezorom"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostných dôvodov musí byť váš prístup potvrdený"
       ],
@@ -1496,9 +1502,6 @@
       ],
       "Invite successfully resent": [
         "Pozvánka bola znova úspešne odoslaná"
-      ],
-      "Invite successfully sent": [
-        "Pozvánka bola úspešne odoslaná"
       ],
       "invites you to access items in": [
         "vás pozýva na prístup k položkám v"
@@ -1582,7 +1585,7 @@
         "Nastavenia monitorovania boli úspešne aktualizované"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
-        "Viac ako správca hesiel, ${ PASS_APP_NAME } chráni vaše heslo a vašu osobnú emailovú adresu prostredníctvom emailových aliasov. Vďaka rovnakej technológii, ktorá stojí za ${ MAIL_APP_NAME }, sú vaše údaje end-to-end šifrované a prístup k nim máte len vy."
+        "Viac ako správca hesiel, ${ PASS_APP_NAME } chráni vaše heslo a vašu osobnú emailovú adresu prostredníctvom emailových aliasov. Vďaka rovnakej technológii ako ${ MAIL_APP_NAME }, sú vaše údaje end-to-end šifrované a prístup k nim máte len vy."
       ],
       "Move ${ count } item": [
         "Presunúť ${ count } položku",
@@ -1592,6 +1595,18 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Presunutím položky do iného trezora sa vymaže jej história a všetky zabezpečené odkazy.",
+        "Presunutím položiek do iného trezora sa vymaže ich história a všetky zabezpečené odkazy.",
+        "Presunutím položiek do iného trezora sa vymaže ich história a všetky zabezpečené odkazy.",
+        "Presunutím položiek do iného trezora sa vymaže ich história a všetky zabezpečené odkazy."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Presunutím položky do iného trezora sa vymaže jej história.",
+        "Presunutím položiek do iného trezora sa vymaže ich história.",
+        "Presunutím položiek do iného trezora sa vymaže ich história.",
+        "Presunutím položiek do iného trezora sa vymaže ich história."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2014,7 +2029,7 @@
         "Na túto emailovú adresu vám už nebudú zasielané oznámenia o úniku údajov."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
-        "V aplikácii ${ PASS_APP_NAME } už nebudete mať prístup k zdieľaniu, 2FA, kreditnej karte a ďalším pokročilým funkciám."
+        "V aplikácii ${ PASS_APP_NAME } už nebudete mať prístup k zdieľaniu, 2FA, platobnej karte a ďalším pokročilým funkciám."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tento PIN kód použijete na odomknutie aplikácie ${ PASS_APP_NAME } , keď sa po určitom čase nečinnosti automaticky uzamkne."
@@ -2673,7 +2688,7 @@
         "Dnes"
       ],
       "Total imported items: ": [
-        "Celkový počet importovaných položiek: "
+        "Celkom importovaných položiek: "
       ],
       "Total items: ": [
         "Celkový počet položiek: "
@@ -2782,6 +2797,12 @@
         "${ count } položky",
         "${ count } položiek",
         "${ count } položiek"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Vybratú položku môžete pretiahnuť do iného trezoru",
+        "Vybraté položky môžete pretiahnuť do iného trezoru",
+        "Vybraté položky môžete pretiahnuť do iného trezoru",
+        "Vybraté položky môžete pretiahnuť do iného trezoru"
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Vybrali ste ${ semiboldText } v tomto trezore."
@@ -3006,13 +3027,13 @@
     },
     "Theme": {
       "Automatic": [
-        "Automatická"
+        "Automatický"
       ],
       "Dark": [
-        "Tmavá"
+        "Tmavý"
       ],
       "Light": [
-        "Svetlá"
+        "Svetlý"
       ]
     },
     "Title": {
@@ -3212,7 +3233,7 @@
         "Čaká sa na prístup k zdieľaným údajom"
       ],
       "Permanently remove all items?": [
-        "Trvalo odstrániť všetky položky?"
+        "Natrvalo odstrániť všetky položky?"
       ],
       "Pinned (${ items.length })": [
         "Pripnuté (${ items.length })"

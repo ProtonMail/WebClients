@@ -924,9 +924,6 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "Dieses Angebot ist mit deinem aktuellen Tarif leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Tarif leider nicht verfügbar. Aber du kannst **${ discountPercentage } auf ${ plan.Title }** bekommen, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -1023,7 +1020,7 @@
         "Integrierter 2FA-Authentifikator"
       ],
       "One-time payment, lifetime deal": [
-        "Einmalzahlung, lebenslanges Angebot"
+        "Einmalige Zahlung, lebenslanges Angebot"
       ],
       "Online document editor": [
         "Editor für Onlinedokumente"
@@ -1061,7 +1058,7 @@
     },
     "BF2024: Footer": {
       "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
-        "${ PASS_SHORT_APP_NAME } Plus lebenslanges Angebot hat keinen Erneuerungspreis, es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
+        "Beim lebenslangen ${ PASS_SHORT_APP_NAME } Plus-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu Pass Plus."
       ],
       "Discounts are based on standard monthly pricing.": [
         "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
@@ -1110,6 +1107,10 @@
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
+        "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -4138,9 +4139,6 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installiere eine Serverkonfigurationsdatei, um eine Verbindung zu einem bestimmten Server im Land deiner Wahl herzustellen."
       ],
-      "Internal user": [
-        "Interner Benutzer"
-      ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
@@ -4423,9 +4421,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Bitte gib die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ noch ${ remainingCreditsFormatted } Guthaben auf deinem Konto verbleiben."
       ],
       "please open a support ticket": [
         "öffne bitte ein Support-Ticket"

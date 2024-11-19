@@ -726,6 +726,9 @@
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
       ],
+      "Could not retrieve user invites for the \"${ vaultName }\" vault": [
+        "Kunde inte hämta användarinbjudningar för valvet ”${ vaultName }”."
+      ],
       "Could not validate addresses at the moment.": [
         "Kunde inte validera adresser just nu."
       ],
@@ -1096,9 +1099,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } inbjudningar skickat"
-      ],
       "${ count } time": [
         "${ count } gång",
         "${ count } gånger"
@@ -1392,6 +1392,10 @@
       "For security reason, your access needs to be confirmed": [
         "Av säkerhetsskäl måste din åtkomst bekräftas"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Av säkerhetsskäl måste du bekräfta åtkomst till detta delade valv",
+        "Av säkerhetsskäl måste du bekräfta åtkomst till dessa delade valv"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Av säkerhetsskäl måste din åtkomst bekräftas"
       ],
@@ -1437,9 +1441,6 @@
         "Inbjudan borttagen"
       ],
       "Invite successfully resent": [
-        "Inbjudan skickad"
-      ],
-      "Invite successfully sent": [
         "Inbjudan skickad"
       ],
       "invites you to access items in": [
@@ -1515,6 +1516,14 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess historik och alla säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras historik och alla säkra länkar."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Att flytta ett objekt till annat valv kommer radera dess historik.",
+        "Att flytta objekt till annat valv kommer radera deras historik."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2679,6 +2688,10 @@
         "${ count } objekt",
         "${ count } objekt"
       ],
+      "You can drag and drop the selected item to another vault": [
+        "Du kan dra och släppa det valda objektet till ett annat valv",
+        "Du kan dra och släppa de markerade objekten till ett annat valv"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valde ${ semiboldText } i detta valv."
       ]
@@ -2992,6 +3005,10 @@
         "Flytta ${ count } objekt till ${ vaultName }",
         "Flytta ${ count } objekt till ${ vaultName }"
       ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Flytta ${ trashedItemsCount } objekt till papperskorg?",
+        "Flytta ${ trashedItemsCount } objekt till papperskorg?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Flytta alla objekt till ”${ vaultName }”?"
       ],
@@ -3012,6 +3029,9 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "Pending access confirmation": [
+        "Väntande åtkomstbekräftelse"
       ],
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
@@ -3113,6 +3133,9 @@
       "Welcome to your new password manager!": [
         "Välkommen till din nya lösenordshanterare!"
       ],
+      "Your ${ planName } subscription will end on ${ endDate }": [
+        "Din ${ planName }-prenumeration kommer avslutas den ${ endDate }"
+      ],
       "Your vault is empty": [
         "Ditt valv är tomt"
       ],
@@ -3157,6 +3180,9 @@
       "A description of the problem is required": [
         "En beskrivning av problemet är obligatoriskt"
       ],
+      "Aliases in trash will continue forwarding emails.": [
+        "Alias ​​i papperskorgen kommer fortsätta vidarebefordra e-post."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alla dina kastade objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
       ],
@@ -3165,6 +3191,10 @@
       ],
       "An error occurred while resuming your session": [
         "Ett fel uppstod vid återupptagning av din session"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Är du säker på att du vill flytta ${ trashedItemsCount } objekt till papperskorg?",
+        "Är du säker på att du vill flytta ${ trashedItemsCount } objekt till papperskorg?"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
         "Är du säker på att du vill ta bort ${ deletedItemsCount } objekt permanent?",

@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -114,6 +114,9 @@
       ],
       "Add email address": [
         "Προσθήκη διεύθυνσης ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Add external address": [
+        "Προσθήκη εξωτερικής διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
       "Add filter": [
         "Προσθήκη φίλτρου"
@@ -437,7 +440,7 @@
         "Κατέβασμα αρχείου ανάκτησης"
       ],
       "Download the ${ MAIL_APP_NAME } Export Tool": [
-        "Λήψη του ${ MAIL_APP_NAME } Export Tool"
+        "Λήψη του ${ MAIL_APP_NAME } Εργαλείου Εξαγωγής"
       ],
       "Edit": [
         "Επεξεργασία"
@@ -558,6 +561,9 @@
       ],
       "Get in touch": [
         "Επικοινωνήστε"
+      ],
+      "Get limited-time offer": [
+        "Λάβετε προσφορά περιορισμένου χρόνου"
       ],
       "Get more": [
         "Λήψη περισσότερων"
@@ -808,11 +814,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Reject": [
         "Απόρριψη"
@@ -1605,6 +1611,15 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνα.",
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνες."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πρόγραμμα)"
@@ -1626,14 +1641,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -6890,6 +6897,9 @@
         "Προσθήκη ${ addedServerCount } διακομιστή πύλης",
         "Προσθήκη ${ addedServerCount } διακομιστών πύλης"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "Η προσθήκη μιας εξωτερικής διεύθυνσης ηλεκτρονικού ταχυδρομείου θα απενεργοποιήσει την κρυπτογράφηση από άκρο σε άκρο για όλες τις επικοινωνίες ηλεκτρονικού ταχυδρομείου εντός αυτής της ομάδας. Θέλετε να προχωρήσετε;"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Προσθήκη διακομιστή πύλης: ${ serverNumber } / ${ total }",
         "Προσθήκη διακομιστών πύλης: ${ serverNumber } / ${ total }"
@@ -7255,11 +7265,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστικές διευθύνσεις IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -7409,6 +7419,15 @@
       ],
       "Encryption setting updated": [
         "Η ρύθμιση κρυπτογράφησης ενημερώθηκε"
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Η κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο είναι απενεργοποιημένη για αυτήν την ομάδα λόγω εξωτερικών διευθύνσεων."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Η κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο είναι απενεργοποιημένη για αυτήν την ομάδα. Μπορεί να ενεργοποιηθεί."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Η κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο είναι ενεργοποιημένη για αυτήν την ομάδα."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Διεύθυνση URL τελικού σημείου που λάβατε από τον πάροχο ταυτότητάς σας (π.χ. https://idp.example.com/sso/saml)."
@@ -7699,9 +7718,6 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Εγκαταστήστε ένα αρχείο διαμόρφωσης διακομιστή για να συνδεθείτε σε έναν συγκεκριμένο διακομιστή στη χώρα της επιλογής σας."
       ],
-      "Internal user": [
-        "Εσωτερικός χρήστης"
-      ],
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
@@ -7767,7 +7783,7 @@
         "Οι σημαίες στοιχείου άλλαξαν στην κρύπτη"
       ],
       "Item in ${ vaultLink } trashed": [
-        "Στοιχείο στο ${ vaultLink } απορρίφθηκε"
+        "Το Στοιχείο στο ${ vaultLink } απορρίφθηκε"
       ],
       "Item in ${ vaultLink } untrashed": [
         "Στοιχείο στο ${ vaultLink } επαναφέρθηκε"
@@ -7900,6 +7916,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Βεβαιωθείτε ότι έχετε ${ addARecoveryMethod }, ώστε να μπορείτε να αποκτήσετε ξανά πρόσβαση στο λογαριασμό σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
+      ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "Διαχειριστείτε τις προτιμήσεις ειδοποιήσεων ηλεκτρονικού ταχυδρομείου για ${ DOCS_APP_NAME }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στη συσκευή επαλήθευσης ταυτότητας δύο παραγόντων ώστε να ρυθμίσετε τον λογαριασμό σας. ${ switchButton }."
@@ -8148,9 +8167,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Παρακαλούμε λάβετε υπόψη ότι αν διαγράψετε το φίλτρο ${ nameDeleted } θα σταματήσουμε να επεξεργαζόμαστε όλες τις αυτοματοποιημένες ενέργειες που ενεργοποιεί."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ remainingCreditsFormatted }."
       ],
       "please open a support ticket": [
         "παρακαλούμε ανοίξτε ένα εισιτήριο υποστήριξης"
@@ -8870,11 +8886,11 @@
       "User activated": [
         "Ο χρήστης ενεργοποιήθηκε"
       ],
-      "Username": [
-        "Όνομα Χρήστη"
-      ],
       "username": [
         "όνομα χρήστη"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ],
       "Users": [
         "Χρήστες"
@@ -9250,6 +9266,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Θα διατηρήσετε ισόβια πρόσβαση σε premium λειτουργίες ${ PASS_APP_NAME } + SimpleLogin εάν ακυρώσετε τη συνδρομή σας."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Θα χάσετε την πρόσβαση στις και λειτουργίες του ${ planTitle } αυτήν την ημέρα."
@@ -11315,6 +11334,9 @@
       "for your first month": [
         "για τον πρώτο μήνα σας"
       ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Λάβετε το ${ planTitle } για ${ discountedPriceElement }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Προσφορά περιορισμένου χρόνου, λήγει στις 2 Απριλίου 2024"
       ]
@@ -11471,8 +11493,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Δολλάριο Αυστραλίας"
+      ],
       "Brazilian real": [
         "Ρεάλ Βραζιλίας"
+      ],
+      "British pound": [
+        "Λίρες Βρετανίας"
+      ],
+      "Canadian dollar": [
+        "Δολλάριο Καναδά"
       ],
       "Euro": [
         "Ευρώ"
@@ -11687,6 +11718,32 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Ξεκινήστε με ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "Ξεκινώντας από ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
@@ -11714,32 +11771,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Ξεκινήστε με ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "Ξεκινώντας από ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Αναβάθμιση σε ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11813,6 +11844,9 @@
         "${ options }-ημέρα ιστορικό εκδόσεων αρχείου",
         "${ options }-ημέρες ιστορικό εκδόσεων αρχείου"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin εφ'όρου ζωής"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμο",
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμα"
@@ -11871,6 +11905,9 @@
       "Administration Panel": [
         "Πίνακας Διαχείρισης"
       ],
+      "Advanced account protection": [
+        "Προηγμένη προστασία λογαριασμού"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Προηγμένες λειτουργίες ψευδωνύμων (υποστηρίζεται από την SimpleLogin)"
       ],
@@ -11906,6 +11943,9 @@
       ],
       "Available on all platforms": [
         "Διαθέσιμο σε όλες τις πλατφόρμες"
+      ],
+      "Breach alerts": [
+        "Ειδοποιήσεις Παραβίασης"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -12424,6 +12464,20 @@
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "Ξεκινώντας από ${ price }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -12442,20 +12496,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium χαρακτηριστικά με αναβάθμιση"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Αποκτήστε το Mail Plus για ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "Ξεκινώντας από ${ price }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -12546,6 +12586,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Οι ετικέτες είναι απλό κείμενο που μπορείτε να προσθέσετε στα μηνύματα για να διευκολύνετε την εύρεση ή την εφαρμογή φίλτρων"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Ισόβια πρόσβαση σε ${ PASS_APP_NAME } + premium χαρακτηριστικά SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Όπως ένας φάκελος, μια θυρίδα αποθήκευσης είναι ένας βολικός τρόπος για να οργανώσετε τα στοιχεία σας"
@@ -13938,6 +13981,9 @@
       ],
       "Processing payment": [
         "Επεξεργασία πληρωμής"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Ανανεώνει σε ${ price }, ακυρώστε ανά πάσα στιγμή."
       ],
       "Select billing country to pay": [
         "Επιλέξτε χώρα χρέωσης για πληρωμή"
@@ -16715,6 +16761,12 @@
       "Filter removed": [
         "Το φίλτρο αφαιρέθηκε"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Η κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο είναι απενεργοποιημένη"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Η κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο είναι ενεργοποιημένη"
+      ],
       "Preference updated": [
         "Οι προτιμήσεις ενημερώθηκαν"
       ],
@@ -16988,6 +17040,9 @@
       "Add domain": [
         "Προσθήκη domain"
       ],
+      "Add external address?": [
+        "Προσθήκη εξωτερικής διεύθυνσης ηλεκτρονικού ταχυδρομείου;"
+      ],
       "Add filter": [
         "Προσθήκη φίλτρου"
       ],
@@ -17087,10 +17142,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -17385,6 +17440,9 @@
       ],
       "Email encryption keys": [
         "Κλειδιά κρυπτογράφησης E-mail"
+      ],
+      "Email notifications": [
+        "Ειδοποιήσεις ηλεκτρονικού ταχυδρομείου"
       ],
       "Email privacy": [
         "Προστασία απορρήτου Email"
@@ -18235,6 +18293,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Πατήστε εδώ για να μάθετε πώς να δημιουργήσετε μια προσαρμοσμένη υπογραφή με HTML"
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο URL ACS (Assertion Consumer Service) του παρόχου ταυτότητάς σας"
       ],
@@ -18419,6 +18480,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Εξωτερική διεύθυνση - απενεργοποιεί την κρυπτογράφηση ηλεκτρονικού ταχυδρομείου από άκρο σε άκρο για αυτήν την ομάδα και δε θα γίνει κοινή χρήση κρυπτογραφημένων πόρων με αυτόν τον χρήστη."
       ],
       "Group membership paused": [
         "Η συμμετοχή στην ομάδα τέθηκε σε παύση"

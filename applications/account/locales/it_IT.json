@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -114,6 +114,9 @@
       ],
       "Add email address": [
         "Aggiungi un indirizzo email"
+      ],
+      "Add external address": [
+        "Aggiungi indirizzo esterno"
       ],
       "Add filter": [
         "Aggiungi un filtro"
@@ -559,6 +562,9 @@
       "Get in touch": [
         "Mettiti in contatto"
       ],
+      "Get limited-time offer": [
+        "Ottieni l'offerta a tempo limitato"
+      ],
       "Get more": [
         "Ottieni di più"
       ],
@@ -808,11 +814,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Reject": [
         "Rifiuta"
@@ -1605,6 +1611,15 @@
         "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Siamo spiacenti, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto di ${ discountPercentage } su ${ plan.Title } se ti abboni per ${ cycle } mese.",
+        "Siamo spiacenti, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto di ${ discountPercentage } su ${ plan.Title } se ti abboni per ${ cycle } mesi."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB di spazio di archiviazione (2 volte di più rispetto a qualsiasi altro piano)"
@@ -1626,14 +1641,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Il piano ${ plan } è tornato, ma solo per un periodo di tempo limitato"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6890,6 +6897,9 @@
         "Aggiunta di ${ addedServerCount } server gateway",
         "Aggiunta di ${ addedServerCount } server gateway"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "L'aggiunta di un indirizzo email esterno disabiliterà la crittografia end-to-end per tutte le comunicazioni email all'interno di quel gruppo. Vuoi procedere?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Aggiunta di server gateway: ${ serverNumber }/${ total }",
         "Aggiunta di server gateway: ${ serverNumber }/${ total }"
@@ -7255,11 +7265,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "Dedicated servers": [
-        "Server dedicati"
-      ],
       "dedicated servers": [
         "server dedicati"
+      ],
+      "Dedicated servers": [
+        "Server dedicati"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -7409,6 +7419,15 @@
       ],
       "Encryption setting updated": [
         "Impostazione di crittografia aggiornata"
+      ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "La crittografia email end-to-end è disabilitata per questo gruppo a causa di indirizzi esterni."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "La crittografia email end-to-end è disabilitata per questo gruppo. Può essere abilitata."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Per questo gruppo è abilitata la crittografia email end-to-end."
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL ricevuto dal tuo fornitore di identità (es. https://idp.esempio.it/sso/saml)."
@@ -7699,9 +7718,6 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installa un file di configurazione di un server per connetterti a un server specifico nel paese di tua scelta."
       ],
-      "Internal user": [
-        "Utente interno"
-      ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
@@ -7900,6 +7916,9 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assicurati di ${ addARecoveryMethod } in modo da poter tornare al tuo account se dimentichi la password."
+      ],
+      "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
+        "Gestisci le tue preferenze di notifica email per ${ DOCS_APP_NAME }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Inserisci manualmente queste informazioni di autenticazione a due fattori nel tuo dispositivo per impostare il tuo account. ${ switchButton }."
@@ -8151,9 +8170,6 @@
       ],
       "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Nota che se elimini il filtro ${ nameDeleted } interromperemo l'elaborazione di tutte le azioni automatiche associate a esso."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ remainingCreditsFormatted } crediti rimanenti."
       ],
       "please open a support ticket": [
         "apri un ticket per il supporto"
@@ -8873,11 +8889,11 @@
       "User activated": [
         "Utente attivato"
       ],
-      "Username": [
-        "Nome utente"
-      ],
       "username": [
         "nome utente"
+      ],
+      "Username": [
+        "Nome utente"
       ],
       "Users": [
         "Utenti"
@@ -9254,6 +9270,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Verrai reindirizzato su ${ destination } dopo aver effettuato l'accesso."
       ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "Manterrai l'accesso illimitato alle funzionalità premium di ${ PASS_APP_NAME } + SimpleLogin se annulli l'abbonamento."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderai l'accesso alle funzionalità del piano ${ planTitle } a partire da questa data."
       ],
@@ -9286,6 +9305,9 @@
       ],
       "Your ${ BRAND_NAME } password": [
         "La tua password di ${ BRAND_NAME }"
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Il tuo abbonamento a ${ PASS_SHORT_APP_NAME } Plus verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "I tuoi account ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } sono collegati. Per eliminarli entrambi, accedi a ${ loginLink } ed elimina il tuo account da lì."
@@ -11318,6 +11340,9 @@
       "for your first month": [
         "per il tuo primo mese"
       ],
+      "Get ${ planTitle } for ${ discountedPriceElement }": [
+        "Ottieni ${ planTitle } per ${ discountedPriceElement }"
+      ],
       "Limited-time offer, expires April 2 2024": [
         "Offerta a tempo limitato, scade il 2 aprile 2024"
       ]
@@ -11474,8 +11499,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "Dollaro Australiano"
+      ],
       "Brazilian real": [
         "Real Brasiliano"
+      ],
+      "British pound": [
+        "Sterlina Britannica"
+      ],
+      "Canadian dollar": [
+        "Dollaro canadese"
       ],
       "Euro": [
         "Euro"
@@ -11690,6 +11724,32 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Inizia per ${ price }"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "A partire da ${ priceMailPlus }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua Gratis"
@@ -11717,32 +11777,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Inizia per ${ price }"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "A partire da ${ priceMailPlus }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "Passa a ${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11816,6 +11850,9 @@
         "Cronologia delle versioni dei file per ${ options } giorno",
         "Cronologia delle versioni dei file per ${ options } giorni"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin a vita"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias Hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias Hide-my-email"
@@ -11874,6 +11911,9 @@
       "Administration Panel": [
         "Pannello di controllo"
       ],
+      "Advanced account protection": [
+        "Protezione avanzata dell'account"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Funzionalità alias avanzate (fornite da SimpleLogin)"
       ],
@@ -11909,6 +11949,9 @@
       ],
       "Available on all platforms": [
         "Disponibile su tutte le piattaforme"
+      ],
+      "Breach alerts": [
+        "Avvisi sulle violazioni di dati"
       ],
       "Calendar sharing": [
         "Condivisione del calendario"
@@ -12427,6 +12470,23 @@
         "Il tuo piano selezionato: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Ottieni Mail Plus per ${ price }"
+      ],
+      "Starting from ${ price }": [
+        "A partire da ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -12445,23 +12505,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Sblocca le funzionalità premium effettuando l'upgrade"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Ottieni Mail Plus per ${ price }"
-      ],
-      "Starting from ${ price }": [
-        "A partire da ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -12552,6 +12595,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Le etichette sono semplici tag che puoi aggiungere ai messaggi per renderli più facili da trovare o per applicare filtri"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Accesso illimitato a ${ PASS_APP_NAME } + funzionalità premium di SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi"
@@ -13965,6 +14011,9 @@
       ],
       "Processing payment": [
         "Elaborazione pagamento"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Rinnova a ${ price }, annulla in qualsiasi momento."
       ],
       "Select billing country to pay": [
         "Seleziona il paese di fatturazione per il pagamento"
@@ -16742,6 +16791,12 @@
       "Filter removed": [
         "Filtro rimosso"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Crittografia email end-to-end del gruppo disabilitata"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Crittografia email end-to-end del gruppo abilitata"
+      ],
       "Preference updated": [
         "Preferenza aggiornata"
       ],
@@ -17018,6 +17073,9 @@
       "Add domain": [
         "Aggiungi dominio"
       ],
+      "Add external address?": [
+        "Aggiungere indirizzo esterno?"
+      ],
       "Add filter": [
         "Aggiungi filtro"
       ],
@@ -17117,11 +17175,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-all address": [
-        "Indirizzi Catch-all"
-      ],
       "Catch-All address": [
         "Indirizzi catch-all"
+      ],
+      "Catch-all address": [
+        "Indirizzi Catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
@@ -17415,6 +17473,9 @@
       ],
       "Email encryption keys": [
         "Chiavi di crittografia delle email"
+      ],
+      "Email notifications": [
+        "Notifiche email"
       ],
       "Email privacy": [
         "Privacy email"
@@ -18265,6 +18326,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Passa automaticamente tra i tuoi temi preferiti per il giorno e per la notte sincronizzandoli con le modalità di giorno e di notte del tuo sistema."
       ],
+      "Click here to learn how to create a customized signature with HTML.": [
+        "Clicca qui per sapere come creare una firma personalizzata con HTML."
+      ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
         "Copia e incolla questo URL nel campo ACS (Assertion Consumer Service) URL del tuo fornitore di identità"
       ],
@@ -18449,6 +18513,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrata e molto altro."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Indirizzo esterno - disabilita la crittografia email end-to-end per questo gruppo"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Indirizzo esterno - disabilita la crittografia email end-to-end per questo gruppo e nessuna risorsa crittografata verrà condivisa con questo utente."
       ],
       "Group membership paused": [
         "L'appartenenza al gruppo è stata sospesa"

@@ -55,6 +55,9 @@
       "Add domain": [
         "Afegir domini"
       ],
+      "Add external address": [
+        "Afegeix una adreça externa"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "Afegeix més llicències per a ${ BRAND_NAME } Scribe"
       ],
@@ -924,9 +927,6 @@
     "bf2023: info": {
       "Sorry, this offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1006,7 +1006,7 @@
         "Protecció avançada del compte"
       ],
       "Dark Web Monitoring": [
-        "Supervisió de la web fosca"
+        "Monitoratge del web fosc"
       ],
       "Easily add or remove users": [
         "Afegiu o elimineu usuaris fàcilment"
@@ -1016,6 +1016,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
+      ],
+      "One-time payment, lifetime deal": [
+        "Un pagament únic, una oferta de per vida"
       ],
       "Online document editor": [
         "Editor de documents en línia"
@@ -1091,7 +1094,7 @@
         "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, monitoratge de la Dark Web i més."
+        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, monitoratge del web fosc i més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més.",
@@ -1256,6 +1259,12 @@
       ],
       "Save ${ upsellSavings }": [
         "Estalvieu el ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Estalvieu diners amb ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Calendari personal i compartit segur"
       ],
       "Try ${ planName }": [
         "Proveu ${ planName }"
@@ -3557,7 +3566,7 @@
         "Mida del compte"
       ],
       "Account successfully updated": [
-        "El compte s'ha actualitzat correctament"
+        "El compte s'ha actualitzat."
       ],
       "active": [
         "activa"
@@ -3598,6 +3607,9 @@
       "Affected user is on row": [
         "L'usuari afectat es troba a la fila.",
         "Els usuaris afectats es troben a les files."
+      ],
+      "All inactive members deleted": [
+        "S'han suprimit tots els membres inactius."
       ],
       "All members have been added.": [
         "S'han afegit tots els membres."
@@ -3936,7 +3948,7 @@
         "Passarel·les"
       ],
       "Gateways monitoring is disabled.": [
-        "La supervisió de passarel·les està desactivada."
+        "El monitoratge de passarel·les està desactivat."
       ],
       "Gateways monitoring is enabled.": [
         "El monitor de passarel·les està activat."
@@ -4042,9 +4054,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instal·leu un arxiu de configuració de servidor per connectar a un servidor a específic al país que trieu."
-      ],
-      "Internal user": [
-        "Usuari intern"
       ],
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
@@ -4308,9 +4317,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduïu la frase de recuperació de 12 paraules associada amb el vostre compte."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ remainingCreditsFormatted } crèdits restants."
       ],
       "please open a support ticket": [
         "obriu un tiquet de suport"
@@ -4755,7 +4761,7 @@
         "Versió ${ version }"
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versió s'ha copiat correctament al porta-retalls"
+        "El número de versió s'ha copiat al porta-retalls."
       ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
@@ -4830,7 +4836,7 @@
         "Quan cancel·leu la vostra subscripció de pagament actual, el saldo de la vostra subscripció es retornarà com a crèdits al compte i se us canviarà al pla ${ BRAND_NAME } ${ PLANS.FREE }."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Quan cancel·li, la seva subscripció no es renovarà, però encara podrà gaudir dels avantatges del pla fins al final del període de subscripció. Després d'això, passarà al pla gratuït de ${ BRAND_NAME }."
+        "Quan cancel·leu, la vostra subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de subscripció. Després d'això, passarà al pla gratuït de ${ BRAND_NAME }."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quan configureu l'autenticació de doble factor, se us proporcionen codis de recuperació que podeu fer servir per a iniciar la sessió en cas que perdeu l'accés a l'aplicació d'autenticació."
@@ -5552,6 +5558,9 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
+      ],
       "Search": [
         "Cerca"
       ],
@@ -6104,8 +6113,8 @@
         "${ n } missatges per dia"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } ${ PASS_SHORT_APP_NAME } caixa forta compartida per usuari",
-        "${ n } ${ PASS_SHORT_APP_NAME } caixes fortes compartides per usuari"
+        "${ n } caixa forta de ${ PASS_SHORT_APP_NAME } compartida per usuari",
+        "${ n } caixes fortes de ${ PASS_SHORT_APP_NAME } compartides per usuari"
       ],
       "${ n } vault": [
         "${ n } caixa forta",
@@ -6118,6 +6127,9 @@
       "${ numberOfUsers } user": [
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Accés de tota la vida a les funcions ${ PASS_APP_NAME } i SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
@@ -6177,6 +6189,9 @@
       "Administration Panel": [
         "Panell d'administració"
       ],
+      "Advanced account protection": [
+        "Protecció avançada dels comptes"
+      ],
       "Advanced network security": [
         "Seguretat de xarxa avançada"
       ],
@@ -6203,6 +6218,9 @@
       ],
       "Available on all platforms": [
         "Disponible a totes les plataformes"
+      ],
+      "Breach alerts": [
+        "Alertes d'infraccions"
       ],
       "Calendar sharing": [
         "Compartició de calendari"
@@ -7363,9 +7381,15 @@
       ],
       "Activity log": [
         "Registre d'activitats"
+      ],
+      "Team policies": [
+        "Regles d'equip"
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Totes les funcions premium. 6 usuaris. 1 subscripció fàcil."
+      ],
       "Get it for ${ monthlyPrice }": [
         "Obteniu-lo per ${ monthlyPrice }"
       ],
@@ -7522,6 +7546,9 @@
       ],
       "Processing payment": [
         "S'està processant el pagament."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Es renova per ${ price } i ho podeu cancel·lar en qualsevol moment."
       ],
       "Select billing country to pay": [
         "Seleccioneu el país de facturació per pagar"
@@ -8940,7 +8967,7 @@
         "Privacitat i seguretat integrals"
       ],
       "Dark web monitoring": [
-        "Supervisió de la web fosca"
+        "Monitoratge del web fosc"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplicació d'escriptori i compatibilitat amb clients de correu electrònic (a través d'IMAP)"
@@ -9343,6 +9370,9 @@
       "Creating config file for ${ serverName }": [
         "S'està creant el fitxer de configuració per a ${ serverName }"
       ],
+      "Group end-to-end email encryption enabled": [
+        "El xifratge d'extrem a extrem dels correus electrònics de grup està activat."
+      ],
       "Preference updated": [
         "S'ha actualitzat la preferència"
       ],
@@ -9530,6 +9560,9 @@
       ],
       "Add domain": [
         "Afegir domini"
+      ],
+      "Add external address?": [
+        "Voleu afegir una adreça externa?"
       ],
       "Add PayPal payment method": [
         "Afegir PayPal com a mètode de pagament"
@@ -10273,6 +10306,9 @@
       ],
       "User declined invitation": [
         "L'usuari ha rebutjat la invitació."
+      ],
+      "Waiting for user to accept the invitation": [
+        "S'està esperant que l'usuari accepti la invitació."
       ]
     },
     "Tor out of date": {
