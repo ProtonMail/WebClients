@@ -279,6 +279,7 @@ export const sendTelemetryData = (data: {
 }) => ({
     method: 'post',
     url: 'data/v1/stats',
+    keepalive: true,
     data: {
         ...data,
         Values: data.Values || {},
@@ -297,6 +298,7 @@ export const sendMultipleTelemetryData = (data: { reports: TelemetryReport[] }) 
     return {
         method: 'post',
         url: 'data/v1/stats/multiple',
+        keepalive: true,
         data: { EventInfo },
     };
 };
