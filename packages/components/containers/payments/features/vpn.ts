@@ -194,7 +194,7 @@ export const getSecureCore = (included: boolean, highlight?: boolean): PlanCardF
 export const getTor = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`TOR over VPN`,
-        tooltip: c('new_plans: tooltip').t`Route your internet traffic through the TOR network with a single click`,
+        tooltip: c('new_plans: tooltip').t`Route your internet traffic through the Tor network with a single click`,
         included,
         highlight,
         icon: 'brand-tor',
