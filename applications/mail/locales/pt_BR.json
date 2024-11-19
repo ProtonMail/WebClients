@@ -462,6 +462,9 @@
       "Expand URL": [
         "Expandir URL"
       ],
+      "Expand video conferencing widget": [
+        "Expandir o widget de videoconferência"
+      ],
       "Expiration time": [
         "Tempo para expiração"
       ],
@@ -1060,11 +1063,11 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
-      "Select All": [
-        "Selecionar todos"
-      ],
       "Select all": [
         "Selecionar tudo"
+      ],
+      "Select All": [
+        "Selecionar todos"
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
@@ -1717,7 +1720,7 @@
         "Autenticador A2F integrado"
       ],
       "One-time payment, lifetime deal": [
-        "Pagamento único, contrato vitalício"
+        "Pagamento único, "
       ],
       "Online document editor": [
         "Editor de documentos on-line"
@@ -5300,6 +5303,9 @@
       "Close": [
         "Fechar"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Complete esta lista de tarefas em ${ daysCount } para dobrar seu armazenamento gratuitamente."
+      ],
       "Congratulations, you completed all the steps!": [
         "Parabéns, você completou todas as etapas!"
       ],
@@ -5371,6 +5377,9 @@
       ],
       "Storage unlocked": [
         "Armazenamento desbloqueado"
+      ],
+      "Tasks to complete count": [
+        "Contagem de tarefas a serem concluídas"
       ],
       "This feature is currently unavailable": [
         "Esse recurso está indisponível no momento"
@@ -5933,6 +5942,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } lifetime não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }. O preço e a data de renovação da sua assinatura ${ planTitle } permanecem inalterados."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -6534,6 +6546,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Se você acredita que cometemos um erro, por favor ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se você cancelar sua assinatura do ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
       ],
@@ -6602,8 +6617,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -6871,9 +6885,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Note que ao clicar no botão Confirmar a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "Please open the document to view it.": [
         "Abra o documento para visualizá-lo"
@@ -7471,6 +7482,12 @@
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Detectamos a criação de várias contas gratuitas, o que viola nossos ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Nós temos planos projetados especificamente para usuários como você, que precisam de mais de um endereço de e-mail.\nPara remover as restrições, você pode fazer um upgrade para um plano pago."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Precisamos autenticar seu método de pagamento com seu banco."
       ],
@@ -7691,6 +7708,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode enviar novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Sua assinatura do ${ PASS_SHORT_APP_NAME } Plus será substituída pela versão ${ PASS_SHORT_APP_NAME } Lifetime. O saldo restante da sua assinatura será adicionado à sua conta. A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -8048,6 +8068,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
+      ],
+      "/month": [
+        "/mês"
       ],
       "Actions": [
         "Ações"
@@ -8709,6 +8732,9 @@
       "click here": [
         "clique aqui"
       ],
+      "contact us": [
+        "fale conosco"
+      ],
       "Create a calendar linked to an active email address.": [
         "Crie um calendário vinculado a um endereço de e-mail ativo."
       ],
@@ -8822,6 +8848,9 @@
       ],
       "Terms": [
         "Termos"
+      ],
+      "terms of service": [
+        "termos de serviço"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Este arquivo ICS contém mais de um evento. Baixe-o e importe os eventos em ${ CALENDAR_APP_NAME }."
@@ -9223,6 +9252,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Obtenha ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Comece por ${ price }"
       ],
@@ -9330,6 +9362,9 @@
         "Histórico de versões do arquivo de ${ options } dia",
         "Histórico de versões do arquivo de ${ options } dias"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin vitalícios"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } com ${ n } alias de hide-my-email",
         "${ PASS_APP_NAME } com ${ n } aliases de hide-my-email"
@@ -9385,6 +9420,9 @@
       "Administration Panel": [
         "Painel de Administração"
       ],
+      "Advanced account protection": [
+        "Proteção avançada de conta"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Recursos avançados de alias (Com tecnologia do SimpleLogin)"
       ],
@@ -9414,6 +9452,9 @@
       ],
       "Available on all platforms": [
         "Disponível em todas plataformas"
+      ],
+      "Breach alerts": [
+        "Alertas de violação"
       ],
       "Calendar sharing": [
         "Compartilhar o calendário"
@@ -9902,6 +9943,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crie até ${ n } endereços de e-mail ou aliases que você pode atribuir aos membros da sua família. Utilize-os como identidades digitais como, por exemplo, JoaoDasCompras@${ domain } para contas em e-commerce."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domínios personalizados para aliases, caixas de correio adicionais, a capacidade de enviar e-mails de aliases e mais."
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Servidores dedicados com endereços IP dedicados podem ser adicionados a gateways privados para permitir o controle de acesso com ajuste fino"
       ],
@@ -9937,6 +9981,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Marcadores são tags simples que podem ser adicionadas a mensagens para que fique mais fácil encontrá-las ou aplicar filtros a elas"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Acesso vitalício aos recursos premium do ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Como uma pasta, um cofre é uma maneira conveniente de organizar seus itens"
@@ -10464,6 +10511,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Painel administrativo para gerenciar usuários e assinaturas"
+      ],
+      "Team policies": [
+        "Políticas da equipe"
       ]
     },
     "PassFamilyPlan2024": {
@@ -10564,6 +10614,9 @@
       ],
       "Please select your billing state first.": [
         "Selecione primeiro seu estado de cobrança."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Renova por ${ price }, cancele a qualquer momento."
       ],
       "Select billing country to pay": [
         "Selecione o país de cobrança para pagar"
@@ -11365,7 +11418,7 @@
         "Mais rápido no aplicativo"
       ],
       "Private, fast, and organized": [
-        "Confidencial, rápido e organizado"
+        "Privado, rápido e organizado"
       ]
     },
     "Snooze message": {
@@ -11610,6 +11663,9 @@
       ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ]
     },
     "State": {
@@ -11874,7 +11930,7 @@
         "${ planName } vai além do básico para ajudar você a ter mais produtividade, organização e controle sobre sua caixa de entrada, identidade de e-mail e mais."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they're online.": [
-        "${ planName } ajuda você a garantir que cada um dos membros da sua família - e os dados deles - estejam protegidos sempre que estiverem on-line."
+        "${ planName } ajuda você a garantir que cada um dos membros da sua família e os dados deles estejam protegidos sempre que estiverem on-line."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferece ${ planMaxSpace } de armazenamento para os seus e-mails, anexos, eventos, senhas e arquivos. Você também tem direito a bônus anuais de armazenamento."
@@ -11909,7 +11965,7 @@
         "${ planNumberOfUsers } usuários"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
-        "Proteção avançada de conta ${ PROTON_SENTINEL_NAME }"
+        "Proteção avançada de conta com ${ PROTON_SENTINEL_NAME }"
       ],
       "2 users": [
         "2 usuários"
@@ -12671,6 +12727,9 @@
       ],
       "A filter with this name already exists": [
         "Um filtro com esse nome já existe"
+      ],
+      "Account locked": [
+        "Conta bloqueada"
       ],
       "Account recovery": [
         "Recuperação de conta"
@@ -14009,6 +14068,9 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Participar da reunião com Zoom"
+      ],
       "Meeting ID:": [
         "ID da reunião:"
       ],
