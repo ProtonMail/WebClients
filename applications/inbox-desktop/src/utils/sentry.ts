@@ -5,7 +5,7 @@ import { app } from "electron";
 import { getAppID } from "../store/idStore";
 import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
 import { isLinux, isMac, isWindows } from "./helpers";
-import { LogMessage, Transport } from "electron-log";
+import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
 import { getWindowBounds } from "../store/boundsStore";
@@ -118,8 +118,7 @@ export async function initializeSentry() {
     };
     sentryTransport.level = "silly";
     sentryTransport.transforms = [];
-    // Do not enable this until we are sure we can send logs to sentry
-    // Logger.transports.sentry = sentryTransport;
+    Logger.transports.sentry = sentryTransport;
 }
 
 function serialize(value: unknown): string {
