@@ -18,6 +18,7 @@ import {
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { FeatureCode } from '@proton/features';
 import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { getUpsellRef, useNewUpsellModalVariant } from '@proton/shared/lib/helpers/upsell';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import paintImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paint.svg';
@@ -32,7 +33,9 @@ interface Props {
 const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Props) => {
     const [user] = useUser();
     const hasPaidMail = user.hasPaidMail;
-    const { welcomeFlags: { isWelcomeFlow } } = useWelcomeFlags();
+    const {
+        welcomeFlags: { isWelcomeFlow },
+    } = useWelcomeFlags();
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const color = useMemo(() => {
         // If free user, we always display the calendar color, otherwise we display the event color if set
@@ -73,8 +76,9 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
         feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
     });
 
+    const isIframe = getIsIframe();
     const oneDollarConfig = useOneDollarConfig();
-    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
+    const upsellConfig = useUpsellConfig({ upsellRef, preventInApp: isIframe, ...oneDollarConfig });
 
     const displayNewUpsellModalsVariant = useNewUpsellModalVariant();
 
