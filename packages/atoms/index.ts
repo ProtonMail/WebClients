@@ -7,6 +7,7 @@ export type { ButtonLikeOwnProps, ButtonLikeProps, ButtonLikeShape, ButtonLikeSi
 export { default as Card, type CardProps } from './Card/Card';
 export { default as CircleLoader } from './CircleLoader/CircleLoader';
 export type { CircleLoaderProps, CircleLoaderSize } from './CircleLoader/CircleLoader';
+export { default as ProtonLoader } from './ProtonLoader/ProtonLoader';
 export { default as Donut } from './Donut/Donut';
 export type { DonutProps } from './Donut/Donut';
 export { default as DualPaneContent } from './DualPane/DualPaneContent';
