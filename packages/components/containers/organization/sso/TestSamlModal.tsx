@@ -222,7 +222,7 @@ const TestSamlModal = ({ domain, onClose, ...rest }: Props) => {
                             <div className="color-weak mb-4">
                                 {getBoldFormattedText(
                                     c('saml: Info')
-                                        .t`To test this SAML configuration, please enter the login credentials for a user associated with **${domainName}**`
+                                        .t`Enter the email address of a user provided by your identity provider for **${domainName}**`
                                 )}
                             </div>
                             <InputFieldTwo
