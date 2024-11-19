@@ -7,7 +7,7 @@ import { CryptoProxy } from '@proton/crypto';
 import noop from '@proton/utils/noop';
 
 import { useGetPublicKeysForEmail } from '../../../../../app/store';
-import { ShareInviteeValdidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
+import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
 import { useShareInvitees } from './useShareInvitees';
 
 // Internal and proton account
@@ -153,7 +153,7 @@ describe('useShareInvitees', () => {
                 expect(result.current.invitees).toEqual([
                     {
                         ...inviteeInternal,
-                        error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.EXISTING_MEMBER),
+                        error: new ShareInviteeValidationError(VALIDATION_ERROR_TYPES.EXISTING_MEMBER),
                     },
                 ])
             );
@@ -171,7 +171,7 @@ describe('useShareInvitees', () => {
                     {
                         ...inviteeInternal,
                         email: 'lucienTest.com',
-                        error: new ShareInviteeValdidationError(VALIDATION_ERROR_TYPES.INVALID_EMAIL),
+                        error: new ShareInviteeValidationError(VALIDATION_ERROR_TYPES.INVALID_EMAIL),
                     },
                 ])
             );

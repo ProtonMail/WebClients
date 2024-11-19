@@ -8,8 +8,8 @@ import type { DriveEvent, DriveEvents } from '../../_events';
 import type { ESLink } from '../types';
 import { createItemId, generateOrder } from '../utils';
 
-export type SearchEventItem = ESItemEvent<ESLink>;
-export type SearchEvent = ESEvent<ESLink>;
+type SearchEventItem = ESItemEvent<ESLink>;
+type SearchEvent = ESEvent<ESLink>;
 
 /**
  * Formats regular events into a ESEvent batch that will be processed by ES lib

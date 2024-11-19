@@ -59,5 +59,3 @@ export const useActiveShare = () => {
     }
     return state;
 };
-
-export default useActiveShare;

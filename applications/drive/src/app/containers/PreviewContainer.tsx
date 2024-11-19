@@ -14,7 +14,7 @@ import SignatureIcon from '../components/SignatureIcon';
 import { useDetailsModal } from '../components/modals/DetailsModal';
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import useIsEditEnabled from '../components/sections/useIsEditEnabled';
-import useActiveShare from '../hooks/drive/useActiveShare';
+import { useActiveShare } from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';
 import { useActions, useDriveSharingFlags, useFileView } from '../store';
 import { useOpenInDocs } from '../store/_documents';

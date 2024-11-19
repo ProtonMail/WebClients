@@ -7,12 +7,12 @@ import { APPS } from '@proton/shared/lib/constants';
  * by pressing Bookmark or Make Copy button. The `action` param in the URL will tell us where to pick back up once
  * we're back in Docs.
  */
-export enum RedirectAction {
+enum RedirectAction {
     Bookmark = 'bookmark',
     MakeCopy = 'make-copy',
 }
 
-export type DocumentAction =
+type DocumentAction =
     | {
           mode: 'open' | 'convert' | 'download' | 'history';
           linkId: string;

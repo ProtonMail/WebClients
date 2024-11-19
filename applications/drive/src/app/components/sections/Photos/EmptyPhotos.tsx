@@ -37,5 +37,3 @@ export const EmptyPhotos: FC<Props> = () => {
         </DriveEmptyView>
     );
 };
-
-export default EmptyPhotos;

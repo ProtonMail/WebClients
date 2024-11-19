@@ -23,8 +23,6 @@ export enum ExperimentGroup {
 
 export enum Features {
     mountToFirstItemRendered = 'mountToFirstItemRendered',
-    totalSizeComputation = 'totalSizeComputation',
-    sharingLoadLinksByVolume = 'sharingLoadLinksByVolume',
 }
 
 /**

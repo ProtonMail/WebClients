@@ -21,7 +21,7 @@ import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 
-import useActiveShare from '../../hooks/drive/useActiveShare';
+import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { useFileUploadInput } from '../../store';
 import { useFileSharingModal } from '../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { useLinkSharingModal } from '../modals/ShareLinkModal/ShareLinkModal';

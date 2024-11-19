@@ -5,7 +5,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 /**
  * volumeId -> [shareId01, shareId02]
  */
-export type VolumesState = Map<string, Set<string>>;
+type VolumesState = Map<string, Set<string>>;
 
 /**
  * Stores volume -> share associations.
