@@ -44,6 +44,7 @@ export enum Actions {
     RedirectToCorrectContextShare = 'redirectToCorrectContextShare',
     RedirectToCorrectAcceptInvitation = 'RedirectToCorrectAcceptInvitation',
     AddToBookmarkTriggeredModal = 'addToBookmarkTriggeredModal',
+    DismissDocsSuggestionsOnboardingModal = 'dismissDocsSuggestionsOnboardingModal',
     // onboarding actions
     OnboardingV2Shown = 'onboardingV2Shown',
     OnboardingV2InstallMacApp = 'onboardingV2InstallMacApp',
