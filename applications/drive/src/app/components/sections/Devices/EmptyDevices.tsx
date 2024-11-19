@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import emptyDevicesImg from '@proton/styles/assets/img/illustrations/empty-devices.svg';
 
-import useDesktopDownloads from '../../../hooks/drive/useDesktopDownloads';
+import { useDesktopDownloads } from '../../../hooks/drive/useDesktopDownloads';
 import { DriveEmptyView } from '../../layout/DriveEmptyView';
 
 type Props = {};

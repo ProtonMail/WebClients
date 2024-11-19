@@ -12,7 +12,7 @@ import { saveUrlPasswordForRedirection } from '../../../utils/url/password';
 
 import './UserInfo.scss';
 
-export interface Props {
+interface Props {
     user: UserModel;
 }
 

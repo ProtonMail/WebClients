@@ -7,7 +7,7 @@ import { ThumbnailType } from './interface';
 import { scaleSvgFile } from './svg';
 import { getVideoInfo } from './video';
 
-export interface ThumbnailGenerator {
+interface ThumbnailGenerator {
     (
         file: Blob,
         thumbnailTypes: ThumbnailType[] | never,

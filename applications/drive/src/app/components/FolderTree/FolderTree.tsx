@@ -5,7 +5,7 @@ import { TableRowBusy } from '@proton/components';
 import type { DecryptedLink, TreeItem } from '../../store';
 import ExpandableRow from './ExpandableRow';
 import { FloatingEllipsisContext } from './FloatingEllipsisContext';
-import useFloatingEllipsisContext from './hooks/useFloatingEllipsisContext';
+import { useFloatingEllipsisContext } from './hooks/useFloatingEllipsisContext';
 
 interface Props {
     treeItems: TreeItem | TreeItem[];
