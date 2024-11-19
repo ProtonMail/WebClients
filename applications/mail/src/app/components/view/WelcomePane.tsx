@@ -4,19 +4,16 @@ import * as React from 'react';
 import type { Location } from 'history';
 import { c, msgid } from 'ttag';
 
+import { useUser } from '@proton/account/user/hooks';
 import { Loader, useTheme } from '@proton/components';
-import { getPlaceholderSrc } from '@proton/mail';
+import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import envelopeDark from '@proton/styles/assets/img/placeholders/inbox-cool-dark.svg';
-import envelopeLight from '@proton/styles/assets/img/placeholders/inbox-cool-light.svg';
-import envelopeWarm from '@proton/styles/assets/img/placeholders/inbox-warm-light.svg';
 import capitalize from '@proton/utils/capitalize';
 
 import { getNUnreadConversationsText, getNUnreadMessagesText } from 'proton-mail/helpers/text';
 
-import { useUser } from '@proton/account/user/hooks';
 import { isConversationMode } from '../../helpers/mailSettings';
 
 interface ContainerProps {
@@ -86,11 +83,9 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
             <Container>
                 <div className="text-rg mb-4">
                     <img
-                        src={getPlaceholderSrc({
+                        src={getInboxEmptyPlaceholder({
+                            size: total,
                             theme: theme.information.theme,
-                            warmLight: envelopeWarm,
-                            coolLight: envelopeLight,
-                            coolDark: envelopeDark,
                         })}
                         height={128}
                         className="w-auto"
