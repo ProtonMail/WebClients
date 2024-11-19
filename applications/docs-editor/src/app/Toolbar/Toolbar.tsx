@@ -82,6 +82,7 @@ import type { BlockType } from '../Plugins/BlockTypePlugin'
 import { blockTypeToBlockName, SET_BLOCK_TYPE_COMMAND } from '../Plugins/BlockTypePlugin'
 import { EditorEvent, TooltipKey, useTooltipOnce } from '@proton/docs-shared'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
+import { EditorSystemMode } from '@proton/docs-shared'
 import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
 import { SpotlightIllustration } from '../Icons/SpotlightIllustration'
 import { InteractionDropdownButton } from './InteractionDropdownButton'
@@ -106,6 +107,7 @@ function isMobile() {
 
 export default function DocumentEditorToolbar({
   userMode,
+  systemMode,
   onUserModeChange,
   hasEditAccess,
   isPreviewModeToolbar = false,
@@ -113,6 +115,7 @@ export default function DocumentEditorToolbar({
   isEditorHidden,
 }: {
   userMode: EditorUserMode
+  systemMode: EditorSystemMode
   onUserModeChange: (mode: EditorUserMode) => void
   hasEditAccess: boolean
   isPreviewModeToolbar?: boolean
@@ -640,10 +643,12 @@ export default function DocumentEditorToolbar({
   const isPreviewMode = userMode === EditorUserMode.Preview
   const isSuggestionMode = userMode === EditorUserMode.Suggest
 
-  const { shouldShowTooltip: shouldShowSuggestionModeSpotlight } = useTooltipOnce(
+  const { shouldShowTooltip: suggestionTooltipNotShownPreviously } = useTooltipOnce(
     TooltipKey.DocsSuggestionModeSpotlight,
     new Date('2024-11-22'),
   )
+
+  const shouldShowSuggestionTooltip = systemMode !== EditorSystemMode.PublicView && suggestionTooltipNotShownPreviously
 
   const buttonsContainerRef = useRef<HTMLDivElement | null>(null)
   const [visibleButtons, setVisibleButtons] = useState<Record<string, boolean>>({})
@@ -1397,7 +1402,7 @@ export default function DocumentEditorToolbar({
         </SimpleDropdown>
         {!isEditorHidden && (
           <Spotlight
-            show={shouldShowSuggestionModeSpotlight}
+            show={shouldShowSuggestionTooltip}
             content={
               <div className="flex items-center gap-4 md:flex-nowrap">
                 <SpotlightIllustration className="h-12 w-12 shrink-0" />
