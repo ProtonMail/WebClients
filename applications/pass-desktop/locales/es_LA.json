@@ -481,9 +481,6 @@
       "See members": [
         "Ver miembros"
       ],
-      "Select": [
-        "Seleccionar"
-      ],
       "Send invite": [
         "Enviar invitación"
       ],
@@ -656,7 +653,7 @@
         "Black Friday"
       ],
       "Pay once and get ${ lifetimeAccessJSX } to Pass Plus and SimpleLogin. Only ${ relativePrice }.": [
-        "Pague una vez y obtén ${ lifetimeAccessJSX } a Pass Plus y SimpleLogin. Solo por ${ relativePrice }."
+        "Pague una vez y obtenga ${ lifetimeAccessJSX } a Pass Plus y SimpleLogin. Solo por ${ relativePrice }."
       ],
       "Save up to ${ discountJSX } on Pass Family. Only ${ relativePrice }/month.": [
         "Ahorre hasta un ${ discountJSX } con Pass Family. Solo por ${ relativePrice }/mes."
@@ -794,10 +791,7 @@
         "No se pudieron determinar los destinatarios del recurso compartido"
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
-        "No se pudieron recuperar las invitaciones de usuario para labóveda «${ vaultName }»."
-      ],
-      "Could not update settings at the moment. Please try again later.": [
-        "No se pudieron actualizar las configuraciones en este momento. Inténtelo de nuevo más tarde."
+        "No se pudieron recuperar las invitaciones de usuario para la bóveda «${ vaultName }»."
       ],
       "Could not validate addresses at the moment.": [
         "No se pudieron validar las direcciones por el momento."
@@ -1168,7 +1162,8 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
-      "${ count } invites successfully sent": [
+      "${ count } invite successfully sent": [
+        "${ count } invitación enviada",
         "${ count } invitaciones enviadas"
       ],
       "${ count } time": [
@@ -1325,9 +1320,6 @@
       ],
       "Change your password": [
         "Cambie la contraseña"
-      ],
-      "Choose your preferred look and feel.": [
-        "Elija su aspecto preferido."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme su contraseña adicional para proceder con la eliminación."
@@ -1512,9 +1504,6 @@
       "Invite successfully resent": [
         "La invitación fue enviada."
       ],
-      "Invite successfully sent": [
-        "La invitación fue enviada."
-      ],
       "invites you to access items in": [
         "le invita a acceder a elementos de"
       ],
@@ -1578,9 +1567,6 @@
       ],
       "Low Priority": [
         "Prioridad baja"
-      ],
-      "Make it your own": [
-        "Personalice la aplicación"
       ],
       "me": [
         "conmigo"
@@ -2032,7 +2018,7 @@
         "No se le notificará las vulneraciones de datos para esta dirección de correo electrónico."
       ],
       "You will no longer have access to sharing, 2FA, credit card and other advanced features in ${ PASS_APP_NAME }": [
-        "Ya no tendrá acceso a la compartición, autenticación de 2 factores (2FA), tarjetas de débito o crédito y otras funciones avanzadas en ${ PASS_APP_NAME }."
+        "Ya no tendrá acceso a compartir, autenticación de dos factores (2FA), tarjetas de débito o crédito y otras funciones avanzadas en ${ PASS_APP_NAME }."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Usará este PIN para desbloquear ${ PASS_APP_NAME } automáticamente una vez que pase el tiempo de inactividad."
@@ -2208,6 +2194,9 @@
       "Cards": [
         "Tarjetas"
       ],
+      "Choose unlock method": [
+        "Elija el método de desbloqueo"
+      ],
       "Choose your preferred look and feel.": [
         "Elija su aspecto preferido."
       ],
@@ -2376,6 +2365,9 @@
       "Generic CSV": [
         "CSV genérico"
       ],
+      "Get Started": [
+        "Comenzar"
+      ],
       "Get the extension for your browser.": [
         "Obtenga la extensión para su navegador."
       ],
@@ -2432,6 +2424,9 @@
       ],
       "Install and continue": [
         "Instalar y continuar"
+      ],
+      "Install extension": [
+        "Instale la extensión"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -2673,6 +2668,9 @@
       "Select your password manager": [
         "Seleccione su gestor de contraseña"
       ],
+      "Select your theme": [
+        "Seleccione su tema"
+      ],
       "Selected": [
         "Seleccionado"
       ],
@@ -2886,7 +2884,7 @@
       ],
       "You can drag and drop the selected item to another vault": [
         "Puede arrastrar y soltar el elemento seleccionado en otra bóveda.",
-        "Puedes arrastrar y soltar los elementos seleccionados en otra bóveda."
+        "Puede arrastrar y soltar los elementos seleccionados en otra bóveda."
       ],
       "You selected ${ semiboldText } in this vault.": [
         "Seleccionó ${ semiboldText } en esta bóveda."
@@ -3494,11 +3492,11 @@
         "¿En verdad desea mover ${ trashedItemsCount } elementos a la papelera?"
       ],
       "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "¿Está seguro de que quiere eliminar permanentemente ${ deletedItemsCount } elemento?",
-        "¿Está seguro de que quiere eliminar permanentemente ${ deletedItemsCount } elementos?"
+        "¿En verdad desea eliminar permanentemente ${ deletedItemsCount } elemento?",
+        "¿En verdad desea eliminar permanentemente ${ deletedItemsCount } elementos?"
       ],
       "Are you sure you want to permanently delete this item?": [
-        "¿Estás seguro de querer eliminar permanentemente este elemento?"
+        "¿En verdad desea eliminar permanentemente este elemento?"
       ],
       "At least one email address is required": [
         "Al menos se requiere una dirección de correo electrónico"

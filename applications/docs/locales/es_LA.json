@@ -510,6 +510,9 @@
       "Reset to default": [
         "Restablecer valores por defecto"
       ],
+      "Restore version": [
+        "Restaurar versión"
+      ],
       "Retry": [
         "Reintentar"
       ],
@@ -923,7 +926,7 @@
         "Los descuentos se basan en los precios mensuales estándar."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compra Pass Family o Unlimited, su suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
+        "Si compra Pass Family o Unlimited, su suscripción se renovará automáticamente con el precio reducido y la duración estándar al final del ciclo de facturación."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "La suscripción se renovará automáticamente con la misma tarifa estándar con descuento y duración al término del ciclo de facturación."
@@ -3763,7 +3766,7 @@
         "${ groupCounts } grupo encontrado"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "L'oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+        "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de su suscripción ${ planTitle } se mantienen sin cambios."
@@ -4345,9 +4348,6 @@
       "No version history available": [
         "No hay historial de versiones disponible"
       ],
-      "No version history batches available": [
-        "No hay lotes de historial de versiones disponibles"
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ninguna de las claves cargadas son válidas para cifrar. Para enviar mensajes a esta dirección, cargue una clave válida o desactive \"Cifrar correos electrónicos\"."
       ],
@@ -4430,8 +4430,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tome en cuenta que este proceso puede tardar algún tiempo dependiendo del tamaño de su libreta de direcciones."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ creditsRemaining } crédito restante.",
+        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Proporcione un nombre y una dirección de correo para crear un grupo."
@@ -4840,7 +4841,7 @@
         "La cuenta de ${ BRAND_NAME } está suspendida. No recibirá correos en el buzón. Los enlaces compartidos de Drive ya no están activos y no podrá cargar archivos nuevos. Para continuar usando la cuenta, pague cualquier factura pendiente."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Su suscripción ${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de su suscripción se añadirá a tu cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
+        "Su suscripción de${ PASS_SHORT_APP_NAME } Plus será reemplazada por ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restante de su suscripción se añadirá a su cuenta. La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "La cuenta tiene al menos una factura atrasada. Su acceso pronto será restringido. ${ payInvoiceLink }"
@@ -6035,6 +6036,9 @@
         "Historial de ${ options } día de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email"
@@ -6649,6 +6653,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de añadir a los mensajes y le permiten encontrarlos fácilmente o aplicarles filtros"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Acceso de por vida a las funciones premium de ${ PASS_APP_NAME } y SimpleLogin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Como una carpeta, una bóveda es una manera conveniente de organizar sus elementos."
       ],
@@ -7196,7 +7203,7 @@
         "Seleccione primero su estado de facturación"
       ],
       "Renews at ${ price }, cancel anytime.": [
-        "Se renueva por ${ price } y cancele cuando quieras."
+        "Se renueva por ${ price }, cancele cuando desee."
       ],
       "Select billing country to pay": [
         "Seleccione el país de facturación para pagar"

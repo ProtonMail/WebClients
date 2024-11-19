@@ -866,9 +866,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "${ payload.item.data.metadata.name }已忽略更新"
       ],
-      "${ count } invites successfully sent": [
-        "${ count }邀請成功寄出"
-      ],
       "${ count } time": [
         "${ count }次數"
       ],
@@ -1033,9 +1030,6 @@
       ],
       "Invite successfully resent": [
         "邀請已成功重新傳送"
-      ],
-      "Invite successfully sent": [
-        "邀請已成功傳送"
       ],
       "invites you to access items in": [
         "邀請您存取項目於"

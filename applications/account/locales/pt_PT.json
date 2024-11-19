@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -379,6 +379,9 @@
       "Delete your account": [
         "Eliminar a sua conta"
       ],
+      "Deny access": [
+        "Negar o acesso"
+      ],
       "Details": [
         "Detalhes"
       ],
@@ -658,6 +661,9 @@
       "Leave": [
         "Deixar"
       ],
+      "Leave group": [
+        "Deixar o grupo"
+      ],
       "Let's talk": [
         "Vamos conversar"
       ],
@@ -790,11 +796,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Refresh the page": [
         "Actualizar a página"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Reject": [
         "Rejeitar"
@@ -1008,6 +1014,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Show all": [
+        "Mostrar tudo"
       ],
       "Show less": [
         "Mostrar menos"
@@ -1424,6 +1433,11 @@
         "Aplicações ${ BRAND_NAME }"
       ]
     },
+    "Assistant option": {
+      "Run on device": [
+        "Executar no dispositivo"
+      ]
+    },
     "Assistant toggle": {
       "Buy now": [
         "Comprar agora"
@@ -1661,6 +1675,9 @@
     "BF2024: Offers": {
       "for ${ durationDeal }": [
         "por ${ durationDeal }"
+      ],
+      "forever": [
+        "para sempre"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }. "
@@ -2028,6 +2045,9 @@
       "${ users } user": [
         "${ users } utilizador",
         "${ users } utilizadores"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mês",
@@ -2565,6 +2585,9 @@
       "Dominican Republic": [
         "República Dominicana"
       ],
+      "East Timor": [
+        "Timor Leste"
+      ],
       "Ecuador": [
         "Equador"
       ],
@@ -3033,6 +3056,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard e Jan Mayen"
       ],
+      "Swaziland": [
+        "Suazilândia"
+      ],
       "Sweden": [
         "Suécia"
       ],
@@ -3491,6 +3517,11 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Remover o desconto"
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb para Debian/Ubuntu"
@@ -3515,9 +3546,17 @@
         "Apoio ao cliente prioritário"
       ]
     },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de armazenamento"
+      ],
+      "2 users": [
+        "2 utilizadores"
+      ]
+    },
     "duoplan2024: SubTitle": {
       "Double your storage": [
-        "Duplicar o seu armazenamento"
+        "Duplique o seu armazenamento"
       ]
     },
     "Duration": {
@@ -3666,6 +3705,12 @@
       ],
       "Resubscribe": [
         "Renovar a subscrição"
+      ],
+      "Unsubscribe": [
+        "Cancelar a subscrição"
+      ],
+      "Unsubscribe?": [
+        "Cancelar a subscrição?"
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Quais e-mails deseja receber da ${ BRAND_NAME }?"
@@ -3898,6 +3943,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Aviso"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Sem nome"
       ]
     },
     "Error": {
@@ -4798,6 +4848,9 @@
       "Got it": [
         "Entendido"
       ],
+      "Invite a user": [
+        "Convidar um utilizador"
+      ],
       "Invite an existing ${ BRAND_NAME } user": [
         "Convidar um utilizador do ${ BRAND_NAME } existente"
       ],
@@ -4846,8 +4899,14 @@
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
       ],
+      "Leave Duo plan": [
+        "Deixar o plano Duo"
+      ],
       "Leave Family plan": [
         "Deixar o plano Family"
+      ],
+      "Manage addresses": [
+        "Gerir endereços"
       ],
       "Manage user accounts": [
         "Gerir as contas dos utilizadores"
@@ -5043,6 +5102,9 @@
     "fido2: Action": {
       "Delete key": [
         "Eliminar a chave"
+      ],
+      "New security key": [
+        "Nova chave de segurança"
       ]
     },
     "fido2: Error": {
@@ -5123,6 +5185,9 @@
       ],
       "Security key registered": [
         "A chave de segurança foi registada."
+      ],
+      "Security keys": [
+        "Chaves de segurança"
       ]
     },
     "file size format": {
@@ -5422,6 +5487,11 @@
         "Serviços"
       ]
     },
+    "Group address title": {
+      "Group address": [
+        "Endereço do grupo"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } membro",
@@ -5431,11 +5501,19 @@
     "Group state": {
       "Active": [
         "Ativo"
+      ],
+      "Unanswered": [
+        "Sem resposta"
       ]
     },
     "group_invite_2024: Info": {
       "You can safely close this tab.": [
         "Pode fechar este separador com segurança."
+      ]
+    },
+    "group_invite_2024: Title": {
+      "for ${ email }": [
+        "para ${ email }"
       ]
     },
     "Header": {
@@ -6493,11 +6571,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimine quaisquer outros registos MX ou certifique-se que a prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
@@ -7244,9 +7322,6 @@
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Mantenha-o seguro. Vai precisar dele para aceder à sua conta e descodificar os seus dados em caso de reposição de uma palavra-passe."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Tenha em atenção que, ao clicar no botão Confirmar, a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
-      ],
       "Please open the document to view it.": [
         "Por favor, abra o documento para o visualizar."
       ],
@@ -7581,7 +7656,7 @@
       ],
       "The following address is unavailable.": [
         "O seguinte endereço é indisponível.",
-        "Os seguintes endereços são indisponíveis."
+        "Os seguintes endereços estão indisponíveis."
       ],
       "The following address was not created.": [
         "O endereço seguinte não foi criado.",
@@ -7868,6 +7943,9 @@
       ],
       "username": [
         "nome de utilizador"
+      ],
+      "Username": [
+        "Nome de utilizador"
       ],
       "Users": [
         "Utilizadores"
@@ -8413,6 +8491,9 @@
       "Other": [
         "Outro"
       ],
+      "Product": [
+        "Produto"
+      ],
       "Refund": [
         "Reembolso"
       ],
@@ -8734,6 +8815,9 @@
       "15 minutes": [
         "15 minutos"
       ],
+      "2 minutes": [
+        "2 minutos"
+      ],
       "30 minutes": [
         "30 minutos"
       ],
@@ -8805,6 +8889,9 @@
       ],
       "And": [
         "E"
+      ],
+      "Anderson": [
+        "Ferreira"
       ],
       "ANY": [
         "QUALQUER"
@@ -9163,6 +9250,12 @@
       "Gift code": [
         "Código de oferta"
       ],
+      "Group address": [
+        "Endereço do grupo"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
       "Group name": [
         "Nome do grupo"
       ],
@@ -9171,6 +9264,9 @@
       ],
       "I understand the risk": [
         "Eu compreendo o risco."
+      ],
+      "IBAN": [
+        "IBAN"
       ],
       "IF": [
         "SE"
@@ -9409,6 +9505,9 @@
       "Public certificate (X.509)": [
         "Certificado público (X.509)"
       ],
+      "Purpose": [
+        "Propósito"
+      ],
       "Read": [
         "Lido"
       ],
@@ -9531,6 +9630,9 @@
       ],
       "Then": [
         "Então"
+      ],
+      "Thomas": [
+        "Andrea"
       ],
       "Time format": [
         "Formato da hora"
@@ -9768,6 +9870,9 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Registo de atividades"
+      ],
       "Add a gift code": [
         "Adicionar código de oferta"
       ],
@@ -10149,11 +10254,17 @@
       "Brazilian real": [
         "Real brasileiro"
       ],
+      "British pound": [
+        "Libra britânica"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franco suíço"
+      ],
+      "US Dollar": [
+        "Dólar dos Estados Unidos"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -10359,6 +10470,26 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10386,26 +10517,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -10497,6 +10608,9 @@
       "1 user": [
         "1 utilizador"
       ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
       "24/7 support": [
         "Apoio ao cliente 24/7"
       ],
@@ -10538,6 +10652,9 @@
       ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
+      ],
+      "Breach alerts": [
+        "Alertas de violação"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -10589,6 +10706,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suporte a clientes de e-mail (por IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupos de e-mails"
       ],
       "Enables HIPAA compliance": [
         "Permite a conformidade com a HIPAA"
@@ -10660,6 +10780,9 @@
       "Password health": [
         "Estado da palavras-passe"
       ],
+      "Password manager": [
+        "Gestor de palavras-passe"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
@@ -10730,6 +10853,9 @@
       ],
       "Tailored to your needs": [
         "Personalizado de acordo com as suas necessidades"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticação em dois fatores"
@@ -10953,6 +11079,14 @@
         "O seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminar conta?"
@@ -10971,14 +11105,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -11558,6 +11684,11 @@
         "UDP"
       ]
     },
+    "option": {
+      "Group members": [
+        "Membros do grupo"
+      ]
+    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 segundos"
@@ -11935,6 +12066,9 @@
       "${ n } user account": [
         "${ n } conta de utilizador",
         "${ n } contas de utilizador"
+      ],
+      "Activity log": [
+        "Registo de atividades"
       ]
     },
     "passwordless": {
@@ -11967,11 +12101,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferência bancária"
+      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilizar o nome da empresa"
+      ],
+      "Use personal name": [
+        "Utilizar um nome pessoal"
       ]
     },
     "Payments": {
@@ -12418,6 +12563,9 @@
       ]
     },
     "saml: Title": {
+      "It works!": [
+        "Funciona!"
+      ],
       "Test SAML configuration": [
         "Testar a configuração SAML"
       ]
@@ -13038,6 +13186,9 @@
       "/ month": [
         "/ mês"
       ],
+      "/month": [
+        "/mês"
+      ],
       "1 year": [
         "1 ano"
       ],
@@ -13127,6 +13278,49 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convidar amigos para ${ BRAND_NAME }"
+      ]
+    },
+    "sso": {
+      "Approve": [
+        "Aprovar"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Current device": [
+        "Dispositivo atual"
+      ],
+      "Deny": [
+        "Recusar"
+      ],
+      "Deny access": [
+        "Negar o acesso"
+      ],
+      "Devices available": [
+        "Dispositivos disponíveis"
+      ],
+      "Grant": [
+        "Conceder"
+      ],
+      "Grant access": [
+        "Conceder acesso"
+      ],
+      "Reject": [
+        "Rejeitar"
+      ],
+      "Remove": [
+        "Remover"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
+      ]
+    },
+    "sso: auth device state": {
+      "Signed out": [
+        "Sessão terminada"
+      ],
+      "Unknown": [
+        "Desconhecido"
       ]
     },
     "Step in filter modal": {
@@ -13332,6 +13526,11 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Acesso vitalício"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -13370,6 +13569,9 @@
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } utilizador",
         "${ planNumberOfUsers } utilizadores"
+      ],
+      "2 users": [
+        "2 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
@@ -13560,6 +13762,9 @@
       ],
       "Default calendar updated": [
         "O calendário padrão foi atualizado."
+      ],
+      "Device deleted": [
+        "O dispositivo foi eliminado."
       ],
       "Display name updated": [
         "O nome a mostrar foi atualizado."
@@ -13967,6 +14172,9 @@
       "Action": [
         "Ação"
       ],
+      "Actions": [
+        "Ações"
+      ],
       "Activate @pm.me": [
         "Ativar @pm.me"
       ],
@@ -14093,11 +14301,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço Catch-All"
-      ],
       "Catch-All address": [
         "Endereço captura-tudo"
+      ],
+      "Catch-all address": [
+        "Endereço Catch-All"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -14295,6 +14503,9 @@
       ],
       "Details": [
         "Detalhes"
+      ],
+      "Device": [
+        "Dispositivo"
       ],
       "Device connected!": [
         "Dispositivo ligado!"
@@ -14553,6 +14764,9 @@
       "Increase your privacy with more addresses": [
         "Aumente a sua privacidade com mais endereços"
       ],
+      "Integrations": [
+        "Integrações"
+      ],
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
@@ -14583,6 +14797,9 @@
       "Leave ${ organisationName }?": [
         "Deixar ${ organisationName }?"
       ],
+      "Leave group?": [
+        "Deixar o grupo?"
+      ],
       "Link confirmation": [
         "Confirmação de hiperligação"
       ],
@@ -14611,7 +14828,7 @@
         "Nome"
       ],
       "Need more labels or folders?": [
-        "Precisa de mais rótulos ou pastas?"
+        "Precisa de mais etiquetas ou pastas?"
       ],
       "Network error": [
         "Erro de rede"
@@ -14627,6 +14844,9 @@
       ],
       "No recovery method": [
         "Nenhum método de recuperação"
+      ],
+      "Notifications": [
+        "Notificações"
       ],
       "Open": [
         "Abrir"
@@ -14709,6 +14929,9 @@
       "Profile": [
         "Perfil"
       ],
+      "QR Code": [
+        "Código QR"
+      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -14730,6 +14953,9 @@
       "Refer a friend": [
         "Indique um amigo"
       ],
+      "Reject device?": [
+        "Rejeitar o dispositivo?"
+      ],
       "Remove all members?": [
         "Remover todos os membros?"
       ],
@@ -14741,6 +14967,9 @@
       ],
       "Remove domain": [
         "Remover o domínio"
+      ],
+      "Remove server?": [
+        "Remover o servidor?"
       ],
       "Remove single sign-on": [
         "Remover o início de sessão único"
@@ -14888,6 +15117,9 @@
       ],
       "Start import process": [
         "Iniciar o processo de importação"
+      ],
+      "State": [
+        "Estado"
       ],
       "Status": [
         "Estado"
@@ -15348,8 +15580,17 @@
       ]
     },
     "unprivatization": {
+      "Approve all": [
+        "Aprovar tudo"
+      ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Cancel request": [
+        "Cancelar o pedido"
+      ],
+      "Private user": [
+        "Utilizador privado"
       ],
       "reject": [
         "rejeitar"
@@ -15618,11 +15859,24 @@
       ],
       "Get started": [
         "Começar"
+      ],
+      "Invite Friends": [
+        "Convidar amigos"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema com a carteira"
       ]
     },
     "wallet_signup_2024:Info": {
       "Coming soon": [
         "Em breve"
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Voltar para a carteira"
       ]
     },
     "wallet_signup_2024:Wallet Settings": {

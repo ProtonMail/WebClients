@@ -1068,10 +1068,10 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Выбраць усе"
       ],
-      "Select all": [
+      "Select All": [
         "Выбраць усе"
       ],
       "Select all messages": [
@@ -6746,6 +6746,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Калі вы ўпэўнены, што гэта памылка, звяжыцеся з намі ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
       ],
@@ -6816,10 +6819,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -7087,9 +7087,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Адкрыйце дакумент, каб паглядзець яго."
@@ -7697,6 +7694,12 @@
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Выяўлена стварэнне мноства бясплатных уліковых запісаў, а гэта парушае нашы ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Прапанаваныя тарыфныя планы, распрацаваны адмыслова для карыстальнікаў, якім патрабуецца больш за адзін адрас электроннай пошты. Перайдзіце на платны тарыфны план, каб зняць гэта абмежаванне."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Нам неабходна аўтэнтыфікаваць спосаб плацяжу з дапамогай вашага банка."
       ],
@@ -7947,7 +7950,7 @@
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. Лісты больш не будуць дастаўляцца ў вашу паштовую скрыню. Абагуленыя спасылкі на воблачным дыску больш не дзейнічаюць і вы не можаце запампоўваць новыя файлы. Для аднаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
       "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астача балансу вашай падпіскі будзе дададзена на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
+        "Ваша падпіска ${ PASS_SHORT_APP_NAME } будзе заменена на пажыццёвую падпіску ${ PASS_SHORT_APP_NAME }. Астатак балансу вашай падпіскі будзе дададзены на ваш рахунак. Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
@@ -8313,6 +8316,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступны. Паспрабуйце яшчэ раз пазней.)"
+      ],
+      "/month": [
+        "/месяц"
       ],
       "Actions": [
         "Дзеянні"
@@ -8974,6 +8980,9 @@
       "click here": [
         "націсніце тут"
       ],
+      "contact us": [
+        "звязацца з намі"
+      ],
       "Create a calendar linked to an active email address.": [
         "Стварыць каляндар, які звязаны з актыўным адрасам электроннай пошты."
       ],
@@ -9087,6 +9096,9 @@
       ],
       "Terms": [
         "Умовы"
+      ],
+      "terms of service": [
+        "умовы абслугоўвання"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Дадзены файл ICS змяшчае больш за адну падзею. Спампуйце яго і імпартуйце падзею ў ${ CALENDAR_APP_NAME }"
@@ -9504,6 +9516,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Атрымаць тарыфны план ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Пачніце з коштам у памеры ${ price }"
       ],
@@ -9643,6 +9658,9 @@
         "${ options }-дзённая гісторыя змяненняў версіі файла",
         "${ options }-дзённая гісторыя змяненняў версіі файла"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
@@ -9700,6 +9718,9 @@
       "Administration Panel": [
         "Панэль адміністратара"
       ],
+      "Advanced account protection": [
+        "Пашыраная абарона ўліковага запісу"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Пашыраныя функцыі псеўданіма (на платформе SimpleLogin)"
       ],
@@ -9729,6 +9750,9 @@
       ],
       "Available on all platforms": [
         "Даступна на ўсіх платформах"
+      ],
+      "Breach alerts": [
+        "Папярэджанні ўцечкі"
       ],
       "Calendar sharing": [
         "Абагулены каляндар"
@@ -10268,6 +10292,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Як і папка, сховішча з'яўляецца зручным спосаб арганізацыі вашых элементаў"
@@ -10900,6 +10927,9 @@
       ],
       "Please select your billing state first.": [
         "Спачатку выберыце ваш штат выстаўлення рахунку."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Падаўжаецца за ${ price }. Скасаваць можна ў любы час."
       ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
@@ -13160,6 +13190,9 @@
       ],
       "A filter with this name already exists": [
         "Фільтр з такой назвай ужо існуе"
+      ],
+      "Account locked": [
+        "Уліковы запіс заблакіраваны"
       ],
       "Account recovery": [
         "Аднаўленне ўліковага запісу"

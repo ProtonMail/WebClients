@@ -55,6 +55,9 @@
       "Add domain": [
         "Ajouter un domaine"
       ],
+      "Add external address": [
+        "Ajouter une adresse externe"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "Ajouter plus d'accès à ${ BRAND_NAME } Scribe"
       ],
@@ -931,8 +934,9 @@
       "Sorry, this offer is not available with your current plan.": [
         "Cette offre n'est pas disponible avec votre abonnement actuel."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Cette offre n'est malheureusement pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de ${ discountPercentage } de réduction sur ${ plan.Title } en vous abonnant pour ${ cycle } mois.",
+        "Cette offre n'est malheureusement pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de ${ discountPercentage } de réduction sur ${ plan.Title } en vous abonnant pour ${ cycle } mois."
       ]
     },
     "bf2023: Offers": {
@@ -3693,6 +3697,9 @@
         "Ajout de ${ addedServerCount } serveur de Passerelle",
         "Ajout de ${ addedServerCount } serveurs de Passerelle"
       ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "L'ajout d'une adresse e-mail externe désactivera le chiffrement de bout en bout pour toutes les communications par e-mail au sein de ce groupe. Voulez-vous continuer ?"
+      ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Ajout d'un serveur de Passerelle : ${ serverNumber } sur ${ total }",
         "Ajout de serveurs de Passerelle : ${ serverNumber } sur ${ total }"
@@ -3981,6 +3988,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "Activation le ${ formattedDateAndTime }"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "Le chiffrement de bout en bout des e-mails est désactivé pour ce groupe en raison d'adresses externes."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "Le chiffrement de bout en bout des e-mails du groupe est désactivé pour ce groupe. Il peut être activé."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "Le chiffrement de bout en bout des e-mails du groupe est activé pour ce groupe."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "L'URL des points de terminaison reçue de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)."
       ],
@@ -4167,9 +4183,6 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installez un fichier de configuration serveur pour vous connecter à un serveur spécifique du pays de votre choix."
       ],
-      "Internal user": [
-        "Utilisateur Interne"
-      ],
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
@@ -4195,7 +4208,7 @@
         "L'invitation a été refusée."
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
-        "Cela prend 10 jours pour modifier le pays d'un serveur. Assurez-vous que votre sélection est correcte."
+        "Cela prend 10 jours pour modifier le pays d'un serveur. Assurez-vous que votre sélection soit correcte."
       ],
       "Item autofilled in ${ vaultLink }": [
         "L'élément a été rempli automatiquement dans ${ vaultLink }."
@@ -4342,7 +4355,7 @@
         "Le nouvel utilisateur a été invité à rejoindre l'organisation."
       ],
       "New VPN connection data will stop being collected and shown.": [
-        "Les nouvelles données de connexion du VPN ne seront plus collectées et affichées."
+        "Les nouvelles données de connexion du VPN ne seront plus collectées ni affichées."
       ],
       "No addresses exist": [
         "Aucune adresse n'existe."
@@ -4453,8 +4466,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Saisissez la phrase de récupération de 12 mots associée à votre compte."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Après avoir cliqué sur le bouton Confirmer, il restera ${ remainingCreditsFormatted } crédits sur votre compte."
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédit restant.",
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
       ],
       "please open a support ticket": [
         "ouvrez un ticket de support"
@@ -5569,7 +5583,7 @@
         "Code-cadeau"
       ],
       "Group address": [
-        "Groupe d'adresses"
+        "Adresse du groupe"
       ],
       "Group members": [
         "Membres du groupe"
@@ -5786,7 +5800,7 @@
         "Informations système"
       ],
       "Thomas": [
-        "Andréa"
+        "Jean"
       ],
       "Two-password mode": [
         "Mode deux mots de passe"
@@ -8988,7 +9002,7 @@
         "Informations sur l’utilisateur :"
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Vous allez être redirigé vers votre service d'authentification unique tiers."
+        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ]
     },
     "sso: auth device state": {
@@ -9500,7 +9514,7 @@
         "Les utilisateurs ne pourront plus envoyer de messages."
       ],
       "Users won’t be able to upload files on their devices": [
-        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils."
+        "Les utilisateurs ne pourront pas importer les fichiers sur leurs appareils"
       ],
       "Version history": [
         "Historique des versions"
@@ -9791,6 +9805,12 @@
       "Creating config file for ${ serverName }": [
         "Création du fichier de configuration pour ${ serverName }"
       ],
+      "Group end-to-end email encryption disabled": [
+        "Le chiffrement de bout en bout des e-mails du groupe est désactivé."
+      ],
+      "Group end-to-end email encryption enabled": [
+        "Le chiffrement de bout en bout des e-mails du groupe est activé."
+      ],
       "Preference updated": [
         "La préférence a été mise à jour."
       ],
@@ -9978,6 +9998,9 @@
       ],
       "Add domain": [
         "Ajouter un domaine"
+      ],
+      "Add external address?": [
+        "Voulez-vous ajouter une adresse externe ?"
       ],
       "Add PayPal payment method": [
         "Ajouter le moyen de paiement PayPal"
@@ -10727,6 +10750,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "Adresse externe - désactive le chiffrement de bout en bout des e-mails pour ce groupe."
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "Adresse externe - désactive le chiffrement de bout en bout des e-mails pour ce groupe et aucune ressource chiffrée ne sera partagée avec cet utilisateur."
       ],
       "Group membership paused": [
         "L'adhésion au groupe a été suspendue."

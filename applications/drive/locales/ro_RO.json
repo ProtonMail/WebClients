@@ -1445,6 +1445,9 @@
         "${ users } utilizatori",
         "${ users } de utilizatori"
       ],
+      "Total": [
+        "Total"
+      ],
       "Total for ${ n } month": [
         "Total pentru o lună",
         "Total pentru ${ n } luni",
@@ -4171,6 +4174,9 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "Oferta pe viață a ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }. Prețul și data de reînnoire a abonamentului ${ planTitle } rămân neschimbate."
+      ],
       "${ pausedCount } paused": [
         "Unul suspendat",
         "${ pausedCount } suspendate",
@@ -5040,9 +5046,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "După apăsarea pe butonul de confirmare, contul va mai avea ${ remainingCreditsFormatted } (de) credite rămase."
-      ],
       "Please open the document to view it.": [
         "Deschideți documentul pentru a-l vedea."
       ],
@@ -5686,6 +5689,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Abonamentul ${ PASS_SHORT_APP_NAME } Plus va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
@@ -7011,6 +7017,9 @@
         "Istoric versiuni fișiere: ${ options } zile",
         "Istoric versiuni fișiere: ${ options } de zile"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin pe viață"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } cu ${ n } aliasuri hide-my-email",
@@ -7067,6 +7076,12 @@
       "Administration Panel": [
         "Panou de administrare"
       ],
+      "Advanced account protection": [
+        "Protecție avansată a contului"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Funcții avansate alias (furnizate de SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Toate produsele și funcțiile ${ BRAND_NAME }"
       ],
@@ -7093,6 +7108,9 @@
       ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
+      ],
+      "Breach alerts": [
+        "Alerte breșe"
       ],
       "Calendar sharing": [
         "Partajare calendar"
@@ -7586,6 +7604,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Domenii personale pentru aliasuri, conturi suplimentare, posibilitatea de a trimite mesaje de la aliasuri și multe altele"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
       ],
@@ -7621,6 +7642,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etichetele sunt etichete simple pe care le puteți adăuga la mesaje pentru a le face mai ușor de găsit sau de aplicat filtre."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Acces pe viață la funcțiile premium ale ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Ca și un folder, un seif este un mod convenient de a vă organiza articolele."
@@ -8062,11 +8086,6 @@
         "Aceste articole nu au fost eliminate din listă.",
         "Aceste articole nu au fost eliminate din listă."
       ],
-      "This item was succefully removed from your list": [
-        "Acest articol a fost eliminat din listă.",
-        "Aceste articole au fost eliminate din listă.",
-        "Aceste articole au fost eliminate din listă."
-      ],
       "Trash failed to be emptied": [
         "Coșul de gunoi nu s-a putut goli"
       ],
@@ -8370,8 +8389,14 @@
         "${ n } conturi de utilizator",
         "${ n } de conturi de utilizator"
       ],
+      "Activity log": [
+        "Jurnal activitate"
+      ],
       "Admin panel to manage users and subscription": [
         "Panou de administrare pentru a gestiona utilizatorii și abonamentul"
+      ],
+      "Team policies": [
+        "Politicile echipei"
       ]
     },
     "PassFamilyPlan2024": {
@@ -8466,6 +8491,9 @@
       ],
       "Please select your billing state first.": [
         "Selectați statul de facturare mai întâi."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Reînnoiți cu ${ price }, anulați oricând."
       ],
       "Select billing country to pay": [
         "Selectați țara de facturare pentru a plăti"
@@ -9447,6 +9475,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Abonamentul va fi retrogradat la sfârșitul perioadei de facturare."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Pe viață"
       ]
     },
     "Subscription price": {

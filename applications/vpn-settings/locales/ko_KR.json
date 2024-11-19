@@ -55,6 +55,9 @@
       "Add domain": [
         "도메인 추가"
       ],
+      "Add external address": [
+        "외부 주소 추가"
+      ],
       "Add more ${ BRAND_NAME } Scribe seats": [
         "더 많은 ${ BRAND_NAME } Scribe 사용 권한 추가"
       ],
@@ -927,8 +930,8 @@
       "Sorry, this offer is not available with your current plan.": [
         "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
       ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "죄송하지만 이 제안은 현재 플랜으로 받을 수 없습니다. 하지만 ${ plan.Title }(을)를 ${ cycle }개월간 구독하면 ${ discountPercentage } 할인을 받을 수 있습니다."
       ]
     },
     "bf2023: Offers": {
@@ -3538,7 +3541,7 @@
         "${ number }개 서버"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
-        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
+        "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 없으며 ${ PASS_SHORT_APP_NAME }의 평생 이용권의 일회성 결제입니다."
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "${ PASS_SHORT_APP_NAME } 평생 딜은 갱신 가격이 존재하지 않으며, ${ PASS_SHORT_APP_NAME }의 평생 접근에 대한 일회성 지불입니다. 사용자의 ${ planTitle } 구독 갱신 가격과 날짜는 변경되지 않습니다."
@@ -3656,6 +3659,9 @@
       ],
       "Adding ${ addedServerCount } gateway server": [
         "${ addedServerCount }개 게이트웨이 서버 생성 중"
+      ],
+      "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
+        "외부 이메일 주소를 추가하면 저 그룹에서 모든 이메일 통신의 종단간 암호화가 비활성화 됩니다. 정말로 진행하시겠습니까?"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "게이트웨이 서버 생성 중: ${ serverNumber } / ${ total }"
@@ -3939,6 +3945,15 @@
       "Enabled on ${ formattedDateAndTime }": [
         "${ formattedDateAndTime }에 활성화됨"
       ],
+      "End-to-end email encryption is disabled for this group due to external addresses.": [
+        "외부 주소로 인해 이 그룹에서 이메일 종단간 암호화가 비활성화 되어있습니다."
+      ],
+      "End-to-end email encryption is disabled for this group. It can be enabled.": [
+        "이 그룹에서 이메일 종단간 암호화가 비활성화 되어있습니다. 활성화될 수 있습니다."
+      ],
+      "End-to-end email encryption is enabled for this group.": [
+        "이 그룹에 이메일 종단간 암호화가 활성회 되어있습니다."
+      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
@@ -4124,9 +4139,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "선택한 국가의 특정 서버에 연결하려면 서버 구성 파일을 설치하세요."
-      ],
-      "Internal user": [
-        "내부 사용자"
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
@@ -4409,9 +4421,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "회원님의 계정과 연계된 12자리 복구 구문을 입력해 주세요."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "확인 버튼을 누르면 계정에는 ${ remainingCreditsFormatted } 크레딧이 남게됩니다."
       ],
       "please open a support ticket": [
         "지원 티켓을 만들어 주세요"
@@ -5072,6 +5081,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
+      ],
+      "You will keep lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features if you cancel your subscription.": [
+        "구독을 취소하더라도 ${ PASS_APP_NAME }과 SimpleLogin의 프리미엄 기능에 평생 접근할 수 있습니다."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "해당 날짜부터 ${ planTitle }용 기능에 접근할 수 없게 됩니다."
@@ -6092,8 +6104,17 @@
       ]
     },
     "Monetary unit": {
+      "Australian dollar": [
+        "호주 달러"
+      ],
       "Brazilian real": [
         "브라질 헤알"
+      ],
+      "British pound": [
+        "영국 파운드"
+      ],
+      "Canadian dollar": [
+        "캐나다 달러"
       ],
       "Euro": [
         "유로"
@@ -6234,6 +6255,9 @@
       "${ options }-day file version history": [
         "${ options }일 파일 버전 기록"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin 평생 이용권"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ n }개의 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
       ],
@@ -6291,6 +6315,9 @@
       "Administration Panel": [
         "관리 패널"
       ],
+      "Advanced account protection": [
+        "향상된 계정 보호"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "고급 별칭 기능 (SimpleLogin 제공)"
       ],
@@ -6323,6 +6350,9 @@
       ],
       "Available on all platforms": [
         "모든 플랫폼에서 지원"
+      ],
+      "Breach alerts": [
+        "정보 유출 경고"
       ],
       "Calendar sharing": [
         "일정 공유"
@@ -6897,6 +6927,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "라벨은 메시지를 찾기 쉽게하거나 필터를 적용하기 위해 추가 할 수 있는 간단한 태그입니다"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "${ PASS_APP_NAME } + SimpleLogin 프리미엄 기능에 평생 접근"
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "금고는 폴더처럼 항목들을 쉽게 분류할 수 있습니다"
@@ -7716,6 +7749,9 @@
       ],
       "Processing payment": [
         "결제 처리 중"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "${ price }에 갱신되며 언제나 취소할 수 있습니다."
       ],
       "Select billing country to pay": [
         "결제를 청구할 국가 선택"
@@ -9646,6 +9682,12 @@
       "Creating config file for ${ serverName }": [
         "${ serverName } 파일 구성 생성 중"
       ],
+      "Group end-to-end email encryption disabled": [
+        "그룹 이메일 종단간 암호화 비활성화됨"
+      ],
+      "Group end-to-end email encryption enabled": [
+        "그룹 이메일 종단간 암호화 활성화됨"
+      ],
       "Preference updated": [
         "환경설정 업데이트 완료"
       ],
@@ -9829,6 +9871,9 @@
       ],
       "Add domain": [
         "도메인 추가"
+      ],
+      "Add external address?": [
+        "외부 주소를 추가할까요?"
       ],
       "Add PayPal payment method": [
         "PayPal을 결제 수단으로 추가"
@@ -10574,6 +10619,12 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
+      ],
+      "External address - disables end-to-end email encryption for this group": [
+        "외부 주소 - 이 그룹의 모든 이메일 종단간 암호화를 비활성화 합니다"
+      ],
+      "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
+        "외부 주소 - 이 그룹의 모든 이메일 종단간 안호화를 비활성화 하고 해당 사용자와 모든 암호화된 자료를 공유하지 않습니다"
       ],
       "Group membership paused": [
         "그룹 구성 권한 중단됨"

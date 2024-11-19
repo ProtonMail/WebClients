@@ -1062,10 +1062,10 @@
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Vybrať všetko"
       ],
-      "Select all": [
+      "Select All": [
         "Vybrať všetko"
       ],
       "Select all messages": [
@@ -1817,15 +1817,15 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou šifrovania end-to-end. Súčasťou sú 15 emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa online editor dokumentov, zálohu fotografií, históriu verzií, zdieľanie zašifrovaných súborov a ďalšie."
@@ -2275,7 +2275,7 @@
         "Ušetrite peniaze s ${ upsellPlanName }"
       ],
       "Secure personal and shared calendar": [
-        "Zabezpečený osobný a zdieľaný kalendár"
+        "Bezpečný osobný a zdieľaný kalendár"
       ],
       "Try ${ planName }": [
         "Vyskúšajte ${ planName }"
@@ -2293,6 +2293,9 @@
         "${ users } používatelia",
         "${ users } používateľov",
         "${ users } používateľov"
+      ],
+      "Total": [
+        "Celkom"
       ],
       "Total for ${ n } month": [
         "Celkom za ${ n } mesiac",
@@ -3685,7 +3688,7 @@
         "Ak chcete zabezpečiť čo najvyššiu bezpečnosť svojho účtu, nastavte frázu na obnovenie."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pri importovaní prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
+        "Pre importovanie prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
@@ -4401,7 +4404,7 @@
         "Odosielanie príloh je obmedzené, kým nedosiahnete limity svojho plánu alebo neprejdete na vyššiu verziu."
       ],
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
-        "Odosielanie príloh je obmedzené, kým prekračujete limity svojho plánu alebo kým si plán neupgradujete."
+        "Odosielanie príloh je obmedzené, kým prekračujete limity svojho plánu alebo pokiaľ neprejdete na vyššiu verziu."
       ],
       "Signature not verified": [
         "Podpis nebol overený"
@@ -4831,7 +4834,7 @@
     },
     "Error notification": {
       "Display name cannot be empty": [
-        "Zobrazovaný názov nemôže byť prázdny"
+        "Zobrazované meno nemôže byť prázdne"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -5321,6 +5324,18 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } na Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } deň",
+        "${ remainingDaysCount } dni",
+        "${ remainingDaysCount } dní",
+        "${ remainingDaysCount } dní"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Zostáva ${ remainingDaysCount } deň",
+        "Zostávajú ${ remainingDaysCount } dni",
+        "Zostáva ${ remainingDaysCount } dní",
+        "Zostáva ${ remainingDaysCount } dní"
+      ],
       "account logins": [
         "prihlásenia k účtom"
       ],
@@ -5351,6 +5366,9 @@
       "Close": [
         "Zatvoriť"
       ],
+      "Complete this checklist within ${ daysCount } to double your storage for free.": [
+        "Vyplňte tento kontrolný zoznam do ${ daysCount } a zdvojnásobte svoje úložisko zadarmo."
+      ],
       "Congratulations, you completed all the steps!": [
         "Gratulujeme, dokončili ste všetky kroky!"
       ],
@@ -5366,8 +5384,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Šifrovanie je také silné, že emaily môžete zobraziť iba vy a určení príjemcovia."
       ],
+      "Finish setup": [
+        "Dokončiť nastavenie"
+      ],
       "For your eyes only": [
         "Iba pre vaše oči"
+      ],
+      "Get more storage": [
+        "Získajte viac úložného priestoru"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získať mobilnú aplikáciu ${ MAIL_APP_NAME }"
@@ -5416,6 +5440,9 @@
       ],
       "Storage unlocked": [
         "Úložisko odomknuté"
+      ],
+      "Tasks to complete count": [
+        "Počet úloh na dokončenie"
       ],
       "This feature is currently unavailable": [
         "Táto funkcia je aktuálne nedostupná"
@@ -6039,6 +6066,12 @@
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "${ PASS_APP_NAME } poskytuje jednoduchý spôsob vytvárania prihlasovacích údajov na nedôveryhodných weboch tretích strán, kde nechcete zverejňovať svoju skutočnú emailovú adresu."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } doživotná služba nemá cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }. Cena a dátum obnovenia vášho predplatného ${ planTitle } zostávajú nezmenené."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
@@ -6700,6 +6733,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Ak sa domnievate, že sa stala chyba, kontaktujte nás, prosím, ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Zrušením nebude vaše predplatné ${ planTitle } obnovené, keď uplynie dňa ${ expiryDate } jeho platnosť."
       ],
@@ -6770,10 +6806,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7041,9 +7074,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornenie, tento proces môže trvať nejakú dobu v závislosti na veľkosti Vášho adresára."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Ak si chcete dokument pozrieť, otvorte ho, prosím."
@@ -7532,7 +7562,7 @@
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
       "Turn off to search only by date, name, email address, or subject line. To disable search message content (and delete messages downloaded to enable this feature), go to Settings.": [
-        "Vypnite pre vyhľadávania len podľa dátumu, mena, emailovej adresy alebo predmetu. Ak chcete vypnúť vyhľadávanie obsahu správ (a vymazať správy prevzaté na zapnutie tejto funkcie), prejdite do časti Nastavenia."
+        "Vypnite vyhľadávanie len podľa dátumu, mena, emailovej adresy alebo predmetu. Ak chcete vypnúť vyhľadávanie obsahu správ (a vymazať správy prevzaté na zapnutie tejto funkcie), prejdite do časti Nastavenia."
       ],
       "Turn on to search the content of your messages": [
         "Zapnite, ak chcete vyhľadávať v obsahu vašich správ"
@@ -7565,7 +7595,7 @@
         "Ak chcete pridať do svojho účtu viac adries, prejdite na vyšší plán."
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
-        "Upgradujte svoj plán a automaticky mažte správy, ktoré boli v koši a spame viac ako 30 dní."
+        "Prejdite na vyššiu verziu a automaticky mažte správy, ktoré boli v koši a spame viac ako 30 dní."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Upgradujte, aby ste mohli vytvárať viac priečinkov, filtrov a adries."
@@ -7650,6 +7680,12 @@
       ],
       "We couldn’t process your payment.": [
         "Vašu platbu sa nám nepodarilo spracovať."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Zistili sme vytvorenie viacerých bezplatných účtov, čo porušuje naše ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Máme plány navrhnuté špeciálne pre používateľov, ako ste vy, ktorí potrebujú viac ako jednu emailovú adresu.\nAk chcete odstrániť obmedzenia, môžete prejsť na platený plán."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Potrebujeme overiť spôsob platby vo vašej banke."
@@ -7899,6 +7935,9 @@
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Emaily už nie sú doručované do vašej schránky. Vaše odkazy na zdieľanie na Disku už nie sú aktívne a nemôžete nahrávať nové súbory. Ak chcete svoj účet naďalej používať, uhraďte všetky faktúry po splatnosti."
+      ],
+      "Your ${ PASS_SHORT_APP_NAME } Plus subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
+        "Vaše predplatné ${ PASS_SHORT_APP_NAME } Plus bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na vaše konto. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
@@ -8264,6 +8303,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
+      ],
+      "/month": [
+        "/mesiac"
       ],
       "Actions": [
         "Akcia"
@@ -8925,6 +8967,9 @@
       "click here": [
         "kliknite sem"
       ],
+      "contact us": [
+        "kontaktujte nás"
+      ],
       "Create a calendar linked to an active email address.": [
         "Vytvorte kalendár prepojený s aktívnou emailovou adresou."
       ],
@@ -9038,6 +9083,9 @@
       ],
       "Terms": [
         "Podmienky"
+      ],
+      "terms of service": [
+        "podmienky používania"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Tento ICS súbor obsahuje viac ako jednu udalosť. Prosím, stiahnite ho a importujte udalosti do ${ CALENDAR_APP_NAME }"
@@ -9455,6 +9503,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Získajte ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Začnite za ${ price }"
       ],
@@ -9594,6 +9645,9 @@
         "${ options }-dňová história verzií súborov",
         "${ options }-dňová história verzií súborov"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin navždy"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasom",
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
@@ -9651,6 +9705,12 @@
       "Administration Panel": [
         "Panel administrácie"
       ],
+      "Advanced account protection": [
+        "Pokročilá ochrana účtu"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "Pokročilé funkcie aliasov (založené na SimpleLogin)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Všetky ${ BRAND_NAME } produkty a funkcie"
       ],
@@ -9677,6 +9737,9 @@
       ],
       "Available on all platforms": [
         "K dispozícii na všetkých platformách"
+      ],
+      "Breach alerts": [
+        "Upozornenia na narušenie"
       ],
       "Calendar sharing": [
         "Zdieľanie kalendára"
@@ -10178,6 +10241,9 @@
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
       ],
+      "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
+        "Vlastné domény pre aliasy, ďalšie poštové schránky, možnosť odosielať emaily z aliasov a ďalšie"
+      ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
         "K súkromným bránam je možné pridať dedikované servery s vyhradenými IP adresami, ktoré umožňujú podrobnejšie nastavenie prístupu"
       ],
@@ -10213,6 +10279,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Štítky sú jednoduché značky, ktoré môžete pridať do správ, aby ste ich ľahšie našli alebo na ne použili filtre"
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Doživotný prístup k prémiovým funkciám ${ PASS_APP_NAME } + SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Podobne ako priečinok, aj trezor je pohodlný spôsob organizácie položiek."
@@ -10422,6 +10491,9 @@
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
       ],
+      "Meeting ID copied to clipboard": [
+        "ID schôdzky skopírované do schránky"
+      ],
       "Passcode copied to clipboard": [
         "Prístupový kód skopírovaný do schránky"
       ],
@@ -10458,7 +10530,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar.": [
-        "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: prezerajte si emailové správy a nastavenia, prezerajte a sťahujte svoje kontakty, zobrazujte a sťahujte všetky agendy, ku ktorým máte prístup z Google kalendára."
+        "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: zobraziť emailové správy a nastavenia, prezerať a sťahovať vaše kontakty, zobrazovať a sťahovať všetky agendy, ku ktorým máte prístup z Google kalendára."
       ]
     },
     "Onboarding List Placeholder": {
@@ -10580,6 +10652,9 @@
       ],
       "Protection from trackers": [
         "Ochrana pred sledovaním"
+      ],
+      "Replay introduction": [
+        "Znovu prejsť úvodom"
       ],
       "Skip": [
         "Preskočiť"
@@ -10734,16 +10809,22 @@
         "${ n } používateľských účtov",
         "${ n } používateľských účtov"
       ],
+      "Activity log": [
+        "Záznam aktivity"
+      ],
       "Admin panel to manage users and subscription": [
         "Panel správcu pre správu užívateľov a predplatného"
+      ],
+      "Team policies": [
+        "Tímové zásady"
       ]
     },
     "PassFamilyPlan2024": {
       "All premium features. 6 users. 1 easy subscription.": [
-        "Všetky prémiové funkcie. 6 používateľov. 1 jednoduché predplatné."
+        "Všetky prémiové funkcie. 6 používateľov. Jedno jednoduché predplatné."
       ],
       "Billed yearly at ${ yearlyPrice }. Save ${ yearlySavedPrice } with ${ passFamilyPlanName } (vs 6 individual ${ passPlusPlanName } subscriptions).": [
-        "Účtované ročne za ${ yearlyPrice }. Ušetrite ${ yearlySavedPrice } s ${ passFamilyPlanName } (oproti 6 individuálnym predplatným ${ passPlusPlanName })."
+        "Účtované ročne za ${ yearlyPrice }. Ušetríte ${ yearlySavedPrice } s ${ passFamilyPlanName } (oproti 6 individuálnym predplatným ${ passPlusPlanName })."
       ],
       "Exclusive offer available only to ${ PASS_APP_NAME } early supporters.": [
         "Exkluzívna ponuka dostupná iba pre včasných podporovateľov ${ PASS_APP_NAME }."
@@ -10830,6 +10911,9 @@
       ],
       "Please select your billing state first.": [
         "Najprv vyberte fakturačný štát, prosím."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Obnovuje sa za ${ price }, zrušiť môžete kedykoľvek."
       ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
@@ -12141,7 +12225,7 @@
         "Rozumiem"
       ],
       "Just sign in to your Apple App Store account, then select ${ subscriptions }.": [
-        "Prihláste sa do Apple Store a potom vyberte ${ subscriptions }."
+        "Stačí sa prihlásiť do účtu v Apple App Store a vybrať ${ subscriptions }."
       ],
       "Just sign in to your Play Store account, then press ${ subscriptions }.": [
         "Prihláste sa do Obchodu Play a potom stlačte ${ subscriptions }."
@@ -12162,6 +12246,11 @@
     "subscription downgrading info": {
       "The subscription will be downgraded at the end of the billing cycle.": [
         "Na konci fakturačného cyklu sa predplatné zníži."
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "Doživotne"
       ]
     },
     "Subscription price": {
@@ -12291,7 +12380,7 @@
         "Komplexná ochrana súkromia a zabezpečenia"
       ],
       "Dark web monitoring": [
-        "Sledovanie Dark webu"
+        "Monitorovanie Dark webu"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Podpora desktopovej aplikácie a emailového klienta (cez IMAP)"
@@ -12399,7 +12488,7 @@
         "Neobmedzené súkromie pre dvoch"
       ],
       "Upload any new files": [
-        "Nahrajte nové súbory"
+        "Nahrávať nové súbory"
       ],
       "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
         "Jediným zdrojom príjmov spoločnosti ${ BRAND_NAME } je užívateľské predplatné. Vaša podpora nám umožňuje zostať nezávislými, pokračovať v našom poslaní chrániť online súkromie a pomáhať aktivistom a organizáciám bojujúcim za slobodu."
@@ -13085,6 +13174,9 @@
       ],
       "A filter with this name already exists": [
         "Filter s týmto názvom už existuje"
+      ],
+      "Account locked": [
+        "Účet zamknutý"
       ],
       "Account recovery": [
         "Obnovenie účtu"
@@ -13964,7 +14056,7 @@
         "stabilná verzia"
       ],
       "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Táto verzia prehliadača TOR nie je podporovaná. Prosím, aktualizujte na najnovšiu ${ stableRelease }"
+        "Táto verzia TOR prehliadača nie je podporovaná. Prosím, aktualizujte na najnovšiu ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -14527,6 +14619,9 @@
     "Zoom Meeting": {
       "Meeting ID:": [
         "ID schôdzky:"
+      ],
+      "Passcode:": [
+        "Prístupový kód:"
       ]
     }
   }

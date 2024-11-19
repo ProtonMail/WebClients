@@ -481,9 +481,6 @@
       "See members": [
         "Üyeleri görüntüle"
       ],
-      "Select": [
-        "Seçin"
-      ],
       "Send invite": [
         "Davet gönder"
       ],
@@ -795,9 +792,6 @@
       ],
       "Could not retrieve user invites for the \"${ vaultName }\" vault": [
         "\"${ vaultName }\" kasası için kullanıcı davetleri alınamadı"
-      ],
-      "Could not update settings at the moment. Please try again later.": [
-        "Ayarlar şu anda güncellenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Could not validate addresses at the moment.": [
         "Adresler şu anda doğrulanamıyor."
@@ -1168,9 +1162,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
       ],
-      "${ count } invites successfully sent": [
-        "${ count } davetiye gönderildi"
-      ],
       "${ count } time": [
         "${ count } kez",
         "${ count } kez"
@@ -1325,9 +1316,6 @@
       ],
       "Change your password": [
         "Parolanızı değiştirin"
-      ],
-      "Choose your preferred look and feel.": [
-        "Kullanmak istediğiniz görünüm ve duyguyu seçin."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Kaldırma işlemini tamamlamak için ek parolanızı doğrulayın."
@@ -1512,9 +1500,6 @@
       "Invite successfully resent": [
         "Davet yeniden gönderildi"
       ],
-      "Invite successfully sent": [
-        "Davet gönderildi"
-      ],
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
       ],
@@ -1578,9 +1563,6 @@
       ],
       "Low Priority": [
         "Düşük Öncelik"
-      ],
-      "Make it your own": [
-        "Size özel yapın"
       ],
       "me": [
         "benim"
@@ -2208,6 +2190,9 @@
       "Cards": [
         "Kartlar"
       ],
+      "Choose unlock method": [
+        "Kilit açma yöntemini seçin"
+      ],
       "Choose your preferred look and feel.": [
         "Kullanmak istediğiniz görünüm ve duyguyu seçin."
       ],
@@ -2376,6 +2361,9 @@
       "Generic CSV": [
         "CSV dosyası"
       ],
+      "Get Started": [
+        "Başlayalım"
+      ],
       "Get the extension for your browser.": [
         "Tarayıcınıza uygun eklentiyi edinin."
       ],
@@ -2432,6 +2420,9 @@
       ],
       "Install and continue": [
         "Kur ve ilerle"
+      ],
+      "Install extension": [
+        "Eklentiyi kur"
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
@@ -2672,6 +2663,9 @@
       ],
       "Select your password manager": [
         "Parola yöneticinizi seçin"
+      ],
+      "Select your theme": [
+        "Temayı seçin"
       ],
       "Selected": [
         "Seçilmiş"

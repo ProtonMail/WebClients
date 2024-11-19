@@ -459,6 +459,9 @@
       "Expand URL": [
         "Expandera URL"
       ],
+      "Expand video conferencing widget": [
+        "Expandera widget för videokonferenser"
+      ],
       "Expiration time": [
         "Utgångstid"
       ],
@@ -955,6 +958,9 @@
       "Remove this label": [
         "Ta bort denna etikett"
       ],
+      "Remove zoom meeting": [
+        "Ta bort Zoom-möte"
+      ],
       "Replace": [
         "Ersätt"
       ],
@@ -1054,11 +1060,11 @@
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
       ],
-      "Select All": [
-        "Välj alla"
-      ],
       "Select all": [
         "Markera alla"
+      ],
+      "Select All": [
+        "Välj alla"
       ],
       "Select all messages": [
         "Markera alla meddelanden"
@@ -1759,6 +1765,9 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "Fakturerad med ${ amount } en gång"
+      ],
       "for ${ durationDeal }": [
         "för ${ durationDeal }"
       ],
@@ -3553,6 +3562,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } i inställningar."
       ],
+      "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
+        "${ PROTON_SENTINEL_NAME } skyddar ditt konto med dedikerad övervakning 24/7 av misstänkt aktivitet – inklusive eskalering till säkerhetsspecialister."
+      ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
       ],
@@ -4307,6 +4319,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Att skicka bilagor är begränsat tills du uppfyller dina paketgränser eller uppgraderar."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
+        "Att skicka bilagor är begränsat medan du överskrider dina paketgränser eller tills du uppgraderar ditt paket."
+      ],
       "Signature not verified": [
         "Signatur inte verifierad"
       ],
@@ -4471,6 +4486,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Du har nått det maximala antalet kalendrar."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Du har nått gränsen för antalet kontakter för ditt konto"
       ],
       "You must set a name": [
         "Du måste ange ett namn"
@@ -5318,6 +5336,9 @@
       "Storage unlocked": [
         "Lagringsutrymme Upplåst"
       ],
+      "Tasks to complete count": [
+        "Antal uppgifter att slutföra"
+      ],
       "This feature is currently unavailable": [
         "Denna funktion är för närvarande inte tillgänglig"
       ],
@@ -5879,6 +5900,9 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för åtkomst livet ut till ${ PASS_SHORT_APP_NAME }."
+      ],
+      "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
+        "${ PASS_SHORT_APP_NAME } livstidserbjudande har inget förnyelsepris, det är en engångsbetalning för livstidsåtkomst till ${ PASS_SHORT_APP_NAME }. Priset och datumet för förnyelse av din prenumeration på ${ planTitle } förblir oförändrade."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
@@ -6477,6 +6501,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Om du tror att vi har gjort ett misstag, ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
       ],
@@ -6545,8 +6572,7 @@
         "Initierar…"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -6763,6 +6789,9 @@
       ],
       "Organization size": [
         "Organisationens storlek"
+      ],
+      "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Våra varningar prioriterar säkerhet. Om du inte känner igen någon av intrångsinformationen kan du lugnt ignorera denna rapport."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vårt system flaggade detta meddelande som ett nätfiskeförsök. Kontrollera att det är betrott."
@@ -7402,6 +7431,12 @@
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
       ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Vi upptäckte skapandet av flera gratiskonton, vilket bryter mot våra ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Vi har paket designade specifikt för användare som dig som behöver mer än en e-postadress.\nFör att ta bort begränsningar kan du uppgradera till ett betalt paket."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi måste autentisera din betalningsmetod med din bank."
       ],
@@ -7979,6 +8014,9 @@
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
+      ],
+      "/month": [
+        "/månad"
       ],
       "Actions": [
         "Åtgärder"
@@ -8640,6 +8678,9 @@
       "click here": [
         "klicka här"
       ],
+      "contact us": [
+        "kontakta oss"
+      ],
       "Create a calendar linked to an active email address.": [
         "Skapa en kalender länkad till en aktiv e-postadress."
       ],
@@ -8753,6 +8794,9 @@
       ],
       "Terms": [
         "Villkor"
+      ],
+      "terms of service": [
+        "användarvillkor"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Denna ICS-fil innehåller mer än en händelse. Ladda ner den och importera händelserna i ${ CALENDAR_APP_NAME }"
@@ -9154,6 +9198,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
       ],
+      "Get ${ planTitle }": [
+        "Skaffa ${ planTitle }"
+      ],
       "Get started for ${ price }": [
         "Kom igång för ${ price }"
       ],
@@ -9261,6 +9308,9 @@
         "${ options }-dags filversionshistorik",
         "${ options }-dagars filversionshistorik"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin livstid"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias"
@@ -9313,6 +9363,9 @@
       "Administration Panel": [
         "Administrationspanel"
       ],
+      "Advanced account protection": [
+        "Avancerat kontoskydd"
+      ],
       "Advanced alias features (powered by SimpleLogin)": [
         "Avancerade funktioner för alias (drivs av SimpleLogin)"
       ],
@@ -9342,6 +9395,9 @@
       ],
       "Available on all platforms": [
         "Tillgängligt på alla plattformar"
+      ],
+      "Breach alerts": [
+        "Intrångsvarningar"
       ],
       "Calendar sharing": [
         "Kalenderdelning"
@@ -9866,6 +9922,9 @@
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketter är enkla märken som du kan lägga till i meddelanden för att göra dem lättare att hitta eller att tillämpa filter på"
       ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Livstidsåtkomst till premiumfunktioner för ${ PASS_APP_NAME } + SimpleLogin."
+      ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Liksom en mapp är ett valv ett bekvämt sätt att organisera dina objekt"
       ],
@@ -10072,6 +10131,9 @@
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
       ],
+      "Meeting host copied to clipboard": [
+        "Mötesvärd kopierad till urklipp"
+      ],
       "Meeting ID copied to clipboard": [
         "Mötes-ID kopierat till urklipp"
       ],
@@ -10191,6 +10253,9 @@
       ],
       "Forward Gmail messages to your inbox.": [
         "Vidarebefordra Gmail-meddelanden till din inkorg."
+      ],
+      "Get notified if your password is compromised.": [
+        "Bli aviserad om ditt lösenord har blivit komprometterat."
       ],
       "Get the desktop app": [
         "Skaffa appen för stationär dator"
@@ -10380,6 +10445,9 @@
       ],
       "Admin panel to manage users and subscription": [
         "Administratörspanel för att hantera användare och prenumeration"
+      ],
+      "Team policies": [
+        "Policy för team"
       ]
     },
     "PassFamilyPlan2024": {
@@ -10480,6 +10548,9 @@
       ],
       "Please select your billing state first.": [
         "Välj din delstat för fakturering först."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Förnyas med ${ price }, avbryt när som helst."
       ],
       "Select billing country to pay": [
         "Välj faktureringsland att betala"
@@ -11968,6 +12039,9 @@
       "Upload any new files": [
         "Ladda upp alla nya filer"
       ],
+      "User subscriptions are ${ BRAND_NAME }'s sole revenue. Your support keeps us independent, furthers our mission for online privacy, and aids activists and organizations fighting for freedom.": [
+        "Användarprenumerationer är ${ BRAND_NAME }s enda inkomst. Ditt stöd håller oss oberoende, främjar vårt uppdrag för integritet online och hjälper aktivister och organisationer som kämpar för frihet."
+      ],
       "Users won’t be able to manage their calendars": [
         "Användare kommer inte att kunna hantera sina kalendrar"
       ],
@@ -12575,6 +12649,9 @@
       ],
       "A filter with this name already exists": [
         "Ett filter med detta namn finns redan"
+      ],
+      "Account locked": [
+        "Konto låst"
       ],
       "Account recovery": [
         "Kontoåterställning"
@@ -13910,6 +13987,9 @@
       ],
       "Meeting ID:": [
         "Mötes-ID:"
+      ],
+      "Passcode:": [
+        "Lösenkod:"
       ]
     }
   }

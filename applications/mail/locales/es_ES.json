@@ -1060,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar todo"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar todo"
       ],
       "Select all messages": [
@@ -1717,7 +1717,7 @@
         "Autenticador 2FA integrado"
       ],
       "One-time payment, lifetime deal": [
-        "Un solo pago y una oferta de por vida"
+        "Un solo pago, una oferta de por vida"
       ],
       "Online document editor": [
         "Editor de documentos online"
@@ -1761,7 +1761,7 @@
         "Los descuentos se basan en la cuota estándar mensual."
       ],
       "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Si compras Pass Family o Unlimited, tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
+        "Si compras Pass Family o Unlimited, tu suscripción se renovará automáticamente al final del ciclo de facturación con el precio reducido y la duración normales."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "Tu suscripción se renovará automáticamente con el precio reducido estándar y duración al final del ciclo de facturación."
@@ -6531,6 +6531,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "Si crees que hemos cometido un error, ${ contactLink }."
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si cancelas, tu suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
       ],
@@ -6599,8 +6602,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -6869,8 +6871,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Toma en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Por favor, ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } crédito restante.",
+        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "Please open the document to view it.": [
         "Abre el documento para verlo."
@@ -7467,6 +7470,12 @@
       ],
       "We couldn’t process your payment.": [
         "No hemos podido procesar tu pago."
+      ],
+      "We detected the creation of multiple free accounts, which violates our ${ termsLink }.": [
+        "Hemos detectado la creación de varias cuentas gratuitas, lo que infringe nuestros ${ termsLink }."
+      ],
+      "We have plans designed specifically for users like you who need more than one email address.\nTo remove restrictions, you can upgrade to a paid plan.": [
+        "Ofrecemos planes diseñados específicamente para usuarios como tú que necesitan más de una dirección de correo electrónico.\nPara eliminar las restricciones, puedes mejorar a un plan de pago."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Necesitamos autenticar el método de pago con tu banco."
@@ -9339,6 +9348,9 @@
         "Historial de ${ options } día de las versiones de los archivos",
         "Historial de ${ options } días de las versiones de los archivos"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Acceso de por vida a las funciones ${ PASS_APP_NAME } y SimpleLogin"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email"
@@ -9952,6 +9964,9 @@
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros."
+      ],
+      "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
+        "Acceso de por vida a las funciones premium de ${ PASS_APP_NAME } y SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Como una carpeta, una caja fuerte es una manera conveniente de organizar tus elementos."

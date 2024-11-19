@@ -462,6 +462,9 @@
       "Expand URL": [
         "URL-ის გაშლა"
       ],
+      "Expand video conferencing widget": [
+        "ვიდეოკონფერენცის ვიჯეტის გადიდება"
+      ],
       "Expiration time": [
         "ვადა"
       ],
@@ -955,6 +958,9 @@
       "Remove this label": [
         "ამ ჭდის წაშლა"
       ],
+      "Remove zoom meeting": [
+        "Zoom-ის შეხვედრის წაშლა"
+      ],
       "Replace": [
         "ჩანაცვლება"
       ],
@@ -1054,10 +1060,10 @@
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "ყველაფრის მონიშვნა"
       ],
-      "Select all": [
+      "Select All": [
         "ყველაფრის მონიშვნა"
       ],
       "Select all messages": [
@@ -2264,6 +2270,9 @@
       "${ users } user": [
         "${ users } მომხმარებელი",
         "${ users } მომხმარებელი"
+      ],
+      "Total": [
+        "ჯამი"
       ],
       "Total for ${ n } month": [
         "ჯამში ${ n } თვის",
@@ -5234,6 +5243,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME }-ი Play Store-ში"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } დღე",
+        "${ remainingDaysCount } დღე"
+      ],
+      "${ remainingDaysCount } day left": [
+        "დარჩენილია ${ remainingDaysCount } დღე",
+        "დარჩენილია ${ remainingDaysCount } დღე"
+      ],
       "account logins": [
         "ანგარიშის შესვლის დეტალები"
       ],
@@ -5279,8 +5296,14 @@
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "დაშიფვრა, რომელიც ისეთი ძლიერია, რომ თქვენი ელფოსტების გახსნა, მხოლოდ, მისთვის განკუთვნილ მიმღებებს შეუძლიათ."
       ],
+      "Finish setup": [
+        "მორგების დასრულება"
+      ],
       "For your eyes only": [
         "მხოლოდ, თქვენს დასანახად"
+      ],
+      "Get more storage": [
+        "მიიღეთ მეტი საცავი"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "გადმოწერეთ ${ MAIL_APP_NAME }-ის მობილური აპლიკაცია"
@@ -5330,6 +5353,9 @@
       "Storage unlocked": [
         "საცავი განბლოკილია"
       ],
+      "Tasks to complete count": [
+        "დასასრულებელი ამონანების რაოდენობა"
+      ],
       "This feature is currently unavailable": [
         "ეს ფუნქცია ამჟამად მიუწვდომელია"
       ],
@@ -5366,6 +5392,9 @@
       ],
       "Less details": [
         "ნაკლები დეტალი"
+      ],
+      "Meeting host:": [
+        "შეხვედრის მასპინძელი:"
       ],
       "Meeting link:": [
         "შეხვედრის ბმული:"
@@ -6477,6 +6506,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
+      "If you believe we made a mistake, please ${ contactLink }.": [
+        "თუ გჯერათ, რომ რამე შეგვეშალა, დაგვიკავშირდით ბმულზე ${ contactLink }"
+      ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "თუ გააუქმებთ, თქვენი გამოწერა ${ planTitle } არ განახლდება, როცა ვადა გაუვა თარიღზე ${ expiryDate }."
       ],
@@ -6545,7 +6577,6 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
         "გამოსახულების ჩასმა"
       ],
       "Insert link": [
@@ -6814,9 +6845,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
       ],
       "Please open the document to view it.": [
         "გახსენით დოკუმენტი, რომ ნახოთ ის."
@@ -7983,6 +8011,9 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(დრობით მიუწვდომელია. მოგვიანებით სცადეთ)"
       ],
+      "/month": [
+        "/თვეში"
+      ],
       "Actions": [
         "ქმედებები"
       ],
@@ -8643,6 +8674,9 @@
       "click here": [
         "დააწკაპუნეთ აქ"
       ],
+      "contact us": [
+        "დაგვიკავშირდით"
+      ],
       "Create a calendar linked to an active email address.": [
         "აქტიურ ელფოსტაზე მიბმული კალენდრის შექმნა."
       ],
@@ -8756,6 +8790,9 @@
       ],
       "Terms": [
         "წესები"
+      ],
+      "terms of service": [
+        "მომსახურების პირობები"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "ეს ICS ფაილი ერთზე მეტ მოვლენას შეიცავს. გადმოწერეთ ის და მოვლენები ${ CALENDAR_APP_NAME }-ში შეიტანეთ"
@@ -9157,6 +9194,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
       ],
+      "Get ${ planTitle }": [
+        "${ planTitle }-ის მიღება"
+      ],
       "Get started for ${ price }": [
         "დაწყება ${ price }-დან"
       ],
@@ -9264,6 +9304,9 @@
         "${ options }-დღიანი ფაილის ვერსიის ისტორია",
         "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "${ PASS_APP_NAME } + SimpleLogin სამუდამოდ"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით",
         "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით"
@@ -9319,6 +9362,12 @@
       "Administration Panel": [
         "ადმინისტრატორის პანელი"
       ],
+      "Advanced account protection": [
+        "დამატებითი ანგარიშის დაცვა"
+      ],
+      "Advanced alias features (powered by SimpleLogin)": [
+        "დამატებითი ფსევდონიმის ფუნქციები (SimpleLogin-ით)"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "${ BRAND_NAME }-ის ყველა პროდუქტი და ფუნქცია"
       ],
@@ -9345,6 +9394,9 @@
       ],
       "Available on all platforms": [
         "ხელმისაწვდომია ყველა პლატფორმაზე"
+      ],
+      "Breach alerts": [
+        "გაჟონვის განგაშები"
       ],
       "Calendar sharing": [
         "კალენდრის გაზიარება"
@@ -10069,6 +10121,12 @@
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
       ],
+      "Meeting host copied to clipboard": [
+        "შეხვედრის მასპინძელი დაკოპირდა ბუფერში"
+      ],
+      "Meeting ID copied to clipboard": [
+        "შეხვედრის ID დაკოპირდა ბუფერში"
+      ],
       "Passcode copied to clipboard": [
         "წვდომის კოდი დაკოპირდა გაცვლის ბუფერში"
       ],
@@ -10225,6 +10283,9 @@
       "Protection from trackers": [
         "ტრეკერებისგან დაცვა"
       ],
+      "Replay introduction": [
+        "შესავლის თავიდან დაკვრა"
+      ],
       "Skip": [
         "გამოტოვება"
       ],
@@ -10372,8 +10433,14 @@
         "${ n } მომხმარებლის ანგარიში",
         "${ n } მომხმარებლის ანგარიში"
       ],
+      "Activity log": [
+        "აქტივობის ჟურნალი"
+      ],
       "Admin panel to manage users and subscription": [
         "ადმინის პანელ მომხმარებლებისა და გამოწერების სამართავად"
+      ],
+      "Team policies": [
+        "გუნდის პოლიტიკა"
       ]
     },
     "PassFamilyPlan2024": {
@@ -10465,6 +10532,9 @@
       ],
       "Please select your billing state first.": [
         "ჯერ აირჩიეთ თქვენი გადახდის მდგომარეობა."
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "განახლების დრო ${ price }. გააუქმეთ ნებისმიერ დროს."
       ],
       "Select billing country to pay": [
         "აირჩიეთ გადასახდელი ქვეყანა"
@@ -11726,6 +11796,11 @@
         "გამოწერის სატარიფო გეგმა ჩამოიწევა გადახდის ციკლის ბოლოს."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "სიცოცხლის დრო"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice }-თვის"
@@ -12564,6 +12639,9 @@
       ],
       "A filter with this name already exists": [
         "ამ სახელის მქონე ფილტრი უკვე არსებობს"
+      ],
+      "Account locked": [
+        "ანგარიში დაბლოკილია"
       ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
@@ -13902,8 +13980,14 @@
       ]
     },
     "Zoom Meeting": {
+      "Join Zoom meeting": [
+        "Zoom-ის შეხვედრასთან მიერთება"
+      ],
       "Meeting ID:": [
         "შეხვედრის ID:"
+      ],
+      "Passcode:": [
+        "საკვანძო კოდი:"
       ]
     }
   }

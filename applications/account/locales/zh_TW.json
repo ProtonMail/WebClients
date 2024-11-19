@@ -70,10 +70,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -114,6 +114,9 @@
       ],
       "Add email address": [
         "添加電子郵件地址"
+      ],
+      "Add external address": [
+        "添加外部電子郵件地址"
       ],
       "Add filter": [
         "加入篩選器"
@@ -157,6 +160,12 @@
       "Allow": [
         "允許"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "允許此群組端對端加密的信件"
+      ],
+      "Always allow sending": [
+        "永遠允許傳送"
+      ],
       "Apply": [
         "套用"
       ],
@@ -174,6 +183,9 @@
       ],
       "Back": [
         "返回"
+      ],
+      "Back to sign-in": [
+        "返回登入"
       ],
       "Block": [
         "封鎖"
@@ -373,6 +385,9 @@
       "Delete your account": [
         "刪除您的帳號"
       ],
+      "Deny access": [
+        "拒絕存取"
+      ],
       "Details": [
         "詳細資訊"
       ],
@@ -544,6 +559,9 @@
       "Get in touch": [
         "保持聯絡"
       ],
+      "Get limited-time offer": [
+        "取得限時優惠"
+      ],
       "Get more": [
         "取得更多"
       ],
@@ -654,6 +672,9 @@
       ],
       "Leave": [
         "離開"
+      ],
+      "Leave group": [
+        "退出群組"
       ],
       "Let's talk": [
         "我們一起聊聊！"
@@ -790,10 +811,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Reject": [
@@ -807,6 +828,9 @@
       ],
       "Remove all members": [
         "移除所有成員"
+      ],
+      "Remove all other devices": [
+        "移除所有其它裝置的工作階段"
       ],
       "Remove bonuses": [
         "移除贈品"
@@ -1011,6 +1035,9 @@
       ],
       "Show": [
         "顯示"
+      ],
+      "Show all": [
+        "全部顯示"
       ],
       "Show less": [
         "顯示更少"
@@ -1553,6 +1580,11 @@
         "選擇你的年終優惠"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1568,14 +1600,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
     },
     "bf2023: Offers": {
@@ -1670,6 +1694,9 @@
       "Integrated 2FA authenticator": [
         "整合了雙重驗證的驗證器"
       ],
+      "One-time payment, lifetime deal": [
+        "一次付款，終身方案"
+      ],
       "Online document editor": [
         "線上文件編輯器"
       ],
@@ -1705,8 +1732,14 @@
       ]
     },
     "BF2024: Footer": {
+      "${ PASS_SHORT_APP_NAME } Plus lifetime deal has no renewal price, it’s a one-time payment for lifetime access to Pass Plus.": [
+        "${ PASS_SHORT_APP_NAME } Plus 終身方案無續約費，他是單次付費終身存取Pass Plus。"
+      ],
       "Discounts are based on standard monthly pricing.": [
         "折扣是以每月標準價格為基礎。"
+      ],
+      "If you purchase Pass Family or Unlimited, your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "若您訂閱Pass Family或Unlimited，您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "您的訂閱將在您的繳款單週期結束時以標準折扣費率及期限自動續訂。"
@@ -1723,8 +1756,14 @@
       ]
     },
     "BF2024: Offers": {
+      "Billed at ${ amount } once": [
+        "單次收費 ${ amount }"
+      ],
       "for ${ durationDeal }": [
-        "為了 ${ durationDeal }"
+        "為期 ${ durationDeal }"
+      ],
+      "forever": [
+        "永久"
       ],
       "Renews after 1 month at ${ regularAmount }.": [
         "首月免費，之後每月續訂 ${ regularAmount }。"
@@ -2141,6 +2180,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 個使用者"
+      ],
+      "Total": [
+        "總共"
       ],
       "Total for ${ n } month": [
         "總額可用 ${ n } 個月"
@@ -3454,6 +3496,9 @@
     "Description": {
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
         "當您升級以自動刪除垃圾郵件和垃圾訊息及解鎖更多頂級功能"
+      ],
+      "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
+        "自動清除電子郵件移除超過三十天垃圾桶和垃圾郵件。"
       ],
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在您的來信訊息到達收件匣前會自動排列"
@@ -4915,6 +4960,9 @@
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "找不到憑證 ${ name } 或已被撤銷"
+      ],
+      "Display name cannot be empty": [
+        "顯示名稱不能為空"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -6799,10 +6847,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
@@ -7185,9 +7233,6 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "安裝伺服器設定檔以連線到您選擇國家的指定伺服器。"
-      ],
-      "Internal user": [
-        "內部使用者"
       ],
       "Internet connection lost": [
         "網際網路連線中斷"
@@ -7590,9 +7635,6 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "請保存在安全的地方。在重設密碼後你將會需要它來解密你的資料。"
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "請注意，當您點擊確認時，您的帳號將剩${ remainingCreditsFormatted }可用額度。"
       ],
       "please open a support ticket": [
         "請開啟支援票卷"
@@ -8227,10 +8269,10 @@
       "User activated": [
         "使用者已啟用"
       ],
-      "Username": [
+      "username": [
         "使用者名稱"
       ],
-      "username": [
+      "Username": [
         "使用者名稱"
       ],
       "Users": [
@@ -9859,6 +9901,9 @@
       "Reveal password": [
         "顯示密碼"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
       "Search": [
         "搜尋"
       ],
@@ -9879,6 +9924,9 @@
       ],
       "Send in": [
         "傳送"
+      ],
+      "Show ${ n } administrator": [
+        "顯示 ${ n } 管理員"
       ],
       "Show others when I'm busy": [
         "向其他人顯示我正在忙"
@@ -10465,7 +10513,7 @@
         "首月"
       ],
       "for your first month": [
-        "為了您的第一個月"
+        "適用於您的首個月"
       ],
       "Limited-time offer, expires April 2 2024": [
         "限時優惠，只到2024年4月2日"
@@ -10822,6 +10870,32 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Get started for ${ price }": [
+        "使用${ price }取得"
+      ],
+      "Starting from ${ priceMailPlus }": [
+        "從${ priceMailPlus }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ],
+      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
+        "升級至${ MAIL_SHORT_APP_NAME } Plus"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "繼續使用免費方案"
@@ -10849,32 +10923,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Get started for ${ price }": [
-        "使用${ price }取得"
-      ],
-      "Starting from ${ priceMailPlus }": [
-        "從${ priceMailPlus }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ],
-      "Upgrade to ${ MAIL_SHORT_APP_NAME } Plus": [
-        "升級至${ MAIL_SHORT_APP_NAME } Plus"
       ]
     },
     "new_plans: feature": {
@@ -11510,6 +11558,20 @@
         "您選擇的方案：${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
+      ],
+      "Starting from ${ price }": [
+        "從${ price }起"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -11528,20 +11590,6 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "使用${ price }取得Mail Plus"
-      ],
-      "Starting from ${ price }": [
-        "從${ price }起"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -12588,8 +12636,14 @@
       "${ n } user account": [
         "${ n }使用者帳號"
       ],
+      "Activity log": [
+        "活動記錄"
+      ],
       "Admin panel to manage users and subscription": [
         "管理員面板以管理使用者及訂閱"
+      ],
+      "Team policies": [
+        "團隊政策"
       ]
     },
     "PassFamilyPlan2024": {
@@ -12702,6 +12756,9 @@
       ],
       "Processing payment": [
         "正在處理付款"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "更新價 ${ price }，任何時間都可取消."
       ],
       "Select billing country to pay": [
         "選取繳款國家以付款"
@@ -13943,6 +14000,9 @@
       ]
     },
     "sso": {
+      "Delete ${ n } user": [
+        "刪除 ${ n } 位使用者"
+      ],
       "Sign in": [
         "登入"
       ]
@@ -14173,6 +14233,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "您的方案乃購自 iOS 應用程式。若要更改您的方案或更新您的付款詳情，請移至 Apple App Store。"
+      ]
+    },
+    "Subscription length": {
+      "Lifetime": [
+        "終身"
       ]
     },
     "Subscription price": {
@@ -15074,10 +15139,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -16660,6 +16725,11 @@
       ],
       "Your ${ selected } plan": [
         "您專屬的 ${ selected } 方案"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "直達 Secure Core 伺服器、極速 P2P/BitTorrent 下載、匿名連接 VPN、Tor路由以及其它更多功能。"
       ]
     },
     "wallet_signup_2024: Info": {

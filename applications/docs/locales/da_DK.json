@@ -510,6 +510,9 @@
       "Reset to default": [
         "Nulstil til standard"
       ],
+      "Restore version": [
+        "Genskab version"
+      ],
       "Retry": [
         "Prøv igen"
       ],
@@ -4238,9 +4241,6 @@
       "No version history available": [
         "Der findes ingen versionshistorik"
       ],
-      "No version history batches available": [
-        "Serie med versionshistorik er ikke tilgængelig"
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. For at kunne sende beskeder til denne adresse skal du uploade en gyldig nøgle eller deaktivere \"Krypter e-mails\" for at kunne sende beskeder til denne adresse."
       ],
@@ -4313,9 +4313,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Bemærk, i det øjeblik du klikker på knappen 'Bekræft' , vil din konto have ${ remainingCreditsFormatted } kreditter tilbage."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Angiv et navn og en e-mailadresse for at oprette en gruppe."

@@ -507,6 +507,9 @@
       "Reset to default": [
         "Rétablir les valeurs par défaut"
       ],
+      "Restore version": [
+        "Restaurer la version"
+      ],
       "Retry": [
         "Réessayer"
       ],
@@ -2212,7 +2215,7 @@
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
+        "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
@@ -3937,7 +3940,7 @@
         "Le contact a été ajouté au groupe ${ contactGroupName }."
       ],
       "Contact unassigned from group ${ contactGroupName }": [
-        "Le contact a été retiré du groupe ${ contactGroupName }."
+        "Le contact a été retiré du groupe « ${ contactGroupName } »."
       ],
       "Converting document...": [
         "Conversion du document..."
@@ -4342,9 +4345,6 @@
       "No version history available": [
         "Aucun historique de version n'est disponible."
       ],
-      "No version history batches available": [
-        "Aucun lot d'historiques de version n'est disponible."
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Aucune des clés téléchargées n'est valide pour le chiffrement. Pour pouvoir envoyer des messages à cette adresse, veuillez télécharger une clé valide ou désactiver l'option Chiffrer les messages."
       ],
@@ -4427,8 +4427,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Après avoir cliqué sur le bouton Confirmer, il restera ${ remainingCreditsFormatted } crédits sur votre compte."
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credit remaining.": [
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédit restant.",
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Indiquez un nom et une adresse e-mail pour créer un groupe."
@@ -5385,7 +5386,7 @@
         "Thème"
       ],
       "Thomas": [
-        "Andréa"
+        "Jean"
       ],
       "Title": [
         "Titre"
@@ -7889,7 +7890,7 @@
         "Connectez-vous à votre organisation."
       ],
       "You'll be redirected to your third-party SSO provider.": [
-        "Vous allez être redirigé vers votre service d'authentification unique tiers."
+        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ]
     },
     "State": {

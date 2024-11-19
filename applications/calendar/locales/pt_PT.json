@@ -1076,6 +1076,9 @@
       "for ${ durationDeal }": [
         "por ${ durationDeal }"
       ],
+      "forever": [
+        "para sempre"
+      ],
       "Renews after 1 month at ${ regularAmount }.": [
         "Renova após 1 mês a ${ regularAmount }. "
       ]
@@ -1407,6 +1410,9 @@
       "${ users } user": [
         "${ users } utilizador",
         "${ users } utilizadores"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total for ${ n } month": [
         "Total por ${ n } mês",
@@ -1784,6 +1790,9 @@
       ],
       "Dominican Republic": [
         "República Dominicana"
+      ],
+      "East Timor": [
+        "Timor Leste"
       ],
       "Ecuador": [
         "Equador"
@@ -2253,6 +2262,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard e Jan Mayen"
       ],
+      "Swaziland": [
+        "Suazilândia"
+      ],
       "Sweden": [
         "Suécia"
       ],
@@ -2488,6 +2500,9 @@
       "Better organize your day, track your time, and prioritize tasks. Color-code your calendar with custom event colors.": [
         "Organize melhor o seu dia, controle o seu tempo e priorize tarefas. Codifique o seu calendário com cores de eventos personalizadas."
       ],
+      "Create a Zoom meeting and add joining details to your event with one click.": [
+        "Crie uma reunião Zoom e adicione detalhes de participação ao seu evento com um clique."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "A desencriptar os contactos... Isto pode demorar alguns minutos. Quando o processo estiver concluído, poderá transferir o ficheiro com todos os seus contactos exportados."
       ],
@@ -2520,6 +2535,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para evitar a perda de acesso à sua conta."
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
+        "Isto pode demorar alguns minutos. Entretanto, pode continuar a utilizar ${ CALENDAR_APP_NAME } como habitualmente."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para garantir a maior segurança possível da sua conta, defina uma frase de recuperação."
@@ -2622,6 +2640,11 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Remover o desconto"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Histórico de versão estendido"
@@ -2635,9 +2658,17 @@
         "Adicionar um calendário"
       ]
     },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de armazenamento"
+      ],
+      "2 users": [
+        "2 utilizadores"
+      ]
+    },
     "duoplan2024: SubTitle": {
       "Double your storage": [
-        "Duplicar o seu armazenamento"
+        "Duplique o seu armazenamento"
       ]
     },
     "Duplicate event button tooltip": {
@@ -3589,6 +3620,9 @@
       "Invited by: ${ inviteEmail }": [
         "Convidado por: ${ inviteEmail }"
       ],
+      "Manage addresses": [
+        "Gerir endereços"
+      ],
       "Sorry, you can't switch plans at this time.": [
         "Lamentamos, mas não é possível mudar de plano neste momento."
       ],
@@ -3743,6 +3777,17 @@
       ],
       "Very small": [
         "Muito pequeno"
+      ]
+    },
+    "Google Meet": {
+      "Less details": [
+        "Menos informações"
+      ],
+      "Meeting host:": [
+        "Organizador da reunião:"
+      ],
+      "More details": [
+        "Mais informações"
       ]
     },
     "Group": {
@@ -4367,6 +4412,10 @@
       "Dedicated servers": [
         "Servidores dedicados"
       ],
+      "Deleting event...": [
+        "A eliminar evento...",
+        "A eliminar eventos..."
+      ],
       "Discard changes?": [
         "Descartar alterações?"
       ],
@@ -4665,9 +4714,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Tenha em atenção que, ao clicar no botão Confirmar, a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Indique um nome e um endereço de e-mail para criar um grupo."
@@ -5257,6 +5303,9 @@
       "All-day event notifications": [
         "Notificação de eventos de dia inteiro"
       ],
+      "Anderson": [
+        "Ferreira"
+      ],
       "App password": [
         "Palavra-passe da aplicação"
       ],
@@ -5440,6 +5489,9 @@
       "I understand the risk": [
         "Eu compreendo o risco."
       ],
+      "IBAN": [
+        "IBAN"
+      ],
       "Import all messages": [
         "Importar todas as mensagens"
       ],
@@ -5611,6 +5663,9 @@
       ],
       "Theme": [
         " Tema"
+      ],
+      "Thomas": [
+        "Andrea"
       ],
       "Time zone": [
         "Fuso horário"
@@ -6223,6 +6278,9 @@
       "1 user": [
         "1 utilizador"
       ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
@@ -6255,6 +6313,9 @@
       ],
       "Available on all platforms": [
         "Disponível em todas as plataformas"
+      ],
+      "Breach alerts": [
+        "Alertas de violação"
       ],
       "Calendar sharing": [
         "Partilha de calendário"
@@ -6300,6 +6361,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Suporte a clientes de e-mail (por IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grupos de e-mails"
       ],
       "Enables HIPAA compliance": [
         "Permite a conformidade com a HIPAA"
@@ -6365,6 +6429,9 @@
       "Password health": [
         "Estado da palavras-passe"
       ],
+      "Password manager": [
+        "Gestor de palavras-passe"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
@@ -6422,6 +6489,9 @@
       ],
       "Support for up to 2 users": [
         "Suporte para até 2 usuários"
+      ],
+      "TOR over VPN": [
+        "TOR sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticação em dois fatores"
@@ -7088,6 +7158,9 @@
       "${ n } user account": [
         "${ n } conta de utilizador",
         "${ n } contas de utilizador"
+      ],
+      "Activity log": [
+        "Registo de atividades"
       ]
     },
     "passwordless": {
@@ -7099,11 +7172,22 @@
       ]
     },
     "Payment method option": {
+      "Bank transfer": [
+        "Transferência bancária"
+      ],
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payment.Sepa.Action": {
+      "Use company name": [
+        "Utilizar o nome da empresa"
+      ],
+      "Use personal name": [
+        "Utilizar um nome pessoal"
       ]
     },
     "Payments": {
@@ -7400,6 +7484,11 @@
         "(abrirá ${ PASS_APP_NAME })"
       ]
     },
+    "Security Center - Action": {
+      "View events": [
+        "Ver os eventos"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "${ name } e ${ remainingCount } outras potenciais fugas detetadas. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes. ${ link }"
@@ -7676,6 +7765,11 @@
         "Assinar"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Mais rápido na aplicação"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Fechar"
@@ -7778,6 +7872,9 @@
       "/ month": [
         "/ mês"
       ],
+      "/month": [
+        "/mês"
+      ],
       "1 year": [
         "1 ano"
       ],
@@ -7879,6 +7976,11 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Agora pode ver quando os participantes estão livres para participar na sua reunião."
+      ]
+    },
+    "sso": {
+      "Sign in": [
+        "Iniciar sessão"
       ]
     },
     "Storage": {
@@ -8011,6 +8113,11 @@
         "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
+    "Subscription length": {
+      "Lifetime": [
+        "Acesso vitalício"
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -8049,6 +8156,9 @@
       "${ planNumberOfUsers } user": [
         "${ planNumberOfUsers } utilizador",
         "${ planNumberOfUsers } utilizadores"
+      ],
+      "2 users": [
+        "2 utilizadores"
       ],
       "Add any new files": [
         "Adicionar qualquer novo ficheiro"
@@ -8940,6 +9050,9 @@
       "Warning: suspected fake website": [
         "Aviso: suspeita de sítio web falso"
       ],
+      "We're setting up calendar search": [
+        "Estamos a configurar a pesquisa do calendário"
+      ],
       "We've locked some calendars to protect your data": [
         "Bloqueámos alguns calendários para proteger os seus dados."
       ],
@@ -9154,6 +9267,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Problema com a carteira"
       ]
     },
     "Warning": {
@@ -9497,6 +9615,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Zoom integration": {
+      "Add Zoom meeting": [
+        "Adicionar uma reunião Zoom"
+      ]
+    },
+    "Zoom Meeting": {
+      "Meeting ID:": [
+        "ID da reunião:"
+      ],
+      "Passcode:": [
+        "Código de acesso:"
       ]
     }
   }

@@ -462,6 +462,9 @@
       "Expand URL": [
         "Mostra l'URL complet"
       ],
+      "Expand video conferencing widget": [
+        "Amplia el giny de videoconferència"
+      ],
       "Expiration time": [
         "Data de caducitat"
       ],
@@ -1057,10 +1060,10 @@
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select All": [
+      "Select all": [
         "Seleccionar-ho tot"
       ],
-      "Select all": [
+      "Select All": [
         "Seleccionar-ho tot"
       ],
       "Select all messages": [
@@ -1688,7 +1691,7 @@
         "Protecció avançada del compte"
       ],
       "Dark Web Monitoring": [
-        "Supervisió de la web fosca"
+        "Monitoratge del web fosc"
       ],
       "Easily add or remove users": [
         "Afegiu o elimineu usuaris fàcilment"
@@ -1698,6 +1701,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
+      ],
+      "One-time payment, lifetime deal": [
+        "Un pagament únic, una oferta de per vida"
       ],
       "Online document editor": [
         "Editor de documents en línia"
@@ -1773,7 +1779,7 @@
         "Accediu al contingut dels serveis d'estríming, com ara Netflix, Disney+, Prime Video i altres, des de qualsevol lloc."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, Dark Web Monitoring and more.": [
-        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, monitoratge de la Dark Web i més."
+        "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, monitoratge del web fosc i més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Assegureu els vostres correus electrònics i planifiqueu amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, assistent de redacció ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i més.",
@@ -2220,6 +2226,12 @@
       ],
       "Save ${ upsellSavings }": [
         "Estalvieu el ${ upsellSavings }"
+      ],
+      "Save money with ${ upsellPlanName }": [
+        "Estalvieu diners amb ${ upsellPlanName }"
+      ],
+      "Secure personal and shared calendar": [
+        "Calendari personal i compartit segur"
       ],
       "Try ${ planName }": [
         "Proveu ${ planName }"
@@ -4208,7 +4220,7 @@
         "Es requereix el port"
       ],
       "Primary address key is not decrypted": [
-        "La clau de la adreça primària no està desxifrada"
+        "La clau de l'adreça primària no està desxifrada."
       ],
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
@@ -4411,6 +4423,9 @@
       ],
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
+      ],
+      "You have reached the number of contacts limit for your account": [
+        "Heu arribat al nombre límit de contactes per al vostre compte."
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -5229,6 +5244,9 @@
       "Storage unlocked": [
         "S'ha desbloquejat l'emmagatzematge."
       ],
+      "Tasks to complete count": [
+        "Tasques pendents"
+      ],
       "This feature is currently unavailable": [
         "Aquesta característica actualment no està disponible."
       ],
@@ -5872,7 +5890,7 @@
         "Mida del compte"
       ],
       "Account successfully updated": [
-        "El compte s'ha actualitzat correctament"
+        "El compte s'ha actualitzat."
       ],
       "Activation in progress": [
         "Activació en procés"
@@ -6440,8 +6458,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -6706,9 +6723,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
-        "Tingueu en compte que quan feu clic al botó «Confirmar», el vostre compte tindrà ${ remainingCreditsFormatted } crèdits restants."
       ],
       "Please open the document to view it.": [
         "Obriu el document per visualitzar-lo."
@@ -7211,7 +7225,7 @@
         "Milloreu el vostre pla per afegir més adreces al vostre compte."
       ],
       "Upgrade to automatically delete messages that have been in Trash or Spam for more than 30 days.": [
-        "Milloreu per a eliminar automàticament els missatges que han estat a la paperera o al correu brossa durant més de 30 dies."
+        "Milloreu el vostre pla per a eliminar automàticament els missatges que han estat a la paperera o al correu brossa durant més de 30 dies."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
         "Actualitzeu per crear més carpetes, filtres, i adreces."
@@ -7277,7 +7291,7 @@
         "Versió ${ appVersion }"
       ],
       "Version number successfully copied to clipboard": [
-        "El número de versió s'ha copiat correctament al porta-retalls"
+        "El número de versió s'ha copiat al porta-retalls."
       ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
@@ -8313,6 +8327,9 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
+      "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
+        "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
+      ],
       "Search in": [
         "Cerca en"
       ],
@@ -8642,6 +8659,9 @@
       ],
       "Terms": [
         "Termes"
+      ],
+      "terms of service": [
+        "condicions del servei"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Aquest arxiu ICS conté més d'un esdeveniment. Descarregueu-lo i importeu els esdeveniments a ${ CALENDAR_APP_NAME }"
@@ -9134,8 +9154,8 @@
         "${ n } missatges per dia"
       ],
       "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } ${ PASS_SHORT_APP_NAME } caixa forta compartida per usuari",
-        "${ n } ${ PASS_SHORT_APP_NAME } caixes fortes compartides per usuari"
+        "${ n } caixa forta de ${ PASS_SHORT_APP_NAME } compartida per usuari",
+        "${ n } caixes fortes de ${ PASS_SHORT_APP_NAME } compartides per usuari"
       ],
       "${ n } vault": [
         "${ n } caixa forta",
@@ -9148,6 +9168,9 @@
       "${ numberOfUsers } user": [
         "${ numberOfUsers } usuari",
         "Fins a ${ numberOfUsers } usuaris"
+      ],
+      "${ PASS_APP_NAME } + SimpleLogin lifetime": [
+        "Accés de tota la vida a les funcions ${ PASS_APP_NAME } i SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
@@ -9204,6 +9227,9 @@
       "Administration Panel": [
         "Panell d'administració"
       ],
+      "Advanced account protection": [
+        "Protecció avançada dels comptes"
+      ],
       "All ${ BRAND_NAME } products and features": [
         "Tots els productes i funcions de ${ BRAND_NAME }"
       ],
@@ -9227,6 +9253,9 @@
       ],
       "Available on all platforms": [
         "Disponible a totes les plataformes"
+      ],
+      "Breach alerts": [
+        "Alertes d'infraccions"
       ],
       "Calendar sharing": [
         "Compartició de calendari"
@@ -9930,11 +9959,17 @@
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
       ],
+      "Meeting host copied to clipboard": [
+        "S'ha copiat l'organitzador de la reunió al porta-retalls."
+      ],
+      "Meeting ID copied to clipboard": [
+        "S'ha copiat l'identificador de la reunió al porta-retalls."
+      ],
       "Passcode copied to clipboard": [
         "El codi d'accés s'ha copiat al porta-retalls."
       ],
       "Password has been set successfully": [
-        "La contrasenya s'ha establert correctament"
+        "La contrasenya s'ha establert."
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "S'ha bloquetjat el remitent ${ firstSenderAddress }"
@@ -9973,6 +10008,9 @@
       "Finance": [
         "Finances"
       ],
+      "Privacy for all your online accounts": [
+        "Privadesa per a tots els vostres comptes en línia"
+      ],
       "Shopping": [
         "Compres"
       ],
@@ -10009,7 +10047,7 @@
         "Felicitats per triar la privacitat"
       ],
       "Dark Web Monitoring": [
-        "Monitoratge de la web fosca"
+        "Monitoratge del web fosc"
       ],
       "Download the desktop app": [
         "Descarregueu l'aplicació d'escriptori"
@@ -10035,11 +10073,20 @@
       "Google Play": [
         "Google Play"
       ],
+      "Industry-leading spam protection": [
+        "Protecció contra el correu brossa líder en el sector"
+      ],
       "Let's get started": [
         "Comencem"
       ],
+      "Make the most of your paid plan.": [
+        "Aprofiteu al màxim el vostre pla de pagament."
+      ],
       "Maybe later": [
         "Potser després"
+      ],
+      "More ways to experience ${ MAIL_APP_NAME }": [
+        "Altres maneres de gaudir de ${ MAIL_APP_NAME }"
       ],
       "Next": [
         "Següent"
@@ -10064,9 +10111,15 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Us donem la benvinguda a ${ MAIL_APP_NAME }"
+      ],
+      "Where privacy is default.": [
+        "On la privadesa és per defecte."
       ]
     },
     "Onboarding Proton": {
+      "Choose your preferred look and feel.": [
+        "Trieu el vostre aspecte preferit."
+      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureu la vostra organització, enllaceu el vostre nom de domini i creeu comptes per assegurar-vos que tots els membres de l'organització estan protegits."
       ],
@@ -10190,9 +10243,15 @@
       ],
       "Activity log": [
         "Registre d'activitats"
+      ],
+      "Team policies": [
+        "Regles d'equip"
       ]
     },
     "PassFamilyPlan2024": {
+      "All premium features. 6 users. 1 easy subscription.": [
+        "Totes les funcions premium. 6 usuaris. 1 subscripció fàcil."
+      ],
       "Get it for ${ monthlyPrice }": [
         "Obteniu-lo per ${ monthlyPrice }"
       ],
@@ -10266,6 +10325,9 @@
       ],
       "Please select billing state": [
         "Seleccioneu l'estat de facturació"
+      ],
+      "Renews at ${ price }, cancel anytime.": [
+        "Es renova per ${ price } i ho podeu cancel·lar en qualsevol moment."
       ],
       "Select billing country to pay": [
         "Seleccioneu el país de facturació per pagar"
@@ -11609,7 +11671,7 @@
         "Privacitat i seguretat integrals"
       ],
       "Dark web monitoring": [
-        "Supervisió de la web fosca"
+        "Monitoratge del web fosc"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Aplicació d'escriptori i compatibilitat amb clients de correu electrònic (a través d'IMAP)"
@@ -12288,7 +12350,7 @@
         "Descarregueu l'aplicació d'escriptori"
       ],
       "Enable Dark Web Monitoring": [
-        "Activa la supervisió de la web fosca"
+        "Activa el monitoratge del web fosc"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Obtingueu la vostra adreça @${ PM_DOMAIN }"
@@ -12320,6 +12382,9 @@
       ],
       "A filter with this name already exists": [
         "Ja hi ha un filtre amb aquest nom."
+      ],
+      "Account locked": [
+        "S'ha bloquejat el compte."
       ],
       "Account recovery": [
         "Recuperació de compte"
@@ -12636,6 +12701,12 @@
       "Hide your email with ${ PASS_APP_NAME }": [
         "Amagueu el vostre correu electrònic amb ${ PASS_APP_NAME }"
       ],
+      "High security for your account": [
+        "Seguretat alta per al vostre compte"
+      ],
+      "How to update your email address": [
+        "Com actualitzar la vostra adreça de correu electrònic?"
+      ],
       "Human verification": [
         "Verificació humana"
       ],
@@ -12885,6 +12956,9 @@
       ],
       "Request new code": [
         "Demana un codi nou"
+      ],
+      "Same inbox, shorter email address": [
+        "La mateixa safata d'entrada amb una adreça electrònica més curta"
       ],
       "Save time with email filters": [
         "Estalvieu temps amb els filtres de correu electrònic"
@@ -13277,6 +13351,9 @@
     "wallet_signup_2024:Wallet setup": {
       "Account ${ indexStr }": [
         "Compte ${ indexStr }"
+      ],
+      "My imported wallet${ indexStr }": [
+        "La meva cartera importada${ indexStr }"
       ],
       "My wallet${ indexStr }": [
         "La meva cartera${ indexStr }"
